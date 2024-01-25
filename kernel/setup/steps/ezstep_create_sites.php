@@ -297,7 +297,8 @@ class eZStepCreateSites extends eZStepInstaller
         $ini->setVariable( 'SiteSettings', 'SiteList', $accessMap['sites'] );
         $ini->setVariable( 'SiteAccessSettings', 'AvailableSiteAccessList', $accessMap['accesses'] );
         $ini->setVariable( "SiteAccessSettings", "CheckValidity", "false" );
-        $ini->setVariable( 'Session', 'SessionNameHandler', 'custom' );
+        // With this following line commented out, php default session management is used
+        // $ini->setVariable( 'Session', 'SessionNameHandler', 'custom' );
         $ini->setVariable( 'MailSettings', 'AdminEmail', $this->PersistenceList['admin']['email'] );
         $ini->setVariable( 'MailSettings', 'EmailSender', false );
 
