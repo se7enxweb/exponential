@@ -5,15 +5,15 @@
   <h1>{"Choose database system"|i18n("design/standard/setup/init")}</h1>
 </div>
 
-{if and( is_set( $available_databases['mysql'] ), is_set( $available_databases['postgresql'] ), is_set( $available_databases['sqlite'] )}
+{if and( is_set( $available_databases['mysql'] ), is_set( $available_databases['postgresql'] ), is_set( $available_databases['sqlite3'] ) )}
 <p>
  {"MySQL, PostgreSQL and SQLite support was detected on your system. Please choose the database system you would like to use."|i18n("design/standard/setup/init")}
 </p>
-{elseif and( is_set( $available_databases['mysql'], is_set( $available_databases['sqlite'] ) )}
+{elseif and( is_set( $available_databases['mysql'] ), is_set( $available_databases['sqlite3'] ) )}
 <p>
  {"MySQL and SQLite support was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
 </p>
-{elseif and( is_set( $available_databases['sqlite'] ), is_set( $available_databases['postgresql'] ) )}
+{elseif and( is_set( $available_databases['sqlite3'] ), is_set( $available_databases['postgresql'] ) )}
 <p>
  {"PostgreSQL support was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
 </p>
@@ -21,7 +21,7 @@
 <p>
  {"MySQL was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
 </p>
-{elseif is_set( $available_databases['sqlite'] )}
+{elseif is_set( $available_databases['sqlite3'] )}
 <p>
  {"SQLite support was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
 </p>

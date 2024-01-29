@@ -95,8 +95,7 @@
   {$database_info.info.name|wash}
   </td>
 </tr>
-
-{if $database_info.info.type|ne('sqlite')}
+{if $database_info.info.type|ne('sqlite3')}
 <tr>
   <td class="normal"><label class="textfield">{"Servername"|i18n("design/standard/setup/init")}:</label></td>
   <td class="normal"><input type="text" name="eZSetupDatabaseServer" size="16" value="{$database_info.server|wash}" /></td>
@@ -112,6 +111,11 @@
 <tr>
   <td class="normal"><label class="textfield">{"Password"|i18n("design/standard/setup/init")}:</label></td>
   <td class="normal"><input type="password" name="eZSetupDatabasePassword" size="16" value="{$database_info.password|wash}" /></td>
+</tr>
+{else}
+<tr>
+  <td class="normal"><label class="textfield">{"Database File Name: "|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal"><input type="text" name="eZSetupDatabaseName" size="16" value="{$database_info.dbname|wash}" /></td>
 </tr>
 {/if}
 {if or(eq($database_info.info.driver,'ezmysql'), eq($database_info.info.driver,'ezmysqli'))}

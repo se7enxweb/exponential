@@ -294,7 +294,12 @@ class eZStepSiteDetails extends eZStepInstaller
         $dbDriver = $databaseInfo['info']['driver'];
         $dbServer = $databaseInfo['server'];
         $dbPort = $databaseInfo['port'];
-        $dbName = isset( $databaseInfo['dbname'] ) ? $databaseInfo['dbname'] : '';
+
+        if ( $databaseInfo['info']['type'] == 'mysqli' )
+            $dbName = 'mysql';
+        else
+            $dbName = isset( $databaseInfo['dbname'] ) ? $databaseInfo['dbname'] : $databaseInfo['database'];
+
         $dbUser = $databaseInfo['user'];
         $dbSocket = $databaseInfo['socket'];
         if ( trim( $dbSocket ) == '' )
@@ -306,7 +311,7 @@ class eZStepSiteDetails extends eZStepInstaller
                                'user' => $dbUser,
                                'password' => $dbPwd,
                                'socket' => $dbSocket,
-                               'database' => false,
+                               'database' => $dbName,
                                'charset' => $dbCharset );
 
         // PostgreSQL requires us to specify database name.
@@ -314,13 +319,14 @@ class eZStepSiteDetails extends eZStepInstaller
         if( $databaseInfo['info']['type'] == 'pgsql' )
             $dbParameters['database'] = 'template1';
 
-        if( $databaseInfo['info']['type'] == 'sqlite' )
-            $dbParameters['database'] = 'sqlite.db';
+        if( $dbParameters['database'] != '' && $databaseInfo['info']['type'] == 'sqlite3' )
+            $dbParameters['database'] = $dbName;
+
+        $this->PersistenceList['database_info']['database'] = $dbParameters['database'];
 
         $db = eZDB::instance( $dbDriver, $dbParameters, true );
         $availDatabases = $db->availableDatabases();
-
-        if ( count( $availDatabases ) > 0 ) // login succeeded, and at least one database available
+        if ( is_countable( $availDatabases ) && count( $availDatabases ) > 0 ) // login succeeded, and at least one database available
         {
             $this->PersistenceList['database_info_available'] = $availDatabases;
         }
@@ -331,8 +337,10 @@ class eZStepSiteDetails extends eZStepInstaller
     function display()
     {
         $config = eZINI::instance( 'setup.ini' );
-
         $siteType = $this->chosenSiteType();
+
+        if( $this->PersistenceList['database_info']['type'] == 'sqlite3' )
+            $siteType['database'] = 'sqlite.db';
 
         $availableDatabaseList = false;
         if ( isset( $this->PersistenceList['database_info_available'] ) )
@@ -345,8 +353,12 @@ class eZStepSiteDetails extends eZStepInstaller
         if ( !isset( $siteType['title'] ) )
             $siteType['title'] = $siteType['name'];
         $siteType['errors'] = array();
-        if ( !isset( $siteType['url'] ) )
+
+        if( $_SERVER['HTTPS'] === 'on' )
+            $siteType['url'] = 'https://' . eZSys::hostName() . eZSys::indexDir( false );
+        else
             $siteType['url'] = 'http://' . eZSys::hostName() . eZSys::indexDir( false );
+
         if ( !isset( $siteType['site_access_illegal'] ) )
             $siteType['site_access_illegal'] = false;
         if ( !isset( $siteType['db_already_chosen'] ) )
@@ -436,7 +448,15 @@ class eZStepSiteDetails extends eZStepInstaller
         }
         $this->storeSiteType( $siteType );
 
-        $this->Tpl->setVariable( 'database_default', $config->variable( 'DatabaseSettings', 'DefaultName' ) );
+        if ( $this->PersistenceList['database_info']['type'] == 'sqlite3' )
+        {
+            $this->Tpl->setVariable( 'database_default', 'sqlite.db' );
+        }
+        else
+        {
+            $this->Tpl->setVariable( 'database_default', $config->variable( 'DatabaseSettings', 'DefaultName' ) );
+        }
+
         $this->Tpl->setVariable( 'database_available', $availableDatabaseList );
         $this->Tpl->setVariable( 'site_type', $siteType );
 

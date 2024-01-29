@@ -29,13 +29,7 @@ function eZSetupOptionalTests()
 
 function eZSetupDatabaseMap()
 {
-    return array( 'sqlite' => array( 'type' => 'sqlite',
-                                     'driver' => 'sqlite',
-                                     'name' => 'SQLLite',
-                                     'required_version' => '3.0.1',
-                                     'has_demo_data' => true,
-                                     'supports_unicode' => true ),
-                  'mysqli' => array( 'type' => 'mysqli',
+    return array( 'mysqli' => array( 'type' => 'mysqli',
                                      'driver' => 'ezmysqli',
                                      'name' => 'MySQL Improved',
                                      'required_version' => '4.1.1',
@@ -47,6 +41,12 @@ function eZSetupDatabaseMap()
                                     'required_version' => '8.0',
                                     'has_demo_data' => false,
                                     'supports_unicode' => true ),
+                  'sqlite3' => array( 'type' => 'sqlite3',
+                                      'driver' => 'sqlite3',
+                                      'name' => 'SQLLite',
+                                      'required_version' => '3.0.1',
+                                      'has_demo_data' => true,
+                                      'supports_unicode' => true )
                    );
 }
 

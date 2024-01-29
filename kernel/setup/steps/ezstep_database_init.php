@@ -32,7 +32,6 @@ class eZStepDatabaseInit extends eZStepInstaller
     function processPostData()
     {
         $databaseMap = eZSetupDatabaseMap();
-
         // Get database parameters from input form.
         if ( $this->Http->hasPostVariable( 'eZSetupDatabaseServer' ) )
             $this->PersistenceList['database_info']['server'] = $this->Http->postVariable( 'eZSetupDatabaseServer' );
@@ -48,7 +47,6 @@ class eZStepDatabaseInit extends eZStepInstaller
             $this->PersistenceList['database_info']['socket'] = false;
         if ( !isset( $this->PersistenceList['database_info']['database'] ) )
             $this->PersistenceList['database_info']['database'] = false;
-
 
         $this->Error = 0;
         $dbStatus = false;
@@ -169,6 +167,9 @@ class eZStepDatabaseInit extends eZStepInstaller
         if ( !isset( $this->PersistenceList['database_info']['dbname'] ) or
              !$this->PersistenceList['database_info']['dbname'] )
             $this->PersistenceList['database_info']['dbname'] = $config->variable( 'DatabaseSettings', 'DefaultName' );
+         if ( $this->PersistenceList['database_info']['type'] == 'sqlite3' )
+            $this->PersistenceList['database_info']['dbname'] = 'sqlite.db';
+
         if ( !isset( $this->PersistenceList['database_info']['user'] ) or
              !$this->PersistenceList['database_info']['user'] )
             $this->PersistenceList['database_info']['user'] = $config->variable( 'DatabaseSettings', 'DefaultUser' );

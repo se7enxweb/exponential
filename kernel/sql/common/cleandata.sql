@@ -36949,7 +36949,7 @@ INSERT INTO ezsite_data (
   value
 ) VALUES (
   'ezpublish-version',
-  '5.90.0alpha1'
+  '6.0.0stable'
 );
 
 INSERT INTO ezurl (

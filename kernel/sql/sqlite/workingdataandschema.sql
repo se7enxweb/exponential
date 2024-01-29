@@ -3050,7 +3050,7 @@ CREATE TABLE `ezsite_data` (
 ,  PRIMARY KEY (`name`)
 );
 INSERT INTO ezsite_data VALUES('ezpublish-release','1');
-INSERT INTO ezsite_data VALUES('ezpublish-version','5.90.0alpha1');
+INSERT INTO ezsite_data VALUES('ezpublish-version','6.0.0stable');
 INSERT INTO ezsite_data VALUES('ezwebin','1.5.0');
 CREATE TABLE `ezstarrating` (
   `contentobject_id` integer NOT NULL

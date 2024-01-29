@@ -381,7 +381,11 @@ class eZStepSiteTypes extends eZStepInstaller
             $sitePackageName = $sitePackageInfo;
 
             $package = eZPackage::fetch( $sitePackageName, false, false, false );
-            $this->ErrorMsg = ezpI18n::tr( 'design/standard/setup/init', 'Invalid package' ) . '.';
+
+            if ( !is_object( $package ) )
+                $this->ErrorMsg = ezpI18n::tr( 'design/standard/setup/init', 'Invalid package' ) . '.';
+            else
+                $downloaded = true;
         }
 
         // Verify package.

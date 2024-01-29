@@ -37,10 +37,36 @@ class eZSQLite3DB extends eZDBInterface
 
     /*!
      \private
-     Opens a new connection to a MySQL database and returns the connection
+     Opens a new connection to a SQLite database and returns the connection
     */
     private function connect( $fileName )
     {
+/*
+        print( $sql . PHP_EOL . PHP_EOL );
+
+        $backtrace = debug_backtrace();
+        $cleanedBackTrace = array();
+        foreach ( $backtrace as $call )
+        {
+            $item = '';
+            if ( isset( $call['class'] ) )
+            {
+                $item .= $call['class'];
+            }
+
+            if ( isset( $call['type'] ) )
+            {
+                $item .= $call['type'];
+            }
+
+            $item .= $call['function'] . " in file " . $call['file'] . " line " . $call['line'];
+
+            //$item .= var_export( $call['args'], true );
+            $cleanedBacktrace[] = $item;
+        }
+
+        print( implode( PHP_EOL, $cleanedBacktrace ) . PHP_EOL . PHP_EOL );
+*/
         $connection = false;
         $error = 0;
 
@@ -49,10 +75,14 @@ class eZSQLite3DB extends eZDBInterface
         $numAttempts = 1;
         while ( ( $connection == false || $error !== 0 ) && $numAttempts <= $maxAttempts )
         {
-            $fullPath = $fileName == ':memory:' ? $fileName : eZDir::path( array( 'var/storage/sqlite3', $fileName ) );
+            $directoryPath = 'var/storage/sqlite3';
+            $fullPath = $fileName == ':memory:' ? $fileName : eZDir::path( array( $directoryPath, $fileName ) );
 
-//            if( !file_exists( $fullPath ) )
-//	      $fh = fopen($fullPath, 'w') or eZDebug::writeError( "Connection error: Couldn't create database file. Please try again later or inform the system administrator.", "eZSQLite3DB" );
+            if( !file_exists( $directoryPath ) )
+                mkdir( $directoryPath, 0775 );
+            // var_dump( $fullPath ); echo '<hr>'; // die();
+            if( !file_exists( $fullPath ) )
+                $fh = fopen($fullPath, 'w') or eZDebug::writeError( "Connection error: Couldn't create database file. Please try again later or inform the system administrator.", "eZSQLite3DB" );
             $connection = new SQLite3( $fullPath );
             eZDebug::writeDebug( $connection );
 
