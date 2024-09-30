@@ -381,6 +381,7 @@ class eZContentClassPackageHandler extends eZPackageHandler
 
                 $dataType = $classAttribute->dataType();
                 $classAttribute->store();
+                if ( $dataType != null )
                 $dataType->unserializeContentClassAttribute( $classAttribute, $classAttributeNode, $attributeDatatypeParameterNode );
                 $classAttribute->sync();
             }
