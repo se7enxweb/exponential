@@ -1811,14 +1811,14 @@ class eZModule
             $currentView = false;
 
         // Check if the module has set the navigation part, if not default to module setting
-        if ( !isset( $Return['navigation_part'] ) )
+        if ( !isset( $Return['navigation_part'] ) && is_array( $Return ) )
         {
             $Return['is_default_navigation_part'] = true;
             if ( isset( $function['default_navigation_part'] ) )
                 $Return['navigation_part'] = $function['default_navigation_part'];
 
         }
-        else
+        elseif( is_array( $Return ) )
         {
             $Return['is_default_navigation_part'] = false;
         }
