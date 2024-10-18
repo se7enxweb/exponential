@@ -20,7 +20,8 @@
         "se7enxweb/bcurlaliaswithdash": "bcurlaliaswithdash is a feature complete lower case url seo enhancing solution that provides dashes to replace spaces in urls providing simply amazing results in terms of easy to type website urls. Works well with existing content in a website. Try it today and you won't be disappointed.",
         "se7enxweb/sevenx_valkey": "7x Valkey provides a feature complete simple template operator and class which provides access to valkey and redis compatible nosql databases. php-redis extension required",
         "se7enxweb/xrowmetadata": "xrowmetadata is a feature complete seo enhancing solution that provides simply amazing results in terms of search engine seo optimization of existing content in a website. Try it today and you won't be disappointed.",
-        "se7enxweb/ezownerchange": "ezownerchange is a feature complete solution for changing ownership information to the selected user. Works well on sites of any kind. Try it today and you won't be disappointed."
+        "se7enxweb/ezownerchange": "ezownerchange is a feature complete solution for changing ownership information to the selected user. Works well on sites of any kind. Try it today and you won't be disappointed.",
+        "se7enxweb/git_manager": "git manager is a feature complete solution for updating your git based checkout directory containing eZ Publish software. Works well for users who rely on version control. Try it today and you won't be disappointed."
     },
     "require": {
         "php": "^7.4 || ^8.1",
