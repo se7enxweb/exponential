@@ -1,4 +1,4 @@
-<div id="leftmenu"{if $edit_menu_collapsed} style="margin-left:-10.5em;"{/if}>
+<div id="leftmenu" class="sidebar">
 <div id="leftmenu-design">
 
 {if is_set( $module_result.left_menu )}
@@ -27,4 +27,4 @@
 </div>
 </div>
 
-<hr class="hide" />
+{*<hr class="hide" />*}

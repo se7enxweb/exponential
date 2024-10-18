@@ -1,6 +1,6 @@
 /* Common styles for both web and mobile */
-#navbar {
-    background: url("https://admin.demo.se7enx.com/design/admin/images/3/dark_back.png");
+/* #navbar {
+    background: url("../images/3/dark_back.png");
     overflow: hidden;
 }
  
@@ -20,33 +20,33 @@
     text-align: center;
     text-decoration: none;
     display: block;
-}
+} */
 
 /* Active state styling */
-.navbar-menu li a.selected {
-    background-color: #ee800bb5; /* Darker background color for active item */
-    color: #fff; /* Ensure text color is readable */
-    font-weight: bold; /* Optional: Make the active item bold */
+/* .navbar-menu li a.selected {
+    background-color: #ee800bb5;
+    color: #fff;
+    font-weight: bold;
     text-decoration: underline;
-}
+} */
 
 /* Web-specific styles */
-@media screen and (min-width: 1120px) {
+/* @media screen and (min-width: 1120px) {
     .navbar-menu li:nth-child(1) {
         float: left;
         padding-left:-27px;
     }
     .navbar-icon {
-        display: none; /* Hide the icon on the web */
+        display: none;
     }
     .navbar-menu {
         display: flex;
         justify-content: space-around;
     }
-}
+} */
 
 /* Mobile-specific styles */
-@media screen and (max-width: 1119px) {
+/* @media screen and (max-width: 1119px) {
     #columns {
         margin-top: 11px;
     }
@@ -60,12 +60,12 @@
         font-size: 45px;
         cursor: pointer;
         color: white;
-        padding: 1px 12px;
+        padding: 1px 5px;
         margin-top: -10px;
     }
 
     .navbar-menu {
-        display: none; /* Initially hide the menu */
+        display: none;
         flex-direction: column;
         width: 100%;
     }
@@ -77,16 +77,24 @@
 
     li {
         margin: 0px 0 0 0 !important;
-        /* padding: 0; */
-        /* line-height: 1.25em; */
+        padding: 0;
+        line-height: 1.25em;
     }
 
     #searchtext{
         width:109px !important;
     }
 
-}
+} */
 
-#header-search{
+/* #header-search{
     padding-top: 9px;
+} */
+
+
+/* BEGIN::Fix Dashboard Layout */
+.message-confirmation,.message-feedback,.message-warning,.message-error {
+    padding: 0.5rem;
+    margin: 0;
 }
+/* END::Fix Dashboard Layout */
