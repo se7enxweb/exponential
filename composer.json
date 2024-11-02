@@ -61,6 +61,7 @@
         "se7enxweb/birthday": "~1.3.0",
         "se7enxweb/recaptcha": "~1.4.0",
         "se7enxweb/hcaptcha": "~1.0.0",
+        "se7enxweb/ezupdate": "~1.0.1",
         "symfony/polyfill-php73":  "^1.9",
         "zetacomponents/archive": "~1.5",
         "zetacomponents/authentication": "~1.4",
