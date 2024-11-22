@@ -9,12 +9,12 @@ function sidebarToggle() {
                 $(".sidebar-control").removeClass("rotate");
             }
 
-            $("#leftmenu").addClass("show");
+            $(".sidebar.left").addClass("show");
             $(".sidebar-control.left").addClass("rotate");
             return;
         }
 
-        $("#leftmenu").removeClass("show");
+        $(".sidebar.left").removeClass("show");
         $(".sidebar-control.left").removeClass("rotate");
     }
 
@@ -27,12 +27,12 @@ function sidebarToggle() {
                 $(".sidebar-control").removeClass("rotate");
             }
 
-            $("#rightmenu").addClass("show");
+            $(".sidebar.right").addClass("show");
             $(".sidebar-control.right").addClass("rotate");
             return;
         }
 
-        $("#rightmenu").removeClass("show");
+        $(".sidebar.right").removeClass("show");
         $(".sidebar-control.right").removeClass("rotate");
     }
 
@@ -106,5 +106,5 @@ function wrapTable() {
 $(function () {
     sidebarToggle();
     navbarToggle();
-    wrapTable();
+    // wrapTable();
 });
