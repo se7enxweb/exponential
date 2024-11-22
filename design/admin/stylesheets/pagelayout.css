@@ -347,7 +347,7 @@ div#columns.hide-rightmenu div#rightmenu  { display: none; }
 div#columns.hide-rightmenu div#maincolumn { margin-right: 0; }
 
 /* PANELS SEPARATORS */
-#left-panels-separator, #right-panels-separator
+#left-panels-separator
 {
     position: absolute;
     width:50px;
@@ -356,6 +356,15 @@ div#columns.hide-rightmenu div#maincolumn { margin-right: 0; }
     bottom:0;
     z-index:1;
     left: 172px;
+}
+#right-panels-separator
+{
+    position: absolute;
+    width:50px;
+    background: url(../images/3/logo_separator_sprite.png) repeat-y 0 0;
+    top:0;
+    bottom:0;
+    z-index:1;
 }
 
 .panels-separator-top
