@@ -82,10 +82,6 @@ function sidebarToggle() {
     }
 
     resetSidebar();
-
-    $(window).resize(function () {
-        resetSidebar();
-    });
 }
 
 // Navbar menu toggling feature
@@ -103,8 +99,22 @@ function wrapTable() {
     }, 1000);
 }
 
+// Adjust header height dynamically
+function adjustHeaderHeight() {
+    const headerHeight = document.querySelector("#header").offsetHeight;
+    const dashboard = document.querySelector(".dashboard-flex");
+
+    if (!dashboard) {
+        return;
+    }
+
+    // Set the --header-height CSS variable dynamically
+    dashboard.style.setProperty('--header-height', `${headerHeight / 16}rem`);
+}
+
 $(function () {
     sidebarToggle();
     navbarToggle();
+    adjustHeaderHeight();
     // wrapTable();
 });

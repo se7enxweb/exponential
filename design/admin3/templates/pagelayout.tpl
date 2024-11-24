@@ -43,8 +43,7 @@
         {/cache-block}{* /Pr uri cache *}
 
         <div id="columns" {if $hide_right_menu} class="hide-rightmenu" {/if}>
-
-            <div class="dashboard-flex{if $ui_context_edit} edit-mode{/if}">
+            <div class="dashboard-flex">
                 <!-- begin::Left Sidebar -->
                 {if $hide_left_menu}
                 {else}
