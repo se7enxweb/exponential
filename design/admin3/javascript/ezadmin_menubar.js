@@ -116,5 +116,5 @@ $(function () {
     sidebarToggle();
     navbarToggle();
     adjustHeaderHeight();
-    // wrapTable();
+    wrapTable();
 });

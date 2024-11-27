@@ -1082,6 +1082,12 @@ input:-moz-placeholder {
 }
 
 /* BEGIN::Fix Dashboard Layout */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .dashboard-flex {
     --header-height: 6.25rem;
 
@@ -1411,17 +1417,17 @@ input:-moz-placeholder {
     overflow-x: auto;
     display: block;
     clear: both;
-    max-width: calc(100vw - 4rem);
+    max-width: calc(100vw - 3.25rem);
 }
 
 div:has(> table) {
     overflow-x: auto;
     display: block;
     clear: both;
-    /* max-width: calc(100vw - 4rem); */
+    max-width: calc(100vw - 3.25rem);
 }
 
-@media screen and (min-width: 575px) {
+@media screen and (min-width: 576px) {
     .table-responsive {
         max-width: auto;
     }
@@ -1551,7 +1557,22 @@ body {
     z-index: 1020;
 }
 
+div.popupmenu#EditSubmenu {
+    z-index: 1020;
+}
+
+input.button,
+input.defaultbutton,
+input.button-disabled {
+    margin: 0.25rem 0 0.25rem;
+}
+
+fieldset {
+    padding: 0.5rem;
+}
+
+/* END::Fix Dashboard Layout */
+
 #debug {
     padding: 1rem;
 }
-/* END::Fix Dashboard Layout */
