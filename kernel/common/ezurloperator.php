@@ -346,10 +346,10 @@ CODEPIECE;
                     }
 
                     $code = '%tmp1% = %1%;';
-                    $code .= 'if ( preg_match( "#^[a-zA-Z0-9]+:#", %tmp1% ) or' . "\n" .
-                             'substr( %tmp1%, 0, 2 ) == \'//\' )' . "\n" .
+                    $code .= 'if ( !is_null( %tmp1% ) && preg_match( "#^[a-zA-Z0-9]+:#", %tmp1% ) or' . "\n" .
+                             '!is_null( %tmp1% ) && substr( %tmp1%, 0, 2 ) == \'//\' )' . "\n" .
                              '  %tmp1% = \'/\';' . "\n" .
-                             'else if ( strlen( %tmp1% ) > 0 and' . "\n" .
+                             'else if ( !is_null( %tmp1% ) && strlen( %tmp1% ) > 0 and' . "\n" .
                              '  %tmp1%[0] != \'/\' )' . "\n" .
                              '%tmp1% = \'/\' . %tmp1%;' . "\n";
 
@@ -374,10 +374,10 @@ CODEPIECE;
                         $parameter = "eZURI::getTransformURIMode()";
                     }
 
-                    $code = 'if ( preg_match( "#^[a-zA-Z0-9]+:#", %1% ) or' . "\n" .
-                            'substr( %1%, 0, 2 ) == \'//\' )' . "\n" .
+                    $code = 'if ( !is_null( %1% ) && preg_match( "#^[a-zA-Z0-9]+:#", %1% ) or' . "\n" .
+                            '!is_null( %1% ) && substr( %1%, 0, 2 ) == \'//\' )' . "\n" .
                             '  %1% = \'/\';' . "\n" .
-                            'else if ( strlen( %1% ) > 0 and' . "\n" .
+                            'else if ( !is_null( %1% ) && strlen( %1% ) > 0 and' . "\n" .
                             '  %1%[0] != \'/\' )' . "\n" .
                             '%1% = \'/\' . %1%;' . "\n";
                     $code .= "eZURI::transformURI( %1%, true, $parameter );\n";
