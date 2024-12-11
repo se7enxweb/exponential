@@ -1417,14 +1417,14 @@ input:-moz-placeholder {
     overflow-x: auto;
     display: block;
     clear: both;
-    max-width: calc(100vw - 3.25rem);
+    max-width: calc(100vw - 2rem);
 }
 
 div:has(> table) {
     overflow-x: auto;
     display: block;
     clear: both;
-    max-width: calc(100vw - 3.25rem);
+    max-width: calc(100vw - 2rem);
 }
 
 @media screen and (min-width: 576px) {
@@ -1575,4 +1575,5 @@ fieldset {
 
 #debug {
     padding: 1rem;
+    max-width: 100%;
 }

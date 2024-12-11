@@ -112,9 +112,11 @@ function adjustHeaderHeight() {
     dashboard.style.setProperty('--header-height', `${headerHeight / 16}rem`);
 }
 
-$(function () {
-    sidebarToggle();
-    navbarToggle();
-    adjustHeaderHeight();
-    wrapTable();
-});
+(($) => {
+    $(function () {
+        sidebarToggle();
+        navbarToggle();
+        adjustHeaderHeight();
+        // wrapTable();
+    });
+})(jQuery);
