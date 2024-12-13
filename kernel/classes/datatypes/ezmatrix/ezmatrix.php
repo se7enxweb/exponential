@@ -691,10 +691,10 @@ class eZMatrix
     */
     function decodeXML( $xmlString )
     {
-        $dom = new DOMDocument( '1.0', 'utf-8' );
-        $success = $dom->loadXML( $xmlString );
         if ( $xmlString != "" )
         {
+            $dom = new DOMDocument( '1.0', 'utf-8' );
+            $success = $dom->loadXML( $xmlString );
             // set the name of the node
             $nameArray = $dom->getElementsByTagName( "name" );
             $this->setName( $nameArray->item( 0 )->textContent );
