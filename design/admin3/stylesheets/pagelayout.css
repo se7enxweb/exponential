@@ -1573,6 +1573,25 @@ fieldset {
 
 /* END::Fix Dashboard Layout */
 
+/* =============================== */
+/* 01-05-2024 */
+/* =============================== */
+#overlay-mask {
+    z-index: 121 !important;
+}
+
+div:has(.modal-window) {
+    z-index: 122 !important;
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+}
+/* =============================== */
+/* 01-05-2024 */
+/* =============================== */
+
+
 #debug {
     padding: 1rem;
     max-width: 100%;
