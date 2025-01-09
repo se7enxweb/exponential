@@ -1477,8 +1477,23 @@ class eZDebug
         }
 
         if ( $as_html )
-        {
-            echo "<div id=\"debug\"><h2>eZ debug</h2>";
+	{
+	    $ini = eZINI::instance();
+
+	    if( $ini->variable( 'DebugSettings', 'DebugByUser' ) == 'enabled' )
+	    {
+	        $byUser = " (By User)";
+	    } else {
+	        $byUser = false;
+	    }
+	    if( $ini->variable( 'DebugSettings', 'DebugByIP' ) == 'enabled' )
+	    {
+	        $byIP = " (By IP Address)";
+	    } else {
+	        $byIP = false;
+	    }
+
+            echo "<div id=\"debug\"><h2>eZ debug" . $byUser . $byIP ."</h2>";
 
             if ( !$this->UseCSS )
             {
