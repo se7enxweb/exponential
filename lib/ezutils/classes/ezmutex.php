@@ -143,8 +143,17 @@ class eZMutex
         if ( $fp = $this->fp() )
         {
             fclose( $fp );
-            @unlink( $this->MetaFileName );
-            @unlink( $this->FileName );
+
+            if ( file_exists( $this->MetaFileName ) )
+            {
+                @unlink( $this->MetaFileName );
+            }
+
+            if ( file_exists( $this->FileName ) )
+            {
+		@unlink( $this->FileName );
+            }
+
             $GLOBALS['eZMutex_FP_' . $this->FileName] = false;
         }
         return false;
