@@ -348,7 +348,7 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
         {
             throw new RuntimeException(
                 ezpI18n::tr(
-                    'extension/ezjscore/ajaxuploader', 'Unable to retrieve the uploaded file.'
+                    'extension/ezjscore/ajaxuploader', 'Unable to retrieve the uploaded file: '.$file
                 )
             );
         }
