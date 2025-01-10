@@ -1479,7 +1479,7 @@ class eZDebug
         if ( $as_html )
 	{
 	    $ini = eZINI::instance();
-            // 7x
+
 	    if( $ini->variable( 'DebugSettings', 'DebugByUser' ) == 'enabled' )
 	    {
 	        $byUser = " (By User)";
