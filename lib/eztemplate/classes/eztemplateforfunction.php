@@ -93,6 +93,10 @@ class eZTemplateForFunction
         $variableStack   = "for_variable_stack_$uniqid";
         $namesArray = array( "for_firstval_$uniqid", "for_lastval_$uniqid", "for_i_$uniqid" );
 
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$for_firstval_$uniqid = 0;" );
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$for_lastval_$uniqid = 0;" );
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$for_i_$uniqid = 0;" );
+
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "// for begins" );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( !isset( \$$variableStack ) ) \$$variableStack = [];" );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$" . $variableStack ."[] = @compact( '" . implode( "', '", $namesArray ) . "' );" );
