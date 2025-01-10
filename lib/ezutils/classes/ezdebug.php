@@ -1479,7 +1479,7 @@ class eZDebug
         if ( $as_html )
 	{
 	    $ini = eZINI::instance();
-
+            // 7x
 	    if( $ini->variable( 'DebugSettings', 'DebugByUser' ) == 'enabled' )
 	    {
 	        $byUser = " (By User)";
@@ -1505,7 +1505,7 @@ class eZDebug
 -->
 </style>";
             }
-            echo "<table title='Table for actual debug output, shows notices, warnings and errors'>";
+            echo "<table id='main-debug-table' title='Table for actual debug output, shows notices, warnings and errors'>";
         }
 
         $this->printTopReportsList();
@@ -1564,7 +1564,7 @@ class eZDebug
 
             // Resources we always print out, just like log messages
 
-            echo "<h3>Main resources:</h3>";
+            echo "<div id='main-resources'><h3>Main resources:</h3>";
             echo "<table id='debug_resources' title='Most important resource consumption indicators'>";
         }
         if ( $as_html )
@@ -1609,14 +1609,14 @@ class eZDebug
         }
         if ( $as_html )
         {
-            echo "</table>";
+            echo "</table></div>";
         }
 
         if ( $useTiming )
         {
             if ( $as_html )
             {
-                echo "<h3>Timing points:</h3>";
+                echo "<div id='timing-points'><h3>Timing points:</h3>";
                 echo "<table id='timingpoints' title='Timing point stats'><tr><th>Checkpoint</th><th>Start (sec)</th><th>Duration (sec)</th><th>Memory at start (KB)</th><th>Memory used (KB)</th></tr>";
             }
 
@@ -1667,7 +1667,7 @@ class eZDebug
 
             if ( $as_html )
             {
-                echo "</table>";
+                echo "</table></div>";
             }
         }
 
@@ -1708,7 +1708,7 @@ class eZDebug
 
             if ( $as_html )
             {
-                echo "<h3>Time accumulators:</h3>";
+                echo "<div id='time-accumulators'><h3>Time accumulators:</h3>";
                 echo "<table id='timeaccumulators' title='Detailed list of time accumulators'><tr><th>&nbsp;Accumulator</th><th>&nbsp;Duration (sec)</th><th>&nbsp;Duration (%)</th><th>&nbsp;Count</th><th>&nbsp;Average (sec)</th></tr>";
             }
 
@@ -1787,7 +1787,7 @@ class eZDebug
             if ( $as_html )
             {
                 echo "<tr><td colspan=\"5\">Note: percentages do not add up to 100% because some accumulators overlap</td></tr>";
-                echo "</table>";
+                echo "</table></div>";
             }
         }
 
@@ -1795,7 +1795,7 @@ class eZDebug
         {
             if ( $as_html )
             {
-                echo "<h3>Included files:</h3><table id=\"debug_includes\" title='List of included php files used in the processing of this page'><tr><th>File</th></tr>";
+                echo "<div id='included-files'><h3>Included files:</h3><table id=\"debug_includes\" title='List of included php files used in the processing of this page'><tr><th>File</th></tr>";
             }
             else
             {
@@ -1819,7 +1819,7 @@ class eZDebug
             if ( $as_html )
             {
                 echo "<tr><td><b>&nbsp;Number of files included: " . count( $phpFiles ) . "</b></td></tr>";
-                echo "</table>";
+                echo "</table></div>";
             }
         }
 

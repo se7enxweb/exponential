@@ -562,7 +562,7 @@ class ezjscPacker
         $stats = '';
         if ( $as_html )
         {
-            $stats .= '<h3>CSS/JS files loaded with "ezjscPacker" during request:</h3>';
+            $stats .= '<div id="ezjscpackerusagecontainer"><h3>CSS/JS files loaded with "ezjscPacker" during request:</h3>';
             $stats .= '<table id="ezjscpackerusage" class="debug_resource_usage" title="List of used files, hover over italic text for more info!">';
             $stats .= '<tr><th>Cache</th><th>Type</th><th>Packlevel</th><th>SourceFiles</th></tr>';
         }
@@ -590,7 +590,7 @@ class ezjscPacker
 
         if ( $as_html )
         {
-            $stats .= '</table>';
+            $stats .= '</table></div>';
         }
 
         return $stats;
