@@ -1522,6 +1522,11 @@ class eZPersistentObject
     public $WorkflowEventPos;
     public $LanguageID;
     public $ContentObjectStateGroupID;
+    public $contentobject_attribute_id;
+    public $contentobject_id;
+    public $rating;
+    public $rating_count;
+    public $rating_average;
 }
 
 ?>
