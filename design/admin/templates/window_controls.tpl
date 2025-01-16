@@ -14,7 +14,7 @@
      $reverse_related_objects_count = fetch( 'content', 'reverse_related_objects_count', hash( 'object_id', $node.object.id , 'all_relations', true() ) )
      $additional_tabs = array()
      $additional_tabs_count = 0
-     $valid_tabs = array( $default_tab, 'details', 'translations', 'locations', 'relations', 'states' )
+     $valid_tabs = array( $default_tab, 'details', 'translations', 'locations', 'relations', 'states', 'ordering', 'policies', 'roles' )
      $navigation_part_name = fetch( 'section', 'object', hash( 'section_id', $node.object.section_id ) ).navigation_part_identifier
 }
 
