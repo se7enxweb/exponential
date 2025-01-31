@@ -193,6 +193,116 @@ else if ( $http->hasPostVariable( 'SetSorting' ) &&
     }
     return $module->redirectToView( 'view', array( 'full', $nodeID, $languageCode ) );
 }
+else if ( $module->isCurrentAction( 'CopyNode' ) )
+{
+    /* This action is used through the admin interface subitems menu with the "Copy" button,
+     * or in the pop-up menu and will copy a node to a different location. */
+
+    if ( !$module->hasActionParameter( 'NodeID' ) )
+    {
+        eZDebug::writeError( "Missing NodeID parameter for action " . $module->currentAction(),
+                             'content/action' );
+        return $module->redirectToView( 'view', array( 'full', 2 ) );
+    }
+
+    if ( $module->hasActionParameter( 'NewParentNode' ) )
+    {
+        $selectedNodeID = $module->actionParameter( 'NewParentNode' );
+    }
+    else
+    {
+        $selectedNodeIDArray = eZContentBrowse::result( 'CopyNode' );
+        $selectedNodeID = $selectedNodeIDArray[0];
+    }
+
+    $selectedNode = eZContentObjectTreeNode::fetch( $selectedNodeID );
+    if ( !$selectedNode )
+    {
+        eZDebug::writeWarning( "Content node with ID $selectedNodeID does not exist, cannot use that as parent node for node $nodeID",
+                               'content/action' );
+        return $module->redirectToView( 'view', array( 'full', 2 ) );
+    }
+
+    $nodeIDlist = $module->actionParameter( 'NodeID' );
+    if ( strpos( $nodeIDlist, ',' ) !== false )
+    {
+        $nodeIDlist = explode( ',', $nodeIDlist );
+    }
+    else
+    {
+        $nodeIDlist = array( $nodeIDlist );
+    }
+
+    // Check that all user has access to copy all selected nodes
+    $nodeToCopyList = array();
+    foreach( $nodeIDlist as $key => $nodeID )
+    {
+        $node = eZContentObjectTreeNode::fetch( $nodeID );
+        if ( !$node )
+            return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel', array() );
+
+        if ( !$node->canRead() )
+            return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel', array() );
+
+        $object = $node->object();
+        if ( !$object )
+            return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel', array() );
+
+        $nodeToCopyList[] = array( 'node_id'   => $nodeID,
+                                   'object_id' => $object->attribute( 'id' ) );
+
+        $class = $object->contentClass();
+        $classID = $class->attribute( 'id' );
+
+        // check if the object can be copyd to (under) the selected node
+        if ( !$selectedNode->canMoveTo( $classID ) )
+        {
+            eZDebug::writeError( "Cannot copy node $nodeID as child of parent node $selectedNodeID, the current user does not have create permission for class ID $classID",
+                                 'content/action' );
+            return $module->redirectToView( 'view', array( 'full', 2 ) );
+        }
+
+        // Check if we try to copy the node as child of itself or one of its children
+        if ( in_array( $node->attribute( 'node_id' ), $selectedNode->pathArray()  ) )
+        {
+            eZDebug::writeError( "Cannot copy node $nodeID as child of itself or one of its own children (node $selectedNodeID).",
+                                 'content/action' );
+            return $module->redirectToView( 'view', array( 'full', $node->attribute( 'node_id' ) ) );
+        }
+    }
+
+    $notifications = array();
+    // copy selected nodes, this should probably be inside a transaction
+    foreach( $nodeToCopyList as $nodeToCopy )
+    {
+        // if ( eZOperationHandler::operationIsAvailable( 'content_copysubtree' ) )
+        // {
+        //     $operationResult = eZOperationHandler::execute( 'content',
+        //                                                     'copysubtree', array( 'node_id'     => $nodeToCopy['node_id'],
+        //                                                                    'object_id'          => $nodeToCopy['object_id'],
+        //                                                                    'new_parent_node_id' => $selectedNodeID ),
+        //                                                     null,
+        //                                                     true );
+        // }
+        // else
+        // {
+        $notifications[] = eZContentOperationCollection::copyNode( $nodeToCopy['node_id'], $nodeToCopy['object_id'], $selectedNodeID );
+        // }
+    }
+
+    $contentINI = eZINI::instance( 'content.ini' );
+    $showCopySubtreeNotification = $contentINI->variable( 'CopySettings', 'ShowCopySubtreeNotification' );
+    $showNotification = ( $showCopySubtreeNotification == 'enabled' );
+    $Result = array();
+
+    if( $showNotification )
+    {
+        eZContentObjectTreeNodeOperations::showNotificationAfterCopying( $Result, $notifications, $node );
+        return;
+    }
+
+    return $module->redirectToView( 'view', array( $viewMode, $selectedNodeID, $languageCode ) );
+}
 else if ( $module->isCurrentAction( 'MoveNode' ) )
 {
     /* This action is used through the admin interface with the "Move" button,
@@ -1037,6 +1147,116 @@ else if ( $http->hasPostVariable( 'MoveButton' ) )
                                             'permission' => array( 'access' => 'create',
                                                                    'contentclass_id' => $classIDArray ),
                                             'content' => array( 'name_list' => $objectNameArray, 'node_id_list' => $moveIDArray ),
+                                            'start_node' => $parentNodeID,
+                                            'cancel_page' => $module->redirectionURIForModule( $module, 'view', array( $viewMode, $parentNodeID, $languageCode ) ),
+                                            'from_page' => "/content/action" ),
+                                     $module );
+        }
+        else
+        {
+            eZDebug::writeError( "Empty SelectedIDArray parameter for action " . $module->currentAction(),
+                                 'content/action' );
+            $module->redirectTo( $module->functionURI( 'view' ) . '/' . $viewMode . '/' . $parentNodeID . '/' );
+        }
+    }
+    else
+    {
+        eZDebug::writeError( "Missing SelectedIDArray parameter for action " . $module->currentAction(),
+                             'content/action' );
+        $module->redirectTo( $module->functionURI( 'view' ) . '/' . $viewMode . '/' . $parentNodeID . '/' );
+    }
+}
+else if ( $http->hasPostVariable( 'CopyButton' ) )
+{
+    /* action for multi select copy, uses same interface as MoveButton */
+    $viewMode = $http->postVariable( 'ViewMode', 'full' );
+
+    $parentNodeID = $http->postVariable( 'ContentNodeID', 2 );
+    $parentObjectID = $http->postVariable( 'ContentObjectID', 1 );
+
+    if ( $http->hasPostVariable( 'DeleteIDArray' ) or $http->hasPostVariable( 'SelectedIDArray' ) )
+    {
+        if ( $http->hasPostVariable( 'SelectedIDArray' ) )
+            $copyIDArray = $http->postVariable( 'SelectedIDArray' );
+        else
+            $copyIDArray = $http->postVariable( 'DeleteIDArray' );
+
+        if ( is_array( $copyIDArray ) && count( $copyIDArray ) > 0 )
+        {
+            $ignoreNodesSelect = array();
+            $ignoreNodesSelectSubtree = array();
+            $ignoreNodesClick = array();
+            $classIDArray = array();
+            $classIdentifierArray = array();
+            $classGroupArray = array();
+            $sectionIDArray = array();
+            $objectNameArray = array();
+
+            foreach( $copyIDArray as $nodeID )
+            {
+                $node = eZContentObjectTreeNode::fetch( $nodeID );
+                if ( !$node )
+                    return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel', array() );
+
+                if ( !$node->canCreate() )
+                    return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel', array() );
+
+                $object = $node->object();
+                if ( !$object )
+                    return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel', array() );
+
+                $class = $object->contentClass();
+
+                $classIDArray[] = $class->attribute( 'id' );
+                $classIdentifierArray[] = $class->attribute( 'identifier' );
+                $classGroupArray = array_merge( $classGroupArray, $class->attribute( 'ingroup_id_list' ) );
+                $sectionIDArray[] = $object->attribute( 'section_id' );
+                $objectNameArray[] = $object->attribute( 'name' );
+
+                $publishedAssigned = $object->assignedNodes( false );
+                foreach ( $publishedAssigned as $element )
+                {
+                    $ignoreNodesSelect[] = $element['node_id'];
+                    $ignoreNodesSelectSubtree[] = $element['node_id'];
+                    $ignoreNodesClick[]  = $element['node_id'];
+                    $ignoreNodesSelect[] = $element['parent_node_id'];
+                }
+            }
+
+            $parentNode = eZContentObjectTreeNode::fetch( $parentNodeID );
+            if ( !$parentNode )
+                return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel', array() );
+
+            $parentObject = $parentNode->object();
+            if ( !$parentObject )
+                return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel', array() );
+            $parentObjectID = $parentObject->attribute( 'id' );
+
+            $ignoreNodesSelect = array_unique( $ignoreNodesSelect );
+            $ignoreNodesSelectSubtree = array_unique( $ignoreNodesSelectSubtree );
+            $ignoreNodesClick = array_unique( $ignoreNodesClick );
+
+            $classIDArray = array_unique( $classIDArray );
+            $classIdentifierArray = array_unique( $classIdentifierArray );
+            $classGroupArray = array_unique( $classGroupArray );
+            $sectionIDArray = array_unique( $sectionIDArray );
+
+            eZContentBrowse::browse( array( 'action_name' => 'CopyNode',
+                                            'description_template' => 'design:content/browse_copy_subtrees.tpl',
+                                            'keys' => array( 'class' => $classIDArray,
+                                                             'class_id' => $classIdentifierArray,
+                                                             'classgroup' => $classGroupArray,
+                                                             'section' => $sectionIDArray ),
+                                            'ignore_nodes_select' => $ignoreNodesSelect,
+                                            'ignore_nodes_select_subtree' => $ignoreNodesSelectSubtree,
+                                            'ignore_nodes_click'  => $ignoreNodesClick,
+                                            'persistent_data' => array( 'ContentNodeID' => implode( ',', $copyIDArray ),
+                                                                        'ViewMode' => $viewMode,
+                                                                        'ContentObjectLanguageCode' => $languageCode,
+                                                                        'CopyNodeAction' => '1' ),
+                                            'permission' => array( 'access' => 'create',
+                                                                   'contentclass_id' => $classIDArray ),
+                                            'content' => array( 'name_list' => $objectNameArray, 'node_id_list' => $copyIDArray ),
                                             'start_node' => $parentNodeID,
                                             'cancel_page' => $module->redirectionURIForModule( $module, 'view', array( $viewMode, $parentNodeID, $languageCode ) ),
                                             'from_page' => "/content/action" ),

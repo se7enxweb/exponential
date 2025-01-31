@@ -409,14 +409,17 @@ var sortableSubitems = function () {
 
             if (item.value == 0) {
                 $('form[name=children]').append($('<input type="hidden" name="RemoveButton" />')).submit();
-            } else {
+            } else if ( item.value == 2 ) {
+                $('form[name=children]').append($('<input type="hidden" name="CopyButton" />')).submit();
+             } else {
                 $('form[name=children]').append($('<input type="hidden" name="MoveButton" />')).submit();
             }
         }
 
         var moreActBtnActions = [
             {text: labelsObj.ACTION_BUTTONS.more_actions_rs, id: "ezopt-menu-remove", value: 0, onclick: {fn: moreActBtnAction}, disabled: false},
-            {text: labelsObj.ACTION_BUTTONS.more_actions_ms, id: "ezopt-menu-move", value: 1, onclick: {fn: moreActBtnAction}, disabled: false}
+            {text: labelsObj.ACTION_BUTTONS.more_actions_ms, id: "ezopt-menu-move", value: 1, onclick: {fn: moreActBtnAction}, disabled: false},
+            {text: labelsObj.ACTION_BUTTONS.more_actions_cp, id: "ezopt-menu-copy", value: 2, onclick: {fn: moreActBtnAction}, disabled: false}
         ];
 
         var noMoreActBtnActions = [

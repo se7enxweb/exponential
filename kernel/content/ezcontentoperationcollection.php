@@ -775,6 +775,37 @@ class eZContentOperationCollection
     }
 
     /**
+     * Copys a node
+     *
+     * @param int $nodeID
+     * @param int $objectID
+     * @param int $newParentNodeID
+     *
+     * @return array An array with operation notifications like result status true or false
+     */
+    static public function copyNode( $nodeID, $objectID, $newParentNodeID )
+    {
+       $result = eZContentObjectTreeNodeOperations::copy( $nodeID, $newParentNodeID );
+
+       if( !$result )
+       {
+           eZDebug::writeError( "Failed to copy node $nodeID as child of parent node $newParentNodeID",
+                                __METHOD__ );
+
+           return $result;
+       }
+
+       eZContentObject::fixReverseRelations( $objectID, 'copy' );
+
+        if ( !eZSearch::getEngine() instanceof eZSearchEngine )
+        {
+            eZContentOperationCollection::registerSearchObject( $objectID );
+        }
+
+       return $result;
+    }
+
+    /**
      * Adds a new nodeAssignment
      *
      * @param int $nodeID
