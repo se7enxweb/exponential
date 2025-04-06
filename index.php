@@ -15,7 +15,7 @@ if ( !ini_get( "date.timezone" ) )
 }
 
 ignore_user_abort( true );
-error_reporting ( E_ALL | E_STRICT );
+error_reporting ( E_ALL );
 
 require 'autoload.php';
 
