@@ -738,7 +738,7 @@ class eZContentCacheManager
      * @param  array|null   $contentObjectList List of content object IDs to clear
      * @return boolean returns true on success
      */
-    public static function clearNodeViewCacheArray( array $nodeList, array $contentObjectList = null )
+    public static function clearNodeViewCacheArray( array $nodeList, array|null $contentObjectList = null )
     {
         if ( count( $nodeList ) == 0 )
         {

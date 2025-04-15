@@ -217,7 +217,7 @@ class eZOrder extends eZPersistentObject
     /*!
      \return the active orders
     */
-    static function active( $asObject = true, $offset, $limit, $sortField = "created", $sortOrder = "asc", $show = eZOrder::SHOW_NORMAL )
+    static function active( $asObject = true, $offset, $limit = 100000, $sortField = "created", $sortOrder = "asc", $show = eZOrder::SHOW_NORMAL )
     {
         if ( $sortField == "user_name" )
         {

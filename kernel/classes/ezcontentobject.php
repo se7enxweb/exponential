@@ -6393,7 +6393,7 @@ class eZContentObject extends eZPersistentObject
      * @return array the IDs of all states we are allowed to set
      * @param eZUser $user the user to check the policies of, when omitted the currently logged in user will be used
      */
-    function allowedAssignStateIDList( eZUser $user = null )
+    function allowedAssignStateIDList( eZUser|null $user = null )
     {
         if ( !$user instanceof eZUser )
         {
@@ -6510,7 +6510,7 @@ class eZContentObject extends eZPersistentObject
      * @param eZUser|null $user
      * @return array
      */
-    function allowedAssignStateList( eZUser $user = null )
+    function allowedAssignStateList( eZUser|null $user = null )
     {
         $allowedStateIDList = $this->allowedAssignStateIDList( $user );
 
