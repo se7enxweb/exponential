@@ -24,7 +24,7 @@
         "se7enxweb/git_manager": "git manager is a feature complete solution for updating your git based checkout directory containing eZ Publish software. Works well for users who rely on version control. Try it today and you won't be disappointed."
     },
     "require": {
-        "php": "^7.4 || ^8.1",
+        "php": "^8.1 || ^8.2",
         "ext-dom": "*",
         "ext-libxml": "*",
         "ext-mbstring": "*",
@@ -100,5 +100,11 @@
       "post-update-cmd": [
           "@legacy-scripts"
       ]
+    },
+    "config": {
+        "allow-plugins": {
+            "se7enxweb/ezpublish-legacy-installer": true,
+            "ezsystems/ezpublish-legacy-installer": true
+        }
     }
 }
