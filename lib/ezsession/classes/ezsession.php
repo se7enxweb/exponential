@@ -263,7 +263,7 @@ class eZSession
      * @since 4.1
      * @return bool Depending on if eZSession is registrated as session handler.
     */
-    static protected function registerFunctions( $sessionName = false, ezpSessionHandler $handler = null )
+    static protected function registerFunctions( $sessionName = false, ezpSessionHandler|null $handler = null )
     {
         if ( self::$hasStarted || self::$handlerInstance !== null )
             return false;
@@ -576,7 +576,7 @@ class eZSession
      * @since 4.4
      * @return ezpSessionHandler
      */
-    static public function getHandlerInstance( ezpSessionHandler $handler = null )
+    static public function getHandlerInstance( ezpSessionHandler|null $handler = null )
     {
         if ( self::$handlerInstance === null )
         {

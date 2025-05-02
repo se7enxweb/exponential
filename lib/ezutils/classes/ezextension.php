@@ -36,7 +36,7 @@ class eZExtension
      * @param eZINI|null $siteINI Optional parameter to be able to only do change on specific instance of site.ini
      * @return string
      */
-    static function baseDirectory( eZINI $siteINI = null )
+    static function baseDirectory( eZINI|null $siteINI = null )
     {
         if ( $siteINI === null )
             $siteINI = eZINI::instance();
@@ -57,7 +57,7 @@ class eZExtension
      * @param eZINI|null $siteINI Optional parameter to be able to only do change on specific instance of site.ini
      * @return array
      */
-    public static function activeExtensions( $extensionType = false, eZINI $siteINI = null )
+    public static function activeExtensions( $extensionType = false, eZINI|null $siteINI = null )
     {
         if ( $siteINI === null )
         {

@@ -5213,7 +5213,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
     // This code is automatically generated from templates/classcreatelist.ctpl
     // code-template::auto-generated:END can-instantiate-class-list
 
-    static public function makeObjectsArray( $array , $with_contentobject = true, array $propertiesOverride = null, $lang = null )
+    static public function makeObjectsArray( $array , $with_contentobject = true, array|null $propertiesOverride = null, $lang = null )
     {
         $retNodes = array();
         if ( !is_array( $array ) )

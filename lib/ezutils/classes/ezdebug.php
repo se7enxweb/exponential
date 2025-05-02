@@ -347,7 +347,8 @@ class eZDebug
                        E_USER_WARNING => 'E_USER_WARNING',
                        E_NOTICE => 'E_NOTICE',
                        E_USER_NOTICE => 'E_USER_NOTICE',
-                       E_STRICT => 'E_STRICT' );
+                       // E_STRICT => 'E_STRICT'
+		       );
             // Since PHP 5.2
             if ( defined('E_RECOVERABLE_ERROR') )
                 $GLOBALS['eZDebugPHPErrorNames'][E_RECOVERABLE_ERROR] = 'E_RECOVERABLE_ERROR';
