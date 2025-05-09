@@ -44,7 +44,9 @@ access to the Internet.
 
 ## What version of PHP is required
 
-eZ Publish Legacy supports PHP 7.4 -> 8.3 please use the latest version of PHP available on your OS.
+eZ Publish Legacy supports PHP 8.1 -> 8.4 please use the latest version of PHP available on your OS.
+
+PHP 7 Support is available from our older still stable and usable past releases up to version 6.0.7.
 
 # Main eZ Publish features
 ------------------------
@@ -129,6 +131,7 @@ Further reading: [https://ibexa.co/](https://ibexa.co/)
 # License
 -------
 eZ Publish is dual licensed. You can choose between the GNU GPL and the eZ Publish Professional License. The GNU GPL gives you the right to use, modify and redistribute eZ Publish under certain conditions. The GNU GPL license is distributed with the software, see the file LICENSE. It is also available at http://www.gnu.org/licenses/gpl.txt
+
 Using eZ Publish under the terms of the GNU GPL is free of charge.
 
-The eZ Publish Proprietary License gives you the right to use the source code for making your own commercial software. It allows you full protection of your work made with eZ Publish. You may re-brand, license and close your source code. eZ Publish is not free of charge when used under the terms of the Professional License. For pricing and ordering, please contact info@ez.no or visit http://ez.no
+The eZ Publish Proprietary License gives you the right to use the source code for making your own commercial software. It allows you full protection of your work made with eZ Publish. You may re-brand, license and close your source code. eZ Publish is not free of charge when used under the terms of the Professional License. Please note that this offer is no longer available by default making eZ Publish GPL ONlY. 
