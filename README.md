@@ -134,4 +134,4 @@ eZ Publish is dual licensed. You can choose between the GNU GPL and the eZ Publi
 
 Using eZ Publish under the terms of the GNU GPL is free of charge.
 
-The eZ Publish Proprietary License gives you the right to use the source code for making your own commercial software. It allows you full protection of your work made with eZ Publish. You may re-brand, license and close your source code. eZ Publish is not free of charge when used under the terms of the Professional License. Please note that this offer is no longer available by default making eZ Publish GPL ONlY. 
+The eZ Publish Proprietary License gives you the right to use the source code for making your own commercial software. It allows you full protection of your work made with eZ Publish. You may re-brand, license and close your source code. eZ Publish is not free of charge when used under the terms of the Professional License. Please note that this offer is no longer available by default making eZ Publish GPL ONLY. 
