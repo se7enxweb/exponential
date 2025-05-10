@@ -130,8 +130,8 @@ Further reading: [https://ibexa.co/](https://ibexa.co/)
 
 # License
 -------
-eZ Publish is dual licensed. You can choose between the GNU GPL and the eZ Publish Professional License. The GNU GPL gives you the right to use, modify and redistribute eZ Publish under certain conditions. The GNU GPL license is distributed with the software, see the file LICENSE. It is also available at http://www.gnu.org/licenses/gpl.txt
+eZ Publish is GNU GPL licensed. You can no longer choose between the GNU GPL and the eZ Publish Professional License. The GNU GPL gives you the right to use, modify and redistribute eZ Publish under certain conditions. The GNU GPL license is distributed with the software, see the file LICENSE. It is also available at http://www.gnu.org/licenses/gpl.txt
 
 Using eZ Publish under the terms of the GNU GPL is free of charge.
 
-The eZ Publish Proprietary License gives you the right to use the source code for making your own commercial software. It allows you full protection of your work made with eZ Publish. You may re-brand, license and close your source code. eZ Publish is not free of charge when used under the terms of the Professional License. Please note that this offer is no longer available by default making eZ Publish GPL ONLY. 
+The Professional License is no longer available. This effectively makes eZ Publish GNU GPL ONLY. 
