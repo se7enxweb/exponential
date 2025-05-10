@@ -87,7 +87,7 @@ PHP 7 Support is available from our older still stable and usable past releases 
 
 # Installation
 ------------
-Read [doc/INSTALL.md](doc/INSTALL.md) or go to [doc.ezpublishlegacy.se7enx.com/eZ-Publish/Technical-manual/6.x/Installation.html](https://doc.ezpublishlegacy.se7enx.com/eZ-Publish/Technical-manual/6.x/Installation.html)
+Read [doc/INSTALL.md](doc/INSTALL.md) or go to [ezpublish.doc.ezpublish.one/eZ-Publish/Technical-manual/6.x/Installation.html](https://ezpublish.doc.ezpublish.one/eZ-Publish/Technical-manual/6.x/Installation.html)
 
 # Issue tracker
 
@@ -97,9 +97,9 @@ If you discover a security issue, please responsibly report such issues.
 
 # Where to get more help
 
-eZ Publish documentation: [doc.ezpublishlegacy.se7enx.com/eZ-Publish](https://doc.ezpublishlegacy.se7enx.com/eZ-Publish)
+eZ Publish documentation: [ezpublish.doc.ezpublish.one/eZ-Publish](https://ezpublish.doc.ezpublish.one/eZ-Publish)
 
-eZ Publish Community forums: [share.se7enx.com/forums](https://share.se7enx.com/forums)
+eZ Publish Community forums: [share.ezpublish.one/forums](https://share.ezpublish.one/forums)
 
 Share eZ Publish! Telegram Community Support Chat
 [https://t.me/ezpublish](https://t.me/ezpublish)
