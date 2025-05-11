@@ -6,7 +6,7 @@
 
 # eZ Publish Project Status
 
-**eZ Publish has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2 and 8.3.**
+**eZ Publish has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3 and beyond 8.4.**
 
 # What is eZ Publish?
 
