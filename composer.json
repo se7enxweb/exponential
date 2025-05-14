@@ -45,6 +45,7 @@
         "se7enxweb/ezmbpaex": "~6.0.0",
         "se7enxweb/ezmultiupload": "~6.0.1",
         "se7enxweb/ezodf": "~6.0.0",
+        "se7enxweb/ezprestapi": "~1.2.0",
         "se7enxweb/ezprestapiprovider": "~6.0.0",
         "se7enxweb/ezstarrating": "~6.0.0",
         "se7enxweb/ezwt": "~6.0.0",
