@@ -6,7 +6,7 @@
 
 # eZ Publish Project Status
 
-**eZ Publish has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3 and beyond 8.4.**
+**eZ Publish has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4 and beyond. **
 
 # What is eZ Publish?
 
@@ -46,7 +46,7 @@ access to the Internet.
 
 eZ Publish Legacy supports PHP 8.1 -> 8.4 please use the latest version of PHP available on your OS.
 
-PHP 7 Support is available from our older still stable and usable past releases up to version 6.0.7.
+PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7.
 
 # Main eZ Publish features
 ------------------------
@@ -65,7 +65,7 @@ PHP 7 Support is available from our older still stable and usable past releases 
 - Flexible workflow management system
 - Full support for Unicode
 - Template engine
-- A read only REST API
+- A headless CRUD REST API
 - Database abstraction layer supporting MySQL, SQLite, Postgres and Oracle
 - MVC architecture
 - Support for the latest Image and Video File Formats (webp, webm, png, jpeg, etc)
