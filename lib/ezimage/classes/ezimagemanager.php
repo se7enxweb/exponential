@@ -842,6 +842,7 @@ class eZImageManager
             else
             {
                 eZDebug::writeError( "The reference alias $referenceAlias file {$existingAliasList[$referenceAlias]['url']} does not exist", __METHOD__ );
+                eZDebug::writeError( "Error ocurred using URI: " . $_SERVER['REQUEST_URI'] , __METHOD__ );
             }
         }
         if ( !$hasReference )
