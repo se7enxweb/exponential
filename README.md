@@ -1,4 +1,4 @@
-# eZ Publish 6.0
+# eZ Publish 6.0.x
 ![eZ Publish - Powered by SQLite Logo](https://github.com/se7enxweb/ezpublish/assets/51429274/b969638f-5f74-490a-8659-dd46c1b4d46e)
 
 ![eZ Publish - Project Logo](https://github.com/se7enxweb/ezpublish/assets/51429274/b09e3459-4614-49b2-8256-666073b1b8af)
@@ -7,6 +7,16 @@
 # eZ Publish Project Status
 
 **eZ Publish has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4 and beyond. **
+
+# Who is 7x
+
+[7x](https://se7enx.com) is the North American corporation driving The Continued General Use, Support, Development, Hosting, Design of eZ Publish Enterprise Open Source Content Management System in 2025.
+
+7x has been in busines supporting eZ Publish Website Customers and Projects for over 24 years. 7x took over leadership of the project and it's development, support, adoption and community growth in 2023.
+
+7x represents a serious company leading the open source community based effort to improve eZ Publish and it's available community resources to help users continue to adopt and use the platform to deliver the very best in web applications websites and headless applications in the cloud.
+
+Previously before 2022, 7x was called Brookins Consulting who was the outspoken leader in the active eZ Publish Community and it's Portals for the past 24 years.
 
 # What is eZ Publish?
 
@@ -101,8 +111,20 @@ eZ Publish documentation: [ezpublish.doc.ezpublish.one/eZ-Publish](https://ezpub
 
 eZ Publish Community forums: [share.ezpublish.one/forums](https://share.ezpublish.one/forums)
 
+eZ Publish Project Website: [ezpublish.one](https://ezpublish.one)
+
+Support eZ Publish! Project extension support Website: [support.ezpublish.one](https://support.ezpublish.one)
+
 Share eZ Publish! Telegram Community Support Chat
 [https://t.me/ezpublish](https://t.me/ezpublish)
+
+# Donate and make a support subscription. Help fund eZ Publish
+
+You can support this project and it's community by making a donation of what ever size donation you feel willing to give to the project.
+
+If we have helped you and you would like to support the project with a subscription of financial support you may. This is what helps us deliver more new features and improvements to the software. Support eZ Publish with a subscription today!
+
+A wide range of donation options avaialble at [sponsor.se7enx.com/](https://sponsor.se7enx.com/), [paypal.com/paypalme/7xweb](https://www.paypal.com/paypalme/7xweb) and [github.com/sponsors/se7enxweb](https://github.com/sponsors/se7enxweb)
 
 # What is eZ Platform?
 
@@ -125,11 +147,15 @@ Ibexa DXP OSS has matured into a robust and versatile platform, serving as a ser
 
 If you're making a choice, choose with care—and consider the power and flexibility of Ibexa DXP OSS.
 
-Further reading: [https://ibexa.co/](https://ibexa.co/)
+Further reading: [ibexa.co](https://ibexa.co/)
+
+Documentation for Ibexa DXP: [doc.ibexa.co/en/latest/](https://doc.ibexa.co/en/latest/)
+
+Ibexa DXP Developer Portal: [developers.ibexa.co](https://developers.ibexa.co/)
 
 
 # License
--------
+
 eZ Publish is GNU GPL licensed. You can no longer choose between the GNU GPL and the eZ Publish Professional License. The GNU GPL gives you the right to use, modify and redistribute eZ Publish under certain conditions. The GNU GPL license is distributed with the software, see the file LICENSE. It is also available at http://www.gnu.org/licenses/gpl.txt
 
 Using eZ Publish under the terms of the GNU GPL is free of charge.
