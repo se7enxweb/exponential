@@ -6,7 +6,7 @@
 
 # eZ Publish Project Status
 
-**eZ Publish has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4 and beyond. **
+**eZ Publish has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4 and beyond php9**
 
 # Who is 7x
 
@@ -59,7 +59,7 @@ eZ Publish Legacy supports PHP 8.1 -> 8.4 please use the latest version of PHP a
 PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7.
 
 # Main eZ Publish features
-------------------------
+
 - User defined content classes and objects
 - Version control
 - Advanced multi-lingual support
@@ -96,14 +96,14 @@ PHP 7 Support is deprecated but still available from our older stable and usable
     - content geolocation
 
 # Installation
-------------
+
 Read [doc/INSTALL.md](doc/INSTALL.md) or go to [ezpublish.doc.ezpublish.one/eZ-Publish/Technical-manual/6.x/Installation.html](https://ezpublish.doc.ezpublish.one/eZ-Publish/Technical-manual/6.x/Installation.html)
 
 # Issue tracker
 
 Submitting bugs, improvements and stories is possible on [https://github.com/se7enxweb/ezpublish/issues](https://github.com/se7enxweb/ezpublish/issues)
 
-If you discover a security issue, please responsibly report such issues.
+If you discover a [security issue](SECURITY.md), please responsibly report such issues via email to security@ezpublish.one
 
 # Where to get more help
 
@@ -118,13 +118,18 @@ Support eZ Publish! Project extension support Website: [support.ezpublish.one](h
 Share eZ Publish! Telegram Community Support Chat
 [https://t.me/ezpublish](https://t.me/ezpublish)
 
-# Donate and make a support subscription. Help fund eZ Publish
+# How to contribute new features and bugfixes into eZ Publish
+
+Everyone is encouraged to [contribute](CONTRIBUTING.md) to the development of new features and bugfixes for eZ Publish 6.
+
+# Donate and make a support subscription. 
+## Help fund eZ Publish!
 
 You can support this project and it's community by making a donation of what ever size donation you feel willing to give to the project.
 
 If we have helped you and you would like to support the project with a subscription of financial support you may. This is what helps us deliver more new features and improvements to the software. Support eZ Publish with a subscription today!
 
-A wide range of donation options avaialble at [sponsor.se7enx.com/](https://sponsor.se7enx.com/), [paypal.com/paypalme/7xweb](https://www.paypal.com/paypalme/7xweb) and [github.com/sponsors/se7enxweb](https://github.com/sponsors/se7enxweb)
+A wide range of donation options avaialble at [sponsor.se7enx.com](https://sponsor.se7enx.com), [paypal.com/paypalme/7xweb](https://www.paypal.com/paypalme/7xweb) and [github.com/sponsors/se7enxweb](https://github.com/sponsors/se7enxweb)
 
 # What is eZ Platform?
 
