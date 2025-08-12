@@ -4,6 +4,10 @@
 ![Exponential - Project Logo](https://github.com/se7enxweb/exponential/assets/51429274/b09e3459-4614-49b2-8256-666073b1b8af)
 
 
+# Exponential Project Notice : 2025.08.12
+
+"Please Note: This project is not associated with the original eZ Publish software or its original developer, eZ Systems or Ibexa".
+
 # Exponential Project Status
 
 **Exponential has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4 and beyond php9**
