@@ -1,5 +1,5 @@
 {
-    "name":        "se7enxweb/ezpublish",
+    "name":        "se7enxweb/exponential",
     "description": "eZ Publish 6. Maintained by 7x. For General Use With PHP 8.1 through 8.4.x+. Further feature releases in development. Please sponsor our work on the eZ Publish (System). This is capable of being used standalone or combined with Ibexa OSS",
     "homepage":    "https://se7enx.com",
     "license":     "GPL-2.0-or-later",
