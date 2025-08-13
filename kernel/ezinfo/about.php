@@ -111,17 +111,17 @@ function strReplaceByArray( $searches = array(), $subjects = array() )
 
 $ezinfo = eZPublishSDK::version( true );
 
-$whatIsEzPublish = '<p>eZ Publish is a professional PHP application framework with advanced
+$whatIsEzPublish = '<p>Exponential is a professional PHP application framework with advanced
 CMS (content management system) functionality. As a CMS, its most notable
 feature is its revolutionary, fully customizable and extendable content
-model. This is also what makes eZ Publish suitable as a platform for
+model. This is also what makes Exponential suitable as a platform for
 general PHP development, allowing you to rapidly create professional
 web-based applications.</p>
 
 <p>Standard CMS functionality (such as news publishing, e-commerce and
 forums) are already implemented and ready to use. Standalone libraries
 can be used for cross-platform database-independent browser-neutral
-PHP projects. Because eZ Publish is a web-based application, it can
+PHP projects. Because Exponential is a web-based application, it can
 be accessed from anywhere you have an internet connection.</p>';
 
 $license = getLicense();
@@ -136,8 +136,8 @@ list( $whatIsEzPublish,
                                                 'eZ Systems as' => '<a href="http://ez.no/">eZ Systems AS</a>',
                                                 'eZ systems AS' => '<a href="http://ez.no/">eZ Systems AS</a>',
                                                 'eZ systems as' => '<a href="http://ez.no/">eZ Systems AS</a>',
-                                                'eZ Publish' => '<a href="http://ez.no/ezpublish">eZ Publish</a>',
-                                                'eZ publish' => '<a href="http://ez.no/ezpublish">eZ Publish</a>' ),
+                                                'Exponential' => '<a href="https://exponential.earth">Exponential</a>',
+                                                'exponential cms' => '<a href="https://exponential.earth">Exponential</a>' ),
                                          array( $whatIsEzPublish, $contributors, $thirdPartySoftware, $extensions ) );
 
 $tpl = eZTemplate::factory();

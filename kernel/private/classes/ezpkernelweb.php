@@ -146,7 +146,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         $this->setUseExceptions( $this->settings['use-exceptions'] );
 
         $GLOBALS['eZSiteBasics'] = array(
-            'external-css' => true,
+            'external-css' => false,
             'show-page-layout' => true,
             'module-run-required' => true,
             'policy-check-required' => true,
