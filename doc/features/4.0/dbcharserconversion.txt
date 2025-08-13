@@ -1,4 +1,4 @@
-eZ Publish 4 database charset conversion
+Exponential 4 database charset conversion
 ========================================
 Converts db's charset from arbitrary encoding to utf8.
 Supports mysql and postgresql.

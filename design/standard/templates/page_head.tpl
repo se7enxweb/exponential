@@ -45,7 +45,7 @@
     {/if}
     {/foreach}
 
-    <meta name="generator" content="eZ Publish" />
+    <meta name="generator" content="Exponential" />
 
 {if $enable_link}
     {include uri="design:link.tpl" enable_help=$enable_help enable_link=$enable_link}

@@ -1,9 +1,9 @@
 Release notes for 3.2.0-2
 This release is a beta release and should not be used for a production site.
 
-- All text strings in eZ publish has been freezed and can now be translated before the final release.
+- All text strings in Exponential has been freezed and can now be translated before the final release.
 - The admin email address can now be controlled by one ini setting making it easier to maintain.
-- The new script functionality has been integrated with all scripts in eZ publish making them
+- The new script functionality has been integrated with all scripts in Exponential making them
   easier to use as well as making it easier to maintain them. Try -h or --help on all scripts
   to see new possible options.
 - The old API reference view has been brought in a similar way as it was in the old SDK.

@@ -56,7 +56,7 @@ if [ -z "$TARGET" ]; then
     TARGET=`pwd`
 fi
 
-filebase=$TARGET/ezpublish-$VERSION_ONLY-$LOCALE
+filebase=$TARGET/Exponential-$VERSION_ONLY-$LOCALE
 file=$filebase.tar.gz
 filezip=$filebase.zip
 

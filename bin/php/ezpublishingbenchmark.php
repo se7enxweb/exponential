@@ -21,7 +21,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => "eZ Publish Parallel publishing benchmark",
+$script = eZScript::instance( array( 'description' => "Exponential Parallel publishing benchmark",
                                      'use-session' => false,
                                      'use-modules' => true,
                                      'use-extensions' => true ) );

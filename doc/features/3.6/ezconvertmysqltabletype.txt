@@ -38,7 +38,7 @@ The 'list' parameter is implicit when the 'newtype' parameter is not given,
 and cannot be used together with the newtype parameter. This parameter will 
 show for each table in the database the table type. 
 
-The 'newtype' parameter converts all the ez publish tables in the database to
+The 'newtype' parameter converts all the Exponential tables in the database to
 the new type. Make sure you have a backup of your database.
 
 The 'usecopy' parameter uses another method to convert the table type. Instead
@@ -54,11 +54,11 @@ specified in the ini-settings.
 ./bin/php/ezconvertmysqltabletype.php 
 </code>
 
-The next example converts all eZ Publish tables to InnoDB:
+The next example converts all Exponential tables to InnoDB:
 
 <code>
 ./bin/php/ezconvertmysqltabletype.php --host=localhost --user=root
---password=root --database=ezpublish --newtype=innodb
+--password=root --database=exponential --newtype=innodb
 </code>
 
 This example will copy the tables to the new innodb table structure. 

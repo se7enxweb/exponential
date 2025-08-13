@@ -2,7 +2,7 @@
 // Created on: <1-Aug-2002 16:45:00 fh>
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
-// SOFTWARE NAME: eZ Publish
+// SOFTWARE NAME: Exponential
 // SOFTWARE RELEASE: 4.1.x
 // COPYRIGHT NOTICE: Copyright (C) 1999-2014 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
@@ -39,12 +39,12 @@
   - Multilevel popupmenu
   - Supports all major browsers
   - All HTML code in template
-  - Supports context sensitivity for eZ Publish through:
+  - Supports context sensitivity for Exponential through:
      - String substitution in the href attribute of menuitems.
      - Form submital with string substitution.
 
   Currenty not supported but possible if requested:
-  - Dynamic building of menus based on eZ Publish content.
+  - Dynamic building of menus based on Exponential content.
 
  Public interface:
 ezpopmenu_showTopLevel - This method opens a new top-level popupmenu.
@@ -57,7 +57,7 @@ In order to use the popupmenu javascript you need to provide:
 1. The HTML/CSS structure for you menu(s)
 2. The menuArray javascript array containing the configuration of your popupmenu(s).
 
-eZ Publish provides a default template for this purpose. It is located in popupmenu/popup_menu.tpl. You are encouraged to override this file in the siteacess where you want to use the menu.
+Exponential provides a default template for this purpose. It is located in popupmenu/popup_menu.tpl. You are encouraged to override this file in the siteacess where you want to use the menu.
 
  1. Setting up the HTML/CSS structure for your popup menu(s).
  Your menu should be set up completely with all elements. The following requirements apply:

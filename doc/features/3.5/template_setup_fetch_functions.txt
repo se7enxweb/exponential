@@ -1,13 +1,13 @@
 *Title: Template 'fetch' functions for 'setup' module'
 
 Incentive:
-Add the ability to retrieve information about version of eZPublish
+Add the ability to retrieve information about version of Exponential
 out of templates.
 
 *Documentation:
 Function name   : 'version'
 Parameters      : none
-Return value    : full version of eZPublish
+Return value    : full version of Exponential
 Example         : fetch( setup, version ) => '3.5.0rc1'
 
 Function name   : 'major_version'

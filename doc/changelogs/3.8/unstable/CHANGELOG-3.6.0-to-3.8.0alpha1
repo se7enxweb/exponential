@@ -251,7 +251,7 @@ eZXMLText:
 - Fixed bug #6736: Price datatype does not show validation error 
   on incorrect input.
   (Merged from stable/3.7 (3.7.0rc2) rev. 12738)
-- Fixed bug #6929: eZ publish 3.7.0 rc1 installation still has the PHP 4.4
+- Fixed bug #6929: Exponential 3.7.0 rc1 installation still has the PHP 4.4
   reference problem.
   ( Merged from stable/3.7 rev. 12741 )
 - Fixed bug #4113: Problem with url_alias in link check.
@@ -481,7 +481,7 @@ eZXMLText:
   The bug occurs with the following datatypes: eZAuthor, eZEmail, eZMatrix,
   eZOption, eZMultioption.
   (Merged from stable/3.5 (3.5.6) rev. 13368)
-- Fixed bug #7157: eZ publish removes <p> tag when is only one in xml block.
+- Fixed bug #7157: Exponential removes <p> tag when is only one in xml block.
   (Merged from stable/3.7 (3.7.0) rev. 13372)
 - Fixed bug #7158: Reference issues.
   ( Merged from stable/3.7 rev. 13384 )
@@ -843,7 +843,7 @@ eZXMLText:
 - Fixed bug #7664: Fatal error when an attribute of type ezbinaryfile is in
   naming pattern but has no content.
   (Merged from release/3.7.3 rev. 14565)
-- Fixed bug #7618: eZ publish can't be migrated from a 32bit to a 64bit 
+- Fixed bug #7618: Exponential can't be migrated from a 32bit to a 64bit 
   architecture.
   (Merged from release/3.7.3 rev. 14568)
 - Fixed bug #7675: Bug /content/action without POST-data renders blank page.
@@ -934,9 +934,9 @@ eZTemplate:
   in the middle.
   (Merged from stable/3.4 (3.4.7) rev. 12169, also in stable/3.5 (3.5.3) rev. 12170,
   in stable/3.6 (3.6.1) rev. 12171)
-- Added support for having eZ publish installed in a subfolder while using 
+- Added support for having Exponential installed in a subfolder while using 
   virtualhost setup.
-  Example : www.example.com/ez_publish/<eZ publish>
+  Example : www.example.com/ez_publish/<Exponential>
   ( Merged from stable/3.5 rev. 13711, stable/3.6 rev. 13712, stable/3.7 rev. 13713 )
 - Improved treemenuoperator as described here in enhancement report.
   # 6787: Enhancement treemenu operator should return more information

@@ -1,4 +1,4 @@
-eZ Publish WebDAV engine based on eZ Components
+Exponential WebDAV engine based on eZ Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. contents::
@@ -6,7 +6,7 @@ eZ Publish WebDAV engine based on eZ Components
 Introduction
 ============
 
-New in eZ Publish 4.1 is the porting of the WebDAV engine to eZ Components.
+New in Exponential 4.1 is the porting of the WebDAV engine to eZ Components.
 Feature-wise the WebDAV engine stays the same, but it is capitalizing on the
 solid base of eZ Components with its unit tests, documentation and
 extensibility.
@@ -34,7 +34,7 @@ directly (without using the Trash), this setting must be changed in content.ini
 Copy
 ----
 
-The previous eZ Publish WebDAV engine did not support copying of files and
+The previous Exponential WebDAV engine did not support copying of files and
 folders. The new WebDAV implementation based on eZ Components supports copying
 files and folders.
 
@@ -48,7 +48,7 @@ The Webdav component from eZ Components was designed with compatibility with
 as many WebDAV clients in mind. The Webdav component contains thousands of unit
 tests which tests this compatibility.
 
-Unfortunately the number of supported WebDAV clients for the eZ Publish WebDAV
+Unfortunately the number of supported WebDAV clients for the Exponential WebDAV
 engine is smaller, due to missing locking support in particular, and due to
 missing Digest authentication mechanisms implemented for WebDAV (as opposed to
 exising Basic authentication). These issues will be addressed in a future
@@ -56,7 +56,7 @@ iteration of the WebDAV engine and will allow for a higher number of
 supported clients.
 
 Below is a list of WebDAV clients and know issues for them. For each client
-it is explained how to open a WebDAV connection to an eZ Publish installation.
+it is explained how to open a WebDAV connection to an Exponential installation.
 In the examples it is assumed that the WebDAV host name is **webdav.ezp**.
 
 
@@ -72,7 +72,7 @@ Configuration
 '''''''''''''
 
 This WebDAV client has a know issue with uploading of files with spaces in the
-file names or with uppercase extensions: since eZ Publish converts file names
+file names or with uppercase extensions: since Exponential converts file names
 to clean URL aliases, Bitkinex cannot detect correctly that the file was
 uploaded and it will try to upload it again, resulting in an infinite loop.
 
@@ -95,7 +95,7 @@ cadaver
 -------
 
 Supported. This command-line client has a very good implementation of the
-WebDAV RFC and it is known to work without problems with eZ Publish.
+WebDAV RFC and it is known to work without problems with Exponential.
 
 
 Create a connection
@@ -168,7 +168,7 @@ Configuration
 '''''''''''''
 
 Several configuration steps are required to get Internet Explorer to be able
-to open a WebDAV connection to an eZ Publish installation.
+to open a WebDAV connection to an Exponential installation.
 
 1. Enable Basic authentication by going to the Registry (Start->Run...,
 regedit.exe) and then to the key:
@@ -316,9 +316,9 @@ Planned features
 Locking
 -------
 
-At the moment locking is not yet implemented in eZ Publish WebDAV. Locking
+At the moment locking is not yet implemented in Exponential WebDAV. Locking
 will be added in a future release, based on the new object states feature of
-eZ Publish.
+Exponential.
 
 
 Better WebDAV client support

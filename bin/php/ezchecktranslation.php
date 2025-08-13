@@ -12,7 +12,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish Translation Checker\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential Translation Checker\n\n" .
                                                         "Will display some statistics on a given translation" .
                                                         "\n" .
                                                         "ezchecktranslation.php ita-IT" ),

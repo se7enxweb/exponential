@@ -1,4 +1,4 @@
-eZIINI enhancements in eZ Publish 4.4
+eZIINI enhancements in Exponential 4.4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 =====

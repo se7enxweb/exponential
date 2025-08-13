@@ -14,7 +14,7 @@ determine when many extensions comes into account.
 Scope
 -----
 
-By providing metadata about ordering we enable eZ Publish to correctly determine
+By providing metadata about ordering we enable Exponential to correctly determine
 the correct order. The current goal is not about dependency or requirement
 checking, nor automatically activating an extension.
 

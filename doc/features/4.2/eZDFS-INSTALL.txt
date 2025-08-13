@@ -19,15 +19,15 @@ eZDFS: Global architecture configuration
 The most important aspects of architecture are the NFS mount point and the
 cluster database.
 
-Each instance of eZ publish sharing the same relational database has to use the
+Each instance of Exponential sharing the same relational database has to use the
 same cluster database, and each should have a local mount point to the same
 NFS export, configured in the exact same way.
 
 Example:
 NFS-server:/exports/myvardir
-eZpublish-server1:/var/www/var/nfsmount => mount of NFS-server:/exports/myvardir
-eZpublish-server2:/var/www/var/nfsmount => mount of NFS-server:/exports/myvardir
-eZpublish-server3:/var/www/var/nfsmount => mount of NFS-server:/exports/myvardir
+Exponential-server1:/var/www/var/nfsmount => mount of NFS-server:/exports/myvardir
+Exponential-server2:/var/www/var/nfsmount => mount of NFS-server:/exports/myvardir
+Exponential-server3:/var/www/var/nfsmount => mount of NFS-server:/exports/myvardir
 
 The var directories should in NO CASE be shared among instances, since they will
 automatically be synchronized. This is valid for both eZDB and eZDFS. The
@@ -69,14 +69,14 @@ NFS
 ---
 Since eZDFS is based on NFS, a local mount point to a NFS server has to be
 available & writeable by the webserver's user on each server that will use
-eZ Publish.
+Exponential.
 
 How the mount points are configured depends on the software vendor of the NFS
 solution.
 
 Configuring the cluster handler
 -------------------------------
-Each eZ Publish instance that share the same var directory has to be configured
+Each Exponential instance that share the same var directory has to be configured
 correctly in order to get the cluster handler working. Everything is configured
 in file.ini (you should of course create a global override for this file).
 
@@ -97,9 +97,9 @@ are however available below::
     # in settings/override/file.ini.append.php
     [eZDFSClusteringSettings]
     # Path to the NFS mount point
-    # Can be relative to the eZ publish root, or absolute.
+    # Can be relative to the Exponential root, or absolute.
     # The example below will work for a mount of NFS to the subdirectory
-    # var/nfsmount in the eZ Publish root. Any location is possible
+    # var/nfsmount in the Exponential root. Any location is possible
     MountPointPath=var/nfsmount
 
     # Database backend (only one available at the moment)
@@ -111,9 +111,9 @@ are however available below::
     # Database name
     DBName=ezpublishcluster
     # Database user
-    DBUser=ezpublish
+    DBUser=exponential
     # Password for the user above
-    DBPassword=ezpublish
+    DBPassword=exponential
 
 Configuring the index_* files for clustering
 --------------------------------------------
@@ -127,7 +127,7 @@ to serve binary files request is index_cluster.php (included in the backport
 release), and it will be referenced in the rewrite configuration.
 
 This file contains configuration constants, and will include the file
-index_image.php (part of the eZ Publish distribution) when executed. This file
+index_image.php (part of the Exponential distribution) when executed. This file
 will then include `index_image_dfscluster.php`, the final script that will read
 and stream the files to the browser.
 
@@ -141,9 +141,9 @@ configuration above (settings will usually match between INI and this file)::
     // database host (eZDFSClusteringSettings.DBHost)
     define( 'STORAGE_HOST', 'localhost' );
     // database user (eZDFSClusteringSettings.DBUser)
-    define( 'STORAGE_USER', 'ezpublish' );
+    define( 'STORAGE_USER', 'exponential' );
     // database user password (eZDFSClusteringSettings.DBPassword)
-    define( 'STORAGE_PASS', 'ezpublish' );
+    define( 'STORAGE_PASS', 'exponential' );
     define( 'STORAGE_DB', 'ezpublishcluster' );
     define( 'MOUNT_POINT_PATH', 'var/nfsmount' );
 
@@ -165,9 +165,9 @@ These rules can however be found below::
     Rewriterule ^/var/([^/]+/)?storage/images-versioned/.*  /index_cluster.php  [L]
     Rewriterule ^/var/([^/]+/)?storage/images/.*            /index_cluster.php  [L]
 
-    # Other eZ Publish rewrite rules
+    # Other Exponential rewrite rules
 
-These rules *have* to be found *before* the standard eZ Publish rewrite rules.
+These rules *have* to be found *before* the standard Exponential rewrite rules.
 
 Note:
 As for the standard cluster, it is more than strongly recommended to use some
@@ -188,10 +188,10 @@ in ezbinaryfile to the ezdfsfile table (metadata), and the file themselves to
 the configured NFS mount point.
 
 *Note:* this process can take a long time depending on the amount of files
-the eZ Publish instance contains. If the process is interrupted for any reason,
+the Exponential instance contains. If the process is interrupted for any reason,
 it can be safely restarted.
 
-Clear the eZ Publish cache
+Clear the Exponential cache
 --------------------------
 Use the command line ezcache.php script::
 

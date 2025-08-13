@@ -1,8 +1,8 @@
 <div id="header-logo">
 {if $ui_context_edit}
-    <span title="eZ Publish {fetch( 'setup', 'version' )}">&nbsp;</span>
+    <span title="Exponential {fetch( 'setup', 'version' )}">&nbsp;</span>
 {else}
-    <a href="{ezini('SiteSettings', 'DefaultPage', 'site.ini')|ezurl( 'no' )}" title="eZ Publish {fetch( 'setup', 'version' )}">
+    <a href="{ezini('SiteSettings', 'DefaultPage', 'site.ini')|ezurl( 'no' )}" title="Exponential {fetch( 'setup', 'version' )}">
     </a>
 {/if}
 </div>

@@ -1,4 +1,4 @@
-WebDAV in eZ Publish
+WebDAV in Exponential
 ~~~~~~~~~~~~~~~~~~~~
 
 This document describes the unit tests for WebDAV, and how to configure those
@@ -8,11 +8,11 @@ tests.
 Server Configuration
 ====================
 
-The eZ Publish installation must be configured to process all WebDAV requests
+The Exponential installation must be configured to process all WebDAV requests
 through webdav.php.
 
 See http://ez.no/doc/ez_publish/technical_manual/4_0/features/webdav for
-more information about how to activate WebDAV support on an eZ Publish
+more information about how to activate WebDAV support on an Exponential
 installation.
 
 In addition, WebDAV support must be enabled in webdav.ini::
@@ -79,7 +79,7 @@ The WebDAV tests make use of the extension ezsiteaccesshelper
 (http://svn.ez.no/svn/commercial/projects/qa/trunk/ezsiteaccesshelper/)
 which is used to create a siteaccess for the tests.
 
-The normal webdav.php of the eZ Publish installation is NOT used. Instead
+The normal webdav.php of the Exponential installation is NOT used. Instead
 the code is duplicated in backend_content_regression_test.php.
 
 By inheriting from ezcTestRegressionTest, eZWebDAVContentBackendRegressionTest
@@ -98,7 +98,7 @@ with the same name as the file minus the extension.
 --------
 
 Required file. It is included in the test system via include. For each .request
-file a test function is created, and an eZ Publish folder is created under
+file a test function is created, and an Exponential folder is created under
 /$GLOBALS['ezc_siteaccess']/Content. The folder is removed after each test.
 
 Because WebDAV normally outputs information via the header() function, some
@@ -131,7 +131,7 @@ between different test machines). These special strings are:
 
   @ezc_webdav_testfolder@
     The name of the current .request file, minus the extension.  This is
-    assigned automatically from the test system. An eZ Publish folder
+    assigned automatically from the test system. An Exponential folder
     with this name is created automatically before the .request file is
     included, under the folder /$GLOBALS['ezc_siteaccess']/Content/.
 
@@ -140,7 +140,7 @@ between different test machines). These special strings are:
 --------------------------------
 
 Optional file. If the .request file needs to create a file or image object
-in eZ Publish, it can do so by specifying this file (with the name
+in Exponential, it can do so by specifying this file (with the name
 $GLOBALS['ezc_webdav_testfolder'] followed by the needed extension).
 
 
@@ -184,7 +184,7 @@ Each .request file can make use of some global variables in the test:
 
   $GLOBALS['ezc_webdav_testfolder']
     The name of the current .request file, minus the extension. This is
-    assigned automatically from the test system. An eZ Publish folder is
+    assigned automatically from the test system. An Exponential folder is
     with this name is created automatically before the .request file is
     included, under the folder $GLOBALS['ezc_siteaccess']/Content/.
 

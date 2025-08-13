@@ -12,7 +12,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish CSV export script\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential CSV export script\n" .
                                                         "\n" .
                                                         "ezcsvexport.php --storage-dir=export 2" ),
                                      'use-session' => false,

@@ -13,7 +13,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish DB file verifier\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential DB file verifier\n\n" .
                                                         "Checks the database update files and gives a report on them.\n" .
                                                         "It will show which files are missing and which should not be present.\n" .
                                                         "\n" .
@@ -57,7 +57,7 @@ $lowestExportVersion = '4.3';
 *** NOTE: The following arrays do not follow the
 ***       coding standard, the reason for this is
 ***       to make it easy to merge any changes between
-***       the various eZ Publish branches.
+***       the various Exponential branches.
 *********************************************************/
 
 $versions = array();
@@ -267,7 +267,7 @@ function exportSVNVersion( $version, $exportPath )
     if ( file_exists( $versionPath ) )
         return true;
 
-    $svn = "svn export http://svn.ez.no/svn/ezpublish/stable/$version/update/database \"$versionPath\"";
+    $svn = "svn export http://svn.ez.no/svn/Exponential/stable/$version/update/database \"$versionPath\"";
     exec( $svn, $output, $code );
     if ( $code != 0 )
     {

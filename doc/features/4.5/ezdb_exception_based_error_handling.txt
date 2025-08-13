@@ -26,4 +26,4 @@ With exception based handling, any error occuring while executing a query will t
 returning false (standard behaviour) or exiting with the red squared "A database transaction has failed".
 
 In the later case (inside a transaction), the query is still automatically rollbacked, but exception based handling
-will prevent eZ Publish from exiting directly and will either let you resume work or exit properly.
+will prevent Exponential from exiting directly and will either let you resume work or exit properly.

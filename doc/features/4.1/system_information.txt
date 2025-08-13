@@ -3,7 +3,7 @@ System information
 
 The system information module received an update in this version. The
 SystemInformation component is now used to inspect the system. This means
-that Mac OS X systems will be detected correctly by eZ Publish.
+that Mac OS X systems will be detected correctly by Exponential.
 
 phpinfo()
 ---------

@@ -131,8 +131,8 @@ Changes from 3.1-1 to 3.2.0-1
 - Fixed wrong link in changepassword e-mail.
 - Removed unused parameter 'headers' from eZMail::extraHeaders() and updated description
 - Added ContentType setting in MailSettings in site.ini. If set, this will set the content type
-  of all mail sent from eZ publish. Default is text/plain.
-- Added error.ini, which controls the behaviour of eZ publish errors.
+  of all mail sent from Exponential. Default is text/plain.
+- Added error.ini, which controls the behaviour of Exponential errors.
   Each error code can be set to display an error page, redirect to a url,
   rerun a module or embed a module in the error page.
   The error codes can also be mapped to HTTP error codes.
@@ -153,7 +153,7 @@ Changes from 3.1-1 to 3.2.0-1
 - Added feedback message for forgot password if user use an invalid key to confirm.
 - Fixed bug for content preview which can't show children.
 - Fixed bug of unable to edit object although user has permission to create and edit this object using subtree policy.
-- Added new module package which will handle listing, viewing and uploading of eZ publish packages.
+- Added new module package which will handle listing, viewing and uploading of Exponential packages.
 - Added PHP accelerator information to the setup/info page.
 - Added previous/next function for role list.
 

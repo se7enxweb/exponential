@@ -4,9 +4,9 @@ DIST_PROP="ez:distribution"
 DIST_DIR_PROP="ez:distribution_include_all"
 DIST_TYPE='full'
 VERSION="2.9-2"
-NAME="ezpublish"
+NAME="Exponential"
 DEST_ROOT="/tmp"
-DEFAULT_SVN_SERVER="http://svn.ez.no/svn/ezpublish"
+DEFAULT_SVN_SERVER="http://svn.ez.no/svn/Exponential"
 DEFAULT_SVN_RELEASE_PATH="releases"
 
 SVN_SERVER=""

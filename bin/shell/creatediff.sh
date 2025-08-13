@@ -1,7 +1,7 @@
 #!/bin/bash
 
-NAME="ezpublish"
-DEST_ROOT="/tmp/ezpublish-dist"
+NAME="Exponential"
+DEST_ROOT="/tmp/Exponential-dist"
 DIST_SRC=`pwd`
 
 . ./bin/shell/common.sh
@@ -16,17 +16,17 @@ for arg in $*; do
     case $arg in
 	--help|-h)
 	    echo "Usage: $0 [options] ARCHIVE FROM TO"
-	    echo "Creates a diff and update file between two eZ Publish versions"
+	    echo "Creates a diff and update file between two Exponential versions"
 	    echo
 	    echo "ARCHIVE: The archive with all previously released versions"
-	    echo "FROM:    The eZ Publish version to start from"
-	    echo "TO:      The eZ Publish version which want the updates to become"
+	    echo "FROM:    The Exponential version to start from"
+	    echo "TO:      The Exponential version which want the updates to become"
 	    echo
 	    echo "Options: -h"
 	    echo "         --help                     This message"
             echo
             echo "Example:"
-            echo "$0 ezpublish-dist/ 3.2-2 3.2-3"
+            echo "$0 Exponential-dist/ 3.2-2 3.2-3"
 	    exit 1
 	    ;;
 	--*)
@@ -72,22 +72,22 @@ fi
 FROM_MAJOR=`get_major_version $FROM`
 TO_MAJOR=`get_major_version $TO`
 
-FROM_DIRNAME="ezpublish-$FROM"
-TO_DIRNAME="ezpublish-$TO"
+FROM_DIRNAME="Exponential-$FROM"
+TO_DIRNAME="Exponential-$TO"
 
 FROM_DIR="$DIST_ARCHIVE/$FROM_MAJOR/$FROM"
 TO_DIR="$DIST_ARCHIVE/$TO_MAJOR/$TO"
 
-FROM_FILE="$FROM_DIR/ezpublish-$FROM.tar.gz"
-TO_FILE="$TO_DIR/ezpublish-$TO.tar.gz"
+FROM_FILE="$FROM_DIR/Exponential-$FROM.tar.gz"
+TO_FILE="$TO_DIR/Exponential-$TO.tar.gz"
 
-TO_DIFF="$TO_DIR/ezpublish-$FROM-to-$TO.diff.gz"
-TO_DIFF2="$TO_DIR/ezpublish-$FROM-to-$TO.diff.bz2"
-TMP_DIFF="$DEST_ROOT/ezpublish-$TO.diff"
+TO_DIFF="$TO_DIR/Exponential-$FROM-to-$TO.diff.gz"
+TO_DIFF2="$TO_DIR/Exponential-$FROM-to-$TO.diff.bz2"
+TMP_DIFF="$DEST_ROOT/Exponential-$TO.diff"
 
-TO_UPDATE_TGZ="$TO_DIR/ezpublish-update-$FROM-to-$TO.tar.gz"
-TO_UPDATE_TBZ2="$TO_DIR/ezpublish-update-$FROM-to-$TO.tar.bz2"
-TO_UPDATE_ZIP="$TO_DIR/ezpublish-update-$FROM-to-$TO.zip"
+TO_UPDATE_TGZ="$TO_DIR/Exponential-update-$FROM-to-$TO.tar.gz"
+TO_UPDATE_TBZ2="$TO_DIR/Exponential-update-$FROM-to-$TO.tar.bz2"
+TO_UPDATE_ZIP="$TO_DIR/Exponential-update-$FROM-to-$TO.zip"
 
 CREATED_FILES=""
 
@@ -139,7 +139,7 @@ CREATED_FILES="$CREATED_FILES $TO_DIFF2"
 PATCHED_FILES=`patch -d $DEST_ROOT/$FROM_DIRNAME --dry-run -p1 < $TMP_DIFF  | sed 's#^patching file ##'`
 rm $TMP_DIFF || exit 1
 
-UPDATE_DIRNAME="ezpublish-update-$FROM-to-$TO"
+UPDATE_DIRNAME="Exponential-update-$FROM-to-$TO"
 UPDATE_DIR="$DEST_ROOT/$UPDATE_DIRNAME"
 
 if [ -d $UPDATE_DIR ]; then

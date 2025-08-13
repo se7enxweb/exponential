@@ -3,9 +3,9 @@
 # @deprecated and unmaintained since 5.0
 
 DIST_TYPE='full'
-NAME="ezpublish"
+NAME="Exponential"
 DEST_ROOT="/tmp/ez-$USER"
-DEFAULT_SVN_SERVER="http://svn.ez.no/svn/ezpublish"
+DEFAULT_SVN_SERVER="http://svn.ez.no/svn/Exponential"
 DEFAULT_SVN_RELEASE_PATH="releases"
 DEFAULT_SVN_VERSION_PATH="versions"
 DIST_SRC=`pwd`
@@ -53,7 +53,7 @@ fi
 function ezdist_write_cache_file
 {
     echo -n '' > $CACHE
-    echo '# Cache file for eZ Publish makedist.sh' >> $CACHE
+    echo '# Cache file for Exponential makedist.sh' >> $CACHE
 
     ezdist_is_def "$MYSQL_USER" && echo "MYSQL_USER=\"$MYSQL_USER\"" >> $CACHE
     ezdist_is_def "$MYSQL_PASSWD" && echo "MYSQL_PASSWD=\"$MYSQL_PASSWD\"" >> $CACHE
@@ -1394,7 +1394,7 @@ if [ -z "$SKIP_EXTENSIONS" ]; then
 fi
 
 if [ "$BUILD_SNAPSHOT" == "1" ]; then
-    DISTROOT="$HOME/ezpublish-dist"
+    DISTROOT="$HOME/Exponential-dist"
     VERSIONROOT="$DISTROOT/$VERSION_ONLY/$VERSION/builds/build-$CURRENT_BUILD_NUMBER"
     mkdir -p $VERSIONROOT
 
@@ -1437,7 +1437,7 @@ if [ "$BUILD_SNAPSHOT" == "1" ]; then
 
 fi
 if [ -n "$FINAL" ]; then
-    DISTROOT="$HOME/ezpublish-dist"
+    DISTROOT="$HOME/Exponential-dist"
     VERSIONROOT="$DISTROOT/$VERSION_ONLY/$VERSION"
     mkdir -p $VERSIONROOT
     if [ ! -f "$VERSIONROOT/filelist.md5" ]; then

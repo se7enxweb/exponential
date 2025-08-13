@@ -78,7 +78,7 @@ eZXML:
   http://ez.no/developer/ez_publish_3/bug_reports/preview_doesnt_respect_defaultpreviewdesign_setting
 
 *Files:
-- Made sure ezpublish.cron is included in the release (Was missing in 3.2-1).
+- Made sure exponential.cron is included in the release (Was missing in 3.2-1).
 - Fixed problem with stop words in search not being returned.
   http://ez.no/developer/ez_publish_3/bug_reports/stop_words_are_not_correctly_displayed
 - Added setting for how to handled empty search strings, default is to now allow

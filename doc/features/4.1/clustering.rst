@@ -8,10 +8,10 @@ eZ Cluster migration guide
 :Version: 1.0
 
 This document describes the upgrade process for
-end-users who wants to update their eZ Publish cluster
+end-users who wants to update their Exponential cluster
 from 3.10 version to 4.* versions.
 
-.. Note:: **If you plan to update an eZ Publish cluster prior to 3.10
+.. Note:: **If you plan to update an Exponential cluster prior to 3.10
           read this documentation first** http://pubsvn.ez.no/nextgen/trunk/doc/features/3.10/cluster_enhancement.txt
 
 .. Note:: **This guide assumes the code base is already updated to the 4.1 version, do not upgrade
@@ -41,7 +41,7 @@ The configuration file has slightly changed. Before 4.1 ``settings/file.ini`` lo
     DBBackend=mysql
     [...]
 
-Since there is a new handler system in eZ Publish 4.1, you have to update your configuration file ``file.ini.append.php``.
+Since there is a new handler system in Exponential 4.1, you have to update your configuration file ``file.ini.append.php``.
 
 All you have to do is this apply the following configuration
 
@@ -59,7 +59,7 @@ Other configuration directives remain unchanged.
 Purging all caches
 ++++++++++++++++++
 
-In order to upgrade your eZ Publish cluster to the 4.1 version, no unclusterization
+In order to upgrade your Exponential cluster to the 4.1 version, no unclusterization
 process is required. All you have to do is to purge all caches first.
 
 ::
@@ -94,7 +94,7 @@ The configuration file has slightly changed. Before 4.1 ``settings/file.ini`` lo
     DBBackend=mysql
     [...]
 
-Since there is a new handler system in eZ Publish 4.1, you have to update your configuration file ``file.ini.append.php``.
+Since there is a new handler system in Exponential 4.1, you have to update your configuration file ``file.ini.append.php``.
 
 All you have to do is this apply the following configuration
 
@@ -113,7 +113,7 @@ Other configuration directives remain unchanged.
 Using the new filesystem backend
 --------------------------------
 
-Since eZ Publish 4.1, a new FileSystem backend is available : eZFS2.
+Since Exponential 4.1, a new FileSystem backend is available : eZFS2.
 
 This new backend is more effecient with network shared partitions (like NFS)
 and handles gracefully cache purge and update for content caches and

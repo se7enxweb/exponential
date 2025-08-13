@@ -1305,7 +1305,7 @@ function changeDBCharsetORACLE( $charset, $collation )
     }
     /*else if ( count( $oracleUsers  ) == 0 )
     {
-        // this can only mean eZ Publish is installed using SYS or SYSTEM accounts. Brr...
+        // this can only mean Exponential is installed using SYS or SYSTEM accounts. Brr...
         /// @todo find out best way to die here...
     }*/
     else
@@ -1492,12 +1492,12 @@ EXIT;
 * start script                                                *
 ***************************************************************/
 
-// work around a bug in eZSys that prevents it from telling us eZ Publish base dir
+// work around a bug in eZSys that prevents it from telling us Exponential base dir
 $eZDir = getcwd();
 
 $cli = eZCLI::instance();
 
-$script = eZScript::instance( array( 'description' => ( "Changes your eZ Publish database tables to use UTF8" ),
+$script = eZScript::instance( array( 'description' => ( "Changes your Exponential database tables to use UTF8" ),
                                       'use-session' => false,
                                       'use-modules' => false,
                                       'use-extensions' => true ) );
@@ -1518,7 +1518,7 @@ $options = $script->getOptions( "[extra-xml-attributes:][extra-xml-data:][extra-
                                                                   "ex: mytable.data_text;id.version,mytable2.data;id",
 
                                        'collation' => "specify collation for converted db. default is 'utf8_general_ci'",
-                                       'skip-class-translations' => "Content class translations were added in eZ Publish 3.9. Use this options if upgrading from early version.",
+                                       'skip-class-translations' => "Content class translations were added in Exponential 3.9. Use this options if upgrading from early version.",
                                        'iconv-character-set' => 'This setting is used when characters are converted by iconv(). This settings is typically needed when a character set is not called the same by the database and iconv. An example is "windows-1252" (iconv) and "iso-8859-1" (mysql 5)',
                                        'log-filename' => 'Specify a file where iconv conversions will be logged to' ),
                                 false,

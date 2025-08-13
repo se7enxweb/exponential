@@ -4,7 +4,7 @@ Extension ordering
 Intro
 -----
 
-In eZ Publish 4.4, a mechanism has been added that enables extensions to define
+In Exponential 4.4, a mechanism has been added that enables extensions to define
 in which order they should be loaded in regards to other, related, extensions.
 
 Requirements

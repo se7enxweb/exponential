@@ -1,15 +1,15 @@
 <html>
 <head>
-    <title>Payment gateways in eZPublish</title>
+    <title>Payment gateways in Exponential</title>
 </head>
 
 <body>
-<h1>Support of payment gateways in the eZPublish</h1>
+<h1>Support of payment gateways in the Exponential</h1>
 <h2>Intoduction</h2>
 If you are going to make online shop, you probably wants to receive money for goods. 
 One way to do this is to use payment services like Paypal, Paynet, etc. Each gateway
 (service) supports it's own protocol: direct SSL connection to the payment site, 
-XML messages, redirection. For this purpose eZPublish offers a collection of php-classes. 
+XML messages, redirection. For this purpose Exponential offers a collection of php-classes. 
 The goal is to make development of the payment gateways easy.
 
 <h2>How it works</h2>
@@ -17,7 +17,7 @@ The most common way of using gateways is based on workflows, events and triggers
 when you want to receive money through payment system, you have to create a workflow 
 with a 'payment' event and attach this workflow to trigger, shop->checkout->before 
 for example. When customer confirms its order, workflow starts and 'payment' event 
-executes. During execution 'payment' event searches available in the eZPublish 
+executes. During execution 'payment' event searches available in the Exponential 
 gateway types (implementations of payment protocols), asks customer to choose one and 
 delegates execution to the choosen gateway. The gateway performs some operations, 
 which are specific for each payment system, checks validation of the payment and as 

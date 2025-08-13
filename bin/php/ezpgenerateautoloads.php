@@ -28,7 +28,7 @@ else if ( file_exists( "{$platformVendorDir}/autoload.php" ) )
 {
     require_once "{$platformVendorDir}/autoload.php";
 }
-// Composer if in eZ Publish legacy context
+// Composer if in Exponential legacy context
 else if ( file_exists( "{$legacyVendorDir}/autoload.php" ) )
 {
     require_once "{$legacyVendorDir}/autoload.php";

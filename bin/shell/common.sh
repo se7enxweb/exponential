@@ -18,7 +18,7 @@ if [ "$VERSION_RELEASE" == "0" -a "$DEVELOPMENT" == "false" ]; then
 fi
 
 # URLs for the various repositories
-REPOSITORY_BASE_URL="http://svn.ez.no/svn/ezpublish"
+REPOSITORY_BASE_URL="http://svn.ez.no/svn/Exponential"
 TR_REPOSITORY_BASE_URL="http://svn.ez.no/svn/translations"
 # This needs to be set correctly when a new branch is created
 # e.g. stable/3.4 stable/3.5

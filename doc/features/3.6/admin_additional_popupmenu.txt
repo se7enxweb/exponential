@@ -1,7 +1,7 @@
 *Title: Automatic loading of additional popupmenu items
 
 *Documentation:
-To load additional popup menu items used in the eZ Publish
+To load additional popup menu items used in the Exponential
 administration interface you can use the following settings in
 admininterface.ini:
 

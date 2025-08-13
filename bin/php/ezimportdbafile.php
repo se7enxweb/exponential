@@ -12,7 +12,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish datatype sql update\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential datatype sql update\n\n" .
                                                         "Script can be run as:\n" .
                                                         "bin/php/ezimportdbafile.php --datatype=\n\n" .
                                                         "Example: bin/php/ezimportdbafile.php --datatype=ezisbn" ),

@@ -2,8 +2,8 @@
 <p>
 {'Powered by <span class="edition-info">%edition</span>. For more information see <a href=%about_link>ezinfo/about</a>.'|i18n( 'design/admin/page_copyright',, hash( '%edition', fetch( 'setup', 'edition' ), '%about_link', "/ezinfo/about"|ezurl ) )}</p>
 <p>
-{'<a href="%ezpublish_link">eZ Publish</a> Copyright &copy; 1999-2024 <a href="%ez_link">7x</a> and others.'|i18n( 'design/admin/page_copyright',, hash( '%ezpublish_link', 'https://se7enx.com/ezpublish', '%ez_link', 'https://se7enx.com' ) )}
+{'<a href="%ezpublish_link">Exponential</a> Copyright &copy; 1999-2024 <a href="%ez_link">7x</a> and others.'|i18n( 'design/admin/page_copyright',, hash( '%ezpublish_link', 'https://se7enx.com/Exponential', '%ez_link', 'https://se7enx.com' ) )}
 </p>
 <p>
-{'<a href="%evaluate_link">Evaluate eZ Publish (From 7x)</a> - <a href="%share_link">Become a member of the eZ Community, get support and contribute</a>.'|i18n( 'design/admin/page_copyright',, hash( '%evaluate_link', 'https://se7enx.com', '%share_link', concat( 'https://share.se7enx.com?utm_content=eZ+Publish+Community+Project+', fetch( 'setup', 'version' ) , '&utm_source=eZ+Publish+Community+Project+Dashboard&utm_medium=eZ+Publish+Community+Project+Dashboard&utm_campaign=eZ+Publish+Community+Project+Dashboard' ) ) )}
+{'<a href="%evaluate_link">Evaluate Exponential (From 7x)</a> - <a href="%share_link">Become a member of the eZ Community, get support and contribute</a>.'|i18n( 'design/admin/page_copyright',, hash( '%evaluate_link', 'https://se7enx.com', '%share_link', concat( 'https://share.se7enx.com?utm_content=eZ+Publish+Community+Project+', fetch( 'setup', 'version' ) , '&utm_source=eZ+Publish+Community+Project+Dashboard&utm_medium=eZ+Publish+Community+Project+Dashboard&utm_campaign=eZ+Publish+Community+Project+Dashboard' ) ) )}
 </p>

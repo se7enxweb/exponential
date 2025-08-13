@@ -1,4 +1,4 @@
-eZSession enhancements in eZ Publish 4.4
+eZSession enhancements in Exponential 4.4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 =====
@@ -45,7 +45,7 @@ this is implemented in practice in ezpSessionHandlerPHP and ezpSessionHandlerDB 
 
 When changing session handler, remember that all users will loose their session and will have to log in again unless
 you implement a fallback to old sessions, in a custom session handler. An example would be to create a memcache
-eZ Publish session handler that falls back to the same db backend as ezpSessionHandlerDB does for persistence storage.
+Exponential session handler that falls back to the same db backend as ezpSessionHandlerDB does for persistence storage.
 The setting involved is site.ini\[Session]\Handler, it uses the autoload system, so make sure the class you specify
 is correct and that you have regenerated the autoload data, if you have added your own session handler.
 
@@ -73,7 +73,7 @@ For extension / kernel developers:
 This means that to take advantage of this and not cause sessions to start by your own code, you'll need to
 do some changes. There are three alternatives:
 
- - Using eZSession::hasStarted() and support older versions of eZ Publish 4:
+ - Using eZSession::hasStarted() and support older versions of Exponential 4:
 
        if ( !class_exists('eZSession',false) || !method_exists('eZSession','hasStarted') || eZSession::hasStarted() )
        {
@@ -84,7 +84,7 @@ do some changes. There are three alternatives:
            // optionally get default values for anonymous users
        }
 
- - Using eZSession::userHasSessionCookie() on eZ Publish 4.1 and up
+ - Using eZSession::userHasSessionCookie() on Exponential 4.1 and up
 
        Note: this function does not reflect if session was started by other calls to sessions, but it will give
        you indication that user did not have a session (cookie or post) when request started and thus the session

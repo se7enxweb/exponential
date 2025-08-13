@@ -11,7 +11,7 @@ function show_help
     echo "         --license-type=<type>      What license should be used: gpl(default), pul_v1"
     echo "         --licenses-dir=<dir>       Location of licenses files"
     echo "         --target-dir=<dir>         Location of phps to update"
-    #echo "         --name=<name>              Name: eZ Publish"
+    #echo "         --name=<name>              Name: Exponential"
     echo "         --revision=<rev>           Revision number: 12345"
     echo "         --version=<version>        Version: 3.7.3"
     echo
@@ -180,7 +180,7 @@ LICENSE_NOTICE_FILE="notice.yaml"
 LICENSE_NOTICE_TMP_FILE="license-notice.tmp"
 BEGIN_LICENSE_BLOCK="## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##"
 END_LICENSE_BLOCK="## END COPYRIGHT, LICENSE AND WARRANTY NOTICE ##"
-SOFTWARE_NAME="SOFTWARE NAME: eZ Publish"
+SOFTWARE_NAME="SOFTWARE NAME: Exponential"
 
 COPYRIGHT="// COPYRIGHT NOTICE: Copyright (C) 1999-2014 eZ Systems AS"
 
@@ -253,8 +253,8 @@ for FILE in $FILES; do
 #     want to process rest of the file.
 # if 'current_line' doesn't start with '//' then it's useful code - output without modifications.
 # if 'current_line' starts with '// ## BEGIN' - remove it
-# if 'SOFTWARE NAME' is 'eZ Publish' then we're allowed to change release number
-# if 'SOFTWARE NAME' is 'eZ Publish' or 'Online Editor' then we're allowed to change license notes.
+# if 'SOFTWARE NAME' is 'Exponential' then we're allowed to change release number
+# if 'SOFTWARE NAME' is 'Exponential' or 'Online Editor' then we're allowed to change license notes.
 # if 'current_line' is 'SOFTWARE RELEASE' and we're allowed to change it - change it
 # if 'current_line' is 'SOFTWARE LICENSE' and we're allowed to change it - change it
 # if 'current_line' is 'NOTICE: >' and we're allowed to change it - print new notice and start removing current notice,
@@ -281,7 +281,7 @@ for FILE in $FILES; do
               }
          } \
          /\/\/ ## BEGIN/ {next} \
-         /SOFTWARE NAME: eZ Publish/ {can_change_license = 1;
+         /SOFTWARE NAME: Exponential/ {can_change_license = 1;
                                       can_change_release = 1;
                                       can_change_revision = 1;
                                       can_change_copyright = 1;
@@ -411,7 +411,7 @@ for FILE in $FILES; do
                           next}" \
          "$FILE"`
 
-    if [ "$SOFTWARE_NAME" != "eZ publish" ] && [ "$SOFTWARE_NAME" != "eZ Publish" ] && [ "$SOFTWARE_NAME" != "" ]; then
+    if [ "$SOFTWARE_NAME" != "Exponential" ] && [ "$SOFTWARE_NAME" != "Exponential" ] && [ "$SOFTWARE_NAME" != "" ]; then
         COPYRIGHT_NOTICE=`awk '{if ( get_new_line )
                                   {
                                     i = split( \$0, Name, "// " );

@@ -19,12 +19,12 @@ Changes from 3.10.0beta1 to 3.10.0rc1
 - Fixed bug #11335: search_extras not set in advancedsearch.php.
 - Fixed bug #011292: Clean up of a contentclass is not done when you remove a language.
 - Fixed bug #011331: #1101 - BLOB/TEXT column 'text' can't have a default value.
-- Fixed bug #011348: Trailing whitespaces in eZ publish code.
+- Fixed bug #011348: Trailing whitespaces in Exponential code.
 - Fixed bug #011353: Correction in text for ISBN datatype in class edit
 - Fixed bug #11307: Setup wizard fails with fatal error / database transaction
   error in certain circumstances.
 - Fixed bug #011338: RSS Crashes if selected class doesn't have the selected field values to export.
-- Fixed bug #11330: updateniceurls.php is missing in eZ Publish 3.10.0beta1 package.
+- Fixed bug #11330: updateniceurls.php is missing in Exponential 3.10.0beta1 package.
 - Fixed bug #011340: RSS cache doesn't get emptied out.
 - Fixed bug #11329: Kernel error 1 on System information page.
 - Fixed bug #11305: Flash/media binaries are not versioned.

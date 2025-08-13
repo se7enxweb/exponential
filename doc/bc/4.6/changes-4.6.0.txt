@@ -46,7 +46,7 @@ Change of behavior
   Search engine plugins, like eZ Find, must now implement the ezpSearchEngine interface
   in order to be accepted as a search plugin. The native eZSearchEngine is of course
   compatible in the 4.6 release, but eZ Find 2.6 is now required. Earlier versions
-  of eZ Find won't run with eZ Publish 4.6 or later.
+  of eZ Find won't run with Exponential 4.6 or later.
 
 Removed features
 ----------------

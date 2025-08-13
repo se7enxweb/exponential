@@ -2,8 +2,8 @@
 
 ## PHP 8.0 support
 
-For the [2023.12.05 release](https://github.com/se7enxweb/ezpublish/releases/tag/v2023.13.05),
-eZ Publish received changes all over the code base, switching variable syntax to PHP 8 style, variable return type comparison checking before use errors under PHP 8.2, and more. 
+For the [2023.12.05 release](https://github.com/se7enxweb/exponential/releases/tag/v2023.13.05),
+Exponential received changes all over the code base, switching variable syntax to PHP 8 style, variable return type comparison checking before use errors under PHP 8.2, and more. 
 
 The reason is to achieve full PHP 8.0 support by avoiding the deprecation warnings when using PHP 8 syntax.
 

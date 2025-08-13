@@ -2,8 +2,8 @@
 
 ## PHP 7.0 support
 
-For the [2017.10 release](https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.10.0),
-eZ Publish received changes all over the code base, switching object constructor methods to PHP 5 style.
+For the [2017.10 release](https://github.com/ezsystems/exponential-legacy/releases/tag/v2017.10.0),
+Exponential received changes all over the code base, switching object constructor methods to PHP 5 style.
 
 The reason is to achieve full PHP 7.0 support by avoiding the deprecation warnings when using PHP 4
 style constructors.

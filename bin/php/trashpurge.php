@@ -14,7 +14,7 @@ require_once 'autoload.php';
 $script = eZScript::instance(
     array(
         'description' =>
-            "Empty eZ Publish trash.\n" .
+            "Empty Exponential trash.\n" .
             "Permanently deletes all objects in the trash.\n" .
             "\n" .
             "./bin/php/trashpurge.php",

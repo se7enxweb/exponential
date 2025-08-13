@@ -14,7 +14,7 @@
 <table class="list" cellspacing="0">
 
 <tr>
-    <th><label>{'eZ Publish'|i18n( 'design/admin/setup/info' )}</label></th>
+    <th><label>{'Exponential'|i18n( 'design/admin/setup/info' )}</label></th>
 </tr>
 <tr>
 <td>
@@ -24,12 +24,12 @@
     </div>
 
     <div class="block">
-        <label>{'Version'|i18n( 'design/admin/setup/info', 'eZ Publish version' )}:</label>
+        <label>{'Version'|i18n( 'design/admin/setup/info', 'Exponential version' )}:</label>
         {$ezpublish_version}
     </div>
 
     <div class="block">
-        <label>{'Extensions'|i18n( 'design/admin/setup/info', 'eZ Publish extensions' )}:</label>
+        <label>{'Extensions'|i18n( 'design/admin/setup/info', 'Exponential extensions' )}:</label>
         {if $ezpublish_extensions}
             {foreach $ezpublish_extensions as $extension}
                 {$extension}{delimiter}, {/delimiter}
@@ -184,7 +184,7 @@
     </div>
 
     {else}
-        {'eZ Publish was unable to extract information from the web server.'|i18n( 'design/admin/setup/info' )}
+        {'Exponential was unable to extract information from the web server.'|i18n( 'design/admin/setup/info' )}
     {/if}
 </td>
 </tr>

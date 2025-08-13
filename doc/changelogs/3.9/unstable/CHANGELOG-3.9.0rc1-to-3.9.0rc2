@@ -14,7 +14,7 @@ Changes from 3.9.0rc1 to 3.9.0rc2
 - Fixed bug #9456: updatelicense.sh uses a PHP short open tag.
 - Fixed bug #9468: Filter attribute_identifier in related_objects is not
   working in 3.9.0rc1
-- Fixed bug #9458: Cannot break/continue 1 level in eZpublish (not ezdhtml)
+- Fixed bug #9458: Cannot break/continue 1 level in Exponential (not ezdhtml)
   (Merged from stable/3.8 (3.8.7) rev. 17525)
 - Fixed bug #9514: Typo error 3.9rc1.
 - Fixed bug #9508: Minor typo errors in 3.9rc1.
@@ -37,7 +37,7 @@ Changes from 3.9.0rc1 to 3.9.0rc2
 - Fixed bug #9544: ezinfo/about link in the footer does not contain siteaccess
 - Fixed bug #8785: Permission problems on Node 1
 - Fixed bug #9518: Extensions not enabled in 3.9rc1 upgrade scripts.
-- Fixed bug #9254: eZ publish crashes because of missing database index on ezsearch_return_count.
+- Fixed bug #9254: Exponential crashes because of missing database index on ezsearch_return_count.
 - Fixed bug #9594: copy-disabled icon is not correct
 - Fixed bug #9596: content/history published field does misses label for Copy translation
 - Fixed bug #9573: ezinfo/about has no admin design.
@@ -67,4 +67,4 @@ Changes from 3.9.0rc1 to 3.9.0rc2
   to accesss setup wizard varibles when using kickstart.ini.
 - Fixed bug #9537: The image field in the "Site settings" edit interface 
   is not confined to the page width.
-- Fixed bug #9639: eZ publish generates same cache block simultaneously.
+- Fixed bug #9639: Exponential generates same cache block simultaneously.

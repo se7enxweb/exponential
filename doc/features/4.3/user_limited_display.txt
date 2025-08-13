@@ -4,7 +4,7 @@ User limited items hide/show with CSS
 A small, but potentially useful, feature has been added to trunk.
 
 It works around the fact that ViewCache is role based and not user based. A good
-example of an old feature where it could be used are eZ publish based forums:
+example of an old feature where it could be used are Exponential based forums:
 when users have the content/edit/owner(self) policy, they must be offered a link
 to edit their own posts. But since forums are cached using ViewCache, each page
 is shared among all users, and if you use a content/edit policy check for each

@@ -12,7 +12,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish Template Compiler\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential Template Compiler\n" .
                                                          "\n" .
                                                          "./bin/php/eztc.php -snews --www-dir='/mypath' --index-file='/index.php' --access-path='news'" ),
                                       'use-session' => false,
@@ -25,7 +25,7 @@ $options = $script->getOptions( "[compile-directory:][www-dir:][index-file:][acc
                                 "",
                                 array( 'force' => "Force compilation of template whether it has changed or not",
                                        'compile-directory' => "Where to place compiled files,\ndefault is template/compiled in current cache directory",
-                                       'full-url' => "Makes sure generated urls have http:// in them (i.e. global), used mainly by sites that include the eZ Publish HTML (e.g payment gateways)",
+                                       'full-url' => "Makes sure generated urls have http:// in them (i.e. global), used mainly by sites that include the Exponential HTML (e.g payment gateways)",
                                        'no-full-url' => "Makes sure generated urls are relative to the site. (default)",
                                        'www-dir' => "The part before the index.php in your URL, you should supply this if you are running in non-virtualhost mode",
                                        'index-file' => "The name of your index.php if you are running in non-virtualhost mode",

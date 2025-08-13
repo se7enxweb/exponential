@@ -4,7 +4,7 @@ Language switcher
 Intro
 -----
 
-In eZ Publish 4.1, there is a new way to create links, which takes users to
+In Exponential 4.1, there is a new way to create links, which takes users to
 another translation siteaccess. This have previously been problematic where
 the URL has not been available in the selected translation siteaccess, because
 of differing translations

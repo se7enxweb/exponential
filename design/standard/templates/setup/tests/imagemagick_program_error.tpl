@@ -3,7 +3,7 @@
 <h3>{$result_number}. {"Missing ImageMagick program"|i18n("design/standard/setup/tests")}</h3>
 
 <p>
- {"The ImageMagick program is not available to eZ Publish. Without it eZ Publish will not be able to do image conversion unless the imagegd extension is available."|i18n("design/standard/setup/tests")}
+ {"The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available."|i18n("design/standard/setup/tests")}
 </p>
 <p>
  {"If you know where the program is installed (the executable is called"|i18n("design/standard/setup/tests")} <i>convert</i> {"or"|i18n("design/standard/setup/tests")} <i>convertim</i>{")then enter the directory in the input field below and do a recheck (Separate multiple directories with a"|i18n("design/standard/setup/tests")} {if eq($program_info.filesystem_type,'unix')}{"colon"|i18n("design/standard/setup/tests")}{else}{"semicolon"|i18n("design/standard/setup/tests")}{/if} <b>{$program_info.env_separator}</b> ).

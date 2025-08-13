@@ -523,14 +523,14 @@ SQL_ERROR_LIST=""
 
 ./bin/php/ezsqldumpschema.php --type=mysql --compatible-sql --format=local --output-types=data --output-sql --schema-file=share/db_schema.dba share/db_data.dba ".tmp.sql"
 SQL_FILE_ERROR=""
-if ! grep -e "INSERT INTO ezsite_data (name, value) VALUES ('ezpublish-version','$VERSION');" ".tmp.sql" &>/dev/null; then
+if ! grep -e "INSERT INTO ezsite_data (name, value) VALUES ('Exponential-version','$VERSION');" ".tmp.sql" &>/dev/null; then
     rm -f ".tmp.sql"
     MAIN_ERROR="1"
     SQL_ERROR="1"
     SQL_FILE_ERROR="1"
 fi
 
-if ! grep -e "INSERT INTO ezsite_data (name, value) VALUES ('ezpublish-release','$REAL_RELEASE');" ".tmp.sql" &>/dev/null; then
+if ! grep -e "INSERT INTO ezsite_data (name, value) VALUES ('Exponential-release','$REAL_RELEASE');" ".tmp.sql" &>/dev/null; then
     rm -f ".tmp.sql"
     MAIN_ERROR="1"
     SQL_ERROR="1"
@@ -546,18 +546,18 @@ if [ -n "$SQL_ERROR" ]; then
     echo "`$SETCOLOR_FAILURE`Version number mismatch`$SETCOLOR_NORMAL`"
     echo -n "Wrong/missing version number in `ez_color_file share/db_data.dba`"
     echo
-    echo "For the table `ez_color_comment ezsite_data` and name `ez_color_comment ezpublish-version`"
+    echo "For the table `ez_color_comment ezsite_data` and name `ez_color_comment Exponential-version`"
     echo
     echo "Should be:"
-    echo "ezpublish-version='`$SETCOLOR_EMPHASIZE`$VERSION`$SETCOLOR_NORMAL`'"
+    echo "Exponential-version='`$SETCOLOR_EMPHASIZE`$VERSION`$SETCOLOR_NORMAL`'"
     echo "and"
-    echo "ezpublish-release='`$SETCOLOR_EMPHASIZE`$REAL_RELEASE`$SETCOLOR_NORMAL`'"
+    echo "Exponential-release='`$SETCOLOR_EMPHASIZE`$REAL_RELEASE`$SETCOLOR_NORMAL`'"
     echo
     echo "To fix this the following should be done:"
     echo
     echo "Create a file called `$SETCOLOR_FILE`data.sql`$SETCOLOR_NORMAL` and add the following"
-    echo "`$SETCOLOR_EMPHASIZE`UPDATE ezsite_data set value='$VERSION' WHERE name='ezpublish-version';`$SETCOLOR_NORMAL`"
-    echo "`$SETCOLOR_EMPHASIZE`UPDATE ezsite_data set value='$REAL_RELEASE' WHERE name='ezpublish-release';`$SETCOLOR_NORMAL`"
+    echo "`$SETCOLOR_EMPHASIZE`UPDATE ezsite_data set value='$VERSION' WHERE name='Exponential-version';`$SETCOLOR_NORMAL`"
+    echo "`$SETCOLOR_EMPHASIZE`UPDATE ezsite_data set value='$REAL_RELEASE' WHERE name='Exponential-release';`$SETCOLOR_NORMAL`"
     echo "then run `$SETCOLOR_EXE`./bin/shell/redumpall.sh --data tmp`$SETCOLOR_NORMAL`,"
     echo "check the changes with `$SETCOLOR_EXE`svn diff`$SETCOLOR_NORMAL` and them commit them if everything is ok"
     echo
@@ -565,8 +565,8 @@ if [ -n "$SQL_ERROR" ]; then
     echo "--------------------------------------8<----------------------------------------"
     echo
     echo "rm -f data.sql"
-    echo "echo \"`$SETCOLOR_EMPHASIZE`UPDATE ezsite_data set value='$VERSION' WHERE name='ezpublish-version';`$SETCOLOR_NORMAL`\" > data.sql"
-    echo "echo \"`$SETCOLOR_EMPHASIZE`UPDATE ezsite_data set value='$REAL_RELEASE' WHERE name='ezpublish-release';`$SETCOLOR_NORMAL`\" >> data.sql"
+    echo "echo \"`$SETCOLOR_EMPHASIZE`UPDATE ezsite_data set value='$VERSION' WHERE name='Exponential-version';`$SETCOLOR_NORMAL`\" > data.sql"
+    echo "echo \"`$SETCOLOR_EMPHASIZE`UPDATE ezsite_data set value='$REAL_RELEASE' WHERE name='Exponential-release';`$SETCOLOR_NORMAL`\" >> data.sql"
     echo
     echo "`$SETCOLOR_EXE`./bin/shell/redumpall.sh --data tmp`$SETCOLOR_NORMAL`"
     echo
@@ -718,20 +718,20 @@ for driver in $DRIVERS; do
 	MAIN_ERROR="1"
 	[ -n "$EXIT_AT_ONCE" ] && exit 1
     else
-	if ! grep -E "UPDATE ezsite_data SET value='$VERSION' WHERE name='ezpublish-version';" $file &>/dev/null; then
+	if ! grep -E "UPDATE ezsite_data SET value='$VERSION' WHERE name='Exponential-version';" $file &>/dev/null; then
 	    echo "`$SETCOLOR_FAILURE`Version number mismatch`$SETCOLOR_NORMAL`"
-	    echo "Wrong/missing version number in `$SETCOLOR_EXE`$file`$SETCOLOR_NORMAL` for variable ezpublish-version"
+	    echo "Wrong/missing version number in `$SETCOLOR_EXE`$file`$SETCOLOR_NORMAL` for variable Exponential-version"
 	    echo "Should be:"
-	    echo "UPDATE ezsite_data SET value='`$SETCOLOR_EMPHASIZE`$VERSION`$SETCOLOR_NORMAL`' WHERE name='ezpublish-version';"
+	    echo "UPDATE ezsite_data SET value='`$SETCOLOR_EMPHASIZE`$VERSION`$SETCOLOR_NORMAL`' WHERE name='Exponential-version';"
 	    echo
 	    MAIN_ERROR="1"
 	    [ -n "$EXIT_AT_ONCE" ] && exit 1
 	fi
-	if ! grep -E "UPDATE ezsite_data SET value='$REAL_RELEASE' WHERE name='ezpublish-release';" $file &>/dev/null; then
+	if ! grep -E "UPDATE ezsite_data SET value='$REAL_RELEASE' WHERE name='Exponential-release';" $file &>/dev/null; then
 	    echo "`$SETCOLOR_FAILURE`Version number mismatch`$SETCOLOR_NORMAL`"
-	    echo "Wrong/missing version number in `$SETCOLOR_EXE`$file`$SETCOLOR_NORMAL` for variable ezpublish-version"
+	    echo "Wrong/missing version number in `$SETCOLOR_EXE`$file`$SETCOLOR_NORMAL` for variable Exponential-version"
 	    echo "Should be:"
-	    echo "UPDATE ezsite_data SET value='`$SETCOLOR_EMPHASIZE`$REAL_RELEASE`$SETCOLOR_NORMAL`' WHERE name='ezpublish-release';"
+	    echo "UPDATE ezsite_data SET value='`$SETCOLOR_EMPHASIZE`$REAL_RELEASE`$SETCOLOR_NORMAL`' WHERE name='Exponential-release';"
 	    echo
 	    MAIN_ERROR="1"
 	    [ -n "$EXIT_AT_ONCE" ] && exit 1
@@ -750,20 +750,20 @@ for driver in $DRIVERS; do
 	    MAIN_ERROR="1"
 	    [ -n "$EXIT_AT_ONCE" ] && exit 1
 	else
-	    if ! grep -E "UPDATE ezsite_data SET value='$VERSION' WHERE name='ezpublish-version';" $file &>/dev/null; then
+	    if ! grep -E "UPDATE ezsite_data SET value='$VERSION' WHERE name='Exponential-version';" $file &>/dev/null; then
 		echo "`$SETCOLOR_FAILURE`Version number mismatch`$SETCOLOR_NORMAL`"
-		echo "Wrong/missing version number in `$SETCOLOR_EXE`$file`$SETCOLOR_NORMAL` for variable ezpublish-version"
+		echo "Wrong/missing version number in `$SETCOLOR_EXE`$file`$SETCOLOR_NORMAL` for variable Exponential-version"
 		echo "Should be:"
-		echo "UPDATE ezsite_data SET value='`$SETCOLOR_EMPHASIZE`$VERSION`$SETCOLOR_NORMAL`' WHERE name='ezpublish-version';"
+		echo "UPDATE ezsite_data SET value='`$SETCOLOR_EMPHASIZE`$VERSION`$SETCOLOR_NORMAL`' WHERE name='Exponential-version';"
 		echo
 		MAIN_ERROR="1"
 		[ -n "$EXIT_AT_ONCE" ] && exit 1
 	    fi
-	    if ! grep -E "UPDATE ezsite_data SET value='$REAL_RELEASE' WHERE name='ezpublish-release';" $file &>/dev/null; then
+	    if ! grep -E "UPDATE ezsite_data SET value='$REAL_RELEASE' WHERE name='Exponential-release';" $file &>/dev/null; then
 		echo "`$SETCOLOR_FAILURE`Version number mismatch`$SETCOLOR_NORMAL`"
-		echo "Wrong/missing version number in `$SETCOLOR_EXE`$file`$SETCOLOR_NORMAL` for variable ezpublish-version"
+		echo "Wrong/missing version number in `$SETCOLOR_EXE`$file`$SETCOLOR_NORMAL` for variable Exponential-version"
 		echo "Should be:"
-		echo "UPDATE ezsite_data SET value='`$SETCOLOR_EMPHASIZE`$REAL_RELEASE`$SETCOLOR_NORMAL`' WHERE name='ezpublish-release';"
+		echo "UPDATE ezsite_data SET value='`$SETCOLOR_EMPHASIZE`$REAL_RELEASE`$SETCOLOR_NORMAL`' WHERE name='Exponential-release';"
 		echo
 		MAIN_ERROR="1"
 		[ -n "$EXIT_AT_ONCE" ] && exit 1

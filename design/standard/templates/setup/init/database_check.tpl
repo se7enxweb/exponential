@@ -10,7 +10,7 @@
 {if $database_info.info.has_demo_data}
   {if $demo_data.can_unpack}
 <p>
- {"If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of eZ Publish"|i18n("design/standard/setup/init")} {$#version.major}.{$#version.minor}.
+ {"If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential"|i18n("design/standard/setup/init")} {$#version.major}.{$#version.minor}.
  {"First time users are advised to install the demo data."|i18n("design/standard/setup/init")}
 </p>
 <div class="input_highlight">
@@ -70,7 +70,7 @@
 <blockquote class="note">
 <p>
  <b>{"Note"|i18n("design/standard/setup/init")}:</b>
- {"The setup will not do an upgrade from older eZ Publish versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don't want to lose. If you have existing eZ Publish 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade."|i18n("design/standard/setup/init")}
+ {"The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don't want to lose. If you have existing Exponential 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade."|i18n("design/standard/setup/init")}
 </p>
 </blockquote>
 

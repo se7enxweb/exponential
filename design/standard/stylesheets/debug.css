@@ -179,4 +179,77 @@ div.debug-toolbar label
   word-break: break-all;
   /* white-space: pre-wrap; */
 }
+
+/* ========================= July 02, 2025 ========================= */
+
+/* eZ Debug Accordion container */
+  #debug {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Accordion header */
+  #debug h2 a {
+    background-color: #f2f2f2;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Icon for open/close */
+  #debug h2 a::after {
+    content: '\25BC'; /* Down arrow */
+    font-size: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Rotate arrow when active */
+  #debug h2 a.active::after {
+    transform: rotate(180deg);
+  }
+
+  /* Accordion content */
+  #debug-details {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: max-height 0.3s ease;
+    background-color: #fff;
+  }
+
+  /* When active, set max-height to something large enough */
+  #debug-details.active {
+    padding: 15px;
+    max-height: 100%;
+    /* Adjust if content is larger */
+  }
+
+  #debug #templateusage > tbody > tr > th {
+    font-size: smaller;
+  }
+
+/*
+  #debug div#debug-details.active div#time-accumulators {
+    display: none;
+  }
+
+  #debug div#debug-details.active div#timing-points {
+    display: none;
+  }
+
+  #debug div#debug-details.active div.table-responsive table#main-debug-table tbody tr td div.block.debug-toolbar {
+    display: none;
+*/
+  }
+
+/* ========================= July 02, 2025 ========================= */
+
+
 /* ============ DEBUG CONTENT ============ */

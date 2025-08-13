@@ -13,10 +13,10 @@ INI setting changes
 Change of behavior
 -------------------
 
-- Subversion revision number of eZ Publish is not accessible anymore.
+- Subversion revision number of Exponential is not accessible anymore.
 
   With the move to git, there is no such info anymore. This is not going to be
-  replaced as the full version of eZ Publish is descriptive enough.
+  replaced as the full version of Exponential is descriptive enough.
 
   Functions eZPublishSDK::revision() and eZSetupFunctionCollection::fetchRevision()
   has been removed as well as constants
@@ -98,7 +98,7 @@ Deprecated functionality
 
 - LastAccessesURI & LastAccessedModifyingURI session variables
 
-  These variables represent state and should not use sessions*, we will migrate eZ Publish to
+  These variables represent state and should not use sessions*, we will migrate Exponential to
   use post parameters in the future, and we recommend you to do the same for your custom code.
   * breaks when you have multiple windows open, something power users frequently do.
 
@@ -160,7 +160,7 @@ Removed features
 
 - Section ID no longer global
 
-  Like other session related topics mentioned above, previous eZ Publish versions remembered section id state for
+  Like other session related topics mentioned above, previous Exponential versions remembered section id state for
   use as override option on pages that had nothing to do with section (non content related) like user/login.
   This is no longer supported.
 
@@ -174,7 +174,7 @@ Removed features
 - Older versions of ezlupdate
 
   Versions of ezlupdate source code linking against QT3 and QT4 are no longer
-  bundled with eZ Publish. Only QT version 4.5 is bundled from now on.
+  bundled with Exponential. Only QT version 4.5 is bundled from now on.
 
 Removed methods
 ---------------

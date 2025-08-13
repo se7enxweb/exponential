@@ -15,7 +15,7 @@ $helper = new eZCacheHelper(
     $cli = eZCLI::instance(),
     $script = eZScript::instance(
         array(
-            'description' => "eZ Publish Cache Handler\n" .
+            'description' => "Exponential Cache Handler\n" .
                              "Allows for easy clearing of Cache files\n" .
                              "\n" .
                              "./bin/php/ezcache.php --clear-tag=content",

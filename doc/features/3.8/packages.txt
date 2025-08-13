@@ -10,14 +10,14 @@ functionality' steps of the setup wizard. Both steps use the standard
 packages (News, Forum, Gallery and others). The package system allows
 users to create new, remove existing, install and uninstall packages.
 The following problems are known:
-- It is impossible to install eZ Publish without standard packages
+- It is impossible to install Exponential without standard packages
 (without choosing one of the site types).
 - Design packages are connected with functionality packages.
 - Improper installing/uninstalling of the packages.
 - It is impossible to install the 'contentobject' package if one of
 the included objects already exists in the database (the same remote_id).
 - Some actions related to the standard packages are hardcoded in
-eZ Publish, so the packages can not be used separately.
+Exponential, so the packages can not be used separately.
 - It is impossible to store additional data like settings, users, roles
 inside packages.
 - Information about installed packages is stored in package.xml files,
@@ -69,7 +69,7 @@ type ('styles', 'addons'). These subdirectories were listed as repositories
 in the administration interface so the packages were sorted by type.
 
 Now these directories are removed and packages can be downloaded separately
-from eZ Publish. The packages will be sorted by their vendor. For example,
+from Exponential. The packages will be sorted by their vendor. For example,
 the packages fetched from ez.no will be stored under
 'var/storage/packages/ezsystems' directory not depending on their type.
 
@@ -82,7 +82,7 @@ On the 'Site type' step the setup wizard will suggest to select one of
 the available 'site' packages. The list of available site packages will be
 fetched from the URL given by the ini setting from 'package.ini':
 [RepositorySettings]
-RemotePackagesIndexURL=http://packages.ezpublish.no/index.xml
+RemotePackagesIndexURL=http://packages.exponential.no/index.xml
 
 If there are any local 'site' packages, they will be listed here as well.
 The selected package will be automatically imported and all the dependent

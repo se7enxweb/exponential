@@ -13,7 +13,7 @@ Deprecated features
 
 - eZArchiveHandler
   This class and related sub-classes, such as eZTARArchiveHandler has been
-  deprecated, they will be removed in eZ Publish 4.2. Archive from eZ Components
+  deprecated, they will be removed in Exponential 4.2. Archive from eZ Components
   is the intended replacement of this functionality.
 
 - eZFile::getContents()
@@ -25,8 +25,8 @@ Deprecated features
   [ModuleSettings] ModuleList in module.ini
 
 - eZImportLookupTable
-  This class is deprecated and will be removed from future versions of eZ Publish.
-  Long ago it was used by the eZ Publish package system.
+  This class is deprecated and will be removed from future versions of Exponential.
+  Long ago it was used by the Exponential package system.
 
 - eZExtension::findExtensionType
   This method is now deprecated and even though it is still in the code, we 
@@ -88,16 +88,16 @@ New constants in config.php
 
 EZP_INI_FILEMTIME_CHECK
   This new setting controls whether eZINI should check if the settings have
-  been updated in the *.ini-files*. If this check is disabled eZ Publish
+  been updated in the *.ini-files*. If this check is disabled Exponential
   will always used the cached values, lowering the amount of stat-calls to
   the file system, and thus increasing performance.
 
 EZP_AUTOLOAD_ALLOW_KERNEL_OVERRIDE
-  This setting controls if eZ Publish's autoload system should allow, and
+  This setting controls if Exponential's autoload system should allow, and
   load classes, which override kernel classes from extensions.
 
 EZP_USE_BUNDLED_COMPONENTS
-  If you are using a distribution of eZ Publish with which the necessary
+  If you are using a distribution of Exponential with which the necessary
   eZ Components are bundled (in lib/ezc), then you can use this setting to
   control if the bundled eZ Components should be used (true) or not (false).
   By default, when this setting is not present, the bundled eZ Components are
@@ -108,7 +108,7 @@ EZC_BASE_PATH
   If you are not using the bundled eZ Components, then for optimal speed it is
   recommended to set EZC_BASE_PATH to either ezc/Base/base.php or Base/src/base.php,
   depending on how you installed the eZ Components. By default, if this setting
-  is not present, eZ Publish first tries to include ezc/Base/base.php. If that fails
+  is not present, Exponential first tries to include ezc/Base/base.php. If that fails
   Base/src/base.php is included.
 
 EZP_AUTOLOAD_OUTPUT

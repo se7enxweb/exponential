@@ -1,14 +1,14 @@
-WebDAV in eZ Publish
+WebDAV in Exponential
 ~~~~~~~~~~~~~~~~~~~~
 
 Server Configuration
 ====================
 
-The eZ Publish installation must be configured to process all WebDAV requests
+The Exponential installation must be configured to process all WebDAV requests
 through webdav.php.
 
 See http://ez.no/doc/ez_publish/technical_manual/4_0/features/webdav for
-more information about how to activate WebDAV support on an eZ Publish
+more information about how to activate WebDAV support on an Exponential
 installation.
 
 In addition, WebDAV support must be enabled in webdav.ini::

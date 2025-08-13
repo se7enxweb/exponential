@@ -79,7 +79,7 @@ Admin:
 - Used cache-block operator to speed up the admin interface
 
 *Doc :
-- Added document describing authentication and authorization handling in eZ publish
+- Added document describing authentication and authorization handling in Exponential
 
 *SDK :
 - Swapped the last two images in the main concepts tutorial.

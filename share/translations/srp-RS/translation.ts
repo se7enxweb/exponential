@@ -4346,8 +4346,8 @@
         <translation>Алијас ће преусмеравати ка свом одредишту</translation>
     </message>
     <message>
-        <source>With &lt;em&gt;Alias should redirect to its destination&lt;/em&gt; checked eZ Publish will redirect to the destination using a HTTP 301 response. Un-check it and the URL will stay the same &amp;#8212; no redirection will be performed.</source>
-        <translation>Уколико сте оверили &lt;em&gt;Алијас ће преусмеравати ка свом одредишту&lt;/em&gt; eZ Publish ће преусмеравати ка одредишту користећи HTTP 301. Оставите неоверено и URL ће остати исти &amp;#8212; до преусмеравања неће доћи.</translation>
+        <source>With &lt;em&gt;Alias should redirect to its destination&lt;/em&gt; checked Exponential will redirect to the destination using a HTTP 301 response. Un-check it and the URL will stay the same &amp;#8212; no redirection will be performed.</source>
+        <translation>Уколико сте оверили &lt;em&gt;Алијас ће преусмеравати ка свом одредишту&lt;/em&gt; Exponential ће преусмеравати ка одредишту користећи HTTP 301. Оставите неоверено и URL ће остати исти &amp;#8212; до преусмеравања неће доћи.</translation>
     </message>
     <message>
         <source>If checked the alias will start from the parent of the current node. If un-checked the aliases will start from the root of the site.</source>
@@ -4767,7 +4767,7 @@
         <translation type="obsolete">Користи ово поље за унос исправног URL-а система. URL система једноставно је препознати јер садржи неколико делова одељених са &quot;/&quot;.</translation>
     </message>
     <message>
-        <source>Click this button to add a new system URL forwarding. System URL forwarding is used to forward any URL to a system URL in eZ publish.</source>
+        <source>Click this button to add a new system URL forwarding. System URL forwarding is used to forward any URL to a system URL in Exponential.</source>
         <translation type="obsolete">Кликни на дугме за додавање преусмереног URL система. Преусмерени URL система користи се за преусмеравање било којег URL-а на URL система.</translation>
     </message>
     <message>
@@ -4779,7 +4779,7 @@
         <translation type="obsolete">Користи ово поље за унос исправног постојећег виртуелног URL у систему. Виртуелни URL је генерисан од стране система и обично садржи делове садржаја објекта.</translation>
     </message>
     <message>
-        <source>Click this button to add a new virtual URL forwarding. Virtual URL forwarding is used to forward any URL to an existing virtual URL in eZ publish.</source>
+        <source>Click this button to add a new virtual URL forwarding. Virtual URL forwarding is used to forward any URL to an existing virtual URL in Exponential.</source>
         <translation type="obsolete">Кликни на дугме за додавање новог преусмереног виртуелног URL система. Преусмерени виртуелни URL система користи се за преусмеравање било којег URL-а на виртуелни URL система.</translation>
     </message>
     <message>
@@ -4803,11 +4803,11 @@
         <translation type="obsolete">Користи поље за унос исправног виртуелног URL-а система. Виртуелни URL је генерисан од стране система и обично се састоји од дела садржаја објекта. Било који карактер упоређен са звездицом у изворном URL-у може бити преведен на излазни URL стављањем {1\} на одговарајуће место.</translation>
     </message>
     <message>
-        <source>Use this checkbox to select if eZ publish should perform an internal redirect or a browser redirect. An internal redirect simply redirects the old URL to the new one without notifying the browser. A browser redirect makes the browser abort the current request and reload with the new URL. A browser redirect can be useful if you want the browser URL field to be updated.</source>
+        <source>Use this checkbox to select if Exponential should perform an internal redirect or a browser redirect. An internal redirect simply redirects the old URL to the new one without notifying the browser. A browser redirect makes the browser abort the current request and reload with the new URL. A browser redirect can be useful if you want the browser URL field to be updated.</source>
         <translation type="obsolete">Користи ово кућиште ако желиш да систем изврши интерно преусмеравање или преусмеравање у browserу. Интерно преусмеравање једноставно преусмери стари URL на нови без обавештења browserу. Преусмеравање у browserу зауставља текући захтев и поново учита захтев али са новим URL-ом. Преусмеравање у browserу може бити корисно ако желиш освежити информацију у пољу за URL.</translation>
     </message>
     <message>
-        <source>Click this button to add a new virtual URL forwarding with wildcard match. Virtual URL forwarding is used to forward any URL to an existing virtual URL in eZ publish. The wildcard match is useful if you have moved a complete tree from one place to another.</source>
+        <source>Click this button to add a new virtual URL forwarding with wildcard match. Virtual URL forwarding is used to forward any URL to an existing virtual URL in Exponential. The wildcard match is useful if you have moved a complete tree from one place to another.</source>
         <translation type="obsolete">Кликни на дугме за додавање новог виртуелног преусмереног URL са звездицом(wildcard). Виртуелно преусмеравање URL-а служи за преусмеравање било којег URL-а на постојећи виртуелни у систему. Користећи звездицу(wildcard) корисно је ако је комплетно стабло пребачено на другу локацију.</translation>
     </message>
     <message>
@@ -5318,7 +5318,7 @@
 <context>
     <name>design/admin/dashboard/community</name>
     <message>
-        <source>What&apos;s happening in the eZ Community</source>
+        <source>What&apos;s happening in the Exponential Community</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5403,12 +5403,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt; for more infomation.</source>
+        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more infomation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are using %edition, the &lt;span id=&quot;ez-publish-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of eZ Publish, built by &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;eZ Community&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If this platform is critical for your business, we strongly recommend to subscribe to the Enterprise Edition of eZ Publish. More on &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt;&apos; website.</source>
+        <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If this platform is critical for your business, we strongly recommend to subscribe to the Enterprise Edition of Exponential. More on &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt;&apos; website.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5704,12 +5704,12 @@
 <context>
     <name>design/admin/ezinfo/about</name>
     <message>
-        <source>eZ Publish information: %version</source>
-        <translation>eZ Publish информације: %version</translation>
+        <source>Exponential information: %version</source>
+        <translation>Exponential информације: %version</translation>
     </message>
     <message>
-        <source>What is eZ Publish?</source>
-        <translation>Шта је то eZ Publish?</translation>
+        <source>What is Exponential?</source>
+        <translation>Шта је то Exponential?</translation>
     </message>
     <message>
         <source>License</source>
@@ -7598,8 +7598,8 @@
         <translation>Одржаваоци</translation>
     </message>
     <message>
-        <source>Regarding eZ publish package &apos;%packagename&apos;</source>
-        <translation type="obsolete">У вези с eZ publish пакетом &apos;%packagename&apos;</translation>
+        <source>Regarding Exponential package &apos;%packagename&apos;</source>
+        <translation type="obsolete">У вези с Exponential пакетом &apos;%packagename&apos;</translation>
     </message>
     <message>
         <source>Send e-mail to the maintainer</source>
@@ -7694,8 +7694,8 @@ You can also remove the package without uninstalling it from the package list.</
         <translation>Изаберите документ који садржи пакет затим притисните дугме за учитавање</translation>
     </message>
     <message>
-        <source>Regarding eZ Publish package &apos;%packagename&apos;</source>
-        <translation>Ez Publish пакет &apos;%packagename&apos;</translation>
+        <source>Regarding Exponential package &apos;%packagename&apos;</source>
+        <translation>Exponential пакет &apos;%packagename&apos;</translation>
     </message>
     <message>
         <source>Send email to the maintainer</source>
@@ -7808,7 +7808,7 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate eZ Publish Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the eZ Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;eZ Publish&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems AS&lt;/a&gt; and others.</source>
+        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7816,7 +7816,7 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;eZ Publish&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems AS&lt;/a&gt; and others.</source>
+        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9102,7 +9102,7 @@ Note: The packages will not be uninstalled.</source>
         <translation type="obsolete">Користи падајући мени за избор функције којој желиш доделити приступ.</translation>
     </message>
     <message>
-        <source>The &quot;Grant full access&quot; button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you wish to limit the access method in some way, click the &quot;Grant limited access&quot; button. Function limitation is only supported by some functions. If unsupported, eZ publish will simply set up a policy with unlimited access to the selected function.</source>
+        <source>The &quot;Grant full access&quot; button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you wish to limit the access method in some way, click the &quot;Grant limited access&quot; button. Function limitation is only supported by some functions. If unsupported, Exponential will simply set up a policy with unlimited access to the selected function.</source>
         <translation type="obsolete">&quot;Дозволи приступ свим функцијама&quot; креираће политику која дозвољава неограничен приступ свим функцијама у изабраном модулу.</translation>
     </message>
     <message>
@@ -9154,8 +9154,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>Притисните неко од дугмића &quot;Дозволи..&quot; (појашњених испод) да бисте прешли на наредни корак.</translation>
     </message>
     <message>
-        <source>The &quot;Grant full access&quot; button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you want to limit the access method, click the &quot;Grant limited access&quot; button. Function limitation is only supported by some functions. If unsupported, eZ Publish will set up a policy with unlimited access to the selected function.</source>
-        <translation>Дугме &quot;Дозволи пун приступ&quot; ће направити политику која омогућава неограничен приступ функцији изабраној у претходном кораку. Уколико желите да ограничите приступ, притисните дугме &quot;Додели ограничен приступ&quot;. Ограничења су доступна само за поједине функције. Уколико нису подржана, eZ Publish ће поставити политику са неограниченим приступом изабраној функцији.</translation>
+        <source>The &quot;Grant full access&quot; button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you want to limit the access method, click the &quot;Grant limited access&quot; button. Function limitation is only supported by some functions. If unsupported, Exponential will set up a policy with unlimited access to the selected function.</source>
+        <translation>Дугме &quot;Дозволи пун приступ&quot; ће направити политику која омогућава неограничен приступ функцији изабраној у претходном кораку. Уколико желите да ограничите приступ, притисните дугме &quot;Додели ограничен приступ&quot;. Ограничења су доступна само за поједине функције. Уколико нису подржана, Exponential ће поставити политику са неограниченим приступом изабраној функцији.</translation>
     </message>
     <message>
         <source>It is not possible to grant limited access to all modules at once. To grant unlimited access to all modules and their functions, go back to step one and select &quot;Grant access to all functions&quot;. To grant limited access to different functions within different modules, you must set up a collection of policies.</source>
@@ -9876,7 +9876,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Ако је RSS извоз активан тада је потребан исправан приступни URL.</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Webserver and eZ publish configuration.</source>
+        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Webserver and Exponential configuration.</source>
         <translation type="obsolete">Користите ово поље да унесете басе URL вашег сајта. То се користи да производи URL-ове у извозу комбинујући URL сајта (нпр. &quot;http://www.example.com/index.php&quot;) и путању до објекта (нпр. &quot;/articles/my_article&quot;). URL сајта зависи од вашег web сервера и конфигурације EZ.</translation>
     </message>
     <message>
@@ -9912,8 +9912,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>Назив RSS извоза. Ово име се користи само у администраторском интерфејсу, да раздвоји различите извозе једне од других.</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your web server and eZ Publish configuration.</source>
-        <translation>Користите ово поље да унесете основни URL вашег сајта. Користи се да произведе URL-е приликом извоза, састављене од сајт URL-а  (нпр. &quot;http://www.mojsajt.com/index.php&quot;) и путање до објекта (нпр. &quot;/clanci/moj_clanak&quot;). Сајт URL зависи од вашег сервера и подешавања eZ Publish-а.</translation>
+        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your web server and Exponential configuration.</source>
+        <translation>Користите ово поље да унесете основни URL вашег сајта. Користи се да произведе URL-е приликом извоза, састављене од сајт URL-а  (нпр. &quot;http://www.mojsajt.com/index.php&quot;) и путање до објекта (нпр. &quot;/clanci/moj_clanak&quot;). Сајт URL зависи од вашег сервера и подешавања Exponential-а.</translation>
     </message>
     <message>
         <source>Leave this field emty if you want system automaticaly detect the URL of your site from the URL you access feed with</source>
@@ -10877,11 +10877,11 @@ Note: The packages will not be uninstalled.</source>
         <translation>Провера унапређивања система</translation>
     </message>
     <message>
-        <source>Before upgrading eZ publish to a newer version, it is important to check that the current installation is ready for upgrading.</source>
-        <translation type="obsolete">Пре унапређивања eZ publishа на нову верзију проверите је ли тренутна инсталација спремна за унапређивање.</translation>
+        <source>Before upgrading Exponential to a newer version, it is important to check that the current installation is ready for upgrading.</source>
+        <translation type="obsolete">Пре унапређивања Exponentialа на нову верзију проверите је ли тренутна инсталација спремна за унапређивање.</translation>
     </message>
     <message>
-        <source>Remember to make a backup of the eZ publish directory and the database before you upgrade.</source>
+        <source>Remember to make a backup of the Exponential directory and the database before you upgrade.</source>
         <translation type="obsolete">Запамтите на да је добро направити сигурносне копије датотека и базе пре унапређивања.</translation>
     </message>
     <message>
@@ -10897,7 +10897,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Провера конзистентности базе</translation>
     </message>
     <message>
-        <source>The database consistency tool checks if the current database is consistent with the database schema that came with the eZ publish distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be ran in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.</source>
+        <source>The database consistency tool checks if the current database is consistent with the database schema that came with the Exponential distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be ran in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.</source>
         <translation type="obsolete">Алат за проверу конзистентности базе служи за проверу конзистентности постојеће базе са базом која долази са системом.</translation>
     </message>
     <message>
@@ -10917,20 +10917,20 @@ Note: The packages will not be uninstalled.</source>
         <translation>УПОЗОРЕЊЕ! Није безбедно надограђивати без провере измена урађених на следећим документима</translation>
     </message>
     <message>
-        <source>Before upgrading eZ Publish to a newer version, it is important to check that the current installation is ready for upgrading.</source>
+        <source>Before upgrading Exponential to a newer version, it is important to check that the current installation is ready for upgrading.</source>
         <translation>Пре надоградње еZ Publish-а на новију верзију, битно је проверити да ли је тренутна инсталација спремна за надоградњу.</translation>
     </message>
     <message>
-        <source>Remember to make a backup of the eZ Publish directory and the database before you upgrade.</source>
-        <translation>Обавезно направите резерву eZ Publish фасцикле и базе података пре него што почнете са надограђивањем.</translation>
+        <source>Remember to make a backup of the Exponential directory and the database before you upgrade.</source>
+        <translation>Обавезно направите резерву Exponential фасцикле и базе података пре него што почнете са надограђивањем.</translation>
     </message>
     <message>
         <source>The file consistency tool checks if you have altered any of the files that came with the current installation. Altered files may be replaced by new versions that contain bugfixes, new features, etc. Make sure that you backup and then merge your changes into the new versions of the files.</source>
         <translation>Алат за проверу конзистентности докумената проверава да ли сте мењали документа у садашњој инсталацији. Измењени документи могу бити замењени новијим верзијама које садрже закрпе, нове могућности итд. Направите резерве старих а потом додајте ваше промене у нова документа.</translation>
     </message>
     <message>
-        <source>The database consistency tool checks if the current database is consistent with the database schema that came with the eZ Publish distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be run in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.</source>
-        <translation>Алат за проверу конзистентности базе података проверава да ли сте мењали шему података у бази коју сте добили дистрибуцијом eZ Publish-а. Уколико недоследности постоје, алат ће предложити неопходне SQL команде које треба да извршите да би базу довели у одговарајуће стање. Извршите предложене SQL команде пре надограђивања.</translation>
+        <source>The database consistency tool checks if the current database is consistent with the database schema that came with the Exponential distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be run in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.</source>
+        <translation>Алат за проверу конзистентности базе података проверава да ли сте мењали шему података у бази коју сте добили дистрибуцијом Exponential-а. Уколико недоследности постоје, алат ће предложити неопходне SQL команде које треба да извршите да би базу довели у одговарајуће стање. Извршите предложене SQL команде пре надограђивања.</translation>
     </message>
     <message>
         <source>The upgrade checking tools require a lot of system resources. They may take some time to run.</source>
@@ -11182,17 +11182,17 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Version</source>
-        <comment>eZ publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">Верзија</translation>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">SVN ревизија </translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation type="obsolete">Екстензије</translation>
     </message>
     <message>
@@ -11269,7 +11269,7 @@ Note: The packages will not be uninstalled.</source>
         <translation type="obsolete">Модули</translation>
     </message>
     <message>
-        <source>eZ publish was unable to extract information from the webserver.</source>
+        <source>Exponential was unable to extract information from the webserver.</source>
         <translation type="obsolete">Систем не може извући податке са webservera.</translation>
     </message>
     <message>
@@ -11355,8 +11355,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не користи се помоћна база података.</translation>
     </message>
     <message>
-        <source>eZ publish</source>
-        <translation type="obsolete">eZ publish</translation>
+        <source>Exponential</source>
+        <translation type="obsolete">Exponential</translation>
     </message>
     <message>
         <source>PHP</source>
@@ -11399,22 +11399,22 @@ Note: The packages will not be uninstalled.</source>
         <translation type="obsolete">Нема ограничење меморије скрипти.</translation>
     </message>
     <message>
-        <source>eZ Publish</source>
-        <translation>eZ Publish</translation>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
     </message>
     <message>
         <source>Version</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation>Верзија</translation>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">SVN ревизија</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ Publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation>Екстензије</translation>
     </message>
     <message>
@@ -11451,8 +11451,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>Модули на веб серверу не могу бити издвојени.</translation>
     </message>
     <message>
-        <source>eZ Publish was unable to extract information from the web server.</source>
-        <translation>eZ Publish није у могућности да добије информације од веб сервера.</translation>
+        <source>Exponential was unable to extract information from the web server.</source>
+        <translation>Exponential није у могућности да добије информације од веб сервера.</translation>
     </message>
     <message>
         <source>Web server (hardware)</source>
@@ -11506,7 +11506,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Rapid Application Development алати</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for eZ publish easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
+        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for Exponential easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
         <translation type="obsolete">RAD алат омогућује креирање нових/проширених функција у систем.</translation>
     </message>
     <message>
@@ -11526,7 +11526,7 @@ Note: The packages will not be uninstalled.</source>
         <translation>Чаробњак оператора шаблона (корак 1 од 3)</translation>
     </message>
     <message>
-        <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, eZ publish will generate a PHP framework for the a new operator (which will be available for download).</source>
+        <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, Exponential will generate a PHP framework for the a new operator (which will be available for download).</source>
         <translation type="obsolete">Добродошли у чаробњак за израду оператора шаблона. Оператори шаблона се обично користе за манипулацију варијабли унутар шаблона. Они такође могу бити коришћени и за генерисање или дохват података из базе. чаробњак ће вас извести кроз неколико основних корака. По завршетку, систем ће генерисати PHP framework за нови оператор који ће понудити за download.</translation>
     </message>
     <message>
@@ -11538,12 +11538,12 @@ Note: The packages will not be uninstalled.</source>
         <translation>Следећи</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for eZ Publish easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
-        <translation>Алати за брз развој апликација (RAD) чине лакшим стварање нове/проширене функционалности за eZ Publish. Тренутно су доступна два RAD алата: чаробњака шаблонских  оператора и чаробњак за врсте података. Чаробњак шаблонских оператора у суштини генерише важећи оквир (PHP код) за нови шаблонски оператор. Чаробњак за врсте података ствара важећи оквир (PHP код) за нову врсту података.</translation>
+        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for Exponential easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
+        <translation>Алати за брз развој апликација (RAD) чине лакшим стварање нове/проширене функционалности за Exponential. Тренутно су доступна два RAD алата: чаробњака шаблонских  оператора и чаробњак за врсте података. Чаробњак шаблонских оператора у суштини генерише важећи оквир (PHP код) за нови шаблонски оператор. Чаробњак за врсте података ствара важећи оквир (PHP код) за нову врсту података.</translation>
     </message>
     <message>
-        <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, eZ Publish will generate a PHP framework for a new operator (which will be available for download).</source>
-        <translation>Добродошли у чаробњак за шаблонске операторе. Шаблонски оператори се обично користе за манипулацију променљивама у шаблону. Међутим, они се такође могу користити за ставарање или приступање подацима. Овај чаробњак ће вас провести кроз неколико корака са неким основним изборима. Када завршите, eZ Publish ће направити PHP оквир за нови оператор (који ће бити доступан за преузимање).</translation>
+        <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, Exponential will generate a PHP framework for a new operator (which will be available for download).</source>
+        <translation>Добродошли у чаробњак за шаблонске операторе. Шаблонски оператори се обично користе за манипулацију променљивама у шаблону. Међутим, они се такође могу користити за ставарање или приступање подацима. Овај чаробњак ће вас провести кроз неколико корака са неким основним изборима. Када завршите, Exponential ће направити PHP оквир за нови оператор (који ће бити доступан за преузимање).</translation>
     </message>
 </context>
 <context>
@@ -14369,7 +14369,7 @@ your account.</source>
         <translation>Молимо контактирајте администратора.</translation>
     </message>
     <message>
-        <source>Log in to the administration interface of eZ publish</source>
+        <source>Log in to the administration interface of Exponential</source>
         <translation type="obsolete">Логујте се на администраторски интерфејс</translation>
     </message>
     <message>
@@ -14427,8 +14427,8 @@ your account.</source>
         <translation>Немате овлашћења да се пријавите на &lt;%siteaccess_name&gt;.</translation>
     </message>
     <message>
-        <source>Log in to the Administration Interface of eZ Publish</source>
-        <translation type="obsolete">Пријавите се на Администраторски интерфејс eZ Publish-а</translation>
+        <source>Log in to the Administration Interface of Exponential</source>
+        <translation type="obsolete">Пријавите се на Администраторски интерфејс Exponential-а</translation>
     </message>
     <message>
         <source>Please enter a valid username/password combination then click &quot;Log in&quot;.</source>
@@ -15749,8 +15749,8 @@ your account.</source>
         <translation>Прегледај коментаре</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag eZ publish&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
-        <translation type="obsolete">Израђено помоћу %linkStartTag eZ Publish %linkEndTag отвореног кода.</translation>
+        <source>Powered by %linkStartTag Exponential&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
+        <translation type="obsolete">Израђено помоћу %linkStartTag Exponential %linkEndTag отвореног кода.</translation>
     </message>
     <message>
         <source>Top menu</source>
@@ -15769,8 +15769,8 @@ your account.</source>
         <translation>Леви подмени</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag eZ publish&amp;reg; open source content management system %linkEndTag and development framework.</source>
-        <translation type="obsolete">Израђено помоћу %linkStartTag eZ Publish %linkEndTag отвореног кода.</translation>
+        <source>Powered by %linkStartTag Exponential&amp;reg; open source content management system %linkEndTag and development framework.</source>
+        <translation type="obsolete">Израђено помоћу %linkStartTag Exponential %linkEndTag отвореног кода.</translation>
     </message>
     <message>
         <source>Details...</source>
@@ -15978,12 +15978,12 @@ your account.</source>
         <translation>Мање кључних доноси више погодака. Пробајте уносити мање речи да бисте добили резултате.</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag eZ Publish&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
-        <translation>Направљено помоћу %linkStartTag eZ Publish-а&amp;reg;&amp;trade; система за управљање садржином отвореног кода %linkEndTag и оквира за развој.</translation>
+        <source>Powered by %linkStartTag Exponential&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
+        <translation>Направљено помоћу %linkStartTag Exponential-а&amp;reg;&amp;trade; система за управљање садржином отвореног кода %linkEndTag и оквира за развој.</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag eZ Publish&amp;reg; open source content management system %linkEndTag and development framework.</source>
-        <translation>Направљено помоћу %linkStartTag eZ Publish-а&amp;reg; система за управљање садржином отвореног кода %linkEndTag и оквира за развој.</translation>
+        <source>Powered by %linkStartTag Exponential&amp;reg; open source content management system %linkEndTag and development framework.</source>
+        <translation>Направљено помоћу %linkStartTag Exponential-а&amp;reg; система за управљање садржином отвореног кода %linkEndTag и оквира за развој.</translation>
     </message>
 </context>
 <context>
@@ -19272,8 +19272,8 @@ If you want to send comments to the approver or view the status use the URL belo
 <context>
     <name>design/standard/content/pdf</name>
     <message>
-        <source>eZ publish PDF export</source>
-        <translation type="obsolete">eZ publish PDF извоз</translation>
+        <source>Exponential PDF export</source>
+        <translation type="obsolete">Exponential PDF извоз</translation>
     </message>
     <message>
         <source>#page of #total</source>
@@ -19296,8 +19296,8 @@ If you want to send comments to the approver or view the status use the URL belo
         <translation>Приказ верзије још није могућ у PDF формату</translation>
     </message>
     <message>
-        <source>eZ Publish PDF export</source>
-        <translation>eZ Publish PDF извоз</translation>
+        <source>Exponential PDF export</source>
+        <translation>Exponential PDF извоз</translation>
     </message>
 </context>
 <context>
@@ -20641,12 +20641,12 @@ If you want to send comments to the approver or view the status use the URL belo
 <context>
     <name>design/standard/ezinfo/about</name>
     <message>
-        <source>eZ Publish information: %version</source>
-        <translation>eZ Publish информације: %version</translation>
+        <source>Exponential information: %version</source>
+        <translation>Exponential информације: %version</translation>
     </message>
     <message>
-        <source>What is eZ Publish?</source>
-        <translation>Шта је то eZ Publish?</translation>
+        <source>What is Exponential?</source>
+        <translation>Шта је то Exponential?</translation>
     </message>
     <message>
         <source>License</source>
@@ -20690,7 +20690,7 @@ If you want to send comments to the approver or view the status use the URL belo
 <context>
     <name>design/standard/layout</name>
     <message>
-        <source>Welcome to eZ publish administration</source>
+        <source>Welcome to Exponential administration</source>
         <translation type="obsolete">Добродошли у администрацију ХНБ интранета</translation>
     </message>
     <message>
@@ -20758,8 +20758,8 @@ If you want to send comments to the approver or view the status use the URL belo
         <translation>Тражи %sitetitle</translation>
     </message>
     <message>
-        <source>eZ publish redirection - %url</source>
-        <translation type="obsolete">eZ publish преусмерава - %URL</translation>
+        <source>Exponential redirection - %url</source>
+        <translation type="obsolete">Exponential преусмерава - %URL</translation>
     </message>
     <message>
         <source>Redirecting to %url</source>
@@ -20774,12 +20774,12 @@ If you want to send comments to the approver or view the status use the URL belo
         <translation>Филтер</translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish administration</source>
-        <translation>Добродошли у eZ Publish администрацију</translation>
+        <source>Welcome to Exponential administration</source>
+        <translation>Добродошли у Exponential администрацију</translation>
     </message>
     <message>
-        <source>eZ Publish redirection - %url</source>
-        <translation>eZ Publish преусмеравање - %url</translation>
+        <source>Exponential redirection - %url</source>
+        <translation>Exponential преусмеравање - %url</translation>
     </message>
 </context>
 <context>
@@ -21503,8 +21503,8 @@ The item can viewed by using the URL below.</source>
         <translation>Одржаваоци</translation>
     </message>
     <message>
-        <source>Regarding eZ publish package &apos;%packagename&apos;</source>
-        <translation type="obsolete">У вези с eZ publish пакетом &apos;%packagename&apos;</translation>
+        <source>Regarding Exponential package &apos;%packagename&apos;</source>
+        <translation type="obsolete">У вези с Exponential пакетом &apos;%packagename&apos;</translation>
     </message>
     <message>
         <source>Send E-Mail to the maintainer</source>
@@ -21751,8 +21751,8 @@ You can also remove the package without uninstalling it from the package list.</
         <translation>Изаберите документ који садржи пакет затим притисните дугме за учитавање</translation>
     </message>
     <message>
-        <source>Regarding eZ Publish package &apos;%packagename&apos;</source>
-        <translation>Ez Publish пакет &apos;%packagename&apos;</translation>
+        <source>Regarding Exponential package &apos;%packagename&apos;</source>
+        <translation>Exponential пакет &apos;%packagename&apos;</translation>
     </message>
     <message>
         <source>Send email to the maintainer</source>
@@ -22014,28 +22014,28 @@ You can also remove the package without uninstalling it from the package list.</
         <translation>Увод</translation>
     </message>
     <message>
-        <source>The Reference Documentation for eZ publish consists of multiple sections whicheach have a different view on the documentation. The sections can be accessed atmenu on the top.</source>
-        <translation type="obsolete">Референтна документација за eZ publish састоји се од неколико сегмената од којих сваки даје различит приказ документације. Те сегменте је могуће отворити путем менија на врху странице. </translation>
+        <source>The Reference Documentation for Exponential consists of multiple sections whicheach have a different view on the documentation. The sections can be accessed atmenu on the top.</source>
+        <translation type="obsolete">Референтна документација за Exponential састоји се од неколико сегмената од којих сваки даје различит приказ документације. Те сегменте је могуће отворити путем менија на врху странице. </translation>
     </message>
     <message>
-        <source>The documentation will give an overview of the API of eZ publish.</source>
-        <translation type="obsolete">Документација ће дати преглед API-а за eZ publish.</translation>
+        <source>The documentation will give an overview of the API of Exponential.</source>
+        <translation type="obsolete">Документација ће дати преглед API-а за Exponential.</translation>
     </message>
     <message>
         <source>All reference documentation has been made with %doxygenurl</source>
         <translation>Сва документација за референцу је састављена %doxygenurl </translation>
     </message>
     <message>
-        <source>The Reference Documentation for eZ Publish consists of multiple sections which
+        <source>The Reference Documentation for Exponential consists of multiple sections which
 each have a different view on the documentation. The sections can be accessed at
 menu on the top.</source>
-        <translation>Документација eZ Publish-а се састоји од више сегмената
+        <translation>Документација Exponential-а се састоји од више сегмената
 од којих сваки има различит поглед на документацију. Сегментима се може приступити
 путем горњег менија.</translation>
     </message>
     <message>
-        <source>The documentation will give an overview of the API of eZ Publish.</source>
-        <translation>Документација ће вам дати увид у API eZ Publish-а.</translation>
+        <source>The documentation will give an overview of the API of Exponential.</source>
+        <translation>Документација ће вам дати увид у API Exponential-а.</translation>
     </message>
 </context>
 <context>
@@ -22539,7 +22539,7 @@ menu on the top.</source>
         <translation>Извоз</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Webserver and eZ publish configuration.</source>
+        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Webserver and Exponential configuration.</source>
         <translation type="obsolete">Унесите основни URL за сајт у ово поље. Користи се за прављење URL-ова за извоз тако што се на њега додаје путања до објекта који се извози.</translation>
     </message>
     <message>
@@ -22567,8 +22567,8 @@ menu on the top.</source>
         <translation type="obsolete">Активирајте овај checkbox ако и објекти из подчворова треба да буду у feedу.</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Web server and eZ Publish configuration.</source>
-        <translation>Користите ово поље да унесете основни URL вашег сајта. Користи се да произведе URL-е приликом извоза, састављене од сајт URL-а  (нпр. &quot;http://www.mojsajt.com/index.php&quot;) и путање до објекта (нпр. &quot;/clanci/moj_clanak&quot;). Сајт URL зависи од вашег сервера и подешавања eZ Publish-а.</translation>
+        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Web server and Exponential configuration.</source>
+        <translation>Користите ово поље да унесете основни URL вашег сајта. Користи се да произведе URL-е приликом извоза, састављене од сајт URL-а  (нпр. &quot;http://www.mojsajt.com/index.php&quot;) и путање до објекта (нпр. &quot;/clanci/moj_clanak&quot;). Сајт URL зависи од вашег сервера и подешавања Exponential-а.</translation>
     </message>
     <message>
         <source>Use this drop-down to select the maximum number of objects included in the RSS feed.</source>
@@ -22760,8 +22760,8 @@ menu on the top.</source>
         <translation type="obsolete">О деловима за навигацију</translation>
     </message>
     <message>
-        <source>The eZ publish admin interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
-        <translation type="obsolete">eZ publish администраторски интерфејс подељен је у навигационе делове. То је начин да се групишу различита подручја администрације страница. Одредите навигациони део који би требао бити активан при листању овог сегмента. </translation>
+        <source>The Exponential admin interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
+        <translation type="obsolete">Exponential администраторски интерфејс подељен је у навигационе делове. То је начин да се групишу различита подручја администрације страница. Одредите навигациони део који би требао бити активан при листању овог сегмента. </translation>
     </message>
     <message>
         <source>ID</source>
@@ -22808,8 +22808,8 @@ menu on the top.</source>
         <translation>О деловима навигације</translation>
     </message>
     <message>
-        <source>The eZ Publish Administration Interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
-        <translation>Административни интерфејс eZ Publish-а се састоји од више делова навигације. То је начин да се групишу различите области администрације сајтом. Изаберите део навигације који желите да постане активан док листате овај сегмент.</translation>
+        <source>The Exponential Administration Interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
+        <translation>Административни интерфејс Exponential-а се састоји од више делова навигације. То је начин да се групишу различите области администрације сајтом. Изаберите део навигације који желите да постане активан док листате овај сегмент.</translation>
     </message>
     <message>
         <source>Denied</source>
@@ -22967,17 +22967,17 @@ menu on the top.</source>
     </message>
     <message>
         <source>Version</source>
-        <comment>eZ publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">Верзија</translation>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">SVN ревизија </translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation type="obsolete">Екстензије</translation>
     </message>
     <message>
@@ -23053,8 +23053,8 @@ menu on the top.</source>
         <translation>Rapid Application Development алати</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for eZ publish.</source>
-        <translation type="obsolete">Rapid application development (RAD) алати вам омогућују да лагано креирате нову функцију eZ publish-а.</translation>
+        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for Exponential.</source>
+        <translation type="obsolete">Rapid application development (RAD) алати вам омогућују да лагано креирате нову функцију Exponential-а.</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -23614,17 +23614,17 @@ By using %datatypename you can ...</source>
     </message>
     <message>
         <source>Version</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation>Верзија</translation>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">SVN ревизија </translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ Publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation>Екстензије</translation>
     </message>
     <message>
@@ -23661,8 +23661,8 @@ By using %datatypename you can ...</source>
         <translation>Детаљи сајта</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for eZ Publish.</source>
-        <translation>Алати за брзи развој програма (RAD) омогућују да лако започнете са креирањем нових функција за eZ Publish.</translation>
+        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for Exponential.</source>
+        <translation>Алати за брзи развој програма (RAD) омогућују да лако започнете са креирањем нових функција за Exponential.</translation>
     </message>
     <message>
         <source>Warning: it is not safe to upgrade without checking the modifications done to the following files </source>
@@ -23995,16 +23995,16 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Лозинка</translation>
     </message>
     <message>
-        <source>Congratulations, eZ publish should now run on your system.</source>
-        <translation type="obsolete">Честитамо, eZ publish би сад требао радити у Вашем систему. </translation>
+        <source>Congratulations, Exponential should now run on your system.</source>
+        <translation type="obsolete">Честитамо, Exponential би сад требао радити у Вашем систему. </translation>
     </message>
     <message>
-        <source>eZ publish website</source>
-        <translation type="obsolete">интернет страница eZ publish</translation>
+        <source>Exponential website</source>
+        <translation type="obsolete">интернет страница Exponential</translation>
     </message>
     <message>
-        <source>eZ publish bug reports</source>
-        <translation type="obsolete">обавештења eZ publish-а о вирусима</translation>
+        <source>Exponential bug reports</source>
+        <translation type="obsolete">обавештења Exponential-а о вирусима</translation>
     </message>
     <message>
         <source>Done</source>
@@ -24179,8 +24179,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Настави</translation>
     </message>
     <message>
-        <source>The setup will not do an upgrade from older eZ publish versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing eZ publish 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
-        <translation type="obsolete">Setup неће обавити ажурирање старијих верзија eZ publishа (као што је 2.2.7) ако оставите податке какви јесу.  То се односи на особе које имају постојеће податке које не желе изгубити. Ако имате постојеће eZ publish 3.0 податке (из РЦ издања), требали бисте прескочити ДБ иницијацију, међутим онда ћете морати ажурирање обавити ручно.</translation>
+        <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
+        <translation type="obsolete">Setup неће обавити ажурирање старијих верзија Exponentialа (као што је 2.2.7) ако оставите податке какви јесу.  То се односи на особе које имају постојеће податке које не желе изгубити. Ако имате постојеће Exponential 3.0 податке (из РЦ издања), требали бисте прескочити ДБ иницијацију, међутим онда ћете морати ажурирање обавити ручно.</translation>
     </message>
     <message>
         <source>Continue but remove the data first.</source>
@@ -24219,8 +24219,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>која мора бити доступна на серверу или</translation>
     </message>
     <message>
-        <source>If you need help with eZ publish, you can go to %ezlink and get help in the forums.  If you find a bug (error), please go to %buglink and report it.  With your help we can fix the errors eZ publish might have and implement new features.</source>
-        <translation type="obsolete">Ако Вам је потребна помоћ с eZ publish програмом, посетите %ezlink и потражите помоћ у форумима.Ако пронађете грешку (буг), молим да га пријавите на %buglink.Uz Вашу помоћ можемо поправити евентуалне грешке које садржи eZ publish те увести нове карактеристике. </translation>
+        <source>If you need help with Exponential, you can go to %ezlink and get help in the forums.  If you find a bug (error), please go to %buglink and report it.  With your help we can fix the errors Exponential might have and implement new features.</source>
+        <translation type="obsolete">Ако Вам је потребна помоћ с Exponential програмом, посетите %ezlink и потражите помоћ у форумима.Ако пронађете грешку (буг), молим да га пријавите на %buglink.Uz Вашу помоћ можемо поправити евентуалне грешке које садржи Exponential те увести нове карактеристике. </translation>
     </message>
     <message>
         <source>ez.no</source>
@@ -24303,8 +24303,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Провера система</translation>
     </message>
     <message>
-        <source>Welcome to eZ publish</source>
-        <translation type="obsolete">Добродошли у eZ publish</translation>
+        <source>Welcome to Exponential</source>
+        <translation type="obsolete">Добродошли у Exponential</translation>
     </message>
     <message>
         <source>Choose database system</source>
@@ -24316,12 +24316,12 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Следећи</translation>
     </message>
     <message>
-        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in eZ publish.</source>
-        <translation type="obsolete">Потребна је PostgreSQL ор MySQL &gt;= 4.1 за уницоде подршку у eZ publish. </translation>
+        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation type="obsolete">Потребна је PostgreSQL ор MySQL &gt;= 4.1 за уницоде подршку у Exponential. </translation>
     </message>
     <message>
-        <source>More information about eZ publish and unicode support can be found %1.</source>
-        <translation type="obsolete">Детаљније информације о eZ publish и уницоде подршци можете пронаћи %1.</translation>
+        <source>More information about Exponential and unicode support can be found %1.</source>
+        <translation type="obsolete">Детаљније информације о Exponential и уницоде подршци можете пронаћи %1.</translation>
     </message>
     <message>
         <source>here</source>
@@ -24357,8 +24357,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Обавезно посетите интернет страницу %1 и %2.</translation>
     </message>
     <message>
-        <source>eZ publish</source>
-        <comment>eZ publish 3 link</comment>
+        <source>Exponential</source>
+        <comment>Exponential 3 link</comment>
         <translation type="obsolete">eZ издаваштво</translation>
     </message>
     <message>
@@ -24382,8 +24382,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">Примаран/Додатни</translation>
     </message>
     <message>
-        <source>eZ publish supports multiple languages.</source>
-        <translation type="obsolete">eZ publish подржава неколико језика. </translation>
+        <source>Exponential supports multiple languages.</source>
+        <translation type="obsolete">Exponential подржава неколико језика. </translation>
     </message>
     <message>
         <source>These and other additional languages can also be installed later.</source>
@@ -24399,7 +24399,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">Регистрација странице</translation>
     </message>
     <message>
-        <source>By sending registration the following data will be sent to eZ systems</source>
+        <source>By sending registration the following data will be sent to 7x</source>
         <translation type="obsolete">Слањем регистрације следећи подаци биће послани eZ систему</translation>
     </message>
     <message>
@@ -24489,8 +24489,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Занемарите овај тест</translation>
     </message>
     <message>
-        <source>Welcome to eZ publish %1</source>
-        <translation type="obsolete">Добродошли на eZ publish %1</translation>
+        <source>Welcome to Exponential %1</source>
+        <translation type="obsolete">Добродошли на Exponential %1</translation>
     </message>
     <message>
         <source>which will relay the emails. If unsure what to use, ask your webhost. Some webhosts do not support</source>
@@ -24519,8 +24519,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Ниже наведени сажетак ће садржати податке о конфигурисаним подешавањима. </translation>
     </message>
     <message>
-        <source>Information about how to set up eZ publish manually is available %1.</source>
-        <translation type="obsolete">Подаци о томе како ручно прилагодити eZ publish доступни су на %1. </translation>
+        <source>Information about how to set up Exponential manually is available %1.</source>
+        <translation type="obsolete">Подаци о томе како ручно прилагодити Exponential доступни су на %1. </translation>
     </message>
     <message>
         <source>here</source>
@@ -24532,24 +24532,24 @@ The default code was made from the basic parameters you chose.</source>
         <translation>У Вашем систему пронађена је и MySQL и PostgreSQL подршка. Молимо изаберите базу података коју желите користити. </translation>
     </message>
     <message>
-        <source>eZ publish supports both MySQL and PostgreSQL.</source>
-        <translation type="obsolete">eZ publish подржава и MySQL и PostgreSQL.</translation>
+        <source>Exponential supports both MySQL and PostgreSQL.</source>
+        <translation type="obsolete">Exponential подржава и MySQL и PostgreSQL.</translation>
     </message>
     <message>
         <source>Please input database access information in the form below.</source>
         <translation>Молимо да унесете податке о приступу бази података у ниже наведени образац. </translation>
     </message>
     <message>
-        <source>If you don&apos;t have access to a database, you should obtain access now. eZ publish is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
-        <translation type="obsolete">Ако немате приступ бази података, требали бисте сад добити приступ. eZ publish може управљати с више страница, свакој страници треба властита база података. То значи да морате креирати неколико база података ако желите управљати неколицином страница. Молимо да се проверите у корисничком приручнику базе података ако нисте сигурни како креирати базу података. </translation>
+        <source>If you don&apos;t have access to a database, you should obtain access now. Exponential is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
+        <translation type="obsolete">Ако немате приступ бази података, требали бисте сад добити приступ. Exponential може управљати с више страница, свакој страници треба властита база података. То значи да морате креирати неколико база података ако желите управљати неколицином страница. Молимо да се проверите у корисничком приручнику базе података ако нисте сигурни како креирати базу података. </translation>
     </message>
     <message>
         <source>Outgoing E-mail</source>
         <translation type="obsolete">Излазна пошта</translation>
     </message>
     <message>
-        <source>This section is used to configure how eZ publish delivers its outgoing E-mail.</source>
-        <translation type="obsolete">Овај сегмент се користи за конфигурацију начина на који ће eZ publish доставити излазну пошту. </translation>
+        <source>This section is used to configure how Exponential delivers its outgoing E-mail.</source>
+        <translation type="obsolete">Овај сегмент се користи за конфигурацију начина на који ће Exponential доставити излазну пошту. </translation>
     </message>
     <message>
         <source>SMTP is recommended for MS Windows users.</source>
@@ -24572,8 +24572,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Лозинка (није обвезна):</translation>
     </message>
     <message>
-        <source>The eZ publish system uses E-mail to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
-        <translation type="obsolete">Систем eZ publish користи e-mail за слање важних обавештења као што су регистрација корисника и одобравање садржаја. У Linux/Unix: пробајте користити сендmail. У Windowsима: користите SMTP сервер. </translation>
+        <source>The Exponential system uses E-mail to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
+        <translation type="obsolete">Систем Exponential користи e-mail за слање важних обавештења као што су регистрација корисника и одобравање садржаја. У Linux/Unix: пробајте користити сендmail. У Windowsима: користите SMTP сервер. </translation>
     </message>
     <message>
         <source>&lt;b&gt;SMTP:&lt;/b&gt;&lt;br&gt;Mail is delivered through an SMTP server. At the minimum, the hostname of the SMTP server must be specified. Hint: check the SMTP settings in your E-mail application.</source>
@@ -24592,8 +24592,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">&lt;б&gt;SMTP&lt;/б&gt;: Ако нисте сигурни шта унети, погледајте подешавања у својој e-mail апликацији.</translation>
     </message>
     <message>
-        <source>eZ publish has been installed with the following sites. You will find the username and password mentioned for each site.</source>
-        <translation type="obsolete">eZ publish инсталиран је на следећим страницама. Добит ћете корисничко име и лозинку за сваку страницу. </translation>
+        <source>Exponential has been installed with the following sites. You will find the username and password mentioned for each site.</source>
+        <translation type="obsolete">Exponential инсталиран је на следећим страницама. Добит ћете корисничко име и лозинку за сваку страницу. </translation>
     </message>
     <message>
         <source>Tip: Store this page as an html file by clicking Save-As in your web browser menu, alternatively you may write down the urls for your sites.</source>
@@ -24653,15 +24653,15 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">Изабрани језик</translation>
     </message>
     <message>
-        <source>This data will help to improve future releases of eZ publish.</source>
-        <translation type="obsolete">Ови подаци помоћи ће при побољшању будућих верзија eZ  publish.-а.</translation>
+        <source>This data will help to improve future releases of Exponential.</source>
+        <translation type="obsolete">Ови подаци помоћи ће при побољшању будућих верзија Exponential.-а.</translation>
     </message>
     <message>
         <source>Site security</source>
         <translation>Сигурност странице</translation>
     </message>
     <message>
-        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run eZ publish in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
+        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run Exponential in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
         <translation type="obsolete">Ваш web није подешен као виртуелни хост. Препоручује се конфигурација виртуелног хоста.</translation>
     </message>
     <message>
@@ -24757,16 +24757,16 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Приказана је страница провере система. То значи да постоје неки проблеми/питања. </translation>
     </message>
     <message>
-        <source>These issues have to be resolved/fixed, or else, eZ publish will not function properly.</source>
-        <translation type="obsolete">Ова је питања потребно решити јер иначе eZ publish неће добро радити. </translation>
+        <source>These issues have to be resolved/fixed, or else, Exponential will not function properly.</source>
+        <translation type="obsolete">Ова је питања потребно решити јер иначе Exponential неће добро радити. </translation>
     </message>
     <message>
         <source>The problems are usually file-system related and can be easily fixed by copy / paste / run-ing the suggested commands in a system shell.</source>
         <translation type="obsolete">Проблеми су обично повезани с датотеком-системом те их је могуће лагано решити копирањем/лепљењем/ обављањем сугерисаних наредби у љусци система.</translation>
     </message>
     <message>
-        <source>Welcome to the eZ publish content management system and development framework. This wizard will help you set up eZ publish.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
-        <translation type="obsolete">Добродошли у eZ publish CMS. чаробњак ће Вам помоћи поставити eZ publish.&lt;бр&gt;притисни &lt;и&gt;следећи&lt;/и&gt; за наставак.</translation>
+        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
+        <translation type="obsolete">Добродошли у Exponential CMS. чаробњак ће Вам помоћи поставити Exponential.&lt;бр&gt;притисни &lt;и&gt;следећи&lt;/и&gt; за наставак.</translation>
     </message>
     <message>
         <source>No data will be stored in the database until the final step of the setup.</source>
@@ -24826,12 +24826,12 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Приказана је страница за фино подешавање. То значи да постоје неки проблеми које је могуће решити како би се побољшао учинак или карактеристике система. </translation>
     </message>
     <message>
-        <source>These issues do not need to be resolved/fixed. eZ publish will function properly without them.</source>
-        <translation type="obsolete">Ова питања није потребно решити/поправити јер ће eZ publish и без њих добро радити. </translation>
+        <source>These issues do not need to be resolved/fixed. Exponential will function properly without them.</source>
+        <translation type="obsolete">Ова питања није потребно решити/поправити јер ће Exponential и без њих добро радити. </translation>
     </message>
     <message>
-        <source>Welcome to the eZ publish content management system and development framework. This wizard will help you set up eZ publish.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
-        <translation type="obsolete">Добродошли у eZ publish систем управљања садржајима и развојни оквир. Чаробњак ће Вам помоћи поставити eZ publish.&lt;бр&gt; Ваш систем није оптималан, ако желите можете притиснути дугме &lt;и&gt;Finetune&lt;/и&gt;. Појавиће се сугестије како поправити те проблеме. &lt;бр/&gt; Притисните &lt;и&gt;Следећи&lt;/и&gt; за наставак без детаљног прилагођавања.</translation>
+        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
+        <translation type="obsolete">Добродошли у Exponential систем управљања садржајима и развојни оквир. Чаробњак ће Вам помоћи поставити Exponential.&lt;бр&gt; Ваш систем није оптималан, ако желите можете притиснути дугме &lt;и&gt;Finetune&lt;/и&gt;. Појавиће се сугестије како поправити те проблеме. &lt;бр/&gt; Притисните &lt;и&gt;Следећи&lt;/и&gt; за наставак без детаљног прилагођавања.</translation>
     </message>
     <message>
         <source>Site administrator</source>
@@ -24934,11 +24934,11 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">Врста страница повезана је с основним подешавањима алатне траке, менија, боја и функција.Могуће је накнадно изменити те подешавања. </translation>
     </message>
     <message>
-        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because eZ publish prepares the site for your machine.</source>
-        <translation type="obsolete">При првом уласку на корисничку или администрациону страницу биће потребно одређено време (30 до 60 секунди). Разлог томе јест то што eZ publish припрема страницу за Ваш рачунар. </translation>
+        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because Exponential prepares the site for your machine.</source>
+        <translation type="obsolete">При првом уласку на корисничку или администрациону страницу биће потребно одређено време (30 до 60 секунди). Разлог томе јест то што Exponential припрема страницу за Ваш рачунар. </translation>
     </message>
     <message>
-        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of eZ publish</source>
+        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential</source>
         <translation type="obsolete">Ако желите можете пустити setup и неке демо податке у базу. Демо подаци ће вам демонстрирати могућности EZ-а.</translation>
     </message>
     <message>
@@ -24974,8 +24974,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Ако некад пожелите да поново покренете setup, измените фајл %filename и потражите линију на којој пише</translation>
     </message>
     <message>
-        <source>If you wish, you can register this installation by sending some information to eZ systems. No confidential data will be transmitted and eZ systems will not use or sell your details for unsolicited e-mails.</source>
-        <translation type="obsolete">Ако желите, можете регистровати инсталацију шаљући неке информације на eZ systems. Никакви поверљиви подаци неће бити пренесени и eZ systems неће користити или продавати ваше детаље на недозвољене emailове.</translation>
+        <source>If you wish, you can register this installation by sending some information to 7x. No confidential data will be transmitted and 7x will not use or sell your details for unsolicited e-mails.</source>
+        <translation type="obsolete">Ако желите, можете регистровати инсталацију шаљући неке информације на 7x. Никакви поверљиви подаци неће бити пренесени и 7x неће користити или продавати ваше детаље на недозвољене emailове.</translation>
     </message>
     <message>
         <source>The registration e-mail</source>
@@ -24994,8 +24994,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="unfinished">Молимо проверите да ли су корисничко име и лозинка исправни. Проверите да ли је ваша PostgreSQL база података исправно конфигурисана.&lt;бр&gt;Погледајте PHP документацију за више информација о овоме.&lt;бр&gt;Запамтите да покренете постмастер са -и опцијом.&lt;бр&gt;Знајте да PostgreSQL 7.2 није подржан.</translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; procedure is not available in your database, you cannot run eZ publish without this. Visit the FAQ for more information.</source>
-        <translation type="obsolete">Процедура &apos;дигест&apos; није доступна на вашој бази података, не можете користити eZ publish без овога. Погледајте FAQ за више информација.</translation>
+        <source>The &apos;digest&apos; procedure is not available in your database, you cannot run Exponential without this. Visit the FAQ for more information.</source>
+        <translation type="obsolete">Процедура &apos;дигест&apos; није доступна на вашој бази података, не можете користити Exponential без овога. Погледајте FAQ за више информација.</translation>
     </message>
     <message>
         <source>Your database version %version does not fit the minimum requirement which is %req_version.</source>
@@ -25051,8 +25051,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="unfinished">Изабрани корисник нема приступ базама. Замените корисника или му направите базу.</translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; procedure is not available in your database, you cannot run eZ Publish without this. Visit the FAQ for more information.</source>
-        <translation type="obsolete">Процедура &apos;digest&apos; не постоји у вашој бази података, а без ње не можете користити eZ Publish. Посетите FAQ за више детаља.</translation>
+        <source>The &apos;digest&apos; procedure is not available in your database, you cannot run Exponential without this. Visit the FAQ for more information.</source>
+        <translation type="obsolete">Процедура &apos;digest&apos; не постоји у вашој бази података, а без ње не можете користити Exponential. Посетите FAQ за више детаља.</translation>
     </message>
     <message>
         <source>The database [%database_name] cannot be used, the setup wizard wants to create the site in [%req_charset] but the database has been created using character set [%charset]. You will have to choose a database having support for [%req_charset] or modify [%database_name] .</source>
@@ -25095,8 +25095,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="unfinished">Приступ учитаној пакет-датотеци није успео</translation>
     </message>
     <message>
-        <source>Uploaded file is not an eZ Publish package</source>
-        <translation type="unfinished">Учитана датотека није eZ Publish пакет</translation>
+        <source>Uploaded file is not an Exponential package</source>
+        <translation type="unfinished">Учитана датотека није Exponential пакет</translation>
     </message>
     <message>
         <source>No site package chosen.</source>
@@ -25111,8 +25111,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="unfinished">Добављање удаљених сајт-пакета није успело. Учитајте пакете ручно.</translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish</source>
-        <translation type="unfinished">Добродошли у eZ Publish</translation>
+        <source>Welcome to Exponential</source>
+        <translation type="unfinished">Добродошли у Exponential</translation>
     </message>
     <message>
         <source>If you think you have fixed the errors you can try then click the &quot;Retry&quot; button.</source>
@@ -25123,36 +25123,36 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Ако је могуће, покушајте да исправите ове грешке и притисните дугме &quot;Понови&quot;.</translation>
     </message>
     <message>
-        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of eZ Publish</source>
-        <translation>Ако желите можете пустити да setup дода неке пробне податке у базу. Ти подаци ће вам демонстрирати могућности eZ Publish-а</translation>
+        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential</source>
+        <translation>Ако желите можете пустити да setup дода неке пробне податке у базу. Ти подаци ће вам демонстрирати могућности Exponential-а</translation>
     </message>
     <message>
-        <source>The setup will not do an upgrade from older eZ Publish versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing eZ Publish 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
-        <translation>Setup неће обавити ажурирање старијих верзија eZ publish-а (као што је 2.2.7) ако оставите податке какви јесу. То се односи на особе које имају постојеће податке које не желе изгубити. Ако имате eZ publish 4.0 податке (из RC издања) прескочитe иницијацију базе података, међутим онда ћете морати да инсталацију обавите ручно.</translation>
+        <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
+        <translation>Setup неће обавити ажурирање старијих верзија Exponential-а (као што је 2.2.7) ако оставите податке какви јесу. То се односи на особе које имају постојеће податке које не желе изгубити. Ако имате Exponential 4.0 податке (из RC издања) прескочитe иницијацију базе података, међутим онда ћете морати да инсталацију обавите ручно.</translation>
     </message>
     <message>
         <source>It can take some time to initialize the database so please be patient and wait until the new page is finished.</source>
         <translation>Иницирање базе података може потрајати па вас молимо да будете стрпљиви и причекате док нова страница не буде готова.</translation>
     </message>
     <message>
-        <source>eZ Publish supports both MySQL and PostgreSQL.</source>
-        <translation>eZ publish подржава и MySQL и PostgreSQL.</translation>
+        <source>Exponential supports both MySQL and PostgreSQL.</source>
+        <translation>Exponential подржава и MySQL и PostgreSQL.</translation>
     </message>
     <message>
-        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in eZ Publish.</source>
-        <translation>Потребни су PostgreSQL или MySQL &gt;= 4.1 за unicode подршку у eZ publish-у. </translation>
+        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Потребни су PostgreSQL или MySQL &gt;= 4.1 за unicode подршку у Exponential-у. </translation>
     </message>
     <message>
-        <source>More information about eZ Publish and unicode support can be found %1.</source>
-        <translation>Детаљније информације о eZ publish и unicode подршци можете пронаћи овде %1.</translation>
+        <source>More information about Exponential and unicode support can be found %1.</source>
+        <translation>Детаљније информације о Exponential и unicode подршци можете пронаћи овде %1.</translation>
     </message>
     <message>
         <source>The database was successfully initialized. You are now ready for some post configuration of the site.</source>
         <translation>База података је успешно иницијализована. Спремни сте за даље подешавање сајта.</translation>
     </message>
     <message>
-        <source>If you don&apos;t have access to a database, you should obtain access now. eZ Publish is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
-        <translation>Ако немате приступ бази података, требали бисте сад добити приступ. eZ publish може управљати с више сајтова, а сваком сајту треба властита база података. То значи да морате креирати неколико база података ако желите управљати неколицином сајтова. Молимо да проверите у корисничком приручнику базе података ако нисте сигурни како креирати базу података.</translation>
+        <source>If you don&apos;t have access to a database, you should obtain access now. Exponential is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
+        <translation>Ако немате приступ бази података, требали бисте сад добити приступ. Exponential може управљати с више сајтова, а сваком сајту треба властита база података. То значи да морате креирати неколико база података ако желите управљати неколицином сајтова. Молимо да проверите у корисничком приручнику базе података ако нисте сигурни како креирати базу података.</translation>
     </message>
     <message>
         <source>Re-run System Check</source>
@@ -25171,16 +25171,16 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Излазна пошта</translation>
     </message>
     <message>
-        <source>This section is used to configure how eZ Publish delivers its outgoing Email.</source>
-        <translation>Овај сегмент се користи за подешавање начина на који eZ publish испоручује излазну пошту.</translation>
+        <source>This section is used to configure how Exponential delivers its outgoing Email.</source>
+        <translation>Овај сегмент се користи за подешавање начина на који Exponential испоручује излазну пошту.</translation>
     </message>
     <message>
         <source>Email delivery</source>
         <translation>E-mail испорука</translation>
     </message>
     <message>
-        <source>The eZ Publish system uses email to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
-        <translation>eZ publish користи e-пошту за слање важних обавештења као што су регистрација корисника и одобравање садржаја. Linux/UNIX корисници: користите sendmail. Windows корисници: користите SMTP сервер.</translation>
+        <source>The Exponential system uses email to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
+        <translation>Exponential користи e-пошту за слање важних обавештења као што су регистрација корисника и одобравање садржаја. Linux/UNIX корисници: користите sendmail. Windows корисници: користите SMTP сервер.</translation>
     </message>
     <message>
         <source>&lt;b&gt;SMTP:&lt;/b&gt;&lt;br&gt;Mail is delivered through an SMTP server. At the minimum, the hostname of the SMTP server must be specified. Hint: check the SMTP settings in your email application.</source>
@@ -25191,45 +25191,45 @@ The default code was made from the basic parameters you chose.</source>
         <translation>&lt;б&gt;SMTP&lt;/б&gt;: Ако нисте сигурни шта унети, погледајте подешавања у својој e-mail апликацији.</translation>
     </message>
     <message>
-        <source>eZ Publish has been installed with your select site setup. You will find the username mentioned in the details below.</source>
-        <translation>eZ publish је инсталиран са вашим подешавањима. Наћи ћете корисничко име у детаљима испод. </translation>
+        <source>Exponential has been installed with your select site setup. You will find the username mentioned in the details below.</source>
+        <translation>Exponential је инсталиран са вашим подешавањима. Наћи ћете корисничко име у детаљима испод. </translation>
     </message>
     <message>
-        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because eZ Publish prepares the site for your machine.</source>
-        <translation>Први улазак на корисничку или администрациону страницу захтеваће одређено време (30 до 60 секунди). Разлог томе је то што eZ publish припрема сајт за ваш рачунар.</translation>
+        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because Exponential prepares the site for your machine.</source>
+        <translation>Први улазак на корисничку или администрациону страницу захтеваће одређено време (30 до 60 секунди). Разлог томе је то што Exponential припрема сајт за ваш рачунар.</translation>
     </message>
     <message>
         <source>Tip: Store this page as an html file by clicking Save-As in your web browser menu, alternatively you may write down the URLs for your sites.</source>
         <translation>Савет: сачувајте ову страницу као .html датотеку избором дугмета сними-као на менију интернет прегледача, евентуално можете записати URL адресе ваших сајтова.</translation>
     </message>
     <message>
-        <source>eZ Publish</source>
-        <comment>eZ Publish link</comment>
-        <translation>eZ Publish</translation>
+        <source>Exponential</source>
+        <comment>Exponential link</comment>
+        <translation>Exponential</translation>
     </message>
     <message>
         <source>Sending email failed</source>
         <translation>Слање е-поште није успело</translation>
     </message>
     <message>
-        <source>Congratulations, eZ Publish should now run on your system.</source>
-        <translation>Честитамо, eZ publish би сад требао радити у Вашем систему. </translation>
+        <source>Congratulations, Exponential should now run on your system.</source>
+        <translation>Честитамо, Exponential би сад требао радити у Вашем систему. </translation>
     </message>
     <message>
-        <source>If you need help with eZ Publish, you can go to %ezlink and get help in the forums.
+        <source>If you need help with Exponential, you can go to %ezlink and get help in the forums.
   If you find a bug (error), please go to %buglink and report it.
-  With your help we can fix the errors eZ Publish might have and implement new features.</source>
-        <translation>Ако Вам је потребна помоћ с eZ publish-ом, посетите %ezlink и потражите помоћ у форумима.
+  With your help we can fix the errors Exponential might have and implement new features.</source>
+        <translation>Ако Вам је потребна помоћ с Exponential-ом, посетите %ezlink и потражите помоћ у форумима.
   Ако пронађете грешку, пријавите на %buglink.
-  Uz вашу помоћ можемо поправити евентуалне грешке које садржи eZ publish те увести нове могућности. </translation>
+  Uz вашу помоћ можемо поправити евентуалне грешке које садржи Exponential те увести нове могућности. </translation>
     </message>
     <message>
-        <source>eZ Publish bug reports</source>
-        <translation>eZ Publish bug извештај</translation>
+        <source>Exponential bug reports</source>
+        <translation>Exponential bug извештај</translation>
     </message>
     <message>
-        <source>eZ Publish website</source>
-        <translation>eZ Publish веб сајт</translation>
+        <source>Exponential website</source>
+        <translation>Exponential веб сајт</translation>
     </message>
     <message>
         <source>Use the radio buttons to choose the default language, and the checkboxes to choose additional languages. You will be able to use any of the selected languages for translating your content. The default language will determine the locale settings and will be used as the most prioritized language for your site.</source>
@@ -25250,8 +25250,8 @@ To fix this problem you must do one of the following:</source>
         <translation>Подразумевани/Допунски</translation>
     </message>
     <message>
-        <source>eZ Publish supports multiple languages.</source>
-        <translation>eZ publish подржава више језика. </translation>
+        <source>Exponential supports multiple languages.</source>
+        <translation>Exponential подржава више језика. </translation>
     </message>
     <message>
         <source>Language mapping</source>
@@ -25306,8 +25306,8 @@ To fix this problem you must do one of the following:</source>
         <translation>Сада је могуће изабрати варијације ваших језика. Варијације врше ситна језичка прилагођавања, као што је додавање подршке за Евро или промена формата датума. Варијације нису обавезне па можете прескочити овај корак. Када завршите притисните</translation>
     </message>
     <message>
-        <source>If you want, you can register this installation by sending some information to eZ Systems. No confidential data will be transmitted and eZ Systems will not use or sell your details for unsolicited emails.</source>
-        <translation type="obsolete">Ако желите, можете регистровати инсталацију шаљући неке информације на eZ systems. Никакви поверљиви подаци неће бити пренесени и eZ systems неће користити или продавати ваше детаље нити слати непотребну e-пошту.</translation>
+        <source>If you want, you can register this installation by sending some information to 7x. No confidential data will be transmitted and 7x will not use or sell your details for unsolicited emails.</source>
+        <translation type="obsolete">Ако желите, можете регистровати инсталацију шаљући неке информације на 7x. Никакви поверљиви подаци неће бити пренесени и 7x неће користити или продавати ваше детаље нити слати непотребну e-пошту.</translation>
     </message>
     <message>
         <source>The registration email</source>
@@ -25322,16 +25322,16 @@ To fix this problem you must do one of the following:</source>
         <translation type="obsolete">Слање e-поште и генерисање вашег сајта трајаће између 10 и 30 секунди у зависности од ваше машине (сервера). Сачекајте док се следећа страница учита. Ако поново притиснете дугме само ће се још једном послати e-пошта, и можете покварити инсталацију.</translation>
     </message>
     <message>
-        <source>By sending registration the following data will be sent to eZ Systems</source>
+        <source>By sending registration the following data will be sent to 7x</source>
         <translation type="obsolete">Слањем регистрације следећи подаци биће послани eZ систему</translation>
     </message>
     <message>
-        <source>This data will help to improve future releases of eZ Publish.</source>
-        <translation type="obsolete">Ови подаци помоћи ће при побољшању будућих верзија eZ publish-а.</translation>
+        <source>This data will help to improve future releases of Exponential.</source>
+        <translation type="obsolete">Ови подаци помоћи ће при побољшању будућих верзија Exponential-а.</translation>
     </message>
     <message>
-        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run eZ Publish in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
-        <translation>Ваш сајт није у virtual host режиму, то није безбедно. Препоручујемо да подесите да eZ Publish ради као virtual host. Уколико нисте у могућности да користите virtual host режим, следите упуства испод како да поставите .htaccess датотеку. Тако ћете ограничити приступ одређеним датотекама на серверу.</translation>
+        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run Exponential in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
+        <translation>Ваш сајт није у virtual host режиму, то није безбедно. Препоручујемо да подесите да Exponential ради као virtual host. Уколико нисте у могућности да користите virtual host режим, следите упуства испод како да поставите .htaccess датотеку. Тако ћете ограничити приступ одређеним датотекама на серверу.</translation>
     </message>
     <message>
         <source>If you have shell access, you can run the following commands.</source>
@@ -25461,36 +25461,36 @@ It is possible to change these settings at a later time.</source>
 Могуће је накнадно изменити те подешавања.</translation>
     </message>
     <message>
-        <source>These issues have to be resolved/fixed, or else, eZ Publish will not function properly.</source>
-        <translation>Ова је питања потребно решити јер иначе eZ publish неће добро радити. </translation>
+        <source>These issues have to be resolved/fixed, or else, Exponential will not function properly.</source>
+        <translation>Ова је питања потребно решити јер иначе Exponential неће добро радити. </translation>
     </message>
     <message>
         <source>The problems are usually file-system related and can be easily fixed by copy / paste / running the suggested commands in a system shell.</source>
         <translation>Проблеми су обично везани за системом-датотека те их је могуће лако решити копирањем/лепљењем/извршавањем предложених команди у љусци система.</translation>
     </message>
     <message>
-        <source>These issues do not need to be resolved/fixed. eZ Publish will function properly without them.</source>
-        <translation>Ова питања није потребно решити/поправити јер ће eZ publish и без њих добро радити. </translation>
+        <source>These issues do not need to be resolved/fixed. Exponential will function properly without them.</source>
+        <translation>Ова питања није потребно решити/поправити јер ће Exponential и без њих добро радити. </translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish %1</source>
-        <translation type="obsolete">Добродошли у eZ Publish %1</translation>
+        <source>Welcome to Exponential %1</source>
+        <translation type="obsolete">Добродошли у Exponential %1</translation>
     </message>
     <message>
-        <source>Welcome to the eZ Publish content management system and development framework. This wizard will help you set up eZ Publish.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
-        <translation>Добродошли у eZ publish систем управљања садржином и развојни оквир. Чаробњак ће вам помоћи да поставите eZ publish. &lt;br&gt;Ваш систем није оптималан, уколико желите притисните дугме &lt;i&gt;Фина подешавања&lt;/i&gt;. Добићете сугестије како да поправите те проблеме. &lt;br/&gt;Притисните &lt;i&gt;Даље&lt;/i&gt; за наставак без финих подешавања.</translation>
+        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
+        <translation>Добродошли у Exponential систем управљања садржином и развојни оквир. Чаробњак ће вам помоћи да поставите Exponential. &lt;br&gt;Ваш систем није оптималан, уколико желите притисните дугме &lt;i&gt;Фина подешавања&lt;/i&gt;. Добићете сугестије како да поправите те проблеме. &lt;br/&gt;Притисните &lt;i&gt;Даље&lt;/i&gt; за наставак без финих подешавања.</translation>
     </message>
     <message>
-        <source>Welcome to the eZ Publish content management system and development framework. This wizard will help you set up eZ Publish.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
-        <translation>Добродошли у eZ publish систем за управљање садржином. Чаробњак ће вам помоћи да поставите eZ publish. &lt;br&gt;Притисни &lt;i&gt;Даље&lt;/i&gt; за наставак.</translation>
+        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
+        <translation>Добродошли у Exponential систем за управљање садржином. Чаробњак ће вам помоћи да поставите Exponential. &lt;br&gt;Притисни &lt;i&gt;Даље&lt;/i&gt; за наставак.</translation>
     </message>
     <message>
         <source>Select installation language</source>
         <translation>Изаберите језик на коме ћете пратити инсталацију</translation>
     </message>
     <message>
-        <source>Information about how to set up eZ Publish manually is available %1.</source>
-        <translation>Упуство како да ручно инсталирате eZ publish доступни су на %1. </translation>
+        <source>Information about how to set up Exponential manually is available %1.</source>
+        <translation>Упуство како да ручно инсталирате Exponential доступни су на %1. </translation>
     </message>
     <message>
         <source>MySQL support was detected on your system. Please choose the database driver you would like to use.</source>
@@ -25501,7 +25501,7 @@ It is possible to change these settings at a later time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; function is not available in your database, you cannot run eZ Publish without this. See the documentation for more information.</source>
+        <source>The &apos;digest&apos; function is not available in your database, you cannot run Exponential without this. See the documentation for more information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -25545,12 +25545,12 @@ It is possible to change these settings at a later time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;p&gt;If you need to share knowledge, exchange tips with developers or simply find some improvement tricks, the eZ Community is the place to go.&lt;/p&gt;
+        <source>&lt;p&gt;If you need to share knowledge, exchange tips with developers or simply find some improvement tricks, the Exponential Community is the place to go.&lt;/p&gt;
 
 &lt;p&gt;
 How do you access it?&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Go on &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;eZ Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Go on &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;Exponential Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Click on Register (top of the page) and create your profile&lt;/li&gt;
 &lt;li&gt;Here you can check out the &lt;a href=&quot;http://share.ez.no/blogs&quot;&gt;blog posts&lt;/a&gt;,
     &lt;a href=&quot;http://share.ez.no/events&quot;&gt;events&lt;/a&gt;, &lt;a href=&quot;http://share.ez.no/members-partners/find-a-partner&quot;&gt;partners&lt;/a&gt;...&lt;/li&gt;
@@ -25559,11 +25559,11 @@ How do you access it?&lt;/p&gt;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Discover the eZ Publish Platform forums</source>
+        <source>Discover the Exponential Platform forums</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>eZ Publish 5 platform</source>
+        <source>Exponential 5 platform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -25752,8 +25752,8 @@ How do you access it?&lt;/p&gt;
         <translation>Недостају управљачи базе</translation>
     </message>
     <message>
-        <source>Your PHP does not have support for all databases that eZ publish support.</source>
-        <translation type="obsolete">Ваш PHP нема подршку за све базе података које подржава eZ publish. </translation>
+        <source>Your PHP does not have support for all databases that Exponential support.</source>
+        <translation type="obsolete">Ваш PHP нема подршку за све базе података које подржава Exponential. </translation>
     </message>
     <message>
         <source>Also some databases has more advanced features, such as charset, than others.</source>
@@ -25768,8 +25768,8 @@ How do you access it?&lt;/p&gt;
         <translation>Недостаје управљач базе</translation>
     </message>
     <message>
-        <source>No supported database handlers were found. eZ publish requires a database to store it&apos;s data, without one the system will fail.</source>
-        <translation type="obsolete">Није пронађена подршка за базе података. Потребна је база података за eZ publish.</translation>
+        <source>No supported database handlers were found. Exponential requires a database to store it&apos;s data, without one the system will fail.</source>
+        <translation type="obsolete">Није пронађена подршка за базе података. Потребна је база података за Exponential.</translation>
     </message>
     <message>
         <source>To obtain database support you need to recompile PHP, the exact recompile options are specified below.</source>
@@ -25780,8 +25780,8 @@ How do you access it?&lt;/p&gt;
         <translation>Недовољна овлашћења</translation>
     </message>
     <message>
-        <source>eZ publish cannot write to some important directories, without this the setup cannot finish and parts of eZ publish will fail.</source>
-        <translation type="obsolete">eZ publish не може писати појединим важним директоријима, без тога setup не може завршити те неки делови eZ publish-а неће радити. </translation>
+        <source>Exponential cannot write to some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation type="obsolete">Exponential не може писати појединим важним директоријима, без тога setup не може завршити те неки делови Exponential-а неће радити. </translation>
     </message>
     <message>
         <source>It&apos;s recommended that you fix this by running the commands below.</source>
@@ -25796,8 +25796,8 @@ How do you access it?&lt;/p&gt;
         <translation>Учитавање датотеке је онемогућено</translation>
     </message>
     <message>
-        <source>File uploading is not enabled which means that it&apos;s impossible for eZ publish to handle file uploading. All other parts of eZ publish will still work fine but it&apos;s recommended to enable file uploads.</source>
-        <translation type="obsolete">Учитавање датотеке није омогућено што значи да је eZ publishу немогуће обавити учитавање датотеке. Сви остали делови eZ publishа ће и даље добро радити, но препоручујемо да омогућите учитавање датотека.</translation>
+        <source>File uploading is not enabled which means that it&apos;s impossible for Exponential to handle file uploading. All other parts of Exponential will still work fine but it&apos;s recommended to enable file uploads.</source>
+        <translation type="obsolete">Учитавање датотеке није омогућено што значи да је Exponentialу немогуће обавити учитавање датотеке. Сви остали делови Exponentialа ће и даље добро радити, но препоручујемо да омогућите учитавање датотека.</translation>
     </message>
     <message>
         <source>Configuration</source>
@@ -25816,8 +25816,8 @@ How do you access it?&lt;/p&gt;
         <translation>Недостаје подршка за претварање слика</translation>
     </message>
     <message>
-        <source>No image conversion capabilities was detected, this means that eZ publish cannot scale any images or detect their type. This is vital functionality in eZ publish and must be supported.</source>
-        <translation type="obsolete">Нису откривене могућности претварања слика, то значи да eZ publish не може мењати величину слика или открити њихову врсту.То је витална функција у eZ publish програму те је он мора подржавати.</translation>
+        <source>No image conversion capabilities was detected, this means that Exponential cannot scale any images or detect their type. This is vital functionality in Exponential and must be supported.</source>
+        <translation type="obsolete">Нису откривене могућности претварања слика, то значи да Exponential не може мењати величину слика или открити њихову врсту.То је витална функција у Exponential програму те је он мора подржавати.</translation>
     </message>
     <message>
         <source>template operator will not be available.</source>
@@ -25828,16 +25828,16 @@ How do you access it?&lt;/p&gt;
         <translation>Пази:</translation>
     </message>
     <message>
-        <source>Future releases of eZ publish will have more advanced image support by using the imagegd extension.</source>
-        <translation type="obsolete">Следеће верзије eZ publish-а имаће напреднију графичку подршку коришћењем графичке екстензије. </translation>
+        <source>Future releases of Exponential will have more advanced image support by using the imagegd extension.</source>
+        <translation type="obsolete">Следеће верзије Exponential-а имаће напреднију графичку подршку коришћењем графичке екстензије. </translation>
     </message>
     <message>
         <source>Missing ImageMagick program</source>
         <translation>Недостаје програм Image Magic </translation>
     </message>
     <message>
-        <source>The ImageMagick program is not available to eZ publish. Without it eZ publish will not be able to do image conversion unless the imagegd extension is available.</source>
-        <translation type="obsolete">Програм ImageMagic није доступан eZ publishу. Без њега eZ publish неће моћи мењати величину слика осим ако није доступна екстензија imagegd.</translation>
+        <source>The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available.</source>
+        <translation type="obsolete">Програм ImageMagic није доступан Exponentialу. Без њега Exponential неће моћи мењати величину слика осим ако није доступна екстензија imagegd.</translation>
     </message>
     <message>
         <source>If you known where the program is installed (the executable is called</source>
@@ -25872,12 +25872,12 @@ How do you access it?&lt;/p&gt;
         <translation>Недостаје MBString екстензија</translation>
     </message>
     <message>
-        <source>eZ publish comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily eZ publish supports the mbstring extension for handling some of the charsets.</source>
-        <translation type="obsolete">eZ publish се испоручује с великом листом знакова које подржава у склопу основног подешавања, међутим они могу бити нешто спорији јер су израђени у чистом PHP коду. Насрећу, eZ publish подржава екстензију mbstring за управљање неким знаковима. </translation>
+        <source>Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</source>
+        <translation type="obsolete">Exponential се испоручује с великом листом знакова које подржава у склопу основног подешавања, међутим они могу бити нешто спорији јер су израђени у чистом PHP коду. Насрећу, Exponential подржава екстензију mbstring за управљање неким знаковима. </translation>
     </message>
     <message>
-        <source>By enabling the mbstring extension eZ publish will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
-        <translation type="obsolete">Активирањем mbstring екстензије eZ publish ће имати приступ већем броју знакова те ће бити у могућности брже их обрађивати, као нпр. Unicode и iso-8859-*. Препоручено код вишејезичних страница и страница с егзотичним знаковима. </translation>
+        <source>By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
+        <translation type="obsolete">Активирањем mbstring екстензије Exponential ће имати приступ већем броју знакова те ће бити у могућности брже их обрађивати, као нпр. Unicode и iso-8859-*. Препоручено код вишејезичних страница и страница с егзотичним знаковима. </translation>
     </message>
     <message>
         <source>Installation of the mbstring extension is done by compiling PHP with the</source>
@@ -25892,8 +25892,8 @@ How do you access it?&lt;/p&gt;
         <translation>Више о активирању екстенције можете пронаћи у </translation>
     </message>
     <message>
-        <source>Do not enable mbstring function overloading, eZ publish will only use the extension whenever it&apos;s needed.</source>
-        <translation type="obsolete">Немојте омогућавати заобилажење mbstring функције, eZ publish ће користити само ову екстензију кад год је могуће.</translation>
+        <source>Do not enable mbstring function overloading, Exponential will only use the extension whenever it&apos;s needed.</source>
+        <translation type="obsolete">Немојте омогућавати заобилажење mbstring функције, Exponential ће користити само ову екстензију кад год је могуће.</translation>
     </message>
     <message>
         <source>PHP option</source>
@@ -25904,8 +25904,8 @@ How do you access it?&lt;/p&gt;
         <translation>је омогућена</translation>
     </message>
     <message>
-        <source>eZ publish will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
-        <translation type="obsolete">eZ publish ће радити уз ову опцију међутим то ће довести до неких проблема с перформансом пошто ће све варијабле уноса морати бити претворене назад у </translation>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
+        <translation type="obsolete">Exponential ће радити уз ову опцију међутим то ће довести до неких проблема с перформансом пошто ће све варијабле уноса морати бити претворене назад у </translation>
     </message>
     <message>
         <source>normal</source>
@@ -25932,7 +25932,7 @@ How do you access it?&lt;/p&gt;
         <translation>Морате унапредити свој програм на најмање верзију</translation>
     </message>
     <message>
-        <source>eZ publish cannot write to the</source>
+        <source>Exponential cannot write to the</source>
         <translation type="obsolete">eZ издаваштво не може писати </translation>
     </message>
     <message>
@@ -25944,8 +25944,8 @@ How do you access it?&lt;/p&gt;
         <translation>Недостаје злиб екстензија</translation>
     </message>
     <message>
-        <source>The zlib extension is not available to eZ publish. Without it eZ publish will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
-        <translation type="obsolete">eZ publishу није доступна злиб екстензија. Без њега eZ publish неће моћи инсталирати демонстрациони приказ, међутим, ако не желите демонстрациони приступ можете занемарити ову поруку.</translation>
+        <source>The zlib extension is not available to Exponential. Without it Exponential will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
+        <translation type="obsolete">Exponentialу није доступна злиб екстензија. Без њега Exponential неће моћи инсталирати демонстрациони приказ, међутим, ако не желите демонстрациони приступ можете занемарити ову поруку.</translation>
     </message>
     <message>
         <source>To enable zlib you need to recompile PHP with support for it. You will need to configure PHP with</source>
@@ -25964,8 +25964,8 @@ How do you access it?&lt;/p&gt;
         <translation>PHP опција %1 је активирана</translation>
     </message>
     <message>
-        <source>eZ publish will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
-        <translation type="obsolete">eZ publish ће радити ако је укључена ова опција, међутим, то ће довести до неких проблема с извршењем пошто ће варијабле уноса бити објављене глобално код сваког извршења плана.</translation>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
+        <translation type="obsolete">Exponential ће радити ако је укључена ова опција, међутим, то ће довести до неких проблема с извршењем пошто ће варијабле уноса бити објављене глобално код сваког извршења плана.</translation>
     </message>
     <message>
         <source>It&apos;s recommended that the option is turned off. To turn it off edit your %1 configuration and set %2 to %3.</source>
@@ -25976,12 +25976,12 @@ How do you access it?&lt;/p&gt;
         <translation>Активирана је PHP сигурносна функција</translation>
     </message>
     <message>
-        <source>Insufficient execution time allowed to install eZ publish</source>
-        <translation type="obsolete">Недовољно време дозвољено за инсталирање eZ publish програма</translation>
+        <source>Insufficient execution time allowed to install Exponential</source>
+        <translation type="obsolete">Недовољно време дозвољено за инсталирање Exponential програма</translation>
     </message>
     <message>
-        <source>eZ publish will not work correctly with a execution time limit of %1.</source>
-        <translation type="obsolete">eZ publish неће добро радити с временским ограничењем  извршења од %1.</translation>
+        <source>Exponential will not work correctly with a execution time limit of %1.</source>
+        <translation type="obsolete">Exponential неће добро радити с временским ограничењем  извршења од %1.</translation>
     </message>
     <message>
         <source>It&apos;s highly recommended that you fix this.</source>
@@ -26000,15 +26000,15 @@ How do you access it?&lt;/p&gt;
         <translation>Следећи</translation>
     </message>
     <message>
-        <source>If you are running eZ publish in a shared host environment, contant your ISP to perform the changes</source>
-        <translation type="obsolete">Ако користите eZ publish у дељеном хост окружењу, контактирајте ваш ИСП та извршите промене</translation>
+        <source>If you are running Exponential in a shared host environment, contant your ISP to perform the changes</source>
+        <translation type="obsolete">Ако користите Exponential у дељеном хост окружењу, контактирајте ваш ИСП та извршите промене</translation>
     </message>
     <message>
-        <source>Insufficient memory allocated to install eZ publish</source>
-        <translation type="obsolete">Недовољна меморија за инсталацију eZ publish-а</translation>
+        <source>Insufficient memory allocated to install Exponential</source>
+        <translation type="obsolete">Недовољна меморија за инсталацију Exponential-а</translation>
     </message>
     <message>
-        <source>eZ publish will not work correctly with a memory limit of %1.</source>
+        <source>Exponential will not work correctly with a memory limit of %1.</source>
         <translation type="obsolete">eZ неће правилно радити с меморијским ограничењем од %1.</translation>
     </message>
     <message>
@@ -26020,8 +26020,8 @@ How do you access it?&lt;/p&gt;
         <translation type="obsolete">Препоручујемо да искључите ту опцију. Да би је искључили измените своју %phpini конфигурацију и поставите %magic_quotes_gpc анд %magic_quotes_runtime то %offtext.</translation>
     </message>
     <message>
-        <source>eZ publish will not work properly with this option on.</source>
-        <translation type="obsolete">eZ publish неће правилно радити уз ову опцију.</translation>
+        <source>Exponential will not work properly with this option on.</source>
+        <translation type="obsolete">Exponential неће правилно радити уз ову опцију.</translation>
     </message>
     <message>
         <source>To turn it off edit your %phpini configuration and set %magic_quotes_runtime to %offtext.</source>
@@ -26056,8 +26056,8 @@ How do you access it?&lt;/p&gt;
         <translation>Недостаје imagegd2 екстензија</translation>
     </message>
     <message>
-        <source>The imagegd2 extension is not available to eZ publish. Without it eZ publish will only be able to do conversion using ImageMagick and the</source>
-        <translation type="obsolete">eZ publish-у није доступна imagegd2 екстензија. Без ње eZ publish ће моћи обављати промене само уз помоћ Image Magick-а и </translation>
+        <source>The imagegd2 extension is not available to Exponential. Without it Exponential will only be able to do conversion using ImageMagick and the</source>
+        <translation type="obsolete">Exponential-у није доступна imagegd2 екстензија. Без ње Exponential ће моћи обављати промене само уз помоћ Image Magick-а и </translation>
     </message>
     <message>
         <source>To enable imagegd2 you need to recompile PHP with support for it, more information on that subject is available at</source>
@@ -26080,8 +26080,8 @@ How do you access it?&lt;/p&gt;
         <translation>Недостаје екстензија за сесије</translation>
     </message>
     <message>
-        <source>Your PHP module does not have session support, without this eZ publish will not work properly.</source>
-        <translation type="obsolete">Ваш PHP модул не подржава сесије. Без сесија eZ publish неће исправно радити.</translation>
+        <source>Your PHP module does not have session support, without this Exponential will not work properly.</source>
+        <translation type="obsolete">Ваш PHP модул не подржава сесије. Без сесија Exponential неће исправно радити.</translation>
     </message>
     <message>
         <source>To enable session support you will have recompile your PHP module without the %session_disable switch.</source>
@@ -26096,8 +26096,8 @@ How do you access it?&lt;/p&gt;
         <translation type="obsolete">, али последња издата PHP верзија PHP 4.3.x је препоручљива.</translation>
     </message>
     <message>
-        <source>Although eZ publish will work without it, it might be that you want to have support for this database.</source>
-        <translation type="obsolete">Мада eZ publish може радити без ње, могуће је да ћете хтети подршку за ту базу података.</translation>
+        <source>Although Exponential will work without it, it might be that you want to have support for this database.</source>
+        <translation type="obsolete">Мада Exponential може радити без ње, могуће је да ћете хтети подршку за ту базу података.</translation>
     </message>
     <message>
         <source>The affected directories are: %dir_list</source>
@@ -26116,8 +26116,8 @@ How do you access it?&lt;/p&gt;
         <translation>Ако немате овлачћења да измените власника, можете покушати са овим командама.</translation>
     </message>
     <message>
-        <source>eZ publish could not detect the user and group of the webserver.If you know the user and group of the webserver it&apos;s recommended to change the ownership of the files to match this user and group.To do this you need to change the %chown commands under Alternative shell commands.</source>
-        <translation type="obsolete">eZ publish не може детектовати корисника и групу на webсерверу.Ако знате корисника и групу на webсерверу препоручљиво је да промените власника фајлова да би се поклопили корисник и група.Да би ово користили морате изменити %chown команде у алтернативним командама.</translation>
+        <source>Exponential could not detect the user and group of the webserver.If you know the user and group of the webserver it&apos;s recommended to change the ownership of the files to match this user and group.To do this you need to change the %chown commands under Alternative shell commands.</source>
+        <translation type="obsolete">Exponential не може детектовати корисника и групу на webсерверу.Ако знате корисника и групу на webсерверу препоручљиво је да промените власника фајлова да би се поклопили корисник и група.Да би ово користили морате изменити %chown команде у алтернативним командама.</translation>
     </message>
     <message>
         <source>These commands will setup the permission more correctly, but require knowledge about the running webserver.</source>
@@ -26136,8 +26136,8 @@ How do you access it?&lt;/p&gt;
         <translation>Уплоад фајла није могућ</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to eZ publish.</source>
-        <translation type="obsolete">PHP upload директоријум %upload_dir не постоји или не може да му се приступи, без овога нећете моћи да uploadујете слике или фајлове на eZ publish.</translation>
+        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to Exponential.</source>
+        <translation type="obsolete">PHP upload директоријум %upload_dir не постоји или не може да му се приступи, без овога нећете моћи да uploadујете слике или фајлове на Exponential.</translation>
     </message>
     <message>
         <source>Create the directory %upload_dir on your system. If you do not have the possibility to create this yourself ask the administrator to create it for you.</source>
@@ -26152,8 +26152,8 @@ How do you access it?&lt;/p&gt;
         <translation>Ова команда ће вам креирати upload директоријум.</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to eZ publish.</source>
-        <translation type="obsolete">У PHP upload директоријум %upload_dir не може да се пише. То значи да се неће моћи вршити upload слика и фајлова на eZ publish.</translation>
+        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to Exponential.</source>
+        <translation type="obsolete">У PHP upload директоријум %upload_dir не може да се пише. То значи да се неће моћи вршити upload слика и фајлова на Exponential.</translation>
     </message>
     <message>
         <source>You must change the permission on the directory %upload_dir. If you do not have the possibility to create this yourself ask the administrator to do this for you.</source>
@@ -26168,8 +26168,8 @@ How do you access it?&lt;/p&gt;
         <translation>Ако немате право да мењате власника, можете покушати са овом командом.</translation>
     </message>
     <message>
-        <source>eZ publish could not detect the user and group of the webserver.If you know the user and group of the webserver it&apos;s recommended to change the ownership of the upload directory to match this user and group.To do this you need to change the %chown commands under Alternative shell commands.</source>
-        <translation type="obsolete">eZ publish није могао открити корисника и групу на webсерверу.Ако знате корисника и групу на webсерверу препоручљиво је да промените власника upload директоријума да би се поклопили корисник и група.Да би ово изменили морате користити %chown команду у алтернативним командама.</translation>
+        <source>Exponential could not detect the user and group of the webserver.If you know the user and group of the webserver it&apos;s recommended to change the ownership of the upload directory to match this user and group.To do this you need to change the %chown commands under Alternative shell commands.</source>
+        <translation type="obsolete">Exponential није могао открити корисника и групу на webсерверу.Ако знате корисника и групу на webсерверу препоручљиво је да промените власника upload директоријума да би се поклопили корисник и група.Да би ово изменили морате користити %chown команду у алтернативним командама.</translation>
     </message>
     <message>
         <source>This shell command will give proper permission to the upload directory.</source>
@@ -26188,24 +26188,24 @@ How do you access it?&lt;/p&gt;
         <translation>пример php.ini</translation>
     </message>
     <message>
-        <source>Alternatively you may create a file called %1 in your eZ publish root folder and add the following</source>
-        <translation type="obsolete">Као алтернативу можете креирати фајл назван %1 у вашем eZ publish root директоријуму и додати следеће</translation>
+        <source>Alternatively you may create a file called %1 in your Exponential root folder and add the following</source>
+        <translation type="obsolete">Као алтернативу можете креирати фајл назван %1 у вашем Exponential root директоријуму и додати следеће</translation>
     </message>
     <message>
         <source>.htaccess example</source>
         <translation>.хтаццесс пример</translation>
     </message>
     <message>
-        <source>eZ publish may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
-        <translation type="obsolete">eZ publish може радити са safe mode, али може се десити да неке опције неће бити доступне. Неке од ствари које се могу десити су</translation>
+        <source>Exponential may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
+        <translation type="obsolete">Exponential може радити са safe mode, али може се десити да неке опције неће бити доступне. Неке од ствари које се могу десити су</translation>
     </message>
     <message>
         <source>You need to enable AcceptPathInfo in your Apache config file, if you&apos;re using apache 2.x.</source>
         <translation type="obsolete">Морате да омогућите AcceptPathInfo у вашем Apache config фајлу, ако користите apache 2.x.</translation>
     </message>
     <message>
-        <source>If you&apos;re running apache 1.3, eZ publish will not run in CGI mode.</source>
-        <translation type="obsolete">Ако користите apache 1.3, eZ publish неће радити у CGI моду.</translation>
+        <source>If you&apos;re running apache 1.3, Exponential will not run in CGI mode.</source>
+        <translation type="obsolete">Ако користите apache 1.3, Exponential неће радити у CGI моду.</translation>
     </message>
     <message>
         <source>allow_url_fopen ini setting is disabled</source>
@@ -26220,42 +26220,42 @@ How do you access it?&lt;/p&gt;
         <translation>Пажња: Ако овде не успе, такође неће успети на accept_path_info тесту.</translation>
     </message>
     <message>
-        <source>If you&apos;re running apache 1.3, eZ Publish will not run in CGI mode.</source>
-        <translation type="obsolete">Ако користите apache 1.3, eZ publish неће радити у CGI моду.</translation>
+        <source>If you&apos;re running apache 1.3, Exponential will not run in CGI mode.</source>
+        <translation type="obsolete">Ако користите apache 1.3, Exponential неће радити у CGI моду.</translation>
     </message>
     <message>
-        <source>eZ Publish cannot write to the</source>
-        <translation>eZ Publish не може да пише у</translation>
+        <source>Exponential cannot write to the</source>
+        <translation>Exponential не може да пише у</translation>
     </message>
     <message>
         <source>directory.</source>
         <translation>фасцикла.</translation>
     </message>
     <message>
-        <source>Your PHP does not have support for all databases that eZ Publish support.</source>
-        <translation>Ваш PHP нема подршку за све базе података које подржава eZ publish. </translation>
+        <source>Your PHP does not have support for all databases that Exponential support.</source>
+        <translation>Ваш PHP нема подршку за све базе података које подржава Exponential. </translation>
     </message>
     <message>
-        <source>Although eZ Publish will work without it, it might be that you want to have support for this database.</source>
-        <translation>Иако ће eZ Publish радити без њега, можда ћете ипак желети да омогућите подршку за ове базе података.</translation>
+        <source>Although Exponential will work without it, it might be that you want to have support for this database.</source>
+        <translation>Иако ће Exponential радити без њега, можда ћете ипак желети да омогућите подршку за ове базе података.</translation>
     </message>
     <message>
-        <source>No supported database handlers were found. eZ Publish requires a database to store it&apos;s data, without one the system will fail.</source>
-        <translation>Није пронађена подршка за базе података. Потребна је база података за eZ publish, иначе неће радити.</translation>
+        <source>No supported database handlers were found. Exponential requires a database to store it&apos;s data, without one the system will fail.</source>
+        <translation>Није пронађена подршка за базе података. Потребна је база података за Exponential, иначе неће радити.</translation>
     </message>
     <message>
-        <source>eZ Publish cannot write to some important directories, without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish не може да пише у неким битним фасциклама, а без тога инсталацију није могуће довршити и делови eZ Publish-а неће радити.</translation>
+        <source>Exponential cannot write to some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential не може да пише у неким битним фасциклама, а без тога инсталацију није могуће довршити и делови Exponential-а неће радити.</translation>
     </message>
     <message>
         <source>These shell commands will give proper permission to the web server.</source>
         <translation>These shell commands will give proper permission to the web server.</translation>
     </message>
     <message>
-        <source>eZ Publish could not detect the user and group of the web server.
+        <source>Exponential could not detect the user and group of the web server.
 If you know the user and group of the web server it is recommended to change the ownership of the files to match this user and group.
 To do this you need to change the %chown commands under Alternative shell commands.</source>
-        <translation>eZ Publish не може да детектује корисничко име и групу са web сервера.
+        <translation>Exponential не може да детектује корисничко име и групу са web сервера.
 Уколико имате те информације препоручљиво је да подесите власништво над датотекама сходно тим подацима.
 За то треба да извршите %chown команде под Алтернативним shell командама.</translation>
     </message>
@@ -26272,8 +26272,8 @@ To do this you need to change the %chown commands under Alternative shell comman
         <translation>Недостају поједине фасцикле</translation>
     </message>
     <message>
-        <source>eZ Publish cannot create some important directories, without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish не може да направи неке битне фасцикле, а без тога инсталацију није могуће довршити и делови eZ Publish-а неће радити.</translation>
+        <source>Exponential cannot create some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential не може да направи неке битне фасцикле, а без тога инсталацију није могуће довршити и делови Exponential-а неће радити.</translation>
     </message>
     <message>
         <source>The nonexistent directories are: %dir_list</source>
@@ -26288,12 +26288,12 @@ To do this you need to change the %chown commands under Alternative shell comman
         <translation>Датотеке уместо потребних фасцикли</translation>
     </message>
     <message>
-        <source>eZ Publish cannot create some important directories, because there are an files instead of these directories in the same places with the same names.
+        <source>Exponential cannot create some important directories, because there are an files instead of these directories in the same places with the same names.
 You should replace these files with appropriate directories and give necessary permissions to them.
-Without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish не може да направи неке битне фасцикле, јер на тим местима постоје документи са истим именима.
+Without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential не може да направи неке битне фасцикле, јер на тим местима постоје документи са истим именима.
 Замените та документа одговарајућим фасциклама и дајте им одговарајуће привилегије.
-Без тога инсталацију није могуће довршити и делови eZ Publish-а неће радити.</translation>
+Без тога инсталацију није могуће довршити и делови Exponential-а неће радити.</translation>
     </message>
     <message>
         <source>The affected directories (files) are: %dir_list</source>
@@ -26304,32 +26304,32 @@ Without this the setup cannot finish and parts of eZ Publish will fail.</source>
         <translation>Недостаје DOM екстензија</translation>
     </message>
     <message>
-        <source>The DOM extension is not available to eZ Publish. Without it eZ Publish will not work.</source>
-        <translation>DOM екстензија није на располагању eZ Publish-у. Без ње eZ Publish неће радити.</translation>
+        <source>The DOM extension is not available to Exponential. Without it Exponential will not work.</source>
+        <translation>DOM екстензија није на располагању Exponential-у. Без ње Exponential неће радити.</translation>
     </message>
     <message>
         <source>In most cases, the DOM extension is enabled by default because it is included in the PHP core. However, some Linux distributions have PHP without compiled-in support for DOM. Instead, they provide DOM as a shared module in a separate RPM package called &quot;php-xml&quot;.</source>
         <translation>У већини случајева, DOM ектензија је омогућена јер је укључена у језгро PHP-а. Међутим неке дистрибуције Линукса имају PHP компајлиран без подршке за DOM. Уместо тога омогућавају DOM као дељени модул у засебном RPM пакету званом &quot;php-xml&quot;.</translation>
     </message>
     <message>
-        <source>Insufficient execution time allowed to install eZ Publish</source>
-        <translation>Недовољно време дозвољено за инсталирање eZ publish програма</translation>
+        <source>Insufficient execution time allowed to install Exponential</source>
+        <translation>Недовољно време дозвољено за инсталирање Exponential програма</translation>
     </message>
     <message>
-        <source>eZ Publish will not work correctly with a execution time limit of %1.</source>
-        <translation>eZ Publish неће правилно радити са execution time ограничењем од %1.</translation>
+        <source>Exponential will not work correctly with a execution time limit of %1.</source>
+        <translation>Exponential неће правилно радити са execution time ограничењем од %1.</translation>
     </message>
     <message>
-        <source>If you are running eZ Publish in a shared host environment, contant your ISP to perform the changes</source>
-        <translation>Ако користите eZ publish у дељеном хост окружењу, контактирајте ваш ИСП да извршите промене</translation>
+        <source>If you are running Exponential in a shared host environment, contant your ISP to perform the changes</source>
+        <translation>Ако користите Exponential у дељеном хост окружењу, контактирајте ваш ИСП да извршите промене</translation>
     </message>
     <message>
-        <source>File uploading is not enabled which means that it&apos;s impossible for eZ Publish to handle file uploading. All other parts of eZ Publish will still work fine but it&apos;s recommended to enable file uploads.</source>
-        <translation>Учитавање датотеке није омогућено што значи да је eZ publishу немогуће обавити учитавање датотеке. Сви остали делови eZ publishа ће и даље добро радити, но препоручујемо да омогућите учитавање датотека.</translation>
+        <source>File uploading is not enabled which means that it&apos;s impossible for Exponential to handle file uploading. All other parts of Exponential will still work fine but it&apos;s recommended to enable file uploads.</source>
+        <translation>Учитавање датотеке није омогућено што значи да је Exponentialу немогуће обавити учитавање датотеке. Сви остали делови Exponentialа ће и даље добро радити, но препоручујемо да омогућите учитавање датотека.</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to eZ Publish.</source>
-        <translation>PHP upload директоријум %upload_dir не постоји или не може да му се приступи, без овога нећете моћи да uploadујете слике или фајлове на eZ publish.</translation>
+        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to Exponential.</source>
+        <translation>PHP upload директоријум %upload_dir не постоји или не може да му се приступи, без овога нећете моћи да uploadујете слике или фајлове на Exponential.</translation>
     </message>
     <message>
         <source>The upload directory is currently placed in the directory of the root user.
@@ -26338,14 +26338,14 @@ This is a security problem and should be changed to another global temporary dir
 Ово је безбедоносни проблем и требао би бити промењен на други глобални привремени директоријум</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to eZ Publish.</source>
-        <translation>У PHP upload директоријум %upload_dir не може да се пише. То значи да се неће моћи вршити upload слика и фајлова на eZ publish.</translation>
+        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to Exponential.</source>
+        <translation>У PHP upload директоријум %upload_dir не може да се пише. То значи да се неће моћи вршити upload слика и фајлова на Exponential.</translation>
     </message>
     <message>
-        <source>eZ Publish could not detect the user and group of the web server.
+        <source>Exponential could not detect the user and group of the web server.
 If you know the user and group of the web server it is recommended to change the ownership of the upload directory to match this user and group.
 To do this you need to change the %chown commands under Alternative shell commands.</source>
-        <translation>eZ Publish не може да детектује корисничко име и групу са web сервера.
+        <translation>Exponential не може да детектује корисничко име и групу са web сервера.
 Уколико имате те информације препоручљиво је да подесите власништво над фасциклом за учитавање сходно тим подацима.
 За то треба да извршите %chown команде под Алтернативним shell командама.</translation>
     </message>
@@ -26354,72 +26354,72 @@ To do this you need to change the %chown commands under Alternative shell comman
         <translation>Ако знате корисника и групу на webсерверу можете покушати ову команду. Замените apache:apache са корисником и групом.</translation>
     </message>
     <message>
-        <source>No image conversion capabilities was detected, this means that eZ Publish cannot scale any images or detect their type. This is vital functionality in eZ Publish and must be supported.</source>
-        <translation>Нису откривене могућности претварања слика, то значи да eZ publish не може мењати величину слика или открити њихову врсту.То је витална функција у eZ publish програму те је он мора подржавати.</translation>
+        <source>No image conversion capabilities was detected, this means that Exponential cannot scale any images or detect their type. This is vital functionality in Exponential and must be supported.</source>
+        <translation>Нису откривене могућности претварања слика, то значи да Exponential не може мењати величину слика или открити њихову врсту.То је витална функција у Exponential програму те је он мора подржавати.</translation>
     </message>
     <message>
-        <source>The imagegd2 extension is not available to eZ Publish. Without it eZ Publish will only be able to do conversion using ImageMagick and the</source>
-        <translation>eZ publish-у није доступна imagegd2 екстензија. Без ње eZ publish ће моћи обављати промене само уз помоћ ImageMagick-а и </translation>
+        <source>The imagegd2 extension is not available to Exponential. Without it Exponential will only be able to do conversion using ImageMagick and the</source>
+        <translation>Exponential-у није доступна imagegd2 екстензија. Без ње Exponential ће моћи обављати промене само уз помоћ ImageMagick-а и </translation>
     </message>
     <message>
-        <source>Future releases of eZ Publish will have more advanced image support by using the imagegd extension.</source>
-        <translation>Следеће верзије eZ publish-а имаће напреднију графичку подршку коришћењем imagegd екстензије.</translation>
+        <source>Future releases of Exponential will have more advanced image support by using the imagegd extension.</source>
+        <translation>Следеће верзије Exponential-а имаће напреднију графичку подршку коришћењем imagegd екстензије.</translation>
     </message>
     <message>
-        <source>The ImageMagick program is not available to eZ Publish. Without it eZ Publish will not be able to do image conversion unless the imagegd extension is available.</source>
-        <translation>Програм ImageMagic није доступан eZ publishу. Без њега eZ publish неће моћи мењати величину слика осим ако није доступна екстензија imagegd.</translation>
+        <source>The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available.</source>
+        <translation>Програм ImageMagic није доступан Exponentialу. Без њега Exponential неће моћи мењати величину слика осим ако није доступна екстензија imagegd.</translation>
     </message>
     <message>
-        <source>eZ Publish comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily eZ Publish supports the mbstring extension for handling some of the charsets.</source>
-        <translation>eZ Publish долази са богатим списком подржаних словних сетова, али то може радити мало спорије с обзиром да су у чистом PHP коду. На срећу eZ Publish подржава mbstring екстензију за баратање словним сетовима.</translation>
+        <source>Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</source>
+        <translation>Exponential долази са богатим списком подржаних словних сетова, али то може радити мало спорије с обзиром да су у чистом PHP коду. На срећу Exponential подржава mbstring екстензију за баратање словним сетовима.</translation>
     </message>
     <message>
-        <source>By enabling the mbstring extension eZ Publish will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
-        <translation>Укључивањем mbstring екстензије eZ Publish ће добити приступ за још више словних сетова и такође ће их брже обрађивати, нпр. Unicode and iso-8859-*. Ово је препоручено за вишејезичне сајтове и сајтове са егзотичнијим словним сетовима.</translation>
+        <source>By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
+        <translation>Укључивањем mbstring екстензије Exponential ће добити приступ за још више словних сетова и такође ће их брже обрађивати, нпр. Unicode and iso-8859-*. Ово је препоручено за вишејезичне сајтове и сајтове са егзотичнијим словним сетовима.</translation>
     </message>
     <message>
-        <source>Do not enable mbstring function overloading, eZ Publish will only use the extension whenever it&apos;s needed.</source>
-        <translation>Не омогућујте препуњавање mbstring функције, eZ Publish ће је користити екстензију само када буде потребно.</translation>
+        <source>Do not enable mbstring function overloading, Exponential will only use the extension whenever it&apos;s needed.</source>
+        <translation>Не омогућујте препуњавање mbstring функције, Exponential ће је користити екстензију само када буде потребно.</translation>
     </message>
     <message>
-        <source>Insufficient memory allocated to install eZ Publish</source>
-        <translation>Недовољна меморија за инсталацију eZ publish-а</translation>
+        <source>Insufficient memory allocated to install Exponential</source>
+        <translation>Недовољна меморија за инсталацију Exponential-а</translation>
     </message>
     <message>
-        <source>eZ Publish will not work correctly with a memory limit of %1.</source>
-        <translation>eZ Publish неће правилно радити са memory limit ограничењем од %1.</translation>
+        <source>Exponential will not work correctly with a memory limit of %1.</source>
+        <translation>Exponential неће правилно радити са memory limit ограничењем од %1.</translation>
     </message>
     <message>
-        <source>eZ Publish will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
-        <translation>eZ publish ће радити уз ову могућност међутим то ће довести до мањих проблема с перформансом пошто ће све промењљиве уноса морати бити претворене у</translation>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
+        <translation>Exponential ће радити уз ову могућност међутим то ће довести до мањих проблема с перформансом пошто ће све промењљиве уноса морати бити претворене у</translation>
     </message>
     <message>
         <source>It is recommended that the option is turned off. To turn it off edit your %phpini configuration and set %magic_quotes_gpc and %magic_quotes_runtime to %offtext.</source>
         <translation>Веома је важно да ову могућност искључите. Да бисте је искључили измените ваш %phpini и поставите %magic_quotes_gpc и %magic_quotes_runtime на %offtext.</translation>
     </message>
     <message>
-        <source>Alternatively you may create a file called %1 in your eZ Publish root folder and add the following</source>
-        <translation>Као алтернативу можете креирати фајл %1 у корену ваше eZ publish инсталације и додати следеће</translation>
+        <source>Alternatively you may create a file called %1 in your Exponential root folder and add the following</source>
+        <translation>Као алтернативу можете креирати фајл %1 у корену ваше Exponential инсталације и додати следеће</translation>
     </message>
     <message>
-        <source>eZ Publish will not work properly with this option on.</source>
-        <translation>eZ Publish неће правилно радити уколико је ово омогућено.</translation>
+        <source>Exponential will not work properly with this option on.</source>
+        <translation>Exponential неће правилно радити уколико је ово омогућено.</translation>
     </message>
     <message>
-        <source>eZ Publish will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
-        <translation>eZ publish ће радити уз ову могућност међутим то ће довести до мањих проблема с извршењем пошто ће промењљиве уноса бити објављене глобално код сваког извршења скрипти.</translation>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
+        <translation>Exponential ће радити уз ову могућност међутим то ће довести до мањих проблема с извршењем пошто ће промењљиве уноса бити објављене глобално код сваког извршења скрипти.</translation>
     </message>
     <message>
-        <source>Your PHP module does not have session support, without this eZ Publish will not work properly.</source>
-        <translation>Ваш PHP модул не подржава сесије. Без сесија eZ publish неће исправно радити.</translation>
+        <source>Your PHP module does not have session support, without this Exponential will not work properly.</source>
+        <translation>Ваш PHP модул не подржава сесије. Без сесија Exponential неће исправно радити.</translation>
     </message>
     <message>
         <source>, but the latest released PHP 4.4.x version is highly recommended.</source>
         <translation type="obsolete">, али последња издата PHP верзија PHP 4.4.x је препоручљива.</translation>
     </message>
     <message>
-        <source>eZ Publish may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
-        <translation>eZ Publish можда буде радио са укљученим safe mode, међутим више функција ће постати недоступне. Неке од ствари које могу да се десе су</translation>
+        <source>Exponential may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
+        <translation>Exponential можда буде радио са укљученим safe mode, међутим више функција ће постати недоступне. Неке од ствари које могу да се десе су</translation>
     </message>
     <message>
         <source>Time zone configuration</source>
@@ -26450,8 +26450,8 @@ To do this you need to change the %chown commands under Alternative shell comman
         <translation>Уколико желите да задржите UTC као вашу временску зону, оверите &lt;strong&gt;Занемари ову проверу&lt;/strong&gt; испод за наставак.</translation>
     </message>
     <message>
-        <source>The zlib extension is not available to eZ Publish. Without it eZ Publish will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
-        <translation>eZ publishу није доступна злиб екстензија. Без њега eZ publish неће моћи инсталирати демонстрациони приказ, међутим, ако не желите демонстрациони приступ можете занемарити ову поруку.</translation>
+        <source>The zlib extension is not available to Exponential. Without it Exponential will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
+        <translation>Exponentialу није доступна злиб екстензија. Без њега Exponential неће моћи инсталирати демонстрациони приказ, међутим, ако не желите демонстрациони приступ можете занемарити ову поруку.</translation>
     </message>
     <message>
         <source>Missing cURL extension</source>
@@ -26502,7 +26502,7 @@ To do this you need to change the %chown commands under Alternative shell comman
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The iconv extension is not available to eZ Publish. Without it eZ Publish will not work.</source>
+        <source>The iconv extension is not available to Exponential. Without it Exponential will not work.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -29293,8 +29293,8 @@ your account.</source>
         <translation type="unfinished">Притисните &quot;Поништи&quot; да безбедно напустите ову операцију.</translation>
     </message>
     <message>
-        <source>Please contact your eZ Publish administrator to solve this problem.</source>
-        <translation type="unfinished">Контактирајте вашег eZ Publish администратора за решавање овог проблема.</translation>
+        <source>Please contact your Exponential administrator to solve this problem.</source>
+        <translation type="unfinished">Контактирајте вашег Exponential администратора за решавање овог проблема.</translation>
     </message>
     <message>
         <source>duplicate attribute placement</source>
@@ -31257,8 +31257,8 @@ your account.</source>
         <translation type="unfinished">Администратор сесија</translation>
     </message>
     <message>
-        <source>File %1 does not exist. You should copy it from the recent eZ Publish distribution.</source>
-        <translation type="unfinished">Датотека %1 не постоји. Мораш је копирати са задње eZ Publish дистрибуције.</translation>
+        <source>File %1 does not exist. You should copy it from the recent Exponential distribution.</source>
+        <translation type="unfinished">Датотека %1 не постоји. Мораш је копирати са задње Exponential дистрибуције.</translation>
     </message>
     <message>
         <source>Datatype wizard</source>

@@ -12,8 +12,8 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish Changelog converter\n\n" .
-                                                        "Converts a Changelog into XML text format usable in eZ Publish\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential Changelog converter\n\n" .
+                                                        "Converts a Changelog into XML text format usable in Exponential\n" .
                                                         "The result is printed to the standard output" ),
                                      'use-session' => false,
                                      'use-modules' => true,

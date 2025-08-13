@@ -18,7 +18,7 @@ Change of behavior
   there is now a new setting that must be set pr project to accomplish good
   security, set site.ini\[HTMLForms]\Secret on pure legacy/4.x setup.
 
-  If your running eZ Publish 5.x, the already existing yml parameter %secret%
+  If your running Exponential 5.x, the already existing yml parameter %secret%
   will be automatically injected to eZFormToke for you, assuming
   config.yml framework.csrf_protection is set to true (enabled).
 

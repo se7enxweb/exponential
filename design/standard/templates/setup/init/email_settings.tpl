@@ -5,7 +5,7 @@
 </div>
 
 <p>
-  {"This section is used to configure how eZ Publish delivers its outgoing Email."|i18n("design/standard/setup/init")}
+  {"This section is used to configure how Exponential delivers its outgoing Email."|i18n("design/standard/setup/init")}
 </p>
 
 {if eq($system.type,"unix")}

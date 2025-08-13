@@ -17,14 +17,14 @@ Release notes for 3.2-1
   new package system.
 - Improved approval handling, it will send out notifications for new approvals and
   has some improved views for approval objects.
-- New WebDAV library and special implementation for the content tree in eZ publish. This means
-  that you can use a WebDAV client (eg. IE or Konqueror) to browse an eZ publish site.
+- New WebDAV library and special implementation for the content tree in Exponential. This means
+  that you can use a WebDAV client (eg. IE or Konqueror) to browse an Exponential site.
 - Improved eZUser handling, users can now be fetched from external sources and synched to the
-  eZ publish user tree. Implementations for LDAP and text files are included.
+  Exponential user tree. Implementations for LDAP and text files are included.
 - A new command line utility for managing packages (ezpm.php) has been created. It will allow you
   to export your content classes and import them on another site. This system is now also
   the basis for the sites you choose in the setup.
-- New script functionality which has been integrated with all scripts in eZ publish making them
+- New script functionality which has been integrated with all scripts in Exponential making them
   easier to use as well as making it easier to maintain them. Try -h or --help on all scripts
   to see new possible options.
 - The old API reference view has been brought in a similar way as it was in the old SDK.

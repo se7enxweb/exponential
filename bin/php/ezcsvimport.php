@@ -12,7 +12,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish CSV import script\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential CSV import script\n\n" .
                                                         "\n" .
                                                         "\n" .
                                                         "\n" .

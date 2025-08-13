@@ -17,7 +17,7 @@ Changes from 3.3-3 to 3.3-4
 
 *Setup:
 - Fixed checking of existing MySQL databases to use mysql_list_dbs().
-- Added back the finetuning page, it will display hints for extending eZ publish.
+- Added back the finetuning page, it will display hints for extending Exponential.
 - Added finetuning check for the ImageTTFText and ImageTTFBBox functions which are
   need for texttoimage to work properly.
 - Added manual input box for mysql when no databases found.

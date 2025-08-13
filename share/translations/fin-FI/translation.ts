@@ -3885,8 +3885,8 @@ Parametrit ovat linkin alku-ja loppumerkit.</translation>
         <translation>Aliaksen tulee uudelleenohjata kohteeseensa</translation>
     </message>
     <message>
-        <source>With &lt;em&gt;Alias should redirect to its destination&lt;/em&gt; checked eZ Publish will redirect to the destination using a HTTP 301 response. Un-check it and the URL will stay the same &amp;#8212; no redirection will be performed.</source>
-        <translation>Jos &lt;em&gt;Aliaksen tulee uudelleenohjata kohteeseensa &lt;/em&gt;on valittu,  uudelleenohjaa eZ Publish kohteeseen käyttäen HTTP 301 -vastausta. Poista valinta ja URL pysyy samana &amp;#8212; eikä uudelleenohjausta suoriteta.</translation>
+        <source>With &lt;em&gt;Alias should redirect to its destination&lt;/em&gt; checked Exponential will redirect to the destination using a HTTP 301 response. Un-check it and the URL will stay the same &amp;#8212; no redirection will be performed.</source>
+        <translation>Jos &lt;em&gt;Aliaksen tulee uudelleenohjata kohteeseensa &lt;/em&gt;on valittu,  uudelleenohjaa Exponential kohteeseen käyttäen HTTP 301 -vastausta. Poista valinta ja URL pysyy samana &amp;#8212; eikä uudelleenohjausta suoriteta.</translation>
     </message>
     <message>
         <source>If checked the alias will start from the parent of the current node. If un-checked the aliases will start from the root of the site.</source>
@@ -4638,7 +4638,7 @@ Parametrit ovat linkin alku-ja loppumerkit.</translation>
 <context>
     <name>design/admin/dashboard/community</name>
     <message>
-        <source>What&apos;s happening in the eZ Community</source>
+        <source>What&apos;s happening in the Exponential Community</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4723,12 +4723,12 @@ Parametrit ovat linkin alku-ja loppumerkit.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt; for more infomation.</source>
+        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more infomation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are using %edition, the &lt;span id=&quot;ez-publish-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of eZ Publish, built by &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;eZ Community&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If this platform is critical for your business, we strongly recommend to subscribe to the Enterprise Edition of eZ Publish. More on &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt;&apos; website.</source>
+        <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If this platform is critical for your business, we strongly recommend to subscribe to the Enterprise Edition of Exponential. More on &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt;&apos; website.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4994,12 +4994,12 @@ Näppäin</translation>
 <context>
     <name>design/admin/ezinfo/about</name>
     <message>
-        <source>eZ Publish information: %version</source>
-        <translation>eZ Publish lisätieto: %version</translation>
+        <source>Exponential information: %version</source>
+        <translation>Exponential lisätieto: %version</translation>
     </message>
     <message>
-        <source>What is eZ Publish?</source>
-        <translation>Mikä on eZ Publish?</translation>
+        <source>What is Exponential?</source>
+        <translation>Mikä on Exponential?</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -6774,8 +6774,8 @@ Click &quot;Next&quot; without choosing an image to continue to the next step.</
 Napsauta &quot;Seuraava&quot; valitsematta kuvaa jatkaaksesi seuraavaan askeleeseen..</translation>
     </message>
     <message>
-        <source>Regarding eZ Publish package &apos;%packagename&apos;</source>
-        <translation>Lisätietoa eZ Publish-paketista &apos;%packagename&apos;</translation>
+        <source>Regarding Exponential package &apos;%packagename&apos;</source>
+        <translation>Lisätietoa Exponential-paketista &apos;%packagename&apos;</translation>
     </message>
     <message>
         <source>The package can be installed on your system. Installing the package will copy files, create content classes etc., depending on the package.
@@ -6898,7 +6898,7 @@ Huomio: Pakettien asetuksia ei poisteta.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate eZ Publish Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the eZ Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;eZ Publish&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems AS&lt;/a&gt; and others.</source>
+        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6906,7 +6906,7 @@ Huomio: Pakettien asetuksia ei poisteta.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;eZ Publish&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems AS&lt;/a&gt; and others.</source>
+        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8196,8 +8196,8 @@ Rapid Application Development (sovelluksen nopea tuottaminen)</translation>
         <translation>Käytä vetovalikkoa valitaksesi toiminnon, johon haluat myöntää käyttöoikeudet.</translation>
     </message>
     <message>
-        <source>The &quot;Grant full access&quot; button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you want to limit the access method, click the &quot;Grant limited access&quot; button. Function limitation is only supported by some functions. If unsupported, eZ Publish will set up a policy with unlimited access to the selected function.</source>
-        <translation>&quot;Myönnä täysi käyttöoikeus&quot;-näppäin luo käytännön, joka myöntää rajoittamattoman pääsyn valitun toiminnon ensimmäisessä vaiheessa määritellyn moduulin sisässä. Jos haluat rajoittaa pääsytoimintoja, napsauta &quot;Myönnä rajoitettu käyttöoikeus&quot;-näppäintä. Toimintorajoitusta tukee vain osa toiminnoista. Jos ei tuettu, Ez Publish asettaa käytönnön rajoittamattomilla käyttöoikeuksilla valittuun toimintoon.</translation>
+        <source>The &quot;Grant full access&quot; button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you want to limit the access method, click the &quot;Grant limited access&quot; button. Function limitation is only supported by some functions. If unsupported, Exponential will set up a policy with unlimited access to the selected function.</source>
+        <translation>&quot;Myönnä täysi käyttöoikeus&quot;-näppäin luo käytännön, joka myöntää rajoittamattoman pääsyn valitun toiminnon ensimmäisessä vaiheessa määritellyn moduulin sisässä. Jos haluat rajoittaa pääsytoimintoja, napsauta &quot;Myönnä rajoitettu käyttöoikeus&quot;-näppäintä. Toimintorajoitusta tukee vain osa toiminnoista. Jos ei tuettu, Exponential asettaa käytönnön rajoittamattomilla käyttöoikeuksilla valittuun toimintoon.</translation>
     </message>
     <message>
         <source>It is not possible to grant limited access to all modules at once. To grant unlimited access to all modules and their functions, go back to step one and select &quot;Grant access to all functions&quot;. To grant limited access to different functions within different modules, you must set up a collection of policies.</source>
@@ -8906,7 +8906,7 @@ Rapid Application Development (sovelluksen nopea tuottaminen)</translation>
         <translation>Aktivoi tämä valintalaatikko, jos lähteen alisolmun objektit pitäsi syöttää myös.</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your web server and eZ Publish configuration.</source>
+        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your web server and Exponential configuration.</source>
         <translation>Käytä tätä kenttää sivusi kanta-URL-osoitteen lisäämiseen. Sitä käytetään tuottamaan viennin URL-osoitteet, jotka luo sivun URL (esim. &quot;http://www.example.com/index.php&quot;) ja objektiin johtavan polun (esim.  &quot;/artikkelit/minun_artikkelini&quot;). Sivun URL riippuu web-palvelimestasi ja eZ Publishin asetuksista.</translation>
     </message>
     <message>
@@ -9775,20 +9775,20 @@ Rapid Application Development (sovelluksen nopea tuottaminen)</translation>
         <translation>Varoitus: päivittäminen ei ole turvallista ilman seuraavien muutettujen tiedostojen tarkastamista</translation>
     </message>
     <message>
-        <source>Before upgrading eZ Publish to a newer version, it is important to check that the current installation is ready for upgrading.</source>
+        <source>Before upgrading Exponential to a newer version, it is important to check that the current installation is ready for upgrading.</source>
         <translation>Ennen eZ Publishin päivittämistä uuteen versioon on tärkeää tarkistaa, että nykyinen asennus on valmis päivitettäväksi.</translation>
     </message>
     <message>
-        <source>Remember to make a backup of the eZ Publish directory and the database before you upgrade.</source>
-        <translation>Muista tehdä varmuuskopiot eZ Publish-kansiosta ja -tietokannasta ennen päivitystä.</translation>
+        <source>Remember to make a backup of the Exponential directory and the database before you upgrade.</source>
+        <translation>Muista tehdä varmuuskopiot Exponential-kansiosta ja -tietokannasta ennen päivitystä.</translation>
     </message>
     <message>
         <source>The file consistency tool checks if you have altered any of the files that came with the current installation. Altered files may be replaced by new versions that contain bugfixes, new features, etc. Make sure that you backup and then merge your changes into the new versions of the files.</source>
         <translation>Tiedoston yhdenmukaisuustyökalu tarkistaa jos olet muuttanut tiedostoja, jotka tulivat nykyisen asennuksen mukana. Muutetut tiedostot saattavat korvaantua uusilla versioilla, jotka sisältävät ohjelmistovirheen korjauksia, uusia toimintoja, jne. Varmista, että sinulla varmuuskopio ja yhdistä sen jälkeen muutoksesi tiedostojen uusiin versioihin.</translation>
     </message>
     <message>
-        <source>The database consistency tool checks if the current database is consistent with the database schema that came with the eZ Publish distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be run in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.</source>
-        <translation>Tietokannan yhdenmukaisuustyökalu tarkistaa, jos nykyinen tietokanta on yhdenmukainen eZ Publish distributionin tietokantakaavion kanssa. Jos epäjohdonmukaisuuksia ilmenee, ehdottaa työkalu, että tarvittavat SQL-lausunnot tulee ajaa tietokannan saattamiseksi yhdenmukaiseen tilaan. Aja ehdotetut SQL-lausunnot ennen päivitystä.</translation>
+        <source>The database consistency tool checks if the current database is consistent with the database schema that came with the Exponential distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be run in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.</source>
+        <translation>Tietokannan yhdenmukaisuustyökalu tarkistaa, jos nykyinen tietokanta on yhdenmukainen Exponential distributionin tietokantakaavion kanssa. Jos epäjohdonmukaisuuksia ilmenee, ehdottaa työkalu, että tarvittavat SQL-lausunnot tulee ajaa tietokannan saattamiseksi yhdenmukaiseen tilaan. Aja ehdotetut SQL-lausunnot ennen päivitystä.</translation>
     </message>
     <message>
         <source>The upgrade checking tools require a lot of system resources. They may take some time to run.</source>
@@ -10177,22 +10177,22 @@ Tietokannan uudelleenyrityksien määrä</translation>
         <translation>Muisti</translation>
     </message>
     <message>
-        <source>eZ Publish</source>
-        <translation>eZ Publish</translation>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
     </message>
     <message>
         <source>Version</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation>Versio</translation>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">SVN-tarkistus</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ Publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation>Laajennukset</translation>
     </message>
     <message>
@@ -10229,8 +10229,8 @@ Tietokannan uudelleenyrityksien määrä</translation>
         <translation>Web-palvelimen moduuleja ei löytynyt.</translation>
     </message>
     <message>
-        <source>eZ Publish was unable to extract information from the web server.</source>
-        <translation>eZ Publish ei onnistunut poimimaan lisätietoja web-palvelimelta.</translation>
+        <source>Exponential was unable to extract information from the web server.</source>
+        <translation>Exponential ei onnistunut poimimaan lisätietoja web-palvelimelta.</translation>
     </message>
     <message>
         <source>Web server (hardware)</source>
@@ -10300,12 +10300,12 @@ Tietokannan uudelleenyrityksien määrä</translation>
         <translation>Seuraava</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for eZ Publish easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
+        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for Exponential easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
         <translation>Sovelluksen nopean tuotannon (RAD) työkalut tekevät eZ Publishille tarkoitettujen uusien/laajennettujen toimintojen tekemisen helpommaksi. Tällä hetkellä  saatavilla on kaksi RAD-työkalua: mallioperaattorin apuohjelma ja tietotyypin apuohjelma. Mallioperaattorin apuohjelma luo kehyksen (PHP-koodi) uudelle mallioperaattorille. Tietotyyppiapuohjelma luo kehyksen (PHP-koodi) uudelle tietotyypille.</translation>
     </message>
     <message>
-        <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, eZ Publish will generate a PHP framework for a new operator (which will be available for download).</source>
-        <translation>Tervetuloa mallioperaattorin apuohjelmaan. Mallioperaattoreita yleensä käytetään mallien muuttujien manipuloinnissa. Mutta niitä voidaan käyttää myös luomaan tai hakemaan tietoja. Tämä apuohjelma johtaa sinut läpi askel askeleelta tarjoten yksinkertaisia vaihtoehtoja. Kun olet valmis, eZ Publish luo PHP-kehyksen uudelle operaattorille (joka on mahdollista ladata).</translation>
+        <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, Exponential will generate a PHP framework for a new operator (which will be available for download).</source>
+        <translation>Tervetuloa mallioperaattorin apuohjelmaan. Mallioperaattoreita yleensä käytetään mallien muuttujien manipuloinnissa. Mutta niitä voidaan käyttää myös luomaan tai hakemaan tietoja. Tämä apuohjelma johtaa sinut läpi askel askeleelta tarjoten yksinkertaisia vaihtoehtoja. Kun olet valmis, Exponential luo PHP-kehyksen uudelle operaattorille (joka on mahdollista ladata).</translation>
     </message>
 </context>
 <context>
@@ -13085,8 +13085,8 @@ käyttäjätilisi.</translation>
         <translation>Syötä kelvollinen salasana tähän kenttään.</translation>
     </message>
     <message>
-        <source>Log in to the Administration Interface of eZ Publish</source>
-        <translation type="obsolete">Kirjaudu sisään eZ Publish Järjestelmänvalvojan käyttöliittymään</translation>
+        <source>Log in to the Administration Interface of Exponential</source>
+        <translation type="obsolete">Kirjaudu sisään Exponential Järjestelmänvalvojan käyttöliittymään</translation>
     </message>
     <message>
         <source>Please enter a valid username/password combination then click &quot;Log in&quot;.</source>
@@ -14528,12 +14528,12 @@ käyttäjätilisi.</translation>
         <translation>Käytä vähemmän avainsanoja saadaksesi enemmän tuloksia. Kokeile avainsanojen vähentämista, kunnes saat osuman.</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag eZ Publish&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
-        <translation>%linkStartTag eZ Publish&amp;reg&amp;trade; avoimen lähdekoodin sisällönhallintajärjestelmä %linkEndTag ja tuotantokehys.</translation>
+        <source>Powered by %linkStartTag Exponential&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
+        <translation>%linkStartTag Exponential&amp;reg&amp;trade; avoimen lähdekoodin sisällönhallintajärjestelmä %linkEndTag ja tuotantokehys.</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag eZ Publish&amp;reg; open source content management system %linkEndTag and development framework.</source>
-        <translation>%linkStartTag eZ Publish&amp;reg; avoimen lähdekoodin sisällönhallintajärjestelmä %linkEndTag ja tuotantokehys.</translation>
+        <source>Powered by %linkStartTag Exponential&amp;reg; open source content management system %linkEndTag and development framework.</source>
+        <translation>%linkStartTag Exponential&amp;reg; avoimen lähdekoodin sisällönhallintajärjestelmä %linkEndTag ja tuotantokehys.</translation>
     </message>
     <message>
         <source>Anonymous users are not allowed to vote in this poll. Please log in.</source>
@@ -17606,8 +17606,8 @@ Jos haluat lähettää kommentteja hyväksyjälle tai tarkistaa statuksen, voit 
         <translation>Versionäkymää ei vielä tueta PDF-muodossa</translation>
     </message>
     <message>
-        <source>eZ Publish PDF export</source>
-        <translation>eZ Publish PDF-vienti</translation>
+        <source>Exponential PDF export</source>
+        <translation>Exponential PDF-vienti</translation>
     </message>
 </context>
 <context>
@@ -18776,12 +18776,12 @@ Jos haluat lähettää kommentteja hyväksyjälle tai tarkistaa statuksen, voit 
 <context>
     <name>design/standard/ezinfo/about</name>
     <message>
-        <source>eZ Publish information: %version</source>
-        <translation>eZ Publish-tietoja: %version</translation>
+        <source>Exponential information: %version</source>
+        <translation>Exponential-tietoja: %version</translation>
     </message>
     <message>
-        <source>What is eZ Publish?</source>
-        <translation>Mikä on eZ Publish?</translation>
+        <source>What is Exponential?</source>
+        <translation>Mikä on Exponential?</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -18901,12 +18901,12 @@ Jos haluat lähettää kommentteja hyväksyjälle tai tarkistaa statuksen, voit 
         <translation>Suodatin</translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish administration</source>
-        <translation>Tervetuloa eZ Publish-järjestelmänhallintaan</translation>
+        <source>Welcome to Exponential administration</source>
+        <translation>Tervetuloa Exponential-järjestelmänhallintaan</translation>
     </message>
     <message>
-        <source>eZ Publish redirection - %url</source>
-        <translation>eZ Publish-uudelleenohjaus - %url</translation>
+        <source>Exponential redirection - %url</source>
+        <translation>Exponential-uudelleenohjaus - %url</translation>
     </message>
 </context>
 <context>
@@ -19744,8 +19744,8 @@ Huomioi: Pakettejen asennusta ei poisteta.</translation>
         <translation>Paketin poisto peruttiin.</translation>
     </message>
     <message>
-        <source>Regarding eZ Publish package &apos;%packagename&apos;</source>
-        <translation>Ottaen huomioon eZ Publish-paketin &apos;%packagename&apos; </translation>
+        <source>Regarding Exponential package &apos;%packagename&apos;</source>
+        <translation>Ottaen huomioon Exponential-paketin &apos;%packagename&apos; </translation>
     </message>
     <message>
         <source>The package can be installed on your system. Installing the package will copy files, create content classes etc., depending on the package.
@@ -20010,7 +20010,7 @@ Voit myös poistaa paketin ilman asennuksen poistamista pakettilistasta.</transl
         <translation>Kaikki viittausdokumentaatio on luoto käyttäen %doxygenurl</translation>
     </message>
     <message>
-        <source>The Reference Documentation for eZ Publish consists of multiple sections which
+        <source>The Reference Documentation for Exponential consists of multiple sections which
 each have a different view on the documentation. The sections can be accessed at
 menu on the top.</source>
         <translation>eZ Publishin viitedokumentaatio koostuu useista osa-alueista, joista
@@ -20018,7 +20018,7 @@ jokaisella on erilainen näkökulma dokumentaatioon. Pääset osa-alueille käyt
 ylävalikkoa.</translation>
     </message>
     <message>
-        <source>The documentation will give an overview of the API of eZ Publish.</source>
+        <source>The documentation will give an overview of the API of Exponential.</source>
         <translation>Dokumentaatio antaa yleisnäkymän eZ Publishin API:sta.</translation>
     </message>
 </context>
@@ -20503,7 +20503,7 @@ ylävalikkoa.</translation>
         <translation>Aktivoi tämä valintalaatikko, jos objektit alisolmujen lähteestä tulee myös syöttää.</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Web server and eZ Publish configuration.</source>
+        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Web server and Exponential configuration.</source>
         <translation>Käytä tätä kenttää syöttääksesi sivusi perusURL-osoitteen. Sitä käytetään tuottamaan viennin URL-osoitteita, jotka luo sivun URL (esim. &quot;http://www.example.com/index.php&quot;) ja objektiin johtava polku (esim. &quot;/artikkelit/artikkelini&quot;). Sivun URL-osoite riippuu web-palvelimestasi ja eZ Publishin asetuksista.</translation>
     </message>
     <message>
@@ -20704,7 +20704,7 @@ ylävalikkoa.</translation>
         <translation>Tietoja navigointiosista</translation>
     </message>
     <message>
-        <source>The eZ Publish Administration Interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
+        <source>The Exponential Administration Interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
         <translation>eZ Publishin hallintakäyttöliittymä on jaettu navigointiosiin. Tämä on yksi tapa ryhmittää eri sivuhallinnan alueet. Valitsenavigointi osa, joka tulee olla aktiivinen, kun tätä osaa selataan.</translation>
     </message>
 </context>
@@ -21412,17 +21412,17 @@ Käyttämällä %operatorname voit...</translation>
     </message>
     <message>
         <source>Version</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation>Versio</translation>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">SVN-palautus</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ Publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation>Laajennukset</translation>
     </message>
     <message>
@@ -21431,7 +21431,7 @@ Käyttämällä %operatorname voit...</translation>
         <translation>Web-palvelin</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for eZ Publish.</source>
+        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for Exponential.</source>
         <translation>Sovelluksen nopean tuotannon (RAD) työkalut auttavat sinun aloittaa helposti uuden toiminnon luomisen eZ Publishia varten.</translation>
     </message>
     <message>
@@ -22730,7 +22730,7 @@ Nämä asetukset on mahdollista vaihtaa myöhemmin.</translation>
         <translation>Valitse minkä sivunpaketin perusteella haluat testata tai rakentaa sivusi.</translation>
     </message>
     <message>
-        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of eZ Publish</source>
+        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential</source>
         <translation>Halutessasi voit antaa asennuksen lisätä demotietoja tietokantaasi. Nämä demotiedot havainnollistavat hyvin eZ Publishin mahdollisuuksia</translation>
     </message>
     <message>
@@ -22738,15 +22738,15 @@ Nämä asetukset on mahdollista vaihtaa myöhemmin.</translation>
         <translation>Tietokannan alustaminen voi kestää hetken, joten ole kärsivällinen ja odota kunnes uusi sivu on valmis.</translation>
     </message>
     <message>
-        <source>eZ Publish supports both MySQL and PostgreSQL.</source>
-        <translation>eZ Publish tukee sekä MySQL- ja että PostgreSQL-ohjelmia.</translation>
+        <source>Exponential supports both MySQL and PostgreSQL.</source>
+        <translation>Exponential tukee sekä MySQL- ja että PostgreSQL-ohjelmia.</translation>
     </message>
     <message>
-        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in eZ Publish.</source>
+        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
         <translation>PostgreSQL tai MySQL &gt;= 4.1 vaaditaan eZ Publishin unicode-tukeen.</translation>
     </message>
     <message>
-        <source>More information about eZ Publish and unicode support can be found %1.</source>
+        <source>More information about Exponential and unicode support can be found %1.</source>
         <translation>Lisätietoja eZ Publishista ja unicode-tuesta löydät %1.</translation>
     </message>
     <message>
@@ -22754,56 +22754,56 @@ Nämä asetukset on mahdollista vaihtaa myöhemmin.</translation>
         <translation>Tietokanta on alustettu onnistuneesti. Olet nyt valmis sivun jälkimäärittelyyn.</translation>
     </message>
     <message>
-        <source>If you don&apos;t have access to a database, you should obtain access now. eZ Publish is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
-        <translation>Jos sinulla ei ole yhteyttä tietokantaan, tulee sinun saada yhteys nyt. eZ Publish pystyy pyörittämään useita sivuja, jokainen sivu tarvitsee oman tietokannan. Tämä tarkoittaa sitä, että sinun tulee luoda useita tietokantoja, jos aiot pyörittää useita sivuja. Katso tietokantajärjestelmän käyttöohjeita jos olet epävarma kuinka tietokanta luodaan.</translation>
+        <source>If you don&apos;t have access to a database, you should obtain access now. Exponential is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
+        <translation>Jos sinulla ei ole yhteyttä tietokantaan, tulee sinun saada yhteys nyt. Exponential pystyy pyörittämään useita sivuja, jokainen sivu tarvitsee oman tietokannan. Tämä tarkoittaa sitä, että sinun tulee luoda useita tietokantoja, jos aiot pyörittää useita sivuja. Katso tietokantajärjestelmän käyttöohjeita jos olet epävarma kuinka tietokanta luodaan.</translation>
     </message>
     <message>
-        <source>This section is used to configure how eZ Publish delivers its outgoing Email.</source>
-        <translation>Tämä osa on tarkoitettu määrittämään miten eZ Publish toimittaa lähteviä sähköposteja.</translation>
+        <source>This section is used to configure how Exponential delivers its outgoing Email.</source>
+        <translation>Tämä osa on tarkoitettu määrittämään miten Exponential toimittaa lähteviä sähköposteja.</translation>
     </message>
     <message>
-        <source>The eZ Publish system uses email to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
-        <translation> eZ Publish -järjestelmä käyttää sähköpostia tärkeiden ilmoitusten kuten käyttäjärekisteröintien ja sisällön hyväksymisen lähettämiseen. Jos käytät Linux/UNIX-koneita: kokeile käyttää sendmail-toimintoa. Windows: Käytä SMTP-palvelinta.</translation>
+        <source>The Exponential system uses email to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
+        <translation> Exponential -järjestelmä käyttää sähköpostia tärkeiden ilmoitusten kuten käyttäjärekisteröintien ja sisällön hyväksymisen lähettämiseen. Jos käytät Linux/UNIX-koneita: kokeile käyttää sendmail-toimintoa. Windows: Käytä SMTP-palvelinta.</translation>
     </message>
     <message>
-        <source>eZ Publish has been installed with your select site setup. You will find the username mentioned in the details below.</source>
-        <translation> eZ Publish on asennettu valitsemasi sivun asetuksen kera. Löydät käyttäjänimen alapuolella olevista tiedoista.</translation>
+        <source>Exponential has been installed with your select site setup. You will find the username mentioned in the details below.</source>
+        <translation> Exponential on asennettu valitsemasi sivun asetuksen kera. Löydät käyttäjänimen alapuolella olevista tiedoista.</translation>
     </message>
     <message>
-        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because eZ Publish prepares the site for your machine.</source>
-        <translation>Kun käyttäjä- tai hallintasivuun yhdistetään ensimmäistä kertaa, kestää se jonkin aikaa (30 - 60 sekuntia). Tämä tapahtuu, koska eZ Publish valmistelee sivun konettasi varten.</translation>
+        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because Exponential prepares the site for your machine.</source>
+        <translation>Kun käyttäjä- tai hallintasivuun yhdistetään ensimmäistä kertaa, kestää se jonkin aikaa (30 - 60 sekuntia). Tämä tapahtuu, koska Exponential valmistelee sivun konettasi varten.</translation>
     </message>
     <message>
         <source>Tip: Store this page as an html file by clicking Save-As in your web browser menu, alternatively you may write down the URLs for your sites.</source>
         <translation>Vinkki: Tallenna tämä sivu html-tiedostona napsauttamalla Tallenna nimellä -selaimesi valikossa. Vaihtoehtoisesti voit kirjoittaa muistiin sivujesi URL-osoitteet.</translation>
     </message>
     <message>
-        <source>Congratulations, eZ Publish should now run on your system.</source>
+        <source>Congratulations, Exponential should now run on your system.</source>
         <translation>Onneksi olkoon, eZ Publishin tulisi nyt toimia koneellasi.</translation>
     </message>
     <message>
-        <source>If you need help with eZ Publish, you can go to %ezlink and get help in the forums.
+        <source>If you need help with Exponential, you can go to %ezlink and get help in the forums.
   If you find a bug (error), please go to %buglink and report it.
-  With your help we can fix the errors eZ Publish might have and implement new features.</source>
+  With your help we can fix the errors Exponential might have and implement new features.</source>
         <translation>Jos tarvitset apua eZ Publishin kanssa, voit mennä osoitteeseen %ezlink ja saada apua foorumeilta.
   Jos löydät bugin (virheen) mene osoitteeseen %buglink ja reportoi se.
   Sinun avullasi voimme korjata eZ Publishin mahdolliset virheet ja luoda uusia ominaisuuksia.</translation>
     </message>
     <message>
-        <source>eZ Publish bug reports</source>
-        <translation>eZ Publish-virheraportit</translation>
+        <source>Exponential bug reports</source>
+        <translation>Exponential-virheraportit</translation>
     </message>
     <message>
-        <source>eZ Publish website</source>
-        <translation>eZ Publish-web-sivu</translation>
+        <source>Exponential website</source>
+        <translation>Exponential-web-sivu</translation>
     </message>
     <message>
         <source>Choose only languages that use similar characters, for instance: English and Norwegian will work together while English and Russian will not work.</source>
         <translation>Valitse ainoastaan kielet, jotka käyttävät samankaltaisia merkkejä, esimerkiksi englanti ja norja toimivat yhdessä, kun taas englanti ja venäjä eivät toimi.</translation>
     </message>
     <message>
-        <source>eZ Publish supports multiple languages.</source>
-        <translation>eZ Publish tukee useita kieliä.</translation>
+        <source>Exponential supports multiple languages.</source>
+        <translation>Exponential tukee useita kieliä.</translation>
     </message>
     <message>
         <source>The languages you have chose for site do not match languages in chosen packages. To resolve conflict please select language mapping:</source>
@@ -22830,19 +22830,19 @@ Nämä asetukset on mahdollista vaihtaa myöhemmin.</translation>
         <translation>Voit nyt valita muutoksia kieleen. Muutokset tekevät pieniä parannuksia kieleen, kuten Euro-tuen lisäämisen tai päivämäärän formaatti muutuu. Muutoksien käyttäminen on vapaaehtoista ja voit turvallisesti ohittaa tämän vaiheen. Kun olet valmis napsauta</translation>
     </message>
     <message>
-        <source>If you want, you can register this installation by sending some information to eZ Systems. No confidential data will be transmitted and eZ Systems will not use or sell your details for unsolicited emails.</source>
-        <translation type="obsolete">Halutessasi voit rekisteröidä tämän asennuksen lähettämällä tietoja eZ Systemsille. Yksityistietoja ei lähetetä ja eZ Systems ei käytä tai myy tietojasi asiattomiin sähköposteihin.</translation>
+        <source>If you want, you can register this installation by sending some information to 7x. No confidential data will be transmitted and 7x will not use or sell your details for unsolicited emails.</source>
+        <translation type="obsolete">Halutessasi voit rekisteröidä tämän asennuksen lähettämällä tietoja 7xille. Yksityistietoja ei lähetetä ja 7x ei käytä tai myy tietojasi asiattomiin sähköposteihin.</translation>
     </message>
     <message>
         <source>If you want, you can also add some comments, which will be included in the registration email.</source>
         <translation type="obsolete">Halutessasi voit myös lisätä kommentteja, jotka lisätään rekisteröintisähköpostiin.</translation>
     </message>
     <message>
-        <source>By sending registration the following data will be sent to eZ Systems</source>
-        <translation type="obsolete">Rekisteröinnin lähettämisellä lähetetää seuraava tieto eZ Systemsille</translation>
+        <source>By sending registration the following data will be sent to 7x</source>
+        <translation type="obsolete">Rekisteröinnin lähettämisellä lähetetää seuraava tieto 7xille</translation>
     </message>
     <message>
-        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run eZ Publish in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
+        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run Exponential in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
         <translation>Sivusi ei toimi virtuaali-isäntätilassa. Tämä ei ole turvallista. eZ Publishin ajaminen virtuaali-isäntätilassa on suositeltua. Jos sinulla ei ole mahdollisuutta käyttää virtuaali-isäntätilaa, tulee sinun seurata allaolevia ohjeit .htaccess-tiedoston asennuksesta. .htaccess-tiedosto määrää web-palvelimen rajoittamaan pääsyn tiettyihin tiedostoihin.</translation>
     </message>
     <message>
@@ -22880,24 +22880,24 @@ Tämä toiminto on myös käytettävissä myöhemmin Järjestelmänvalvojan käy
         <translation>Valitse yksi tä useampi demosivu, jonka perusteella tahdot testata tai rakentaa sivusi. Valitse Yksinkertainen, jos tahdot aloittaa tyhjästä.</translation>
     </message>
     <message>
-        <source>These issues have to be resolved/fixed, or else, eZ Publish will not function properly.</source>
-        <translation>Nämä ongelmat tulee ratkaista/korjata tai eZ Publish ei toimi kunnolla.</translation>
+        <source>These issues have to be resolved/fixed, or else, Exponential will not function properly.</source>
+        <translation>Nämä ongelmat tulee ratkaista/korjata tai Exponential ei toimi kunnolla.</translation>
     </message>
     <message>
-        <source>These issues do not need to be resolved/fixed. eZ Publish will function properly without them.</source>
-        <translation>Näitä ongelmia ei tarvi ratkaista/korjata. eZ Publish toimii kunnolla ilman niitä.</translation>
+        <source>These issues do not need to be resolved/fixed. Exponential will function properly without them.</source>
+        <translation>Näitä ongelmia ei tarvi ratkaista/korjata. Exponential toimii kunnolla ilman niitä.</translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish %1</source>
-        <translation type="obsolete">Tervetuloa eZ Publish:iin %1</translation>
+        <source>Welcome to Exponential %1</source>
+        <translation type="obsolete">Tervetuloa Exponential:iin %1</translation>
     </message>
     <message>
-        <source>Welcome to the eZ Publish content management system and development framework. This wizard will help you set up eZ Publish.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
-        <translation>Tervetuloa eZ Publish sisällönhallintajärjestelmään ja -kehityssovellukseen. Tämä apuohjelma auttaa sinua asentamaan eZ Publish-ohjelman.&lt;br&gt; Järjestelmäsi ei ole paras mahdollinen ja voit halutessasi napsauttaa &lt;i&gt;Hienosäätö&lt;/i&gt;-näppäintä. Näin saat vinkkejä kuinka korjata ongelmakohdat. &lt;br/&gt; Napsauta &lt;i&gt;Seuraava&lt;/i&gt; jatkaaksesi ilman hienosäätöä.</translation>
+        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
+        <translation>Tervetuloa Exponential sisällönhallintajärjestelmään ja -kehityssovellukseen. Tämä apuohjelma auttaa sinua asentamaan Exponential-ohjelman.&lt;br&gt; Järjestelmäsi ei ole paras mahdollinen ja voit halutessasi napsauttaa &lt;i&gt;Hienosäätö&lt;/i&gt;-näppäintä. Näin saat vinkkejä kuinka korjata ongelmakohdat. &lt;br/&gt; Napsauta &lt;i&gt;Seuraava&lt;/i&gt; jatkaaksesi ilman hienosäätöä.</translation>
     </message>
     <message>
-        <source>Welcome to the eZ Publish content management system and development framework. This wizard will help you set up eZ Publish.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
-        <translation>Tervetuloa eZ Publish-sisällönhallintajärjestelmään ja -kehityssovellukseen. Tämä apuohjelma auttaa sinua asentamaan eZ Publish-ohjelman.&lt;br&gt; Napsauta &lt;i&gt;Seuraava&lt;/i&gt; jatkaaksesi.</translation>
+        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
+        <translation>Tervetuloa Exponential-sisällönhallintajärjestelmään ja -kehityssovellukseen. Tämä apuohjelma auttaa sinua asentamaan Exponential-ohjelman.&lt;br&gt; Napsauta &lt;i&gt;Seuraava&lt;/i&gt; jatkaaksesi.</translation>
     </message>
     <message>
         <source>The selected user has not got access to any databases. Change user or create a database for the user.</source>
@@ -22912,8 +22912,8 @@ Tämä toiminto on myös käytettävissä myöhemmin Järjestelmänvalvojan käy
         <translation type="unfinished">Ei valittuja malleja.</translation>
     </message>
     <message>
-        <source>Uploaded file is not an eZ Publish package</source>
-        <translation type="unfinished">Ladattu tiedosto ei ole eZ Publish -paketti</translation>
+        <source>Uploaded file is not an Exponential package</source>
+        <translation type="unfinished">Ladattu tiedosto ei ole Exponential -paketti</translation>
     </message>
     <message>
         <source>No site package chosen.</source>
@@ -22924,8 +22924,8 @@ Tämä toiminto on myös käytettävissä myöhemmin Järjestelmänvalvojan käy
         <translation type="unfinished">Etäsivun pakettejen haku epäonnistui. Voita ladata paketit manuaalisesti.</translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish</source>
-        <translation type="unfinished">Tervetuloa eZ Publish:iin</translation>
+        <source>Welcome to Exponential</source>
+        <translation type="unfinished">Tervetuloa Exponential:iin</translation>
     </message>
     <message>
         <source>If you think you have fixed the errors you can try then click the &quot;Retry&quot; button.</source>
@@ -22956,28 +22956,28 @@ Tämä toiminto on myös käytettävissä myöhemmin Järjestelmänvalvojan käy
         <translation>Valitse kielesi ja paina sen jälkeen</translation>
     </message>
     <message>
-        <source>This data will help to improve future releases of eZ Publish.</source>
-        <translation type="obsolete">Tämä tieto auttaa parantamaan tulevia eZ Publish -julkaisuja.</translation>
+        <source>This data will help to improve future releases of Exponential.</source>
+        <translation type="obsolete">Tämä tieto auttaa parantamaan tulevia Exponential -julkaisuja.</translation>
     </message>
     <message>
         <source>The problems are usually file-system related and can be easily fixed by copy / paste / running the suggested commands in a system shell.</source>
         <translation>Ongelmat ovat yleensä tiedostojärjestelmäkohtaisia ja ne voidaan helposti korjata kopioimalla / liittämällä / ajamalla ehdotetut komennot järjestelmän shelliin.</translation>
     </message>
     <message>
-        <source>Information about how to set up eZ Publish manually is available %1.</source>
-        <translation>Informaatiota kuinka eZ Publish asennetaan manuaalisesti on saatavilla %1.</translation>
+        <source>Information about how to set up Exponential manually is available %1.</source>
+        <translation>Informaatiota kuinka Exponential asennetaan manuaalisesti on saatavilla %1.</translation>
     </message>
     <message>
-        <source>The setup will not do an upgrade from older eZ Publish versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing eZ Publish 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
-        <translation>Asennus ei päivitä vanhemmista eZ Publish -versioista (kuten 2.2.7), jos jätä datan ennalleen. Tämä on tarkoitettu ainoastaan henkilöille joilla on olemassaolevaa dataa, joita he eivät halua menettää. Jos sinulla on olemassa eZ Publish 4.0 -dataa (kuten RC-julkaisusta) tulee sinun ohittaa tietokannan alustaminen, tosin voit  joutua tekemään manuaalisen päivityksen.</translation>
+        <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
+        <translation>Asennus ei päivitä vanhemmista Exponential -versioista (kuten 2.2.7), jos jätä datan ennalleen. Tämä on tarkoitettu ainoastaan henkilöille joilla on olemassaolevaa dataa, joita he eivät halua menettää. Jos sinulla on olemassa Exponential 4.0 -dataa (kuten RC-julkaisusta) tulee sinun ohittaa tietokannan alustaminen, tosin voit  joutua tekemään manuaalisen päivityksen.</translation>
     </message>
     <message>
-        <source>eZ Publish</source>
-        <comment>eZ Publish link</comment>
-        <translation>eZ Publish</translation>
+        <source>Exponential</source>
+        <comment>Exponential link</comment>
+        <translation>Exponential</translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; function is not available in your database, you cannot run eZ Publish without this. See the documentation for more information.</source>
+        <source>The &apos;digest&apos; function is not available in your database, you cannot run Exponential without this. See the documentation for more information.</source>
         <translation type="unfinished">&apos;Kokoelma&apos;-toiminto ei ole käytettävissä tietokannassasi eikä voi suorittaa eZ Publishia ilman tätä. Lisätietoja saat dokumentaatiosta.</translation>
     </message>
     <message>
@@ -23025,12 +23025,12 @@ Tämä toiminto on myös käytettävissä myöhemmin Järjestelmänvalvojan käy
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;p&gt;If you need to share knowledge, exchange tips with developers or simply find some improvement tricks, the eZ Community is the place to go.&lt;/p&gt;
+        <source>&lt;p&gt;If you need to share knowledge, exchange tips with developers or simply find some improvement tricks, the Exponential Community is the place to go.&lt;/p&gt;
 
 &lt;p&gt;
 How do you access it?&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Go on &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;eZ Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Go on &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;Exponential Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Click on Register (top of the page) and create your profile&lt;/li&gt;
 &lt;li&gt;Here you can check out the &lt;a href=&quot;http://share.ez.no/blogs&quot;&gt;blog posts&lt;/a&gt;,
     &lt;a href=&quot;http://share.ez.no/events&quot;&gt;events&lt;/a&gt;, &lt;a href=&quot;http://share.ez.no/members-partners/find-a-partner&quot;&gt;partners&lt;/a&gt;...&lt;/li&gt;
@@ -23039,11 +23039,11 @@ How do you access it?&lt;/p&gt;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Discover the eZ Publish Platform forums</source>
+        <source>Discover the Exponential Platform forums</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>eZ Publish 5 platform</source>
+        <source>Exponential 5 platform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -23570,42 +23570,42 @@ Tämä on turvallisuusongelma ja tulee vaihtaa toiseen yleiseen väliaikaiseen h
         <translation>Kärsineet hakemistot (tiedostot) ovat: %dir_list</translation>
     </message>
     <message>
-        <source>eZ Publish cannot create some important directories, because there are an files instead of these directories in the same places with the same names.
+        <source>Exponential cannot create some important directories, because there are an files instead of these directories in the same places with the same names.
 You should replace these files with appropriate directories and give necessary permissions to them.
-Without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish ei voi luoda joitain tärkeitä hakemistoja, koska näiden hakemistojen sijaan samassa paikassa on tiedostoja samoilla nimillä.
+Without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential ei voi luoda joitain tärkeitä hakemistoja, koska näiden hakemistojen sijaan samassa paikassa on tiedostoja samoilla nimillä.
 Sinun tulee korvata nämät tiedostot oikeilla hakemistoilla ja antaa niille tarvittavat oikeudet.
 Ilman tätä asennus ei voi valmistua ja osa eZ Publishista epäonnistuu.</translation>
     </message>
     <message>
-        <source>If you&apos;re running apache 1.3, eZ Publish will not run in CGI mode.</source>
-        <translation type="obsolete">Jos käytät apache 1.3, eZ Publish ei toimi CGI-tilassa.</translation>
+        <source>If you&apos;re running apache 1.3, Exponential will not run in CGI mode.</source>
+        <translation type="obsolete">Jos käytät apache 1.3, Exponential ei toimi CGI-tilassa.</translation>
     </message>
     <message>
-        <source>Your PHP does not have support for all databases that eZ Publish support.</source>
-        <translation>PHP:si ei tue kaikkia tietokantoja, joita eZ Publish tukee.</translation>
+        <source>Your PHP does not have support for all databases that Exponential support.</source>
+        <translation>PHP:si ei tue kaikkia tietokantoja, joita Exponential tukee.</translation>
     </message>
     <message>
-        <source>Although eZ Publish will work without it, it might be that you want to have support for this database.</source>
-        <translation>Vaikka eZ Publish toimii ilman sitä, voi olla, että haluat saada tuen tälle tietokannalle.</translation>
+        <source>Although Exponential will work without it, it might be that you want to have support for this database.</source>
+        <translation>Vaikka Exponential toimii ilman sitä, voi olla, että haluat saada tuen tälle tietokannalle.</translation>
     </message>
     <message>
-        <source>No supported database handlers were found. eZ Publish requires a database to store it&apos;s data, without one the system will fail.</source>
-        <translation>Tuettuja tietokantakäsittelijöitä ei löytynyt. eZ Publish vaatii tietokannan tallentavan datansa, ilman sitä järjestelmä epäonnistuu.</translation>
+        <source>No supported database handlers were found. Exponential requires a database to store it&apos;s data, without one the system will fail.</source>
+        <translation>Tuettuja tietokantakäsittelijöitä ei löytynyt. Exponential vaatii tietokannan tallentavan datansa, ilman sitä järjestelmä epäonnistuu.</translation>
     </message>
     <message>
-        <source>eZ Publish cannot write to some important directories, without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish ei voi kirjoittaa osaan tärkeitä hakemistoja, ilman tätä asennus ei voi valmistua ja osa eZ Publishista epäonnistuu.</translation>
+        <source>Exponential cannot write to some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential ei voi kirjoittaa osaan tärkeitä hakemistoja, ilman tätä asennus ei voi valmistua ja osa eZ Publishista epäonnistuu.</translation>
     </message>
     <message>
         <source>These shell commands will give proper permission to the web server.</source>
         <translation>Nämä shell-komennot antavat kunnolliset oikeudet web-palvelimelle.</translation>
     </message>
     <message>
-        <source>eZ Publish could not detect the user and group of the web server.
+        <source>Exponential could not detect the user and group of the web server.
 If you know the user and group of the web server it is recommended to change the ownership of the files to match this user and group.
 To do this you need to change the %chown commands under Alternative shell commands.</source>
-        <translation>eZ Publish ei havainnut käyttäjää ja ryhmää web-palvelimella.
+        <translation>Exponential ei havainnut käyttäjää ja ryhmää web-palvelimella.
 Jos tiedät web-palvelimen käyttäjän ja ryhmän, on suositeltavaa, että vaihdat tiedostojen omistajaa täsmätäksesi tämän käyttäjän ja ryhmän.
 Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -komentojen alta.</translation>
     </message>
@@ -23618,38 +23618,38 @@ Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -kom
         <translation>%user_expr tulee vaihtaa www-palvelimesi käyttäjänimeksi ja ryhmänimeksi.</translation>
     </message>
     <message>
-        <source>eZ Publish cannot create some important directories, without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish ei voi luoda joitain tärkeitä hakemistoja, ilman tätä asennus ei voi valmistua ja osa eZ Publishista epäonnistuu.</translation>
+        <source>Exponential cannot create some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential ei voi luoda joitain tärkeitä hakemistoja, ilman tätä asennus ei voi valmistua ja osa eZ Publishista epäonnistuu.</translation>
     </message>
     <message>
-        <source>Insufficient execution time allowed to install eZ Publish</source>
+        <source>Insufficient execution time allowed to install Exponential</source>
         <translation>Riittämätön suorittamisaika eZ Publishin asentamisen sallimiseen</translation>
     </message>
     <message>
-        <source>eZ Publish will not work correctly with a execution time limit of %1.</source>
-        <translation>eZ Publish ei toimi kunnolla suorittamisajalla, jonka aikaraja on %1.</translation>
+        <source>Exponential will not work correctly with a execution time limit of %1.</source>
+        <translation>Exponential ei toimi kunnolla suorittamisajalla, jonka aikaraja on %1.</translation>
     </message>
     <message>
-        <source>If you are running eZ Publish in a shared host environment, contant your ISP to perform the changes</source>
+        <source>If you are running Exponential in a shared host environment, contant your ISP to perform the changes</source>
         <translation>Jos suunnittelet suorittavasi eZ Publishin jaetussa host-ympäristössä, ota yhteyttä palveluntarjoajaasi suorittaaksesi muutokset</translation>
     </message>
     <message>
-        <source>File uploading is not enabled which means that it&apos;s impossible for eZ Publish to handle file uploading. All other parts of eZ Publish will still work fine but it&apos;s recommended to enable file uploads.</source>
+        <source>File uploading is not enabled which means that it&apos;s impossible for Exponential to handle file uploading. All other parts of Exponential will still work fine but it&apos;s recommended to enable file uploads.</source>
         <translation>Tiedoston lataaminen ei ole käytössä, joka tarkoittaa sitä että eZ Publishin on mahdotonta käsitellä tiedoston lataamisia. Kaikki muut eZ Publishin osat toimivat silti hyvin. mutta on suositeltua ottaa käyttöön tiedoston lataaminen.</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to eZ Publish.</source>
+        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to Exponential.</source>
         <translation>PHP-lataamiskansiota %upload_dir ei ole olemassa tai se ei ole saatavilla. Ilman tätä eZ Publishiin ei voi ladata tiedostoja tai kuvia.</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to eZ Publish.</source>
+        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to Exponential.</source>
         <translation>PHP-lataamiskansioon %upload_dir ei voi kirjoittaa. Tämä tarkoittaa sitä, että on eZ Publishiin on mahdotonta ladata tiedostoja tai kuvia.</translation>
     </message>
     <message>
-        <source>eZ Publish could not detect the user and group of the web server.
+        <source>Exponential could not detect the user and group of the web server.
 If you know the user and group of the web server it is recommended to change the ownership of the upload directory to match this user and group.
 To do this you need to change the %chown commands under Alternative shell commands.</source>
-        <translation>eZ Publish ei havainnut käyttäjää ja ryhmää web-palvelimella.
+        <translation>Exponential ei havainnut käyttäjää ja ryhmää web-palvelimella.
 Jos tiedät web-palvelimen käyttäjän ja ryhmän, on suositeltavaa, että vaihdat tiedostojen omistajaa täsmätäksesi tämän käyttäjän ja ryhmän.
 Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -komentojen alta.</translation>
     </message>
@@ -23658,76 +23658,76 @@ Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -kom
         <translation>Jos tiedät web-palvelimen käyttäjän ja ryhmän, voit yrittää tätä komentoa. Korvaa apache:apache käytäjällä ja ryhmällä.</translation>
     </message>
     <message>
-        <source>No image conversion capabilities was detected, this means that eZ Publish cannot scale any images or detect their type. This is vital functionality in eZ Publish and must be supported.</source>
-        <translation>Kuvakäännösmahdollisuuksia ei havaittu. Tämä tarkoittaa sitä, että eZ Publish ei voi skaalata yhtään kuvaa tai tunnistaa niiden tyyppiä. Tämä on tärkeä toiminto eZ Publishissa ja sen tulee olla tuettu.</translation>
+        <source>No image conversion capabilities was detected, this means that Exponential cannot scale any images or detect their type. This is vital functionality in Exponential and must be supported.</source>
+        <translation>Kuvakäännösmahdollisuuksia ei havaittu. Tämä tarkoittaa sitä, että Exponential ei voi skaalata yhtään kuvaa tai tunnistaa niiden tyyppiä. Tämä on tärkeä toiminto eZ Publishissa ja sen tulee olla tuettu.</translation>
     </message>
     <message>
-        <source>The imagegd2 extension is not available to eZ Publish. Without it eZ Publish will only be able to do conversion using ImageMagick and the</source>
-        <translation>imagegd2-laajennus ei ole eZ Publishin käytössä. Ilman sitä eZ Publish pystyy ainoastaan tekemään käännöksiä käyttämällä ImageMagickia ja </translation>
+        <source>The imagegd2 extension is not available to Exponential. Without it Exponential will only be able to do conversion using ImageMagick and the</source>
+        <translation>imagegd2-laajennus ei ole eZ Publishin käytössä. Ilman sitä Exponential pystyy ainoastaan tekemään käännöksiä käyttämällä ImageMagickia ja </translation>
     </message>
     <message>
-        <source>Future releases of eZ Publish will have more advanced image support by using the imagegd extension.</source>
+        <source>Future releases of Exponential will have more advanced image support by using the imagegd extension.</source>
         <translation>Tulevaisuuden eZ Publishin julkaisut tulevat sisältämään edistyneempää kuvatukea käyttämällä imagegd-laajennusta.</translation>
     </message>
     <message>
-        <source>The ImageMagick program is not available to eZ Publish. Without it eZ Publish will not be able to do image conversion unless the imagegd extension is available.</source>
-        <translation> ImageMagick-ohjelma ei ole eZ Publishin käytettävissä. Ilman sitä eZ Publish ei voi tehdä kuvakäännöksiä ellei imagegd laajennus ole käytettävissä.</translation>
+        <source>The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available.</source>
+        <translation> ImageMagick-ohjelma ei ole eZ Publishin käytettävissä. Ilman sitä Exponential ei voi tehdä kuvakäännöksiä ellei imagegd laajennus ole käytettävissä.</translation>
     </message>
     <message>
-        <source>eZ Publish comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily eZ Publish supports the mbstring extension for handling some of the charsets.</source>
-        <translation>eZ Publishissa on hyvä lista tuettuista merkkijärjestelmistä oletuksena, tosin ne voivat olla hieman hitaita, koska ne ovat tehty pelkästään PHP-koodilla. Onneksi eZ Publish tukee mbstring-laajennusta joidenkin merkkijärjestelmien käsittelemiseen.</translation>
+        <source>Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</source>
+        <translation>eZ Publishissa on hyvä lista tuettuista merkkijärjestelmistä oletuksena, tosin ne voivat olla hieman hitaita, koska ne ovat tehty pelkästään PHP-koodilla. Onneksi Exponential tukee mbstring-laajennusta joidenkin merkkijärjestelmien käsittelemiseen.</translation>
     </message>
     <message>
-        <source>By enabling the mbstring extension eZ Publish will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
+        <source>By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
         <translation>Ottamalla mbstring-laajennus käyttöön, eZ Publishi saa käyttöönsä enemmän merkkijärjestelmiä ja pystyy myös prosessoimaan niitä nopeammin, kuten Unicodea ja iso-8859-*. Tätä suositellaan monikielisille sivuille ja sivuille, joissa on erikoisia merkkijärjestelmiä.</translation>
     </message>
     <message>
-        <source>Do not enable mbstring function overloading, eZ Publish will only use the extension whenever it&apos;s needed.</source>
-        <translation>Älä ota käyttöön mbstring-toiminnon ylikuormittamista, eZ Publish käyttää laajennusta vain kun sille on tarvetta.</translation>
+        <source>Do not enable mbstring function overloading, Exponential will only use the extension whenever it&apos;s needed.</source>
+        <translation>Älä ota käyttöön mbstring-toiminnon ylikuormittamista, Exponential käyttää laajennusta vain kun sille on tarvetta.</translation>
     </message>
     <message>
-        <source>Insufficient memory allocated to install eZ Publish</source>
+        <source>Insufficient memory allocated to install Exponential</source>
         <translation>Muistia ei ole varattu tarpeeksi eZ Publishin asentamiseen</translation>
     </message>
     <message>
-        <source>eZ Publish will not work correctly with a memory limit of %1.</source>
-        <translation>eZ Publish ei toimi kunnolla muistirajan %1 kanssa.</translation>
+        <source>Exponential will not work correctly with a memory limit of %1.</source>
+        <translation>Exponential ei toimi kunnolla muistirajan %1 kanssa.</translation>
     </message>
     <message>
-        <source>eZ Publish will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
-        <translation>eZ Publish toimii tämän asetuksen kanssa, tosin se johtaa joihinkin pieniin toimintaongelmiin, koska kaikki syöttömuuttujat pitää kääntää takaisin</translation>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
+        <translation>Exponential toimii tämän asetuksen kanssa, tosin se johtaa joihinkin pieniin toimintaongelmiin, koska kaikki syöttömuuttujat pitää kääntää takaisin</translation>
     </message>
     <message>
         <source>It is recommended that the option is turned off. To turn it off edit your %phpini configuration and set %magic_quotes_gpc and %magic_quotes_runtime to %offtext.</source>
         <translation>On suositeltavaa, että tämä asetus on otettu pois käytöstä. Poistaaksesi se käytöstä, tulee sinun muokata %phpini -konfiguraatiota ja asettaa %magic_quotes_gpc ja %magic_quotes_runtime asetukseen %offtext.</translation>
     </message>
     <message>
-        <source>Alternatively you may create a file called %1 in your eZ Publish root folder and add the following</source>
+        <source>Alternatively you may create a file called %1 in your Exponential root folder and add the following</source>
         <translation>Vaihtoehtoisesti voit luoda tiedoston nimeltä %1 eZ Publishin juurikansioon ja lisätä seuraava</translation>
     </message>
     <message>
-        <source>eZ Publish will not work properly with this option on.</source>
-        <translation>eZ Publish ei toimi kunnolla tämän asetuksen ollessa päällä.</translation>
+        <source>Exponential will not work properly with this option on.</source>
+        <translation>Exponential ei toimi kunnolla tämän asetuksen ollessa päällä.</translation>
     </message>
     <message>
-        <source>eZ Publish will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
-        <translation>eZ Publish toimii tämän asetuksen kanssa, tosin se johtaa joihinkin pieniin toimintaongelmiin, koska kaikista syöttömuuttujista tehdään yleisiä jokaisen käskyjonon suosituksessa.</translation>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
+        <translation>Exponential toimii tämän asetuksen kanssa, tosin se johtaa joihinkin pieniin toimintaongelmiin, koska kaikista syöttömuuttujista tehdään yleisiä jokaisen käskyjonon suosituksessa.</translation>
     </message>
     <message>
-        <source>Your PHP module does not have session support, without this eZ Publish will not work properly.</source>
-        <translation>PHP-moduulissasi ei ole istuntotukea, ilman sitä eZ Publish ei toimi kunnolla.</translation>
+        <source>Your PHP module does not have session support, without this Exponential will not work properly.</source>
+        <translation>PHP-moduulissasi ei ole istuntotukea, ilman sitä Exponential ei toimi kunnolla.</translation>
     </message>
     <message>
-        <source>eZ Publish may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
-        <translation>eZ Publish voi toimia turvatila päällä, tosin jotkut ominaisuudet eivät ole käytettävissä. Jotkut asiat, jotka voivat ilmentyä ovat</translation>
+        <source>Exponential may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
+        <translation>Exponential voi toimia turvatila päällä, tosin jotkut ominaisuudet eivät ole käytettävissä. Jotkut asiat, jotka voivat ilmentyä ovat</translation>
     </message>
     <message>
-        <source>eZ Publish cannot write to the</source>
-        <translation>eZ Publish ei voi kirjoittaa </translation>
+        <source>Exponential cannot write to the</source>
+        <translation>Exponential ei voi kirjoittaa </translation>
     </message>
     <message>
-        <source>The zlib extension is not available to eZ Publish. Without it eZ Publish will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
-        <translation>Zlib-laajennus ei ole eZ Publishin käytettävissä. Ilman sitä eZ Publish ei voi asentaa demotietoja, tosin os et halua asentaa demotietoja, voit ohittaa tämän turvallisesti.</translation>
+        <source>The zlib extension is not available to Exponential. Without it Exponential will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
+        <translation>Zlib-laajennus ei ole eZ Publishin käytettävissä. Ilman sitä Exponential ei voi asentaa demotietoja, tosin os et halua asentaa demotietoja, voit ohittaa tämän turvallisesti.</translation>
     </message>
     <message>
         <source>directory.</source>
@@ -23738,8 +23738,8 @@ Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -kom
         <translation>Puuttuva DOM-laajennus</translation>
     </message>
     <message>
-        <source>The DOM extension is not available to eZ Publish. Without it eZ Publish will not work.</source>
-        <translation>DOM-laajennus ei ole eZ Publishin käytettävissä. Ilman sitä eZ Publish ei toimi.</translation>
+        <source>The DOM extension is not available to Exponential. Without it Exponential will not work.</source>
+        <translation>DOM-laajennus ei ole eZ Publishin käytettävissä. Ilman sitä Exponential ei toimi.</translation>
     </message>
     <message>
         <source>In most cases, the DOM extension is enabled by default because it is included in the PHP core. However, some Linux distributions have PHP without compiled-in support for DOM. Instead, they provide DOM as a shared module in a separate RPM package called &quot;php-xml&quot;.</source>
@@ -23782,7 +23782,7 @@ Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -kom
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The iconv extension is not available to eZ Publish. Without it eZ Publish will not work.</source>
+        <source>The iconv extension is not available to Exponential. Without it Exponential will not work.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -26482,8 +26482,8 @@ tilisi.</translation>
         <translation type="unfinished">Napsauta &quot;Peruuta&quot; poistuaksesi turvallisesti tästä toimenpiteestä.</translation>
     </message>
     <message>
-        <source>Please contact your eZ Publish administrator to solve this problem.</source>
-        <translation type="unfinished">Ota yhteyttä eZ Publish-järjestelmänhallitsijaasi korjataksesi tämän ongelman.</translation>
+        <source>Please contact your Exponential administrator to solve this problem.</source>
+        <translation type="unfinished">Ota yhteyttä Exponential-järjestelmänhallitsijaasi korjataksesi tämän ongelman.</translation>
     </message>
     <message>
         <source>Class groups</source>
@@ -28284,8 +28284,8 @@ Jos valitsit asetuksen &quot;%3&quot; asetuksesta &quot;%4&quot;</translation>
         <translation type="unfinished">Istunnon hallinta</translation>
     </message>
     <message>
-        <source>File %1 does not exist. You should copy it from the recent eZ Publish distribution.</source>
-        <translation type="unfinished">Tiedostoa %1 ei ole olemassa. Sinun tulee kopioida se uusimmasta eZ Publish-julkaisusta.</translation>
+        <source>File %1 does not exist. You should copy it from the recent Exponential distribution.</source>
+        <translation type="unfinished">Tiedostoa %1 ei ole olemassa. Sinun tulee kopioida se uusimmasta Exponential-julkaisusta.</translation>
     </message>
     <message>
         <source>Datatype wizard</source>

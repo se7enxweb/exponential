@@ -1,8 +1,8 @@
 # Cluster events #
 
-Cluster events consist in a new feature allowing to interact with eZ Publish cluster system.
+Cluster events consist in a new feature allowing to interact with Exponential cluster system.
 
-Depending on the action made by eZ Publish cluster, an event is trigerred via `ezpEvent` class.
+Depending on the action made by Exponential cluster, an event is trigerred via `ezpEvent` class.
 It allows a dedicated listener object to store metadata in cache engines for example (like **APC** or **Memcached**)
 and thus save database queries (and increase performance and scalability).
 These events would eventually also allow to push media files directly to a CDN (Akamai, Amazon S3...).
@@ -121,7 +121,7 @@ Try to use constants instead or configuration objects passed to your custom gate
 
 ## Known limitations ##
 
-Cluster system is built *very early* in the request life cycle in eZ Publish and thus doesn't allow to have 
+Cluster system is built *very early* in the request life cycle in Exponential and thus doesn't allow to have 
 settings in extensions or siteaccesses.
 
 So if one wants to develop a cluster event extension, **configuration file(s) MUST be placed in `settings/override/`**.

@@ -4,11 +4,11 @@ Autoload refinement
 Usage of spl_autoload_register()
 --------------------------------
 
-eZ Publish now uses the autoload function stack in SPL to invoke autoload
+Exponential now uses the autoload function stack in SPL to invoke autoload
 methods. This also means that custom autoload methods can be added in
 config.php.
 
-If the the custom autoload method won't load eZ Publish's classes, the method
+If the the custom autoload method won't load Exponential's classes, the method
 should check the class-prefix, or just return without exception if the class
 is not found. The reason for this is that PHP will try each method in the
 autoload stack, but it will stop if an exception is encountered higher up in
@@ -20,7 +20,7 @@ of the stack. PHP starts at the top, when looking for classes.
 Incremental progress output
 ---------------------------
 
-Starting from eZ Publish 4.1 it is possible to get incremental progress output
+Starting from Exponential 4.1 it is possible to get incremental progress output
 of the autoload generation process.
 
 This is activated when using *bin/php/ezpgenerateautoloads.php* with the *-p /

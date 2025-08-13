@@ -33,7 +33,7 @@ Changes from 3.3-2 to 3.3-3
 
 *Setup:
 - Added check for AcceptPathInfo setting in apache2.
-- Merged setup fix to only check for existing eZ publish tables from stable/3.2 rev. 4936.
+- Merged setup fix to only check for existing Exponential tables from stable/3.2 rev. 4936.
 - Added check for postgre database version. Only support version 7.3.
 
 *DataTypes:
@@ -116,7 +116,7 @@ eZTime:
   http://ez.no/community/bug_reports/rss_cache
 - Added l18n operators to design/standard/templates/setup/cache.tpl.
   http://ez.no/community/bug_reports/lack_i18n_and_translate_problem_with_linquist
-- Fixed eZContentObjectTreeNode::subTree, so ez publish won't crash on bad parameters
+- Fixed eZContentObjectTreeNode::subTree, so Exponential won't crash on bad parameters
   http://ez.no/community/bug_reports/fetch_content_tree_fatal_error_if_tpl_contains_user_errors
 - Fixed role/edit.php for undefined post parameters.
   http://ez.no/community/bug_reports/undefined_post_variables_in_role_edit_php
@@ -136,7 +136,7 @@ eZTime:
   http://www.ez.no/community/bug_reports/usefullurl_missing_in_layout_ini_may_provoke_apache_crash_if_template_caching_is_on
 - Fixed bug of zero is stripped off in template.
   http://ez.no/community/bug_reports/template_bug_zero_is_stripped_off
-- Fixed bug of eZ publish might crash using browse function.
+- Fixed bug of Exponential might crash using browse function.
   http://ez.no/community/bug_reports/ez_publish_3_3_might_crash_in_browse_functionality
 - Fixed class_array input parameter in eZContentBrowse for limiting allowed selections.
 - Fixed bug of datatype ezsubtreesubscription. It creates notification rule 

@@ -29,7 +29,7 @@ Dieses Dokument soll die Arbeit an der deutschen Dokumentation unterstützen.
 WÖRTERBUCH
 --------------
 Das Wörterbuch >phrasebook.qph< dient der Verwendung einer einheitlichen
-Terminologie aller eZ Publish spezifischen Begriffe.
+Terminologie aller Exponential spezifischen Begriffe.
 Jeder Autor sollte auf die Verwendung der dort angegeben Begriffe achten.
 Sollte ein Begriff dort nicht enthalten sein, sollte derjenige nach besten
 Wissen und Gewissen dort einen Eintrag machen.
@@ -38,19 +38,19 @@ Wissen und Gewissen dort einen Eintrag machen.
 DISKUSSIONEN
 --------------
 Für Diskussionen rund um die deutsche Übersetzung steht das Forum auf
-ezpublish.de offen.
+Exponential.de offen.
 http://share.ez.no/forums/translation/german
 
 
 Changelog
 ============================================================
 
-Übersetzung für eZ Publish 4.3
+Übersetzung für Exponential 4.3
 ============================================================
 Neue Strings wurden übersetzt (gwf, mz)
 Viele Fehler ausgebessert (gwf, mz)
 
-Übersetzung für eZ Publish 4.2, gwf
+Übersetzung für Exponential 4.2, gwf
 ============================================================
 - Neue Übersetzungen hinzugefügt
 - Viele Rechtschreib- und Grammatikfehler entfernt
@@ -74,5 +74,5 @@ Größere Änderungen:
   mit Papierkorb
 - Basket: Einkaufskorb => Warenkorb
 - Relationen / Verwandt => verknüpft (related objects => Verknüpfte Objekte etc.)
-- eZ publish => eZ Publish
+- Exponential => Exponential
 - Email => E-Mail (laut Duden)

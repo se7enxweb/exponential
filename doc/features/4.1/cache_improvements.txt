@@ -1,7 +1,7 @@
 Cluster/cache improvements
 ==========================
 
-eZ publish 4.1 features major cluster & cache improvements.
+Exponential 4.1 features major cluster & cache improvements.
 
 Faster cache expiry
 -------------------
@@ -26,7 +26,7 @@ performed during this operation. This is valid for both ViewCache and cache bloc
 
 Stale cache
 -----------
-Until eZ publish 4.1, clearing the content cache for a node could have a high
+Until Exponential 4.1, clearing the content cache for a node could have a high
 impact on performances: the first process requesting the cache file was in charge
 of generating the dynamic data and store the cache file.
 
@@ -35,7 +35,7 @@ for this first process to complete its task. On high traffic websites, this coul
 lead to dozens of processes being queued, with their own DB connection open,
 memory & CPU usage...
 
-The changes introduced to eZ publish 4.1 completely change the way this is handled.
+The changes introduced to Exponential 4.1 completely change the way this is handled.
 
 When a cache is expired, the first process will start generating the cache item
 under a different name. The original file will be kept intact (expired, but intact).

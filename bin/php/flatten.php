@@ -15,7 +15,7 @@ require_once 'autoload.php';
 
 $cli = eZCLI::instance();
 
-$script = eZScript::instance( array( 'description' => ( "eZ Publish database flattening.\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential database flattening.\n\n" .
                                                         "Will remove data that is not considered currently in use to minimize the amount of database data it consumes\n" .
                                                         "\n" .
                                                         "Possible values for NAME is:\n" .

@@ -107,7 +107,7 @@ function copyFilesFromDB( $excludeScopes, $remove )
 }
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish (un)clusterize\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential (un)clusterize\n" .
                                                         "Script for moving var_dir files from " .
                                                         "filesystem to database and vice versa\n" .
                                                         "\n" .

@@ -135,7 +135,7 @@ Bugfixes
 - Fixed: error messages have no specific style
 - Fixed: ezajaxrelations_jquery.js to work the new html code
 - Fixed: issue where buttons eZDebug toolbar do not work with ezformtoken extension
-- Fixed: the following typoes in a number of files throughout the ezpublish git tree:
+- Fixed: the following typoes in a number of files throughout the exponential git tree:
 - Fixed: documentation issue for asynchronous publishing queue reader
 - Fixed: problem with cached provider
 - Fixed: format error in the display of comments

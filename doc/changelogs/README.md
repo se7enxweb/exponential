@@ -1,1 +1,1 @@
-For newer releases see changelogs found on [github releases](https://github.com/ezsystems/ezpublish-legacy/releases).
+For newer releases see changelogs found on [github releases](https://github.com/ezsystems/exponential-legacy/releases).

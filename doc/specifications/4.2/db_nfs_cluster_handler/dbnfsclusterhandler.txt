@@ -38,7 +38,7 @@ data integrity. Cache processing (stalecache) will be performed in this database
 while real files can be stored on NFS itself. The handler will take care of
 creating files on NFS.
 Exactly like eZDB currently does, eZDBNFS will also copy files locally to each
-eZ publish instance upon request, in order to avoid querying NFS when data have
+Exponential instance upon request, in order to avoid querying NFS when data have
 not changed.
 
 Implementation
@@ -50,7 +50,7 @@ the DFS.
 Architecture
 ------------
 
- * X eZ publish web servers
+ * X Exponential web servers
 
    - local var folder: `/var/www/var/`
    - local moint point to the NFS share: `/data/nfs`
@@ -62,7 +62,7 @@ Architecture
 
  * 2 databases
 
-   - the standard eZ publish relational DB
+   - the standard Exponential relational DB
    - a cluster DB, with the single ezdfsfile table
 
 
@@ -281,7 +281,7 @@ New settings are introduced by eZDFS in file.ini::
 
     [eZDFSClusteringSettings]
     # Path to the NFS mount point
-    # Can be relative to the eZ publish root, or absolute
+    # Can be relative to the Exponential root, or absolute
     MountPointPath=
     # Database backend
     DBBackend=eZDFSFileHandlerMySQLBackend
@@ -342,7 +342,7 @@ handler requires a complex architecture:
 
  * NFS server
  * two local NFS mount points, NOT sharing the same cache
- * two local eZ publish instances
+ * two local Exponential instances
  * one local database (of course)
  * one local cluster database
 

@@ -49,12 +49,12 @@
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
 <div class="block">
-<p>{'Before upgrading eZ Publish to a newer version, it is important to check that the current installation is ready for upgrading.'|i18n('design/admin/setup')}</p>
-<p>{'Remember to make a backup of the eZ Publish directory and the database before you upgrade.'|i18n('design/admin/setup')}</p>
+<p>{'Before upgrading Exponential to a newer version, it is important to check that the current installation is ready for upgrading.'|i18n('design/admin/setup')}</p>
+<p>{'Remember to make a backup of the Exponential directory and the database before you upgrade.'|i18n('design/admin/setup')}</p>
 <h3>{'File consistency check'|i18n('design/admin/setup')}</h3>
 {'The file consistency tool checks if you have altered any of the files that came with the current installation. Altered files may be replaced by new versions that contain bugfixes, new features, etc. Make sure that you backup and then merge your changes into the new versions of the files.'|i18n('design/admin/setup')}
 <h3>{'Database consistency check'|i18n('design/admin/setup')}</h3>
-{'The database consistency tool checks if the current database is consistent with the database schema that came with the eZ Publish distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be run in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.'|i18n('design/admin/setup')}
+{'The database consistency tool checks if the current database is consistent with the database schema that came with the Exponential distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be run in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.'|i18n('design/admin/setup')}
 <div class="block">
 <p>{'The upgrade checking tools require a lot of system resources. They may take some time to run.'|i18n('design/admin/setup')}</p>
 </div>

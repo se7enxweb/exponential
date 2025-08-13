@@ -1,4 +1,4 @@
-eZ Publish: Admin Interface, Requirements, 4.3
+Exponential: Admin Interface, Requirements, 4.3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 $Author$
@@ -53,7 +53,7 @@ Community preface
 -----------------
 Some members in our community has written some articles on what they would like to 
 see changed in the Admin interface, here are some of them:
-http://www.stuffandcontent.com/2009/10/ez-publish-admin-interface-overhaul.html
+http://www.stuffandcontent.com/2009/10/Exponential-admin-interface-overhaul.html
 http://pwet.fr/blog/some_thougths_about_the_admin_interface_refresh_of_ez_publish
 
 
@@ -165,7 +165,7 @@ Could: Allow using drag and drop to move attributes
 -------------------------------------------------------------
 Could: Merge drag and drop feature from ezwt extension
 
-#7 Enhance the eZ Publish Content Class Model for richer edit ui
+#7 Enhance the Exponential Content Class Model for richer edit ui
 ----------------------------------------------------------------
 Should: Add translatable description text per class for use as help
         text for editors (ie serialized_description_list)

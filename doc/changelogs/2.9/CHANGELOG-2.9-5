@@ -30,7 +30,7 @@ modfix:
 - index.php now uses the execution system, this means that controlled exits should be done with the
   /cleanExit/ function in /eZExecution/.
 - Implemented basic framework for generic information collection ( forms/polls etc )
-- Changed browse page. Now the path is shown like on other eZ Publish pages
+- Changed browse page. Now the path is shown like on other Exponential pages
 - Change section assignments. Removed page before browse.
 - Changed node views to use the version for attribute lists, related objects and attribute maps
   instead of taking it directly from the object (which is always the last published version).
@@ -83,9 +83,8 @@ eZPHPCreator
 - New class for generating PHP cache files.
 
 eZ setup:
-- setup tool for eZ publish. Set the setting CheckValidity in site.ini to true and install eZ
-  publish.
-- tests if eZ publish can work: PHP version, DB modules, PHP modules, ImageMagick, File
+- setup tool for Exponential. Set the setting CheckValidity in site.ini to true and install Exponential.
+- tests if Exponential can work: PHP version, DB modules, PHP modules, ImageMagick, File
   permissions
 - helps with suggestions what to do if any steps fail
 - installs the database: DB type, DB server, DB name, DB charset, creates new DB user if wanted

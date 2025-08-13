@@ -74,4 +74,4 @@ eZ webdav:
 - Added updated Swedish translation.
 
 *Misc:
-- Added the ezpublish.cron crontab file that takes care of running the runcronjobs.php script every 15th minute.
+- Added the exponential.cron crontab file that takes care of running the runcronjobs.php script every 15th minute.

@@ -1,18 +1,18 @@
 #!/bin/sh
 #
-# ezasynchronouspublisher       eZ Publish asychronous publishing init script for RHEL and SLES
+# ezasynchronouspublisher       Exponential asychronous publishing init script for RHEL and SLES
 #
 # chkconfig:                    2345 86 37
-# description:                  eZ Publish asychronous publishing init script for RHEL and SLES
+# description:                  Exponential asychronous publishing init script for RHEL and SLES
 
 ### BEGIN INIT INFO
-# Provides: eZ Publish asynchronous publishing daemon
+# Provides: Exponential asynchronous publishing daemon
 # Required-Start: $local_fs $remote_fs
 # Required-Stop: $local_fs $remote_fs
 # Default-Start: 2 3 4 5
 # Default-Stop: 0 1 6
-# Short-Description: starts instance of eZ Publish asynchronous publishing daemon
-# Description: eZ Publish asychronous publishing init script for RHEL and SLES
+# Short-Description: starts instance of Exponential asynchronous publishing daemon
+# Description: Exponential asychronous publishing init script for RHEL and SLES
 ### END INIT INFO
 
 ### Configuration
@@ -46,7 +46,7 @@ DAEMON_OPTS=" -n"
 STARTUP_SCRIPT_PATH=`dirname "${STARTUP_SCRIPT}"`
 APP_PATH=${STARTUP_SCRIPT_PATH%/bin/startup/*}
 DAEMON="${APP_PATH}/bin/php/ezasynchronouspublisher.php"
-PID_FOLDER="/var/run/ezpublish"
+PID_FOLDER="/var/run/Exponential"
 PID_FILE="$PID_FOLDER/${NAME}.pid"
 LOCK_FILE="/var/lock/subsys/${NAME}"
 DAEMON_OPTS="${DAEMON_OPTS} --pid-file=${PID_FILE}"

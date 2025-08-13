@@ -12,7 +12,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish SQL diff\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential SQL diff\n\n" .
                                                         "Displays differences between two database schemas,\n" .
                                                         "and sets exit code based whether there is a difference or not\n" .
                                                         "\n" .

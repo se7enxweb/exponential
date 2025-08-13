@@ -375,7 +375,7 @@ $scriptOptions = $script->getOptions( "[to-version:][repository:][package:][pack
                                                          "(default is 'var/storage/packages/ez_systems')",
                                              'package' => "Package(s) to install, f.e. 'ezwebin_classes'",
                                              'package-dir' => "Path to directory with packed(ezpkg) packages(default is '/tmp/ezwebin') ",
-                                             'url' => "URL to download packages, f.e. 'http://packages.ez.no/ezpublish/3.9'.\n" .
+                                             'url' => "URL to download packages, f.e. 'http://packages.ez.no/Exponential/3.9'.\n" .
                                                       "'package-dir' can be specified to store uploaded packages on local computer.\n" .
                                                       "if 'package-dir' is not specified then default dir('/tmp/ezwebin') will be used.",
                                              'auto-mode' => "[on/off]. Do not ask what to do in case of confilicts. By default is 'on'"

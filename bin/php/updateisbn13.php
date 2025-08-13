@@ -21,7 +21,7 @@ require_once 'autoload.php';
 $url = ''; // http://www.isbn-international.org/agency?rmxml=1 url with the xml.
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => "eZ Publish ISBN-13 update\n\n" .
+$script = eZScript::instance( array( 'description' => "Exponential ISBN-13 update\n\n" .
                                                       "Update the database with new updated ISBN data to the database.",
                                      'use-session' => false,
                                      'use-modules' => true,

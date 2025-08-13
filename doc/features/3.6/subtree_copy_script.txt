@@ -18,7 +18,7 @@ Input parameters:
   --login=<user_name>       - User login.
   --password=<password>     - User password.
 
-Run script from the root directory of your eZPublish. Use --siteaccess option to set
+Run script from the root directory of your Exponential. Use --siteaccess option to set
 appropriate database settings for the script. Otherwise, script use default siteaccess
 from inisettings. To change the creators of contentobjects and all object versions being
 copied use --login and --password options. Use --keep-creator option to leave creators

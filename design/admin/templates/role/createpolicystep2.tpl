@@ -50,7 +50,7 @@
 <li>{'Click on one of the "Grant.." buttons (explained below) in order to go to the next step.'|i18n( 'design/admin/role/createpolicystep2' )}</li>
 </ul>
 <p>
-{'The "Grant full access" button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you want to limit the access method, click the "Grant limited access" button. Function limitation is only supported by some functions. If unsupported, eZ Publish will set up a policy with unlimited access to the selected function.'|i18n( 'design/admin/role/createpolicystep2' )}
+{'The "Grant full access" button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you want to limit the access method, click the "Grant limited access" button. Function limitation is only supported by some functions. If unsupported, Exponential will set up a policy with unlimited access to the selected function.'|i18n( 'design/admin/role/createpolicystep2' )}
 </p>
 
 <div class="block">

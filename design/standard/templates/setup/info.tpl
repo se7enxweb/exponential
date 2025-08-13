@@ -2,7 +2,7 @@
 <h1>{'System information'|i18n('design/standard/setup')}</h1>
 
 <div class="objectheader">
-    <h2>eZ Publish</h2>
+    <h2>Exponential</h2>
 </div>
 <div class="object">
     <table width="500">
@@ -10,10 +10,10 @@
         <td><p><b>{'Site'|i18n('design/standard/setup')}:</b></p></td><td><p>{ezini('SiteSettings','SiteURL')}</p></td>
     </tr>
     <tr>
-        <td><p><b>{'Version'|i18n('design/standard/setup','eZ Publish version')}</b></p></td><td><p>{$ezpublish_version}</p></td>
+        <td><p><b>{'Version'|i18n('design/standard/setup','Exponential version')}</b></p></td><td><p>{$ezpublish_version}</p></td>
     </tr>
     <tr>
-        <td><p><b>{'Extensions'|i18n('design/standard/setup','eZ Publish extensions')}</b></p></td>
+        <td><p><b>{'Extensions'|i18n('design/standard/setup','Exponential extensions')}</b></p></td>
         <td>
             <p>
                 {section loop=$ezpublish_extensions}{$:item}{delimiter}, {/delimiter}{/section}

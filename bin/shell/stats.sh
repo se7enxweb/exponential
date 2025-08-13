@@ -2,7 +2,7 @@
 
 . ./bin/shell/common.sh
 
-echo "eZ Publish $VERSION statistics"
+echo "Exponential $VERSION statistics"
 echo
 
 # ***** Check PHP code *****

@@ -26,7 +26,7 @@
 <table class="layout" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
     <td class="topline" width="40%" colspan="2">
-    <img src={"ezpublish-logo.gif"|ezimage} width="210" height="60" alt="" />
+    <img src={"Exponential-logo.gif"|ezimage} width="210" height="60" alt="" />
    </td>
 </tr>
 <tr>
@@ -65,7 +65,7 @@
     {$module_result.content}
     </td>
     <td width="50%" bgcolor="#ffffff" valign="top">
-    <h2>{"Welcome to eZ Publish administration"|i18n("design/standard/layout")}</h2>
+    <h2>{"Welcome to Exponential administration"|i18n("design/standard/layout")}</h2>
     <p>{"To log in enter a valid login and password."|i18n("design/standard/layout")}</p>
     </td>
 </tr>

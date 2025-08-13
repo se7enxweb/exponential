@@ -12,7 +12,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish static cache generator\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential static cache generator\n" .
                                                         "\n" .
                                                         "./bin/makestaticcache.php --siteaccess user" ),
                                      'use-session' => false,

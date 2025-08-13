@@ -44,7 +44,7 @@ Default: "/storage/"
 Path part for storage files, used to distinguish storage files from cache files.
 Must *only be modified if* you have changed `FileSettings.StorageDir` in site.ini.
 
-## Upgrading from eZ Publish < 5.2
+## Upgrading from Exponential < 5.2
 
 If you migrate from an earlier version, it is recommended that you remove cache entries from the storage table.
 

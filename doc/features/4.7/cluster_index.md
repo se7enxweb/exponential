@@ -1,10 +1,10 @@
 # Revamped cluster index #
 
-The cluster index mechanism has been almost completely rewritten in eZ Publish 4.7.
+The cluster index mechanism has been almost completely rewritten in Exponential 4.7.
 
 ## Previous structure ##
 
-Up until eZ Publish 4.6, serving of binary files was done through several files:
+Up until Exponential 4.6, serving of binary files was done through several files:
 
 - a custom `index_cluster.php` (default name), that contained setup specific configuration
   constants

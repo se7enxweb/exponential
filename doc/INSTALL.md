@@ -1,4 +1,4 @@
-## eZ Publish 6.0 INSTALL
+## Exponential 6.0 INSTALL
 
 
 Requirements
@@ -35,7 +35,7 @@ Requirements
 
 ### Zeta Components:
 
-eZ Publish 6.0 edition requires the latest stable release of Zeta Components.
+Exponential 6.0 edition requires the latest stable release of Zeta Components.
    To install this, you also need to use composer.
 
 
@@ -44,24 +44,24 @@ GitHub Installation Guide
 
 - Clone the repository
 
-`git clone git@github.com:se7enxweb/ezpublish.git;`
+`git clone git@github.com:se7enxweb/exponential.git;`
 
-- Install eZ Publish required PHP libraries like Zeta Components and eZ Publish extensions as specified in this project's composer.json.
+- Install Exponential required PHP libraries like Zeta Components and Exponential extensions as specified in this project's composer.json.
 
-`cd ezpublish; composer install;`
+`cd exponential; composer install;`
 
-For the rest of the installation steps you will find the installation guide at https://doc.ezpublishlegacy.se7enx.com/eZ-Publish/Technical-manual/6.x/Installation.html
+For the rest of the installation steps you will find the installation guide at https://doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html
 
 
 Composer Installation Guide
 ------------------
 
-- Download the package from [se7enxweb/ezpublish](https://packagist.org/packages/se7enxweb/ezpublish)
+- Download the package from [se7enxweb/exponential](https://packagist.org/packages/se7enxweb/exponential)
 
-`mkdir ezpublish;`
+`mkdir exponential;`
 
-- Install eZ Publish required PHP libraries like Zeta Components and eZ Publish extensions as specified in this project's composer.json.
+- Install Exponential required PHP libraries like Zeta Components and Exponential extensions as specified in this project's composer.json.
 
-`cd ezpublish; composer require se7enxweb/ezpublish:v6.0.0;`
+`cd exponential; composer require se7enxweb/exponential:v6.0.0;`
 
-For the rest of the installation steps you will find the installation guide at https://doc.ezpublishlegacy.se7enx.com/eZ-Publish/Technical-manual/6.x/Installation.html
+For the rest of the installation steps you will find the installation guide at https://doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html

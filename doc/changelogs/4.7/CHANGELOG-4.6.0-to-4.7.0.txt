@@ -30,7 +30,7 @@ Bugfixes
 - #18986: [eZ Pending Actions] 2 records in less than one second
 - #18987: ezodf export to openoffice in sequence
 - #18999: Wrong usage of LIMIT in postgreSQL DFS
-- #19005: Having ezp-next in eZ Publish ends up to fatal error in /setup/info
+- #19005: Having ezp-next in Exponential ends up to fatal error in /setup/info
 - #19024: Mixed up class attribute IDs after re-order
 - #19026: PHP 5.4 compliance : Bad variable used in eZModuleOperationInfo::execute(...)
 - #19027: PHP 5.4 compliance : New ['REQUEST_TIME'] format makes request date fail or at least inconsistent

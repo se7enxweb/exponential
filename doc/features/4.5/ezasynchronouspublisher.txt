@@ -11,7 +11,7 @@ concurrent publishing operations. The goal is to make the database load manageab
 Setting it up
 =============
 
-eZ Publish settings
+Exponential settings
 -------------------
 The feature is disabled by default. To enable it, content.ini must be overriden, and the following block must be added
 to the override file::
@@ -65,7 +65,7 @@ be used to have the daemon started on boot.
 First, the startup script for your system must be *linked* to your init.d folder. This is an example for debian::
 
     cd /etc/init.d
-    ln -s /path/to/ezpublish/bin/startup/debian/ezasynchronouspublisher ./ezasynchronouspublisher
+    ln -s /path/to/exponential/bin/startup/debian/ezasynchronouspublisher ./ezasynchronouspublisher
     chmod +x ./ezasynchronouspublisher
 
 The daemon can therefore be started using::
@@ -244,7 +244,7 @@ queueReader handler
 
 This handler is the one in charge of reading from the queue and deciding what content is given to the queue handler.
 
-A default queueReader handler is providing with your default eZ Publish distribution. It simply reads the oldest inactive
+A default queueReader handler is providing with your default Exponential distribution. It simply reads the oldest inactive
 item from the processes queue, and returns it.
 
 It can be changed to a new one by extending the ``ezpContentPublishingQueue`` class, with a new implementation for the

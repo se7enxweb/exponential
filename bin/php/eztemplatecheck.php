@@ -12,7 +12,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish Template Syntax Checker\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential Template Syntax Checker\n" .
                                                         "\n" .
                                                         "./bin/php/eztemplatecheck.php -sadmin\n" .
                                                         "or\n" .

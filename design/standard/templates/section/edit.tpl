@@ -36,5 +36,5 @@
 <br/>
 <label>{"About navigation parts"|i18n("design/standard/section")}</label><div class="labelbreak"></div>
 <p>
-{"The eZ Publish Administration Interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed."|i18n("design/standard/section")}
+{"The Exponential Administration Interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed."|i18n("design/standard/section")}
 </p>

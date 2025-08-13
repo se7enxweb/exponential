@@ -1,4 +1,4 @@
-eZ Publish: Comment / UGC system, Requirements, 4.3
+Exponential: Comment / UGC system, Requirements, 4.3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 $Author$
@@ -12,7 +12,7 @@ $Date$
 Preface
 =======
 
-eZ Publish already has possibility to have comments and has since the
+Exponential already has possibility to have comments and has since the
 start. But for large customers using the content structure is not
 optimal for scalability as overhead of node / object / attributes
 are to high for user generated content (UGC) on high throughput sites.

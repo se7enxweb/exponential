@@ -1,7 +1,7 @@
 Private APIs
 ============
 
-eZ Publish 4.1 will introduce the concept of private APIs. This should not be 
+Exponential 4.1 will introduce the concept of private APIs. This should not be 
 confused with the object oriented 'private' visibility declaration.
 
 Description

@@ -13,7 +13,7 @@ set_time_limit ( 0 );
 
 require_once 'autoload.php';
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish url-alias imported and updater.\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential url-alias imported and updater.\n\n" .
                                                          "Will import urls from the older (3.9) system into the new, controlled by the --import* options.\n" .
                                                          "Will also update the url-alias entries from the content object nodes in the system, controlled by the --update-nodes option.\n" .
                                                          "The default behaviour is to update urls for content object nodes only\n" .

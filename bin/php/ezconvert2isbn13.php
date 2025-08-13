@@ -40,7 +40,7 @@ set_time_limit( 0 );
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish ISBN-10 to ISBN-13 converter\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential ISBN-10 to ISBN-13 converter\n\n" .
                                                         "Converts an ISBN-10 number to ISBN-13\n" ),
                                      'use-session' => false,
                                      'use-modules' => true,

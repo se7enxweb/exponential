@@ -1,7 +1,7 @@
 Namespace support
 =================
 
-eZ Publish now supports **PHP namespaces in extensions**.
+Exponential now supports **PHP namespaces in extensions**.
 If used, classes will be referenced with their FQN (Full Qualified Name) in ``var/autoload/ezp_extension.php``
 
 For instance, this class::

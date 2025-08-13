@@ -1,13 +1,13 @@
 #! /bin/sh
 
 ### BEGIN INIT INFO
-# Provides:          eZ Publish asynchronous publishing daemon
+# Provides:          Exponential asynchronous publishing daemon
 # Required-Start:    $all
 # Required-Stop:     $all
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: starts instance of eZ Publish asynchronous publishing daemon
-# Description:       starts instance of eZ Publish asynchronous publishing daemon using start-stop-daemon
+# Short-Description: starts instance of Exponential asynchronous publishing daemon
+# Description:       starts instance of Exponential asynchronous publishing daemon using start-stop-daemon
 ### END INIT INFO
 
 ### Configuration
@@ -44,8 +44,8 @@ DAEMON_OPTS=" -n"
 STARTUP_SCRIPT_PATH=`dirname "${STARTUP_SCRIPT}"`
 APP_PATH=${STARTUP_SCRIPT_PATH%/bin/startup/*}
 DAEMON="${APP_PATH}/bin/php/ezasynchronouspublisher.php"
-DESC="eZ Publish asynchronous publishing daemon"
-PID_FOLDER="/var/run/ezpublish"
+DESC="Exponential asynchronous publishing daemon"
+PID_FOLDER="/var/run/Exponential"
 PID_FILE="$PID_FOLDER/${NAME}.pid"
 DAEMON_OPTS="${DAEMON_OPTS} --pid-file=${PID_FILE}"
 

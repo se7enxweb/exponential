@@ -2,7 +2,7 @@
 // Created on: <1-Aug-2002 16:45:00 fh>
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
-// SOFTWARE NAME: eZ Publish
+// SOFTWARE NAME: Exponential
 // SOFTWARE RELEASE: 4.1.x
 // COPYRIGHT NOTICE: Copyright (C) 1999-2014 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0

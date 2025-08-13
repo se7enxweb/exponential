@@ -86,15 +86,15 @@ Changes from 3.2-4 to 3.2-5
 - Removed event_ezpaynet workflow event from the standard workflow.ini file.
   http://ez.no/community/bug_reports/workflow_type_not_found_event_ezpaynet
 - Fixed log directory for the webdav server, now it uses the var directory 
-  in eZ publish instead of /tmp.
+  in Exponential instead of /tmp.
   http://ez.no/community/bug_reports/webdav_log_still_is_in_tmp
   http://ez.no/community/bug_reports/webdav_logging_enabled
 - Made sure codepages are cleared by the clearcache.sh script.
   http://ez.no/community/bug_reports/cache_translate_and_texttoimage_etc
 
 *Setup:
-- Fixed setup to only check for existing eZ publish tables.
-- Added back the finetuning page, it will display hints for extending eZ publish.
+- Fixed setup to only check for existing Exponential tables.
+- Added back the finetuning page, it will display hints for extending Exponential.
 - Added finetuning check for the ImageTTFText and ImageTTFBBox functions which are
   need for texttoimage to work properly.
 

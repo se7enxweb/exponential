@@ -6,7 +6,7 @@ INI setting changes
 
 - Revamped cluster index mechanism
 
-  The cluster index system, used to serve images & binary files when running eZ Publish
+  The cluster index system, used to serve images & binary files when running Exponential
   in cluster mode, has been revamped completely. Settings are now to be placed in
   config.php, and have slightly different names (they all start with CLUSTER_, for one).
   Documentation on how to configure the new version is available online.

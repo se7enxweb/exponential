@@ -1,18 +1,18 @@
-eZ Publish 4 autoload generation
+Exponential 4 autoload generation
 ================================
 
-In eZ Publish 4 we use the PHP 5 autoload feature to load classes. This means 
+In Exponential 4 we use the PHP 5 autoload feature to load classes. This means 
 that when new classes are introduced to the system, the autoload arrays need 
 to be updated.
 
 There are several situations when a user might want to regenerate the 
 autoload-arrays:
 
-1. After upgrading eZ Publish, to recognise new classes in the eZ Publish 
+1. After upgrading Exponential, to recognise new classes in the Exponential 
 kernel
 
 2. When adding a new extension to the site, its classes must be made 
-available to eZ Publish.
+available to Exponential.
 
 Generating updated autoload arrays
 ----------------------------------

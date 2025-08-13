@@ -1,4 +1,4 @@
-eZ Publish 4.1 autoload refinement design
+Exponential 4.1 autoload refinement design
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :Author: Ole Marius Smestad
@@ -8,7 +8,7 @@ eZ Publish 4.1 autoload refinement design
 Overview
 ========
 
-The following list describes initialisation of eZ Publish with regard to
+The following list describes initialisation of Exponential with regard to
 setting up the autoload arrays.
 
 #. autoload.php is loaded
@@ -19,13 +19,13 @@ setting up the autoload arrays.
 
    - a method might be pushed on the PHP autoload method stack
    
-#. spl_autoload_register is called with the eZ Publish standard autoload
+#. spl_autoload_register is called with the Exponential standard autoload
    method
 
 The autoload method
 ===================
 
-In eZ Publish 4.1 an autoload method is provided to load classes for the core
+In Exponential 4.1 an autoload method is provided to load classes for the core
 system, ezpAutoload(). It will load the kernel classes as is done in
 the 4.0.x-branch.
 
@@ -57,7 +57,7 @@ file-permissions.
 
 The <root>/autoload/ still contains the system provided kernel autoload array,
 this is supposed to be a read-only file, and provide the system defaults,
-required to run eZ Publish.
+required to run Exponential.
 
 Changes to the autoload generator systems
 =========================================
@@ -76,7 +76,7 @@ Changes to the autoload generator systems
   a time. If there are multiple kernel overrides, a warning will be issued.
 
 - [TODO] In order to simplify the autoload generation, where users might have
-  additional folders in their eZ Publish directory, detected while be used
+  additional folders in their Exponential directory, detected while be used
   rather than blacklisting.
 
 - Change of separator symbol for directory exclusion list, from SPACE to

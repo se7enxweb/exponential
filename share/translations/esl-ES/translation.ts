@@ -3911,8 +3911,8 @@
         <translation>El alias debe redirigir a su destino</translation>
     </message>
     <message>
-        <source>With &lt;em&gt;Alias should redirect to its destination&lt;/em&gt; checked eZ Publish will redirect to the destination using a HTTP 301 response. Un-check it and the URL will stay the same &amp;#8212; no redirection will be performed.</source>
-        <translation>Con &lt;em&gt;El alias debe redirigir a su destino&lt;/em&gt; marcado eZ Publish redirigirá al destino usando uan respuesta HTTP 301. Si se desmarca la casilla, la URL será la misma &amp;#8212; no se hará ninguna redirección.</translation>
+        <source>With &lt;em&gt;Alias should redirect to its destination&lt;/em&gt; checked Exponential will redirect to the destination using a HTTP 301 response. Un-check it and the URL will stay the same &amp;#8212; no redirection will be performed.</source>
+        <translation>Con &lt;em&gt;El alias debe redirigir a su destino&lt;/em&gt; marcado Exponential redirigirá al destino usando uan respuesta HTTP 301. Si se desmarca la casilla, la URL será la misma &amp;#8212; no se hará ninguna redirección.</translation>
     </message>
     <message>
         <source>If checked the alias will start from the parent of the current node. If un-checked the aliases will start from the root of the site.</source>
@@ -4668,8 +4668,8 @@
 <context>
     <name>design/admin/dashboard/community</name>
     <message>
-        <source>What&apos;s happening in the eZ Community</source>
-        <translation>¿Qué está pasando en la eZ Community?</translation>
+        <source>What&apos;s happening in the Exponential Community</source>
+        <translation>¿Qué está pasando en la Exponential Community?</translation>
     </message>
 </context>
 <context>
@@ -4753,18 +4753,18 @@
         <translation>Tu instalación: &lt;span id=&quot;ez-version&quot;&gt;%1&lt;/span&gt;</translation>
     </message>
     <message>
-        <source>If your installation is not running eZ Publish Enterprise, it might not be up to date with the latest maintenance service packs. Contact eZ Systems.</source>
-        <translation type="obsolete">Si tu instalación no tiene eZ Publish Enterprise, puede no estar actualizada con los últimos mantenimientos. Contacta con eZ Systems.</translation>
+        <source>If your installation is not running Exponential Enterprise, it might not be up to date with the latest maintenance service packs. Contact 7x.</source>
+        <translation type="obsolete">Si tu instalación no tiene Exponential Enterprise, puede no estar actualizada con los últimos mantenimientos. Contacta con 7x.</translation>
     </message>
     <message>
-        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt; for more infomation.</source>
+        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more infomation.</source>
         <translation>Está ejecutando &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, puede que no está actualizado con las últimas resoluciones de incidencias y service packs</translation>
     </message>
     <message>
-        <source>You are using %edition, the &lt;span id=&quot;ez-publish-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of eZ Publish, built by &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;eZ Community&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If this platform is critical for your business, we strongly recommend to subscribe to the Enterprise Edition of eZ Publish. More on &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt;&apos; website.</source>
-        <translation>Está usando %edition, la versión &lt;span id=&quot;ez-publish-community-project-is-innovative-and-cutting-edge&quot;&gt;innovadora y vanguardista&lt;/span&gt; de eZ Publish, desarrollada por &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt; y la &lt;a href=&quot;%ez_community_link&quot;&gt;eZ Community&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Si esta plataforma es crítica para su negocio, le recomendamos que se suscriba a la Enterprise Edition de eZ Publish. Más información en la web de &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt;.</translation>
+        <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If this platform is critical for your business, we strongly recommend to subscribe to the Enterprise Edition of Exponential. More on &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt;&apos; website.</source>
+        <translation>Está usando %edition, la versión &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovadora y vanguardista&lt;/span&gt; de Exponential, desarrollada por &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; y la &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Si esta plataforma es crítica para su negocio, le recomendamos que se suscriba a la Enterprise Edition de Exponential. Más información en la web de &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -5043,12 +5043,12 @@
         <translation>Extensiones</translation>
     </message>
     <message>
-        <source>eZ Publish information: %version</source>
-        <translation>Información de eZ Publish: %version</translation>
+        <source>Exponential information: %version</source>
+        <translation>Información de Exponential: %version</translation>
     </message>
     <message>
-        <source>What is eZ Publish?</source>
-        <translation>¿Qué es eZ Publish?</translation>
+        <source>What is Exponential?</source>
+        <translation>¿Qué es Exponential?</translation>
     </message>
     <message>
         <source>License</source>
@@ -6835,8 +6835,8 @@ Click &quot;Next&quot; without choosing an image to continue to the next step.</
 Haz clic en &quot;Siguiente&quot; sin escoger una imagen para ir al siguiente paso.</translation>
     </message>
     <message>
-        <source>Regarding eZ Publish package &apos;%packagename&apos;</source>
-        <translation>En relación al paquete eZ Publish &apos;%packagename&apos;</translation>
+        <source>Regarding Exponential package &apos;%packagename&apos;</source>
+        <translation>En relación al paquete Exponential &apos;%packagename&apos;</translation>
     </message>
     <message>
         <source>The package can be installed on your system. Installing the package will copy files, create content classes etc., depending on the package.
@@ -6959,16 +6959,16 @@ Nota: los paquetes no serán desinstalados.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate eZ Publish Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the eZ Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;eZ Publish&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Pruebe eZ Publish Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Conviértase en miembro de la eZ Community para intercambiar conocimientos y contribuir al desarrollo&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;eZ Publish&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems AS&lt;/a&gt; y otros.</translation>
+        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
+        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Pruebe Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Conviértase en miembro de la Exponential Community para intercambiar conocimientos y contribuir al desarrollo&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; y otros.</translation>
     </message>
     <message>
         <source>Powered by &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>Funciona con &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. Para más informacion vea &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;eZ Publish&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;eZ Publish&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems AS&lt;/a&gt; y otros.</translation>
+        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
+        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; y otros.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
@@ -8281,8 +8281,8 @@ Nota: los paquetes no serán desinstalados.</translation>
         <translation>Usar el menú desplegable para elegir la función a la que quieras dar acceso.</translation>
     </message>
     <message>
-        <source>The &quot;Grant full access&quot; button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you want to limit the access method, click the &quot;Grant limited access&quot; button. Function limitation is only supported by some functions. If unsupported, eZ Publish will set up a policy with unlimited access to the selected function.</source>
-        <translation>El botón &quot;Dar acceso completo&quot; creará una política que dará acceso ilimitado a la función seleccionada del módulo que se especificó en el paso uno. Si quieres limitar el método de acceso, pulsa el botón &quot;Dar acceso limitado&quot;. La limitación de función sólo es soportada por algunas funciones. Si no es soportada, eZ publish creará una política con acceso ilimitado a la función seleccionada.</translation>
+        <source>The &quot;Grant full access&quot; button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you want to limit the access method, click the &quot;Grant limited access&quot; button. Function limitation is only supported by some functions. If unsupported, Exponential will set up a policy with unlimited access to the selected function.</source>
+        <translation>El botón &quot;Dar acceso completo&quot; creará una política que dará acceso ilimitado a la función seleccionada del módulo que se especificó en el paso uno. Si quieres limitar el método de acceso, pulsa el botón &quot;Dar acceso limitado&quot;. La limitación de función sólo es soportada por algunas funciones. Si no es soportada, Exponential creará una política con acceso ilimitado a la función seleccionada.</translation>
     </message>
     <message>
         <source>It is not possible to grant limited access to all modules at once. To grant unlimited access to all modules and their functions, go back to step one and select &quot;Grant access to all functions&quot;. To grant limited access to different functions within different modules, you must set up a collection of policies.</source>
@@ -8991,8 +8991,8 @@ Nota: los paquetes no serán desinstalados.</translation>
         <translation>Activar esta casilla de verificación si se deben suministrar también los objetos de los subnudos de la raíz.</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your web server and eZ Publish configuration.</source>
-        <translation>Usar este campo para indicar la URL base de tu sitio. Se usa para producir las URLs en la exportación, compuestas por la URL del sitio (ej. &quot;http://www.example.com/index.php&quot;) y la ruta al objeto (ej. &quot;/articles/my_article&quot;). La URL del sitio depende de tu servidor web y de la configuración del eZ Publish.</translation>
+        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your web server and Exponential configuration.</source>
+        <translation>Usar este campo para indicar la URL base de tu sitio. Se usa para producir las URLs en la exportación, compuestas por la URL del sitio (ej. &quot;http://www.example.com/index.php&quot;) y la ruta al objeto (ej. &quot;/articles/my_article&quot;). La URL del sitio depende de tu servidor web y de la configuración del Exponential.</translation>
     </message>
     <message>
         <source>Click this button to select the source node for the RSS export source. Objects of the type selected in the drop-down below published as sub items of the selected node will be included in the RSS export.</source>
@@ -9864,20 +9864,20 @@ Nota: los paquetes no serán desinstalados.</translation>
         <translation>Aviso: no es seguro actualizar sin revisar las modificaciones hechas en los siguientes archivos</translation>
     </message>
     <message>
-        <source>Before upgrading eZ Publish to a newer version, it is important to check that the current installation is ready for upgrading.</source>
-        <translation>Antes de actualizar eZ Publish a una versión más nueva, es importante asegurarse de que la instalación actual está lista para actualizar.</translation>
+        <source>Before upgrading Exponential to a newer version, it is important to check that the current installation is ready for upgrading.</source>
+        <translation>Antes de actualizar Exponential a una versión más nueva, es importante asegurarse de que la instalación actual está lista para actualizar.</translation>
     </message>
     <message>
-        <source>Remember to make a backup of the eZ Publish directory and the database before you upgrade.</source>
-        <translation>Recuerda hacer una copia de seguridad del directorio eZ Publish y de la base de datos antes de actualizar.</translation>
+        <source>Remember to make a backup of the Exponential directory and the database before you upgrade.</source>
+        <translation>Recuerda hacer una copia de seguridad del directorio Exponential y de la base de datos antes de actualizar.</translation>
     </message>
     <message>
         <source>The file consistency tool checks if you have altered any of the files that came with the current installation. Altered files may be replaced by new versions that contain bugfixes, new features, etc. Make sure that you backup and then merge your changes into the new versions of the files.</source>
         <translation>La herramienta de comprobación de consistencia de archivos verifica si se han modificado los archivos que vienen con la instalación actual. Los archivos modificados pueden ser reemplazados por versiones nuevas que contienen arreglos de fallos, nueva funcionalidades, etc. Asegurarse de hacer un backup y luego integrar sus cambios en las nuevas versiones de los archivos.</translation>
     </message>
     <message>
-        <source>The database consistency tool checks if the current database is consistent with the database schema that came with the eZ Publish distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be run in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.</source>
-        <translation>La herramienta de comprobación de base de datos verifica si la base de datos actual esta consistente con el esquema de base de datos que viene con la distribución eZ Publish. Si hay cualquier diferencia, la herramienta sugere las necesarias peticiones SQL que se deben ejecutar para tener la base de datos en un estado consistente. Por favor, ejecutar las peticiones SQL sugeridas antes de actualizar.</translation>
+        <source>The database consistency tool checks if the current database is consistent with the database schema that came with the Exponential distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be run in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.</source>
+        <translation>La herramienta de comprobación de base de datos verifica si la base de datos actual esta consistente con el esquema de base de datos que viene con la distribución Exponential. Si hay cualquier diferencia, la herramienta sugere las necesarias peticiones SQL que se deben ejecutar para tener la base de datos en un estado consistente. Por favor, ejecutar las peticiones SQL sugeridas antes de actualizar.</translation>
     </message>
     <message>
         <source>The upgrade checking tools require a lot of system resources. They may take some time to run.</source>
@@ -10258,22 +10258,22 @@ Nota: los paquetes no serán desinstalados.</translation>
         <translation>No hay base de datos esclavo en uso.</translation>
     </message>
     <message>
-        <source>eZ Publish</source>
-        <translation>eZ Publish</translation>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
     </message>
     <message>
         <source>Version</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation>Versión</translation>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">Revisión SVN</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ Publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation>Extensiones</translation>
     </message>
     <message>
@@ -10310,8 +10310,8 @@ Nota: los paquetes no serán desinstalados.</translation>
         <translation>No se pudieron detectar los módulos del servidor web.</translation>
     </message>
     <message>
-        <source>eZ Publish was unable to extract information from the web server.</source>
-        <translation>eZ Publish no pudo extraer la información desde el servidor web.</translation>
+        <source>Exponential was unable to extract information from the web server.</source>
+        <translation>Exponential no pudo extraer la información desde el servidor web.</translation>
     </message>
     <message>
         <source>Web server (hardware)</source>
@@ -10385,12 +10385,12 @@ Nota: los paquetes no serán desinstalados.</translation>
         <translation>Siguiente</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for eZ Publish easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
-        <translation>Las herramientas de desarrollo de aplicación rápida (RAD) facilitan la creación de nuevas/avanzadas funcionalidades para eZ Publish. Actualmente hay dos herramientas RAD disponibles: el asistente de operadores de plantilla y el asistente de tipo de datos. El asistente de operadores de plantilla básicamente genera un entorno de trabajo (código PHP) para un nuevo operador de plantilla. El asistente de tipo de datos genera un entorno de trabajo (código PHP) para un nuevo tipo de datos.</translation>
+        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for Exponential easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
+        <translation>Las herramientas de desarrollo de aplicación rápida (RAD) facilitan la creación de nuevas/avanzadas funcionalidades para Exponential. Actualmente hay dos herramientas RAD disponibles: el asistente de operadores de plantilla y el asistente de tipo de datos. El asistente de operadores de plantilla básicamente genera un entorno de trabajo (código PHP) para un nuevo operador de plantilla. El asistente de tipo de datos genera un entorno de trabajo (código PHP) para un nuevo tipo de datos.</translation>
     </message>
     <message>
-        <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, eZ Publish will generate a PHP framework for a new operator (which will be available for download).</source>
-        <translation>Bienvenido al asistente de operador de plantilla. Los operadores de plantilla se usan para manipular las variables de la plantilla. No obstante, pueden ser usados también para generar o recoger datos. Este asistente simplifica el proceso en varios pasos con opciones básicas. Una vez acabado, eZ Publish generará el entorno de trabajo PHP para el nuevo operador (el cual estará disponible para descargar).</translation>
+        <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, Exponential will generate a PHP framework for a new operator (which will be available for download).</source>
+        <translation>Bienvenido al asistente de operador de plantilla. Los operadores de plantilla se usan para manipular las variables de la plantilla. No obstante, pueden ser usados también para generar o recoger datos. Este asistente simplifica el proceso en varios pasos con opciones básicas. Una vez acabado, Exponential generará el entorno de trabajo PHP para el nuevo operador (el cual estará disponible para descargar).</translation>
     </message>
 </context>
 <context>
@@ -13194,8 +13194,8 @@ tu cuenta.</translation>
         <translation>Escribe una contraseña válida en este campo.</translation>
     </message>
     <message>
-        <source>Log in to the Administration Interface of eZ Publish</source>
-        <translation type="obsolete">Conectar a la Interfaz de Administración de eZ Publish</translation>
+        <source>Log in to the Administration Interface of Exponential</source>
+        <translation type="obsolete">Conectar a la Interfaz de Administración de Exponential</translation>
     </message>
     <message>
         <source>Please enter a valid username/password combination then click &quot;Log in&quot;.</source>
@@ -14641,12 +14641,12 @@ tu cuenta.</translation>
         <translation>Menos palabras clave ofrecen más resultados. Intenta reducir las palabras clave hasta que obtengas un resultado.</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag eZ Publish&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
-        <translation>Hecho con %linkStartTag eZ Publish&amp;reg;&amp;trade; Sistema de gestión de contenido open source %linkEndTag y framework de desarrollo.</translation>
+        <source>Powered by %linkStartTag Exponential&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
+        <translation>Hecho con %linkStartTag Exponential&amp;reg;&amp;trade; Sistema de gestión de contenido open source %linkEndTag y framework de desarrollo.</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag eZ Publish&amp;reg; open source content management system %linkEndTag and development framework.</source>
-        <translation>Hecho con %linkStartTag eZ Publish&amp;reg; Sistema de gestión de contenido open source %linkEndTag y framework de desarrollo.</translation>
+        <source>Powered by %linkStartTag Exponential&amp;reg; open source content management system %linkEndTag and development framework.</source>
+        <translation>Hecho con %linkStartTag Exponential&amp;reg; Sistema de gestión de contenido open source %linkEndTag y framework de desarrollo.</translation>
     </message>
     <message>
         <source>Anonymous users are not allowed to vote in this poll. Please log in.</source>
@@ -17719,8 +17719,8 @@ Ponte en contacto con esta persona por el borrador o crea uno nuevo para editarl
         <translation>La vista de versiones (versionview) no está aún soportada en PDF</translation>
     </message>
     <message>
-        <source>eZ Publish PDF export</source>
-        <translation>Exportación PDF de eZ Publish</translation>
+        <source>Exponential PDF export</source>
+        <translation>Exportación PDF de Exponential</translation>
     </message>
 </context>
 <context>
@@ -18901,12 +18901,12 @@ Ponte en contacto con esta persona por el borrador o crea uno nuevo para editarl
         <translation>Extensiones</translation>
     </message>
     <message>
-        <source>eZ Publish information: %version</source>
-        <translation>Información de eZ Publish: %version</translation>
+        <source>Exponential information: %version</source>
+        <translation>Información de Exponential: %version</translation>
     </message>
     <message>
-        <source>What is eZ Publish?</source>
-        <translation>¿Qué es eZ Publish?</translation>
+        <source>What is Exponential?</source>
+        <translation>¿Qué es Exponential?</translation>
     </message>
     <message>
         <source>License</source>
@@ -19011,12 +19011,12 @@ Gracias por tu feedback</translation>
         <translation>Filtrar</translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish administration</source>
-        <translation>Bienvenido a  la administración de eZ Publish</translation>
+        <source>Welcome to Exponential administration</source>
+        <translation>Bienvenido a  la administración de Exponential</translation>
     </message>
     <message>
-        <source>eZ Publish redirection - %url</source>
-        <translation>Redirección eZ Publish - %url</translation>
+        <source>Exponential redirection - %url</source>
+        <translation>Redirección Exponential - %url</translation>
     </message>
 </context>
 <context>
@@ -19858,8 +19858,8 @@ Nota: los paquetes no serán desinstalados.</translation>
         <translation>La eliminación de paquete fue cancelada.</translation>
     </message>
     <message>
-        <source>Regarding eZ Publish package &apos;%packagename&apos;</source>
-        <translation>En relación al paquete eZ Publish &apos;%packagename&apos;</translation>
+        <source>Regarding Exponential package &apos;%packagename&apos;</source>
+        <translation>En relación al paquete Exponential &apos;%packagename&apos;</translation>
     </message>
     <message>
         <source>The package can be installed on your system. Installing the package will copy files, create content classes etc., depending on the package.
@@ -20123,16 +20123,16 @@ También puedes borrar el paquete sin desinstalarlo de la lista de paquetes.</tr
         <translation>Toda la documentación de referencia ha sido hecha con %doxygenurl</translation>
     </message>
     <message>
-        <source>The Reference Documentation for eZ Publish consists of multiple sections which
+        <source>The Reference Documentation for Exponential consists of multiple sections which
 each have a different view on the documentation. The sections can be accessed at
 menu on the top.</source>
-        <translation>La documentación de referencia para eZ Publish consiste en múltiples secciones que
+        <translation>La documentación de referencia para Exponential consiste en múltiples secciones que
 tienen una vista diferente de la documentación cada una. Las secciones son accesibles en
 el menú superior.</translation>
     </message>
     <message>
-        <source>The documentation will give an overview of the API of eZ Publish.</source>
-        <translation>La documentación ofrece un vistazo de la API de eZ Publish.</translation>
+        <source>The documentation will give an overview of the API of Exponential.</source>
+        <translation>La documentación ofrece un vistazo de la API de Exponential.</translation>
     </message>
 </context>
 <context>
@@ -20616,8 +20616,8 @@ el menú superior.</translation>
         <translation>Activar esta casilla de verificación si se deben suministrar también los objetos de los subnudos de la raíz.</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Web server and eZ Publish configuration.</source>
-        <translation>Usar este campo para indicar la URL base de tu sitio. Se usa para producir las URLs en la exportación, compuestas por la URL del sitio (ej. &quot;http://www.example.com/index.php&quot;) y la ruta al objeto (ej. &quot;/articles/my_article&quot;). La URL del sitio depende de tu servidor Web y de la configuración del eZ Publish.</translation>
+        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Web server and Exponential configuration.</source>
+        <translation>Usar este campo para indicar la URL base de tu sitio. Se usa para producir las URLs en la exportación, compuestas por la URL del sitio (ej. &quot;http://www.example.com/index.php&quot;) y la ruta al objeto (ej. &quot;/articles/my_article&quot;). La URL del sitio depende de tu servidor Web y de la configuración del Exponential.</translation>
     </message>
     <message>
         <source>Category</source>
@@ -20817,8 +20817,8 @@ el menú superior.</translation>
         <translation>Sobre zonas de navegación</translation>
     </message>
     <message>
-        <source>The eZ Publish Administration Interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
-        <translation>La Interfaz de Administración de eZ Publish está dividida en zonas de navegación. Este es un medio de agrupar diferentes áreas de la administración. Selecciona la zona de navegación que debe estar activa cuando estés mirando esta página.</translation>
+        <source>The Exponential Administration Interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
+        <translation>La Interfaz de Administración de Exponential está dividida en zonas de navegación. Este es un medio de agrupar diferentes áreas de la administración. Selecciona la zona de navegación que debe estar activa cuando estés mirando esta página.</translation>
     </message>
 </context>
 <context>
@@ -21530,17 +21530,17 @@ Usando %nombre del operador puedes...</translation>
     </message>
     <message>
         <source>Version</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation>Versión</translation>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">SVN revisión</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ Publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation>Extensiones</translation>
     </message>
     <message>
@@ -21549,8 +21549,8 @@ Usando %nombre del operador puedes...</translation>
         <translation>Servidor web</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for eZ Publish.</source>
-        <translation>Las herramientas de desarrollo de aplicación rápida (RAD) te ayudarán a un arranque más fácil creando una nueva fiuncionalidad para eZ Publish.</translation>
+        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for Exponential.</source>
+        <translation>Las herramientas de desarrollo de aplicación rápida (RAD) te ayudarán a un arranque más fácil creando una nueva fiuncionalidad para Exponential.</translation>
     </message>
     <message>
         <source>Warning: it is not safe to upgrade without checking the modifications done to the following files </source>
@@ -22849,89 +22849,89 @@ Queda la posibilidad de cambiar esas configuraciones más adelante.</translation
         <translation>Por favor elige un paquete de sitio que quieras probar o en el que te quieras basar.</translation>
     </message>
     <message>
-        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of eZ Publish</source>
-        <translation>Si quieres puedes dejar que la instalación añada datos de prueba en tu base de datos, estos datos son una demostración de las capacidades de eZ Publish</translation>
+        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential</source>
+        <translation>Si quieres puedes dejar que la instalación añada datos de prueba en tu base de datos, estos datos son una demostración de las capacidades de Exponential</translation>
     </message>
     <message>
-        <source>The setup will not do an upgrade from older eZ Publish versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing eZ Publish 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
-        <translation type="obsolete">La configuración no hace actualizaciones desde otras versiones antiguas de eZ Publish (como 2.2.7) si se deja tal como está. Esto solo le importa a la gente que tiene datos existentes que no quiere perder. Si tienes datos de eZ Publish 3.0 existentes (tales como una versión RC) has de saltarte la inicialización de la base de datos. No obstante, puedes hacer una actualización manual.</translation>
+        <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
+        <translation type="obsolete">La configuración no hace actualizaciones desde otras versiones antiguas de Exponential (como 2.2.7) si se deja tal como está. Esto solo le importa a la gente que tiene datos existentes que no quiere perder. Si tienes datos de Exponential 3.0 existentes (tales como una versión RC) has de saltarte la inicialización de la base de datos. No obstante, puedes hacer una actualización manual.</translation>
     </message>
     <message>
         <source>It can take some time to initialize the database so please be patient and wait until the new page is finished.</source>
         <translation>Puede que la inicialización de la base de datos tome algo de tiempo, así que por favor, sé paciente y espera hasta que la nueva página haya finalizado.</translation>
     </message>
     <message>
-        <source>eZ Publish supports both MySQL and PostgreSQL.</source>
-        <translation>eZ Publish tiene soporte para MySQL y para PostgreSQL.</translation>
+        <source>Exponential supports both MySQL and PostgreSQL.</source>
+        <translation>Exponential tiene soporte para MySQL y para PostgreSQL.</translation>
     </message>
     <message>
-        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in eZ Publish.</source>
-        <translation>Para el soporte unicode en eZ Publish se requiere una versión igual o mayor que PostgreSQL o MySQL 4.1.</translation>
+        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>Para el soporte unicode en Exponential se requiere una versión igual o mayor que PostgreSQL o MySQL 4.1.</translation>
     </message>
     <message>
-        <source>More information about eZ Publish and unicode support can be found %1.</source>
-        <translation>Puedes encontrar más información sobre eZ Publish y el soporte unicode en %1.</translation>
+        <source>More information about Exponential and unicode support can be found %1.</source>
+        <translation>Puedes encontrar más información sobre Exponential y el soporte unicode en %1.</translation>
     </message>
     <message>
         <source>The database was successfully initialized. You are now ready for some post configuration of the site.</source>
         <translation>La base de datos se inicializó correctamente. Ahora estás listo para configurar el sitio.</translation>
     </message>
     <message>
-        <source>If you don&apos;t have access to a database, you should obtain access now. eZ Publish is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
-        <translation>Si no tienes acceso a la base de datos, lo puedes obtener ahora. eZ Publish es capaz de hacer funcionar diferentes sitios. Cada sitio necesita su propia base de datos, lo que quiere decir que tienes que crear diversas bases de datos si quieres arrancar diferentes sitios. Consulta el manual de usuario de la base de datos si no estás seguro de cómo se crea una base de datos.</translation>
+        <source>If you don&apos;t have access to a database, you should obtain access now. Exponential is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
+        <translation>Si no tienes acceso a la base de datos, lo puedes obtener ahora. Exponential es capaz de hacer funcionar diferentes sitios. Cada sitio necesita su propia base de datos, lo que quiere decir que tienes que crear diversas bases de datos si quieres arrancar diferentes sitios. Consulta el manual de usuario de la base de datos si no estás seguro de cómo se crea una base de datos.</translation>
     </message>
     <message>
-        <source>This section is used to configure how eZ Publish delivers its outgoing Email.</source>
-        <translation>Esta sección se usa para configurar cómo eZ Publish entregará su correo saliente.</translation>
+        <source>This section is used to configure how Exponential delivers its outgoing Email.</source>
+        <translation>Esta sección se usa para configurar cómo Exponential entregará su correo saliente.</translation>
     </message>
     <message>
-        <source>The eZ Publish system uses email to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
-        <translation>El sistema de eZ Publish utiliza el email para enviar avisos importantes como por ejemplo el registro de un usuario y la aprobación de contenido. En Linux/UNIX: intenta usar sendmail. En Windows: usa un servidor SMTP.</translation>
+        <source>The Exponential system uses email to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
+        <translation>El sistema de Exponential utiliza el email para enviar avisos importantes como por ejemplo el registro de un usuario y la aprobación de contenido. En Linux/UNIX: intenta usar sendmail. En Windows: usa un servidor SMTP.</translation>
     </message>
     <message>
-        <source>eZ Publish has been installed with your select site setup. You will find the username mentioned in the details below.</source>
-        <translation>eZ Publish ha sido instalado con los siguientes sitios. Encontrarás el nombre de usuario mencionado para cada sitio en los detalles más abajo.</translation>
+        <source>Exponential has been installed with your select site setup. You will find the username mentioned in the details below.</source>
+        <translation>Exponential ha sido instalado con los siguientes sitios. Encontrarás el nombre de usuario mencionado para cada sitio en los detalles más abajo.</translation>
     </message>
     <message>
-        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because eZ Publish prepares the site for your machine.</source>
-        <translation>La primera vez que se accede a la parte pública o de administración del sitio, se va a necesitar mucho tiempo (de 30 hasta 60 segundos). Esto ocurre porqué eZ Publish prepara el sito para tu máquina.</translation>
+        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because Exponential prepares the site for your machine.</source>
+        <translation>La primera vez que se accede a la parte pública o de administración del sitio, se va a necesitar mucho tiempo (de 30 hasta 60 segundos). Esto ocurre porqué Exponential prepara el sito para tu máquina.</translation>
     </message>
     <message>
         <source>Tip: Store this page as an html file by clicking Save-As in your web browser menu, alternatively you may write down the URLs for your sites.</source>
         <translation>Consejo: Almacena esta página como fichero HTML haciendo clic en la opción &quot;Guardar como&quot; (Save as) del menú de tu navegador.</translation>
     </message>
     <message>
-        <source>eZ Publish</source>
-        <comment>eZ Publish 3 link</comment>
-        <translation type="obsolete">eZ Publish</translation>
+        <source>Exponential</source>
+        <comment>Exponential 3 link</comment>
+        <translation type="obsolete">Exponential</translation>
     </message>
     <message>
-        <source>Congratulations, eZ Publish should now run on your system.</source>
-        <translation>Felicidades, eZ Publish puede funcionar ahora en tu sistema.</translation>
+        <source>Congratulations, Exponential should now run on your system.</source>
+        <translation>Felicidades, Exponential puede funcionar ahora en tu sistema.</translation>
     </message>
     <message>
-        <source>If you need help with eZ Publish, you can go to %ezlink and get help in the forums.
+        <source>If you need help with Exponential, you can go to %ezlink and get help in the forums.
   If you find a bug (error), please go to %buglink and report it.
-  With your help we can fix the errors eZ Publish might have and implement new features.</source>
-        <translation>Si necesitas ayuda con eZ Publish, puedes ir a %enlace a ez y obtenerla en los foros.
+  With your help we can fix the errors Exponential might have and implement new features.</source>
+        <translation>Si necesitas ayuda con Exponential, puedes ir a %enlace a ez y obtenerla en los foros.
 Si encuentras algún error, por favor, ve a %enlace de error y repórtalo.
-Con tu ayuda podemos solucionar los errores en eZ Publish e implementar nuevas funcionalidades.</translation>
+Con tu ayuda podemos solucionar los errores en Exponential e implementar nuevas funcionalidades.</translation>
     </message>
     <message>
-        <source>eZ Publish bug reports</source>
-        <translation>aviso de fallos de eZ Publish</translation>
+        <source>Exponential bug reports</source>
+        <translation>aviso de fallos de Exponential</translation>
     </message>
     <message>
-        <source>eZ Publish website</source>
-        <translation>sitio web de eZ Publish</translation>
+        <source>Exponential website</source>
+        <translation>sitio web de Exponential</translation>
     </message>
     <message>
         <source>Choose only languages that use similar characters, for instance: English and Norwegian will work together while English and Russian will not work.</source>
         <translation>Elige tan solo lenguas que usen caracteres similares, por ejemplo: el Inglés y el Noruego pueden trabajar juntos mientras que el Inglés y el Ruso no.</translation>
     </message>
     <message>
-        <source>eZ Publish supports multiple languages.</source>
-        <translation>eZ Publish soporta múltiples idiomas.</translation>
+        <source>Exponential supports multiple languages.</source>
+        <translation>Exponential soporta múltiples idiomas.</translation>
     </message>
     <message>
         <source>The languages you have chose for site do not match languages in chosen packages. To resolve conflict please select language mapping:</source>
@@ -22958,20 +22958,20 @@ Con tu ayuda podemos solucionar los errores en eZ Publish e implementar nuevas f
         <translation>Ahora puedes seleccionar una variación del idioma que has escogido. Una variación hace pequeños ajustes en el idioma, como añadir el soporte al euro o los cambios en el formato de fecha. El uso de estas variaciones es opcional, así que puedes ahorrarte, si quieres, este paso. Una vez hecho, haz clic en el</translation>
     </message>
     <message>
-        <source>If you want, you can register this installation by sending some information to eZ Systems. No confidential data will be transmitted and eZ Systems will not use or sell your details for unsolicited emails.</source>
-        <translation type="obsolete">Si quieres, puedes registrar esta instalación enviando alguna información a eZ Systems. No se transmitirá ningún dato confidencial y eZ Systems no usará o venderá tus detalles para correos no solicitados.</translation>
+        <source>If you want, you can register this installation by sending some information to 7x. No confidential data will be transmitted and 7x will not use or sell your details for unsolicited emails.</source>
+        <translation type="obsolete">Si quieres, puedes registrar esta instalación enviando alguna información a 7x. No se transmitirá ningún dato confidencial y 7x no usará o venderá tus detalles para correos no solicitados.</translation>
     </message>
     <message>
         <source>If you want, you can also add some comments, which will be included in the registration email.</source>
         <translation type="obsolete">Si quieres, también puedes añadir algunos comentarios, serán incluidos en el email de registro.</translation>
     </message>
     <message>
-        <source>By sending registration the following data will be sent to eZ Systems</source>
-        <translation type="obsolete">Enviando el registro los siguientes datos serán enviados a eZ Systems</translation>
+        <source>By sending registration the following data will be sent to 7x</source>
+        <translation type="obsolete">Enviando el registro los siguientes datos serán enviados a 7x</translation>
     </message>
     <message>
-        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run eZ Publish in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
-        <translation>Tu sitio no está funcionando en modo de servidor virtual. Este es unn modo inseguro. Es recomendable hacer funcionar eZ Publish en un modo de servidor virtual. Si no tienes la posibilidad de usar este modo, sigue las instrucciones de abajo para sabre cómo instalar un fichero .htacces. Un fichero .htacces pide al servidor web que restrinja el acceso a determinados ficheros.</translation>
+        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run Exponential in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
+        <translation>Tu sitio no está funcionando en modo de servidor virtual. Este es unn modo inseguro. Es recomendable hacer funcionar Exponential en un modo de servidor virtual. Si no tienes la posibilidad de usar este modo, sigue las instrucciones de abajo para sabre cómo instalar un fichero .htacces. Un fichero .htacces pide al servidor web que restrinja el acceso a determinados ficheros.</translation>
     </message>
     <message>
         <source>If you have shell access, you can run the following commands.</source>
@@ -23008,32 +23008,32 @@ Esta funcionalidad queda también disponible más adelante desde la Interfaz de 
         <translation>Por favor elige uno o más sitios de demostración que quieras probar o en los que te quieras basar. Usa Plain si quieres empezar desde cero.</translation>
     </message>
     <message>
-        <source>These issues have to be resolved/fixed, or else, eZ Publish will not function properly.</source>
-        <translation>Estos temas se han de resolver o solucionar. Si no, eZ Publish no funcionará correctamente.</translation>
+        <source>These issues have to be resolved/fixed, or else, Exponential will not function properly.</source>
+        <translation>Estos temas se han de resolver o solucionar. Si no, Exponential no funcionará correctamente.</translation>
     </message>
     <message>
-        <source>These issues do not need to be resolved/fixed. eZ Publish will function properly without them.</source>
-        <translation>Esos temas no necesitan estar arreglados. eZ Publish funcionará correctamente sin ellos.</translation>
+        <source>These issues do not need to be resolved/fixed. Exponential will function properly without them.</source>
+        <translation>Esos temas no necesitan estar arreglados. Exponential funcionará correctamente sin ellos.</translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish %1</source>
-        <translation type="obsolete">Bienvenido a eZ Publish %1</translation>
+        <source>Welcome to Exponential %1</source>
+        <translation type="obsolete">Bienvenido a Exponential %1</translation>
     </message>
     <message>
-        <source>Welcome to the eZ Publish content management system and development framework. This wizard will help you set up eZ Publish.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
-        <translation>Bienvenido en el sistema de gestión de contenio y en el framework de desarrollo eZ Publish. Este asistente le va a ayudar a configurar eZ Publish.&lt;br&gt;Su sistema no es óptimo, si quiere puede hacer click en el botón &lt;i&gt;Ajuste preciso&lt;/i&gt;. Le enseñará unos trucos para arreglar esos temas.&lt;br/&gt; Haz click en &lt;i&gt;Siguiente&lt;/i&gt; para seguir sin el ajuste preciso.</translation>
+        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
+        <translation>Bienvenido en el sistema de gestión de contenio y en el framework de desarrollo Exponential. Este asistente le va a ayudar a configurar Exponential.&lt;br&gt;Su sistema no es óptimo, si quiere puede hacer click en el botón &lt;i&gt;Ajuste preciso&lt;/i&gt;. Le enseñará unos trucos para arreglar esos temas.&lt;br/&gt; Haz click en &lt;i&gt;Siguiente&lt;/i&gt; para seguir sin el ajuste preciso.</translation>
     </message>
     <message>
-        <source>Welcome to the eZ Publish content management system and development framework. This wizard will help you set up eZ Publish.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
-        <translation>Bienvenido/a al sistema de contenidos y marco de desarrollo eZ Publish. Este asistente te ayudará a configurar eZ Publish. &lt;br&gt;Haz clic en &lt;i&gt;Siguiente&lt;/i&gt; para continuar.</translation>
+        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
+        <translation>Bienvenido/a al sistema de contenidos y marco de desarrollo Exponential. Este asistente te ayudará a configurar Exponential. &lt;br&gt;Haz clic en &lt;i&gt;Siguiente&lt;/i&gt; para continuar.</translation>
     </message>
     <message>
         <source>The selected user has not got access to any databases. Change user or create a database for the user.</source>
         <translation>El usuario seleccionado no tiene acceso a ninguna base de datos. Cambia el usuario o crea una base de datos para el usuario.</translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; procedure is not available in your database, you cannot run eZ Publish without this. Visit the FAQ for more information.</source>
-        <translation type="obsolete">El procedimiento &apos;digest&apos; no está disponible en su base de datos. No se puede usar eZ Publish sin esta funcionalidad. Mirar las FAQ para obtener más información.</translation>
+        <source>The &apos;digest&apos; procedure is not available in your database, you cannot run Exponential without this. Visit the FAQ for more information.</source>
+        <translation type="obsolete">El procedimiento &apos;digest&apos; no está disponible en su base de datos. No se puede usar Exponential sin esta funcionalidad. Mirar las FAQ para obtener más información.</translation>
     </message>
     <message>
         <source>No packages chosen.</source>
@@ -23044,8 +23044,8 @@ Esta funcionalidad queda también disponible más adelante desde la Interfaz de 
         <translation>Ninguna plantilla seleccionada.</translation>
     </message>
     <message>
-        <source>Uploaded file is not an eZ Publish package</source>
-        <translation>El archivo subido no es un paquete eZ Publish</translation>
+        <source>Uploaded file is not an Exponential package</source>
+        <translation>El archivo subido no es un paquete Exponential</translation>
     </message>
     <message>
         <source>No site package chosen.</source>
@@ -23056,8 +23056,8 @@ Esta funcionalidad queda también disponible más adelante desde la Interfaz de 
         <translation>Ha fallado la recogida de la lista remota de paquetes de sitio. Puedes cargar los paquetes manualmente.</translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish</source>
-        <translation>Bienvenido a eZ Publish</translation>
+        <source>Welcome to Exponential</source>
+        <translation>Bienvenido a Exponential</translation>
     </message>
     <message>
         <source>If you think you have fixed the errors you can try then click the &quot;Retry&quot; button.</source>
@@ -23088,29 +23088,29 @@ Esta funcionalidad queda también disponible más adelante desde la Interfaz de 
         <translation>Selecciona tu idioma y entonces clica el</translation>
     </message>
     <message>
-        <source>This data will help to improve future releases of eZ Publish.</source>
-        <translation type="obsolete">Esta información nos ayudará a mejorar nuevas versiones de eZ Publish.</translation>
+        <source>This data will help to improve future releases of Exponential.</source>
+        <translation type="obsolete">Esta información nos ayudará a mejorar nuevas versiones de Exponential.</translation>
     </message>
     <message>
         <source>The problems are usually file-system related and can be easily fixed by copy / paste / running the suggested commands in a system shell.</source>
         <translation>Los problemas están habitualmente relacionados con el sistema de archivos y se pueden solucionar con un corta y pega los comandos sugeridos en el sistema de intérprete de comandos.</translation>
     </message>
     <message>
-        <source>Information about how to set up eZ Publish manually is available %1.</source>
-        <translation>La información sobre como configurar manualmente eZ Publish está disponible en %1.</translation>
+        <source>Information about how to set up Exponential manually is available %1.</source>
+        <translation>La información sobre como configurar manualmente Exponential está disponible en %1.</translation>
     </message>
     <message>
-        <source>The setup will not do an upgrade from older eZ Publish versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing eZ Publish 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
-        <translation>La configuración no hace actualizaciones desde otras versiones antiguas de eZ Publish (como 2.2.7) si se deja tal como está. Esto solo le importa a la gente que tiene datos existentes que no quiere perder. Si tienes datos de eZ Publish 4.0 existentes (tales como una versión RC) has de saltarte la inicialización de la base de datos. No obstante, puedes hacer una actualización manual.</translation>
+        <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
+        <translation>La configuración no hace actualizaciones desde otras versiones antiguas de Exponential (como 2.2.7) si se deja tal como está. Esto solo le importa a la gente que tiene datos existentes que no quiere perder. Si tienes datos de Exponential 4.0 existentes (tales como una versión RC) has de saltarte la inicialización de la base de datos. No obstante, puedes hacer una actualización manual.</translation>
     </message>
     <message>
-        <source>eZ Publish</source>
-        <comment>eZ Publish link</comment>
-        <translation>eZ Publish</translation>
+        <source>Exponential</source>
+        <comment>Exponential link</comment>
+        <translation>Exponential</translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; function is not available in your database, you cannot run eZ Publish without this. See the documentation for more information.</source>
-        <translation>La función &apos;recopilación&apos; no está disponible en tu base de datos, no puedes utilizar eZ Publish sin ella. Ver la documentación para más información.</translation>
+        <source>The &apos;digest&apos; function is not available in your database, you cannot run Exponential without this. See the documentation for more information.</source>
+        <translation>La función &apos;recopilación&apos; no está disponible en tu base de datos, no puedes utilizar Exponential sin ella. Ver la documentación para más información.</translation>
     </message>
     <message>
         <source>MySQL support was detected on your system. Please choose the database driver you would like to use.</source>
@@ -23161,36 +23161,36 @@ Esta funcionalidad queda también disponible más adelante desde la Interfaz de 
         <translation>¡El Software Open source no es nada sin una comunidad activa!</translation>
     </message>
     <message>
-        <source>&lt;p&gt;If you need to share knowledge, exchange tips with developers or simply find some improvement tricks, the eZ Community is the place to go.&lt;/p&gt;
+        <source>&lt;p&gt;If you need to share knowledge, exchange tips with developers or simply find some improvement tricks, the Exponential Community is the place to go.&lt;/p&gt;
 
 &lt;p&gt;
 How do you access it?&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Go on &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;eZ Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Go on &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;Exponential Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Click on Register (top of the page) and create your profile&lt;/li&gt;
 &lt;li&gt;Here you can check out the &lt;a href=&quot;http://share.ez.no/blogs&quot;&gt;blog posts&lt;/a&gt;,
     &lt;a href=&quot;http://share.ez.no/events&quot;&gt;events&lt;/a&gt;, &lt;a href=&quot;http://share.ez.no/members-partners/find-a-partner&quot;&gt;partners&lt;/a&gt;...&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;
 &lt;p&gt;We<byte value="x19"/>re looking forward to seeing what you share with the Community!&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Si quiere compartir conocimiento, intercambiar ideas con otros desarrolladores o simplemente encontrar algunos trucos para mejorar su aplicación, la eZ Community es el sitio al que ir.&lt;/p&gt;
+        <translation>&lt;p&gt;Si quiere compartir conocimiento, intercambiar ideas con otros desarrolladores o simplemente encontrar algunos trucos para mejorar su aplicación, la Exponential Community es el sitio al que ir.&lt;/p&gt;
 
 &lt;p&gt;
 ¿Cómo puede acceder a él?&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Vaya a &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;eZ Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Vaya a &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;Exponential Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Haga click en Register (parte superior de la página) y cree su perfil&lt;/li&gt;
 &lt;li&gt;Aquí puede ver los &lt;a href=&quot;http://share.ez.no/blogs&quot;&gt;artículos de los blogs&lt;/a&gt;,
     &lt;a href=&quot;http://share.ez.no/events&quot;&gt;eventos&lt;/a&gt;, &lt;a href=&quot;http://share.ez.no/members-partners/find-a-partner&quot;&gt;compañías asociadas&lt;/a&gt;...&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;¡Estamos ansiosos por ver lo que compartirá con la eZ Community!&lt;/p&gt;</translation>
+&lt;p&gt;¡Estamos ansiosos por ver lo que compartirá con la Exponential Community!&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>Discover the eZ Publish Platform forums</source>
-        <translation>Descubra los foros de la plataforma eZ Publish</translation>
+        <source>Discover the Exponential Platform forums</source>
+        <translation>Descubra los foros de la plataforma Exponential</translation>
     </message>
     <message>
-        <source>eZ Publish 5 platform</source>
-        <translation>Plataforma eZ Publish 5</translation>
+        <source>Exponential 5 platform</source>
+        <translation>Plataforma Exponential 5</translation>
     </message>
     <message>
         <source>Installation &amp; configuration</source>
@@ -23724,42 +23724,42 @@ Esto supone un problema de seguridad y debe ser cambiado a otro directorio tempo
         <translation>Los directorios afectados (archivos) son: %dir_list</translation>
     </message>
     <message>
-        <source>eZ Publish cannot create some important directories, because there are an files instead of these directories in the same places with the same names.
+        <source>Exponential cannot create some important directories, because there are an files instead of these directories in the same places with the same names.
 You should replace these files with appropriate directories and give necessary permissions to them.
-Without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish no puede crear algunos directorios importantes porque hay archivos en su lugar con el mismo nombre.
+Without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential no puede crear algunos directorios importantes porque hay archivos en su lugar con el mismo nombre.
 Deberías reemplazar esos archivos por los directorios apropiados y darles los permisos necesarios.
-Sin estos cambios la instalación no puede finalizar y fallarán algunas partes de eZ Publish.</translation>
+Sin estos cambios la instalación no puede finalizar y fallarán algunas partes de Exponential.</translation>
     </message>
     <message>
-        <source>If you&apos;re running apache 1.3, eZ Publish will not run in CGI mode.</source>
-        <translation type="obsolete">Si estás usando apache 1.3, eZ Publish no funcionará en modo CGI.</translation>
+        <source>If you&apos;re running apache 1.3, Exponential will not run in CGI mode.</source>
+        <translation type="obsolete">Si estás usando apache 1.3, Exponential no funcionará en modo CGI.</translation>
     </message>
     <message>
-        <source>Your PHP does not have support for all databases that eZ Publish support.</source>
-        <translation>Tu PHP no tiene soporte para todas las bases de datos que soporta eZ Publish.</translation>
+        <source>Your PHP does not have support for all databases that Exponential support.</source>
+        <translation>Tu PHP no tiene soporte para todas las bases de datos que soporta Exponential.</translation>
     </message>
     <message>
-        <source>Although eZ Publish will work without it, it might be that you want to have support for this database.</source>
-        <translation>Aunque eZ Publish funcionará sin ella, seguramente quieres soporte para esta base de datos.</translation>
+        <source>Although Exponential will work without it, it might be that you want to have support for this database.</source>
+        <translation>Aunque Exponential funcionará sin ella, seguramente quieres soporte para esta base de datos.</translation>
     </message>
     <message>
-        <source>No supported database handlers were found. eZ Publish requires a database to store it&apos;s data, without one the system will fail.</source>
-        <translation>No se encontraron los procesadores de las base de datos soportada. eZ Publish requiere una base de datos para almacenar sus datos, sin la cula el sistema fallará.</translation>
+        <source>No supported database handlers were found. Exponential requires a database to store it&apos;s data, without one the system will fail.</source>
+        <translation>No se encontraron los procesadores de las base de datos soportada. Exponential requiere una base de datos para almacenar sus datos, sin la cula el sistema fallará.</translation>
     </message>
     <message>
-        <source>eZ Publish cannot write to some important directories, without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish no puede escribir algunos directorios importantes, sin ellos, la configuración no puede finalizarse y partes del eZ Publish podrían fallar.</translation>
+        <source>Exponential cannot write to some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential no puede escribir algunos directorios importantes, sin ellos, la configuración no puede finalizarse y partes del Exponential podrían fallar.</translation>
     </message>
     <message>
         <source>These shell commands will give proper permission to the web server.</source>
         <translation>Estos comandos de consola darán los permisos necesarios al servidor web.</translation>
     </message>
     <message>
-        <source>eZ Publish could not detect the user and group of the web server.
+        <source>Exponential could not detect the user and group of the web server.
 If you know the user and group of the web server it is recommended to change the ownership of the files to match this user and group.
 To do this you need to change the %chown commands under Alternative shell commands.</source>
-        <translation>eZ Publish no pudo detectar el usuario o grupo del servidor web.
+        <translation>Exponential no pudo detectar el usuario o grupo del servidor web.
 Si sabes el usuario y grupo del servidor web es recomendable que cambies la propiedad de los ficheros para que coincidan con este usuario y grupo.
 Para hacer esto tienes que cambiar los comandos %chown en Comandos de consola alternativos.</translation>
     </message>
@@ -23772,38 +23772,38 @@ Para hacer esto tienes que cambiar los comandos %chown en Comandos de consola al
         <translation>El %user_expr tiene que ser cambiado por el nombre de usuario y el nombre de grupo del servidor web.</translation>
     </message>
     <message>
-        <source>eZ Publish cannot create some important directories, without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish no puede crear algunos directorios importantes, sin ellos la instalación no puede finalizar y fallarán algunas partes de eZ Publish.</translation>
+        <source>Exponential cannot create some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential no puede crear algunos directorios importantes, sin ellos la instalación no puede finalizar y fallarán algunas partes de Exponential.</translation>
     </message>
     <message>
-        <source>Insufficient execution time allowed to install eZ Publish</source>
-        <translation>Tiempo permitido insuficiente para instalar eZ Publish</translation>
+        <source>Insufficient execution time allowed to install Exponential</source>
+        <translation>Tiempo permitido insuficiente para instalar Exponential</translation>
     </message>
     <message>
-        <source>eZ Publish will not work correctly with a execution time limit of %1.</source>
-        <translation>eZ Publish no funcionará correctamente con un tiempo límite de ejecución de %1.</translation>
+        <source>Exponential will not work correctly with a execution time limit of %1.</source>
+        <translation>Exponential no funcionará correctamente con un tiempo límite de ejecución de %1.</translation>
     </message>
     <message>
-        <source>If you are running eZ Publish in a shared host environment, contant your ISP to perform the changes</source>
-        <translation>Si estás haciendo funcionar eZ Publish en un entorno compartido, ponte en contacto con tu ISP para efectuar cambios</translation>
+        <source>If you are running Exponential in a shared host environment, contant your ISP to perform the changes</source>
+        <translation>Si estás haciendo funcionar Exponential en un entorno compartido, ponte en contacto con tu ISP para efectuar cambios</translation>
     </message>
     <message>
-        <source>File uploading is not enabled which means that it&apos;s impossible for eZ Publish to handle file uploading. All other parts of eZ Publish will still work fine but it&apos;s recommended to enable file uploads.</source>
-        <translation>La carga de ficheros no está habilitada, por lo que eZ Publish no puede manipularla. El resto de partes de eZ Publish funcionará correctamente, pero es recomendable que actives la carga de ficheros.</translation>
+        <source>File uploading is not enabled which means that it&apos;s impossible for Exponential to handle file uploading. All other parts of Exponential will still work fine but it&apos;s recommended to enable file uploads.</source>
+        <translation>La carga de ficheros no está habilitada, por lo que Exponential no puede manipularla. El resto de partes de Exponential funcionará correctamente, pero es recomendable que actives la carga de ficheros.</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to eZ Publish.</source>
-        <translation>El directorio PHP para subir %upload_dir no existe o no es accesible, sin este directorio no podrás subir archivos o imágenes a eZ Publish.</translation>
+        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to Exponential.</source>
+        <translation>El directorio PHP para subir %upload_dir no existe o no es accesible, sin este directorio no podrás subir archivos o imágenes a Exponential.</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to eZ Publish.</source>
-        <translation>No se puede escribir en el directorio PHP para subir %upload_dir. Esto quiere decir que será imposible subir archivos o imágenes a eZ Publish.</translation>
+        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to Exponential.</source>
+        <translation>No se puede escribir en el directorio PHP para subir %upload_dir. Esto quiere decir que será imposible subir archivos o imágenes a Exponential.</translation>
     </message>
     <message>
-        <source>eZ Publish could not detect the user and group of the web server.
+        <source>Exponential could not detect the user and group of the web server.
 If you know the user and group of the web server it is recommended to change the ownership of the upload directory to match this user and group.
 To do this you need to change the %chown commands under Alternative shell commands.</source>
-        <translation>eZ Publish no pudo detectar el usuario y grupo del servidor web.
+        <translation>Exponential no pudo detectar el usuario y grupo del servidor web.
 Si sabes el usuario y grupo del servidor web, es recomendable que cambies la propiedad del directorio de subida para que coincida con este usuario y grupo.
 Para hacer esto necesitas cambiar los comandos %chown en comandos de consola alternativa.</translation>
     </message>
@@ -23812,76 +23812,76 @@ Para hacer esto necesitas cambiar los comandos %chown en comandos de consola alt
         <translation>Si sabes el usuario y grupo del servidor web puedes probar este comando. Cambia apache:apache por el usuario y grupo.</translation>
     </message>
     <message>
-        <source>No image conversion capabilities was detected, this means that eZ Publish cannot scale any images or detect their type. This is vital functionality in eZ Publish and must be supported.</source>
-        <translation>No se han detectado capacidades de conversión de imágenes, lo que significa que eZ Publish no puede escalarlas o detectar su tipo. Esta es una funcionalidad vital en eZ Publish y debe de ser soportada.</translation>
+        <source>No image conversion capabilities was detected, this means that Exponential cannot scale any images or detect their type. This is vital functionality in Exponential and must be supported.</source>
+        <translation>No se han detectado capacidades de conversión de imágenes, lo que significa que Exponential no puede escalarlas o detectar su tipo. Esta es una funcionalidad vital en Exponential y debe de ser soportada.</translation>
     </message>
     <message>
-        <source>The imagegd2 extension is not available to eZ Publish. Without it eZ Publish will only be able to do conversion using ImageMagick and the</source>
-        <translation>La extensión imagegd2 no esta disponible. Sin ella, eZ Publish solo podrá hacer las converciones utilizando ImageMagick y el</translation>
+        <source>The imagegd2 extension is not available to Exponential. Without it Exponential will only be able to do conversion using ImageMagick and the</source>
+        <translation>La extensión imagegd2 no esta disponible. Sin ella, Exponential solo podrá hacer las converciones utilizando ImageMagick y el</translation>
     </message>
     <message>
-        <source>Future releases of eZ Publish will have more advanced image support by using the imagegd extension.</source>
-        <translation>Las próximas versiones de eZ Publish tendrán más soporte avanzado para imágenes con el uso de la extensión de imágenes GD.</translation>
+        <source>Future releases of Exponential will have more advanced image support by using the imagegd extension.</source>
+        <translation>Las próximas versiones de Exponential tendrán más soporte avanzado para imágenes con el uso de la extensión de imágenes GD.</translation>
     </message>
     <message>
-        <source>The ImageMagick program is not available to eZ Publish. Without it eZ Publish will not be able to do image conversion unless the imagegd extension is available.</source>
-        <translation>El programa ImageMagick no está disponible en eZ Publish. Sin ella, eZ Publish no podrá convertir imágenes hasta que la extensión de imágenes GD esté disponible.</translation>
+        <source>The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available.</source>
+        <translation>El programa ImageMagick no está disponible en Exponential. Sin ella, Exponential no podrá convertir imágenes hasta que la extensión de imágenes GD esté disponible.</translation>
     </message>
     <message>
-        <source>eZ Publish comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily eZ Publish supports the mbstring extension for handling some of the charsets.</source>
-        <translation>eZ Publish incluye una buena lista de codificación de caracteres soportados. Aún así, pueden ser un poco lentos, ya que están hechos en PHP puro. Afortunadamente, eZ Publish soporta la extensión MBStrings para manipular alguna de las codificaciones de caracteres.</translation>
+        <source>Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</source>
+        <translation>Exponential incluye una buena lista de codificación de caracteres soportados. Aún así, pueden ser un poco lentos, ya que están hechos en PHP puro. Afortunadamente, Exponential soporta la extensión MBStrings para manipular alguna de las codificaciones de caracteres.</translation>
     </message>
     <message>
-        <source>By enabling the mbstring extension eZ Publish will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
-        <translation>Activando la extensión MBString, eZ Publish tendrá acceso a más codificación de caracteres y también podrá procesar algunos de ellos más rápidamente, como el Unicode o el ISO-8859·* Esto está recomendado para sitios multiidiomas y sitios con codificaciones más exóticas.</translation>
+        <source>By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
+        <translation>Activando la extensión MBString, Exponential tendrá acceso a más codificación de caracteres y también podrá procesar algunos de ellos más rápidamente, como el Unicode o el ISO-8859·* Esto está recomendado para sitios multiidiomas y sitios con codificaciones más exóticas.</translation>
     </message>
     <message>
-        <source>Do not enable mbstring function overloading, eZ Publish will only use the extension whenever it&apos;s needed.</source>
-        <translation>No actives la sobrecarga de la extensión MBString, eZ Publish solo utilizará la extensión cuando la necesite.</translation>
+        <source>Do not enable mbstring function overloading, Exponential will only use the extension whenever it&apos;s needed.</source>
+        <translation>No actives la sobrecarga de la extensión MBString, Exponential solo utilizará la extensión cuando la necesite.</translation>
     </message>
     <message>
-        <source>Insufficient memory allocated to install eZ Publish</source>
-        <translation>Memoria asignada insuficiente para instalar eZ Publish</translation>
+        <source>Insufficient memory allocated to install Exponential</source>
+        <translation>Memoria asignada insuficiente para instalar Exponential</translation>
     </message>
     <message>
-        <source>eZ Publish will not work correctly with a memory limit of %1.</source>
-        <translation>eZ Publish no funcionará correctamente con un límite de memoria de %1.</translation>
+        <source>Exponential will not work correctly with a memory limit of %1.</source>
+        <translation>Exponential no funcionará correctamente con un límite de memoria de %1.</translation>
     </message>
     <message>
-        <source>eZ Publish will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
-        <translation>eZ Publish trabajará con esta opción activada. Aún así, comportará un menor rendimiento hasta que todas las variables de entrada necesiten volver a convertirse en</translation>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
+        <translation>Exponential trabajará con esta opción activada. Aún así, comportará un menor rendimiento hasta que todas las variables de entrada necesiten volver a convertirse en</translation>
     </message>
     <message>
         <source>It is recommended that the option is turned off. To turn it off edit your %phpini configuration and set %magic_quotes_gpc and %magic_quotes_runtime to %offtext.</source>
         <translation>Se recomienda que esta opción esté desactivada. Para desactivarla, edita la configuración de tu %phpini y fija %magic_quotes_gpc y %magic_quotes_runtime a %offtext.</translation>
     </message>
     <message>
-        <source>Alternatively you may create a file called %1 in your eZ Publish root folder and add the following</source>
-        <translation>También puedes crear un archivo llamado %1 en el directorio raiz de eZ publish y añadir lo siguiente</translation>
+        <source>Alternatively you may create a file called %1 in your Exponential root folder and add the following</source>
+        <translation>También puedes crear un archivo llamado %1 en el directorio raiz de Exponential y añadir lo siguiente</translation>
     </message>
     <message>
-        <source>eZ Publish will not work properly with this option on.</source>
-        <translation>eZ Publish no funcionará correctamente con la opción habilitada.</translation>
+        <source>Exponential will not work properly with this option on.</source>
+        <translation>Exponential no funcionará correctamente con la opción habilitada.</translation>
     </message>
     <message>
-        <source>eZ Publish will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
-        <translation>eZ Publish puede trabajar con esta opción encendida, sin embargo te comportará una reproducción inferior hasta que todas las variables de entrada se conviertan en generales para cada ejecución de script.</translation>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
+        <translation>Exponential puede trabajar con esta opción encendida, sin embargo te comportará una reproducción inferior hasta que todas las variables de entrada se conviertan en generales para cada ejecución de script.</translation>
     </message>
     <message>
-        <source>Your PHP module does not have session support, without this eZ Publish will not work properly.</source>
-        <translation>El modulo PHP no tiene soporte para las sesiones, sin eso eZ Publish no puede funcionar correctamente.</translation>
+        <source>Your PHP module does not have session support, without this Exponential will not work properly.</source>
+        <translation>El modulo PHP no tiene soporte para las sesiones, sin eso Exponential no puede funcionar correctamente.</translation>
     </message>
     <message>
-        <source>eZ Publish may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
-        <translation>eZ Publish puede funcionar con modo seguro activado, non obstante puede ser que haya varias funcionalidades que no van a estar disponibles. Algunas de las cosas que pueden ocurrir son</translation>
+        <source>Exponential may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
+        <translation>Exponential puede funcionar con modo seguro activado, non obstante puede ser que haya varias funcionalidades que no van a estar disponibles. Algunas de las cosas que pueden ocurrir son</translation>
     </message>
     <message>
-        <source>eZ Publish cannot write to the</source>
-        <translation>eZ Publish no puede escribir en el</translation>
+        <source>Exponential cannot write to the</source>
+        <translation>Exponential no puede escribir en el</translation>
     </message>
     <message>
-        <source>The zlib extension is not available to eZ Publish. Without it eZ Publish will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
-        <translation>La extensión alib no está disponible en eZ Publish. Sin esta extensión eZ Publish no podrá instalar los datos de demostración. Sin embargo, si tu no quieres estos datos de demostración, puedes ignorar tranquilamente este hecho.</translation>
+        <source>The zlib extension is not available to Exponential. Without it Exponential will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
+        <translation>La extensión alib no está disponible en Exponential. Sin esta extensión Exponential no podrá instalar los datos de demostración. Sin embargo, si tu no quieres estos datos de demostración, puedes ignorar tranquilamente este hecho.</translation>
     </message>
     <message>
         <source>directory.</source>
@@ -23892,8 +23892,8 @@ Para hacer esto necesitas cambiar los comandos %chown en comandos de consola alt
         <translation>Falta la extensión DOM</translation>
     </message>
     <message>
-        <source>The DOM extension is not available to eZ Publish. Without it eZ Publish will not work.</source>
-        <translation>La extensión DOM no está disponible para eZ Publish. Sin ella eZ Publish no funciona.</translation>
+        <source>The DOM extension is not available to Exponential. Without it Exponential will not work.</source>
+        <translation>La extensión DOM no está disponible para Exponential. Sin ella Exponential no funciona.</translation>
     </message>
     <message>
         <source>In most cases, the DOM extension is enabled by default because it is included in the PHP core. However, some Linux distributions have PHP without compiled-in support for DOM. Instead, they provide DOM as a shared module in a separate RPM package called &quot;php-xml&quot;.</source>
@@ -23980,8 +23980,8 @@ Para hacer esto necesitas cambiar los comandos %chown en comandos de consola alt
         <translation>Falta la extensión iconv</translation>
     </message>
     <message>
-        <source>The iconv extension is not available to eZ Publish. Without it eZ Publish will not work.</source>
-        <translation>La extensión iconv no está disponible para eZ Publish. Sin ella eZ Publish no funciona.</translation>
+        <source>The iconv extension is not available to Exponential. Without it Exponential will not work.</source>
+        <translation>La extensión iconv no está disponible para Exponential. Sin ella Exponential no funciona.</translation>
     </message>
     <message>
         <source>In most cases, the iconv extension is enabled by default because it is included in the PHP core. However, some Linux distributions have PHP without compiled-in support for iconv. Instead, they provide iconv as a shared module in a separate RPM package called &quot;php-iconv&quot; (or &quot;php5-iconv&quot;).</source>
@@ -26640,8 +26640,8 @@ tu cuenta.</translation>
         <translation>Pulsa &quot;Cancelar&quot; para salir de esta operación de forma segura.</translation>
     </message>
     <message>
-        <source>Please contact your eZ Publish administrator to solve this problem.</source>
-        <translation>Por favor contacta con tu administrador eZ Publish para arreglar este problema.</translation>
+        <source>Please contact your Exponential administrator to solve this problem.</source>
+        <translation>Por favor contacta con tu administrador Exponential para arreglar este problema.</translation>
     </message>
     <message>
         <source>Class groups</source>
@@ -28454,8 +28454,8 @@ si has elegido la opción &quot;%3&quot; desde &quot;%4&quot; </translation>
         <translation>Sesión de administración</translation>
     </message>
     <message>
-        <source>File %1 does not exist. You should copy it from the recent eZ Publish distribution.</source>
-        <translation>El archivo %1 no existe. Hay que copiarle desde una distribución reciente de eZ Publish.</translation>
+        <source>File %1 does not exist. You should copy it from the recent Exponential distribution.</source>
+        <translation>El archivo %1 no existe. Hay que copiarle desde una distribución reciente de Exponential.</translation>
     </message>
     <message>
         <source>System Upgrade</source>

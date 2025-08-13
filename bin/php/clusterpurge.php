@@ -11,7 +11,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish cluster files purge\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential cluster files purge\n" .
                                                         "Physically purges files\n" .
                                                         "\n" .
                                                         "./bin/php/clusterpurge.php --scopes=scope1,scope2" ),

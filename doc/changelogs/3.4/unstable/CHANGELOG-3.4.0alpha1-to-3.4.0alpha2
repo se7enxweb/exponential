@@ -48,7 +48,7 @@ eZPersistentObject:
 
 *Setup
 - Merged checking of existing MySQL databases to use mysql_list_dbs() from stable/3.3 rev. 5376.
-- Added back the finetuning page, it will display hints for extending eZ publish.
+- Added back the finetuning page, it will display hints for extending Exponential.
 - Added finetuning check for the ImageTTFText and ImageTTFBBox functions which are
   need for texttoimage to work properly.
 
@@ -75,7 +75,7 @@ eZ Utils:
   works on MySQL, PostGreSQL and Oracle.
   http://ez.no/community/bug_reports/ezsession_truncate_instead_of_delete
 - Added eZMath library.
-- Added function to find the absolute Path to the eZ publish root directory. eZSys::rootDir()
+- Added function to find the absolute Path to the Exponential root directory. eZSys::rootDir()
 
 eZ PDF:
 - Added more functionality.

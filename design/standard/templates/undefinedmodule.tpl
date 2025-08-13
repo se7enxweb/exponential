@@ -23,7 +23,7 @@
 
 {/section}
 
-<meta name="generator" content="eZ Publish" />
+<meta name="generator" content="Exponential" />
 
 </head>
 
@@ -37,7 +37,7 @@
   <table width="100%" border="0" cellspacing="0" cellpadding="3">
   <tr>
      <td width="20%" bgcolor="#4987bc">
-     <h1><font color="white">eZ Publish 4<sup>TM</sup></font></h1>
+     <h1><font color="white">Exponential 6</font></h1>
      </td>
      <td width="70%" bgcolor="#4987bc">
      {if $access_type}<h1><font color="white">({$access_type.name})</font></h1>{/if}
@@ -72,7 +72,7 @@
 <br />
 <font color="white">
 <center>
-<a href="https://share.se7enx.com/get-involved">eZ Publish&trade;</a> copyright &copy; 1999-2024 <a href="https://se7enx.com">7x</a>
+<a href="https://share.se7enx.com/get-involved">Exponential&trade;</a> copyright &copy; 1999-2024 <a href="https://se7enx.com">7x</a>
 </center>
 </font>
 <br />

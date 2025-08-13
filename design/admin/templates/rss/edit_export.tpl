@@ -41,7 +41,7 @@
     <label for="rssExportSiteUrl">{'Site URL'|i18n( 'design/admin/rss/edit_export' )}:</label>
     <input class="halfbox" id="rssExportSiteUrl" type="text" name="url" value="{$rss_export.url|wash}"/>
     <div class="context-attributes">
-        <p>{'Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. "http://www.example.com/index.php") and the path to the object (e.g. "/articles/my_article"). The Site URL depends on your web server and eZ Publish configuration.'|i18n( 'design/admin/rss/edit_export')}</p>
+        <p>{'Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. "http://www.example.com/index.php") and the path to the object (e.g. "/articles/my_article"). The Site URL depends on your web server and Exponential configuration.'|i18n( 'design/admin/rss/edit_export')}</p>
         <p>{'Leave this field empty if you want system automaticaly detect the URL of your site from the URL you access feed with'|i18n( 'design/admin/rss/edit_export')}</p>
     </div>
     </div>

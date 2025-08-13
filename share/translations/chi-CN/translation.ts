@@ -4242,7 +4242,7 @@
         <translation>别名应该重定向到它的目标</translation>
     </message>
     <message>
-        <source>With &lt;em&gt;Alias should redirect to its destination&lt;/em&gt; checked eZ Publish will redirect to the destination using a HTTP 301 response. Un-check it and the URL will stay the same &amp;#8212; no redirection will be performed.</source>
+        <source>With &lt;em&gt;Alias should redirect to its destination&lt;/em&gt; checked Exponential will redirect to the destination using a HTTP 301 response. Un-check it and the URL will stay the same &amp;#8212; no redirection will be performed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5039,7 +5039,7 @@
 <context>
     <name>design/admin/dashboard/community</name>
     <message>
-        <source>What&apos;s happening in the eZ Community</source>
+        <source>What&apos;s happening in the Exponential Community</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5124,16 +5124,16 @@
         <translation>您安装的版本: &lt;span id=&quot;ez-version&quot;&gt;%1&lt;/span&gt;</translation>
     </message>
     <message>
-        <source>If your installation is not running eZ Publish Enterprise, it might not be up to date with the latest maintenance service packs. Contact eZ Systems.</source>
-        <translation type="obsolete">如果您安装的版本不是eZ Publish Enterprise，您可能无法更新到最新的维护服务包。详情请联系eZ Systems。</translation>
+        <source>If your installation is not running Exponential Enterprise, it might not be up to date with the latest maintenance service packs. Contact 7x.</source>
+        <translation type="obsolete">如果您安装的版本不是Exponential Enterprise，您可能无法更新到最新的维护服务包。详情请联系7x。</translation>
     </message>
     <message>
-        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt; for more infomation.</source>
+        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more infomation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are using %edition, the &lt;span id=&quot;ez-publish-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of eZ Publish, built by &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;eZ Community&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If this platform is critical for your business, we strongly recommend to subscribe to the Enterprise Edition of eZ Publish. More on &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems&lt;/a&gt;&apos; website.</source>
+        <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If this platform is critical for your business, we strongly recommend to subscribe to the Enterprise Edition of Exponential. More on &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt;&apos; website.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5483,12 +5483,12 @@
 <context>
     <name>design/admin/ezinfo/about</name>
     <message>
-        <source>eZ Publish information: %version</source>
-        <translation>eZ Publish信息：%version</translation>
+        <source>Exponential information: %version</source>
+        <translation>Exponential信息：%version</translation>
     </message>
     <message>
-        <source>What is eZ Publish?</source>
-        <translation>什么是eZ Publish?</translation>
+        <source>What is Exponential?</source>
+        <translation>什么是Exponential?</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -7548,8 +7548,8 @@ Click &quot;Next&quot; without choosing an image to continue to the next step.</
 点击&quot;下一步&quot;不选择图像，直接进入下一步。</translation>
     </message>
     <message>
-        <source>Regarding eZ Publish package &apos;%packagename&apos;</source>
-        <translation>关于eZ Publish软件包 &apos;%packagename&apos;</translation>
+        <source>Regarding Exponential package &apos;%packagename&apos;</source>
+        <translation>关于Exponential软件包 &apos;%packagename&apos;</translation>
     </message>
     <message>
         <source>The package can be installed on your system. Installing the package will copy files, create content classes etc., depending on the package.
@@ -7672,7 +7672,7 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate eZ Publish Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the eZ Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;eZ Publish&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems AS&lt;/a&gt; and others.</source>
+        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7680,7 +7680,7 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;eZ Publish&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;eZ Systems AS&lt;/a&gt; and others.</source>
+        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9009,8 +9009,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>使用这个下拉菜单选择您要授权访问的函数。</translation>
     </message>
     <message>
-        <source>The &quot;Grant full access&quot; button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you want to limit the access method, click the &quot;Grant limited access&quot; button. Function limitation is only supported by some functions. If unsupported, eZ Publish will set up a policy with unlimited access to the selected function.</source>
-        <translation>&quot;授权访问所有&quot;按钮将创建一个对第一步选中模块中函数的无限制访问策略。如果您希望以某种方式限制访问，点击&quot;授权限制访问&quot;按钮。函数限制只能被某些函数支持。如果不支持函数限制，eZ Publish将为选中的函数创建一个没有访问限制的策略。</translation>
+        <source>The &quot;Grant full access&quot; button will create a policy that grants unlimited access to the selected function within the module that was specified in step one. If you want to limit the access method, click the &quot;Grant limited access&quot; button. Function limitation is only supported by some functions. If unsupported, Exponential will set up a policy with unlimited access to the selected function.</source>
+        <translation>&quot;授权访问所有&quot;按钮将创建一个对第一步选中模块中函数的无限制访问策略。如果您希望以某种方式限制访问，点击&quot;授权限制访问&quot;按钮。函数限制只能被某些函数支持。如果不支持函数限制，Exponential将为选中的函数创建一个没有访问限制的策略。</translation>
     </message>
     <message>
         <source>It is not possible to grant limited access to all modules at once. To grant unlimited access to all modules and their functions, go back to step one and select &quot;Grant access to all functions&quot;. To grant limited access to different functions within different modules, you must set up a collection of policies.</source>
@@ -9739,8 +9739,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>如果想让资源的子节点也作为消息源，请选中该复选框。</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your web server and eZ Publish configuration.</source>
-        <translation>使用该字段输入您站点的基本URL。用于在导出时生成URLs，由站点URL（例如：&quot;http：//www.example.com/index.php&quot;）及对象的路径（例如：&quot;/articles/my_article&quot;）组成。站点的URL取决于您的Web服务器及eZ Publish的配置。</translation>
+        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your web server and Exponential configuration.</source>
+        <translation>使用该字段输入您站点的基本URL。用于在导出时生成URLs，由站点URL（例如：&quot;http：//www.example.com/index.php&quot;）及对象的路径（例如：&quot;/articles/my_article&quot;）组成。站点的URL取决于您的Web服务器及Exponential的配置。</translation>
     </message>
     <message>
         <source>Click this button to select the source node for the RSS export source. Objects of the type selected in the drop-down below published as sub items of the selected node will be included in the RSS export.</source>
@@ -10659,20 +10659,20 @@ Note: The packages will not be uninstalled.</source>
         <translation>警告，以下文件没有完成修改检查之前系统更新不安全</translation>
     </message>
     <message>
-        <source>Before upgrading eZ Publish to a newer version, it is important to check that the current installation is ready for upgrading.</source>
-        <translation>将eZ Publish升级为新版本之前，最重要的是检查当前的安装是否已准备好升级。</translation>
+        <source>Before upgrading Exponential to a newer version, it is important to check that the current installation is ready for upgrading.</source>
+        <translation>将Exponential升级为新版本之前，最重要的是检查当前的安装是否已准备好升级。</translation>
     </message>
     <message>
-        <source>Remember to make a backup of the eZ Publish directory and the database before you upgrade.</source>
-        <translation>更新之前要记得备份eZ Publish目录及数据库。</translation>
+        <source>Remember to make a backup of the Exponential directory and the database before you upgrade.</source>
+        <translation>更新之前要记得备份Exponential目录及数据库。</translation>
     </message>
     <message>
         <source>The file consistency tool checks if you have altered any of the files that came with the current installation. Altered files may be replaced by new versions that contain bugfixes, new features, etc. Make sure that you backup and then merge your changes into the new versions of the files.</source>
         <translation>文件一致性工具可以检查出您对当前安装文件所作的任何修改。修改的文件可能被包含错误修正，新特点等的新版本代替。确定您已备份并将您所作的修改合并到新版本的文件中。</translation>
     </message>
     <message>
-        <source>The database consistency tool checks if the current database is consistent with the database schema that came with the eZ Publish distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be run in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.</source>
-        <translation>数据库一致性工具检查当前数据库是否与eZ Publish系统数据库结构一致。如果不一致，该工具将提供一些可以使数据库一致的SQL语句。请在更新前运行提供的SQL语句。</translation>
+        <source>The database consistency tool checks if the current database is consistent with the database schema that came with the Exponential distribution. If there are any inconsistencies, the tool will suggest the necessary SQL statements that should be run in order to bring the database into a consistent state. Please run the suggested SQL statements before upgrading.</source>
+        <translation>数据库一致性工具检查当前数据库是否与Exponential系统数据库结构一致。如果不一致，该工具将提供一些可以使数据库一致的SQL语句。请在更新前运行提供的SQL语句。</translation>
     </message>
     <message>
         <source>The upgrade checking tools require a lot of system resources. They may take some time to run.</source>
@@ -10896,12 +10896,12 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">SVN 修订版</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation type="obsolete">扩充</translation>
     </message>
     <message>
@@ -11076,22 +11076,22 @@ Note: The packages will not be uninstalled.</source>
         <translation type="obsolete">扩充</translation>
     </message>
     <message>
-        <source>eZ Publish</source>
-        <translation>eZ Publish</translation>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
     </message>
     <message>
         <source>Version</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation>版本</translation>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">SVN 版本</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ Publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation>扩展</translation>
     </message>
     <message>
@@ -11128,8 +11128,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>找不到该Web服务器的模块。</translation>
     </message>
     <message>
-        <source>eZ Publish was unable to extract information from the web server.</source>
-        <translation>eZ Publish不能从Web服务器中取出信息。</translation>
+        <source>Exponential was unable to extract information from the web server.</source>
+        <translation>Exponential不能从Web服务器中取出信息。</translation>
     </message>
     <message>
         <source>Web server (hardware)</source>
@@ -11203,12 +11203,12 @@ Note: The packages will not be uninstalled.</source>
         <translation>下一步</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for eZ Publish easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
-        <translation>快速应用程序开发（RAD）工具可以令新建/扩展eZ Publish功能变得更加简单。当前有两种可用的RAD工具：模板操作符向导和数据类型向导。模板操作符向导主要是为新的模板操作符生成一个有效框架（PHP代码）。数据类型向导主体是为新的数据类型产生一个有效框架（PHP代码）。</translation>
+        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for Exponential easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
+        <translation>快速应用程序开发（RAD）工具可以令新建/扩展Exponential功能变得更加简单。当前有两种可用的RAD工具：模板操作符向导和数据类型向导。模板操作符向导主要是为新的模板操作符生成一个有效框架（PHP代码）。数据类型向导主体是为新的数据类型产生一个有效框架（PHP代码）。</translation>
     </message>
     <message>
-        <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, eZ Publish will generate a PHP framework for a new operator (which will be available for download).</source>
-        <translation>欢迎使用模板操作符向导。模板操作符经常用于处理模板变量。但它们也可用于产生或读取数据。该向导分为几步，包括一些基本的选项。完成后eZ Publish将为新的操作符产生一个PHP框架（可下载）。</translation>
+        <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, Exponential will generate a PHP framework for a new operator (which will be available for download).</source>
+        <translation>欢迎使用模板操作符向导。模板操作符经常用于处理模板变量。但它们也可用于产生或读取数据。该向导分为几步，包括一些基本的选项。完成后Exponential将为新的操作符产生一个PHP框架（可下载）。</translation>
     </message>
 </context>
 <context>
@@ -14094,8 +14094,8 @@ your account.</source>
         <translation>请在此字段中输入一个有效的密码。</translation>
     </message>
     <message>
-        <source>Log in to the Administration Interface of eZ Publish</source>
-        <translation type="obsolete">登录到eZ Publish的管理员界面</translation>
+        <source>Log in to the Administration Interface of Exponential</source>
+        <translation type="obsolete">登录到Exponential的管理员界面</translation>
     </message>
     <message>
         <source>Please enter a valid username/password combination then click &quot;Log in&quot;.</source>
@@ -15582,11 +15582,11 @@ your account.</source>
         <translation>使用更少的关键字可以搜索到更多的结果，试试减少关键字直到搜寻到结果。</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag eZ Publish&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
-        <translation>基于%linkStartTag eZ publish&amp;reg;&amp;trade;开源内容管理系统%linkEndTag及开发框架。</translation>
+        <source>Powered by %linkStartTag Exponential&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
+        <translation>基于%linkStartTag Exponential&amp;reg;&amp;trade;开源内容管理系统%linkEndTag及开发框架。</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag eZ Publish&amp;reg; open source content management system %linkEndTag and development framework.</source>
+        <source>Powered by %linkStartTag Exponential&amp;reg; open source content management system %linkEndTag and development framework.</source>
         <translation>基于%linkStartTageZ Publish&amp;reg;开源内容管理系统%linkEndTag及开发框架。</translation>
     </message>
     <message>
@@ -19243,8 +19243,8 @@ If you want to send comments to the approver or view the status use the URL belo
         <translation>版本视图尚未支持PDF</translation>
     </message>
     <message>
-        <source>eZ Publish PDF export</source>
-        <translation>eZ Publish的PDF导出</translation>
+        <source>Exponential PDF export</source>
+        <translation>Exponential的PDF导出</translation>
     </message>
 </context>
 <context>
@@ -20736,12 +20736,12 @@ If you want to send comments to the approver or view the status use the URL belo
 <context>
     <name>design/standard/ezinfo/about</name>
     <message>
-        <source>eZ Publish information: %version</source>
-        <translation>eZ Publish信息：%version</translation>
+        <source>Exponential information: %version</source>
+        <translation>Exponential信息：%version</translation>
     </message>
     <message>
-        <source>What is eZ Publish?</source>
-        <translation>什么是eZ Publish?</translation>
+        <source>What is Exponential?</source>
+        <translation>什么是Exponential?</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -20793,7 +20793,7 @@ If you want to send comments to the approver or view the status use the URL belo
         <translation type="obsolete">重启动</translation>
     </message>
     <message>
-        <source>Welcome to eZ publish administration</source>
+        <source>Welcome to Exponential administration</source>
         <translation type="obsolete">欢迎到eZ管理部门</translation>
     </message>
     <message>
@@ -20877,8 +20877,8 @@ If you want to send comments to the approver or view the status use the URL belo
         <translation>搜索%sitetitle</translation>
     </message>
     <message>
-        <source>eZ publish redirection - %url</source>
-        <translation type="obsolete">eZ publish 重执行 - %url</translation>
+        <source>Exponential redirection - %url</source>
+        <translation type="obsolete">Exponential 重执行 - %url</translation>
     </message>
     <message>
         <source>Redirecting to %url</source>
@@ -20893,12 +20893,12 @@ If you want to send comments to the approver or view the status use the URL belo
         <translation>过滤器</translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish administration</source>
-        <translation>欢迎使用eZ Publish管理页面</translation>
+        <source>Welcome to Exponential administration</source>
+        <translation>欢迎使用Exponential管理页面</translation>
     </message>
     <message>
-        <source>eZ Publish redirection - %url</source>
-        <translation>eZ Publish重定向-%url</translation>
+        <source>Exponential redirection - %url</source>
+        <translation>Exponential重定向-%url</translation>
     </message>
 </context>
 <context>
@@ -21823,8 +21823,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>已取消删除软件包。</translation>
     </message>
     <message>
-        <source>Regarding eZ Publish package &apos;%packagename&apos;</source>
-        <translation>关于eZ Publish软件包 &apos;%packagename&apos;</translation>
+        <source>Regarding Exponential package &apos;%packagename&apos;</source>
+        <translation>关于Exponential软件包 &apos;%packagename&apos;</translation>
     </message>
     <message>
         <source>The package can be installed on your system. Installing the package will copy files, create content classes etc., depending on the package.
@@ -22111,30 +22111,30 @@ You can also remove the package without uninstalling it from the package list.</
         <translation>介绍</translation>
     </message>
     <message>
-        <source>The Reference Documentation for eZ publish consists of multiple sections which
+        <source>The Reference Documentation for Exponential consists of multiple sections which
 each have a different view on the documentation. The sections can be accessed at
 menu on the top.</source>
-        <translation type="obsolete">eZ publish 参考资料文档由多重不同部分构成。这些部分可以通过顶部的菜单被找到。</translation>
+        <translation type="obsolete">Exponential 参考资料文档由多重不同部分构成。这些部分可以通过顶部的菜单被找到。</translation>
     </message>
     <message>
-        <source>The documentation will give an overview of the API of eZ publish.</source>
-        <translation type="obsolete">这个文档是关于eZ publish API 的概述。</translation>
+        <source>The documentation will give an overview of the API of Exponential.</source>
+        <translation type="obsolete">这个文档是关于Exponential API 的概述。</translation>
     </message>
     <message>
         <source>All reference documentation has been made with %doxygenurl</source>
         <translation>所有参考文档已通过%doxygenurl生成</translation>
     </message>
     <message>
-        <source>The Reference Documentation for eZ Publish consists of multiple sections which
+        <source>The Reference Documentation for Exponential consists of multiple sections which
 each have a different view on the documentation. The sections can be accessed at
 menu on the top.</source>
-        <translation>eZ Publish参考文档由多个章节构成。
+        <translation>Exponential参考文档由多个章节构成。
 每个章节在文档中都有不同的视图。
 这些章节可以通过顶部的菜单访问。</translation>
     </message>
     <message>
-        <source>The documentation will give an overview of the API of eZ Publish.</source>
-        <translation>该文档是关于eZ Publish API的概述。</translation>
+        <source>The documentation will give an overview of the API of Exponential.</source>
+        <translation>该文档是关于Exponential API的概述。</translation>
     </message>
 </context>
 <context>
@@ -22642,8 +22642,8 @@ menu on the top.</source>
         <translation>如果想让资源的子节点也作为消息源，请选中该复选框。</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Web server and eZ Publish configuration.</source>
-        <translation>使用该字段输入您站点的基本URL。用于在导出时生成URLs，由站点URL（例如：&quot;http：//www.example.com/index.php&quot;）及对象的路径（例如：&quot;/articles/my_article&quot;）组成。站点的URL取决于您的Web服务器及eZ Publish的配置。</translation>
+        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Web server and Exponential configuration.</source>
+        <translation>使用该字段输入您站点的基本URL。用于在导出时生成URLs，由站点URL（例如：&quot;http：//www.example.com/index.php&quot;）及对象的路径（例如：&quot;/articles/my_article&quot;）组成。站点的URL取决于您的Web服务器及Exponential的配置。</translation>
     </message>
     <message>
         <source>Category</source>
@@ -22846,7 +22846,7 @@ menu on the top.</source>
         <translation type="obsolete">关于浏览部件</translation>
     </message>
     <message>
-        <source>The eZ publish admin interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
+        <source>The Exponential admin interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
         <translation type="obsolete">eZ的用户界面被分成浏览部件. 这是一种把网站管理的不同区域分组的方法. 选择浏览部件. 当浏览时,这一部分是激活的.</translation>
     </message>
     <message>
@@ -22913,8 +22913,8 @@ menu on the top.</source>
         <translation>关于导航部分</translation>
     </message>
     <message>
-        <source>The eZ Publish Administration Interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
-        <translation>eZ Publish的管理界面被划分为很多导航部分。这是站点管理员将不同区域分组的一种方法。当浏览分区时相应的导航部分会被激活。</translation>
+        <source>The Exponential Administration Interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
+        <translation>Exponential的管理界面被划分为很多导航部分。这是站点管理员将不同区域分组的一种方法。当浏览分区时相应的导航部分会被激活。</translation>
     </message>
 </context>
 <context>
@@ -23218,17 +23218,17 @@ By using %datatypename you can ...</source>
     </message>
     <message>
         <source>Version</source>
-        <comment>eZ publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">版本</translation>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">SVN 修订版</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation type="obsolete">扩充</translation>
     </message>
     <message>
@@ -23325,8 +23325,8 @@ By using %datatypename you can ...</source>
         <translation>快速应用程序开发工具</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for eZ publish.</source>
-        <translation type="obsolete">快捷程序开发工具使创建新 eZ publish 功能更容易。</translation>
+        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for Exponential.</source>
+        <translation type="obsolete">快捷程序开发工具使创建新 Exponential 功能更容易。</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -23845,17 +23845,17 @@ The default code was made from the basic parameters you chose.</source>
     </message>
     <message>
         <source>Version</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation>版本</translation>
     </message>
     <message>
         <source>SVN revision</source>
-        <comment>eZ Publish version</comment>
+        <comment>Exponential version</comment>
         <translation type="obsolete">SVN 修订版</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <comment>eZ Publish extensions</comment>
+        <comment>Exponential extensions</comment>
         <translation>扩展</translation>
     </message>
     <message>
@@ -23864,8 +23864,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Web服务器</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for eZ Publish.</source>
-        <translation>快速应用程序开发（RAD）工具可以使您更简单的创建eZ Publish新的功能。</translation>
+        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for Exponential.</source>
+        <translation>快速应用程序开发（RAD）工具可以使您更简单的创建Exponential新的功能。</translation>
     </message>
     <message>
         <source>Warning: it is not safe to upgrade without checking the modifications done to the following files </source>
@@ -24104,7 +24104,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">按钮, 当就绪</translation>
     </message>
     <message>
-        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilites of eZ publish</source>
+        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilites of Exponential</source>
         <translation type="obsolete">如果你想你能让设置程序增加某些演示数据到你的数据库, 这些演示数据将给eZ好的演示能力</translation>
     </message>
     <message>
@@ -24244,7 +24244,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">联接数据库</translation>
     </message>
     <message>
-        <source>If you have an already existing eZ publish database enter the information and the setup will use that as database.</source>
+        <source>If you have an already existing Exponential database enter the information and the setup will use that as database.</source>
         <translation type="obsolete">如果你已存在eZ数据库, 安装将使用此数据库.</translation>
     </message>
     <message>
@@ -24404,15 +24404,15 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">邮件正在用失败的发送注册</translation>
     </message>
     <message>
-        <source>Congratulations, eZ publish should now run on your system.</source>
+        <source>Congratulations, Exponential should now run on your system.</source>
         <translation type="obsolete">配置,eZ现在应该在你的系统运行.</translation>
     </message>
     <message>
-        <source>If you need help with eZ publish, you can go to the</source>
+        <source>If you need help with Exponential, you can go to the</source>
         <translation type="obsolete">如果你需要关于eZ的帮助,你能去</translation>
     </message>
     <message>
-        <source>eZ publish website</source>
+        <source>Exponential website</source>
         <translation type="obsolete">eZ网站</translation>
     </message>
     <message>
@@ -24420,7 +24420,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">如果你找到误,请去</translation>
     </message>
     <message>
-        <source>eZ publish bug reports</source>
+        <source>Exponential bug reports</source>
         <translation type="obsolete">eZ错误报告</translation>
     </message>
     <message>
@@ -24428,7 +24428,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">报告它.</translation>
     </message>
     <message>
-        <source>With your help we can fix the errors eZ publish might have and implement new features.</source>
+        <source>With your help we can fix the errors Exponential might have and implement new features.</source>
         <translation type="obsolete">有你的帮助, 我们能修理eZ可能有的错误</translation>
     </message>
     <message>
@@ -24512,11 +24512,11 @@ The default code was made from the basic parameters you chose.</source>
         <translation>缺省</translation>
     </message>
     <message>
-        <source>If you wish you can register your installation by sending some information to eZ systems. No confidential data will be transmitted and eZ systems will not use or sell your personal details for unsolicited emails. This data will help to improve eZ publish for future releases.</source>
+        <source>If you wish you can register your installation by sending some information to 7x. No confidential data will be transmitted and 7x will not use or sell your personal details for unsolicited emails. This data will help to improve Exponential for future releases.</source>
         <translation type="obsolete">如果你希望,你能靠送某些信息到eZ系统来注册你的安装. 没有确信的数据将被传送. eZ系统将不用或不向未经请求的电子邮件出售你的私人细节. 这些数据将帮助你改进eZ的未来版本.</translation>
     </message>
     <message>
-        <source>The following data will be sent to eZ systems:</source>
+        <source>The following data will be sent to 7x:</source>
         <translation type="obsolete">下面的数据将送到eZ系统:</translation>
     </message>
     <message>
@@ -24672,11 +24672,11 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">重新运行系统检查的按钮.</translation>
     </message>
     <message>
-        <source>Welcome to the setup program for eZ publish</source>
+        <source>Welcome to the setup program for Exponential</source>
         <translation type="obsolete">欢迎安装eZ程序</translation>
     </message>
     <message>
-        <source>This part of the setup system will guide you trough the necessary steps to make sure eZ publish is properly initialized</source>
+        <source>This part of the setup system will guide you trough the necessary steps to make sure Exponential is properly initialized</source>
         <translation type="obsolete">安装系统部分将指导你通过必要的步骤来保证eZ完成适当的初始化</translation>
     </message>
     <message>
@@ -24712,11 +24712,11 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">你网站的地址</translation>
     </message>
     <message>
-        <source>The setup will not do an upgrade from older eZ publish versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to loose. If you have existing eZ publish 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
+        <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to loose. If you have existing Exponential 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
         <translation type="obsolete">如果你保留了数据,安装程序将不从旧的eZ版本(象2.2.7)升级. 这是指那些有数据但双不想放弃它们的人. 如果你有3.0 eZ版本的数据(象来自RC的数据),你应该跳过数据库的初始化,然而你需要升级手册.</translation>
     </message>
     <message>
-        <source>The setup will not do an upgrade from older eZ publish versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing eZ publish 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
+        <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
         <translation type="obsolete">如果你保留了数据,安装程序将不从旧的eZ版本(象2.2.7)升级. 这是指那些有数据但双不想放弃它们的人. 如果你有3.0 eZ版本的数据(象来自RC的数据),你应该跳过数据库的初始化,然而你需要升级手册.</translation>
     </message>
     <message>
@@ -24788,7 +24788,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation>系统检查</translation>
     </message>
     <message>
-        <source>Welcome to eZ publish</source>
+        <source>Welcome to Exponential</source>
         <translation type="obsolete">欢迎到eZ</translation>
     </message>
     <message>
@@ -24820,15 +24820,15 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">我们探测到你的系统支持MySQL和PostgreSQL。您喜欢用户谁呢？</translation>
     </message>
     <message>
-        <source>eZ publish support both MySQL and PostgreSQL.</source>
+        <source>Exponential support both MySQL and PostgreSQL.</source>
         <translation type="obsolete">eZ支持MySQL和PostgreSQL。</translation>
     </message>
     <message>
-        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in eZ publish.</source>
+        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
         <translation type="obsolete">在eZ系统中要求MySQL和PostgreSQL &gt;= 4.1支持统一码。</translation>
     </message>
     <message>
-        <source>More information about eZ publish and unicode support can be found %1.</source>
+        <source>More information about Exponential and unicode support can be found %1.</source>
         <translation type="obsolete">关于eZ和对统一码支持的信息能在%1中找到。</translation>
     </message>
     <message>
@@ -24853,7 +24853,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation>套接字（可选）</translation>
     </message>
     <message>
-        <source>It is recommended to create the databases for eZ publish now. If you are uncertain on how to do this, see the database system user manual.</source>
+        <source>It is recommended to create the databases for Exponential now. If you are uncertain on how to do this, see the database system user manual.</source>
         <translation type="obsolete">推荐它来为eZ生成数据库。如果你不能肯定怎么做，请阅读数据库的用户手册。</translation>
     </message>
     <message>
@@ -24869,7 +24869,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">电子信箱设置</translation>
     </message>
     <message>
-        <source>Specify email settings for eZ publish</source>
+        <source>Specify email settings for Exponential</source>
         <translation type="obsolete">为eZ指定电子信箱设置</translation>
     </message>
     <message>
@@ -24901,7 +24901,7 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">完成！</translation>
     </message>
     <message>
-        <source>eZ publish has been installed with the following site(s)</source>
+        <source>Exponential has been installed with the following site(s)</source>
         <translation type="obsolete">eZ已安装在下列的网站中</translation>
     </message>
     <message>
@@ -24938,14 +24938,14 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">论坛</translation>
     </message>
     <message>
-        <source>eZ publish</source>
-        <comment>eZ publish 3 link</comment>
+        <source>Exponential</source>
+        <comment>Exponential 3 link</comment>
         <translation type="obsolete">eZ</translation>
     </message>
     <message>
-        <source>If you need help with eZ publish, you can go to %ezlink and get help in the forums.
+        <source>If you need help with Exponential, you can go to %ezlink and get help in the forums.
   If you find a bug (error), please go to %buglink and report it.
-  With your help we can fix the errors eZ publish might have and implement new features.</source>
+  With your help we can fix the errors Exponential might have and implement new features.</source>
         <translation type="obsolete">如果你需要eZ的帮助，你能去%ezlink并且得到论坛的帮助。 </translation>
     </message>
     <message>
@@ -24999,7 +24999,7 @@ To fix this problem you must do one of the following:</source>
         <translation type="obsolete">原先/附加</translation>
     </message>
     <message>
-        <source>eZ publish supports multiple languages.</source>
+        <source>Exponential supports multiple languages.</source>
         <translation type="obsolete">eZ支持多种语言。</translation>
     </message>
     <message>
@@ -25039,7 +25039,7 @@ To fix this problem you must do one of the following:</source>
         <translation type="obsolete">站点注册</translation>
     </message>
     <message>
-        <source>If you wish you can register your installation by sending some information to eZ systems. No confidential data will be transmitted and eZ systems will not use or sell your personal details for unsolicited emails.</source>
+        <source>If you wish you can register your installation by sending some information to 7x. No confidential data will be transmitted and 7x will not use or sell your personal details for unsolicited emails.</source>
         <translation type="obsolete">如果你希望能靠发送eZ的某些住处来注册安装。没有机密的数据被传送。eZ系统将不用或卖你的私人信息</translation>
     </message>
     <message>
@@ -25051,15 +25051,15 @@ To fix this problem you must do one of the following:</source>
         <translation type="obsolete">送出的电子邮件和产生你的网站可能花一两秒钟。请等待到下一页加载。</translation>
     </message>
     <message>
-        <source>By sending registration the following data will be sent to eZ systems</source>
+        <source>By sending registration the following data will be sent to 7x</source>
         <translation type="obsolete">靠发送注册信息，下列信息将送到eZ系统</translation>
     </message>
     <message>
-        <source>This data will help to improve eZ publish for future releases.</source>
+        <source>This data will help to improve Exponential for future releases.</source>
         <translation type="obsolete">此数据将帮助eZ的后续版本</translation>
     </message>
     <message>
-        <source>Your site is running in non-virtualhost mode which is considered an unsecure mode. It&apos;s recommended to run eZ publish in virtualhost mode.
+        <source>Your site is running in non-virtualhost mode which is considered an unsecure mode. It&apos;s recommended to run Exponential in virtualhost mode.
 If you do not have the possibility to use virtualhost mode you should follow the instructions below on howto install a .htaccess file, the file tells the webserver to only give access to certain files.</source>
         <translation type="obsolete">你的网站正以虚拟模式工作。此模式是一不安全的模式。推荐&apos;s 以实模式运行eZ。
 如果你不可能用实模式，你应该按下列说明来安装.htaccess文件，此文件告诉服务器仅给某些文件的入口。</translation>
@@ -25265,15 +25265,15 @@ If you do not have the possibility to use virtualhost mode you should follow the
         <translation type="obsolete">安装程序已经检测某些系统设置需要改变。</translation>
     </message>
     <message>
-        <source>If this is not corrected, eZ publish will probably not install correctly and work properly.</source>
+        <source>If this is not corrected, Exponential will probably not install correctly and work properly.</source>
         <translation type="obsolete">如果这不正确，eZ将可能安装不正确和工作不适当。</translation>
     </message>
     <message>
-        <source>Welcome to eZ publish %1</source>
+        <source>Welcome to Exponential %1</source>
         <translation type="obsolete">欢迎到eZ %1</translation>
     </message>
     <message>
-        <source>Welcome to the eZ publish content management system and development framework. This wizard will help you set up eZ publish. Press &lt;i&gt;Next &amp;gt;&lt;/i&gt; to continue.</source>
+        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential. Press &lt;i&gt;Next &amp;gt;&lt;/i&gt; to continue.</source>
         <translation type="obsolete">欢迎到eZ内容管理系统和开发框架工具. 此专家工具将帮助你安装eZ. 为了继续,请按&lt;i&gt;Next &amp;gt;&lt;/i&gt;.</translation>
     </message>
     <message>
@@ -25289,7 +25289,7 @@ If you do not have the possibility to use virtualhost mode you should follow the
         <translation type="obsolete">安装到最后一步之前,数据库中无数据</translation>
     </message>
     <message>
-        <source>Information about how to set up eZ publish manually is available %1.</source>
+        <source>Information about how to set up Exponential manually is available %1.</source>
         <translation type="obsolete">关于如何手动安装eZ的资料是有效的%1.</translation>
     </message>
     <message>
@@ -25819,89 +25819,89 @@ It is possible to change these settings at a later time.</source>
         <translation>请选择您想要测试或基于您站点的软件包。</translation>
     </message>
     <message>
-        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of eZ Publish</source>
-        <translation>如果您愿意您可以在安装过程中添加一些演示数据到您的数据库，这些数据将很好的演示eZ Publish的功能</translation>
+        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential</source>
+        <translation>如果您愿意您可以在安装过程中添加一些演示数据到您的数据库，这些数据将很好的演示Exponential的功能</translation>
     </message>
     <message>
-        <source>The setup will not do an upgrade from older eZ Publish versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing eZ Publish 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
-        <translation type="obsolete">如果您保留了数据，安装程序将不会从eZ Publish的旧版本（例如2.2.7）升级。这是针对那些不想放弃现有数据的人。如果您有eZ publish 3.0的数据（例如来自RC版本），您应该跳过数据库初始化，之后您需要手工升级。</translation>
+        <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
+        <translation type="obsolete">如果您保留了数据，安装程序将不会从Exponential的旧版本（例如2.2.7）升级。这是针对那些不想放弃现有数据的人。如果您有Exponential 3.0的数据（例如来自RC版本），您应该跳过数据库初始化，之后您需要手工升级。</translation>
     </message>
     <message>
         <source>It can take some time to initialize the database so please be patient and wait until the new page is finished.</source>
         <translation>初始化数据库需要花费一些时间请耐心等待直到生成新的页面。</translation>
     </message>
     <message>
-        <source>eZ Publish supports both MySQL and PostgreSQL.</source>
-        <translation>MySQL和PostgreSQL两种数据库eZ Publish都支持。</translation>
+        <source>Exponential supports both MySQL and PostgreSQL.</source>
+        <translation>MySQL和PostgreSQL两种数据库Exponential都支持。</translation>
     </message>
     <message>
-        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in eZ Publish.</source>
-        <translation>在eZ Publish中要求MySQL &gt;= 4.1或PostgreSQL都支持Unicode。</translation>
+        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
+        <translation>在Exponential中要求MySQL &gt;= 4.1或PostgreSQL都支持Unicode。</translation>
     </message>
     <message>
-        <source>More information about eZ Publish and unicode support can be found %1.</source>
-        <translation>更多关于eZ Publish及对Unicode支持的信息可以在%1中找到。</translation>
+        <source>More information about Exponential and unicode support can be found %1.</source>
+        <translation>更多关于Exponential及对Unicode支持的信息可以在%1中找到。</translation>
     </message>
     <message>
         <source>The database was successfully initialized. You are now ready for some post configuration of the site.</source>
         <translation>数据库成功初始化。您现在可以对站点进行后期配置</translation>
     </message>
     <message>
-        <source>If you don&apos;t have access to a database, you should obtain access now. eZ Publish is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
-        <translation>如果您没有数据库访问权限，您可以现在获得访问权限。eZ Publish可以运行多个站点，每个站点都需要它自己的数据库。这就意味着如果您要运行多重站点您需要创建多个数据库。如果您不确定如何创建数据库，请参考数据库系统用户手册。</translation>
+        <source>If you don&apos;t have access to a database, you should obtain access now. Exponential is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
+        <translation>如果您没有数据库访问权限，您可以现在获得访问权限。Exponential可以运行多个站点，每个站点都需要它自己的数据库。这就意味着如果您要运行多重站点您需要创建多个数据库。如果您不确定如何创建数据库，请参考数据库系统用户手册。</translation>
     </message>
     <message>
-        <source>This section is used to configure how eZ Publish delivers its outgoing Email.</source>
-        <translation>这部分用于配置eZ Publish如何发送外发邮件。</translation>
+        <source>This section is used to configure how Exponential delivers its outgoing Email.</source>
+        <translation>这部分用于配置Exponential如何发送外发邮件。</translation>
     </message>
     <message>
-        <source>The eZ Publish system uses email to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
-        <translation>eZ Publish系统使用邮件发送重要通知。例如用户注册信息及内容批准通知。对Linux/UNIX系统：使用sendmail。对Windows系统：使用SMTP服务器。</translation>
+        <source>The Exponential system uses email to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
+        <translation>Exponential系统使用邮件发送重要通知。例如用户注册信息及内容批准通知。对Linux/UNIX系统：使用sendmail。对Windows系统：使用SMTP服务器。</translation>
     </message>
     <message>
-        <source>eZ Publish has been installed with your select site setup. You will find the username mentioned in the details below.</source>
-        <translation>已将您选定的eZ Publish站点安装到系统中。您可以在以下详细信息中找到提及的用户名。</translation>
+        <source>Exponential has been installed with your select site setup. You will find the username mentioned in the details below.</source>
+        <translation>已将您选定的Exponential站点安装到系统中。您可以在以下详细信息中找到提及的用户名。</translation>
     </message>
     <message>
-        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because eZ Publish prepares the site for your machine.</source>
-        <translation>用户或管理员第一次访问站点时，将花费一些时间（30到60秒）。eZ Publish需要在您的机器上建立站点的缓存。</translation>
+        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because Exponential prepares the site for your machine.</source>
+        <translation>用户或管理员第一次访问站点时，将花费一些时间（30到60秒）。Exponential需要在您的机器上建立站点的缓存。</translation>
     </message>
     <message>
         <source>Tip: Store this page as an html file by clicking Save-As in your web browser menu, alternatively you may write down the URLs for your sites.</source>
         <translation>提示：在您的网络浏览器菜单中点击另存为将该页面保存为html文件，或者您可以写下您站点的网址。</translation>
     </message>
     <message>
-        <source>eZ Publish</source>
-        <comment>eZ Publish 3 link</comment>
-        <translation type="obsolete">eZ Publish</translation>
+        <source>Exponential</source>
+        <comment>Exponential 3 link</comment>
+        <translation type="obsolete">Exponential</translation>
     </message>
     <message>
-        <source>Congratulations, eZ Publish should now run on your system.</source>
-        <translation>恭喜，现在eZ publish应该在您的系统中运行。</translation>
+        <source>Congratulations, Exponential should now run on your system.</source>
+        <translation>恭喜，现在Exponential应该在您的系统中运行。</translation>
     </message>
     <message>
-        <source>If you need help with eZ Publish, you can go to %ezlink and get help in the forums.
+        <source>If you need help with Exponential, you can go to %ezlink and get help in the forums.
   If you find a bug (error), please go to %buglink and report it.
-  With your help we can fix the errors eZ Publish might have and implement new features.</source>
-        <translation>如果您需要eZ Publish的帮助，您可以访问%ezlink并且在论坛中获得帮助。
+  With your help we can fix the errors Exponential might have and implement new features.</source>
+        <translation>如果您需要Exponential的帮助，您可以访问%ezlink并且在论坛中获得帮助。
         如您发现任何问题（错误），请访问%buglink并提交报告。
-        通过您的反馈，我们可以修正可能存在于eZ publish中的错误，并实现新的功能。</translation>
+        通过您的反馈，我们可以修正可能存在于Exponential中的错误，并实现新的功能。</translation>
     </message>
     <message>
-        <source>eZ Publish bug reports</source>
-        <translation>eZ Publish错误报告</translation>
+        <source>Exponential bug reports</source>
+        <translation>Exponential错误报告</translation>
     </message>
     <message>
-        <source>eZ Publish website</source>
-        <translation>eZ Publish网站</translation>
+        <source>Exponential website</source>
+        <translation>Exponential网站</translation>
     </message>
     <message>
         <source>Choose only languages that use similar characters, for instance: English and Norwegian will work together while English and Russian will not work.</source>
         <translation>只能选择使用相同字符集的语言。例如：英语和挪威语可以并用，但英语和俄语就不行。</translation>
     </message>
     <message>
-        <source>eZ Publish supports multiple languages.</source>
-        <translation>eZ Publish支持多语言。</translation>
+        <source>Exponential supports multiple languages.</source>
+        <translation>Exponential支持多语言。</translation>
     </message>
     <message>
         <source>The languages you have chose for site do not match languages in chosen packages. To resolve conflict please select language mapping:</source>
@@ -25928,20 +25928,20 @@ It is possible to change these settings at a later time.</source>
         <translation>为语言选择变体。变体是对语言的小调整，像是添加欧洲语言的支持或数据格式的变化。变体的使用是可选的，所以您可跳过这一步。选择完毕，请点击</translation>
     </message>
     <message>
-        <source>If you want, you can register this installation by sending some information to eZ Systems. No confidential data will be transmitted and eZ Systems will not use or sell your details for unsolicited emails.</source>
-        <translation type="obsolete">如果您愿意，可以发送信息给eZ Systems来注册此次安装。不会传送机密信息，且未经请求eZ Systems不会使用您的详细资料或出售给广告邮件。</translation>
+        <source>If you want, you can register this installation by sending some information to 7x. No confidential data will be transmitted and 7x will not use or sell your details for unsolicited emails.</source>
+        <translation type="obsolete">如果您愿意，可以发送信息给7x来注册此次安装。不会传送机密信息，且未经请求7x不会使用您的详细资料或出售给广告邮件。</translation>
     </message>
     <message>
         <source>If you want, you can also add some comments, which will be included in the registration email.</source>
         <translation type="obsolete">如果您愿意，您也可以添加一些注释，这些将被包含到注册邮件中。</translation>
     </message>
     <message>
-        <source>By sending registration the following data will be sent to eZ Systems</source>
-        <translation type="obsolete">通过发送注册信息，下列数据将被发送到eZ Systems</translation>
+        <source>By sending registration the following data will be sent to 7x</source>
+        <translation type="obsolete">通过发送注册信息，下列数据将被发送到7x</translation>
     </message>
     <message>
-        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run eZ Publish in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
-        <translation>您的站点不是在虚拟主机模式下运行，这是不安全的。建议在虚拟主机模式下运行eZ Publish。如果您不能使用虚拟主机模式，您可以按照以下指令创建一个.htaccess文件。.htaccess文件将告诉Web服务器限制访问某些特定文件。</translation>
+        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run Exponential in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
+        <translation>您的站点不是在虚拟主机模式下运行，这是不安全的。建议在虚拟主机模式下运行Exponential。如果您不能使用虚拟主机模式，您可以按照以下指令创建一个.htaccess文件。.htaccess文件将告诉Web服务器限制访问某些特定文件。</translation>
     </message>
     <message>
         <source>If you have shell access, you can run the following commands.</source>
@@ -25978,32 +25978,32 @@ This functionality is also available at a later time from the Administration Int
         <translation>请选择您想要测试或基于您站点的一个或多个演示站点。如果您想从头开始请使用Plain。</translation>
     </message>
     <message>
-        <source>These issues have to be resolved/fixed, or else, eZ Publish will not function properly.</source>
-        <translation>这些问题必须得到解决／修正，否则eZ Publish将无法正常运行。</translation>
+        <source>These issues have to be resolved/fixed, or else, Exponential will not function properly.</source>
+        <translation>这些问题必须得到解决／修正，否则Exponential将无法正常运行。</translation>
     </message>
     <message>
-        <source>These issues do not need to be resolved/fixed. eZ Publish will function properly without them.</source>
-        <translation>这些问题不是必须解决／修正的，不解决它们eZ Publish也可以正常运行。</translation>
+        <source>These issues do not need to be resolved/fixed. Exponential will function properly without them.</source>
+        <translation>这些问题不是必须解决／修正的，不解决它们Exponential也可以正常运行。</translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish %1</source>
-        <translation type="obsolete">欢迎使用eZ Publish %1</translation>
+        <source>Welcome to Exponential %1</source>
+        <translation type="obsolete">欢迎使用Exponential %1</translation>
     </message>
     <message>
-        <source>Welcome to the eZ Publish content management system and development framework. This wizard will help you set up eZ Publish.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
-        <translation>欢迎使用eZ Publish内容管理系统及开发框架。该向导将帮助您建立eZ Publish。&lt;br&gt;您的系统当前不是最佳状态，您可以点击&lt;i&gt;优化&lt;/i&gt;按钮优化系统。会显示一些帮助您解决问题的提示。&lt;br/&gt;点击&lt;i&gt;下一步&lt;/i&gt;继续不进行优化。</translation>
+        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
+        <translation>欢迎使用Exponential内容管理系统及开发框架。该向导将帮助您建立Exponential。&lt;br&gt;您的系统当前不是最佳状态，您可以点击&lt;i&gt;优化&lt;/i&gt;按钮优化系统。会显示一些帮助您解决问题的提示。&lt;br/&gt;点击&lt;i&gt;下一步&lt;/i&gt;继续不进行优化。</translation>
     </message>
     <message>
-        <source>Welcome to the eZ Publish content management system and development framework. This wizard will help you set up eZ Publish.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
-        <translation>欢迎使用eZ Publish内容管理系统及开发框架。该向导将帮助您建立eZ Publish。&lt;br&gt;点击&lt;i&gt;下一步&lt;/i&gt;继续。</translation>
+        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
+        <translation>欢迎使用Exponential内容管理系统及开发框架。该向导将帮助您建立Exponential。&lt;br&gt;点击&lt;i&gt;下一步&lt;/i&gt;继续。</translation>
     </message>
     <message>
         <source>The selected user has not got access to any databases. Change user or create a database for the user.</source>
         <translation>选中的用户没有访问任何数据库的权限。修改用户或为用户创建一个数据库。</translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; procedure is not available in your database, you cannot run eZ Publish without this. Visit the FAQ for more information.</source>
-        <translation type="obsolete">您的数据库中&apos;摘要&apos;程序不可用，没有这个程序，将不能运行eZ Publish。访问FAQ了解更多信息。</translation>
+        <source>The &apos;digest&apos; procedure is not available in your database, you cannot run Exponential without this. Visit the FAQ for more information.</source>
+        <translation type="obsolete">您的数据库中&apos;摘要&apos;程序不可用，没有这个程序，将不能运行Exponential。访问FAQ了解更多信息。</translation>
     </message>
     <message>
         <source>No packages chosen.</source>
@@ -26014,8 +26014,8 @@ This functionality is also available at a later time from the Administration Int
         <translation>没有选中的模板。</translation>
     </message>
     <message>
-        <source>Uploaded file is not an eZ Publish package</source>
-        <translation>上传的文件不是eZ Publish软件包</translation>
+        <source>Uploaded file is not an Exponential package</source>
+        <translation>上传的文件不是Exponential软件包</translation>
     </message>
     <message>
         <source>No site package chosen.</source>
@@ -26026,8 +26026,8 @@ This functionality is also available at a later time from the Administration Int
         <translation>获得远程站点软件包列表失败。您可以手工上传软件包。</translation>
     </message>
     <message>
-        <source>Welcome to eZ Publish</source>
-        <translation>欢迎使用eZ Publish</translation>
+        <source>Welcome to Exponential</source>
+        <translation>欢迎使用Exponential</translation>
     </message>
     <message>
         <source>If you think you have fixed the errors you can try then click the &quot;Retry&quot; button.</source>
@@ -26058,25 +26058,25 @@ This functionality is also available at a later time from the Administration Int
         <translation>选择您的语言，然后点击</translation>
     </message>
     <message>
-        <source>This data will help to improve future releases of eZ Publish.</source>
-        <translation type="obsolete">此数据将帮助改进eZ Publish以后的发行版本。</translation>
+        <source>This data will help to improve future releases of Exponential.</source>
+        <translation type="obsolete">此数据将帮助改进Exponential以后的发行版本。</translation>
     </message>
     <message>
         <source>The problems are usually file-system related and can be easily fixed by copy / paste / running the suggested commands in a system shell.</source>
         <translation>这个问题通常与文件系统有关，且在shell中可以通过复制／粘贴／运行推荐的脚本来解决。</translation>
     </message>
     <message>
-        <source>Information about how to set up eZ Publish manually is available %1.</source>
-        <translation>关于如何手动安装eZ Publish的信息在%1。</translation>
+        <source>Information about how to set up Exponential manually is available %1.</source>
+        <translation>关于如何手动安装Exponential的信息在%1。</translation>
     </message>
     <message>
-        <source>The setup will not do an upgrade from older eZ Publish versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing eZ Publish 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
-        <translation>如果您保留了数据，安装程序将不会从eZ Publish的旧版本（例如2.2.7）升级。这是针对那些不想放弃现有数据的人。如果您有eZ publish 3.0的数据（例如来自RC版本），您应该跳过数据库初始化，之后您需要手工升级。 {2.2.7)?} {4.0 ?}</translation>
+        <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
+        <translation>如果您保留了数据，安装程序将不会从Exponential的旧版本（例如2.2.7）升级。这是针对那些不想放弃现有数据的人。如果您有Exponential 3.0的数据（例如来自RC版本），您应该跳过数据库初始化，之后您需要手工升级。 {2.2.7)?} {4.0 ?}</translation>
     </message>
     <message>
-        <source>eZ Publish</source>
-        <comment>eZ Publish link</comment>
-        <translation>eZ Publish</translation>
+        <source>Exponential</source>
+        <comment>Exponential link</comment>
+        <translation>Exponential</translation>
     </message>
     <message>
         <source>MySQL support was detected on your system. Please choose the database driver you would like to use.</source>
@@ -26087,7 +26087,7 @@ This functionality is also available at a later time from the Administration Int
         <translation>在你的系统里没有检测到PostgreSQL，请选择你要使用的数据库驱动。</translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; function is not available in your database, you cannot run eZ Publish without this. See the documentation for more information.</source>
+        <source>The &apos;digest&apos; function is not available in your database, you cannot run Exponential without this. See the documentation for more information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -26135,12 +26135,12 @@ This functionality is also available at a later time from the Administration Int
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;p&gt;If you need to share knowledge, exchange tips with developers or simply find some improvement tricks, the eZ Community is the place to go.&lt;/p&gt;
+        <source>&lt;p&gt;If you need to share knowledge, exchange tips with developers or simply find some improvement tricks, the Exponential Community is the place to go.&lt;/p&gt;
 
 &lt;p&gt;
 How do you access it?&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Go on &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;eZ Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Go on &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;Exponential Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Click on Register (top of the page) and create your profile&lt;/li&gt;
 &lt;li&gt;Here you can check out the &lt;a href=&quot;http://share.ez.no/blogs&quot;&gt;blog posts&lt;/a&gt;,
     &lt;a href=&quot;http://share.ez.no/events&quot;&gt;events&lt;/a&gt;, &lt;a href=&quot;http://share.ez.no/members-partners/find-a-partner&quot;&gt;partners&lt;/a&gt;...&lt;/li&gt;
@@ -26149,11 +26149,11 @@ How do you access it?&lt;/p&gt;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Discover the eZ Publish Platform forums</source>
+        <source>Discover the Exponential Platform forums</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>eZ Publish 5 platform</source>
+        <source>Exponential 5 platform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -26349,11 +26349,11 @@ How do you access it?&lt;/p&gt;
         <translation>缺少数据库处理程序</translation>
     </message>
     <message>
-        <source>Your PHP does not have support for all databases that eZ publish support.</source>
+        <source>Your PHP does not have support for all databases that Exponential support.</source>
         <translation type="obsolete">你的PHP不支持eZ所支持的数据库.</translation>
     </message>
     <message>
-        <source>Allthough eZ publish will work without it, it might be that you want to have support for this database.</source>
+        <source>Allthough Exponential will work without it, it might be that you want to have support for this database.</source>
         <translation type="obsolete">虽然eZ没它将可工作,但是你想它可能支持数据库.</translation>
     </message>
     <message>
@@ -26369,7 +26369,7 @@ How do you access it?&lt;/p&gt;
         <translation>缺少数据库处理程序</translation>
     </message>
     <message>
-        <source>No supported database handlers were found. eZ publish requires a database to store it&apos;s data, without one the system will fail.</source>
+        <source>No supported database handlers were found. Exponential requires a database to store it&apos;s data, without one the system will fail.</source>
         <translation type="obsolete">发现不支持的数据库处理序. eZ要求一数据库来保存它的数据.</translation>
     </message>
     <message>
@@ -26381,7 +26381,7 @@ How do you access it?&lt;/p&gt;
         <translation>目录权限不足</translation>
     </message>
     <message>
-        <source>eZ publish cannot write to some important directories, without this the setup cannot finish and parts of eZ publish will fail.</source>
+        <source>Exponential cannot write to some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
         <translation type="obsolete">eZ不能写某些重要的目录. 没有这,安装不能完成和eZ部分将失败.</translation>
     </message>
     <message>
@@ -26397,7 +26397,7 @@ How do you access it?&lt;/p&gt;
         <translation>不支持图像转换程序</translation>
     </message>
     <message>
-        <source>No image conversion capabilities was detected, this means that eZ publish cannot scale any images or detect their type. This is vital functionality in eZ publish and must be supported.</source>
+        <source>No image conversion capabilities was detected, this means that Exponential cannot scale any images or detect their type. This is vital functionality in Exponential and must be supported.</source>
         <translation type="obsolete">发现没图象变换能力, 这意思是eZ 不能标定任何图象或不能发现图象的格式.这是eZ中至关重要的功能,并且必须支持.</translation>
     </message>
     <message>
@@ -26405,7 +26405,7 @@ How do you access it?&lt;/p&gt;
         <translation type="obsolete">丢失图象扩充部分</translation>
     </message>
     <message>
-        <source>The imagegd extension is not available to eZ publish. Without it eZ publish will only be able to do conversion using ImageMagick and the</source>
+        <source>The imagegd extension is not available to Exponential. Without it Exponential will only be able to do conversion using ImageMagick and the</source>
         <translation type="obsolete">失图象扩充部分对eZ无效. 没有它eZ公能用ImageMagick来做变换, 并且</translation>
     </message>
     <message>
@@ -26417,7 +26417,7 @@ How do you access it?&lt;/p&gt;
         <translation>注意:</translation>
     </message>
     <message>
-        <source>Future releases of eZ publish will have more advanced image support by using the imagegd extension.</source>
+        <source>Future releases of Exponential will have more advanced image support by using the imagegd extension.</source>
         <translation type="obsolete">eZ的进一步版本将有更先进的图象的扩充功能.</translation>
     </message>
     <message>
@@ -26429,7 +26429,7 @@ How do you access it?&lt;/p&gt;
         <translation>缺少ImageMagick程序</translation>
     </message>
     <message>
-        <source>The ImageMagick program is not available to eZ publish. Without it eZ publish will not be able to do image conversion unless the imagegd extension is available.</source>
+        <source>The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available.</source>
         <translation type="obsolete">ImageMagick程序对eZ无效. 没有它, ez将不能做图象变换,除非图象扩充功能有效.</translation>
     </message>
     <message>
@@ -26465,11 +26465,11 @@ How do you access it?&lt;/p&gt;
         <translation>缺少MBString扩展</translation>
     </message>
     <message>
-        <source>eZ publish comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily eZ publish supports the mbstring extension for handling some of the charsets.</source>
+        <source>Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</source>
         <translation type="obsolete">eZ有一组缺省的字符集列表. 然而纯的PHP代码的生成时它们可能是有点慢. 幸运的是eZ支持mbstring的处理某些字符集扩充功能.</translation>
     </message>
     <message>
-        <source>By enabling the mbstring extension eZ publish will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
+        <source>By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
         <translation type="obsolete">靠mbstring的扩充功能, eZ将有更多字符集的入口,并且也能更快地处理它们,象统一码. 建议对多语言或具有更多外来字符集的网站.</translation>
     </message>
     <message>
@@ -26489,7 +26489,7 @@ How do you access it?&lt;/p&gt;
         <translation>更多关于启用此扩展的信息在</translation>
     </message>
     <message>
-        <source>Do not enable mbstring function overloading, eZ publish will only use the extension whenever it&apos;s needed.</source>
+        <source>Do not enable mbstring function overloading, Exponential will only use the extension whenever it&apos;s needed.</source>
         <translation type="obsolete">不使mbstring有超载的扩充功能, eZ将仅用于它需要扩充功能时.</translation>
     </message>
     <message>
@@ -26501,7 +26501,7 @@ How do you access it?&lt;/p&gt;
         <translation>已启用</translation>
     </message>
     <message>
-        <source>eZ publish will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
         <translation type="obsolete">eZ将与此功能同时工作. 它将导致某些不重要的性能发布, 由于全部输入变量需要变换回到</translation>
     </message>
     <message>
@@ -26557,7 +26557,7 @@ How do you access it?&lt;/p&gt;
         <translation type="obsolete">,但即使是更新的版本,象4.2.3, 建议高版本.</translation>
     </message>
     <message>
-        <source>eZ publish cannot write to the</source>
+        <source>Exponential cannot write to the</source>
         <translation type="obsolete">eZ不能写到</translation>
     </message>
     <message>
@@ -26569,7 +26569,7 @@ How do you access it?&lt;/p&gt;
         <translation>缺少zlib扩展</translation>
     </message>
     <message>
-        <source>The zlib extension is not available to eZ publish. Without it eZ publish will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
+        <source>The zlib extension is not available to Exponential. Without it Exponential will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
         <translation type="obsolete">zlib的扩充对eZ无效. 没有它, eZ将没有能力来安装演示数据.然而, 如果你不希望装演示数据, 你能安全地忽略这.</translation>
     </message>
     <message>
@@ -26585,7 +26585,7 @@ How do you access it?&lt;/p&gt;
         <translation>禁用文件上传</translation>
     </message>
     <message>
-        <source>File uploading is not enabled which means that it&apos;s impossible for eZ publish to handle file uploading. All other parts of eZ publish will still work fine but it&apos;s recommended to enable file uploads.</source>
+        <source>File uploading is not enabled which means that it&apos;s impossible for Exponential to handle file uploading. All other parts of Exponential will still work fine but it&apos;s recommended to enable file uploads.</source>
         <translation type="obsolete">不能上传文件的意思是eZ不能处理上传文件. eZ的其它部分仍能工作,但是建议它能上传文件.</translation>
     </message>
     <message>
@@ -26601,7 +26601,7 @@ How do you access it?&lt;/p&gt;
         <translation>通过阅读%1和%2可以了解更多关于启用此扩展的信息</translation>
     </message>
     <message>
-        <source>Alternatively you may create a file called %1 in your eZ publish root folder and add the following:</source>
+        <source>Alternatively you may create a file called %1 in your Exponential root folder and add the following:</source>
         <translation type="obsolete">做为选择予备,你能在你eZ根目录下生成文件%1并且增加如下内容:</translation>
     </message>
     <message>
@@ -26625,7 +26625,7 @@ How do you access it?&lt;/p&gt;
         <translation>PHP选项%1已启用</translation>
     </message>
     <message>
-        <source>eZ publish will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
         <translation type="obsolete">eZ将和此选项一起工作。 由于全部输入变量将被设定成全局的，它将引起某些较小的性能问题。</translation>
     </message>
     <message>
@@ -26637,7 +26637,7 @@ How do you access it?&lt;/p&gt;
         <translation>已启用PHP安全模式</translation>
     </message>
     <message>
-        <source>eZ publish may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are:</source>
+        <source>Exponential may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are:</source>
         <translation type="obsolete">eZ可能工作在安全模式下，然而可能有几个功能将失效。可能出现的事情中的某些是：</translation>
     </message>
     <message>
@@ -26823,42 +26823,42 @@ This is a security problem and should be changed to another global temporary dir
         <translation>影响到的目录（文件）是：%dir_list</translation>
     </message>
     <message>
-        <source>eZ Publish cannot create some important directories, because there are an files instead of these directories in the same places with the same names.
+        <source>Exponential cannot create some important directories, because there are an files instead of these directories in the same places with the same names.
 You should replace these files with appropriate directories and give necessary permissions to them.
-Without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish不能创建某些重要的目录，因为在相同位置已存在同名文件。
+Without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential不能创建某些重要的目录，因为在相同位置已存在同名文件。
 您应该用适当的目录来替换这些文件，并赋予它们必要的权限。
-没有这些目录，安装无法完成，且eZ Publish的部分功能将失效。</translation>
+没有这些目录，安装无法完成，且Exponential的部分功能将失效。</translation>
     </message>
     <message>
-        <source>If you&apos;re running apache 1.3, eZ Publish will not run in CGI mode.</source>
-        <translation type="obsolete">如果您当前运行的是apache1.3，eZ Publish将不能在CGI模式下运行。</translation>
+        <source>If you&apos;re running apache 1.3, Exponential will not run in CGI mode.</source>
+        <translation type="obsolete">如果您当前运行的是apache1.3，Exponential将不能在CGI模式下运行。</translation>
     </message>
     <message>
-        <source>Your PHP does not have support for all databases that eZ Publish support.</source>
+        <source>Your PHP does not have support for all databases that Exponential support.</source>
         <translation>您的PHP不支持所有eZ所支持的数据库。</translation>
     </message>
     <message>
-        <source>Although eZ Publish will work without it, it might be that you want to have support for this database.</source>
-        <translation>尽管没有它eZ Publish也可以正常工作，但可能您需要支持这个数据库。</translation>
+        <source>Although Exponential will work without it, it might be that you want to have support for this database.</source>
+        <translation>尽管没有它Exponential也可以正常工作，但可能您需要支持这个数据库。</translation>
     </message>
     <message>
-        <source>No supported database handlers were found. eZ Publish requires a database to store it&apos;s data, without one the system will fail.</source>
-        <translation>找不到支持的数据库处理程序。eZ Publish需要一个数据库来保存数据，没有它系统将出错。</translation>
+        <source>No supported database handlers were found. Exponential requires a database to store it&apos;s data, without one the system will fail.</source>
+        <translation>找不到支持的数据库处理程序。Exponential需要一个数据库来保存数据，没有它系统将出错。</translation>
     </message>
     <message>
-        <source>eZ Publish cannot write to some important directories, without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish不能写入某些重要的目录，如果无法写入目录，安装不能完成且部分eZ publish会失效。</translation>
+        <source>Exponential cannot write to some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential不能写入某些重要的目录，如果无法写入目录，安装不能完成且部分Exponential会失效。</translation>
     </message>
     <message>
         <source>These shell commands will give proper permission to the web server.</source>
         <translation>这些shell命令将赋予web服务器适当的权限。</translation>
     </message>
     <message>
-        <source>eZ Publish could not detect the user and group of the web server.
+        <source>Exponential could not detect the user and group of the web server.
 If you know the user and group of the web server it is recommended to change the ownership of the files to match this user and group.
 To do this you need to change the %chown commands under Alternative shell commands.</source>
-        <translation>eZ Publish检测不到Web服务器的用户和用户组。
+        <translation>Exponential检测不到Web服务器的用户和用户组。
 如果您知道Web服务器的用户和用户组，建议修改文件的所有权，来匹配用户及用户组。
 要修改文件的所有权，您可能需要在以下可选的shell命令中执行%chown命令。</translation>
     </message>
@@ -26871,38 +26871,38 @@ To do this you need to change the %chown commands under Alternative shell comman
         <translation>必须将%user_expr修改为您的Web服务器用户名和组名。</translation>
     </message>
     <message>
-        <source>eZ Publish cannot create some important directories, without this the setup cannot finish and parts of eZ Publish will fail.</source>
-        <translation>eZ Publish不能创建某些重要目录。没有这些目录，安装不能完成且部分eZ Publish的功能将失效。</translation>
+        <source>Exponential cannot create some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
+        <translation>Exponential不能创建某些重要目录。没有这些目录，安装不能完成且部分Exponential的功能将失效。</translation>
     </message>
     <message>
-        <source>Insufficient execution time allowed to install eZ Publish</source>
-        <translation>运行时间不足，不能安装eZ Publish</translation>
+        <source>Insufficient execution time allowed to install Exponential</source>
+        <translation>运行时间不足，不能安装Exponential</translation>
     </message>
     <message>
-        <source>eZ Publish will not work correctly with a execution time limit of %1.</source>
-        <translation>运行时间限制为%1时，eZ Publish将不能正常运行。</translation>
+        <source>Exponential will not work correctly with a execution time limit of %1.</source>
+        <translation>运行时间限制为%1时，Exponential将不能正常运行。</translation>
     </message>
     <message>
-        <source>If you are running eZ Publish in a shared host environment, contant your ISP to perform the changes</source>
-        <translation>如果您当前在共享主机的环境下运行eZ Publish，联系您的ISP执行修改</translation>
+        <source>If you are running Exponential in a shared host environment, contant your ISP to perform the changes</source>
+        <translation>如果您当前在共享主机的环境下运行Exponential，联系您的ISP执行修改</translation>
     </message>
     <message>
-        <source>File uploading is not enabled which means that it&apos;s impossible for eZ Publish to handle file uploading. All other parts of eZ Publish will still work fine but it&apos;s recommended to enable file uploads.</source>
-        <translation>文件上传功能不可用意味着是eZ Publish不能处理上传文件。eZ Publish的其它部分仍能工作，但是建议启用文件上传功能。</translation>
+        <source>File uploading is not enabled which means that it&apos;s impossible for Exponential to handle file uploading. All other parts of Exponential will still work fine but it&apos;s recommended to enable file uploads.</source>
+        <translation>文件上传功能不可用意味着是Exponential不能处理上传文件。Exponential的其它部分仍能工作，但是建议启用文件上传功能。</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to eZ Publish.</source>
-        <translation>PHP上传目录%upload_dir不存在或无法访问。没有它您无法上传文件或图像到eZ publish。</translation>
+        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to Exponential.</source>
+        <translation>PHP上传目录%upload_dir不存在或无法访问。没有它您无法上传文件或图像到Exponential。</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to eZ Publish.</source>
-        <translation>无法写入PHP的上传目录%upload。这意味着无法上传文件或图像到eZ publish。</translation>
+        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to Exponential.</source>
+        <translation>无法写入PHP的上传目录%upload。这意味着无法上传文件或图像到Exponential。</translation>
     </message>
     <message>
-        <source>eZ Publish could not detect the user and group of the web server.
+        <source>Exponential could not detect the user and group of the web server.
 If you know the user and group of the web server it is recommended to change the ownership of the upload directory to match this user and group.
 To do this you need to change the %chown commands under Alternative shell commands.</source>
-        <translation>eZ Publish检测不到Web服务器的用户及用户组。
+        <translation>Exponential检测不到Web服务器的用户及用户组。
 如果您知道Web服务器的用户及用户组，建议修改文件的所有者，来匹配用户及用户组。
 您可能需要执行%chown命令来修改所有者信息。</translation>
     </message>
@@ -26911,76 +26911,76 @@ To do this you need to change the %chown commands under Alternative shell comman
         <translation>如果您知道Web服务器的用户及组您可以试试这条命令。使用用户和用户组替换apache：apache。</translation>
     </message>
     <message>
-        <source>No image conversion capabilities was detected, this means that eZ Publish cannot scale any images or detect their type. This is vital functionality in eZ Publish and must be supported.</source>
-        <translation>检测不到图象转换功能，这就意味着eZ Publish不能缩放任何图象也不能检测图象的格式。图像转换是eZ Publish中非常重要的功能，eZ publish必须支持此功能。</translation>
+        <source>No image conversion capabilities was detected, this means that Exponential cannot scale any images or detect their type. This is vital functionality in Exponential and must be supported.</source>
+        <translation>检测不到图象转换功能，这就意味着Exponential不能缩放任何图象也不能检测图象的格式。图像转换是Exponential中非常重要的功能，Exponential必须支持此功能。</translation>
     </message>
     <message>
-        <source>The imagegd2 extension is not available to eZ Publish. Without it eZ Publish will only be able to do conversion using ImageMagick and the</source>
-        <translation>在eZ Publish中imagegd2扩展不可用。没有这个扩展，eZ Publish只能使用ImageMagick转换图像并且</translation>
+        <source>The imagegd2 extension is not available to Exponential. Without it Exponential will only be able to do conversion using ImageMagick and the</source>
+        <translation>在Exponential中imagegd2扩展不可用。没有这个扩展，Exponential只能使用ImageMagick转换图像并且</translation>
     </message>
     <message>
-        <source>Future releases of eZ Publish will have more advanced image support by using the imagegd extension.</source>
-        <translation>eZ Publish未来的版本将通过imagedg扩展来提供更高级的图像功能。</translation>
+        <source>Future releases of Exponential will have more advanced image support by using the imagegd extension.</source>
+        <translation>Exponential未来的版本将通过imagedg扩展来提供更高级的图像功能。</translation>
     </message>
     <message>
-        <source>The ImageMagick program is not available to eZ Publish. Without it eZ Publish will not be able to do image conversion unless the imagegd extension is available.</source>
-        <translation>ImageMagick程序在eZ Publish中不可用。没有它，eZ Publish将无法进行图象转换。</translation>
+        <source>The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available.</source>
+        <translation>ImageMagick程序在Exponential中不可用。没有它，Exponential将无法进行图象转换。</translation>
     </message>
     <message>
-        <source>eZ Publish comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily eZ Publish supports the mbstring extension for handling some of the charsets.</source>
-        <translation>eZ Publish有一组缺省的字符集列表。但因为是由PHP代码实现的，运行可能有点慢。所幸eZ Publish支持mbstring扩展来处理某些字符集。</translation>
+        <source>Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</source>
+        <translation>Exponential有一组缺省的字符集列表。但因为是由PHP代码实现的，运行可能有点慢。所幸Exponential支持mbstring扩展来处理某些字符集。</translation>
     </message>
     <message>
-        <source>By enabling the mbstring extension eZ Publish will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
-        <translation>通过启用mbstring扩展，eZ Publish将可以使用更多字符集，并且也能更快地处理它们。例如Unicode及iso-8859-*。建议多语言站点或使用很多外来字符集的站点使用mbstring扩展。</translation>
+        <source>By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
+        <translation>通过启用mbstring扩展，Exponential将可以使用更多字符集，并且也能更快地处理它们。例如Unicode及iso-8859-*。建议多语言站点或使用很多外来字符集的站点使用mbstring扩展。</translation>
     </message>
     <message>
-        <source>Do not enable mbstring function overloading, eZ Publish will only use the extension whenever it&apos;s needed.</source>
-        <translation>不要过多启用mbstring功能，eZ Publish只在必要时使用该扩展。</translation>
+        <source>Do not enable mbstring function overloading, Exponential will only use the extension whenever it&apos;s needed.</source>
+        <translation>不要过多启用mbstring功能，Exponential只在必要时使用该扩展。</translation>
     </message>
     <message>
-        <source>Insufficient memory allocated to install eZ Publish</source>
-        <translation>内存不足无法安装eZ Publish</translation>
+        <source>Insufficient memory allocated to install Exponential</source>
+        <translation>内存不足无法安装Exponential</translation>
     </message>
     <message>
-        <source>eZ Publish will not work correctly with a memory limit of %1.</source>
-        <translation>内存限制为%1时，eZ Publish无法正常工作。</translation>
+        <source>Exponential will not work correctly with a memory limit of %1.</source>
+        <translation>内存限制为%1时，Exponential无法正常工作。</translation>
     </message>
     <message>
-        <source>eZ Publish will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
-        <translation>在此选项下eZ Publish可以运行。但会导致一些小的性能问题，因为所有的输入变量需要被转换回</translation>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
+        <translation>在此选项下Exponential可以运行。但会导致一些小的性能问题，因为所有的输入变量需要被转换回</translation>
     </message>
     <message>
         <source>It is recommended that the option is turned off. To turn it off edit your %phpini configuration and set %magic_quotes_gpc and %magic_quotes_runtime to %offtext.</source>
         <translation>建议关闭该选项。要关闭该选项，编辑您的%phpini配置并将%magic_quotes_gpc及%offtext的%magic_quotes_gpc设置为%offtext。</translation>
     </message>
     <message>
-        <source>Alternatively you may create a file called %1 in your eZ Publish root folder and add the following</source>
-        <translation>您也可以在eZ Publish根目录创建一个名为%1的文件并且添加以下内容</translation>
+        <source>Alternatively you may create a file called %1 in your Exponential root folder and add the following</source>
+        <translation>您也可以在Exponential根目录创建一个名为%1的文件并且添加以下内容</translation>
     </message>
     <message>
-        <source>eZ Publish will not work properly with this option on.</source>
-        <translation>当启用该选项时eZ Publish将无法正常工作。</translation>
+        <source>Exponential will not work properly with this option on.</source>
+        <translation>当启用该选项时Exponential将无法正常工作。</translation>
     </message>
     <message>
-        <source>eZ Publish will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
-        <translation>在这个选项下eZ Publish可以运行。但是会导致一些小的性能问题，因为每个脚本在运行时所有的输入变量将被设置为全局变量。</translation>
+        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
+        <translation>在这个选项下Exponential可以运行。但是会导致一些小的性能问题，因为每个脚本在运行时所有的输入变量将被设置为全局变量。</translation>
     </message>
     <message>
-        <source>Your PHP module does not have session support, without this eZ Publish will not work properly.</source>
-        <translation>您的PHP模块不支持会话，没有此项功能eZ Publish将无法正常工作。</translation>
+        <source>Your PHP module does not have session support, without this Exponential will not work properly.</source>
+        <translation>您的PHP模块不支持会话，没有此项功能Exponential将无法正常工作。</translation>
     </message>
     <message>
-        <source>eZ Publish may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
-        <translation>eZ Publish可以在安全模式下运行。但是可能有一些功能将不可用。可能发生的情况有</translation>
+        <source>Exponential may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
+        <translation>Exponential可以在安全模式下运行。但是可能有一些功能将不可用。可能发生的情况有</translation>
     </message>
     <message>
-        <source>eZ Publish cannot write to the</source>
-        <translation>eZ Publish不能写入</translation>
+        <source>Exponential cannot write to the</source>
+        <translation>Exponential不能写入</translation>
     </message>
     <message>
-        <source>The zlib extension is not available to eZ Publish. Without it eZ Publish will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
-        <translation>zlib的扩展在eZ Publish中不可用。没有此扩展，eZ Publish将无法安装演示数据，但如果您不需要安装演示数据，您可以忽略它。</translation>
+        <source>The zlib extension is not available to Exponential. Without it Exponential will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
+        <translation>zlib的扩展在Exponential中不可用。没有此扩展，Exponential将无法安装演示数据，但如果您不需要安装演示数据，您可以忽略它。</translation>
     </message>
     <message>
         <source>directory.</source>
@@ -26991,7 +26991,7 @@ To do this you need to change the %chown commands under Alternative shell comman
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The DOM extension is not available to eZ Publish. Without it eZ Publish will not work.</source>
+        <source>The DOM extension is not available to Exponential. Without it Exponential will not work.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -27075,7 +27075,7 @@ To do this you need to change the %chown commands under Alternative shell comman
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The iconv extension is not available to eZ Publish. Without it eZ Publish will not work.</source>
+        <source>The iconv extension is not available to Exponential. Without it Exponential will not work.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -30171,8 +30171,8 @@ your account.</source>
         <translation>点击&quot;取消&quot;安全退出这次操作。</translation>
     </message>
     <message>
-        <source>Please contact your eZ Publish administrator to solve this problem.</source>
-        <translation>请您联系站点的eZ Publish管理员来解决这个问题。</translation>
+        <source>Please contact your Exponential administrator to solve this problem.</source>
+        <translation>请您联系站点的Exponential管理员来解决这个问题。</translation>
     </message>
     <message>
         <source>Class groups</source>
@@ -32375,8 +32375,8 @@ your account.</source>
         <translation>会话管理</translation>
     </message>
     <message>
-        <source>File %1 does not exist. You should copy it from the recent eZ Publish distribution.</source>
-        <translation>文件%1不存在。您应该从最近的eZ Publish发布版本中复制。</translation>
+        <source>File %1 does not exist. You should copy it from the recent Exponential distribution.</source>
+        <translation>文件%1不存在。您应该从最近的Exponential发布版本中复制。</translation>
     </message>
     <message>
         <source>Datatype wizard</source>

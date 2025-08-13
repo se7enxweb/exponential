@@ -8,7 +8,7 @@ if [ ! -f "index.php" -a \
      ! -d "lib" -a \
      ! -d "kernel" ] ; then
      echo "You seem to be in the wrong directory"
-     echo "Place yourself in the eZ Publish 4 root directory and run ./bin/modfix.sh"
+     echo "Place yourself in the Exponential 4 root directory and run ./bin/modfix.sh"
      exit 1
 fi
 

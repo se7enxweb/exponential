@@ -31,7 +31,7 @@ Change of behavior
   to 1970-01-01T00:00:00Z. Note that the sort default value is still 0 which can result in
   inconsistencies when trying to sort some objects with unset dates.
 
-  This led to a regression in eZ Publish 5.3.
+  This led to a regression in Exponential 5.3.
 
   Among others, it broke the empty default value setting in ezdate,
   making the edit form display a date on epoch, on january 1st 1970, the

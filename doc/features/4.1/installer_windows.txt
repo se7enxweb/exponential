@@ -1,12 +1,12 @@
 ============================
-eZ Publish Windows installer
+Exponential Windows installer
 ============================
 
 :Author: Alexandru Stanoi
 :Date: 2009/03/12
 :Version: 1.0
 
-This document describes the new installer feature of eZ Publish 4.1. For the
+This document describes the new installer feature of Exponential 4.1. For the
 moment only a Microsoft Windows installer is provided, while installers for
 Linux, Mac OSX and Solaris are planned for the future.
 
@@ -16,16 +16,16 @@ Linux, Mac OSX and Solaris are planned for the future.
 Introduction
 ============
 
-The eZ Publish installer is a package containing:
+The Exponential installer is a package containing:
 
  - Apache
  - MySQL
  - PHP
- - eZ Publish
+ - Exponential
  - eZ Components
 
 These software packages are bundled together to allow for an easy way to get
-started with eZ Publish.
+started with Exponential.
 
 Directory structure
 -------------------
@@ -34,20 +34,20 @@ This is the directory structure created by the installer in the installation
 directory specified (only the most important subdirectories are listed,
 together with important configuration files)::
 
-  eZ Publish installation directory
+  Exponential installation directory
   ├─apache
   │ ├─conf (httpd.conf configuration file for Apache)
   │ └─htdocs (contains the files in the www root of the Apache installation)
   ├─apps
-  │ └─ezpublish
-  │   ├─conf (ezpublish.conf configuration file attached to httpd.conf)
-  │   └─ezpublish (all eZ Publish files, corresponds to localhost/ezpublish)
+  │ └─exponential
+  │   ├─conf (exponential.conf configuration file attached to httpd.conf)
+  │   └─exponential (all Exponential files, corresponds to localhost/exponential)
   ├─mysql (my.ini configuration file for MySQL)
   │ └─data (MySQL databases, bitnami_ezpublish is the database created by the installer)
   └─php (php.ini configuration file for PHP)
 
 
-Installing eZ Publish on Windows
+Installing Exponential on Windows
 ================================
 
 After downloading the installer for Windows, run it. It might take a few
@@ -62,9 +62,9 @@ installed.
 
 Secondly you will see a page detailing all the bundled software together
 with their versions, and the ports used by Apache and MySQL (autodetected
-free ports). Your eZ Publish installation will be located at this address::
+free ports). Your Exponential installation will be located at this address::
 
-  http://computername:apacheport/ezpublish
+  http://computername:apacheport/exponential
 
 where:
 
@@ -79,7 +79,7 @@ where:
 At the page where you are requested to enter details for the admin account,
 you must enter a password and enter it again in the box below it. Remember
 the password for the admin account as it will be needed in order to use
-the admin interface of eZ Publish.
+the admin interface of Exponential.
 
 After the installer copies all the files, it will run through these steps:
 
@@ -87,20 +87,20 @@ After the installer copies all the files, it will run through these steps:
    free **apacheport** detected previously
  - install MySQL as a service under the name **ezpublishMySQL** on the
    free **mysqlport** detected previously
- - create a MySQL database for eZ Publish with the name **bitnami_ezpublish**
+ - create a MySQL database for Exponential with the name **bitnami_ezpublish**
 
 After these steps are done the installer will open a browser window pointing
-at *http://computername:apacheport/ezpublish*, where the eZ Publish setup
+at *http://computername:apacheport/exponential*, where the Exponential setup
 wizard will start.
 
 
 Setup wizard
 ------------
 
-The eZ Publish setup wizard is described in depth here:
+The Exponential setup wizard is described in depth here:
 http://ez.no/doc/ez_publish/technical_manual/4_0/installation/the_setup_wizard
 
-The setup wizard presented with the eZ Publish installer is a simplified
+The setup wizard presented with the Exponential installer is a simplified
 version of the normal wizard, with many of the steps being already prefilled
 by the installer.
 
@@ -110,7 +110,7 @@ system. Please check the `Troubleshooting`_ section for more details.
 
 First the language used during the setup wizard is chosen.
 
-Secondly you can specify which languages to install in eZ Publish.
+Secondly you can specify which languages to install in Exponential.
 
 Third you can choose a website package to install. If the website package
 depends on languages you did not install in the previous step, you will get
@@ -118,15 +118,15 @@ an option to install the missing language or to replace the missing language
 with an already installed one.
 
 After all the setup wizard steps are completed, the final page of the wizard
-will contain links to the site and admin interface of your eZ Publish
+will contain links to the site and admin interface of your Exponential
 installation. Please bookmark these links to access them easily in the future.
 
 
-Uninstall eZ Publish on Windows
+Uninstall Exponential on Windows
 ===============================
 
-To uninstall your eZ Publish installation, click on the Start button, and run
-Programs->eZ Publish->Uninstall eZ Publish. This will delete the software
+To uninstall your Exponential installation, click on the Start button, and run
+Programs->Exponential->Uninstall Exponential. This will delete the software
 installed, but will not delete files which were created after the installation,
 like log files. You will need to delete those files manually.
 
@@ -179,7 +179,7 @@ exceeded (due to hardware or software issues) then the setup wizard will
 time-out.
 
 The solution is to try refreshing the page which caused the time-out. If that
-fails, uninstall eZ Publish and install it on a "fresh" system with as few
+fails, uninstall Exponential and install it on a "fresh" system with as few
 running programs as possible (including firewall, antivirus, download tools,
 messenger programs).
 

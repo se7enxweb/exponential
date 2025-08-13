@@ -10,7 +10,7 @@ note that a group should have proper 'content/read' access to have
 possibility to get access to the tipafriend view.
 
 *Upgrading:
-After updating from previous versions of eZPublish, you will discover
+After updating from previous versions of Exponential, you will discover
 that all your users will not have access to the 'tipafriend' view
 by default, because there is no proper 'tipafriend' policy in roles
 assigned to your user groups.

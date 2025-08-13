@@ -3,7 +3,7 @@ Email SMTP SSL support
 
 Intro
 ---------
-In eZ Publish 4.4, it's possible to send email with SSL connection in SMTP.
+In Exponential 4.4, it's possible to send email with SSL connection in SMTP.
 
 
 Requirements

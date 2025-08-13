@@ -15,7 +15,7 @@ require_once 'autoload.php';
 
 $cli = eZCLI::instance();
 
-$script = eZScript::instance( array( 'description' => ( "eZ Publish search index updater.\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential search index updater.\n\n" .
                                                         "Goes trough all objects and reindexes the meta data to the search engine" .
                                                         "\n" .
                                                         "updatesearchindex.php"),
@@ -146,7 +146,7 @@ do
     }
 
     // Commit is done on each batch, make sure to enable optimal commit settings for your search engine.
-    // Example: ezfind as of eZ Publish 5.3 allows you to enable either SoftCommit to avoid, or
+    // Example: ezfind as of Exponential 5.3 allows you to enable either SoftCommit to avoid, or
     //          CommitWithin to let Solr defer and better handle hard commits which slow down indexing.
     //          See settings in ezfind for more information.
     $searchEngine->commit();

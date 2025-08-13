@@ -266,7 +266,7 @@ function clean_dirs_up
 . bin/shell/distcommon.sh
 
 # "Declare" all the variables used in the script.
-NAME="ezpublish"
+NAME="Exponential"
 DEST_ROOT="/tmp/ez-$USER"
 TMP_DIR="$DEST_ROOT-extension"
 OUTPUT_DIR="$DEST_ROOT/$NAME-$VERSION-extensions" # version is taken from common.sh

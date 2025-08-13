@@ -1,7 +1,7 @@
 Preface
 =======
 
-We have discovered that restoring of folders can be a difficult case especially when it has content like subfolders because the existing wastebasket solution in eZ Publish unfolds the structure when the deleted object is stored in the wastebasket.
+We have discovered that restoring of folders can be a difficult case especially when it has content like subfolders because the existing wastebasket solution in Exponential unfolds the structure when the deleted object is stored in the wastebasket.
 
 Therefore we need to have a personal wastebasket implemented.
 
@@ -34,7 +34,7 @@ When the end user opens the wastebasket he should see:
 
 The wastebasket should have the following characteristics:
 
-1. The list should be configurable with regards to number of items in the lists etc. following the normal eZ Publish standards.
+1. The list should be configurable with regards to number of items in the lists etc. following the normal Exponential standards.
 2. You should be able to mark more than one object to restore.
 3. When you restore an object you should have the option to restore it using the old node_id so you do not have to alter existing templates.
 
@@ -64,6 +64,6 @@ The wastebasket for the admin user should have the following characteristics:
 
 - The admin user should see the whole content of the wastebasket.
 - It should be possible to search for content
-- The list should be configurable with regards to number of items in the lists etc. following the normal eZ Publish standards.
+- The list should be configurable with regards to number of items in the lists etc. following the normal Exponential standards.
 - You should be able to mark more than one object to restore.
 - When you restore an object you should have the option to restore it using the old node_id so you do not have to alter existing templates.

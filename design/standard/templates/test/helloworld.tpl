@@ -1,5 +1,5 @@
 <hr />
-<h3>Hello world from an eZ Publish 4.7 template !</h3>
+<h3>Hello world from an Exponential 4.7 template !</h3>
 <p><u>The new kernel says:</u> <cite>{$message|wordtoimage}</cite></p>
 
 {if is_set($konamiCode)}

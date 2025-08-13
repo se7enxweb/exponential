@@ -18,7 +18,7 @@ Changes from 4.3.0 to 4.4.0
 - Implemented enhancement #016704: Cookie Domain should be a configuration option
 - Implemented enhancement #016711: Making extension aware of the order/priority in which they need to be loaded
 - Implemented enhancement #016711: order/priority is handled through an XML file that also handles ezinfo.
-- Implemented enhancement #016722: eZOE/eZ Publish should support several &nbsp; characters and not just one
+- Implemented enhancement #016722: eZOE/Exponential should support several &nbsp; characters and not just one
 - Implemented enhancement #016723: Make cronjob MaxScriptExecutionTime configurable
 - Implemented enhancement #016765: Add eZPersistentObject implementation to ezsite_data table
 - Implemented enhancement #016782: Allow extensions to provide an md5 list of files to be checked
@@ -103,7 +103,7 @@ Changes from 4.3.0 to 4.4.0
 - Fixed bug #016527: warnings when using a login handler
 - Fixed bug #016534: Subtree notification subscription can't be removed in admin2
 - Fixed bug #016542: System upgrade > check db consistency fails at comparing CHARACTER VARYING NULL fields
-- Fixed bug #016550: eZ Publish is using "Etag", w3c says "ETag"
+- Fixed bug #016550: Exponential is using "Etag", w3c says "ETag"
 - Fixed bug #016568: eZSearch::registerSearchObject() inserts duplicates when DelayedIndexing is set to 'classbased'
 - Fixed bug #016569: After Content Read workflow trigger missing from Operation Defination
 - Fixed bug #016587: Small typo mistake in updatenodeassignment.php

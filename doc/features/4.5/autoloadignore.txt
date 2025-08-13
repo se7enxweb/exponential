@@ -1,7 +1,7 @@
 AutoloadIgnore
 ==============
 
-It is now possible to include a file in the root of the ezpublish directory
+It is now possible to include a file in the root of the exponential directory
 called '.autoloadignore', which specifies directories to be excluded from
 autoload generation. This can sometimes be useful during development phases.
 

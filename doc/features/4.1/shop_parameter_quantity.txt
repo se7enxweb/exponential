@@ -2,7 +2,7 @@
 
 *Documentation:
 The new paramter 'Quantity' can be used when adding a product to a basket. 
-In earlier versions of eZ publish the shop did only add one product at a time.
+In earlier versions of Exponential the shop did only add one product at a time.
 With this feature you can add as many products of the same kind at once to the basket.
 
 Example(node view template):

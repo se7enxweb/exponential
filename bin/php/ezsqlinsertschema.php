@@ -12,7 +12,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish SQL Schema insert\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential SQL Schema insert\n\n" .
                                                         "Insert database schema and data to specified database\n".
                                                         "ezsqlinsertschema.php --type=mysql --user=root share/db_schema.dba ezp35stable" ),
                                      'use-session' => false,

@@ -12,7 +12,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish SQL Schema dump\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential SQL Schema dump\n\n" .
                                                         "Dump sql schema to specified file or standard output\n".
                                                         "ezsqldumpschema.php --type=mysql --user=root stable33 schema.sql" ),
                                      'use-session' => false,

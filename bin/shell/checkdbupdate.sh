@@ -124,8 +124,8 @@ else
     has_setval="false"
 fi
 
-SCHEMA_URL="http://svn.ez.no/svn/ezpublish/versions/$to"
-PREVIOUS_SCHEMA_URL="http://svn.ez.no/svn/ezpublish/versions/$from"
+SCHEMA_URL="http://svn.ez.no/svn/Exponential/versions/$to"
+PREVIOUS_SCHEMA_URL="http://svn.ez.no/svn/Exponential/versions/$from"
 
 [ -d "$DEST" ] || mkdir "$DEST"
 

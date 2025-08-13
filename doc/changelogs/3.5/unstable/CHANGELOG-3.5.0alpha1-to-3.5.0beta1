@@ -175,7 +175,7 @@ eZFile:
 eZDB:
 - Added new method relationMatchRegexp() to eZDBInterface,
   this can be implemented by DB drivers to provide information
-  about which tables, triggers etc. belongs to eZ publish.
+  about which tables, triggers etc. belongs to Exponential.
 
 eZDBSchema:
 - Added support for schema handlers in extensions.

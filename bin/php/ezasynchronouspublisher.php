@@ -15,7 +15,7 @@ require_once 'autoload.php';
 
 $cli = eZCLI::instance();
 
-$script = eZScript::instance( array( 'description' => "Processes the eZ Publish publishing queue",
+$script = eZScript::instance( array( 'description' => "Processes the Exponential publishing queue",
                                      'use-session' => false,
                                      'use-modules' => true,
                                      'use-extensions' => true ) );

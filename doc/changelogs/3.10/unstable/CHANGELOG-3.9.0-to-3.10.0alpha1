@@ -188,7 +188,7 @@ Changes from 3.9.0 to 3.10.0alpha1
 - Fixed bug #10452: Not possible to update auto rates (rev. 18396).
 - Fixed bug #8949: Use of undefined constant WEBDAV_DISABLED.
   (Merged from stable/3.8 rev. 18403, stable/3.9 rev. 18404)
-- Fixed bug #9639: eZ publish generates same cache block simultaneously,
+- Fixed bug #9639: Exponential generates same cache block simultaneously,
   for content view cache.
   (Merged from stable/3.9 rev. 18410)
 - Fixed bug #10460: div block is not closed in edit template for ezprice.tpl (rev. 18412)
@@ -360,7 +360,7 @@ Changes from 3.9.0 to 3.10.0alpha1
 - Fixed bug #11038: eZP might go into an infinite loop if MySQL closes it connections causing apache 
   to segfault.
 - Fixed bug #11131: Image Shell Handler cannot convert PSD files
-- Fixed bug #11080: eZ Publish Email Validation Excludes Google Mail Wildcards
+- Fixed bug #11080: Exponential Email Validation Excludes Google Mail Wildcards
   from Approved Email Validation Codes.
 - Fixed bug #11144: "persistent_variable" override isn't working with viewcache disabled.
   (Mered from stable/3.8(3.8.9) rev. 19442)

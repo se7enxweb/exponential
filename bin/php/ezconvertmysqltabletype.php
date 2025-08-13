@@ -12,7 +12,7 @@
 require_once 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "eZ Publish Database Converter\n\n" .
+$script = eZScript::instance( array( 'description' => ( "Exponential Database Converter\n\n" .
                                                         "Convert the database to the given type\n".
                                                         "ezconvertmysqltabletype.php [--host=VALUE --user=VALUE --database=VALUE [--password=VALUE]] [--list] [--newtype=TYPE] [--usecopy]" ),
                                      'use-session' => false,
@@ -186,7 +186,7 @@ function listTypes( $cli, $db )
         $tableType = getTableType( $db, $tableName );
 
         $spaces = str_pad(' ', 40 - strlen( $tableName ) );
-        $eZpublishTable = strncmp( $tableName, "ez", 2 ) == 0 ? "" : "(non eZ Publish)";
+        $eZpublishTable = strncmp( $tableName, "ez", 2 ) == 0 ? "" : "(non Exponential)";
         $cli->output( "$tableName $spaces $tableType $eZpublishTable" );
     }
 }
@@ -233,7 +233,7 @@ function setNewType( $cli, $db, $newType, $usecopy )
         // Checking if it is necessary to convert the table.
         if ( strncmp( $tableName, "ez", 2 ) != 0 )
         {
-            $cli->notice( "Skipping table $tableName because it is not an eZ Publish table" );
+            $cli->notice( "Skipping table $tableName because it is not an Exponential table" );
         }
         else if ( strcasecmp( getTableType( $db, $tableName ), $newType ) == 0 )
         {

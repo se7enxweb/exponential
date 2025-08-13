@@ -209,9 +209,9 @@ eztc.php:
 *LDAP
 - Could support LDAP version 2 or 3 by defining 'LDAPVersion' variable in ldap.ini.
 - Changed variable 'LDAPUserGroup' in ldap.ini to an array which means a ldap user 
-  can be saved in multiple groups in eZ publish.
+  can be saved in multiple groups in Exponential.
 - An user who is in multiple groups in LDAP server can be assigned to multiple
-  groups in eZ publish automatically.
+  groups in Exponential automatically.
 
 *Bugfixes:
 - Added whitespace removal to mail Transport setting (in site.ini file) -
@@ -558,7 +558,7 @@ eZ DB:
 - Support for eZ DB interface implementations in extensions.
 - Added new method relationMatchRegexp() to eZDBInterface,
   this can be implemented by DB drivers to provide information
-  about which tables, triggers etc. belongs to eZ publish.
+  about which tables, triggers etc. belongs to Exponential.
 - Database implementations can now have aliases, currently mysql points to
   ezmysql and postgresql to ezpostgresql.
 - Added method which can check if a given character set matches the one used in
@@ -583,7 +583,7 @@ eZDBSchema:
 - Added check for primary key length in PostgreSQL, the length of the key must
   not exceed 63 characters.
 - Added lint checker for DB schemas, this will make sure that the schema
-  can be used for all databases supported by eZ publish.
+  can be used for all databases supported by Exponential.
 - Added support for schema transformation, these are transformations that are
   done to and from the generic schema.
 - Redone the default and null handling for mysql and pgsql schema handlers,

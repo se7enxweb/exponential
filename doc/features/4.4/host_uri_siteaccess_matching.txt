@@ -1,4 +1,4 @@
-Host URI siteacces matching in eZ Publish 4.4
+Host URI siteacces matching in Exponential 4.4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 =====
@@ -16,7 +16,7 @@ page2.com    -> go to page2_nor
 page2.com/no -> go to page2_nor
 page2.com/en -> go to page2_eng
 
-Note: For cache efficiency (eZ Publish & reverse proxy) it is recommended to use Apache/httpd server
+Note: For cache efficiency (Exponential & reverse proxy) it is recommended to use Apache/httpd server
 rewrite rules / redirects to redirect e.g. example.com to example.com/en if you really
 want both to use the same siteaccess, and thus also avoid having matching rules for both.
 
