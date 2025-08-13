@@ -1,9 +1,9 @@
-# eZ Publish CMS Contributors Guidelines
+# Exponential CMS Contributors Guidelines
 
-Thank you for considering contributing to eZ Publish CMS! We appreciate the time and effort you invest in making this project better.
+Thank you for considering contributing to Exponential CMS! We appreciate the time and effort you invest in making this project better.
 
-## Licensing of code improvements to eZ Publish
-eZ Publish is licensed under the GPLv2 or later license, commonly known as the GNU General Public License, version 2 or any later version, grants users the freedom to modify and distribute software. When it comes to code improvements, contributors must ensure that any modifications made to the project are also released under the same GPLv2 or later license. This means that enhancements, bug fixes, or any changes to the codebase must be open-sourced, allowing others to benefit from and build upon these improvements. The "or later" clause allows the project to upgrade to future versions of the GPL, providing flexibility and ensuring alignment with the principles of free software. It's essential for contributors to understand and comply with these licensing requirements to maintain the open nature of the project.
+## Licensing of code improvements to Exponential
+Exponential is licensed under the GPLv2 or later license, commonly known as the GNU General Public License, version 2 or any later version, grants users the freedom to modify and distribute software. When it comes to code improvements, contributors must ensure that any modifications made to the project are also released under the same GPLv2 or later license. This means that enhancements, bug fixes, or any changes to the codebase must be open-sourced, allowing others to benefit from and build upon these improvements. The "or later" clause allows the project to upgrade to future versions of the GPL, providing flexibility and ensuring alignment with the principles of free software. It's essential for contributors to understand and comply with these licensing requirements to maintain the open nature of the project.
 
 ## Code of Conduct
 
@@ -14,7 +14,7 @@ Please make sure to review our [Code of Conduct](CODE_OF_CONDUCT.md) before cont
 1. Fork the repository and clone your fork to your local machine.
 
 ```bash
-git clone https://github.com/your-username/ez-publish.git
+git clone https://github.com/your-username/expontential.git
 ```
 
 2. Install the project dependencies.
@@ -67,6 +67,6 @@ Feel free to open an issue for bug reports, feature requests, or general discuss
 
 By contributing, you agree that your contributions will be licensed under the [GNU General Public License, version 2.0 or later](LICENSE). Make sure that your contributions comply with this license.
 
-Thank you for contributing to eZ Publish CMS!
+Thank you for contributing to Exponential CMS!
 
 ---

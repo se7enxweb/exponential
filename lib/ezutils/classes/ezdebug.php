@@ -1494,7 +1494,8 @@ class eZDebug
 	        $byIP = false;
 	    }
 
-            echo "<div id=\"debug\"><h2>eZ debug" . $byUser . $byIP ."</h2>";
+            echo "<div id=\"debug\"><h2><a href=\"#debug-end\">eZ debug</a>" . $byUser . $byIP ."</h2>";
+            echo "<div id=\"debug-details\">";
 
             if ( !$this->UseCSS )
             {
@@ -1833,6 +1834,22 @@ class eZDebug
             echo "<p><b>Time used to render debug report: $reportTime secs</b></p>";
 
             echo "</div>";
+            echo "</div>";
+            echo "<a id=\"debug-end\"></a>";
+
+            echo "<script>
+  const header = document.querySelector('#debug h2 a');
+  const content = document.querySelector('#debug-details');
+  const anchor = document.querySelector('#debug-end');
+  header.addEventListener('click', () => {
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+    if (content.classList.contains('active') && anchor) {
+        anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+</script>";
+
         }
 
         if ( $returnReport )

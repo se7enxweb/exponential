@@ -9,7 +9,7 @@
  */
 
 /*!
-  \brief contains the eZ Publish SDK version.
+  \brief contains the Exponential SDK version.
 */
 
 class eZPublishSDK
