@@ -1494,7 +1494,7 @@ class eZDebug
 	        $byIP = false;
 	    }
 
-            echo "<div id=\"debug\"><h2><a href=\"#debug-end\">eZ debug</a>" . $byUser . $byIP ."</h2>";
+            echo "<div id=\"debug\"><h2><a href=\"#debug-end\">eZ debug " . $byUser . $byIP . "</a></h2>";
             echo "<div id=\"debug-details\">";
 
             if ( !$this->UseCSS )
