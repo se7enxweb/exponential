@@ -20,7 +20,7 @@
   With your help we can fix the errors Exponential might have and implement new features."
  |i18n("design/standard/setup/init",,
        hash('%buglink',concat('<a target="_other" href="https://github.com/se7enxweb/Exponential/issues">',"Exponential bug reports"|i18n("design/standard/setup/init"),'</a>'),
-            '%ezlink',concat('<a target="_other" href="https://share.se7enx.com/forums/developer">',"Share Exponential! Forums"|i18n("design/standard/setup/init"),'</a>')))}
+            '%ezlink',concat('<a target="_other" href="https://share.exponential.earth/forums/developer">',"Share Exponential! Forums"|i18n("design/standard/setup/init"),'</a>')))}
 </p>
 
 <p>
