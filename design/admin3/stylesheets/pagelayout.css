@@ -1062,7 +1062,7 @@ input:-moz-placeholder {
 
 #dashboard-logo {
     /* float:left; */
-    width: 151px;
+    width: 265px;
     aspect-ratio: 151/48;
     background: url(../images/3/logo_separator_sprite.png) no-repeat -239px 0;
     /* height:72px; */
@@ -1425,7 +1425,7 @@ div:has(> table) {
     overflow-x: auto;
     display: block;
     clear: both;
-    max-width: calc(100vw - 2rem);
+    max-width: calc(100vw - 1rem);
 }
 
 @media screen and (min-width: 576px) {
