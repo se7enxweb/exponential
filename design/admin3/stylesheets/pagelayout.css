@@ -145,10 +145,10 @@ a.image-text:hover>span {
 
 #header-logo .brand,
 #header-logo .brand {
-    width: 80px;
+    width: 114px;
     height: 32px;
     text-decoration: none;
-    background: transparent url(/design/admin3/images/3/logo_separator_sprite.png) -128px 4px no-repeat;
+    background: transparent url(/design/admin3/images/3/logo_separator_sprite.png) -124px 3px no-repeat;
     display: inline-block;
 }
 
