@@ -954,6 +954,7 @@ input:-moz-placeholder {
 .login-text-wrapper {
     color: #b7b7b7;
     margin-top: 15px;
+    margin-bottom: 3rem;
     text-align: center;
 }
 
