@@ -41,8 +41,8 @@ section#page {
 }
 
 header {
-    background: transparent url('../images/setup/2/Exponential-logo-title.png') no-repeat 24px 20px;
-    height: 60px;
+  background: transparent url('../images/setup/2/Exponential-logo-title.png') no-repeat 30px 10px;
+  height: 81px;
 }
 
 article {
