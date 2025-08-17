@@ -6,6 +6,6 @@
 </head>
 
 <body>
-<p>Please read the REST documentation on the <a href="https://ezpublishdoc.mugo.ca/">documentation server</a> on how to configure the necessary OutputFormat templates.</p>
+<p>Please read the REST documentation on the <a href="https://exponential.doc.exponential.earth/">documentation server</a> on how to configure the necessary OutputFormat templates.</p>
 </body>
 </html>
