@@ -1,7 +1,8 @@
 # Exponential 6.0.x
-![Exponential - Powered by SQLite Logo](https://github.com/se7enxweb/exponential/assets/51429274/b969638f-5f74-490a-8659-dd46c1b4d46e)
+![Exponential - Powered by SQLite Logo](https://github.com/user-attachments/assets/b16a5e96-7483-4e83-b658-ac4fe92e84b8)
 
-![Exponential - Project Logo](https://github.com/se7enxweb/exponential/assets/51429274/b09e3459-4614-49b2-8256-666073b1b8af)
+
+![Exponential - Project Logo](https://github.com/user-attachments/assets/c2f9e973-0b4f-4e58-ac76-f0308775e3c1)
 
 
 # Exponential Project Notice : 2025.08.12
