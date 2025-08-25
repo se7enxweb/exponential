@@ -103,6 +103,18 @@
           "@legacy-scripts"
       ]
     },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
+        "symfony-web-dir": "web",
+        "symfony-tests-dir": "tests",
+        "ezpublish-legacy-dir": "ezpublish_legacy",
+        "symfony-assets-install": "relative",
+        "incenteev-parameters": {
+            "keep-outdated": true,
+            "file": "app/config/parameters.yml"
+    },
     "config": {
         "allow-plugins": {
             "se7enxweb/ezpublish-legacy-installer": true,
