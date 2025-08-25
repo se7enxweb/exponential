@@ -35,7 +35,7 @@
         "ext-session": "*",
         "ext-spl": "*",
         "ext-simplexml": "*",
-        "se7enxweb/ezpublish-legacy-installer": "*",
+        "se7enxweb/exponential-legacy-installer": "*",
         "se7enxweb/ezautosave": "~6.0.0",
         "se7enxweb/ezdemo": "~6.0.0",
         "se7enxweb/ezflow": "~6.0.0",
