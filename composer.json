@@ -109,7 +109,7 @@
         "symfony-var-dir": "var",
         "symfony-web-dir": "web",
         "symfony-tests-dir": "tests",
-        "ezpublish-legacy-dir": "ezpublish_legacy",
+        "ezpublish-legacy-dir": ".",
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "keep-outdated": true,
