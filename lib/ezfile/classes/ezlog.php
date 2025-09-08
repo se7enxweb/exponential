@@ -46,13 +46,27 @@ class eZLog
         $logFile = @fopen( $fileName, "a" );
         if ( $logFile )
         {
+            $ini = eZINI::instance();
             $time = date( "M d Y H:i:s", strtotime( "now" ) );
-            $logMessage = "[ " . $time . " ] $message\n";
+
+            $logMessage = "[ " . $time . " ]";
+            $logMessage .= "[ {$GLOBALS['eZCurrentAccess']['name']} ]";
+            if (php_sapi_name() === 'cli') {
+                $pid = getmypid();
+                $command = exec("ps -p $pid -o args=");
+                $logMessage .= '[ ' . $command . ' ]';
+            } else {
+                $scheme = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+                $host = $_SERVER['HTTP_HOST'];
+                $uri = $_SERVER['REQUEST_URI'];
+                $url = "$scheme://$host$uri";
+                $logMessage .= '[ ' . $url . ' ]';
+            }
+            $logMessage .= " $message\n";
             @fwrite( $logFile, $logMessage );
             @fclose( $logFile );
             if ( !$fileExisted )
             {
-                $ini = eZINI::instance();
                 $permissions = octdec( $ini->variable( 'FileSettings', 'LogFilePermissions' ) );
                 @chmod( $fileName, $permissions );
             }
