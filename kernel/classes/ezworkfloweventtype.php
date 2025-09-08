@@ -22,7 +22,7 @@ class eZWorkflowEventType extends eZWorkflowType
      * @param string $typeString
      * @param string $name
      */
-    public function __construct( $typeString, $name )
+    public function __construct( $typeString = '', $name = '' )
     {
         parent::__construct( "event", $typeString, ezpI18n::tr( 'kernel/workflow/event', "Event" ), $name );
     }
