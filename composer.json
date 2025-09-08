@@ -35,7 +35,7 @@
         "ext-session": "*",
         "ext-spl": "*",
         "ext-simplexml": "*",
-        "se7enxweb/ezpublish-legacy-installer": "*",
+        "se7enxweb/exponential-legacy-installer": "*",
         "se7enxweb/ezautosave": "~6.0.0",
         "se7enxweb/ezdemo": "~6.0.0",
         "se7enxweb/ezflow": "~6.0.0",
@@ -103,10 +103,24 @@
           "@legacy-scripts"
       ]
     },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
+        "symfony-web-dir": "web",
+        "symfony-tests-dir": "tests",
+        "ezpublish-legacy-dir": ".",
+        "symfony-assets-install": "relative",
+        "incenteev-parameters": {
+            "keep-outdated": true,
+            "file": "app/config/parameters.yml"
+    },
     "config": {
         "allow-plugins": {
             "se7enxweb/ezpublish-legacy-installer": true,
             "ezsystems/ezpublish-legacy-installer": true
         }
     }
+}
+    
 }
