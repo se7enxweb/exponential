@@ -69,6 +69,7 @@ class ezpContentFieldSet implements ArrayAccess, Iterator
      *
      * Again, this operation might not belong to the fields set (data map) but to the content itself
     */
+    #[\ReturnTypeWillChange]
     public function offsetExists( $offset )
     {
     }
@@ -82,6 +83,7 @@ class ezpContentFieldSet implements ArrayAccess, Iterator
      * </code>
      * Semantically speaking, this belongs to the content, not the fields. Maybe no need to implement that.
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet( $offset, $value )
     {
     }
@@ -92,6 +94,7 @@ class ezpContentFieldSet implements ArrayAccess, Iterator
      *
      * @return ezpContentFieldSet
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet( $offset )
     {
         // This needs to check if this language can be instanciated (e.g. is active on the installation)
@@ -110,6 +113,7 @@ class ezpContentFieldSet implements ArrayAccess, Iterator
      * unset( $content->fields['eng-GB'] );
      * </code>
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset( $offset )
     {
     }
@@ -183,6 +187,7 @@ class ezpContentFieldSet implements ArrayAccess, Iterator
     /**
      * Iterator::key()
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return current( $this->iteratorPointer );
@@ -191,6 +196,7 @@ class ezpContentFieldSet implements ArrayAccess, Iterator
     /**
      * Iterator::current()
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->iteratorData[current( $this->iteratorPointer )];
@@ -199,6 +205,7 @@ class ezpContentFieldSet implements ArrayAccess, Iterator
     /**
      * Iterator::next()
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         next( $this->iteratorPointer );
@@ -207,6 +214,7 @@ class ezpContentFieldSet implements ArrayAccess, Iterator
     /**
      * Iterator::rewind()
      */
+    #[\ReturnTypeWillChange]
     public function rewind ()
     {
         reset( $this->iteratorPointer );
@@ -215,6 +223,7 @@ class ezpContentFieldSet implements ArrayAccess, Iterator
     /**
      * Iterator::valid()
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return isset( $this->iteratorData[current( $this->iteratorPointer )] );

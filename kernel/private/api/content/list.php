@@ -24,6 +24,7 @@ class ezpContentList implements Countable, Iterator
      * Countable::count
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
     }
@@ -31,6 +32,7 @@ class ezpContentList implements Countable, Iterator
     /**
      * Iterator::key()
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
     }
@@ -38,6 +40,7 @@ class ezpContentList implements Countable, Iterator
     /**
      * Iterator::key()
      */
+    #[\ReturnTypeWillChange]
     public function current ()
     {
     }
@@ -45,6 +48,7 @@ class ezpContentList implements Countable, Iterator
     /**
      * Iterator::key()
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
     }
@@ -52,6 +56,7 @@ class ezpContentList implements Countable, Iterator
     /**
      * Iterator::key()
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
     }
@@ -59,6 +64,7 @@ class ezpContentList implements Countable, Iterator
     /**
      * Iterator::key()
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
     }

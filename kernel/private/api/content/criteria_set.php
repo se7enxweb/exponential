@@ -21,6 +21,7 @@ class ezpContentCriteriaSet implements ArrayAccess, Countable, Iterator
      * @param mixed $offset
      * @param eZContentCriteria $value
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet( $offset, $value )
     {
         $this->criteria[] = $value;
@@ -31,10 +32,13 @@ class ezpContentCriteriaSet implements ArrayAccess, Countable, Iterator
      *
      * @param mixed $offset
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet( $offset ){}
 
+    #[\ReturnTypeWillChange]
     public function offsetExists( $offset ){}
 
+    #[\ReturnTypeWillChange]
     public function offsetUnset( $offset ){}
 
     /**
@@ -42,6 +46,7 @@ class ezpContentCriteriaSet implements ArrayAccess, Countable, Iterator
      * @note Implements the count() method of the Countable interface
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count( $this->criteria );
@@ -49,26 +54,31 @@ class ezpContentCriteriaSet implements ArrayAccess, Countable, Iterator
 
     //// Iterator interface
 
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return  $this->pointer;
     }
 
+    #[\ReturnTypeWillChange]
     public function current ()
     {
         return $this->criteria[$this->pointer];
     }
 
+    #[\ReturnTypeWillChange]
     public function next()
     {
         ++$this->pointer;
     }
 
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->pointer = 0;
     }
 
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return isset( $this->criteria[$this->pointer] );
