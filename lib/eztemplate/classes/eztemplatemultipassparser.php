@@ -424,16 +424,30 @@ class eZTemplateMultiPassParser extends eZTemplateParser
                         $stopPosition),
                     $templateFile);
             }
+	    else
+	    {
+                $placement = array( array(), array(), null );
+	    }
 
             switch ( $element["type"] )
             {
                 case eZTemplate::ELEMENT_TEXT:
                 {
                     unset( $node );
-                    $node = array( eZTemplate::NODE_TEXT,
-                                   false,
-                                   $element['text'],
-                                   $placement );
+		    if ( isset( $placement ) )
+		    {
+                        $node = array( eZTemplate::NODE_TEXT,
+                                       false,
+                                       $element['text']
+                                );
+		    }
+		    else
+		    {
+                        $node = array( eZTemplate::NODE_TEXT,
+                                       false,
+                                       $element['text'],
+                                       $placement );
+		    }
                     $this->appendChild( $currentRoot, $node );
                 } break;
                 case eZTemplate::ELEMENT_VARIABLE:

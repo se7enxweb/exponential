@@ -812,20 +812,46 @@ class eZTemplateCompiler
         $tpl->appendElementText( $textElements, $lastNodeData, false, false );
         $tpl->appendElementText( $textElements, $newNodeData, false, false );
         $newData = implode( '', $textElements );
-        $newPlacement = $lastNode[3];
-        if ( !is_array( $newPlacement ) )
-        {
-            $newPlacement = $newNode[3];
-        }
-        else
-        {
-            if ( !is_bool( $newNode[3] ) )
-            {
-                $newPlacement[1][0] = $newNode[3][1][0]; // Line end
-                $newPlacement[1][1] = $newNode[3][1][1]; // Column end
-                $newPlacement[1][2] = $newNode[3][1][2]; // Position end
-            }
-        }
+// Create a normalized placement structure with two sub-arrays [start, end]
+$newPlacement = array(
+    0 => array(null, null, null),
+    1 => array(null, null, null)
+);
+
+// Prefer lastNode placement if valid
+if ( isset($lastNode[3]) && is_array($lastNode[3]) ) {
+    $newPlacement = $lastNode[3];
+}
+
+// If lastNode didn't provide usable placement, try newNode
+if ( (!isset($newPlacement[1]) || !is_array($newPlacement[1])) && isset($newNode[3]) && is_array($newNode[3]) ) {
+    $newPlacement = $newNode[3];
+}
+
+// Ensure both start(0) and end(1) arrays exist and have keys 0..2
+if ( !isset($newPlacement[0]) || !is_array($newPlacement[0]) ) {
+    $newPlacement[0] = array(null, null, null);
+} else {
+    $newPlacement[0][0] = $newPlacement[0][0] ?? null;
+    $newPlacement[0][1] = $newPlacement[0][1] ?? null;
+    $newPlacement[0][2] = $newPlacement[0][2] ?? null;
+}
+
+if ( !isset($newPlacement[1]) || !is_array($newPlacement[1]) ) {
+    $newPlacement[1] = array(null, null, null);
+} else {
+    $newPlacement[1][0] = $newPlacement[1][0] ?? null;
+    $newPlacement[1][1] = $newPlacement[1][1] ?? null;
+    $newPlacement[1][2] = $newPlacement[1][2] ?? null;
+}
+
+// Merge end values from $newNode if they exist (non-destructive)
+if ( isset($newNode[3]) && is_array($newNode[3]) && isset($newNode[3][1]) && is_array($newNode[3][1]) ) {
+    $newPlacement[1][0] = $newNode[3][1][0] ?? $newPlacement[1][0];
+    $newPlacement[1][1] = $newNode[3][1][1] ?? $newPlacement[1][1];
+    $newPlacement[1][2] = $newNode[3][1][2] ?? $newPlacement[1][2];
+}
+/* --- End: safer placement merge --- */
         $lastNode = false;
         $newNode = array( eZTemplate::NODE_TEXT,
                           false,
@@ -892,7 +918,10 @@ class eZTemplateCompiler
         else if ( $nodeType == eZTemplate::NODE_TEXT )
         {
             $text = $node[2];
+	    if( isset( $node[3] ) )
             $placement = $node[3];
+	    else
+	    $placement = array( array(), array(), null);
 
             $newNode[0] = $nodeType;
             $newNode[1] = false;
