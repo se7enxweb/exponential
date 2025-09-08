@@ -837,6 +837,11 @@ class eZMySQLiDB extends eZDBInterface
 
     function escapeString( $str )
     {
+        if ( $str === null )
+	{
+	    return '';
+	}
+
         if ( $this->IsConnected )
         {
             return mysqli_real_escape_string( $this->DBConnection, $str );
