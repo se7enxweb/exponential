@@ -27,6 +27,13 @@ class eZPathElement extends eZPersistentObject
     public $Action;
     public $Text;
     public $Parent;
+    public $TextMD5;
+    public $ActionType;
+    public $Link;
+    public $IsAlias;
+    public $IsOriginal;
+    public $AliasRedirects;
+
     public function __construct( $row )
     {
         $this->Path = null;
