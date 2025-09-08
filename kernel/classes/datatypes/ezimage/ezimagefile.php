@@ -285,6 +285,7 @@ class eZImageFile extends eZPersistentObject
     /// \privatesection
     public $ContentObjectAttributeID;
     public $Filepath;
+    public $id;
 }
 
 ?>
