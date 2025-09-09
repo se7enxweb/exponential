@@ -21,6 +21,15 @@ class eZRSSExport extends eZPersistentObject
     public $ModifierID;
     public $MainNodeOnly;
     public $NumberOfObjects;
+    public $Title;
+    public $URL;
+    public $SiteAccess;
+    public $CreatorID;
+    public $Description;
+    public $RSSVersion;
+    public $AccessURL;
+    public $Active;
+
     const STATUS_VALID = 1;
     const STATUS_DRAFT = 0;
 
