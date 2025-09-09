@@ -21,6 +21,11 @@
 
 class eZURL extends eZPersistentObject
 {
+    public $URL;
+    public $IsValid;
+    public $OriginalURLMD5;
+    public $LastChecked;
+
     static function definition()
     {
         static $definition = array( 'fields' => array( 'id' => array( 'name' => 'ID',
