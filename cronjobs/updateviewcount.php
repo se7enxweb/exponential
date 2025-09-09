@@ -177,13 +177,18 @@ else
 // Process the content of $pathHashCounter to transform it into $nodeIDHashCounter
 foreach ( $pathHashCounter as $path => $count )
 {
-    $nodeID = eZURLAliasML::fetchNodeIDByPath( $path );
-
-    // Support for PathPrefix
-    for ( $pathPrefixIndex = 0; !$nodeID && $pathPrefixIndex < $pathPrefixesCount; ++$pathPrefixIndex )
+   // Support for PathPrefix
+   if( $pathPrefixesCount >= 1 )
+   {
+       for ( $pathPrefixIndex = 0; !$nodeID && $pathPrefixIndex < $pathPrefixesCount; ++$pathPrefixIndex )
+       {
+          // Try prepending each of the existing pathPrefixes, to see if one of them matches an existing node
+          $nodeID = eZURLAliasML::fetchNodeIDByPath( $pathPrefixes[$pathPrefixIndex] . $path );
+       }
+    }
+    else
     {
-        // Try prepending each of the existing pathPrefixes, to see if one of them matches an existing node
-        $nodeID = eZURLAliasML::fetchNodeIDByPath( $pathPrefixes[$pathPrefixIndex] . $path );
+        $nodeID = eZURLAliasML::fetchNodeIDByPath( $path );
     }
 
     if ( $nodeID )
@@ -206,13 +211,15 @@ foreach ( $nodeIDHashCounter as $nodeID => $count )
         $counter = eZViewCounter::fetch( $nodeID );
         if ( $counter == null )
         {
+	    $cli->output( "Node ( " . $nodeID . " ) View count have increased: Count: $count \n" );
             $counter = eZViewCounter::create( $nodeID );
             $counter->setAttribute( 'count', $count );
             $counter->store();
         }
         else
         {
-            $counter->increase( $count );
+	    $cli->output( "Node ( " . $nodeID . " ) View count have increased: Count: $count \n" );
+	    $counter->increase( $count );
         }
     }
 }
@@ -232,6 +239,6 @@ if ( $fh )
 }
 
 $cli->output( "Finished at " . $dt->toString() . "\n"  );
-$cli->output( "View count have been updated!\n" );
+$cli->output( "View count has been updated.\n" );
 
 ?>
