@@ -38,7 +38,7 @@ class eZMailNotificationTransport extends eZNotificationTransport
         foreach ( $addressList as $addressItem )
         {
             $mail->extractEmail( $addressItem, $email, $name );
-            $mail->addBcc( $email, $name );
+            $mail->addReceiver $email, $name );
         }
         $mail->setSender( $emailSender );
         $mail->setSubject( $subject );
