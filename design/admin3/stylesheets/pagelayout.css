@@ -1256,7 +1256,7 @@ input:-moz-placeholder {
     }
 
     #dashboard-logo {
-        width: 151px;
+        /* width: 151px; */
     }
 
     #mainteinance-text {
