@@ -217,6 +217,25 @@ class eZContentObjectAttribute extends eZPersistentObject
                                                     $asObject);
     }
 
+    /**
+     * Returns the attribute data for $attr, this is either returned from the
+     * member variables or a member function depending on whether the definition
+     * field or function attributes matched.
+     *
+     * @param string $attr
+     * @param bool $noFunction
+     * @return mixed
+     */
+    public function attribute( $attr, $noFunction = false )
+    {
+        // avoiding returning null values for data_text
+        if($attr == 'data_text' && $this->DataText === null)
+        {
+            return '';
+        }
+        return parent::attribute( $attr, $noFunction );
+    }
+
     /*!
      \return the attributes with alternative translations for the current attribute version and class attribute id
     */
