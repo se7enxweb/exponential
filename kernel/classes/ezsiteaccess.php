@@ -500,7 +500,7 @@ class eZSiteAccess
      *                   hence skip changing eZSys access paths (but not siteaccess, see {@link eZSiteAccess::load()})
      * @return array The $access parameter
      */
-    static function change( array $access, eZINI $siteINI = null )
+    static function change( array $access, ?eZINI $siteINI = null )
     {
         $name = $access['name'];
         $GLOBALS['eZCurrentAccess'] =& $access;
@@ -582,7 +582,7 @@ class eZSiteAccess
      *                            If set, then global siteacceess will not be changed as well.
      * @return array The $access parameter
      */
-    static function load( array $access, eZINI $siteINI = null )
+    static function load( array $access, ?eZINI $siteINI = null )
     {
         $currentSiteAccess = $GLOBALS['eZCurrentAccess'];
         unset( $GLOBALS['eZCurrentAccess'] );
