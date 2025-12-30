@@ -102,23 +102,23 @@ PHP 7 Support is deprecated but still available from our older stable and usable
 
 # Installation
 
-Read [doc/INSTALL.md](doc/INSTALL.md) or go to [exponential.doc.exponential.one/eZ-Publish/Technical-manual/6.x/Installation.html](https://exponential.doc.exponential.one/eZ-Publish/Technical-manual/6.x/Installation.html)
+Read [doc/INSTALL.md](doc/INSTALL.md) or go to [exponential.doc.exponential.earth/eZ-Publish/Technical-manual/6.x/Installation.html](https://exponential.doc.exponential.earth/eZ-Publish/Technical-manual/6.x/Installation.html)
 
 # Issue tracker
 
 Submitting bugs, improvements and stories is possible on [https://github.com/se7enxweb/exponential/issues](https://github.com/se7enxweb/exponential/issues)
 
-If you discover a [security issue](SECURITY.md), please responsibly report such issues via email to security@exponential.one
+If you discover a [security issue](SECURITY.md), please responsibly report such issues via email to security@exponential.earth
 
 # Where to get more help
 
-Exponential documentation: [exponential.doc.exponential.one/eZ-Publish](https://exponential.doc.exponential.one/eZ-Publish)
+Exponential documentation: [exponential.doc.exponential.earth/eZ-Publish](https://exponential.doc.exponential.earth/eZ-Publish)
 
-Exponential Community forums: [share.exponential.one/forums](https://share.exponential.one/forums)
+Exponential Community forums: [share.exponential.earth/forums](https://share.exponential.earth/forums)
 
-Exponential Project Website: [exponential.one](https://exponential.one)
+Exponential Project Website: [exponential.earth](https://exponential.earth)
 
-Support Exponential! Project extension support Website: [support.exponential.one](https://support.exponential.one)
+Support Exponential! Project extension support Website: [support.exponential.earth](https://support.exponential.earth)
 
 Share Exponential! Telegram Community Support Chat
 [https://t.me/exponential](https://t.me/exponential)
