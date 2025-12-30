@@ -184,7 +184,7 @@ class eZExtension
      * @param string $extensionType See {@link eZExtension::activeExtensions()}, value of false is deprecated as of 4.4
      * @param eZINI|null $siteINI Optional parameter to be able to only do change on specific instance of site.ini
      */
-    static function activateExtensions( $extensionType = 'default', eZINI $siteINI = null )
+    static function activateExtensions( $extensionType = 'default', ?eZINI $siteINI = null )
     {
         if ( $siteINI === null )
         {
