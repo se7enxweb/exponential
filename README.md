@@ -11,7 +11,7 @@
 
 # Exponential Project Status
 
-**Exponential has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4 and beyond php9**
+**Exponential has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4, 8.5 and beyond php9**
 
 # Who is 7x
 
@@ -59,7 +59,7 @@ access to the Internet.
 
 ## What version of PHP is required
 
-Exponential Legacy supports PHP 8.1 -> 8.4 please use the latest version of PHP available on your OS.
+Exponential Legacy supports PHP 8.1 -> 8.5+ please use the latest version of PHP available on your OS.
 
 PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7.
 
