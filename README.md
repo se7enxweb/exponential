@@ -166,7 +166,7 @@ Ibexa DXP Developer Portal: [developers.ibexa.co](https://developers.ibexa.co/)
 
 # License
 
-Exponential is GNU GPL licensed. You can no longer choose between the GNU GPL and the Exponential Professional License. The GNU GPL gives you the right to use, modify and redistribute Exponential under certain conditions. The GNU GPL license is distributed with the software, see the file LICENSE. It is also available at http://www.gnu.org/licenses/gpl.txt
+Exponential is GNU GPL licensed. You can no longer choose between the GNU GPL and the eZ Systems' eZ Publish Professional License. The GNU GPL gives you the right to use, modify and redistribute Exponential under certain conditions. The GNU GPL license is distributed with the software, see the file LICENSE. It is also available at http://www.gnu.org/licenses/gpl.txt
 
 Using Exponential under the terms of the GNU GPL is free of charge.
 
