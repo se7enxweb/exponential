@@ -56,6 +56,16 @@ For the rest of the installation steps you will find the installation guide at h
 Composer Installation Guide
 ------------------
 
+- Install Exponential and Required PHP libraries like Zeta Components and Exponential extensions as specified in this project's composer.json.
+
+`cd www_root_directory; composer create-project se7enxweb/exponential:v6.0.0 exponential;`
+
+For the rest of the installation steps you will find the installation guide at https://doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html
+
+
+File based Composer Installation Guide
+------------------
+
 - Download the package from [se7enxweb/exponential](https://packagist.org/packages/se7enxweb/exponential)
 
 `mkdir exponential;`
