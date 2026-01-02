@@ -104,7 +104,7 @@ Developer note: PHP 7 support can be regained at any time by reverting php8.1 sp
 
 # Installation
 
-Read [doc/INSTALL.md](doc/INSTALL.md) or go to [exponential.doc.exponential.earth/eZ-Publish/Technical-manual/6.x/Installation.html](https://exponential.doc.exponential.earth/eZ-Publish/Technical-manual/6.x/Installation.html)
+Read [doc/INSTALL.md](doc/INSTALL.md) or go to [exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html](https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html)
 
 # Issue tracker
 
@@ -114,7 +114,7 @@ If you discover a [security issue](SECURITY.md), please responsibly report such 
 
 # Where to get more help
 
-Exponential documentation: [exponential.doc.exponential.earth/eZ-Publish](https://exponential.doc.exponential.earth/eZ-Publish)
+Exponential documentation: [exponential.doc.exponential.earth/Exponential](https://exponential.doc.exponential.earth/Exponential)
 
 Exponential Community forums: [share.exponential.earth/forums](https://share.exponential.earth/forums)
 
