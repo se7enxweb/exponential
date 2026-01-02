@@ -11,7 +11,7 @@
 
 # Exponential Project Status
 
-**Exponential has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4, 8.5 and beyond php9**
+**Exponential has made it beyond it's end of life in 2021 and survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP language like PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9**
 
 # Who is 7x
 
@@ -62,6 +62,8 @@ access to the Internet.
 Exponential Legacy supports PHP 8.1 -> 8.5+ please use the latest version of PHP available on your OS.
 
 PHP 7 Support is deprecated but still available from our older stable and usable past releases up to version 6.0.7.
+
+Developer note: PHP 7 support can be regained at any time by reverting php8.1 specific code changes in very small number of class function definitions. That said. 7x stronly recommends you to upgrade and leverage the latest PHP 8.x security improvements instead of trying to support unsupported software which is now insecure.
 
 # Main Exponential features
 
@@ -145,7 +147,25 @@ It is built on top of the full Symfony Framework, giving developers access to "s
 
 eZ Platform in some users view suffered a slow road to a stable datatype compatability with existing custom implementations of Exponential. Today all of these conserns are now gone with a solid choice left leaving both Exponential Platform and eZ Platform as serious contenders to be carefully considered. [Netgen's Media Website Core software](https://github.com/netgen/media-site) represents a much more modern eZ Platform core powered by Ibexa OSS. If your going to choose; Choose wisely.
 
-Further reading on: [https://ezplatform.com/](http://web.archive.org/web/20200328165348/https://ezplatform.com/)
+Further reading on the archived: [https://ezplatform.com/](http://web.archive.org/web/20200328165348/https://ezplatform.com/)
+
+Note: Ibexa has discontinued support for the eZ Platform Product Line favoring instead to support only the Ibexa DXP / OSS Product line going forward.
+
+eZ Platform is survived in part to 7x who has forked, mirrored, updated it's last free release of the stack of software and rebranded it as Exponential Platform 3.2.9 and Exponential Platform Legacy 2.5.0.1 (with legacy support) which provided much needed updates to provide for required php 8.3+ support allowing this software to continue to serve the users who fell in love with it from the start. Exponential Platform is just one of the many Symfony based PHP CMS + Ecommerce Solutions available under free / open source licenses.
+
+# What is Exponential Platform?
+
+In short Exponential Platform is the direct continuation of the software stack known as eZ Platform created by eZ Systems and discontinued by Ibexa. This software represents the latest product line before the move to rebrand the stack to Ibexa DXP/OSS upgraded to support PHP 8.3+ and rebranded to avoid any trademark issues with the continued use of the software by users with a need or desire to build smarter, faster and with greater ease of maintinence within a Symfony based PHP CMS.
+
+Exponential Platform currently comes in two different distributions that are very powerful and very stable.
+
+- Exponential Platform 3.2.9 Symfony only CMS
+
+- Exponential Platform Legacy 2.5.0.1 Dual Kernel Symfony CMS which also includes a full copy of Exponential 6
+
+Learn more at https://platform.exponential.earth
+
+Start a discussion at Share @ https://share.exponential.earth/forums/exponential-platform
 
 # What is Ibexa DXP OSS?
 
