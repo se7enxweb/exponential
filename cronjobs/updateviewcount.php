@@ -202,6 +202,7 @@ foreach ( $pathHashCounter as $path => $count )
             $nodeIDHashCounter[$nodeID] += $count;
         }
     }
+    unset( $nodeID );
 }
 
 foreach ( $nodeIDHashCounter as $nodeID => $count )
