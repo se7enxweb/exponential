@@ -4,7 +4,7 @@
  *
  * @copyright Copyright (C) 1999 - 2026 7x / Brookins Consulting / eZ Systems AS. All rights reserved.
  * @license http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License v2 (or any later version)
- * @version 1.0.1
+ * @version 1.0.2
  * @package exponential
  */
 
@@ -39,7 +39,9 @@ class eZTemplateMemberOfRoleOperator
             'member_of_role_id',
             'member_of_any_role',
             'member_of_role_by_user',
-            'member_of_role_by_user_id'
+            'member_of_role_by_user_id',
+            'has_policy',
+            'has_policy_by_user'
         );
     }
 
@@ -136,6 +138,40 @@ class eZTemplateMemberOfRoleOperator
                     'required' => true,
                     'default' => 0
                 )
+            ),
+            'has_policy' => array(
+                'module' => array(
+                    'type' => 'string',
+                    'required' => true,
+                    'default' => ''
+                ),
+                'function' => array(
+                    'type' => 'string',
+                    'required' => true,
+                    'default' => ''
+                ),
+                'user_id' => array(
+                    'type' => 'integer',
+                    'required' => false,
+                    'default' => 0
+                )
+            ),
+            'has_policy_by_user' => array(
+                'user' => array(
+                    'type' => 'object',
+                    'required' => true,
+                    'default' => null
+                ),
+                'module' => array(
+                    'type' => 'string',
+                    'required' => true,
+                    'default' => ''
+                ),
+                'function' => array(
+                    'type' => 'string',
+                    'required' => true,
+                    'default' => ''
+                )
             )
         );
     }
@@ -221,6 +257,31 @@ class eZTemplateMemberOfRoleOperator
                 $roleId = $namedParameters['role_id'];
                 
                 $operatorValue = self::memberOfRoleByUserId( $userId, $roleId );
+            }
+            break;
+
+            case 'has_policy':
+            {
+                $module = $namedParameters['module'];
+                $function = $namedParameters['function'];
+                $userId = $namedParameters['user_id'];
+
+                if ($userId === 0)
+                {
+                    $userId = eZUser::currentUserID();
+                }
+
+                $operatorValue = $this->userHasPolicy($userId, $module, $function);
+            }
+            break;
+
+            case 'has_policy_by_user':
+            {
+                $user = $namedParameters['user'];
+                $module = $namedParameters['module'];
+                $function = $namedParameters['function'];
+
+                $operatorValue = self::hasPolicyByUser($user, $module, $function);
             }
             break;
         }
@@ -441,6 +502,100 @@ class eZTemplateMemberOfRoleOperator
                 break;
             }
         }
+
+        return $result;
+    }
+
+    /**
+     * Check if user has a specific policy by module and function
+     *
+     * @param int $userId User ID
+     * @param string $module Policy module name (e.g., 'content', 'user')
+     * @param string $function Policy function name (e.g., 'read', 'edit', 'create')
+     * @return bool True if user has the policy, false otherwise
+     */
+    public function userHasPolicy( $userId, $module, $function )
+    {
+        if ( empty( $module ) || empty( $function ) || $userId <= 0 )
+        {
+            return false;
+        }
+
+        $user = eZUser::fetch( $userId );
+        if ( !$user instanceof eZUser )
+        {
+            return false;
+        }
+
+        $roles = $user->roles();
+
+        foreach ( $roles as $role )
+        {
+            if ( !$role instanceof eZRole )
+            {
+                continue;
+            }
+
+            // Check if eZRole has the hasPolicy method (from kernel override extension)
+            if ( method_exists( $role, 'hasPolicy' ) )
+            {
+                if ( $role->hasPolicy( $module, $function ) )
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                // Fallback: manually check policies if hasPolicy method doesn't exist
+                $policies = $role->policyList();
+
+                foreach ( $policies as $policy )
+                {
+                    if ( !$policy instanceof eZPolicy )
+                    {
+                        continue;
+                    }
+
+                    $policyModule = $policy->attribute('module_name');
+                    $policyFunction = $policy->attribute('function_name');
+
+                    // Check for exact match or wildcard (*)
+                    if ( ( $policyModule == $module || $policyModule == '*' ) &&
+                        ( $policyFunction == $function || $policyFunction == '*' ) )
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Check if user object has a specific policy by module and function
+     *
+     * @static
+     * @param eZUser $user User object
+     * @param string $module Policy module name (e.g., 'content', 'user')
+     * @param string $function Policy function name (e.g., 'read', 'edit', 'create')
+     * @return bool True if user has the policy, false otherwise
+     */
+    static function hasPolicyByUser( $user, $module, $function )
+    {
+        $result = false;
+
+        if ( !$user instanceof eZUser )
+        {
+            return false;
+        }
+
+        // Fetch user ID
+        $userID = $user->attribute('contentobject_id');
+
+        // Create instance to call userHasPolicy
+        $instance = new self();
+        $result = $instance->userHasPolicy( $userID, $module, $function );
 
         return $result;
     }
