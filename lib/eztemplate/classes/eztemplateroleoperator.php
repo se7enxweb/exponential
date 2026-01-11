@@ -12,13 +12,13 @@
  * The eZTemplateRoleOperator class provides template operators for checking user role membership
  * 
  * Template usage examples:
- * {if $current_user|member_of_role('Administrator')}
- * {if $current_user|member_of_role_id(1)}
- * {if $current_user|member_of_any_role(array('Editor', 'Administrator'))}
- * {if $current_user|member_of_any_role(array(1, 2, 3))}
- * {if $current_user|member_of_any_role(array('Editor', 2, 'Publisher'), match_all=true())}
- * {if $user_object|member_of_role_by_user(1)}
- * {if 42|member_of_role_by_user_id(1)}
+ * {if $current_user|has_role('Administrator')}
+ * {if $current_user|has_role_id(1)}
+ * {if $current_user|has_any_role(array('Editor', 'Administrator'))}
+ * {if $current_user|has_any_role(array(1, 2, 3))}
+ * {if $current_user|has_any_role(array('Editor', 2, 'Publisher'), match_all=true())}
+ * {if $user_object|has_role_by_user(1)}
+ * {if 42|has_role_by_user_id(1)}
  */
 class eZTemplateRoleOperator
 {
@@ -35,11 +35,11 @@ class eZTemplateRoleOperator
     public function __construct()
     {
         $this->Operators = array(
-            'member_of_role',
-            'member_of_role_id',
-            'member_of_any_role',
-            'member_of_role_by_user',
-            'member_of_role_by_user_id',
+            'has_role',
+            'has_role_id',
+            'has_any_role',
+            'has_role_by_user',
+            'has_role_by_user_id',
             'has_policy',
             'has_policy_by_user'
         );
@@ -74,7 +74,7 @@ class eZTemplateRoleOperator
     public function namedParameterList()
     {
         return array(
-            'member_of_role' => array(
+            'has_role' => array(
                 'role_name' => array(
                     'type' => 'string',
                     'required' => true,
@@ -86,7 +86,7 @@ class eZTemplateRoleOperator
                     'default' => 0
                 )
             ),
-            'member_of_role_id' => array(
+            'has_role_id' => array(
                 'role_id' => array(
                     'type' => 'integer',
                     'required' => true,
@@ -98,7 +98,7 @@ class eZTemplateRoleOperator
                     'default' => 0
                 )
             ),
-            'member_of_any_role' => array(
+            'has_any_role' => array(
                 'roles' => array(
                     'type' => 'array',
                     'required' => true,
@@ -115,7 +115,7 @@ class eZTemplateRoleOperator
                     'default' => false
                 )
             ),
-            'member_of_role_by_user' => array(
+            'has_role_by_user' => array(
                 'user' => array(
                     'type' => 'object',
                     'required' => true,
@@ -127,7 +127,7 @@ class eZTemplateRoleOperator
                     'default' => 0
                 )
             ),
-            'member_of_role_by_user_id' => array(
+            'has_role_by_user_id' => array(
                 'user_id' => array(
                     'type' => 'integer',
                     'required' => true,
@@ -199,7 +199,7 @@ class eZTemplateRoleOperator
     {
         switch ( $operatorName )
         {
-            case 'member_of_role':
+            case 'has_role':
             {
                 $roleName = $namedParameters['role_name'];
                 $userId = $namedParameters['user_id'];
@@ -213,7 +213,7 @@ class eZTemplateRoleOperator
             }
             break;
 
-            case 'member_of_role_id':
+            case 'has_role_id':
             {
                 $roleId = $namedParameters['role_id'];
                 $userId = $namedParameters['user_id'];
@@ -227,7 +227,7 @@ class eZTemplateRoleOperator
             }
             break;
 
-            case 'member_of_any_role':
+            case 'has_any_role':
             {
                 $roles = $namedParameters['roles'];
                 $userId = $namedParameters['user_id'];
@@ -242,7 +242,7 @@ class eZTemplateRoleOperator
             }
             break;
 
-            case 'member_of_role_by_user':
+            case 'has_role_by_user':
             {
                 $user = $namedParameters['user'];
                 $roleId = $namedParameters['role_id'];
@@ -251,7 +251,7 @@ class eZTemplateRoleOperator
             }
             break;
 
-            case 'member_of_role_by_user_id':
+            case 'has_role_by_user_id':
             {
                 $userId = $namedParameters['user_id'];
                 $roleId = $namedParameters['role_id'];
