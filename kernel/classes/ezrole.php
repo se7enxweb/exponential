@@ -234,6 +234,43 @@ class eZRole extends eZPersistentObject
     }
 
     /*!
+     Checks for the existence of the policy object(s) by specified \a $moduleName and/or \a $functionName.
+     Removes all policies for module \a $moduleName if \a $functionName is \c false.
+     \param $moduleName Module name
+     \param $functionName function name. Default is \c false.
+     \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
+     the calls within a db transaction; thus within db->begin and db->commit.
+    */
+    function hasPolicy( $moduleName, $functionName = false )
+    {
+        $hasPolicy = false;
+        $policyList = $this->policyList();
+        if ( is_array( $policyList ) && count( $policyList ) > 0 )
+        {
+            $db = eZDB::instance();
+            $db->begin();
+
+            foreach( $policyList as $key => $policy )
+            {
+                if ( is_object( $policy ) )
+                {
+                    if ( $policy->attribute( 'module_name' ) == $moduleName )
+                    {
+                        if ( ( $functionName === false ) || ( $policy->attribute( 'function_name' ) == $functionName ) )
+                        {
+                            $hasPolicy = true;
+                        }
+                    }
+                }
+            }
+
+            $db->commit();
+        }
+
+        return $hasPolicy;
+    }
+
+    /*!
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
      */
