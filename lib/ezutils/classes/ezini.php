@@ -1,5 +1,12 @@
 <?php
 /**
+ * ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ###
+ * - lib/ezutils/classes/ezini.php - new ini setting  ext-siteaccess-override
+ * -                               - new ini setting  ext-siteaccess-override__group
+ *
+ * ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ### - multisite-hosting: CLEAR INI CACHE for project A also clear
+ *                                  INI CACHE for all other projects on the same ez installation
+ *
  * File containing the eZINI class.
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -551,7 +558,11 @@ class eZINI
         eZDebug::accumulatorStart( 'ini', 'Ini load', 'Load cache' );
         if ( $reset )
             $this->reset();
-        $cachedDir = __DIR__ . "/../../../" . self::CONFIG_CACHE_DIR;
+        // ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ###
+        // $cachedDir = __DIR__ . "/../../../" . self::CONFIG_CACHE_DIR;
+        if ( !isset( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) )
+            $GLOBALS['eZINI_CONFIG_CACHE_DIR'] = __DIR__ . "/../../../" . self::CONFIG_CACHE_DIR;
+        $cachedDir = $GLOBALS['eZINI_CONFIG_CACHE_DIR'];
 
         $fileName = $this->cacheFileName( $placement );
         $cachedFile = $cachedDir . $fileName;
@@ -1779,6 +1790,14 @@ class eZINI
                     $placement = 'extension:' . $exploded[1];
                 else
                     $placement = 'siteaccess';
+            }
+            break;
+            //### EXP-MULTI-SITE-OVERRIDE-SETTINGS ###
+            case 5:
+            {
+                // ext-siteaccess-override
+                // ext-siteaccess-override__group
+                $placement = 'ext-siteaccess-'. $exploded[3] .':' . $exploded[1];
             }
             break;
             case 6:
