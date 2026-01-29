@@ -270,7 +270,59 @@ class eZExtension
         {
             $ini = eZINI::instance();
         }
-        $ini->prependOverrideDir( $extensionSettingsPath . '/settings/siteaccess/' . $accessName, $globalDir, $identifier, 'siteaccess' );
+
+        // ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ###
+        // we need file_exists because we have several site_extensions with override folders
+        // this folder is only active if a siteaccess from extension is loaded
+        // disadvantage file_exists calls on every page request => but seems to be faster then to check an array of siteaccess = extension info
+        // may be its php5.3
+        if ( file_exists ( $extensionSettingsPath . '/settings/siteaccess/' . $accessName ) )
+        {
+            // define new ini location which is enabled if a extension siteaccess is active - overrides extension siteaccess settings
+            // extension/$ext_name/settings/override/ *.ini.append.php
+            $ini->prependOverrideDir( $extensionSettingsPath . '/settings/override/' , $globalDir, 'ext-siteaccess-override:'.$extension , 'siteaccess');
+
+            // settings/siteacces/ siteAccessGroupName__sprache
+            // extension/$ext_name/settings/override_$siteAccessGroupName/ *.ini.append.php
+            $siteAccessNameExplodeArray = explode( '__', $accessName );
+            if( count( $siteAccessNameExplodeArray ) > 1 )
+            {
+                $siteAccessGroupName = $siteAccessNameExplodeArray[0];
+                // extension/$ext_name/settings/override__ $sa_group_name / *.ini.append.php
+                $ini->prependOverrideDir( $extensionSettingsPath . '/settings/override__' . $siteAccessGroupName , $globalDir, 'ext-siteaccess-override:'.$extension.':__group:'.$siteAccessGroupName, 'siteaccess' );
+            }
+
+            // extension/$ext_name/settings/siteaccess/$siteaccess_name/ *.ini.append.php
+            $ini->prependOverrideDir( $extensionSettingsPath . '/settings/siteaccess/' . $accessName, $globalDir, $identifier, 'siteaccess' );
+
+            if( defined( 'EXP_SITE_STRUCTURE_EZ_INI_OVERRIDE_DIR_LIST' ) &&
+                EXP_SITE_STRUCTURE_EZ_INI_OVERRIDE_DIR_LIST === true )
+            {
+                $eZINIOverrideDirListOriginal = $ini->overrideDirs( 'extension' );
+                $eZINIOverrideDirList = array();
+
+                // delete all other site extenions from override list to minimize file_exists calls eZINI::findeInputFiles
+                foreach( $eZINIOverrideDirListOriginal as $key => $overrideLocation )
+                {
+                    // if location beginning with extension/site_ => it is a site extension
+                    if( strpos( $overrideLocation[0], 'extension/site_' ) === 0 &&
+                        strpos( $overrideLocation[0], $extensionSettingsPath.'/' ) !== 0 )
+                        // if location beginning with extension/site_projectname/ => it is the current site extension
+                    {
+                        // ignore other site_extension than current
+                    }
+                    else
+                    {
+                        $eZINIOverrideDirList[$key] = $overrideLocation;
+                    }
+                }
+
+                // set manipulated override array in scope 'extension'
+                $ini->setOverrideDirs( $eZINIOverrideDirList, 'extension' );
+            }
+        }
+
+        //$ini->prependOverrideDir( $extensionSettingsPath . '/settings/siteaccess/' . $accessName, $globalDir, $identifier, 'siteaccess' );
     }
 
     /*!
