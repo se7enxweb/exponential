@@ -1110,46 +1110,58 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
 
         if ( $this->siteBasics['session-required'] )
         {
-            // Check if this should be run in a cronjob
-            if ( $ini->variable( 'Session', 'BasketCleanup' ) !== 'cronjob' )
+            // Don't initialize session on /login GET requests (unauthenticated entry point)
+            // Only check this in Symfony/Platform 2.x context with service container
+            // Pure legacy access (without service-container) will skip this detection and initialize session normally
+            $isLoginPage = false;
+            if ( isset( $this->settings['service-container'] ) && $this->settings['service-container'] !== null )
             {
-                eZSession::addCallback(
-                    'destroy_pre',
-                    function ( eZDBInterface $db, $key, $escapedKey )
-                    {
-                        $basket = eZBasket::fetch( $key );
-                        if ( $basket instanceof eZBasket )
-                            $basket->remove();
-                    }
-                );
-                eZSession::addCallback(
-                    'gc_pre',
-                    function ( eZDBInterface $db, $time )
-                    {
-                        eZBasket::cleanupExpired( $time );
-                    }
-                );
-
-                eZSession::addCallback(
-                    'cleanup_pre',
-                    function ( eZDBInterface $db )
-                    {
-                        eZBasket::cleanup();
-                    }
-                );
+                $isLoginPage = $this->actualRequestedURI === '/login' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'GET';
             }
-
-            // addCallBack to update session id for shop basket on session regenerate
-            eZSession::addCallback(
-                'regenerate_post',
-                function ( eZDBInterface $db, $escNewKey, $escOldKey  )
+            
+            if ( !$isLoginPage )
+            {
+                // Check if this should be run in a cronjob
+                if ( $ini->variable( 'Session', 'BasketCleanup' ) !== 'cronjob' )
                 {
-                    $db->query( "UPDATE ezbasket SET session_id='{$escNewKey}' WHERE session_id='{$escOldKey}'" );
-                }
-            );
+                    eZSession::addCallback(
+                        'destroy_pre',
+                        function ( eZDBInterface $db, $key, $escapedKey )
+                        {
+                            $basket = eZBasket::fetch( $key );
+                            if ( $basket instanceof eZBasket )
+                                $basket->remove();
+                        }
+                    );
+                    eZSession::addCallback(
+                        'gc_pre',
+                        function ( eZDBInterface $db, $time )
+                        {
+                            eZBasket::cleanupExpired( $time );
+                        }
+                    );
 
-            // TODO: Session starting should be made only once in the constructor
-            $this->sessionInit();
+                    eZSession::addCallback(
+                        'cleanup_pre',
+                        function ( eZDBInterface $db )
+                        {
+                            eZBasket::cleanup();
+                        }
+                    );
+                }
+
+                // addCallBack to update session id for shop basket on session regenerate
+                eZSession::addCallback(
+                    'regenerate_post',
+                    function ( eZDBInterface $db, $escNewKey, $escOldKey  )
+                    {
+                        $db->query( "UPDATE ezbasket SET session_id='{$escNewKey}' WHERE session_id='{$escOldKey}'" );
+                    }
+                );
+
+                // TODO: Session starting should be made only once in the constructor
+                $this->sessionInit();
+            }
         }
 
         // if $this->siteBasics['db-required'], open a db connection and check that db is connected
