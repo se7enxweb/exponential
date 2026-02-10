@@ -1,5 +1,9 @@
 <div class="content-view-full">
+{if ne( $node.contentobject_id, 0 )}
  <div class="class-{$node.class_identifier}">
+{else}
+ <div class="class-root">
+{/if}
 
 {include uri='design:infocollection_validation.tpl'}
 
@@ -10,17 +14,29 @@
 
 {* DESIGN: Header START *}<div class="box-header">
 
-{def $js_class_languages = $node.object.content_class.prioritized_languages_js_array|explode( '"' )|implode( '\'' )
-     $disable_another_language = cond( eq( 0, count( $node.object.content_class.can_create_languages ) ),"'edit-class-another-language'", '-1' )
+{def $js_class_languages = ''
+     $disable_another_language = '-1'
      $disabled_sub_menu = "['class-createnodefeed', 'class-removenodefeed']"
-     $hide_status = ''}
+     $hide_status = ''
+     $has_content_class = eq( $node.object.content_class|not, false )}
+{if $has_content_class}
+    {if eq( 0, count( $node.object.content_class.can_create_languages ) )}
+        {set $disable_another_language = "'edit-class-another-language'"}
+    {/if}
+    {if is_set( $node.object.content_class.prioritized_languages_js_array )}
+        {set $js_class_languages = $node.object.content_class.prioritized_languages_js_array}
+        {if is_array( $js_class_languages )}
+            {set $js_class_languages = $js_class_languages|implode( ',' )}
+        {/if}
+    {/if}
+{/if}
 
 {if $node.is_invisible}
     {set $hide_status = concat( '(', $node.hidden_status_string, ')' )}
 {/if}
 
 {* Check if user has rights and if there are any RSS/ATOM Feed exports for current node *}
-{if is_set( ezini( 'RSSSettings', 'DefaultFeedItemClasses', 'site.ini' )[ $node.class_identifier ] )}
+{if and( ne( $node.contentobject_id, 0 ), is_set( ezini( 'RSSSettings', 'DefaultFeedItemClasses', 'site.ini' )[ $node.class_identifier ] ) )}
     {def $create_rss_access = fetch( 'user', 'has_access_to', hash( 'module', 'rss', 'function', 'edit' ) )}
     {if $create_rss_access}
         {if fetch( 'rss', 'has_export_by_node', hash( 'node_id', $node.node_id ) )}
@@ -31,7 +47,11 @@
     {/if}
 {/if}
 
+{if ne( $node.contentobject_id, 0 )}
 <h1 class="context-title"><a href={concat( '/class/view/', $node.object.contentclass_id )|ezurl} onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$node.object.contentclass_id}, '%objectID%', {$node.contentobject_id}, '%nodeID%', {$node.node_id}, '%currentURL%', '{$node.url|wash( javascript )}', '%languages%', {$js_class_languages} ) ), '{$node.class_name|wash(javascript)}', {$disabled_sub_menu}, {$disable_another_language} ); return false;">{$node.class_identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{$node.name|wash}&nbsp;[{$node.class_name|wash}]&nbsp;{$hide_status}</h1>
+{else}
+<h1 class="context-title">{$node.name|wash}</h1>
+{/if}
 
 {undef $js_class_languages $disable_another_language $disabled_sub_menu $hide_status}
 
