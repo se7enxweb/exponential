@@ -1,4 +1,4 @@
-# Copy this file to a new file called .htaccess in your eZ Publish root
+# Copy this file to a new file called .htaccess in your Exponential root
 # to secure your installation by turning on .htaccess based virtual host mode.
 
 DirectoryIndex index.php
@@ -17,7 +17,7 @@ RewriteRule ^packages/styles/.+/thumbnail/.* - [L]
 RewriteRule ^var/storage/packages/.* - [L]
 
 #  Makes it possible to placed your favicon at the root of your
-#  eZ Publish instance. It will then be served directly.
+#  Exponential instance. It will then be served directly.
 RewriteRule ^favicon\.ico - [L]
 #  Uncomment the line below if you want you favicon be served from the standard design.
 #  You can customize the path to favicon.ico by replacing design/standard/images/favicon.ico
