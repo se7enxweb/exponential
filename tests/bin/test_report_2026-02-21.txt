@@ -1,0 +1,263 @@
+────────────────────────────────────────────────────────────────────────────────
+  eZScript Combined Test Runner — 2026-02-21 17:10:23
+  PHP: 8.5.3 | Root: /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com
+  Functional filter: all
+────────────────────────────────────────────────────────────────────────────────
+
+=== Phase 1: Lint Output ===
+
+────────────────────────────────────────────────────────────────────────────────
+FILE                                                          RESULT
+────────────────────────────────────────────────────────────────────────────────
+kernel/classes/ezrole.php                                     ✓ PASS
+kernel/classes/datatypes/ezuser/ezuser.php                    ✓ PASS
+kernel/classes/ezcontentobject.php                            ✓ PASS
+kernel/classes/ezcontentobjecttreenode.php                    ✓ PASS
+kernel/classes/datatypes/ezbinaryfile/plugins/ezpdfparser.php  ✓ PASS
+kernel/classes/datatypes/ezbinaryfile/plugins/ezwordparser.php  ✓ PASS
+kernel/content/search.php                                     ✓ PASS
+kernel/content/upload.php                                     ✓ PASS
+kernel/content/versionviewframe.php                           ✓ PASS
+kernel/content/error.php                                      ✓ PASS
+kernel/content/view.php                                       ✓ PASS
+kernel/content/pdf.php                                        ✓ PASS
+kernel/content/browse.php                                     ✓ PASS
+kernel/content/removeassignment.php                           ✓ PASS
+kernel/content/reverserelatedlist.php                         ✓ PASS
+kernel/content/removenode.php                                 ✓ PASS
+kernel/content/node_edit.php                                  ✓ PASS
+kernel/content/restore.php                                    ✓ PASS
+kernel/content/state_edit.php                                 ✓ PASS
+kernel/classes/ezhttpheader.php                               ✓ PASS
+kernel/classes/eznavigationpart.php                           ✓ PASS
+kernel/classes/eznamepatternresolver.php                      ✓ PASS
+kernel/classes/ezcontentupload.php                            ✓ PASS
+kernel/classes/ezrssexportitem.php                            ✓ PASS
+kernel/classes/datatypes/ezkeyword/ezkeyword.php              ✓ PASS
+kernel/classes/datatypes/eztime/eztimetype.php                ✓ PASS
+kernel/classes/datatypes/ezbinaryfile/ezbinaryfile.php        ✓ PASS
+kernel/classes/ezpackagehandler.php                           ✓ PASS
+kernel/classes/ezorder.php                                    ✓ PASS
+kernel/classes/ezcontentobjecttrashnode.php                   ✓ PASS
+kernel/classes/datatypes/ezpackage/ezpackagetype.php          ✓ PASS
+kernel/classes/datatypes/ezimage/ezimagealiashandler.php      ✓ PASS
+kernel/classes/datatypes/ezidentifier/ezidentifiertype.php    ✓ PASS
+kernel/classes/datatypes/ezenum/ezenum.php                    ✓ PASS
+kernel/setup/cachetoolbar.php                                 ✓ PASS
+kernel/setup/datatype.php                                     ✓ PASS
+kernel/setup/extensions.php                                   ✓ PASS
+kernel/setup/session.php                                      ✓ PASS
+kernel/setup/steps/ezstep_system_check.php                    ✓ PASS
+kernel/setup/steps/ezstep_site_details.php                    ✓ PASS
+kernel/setup/steps/ezstep_package_language_options.php        ✓ PASS
+kernel/role/removegroup.php                                   [SKIP — not found]
+lib/ezdb/classes/ezpostgresqldb.php                           ✓ PASS
+lib/ezsoap/classes/ezsoapserver.php                           ✓ PASS
+lib/ezi18n/classes/eztstranslator.php                         ✓ PASS
+lib/ezfile/classes/ezgzipshellcompressionhandler.php          ✓ PASS
+lib/ezimage/classes/ezimageshellhandler.php                   ✓ PASS
+lib/ezutils/classes/ezsendmailtransport.php                   ✓ PASS
+lib/ezutils/classes/ezmutex.php                               ✓ PASS
+lib/ezsession/classes/ezsession.php                           ✓ PASS
+lib/ezpdf/classes/class.ezpdf.php                             ✓ PASS
+lib/ezpdf/classes/class.ezpdftable.php                        ✓ PASS
+lib/ezutils/classes/ezhttpfile.php                            ✓ PASS
+lib/ezimage/classes/ezexifimageanalyzer.php                   ✓ PASS
+lib/ezdbschema/classes/ezdbschema.php                         ✓ PASS
+lib/ezdbschema/classes/ezdbschemainterface.php                ✓ PASS
+lib/ezmath/classes/mathhandlers/ezphpmath.php                 ✓ PASS
+lib/ezutils/classes/ezprocess.php                             ✓ PASS
+lib/ezlocale/classes/eztime.php                               ✓ PASS
+lib/ezlocale/classes/ezdatetime.php                           ✓ PASS
+lib/ezsoap/classes/ezsoapclient.php                           ✓ PASS
+lib/ezlocale/classes/ezcurrency.php                           ✓ PASS
+lib/ezdiff/classes/ezdiff.php                                 ✓ PASS
+lib/ezdiff/classes/ezdiffengine.php                           ✓ PASS
+lib/ezi18n/classes/ezcodepagemapper.php                       ✓ PASS
+lib/ezfile/classes/ezgzipcompressionhandler.php               ✓ PASS
+lib/ezimage/classes/ezimageinterface.php                      ✓ PASS
+lib/eztemplate/classes/eztemplatedebugfunction.php            ✓ PASS
+lib/eztemplate/classes/eztemplatenodetool.php                 ✓ PASS
+lib/ezi18n/classes/ezshuffletranslator.php                    ✓ PASS
+lib/ezdiff/classes/ezdifftextengine.php                       ✓ PASS
+lib/ezmath/classes/mathhandlers/ezbcmath.php                  ✓ PASS
+lib/ezsoap/classes/ezsoapresponse.php                         ✓ PASS
+lib/eztemplate/classes/eztemplatemenufunction.php             ✓ PASS
+lib/ezimage/classes/ezimagelayer.php                          ✓ PASS
+lib/ezfile/classes/eznocompressionhandler.php                 ✓ PASS
+lib/ezfile/classes/ezbzip2compressionhandler.php              ✓ PASS
+lib/ezsoap/classes/ezsoapparameter.php                        ✓ PASS
+lib/ezsoap/classes/ezsoapheader.php                           ✓ PASS
+lib/ezpdf/classes/ezpdf.php                                   ✓ PASS
+lib/version.php                                               ✓ PASS
+────────────────────────────────────────────────────────────────────────────────
+TOTAL: 81 files   ✓ 80 PASS   ✗ 0 FAIL   ~ 1 SKIP
+────────────────────────────────────────────────────────────────────────────────
+
+=== Phase 2: Functional Output (filter: all) ===
+
+────────────────────────────────────────────────────────────────────────────────
+  Functional Flow Tests — 2026-02-21 17:10:26
+  Filter: all | Root: /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com
+────────────────────────────────────────────────────────────────────────────────
+
+✓ PASS  [security] SQL column regex — clean names pass
+✓ PASS  [security] SQL column regex — malicious names blocked
+✓ PASS  [security] Sendmail -f option uses escapeshellarg()
+✓ PASS  [security] Sendmail -f safe with normal address
+✓ PASS  [security] Gzip shell command uses escapeshellarg()
+✓ PASS  [security] URL path[3] guard — URL with <4 segments returns empty
+✓ PASS  [security] URL path[3] guard — URL with 4+ segments returns node ID
+✓ PASS  [soap] eZSOAPParameter::setValue() actually stores the value
+✓ PASS  [soap] eZSOAPParameter::setValue() persists on chained read
+✓ PASS  [soap] eZSOAPHeader::addHeader() populates Headers array
+✓ PASS  [soap] eZSOAPHeader::addHeader() supports multiple headers
+PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 230
+
+Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 230
+✓ PASS  [preg] eZNamePatternResolver::extractTokens — pattern with tokens
+PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 240
+
+Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 240
+✓ PASS  [preg] eZNamePatternResolver::extractTokens — empty pattern returns []
+PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 250
+
+Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 250
+✓ PASS  [preg] eZNamePatternResolver::getIdentifiers — returns array for valid pattern
+PHP Deprecated:  Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 260
+
+Deprecated: Method ReflectionMethod::setAccessible() is deprecated since 8.5, as it has no effect since PHP 8.1 in /var/www/vhosts/se7enx.com/public_html/alpha.se7enx.com/bin/php/tests/functional_tests.php on line 260
+✓ PASS  [preg] eZNamePatternResolver::getIdentifiers — empty pattern returns []
+✓ PASS  [preg] eZDiffTextEngine::createDifferenceObject — normal text does not crash
+✓ PASS  [preg] preg_replace null coalesce pattern (isolated)
+✓ PASS  [dom] ezpackagetype — missing <type> DOM node returns empty string, not crash
+✓ PASS  [dom] ezpackagetype — present <type> DOM node reads correctly
+✓ PASS  [dom] ezidentifiertype — all 5 missing DOM nodes return empty, no crash
+✓ PASS  [dom] ezidentifiertype — present DOM nodes read correctly
+✓ PASS  [null] eZPackageHandler::isErrorElement — missing element_id key no crash
+✓ PASS  [null] eZPackageHandler::isErrorElement — matching element_id returns true
+✓ PASS  [null] eZPackageHandler::isErrorElement — non-matching element_id returns false
+✓ PASS  [null] eZKeyword::initializeKeyword — accepts string input
+✓ PASS  [null] eZKeyword::initializeKeyword — accepts array input without crash
+✓ PASS  [null] eZKeyword::initializeKeyword — trims whitespace in array mode
+✓ PASS  [null] eZEnum::setValue — skips null fetch result without crash
+✓ PASS  [null] eZEnum::setValue — processes non-null fetch results
+✓ PASS  [null] eZOrder::removeCollection — null collection fetch does not crash
+✓ PASS  [null] eZOrder::removeItem — null item fetch does not crash
+✓ PASS  [array] eznavigationpart — reset() returns first item of assoc array
+✓ PASS  [array] eznavigationpart — reset on empty array returns false
+✓ PASS  [array] session rows null coalesce — empty result returns 0
+✓ PASS  [array] session rows null coalesce — filled result returns count
+✓ PASS  [array] extensions preg_match groups — missing capture does not crash
+✓ PASS  [array] extensions preg_match groups — matching warning is decorated
+✓ PASS  [array] datatype fullClassName else branch — ez-prefixed name is handled
+✓ PASS  [array] datatype fullClassName — non-ez-prefixed name gets prefix
+✓ PASS  [array] ezcontentupload — classElements[1] guard prevents undefined index crash
+✓ PASS  [array] package_language_options requires null coalesce
+✓ PASS  [php84] eztimetype fromString — full time string H:M:S destructures correctly
+✓ PASS  [php84] eztimetype fromString — partial H:M string fills missing second with empty
+✓ PASS  [php84] eztimetype fromString — single-element explode fills both missing
+✓ PASS  [php84] eztimetype fromString — empty string produces three empty elements
+✓ PASS  [setup] cachetoolbar nodeID defaults to null when param absent
+✓ PASS  [setup] ezstep_site_details instanceof guard — non-DB object skips table list
+✓ PASS  [image] alias url empty check — alias with empty url skips removeAliasFile
+
+────────────────────────────────────────────────────────────────────────────────
+TOTAL: 48 tests   ✓ 48 PASS   ✗ 0 FAIL
+────────────────────────────────────────────────────────────────────────────────
+
+════════════════════════════════════════════════════════════════════════════════
+  COMBINED RESULTS — 2026-02-21 17:10:23
+════════════════════════════════════════════════════════════════════════════════
+  Lint (php -n -l)              PASS:  80   FAIL:   0   SKIP:   1
+  Functional [all]              PASS:  48   FAIL:   0   SKIP:   0
+────────────────────────────────────────────────────────────────────────────────
+  TOTAL                         PASS: 128   FAIL:   0   SKIP:   1
+────────────────────────────────────────────────────────────────────────────────
+  Overall status: ✓ ALL PASS
+════════════════════════════════════════════════════════════════════════════════
+
+=== File Manifest (patched files) ===
+  ✓  kernel/classes/ezrole.php
+  ✓  kernel/classes/datatypes/ezuser/ezuser.php
+  ✓  kernel/classes/ezcontentobject.php
+  ✓  kernel/classes/ezcontentobjecttreenode.php
+  ✓  kernel/classes/datatypes/ezbinaryfile/plugins/ezpdfparser.php
+  ✓  kernel/classes/datatypes/ezbinaryfile/plugins/ezwordparser.php
+  ✓  kernel/content/search.php
+  ✓  kernel/content/upload.php
+  ✓  kernel/content/versionviewframe.php
+  ✓  kernel/content/error.php
+  ✓  kernel/content/view.php
+  ✓  kernel/content/pdf.php
+  ✓  kernel/content/browse.php
+  ✓  kernel/content/removeassignment.php
+  ✓  kernel/content/reverserelatedlist.php
+  ✓  kernel/content/removenode.php
+  ✓  kernel/content/node_edit.php
+  ✓  kernel/content/restore.php
+  ✓  kernel/content/state_edit.php
+  ✓  kernel/classes/ezhttpheader.php
+  ✓  kernel/classes/eznavigationpart.php
+  ✓  kernel/classes/eznamepatternresolver.php
+  ✓  kernel/classes/ezcontentupload.php
+  ✓  kernel/classes/ezrssexportitem.php
+  ✓  kernel/classes/datatypes/ezkeyword/ezkeyword.php
+  ✓  kernel/classes/datatypes/eztime/eztimetype.php
+  ✓  kernel/classes/datatypes/ezbinaryfile/ezbinaryfile.php
+  ✓  kernel/classes/ezpackagehandler.php
+  ✓  kernel/classes/ezorder.php
+  ✓  kernel/classes/ezcontentobjecttrashnode.php
+  ✓  kernel/classes/datatypes/ezpackage/ezpackagetype.php
+  ✓  kernel/classes/datatypes/ezimage/ezimagealiashandler.php
+  ✓  kernel/classes/datatypes/ezidentifier/ezidentifiertype.php
+  ✓  kernel/classes/datatypes/ezenum/ezenum.php
+  ✓  kernel/setup/cachetoolbar.php
+  ✓  kernel/setup/datatype.php
+  ✓  kernel/setup/extensions.php
+  ✓  kernel/setup/session.php
+  ✓  kernel/setup/steps/ezstep_system_check.php
+  ✓  kernel/setup/steps/ezstep_site_details.php
+  ✓  kernel/setup/steps/ezstep_package_language_options.php
+  ✗  kernel/role/removegroup.php
+  ✓  lib/ezdb/classes/ezpostgresqldb.php
+  ✓  lib/ezsoap/classes/ezsoapserver.php
+  ✓  lib/ezi18n/classes/eztstranslator.php
+  ✓  lib/ezfile/classes/ezgzipshellcompressionhandler.php
+  ✓  lib/ezimage/classes/ezimageshellhandler.php
+  ✓  lib/ezutils/classes/ezsendmailtransport.php
+  ✓  lib/ezutils/classes/ezmutex.php
+  ✓  lib/ezsession/classes/ezsession.php
+  ✓  lib/ezpdf/classes/class.ezpdf.php
+  ✓  lib/ezpdf/classes/class.ezpdftable.php
+  ✓  lib/ezutils/classes/ezhttpfile.php
+  ✓  lib/ezimage/classes/ezexifimageanalyzer.php
+  ✓  lib/ezdbschema/classes/ezdbschema.php
+  ✓  lib/ezdbschema/classes/ezdbschemainterface.php
+  ✓  lib/ezmath/classes/mathhandlers/ezphpmath.php
+  ✓  lib/ezutils/classes/ezprocess.php
+  ✓  lib/ezlocale/classes/eztime.php
+  ✓  lib/ezlocale/classes/ezdatetime.php
+  ✓  lib/ezsoap/classes/ezsoapclient.php
+  ✓  lib/ezlocale/classes/ezcurrency.php
+  ✓  lib/ezdiff/classes/ezdiff.php
+  ✓  lib/ezdiff/classes/ezdiffengine.php
+  ✓  lib/ezi18n/classes/ezcodepagemapper.php
+  ✓  lib/ezfile/classes/ezgzipcompressionhandler.php
+  ✓  lib/ezimage/classes/ezimageinterface.php
+  ✓  lib/eztemplate/classes/eztemplatedebugfunction.php
+  ✓  lib/eztemplate/classes/eztemplatenodetool.php
+  ✓  lib/ezi18n/classes/ezshuffletranslator.php
+  ✓  lib/ezdiff/classes/ezdifftextengine.php
+  ✓  lib/ezmath/classes/mathhandlers/ezbcmath.php
+  ✓  lib/ezsoap/classes/ezsoapresponse.php
+  ✓  lib/eztemplate/classes/eztemplatemenufunction.php
+  ✓  lib/ezimage/classes/ezimagelayer.php
+  ✓  lib/ezfile/classes/eznocompressionhandler.php
+  ✓  lib/ezfile/classes/ezbzip2compressionhandler.php
+  ✓  lib/ezsoap/classes/ezsoapparameter.php
+  ✓  lib/ezsoap/classes/ezsoapheader.php
+  ✓  lib/ezpdf/classes/ezpdf.php
+  ✓  lib/version.php
+
+=== Generated by ezptestrunner_all_tests.php on 2026-02-21 17:10:23 ===

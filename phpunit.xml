@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  phpunit.xml — Exponential 6.0.13 / eZ Publish Legacy PHPUnit 10 configuration.
+
+  Added in 6.0.13-alpha2 to fix complete test suite failure caused by missing
+  bootstrap when upgrading from PHPUnit 3.7 to PHPUnit 10.0.
+
+  See doc/bc/6.0/phpunitvXXXX.md for full explanation of what broke and why.
+
+  Usage:
+    php vendor/bin/phpunit                              # run all suites
+    php vendor/bin/phpunit - -testsuite security        # security tests only
+    php vendor/bin/phpunit - -testsuite kernel-classes  # kernel class tests only
+    php vendor/bin/phpunit - -list-tests                # list all test methods
+    php vendor/bin/phpunit - -list-test-files           # list all test files
+    php tests/runtests.php - -dsn=mysql://u:p@h/db - -db-per-test
+-->
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd"
+    bootstrap="tests/bootstrap.php"
+    colors="true"
+    displayDetailsOnIncompleteTests="true"
+    displayDetailsOnSkippedTests="true"
+    failOnEmptyTestSuite="false"
+    cacheDirectory=".phpunit.cache"
+>
+
+    <testsuites>
+
+        <testsuite name="security">
+            <directory suffix="_test.php">tests/tests/kernel/classes/security</directory>
+            <directory suffix="Test.php">tests/tests/kernel/classes/security</directory>
+        </testsuite>
+
+        <testsuite name="kernel-classes">
+            <directory suffix="_test.php">tests/tests/kernel/classes</directory>
+        </testsuite>
+
+        <testsuite name="kernel-content">
+            <directory suffix="_test.php">tests/tests/kernel/content</directory>
+        </testsuite>
+
+        <testsuite name="kernel-datatypes">
+            <directory suffix="_test.php">tests/tests/kernel/datatypes</directory>
+        </testsuite>
+
+        <testsuite name="lib">
+            <directory suffix="_test.php">tests/tests/lib</directory>
+            <directory suffix="Test.php">tests/tests/lib</directory>
+        </testsuite>
+
+    </testsuites>
+
+    <groups>
+        <exclude>
+            <!--
+              Tests tagged @group database require a live database connection.
+              Run them separately:
+                php tests/runtests.php - -db-per-test - -dsn=mysql://u:p@host/db
+            -->
+            <group>database</group>
+        </exclude>
+    </groups>
+
+    <php>
+        <env name="EZP_TEST_ENVIRONMENT" value="1"/>
+    </php>
+
+</phpunit>
