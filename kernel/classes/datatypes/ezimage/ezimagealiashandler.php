@@ -713,7 +713,7 @@ class eZImageAliasHandler
 
         foreach ( $aliasList as $alias )
         {
-            if ( $alias['is_valid'] )
+            if ( $alias['is_valid'] && !empty( $alias['url'] ) )
                 $this->removeAliasFile( $alias['url'] );
 
             // remove entry from DOM model
@@ -740,7 +740,7 @@ class eZImageAliasHandler
         $aliasList = $this->aliasList();
         foreach ( $aliasList as $alias )
         {
-            if ( $alias['is_valid'] )
+            if ( $alias['is_valid'] && !empty( $alias['url'] ) )
                 $this->removeAliasFile( $alias['url'] );
         }
 

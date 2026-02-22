@@ -71,7 +71,7 @@ class eZHTTPHeader
         if ( strpos( $uriString, 'content/view/' ) === 0 )
         {
             $urlParts = explode( '/', $uriString );
-            $nodeID = $urlParts[3];
+            $nodeID = $urlParts[3] ?? '';
             if ( !$nodeID )
             {
                 return $headerArray;

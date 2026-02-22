@@ -46,10 +46,8 @@ class eZNavigationPart
             return $parts[$identifier];
 
         // Return the first part which is the default
-        if ( isset( $parts[0] ) )
-            return $parts[0];
-
-        return false;
+        $firstPart = reset( $parts );
+        return $firstPart !== false ? $firstPart : false;
     }
 
     /*!

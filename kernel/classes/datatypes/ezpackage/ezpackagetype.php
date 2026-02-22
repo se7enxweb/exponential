@@ -209,7 +209,8 @@ class eZPackageType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $type = $attributeParametersNode->getElementsByTagName( 'type' )->item( 0 )->textContent;
+        $typeNode = $attributeParametersNode->getElementsByTagName( 'type' )->item( 0 );
+        $type = $typeNode ? $typeNode->textContent : '';
         $classAttribute->setAttribute( self::TYPE_FIELD, $type );
     }
 

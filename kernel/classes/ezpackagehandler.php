@@ -189,7 +189,8 @@ class eZPackageHandler
 
     function isErrorElement( $elementID, &$installParameters )
     {
-        if ( $elementID == $installParameters['error']['element_id'] )
+        if ( isset( $installParameters['error']['element_id'] ) &&
+             $elementID == $installParameters['error']['element_id'] )
         {
             // If action not set - skip this element
             if ( !isset( $installParameters['error']['choosen_action'] ) )

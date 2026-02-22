@@ -34,8 +34,8 @@ class eZDiffTextEngine extends eZDiffEngine
                           '',
                           "\n\n" );
 
-        $old = preg_replace( $pattern, $replace, $fromData );
-        $new = preg_replace( $pattern, $replace, $toData );
+        $old = preg_replace( $pattern, $replace, $fromData ) ?? '';
+        $new = preg_replace( $pattern, $replace, $toData ) ?? '';
 
         $oldArray = explode( "\r\n", $old );
         $newArray = explode( "\r\n", $new );

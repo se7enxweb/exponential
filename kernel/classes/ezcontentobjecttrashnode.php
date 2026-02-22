@@ -157,6 +157,11 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
 
         /** @var eZContentObject $contentObject */
         $contentObject = $this->attribute( 'object' );
+        if ( $contentObject === null )
+        {
+            $db->commit();
+            return;
+        }
         $offset = 0;
         $limit = 20;
         while (
@@ -332,7 +337,11 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
     function originalParent()
     {
         if ( $this->originalNodeParent === 0 )
+        {
             $this->originalNodeParent = eZContentObjectTreeNode::fetch( $this->attribute( 'parent_node_id' ) );
+            if ( $this->originalNodeParent === null )
+                return false;
+        }
 
         if ( $this->pathArray === 0 && $this->originalNodeParent instanceof eZContentObjectTreeNode )
             $this->pathArray = $this->attribute( 'path_array' );
