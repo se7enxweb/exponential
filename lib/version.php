@@ -16,7 +16,7 @@ class eZPublishSDK
 {
     const VERSION_MAJOR = 6;
     const VERSION_MINOR = 0;
-    const VERSION_RELEASE = 12;
+    const VERSION_RELEASE = 13;
     const VERSION_STATE = 'stable';
     const VERSION_DEVELOPMENT = false;
     const VERSION_ALIAS = '6.0';
