@@ -56,7 +56,7 @@ class eZGZIPShellCompressionHandler extends eZCompressionHandler
 
     function gunzipFile( $filename )
     {
-        $command = 'gzip -dc $filename > $';
+        $command = 'gzip -dc ' . escapeshellarg( $filename );
     }
 
     function doOpen( $filename, $mode )

@@ -737,7 +737,8 @@ class eZRole extends eZPersistentObject
             } break;
         }
 
-        $query = "SELECT * FROM ezuser_role WHERE role_id='$this->ID' AND contentobject_id='$userID' AND limit_identifier='$limitIdent' AND limit_value='$limitValue'";
+        $roleID = (int)$this->ID;
+        $query = "SELECT * FROM ezuser_role WHERE role_id='$roleID' AND contentobject_id='$userID' AND limit_identifier='$limitIdent' AND limit_value='$limitValue'";
 
         $rows = $db->arrayQuery( $query );
         if ( count( $rows ) > 0 )
@@ -745,7 +746,7 @@ class eZRole extends eZPersistentObject
 
         $db->begin();
 
-        $query = "INSERT INTO ezuser_role ( role_id, contentobject_id, limit_identifier, limit_value ) VALUES ( '$this->ID', '$userID', '$limitIdent', '$limitValue' )";
+        $query = "INSERT INTO ezuser_role ( role_id, contentobject_id, limit_identifier, limit_value ) VALUES ( '$roleID', '$userID', '$limitIdent', '$limitValue' )";
         $db->query( $query );
 
         $db->commit();
@@ -758,8 +759,9 @@ class eZRole extends eZPersistentObject
     function fetchUserID()
     {
         $db = eZDB::instance();
+        $roleID = (int)$this->ID;
 
-        $query = "SELECT contentobject_id FROM  ezuser_role WHERE role_id='$this->ID'";
+        $query = "SELECT contentobject_id FROM ezuser_role WHERE role_id='$roleID'";
 
         return $db->arrayQuery( $query );
     }
@@ -773,8 +775,9 @@ class eZRole extends eZPersistentObject
     function removeUserAssignment( $userID )
     {
         $db = eZDB::instance();
-        $userID =(int) $userID;
-        $query = "DELETE FROM ezuser_role WHERE role_id='$this->ID' AND contentobject_id='$userID'";
+        $userID = (int)$userID;
+        $roleID = (int)$this->ID;
+        $query = "DELETE FROM ezuser_role WHERE role_id='$roleID' AND contentobject_id='$userID'";
 
         $db->query( $query );
     }
@@ -802,6 +805,7 @@ class eZRole extends eZPersistentObject
     function fetchUserByRole( )
     {
         $db = eZDB::instance();
+        $roleID = (int)$this->ID;
 
         $query = "SELECT
                      ezuser_role.contentobject_id as user_id,
@@ -811,7 +815,7 @@ class eZRole extends eZPersistentObject
                   FROM
                      ezuser_role
                   WHERE
-                    ezuser_role.role_id = '$this->ID'";
+                    ezuser_role.role_id = '$roleID'";
 
         $userRoleArray = $db->arrayQuery( $query );
         $userRoles = array();
