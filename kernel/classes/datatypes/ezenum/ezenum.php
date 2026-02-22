@@ -117,6 +117,8 @@ class eZEnum
         for ($i=0;$i<count( $array_enumid );$i++ )
         {
             $enumvalue = eZEnumValue::fetch( $array_enumid[$i], $version );
+            if ( $enumvalue === null )
+                continue;
             $enumvalue->setAttribute( "enumelement", $array_enumelement[$i] );
             $enumvalue->setAttribute( "enumvalue", $array_enumvalue[$i] );
             $enumvalue->store();

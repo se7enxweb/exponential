@@ -37,7 +37,7 @@ class eZSendmailTransport extends eZMailTransport
         elseif( !is_string($sendmailOptionsArray) )
             $sendmailOptions = $sendmailOptionsArray;
         if ( $emailSender )
-            $sendmailOptions .= ' -f'. $emailSender;
+            $sendmailOptions .= ' -f' . escapeshellarg( $emailSender );
 
         if( function_exists( 'mail' ) )
         {

@@ -154,7 +154,7 @@ class eZStepSiteDetails extends eZStepInstaller
 
         $dbError = false;
         $demoDataResult = true;
-        if ( $dbStatus['connected'] )
+        if ( $dbStatus['connected'] && $db instanceof eZDBInterface )
         {
 
             if ( count( $db->eZTableList() ) != 0 )

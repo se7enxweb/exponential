@@ -6,7 +6,7 @@
  * @package kernel
  */
 
-$NodeID = $Params['NodeID'];
+$NodeID = $Params['NodeID'] ?? null;
 $Module = $Params['Module'];
 
 

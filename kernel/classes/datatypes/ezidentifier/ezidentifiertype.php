@@ -397,11 +397,16 @@ class eZIdentifierType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $digits     = $attributeParametersNode->getElementsByTagName( 'digits' )->item( 0 )->textContent;
-        $preText    = $attributeParametersNode->getElementsByTagName( 'pre-text' )->item( 0 )->textContent;
-        $postText   = $attributeParametersNode->getElementsByTagName( 'post-text' )->item( 0 )->textContent;
-        $startValue = $attributeParametersNode->getElementsByTagName( 'start-value' )->item( 0 )->textContent;
-        $identifier = $attributeParametersNode->getElementsByTagName( 'identifier' )->item( 0 )->textContent;
+        $digitsNode     = $attributeParametersNode->getElementsByTagName( 'digits' )->item( 0 );
+        $preTextNode    = $attributeParametersNode->getElementsByTagName( 'pre-text' )->item( 0 );
+        $postTextNode   = $attributeParametersNode->getElementsByTagName( 'post-text' )->item( 0 );
+        $startValueNode = $attributeParametersNode->getElementsByTagName( 'start-value' )->item( 0 );
+        $identifierNode = $attributeParametersNode->getElementsByTagName( 'identifier' )->item( 0 );
+        $digits     = $digitsNode     ? $digitsNode->textContent     : '';
+        $preText    = $preTextNode    ? $preTextNode->textContent    : '';
+        $postText   = $postTextNode   ? $postTextNode->textContent   : '';
+        $startValue = $startValueNode ? $startValueNode->textContent : '';
+        $identifier = $identifierNode ? $identifierNode->textContent : '';
 
         if ( $digits !== false )
             $classAttribute->setAttribute( self::DIGITS_FIELD,      $digits );

@@ -114,6 +114,8 @@ function datatypeBasicFetchData( $tpl, &$persistentData )
 
     if ( substr( $datatypeName, 0, 2 ) != "ez" )
         $extensionName = "ez" . $datatypeName;
+    else
+        $extensionName = $datatypeName;
 
     $persistentData['extension-name'] = $extensionName;
     $persistentData['name'] = $datatypeName;
@@ -129,6 +131,8 @@ function datatypeDescribe( $tpl, &$persistentData, $stepData )
 
     if ( substr( $datatypeName, 0, 2 ) != "ez" )
         $fullClassName = "ez" . $datatypeName;
+    else
+        $fullClassName = $datatypeName;
 
     $persistentData['datatype-name'] = $fullClassName;
 

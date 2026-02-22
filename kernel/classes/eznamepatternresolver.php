@@ -214,6 +214,9 @@ class eZNamePatternResolver
         $foundTokens = preg_match_all( "|<([^>]+)>|U", $namePattern,
                                                        $tokenArray );
 
+        if ( $foundTokens === false || empty( $tokenArray[0] ) )
+            return [];
+
         return $tokenArray[0];
     }
 
@@ -346,7 +349,8 @@ class eZNamePatternResolver
         $identifiers = '#\W#';
 
         $tmpArray = array();
-        preg_match_all( $allTokens, $patternString, $matches );
+        if ( preg_match_all( $allTokens, $patternString, $matches ) === false )
+            return [];
 
         foreach ( $matches[1] as $match )
         {

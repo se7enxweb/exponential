@@ -744,7 +744,16 @@ class eZContentObjectTreeNode extends eZPersistentObject
                         {
                             if ( $allowCustomColumns )
                             {
-                                $sortingFields .= $sortField;
+                                // SEC: validate column name to prevent SQL injection (only allow word chars and dot)
+                                if ( preg_match( '/^[a-zA-Z0-9_.]+$/', $sortField ) )
+                                {
+                                    $sortingFields .= $sortField;
+                                }
+                                else
+                                {
+                                    eZDebug::writeWarning( 'Invalid custom sort field: ' . $sortField, __METHOD__ );
+                                    continue 2;
+                                }
                             }
                             else
                             {
@@ -1724,7 +1733,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
                             $sqlSubtreePart = array();
                             foreach ( $limitationArray[$ident] as $limitationPathString )
                             {
-                                $sqlSubtreePart[] = "$tableAliasName.path_string like '$limitationPathString%'";
+                                $safePathString = $db->escapeString( $limitationPathString );
+                                $sqlSubtreePart[] = "$tableAliasName.path_string like '$safePathString%'";
                             }
                             $sqlPlacementPart[] = implode( ' OR ', $sqlSubtreePart );
                         } break;
@@ -1734,7 +1744,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
                             $sqlPartUserSubtree = array();
                             foreach ( $limitationArray[$ident] as $limitationPathString )
                             {
-                                $sqlPartUserSubtree[] = "$tableAliasName.path_string like '$limitationPathString%'";
+                                $safePathString = $db->escapeString( $limitationPathString );
+                                $sqlPartUserSubtree[] = "$tableAliasName.path_string like '$safePathString%'";
                             }
                             $sqlPartPart[] = implode( ' OR ', $sqlPartUserSubtree );
                         } break;
@@ -5973,8 +5984,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     static function hideSubTree( eZContentObjectTreeNode $node, $modifyRootNode = true )
     {
-        $nodeID = $node->attribute( 'node_id' );
-        $time = time();
+        $nodeID = (int)$node->attribute( 'node_id' );
+        $time = (int)time();
         $db = eZDB::instance();
 
         if ( eZAudit::isAuditEnabled() )
@@ -5998,7 +6009,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 $db->query( "UPDATE ezcontentobject_tree SET is_hidden=1, is_invisible=1, modified_subnode=$time WHERE node_id=$nodeID" );
 
             // 2) Recursively mark child nodes as invisible, except for ones which have been previously marked as invisible.
-            $nodePath = $node->attribute( 'path_string' );
+            $nodePath = $db->escapeString( $node->attribute( 'path_string' ) );
             $db->query( "UPDATE ezcontentobject_tree SET is_invisible=1, modified_subnode=$time WHERE is_invisible=0 AND path_string LIKE '$nodePath%'" );
         }
         else
@@ -6037,8 +6048,9 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     static function unhideSubTree( eZContentObjectTreeNode $node, $modifyRootNode = true )
     {
-        $nodeID = $node->attribute( 'node_id' );
-        $nodePath = $node->attribute( 'path_string' );
+        $nodeID = (int)$node->attribute( 'node_id' );
+        $db = eZDB::instance();
+        $nodePath = $db->escapeString( $node->attribute( 'path_string' ) );
         $nodeInvisible = $node->attribute( 'is_invisible' );
         $parentNode = $node->attribute( 'parent' );
         if ( !$parentNode instanceof eZContentObjectTreeNode )
@@ -6062,8 +6074,6 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                                         'Comment' => 'Node has been unhidden: eZContentObjectTreeNode::unhideSubTree()' ) );
         }
 
-        $db = eZDB::instance();
-
         $db->begin();
 
         if ( ! $parentNode->attribute( 'is_invisible' ) ) // if parent node is visible
@@ -6079,7 +6089,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                                 "WHERE node_id <> $nodeID AND is_hidden=1 AND path_string LIKE '$nodePath%'" );
             $skipSubtreesString = '';
             foreach ( $hiddenChildren as $i )
-                $skipSubtreesString .= " AND path_string NOT LIKE '" . $i['path_string'] . "%'";
+                $skipSubtreesString .= " AND path_string NOT LIKE '" . $db->escapeString( $i['path_string'] ) . "%'";
 
             // 2.2) Mark those children as visible which are not under nodes in $hiddenChildren
             $db->query( "UPDATE ezcontentobject_tree SET is_invisible=0, modified_subnode=$time WHERE path_string LIKE '$nodePath%' $skipSubtreesString" );

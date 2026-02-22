@@ -81,7 +81,7 @@ class eZStepPackageLanguageOptions extends eZStepInstaller
         if( is_object( $sitePackage ) )
         {
             $dependencies = $sitePackage->attribute( 'dependencies' );
-            $requirements = $dependencies['requires'];
+            $requirements = $dependencies['requires'] ?? [];
 
             foreach( $requirements as $req )
             {

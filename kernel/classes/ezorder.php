@@ -217,7 +217,7 @@ class eZOrder extends eZPersistentObject
     /*!
      \return the active orders
     */
-    static function active( $asObject = true, $offset, $limit = 100000, $sortField = "created", $sortOrder = "asc", $show = eZOrder::SHOW_NORMAL )
+    static function active( $asObject = true, $offset = 0, $limit = 100000, $sortField = "created", $sortOrder = "asc", $show = eZOrder::SHOW_NORMAL )
     {
         if ( $sortField == "user_name" )
         {
@@ -765,7 +765,7 @@ class eZOrder extends eZPersistentObject
      * @param bool $asObject
      * @param array|null $sorts Array with sort data sent directly to {@link eZPersistentObject::fetchObjectList()}
      */
-    function productItems( $asObject = true, array $sorts = null )
+    function productItems( $asObject = true, ?array $sorts = null )
     {
         $productItems = eZPersistentObject::fetchObjectList( eZProductCollectionItem::definition(),
                                                        null,
@@ -935,7 +935,8 @@ class eZOrder extends eZPersistentObject
     function removeCollection()
     {
         $collection = eZProductCollection::fetch( $this->attribute( 'productcollection_id' ) );
-        $collection->remove();
+        if ( $collection !== null )
+            $collection->remove();
     }
 
     /*!
@@ -964,7 +965,8 @@ class eZOrder extends eZPersistentObject
     static function removeItem( $itemID )
     {
         $item = eZProductCollectionItem::fetch( $itemID );
-        $item->remove();
+        if ( $item !== null )
+            $item->remove();
     }
 
     /*!

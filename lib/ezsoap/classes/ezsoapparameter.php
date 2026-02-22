@@ -51,7 +51,7 @@ class eZSOAPParameter
     */
     function setValue( $value )
     {
-
+        $this->Value = $value;
     }
 
     /*!

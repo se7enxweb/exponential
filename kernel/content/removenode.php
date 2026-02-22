@@ -43,7 +43,8 @@ else
 if ( $Module->isCurrentAction( 'ConfirmAssignmentRemove' ) )
 {
     $nodeID = $http->postVariable( 'RemoveNodeID' ) ;
-    $version->removeAssignment( $nodeID );
+    if ( $version !== null )
+        $version->removeAssignment( $nodeID );
     $Module->redirectToView( "edit", array( $ObjectID, $EditVersion ) );
 }
 elseif ( $Module->isCurrentAction( 'CancelAssignmentRemove' ) )

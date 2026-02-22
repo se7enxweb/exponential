@@ -43,8 +43,16 @@ if ( $module->isCurrentAction( 'Confirm' ) )
     $type = $module->actionParameter( 'RestoreType' );
     if ( $type == 1 )
     {
-        $selectedNodeIDArray = array( $location->attribute( 'node_id' ) );
-        $module->setCurrentAction( 'AddLocation' );
+        if ( $location === null )
+        {
+            // Location unavailable – fall back to browse mode
+            $type = 2;
+        }
+        else
+        {
+            $selectedNodeIDArray = array( $location->attribute( 'node_id' ) );
+            $module->setCurrentAction( 'AddLocation' );
+        }
     }
     elseif ( $type == 2 )
     {

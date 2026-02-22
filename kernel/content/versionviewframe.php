@@ -205,9 +205,12 @@ if ( !$viewVersionObject )
 
 if ( $LanguageCode )
 {
-    $oldLanguageCode = $node->currentLanguage();
+    if ( isset( $node ) )
+    {
+        $oldLanguageCode = $node->currentLanguage();
+        $node->setCurrentLanguage( $LanguageCode );
+    }
     $oldObjectLanguageCode = $contentObject->currentLanguage();
-    $node->setCurrentLanguage( $LanguageCode );
     $contentObject->setCurrentLanguage( $LanguageCode );
 }
 
@@ -301,7 +304,8 @@ $Result['section_id'] = $contentObject->attribute( 'section_id' );
 
 if ( $LanguageCode )
 {
-    $node->setCurrentLanguage( $oldLanguageCode );
+    if ( isset( $node, $oldLanguageCode ) )
+        $node->setCurrentLanguage( $oldLanguageCode );
     $contentObject->setCurrentLanguage( $oldObjectLanguageCode );
 }
 

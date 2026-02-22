@@ -113,9 +113,12 @@ function updateAutoload( $tpl = null )
             $pattern = '@^Class\s+(\w+)\s+.* file\s(.+\.php).*\n(.+\.php)\s@';
             preg_match( $pattern, $warning, $m );
 
-            $warning = str_replace( $m[1], '<strong>'.$m[1].'</strong>', $warning );
-            $warning = str_replace( $m[2], '<em>'.$m[2].'</em>', $warning );
-            $warning = str_replace( $m[3], '<em>'.$m[3].'</em>', $warning );
+            if ( isset( $m[1], $m[2], $m[3] ) )
+            {
+                $warning = str_replace( $m[1], '<strong>'.$m[1].'</strong>', $warning );
+                $warning = str_replace( $m[2], '<em>'.$m[2].'</em>', $warning );
+                $warning = str_replace( $m[3], '<em>'.$m[3].'</em>', $warning );
+            }
         }
 
         if ( $tpl !== null )

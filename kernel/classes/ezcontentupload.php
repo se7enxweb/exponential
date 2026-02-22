@@ -1085,6 +1085,8 @@ class eZContentUpload
 
                     if ( in_array( $classIdentifier, $classList ) )
                     {
+                        if ( !isset( $classElements[1] ) )
+                            continue;
                         $parentNodes = explode( ',', $classElements[1] );
                         if ( count( $parentNodes ) == 0 )
                             continue;

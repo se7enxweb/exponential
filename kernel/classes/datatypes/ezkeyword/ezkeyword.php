@@ -67,6 +67,10 @@ class eZKeyword
             $keywordArray = explode( ',', $keywordString );
             $keywordArray = array_unique ( $keywordArray );
         }
+        else
+        {
+            $keywordArray = $keywordString;
+        }
         foreach ( array_keys( $keywordArray ) as $key )
         {
             if ( trim( $keywordArray[$key] ) != '' )
