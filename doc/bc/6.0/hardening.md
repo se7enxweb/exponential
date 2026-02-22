@@ -33,11 +33,12 @@
 11. [Affected Component Summary](#affected-component-summary)
 12. [Recommendations for Extension Developers](#recommendations-for-extension-developers)
 13. [Backward Compatibility Notes](#backward-compatibility-notes)
-14. [Open Items and Pending Work](#open-items-and-pending-work)
-15. [Reviewer Sign-Off and Distribution](#reviewer-sign-off-and-distribution)
-16. [Appendix A: Full Diff Listing](#appendix-a-full-diff-listing)
-17. [Appendix B: Test Script Inventory](#appendix-b-test-script-inventory)
-18. [Appendix C: CWE and OWASP Reference Mapping](#appendix-c-cwe-and-owasp-reference-mapping)
+14. [PHP Version Compatibility](#php-version-compatibility)
+15. [Open Items and Pending Work](#open-items-and-pending-work)
+16. [Reviewer Sign-Off and Distribution](#reviewer-sign-off-and-distribution)
+17. [Appendix A: Full Diff Listing](#appendix-a-full-diff-listing)
+18. [Appendix B: Test Script Inventory](#appendix-b-test-script-inventory)
+19. [Appendix C: CWE and OWASP Reference Mapping](#appendix-c-cwe-and-owasp-reference-mapping)
 
 ---
 
@@ -77,6 +78,7 @@ and `htmlspecialchars()` output escaping) with no impact on calling code.
 | Fixed in release | **6.0.13** (upcoming) |
 | Branch | `6.0` |
 | PHP versions tested | 8.4.x, 8.5.3 |
+| PHP minimum version requirement | **8.1** — unchanged by this patch set (see [PHP Version Compatibility](#php-version-compatibility)) |
 | Database backends affected | MySQL / MariaDB / PostgreSQL (all backends using string interpolation) |
 | Patch date | 2026-02-21 |
 | Reported by | Automated security audit — GitHub Copilot / Claude Sonnet 4.6 |
@@ -1020,6 +1022,69 @@ All seven security fixes are designed to be fully backward compatible:
   by `$Module->getTitle()` to be HTML-entity-encoded. Any code rendering this as
   plain text (rather than in an HTML context) will display entity-encoded strings. This is
   generally not observable to end users since rendered page titles are always HTML contexts.
+
+---
+
+<a name="php-version-compatibility"></a>
+## PHP Version Compatibility
+
+**The security hardening patch set for 6.0.13 does not raise the minimum supported PHP
+version.** The project's declared minimum remains **PHP 8.1**, as specified in
+`composer.json`:
+
+```json
+"php": "^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5 || ^8.6 || ^8.7 || ^8.8"
+```
+
+### Analysis — most modern PHP construct introduced per patched file
+
+Every construct introduced by this patch set was available before PHP 8.1. The table
+below records the newest PHP language feature used in each changed file, so it is clear
+exactly how far back each fix would be portable if the minimum were ever lowered.
+
+| File | Fix | New construct | Available since |
+|---|---|---|---|
+| `kernel/classes/ezrole.php` | SEC-01 | `(int)` cast | PHP 4 |
+| `kernel/classes/ezcontentobjecttreenode.php` | SEC-02 | `preg_match()` whitelist | PHP 3 |
+| `kernel/classes/ezcontentobjecttreenode.php` | SEC-03 | `$db->escapeString()` | project API |
+| `kernel/classes/ezcontentobjecttreenode.php` | SEC-04 | `intval()` | PHP 4 |
+| `lib/ezutils/classes/ezsendmailtransport.php` | SEC-05 | `escapeshellarg()` | PHP 4.0.3 |
+| `lib/ezfile/classes/ezgzipshellcompressionhandler.php` | SEC-06 | `escapeshellarg()` | PHP 4.0.3 |
+| `kernel/content/search.php` | SEC-07 | `htmlspecialchars()` | PHP 4 |
+| `kernel/classes/ezorder.php` | NUL-04, PHP-01 | `?array` nullable type hint; required-to-optional parameter default | **PHP 7.1** |
+| `kernel/classes/datatypes/eztime/eztimetype.php` | PHP-02 | `[]` short array destructuring (`[ $a, $b ] = ...`) | **PHP 7.1** |
+| All other null-guard / isset files (NUL, UND, LOG, KNT, SET, IMP) | various | `null` checks, `isset()`, early `return` | PHP 4 |
+
+**Most modern construct across the entire patch set: PHP 7.1** (`?array` nullable
+type hint in `ezorder.php`; short array destructuring in `eztimetype.php`).
+
+Since the project already requires PHP 8.1, which is four major versions above PHP 7.1,
+there is **zero impact on the declared minimum** and **zero impact on any supported
+installation**.
+
+### PHP 8.4 deprecation fixes — do they require PHP 8.4?
+
+The two commits tagged `PHP84` (`ezorder.php`, `eztimetype.php`) fix PHP 8.4 deprecation
+warnings. This could cause confusion:
+
+- The fixes **suppress** a deprecation triggered only on PHP 8.4+ — they do not **require**
+  PHP 8.4.
+- Both fixes use PHP 7.1 syntax (nullable type hints, short array destructuring).
+- The fixed code runs identically on PHP 8.1, 8.2, and 8.3 — the deprecation simply never
+  fires on those versions.
+- Installations still running PHP 8.1, 8.2, or 8.3 benefit from the defensive null guards
+  (NUL-04, NUL-05) added in the same commits, even though the deprecation behaviour
+  they address is not present on those versions.
+
+### Summary
+
+| Question | Answer |
+|---|---|
+| Does the patch set raise the PHP minimum? | **No** |
+| What is the current declared minimum? | **PHP 8.1** (`composer.json`) |
+| What is the oldest PHP the patches are *syntactically* compatible with? | **PHP 7.1** |
+| Are PHP 8.4-specific features used anywhere in the patch set? | **No** — only PHP 7.1 constructs |
+| Can existing PHP 8.1/8.2/8.3 installations apply this patch set without issues? | **Yes, fully** |
 
 ---
 
