@@ -1,0 +1,102 @@
+# lint_manifest.txt — All PHP files patched by the 2026-01-13 php84 bug-fix commits.
+# Lines starting with # are comments.  Paths are relative to the repository root.
+# Extend this list whenever new files are patched.
+#
+# ── Kernel / Security (commit cd5177d0) ─────────────────────────────────────
+kernel/classes/ezrole.php
+kernel/classes/datatypes/ezuser/ezuser.php
+kernel/classes/ezcontentobject.php
+kernel/classes/ezcontentobjecttreenode.php
+kernel/classes/datatypes/ezbinaryfile/plugins/ezpdfparser.php
+kernel/classes/datatypes/ezbinaryfile/plugins/ezwordparser.php
+kernel/content/search.php
+#
+# ── Kernel / Undefined vars & null checks (commit 5e93442d) ──────────────────
+kernel/content/upload.php
+kernel/content/versionviewframe.php
+kernel/content/error.php
+kernel/content/view.php
+kernel/content/pdf.php
+kernel/content/browse.php
+kernel/content/removeassignment.php
+kernel/content/reverserelatedlist.php
+kernel/content/removenode.php
+kernel/content/node_edit.php
+kernel/content/restore.php
+kernel/content/state_edit.php
+kernel/classes/ezhttpheader.php
+kernel/classes/eznavigationpart.php
+kernel/classes/eznamepatternresolver.php
+kernel/classes/ezcontentupload.php
+kernel/classes/ezrssexportitem.php
+kernel/classes/datatypes/ezkeyword/ezkeyword.php
+kernel/classes/datatypes/eztime/eztimetype.php
+kernel/classes/datatypes/ezbinaryfile/ezbinaryfile.php
+kernel/classes/ezpackagehandler.php
+kernel/classes/ezorder.php
+kernel/classes/ezcontentobjecttrashnode.php
+kernel/classes/datatypes/ezpackage/ezpackagetype.php
+kernel/classes/datatypes/ezimage/ezimagealiashandler.php
+kernel/classes/datatypes/ezidentifier/ezidentifiertype.php
+kernel/classes/datatypes/ezenum/ezenum.php
+#
+# ── Kernel / Setup ────────────────────────────────────────────────────────────
+kernel/setup/cachetoolbar.php
+kernel/setup/datatype.php
+kernel/setup/extensions.php
+kernel/setup/session.php
+kernel/setup/steps/ezstep_system_check.php
+kernel/setup/steps/ezstep_site_details.php
+kernel/setup/steps/ezstep_package_language_options.php
+#
+# ── Kernel / Role module ─────────────────────────────────────────────────────
+kernel/role/removegroup.php
+#
+# ── Lib / Security (commit 1b36e952, 077aef8a) ───────────────────────────────
+lib/ezdb/classes/ezpostgresqldb.php
+lib/ezsoap/classes/ezsoapserver.php
+lib/ezi18n/classes/eztstranslator.php
+lib/ezfile/classes/ezgzipshellcompressionhandler.php
+lib/ezimage/classes/ezimageshellhandler.php
+lib/ezutils/classes/ezsendmailtransport.php
+lib/ezutils/classes/ezmutex.php
+lib/ezsession/classes/ezsession.php
+lib/ezpdf/classes/class.ezpdf.php
+lib/ezpdf/classes/class.ezpdftable.php
+lib/ezutils/classes/ezhttpfile.php
+lib/ezimage/classes/ezexifimageanalyzer.php
+lib/ezdbschema/classes/ezdbschema.php
+lib/ezdbschema/classes/ezdbschemainterface.php
+lib/ezmath/classes/mathhandlers/ezphpmath.php
+lib/ezutils/classes/ezprocess.php
+#
+# ── Lib / PHP 8.4 compatibility ───────────────────────────────────────────────
+lib/ezlocale/classes/eztime.php
+lib/ezlocale/classes/ezdatetime.php
+lib/ezsoap/classes/ezsoapclient.php
+lib/ezlocale/classes/ezcurrency.php
+lib/ezdiff/classes/ezdiff.php
+lib/ezdiff/classes/ezdiffengine.php
+lib/ezi18n/classes/ezcodepagemapper.php
+lib/ezfile/classes/ezgzipcompressionhandler.php
+lib/ezimage/classes/ezimageinterface.php
+lib/eztemplate/classes/eztemplatedebugfunction.php
+#
+# ── Lib / Logic & undefined vars ─────────────────────────────────────────────
+lib/eztemplate/classes/eztemplatenodetool.php
+lib/ezi18n/classes/ezshuffletranslator.php
+lib/ezdiff/classes/ezdifftextengine.php
+lib/ezmath/classes/mathhandlers/ezbcmath.php
+lib/ezsoap/classes/ezsoapresponse.php
+lib/eztemplate/classes/eztemplatemenufunction.php
+lib/ezimage/classes/ezimagelayer.php
+#
+# ── Lib / Missing implementations ────────────────────────────────────────────
+lib/ezfile/classes/eznocompressionhandler.php
+lib/ezfile/classes/ezbzip2compressionhandler.php
+lib/ezsoap/classes/ezsoapparameter.php
+lib/ezsoap/classes/ezsoapheader.php
+#
+# ── Lib / Other ───────────────────────────────────────────────────────────────
+lib/ezpdf/classes/ezpdf.php
+lib/version.php
