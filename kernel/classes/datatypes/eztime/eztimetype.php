@@ -235,7 +235,7 @@ class eZTimeType extends eZDataType
     {
         if ( $string != '' )
         {
-            list( $hour, $minute, $second ) = explode( ':', $string );
+            [ $hour, $minute, $second ] = explode( ':', $string ) + [ '', '', '' ];
             if ( $hour == '' || $minute == '' )
                 return false;
             if ( $second == '' )
