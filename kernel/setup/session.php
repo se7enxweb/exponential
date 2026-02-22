@@ -320,7 +320,7 @@ function eZFetchActiveSessionCount( $params = array() )
 
     $rows = $db->arrayQuery( $query );
 
-    return $rows[0]['count'];
+    return $rows[0]['count'] ?? 0;
 }
 
 $param['sortby'] = false;

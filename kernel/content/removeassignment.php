@@ -87,7 +87,7 @@ foreach ( $assignmentsToRemove as $assignment )
     $canRemoveSubtree = true;
     if ( $accessResult['accessWord'] == 'limited' )
     {
-        $limitationList = $accessResult['policies'];
+        $limitationList = $accessResult['policies'] ?? [];
         $removeableChildCount = $node->subTreeCount( array( 'Limitation' => $limitationList ) );
         $canRemoveSubtree = ( $removeableChildCount == $count );
     }

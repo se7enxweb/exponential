@@ -16,6 +16,8 @@ function stateEditPreCommit( $module, $class, $object, $version, $contentObjectA
 
 function stateEditActionCheck( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage, $fromLanguage )
 {
+    if ( $object === null )
+        return;
     if ( $module->isCurrentAction( 'StateEdit' ) )
     {
         $http = eZHTTPTool::instance();

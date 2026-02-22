@@ -119,6 +119,8 @@ $reverselistCountChildrenArray = array();
 foreach( $rows as $child )
 {
     $contentObject = eZContentObject::fetchByNodeID( $child['node_id'] );
+    if ( $contentObject === null )
+        continue;
     $contentObject_ID = $contentObject->attribute('id');
     $reverseObjectCount = $contentObject->reverseRelatedObjectCount( false, false, 1 );
     $reverselistCountChildrenArray[$contentObject_ID] = $reverseObjectCount;

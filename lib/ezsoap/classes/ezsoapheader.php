@@ -20,9 +20,9 @@ class eZSOAPHeader
     /*!
 
     */
-    function addHeader()
+    function addHeader( $name, $value )
     {
-
+        $this->Headers[$name] = $value;
     }
 
     /// Contains an array over all the headers

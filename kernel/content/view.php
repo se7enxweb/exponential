@@ -109,6 +109,7 @@ eZDebugSetting::addTimingPoint( 'kernel-content-view', 'Operation start' );
 
 
 $operationResult = array();
+$Result = [];
 
 if ( eZOperationHandler::operationIsAvailable( 'content_read' ) )
 {

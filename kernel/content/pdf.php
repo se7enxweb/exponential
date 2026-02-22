@@ -69,6 +69,12 @@ $viewParameters = array( 'offset' => $Offset,
 
 $viewParameters = array_merge( $viewParameters, $UserParameters );
 
+// Initialize cache variables; will be populated inside conditional blocks
+$designSetting = null;
+$language      = null;
+$roleList      = null;
+$discountList  = null;
+
 // Should we load the cache now, or check operation
 if ( $viewCacheEnabled && ( $useTriggers == false ) )
 {

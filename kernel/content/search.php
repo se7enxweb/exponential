@@ -101,7 +101,7 @@ if ( $http->hasVariable( "SubTreeArray" ) )
     }
 }
 
-$Module->setTitle( "Search for: $searchText" );
+$Module->setTitle( "Search for: " . htmlspecialchars( $searchText, ENT_QUOTES, 'UTF-8' ) );
 
 if ( $useSearchCode )
 {

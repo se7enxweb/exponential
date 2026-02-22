@@ -49,6 +49,7 @@ if ( $module->isCurrentAction( 'CancelUpload' ) )
 if ( $module->isCurrentAction( 'UploadFile' ) )
 {
     $location = false;
+    $objectName = false;
     if ( $module->hasActionParameter( 'UploadLocation' ) )
         $location = $module->actionParameter( 'UploadLocation' );
 

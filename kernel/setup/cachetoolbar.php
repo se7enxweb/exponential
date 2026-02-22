@@ -13,6 +13,9 @@ $cacheType = $module->actionParameter( 'CacheType' );
 
 eZPreferences::setValue( 'admin_clearcache_type', $cacheType );
 
+$nodeID = null;
+$objectID = null;
+
 if ( $module->hasActionParameter ( 'NodeID' ) )
     $nodeID = $module->actionParameter( 'NodeID' );
 

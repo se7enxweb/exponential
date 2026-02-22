@@ -58,6 +58,8 @@ function checkNodeAssignments( $module, $class, $object, $version, $contentObjec
                 $isPermitted = true;
                 // Check access
                 $newNode = eZContentObjectTreeNode::fetch( $nodeID );
+                if ( $newNode === null )
+                    continue;
                 $newNodeObject = $newNode->attribute( 'object' );
 
                 $canCreate = $newNodeObject->checkAccess( 'create', $class->attribute( 'id' ), $newNodeObject->attribute( 'contentclass_id' ) ) == 1;
@@ -146,6 +148,8 @@ function checkNodeMovements( $module, $class, $object, $version, $contentObjectA
                     $isPermitted = true;
                     // Check access
                     $newNode = eZContentObjectTreeNode::fetch( $nodeID );
+                    if ( $newNode === null )
+                        continue;
                     $newNodeObject = $newNode->attribute( 'object' );
 
                     $canCreate = $newNodeObject->checkAccess( 'create', $class->attribute( 'id' ), $newNodeObject->attribute( 'contentclass_id' ) ) == 1;
