@@ -1,0 +1,30 @@
+{
+    "name": "se7enxweb/bcwebsitestatistics",
+    "description": "eZ Publish Legacy extension BC Website Statistics allows a website to collect page view, web shop order and other statistics using Google Analytics. This product is a Certified eZ Publish Extension. With the BC Website Statistics you can collect web site user page view, file download and web shop order statistics with eZ Publish using the popular Google Analytics service",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [ "eZ Publish", "eZ Publish Legacy", "eZ Publish Platform", "analytics", "bcwebsitestatistics", "statistics", "tracking", "javascript", "operator" ],
+    "homepage": "https://github.com/brookinsconsulting/bcwebsitestatistics",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name" : "7x",
+            "homepage": "https://se7enx.com",
+            "email": "info@se7enx.com",
+            "role": "Developer"
+        },
+        {
+            "name" : "Brookins Consulting",
+            "homepage": "https://brookinsconsulting.com",
+            "email": "info@brookinsconsulting.com",
+            "role": "Author"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.0.0",
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "bcwebsitestatistics"
+    }
+}

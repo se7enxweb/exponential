@@ -1,0 +1,24 @@
+{
+    "name": "se7enxweb/ezdemo",
+    "description": "eZ Publish Legacy Demo Website extension",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "eZ Publish dev-team & eZ Community",
+            "homepage": "https://github.com/se7enxweb/ezdemo-extension"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "suggest": {
+        "se7enxweb/ezwt-ls-extension": "~5.3",
+        "se7enxweb/ezgmaplocation-ls-extension": "~5.3",
+        "se7enxweb/ezstarrating-ls-extension": "~5.3"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "ezdemo"
+    }
+}

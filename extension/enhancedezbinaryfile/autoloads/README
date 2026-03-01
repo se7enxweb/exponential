@@ -1,0 +1,3 @@
+This is for parsexml template operator which gets the Filename / Path
+From the enhancedezbinaryfile xml blob.  There's probably a nicer way to do
+this.

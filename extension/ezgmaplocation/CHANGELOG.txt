@@ -1,0 +1,72 @@
+CHANGELOG
+
+Version 1.2
+-------------------------------------------------------------------------------
+* Change use of old templateInit()/ezi18n() api and use class based api's introduced in 4.3 instead
+
+Version 1.1
+-------------------------------------------------------------------------------
+* Added extension.xml. Replaces loading.php and ezinfo.php starting from ezp4.4
+* Added nor-NO translation
+* Fixed bug #16160: Call to undefined function ezi18n()
+* Implemented enhancement #016711: Making extension aware of the
+  order/priority in which they need to be loaded
+* added ini file to silence wrong suggestions to alter oracle db in system
+  upgrade check page
+
+Version 1.0
+-------------------------------------------------------------------------------
+* Removed Update Location button and made location update automatically on
+  marker change.
+* Added restore button to restore values to value it had on page load.
+* Clear overlay markers on find address click and restore click
+* Make edit ui more intuitive by rearranging buttons and use button class
+* Add current location button to get location from GeoLocation api if available
+
+Version 1.0beta1
+-------------------------------------------------------------------------------
+* code cleanup
+* bigger map in edit view and normal view
+* button to grab current location (from bcgmapslocation)
+* PHPDoc inline documentation added where applicable
+* Address is now stored
+* Datatype can now be used as a name pattern component (address)
+* Datatype is now searchable (by address)
+* Datatype is now sortable (by address)
+* Store data in external table to be able to filter on it
+* Added Extended attribute filter to fetch list / tree by cordinates and distance
+* Added support for sorting by distance when using Extended attribute filter
+* Added support for arccosine and pythagorean distance algorithm in distance
+  calculation in the Extended attribute filter in addition to bounding box
+* added sql file for Oracle databases
+
+Version 0.5
+-------------------------------------------------------------------------------
+* only compatible with eZ Publish 4
+
+Version 0.4
+-------------------------------------------------------------------------------
+* Resolved a few warnings and error messages.
+
+* Much simpler install - modified the javascript so that no template changes
+  are required in the admin design.
+
+* The editing controls will now work properly if there are multiple location
+  attributes on a single object.
+
+* In the editing view, the map will now re-center on the clicked point. This
+  makes it easier to use the click-point and zoome controls to hone in on a
+  specific point.
+
+* The edit map now defaults to a zoom-level-0 view of the globe instead of
+  a gray square.
+
+* The edit map is larger, so that the map type and directional controls don't
+  overlap.
+
+* A new template has been included, gmap.tpl. This is a multi-purpose template
+  that can be included and configured to handle several common use-cases for
+  the gmaps datatype. See the doc on the template for specifics.
+
+Version 0.3 - Initial Release
+-------------------------------------------------------------------------------

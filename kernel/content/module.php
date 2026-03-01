@@ -1,4 +1,7 @@
 <?php
+/// ###exp_feature_g1002_ez2014.11### #2116 [OPL 18] SNAC richtig im ez rechtesystem implementieren ///
+/// ###exp_feature_g1012_ez2014.11### content/versionview/ erweitern um Parameter (view_mode)/... z.B. print ///
+/// ###exp_feature_g1018_ez2014.11### [#10017] content/edit neuer Button PublishNotNotifyButton
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -18,6 +21,7 @@ $ViewList['edit'] = array(
                                     'TranslateButton' => 'Translate',
                                     'VersionsButton' => 'VersionEdit',
                                     'PublishButton' => 'Publish',
+                                    'PublishNotNotifyButton' => 'Publish',  // ###exp_feature_g1018_ez2014.11###: Added for publish without notification feature
                                     'DiscardButton' => 'Discard',
                                     'BrowseNodeButton' => 'BrowseForNodes',
                                     'RemoveAssignmentButton' => 'RemoveAssignments',
@@ -121,14 +125,16 @@ $ViewList['versionview'] = array(
     'single_post_actions' => array( 'ChangeSettingsButton' => 'ChangeSettings',
                                     'EditButton' => 'Edit',
                                     'VersionsButton' => 'Versions',
-                                    'PreviewPublishButton' => 'Publish' ),
+                                    'PreviewPublishButton' => 'Publish',
+                                    'PreviewPublishNotNotifyButton' => 'Publish' ), // ###exp_feature_g1018_ez2014.11### Added for publish without notification feature
     'post_action_parameters' => array( 'ChangeSettings' => array( 'Language' => 'SelectedLanguage',
                                                                   'PlacementID' => 'SelectedPlacement',
                                                                   'SiteAccess' => 'SelectedSiteAccess' ) ),
     'params' => array( 'ObjectID', 'EditVersion', 'LanguageCode', 'FromLanguage' ),
     'unordered_params' => array( 'language' => 'Language',
                                  'offset' => 'Offset',
-                                 'site_access' => 'SiteAccess' ) );
+                                 'site_access' => 'SiteAccess',
+                                 'view_mode' => 'ViewMode' ) ); // ###exp_feature_g1012_ez2014.11###
 
 $ViewList['restore'] = array(
     'functions' => array( 'restore' ),
@@ -169,7 +175,7 @@ $ViewList['urltranslator'] = array(
     'ui_context' => 'administration',
     'single_post_actions' => array( 'NewAliasButton' => 'NewAlias',
                                     'RemoveAllAliasesButton' => 'RemoveAllAliases',
-                                    'RemoveAliasButton' => 'RemoveAlias' ),
+                                    'RemoveAliasButton' => 'RemoveAlias' ),/// ###exp_feature_g1012_ez2014.11###
     'post_action_parameters' => array( 'RemoveAlias' => array( 'ElementList' => 'ElementList' ),
                                        'NewAlias' => array( 'LanguageCode' => 'LanguageCode',
                                                             'AliasSourceText' => 'AliasSourceText',
@@ -711,5 +717,18 @@ $FunctionList['restore'] = array();
 $FunctionList['cleantrash'] = array();
 $FunctionList['tipafriend'] = array();
 $FunctionList['dashboard'] = array();
+
+
+// ###exp_feature_g1002_ez2014.11###
+// patch ezsnac bitmask start
+// ------------------------------------------------
+// wenn extension aktiviert erweitere $FunctionList
+if( in_array( 'ezsnac', eZExtension::activeExtensions() ) )
+{
+    // Das FunktionList Array erweitern - wird als Referenz übergeben
+    eZSnacRoleBitmask::contentModulePatch( $FunctionList );
+}
+// ------------------------------------------------
+// patch ezsnac end
 
 ?>

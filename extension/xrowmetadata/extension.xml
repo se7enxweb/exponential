@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<software>
+        <metadata>
+            <name>xrowmetadata</name>
+            <version>1.3.5</version>
+            <copyright>Copyright (C) 1999-2022 xrow GmbH</copyright>
+            <license>GNU General Public License v2.0</license>
+            <info_url>http://projects.ez.no/xrowmetadata</info_url>
+        </metadata>
+</software>

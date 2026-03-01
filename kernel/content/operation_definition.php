@@ -1,4 +1,5 @@
 <?php
+/// ###exp_feature_g1018_ez2014.11### [#10017] content/edit neuer Button PublishNotNotifyButton / NotificationFilter for ClassIdentifier ///
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -213,7 +214,27 @@ $OperationList['publish'] = array( 'name' => 'publish',
                                                            'name' => 'create-notification',
                                                            'frequency' => 'once',
                                                            'method' => 'createNotificationEvent',
-                                                           ),
+                                                           // ###exp_feature_g107_ez2018.06### Added for publish without notification feature
+                                                           'parameters' => array(
+                                                               array(
+                                                                   'name' => 'object_id',
+                                                                   'type' => 'integer',
+                                                                   'required' => true
+                                                               ),
+                                                               array(
+                                                                   'name' => 'version',
+                                                                   'type' => 'integer',
+                                                                   'required' => true
+                                                               ),
+                                                               array(
+                                                                   'name' => 'notify',
+                                                                   'type' => 'boolean',
+                                                                   'required' => false,
+                                                                   'default' => true
+                                                               )
+                                                           )
+                                                           // ###exp_feature_g107_ez2018.06### – END
+                                                    ),
 
                                                     array( 'type' => 'method',
                                                            'name' => 'remove-temporary-drafts',

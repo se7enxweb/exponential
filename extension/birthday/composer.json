@@ -1,0 +1,31 @@
+{
+    "name": "se7enxweb/birthday",
+    "description": "This datatype stores the date in the format of YYYY-MM-DD in the data_text field",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name" : "7x",
+            "homepage": "https://se7enx.com",
+            "email": "info@se7enx.com",
+            "role": "Developer"
+        },
+        {
+            "name": "xrow GmbH",
+            "homepage": "http://www.xrow.de",
+            "role": "Developer"
+        },
+        {
+            "name": "Netgen",
+            "homepage": "https://www.netgenlabs.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "birthday"
+    }
+}
+

@@ -1,4 +1,6 @@
 <?php
+/// ###exp_feature_g1008_ez2014.11###  kernel/content/history  $version->canRead() ///
+/// ###exp_feature_g1015_ez2014.11###  SingleVersionEdit
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -39,11 +41,49 @@ $canRemove = false;
 if ( $object === null )
     return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
 
-if ( !$object->attribute( 'can_read' ) )
+//if ( !$object->attribute( 'can_read' ) )
+//    return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+
+$accessAllowed = false;
+
+if ( $object->attribute( 'can_read' ) )
+    $accessAllowed = true;
+
+// ###exp_feature_g1008_ez2014.11###  kernel/content/history  $version->canRead() //
+// -- BEGIN -- //
+// Bug #5886 ezapprove2: exp_ece - approval rejected - Edit not possible - access denied
+// if the object version can be read, content/history may also be read
+// object->canRead() checks subtrees via assigned_nodes, but these may not yet exist for an unpublished version!!!
+// therefore version->canRead()
+if ( $EditVersion )
+{
+    $version = eZContentObjectVersion::fetchVersion( $EditVersion, $ObjectID );
+    if ( is_object( $version) && $version->attribute( 'can_read' ) )
+    {
+        $accessAllowed = true;
+    }
+
+    /// ###exp_feature_g1015_ez2014.11###  SingleVersionEdit
+    if ( class_exists( 'ExpEceCollaborateContentObjectVersion' ) && is_object( $version ))
+    {
+        // weitere Bearbeiter
+        $versionNew = ExpEceCollaborateContentObjectVersion::fetch( $version->ID );
+        if ( $versionNew->canUserEdit( eZUser::currentUserID() ) )
+        {
+            $canEdit = true;
+        }
+    }
+}
+if ( $accessAllowed === false )
+{
     return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+}
+
+// -- END -- //
 
 if ( $object->attribute( 'can_edit' ) )
     $canEdit = true;
+
 
 $canRemove = true;
 
@@ -259,9 +299,25 @@ if ( $Module->isCurrentAction( 'CopyVersion' )  )
         $language = $version->initialLanguageCode();
     }
 
+    // ###exp_feature_g1015_ez2014.11###
+    // patch singleversion edit user
     if ( !$object->checkAccess( 'edit', false, false, false, $language ) )
     {
-        return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+        if ( class_exists( 'ExpEceCollaborateContentObjectVersion' ) )
+        {
+            // weitere Bearbeiter
+            $versionNew = ExpEceCollaborateContentObjectVersion::fetch( $version->ID );
+            if ( !$versionNew->canUserEdit( eZUser::currentUserID() ) )
+            {
+                // no singleversionedituser
+                return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+            }
+        }
+        // altes verhalten
+        else
+        {
+            return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+        }
     }
 
     // Copying version (versionHistoryLimit is done in eZContentObject createNewVersion() )

@@ -1,4 +1,6 @@
 <?php
+// exp_feature_g59_ez2014.11### Upload images/files with class_identifier by ini
+// ###exp_feature_g1018_ez2014.11### [#10017] content/edit neuer Button PublishNotNotifyButton
 /**
  * File containing the eZContentUpload class.
  *
@@ -477,7 +479,7 @@ class eZContentUpload
      *
      * @return boolean
      */
-    function handleUpload( &$result, $httpFileIdentifier, $location, $existingNode, $nameString = '', $localeCode = false, $publish = true )
+    function handleUpload( &$result, $httpFileIdentifier, $location, $existingNode, $nameString = '', $localeCode = false, $publish = true, $notify = true )
     {
         $result = array( 'errors' => array(),
                          'notices' => array(),
@@ -530,7 +532,8 @@ class eZContentUpload
         }
         else
         {
-            $classIdentifier = $this->detectClassIdentifier( $mime );
+            // ORIG: $classIdentifier = $this->detectClassIdentifier( $mime );
+            $classIdentifier = $this->detectClassIdentifier( $mime, $file->attribute( "original_filename" ), $location );
         }
 
         if ( !$classIdentifier )
@@ -737,7 +740,7 @@ class eZContentUpload
         {
             $tmpresult = $this->publishObject(
                 $result, $result['errors'], $result['notices'],
-                $object, $publishVersion, $class, $parentNodes, $parentMainNode
+                $object, $publishVersion, $class, $parentNodes, $parentMainNode, $notify
             );
         }
         else
@@ -768,10 +771,13 @@ class eZContentUpload
      \return \c true if everything was OK, \c false if something failed.
     */
     function publishObject( &$result, &$errors, &$notices,
-                            $object, $publishVersion, $class, $parentNodes, $parentMainNode )
+                            $object, $publishVersion, $class, $parentNodes, $parentMainNode, $notify = true )
     {
-        $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $object->attribute( 'id' ),
-                                                                                     'version' => $publishVersion ) );
+        $operationResult = eZOperationHandler::execute( 'content', 'publish', array(
+            'object_id' => $object->attribute( 'id' ),
+            'version'   => $publishVersion,
+            'notify' => $notify
+        ) );
 
         $objectID = $object->attribute( 'id' );
         unset( $object );
@@ -1005,33 +1011,56 @@ class eZContentUpload
         return $nameAttribute;
     }
 
-    /*!
-     \private
-     \static
-     Figures out the class which should be used for file with
-     MIME-Type \a $mime and returns the class identifier.
-     \param $mime A string defining the MIME-Type, will be used to determine class identifier.
-    */
-    function detectClassIdentifier( $mime )
+    /**
+     *
+     * \private
+     * \static
+     * Figures out the class which should be used for file with
+     * MIME-Type \a $mime and returns the class identifier.
+     * \param $mime A string defining the MIME-Type, will be used to determine class identifier.
+     *
+     * @param string $mime
+     * exp ONLY
+     * @param string $filename
+     * @param string $location : node ID || auto
+     * ---
+     * @return string
+     */
+    function detectClassIdentifier( $mime, $filename = null, $location = null )
     {
-        $uploadINI = eZINI::instance( 'upload.ini' );
+        $activeExtensions = eZExtension::activeExtensions();
+        $uploadINI        = eZINI::instance( 'upload.ini' );
 
-        $mimeClassMap = $uploadINI->variable( 'CreateSettings', 'MimeClassMap' );
-        $defaultClass = $uploadINI->variable( 'CreateSettings', 'DefaultClass' );
+        $classIdentifier = false;
 
-        list( $group, $type ) = explode( '/', $mime );
-        if ( isset( $mimeClassMap[$mime] ) )
+        // process only if exp_contentupload enabled
+        if ( in_array( 'exp_contentupload', $activeExtensions ) && ( $filename !== NULL && $location !== NULL ) )
         {
-            $classIdentifier = $mimeClassMap[$mime];
+            $objMimeTypeParser = new CjwContentUploadAdditionalMimeTypeParser( $uploadINI, $location );
+
+            $classIdentifier = $objMimeTypeParser->getClassIdentifier( $filename, $mime );
         }
-        else if ( isset( $mimeClassMap[$group] ) )
+
+        if ( $classIdentifier === FALSE )
         {
-            $classIdentifier = $mimeClassMap[$group];
+            $mimeClassMap = $uploadINI->variable( 'CreateSettings', 'MimeClassMap' );
+            $defaultClass = $uploadINI->variable( 'CreateSettings', 'DefaultClass' );
+
+            list( $group, $type ) = explode( '/', $mime );
+            if ( isset( $mimeClassMap[$mime] ) )
+            {
+                $classIdentifier = $mimeClassMap[$mime];
+            }
+            else if ( isset( $mimeClassMap[$group] ) )
+            {
+                $classIdentifier = $mimeClassMap[$group];
+            }
+            else
+            {
+                $classIdentifier = $defaultClass;
+            }
         }
-        else
-        {
-            $classIdentifier = $defaultClass;
-        }
+
         return $classIdentifier;
     }
 

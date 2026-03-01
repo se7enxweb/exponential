@@ -1,0 +1,92 @@
+<!DOCTYPE TS><TS>
+<context>
+    <name>design/standard/class/datatype</name>
+    <message>
+        <source>Default value</source>
+        <translation>Standard Verdi</translation>
+    </message>
+    <message>
+        <source>Empty</source>
+        <translation>Tom</translation>
+    </message>
+    <message>
+        <source>Current date</source>
+        <translation>Dato Nå</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/content/datatype</name>
+    <message>
+        <source>Day</source>
+        <translation>Dag</translation>
+    </message>
+    <message>
+        <source>Month</source>
+        <translation>Måned</translation>
+    </message>
+    <message>
+        <source>Year</source>
+        <translation>År</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/classes/datatypes</name>
+    <message>
+        <source>Missing date input.</source>
+        <translation>Mangler dato input.</translation>
+    </message>
+    <message>
+        <source>Aries</source>
+        <translation>Væren</translation>
+    </message>
+    <message>
+        <source>Taurus</source>
+        <translation>Tyren</translation>
+    </message>
+    <message>
+        <source>Gemini</source>
+        <translation>Tvillingene</translation>
+    </message>
+    <message>
+        <source>Cancer</source>
+        <translation>Kreps</translation>
+    </message>
+    <message>
+        <source>Leo</source>
+        <translation>Løve</translation>
+    </message>
+    <message>
+        <source>Virgio</source>
+        <translation>Jomfru</translation>
+    </message>
+    <message>
+        <source>Libra</source>
+        <translation>Vekten</translation>
+    </message>
+    <message>
+        <source>Scorpio</source>
+        <translation>Skorpion</translation>
+    </message>
+    <message>
+        <source>Sagittarius</source>
+        <translation>Skytten</translation>
+    </message>
+    <message>
+        <source>Capricorn</source>
+        <translation>Steinbukk</translation>
+    </message>
+    <message>
+        <source>Aquarius</source>
+        <translation>Vannmann</translation>
+    </message>
+    <message>
+        <source>Pisces</source>
+        <translation>Fisk</translation>
+    </message>
+    <message>
+        <source>Birthday</source>
+        <comment>Datatype name</comment>
+        <translation>Bursdag</translation>
+    </message>
+</context>
+</TS>

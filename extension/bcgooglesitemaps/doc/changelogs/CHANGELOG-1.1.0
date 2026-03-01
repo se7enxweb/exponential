@@ -1,0 +1,5 @@
+CHANGELOG 1.1.0
+
+- Added: Added generatemultilingual cronjob part
+- Added: Added extended documentation
+- Updated: Added utf8 settings header

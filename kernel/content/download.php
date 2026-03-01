@@ -1,4 +1,5 @@
 <?php
+/// ###exp_ece_PATCH_G_1007_EZ_2014.11### content/download für Freigeber ///
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -28,7 +29,22 @@ if ( !is_object( $contentObjectAttribute ) )
 $contentObjectIDAttr = $contentObjectAttribute->attribute( 'contentobject_id' );
 if ( $contentObjectID != $contentObjectIDAttr or !$contentObject->attribute( 'can_read' ) )
 {
-    return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+    if ( defined( 'exp_feature_ENABLE_CONTENT_DOWNLOAD_FOR_APPROVERS' ) &&
+         constant( 'exp_feature_ENABLE_CONTENT_DOWNLOAD_FOR_APPROVERS' ) === true )
+    {
+        // ###exp_ece_PATCH_G_1007_EZ_2014.11### //
+        // prüfen ob user content/versionread rechte hat z.B. ein Freigeber der
+        // das objekt an hand seiner Rechtematrix nicht lesen dürfte
+        $versionObject = eZContentObjectVersion::fetchVersion( $version, $contentObjectID );
+        $canReadVersion = $versionObject->attribute( 'can_read' );
+
+        if ( !$canReadVersion )
+            return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+    }
+    else
+    {
+        return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+    }
 }
 
 // Get locations.
@@ -63,7 +79,7 @@ if ( !$canAccess && !$isContentDraft )
 
 // If $version is not current version (published)
 // we should check permission versionRead for the $version.
-if ( $version != $currentVersion || $isContentDraft )
+if ( ( $version != $currentVersion ) && $isContentDraft )
 {
     $versionObj = eZContentObjectVersion::fetchVersion( $version, $contentObjectID );
     if ( is_object( $versionObj ) and !$versionObj->canVersionRead() )

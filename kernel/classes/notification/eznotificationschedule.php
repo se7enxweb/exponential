@@ -1,4 +1,5 @@
 <?php
+/// ###exp_feature_g1010_ez2014.11### [#7067] Call eZNotificationSchedule::setDateForItem() without an $item object to create a date ///
 /**
  * File containing the eZNotificationSchedule class.
  *
@@ -79,7 +80,11 @@ class eZNotificationSchedule
 
         $sendDate = time() + $secondsDiff;
         eZDebugSetting::writeDebug( 'kernel-notification', getdate( $sendDate ), "item date"  );
-        $item->setAttribute( 'send_date', $sendDate );
+        /// ###exp_feature_g1010_ez2014.11### [#7067] ///
+        if( $item )
+        {
+            $item->setAttribute( 'send_date', $sendDate );
+        }
         return $sendDate;
     }
 }

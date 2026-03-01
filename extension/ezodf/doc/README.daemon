@@ -1,0 +1,67 @@
+
+Document conversion daemon.
+
+
+The document conversion daemon is a php script which is bundled with the extension. 
+It communicates with OpenOffice.org and does the actual conversion of documents. 
+The script needs to be started with the command-line version of PHP, which means 
+that you need to execute the following command from the command line:
+
+$ php extension/ezodf/daemon.php
+
+
+Note: The document conversion daemon will only run under Linux since the socket support in PHP does not work under Windows.
+Note: To get the daemon to work you need to have compiled PHP with the following switches:
+--enable-cli
+--enable-pcntl
+--enable-sockets
+
+During the conversion, daemon runs openoffice from command line to do the actual conversion. The parameters
+used for this conversion can be found in deamon.php and is at time of writing:
+ -writer -invisible -headless -nofirststartwizard -norestore
+
+The use of -headless implies that ezodf requries OpenOffice 2.4 or higher.
+
+Document conversion daemon can be configured as xinetd service. For this you need coverttooo.php utility which is 
+supplied with this ezodf extension. Here is and example of xinetd conf file which needs to be placed 
+in /etc/xinetd.d/ directory.
+File: /etc/xinetd.d/ezpublishconv
+service ezpconvertdaemon
+{
+        id              = ezpconvertdaemon
+        type            = UNLISTED
+        socket_type     = stream
+        protocol        = tcp
+        port            = 9090
+        server          = /opt/ezpublish/bin/php
+        server_args     = /opt/ezpublish/sites/trunk/extension/ezodf/converttooo.php
+        user            = sp
+        group = sp
+        wait            = no
+        disable         = no
+}
+
+Where:
+  /opt/ezpublish/bin/php - is the full path to your php cli executable
+  /opt/ezpublish/sites/trunk/extension/ezodf/converttooo.php - is the full path to your convert script.
+  user  = sp
+  group = sp - user and usergroup from which covert tool will be started.
+
+Openoffice requires HOME env. variable, for proper configuration please edit converttooo.php and on the 
+top of the file modify the:
+$homeDir = "/home/sp";
+
+To be sure that openoffice will start from conversion script login to the system with user
+from whom convert daemon will run and then:
+$ export HOME=[home dir from above]
+$ openoffice.org-2.0
+If openoffice starts it means that mostprobably you wont have any problems with conversion script.
+
+So now you can restart xinetd and the service should be available.
+
+Configuration of daemon as xinetd service is better, since daemon is started each time conversion is required, 
+and if the daemon crashes for some reason it will be started next time from scratch. Also you can do much better security tuning 
+with xinetd.($ man xinetd.conf)
+
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>NXC Powercontent</name>
+        <version>1.1.0</version>
+        <copyright>Copyright (C) 1999 - 2024 7x and 2010 NXC Consulting</copyright>
+        <license>GNU General Public License v2 (or later)</license>
+        <info_url>https://github.com/se7enxweb/nxc_powercontent</info_url>
+    </metadata>
+</software>

@@ -1,0 +1,35 @@
+<?php /* #?ini charset="utf-8"?
+
+[NavigationPart]
+Part[ezupdatenavigationpart]=Update
+
+#[TopAdminMenu]
+#Tabs[]=ezupdate
+
+[Topmenu_ezupdate]
+NavigationPartIdentifier=ezupdatenavigationpart
+Name=Update
+Tooltip=Composer Update Dashboard
+URL[]
+URL[default]=update/dashboard
+Enabled[]
+Enabled[default]=true
+Enabled[browse]=false
+Enabled[edit]=false
+Shown[]
+Shown[default]=true
+Shown[update]=true
+Shown[edit]=true
+Shown[navigation]=true
+# We don't show it in browse mode
+Shown[browse]=true
+PolicyList[]=update/dashboard
+
+[Leftmenu_setup]
+Links[ezupdate]=update/dashboard
+LinkNames[ezupdate]=Update
+
+Links[asset_manager]=git_manager/dump
+LinkNames[asset_manager]=Dump assets
+
+*/ ?>

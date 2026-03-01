@@ -1,4 +1,5 @@
 <?php
+// ###exp_feature_security_s02_ez2014.11### [#5737] [EZSA-2016-007] SQL injection in legacy ezsearchengine //
 /**
  * File containing the eZSearchEngine class.
  *
@@ -1401,9 +1402,10 @@ class eZSearchEngine implements ezpSearchEngine
 
     function searchAttributeInteger( $searchParams )
     {
-        $db = eZDB::instance();
+        // ###exp_feature_security_s02_ez2014.11### [#5737] [EZSA-2016-007] //
+        $db               = eZDB::instance();
         $classAttributeID = $db->escapeString( $searchParams['classattribute_id'] );
-        $value = (int)$db->escapeString( $searchParams['value'] );
+        $value            = (int) $db->escapeString( $searchParams['value'] );
 
         $classAttributeQuery = "";
         if ( is_numeric( $classAttributeID ) and  $classAttributeID > 0 )
@@ -1488,9 +1490,10 @@ class eZSearchEngine implements ezpSearchEngine
 
     function searchAttributeByIdentifier( $searchParams )
     {
+        // ###exp_feature_security_s02_ez2014.11### [#5737] [EZSA-2016-007] //
         $db = eZDB::instance();
         $identifier = $db->escapeString( $searchParams['identifier'] );
-        $textValue = $searchParams['value'];
+        $textValue = $db->escapeString( $searchParams['value'] );
 
         $searchText = $this->normalizeText( $textValue, false );
 
@@ -1620,9 +1623,10 @@ class eZSearchEngine implements ezpSearchEngine
 
     function searchAttributeFulltext( $searchParams )
     {
-        $db = eZDB::instance();
+        // ###exp_feature_security_s02_ez2014.11### [#5737] [EZSA-2016-007] //
+        $db               = eZDB::instance();
         $classAttributeID = $db->escapeString( $searchParams['classattribute_id'] );
-        $textValue = $searchParams['value'];
+        $textValue        = $db->escapeString( $searchParams['value'] );
 
         $searchText = $this->normalizeText( $textValue, false );
 

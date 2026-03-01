@@ -1,0 +1,7 @@
+<?php /* #?ini charset="utf-8"?
+
+[ComposerSettings]
+# Path=/usr/bin/
+Path=/opt/cpanel/composer/bin/
+
+*/ ?>

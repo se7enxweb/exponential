@@ -1,0 +1,24 @@
+{
+    "name": "se7enxweb/swark",
+    "description": "eZ Publish extension which provides template operators to generate complex template logic simply. Provides many template operators and a couple of workflow events which are needed very often, yet missing in eZ Publish. Great for smart developers!",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [ "eZ Publish", "eZ Publish Legacy", "eZ Publish Platform", "template", "operator", "extension", "template operator" ],
+    "homepage": "https://github.com/se7enxweb/swark",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name" : "7x",
+            "homepage": "https://se7enx.com",
+            "email": "info@se7enx.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.0.0",
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "swark"
+    }
+}

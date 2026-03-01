@@ -1,0 +1,36 @@
+{
+    "name": "se7enxweb/owsimpleoperator",
+    "description": "eZ Publish extension which provides function based custom template operator support to generate complex template logic increadibly simply. Provides for simple template operator implementation guide that is needed quite often, yet missing in eZ Publish. Great for smart developers!",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [ "eZ Publish", "eZ Publish Legacy", "eZ Publish Platform", "template", "operator", "extension", "template operator" ],
+    "homepage": "https://github.com/se7enxweb/owsimpleoperator",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name" : "7x",
+            "homepage": "https://se7enx.com",
+            "email": "info@se7enx.com",
+            "role": "Developer"
+        },
+        {
+            "name" : "Brookins Consulting",
+            "homepage": "https://brookinsconsulting.com",
+            "email": "info@brookinsconsulting.com",
+            "role": "Developer"
+        },
+        {
+            "name" : "OPEN WIDE",
+            "homepage": "https://openwide.fr/",
+            "email": "info@openwide.fr",
+            "role": "Author"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.0.0",
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "owsimpleoperator"
+    }
+}

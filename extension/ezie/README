@@ -1,0 +1,57 @@
+- eZ Image Editor 1.0 extension information
+
+About eZ Image Editor
+=====================
+
+An image editor for simple and usual image modifications integrated in the
+editing interface of any eZ Publish Content Object that has at least an image
+as attribute.
+
+It allows croping, fliping, rotating, watermarking an image as well as modifying
+some of its attributes such as the contrast or brightness.
+
+Technical information
+=====================
+
+    eZ Image Editor uses:
+    - jQuery                            http://www.jquery.com
+    - jQuery UI                         http://www.jqueryui.com/
+    - Some jQuery plugins:
+      - colorpicker                     http://www.eyecon.ro/colorpicker/
+      - Jcrop                           http://deepliquid.com/content/Jcrop.html
+
+    - PHP
+    - GD2 or ImageMagick
+    - eZ Components (mainly ImageConversion)
+
+Installation
+============
+
+See INSTALL
+
+Using eZ Image Editor
+=====================
+
+TBD.
+
+Adding custom watermarks
+========================
+
+The image editor supports adding custom watermarks to the existing set (which can of course be modified):
+
+* Place your watermark file (usually a PNG) in a 'watermark' subfolder of an 'images' design folder::
+  extension/mydesign/design/standard/images/watermarks/logo_ubuntu.png
+* Add the new watermark file to the list of used watermarks in image.ini::
+  ; extension/mydesign/settings/image.ini.append.php
+  [eZIE]
+  watermarks[]=logo_ubuntu.png
+* Clear your caches
+
+The custom file will be visible in the list.
+
+FAQ
+=======================
+Q: Why do I get a message "The image is not loaded because of a server error." after I click 'Edit' button in image attribute?
+A: That is because there is a connection error. Please check log file to see the log. There are some possible reasons:
+- the image library is not configured correctly. Please see requirement in http://doc.ez.no/Extensions/eZ-Image-Editor/Setup-and-user-guide-eZ-Image-Editor/Requirements.
+- connection error. Please make sure the connection is working.

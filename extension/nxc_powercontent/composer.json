@@ -1,0 +1,29 @@
+{
+    "name": "se7enxweb/nxc_powercontent",
+    "description": "NXC Power Content is a simple eZ Publish Platform (Legacy) class and module extension which provides advanced features for dynamic content creation, update and removal. Useful in a rest api and general content manipulation extensions. Great for advanced developers!",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [ "eZ Publish", "eZ Publish Legacy", "eZ Publish Platform", "module", "content", "solution", "extension", "power", "create", "update", "remove" ],
+    "homepage": "https://github.com/se7enxweb/nxc_powercontent",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name" : "7x",
+            "homepage": "https://se7enx.com",
+            "email": "info@se7enx.com",
+            "role": "Developer"
+        },
+	{
+            "name" : "NXC Consulting",
+            "homepage": "https://nxc.no",
+            "role": "Author"
+        }	
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.0.0",
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "nxc_powercontent"
+    }
+}

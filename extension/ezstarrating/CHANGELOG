@@ -1,0 +1,75 @@
+Changes from version 1.3.0 to 1.4.0
+====================================
+
+*Enhancements*
+
+- Added hReview-aggregate microformat for rich snippet in google search
+
+
+Changes from version 1.2.0 to 1.3.0
+====================================
+
+*Bugs*
+
+- Fix: Login link shown if user is logged in and doesn't have access to rate
+
+*Enhancements*
+
+- Change use of old templateInit()/ezi18n() api and use class based api's introduced in 4.3 instead
+
+
+Changes from version 1.1.0 to 1.2.0
+====================================
+
+*Bugs*
+
+- Fixed bug #16264: bad index naming in oracle
+- Fixed bug #16812: ezstarrating missing serializeContentClassAttribute definition
+- Fixed: renamed extendedattributefiler.ini to .ini.append.php, as it is the correct name
+
+*Enhancements*
+
+- Added extension.xml. Replaces ezinfo.php and loading.php starting from ezpublish 4.4.
+- Use more accurate $rating.rating_average instead of rounded_avrage in templates
+- Move starrating javascript code to javascript/ezstarrating_<lib>.js instead of using templates
+- Make it possible to disable rating pr attribute
+
+Changes from version 1.1.0 to 1.1.1
+===================================
+
+*Bugs*
+
+- Fixed bug #016812: ezstarrating missing serializeContentClassAttribute definition
+  (Merged from trunk rev. 114)
+
+*Enhancements*
+
+Changes from version 1.0.0 to 1.1.0
+===================================
+
+*Bugs*
+
+- Fixed bug #15370: Fix scalebilty of ezstartrating before release! 
+  (refactored table structure to have one table for precomputed rating values for faster read)
+
+*Enhancements*
+
+- Removed references for full 4.x compatability
+- Changed from xajax to ezjscore + yui3 for ajax calls
+- Merged rating code from ezcore / ezyui
+- Code cleanup (cs & phpdoc and code name conventions)
+- Load css with YUI.Loader
+- Fetch operator 'fetch_by_starrating' that works almost like list/tree fetch (see ezsrRatingObject::fetchNodeByRating)
+- Fetch operator 'ezsrrating' to fetch rating data by conditions ( contentobject_id/contentobject_attribute_id/user_id/session_key )
+- Added sql script for Oracle DB
+- Ability to change your own rating afterwards (ini setting)
+- Added jQuery support as contributed by Carlos Revillo
+  (yui3 / jquery selected by ezjscore.ini[eZJSCore]PreferredLibrary)
+- Added ability to have different keys per domain
+- Added ability to set permissions to bypass captcha
+
+Version 1.0.0
+=============
+
+- Initial version
+

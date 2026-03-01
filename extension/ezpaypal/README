@@ -1,0 +1,64 @@
+eZ Paypal Payment Gateway extension [ExtensionVersion] README
+
+What is the eZ Paypal Payment Gateway extension?
+================================================
+
+Payment gateway for the Paypal NVP API which is a redirection based API.
+
+Provides and works with the eZ Publish shop and workflow systems
+
+
+eZ Paypal Payment Gateway version
+=======================
+
+The current version of eZ Paypal Payment Gateway is [ExtensionVersion].
+You can find details about changes for this version in doc/changelogs/CHANGELOG-[ExtensionVersion]
+
+
+License
+=======
+
+eZ Paypal Payment Gateway is dual licensed. You can choose between the GNU
+GPL and the eZ publish Professional Licence.
+
+The GNU GPL gives you the right to use, modify and redistribute eZ Payal
+Payment Gateway under certain conditions. The GNU GPL licence is distributed
+with the software, see the file LICENCE. It is also available at
+http://www.gnu.org/licenses/gpl.txt
+Using eZ Paypal Payment Gateway under the terms of the GNU GPL is free of
+charge.
+
+The eZ publish Professional Licence gives you the right to use the source
+code for making your own commercial software. It allows you full protection
+of your work made with eZ Paypal Payment Gateway. You may re-brand, license
+and close your source code. eZ Paypal Payment Gateway is not free of charge
+when used under the terms of the Professional Licence. The eZ publish
+Professional Licence is distributed with the software, see the file
+PROFESSIONAL_LICENCE. It is also available at
+http://ez.no/ez_publish/licenses/professional
+For pricing and ordering, please contact us at info@ez.no.
+
+
+Requirements
+============
+
+The following requirements exists for using eZ Paypal Payment Gateway extension:
+
+o  eZ publish version:
+
+   Make sure you use eZ publish version 4.x or higher.
+
+o  PHP version:
+
+   Make sure you have PHP 5.3 or higher.
+
+o  eZ publish must be reachable from the internet:
+
+   Make sure you have installed eZ publish on a webserver that is reachable by
+   the Paypal service.
+
+
+Installation
+============
+Please read the INSTALL file for installation instructions.
+

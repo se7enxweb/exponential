@@ -1,0 +1,23 @@
+eZ Publish OpenOffice.org extension
+===================================
+This extension enables import and export of OpenOffice.org Writer documents within 
+eZ Publish. It comes with a general OpenOffice.org Writer document generation library 
+as well, if you have custom modules that needs to generate OpenOffice.org Writer 
+documents.
+
+Requires OpenOffice (or deratives like LibreOffice*) 2.4 or higher
+
+For documentation look under doc/*
+
+* You might need to customize $ooexecutable in scripts/*.php to support this.
+
+
+
+Known limitations
+-----------------
+
+- Access checking while importing documents with images in them is not complete.
+  The access to create images are not checked properly.
+- While exporting, if the user has not access to read images, they are just ignored. 
+  Should replace them with a dummy image which says "no access".
+- Importing document with images and storing the images in media does not work properly.

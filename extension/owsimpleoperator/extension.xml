@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+<metadata>
+    <name>OW Simple Operator</name>
+    <version>1.2.0</version>
+    <copyright>Copyright (C) 2011 - 2014 OPEN WIDE; 1999 - 2014 Brookins Consulting</copyright>
+    <license>GNU General Public License v3.0</license>
+    <info_url>http://projects.ez.no/owsimpleoperator</info_url>
+</metadata>
+</software>

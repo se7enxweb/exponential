@@ -1,0 +1,53 @@
+//BEGIN ENHANCED BINARY EXTENSION MAIL CODE ADDITION
+		$fileAttachments=array();
+		foreach ( array_keys( $contentObjectAttributes ) as $key ) {
+			if ($contentObjectAttributes[$key]->DataTypeString == "enhancedezbinaryfile" ) {
+				$id=$contentObjectAttributes[$key]->attribute( 'id' );
+				$xmlText = $collectionAttributes[$id]->DataText;
+				if ( trim( $xmlText ) != '' )
+				{					
+					$dom = new DOMDocument( '1.0', 'utf-8' );
+					if ($dom->loadXML( $xmlText ))
+					{
+						$OriginalFilename = $dom->getElementsByTagName( 'OriginalFilename' )->item(0)->textContent;
+						$OriginalFilename="=?".eZTextCodec::internalCharset()."?B?".base64_encode($OriginalFilename)."?=";
+						$FileType = $dom->getElementsByTagName( 'Type' )->item(0)->textContent;
+						$Filename = $dom->getElementsByTagName( 'Filename' )->item(0)->textContent;
+						if (file_exists( eZSys::wwwDir().$Filename )) {
+							$fileAttachments[]=array(eZSys::wwwDir().$Filename,$OriginalFilename,$FileType);
+						}
+					}
+				}	
+			}
+		}
+		if (count($fileAttachments) != 0) {
+			$mime_boundary = "==Multipart_Boundary_" . md5(time());
+	
+			//Plain Text part of Message
+	
+			$message = "--{$mime_boundary}\n" .
+			"Content-Type: ".$ini->variable( "MailSettings", "ContentType" )."; charset=".
+			eZTextCodec::internalCharset() . "\n" .
+			"Content-Transfer-Encoding: 8bit\n\n";
+	
+			//Form Result
+			$message .= $templateResult;
+	
+			//Attachment(s) part of message
+			foreach ( $fileAttachments as $attacharray) {
+				$filedata = chunk_split(base64_encode(eZFile::getContents($attacharray[0])));
+				$message .= "\n\n\n--{$mime_boundary}\n" .
+					"Content-Type: " . $attacharray[2] . ";\n" .
+					" name=\"" . $attacharray[1] . "\"\n" .
+					"Content-Transfer-Encoding: base64\n" .
+					"Content-Disposition: inline;\n" .
+					" filename=\"" . $attacharray[1] . "\"\n\n" .
+					$filedata . "\n";
+	
+			}
+			$message .= "--{$mime_boundary}--\n\n\n";
+	
+			$templateResult = $message;
+			$mail->setContentType( "multipart/mixed;boundary=$mime_boundary",false,false,false );
+		}
+//END ENHANCED BINARY EXTENSION MAIL CODE ADDITION

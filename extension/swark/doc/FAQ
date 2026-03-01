@@ -1,0 +1,13 @@
+swark extension FAQ
+
+swark json_encode operator, PHP 5.x and eZ Publish 2014.07
+==========================================================
+
+In eZ Publish Community Project Release 2014.07 (and possibly in previous releases) the content structure treemenu provided in the admin siteaccess depends on the default PHP function json_encode parameter input style.
+
+In testing we have found the previous swark implementation of the json_encode operator prevents the admin siteaccess content tree menu from loading it's content correctly. Results in empty content structure menu.
+
+As a result the swark implementation of the json_encode operator has been updated to also support the PHP function json_encode parameter input style in the 5.x branch / latest release. The swark json_encode operator still supports the json_encode pipe input parameter style in an effort to maintain backwards compatability.
+
+Also we have added a check in json_encode operator to test for the default PHP json_encode function provided by default in PHP 5.2 and use it instead when avaialble in an effort to provide standard json_encode functionality.
+

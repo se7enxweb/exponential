@@ -1,5 +1,7 @@
 <?php
 /**
+ * // ###exp_feature_g44_ez2014.11### separate var_log and var_cache project folders => expiry.php in global var/cache
+ *
  * File containing the eZExpiryHandler class.
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -19,8 +21,38 @@ class eZExpiryHandler
         $this->Timestamps = array();
         $this->IsModified = false;
 
-        $cacheDirectory = eZSys::cacheDirectory();
-        $this->CacheFile = eZClusterFileHandler::instance( $cacheDirectory . '/' . 'expiry.php' );
+        // ###exp_feature_g44_ez2014.11### separate var_log and var_cache project folders => expiry.php in global var/cache
+        if ( defined( 'exp_feature_PUT_EXPIRY_TO_GLOBAL_DIR_VAR_CACHE' ) && exp_feature_PUT_EXPIRY_TO_GLOBAL_DIR_VAR_CACHE === true )
+        {
+            // alle expiry.php files global speichern damit cache in ram kann
+            // damit die expiry.php nach neustart erhalten bleibt damit die Bilder richtig neu berechnet werden
+            // z.B. beim bilder löschen wird ein Verfallstimestamp in die expiry.php geschrieben,
+            // wenn Bildcachedatum kleiner dann wird dieses neu berechnet
+            $ini = eZINI::instance();
+            $projectName = $ini->variable( 'DatabaseSettings', 'Database' );
+
+            // ez1411
+            $databasePrefix = false;
+            if ( $ini->hasVariable( 'DatabaseSettings', 'DatabasePrefix' ) )
+            {
+                $databasePrefix = $ini->variable( 'DatabaseSettings', 'DatabasePrefix' );
+            }
+
+            // Wenn ez_legacy über ez5 stack aufgerufen wird, dann ist der db name injected und enthält den prefix der db
+            // wenn direkt aufgerufen dann ist es nur der Projektname
+            //  DB z.B. ez1411_test-project mit  mit Prefix anfängt dann den Prefix entfernen und wir haben den projektnamen
+            if ( strpos( $projectName, $databasePrefix ) === 0 )
+            {
+                $projectName = substr( $projectName, strlen( $databasePrefix ) );
+            }
+
+            $this->CacheFile = eZClusterFileHandler::instance(  'var/cache/expiry_'. $projectName .'.php' );
+        }
+        else
+        {
+            $cacheDirectory = eZSys::cacheDirectory();
+            $this->CacheFile = eZClusterFileHandler::instance( $cacheDirectory . '/' . 'expiry.php' );
+        }
         $this->restore();
     }
 
@@ -201,7 +233,7 @@ class eZExpiryHandler
     public $IsModified;
 
     public $CacheFile;
-    
+
 }
 
 ?>

@@ -1,0 +1,35 @@
+BC Website Statistics extension FEATURES
+
+FEATURES
+============
+
+1. PageView Statistics
+   -------------------
+
+This extension provides a template operator and settings which upon installation
+will output the requirired javascript into your eZ publish design html output
+which sends website visitor statistics per pageview to the Google Analytics
+web service.
+
+
+2. Order Statistics
+   ----------------
+
+This extension provides a template operator, workflow event and settings which
+upon installation will output the requirired javascript into your eZ publish 
+design html output which sends website customer webshop order statistics per
+pageview to the Google Analytics web service.
+
+
+3. Google Analytics Reporting
+   --------------------------
+
+The Google Analytics website, http://www.google.com/analytics
+
+This website provides a dynamic flash based web application for viewing your
+websites pageview and order statistics collected by the Google Analytics
+web service transmited by the BC Google Analyticics extension.
+
+
+4. eZ Publish Multi-Site Installations now supported
+   -------------------------------------------------

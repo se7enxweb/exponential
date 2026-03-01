@@ -1,4 +1,5 @@
 <?php
+// ###exp_feature_g1018_ez2014.11### workflow/processlist/ Processlist korrekt darstellen
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -51,13 +52,16 @@ $totalProcessCount = 0;
 $outList2 = array();
 foreach ( $plist as $p )
 {
-    $mementoMain = eZOperationMemento::fetchMain( $p->attribute( 'memento_key' ) );
+// ###exp_feature_g1018_ez2014.11###
+//    $mementoMain = eZOperationMemento::fetchMain( $p->attribute( 'memento_key' ) );
     $mementoChild = eZOperationMemento::fetchChild( $p->attribute( 'memento_key' ) );
-
-    if ( !$mementoMain or !$mementoChild )
+//
+//    if ( !$mementoMain or !$mementoChild )
+//        continue;
+    if ( !$mementoChild )
         continue;
 
-    $mementoMainData = $mementoMain->data();
+//    $mementoMainData = $mementoMain->data();
     $mementoChildData = $mementoChild->data();
 
     $triggers = eZTrigger::fetchList( array( 'module_name' => $mementoChildData['module_name'],

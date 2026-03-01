@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * ###exp_feature_g09_ez2014.11### DatabasePrefix DataBasePostfix
+ *
  * File containing the eZDB class.
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -143,6 +146,40 @@ class eZDB
             if ( $useDefaults )
                 list( $server, $port, $user, $pwd, $db, $usePersistentConnection ) =
                     $ini->variableMulti( 'DatabaseSettings', array( 'Server', 'Port', 'User', 'Password', 'Database', 'UsePersistentConnection', ) );
+
+            // ###exp_feature_g09_ez2014.11### DatabasePrefix DataBasePostfix
+
+            // Neuer Heuristischer Ansatz: Prefix/Postfix nur anwenden, wenn nicht schon da
+
+            $databasePrefix = false;
+            $databasePostfix = false;
+            $dbNameOriginal = $db;
+
+            if ( $ini->hasVariable( 'DatabaseSettings', 'DatabasePrefix' ) )
+            {
+                $databasePrefix = $ini->variable( 'DatabaseSettings', 'DatabasePrefix' );
+            }
+            if ( $ini->hasVariable( 'DatabaseSettings', 'DatabasePostfix' ) )
+            {
+                $databasePostfix = $ini->variable( 'DatabaseSettings', 'DatabasePostfix' );
+            }
+            if ( strpos( $db, $databasePrefix ) === false )
+            {
+                $db = $databasePrefix . $db;
+            }
+            if ( strpos( $db, $databasePostfix ) === false )
+            {
+                $db = $db . $databasePostfix;
+            }
+            if ( $db != $dbNameOriginal )
+            {
+                eZDebug::writeDebug( "Using Database: '$db' not '$dbNameOriginal'!"
+                                     ."\nsite.ini [DatabaseSettings]"
+                                     ."\nDatabasePrefix=$databasePrefix"
+                                     ."\nDatabasePostfix=$databasePostfix", '!!!DB Name change by site.ini!!! eZDB::instance() ' );
+            }
+
+            // ###exp_feature_g09_ez2014.11### ENDS
 
             $socketPath = false;
             if ( $useDefaults )

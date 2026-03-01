@@ -1,4 +1,9 @@
 <?php
+/// ###exp_feature_g63_ez2014.11### RedirectURL functionality for "content/versionview" PreviewPublish functionality ///
+/// ###exp_feature_g1012_ez2014.11### content/versionview/ erweitern um Parameter (view_mode)/... z.B. print ///
+/// ###exp_feature_g1015_ez2014.11###  SingleVersionEdit
+/// ###exp_feature_g1017_ez2014.11### content/versionview/ Pfad korrekt anzeigen wenn Objekt noch nicht veröffentlicht ist
+/// ###exp_feature_g1018_ez2014.11### [#10017] content/edit neuer Button PublishNotNotifyButton / NotificationFilter for ClassIdentifier
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -39,6 +44,23 @@
       could preview other languages. All the objects translations are
       available directly.
 */
+
+
+// ###exp_feature_g1015_ez2014.11###
+
+$canEdit = $contentObject->attribute( 'can_edit' );
+
+// patch singleversion edit user
+if ( !$canEdit && class_exists( 'ExpEceCollaborateContentObjectVersion' ) )
+{
+    $versionNew = ExpEceCollaborateContentObjectVersion::fetch( $versionObject->ID );
+    if ( $versionNew->canUserEdit( eZUser::currentUserID() ) )
+    {
+        $canEdit = true;
+        $isCreator = true;
+    }
+}
+
 
 /* Module action checks */
 if ( $Module->isCurrentAction( 'Edit' ) and
@@ -99,8 +121,14 @@ if ( $Module->isCurrentAction( 'Publish' ) and
     $behaviour->disableAsynchronousPublishing = false;
     ezpContentPublishingBehaviour::setBehaviour( $behaviour );
 
-    $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $ObjectID,
-                                                                                 'version' => $EditVersion ) );
+    // ###exp_feature_g1018_ez2014.11### Changed for publish without notification feature:
+    $http = eZHTTPTool::instance();
+    $operationResult = eZOperationHandler::execute( 'content', 'publish', array(
+        'object_id' => $ObjectID,
+        'version' => $EditVersion,
+        'notify'    => ( $http->hasPostVariable( 'PreviewPublishNotNotifyButton' ) ? false : true )
+    ) );
+    // ###exp_feature_g1018_ez2014.11### – END
     // redirect if requested by the publishing operation
     if ( isset( $operationResult['status'] ) && ( $operationResult['status'] == eZModuleOperationInfo::STATUS_HALTED ) )
     {
@@ -109,7 +137,34 @@ if ( $Module->isCurrentAction( 'Publish' ) and
             $Module->redirectTo( $operationResult['redirect_url'] );
             return;
         }
+        /// ###exp_feature_g63_ez2014.11### – BEGIN ///
+        /// If no `redirect_url` is set in the $operationResult array, we're
+        /// going to check for our custom POST variable
+        /// `RedirectUrl_AfterWorkflowHalted`, which contains the URL, where we
+        /// want to redirect, if a circular letter has been send to the approve
+        /// workflow
+        elseif( isset( $_POST['RedirectUrl_AfterWorkflowHalted'] ) )
+        {
+            $Module->redirectTo( $_POST['RedirectUrl_AfterWorkflowHalted'] );
+            return;
+        }
+        /// ###exp_feature_g63_ez2014.11### – END ///
     }
+
+    /// ###exp_feature_g63_ez2014.11### – BEGIN ///
+    /// If neither a `redirect_url` is set in the $operationResult array nor is
+    /// a POST variable `RedirectUrl_AfterWorkflowHalted` available, we're
+    /// checking for the POST variable `RedirectUrl_AfterPublish`, which
+    /// contains the URL, where we want to redirect, if a circular letter has
+    /// been published directly (because the user is the publisher and
+    /// a valid approver at the same time.
+    if( isset( $_POST['RedirectUrl_AfterPublish'] ) )
+    {
+        $Module->redirectTo( $_POST['RedirectUrl_AfterPublish'] );
+        return;
+    }
+    /// ###exp_feature_g63_ez2014.11### – END ///
+
 
     $object = eZContentObject::fetch( $ObjectID );
     $http = eZHTTPTool::instance();
@@ -241,12 +296,16 @@ if ( $section )
 else
     $navigationPartIdentifier = null;
 
+/// ###exp_feature_g1012_ez2014.11###
+$tpl->setVariable( 'view_mode', $viewMode );
+
+
 $keyArray = array( array( 'object', $contentObject->attribute( 'id' ) ),
                    array( 'node', $node->attribute( 'node_id' ) ),
                    array( 'parent_node', $node->attribute( 'parent_node_id' ) ),
                    array( 'class', $contentObject->attribute( 'contentclass_id' ) ),
                    array( 'class_identifier', $node->attribute( 'class_identifier' ) ),
-                   array( 'viewmode', 'full' ),
+                   array( 'viewmode', $viewMode ), /// ###exp_feature_g1012_ez2014.11###
                    array( 'remote_id', $contentObject->attribute( 'remote_id' ) ),
                    array( 'node_remote_id', $node->attribute( 'remote_id' ) ),
                    array( 'navigation_part_identifier', $navigationPartIdentifier ),
@@ -268,6 +327,30 @@ if ( is_object( $parentNode ) )
 }
 
 $parents = $node->attribute( 'path' );
+
+
+/// ###exp_feature_g1017_ez2014.11### content/versionview/ Pfad korrekt anzeigen wenn Objekt noch nicht veröffentlicht ist
+/// display correct Path for versionview objects which has no published version (real_node_id)
+
+$nodePath2 = $node->attribute( 'path_string' );
+// versionsview fetch path with last element  withLastNode = true
+$parents = eZContentObjectTreeNode::fetchNodesByPathString( $nodePath2, true, true );
+
+if ( is_array( $parents ) && count( $parents ) > 0 )
+{
+    $parentLast = array_pop( $parents );
+
+    // if parentLast equalt to current node_id ( a version which is already published ) than ignore it
+    // otherwise show it so we do not lost the last Folder in versionview for a not published object
+    if ( $node->attribute( 'node_id' ) != $parentLast->attribute( 'node_id' ) )
+    {
+        $parents[] = $parentLast;
+    }
+}
+
+/// PATCH Ends - ###exp_feature_g1017_ez2014.11###
+
+
 $path = array();
 $titlePath = array();
 foreach ( $parents as $parent )
@@ -296,6 +379,13 @@ $res->setKeys( $keyArray );
 $Result = array();
 $Result['content'] = $tpl->fetch( 'design:content/view/versionview.tpl' );
 $Result['node_id'] = $node->attribute( 'node_id' );
+
+// node objekt mit classidentifer infos aber ohne node_id
+//$Result['node'] = $objectNode;
+
+/// ###exp_feature_g1012_ez2014.11###
+$Result['content_info'] = array( 'class_identifier' => $node->attribute( 'class_identifier' ) );
+
 $Result['path'] = $path;
 $Result['title_path'] = $titlePath;
 

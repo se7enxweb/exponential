@@ -1,0 +1,28 @@
+<ul class="navbar-nav">
+    <li>
+        <a href="#" class="nav-link">Home</a>
+    </li>
+    <li>
+        <a href="#" class="nav-link">Resume</a>
+    </li>
+    <li class="dropdown">
+        <button type="button" class="nav-link dropdown-toggle">Social Links</button>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="#" class="dropdown-link">GitHub</a>
+            </li>
+            <li>
+                <a href="#" class="dropdown-link">Linkedin</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" class="nav-link">Portfolio</a>
+    </li>
+    <li>
+        <a href="#" class="nav-link">About</a>
+    </li>
+    <li>
+        <a href="#" class="nav-link">Contact</a>
+    </li>
+</ul>

@@ -1,0 +1,21 @@
+BC Website Statistics extension DEBUG
+
+Troubleshooting
+===============
+
+This document is a guide to debugging the BC Website Statistics extension
+
+1. Settings
+   --------
+
+   Also make sure you have the proper settings in your
+   Google Analytics account control panel.
+
+2. Delay
+   -----
+
+   It regularly takes from 1 to 4 hours, on average, depending on day of week 
+   and time of day for the google analytics report website to display stats 
+   collected successfully.
+
+

@@ -1,5 +1,7 @@
 <?php
 /**
+ *  // ###exp_feature_g44_ez2014.11### separate var_log and var_cache project folders
+ *  // ###exp_feature_g52_ez2014.11### /content/treemenu throws PHP notices with nginx
  * File containing the eZSys class.
  *
  * Portions are modifications of patches by Andreas Böckler and Francis Nart
@@ -535,7 +537,17 @@ class eZSys
         }
         else
         {
-            return eZDir::path( array( self::varDirectory(), $cacheDir ) );
+            // ###exp_feature_g44_ez2014.11### separate var_log and var_cache project folders
+            if ( defined( 'EXP_USE_EXTRA_FOLDER_VAR_CACHE' ) && EXP_USE_EXTRA_FOLDER_VAR_CACHE === true )
+            {
+                // Use a separate cache folder from the eZ root.
+                // Example layout: /var_cache/projectname, /var/projectname/storage, /var/projectname/log
+                return eZDir::path( array( str_replace( 'var/', 'var_cache/', self::varDirectory() ), $cacheDir ) );
+            }
+            else
+            {
+                return eZDir::path( array( self::varDirectory(), $cacheDir ) );
+            }
         }
     }
 
@@ -1218,7 +1230,8 @@ class eZSys
             return null;
 
         // optimize '/index.php' pattern
-        if ( $phpSelf === "/{$index}" )
+        // ###exp_feature_g52_ez2014.11### Fix /content/treemenu PHP notices with nginx — bare path also matches without leading slash
+        if ( $phpSelf === $index || $phpSelf === "/{$index}" )
             return '';
 
         $phpSelfParts = explode( $index, $phpSelf );

@@ -1,0 +1,333 @@
+BC Website Statistics extension HOWTO
+
+HOWTO
+=====
+
+Title: Advanced eZ publish Statistics and Reporting
+Subtitle: Advanced Website Statistics Reporting with Google Analytics
+
+Index
+
+1. Introduction
+2. Getting started
+3. Installing extension
+4. Configuration
+5. Conclusion
+
+
+Page 1 - Introduction
+
+
+1. Introduction to Google Analytics
+   ------------
+
+   About the Google Analytics (service and extension)
+
+
+Page 2 - Getting started with Google Analytics
+
+
+2. Requirements
+   ------------
+
+2.1 Do you already have a Google Analytics account?
+
+    If you already have a Google Analytics account please continue to 1.2, if not please see, 2.3
+
+2.2 Do you already have a Google Analytics Website Profile / Urchin ID?
+
+    If you already have a Google Analytics Website Profile / Urchin ID, please continue to, 3.1
+
+2.3 Creating your account
+
+    Getting a Google Analytics account is easy and available at no cost.
+
+    Simply sign-up at, http://www.google.com/analytics/sign_up.html
+
+2.4 Creating your first website profile
+
+    Getting a Google Analytics Website Profile for your website.
+
+2.4.1 Login to your account at the Google Analytics Website, http://google.com/analytics/
+
+2.4.2 Click text link, '+ Add Website Profile'
+
+2.4.3 Enter the text of your own website address into to the url form field and click the form button, 'Finish'
+
+2.4.4 Document the Google Analytics Website Profile Urchin ID
+
+    Document the Google Analytics Website Profile / Urchin ID returned upon successful creation.
+
+    This id must be installed into the eZ Publish BC Website Statistics extension setting bcwebsitestatistics.ini.append.php variable 'Urchin'.
+
+2.5 Configuring additional settings
+
+    ShopName (Optional)
+
+    If you wish to use the e-commerce order statistics features of google analytics
+    you would replace the string, 'mycustomshopname' with brief string to represent your shopname uniquely.
+
+    Default: ShopName=eZ
+    Modification: ShopName=YourShopName
+    Example: ShopName=mycustomshopname 
+
+
+Page 3 - Installing BC Website Statistics
+
+
+3. Installing BC Website Statistics
+
+3.1 Re: Installing an eZ publish extension.
+
+    1. Copy the package into the `extension' directory
+    in the root of your eZ publish installation.
+
+    2. Unpack the files in the distribution. The command
+    necessary is depends on the file you downloaded.
+
+    [tar.gz]:
+    $ tar -zxvf bcwebsitestatistics.tar.gz
+
+    [zip]:
+    $ unzip bcwebsitestatistics.tar.zip
+
+3.2 Re: Activating an eZ publish extension.
+
+    We must now enable the extension in eZ publish.
+
+    You must enable the bcwebsitestatistics extension *above*
+    ezwebin design extension in order for all features to function properly.
+
+    To do this edit site.ini.append(.php) in the folder
+    root_of_ezpublish/settings. If this file does not exist;
+    create it. Locate (or add) the block
+
+    [ExtensionSettings] and add the line:
+    ActiveExtensions[]=bcwebsitestatistics
+
+    If you run several sites using only one distribution
+    and only some of the sites should use the extension,
+    make the changes in the override file of that siteaccess.
+
+    E.g root_of_ezpublish/settings/siteaccess/shop/site.ini.append(.php)
+    But instead of using ActiveExtensions you must add these lines instead:
+
+    [ExtensionSettings]
+    ActiveAccessExtensions[]=bcwebsitestatistics
+
+3.3 Re: Configuring an eZ publish extension general and extension specific settings
+
+    If you have a custom design extension other than the stock eZ Publish ezwebin, 
+    please take care to ensure your own custom design extension is prioritized above the bcwebsitestatistics extension.
+
+
+Page 4 - Configuration of BC Website Statistics extension
+
+
+4. Installing account number
+
+    To change the required 'Urchin' setting.
+
+    First create a global setting override or siteaccess override
+    of the setting file, extension/websitestatistics/settings/bcwebsitestatistics.ini.append.php
+
+    Examples of possible settings override file location
+
+    settings/bcwebsitestatistics.ini(.append(.php))
+    settings/override/bcwebsitestatistics.ini(.append(.php))
+    settings/siteaccess/example_com/bcwebsitestatistics.ini(.append(.php))
+
+4.2 Required Settings Modifications
+
+4.2.1 Urchin
+
+       First you will want to replace the default tracking code number.
+
+       Default: Urchin=UA-994200-0
+       Modification: Urchin=YOUR-Account-Number
+       Example: Urchin=UA-999042-0
+
+4.2.2 ShopName (Optional)
+
+       If you wish to use the e-commerce order statistics features of google analytics
+       you would replace the string, 'mycustomshopname' with brief string to represent your shopname uniquely.
+
+       Default: ShopName=eZ
+       Modification: ShopName=YourShopName
+       Example: ShopName=mycustomshopname 
+
+
+4.3 Install BC Website Statistics Template Operators
+    
+    Decide first if you only need page tracking or if you also need webshop order tracking. 
+
+4.4 Add Page Tracking Template Operator
+   
+    Install the following template operator code snippet in your primary design extension's pagelayout.tpl template:
+
+    {'false'|bc_ga_urchin()}
+
+    As the last element before the string '</head>'.
+
+    ** Be certain to specify your Urchin website profile account code number in the extension settings.
+
+    For more details on the BC Website Statistics template operator installation steps please see the file doc/USAGE.
+
+4.4.1 Review
+   
+      Test. Test to ensure you installation has successfully enabled the related modifications (dependencies)
+
+      Clear All Caches. Be certain to clear all caches via cli and admin.
+       - eZ Publish Administration > Setup > Cache >> Clear All
+       - eZ Publish Shell Command, # ./bin/shell/clearcache --clear-all
+
+      Review. Review the source code output to ensure the page and order tracking features are enabled correctly.
+
+      Reconfirm. Reconfirm the correct and successful installation of the settings and template operators.
+
+      Enable. Enable Google Page Statistics Tracking
+
+      You must confirm the installation of google analytics urchin information 
+      into your eZ publish installation successfully within the Google Analytics 
+      website after step #8, http://www.google.com/analytics
+
+      Analytics Settings > Profile Settings > Tracking Status
+
+
+4.5 Usage: (e-Commerce) Order / Purchase Statistics Tracking for your web site.
+   
+4.5.1 Enable Extension
+
+    Simply enable this extension in your eZ Publish installation.
+
+4.5.2 Configure Extension Settings
+
+4.5.3 Install BC Website Statistics Template Operators
+
+4.5.3.1 Install the following template operators in your primary design extension's templates.
+
+    'bc_ga_urchin'
+    
+    For more details on the BC Website Statistics template operator installation steps please see the file doc/USAGE.
+
+4.5.3.2 Install the following template operators in your primary design extension's pagelayout.tpl template
+
+    'bc_ga_urchin'
+
+    - bc_ga_urchin - Place the template operator '{'false'|bc_ga_urchin()}' as the last element before the string '</head>'.
+
+4.5.3.3 Install the following template operator in your primary design extension's order.tpl template
+
+    - 'bc_ga_urchinOrder' - This template (a modified copy of the confirmorder.tpl) is enabled by default by the google analytics design extension and activated by default.
+
+    Please note the following important installation dependencies surrounding the customization of the order.tpl template
+
+    - The bcwebsitestatistics extension provides one unique template.
+
+    - The template 'google/analytics/order.tpl' is based on the ezwebin (3.9.0) design extension template 'shop/confirmorder.tpl'
+
+    - The template 'order.tpl' has been modified to (upon workflow event trigger) present the user with an 'order completed' view before presenting the user with the 'order view' / 'order receipt view'.
+
+    - The template 'order.tpl' has been simplified to ensure it's unique and distinct from the 'order receipt view'.
+
+    - To install the operator 'bc_ga_urchinOrder', Place the template operator '{'false'|bc_ga_urchinOrder( $order )}' in your own replacement for the template order.tpl
+
+4.5.4 Create Workflow
+
+    A) In the eZ publish admin, go to Setup -> Workflows
+       and click New Workflow Group.
+
+    B) Name the group something like "Shop" and click OK.
+       The group will be added to the workflow groups.
+
+    C) Click on the group you have just created, and in the
+       Workflows box click the "New Workflow" button.
+
+       1) Name the workflow "Receipt".
+
+       2) You will now see an Event select dropdown.
+          1) Select "Event / BC Website Statistics - Google Analytics - Order Statistics Submission and Order Completed View"
+
+          2) Confirm you choice by clicking the "Add Event" button
+             just to the right of the select dropdown.
+
+       3) Enter a description "BC Website Statistics Receipt Workflow Event Template View"
+
+       4) Click the 'Ok' to save these modifications.
+
+       5) Clear All Cache via both the administration gui and cli script.
+          Please, clear all cache completely, this the most important step most people omit.
+
+       6) Note: Do not edit workflow setting, must remove and read to affect workflow event definitions as they are stored in a very static prone to confusion if you try to edit instead of remove and re-add.
+
+4.5.5 Install workflow to trigger
+
+    A) Now click on the Triggers link in the left hand menu.
+
+       In the table "Workflow Triggers" you will see a list of available triggers.
+
+       On the line: "shop, checkout, after, (Workflow Drop Down)"
+
+       "Click" the dropdown select the receipt event you have just created.
+
+       Click Apply changes Button to save your trigger selection modifications
+
+    B) Clear All Cache via both the administration gui and cli script.
+
+    C) After you have followed all these steps, the extension's
+       workflow settings should be activated, configured and functioning properly.
+
+4.5.6 Review
+   
+      Test. Test to ensure you installation has successfully enabled the related modifications (dependencies)
+
+      Review. Review the source code output to ensure the page and order tracking features are enabled correctly.
+
+      Reconfirm. Reconfirm the correct and successful installation of the settings, template operators, workflow and trigger. 
+
+      Clear All Caches. Be certain to clear all caches. Both within 
+      - the eZ Publish Administration > Setup > Cache 
+      - and via shell comandline # ./bin/shell/clearcache --clear-all
+
+4.6 Enabling account statistics capture
+
+    Inform Google Analytics of successful installation of urchin javascript tracking code (operators)
+
+    - Go to, http://google.com/analytics
+    - Login to your Google Analytics account
+    - Go to, Analytics Settings >  Profile Settings >  Tracking Status
+    - Click, Form button, 'Check status'
+    - Click, Form button, 'Done'
+
+4.7 Extended configuration options
+
+    While not part of this tutorial you may configure many more options within the google analytics website like goal tracking and ip address exclusions.
+
+4.8 Configuring e-commerce Statistics Tracking
+
+    Enable Google Analytics (service) e-commerce order statistics collection
+
+    - On view, 'Analytics Settings', Click, Text link, 'Edit' for the 'Website Profile' for your eZ Publish installation.
+    - On view, 'Analytics Settings > Profile Settings'. Click, 'Edit' for the 'Main Website Profile Information' section.
+    - Toggle entry 'E-Commerce Website' from 'No' to 'Yes' and Click, Form button, 'Save Changes'.
+
+4.9 Testing: Shop Checkout, Workflow and Trigger Configuration
+   
+   After completing the above setup you should login to eZ publish
+   add a product to your basket, proceed to checkout, enter your
+   account information and confirm your order.
+
+   Next, after account registration, order confirmation, payment,
+   etc workflow steps have been completed at the very last view to
+   display the BC Website Statistics Order Completed / Javascript
+   submission view just before redirecting the user finally at the 
+   end to the order view list.
+
+
+Page 5 - Conclusion
+
+
+Google Analytics offers a complete rich offering of statistics reporting features and reports.
+
+Many people seeking website statistics reporting beyond the offerings of traditional server side webserver log analyzers are turning to alternatives like Google Analytics.
+

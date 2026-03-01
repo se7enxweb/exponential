@@ -1,5 +1,7 @@
 <?php
 /**
+ * // ###exp_feature_g44_ez2014.11### separate var_log and var_cache project folders
+ *
  * File containing the eZDir class.
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -221,6 +223,18 @@ class eZDir
         }
         if ( !isset( $newPathElements[0] )  )
             $newPathElements[] = '.';
+
+        // ###exp_feature_g44_ez2014.11### separate var_log and var_cache project folders
+        // z.B. exp_newsletter wenn eZLog::writeLog nicht greift
+        if ( defined( 'exp_feature_USE_EXTRA_FOLDER_VAR_LOG' ) && exp_feature_USE_EXTRA_FOLDER_VAR_LOG === true )
+        {
+            if ( $newPathElements[0] == 'var'
+                 && isset( $newPathElements[2] ) && $newPathElements[2] == 'log' )
+            {
+                $newPathElements[0] = 'var_log';
+            }
+        }
+
         $path = implode( $separator, $newPathElements );
         return $path;
     }

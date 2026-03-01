@@ -1,5 +1,8 @@
 <?php
 /**
+ * ###exp_feature_g1009_ez2014.11###  custom server variable fuer eindeutigen userstring
+ * #     - eideutigen useridstring fuer apache log um in awstats die eindeutigen Nutzer zu erhalten
+ *
  * File containing the ezpKernelWeb class.
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -775,6 +778,14 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                         }
                     }
                 }
+
+                // ###exp_feature_g1009_ez2014.11###  custom server variable fuer eindeutigen userstring
+                // patch - start - eideutigen useridstring fuer apache log um in awstats die eindeutigen Nutzer zu erhalten
+                //
+                ExpEceOutputFilter::setGlobalVariablesForApacheLog();
+                //
+                // patch - ende
+                //
 
                 $GLOBALS['eZRequestedModule'] = $this->module;
 

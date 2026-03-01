@@ -1,0 +1,19 @@
+{
+    "name": "se7enxweb/ezodf",
+    "description": "This extension provides for the import and export of OpenOffice.org Writer documents within eZ Publish Legacy",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "eZ Publish dev-team & eZ Community",
+            "homepage": "https://github.com/se7enxweb/ezodf/contributors"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "ezodf"
+    }
+}

@@ -1,0 +1,20 @@
+BC Google Sitemaps extension TODO
+==========================
+
+There are still quite a lot of features we could
+add to BC Google Sitemaps.
+
+A few users of BC Google Sitemaps may require further
+extension of the default eZ Publish image alias
+image variation image file related features.
+
+If you are interested in sponsoring the development
+of any of these features for your eZ Publish web site,
+please contact info@brookinsconsulting.com
+
+
+Features for consideration:
+
+- Any other changes not mentioned here
+- Itegrate functionality within separate PHP class
+- Offer layout/set implementations

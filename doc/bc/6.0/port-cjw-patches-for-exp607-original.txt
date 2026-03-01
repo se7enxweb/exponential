@@ -1,0 +1,1188 @@
+###exp_feature_g01_ez2014.11### host_uri default matching + host (begins with matching)
+                                host : begins with
+NEW!!! DefaultHostUriMatchMapItems match by Browserlanguag
+- kernel/classes/ezsiteaccess.php
+- settings/site.ini
+================================
+
+20090826
+http://issues.ez.no/IssueView.php?Id=15359&
+
+# patch start: combination from host and uri matching
+# uses the hostname + 1 element of uri
+# similar uri or host Matching - type = map
+#
+# [SiteAccessSettings]
+#
+#
+# MatchOrder=host_uri
+#
+# HostUriMatchMapItems are in the ez kernel since 4.4
+# HostUriMatchMapItems[]
+# HostUriMatchMapItems[]=www.example.com;de;siteaccess_user_de
+# HostUriMatchMapItems[]=www.example.com;en;siteaccess_en
+#
+
+# DefaultHostUri Matching is not inlcuded in the ez kernel yet
+#
+# It is possible to set DefaultHostUriMatch by Browserlanguage
+# we introduce for that a new ini item variable BROWSERLANGUAGE
+# for example: en or de
+# If the BROWSERLANGUAGE variable is set the following check is done:
+# $_SERVER['HTTP_ACCEPT_LANGUAGE']; begins with BROWSERLANGUAGE
+# examples:
+# 'de-DE,de;q=0.9,en;q=0.8de-DE,de;q=0.9,en;q=0.8' begins with 'de'
+# 'en-gb,en;q=0.5en-gb,en;q=0.5'                   begins with 'de'
+#
+# If not than the normal defaultmatching is done
+#
+# MATCHMETHOD => a new value 'default' can be used if set the global default setting
+# e.g. 'start|part...' is used
+#
+# DefaultHostUriMatchMapItems[]
+# DefaultHostUriMatchMapItems[]=DOMAIN;URI;SITEACCESS;MATCHMETHOD;BROWSERLANGUAGE
+# DefaultHostUriMatchMapItems[]=www.example.com;en;siteaccess_user_en;default;en => browserlanguage en
+# DefaultHostUriMatchMapItems[]=www.example.com;de;siteaccess_user_de;default;de => browserlanguage de
+# DefaultHostUriMatchMapItems[]=www.example.com;en;siteaccess_user_en            => default if browslanguage is not en, or de
+#
+#
+# http://www.example.com/de/content/view/full/2 =>  sitaccess_user_de
+# http://www.example.com/en/content/view/full/2 =>  sitaccess_en
+# http://www.example.com => siteaccess_user_en (default if browserlanguage begins with en)
+# http://www.example.com => siteaccess_user_de (default if browserlanguage begins with de)
+# http://www.example.com => siteaccess_user_en (default if no browserlanguage matches e.g. fr)
+
+
+
+!!!!!!! Setting MatchOrder= host
+is checking if hostname are begins_with the ini setting from MatchMapItems
+
+for host_uri it is now implemented in the kernel (ez4.4) and can be enabled with the setting
+HostUriMatchMethodDefault=start
+
+So the following testdomains are working:
+http://www.example.com
+http://www.example.com/de
+http://www.example.com.jac400.fw.lokal
+http://www.example.com.jac400.fw.lokal/de
+http://www.example.com.jac400.fw.lokal/en
+
+
+
+###exp_feature_g03_ez2014.11###
+- lib/ezutils/classes/ezdebug.php:
+- settings/site.ini
+=======================================================================
+http://issues.ez.no/IssueView.php?Id=12522
+http://issues.ez.no/IssueView.php?Id=8397
+http://issues.ez.no/IssueView.php?Id=10366
+
+[FileSettings]
+# Store LogFiles globaly or by site.ini Settings
+# enabled - all siteaccesses useing var/log as LogDir
+# disabled - the LogDir is set from site.ini /$VarDir/$LogDir
+UseGlobalLogDir=enabled
+
+
+
+###exp_feature_g04_ez2014.11### ext-siteaccess-override
+- lib/ezutils/classes/ezextenion.php  ini patch  override folder fo sitaccess extensions / and grouping of siteaccess
+- lib/ezutils/classes/ezini.php - new ini setting  ext-siteaccess-override
+                                - new ini setting  ext-siteaccess-override__group
+- config.php # ini perfomancepatches for mulitsite installation enable/disable
+------------------------------------------------------------------------------------
+http://issues.ez.no/IssueView.php?Id=12747&
+http://ez.no/developer/forum/suggestions/ini_priority_vs_extension_settings/(offset)/0#msg161835
+
+This patch allows you to have an override folder for that extension which has the loaded siteaccess.
+The Folder is only add to the iniOverrideDirs list, if it is active!
+extension/site_(projectname)/settings/override/ *.ini.append.php
+
+ezroot
++ extension
+  + site_test
+    + settings
+        + override
+          - site.ini.append.php (2)
+        + siteaccess
+          + test_user (access1)
+             - site.ini.append.php (1)
+          + test_admin (access2)
+             - site.ini.append.php (1)
+
+   - site.ini.append.php (3)
++ settings
+  + override
+    - site.ini.append.php (4)
+(0) here will be ini settings of extension, which are activate in extension siteaccess
+
+(1) ezroot/extension/site_test/settings/siteaccess/ test_user / site.ini.append.php
+(2) ezroot/extension/site_test/settings/override / site.ini.append.php
+(3) ezroot/extension/site_test/settings/ site.ini.append.php
+(4) ezroot/settings/override/ site.ini.append.php
+
+# + # variant 2 # + #
+possibility for grouping of siteaccesses
+
+siteaccessname =   sa_group_name#string
+using __ to extract groupname and automatically include folder
+override__group_name
+
+ezroot
++ extension
+  + site_test
+    + settings
+        + override
+          - site.ini.append.php (3)
+        + override__test_user
+          - site.ini.append.php (2)
+        + siteaccess
+          + test_user__de (access1)
+             - site.ini.append.php (1)
+          + test_user__en (access1)
+             - site.ini.append.php (1)
+          + test_admin (access2)
+             - site.ini.append.php (1)
+
+   - site.ini.append.php (4)
++ settings
+  + override
+    - site.ini.append.php (5)
+
+
+(0) here will be ini settings of extension, which are activate in extension siteaccess
+
+(1) ezroot/extension/site_test/settings/siteaccess/ test_user / site.ini.append.php
+(2) ezroot/extension/site_test/settings/override__group_sa_name / site.ini.append.php
+(3) ezroot/extension/site_test/settings/override / site.ini.append.php
+(4) ezroot/extension/site_test/settings/ site.ini.append.php
+(5) ezroot/settings/override/ site.ini.append.php
+
+
+
+###exp_feature_g09_ez2014.11### DatabasePrefix DataBasePostfix
+ - lib/ezdb/classes/ezdb.php
+==============================
+
+http://issues.ez.no/IssueView.php?Id=15360 =>
+https://jira.ez.no/browse/EZP-15360?Id=15360
+
+- if ini var in site.ini is set
+[DatabaseSettings]
+DatabasePrefix=jac_
+DatabasePostfix=_devel
+
+the Database Name ist extended
+e.g.  ez40_example =>  jac_ez40_example_devel
+
+So it is easy to define in the global override ini the dadabasenamestruktur
+If you have a testing system + development system on the same machine and
+don't want to edit the Database ini var in svn.
+
+----
+// Only activate the patch when called directly in the legacy stack, not via the ezp5 kernel
+if ( isset( $GLOBALS['kernel'] ) && $GLOBALS['kernel'] instanceof ezpKernel )
+{
+    $databasePrefix = false;
+    $databasePostfix = false;
+    $dbNameOriginal = $db;
+
+    if ( $ini->hasVariable( 'DatabaseSettings', 'DatabasePrefix' ) )
+    {
+        $databasePrefix = $ini->variable( 'DatabaseSettings', 'DatabasePrefix' );
+        $db = $databasePrefix . $db;
+    }
+    if ( $ini->hasVariable( 'DatabaseSettings', 'DatabasePostfix' ) )
+    {
+        $databasePostfix = $ini->variable( 'DatabaseSettings', 'DatabasePostfix' );
+        $db = $db . $databasePostfix;
+    }
+    if ( $databasePrefix !== false or $databasePostfix !== false )
+    {
+        eZDebug::writeDebug( "Using Database: '$db' not '$dbNameOriginal'!"
+                             ."\nsite.ini [DatabaseSettings]"
+                             ."\nDatabasePrefix=$databasePrefix"
+                             ."\nDatabasePostfix=$databasePostfix", '!!!DB Name change by site.ini!!! eZDB::instance() ' );
+    }
+}
+
+---
+
+
+
+###exp_feature_g44_ez2014.11### separate var_log and var_cache project folders
+/lib/ezutils/classes/ezsys.php
+/lib/ezutils/classes/ezdebug.php
+/lib/ezfile/classes/ezlog.php
+/config.php
+/lib/ezutils/classes/ezexpiryhandler.php
+/lib/ezfile/classes/ezdir.php
+================================================
+https://xxx/redmine/issues/2125
+
+Separate project storage, cache and log files
+
+Allows all cache files, log files or storage files to be mounted on a
+different filesystem.
+
+Note: the var directory cannot be moved easily because paths are stored
+      in the database; the approach taken is therefore to separate only
+      the log and cache directories.
+
+Patches are enabled via:
+
+config.php constants
+--------------------
+
+// if true use separate folder for project logfiles ezroot/var/project/log => ezroot/var_log/prjoect_log
+define( 'JAC_PATCH_USE_EXTRA_FOLDER_VAR_LOG', true );
+
+// if true use separate folder for project cachefiles ezroot/var/project/cache => ezroot/var_cache/prjoect_log
+define( 'JAC_PATCH_USE_EXTRA_FOLDER_VAR_CACHE', true );
+
+// if true put  var/$project/cache/expiry.php into /var/cache/expiry_$project.php so you can leave var/log on hdd and var_cache into RAM
+// The expiry.php handle the regeneration of cache and imagealiase in ezplegacy
+define( 'JAC_PATCH_PUT_EXPIRY_TO_GLOBAL_DIR_VAR_CACHE', true );
+
+ezroot
++ var
+  + cache
+  + log
+  + project_1
+    + log
+    + cache
+      - expiry.php
+    + storage
+  + project_2
+    + log
+    + cache
+      - expiry.php
+    + storage
+
+When patches are enabled
+
+ezroot
++ var
+  + cache
+      - expiry_project_1.php
+      - expiry_project_2.php
+  + log
+  + project_1
+    + storage
+  + project_2
+    + storage
+
++ var_cache
+  + project_1
+    + cache
+  + project_2
+    + cache
+
++ var_log
+  + project_1
+    + log
+  + project_2
+    + log
+
+
+example:
+
+ssd:   ezroot
+sda:   ezroot/var
+tmpfs: ezroot/var_cache
+ssd:   ezroot/var_log
+
+
+mount -t tmpfs tmpfs /ezroot/var_cache/
+umount -t tmpfs tmpfs /ezroot/var_cache/
+
+---
+    Store expiry.php globally so it is independent of the project cache directory (when cache is in RAM).
+
+    // $cacheDirectory = eZSys::cacheDirectory();
+    // $this->CacheFile = eZClusterFileHandler::instance( $cacheDirectory . '/' . 'expiry.php' );
+
+    // Store all expiry.php files globally so the cache can reside in RAM.
+    // The expiry.php must survive a restart so that images are recalculated correctly.
+    // For example: when an image is deleted a expiry timestamp is written to expiry.php;
+    // if the image cache date is older than this timestamp the image is regenerated.
+    $ini = eZINI::instance();
+    $suffix = $ini->variable( 'DatabaseSettings', 'Database' );
+    $this->CacheFile = eZClusterFileHandler::instance(  'var/cache/expiry_'. $suffix .'.php' );
+
+---
+lib/ezfile/classes/ezdir.php
+
+When a module (e.g. exp_newsletter) writes log files via components rather than eZLog::write,
+the method interception does not apply. eZDir::cleanPath is therefore overridden so that
+var/projectA/log is rewritten to var_log/projectA/log.
+
+
+
+###exp_feature_g47_ez2014.11### CLEAR image-alias CACHE for project A also clear cache for all other projects
+- kernel/classes/ezsiteaccess.php
+=================================
+http://issues.ez.no/IssueView.php?Id=19533: multisite-hosting: CLEAR image-alias CACHE for project A
+also clear cache for all other projects on the same ez installation
+
+#2206 multisite-hosting: CLEAR image-alias CACHE for project A also clear
+cache for all other projects on the same ez installation
+
+expiry.php is not stored in /var/project/cache/ dir !!!
+
+=> so cache of all projects is cleared (not only image-alias cache)
+=> store expiry.php for every project in var/project/cache/ folder
+
+ezsiteaccess.php change()
+
+    $ini->loadCache();
+    // FIX
+    unset( $GLOBALS['eZExpiryHandlerInstance'] );
+
+
+
+###exp_feature_g48_ez2014.11### multisite-hosting: CLEAR INI CACHE for project A also clear
+                                INI CACHE for all other projects on the same ez installation
+- kernel/classes/ezsiteaccess.php
+- lib/ezutils/classes/ezini.php
+=================================
+
+http://issues.ez.no/IssueView.php?Id=19535
+https://xxx/redmine/issues/2207
+
+The Problem is, that all INI caches are stored in the global /var/cache/ini folder.
+
+If INI cache in project A is purged in backend ( global ini cache ) the var/cache/ini folder
+is deleted recursively!!!!
+At the moment all ini cache files for every project is deleted - if you have 50+ projects on that installation this can be a lot :-(
+
+=> store ini cache in project/cache/ini folder
+
+
+
+###exp_feature_g52_ez2014.11###  /content/treemenu throws PHP notices with nginx
+ezpublish_legacy/lib/ezutils/classes/ezsys.php
+================================
+
+https://jira.ez.no/browse/EZP-22982
+
+With display_errors set to E_ALL and nginx, the content tree menu isn't shown in the backend (only the "Internal error" message).
+
+Calling the requested url directly (/content/treemenu/2/.... reveals a JSON encoded PHP notice:
+
+Warning: strpos(): Empty needle in /var/www/ezpublish/ezpublish_legacy/lib/ezutils/classes/ezsys.php line 1231"
+
+I modified this line in the ezSys class locally, by not only comparing to /{$index}, but also to $index directly and it worked again.
+
+if ( $phpSelf === $index || $phpSelf === "/{$index}" )
+
+
+
+###exp_feature_g53_ez2014.11###  DebugByIP not working
+ezpublish_legacy/lib/ezutils/classes/ezdebug.php
+================================
+
+https://jira.ez.no/browse/EZP-24234 - ezpublish_legacy - DebugByIP IPV4 not working correctly
+
+Accessing the ezpublish legacy stack directly the DebugByIP Setting not working anymore. In 2012.06 (4.7) the setting is working correctly.
+The mistake is comming to the code with introduction ipv6 support.
+
+example:
+
+    site.ini
+    [DebugSettings]
+    DebugOutput=enabled
+    DebugByIP=enabled
+    DebugIPList[]
+    DebugIPList[]=192.168.2.171
+    DebugIPList[]=192.168.2.0/26
+
+=> if clientIP is 192.168.2.171 or 192.168.2.33 the debug output should be available
+=> if clientIP ist 192.168.2.99 the debug output should be hidden
+but the debug output is shown!!!!!
+
+
+
+###exp_feature_g56_ez2014.11### view cache file written when cache_ttl=0 is set in template
+kernel/classes/eznodeviewfunctions.php
+======================================
+
+Fix the issue:
+if {set-block scope=global variable=cache_ttl}0{/set-block} is set in view full template,
+no cache file should be generated to reduce io write calls and storage size
+
+https://project.issues.ez.no/IssueView.php?Id=13443&
+
+https://jira.ez.no/browse/EZP-16874
+https://github.com/ezsystems/ezpublish-legacy/pull/1171
+
+
+- clear cache on console rm -r var/cache/content
+- call en ezsite content/view/full/2 with viewcache enabled
+- a new cachefile must be generated
+...
+- now clear the cache again rm ...
+- edit view/full/ template and add {set-block scope=root variable=cache_ttl}0{/set-block}
+- call en ezsite content/view/full/2 again
+=> no cache file should be generated but it is generated!!!!
+
+
+
+[#5732] EZSA-2016-002: Disclosure of collected info from information collector
+    Task #5732 – EZSA-2016-002: Disclosure of collected info from information collector
+
+    Patch date: 02/08/2016
+
+    ------------------------------------------------------------------------------------------------
+
+    Publication date : 28/07/2016
+    Severity : Medium
+    Affected versions : 4.4-5.4, all community versions at time of writing (legacy only)
+    Resolving versions : 5.4.6, 5.3.8, and published service packs for all other supported versions
+
+    This Security Update fixes a possible disclosure to unintended recipients of information
+    collected for objects using the legacy information collection feature. If the session is cleared
+    before accessing the collected info, the first collected info for the object is shown. If you
+    don't use the information collection feature you are not affected, otherwise we strongly
+    recommend that you install this Security Update as soon as possible.
+
+    Patch for eZ Publish:
+    (Fix EZP-25087: additional check for display of collected info.)
+    https://github.com/ezsystems/ezpublish-legacy/commit/39292170a6237c94b8ef624d962909e43d4c851b
+
+    ------------------------------------------------------------------------------------------------
+
+    *Affected files:*
+        - kernel/content/collectedinfo.php:63
+
+
+
+###exp_feature_security_s01_ez2014.11### [#5737] SQL injection patch in content view / Ezoe ie fix #1248
+
+    Patch date: 02.08.2016
+
+    ------------------------------------------------------------------------------------------------
+
+    SQL injection patch in content view
+    https://github.com/ezsystems/ezpublish-legacy/pull/1248/commits/60885ff94c069201760b6e42eb54ee8421403313
+
+    ------------------------------------------------------------------------------------------------
+
+    *Affected files:*
+        - kernel/classes/ezcontentobjecttreenode.php
+
+
+
+###exp_feature_g59_ez2014.11### Upload images/files with class_identifier by ini
+    @see exp_contentupload
+
+    /ezpublish_legacy/kernel/classes/ezcontentupload.php
+
+
+
+###exp_feature_g60_ez2014.11### Redirect if cancel user/edit
+    @see #5610
+
+    /ezpublish_legacy/kernel/user/edit.php
+
+
+
+###exp_feature_backport_b02_ez2014.11### [#5843] [Fix EZP-24154] Overriding template with section_identifier fails when cached
+    Task #5843 – [EZP-24154] Overriding template with section_identifier fails when cached
+
+    Patch date: 23.08.2016
+
+    ------------------------------------------------------------------------------------------------
+
+    If a template is declared to override using the match by section_identifier, and the view cache
+    is enabled, the cached versions will fall back to default templates and ignore the overrides.
+
+    Patch for eZ Publish: (Fix EZP-24154: Overriding on section identifier does not work)
+        https://github.com/ezsystems/ezpublish-legacy/commit/8077ef9a6f6181ad311a218878848bd7a0d36f2f
+        (https://github.com/ezsystems/ezpublish-legacy/commit/3882dd3dc8614f3a14aae553c561c54d384376c7) – Merge Commit
+
+    ------------------------------------------------------------------------------------------------
+
+    *Affected files:*
+        - kernel/classes/eznodeviewfunctions.php
+
+
+
+###exp_feature_security_s02_ez2014.11### [#5737] [EZSA-2016-007] SQL injection in legacy ezsearchengine
+
+    Patch date: 21.11.2016
+
+    ------------------------------------------------------------------------------------------------
+
+    EZSA-2016-007: SQL injection in legacy ezsearchengine
+
+    Publication date : 17/11/2016
+    Severity : High
+    Affected versions : 4.5 - 5.4, all community versions at time of writing (legacy only)
+    Resolving versions : 5.4.8.1, 5.3.10.1, and published service packs for all other supported
+                         versions
+
+    An SQL injection security breach has been detected in the "ezsearchengine" search plugin, which
+    is the default if you are not using the Solr-based eZ Find extension. By its nature, such a
+    vulnerability is potentially severe, and we strongly recommend that you patch your systems as
+    soon as possible.
+
+    We thank Markus Wulftange of Code White for bringing this important issue to our attention in a
+    professional and responsible manner.
+
+    Patch for eZ Publish (legacy):
+        https://github.com/ezsystems/ezpublish-legacy/commit/6d926593fd5c00028b8d379c7273898b3055beed
+
+    ------------------------------------------------------------------------------------------------
+
+    *Affected files:*
+        - kernel/search/plugins/ezsearchengine/ezsearchengine.php
+
+
+
+###exp_feature_g62_ez2014.11### ezcontentobject::relatedObjects() - Query error (1054): Unknown column 'ezcontentclass.id' in 'on clause'.
+    Bug #6455 – ez1411 : ezcontentobject::relatedObjects() - Query error (1054): Unknown column 'ezcontentclass.id' in 'on clause'.
+
+    Patch Date: 05.01.2017
+
+    ------------------------------------------------------------------------------------------------
+
+    The platform uses a custom success page shown after an object is published,
+    informing the user whether the object was published directly or submitted to
+    an approval workflow.
+
+    Users are only allowed to publish circular letters via the VersionView, but
+    the RedirectURI is not accepted there without additional handling.
+
+    To work around this, two new POST parameters are introduced for the
+    VersionView, each of which can carry a URL:
+
+        - RedirectUrl_AfterWorkflowHalted (=> when submitted to approval workflow)
+        - RedirectUrl_AfterPublish        (=> when published directly)
+
+    ------------------------------------------------------------------------------------------------
+
+    *Affected files:*
+        - kernel/classes/ezcontentobject.php
+
+
+
+###exp_feature_g63_ez2014.11### RedirectURL functionality for "content/versionview" PreviewPublish functionality
+    Task #6989 – Feedback Test exp_ece
+
+    Patch Date: 11.05.2017
+
+    ------------------------------------------------------------------------------------------------
+
+    *Affected files:*
+        - kernel/content/versionviewframe.php
+
+
+
+###exp_feature_g64_ez2014.11### Additional RedirectURL functionality for "content/edit"; like ###exp_feature_g63_ez2014.11###
+    Bug #7767 – When using the Publish button directly the success page always reports the object as published
+
+    Patch Date: 19.10.2017
+
+    ----------------------------------------------------------------------------
+
+    The direct Publish button has returned to the front-end/portal Edit view.
+    The existing success-page logic only works in conjunction with the VersionView
+    (where a patch was added to support the various RedirectURL parameters).
+
+    The same functionality is now required in the normal Edit view as well so that
+    the success page correctly distinguishes between a directly published object
+    and one that has been submitted to an approval workflow.
+
+    ----------------------------------------------------------------------------
+
+    *Affected files:*
+        - kernel/content/edit.php
+
+
+
+###exp_feature_g1001_ez2014.11### Additional Permission Hook / viewcachekeys
+[X] kernel/classes/eznodeviewfunctions.php => cachekeys
+==================================
+Ported from S-VIP 2
+
+4.3.0-Patch: ###exp_ece_patch_l7_ez4.3.0###
+
+No longer needed for SNAC in eZContentObject (replaced by bitmask ###exp_feature_g1002_ez2014.11###)
+but still required for viewcachekeys (SNAC + override)
+in extension/ezsnac/classes/ezsnacpermissionhandler.php (called from kernel/classes/eznodeviewfunctions.php)
+
+@see  Task #2720 Optimize cache vs. WFU data
+The viewcache override makes the viewcache unique per siteaccess for the article and
+circular_letter content classes. Parameters such as user roles and preferences that are
+irrelevant for the cache in this context can therefore be omitted.
+
+=> significantly more cache hits
+=> fewer SQL queries
+=> the alternative (disabling viewcache and building cache blocks) is slower
+
+viewcache override
+
+snac.ini.append.php
+
+    # ###exp_ece_patch_l07_ez4.3.0### add keyname
+    # system key will add to every viewcache
+    #
+    # default viewcachkey example:
+
+    # [node_id] => 78
+    # [viewmode] => full
+    # [language] =>
+    # [offset] =>
+    # [layout] =>
+    #
+    # cache keys that can be used for override
+    #
+    # [userroles] => 1.4.5.7.8.23.43.135.143.279.294.296.343
+    # [userlimitedlist] => /1/2/295/134841/./1/2/78/238250/./1/2/78/240624/../1/2/78/163636/./1/2/78/216830/
+    # [discountlist] =>
+    # [access_path] => /ezteamroom
+    # [siteaccess_type] => 2
+    # [viewparameters] => vp:day=vp:month=vp:namefilter=vp:offset=vp:year=
+    # [userpreferences] => p:teamroom_list_limit=-1;p:teamroom_member_list_limit=5;p:teamroom_tasklist_list_limit=5;p:teamroom_files_list_limit=-1;p:teamroom_milestone_list_limit=5;p:teamroom_blog_list_limit=5;p:teamroom_calendar_list_limit=5;p:teamroom_documents_list_limit=5;p:teamroom_forum_list_limit=5;
+
+    # added for classes @see AdditionalViewCacheKeyClasses
+    # [snac_user] => 10.0.0.0
+
+    #
+    # if set the default ez is viewcache are manipulated
+    # should be defined in sitaccess snac.ini.append.php
+    # ViewCacheKeyOverride[ 'class_identifier' ] = keys
+
+    # ViewCacheKeyOverride[circular_letter_folder]=userroles;userlimitedlist;access_path;siteaccess_type;viewparameters;snac_user
+    # ViewCacheKeyOverride[folder]=userroles;userlimitedlist;access_path;siteaccess_type;viewparameters;snac_user
+    # ViewCacheKeyOverride[info_page]=userroles;userlimitedlist;access_path;siteaccess_type;viewparameters;snac_user
+
+    # should be the same for every user - no snac no roles
+
+    # WFU variables must be rendered in after cache generation
+    # until this is not done the following rule can not be used
+    # ViewCacheKeyOverride[article]=access_path;siteaccess_type;viewparameters
+    # ViewCacheKeyOverride[circular_letter]=access_path;siteaccess_type;viewparameters
+
+
+
+###exp_feature_g1002_ez2014.11### #2116 [OPL 18] Implement SNAC correctly in the eZ permission system
+                               Migrate SNAC to bitmask-based role matrix check
+[X] kernel/classes/ezcontentobject.php  checkAccess()
+[X] kernel/classes/ezcontentobjecttreenode.php
+    ::checkAccess()
+    ::createPermissionCheckingSQL ( for list, tree fetch )
+[X] kernel/classes/ezcontentobjectversion.php checkAccess()
+[X] kernel/content/module.php
+==========================================================
+
+4.3.0-Patch: ###exp_ece_patch_l12_ez4.3.0###
+
+Patch ###exp_ece_patch_l03_ez4.3.0### snac content download is superseded
+Patch ###exp_ece_patch_l07_ez4.3.0### Additional Permission Hook
+
+
+SNAC is now properly integrated into the eZ permission system. The SNAC check
+can be activated via the standard Roles and Policies interface for content read:
+    e.g. role exp_ece Access vip_admin/role/view/23
+    content    read    Class( circular_letter, article ) , Section( RoleMatrix ) , SNAC_RoleMatrixCheck( active )
+
+The previous approach denied read access to Section(RoleMatrix) by default and
+checked the SNAC matrix via a hack. This caused the subtree assignment for member
+organisations to be lost, and standard content tree and list fetches did not work,
+requiring a separate and costly SNAC-specific fetch.
+The old approach also made it impossible to restrict editors to only their own articles.
+See requirement #1751 [OPL 18] Role matrix must apply to editors.
+
+The new implementation also brings a significant performance improvement because
+the resulting SQL queries are much simpler.
+
+
+extension/ezsnac has been updated as well:
+2 new database tables store the bitmask-encoded role matrix.
+
+
+{$node.can_read}   => SNAC is now automatically included
+{$object.can_read} => SNAC is now automatically included
+
+
+Old SNAC fetch:  'view node_tree' with 'SnacNodeFilter'
+
+$article_list = fetch( 'view', 'node_tree', hash( 'parent_node_id', $user_group_subtree_id,
+                                                       'class_filter_type', 'include',
+                                                       'class_filter_array', array( 'article' ),
+                                                       'offset', $view_parameters.offset,
+                                                       'limit', $page_limit,
+                                                       'main_node_only', true(),
+                                                       'attribute_filter', array( array( 'modified', '>', $curr_ts|sub( $beforeSeconds ) ) ),
+                                                       'extended_attribute_filter', hash( 'id', 'SnacNodeFilter',
+                                                                                          'params', hash() ),
+                                                       'sort_by', array( 'modified', false() )
+                                                     )
+
+=> replaced by a standard 'content tree' fetch without 'SnacNodeFilter' because access is now enforced via the permission system
+
+$article_list = fetch( 'content', 'tree', hash( 'parent_node_id', $user_group_subtree_id,
+                                                       'class_filter_type', 'include',
+                                                       'class_filter_array', array( 'article' ),
+                                                       'offset', $view_parameters.offset,
+                                                       'limit', $page_limit,
+                                                       'main_node_only', true(),
+                                                       'attribute_filter', array( array( 'modified', '>', $curr_ts|sub( $beforeSeconds ) ) ),
+                                                       'sort_by', array( 'modified', false() )
+                                                     )
+
+--------------------------------------------------------------------------------
+
+
+
+###exp_feature_g1003_ez2014.11### #1391 A member of exp_ece receives notifications for exp_ece circular letters
+[X] kernel/classes/ezcontentobject.php
+[X] kernel/classes/ezcontentobjecttreenode.php
+=======================================================
+http://issues.ez.no/IssueView.php?Id=19142&activeItem=1
+
+4.3.0-Patch: ###exp_ece_patch_l09_ez4.3.0###
+
+new Parameter $userID in checkAccess to ask the system if a special user has access to a node or object
+
+example ussage:
+
+/extension/vip_notification/notification/handler/vipsubtree/vipsubtreehandler.php l269
+
+$canReadParentNode = $parentNode->checkAccess( 'read', false, false, false, false, $subscriber['user_id'] );
+
+--------------------------------------------------------------------------------
+
+
+
+###exp_feature_g1004_ez2014.11### fetch optimization - policy limitation / assigned nodes
+[X] kernel/classes/ezcontentobjecttreenode.php
+    ::createPermissionCheckingSQL ( for list, tree fetch )
+[X] kernel/classes/ezcontentobject.php
+    ::assignedNodes() - request-level cache introduced
+[X] config.php - patch activation
+==========================================================
+
+https://xxx/redmine/issues/2675
+
+4.3.0-Patch: ###exp_ece_patch_l13_ez4.3.0###
+
+1. limitation array optimisation
+
+--
+config.php:
+
+// ###exp_feature_g1004_ez2014.11### fetch optimization - policy limitation / assigned notes
+// eZContentObjectTreeNode::optimizeLimitationList()
+define( 'JAC_PATCH_ENABLE_LIMITATION_OPTIZATION', true );
+--
+
+    Idea: minimise the policy set for the current fetch (content list, list_count ...).
+
+    => Remove all policies that do not apply => ~30% performance gain for queries
+    when users have many permissions.
+
+
+2. assignedNodes - cache repeated lookups
+
+--
+config.php:
+
+// ###exp_feature_g1004_ez2014.11### fetch optimization - policy limitation / assigned notes
+// eZContentObject::assignedNodes()
+define( 'JAC_PATCH_ENABLE_ASSIGNED_NODES_CACHE', true );
+--
+
+    kernel/classes/ezcontentobject.php::assignedNodes() - request-level cache introduced
+
+    $GLOBALS[ 'EZ_CONTENTOBJECT_CACHE_ASSIGNED_NODES_AS_OBJECT' ][ $contentObjectId ] = $value
+    $GLOBALS[ 'EZ_CONTENTOBJECT_CACHE_ASSIGNED_NODES_AS_ARRAY' ][ $contentObjectId ] = $value
+
+    With many permissions in place the same small SQL queries were executed very
+    frequently. This patch saved over 100 duplicate queries on a single page load
+    and reduced execution time by 50%.
+
+
+#10206 update 12.6.2019 apply patch to content/versionsview as well, not only content/view/...
+
+
+--------------------------------------------------------------------------------
+
+
+
+###exp_feature_g1005_ez2014.11### #1469 Bug with rejected articles
+[X] kernel/classes/ezcontentobject.php
+=================================
+nodeassignments of objectversions are lost if first objectversion was rejected by approver
+
+4.3.0-Patch: ###exp_ece_patch_l08_ez4.3.0###
+
+Test:
+
+1. (Author) create new article and publish => ezapprove2 workflow
+=> runcronjobs.php -s vip_admin workflow
+=> runcronjobs.php -s vip_admin notification
+2. (Approver) reads the article and rejects it => runcronjobs.php -s vip_admin workflow
+3. (Author) sees that the article was rejected
+=> opens Edit object => a new version is created
+The bug was here: when copying version 1 the corresponding node assignments were not
+copied if op_code was 'Create' (3).
+
+SELECT *
+FROM `eznode_assignment`
+ORDER BY `eznode_assignment`.`contentobject_id` DESC
+LIMIT 0 , 30
+
+        contentobject_id    contentobject_version  from_node_id    id      is_main     op_code     parent_node     parent_remote_id    remote_id   sort_field  sort_order
+(1)     217830             1                       0               254132  1           3           206864                              0           1           1
+(2)     217830             2                       -1              254133  1           3           206864                              0           1           1
+(3)     217830             3                       0               254135  1           3           206864                              0           1           1
+(4)     217830             4                       0               254136  1           2           206864                              0           1           1
+(5)     217830             5                       -1              254137  1           2           206864                              0           1           1
+
+
+(1) Author created version 1 and published it
+(2) After Approver rejected (1) and Author clicked Edit object, this row must appear.
+    Without the patch this does not happen because the eZ core does not copy objects
+    that have no remote_id. The patch copies them when op_code is 3 (CREATE).
+    !!! If the NodeAssignment is missing, publishing shows a content/browse view
+        asking where to place the object.
+    !!! If published via versionview, the object is published under parent_node 1
+        (default) without prompting for a location.
+(3) Rejected and re-created again
+(4) After (3) was approved the article (now with a proper node) was edited again
+    => ob_code (2 - Create no op - no operation) => rejected again
+(5) New object created
+
+    function copyVersion( &$newObject, &$version, $newVersionNumber, $contentObjectID = false, $status = eZContentObjectVersion::STATUS_DRAFT, $languageCode = false, $copyFromLanguageCode = false )
+    {
+        $user = eZUser::currentUser();
+        $userID = $user->attribute( 'contentobject_id' );
+
+        $nodeAssignmentList = $version->attribute( 'node_assignments' );
+
+        $db = eZDB::instance();
+        $db->begin();
+
+        // This is part of the new 3.8 code.
+        foreach ( array_keys( $nodeAssignmentList ) as $key )
+        {
+            $nodeAssignment = $nodeAssignmentList[$key];
+            // Only copy assignments which has a remote_id since it will be used in template code.
+            /*if ( $nodeAssignment->attribute( 'remote_id' ) == 0 )
+            {
+                continue;
+            }*/
+            // // ###exp_feature_g1005_ez2014.11### #1469 bug with rejected articles
+            if ( $nodeAssignment->attribute( 'remote_id' ) == 0
+                 && $nodeAssignment->attribute( 'op_code' ) != eZNodeAssignment::OP_CODE_CREATE )
+            {
+                continue;
+            }
+            $clonedAssignment = $nodeAssignment->cloneNodeAssignment( $newVersionNumber, $contentObjectID );
+
+            /* $clonedAssignment->setAttribute( 'op_code', eZNodeAssignment::OP_CODE_SET ); // Make sure op_code is marked to 'set' the data. */
+
+            // ###exp_feature_g1005_ez2014.11### #1469 do not set op_code to 3 (create) when copying an object version that has never been published
+            // e.g. when an article was rejected in ezapprove2 and is then edited again (new version)
+            if ( $nodeAssignment->attribute( 'op_code' ) != eZNodeAssignment::OP_CODE_CREATE )
+                $clonedAssignment->setAttribute( 'op_code', eZNodeAssignment::OP_CODE_SET ); // Make sure op_code is marked to 'set' the data.
+
+            $clonedAssignment->store();
+        }
+
+--------------------------------------------------------------------------------
+
+
+
+###exp_feature_g1006_ez2014.11### role/view - limit - pagenavigator #2677
+[X] kernel/role/view.php
+[E] extension/vip_admin_designs/design/admin2/templates/role/view.tpl
+[X] config.php - patch activation [2014.11]
+==================================================================
+
+4.3.0-Patch: ###exp_ece_patch_l14_ez4.3.0###
+
+!!! Requires admin template adjustment !!!
+ToDo: Merge into global admin template?
+Only Admin2 is updated at this time.
+
+Enhancement #2677 admin/admin2 role/view is very slow for roles with many users
+
+(offset) and (limit) settable as view parameters
+=> page navigator added
+=> sorting by name added
+
+Role exp_ece Access
+http://example.com/vip_admin2/role/view/23 (offset)/...
+Allows fast navigation through roles and permissions again.
+
+--------------------------------------------------------------------------------
+
+
+
+###exp_feature_g1007_ez2014.11### content/download for approvers
+[X] kernel/content/download.php
+[X] config.php - patch activation [2014.11]
+==============================================
+
+4.3.0-Patch: ###exp_ece_patch_l18_ez4.3.0###
+
+Bug #3043 content/download fails during the approval process
+
+When an approver does not have general read access to a document (because their
+role matrix does not match), they cannot open a content/download link that was
+followed from content/versionsview/ — access denied.
+
+The patch adds a fallback in content/download: if can_read on the object fails,
+it checks can_read on the version (versionsread). If that succeeds, the download
+is permitted.
+
+--------------------------------------------------------------------------------
+
+
+
+###exp_feature_g1008_ez2014.11###  kernel/content/history  $version->canRead()
+[X] kernel/content/history.php
+===========================================================================
+
+4.3.0-Patch: ###exp_ece_patch_l22_ez4.3.0###
+
+Bug #5886 ezapprove2: exp_ece circular letter - approval rejected - Edit not possible - access denied
+
+An additional $version->canRead() check is added when content/history/$objectID/$editversion
+is called, so that canRead also works on unpublished objects (i.e. a rejected version with v1).
+
+Test:
+
+1. PersonA creates a circular letter and adds PersonB as co-editor and PersonC as approver
+
+2. PersonB publishes the circular letter
+
+3. PersonC rejects the circular letter in the approval workflow
+
+4. PersonB sees the circular letter listed as rejected in the task list but can no longer
+   edit the object via content/history ...
+   because content/history contains an $object->canRead() check that cannot resolve
+   subtree policies for unpublished object versions correctly.
+
+=> an additional $version->canRead() check is therefore required
+
+--------------------------------------------------------------------------------
+
+
+
+###exp_feature_g1009_ez2014.11###  custom server variable for unique user string ExpEceOutputFilter::setGlobalVariablesForApacheLog();
+[X] kernel/private/classes/ezpkernelweb.php
+================================================
+
+4.3.0-Patch: ###exp_ece_patch_l21_ez4.3.0###
+
+
+
+Requirement #4174 2.14 Analytics tool extension (awstats)
+
+extension/exp_ece_global_designs/classes/exp_ece_output_filter.php
+        //
+        // patch - start - unique user-id string for apache log to track unique users in awstats
+        //
+        ExpEceOutputFilter::setGlobalVariablesForApacheLog();
+        //
+        // patch - end
+        //
+
+-----
+
+
+
+###exp_feature_g1010_ez2014.11### [#7067] Call eZNotificationSchedule::setDateForItem() without an $item object to create a date
+[X] kernel/classes/notification/eznotificationschedule.php
+================================================================================
+    Bug #7067 – Notification Settings - Fatal Error when setting digest mail to Daily
+
+The function `eZNotificationSchedule::setDateForItem()` normally requires an item
+as a parameter. Because the VipGeneralDigestHandler omits this parameter, a FatalError
+occurs when the function tries to set an attribute on the (null) object. Only the
+generated date is actually needed in that code path. This patch makes the item
+parameter optional so the function can be called without a valid item object.
+This was already patched in earlier versions but was not properly documented.
+
+-----
+
+
+###exp_feature_g1011_ez2014.11### Policy fetch for a user optimised
+[X] kernel/classes/ezrole.php
+=============================
+
+#7082 TR - Manage members fatal error
+
+Fetching policies for a user required many SQL queries.
+Code optimised. Previous patch updated.
+
+----
+
+
+
+###exp_feature_g1012_ez2014.11### content/versionview/ — extend to accept (view_mode)/... parameter, e.g. print
+[x] kernel/content/module.php
+[x] kernel/content/versionview.php
+[x] kernel/content/versionviewframe.php
+========================================
+
+content/versionview/ now accepts an alternative view mode; the default remains 'full'.
+
+Target use case: http://s-vip.exp_ece.example.com/layout/set/pdf_export/content/versionview/372188/4/(view_mode)/print
+=> node/view/print.tpl for various circular letter classes
+
+----
+
+
+
+###exp_feature_g1013_ez2014.11### collaboration/item — add check for "ezapprove2/superadmin" permission
+[x] kernel/collaboration/item.php
+=================================
+
+An additional check for access to the "ezapprove2/superadmin" function is added
+to the "collaboration/item" view.
+The view also checks whether the current user is a participant or an approver
+for the collaboration item.
+All of these properties are passed as template variables:
+    - is_superadmin
+    - is_participant
+    - is_approver
+
+----
+
+
+
+###exp_feature_g1014_ez2014.11### *can_edit* check fails for unpublished circular letter that has no version '1'
+[x] kernel/classes/ezcontentobject.php
+======================================
+
+Bug #8338 – If an unpublished circular letter has no version '1', the *can_edit*
+check no longer works correctly because it assumes version '1' always exists.
+
+This lookup for the first version is not necessary in practice, because the code
+already performs an additional check for whether the object is still in *draft*
+status. Once an object has been published (i.e. has a published version) it
+normally cannot return to draft status.
+
+----
+
+
+
+###exp_feature_g1015_ez2014.11###  SingleVersionEdit - creating a new draft fails for co-editors
+
+[x] kernel/content/removeeditversion.php
+[x] kernel/content/edit.php
+[x] kernel/content/history.php
+[x] kernel/content/versionviewframe.php
++ ezoe/modules/ezoe...
+======================================
+
+@see #9990 ezapprove2: Approval rejected - co-editor cannot create a new draft - access denied
+
+$object->can_edit extended to check whether current user is a SingleVersionEdit user
+ExpEceCollaborateContentObjectVersion->canUserEdit()
+
+Test
+
+1. User A creates circular letter V1 with co-editors UserB, UserC => submitted for approval
+
+2. circular letter V1 is rejected
+
+3. User B tries to create a new version => access denied
+
+
+
+###exp_feature_g1016_ez2014.11### *can_edit* check fails for unpublished circular letters with subtree-limited edit policies -> use tmpnode->parentNode as check
+[x] kernel/classes/ezcontentobject.php
+======================================
+
+Bug #10023 Approver: circular letter - "Reject & Edit" button missing when circular letter has no published version yet
+
+This happens because object->can_edit fails when the object has no assigned nodes (i.e. is not yet published).
+=> With edit policies that include subtree restrictions
+=> The fix checks currentversion->tmpnode->parentNode when the object is a draft, so that
+   subtree limitations from the policies are applied correctly.
+
+TEST:
+- exp_ece editor creates a circular letter with an approver and publishes it
+- Approver opens their task list and the task entry => "Reject & Edit" button must be present and functional
+
+
+
+
+
+###exp_feature_g1017_ez2014.11### content/versionview/ — show correct path when object is not yet published
+[x] kernel/content/versionviewframe.php
+========================================
+
+content/versionview/ now shows the correct path when the object is not yet published.
+
+When a new draft was created and Preview was opened, the path was displayed incorrectly:
+the last folder was always removed from the breadcrumb path.
+For published objects with a real node_id the versionview correctly showed the full path.
+
+@see #10189
+
+----
+
+
+
+###exp_feature_g1018_ez2014.11### [#10017] content/edit neuer Button PublishNotNotifyButton / NotificationFilter for ClassIdentifier
+====================================================================================================================================
+    alter 2012.06 patch [#6221]
+    [BugFix] #10911
+
+    Patch date: 13.11.2019
+    Bugfix date: 30.01.2020
+    ------------------------------------------------------------------------------------------------
+    - content/edit:
+    The standard publish button is 'PublishButton', which generates a notification.
+    A new action 'PublishNotNotifyButton' is introduced => same as PublishButton but without notification.
+    - content/versionview:
+    The standard publish button is 'PreviewPublishButton', which generates a notification.
+    A new action 'PreviewPublishNotNotifyButton' is introduced => same as PublishButton but without notification.
+    Changes to:
+    eZContentOperationCollection::createNotificationEvent( ...,..., $notify = true )
+    - New parameter $notify to suppress the notification
+    - New INI settings in notification.ini.append.php to define which content classes
+      are included in notifications at all:
+        # notification.ini
+        [NotificationSettings]
+        # disabled/enabled
+        # if enabled only Notifications for Classes which defined in IncludeClasses[] will be send out by E-Mail
+        # if disabled all notification will for all classes will be processes (default eZ)
+        NotificationFilterByClassIdentifier=disabled
+        IncludeClasses[]
+        #IncludeClasses[]=article
+        #IncludeClasses[]=file
+
+    ------------------------------------------------------------------------------------------------
+
+    @see #10006
+    @see #10911
+
+    ------------------------------------------------------------------------------------------------
+
+    *Affected files:*
+    - [x] /kernel/classes/ezcontentobject.php
+    - [x] /kernel/classes/ezcontentupload.php
+    - [x] /kernel/content/edit.php
+    - [x] /kernel/content/ezcontentoperationcollection.php
+    - [x] /kernel/content/module.php
+    - [x] /kernel/content/operation_definition.php
+    - [x] /kernel/content/versionviewframe.php
+    - [x] /settings/notification.ini
+
+
+
+###exp_feature_g1018_ez2014.11### workflow/processlist/ — display process list correctly
+[x] kernel/workflow/processlist.php
+========================================
+
+The workflow process list was displayed incorrectly and appeared empty even when
+multiple active workflow processes were present.

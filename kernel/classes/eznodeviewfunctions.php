@@ -1,4 +1,7 @@
 <?php
+/// ###exp_feature_g56_ez2014.11### view cache file written when cache_ttl=0 is set in template ///
+/// ###exp_feature_backport_b02_ez2014.11### [#5843] [Fix EZP-24154] Overriding template with section_identifier fails when cached ///
+/// ###exp_feature_g1001_ez2014.11### Additional Permission Hook / viewcachekeys ///
 /**
  * File containing the eZNodeviewfunctions class.
  *
@@ -236,6 +239,7 @@ class eZNodeviewfunctions
         $contentInfoArray['class_group']             = $object->attribute( 'match_ingroup_id_list' );
         $contentInfoArray['state']                   = $object->attribute( 'state_id_array' );
         $contentInfoArray['state_identifier']        = $object->attribute( 'state_identifier_array' );
+        /// ###exp_feature_backport_b02_ez2014.11### [#5843] [Fix EZP-24154] Overriding template with section_identifier fails when cached ///
         $contentInfoArray['section_identifier']      = $sectionIdentifier;
         $contentInfoArray['parent_class_id']         = $parentClassID;
         $contentInfoArray['parent_class_identifier'] = $parentClassIdentifier;
@@ -310,34 +314,40 @@ class eZNodeviewfunctions
             $currentSiteAccess = $ini->variable( 'SiteSettings', 'DefaultAccess' );
         }
 
-        $cacheHashArray = array( $nodeID,
-                                 $viewMode,
-                                 $language,
-                                 $offset,
-                                 $layout );
+        // ###exp_feature_g1001_ez2014.11### - Added keys to the cacheHashArray //
+        $cacheHashArray = array( 'node_id'  => $nodeID,
+                                 'viewmode' => $viewMode,
+                                 'language' => $language,
+                                 'offset'   => $offset,
+                                 'layout'   => $layout );
 
         // several user related cache tweaks
         if ( strpos( $viewCacheTweak, 'ignore_userroles' ) === false )
         {
-            $cacheHashArray[] = implode( '.', $user->roleIDList() );
+            // ###exp_feature_g1001_ez2014.11### - Added keys to the cacheHashArray //
+            $cacheHashArray['userroles'] = implode( '.', $user->roleIDList() );
         }
 
         if ( strpos( $viewCacheTweak, 'ignore_userlimitedlist' ) === false )
         {
-            $cacheHashArray[] = implode( '.', $user->limitValueList() );
+            // ###exp_feature_g1001_ez2014.11### - Added keys to the cacheHashArray //
+            $cacheHashArray['userlimitedlist'] = implode( '.', $user->limitValueList() );
         }
 
         if ( strpos( $viewCacheTweak, 'ignore_discountlist' ) === false )
         {
-            $cacheHashArray[] = implode( '.', eZUserDiscountRule::fetchIDListByUserID( $user->attribute( 'contentobject_id' ) ) );
+            // ###exp_feature_g1001_ez2014.11### - Added keys to the cacheHashArray //
+            $cacheHashArray['discountlist'] = implode( '.', eZUserDiscountRule::fetchIDListByUserID( $user->attribute( 'contentobject_id' ) ) );
         }
 
-        $cacheHashArray[] = eZSys::indexFile();
+        // ###exp_feature_g1001_ez2014.11### - Added keys to the cacheHashArray //
+        $cacheHashArray['access_path'] = eZSys::indexFile();
 
         // Add access type to cache hash if current access is uri type (so uri and host doesn't share cache)
         if ( strpos( $viewCacheTweak, 'ignore_siteaccess_type' ) === false && $GLOBALS['eZCurrentAccess']['type'] === eZSiteAccess::TYPE_URI )
         {
-            $cacheHashArray[] = eZSiteAccess::TYPE_URI;
+            // ###exp_feature_g1001_ez2014.11### - Added keys to the cacheHashArray //
+            $cacheHashArray['siteaccess_type'] = eZSiteAccess::TYPE_URI;
         }
 
         // Make the cache unique for every logged in user
@@ -363,7 +373,8 @@ class eZNodeviewfunctions
                     continue;
                 $vpString .= 'vp:' . $key . '=' . $value;
             }
-            $cacheHashArray[] = $vpString;
+            // ###exp_feature_g1001_ez2014.11### - Added keys to the cacheHashArray //
+            $cacheHashArray['viewparameters'] = $vpString;
         }
 
         // Make the cache unique for every case of the preferences
@@ -393,8 +404,18 @@ class eZNodeviewfunctions
                         $pString .= 'p:' . $pref[0] . '='. $pref[1]. ';';
                 }
             }
-            $cacheHashArray[] = $pString;
+            // ###exp_feature_g1001_ez2014.11### - Added keys to the cacheHashArray //
+            $cacheHashArray['userpreferences'] = $pString;
         }
+
+        // ###exp_ece_PATCH_L_07_EZ_4.3.0### Additional Permission Hook
+        // START: Additional Permission Hook
+        $permissionHandlerList = eZContentObjectPermissionHandler::getPermissionHandlerList();
+        foreach ( $permissionHandlerList as $permissionHandler )
+        {
+            $permissionHandler->modifyContentViewCacheKeys( $user, $nodeID, $offset, $layout, $language, $viewMode, $viewParameters, $cachedViewPreferences, $cacheHashArray );
+        }
+        // END: Additional Permission Hook
 
         $cacheFile = $nodeID . '-' . $cacheNameExtra . md5( implode( '-', $cacheHashArray ) ) . '.cache';
         $extraPath = eZDir::filenamePath( $nodeID );
@@ -523,9 +544,11 @@ class eZNodeviewfunctions
                 if ( isset( $Result['content_info']['class_identifier'] ) )
                     $keyArray[] = array( 'class_identifier', $Result['content_info']['class_identifier'] );
 
-                // Added in 5.3.5 / 5.4.2, so test that cache contains this before using
+                /// ###exp_feature_backport_b02_ez2014.11### [#5843] [Fix EZP-24154] Overriding template with section_identifier fails when cached ///
+                /// BEGIN – ###exp_feature_backport_b02_ez2014.11### [#5843] [Fix EZP-24154] ///
                 if ( isset( $Result['content_info']['section_identifier'] ) )
                     $keyArray[] = array( 'section_identifier', $Result['content_info']['section_identifier'] );
+                /// END – ###exp_feature_backport_b02_ez2014.11### [#5843] [Fix EZP-24154] ///
 
                 $res = eZTemplateDesignResource::instance();
                 $res->setKeys( $keyArray );
@@ -610,6 +633,12 @@ class eZNodeviewfunctions
             $collectionAttributes,
             $validation
         );
+
+        // ###exp_feature_g56_ez2014.11### -  by setting cache_ttl to 0  in tpl code no cachfile should be generated
+        if ( isset( $result['no_cache'] ) && $result['no_cache'] )
+        {
+            $noCache = true;
+        }
 
         // 'store' depends on noCache: if $noCache is set, this means that retrieve
         // returned it, and the noCache fake cache file is already stored

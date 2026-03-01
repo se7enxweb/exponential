@@ -1,0 +1,60 @@
+<?php
+// This array contains the database schema
+$schema = array (
+  'sckenhancedselection' =>
+  array (
+    'name' => 'sckenhancedselection',
+    'fields' =>
+    array (
+      'contentobject_attribute_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'contentobject_attribute_version' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'identifier' =>
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' =>
+    array (
+      'sckenhancedselection_coaid_coav' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'contentobject_attribute_id',
+          1 => 'contentobject_attribute_version',
+        ),
+      ),
+      'sckenhancedselection_coaid_coav_iden' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'contentobject_attribute_id',
+          1 => 'contentobject_attribute_version',
+          2 => 'identifier',
+        ),
+      ),
+    ),
+  ),
+  '_info' =>
+  array (
+    'format' => 'generic',
+  ),
+);
+
+?>

@@ -1,4 +1,5 @@
 <?php
+/// # [#5732] EZSA-2016-002: Disclosure of collected info from information collector
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -38,15 +39,23 @@ $http = eZHTTPTool::instance();
 $tpl = eZTemplate::factory();
 
 $icID = false;
-if ( $http->hasSessionVariable( 'InformationCollectionMap' ) ) {
+
+/// # [#5732] EZSA-2016-002: Disclosure of collected info from information collector ///
+/// BEGIN – [#5732] EZSA-2016-002 ///
+if ( $http->hasSessionVariable( 'InformationCollectionMap' ) )
+{
     $icMap = $http->sessionVariable( 'InformationCollectionMap' );
 
-    if ( isset( $icMap[$object->attribute( 'id' )] ) ) {
+    if ( isset( $icMap[$object->attribute( 'id' )] ) )
+    {
         $icID = $icMap[$object->attribute( 'id' )];
     }
 }
-if ( !$icID && eZInformationCollection::isCollectingSensitiveData( $object ) )
+if ( !$icID )
+{
     return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+}
+/// END – [#5732] EZSA-2016-002 ///
 
 $informationCollectionTemplate = eZInformationCollection::templateForObject( $object );
 $attributeHideList = eZInformationCollection::attributeHideList();

@@ -1,0 +1,25 @@
+Changes from 2.0-0 to 2.1-0
+
+*Bugs*
+
+- Fixed bug #15676: impossible to activate previously archived article with eZ Flow when using its cronjob (patch by XC)
+- Fixed bug #15849: Unknown session variable 'LastAccessesURI'
+- Fixed bug #15850: PHP warning thrown when publishing frontpage
+- Fixed bug #16014: iPhone siteaccess missing image and DB settings by default
+- Fixed bug #15600: Little Mistake in ezflow 2.0-0 in site.ini
+- Fixed bug #16005: ezajaxsearch does not use locales when shows date
+- Fixed bug #15835: Running ezflow cronjob generates PHP errors
+- Fixed bug #15792: eZFlow timeline and ezdfs file handler (patch)
+- Fixed bug #16006: ezajaxsearch does not use translation system
+- Fixed bug #16074: ezajaxssearch.js do not allow to tranfer all supported params to search engine.
+- Fixed bug #16117: Some default user groups does not have access to dashboard
+- Fixed bug #16160: Call to undefined function ezi18n()
+- Fixed bug #16212: ezflow: eZPageType::onPublish should return true
+- Fixed bug #16211: ezflow: eZPageType::storeObjectAttribute should return true
+- Fixed bug #16264: bad index naming in oracle
+- Fixed bug #16070: eZ Flow: Wrong parameter from "push-to-block" contextmenu to "ezflow/push" (patch)
+- Fixed bug #16310: Class "Templates settings" should not have attribute "Language settings"
+- Fixed bug #16232: ezpage.tpl - literal end tag too much
+- Fixed bug #16302: ezflow GUI require some tweaks in order to be compatible with admin2 design
+- Fixed bug #16163: eZ Flow Search Block, "Search" button has no action
+- Fixed bug #16521: gmap block in ezflow doesnt work (YAHOO is not defined)

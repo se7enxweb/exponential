@@ -1,0 +1,30 @@
+{
+    "name": "se7enxweb/hcaptcha",
+    "description": "eZ Publish Legacy extension which provides a simple captcha solution for user registration and any forms. Great for smart developers!",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [ "eZ Publish", "eZ Publish Legacy", "eZ Publish Platform", "captcha", "recaptcha comparable", "extension", "datatype", "forms", "user registration" ],
+    "homepage": "https://github.com/se7enxweb/hcaptcha",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name" : "7x",
+            "homepage": "https://se7enx.com",
+            "email": "info@se7enx.com",
+            "role": "Author"
+        },
+        {
+            "name" : "Bruce Morrison",
+            "homepage": "http://www.stuffandcontent.com",
+            "email": "bruce@stuffandcontent.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2.0",
+        "ezsystems/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "hcaptcha"
+    }
+}

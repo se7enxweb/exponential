@@ -1,0 +1,53 @@
+.
+|-- autoloads
+|   |-- bcwebsitestatisticsoperators.php
+|   `-- eztemplateautoload.php
+|-- design
+|   `-- standard
+|       |-- javascript
+|       |   `-- urchin.js
+|       `-- templates
+|           |-- bcwebsitestatistics
+|           |   `-- order.tpl
+|           |-- content
+|           |   `-- datatype
+|           |       `-- view
+|           |           `-- ezbinaryfile.tpl
+|           `-- pagelayout_analytics.tpl
+|-- doc
+|   |-- CONFIG
+|   |-- DEBUG
+|   |-- FAQ
+|   |-- FEATURES
+|   |-- HOWTO
+|   |-- INSTALL
+|   |-- LICENSE
+|   |-- README
+|   |-- TODO
+|   |-- USAGE
+|   |-- VERSION
+|   |-- changelogs
+|   |   `-- 1.0
+|   |       |-- CHANGELOG-1.0.0
+|   |       |-- CHANGELOG-1.0.0-to-1.0.1
+|   |       `-- CHANGELOG-1.0.1-to-1.0.2
+|   |-- doxygen
+|   |   |-- Doxyfile
+|   |   |-- empty.html
+|   |   `-- generated
+|   `-- tree.txt
+|-- ezinfo.php
+|-- modules
+|-- settings
+|   |-- bcwebsitestatistics.ini.append.php
+|   |-- design.ini.append.php
+|   |-- module.ini.append.php
+|   |-- override.ini.append.php
+|   |-- site.ini.append.php
+|   `-- workflow.ini.append.php
+`-- workflowtypes
+    `-- event
+        `-- ezreceipt
+            `-- ezreceipttype.php
+
+19 directories, 31 files

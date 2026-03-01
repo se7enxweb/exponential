@@ -1,5 +1,15 @@
 <?php
 /**
+ *
+ * ###exp_feature_g01_ez2014.11### host_uri default matching (+default browserlanguage match) + host (begins with matching)
+ *                                 host : begins with
+ * - kernel/classes/ezsiteaccess.php
+ * - settings/site.ini
+ *
+ * ###exp_feature_g47_ez2014.11### CLEAR image-alias CACHE for project A also clear cache for all other projects
+ *
+ * ###exp_feature_g48_ez2014.11### multisite-hosting: CLEAR INI CACHE for project A also clear INI CACHE for all other projects on the same ez installation *
+ *
  * File containing (site)access functionality
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -29,6 +39,8 @@ class eZSiteAccess
     const TYPE_SERVER_VAR = 7;
     const TYPE_URL = 8;
     const TYPE_HTTP_HOST_URI = 9;
+    //###exp_feature_g01_ez2014.11###
+    const TYPE_HTTP_HOST_URI_DEFAULT = 91;
     const TYPE_CUSTOM = 10;
 
     const SUBTYPE_PRE = 1;
@@ -238,7 +250,10 @@ class eZSiteAccess
                             {
                                 $matchMapHost = $matchMapItem[0];
                                 $matchMapAccess = $matchMapItem[1];
-                                if ( $matchMapHost == $host )
+                                // ###exp_feature_g01_ez2014.11### host : begins with
+                                // if ( $matchMapHost == $host )
+                                // JAC beginns with
+                                if ( strpos($host, $matchMapHost) === 0 )
                                 {
                                     $access['name'] = $matchMapAccess;
                                     $access['type'] = $type;
@@ -325,6 +340,111 @@ class eZSiteAccess
                             }
                         }
                     }
+
+
+                    // ###exp_feature_g01_ez2014.11###
+                    // try to find a default host_uri matching
+                    if ( $ini->hasVariable( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' ) )
+                    {
+                        //$type = eZSiteAccess::TYPE_HTTP_HOST_URI_DEFAULT;
+
+                        $match_item = $uri->element( 0 );
+                        $matchMapItems = $ini->variableArray( 'SiteAccessSettings', 'DefaultHostUriMatchMapItems' );
+                        $defaultHostMatchMethod = $ini->variable( 'SiteAccessSettings', 'HostUriMatchMethodDefault' );
+
+                        // linux firefox: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+                        // winxp ie:      dede
+                        // winxp opera:   de-DE,de;q=0.9,en;q=0.8de-DE,de;q=0.9,en;q=0.8
+                        // winxp safari:  de-DEde-DE
+                        // winxp firefox: en-gb,en;q=0.5en-gb,en;q=0.5
+
+                        // exp_multiupload => upload =>$_SERVER['HTTP_ACCEPT_LANGUAGE'] not available
+                        if ( isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) )
+                        {
+                            $httpAcceptLanguageString = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+                        }
+                        else
+                        {
+                            $httpAcceptLanguageString = '';
+                        }
+
+                        $httpAcceptLanguageStringToLowerString = strtolower( $httpAcceptLanguageString );
+
+                        foreach ( $matchMapItems as $matchMapItem )
+                        {
+                            $matchHost       = $matchMapItem[0];
+                            $matchURI        = $matchMapItem[1];
+                            $matchAccess     = $matchMapItem[2];
+                            $matchHostMethod = isset( $matchMapItem[3] ) ? $matchMapItem[3] : $defaultHostMatchMethod;
+                            // new if matchmethod ist default set default settings
+                            $matchHostMethod = $matchHostMethod == 'default' ? $defaultHostMatchMethod : $matchHostMethod;
+
+                            $matchBrowserLanguage = isset( $matchMapItem[4] ) ? $matchMapItem[4] : false;
+
+                            switch( $matchHostMethod )
+                            {
+                                case 'strict':
+                                {
+                                    $hasHostMatch = ( $matchHost === $host );
+                                } break;
+                                case 'start':
+                                {
+                                    $hasHostMatch = ( strpos($host, $matchHost) === 0 );
+                                } break;
+                                case 'end':
+                                {
+                                    $hasHostMatch = ( strstr($host, $matchHost) === $matchHost );
+                                } break;
+                                case 'part':
+                                {
+                                    $hasHostMatch = ( strpos($host, $matchHost) !== false );
+                                } break;
+                                default:
+                                {
+                                    $hasHostMatch = false;
+                                    eZDebug::writeError( "Unknown default host_uri host match: $matchHostMethod", "access" );
+                                } break;
+                            }
+
+                            if ( $hasHostMatch )
+                            {
+                                // if a browserlanguage is defined in ini item check if it match or continue
+                                if ( $matchBrowserLanguage !== false )
+                                {
+                                    // if the default setting matches with browserlanguage
+                                    // DefaultHostUriMatchMapItems[]=DOMAIN;URI;SITEACCESS;MATCHMETHOD;BROWSERLANGUAGE
+                                    // DefaultHostUriMatchMapItems[]=www.example.com;en;sa_en;default;en => browserlanguage en
+                                    // DefaultHostUriMatchMapItems[]=www.example.com;de;sa_de;default;de => browserlanguage de
+                                    // DefaultHostUriMatchMapItems[]=www.example.com;en;sa_en => default if browslanguage is not en, or de
+
+                                    // $hasHostBrowserLanguageMatch
+                                    // $httpAcceptLanguageString begins with browserlanguage defined in ini e.g. 'de'
+                                    if ( strpos( $httpAcceptLanguageStringToLowerString, $matchBrowserLanguage ) === 0 )
+                                    {
+                                        eZDebug::writeDebug( "HTTP_ACCEPT_LANGUAGE [$httpAcceptLanguageString] begins with INI-BROWSER-LANG [$matchBrowserLanguage]\n"
+                                                             . 'DefaultHostUriMatchMapItems[]=' . implode( ';', $matchMapItem )
+                                            , 'DefaultHostUriMatchMapItems - BrowserLanguageMatch' );
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                                else
+                                {
+                                    eZDebug::writeDebug( 'DefaultHostUriMatchMapItems[]=' . implode( ';', $matchMapItem )
+                                        , 'DefaultHostUriMatchMapItems - DefaultMatch' );
+                                }
+
+                                $defaultAccess = array( 'name' => $matchAccess,
+                                                        'type' => eZSiteAccess::TYPE_HTTP_HOST_URI_DEFAULT,
+                                                        'uri_part' => array( $matchURI ) );
+                                return $defaultAccess;
+                            }
+                        }
+                    }
+
+
                 } break;
                 case 'index':
                 {
@@ -520,6 +640,15 @@ class eZSiteAccess
 
         $ini->loadCache();
 
+        // ###exp_feature_g47_ez2014.11###
+        // #2206 multisite-hosting: CLEAR image-alias CACHE for project A also clear cache for all other projects on the same ez installation
+        unset( $GLOBALS['eZExpiryHandlerInstance'] );
+
+        // ###exp_feature_g48_ez2014.11###
+        // set project ini cache folder
+        // @see eZINI::loadCache()
+        $GLOBALS['eZINI_CONFIG_CACHE_DIR'] = eZSys::cacheDirectory().'/ini/';
+
         // change some global settings if $siteINI is null
         if ( $siteINI === null )
         {
@@ -538,7 +667,7 @@ class eZSiteAccess
 
             eZContentLanguage::expireCache( false );
 
-            eZUpdateDebugSettings();
+//            eZUpdateDebugSettings();
             eZDebugSetting::writeDebug( 'kernel-siteaccess', "Updated settings to use siteaccess '$name'", __METHOD__ );
         }
 

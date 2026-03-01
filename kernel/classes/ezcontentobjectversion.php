@@ -1,4 +1,5 @@
 <?php
+/// ###exp_feature_g1002_ez2014.11### #2116 [OPL 18] SNAC richtig im ez rechtesystem implementieren ///
 /**
  * File containing the eZContentObjectVersion class.
  *
@@ -778,6 +779,33 @@ class eZContentObjectVersion extends eZPersistentObject
                             if ( $access == 'denied' )
                             {
                                 break;
+                            }
+                        }
+                        elseif ( $key == 'SNAC_RoleMatrixCheck' )
+                        {
+                            // ###exp_feature_g1002_ez2014.11### //
+                            // SNAC Rechtematrix check against current user
+
+                            // if SNAC is active
+                            if ( in_array ( 1, $limitationArray[$key] ) )
+                            {
+                                $currentVersion = $this->attribute( 'version' );
+                                $contentObjectId = $this->attribute( 'contentobject_id' );
+                                // true or false
+                                $hasAccess = eZSnacRoleBitmask::checkAccessByObjectIdAndVersionAndUserIdContextObjectVersion( $contentObjectId, $currentVersion, $userID );
+
+                                if ( $hasAccess )
+                                {
+                                    $access = 'allowed';
+                                }
+                                else
+                                {
+                                    $access = 'denied';
+                                    $limitationList = array( 'Limitation' => $key,
+                                                             'Required' => 'Current User SNAC not match' );
+                                }
+                                eZDebug::writeDebug( 'eZSnacRoleBitmask::checkAccessByObjectIdAndVersionAndUserId( $contentObjectId, $currentVersion, $userID )'
+                                                     ."\neZSnacRoleBitmask::checkAccessByObjectIdAndVersionAndUserId( $contentObjectId, $currentVersion, $userID )\nSNAC_RoleMatrixCheck access: $access", __METHOD__);
                             }
                         }
                     }

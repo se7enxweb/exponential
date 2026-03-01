@@ -1,0 +1,29 @@
+
+#ez-as-place
+{
+font-size:0.95em;
+display:block;
+padding:2px 0 2px 20px;
+color:#333;
+float:left;
+}
+
+.as-success
+{
+background:url(../../standard/images/icons-sprite.png) no-repeat 0 0;
+}
+
+.as-saving
+{
+background:url(../../standard/images/as-loader.gif) no-repeat 0 1px;
+}
+
+.as-error
+{
+background:url(../../standard/images/icons-sprite.png) no-repeat 0 -49px;
+}
+
+.as-error span
+{
+border-bottom:1px dashed #999;
+}

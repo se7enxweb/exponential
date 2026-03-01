@@ -1,0 +1,9 @@
+Changes for 1.0.1
+
+- Tested: With eZ publish 3.8.5 in a production environment
+- Added: doc/ directory for documentation storage
+- Added: doc/changelogs/ directory for changelog storage
+- Moved: README to doc/README
+- Updated: template export.tpl to include 'do export' submit button at top of template
+- Updated: default isset check for variable $offset to module action file export.php
+- Updated: Added module action file parser.php is_object( $handler ) check before calling method, 'exportAttribute' and returning exported attribute value. Bugfix from production installation.

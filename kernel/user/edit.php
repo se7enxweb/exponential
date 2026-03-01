@@ -1,4 +1,5 @@
 <?php
+// exp_feature_g60_ez2014.11### Redirect if cancel user/edit
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -7,6 +8,7 @@
  */
 
 $Module = $Params['Module'];
+$http = eZHTTPTool::instance(); // PATCH exp
 
 if ( isset( $Params['UserID'] ) && is_numeric( $Params['UserID'] ) )
 {
@@ -43,7 +45,11 @@ if ( $Module->isCurrentAction( "ChangeSetting" ) )
 
 if ( $Module->isCurrentAction( "Cancel" ) )
 {
-    return $Module->redirectTo( '/content/view/sitemap/5/' );
+    // PATCH exp
+    $redirectIfDiscard = $http->postVariable( 'RedirectIfDiscarded', $http->sessionVariable( 'LastAccessesURI', '/' ) );
+    return $Module->redirectTo( $redirectIfDiscard );
+    // --- PATCH exp
+    //return $Module->redirectTo( '/content/view/sitemap/5/' );
 }
 
 $http = eZHTTPTool::instance();

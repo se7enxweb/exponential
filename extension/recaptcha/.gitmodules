@@ -1,0 +1,3 @@
+[submodule "classes/recaptcha"]
+	path = classes/recaptcha
+	url = git@github.com:google/recaptcha.git

@@ -1,0 +1,29 @@
+{
+    "name": "se7enxweb/ezupdate",
+    "description": "eZ Update offers composer package(s) updates - Use this feature to update your website to the latest available release via composer",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [ "eZ Publish", "eZ Publish Legacy", "eZ Publish Platform", "kernel updater", "extension", "composer", "manager", "vcs", "module", "view", "update", "composer package updates" ],
+    "homepage": "https://github.com/se7enxweb/ezupdate",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name" : "7x",
+            "homepage": "https://se7enx.com",
+            "email": "info@se7enx.com",
+            "role": "Author"
+        },
+	{
+            "name" : "Serhey Dolgushev",
+            "homepage": "https://ua.linkedin.com/in/serheydolgushev",
+            "role": "Skeleton Author"
+        }	
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.0.0",
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "ezupdate"
+    }
+}

@@ -2,6 +2,10 @@
 /**
  * File containing the eZContentObjectTreeNode class.
  *
+ * ###exp_feature_g1004_ez2014.11### fetch optimisation - policy limitation / assigned nodes cache
+ * ###exp_feature_g1003_ez2014.11### Employee receives notifications for subscribed content
+ * ###exp_feature_g1002_ez2014.11### SNAC role matrix rights system integration (see eZSnacRoleBitmask - skipped, custom extension)
+ *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
@@ -1656,11 +1660,227 @@ class eZContentObjectTreeNode extends eZPersistentObject
         return $versionNameJoins;
     }
 
+    /**
+     * ###exp_feature_g1004_ez2014.11###
+     *
+     * Remove limitations that are 100% not necessary for the SQL query:
+     * 1. Remove all policies with a subtree that does not include the given node.
+     * 2. Remove policies that do not match the requested class ID.
+     *
+     * On eZ Publish installations with many roles and policies (e.g. eZTeamrooms),
+     * a user member of 50 teamrooms will have all teamroom policies evaluated on
+     * every query. This patch optimises execution time by >30%.
+     *
+     * One disadvantage: to optimise the query, the parentNodeId must be fetched
+     * to get the node path.
+     *
+     * @param array $limitationList
+     * @param int|bool $parentNodeId
+     * @param array|bool $nodeParams
+     *
+     * @see eZContentObjectTreeNode::createPermissionCheckingSQL()
+     * @return array
+     */
+    static function optimizeLimitationList( $limitationList, $parentNodeId = false, $nodeParams = false )
+    {
+        // Enable/disable via config.php
+        if( !defined( 'exp_feature_ENABLE_LIMITATION_OPTIZATION' ) || constant( 'exp_feature_ENABLE_LIMITATION_OPTIZATION' ) !== true )
+            return $limitationList;
+
+        $countLimitationListOriginal = count( $limitationList );
+
+        if ( $countLimitationListOriginal < 10 )
+        {
+            eZDebug::writeDebug( "Limitations not optimized: count: $countLimitationListOriginal < 10" , __METHOD__ );
+            return $limitationList;
+        }
+
+        eZDebug::accumulatorStart( 'x_query_otimize_limitation_list', 'fetch optimisation', 'eZ Policy Limitation optimization' );
+
+        $node = eZContentObjectTreeNode::fetch( $parentNodeId, false, false );
+        if ( !is_array( $node ) )
+            return $limitationList;
+
+        $parentNodePathOriginal = $node['path_string'];
+        $parentNodePath = $node['path_string'];
+
+        $parentNodePathArray = explode( '/', $parentNodePath );
+        if ( isset( $parentNodePathArray[4] ) )
+        {
+            $parentNodePath = "/{$parentNodePathArray[1]}/{$parentNodePathArray[2]}/{$parentNodePathArray[3]}/";
+        }
+
+        $classIDArray = array('-1');
+        $classFilterType = false;
+        $classFilterArray = array();
+
+        if ( isset( $nodeParams['ClassFilterType'] ) && isset( $nodeParams['ClassFilterArray'] ) )
+        {
+            $classFilterType = $nodeParams['ClassFilterType'];
+            $classFilterArray = $nodeParams['ClassFilterArray'];
+
+            if ( ( $classFilterType == 'include' || $classFilterType == 'exclude' ) &&
+                count( $classFilterArray ) > 0 )
+            {
+                $classIDArray = array();
+                foreach ( $classFilterArray as $classID )
+                {
+                    $originalClassID = $classID;
+                    // Check if classes are referenced by identifier
+                    if ( is_string( $classID ) && !is_numeric( $classID ) )
+                    {
+                        $classID = eZContentClass::classIDByIdentifier( $classID );
+                    }
+                    if ( is_numeric( $classID ) )
+                    {
+                        $classIDArray[$classID] = $classID;
+                    }
+                }
+            }
+        }
+
+        $classCacheKey = md5( print_r( $classIDArray, true ) );
+        $newLimitationList = array();
+
+        if ( isset( $GLOBALS['exp_feature_ENABLE_LIMITATION_OPTIZATION'][$parentNodePath] ) )
+        {
+            $newLimitationList = $GLOBALS['exp_feature_ENABLE_LIMITATION_OPTIZATION'][$parentNodePath];
+        }
+        else
+        {
+            foreach ( $limitationList as $key => $limitationArray )
+            {
+                $useLimitation = true;
+                if (isset($limitationArray['User_Subtree']))
+                {
+                    foreach ($limitationArray['User_Subtree'] as $limitationPathString)
+                    {
+                        if (strpos($limitationPathString, $parentNodePath) === 0 || strpos($parentNodePath, $limitationPathString) === 0) {
+                            $useLimitation = true;
+                            break; // stop on match to prevent a second assignment from failing
+                        }
+                        else
+                        {
+                            $useLimitation = false;
+                        }
+                    }
+                }
+
+                if ( $useLimitation === true )
+                {
+                    $newLimitationList[$key] = $limitationArray;
+                }
+            }
+
+            $GLOBALS['exp_feature_ENABLE_LIMITATION_OPTIZATION'][$parentNodePath] = $newLimitationList;
+        }
+
+        $newLimitationList2 = array();
+
+        if ( isset( $GLOBALS['exp_feature_ENABLE_LIMITATION_OPTIZATION'][$parentNodePath . '_' . $classCacheKey] ) )
+        {
+            $newLimitationList2 = $GLOBALS['exp_feature_ENABLE_LIMITATION_OPTIZATION'][$parentNodePath . '_' . $classCacheKey];
+        }
+        else
+        {
+            foreach( $newLimitationList as $key => $limitationArray )
+            {
+                $useLimitation = true;
+                if ( isset( $limitationArray['Class'] ) )
+                {
+                    // If class IDs are not in the policy class IDs, drop the limitation (mode 'include')
+                    // https://codedmemes.com/lib/best-performance-array-intersection/ array_intersect_key is faster than array_intersect
+                    if ( count( array_intersect_key( $classIDArray, array_combine($limitationArray['Class'], $limitationArray['Class']))) == 0 && $classFilterType == 'include')
+                    {
+                        $useLimitation = false;
+                    }
+                }
+
+                if ( $useLimitation === true )
+                {
+                    $newLimitationList2[$key] = $limitationArray;
+                }
+            }
+            $GLOBALS['exp_feature_ENABLE_LIMITATION_OPTIZATION'][$parentNodePath . '_' . $classCacheKey] = $newLimitationList2;
+        }
+
+        $newLimitationList3 = array();
+
+        $parentNodePathKey = $parentNodePath;
+        // use the original path for the final pass
+        $parentNodePath = $parentNodePathOriginal;
+
+        foreach( $newLimitationList2 as $key => $limitationArray )
+        {
+            $useLimitation = true;
+
+            if ( isset( $limitationArray['Subtree'] ) )
+            {
+                // If the query path string begins with the node path string, use the query; otherwise ignore
+                foreach ( $limitationArray['Subtree'] as $limitationPathString )
+                {
+                    if ( strpos( $limitationPathString, $parentNodePath ) === 0 || strpos( $parentNodePath, $limitationPathString ) === 0 )
+                    {
+                        $useLimitation = true;
+                        break; // stop on match to prevent a second assignment from failing
+                    }
+                    else
+                    {
+                        $useLimitation = false;
+                    }
+                }
+            }
+
+            if ( $useLimitation === true && isset( $limitationArray['Class'] ) )
+            {
+                // If class IDs are not in the policy class IDs, drop the limitation (mode 'include')
+                // https://codedmemes.com/lib/best-performance-array-intersection/ array_intersect_key is faster than array_intersect
+                if ( count( array_intersect_key( $classIDArray, array_combine($limitationArray['Class'], $limitationArray['Class']))) == 0 && $classFilterType == 'include')
+                {
+                    $useLimitation = false;
+                }
+            }
+
+            if ( $useLimitation === true && isset( $limitationArray['User_Subtree'] ) )
+            {
+                foreach ( $limitationArray['User_Subtree'] as $limitationPathString )
+                {
+                    if ( strpos($limitationPathString, $parentNodePath) === 0 || strpos($parentNodePath, $limitationPathString) === 0)
+                    {
+                        $useLimitation = true;
+                        break; // stop on match to prevent a second assignment from failing
+                    }
+                    else
+                    {
+                        $useLimitation = false;
+                    }
+                }
+            }
+
+            if ( $useLimitation === true )
+            {
+                $newLimitationList3[$key] = $limitationArray;
+            }
+        }
+
+        $countLimitationListOptimized = count( $newLimitationList3 );
+        $diff = $countLimitationListOriginal - $countLimitationListOptimized;
+
+        eZDebug::writeDebug( "LimitionList optimization count: Key: {$parentNodePathKey}_{$classCacheKey} ($parentNodePathOriginal): [original] - [optimized] = [useless limitations] : $countLimitationListOriginal - $countLimitationListOptimized = $diff" , __METHOD__ .':'. __LINE__ );
+        eZDebug::accumulatorStop('x_query_otimize_limitation_list');
+        return $newLimitationList3;
+    }
+
     /*!
         \a static
     */
-    static function createPermissionCheckingSQL( $limitationList, $treeTableName = 'ezcontentobject_tree', $tableAliasName = 'ezcontentobject_tree' )
+    static function createPermissionCheckingSQL( $limitationList, $treeTableName = 'ezcontentobject_tree', $tableAliasName = 'ezcontentobject_tree',
+                                                 $nodeId = false,
+                                                 $nodeParams = false )
     {
+        // ###exp_feature_g1004_ez2014.11### Use optimised query via limitation list optimisation
+        $limitationList = self::optimizeLimitationList( $limitationList, $nodeId, $nodeParams );
+
         $db = eZDB::instance();
 
         $sqlPermissionCheckingFrom = '';
@@ -1748,6 +1968,26 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                 $sqlPartUserSubtree[] = "$tableAliasName.path_string like '$safePathString%'";
                             }
                             $sqlPartPart[] = implode( ' OR ', $sqlPartUserSubtree );
+                        } break;
+
+                        // ###exp_feature_g1002_ez2014.11### #2116 SNAC role-matrix check in eZ permission system (SQL path)
+                        case 'SNAC_RoleMatrixCheck':
+                        {
+                            eZDebug::accumulatorStart( 'x_policy_check_SNAC_RoleMatrixCheck', 'fetch optimization', 'eZ SNAC Check with Bitmasks' );
+                            // SNAC role-matrix check against current user
+
+                            // if SNAC is active
+                            if ( in_array( 1, $limitationArray[$ident] ) )
+                            {
+                                if ( class_exists( 'ExpEceSnacRoleBitmask' ) )
+                                {
+                                    $userId = eZUser::currentUserID();
+                                    $snacCheckSql = ExpEceSnacRoleBitmask::createPermissionCheckingSQL( $userId );
+                                    $sqlPartPart[] = $snacCheckSql;
+                                }
+                            }
+
+                            eZDebug::accumulatorStop( 'x_policy_check_SNAC_RoleMatrixCheck' );
                         } break;
 
                         default:
@@ -4355,11 +4595,21 @@ class eZContentObjectTreeNode extends eZPersistentObject
         }
     }
 
-    function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false )
+    function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false, $userID = false )
     {
         $classID = $originalClassID;
-        $user = eZUser::currentUser();
-        $userID = $user->attribute( 'contentobject_id' );
+        // ###exp_feature_g1003_ez2014.11### Optional userID parameter to check access for a specific user rather than current
+        if ( $userID == false )
+        {
+            $user = eZUser::currentUser();
+            $userID = $user->attribute( 'contentobject_id' );
+        }
+        else
+        {
+            $user = eZUser::fetch( $userID );
+            if ( !is_object( $user ) )
+                return 0;
+        }
 
         // Fetch the ID of the language if we get a string with a language code
         // e.g. 'eng-GB'
@@ -4773,6 +5023,37 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                 $limitationList = array( 'Limitation' => $key,
                                                          'Required' => $valueList );
                             }
+                        } break;
+
+                        // ###exp_feature_g1002_ez2014.11### #2116 SNAC role-matrix check in eZ permission system (in-memory path)
+                        case 'SNAC_RoleMatrixCheck':
+                        {
+                            // SNAC role-matrix check against current user
+
+                            // if SNAC is active
+                            if ( in_array( 1, $valueList ) )
+                            {
+                                if ( class_exists( 'ExpEceSnacRoleBitmask' ) )
+                                {
+                                    $currentVersion = $contentObject->attribute( 'current_version' );
+                                    $contentObjectId = $contentObject->attribute( 'id' );
+                                    $hasAccess = ExpEceSnacRoleBitmask::checkAccessByObjectIdAndVersionAndUserId( $contentObjectId, $currentVersion, $userID );
+
+                                    if ( $hasAccess )
+                                    {
+                                        $access = 'allowed';
+                                    }
+                                    else
+                                    {
+                                        $access = 'denied';
+                                        $limitationList = array( 'Limitation' => $key,
+                                                                 'Required' => 'Current User SNAC not match' );
+                                    }
+                                    eZDebug::writeDebug( 'ExpEceSnacRoleBitmask::checkAccessByObjectIdAndVersionAndUserId( $contentObjectId, $currentVersion, $userID )'
+                                                         . "\nSNAC_RoleMatrixCheck access: $access", __METHOD__ );
+                                }
+                            }
+
                         } break;
 
                         default:

@@ -1,0 +1,12 @@
+FIX
+===
+* The brightness filter doesn't respect the selected region
+  * Fixed with imagemagick, not on GD
+* The contrast filter doesn't respect the selected region
+  * Fixed with imagemagick, not on GD
+* Commit the cluster index changes to ezp svn so that the editor works with clustering
+* Change the ezie images path so that it works with the default ezp rewrite rules
+
+VERIFY
+======
+* Check what exact ezp version ezie requires

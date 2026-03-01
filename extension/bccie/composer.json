@@ -1,0 +1,35 @@
+{
+    "name": "se7enxweb/bccie",
+    "description": "eZ Publish Legacy extension which provides a flexible solution for quick and simple export of collected information content in csv or sylk formatted files with eZ Publish Legacy. Great for reports!",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [ "eZ Publish", "cie", "csv", "sylk", "export", "report", "reports", "utf8" ],
+    "homepage": "https://github.com/se7enxweb/bccie",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name" : "7x",
+            "homepage": "https://se7enx.com",
+            "email": "info@se7enx.com",
+            "role": "Developer"
+        },
+        {
+            "name" : "Brookins Consulting",
+            "homepage": "http://brookinsconsulting.com",
+            "email": "info@brookinsconsulting.com",
+            "role": "Developer"
+        },
+        {
+            "name" : "Vitalis Mathias",
+            "homepage": "https://about.me/mathias.vitalis",
+            "role": "Original Author"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.0.0",
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "bccie"
+    }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../../../vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="exp_cms_features_2026_02_stubs.php"
+         colors="true">
+    <testsuites>
+        <testsuite name="exp_cms_features_2026_02">
+            <file>ExpCmsFeaturesIn6013Test.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>

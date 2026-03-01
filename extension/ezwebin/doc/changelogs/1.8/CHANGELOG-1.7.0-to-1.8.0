@@ -1,0 +1,17 @@
+Changes from 1.7-0 to 1.8-0
+
+*Bugs*
+
+- Fixed bug #015723: eztagcloud is not multilangual
+- Fixed bug #017356: ezkeywordlist() performance optimization
+- Fixed bug #017601: eztagcloud will generate a fatal MySQL error if state based limitations are used
+- Fixed bug #017686: ezdatetime "use seconds" is not supported in admin2 templates
+- Fixed bug #017804: Tag cloud stacktrace on PostgreSQL
+
+*Enhancements*
+
+- Enable Google Chrome frame if installed on < IE 9
+- Support for canonical link tag by sending canonical_url param with persistent_variable
+- Simplified IE css matching using class on body tag if < IE 9
+- Improved validation under XHTML strict and HTML 5
+- Change use of old templateInit()/ezi18n() api and use class based api's introduced in 4.3 instead

@@ -1,0 +1,5 @@
+1. Maybe the files should be stored in the ezbinaryfile table using the
+   ezbinary class. 
+2. Maybe the download directory should be editable/determined from the class
+   attributes and not the ini file - allowing for different directories for
+   each file.

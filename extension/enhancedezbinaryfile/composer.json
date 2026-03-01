@@ -1,0 +1,30 @@
+{
+    "name": "se7enxweb/enhancedezbinaryfile",
+    "description": "eZ Publish Legacy extension which provides a simple solution for extending thet default eZ Publish Binary File Datatype with support for uploadable files for collected information nodes. Great for smart developers!",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [ "eZ Publish", "eZ Publish Legacy", "eZ Publish Platform", "upload", "binary files", "save", "information collection" ],
+    "homepage": "https://github.com/se7enxweb/enhancedezbinaryfile",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name" : "7x",
+            "homepage": "https://se7enx.com",
+            "email": "info@se7enx.com",
+            "role": "Developer"
+        },
+        {
+            "name" : "Contactivity B.V.",
+            "homepage": "https://contactivity.com",
+            "email": "info@contactivity.com",
+            "role": "Author"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.0.0",
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "enhancedezbinaryfile"
+    }
+}

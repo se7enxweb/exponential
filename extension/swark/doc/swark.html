@@ -1,0 +1,2142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4.1: http://docutils.sourceforge.net/" />
+<title>Swark Documentation</title>
+<meta name="authors" content="Jan Kudlicka,  Seeds Consulting AS, http://www.seeds.no/" />
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="swark-documentation">
+<h1 class="title">Swark Documentation</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Authors:</th>
+<td>Jan Kudlicka,
+<br />Seeds Consulting AS, <a class="reference" href="http://www.seeds.no/">http://www.seeds.no/</a></td></tr>
+</tbody>
+</table>
+<div class="contents topic">
+<p class="topic-title first"><a id="table-of-contents" name="table-of-contents">Table of Contents</a></p>
+<ul class="simple">
+<li><a class="reference" href="#operators" id="id153" name="id153">Operators</a><ul>
+<li><a class="reference" href="#add-view-parameters" id="id154" name="id154">add_view_parameters</a></li>
+<li><a class="reference" href="#array-search" id="id155" name="id155">array_search</a></li>
+<li><a class="reference" href="#arsort" id="id156" name="id156">arsort</a></li>
+<li><a class="reference" href="#asort" id="id157" name="id157">asort</a></li>
+<li><a class="reference" href="#charset" id="id158" name="id158">charset</a></li>
+<li><a class="reference" href="#clear-object-cache" id="id159" name="id159">clear_object_cache</a></li>
+<li><a class="reference" href="#cookie" id="id160" name="id160">cookie</a></li>
+<li><a class="reference" href="#current-layout" id="id161" name="id161">current_layout</a></li>
+<li><a class="reference" href="#current-siteaccess" id="id162" name="id162">current_siteaccess</a></li>
+<li><a class="reference" href="#debug-attributes" id="id163" name="id163">debug_attributes</a></li>
+<li><a class="reference" href="#debug" id="id164" name="id164">debug</a></li>
+<li><a class="reference" href="#is-post-request" id="id165" name="id165">is_post_request</a></li>
+<li><a class="reference" href="#json-encode" id="id166" name="id166">json_encode</a></li>
+<li><a class="reference" href="#krsort" id="id167" name="id167">krsort</a></li>
+<li><a class="reference" href="#ksort" id="id168" name="id168">ksort</a></li>
+<li><a class="reference" href="#ltrim" id="id169" name="id169">ltrim</a></li>
+<li><a class="reference" href="#modify-view-parameter" id="id170" name="id170">modify_view_parameter</a></li>
+<li><a class="reference" href="#preg-match" id="id171" name="id171">preg_match</a></li>
+<li><a class="reference" href="#preg-replace" id="id172" name="id172">preg_replace</a></li>
+<li><a class="reference" href="#range" id="id173" name="id173">range</a></li>
+<li><a class="reference" href="#redirect" id="id174" name="id174">redirect</a></li>
+<li><a class="reference" href="#remove-array-element" id="id175" name="id175">remove_array_element</a></li>
+<li><a class="reference" href="#return" id="id176" name="id176">return</a></li>
+<li><a class="reference" href="#rsort" id="id177" name="id177">rsort</a></li>
+<li><a class="reference" href="#rtrim" id="id178" name="id178">rtrim</a></li>
+<li><a class="reference" href="#serialize" id="id179" name="id179">serialize</a></li>
+<li><a class="reference" href="#server" id="id180" name="id180">server</a></li>
+<li><a class="reference" href="#set-array-element" id="id181" name="id181">set_array_element</a></li>
+<li><a class="reference" href="#shortenw" id="id182" name="id182">shortenw</a></li>
+<li><a class="reference" href="#shuffle" id="id183" name="id183">shuffle</a></li>
+<li><a class="reference" href="#sort" id="id184" name="id184">sort</a></li>
+<li><a class="reference" href="#split-by-length" id="id185" name="id185">split_by_length</a></li>
+<li><a class="reference" href="#strpos" id="id186" name="id186">strpos</a></li>
+<li><a class="reference" href="#str-replace" id="id187" name="id187">str_replace</a></li>
+<li><a class="reference" href="#strrpos" id="id188" name="id188">strrpos</a></li>
+<li><a class="reference" href="#substr" id="id189" name="id189">substr</a></li>
+<li><a class="reference" href="#unserialize" id="id190" name="id190">unserialize</a></li>
+<li><a class="reference" href="#uri-path-segment" id="id191" name="id191">uri_path_segment</a></li>
+<li><a class="reference" href="#user-id-by-login" id="id192" name="id192">user_id_by_login</a></li>
+<li><a class="reference" href="#variable-names" id="id193" name="id193">variable_names</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#workflow-event-types" id="id194" name="id194">Workflow event types</a><ul>
+<li><a class="reference" href="#autopriority" id="id195" name="id195">autopriority</a></li>
+<li><a class="reference" href="#defertocron" id="id196" name="id196">defertocron</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>The Swark extension implements a set of operators needed very often but still missing in eZ Publish.</p>
+<div class="section">
+<h1><a class="toc-backref" href="#id153" id="operators" name="operators">Operators</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id154" id="add-view-parameters" name="add-view-parameters">add_view_parameters</a></h2>
+<div class="section">
+<h3><a id="summary" name="summary">Summary</a></h3>
+<p>Returns the input path extended by the view parameters.</p>
+</div>
+<div class="section">
+<h3><a id="usage" name="usage">Usage</a></h3>
+<pre class="literal-block">
+input|add_view_parameters( view_parameters )
+</pre>
+</div>
+<div class="section">
+<h3><a id="parameters" name="parameters">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="66%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>view_parameters</td>
+<td>View parameters to add to the input path</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="examples" name="examples">Examples</a></h3>
+<pre class="literal-block">
+{$node.url|add_view_parameters( $view_parameters )|ezurl}
+</pre>
+<p>In a node's full view template reconstructs the request URL. See also the modify_view_parameter operator.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id155" id="array-search" name="array-search">array_search</a></h2>
+<div class="section">
+<h3><a id="id1" name="id1">Summary</a></h3>
+<p>Searches the input array for a given value and returns the corresponding key.</p>
+</div>
+<div class="section">
+<h3><a id="id2" name="id2">Usage</a></h3>
+<pre class="literal-block">
+input|array_search( search [, not_found_key] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id3" name="id3">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="69%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>search</td>
+<td>Searched value</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>not_found_key</td>
+<td>Value to return in the case the searched value is not found</td>
+<td>No</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id4" name="id4">Examples</a></h3>
+<pre class="literal-block">
+{array( 'apple', 'pear', 'pineapple', 'orange' )|array_search( 'pear' )}
+</pre>
+<p>Returns 1.</p>
+<pre class="literal-block">
+{array( 'apple', 'pear', 'pineapple', 'orange' )|array_search( 'carrot' )}
+</pre>
+<p>Returns -1.</p>
+<pre class="literal-block">
+{array( 'apple', 'pear', 'pineapple', 'orange' )|array_search( 'carrot', 'not_found' )}
+</pre>
+<p>Returns 'not_found'.</p>
+<pre class="literal-block">
+{hash( 'apple', 'red',
+       'pear', 'green',
+       'pineapple', 'yellow',
+       'orange', 'orange' )|array_search( 'yellow' )}
+</pre>
+<p>Returns 'pineapple'.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id156" id="arsort" name="arsort">arsort</a></h2>
+<div class="section">
+<h3><a id="id5" name="id5">Summary</a></h3>
+<p>Sorts and returns the input array in reverse order, maintaining index associations.</p>
+</div>
+<div class="section">
+<h3><a id="id6" name="id6">Usage</a></h3>
+<pre class="literal-block">
+input|arsort
+</pre>
+</div>
+<div class="section">
+<h3><a id="id7" name="id7">Parameters</a></h3>
+<p>None.</p>
+</div>
+<div class="section">
+<h3><a id="id8" name="id8">Examples</a></h3>
+<pre class="literal-block">
+{hash( 'a', 10, 'c', 2, 'd', 15, 'b', 8, 'e', 6 )|arsort}
+</pre>
+<p>Returns array( 'd' =&gt; 15, 'a' =&gt; 10, 'b' =&gt; 8, 'e' =&gt; 6, 'c' =&gt; 2 ).</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id157" id="asort" name="asort">asort</a></h2>
+<div class="section">
+<h3><a id="id9" name="id9">Summary</a></h3>
+<p>Sorts and returns the input array, maintaining index associations.</p>
+</div>
+<div class="section">
+<h3><a id="id10" name="id10">Usage</a></h3>
+<pre class="literal-block">
+input|asort
+</pre>
+</div>
+<div class="section">
+<h3><a id="id11" name="id11">Parameters</a></h3>
+<p>None.</p>
+</div>
+<div class="section">
+<h3><a id="id12" name="id12">Examples</a></h3>
+<pre class="literal-block">
+{hash( 'a', 10, 'c', 2, 'd', 15, 'b', 8, 'e', 6 )|asort}
+</pre>
+<p>Returns array( 'c' =&gt; 2, 'e' =&gt; 6, 'b' =&gt; 8, 'a' =&gt; 10, 'd' =&gt; 15 ).</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id158" id="charset" name="charset">charset</a></h2>
+<div class="section">
+<h3><a id="id13" name="id13">Summary</a></h3>
+<p>Returns the current charset.</p>
+</div>
+<div class="section">
+<h3><a id="id14" name="id14">Usage</a></h3>
+<pre class="literal-block">
+charset()
+</pre>
+</div>
+<div class="section">
+<h3><a id="id15" name="id15">Parameters</a></h3>
+<p>None.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id159" id="clear-object-cache" name="clear-object-cache">clear_object_cache</a></h2>
+<div class="section">
+<h3><a id="id16" name="id16">Summary</a></h3>
+<p>Clears the content objects memory cache.</p>
+</div>
+<div class="section">
+<h3><a id="id17" name="id17">Usage</a></h3>
+<pre class="literal-block">
+clear_object_cache()
+</pre>
+</div>
+<div class="section">
+<h3><a id="id18" name="id18">Parameters</a></h3>
+<p>None.</p>
+</div>
+<div class="section">
+<h3><a id="id19" name="id19">Examples</a></h3>
+<pre class="literal-block">
+{clear_object_cache()}
+</pre>
+<p>Using this operator might be useful when processing huge number of content objects. Instead of fetching
+all objects at once and risking to exhaust all available memory, use a cycle to fetch a small slice of
+objects and to process them. Clear the memory cache using the operator before continuing with a next
+iteration.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id160" id="cookie" name="cookie">cookie</a></h2>
+<div class="section">
+<h3><a id="id20" name="id20">Summary</a></h3>
+<p>Returns the value of the HTTP cookie identified by the parameter.</p>
+</div>
+<div class="section">
+<h3><a id="id21" name="id21">Usage</a></h3>
+<pre class="literal-block">
+cookie( name )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id22" name="id22">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>name</td>
+<td>The name of the cookie</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id23" name="id23">Examples</a></h3>
+<pre class="literal-block">
+{cookie( 'login' )}
+</pre>
+<p>Returns the value of the cookie named login.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id161" id="current-layout" name="current-layout">current_layout</a></h2>
+<div class="section">
+<h3><a id="id24" name="id24">Summary</a></h3>
+<p>Returns the name of the current layout (set by, for example, the layout/set function) or false for the standard layout.</p>
+</div>
+<div class="section">
+<h3><a id="id25" name="id25">Usage</a></h3>
+<pre class="literal-block">
+current_layout()
+</pre>
+</div>
+<div class="section">
+<h3><a id="id26" name="id26">Parameters</a></h3>
+<p>None.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id162" id="current-siteaccess" name="current-siteaccess">current_siteaccess</a></h2>
+<p>Returns the name of the current siteaccess.</p>
+<div class="section">
+<h3><a id="id27" name="id27">Usage</a></h3>
+<pre class="literal-block">
+current_siteaccess()
+</pre>
+</div>
+<div class="section">
+<h3><a id="id28" name="id28">Parameters</a></h3>
+<p>None.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id163" id="debug-attributes" name="debug-attributes">debug_attributes</a></h2>
+<div class="section">
+<h3><a id="id29" name="id29">Summary</a></h3>
+<p>Shows attribute values in the debug output. This operator is equivalent to &quot;attribute( show )&quot; but uses the debug output.</p>
+</div>
+<div class="section">
+<h3><a id="id30" name="id30">Usage</a></h3>
+<pre class="literal-block">
+input|debug_attributes( [header] [, depth] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id31" name="id31">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="64%" />
+<col width="8%" />
+<col width="16%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>header</td>
+<td>Header/title of a debug notice</td>
+<td>No</td>
+<td>Debug attributes
+operator</td>
+</tr>
+<tr><td>depth</td>
+<td>Number of levels to show</td>
+<td>No</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>For convenience, the order of parameters can be interchanged.</p>
+</div>
+<div class="section">
+<h3><a id="id32" name="id32">Examples</a></h3>
+<pre class="literal-block">
+{$node|debug_attributes}
+</pre>
+<p>Shows attribute values of $node.</p>
+<pre class="literal-block">
+{$node|debug_attributes( 'Dump of $node' )}
+</pre>
+<p>Shows attribute values of $node as a notice titled 'Dump of $node'.</p>
+<pre class="literal-block">
+{$node|debug_attributes( 'Dump of $node', 1 )}
+</pre>
+<p>or:</p>
+<pre class="literal-block">
+{$node|debug_attributes( 1, 'Dump of $node' )}
+</pre>
+<p>Shows attributes values of $node (but not attributes of object attributes) as a notice titled 'Dump of $node'.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id164" id="debug" name="debug">debug</a></h2>
+<div class="section">
+<h3><a id="id33" name="id33">Summary</a></h3>
+<p>Adds a notice to the debug output.</p>
+</div>
+<div class="section">
+<h3><a id="id34" name="id34">Usage</a></h3>
+<pre class="literal-block">
+input|debug( [ header ] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id35" name="id35">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="66%" />
+<col width="8%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>header</td>
+<td>Header/title of a notice</td>
+<td>No</td>
+<td>Debug operator</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id36" name="id36">Examples</a></h3>
+<pre class="literal-block">
+{concat( 'Node ID =', $node.node_id )|debug}
+</pre>
+<p>Adds a notice about the node ID of $node to the debug output.</p>
+<pre class="literal-block">
+{$variable|debug( 'Content of $variable' )}
+</pre>
+<p>Dumps $variable to the debug output as a notice titled 'Content of $variable'. See also the debug_attributes operator.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id165" id="is-post-request" name="is-post-request">is_post_request</a></h2>
+<div class="section">
+<h3><a id="id37" name="id37">Summary</a></h3>
+<p>Returns true if the current request method is POST, false otherwise.</p>
+</div>
+<div class="section">
+<h3><a id="id38" name="id38">Usage</a></h3>
+<pre class="literal-block">
+is_post_request()
+</pre>
+</div>
+<div class="section">
+<h3><a id="id39" name="id39">Parameters</a></h3>
+<p>None.</p>
+</div>
+<div class="section">
+<h3><a id="id40" name="id40">Examples</a></h3>
+<pre class="literal-block">
+This is a {if is_post_request()}POST{else}GET{/if} request.
+</pre>
+<p>Shows 'This is a POST request' if the current request is POST, 'This is a GET request' otherwise.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id166" id="json-encode" name="json-encode">json_encode</a></h2>
+<div class="section">
+<h3><a id="id41" name="id41">Summary</a></h3>
+<p>Returns the JSON representation of input.</p>
+</div>
+<div class="section">
+<h3><a id="id42" name="id42">Usage</a></h3>
+<pre class="literal-block">
+input|json_encode
+</pre>
+</div>
+<div class="section">
+<h3><a id="id42" name="id42">Alternate Usage</a></h3>
+<pre class="literal-block">
+json_encode( input )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id43" name="id43">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="77%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>value</td>
+<td>The variable type input to transform into json (array, object, string, etc)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id44" name="id44">Examples</a></h3>
+<pre class="literal-block">
+{array( hash( 'a', 1, 'b', 2 ), 'Test', false(), 1.2345 )|json_encode}
+</pre>
+<p>Returns [{&quot;a&quot;:1,&quot;b&quot;:2},&quot;Test&quot;,false,1.234500].</p>
+<hr />
+<pre class="literal-block">
+{json_encode( array( hash( 'a', 1, 'b', 2 ), 'Test', false(), 1.2345 ) )}
+</pre>
+<p>Returns [{&quot;a&quot;:1,&quot;b&quot;:2},&quot;Test&quot;,false,1.234500].</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id167" id="krsort" name="krsort">krsort</a></h2>
+<div class="section">
+<h3><a id="id45" name="id45">Summary</a></h3>
+<p>Sorts and returns the input array by key in reverse order.</p>
+</div>
+<div class="section">
+<h3><a id="id46" name="id46">Usage</a></h3>
+<pre class="literal-block">
+input|krsort
+</pre>
+</div>
+<div class="section">
+<h3><a id="id47" name="id47">Parameters</a></h3>
+<p>None.</p>
+</div>
+<div class="section">
+<h3><a id="id48" name="id48">Examples</a></h3>
+<pre class="literal-block">
+{hash( 'a', 10, 'c', 2, 'd', 15, 'b', 8, 'e', 6 )|krsort}
+</pre>
+<p>Returns array( 'e' =&gt; 6, 'd' =&gt; 15, 'c' =&gt; 2, 'b' =&gt; 8, 'a' =&gt; 10 ).</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id168" id="ksort" name="ksort">ksort</a></h2>
+<div class="section">
+<h3><a id="id49" name="id49">Summary</a></h3>
+<p>Sorts and returns the input array by key.</p>
+</div>
+<div class="section">
+<h3><a id="id50" name="id50">Usage</a></h3>
+<pre class="literal-block">
+input|ksort
+</pre>
+</div>
+<div class="section">
+<h3><a id="id51" name="id51">Parameters</a></h3>
+<p>None.</p>
+</div>
+<div class="section">
+<h3><a id="id52" name="id52">Examples</a></h3>
+<pre class="literal-block">
+{hash( 'a', 10, 'c', 2, 'd', 15, 'b', 8, 'e', 6 )|ksort}
+</pre>
+<p>Returns array( 'a' =&gt; 10, 'b' =&gt; 8, 'c' =&gt; 2, 'd' =&gt; 15, 'e' =&gt; 6 ).</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id169" id="ltrim" name="ltrim">ltrim</a></h2>
+<div class="section">
+<h3><a id="id53" name="id53">Summary</a></h3>
+<p>Strips whitespaces (or characters in the parameter, if given) from the beginning of the input string.</p>
+</div>
+<div class="section">
+<h3><a id="id54" name="id54">Usage</a></h3>
+<pre class="literal-block">
+input|ltrim( [ charlist] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id55" name="id55">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>charlist</td>
+<td>String containing characters to be removed</td>
+<td>No</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id56" name="id56">Examples</a></h3>
+<pre class="literal-block">
+{'   -- Hello, world! --   '|ltrim}
+</pre>
+<p>Returns '-- Hello, world! --   '.</p>
+<pre class="literal-block">
+{'   -- Hello, world! --   '|ltrim( ' -' )}
+</pre>
+<p>Returns 'Hello, world! --   '.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id170" id="modify-view-parameter" name="modify-view-parameter">modify_view_parameter</a></h2>
+<div class="section">
+<h3><a id="id57" name="id57">Summary</a></h3>
+<p>Adds, removes or changes a view (user) parameter in the input path.</p>
+</div>
+<div class="section">
+<h3><a id="id58" name="id58">Usage</a></h3>
+<pre class="literal-block">
+input|modify_view_parameter( parameter, value )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id59" name="id59">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>parameter</td>
+<td>Name of view (user) parameter to add, remove or change</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>value</td>
+<td>New value or false to remove the parameter</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id60" name="id60">Examples</a></h3>
+<pre class="literal-block">
+{'/path/to/node/(sort)/name/(offset)/10'|modify_view_parameter( 'sort', 'modified' )}
+</pre>
+<p>Returns '/path/to/node/(sort)/modified/(offset)/10'.</p>
+<pre class="literal-block">
+{'/path/to/node/(sort)/name/(offset)/10'|modify_view_parameter( 'sort', false() )}
+</pre>
+<p>Returns '/path/to/node/(offset)/10'.</p>
+<pre class="literal-block">
+{'/path/to/node/(sort)/name/(offset)/10'|modify_view_parameter( 'sort_order', 'desc' )}
+</pre>
+<p>Returns '/path/to/node/(sort)/name/(offset)/10/(sort_order)/desc'.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id171" id="preg-match" name="preg-match">preg_match</a></h2>
+<div class="section">
+<h3><a id="id61" name="id61">Summary</a></h3>
+<p>Returns number of matches of a given (Perl-style) regular expression in the input string.</p>
+</div>
+<div class="section">
+<h3><a id="id62" name="id62">Usage</a></h3>
+<pre class="literal-block">
+input|preg_match( pattern )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id63" name="id63">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>pattern</td>
+<td>Regular expression to search for</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id64" name="id64">Examples</a></h3>
+<pre class="literal-block">
+{'The quick brown fox jumps over the lazy dog'|preg_match( '/the/i' )}
+</pre>
+<p>Returns 2.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id172" id="preg-replace" name="preg-replace">preg_replace</a></h2>
+<div class="section">
+<h3><a id="id65" name="id65">Summary</a></h3>
+<p>Performs a regular expression search and replace.</p>
+</div>
+<div class="section">
+<h3><a id="id66" name="id66">Usage</a></h3>
+<pre class="literal-block">
+input|preg_replace( search, replace )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id67" name="id67">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="77%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>search</td>
+<td>The pattern (Perl-compatible regular expression) to search for
+(or array of such patterns)</td>
+<td>Yes</td>
+</tr>
+<tr><td>replace</td>
+<td>Replacement string (or array of such strings)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>For more information see <a class="reference" href="http://php.net/preg_replace">http://php.net/preg_replace</a>.</p>
+</div>
+<div class="section">
+<h3><a id="id68" name="id68">Examples</a></h3>
+<pre class="literal-block">
+{'Hello, John and Peter!'|preg_replace( array( '/John/', '/Peter/' ), array( 'Jane', 'Petra' ) )}
+</pre>
+<p>returns 'Hello, Jane and Petra!'.</p>
+<pre class="literal-block">
+{'John Doe'|preg_replace( '/(\w+) (\w+)/', '$2, $1' )}
+</pre>
+<p>returns 'Doe, John'.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id173" id="range" name="range">range</a></h2>
+<div class="section">
+<h3><a id="id69" name="id69">Summary</a></h3>
+<p>Returns an array of integers within the given range.</p>
+</div>
+<div class="section">
+<h3><a id="id70" name="id70">Usage</a></h3>
+<pre class="literal-block">
+range( min, max [, step] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id71" name="id71">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>min</td>
+<td>The minimum value, inclusive</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>max</td>
+<td>The maximum value, inclusive</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>step</td>
+<td>Increment between elements</td>
+<td>No</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>Note: min and max might be interchanged. The sign of step is not important.</p>
+</div>
+<div class="section">
+<h3><a id="id72" name="id72">Examples</a></h3>
+<pre class="literal-block">
+{range( 1, 10 )}
+</pre>
+<p>Returns array of integers from 1 to 10 inclusive.</p>
+<pre class="literal-block">
+{range( 1, 12, 3 )}
+</pre>
+<p>Returns array( 1, 4, 7, 10 ).</p>
+<pre class="literal-block">
+{range( 5, 2 )}
+</pre>
+<p>Returns array( 5, 4, 3, 2 ).</p>
+<pre class="literal-block">
+{range( 9, 2, 2 )}
+</pre>
+<p>or:</p>
+<pre class="literal-block">
+{range( 9, 2, -2 )}
+</pre>
+<p>Returns array( 9, 7, 5, 3 ).</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id174" id="redirect" name="redirect">redirect</a></h2>
+<div class="section">
+<h3><a id="id73" name="id73">Summary</a></h3>
+<p>Stops execution and redirects to the given URL.</p>
+</div>
+<div class="section">
+<h3><a id="id74" name="id74">Usage</a></h3>
+<pre class="literal-block">
+redirect( url [, status] )
+</pre>
+<p>or</p>
+<pre class="literal-block">
+url|redirect
+</pre>
+</div>
+<div class="section">
+<h3><a id="id75" name="id75">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>url</td>
+<td>Address to redirect to</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>status</td>
+<td>HTTP status code</td>
+<td>No</td>
+<td>302</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id76" name="id76">Examples</a></h3>
+<pre class="literal-block">
+{redirect( 'book/article' )}
+</pre>
+<p>Stops execution and redirects to the node represented by the (eZ Publish) path string book/article.</p>
+<pre class="literal-block">
+{'http://www.seeds.no'|redirect}
+</pre>
+<p>Stops execution and redirects to <a class="reference" href="http://www.seeds.no">http://www.seeds.no</a>.</p>
+<pre class="literal-block">
+{redirect( $node.parent.url, 301 )}
+</pre>
+<p>Stops execution and redirects to the parent node of $node, returning status code 301 (permanent redirection).</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id175" id="remove-array-element" name="remove-array-element">remove_array_element</a></h2>
+<div class="section">
+<h3><a id="id77" name="id77">Summary</a></h3>
+<p>Removes an array element in the input array and returns modified array.</p>
+</div>
+<div class="section">
+<h3><a id="id78" name="id78">Usage</a></h3>
+<pre class="literal-block">
+input|remove_array_element( key )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id79" name="id79">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>key</td>
+<td>Key of the array element to remove</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id80" name="id80">Examples</a></h3>
+<pre class="literal-block">
+{hash( 'a', 10, 'c', 2, 'd', 15, 'b', 8, 'e', 6 )|remove_array_element( 'c' )}
+</pre>
+<p>Returns array( 'a' =&gt; 10, 'd' =&gt; 15, 'b' =&gt; 8, 'e' =&gt; 6 ).</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id176" id="return" name="return">return</a></h2>
+<div class="section">
+<h3><a id="id81" name="id81">Summary</a></h3>
+<p>Terminates execution returning input as the response.</p>
+</div>
+<div class="section">
+<h3><a id="id82" name="id82">Usage</a></h3>
+<pre class="literal-block">
+input|return( [ content_type ] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id83" name="id83">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="70%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>content_type</td>
+<td>Content type of HTTP response</td>
+<td>No</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id84" name="id84">Examples</a></h3>
+<pre class="literal-block">
+{$variable|json_encode|return( 'application/json' )}
+</pre>
+<p>Returns value of $variable as JSON document suitable for processing by Javascript.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id177" id="rsort" name="rsort">rsort</a></h2>
+<div class="section">
+<h3><a id="id85" name="id85">Summary</a></h3>
+<p>Sorts and returns the input array in reverse order.</p>
+</div>
+<div class="section">
+<h3><a id="id86" name="id86">Usage</a></h3>
+<pre class="literal-block">
+input|rsort
+</pre>
+<p>Note that this operator assigns new keys to the output array.</p>
+</div>
+<div class="section">
+<h3><a id="id87" name="id87">Parameters</a></h3>
+<p>None.</p>
+</div>
+<div class="section">
+<h3><a id="id88" name="id88">Examples</a></h3>
+<pre class="literal-block">
+{hash( 'a', 10, 'c', 2, 'd', 15, 'b', 8, 'e', 6 )|rsort}
+</pre>
+<p>Returns array( 15, 10, 8, 6, 2 ).</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id178" id="rtrim" name="rtrim">rtrim</a></h2>
+<div class="section">
+<h3><a id="id89" name="id89">Summary</a></h3>
+<p>Strips whitespaces (or characters in the parameter, if given) from the end of the input string.</p>
+</div>
+<div class="section">
+<h3><a id="id90" name="id90">Usage</a></h3>
+<pre class="literal-block">
+input|rtrim( [ charlist] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id91" name="id91">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>charlist</td>
+<td>String containing characters to be removed</td>
+<td>No</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id92" name="id92">Examples</a></h3>
+<pre class="literal-block">
+{'   -- Hello, world! --   '|rtrim}
+</pre>
+<p>Returns '   -- Hello, world! --'.</p>
+<pre class="literal-block">
+{'   -- Hello, world! --   '|rtrim( ' -' )}
+</pre>
+<p>Returns '   -- Hello, world!'.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id179" id="serialize" name="serialize">serialize</a></h2>
+<div class="section">
+<h3><a id="id93" name="id93">Summary</a></h3>
+<p>Returns a storable representation of the input using PHP function serialize().</p>
+</div>
+<div class="section">
+<h3><a id="id94" name="id94">Usage</a></h3>
+<pre class="literal-block">
+input|serialize
+</pre>
+</div>
+<div class="section">
+<h3><a id="id95" name="id95">Parameters</a></h3>
+<p>None.</p>
+</div>
+<div class="section">
+<h3><a id="id96" name="id96">Examples</a></h3>
+<p>Using serialize and unserialize for caching value of variables:</p>
+<pre class="literal-block">
+{def $children=false()}
+
+{set-block variable=$children_ser}
+{cache-block expiry=&quot;0&quot; subtree_expiry=&quot;content/view/full/2&quot;}
+{set $children=fetch( 'content', 'list', hash( 'parent_node_id', 2, 'as_object', false() ) )}
+{$children|serialize}
+{/cache-block}
+{/set-block}
+
+{if $children|not}
+{set $children=$children_ser|trim|unserialize}
+{/if}
+</pre>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id180" id="server" name="server">server</a></h2>
+<div class="section">
+<h3><a id="id97" name="id97">Summary</a></h3>
+<p>Returns content of the server variable identified by the parameter. By server variables
+we understand information such as headers, paths, and script locations, variables
+defined in CGI specification etc. For more information, see
+<a class="reference" href="http://php.net/reserved.variables.server">http://php.net/reserved.variables.server</a></p>
+</div>
+<div class="section">
+<h3><a id="id98" name="id98">Usage</a></h3>
+<pre class="literal-block">
+server( variable_name )
+</pre>
+<p>Note: Variable name is case insensitive, the operator will capitalize it before obtaining its value.</p>
+</div>
+<div class="section">
+<h3><a id="id99" name="id99">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="69%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>variable_name</td>
+<td>Name of the server variable to return</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id100" name="id100">Examples</a></h3>
+<pre class="literal-block">
+{server( 'remote_addr' )}
+</pre>
+<p>Returns the client's IP address.</p>
+<pre class="literal-block">
+{server( 'http_referer' )}
+</pre>
+<p>Returns from which URL the client got to the current page.</p>
+<pre class="literal-block">
+{server( 'http_user_agent' )}
+</pre>
+<p>Returns the identification of client's browser.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id181" id="set-array-element" name="set-array-element">set_array_element</a></h2>
+<div class="section">
+<h3><a id="id101" name="id101">Summary</a></h3>
+<p>Sets an array element in the input array and returns the modified array.</p>
+</div>
+<div class="section">
+<h3><a id="id102" name="id102">Usage</a></h3>
+<pre class="literal-block">
+input|set_array_element( key, value )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id103" name="id103">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>key</td>
+<td>Key of the array element to set</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>value</td>
+<td>Value to assign</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id104" name="id104">Examples</a></h3>
+<pre class="literal-block">
+{hash( 'a', 10, 'c', 2, 'd', 15, 'b', 8, 'e', 6 )|set_array_element( 'c', 0 )}
+</pre>
+<p>Returns array( 'a' =&gt; 10, 'c' =&gt; 0, 'd' =&gt; 15, 'b' =&gt; 8, 'e' =&gt; 6 ).</p>
+<pre class="literal-block">
+{hash( 'a', 10, 'c', 2, 'd', 15, 'b', 8, 'e', 6 )|set_array_element( 'f', 12 )}
+</pre>
+<p>Returns array( 'a' =&gt; 10, 'c' =&gt; 2, 'd' =&gt; 15, 'b' =&gt; 8, 'e' =&gt; 6, 'f' =&gt; 12 ).</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id182" id="shortenw" name="shortenw">shortenw</a></h2>
+<div class="section">
+<h3><a id="id105" name="id105">Summary</a></h3>
+<p>Returns a shortened version of the input string (without breaking words).</p>
+<p>Note that 'w' at the end of the operator name stands for word.</p>
+</div>
+<div class="section">
+<h3><a id="id106" name="id106">Usage</a></h3>
+<pre class="literal-block">
+input|shortenw( length [, ellipsis] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id107" name="id107">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>length</td>
+<td>Maximum length of the returned string (including ellipsis)</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>ellipsis</td>
+<td>Ellipsis</td>
+<td>No</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id108" name="id108">Examples</a></h3>
+<pre class="literal-block">
+{'The quick brown fox jumps over the lazy dog'|shortenw( 16 )}
+</pre>
+<p>Returns 'The quick...'.</p>
+<pre class="literal-block">
+{'The quick brown fox jumps over the lazy dog'|shortenw( 16, '-' )}
+</pre>
+<p>Returns 'The quick brown-'.</p>
+<pre class="literal-block">
+{'Textwithnospaces'|shortenw( 10 )}
+</pre>
+<p>Returns 'Textwit...'.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id183" id="shuffle" name="shuffle">shuffle</a></h2>
+<div class="section">
+<h3><a id="id109" name="id109">Summary</a></h3>
+<p>Randomizes the order of the elements in the input array and returns is as output.</p>
+</div>
+<div class="section">
+<h3><a id="id110" name="id110">Usage</a></h3>
+<pre class="literal-block">
+input|shuffle
+</pre>
+</div>
+<div class="section">
+<h3><a id="id111" name="id111">Parameters</a></h3>
+<p>None</p>
+</div>
+<div class="section">
+<h3><a id="id112" name="id112">Examples</a></h3>
+<pre class="literal-block">
+{range( 1, 10 )|shuffle}
+</pre>
+<p>Creates an array of numbers from 1 to 10, inclusive, and shuffles them. Note that range is also an operator in the Swark extension.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id184" id="sort" name="sort">sort</a></h2>
+<div class="section">
+<h3><a id="id113" name="id113">Summary</a></h3>
+<p>Sorts and returns the input array.</p>
+</div>
+<div class="section">
+<h3><a id="id114" name="id114">Usage</a></h3>
+<pre class="literal-block">
+input|sort
+</pre>
+<p>Note that this operator assigns new keys to the output array.</p>
+</div>
+<div class="section">
+<h3><a id="id115" name="id115">Parameters</a></h3>
+<p>None.</p>
+</div>
+<div class="section">
+<h3><a id="id116" name="id116">Examples</a></h3>
+<pre class="literal-block">
+{hash( 'a', 10, 'c', 2, 'd', 15, 'b', 8, 'e', 6 )|sort}
+</pre>
+<p>Returns array( 2, 6, 8, 10, 15 ).</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id185" id="split-by-length" name="split-by-length">split_by_length</a></h2>
+<div class="section">
+<h3><a id="id117" name="id117">Summary</a></h3>
+<p>Converts the input string to an array.</p>
+</div>
+<div class="section">
+<h3><a id="id118" name="id118">Usage</a></h3>
+<pre class="literal-block">
+input|split_by_length( [ length ] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id119" name="id119">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>length</td>
+<td>Chunk length or lengths (if array)</td>
+<td>No</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id120" name="id120">Examples</a></h3>
+<pre class="literal-block">
+{'abcdef'|split_by_length}
+</pre>
+<p>Returns array( 'a', 'b', 'c', 'd', 'e', 'f' ).</p>
+<pre class="literal-block">
+{'abcdef'|split_by_length( 2 )}
+</pre>
+<p>Returns array( 'ab', 'cd', 'ef' ).</p>
+<pre class="literal-block">
+{'abcdef'|split_by_length( array( 1, 2, 3 ) )}
+</pre>
+<p>Returns array( 'a', 'bc', 'def' ).</p>
+<pre class="literal-block">
+{'abcdefgh'|split_by_length( array( 1, 2 ) )}
+</pre>
+<p>Returns array( 'a', 'bc', 'd', 'ef', 'g', 'h' ).</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id186" id="strpos" name="strpos">strpos</a></h2>
+<div class="section">
+<h3><a id="id121" name="id121">Summary</a></h3>
+<p>Returns position of the first occurrence of the parameter in the input string.</p>
+</div>
+<div class="section">
+<h3><a id="id122" name="id122">Usage</a></h3>
+<pre class="literal-block">
+input|strpos( needle [, offset] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id123" name="id123">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>needle</td>
+<td>Searched string</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>offset</td>
+<td>Allows to specify at which character in the input to start
+the search</td>
+<td>No</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id124" name="id124">Examples</a></h3>
+<pre class="literal-block">
+{'The quick brown fox jumps over the lazy dog'|strpos( 'brown' )}
+</pre>
+<p>Returns 10.</p>
+<pre class="literal-block">
+{'Does the quick brown fox jumps over the lazy dog?'|strpos( 'the', 6 )}
+</pre>
+<p>Returns 36.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id187" id="str-replace" name="str-replace">str_replace</a></h2>
+<div class="section">
+<h3><a id="id125" name="id125">Summary</a></h3>
+<p>Replaces all occurrences of the search string with the replacement string.</p>
+</div>
+<div class="section">
+<h3><a id="id126" name="id126">Usage</a></h3>
+<pre class="literal-block">
+input|str_replace( search, replace )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id127" name="id127">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="77%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>search</td>
+<td>The string to search for (or array of such strings)</td>
+<td>Yes</td>
+</tr>
+<tr><td>replace</td>
+<td>Replacement string (or array of such strings)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id128" name="id128">Examples</a></h3>
+<pre class="literal-block">
+{'Hello, World!'|str_replace( 'World', 'Earth' )}
+</pre>
+<p>returns 'Hello, Earth!'.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id188" id="strrpos" name="strrpos">strrpos</a></h2>
+<div class="section">
+<h3><a id="id129" name="id129">Summary</a></h3>
+<p>Returns position of the last occurrence of the parameter in the input string.</p>
+</div>
+<div class="section">
+<h3><a id="id130" name="id130">Usage</a></h3>
+<pre class="literal-block">
+input|strrpos( needle [, offset] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id131" name="id131">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>needle</td>
+<td>Searched string</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id132" name="id132">Examples</a></h3>
+<pre class="literal-block">
+{'Does the quick brown fox jumps over the lazy dog?'|strrpos( 'the' )}
+</pre>
+<p>Returns 36.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id189" id="substr" name="substr">substr</a></h2>
+<div class="section">
+<h3><a id="id133" name="id133">Summary</a></h3>
+<p>Returns part of the input string.</p>
+</div>
+<div class="section">
+<h3><a id="id134" name="id134">Usage</a></h3>
+<pre class="literal-block">
+input|substr( start [, length] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id135" name="id135">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>start</td>
+<td>Position in the input where to start the extraction. If
+negative, the position will be counted from the end of the
+input string.</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr><td>length</td>
+<td>Number of characters to extract, if 0 or not specified,
+the rest of the string is returned. If negative, it is
+the number of characters that will be omitted from the
+end of the input string.</td>
+<td>No</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id136" name="id136">Examples</a></h3>
+<pre class="literal-block">
+{'The quick brown fox jumps over the lazy dog'|substr( 4 )}
+</pre>
+<p>Returns 'quick brown fox jumps over the lazy dog'.</p>
+<pre class="literal-block">
+{'The quick brown fox jumps over the lazy dog'|substr( 4, 11 )}
+</pre>
+<p>Returns 'quick brown'.</p>
+<pre class="literal-block">
+{'The quick brown fox jumps over the lazy dog'|substr( 4, -3 )}
+</pre>
+<p>Returns 'quick brown fox jumps over the lazy'.</p>
+<pre class="literal-block">
+{'The quick brown fox jumps over the lazy dog'|substr( -8 )}
+</pre>
+<p>Returns 'lazy dog'.</p>
+<pre class="literal-block">
+{'The quick brown fox jumps over the lazy dog'|substr( -8, 4 )}
+</pre>
+<p>Returns 'lazy'.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id190" id="unserialize" name="unserialize">unserialize</a></h2>
+<div class="section">
+<h3><a id="id137" name="id137">Summary</a></h3>
+<p>Returns the value previously stored by the serialize operator.</p>
+</div>
+<div class="section">
+<h3><a id="id138" name="id138">Usage</a></h3>
+<pre class="literal-block">
+input|unserialize
+</pre>
+</div>
+<div class="section">
+<h3><a id="id139" name="id139">Parameters</a></h3>
+<p>None.</p>
+</div>
+<div class="section">
+<h3><a id="id140" name="id140">Examples</a></h3>
+<p>See examples of the serialize operator.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id191" id="uri-path-segment" name="uri-path-segment">uri_path_segment</a></h2>
+<div class="section">
+<h3><a id="id141" name="id141">Summary</a></h3>
+<p>Returns a segment of the input URL's path.</p>
+</div>
+<div class="section">
+<h3><a id="id142" name="id142">Usage</a></h3>
+<pre class="literal-block">
+input|uri_path_segment( [ index ] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id143" name="id143">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>index</td>
+<td>Which path segement to return, if negative, counted from the end</td>
+<td>No</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id144" name="id144">Examples</a></h3>
+<pre class="literal-block">
+{'http://www.seeds.no/nor/content/search?SearchText=publish#results'|uri_path_segment}
+</pre>
+<p>Returns 'search'.</p>
+<pre class="literal-block">
+{$child.url|uri_path_segment}
+</pre>
+<p>Returns last path segment of $child's url which can be used as an anchor.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id192" id="user-id-by-login" name="user-id-by-login">user_id_by_login</a></h2>
+<div class="section">
+<h3><a id="id145" name="id145">Summary</a></h3>
+<p>Returns the user ID of a user identified by the login name.</p>
+</div>
+<div class="section">
+<h3><a id="id146" name="id146">Usage</a></h3>
+<pre class="literal-block">
+user_id_by_login( login )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id147" name="id147">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>login</td>
+<td>Login name of a user</td>
+<td>Yes</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id148" name="id148">Examples</a></h3>
+<pre class="literal-block">
+{user_id_by_login( 'admin' )}
+</pre>
+<p>Returns 14.</p>
+<hr /></div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id193" id="variable-names" name="variable-names">variable_names</a></h2>
+<div class="section">
+<h3><a id="id149" name="id149">Summary</a></h3>
+<p>Shows or returns comma separated names of all available template variables.
+If the parameter is true or 1 or not given, the string is not returned but shown in the debug output.</p>
+</div>
+<div class="section">
+<h3><a id="id150" name="id150">Usage</a></h3>
+<pre class="literal-block">
+variable_names( [in_debug] )
+</pre>
+</div>
+<div class="section">
+<h3><a id="id151" name="id151">Parameters</a></h3>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="71%" />
+<col width="9%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>in_debug</td>
+<td>If true, uses debug output instead of returning the names</td>
+<td>No</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="id152" name="id152">Examples</a></h3>
+<pre class="literal-block">
+{variable_names()}
+</pre>
+<p>Placed in the pagelayout.tpl, it adds a debug notice '$module_result, $site, $ezinfo, $current_user, $anonymous_user_id, $access_type, $warning_list, $navigation_part, $uri_string, $requested_uri_string, $ui_context, $ui_component, $DesignKeys:used, $DesignKeys:matched'.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id194" id="workflow-event-types" name="workflow-event-types">Workflow event types</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id195" id="autopriority" name="autopriority">autopriority</a></h2>
+<p>Automatically sets the priority of new nodes to the maximum of siblings
+prirorities incremented by value of [AutoPriority]/PriorityIncrement set in
+swark.ini (default 10).</p>
+<hr /></div>
+<div class="section">
+<h2><a class="toc-backref" href="#id196" id="defertocron" name="defertocron">defertocron</a></h2>
+<p>Defers the workflow to the cron (background processing).</p>
+<table class="docutils citation" frame="void" id="php" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a name="php">[PHP]</a></td><td><a class="reference" href="http://php.net/">http://php.net/</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

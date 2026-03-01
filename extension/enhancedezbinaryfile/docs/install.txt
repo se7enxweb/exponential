@@ -1,0 +1,69 @@
+EnhancedeZBinaryFile Datatype
+-------------------------------
+
+Installation instructions:
+
+- Unpack the archive and place the 'enhancedezbinaryfile' folder in the
+  'extension' folder.
+
+- Open /settings/override/site.ini.append.php and add the enhancedezbinaryfile
+  extension to the list of active extensions.
+
+  [ExtensionSettings]
+  ActiveExtensions[]=enhancedezbinaryfile
+  
+- Modify the maximum number of files allowed in the file upload folder by
+  changing the setting 'MaxFiles' under the [RemoveFiles] heading in the
+  module.ini.append.php file in the 'extension/settings folder'.
+
+  This setting defines the number of files that have been uploaded that will be   
+  saved on the server.  Keep in mind that the potential disk space needed will be: 
+  MaxFiles * upload_max_filesize (as defined in php.ini).
+  
+  To turn this off - allowing an infinite number of files set MaxFiles to 0.
+  (Obviously this is not a good idea for a site allowing anonymous uploads because eventually disk space could run out).
+
+  In the event of email problems the files are stored:
+  var/<siteaccess>/storage/original/collected/<filetype>
+  This path can be changed in the module.ini to isolate the uploaded files. 
+  [RemoveFiles]
+  DownloadPath=original/attachments
+
+  Make sure the rewrite rules are set up correctly to ensure that these files
+  cannot be accessed directly (unless they should be.)
+
+- Modify the allowed file types that users will be allowed to upload under the
+  [AllowedFileTypes] heading in extension/settings/module.ini.append.php. The mime is determined
+  by the filename - so, it is possible that someone - maliciously or not - can
+  misname a file and it will arrive appearing to be the filetype as defined by
+  the filename.  Take extra care opening the attachments and use precautions
+  (i.e. use an up to date virus scanner.)
+
+- To receive the binary files by email, additional code needs to be added to
+  file kernel/content/collectinformation.php 
+
+  An example of the modified file has been included in the
+  'extension/kernel/content' folder. 
+
+  PLEASE NOTE THAT MODIFYING THE KERNEL IS NOT RECOMMENDED.
+
+  The code that needs to be added has been marked with
+  //BEGIN ENHANCED BINARY EXTENSION MAIL CODE ADDITION
+  and
+  //END ENHANCED BINARY EXTENSION MAIL CODE ADDITION
+  It should go between the lines:
+
+            $mail->setSubject( $subject );
+->HERE
+            $mail->setBody( $templateResult );
+
+  It is possible to send mail to multiple recipients by adding:
+  $bcc=<address>
+  $mail->addBcc( $bcc );
+  to the collectinformation.php file
+
+- Make sure to use the following HTML code in the template that contains the
+  enhanced eZBinaryFile datatype.
+  <form method="post" action={"content/action"|ezurl} enctype="multipart/form-data">
+
+Please read readme.txt for more information.

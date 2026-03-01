@@ -1,0 +1,19 @@
+{
+    "name": "se7enxweb/ezmbpaex",
+    "description": "eZ Publish Legacy Extension that provides functionality for password expiration and validation.",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "eZ Publish dev-team & eZ Community",
+            "homepage": "https://github.com/se7enxweb/ezmbpaex/contributors"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "ezmbpaex"
+    }
+}

@@ -1,0 +1,74 @@
+eZGMapLocation Datatype Extension
+Version 1.x by eZ Systems AS
+
+Version 0.5 developed by Blend Interactive
+http://blendinteractive.com
+------------------------------------------------------------------
+The GmapsLocation datatype extension provides a handy way to store
+latitude/longitude points (as decimal degrees) on an object by using
+Google Maps to identify and mark positions using their address.
+
+Installation
+---------------
+
+1.) Obtain a Google Maps Key for all domains you'll be using by registering
+your domains with Google at http://www.google.com/apis/maps/
+
+2.) Upload the ezgmaplocation folder to the extensions folder in your
+eZ Publish installation.
+
+3.) Activate the extension from the 'Extensions' portion of the
+'Setup' tab in the eZ publish admin interface.
+And update the autoload array by clicking "Regenerate autoload arrays for extensions"
+
+4.) Add your GmapsKey to the site.ini under [SiteSettings] like so:
+GMapsKey=<Long string of characters from Google>
+(You can do this per siteaccess if you want)
+
+5.) Apply the ezgmaplocation table to your database with the included sql file:
+<eZP root>/extension/ezgmaplocation/sql/mysql/mysql.sql
+Using either phpmyadmin (easiest) or shell/console commands.
+
+Sql files are also provided for postgresql and oracle - refer to the
+database documentation on how to execute queries from a command-line clients
+
+6.) Now you can add the ezgmaplocation datatype like any other datatype when editing classes.
+
+
+Use (editing)
+---------------
+1. Type in the address you want to find beneath the map.
+2. Click 'Find address'
+3. Click 'Update Values' to grab the coordinates.
+
+Repeat to change.
+Unless you change the marker on the map, the address will be saved as you typed it.
+This address is searchable! (see below for filtering / sorting on coordinates as well)
+
+
+Use (fetching)
+---------------
+
+For fetching multiple nodes based on location, you can use the included ezgmlLocationFilter.
+Example fetches users in a distance of roughly 30-50km from Oslo, Norway, and sorts the
+results based on how close the nodes are to the given coordinates.
+
+
+{def $users_close_by = fetch( 'content', 'tree', hash(
+                              'parent_node_id', 12,
+                              'limit', 3,
+                              'sort_by', array( 'distance', true() ),
+                              'class_filter_type', 'include',
+                              'class_filter_array', array( 'user' ),
+                              'extended_attribute_filter', hash( 'id', 'ezgmlLocationFilter', 'params', hash( 'latitude', 59.917,
+                                                                                                              'longitude', 10.729,
+                                                                                                              'distance', 0.5 ) )
+                              ) )}
+
+ Note that the distance filter is using a 'bounding box' for sql speed, see classes/ezgmllocationfilter.php for more info
+ and parameters to be able to get true ('arccosine') or closer to true ('pythagorean') circular distance filter accuracy.
+ The sort on the other hand is accurate, so if your main concern is to show the closest node, then the filter is ok by default.
+
+ Also see 'arccosine' parameter in combination with 'as_object', false() to be able to get value to easily calculate distance.
+ Example use: user x is 2,5 km away from you. Or Oslo, Norway is 416.8km from Stockholm, Sweden.
+

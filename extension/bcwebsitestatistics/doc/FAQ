@@ -1,0 +1,49 @@
+BC Website Statistics extension FAQ
+
+We recommend reading more about the Google Analytics Service. 
+
+There are many publications on the subject available from official sources, real users and developers.
+
+* The Service
+http://www.google.com/analytics/
+
+* The Service's Blog
+http://analytics.blogspot.com/
+
+
+* On Wikipedia
+http://en.wikipedia.org/wiki/Google_Analytics
+
+* On eZpedia
+http://ezpedia.org/wiki/en/ez/google_analytics
+
+
+* Browser Javascript Debug
+http://analytics.blogspot.com/2006/12/debugging-browser-errors.html
+
+* The Circle of Analytics
+http://googleblog.blogspot.com/2005/11/circle-of-analytics.html
+
+
+* How do I track e-commerce transactions?
+https://www.google.com/support/analytics/bin/answer.py?answer=27203&ctx=sibling
+
+* How do I use Google Analytics to track a 3rd-party shopping cart?
+http://www.google.com/support/analytics/bin/answer.py?answer=26915
+
+* How do I track files (such as PDF, AVI, or WMV) that are downloaded from my site?
+http://www.google.com/support/analytics/bin/answer.py?answer=27242
+
+* Google Analytics Help Center
+http://www.google.com/support/analytics/bin/static.py?page=toptwentyfive.html
+
+* Secrets in the sauce
+http://codingforums.com/showthread.php?p=546486
+
+
+* Google Search : Custom
+http://www.google.com/search?q=onload++__utmSetTrans%28%29%3B
+
+* Google Search : Google Groups
+http://groups.google.com/group/analytics-help/search?enc_author=IJKzMywAAAC_RJ3AYyBsNNfP0R5KpKjap6lX8ncIG7_U58rzqev12ErinvbWHmc2kvo5cktKdqs&scoring=d
+

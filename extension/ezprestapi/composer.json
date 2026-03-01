@@ -1,0 +1,30 @@
+{
+    "name": "se7enxweb/ezprestapi",    
+    "description": "7x eZ Publish REST API v2 is a simple eZ Publish Platform (Legacy) REST API extension which replaces the ezrestapiprovider extension entierly. Provides REST API CRUD End Points via HTTP/S. Great for modern developers!",
+    "keywords": [ "eZ Publish", "eZ Publish Legacy", "eZ Publish Platform", "rest api", "classes", "v2", "extension", "content", "create", "update", "delete", "list", "CRUD" ],
+    "homepage": "https://github.com/se7enxweb/ezprestapi",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name" : "7x",
+            "homepage": "https://se7enx.com",
+            "email": "info@se7enx.com",
+            "role": "Developer"
+        },
+        {
+            "name": "eZ Systems AS",
+            "homepage": "https://ez.no",
+            "role": "Original Author"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.0.0",
+        "se7enxweb/nxc_powercontent": "~1.1.0",
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "ezprestapi"
+    }
+}

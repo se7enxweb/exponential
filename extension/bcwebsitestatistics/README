@@ -1,0 +1,108 @@
+BC Website Statistics extension README
+
+What is the BC Website Statistics extension?
+==========================================
+
+BC Website Statistics is a certified extension
+for eZ publish providing the submission of
+information, page view statistics and order
+purchase statistics to google.
+
+
+License
+=======
+
+This software is licensed under the GNU General Public License.
+
+The complete license agreement is included in the doc/LICENSE file.
+
+For more information or questions please contact license@brookinsconsulting.com
+
+
+Requirements
+============
+
+The following requirements exists for using BC Website Statistics extension:
+
+o  eZ publish version:
+
+   Make sure you use eZ publish version 4.0.0 or higher. Recommended 4.0.0. Tested with 4.0.0
+
+o  PHP version:
+
+   Make sure you have PHP 5.1 or higher. Recommended 5.2. Tested with 5.2.3
+
+o  eZ publish must be reachable from the internet:
+
+   Make sure you have installed eZ publish on a webserver
+   that is reachable from the internet.
+
+o  Configured Google Analytics Website Profile
+
+   Make sure you have a Google Analytics Account and Website Profile for your website.
+
+   You can obtain a Google Analytics Account for no cost ( free ) at,
+   http://www.google.com/analytics/sign_up.html
+
+   BC Website Statistics Requirements
+   --------------------------------
+
+   1. You must have configured your Google Analytics Account
+   2. You must have configured your Google Analytics Website Profile for your web site (url/domain name)
+   3. You must have a configured Google Analytics Account and Website Profile Urchin ID.
+   4. You must have your Website Profile Urchin ID text string ready to put into the settings.
+
+   A more detailed article on these topics is available in doc/HOWTO.
+
+
+Version
+=======
+
+Details on the version of BC Website Statistics located in the file doc/VERSION.
+
+Features
+========
+
+Details on the features of BC Website Statistics located in the file doc/FEATURES.
+
+Installation
+============
+
+Details on installing BC Website Statistics located in the file doc/INSTALL.
+
+Configuration
+=============
+
+Details on configuring BC Website Statistics located in the file doc/CONFIG.
+
+HOWTO
+=====
+
+An article on howto use the BC Website Statistics located in the file doc/HOWTO.
+
+Usage
+=====
+
+Details on using BC Website Statistics located in the file doc/USAGE.
+
+Troubleshooting
+===============
+
+1. Read the DEBUG
+   --------------
+
+   Some common debug suggestions are listed in the guide doc/DEBUG.
+
+2. Read the FAQ
+   ------------
+
+   Some problems are more common than others. The most common ones
+   are listed in the doc/FAQ.
+
+3. Support
+   -------
+
+   If you have find any problems not handled by this document or the FAQ you
+   can contact Brookins Consulting through the support system:
+
+   http://brookinsconsulting.com/contact

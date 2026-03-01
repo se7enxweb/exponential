@@ -1,0 +1,36 @@
+{
+    "name": "se7enxweb/ezpaypal",
+    "description": "eZ Publish extension which provides for real time payment processing for ecommerce websites. Great for smart developers!",
+    "type": "ezpublish-legacy-extension",
+    "keywords": [ "eZ Publish", "eZ Publish Legacy", "eZ Publish Platform", "PayPal", "Payment Gateway", "extension", "Redirect Gateway" ],
+    "homepage": "https://github.com/se7enxweb/ezpaypal",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name" : "7x",
+            "homepage": "https://se7enx.com",
+            "email": "info@se7enx.com",
+            "role": "Developer"
+        },
+        {
+            "name" : "Mugo Web",
+            "homepage": "https://mugo.ca",
+            "email": "hi@mugo.ca",
+            "role": "Developer"
+        },
+        {
+            "name" : "Ibexa",
+            "homepage": "https://ibexa.no",
+            "email": "info@ibexa.no",
+            "role": "Author"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.0.0",
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "ezpaypal"
+    }
+}

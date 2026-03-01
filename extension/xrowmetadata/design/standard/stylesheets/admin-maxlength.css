@@ -1,0 +1,8 @@
+/*
+ * Styling applied if an input field exceeds length defined in the data-maxlength attribute.
+ * See ../javascript/admin-maxlength.js
+ */
+
+input[data-maxlength].warn {
+    border: 2px solid yellow;
+}

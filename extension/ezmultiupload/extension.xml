@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>eZ Multiupload LS</name>
+        <version>dev-master</version>
+        <copyright>Copyright (C) eZ Systems AS. All rights reserved.</copyright>
+        <license>For full copyright and license information view LICENSE file provided with this software.</license>
+        <info_url>http://projects.ez.no/ezmultiupload</info_url>
+    </metadata>
+
+    <dependencies>
+        <extends>
+            <extension name="ezwt" />
+        </extends>
+    </dependencies>
+
+</software>

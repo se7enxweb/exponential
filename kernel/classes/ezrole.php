@@ -1,4 +1,5 @@
 <?php
+// ##exp_feature_g1010_ez2014.11### policy fetch zu einem user beschleunigt
 /**
  * File containing the eZRole class.
  *
@@ -577,6 +578,205 @@ class eZRole extends eZPersistentObject
     }
 
     /**
+     * ###exp_feature_g1011_ez2014.11### policy fetch zu einem user beschleunigt
+     *
+     * @param $sourceArray
+     * @return array
+     */
+    static function sortArray( $sourceArray )
+    {
+        $newArray  = array();
+        $arrayKeys = array_keys( $sourceArray );
+        asort( $arrayKeys );
+        foreach ( $arrayKeys as $key )
+        {
+            if ( is_array( $sourceArray[$key] ) )
+            {
+                $newArray[$key] = self::sortArray( $sourceArray[$key] );
+            }
+            else
+            {
+                $newArray[$key] = $sourceArray[$key];
+            }
+        }
+        return $newArray;
+    }
+
+    /**
+     * ###exp_feature_g1011_ez2014.11### policy fetch zu einem user beschleunigt
+     * // AB: Added to speed up permission checking if role cache expired
+     * @param $userIDArray
+     * @param $userLimitation
+     * @return array
+     */
+    private static function customAccessArrayByUserID( $userIDArray, &$userLimitation )
+    {
+        $accessArray               = array();
+        $limitedModuleFunctionList = array();
+        $db                        = eZDB::instance();
+        $groupINSQL                = $db->generateSQLINStatement( $userIDArray, 'ezuser_role.contentobject_id', false, false, 'int' );
+        $sql                       = '
+SELECT limit_identifier, limit_value, user_role_id, ezpolicy.role_id, ezpolicy.module_name, ezpolicy.function_name, ezpolicy.id policy_id, ezpolicy_limitation.identifier, ezpolicy_limitation_value.value
+FROM
+(
+    SELECT DISTINCT ezrole.id, ezrole.name, ezuser_role.limit_identifier, ezuser_role.limit_value, ezuser_role.id as user_role_id
+    FROM ezrole, ezuser_role
+    WHERE ' . $groupINSQL . '
+          AND ezuser_role.role_id = ezrole.id
+) user_role_list
+LEFT JOIN ezpolicy
+          ON user_role_list.id=ezpolicy.role_id
+          LEFT JOIN ezpolicy_limitation
+                    ON ezpolicy_limitation.policy_id = ezpolicy.id
+                    LEFT JOIN ezpolicy_limitation_value
+                              ON ezpolicy_limitation_value.limitation_id = ezpolicy_limitation.id
+ORDER BY ezpolicy.id ASC, ezpolicy_limitation.id ASC, ezpolicy_limitation_value.value ASC
+';
+        $policyList = $db->arrayQuery( $sql );
+        if ( is_array( $policyList ) && count( $policyList ) > 0 )
+        {
+            foreach ( $policyList as $policyListItem )
+            {
+                if ( $policyListItem['limit_identifier'] != '' && $policyListItem['limit_identifier'] != 'NULL' )
+                {
+                    $userLimitation = true;
+                }
+                $moduleName                = $policyListItem['module_name'];
+                $functionName              = $policyListItem['function_name'];
+                // Do not continue if a role has no policies
+                if ( $moduleName == '' && $functionName == '' )
+                {
+                    continue;
+                }
+                $hasRoleLimitation         = ( $policyListItem['limit_identifier'] != '' && $policyListItem['limit_identifier'] != 'NULL' );
+                $hasIndirectRoleLimitation = false; // Used to figure out if the current module / function already has a limited role assignment
+                if ( $hasRoleLimitation )
+                {
+                    $limitedModuleFunctionList[] = $moduleName . '_' . $functionName;
+                }
+                else if ( in_array( $moduleName . '_' . $functionName, $limitedModuleFunctionList ) ||
+                    in_array( $moduleName . '_*', $limitedModuleFunctionList )
+                )
+                {
+                    $hasIndirectRoleLimitation = true;
+                }
+                if ( !array_key_exists( $moduleName, $accessArray ) )
+                {
+                    $accessArray[$moduleName] = array();
+                }
+                // If there are already existing limitations and the module should not have any limitations,
+                // remove the existing ones (but only if the role is not assigned with limitation)
+                if ( $functionName == '*' && !( $hasRoleLimitation || $hasIndirectRoleLimitation ) )
+                {
+                    // Actually the first part of the "if" should not be required but it has
+                    // been inserted to be compatible to the default behaviour
+                    if ( array_key_exists( '*', $accessArray[$moduleName] ) && array_key_exists( '*', $accessArray[$moduleName]['*'] ) )
+                    {
+                        // If the are several policies granting unlimited access each of
+                        // them will get an extra '*' in an array
+                        if ( is_array( $accessArray[$moduleName]['*']['*'] ) )
+                        {
+                            $accessArray[$moduleName]['*']['*'][] = '*';
+                        }
+                        else
+                        {
+                            $accessArray[$moduleName]['*']['*'] = array( '*', '*' );
+                        }
+                    }
+                    else
+                    {
+                        $accessArray[$moduleName] = array( '*' => array( '*' => '*' ) );
+                    }
+                    continue;
+                }
+                // If the module is unlimited completely, do not add any further limitations
+                // (but only if the role is not assigned with limitation)
+                if ( array_key_exists( '*', $accessArray[$moduleName] ) && !( $hasRoleLimitation || $hasIndirectRoleLimitation ) )
+                {
+                    continue;
+                }
+                if ( !array_key_exists( $functionName, $accessArray[$moduleName] ) )
+                {
+                    $accessArray[$moduleName][$functionName] = array();
+                }
+
+                if ( $policyListItem['identifier'] == '' && $policyListItem['value'] == '' )
+                {
+                    // If the role is assigned with limitation, we should skip to grant full access
+                    if ( !$hasRoleLimitation )
+                    {
+                        // If there are already existing limitations and the function should not have any limitations,
+                        // remove the existing ones
+                        //
+                        // Actually the first part of the "if" should not be required but it has
+                        // been inserted to be compatible to the default behaviour
+                        if ( array_key_exists( '*', $accessArray[$moduleName][$functionName] ) )
+                        {
+                            // If the are several policies granting unlimited access each of
+                            // them will get an extra '*' in an array
+                            if ( is_array( $accessArray[$moduleName][$functionName]['*'] ) )
+                            {
+                                $accessArray[$moduleName][$functionName]['*'][] = '*';
+                            }
+                            else
+                            {
+                                $accessArray[$moduleName][$functionName]['*'] = array( '*', '*' );
+                            }
+                        }
+                        else
+                        {
+                            if ( $hasIndirectRoleLimitation )
+                            {
+                                $accessArray[$moduleName][$functionName]['*'] = '*';
+                            }
+                            else
+                            {
+                                $accessArray[$moduleName][$functionName] = array( '*' => '*' );
+                            }
+                        }
+                        continue;
+                    }
+                }
+                if ( ( $policyListItem['identifier'] != '' && $policyListItem['value'] != '' ) || $hasRoleLimitation )
+                {
+                    // Only add the limiation, if the access to the view is not alreay unlimited
+                    if ( !array_key_exists( '*', $accessArray[$moduleName][$functionName] ) || $hasRoleLimitation )
+                    {
+                        $policyID = 'p_' . $policyListItem['policy_id'];
+                        if ( $hasRoleLimitation )
+                        {
+                            $policyID .= '_' . $policyListItem['user_role_id'];
+                        }
+                        if ( !array_key_exists( $policyID, $accessArray[$moduleName][$functionName] ) )
+                        {
+                            $accessArray[$moduleName][$functionName][$policyID] = array();
+                        }
+                        if ( $policyListItem['identifier'] != '' && !array_key_exists( $policyListItem['identifier'], $accessArray[$moduleName][$functionName][$policyID] ) )
+                        {
+                            $accessArray[$moduleName][$functionName][$policyID][$policyListItem['identifier']] = array();
+                        }
+                        // This is required in case of unlimited access where the role is assigned with limitation
+                        // to avoid an empty entry
+                        if ( $policyListItem['identifier'] != '' && $policyListItem['value'] != '' &&
+                            !in_array( $policyListItem['value'], $accessArray[$moduleName][$functionName][$policyID][$policyListItem['identifier']] )
+                        )
+                        {
+                            $accessArray[$moduleName][$functionName][$policyID][$policyListItem['identifier']][] = $policyListItem['value'];
+                        }
+                        if ( $hasRoleLimitation )
+                        {
+                            $accessArray[$moduleName][$functionName][$policyID]['User_' . $policyListItem['limit_identifier']] = array( $policyListItem['limit_value'] );
+                        }
+                    }
+                    continue;
+                }
+                eZDebug::writeError( 'Unexpected policy configuration: ' . implode( ' - ', $policyListItem ), __METHOD__ );
+            }
+        }
+        return $accessArray;
+    }
+
+    /**
      * Return access array by passing in list of groups user belongs to and his user id
      *
      * @param array $idArray Array of eZContentObject IDs, either groups + user id or user id's only
@@ -586,17 +786,70 @@ class eZRole extends eZPersistentObject
      */
     static function accessArrayByUserID( $idArray, $recursive = false )
     {
-        $roles = eZRole::fetchByUser( $idArray, $recursive );
+        // AB: Added to speed up permission checking if role cache expired
+        /*$debug = true;
+        if ( array_key_exists( 'debugUserRoles', $GLOBALS ) )
+        {
+            $debug = false;
+        }
+        else
+        {
+            $GLOBALS['debugUserRoles'] = true;
+        }*/
+
+        // AB: Added to speed up permission checking if role cache expired
+        $defaultCode = true;
+        $siteIni     = eZINI::instance();
+        if ( $siteIni->hasVariable( 'RoleSettings', 'CustomCode' ) &&
+             trim( $siteIni->variable( 'RoleSettings', 'CustomCode' ) ) == 'enabled'
+           )
+        {
+            $defaultCode = false;
+        }
+
+        // ###exp_feature_g1011_ez2014.11### policy fetch zu einem user beschleunigt
+        // AB: Modified to speed up permission checking if role cache expired
         $userLimitation = false;
 
         $accessArray = array();
-        foreach ( array_keys ( $roles )  as $roleKey )
+
+        if ( $defaultCode )
         {
-            $accessArray = array_merge_recursive( $accessArray, $roles[$roleKey]->accessArray() );
-            if ( $roles[$roleKey]->attribute( 'limit_identifier' ) )
+            $roles = eZRole::fetchByUser( $userIDArray, $recursive );
+
+            foreach ( array_keys ( $roles )  as $roleKey )
             {
-                $userLimitation = true;
+                $accessArray = array_merge_recursive( $accessArray, $roles[$roleKey]->accessArray() );
+                if ( $roles[$roleKey]->attribute( 'limit_identifier' ) )
+                {
+                    $userLimitation = true;
+                }
             }
+            /*if ( $debug )
+            {
+                echo '<pre style="text-align: left; width: 49%; float: left;">Default: '; print_r( self::sortArray( $accessArray ) ); echo '</pre>';
+                ob_start();
+                print_r( self::sortArray( $accessArray ) );
+                $variableContents = '';
+                $variableContents .= ob_get_contents();
+                ob_end_clean();                                                                                                                                                               //echo '<pre style="text-align: left; width: 49%; float: left;">Default: '; print_r( self::sortArray( $accessArray ) ); echo '</pre>';
+                file_put_contents( '/tmp/default.txt', $variableContents );
+
+                $test = self::customAccessArrayByUserID( $userIDArray, $userLimitation, $debug );
+                echo '<pre style="text-align: left; width: 49%; float: right;">Custom: '; print_r( self::sortArray( $test ) ); echo '</pre><div style="clear: both"></div>';
+                ob_start();
+                print_r( self::sortArray( $test ) );
+                $variableContents = '';
+                $variableContents .= ob_get_contents();
+                ob_end_clean();
+                file_put_contents( '/tmp/custom.txt', $variableContents );
+
+            }*/
+
+        }
+        else
+        {
+            $accessArray = self::customAccessArrayByUserID( $idArray, $userLimitation );
         }
 
         if ( $userLimitation )

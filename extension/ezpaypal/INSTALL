@@ -1,0 +1,120 @@
+eZ Paypal Payment Gateway extension [ExtensionVersion] INSTALL
+
+Introduction
+============
+
+1. What is the eZ Paypal Payment Gateway extension?
+   ------------------------------------------------
+
+   Payment gateway for Paypal
+
+   For more information about this extension please read the README file.
+
+1. License
+   -------
+
+   eZ Paypal Payment Gateway is dual licensed. You can choose between
+   the GNU GPL and the eZ publish Professional Licence.
+
+   The GNU GPL gives you the right to use, modify and redistribute eZ
+   Payal Payment Gateway under certain conditions. The GNU GPL licence
+   is distributed with the software, see the file LICENCE. It is also
+   available at http://www.gnu.org/licenses/gpl.txt
+   Using eZ Paypal Payment Gateway under the terms of the GNU GPL is
+   free of charge.
+
+   The eZ publish Professional Licence gives you the right to use the
+   source code for making your own commercial software. It allows you
+   full protection of your work made with eZ Paypal Payment
+   Gateway. You may re-brand, license and close your source code. eZ
+   Paypal Payment Gateway is not free of charge when used under the
+   terms of the Professional Licence. The eZ publish Professional
+   Licence is distributed with the software, see the file
+   PROFESSIONAL_LICENCE. It is also available at
+   http://ez.no/ez_publish/licenses/professional
+   For pricing and ordering, please contact us at info@ez.no.
+
+
+2. Requirements
+   ------------
+
+   The following requirements exists for using eZ Paypal Payment Gateway extension:
+
+   o  eZ publish version:
+
+      Make sure you use eZ publish version 3.5 or higher.
+
+   o  PHP version:
+
+      Make sure you have PHP 4.3.2 or higher.
+
+   o  eZ publish must be reachable from the internet:
+
+      Make sure you have installed eZ publish on a webserver that is reachable by
+      the Paypal service.
+
+
+Getting eZ publish
+==================
+
+You can download a version of eZ publish from ez.no, you will find the
+various versions at:
+http://ez.no/ez_publish/download/all_releases/ez_publish_3_stable_releases
+
+NOTE: You will require eZ publish 3.5 or higher
+
+Information on the installation of eZ publish can be found at:
+http://ez.no/ez_publish/documentation/installation
+
+
+Installing eZ Paypal Payment Gateway extension
+==============================================
+
+1. Copy the package into the `extension' directory in the root of your eZ publish installation.
+
+2. Unpack the files in the distribution. The command necessary is depends on the file you 
+   downloaded.
+   [tar.gz]:
+   $ tar -zxvf ezpaypal-extension-[ExtensionVersion].tar.gz
+   [bz2]:
+   $ tar -jxvf ezpaypal-extension-[ExtensionVersion].bz2
+   [zip]:
+   $ unzip ezpaypal-extension-[ExtensionVersion].zip
+
+3. We must now enable the extension in eZ publish. To do this edit site.ini.append(.php) in the 
+   folder root_of_ezpublish/settings. If this file does not exist; create it. Locate (or add)
+   the block [ExtensionSettings] and add the line:
+   ActiveExtensions[]=ezpaypal
+
+   If you run several sites using only one distribution and only some of the sites should use
+   the extension, make the changes in the override file of that siteaccess. 
+   E.g root_of_ezpublish/settings/siteaccess/news/site.ini.append(.php)
+   But instead of using ActiveExtensions you must add these lines instead:
+
+   [ExtensionSettings]
+   ActiveAccessExtensions[]=ezpaypal
+
+
+Tips
+====
+
+- Check to add workflow event (redirect ezpaypal gateway)
+- Check to add workflow event to trigger (example: shop confirmorder before)
+- Check your paypal.com account to allow payment redirection from insecure clients.
+
+
+Troubleshooting
+===============
+
+1. Read the FAQ
+   ------------
+
+   Some problems are more common than others. The most common ones are listed
+   in the the FAQ.
+
+2. Support
+   -------
+
+   If you have find any problems not handled by this document or the FAQ you
+   can contact eZ system trough the support system:
+   http://ez.no/services/support

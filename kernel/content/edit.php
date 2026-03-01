@@ -1,4 +1,6 @@
 <?php
+// ###exp_feature_g64_ez2014.11### Additional RedirectURL functionality for "content/edit"; like ###exp_feature_g63_ez2014.11###
+// ###exp_feature_g1015_ez2014.11###  SingleVersionEdit
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -509,8 +511,23 @@ if ( !$isAccessChecked )
     // Check permission for object and version in specified language.
     if ( !$obj->canEdit( false, false, false, $EditLanguage ) )
     {
-        return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel',
-                                     array( 'AccessList' => $obj->accessList( 'edit' ) ) );
+        // ###exp_feature_g1015_ez2014.11###
+        // patch singleversion edit user
+        if ( class_exists( 'ExpEceCollaborateContentObjectVersion' ) )
+        {
+            // weitere Bearbeiter
+            $versionNew = ExpEceCollaborateContentObjectVersion::fetch( $version->ID );
+            if ( !$versionNew->canUserEdit( eZUser::currentUserID() ) )
+            {
+                // no singleversionedituser
+                return $Module->handleError(eZError::KERNEL_ACCESS_DENIED, 'kernel', array('AccessList' => $obj->accessList('edit')));
+            }
+        }
+        // altes verhalten
+        else
+        {
+            return $Module->handleError(eZError::KERNEL_ACCESS_DENIED, 'kernel', array('AccessList' => $obj->accessList('edit')));
+        }
     }
 }
 
@@ -742,8 +759,14 @@ if ( !function_exists( 'checkContentActions' ) )
             $behaviour->disableAsynchronousPublishing = false;
             ezpContentPublishingBehaviour::setBehaviour( $behaviour );
 
-            $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $object->attribute( 'id' ),
-                                                                                         'version' => $version->attribute( 'version' ) ) );
+            /// ###exp_feature_g1018_ez2014.11### : Added for publish without notification feature
+            $http = eZHTTPTool::instance();
+            $operationResult = eZOperationHandler::execute( 'content', 'publish', array(
+                'object_id' => $object->attribute( 'id' ),
+                'version' => $version->attribute( 'version' ),
+                'notify'    => ( $http->hasPostVariable( 'PublishNotNotifyButton' ) ? false : true )
+            ) );
+            /// ###exp_feature_g1018_ez2014.11### – END
             eZDebug::accumulatorStop( 'publish' );
 
             if ( ( array_key_exists( 'status', $operationResult ) && $operationResult['status'] != eZModuleOperationInfo::STATUS_CONTINUE ) )
@@ -763,6 +786,18 @@ if ( !function_exists( 'checkContentActions' ) )
                             $module->redirectTo( $operationResult['redirect_url'] );
                             return;
                         }
+                        /// ###exp_feature_g64_ez2014.11### – BEGIN ///
+                        /// If no `redirect_url` is set in the $operationResult array, we're
+                        /// going to check for our custom POST variable
+                        /// `RedirectUrl_AfterWorkflowHalted`, which contains the URL, where we
+                        /// want to redirect, if a circular letter has been send to the approve
+                        /// workflow
+                        elseif( isset( $_POST['RedirectUrl_AfterWorkflowHalted'] ) )
+                        {
+                            $module->redirectTo( $_POST['RedirectUrl_AfterWorkflowHalted'] );
+                            return eZModule::HOOK_STATUS_CANCEL_RUN;
+                        }
+                        /// ###exp_feature_g64_ez2014.11### – END ///
                         else if ( isset( $operationResult['result'] ) )
                         {
                             $Result = array();
@@ -852,6 +887,20 @@ if ( !function_exists( 'checkContentActions' ) )
                 }
             }
             unset( $assignedNodes );
+
+            /// ###exp_feature_g64_ez2014.11### – BEGIN ///
+            /// If neither a `redirect_url` is set in the $operationResult array nor is
+            /// a POST variable `RedirectUrl_AfterWorkflowHalted` available, we're
+            /// checking for the POST variable `RedirectUrl_AfterPublish`, which
+            /// contains the URL, where we want to redirect, if a circular letter has
+            /// been published directly (because the user is the publisher and
+            /// a valid approver at the same time).
+            if( isset( $_POST['RedirectUrl_AfterPublish'] ) )
+            {
+                $module->redirectTo( $_POST['RedirectUrl_AfterPublish'] );
+                return eZModule::HOOK_STATUS_CANCEL_RUN;
+            }
+            /// ###exp_feature_g64_ez2014.11### – END ///
 
             $object = eZContentObject::fetch( $object->attribute( 'id' ) );
 

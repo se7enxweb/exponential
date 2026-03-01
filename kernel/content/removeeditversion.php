@@ -1,4 +1,5 @@
 <?php
+// ###exp_feature_g1015_ez2014.11###  SingleVersionEdit
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -64,9 +65,26 @@ if ( $isConfirmed )
 
             if ( !$allowEdit )
             {
-                $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
-                return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel', array( 'AccessList' => $object->accessList( 'edit' ) ) );
+                // ###exp_feature_g1015_ez2014.11###
+                // patch singleversion edit user
+                if ( class_exists( 'ExpEceCollaborateContentObjectVersion' ) )
+                {
+                    // weitere Bearbeiter
+                    $versionNew = ExpEceCollaborateContentObjectVersion::fetch( $versionObject->ID );
+                    if ( !$versionNew->canUserEdit( eZUser::currentUserID() ) )
+                    {
+                        // no singleversionedituser
+                        return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel', array( 'AccessList' => $object->accessList( 'edit' ) ) );
+                    }
+                }
+                // altes Verhalten
+                else
+                {
+                    $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
+                    return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel', array( 'AccessList' => $object->accessList( 'edit' ) ) );
+                }
             }
+
         }
 
         $versionCount= $object->getVersionCount();

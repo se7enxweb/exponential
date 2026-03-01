@@ -1,0 +1,29 @@
+Version 2.4
+
+-  Added some php8 improvments based on current project usage and refinements
+
+Version 2.3
+
+-  Added some community suggestions
+
+Version 2.2
+
+- Data fetching respects sort_array of parentNode
+
+Version 2.1
+
+- Added Limit & Offset parameters in export.ini
+- Modified templates for optimisation
+
+Version 2
+
+- Added starting NodeID configuration in export.ini
+- Added default ClassID configuration in export.ini
+- Added Preselect All Attribute (default to true) in export.ini
+- Added french translation
+- Added handling for ezenum and ezdate attributes 
+- Modified templates for 3.7.x CSS
+
+Version 1.0
+
+- Default Version

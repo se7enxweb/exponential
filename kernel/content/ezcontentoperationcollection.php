@@ -1,4 +1,5 @@
 <?php
+// ###exp_feature_g1018_ez2014.11### [#10017] content/edit neuer Button PublishNotNotifyButton
 /**
  * File containing the eZContentOperationCollection class.
  *
@@ -653,11 +654,66 @@ class eZContentOperationCollection
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
      */
-    static public function createNotificationEvent( $objectID, $versionNum )
+    static public function createNotificationEvent( $objectID, $versionNum, $notify = true )
     {
-        $event = eZNotificationEvent::create( 'ezpublish', array( 'object' => $objectID,
-                                                                   'version' => $versionNum ) );
-        $event->store();
+        // ###exp_feature_g1018_ez2014.11### : Changed for publish without notification feature
+        if ( $notify )
+        {
+            // Get allowed classes from ini
+            $notificationIni = eZini::instance( 'notification.ini' );
+            if ( is_object( $notificationIni ) )
+            {
+                // Fetch classidentifier for object
+                $object = eZContentObject::fetch( $objectID );
+                if ( is_object( $object ) )
+                {
+                    $notificationFilterByClassIdentifierIsActive = false;
+                    $classes = array();
+                    $class = $object->contentClassIdentifier();
+                    if ( $notificationIni->hasVariable( 'NotificationSettings', 'NotificationFilterByClassIdentifier' ) )
+                    {
+                        $notificationFilterByClassIdentifier = $notificationIni->variable( 'NotificationSettings', 'NotificationFilterByClassIdentifier' );
+                        if ( $notificationFilterByClassIdentifier == 'enabled' )
+                        {
+                            $notificationFilterByClassIdentifierIsActive = true;
+                            if ( $notificationIni->hasVariable( 'NotificationSettings', 'IncludeClasses' ) )
+                            {
+                                $classes = $notificationIni->variable( 'NotificationSettings', 'IncludeClasses' );
+                            }
+                        }
+                    }
+                    // Only create event, when the NotificationFilterByClassIdentifier is not enabled (default eZ 2012.06)
+                    // or class is in IncludeClasses
+                    if ( $notificationFilterByClassIdentifierIsActive === false
+                         || ( $notificationFilterByClassIdentifierIsActive === true
+                              && is_array( $classes )
+                              && in_array( $class, $classes ) ) )
+                    {
+                        $event = eZNotificationEvent::create( 'ezpublish', array( 'object' => $objectID,
+                                                                                  'version' => $versionNum ) );
+                        $event->store();
+                    }
+                    else
+                    {
+                        eZDebug::writeDebug( 'Will not create notification because class ' . $class . ' is not configured in [NotificationSettings].IncludeClasses',
+                                             'eZContentOperationCollection::createNotificationEvent()'
+                                           );
+                    }
+                }
+                else
+                {
+                    eZDebug::writeError( 'Failed to fetch object with ID ' . $objectID . '. Can not create notification.', 'eZContentOperationCollection::createNotificationEvent()' );
+                }
+            }
+            else
+            {
+                eZDebug::writeError( 'Failed to get object for notification.ini', 'eZContentOperationCollection::createNotificationEvent()' );
+            }
+        }
+        else
+        {
+            eZDebug::writeDebug( "Skipped creating a notification event with OID: $objectID", 'eZContentOperationCollection::createNotificationEvent()' );
+        }
     }
 
     /*!

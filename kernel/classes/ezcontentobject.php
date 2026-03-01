@@ -2,6 +2,15 @@
 /**
  * File containing the eZContentObject class.
  *
+ * ###exp_feature_g62_ez2014.11### ezcontentobject::relatedObjects() - Query error: Unknown column 'ezcontentclass.id' in 'on clause'
+ * ###exp_feature_g1002_ez2014.11### SNAC role matrix rights system integration (see eZSnacRoleBitmask - skipped, custom extension)
+ * ###exp_feature_g1003_ez2014.11### Employee receives notifications for subscribed content
+ * ###exp_feature_g1004_ez2014.11### fetch optimisation - policy limitation / assigned nodes cache
+ * ###exp_feature_g1005_ez2014.11### Error with rejected articles - op_code handling in version copy
+ * ###exp_feature_g1014_ez2014.11### can_edit check for unpublished content without version 1
+ * ###exp_feature_g1016_ez2014.11### can_edit check for unpublished content with subtree policy restrictions - use tmpnode->parentNode
+ * ###exp_feature_g1018_ez2014.11### content/edit: PublishNotNotifyButton / NotificationFilter for ClassIdentifier
+ *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
@@ -1549,12 +1558,14 @@ class eZContentObject extends eZPersistentObject
         foreach ( $nodeAssignmentList as $nodeAssignment )
         {
             // Only copy assignments which has a remote_id since it will be used in template code.
-            if ( $nodeAssignment->attribute( 'remote_id' ) == 0 )
+            if ( $nodeAssignment->attribute( 'remote_id' ) == 0 && $nodeAssignment->attribute( 'op_code' ) != eZNodeAssignment::OP_CODE_CREATE )
             {
                 continue;
             }
             $clonedAssignment = $nodeAssignment->cloneNodeAssignment( $newVersionNumber, $contentObjectID );
-            $clonedAssignment->setAttribute( 'op_code', eZNodeAssignment::OP_CODE_SET ); // Make sure op_code is marked to 'set' the data.
+            // ###exp_feature_g1005_ez2014.11### Do not force OP_CODE_SET if original was OP_CODE_CREATE (e.g. rejected article being re-edited in ezapprove workflow)
+            if ( $nodeAssignment->attribute( 'op_code' ) != eZNodeAssignment::OP_CODE_CREATE )
+                $clonedAssignment->setAttribute( 'op_code', eZNodeAssignment::OP_CODE_SET ); // Mark op_code as 'set'
             $clonedAssignment->store();
         }
 
@@ -1916,6 +1927,21 @@ class eZContentObject extends eZPersistentObject
         $db->query( "DELETE FROM ezcontentobject_version
              WHERE contentobject_id='$delID'" );
 
+        // ###exp_feature_g1018_ez2014.11### Clean up notification events linked to deleted content object versions
+        $events   = $db->arrayQuery( "SELECT id FROM eznotificationevent WHERE event_type_string='ezpublish' AND data_int1='$delID'" );
+        $eventIDs = array();
+        foreach( $events as $event )
+        {
+            $eventIDs[] = $event['id'];
+        }
+        if ( $eventIDs )
+        {
+            $inSQLPart = $db->generateSQLInStatement( $eventIDs, 'event_id' );
+            $db->query( "DELETE FROM eznotificationcollection WHERE $inSQLPart" );
+            $db->query( "DELETE FROM eznotificationcollection_item WHERE $inSQLPart" );
+        }
+        $db->query( "DELETE FROM eznotificationevent WHERE event_type_string='ezpublish' AND data_int1='$delID'" );
+
         $db->query( "DELETE FROM ezcontentobject_name
              WHERE contentobject_id='$delID'" );
 
@@ -2019,6 +2045,9 @@ class eZContentObject extends eZPersistentObject
         // Who deletes which content should be logged.
         eZAudit::writeAudit( 'content-delete', array( 'Object ID' => $delID, 'Content Name' => $this->attribute( 'name' ),
                                                       'Comment' => 'Setted archived status for the current object: eZContentObject::remove()' ) );
+
+        // ###exp_feature_g1004_ez2014.11### Ignore assigned nodes cache during deletion to prevent transaction errors
+        $GLOBALS['EXP_ASSIGNED_NODES_CACHE_IGNORE'] = true;
 
         $nodes = $this->attribute( 'assigned_nodes' );
 
@@ -3934,6 +3963,45 @@ class eZContentObject extends eZPersistentObject
         {
             $visibilitySQL = "AND ezcontentobject_tree.is_invisible = 0 ";
         }
+
+        // ###exp_feature_g1004_ez2014.11### Assigned nodes request-level cache
+        // Prevents redundant DB queries when the same object's nodes are fetched repeatedly.
+        // Use EXP_ENABLE_ASSIGNED_NODES_CACHE=true in config.php to activate.
+        eZDebug::accumulatorStart('x_query_assigned_nodes', 'fetch optimisation', 'eZCO AssignedNodes from DB' );
+        eZDebug::accumulatorStart('x_query_assigned_nodes_cache', 'fetch optimisation', 'eZCO AssignedNodes from CACHE' );
+
+        $cacheIsEnabled = false;
+
+        if ( !isset( $GLOBALS['EXP_ASSIGNED_NODES_CACHE_IGNORE'] ) && defined( 'EXP_ENABLE_ASSIGNED_NODES_CACHE' ) && constant( 'EXP_ENABLE_ASSIGNED_NODES_CACHE' ) === true )
+        {
+            // Only cache during content/view and content/versionview requests
+            if ( isset( $GLOBALS['eZRequestedModuleParams'] ) && isset( $GLOBALS['eZRequestedModuleParams']['function_name'] )
+                 && $GLOBALS['eZRequestedModuleParams']['module_name'] == 'content'
+                 && ( $GLOBALS['eZRequestedModuleParams']['function_name'] == 'view'
+                     || $GLOBALS['eZRequestedModuleParams']['function_name'] == 'versionview' ) )
+            {
+                $cacheIsEnabled = true;
+            }
+        }
+
+        if ( $cacheIsEnabled )
+        {
+            $cacheKey = 'EZ_CONTENTOBJECT_CACHE_ASSIGNED_NODES_';
+            if ( $asObject )
+                $cacheKey .= 'AS_OBJECT';
+            else
+                $cacheKey .= 'AS_ARRAY';
+
+            if ( !isset( $GLOBALS[$cacheKey] ) )
+                $GLOBALS[$cacheKey] = array();
+
+            if ( isset( $GLOBALS[$cacheKey][$contentobjectID] ) )
+            {
+                eZDebug::accumulatorStop( 'x_query_assigned_nodes_cache' );
+                return $GLOBALS[$cacheKey][$contentobjectID];
+            }
+        }
+
         $nodesListArray = eZDB::instance()->arrayQuery(
             "SELECT " .
             "ezcontentobject.contentclass_id, ezcontentobject.current_version, ezcontentobject.initial_language_id, ezcontentobject.language_mask, " .
@@ -3953,10 +4021,28 @@ class eZContentObject extends eZPersistentObject
         );
         if ( $asObject == true )
         {
-            return eZContentObjectTreeNode::makeObjectsArray( $nodesListArray, true, array( "id" => $contentobjectID ) );
+            $nodes = eZContentObjectTreeNode::makeObjectsArray( $nodesListArray, true, array( "id" => $contentobjectID ) );
+
+            // ###exp_feature_g1004_ez2014.11### store in cache if enabled
+            if ( $cacheIsEnabled )
+            {
+                $GLOBALS[$cacheKey][$contentobjectID] = $nodes;
+                eZDebug::accumulatorStop( 'x_query_assigned_nodes' );
+            }
+
+            return $nodes;
         }
         else
+        {
+            // ###exp_feature_g1004_ez2014.11### store in cache if enabled
+            if ( $cacheIsEnabled )
+            {
+                $GLOBALS[$cacheKey][$contentobjectID] = $nodesListArray;
+                eZDebug::accumulatorStop( 'x_query_assigned_nodes' );
+            }
+
             return $nodesListArray;
+        }
     }
 
     /**
@@ -4112,11 +4198,21 @@ class eZContentObject extends eZPersistentObject
      * @param string|bool $language
      * @return array|int 1 if has access, 0 if not, array if $returnAccessList is true
      */
-    function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false )
+    function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false, $userID = false )
     {
         $classID = $originalClassID;
-        $user = eZUser::currentUser();
-        $userID = $user->attribute( 'contentobject_id' );
+        // ###exp_feature_g1003_ez2014.11### Optional userID parameter to check access for a specific user rather than current
+        if ( $userID == false )
+        {
+            $user = eZUser::currentUser();
+            $userID = $user->attribute( 'contentobject_id' );
+        }
+        else
+        {
+            $user = eZUser::fetch( $userID );
+            if ( !is_object( $user ) )
+                return 0;
+        }
         $origFunctionName = $functionName;
 
         // Fetch the ID of the language if we get a string with a language code
@@ -4195,7 +4291,8 @@ class eZContentObject extends eZPersistentObject
             if ( $functionName == 'edit' )
             {
                 // Check if we have 'create' access under the main parent
-                if ( $this->attribute( 'current_version' ) == 1 && !$this->attribute( 'status' ) )
+                // ###exp_feature_g1014_ez2014.11### If no initial version is published yet, check status only (version 1 constraint removed)
+                if ( !$this->attribute( 'status' ) )
                 {
                     $mainNode = eZNodeAssignment::fetchForObject( $this->attribute( 'id' ), $this->attribute( 'current_version' ) );
                     $parentObj = $mainNode[0]->attribute( 'parent_contentobject' );
@@ -4501,6 +4598,14 @@ class eZContentObject extends eZPersistentObject
                             else
                             {
                                 $parentNodes = $this->attribute( 'parent_nodes' );
+                                // ###exp_feature_g1016_ez2014.11### For unpublished draft objects, use the temp main node parent for subtree access checks
+                                if ( count( $parentNodes ) == 0 && $this->attribute('status') == self::STATUS_DRAFT )
+                                {
+                                    $version = $this->currentVersion();
+                                    $versionTmpMainNode = $version->tempMainNode();
+                                    if ( $versionTmpMainNode )
+                                        $parentNodes[] = $versionTmpMainNode->ParentNodeID;
+                                }
                                 if ( count( $parentNodes ) == 0 )
                                 {
                                     if ( $this->attribute( 'owner_id' ) == $userID || $this->ID == $userID )
@@ -4564,6 +4669,14 @@ class eZContentObject extends eZPersistentObject
                             else
                             {
                                 $parentNodes = $this->attribute( 'parent_nodes' );
+                                // ###exp_feature_g1016_ez2014.11### For unpublished draft objects, use the temp main node parent for subtree access checks
+                                if ( count( $parentNodes ) == 0 && $this->attribute('status') == self::STATUS_DRAFT )
+                                {
+                                    $version = $this->currentVersion();
+                                    $versionTmpMainNode = $version->tempMainNode();
+                                    if ( $versionTmpMainNode )
+                                        $parentNodes[] = $versionTmpMainNode->ParentNodeID;
+                                }
                                 if ( count( $parentNodes ) == 0 )
                                 {
                                     if ( $this->attribute( 'owner_id' ) == $userID || $this->ID == $userID )
@@ -4596,6 +4709,38 @@ class eZContentObject extends eZPersistentObject
                                 $limitationList = array( 'Limitation' => $key,
                                                          'Required' => $limitationArray[$key] );
                             }
+                        } break;
+
+                        // ###exp_feature_g1002_ez2014.11### #2116 SNAC role-matrix check in eZ permission system
+                        case 'SNAC_RoleMatrixCheck':
+                        {
+                            // SNAC role-matrix check against current user
+
+                            // if SNAC is active
+                            if ( in_array( 1, $limitationArray[$key] ) )
+                            {
+                                $currentVersion = $this->attribute( 'current_version' );
+                                $contentObjectId = $this->attribute( 'id' );
+                                // true or false
+                                if ( class_exists( 'ExpEceSnacRoleBitmask' ) )
+                                {
+                                    $hasAccess = ExpEceSnacRoleBitmask::checkAccessByObjectIdAndVersionAndUserId( $contentObjectId, $currentVersion, $userID );
+
+                                    if ( $hasAccess )
+                                    {
+                                        $access = 'allowed';
+                                    }
+                                    else
+                                    {
+                                        $access = 'denied';
+                                        $limitationList = array( 'Limitation' => $key,
+                                                                 'Required' => 'Current User SNAC not match' );
+                                    }
+                                    eZDebug::writeDebug( 'ExpEceSnacRoleBitmask::checkAccessByObjectIdAndVersionAndUserId( $contentObjectId, $currentVersion, $userID )'
+                                                         . "\nSNAC_RoleMatrixCheck access: $access", __METHOD__ );
+                                }
+                            }
+
                         } break;
 
                         default:
@@ -4631,7 +4776,8 @@ class eZContentObject extends eZPersistentObject
                 if ( $functionName == 'edit' )
                 {
                     // Check if we have 'create' access under the main parent
-                    if ( $this->attribute( 'current_version' ) == 1 && !$this->attribute( 'status' ) )
+                    // ###exp_feature_g1014_ez2014.11### If no initial version is published yet, check status only (version 1 constraint removed)
+                    if ( !$this->attribute( 'status' ) )
                     {
                         $mainNode = eZNodeAssignment::fetchForObject( $this->attribute( 'id' ), $this->attribute( 'current_version' ) );
                         $parentObj = $mainNode[0]->attribute( 'parent_contentobject' );

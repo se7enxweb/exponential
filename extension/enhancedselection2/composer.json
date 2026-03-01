@@ -1,0 +1,22 @@
+{
+    "name": "se7enxweb/enhancedselection2",
+    "description": "The Enhanced Selection type was initially based on the standard eZ publish Selection ('ezselection') datatype. It's original intent was to provide the same functionality as the standard datatype, but store an identifier instead of an id in the contentobject attribute.",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "SCK-CEN (Belgian Nuclear Research Centre)",
+            "homepage": "http://www.sckcen.be"
+        },
+        {
+            "name": "Netgen",
+            "homepage": "http://www.netgenlabs.com"
+        }
+    ],
+    "require": {
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "enhancedselection2"
+    }
+}

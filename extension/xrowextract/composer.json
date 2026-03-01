@@ -1,0 +1,23 @@
+{
+    "name": "se7enxweb/xrowextract",
+    "description": "This extenstion delivers tools for extracting/exporting content object data to csv",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "7x",
+            "homepage": "https://se7enx.com"
+        },
+        {
+            "name": "xrow GmbH",
+            "homepage": "https://www.xrow.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "xrowextract"
+    }
+}

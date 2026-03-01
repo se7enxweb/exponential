@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>7x eZ Publish REST API v2 - CRUD APIs</name>
+        <version>1.2.0</version>
+        <copyright>Copyright (C) 7x and eZ Systems AS. All rights reserved.</copyright>
+        <license>GNU General Public License v2 (or later)</license>
+    </metadata>
+</software>

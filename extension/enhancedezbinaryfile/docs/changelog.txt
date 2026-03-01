@@ -1,0 +1,12 @@
+1.0 - 1.1  Compatible with ez4.1.0
+
+- Changed all instances of eZDOMDocument to DOMDocument since lib/ezxml went
+  away.
+
+- Added a filecheck template operator which will do a file_exists so it's
+  possible to display a link only if the file exists.  This new functionality should
+  be backward compatible to existing collected information.
+  syntax: {if eq($attribute.data_text|filecheck,true)}
+
+- Added the check to collectinfo to only send the multi-part mail if there
+  is a file attachment.

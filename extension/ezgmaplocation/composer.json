@@ -1,0 +1,24 @@
+{
+    "name": "se7enxweb/ezgmaplocation",
+    "description": "eZ Publish Legacy map location datatype extension",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "eZ Publish dev-team & eZ Community",
+            "homepage": "https://github.com/se7enxweb/ezgmaplocation"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "suggest": {
+        "se7enxweb/ezflow": "~6.0.0",
+        "se7enxweb/ezwebin": "~6.0.0",
+        "se7enxweb/ezdemo": "~6.0.0"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "ezgmaplocation"
+    }
+}

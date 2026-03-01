@@ -1,4 +1,5 @@
 <?php
+/// ###exp_feature_g1012_ez2014.11### content/versionview/ erweitern um Parameter (view_mode)/... z.B. print ///
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -12,6 +13,18 @@ $ObjectID = (int)$ObjectID;
 $EditVersion = (int)$EditVersion;
 $LanguageCode = htmlspecialchars( $LanguageCode );
 $viewParameters = array( 'offset' => $Offset );
+
+//$viewMode = 'full';
+//$viewMode = 'print';
+// content/versionview/344002/3/ger-DE/(view_mode)/print
+if ( isset( $Params['ViewMode'] ) && $Params['ViewMode'] != '')
+{
+    $viewMode = $Params['ViewMode'];
+}
+else
+{
+    $viewMode = 'full';
+}
 
 // Will be sent from the content/edit page and should be kept
 // incase the user decides to continue editing.
@@ -259,12 +272,15 @@ if ( $http->hasSessionVariable( 'LastAccessesVersionURI' ) )
     $tpl->setVariable( 'redirect_uri', $http->sessionVariable( 'LastAccessesVersionURI' ) );
 }
 
+/// ###exp_feature_g1012_ez2014.11###
+$tpl->setVariable( 'view_mode', $viewMode );
+
 $designKeys = array( array( 'object', $contentObject->attribute( 'id' ) ), // Object ID
                      array( 'node', $virtualNodeID ), // Node id
                      array( 'remote_id', $contentObject->attribute( 'remote_id' ) ),
                      array( 'class', $class->attribute( 'id' ) ), // Class ID
                      array( 'class_identifier', $class->attribute( 'identifier' ) ), // Class identifier
-                     array( 'viewmode', 'full' ) );  // View mode
+                     array( 'viewmode', $viewMode ) );  // View mode /// ###exp_feature_g1012_ez2014.11###
 
 if ( $assignment )
 {
@@ -279,7 +295,9 @@ $res->setKeys( $designKeys );
 unset( $contentObject );
 $contentObject = $node->attribute( 'object' );
 
-$Result = eZNodeviewfunctions::generateNodeViewData( $tpl, $node, $contentObject, $LanguageCode, 'full', 0, $viewParameters );
+/// ###exp_feature_g1012_ez2014.11###
+//$Result = eZNodeviewfunctions::generateNodeViewData( $tpl, $node, $contentObject, $LanguageCode, 'full', 0, $viewParameters );
+$Result = eZNodeviewfunctions::generateNodeViewData( $tpl, $node, $contentObject, $LanguageCode, $viewMode, 0, $viewParameters );
 
 $Result['requested_uri_string'] = $requestedURIString;
 $Result['ui_context'] = 'view';

@@ -1,0 +1,252 @@
+BC Website Statistics extension INSTALL
+
+Installation
+============
+
+1. Getting eZ publish
+   ------------------
+
+   You can download a version of eZ publish from ez.no,
+   you will find the various versions at:
+
+   http://ez.no/download/ez_publish/ez_publish_4_stable_releases
+
+   Note: You will require eZ publish 4.0.0 or higher
+
+   Information on the installation of eZ publish can be found at:
+   
+   http://ez.no/products/ez_publish_cms/documentation/installation
+   and
+   http://ez.no/doc
+
+
+2. Installing BC Website Statistics extension package
+   ---------------------------------------------
+
+   1. Copy the package into the `extension' directory
+   in the root of your eZ publish installation.
+
+   2. Unpack the files in the distribution. The command
+   necessary is depends on the file you downloaded.
+
+   [tar.gz]:
+   $ tar -zxvf bcwebsitestatistics.tar.gz
+
+   [zip]:
+   $ unzip bcwebsitestatistics.tar.zip
+
+
+3. Activate BC Website Statistics extension
+   -------------------------------------------
+
+   We must now enable the extension in eZ publish.
+
+   You must enable the bcwebsitestatistics extension *above*
+   ezwebin design extension in order for all features to function properly.
+
+   To do this edit site.ini.append(.php) in the folder
+   root_of_ezpublish/settings. If this file does not exist;
+   create it. Locate (or add) the block
+
+   [ExtensionSettings] and add the line:
+   ActiveExtensions[]=bcwebsitestatistics
+
+   If you run several sites using only one distribution
+   and only some of the sites should use the extension,
+   make the changes in the override file of that siteaccess.
+
+   E.g root_of_ezpublish/settings/siteaccess/shop/site.ini.append(.php)
+   But instead of using ActiveExtensions you must add these lines instead:
+
+   [ExtensionSettings]
+   ActiveAccessExtensions[]=bcwebsitestatistics
+
+
+Configuration
+=============
+
+4. Configuration of BC Website Statistics extension
+   ----------------------------------------------
+
+   Make sure you have configured your website's profile in the
+   Google Analytics Report Site at, http://google.com/analytics
+
+   The configuration of the BC Website Statistics extension settings is required.
+   For details on configuring BC Website Statistics extension settings,
+   please read the file doc/CONFIG.
+
+
+5. Install BC Website Statistics Template Operators
+   ----------------------------------------------
+
+   Decide first if you only need page tracking or if you also need webshop order tracking.
+   If you need to collect webshop customer order statistics please follow the instructions below starting at, 5.3
+   If however you only need to collect pageview statistics please follow these following instructions.
+
+5.1 Add Page Tracking Template Operator
+
+    Install the following template operator code snippet in your primary design extension's pagelayout.tpl template:
+
+    {'false'|bc_ga_urchin()}
+
+    As the last element before the string '</head>'.
+
+    ** Be certain to specify your Urchin website profile account code number in the extension settings.
+
+    For more details on the BC Website Statistics template operator installation steps please see the file doc/USAGE.
+
+5.2 Review
+
+    Test. Test to ensure you installation has successfully enabled the related modifications (dependencies)
+
+    Clear All Caches. Be certain to clear all caches via cli and admin.
+     - eZ Publish Administration > Setup > Cache >> Clear All
+     - eZ Publish Shell Command, # ./bin/php/ezcache.php --clear-all
+
+    Review. Review the source code output to ensure the page and order tracking features are enabled correctly.
+
+    Reconfirm. Reconfirm the correct and successful installation of the settings and template operators.
+
+    Enable. Enable Google Page Statistics Tracking
+
+    You must confirm the installation of Google Analytics urchin information 
+    into your eZ publish installation successfully within the Google Analytics 
+    website after step #8, http://www.google.com/analytics
+
+    Analytics Settings > Profile Settings > Tracking Status
+
+
+
+5.3 Usage: (e-Commerce) Order / Purchase Statistics Tracking for your web site.
+    ---------------------------------------------------------------------------
+
+If you need to collect webshop customer order statistics please follow these instructions.
+If however you only need to collect pageview statistics please disregard the following instructions.
+
+5.4 Enable Extension
+
+    Simply enable this extension in your eZ Publish installation.
+
+5.5 Configure Extension Settings
+
+5.6 Install BC Website Statistics Template Operator
+
+5.7 Install the template operator in your primary design extension's templates.
+   
+    For more details on the BC Website Statistics template operator installation steps please see the file doc/USAGE.
+
+5.8 Install the following template operators in your primary design extension's pagelayout.tpl template
+
+    Place the template operator '{'false'|bc_ga_urchin()}' as the last element before the string '</head>'.
+
+5.9 Install the following template operator in your primary design extension's order.tpl template
+
+    ** This step is only required if you do not use the ezwebin design extension
+
+    'bc_ga_urchinOrder' - This template 'order.tpl' (a modified copy of the confirmorder.tpl) is enabled by default by the bcwebsitestatistics design extension and activated by default.
+
+    Please note the following important installation dependencies surrounding the customization of the order.tpl template
+
+    - The bcwebsitestatistics extension provides one unique template.
+
+    - The template 'bcwebsitestatistics/order.tpl' is based on the ezwebin (3.9.0) design extension template 'shop/confirmorder.tpl'
+
+    - The template 'order.tpl' has been modified to (upon workflow event trigger) present the user with an 'order completed' view before presenting the user with the 'order view' / 'order receipt view'.
+
+    - The template 'order.tpl' has been simplified to ensure it's unique and distinct from the 'order receipt view'.
+
+    - To install the operator 'bc_ga_urchinOrder', Place the template operator '{'false'|bc_ga_urchinOrder( $order )}' in your own replacement for the template order.tpl
+
+6.0 Create Workflow
+
+    A) In the eZ publish admin, go to Setup -> Workflows
+       and click New Workflow Group.
+
+    B) Name the group something like "Shop" and click OK.
+       The group will be added to the workflow groups.
+
+    C) Click on the group you have just created, and in the
+       Workflows box click the "New Workflow" button.
+
+       1) Name the workflow "Receipt".
+
+       2) You will now see an Event select dropdown.
+          1) Select "Event / BC Website Statistics - Order Statistics Submission and Order Completed View"
+
+          2) Confirm you choice by clicking the "Add Event" button
+             just to the right of the select dropdown.
+
+       3) Enter a description "BC Website Statistics Receipt Workflow Event Template View"
+
+       4) Click the 'Ok' to save these modifications.
+
+       5) Clear All Cache via both the administration gui and cli script.
+          Please, clear all cache completely, this the most important step most people omit.
+
+       6) Note: Do not edit workflow setting, must remove and read to affect workflow event definitions as they are stored in a very static prone to confusion if you try to edit instead of remove and re-add.
+
+6.1 Install workflow to trigger
+
+    A) Now click on the Triggers link in the left hand menu.
+
+       In the table "Workflow Triggers" you will see a list of available triggers.
+
+       On the line: "shop, checkout, after, (Workflow Drop Down)"
+
+       "Click" the dropdown select the receipt event you have just created.
+
+       Click Apply changes Button to save your trigger selection modifications
+
+    B) Clear All Cache via both the administration gui and cli script.
+
+    C) After you have followed all these steps, the extension's
+       workflow settings should be activated, configured and functioning properly.
+
+6.2 Review
+
+      Test. Test to ensure you installation has successfully enabled the related modifications (dependencies)
+
+      Review. Review the source code output to ensure the page and order tracking features are enabled correctly.
+
+      Reconfirm. Reconfirm the correct and successful installation of the settings, template operators, workflow and trigger. 
+
+      Clear All Caches. Be certain to clear all caches. Both within 
+      - the eZ Publish Administration > Setup > Cache 
+      - and via shell comandline # ./bin/php/ezcache.php --clear-all
+
+6. Testing: Shop Checkout, Workflow and Trigger Configuration
+   ----------------------------------------------------------
+
+   After completing the above setup you should login to eZ publish
+   add a product to your basket, proceed to checkout, enter your
+   account information and confirm your order.
+
+   After all of the checkout process steps have been completed
+   like account registration, order confirmation, payment, any
+   additional configured workflow events; at the very last view to
+   display the BC Website Statistics Order Completed / Javascript
+   Submission View just before redirecting the user finally at the
+   end to the order view list.
+
+
+Troubleshooting
+===============
+
+1. Read the DEBUG
+   --------------
+
+   Some common debug suggestions are listed in the guide doc/DEBUG.
+
+2. Read the FAQ
+   ------------
+
+   Some problems are more common than others. The most common ones
+   are listed in the doc/FAQ.
+
+3. Support
+   -------
+
+   If you have find any problems not handled by this document or the FAQ you
+   can contact Brookins Consulting through the support system:
+
+   http://brookinsconsulting.com/contact

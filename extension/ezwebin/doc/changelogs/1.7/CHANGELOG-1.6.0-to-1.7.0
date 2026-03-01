@@ -1,0 +1,26 @@
+Changes from 1.6-0 to 1.7-0
+
+*Bugs*
+
+- Fixed bug #016803: Fix some settings that were changed in the default eZ Publish install
+- Fixed bug #016799: CSS class doesn't show when link is image, not text
+  (merged from eZ Publish trunk rev. 25306)
+- Fixed bug #016955: $persistent['top_menu'] should be $parameters['top_menu'] in ezpagedata
+- Fixed bug #016562: EZOE shows to editor in edit mode mesasage "You do not have permission to view this object" instead of embed files
+- Fixed bug #016744: ezarchive.php Query error (1055): 'trunk.ezcontentobject_attribute.data_int' isn't in GROUP BY
+- Fixed bug #014614: ezarchive doesn't take into account the visibility nor the version of the object
+- Fixed bug #017042: full/event calendar shows "Show All Events.." without i18n
+- Fixed bug #017041: full/forums.tpl contains title "Forum" without i18n
+- Fixed bug #016077: missing i18n in extension/ezwebin/design/ezwebin/templates/shop/confirmorder.tpl
+- Fixed bug #017211: Fix html stripping in password field
+
+*Enhancements*
+
+- Implemented enhancement #13643: eztagcloud() performance optimization
+- Implemented enhancement #16711: Making extension aware of the order/priority in which they need to be loaded
+- Implemented enhancement #16724: Attribute grouping and description missing in Front End editing
+- Implemented enhancement #16825: Add support for html5 <video> and <audio> to eZmedia datatype
+- Implemented enhancement #16930: Enabling ezkeywordlist operator to accept an array of class identifiers as first parameter
+- Implemented enhancement #16931: Enabling ezkeywordlist operator to accept a new optional 'depth' third parameter
+- Implemented enhancement #17271: eZ publish 4.4 beta3: eZ flow my profile page
+- Added extension.xml that replaces both loading.php and ezinfo.php (deprecated)

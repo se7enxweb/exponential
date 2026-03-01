@@ -1,5 +1,7 @@
 <?php
 /**
+ * // ###exp_feature_g44_ez2014.11### separate var_log and var_cache project folders
+ *
  * File containing the eZLog class.
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -28,6 +30,13 @@ class eZLog
     */
     static function write( $message, $logName = 'common.log', $dir = 'var/log' )
     {
+
+        // ###exp_feature_g44_ez2014.11### separate var_log and var_cache project folders
+        if ( defined( 'exp_feature_USE_EXTRA_FOLDER_VAR_LOG' ) && exp_feature_USE_EXTRA_FOLDER_VAR_LOG === true )
+        {
+            $dir = str_replace( 'var/', 'var_log/', $dir );
+        }
+
         $fileName = $dir . '/' . $logName;
         $oldumask = @umask( 0 );
 
@@ -86,6 +95,13 @@ class eZLog
     {
         $ini = eZINI::instance();
         $varDir = $ini->variable( 'FileSettings', 'VarDir' );
+
+        // ###exp_feature_g44_ez2014.11### separate var_log and var_cache project folders
+        if ( defined( 'exp_feature_USE_EXTRA_FOLDER_VAR_LOG' ) && exp_feature_USE_EXTRA_FOLDER_VAR_LOG === true )
+        {
+            $varDir = str_replace( 'var/', 'var_log/', $varDir );
+        }
+
         $logDir = $ini->variable( 'FileSettings', 'LogDir' );
         $logName = 'storage.log';
         $fileName = $varDir . '/' . $logDir . '/' . $logName;

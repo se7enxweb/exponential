@@ -1170,6 +1170,9 @@ class eZDebug
         $GLOBALS['eZDebugAllowed'] = $GLOBALS['eZDebugAllowedByIP'];
         $GLOBALS['eZDebugEnabled'] = $settings['debug-enabled'] && $GLOBALS['eZDebugAllowedByIP'];
 
+        // ###exp_feature_g03_ez2014.05.1### Update log file directory for current siteaccess
+        self::updateLogFileDirForCurrentSiteaccess();
+
         eZDebug::setHandleType( $oldHandleType );
     }
 
@@ -2077,6 +2080,61 @@ class eZDebug
 
     public $TimeAccumulatorGroupList;
 
+
+    /**
+     * ###exp_feature_g03_ez2014.05.1###
+     * Update the log directory based on current siteaccess site.ini settings.
+     *
+     * [FileSettings]
+     * UseGlobalLogDir=enabled|disabled
+     *
+     * When disabled, each siteaccess uses its own VarDir/LogDir path.
+     * When enabled (default), all siteaccesses share var/log.
+     */
+    static function updateLogFileDirForCurrentSiteaccess()
+    {
+        $ini = eZINI::instance();
+        $debug = eZDebug::instance();
+
+        $useGlobalLogDir = $ini->variable( 'FileSettings', 'UseGlobalLogDir' );
+        if ( $useGlobalLogDir === 'disabled' )
+        {
+            $varDir = $ini->variable( 'FileSettings', 'VarDir' );
+            $logDir = $ini->variable( 'FileSettings', 'LogDir' );
+            $varLogDir = "$varDir/$logDir/";
+            $debug->setLogFiles( $varLogDir );
+        }
+        else
+        {
+            // Use default global log directory
+            $debug->setLogFiles();
+        }
+    }
+
+    /**
+     * ###exp_feature_g03_ez2014.11###
+     * Set the log file paths for all debug levels.
+     *
+     * ###exp_feature_g44_ez2014.11### When EXP_USE_EXTRA_FOLDER_VAR_LOG is true,
+     * separates log storage into a dedicated /var_log directory.
+     *
+     * @param string $logDir Base log directory path (default: 'var/log/').
+     */
+    function setLogFiles( $logDir = 'var/log/' )
+    {
+        // ###exp_feature_g44_ez2014.11### separate var_log and var_cache project folders
+        if ( defined( 'EXP_USE_EXTRA_FOLDER_VAR_LOG' ) && EXP_USE_EXTRA_FOLDER_VAR_LOG === true )
+        {
+            $logDir = str_replace( 'var/', 'var_log/', $logDir );
+        }
+        $this->LogFiles = array(
+            self::LEVEL_NOTICE  => array( $logDir, 'notice.log' ),
+            self::LEVEL_WARNING => array( $logDir, 'warning.log' ),
+            self::LEVEL_ERROR   => array( $logDir, 'error.log' ),
+            self::LEVEL_DEBUG   => array( $logDir, 'debug.log' ),
+            self::LEVEL_STRICT  => array( $logDir, 'strict.log' ),
+        );
+    }
 
 }
 

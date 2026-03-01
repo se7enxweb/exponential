@@ -1,0 +1,19 @@
+{
+    "name": "se7enxweb/ezprestapiprovider",
+    "description": "eZ Publish REST API v1 content provider",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "eZ Publish dev-team & eZ Community",
+            "homepage": "https://github.com/se7enxweb/ezprestapiprovider/contributors"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "se7enxweb/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "ezprestapiprovider"
+    }
+}
