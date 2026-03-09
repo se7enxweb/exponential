@@ -144,7 +144,6 @@ class eZSOAPClient
                 "SOAPAction: \"" . $request->ns() . '/' . $request->name() . "\"\r\n" .
                 "Content-Length: " . strlen( $payload ) . "\r\n\r\n" .
                 $payload;
-
             if ( !fputs( $fp, $HTTPRequest, strlen( $HTTPRequest ) ) )
             {
                 $this->ErrorString = "<b>Error:</b> could not send the SOAP request. Could not write to the socket.";
@@ -176,31 +175,31 @@ class eZSOAPClient
 
                 if ( $ch != 0 )
                 {
-                    $HTTPCall = "POST " . $this->Path . " HTTP/1.0\r\n" .
-                        "User-Agent: eZ soap client\r\n" .
-                        "Host: " . $this->Server . ":" . $this->Port . "\r\n" .
-                        "Content-Type: text/xml\r\n" .
-                        "SOAPAction: \"" . $request->ns() . '/' . $request->name() . "\"\r\n" .
-                        "Content-Length: " . strlen( $payload ) . "\r\n";
+                    $headers = [
+                        "User-Agent: eZ soap client",
+                        "Host: " . $this->Server . ":" . $this->Port,
+                        "Content-Type: text/xml",
+                        "SOAPAction: \"" . $request->ns() . '/' . $request->name() . "\"",
+                        "Content-Length: " . strlen( $payload ),
+                    ];
                     if ( $this->login() != '' )
                     {
-                        $HTTPCall .= "Authorization: Basic " .  base64_encode( $this->login() . ":" . $this->Password() ) . "\r\n";
+                        $headers[] = "Authorization: Basic " . base64_encode( $this->login() . ":" . $this->password() );
                     }
-                    $HTTPCall .= "\r\n" . $payload;
-
                     curl_setopt( $ch, CURLOPT_URL, $URL );
                     curl_setopt( $ch, CURLOPT_HEADER, 1 );
                     curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-                    curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, $HTTPCall );  // Don't use CURLOPT_CUSTOMREQUEST without making sure your server supports the custom request method first.
+                    curl_setopt( $ch, CURLOPT_POST, true );
+                    curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
+                    curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers );
                     unset( $rawResponse );
 
-                    if ( $ch != 0 )
+                    $rawResponse = curl_exec( $ch );
+
+                    if ( $rawResponse === false )
                     {
-                        $rawResponse = curl_exec( $ch );
-                    }
-                    if ( !$rawResponse )
-                    {
-                        $this->ErrorString = "<b>Error:</b> could not send the XML-SOAP with SSL call. Could not write to the socket.";
+                        $this->ErrorString = "<b>Error:</b> could not send the XML-SOAP with SSL call. Could not write to the socket. cURL failed: " . curl_error($ch) . " (errno " . curl_errno($ch) . ")";
+                        curl_close( $ch );
                         $response = 0;
                         return $response;
                     }
@@ -209,8 +208,10 @@ class eZSOAPClient
                 curl_close( $ch );
             }
         }
-        $response = new eZSOAPResponse();
+
+	$response = new eZSOAPResponse();
         $response->decodeStream( $request, $rawResponse );
+
         return $response;
     }
 
