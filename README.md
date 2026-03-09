@@ -123,7 +123,7 @@ Exponential Project Website: [exponential.earth](https://exponential.earth)
 Support Exponential! Project extension support Website: [support.exponential.earth](https://support.exponential.earth)
 
 Share Exponential! Telegram Community Support Chat
-[https://t.me/exponential](https://t.me/exponential)
+[https://t.me/exponential](https://t.me/exponentialcms)
 
 # How to contribute new features and bugfixes into Exponential
 
