@@ -108,9 +108,15 @@ Read [doc/INSTALL.md](doc/INSTALL.md) or go to [exponential.doc.exponential.eart
 
 # Issue tracker
 
+## Exponential (6.x) Issue tracker
+
 Submitting bugs, improvements and stories is possible on [https://github.com/se7enxweb/exponential/issues](https://github.com/se7enxweb/exponential/issues)
 
 If you discover a [security issue](SECURITY.md), please responsibly report such issues via email to security@exponential.earth
+
+## Exponential Project Issue tracker
+
+Submit bugs, stories and issues in general about almost anything Exponential Project / Community / Ecosystem / Website Software related to the [Exponential Project Issue Tracker](https://issues.exponential.earth) 
 
 # Where to get more help
 
