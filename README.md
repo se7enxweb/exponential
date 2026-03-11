@@ -110,13 +110,12 @@ Read [doc/INSTALL.md](doc/INSTALL.md) or go to [exponential.doc.exponential.eart
 
 ## Exponential (6.x) Issue tracker
 
-Submitting bugs, improvements and stories is possible on [https://github.com/se7enxweb/exponential/issues](https://github.com/se7enxweb/exponential/issues)
-
+Submitting bugs, improvements and stories is possible on [Exponential Project Issue Tracker](https://issues.exponential.earth)
 If you discover a [security issue](SECURITY.md), please responsibly report such issues via email to security@exponential.earth
 
-## Exponential Project Issue tracker
+## Exponential Community Project Issue tracker
 
-Submit bugs, stories and issues in general about almost anything Exponential Project / Community / Ecosystem / Website Software related to the [Exponential Project Issue Tracker](https://issues.exponential.earth) 
+Submit bugs, stories and issues in general about almost anything Exponential Project / Community / Ecosystem / Website Software related to the [https://github.com/se7enxweb/exponential-community/issues](https://github.com/se7enxweb/exponential-community/issues)
 
 # Where to get more help
 
@@ -146,8 +145,7 @@ A wide range of donation options avaialble at [sponsor.se7enx.com](https://spons
 
 # What is eZ Platform?
 
-Exponential's technological successor, eZ Platform, is a highly extensible, pure Content Managment Platform built upon the ideals core to Symfony. It provides the same flexible content model at it's core like Exponential, and has a growing amount of additional features outside the traditional CMS scope provided by means of "Bundles"
-extending it.
+eZ Platform was Exponential's technological successor before being abandoned by Ibexa. eZ Platform is a highly extensible, pure Content Managment Platform built upon the ideals core to Symfony. It provides the same flexible content model at it's core like Exponential, and has a growing amount of additional features outside the traditional CMS scope provided by means of "Bundles" extending it.
 
 It is built on top of the full Symfony Framework, giving developers access to "standard" tools for rapid web & application development.
 
@@ -157,7 +155,9 @@ Further reading on the archived: [https://ezplatform.com/](http://web.archive.or
 
 Note: Ibexa has discontinued support for the eZ Platform Product Line favoring instead to support only the Ibexa DXP / OSS Product line going forward.
 
-eZ Platform is survived in part to 7x who has forked, mirrored, updated it's last free release of the stack of software and rebranded it as Exponential Platform 3.2.9 and Exponential Platform Legacy 2.5.0.1 (with legacy support) which provided much needed updates to provide for required php 8.3+ support allowing this software to continue to serve the users who fell in love with it from the start. Exponential Platform is just one of the many Symfony based PHP CMS + Ecommerce Solutions available under free / open source licenses.
+eZ Platform is survived in part by Exponential Platform Project by 7x who has forked, mirrored, updated it's last free release eZ Platform stack of software and rebranded it as Exponential Platform 3.2.9 and Exponential Platform Legacy 2.5.0.1 (with legacy support) which provided much needed updates to provide for required php 8.3+ support allowing this software to continue to serve the users who fell in love with it from the start. Exponential Platform is just one of the many Symfony based PHP CMS + Ecommerce Solutions available under free / open source licenses.
+
+Since the release of Exponential Platform; 7x has released the next generation Exponential Platform Nexus which represents the future of modern Symfony based CMS Development.
 
 # What is Exponential Platform?
 
@@ -167,7 +167,7 @@ Exponential Platform currently comes in three different distributions that are v
 
 - Exponential Platform 3.2.9 Symfony only CMS
 
-- Exponential Platform Nexus 1.0.0.3 Dual Kernel Symfony 3.4+ CMS which also includes a full copy of Exponential 6.x+
+- Exponential Platform Nexus 1.0.0.0.3 Dual Kernel Symfony 3.4+ CMS which also includes a full copy of Exponential 6.x+
 
 - Exponential Platform Legacy 2.5.0.1 Dual Kernel Symfony CMS which also includes a full copy of Exponential 6
 
@@ -184,6 +184,8 @@ Built on top of Symfony, Ibexa DXP OSS offers developers access to standardized 
 Ibexa DXP OSS has matured into a robust and versatile platform, serving as a serious option for organizations seeking a cutting-edge CMS solution. For those looking to build modern web experiences, tools like Netgen's Media Website Core further enhance Ibexa OSS, showcasing its potential as a flexible and future-ready platform.
 
 If you're making a choice, choose with care—and consider the power and flexibility of Ibexa DXP OSS.
+
+Ibexas DXP OSS is Dual Licensed with the non-free ibexa licenses or at your option the GNU GPLv2.
 
 Further reading: [ibexa.co](https://ibexa.co/)
 
