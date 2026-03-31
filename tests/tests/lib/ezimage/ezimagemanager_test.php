@@ -34,14 +34,14 @@ class eZImageManagerTest extends ezpTestCase
         return $returnValue === 0;
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
         $this->imageIni = eZINI::instance( 'image.ini' );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $filename = 'tests/tests/lib/ezimage/data/andernach_multihandler.jpg';
         if ( is_file( $filename ) )

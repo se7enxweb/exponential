@@ -9,17 +9,12 @@
  */
 class eZPHPCreatorRegression extends ezpDatabaseTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( 'eZPHPCreator Regression Tests' );
-    }
 
     /**
      * Setup an environment for this test.
      *
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

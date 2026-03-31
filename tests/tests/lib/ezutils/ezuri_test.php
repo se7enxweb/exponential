@@ -10,13 +10,8 @@
 
 class eZURITest extends ezpTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZURI Unit Tests" );
-    }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -27,7 +22,7 @@ class eZURITest extends ezpTestCase
         $ezsys->RequestURI = "/all/work/and/no/sleep/makes/(ole)/a/(dull)/boy";
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         // Make sure to restore the RequestURI in case other tests depends on
         // on the RequestURI variable.

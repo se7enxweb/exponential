@@ -10,7 +10,7 @@
 
 class eZFileDownloadTest extends ezpTestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->file = dirname( __FILE__ ) . "/data/file.txt";

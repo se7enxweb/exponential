@@ -12,13 +12,8 @@ class eZDirTestInsideRoot extends ezpTestCase
 {
     private $rootDir = 'var/tests/eZDirTestInsideRoot/';
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZDirTestInsideRoot" );
-    }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         file_exists( $this->rootDir ) or @mkdir( $this->rootDir, 0777, true );
@@ -27,7 +22,7 @@ class eZDirTestInsideRoot extends ezpTestCase
         touch( $this->rootDir . 'a/b/fileB' );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         foreach ( array( $this->rootDir . 'a/fileA',
                          $this->rootDir . 'a/b/fileB' ) as $file )

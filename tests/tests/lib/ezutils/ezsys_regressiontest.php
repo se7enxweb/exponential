@@ -14,16 +14,14 @@
 class eZSysRegressionTest extends ezpRegressionTest
 {
     /**
-     * Setup webdav test siteaccess & fills $this->files with all the
-     * .request files found in the regression directory, recursively.
+     * Populate $this->files lazily so no constructor override is needed.
+     * PHPUnit 13 made TestCase::__construct() final.
      */
-    public function __construct()
+    public function getFiles(): array
     {
-        // load tests
-        $this->readDirRecursively( dirname( __FILE__ ) . '/server', $this->files, 'php' );
-
-        // call parent (including sorting $this->files as set above)
-        parent::__construct();
+        if ( empty( $this->files ) )
+            $this->readDirRecursively( dirname( __FILE__ ) . '/server', $this->files, 'php' );
+        return parent::getFiles();
     }
 
     /**
@@ -37,7 +35,7 @@ class eZSysRegressionTest extends ezpRegressionTest
     /**
      * Called by PHPUnit before each test, bakup eZSys instance
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->eZSysInstanceBackup = eZSys::instance();
@@ -46,7 +44,7 @@ class eZSysRegressionTest extends ezpRegressionTest
     /**
      * Called by PHPUnit after each test, correct eZSys instance
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         eZSys::setInstance( $this->eZSysInstanceBackup );
         parent::tearDown();

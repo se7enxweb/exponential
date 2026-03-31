@@ -6,13 +6,13 @@ class eZTemplateRegression extends ezpDatabaseTestCase
      */
     private $tpl;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->tpl = eZTemplate::factory();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         unset( $this->tpl );
         parent::tearDown();

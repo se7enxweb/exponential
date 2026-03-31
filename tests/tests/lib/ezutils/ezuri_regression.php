@@ -17,7 +17,7 @@ class eZURIRegression extends ezpTestCase
 
     private $queryString;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         // Backup previous instance of eZSys (if any) and reset it
@@ -31,7 +31,7 @@ class eZURIRegression extends ezpTestCase
         eZSys::init();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         // Make sure to restore eZSys instance in case other tests depends on it
         eZSys::setInstance( $this->oldSysInstance );

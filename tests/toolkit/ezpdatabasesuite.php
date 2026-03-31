@@ -37,7 +37,7 @@ class ezpDatabaseTestSuite extends ezpTestSuite
      */
     protected static $isDatabaseSetup = false;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->setDatabaseEnv();
     }

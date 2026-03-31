@@ -13,7 +13,7 @@
  */
 class eZMySQLiDBFKTest extends ezpDatabaseTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         if ( !in_array( ezpTestRunner::dsn()->dbsyntax, array( 'mysql', 'mysqli' ) ) )
             self::markTestSkipped( "Not running MySQL nor MysQLi, skipping" );

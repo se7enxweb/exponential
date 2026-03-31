@@ -10,7 +10,7 @@
 
 class eZDBInterfaceTest extends ezpDatabaseTestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
     }

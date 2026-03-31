@@ -39,7 +39,7 @@ class ezpDatabaseTestCase extends ezpTestCase
     /**
      * Sets up the database environment
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         if ( ezpTestRunner::dbPerTest() )
@@ -57,7 +57,7 @@ class ezpDatabaseTestCase extends ezpTestCase
         }
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         if ( ezpTestRunner::dbPerTest() )
         {

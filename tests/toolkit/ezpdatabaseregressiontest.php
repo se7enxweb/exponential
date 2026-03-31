@@ -26,25 +26,20 @@ class ezpDatabaseRegressionTest extends ezpDatabaseTestCase
     protected $files = array();
     protected $currentFile;
 
-    public function __construct()
-    {
-        parent::__construct();
-        if ( self::SORT_MODE === 'mtime' )
-        {
-            // Sort by modification time to get updated tests first
-            usort( $this->files,
-                   array( $this, 'sortTestsByMtime' ) );
-        }
-        else
-        {
-            // Sort it, then the file a.in will be processed first. Handy for development.
-            usort( $this->files,
-                   array( $this, 'sortTestsByName' ) );
-        }
-    }
-
+    /**
+     * Get list of files for current set of tests, sorted according to SORT_MODE.
+     * Sorting is applied lazily here so that subclasses can populate $this->files
+     * in setUp() without overriding the final PHPUnit\Framework\TestCase::__construct().
+     */
     public function getFiles()
     {
+        if ( !empty( $this->files ) )
+        {
+            if ( self::SORT_MODE === 'mtime' )
+                usort( $this->files, array( $this, 'sortTestsByMtime' ) );
+            else
+                usort( $this->files, array( $this, 'sortTestsByName' ) );
+        }
         return $this->files;
     }
 

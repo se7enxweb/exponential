@@ -13,14 +13,14 @@ class eZLocaleRegression extends ezpTestCase
 {
     protected $defaultTimezone;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->defaultTimezone = date_default_timezone_get();
         date_default_timezone_set( 'Europe/Paris' );
         parent::setUp();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         date_default_timezone_set( $this->defaultTimezone );
         parent::tearDown();

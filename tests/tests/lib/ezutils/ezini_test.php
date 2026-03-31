@@ -10,11 +10,6 @@
 
 class eZINITest extends ezpTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZINITest" );
-    }
 
     /**
      * Test to make sure default override dirs only contain 'override' folder

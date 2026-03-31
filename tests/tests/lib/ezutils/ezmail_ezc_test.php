@@ -20,7 +20,7 @@ class eZMailEzcTest extends ezpTestCase
         return function_exists( 'imap_open' );
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -37,7 +37,7 @@ class eZMailEzcTest extends ezpTestCase
         ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'DebugReceiverEmail', 'ezp-unittests-01@ez.no' );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         ezpINIHelper::restoreINISettings();
 

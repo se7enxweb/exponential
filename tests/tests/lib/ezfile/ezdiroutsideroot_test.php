@@ -10,17 +10,12 @@
 
 class eZDirTestOutsideRoot extends ezpTestCase
 {
-    protected $rootDir;
+    protected $rootDir = null;
 
-    public function __construct()
+    public function setUp(): void
     {
-        parent::__construct();
-        $this->rootDir = sys_get_temp_dir() . '/tests/';
-        $this->setName( "eZDirTestOutsideRoot" );
-    }
-
-    public function setUp()
-    {
+        if ( $this->rootDir === null )
+            $this->rootDir = sys_get_temp_dir() . '/tests/';
         file_exists( $this->rootDir ) or @mkdir( $this->rootDir, 0777, true ) or $this->markTestSkipped( 'Cannot create temporary directories outside ezp root' );
         file_exists( $this->rootDir . 'a/b/c/' ) or @mkdir( $this->rootDir . 'a/b/c/', 0777, true ) or $this->markTestSkipped( 'Cannot create temporary directories outside ezp root' );
         touch( $this->rootDir . 'a/fileA' ) or $this->markTestSkipped( 'Cannot create temporary files outside ezp root' );
@@ -28,7 +23,7 @@ class eZDirTestOutsideRoot extends ezpTestCase
         parent::setUp();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         foreach ( array( $this->rootDir . 'a/fileA',
                          $this->rootDir . 'a/b/fileB' ) as $file )

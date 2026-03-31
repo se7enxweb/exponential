@@ -10,7 +10,7 @@
 
 class eZImageShellHandlerTest extends ezpTestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -26,7 +26,7 @@ class eZImageShellHandlerTest extends ezpTestCase
         ezpINIHelper::setINISetting( 'image.ini', 'ImageConverterSettings', 'ImageConverters', array( 'ImageMagick' ) );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         ezpINIHelper::restoreINISettings();
         unlink( "tests/tests/lib/ezimage/data/andernach_small.jpg" );

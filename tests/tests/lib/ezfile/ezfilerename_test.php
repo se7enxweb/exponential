@@ -20,7 +20,7 @@ class eZFileRenameTest extends ezpTestCase
 
     private $content;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->fileDir = dirname( __FILE__ ) . "/data";
@@ -32,7 +32,7 @@ class eZFileRenameTest extends ezpTestCase
         PHPUnit_Framework_Error_Warning::$enabled = false;
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         // If file has been renamed, restore it at original place
         if ( file_exists( $this->destFile ) )

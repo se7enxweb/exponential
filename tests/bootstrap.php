@@ -41,6 +41,13 @@ require_once __DIR__ . '/../vendor/autoload.php';
 //  - Delegates addTest / tests / run / count / getName to the inner suite
 //
 // Toolkit files KEEP their "extends PHPUnit_Framework_TestSuite" declarations.
+// PHPUnit_Framework_TestCase — simple alias to the modern namespace.
+// Required by ezpTestCase (extends PHPUnit_Framework_TestCase).
+if ( !class_exists( 'PHPUnit_Framework_TestCase', false ) )
+{
+    class_alias( \PHPUnit\Framework\TestCase::class, 'PHPUnit_Framework_TestCase' );
+}
+
 if ( !class_exists( 'PHPUnit_Framework_TestSuite', false ) )
 {
     class PHPUnit_Framework_TestSuite
@@ -67,6 +74,14 @@ if ( !class_exists( 'PHPUnit_Framework_TestSuite', false ) )
             }
         }
 
+        /** @var string Override name set via setName() */
+        protected string $shimName = '';
+
+        public function setName( string $name ): void
+        {
+            $this->shimName = $name;
+        }
+
         public function addTest( PHPUnit\Framework\Test $test, array $groups = [] ): void
         {
             $this->inner->addTest( $test, $groups );
@@ -79,8 +94,8 @@ if ( !class_exists( 'PHPUnit_Framework_TestSuite', false ) )
 
         public function tests(): array { return $this->inner->tests(); }
         public function count(): int   { return $this->inner->count(); }
-        public function getName(): string { return $this->inner->getName(); }
-        public function toString(): string { return $this->inner->getName(); }
+        public function getName(): string { return $this->shimName !== '' ? $this->shimName : $this->inner->name(); }
+        public function toString(): string { return $this->getName(); }
         public function run(): void    { $this->inner->run(); }
         public function getIterator(): Iterator { return $this->inner->getIterator(); }
     }
@@ -136,8 +151,43 @@ if ( !class_exists( 'PHPUnit_TextUI_Command', false ) )
 
 if ( !class_exists( 'PHPUnit_TextUI_TestRunner', false ) )
 {
-    /** Minimal shim — phpunit 10 has no direct equivalent; unused in PHPUnit 10 path. */
-    class PHPUnit_TextUI_TestRunner {}
+    /**
+     * Shim for PHPUnit_TextUI_TestRunner (removed in PHPUnit 9).
+     * Provides the exit-code constants and showError() used by ezpTestRunner.
+     */
+    class PHPUnit_TextUI_TestRunner
+    {
+        const SUCCESS_EXIT = 0;
+        const FAILURE_EXIT = 1;
+        const EXCEPTION_EXIT = 2;
+
+        public static function showError( string $message ): void
+        {
+            fwrite( STDERR, $message . PHP_EOL );
+        }
+    }
+}
+
+// PHPUnit_Framework_ExpectationFailedException → still exists in PHPUnit 13 under new namespace.
+if ( !class_exists( 'PHPUnit_Framework_ExpectationFailedException', false ) )
+{
+    class_alias( \PHPUnit\Framework\ExpectationFailedException::class, 'PHPUnit_Framework_ExpectationFailedException' );
+}
+
+// PHPUnit_Framework_Warning — removed in PHPUnit 10.
+// Old toolkit code does: $this->addTest( new PHPUnit_Framework_Warning("message") )
+// We extend TestCase WITHOUT overriding __construct() so PHPUnit
+// instantiates it with the message as the test name; it surfaces as a test
+// error ("Method not found") when actually run, which is acceptable warning
+// behaviour for modern PHPUnit.
+if ( !class_exists( 'PHPUnit_Framework_Warning', false ) )
+{
+    class PHPUnit_Framework_Warning extends PHPUnit\Framework\TestCase
+    {
+        // Inherits final TestCase::__construct(string $name) — no override needed.
+        // The warning message is passed as $name; if run it will report
+        // "method not found" which surfaces the warning to the developer.
+    }
 }
 
 if ( !class_exists( 'PHP_CodeCoverage_Filter', false ) )
@@ -173,6 +223,7 @@ $optional = [
     'ezpinihelper.php',
     'ezpextensionhelper.php',
     'ezptestdatabasehelper.php',
+    'ezpregressiontest.php',
     'ezpdatabaseregressiontest.php',
     'ezpdatabasesuite.php',
 ];

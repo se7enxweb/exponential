@@ -94,7 +94,7 @@ Mitterrand we   re the jo";
      * initialize the context
      * @see tests/tests/lib/eztemplate/ezpTestCase#setUp()
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->templateStringOperator=new eZTemplateStringOperator();

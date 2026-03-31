@@ -12,13 +12,8 @@ class eZPostgreSQLDBTest extends ezpDatabaseTestCase
 {
     protected $insertDefaultData = false;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZPostgreSQLDB Unit Tests" );
-    }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         if ( ezpTestRunner::dsn()->dbsyntax !== "postgresql" )
             self::markTestSkipped( "Not running PostgresSQL, skipping" );
@@ -30,7 +25,7 @@ class eZPostgreSQLDBTest extends ezpDatabaseTestCase
         ezpTestDatabaseHelper::clean( $this->sharedFixture );
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         // We need to clean up after this test case, since database will not
         // be reset by the suite it initialisation has happened once, see pull req. #234

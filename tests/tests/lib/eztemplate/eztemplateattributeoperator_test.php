@@ -13,18 +13,13 @@ class eZTemplateAttributeOperatorTest extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZTemplateAttributeOperator Unit Tests" );
-    }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         parent::tearDown();
     }
