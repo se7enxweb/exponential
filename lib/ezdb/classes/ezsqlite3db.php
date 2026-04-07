@@ -76,7 +76,14 @@ class eZSQLite3DB extends eZDBInterface
         while ( ( $connection == false || $error !== 0 ) && $numAttempts <= $maxAttempts )
         {
             $directoryPath = 'var/storage/sqlite3';
-            $fullPath = $fileName == ':memory:' ? $fileName : eZDir::path( array( $directoryPath, $fileName ) );
+            // Use absolute path directly (e.g. when bridged from Doctrine/SQLite URL);
+            // otherwise prefix with the default storage directory.
+            if ( $fileName === ':memory:' )
+                $fullPath = $fileName;
+            elseif ( strlen( $fileName ) > 0 && $fileName[0] === '/' )
+                $fullPath = $fileName;
+            else
+                $fullPath = eZDir::path( array( $directoryPath, $fileName ) );
 
             if( !file_exists( $directoryPath ) )
                 mkdir( $directoryPath, 0775 );

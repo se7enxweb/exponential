@@ -268,6 +268,7 @@ return array(
       'eZMySQLBackendError'                                => 'kernel/classes/clusterfilehandlers/dbbackends/mysqlbackenderror.php',
       'eZMySQLCharset'                                     => 'lib/ezdb/classes/ezmysqlcharset.php',
       'eZMySQLiDB'                                         => 'lib/ezdb/classes/ezmysqlidb.php',
+      'eZSQLite3DB'                                        => 'lib/ezdb/classes/ezsqlite3db.php',
       'eZMysqlSchema'                                      => 'lib/ezdbschema/classes/ezmysqlschema.php',
       'eZNamePatternResolver'                              => 'kernel/classes/eznamepatternresolver.php',
       'eZNavigationPart'                                   => 'kernel/classes/eznavigationpart.php',
