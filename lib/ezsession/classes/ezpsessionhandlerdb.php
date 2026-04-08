@@ -56,7 +56,10 @@ class ezpSessionHandlerDB extends ezpSessionHandler
         $db = eZDB::instance();
         if ( !$db->isConnected() )
         {
-            return false;
+            // PHP 8: session read handler must return '' (empty string) on failure, not false.
+            // Returning false causes PHP to mark session_start() as failed and attempt a
+            // recursive restart, producing "Cannot call session save handler in a recursive manner".
+            return '';
         }
 
         $escKey = $db->escapeString( $sessionId );
@@ -77,7 +80,8 @@ class ezpSessionHandlerDB extends ezpSessionHandler
         }
         else
         {
-            return false;
+            // PHP 8: must return '' not false when no session record found.
+            return '';
         }
     }
 
@@ -206,17 +210,28 @@ class ezpSessionHandlerDB extends ezpSessionHandler
                     $maxExecutionTime = self::GC_MAX_EXECUTION_TIME;
             }
 
+            // Bug3 fix: capture GC start time before the loop so the timeout guard
+            // measures actual elapsed time rather than misusing $maxLifeTime as a timestamp.
+            $gcStartTime = time();
+
             do
             {
                 $startTime = time();
-                $rows = $db->arrayQuery( 'SELECT session_key FROM ezsession WHERE expiration_time < ' . $maxLifeTime ,  array( 'offset' => 0, 'limit' => $this->gcSessionsPrIteration, 'column' => 'session_key' ) );
+                // Bug2 fix: ezsession.expiration_time is an absolute Unix timestamp
+                // (stored as time() + SessionTimeout). PHP's automatic GC passes $maxLifeTime
+                // as a duration in seconds (e.g. 1440), so 'expiration_time < $maxLifeTime'
+                // would never match any real session. Use time() to expire sessions whose
+                // absolute expiration timestamp is in the past.
+                $rows = $db->arrayQuery( 'SELECT session_key FROM ezsession WHERE expiration_time < ' . time() ,  array( 'offset' => 0, 'limit' => $this->gcSessionsPrIteration, 'column' => 'session_key' ) );
                 if ( $rows )
                 {
-                    $keyINString = '\'' . implode( '\', \'', $rows ) . '\'';// generateSQLINStatement does not add quotes when casting to string
+                    $keyINString = '\'' . implode( '\', \'', $rows ) . '\'';
                     $db->query( "DELETE FROM ezsession WHERE session_key IN ( $keyINString )" );
 
                     $stopTime = time();
-                    $remaningTime = $maxExecutionTime - self::GC_TIMEOUT_MARGIN - ( $stopTime - $maxLifeTime );
+                    // Bug3 fix: use $gcStartTime (captured before the loop) not $maxLifeTime
+                    // to measure elapsed time. $maxLifeTime is not a start timestamp.
+                    $remaningTime = $maxExecutionTime - self::GC_TIMEOUT_MARGIN - ( $stopTime - $gcStartTime );
                     if ( $remaningTime < ( $stopTime - $startTime ) )
                     {
                         $timedOut = true;
@@ -228,7 +243,8 @@ class ezpSessionHandlerDB extends ezpSessionHandler
         }
         else
         {
-            $db->query( 'DELETE FROM ezsession WHERE expiration_time < ' . $maxLifeTime );
+            // Bug2 fix: use time() -- sessions are stored with absolute expiration timestamps.
+            $db->query( 'DELETE FROM ezsession WHERE expiration_time < ' . time() );
         }
 
         eZSession::triggerCallback( 'gc_post', array( $db, $maxLifeTime ) );
