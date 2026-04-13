@@ -281,9 +281,9 @@ class eZSession
             $sessionName = $ini->variable( 'Session', 'SessionNamePrefix' );
             if ( $ini->variable( 'Session', 'SessionNamePerSiteAccess' ) === 'enabled' )
             {
-                $access = $GLOBALS['eZCurrentAccess'];
+                $access = $GLOBALS['eZCurrentAccess'] ?? null;
                 // Use md5 to make sure name is only consistent of alphanumeric characters
-                $sessionName .=  md5( $access['name'] );
+                $sessionName .= isset( $access['name'] ) ? md5( $access['name'] ) : '';
             }
             if ( $sessionName !== session_name() ) {
                 session_name( $sessionName );
