@@ -86,7 +86,7 @@ class eZSQLite3DB extends eZDBInterface
                 $fullPath = eZDir::path( array( $directoryPath, $fileName ) );
 
             if( !file_exists( $directoryPath ) )
-                mkdir( $directoryPath, 0775 );
+                mkdir( $directoryPath, 0775, true );
             // var_dump( $fullPath ); echo '<hr>'; // die();
             if( !file_exists( $fullPath ) )
                 $fh = fopen($fullPath, 'w') or eZDebug::writeError( "Connection error: Couldn't create database file. Please try again later or inform the system administrator.", "eZSQLite3DB" );
