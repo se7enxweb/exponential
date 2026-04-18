@@ -165,11 +165,23 @@ In short Exponential Platform is the direct continuation of the software stack k
 
 Exponential Platform currently comes in three different distributions that are very powerful and very stable.
 
+- **Exponential Platform Legacy 5.0.x** Dual Kernel Symfony CMS which also includes a full copy of Exponential 6
+
+- Exponential Platform Legacy 4.6.x Dual Kernel Symfony CMS which also includes a full copy of Exponential 6
+
+- Exponential Platform Legacy 3.3.x Dual Kernel Symfony CMS which also includes a full copy of Exponential 6
+
+- Exponential Platform Legacy 2.5.x Dual Kernel Symfony CMS which also includes a full copy of Exponential 6
+
 - Exponential Platform 3.2.9 Symfony only CMS
 
-- Exponential Platform Nexus 1.0.0.0.3 Dual Kernel Symfony 3.4+ CMS which also includes a full copy of Exponential 6.x+
+- **Exponential Platform Nexus 1.3.0.x** is Platform v5.x Dual Kernel Symfony 7.4+ CMS which also includes a full copy of Exponential 6.x+
 
-- Exponential Platform Legacy 2.5.0.1 Dual Kernel Symfony CMS which also includes a full copy of Exponential 6
+- Exponential Platform Nexus 1.2.0.x is Platform v4.x Dual Kernel Symfony 6+ CMS which also includes a full copy of Exponential 6.x+
+
+- Exponential Platform Nexus 1.1.0.x is Platform v3.x Dual Kernel Symfony 5.4+ 3.4+ CMS which also includes a full copy of Exponential 6.x+
+
+- Exponential Platform Nexus 1.0.0.x is Platform v2.5.x Dual Kernel Symfony 3.4+ CMS which also includes a full copy of Exponential 6.x+
 
 Learn more at https://platform.exponential.earth
 
