@@ -163,7 +163,7 @@ Since the release of Exponential Platform; 7x has released the next generation E
 
 In short Exponential Platform is the direct continuation of the software stack known as eZ Platform created by eZ Systems and discontinued by Ibexa. This software represents the latest product line before the move to rebrand the stack to Ibexa DXP/OSS upgraded to support PHP 8.3+ and rebranded to avoid any trademark issues with the continued use of the software by users with a need or desire to build smarter, faster and with greater ease of maintinence within a Symfony based PHP CMS.
 
-Exponential Platform currently comes in three different distributions that are very powerful and very stable.
+Exponential Platform currently comes in nine different distributions that are very powerful and very stable.
 
 - **Exponential Platform Legacy 5.0.x** Dual Kernel Symfony CMS which also includes a full copy of Exponential 6
 
