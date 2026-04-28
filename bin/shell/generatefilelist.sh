@@ -29,6 +29,20 @@ echo_success() { $MOVE_TO_COL; $SETCOLOR_SUCCESS; echo -n "[ OK ]"; $SETCOLOR_NO
 echo_failure() { $MOVE_TO_COL; $SETCOLOR_FAILURE; echo -n "[FAIL]"; $SETCOLOR_NORMAL; echo; }
 echo_warning() { $MOVE_TO_COL; $SETCOLOR_WARNING; echo -n "[WARN]"; $SETCOLOR_NORMAL; echo; }
 
+# ── Default exclusions ───────────────────────────────────────────────────
+# Keys are short labels; values are the find -path patterns to exclude.
+# Use --include=<key> to remove an entry at runtime.
+declare -A EXCLUDE_PATHS
+EXCLUDE_PATHS[git]='./.git/*'
+EXCLUDE_PATHS[var]='./var/*'
+EXCLUDE_PATHS[tmp]='./tmp/*'
+EXCLUDE_PATHS[vendor]='./vendor/*'
+EXCLUDE_PATHS[extension_vendor]='./extension/*/vendor/*'
+
+# Fixed exclusions that cannot be overridden (filelist cannot self-reference).
+EXCLUDE_FIXED=('./share/filelist.md5')
+EXCLUDE_NAMES=('*.pyc')
+
 # ── Option parsing ────────────────────────────────────────────────────────
 DRY_RUN=0
 
@@ -36,6 +50,14 @@ for arg in "$@"; do
     case "$arg" in
         --dry-run)
             DRY_RUN=1
+            ;;
+        --include=*)
+            KEY="${arg#--include=}"
+            if [[ -v EXCLUDE_PATHS[$KEY] ]]; then
+                unset 'EXCLUDE_PATHS[$KEY]'
+            else
+                echo "Warning: --include=$KEY does not match any default exclusion (known keys: ${!EXCLUDE_PATHS[*]})"
+            fi
             ;;
         --help|-h)
             echo "Usage: $0 [options]"
@@ -49,12 +71,28 @@ for arg in "$@"; do
             echo "    bash bin/shell/generatefilelist.sh"
             echo
             echo "Options:"
-            echo "  --dry-run    Preview the file count without writing anything"
-            echo "  --help, -h   This message"
+            echo "  --dry-run           Preview the file count without writing anything"
+            echo "  --include=<key>     Remove a path from the default exclusion list."
+            echo "                      May be specified multiple times."
+            echo "  --help, -h          This message"
             echo
-            echo "Excluded paths (never hashed):"
-            echo "  .git/   var/   tmp/   vendor/   extension/*/vendor/"
-            echo "  share/filelist.md5  (cannot self-reference)"
+            echo "Default excluded paths (use --include=<key> to include):"
+            echo "  --include=git                 .git/"
+            echo "  --include=var                 var/"
+            echo "  --include=tmp                 tmp/"
+            echo "  --include=vendor              vendor/"
+            echo "  --include=extension_vendor    extension/*/vendor/"
+            echo
+            echo "Always excluded (cannot be overridden):"
+            echo "  share/filelist.md5   (cannot self-reference)"
+            echo "  *.pyc"
+            echo
+            echo "Examples:"
+            echo "  # Include top-level vendor/ in the hash:"
+            echo "  bash bin/shell/generatefilelist.sh --include=vendor"
+            echo
+            echo "  # Include both vendor/ and extension vendor dirs:"
+            echo "  bash bin/shell/generatefilelist.sh --include=vendor --include=extension_vendor"
             echo
             exit 0
             ;;
@@ -74,21 +112,22 @@ fi
 # ── Build the file list ───────────────────────────────────────────────────
 echo -n "Collecting files to hash..."
 
-# Use -L to follow symbolic links during traversal — this is essential when
-# running from a directory (e.g. edit.alpha.example.com) that uses symlinks for
-# most of its content.  md5sum also follows symlinks for individual files, so
-# the stored hashes will match exactly what PHP's md5_file() sees.
-# Excluded paths: generated/runtime dirs, third-party deps, and filelist.md5
-# itself (its own hash cannot be stored correctly since it changes on write).
+# Assemble find arguments dynamically from the remaining exclusion maps.
+# Use -L to follow symbolic links — essential when the document root uses
+# symlinks for most content; hashes then match exactly what PHP md5_file() sees.
+FIND_ARGS=()
+for pattern in "${EXCLUDE_PATHS[@]}"; do
+    FIND_ARGS+=( -not -path "$pattern" )
+done
+for path in "${EXCLUDE_FIXED[@]}"; do
+    FIND_ARGS+=( -not -path "$path" )
+done
+for name in "${EXCLUDE_NAMES[@]}"; do
+    FIND_ARGS+=( -not -name "$name" )
+done
+
 mapfile -t FILES < <(
-    find -L . -type f \
-        -not -path './.git/*' \
-        -not -path './var/*' \
-        -not -path './tmp/*' \
-        -not -path './vendor/*' \
-        -not -path './extension/*/vendor/*' \
-        -not -path './share/filelist.md5' \
-        -not -name '*.pyc' \
+    find -L . -type f "${FIND_ARGS[@]}" \
         | sed 's~^\./~~' \
         | sort
 )

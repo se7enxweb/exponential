@@ -88,7 +88,7 @@ aeb8207bec2aec43c7cd1124a2ac08d5  bin/shell/creatediff.sh
 12a73d995ba65657b987a86f3522f948  bin/shell/distcommon.sh
 4b05363c6db581a493e96c64efcdc1cb  bin/shell/extensionscommon.sh
 3eb7a837b0ed8f9d4b96988fca624328  bin/shell/fixlicense.sh
-968fd7fff6e8725511a45d04f3deea77  bin/shell/generatefilelist.sh
+12924bbfe770c6cb2ea8c06502d01dc3  bin/shell/generatefilelist.sh
 aa16562fe8a0379f66cf4c98b5d8a45d  bin/shell/i18ncontrol.sh
 a5aa0396a05c0425df2eecc2764a2c0b  bin/shell/i18nstats.sh
 55bde56fcd9153839d6b05ca1ed0338d  bin/shell/makeaddonpackages.sh
