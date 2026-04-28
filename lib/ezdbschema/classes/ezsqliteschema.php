@@ -61,30 +61,48 @@ class eZSQLiteSchema extends eZDBSchemaInterface
         foreach( $resultArray as $row )
         {
             $field = array();
-            $field['type'] = $this->parseType ( $row['Type'], $field['length'] );
+            // SQLite PRAGMA table_info returns type in mixed-case (e.g. INTEGER, bigint)
+            $typeRaw = strtolower( trim( $row['type'] ) );
+            $field['type'] = $this->parseType( $typeRaw, $field['length'] );
+            // SQLite 'integer' maps to the schema type 'int'
+            if ( $field['type'] === 'integer' )
+                $field['type'] = 'int';
             if ( !$field['length'] )
             {
                 unset( $field['length'] );
             }
+            // SQLite uses 'notnull' (0/1), not MySQL's 'Null' column ('YES'/'NO')
             $field['not_null'] = 0;
-            if ( $row['Null'] != 'YES' )
+            if ( $row['notnull'] == '1' )
             {
                 $field['not_null'] = '1';
+            }
+            // SQLite stores defaults as SQL text expressions: 'DEFAULT NULL' → "NULL",
+            // 'DEFAULT \'0\'' → "'0'", no-default auto_increment → PHP null.
+            $dfltValue = $row['dflt_value'];
+            if ( $dfltValue === 'NULL' )
+            {
+                $dfltValue = null; // SQL NULL keyword stored as text → PHP null
+            }
+            elseif ( is_string( $dfltValue ) && strlen( $dfltValue ) >= 2
+                     && $dfltValue[0] === "'" && substr( $dfltValue, -1 ) === "'" )
+            {
+                $dfltValue = substr( $dfltValue, 1, -1 ); // strip surrounding single quotes
             }
             $field['default'] = false;
             if ( !$field['not_null'] )
             {
-                if ( $row['Default'] === null )
+                if ( $dfltValue === null )
                     $field['default'] = null;
                 else
-                    $field['default'] = (string)$row['Default'];
+                    $field['default'] = (string)$dfltValue;
             }
             else
             {
-                $field['default'] = (string)$row['Default'];
+                $field['default'] = (string)$dfltValue;
             }
 
-            $numericTypes = array( 'float', 'int' );
+            $numericTypes = array( 'float', 'int', 'bigint', 'decimal', 'double' );
             $blobTypes = array( 'tinytext', 'text', 'mediumtext', 'longtext' );
             $charTypes = array( 'varchar', 'char' );
             if ( in_array( $field['type'], $charTypes ) )
@@ -110,14 +128,14 @@ class eZSQLiteSchema extends eZDBSchemaInterface
                         $field['default'] = 0;
                     }
                 }
-                else if ( $field['type'] == 'int' )
+                else if ( $field['type'] === 'int' || $field['type'] === 'bigint' )
                 {
                     if ( $field['not_null'] or
                          is_numeric( $field['default'] ) )
                         $field['default'] = (int)$field['default'];
                 }
-                else if ( $field['type'] == 'float' or
-                          is_numeric( $field['default'] ) )
+                else if ( $field['type'] === 'float' || $field['type'] === 'decimal'
+                          || $field['type'] === 'double' || is_numeric( $field['default'] ) )
                 {
                     if ( $field['not_null'] or
                          is_numeric( $field['default'] ) )
@@ -130,7 +148,10 @@ class eZSQLiteSchema extends eZDBSchemaInterface
                 $field['default'] = false;
             }
 
-            if ( str_contains( $row['Extra'], 'auto_increment' ) !== false )
+            // Auto-increment: first PK column is bare INTEGER (no width) with notnull=0.
+            // This covers both single-column PKs and composite PKs where id is first member.
+            if ( $row['pk'] == 1 && !$row['notnull']
+                 && strtolower( trim( $row['type'] ) ) === 'integer' )
             {
                 unset( $field['length'] );
                 $field['not_null'] = 0;
@@ -141,7 +162,8 @@ class eZSQLiteSchema extends eZDBSchemaInterface
             if ( !$field['not_null'] )
                 unset( $field['not_null'] );
 
-            $fields[$row['Field']] = $field;
+            // SQLite PRAGMA table_info uses 'name', not MySQL's 'Field'
+            $fields[$row['name']] = $field;
         }
         ksort( $fields );
 
@@ -153,44 +175,51 @@ class eZSQLiteSchema extends eZDBSchemaInterface
      */
     private function fetchTableIndexes( $table, $params )
     {
-        $metaData = false;
-        if ( isset( $params['meta_data'] ) )
-        {
-            $metaData = $params['meta_data'];
-        }
-
         $indexes = array();
 
-        $resultArray = $this->DBInstance->arrayQuery( "PRAGMA index_info( $table )" );
-
-        foreach( $resultArray as $row )
+        // Detect primary key columns via PRAGMA table_info (pk > 0 means PK position)
+        $tableInfo = $this->DBInstance->arrayQuery( "PRAGMA table_info($table)" );
+        $pkColumns = array();
+        foreach ( $tableInfo as $row )
         {
-            $kn = $row['Key_name'];
-
-            if ( $kn == 'PRIMARY' )
-            {
-                $indexes[$kn]['type'] = 'primary';
-            }
-            else
-            {
-                $indexes[$kn]['type'] = $row['Non_unique'] ? 'non-unique' : 'unique';
-            }
-
-            $indexFieldDef = array( 'name' => $row['Column_name'] );
-
-            // Include length if one is defined
-            if ( $row['Sub_part'] )
-            {
-                $indexFieldDef['mysql:length'] = (int)$row['Sub_part'];
-            }
-
-            // Check if we have any entries other than 'name', if not we skip the array definition
-            if ( count( array_diff( array_keys( $indexFieldDef ), array( 'name' ) ) ) == 0 )
-            {
-                $indexFieldDef = $indexFieldDef['name'];
-            }
-            $indexes[$kn]['fields'][$row['Seq_in_index'] - 1] = $indexFieldDef;
+            if ( $row['pk'] > 0 )
+                $pkColumns[$row['pk']] = $row['name'];
         }
+        // Always emit PRIMARY — the distribution .dba defines it for all tables,
+        // including auto_increment (where it is implicit in SQLite).
+        if ( count( $pkColumns ) > 0 )
+        {
+            ksort( $pkColumns );
+            $indexes['PRIMARY'] = array(
+                'type'   => 'primary',
+                'fields' => array_values( $pkColumns ),
+            );
+        }
+
+        // Walk all explicit indexes via PRAGMA index_list
+        $indexList = $this->DBInstance->arrayQuery( "PRAGMA index_list($table)" );
+        foreach ( $indexList as $idxRow )
+        {
+            $indexName = $idxRow['name'];
+            // Skip SQLite internal autoindex entries created for PK/UNIQUE constraints
+            if ( strncmp( $indexName, 'sqlite_autoindex_', 17 ) === 0 )
+                continue;
+
+            $isUnique = ( $idxRow['unique'] == 1 );
+            $indexFields = array();
+            $indexInfo = $this->DBInstance->arrayQuery( "PRAGMA index_info($indexName)" );
+            foreach ( $indexInfo as $colRow )
+            {
+                $indexFields[$colRow['seqno']] = $colRow['name'];
+            }
+            ksort( $indexFields );
+
+            $indexes[$indexName] = array(
+                'type'   => $isUnique ? 'unique' : 'non-unique',
+                'fields' => array_values( $indexFields ),
+            );
+        }
+
         ksort( $indexes );
 
         return $indexes;
