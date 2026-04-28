@@ -54,7 +54,7 @@ for arg in "$@"; do
         --include=*)
             KEY="${arg#--include=}"
             if [[ -v EXCLUDE_PATHS[$KEY] ]]; then
-                unset 'EXCLUDE_PATHS[$KEY]'
+                unset "EXCLUDE_PATHS[$KEY]"
             else
                 echo "Warning: --include=$KEY does not match any default exclusion (known keys: ${!EXCLUDE_PATHS[*]})"
             fi
