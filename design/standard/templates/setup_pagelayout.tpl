@@ -63,7 +63,7 @@
     </aside>
 
     <footer>
-        <p><a href="https://exponential.earth">Exponential</a> copyright &copy; 1999-2025 <a href="https://se7enx.com">7x</a></p>
+        <p><a href="https://exponential.earth">Exponential</a> copyright &copy; 1998-2026 <a href="https://se7enx.com">7x</a></p>
     </footer>
 
 </section>

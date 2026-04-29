@@ -72,7 +72,7 @@
 <br />
 <font color="white">
 <center>
-<a href="https://share.exponential.earth/get-involved">Exponential</a> copyright &copy; 1999-2025 <a href="https://se7enx.com">7x</a>
+<a href="https://share.exponential.earth/get-involved">Exponential</a> copyright &copy; 1998-2026 <a href="https://se7enx.com">7x</a>
 </center>
 </font>
 <br />
