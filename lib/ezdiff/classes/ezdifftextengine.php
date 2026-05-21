@@ -37,8 +37,8 @@ class eZDiffTextEngine extends eZDiffEngine
         $old = preg_replace( $pattern, $replace, $fromData ) ?? '';
         $new = preg_replace( $pattern, $replace, $toData ) ?? '';
 
-        $oldArray = explode( "\r\n", $old );
-        $newArray = explode( "\r\n", $new );
+        $oldArray = is_array( $old ) ? $old : explode( "\r\n", (string)$old );
+        $newArray = is_array( $new ) ? $new : explode( "\r\n", (string)$new );
 
         $oldSums = array();
         foreach( $oldArray as $paragraph )
