@@ -475,7 +475,26 @@ WHERE ezbasket.session_id = ezsession.session_key AND
 
         do
         {
-            $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                // Find session_keys that are expired
+                $expiredSessions = array_column(
+                    $db->aggregate( 'ezsession', [
+                        [ '$match'   => [ 'expiration_time' => [ '$lt' => (int)$time ] ] ],
+                        [ '$project' => [ '_id' => 0, 'session_key' => 1 ] ],
+                        [ '$limit'   => $limit ],
+                    ] ),
+                    'session_key'
+                );
+                if ( empty( $expiredSessions ) )
+                    break;
+                $rows = $db->aggregate( 'ezbasket', [
+                    [ '$match'   => [ 'session_id' => [ '$in' => $expiredSessions ] ] ],
+                    [ '$project' => [ '_id' => 0, 'id' => 1, 'productcollection_id' => 1 ] ],
+                ] );
+            }
+            else
+                $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
             if ( count( $rows ) == 0 )
                 break;
 
@@ -489,7 +508,10 @@ WHERE ezbasket.session_id = ezsession.session_key AND
             eZProductCollection::cleanupList( $productCollectionIDList );
 
             $ids = implode( ', ', $idList );
-            $db->query( "DELETE FROM ezbasket WHERE id IN ( $ids )" );
+            if ( $db->databaseName() === 'mongo' )
+                $db->deleteWhere( 'ezbasket', [ 'id' => [ '$in' => $idList ] ] );
+            else
+                $db->query( "DELETE FROM ezbasket WHERE id IN ( $ids )" );
 
         } while ( true );
     }
@@ -509,7 +531,13 @@ WHERE ezbasket.session_id = ezsession.session_key AND
         $db->begin();
         do
         {
-            $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
+            if ( $db->databaseName() === 'mongo' )
+                $rows = $db->aggregate( 'ezbasket', [
+                    [ '$project' => [ '_id' => 0, 'productcollection_id' => 1 ] ],
+                    [ '$limit'   => $limit ],
+                ] );
+            else
+                $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
 
             if ( count( $rows ) == 0 )
                 break;
@@ -521,8 +549,13 @@ WHERE ezbasket.session_id = ezsession.session_key AND
             }
             eZProductCollection::cleanupList( $productCollectionIDList );
 
-            $ids = implode( ', ', $productCollectionIDList );
-            $db->query( "DELETE FROM ezbasket WHERE productcollection_id IN ( $ids )" );
+            if ( $db->databaseName() === 'mongo' )
+                $db->deleteWhere( 'ezbasket', [ 'productcollection_id' => [ '$in' => $productCollectionIDList ] ] );
+            else
+            {
+                $ids = implode( ', ', $productCollectionIDList );
+                $db->query( "DELETE FROM ezbasket WHERE productcollection_id IN ( $ids )" );
+            }
         }
         while ( true );
         $db->commit();

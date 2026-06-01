@@ -172,11 +172,19 @@ class eZPolicyLimitation extends eZPersistentObject
         $idString = $db->escapeString( $id );
         $db->begin();
 
-        $db->query( "DELETE FROM ezpolicy_limitation_value
-                     WHERE ezpolicy_limitation_value.limitation_id = '$idString'" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->deleteWhere( 'ezpolicy_limitation_value', [ 'limitation_id' => (int)$id ] );
+            $db->deleteWhere( 'ezpolicy_limitation', [ 'id' => (int)$id ] );
+        }
+        else
+        {
+            $db->query( "DELETE FROM ezpolicy_limitation_value
+                         WHERE ezpolicy_limitation_value.limitation_id = '$idString'" );
 
-        $db->query( "DELETE FROM ezpolicy_limitation
-                     WHERE ezpolicy_limitation.id = '$idString' " );
+            $db->query( "DELETE FROM ezpolicy_limitation
+                         WHERE ezpolicy_limitation.id = '$idString' " );
+        }
         $db->commit();
     }
 
@@ -371,7 +379,29 @@ class eZPolicyLimitation extends eZPersistentObject
                        $cond AND
                        ezpolicy_limitation_value.limitation_id =  ezpolicy_limitation.id";
 
-        $dbResult = $db->arrayQuery( $query );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $valueFilter = $useLike
+                ? [ '$regex' => '^' . preg_quote( $value, '/' ), '$options' => 'i' ]
+                : $value;
+            // Find matching limitation_ids from values collection
+            $valRows = $db->aggregate( 'ezpolicy_limitation_value', [
+                [ '$match' => [ 'value' => $valueFilter ] ],
+                [ '$project' => [ '_id' => 0, 'limitation_id' => 1 ] ],
+            ] );
+            $limitationIDs = array_values( array_unique( array_map(
+                fn( $r ) => (int)$r['limitation_id'], $valRows
+            ) ) );
+            if ( empty( $limitationIDs ) )
+                return [];
+            $dbResult = $db->aggregate( 'ezpolicy_limitation', [
+                [ '$match' => [ 'identifier' => $type, 'id' => [ '$in' => $limitationIDs ] ] ],
+            ] );
+        }
+        else
+        {
+            $dbResult = $db->arrayQuery( $query );
+        }
         $resultArray = array();
         $resultCount = count( $dbResult );
         for( $i = 0; $i < $resultCount; $i++ )

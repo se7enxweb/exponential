@@ -50,6 +50,22 @@
             <directory suffix="Test.php">tests/tests/lib</directory>
         </testsuite>
 
+        <!--
+          MongoDB adapter unit tests — no live DB required.
+          Run: php vendor/bin/phpunit - -testsuite mongodb
+        -->
+        <testsuite name="mongodb">
+            <directory suffix="Test.php">tests/tests/lib/ezdb/mongodb</directory>
+        </testsuite>
+
+        <!--
+          MongoDB + MySQL live integration tests — require running servers.
+          Run: php vendor/bin/phpunit - -testsuite mongodb-live
+        -->
+        <testsuite name="mongodb-live">
+            <file>tests/tests/lib/ezdb/mongodb/sevenxMongoDBIntegrationTest.php</file>
+        </testsuite>
+
     </testsuites>
 
     <groups>
@@ -60,6 +76,12 @@
                 php tests/runtests.php - -db-per-test - -dsn=mysql://u:p@host/db
             -->
             <group>database</group>
+            <!--
+              Tests tagged @group mongodb-live require running MongoDB + MySQL.
+              Run them separately:
+                php vendor/bin/phpunit - -testsuite mongodb-live
+            -->
+            <group>mongodb-live</group>
         </exclude>
     </groups>
 

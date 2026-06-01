@@ -2917,13 +2917,31 @@ class eZPackage
             if ( !$this->getInstallState() )
             {
                 $timestamp = time();
-                $db->query( "INSERT INTO ezpackage ( name, version, install_date ) VALUES ( '$name', '$version', '$timestamp' )" );
+                if ( $db->databaseName() === 'mongo' )
+                {
+                    $db->insert( 'ezpackage', [
+                        'name'         => $name,
+                        'version'      => $version,
+                        'install_date' => (int)$timestamp,
+                    ] );
+                }
+                else
+                {
+                    $db->query( "INSERT INTO ezpackage ( name, version, install_date ) VALUES ( '$name', '$version', '$timestamp' )" );
+                }
                 $this->isInstalled = true;
             }
         }
         else
         {
-            $db->query( "DELETE FROM ezpackage WHERE name='$name' AND version='$version'" );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $db->deleteWhere( 'ezpackage', [ 'name' => $name, 'version' => $version ] );
+            }
+            else
+            {
+                $db->query( "DELETE FROM ezpackage WHERE name='$name' AND version='$version'" );
+            }
             $this->isInstalled = false;
         }
     }
@@ -2944,7 +2962,19 @@ class eZPackage
         $version = $this->getVersion();
 
         $db = eZDB::instance();
-        $result = $db->arrayQuery( "SELECT count(*) AS count FROM ezpackage WHERE name='$name' AND version='$version'" );
+        $result = [];
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezpackage', [
+                [ '$match'   => [ 'name' => $name, 'version' => $version ] ],
+                [ '$count'   => 'count' ],
+            ] );
+            $result = [ [ 'count' => empty( $rows ) ? 0 : $rows[0]['count'] ] ];
+        }
+        else
+        {
+            $result = $db->arrayQuery( "SELECT count(*) AS count FROM ezpackage WHERE name='$name' AND version='$version'" );
+        }
 
         if ( !count( $result ) )
             return false;

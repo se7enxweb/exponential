@@ -87,8 +87,7 @@ class eZIniSettingType extends eZDataType
         if ( $http->hasPostVariable( $fileParam ) &&
              $http->hasPostVariable( $sectionParam ) &&
              $http->hasPostVariable( $parameterParam ) &&
-             $http->hasPostVariable( $typeParam ) &&
-             $http->hasPostVariable( $iniInstanceParam ) )
+             $http->hasPostVariable( $typeParam ) )
         {
             $iniFile = $http->postVariable( $fileParam );
             $iniSection = $http->postVariable( $sectionParam );
@@ -202,15 +201,14 @@ class eZIniSettingType extends eZDataType
         if ( $http->hasPostVariable( $fileParam ) &&
              $http->hasPostVariable( $sectionParam ) &&
              $http->hasPostVariable( $paramParam ) &&
-             $http->hasPostVariable( $typeParam ) &&
-             $http->hasPostVariable( $iniInstanceParam ) )
+             $http->hasPostVariable( $typeParam ) )
         {
             $file = $http->postVariable( $fileParam );
             $section = $http->postVariable( $sectionParam );
             $parameter = $http->postVariable( $paramParam );
             $type = $http->postVariable( $typeParam );
 
-            $iniInstanceArray = $http->postVariable( $iniInstanceParam );
+            $iniInstanceArray = $http->hasPostVariable( $iniInstanceParam ) ? $http->postVariable( $iniInstanceParam ) : [];
             if ( is_array( $iniInstanceArray ) )
             {
                 $iniInstance = '';

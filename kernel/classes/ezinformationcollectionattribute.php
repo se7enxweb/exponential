@@ -173,6 +173,15 @@ class eZInformationCollectionAttribute extends eZPersistentObject
     function contentClassAttributeName()
     {
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentclass_attribute', [
+                [ '$match'   => [ 'id' => (int)$this->ContentClassAttributeID ] ],
+                [ '$project' => [ '_id' => 0, 'serialized_name_list' => 1 ] ],
+            ] );
+            $serialized = !empty( $rows ) ? $rows[0]['serialized_name_list'] : '';
+            return eZSerializedObjectNameList::nameFromSerializedString( $serialized );
+        }
         $nameArray = $db->arrayQuery( "SELECT serialized_name_list FROM ezcontentclass_attribute WHERE id='$this->ContentClassAttributeID'" );
 
         return eZSerializedObjectNameList::nameFromSerializedString( $nameArray[0]['serialized_name_list'] );

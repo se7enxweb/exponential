@@ -366,7 +366,7 @@ class eZXMLSchema
 
     function attrDefaultValues( $tagName )
     {
-        if ( isset( $this->Schema[$tagName]['attributesDefaults'] ) )
+        if ( $tagName !== null && isset( $this->Schema[$tagName]['attributesDefaults'] ) )
             return $this->Schema[$tagName]['attributesDefaults'];
         else
             return array();

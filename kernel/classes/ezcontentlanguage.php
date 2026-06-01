@@ -35,7 +35,7 @@ class eZContentLanguage extends eZPersistentObject
                                                       'object_count' => 'objectCount' ),
                       'sort' => array( 'name' => 'asc' ),
                       'class_name' => 'eZContentLanguage',
-                      'name' => 'ezcontent_language' );
+                      'name' => "ezcontent_language" );
         return $definition;
     }
 
@@ -796,6 +796,14 @@ class eZContentLanguage extends eZPersistentObject
             $whereSQL = "language_mask & $languageID > 0";
         }
 
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentobject', [
+                [ '$match'   => [ '$expr' => [ '$gt' => [ [ '$bitAnd' => [ '$language_mask', (int) $languageID ] ], 0 ] ] ] ],
+                [ '$count'   => 'count' ],
+            ] );
+            return !empty( $rows ) ? (int) $rows[0]['count'] : 0;
+        }
         $count = $db->arrayQuery( "SELECT COUNT(*) AS count FROM ezcontentobject WHERE $whereSQL" );
         return $count[0]['count'];
     }
@@ -817,6 +825,14 @@ class eZContentLanguage extends eZPersistentObject
             $whereSQL = "language_mask & $languageID > 0";
         }
 
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentclass', [
+                [ '$match' => [ '$expr' => [ '$gt' => [ [ '$bitAnd' => [ '$language_mask', (int) $languageID ] ], 0 ] ] ] ],
+                [ '$count' => 'count' ],
+            ] );
+            return !empty( $rows ) ? (int) $rows[0]['count'] : 0;
+        }
         $count = $db->arrayQuery( "SELECT COUNT(*) AS count FROM ezcontentclass WHERE $whereSQL" );
         $count = $count[0]['count'];
 

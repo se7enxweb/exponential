@@ -255,7 +255,28 @@ class eZContentCacheManager
             }
             $keywordString = implode( ', ', $keywordArray );
             $params = $limit ? array( 'offset' => 0, 'limit'  => $limit ) : array();
-            $rows = $db->arrayQuery( "SELECT DISTINCT ezcontentobject_tree.node_id
+            if ( $db->databaseName() === 'mongo' ) {
+                // Build raw keyword list (unescaped) from the original array
+                $rawKeywords = array_map( function( $k ) {
+                    return trim( $k, "'" );
+                }, $keywordArray );
+                $pipeline = [
+                    [ '$match'   => [ 'keyword' => [ '$in' => $rawKeywords ] ] ],
+                    [ '$lookup'  => [ 'from' => 'ezkeyword_attribute_link', 'localField' => 'id', 'foreignField' => 'keyword_id', 'as' => '_kal' ] ],
+                    [ '$unwind'  => '$_kal' ],
+                    [ '$lookup'  => [ 'from' => 'ezcontentobject_attribute', 'localField' => '_kal.objectattribute_id', 'foreignField' => 'id', 'as' => '_oa' ] ],
+                    [ '$unwind'  => '$_oa' ],
+                    [ '$lookup'  => [ 'from' => 'ezcontentobject_tree', 'localField' => '_oa.contentobject_id', 'foreignField' => 'contentobject_id', 'as' => '_tree' ] ],
+                    [ '$unwind'  => '$_tree' ],
+                    [ '$group'   => [ '_id' => '$_tree.node_id' ] ],
+                    [ '$project' => [ '_id' => 0, 'node_id' => '$_id' ] ],
+                ];
+                if ( $limit ) {
+                    $pipeline[] = [ '$limit' => (int)$limit ];
+                }
+                $rows = $db->aggregate( 'ezkeyword', $pipeline );
+            } else {
+                $rows = $db->arrayQuery( "SELECT DISTINCT ezcontentobject_tree.node_id
                                        FROM
                                          ezcontentobject_tree,
                                          ezcontentobject_attribute,
@@ -267,6 +288,7 @@ class eZContentCacheManager
                                          ezkeyword_attribute_link.keyword_id = ezkeyword.id AND
                                          ezkeyword.keyword IN ( $keywordString )",
                                         $params );
+            }
 
             foreach ( $rows as $row )
             {
@@ -738,7 +760,7 @@ class eZContentCacheManager
      * @param  array|null   $contentObjectList List of content object IDs to clear
      * @return boolean returns true on success
      */
-    public static function clearNodeViewCacheArray( array $nodeList, array|null $contentObjectList = null )
+    public static function clearNodeViewCacheArray( array $nodeList, ?array $contentObjectList = null )
     {
         if ( count( $nodeList ) == 0 )
         {

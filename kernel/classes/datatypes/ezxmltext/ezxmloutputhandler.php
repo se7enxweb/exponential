@@ -315,7 +315,7 @@ class eZXMLOutputHandler
     function outputTag( $element, &$siblingParams, $parentParams = array() )
     {
         $tagName = $element->localName;
-        if ( isset( $this->OutputTags[$tagName] ) )
+        if ( $tagName !== null && isset( $this->OutputTags[$tagName] ) )
         {
             $currentTag = $this->OutputTags[$tagName];
         }

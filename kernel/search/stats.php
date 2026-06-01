@@ -38,8 +38,16 @@ $viewParameters = array( 'offset' => $offset, 'limit'  => $limit );
 $tpl = eZTemplate::factory();
 
 $db = eZDB::instance();
-$query = "SELECT count(*) as count FROM ezsearch_search_phrase";
-$searchListCount = $db->arrayQuery( $query );
+if ( $db->databaseName() === 'mongo' )
+{
+    $rows = $db->aggregate( 'ezsearch_search_phrase', [ [ '$count' => 'count' ] ] );
+    $searchListCount = [ [ 'count' => !empty( $rows ) ? (int) $rows[0]['count'] : 0 ] ];
+}
+else
+{
+    $query = "SELECT count(*) as count FROM ezsearch_search_phrase";
+    $searchListCount = $db->arrayQuery( $query );
+}
 
 $mostFrequentPhraseArray = eZSearchLog::mostFrequentPhraseArray( $viewParameters );
 

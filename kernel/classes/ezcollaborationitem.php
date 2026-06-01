@@ -269,7 +269,7 @@ class eZCollaborationItem extends eZPersistentObject
 
     static function fetchListCount( $parameters = array() )
     {
-        return eZCollaborationItem::fetchListTool( $parameters, true );
+        return eZCollaborationItem::fetchListTool( true, $parameters );
 //         $parameters = array_merge( array( 'status' => false
 //                                           'is_active' => null,
 //                                           'is_read' => null ),
@@ -330,10 +330,10 @@ class eZCollaborationItem extends eZPersistentObject
 
     static function fetchList( $parameters = array() )
     {
-        return eZCollaborationItem::fetchListTool( $parameters, false );
+        return eZCollaborationItem::fetchListTool( false, $parameters );
     }
 
-    static function fetchListTool( $parameters = array(), $asCount )
+    static function fetchListTool( $asCount, $parameters = array() )
     {
         $parameters = array_merge( array( 'as_object' => true,
                                           'offset' => false,
@@ -456,6 +456,87 @@ class eZCollaborationItem extends eZPersistentObject
                 $sortText";
 
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $pipeline = [
+                [ '$match' => [ 'status' => [ '$in' => array_values( $statusTypes ) ] ] ],
+                [
+                    '$lookup' => [
+                        'from'     => 'ezcollab_item_status',
+                        'let'      => [ 'iid' => '$id' ],
+                        'pipeline' => [
+                            [ '$match' => [ '$expr' => [ '$and' => [
+                                [ '$eq' => [ '$collaboration_id', '$$iid' ] ],
+                                [ '$eq' => [ '$user_id', (int)$userID ] ],
+                            ] ] ] ],
+                        ],
+                        'as'       => '_status',
+                    ],
+                ],
+                [ '$unwind' => '$_status' ],
+                [
+                    '$lookup' => [
+                        'from'     => 'ezcollab_item_group_link',
+                        'let'      => [ 'iid' => '$id' ],
+                        'pipeline' => [
+                            [ '$match' => [ '$expr' => [ '$and' => [
+                                [ '$eq' => [ '$collaboration_id', '$$iid' ] ],
+                                [ '$eq' => [ '$user_id', (int)$userID ] ],
+                            ] ] ] ],
+                        ],
+                        'as'       => '_link',
+                    ],
+                ],
+                [ '$unwind' => '$_link' ],
+            ];
+            if ( $isRead !== null )
+                $pipeline[] = [ '$match' => [ '_status.is_read' => $isRead ? 1 : 0 ] ];
+            if ( $isActive !== null )
+                $pipeline[] = [ '$match' => [ '_status.is_active' => $isActive ? 1 : 0 ] ];
+            if ( $parentGroupID > 0 )
+                $pipeline[] = [ '$match' => [ '_link.group_id' => (int)$parentGroupID ] ];
+
+            if ( $asCount )
+            {
+                $pipeline[] = [ '$count' => 'count' ];
+                $rows = $db->aggregate( 'ezcollab_item', $pipeline );
+                return !empty( $rows ) ? (int)$rows[0]['count'] : 0;
+            }
+
+            $pipeline[] = [ '$sort' => [ '_link.modified' => -1 ] ];
+            if ( $offset !== false && $limit !== false )
+            {
+                $pipeline[] = [ '$skip'  => (int)$offset ];
+                $pipeline[] = [ '$limit' => (int)$limit ];
+            }
+            $pipeline[] = [
+                '$project' => [
+                    '_id'             => 0,
+                    'id'              => 1,
+                    'type_identifier' => 1,
+                    'created'         => 1,
+                    'modified'        => 1,
+                    'status'          => 1,
+                    'creator_id'      => 1,
+                    'is_read'         => '$_status.is_read',
+                    'is_active'       => '$_status.is_active',
+                    'last_read'       => '$_status.last_read',
+                ],
+            ];
+            $itemListArray = $db->aggregate( 'ezcollab_item', $pipeline );
+            foreach ( $itemListArray as $key => $value )
+            {
+                $itemData =& $itemListArray[$key];
+                $statusObject = eZCollaborationItemStatus::create( $itemData['id'], $userID );
+                $statusObject->setAttribute( 'is_read', $itemData['is_read'] );
+                $statusObject->setAttribute( 'is_active', $itemData['is_active'] );
+                $statusObject->setAttribute( 'last_read', $itemData['last_read'] );
+                $statusObject->updateCache();
+            }
+            $returnItemList = eZPersistentObject::handleRows( $itemListArray, 'eZCollaborationItem', $asObject );
+            eZDebugSetting::writeDebug( 'collaboration-item-list', $returnItemList );
+            return $returnItemList;
+        }
         if ( !$asCount )
         {
             $sqlParameters = array();

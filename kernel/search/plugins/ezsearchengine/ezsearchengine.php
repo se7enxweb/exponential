@@ -51,6 +51,14 @@ class eZSearchEngine implements ezpSearchEngine
      */
     public function addObject( $contentObject, $commit = true )
     {
+        // MongoDB uses a document store — the built-in SQL-word-index tables
+        // (ezsearch_word, ezsearch_object_word_link) are not meaningful, and
+        // every addObject call issues dozens of raw SQL queries that the MongoDB
+        // adapter must translate one by one. Skip indexing entirely; use the
+        // indexcontent cron job or a dedicated search extension instead.
+        if ( eZDB::instance()->databaseName() === 'mongo' )
+            return true;
+
         $contentObjectID = $contentObject->attribute( 'id' );
         $currentVersion = $contentObject->currentVersion();
 
@@ -164,6 +172,10 @@ class eZSearchEngine implements ezpSearchEngine
     function buildWordIDArray( $indexArrayOnlyWords )
     {
         $db = eZDB::instance();
+        // MongoDB: ezsearch SQL engine is not used with MongoDB — skip indexing silently
+        if ( $db->databaseName() === 'mongo' )
+            return array();
+
 
         // Initialize transformation system
         $trans = eZCharTransform::instance();
@@ -492,6 +504,165 @@ class eZSearchEngine implements ezpSearchEngine
         {
             $searchText = $this->normalizeText( $searchText, false );
             $db = eZDB::instance();
+
+            if ( $db->databaseName() === 'mongo' )
+            {
+                // MongoDB full-text search: match object names + attribute data_text
+                // Also honours advanced-search filters: class, section, attribute, date, subtree
+                $searchTerm = trim( $searchText );
+
+                $searchOffset          = isset( $params['SearchOffset']               ) ? (int)$params['SearchOffset']               : 0;
+                $searchLimit           = isset( $params['SearchLimit']                ) ? (int)$params['SearchLimit']                : 10;
+                $searchContentClassID  = isset( $params['SearchContentClassID']       ) ? $params['SearchContentClassID']            : -1;
+                $searchSectionID       = isset( $params['SearchSectionID']            ) ? $params['SearchSectionID']                 : -1;
+                $searchClassAttrID     = isset( $params['SearchContentClassAttributeID'] ) ? $params['SearchContentClassAttributeID'] : -1;
+                $subTreeArray          = ( isset( $params['SearchSubTreeArray']       ) && is_array( $params['SearchSubTreeArray'] ) ) ? $params['SearchSubTreeArray'] : array();
+                $searchDate            = isset( $params['SearchDate']                 ) ? (int)$params['SearchDate']                 : -1;
+                $searchTimestamp       = isset( $params['SearchTimestamp']            ) ? (int)$params['SearchTimestamp']            : 0;
+
+                // Build object-level $match condition
+                $objMatch = [ 'status' => 1 ];
+
+                // --- Content class filter ---
+                if ( $searchContentClassID != -1 )
+                {
+                    if ( is_array( $searchContentClassID ) )
+                        $objMatch['contentclass_id'] = [ '$in' => array_map( 'intval', $searchContentClassID ) ];
+                    else
+                        $objMatch['contentclass_id'] = (int)$searchContentClassID;
+                }
+
+                // --- Section filter ---
+                if ( $searchSectionID != -1 )
+                {
+                    if ( is_array( $searchSectionID ) )
+                        $objMatch['section_id'] = [ '$in' => array_map( 'intval', $searchSectionID ) ];
+                    else
+                        $objMatch['section_id'] = (int)$searchSectionID;
+                }
+
+                // --- Date filter ---
+                if ( $searchDate > 0 && $searchTimestamp > 0 )
+                {
+                    $objMatch['published'] = [ '$gte' => $searchTimestamp ];
+                }
+
+                if ( $searchTerm !== '' )
+                {
+                    // Build a regex matching any search word
+                    $words = preg_split( '/\s+/', $searchTerm );
+                    $escapedWords = array_map( function( $w ) { return preg_quote( $w, '/' ); }, $words );
+                    $regex = implode( '|', $escapedWords );
+
+                    // Objects matching by name
+                    $nameMatch = $objMatch;
+                    $nameMatch['name'] = [ '$regex' => $regex, '$options' => 'i' ];
+                    $nameRows = $db->aggregate( 'ezcontentobject', [
+                        [ '$match'   => $nameMatch ],
+                        [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                    ] );
+
+                    // Objects matching by attribute text (optionally filtered by class attribute)
+                    $attrMatch = [ 'data_text' => [ '$regex' => $regex, '$options' => 'i' ] ];
+                    if ( $searchClassAttrID != -1 )
+                    {
+                        if ( is_array( $searchClassAttrID ) )
+                            $attrMatch['contentclassattribute_id'] = [ '$in' => array_map( 'intval', $searchClassAttrID ) ];
+                        else
+                            $attrMatch['contentclassattribute_id'] = (int)$searchClassAttrID;
+                    }
+                    $attrRows = $db->aggregate( 'ezcontentobject_attribute', [
+                        [ '$match' => $attrMatch ],
+                        [ '$group' => [ '_id' => '$contentobject_id' ] ],
+                    ] );
+
+                    $objectIDs = array();
+                    foreach ( $nameRows as $r ) $objectIDs[(int)$r['id']] = true;
+
+                    // For attrRows hits, still apply the object-level filters
+                    if ( !empty( $attrRows ) )
+                    {
+                        $attrObjIDs = array_map( function( $r ) { return (int)$r['_id']; }, $attrRows );
+                        // Re-apply object filters on the attr-matched IDs
+                        $attrObjMatch = $objMatch;
+                        $attrObjMatch['id'] = [ '$in' => $attrObjIDs ];
+                        $filteredAttrObjs = $db->aggregate( 'ezcontentobject', [
+                            [ '$match'   => $attrObjMatch ],
+                            [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                        ] );
+                        foreach ( $filteredAttrObjs as $r ) $objectIDs[(int)$r['id']] = true;
+                    }
+                }
+                else
+                {
+                    // Empty search text but filters supplied — return all matching the filters
+                    if ( $objMatch === [ 'status' => 1 ] )
+                        return array( 'SearchResult' => array(), 'SearchCount' => 0, 'StopWordArray' => array() );
+
+                    $allRows = $db->aggregate( 'ezcontentobject', [
+                        [ '$match'   => $objMatch ],
+                        [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                    ] );
+                    $objectIDs = array();
+                    foreach ( $allRows as $r ) $objectIDs[(int)$r['id']] = true;
+                }
+
+                if ( empty( $objectIDs ) )
+                    return array( 'SearchResult' => array(), 'SearchCount' => 0, 'StopWordArray' => array() );
+
+                $idList     = array_keys( $objectIDs );
+                $totalCount = count( $idList );
+
+                // Fetch published main tree nodes for matching objects
+                $treeMatch = [
+                    'contentobject_id'           => [ '$in' => $idList ],
+                    'contentobject_is_published' => 1,
+                    '$expr'                      => [ '$eq' => [ '$node_id', '$main_node_id' ] ],
+                ];
+
+                // Subtree filter: all listed nodes must be ancestors (path_string prefix match)
+                if ( !empty( $subTreeArray ) )
+                {
+                    // Collect path_strings for anchor nodes
+                    $anchorPaths = array();
+                    foreach ( $subTreeArray as $anchorNodeID )
+                    {
+                        $anchorRows = $db->aggregate( 'ezcontentobject_tree', [
+                            [ '$match'   => [ 'node_id' => (int)$anchorNodeID ] ],
+                            [ '$project' => [ '_id' => 0, 'path_string' => 1 ] ],
+                            [ '$limit'   => 1 ],
+                        ] );
+                        if ( !empty( $anchorRows ) )
+                            $anchorPaths[] = $anchorRows[0]['path_string'];
+                    }
+                    if ( !empty( $anchorPaths ) )
+                    {
+                        $regexParts = array_map( function( $p ) {
+                            return '^' . preg_quote( $p, '/' );
+                        }, $anchorPaths );
+                        $treeMatch['path_string'] = [ '$regex' => implode( '|', $regexParts ) ];
+                    }
+                }
+
+                $nodeRows = $db->aggregate( 'ezcontentobject_tree', [
+                    [ '$match'  => $treeMatch ],
+                    [ '$skip'   => $searchOffset ],
+                    [ '$limit'  => $searchLimit  ],
+                    [ '$project' => [ 'node_id' => 1, '_id' => 0 ] ],
+                ] );
+
+                $searchResult = array();
+                foreach ( $nodeRows as $row )
+                {
+                    $node = eZContentObjectTreeNode::fetch( (int)$row['node_id'] );
+                    if ( $node )
+                        $searchResult[] = $node;
+                }
+
+                return array( 'SearchResult' => $searchResult,
+                              'SearchCount'  => $totalCount,
+                              'StopWordArray' => array() );
+            }
 
             $nonExistingWordArray = array();
             $searchTypeMap = array( 'class' => 'SearchContentClassID',
@@ -2009,6 +2180,14 @@ class eZSearchEngine implements ezpSearchEngine
     function prepareWordIDArraysForPattern( $searchText )
     {
         $db = eZDB::instance();
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            return array( 'wordIDArray' => array(),
+                          'wordIDHash' => array(),
+                          'patternWordIDHash' => array() );
+        }
+
         $searchWordArray = $this->splitString( $searchText );
 
 
@@ -2079,6 +2258,14 @@ class eZSearchEngine implements ezpSearchEngine
         }
 
         $db = eZDB::instance();
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            return array( 'wordIDArray' => array(),
+                          'wordIDHash' => array(),
+                          'wildIDArray' => array(),
+                          'wildCardCount' => 0 );
+        }
 
         //extend search words for urls, by extracting parts without www. and add to the end of search text
         $matches = array();
@@ -2172,6 +2359,11 @@ class eZSearchEngine implements ezpSearchEngine
     {
         // Get the total number of objects
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentobject', [ [ '$count' => 'count' ] ] );
+            return !empty( $rows ) ? (int)$rows[0]['count'] : 0;
+        }
         $objectCount = array();
         $objectCount = $db->arrayQuery( "SELECT COUNT(*) AS count FROM ezcontentobject" );
         $totalObjectCount = $objectCount[0]["count"];

@@ -67,7 +67,14 @@ class eZForgotPassword extends eZPersistentObject
     static function cleanup()
     {
         $db = eZDB::instance();
-        $db->query( "DELETE FROM ezforgot_password" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->deleteWhere( 'ezforgot_password', [] );
+        }
+        else
+        {
+            $db->query( "DELETE FROM ezforgot_password" );
+        }
     }
 
     /*!

@@ -8,6 +8,10 @@
  * @package kernel
  */
 
+ use Exception as Exception;
+ use MongoDB\Client;
+ use MongoDB\Driver\ServerApi;
+
 /**
  * Allows for object persistence in a database
  *
@@ -40,6 +44,29 @@ class eZPersistentObject
      */
     public $PersistentDataDirty;
 
+    /** Backing store for dynamic persistent fields (replaces PHP dynamic properties). */
+    protected array $__persistentData = [];
+
+    public function __get( string $name ): mixed
+    {
+        return $this->__persistentData[$name] ?? null;
+    }
+
+    public function __set( string $name, mixed $value ): void
+    {
+        $this->__persistentData[$name] = $value;
+    }
+
+    public function __isset( string $name ): bool
+    {
+        return isset( $this->__persistentData[$name] );
+    }
+
+    public function __unset( string $name ): void
+    {
+        unset( $this->__persistentData[$name] );
+    }
+
     /**
      * Initializes the object with the $row.
      *
@@ -51,9 +78,11 @@ class eZPersistentObject
      */
     public function __construct( $row = null )
     {
+        //var_dump($row);
         $this->PersistentDataDirty = false;
         if ( is_numeric( $row ) )
             $row = $this->fetch( $row, false );
+           // var_dump($row);
         $this->fill( $row );
     }
 
@@ -85,6 +114,7 @@ class eZPersistentObject
 
         foreach ( $def["fields"] as $key => $item )
         {
+            //var_dump( $row[$key]); echo "<hr>";
             if ( isset( $item['name'] ) )
             {
                 $item = $item['name'];
@@ -215,6 +245,8 @@ class eZPersistentObject
         $rows = eZPersistentObject::fetchObjectList( $def, $field_filters, $conds,
                                                       array(), null, $asObject,
                                                       $grouping, $custom_fields );
+                                                      
+        ///var_dump($rows[0]); die('silly');
         if ( $rows )
             return $rows[0];
         return null;
@@ -287,7 +319,17 @@ class eZPersistentObject
 
         $cond_text = eZPersistentObject::conditionText( $conditions );
 
-        $db->query( "DELETE FROM $table $cond_text" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $filter = [];
+            foreach ( $conditions as $field => $value )
+                $filter[$field] = is_numeric( $value ) ? (int)$value : $value;
+            $db->deleteWhere( $table, $filter );
+        }
+        else
+        {
+            $db->query( "DELETE FROM $table $cond_text" );
+        }
     }
 
     /**
@@ -464,6 +506,60 @@ class eZPersistentObject
 
                 $insert_object = true;
             }
+        }
+
+        // MongoDB: bypass SQL path — use native insert / upsert
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Build a typed PHP document from the object's current attributes
+            $doc = array();
+            $allFields = array_diff( array_keys( $fields ), $exclude_fields );
+            foreach ( $allFields as $fname )
+            {
+                $fdef = $fields[$fname];
+                $val  = $obj->attribute( $fname );
+                $dtype = is_array( $fdef ) ? $fdef['datatype'] : $fdef;
+                if ( $dtype === 'integer' || $dtype === 'int' )
+                    $doc[$fname] = $val === null ? null : (int) $val;
+                elseif ( $dtype === 'float' || $dtype === 'double' )
+                    $doc[$fname] = $val === null ? null : (float) $val;
+                else
+                    $doc[$fname] = $val === null ? null : (string) $val;
+            }
+
+            if ( $insert_object )
+            {
+                // Assign a new sequential ID if the increment_key is missing / zero
+                if ( isset( $def['increment_key'] ) && is_string( $def['increment_key'] ) )
+                {
+                    $inc = $def['increment_key'];
+                    if ( !( $obj->attribute( $inc ) > 0 ) )
+                    {
+                        $newID = $db->nextSeqID( $table, $inc );
+                        $doc[$inc] = $newID;
+                        $obj->setAttribute( $inc, $newID );
+                    }
+                }
+                $db->insert( $table, $doc );
+            }
+            else
+            {
+                // Build filter from primary keys with proper types
+                $filter = array();
+                foreach ( $keys as $k )
+                {
+                    $kval  = $obj->attribute( $k );
+                    $kdtype = is_array( $fields[$k] ) ? $fields[$k]['datatype'] : $fields[$k];
+                    if ( $kdtype === 'integer' || $kdtype === 'int' )
+                        $filter[$k] = (int) $kval;
+                    elseif ( $kdtype === 'float' || $kdtype === 'double' )
+                        $filter[$k] = (float) $kval;
+                    else
+                        $filter[$k] = (string) $kval;
+                }
+                $db->upsert( $table, $filter, $doc );
+            }
+            return;
         }
 
         if ( $insert_object )
@@ -805,7 +901,7 @@ class eZPersistentObject
      */
     public static function fetchObjectList( $def,
                               $field_filters = null,
-                              $conds = null,
+                              $conds = [],
                               $sorts = null,
                               $limit = null,
                               $asObject = true,
@@ -818,134 +914,260 @@ class eZPersistentObject
         $fields = $def["fields"];
         $tables = $def["name"];
         $class_name = $def["class_name"];
-        if ( is_array( $custom_tables ) )
+
+        // if ( is_null( $conds ) )
+        // {
+        //     $conds = array();
+        //     debug_print_backtrace();
+        //     die('final');
+        // }
+        //var_dump($conds); die();
+    //     echo "<pre>";
+    //     debug_print_backtrace();
+    //   echo "</pre>";
+    //   die('final');
+
+        if ( $db->databaseName == 'mysql' )
         {
-            foreach( $custom_tables as $custom_table )
-                $tables .= ', ' . $db->escapeString( $custom_table );
-        }
-        eZPersistentObject::replaceFieldsWithShortNames( $db, $fields, $conds );
-        if ( is_array( $field_filters ) )
-            $field_array = array_unique( array_intersect(
-                                             $field_filters, array_keys( $fields ) ) );
-        else
-            $field_array = array_keys( $fields );
-        if ( $custom_fields !== null and is_array( $custom_fields ) )
-        {
-            foreach( $custom_fields as $custom_field )
+            if ( is_array( $custom_tables ) )
             {
-                if ( is_array( $custom_field ) )
+                foreach( $custom_tables as $custom_table )
+                    $tables .= ', ' . $db->escapeString( $custom_table );
+            }
+            eZPersistentObject::replaceFieldsWithShortNames( $db, $fields, $conds );
+            if ( is_array( $field_filters ) )
+                $field_array = array_unique( array_intersect(
+                                                $field_filters, array_keys( $fields ) ) );
+            else
+                $field_array = array_keys( $fields );
+            if ( $custom_fields !== null and is_array( $custom_fields ) )
+            {
+                foreach( $custom_fields as $custom_field )
                 {
-                    $custom_text = $custom_field["operation"];
-                    if ( isset( $custom_field["name"] ) )
+                    if ( is_array( $custom_field ) )
                     {
-                        $field_name = $custom_field["name"];
-                        $custom_text .= " AS $field_name";
+                        $custom_text = $custom_field["operation"];
+                        if ( isset( $custom_field["name"] ) )
+                        {
+                            $field_name = $custom_field["name"];
+                            $custom_text .= " AS $field_name";
+                        }
                     }
+                    else
+                    {
+                        $custom_text = $custom_field;
+                    }
+                    $field_array[] = $custom_text;
+                }
+            }
+            eZPersistentObject::replaceFieldsWithShortNames( $db, $fields, $field_array );
+            $field_text = '';
+            $i = 0;
+            foreach ( $field_array as $field_item )
+            {
+                if ( ( $i % 7 ) == 0 and
+                    $i > 0 )
+                    $field_text .= ",       ";
+                else if ( $i > 0 )
+                    $field_text .= ', ';
+                $field_text .= $field_item;
+                ++$i;
+            }
+
+            $where_text = eZPersistentObject::conditionText( $conds );
+            if ( $custom_conds )
+                $where_text .= $custom_conds;
+
+            $sort_text = "";
+            if ( $sorts !== false and ( isset( $def["sort"] ) or is_array( $sorts ) ) )
+            {
+                $sort_list = array();
+                if ( is_array( $sorts ) )
+                {
+                    $sort_list = $sorts;
+                }
+                else if ( isset( $def['sort'] ) )
+                {
+                    $sort_list = $def["sort"];
+                }
+                if ( count( $sort_list ) > 0 )
+                {
+                    $sort_text = " ORDER BY ";
+                    $i = 0;
+                    foreach ( $sort_list as $sort_id => $sort_type )
+                    {
+                        if ( $i > 0 )
+                            $sort_text .= ", ";
+                        if ( $sort_type == "desc" )
+                            $sort_text .= "$sort_id DESC";
+                        else
+                            $sort_text .= "$sort_id ASC";
+                        ++$i;
+                    }
+                }
+            }
+
+            $grouping_text = "";
+            if ( isset( $def["grouping"] ) or ( is_array( $grouping ) and count( $grouping ) > 0 ) )
+            {
+                $grouping_list = isset( $def["grouping"] ) ? $def["grouping"] : array();
+                if ( is_array( $grouping ) )
+                    $grouping_list = $grouping;
+                if ( count( $grouping_list ) > 0 )
+                {
+                    $grouping_text = " GROUP BY ";
+                    $i = 0;
+                    foreach ( $grouping_list as $grouping_id )
+                    {
+                        if ( $i > 0 )
+                            $grouping_text .= ", ";
+                        $grouping_text .= "$grouping_id";
+                        ++$i;
+                    }
+                }
+            }
+
+            $db_params = array();
+            if ( is_array( $limit ) )
+            {
+                if ( isset( $limit["offset"] ) )
+                {
+                    $db_params["offset"] = $limit["offset"];
+                }
+                if ( isset( $limit['limit'] ) )
+                {
+                    $db_params["limit"] = $limit["limit"];
                 }
                 else
                 {
-                    $custom_text = $custom_field;
+                    $db_params["limit"] = $limit["length"];
                 }
-                $field_array[] = $custom_text;
             }
-        }
-        eZPersistentObject::replaceFieldsWithShortNames( $db, $fields, $field_array );
-        $field_text = '';
-        $i = 0;
-        foreach ( $field_array as $field_item )
-        {
-            if ( ( $i % 7 ) == 0 and
-                 $i > 0 )
-                $field_text .= ",       ";
-            else if ( $i > 0 )
-                $field_text .= ', ';
-            $field_text .= $field_item;
-            ++$i;
-        }
 
-        $where_text = eZPersistentObject::conditionText( $conds );
-        if ( $custom_conds )
-            $where_text .= $custom_conds;
-
-        $sort_text = "";
-        if ( $sorts !== false and ( isset( $def["sort"] ) or is_array( $sorts ) ) )
+            $sqlText = "SELECT $field_text
+                        FROM   $tables" .
+                        $where_text .
+                        $grouping_text .
+                        $sort_text;
+            $rows = $db->arrayQuery( $sqlText,
+                                    $db_params );
+        }
+        // begin 7x mongodb prototype here!
+        elseif ( $db->databaseName() == 'mongo' )
         {
-            $sort_list = array();
-            if ( is_array( $sorts ) )
+            $pipeline = [];
+
+            // Match stage
+            $mongoFilter = [];
+            if ( !empty( $conds ) && is_array( $conds ) )
             {
-                $sort_list = $sorts;
-            }
-            else if ( isset( $def['sort'] ) )
-            {
-                $sort_list = $def["sort"];
-            }
-            if ( count( $sort_list ) > 0 )
-            {
-                $sort_text = " ORDER BY ";
-                $i = 0;
-                foreach ( $sort_list as $sort_id => $sort_type )
+                foreach ( $conds as $field => $value )
                 {
-                    if ( $i > 0 )
-                        $sort_text .= ", ";
-                    if ( $sort_type == "desc" )
-                        $sort_text .= "$sort_id DESC";
+                    if ( is_array( $value ) )
+                    {
+                        $mongoFilter[$field] = $value;
+                    }
                     else
-                        $sort_text .= "$sort_id ASC";
-                    ++$i;
+                    {
+                        // Cast scalar values to the correct type based on the field definition
+                        $dtype = isset( $fields[$field] )
+                            ? ( is_array( $fields[$field] ) ? ( isset( $fields[$field]['datatype'] ) ? $fields[$field]['datatype'] : null ) : $fields[$field] )
+                            : null;
+                        if ( $value !== null && ( $dtype === 'integer' || $dtype === 'int' ) )
+                            $mongoFilter[$field] = (int)$value;
+                        elseif ( $value !== null && ( $dtype === 'float' || $dtype === 'double' ) )
+                            $mongoFilter[$field] = (float)$value;
+                        else
+                            $mongoFilter[$field] = $value;
+                    }
                 }
             }
-        }
+            if ( !empty( $mongoFilter ) )
+                $pipeline[] = [ '$match' => $mongoFilter ];
 
-        $grouping_text = "";
-        if ( isset( $def["grouping"] ) or ( is_array( $grouping ) and count( $grouping ) > 0 ) )
-        {
-            $grouping_list = isset( $def["grouping"] ) ? $def["grouping"] : array();
-            if ( is_array( $grouping ) )
-                $grouping_list = $grouping;
-            if ( count( $grouping_list ) > 0 )
+            // Sort stage
+            if ( $sorts !== false && ( isset( $def['sort'] ) || is_array( $sorts ) ) )
             {
-                $grouping_text = " GROUP BY ";
-                $i = 0;
-                foreach ( $grouping_list as $grouping_id )
+                $sortList = is_array( $sorts ) ? $sorts : ( isset( $def['sort'] ) ? $def['sort'] : [] );
+                if ( !empty( $sortList ) )
                 {
-                    if ( $i > 0 )
-                        $grouping_text .= ", ";
-                    $grouping_text .= "$grouping_id";
-                    ++$i;
+                    $sortStage = [];
+                    foreach ( $sortList as $sField => $sDir )
+                        $sortStage[$sField] = ( strtolower( $sDir ) === 'desc' ) ? -1 : 1;
+                    if ( !empty( $sortStage ) )
+                        $pipeline[] = [ '$sort' => $sortStage ];
                 }
             }
-        }
 
-        $db_params = array();
-        if ( is_array( $limit ) )
-        {
-            if ( isset( $limit["offset"] ) )
+            // Offset / limit stage
+            if ( is_array( $limit ) )
             {
-                $db_params["offset"] = $limit["offset"];
+                $mongoOffset = isset( $limit['offset'] ) ? (int)$limit['offset'] : 0;
+                $mongoLimit  = isset( $limit['limit'] )  ? (int)$limit['limit']
+                             : ( isset( $limit['length'] ) ? (int)$limit['length'] : 0 );
+                if ( $mongoOffset > 0 )
+                    $pipeline[] = [ '$skip' => $mongoOffset ];
+                if ( $mongoLimit > 0 )
+                    $pipeline[] = [ '$limit' => $mongoLimit ];
             }
-            if ( isset( $limit['limit'] ) )
+
+            // Handle $custom_fields — detect count(*) / COUNT(*) aggregations
+            $isCountQuery   = false;
+            $countFieldName = 'count';
+            if ( is_array( $custom_fields ) )
             {
-                $db_params["limit"] = $limit["limit"];
+                foreach ( $custom_fields as $cf )
+                {
+                    if ( is_array( $cf ) && isset( $cf['operation'] ) &&
+                         preg_match( '/^\s*count\s*\(\s*[\*\w]+\s*\)\s*$/i', $cf['operation'] ) )
+                    {
+                        $isCountQuery   = true;
+                        $countFieldName = $cf['name'] ?? 'count';
+                        break;
+                    }
+                }
+            }
+
+            // Field projection / count stage
+            if ( $isCountQuery )
+            {
+                // $count returns a single document { fieldName: N }
+                $pipeline[] = [ '$count' => $countFieldName ];
+            }
+            elseif ( is_array( $field_filters ) && count( $field_filters ) > 0 )
+            {
+                $proj = [ '_id' => 0 ];
+                foreach ( $field_filters as $f )
+                    $proj[$f] = 1;
+                $pipeline[] = [ '$project' => $proj ];
             }
             else
             {
-                $db_params["limit"] = $limit["length"];
+                $pipeline[] = [ '$project' => [ '_id' => 0 ] ];
             }
-        }
 
-        $sqlText = "SELECT $field_text
-                    FROM   $tables" .
-                    $where_text .
-                    $grouping_text .
-                    $sort_text;
-        $rows = $db->arrayQuery( $sqlText,
-                                 $db_params );
+            if ( empty( $pipeline ) )
+                $rows = $db->find( $tables, [] );
+            else
+                $rows = $db->aggregate( $tables, $pipeline );
+
+            // MongoDB $count returns [] when count is 0; normalize to [{fieldName => 0}]
+            if ( $isCountQuery && is_array( $rows ) && empty( $rows ) )
+                $rows = [ [ $countFieldName => 0 ] ];
+
+            if ( $rows === false )
+                $rows = [];
+        }
+        else
+        {
+            $rows = [];
+        }
 
         // Indicate that a DB error occured.
         if ( $rows === false )
             return null;
 
-        $objectList = eZPersistentObject::handleRows( $rows, $class_name, $asObject );
+            $objectList = eZPersistentObject::handleRows( $rows, $class_name, $asObject );
         return $objectList;
     }
 
@@ -971,18 +1193,21 @@ class eZPersistentObject
             {
                 self::replaceFieldsWithLongNames( $db, $objectDefinition['fields'], $row );
             }
+            unset( $row );
         }
 
         if ( $asObject )
         {
+            // var_dump($rows);
             $objects = array();
             if ( is_array( $rows ) )
             {
-                foreach ( $rows as &$row )
+                foreach ( $rows as $row )
                 {
-                    $objects[] = new $class_name( $row );
+                    $objects[] = new $class_name( is_array( $row ) ? $row : $row->getArrayCopy() );
                 }
             }
+
             return $objects;
         }
         else
@@ -1036,6 +1261,20 @@ class eZPersistentObject
         $db = eZDB::instance();
         $table = $def["name"];
         $keys = $def["keys"];
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $mongoFilter = [];
+            foreach ( $conditions as $field => $value )
+                $mongoFilter[$field] = is_numeric( $value ) ? (int)$value : $value;
+            $rows = $db->aggregate( $table, [
+                [ '$match'  => $mongoFilter ],
+                [ '$group'  => [ '_id' => null, 'maxVal' => [ '$max' => '$' . $orderField ] ] ],
+            ] );
+            if ( !empty( $rows ) && isset( $rows[0]['maxVal'] ) )
+                return (int)$rows[0]['maxVal'] + 1;
+            return 1;
+        }
 
         $cond_text = eZPersistentObject::conditionText( $conditions );
         $rows = $db->arrayQuery( "SELECT MAX($orderField) AS $orderField FROM $table $cond_text" );
@@ -1522,11 +1761,6 @@ class eZPersistentObject
     public $WorkflowEventPos;
     public $LanguageID;
     public $ContentObjectStateGroupID;
-    public $contentobject_attribute_id;
-    public $contentobject_id;
-    public $rating;
-    public $rating_count;
-    public $rating_average;
 }
 
 ?>

@@ -144,10 +144,90 @@ class eZURLAliasQuery
      filters as specified with the properties.
      \note Can also be fetched from templates by using the 'count' property.
      */
+
+    /**
+     * @private
+     * Builds a MongoDB $match array from current filter properties.
+     * Returns false if conditions would match no rows.
+     */
+    protected function buildMongoMatch()
+    {
+        $match = [ 'is_original' => 1 ];
+
+        if ( $this->type === 'name' )
+            $match['is_alias'] = 0;
+        elseif ( $this->type === 'alias' )
+            $match['is_alias'] = 1;
+
+        if ( $this->paren !== null )
+            $match['parent'] = (int) $this->paren;
+
+        if ( $this->text !== null )
+            $match['text_md5'] = md5( $this->text );
+
+        if ( $this->languages === true )
+        {
+            $languages = eZContentLanguage::fetchList();
+            $langMask  = 0;
+            foreach ( $languages as $lang )
+                $langMask |= (int) $lang->attribute( 'id' );
+            if ( $langMask )
+                $match['lang_mask'] = [ '$bitsAnySet' => $langMask ];
+        }
+
+        if ( $this->actions !== null )
+        {
+            if ( count( $this->actions ) == 0 )
+                return false;
+            $match['action'] = count( $this->actions ) == 1
+                ? $this->actions[0]
+                : [ '$in' => $this->actions ];
+        }
+
+        $actionTypes = $this->actionTypes;
+        if ( $this->actionTypesEx !== null )
+        {
+            $db = eZDB::instance();
+            if ( $actionTypes === null )
+            {
+                $rows = $db->aggregate( 'ezurlalias_ml', [ [ '$group' => [ '_id' => '$action_type' ] ] ] );
+                $actionTypes = array_column( $rows, '_id' );
+            }
+            $actionTypes = array_values( array_diff( $actionTypes, $this->actionTypesEx ) );
+        }
+        if ( $actionTypes !== null )
+        {
+            if ( count( $actionTypes ) == 0 )
+                return false;
+            $match['action_type'] = count( $actionTypes ) == 1
+                ? $actionTypes[0]
+                : [ '$in' => $actionTypes ];
+        }
+
+        return $match;
+    }
+
     function count()
     {
         if ( $this->count !== null )
             return $this->count;
+
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $match = $this->buildMongoMatch();
+            if ( $match === false )
+            {
+                $this->count = 0;
+                return 0;
+            }
+            $rows = $db->aggregate( 'ezurlalias_ml', [
+                [ '$match' => $match ],
+                [ '$count' => 'count' ],
+            ] );
+            $this->count = !empty( $rows ) ? (int) $rows[0]['count'] : 0;
+            return $this->count;
+        }
 
         if ( $this->query === null )
         {
@@ -156,7 +236,6 @@ class eZURLAliasQuery
         if ( $this->query === false )
             return 0;
         $query = "SELECT count(*) AS count {$this->query}";
-        $db = eZDB::instance();
         $rows = $db->arrayQuery( $query );
         if ( count( $rows ) == 0 )
             $this->count = 0;
@@ -175,6 +254,35 @@ class eZURLAliasQuery
         if ( $this->items !== null )
             return $this->items;
 
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $match = $this->buildMongoMatch();
+            if ( $match === false )
+            {
+                $this->items = [];
+                return [];
+            }
+            // Parse SQL ORDER BY fragment (e.g. "text ASC") into MongoDB sort spec
+            $sortField = 'id';
+            $sortDir   = 1;
+            if ( $this->order )
+            {
+                $parts = preg_split( '/\s+/', trim( $this->order ) );
+                $sortField = $parts[0];
+                $sortDir   = ( isset( $parts[1] ) && strtoupper( $parts[1] ) === 'DESC' ) ? -1 : 1;
+            }
+            $pipeline = [
+                [ '$match' => $match ],
+                [ '$sort'  => [ $sortField => $sortDir ] ],
+                [ '$skip'  => (int) $this->offset ],
+                [ '$limit' => (int) $this->limit ],
+            ];
+            $rows = $db->aggregate( 'ezurlalias_ml', $pipeline );
+            $this->items = count( $rows ) > 0 ? eZURLAliasQuery::makeList( $rows ) : [];
+            return $this->items;
+        }
+
         if ( $this->query === null )
         {
             $this->query = $this->generateSQL();
@@ -184,7 +292,6 @@ class eZURLAliasQuery
         $query = "SELECT * {$this->query} ORDER BY {$this->order}";
         $params = array( 'offset' => $this->offset,
                          'limit'  => $this->limit );
-        $db = eZDB::instance();
         $rows = $db->arrayQuery( $query, $params );
         if ( count( $rows ) == 0 )
             $this->items = array();
@@ -253,11 +360,25 @@ class eZURLAliasQuery
         {
             if ( $actionTypes == null )
             {
-                $rows = $db->arrayQuery( "SELECT DISTINCT action_type FROM ezurlalias_ml" );
-                $actionTypes = array();
-                foreach ( $rows as $row )
+                if ( $db->databaseName() === 'mongo' )
                 {
-                    $actionTypes[] = $row['action_type'];
+                    $rows = $db->aggregate( 'ezurlalias_ml', [
+                        [ '$group' => [ '_id' => '$action_type' ] ],
+                    ] );
+                    $actionTypes = array();
+                    foreach ( $rows as $row )
+                    {
+                        $actionTypes[] = $row['_id'];
+                    }
+                }
+                else
+                {
+                    $rows = $db->arrayQuery( "SELECT DISTINCT action_type FROM ezurlalias_ml" );
+                    $actionTypes = array();
+                    foreach ( $rows as $row )
+                    {
+                        $actionTypes[] = $row['action_type'];
+                    }
                 }
             }
             $actionTypes = array_values( array_diff( $actionTypes, $this->actionTypesEx ) );

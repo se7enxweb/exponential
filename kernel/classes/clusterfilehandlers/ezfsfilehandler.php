@@ -315,6 +315,7 @@ class eZFSFileHandler implements eZClusterFileHandlerInterface
             $forceGeneration = false;
             $storeCache      = true;
             $mtime = file_exists( $fname ) ? filemtime( $fname ) : false;
+            error_log("PROCESSCACHE DEBUG: fname=$fname mtime=" . var_export($mtime, true) . " isExpired=" . ($this->isExpired($expiry,$curtime,$ttl)?'YES':'NO'));
             if ( $retrieveCallback !== null && !$this->isExpired( $expiry, $curtime, $ttl ) )
             {
                 $args = array( $fname, $mtime );
@@ -368,11 +369,14 @@ class eZFSFileHandler implements eZClusterFileHandlerInterface
             {
                 // Lock the entry for exclusive access, if the entry does not exist
                 // it will be inserted with mtime=-1
+                error_log("PROCESSCACHE DEBUG: about to _exclusiveLock");
                 if ( !$this->_exclusiveLock( $fname ) )
                 {
                     // Cannot get exclusive lock, so return null.
+                    error_log("PROCESSCACHE DEBUG: _exclusiveLock FAILED, returning null");
                     return null;
                 }
+                error_log("PROCESSCACHE DEBUG: _exclusiveLock succeeded");
 
                 // This is where we perform a two-phase commit. If any other
                 // process or machine has generated the file data and it is valid
@@ -392,6 +396,7 @@ class eZFSFileHandler implements eZClusterFileHandlerInterface
             // File in DB is outdated or non-existing, call write-callback to generate content
             if ( $generateCallback )
             {
+                error_log("PROCESSCACHE DEBUG: calling generateCallback");
                 $args = array( $fname );
                 if ( $noCache )
                     $extraData['noCache'] = true;

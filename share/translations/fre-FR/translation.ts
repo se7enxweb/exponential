@@ -27874,6 +27874,11 @@ your account.</source>
         <comment>Navigation part</comment>
         <translation>Mon compte</translation>
     </message>
+    <message>
+        <source>Update</source>
+        <comment>Navigation part</comment>
+        <translation type="unfinished">Update</translation>
+    </message>
 </context>
 <context>
     <name>kernel/notification</name>

@@ -22,6 +22,9 @@ class eZSearchLog
     static function addPhrase( $phrase, $returnCount )
     {
         $db = eZDB::instance();
+        // MongoDB: ezsearch SQL phrase log is not used with MongoDB — skip silently
+        if ( $db->databaseName() === 'mongo' )
+            return;
         $db->begin();
         $db->lock( "ezsearch_search_phrase" );
 
@@ -62,7 +65,28 @@ class eZSearchLog
     static function mostFrequentPhraseArray( $parameters = array( ) )
     {
         $db = eZDB::instance();
-
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $pipeline = [
+                [ '$sort' => [ 'phrase_count' => -1 ] ],
+                [ '$project' => [
+                    '_id'          => 0,
+                    'id'           => 1,
+                    'phrase'       => 1,
+                    'phrase_count' => 1,
+                    'result_count' => [ '$cond' => [
+                        'if'   => [ '$gt' => [ '$phrase_count', 0 ] ],
+                        'then' => [ '$divide' => [ '$result_count', '$phrase_count' ] ],
+                        'else' => 0,
+                    ] ],
+                ] ],
+            ];
+            if ( isset( $parameters['offset'] ) && $parameters['offset'] > 0 )
+                $pipeline[] = [ '$skip'  => (int) $parameters['offset'] ];
+            if ( isset( $parameters['limit']  ) && $parameters['limit']  > 0 )
+                $pipeline[] = [ '$limit' => (int) $parameters['limit']  ];
+            return $db->aggregate( 'ezsearch_search_phrase', $pipeline );
+        }
         $query = 'SELECT phrase_count, result_count / phrase_count AS result_count, id, phrase
                   FROM   ezsearch_search_phrase
                   ORDER BY phrase_count DESC';

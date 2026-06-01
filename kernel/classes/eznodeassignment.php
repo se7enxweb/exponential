@@ -298,20 +298,29 @@ class eZNodeAssignment extends eZPersistentObject
             {
                 return false;
             }
-            $sql = "UPDATE eznode_assignment SET op_code = " . eZNodeAssignment::OP_CODE_REMOVE . ", is_main = 0 WHERE id IN ( ";
-            $i = 0;
-            foreach ( $assignmentID as $id )
-            {
-                if ( $i > 0 )
-                    $sql .= ", ";
-                $sql .= (int)$id;
-                ++$i;
-            }
-            $sql .= ' )';
+            $ids = array_map( 'intval', $assignmentID );
         }
         else
         {
-            $sql = "UPDATE eznode_assignment SET op_code = " . eZNodeAssignment::OP_CODE_REMOVE . ", is_main = 0 WHERE id=" . (int)$assignmentID;
+            $ids = [ (int)$assignmentID ];
+        }
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->mongoUpdateMany( 'eznode_assignment',
+                [ 'id' => [ '$in' => $ids ] ],
+                [ '$set' => [ 'op_code' => eZNodeAssignment::OP_CODE_REMOVE, 'is_main' => 0 ] ]
+            );
+            return true;
+        }
+
+        if ( count( $ids ) > 1 )
+        {
+            $sql = "UPDATE eznode_assignment SET op_code = " . eZNodeAssignment::OP_CODE_REMOVE . ", is_main = 0 WHERE id IN ( " . implode( ', ', $ids ) . ' )';
+        }
+        else
+        {
+            $sql = "UPDATE eznode_assignment SET op_code = " . eZNodeAssignment::OP_CODE_REMOVE . ", is_main = 0 WHERE id=" . $ids[0];
         }
         $db->query( $sql );
         return true;
@@ -330,7 +339,12 @@ class eZNodeAssignment extends eZPersistentObject
     {
         if ( $parentNodeID == false && $contentObjectID == false )
         {
-            eZDB::instance()->query( "DELETE FROM eznode_assignment WHERE id=" . (int)$this->attribute( 'id' ) );
+            $db = eZDB::instance();
+            $id = (int)$this->attribute( 'id' );
+            if ( $db->databaseName() === 'mongo' )
+                $db->mongoDeleteOne( 'eznode_assignment', [ 'id' => $id ] );
+            else
+                $db->query( "DELETE FROM eznode_assignment WHERE id=" . $id );
         }
         else
         {
@@ -346,9 +360,13 @@ class eZNodeAssignment extends eZPersistentObject
      */
     public static function purgeByParentAndContentObjectID( $parentNodeID, $contentObjectID )
     {
-        eZDB::instance()->query(
-            "DELETE FROM eznode_assignment WHERE parent_node=" . (int)$parentNodeID ." AND contentobject_id=" . (int)$contentObjectID
-        );
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+            $db->deleteWhere( 'eznode_assignment', [ 'parent_node' => (int)$parentNodeID, 'contentobject_id' => (int)$contentObjectID ] );
+        else
+            $db->query(
+                "DELETE FROM eznode_assignment WHERE parent_node=" . (int)$parentNodeID ." AND contentobject_id=" . (int)$contentObjectID
+            );
     }
 
     /*!
@@ -370,20 +388,26 @@ class eZNodeAssignment extends eZPersistentObject
             {
                 return false;
             }
-            $sql = "DELETE FROM eznode_assignment WHERE id IN ( ";
-            $i = 0;
-            foreach ( $assignmentID as $id )
-            {
-                if ( $i > 0 )
-                    $sql .= ", ";
-                $sql .= (int)$id;
-                ++$i;
-            }
-            $sql .= ' )';
+            $ids = array_map( 'intval', $assignmentID );
         }
         else
         {
-            $sql = "DELETE FROM eznode_assignment WHERE id=" . (int)$assignmentID;
+            $ids = [ (int)$assignmentID ];
+        }
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->deleteWhere( 'eznode_assignment', [ 'id' => [ '$in' => $ids ] ] );
+            return true;
+        }
+
+        if ( count( $ids ) > 1 )
+        {
+            $sql = "DELETE FROM eznode_assignment WHERE id IN ( " . implode( ', ', $ids ) . ' )';
+        }
+        else
+        {
+            $sql = "DELETE FROM eznode_assignment WHERE id=" . $ids[0];
         }
         $db->query( $sql );
         return true;
@@ -461,6 +485,37 @@ class eZNodeAssignment extends eZPersistentObject
     static function fetchChildCountByVersionStatus( $parentNodeIDList, $status = eZContentObjectVersion::STATUS_PENDING )
     {
         $db = eZDB::instance();
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $parentNodeIDs = array_map( 'intval', $parentNodeIDList );
+            // Join through PHP: find version IDs matching status, then count matching assignments
+            $versionRows = $db->aggregate( 'ezcontentobject_version', [
+                [ '$match'   => [ 'status' => (int)$status ] ],
+                [ '$project' => [ '_id' => 0, 'contentobject_id' => 1, 'version' => 1 ] ],
+            ] );
+            $versionKeys = [];
+            foreach ( $versionRows as $vr )
+                $versionKeys[] = [ 'contentobject_id' => (int)$vr['contentobject_id'], 'version' => (int)$vr['version'] ];
+
+            if ( empty( $versionKeys ) ) return 0;
+
+            $assignRows = $db->aggregate( 'eznode_assignment', [
+                [ '$match' => [ 'parent_node' => [ '$in' => $parentNodeIDs ] ] ],
+            ] );
+            $cnt = 0;
+            foreach ( $assignRows as $ar )
+            {
+                foreach ( $versionKeys as $vk )
+                {
+                    if ( (int)$ar['contentobject_id'] === $vk['contentobject_id'] &&
+                         (int)$ar['contentobject_version'] === $vk['version'] )
+                    { $cnt++; break; }
+                }
+            }
+            return $cnt;
+        }
+
         $parentIDStatement = $db->generateSQLINStatement( $parentNodeIDList );
         $sql = "SELECT COUNT( DISTINCT eznode_assignment.id ) AS cnt
                     FROM ezcontentobject_version, eznode_assignment
@@ -484,6 +539,42 @@ class eZNodeAssignment extends eZPersistentObject
     static function fetchChildListByVersionStatus( $parentNodeIDList, $status = eZContentObjectVersion::STATUS_PENDING, $asObject = true )
     {
         $db = eZDB::instance();
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $parentNodeIDs = array_map( 'intval', $parentNodeIDList );
+            $versionRows = $db->aggregate( 'ezcontentobject_version', [
+                [ '$match'   => [ 'status' => (int)$status ] ],
+                [ '$project' => [ '_id' => 0, 'contentobject_id' => 1, 'version' => 1 ] ],
+            ] );
+            $versionKeys = [];
+            foreach ( $versionRows as $vr )
+                $versionKeys[(int)$vr['contentobject_id'] . '_' . (int)$vr['version']] = true;
+
+            $assignRows = $db->aggregate( 'eznode_assignment', [
+                [ '$match' => [ 'parent_node' => [ '$in' => $parentNodeIDs ] ] ],
+                [ '$sort'  => [ 'contentobject_id' => 1 ] ],
+            ] );
+            $seen = [];
+            $nodeAssignmentArray = [];
+            foreach ( $assignRows as $ar )
+            {
+                $key = (int)$ar['contentobject_id'] . '_' . (int)$ar['contentobject_version'];
+                if ( isset( $versionKeys[$key] ) && !isset( $seen[(int)$ar['id']] ) )
+                {
+                    $seen[(int)$ar['id']] = true;
+                    $nodeAssignmentArray[] = $ar;
+                }
+            }
+            if ( $asObject )
+            {
+                $result = [];
+                foreach ( $nodeAssignmentArray as $na ) $result[] = new eZNodeAssignment( $na );
+                return $result;
+            }
+            return $nodeAssignmentArray;
+        }
+
         $parentIDStatement = $db->generateSQLINStatement( $parentNodeIDList );
 
         $sql = "SELECT DISTINCT eznode_assignment.*
@@ -576,15 +667,35 @@ class eZNodeAssignment extends eZPersistentObject
 
         if ( $newMainAssignment === null )
         {
-            $db->query( "UPDATE eznode_assignment SET is_main=0 WHERE contentobject_id=$objectID AND contentobject_version=$version" );
+            if ( $db->databaseName() === 'mongo' )
+                $db->mongoUpdateMany( 'eznode_assignment',
+                    [ 'contentobject_id' => (int)$objectID, 'contentobject_version' => (int)$version ],
+                    [ '$set' => [ 'is_main' => 0 ] ]
+                );
+            else
+                $db->query( "UPDATE eznode_assignment SET is_main=0 WHERE contentobject_id=$objectID AND contentobject_version=$version" );
             return false;
         }
 
         $parentMainNodeID = $newMainAssignment->attribute( 'parent_node' );
 
         $db->begin();
-        $db->query( "UPDATE eznode_assignment SET is_main=1 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node=$parentMainNodeID" );
-        $db->query( "UPDATE eznode_assignment SET is_main=0 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node<>$parentMainNodeID" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->mongoUpdateMany( 'eznode_assignment',
+                [ 'contentobject_id' => (int)$objectID, 'contentobject_version' => (int)$version, 'parent_node' => (int)$parentMainNodeID ],
+                [ '$set' => [ 'is_main' => 1 ] ]
+            );
+            $db->mongoUpdateMany( 'eznode_assignment',
+                [ 'contentobject_id' => (int)$objectID, 'contentobject_version' => (int)$version, 'parent_node' => [ '$ne' => (int)$parentMainNodeID ] ],
+                [ '$set' => [ 'is_main' => 0 ] ]
+            );
+        }
+        else
+        {
+            $db->query( "UPDATE eznode_assignment SET is_main=1 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node=$parentMainNodeID" );
+            $db->query( "UPDATE eznode_assignment SET is_main=0 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node<>$parentMainNodeID" );
+        }
         $db->commit();
 
         return true;

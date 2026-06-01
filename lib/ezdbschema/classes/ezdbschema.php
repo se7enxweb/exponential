@@ -32,6 +32,9 @@ class eZDbSchema
             $params = array( 'instance' => $db );
         }
 
+        if ( !is_array( $params ) )
+            $params = array();
+
         if ( !isset( $params['instance'] ) )
         {
             $db = eZDB::instance();
@@ -55,7 +58,8 @@ class eZDbSchema
         /* Check if we have a handler */
         if ( !isset( $schemaPaths[$dbname] ) or !isset( $schemaHandlerClasses[$dbname] ) )
         {
-            eZDebug::writeError( "No schema handler for database type: $dbname", __METHOD__ );
+            if ( $dbname !== 'mongo' )
+                eZDebug::writeError( "No schema handler for database type: $dbname", __METHOD__ );
             return false;
         }
 

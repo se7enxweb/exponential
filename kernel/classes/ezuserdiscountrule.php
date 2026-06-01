@@ -135,6 +135,11 @@ class eZUserDiscountRule extends eZPersistentObject
     static public function generateIDListByUserID( $userId )
     {
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // ezdiscountrule/ezuser_discountrule not used in MongoDB — return empty
+            return [];
+        }
         $query = "SELECT DISTINCT ezdiscountrule.id
               FROM ezdiscountrule,
                    ezuser_discountrule
@@ -153,6 +158,12 @@ class eZUserDiscountRule extends eZPersistentObject
     static function &fetchByUserIDArray( $idArray )
     {
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // ezdiscountrule/ezuser_discountrule collections not used in MongoDB — return empty
+            $empty = [];
+            return $empty;
+        }
         $inString = $db->generateSQLINStatement( $idArray, 'ezuser_discountrule.contentobject_id', false, false, 'int' );
         $query = "SELECT DISTINCT ezdiscountrule.id,
                                   ezdiscountrule.name

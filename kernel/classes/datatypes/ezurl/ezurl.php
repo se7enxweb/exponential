@@ -284,6 +284,72 @@ class eZURL extends eZPersistentObject
             $db = eZDB::instance();
             $cObjAttrVersionColumn = eZPersistentObject::getShortAttributeName( $db, eZURLObjectLink::definition(), 'contentobject_attribute_version' );
 
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $isValidFilter = ( $isValid !== null ) ? [ 'is_valid' => (int) $isValid ] : [];
+                $pipeline = [
+                    [ '$match' => $isValidFilter ],
+                    [ '$lookup' => [
+                        'from'         => 'ezurl_object_link',
+                        'localField'   => 'id',
+                        'foreignField' => 'url_id',
+                        'as'           => '_link',
+                    ]],
+                    [ '$unwind' => '$_link' ],
+                    [ '$lookup' => [
+                        'from'         => 'ezcontentobject_attribute',
+                        'let'          => [ 'attr_id' => '$_link.contentobject_attribute_id', 'attr_ver' => '$_link.contentobject_attribute_version' ],
+                        'pipeline'     => [ [ '$match' => [ '$expr' => [ '$and' => [
+                            [ '$eq' => [ '$id', '$$attr_id' ] ],
+                            [ '$eq' => [ '$version', '$$attr_ver' ] ],
+                        ] ] ] ] ],
+                        'as'           => '_attr',
+                    ]],
+                    [ '$unwind' => '$_attr' ],
+                    [ '$lookup' => [
+                        'from'         => 'ezcontentobject_version',
+                        'let'          => [ 'obj_id' => '$_attr.contentobject_id', 'ver' => '$_attr.version' ],
+                        'pipeline'     => [ [ '$match' => [ '$expr' => [ '$and' => [
+                            [ '$eq' => [ '$contentobject_id', '$$obj_id' ] ],
+                            [ '$eq' => [ '$version', '$$ver' ] ],
+                            [ '$eq' => [ '$status', eZContentObjectVersion::STATUS_PUBLISHED ] ],
+                        ] ] ] ] ],
+                        'as'           => '_ver',
+                    ]],
+                    [ '$unwind' => '$_ver' ],
+                    [ '$group'  => [ '_id' => '$id',
+                        'url'           => [ '$first' => '$url' ],
+                        'original_url_md5' => [ '$first' => '$original_url_md5' ],
+                        'is_valid'      => [ '$first' => '$is_valid' ],
+                        'last_checked'  => [ '$first' => '$last_checked' ],
+                        'last_modified' => [ '$first' => '$last_modified' ],
+                    ]],
+                    [ '$project' => [ '_id' => 0, 'id' => '$_id',
+                        'url' => 1, 'original_url_md5' => 1, 'is_valid' => 1,
+                        'last_checked' => 1, 'last_modified' => 1,
+                    ]],
+                ];
+                if ( $asCount )
+                {
+                    $countPipeline = $pipeline;
+                    $countPipeline[] = [ '$count' => 'count' ];
+                    $rows = $db->aggregate( 'ezurl', $countPipeline );
+                    return !empty( $rows ) ? (int) $rows[0]['count'] : 0;
+                }
+                else
+                {
+                    if ( $offset ) $pipeline[] = [ '$skip'  => (int) $offset ];
+                    if ( $limit  ) $pipeline[] = [ '$limit' => (int) $limit  ];
+                    $urlArray = $db->aggregate( 'ezurl', $pipeline );
+                    if ( $asObject )
+                    {
+                        $urls = array();
+                        foreach ( $urlArray as $url ) { $urls[] = new eZURL( $url ); }
+                        return $urls;
+                    }
+                    return $urlArray;
+                }
+            }
             if ( $asCount )
             {
                 $urls = $db->arrayQuery( "SELECT count( DISTINCT ezurl.id ) AS count

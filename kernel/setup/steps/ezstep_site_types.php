@@ -109,7 +109,6 @@ class eZStepSiteTypes extends eZStepInstaller
                 return false;
             }
 
-            curl_close( $ch );
             fclose( $fp );
         }
         else

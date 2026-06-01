@@ -1482,11 +1482,9 @@ class eZDataType
                     }
                 }
             }
+            // File exists but is empty or has no data rows — treat as success (nothing to import).
         }
-        else
-        {
-            $result = false;
-        }
+        // No DBA file for this datatype — nothing to import, return true (success).
         return $result;
     }
 

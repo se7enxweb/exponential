@@ -27930,6 +27930,11 @@ si has elegido la opción &quot;%3&quot; desde &quot;%4&quot; </translation>
         <comment>Navigation part</comment>
         <translation>Mi cuenta</translation>
     </message>
+    <message>
+        <source>Update</source>
+        <comment>Navigation part</comment>
+        <translation type="unfinished">Update</translation>
+    </message>
 </context>
 <context>
     <name>kernel/notification</name>

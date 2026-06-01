@@ -37,7 +37,7 @@ class eZUserSetting extends eZPersistentObject
                       'relations' => array( 'user_id' => array( 'class' => 'ezuser',
                                                                 'field' => 'contentobject_id' ) ),
                       'class_name' => 'eZUserSetting',
-                      'name' => 'ezuser_setting' );
+                      'name' => "ezuser_setting" );
         return $definition;
     }
 

@@ -567,35 +567,48 @@ class eZNodeviewfunctions
     static public function contentViewGenerate( $file, $args )
     {
         extract( $args );
+        error_log("CVG DEBUG: start NodeID=$NodeID");
         $node = eZContentObjectTreeNode::fetch( $NodeID );
+        error_log("CVG DEBUG: node fetch result=" . (($node instanceof eZContentObjectTreeNode) ? 'OK name=' . $node->attribute('name') : 'FAILED type=' . gettype($node)));
         if ( !$node instanceof eZContentObjectTreeNode )
         {
             if ( !eZDB::instance()->isConnected())
             {
+                error_log("CVG DEBUG: DB not connected → KERNEL_NO_DB_CONNECTION");
                 return self::contentViewGenerateError( $Module, eZError::KERNEL_NO_DB_CONNECTION, false );
             }
-
+            error_log("CVG DEBUG: node not found → KERNEL_NOT_AVAILABLE");
             return self::contentViewGenerateError( $Module, eZError::KERNEL_NOT_AVAILABLE );
         }
 
         $object = $node->attribute( 'object' );
+        error_log("CVG DEBUG: object=" . (($object instanceof eZContentObject) ? 'OK' : 'FAILED'));
         if ( !$object instanceof eZContentObject )
         {
             return self::contentViewGenerateError( $Module, eZError::KERNEL_NOT_AVAILABLE );
         }
+
+        error_log("CANREAD DEBUG: contentViewGenerate reached checks. NodeID={$NodeID}, is_invisible=" . ($node->attribute('is_invisible') ? 'YES' : 'NO'));
 
         if ( $node->attribute( 'is_invisible' ) && !eZContentObjectTreeNode::showInvisibleNodes() )
         {
             return self::contentViewGenerateError( $Module, eZError::KERNEL_ACCESS_DENIED );
         }
 
-        if ( !$node->canRead() )
+        $currentUser = eZUser::currentUser();
+        $currentUserID = $currentUser ? $currentUser->attribute('contentobject_id') : 'NULL';
+        error_log("CANREAD DEBUG: NodeID={$NodeID}, userID={$currentUserID}");
+        $canReadResult = $node->canRead();
+        error_log("CANREAD DEBUG: canRead()=" . ($canReadResult ? 'TRUE' : 'FALSE'));
+        if ( !$canReadResult )
         {
+            $accessList = $node->checkAccess( 'read', false, false, true );
+            error_log("CANREAD DEBUG: ACCESS DENIED - accessList=" . var_export($accessList, true));
             return self::contentViewGenerateError(
                 $Module,
                 eZError::KERNEL_ACCESS_DENIED,
                 true,
-                array( 'AccessList' => $node->checkAccess( 'read', false, false, true ) )
+                array( 'AccessList' => $accessList )
             );
         }
 

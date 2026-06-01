@@ -113,7 +113,34 @@ class eZContentObjectStateGroup extends eZPersistentObject
                "FROM ezcobj_state_group, ezcobj_state_group_language ".
                "WHERE $conditionsSQL";
 
-        $rows = $db->arrayQuery( $sql, array( 'limit' => $limit, 'offset' => $offset ) );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $pipeline = [
+                [ '$lookup' => [
+                    'from'         => 'ezcobj_state_group_language',
+                    'localField'   => 'id',
+                    'foreignField' => 'contentobject_state_group_id',
+                    'as'           => '_lang',
+                ] ],
+                [ '$unwind' => [ 'path' => '$_lang', 'preserveNullAndEmptyArrays' => true ] ],
+                [ '$addFields' => [
+                    'language_id'   => '$_lang.language_id',
+                    'name'          => '$_lang.name',
+                    'description'   => '$_lang.description',
+                    'real_language_id' => '$_lang.real_language_id',
+                    'contentobject_state_group_id' => '$_lang.contentobject_state_group_id',
+                ] ],
+                [ '$project' => [ '_id' => 0, '_lang' => 0 ] ],
+            ];
+            if ( $offset > 0 ) $pipeline[] = [ '$skip'  => (int)$offset ];
+            if ( $limit > 0  ) $pipeline[] = [ '$limit' => (int)$limit  ];
+            $rows = $db->aggregate( 'ezcobj_state_group', $pipeline );
+            if ( $rows === false ) $rows = [];
+        }
+        else
+        {
+            $rows = $db->arrayQuery( $sql, array( 'limit' => $limit, 'offset' => $offset ) );
+        }
 
         $stateGroups = array();
         foreach ( $rows as $row )

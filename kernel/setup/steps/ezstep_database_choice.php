@@ -110,6 +110,10 @@ class eZStepDatabaseChoice extends eZStepInstaller
                 {
                     $availableDatabases['postgresql'] = true;
                 }
+                elseif ( $databaseMap[$extension]['type'] == 'mongodb' )
+                {
+                    $availableDatabases['mongodb'] = true;
+                }
             }
         }
 

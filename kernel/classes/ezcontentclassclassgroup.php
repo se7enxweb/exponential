@@ -155,6 +155,32 @@ class eZContentClassClassGroup extends eZPersistentObject
         }
 
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $groupCond = [ 'group_id' => (int)$group_id ];
+            if ( $contentclass_version !== null )
+                $groupCond['contentclass_version'] = (int)$contentclass_version;
+
+            $groupRows = $db->aggregate( 'ezcontentclass_classgroup', [
+                [ '$match'   => $groupCond ],
+                [ '$project' => [ '_id' => 0, 'contentclass_id' => 1 ] ],
+            ] );
+            $classIds = array_unique( array_column( $groupRows, 'contentclass_id' ) );
+
+            if ( empty( $classIds ) )
+                return [];
+
+            $classCond = [ 'id' => [ '$in' => array_values( array_map( 'intval', $classIds ) ) ] ];
+            if ( $contentclass_version !== null )
+                $classCond['version'] = (int)$contentclass_version;
+
+            $classRows = $db->aggregate( 'ezcontentclass', [
+                [ '$match'   => $classCond ],
+                [ '$project' => [ '_id' => 0 ] ],
+            ] );
+            return eZPersistentObject::handleRows( $classRows, 'eZContentClass', $asObject );
+        }
+
         $sql = "SELECT contentclass.* $classNameSqlFilter[nameField]
                 FROM ezcontentclass  contentclass, ezcontentclass_classgroup class_group $classNameSqlFilter[from]
                 WHERE contentclass.id=class_group.contentclass_id

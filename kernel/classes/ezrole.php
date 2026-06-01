@@ -133,6 +133,24 @@ class eZRole extends eZPersistentObject
     function createTemporaryVersion()
     {
         $db = eZDB::instance();
+
+        // MongoDB: eZPersistentObject::fetchObject uses fetchObjectList which may fail to match
+        // the integer version field, causing this method to be called on every page load and
+        // duplicating policies. Use a direct aggregate query instead to detect an existing draft.
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $originalID = (int) $this->attribute( 'id' );
+            $existingDrafts = $db->aggregate( 'ezrole', [
+                [ '$match' => [ 'version' => $originalID ] ],
+                [ '$sort'  => [ 'id' => 1 ] ],
+                [ '$limit' => 1 ],
+            ] );
+            if ( !empty( $existingDrafts ) )
+            {
+                return new eZRole( $existingDrafts[0] );
+            }
+        }
+
         $db->begin();
 
         $newRole = eZRole::createNew();
@@ -195,6 +213,9 @@ class eZRole extends eZPersistentObject
     function appendPolicy( $module, $function, $limitations = array() )
     {
         $policy = eZPolicy::create( $this->ID, $module, $function );
+        // MongoDB: null default for original_id gets excluded from the stored document,
+        // making policyList()'s {original_id:0} query miss these policies. Always set 0.
+        $policy->setAttribute( 'original_id', 0 );
 
         $db = eZDB::instance();
         $db->begin();
@@ -249,7 +270,6 @@ class eZRole extends eZPersistentObject
         {
             $db = eZDB::instance();
             $db->begin();
-
             foreach( $policyList as $key => $policy )
             {
                 if ( is_object( $policy ) )
@@ -263,10 +283,8 @@ class eZRole extends eZPersistentObject
                     }
                 }
             }
-
             $db->commit();
         }
-
         return $hasPolicy;
     }
 
@@ -290,7 +308,17 @@ class eZRole extends eZPersistentObject
         $query = "UPDATE  ezpolicy
                   SET role_id = " . $this->attribute( 'id' ) . "
                   WHERE role_id = " . $temporaryVersion->attribute( 'id' );
-        $db->query( $query );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->mongoUpdateMany( 'ezpolicy',
+                [ 'role_id' => (int)$temporaryVersion->attribute( 'id' ) ],
+                [ '$set' => [ 'role_id' => (int)$this->attribute( 'id' ) ] ]
+            );
+        }
+        else
+        {
+            $db->query( $query );
+        }
         $temporaryVersion->removePolicies( false );
         $temporaryVersion->remove();
         $db->commit();
@@ -348,8 +376,16 @@ class eZRole extends eZPersistentObject
         {
             $policy->removeThis();
         }
-        $db->query( "DELETE FROM ezrole WHERE id='" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
-        $db->query( "DELETE FROM ezuser_role WHERE role_id = '" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->deleteWhere( 'ezrole',      [ 'id'      => (int)$this->attribute( 'id' ) ] );
+            $db->deleteWhere( 'ezuser_role', [ 'role_id' => (int)$this->attribute( 'id' ) ] );
+        }
+        else
+        {
+            $db->query( "DELETE FROM ezrole WHERE id='" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
+            $db->query( "DELETE FROM ezuser_role WHERE role_id = '" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
+        }
         $db->commit();
     }
 
@@ -422,8 +458,19 @@ class eZRole extends eZPersistentObject
         $db->begin();
         $pathString = $node->attribute( 'path_string' );
         $nodeID = $node->attribute( 'node_id' );
-        $db->query( "DELETE FROM ezuser_role
-                     WHERE limit_value LIKE '$pathString%' AND limit_identifier='Subtree'" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Delete ezuser_role assignments whose limit_value starts with $pathString (Subtree scope)
+            $db->deleteWhere( 'ezuser_role', [
+                'limit_identifier' => 'Subtree',
+                'limit_value'      => [ '$regex' => '^' . preg_quote( $pathString ) ],
+            ] );
+        }
+        else
+        {
+            $db->query( "DELETE FROM ezuser_role
+                         WHERE limit_value LIKE '$pathString%' AND limit_identifier='Subtree'" );
+        }
                         // Clean up subtree limitations related to this object
 
 
@@ -505,52 +552,151 @@ class eZRole extends eZPersistentObject
         }
 
         $db = eZDB::instance();
-
-        if ( !$recursive )
-        {
-            $groupINSQL = $db->generateSQLINStatement( $idArray, 'ezuser_role.contentobject_id', false, false, 'int' );
-            $query = "SELECT DISTINCT ezrole.id,
-                                      ezrole.name,
-                                      ezuser_role.limit_identifier,
-                                      ezuser_role.limit_value,
-                                      ezuser_role.id as user_role_id
-                      FROM ezrole,
-                           ezuser_role
-                      WHERE $groupINSQL AND
-                            ezuser_role.role_id = ezrole.id";
-        }
-        else
-        {
-            $userNodeIDArray = array();
-            foreach( $idArray as $id )
+       
+        // if ( $db->databaseName == 'mysql' )
+        // {
+            if ( !$recursive )
             {
-                $nodeDefinition = eZContentObjectTreeNode::fetchByContentObjectID( $id );
-                foreach ( $nodeDefinition as $nodeDefinitionElement )
+                $groupINSQL = $db->generateSQLINStatement( $idArray, 'ezuser_role.contentobject_id', false, false, 'int' );
+                $query = "SELECT DISTINCT ezrole.id,
+                                        ezrole.name,
+                                        ezuser_role.limit_identifier,
+                                        ezuser_role.limit_value,
+                                        ezuser_role.id as user_role_id
+                        FROM ezrole,
+                            ezuser_role
+                        WHERE $groupINSQL AND
+                                ezuser_role.role_id = ezrole.id";
+            }
+            else
+            {
+                $userNodeIDArray = array();
+                foreach( $idArray as $id )
                 {
-                    $userNodeIDArray = array_merge( $nodeDefinitionElement->attribute( 'path_array' ), $userNodeIDArray );
+                    $nodeDefinition = eZContentObjectTreeNode::fetchByContentObjectID( $id );
+                    foreach ( $nodeDefinition as $nodeDefinitionElement )
+                    {
+                        $userNodeIDArray = array_merge( $nodeDefinitionElement->attribute( 'path_array' ), $userNodeIDArray );
+                    }
+                }
+
+                if ( count( $userNodeIDArray ) < 1 )
+                {
+                    return array();
+                }
+
+                $roleTreeINSQL = $db->generateSQLINStatement( $userNodeIDArray, 'role_tree.node_id', false, false, 'int' );
+                $query = "SELECT DISTINCT ezrole.id,
+                                        ezrole.name,
+                                        ezuser_role.limit_identifier,
+                                        ezuser_role.limit_value,
+                                        ezuser_role.id as user_role_id
+                        FROM ezrole,
+                            ezuser_role,
+                            ezcontentobject_tree role_tree
+                        WHERE ezuser_role.contentobject_id = role_tree.contentobject_id AND
+                                ezuser_role.role_id = ezrole.id AND
+                                $roleTreeINSQL";
+            }
+
+            if ( $db->databaseName() == 'mongo' )
+            {
+                if ( !$recursive )
+                {
+                    // Direct assignment: roles assigned directly to user contentobject_ids
+                    $pipeline = [
+                        [ '$lookup' => [
+                            'from'         => 'ezuser_role',
+                            'localField'   => 'id',
+                            'foreignField' => 'role_id',
+                            'as'           => 'role'
+                        ] ],
+                        [ '$unwind' => '$role' ],
+                        [ '$match' => [
+                            'role.contentobject_id' => [ '$in' => array_values( array_map( 'intval', $idArray ) ) ]
+                        ] ],
+                        [ '$project' => [
+                            '_id'              => 0,
+                            'id'               => 1,
+                            'name'             => 1,
+                            'limit_identifier' => '$role.limit_identifier',
+                            'limit_value'      => '$role.limit_value',
+                            'user_role_id'     => '$role.id',
+                        ] ],
+                    ];
+                    $roleArray = $db->aggregate( 'ezrole', $pipeline );
+                }
+                else
+                {
+                    // Recursive (group) assignment: walk each user's tree path to find
+                    // which ancestor groups have roles assigned.
+                    // 1. Get all nodes for users in $idArray (path_string is "/1/5/13/15/")
+                    $userNodes = $db->aggregate( 'ezcontentobject_tree', [
+                        [ '$match'   => [ 'contentobject_id' => [ '$in' => array_values( array_map( 'intval', $idArray ) ) ] ] ],
+                        [ '$project' => [ '_id' => 0, 'path_string' => 1 ] ],
+                    ] );
+                    $userNodeIDArray = [];
+                    foreach ( $userNodes as $un )
+                    {
+                        // path_string like "/1/5/13/15/" → [1, 5, 13, 15]
+                        $parts = array_filter( explode( '/', $un['path_string'] ) );
+                        foreach ( $parts as $nid )
+                            $userNodeIDArray[] = (int)$nid;
+                    }
+                    $userNodeIDArray = array_values( array_unique( $userNodeIDArray ) );
+
+                    if ( empty( $userNodeIDArray ) )
+                    {
+                        return [];
+                    }
+
+                    // 2. Find contentobject_ids of those tree nodes
+                    $treeRows = $db->aggregate( 'ezcontentobject_tree', [
+                        [ '$match'   => [ 'node_id' => [ '$in' => $userNodeIDArray ] ] ],
+                        [ '$project' => [ '_id' => 0, 'contentobject_id' => 1 ] ],
+                    ] );
+                    $groupCOIDs = array_values( array_unique( array_map( fn($treeRow) => (int)$treeRow['contentobject_id'], $treeRows ) ) );
+
+                    if ( empty( $groupCOIDs ) )
+                    {
+                        return [];
+                    }
+
+                    // 3. Get roles assigned to those group contentobject_ids
+                    $pipeline = [
+                        [ '$lookup' => [
+                            'from'         => 'ezuser_role',
+                            'localField'   => 'id',
+                            'foreignField' => 'role_id',
+                            'as'           => 'role'
+                        ] ],
+                        [ '$unwind' => '$role' ],
+                        [ '$match' => [
+                            'role.contentobject_id' => [ '$in' => $groupCOIDs ]
+                        ] ],
+                        [ '$group' => [
+                            '_id'              => '$id',
+                            'name'             => [ '$first' => '$name' ],
+                            'limit_identifier' => [ '$first' => '$role.limit_identifier' ],
+                            'limit_value'      => [ '$first' => '$role.limit_value' ],
+                            'user_role_id'     => [ '$first' => '$role.id' ],
+                        ] ],
+                        [ '$project' => [
+                            '_id'              => 0,
+                            'id'               => '$_id',
+                            'name'             => 1,
+                            'limit_identifier' => 1,
+                            'limit_value'      => 1,
+                            'user_role_id'     => 1,
+                        ] ],
+                    ];
+                    $roleArray = $db->aggregate( 'ezrole', $pipeline );
                 }
             }
-
-            if ( count( $userNodeIDArray ) < 1 )
+            else
             {
-                return array();
+                $roleArray = $db->arrayQuery( $query );
             }
-
-            $roleTreeINSQL = $db->generateSQLINStatement( $userNodeIDArray, 'role_tree.node_id', false, false, 'int' );
-            $query = "SELECT DISTINCT ezrole.id,
-                                      ezrole.name,
-                                      ezuser_role.limit_identifier,
-                                      ezuser_role.limit_value,
-                                      ezuser_role.id as user_role_id
-                      FROM ezrole,
-                           ezuser_role,
-                           ezcontentobject_tree role_tree
-                      WHERE ezuser_role.contentobject_id = role_tree.contentobject_id AND
-                            ezuser_role.role_id = ezrole.id AND
-                            $roleTreeINSQL";
-        }
-
-        $roleArray = $db->arrayQuery( $query );
 
         $roles = array();
         foreach ( $roleArray as $roleRow )
@@ -558,7 +704,7 @@ class eZRole extends eZPersistentObject
             $role = new eZRole( $roleRow );
             $roles[] = $role;
         }
-
+///var_dump($roles);
         return $roles;
     }
 
@@ -678,17 +824,49 @@ class eZRole extends eZPersistentObject
     {
         $db = eZDB::instance();
 
-        $groupINSQL = $db->generateSQLINStatement( $idArray, 'ezuser_role.contentobject_id', false, false, 'int' );
-        $query = "SELECT DISTINCT ezrole.id AS id
-                  FROM ezrole,
-                       ezuser_role
-                  WHERE $groupINSQL AND
-                        ezuser_role.role_id = ezrole.id ORDER BY ezrole.id";
-
-        $retArray = array();
-        foreach( $db->arrayQuery( $query ) as $resultSet )
+        if ( $db->databaseName == 'mysql' )
         {
-            $retArray[] = $resultSet['id'];
+            $groupINSQL = $db->generateSQLINStatement( $idArray, 'ezuser_role.contentobject_id', false, false, 'int' );
+            $query = "SELECT DISTINCT ezrole.id AS id
+                    FROM ezrole,
+                        ezuser_role
+                    WHERE $groupINSQL AND
+                            ezuser_role.role_id = ezrole.id ORDER BY ezrole.id";
+
+            $retArray = array();
+            foreach( $db->arrayQuery( $query ) as $resultSet )
+            {
+                $retArray[] = $resultSet['id'];
+            }
+        }
+        elseif ( $db->databaseName() == 'mongo')
+        {
+            $retArray = [];
+            $idArray  = array_values( array_map( 'intval', $idArray ) );
+
+            $pipeline = [
+                [
+                    '$lookup' => [
+                        'from'         => 'ezuser_role',
+                        'localField'   => 'id',
+                        'foreignField' => 'role_id',
+                        'as'           => 'role'
+                    ]
+                ],
+                [ '$unwind' => '$role' ],
+                [
+                    '$match' => [
+                        'role.contentobject_id' => [ '$in' => $idArray ]
+                    ]
+                ],
+                [ '$group' => [ '_id' => '$id' ] ]
+            ];
+
+            $roleRows = $db->aggregate( 'ezrole', $pipeline );
+            foreach ( $roleRows as $roleRow )
+            {
+                $retArray[] = (int)( isset( $roleRow['_id'] ) ? $roleRow['_id'] : $roleRow['id'] );
+            }
         }
         return $retArray;
     }
@@ -737,8 +915,33 @@ class eZRole extends eZPersistentObject
             } break;
         }
 
-        $roleID = (int)$this->ID;
-        $query = "SELECT * FROM ezuser_role WHERE role_id='$roleID' AND contentobject_id='$userID' AND limit_identifier='$limitIdent' AND limit_value='$limitValue'";
+        $query = "SELECT * FROM ezuser_role WHERE role_id='$this->ID' AND contentobject_id='$userID' AND limit_identifier='$limitIdent' AND limit_value='$limitValue'";
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $existing = $db->aggregate( 'ezuser_role', [
+                [ '$match' => [
+                    'role_id'          => (int)$this->ID,
+                    'contentobject_id' => (int)$userID,
+                    'limit_identifier' => $limitIdent,
+                    'limit_value'      => $limitValue,
+                ] ],
+                [ '$limit' => 1 ],
+            ] );
+            if ( !empty( $existing ) )
+                return false;
+
+            $newID = $db->nextAtomicID( 'ezuser_role.id', 'ezuser_role', 'id' );
+            $db->insert( 'ezuser_role', [
+                '_id'              => $newID,
+                'id'               => $newID,
+                'role_id'          => (int)$this->ID,
+                'contentobject_id' => (int)$userID,
+                'limit_identifier' => $limitIdent,
+                'limit_value'      => $limitValue,
+            ] );
+            return true;
+        }
 
         $rows = $db->arrayQuery( $query );
         if ( count( $rows ) > 0 )
@@ -746,7 +949,7 @@ class eZRole extends eZPersistentObject
 
         $db->begin();
 
-        $query = "INSERT INTO ezuser_role ( role_id, contentobject_id, limit_identifier, limit_value ) VALUES ( '$roleID', '$userID', '$limitIdent', '$limitValue' )";
+        $query = "INSERT INTO ezuser_role ( role_id, contentobject_id, limit_identifier, limit_value ) VALUES ( '$this->ID', '$userID', '$limitIdent', '$limitValue' )";
         $db->query( $query );
 
         $db->commit();
@@ -759,9 +962,16 @@ class eZRole extends eZPersistentObject
     function fetchUserID()
     {
         $db = eZDB::instance();
-        $roleID = (int)$this->ID;
 
-        $query = "SELECT contentobject_id FROM ezuser_role WHERE role_id='$roleID'";
+        $query = "SELECT contentobject_id FROM  ezuser_role WHERE role_id='$this->ID'";
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            return $db->aggregate( 'ezuser_role', [
+                [ '$match'   => [ 'role_id' => (int)$this->ID ] ],
+                [ '$project' => [ '_id' => 0, 'contentobject_id' => 1 ] ],
+            ] );
+        }
 
         return $db->arrayQuery( $query );
     }
@@ -775,11 +985,20 @@ class eZRole extends eZPersistentObject
     function removeUserAssignment( $userID )
     {
         $db = eZDB::instance();
-        $userID = (int)$userID;
-        $roleID = (int)$this->ID;
-        $query = "DELETE FROM ezuser_role WHERE role_id='$roleID' AND contentobject_id='$userID'";
+        $userID =(int) $userID;
+        $query = "DELETE FROM ezuser_role WHERE role_id='$this->ID' AND contentobject_id='$userID'";
 
-        $db->query( $query );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->deleteWhere( 'ezuser_role', [
+                'role_id'          => (int)$this->ID,
+                'contentobject_id' => (int)$userID,
+            ] );
+        }
+        else
+        {
+            $db->query( $query );
+        }
     }
 
     /*!
@@ -796,7 +1015,15 @@ class eZRole extends eZPersistentObject
         $db = eZDB::instance();
         $id =(int) $id;
         $query = "DELETE FROM ezuser_role WHERE id='$id'";
-        $db->query( $query );
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->mongoDeleteOne( 'ezuser_role', [ 'id' => $id ] );
+        }
+        else
+        {
+            $db->query( $query );
+        }
     }
 
     /*!
@@ -805,7 +1032,6 @@ class eZRole extends eZPersistentObject
     function fetchUserByRole( )
     {
         $db = eZDB::instance();
-        $roleID = (int)$this->ID;
 
         $query = "SELECT
                      ezuser_role.contentobject_id as user_id,
@@ -815,9 +1041,24 @@ class eZRole extends eZPersistentObject
                   FROM
                      ezuser_role
                   WHERE
-                    ezuser_role.role_id = '$roleID'";
+                    ezuser_role.role_id = '$this->ID'";
 
-        $userRoleArray = $db->arrayQuery( $query );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $userRoleArray = $db->aggregate( 'ezuser_role', [
+                [ '$match'   => [ 'role_id' => (int)$this->ID ] ],
+                [ '$project' => [ '_id' => 0, 'contentobject_id' => 1, 'id' => 1, 'limit_identifier' => 1, 'limit_value' => 1 ] ],
+            ] );
+            // Remap contentobject_id → user_id to match SQL alias
+            $userRoleArray = array_map( function( $userRoleRow ) {
+                $userRoleRow['user_id'] = $userRoleRow['contentobject_id'];
+                return $userRoleRow;
+            }, $userRoleArray );
+        }
+        else
+        {
+            $userRoleArray = $db->arrayQuery( $query );
+        }
         $userRoles = array();
         foreach ( $userRoleArray as $userRole )
         {
@@ -846,7 +1087,21 @@ class eZRole extends eZPersistentObject
                      ezuser_role.limit_value = '$limit_value' AND
                      ezuser_role.limit_identifier = '$limit_identifier'";
 
-        $userRoleArray = $db->arrayQuery( $query );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $userRoleArray = $db->aggregate( 'ezuser_role', [
+                [ '$match'   => [ 'limit_value' => $limit_value, 'limit_identifier' => $limit_identifier ] ],
+                [ '$project' => [ '_id' => 0, 'contentobject_id' => 1, 'role_id' => 1 ] ],
+            ] );
+            $userRoleArray = array_map( function( $userRoleRow ) {
+                $userRoleRow['user_id'] = $userRoleRow['contentobject_id'];
+                return $userRoleRow;
+            }, $userRoleArray );
+        }
+        else
+        {
+            $userRoleArray = $db->arrayQuery( $query );
+        }
         $userRoles = array();
         foreach ( $userRoleArray as $userRole )
         {
@@ -867,6 +1122,17 @@ class eZRole extends eZPersistentObject
     {
         if ( $version != 0 )
         {
+            // MongoDB: fetchObjectList mismatches integer version field — bypass it
+            $db = eZDB::instance();
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $roleRows = $db->aggregate( 'ezrole', [
+                    [ '$match' => [ 'version' => (int)$version ] ],
+                    [ '$sort'  => [ 'id' => 1 ] ],
+                    [ '$limit' => 1 ],
+                ] );
+                return !empty( $roleRows ) ? new eZRole( $roleRows[0] ) : null;
+            }
             return eZPersistentObject::fetchObject( eZRole::definition(),
                                                     null, array( 'version' => $version ), true );
         }

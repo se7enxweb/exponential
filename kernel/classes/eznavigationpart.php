@@ -46,8 +46,10 @@ class eZNavigationPart
             return $parts[$identifier];
 
         // Return the first part which is the default
-        $firstPart = reset( $parts );
-        return $firstPart !== false ? $firstPart : false;
+        if ( isset( $parts[0] ) )
+            return $parts[0];
+
+        return false;
     }
 
     /*!
@@ -86,6 +88,7 @@ class eZNavigationPart
         ezpI18n::tr( 'kernel/navigationpart', 'Design', 'Navigation part' );
         ezpI18n::tr( 'kernel/navigationpart', 'Setup', 'Navigation part' );
         ezpI18n::tr( 'kernel/navigationpart', 'My account', 'Navigation part' );
+        ezpI18n::tr( 'kernel/navigationpart', 'Update', 'Navigation part' );
     }
 
 }

@@ -419,6 +419,19 @@ class eZInformationCollection extends eZPersistentObject
             }
         }
         $objectAttributeID =(int) $objectAttributeID;
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $match = [ 'contentobject_attribute_id' => $objectAttributeID ];
+            if ( $value !== false && is_integer( $value ) )
+                $match['data_int'] = (int)$value;
+            $rows = $db->aggregate( 'ezinfocollection_attribute', [
+                [ '$match' => $match ],
+                [ '$count' => 'count' ],
+            ] );
+            return !empty( $rows ) ? (int)$rows[0]['count'] : 0;
+        }
+
         $resArray = $db->arrayQuery( "SELECT count( ezinfocollection_attribute.id ) as count FROM ezinfocollection_attribute, ezinfocollection
                                        WHERE ezinfocollection_attribute.informationcollection_id = ezinfocollection.id
                                        AND ezinfocollection_attribute.contentobject_attribute_id = '" . $objectAttributeID . "' " .  $valueSQL );
@@ -434,6 +447,14 @@ class eZInformationCollection extends eZPersistentObject
         }
 
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezinfocollection', [
+                [ '$match' => [ 'contentobject_id' => (int) $objectID ] ],
+                [ '$count' => 'count' ],
+            ] );
+            return !empty( $rows ) ? (int) $rows[0]['count'] : 0;
+        }
         $resultArray = $db->arrayQuery( 'SELECT COUNT( * ) as count FROM ezinfocollection WHERE contentobject_id=' . $objectID );
 
         return $resultArray[0]['count'];
@@ -574,6 +595,19 @@ class eZInformationCollection extends eZPersistentObject
         $valueSQL = "";
 
         $objectAttributeID =(int) $objectAttributeID;
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezinfocollection_attribute', [
+                [ '$match' => [ 'contentobject_attribute_id' => $objectAttributeID ] ],
+                [ '$group' => [ '_id' => '$data_int', 'count' => [ '$sum' => 1 ] ] ],
+            ] );
+            $result = [];
+            foreach ( $rows as $row )
+                $result[(int)$row['_id']] = (int)$row['count'];
+            return $result;
+        }
+
         $resArray = $db->arrayQuery( "SELECT data_int, count( ezinfocollection_attribute.id ) as count FROM ezinfocollection_attribute, ezinfocollection
                                        WHERE ezinfocollection_attribute.informationcollection_id = ezinfocollection.id
                                        AND ezinfocollection_attribute.contentobject_attribute_id = '" . $objectAttributeID . "' " .  $valueSQL . "
@@ -598,13 +632,42 @@ class eZInformationCollection extends eZPersistentObject
     {
         $db = eZDB::instance();
 
-        $arrayRes = $db->arrayQuery( "SELECT ica.id, ica.informationcollection_id, ica.contentclass_attribute_id, ica.contentobject_attribute_id, ica.contentobject_id, ica.data_text, ica.data_int,
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $arrayRes = $db->aggregate( 'ezinfocollection_attribute', [
+                [ '$match'  => [ 'informationcollection_id' => (int)$this->ID ] ],
+                [ '$lookup' => [
+                    'from'         => 'ezcontentclass_attribute',
+                    'localField'   => 'contentclass_attribute_id',
+                    'foreignField' => 'id',
+                    'as'           => '_cca',
+                ] ],
+                [ '$unwind' => [ 'path' => '$_cca', 'preserveNullAndEmptyArrays' => true ] ],
+                [ '$match'  => [ '$or' => [ [ '_cca.version' => 0 ], [ '_cca' => [ '$exists' => false ] ] ] ] ],
+                [ '$sort'   => [ '_cca.placement' => 1 ] ],
+                [ '$project' => [
+                    '_id'                          => 0,
+                    'id'                           => 1,
+                    'informationcollection_id'     => 1,
+                    'contentclass_attribute_id'    => 1,
+                    'contentobject_attribute_id'   => 1,
+                    'contentobject_id'             => 1,
+                    'data_text'                    => 1,
+                    'data_int'                     => 1,
+                    'data_float'                   => 1,
+                ] ],
+            ] );
+        }
+        else
+        {
+            $arrayRes = $db->arrayQuery( "SELECT ica.id, ica.informationcollection_id, ica.contentclass_attribute_id, ica.contentobject_attribute_id, ica.contentobject_id, ica.data_text, ica.data_int,
                                           ica.data_float
                                       FROM   ezinfocollection_attribute ica, ezcontentclass_attribute
                                       WHERE  ezcontentclass_attribute.id=ica.contentclass_attribute_id
                                              AND informationcollection_id='" . $this->ID . "'
                                              AND ezcontentclass_attribute.version=0
                                       ORDER BY ezcontentclass_attribute.placement" );
+        }
 
         if ( $asObject )
         {
