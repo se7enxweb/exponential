@@ -38,6 +38,7 @@
 23. [Site Installer Packages — Distribution and Package Server](#23-site-installer-packages--distribution-and-package-server)
 24. [Key Getting Started Steps Using Exponential 6.0.14 With MongoDB](#24-key-getting-started-steps-using-exponential-6014-with-mongodb)
 25. [Datatype Compatibility — Core and Community](#25-datatype-compatibility--core-and-community)
+26. [Known Limitations](#26-known-limitations)
 
 ---
 
@@ -4821,5 +4822,47 @@ The only remaining incompatibility is by design:
 > **Note:** `ezprice`, `ezmultiprice`, and the `ezflow` page type work for basic content display but
 > the full e-commerce and block-scheduling flows are untested and may have additional `arrayQuery`
 > calls deeper in the shop/flow kernel modules.
+
+---
+
+## 26. Known Limitations
+
+The following gaps remain in the MongoDB port as of June 2026. All are
+documented in the relevant sections above; this section collects them in one
+place for quick reference.
+
+- **`ezurlaliasml.php` `storePath()`** — URL alias rebuild creates top-level
+  entries only; deep subtree alias regeneration after node moves still falls
+  back to the MySQL path. `bin/php/updateniceurls.php` completes without crash
+  but reports `Updated 0/N` for child nodes. See §13.4.
+
+- **Roles / permissions display pages** — many `arrayQuery` calls remain in
+  kernel module view scripts (role list, policy assignment, limitation detail).
+  Role assignment listing may return empty on MongoDB. Content access control
+  via `accessArray()` works correctly. See §19.
+
+- **Cronjobs not yet ported** — `cronjobs/staticcache_cleanup.php`,
+  `cronjobs/notification.php`, and `cronjobs/session_gc.php` still use raw
+  `arrayQuery` calls and will no-op or error on MongoDB. See §13.5 and §20.
+
+- **`eztags` extension** — not present in this installation. The `eztags` and
+  `eztag_attribute_link` collections would require full `$lookup` aggregate
+  pipeline implementations for `fetchTagsByAttribute()`,
+  `fetchObjectsByTag()`, and all tag-link write paths before the extension
+  could be used. See §25.2.
+
+- **`enhancedselection2` DB-query options source** — the optional "DB query"
+  options source mode is disabled for MongoDB by design; user-supplied raw SQL
+  is fundamentally incompatible. Static-options and template-options modes
+  work normally. See §25.2.
+
+- **`ezmultiprice` currency table queries** — `ezcurrencyname` lookups may
+  return empty if that collection has not been migrated. Basic price display
+  is unaffected. See §25.1.
+
+- **Full e-commerce checkout flow** (`ezbasket` → `ezorder` → payment) and
+  **block scheduling** (`ezflow`) are untested end-to-end. Individual
+  collection reads/writes are patched but the complete transaction flows have
+  not been exercised against MongoDB. See §16 and §25.1.
 
 
