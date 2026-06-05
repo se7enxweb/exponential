@@ -77,8 +77,247 @@ class expMongoDB extends eZDBInterface
         return $results;
     }
 
+    /**
+     * Parse a SQL WHERE clause (ANDs only, no ORs) into a MongoDB filter array.
+     * Handles: field=N, field='str', field!=N, field<>N, field LIKE 'pfx%', field IN (...)
+     */
+    private function parseWhereClause( $whereSql )
+    {
+        $filter = [];
+        // Split on AND boundaries (not inside quotes or parens)
+        $terms = preg_split( '/\bAND\b/i', $whereSql );
+        foreach ( $terms as $term )
+        {
+            $term = trim( $term );
+            // field IN (v1, v2, ...)
+            if ( preg_match( '/^([\w.]+)\s+IN\s*\(([^)]+)\)/i', $term, $m ) )
+            {
+                $col  = trim( $m[1] );
+                $vals = array_map( 'trim', explode( ',', $m[2] ) );
+                $typedVals = [];
+                foreach ( $vals as $v )
+                {
+                    if ( preg_match( "/^'(.*)'$/s", $v, $sv ) )
+                        $typedVals[] = $sv[1];
+                    else
+                        $typedVals[] = (int) $v;
+                }
+                $filter[$col] = [ '$in' => $typedVals ];
+            }            // field NOT LIKE 'prefix%' (trailing wildcard only)
+            elseif ( preg_match( "/^([\\w.]+)\\s+NOT\\s+LIKE\\s+'([^%']*)(%)'/i", $term, $m ) )
+            {
+                $filter[trim($m[1])] = [ '$not' => new MongoDB\BSON\Regex( '^' . preg_quote( $m[2], '/' ) ) ];
+            }            // field LIKE 'prefix%' (trailing wildcard only)
+            elseif ( preg_match( "/^([\w.]+)\s+LIKE\s+'([^%']*)(%)'/i", $term, $m ) )
+            {
+                $filter[trim($m[1])] = [ '$regex' => '^' . preg_quote( $m[2], '/' ) ];
+            }
+            // field != N  or  field <> N
+            elseif ( preg_match( '/^([\w.]+)\s*(?:!=|<>)\s*(-?\d+)$/i', $term, $m ) )
+            {
+                $filter[trim($m[1])] = [ '$ne' => (int) $m[2] ];
+            }
+            // field = N (integer)
+            elseif ( preg_match( '/^([\w.]+)\s*=\s*(-?\d+)$/i', $term, $m ) )
+            {
+                $filter[trim($m[1])] = (int) $m[2];
+            }
+            // field = 'string'
+            elseif ( preg_match( "/^([\w.]+)\s*=\s*'(.*)'$/s", $term, $m ) )
+            {
+                $filter[trim($m[1])] = stripslashes( $m[2] );
+            }
+        }
+        return $filter;
+    }
+
     function query( $sql, $server = false )
     {
+        $dbName = $this->DB;
+        $sql = trim( $sql );
+
+        // --- UPDATE table SET col=val [, col=val ...] WHERE conditions ---
+        if ( preg_match( '/^\s*UPDATE\s+([\w]+)\s+SET\s+(.+?)\s+WHERE\s+(.+)$/is', $sql, $m ) )
+        {
+            $table    = trim( $m[1] );
+            $setClause = trim( $m[2] );
+            $whereSql  = trim( $m[3] );
+
+            // Parse SET clause into individual assignments (handles simple col=val and col=col+expr)
+            $setFields = [];
+            // Split on commas that are not inside parentheses (depth-tracking to handle nested parens)
+            $parts = [];
+            $depth = 0;
+            $current = '';
+            for ( $i = 0; $i < strlen( $setClause ); $i++ )
+            {
+                $c = $setClause[$i];
+                if ( $c === '(' ) $depth++;
+                elseif ( $c === ')' ) $depth--;
+                if ( $c === ',' && $depth === 0 )
+                {
+                    $parts[] = $current;
+                    $current = '';
+                }
+                else
+                {
+                    $current .= $c;
+                }
+            }
+            if ( $current !== '' ) $parts[] = $current;
+            foreach ( $parts as $part )
+            {
+                $part = trim( $part );
+                if ( preg_match( '/^([\w]+)\s*=\s*(.+)$/s', $part, $fm ) )
+                {
+                    $col = trim( $fm[1] );
+                    $val = trim( $fm[2] );
+                    // Integer literal
+                    if ( preg_match( '/^-?\d+$/', $val ) )
+                    {
+                        $setFields[$col] = (int) $val;
+                    }
+                    // depth = depth +/- N [+/- M ...] — evaluate the arithmetic delta
+                    elseif ( preg_match( '/^' . $col . '\s*([\+\-\d\s]+)$/i', $val, $dm ) )
+                    {
+                        // Extract and evaluate: e.g. " + 3 - 2 + 1" => 2
+                        $expr = $dm[1];
+                        preg_match_all( '/([\+\-])\s*(\d+)/', $expr, $terms, PREG_SET_ORDER );
+                        $delta = 0;
+                        foreach ( $terms as $term )
+                            $delta += ( $term[1] === '+' ? 1 : -1 ) * (int) $term[2];
+                        $setFields[$col] = [ '$inc' => $delta ];
+                    }
+                    // String literal 'value'
+                    elseif ( preg_match( "/^'(.*)'$/s", $val, $sm ) )
+                    {
+                        $setFields[$col] = stripslashes( $sm[1] );
+                    }
+                    // CONCAT( expr, expr ) — for path_string / path_identification_string rebuild
+                    elseif ( preg_match( '/^CONCAT\s*\((.+)\)$/is', $val, $cm ) )
+                    {
+                        // Store as a special marker; handled per-document below
+                        $setFields[$col] = [ '__concat__' => $cm[1] ];
+                    }
+                    else
+                    {
+                        $setFields[$col] = $val; // fallback: raw string
+                    }
+                }
+            }
+
+            // Parse WHERE clause using general-purpose parser
+            $filter = $this->parseWhereClause( $whereSql );
+
+            $collection = $this->getClient()->selectCollection( $dbName, $table );
+
+            // Check for __concat__ fields — need per-document update
+            $hasConcatField = false;
+            foreach ( $setFields as $col => $val )
+            {
+                if ( is_array( $val ) && isset( $val['__concat__'] ) )
+                {
+                    $hasConcatField = true;
+                    break;
+                }
+            }
+
+            try
+            {
+                if ( $hasConcatField )
+                {
+                    // Per-document update needed for CONCAT expressions
+                    $docs = $collection->find( $filter );
+                    foreach ( $docs as $doc )
+                    {
+                        $docUpdate = [];
+                        foreach ( $setFields as $col => $fieldVal )
+                        {
+                            if ( is_array( $fieldVal ) && isset( $fieldVal['__concat__'] ) )
+                            {
+                                // Evaluate CONCAT: replace old path prefix with new path prefix
+                                // Pattern: CONCAT('newPrefix', SUBSTRING(field, offset))
+                                $concatExpr = $fieldVal['__concat__'];
+                                // Handle both SUBSTRING(col, N) and substring( col from N ) syntax
+                                if ( preg_match( "/^'([^']*)'\s*,\s*(?:SUBSTRING|SUBSTR)\s*\(\s*[\w]+\s*(?:,|FROM)\s*(\d+)\s*\)/i", $concatExpr, $concatM )
+                                     || preg_match( "/^'([^']*)'\s*,\s*substring\s*\(\s*[\w]+\s+from\s+(\d+)\s*(?:for\s+\d+\s*)?\)/i", $concatExpr, $concatM ) )
+                                {
+                                    $newPrefix = $concatM[1];
+                                    $offset    = (int) $concatM[2] - 1; // SQL SUBSTRING is 1-based
+                                    $oldVal    = isset( $doc[$col] ) ? (string) $doc[$col] : '';
+                                    $docUpdate[$col] = $newPrefix . substr( $oldVal, $offset );
+                                }
+                            }
+                            elseif ( is_array( $fieldVal ) && isset( $fieldVal['$inc'] ) )
+                            {
+                                $docUpdate[$col] = ( (int) $doc[$col] ) + $fieldVal['$inc'];
+                            }
+                            elseif ( is_array( $fieldVal ) && isset( $fieldVal['$dec'] ) )
+                            {
+                                $docUpdate[$col] = ( (int) $doc[$col] ) - $fieldVal['$dec'];
+                            }
+                            else
+                            {
+                                $docUpdate[$col] = $fieldVal;
+                            }
+                        }
+                        if ( $docUpdate )
+                            $collection->updateOne( [ '_id' => $doc['_id'] ], [ '$set' => $docUpdate ] );
+                    }
+                }
+                else
+                {
+                    // Build standard $set / $inc updateMany
+                    $setOp = [];
+                    $incOp = [];
+                    foreach ( $setFields as $col => $fieldVal )
+                    {
+                        if ( is_array( $fieldVal ) && isset( $fieldVal['$inc'] ) )
+                            $incOp[$col] = $fieldVal['$inc'];
+                        elseif ( is_array( $fieldVal ) && isset( $fieldVal['$dec'] ) )
+                            $incOp[$col] = -$fieldVal['$dec'];
+                        else
+                            $setOp[$col] = $fieldVal;
+                    }
+                    $updateDoc = [];
+                    if ( $setOp ) $updateDoc['$set'] = $setOp;
+                    if ( $incOp ) $updateDoc['$inc'] = $incOp;
+                    if ( $updateDoc )
+                        $collection->updateMany( $filter, $updateDoc );
+                }
+            }
+            catch ( Exception $e )
+            {
+                error_log( 'expMongoDB::query UPDATE failed: ' . $e->getMessage() . ' SQL: ' . substr( $sql, 0, 200 ) );
+                return false;
+            }
+            return true;
+        }
+
+        // --- DELETE FROM table WHERE conditions ---
+        if ( preg_match( '/^\s*DELETE\s+FROM\s+([\w]+)\s+WHERE\s+(.+)$/is', $sql, $m ) )
+        {
+            $table    = trim( $m[1] );
+            $whereSql = trim( $m[2] );
+            $filter = $this->parseWhereClause( $whereSql );
+            if ( empty( $filter ) )
+            {
+                error_log( 'expMongoDB::query DELETE with unparseable WHERE: ' . substr( $sql, 0, 200 ) );
+                return false;
+            }
+            try
+            {
+                $this->getClient()->selectCollection( $dbName, $table )->deleteMany( $filter );
+            }
+            catch ( Exception $e )
+            {
+                error_log( 'expMongoDB::query DELETE failed: ' . $e->getMessage() );
+                return false;
+            }
+            return true;
+        }
+
+        error_log( 'expMongoDB::query unhandled SQL: ' . substr( $sql, 0, 300 ) );
         return false;
     }
 
