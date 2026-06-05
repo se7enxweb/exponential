@@ -1,9 +1,9 @@
 // create_indexes.js — create all MongoDB indexes required by the sevenx_mongodb adapter.
 //
 // Run with:
-//   mongosh "mongodb://pm:publishing$2099@localhost:27017/exp" --file create_indexes.js
+//   mongosh "mongodb://db:publishing$8088@localhost:27017/exp" --file create_indexes.js
 // or inline:
-//   mongosh "mongodb://pm:publishing$2099@localhost:27017/exp" --eval "$(cat create_indexes.js)"
+//   mongosh "mongodb://db:publishing$8088@localhost:27017/exp" --eval "$(cat create_indexes.js)"
 
 // Content object lookups
 db.ezcontentobject.createIndex({ id: 1 }, { unique: true });

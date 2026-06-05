@@ -6,12 +6,12 @@
 #
 # Default indir: ./json_fixed
 # Credentials / URI can be overridden via environment:
-#   MONGO_URI  (default: mongodb://pm:publishing$2099@localhost:27017/exp)
+#   MONGO_URI  (default: mongodb://db:publishing$8088@localhost:27017/exp)
 #   MONGO_DB   (default: exp)
 
 set -euo pipefail
 
-URI="${MONGO_URI:-mongodb://pm:publishing\$2099@localhost:27017/exp}"
+URI="${MONGO_URI:-mongodb://db:publishing\$8088@localhost:27017/exp}"
 DB="${MONGO_DB:-exp}"
 INDIR="${1:-./json_fixed}"
 

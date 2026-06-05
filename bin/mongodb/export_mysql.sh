@@ -16,7 +16,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 MYSQL_HOST="${MYSQL_HOST:-localhost}"
 MYSQL_USER="${MYSQL_USER:-pm}"
-MYSQL_PASSWORD="${MYSQL_PASSWORD:-publishing\$2099}"
+MYSQL_PASSWORD="${MYSQL_PASSWORD:-publishing\$8088}"
 MYSQL_DB="${MYSQL_DB:-exp}"
 OUTDIR="${1:-./json_export}"
 

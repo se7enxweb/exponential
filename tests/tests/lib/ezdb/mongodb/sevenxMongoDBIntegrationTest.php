@@ -3,7 +3,7 @@
  * Live integration tests for expMongoDB and the MySQL (ezmysqli) adapter.
  *
  * These tests require:
- *  - A running MongoDB 8.x instance at mongodb://pm:publishing$2099@localhost:27017/exp
+ *  - A running MongoDB 8.x instance at mongodb://db:publishing$8088@localhost:27017/exp
  *  - A running MariaDB/MySQL instance at localhost with user xa_alpha / db-alpha-2025 / xa_alpha
  *
  * They are tagged @group mongodb-live so they are EXCLUDED from the default
@@ -25,7 +25,7 @@
  */
 class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
 {
-    private const MONGO_URI  = 'mongodb://pm:publishing$2099@localhost:27017/exp';
+    private const MONGO_URI  = 'mongodb://db:publishing$8088@localhost:27017/exp';
     private const MONGO_DB   = 'exp';
     private const TEST_COL   = '_phpunit_test';
     private const SEQ_COL    = 'ezsequence';
