@@ -824,7 +824,8 @@ class eZRole extends eZPersistentObject
     {
         $db = eZDB::instance();
 
-        if ( $db->databaseName == 'mysql' )
+        $retArray = array();
+        if ( $db->databaseName() !== 'mongo' )
         {
             $groupINSQL = $db->generateSQLINStatement( $idArray, 'ezuser_role.contentobject_id', false, false, 'int' );
             $query = "SELECT DISTINCT ezrole.id AS id
@@ -833,7 +834,6 @@ class eZRole extends eZPersistentObject
                     WHERE $groupINSQL AND
                             ezuser_role.role_id = ezrole.id ORDER BY ezrole.id";
 
-            $retArray = array();
             foreach( $db->arrayQuery( $query ) as $resultSet )
             {
                 $retArray[] = $resultSet['id'];

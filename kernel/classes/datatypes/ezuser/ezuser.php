@@ -1094,7 +1094,7 @@ WHERE user_id = '" . $userID . "' AND
                     $GLOBALS['eZFailedLoginAttemptUserID'] = $userID;
 
                     $userSetting = eZUserSetting::fetch( $userID );
-                    $isEnabled = $userSetting->attribute( "is_enabled" );
+                    $isEnabled = $userSetting ? $userSetting->attribute( "is_enabled" ) : true;
                     if ( $hashType != eZUser::hashType() and
                          strtolower( $ini->variable( 'UserSettings', 'UpdateHash' ) ) == 'true' )
                     {
@@ -2787,8 +2787,9 @@ WHERE user_id = '" . $userID . "' AND
         $groups[] = (int)$this->attribute( 'contentobject_id' );
         $groups   = array_values( array_unique( array_map( 'intval', $groups ) ) );
 
-        $db   = eZDB::instance();
-        $rows = $db->find( 'ezuser_role', [ 'contentobject_id' => [ $groups ] ] );
+        $db      = eZDB::instance();
+        $idList  = implode( ',', $groups );
+        $rows    = $db->arrayQuery( "SELECT limit_identifier, limit_value FROM ezuser_role WHERE contentobject_id IN ($idList)" );
 
         // Emulate SELECT DISTINCT limit_identifier, limit_value
         $seen   = [];
@@ -2923,7 +2924,7 @@ WHERE user_id = '" . $userID . "' AND
         $userID = (int)$this->ContentObjectID;
 
         // Step 1: find this user's tree nodes and collect their parent_node_ids
-        $userNodes = $db->find( 'ezcontentobject_tree', [ 'contentobject_id' => $userID ] );
+        $userNodes = $db->arrayQuery( "SELECT parent_node_id FROM ezcontentobject_tree WHERE contentobject_id='$userID'" );
         if ( empty( $userNodes ) )
             return [];
 
@@ -2937,7 +2938,8 @@ WHERE user_id = '" . $userID . "' AND
             return [];
 
         // Step 2: fetch parent nodes to get direct group contentobject_ids + path_strings
-        $parentNodes = $db->find( 'ezcontentobject_tree', [ 'node_id' => [ $parentNodeIds ] ] );
+        $idList      = implode( ',', $parentNodeIds );
+        $parentNodes = $db->arrayQuery( "SELECT contentobject_id, path_string FROM ezcontentobject_tree WHERE node_id IN ($idList)" );
 
         $pathArray      = [];
         $userGroupArray = [];
@@ -2957,8 +2959,9 @@ WHERE user_id = '" . $userID . "' AND
         // Step 3: resolve ancestor node IDs to contentobject_ids
         if ( !empty( $pathArray ) )
         {
-            $pathArray    = array_values( array_unique( $pathArray ) );
-            $ancestorNodes = $db->find( 'ezcontentobject_tree', [ 'node_id' => [ $pathArray ] ] );
+            $pathArray     = array_values( array_unique( $pathArray ) );
+            $ancestorIdList = implode( ',', $pathArray );
+            $ancestorNodes  = $db->arrayQuery( "SELECT contentobject_id FROM ezcontentobject_tree WHERE node_id IN ($ancestorIdList)" );
             foreach ( $ancestorNodes as $node )
             {
                 $userGroupArray[] = (int)$node['contentobject_id'];

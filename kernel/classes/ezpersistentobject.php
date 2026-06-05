@@ -927,7 +927,7 @@ class eZPersistentObject
     //   echo "</pre>";
     //   die('final');
 
-        if ( $db->databaseName == 'mysql' )
+        if ( $db->databaseName() !== 'mongo' )
         {
             if ( is_array( $custom_tables ) )
             {

@@ -3281,7 +3281,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
             return self::fetchMongo( $nodeID, $lang, $asObject, $conditions );
         }
 
-        if ( $db->databaseName() === 'mysql' )
+        if ( $db->databaseName() !== 'mongo' )
         {
             if ( ( is_numeric( $nodeID ) && $nodeID == 1 ) ||
                  ( is_array( $nodeID ) && count( $nodeID ) === 1 && $nodeID[0] == 1 ) )

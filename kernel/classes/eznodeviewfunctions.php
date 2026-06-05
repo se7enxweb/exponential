@@ -319,17 +319,17 @@ class eZNodeviewfunctions
         // several user related cache tweaks
         if ( strpos( $viewCacheTweak, 'ignore_userroles' ) === false )
         {
-            $cacheHashArray[] = implode( '.', $user->roleIDList() );
+            $cacheHashArray[] = implode( '.', $user->roleIDList() ?? [] );
         }
 
         if ( strpos( $viewCacheTweak, 'ignore_userlimitedlist' ) === false )
         {
-            $cacheHashArray[] = implode( '.', $user->limitValueList() );
+            $cacheHashArray[] = implode( '.', $user->limitValueList() ?? [] );
         }
 
         if ( strpos( $viewCacheTweak, 'ignore_discountlist' ) === false )
         {
-            $cacheHashArray[] = implode( '.', eZUserDiscountRule::fetchIDListByUserID( $user->attribute( 'contentobject_id' ) ) );
+            $cacheHashArray[] = implode( '.', eZUserDiscountRule::fetchIDListByUserID( $user->attribute( 'contentobject_id' ) ) ?? [] );
         }
 
         $cacheHashArray[] = eZSys::indexFile();

@@ -1942,7 +1942,7 @@ class eZURLAliasML extends eZPersistentObject
 
         $db = eZDB::instance();
 
-        if ( $db->databaseName() == 'mysql' )
+        if ( $db->databaseName() !== 'mongo' )
         {
 
             $elements = explode( '/', $internalURIString );
