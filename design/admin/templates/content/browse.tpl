@@ -193,7 +193,7 @@
 
 
 {section var=PersistentData show=$browse.persistent_data loop=$browse.persistent_data}
-<input type="hidden" name="{if is_string($PersistentData.key)}{$PersistentData.key|wash}{/if}" value="{if is_string($PersistentData.item)}{$PersistentData.item}{/if}" />
+<input type="hidden" name="{if is_string($PersistentData.key)}{$PersistentData.key|wash}{/if}" value="{$PersistentData.item}" />
 {/section}
 
 <input type="hidden" name="BrowseActionName" value="{$browse.action_name}" />
