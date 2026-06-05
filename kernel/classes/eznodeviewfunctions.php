@@ -574,7 +574,6 @@ class eZNodeviewfunctions
             {
                 return self::contentViewGenerateError( $Module, eZError::KERNEL_NO_DB_CONNECTION, false );
             }
-
             return self::contentViewGenerateError( $Module, eZError::KERNEL_NOT_AVAILABLE );
         }
 
@@ -589,13 +588,16 @@ class eZNodeviewfunctions
             return self::contentViewGenerateError( $Module, eZError::KERNEL_ACCESS_DENIED );
         }
 
-        if ( !$node->canRead() )
+        $currentUser = eZUser::currentUser();
+        $canReadResult = $node->canRead();
+        if ( !$canReadResult )
         {
+            $accessList = $node->checkAccess( 'read', false, false, true );
             return self::contentViewGenerateError(
                 $Module,
                 eZError::KERNEL_ACCESS_DENIED,
                 true,
-                array( 'AccessList' => $node->checkAccess( 'read', false, false, true ) )
+                array( 'AccessList' => $accessList )
             );
         }
 

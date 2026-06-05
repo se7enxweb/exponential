@@ -23151,6 +23151,10 @@ How do you access it?&lt;/p&gt;
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Exponential Platform</source>
+        <translation type="unfinished">Exponential Platform</translation>
+    </message>
+    <message>
         <source>Discover the Exponential Platform forums</source>
         <translation type="unfinished"></translation>
     </message>
@@ -27895,6 +27899,11 @@ si has triat l&apos;opció &quot;%3&quot; des de &quot;%4&quot; </translation>
         <source>My account</source>
         <comment>Navigation part</comment>
         <translation>El meu compte</translation>
+    </message>
+    <message>
+        <source>Update</source>
+        <comment>Navigation part</comment>
+        <translation type="unfinished">Update</translation>
     </message>
 </context>
 <context>

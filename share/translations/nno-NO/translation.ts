@@ -21697,6 +21697,10 @@ How do you access it?&lt;/p&gt;
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Exponential Platform</source>
+        <translation type="unfinished">Exponential Platform</translation>
+    </message>
+    <message>
         <source>Discover the Exponential Platform forums</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26337,6 +26341,11 @@ your account.</source>
         <source>My account</source>
         <comment>Navigation part</comment>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update</source>
+        <comment>Navigation part</comment>
+        <translation type="unfinished">Update</translation>
     </message>
 </context>
 <context>

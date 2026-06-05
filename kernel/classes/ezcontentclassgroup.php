@@ -117,6 +117,8 @@ class eZContentClassGroup extends eZPersistentObject
 
     static function fetch( $id, $user_id = false, $asObject = true )
     {
+        if ( is_numeric( $id ) )
+            $id = (int)$id;
         $conds = array( "id" => $id );
         if ( $user_id !== false and is_numeric( $user_id ) )
             $conds["creator_id"] = $user_id;

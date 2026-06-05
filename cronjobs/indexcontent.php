@@ -28,10 +28,24 @@ $needRemoveWithUpdate = $searchEngine->needRemoveWithUpdate();
 
 while( true )
 {
-    $entries = $db->arrayQuery(
-        "SELECT param, action FROM ezpending_actions WHERE action = 'index_object' OR action = 'index_moved_node' GROUP BY param, action ORDER BY min(created)",
-        array( 'limit' => $limit, 'offset' => $offset )
-    );
+    if ( $db->databaseName() === 'mongo' )
+    {
+        $entries = $db->aggregate( 'ezpending_actions', [
+            [ '$match'   => [ 'action' => [ '$in' => [ 'index_object', 'index_moved_node' ] ] ] ],
+            [ '$group'   => [ '_id' => [ 'param' => '$param', 'action' => '$action' ], 'min_created' => [ '$min' => '$created' ] ] ],
+            [ '$sort'    => [ 'min_created' => 1 ] ],
+            [ '$skip'    => $offset ],
+            [ '$limit'   => $limit ],
+            [ '$project' => [ '_id' => 0, 'param' => '$_id.param', 'action' => '$_id.action' ] ],
+        ] );
+    }
+    else
+    {
+        $entries = $db->arrayQuery(
+            "SELECT param, action FROM ezpending_actions WHERE action = 'index_object' OR action = 'index_moved_node' GROUP BY param, action ORDER BY min(created)",
+            array( 'limit' => $limit, 'offset' => $offset )
+        );
+    }
 
     if ( is_array( $entries ) && count( $entries ) != 0 )
     {
@@ -62,7 +76,10 @@ while( true )
                     if ( !( $node instanceof eZContentObjectTreeNode ) )
                     {
                         $cli->error( "An error occured while trying fetching node $nodeId" );
-                        $db->query( "DELETE FROM ezpending_actions WHERE action = '$action' AND param = '$objectID'" );
+                        if ( $db->databaseName() === 'mongo' )
+                            $db->deleteWhere( 'ezpending_actions', [ 'action' => $action, 'param' => (string)$objectID ] );
+                        else
+                            $db->query( "DELETE FROM ezpending_actions WHERE action = '$action' AND param = '$objectID'" );
                         $db->commit();
                         continue;
                     }
@@ -113,7 +130,10 @@ while( true )
 
             if ( $removeFromPendingActions )
             {
-                $db->query( "DELETE FROM ezpending_actions WHERE action = '$action' AND param = '$objectID'" );
+                if ( $db->databaseName() === 'mongo' )
+                    $db->deleteWhere( 'ezpending_actions', [ 'action' => $action, 'param' => (string)$objectID ] );
+                else
+                    $db->query( "DELETE FROM ezpending_actions WHERE action = '$action' AND param = '$objectID'" );
                 eZContentCacheManager::clearContentCacheIfNeeded( $objectID );
             }
             else

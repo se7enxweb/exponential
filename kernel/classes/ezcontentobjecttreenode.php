@@ -2090,6 +2090,154 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $server = count( $sqlPermissionChecking['temp_tables'] ) > 0 ? eZDBInterface::SERVER_SLAVE : false;
 
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $parentMatch = is_array( $nodeID )
+                ? [ 'node_id' => [ '$in' => array_map( 'intval', (array)$nodeID ) ] ]
+                : [ 'node_id' => (int)$nodeID ];
+            $parentRows = $db->aggregate( 'ezcontentobject_tree', [
+                [ '$match'   => $parentMatch ],
+                [ '$project' => [ '_id' => 0, 'path_string' => 1, 'depth' => 1, 'node_id' => 1 ] ],
+            ] );
+            if ( empty( $parentRows ) )
+            {
+                $db->dropTempTableList( $sqlPermissionChecking['temp_tables'] );
+                return [];
+            }
+            $pathOrs = [];
+            foreach ( $parentRows as $pRow )
+            {
+                $ps = $pRow['path_string'];
+                $pd = (int)( $pRow['depth'] ?? 0 );
+                $cond = [
+                    'path_string' => [ '$regex' => '^' . preg_quote( $ps ) . '.+' ],
+                    'node_id'     => [ '$ne'    => (int)$pRow['node_id'] ],
+                ];
+                if ( $depth !== false && is_numeric( $depth ) )
+                {
+                    $targetDepth = $pd + (int)$depth;
+                    $cond['depth'] = ( $depthOperator === 'eq' )
+                        ? $targetDepth
+                        : [ '$lte' => $targetDepth ];
+                }
+                $pathOrs[] = $cond;
+            }
+            $matchStage = count( $pathOrs ) === 1 ? $pathOrs[0] : [ '$or' => $pathOrs ];
+            if ( !$ignoreVisibility )
+                $matchStage['is_invisible'] = 0;
+            if ( $mainNodeOnly )
+                $matchStage['$expr'] = [ '$eq' => [ '$node_id', '$main_node_id' ] ];
+            $mPipeline = [
+                [ '$match' => $matchStage ],
+                [ '$lookup' => [
+                    'from'         => 'ezcontentobject',
+                    'localField'   => 'contentobject_id',
+                    'foreignField' => 'id',
+                    'as'           => '_obj',
+                ] ],
+                [ '$unwind' => '$_obj' ],
+                [ '$lookup' => [
+                    'from'         => 'ezcontentclass',
+                    'localField'   => '_obj.contentclass_id',
+                    'foreignField' => 'id',
+                    'as'           => '_cls',
+                ] ],
+                [ '$unwind' => '$_cls' ],
+                [ '$match'  => [ '_cls.version' => 0 ] ],
+            ];
+            // Class filter
+            if ( $params['ClassFilterType'] && $params['ClassFilterArray'] && is_array( $params['ClassFilterArray'] ) )
+            {
+                $filterClassIDs = [];
+                foreach ( $params['ClassFilterArray'] as $fcid )
+                {
+                    if ( is_string( $fcid ) && !is_numeric( $fcid ) )
+                        $fcid = eZContentClass::classIDByIdentifier( $fcid );
+                    if ( is_numeric( $fcid ) )
+                        $filterClassIDs[] = (int)$fcid;
+                }
+                if ( !empty( $filterClassIDs ) )
+                {
+                    $fop = ( $params['ClassFilterType'] === 'include' ) ? '$in' : '$nin';
+                    $mPipeline[] = [ '$match' => [ '_obj.contentclass_id' => [ $fop => $filterClassIDs ] ] ];
+                }
+            }
+            // Name lookup
+            $mPipeline[] = [ '$lookup' => [
+                'from'     => 'ezcontentobject_name',
+                'let'      => [ 'oid' => '$contentobject_id', 'ver' => '$contentobject_version' ],
+                'pipeline' => [
+                    [ '$match' => [ '$expr' => [ '$and' => [
+                        [ '$eq' => [ '$contentobject_id', '$$oid' ] ],
+                        [ '$eq' => [ '$content_version', '$$ver' ] ],
+                    ] ] ] ],
+                    [ '$limit' => 1 ],
+                ],
+                'as' => '_name',
+            ] ];
+            $mPipeline[] = [ '$unwind' => [ 'path' => '$_name', 'preserveNullAndEmptyArrays' => true ] ];
+            // Flatten joined fields
+            $mPipeline[] = [ '$addFields' => [
+                'contentclass_id'            => '$_obj.contentclass_id',
+                'current_version'            => '$_obj.current_version',
+                'id'                         => '$_obj.id',
+                'initial_language_id'        => '$_obj.initial_language_id',
+                'language_mask'              => '$_obj.language_mask',
+                'modified'                   => '$_obj.modified',
+                'owner_id'                   => '$_obj.owner_id',
+                'published'                  => '$_obj.published',
+                'object_remote_id'           => '$_obj.remote_id',
+                'section_id'                 => '$_obj.section_id',
+                'status'                     => '$_obj.status',
+                'class_serialized_name_list' => '$_cls.serialized_name_list',
+                'class_identifier'           => '$_cls.identifier',
+                'is_container'               => '$_cls.is_container',
+                'name'                       => '$_name.name',
+                'real_translation'           => '$_name.real_translation',
+            ] ];
+            $mPipeline[] = [ '$project' => [ '_id' => 0, '_obj' => 0, '_cls' => 0, '_name' => 0 ] ];
+            // Sort
+            $sortBy    = isset( $params['SortBy'] ) ? $params['SortBy'] : false;
+            $sortMap   = [
+                'published'  => 'published', 'modified'   => 'modified',  'name'    => 'name',
+                'priority'   => 'priority',  'node_id'    => 'node_id',   'depth'   => 'depth',
+                'path'       => 'path_string', 'section'  => 'section_id',
+            ];
+            $sortStage = [];
+            if ( $sortBy )
+            {
+                $sortItems = ( is_array( $sortBy ) && isset( $sortBy[0] ) && is_array( $sortBy[0] ) ) ? $sortBy : [ $sortBy ];
+                foreach ( $sortItems as $si )
+                {
+                    $sField = strtolower( $si[0] ?? '' );
+                    $sDir   = ( isset( $si[1] ) && strtolower( $si[1] ) === 'desc' ) ? -1 : 1;
+                    if ( isset( $sortMap[$sField] ) )
+                        $sortStage[ $sortMap[$sField] ] = $sDir;
+                }
+            }
+            if ( empty( $sortStage ) )
+                $sortStage = [ 'priority' => -1, 'node_id' => 1 ];
+            $mPipeline[] = [ '$sort' => $sortStage ];
+            if ( $offset > 0 ) $mPipeline[] = [ '$skip'  => (int)$offset ];
+            if ( $limit  > 0 ) $mPipeline[] = [ '$limit' => (int)$limit  ];
+            $nodeListArray = $db->aggregate( 'ezcontentobject_tree', $mPipeline );
+            if ( $nodeListArray === false ) $nodeListArray = [];
+            if ( $asObject )
+            {
+                $retNodeList = eZContentObjectTreeNode::makeObjectsArray( $nodeListArray, true, null, $language );
+                if ( $loadDataMap === true )
+                    eZContentObject::fillNodeListAttributes( $retNodeList );
+                else if ( $loadDataMap && is_numeric( $loadDataMap ) && $loadDataMap >= count( $retNodeList ) )
+                    eZContentObject::fillNodeListAttributes( $retNodeList );
+            }
+            else
+            {
+                $retNodeList = $nodeListArray;
+            }
+            $db->dropTempTableList( $sqlPermissionChecking['temp_tables'] );
+            return $retNodeList;
+        }
+
         $nodeListArray = $db->arrayQuery( $query, array( 'offset' => $offset,
                                                          'limit'  => $limit ),
                                                   $server );
@@ -2528,12 +2676,68 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $server = count( $sqlPermissionChecking['temp_tables'] ) > 0 ? eZDBInterface::SERVER_SLAVE : false;
 
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $parentMatch = is_array( $nodeID )
+                ? [ 'node_id' => [ '$in' => array_map( 'intval', (array)$nodeID ) ] ]
+                : [ 'node_id' => (int)$nodeID ];
+            $parentRows = $db->aggregate( 'ezcontentobject_tree', [
+                [ '$match'   => $parentMatch ],
+                [ '$project' => [ '_id' => 0, 'path_string' => 1, 'depth' => 1, 'node_id' => 1 ] ],
+            ] );
+            if ( empty( $parentRows ) )
+            {
+                $db->dropTempTableList( $sqlPermissionChecking['temp_tables'] );
+                return 0;
+            }
+            $pathOrs = [];
+            foreach ( $parentRows as $pRow )
+            {
+                $ps = $pRow['path_string'];
+                $pd = (int)( $pRow['depth'] ?? 0 );
+                $cond = [
+                    'path_string' => [ '$regex' => '^' . preg_quote( $ps ) . '.+' ],
+                    'node_id'     => [ '$ne'    => (int)$pRow['node_id'] ],
+                ];
+                if ( $depth !== false && is_numeric( $depth ) )
+                {
+                    $targetDepth = $pd + (int)$depth;
+                    $cond['depth'] = ( $depthOperator === 'eq' )
+                        ? $targetDepth
+                        : [ '$lte' => $targetDepth ];
+                }
+                $pathOrs[] = $cond;
+            }
+            $matchStage = count( $pathOrs ) === 1 ? $pathOrs[0] : [ '$or' => $pathOrs ];
+            if ( !$ignoreVisibility )
+                $matchStage['is_invisible'] = 0;
+            if ( isset( $params['MainNodeOnly'] ) && $params['MainNodeOnly'] === true )
+                $matchStage['$expr'] = [ '$eq' => [ '$node_id', '$main_node_id' ] ];
+            $countPipeline = [ [ '$match' => $matchStage ] ];
+            if ( isset( $classIDArray ) && !empty( $classIDArray ) )
+            {
+                $countPipeline[] = [ '$lookup' => [
+                    'from'         => 'ezcontentobject',
+                    'localField'   => 'contentobject_id',
+                    'foreignField' => 'id',
+                    'as'           => '_obj',
+                ] ];
+                $countPipeline[] = [ '$unwind' => '$_obj' ];
+                $filterOp = ( isset( $params['ClassFilterType'] ) && $params['ClassFilterType'] === 'include' ) ? '$in' : '$nin';
+                $countPipeline[] = [ '$match' => [ '_obj.contentclass_id' => [ $filterOp => array_map( 'intval', $classIDArray ) ] ] ];
+            }
+            $countPipeline[] = [ '$count' => 'count' ];
+            $countRows = $db->aggregate( 'ezcontentobject_tree', $countPipeline );
+            $db->dropTempTableList( $sqlPermissionChecking['temp_tables'] );
+            return !empty( $countRows ) ? (int)$countRows[0]['count'] : 0;
+        }
+
         $nodeListArray = $db->arrayQuery( $query, array(), $server );
 
         // cleanup temp tables
         $db->dropTempTableList( $sqlPermissionChecking['temp_tables'] );
 
-        return $nodeListArray[0]['count'];
+        return isset( $nodeListArray[0]['count'] ) ? $nodeListArray[0]['count'] : 0;
     }
 
     /*!
@@ -2981,12 +3185,23 @@ class eZContentObjectTreeNode extends eZPersistentObject
     static function findMainNode( $objectID, $asObject = false )
     {
         $objectID = (int)$objectID;
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentobject_tree', [
+                [ '$match' => [ 'contentobject_id' => $objectID, '$expr' => [ '$eq' => [ '$node_id', '$main_node_id' ] ] ] ],
+                [ '$project' => [ '_id' => 0, 'node_id' => 1 ] ],
+            ] );
+            $nodeListArray = $rows ?: [];
+        }
+        else
+        {
         $query = "SELECT node_id
                   FROM ezcontentobject_tree
                   WHERE contentobject_id=$objectID AND
                   main_node_id = node_id";
-        $db = eZDB::instance();
         $nodeListArray = $db->arrayQuery( $query );
+        }
         if ( count( $nodeListArray ) == 1 )
         {
             if ( $asObject )
@@ -3059,109 +3274,273 @@ class eZContentObjectTreeNode extends eZPersistentObject
     {
         $returnValue = null;
         $db = eZDB::instance();
-        if ( ( is_numeric( $nodeID ) && $nodeID == 1 ) ||
-             ( is_array( $nodeID ) && count( $nodeID ) === 1 && $nodeID[0] == 1 ) )
+
+        // MongoDB path — bypass SQL JOIN and use aggregate pipeline instead
+        if ( $db->databaseName() === 'mongo' )
         {
-            $query = "SELECT *
-                FROM ezcontentobject_tree
-                WHERE node_id = 1";
+            return self::fetchMongo( $nodeID, $lang, $asObject, $conditions );
         }
-        else
+
+        if ( $db->databaseName() === 'mysql' )
         {
-            $versionNameJoins = " AND ";
-            if ( $lang )
+            if ( ( is_numeric( $nodeID ) && $nodeID == 1 ) ||
+                 ( is_array( $nodeID ) && count( $nodeID ) === 1 && $nodeID[0] == 1 ) )
             {
-                $lang = $db->escapeString( $lang );
-                $versionNameJoins .= " ezcontentobject_name.content_translation = '$lang' ";
+                $query = "SELECT *
+                    FROM ezcontentobject_tree
+                    WHERE node_id = 1";
             }
             else
             {
-                $versionNameJoins .= eZContentLanguage::sqlFilter( 'ezcontentobject_name', 'ezcontentobject' );
-            }
-
-            $languageFilter = ' AND '.eZContentLanguage::languagesSQLFilter( 'ezcontentobject' );
-
-            $sqlCondition = '';
-
-            if ( $nodeID !== false )
-            {
-                if ( is_array( $nodeID ) )
+                $versionNameJoins = " AND ";
+                if ( $lang )
                 {
-                    if( count( $nodeID ) === 1 )
+                    $lang = $db->escapeString( $lang );
+                    $versionNameJoins .= " ezcontentobject_name.content_translation = '$lang' ";
+                }
+                else
+                {
+                    $versionNameJoins .= eZContentLanguage::sqlFilter( 'ezcontentobject_name', 'ezcontentobject' );
+                }
+
+                $languageFilter = ' AND '.eZContentLanguage::languagesSQLFilter( 'ezcontentobject' );
+
+                $sqlCondition = '';
+
+                if ( $nodeID !== false )
+                {
+                    if ( is_array( $nodeID ) )
                     {
-                        $sqlCondition = 'node_id = ' . (int) $nodeID[0] . ' AND ';
+                        if( count( $nodeID ) === 1 )
+                        {
+                            $sqlCondition = 'node_id = ' . (int) $nodeID[0] . ' AND ';
+                        }
+                        else
+                        {
+                            $sqlCondition = $db->generateSQLINStatement( $nodeID, 'node_id', false, true, 'int' ) . ' AND ';
+                        }
                     }
                     else
                     {
-                        $sqlCondition = $db->generateSQLINStatement( $nodeID, 'node_id', false, true, 'int' ) . ' AND ';
+                        $sqlCondition = 'node_id = ' . (int) $nodeID . ' AND ';
                     }
                 }
-                else
-                {
-                    $sqlCondition = 'node_id = ' . (int) $nodeID . ' AND ';
-                }
-            }
 
-            if ( is_array( $conditions ) )
-            {
-                foreach ( $conditions as $key => $condition )
+                if ( is_array( $conditions ) )
                 {
-                    if ( is_string( $condition ) )
+                    foreach ( $conditions as $key => $condition )
                     {
-                        $condition = $db->escapeString( $condition );
-                        $condition = "'$condition'";
-                    }
+                        if ( is_string( $condition ) )
+                        {
+                            $condition = $db->escapeString( $condition );
+                            $condition = "'$condition'";
+                        }
 
-                    $sqlCondition .= "ezcontentobject_tree." . $db->escapeString( $key ) . "=$condition AND ";
+                        $sqlCondition .= "ezcontentobject_tree." . $db->escapeString( $key ) . "=$condition AND ";
+                    }
+                }
+
+                if ( $sqlCondition == '' )
+                {
+                    eZDebug::writeWarning( 'Cannot fetch node, emtpy ID or no conditions given', __METHOD__ );
+                    return $returnValue;
+                }
+
+                $query = "SELECT " .
+                    "ezcontentobject.contentclass_id, ezcontentobject.current_version, ezcontentobject.id, ezcontentobject.initial_language_id, ezcontentobject.language_mask, " .
+                    "ezcontentobject.modified, ezcontentobject.owner_id, ezcontentobject.published, ezcontentobject.remote_id AS object_remote_id, ezcontentobject.section_id, " .
+                    "ezcontentobject.status, ezcontentobject_tree.contentobject_is_published, ezcontentobject_tree.contentobject_version, " .
+                    "ezcontentobject_tree.depth, ezcontentobject_tree.is_hidden, ezcontentobject_tree.is_invisible, ezcontentobject_tree.main_node_id, ezcontentobject_tree.modified_subnode, " .
+                    "ezcontentobject_tree.node_id, ezcontentobject_tree.parent_node_id, ezcontentobject_tree.path_identification_string, ezcontentobject_tree.path_string, ezcontentobject_tree.priority, " .
+                    "ezcontentobject_tree.remote_id, ezcontentobject_tree.sort_field, ezcontentobject_tree.sort_order, ezcontentclass.serialized_name_list as class_serialized_name_list, " .
+                    "ezcontentclass.identifier as class_identifier, ezcontentclass.is_container, ezcontentobject_name.name, ezcontentobject_name.real_translation " .
+                    "FROM ezcontentobject_tree " .
+                    "INNER JOIN ezcontentobject ON (ezcontentobject.id = ezcontentobject_tree.contentobject_id) " .
+                    "INNER JOIN ezcontentclass ON (ezcontentclass.id = ezcontentobject.contentclass_id) " .
+                    "INNER JOIN ezcontentobject_name ON ( " .
+                    "    ezcontentobject_name.contentobject_id = ezcontentobject_tree.contentobject_id AND " .
+                    "    ezcontentobject_name.content_version = ezcontentobject_tree.contentobject_version " .
+                    ") " .
+                    "WHERE $sqlCondition " .
+                    "ezcontentclass.version = 0 " .
+                    "$languageFilter " .
+                    $versionNameJoins;
+            }
+            $nodeListArray = $db->arrayQuery( $query );
+
+            if ( is_array( $nodeListArray ) && !empty( $nodeListArray ) )
+            {
+                if ( $asObject )
+                {
+                    $returnValue = eZContentObjectTreeNode::makeObjectsArray( $nodeListArray, true, null, $lang );
+                    if ( count( $returnValue ) === 1 )
+                        $returnValue = $returnValue[0];
+                }
+                else
+                {
+                    if ( count( $nodeListArray ) === 1 )
+                        $returnValue = $nodeListArray[0];
+                    else
+                        $returnValue = $nodeListArray;
                 }
             }
-
-            if ( $sqlCondition == '' )
-            {
-                eZDebug::writeWarning( 'Cannot fetch node, emtpy ID or no conditions given', __METHOD__ );
-                return $returnValue;
-            }
-
-            $query = "SELECT " .
-                "ezcontentobject.contentclass_id, ezcontentobject.current_version, ezcontentobject.id, ezcontentobject.initial_language_id, ezcontentobject.language_mask, " .
-                "ezcontentobject.modified, ezcontentobject.owner_id, ezcontentobject.published, ezcontentobject.remote_id AS object_remote_id, ezcontentobject.section_id, " .
-                "ezcontentobject.status, ezcontentobject_tree.contentobject_is_published, ezcontentobject_tree.contentobject_version, " .
-                "ezcontentobject_tree.depth, ezcontentobject_tree.is_hidden, ezcontentobject_tree.is_invisible, ezcontentobject_tree.main_node_id, ezcontentobject_tree.modified_subnode, " .
-                "ezcontentobject_tree.node_id, ezcontentobject_tree.parent_node_id, ezcontentobject_tree.path_identification_string, ezcontentobject_tree.path_string, ezcontentobject_tree.priority, " .
-                "ezcontentobject_tree.remote_id, ezcontentobject_tree.sort_field, ezcontentobject_tree.sort_order, ezcontentclass.serialized_name_list as class_serialized_name_list, " .
-                "ezcontentclass.identifier as class_identifier, ezcontentclass.is_container, ezcontentobject_name.name, ezcontentobject_name.real_translation " .
-                "FROM ezcontentobject_tree " .
-                "INNER JOIN ezcontentobject ON (ezcontentobject.id = ezcontentobject_tree.contentobject_id) " .
-                "INNER JOIN ezcontentclass ON (ezcontentclass.id = ezcontentobject.contentclass_id) " .
-                "INNER JOIN ezcontentobject_name ON ( " .
-                "    ezcontentobject_name.contentobject_id = ezcontentobject_tree.contentobject_id AND " .
-                "    ezcontentobject_name.content_version = ezcontentobject_tree.contentobject_version " .
-                ") " .
-                "WHERE $sqlCondition " .
-                "ezcontentclass.version = 0 " .
-                "$languageFilter " .
-                $versionNameJoins;
-        }
-        $nodeListArray = $db->arrayQuery( $query );
-
-        if ( is_array( $nodeListArray ) && !empty( $nodeListArray ) )
-        {
-            if ( $asObject )
-            {
-                $returnValue = eZContentObjectTreeNode::makeObjectsArray( $nodeListArray, true, null, $lang );
-                if ( count( $returnValue ) === 1 )
-                    $returnValue = $returnValue[0];
-            }
-            else
-            {
-                if ( count( $nodeListArray ) === 1 )
-                    $returnValue = $nodeListArray[0];
-                else
-                    $returnValue = $nodeListArray;
-            }
-        }
+        } // end mysql block
 
         return $returnValue;
+    }
+
+    /**
+     * MongoDB-native implementation of fetch() using aggregate pipelines.
+     * Joins ezcontentobject_tree, ezcontentobject, ezcontentclass and
+     * ezcontentobject_name in-process and returns the same flat row structure
+     * that makeObjectsArray() expects.
+     *
+     * @param int|array|bool $nodeID
+     * @param string|bool    $lang
+     * @param bool           $asObject
+     * @param array|bool     $conditions  field => value pairs matched on ezcontentobject_tree
+     *
+     * @return eZContentObjectTreeNode|array|null
+     */
+    static function fetchMongo( $nodeID = false, $lang = false, $asObject = true, $conditions = false )
+    {
+        $db = eZDB::instance();
+
+        // --- Build the match filter for ezcontentobject_tree -----------------
+        $treeMatch = [];
+
+        if ( $nodeID !== false )
+        {
+            if ( is_array( $nodeID ) )
+                $treeMatch['node_id'] = [ '$in' => array_map( 'intval', $nodeID ) ];
+            else
+                $treeMatch['node_id'] = (int) $nodeID;
+        }
+
+        if ( is_array( $conditions ) )
+        {
+            foreach ( $conditions as $key => $value )
+            {
+                // Strip table prefix if caller passed "ezcontentobject_tree.field"
+                $field = str_replace( 'ezcontentobject_tree.', '', $key );
+                $treeMatch[$field] = is_numeric( $value ) ? (int) $value : $value;
+            }
+        }
+
+        if ( empty( $treeMatch ) )
+        {
+            eZDebug::writeWarning( 'fetchMongo: empty match — no nodeID or conditions given', __METHOD__ );
+            return null;
+        }
+
+        // --- Aggregate pipeline: tree → object → class → name ---------------
+        $pipeline = [
+            [ '$match' => $treeMatch ],
+            [
+                '$lookup' => [
+                    'from'         => 'ezcontentobject',
+                    'localField'   => 'contentobject_id',
+                    'foreignField' => 'id',
+                    'as'           => '_obj',
+                ],
+            ],
+            [ '$unwind' => [ 'path' => '$_obj', 'preserveNullAndEmptyArrays' => true ] ],
+            [
+                '$lookup' => [
+                    'from' => 'ezcontentclass',
+                    'let'  => [ 'cid' => '$_obj.contentclass_id' ],
+                    'pipeline' => [
+                        [ '$match' => [ '$expr' => [ '$and' => [
+                            [ '$eq' => [ '$id', '$$cid' ] ],
+                            [ '$eq' => [ '$version', 0 ] ],
+                        ] ] ] ],
+                    ],
+                    'as' => '_cls',
+                ],
+            ],
+            [ '$unwind' => [ 'path' => '$_cls', 'preserveNullAndEmptyArrays' => true ] ],
+            [
+                '$lookup' => [
+                    'from' => 'ezcontentobject_name',
+                    'let'  => [
+                        'oid' => '$contentobject_id',
+                        'ver' => '$contentobject_version',
+                    ],
+                    'pipeline' => [
+                        [ '$match' => [ '$expr' => [ '$and' => [
+                            [ '$eq' => [ '$contentobject_id', '$$oid' ] ],
+                            [ '$eq' => [ '$content_version',  '$$ver' ] ],
+                        ] ] ] ],
+                        [ '$limit' => 1 ],
+                    ],
+                    'as' => '_name',
+                ],
+            ],
+            [ '$unwind' => [ 'path' => '$_name', 'preserveNullAndEmptyArrays' => true ] ],
+        ];
+
+        $rows = $db->aggregate( 'ezcontentobject_tree', $pipeline );
+
+        if ( empty( $rows ) )
+            return null;
+
+        // --- Flatten each aggregate result into the SQL-style row format -----
+        $nodeListArray = [];
+        foreach ( $rows as $r )
+        {
+            $row = [
+                // from ezcontentobject
+                'contentclass_id'              => $r['_obj']['contentclass_id']  ?? null,
+                'current_version'              => $r['_obj']['current_version']  ?? null,
+                'id'                           => $r['_obj']['id']               ?? null,
+                'initial_language_id'          => $r['_obj']['initial_language_id'] ?? null,
+                'language_mask'                => $r['_obj']['language_mask']    ?? null,
+                'modified'                     => $r['_obj']['modified']         ?? null,
+                'owner_id'                     => $r['_obj']['owner_id']         ?? null,
+                'published'                    => $r['_obj']['published']        ?? null,
+                'object_remote_id'             => $r['_obj']['remote_id']        ?? null,
+                'section_id'                   => $r['_obj']['section_id']       ?? null,
+                'status'                       => $r['_obj']['status']           ?? null,
+                // from ezcontentobject_tree
+                'contentobject_id'             => $r['contentobject_id']              ?? null,
+                'contentobject_is_published'   => $r['contentobject_is_published']    ?? null,
+                'contentobject_version'        => $r['contentobject_version']         ?? null,
+                'depth'                        => $r['depth']                         ?? null,
+                'is_hidden'                    => $r['is_hidden']                     ?? null,
+                'is_invisible'                 => $r['is_invisible']                  ?? null,
+                'main_node_id'                 => $r['main_node_id']                  ?? null,
+                'modified_subnode'             => $r['modified_subnode']              ?? null,
+                'node_id'                      => $r['node_id']                       ?? null,
+                'parent_node_id'               => $r['parent_node_id']               ?? null,
+                'path_identification_string'   => $r['path_identification_string']    ?? null,
+                'path_string'                  => $r['path_string']                   ?? null,
+                'priority'                     => $r['priority']                      ?? null,
+                'remote_id'                    => $r['remote_id']                     ?? null,
+                'sort_field'                   => $r['sort_field']                    ?? null,
+                'sort_order'                   => $r['sort_order']                    ?? null,
+                // from ezcontentclass
+                'class_serialized_name_list'   => $r['_cls']['serialized_name_list']  ?? null,
+                'class_identifier'             => $r['_cls']['identifier']            ?? null,
+                'is_container'                 => $r['_cls']['is_container']          ?? null,
+                // from ezcontentobject_name
+                'name'                         => $r['_name']['name']                 ?? ( $r['_obj']['name'] ?? '' ),
+                'real_translation'             => $r['_name']['real_translation']     ?? null,
+            ];
+            $nodeListArray[] = $row;
+        }
+
+        if ( empty( $nodeListArray ) )
+            return null;
+
+        if ( $asObject )
+        {
+            $returnValue = eZContentObjectTreeNode::makeObjectsArray( $nodeListArray, true, null, $lang );
+            return ( count( $returnValue ) === 1 ) ? $returnValue[0] : $returnValue;
+        }
+        else
+        {
+            return ( count( $nodeListArray ) === 1 ) ? $nodeListArray[0] : $nodeListArray;
+        }
     }
 
     /*!
@@ -3240,7 +3619,32 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         if ( $pathString  )
         {
-            $nodesListArray = eZDB::instance()->arrayQuery(
+            $db = eZDB::instance();
+            if ( $db->databaseName() === 'mongo' )
+            {
+                // $pathString is SQL like "node_id IN (2,67) AND" or "node_id = 2 AND"
+                // parse the node IDs out of it and use fetchMongo
+                $nodeIDs = array();
+                if ( preg_match( '/node_id\s+IN\s*\(([0-9,\s]+)\)/i', $pathString, $m ) )
+                    $nodeIDs = array_map( 'intval', explode( ',', $m[1] ) );
+                elseif ( preg_match( '/node_id\s*=\s*([0-9]+)/i', $pathString, $m ) )
+                    $nodeIDs = [ (int)$m[1] ];
+
+                if ( !empty( $nodeIDs ) )
+                {
+                    $result = eZContentObjectTreeNode::fetchMongo( $nodeIDs, false, $asObjects );
+                    if ( $result === null )
+                        return array();
+                    // fetchMongo returns single object when count=1 — normalise to array
+                    if ( !is_array( $result ) || ( !empty($result) && !is_array( reset($result) ) && !( reset($result) instanceof eZContentObjectTreeNode ) ) )
+                        $nodesListArray = [ $result ];
+                    else
+                        $nodesListArray = $result;
+                }
+                return $nodesListArray;
+            }
+
+            $nodesListArray = $db->arrayQuery(
                 "SELECT " .
                 "ezcontentobject.contentclass_id, ezcontentobject.current_version, ezcontentobject.id, ezcontentobject.initial_language_id, ezcontentobject.language_mask, " .
                 "ezcontentobject.modified, ezcontentobject.owner_id, ezcontentobject.published, ezcontentobject.remote_id AS object_remote_id, ezcontentobject.section_id, " .
@@ -5171,7 +5575,42 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $classNameFilter = eZContentClassName::sqlFilter( 'cc' );
 
-        if ( $fetchAll )
+        if ( $db->databaseName() === 'mongo' ) {
+            // Build group filter if needed
+            $classMatch = [ 'version' => eZContentClass::VERSION_STATUS_DEFINED ];
+            if ( is_array( $groupList ) ) {
+                $cgRows = $db->aggregate( 'ezcontentclass_classgroup', [
+                    [ '$match' => [ 'group_id' => [ '$in' => array_map( 'intval', $groupList ) ] ] ],
+                    [ '$group' => [ '_id' => '$contentclass_id' ] ],
+                ] );
+                $cgIDs = array_column( $cgRows, '_id' );
+                if ( $includeFilter ) {
+                    if ( empty( $cgIDs ) ) return $classList;
+                    $classMatch['id'] = [ '$in' => $cgIDs ];
+                } elseif ( !empty( $cgIDs ) ) {
+                    $classMatch['id'] = [ '$nin' => $cgIDs ];
+                }
+            }
+            if ( $fetchAll ) {
+                $rows = $db->aggregate( 'ezcontentclass', [
+                    [ '$match' => $classMatch ],
+                    [ '$sort' => [ 'identifier' => 1 ] ],
+                ] );
+                $classList = eZPersistentObject::handleRows( $rows, 'eZContentClass', $asObject );
+            } else {
+                if ( count( $classIDArray ) == 0 ) {
+                    return $classList;
+                }
+                $classMatch['id'] = isset( $classMatch['id'] )
+                    ? [ '$in' => array_values( array_intersect( $classMatch['id']['$in'] ?? array_map( 'intval', $classIDArray ), array_map( 'intval', $classIDArray ) ) ) ]
+                    : [ '$in' => array_map( 'intval', $classIDArray ) ];
+                $rows = $db->aggregate( 'ezcontentclass', [
+                    [ '$match' => $classMatch ],
+                    [ '$sort' => [ 'identifier' => 1 ] ],
+                ] );
+                $classList = eZPersistentObject::handleRows( $rows, 'eZContentClass', $asObject );
+            }
+        } elseif ( $fetchAll )
         {
             // If $asObject is true we fetch all fields in class
             $fields = $asObject ? "cc.*, $classNameFilter[nameField]" : "cc.id, $classNameFilter[nameField]";
@@ -5224,7 +5663,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
     // This code is automatically generated from templates/classcreatelist.ctpl
     // code-template::auto-generated:END can-instantiate-class-list
 
-    static public function makeObjectsArray( $array , $with_contentobject = true, array|null $propertiesOverride = null, $lang = null )
+    static public function makeObjectsArray( $array , $with_contentobject = true, ?array $propertiesOverride = null, $lang = null )
     {
         $retNodes = array();
         if ( !is_array( $array ) )
@@ -5373,6 +5812,20 @@ class eZContentObjectTreeNode extends eZPersistentObject
             $objectIDs = array( $objectIDs );
 
         $db = eZDB::instance();
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $matchCond = [ 'contentobject_id' => [ '$in' => array_map( 'intval', $objectIDs ) ] ];
+            if ( $onlyMainNode )
+                $matchCond['$expr'] = [ '$eq' => [ '$node_id', '$main_node_id' ] ];
+
+            $list = $db->aggregate( 'ezcontentobject_tree', [
+                [ '$match'   => $matchCond ],
+                [ '$project' => [ '_id' => 0, 'parent_node_id' => 1, 'contentobject_id' => 1 ] ],
+            ] );
+        }
+        else
+        {
         $query = 'SELECT
                     parent_node_id, contentobject_id
                   FROM
@@ -5385,6 +5838,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
         }
 
         $list = $db->arrayQuery( $query );
+        } // end SQL path
+
         $parentNodeIDs = array();
         if ( $groupByObjectId )
         {
@@ -5426,6 +5881,146 @@ class eZContentObjectTreeNode extends eZPersistentObject
         }
         $propertiesOverride = array( "parent_node_id" => $parentNode = (int) $parentNode );
         $db = eZDB::instance();
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            if ( $asObject )
+            {
+                // Build match filter for the tree collection
+                $treeMatch = [ 'parent_node_id' => $parentNode ];
+                if ( $remoteID )
+                {
+                    $propertiesOverride["object_remote_id"] = $id;
+                    // Match on ezcontentobject.remote_id via $lookup + $match
+                    $pipeline = [
+                        [ '$match' => $treeMatch ],
+                        [ '$lookup' => [
+                            'from'         => 'ezcontentobject',
+                            'localField'   => 'contentobject_id',
+                            'foreignField' => 'id',
+                            'as'           => '_obj',
+                        ]],
+                        [ '$unwind' => '$_obj' ],
+                        [ '$match' => [ '_obj.remote_id' => $id ] ],
+                        [ '$lookup' => [
+                            'from'         => 'ezcontentclass',
+                            'let'          => [ 'class_id' => '$_obj.contentclass_id' ],
+                            'pipeline'     => [
+                                [ '$match' => [ '$expr' => [ '$eq' => [ '$id', '$$class_id' ] ], 'version' => 0 ] ],
+                            ],
+                            'as'           => '_class',
+                        ]],
+                        [ '$unwind' => '$_class' ],
+                        [ '$project' => [
+                            // tree fields
+                            'contentobject_id'          => 1,
+                            'contentobject_is_published' => 1,
+                            'contentobject_version'     => 1,
+                            'depth'                     => 1,
+                            'is_hidden'                 => 1,
+                            'is_invisible'              => 1,
+                            'main_node_id'              => 1,
+                            'modified_subnode'          => 1,
+                            'node_id'                   => 1,
+                            'parent_node_id'            => 1,
+                            'path_identification_string' => 1,
+                            'path_string'               => 1,
+                            'priority'                  => 1,
+                            'remote_id'                 => 1,
+                            'sort_field'                => 1,
+                            'sort_order'                => 1,
+                            // object fields (flattened)
+                            'id'                         => '$_obj.id',
+                            'contentclass_id'            => '$_obj.contentclass_id',
+                            'current_version'            => '$_obj.current_version',
+                            'initial_language_id'        => '$_obj.initial_language_id',
+                            'language_mask'              => '$_obj.language_mask',
+                            'modified'                   => '$_obj.modified',
+                            'name'                       => '$_obj.name',
+                            'owner_id'                   => '$_obj.owner_id',
+                            'published'                  => '$_obj.published',
+                            'object_remote_id'           => '$_obj.remote_id',
+                            'section_id'                 => '$_obj.section_id',
+                            'status'                     => '$_obj.status',
+                            // class fields
+                            'class_serialized_name_list' => '$_class.serialized_name_list',
+                            'class_identifier'           => '$_class.identifier',
+                            'is_container'               => '$_class.is_container',
+                        ]],
+                    ];
+                }
+                else
+                {
+                    $treeMatch['contentobject_id'] = (int) $id;
+                    $propertiesOverride["id"] = $id;
+                    $pipeline = [
+                        [ '$match' => $treeMatch ],
+                        [ '$lookup' => [
+                            'from'         => 'ezcontentobject',
+                            'localField'   => 'contentobject_id',
+                            'foreignField' => 'id',
+                            'as'           => '_obj',
+                        ]],
+                        [ '$unwind' => '$_obj' ],
+                        [ '$lookup' => [
+                            'from'         => 'ezcontentclass',
+                            'let'          => [ 'class_id' => '$_obj.contentclass_id' ],
+                            'pipeline'     => [
+                                [ '$match' => [ '$expr' => [ '$eq' => [ '$id', '$$class_id' ] ], 'version' => 0 ] ],
+                            ],
+                            'as'           => '_class',
+                        ]],
+                        [ '$unwind' => '$_class' ],
+                        [ '$project' => [
+                            'contentobject_id'          => 1,
+                            'contentobject_is_published' => 1,
+                            'contentobject_version'     => 1,
+                            'depth'                     => 1,
+                            'is_hidden'                 => 1,
+                            'is_invisible'              => 1,
+                            'main_node_id'              => 1,
+                            'modified_subnode'          => 1,
+                            'node_id'                   => 1,
+                            'parent_node_id'            => 1,
+                            'path_identification_string' => 1,
+                            'path_string'               => 1,
+                            'priority'                  => 1,
+                            'remote_id'                 => 1,
+                            'sort_field'                => 1,
+                            'sort_order'                => 1,
+                            'id'                         => '$_obj.id',
+                            'contentclass_id'            => '$_obj.contentclass_id',
+                            'current_version'            => '$_obj.current_version',
+                            'initial_language_id'        => '$_obj.initial_language_id',
+                            'language_mask'              => '$_obj.language_mask',
+                            'modified'                   => '$_obj.modified',
+                            'name'                       => '$_obj.name',
+                            'owner_id'                   => '$_obj.owner_id',
+                            'published'                  => '$_obj.published',
+                            'object_remote_id'           => '$_obj.remote_id',
+                            'section_id'                 => '$_obj.section_id',
+                            'status'                     => '$_obj.status',
+                            'class_serialized_name_list' => '$_class.serialized_name_list',
+                            'class_identifier'           => '$_class.identifier',
+                            'is_container'               => '$_class.is_container',
+                        ]],
+                    ];
+                }
+
+                $rows = $db->aggregate( 'ezcontentobject_tree', $pipeline );
+                $retNodeArray = eZContentObjectTreeNode::makeObjectsArray( $rows, true, $propertiesOverride );
+                return !empty( $retNodeArray ) ? $retNodeArray[0] : null;
+            }
+            else
+            {
+                $rows = $db->aggregate( 'ezcontentobject_tree', [
+                    [ '$match'   => [ 'parent_node_id' => $parentNode, 'contentobject_id' => (int) $id ] ],
+                    [ '$project' => [ 'node_id' => 1, '_id' => 0 ] ],
+                ] );
+                return isset( $rows[0]['node_id'] ) ? $rows[0]['node_id'] : false;
+            }
+        }
+
         if ( $asObject )
         {
             if ( $remoteID )
@@ -5984,8 +6579,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     static function hideSubTree( eZContentObjectTreeNode $node, $modifyRootNode = true )
     {
-        $nodeID = (int)$node->attribute( 'node_id' );
-        $time = (int)time();
+        $nodeID = $node->attribute( 'node_id' );
+        $time = time();
         $db = eZDB::instance();
 
         if ( eZAudit::isAuditEnabled() )
@@ -6009,7 +6604,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 $db->query( "UPDATE ezcontentobject_tree SET is_hidden=1, is_invisible=1, modified_subnode=$time WHERE node_id=$nodeID" );
 
             // 2) Recursively mark child nodes as invisible, except for ones which have been previously marked as invisible.
-            $nodePath = $db->escapeString( $node->attribute( 'path_string' ) );
+            $nodePath = $node->attribute( 'path_string' );
             $db->query( "UPDATE ezcontentobject_tree SET is_invisible=1, modified_subnode=$time WHERE is_invisible=0 AND path_string LIKE '$nodePath%'" );
         }
         else
@@ -6048,9 +6643,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
      */
     static function unhideSubTree( eZContentObjectTreeNode $node, $modifyRootNode = true )
     {
-        $nodeID = (int)$node->attribute( 'node_id' );
-        $db = eZDB::instance();
-        $nodePath = $db->escapeString( $node->attribute( 'path_string' ) );
+        $nodeID = $node->attribute( 'node_id' );
+        $nodePath = $node->attribute( 'path_string' );
         $nodeInvisible = $node->attribute( 'is_invisible' );
         $parentNode = $node->attribute( 'parent' );
         if ( !$parentNode instanceof eZContentObjectTreeNode )
@@ -6074,6 +6668,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                                         'Comment' => 'Node has been unhidden: eZContentObjectTreeNode::unhideSubTree()' ) );
         }
 
+        $db = eZDB::instance();
+
         $db->begin();
 
         if ( ! $parentNode->attribute( 'is_invisible' ) ) // if parent node is visible
@@ -6089,7 +6685,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                                 "WHERE node_id <> $nodeID AND is_hidden=1 AND path_string LIKE '$nodePath%'" );
             $skipSubtreesString = '';
             foreach ( $hiddenChildren as $i )
-                $skipSubtreesString .= " AND path_string NOT LIKE '" . $db->escapeString( $i['path_string'] ) . "%'";
+                $skipSubtreesString .= " AND path_string NOT LIKE '" . $i['path_string'] . "%'";
 
             // 2.2) Mark those children as visible which are not under nodes in $hiddenChildren
             $db->query( "UPDATE ezcontentobject_tree SET is_invisible=0, modified_subnode=$time WHERE path_string LIKE '$nodePath%' $skipSubtreesString" );
@@ -6205,6 +6801,11 @@ class eZContentObjectTreeNode extends eZPersistentObject
     static function setVersionByObjectID( $objectID, $newVersion )
     {
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->upsert( 'ezcontentobject_tree', ['contentobject_id' => (int)$objectID], ['contentobject_version' => (int)$newVersion] );
+            return;
+        }
         $db->query( "UPDATE ezcontentobject_tree SET contentobject_version='$newVersion' WHERE contentobject_id='$objectID'" );
     }
 
@@ -6392,7 +6993,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
             elseif ( is_array( $class ) )
             {
                 $classID = $class['id'];
-                $className = $class['name'];
+                $className = $class['name'] ?? '';
             }
             $classList[] = array(
                 'classID' => (int) $classID,

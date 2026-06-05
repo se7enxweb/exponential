@@ -192,7 +192,7 @@ class eZImageManager
     function hasAlias( $aliasName )
     {
         $aliasList = $this->aliasList();
-        return array_key_exists( $aliasName, $aliasList );
+        return array_key_exists( $aliasName ?? '', $aliasList );
     }
 
     /*!
@@ -201,7 +201,7 @@ class eZImageManager
     function alias( $aliasName )
     {
         $aliasList = $this->aliasList();
-        if ( !array_key_exists( $aliasName, $aliasList ) )
+        if ( !array_key_exists( $aliasName ?? '', $aliasList ) )
             return false;
         return $aliasList[$aliasName];
     }

@@ -625,7 +625,15 @@ class eZContentOperationCollection
         {
             $action = $isMoved ? 'index_moved_node' : 'index_object';
 
-            eZDB::instance()->query( "INSERT INTO ezpending_actions( action, param ) VALUES ( '$action', '$objectID' )" );
+            $pendingDB = eZDB::instance();
+            if ( $pendingDB->databaseName() === 'mongo' )
+            {
+                $pendingDB->insert( 'ezpending_actions', [ 'action' => $action, 'param' => (string)$objectID ] );
+            }
+            else
+            {
+                $pendingDB->query( "INSERT INTO ezpending_actions( action, param ) VALUES ( '$action', '$objectID' )" );
+            }
             return;
         }
 

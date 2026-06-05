@@ -14,7 +14,7 @@
 
 {* DESIGN: Header START *}<div class="box-header">
 
-{def $js_class_languages = ''
+{def $js_class_languages = '[]'
      $disable_another_language = '-1'
      $disabled_sub_menu = "['class-createnodefeed', 'class-removenodefeed']"
      $hide_status = ''

@@ -67,10 +67,6 @@ class eZKeyword
             $keywordArray = explode( ',', $keywordString );
             $keywordArray = array_unique ( $keywordArray );
         }
-        else
-        {
-            $keywordArray = $keywordString;
-        }
         foreach ( array_keys( $keywordArray ) as $key )
         {
             if ( trim( $keywordArray[$key] ) != '' )
@@ -88,7 +84,140 @@ class eZKeyword
         $db = eZDB::instance();
 
         $object = $attribute->attribute( 'object' );
-        $classID = $object->attribute( 'contentclass_id' );
+        $classID = (int)$object->attribute( 'contentclass_id' );
+        $attributeID = $attribute->attribute( 'id' );
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // --- 1. Resolve existing keyword records for the current keyword texts ---
+            $existingWords = array();
+            if ( count( $this->KeywordArray ) > 0 )
+            {
+                $rows = $db->aggregate( 'ezkeyword', [
+                    [ '$match'   => [ 'keyword' => [ '$in' => array_values( $this->KeywordArray ) ],
+                                      'class_id' => $classID ] ],
+                    [ '$project' => [ '_id' => 0, 'id' => 1, 'keyword' => 1 ] ],
+                ] );
+                foreach ( $rows as $r )
+                    $existingWords[] = $r;
+            }
+
+            // Split into truly-new keywords vs already-existing ones
+            $newWordArray      = array();
+            $existingWordArray = array();
+            foreach ( $this->KeywordArray as $keyword )
+            {
+                $found = false;
+                foreach ( $existingWords as $ew )
+                {
+                    if ( $ew['keyword'] == $keyword )
+                    {
+                        $existingWordArray[] = [ 'keyword' => $keyword, 'id' => (int)$ew['id'] ];
+                        $found = true;
+                        break;
+                    }
+                }
+                if ( !$found )
+                    $newWordArray[] = $keyword;
+            }
+
+            // --- 2. Insert new keywords, collect their IDs ---
+            $addRelationWordArray = array();
+            foreach ( $newWordArray as $keyword )
+            {
+                $keyword   = trim( $keyword );
+                $keywordID = $db->nextAtomicID( 'ezkeyword' );
+                $db->insert( 'ezkeyword', [ 'id' => $keywordID, 'keyword' => $keyword, 'class_id' => $classID ] );
+                $addRelationWordArray[] = [ 'keyword' => $keyword, 'id' => $keywordID ];
+            }
+
+            // --- 3. Get current keyword links for this attribute ---
+            $currentWordArray = array();
+            if ( $attributeID !== null )
+            {
+                $links = $db->aggregate( 'ezkeyword_attribute_link', [
+                    [ '$match'   => [ 'objectattribute_id' => (int)$attributeID ] ],
+                    [ '$project' => [ '_id' => 0, 'keyword_id' => 1 ] ],
+                ] );
+                if ( !empty( $links ) )
+                {
+                    $kwIDs = array_map( function( $l ) { return (int)$l['keyword_id']; }, $links );
+                    $kwRows = $db->aggregate( 'ezkeyword', [
+                        [ '$match'   => [ 'id' => [ '$in' => $kwIDs ] ] ],
+                        [ '$project' => [ '_id' => 0, 'id' => 1, 'keyword' => 1 ] ],
+                    ] );
+                    foreach ( $kwRows as $r )
+                        $currentWordArray[] = $r;
+                }
+            }
+
+            // Determine which existing words are new for this attribute
+            foreach ( $existingWordArray as $existingWord )
+            {
+                $alreadyLinked = false;
+                foreach ( $currentWordArray as $cw )
+                {
+                    if ( $existingWord['keyword'] == $cw['keyword'] )
+                    {
+                        $alreadyLinked = true;
+                        break;
+                    }
+                }
+                if ( !$alreadyLinked )
+                    $addRelationWordArray[] = $existingWord;
+            }
+
+            // --- 4. Remove links for keywords no longer used by this attribute ---
+            $removeIDs = array();
+            foreach ( $currentWordArray as $cw )
+            {
+                $stillUsed = false;
+                foreach ( $this->KeywordArray as $keyword )
+                {
+                    if ( $keyword == $cw['keyword'] )
+                    {
+                        $stillUsed = true;
+                        break;
+                    }
+                }
+                if ( !$stillUsed )
+                    $removeIDs[] = (int)$cw['id'];
+            }
+            if ( !empty( $removeIDs ) )
+            {
+                $db->deleteWhere( 'ezkeyword_attribute_link', [
+                    'keyword_id'          => [ '$in' => $removeIDs ],
+                    'objectattribute_id'  => (int)$attributeID,
+                ] );
+            }
+
+            // --- 5. Insert new attribute-keyword links ---
+            foreach ( $addRelationWordArray as $kw )
+            {
+                $db->insert( 'ezkeyword_attribute_link', [
+                    'keyword_id'         => (int)$kw['id'],
+                    'objectattribute_id' => (int)$attribute->attribute( 'id' ),
+                ] );
+            }
+
+            // --- 6. Remove orphan keywords (keywords with no links) ---
+            $allKwRows = $db->aggregate( 'ezkeyword', [
+                [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+            ] );
+            foreach ( $allKwRows as $kw )
+            {
+                $kwID = (int)$kw['id'];
+                $linkCount = $db->aggregate( 'ezkeyword_attribute_link', [
+                    [ '$match' => [ 'keyword_id' => $kwID ] ],
+                    [ '$count' => 'n' ],
+                ] );
+                if ( empty( $linkCount ) || $linkCount[0]['n'] == 0 )
+                    $db->deleteWhere( 'ezkeyword', [ 'id' => $kwID ] );
+            }
+            return;
+        }
+
+        // --- SQL path ---
 
         // Get already existing keywords
         if ( count( $this->KeywordArray ) > 0 )
@@ -146,7 +275,6 @@ class eZKeyword
             $addRelationWordArray[] = array( 'keyword' => $keywordID, 'id' => $keywordID );
         }
 
-        $attributeID = $attribute->attribute( 'id' );
         // Find the words which is new for this attribute
         if ( $attributeID !== null )
         {
@@ -236,6 +364,29 @@ class eZKeyword
             return;
 
         $db = eZDB::instance();
+        $attrID = (int)$attribute->attribute( 'id' );
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $links = $db->aggregate( 'ezkeyword_attribute_link', [
+                [ '$match'   => [ 'objectattribute_id' => $attrID ] ],
+                [ '$project' => [ '_id' => 0, 'keyword_id' => 1 ] ],
+            ] );
+            $this->ObjectAttributeID = $attrID;
+            if ( !empty( $links ) )
+            {
+                $kwIDs = array_map( function( $l ) { return (int)$l['keyword_id']; }, $links );
+                $kwRows = $db->aggregate( 'ezkeyword', [
+                    [ '$match'   => [ 'id' => [ '$in' => $kwIDs ] ] ],
+                    [ '$project' => [ '_id' => 0, 'keyword' => 1 ] ],
+                ] );
+                foreach ( $kwRows as $r )
+                    $this->KeywordArray[] = $r['keyword'];
+            }
+            $this->KeywordArray = array_unique( $this->KeywordArray );
+            return;
+        }
+
         $wordArray = $db->arrayQuery( "SELECT ezkeyword.keyword FROM ezkeyword_attribute_link, ezkeyword
                                     WHERE ezkeyword_attribute_link.keyword_id=ezkeyword.id AND
                                     ezkeyword_attribute_link.objectattribute_id='" . $attribute->attribute( 'id' ) ."' " );
@@ -284,9 +435,57 @@ class eZKeyword
         {
             $return = array();
 
-            // Fetch words
             $db = eZDB::instance();
 
+            if ( $db->databaseName() === 'mongo' )
+            {
+                // Get keyword IDs linked to this attribute
+                $links = $db->aggregate( 'ezkeyword_attribute_link', [
+                    [ '$match'   => [ 'objectattribute_id' => (int)$this->ObjectAttributeID ] ],
+                    [ '$project' => [ '_id' => 0, 'keyword_id' => 1 ] ],
+                ] );
+                $keywordIDArray = array_map( function( $l ) { return (int)$l['keyword_id']; }, $links );
+
+                if ( !empty( $keywordIDArray ) )
+                {
+                    // Get other attributes sharing any of those keywords
+                    $otherLinks = $db->aggregate( 'ezkeyword_attribute_link', [
+                        [ '$match'   => [
+                            'keyword_id'         => [ '$in' => $keywordIDArray ],
+                            'objectattribute_id' => [ '$ne' => (int)$this->ObjectAttributeID ],
+                        ] ],
+                        [ '$project' => [ '_id' => 0, 'objectattribute_id' => 1 ] ],
+                    ] );
+                    $otherAttrIDs = array_values( array_unique(
+                        array_map( function( $l ) { return (int)$l['objectattribute_id']; }, $otherLinks )
+                    ) );
+
+                    if ( !empty( $otherAttrIDs ) )
+                    {
+                        // Get object IDs for those attributes
+                        $objRows = $db->aggregate( 'ezcontentobject_attribute', [
+                            [ '$match'   => [ 'id' => [ '$in' => $otherAttrIDs ] ] ],
+                            [ '$group'   => [ '_id' => '$contentobject_id' ] ],
+                            [ '$project' => [ '_id' => 0, 'contentobject_id' => '$_id' ] ],
+                        ] );
+                        $objectIDArray = array_map( function( $r ) { return (int)$r['contentobject_id']; }, $objRows );
+
+                        if ( !empty( $objectIDArray ) )
+                        {
+                            $aNodes = eZContentObjectTreeNode::findMainNodeArray( $objectIDArray );
+                            foreach ( $aNodes as $node )
+                            {
+                                $theObject = $node->object();
+                                if ( $theObject->canRead() )
+                                    $return[] = $node;
+                            }
+                        }
+                    }
+                }
+                return $return;
+            }
+
+            // --- SQL path ---
             $wordArray = $db->arrayQuery( "SELECT * FROM ezkeyword_attribute_link
                                            WHERE objectattribute_id='" . $this->ObjectAttributeID ."' " );
 

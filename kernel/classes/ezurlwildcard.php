@@ -251,7 +251,7 @@ class eZURLWildcard extends eZPersistentObject
                     eZDebugSetting::writeDebug( 'kernel-urltranslator', "new uri string: '$uriString'", __METHOD__ );
 
                     // optimization: don't try further translation if wildcard type is 'forward'
-                    if ( $wildcardInfo['type'] == self::TYPE_FORWARD )
+                    if ( ( $wildcardInfo['type'] ?? null ) == self::TYPE_FORWARD )
                     {
                         $urlTranslated = true;
                         break;
@@ -472,7 +472,7 @@ class eZURLWildcard extends eZPersistentObject
         while( 1 )
         {
             $wildcards = self::fetchList( $offset, $limit, false );
-            if ( count( $wildcards ) === 0 )
+            if ( $wildcards === null || is_array( $wildcards ) && count( $wildcards ) === 0 )
             {
                 break;
             }
@@ -512,7 +512,7 @@ class eZURLWildcard extends eZPersistentObject
      */
     protected static function matchRegexpCode( $wildcard )
     {
-        $matchWilcard = $wildcard['source_url'];
+        $matchWilcard = $wildcard['source_url'] ?? '';
         $matchWilcardList = explode( "*", $matchWilcard );
         $regexpList = array();
         foreach ( $matchWilcardList as $matchWilcardItem )
@@ -540,7 +540,7 @@ class eZURLWildcard extends eZPersistentObject
     {
         $return = array();
 
-        $replaceWildcardList = preg_split( "#{([0-9]+)}#", $wildcard['destination_url'], false, PREG_SPLIT_DELIM_CAPTURE );
+        $replaceWildcardList = preg_split( "#{([0-9]+)}#", $wildcard['destination_url'] ?? '', false, PREG_SPLIT_DELIM_CAPTURE );
 
         $replaceArray = array();
         foreach ( $replaceWildcardList as $index => $replaceWildcardItem )

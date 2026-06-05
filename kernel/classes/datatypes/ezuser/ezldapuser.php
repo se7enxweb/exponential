@@ -536,7 +536,7 @@ class eZLDAPUser extends eZUser
                             {
                                 if ( $isUtf8Encoding )
                                 {
-                                    $groupName = mb_convert_encoding( $info[0][$LDAPUserGroupAttribute][$i], 'ISO-8859-1', 'UTF-8' );
+                                    $groupName = utf8_decode( $info[0][$LDAPUserGroupAttribute][$i] );
                                 }
                                 else
                                 {
@@ -554,7 +554,7 @@ class eZLDAPUser extends eZUser
                             {
                                 if ( $isUtf8Encoding )
                                 {
-                                    $groupID = mb_convert_encoding( $info[0][$LDAPUserGroupAttribute][$i], 'ISO-8859-1', 'UTF-8' );
+                                    $groupID = utf8_decode( $info[0][$LDAPUserGroupAttribute][$i] );
                                 }
                                 else
                                 {
@@ -687,8 +687,8 @@ class eZLDAPUser extends eZUser
 
         if ( $isUtf8Encoding )
         {
-            $first_name = mb_convert_encoding( $first_name, 'ISO-8859-1', 'UTF-8' );
-            $last_name  = mb_convert_encoding( $last_name,  'ISO-8859-1', 'UTF-8' );
+            $first_name = utf8_decode( $first_name );
+            $last_name = utf8_decode( $last_name );
         }
 
         $user = eZUser::fetchByName( $login );

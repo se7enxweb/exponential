@@ -125,7 +125,7 @@ class eZUser extends eZPersistentObject
                       'relations' => array( 'contentobject_id' => array( 'class' => 'ezcontentobject',
                                                                          'field' => 'id' ) ),
                       'class_name' => 'eZUser',
-                      'name' => 'ezuser' );
+                      "name" => "ezuser" );
         return $definition;
     }
 
@@ -253,12 +253,15 @@ class eZUser extends eZPersistentObject
      */
     public function store( $fieldFilters = null )
     {
-        $this->Email = trim( $this->Email );
-        $userID = $this->attribute( 'contentobject_id' );
-        // Clear memory cache
-        unset( $GLOBALS['eZUserObject_' . $userID] );
-        $GLOBALS['eZUserObject_' . $userID] = $this;
-        self::purgeUserCacheByUserId( $userID );
+        if( !is_null( $this->Email ) )
+        {
+            $this->Email = trim( $this->Email );
+            $userID = $this->attribute( 'contentobject_id' );
+            // Clear memory cache
+            unset( $GLOBALS['eZUserObject_' . $userID] );
+            $GLOBALS['eZUserObject_' . $userID] = $this;
+            self::purgeUserCacheByUserId( $userID );
+        }
 
         if ( $this->Login )
         {
@@ -290,8 +293,21 @@ class eZUser extends eZPersistentObject
     {
         $db = eZDB::instance();
         $contentObjectID = $this->attribute( 'contentobject_id' );
-        $sql = "SELECT * FROM ezuser WHERE contentobject_id='$contentObjectID' AND LENGTH( login ) > 0";
-        $rows = $db->arrayQuery( $sql );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezuser', [
+                [ '$match' => [
+                    'contentobject_id' => (int)$contentObjectID,
+                    'login'            => [ '$exists' => true, '$ne' => '', '$type' => 'string' ],
+                ] ],
+                [ '$limit' => 1 ],
+            ] );
+        }
+        else
+        {
+            $sql = "SELECT * FROM ezuser WHERE contentobject_id='$contentObjectID' AND LENGTH( login ) > 0";
+            $rows = $db->arrayQuery( $sql );
+        }
         if ( !empty( $rows ) )
         {
             return true;
@@ -352,9 +368,10 @@ class eZUser extends eZPersistentObject
     {
         if ( !$id )
             return null;
+        
         return eZPersistentObject::fetchObject( eZUser::definition(),
                                                 null,
-                                                array( 'contentobject_id' => $id ),
+                                                array( "contentobject_id" => $id ),
                                                 $asObject );
     }
 
@@ -479,6 +496,69 @@ class eZUser extends eZPersistentObject
             if ( !empty( $sortColumns ) )
                 $sortText = "ORDER BY " . implode( ', ', $sortColumns );
         }
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Build MongoDB sort stage from $sortBy
+            $mongoSort = array();
+            if ( $sortBy !== false )
+            {
+                $sortByCopy = $sortBy;
+                if ( !is_array( $sortByCopy ) )
+                    $sortByCopy = array( array( $sortByCopy, true ) );
+                else if ( !is_array( $sortByCopy[0] ) )
+                    $sortByCopy = array( $sortByCopy );
+                foreach ( $sortByCopy as $sortElement )
+                {
+                    $sortCol = $sortElement[0];
+                    $sortDir = $sortElement[1] ? 1 : -1;
+                    switch ( $sortCol )
+                    {
+                        case 'user_id':  $mongoSort['user_id'] = $sortDir; break;
+                        case 'login':    $mongoSort['_user.login'] = $sortDir; break;
+                        case 'activity': $mongoSort['current_visit_timestamp'] = $sortDir; break;
+                        case 'email':    $mongoSort['_user.email'] = $sortDir; break;
+                    }
+                }
+            }
+            $anonId = (int)self::anonymousId();
+            $pipeline = array(
+                array( '$match' => array( 'user_id' => array( '$ne' => $anonId ),
+                                          'current_visit_timestamp' => array( '$gt' => (int)$time ) ) ),
+                array( '$lookup' => array( 'from' => 'ezuser', 'localField' => 'user_id',
+                                           'foreignField' => 'contentobject_id', 'as' => '_user' ) ),
+                array( '$unwind' => '$_user' ),
+            );
+            if ( !$asObject )
+            {
+                $pipeline[] = array( '$lookup' => array( 'from' => 'ezcontentobject', 'localField' => 'user_id',
+                                                          'foreignField' => 'id', 'as' => '_obj' ) );
+                $pipeline[] = array( '$unwind' => '$_obj' );
+            }
+            if ( !empty( $mongoSort ) )
+                $pipeline[] = array( '$sort' => $mongoSort );
+            if ( $offset )
+                $pipeline[] = array( '$skip' => (int)$offset );
+            if ( $limit )
+                $pipeline[] = array( '$limit' => (int)$limit );
+            if ( $asObject )
+                $pipeline[] = array( '$replaceRoot' => array( 'newRoot' => '$_user' ) );
+            else
+                $pipeline[] = array( '$project' => array( '_id' => 0, 'user_id' => '$user_id', 'name' => '$_obj.name' ) );
+
+            $rows = $db->aggregate( 'ezuservisit', $pipeline );
+            $list = array();
+            if ( $asObject )
+            {
+                foreach ( $rows as $row )
+                    $list[] = new eZUser( $row );
+            }
+            else
+            {
+                foreach ( $rows as $row )
+                    $list[$row['user_id']] = $row['name'];
+            }
+            return $list;
+        }
         if ( $asObject )
         {
             $selectText = implode( ', ',  $selectArray );
@@ -529,13 +609,29 @@ $sortText";
         $db = eZDB::instance();
         $time = time() - eZINI::instance()->variable( 'Session', 'ActivityTimeout' );
 
-        $sql = "SELECT count( DISTINCT user_id ) as count
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $anonId = (int)self::anonymousId();
+            $rows = $db->aggregate( 'ezuservisit', [
+                [ '$match' => [
+                    'user_id'                   => [ '$ne' => $anonId, '$gt' => 0 ],
+                    'current_visit_timestamp'   => [ '$gt' => (int)$time ],
+                ] ],
+                [ '$group' => [ '_id' => '$user_id' ] ],
+                [ '$count' => 'count' ],
+            ] );
+            $count = !empty( $rows ) ? (int)$rows[0]['count'] : 0;
+        }
+        else
+        {
+            $sql = "SELECT count( DISTINCT user_id ) as count
 FROM ezuservisit
 WHERE user_id != '" . self::anonymousId() . "' AND
       user_id > 0 AND
       current_visit_timestamp > '$time'";
-        $rows = $db->arrayQuery( $sql );
-        $count = isset( $rows[0] ) ? $rows[0]['count'] : 0;
+            $rows = $db->arrayQuery( $sql );
+            $count = isset( $rows[0] ) ? $rows[0]['count'] : 0;
+        }
         $GLOBALS['eZUserLoggedInCount'] = $count;
         return $count;
     }
@@ -585,12 +681,26 @@ WHERE user_id = '" . self::anonymousId() . "' AND
         $db = eZDB::instance();
         $time = time() - eZINI::instance()->variable( 'Session', 'ActivityTimeout' );
 
-        $sql = "SELECT DISTINCT user_id
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezuservisit', [
+                [ '$match' => [
+                    'user_id'                 => (int)$userID,
+                    'current_visit_timestamp' => [ '$gt' => (int)$time ],
+                ] ],
+                [ '$limit' => 1 ],
+            ] );
+            $isLoggedIn = !empty( $rows );
+        }
+        else
+        {
+            $sql = "SELECT DISTINCT user_id
 FROM ezuservisit
 WHERE user_id = '" . $userID . "' AND
       current_visit_timestamp > '$time'";
-        $rows = $db->arrayQuery( $sql, array( 'limit' => 2 ) );
-        $isLoggedIn = isset( $rows[0] );
+            $rows = $db->arrayQuery( $sql, array( 'limit' => 2 ) );
+            $isLoggedIn = isset( $rows[0] );
+        }
         $GLOBALS['eZUserLoggedInMap'][$userID] = $isLoggedIn;
         return $isLoggedIn;
     }
@@ -656,15 +766,41 @@ WHERE user_id = '" . $userID . "' AND
     */
     static function fetchContentList()
     {
-        $contentObjectStatus = eZContentObject::STATUS_PUBLISHED;
-        $query = "SELECT ezcontentobject.*
-                  FROM ezuser, ezcontentobject, ezuser_setting
-                  WHERE ezcontentobject.status = '$contentObjectStatus' AND
-                        ezuser_setting.is_enabled = 1 AND
-                        ezcontentobject.id = ezuser.contentobject_id AND
-                        ezuser_setting.user_id = ezuser.contentobject_id";
         $db = eZDB::instance();
-        $rows = $db->arrayQuery( $query );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $contentObjectStatus = (int)eZContentObject::STATUS_PUBLISHED;
+            $rows = $db->aggregate( 'ezuser', [
+                [ '$lookup' => [
+                    'from'         => 'ezcontentobject',
+                    'localField'   => 'contentobject_id',
+                    'foreignField' => 'id',
+                    'as'           => '_obj',
+                ] ],
+                [ '$unwind' => '$_obj' ],
+                [ '$match'  => [ '_obj.status' => $contentObjectStatus ] ],
+                [ '$lookup' => [
+                    'from'         => 'ezuser_setting',
+                    'localField'   => 'contentobject_id',
+                    'foreignField' => 'user_id',
+                    'as'           => '_setting',
+                ] ],
+                [ '$unwind' => '$_setting' ],
+                [ '$match'  => [ '_setting.is_enabled' => 1 ] ],
+                [ '$replaceRoot' => [ 'newRoot' => '$_obj' ] ],
+            ] );
+        }
+        else
+        {
+            $contentObjectStatus = eZContentObject::STATUS_PUBLISHED;
+            $query = "SELECT ezcontentobject.*
+                      FROM ezuser, ezcontentobject, ezuser_setting
+                      WHERE ezcontentobject.status = '$contentObjectStatus' AND
+                            ezuser_setting.is_enabled = 1 AND
+                            ezcontentobject.id = ezuser.contentobject_id AND
+                            ezuser_setting.user_id = ezuser.contentobject_id";
+            $rows = $db->arrayQuery( $query );
+        }
         return $rows;
     }
 
@@ -865,7 +1001,59 @@ WHERE user_id = '" . $userID . "' AND
             AND    ezcontentobject.status='$contentObjectStatus'
             AND    ezcontentobject.id=contentobject_id";
 
+        // --- MongoDB native path -----------------------------------------
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $loginConditions = [];
+            if ( $authenticationMatch & self::AUTHENTICATE_LOGIN )
+                $loginConditions[] = [ 'login' => $loginEscaped ];
+            if ( ( $authenticationMatch & self::AUTHENTICATE_EMAIL ) && eZMail::validate( $login ) )
+                $loginConditions[] = [ 'email' => $loginEscaped ];
+            if ( empty( $loginConditions ) )
+                $loginConditions[] = [ 'login' => $loginEscaped ];
+
+            $matchUser = count( $loginConditions ) === 1
+                ? $loginConditions[0]
+                : [ '$or' => $loginConditions ];
+            $matchUser['password_hash_type'] = [ '$ne' => 0 ];
+
+            $rawRows = $db->aggregate( 'ezuser', [
+                [ '$match' => $matchUser ],
+                [
+                    '$lookup' => [
+                        'from'         => 'ezcontentobject',
+                        'localField'   => 'contentobject_id',
+                        'foreignField' => 'id',
+                        'as'           => '_obj',
+                    ],
+                ],
+                [ '$unwind' => '$_obj' ],
+                [ '$match'  => [ '_obj.status' => (int) $contentObjectStatus ] ],
+                [
+                    '$project' => [
+                        '_id'                => 0,
+                        'contentobject_id'   => 1,
+                        'password_hash'      => 1,
+                        'password_hash_type' => 1,
+                        'email'              => 1,
+                        'login'              => 1,
+                    ],
+                ],
+            ] );
+            $users = [];
+            foreach ( $rawRows as $doc )
+            {
+                $row = [];
+                foreach ( $doc as $k => $v )
+                    $row[$k] = $v;
+                $users[] = $row;
+            }
+        }
+        else
+        {
+        // --- SQL path (MySQL / PostgreSQL) --------------------------------
         $users = $db->arrayQuery( $query );
+        } // end SQL path
         $exists = false;
         if ( $users !== false && isset( $users[0] ) )
         {
@@ -1146,8 +1334,28 @@ WHERE user_id = '" . $userID . "' AND
      */
     static function updateLastVisitByLogout( $userID )
     {
+        $userID = (int)$userID;
         $db = eZDB::instance();
-        $db->query( "UPDATE ezuservisit SET current_visit_timestamp=-ABS(current_visit_timestamp) WHERE user_id=$userID" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Fetch, negate PHP-side, write back
+            $rows = $db->aggregate( 'ezuservisit', [
+                [ '$match' => [ 'user_id' => $userID ] ],
+                [ '$limit' => 1 ],
+                [ '$project' => [ '_id' => 0, 'current_visit_timestamp' => 1 ] ],
+            ] );
+            if ( !empty( $rows ) )
+            {
+                $negated = -(int)abs( (int)$rows[0]['current_visit_timestamp'] );
+                $db->mongoUpdateOne( 'ezuservisit',
+                    [ 'user_id' => $userID ],
+                    [ '$set' => [ 'current_visit_timestamp' => $negated ] ] );
+            }
+        }
+        else
+        {
+            $db->query( "UPDATE ezuservisit SET current_visit_timestamp=-ABS(current_visit_timestamp) WHERE user_id=$userID" );
+        }
     }
 
     /**
@@ -1270,7 +1478,8 @@ WHERE user_id = '" . $userID . "' AND
                 }
             }
         }
-
+        // echo "<hr><Hr>";
+        //var_dump($currentUser );
         if ( !$currentUser )
         {
             $currentUser = eZUser::fetch( self::anonymousId() );
@@ -1461,7 +1670,8 @@ WHERE user_id = '" . $userID . "' AND
         {
             return null;
         }
-
+        //var_dump( $user->attribute( 'contentobject_id' ) ); die('finish-him');
+    // var_dump( $user->attribute( 'contentobject_id' ) ); die('finish-him');
         // user info (session: eZUserInfoCache)
         $data['info'][$userId] = array( 'contentobject_id'   => $user->attribute( 'contentobject_id' ),
                                         'login'              => $user->attribute( 'login' ),
@@ -1532,18 +1742,46 @@ WHERE user_id = '" . $userID . "' AND
             return;
         $db = eZDB::instance();
         $userID = (int) $userID;
-        $userVisitArray = $db->arrayQuery( "SELECT 1 FROM ezuservisit WHERE user_id=$userID" );
         $time = time();
 
-        if ( isset( $userVisitArray[0] ) )
+        if ( $db->databaseName() === 'mongo' )
         {
-            $loginCountSQL = $updateLoginCount ? ', login_count=login_count+1' : '';
-            $db->query( "UPDATE ezuservisit SET last_visit_timestamp=ABS(current_visit_timestamp), current_visit_timestamp=$time$loginCountSQL WHERE user_id=$userID" );
+            $existing = $db->aggregate( 'ezuservisit', [
+                [ '$match' => [ 'user_id' => $userID ] ],
+                [ '$limit' => 1 ],
+                [ '$project' => [ '_id' => 0, 'current_visit_timestamp' => 1 ] ],
+            ] );
+            if ( !empty( $existing ) )
+            {
+                $lastTs = (int)abs( (int)$existing[0]['current_visit_timestamp'] );
+                $update = [ '$set' => [ 'last_visit_timestamp' => $lastTs, 'current_visit_timestamp' => $time ] ];
+                if ( $updateLoginCount )
+                    $update['$inc'] = [ 'login_count' => 1 ];
+                $db->mongoUpdateOne( 'ezuservisit', [ 'user_id' => $userID ], $update );
+            }
+            else
+            {
+                $db->insert( 'ezuservisit', [
+                    'current_visit_timestamp' => $time,
+                    'last_visit_timestamp'    => $time,
+                    'user_id'                 => $userID,
+                    'login_count'             => $updateLoginCount ? 1 : 0,
+                ] );
+            }
         }
         else
         {
-            $intialLoginCount = $updateLoginCount ? 1 : 0;
-            $db->query( "INSERT INTO ezuservisit ( current_visit_timestamp, last_visit_timestamp, user_id, login_count ) VALUES ( $time, $time, $userID, $intialLoginCount )" );
+            $userVisitArray = $db->arrayQuery( "SELECT 1 FROM ezuservisit WHERE user_id=$userID" );
+            if ( isset( $userVisitArray[0] ) )
+            {
+                $loginCountSQL = $updateLoginCount ? ', login_count=login_count+1' : '';
+                $db->query( "UPDATE ezuservisit SET last_visit_timestamp=ABS(current_visit_timestamp), current_visit_timestamp=$time$loginCountSQL WHERE user_id=$userID" );
+            }
+            else
+            {
+                $intialLoginCount = $updateLoginCount ? 1 : 0;
+                $db->query( "INSERT INTO ezuservisit ( current_visit_timestamp, last_visit_timestamp, user_id, login_count ) VALUES ( $time, $time, $userID, $intialLoginCount )" );
+            }
         }
         $GLOBALS['eZUserUpdatedLastVisit'] = true;
     }
@@ -1554,8 +1792,22 @@ WHERE user_id = '" . $userID . "' AND
     function lastVisit()
     {
         $db = eZDB::instance();
+        $uid = (int)$this->ContentObjectID;
 
-        $userVisitArray = $db->arrayQuery( "SELECT last_visit_timestamp FROM ezuservisit WHERE user_id=$this->ContentObjectID" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezuservisit', [
+                [ '$match'   => [ 'user_id' => $uid ] ],
+                [ '$limit'   => 1 ],
+                [ '$project' => [ '_id' => 0, 'last_visit_timestamp' => 1 ] ],
+            ] );
+            $userVisitArray = $rows;
+        }
+        else
+        {
+            $userVisitArray = $db->arrayQuery( "SELECT last_visit_timestamp FROM ezuservisit WHERE user_id=$this->ContentObjectID" );
+        }
+
         if ( isset( $userVisitArray[0] ) )
         {
             return $userVisitArray[0]['last_visit_timestamp'];
@@ -1575,7 +1827,22 @@ WHERE user_id = '" . $userID . "' AND
     function loginCount()
     {
         $db = eZDB::instance();
-        $userVisitArray = $db->arrayQuery( "SELECT login_count FROM ezuservisit WHERE user_id=$this->ContentObjectID" );
+        $uid = (int)$this->ContentObjectID;
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezuservisit', [
+                [ '$match'   => [ 'user_id' => $uid ] ],
+                [ '$limit'   => 1 ],
+                [ '$project' => [ '_id' => 0, 'login_count' => 1 ] ],
+            ] );
+            $userVisitArray = $rows;
+        }
+        else
+        {
+            $userVisitArray = $db->arrayQuery( "SELECT login_count FROM ezuservisit WHERE user_id=$this->ContentObjectID" );
+        }
+
         if ( isset( $userVisitArray[0] ) )
         {
             return $userVisitArray[0]['login_count'];
@@ -1616,30 +1883,56 @@ WHERE user_id = '" . $userID . "' AND
         $db = eZDB::instance();
         $db->begin();
 
-        $userVisitArray = $db->arrayQuery( "SELECT 1 FROM ezuservisit WHERE user_id=$userID" );
-
-        if ( isset( $userVisitArray[0] ) )
+        if ( $db->databaseName() === 'mongo' )
         {
-            if ( $value === false )
+            $existing = $db->aggregate( 'ezuservisit', [
+                [ '$match' => [ 'user_id' => $userID ] ],
+                [ '$limit' => 1 ],
+            ] );
+            if ( !empty( $existing ) )
             {
-                $failedLoginAttempts = $userObject->failedLoginAttempts();
-                $failedLoginAttempts += 1;
+                $failedLoginAttempts = $value === false
+                    ? ( (int)( $existing[0]['failed_login_attempts'] ?? 0 ) + 1 )
+                    : (int)$value;
+                $db->mongoUpdateOne( 'ezuservisit',
+                    [ 'user_id' => $userID ],
+                    [ '$set' => [ 'failed_login_attempts' => $failedLoginAttempts ] ] );
             }
             else
-                $failedLoginAttempts = (int) $value;
-
-            $db->query( "UPDATE ezuservisit SET failed_login_attempts=$failedLoginAttempts WHERE user_id=$userID" );
+            {
+                $failedLoginAttempts = $value === false ? 1 : (int)$value;
+                $db->insert( 'ezuservisit', [
+                    'user_id'               => $userID,
+                    'failed_login_attempts' => $failedLoginAttempts,
+                ] );
+            }
         }
         else
         {
-            if ( $value === false )
+            $userVisitArray = $db->arrayQuery( "SELECT 1 FROM ezuservisit WHERE user_id=$userID" );
+            if ( isset( $userVisitArray[0] ) )
             {
-                $failedLoginAttempts = 1;
+                if ( $value === false )
+                {
+                    $failedLoginAttempts = $userObject->failedLoginAttempts();
+                    $failedLoginAttempts += 1;
+                }
+                else
+                    $failedLoginAttempts = (int) $value;
+
+                $db->query( "UPDATE ezuservisit SET failed_login_attempts=$failedLoginAttempts WHERE user_id=$userID" );
             }
             else
-                $failedLoginAttempts = (int) $value;
+            {
+                if ( $value === false )
+                {
+                    $failedLoginAttempts = 1;
+                }
+                else
+                    $failedLoginAttempts = (int) $value;
 
-            $db->query( "INSERT INTO ezuservisit ( failed_login_attempts, user_id ) VALUES ( $failedLoginAttempts, $userID )" );
+                $db->query( "INSERT INTO ezuservisit ( failed_login_attempts, user_id ) VALUES ( $failedLoginAttempts, $userID )" );
+            }
         }
         $db->commit();
 
@@ -1663,9 +1956,21 @@ WHERE user_id = '" . $userID . "' AND
         $db = eZDB::instance();
         $contentObjectID = (int) $userID;
 
-        $userVisitArray = $db->arrayQuery( "SELECT failed_login_attempts FROM ezuservisit WHERE user_id=$contentObjectID" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezuservisit', [
+                [ '$match'   => [ 'user_id' => $contentObjectID ] ],
+                [ '$limit'   => 1 ],
+                [ '$project' => [ '_id' => 0, 'failed_login_attempts' => 1 ] ],
+            ] );
+            $userVisitArray = $rows;
+        }
+        else
+        {
+            $userVisitArray = $db->arrayQuery( "SELECT failed_login_attempts FROM ezuservisit WHERE user_id=$contentObjectID" );
+        }
 
-        $failedLoginAttempts = isset( $userVisitArray[0] ) ? $userVisitArray[0]['failed_login_attempts'] : 0;
+        $failedLoginAttempts = isset( $userVisitArray[0] ) ? (int)$userVisitArray[0]['failed_login_attempts'] : 0;
         return $failedLoginAttempts;
     }
 
@@ -2479,16 +2784,26 @@ WHERE user_id = '" . $userID . "' AND
             $groups = $this->groups();
         else
             $groups = $this->generateGroupIdList();
-        $groups[] = $this->attribute( 'contentobject_id' );
-        $groups = implode( ', ', $groups );
+        $groups[] = (int)$this->attribute( 'contentobject_id' );
+        $groups   = array_values( array_unique( array_map( 'intval', $groups ) ) );
 
-        $db = eZDB::instance();
+        $db   = eZDB::instance();
+        $rows = $db->find( 'ezuser_role', [ 'contentobject_id' => [ $groups ] ] );
 
-        $limitationsArray = $db->arrayQuery( "SELECT DISTINCT limit_identifier, limit_value
-                                              FROM ezuser_role
-                                              WHERE contentobject_id IN ( $groups )" );
-
-        return $limitationsArray;
+        // Emulate SELECT DISTINCT limit_identifier, limit_value
+        $seen   = [];
+        $result = [];
+        foreach ( $rows as $row )
+        {
+            $key = $row['limit_identifier'] . '|' . $row['limit_value'];
+            if ( !isset( $seen[$key] ) )
+            {
+                $seen[$key] = true;
+                $result[]   = [ 'limit_identifier' => $row['limit_identifier'],
+                                'limit_value'       => $row['limit_value'] ];
+            }
+        }
+        return $result;
     }
 
     /*!
@@ -2604,44 +2919,53 @@ WHERE user_id = '" . $userID . "' AND
      */
     protected function generateGroupIdList()
     {
-        $db         = eZDB::instance();
-        $userID     = $this->ContentObjectID;
-        $userGroups = $db->arrayQuery( "SELECT  c.contentobject_id as id,c.path_string
-                                        FROM ezcontentobject_tree  b,
-                                             ezcontentobject_tree  c
-                                        WHERE b.contentobject_id='$userID' AND
-                                              b.parent_node_id = c.node_id
-                                        ORDER BY c.contentobject_id  ");
-        $pathArray      = array();
-        $userGroupArray = array();
-        foreach ( $userGroups as $group )
+        $db     = eZDB::instance();
+        $userID = (int)$this->ContentObjectID;
+
+        // Step 1: find this user's tree nodes and collect their parent_node_ids
+        $userNodes = $db->find( 'ezcontentobject_tree', [ 'contentobject_id' => $userID ] );
+        if ( empty( $userNodes ) )
+            return [];
+
+        $parentNodeIds = [];
+        foreach ( $userNodes as $node )
         {
-            $pathItems = explode( '/', $group["path_string"] );
+            if ( !empty( $node['parent_node_id'] ) )
+                $parentNodeIds[] = (int)$node['parent_node_id'];
+        }
+        if ( empty( $parentNodeIds ) )
+            return [];
+
+        // Step 2: fetch parent nodes to get direct group contentobject_ids + path_strings
+        $parentNodes = $db->find( 'ezcontentobject_tree', [ 'node_id' => [ $parentNodeIds ] ] );
+
+        $pathArray      = [];
+        $userGroupArray = [];
+        foreach ( $parentNodes as $node )
+        {
+            $userGroupArray[] = (int)$node['contentobject_id'];
+            $pathItems = explode( '/', $node['path_string'] );
             array_pop( $pathItems );
             array_pop( $pathItems );
             foreach ( $pathItems as $pathItem )
             {
-                if ( $pathItem != '' && $pathItem > 1 )
-                    $pathArray[] = $pathItem;
+                if ( $pathItem !== '' && (int)$pathItem > 1 )
+                    $pathArray[] = (int)$pathItem;
             }
-            $userGroupArray[] = $group['id'];
         }
 
+        // Step 3: resolve ancestor node IDs to contentobject_ids
         if ( !empty( $pathArray ) )
         {
-            $pathArray = array_unique ($pathArray);
-            $extraGroups = $db->arrayQuery( "SELECT c.contentobject_id as id
-                                            FROM ezcontentobject_tree  c,
-                                                 ezcontentobject d
-                                            WHERE c.node_id in ( " . implode( ', ', $pathArray ) . " ) AND
-                                                  d.id = c.contentobject_id
-                                            ORDER BY c.contentobject_id  ");
-            foreach ( $extraGroups as $group )
+            $pathArray    = array_values( array_unique( $pathArray ) );
+            $ancestorNodes = $db->find( 'ezcontentobject_tree', [ 'node_id' => [ $pathArray ] ] );
+            foreach ( $ancestorNodes as $node )
             {
-                $userGroupArray[] = $group['id'];
+                $userGroupArray[] = (int)$node['contentobject_id'];
             }
         }
-        return $userGroupArray;
+
+        return array_values( array_unique( $userGroupArray ) );
     }
 
     /*!
@@ -2793,12 +3117,49 @@ WHERE user_id = '" . $userID . "' AND
             $fieldsFilter = 'ezcontentclass.*';
         }
         $db = eZDB::instance();
-        $userClasses = $db->arrayQuery( "SELECT $fieldsFilter
-                                         FROM ezcontentclass, ezcontentclass_attribute
-                                         WHERE ezcontentclass.id = ezcontentclass_attribute.contentclass_id AND
-                                               ezcontentclass.version = " . eZContentClass::VERSION_STATUS_DEFINED ." AND
-                                               ezcontentclass_attribute.version = 0 AND
-                                               ezcontentclass_attribute.data_type_string = 'ezuser'" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Find all ezcontentclass_attribute rows for 'ezuser', then join class rows
+            $attrRows = $db->aggregate( 'ezcontentclass_attribute', [
+                [ '$match' => [
+                    'data_type_string' => 'ezuser',
+                    'version'          => 0,
+                ] ],
+                [ '$group' => [ '_id' => '$contentclass_id' ] ],
+            ] );
+            $classIDs = array_column( $attrRows, '_id' );
+            if ( empty( $classIDs ) )
+                return [];
+            $classRows = $db->aggregate( 'ezcontentclass', [
+                [ '$match' => [
+                    'id'      => [ '$in' => array_map( 'intval', $classIDs ) ],
+                    'version' => (int)eZContentClass::VERSION_STATUS_DEFINED,
+                ] ],
+            ] );
+            // If a field subset was requested, project it PHP-side
+            if ( !$asObject && is_array( $fields ) && !empty( $fields ) )
+            {
+                $projected = [];
+                foreach ( $classRows as $row )
+                {
+                    $p = [];
+                    foreach ( $fields as $f )
+                        $p[$f] = $row[$f] ?? null;
+                    $projected[] = $p;
+                }
+                $classRows = $projected;
+            }
+            $userClasses = $classRows;
+        }
+        else
+        {
+            $userClasses = $db->arrayQuery( "SELECT $fieldsFilter
+                                             FROM ezcontentclass, ezcontentclass_attribute
+                                             WHERE ezcontentclass.id = ezcontentclass_attribute.contentclass_id AND
+                                                   ezcontentclass.version = " . eZContentClass::VERSION_STATUS_DEFINED ." AND
+                                                   ezcontentclass_attribute.version = 0 AND
+                                                   ezcontentclass_attribute.data_type_string = 'ezuser'" );
+        }
 
         return eZPersistentObject::handleRows( $userClasses, "eZContentClass", $asObject );
     }

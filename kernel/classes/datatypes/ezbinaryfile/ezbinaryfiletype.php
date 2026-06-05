@@ -572,9 +572,19 @@ class eZBinaryFileType extends eZDataType
         if ( $binaryFile )
         {
             $db = eZDB::instance();
-            $db->query( "UPDATE ezbinaryfile SET download_count=(download_count+1)
-                         WHERE
-                         contentobject_attribute_id=$contentObjectAttributeID AND version=$version" );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $db->mongoUpdateOne( 'ezbinaryfile',
+                    [ 'contentobject_attribute_id' => (int)$contentObjectAttributeID,
+                      'version'                    => (int)$version ],
+                    [ '$inc' => [ 'download_count' => 1 ] ] );
+            }
+            else
+            {
+                $db->query( "UPDATE ezbinaryfile SET download_count=(download_count+1)
+                             WHERE
+                             contentobject_attribute_id=$contentObjectAttributeID AND version=$version" );
+            }
             return true;
         }
         return false;

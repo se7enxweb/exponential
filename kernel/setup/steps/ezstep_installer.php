@@ -391,6 +391,48 @@ class eZStepInstaller
         if( $dbParameters['database'] == '' and $this->PersistenceList['database_info']['type'] == 'pgsql' )
             $dbParameters['database'] = 'template1';
 
+        // MongoDB: the setup form posts 'dbname' not 'database', so database stays empty.
+        // Read the DB name from the existing siteaccess configuration.
+        if ( $this->PersistenceList['database_info']['type'] == 'mongodb' and
+             ( $dbParameters['database'] == '' or $dbParameters['database'] === false ) )
+        {
+            if ( !empty( $databaseInfo['dbname'] ) )
+            {
+                $dbParameters['database'] = $databaseInfo['dbname'];
+            }
+            else
+            {
+                $databaseNameFromSiteAccess = '';
+                $siteRootPath = dirname( __FILE__, 4 );
+                $overrideIniFileContent = @file_get_contents( $siteRootPath . '/settings/override/site.ini.append.php' );
+                $defaultSiteAccessName = '';
+                if ( $overrideIniFileContent && preg_match( '/DefaultAccess\s*=\s*(\S+)/', $overrideIniFileContent, $regexMatches ) )
+                    $defaultSiteAccessName = trim( $regexMatches[1] );
+                if ( $defaultSiteAccessName )
+                {
+                    $siteAccessIniFileContent = @file_get_contents( $siteRootPath . '/settings/siteaccess/' . $defaultSiteAccessName . '/site.ini.append.php' );
+                    if ( $siteAccessIniFileContent && preg_match( '/\bDatabase\s*=\s*([^\s\r\n*]+)/', $siteAccessIniFileContent, $regexMatches ) )
+                        $databaseNameFromSiteAccess = trim( $regexMatches[1] );
+                }
+                // Fallback: scan all siteaccess dirs for a mongodb one
+                if ( empty( $databaseNameFromSiteAccess ) )
+                {
+                    foreach ( glob( $siteRootPath . '/settings/siteaccess/*/site.ini.append.php' ) ?: [] as $siteAccessIniFilePath )
+                    {
+                        $siteAccessFileContent = file_get_contents( $siteAccessIniFilePath );
+                        if ( preg_match( '/DatabaseImplementation\s*=\s*mongodb/i', $siteAccessFileContent ) &&
+                             preg_match( '/\bDatabase\s*=\s*([^\s\r\n*]+)/', $siteAccessFileContent, $regexMatches ) )
+                        {
+                            $databaseNameFromSiteAccess = trim( $regexMatches[1] );
+                            break;
+                        }
+                    }
+                }
+                if ( !empty( $databaseNameFromSiteAccess ) )
+                    $dbParameters['database'] = $databaseNameFromSiteAccess;
+            }
+        }
+
         try
         {
             $db = eZDB::instance( $dbDriver, $dbParameters, true );

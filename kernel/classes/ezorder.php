@@ -237,7 +237,33 @@ class eZOrder extends eZPersistentObject
                             ezorder.is_temporary = '0' AND
                             ezcontentobject.id = ezorder.user_id
                       ORDER BY ezcontentobject.name $sortOrder";
-            $orderArray = $db->arrayQuery( $query, $db_params );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                // Sort by user name: fetch orders then sort by looking up contentobject names
+                $isArchivedFilter = [];
+                if ( $show == eZOrder::SHOW_NORMAL )
+                    $isArchivedFilter = [ 'is_archived' => 0 ];
+                elseif ( $show == eZOrder::SHOW_ARCHIVED )
+                    $isArchivedFilter = [ 'is_archived' => 1 ];
+
+                $pipeline = [
+                    [ '$match' => array_merge( [ 'is_temporary' => 0 ], $isArchivedFilter ) ],
+                    [ '$lookup' => [
+                        'from'         => 'ezcontentobject',
+                        'localField'   => 'user_id',
+                        'foreignField' => 'id',
+                        'as'           => '_user',
+                    ] ],
+                    [ '$addFields' => [ '_user_name' => [ '$ifNull' => [ [ '$arrayElemAt' => [ '$_user.name', 0 ] ], '' ] ] ] ],
+                    [ '$sort'   => [ '_user_name' => ( strtolower( $sortOrder ) === 'desc' ? -1 : 1 ) ] ],
+                    [ '$skip'   => (int)$offset ],
+                    [ '$limit'  => (int)$limit ],
+                    [ '$project' => [ '_user' => 0, '_user_name' => 0 ] ],
+                ];
+                $orderArray = $db->aggregate( 'ezorder', $pipeline );
+            }
+            else
+                $orderArray = $db->arrayQuery( $query, $db_params );
             if ( $asObject )
             {
                 $retOrders = array();
@@ -935,8 +961,7 @@ class eZOrder extends eZPersistentObject
     function removeCollection()
     {
         $collection = eZProductCollection::fetch( $this->attribute( 'productcollection_id' ) );
-        if ( $collection !== null )
-            $collection->remove();
+        $collection->remove();
     }
 
     /*!
@@ -965,8 +990,7 @@ class eZOrder extends eZPersistentObject
     static function removeItem( $itemID )
     {
         $item = eZProductCollectionItem::fetch( $itemID );
-        if ( $item !== null )
-            $item->remove();
+        $item->remove();
     }
 
     /*!

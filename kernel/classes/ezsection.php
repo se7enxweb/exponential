@@ -160,7 +160,11 @@ class eZSection extends eZPersistentObject
     static function sectionCount()
     {
         $db = eZDB::instance();
-
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezsection', [ [ '$count' => 'count' ] ] );
+            return !empty( $rows ) ? (int) $rows[0]['count'] : 0;
+        }
         $countArray = $db->arrayQuery(  "SELECT count( * ) AS count FROM ezsection" );
         return $countArray[0]['count'];
     }

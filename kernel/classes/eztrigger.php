@@ -253,7 +253,7 @@ class eZTrigger extends eZPersistentObject
             {
                 $tpl = eZTemplate::factory();
                 $result = array();
-                foreach ( array_keys( $workflowProcess->Template['templateVars'] ) as $key )
+                foreach ( array_keys( $workflowProcess->Template['templateVars'] ?? [] ) as $key )
                 {
                     $value = $workflowProcess->Template['templateVars'][$key];
                     $tpl->setVariable( $key, $value );

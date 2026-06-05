@@ -365,15 +365,11 @@ class eZStepCreateSites extends eZStepInstaller
                                 &$resultArray )
     {
         // Time limit #3:
-        // We set the time limit to 5 minutes to ensure we have enough time
-        // to initialize the site. However we only set if the current limit
-        // is too small
-        $maxTime = ini_get( 'max_execution_time' );
-        if ( $maxTime != 0 and
-             $maxTime < 5*60 )
-        {
-            @set_time_limit( 5*60 );
-        }
+        // For MongoDB installs the package importer does thousands of individual
+        // round-trip writes (one per attribute, word-index entry, url-alias …).
+        // Remove the PHP script execution limit entirely; PHP-FPM's
+        // request_terminate_timeout is the only remaining wall-clock cap.
+        @set_time_limit( 0 );
 
         switch ( $siteType['access_type'] )
         {
@@ -414,7 +410,7 @@ class eZStepCreateSites extends eZStepInstaller
 
         $dbServer = $databaseInfo['server'];
         $dbPort = $databaseInfo['port'];
-        $dbName = $databaseInfo['dbname'];
+        $dbName = $databaseInfo['dbname'] ?? $databaseInfo['database'] ?? '';
         $dbSocket = $databaseInfo['socket'];
         $dbUser = $databaseInfo['user'];
         $dbPwd = $databaseInfo['password'];
@@ -875,6 +871,18 @@ language_locale='eng-GB'";
             }
 
 
+            // MongoDB: the built-in search engine indexes every word of every
+            // attribute for each published object (SELECT + INSERT per word per
+            // object). With ~200 demo objects × hundreds of words each, this
+            // alone accounts for tens of thousands of extra MongoDB round-trips.
+            // Disable the engine for the bulk import; re-enable it afterwards.
+            // Search can be rebuilt via the indexcontent cron job post-install.
+            $searchEngineGlobalKey = 'eZSearchPlugin_' . ( $GLOBALS['eZCurrentAccess']['name'] ?? '' );
+            $previousSearchEngineInstance = $GLOBALS[$searchEngineGlobalKey] ?? null;
+            $searchEngineWasSet = array_key_exists( $searchEngineGlobalKey, $GLOBALS );
+            if ( $db->databaseName() === 'mongo' )
+                $GLOBALS[$searchEngineGlobalKey] = false; // returning false makes all eZSearch calls no-ops
+
             foreach ( $requires as $require )
             {
                 if ( $require['type'] != 'ezpackage' )
@@ -911,6 +919,12 @@ language_locale='eng-GB'";
                 }
                 else
                 {
+                    // Restore search engine before returning on error
+                    if ( $searchEngineWasSet )
+                        $GLOBALS[$searchEngineGlobalKey] = $previousSearchEngineInstance;
+                    else
+                        unset( $GLOBALS[$searchEngineGlobalKey] );
+
                     $resultArray['errors'][] = array( 'code' => 'EZSW-050',
                                                       'text' => "Could not fetch required package: '$packageName'" );
                     return false;
@@ -919,10 +933,24 @@ language_locale='eng-GB'";
             }
         }
 
+        // Restore search engine instance now that bulk package import is done.
+        // The indexcontent cron job will rebuild the search index post-install.
+        if ( $searchEngineWasSet )
+            $GLOBALS[$searchEngineGlobalKey] = $previousSearchEngineInstance;
+        else
+            unset( $GLOBALS[$searchEngineGlobalKey] );
+
         $GLOBALS['eZContentObjectDefaultLanguage'] = $primaryLanguageLocaleCode;
 
         $nodeRemoteMap = array();
-        $rows = $db->arrayQuery( "SELECT node_id, remote_id FROM ezcontentobject_tree" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->find( 'ezcontentobject_tree', [], ['node_id' => 1, 'remote_id' => 1] );
+        }
+        else
+        {
+            $rows = $db->arrayQuery( "SELECT node_id, remote_id FROM ezcontentobject_tree" );
+        }
         foreach ( $rows as $row )
         {
             $remoteID = $row['remote_id'];
@@ -931,7 +959,14 @@ language_locale='eng-GB'";
         }
 
         $objectRemoteMap = array();
-        $rows = $db->arrayQuery( "SELECT id, remote_id FROM ezcontentobject" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->find( 'ezcontentobject', [], ['id' => 1, 'remote_id' => 1] );
+        }
+        else
+        {
+            $rows = $db->arrayQuery( "SELECT id, remote_id FROM ezcontentobject" );
+        }
         foreach ( $rows as $row )
         {
             $remoteID = $row['remote_id'];
@@ -940,7 +975,14 @@ language_locale='eng-GB'";
         }
 
         $classRemoteMap = array();
-        $rows = $db->arrayQuery( "SELECT id, identifier, remote_id FROM ezcontentclass" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->find( 'ezcontentclass', [], ['id' => 1, 'identifier' => 1, 'remote_id' => 1] );
+        }
+        else
+        {
+            $rows = $db->arrayQuery( "SELECT id, identifier, remote_id FROM ezcontentclass" );
+        }
         foreach ( $rows as $row )
         {
             $remoteID = $row['remote_id'];
@@ -1402,6 +1444,17 @@ language_locale='eng-GB'";
                                                   'text' => "Failed to properly publish the administrator object" );
                 return false;
             }
+        }
+
+        // MongoDB: after admin user publish, ensure always-available bit (bit 0)
+        // is set on all canonical URL alias entries so that breadcrumb resolution
+        // works regardless of siteaccess language priority.
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->mongoUpdateMany( 'ezurlalias_ml',
+                [ 'is_original' => 1, 'is_alias' => 0 ],
+                [ '$bit' => [ 'lang_mask' => [ 'or' => 1 ] ] ]
+            );
         }
 
         // Call user function for additional setup tasks.

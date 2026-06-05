@@ -98,7 +98,7 @@ class eZSubtreeNotificationRule extends eZPersistentObject
                                                          false,
                                                          array( array( 'operation' => 'count( id )',
                                                                        'name' => 'count' ) ) );
-        return $countRes[0]['count'];
+        return isset( $countRes[0]['count'] ) ? (int)$countRes[0]['count'] : 0;
     }
 
     /**

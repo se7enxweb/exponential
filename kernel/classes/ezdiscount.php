@@ -44,7 +44,13 @@ class eZDiscount
                 }
 
                 // Fetch the discount sub rules
-                $subRules = $db->arrayQuery( "SELECT * FROM
+                if ( $db->databaseName() === 'mongo' )
+                    $subRules = $db->aggregate( 'ezdiscountsubrule', [
+                        [ '$match'   => [ 'discountrule_id' => [ '$in' => array_map( 'intval', explode( ', ', $subRuleStr ) ) ] ] ],
+                        [ '$sort'    => [ 'discount_percent' => -1 ] ],
+                    ] );
+                else
+                    $subRules = $db->arrayQuery( "SELECT * FROM
                                        ezdiscountsubrule
                                        WHERE discountrule_id IN ( $subRuleStr )
                                        ORDER BY discount_percent DESC" );
@@ -60,7 +66,12 @@ class eZDiscount
                         else
                         {
                             // Do limitation check
-                            $limitationArray = $db->arrayQuery( "SELECT * FROM
+                            if ( $db->databaseName() === 'mongo' )
+                                $limitationArray = $db->aggregate( 'ezdiscountsubrule_value', [
+                                    [ '$match' => [ 'discountsubrule_id' => (int)$subRule['id'] ] ],
+                                ] );
+                            else
+                                $limitationArray = $db->arrayQuery( "SELECT * FROM
                                        ezdiscountsubrule_value
                                        WHERE discountsubrule_id='" . $subRule['id']. "'" );
 

@@ -39,8 +39,8 @@ class ezpTopologicalSortNode
      */
     public function registerChild( ezpTopologicalSortNode $childNode )
     {
-        if (! $this->children->contains( $childNode ) )
-            $this->children->attach( $childNode );
+        if (! $this->children->offsetExists( $childNode ) )
+            $this->children->offsetSet( $childNode );
     }
 
     /**
@@ -50,8 +50,8 @@ class ezpTopologicalSortNode
      */
     public function registerParent( ezpTopologicalSortNode $parentNode )
     {
-        if (! $this->parents->contains( $parentNode ) )
-            $this->parents->attach( $parentNode );
+        if (! $this->parents->offsetExists( $parentNode ) )
+            $this->parents->offsetSet( $parentNode );
     }
 
     /**
@@ -61,7 +61,7 @@ class ezpTopologicalSortNode
      */
     public function unregisterParent( ezpTopologicalSortNode $parentNode )
     {
-        $this->parents->detach( $parentNode );
+        $this->parents->offsetUnset( $parentNode );
     }
 
     /**
@@ -90,7 +90,7 @@ class ezpTopologicalSortNode
             return false;
 
         $child = $this->children->current();
-        $this->children->detach( $child );
+        $this->children->offsetUnset( $child );
         return $child;
     }
 }

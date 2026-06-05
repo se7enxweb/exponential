@@ -305,7 +305,13 @@ class eZURLAliasML extends eZPersistentObject
     {
         // If this is an original element we must get rid of all elements which points to it.
         $db = eZDB::instance();
-        $actionStr = $db->escapeString( $actionName . ':' . $actionValue );
+        $action = $actionName . ':' . $actionValue;
+        $actionStr = $db->escapeString( $action );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->deleteWhere( 'ezurlalias_ml', [ 'action' => $action ] );
+            return;
+        }
         $query = "DELETE FROM ezurlalias_ml WHERE action = '{$actionStr}'";
         $db->query( $query );
     }
@@ -328,10 +334,50 @@ class eZURLAliasML extends eZPersistentObject
         $languageID = (int)$language->attribute( 'id' );
         $db = eZDB::instance();
 
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezurlalias_ml', [
+                [ '$match' => [ 'parent' => $parentID, 'text_md5' => $textMD5,
+                                'lang_mask' => [ '$bitsAnySet' => $languageID ] ] ],
+            ] );
+            if ( count( $rows ) == 0 ) return false;
+
+            $id   = (int)$rows[0]['id'];
+            $mask = (int)$rows[0]['lang_mask'];
+            if ( ($mask & ~($languageID | 1)) == 0 )
+            {
+                $childRows = $db->aggregate( 'ezurlalias_ml', [
+                    [ '$match' => [ 'parent' => $id ] ],
+                ] );
+                if ( count( $childRows ) > 0 )
+                {
+                    $element = new eZURLAliasML( $rows[0] );
+                    $element->LangMask = 1;
+                    $element->Action = "nop:";
+                    $element->ActionType = "nop";
+                    $element->IsAlias = 0;
+                    $element->store();
+                    return;
+                }
+            }
+            // Clear language bit for matching entries
+            $newMask = $mask & (~$languageID);
+            $db->mongoUpdateMany( 'ezurlalias_ml',
+                [ 'parent' => $parentID, 'text_md5' => $textMD5,
+                  'lang_mask' => [ '$bitsAnySet' => $languageID ] ],
+                [ '$set' => [ 'lang_mask' => $newMask ] ]
+            );
+            // Delete entries with zero effective lang_mask (no languages remaining)
+            $db->deleteWhere( 'ezurlalias_ml',
+                [ 'parent' => $parentID, 'text_md5' => $textMD5,
+                  'lang_mask' => [ '$bitsAllClear' => ~1 ] ]
+            );
+            return;
+        }
+
         $bitDel   = $db->bitAnd( 'lang_mask' ,  (~$languageID) );
         $bitMatch = $db->bitAnd( 'lang_mask', $languageID ) . ' > 0';
         $bitMask  = $db->bitAnd( 'lang_mask', ~1 );
-
 
         // Fetch data for the given entry
         $rows = $db->arrayQuery( "SELECT * FROM ezurlalias_ml WHERE parent = {$parentID} AND text_md5 = '" . $db->escapeString( $textMD5 ) . "' AND $bitMatch" );
@@ -391,6 +437,14 @@ class eZURLAliasML extends eZPersistentObject
         $db = eZDB::instance();
         while ( $id != 0 )
         {
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $rows = $db->aggregate( 'ezurlalias_ml', [
+                    [ '$match' => [ 'id' => $id ] ],
+                ] );
+            }
+            else
+            {
             $query = "SELECT parent, lang_mask, text FROM ezurlalias_ml WHERE id={$id}";
             if ( $locale !== null && is_string( $locale ) )
             {
@@ -406,6 +460,7 @@ class eZURLAliasML extends eZPersistentObject
                 $query .= " AND ({$langMask})";
             }
             $rows = $db->arrayQuery( $query );
+            } // end else (SQL)
 
             if ( count( $rows ) == 0 )
             {
@@ -491,6 +546,308 @@ class eZURLAliasML extends eZPersistentObject
         $topElement = array_pop( $elements );
         // Find correct parent, and create missing ones if necessary
         $createdPath = array();
+
+        // ---- MONGODB BRANCH ----
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Walk intermediate path elements to resolve correct parentID
+            foreach ( $elements as $element )
+            {
+                if ( $cleanupElements )
+                    $element = eZURLAliasML::convertToAlias( $element, 'noname' . (count($createdPath)+1) );
+                $elementMD5 = md5( eZURLAliasML::strtolower( $element ) );
+
+                $existingRows = $db->aggregate( 'ezurlalias_ml', [
+                    [ '$match' => [ 'text_md5' => $elementMD5, 'parent' => (int)$parentID ] ],
+                ] );
+                if ( count( $existingRows ) == 0 )
+                {
+                    $elementObj = eZURLAliasML::create( $element, 'nop:', $parentID, 1 );
+                    $elementObj->store();
+                    $parentID = (int)$elementObj->attribute( 'id' );
+                }
+                else
+                {
+                    $parentID = (int)$existingRows[0]['link'];
+                }
+                $createdPath[] = $element;
+            }
+
+            // Adjust if parent is a special empty-text root node
+            if ( $parentID != 0 )
+            {
+                $parentRows = $db->aggregate( 'ezurlalias_ml', [
+                    [ '$match' => [ 'id' => (int)$parentID ] ],
+                ] );
+                if ( !empty( $parentRows ) && strlen( $parentRows[0]['text'] ) == 0 && (int)$parentRows[0]['parent'] == 0 )
+                {
+                    $createdPath = array();
+                    $parentID = 0;
+                }
+            }
+
+            if ( $linkID === false )
+            {
+                // ---- Creating / updating an original entry ----
+                if ( $cleanupElements )
+                    $topElement = eZURLAliasML::convertToAlias( $topElement, 'noname' . (count($createdPath)+1) );
+
+                $curElementID  = null;
+                $newElementID  = null;
+                $newText       = $topElement;
+                $uniqueCounter = 0;
+
+                while ( true )
+                {
+                    $newText = $topElement;
+                    if ( $uniqueCounter > 0 )
+                        $newText .= ($uniqueCounter + 1);
+                    $newTextMD5 = md5( eZURLAliasML::strtolower( $newText ) );
+
+                    $existingRows = $db->aggregate( 'ezurlalias_ml', [
+                        [ '$match' => [ 'parent' => (int)$parentID, 'text_md5' => $newTextMD5 ] ],
+                    ] );
+                    if ( count( $existingRows ) == 0 )
+                    {
+                        break; // No entry at this slot, create new
+                    }
+
+                    $row      = $existingRows[0];
+                    $curID    = (int)$row['id'];
+                    $curAction = $row['action'];
+                    if ( $curAction == 'nop:' || $curAction == $action || $row['is_original'] == 0 )
+                    {
+                        $curElementID = $curID;
+                        $newElementID = $curID;
+                        break;
+                    }
+                    if ( !$autoAdjustName )
+                    {
+                        if ( $reportErrors )
+                            eZDebug::writeError( "Tried to store path '{$path}' but the path already exists (ID: {$curID}) but with action '{$curAction}', the new action was '{$action}'" );
+                        return array( 'status' => self::LINK_ALREADY_TAKEN, 'path' => $path, 'element' => null );
+                    }
+                    $uniqueCounter++;
+                }
+
+                $textMD5str = md5( eZURLAliasML::strtolower( $newText ) );
+
+                // Find existing entry with same action at same level
+                if ( $newElementID === null )
+                {
+                    $actionRows = $db->aggregate( 'ezurlalias_ml', [
+                        [ '$match' => [ 'parent' => (int)$parentID, 'action' => $action, 'is_original' => 1, 'is_alias' => 0 ] ],
+                    ] );
+                    if ( !empty( $actionRows ) )
+                        $newElementID = (int)$actionRows[0]['id'];
+                }
+
+                $createdElement = null;
+                if ( $curElementID !== null )
+                {
+                    // Check for conflicting entry with same action at this level
+                    $actionRows = $db->aggregate( 'ezurlalias_ml', [
+                        [ '$match' => [ 'parent' => (int)$parentID, 'action' => $action, 'is_original' => 1, 'is_alias' => 0 ] ],
+                    ] );
+                    if ( !empty( $actionRows ) )
+                    {
+                        $existingEntryId = (int)$actionRows[0]['id'];
+                        if ( $existingEntryId != $curElementID )
+                        {
+                            $db->mongoUpdateOne( 'ezurlalias_ml',
+                                [ 'parent' => (int)$parentID, 'text_md5' => $textMD5str ],
+                                [ '$set' => [ 'id' => $existingEntryId ] ]
+                            );
+                            $curElementID = $existingEntryId;
+                        }
+                    }
+                    // Update existing entry to be the canonical original
+                    $db->mongoUpdateOne( 'ezurlalias_ml',
+                        [ 'parent' => (int)$parentID, 'text_md5' => $textMD5str ],
+                        [ '$set' => [
+                            'link'        => $curElementID,
+                            'lang_mask'   => (int)$languageMask,
+                            'text'        => $newText,
+                            'action'      => $action,
+                            'action_type' => $actionName,
+                            'is_alias'    => 0,
+                            'is_original' => 1,
+                        ] ]
+                    );
+                    $newElementID = $curElementID;
+                }
+                else
+                {
+                    // Create new entry
+                    $element = new eZURLAliasML( array(
+                        'id'        => $newElementID,
+                        'link'      => null,
+                        'parent'    => $parentID,
+                        'text'      => $newText,
+                        'lang_mask' => $languageID | $alwaysMask,
+                        'action'    => $action,
+                    ) );
+                    $element->store();
+                    $newElementID   = (int)$element->attribute( 'id' );
+                    $createdElement = $element;
+                }
+
+                $createdPath[] = $newText;
+
+                // Mark old aliases for this action as history (is_original = 0)
+                $db->mongoUpdateMany( 'ezurlalias_ml',
+                    [ 'action'      => $action,
+                      'lang_mask'   => [ '$bitsAnySet' => (int)$languageID ],
+                      'is_original' => 1,
+                      'is_alias'    => 0,
+                      '$or'         => [ [ 'parent' => [ '$ne' => (int)$parentID ] ], [ 'text_md5' => [ '$ne' => $textMD5str ] ] ],
+                    ],
+                    [ '$set' => [ 'is_original' => 0 ] ]
+                );
+
+                // Update history entries to link to the new element
+                $db->mongoUpdateMany( 'ezurlalias_ml',
+                    [ 'action'      => $action,
+                      'lang_mask'   => [ '$bitsAnySet' => (int)$languageID ],
+                      'is_original' => 0,
+                      '$or'         => [ [ 'parent' => [ '$ne' => (int)$parentID ] ], [ 'text_md5' => [ '$ne' => $textMD5str ] ] ],
+                    ],
+                    [ '$set' => [ 'link' => $newElementID, 'is_alias' => 0, 'is_original' => 0 ] ]
+                );
+
+                // Reparent children of old locations to the new element
+                $oldParentRows = $db->aggregate( 'ezurlalias_ml', [
+                    [ '$match'   => [ 'action' => $action, 'is_alias' => 0,
+                                      '$or' => [ [ 'parent' => [ '$ne' => (int)$parentID ] ], [ 'text_md5' => [ '$ne' => $textMD5str ] ] ] ] ],
+                    [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                ] );
+                foreach ( $oldParentRows as $oldRow )
+                {
+                    $oldPID = (int)$oldRow['id'];
+                    $db->mongoUpdateMany( 'ezurlalias_ml',
+                        [ 'parent' => $oldPID, 'lang_mask' => [ '$bitsAnySet' => (int)$languageID ] ],
+                        [ '$set' => [ 'parent' => $newElementID ] ]
+                    );
+                }
+            }
+            else
+            {
+                // ---- Creating a link/alias entry ($linkID !== false) ----
+                $resolvedLinkID = null;
+                if ( $linkID !== true )
+                {
+                    $linkID = (int)$linkID;
+                    $linkRows = $db->aggregate( 'ezurlalias_ml', [
+                        [ '$match' => [ 'id' => $linkID ] ],
+                    ] );
+                    if ( count( $linkRows ) == 0 )
+                    {
+                        if ( $reportErrors )
+                            eZDebug::writeError( "The link ID $linkID does not exist, cannot create the link", __METHOD__ );
+                        return array( 'status' => eZURLAliasML::LINK_ID_NOT_FOUND );
+                    }
+                    if ( $linkRows[0]['action'] != $action )
+                    {
+                        if ( $reportErrors )
+                            eZDebug::writeError( "The link ID $linkID uses a different action ({$linkRows[0]['action']}) than the requested action ({$action}) for the link, cannot create the link", __METHOD__ );
+                        return array( 'status' => eZURLAliasML::LINK_ID_WRONG_ACTION );
+                    }
+                    $resolvedLinkID = ( $linkRows[0]['link'] != $linkRows[0]['id'] ) ? (int)$linkRows[0]['link'] : $linkID;
+                }
+
+                if ( $cleanupElements )
+                    $topElement = eZURLAliasML::convertToAlias( $topElement, 'noname' . (count($createdPath)+1) );
+
+                $curElementID  = null;
+                $newText       = $topElement;
+                $uniqueCounter = 0;
+
+                while ( true )
+                {
+                    $newText = $topElement;
+                    if ( $uniqueCounter > 0 )
+                        $newText .= ($uniqueCounter + 1);
+                    $newTextMD5 = md5( eZURLAliasML::strtolower( $newText ) );
+
+                    $existingRows = $db->aggregate( 'ezurlalias_ml', [
+                        [ '$match' => [ 'parent' => (int)$parentID, 'text_md5' => $newTextMD5 ] ],
+                    ] );
+                    if ( count( $existingRows ) == 0 )
+                    {
+                        break;
+                    }
+                    $row = $existingRows[0];
+                    $curID   = (int)$row['id'];
+                    $curLink = (int)$row['link'];
+                    $curAction = $row['action'];
+                    if ( $curAction == $action )
+                    {
+                        if ( $curID != $curLink )
+                        {
+                            $curElementID = $curID;
+                            break;
+                        }
+                        if ( !( (int)$row['lang_mask'] & $languageID ) )
+                        {
+                            $curElementID = $curID;
+                            break;
+                        }
+                    }
+                    if ( !$autoAdjustName )
+                    {
+                        if ( $reportErrors )
+                            eZDebug::writeError( "Tried to store path but path already exists (ID: {$curID}) with action '{$curAction}'" );
+                        return array( 'status' => self::LINK_ALREADY_TAKEN, 'path' => $path, 'element' => null );
+                    }
+                    $uniqueCounter++;
+                }
+
+                $textMD5str = md5( eZURLAliasML::strtolower( $newText ) );
+                $createdElement = null;
+
+                if ( $curElementID !== null )
+                {
+                    $db->mongoUpdateOne( 'ezurlalias_ml',
+                        [ 'parent' => (int)$parentID, 'text_md5' => $textMD5str ],
+                        [ '$set' => [
+                            'link'        => $resolvedLinkID,
+                            'lang_mask'   => (int)$languageMask,
+                            'text'        => $newText,
+                            'action'      => $action,
+                            'action_type' => $actionName,
+                            'is_alias'    => $aliasRedirects ? 1 : 0,
+                            'is_original' => 1,
+                        ] ]
+                    );
+                    $newElementID = $curElementID;
+                }
+                else
+                {
+                    $element = new eZURLAliasML( array(
+                        'id'        => null,
+                        'link'      => $resolvedLinkID,
+                        'parent'    => $parentID,
+                        'text'      => $newText,
+                        'lang_mask' => $languageID | $alwaysMask,
+                        'action'    => $action,
+                    ) );
+                    if ( $aliasRedirects )
+                        $element->IsAlias = 1;
+                    $element->store();
+                    $newElementID   = (int)$element->attribute( 'id' );
+                    $createdElement = $element;
+                }
+                $createdPath[] = $newText;
+            }
+
+            return array(
+                'status'  => true,
+                'path'    => implode( '/', $createdPath ),
+                'element' => isset( $createdElement ) ? $createdElement : null,
+            );
+        }
+        // ---- END MONGODB BRANCH ----
+
         foreach ( $elements as $element )
         {
             $actionStr = $db->escapeString( $action );
@@ -659,20 +1016,17 @@ class eZURLAliasML extends eZPersistentObject
             }
             $createdPath[] = $newText;
 
-            // OMS-urlalias-fix: We want to retain the lang_mask of url entries, but mark others as history elements is_original = 0
-            // Furthermore this change is not performed on custom alias entries.
-            $bitAnd = $db->bitAnd( 'lang_mask', $languageID );
-
-            // First we look at the entries to mark as history entries, if an entry comprise more languages, it must not be set as history element.
-            $query = "SELECT * FROM ezurlalias_ml " .
-                     "WHERE action = '{$actionStr}' AND ({$bitAnd} > 0) AND is_original = 1 AND is_alias = 0 AND (parent != $parentID OR text_md5 != {$textMD5})";
-            $toBeUpdated = $db->arrayQuery( $query );
-
-            // 0. Check if the entry to be updated represents multiple languages:
-            // IF YES:
-            //  1. "Downgrade" existing entry, by removing the active translation's language id from the language_mask.
-            // IF NO:
-            //  1. Mark entry as a history entry
+            // OMS-urlalias-fix: mark old entries as history and reparent children (MongoDB native)
+            // Entries with same action, same language bit, is_original=1, is_alias=0, different position
+            $toBeUpdated = $db->aggregate( 'ezurlalias_ml', [ [
+                '$match' => [
+                    'action'      => $actionStr,
+                    'lang_mask'   => [ '$bitsAnySet' => (int)$languageID ],
+                    'is_original' => 1,
+                    'is_alias'    => 0,
+                    '$or'         => [ [ 'parent' => [ '$ne' => (int)$parentID ] ], [ 'text_md5' => [ '$ne' => $textMD5 ] ] ],
+                ],
+            ] ] );
 
             if ( count( $toBeUpdated ) > 0 )
             {
@@ -687,80 +1041,66 @@ class eZURLAliasML extends eZPersistentObject
                 else
                 {
                     // Mark as history element.
-                    $query = "UPDATE ezurlalias_ml SET is_original = 0 " .
-                             "WHERE action = '{$actionStr}' AND ({$bitAnd} > 0) AND is_original = 1 AND is_alias = 0 AND (parent != $parentID OR text_md5 != {$textMD5})";
-                    $res = $db->query( $query );
-                    if ( !$res ) return eZURLAliasML::dbError( $db );
+                    $db->mongoUpdateMany( 'ezurlalias_ml',
+                        [
+                            'action'      => $actionStr,
+                            'lang_mask'   => [ '$bitsAnySet' => (int)$languageID ],
+                            'is_original' => 1,
+                            'is_alias'    => 0,
+                            '$or'         => [ [ 'parent' => [ '$ne' => (int)$parentID ] ], [ 'text_md5' => [ '$ne' => $textMD5 ] ] ],
+                        ],
+                        [ '$set' => [ 'is_original' => 0 ] ]
+                    );
                 }
             }
 
-            // OMS-urlalias-fix: instead entries without language we look at history elements with same action (and language)
-            // Look for other nodes with the same action and language
-            // if found make then link to the new entry
-            $bitAnd = $db->bitAnd( 'lang_mask', $languageID );
-            $query = "SELECT * FROM ezurlalias_ml " .
-                     "WHERE action = '{$actionStr}' AND ({$bitAnd} > 0) AND is_original = 0 AND (parent != $parentID OR text_md5 != {$textMD5})";
-            $rows = $db->arrayQuery( $query );
-            foreach ( $rows as $row )
+            // Look for history elements with same action/language → relink to new entry
+            $historyRows = $db->aggregate( 'ezurlalias_ml', [ [
+                '$match' => [
+                    'action'      => $actionStr,
+                    'lang_mask'   => [ '$bitsAnySet' => (int)$languageID ],
+                    'is_original' => 0,
+                    '$or'         => [ [ 'parent' => [ '$ne' => (int)$parentID ] ], [ 'text_md5' => [ '$ne' => $textMD5 ] ] ],
+                ],
+            ] ] );
+            foreach ( $historyRows as $row )
             {
                 $idtmp = (int)$row['id'];
                 if ( $idtmp == $newElementID )
-                {
                     $idtmp = self::getNewID();
-                }
-                $parentIDTmp = (int)$row['parent'];
-                $textMD5Tmp = eZURLAliasML::md5( $db, $row['text'] );
-
-                // OMS-urlalias-fix: We do not touch the lang_mask here
-                $res = $db->query( "UPDATE ezurlalias_ml SET id = {$idtmp}, link = {$newElementID}, is_alias = 0, is_original = 0 " .
-                                   "WHERE parent = {$parentIDTmp} AND text_md5 = {$textMD5Tmp}" );
-                if ( !$res ) return eZURLAliasML::dbError( $db );
+                $db->mongoUpdateOne( 'ezurlalias_ml',
+                    [ 'parent' => (int)$row['parent'], 'text_md5' => $row['text_md5'] ],
+                    [ '$set' => [ 'id' => $idtmp, 'link' => $newElementID, 'is_alias' => 0, 'is_original' => 0 ] ]
+                );
             }
-            $res = $db->query( $query );
-            if ( !$res ) return eZURLAliasML::dbError( $db );
 
-            // Look for other nodes which is a link for the current action
-            // if found make then link to the new entry
-            // OMS-urlalias-fix: We only want to update the links of entries within the same language.
-            // Also, only to be applied on normal entries, not custom aliases
-            $bitAnd = $db->bitAnd( 'lang_mask', $languageID );
-            $query = "UPDATE ezurlalias_ml SET link = {$newElementID}, is_alias = 0, is_original = 0 " .
-                     "WHERE action = '{$actionStr}' AND is_original = 0 AND is_alias = 0 AND ({$bitAnd} > 0) AND (parent != $parentID OR text_md5 != {$textMD5})";
-            $res = $db->query( $query );
-            if ( !$res ) return eZURLAliasML::dbError( $db );
+            // Update links of other entries with same action and language
+            $db->mongoUpdateMany( 'ezurlalias_ml',
+                [
+                    'action'      => $actionStr,
+                    'is_original' => 0,
+                    'is_alias'    => 0,
+                    'lang_mask'   => [ '$bitsAnySet' => (int)$languageID ],
+                    '$or'         => [ [ 'parent' => [ '$ne' => (int)$parentID ] ], [ 'text_md5' => [ '$ne' => $textMD5 ] ] ],
+                ],
+                [ '$set' => [ 'link' => $newElementID, 'is_alias' => 0, 'is_original' => 0 ] ]
+            );
 
-
-            // Move children from old node to the new node
-            // Conflicts:
-            // New       |       Old |  Action
-            // -------------------------------
-            // Element   | Link      | Delete old
-            // Element   | Element   | Will not happen, if so delete old
-            // Element   | Other     | Reparent with new name
-            // Element   | nop       | Delete old
-            // Link      | Link      | Delete old
-            // Link      | Element   | Delete new, reparent
-            // Link      | Other     | Delete new, reparent
-            // Link      | nop       | Delete old
-            // nop       | Link      | Delete new, reparent
-            // nop       | Element   | Delete new, reparent
-            // nop       | nop       | Delete old
-
-            // TODO: Handle all conflict cases, for now only the `Delete old, reparent` action is done
-
-            // OMS-urlalias-fix: We are only updating child nodes within the same language,
-            // and only for real system-generated url aliases. Custom aliases are left alone.
-            $bitAnd = $db->bitAnd( 'lang_mask', $languageID );
-            $query = "SELECT id FROM ezurlalias_ml " .
-                     "WHERE action = '{$actionStr}' AND is_alias = 0 AND (parent != $parentID OR text_md5 != {$textMD5})";
-            $rows = $db->arrayQuery( $query );
-            foreach ( $rows as $row )
+            // Reparent children from old node positions to new element
+            $oldNodes = $db->aggregate( 'ezurlalias_ml', [ [
+                '$match' => [
+                    'action'   => $actionStr,
+                    'is_alias' => 0,
+                    '$or'      => [ [ 'parent' => [ '$ne' => (int)$parentID ] ], [ 'text_md5' => [ '$ne' => $textMD5 ] ] ],
+                ],
+            ] ] );
+            foreach ( $oldNodes as $row )
             {
                 $oldParentID = (int)$row['id'];
-                $query = "UPDATE ezurlalias_ml SET parent = {$newElementID} " .
-                         "WHERE parent = {$oldParentID} AND ({$bitAnd} > 0)";
-                $res = $db->query( $query );
-                if ( !$res ) return eZURLAliasML::dbError( $db );
+                $db->mongoUpdateMany( 'ezurlalias_ml',
+                    [ 'parent' => $oldParentID, 'lang_mask' => [ '$bitsAnySet' => (int)$languageID ] ],
+                    [ '$set' => [ 'parent' => $newElementID ] ]
+                );
             }
         }
         else
@@ -770,8 +1110,7 @@ class eZURLAliasML extends eZPersistentObject
             {
                 $linkID = (int)$linkID;
                 // Step 1, find existing ID
-                $query = "SELECT * FROM ezurlalias_ml WHERE id = '{$linkID}'";
-                $rows = $db->arrayQuery( $query );
+                $rows = $db->aggregate( 'ezurlalias_ml', [ [ '$match' => [ 'id' => $linkID ] ] ] );
                 // Some sanity checking
                 if ( count( $rows ) == 0 )
                 {
@@ -987,7 +1326,36 @@ class eZURLAliasML extends eZPersistentObject
             $query .= " AND is_original = 1 AND is_alias = 0";
         }
 
-        $rows = $db->arrayQuery( $query );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $mongoFilter = [ 'action' => $action ];
+            if ( !$includeRedirections )
+            {
+                $mongoFilter['is_original'] = 1;
+                $mongoFilter['is_alias']    = 0;
+            }
+            if ( $maskLanguages === true )
+            {
+                // Use current site's language mask from the active language list
+                $activeLangs = eZContentLanguage::fetchList();
+                $mask = 0;
+                foreach ( $activeLangs as $lang )
+                    $mask |= (int)$lang->attribute( 'id' );
+                if ( $mask )
+                    $mongoFilter['lang_mask'] = [ '$bitsAnySet' => $mask ];
+            }
+            elseif ( is_string( $maskLanguages ) || is_array( $maskLanguages ) )
+            {
+                $mask = eZContentLanguage::maskByLocale( (array)$maskLanguages );
+                if ( $mask )
+                    $mongoFilter['lang_mask'] = [ '$bitsAnySet' => (int)$mask ];
+            }
+            $rows = $db->aggregate( 'ezurlalias_ml', [ [ '$match' => $mongoFilter ] ] );
+        }
+        else
+        {
+            $rows = $db->arrayQuery( $query );
+        }
         if ( count( $rows ) == 0 )
             return array();
         $rows = eZURLAliasML::filterRows( $rows, $onlyPrioritized );
@@ -1050,7 +1418,6 @@ class eZURLAliasML extends eZPersistentObject
     {
         $db = eZDB::instance();
         $id = (int)$id;
-        $langMask = trim( eZContentLanguage::languagesSQLFilter( 'ezurlalias_ml', 'lang_mask' ) );
         $redirSQL = '';
         if ( !$includeRedirections )
         {
@@ -1062,6 +1429,25 @@ class eZURLAliasML extends eZPersistentObject
             $langMask = "(" . trim( eZContentLanguage::languagesSQLFilter( 'ezurlalias_ml', 'lang_mask' ) ) . ") AND ";
         }
         $query = "SELECT * FROM ezurlalias_ml WHERE $langMask parent = {$id} $redirSQL";
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $filter = [ 'parent' => $id ];
+            if ( !$includeRedirections ) $filter['is_original'] = 1;
+            if ( $maskLanguages )
+            {
+                $activeLangs = eZContentLanguage::fetchList();
+                $mask = 0;
+                foreach ( $activeLangs as $lang ) $mask |= (int)$lang->attribute( 'id' );
+                if ( $mask ) $filter['lang_mask'] = [ '$bitsAnySet' => $mask ];
+            }
+            $rows = $db->aggregate( 'ezurlalias_ml', [
+                [ '$match' => $filter ],
+            ] );
+            $rows = eZURLAliasML::filterRows( $rows, $onlyPrioritized );
+            return eZPersistentObject::handleRows( $rows, 'eZURLAliasML', true );
+        }
+
         $rows = $db->arrayQuery( $query );
         $rows = eZURLAliasML::filterRows( $rows, $onlyPrioritized );
         return eZPersistentObject::handleRows( $rows, 'eZURLAliasML', true );
@@ -1116,7 +1502,21 @@ class eZURLAliasML extends eZPersistentObject
         $actionStr = join( ", ", $actionList );
         $filterSQL = trim( eZContentLanguage::languagesSQLFilter( 'ezurlalias_ml', 'lang_mask' ) );
         $query = "SELECT id, parent, lang_mask, text, action FROM ezurlalias_ml WHERE ( {$filterSQL} ) AND action in ( {$actionStr} ) AND is_original = 1 AND is_alias=0";
-        $rows = $db->arrayQuery( $query );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $actionStrings = [];
+            foreach ( $actionValues as $value )
+                $actionStrings[] = $actionName . ':' . $value;
+            $rows = $db->aggregate( 'ezurlalias_ml', [
+                [ '$match' => [ 'action' => [ '$in' => $actionStrings ], 'is_original' => 1, 'is_alias' => 0 ] ],
+                [ '$project' => [ '_id' => 0, 'id' => 1, 'parent' => 1, 'lang_mask' => 1, 'text' => 1, 'action' => 1 ] ],
+            ] );
+            if ( $rows === false ) $rows = [];
+        }
+        else
+        {
+            $rows = $db->arrayQuery( $query );
+        }
         $objects = eZContentObject::fetchByNodeID( $actionValues );
         $actionMap = array();
         foreach ( $rows as $row )
@@ -1541,47 +1941,116 @@ class eZURLAliasML extends eZPersistentObject
         }
 
         $db = eZDB::instance();
-        $elements = explode( '/', $internalURIString );
-        $len      = count( $elements );
 
-        $i = 0;
-        $selects = array();
-        $tables  = array();
-        $conds   = array();
-        foreach ( $elements as $element )
+        if ( $db->databaseName() == 'mysql' )
         {
-            $table = "e" . $i;
 
-            $selectString = "{$table}.id AS {$table}_id, ";
-            $selectString .= "{$table}.link AS {$table}_link, ";
-            $selectString .= "{$table}.text AS {$table}_text, ";
-            $selectString .= "{$table}.text_md5 AS {$table}_text_md5, ";
-            $selectString .= "{$table}.is_alias AS {$table}_is_alias, ";
+            $elements = explode( '/', $internalURIString );
+            $len      = count( $elements );
 
-            if ( $i == $len - 1 )
-                $selectString .= "{$table}.action AS {$table}_action, ";
-
-            $selectString .= "{$table}.alias_redirects AS {$table}_alias_redirects";
-            $selects[] = $selectString;
-
-            $tables[]  = "ezurlalias_ml " . $table;
-            $langMask = trim( eZContentLanguage::languagesSQLFilter( $table, 'lang_mask' ) );
-            if ( $i == 0 )
+            $i = 0;
+            $selects = array();
+            $tables  = array();
+            $conds   = array();
+            foreach ( $elements as $element )
             {
-                $conds[]   = "{$table}.parent = 0 AND ({$langMask}) AND {$table}.text_md5 = " . eZURLAliasML::md5( $db, $element );
+                $table = "e" . $i;
+
+                $selectString = "{$table}.id AS {$table}_id, ";
+                $selectString .= "{$table}.link AS {$table}_link, ";
+                $selectString .= "{$table}.text AS {$table}_text, ";
+                $selectString .= "{$table}.text_md5 AS {$table}_text_md5, ";
+                $selectString .= "{$table}.is_alias AS {$table}_is_alias, ";
+
+                if ( $i == $len - 1 )
+                    $selectString .= "{$table}.action AS {$table}_action, ";
+
+                $selectString .= "{$table}.alias_redirects AS {$table}_alias_redirects";
+                $selects[] = $selectString;
+
+                $tables[]  = "ezurlalias_ml " . $table;
+                $langMask = trim( eZContentLanguage::languagesSQLFilter( $table, 'lang_mask' ) );
+                if ( $i == 0 )
+                {
+                    $conds[]   = "{$table}.parent = 0 AND ({$langMask}) AND {$table}.text_md5 = " . eZURLAliasML::md5( $db, $element );
+                }
+                else
+                {
+                    $conds[]   = "{$table}.parent = {$prevTable}.link AND ({$langMask}) AND {$table}.text_md5 = " . eZURLAliasML::md5( $db, $element );
+                }
+                $prevTable = $table;
+                ++$i;
             }
-            else
-            {
-                $conds[]   = "{$table}.parent = {$prevTable}.link AND ({$langMask}) AND {$table}.text_md5 = " . eZURLAliasML::md5( $db, $element );
-            }
-            $prevTable = $table;
-            ++$i;
+
+            $query = "SELECT " . join( ", ", $selects ) . " FROM " . join( ", ", $tables ) . " WHERE " . join( " AND ", $conds );
+            $return = false;
+            $urlAliasArray = $db->arrayQuery( $query, array( 'limit' => 1 ) );
         }
+        elseif( $db->databaseName() == 'mongo' )
+        {
+            // Iterative per-segment lookup: mirrors the MySQL multi-table JOIN
+            // by walking the parent→link chain one path segment at a time.
+            // Static cache avoids repeated MongoDB round-trips for the same
+            // (parent, text_md5) pair within one PHP request (e.g. admin nav links).
+            static $mongoSegmentCache = [];
 
-        $query = "SELECT " . join( ", ", $selects ) . " FROM " . join( ", ", $tables ) . " WHERE " . join( " AND ", $conds );
-        $return = false;
-        $urlAliasArray = $db->arrayQuery( $query, array( 'limit' => 1 ) );
-        if ( count( $urlAliasArray ) > 0 )
+            $elements = explode( '/', $internalURIString );
+            $len      = count( $elements );
+            $return   = false;
+            $parent   = 0;
+            $pathRow  = [];
+            $valid    = true;
+            for ( $i = 0; $i < $len; $i++ )
+            {
+                $element   = $elements[$i];
+                $hash      = md5( eZURLAliasML::strtolower( $element ) );
+                $cacheKey  = $parent . ':' . $hash;
+                if ( array_key_exists( $cacheKey, $mongoSegmentCache ) )
+                {
+                    $cached = $mongoSegmentCache[$cacheKey];
+                    if ( $cached === null )
+                    {
+                        $valid = false;
+                        break;
+                    }
+                    $rows = [ $cached ];
+                }
+                else
+                {
+                $rows = $db->aggregate( 'ezurlalias_ml', [
+                    [ '$match' => [
+                        'parent'   => $parent,
+                        'text_md5' => $hash,
+                    ] ],
+                    [ '$sort'    => [ 'lang_mask' => -1 ] ],
+                    [ '$limit'   => 1 ],
+                    [ '$project' => [ '_id' => 0 ] ],
+                ] );
+                $mongoSegmentCache[$cacheKey] = empty( $rows ) ? null : $rows[0];
+                }
+                if ( empty( $rows ) )
+                {
+                    $valid = false;
+                    break;
+                }
+                $r     = $rows[0];
+                $table = 'e' . $i;
+                $pathRow[$table . '_id']              = (int)( $r['id']              ?? 0 );
+                $pathRow[$table . '_link']            = (int)( $r['link']            ?? $r['id'] ?? 0 );
+                $pathRow[$table . '_text']            =       ( $r['text']            ?? $element );
+                $pathRow[$table . '_text_md5']        =       ( $r['text_md5']        ?? '' );
+                $pathRow[$table . '_is_alias']        = (int)( $r['is_alias']        ?? 0 );
+                $pathRow[$table . '_alias_redirects'] = (int)( $r['alias_redirects'] ?? 0 );
+                if ( $i == $len - 1 )
+                {
+                    $pathRow[$table . '_action'] = $r['action'] ?? '';
+                }
+                $parent = (int)( $r['link'] ?? $r['id'] ?? 0 );
+            }
+            $urlAliasArray = $valid ? [ $pathRow ] : [];
+        }
+        
+        if ( is_array( $urlAliasArray ) && count( $urlAliasArray ) > 0 )
         {
             $pathRow = $urlAliasArray[0];
             $l   = count( $pathRow );
@@ -1648,8 +2117,19 @@ class eZURLAliasML extends eZPersistentObject
             {
                 if ( $redirectAction !== false )
                 {
-                    $query = "SELECT id FROM ezurlalias_ml WHERE action = '" . $db->escapeString( $action ) . "' AND is_original = 1 AND is_alias = 0";
-                    $rows  = $db->arrayQuery( $query );
+                    if ( $db->databaseName() === 'mongo' )
+                    {
+                        $rows = $db->aggregate( 'ezurlalias_ml', [
+                            [ '$match' => [ 'action' => $action, 'is_original' => 1, 'is_alias' => 0 ] ],
+                            [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                            [ '$limit' => 1 ],
+                        ] );
+                    }
+                    else
+                    {
+                        $query = "SELECT id FROM ezurlalias_ml WHERE action = '" . $db->escapeString( $action ) . "' AND is_original = 1 AND is_alias = 0";
+                        $rows  = $db->arrayQuery( $query );
+                    }
                     if ( count( $rows ) > 0 )
                     {
                         $id        = (int)$rows[0]['id'];
@@ -1674,8 +2154,18 @@ class eZURLAliasML extends eZPersistentObject
 
                     while ( $id != 0 )
                     {
-                        $query = "SELECT parent, lang_mask, text FROM ezurlalias_ml WHERE id={$id}";
-                        $rows = $db->arrayQuery( $query );
+                        if ( $db->databaseName() === 'mongo' )
+                        {
+                            $rows = $db->aggregate( 'ezurlalias_ml', [
+                                [ '$match' => [ 'id' => $id ] ],
+                                [ '$project' => [ '_id' => 0, 'parent' => 1, 'lang_mask' => 1, 'text' => 1 ] ],
+                            ] );
+                        }
+                        else
+                        {
+                            $query = "SELECT parent, lang_mask, text FROM ezurlalias_ml WHERE id={$id}";
+                            $rows = $db->arrayQuery( $query );
+                        }
                         if ( count( $rows ) == 0 )
                         {
                             break;
@@ -1744,8 +2234,50 @@ class eZURLAliasML extends eZPersistentObject
         $action = eZURLAliasML::urlToAction( $internalURIString );
         if ( $action !== false )
         {
-            $langMask = trim( eZContentLanguage::languagesSQLFilter( 'ezurlalias_ml', 'lang_mask' ) );
             $actionStr = $db->escapeString( $action );
+
+            if ( $db->databaseName() === 'mongo' )
+            {
+                // Fetch the action entry
+                $activeLangs = eZContentLanguage::fetchList();
+                $mask = 0;
+                foreach ( $activeLangs as $lang ) $mask |= (int)$lang->attribute( 'id' );
+                $filter = [ 'action' => $action, 'is_original' => 1, 'is_alias' => 0 ];
+                if ( $mask ) $filter['lang_mask'] = [ '$bitsAnySet' => $mask ];
+                $rows = $db->aggregate( 'ezurlalias_ml', [
+                    [ '$match' => $filter ],
+                ] );
+                $path = [];
+                if ( count( $rows ) != 0 )
+                {
+                    $row = eZURLAliasML::choosePrioritizedRow( $rows );
+                    if ( $row === false ) $row = $rows[0];
+                    $paren = (int)$row['parent'];
+                    $path[] = $row['text'];
+                    while ( $paren != 0 )
+                    {
+                        $pFilter = [ 'id' => $paren, 'is_original' => 1, 'is_alias' => 0 ];
+                        if ( $mask ) $pFilter['lang_mask'] = [ '$bitsAnySet' => $mask ];
+                        $rows = $db->aggregate( 'ezurlalias_ml', [ [ '$match' => $pFilter ] ] );
+                        if ( count( $rows ) != 0 )
+                        {
+                            $row = eZURLAliasML::choosePrioritizedRow( $rows );
+                            if ( $row === false ) $row = $rows[0];
+                            $paren = (int)$row['parent'];
+                            array_unshift( $path, $row['text'] );
+                        }
+                        else break;
+                    }
+                    $uriStr = join( '/', $path );
+                    $uriStr = self::removePathPrefixFromURI( $uriStr );
+                    if ( $uri instanceof eZURI ) $uri->setURIString( $uriStr, false );
+                    else $uri = $uriStr;
+                    return true;
+                }
+                return false;
+            }
+
+            $langMask = trim( eZContentLanguage::languagesSQLFilter( 'ezurlalias_ml', 'lang_mask' ) );
             $query = "SELECT id, parent, lang_mask, text, action FROM ezurlalias_ml WHERE ($langMask) AND action='{$actionStr}' AND is_original = 1 AND is_alias = 0";
             $rows = $db->arrayQuery( $query );
             $path = array();
@@ -1932,7 +2464,22 @@ class eZURLAliasML extends eZPersistentObject
             {
                 $query .= ' LOCK IN SHARE MODE';
             }
-            $rows = $db->arrayQuery( $query );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $textMD5 = md5( eZURLAliasML::strtolower( $text . $suffix ) );
+                $mongoFilter = [ 'parent' => (int)$parentElementID, 'text_md5' => $textMD5 ];
+                if ( strlen( $action ) > 0 )
+                    $mongoFilter['action'] = [ '$ne' => $action ];
+                if ( $languageID !== false )
+                    $mongoFilter['lang_mask'] = [ '$bitsAnySet' => (int)$languageID ];
+                if ( !$linkCheck )
+                    $mongoFilter['is_original'] = 1;
+                $rows = $db->aggregate( 'ezurlalias_ml', [ [ '$match' => $mongoFilter ] ] );
+            }
+            else
+            {
+                $rows = $db->arrayQuery( $query );
+            }
             if ( count( $rows ) == 0 )
             {
                 return $text . $suffix;
@@ -2406,6 +2953,10 @@ class eZURLAliasML extends eZPersistentObject
     static function getNewID()
     {
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            return $db->nextAtomicID( 'ezurlalias_ml', 'ezurlalias_ml', 'id' );
+        }
         if ( $db->supportsDefaultValuesInsertion() )
         {
             $db->query( 'INSERT INTO ezurlalias_ml_incr DEFAULT VALUES' );

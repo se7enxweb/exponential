@@ -31,12 +31,18 @@ if ( $isConfirmed )
 
     $db->begin();
 
-    if( $db->DatabaseName() == 'sqlite' )
+    if ( $db->databaseName() === 'mongo' )
+    {
+        $versionRows = $db->aggregate( 'ezcontentobject_version', [
+            [ '$match' => [ 'version' => $version, 'contentobject_id' => $objectID ] ],
+        ] );
+    }
+    elseif( $db->DatabaseName() == 'sqlite' )
     {
         $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $version AND contentobject_id = $objectID" );
-     }
-     else
-     {
+    }
+    else
+    {
         $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $version AND contentobject_id = $objectID FOR UPDATE" );
     }
 

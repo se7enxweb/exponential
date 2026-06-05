@@ -118,6 +118,10 @@ class eZPolicy extends eZPersistentObject
     {
         $policy = new eZPolicy( array( 'id' => null ) );
         $policy->setAttribute( 'role_id', $roleID );
+        // MySQL schema: original_id INT NOT NULL DEFAULT '0'.
+        // PHP default is null, which MySQL coerces to 0 but MongoDB stores as null.
+        // Explicitly set 0 so that policyList() query {original_id:0} finds these policies.
+        $policy->setAttribute( 'original_id', 0 );
         if ( array_key_exists( 'ModuleName', $params ))
         {
             $policy->setAttribute( 'module_name', $params['ModuleName'] );
@@ -237,8 +241,15 @@ class eZPolicy extends eZPersistentObject
         {
             $limitation->removeThis();
         }
-        $db->query( "DELETE FROM ezpolicy
-                     WHERE id='" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->deleteWhere( 'ezpolicy', [ 'id' => (int)$this->attribute( 'id' ) ] );
+        }
+        else
+        {
+            $db->query( "DELETE FROM ezpolicy
+                         WHERE id='" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
+        }
         $db->commit();
     }
 
@@ -418,7 +429,11 @@ class eZPolicy extends eZPersistentObject
 
         if( $db->DatabaseName() != 'sqlite' )
         {
-            if ( $this->attribute( 'original_id' ) === 0 )
+            // A policy is already a temp copy when original_id != 0.
+            // original_id === 0 means it is a permanent policy and can be copied.
+            // Note: MySQL returns string '0' so strict === 0 was always false there —
+            // but MongoDB returns int 0 so we must use != (loose) not === (strict).
+            if ( $this->attribute( 'original_id' ) != 0 )
                 throw new Exception( 'eZPolicy #' . $this->attribute( 'id' ) . ' is already a temporary item (original: #'. $this->attribute( 'original_id' ) . ')' );
         }
 

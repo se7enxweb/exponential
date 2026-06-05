@@ -496,6 +496,73 @@ class eZContentClass extends eZPersistentObject
 
         $db = eZDB::instance();
 
+        if ( $db->databaseName() === 'mongo' ) {
+            $mongoClassMatchFilter = [ 'version' => eZContentClass::VERSION_STATUS_DEFINED ];
+            if ( is_array( $groupList ) ) {
+                $classGroupRows = $db->aggregate( 'ezcontentclass_classgroup', [
+                    [ '$match' => [ 'group_id' => [ '$in' => array_map( 'intval', $groupList ) ] ] ],
+                    [ '$group' => [ '_id' => '$contentclass_id' ] ],
+                ] );
+                $filteredContentClassIDs = array_column( $classGroupRows, '_id' );
+                if ( $includeFilter ) {
+                    if ( empty( $filteredContentClassIDs ) ) return $classList;
+                    $mongoClassMatchFilter['id'] = [ '$in' => $filteredContentClassIDs ];
+                } elseif ( !empty( $filteredContentClassIDs ) ) {
+                    $mongoClassMatchFilter['id'] = [ '$nin' => $filteredContentClassIDs ];
+                }
+            }
+            if ( !$fetchAll ) {
+                if ( empty( $classIDArray ) ) return $classList;
+                $intersectedClassIDs = isset( $mongoClassMatchFilter['id']['$in'] )
+                    ? array_intersect( $classIDArray, $mongoClassMatchFilter['id']['$in'] )
+                    : $classIDArray;
+                $mongoClassMatchFilter['id'] = [ '$in' => array_values( array_map( 'intval', $intersectedClassIDs ) ) ];
+            }
+            $contentClassRows = $db->aggregate( 'ezcontentclass', [
+                [ '$match' => $mongoClassMatchFilter ],
+                [ '$sort'  => [ 'identifier' => 1 ] ],
+            ] );
+            $classList = eZPersistentObject::handleRows( $contentClassRows, 'eZContentClass', $asObject );
+            if ( !$asObject )
+            {
+                // MongoDB documents store name in serialized_name_list; add 'name' key for raw array consumers
+                foreach ( $classList as &$classRow )
+                {
+                    if ( !isset( $classRow['name'] ) && isset( $classRow['serialized_name_list'] ) )
+                    {
+                        $unserializedNameData = @unserialize( $classRow['serialized_name_list'] );
+                        if ( is_array( $unserializedNameData ) )
+                        {
+                            $alwaysAvailableLocale = $unserializedNameData['always-available'] ?? '';
+                            $classRow['name'] = $unserializedNameData[$alwaysAvailableLocale] ?? ( current( array_diff_key( $unserializedNameData, ['always-available' => ''] ) ) ?: '' );
+                        }
+                        else
+                            $classRow['name'] = '';
+                    }
+                }
+                unset( $classRow );
+            }
+            if ( $asObject ) {
+                foreach ( $classList as $key => $class ) {
+                    $id = $class->attribute( 'id' );
+                    $languageCodes = isset( $allowedLanguages[$id] )
+                        ? array_unique( array_merge( $allowedLanguages['*'], $allowedLanguages[$id] ) )
+                        : $allowedLanguages['*'];
+                    $classList[$key]->setCanInstantiateLanguages( $languageCodes );
+                }
+            }
+            eZDebugSetting::writeDebug( 'kernel-content-class', $classList, "class list fetched from db" );
+            if ( $enableCaching ) {
+                if ( $fetchID !== false ) {
+                    $groupArray[$fetchID] = $classList;
+                    $http->setSessionVariable( $cacheVar, $groupArray );
+                } else {
+                    $http->setSessionVariable( $cacheVar, $classList );
+                }
+            }
+            return $classList;
+        }
+
         $filterTableSQL = '';
         $filterSQL = '';
         // Create extra SQL statements for the class group filters.
@@ -680,6 +747,30 @@ class eZContentClass extends eZPersistentObject
 
         $classList = array();
         $db = eZDB::instance();
+
+        if ( $db->databaseName() === 'mongo' ) {
+            $mongoClassMatchFilter = [ 'version' => eZContentClass::VERSION_STATUS_DEFINED ];
+            if ( is_array( $groupList ) ) {
+                $classGroupRows = $db->aggregate( 'ezcontentclass_classgroup', [
+                    [ '$match' => [ 'group_id' => [ '$in' => array_map( 'intval', $groupList ) ] ] ],
+                    [ '$group' => [ '_id' => '$contentclass_id' ] ],
+                ] );
+                $filteredContentClassIDs = array_column( $classGroupRows, '_id' );
+                if ( $includeFilter ) {
+                    if ( empty( $filteredContentClassIDs ) ) return [];
+                    $mongoClassMatchFilter['id'] = [ '$in' => $filteredContentClassIDs ];
+                } elseif ( !empty( $filteredContentClassIDs ) ) {
+                    $mongoClassMatchFilter['id'] = [ '$nin' => $filteredContentClassIDs ];
+                }
+            }
+            $contentClassRows = $db->aggregate( 'ezcontentclass', [
+                [ '$match' => $mongoClassMatchFilter ],
+                [ '$sort' => [ 'identifier' => 1 ] ],
+            ] );
+            $classList = eZPersistentObject::handleRows( $contentClassRows, 'eZContentClass', $asObject );
+            return $classList;
+        }
+
         // If $asObject is true we fetch all fields in class
         $fields = $asObject ? "cc.*" : "cc.id, $classNameFilter[nameField]";
         $rows = $db->arrayQuery( "SELECT DISTINCT $fields " .
@@ -796,11 +887,28 @@ class eZContentClass extends eZPersistentObject
         $db      = eZDB::instance();
 
         // Check top-level nodes
-        $rows = $db->arrayQuery( "SELECT ezcot.node_id
+        if ( $db->databaseName() === 'mongo' ) {
+            $classID = (int)$this->ID;
+            $contentObjectRows = $db->aggregate( 'ezcontentobject', [
+                [ '$match'   => [ 'contentclass_id' => $classID ] ],
+                [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+            ] );
+            $contentObjectIDList = array_map( function( $contentObjectRow ) { return (int)$contentObjectRow['id']; }, $contentObjectRows );
+            if ( !empty( $contentObjectIDList ) ) {
+                $rows = $db->aggregate( 'ezcontentobject_tree', [
+                    [ '$match'   => [ 'depth' => 1, 'contentobject_id' => [ '$in' => $contentObjectIDList ] ] ],
+                    [ '$project' => [ '_id' => 0, 'node_id' => 1 ] ],
+                ] );
+            } else {
+                $rows = [];
+            }
+        } else {
+            $rows = $db->arrayQuery( "SELECT ezcot.node_id
 FROM ezcontentobject_tree ezcot, ezcontentobject ezco
 WHERE ezcot.depth = 1 AND
       ezco.contentclass_id = $this->ID AND
       ezco.id=ezcot.contentobject_id" );
+        }
         if ( count( $rows ) > 0 )
         {
             $result['list'][] = array( 'text' => ezpI18n::tr( 'kernel/contentclass', 'The class is used by a top-level node and cannot be removed.
@@ -962,8 +1070,16 @@ You will need to change the class of the node by using the swap functionality.' 
         $identifier = 'copy_of_' . $originalClass->attribute( 'identifier' );
         $db = eZDB::instance();
         $sql = "SELECT count( ezcontentclass_name.name ) AS count FROM ezcontentclass, ezcontentclass_name WHERE ezcontentclass.id = ezcontentclass_name.contentclass_id AND ezcontentclass_name.name like '" . $db->escapeString( $name ) . "%'";
-        $rows = $db->arrayQuery( $sql );
-        $count = $rows[0]['count'];
+        if ( $db->databaseName() === 'mongo' ) {
+            $classNameCountRows = $db->aggregate( 'ezcontentclass_name', [
+                [ '$match'  => [ 'name' => [ '$regex' => '^' . preg_quote( $name, '/' ), '$options' => 'i' ] ] ],
+                [ '$count'  => 'count' ],
+            ] );
+            $count = !empty( $classNameCountRows ) ? (int)$classNameCountRows[0]['count'] : 0;
+        } else {
+            $rows = $db->arrayQuery( $sql );
+            $count = $rows[0]['count'];
+        }
         if ( $count > 0 )
         {
             ++$count;
@@ -1117,6 +1233,9 @@ You will need to change the class of the node by using the swap functionality.' 
     {
         global $eZContentClassObjectCache;
 
+        if ( is_numeric( $id ) )
+            $id = (int)$id;
+
         // If the object given by its id is not cached or should be returned as array
         // then we fetch it from the DB (objects are always cached as arrays).
         if ( !isset( $eZContentClassObjectCache[$id] ) or $asObject === false or $version != eZContentClass::VERSION_STATUS_DEFINED )
@@ -1216,6 +1335,8 @@ You will need to change the class of the node by using the swap functionality.' 
                                                       array( "offset" => 0,
                                                              "length" => 2 ),
                                                       false );
+
+
         if ( count( $rows ) == 0 )
         {
             $contentClass = null;
@@ -1278,18 +1399,29 @@ You will need to change the class of the node by using the swap functionality.' 
                 $conds['identifier'] = $classIdentifierFilter[0];
         }
 
+        $isDatabaseMongoDB = ( eZDB::instance()->databaseName() == 'mongo' );
+
         if ( $sorts && isset( $sorts['name'] ) )
         {
-            $nameFiler = eZContentClassName::sqlFilter( 'ezcontentclass' );
-            $custom_tables = array( $nameFiler['from'] );
-            $custom_conds = "AND " . $nameFiler['where'];
-            $custom_fields = array( $nameFiler['nameField'] );
+            if ( $isDatabaseMongoDB )
+            {
+                // MongoDB has no ezcontentclass_name JOIN table; sort by identifier instead.
+                $sorts['identifier'] = $sorts['name'];
+                unset( $sorts['name'] );
+            }
+            else
+            {
+                $nameFiler = eZContentClassName::sqlFilter( 'ezcontentclass' );
+                $custom_tables = array( $nameFiler['from'] );
+                $custom_conds = "AND " . $nameFiler['where'];
+                $custom_fields = array( $nameFiler['nameField'] );
 
-            $sorts[$nameFiler['orderBy']] = $sorts['name'];
-            unset( $sorts['name'] );
+                $sorts[$nameFiler['orderBy']] = $sorts['name'];
+                unset( $sorts['name'] );
+            }
         }
 
-        return eZPersistentObject::fetchObjectList( eZContentClass::definition(),
+        $fetchListResult = eZPersistentObject::fetchObjectList( eZContentClass::definition(),
                                                             $fields,
                                                             $conds,
                                                             $sorts,
@@ -1299,6 +1431,24 @@ You will need to change the class of the node by using the swap functionality.' 
                                                             $custom_fields,
                                                             $custom_tables,
                                                             $custom_conds );
+
+        // MongoDB: when returning raw arrays, add a 'name' key synthesized from
+        // serialized_name_list so callers expecting the SQL-JOIN 'name' column work.
+        if ( $isDatabaseMongoDB && !$asObject && is_array( $fetchListResult ) )
+        {
+            foreach ( $fetchListResult as &$classRow )
+            {
+                if ( !isset( $classRow['name'] ) && isset( $classRow['serialized_name_list'] ) )
+                {
+                    $contentClassNameList = new eZContentClassNameList();
+                    $contentClassNameList->initFromSerializedList( $classRow['serialized_name_list'] );
+                    $classRow['name'] = $contentClassNameList->name();
+                }
+            }
+            unset( $classRow );
+        }
+
+        return $fetchListResult;
     }
 
     /*!
@@ -1485,11 +1635,18 @@ You will need to change the class of the node by using the swap functionality.' 
     function objectCount()
     {
         $db = eZDB::instance();
-
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $objectCountRows = $db->aggregate( 'ezcontentobject', [
+                [ '$match'  => [ 'contentclass_id' => (int)$this->ID, 'status' => eZContentObject::STATUS_PUBLISHED ] ],
+                [ '$count'  => 'count' ],
+            ] );
+            return isset( $objectCountRows[0]['count'] ) ? $objectCountRows[0]['count'] : 0;
+        }
         $countRow = $db->arrayQuery( 'SELECT count(*) AS count FROM ezcontentobject '.
                                      'WHERE contentclass_id='.$this->ID ." and status = " . eZContentObject::STATUS_PUBLISHED );
 
-        return $countRow[0]['count'];
+        return isset( $countRow[0]['count'] ) ? $countRow[0]['count'] : 0;
     }
 
     /*!
@@ -1864,7 +2021,17 @@ You will need to change the class of the node by using the swap functionality.' 
             {
                 // Fetch identifier/id pair from db
                 $query = "SELECT id, identifier FROM ezcontentclass where version=0";
-                $identifierArray = $db->arrayQuery( $query );
+                if ( $db->databaseName() === 'mongo' )
+                {
+                    $identifierArray = $db->aggregate( 'ezcontentclass', [
+                        [ '$match'   => [ 'version' => 0 ] ],
+                        [ '$project' => [ '_id' => 0, 'id' => 1, 'identifier' => 1 ] ],
+                    ] );
+                }
+                else
+                {
+                    $identifierArray = $db->arrayQuery( $query );
+                }
 
                 self::$identifierHash = array();
                 foreach ( $identifierArray as $identifierRow )
@@ -1897,7 +2064,16 @@ You will need to change the class of the node by using the swap functionality.' 
                 WHERE version=$version
                 AND data_type_string='$escapedDataTypeString'";
 
-        $classIDArray = $db->arrayQuery( $sql, array( 'column' => 'contentclass_id' ) );
+        if ( $db->databaseName() === 'mongo' ) {
+            $classAttributeRows = $db->aggregate( 'ezcontentclass_attribute', [
+                [ '$match'  => [ 'version' => (int)$version, 'data_type_string' => $escapedDataTypeString ] ],
+                [ '$group'  => [ '_id' => '$contentclass_id' ] ],
+                [ '$project'=> [ '_id' => 0, 'contentclass_id' => '$_id' ] ],
+            ] );
+            $classIDArray = array_column( $classAttributeRows, 'contentclass_id' );
+        } else {
+            $classIDArray = $db->arrayQuery( $sql, array( 'column' => 'contentclass_id' ) );
+        }
         return $classIDArray;
     }
 

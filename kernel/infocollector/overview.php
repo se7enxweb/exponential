@@ -72,6 +72,59 @@ else
 
 
 $db = eZDB::instance();
+if ( $db->databaseName() === 'mongo' )
+{
+    $objects = $db->aggregate( 'ezinfocollection', [
+        [ '$group'  => [ '_id' => '$contentobject_id' ] ],
+        [ '$lookup' => [
+            'from'         => 'ezcontentobject',
+            'localField'   => '_id',
+            'foreignField' => 'id',
+            'as'           => '_obj',
+        ] ],
+        [ '$unwind' => '$_obj' ],
+        [ '$lookup' => [
+            'from'     => 'ezcontentobject_tree',
+            'let'      => [ 'obj_id' => '$_id' ],
+            'pipeline' => [ [ '$match' => [ '$expr' => [ '$and' => [
+                [ '$eq' => [ '$contentobject_id', '$$obj_id' ] ],
+                [ '$eq' => [ '$node_id', '$main_node_id' ] ],
+            ] ] ] ] ],
+            'as'       => '_tree',
+        ] ],
+        [ '$unwind' => '$_tree' ],
+        [ '$lookup' => [
+            'from'     => 'ezcontentclass',
+            'let'      => [ 'class_id' => '$_obj.contentclass_id' ],
+            'pipeline' => [ [ '$match' => [ '$expr' => [ '$and' => [
+                [ '$eq' => [ '$id', '$$class_id' ] ],
+                [ '$eq' => [ '$version', 0 ] ],
+            ] ] ] ] ],
+            'as'       => '_class',
+        ] ],
+        [ '$unwind' => '$_class' ],
+        [ '$sort'   => [ '_obj.name' => 1 ] ],
+        [ '$skip'   => (int) $offset ],
+        [ '$limit'  => (int) $limit ],
+        [ '$project' => [
+            '_id'                  => 0,
+            'contentobject_id'     => '$_id',
+            'name'                 => '$_obj.name',
+            'main_node_id'         => '$_tree.main_node_id',
+            'serialized_name_list' => '$_class.serialized_name_list',
+            'class_identifier'     => '$_class.identifier',
+        ] ],
+    ] );
+    $numberOfInfoCollectorObjects = 0;
+    $countRows = $db->aggregate( 'ezinfocollection', [
+        [ '$group' => [ '_id' => '$contentobject_id' ] ],
+        [ '$count' => 'count' ],
+    ] );
+    if ( !empty( $countRows ) )
+        $numberOfInfoCollectorObjects = (int) $countRows[0]['count'];
+}
+else
+{
 $objects = $db->arrayQuery( 'SELECT DISTINCT ezcontentobject.id AS contentobject_id,
                                              ezcontentobject.name,
                                              ezcontentobject_tree.main_node_id,
@@ -101,6 +154,7 @@ $numberOfInfoCollectorObjects = 0;
 if ( $infoCollectorObjectsQuery )
 {
     $numberOfInfoCollectorObjects = $infoCollectorObjectsQuery[0]['count'];
+}
 }
 
 foreach ( array_keys( $objects ) as $i )

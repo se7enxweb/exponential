@@ -169,10 +169,20 @@ class eZKeywordType extends eZDataType
 
         $db = eZDB::instance();
 
-        /* First we retrieve all the keyword ID related to this object attribute */
-        $res = $db->arrayQuery( "SELECT keyword_id
+        /* First we retrieve all the keyword IDs related to this object attribute */
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $res = $db->aggregate( 'ezkeyword_attribute_link', [
+                [ '$match'   => [ 'objectattribute_id' => (int)$contentObjectAttributeID ] ],
+                [ '$project' => [ '_id' => 0, 'keyword_id' => 1 ] ],
+            ] );
+        }
+        else
+        {
+            $res = $db->arrayQuery( "SELECT keyword_id
                                  FROM ezkeyword_attribute_link
                                  WHERE objectattribute_id='$contentObjectAttributeID'" );
+        }
         if ( !count ( $res ) )
         {
             /* If there are no keywords at all, we abort the function as there
@@ -181,28 +191,50 @@ class eZKeywordType extends eZDataType
         }
         $keywordIDs = array();
         foreach ( $res as $record )
-            $keywordIDs[] = $record['keyword_id'];
+            $keywordIDs[] = (int)$record['keyword_id'];
         $keywordIDString = implode( ', ', $keywordIDs );
 
-        /* Then we see which ones only have a count of 1 */
-        $res = $db->arrayQuery( "SELECT keyword_id
+        /* Then we see which ones only have a count of 1 (i.e. only used by this attribute) */
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Group links by keyword_id, keep only those with exactly 1 reference
+            $res = $db->aggregate( 'ezkeyword_attribute_link', [
+                [ '$match'  => [ 'keyword_id' => [ '$in' => $keywordIDs ] ] ],
+                [ '$group'  => [ '_id' => '$keyword_id', 'cnt' => [ '$sum' => 1 ] ] ],
+                [ '$match'  => [ 'cnt' => 1 ] ],
+                [ '$project' => [ '_id' => 0, 'keyword_id' => '$_id' ] ],
+            ] );
+        }
+        else
+        {
+            $res = $db->arrayQuery( "SELECT keyword_id
                                  FROM ezkeyword, ezkeyword_attribute_link
                                  WHERE ezkeyword.id = ezkeyword_attribute_link.keyword_id
                                      AND ezkeyword.id IN ($keywordIDString)
                                  GROUP BY keyword_id
                                  HAVING COUNT(*) = 1" );
+        }
         $unusedKeywordIDs = array();
         foreach ( $res as $record )
-            $unusedKeywordIDs[] = $record['keyword_id'];
-        $unusedKeywordIDString = implode( ', ', $unusedKeywordIDs );
+            $unusedKeywordIDs[] = (int)$record['keyword_id'];
 
         /* Then we delete those unused keywords */
-        if ( $unusedKeywordIDString )
-            $db->query( "DELETE FROM ezkeyword WHERE id IN ($unusedKeywordIDString)" );
+        if ( !empty( $unusedKeywordIDs ) )
+        {
+            if ( $db->databaseName() === 'mongo' )
+                $db->deleteWhere( 'ezkeyword', [ 'id' => [ '$in' => $unusedKeywordIDs ] ] );
+            else
+            {
+                $unusedKeywordIDString = implode( ', ', $unusedKeywordIDs );
+                $db->query( "DELETE FROM ezkeyword WHERE id IN ($unusedKeywordIDString)" );
+            }
+        }
 
-        /* And as last we remove the link between the keyword and the object
-         * attribute to be removed */
-        $db->query( "DELETE FROM ezkeyword_attribute_link
+        /* And as last we remove the link between the keyword and the object attribute */
+        if ( $db->databaseName() === 'mongo' )
+            $db->deleteWhere( 'ezkeyword_attribute_link', [ 'objectattribute_id' => (int)$contentObjectAttributeID ] );
+        else
+            $db->query( "DELETE FROM ezkeyword_attribute_link
                      WHERE objectattribute_id='$contentObjectAttributeID'" );
     }
 

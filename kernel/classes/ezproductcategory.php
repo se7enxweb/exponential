@@ -71,6 +71,36 @@ class eZProductCategory extends eZPersistentObject
         $db = eZDB::instance();
         $categoryID =(int) $categoryID;
         $categoryAttrName = $db->escapeString( $categoryAttrName );
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Find the class attribute IDs for ezproductcategory attributes with this identifier
+            $attrDefs = $db->aggregate( 'ezcontentclass_attribute', [
+                [ '$match' => [ 'data_type_string' => 'ezproductcategory', 'identifier' => $categoryAttrName, 'version' => 0 ] ],
+                [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+            ] );
+            $attrDefIDs = array_map( 'intval', array_column( $attrDefs, 'id' ) );
+            if ( empty( $attrDefIDs ) )
+                return 0;
+
+            $rows = $db->aggregate( 'ezcontentobject_attribute', [
+                [ '$match' => [
+                    'contentclassattribute_id' => [ '$in' => $attrDefIDs ],
+                    'data_int'                 => $categoryID,
+                ] ],
+                [ '$lookup' => [
+                    'from'         => 'ezcontentobject',
+                    'localField'   => 'contentobject_id',
+                    'foreignField' => 'id',
+                    'as'           => '_obj',
+                ] ],
+                [ '$unwind' => '$_obj' ],
+                [ '$match'  => [ '$expr' => [ '$eq' => [ '$version', '$_obj.current_version' ] ] ] ],
+                [ '$count'  => 'count' ],
+            ] );
+            return !empty( $rows ) ? (int)$rows[0]['count'] : 0;
+        }
+
         $query = "SELECT COUNT(*) AS count " .
                  " FROM ezcontentobject_attribute coa, ezcontentclass_attribute cca, ezcontentobject co " .
                  "WHERE " .
@@ -115,21 +145,59 @@ class eZProductCategory extends eZPersistentObject
              $categoryAttrName = $ini->variable( 'VATSettings', 'ProductCategoryAttribute' ) )
         {
             $categoryAttrName = $db->escapeString( $categoryAttrName );
-            $query = "SELECT coa.id FROM ezcontentobject_attribute coa, ezcontentclass_attribute cca, ezcontentobject co " .
-                     "WHERE " .
-                     " cca.id=coa.contentclassattribute_id " .
-                     " AND coa.contentobject_id=co.id " .
-                     " AND cca.data_type_string='ezproductcategory' " .
-                     " AND cca.identifier='$categoryAttrName' " .
-                     " AND coa.version=co.current_version " .
-                     " AND coa.data_int=$id";
 
-            $rows = $db->arrayQuery( $query );
-
-            foreach ( $rows as $row )
+            if ( $db->databaseName() === 'mongo' )
             {
-                $query = "UPDATE ezcontentobject_attribute SET data_int=0, sort_key_int=0 WHERE id=" . (int) $row['id'];
-                $db->query( $query );
+                // Find class attribute IDs for ezproductcategory with this identifier
+                $attrDefs = $db->aggregate( 'ezcontentclass_attribute', [
+                    [ '$match' => [ 'data_type_string' => 'ezproductcategory', 'identifier' => $categoryAttrName, 'version' => 0 ] ],
+                    [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                ] );
+                $attrDefIDs = array_map( 'intval', array_column( $attrDefs, 'id' ) );
+                if ( !empty( $attrDefIDs ) )
+                {
+                    // Find attribute instances pointing at this category on current versions
+                    $attrRows = $db->aggregate( 'ezcontentobject_attribute', [
+                        [ '$match' => [
+                            'contentclassattribute_id' => [ '$in' => $attrDefIDs ],
+                            'data_int'                 => $id,
+                        ] ],
+                        [ '$lookup' => [
+                            'from'         => 'ezcontentobject',
+                            'localField'   => 'contentobject_id',
+                            'foreignField' => 'id',
+                            'as'           => '_obj',
+                        ] ],
+                        [ '$unwind' => '$_obj' ],
+                        [ '$match'  => [ '$expr' => [ '$eq' => [ '$version', '$_obj.current_version' ] ] ] ],
+                        [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                    ] );
+                    foreach ( $attrRows as $attrRow )
+                    {
+                        $db->mongoUpdateOne( 'ezcontentobject_attribute',
+                            [ 'id' => (int)$attrRow['id'] ],
+                            [ '$set' => [ 'data_int' => 0, 'sort_key_int' => 0 ] ] );
+                    }
+                }
+            }
+            else
+            {
+                $query = "SELECT coa.id FROM ezcontentobject_attribute coa, ezcontentclass_attribute cca, ezcontentobject co " .
+                         "WHERE " .
+                         " cca.id=coa.contentclassattribute_id " .
+                         " AND coa.contentobject_id=co.id " .
+                         " AND cca.data_type_string='ezproductcategory' " .
+                         " AND cca.identifier='$categoryAttrName' " .
+                         " AND coa.version=co.current_version " .
+                         " AND coa.data_int=$id";
+
+                $rows = $db->arrayQuery( $query );
+
+                foreach ( $rows as $row )
+                {
+                    $query = "UPDATE ezcontentobject_attribute SET data_int=0, sort_key_int=0 WHERE id=" . (int) $row['id'];
+                    $db->query( $query );
+                }
             }
         }
 

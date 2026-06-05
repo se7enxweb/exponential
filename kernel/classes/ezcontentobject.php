@@ -368,7 +368,17 @@ class eZContentObject extends eZPersistentObject
         $id = $this->attribute( 'id' );
 
         $db = eZDB::instance();
-        $rows = $db->arrayQuery( "SELECT name, real_translation FROM ezcontentobject_name WHERE contentobject_id = '$id' AND content_version='$version'" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentobject_name', [
+                [ '$match' => [ 'contentobject_id' => (int)$id, 'content_version' => (int)$version ] ],
+                [ '$project' => [ 'name' => 1, 'real_translation' => 1, '_id' => 0 ] ],
+            ] );
+        }
+        else
+        {
+            $rows = $db->arrayQuery( "SELECT name, real_translation FROM ezcontentobject_name WHERE contentobject_id = '$id' AND content_version='$version'" );
+        }
         $names = array();
         foreach ( $rows as $row )
         {
@@ -398,8 +408,16 @@ class eZContentObject extends eZPersistentObject
         if ( !$lang )
         {
             // If $lang not given we will use the initial language of the object
-            $query = "SELECT initial_language_id FROM ezcontentobject WHERE id='$contentObjectID'";
-            $rows = $db->arrayQuery( $query );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $row = $db->findOne( 'ezcontentobject', [ 'id' => (int)$contentObjectID ], [ 'initial_language_id' => 1, '_id' => 0 ] );
+                $rows = $row ? [ [ 'initial_language_id' => is_array($row) ? $row['initial_language_id'] : $row->initial_language_id ] ] : [];
+            }
+            else
+            {
+                $query = "SELECT initial_language_id FROM ezcontentobject WHERE id='$contentObjectID'";
+                $rows = $db->arrayQuery( $query );
+            }
             if ( $rows )
             {
                 $languageID = $rows[0]['initial_language_id'];
@@ -427,12 +445,32 @@ class eZContentObject extends eZPersistentObject
             $languageID = (int) $languageID | 1;
         }
 
-        $query= "SELECT name, content_translation
-                 FROM ezcontentobject_name
-                 WHERE contentobject_id = '$contentObjectID'
-                       AND content_version = '$version'
-                       AND ( content_translation = '$lang' OR language_id = '$languageID' )";
-        $result = $db->arrayQuery( $query );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Use aggregate so the filter is passed directly without translateConditions() mangling $or
+            $pipeline = [
+                [ '$match' => [
+                    'contentobject_id' => (int)$contentObjectID,
+                    'content_version'  => $version,
+                    '$or'             => [
+                        [ 'content_translation' => $lang ],
+                        [ 'language_id'         => (int)$languageID ],
+                    ],
+                ] ],
+                [ '$project' => [ '_id' => 0, 'name' => 1, 'content_translation' => 1 ] ],
+            ];
+            $result = $db->aggregate( 'ezcontentobject_name', $pipeline );
+            if ( $result === false ) $result = [];
+        }
+        else
+        {
+            $query= "SELECT name, content_translation
+                     FROM ezcontentobject_name
+                     WHERE contentobject_id = '$contentObjectID'
+                           AND content_version = '$version'
+                           AND ( content_translation = '$lang' OR language_id = '$languageID' )";
+            $result = $db->arrayQuery( $query );
+        }
 
         $resCount = count( $result );
         if( $resCount < 1 )
@@ -512,6 +550,17 @@ class eZContentObject extends eZPersistentObject
 
         $db->begin();
 
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $db->upsert(
+                'ezcontentobject_name',
+                [ 'contentobject_id' => $objectID, 'content_version' => $versionNum, 'content_translation' => $languageCode ],
+                [ 'contentobject_id' => $objectID, 'content_version' => $versionNum, 'content_translation' => $languageCode,
+                  'real_translation' => $languageCode, 'language_id' => $languageID, 'name' => $objectName ]
+            );
+        }
+        else
+        {
         // Check if name is already set before setting/changing it.
         // This helps to avoid deadlocks in mysql: a pair of DELETE/INSERT might cause deadlock here
         // in case of concurrent execution.
@@ -539,6 +588,7 @@ class eZContentObject extends eZPersistentObject
                                         '$languageCode',
                                         '$languageCode',
                                         '$languageID' )" );
+        }
         }
 
         $db->commit();
@@ -739,6 +789,34 @@ class eZContentObject extends eZPersistentObject
 
         $query .= $db->generateSQLINStatement( $identifierQuotedString, 'identifier' );
 
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $attrRows = $db->aggregate( 'ezcontentobject_attribute', [ [ '$match' => [
+                'contentobject_id' => (int) $this->ID,
+                'version'          => (int) $version,
+            ] ] ] );
+            if ( empty( $attrRows ) ) return null;
+            $classAttrIDs = array_values( array_unique( array_map( 'intval', array_column( $attrRows, 'contentclassattribute_id' ) ) ) );
+            $classAttrRows = $db->aggregate( 'ezcontentclass_attribute', [ [ '$match' => [
+                'id'      => [ '$in' => $classAttrIDs ],
+                'version' => 0,
+            ] ] ] );
+            $classAttrMap = [];
+            foreach ( $classAttrRows as $ca ) $classAttrMap[(int)$ca['id']] = $ca;
+            $returnArray = [];
+            foreach ( $attrRows as $ar )
+            {
+                $caID = (int)$ar['contentclassattribute_id'];
+                if ( !isset( $classAttrMap[$caID] ) ) continue;
+                $identifier = $classAttrMap[$caID]['identifier'] ?? null;
+                if ( !in_array( $identifier, $identifierArray ) ) continue;
+                $row = array_merge( $ar, [ 'identifier' => $identifier ] );
+                $obj = new eZContentObjectAttribute( $row );
+                $returnArray[$ar['id']] = $asObject ? $obj : $row;
+            }
+            return empty( $returnArray ) ? null : $returnArray;
+        }
+
         $rows = $db->arrayQuery( $query );
 
         if ( count( $rows ) > 0 )
@@ -866,7 +944,17 @@ class eZContentObject extends eZPersistentObject
     {
         $db = eZDB::instance();
         $remoteID =$db->escapeString( $remoteID );
-        $resultArray = $db->arrayQuery( 'SELECT id FROM ezcontentobject WHERE remote_id=\'' . $remoteID . '\'' );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $resultArray = $db->aggregate( 'ezcontentobject', [
+                [ '$match' => [ 'remote_id' => $remoteID ] ],
+                [ '$project' => [ 'id' => 1, '_id' => 0 ] ],
+            ] );
+        }
+        else
+        {
+            $resultArray = $db->arrayQuery( 'SELECT id FROM ezcontentobject WHERE remote_id=\'' . $remoteID . '\'' );
+        }
         if ( count( $resultArray ) != 1 )
             $object = null;
         else
@@ -897,7 +985,39 @@ class eZContentObject extends eZPersistentObject
         {
             $db = eZDB::instance();
 
-            $resArray = $db->arrayQuery( eZContentObject::createFetchSQLString( $id ) );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $id = (int) $id;
+                $pipeline = [
+                    [ '$match' => [ 'id' => $id ] ],
+                    [
+                        '$lookup' => [
+                            'from'         => 'ezcontentclass',
+                            'localField'   => 'contentclass_id',
+                            'foreignField' => 'id',
+                            'as'           => '_cls',
+                        ],
+                    ],
+                    [ '$unwind' => '$_cls' ],
+                    [ '$match' => [ '_cls.version' => 0 ] ],
+                    [
+                        '$addFields' => [
+                            'serialized_name_list'  => '$_cls.serialized_name_list',
+                            'contentclass_identifier' => '$_cls.identifier',
+                            'is_container'          => '$_cls.is_container',
+                        ],
+                    ],
+                    [ '$project' => [ '_id' => 0, '_cls' => 0 ] ],
+                ];
+                $rows = $db->aggregate( 'ezcontentobject', $pipeline );
+                $resArray = [];
+                foreach ( $rows as $doc )
+                    $resArray[] = is_array( $doc ) ? $doc : iterator_to_array( $doc );
+            }
+            else
+            {
+                $resArray = $db->arrayQuery( eZContentObject::createFetchSQLString( $id ) );
+            }
 
             $objectArray = array();
             if ( count( $resArray ) == 1 && $resArray !== false )
@@ -951,6 +1071,63 @@ class eZContentObject extends eZPersistentObject
         {
             // Select for update, to lock the row
             $resArray = $db->arrayQuery( "SELECT * FROM ezcontentobject WHERE id='$id'" );
+        }
+        elseif ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentobject', [
+                [ '$match' => [ 'id' => $id ] ],
+                [
+                    '$lookup' => [
+                        'from'         => 'ezcontentclass',
+                        'let'          => [ 'cid' => '$contentclass_id' ],
+                        'pipeline'     => [
+                            [ '$match' => [ '$expr' => [ '$and' => [
+                                [ '$eq' => [ '$id', '$$cid' ] ],
+                                [ '$eq' => [ '$version', 0 ] ],
+                            ] ] ] ],
+                            [ '$project' => [
+                                '_id'                    => 0,
+                                'serialized_name_list'   => 1,
+                                'contentclass_identifier' => '$identifier',
+                                'is_container'           => 1,
+                            ] ],
+                        ],
+                        'as'           => '_class',
+                    ],
+                ],
+                [ '$unwind' => [ 'path' => '$_class', 'preserveNullAndEmptyArrays' => true ] ],
+                [
+                    '$project' => [
+                        '_id'                    => 0,
+                        'id'                     => 1,
+                        'contentclass_id'        => 1,
+                        'section_id'             => 1,
+                        'owner_id'               => 1,
+                        'current_version'        => 1,
+                        'initial_language_id'    => 1,
+                        'language_mask'          => 1,
+                        'status'                 => 1,
+                        'name'                   => 1,
+                        'published'              => 1,
+                        'modified'               => 1,
+                        'remote_id'              => 1,
+                        'serialized_name_list'   => '$_class.serialized_name_list',
+                        'contentclass_identifier' => '$_class.contentclass_identifier',
+                        'is_container'           => '$_class.is_container',
+                    ],
+                ],
+            ] );
+            if ( !is_array( $rows ) || count( $rows ) !== 1 )
+            {
+                eZDebug::writeError( "Object not found ($id)", __METHOD__ );
+                return null;
+            }
+            $objectArray = $rows[0];
+            if ( !$asObject )
+                return $objectArray;
+            $obj = new eZContentObject( $objectArray );
+            $eZContentObjectContentObjectCache[$id] = $obj;
+            return $obj;
         }
         else
         {
@@ -1006,6 +1183,12 @@ class eZContentObject extends eZPersistentObject
 
         // If the object is not cached we need to check the DB
         $db = eZDB::instance();
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentobject', [ [ '$match' => [ 'id' => (int) $id ] ] ] );
+            return !empty( $rows );
+        }
 
         $resArray = $db->arrayQuery( eZContentObject::createFetchSQLString( $id ) );
 
@@ -1077,6 +1260,37 @@ class eZContentObject extends eZPersistentObject
 
         $db = eZDB::instance();
 
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $nodeIDs = array_map( 'intval', $nodeID );
+            $treeRows = $db->find( 'ezcontentobject_tree',
+                [ 'node_id' => [ '$in' => $nodeIDs ] ],
+                [ 'node_id' => 1, 'contentobject_id' => 1, '_id' => 0 ]
+            );
+            if ( empty( $treeRows ) )
+            {
+                eZDebug::writeError( 'A problem occured while fetching objects with following NodeIDs : ' . implode( ', ', $nodeID ), __METHOD__ );
+                return $resultAsArray ? array() : null;
+            }
+            $objectArray = array();
+            foreach ( $treeRows as $treeRow )
+            {
+                $objID = (int)( is_array( $treeRow ) ? $treeRow['contentobject_id'] : $treeRow->contentobject_id );
+                $nid   = (int)( is_array( $treeRow ) ? $treeRow['node_id']          : $treeRow->node_id );
+                $obj   = eZContentObject::fetch( $objID );
+                if ( $obj )
+                    $objectArray[$nid] = $asObject ? $obj : $obj;
+            }
+            if ( empty( $objectArray ) )
+            {
+                eZDebug::writeError( 'A problem occured while fetching objects with following NodeIDs : ' . implode( ', ', $nodeID ), __METHOD__ );
+                return $resultAsArray ? array() : null;
+            }
+            if ( !$resultAsArray )
+                return reset( $objectArray );
+            return $objectArray;
+        }
+
         $resArray = $db->arrayQuery(
             "SELECT co.*, con.name as name, con.real_translation, cot.node_id
              FROM ezcontentobject co
@@ -1135,6 +1349,46 @@ class eZContentObject extends eZPersistentObject
 
         $db = eZDB::instance();
 
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $intIDs = array_values( array_map( 'intval', $idArray ) );
+            $pipeline = [
+                [ '$match' => [ 'id' => [ '$in' => $intIDs ] ] ],
+                [ '$lookup' => [
+                    'from'         => 'ezcontentclass',
+                    'localField'   => 'contentclass_id',
+                    'foreignField' => 'id',
+                    'as'           => '_cls',
+                ] ],
+                [ '$unwind' => [ 'path' => '$_cls', 'preserveNullAndEmptyArrays' => true ] ],
+                [ '$match' => [ '$or' => [ [ '_cls.version' => 0 ], [ '_cls' => [ '$exists' => false ] ] ] ] ],
+                [ '$lookup' => [
+                    'from'         => 'ezcontentobject_name',
+                    'let'          => [ 'oid' => '$id', 'ver' => '$current_version' ],
+                    'pipeline'     => [
+                        [ '$match' => [ '$expr' => [ '$and' => [
+                            [ '$eq' => [ '$contentobject_id', '$$oid' ] ],
+                            [ '$eq' => [ '$content_version', '$$ver' ] ],
+                        ] ] ] ],
+                        [ '$limit' => 1 ],
+                    ],
+                    'as'           => '_name',
+                ] ],
+                [ '$unwind' => [ 'path' => '$_name', 'preserveNullAndEmptyArrays' => true ] ],
+                [ '$addFields' => [
+                    'class_serialized_name_list' => '$_cls.serialized_name_list',
+                    'name'                       => '$_name.name',
+                    'real_translation'           => '$_name.real_translation',
+                    'contentclass_identifier'    => '$_cls.identifier',
+                    'is_container'               => '$_cls.is_container',
+                ] ],
+                [ '$project' => [ '_id' => 0, '_cls' => 0, '_name' => 0 ] ],
+            ];
+            $resRowArray = $db->aggregate( 'ezcontentobject', $pipeline );
+            if ( $resRowArray === false ) $resRowArray = [];
+        }
+        else
+        {
         $resRowArray = $db->arrayQuery(
             "SELECT ezcontentclass.serialized_name_list as class_serialized_name_list, ezcontentobject.*, ezcontentobject_name.name as name,  ezcontentobject_name.real_translation
              FROM
@@ -1149,6 +1403,7 @@ class eZContentObject extends eZPersistentObject
                 ezcontentobject.current_version = ezcontentobject_name.content_version AND " .
                 eZContentLanguage::sqlFilter( 'ezcontentobject_name', 'ezcontentobject', 'language_id', 'language_mask', $lang )
         );
+        } // end mongo/sql branch
 
         $objectRetArray = array();
         foreach ( $resRowArray as $resRow )
@@ -1309,6 +1564,12 @@ class eZContentObject extends eZPersistentObject
      */
     function version( $version, $asObject = true )
     {
+        // version=0 is a sentinel meaning "current version"
+        if ( (int) $version === 0 )
+        {
+            $version = $this->attribute( 'current_version' );
+        }
+
         if ( $asObject )
         {
             global $eZContentObjectVersionCache;
@@ -1717,6 +1978,8 @@ class eZContentObject extends eZPersistentObject
         $user = eZUser::currentUser();
         $userID = $user->attribute( 'contentobject_id' );
 
+        $originalObjectID = $this->attribute( 'id' );
+
         $contentObject = clone $this;
         $contentObject->setAttribute( 'current_version', 1 );
         $contentObject->setAttribute( 'owner_id', $userID );
@@ -1724,14 +1987,37 @@ class eZContentObject extends eZPersistentObject
         $contentObject->setAttribute( 'remote_id', eZRemoteIdUtility::generate( 'object' ) );
 
         $db = eZDB::instance();
+
+        // MongoDB: clear the cloned id so storeObject() does INSERT (nextSeqID) not UPSERT
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $contentObject->setAttribute( 'id', null );
+        }
+
         $db->begin();
         $contentObject->store();
 
-        $originalObjectID = $this->attribute( 'id' );
         $contentObjectID = $contentObject->attribute( 'id' );
 
-        $db->query( "INSERT INTO ezcobj_state_link (contentobject_state_id, contentobject_id)
-                     SELECT contentobject_state_id, $contentObjectID FROM ezcobj_state_link WHERE contentobject_id = $originalObjectID" );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $stateLinks = $db->aggregate( 'ezcobj_state_link', [
+                [ '$match' => [ 'contentobject_id' => (int)$originalObjectID ] ],
+                [ '$project' => [ '_id' => 0, 'contentobject_state_id' => 1 ] ]
+            ] );
+            foreach ( $stateLinks as $link )
+            {
+                $db->insert( 'ezcobj_state_link', [
+                    'contentobject_state_id' => (int)$link['contentobject_state_id'],
+                    'contentobject_id'       => (int)$contentObjectID
+                ] );
+            }
+        }
+        else
+        {
+            $db->query( "INSERT INTO ezcobj_state_link (contentobject_state_id, contentobject_id)
+                         SELECT contentobject_state_id, $contentObjectID FROM ezcobj_state_link WHERE contentobject_id = $originalObjectID" );
+        }
 
         $contentObject->setName( $this->attribute('name') );
         eZDebugSetting::writeDebug( 'kernel-content-object-copy', $contentObject, 'contentObject' );
@@ -2212,6 +2498,71 @@ class eZContentObject extends eZPersistentObject
 
         if ( !$language || !isset( $this->ContentObjectAttributes[$version][$language] ) )
         {
+            // --- MongoDB native path -----------------------------------------
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $attrMatch = [
+                    'contentobject_id' => (int) $this->ID,
+                    'version'          => (int) $version,
+                ];
+                if ( $language )
+                    $attrMatch['language_code'] = $language;
+                if ( $contentObjectAttributeID )
+                    $attrMatch['id'] = (int) $contentObjectAttributeID;
+
+                $pipeline = [
+                    [ '$match' => $attrMatch ],
+                    [
+                        '$lookup' => [
+                            'from'         => 'ezcontentclass_attribute',
+                            'localField'   => 'contentclassattribute_id',
+                            'foreignField' => 'id',
+                            'as'           => '_cls',
+                        ],
+                    ],
+                    [ '$unwind' => '$_cls' ],
+                    [ '$match' => [ '_cls.version' => 0 ] ],
+                    [
+                        '$addFields' => [
+                            'identifier'        => '$_cls.identifier',
+                            '_cls_placement'    => '$_cls.placement',
+                        ],
+                    ],
+                    [ '$sort' => [ '_cls_placement' => 1, 'language_code' => 1 ] ],
+                    [
+                        '$project' => [
+                            '_id'                      => 0,
+                            'id'                       => 1,
+                            'contentobject_id'         => 1,
+                            'version'                  => 1,
+                            'language_code'            => 1,
+                            'language_id'              => 1,
+                            'contentclassattribute_id' => 1,
+                            'attribute_original_id'    => 1,
+                            'sort_key_int'             => 1,
+                            'sort_key_string'          => 1,
+                            'data_type_string'         => 1,
+                            'data_text'                => 1,
+                            'data_int'                 => 1,
+                            'data_float'               => 1,
+                            'identifier'               => 1,
+                        ],
+                    ],
+                ];
+                $rawRows = $db->aggregate( 'ezcontentobject_attribute', $pipeline );
+                $attributeArray = [];
+                foreach ( $rawRows as $doc )
+                {
+                    $row = [];
+                    foreach ( $doc as $k => $v )
+                        $row[$k] = ( $v instanceof \MongoDB\Model\BSONDocument || $v instanceof \MongoDB\Model\BSONArray )
+                            ? (string) $v : $v;
+                    $attributeArray[] = $row;
+                }
+            }
+            else
+            {
+            // --- SQL path (MySQL) --------------------------------------------
             $versionText = "AND                    ezcontentobject_attribute.version = '$version'";
             if ( $language )
             {
@@ -2241,6 +2592,7 @@ class eZContentObject extends eZPersistentObject
                     ezcontentobject_attribute.language_code ASC";
 
             $attributeArray = $db->arrayQuery( $query );
+            } // end SQL path
 
             if ( !$language && $attributeArray )
             {
@@ -2329,7 +2681,75 @@ class eZContentObject extends eZPersistentObject
                   ORDER BY
                     ezcontentobject_attribute.contentobject_id, ezcontentclass_attribute.placement ASC";
 
+            // --- MongoDB native path -----------------------------------------
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $orConditions = [];
+                foreach ( $objList as $obj )
+                {
+                    $object   = ( $obj instanceof eZContentObject ) ? $obj : $obj->attribute( 'object' );
+                    $language = $object->currentLanguage();
+                    $orConditions[] = [
+                        'contentobject_id' => (int) $object->attribute( 'id' ),
+                        'version'          => (int) $object->attribute( 'current_version' ),
+                        'language_code'    => $language,
+                    ];
+                }
+                $matchStage = count( $orConditions ) === 1 ? $orConditions[0] : [ '$or' => $orConditions ];
+                $rawRows = $db->aggregate( 'ezcontentobject_attribute', [
+                    [ '$match' => $matchStage ],
+                    [
+                        '$lookup' => [
+                            'from'         => 'ezcontentclass_attribute',
+                            'localField'   => 'contentclassattribute_id',
+                            'foreignField' => 'id',
+                            'as'           => '_cls',
+                        ],
+                    ],
+                    [ '$unwind' => '$_cls' ],
+                    [ '$match'  => [ '_cls.version' => 0 ] ],
+                    [
+                        '$addFields' => [
+                            'identifier'     => '$_cls.identifier',
+                            '_cls_placement' => '$_cls.placement',
+                        ],
+                    ],
+                    [ '$sort' => [ 'contentobject_id' => 1, '_cls_placement' => 1 ] ],
+                    [
+                        '$project' => [
+                            '_id'                      => 0,
+                            'id'                       => 1,
+                            'contentobject_id'         => 1,
+                            'version'                  => 1,
+                            'language_code'            => 1,
+                            'language_id'              => 1,
+                            'contentclassattribute_id' => 1,
+                            'attribute_original_id'    => 1,
+                            'sort_key_int'             => 1,
+                            'sort_key_string'          => 1,
+                            'data_type_string'         => 1,
+                            'data_text'                => 1,
+                            'data_int'                 => 1,
+                            'data_float'               => 1,
+                            'identifier'               => 1,
+                        ],
+                    ],
+                ] );
+                $attributeArray = [];
+                foreach ( $rawRows as $doc )
+                {
+                    $row = [];
+                    foreach ( $doc as $k => $v )
+                        $row[$k] = ( $v instanceof \MongoDB\Model\BSONDocument || $v instanceof \MongoDB\Model\BSONArray )
+                            ? (string) $v : $v;
+                    $attributeArray[] = $row;
+                }
+            }
+            else
+            {
+            // --- SQL path (MySQL) ----------------------------------------
             $attributeArray = $db->arrayQuery( $query );
+            } // end SQL path
 
             $tmpAttributeObjectList = array();
             $returnAttributeArray = array();
@@ -2751,10 +3171,18 @@ class eZContentObject extends eZPersistentObject
     function nextVersion()
     {
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentobject_version', [
+                [ '$match' => [ 'contentobject_id' => (int) $this->ID ] ],
+                [ '$group' => [ '_id' => null, 'maxVer' => [ '$max' => '$version' ] ] ],
+            ] );
+            $maxVer = ( !empty( $rows ) && isset( $rows[0]['maxVer'] ) ) ? (int) $rows[0]['maxVer'] : 0;
+            return $maxVer + 1;
+        }
         $versions = $db->arrayQuery( "SELECT ( MAX( version ) + 1 ) AS next_id FROM ezcontentobject_version
                        WHERE contentobject_id='$this->ID'" );
         return $versions[0]["next_id"];
-
     }
 
     /**
@@ -2765,6 +3193,16 @@ class eZContentObject extends eZPersistentObject
     function previousVersion()
     {
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentobject_version', [
+                [ '$match'   => [ 'contentobject_id' => (int) $this->ID ] ],
+                [ '$sort'    => [ 'version' => -1 ] ],
+                [ '$limit'   => 2 ],
+                [ '$project' => [ 'version' => 1, '_id' => 0 ] ],
+            ] );
+            return ( count( $rows ) > 1 && isset( $rows[1]['version'] ) ) ? $rows[1]['version'] : false;
+        }
         $versions = $db->arrayQuery( "SELECT version FROM ezcontentobject_version
                                       WHERE contentobject_id='$this->ID'
                                       ORDER BY version DESC", array( 'limit' => 2 ) );
@@ -2786,10 +3224,17 @@ class eZContentObject extends eZPersistentObject
     function getVersionCount()
     {
         $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentobject_version', [
+                [ '$match' => [ 'contentobject_id' => (int) $this->ID ] ],
+                [ '$count' => 'version_count' ],
+            ] );
+            return ( !empty( $rows ) && isset( $rows[0]['version_count'] ) ) ? (int) $rows[0]['version_count'] : 0;
+        }
         $versionCount = $db->arrayQuery( "SELECT ( COUNT( version ) ) AS version_count FROM ezcontentobject_version
                        WHERE contentobject_id='$this->ID'" );
         return $versionCount[0]["version_count"];
-
     }
 
     /**
@@ -2939,12 +3384,48 @@ class eZContentObject extends eZPersistentObject
         }
 
         $fromObjectID =(int) $fromObjectID;
+        $toObjectID   =(int) $toObjectID;
         $attributeID =(int) $attributeID;
         $fromObjectVersion =(int) $fromObjectVersion;
         $relationBaseType = ( $relationType & eZContentObject::RELATION_ATTRIBUTE ) ?
                                 eZContentObject::RELATION_ATTRIBUTE :
                                 eZContentObject::RELATION_COMMON | eZContentObject::RELATION_EMBED | eZContentObject::RELATION_LINK;
         $relationTypeMatch = $db->bitAnd( 'relation_type', $relationBaseType );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $existingRows = $db->aggregate( 'ezcontentobject_link', [ [ '$match' => [
+                'from_contentobject_id'      => $fromObjectID,
+                'from_contentobject_version' => $fromObjectVersion,
+                'to_contentobject_id'        => $toObjectID,
+                'contentclassattribute_id'   => $attributeID,
+            ] ] ] );
+            $existingCount = count( $existingRows );
+            if ( $existingCount == 0 )
+            {
+                $db->begin();
+                $db->insert( 'ezcontentobject_link', [
+                    'from_contentobject_id'      => $fromObjectID,
+                    'from_contentobject_version' => $fromObjectVersion,
+                    'to_contentobject_id'        => $toObjectID,
+                    'contentclassattribute_id'   => $attributeID,
+                    'relation_type'              => $relationType,
+                ] );
+                $db->commit();
+            }
+            elseif ( $existingCount > 0 && $attributeID == 0 && ( eZContentObject::RELATION_ATTRIBUTE & $relationType ) == 0 )
+            {
+                $db->begin();
+                $existingType = (int)( $existingRows[0]['relation_type'] ?? 0 );
+                $db->upsert( 'ezcontentobject_link',
+                    [ 'from_contentobject_id' => $fromObjectID, 'from_contentobject_version' => $fromObjectVersion,
+                      'to_contentobject_id' => $toObjectID, 'contentclassattribute_id' => $attributeID ],
+                    [ 'relation_type' => $existingType | $relationType ]
+                );
+                $db->commit();
+            }
+        }
+        else
+        {
         $query = "SELECT count(*) AS count
                   FROM   ezcontentobject_link
                   WHERE  from_contentobject_id=$fromObjectID AND
@@ -2975,6 +3456,7 @@ class eZContentObject extends eZPersistentObject
                                 to_contentobject_id=$toObjectID AND
                                 contentclassattribute_id=$attributeID" );
             $db->commit();
+        }
         }
     }
 
@@ -3023,11 +3505,26 @@ class eZContentObject extends eZPersistentObject
         if ( !$attributeID && ( $fromObjectVersion != $this->CurrentVersion || $this->CurrentVersion == 1 ) )
         {
             // Querying only for object level relations.
-            $rows = $db->arrayQuery( "SELECT * FROM ezcontentobject_link
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $linkMatchMongo = [
+                    'from_contentobject_id'      => $fromObjectID,
+                    'from_contentobject_version' => $fromObjectVersion,
+                    'contentclassattribute_id'   => 0,
+                ];
+                if ( $toObjectID !== false ) $linkMatchMongo['to_contentobject_id'] = (int) $toObjectID;
+                $rows = $db->aggregate( 'ezcontentobject_link', [
+                    [ '$match' => $linkMatchMongo ],
+                ] );
+            }
+            else
+            {
+                $rows = $db->arrayQuery( "SELECT * FROM ezcontentobject_link
                                       WHERE from_contentobject_id=$fromObjectID
                                         AND from_contentobject_version=$fromObjectVersion
                                         AND contentclassattribute_id='0'
                                         $toObjectCondition" );
+            }
             if ( !empty( $rows ) )
             {
                 $lastRow = end( $rows );
@@ -3082,20 +3579,44 @@ class eZContentObject extends eZPersistentObject
         $db = eZDB::instance();
         $db->begin();
 
-        $relations = $db->arrayQuery( "SELECT to_contentobject_id, relation_type FROM ezcontentobject_link
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $relations = $db->aggregate( 'ezcontentobject_link', [
+                [ '$match'   => [
+                    'contentclassattribute_id'   => 0,
+                    'from_contentobject_id'      => (int) $objectID,
+                    'from_contentobject_version' => (int) $currentVersion,
+                ] ],
+                [ '$project' => [ 'to_contentobject_id' => 1, 'relation_type' => 1, '_id' => 0 ] ],
+            ] );
+            foreach ( $relations as $relation )
+            {
+                $db->insert( 'ezcontentobject_link', [
+                    'contentclassattribute_id'   => 0,
+                    'from_contentobject_id'      => (int) $newObjectID,
+                    'from_contentobject_version' => (int) $newVersion,
+                    'to_contentobject_id'        => (int) $relation['to_contentobject_id'],
+                    'relation_type'              => (int) $relation['relation_type'],
+                ] );
+            }
+        }
+        else
+        {
+            $relations = $db->arrayQuery( "SELECT to_contentobject_id, relation_type FROM ezcontentobject_link
                                        WHERE contentclassattribute_id='0'
                                          AND from_contentobject_id='$objectID'
                                          AND from_contentobject_version='$currentVersion'" );
-        foreach ( $relations as $relation )
-        {
-            $toContentObjectID = $relation['to_contentobject_id'];
-            $relationType = $relation['relation_type'];
-            $db->query( "INSERT INTO ezcontentobject_link( contentclassattribute_id,
+            foreach ( $relations as $relation )
+            {
+                $toContentObjectID = $relation['to_contentobject_id'];
+                $relationType = $relation['relation_type'];
+                $db->query( "INSERT INTO ezcontentobject_link( contentclassattribute_id,
                                                            from_contentobject_id,
                                                            from_contentobject_version,
                                                            to_contentobject_id,
                                                            relation_type )
                          VALUES ( '0', '$newObjectID', '$newVersion', '$toContentObjectID', '$relationType' )" );
+            }
         }
 
         $db->commit();
@@ -3325,7 +3846,105 @@ class eZContentObject extends eZPersistentObject
                         ezcontentobject.current_version = ezcontentobject_name.content_version AND
                         " . eZContentLanguage::sqlFilter( 'ezcontentobject_name', 'ezcontentobject' ) . "
                         $sortingString";
-        if ( !$offset && !$limit )
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $linkMatch = [ 'relation_type' => [ '$bitsAnySet' => (int)$relationTypeMask ] ];
+            if ( $attributeID )
+                $linkMatch['contentclassattribute_id'] = (int)$attributeID;
+
+            if ( !$reverseRelatedObjects )
+            {
+                $linkMatch['from_contentobject_id']      = $objectID;
+                $linkMatch['from_contentobject_version'] = $fromObjectVersion;
+                $localField   = 'to_contentobject_id';
+            }
+            else
+            {
+                $linkMatch['to_contentobject_id'] = $objectID;
+                $localField   = 'from_contentobject_id';
+            }
+
+            $pipeline = [
+                [ '$match'  => $linkMatch ],
+                [ '$lookup' => [
+                    'from'         => 'ezcontentobject',
+                    'localField'   => $localField,
+                    'foreignField' => 'id',
+                    'as'           => '_obj',
+                ] ],
+                [ '$unwind' => '$_obj' ],
+                [ '$match'  => [ '_obj.status' => eZContentObject::STATUS_PUBLISHED ] ],
+                [ '$lookup' => [
+                    'from'         => 'ezcontentclass',
+                    'localField'   => '_obj.contentclass_id',
+                    'foreignField' => 'id',
+                    'as'           => '_cls',
+                ] ],
+                [ '$unwind' => '$_cls' ],
+                [ '$match'  => [ '_cls.version' => 0 ] ],
+                [ '$lookup' => [
+                    'from'     => 'ezcontentobject_name',
+                    'let'      => [ 'oid' => '$_obj.id', 'ver' => '$_obj.current_version' ],
+                    'pipeline' => [
+                        [ '$match' => [ '$expr' => [ '$and' => [
+                            [ '$eq' => [ '$contentobject_id', '$$oid' ] ],
+                            [ '$eq' => [ '$content_version',  '$$ver' ] ],
+                        ] ] ] ],
+                        [ '$limit' => 1 ],
+                    ],
+                    'as' => '_name',
+                ] ],
+                [ '$unwind' => [ 'path' => '$_name', 'preserveNullAndEmptyArrays' => true ] ],
+                [ '$addFields' => [
+                    'class_serialized_name_list' => '$_cls.serialized_name_list',
+                    'contentclass_identifier'    => '$_cls.identifier',
+                    'is_container'               => '$_cls.is_container',
+                    'name'                       => [ '$ifNull' => [ '$_name.name', '' ] ],
+                    'real_translation'           => [ '$ifNull' => [ '$_name.real_translation', '' ] ],
+                    'id'                         => '$_obj.id',
+                    'contentclass_id'            => '$_obj.contentclass_id',
+                    'current_version'            => '$_obj.current_version',
+                    'owner_id'                   => '$_obj.owner_id',
+                    'published'                  => '$_obj.published',
+                    'modified'                   => '$_obj.modified',
+                    'section_id'                 => '$_obj.section_id',
+                    'status'                     => '$_obj.status',
+                    'language_mask'              => '$_obj.language_mask',
+                    'initial_language_id'        => '$_obj.initial_language_id',
+                    'remote_id'                  => '$_obj.remote_id',
+                ] ],
+                [ '$project' => [ '_id' => 0, '_obj' => 0, '_cls' => 0, '_name' => 0 ] ],
+            ];
+
+            if ( isset( $params['RelatedClassIdentifiers'] ) && is_array( $params['RelatedClassIdentifiers'] ) && !empty( $params['RelatedClassIdentifiers'] ) )
+                $pipeline[] = [ '$match' => [ 'contentclass_identifier' => [ '$in' => $params['RelatedClassIdentifiers'] ] ] ];
+
+            $sortByParam = [];
+            if ( is_array( $params ) && isset( $params['SortBy'] ) && is_array( $params['SortBy'] ) )
+            {
+                $sortByParam = is_array( $params['SortBy'][0] ) ? $params['SortBy'] : [ $params['SortBy'] ];
+            }
+            if ( !empty( $sortByParam ) )
+            {
+                $sortMap = [
+                    'class_identifier' => 'contentclass_identifier',
+                    'modified'         => 'modified',
+                    'name'             => 'name',
+                    'published'        => 'published',
+                    'section'          => 'section_id',
+                ];
+                $mongoSort = [];
+                foreach ( $sortByParam as $t )
+                    $mongoSort[$sortMap[$t[0]] ?? $t[0]] = ( isset( $t[1] ) && strtolower( $t[1] ) === 'desc' ) ? -1 : 1;
+                $pipeline[] = [ '$sort' => $mongoSort ];
+            }
+
+            if ( $offset ) $pipeline[] = [ '$skip'  => (int)$offset ];
+            if ( $limit  ) $pipeline[] = [ '$limit' => (int)$limit  ];
+
+            $relatedObjects = $db->aggregate( 'ezcontentobject_link', $pipeline );
+        }
+        elseif ( !$offset && !$limit )
         {
             $relatedObjects = $db->arrayQuery( $query );
         }
@@ -3710,6 +4329,32 @@ class eZContentObject extends eZPersistentObject
                     $relationTypeMasking
                     $showInvisibleNodesCond";
 
+        if ( $db->databaseName() === 'mongo' ) {
+            if ( $reverseRelatedObjects ) {
+                if ( is_array( $objectID ) ) {
+                    if ( count( $objectID ) === 0 ) return 0;
+                    $linkFilter = [ 'to_contentobject_id' => [ '$in' => array_map( 'intval', $objectID ) ] ];
+                } else {
+                    $linkFilter = [ 'to_contentobject_id' => (int)$objectID ];
+                }
+            } else {
+                $linkFilter = [
+                    'from_contentobject_id'      => (int)$objectID,
+                    'from_contentobject_version' => $version,
+                ];
+            }
+            if ( $attributeID ) {
+                $linkFilter['contentclassattribute_id'] = (int)$attributeID;
+            }
+            if ( $relationTypeMask ) {
+                $linkFilter['relation_type'] = [ '$bitsAnySet' => (int)$relationTypeMask ];
+            }
+            $rows = $db->aggregate( 'ezcontentobject_link', [
+                [ '$match' => $linkFilter ],
+                [ '$count' => 'count' ],
+            ] );
+            return !empty( $rows ) ? (int)$rows[0]['count'] : 0;
+        }
         $rows = $db->arrayQuery( $query );
         return $rows[0]['count'];
     }
@@ -3718,9 +4363,6 @@ class eZContentObject extends eZPersistentObject
      * Returns the number of objects to which this object is related.
      *
      * @see relatedObjectCount()
-     *
-     * @param int|bool $version
-     * @param int|bool $attributeID
      * @param array|bool $params
      * @return int
      */
@@ -3897,12 +4539,27 @@ class eZContentObject extends eZPersistentObject
         {
             return false;
         }
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $filter = [ 'contentobject_id' => (int)$contentobjectID ];
+            if ( eZINI::instance()->variable( 'SiteAccessSettings', 'ShowHiddenNodes' ) !== 'true' )
+            {
+                $filter['is_invisible'] = 0;
+            }
+            $pipeline = [
+                [ '$match' => $filter ],
+                [ '$count' => 'node_count' ],
+            ];
+            $rows = $db->aggregate( 'ezcontentobject_tree', $pipeline );
+            return ( !empty( $rows ) && $rows[0]['node_count'] > 0 );
+        }
         $visibilitySQL = '';
         if ( eZINI::instance()->variable( 'SiteAccessSettings', 'ShowHiddenNodes' ) !== 'true' )
         {
             $visibilitySQL = "AND ezcontentobject_tree.is_invisible = 0 ";
         }
-        $rows = eZDB::instance()->arrayQuery(
+        $rows = $db->arrayQuery(
             "SELECT COUNT(ezcontentobject_tree.node_id) AS node_count " .
             "FROM ezcontentobject_tree " .
             "INNER JOIN ezcontentobject ON (ezcontentobject_tree.contentobject_id = ezcontentobject.id) " .
@@ -3934,7 +4591,57 @@ class eZContentObject extends eZPersistentObject
         {
             $visibilitySQL = "AND ezcontentobject_tree.is_invisible = 0 ";
         }
-        $nodesListArray = eZDB::instance()->arrayQuery(
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $matchStage = [ 'contentobject_id' => (int)$contentobjectID ];
+            if ( $checkVisibility === true
+                 && eZINI::instance()->variable( 'SiteAccessSettings', 'ShowHiddenNodes' ) !== 'true' )
+            {
+                $matchStage['is_invisible'] = 0;
+            }
+            $pipeline = [
+                [ '$match' => $matchStage ],
+                [ '$lookup' => [
+                    'from'         => 'ezcontentobject',
+                    'localField'   => 'contentobject_id',
+                    'foreignField' => 'id',
+                    'as'           => '_obj',
+                ] ],
+                [ '$unwind' => [ 'path' => '$_obj', 'preserveNullAndEmptyArrays' => true ] ],
+                [ '$lookup' => [
+                    'from'         => 'ezcontentclass',
+                    'localField'   => '_obj.contentclass_id',
+                    'foreignField' => 'id',
+                    'as'           => '_cls',
+                ] ],
+                [ '$unwind' => [ 'path' => '$_cls', 'preserveNullAndEmptyArrays' => true ] ],
+                [ '$match' => [ '$or' => [ [ '_cls.version' => 0 ], [ '_cls' => [ '$exists' => false ] ] ] ] ],
+                [ '$addFields' => [
+                    'contentclass_id'            => '$_obj.contentclass_id',
+                    'current_version'            => '$_obj.current_version',
+                    'initial_language_id'        => '$_obj.initial_language_id',
+                    'language_mask'              => '$_obj.language_mask',
+                    'modified'                   => '$_obj.modified',
+                    'name'                       => '$_obj.name',
+                    'owner_id'                   => '$_obj.owner_id',
+                    'published'                  => '$_obj.published',
+                    'object_remote_id'           => '$_obj.remote_id',
+                    'section_id'                 => '$_obj.section_id',
+                    'status'                     => '$_obj.status',
+                    'class_serialized_name_list' => '$_cls.serialized_name_list',
+                    'class_identifier'           => '$_cls.identifier',
+                    'is_container'               => '$_cls.is_container',
+                ] ],
+                [ '$project' => [ '_id' => 0, '_obj' => 0, '_cls' => 0 ] ],
+                [ '$sort'    => [ 'path_string' => 1 ] ],
+            ];
+            $nodesListArray = $db->aggregate( 'ezcontentobject_tree', $pipeline );
+            if ( $nodesListArray === false ) $nodesListArray = [];
+        }
+        else
+        {
+        $nodesListArray = $db->arrayQuery(
             "SELECT " .
             "ezcontentobject.contentclass_id, ezcontentobject.current_version, ezcontentobject.initial_language_id, ezcontentobject.language_mask, " .
             "ezcontentobject.modified, ezcontentobject.name, ezcontentobject.owner_id, ezcontentobject.published, ezcontentobject.remote_id AS object_remote_id, ezcontentobject.section_id, " .
@@ -3951,6 +4658,7 @@ class eZContentObject extends eZPersistentObject
             $visibilitySQL .
             "ORDER BY path_string"
         );
+        } // end mongo/sql branch
         if ( $asObject == true )
         {
             return eZContentObjectTreeNode::makeObjectsArray( $nodesListArray, true, array( "id" => $contentobjectID ) );
@@ -4947,7 +5655,42 @@ class eZContentObject extends eZPersistentObject
 
         $classNameFilter = eZContentClassName::sqlFilter( 'cc' );
 
-        if ( $fetchAll )
+        if ( $db->databaseName() === 'mongo' ) {
+            // Build group filter if needed
+            $classMatch = [ 'version' => eZContentClass::VERSION_STATUS_DEFINED ];
+            if ( is_array( $groupList ) ) {
+                $cgRows = $db->aggregate( 'ezcontentclass_classgroup', [
+                    [ '$match' => [ 'group_id' => [ '$in' => array_map( 'intval', $groupList ) ] ] ],
+                    [ '$group' => [ '_id' => '$contentclass_id' ] ],
+                ] );
+                $cgIDs = array_column( $cgRows, '_id' );
+                if ( $includeFilter ) {
+                    if ( empty( $cgIDs ) ) return $classList;
+                    $classMatch['id'] = [ '$in' => $cgIDs ];
+                } elseif ( !empty( $cgIDs ) ) {
+                    $classMatch['id'] = [ '$nin' => $cgIDs ];
+                }
+            }
+            if ( $fetchAll ) {
+                $rows = $db->aggregate( 'ezcontentclass', [
+                    [ '$match' => $classMatch ],
+                    [ '$sort' => [ 'identifier' => 1 ] ],
+                ] );
+                $classList = eZPersistentObject::handleRows( $rows, 'eZContentClass', $asObject );
+            } else {
+                if ( count( $classIDArray ) == 0 ) {
+                    return $classList;
+                }
+                $classMatch['id'] = isset( $classMatch['id'] )
+                    ? [ '$in' => array_values( array_intersect( $classMatch['id']['$in'] ?? array_map( 'intval', $classIDArray ), array_map( 'intval', $classIDArray ) ) ) ]
+                    : [ '$in' => array_map( 'intval', $classIDArray ) ];
+                $rows = $db->aggregate( 'ezcontentclass', [
+                    [ '$match' => $classMatch ],
+                    [ '$sort' => [ 'identifier' => 1 ] ],
+                ] );
+                $classList = eZPersistentObject::handleRows( $rows, 'eZContentClass', $asObject );
+            }
+        } elseif ( $fetchAll )
         {
             // If $asObject is true we fetch all fields in class
             $fields = $asObject ? "cc.*, $classNameFilter[nameField]" : "cc.id, $classNameFilter[nameField]";
@@ -5208,8 +5951,18 @@ class eZContentObject extends eZPersistentObject
 
         $db = eZDB::instance();
         $id = (int)$this->ClassID;
-        $sql = "SELECT serialized_name_list FROM ezcontentclass WHERE id=$id and version=0";
-        $rows = $db->arrayQuery( $sql );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcontentclass', [
+                [ '$match' => [ 'id' => $id, 'version' => 0 ] ],
+                [ '$project' => [ 'serialized_name_list' => 1, '_id' => 0 ] ],
+            ] );
+        }
+        else
+        {
+            $sql = "SELECT serialized_name_list FROM ezcontentclass WHERE id=$id and version=0";
+            $rows = $db->arrayQuery( $sql );
+        }
         if ( count( $rows ) > 0 )
         {
             $this->ClassName = eZContentClass::nameFromSerializedString( $rows[0]['serialized_name_list'] );
@@ -6329,6 +7082,38 @@ class eZContentObject extends eZPersistentObject
         $objectID = $this->attribute( 'id' );
         $versionID = $version->attribute( 'version' );
 
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Step 1: clear always-available bit (bit 0) from all name records for this version
+            $nameRows = $db->aggregate( 'ezcontentobject_name', [
+                [ '$match' => [ 'contentobject_id' => (int)$objectID, 'content_version' => (int)$versionID ] ],
+            ] );
+            foreach ( $nameRows as $nameRow )
+            {
+                $clearedID = (int)$nameRow['language_id'] & ~1;
+                $db->upsert( 'ezcontentobject_name',
+                    [ 'contentobject_id' => (int)$objectID, 'content_version' => (int)$versionID, 'content_translation' => $nameRow['content_translation'] ],
+                    [ 'language_id' => $clearedID ]
+                );
+            }
+            // Step 2: set always-available bit for the target language
+            if ( $languageID != false )
+            {
+                $newLanguageID = (int)$languageID | 1;
+                $targetRows = $db->aggregate( 'ezcontentobject_name', [
+                    [ '$match' => [ 'contentobject_id' => (int)$objectID, 'content_version' => (int)$versionID, 'language_id' => (int)$languageID & ~1 ] ],
+                ] );
+                foreach ( $targetRows as $nameRow )
+                {
+                    $db->upsert( 'ezcontentobject_name',
+                        [ 'contentobject_id' => (int)$objectID, 'content_version' => (int)$versionID, 'content_translation' => $nameRow['content_translation'] ],
+                        [ 'language_id' => $newLanguageID ]
+                    );
+                }
+            }
+        }
+        else
+        {
         // reset 'always available' flag
         $sql = "UPDATE ezcontentobject_name SET language_id=";
         if ( $db->databaseName() == 'oracle' )
@@ -6349,6 +7134,7 @@ class eZContentObject extends eZPersistentObject
                     SET language_id='$newLanguageID'
                     WHERE language_id='$languageID' AND contentobject_id = '$objectID' AND content_version = '$versionID'";
             $db->query( $sql );
+        }
         }
 
         $version->setAlwaysAvailableLanguageID( $languageID );
@@ -6393,7 +7179,7 @@ class eZContentObject extends eZPersistentObject
      * @return array the IDs of all states we are allowed to set
      * @param eZUser $user the user to check the policies of, when omitted the currently logged in user will be used
      */
-    function allowedAssignStateIDList( eZUser|null $user = null )
+    function allowedAssignStateIDList( ?eZUser $user = null )
     {
         if ( !$user instanceof eZUser )
         {
@@ -6409,7 +7195,24 @@ class eZContentObject extends eZPersistentObject
                     AND ezcobj_state_group.identifier NOT LIKE \'ez%\'';
         if ( $access['accessWord'] == 'yes' )
         {
-            $allowedStateIDList = $db->arrayQuery( $sql, array( 'column' => 'id' ) );
+            if ( $db->databaseName() === 'mongo' ) {
+                $groupRows = $db->aggregate( 'ezcobj_state_group', [
+                    [ '$match' => [ 'identifier' => [ '$not' => new \MongoDB\BSON\Regex( '^ez' ) ] ] ],
+                    [ '$project' => [ 'id' => 1, '_id' => 0 ] ],
+                ] );
+                if ( empty( $groupRows ) ) {
+                    $allowedStateIDList = [];
+                } else {
+                    $groupIDs = array_column( $groupRows, 'id' );
+                    $stateRows = $db->aggregate( 'ezcobj_state', [
+                        [ '$match' => [ 'group_id' => [ '$in' => $groupIDs ] ] ],
+                        [ '$project' => [ 'id' => 1, '_id' => 0 ] ],
+                    ] );
+                    $allowedStateIDList = array_column( $stateRows, 'id' );
+                }
+            } else {
+                $allowedStateIDList = $db->arrayQuery( $sql, array( 'column' => 'id' ) );
+            }
         }
         else if ( $access['accessWord'] == 'limited' )
         {
@@ -6510,7 +7313,7 @@ class eZContentObject extends eZPersistentObject
      * @param eZUser|null $user
      * @return array
      */
-    function allowedAssignStateList( eZUser|null $user = null )
+    function allowedAssignStateList( ?eZUser $user = null )
     {
         $allowedStateIDList = $this->allowedAssignStateIDList( $user );
 
@@ -6568,11 +7371,24 @@ class eZContentObject extends eZPersistentObject
             $this->StateIDArray = array();
             $contentObjectID = $this->ID;
             eZDebug::accumulatorStart( 'state_id_array', 'states' );
+            $db = eZDB::instance();
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $rows = $db->aggregate( 'ezcobj_state_link', [
+                    [ '$match'  => [ 'contentobject_id' => (int)$contentObjectID ] ],
+                    [ '$lookup' => [ 'from' => 'ezcobj_state', 'localField' => 'contentobject_state_id', 'foreignField' => 'id', 'as' => '_s' ] ],
+                    [ '$unwind' => '$_s' ],
+                    [ '$project' => [ '_id' => 0, 'contentobject_state_id' => 1, 'group_id' => '$_s.group_id' ] ],
+                ] );
+                if ( $rows === false ) $rows = [];
+            }
+            else
+            {
             $sql = "SELECT contentobject_state_id, group_id FROM ezcobj_state_link, ezcobj_state
                     WHERE ezcobj_state.id=ezcobj_state_link.contentobject_state_id AND
                           contentobject_id=$contentObjectID";
-            $db = eZDB::instance();
             $rows = $db->arrayQuery( $sql );
+            } // end mongo/sql branch
             foreach ( $rows as $row )
             {
                 $this->StateIDArray[$row['group_id']] = $row['contentobject_state_id'];
@@ -6593,13 +7409,28 @@ class eZContentObject extends eZPersistentObject
 
         eZDebug::accumulatorStart( 'state_identifier_array', 'states' );
         $return = array();
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcobj_state_link', [
+                [ '$match'  => [ 'contentobject_id' => (int)$this->ID ] ],
+                [ '$lookup' => [ 'from' => 'ezcobj_state', 'localField' => 'contentobject_state_id', 'foreignField' => 'id', 'as' => '_s' ] ],
+                [ '$unwind' => '$_s' ],
+                [ '$lookup' => [ 'from' => 'ezcobj_state_group', 'localField' => '_s.group_id', 'foreignField' => 'id', 'as' => '_g' ] ],
+                [ '$unwind' => '$_g' ],
+                [ '$project' => [ '_id' => 0, 'contentobject_state_id' => 1, 'state_identifier' => '$_s.identifier', 'state_group_identifier' => '$_g.identifier' ] ],
+            ] );
+            if ( $rows === false ) $rows = [];
+        }
+        else
+        {
         $sql = "SELECT l.contentobject_state_id, s.identifier AS state_identifier, g.identifier AS state_group_identifier
                 FROM ezcobj_state_link l, ezcobj_state s, ezcobj_state_group g
                 WHERE l.contentobject_id={$this->ID} AND
                       s.id=l.contentobject_state_id AND
                       g.id=s.group_id";
-        $db = eZDB::instance();
         $rows = $db->arrayQuery( $sql );
+        } // end mongo/sql branch
         foreach ( $rows as $row )
         {
             $return[] = $row['state_group_identifier'] . '/' . $row['state_identifier'];

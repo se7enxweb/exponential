@@ -102,7 +102,22 @@ WHERE ezsession.session_key IS NULL";
 
         do
         {
-            $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                // Baskets with no matching session: find basket.session_id values not in ezsession
+                $sessionKeys = array_column( $db->aggregate( 'ezsession', [
+                    [ '$project' => [ '_id' => 0, 'session_key' => 1 ] ],
+                ] ), 'session_key' );
+                $rows = $db->aggregate( 'ezbasket', [
+                    [ '$match'  => [ 'session_id' => [ '$nin' => $sessionKeys ] ] ],
+                    [ '$limit'  => $limit ],
+                    [ '$project' => [ '_id' => 0, 'id' => 1, 'productcollection_id' => 1 ] ],
+                ] );
+            }
+            else
+            {
+                $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
+            }
             if ( count( $rows ) == 0 )
                 break;
 
@@ -115,8 +130,15 @@ WHERE ezsession.session_key IS NULL";
             }
             eZProductCollection::cleanupList( $productCollectionIDList );
 
-            $ids = implode( ', ', $idList );
-            $db->query( "DELETE FROM ezbasket WHERE id IN ( $ids )" );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $db->deleteWhere( 'ezbasket', [ 'id' => [ '$in' => $idList ] ] );
+            }
+            else
+            {
+                $ids = implode( ', ', $idList );
+                $db->query( "DELETE FROM ezbasket WHERE id IN ( $ids )" );
+            }
 
             // Stop when we used up our time
             if ( $end !== false and time() > $end )
@@ -216,7 +238,25 @@ WHERE ezproductcollection_used.id IS NULL";
 
         do
         {
-            $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                // Product collections not referenced by orders, wishlists, or baskets
+                $usedIDs = array_merge(
+                    array_column( $db->aggregate( 'ezorder',    [ [ '$project' => [ '_id' => 0, 'productcollection_id' => 1 ] ] ] ), 'productcollection_id' ),
+                    array_column( $db->aggregate( 'ezwishlist', [ [ '$project' => [ '_id' => 0, 'productcollection_id' => 1 ] ] ] ), 'productcollection_id' ),
+                    array_column( $db->aggregate( 'ezbasket',   [ [ '$project' => [ '_id' => 0, 'productcollection_id' => 1 ] ] ] ), 'productcollection_id' )
+                );
+                $usedIDs = array_values( array_unique( array_map( 'intval', $usedIDs ) ) );
+                $rows = $db->aggregate( 'ezproductcollection', [
+                    [ '$match'  => [ 'id' => [ '$nin' => $usedIDs ] ] ],
+                    [ '$limit'  => $limit ],
+                    [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                ] );
+            }
+            else
+            {
+                $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
+            }
             if ( count( $rows ) == 0 )
                 break;
 
@@ -227,9 +267,16 @@ WHERE ezproductcollection_used.id IS NULL";
             }
             eZProductCollectionItem::cleanupList( $idList );
 
-            $ids = implode( ', ', $idList );
-            $db->query( "DELETE FROM ezproductcollection WHERE id IN ( $ids )" );
-            $db->query( "DELETE FROM ezproductcollection_used WHERE id IN ( $ids )" );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $db->deleteWhere( 'ezproductcollection', [ 'id' => [ '$in' => $idList ] ] );
+            }
+            else
+            {
+                $ids = implode( ', ', $idList );
+                $db->query( "DELETE FROM ezproductcollection WHERE id IN ( $ids )" );
+                $db->query( "DELETE FROM ezproductcollection_used WHERE id IN ( $ids )" );
+            }
 
             // Stop when we used up our time
             if ( $end !== false and time() > $end )
@@ -307,7 +354,23 @@ WHERE ezproductcollection.id IS NULL";
 
         do
         {
-            $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                // Items with no matching parent collection
+                $collectionIDs = array_column( $db->aggregate( 'ezproductcollection', [
+                    [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                ] ), 'id' );
+                $collectionIDs = array_map( 'intval', $collectionIDs );
+                $rows = $db->aggregate( 'ezproductcollection_item', [
+                    [ '$match'  => [ 'productcollection_id' => [ '$nin' => $collectionIDs ] ] ],
+                    [ '$limit'  => $limit ],
+                    [ '$project' => [ '_id' => 0, 'productcollection_id' => 1 ] ],
+                ] );
+            }
+            else
+            {
+                $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
+            }
             if ( count( $rows ) == 0 )
                 break;
 
@@ -318,8 +381,15 @@ WHERE ezproductcollection.id IS NULL";
             }
             eZProductCollectionItemOption::cleanupList( $idList );
 
-            $ids = implode( ', ', $idList );
-            $db->query( "DELETE FROM ezproductcollection_item WHERE productcollection_id IN ( $ids )" );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $db->deleteWhere( 'ezproductcollection_item', [ 'productcollection_id' => [ '$in' => $idList ] ] );
+            }
+            else
+            {
+                $ids = implode( ', ', $idList );
+                $db->query( "DELETE FROM ezproductcollection_item WHERE productcollection_id IN ( $ids )" );
+            }
 
             // Stop when we used up our time
             if ( $end !== false and time() > $end )
@@ -390,7 +460,23 @@ WHERE ezproductcollection_item.id IS NULL";
 
         do
         {
-            $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                // Item options with no matching parent item
+                $itemIDs = array_column( $db->aggregate( 'ezproductcollection_item', [
+                    [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                ] ), 'id' );
+                $itemIDs = array_map( 'intval', $itemIDs );
+                $rows = $db->aggregate( 'ezproductcollection_item_opt', [
+                    [ '$match'  => [ 'item_id' => [ '$nin' => $itemIDs ] ] ],
+                    [ '$limit'  => $limit ],
+                    [ '$project' => [ '_id' => 0, 'item_id' => 1 ] ],
+                ] );
+            }
+            else
+            {
+                $rows = $db->arrayQuery( $sql, array( 'offset' => 0, 'limit' => $limit ) );
+            }
             if ( count( $rows ) == 0 )
                 break;
 
@@ -400,8 +486,15 @@ WHERE ezproductcollection_item.id IS NULL";
                 $idList[] = (int)$row['item_id'];
             }
 
-            $ids = implode( ', ', $idList );
-            $db->query( "DELETE FROM ezproductcollection_item_opt WHERE item_id IN ( $ids )" );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $db->deleteWhere( 'ezproductcollection_item_opt', [ 'item_id' => [ '$in' => $idList ] ] );
+            }
+            else
+            {
+                $ids = implode( ', ', $idList );
+                $db->query( "DELETE FROM ezproductcollection_item_opt WHERE item_id IN ( $ids )" );
+            }
 
             // Stop when we used up our time
             if ( $end !== false and time() > $end )

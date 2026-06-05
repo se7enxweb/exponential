@@ -159,12 +159,22 @@ class eZContentObjectVersion extends eZPersistentObject
     {
         return eZPersistentObject::fetchObject( eZContentObjectVersion::definition(),
                                                 null,
-                                                array( 'id' => $id ),
+                                                array( 'id' => (int)$id ),
                                                 $asObject );
     }
 
     static function fetchVersion( $version, $contentObjectID, $asObject = true )
     {
+        $version         = (int) $version;
+        $contentObjectID = (int) $contentObjectID;
+        // version=0 is a sentinel meaning "current version" — resolve it before querying
+        if ( $version === 0 )
+        {
+            $obj = eZContentObject::fetch( $contentObjectID );
+            if ( !$obj )
+                return false;
+            $version = (int) $obj->attribute( 'current_version' );
+        }
         $ret = eZPersistentObject::fetchObjectList( eZContentObjectVersion::definition(),
                                                     null, array( "version" => $version,
                                                                  "contentobject_id" => $contentObjectID
@@ -182,7 +192,15 @@ class eZContentObjectVersion extends eZPersistentObject
         $version = (int) $version;
         $contentObjectID = (int) $contentObjectID;
 
-        if ( $db->DatabaseName() === 'sqlite' )
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // MongoDB has no row-level locking; fetch directly
+            $resArray = $db->aggregate( 'ezcontentobject_version', [
+                [ '$match' => [ 'version' => $version, 'contentobject_id' => $contentObjectID ] ],
+                [ '$limit' => 1 ],
+            ] );
+        }
+        elseif ( $db->DatabaseName() === 'sqlite' )
         {
              // Select for update, to lock the row
              $resArray = $db->arrayQuery(
@@ -978,6 +996,60 @@ class eZContentObjectVersion extends eZPersistentObject
         $db = eZDB::instance();
         $db->begin();
 
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Delete attributes for this version
+            $db->deleteWhere( 'ezcontentobject_attribute', [
+                'contentobject_id' => (int)$contentobjectID,
+                'version'          => (int)$versionNum,
+            ] );
+            // Delete content links from this version
+            $db->deleteWhere( 'ezcontentobject_link', [
+                'from_contentobject_id'      => (int)$contentobjectID,
+                'from_contentobject_version' => (int)$versionNum,
+            ] );
+            // Delete node assignments for this version
+            $db->deleteWhere( 'eznode_assignment', [
+                'contentobject_id'      => (int)$contentobjectID,
+                'contentobject_version' => (int)$versionNum,
+            ] );
+            // Delete the version document
+            $db->deleteWhere( 'ezcontentobject_version', [
+                'id' => (int)$this->attribute( 'id' ),
+            ] );
+            // Reassign current_version if this was the current one
+            $contentobject = $this->attribute( 'contentobject' );
+            if ( is_object( $contentobject ) )
+            {
+                if ( !$contentobject->hasRemainingVersions() )
+                {
+                    $contentobject->purge();
+                }
+                elseif ( $contentobject->CurrentVersion == $versionNum )
+                {
+                    $candidates = $db->aggregate( 'ezcontentobject_version', [
+                        [ '$match'   => [ 'contentobject_id' => (int)$contentobject->ID,
+                                          'version'          => [ '$ne' => (int)$contentobject->CurrentVersion ] ] ],
+                        [ '$sort'    => [ 'modified' => -1 ] ],
+                        [ '$limit'   => 1 ],
+                        [ '$project' => [ '_id' => 0, 'version' => 1 ] ],
+                    ] );
+                    if ( !empty( $candidates ) && isset( $candidates[0]['version'] ) )
+                    {
+                        $contentobject->CurrentVersion = (int)$candidates[0]['version'];
+                        $contentobject->store();
+                    }
+                }
+            }
+            // Delete name records for this version
+            $db->deleteWhere( 'ezcontentobject_name', [
+                'contentobject_id' => (int)$contentobjectID,
+                'content_version'  => (int)$versionNum,
+            ] );
+            $db->commit();
+            return;
+        }
+
         if ( $db->DatabaseName() === 'sqlite' )
         {
             // Ensure no one else deletes this version while we are doing it.
@@ -1196,7 +1268,29 @@ class eZContentObjectVersion extends eZPersistentObject
                   $languageSQL
                   ORDER BY language_code";
 
+        // --- MongoDB native path -----------------------------------------
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $matchCond = [
+                'contentobject_id' => (int) $this->ContentObjectID,
+                'version'          => (int) $this->Version,
+            ];
+            if ( $language !== false )
+                $matchCond['language_code'] = [ '$ne' => $language ];
+
+            $rows = $db->aggregate( 'ezcontentobject_attribute', [
+                [ '$match'   => $matchCond ],
+                [ '$group'   => [ '_id' => '$language_code' ] ],
+                [ '$sort'    => [ '_id' => 1 ] ],
+                [ '$project' => [ '_id' => 0, 'language_code' => '$_id' ] ],
+            ] );
+            $languageCodes = $rows ?: [];
+        }
+        else
+        {
+        // --- SQL path (MySQL) --------------------------------------------
         $languageCodes = $db->arrayQuery( $query );
+        } // end SQL path
 
         $translations = array();
         if ( $asObject )
@@ -1262,7 +1356,69 @@ class eZContentObjectVersion extends eZPersistentObject
         $db = eZDB::instance();
         $language = $db->escapeString( $language );
         $contentObjectID = (int) $contentObjectID;
-        $version =(int) $version;
+        $version = (int) $version;
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Step 1: fetch content object attributes for this version
+            $matchCond = [
+                'contentobject_id' => $contentObjectID,
+                'version'          => $version,
+            ];
+            if ( $language )
+                $matchCond['language_code'] = (string) $language;
+
+            $attrRows = $db->aggregate( 'ezcontentobject_attribute', [
+                [ '$match' => $matchCond ],
+            ] );
+
+            if ( empty( $attrRows ) )
+                return array();
+
+            // Step 2: collect distinct contentclassattribute_ids and fetch class attributes
+            $classAttrIDs = array_values( array_unique( array_map( 'intval', array_column( $attrRows, 'contentclassattribute_id' ) ) ) );
+            $classAttrRows = $db->aggregate( 'ezcontentclass_attribute', [
+                [ '$match' => [ 'id' => [ '$in' => $classAttrIDs ], 'version' => 0 ] ],
+            ] );
+
+            $classAttrMap = array();
+            foreach ( $classAttrRows as $ca )
+                $classAttrMap[(int)$ca['id']] = $ca;
+
+            // Step 3: merge, attach class attribute fields, sort by placement
+            $merged = array();
+            foreach ( $attrRows as $attr )
+            {
+                $caID = (int) $attr['contentclassattribute_id'];
+                if ( !isset( $classAttrMap[$caID] ) )
+                    continue;
+                $ca = $classAttrMap[$caID];
+                $attr['classattribute_identifier']           = $ca['identifier'];
+                $attr['can_translate']                       = (int) $ca['can_translate'];
+                $attr['attribute_serialized_name_list']      = $ca['serialized_name_list'];
+                $attr['_placement']                          = (int) $ca['placement'];
+                $merged[] = $attr;
+            }
+            usort( $merged, function( $a, $b ) { return $a['_placement'] <=> $b['_placement']; } );
+
+            $returnAttributeArray = array();
+            foreach ( $merged as $attribute )
+            {
+                $attr = new eZContentObjectAttribute( $attribute );
+                $attr->setContentClassAttributeIdentifier( $attribute['classattribute_identifier'] );
+                $dataType = $attr->dataType();
+                if ( is_object( $dataType ) &&
+                     $dataType->Attributes["properties"]["translation_allowed"] &&
+                     $attribute['can_translate'] )
+                    $attr->setContentClassAttributeCanTranslate( 1 );
+                else
+                    $attr->setContentClassAttributeCanTranslate( 0 );
+                $attr->setContentClassAttributeName( eZContentClassAttribute::nameFromSerializedString( $attribute['attribute_serialized_name_list'] ) );
+                $returnAttributeArray[] = $attr;
+            }
+            return $returnAttributeArray;
+        }
+
         $query = "SELECT ezcontentobject_attribute.*, ezcontentclass_attribute.identifier as classattribute_identifier,
                         ezcontentclass_attribute.can_translate, ezcontentclass_attribute.serialized_name_list as attribute_serialized_name_list
                   FROM  ezcontentobject_attribute, ezcontentclass_attribute, ezcontentobject_version
@@ -1764,6 +1920,61 @@ class eZContentObjectVersion extends eZPersistentObject
         $objectID = $object->attribute( 'id' );
         $initialLanguageID = $object->attribute( 'initial_language_id' );
         $db = eZDB::instance();
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $draftStatuses = [
+                (int)self::STATUS_DRAFT,
+                (int)self::STATUS_PENDING,
+                (int)self::STATUS_INTERNAL_DRAFT,
+            ];
+            // Step 1: get qualifying version numbers for this object
+            $versionRows = $db->aggregate( 'ezcontentobject_version', [
+                [ '$match' => [
+                    'contentobject_id' => (int)$objectID,
+                    '$or'              => [
+                        [ 'status' => [ '$in' => $draftStatuses ] ],
+                        [ 'status' => (int)self::STATUS_PUBLISHED, 'version' => (int)$version ],
+                    ],
+                ] ],
+                [ '$project' => [ '_id' => 0, 'version' => 1 ] ],
+            ] );
+            $versionNums = array_map( function( $r ) { return (int)$r['version']; }, $versionRows );
+
+            if ( empty( $versionNums ) )
+                return [];
+
+            // Step 2: get non-initial-language attributes for those versions
+            $attrRows = $db->aggregate( 'ezcontentobject_attribute', [
+                [ '$match' => [
+                    'contentobject_id' => (int)$objectID,
+                    'version'          => [ '$in' => $versionNums ],
+                    'language_id'      => [ '$ne' => (int)$initialLanguageID ],
+                ] ],
+                [ '$project' => [ '_id' => 0, 'id' => 1, 'version' => 1, 'contentclassattribute_id' => 1 ] ],
+            ] );
+
+            if ( empty( $attrRows ) )
+                return [];
+
+            // Step 3: find which class attributes are non-translatable
+            $classAttrIDs = array_values( array_unique(
+                array_map( function( $r ) { return (int)$r['contentclassattribute_id']; }, $attrRows )
+            ) );
+            $ntRows = $db->aggregate( 'ezcontentclass_attribute', [
+                [ '$match'   => [ 'id' => [ '$in' => $classAttrIDs ], 'version' => 0, 'can_translate' => 0 ] ],
+                [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+            ] );
+            $nonTranslatableIDs = array_map( function( $r ) { return (int)$r['id']; }, $ntRows );
+
+            $attributes = [];
+            foreach ( $attrRows as $row )
+            {
+                if ( in_array( (int)$row['contentclassattribute_id'], $nonTranslatableIDs ) )
+                    $attributes[] = eZContentObjectAttribute::fetch( $row['id'], $row['version'] );
+            }
+            return $attributes;
+        }
 
         $attributeRows = $db->arrayQuery( "SELECT ezcontentobject_attribute.id, ezcontentobject_attribute.version
             FROM ezcontentobject_version,

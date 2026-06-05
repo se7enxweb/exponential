@@ -798,8 +798,21 @@ class eZXMLTextType extends eZDataType
                                                      'contentobject_attribute_version' => $version ) );
         }
 
-        /* Here we figure out which which URLs are not in use at all */
-        if ( $db->databaseName() == 'oracle' )
+        /* Here we figure out which URLs are not in use at all */
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // Find ezurl IDs that have no matching row in ezurl_object_link
+            $linkedIDs = array_column(
+                $db->aggregate( 'ezurl_object_link', [ [ '$project' => [ '_id' => 0, 'url_id' => 1 ] ] ] ),
+                'url_id'
+            );
+            $linkedIDs = array_values( array_unique( array_map( 'intval', $linkedIDs ) ) );
+            $res = $db->aggregate( 'ezurl', [
+                [ '$match'   => [ 'id' => [ '$nin' => $linkedIDs ] ] ],
+                [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+            ] );
+        }
+        elseif ( $db->databaseName() == 'oracle' )
         {
             $res = $db->arrayQuery( "SELECT DISTINCT id
                                      FROM ezurl, ezurl_object_link
@@ -818,10 +831,15 @@ class eZXMLTextType extends eZDataType
         {
             $unusedUrlIDs = array();
             foreach ( $res as $record )
-                $unusedUrlIDs[] = $record['id'];
-            $unusedUrlIDString = implode( ', ', $unusedUrlIDs );
+                $unusedUrlIDs[] = (int)$record['id'];
 
-            $db->query( "DELETE FROM ezurl WHERE id IN ($unusedUrlIDString)" );
+            if ( $db->databaseName() === 'mongo' )
+                $db->deleteWhere( 'ezurl', [ 'id' => [ '$in' => $unusedUrlIDs ] ] );
+            else
+            {
+                $unusedUrlIDString = implode( ', ', $unusedUrlIDs );
+                $db->query( "DELETE FROM ezurl WHERE id IN ($unusedUrlIDString)" );
+            }
         }
 
         /* If all the versions/urls of the attribute were removed, do not try to remove them again */

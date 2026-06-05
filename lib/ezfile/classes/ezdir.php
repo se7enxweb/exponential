@@ -275,6 +275,8 @@ class eZDir
         {
             // rootCheck is enabled, check if $dir is part of authorized directories
             $allowedDirs = eZINI::instance()->variable( 'FileSettings', 'AllowedDeletionDirs' );
+            if ( !is_array( $allowedDirs ) )
+                $allowedDirs = $allowedDirs ? [ $allowedDirs ] : [];
             // Also adding eZ Publish root dir.
             $rootDir = eZSys::rootDir() . DIRECTORY_SEPARATOR;
             array_unshift( $allowedDirs, $rootDir );

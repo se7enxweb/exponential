@@ -273,6 +273,26 @@ class eZCollaborationGroup extends eZPersistentObject
             $sqlParameters['offset'] = $offset;
             $sqlParameters['limit'] = $limit;
         }
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $mongoFilter = [ 'user_id' => (int)$userID ];
+            if ( $parentGroupID > 0 )
+                $mongoFilter['id'] = [ '$ne' => (int)$parentGroupID ];
+            if ( $pathString != '' )
+                $mongoFilter['path_string'] = [ '$regex' => '^' . preg_quote( $pathString, '/' ) ];
+            if ( $depth !== false )
+                $mongoFilter['depth'] = [ '$lte' => (int)$depth ];
+            $pipeline = [ [ '$match' => $mongoFilter ], [ '$sort' => [ 'path_string' => 1 ] ] ];
+            if ( $offset !== false && $limit !== false )
+            {
+                $pipeline[] = [ '$skip' => (int)$offset ];
+                $pipeline[] = [ '$limit' => (int)$limit ];
+            }
+            $groupListArray = $db->aggregate( 'ezcollab_group', $pipeline );
+            $returnGroupList = eZPersistentObject::handleRows( $groupListArray, 'eZCollaborationGroup', $asObject );
+            eZDebugSetting::writeDebug( 'collaboration-group-tree', $returnGroupList );
+            return $returnGroupList;
+        }
         $groupListArray = $db->arrayQuery( $sql, $sqlParameters );
         $returnGroupList = eZPersistentObject::handleRows( $groupListArray, 'eZCollaborationGroup', $asObject );
         eZDebugSetting::writeDebug( 'collaboration-group-tree', $returnGroupList );
@@ -295,6 +315,14 @@ class eZCollaborationGroup extends eZPersistentObject
                 FROM     ezcollab_item_group_link
                 WHERE    user_id = '$userID' AND
                          group_id = '$groupID'";
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = $db->aggregate( 'ezcollab_item_group_link', [
+                [ '$match' => [ 'user_id' => (int)$userID, 'group_id' => (int)$groupID ] ],
+                [ '$count' => 'count' ],
+            ] );
+            return !empty( $rows ) ? (int)$rows[0]['count'] : 0;
+        }
         $countArray = $db->arrayQuery( $sql );
         return $countArray[0]['count'];
     }

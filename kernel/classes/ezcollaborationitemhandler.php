@@ -527,7 +527,7 @@ class eZCollaborationItemHandler
                 if ( class_exists( $handlerClass ) )
                 {
                     $foundHandler = true;
-                    $handlerInstance = new $handlerClass( $handler, [] );
+                    $handlerInstance = new $handlerClass();
                     $objectCache[$handler] = $handlerInstance;
                     $handlerClasses = $handlerInstance->classes();
                     foreach ( $handlerClasses as $handlerClass )

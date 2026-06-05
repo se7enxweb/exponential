@@ -616,7 +616,16 @@ class eZContentClassAttribute extends eZPersistentObject
         {
             // Fetch all datatypes and id's used
             $query = "SELECT id, data_type_string FROM ezcontentclass_attribute";
-            $attributeArray = $db->arrayQuery( $query );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $attributeArray = $db->aggregate( 'ezcontentclass_attribute', [
+                    [ '$project' => [ '_id' => 0, 'id' => 1, 'data_type_string' => 1 ] ],
+                ] );
+            }
+            else
+            {
+                $attributeArray = $db->arrayQuery( $query );
+            }
 
             $attributeTypeArray = array();
             $sortKeyTypeArray = array();
@@ -929,10 +938,39 @@ class eZContentClassAttribute extends eZPersistentObject
             else
             {
                 // Fetch identifier/id pair from db
+                if ( $db->databaseName() === 'mongo' )
+                {
+                    $classRows = $db->aggregate( 'ezcontentclass', [
+                        [ '$match'   => [ 'version' => 0 ] ],
+                        [ '$project' => [ '_id' => 0, 'id' => 1, 'identifier' => 1 ] ],
+                    ] );
+                    $classMap = [];
+                    foreach ( $classRows as $cr )
+                        $classMap[(int)$cr['id']] = $cr['identifier'];
+
+                    $attrRows = $db->aggregate( 'ezcontentclass_attribute', [
+                        [ '$match'   => [ 'version' => 0 ] ],
+                        [ '$project' => [ '_id' => 0, 'id' => 1, 'identifier' => 1, 'contentclass_id' => 1 ] ],
+                    ] );
+                    $identifierArray = [];
+                    foreach ( $attrRows as $ar )
+                    {
+                        $classIdent = $classMap[(int)$ar['contentclass_id']] ?? null;
+                        if ( $classIdent === null ) continue;
+                        $identifierArray[] = [
+                            'attribute_id'         => (int)$ar['id'],
+                            'attribute_identifier' => $ar['identifier'],
+                            'class_identifier'     => $classIdent,
+                        ];
+                    }
+                }
+                else
+                {
                 $query = "SELECT ezcontentclass_attribute.id as attribute_id, ezcontentclass_attribute.identifier as attribute_identifier, ezcontentclass.identifier as class_identifier
                           FROM ezcontentclass_attribute, ezcontentclass
                           WHERE ezcontentclass.id=ezcontentclass_attribute.contentclass_id";
                 $identifierArray = $db->arrayQuery( $query );
+                }
 
                 self::$identifierHash = array();
                 foreach ( $identifierArray as $identifierRow )
