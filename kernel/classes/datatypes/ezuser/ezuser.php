@@ -1693,6 +1693,7 @@ WHERE user_id = '" . $userID . "' AND
         $data['roles'] = eZRole::fetchIDListByUser( $groups );
 
         // role limitation list (session: eZRoleLimitationValueList)
+        $data['role_limitations'] = [];
         $limitList = $user->limitList();
         foreach ( $limitList as $limit )
         {
@@ -1701,6 +1702,7 @@ WHERE user_id = '" . $userID . "' AND
 
         // access array (session: AccessArray)
         $data['access_array'] = $user->generateAccessArray();
+
 
         // discount rules (session: eZUserDiscountRules<userId>)
         $data['discount_rules'] = eZUserDiscountRule::generateIDListByUserID( $userId );
