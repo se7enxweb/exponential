@@ -125,7 +125,9 @@ class expMongoDB extends eZDBInterface
             // field = 'string'
             elseif ( preg_match( "/^([\w.]+)\s*=\s*'(.*)'$/s", $term, $m ) )
             {
-                $filter[trim($m[1])] = stripslashes( $m[2] );
+                $val = stripslashes( $m[2] );
+                // If the string value is purely numeric, cast to int for MongoDB int fields
+                $filter[trim($m[1])] = ctype_digit( $val ) ? (int) $val : $val;
             }
         }
         return $filter;
@@ -323,6 +325,59 @@ class expMongoDB extends eZDBInterface
 
     function arrayQuery( $sql, $params = array(), $server = false )
     {
+        $dbName = $this->DB;
+        $sql = trim( $sql );
+
+        // --- SELECT col[, col...] FROM single_table WHERE conditions [ORDER BY ...] [LIMIT n] ---
+        // Only handle single-table, no JOINs, no sub-queries
+        if ( preg_match( '/^\s*SELECT\s+(.+?)\s+FROM\s+([\w]+)\s*(?:WHERE\s+(.+?))?(?:\s+ORDER\s+BY\s+.+?)?(?:\s+LIMIT\s+\d+)?\s*$/is', $sql, $m )
+             && strpos( $m[2], ',' ) === false )   // single table only
+        {
+            $selectClause = trim( $m[1] );
+            $table        = trim( $m[2] );
+            $whereSql     = isset( $m[3] ) ? trim( $m[3] ) : '';
+
+            // Build projection from SELECT list (skip * and COUNT(*))
+            $projection = [ '_id' => 0 ];
+            if ( $selectClause !== '*' && stripos( $selectClause, 'COUNT(' ) === false )
+            {
+                foreach ( preg_split( '/\s*,\s*/', $selectClause ) as $col )
+                {
+                    $col = trim( $col );
+                    // strip table.col prefix if present
+                    if ( strpos( $col, '.' ) !== false )
+                        $col = substr( $col, strrpos( $col, '.' ) + 1 );
+                    if ( $col !== '' )
+                        $projection[$col] = 1;
+                }
+            }
+            else
+            {
+                $projection = []; // no projection = all fields
+            }
+
+            $filter = $whereSql !== '' ? $this->parseWhereClause( $whereSql ) : [];
+
+            // Pagination from $params
+            $options = [];
+            if ( !empty( $projection ) )
+                $options['projection'] = $projection;
+            if ( isset( $params['limit'] ) && $params['limit'] > 0 )
+                $options['limit'] = (int) $params['limit'];
+            if ( isset( $params['offset'] ) && $params['offset'] > 0 )
+                $options['skip'] = (int) $params['offset'];
+
+            $result = [];
+            try {
+                $cursor = $this->getClient()->selectCollection( $dbName, $table )->find( $filter, $options );
+                foreach ( $cursor as $doc )
+                    $result[] = $doc->getArrayCopy();
+            } catch ( Exception $e ) {
+                error_log( 'expMongoDB::arrayQuery SELECT failed: ' . $e->getMessage() . ' SQL: ' . substr( $sql, 0, 200 ) );
+            }
+            return $result;
+        }
+
         // Cannot translate arbitrary multi-table SQL to MongoDB. Log caller info.
         $trace = debug_backtrace( DEBUG_BACKTRACE_IGNORE_ARGS, 5 );
         // Find the first frame outside this file
