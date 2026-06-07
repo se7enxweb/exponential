@@ -677,7 +677,7 @@ class eZPostgreSQLDB extends eZDBInterface
         {
             $rows = $this->arrayQuery( "SELECT pg_class.relname AS table, pg_attribute.attname AS column
                 FROM pg_class,pg_attribute,pg_attrdef
-                WHERE pg_attrdef.adsrc LIKE 'nextval(%'
+                WHERE pg_get_expr(pg_attrdef.adbin, pg_attrdef.adrelid) LIKE 'nextval(%'
                     AND pg_attrdef.adrelid=pg_attribute.attrelid
                     AND pg_attrdef.adnum=pg_attribute.attnum
                     AND pg_attribute.attrelid=pg_class.oid" );

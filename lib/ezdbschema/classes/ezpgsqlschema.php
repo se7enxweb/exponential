@@ -769,7 +769,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         {
             if ( $field_def['type'] == 'auto_increment' )
             {
-                $sequenceFields = array( "CREATE SEQUENCE {$table}_{$field_name}_seq",
+                $sequenceFields = array( "CREATE SEQUENCE IF NOT EXISTS {$table}_{$field_name}_seq",
                                          "START 1",
                                          "INCREMENT 1",
                                          "MAXVALUE 9223372036854775807",
@@ -779,7 +779,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
             }
         }
 
-        $sql = "CREATE TABLE $table (\n";
+        $sql = "CREATE TABLE IF NOT EXISTS $table (\n";
         $fields = $table_def['fields'];
         foreach ( $fields as $field_name => $field_def )
         {

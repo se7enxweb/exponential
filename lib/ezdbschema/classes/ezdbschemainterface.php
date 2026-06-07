@@ -396,6 +396,18 @@ class eZDBSchemaInterface
         $includeData = $params['data'];
         $params['format'] = 'local';
         $schema = $this->schema( $params );
+
+        // Fetch existing tables once so both schema and data insertion can skip them
+        $existingTables = array();
+        if ( method_exists( $this->DBInstance, 'relationList' ) )
+        {
+            $existingList = $this->DBInstance->relationList();
+            if ( is_array( $existingList ) )
+            {
+                $existingTables = array_flip( $existingList );
+            }
+        }
+
         if ( $includeSchema )
         {
             foreach ( $schema as $tableName => $table )
@@ -403,6 +415,13 @@ class eZDBSchemaInterface
                 // Skip the information array, this is not a table
                 if ( $tableName == '_info' )
                     continue;
+
+                // Skip tables that already exist in the database
+                if ( isset( $existingTables[$tableName] ) )
+                {
+                    eZDebug::writeNotice( "Table '$tableName' already exists, skipping schema creation", __METHOD__ );
+                    continue;
+                }
 
                 $sqlList = $this->generateTableSQLList( $tableName, $table, $params, false );
                 foreach ( $sqlList as $sql )
@@ -428,6 +447,12 @@ class eZDBSchemaInterface
                     continue;
 
                 if ( !isset( $data[$tableName] ) )
+                {
+                    continue;
+                }
+
+                // Skip data insertion for tables that already existed
+                if ( isset( $existingTables[$tableName] ) )
                 {
                     continue;
                 }
