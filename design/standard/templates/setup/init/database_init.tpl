@@ -112,6 +112,12 @@
   <td class="normal"><label class="textfield">{"Password"|i18n("design/standard/setup/init")}:</label></td>
   <td class="normal"><input type="password" name="eZSetupDatabasePassword" size="16" value="{$database_info.password|wash}" /></td>
 </tr>
+{if eq($database_info.info.type,'mongodb')}
+<tr>
+  <td class="normal"><label class="textfield">{"Database name"|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal"><input type="text" name="eZSetupDatabaseName" size="16" value="{$database_info.dbname|wash}" /></td>
+</tr>
+{/if}
 {else}
 <tr>
   <td class="normal"><label class="textfield">{"Database File Name: "|i18n("design/standard/setup/init")}:</label></td>
