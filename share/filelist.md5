@@ -119,7 +119,7 @@ c864d87d4d2fdda0e1e1591ab0cb1b35  bin/shell/verifyfiles.sh
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 51bce499f1e818a40a8b0034e0e1a9c1  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-c4bab8fbe7038e373f51644bc51441e8  composer.json
+e24a27b29fd16aa43641b4750d9af2b1  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 07fdbce490e1c43b4d327c5e4e87ef11  composer.lock
 f7b8787e36dfb6f74f57759abd9f61a0  config.php-RECOMMENDED
@@ -9287,13 +9287,8 @@ de1e1df3f3e38494995bb500baa33024  settings/siteaccess/eng/image.ini.append.php~
 272cc4293e4bb7f3c37a88765091ed30  settings/siteaccess/eng/odf.ini.append.php~
 fe84c669309782a9c419ce1fe5dfd53b  settings/siteaccess/eng/override.ini.append.php
 bf65899c8eee46510238d19f669a9e22  settings/siteaccess/eng/override.ini.append.php~
-<<<<<<< HEAD
-d22745cc76263aae7e42341018818944  settings/siteaccess/eng/site.ini.append.php
-b2307efc0c477db9f00ef1a117dd80eb  settings/siteaccess/eng/site.ini.append.php~
-=======
 a9e4927a65b5af5951aee2cdffc89929  settings/siteaccess/eng/site.ini.append.php
 f7d9fb259fa0908318a8f7a0ce1d4ab1  settings/siteaccess/eng/site.ini.append.php~
->>>>>>> 16ad39c46d (Updated: Updated file listing md5 hashes for the 6.0.14 release upgrade check. Release prep.)
 df0d8a48e44627ac30b2fdb8f7c01882  settings/siteaccess/eng/template.ini.append.php
 df0d8a48e44627ac30b2fdb8f7c01882  settings/siteaccess/eng/template.ini.append.php~
 370d4c7ab3810fd41f5ce5aaf34ea46c  settings/siteaccess/eng/toolbar.ini.append.php
@@ -9314,13 +9309,8 @@ e280a26309b23b686513327aeaf63c34  settings/siteaccess/sevenx_site_admin/icon.ini
 272cc4293e4bb7f3c37a88765091ed30  settings/siteaccess/sevenx_site_admin/odf.ini.append.php~
 61094675bcd572cdc7e42f2a74bdf6bb  settings/siteaccess/sevenx_site_admin/override.ini.append.php
 ada7aa104e61e901bccae35652b0b347  settings/siteaccess/sevenx_site_admin/override.ini.append.php~
-<<<<<<< HEAD
-a8a6bd5c68a2e6ce89880ab066d7d882  settings/siteaccess/sevenx_site_admin/site.ini.append.php
-45d3dc4b05cbf81b514565474f2eb573  settings/siteaccess/sevenx_site_admin/site.ini.append.php~
-=======
 7b795945f74f01b866a39befaf9e0314  settings/siteaccess/sevenx_site_admin/site.ini.append.php
 0a5f8151e40fdd239685258b59171864  settings/siteaccess/sevenx_site_admin/site.ini.append.php~
->>>>>>> 16ad39c46d (Updated: Updated file listing md5 hashes for the 6.0.14 release upgrade check. Release prep.)
 6c73fe574d7f6b1a52a412db15666ab1  settings/siteaccess/sevenx_site_admin/toolbar.ini.append.php
 6c73fe574d7f6b1a52a412db15666ab1  settings/siteaccess/sevenx_site_admin/toolbar.ini.append.php~
 b934bdb41e5a3770b40d225c3391c0b5  settings/siteaccess/sevenx_site_admin/viewcache.ini.append.php
@@ -9341,13 +9331,8 @@ de1e1df3f3e38494995bb500baa33024  settings/siteaccess/sevenx_site_user/image.ini
 272cc4293e4bb7f3c37a88765091ed30  settings/siteaccess/sevenx_site_user/odf.ini.append.php~
 bf65899c8eee46510238d19f669a9e22  settings/siteaccess/sevenx_site_user/override.ini.append.php
 fe84c669309782a9c419ce1fe5dfd53b  settings/siteaccess/sevenx_site_user/override.ini.append.php~
-<<<<<<< HEAD
-b2307efc0c477db9f00ef1a117dd80eb  settings/siteaccess/sevenx_site_user/site.ini.append.php
-7e5e4330db63d3a230b8319c2d475457  settings/siteaccess/sevenx_site_user/site.ini.append.php~
-=======
 f7d9fb259fa0908318a8f7a0ce1d4ab1  settings/siteaccess/sevenx_site_user/site.ini.append.php
 64a1a8a104466ac974508cee23b97d8e  settings/siteaccess/sevenx_site_user/site.ini.append.php~
->>>>>>> 16ad39c46d (Updated: Updated file listing md5 hashes for the 6.0.14 release upgrade check. Release prep.)
 df0d8a48e44627ac30b2fdb8f7c01882  settings/siteaccess/sevenx_site_user/template.ini.append.php
 df0d8a48e44627ac30b2fdb8f7c01882  settings/siteaccess/sevenx_site_user/template.ini.append.php~
 370d4c7ab3810fd41f5ce5aaf34ea46c  settings/siteaccess/sevenx_site_user/toolbar.ini.append.php
