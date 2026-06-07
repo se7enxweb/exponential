@@ -1016,7 +1016,11 @@ class eZURLAliasML extends eZPersistentObject
             }
             $createdPath[] = $newText;
 
-            // OMS-urlalias-fix: mark old entries as history and reparent children (MongoDB native)
+            // OMS-urlalias-fix: MongoDB-only — mark old entries as history and reparent children.
+            // For SQL databases (mysql, postgresql, sqlite) this is handled by the existing
+            // SQL-based cleanup that follows; skip the mongo-specific aggregate/mongoUpdateMany calls.
+            if ( $db->databaseName() === 'mongo' )
+            {
             // Entries with same action, same language bit, is_original=1, is_alias=0, different position
             $toBeUpdated = $db->aggregate( 'ezurlalias_ml', [ [
                 '$match' => [
@@ -1102,6 +1106,7 @@ class eZURLAliasML extends eZPersistentObject
                     [ '$set' => [ 'parent' => $newElementID ] ]
                 );
             }
+            } // end if mongo
         }
         else
         {
@@ -1110,7 +1115,10 @@ class eZURLAliasML extends eZPersistentObject
             {
                 $linkID = (int)$linkID;
                 // Step 1, find existing ID
-                $rows = $db->aggregate( 'ezurlalias_ml', [ [ '$match' => [ 'id' => $linkID ] ] ] );
+                if ( $db->databaseName() === 'mongo' )
+                    $rows = $db->aggregate( 'ezurlalias_ml', [ [ '$match' => [ 'id' => $linkID ] ] ] );
+                else
+                    $rows = $db->arrayQuery( "SELECT * FROM ezurlalias_ml WHERE id = $linkID" );
                 // Some sanity checking
                 if ( count( $rows ) == 0 )
                 {

@@ -296,7 +296,13 @@ class eZStepSiteDetails extends eZStepInstaller
         $dbPort = $databaseInfo['port'];
 
         if ( $databaseInfo['info']['type'] == 'mysqli' )
-            $dbName = 'mysql';
+        {
+            // For MySQL, prefer the explicitly typed dbname so a non-root user
+            // can connect directly to their database without needing access to
+            // the 'mysql' system database (which SHOW DATABASES requires).
+            $explicitName = isset( $databaseInfo['dbname'] ) ? trim( $databaseInfo['dbname'] ) : '';
+            $dbName = $explicitName !== '' ? $explicitName : 'mysql';
+        }
         else
             $dbName = isset( $databaseInfo['dbname'] ) ? $databaseInfo['dbname'] : $databaseInfo['database'];
 
@@ -325,8 +331,18 @@ class eZStepSiteDetails extends eZStepInstaller
         $this->PersistenceList['database_info']['database'] = $dbParameters['database'];
 
         $db = eZDB::instance( $dbDriver, $dbParameters, true );
+
+        // If a specific database name was provided for MySQL, skip SHOW DATABASES
+        // (which requires global privileges) and use the named db directly.
+        if ( in_array( $databaseInfo['info']['type'], array( 'mysql', 'mysqli' ) ) &&
+             isset( $databaseInfo['dbname'] ) && trim( $databaseInfo['dbname'] ) !== '' )
+        {
+            $this->PersistenceList['database_info_available'] = array( trim( $databaseInfo['dbname'] ) );
+            return false;
+        }
+
         $availDatabases = $db->availableDatabases();
-        if ( is_countable( $availDatabases ) && count( $availDatabases ) > 0 ) // login succeeded, and at least one database available
+        if ( is_countable( $availDatabases ) && count( $availDatabases ) > 0 )
         {
             $this->PersistenceList['database_info_available'] = $availDatabases;
         }

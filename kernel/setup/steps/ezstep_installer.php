@@ -391,6 +391,16 @@ class eZStepInstaller
         if( $dbParameters['database'] == '' and $this->PersistenceList['database_info']['type'] == 'pgsql' )
             $dbParameters['database'] = 'template1';
 
+        // MySQL: if the user provided a database name, connect directly to it.
+        // This avoids any attempt to select the system 'mysql' database and
+        // means SHOW DATABASES / root access is not required.
+        if ( in_array( $this->PersistenceList['database_info']['type'], array( 'mysql', 'mysqli' ) ) and
+             ( $dbParameters['database'] == '' or $dbParameters['database'] === false ) and
+             !empty( $databaseInfo['dbname'] ) )
+        {
+            $dbParameters['database'] = $databaseInfo['dbname'];
+        }
+
         // MongoDB: the setup form posts 'dbname' not 'database', so database stays empty.
         // Read the DB name from the existing siteaccess configuration.
         if ( $this->PersistenceList['database_info']['type'] == 'mongodb' and
