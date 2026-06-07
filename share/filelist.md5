@@ -8418,7 +8418,7 @@ b51122bceda1287ed07c73a38c6df712  kernel/classes/eztipafriendcounter.php
 fd64afc2f17b957dee94cb128d4bf905  kernel/classes/eztipafriendrequest.php
 104777862eed45d536eff45666168062  kernel/classes/eztrigger.php
 df87f0b3237db8ad125c54dfaa0e5b1d  kernel/classes/ezurlaliasfilter.php
-97aa7d777cf220362f5df96d7408f542  kernel/classes/ezurlaliasml.php
+1804a2f7fbe1149cfba9f6a00b6ede7d  kernel/classes/ezurlaliasml.php
 915f86ce57846f25ef6650c02c004b07  kernel/classes/ezurlaliasquery.php
 cff98323c73bd61fe944a369feb5450e  kernel/classes/ezurlwildcard.php
 6a345e832ca266a95facaedcaa532b88  kernel/classes/ezuserdiscountrule.php
@@ -8858,14 +8858,14 @@ e828cc6fafcf49092e82d4758fc6abbf  kernel/setup/steps/ezstep_database_choice.php
 863baa20a32b00cb4f267faf1ff9c302  kernel/setup/steps/ezstep_database_init.php
 39bb60b1c17b9312032f6331a4c21f6a  kernel/setup/steps/ezstep_email_settings.php
 459d03abe810e0e0b789885522968da4  kernel/setup/steps/ezstep_final.php
-91229c94004aaf1dbffa9771bd39a142  kernel/setup/steps/ezstep_installer.php
+35bb6e002811b7521bc7f295ca93a785  kernel/setup/steps/ezstep_installer.php
 f37e8ed5f43bd7f3a1b24623d29b5f70  kernel/setup/steps/ezstep_language_options.php
 c2cc61d8d6b4e4bab4ce4113885b28be  kernel/setup/steps/ezstep_package_language_options.php
 2ed55dbd7f42a4e13dd0faebd4d270aa  kernel/setup/steps/ezstep_registration.php
 8af957c931ac4a8c25eb63e93d03a905  kernel/setup/steps/ezstep_security.php
 5a8d953b13ac144331981038b0898962  kernel/setup/steps/ezstep_site_access.php
 341efb388c153cb7fbd53cd048c7bde2  kernel/setup/steps/ezstep_site_admin.php
-c1e840ee1b2ec32ddbc42953951bb4b5  kernel/setup/steps/ezstep_site_details.php
+d9ae1af578d6870efdc014ef628e2ce3  kernel/setup/steps/ezstep_site_details.php
 4e541e9ac411dfa1e7a41d81457379d3  kernel/setup/steps/ezstep_site_packages.php
 d806906597fdd91b7910bd2da6f18e92  kernel/setup/steps/ezstep_site_templates.php
 5ea28b88c0bcd02605a4acfad67de430  kernel/setup/steps/ezstep_site_types.php
@@ -9287,8 +9287,13 @@ de1e1df3f3e38494995bb500baa33024  settings/siteaccess/eng/image.ini.append.php~
 272cc4293e4bb7f3c37a88765091ed30  settings/siteaccess/eng/odf.ini.append.php~
 fe84c669309782a9c419ce1fe5dfd53b  settings/siteaccess/eng/override.ini.append.php
 bf65899c8eee46510238d19f669a9e22  settings/siteaccess/eng/override.ini.append.php~
+<<<<<<< HEAD
 d22745cc76263aae7e42341018818944  settings/siteaccess/eng/site.ini.append.php
 b2307efc0c477db9f00ef1a117dd80eb  settings/siteaccess/eng/site.ini.append.php~
+=======
+a9e4927a65b5af5951aee2cdffc89929  settings/siteaccess/eng/site.ini.append.php
+f7d9fb259fa0908318a8f7a0ce1d4ab1  settings/siteaccess/eng/site.ini.append.php~
+>>>>>>> 16ad39c46d (Updated: Updated file listing md5 hashes for the 6.0.14 release upgrade check. Release prep.)
 df0d8a48e44627ac30b2fdb8f7c01882  settings/siteaccess/eng/template.ini.append.php
 df0d8a48e44627ac30b2fdb8f7c01882  settings/siteaccess/eng/template.ini.append.php~
 370d4c7ab3810fd41f5ce5aaf34ea46c  settings/siteaccess/eng/toolbar.ini.append.php
@@ -9309,8 +9314,13 @@ e280a26309b23b686513327aeaf63c34  settings/siteaccess/sevenx_site_admin/icon.ini
 272cc4293e4bb7f3c37a88765091ed30  settings/siteaccess/sevenx_site_admin/odf.ini.append.php~
 61094675bcd572cdc7e42f2a74bdf6bb  settings/siteaccess/sevenx_site_admin/override.ini.append.php
 ada7aa104e61e901bccae35652b0b347  settings/siteaccess/sevenx_site_admin/override.ini.append.php~
+<<<<<<< HEAD
 a8a6bd5c68a2e6ce89880ab066d7d882  settings/siteaccess/sevenx_site_admin/site.ini.append.php
 45d3dc4b05cbf81b514565474f2eb573  settings/siteaccess/sevenx_site_admin/site.ini.append.php~
+=======
+7b795945f74f01b866a39befaf9e0314  settings/siteaccess/sevenx_site_admin/site.ini.append.php
+0a5f8151e40fdd239685258b59171864  settings/siteaccess/sevenx_site_admin/site.ini.append.php~
+>>>>>>> 16ad39c46d (Updated: Updated file listing md5 hashes for the 6.0.14 release upgrade check. Release prep.)
 6c73fe574d7f6b1a52a412db15666ab1  settings/siteaccess/sevenx_site_admin/toolbar.ini.append.php
 6c73fe574d7f6b1a52a412db15666ab1  settings/siteaccess/sevenx_site_admin/toolbar.ini.append.php~
 b934bdb41e5a3770b40d225c3391c0b5  settings/siteaccess/sevenx_site_admin/viewcache.ini.append.php
@@ -9331,8 +9341,13 @@ de1e1df3f3e38494995bb500baa33024  settings/siteaccess/sevenx_site_user/image.ini
 272cc4293e4bb7f3c37a88765091ed30  settings/siteaccess/sevenx_site_user/odf.ini.append.php~
 bf65899c8eee46510238d19f669a9e22  settings/siteaccess/sevenx_site_user/override.ini.append.php
 fe84c669309782a9c419ce1fe5dfd53b  settings/siteaccess/sevenx_site_user/override.ini.append.php~
+<<<<<<< HEAD
 b2307efc0c477db9f00ef1a117dd80eb  settings/siteaccess/sevenx_site_user/site.ini.append.php
 7e5e4330db63d3a230b8319c2d475457  settings/siteaccess/sevenx_site_user/site.ini.append.php~
+=======
+f7d9fb259fa0908318a8f7a0ce1d4ab1  settings/siteaccess/sevenx_site_user/site.ini.append.php
+64a1a8a104466ac974508cee23b97d8e  settings/siteaccess/sevenx_site_user/site.ini.append.php~
+>>>>>>> 16ad39c46d (Updated: Updated file listing md5 hashes for the 6.0.14 release upgrade check. Release prep.)
 df0d8a48e44627ac30b2fdb8f7c01882  settings/siteaccess/sevenx_site_user/template.ini.append.php
 df0d8a48e44627ac30b2fdb8f7c01882  settings/siteaccess/sevenx_site_user/template.ini.append.php~
 370d4c7ab3810fd41f5ce5aaf34ea46c  settings/siteaccess/sevenx_site_user/toolbar.ini.append.php
