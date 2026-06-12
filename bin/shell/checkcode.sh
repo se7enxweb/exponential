@@ -1,4 +1,6 @@
 #!/bin/sh
+# @description Check PHP source files for short open tag coding standard violations
+# @long-description Searches PHP source files for the short open tag (<?), which is forbidden by the Exponential coding standard. All PHP files must use the full <?php open tag.
 
 . ./bin/shell/common.sh
 

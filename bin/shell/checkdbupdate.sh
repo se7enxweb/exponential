@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Check database update files for consistency with the current version
+# @long-description Validates that all required SQL update files are present and in the correct order for the current release. Sources sqlcommon.sh for database connection variables.
 
 . ./bin/shell/common.sh
 . ./bin/shell/sqlcommon.sh

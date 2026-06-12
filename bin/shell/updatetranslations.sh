@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Download and update translation files for all configured locales
+# @long-description Fetches updated .ts translation files from the Exponential translation server and places them in the correct locale directories. Supports locale filtering and force-overwrite options.
 
 . ./bin/shell/common.sh
 

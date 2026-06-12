@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ * @description Upgrade eZ Flow block and zone structures to the current version
+ * @long-description Migrates eZ Flow block, zone, and page content from a legacy data format to the current model. Run once after upgrading Exponential CMS on sites that use the eZ Flow extension.
  */
 
 // eZ Flow upgrade Script

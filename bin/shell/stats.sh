@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Display code statistics including line counts and file totals for the repository
+# @long-description Counts source lines of code (SLOC), file counts by type, and other metrics across the Exponential repository. Outputs a summary table useful for tracking code size over time.
 
 . ./bin/shell/common.sh
 

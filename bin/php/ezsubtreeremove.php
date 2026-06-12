@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ * @description Remove one or more content object subtrees from the content tree
+ * @long-description Permanently removes all content objects under the specified subtree nodes. This operation is irreversible. Use --dry-run first to preview what will be deleted.
  */
 
 // Subtree Remove Script

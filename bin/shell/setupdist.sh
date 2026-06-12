@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Set up a distribution build environment and staging directory structure
+# @long-description Prepares the working directory and configuration for building a distribution package. Creates staging directories, sets distribution markers, and validates prerequisites are in place.
 
 RESET_MARKERS=""
 

@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Build add-on packages for inclusion in a distribution release
+# @long-description Compiles and packages Exponential add-on extensions and components for distribution. Sources distcommon.sh and extensionscommon.sh. Intended for use by the Exponential release engineering process.
 
 . ./bin/shell/common.sh
 . ./bin/shell/packagescommon.sh

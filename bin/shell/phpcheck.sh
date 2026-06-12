@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Find PHP source files with syntax errors and print their paths
+# @long-description Runs php -l on all PHP files in the repository and collects those that fail the syntax check. Prints paths of files with parse errors to identify broken PHP before deployment.
 
 # Script to find bad PHP files and print them out
 

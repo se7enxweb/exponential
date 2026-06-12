@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Verify database schema files against the expected baseline schema
+# @long-description Compares current database schema files with a known-good baseline to detect unexpected modifications. Sources sqlcommon.sh for database connection variables.
 
 . ./bin/shell/common.sh
 . ./bin/shell/sqlcommon.sh

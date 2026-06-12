@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ * @description Convert content objects with 'price' datatype attributes to 'multiprice'
+ * @long-description Iterates over all content objects using the deprecated 'price' datatype and converts their attributes to the newer 'multiprice' datatype, preserving all existing pricing data.
  */
 
 // file  bin/php/convertprice2multiprice.php

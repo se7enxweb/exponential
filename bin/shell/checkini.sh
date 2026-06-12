@@ -1,4 +1,6 @@
 #!/bin/sh
+# @description Find INI configuration files that do not conform to valid PHP parse syntax
+# @long-description Searches settings and extension directories for .ini files containing syntax that would cause parse errors in PHP parse_ini_file(). Outputs offending files and line numbers.
 
 # Script for finding INI files not conforming to PHP syntax
 

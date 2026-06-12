@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Create a patch/diff archive between two Exponential release versions
+# @long-description Generates a compressed diff archive containing only the files that changed between two specified Exponential releases. Used for producing targeted upgrade patches.
 
 NAME="Exponential"
 DEST_ROOT="/tmp/Exponential-dist"

@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Check version number consistency across source files (deprecated since 5.0)
+# @long-description Scans source files for version number strings and checks consistency with the current release version. Deprecated and unmaintained since Exponential 5.0.
 
 # @deprecated and unmaintained since 5.0
 

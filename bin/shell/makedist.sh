@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Build a full Exponential release distribution package (deprecated since 5.0)
+# @long-description Produces a release-ready distribution archive of Exponential CMS. Deprecated and unmaintained since version 5.0. Modern packaging uses a CI/CD pipeline instead.
 
 # @deprecated and unmaintained since 5.0
 

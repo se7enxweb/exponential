@@ -1,0 +1,675 @@
+#!/usr/bin/env php
+<?php
+/**
+ * File containing the console script.
+ *
+ * Exponential CMS command console — modeled after Symfony's bin/console,
+ * built for eZ Publish 4 / Exponential CMS 6.x.
+ *
+ * Discovers and dispatches all scripts at runtime — zero configuration.
+ *
+ *   bin/php/<name>.php                → exp:<name>
+ *   bin/shell/<name>.sh               → shell:<name>
+ *   bin/<name>.sh | bin/<name>.php    → bin:<name>
+ *   extension/<ext>/bin/php/<name>    → ext:<ext>:<name>
+ *   extension/<ext>/bin/shell/<name>  → ext:<ext>:sh:<name>
+ *   extension/<ext>/bin/<name>.sh     → ext:<ext>:<name>
+ *
+ * Usage:
+ *   ./bin/php/console                            Show help
+ *   ./bin/php/console --help | -h                Show help
+ *   ./bin/php/console --version | -V             Show version
+ *   ./bin/php/console list [namespace]           List all commands
+ *   ./bin/php/console help <command>             Show command help
+ *   ./bin/php/console <command> [args...]        Run a command
+ *
+ * Examples:
+ *   ./bin/php/console exp:preload --siteaccess=sevenx_site_user
+ *   ./bin/php/console ext:hcaptcha:install --siteaccess=sevenx_site_user
+ *   ./bin/php/console shell:clearcache
+ *   ./bin/php/console bin:modfix
+ *   ./bin/php/console list
+ *   ./bin/php/console list ext
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @license   For full copyright and license information view LICENSE file.
+ * @package   kernel
+ */
+
+define( 'EXP_CONSOLE_VERSION', '1.0.0' );
+define( 'EXP_CONSOLE_NAME',    'Exponential Console' );
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  Bootstrap — resolve project root, change into it, load eZ Publish
+// ══════════════════════════════════════════════════════════════════════════════
+
+$rootDir = dirname( dirname( __DIR__ ) );
+chdir( $rootDir );
+require_once 'autoload.php';
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  eZCLI / eZScript — declare the Exponential legacy CLI environment.
+//
+//  $cli    is our primary output channel (stdout/stderr via eZCLI API).
+//  $script is declared for API compliance and help-text description, but
+//          startup() / initialize() are intentionally NOT called here:
+//          the console is a pure dispatcher — each sub-script owns its own
+//          eZScript lifecycle, including root-user checks and DB init.
+// ══════════════════════════════════════════════════════════════════════════════
+
+$cli    = eZCLI::instance();
+$script = eZScript::instance(
+    array(
+        'description'    =>
+            EXP_CONSOLE_NAME . ' ' . EXP_CONSOLE_VERSION . "\n\n" .
+            "Auto-discovers and dispatches all bin/php, bin/shell, bin/*\n" .
+            "and extension/*/bin scripts — zero configuration required.\n\n" .
+            "Usage:\n" .
+            "  ./bin/php/console list\n" .
+            "  ./bin/php/console exp:preload --siteaccess=<siteaccess>\n" .
+            "  ./bin/php/console ext:<extension>:<command>\n" .
+            "  ./bin/php/console help <command>",
+        'use-session'    => false,
+        'use-modules'    => false,
+        'use-extensions' => false,
+    )
+);
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  ANSI color helpers — orange / amber theme, respects eZCLI color detection.
+//  Uses 256-color ANSI orange where the terminal supports it, falls back to
+//  16-color yellow/orange on simpler terminals.
+// ══════════════════════════════════════════════════════════════════════════════
+
+$useColor = $cli->useStyles();
+// Enable styles if stdout is a real TTY and colors were not disabled externally
+if ( !$useColor && function_exists( 'posix_isatty' ) && posix_isatty( STDOUT ) )
+{
+    $cli->setUseStyles( true );
+    $useColor = true;
+}
+$use256   = $useColor && (
+    strpos( (string) getenv( 'TERM' ),      '256color'  ) !== false
+    || strpos( (string) getenv( 'COLORTERM' ), 'truecolor' ) !== false
+    || strpos( (string) getenv( 'COLORTERM' ), '256'       ) !== false
+);
+
+$esc = function( $code, $text ) use ( $useColor )
+{
+    return $useColor ? "\033[{$code}m{$text}\033[0m" : $text;
+};
+
+// Orange / amber palette (eZ / Exponential brand colors)
+$orange     = function( $t ) use ( $esc, $use256 ) { return $esc( $use256 ? '38;5;208'   : '0;33', $t ); };
+$boldOrange = function( $t ) use ( $esc, $use256 ) { return $esc( $use256 ? '1;38;5;208' : '1;33', $t ); };
+$amber      = function( $t ) use ( $esc, $use256 ) { return $esc( $use256 ? '38;5;214'   : '0;33', $t ); };
+
+// Standard palette
+$bold  = function( $t ) use ( $esc ) { return $esc( '1',    $t ); };
+$dim   = function( $t ) use ( $esc ) { return $esc( '2',    $t ); };
+$red   = function( $t ) use ( $esc ) { return $esc( '1;31', $t ); };
+$green = function( $t ) use ( $esc ) { return $esc( '1;32', $t ); };
+$gray  = function( $t ) use ( $esc ) { return $esc( '0;90', $t ); };
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  Output helpers — stdout via eZCLI::output(); stderr via fwrite()
+// ══════════════════════════════════════════════════════════════════════════════
+
+// Single output line via eZCLI (automatically respects the --quiet flag)
+$out = function( $text = '' ) use ( $cli ) { $cli->output( $text ); };
+
+// Separator lines
+$hr      = function( $w = 68 ) use ( $cli, $orange )     { $cli->output( $orange(     str_repeat( '─', $w ) ) ); };
+$hrThick = function( $w = 68 ) use ( $cli, $boldOrange )  { $cli->output( $boldOrange( str_repeat( '═', $w ) ) ); };
+
+// Section heading: bold amber title + orange underline
+$section = function( $title ) use ( $cli, $bold, $amber, $orange )
+{
+    $cli->output( '' );
+    $cli->output( $bold( $amber( $title ) ) );
+    $cli->output( $orange( str_repeat( '─', strlen( $title ) ) ) );
+};
+
+// Fatal error to stderr + non-zero exit
+$abort = function( $message, $code = 1 ) use ( $bold, $red )
+{
+    fwrite( STDERR, "\n  " . $bold( $red( ' ERROR ' ) ) . "  {$message}\n\n" );
+    exit( $code );
+};
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  Welcome banner
+// ══════════════════════════════════════════════════════════════════════════════
+
+$showBanner = function() use ( $out, $hrThick, $boldOrange, $amber, $dim, $bold )
+{
+    $hrThick();
+    $out(
+        '  ' . $bold( $boldOrange( EXP_CONSOLE_NAME ) )
+      . '  ' . $amber( EXP_CONSOLE_VERSION )
+      . '  ' . $dim( '(eZ Publish 4 / Exponential CMS 6.x)' )
+    );
+    $out( '  ' . $dim( 'With great power comes great responsibility.' ) );
+    $hrThick();
+};
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  Description extractor — reads up to 100 lines of a script to find its
+//  one-line summary.
+//
+//  Detection order (PHP):
+//    0. @description tag in docblock  ·  * @description Short desc
+//       OR standalone comment         ·  // @description Short desc
+//    1. eZScript/array 'description' key (handles paren form, variable form,
+//       strips \n escape sequences from multi-line description strings)
+//    2. First meaningful non-boilerplate docblock line (fallback)
+//
+//  Detection order (shell):
+//    0. # @description Short desc  (anywhere in first 100 lines)
+//    1. First # comment that looks like prose (skips shebang, code lines)
+// ══════════════════════════════════════════════════════════════════════════════
+
+$extractDescription = function( $filePath, $type )
+{
+    $handle = @fopen( $filePath, 'r' );
+    if ( $handle === false ) return '';
+
+    $lines = array(); $n = 0;
+    while ( !feof( $handle ) && $n < 100 )
+    {
+        $raw = fgets( $handle );
+        if ( $raw !== false ) { $lines[] = rtrim( $raw ); $n++; }
+    }
+    fclose( $handle );
+
+    if ( $type === 'php' )
+    {
+        // ── Strategy 0a: @description tag inside a docblock ──────────────────
+        $inBlock = false;
+        foreach ( $lines as $ln )
+        {
+            if ( strpos( $ln, '/**' ) !== false ) { $inBlock = true; continue; }
+            if ( $inBlock )
+            {
+                if ( strpos( $ln, ' */' ) !== false ) { $inBlock = false; break; }
+                if ( preg_match( '/\*\s*@description\s+(.+)$/', $ln, $m ) )
+                    return trim( $m[1] );
+            }
+        }
+
+        // ── Strategy 0b: standalone // @description comment ──────────────────
+        foreach ( $lines as $ln )
+        {
+            if ( preg_match( '/^\/\/\s*@description\s+(.+)$/', $ln, $m ) )
+                return trim( $m[1] );
+        }
+
+        // ── Strategy 1: eZScript/array 'description' key ─────────────────────
+        //   Handles: 'description' => "text"  /  'description' => ( "text"
+        //            $var['description'] = 'text'
+        //   Strips trailing \n escape sequences from multi-line strings.
+        $fullText = implode( "\n", $lines );
+
+        $patA = "/'description'\\s*=>\\s*\\(?\\s*[\"']([^\"'\\r\\n]+)/";  // array key =>
+        $patB = "/\\['description'\\]\\s*=\\s*[\"']([^\"'\\r\\n]+)/";     // $var['description'] =
+
+        foreach ( array( $patA, $patB ) as $pat )
+        {
+            if ( preg_match( $pat, $fullText, $m ) )
+            {
+                // Strip \n escape sequences (literal backslash-n) and everything after
+                $desc = trim( preg_replace( '/\\\\n.*$/s', '', $m[1] ) );
+                if ( $desc !== '' ) return $desc;
+            }
+        }
+
+        // ── Strategy 2: first meaningful docblock line (fallback) ─────────────
+        $inBlock = false;
+        foreach ( $lines as $ln )
+        {
+            if ( strpos( $ln, '/**' ) !== false ) { $inBlock = true; continue; }
+            if ( $inBlock )
+            {
+                if ( strpos( $ln, ' */' ) !== false ) break;
+                $c = trim( ltrim( trim( $ln ), '*' ) );
+                if ( $c === '' || stripos( $c, 'File containing' ) !== false || $c[0] === '@' )
+                    continue;
+                return $c;
+            }
+        }
+    }
+    elseif ( $type === 'shell' )
+    {
+        // ── Strategy 0: # @description tag ───────────────────────────────────
+        foreach ( $lines as $ln )
+        {
+            if ( preg_match( '/^#\s*@description\s+(.+)$/', $ln, $m ) )
+                return trim( $m[1] );
+        }
+
+        // ── Fallback: first # comment that looks like prose ───────────────────
+        foreach ( $lines as $ln )
+        {
+            if ( strpos( $ln, '#!' ) === 0 ) continue;
+            if ( strpos( $ln, '#'  ) === 0 )
+            {
+                $c = trim( ltrim( $ln, '# ' ) );
+                if ( $c === '' ) continue;
+                // Skip lines that are clearly code/noise rather than description prose
+                if ( preg_match( '/^(echo\s|exit[\s;]|if\s|for\s|while\s|source\s|\.\s|function\s|@|=|\*{3,}|#{2,}|Check param)/', $c ) )
+                    continue;
+                return $c;
+            }
+        }
+    }
+
+    return '';
+};
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  Command discovery — scans all supported script locations at runtime.
+//
+//  Namespace → path mapping:
+//    exp:<name>              bin/php/<name>.php
+//    shell:<name>            bin/shell/<name>.sh
+//    bin:<name>              bin/<name>.sh  |  bin/<name>.php
+//    ext:<ext>:<name>        extension/<ext>/bin/php/<name>.php
+//    ext:<ext>:sh:<name>     extension/<ext>/bin/shell/<name>.sh
+//    ext:<ext>:<name>        extension/<ext>/bin/<name>.sh  (root-bin fallback)
+// ══════════════════════════════════════════════════════════════════════════════
+
+$discoverCommands = function() use ( $rootDir, $extractDescription )
+{
+    $commands  = array();
+    $shellLibs = array( 'common', 'distcommon', 'packagescommon', 'extensionscommon', 'sqlcommon' );
+
+    // ── exp: — bin/php/*.php ──────────────────────────────────────────────────
+    foreach ( glob( $rootDir . '/bin/php/*.php' ) ?: array() as $fp )
+    {
+        $name = basename( $fp, '.php' );
+        if ( $name === 'console' ) continue;
+        $key = 'exp:' . $name;
+        $commands[ $key ] = array(
+            'name'        => $key,
+            'namespace'   => 'exp',
+            'path'        => 'bin/php/' . $name . '.php',
+            'type'        => 'php',
+            'binary'      => PHP_BINARY,
+            'description' => $extractDescription( $fp, 'php' ),
+        );
+    }
+
+    // ── shell: — bin/shell/*.sh ───────────────────────────────────────────────
+    foreach ( glob( $rootDir . '/bin/shell/*.sh' ) ?: array() as $fp )
+    {
+        $name = basename( $fp, '.sh' );
+        if ( in_array( $name, $shellLibs, true ) ) continue;
+        $key = 'shell:' . $name;
+        $commands[ $key ] = array(
+            'name'        => $key,
+            'namespace'   => 'shell',
+            'path'        => 'bin/shell/' . $name . '.sh',
+            'type'        => 'shell',
+            'binary'      => '/bin/bash',
+            'description' => $extractDescription( $fp, 'shell' ),
+        );
+    }
+
+    // ── bin: — bin/*.sh and bin/*.php (root-level bin executables) ────────────
+    foreach ( array_merge(
+        glob( $rootDir . '/bin/*.sh'  ) ?: array(),
+        glob( $rootDir . '/bin/*.php' ) ?: array()
+    ) as $fp )
+    {
+        $base  = basename( $fp );
+        $name  = preg_replace( '/\.(sh|php)$/', '', $base );
+        $key   = 'bin:' . $name;
+        if ( isset( $commands[ $key ] ) ) continue;
+        $isSh  = ( substr( $base, -3 ) === '.sh' );
+        $commands[ $key ] = array(
+            'name'        => $key,
+            'namespace'   => 'bin',
+            'path'        => 'bin/' . $base,
+            'type'        => $isSh ? 'shell' : 'php',
+            'binary'      => $isSh ? '/bin/bash' : PHP_BINARY,
+            'description' => $extractDescription( $fp, $isSh ? 'shell' : 'php' ),
+        );
+    }
+
+    // ── ext: — all extension/*/bin sub-directories ────────────────────────────
+    foreach ( glob( $rootDir . '/extension/*', GLOB_ONLYDIR ) ?: array() as $extDir )
+    {
+        $extName = basename( $extDir );
+
+        // extension/*/bin/php/*.php → ext:<ext>:<name>
+        foreach ( glob( $extDir . '/bin/php/*.php' ) ?: array() as $fp )
+        {
+            $name = basename( $fp, '.php' );
+            $key  = 'ext:' . $extName . ':' . $name;
+            $commands[ $key ] = array(
+                'name'        => $key,
+                'namespace'   => 'ext:' . $extName,
+                'path'        => 'extension/' . $extName . '/bin/php/' . $name . '.php',
+                'type'        => 'php',
+                'binary'      => PHP_BINARY,
+                'description' => $extractDescription( $fp, 'php' ),
+            );
+        }
+
+        // extension/*/bin/shell/*.sh → ext:<ext>:sh:<name>
+        foreach ( glob( $extDir . '/bin/shell/*.sh' ) ?: array() as $fp )
+        {
+            $name = basename( $fp, '.sh' );
+            if ( in_array( $name, $shellLibs, true ) ) continue;
+            $key  = 'ext:' . $extName . ':sh:' . $name;
+            $commands[ $key ] = array(
+                'name'        => $key,
+                'namespace'   => 'ext:' . $extName,
+                'path'        => 'extension/' . $extName . '/bin/shell/' . $name . '.sh',
+                'type'        => 'shell',
+                'binary'      => '/bin/bash',
+                'description' => $extractDescription( $fp, 'shell' ),
+            );
+        }
+
+        // extension/*/bin/*.sh → ext:<ext>:<name>  (root bin fallback)
+        foreach ( glob( $extDir . '/bin/*.sh' ) ?: array() as $fp )
+        {
+            $name = basename( $fp, '.sh' );
+            $key  = 'ext:' . $extName . ':' . $name;
+            if ( isset( $commands[ $key ] ) ) continue;
+            $commands[ $key ] = array(
+                'name'        => $key,
+                'namespace'   => 'ext:' . $extName,
+                'path'        => 'extension/' . $extName . '/bin/' . basename( $fp ),
+                'type'        => 'shell',
+                'binary'      => '/bin/bash',
+                'description' => $extractDescription( $fp, 'shell' ),
+            );
+        }
+    }
+
+    ksort( $commands );
+    return $commands;
+};
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  Command listing — grouped by namespace, with built-in meta-commands shown
+//  when no namespace filter is active.
+// ══════════════════════════════════════════════════════════════════════════════
+
+$listCommands = function( $nsFilter = null )
+    use ( $out, $hr, $section, $showBanner, $discoverCommands,
+          $bold, $dim, $amber, $orange, $green )
+{
+    $showBanner();
+
+    $all  = $discoverCommands();
+    $byNs = array();
+
+    foreach ( $all as $cmd )
+    {
+        $ns = $cmd['namespace'];
+        if ( $nsFilter !== null
+             && $ns !== $nsFilter
+             && strpos( $ns, $nsFilter . ':' ) !== 0
+             && strpos( $ns, $nsFilter       ) !== 0 )
+            continue;
+        $byNs[ $ns ][] = $cmd;
+    }
+
+    // Built-in meta-commands header (only when listing everything)
+    if ( $nsFilter === null )
+    {
+        $out( '' );
+        $out( $bold( $amber( 'Available commands:' ) ) );
+        $hr( 19 );
+        foreach ( array(
+            array( 'list [namespace]', 'List all commands, or filter to a namespace' ),
+            array( 'help <command>',   'Show help / usage for a specific command'    ),
+            array( '--help, -h',       'Show this help screen'                       ),
+            array( '--version, -V',    'Show console version and exit'               ),
+        ) as $row )
+        {
+            $out( '  ' . $orange( str_pad( $row[0], 28 ) ) . '  ' . $dim( $row[1] ) );
+        }
+    }
+
+    $nsLabels = array(
+        'exp'   => 'exp   — bin/php/*.php  (Exponential PHP scripts)',
+        'shell' => 'shell — bin/shell/*.sh  (Bash shell scripts)',
+        'bin'   => 'bin   — bin/*  (Root bin executables)',
+    );
+
+    $lastCount = 0;
+    foreach ( $byNs as $ns => $list )
+    {
+        $lastCount = count( $list );
+        $label     = isset( $nsLabels[ $ns ] )
+            ? $nsLabels[ $ns ]
+            : ( $ns . '  — extension/' . str_replace( 'ext:', '', $ns ) . '/bin' );
+
+        $section( $label );
+
+        $maxLen = 0;
+        foreach ( $list as $c ) $maxLen = max( $maxLen, strlen( $c['name'] ) );
+
+        foreach ( $list as $c )
+        {
+            $padded = str_pad( $c['name'], $maxLen + 2 );
+            $desc   = $c['description'] ?: $dim( '(no description)' );
+            $out( '  ' . $green( $padded ) . '  ' . $desc );
+        }
+    }
+
+    $total = count( $all );
+    $out( '' );
+    if ( $nsFilter === null )
+    {
+        $out( $dim( "  {$total} commands available." ) );
+        $out( '' );
+        $out( '  ' . $dim( 'Tip: use ' ) . $orange( 'help <command>' ) . $dim( ' for detailed help on a specific command.' ) );
+    }
+    else
+    {
+        $out( $dim( "  {$total} commands total  (namespace filter '{$nsFilter}': {$lastCount} shown)." ) );
+    }
+    $out( '' );
+};
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  Fuzzy matching — Levenshtein-based "did you mean?" suggestion
+// ══════════════════════════════════════════════════════════════════════════════
+
+$findNearest = function( $typed, array $all )
+{
+    $best = null; $min = PHP_INT_MAX;
+    foreach ( array_keys( $all ) as $known )
+    {
+        $d = levenshtein( $typed, $known );
+        if ( $d < $min ) { $min = $d; $best = $known; }
+    }
+    return ( $min <= 5 ) ? $best : null;
+};
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  Command execution — passthru to the sub-script.
+//  Arguments are forwarded verbatim (shell-escaped) to the child process.
+//  Each sub-script owns its eZScript lifecycle (startup / DB init / shutdown).
+// ══════════════════════════════════════════════════════════════════════════════
+
+$runCommand = function( array $cmd, array $forwardArgs )
+              use ( $rootDir, $dim, $gray, $orange, $abort )
+{
+    $scriptPath = $rootDir . '/' . $cmd['path'];
+
+    if ( !file_exists( $scriptPath ) )
+        $abort( 'Script not found: ' . $cmd['path'] );
+
+    if ( $cmd['type'] === 'php' )
+    {
+        $parts = array( escapeshellarg( $cmd['binary'] ), escapeshellarg( $scriptPath ) );
+    }
+    else
+    {
+        if ( !is_executable( $scriptPath ) ) chmod( $scriptPath, 0755 );
+        $parts = array( escapeshellarg( $cmd['binary'] ), escapeshellarg( $scriptPath ) );
+    }
+
+    foreach ( $forwardArgs as $arg )
+        $parts[] = escapeshellarg( $arg );
+
+    // Dispatch notice to stderr — never corrupts piped stdout
+    fwrite( STDERR,
+        "\n  " . $gray( '▶' )
+      . '  ' . $dim( 'running' ) . ' '
+      . $orange( $cmd['name'] ) . '  '
+      . $dim( '→  ' . $cmd['path'] )
+      . "\n\n"
+    );
+
+    // Use proc_open() with inherited file descriptors instead of passthru().
+    //
+    // passthru() internally connects the child process's stdout to a pipe, so
+    // posix_isatty(STDOUT) inside the sub-script returns false and ANSI colors
+    // are suppressed.  By passing the actual STDIN / STDOUT / STDERR resources
+    // the child inherits the parent's real TTY file descriptors and color
+    // detection works correctly.
+    $proc = proc_open(
+        implode( ' ', $parts ),
+        array( 0 => STDIN, 1 => STDOUT, 2 => STDERR ),
+        $pipes   // will be empty — all I/O goes directly through inherited FDs
+    );
+
+    if ( $proc === false )
+        $abort( 'Failed to launch sub-script: ' . $cmd['path'] );
+
+    $exitCode = proc_close( $proc );
+    exit( (int) $exitCode );
+};
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  Argument parsing — inspect $argv before any routing
+// ══════════════════════════════════════════════════════════════════════════════
+
+$rawArgs = array_slice( $argv, 1 );
+
+// ── --version / -V ───────────────────────────────────────────────────────────
+if ( in_array( '--version', $rawArgs, true ) || in_array( '-V', $rawArgs, true ) )
+{
+    $cli->output( EXP_CONSOLE_NAME . ' ' . EXP_CONSOLE_VERSION );
+    exit( 0 );
+}
+
+// Strip console-level flags; keep everything else for routing
+$quietMode    = false;
+$filteredArgs = array();
+
+foreach ( $rawArgs as $arg )
+{
+    if ( $arg === '--quiet' || $arg === '-q' ) { $quietMode = true; continue; }
+    if ( $arg === '--version' || $arg === '-V' ) continue;
+    $filteredArgs[] = $arg;
+}
+
+// ── No arguments → show command listing ───────────────────────────────────────
+if ( empty( $filteredArgs ) )
+{
+    $listCommands();
+    exit( 0 );
+}
+
+$commandInput = $filteredArgs[0];
+$forwardArgs  = array_slice( $filteredArgs, 1 );
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  Routing
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ── --help / -h ───────────────────────────────────────────────────────────────
+//  Bare --help/--h → show listing.
+//  With a target (./console --help exp:preload) → forward --help to sub-script.
+if ( $commandInput === '--help' || $commandInput === '-h' )
+{
+    if ( !empty( $forwardArgs ) && isset( $forwardArgs[0][0] ) && $forwardArgs[0][0] !== '-' )
+    {
+        $commandInput = $forwardArgs[0];
+        $forwardArgs  = array( '--help' );
+        // fall through to command lookup
+    }
+    else
+    {
+        $listCommands();
+        exit( 0 );
+    }
+}
+
+// ── list ──────────────────────────────────────────────────────────────────────
+if ( $commandInput === 'list' )
+{
+    $nsArg = isset( $forwardArgs[0] ) ? ltrim( $forwardArgs[0], '-' ) : null;
+    $listCommands( $nsArg ?: null );
+    exit( 0 );
+}
+
+// ── help ──────────────────────────────────────────────────────────────────────
+if ( $commandInput === 'help' )
+{
+    if ( empty( $forwardArgs ) )
+    {
+        $listCommands();
+        exit( 0 );
+    }
+    $commandInput = $forwardArgs[0];
+    $forwardArgs  = array( '--help' );
+    // fall through to command lookup
+}
+
+// ── Command registry lookup ───────────────────────────────────────────────────
+$allCommands = $discoverCommands();
+
+if ( isset( $allCommands[ $commandInput ] ) )
+    $runCommand( $allCommands[ $commandInput ], $forwardArgs );
+
+// ── Bare-name shortcut — try exp: → shell: → bin: (no colon in input) ─────────
+if ( strpos( $commandInput, ':' ) === false )
+{
+    foreach ( array( 'exp:', 'shell:', 'bin:' ) as $prefix )
+    {
+        $candidate = $prefix . $commandInput;
+        if ( isset( $allCommands[ $candidate ] ) )
+            $runCommand( $allCommands[ $candidate ], $forwardArgs );
+    }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  Unknown command — fuzzy suggestion + error
+// ══════════════════════════════════════════════════════════════════════════════
+
+$suggestion = $findNearest( $commandInput, $allCommands );
+
+$showBanner();
+
+fwrite( STDERR,
+    "\n  " . $bold( $red( ' UNKNOWN COMMAND ' ) ) . "\n\n"
+  . '  Command ' . $orange( '"' . $commandInput . '"' ) . " was not found.\n"
+);
+
+if ( $suggestion !== null )
+{
+    fwrite( STDERR,
+        "\n  " . $amber( 'Did you mean:' )
+      . '  '   . $green( $suggestion ) . "\n"
+      . "\n  " . $dim( '  ./bin/php/console ' . $suggestion )
+      . "\n"
+    );
+}
+
+fwrite( STDERR,
+    "\n  " . $dim( 'Run ' )
+  . $orange( './bin/php/console list' )
+  . $dim( ' to see all available commands.' )
+  . "\n\n"
+);
+
+exit( 1 );

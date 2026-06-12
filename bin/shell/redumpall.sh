@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Re-dump all SQL database schemas and seed data to SQL files
+# @long-description Connects to the configured databases and re-exports all schemas and seed data as SQL dump files. Useful for regenerating canonical SQL files after schema changes.
 
 . ./bin/shell/sqlcommon.sh
 . ./bin/shell/common.sh

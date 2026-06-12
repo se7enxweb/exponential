@@ -6,6 +6,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ * @description Shared helper functions library for eZWebin install and upgrade scripts
+ * @long-description Included by ezwebininstall.php and ezwebinupgrade.php. Provides common utility functions for eZWebin package installation, configuration, and upgrade steps. Not intended to be run directly.
  */
 
 // eZWebin install/updagrade helper routines.

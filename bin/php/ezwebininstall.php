@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ * @description Install the eZWebin site package and configure the site
+ * @long-description Installs the eZWebin package into a freshly configured Exponential site. Sets up required content classes, siteaccesses, and design settings. Typically run once during the initial site setup wizard.
  */
 
 // eZWebin install Script

@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Package an extension directory into a distributable archive
+# @long-description Creates a compressed archive of an Exponential extension directory suitable for distribution via the package repository. Reads version from package.xml. Usage: packext.sh <extension-name>
 
 function show_help
 {

@@ -1,4 +1,6 @@
 #!/bin/sh
+# @description Shared functions library sourced by distribution build scripts (not executable)
+# @long-description Provides common shell functions and variables used by makedist.sh, setdistribution.sh, setupdist.sh and related distribution packaging scripts. Source this file — do not run it directly.
 
 DIST_PROP="ez:distribution"
 DIST_DIR_PROP="ez:distribution_include_all"

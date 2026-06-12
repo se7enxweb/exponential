@@ -1,4 +1,6 @@
 #!/bin/bash
+# @description Set the distribution name and version properties for a release build
+# @long-description Sets distribution metadata (name, version, type) used by the distribution build system. Uses the ez:distribution SVN property to tag the tree with the release identifier.
 
 DIST_PROP="ez:distribution"
 DIST_DIR_PROP="ez:distribution_include_all"

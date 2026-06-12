@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ * @description Migrate binary files and images from local filesystem into database cluster storage
+ * @long-description Reads existing binary and image files from the local filesystem and inserts them into the database cluster backend. Run once when enabling clustering on a site that previously used local file storage.
  */
 
 /*

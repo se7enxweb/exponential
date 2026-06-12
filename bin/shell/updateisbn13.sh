@@ -1,4 +1,6 @@
 #!/bin/sh
+# @description Download updated ISBN-13 publisher prefix data and import it into the database
+# @long-description Fetches the latest ISBN-13 data from the official source and imports it into the Exponential database. Run periodically to keep ISBN validation data current.
 
 # This script will download updated data for isb13 and
 # redump kernel/classes/datatypes/ezisbn/share/db_data.dba

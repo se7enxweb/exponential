@@ -1,4 +1,6 @@
 #!/bin/sh
+# @description Fix directory and file permissions for an Exponential installation
+# @long-description Sets correct permissions (777 for dirs, 666 for files) on the Exponential tree and creates missing required directories such as var/autoload, var/cache, and extension/. Run from the Exponential root directory.
 
 DIR_MODE=777
 FILE_MODE=666

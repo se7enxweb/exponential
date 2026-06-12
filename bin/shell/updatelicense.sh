@@ -1,4 +1,6 @@
 #!/bin/sh
+# @description Update license header blocks across all source files
+# @long-description Replaces outdated license headers (GPL, PUL) in PHP and other source files with the current license text. Supports --license-type=<type> and --licenses-dir=<dir> options.
 function show_help
 {
     echo
