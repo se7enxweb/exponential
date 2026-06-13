@@ -83,7 +83,7 @@ Developer note: PHP 7 support can be regained at any time by reverting php8.1 sp
 - Full support for Unicode
 - Template engine
 - A headless CRUD REST API
-- Database abstraction layer supporting MySQL, SQLite, Postgres and Oracle
+- Database abstraction layer supporting MariaDB, MySQL, SQLite, PostgreSQL, Oracle and MongoDB
 - MVC architecture
 - Support for the latest Image and Video File Formats (webp, webm, png, jpeg, etc)
 - Support for highly available and scalable configurations (multi-server clusters)
