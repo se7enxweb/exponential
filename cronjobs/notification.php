@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Process and dispatch pending notification events to subscribers
+ *
  * File containing the notification.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

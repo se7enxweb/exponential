@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Remove user drafts that exceed the configured age limit
+ *
  * File containing the old_drafts_cleanup.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

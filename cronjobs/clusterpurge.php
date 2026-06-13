@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Purge expired cluster storage entries from the database backend
+ *
  * Cluster files purge cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Remove expired and stale entries from the static page cache
+ *
  * File containing the staticcache_cleanup.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

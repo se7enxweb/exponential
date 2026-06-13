@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Process pending workflow events and advance stalled workflows
+ *
  * File containing the workflow.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

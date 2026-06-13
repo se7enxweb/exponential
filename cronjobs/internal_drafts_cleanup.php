@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Remove internal drafts that exceed the configured age limit
+ *
  * File containing the internal_drafts_cleanup.php.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Clean up subtree expiry entries from the URL cache tables
+ *
  * File containing the subtreeexpirycleanup.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

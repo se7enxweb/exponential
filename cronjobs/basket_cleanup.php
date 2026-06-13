@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Remove abandoned shopping baskets older than the configured threshold
+ *
  * File containing the basket_cleanup.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

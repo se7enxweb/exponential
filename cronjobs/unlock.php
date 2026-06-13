@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Release content objects stuck in a locked editing state
+ *
  * File containing the unlock.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

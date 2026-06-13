@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Process scheduled unpublish actions on content objects
+ *
  * File containing the unpublish.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

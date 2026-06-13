@@ -273,9 +273,13 @@ $extractDescription = function( $filePath, $type )
 //    exp:<name>              bin/php/<name>.php
 //    shell:<name>            bin/shell/<name>.sh
 //    bin:<name>              bin/<name>.sh  |  bin/<name>.php
+//    cron:<name>             INI-defined cronjob part (dispatched via runcronjobs.php)
+//                            Sources: settings/cronjob.ini + extension/*/settings/cronjob.ini.append.php
 //    ext:<ext>:<name>        extension/<ext>/bin/php/<name>.php
 //    ext:<ext>:sh:<name>     extension/<ext>/bin/shell/<name>.sh
 //    ext:<ext>:<name>        extension/<ext>/bin/<name>.sh  (root-bin fallback)
+//    crontab:list            Print the current system crontab
+//    crontab:edit            Open the system crontab in $EDITOR
 // ══════════════════════════════════════════════════════════════════════════════
 
 $discoverCommands = function() use ( $rootDir, $extractDescription )
@@ -389,6 +393,111 @@ $discoverCommands = function() use ( $rootDir, $extractDescription )
         }
     }
 
+    // ── cron: — INI-defined cronjob parts ────────────────────────────────────
+    //   Parts are declared in [CronjobPart-<name>] sections in cronjob.ini and
+    //   extension/*/settings/cronjob.ini.append.php.  The part name (not the
+    //   script filename) is what runcronjobs.php accepts as its argument.
+    //   Description = @description tags from each bound script, joined.
+    //
+    //   INI files to scan (in order):
+    //     settings/cronjob.ini
+    //     extension/*/settings/cronjob.ini.append.php
+
+    // Mini eZ INI parser: returns [ 'PartName' => [ 'script.php', ... ], ... ]
+    // keyed by part name (without the CronjobPart- prefix).
+    $parseCronjobParts = function( $iniFile ) use ( $extractDescription )
+    {
+        if ( !file_exists( $iniFile ) ) return array();
+        $parts   = array();
+        $current = null;
+        foreach ( file( $iniFile ) as $raw )
+        {
+            $line = trim( $raw );
+            if ( $line === '' || $line[0] === '#' ) continue;
+            // Strip PHP open/close tags that wrap .append.php files
+            if ( strpos( $line, '<?php' ) !== false
+              || strpos( $line, '?>'    ) !== false
+              || strpos( $line, '/*'    ) !== false
+              || strpos( $line, '*/'    ) !== false ) continue;
+            if ( preg_match( '/^\[CronjobPart-(.+)\]$/', $line, $m ) )
+            {
+                $current = $m[1];
+                if ( !isset( $parts[ $current ] ) )
+                    $parts[ $current ] = array();
+                continue;
+            }
+            // Reset on any other section header
+            if ( $line[0] === '[' ) { $current = null; continue; }
+            // Collect Scripts[]= entries inside a named part
+            if ( $current !== null
+                 && preg_match( '/^Scripts\[\]\s*=\s*(.+\.php)$/', $line, $m ) )
+            {
+                $parts[ $current ][] = trim( $m[1] );
+            }
+        }
+        return $parts;
+    };
+
+    // Build script→description map from all known cronjob directories.
+    // Keys are bare filenames ('script.php'); values are one-line descriptions.
+    $scriptDescs = array();
+    $scriptDirs  = array( $rootDir . '/cronjobs' );
+    foreach ( glob( $rootDir . '/extension/*', GLOB_ONLYDIR ) ?: array() as $d )
+        $scriptDirs[] = $d . '/cronjobs';
+
+    foreach ( $scriptDirs as $dir )
+    {
+        foreach ( glob( $dir . '/*.php' ) ?: array() as $fp )
+        {
+            $base = basename( $fp );
+            if ( !isset( $scriptDescs[ $base ] ) )
+                $scriptDescs[ $base ] = $extractDescription( $fp, 'php' );
+        }
+    }
+
+    // Collect part definitions from all INI files.
+    $iniFiles = array( $rootDir . '/settings/cronjob.ini' );
+    foreach ( glob( $rootDir . '/extension/*/settings/cronjob.ini.append.php' )
+              ?: array() as $f )
+        $iniFiles[] = $f;
+
+    $allParts = array();  // partName => [ scriptFile, ... ]  (deduplicated)
+    foreach ( $iniFiles as $ini )
+    {
+        foreach ( $parseCronjobParts( $ini ) as $partName => $scripts )
+        {
+            if ( !isset( $allParts[ $partName ] ) )
+                $allParts[ $partName ] = array();
+            foreach ( $scripts as $s )
+                if ( !in_array( $s, $allParts[ $partName ], true ) )
+                    $allParts[ $partName ][] = $s;
+        }
+    }
+
+    foreach ( $allParts as $partName => $scripts )
+    {
+        // Build description from the bound scripts' @description tags.
+        $descParts = array();
+        foreach ( $scripts as $s )
+            if ( isset( $scriptDescs[ $s ] ) && $scriptDescs[ $s ] !== '' )
+                $descParts[] = $scriptDescs[ $s ];
+
+        $desc = !empty( $descParts )
+            ? implode( '; ', $descParts )
+            : 'Scripts: ' . implode( ', ', $scripts );
+
+        $key = 'cron:' . $partName;
+        $commands[ $key ] = array(
+            'name'        => $key,
+            'namespace'   => 'cron',
+            'path'        => 'runcronjobs.php',
+            'part'        => $partName,
+            'type'        => 'cron',
+            'binary'      => PHP_BINARY,
+            'description' => $desc,
+        );
+    }
+
     ksort( $commands );
     return $commands;
 };
@@ -429,6 +538,8 @@ $listCommands = function( $nsFilter = null )
             array( 'help <command>',   'Show help / usage for a specific command'    ),
             array( '--help, -h',       'Show this help screen'                       ),
             array( '--version, -V',    'Show console version and exit'               ),
+            array( 'crontab:list',     'Print the current system crontab'            ),
+            array( 'crontab:edit',     'Open the system crontab in $EDITOR'          ),
         ) as $row )
         {
             $out( '  ' . $orange( str_pad( $row[0], 28 ) ) . '  ' . $dim( $row[1] ) );
@@ -439,15 +550,21 @@ $listCommands = function( $nsFilter = null )
         'exp'   => 'exp   — bin/php/*.php  (Exponential PHP scripts)',
         'shell' => 'shell — bin/shell/*.sh  (Bash shell scripts)',
         'bin'   => 'bin   — bin/*  (Root bin executables)',
+        'cron'  => 'cron  — cronjobs/*.php  (Cronjob parts via runcronjobs.php)',
     );
 
     $lastCount = 0;
     foreach ( $byNs as $ns => $list )
     {
         $lastCount = count( $list );
-        $label     = isset( $nsLabels[ $ns ] )
-            ? $nsLabels[ $ns ]
-            : ( $ns . '  — extension/' . str_replace( 'ext:', '', $ns ) . '/bin' );
+        if ( isset( $nsLabels[ $ns ] ) )
+        {
+            $label = $nsLabels[ $ns ];
+        }
+        else
+        {
+            $label = $ns . '  — extension/' . str_replace( 'ext:', '', $ns ) . '/bin';
+        }
 
         $section( $label );
 
@@ -496,28 +613,47 @@ $findNearest = function( $typed, array $all )
 //  Command execution — passthru to the sub-script.
 //  Arguments are forwarded verbatim (shell-escaped) to the child process.
 //  Each sub-script owns its eZScript lifecycle (startup / DB init / shutdown).
+//
+//  Cron commands dispatch through runcronjobs.php:
+//    php runcronjobs.php [-s <siteaccess> ...] <part-name>
 // ══════════════════════════════════════════════════════════════════════════════
 
 $runCommand = function( array $cmd, array $forwardArgs )
               use ( $rootDir, $dim, $gray, $orange, $abort )
 {
-    $scriptPath = $rootDir . '/' . $cmd['path'];
-
-    if ( !file_exists( $scriptPath ) )
-        $abort( 'Script not found: ' . $cmd['path'] );
-
-    if ( $cmd['type'] === 'php' )
+    if ( $cmd['type'] === 'cron' )
     {
-        $parts = array( escapeshellarg( $cmd['binary'] ), escapeshellarg( $scriptPath ) );
+        // Cron parts run via runcronjobs.php; the part name is appended last so
+        // any -s / --siteaccess flags in $forwardArgs are parsed first.
+        $runner = $rootDir . '/runcronjobs.php';
+        if ( !file_exists( $runner ) )
+            $abort( 'runcronjobs.php not found in project root.' );
+
+        $parts = array( escapeshellarg( $cmd['binary'] ), escapeshellarg( $runner ) );
+        foreach ( $forwardArgs as $arg )
+            $parts[] = escapeshellarg( $arg );
+        $parts[] = escapeshellarg( $cmd['part'] );
     }
     else
     {
-        if ( !is_executable( $scriptPath ) ) chmod( $scriptPath, 0755 );
-        $parts = array( escapeshellarg( $cmd['binary'] ), escapeshellarg( $scriptPath ) );
-    }
+        $scriptPath = $rootDir . '/' . $cmd['path'];
 
-    foreach ( $forwardArgs as $arg )
-        $parts[] = escapeshellarg( $arg );
+        if ( !file_exists( $scriptPath ) )
+            $abort( 'Script not found: ' . $cmd['path'] );
+
+        if ( $cmd['type'] === 'php' )
+        {
+            $parts = array( escapeshellarg( $cmd['binary'] ), escapeshellarg( $scriptPath ) );
+        }
+        else
+        {
+            if ( !is_executable( $scriptPath ) ) chmod( $scriptPath, 0755 );
+            $parts = array( escapeshellarg( $cmd['binary'] ), escapeshellarg( $scriptPath ) );
+        }
+
+        foreach ( $forwardArgs as $arg )
+            $parts[] = escapeshellarg( $arg );
+    }
 
     // Dispatch notice to stderr — never corrupts piped stdout
     fwrite( STDERR,
@@ -602,6 +738,41 @@ if ( $commandInput === '--help' || $commandInput === '-h' )
         $listCommands();
         exit( 0 );
     }
+}
+
+// ── crontab:list / crontab:edit ──────────────────────────────────────────────
+if ( $commandInput === 'crontab:list' )
+{
+    $showBanner();
+    $section( 'crontab — System Crontab' );
+    $out( '' );
+    $crontabOutput = shell_exec( 'crontab -l 2>&1' );
+    if ( $crontabOutput === null || trim( $crontabOutput ) === '' )
+        $out( $dim( '  (no crontab entries found for the current user)' ) );
+    else
+        foreach ( explode( "\n", rtrim( $crontabOutput ) ) as $line )
+            $out( '  ' . ( strpos( $line, '#' ) === 0 ? $dim( $line ) : $line ) );
+    $out( '' );
+    exit( 0 );
+}
+
+if ( $commandInput === 'crontab:edit' )
+{
+    $editor = getenv( 'EDITOR' ) ?: getenv( 'VISUAL' ) ?: 'vi';
+    fwrite( STDERR,
+        "\n  " . $gray( '▶' )
+      . '  ' . $dim( 'opening crontab with' ) . ' ' . $orange( $editor )
+      . "\n\n"
+    );
+    // crontab -e respects $EDITOR / $VISUAL automatically and provides a
+    // proper temp-file edit loop — the simplest and most portable approach.
+    $proc = proc_open(
+        'crontab -e',
+        array( 0 => STDIN, 1 => STDOUT, 2 => STDERR ),
+        $pipes
+    );
+    $exitCode = ( $proc !== false ) ? proc_close( $proc ) : 1;
+    exit( (int) $exitCode );
 }
 
 // ── list ──────────────────────────────────────────────────────────────────────

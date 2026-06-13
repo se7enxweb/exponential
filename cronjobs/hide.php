@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Process scheduled hide and unhide actions on content objects
+ *
  * File containing the hide.php cronjob.
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

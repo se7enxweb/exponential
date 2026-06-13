@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Check all internal and external links in published content for broken URLs
+ *
  * File containing the linkcheck.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Permanently delete all objects currently held in the trash
+ *
  * Trash purge cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

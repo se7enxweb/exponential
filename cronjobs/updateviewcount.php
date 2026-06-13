@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Flush the in-memory view count buffer to the database
+ *
  * File containing the updateviewcount.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.

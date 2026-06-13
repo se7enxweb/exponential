@@ -1,5 +1,7 @@
 <?php
 /**
+ * @description Index pending content modifications in the search engine
+ *
  * File containing the indexcontent.php cronjob
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
