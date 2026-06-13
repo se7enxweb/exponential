@@ -1,7 +1,6 @@
 # Exponential 6.0.x
 ![Exponential - Powered by SQLite Logo](https://github.com/user-attachments/assets/b16a5e96-7483-4e83-b658-ac4fe92e84b8)
-
-
+<img width="1200" height="693" alt="MongoDB-exp" src="https://github.com/user-attachments/assets/ef51c832-149e-4742-8b41-6f2c07ea6b6b" />
 ![Exponential - Project Logo](https://github.com/user-attachments/assets/c2f9e973-0b4f-4e58-ac76-f0308775e3c1)
 
 
