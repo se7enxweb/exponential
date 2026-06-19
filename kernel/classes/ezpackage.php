@@ -1812,49 +1812,88 @@ class eZPackage
     */
     function installItem( $item, &$installParameters )
     {
+        if ( !isset( $item['type'] ) )
+        {
+            eZDebug::writeError( 'Missing package install item type', __METHOD__ );
+            return false;
+        }
+
         $type = $item['type'];
-        $name = $item['name'];
-        $os = $item['os'];
-        $filename = $item['filename'];
-        $subdirectory = $item['sub-directory'];
+        $name = isset( $item['name'] ) ? $item['name'] : '';
+        $os = isset( $item['os'] ) ? $item['os'] : false;
+        $filename = isset( $item['filename'] ) ? $item['filename'] : false;
+        $subdirectory = isset( $item['sub-directory'] ) ? $item['sub-directory'] : false;
         $content = false;
         if ( isset( $item['content'] ) )
             $content = $item['content'];
         $handler = $this->packageHandler( $type );
-        $installResult = false;
-        if ( $handler )
+        if ( !$handler )
         {
-            if ( $handler->extractInstallContent() )
+            eZDebug::writeError( "No package handler found for install item type '$type'", __METHOD__ );
+            return false;
+        }
+
+        $installResult = false;
+        if ( $handler->extractInstallContent() )
+        {
+            if ( !$content and
+                 $filename )
             {
-                if ( !$content and
-                     $filename )
+                if ( $subdirectory )
+                    $filepath = $subdirectory . '/' . $filename . '.xml';
+                else
+                    $filepath = $filename . '.xml';
+
+                $filepath = $this->path() . '/' . $filepath;
+
+                $dom = eZPackage::fetchDOMFromFile( $filepath );
+                if ( $dom )
                 {
-                    if ( $subdirectory )
-                        $filepath = $subdirectory . '/' . $filename . '.xml';
-                    else
-                        $filepath = $filename . '.xml';
-
-                    $filepath = $this->path() . '/' . $filepath;
-
-                    $dom = eZPackage::fetchDOMFromFile( $filepath );
-                    if ( $dom )
-                    {
-                        $content = $dom->documentElement;
-                    }
-                    else
-                    {
-                        eZDebug::writeError( "Failed fetching dom from file $filepath", __METHOD__ );
-                    }
+                    $content = $dom->documentElement;
+                }
+                else
+                {
+                    eZDebug::writeError( "Failed fetching dom from file $filepath", __METHOD__ );
+                    return false;
                 }
             }
-            $installData =& $this->InstallData[$type];
-            if ( !isset( $installData ) )
-                $installData = array();
+
+            if ( !$content and
+                 $filename )
+            {
+                eZDebug::writeError( "Missing install content for item type '$type'", __METHOD__ );
+                return false;
+            }
+        }
+
+        $installData =& $this->InstallData[$type];
+        if ( !isset( $installData ) )
+            $installData = array();
+
+        $db = eZDB::instance();
+        $db->begin();
+        try
+        {
             $installResult = $handler->install( $this, $type, $item,
                                                 $name, $os, $filename, $subdirectory,
                                                 $content, $installParameters,
                                                 $installData );
+
+            if ( !$installResult || !$db->isTransactionValid() )
+            {
+                $db->rollback();
+                return false;
+            }
+
+            $db->commit();
         }
+        catch ( Exception $e )
+        {
+            $db->rollback();
+            eZDebug::writeError( "Exception during package item install: " . $e->getMessage(), __METHOD__ );
+            return false;
+        }
+
         return $installResult;
     }
 
@@ -1868,20 +1907,29 @@ class eZPackage
     function install( &$installParameters )
     {
         if ( $this->Parameters['install_type'] != 'install' )
-            return;
+            return true;
         $installItems = $this->Parameters['install'];
         if ( !isset( $installParameters['path'] ) )
             $installParameters['path'] = false;
+        $continueOnError = isset( $installParameters['continue-on-error'] ) && $installParameters['continue-on-error'];
         $installResult = true;
         foreach ( $installItems as $item )
         {
             if ( !$this->installItem( $item, $installParameters ) )
             {
                 eZDebug::writeDebug( $item, 'item which failed installing' );
+                eZDebug::writeError( "Package installation failed for item type '" . $item['type'] . "' name '" . $item['name'] . "'", __METHOD__ );
                 $installResult = false;
+                if ( !$continueOnError )
+                {
+                    break;
+                }
             }
         }
-        $this->setInstalled();
+        if ( $installResult )
+        {
+            $this->setInstalled();
+        }
         return $installResult;
     }
 

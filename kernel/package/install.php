@@ -35,6 +35,13 @@ else
 if ( !eZPackage::canUsePolicyFunction( 'install' ) )
     return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
 
+// Package installs can be large and otherwise hit web PHP execution timeouts.
+if ( function_exists( 'set_time_limit' ) )
+{
+    @set_time_limit( 0 );
+}
+@ini_set( 'max_execution_time', '0' );
+
 $package = eZPackage::fetch( $packageName );
 if ( !$package )
     return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
@@ -111,35 +118,81 @@ elseif ( !$persistentData['doItemInstall'] )
 
 if ( $persistentData['doItemInstall'] )
 {
-    $persistentData['language_map'] = $package->defaultLanguageMap();
+    if ( !isset( $persistentData['language_map'] ) || !is_array( $persistentData['language_map'] ) )
+        $persistentData['language_map'] = $package->defaultLanguageMap();
 
-    while( $currentItem < count( $installItemArray ) )
+    $installItemCount = count( $installItemArray );
+    $batchMaxItems = 8;
+    $batchTimeBudget = 3.0;
+    $batchStartedAt = microtime( true );
+    $processedInBatch = 0;
+    $mustRedirectForNextBatch = false;
+
+    while ( $currentItem < $installItemCount )
     {
+        if ( $processedInBatch >= $batchMaxItems )
+        {
+            $mustRedirectForNextBatch = true;
+            break;
+        }
+
+        if ( ( microtime( true ) - $batchStartedAt ) >= $batchTimeBudget )
+        {
+            $mustRedirectForNextBatch = true;
+            break;
+        }
+
         $installItem = $installItemArray[$currentItem];
+        if ( !isset( $installItem['type'] ) )
+        {
+            $persistentData['error'] = array( 'error_code' => 'invalid_install_item',
+                                              'description' => ezpI18n::tr( 'kernel/package', 'Package install item is invalid (missing type).' ) );
+            $templateName = "design:package/install_error.tpl";
+            break;
+        }
+
         $installer = eZPackageInstallationHandler::instance( $package, $installItem['type'], $installItem );
 
-        if ( !$installer || isset( $persistentData['error']['choosen_action'] ) )
-        {
-            $result = $package->installItem( $installItem, $persistentData );
-
-            if ( !$result )
-            {
-                $templateName = "design:package/install_error.tpl";
-                break;
-            }
-            else
-            {
-                $persistentData['error'] = array();
-                $currentItem++;
-            }
-        }
-        else
+        if ( $installer && !isset( $persistentData['error']['choosen_action'] ) )
         {
             $persistentData['doItemInstall'] = false;
             $installer->generateStepMap( $package, $persistentData );
             $displayStep = true;
             break;
         }
+
+        try
+        {
+            $result = $package->installItem( $installItem, $persistentData );
+        }
+        catch ( Exception $e )
+        {
+            $persistentData['error'] = array( 'error_code' => 'exception',
+                                              'description' => ezpI18n::tr( 'kernel/package', 'Install failed with exception: ' ) . $e->getMessage() );
+            eZDebug::writeError( "Package install exception for item type '" . $installItem['type'] . "': " . $e->getMessage(), __METHOD__ );
+            $templateName = "design:package/install_error.tpl";
+            break;
+        }
+
+        if ( !$result )
+        {
+            $templateName = "design:package/install_error.tpl";
+            break;
+        }
+
+        $persistentData['error'] = array();
+        $currentItem++;
+        ++$processedInBatch;
+    }
+
+    if ( !$displayStep &&
+         !isset( $templateName ) &&
+         $currentItem < $installItemCount &&
+         $mustRedirectForNextBatch )
+    {
+        $persistentData['currentItem'] = $currentItem;
+        $http->setSessionVariable( 'eZPackageInstallerData', $persistentData );
+        return $module->redirectToView( 'install', array( $packageName ) );
     }
 }
 
