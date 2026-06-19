@@ -121,9 +121,28 @@ if ( $persistentData['doItemInstall'] )
     if ( !isset( $persistentData['language_map'] ) || !is_array( $persistentData['language_map'] ) )
         $persistentData['language_map'] = $package->defaultLanguageMap();
 
+    $packageINI = eZINI::instance( 'package.ini' );
     $installItemCount = count( $installItemArray );
     $batchMaxItems = 8;
+    if ( $packageINI->hasVariable( 'InstallerSettings', 'InstallBatchMaxItems' ) )
+    {
+        $batchMaxItems = (int)$packageINI->variable( 'InstallerSettings', 'InstallBatchMaxItems' );
+    }
+    if ( $batchMaxItems < 1 )
+    {
+        $batchMaxItems = 1;
+    }
+
     $batchTimeBudget = 3.0;
+    if ( $packageINI->hasVariable( 'InstallerSettings', 'InstallBatchTimeBudgetSeconds' ) )
+    {
+        $batchTimeBudget = (float)$packageINI->variable( 'InstallerSettings', 'InstallBatchTimeBudgetSeconds' );
+    }
+    if ( $batchTimeBudget <= 0 )
+    {
+        $batchTimeBudget = 1.0;
+    }
+
     $batchStartedAt = microtime( true );
     $processedInBatch = 0;
     $mustRedirectForNextBatch = false;
