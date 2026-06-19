@@ -13,7 +13,7 @@ set_time_limit ( 0 );
 
 require_once 'autoload.php';
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'description' => ( "Exponential url-alias imported and updater.\n\n" .
+$script = eZScript::instance( array( 'description' => ( "eZ Publish url-alias imported and updater.\n\n" .
                                                          "Will import urls from the older (3.9) system into the new, controlled by the --import* options.\n" .
                                                          "Will also update the url-alias entries from the content object nodes in the system, controlled by the --update-nodes option.\n" .
                                                          "The default behaviour is to update urls for content object nodes only\n" .
@@ -24,6 +24,8 @@ $script = eZScript::instance( array( 'description' => ( "Exponential url-alias i
                                       'use-extensions' => true ) );
 
 $script->startup();
+
+$helpRequested = in_array( '-h', $_SERVER['argv'] ) || in_array( '--help', $_SERVER['argv'] );
 
 $options = $script->getOptions( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql]" .
                                 "[no-import]" .
@@ -58,6 +60,13 @@ $options = $script->getOptions( "[db-host:][db-user:][db-password:][db-database:
                                        'column-width' => "The approximate width of the output block, defaults to 72.",
                                        'fetch-limit' => "The number of items to fetch in one go, increasing it may reduce\ntotal time but will also increase memory usage, defaults to 200.",
                                        ) );
+
+if ( $helpRequested || ( isset( $options['help'] ) && $options['help'] ) )
+{
+    $script->showHelp();
+    $script->shutdown( 0 );
+}
+
 $script->initialize();
 
 $dbUser = $options['db-user'] ? $options['db-user'] : false;
@@ -84,6 +93,95 @@ function changeSiteAccessSetting( $siteAccess )
         $cli->notice( "Siteaccess $siteAccess does not exist, using default siteaccess" );
     }
 }
+
+function updaterMaxExecutionTime()
+{
+    $cronjobIni = eZINI::instance( 'cronjob.ini' );
+    if ( $cronjobIni->hasVariable( 'CronjobSettings', 'MaxScriptExecutionTime' ) )
+        return (int)$cronjobIni->variable( 'CronjobSettings', 'MaxScriptExecutionTime' );
+    return 3600;
+}
+
+function updaterStealMutex( $cli, $scriptMutex, $force = false )
+{
+    $cli->output( 'Stealing updater mutex. Old process has run too long.' );
+    $oldPid = $scriptMutex->meta( 'pid' );
+
+    if ( $force )
+    {
+        if ( is_numeric( $oldPid ) &&
+             $oldPid != 0 &&
+             function_exists( 'posix_kill' ) )
+        {
+            $cli->output( 'Killing process: ' . $oldPid );
+            posix_kill( $oldPid, 9 );
+        }
+    }
+
+    if ( $scriptMutex->steal( $force ) )
+    {
+        $scriptMutex->setMeta( 'pid', getmypid() );
+        return true;
+    }
+
+    $cli->error( 'Failed to steal updater lock.' );
+    return false;
+}
+
+function acquireUpdaterMutex( $cli, $siteAccess )
+{
+    $mutexName = 'bin/php/updateniceurls.php';
+    if ( $siteAccess )
+        $mutexName .= '::' . $siteAccess;
+
+    $scriptMutex = new eZMutex( $mutexName );
+    $lockTS = $scriptMutex->lockTS();
+    $maxTime = updaterMaxExecutionTime();
+
+    if ( $lockTS === false )
+    {
+        if ( $scriptMutex->lock() )
+        {
+            $scriptMutex->setMeta( 'pid', getmypid() );
+            return $scriptMutex;
+        }
+
+        $cli->error( 'Failed to acquire updater lock: ' . $mutexName );
+        return false;
+    }
+
+    if ( $lockTS < time() - 2 * $maxTime )
+    {
+        $cli->output( 'Forcing mutex lock steal: ' . $mutexName );
+        if ( updaterStealMutex( $cli, $scriptMutex, true ) )
+            return $scriptMutex;
+        return false;
+    }
+
+    if ( $lockTS < time() - $maxTime )
+    {
+        $cli->output( 'Trying mutex lock steal: ' . $mutexName );
+        if ( updaterStealMutex( $cli, $scriptMutex ) )
+            return $scriptMutex;
+        return false;
+    }
+
+    $cli->error( 'updateniceurls.php is already running (PID: ' . $scriptMutex->meta( 'pid' ) . ')' );
+    return false;
+}
+
+function releaseUpdaterMutex( $updaterMutex )
+{
+    if ( $updaterMutex )
+        $updaterMutex->unlock();
+}
+
+$updaterMutex = acquireUpdaterMutex( $cli, $siteAccess );
+if ( !$updaterMutex )
+{
+    $script->shutdown( 1 );
+}
+register_shutdown_function( 'releaseUpdaterMutex', $updaterMutex );
 
 $db = eZDB::instance();
 
@@ -544,6 +642,41 @@ function logStoreError( $res, $func, $args )
     if ( isset( $res['error_message'] ) )
         $errmsg .= ", error: " . $res['error_message'];
     logError( $errmsg );
+}
+
+function aliasTextMd5( $text )
+{
+    return md5( eZURLAliasML::strtolower( $text ) );
+}
+
+function checkUrlAliasIntegrity()
+{
+    $db = eZDB::instance();
+
+    $orphanParentRows = $db->arrayQuery( "SELECT COUNT(*) AS count
+        FROM ezurlalias_ml a
+        WHERE a.parent != 0
+          AND NOT EXISTS (SELECT 1 FROM ezurlalias_ml b WHERE b.id = a.parent)" );
+    $orphanParentCount = (int)$orphanParentRows[0]['count'];
+    if ( $orphanParentCount > 0 )
+    {
+        return array( false, "URL alias tree has {$orphanParentCount} orphaned parent references" );
+    }
+
+    $duplicateRows = $db->arrayQuery( "SELECT COUNT(*) AS count
+        FROM (
+            SELECT parent, text_md5
+            FROM ezurlalias_ml
+            GROUP BY parent, text_md5
+            HAVING COUNT(*) > 1
+        ) AS duplicates" );
+    $duplicateCount = (int)$duplicateRows[0]['count'];
+    if ( $duplicateCount > 0 )
+    {
+        return array( false, "URL alias tree has {$duplicateCount} duplicate parent/text_md5 combinations" );
+    }
+
+    return array( true, false );
 }
 
 $verifyDataInternalClosure = function ( &$result, $error ) use ( $interactive, $performVerification, $cli )
@@ -1036,18 +1169,353 @@ if ( $urlCount > 0 )
     $cli->output( "Import time taken: " . $cli->stylize( 'emphasize', formatTime( microtime( true ) - $globalStartTime ) ) );
 }
 
+// ============================================================================
+// PATHPREFIX SAFETY ENHANCEMENT - CRITICAL FIX FOR URL ROUTING
+// ============================================================================
+// This ensures that if PathPrefix siteaccess routing is configured, all
+// aliases are properly cloned to the prefixed namespace to prevent:
+// - 301 redirect loops
+// - kernel(20) errors on nested URLs  
+// - Missing content pages
+// ============================================================================
+
+function findPathPrefixNamespaceRootID( $pathPrefix )
+{
+    $db = eZDB::instance();
+
+    if ( !$pathPrefix )
+        return false;
+
+    $pathPrefixHash = $db->escapeString( aliasTextMd5( $pathPrefix ) );
+    $rootSQL = "SELECT id FROM ezurlalias_ml WHERE parent = 0 AND text_md5 = '" . $pathPrefixHash . "' ORDER BY id";
+    $rootRows = $db->arrayQuery( $rootSQL, array( 'limit' => 1 ) );
+
+    if ( count( $rootRows ) == 0 )
+        return false;
+
+    return (int)$rootRows[0]['id'];
+}
+
+function deleteAliasSubtreeChildren( $parentID )
+{
+    $db = eZDB::instance();
+    $deletedCount = 0;
+
+    $children = $db->arrayQuery( "SELECT id FROM ezurlalias_ml WHERE parent = " . (int)$parentID . " ORDER BY id" );
+    foreach ( $children as $child )
+    {
+        $childID = (int)$child['id'];
+        $deletedCount += deleteAliasSubtreeChildren( $childID );
+        $db->query( "DELETE FROM ezurlalias_ml WHERE id = " . $childID );
+        ++$deletedCount;
+    }
+
+    return $deletedCount;
+}
+
+function findAliasRootIDsForNode( $nodeID, $namespaceRootID = false )
+{
+    $db = eZDB::instance();
+    $action = $db->escapeString( 'eznode:' . (int)$nodeID );
+    $rootIDs = array();
+
+    $rows = $db->arrayQuery( "SELECT id, parent FROM ezurlalias_ml WHERE action = '" . $action . "' ORDER BY id" );
+    foreach ( $rows as $row )
+    {
+        $parentID = (int)$row['parent'];
+        if ( $parentID === 0 || ( $namespaceRootID !== false && $parentID === (int)$namespaceRootID ) )
+            $rootIDs[] = (int)$row['id'];
+    }
+
+    return $rootIDs;
+}
+
+function findRootAliasIDs()
+{
+    $db = eZDB::instance();
+    $rows = $db->arrayQuery( "SELECT id FROM ezurlalias_ml WHERE parent = 0 ORDER BY id" );
+    $rootIDs = array();
+
+    foreach ( $rows as $row )
+    {
+        $rootIDs[] = (int)$row['id'];
+    }
+
+    return $rootIDs;
+}
+
+function countAliasSubtreeNodes( $rootID )
+{
+    $db = eZDB::instance();
+
+    if ( !$rootID )
+        return 0;
+
+    $count = 1;
+    $stack = array( (int)$rootID );
+
+    while ( count( $stack ) > 0 )
+    {
+        $parentID = array_pop( $stack );
+        $children = $db->arrayQuery( "SELECT id FROM ezurlalias_ml WHERE parent = " . (int)$parentID . " ORDER BY id" );
+        foreach ( $children as $child )
+        {
+            $childID = (int)$child['id'];
+            ++$count;
+            $stack[] = $childID;
+        }
+    }
+
+    return $count;
+}
+
+function cloneAliasesToPathPrefix( $pathPrefix, $siteRootNodeID )
+{
+    $db = eZDB::instance();
+    $cli = eZCLI::instance();
+    $pathPrefixHash = $db->escapeString( aliasTextMd5( $pathPrefix ) );
+    
+    if ( !$pathPrefix )
+        return 0;
+
+    if ( !$siteRootNodeID )
+        return 0;
+    
+    $cli->output( $cli->stylize( 'warning', "PathPrefix SAFETY: Cloning aliases to '{$pathPrefix}/*' namespace" ) );
+
+    $prefixRootID = findPathPrefixNamespaceRootID( $pathPrefix );
+    if ( !$prefixRootID )
+    {
+        $cli->error( "  Could not find PathPrefix root alias for '{$pathPrefix}'" );
+        return 0;
+    }
+
+    // Normalize the prefix root to avoid self-redirect loops on /<prefix>.
+    $db->query( "UPDATE ezurlalias_ml SET link = id, alias_redirects = 0, is_alias = 0, is_original = 1 WHERE id = " . (int)$prefixRootID );
+    
+    // Clone all root-level aliases to the prefixed namespace
+    $rootAliasesSQL = "SELECT id FROM ezurlalias_ml WHERE parent = 0 AND text_md5 != '" . $pathPrefixHash . "' ORDER BY id";
+    $rootAliases = $db->arrayQuery( $rootAliasesSQL );
+
+    $rootAliasCount = count( $rootAliases );
+    $cli->output( "  Preparing to clone {$rootAliasCount} root aliases into '{$pathPrefix}/*'" );
+
+    $totalRowsRes = $db->arrayQuery( "SELECT COUNT(*) AS count FROM ezurlalias_ml" );
+    $totalRows = (int)$totalRowsRes[0]['count'];
+    $prefixRows = countAliasSubtreeNodes( $prefixRootID );
+    $totalToScan = max( $totalRows - $prefixRows, 1 );
+    
+    $clonedCount = 0;
+    $progressState = array( 'ticks' => 0,
+                            'created' => 0,
+                            'updated' => 0,
+                            'total' => $totalToScan,
+                            'start' => microtime( true ) );
+    foreach ( $rootAliases as $alias )
+    {
+        $clonedCount += cloneAliasSubtree( (int)$alias['id'], $prefixRootID, $progressState );
+    }
+
+    if ( $progressState['ticks'] > 0 )
+        $cli->output();
+
+    $cli->output( "  Clone progress summary: scanned {$progressState['ticks']}, created {$progressState['created']}, updated {$progressState['updated']}" );
+    
+    return $clonedCount;
+}
+
+function cloneAliasSubtree( $sourceID, $targetParentID, &$progressState = null )
+{
+    $db = eZDB::instance();
+    $cli = eZCLI::instance();
+    $clonedCount = 0;
+
+    if ( is_array( $progressState ) )
+    {
+        ++$progressState['ticks'];
+        if ( ( $progressState['ticks'] % 250 ) == 0 )
+        {
+            $elapsed = max( microtime( true ) - $progressState['start'], 0.001 );
+            $percent = min( 100.0, ( $progressState['ticks'] * 100.0 ) / $progressState['total'] );
+            $rate = $progressState['ticks'] / $elapsed;
+            $remaining = max( 0, $progressState['total'] - $progressState['ticks'] );
+            $eta = $rate > 0 ? $remaining / $rate : 0;
+            $cli->output( sprintf( "  Clone progress: %.2f%% (%d/%d), ETA %s", $percent, $progressState['ticks'], $progressState['total'], formatTime( $eta ) ) );
+            flush();
+        }
+    }
+    
+    $sourceAliasSQL = "SELECT * FROM ezurlalias_ml WHERE id = " . (int)$sourceID;
+    $sourceAliases = $db->arrayQuery( $sourceAliasSQL );
+    
+    if ( count( $sourceAliases ) == 0 )
+        return 0;
+    
+    $sourceAlias = $sourceAliases[0];
+    // Check if already exists under target parent
+    $sourceAliasTextHash = $db->escapeString( aliasTextMd5( $sourceAlias['text'] ) );
+    $existingSQL = "SELECT id, link, action, is_alias, alias_redirects, lang_mask FROM ezurlalias_ml WHERE parent = " . (int)$targetParentID . 
+                   " AND text_md5 = '" . $sourceAliasTextHash . "'";
+    $existingRows = $db->arrayQuery( $existingSQL );
+    
+    if ( count( $existingRows ) > 0 )
+    {
+        $targetID = (int)$existingRows[0]['id'];
+        $needsUpdate = (int)$existingRows[0]['link'] !== $targetID ||
+                       $existingRows[0]['action'] !== $sourceAlias['action'] ||
+                       (int)$existingRows[0]['is_alias'] !== (int)$sourceAlias['is_alias'] ||
+                       (int)$existingRows[0]['alias_redirects'] !== 0 ||
+                       (int)$existingRows[0]['id'] !== (int)$targetID ||
+                       (int)$existingRows[0]['lang_mask'] !== (int)$sourceAlias['lang_mask'];
+
+        if ( $needsUpdate )
+        {
+            $updateSQL = "UPDATE ezurlalias_ml SET " .
+                         "action = '" . $db->escapeString( $sourceAlias['action'] ) . "', " .
+                         "link = " . $targetID . ", " .
+                         "is_alias = " . (int)$sourceAlias['is_alias'] . ", " .
+                         "is_original = 1, " .
+                         "alias_redirects = 0, " .
+                         "lang_mask = " . (int)$sourceAlias['lang_mask'] . " " .
+                         "WHERE id = " . $targetID;
+            $db->query( $updateSQL );
+            if ( is_array( $progressState ) )
+                ++$progressState['updated'];
+        }
+    }
+    else
+    {
+        // Create new alias under prefixed namespace
+        $newAlias = eZURLAliasML::create( $sourceAlias['text'], $sourceAlias['action'], 
+                                          $targetParentID, $sourceAlias['lang_mask'] );
+        $newAlias->setAttribute( 'is_original', 1 );
+        $newAlias->setAttribute( 'is_alias', (int)$sourceAlias['is_alias'] );
+        $newAlias->setAttribute( 'alias_redirects', 0 );
+        $newAlias->store();
+        $targetID = (int)$newAlias->attribute( 'id' );
+        $db->query( "UPDATE ezurlalias_ml SET link = id, is_original = 1, alias_redirects = 0 WHERE id = " . (int)$targetID );
+        $clonedCount++;
+        if ( is_array( $progressState ) )
+            ++$progressState['created'];
+    }
+    
+    // Recursively clone all children
+    $childrenSQL = "SELECT id FROM ezurlalias_ml WHERE parent = " . (int)$sourceID . " ORDER BY id";
+    $children = $db->arrayQuery( $childrenSQL );
+    
+    foreach ( $children as $child )
+    {
+        $clonedCount += cloneAliasSubtree( (int)$child['id'], $targetID, $progressState );
+    }
+    
+    return $clonedCount;
+}
+
+function normalizePathPrefixNamespace( $prefixRootID, $showProgress = true )
+{
+    $db = eZDB::instance();
+    $cli = eZCLI::instance();
+
+    if ( !$prefixRootID )
+        return 0;
+
+    $normalizedCount = 0;
+
+    $db->query( "UPDATE ezurlalias_ml SET link = id, is_original = 1, is_alias = 0, alias_redirects = 0 WHERE id = " . (int)$prefixRootID );
+
+    $totalToNormalize = 0;
+    $startTime = microtime( true );
+    if ( $showProgress )
+    {
+        $totalToNormalize = max( countAliasSubtreeNodes( $prefixRootID ) - 1, 1 );
+    }
+
+    $stack = array( (int)$prefixRootID );
+    $ticks = 0;
+    while ( count( $stack ) > 0 )
+    {
+        $parentID = array_pop( $stack );
+        $children = $db->arrayQuery( "SELECT id FROM ezurlalias_ml WHERE parent = " . (int)$parentID . " ORDER BY id" );
+        foreach ( $children as $child )
+        {
+            $childID = (int)$child['id'];
+            $db->query( "UPDATE ezurlalias_ml SET link = id, is_original = 1, is_alias = 0, alias_redirects = 0 WHERE id = " . $childID );
+            ++$normalizedCount;
+            ++$ticks;
+            if ( $showProgress && ( $ticks % 250 ) == 0 )
+            {
+                $elapsed = max( microtime( true ) - $startTime, 0.001 );
+                $percent = min( 100.0, ( $ticks * 100.0 ) / $totalToNormalize );
+                $rate = $ticks / $elapsed;
+                $remaining = max( 0, $totalToNormalize - $ticks );
+                $eta = $rate > 0 ? $remaining / $rate : 0;
+                $cli->output( sprintf( "  Normalize progress: %.2f%% (%d/%d), ETA %s", $percent, $ticks, $totalToNormalize, formatTime( $eta ) ) );
+                flush();
+            }
+            $stack[] = $childID;
+        }
+    }
+
+    if ( $showProgress && $ticks > 0 )
+        $cli->output( "  Normalize progress: 100.00% ({$ticks}/{$totalToNormalize}), ETA 0s" );
+
+    return $normalizedCount;
+}
+
 if ( $updateNodeAlias )
 {
     $nodeGlobalStartTime = microtime( true );
+    $nativePathPrefix = false;
+
+    list( $integrityOk, $integrityError ) = checkUrlAliasIntegrity();
+    if ( !$integrityOk )
+    {
+        $cli->error( $integrityError );
+        $cli->error( "Refusing to continue because updateSubTreePath() would crash on corrupted URL aliases." );
+        $cli->error( "Run bin/php/verify_aliases.php --verbose or restore a clean database backup first." );
+        $script->shutdown( 1 );
+    }
+    
+    // PATHPREFIX SAFETY: Detect and warn about PathPrefix configuration
+    $pathPrefix = eZURLAliasML::getPathPrefix();
+    if ( $pathPrefix )
+    {
+        $cli->output( "" );
+        $cli->output( $cli->stylize( 'warning', "WARNING: PathPrefix '{$pathPrefix}' detected; rebuilding '{$pathPrefix}/*' namespace after node updates" ) );
+        $cli->output( "" );
+        $nativePathPrefix = $pathPrefix;
+
+        // Avoid native updateSubTreePath() writing redirecting entries under
+        // the PathPrefix namespace while updates are in progress.
+        $runtimeINI = eZINI::instance();
+        $runtimeINI->setVariable( 'SiteAccessSettings', 'PathPrefix', '' );
+    }
+    
     // Start updating nodes
     $topLevelNodesArray = $db->arrayQuery( 'SELECT node_id FROM ezcontentobject_tree WHERE depth = 1 ORDER BY node_id' );
+    $pathPrefixRootNodeID = count( $topLevelNodesArray ) > 0 ? (int)$topLevelNodesArray[0]['node_id'] : 0;
+
+    // Keep reruns non-destructive: do not purge existing alias subtrees up-front.
+    // If execution is interrupted mid-run, preserving existing rows avoids global 404 fallout.
+    if ( $pathPrefix )
+    {
+        $cli->output( "Synchronizing PathPrefix namespace before node updates" );
+        $preClonedAliasCount = cloneAliasesToPathPrefix( $pathPrefix, $pathPrefixRootNodeID );
+        $prefixRootID = findPathPrefixNamespaceRootID( $pathPrefix );
+        $preNormalizedAliasCount = normalizePathPrefixNamespace( $prefixRootID );
+        $cli->output( "Pre-synchronized {$preClonedAliasCount} aliases to '{$pathPrefix}/*' namespace" );
+        $cli->output( "Pre-normalized {$preNormalizedAliasCount} aliases under '{$pathPrefix}/*' namespace" );
+        eZCache::clearByID( 'urlalias' );
+    }
+    else
+    {
+        $prefixRootID = false;
+    }
 
     foreach ( array_keys( $topLevelNodesArray ) as $key )
     {
         $topLevelNodeID = $topLevelNodesArray[$key]['node_id'];
         $rootNode = eZContentObjectTreeNode::fetch( $topLevelNodeID );
-        if ( $rootNode->updateSubTreePath() )
-            ++$totalChangedNodes;
         $done = false;
         $offset = 0;
         $counter = 0;
@@ -1055,7 +1523,7 @@ if ( $updateNodeAlias )
         $changedNodes = 0;
         $nodeCount = $rootNode->subTreeCount( array( 'Limitation' => array(),
                                                      'IgnoreVisibility' => true ) );
-        $totalNodeCount += $nodeCount + 1;
+        $totalNodeCount += $nodeCount;
         $cli->output( "Starting updates for " . $cli->stylize( 'mark', $rootNode->attribute( 'name' ) ) . ", $nodeCount nodes" );
         $nodeStartTime = microtime( true );
         while ( !$done )
@@ -1067,7 +1535,16 @@ if ( $updateNodeAlias )
             foreach ( array_keys( $nodeList ) as $key )
             {
                 $node = $nodeList[ $key ];
-                $hasChanged = $node->updateSubTreePath();
+                $hasChanged = false;
+                try
+                {
+                    $hasChanged = $node->updateSubTreePath();
+                }
+                catch ( Exception $e )
+                {
+                    logError( "updateSubTreePath failed for node " . $node->attribute( 'node_id' ) . ": " . $e->getMessage() );
+                    $hasChanged = false;
+                }
                 if ( $hasChanged )
                 {
                     ++$changedNodes;
@@ -1082,6 +1559,13 @@ if ( $updateNodeAlias )
             }
             if ( count( $nodeList ) == 0 )
                 $done = true;
+
+            if ( $prefixRootID )
+            {
+                normalizePathPrefixNamespace( $prefixRootID, false );
+                eZCache::clearByID( 'urlalias' );
+            }
+
             unset( $nodeList );
             $offset += $fetchLimit;
             eZContentObject::clearCache();
@@ -1097,6 +1581,34 @@ if ( $updateNodeAlias )
     $cli->output();
     $cli->output( "Total update " . $cli->stylize( 'emphasize', "$totalChangedNodes/$totalNodeCount" ) );
     $cli->output( "Node time taken: " . $cli->stylize( 'emphasize', formatTime( microtime( true ) - $nodeGlobalStartTime ) ) );
+    
+    // PATHPREFIX SAFETY: Manual clone step disabled.
+    // Under the digg siteaccess, updateSubTreePath() already writes the prefixed namespace.
+    // Running a second clone pass reintroduces duplicate-key corruption.
+    if ( $pathPrefix )
+    {
+        $cli->output( "" );
+        $cli->output( $cli->stylize( 'warning', "=== PATHPREFIX SAFETY EXECUTION ===" ) );
+        $aliasCountBefore = $db->arrayQuery( "SELECT COUNT(*) as count FROM ezurlalias_ml" );
+        $beforeCount = $aliasCountBefore[0]['count'];
+        
+        $clonedAliasCount = cloneAliasesToPathPrefix( $pathPrefix, $pathPrefixRootNodeID );
+        $prefixRootID = findPathPrefixNamespaceRootID( $pathPrefix );
+        $normalizedAliasCount = normalizePathPrefixNamespace( $prefixRootID );
+        
+        $aliasCountAfter = $db->arrayQuery( "SELECT COUNT(*) as count FROM ezurlalias_ml" );
+        $afterCount = $aliasCountAfter[0]['count'];
+        
+        $cli->output( "  Total aliases before cloning: {$beforeCount}" );
+        $cli->output( $cli->stylize( 'emphasize', "  Cloned {$clonedAliasCount} aliases to '{$pathPrefix}/*' namespace" ) );
+        $cli->output( $cli->stylize( 'emphasize', "  Normalized {$normalizedAliasCount} aliases under '{$pathPrefix}/*' namespace" ) );
+        $cli->output( "  Total aliases after cloning: {$afterCount}" );
+        
+        // Clear cache
+        eZCache::clearByID( 'urlalias' );
+        $cli->output( "  URL alias cache cleared" );
+        $cli->output( "" );
+    }
 }
 
 
