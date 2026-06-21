@@ -1276,6 +1276,57 @@ else if ( $http->hasPostVariable( 'CopyButton' ) )
         $module->redirectTo( $module->functionURI( 'view' ) . '/' . $viewMode . '/' . $parentNodeID . '/' );
     }
 }
+else if ( $http->hasPostVariable( 'HideButton' ) || $http->hasPostVariable( 'UnhideButton' ) )
+{
+    $viewMode = $http->postVariable( 'ViewMode', 'full' );
+    $parentNodeID = $http->postVariable( 'ContentNodeID', 2 );
+    $hideSelected = $http->hasPostVariable( 'HideButton' );
+
+    if ( $http->hasPostVariable( 'DeleteIDArray' ) or $http->hasPostVariable( 'SelectedIDArray' ) )
+    {
+        if ( $http->hasPostVariable( 'SelectedIDArray' ) )
+            $nodeIDArray = $http->postVariable( 'SelectedIDArray' );
+        else
+            $nodeIDArray = $http->postVariable( 'DeleteIDArray' );
+
+        if ( is_array( $nodeIDArray ) && count( $nodeIDArray ) > 0 )
+        {
+            foreach ( $nodeIDArray as $nodeID )
+            {
+                $node = eZContentObjectTreeNode::fetch( $nodeID );
+                if ( !$node )
+                    return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel', array() );
+
+                if ( !$node->attribute( 'can_hide' ) )
+                    return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel', array() );
+
+                $isHidden = (bool)$node->attribute( 'is_hidden' );
+                if ( ( $hideSelected && $isHidden ) || ( !$hideSelected && !$isHidden ) )
+                    continue;
+
+                if ( eZOperationHandler::operationIsAvailable( 'content_hide' ) )
+                {
+                    $operationResult = eZOperationHandler::execute( 'content',
+                                                                    'hide',
+                                                                    array( 'node_id' => $nodeID ),
+                                                                    null,
+                                                                    true );
+                }
+                else
+                {
+                    eZContentOperationCollection::changeHideStatus( $nodeID );
+                }
+            }
+        }
+    }
+
+    if ( $languageCode !== false )
+    {
+        return $module->redirectToView( 'view', array( $viewMode, $parentNodeID, $languageCode ) );
+    }
+
+    return $module->redirectToView( 'view', array( $viewMode, $parentNodeID ) );
+}
 else if ( $http->hasPostVariable( 'UpdatePriorityButton' ) )
 {
     $viewMode = $http->postVariable( 'ViewMode', 'full' );
@@ -1560,6 +1611,14 @@ else if ( $http->hasPostVariable( "ContentObjectID" )  )
             }
         }
         eZDebug::writeError( "Unknown content object action", "kernel/content/action.php" );
+
+        $fallbackNodeID = $http->postVariable( 'ContentNodeID', $http->postVariable( 'NodeID', 2 ) );
+        if ( $languageCode !== false )
+        {
+            return $module->redirectToView( 'view', array( 'full', $fallbackNodeID, $languageCode ) );
+        }
+
+        return $module->redirectToView( 'view', array( 'full', $fallbackNodeID ) );
     }
 }
 else if ( $http->hasPostVariable( 'RedirectButton' ) )

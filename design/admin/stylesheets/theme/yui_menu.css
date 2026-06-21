@@ -438,6 +438,63 @@ a.yuimenuitemlabel-disabled{
     background-position: 5% -157px;
 }
 
+#ezopt-menu-hide {
+    background-image: none;
+    position: relative;
+}
+
+#ezopt-menu-unhide {
+    background-image: none;
+    position: relative;
+}
+
+#ezopt-menu-hide:before,
+#ezopt-menu-unhide:before {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 11px;
+    height: 11px;
+    margin-top: -6px;
+    border: 1px solid;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    box-sizing: border-box;
+}
+
+#ezopt-menu-hide:before {
+    border-color: #6a6a6a;
+    background: linear-gradient(to bottom, #d7d7d7 0%, #a9a9a9 100%);
+}
+
+#ezopt-menu-unhide:before {
+    border-color: #268f26;
+    background: linear-gradient(to bottom, #60db60 0%, #20b920 100%);
+}
+
+#ezopt-menu-hide:after,
+#ezopt-menu-unhide:after {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 11px;
+    height: 11px;
+    margin-top: -6px;
+    pointer-events: none;
+}
+
+#ezopt-menu-hide:after {
+    background: linear-gradient(#3f3f3f, #3f3f3f) center/7px 2px no-repeat;
+}
+
+#ezopt-menu-unhide:after {
+    background:
+        linear-gradient(#f8fff8, #f8fff8) center/7px 2px no-repeat,
+        linear-gradient(#f8fff8, #f8fff8) center/2px 7px no-repeat;
+}
+
 #ezopt-menu-edit {
     background-image: url('../../images/2/icon-edit-16x16.png');
 }
@@ -490,6 +547,8 @@ a.yuimenuitemlabel-disabled{
 }
 
 #ezopt-menu-move,
+#ezopt-menu-hide,
+#ezopt-menu-unhide,
 #ezopt-menu-check,
 #ezopt-menu-uncheck {
     background-repeat: no-repeat;
