@@ -747,6 +747,11 @@ class eZINI
         if ( $reset )
             $this->reset();
 
+        if ( !$placement )
+        {
+            $this->LastParsedInputFiles = $inputFiles;
+        }
+
         foreach ( $inputFiles as $inputFile )
         {
             if ( file_exists( $inputFile ) )
@@ -814,6 +819,11 @@ class eZINI
         else
             $this->Codec = null;
 
+        if ( !$placement )
+        {
+            $this->RoundTripData[$this->normalizePathForRoundTrip( $file )] = $this->buildRoundTripData( $contents );
+        }
+
         foreach ( explode( "\n", $contents ) as $line )
         {
             if ( $line == '' or $line[0] == '#' )
@@ -827,6 +837,18 @@ class eZINI
             {
                 $newBlockName = trim( $newBlockNameArray[1] );
                 $currentBlock = $newBlockName;
+
+                if ( $placement )
+                {
+                    if ( !isset( $this->BlockValuesPlacement[$currentBlock] ) )
+                        $this->BlockValuesPlacement[$currentBlock] = array();
+                }
+                else
+                {
+                    if ( !isset( $this->BlockValues[$currentBlock] ) )
+                        $this->BlockValues[$currentBlock] = array();
+                }
+
                 continue;
             }
 
@@ -978,128 +1000,141 @@ class eZINI
         $originalFilePath = eZDir::path( array_merge( $pathArray, array( $originalFileName ) ) );
         $backupFilePath = eZDir::path( array_merge( $pathArray, array( $backupFileName ) ) );
 
-        $fp = @fopen( $filePath, "w+");
-        if ( !$fp )
-        {
-            eZDebug::writeError( "Failed opening file '$filePath' for writing", __METHOD__ );
-            return false;
-        }
-        $writeOK = true;
-        $written = 0;
+        $roundTripContent = $this->buildRoundTripSaveContent( $originalFilePath, $onlyModified, $resetArrays );
 
-        $charset = $this->Codec ? $this->Codec->RequestedOutputCharsetCode : $this->Charset;
-        if ( $encapsulateInPHP )
+        if ( $roundTripContent !== false )
         {
-            $written = fwrite( $fp, "<?php /* #?ini charset=\"$charset\"?$lineSeparator$lineSeparator" );
+            if ( file_put_contents( $filePath, $roundTripContent ) === false )
+            {
+                eZDebug::writeError( "Failed opening file '$filePath' for writing", __METHOD__ );
+                return false;
+            }
         }
         else
         {
-            $written = fwrite( $fp, "#?ini charset=\"$charset\"?$lineSeparator$lineSeparator" );
-        }
-
-        if ( $written === false )
-            $writeOK = false;
-        $i = 0;
-        if ( $writeOK )
-        {
-            foreach( array_keys( $this->BlockValues ) as $blockName )
+            $fp = @fopen( $filePath, "w+");
+            if ( !$fp )
             {
-                if ( $onlyModified )
-                {
-                    $groupHasModified = false;
-                    if ( isset( $this->ModifiedBlockValues[$blockName] ) )
-                    {
-                        foreach ( $this->ModifiedBlockValues[$blockName] as $modifiedValue )
-                        {
-                            if ( $modifiedValue )
-                                $groupHasModified = true;
-                        }
-                    }
-                    if ( !$groupHasModified )
-                        continue;
-                }
-                $written = 0;
-                if ( $i > 0 )
-                    $written = fwrite( $fp, "$lineSeparator" );
-                if ( $written === false )
-                {
-                    $writeOK = false;
-                    break;
-                }
-                $written = fwrite( $fp, "[$blockName]$lineSeparator" );
-                if ( $written === false )
-                {
-                    $writeOK = false;
-                    break;
-                }
-                foreach( array_keys( $this->BlockValues[$blockName] ) as $blockVariable )
+                eZDebug::writeError( "Failed opening file '$filePath' for writing", __METHOD__ );
+                return false;
+            }
+            $writeOK = true;
+            $written = 0;
+
+            $charset = $this->Codec ? $this->Codec->RequestedOutputCharsetCode : $this->Charset;
+            if ( $encapsulateInPHP )
+            {
+                $written = fwrite( $fp, "<?php /* #?ini charset=\"$charset\"?$lineSeparator$lineSeparator" );
+            }
+            else
+            {
+                $written = fwrite( $fp, "#?ini charset=\"$charset\"?$lineSeparator$lineSeparator" );
+            }
+
+            if ( $written === false )
+                $writeOK = false;
+            $i = 0;
+            if ( $writeOK )
+            {
+                foreach( array_keys( $this->BlockValues ) as $blockName )
                 {
                     if ( $onlyModified )
                     {
-                        if ( !isset( $this->ModifiedBlockValues[$blockName][$blockVariable] ) or
-                             !$this->ModifiedBlockValues[$blockName][$blockVariable] )
-                            continue;
-                    }
-                    $varKey = $blockVariable;
-                    $varValue = $this->BlockValues[$blockName][$blockVariable];
-                    if ( is_array( $varValue ) )
-                    {
-                        if ( count( $varValue ) > 0 )
+                        $groupHasModified = false;
+                        if ( isset( $this->ModifiedBlockValues[$blockName] ) )
                         {
-                            $customResetArray = ( isset( $this->BlockValues[$blockName]['ResetArrays'] ) and
-                                                  $this->BlockValues[$blockName]['ResetArrays'] == 'false' )
-                                                ? true
-                                                : false;
-                            if ( $resetArrays and !$customResetArray )
-                                $written = fwrite( $fp, "$varKey" . "[]$lineSeparator" );
-                            foreach ( $varValue as $varArrayKey => $varArrayValue )
+                            foreach ( $this->ModifiedBlockValues[$blockName] as $modifiedValue )
                             {
-                                if ( is_string( $varArrayKey ) )
-                                    $written = fwrite( $fp, "$varKey" . "[$varArrayKey]=$varArrayValue$lineSeparator" );
-                                else
-                                {
-                                    if ( $varArrayValue == NULL )
-                                        $written = fwrite( $fp, "$varKey" . "[]$lineSeparator" );
-                                    else
-                                        $written = fwrite( $fp, "$varKey" . "[]=$varArrayValue$lineSeparator" );
-                                }
-                                if ( $written === false )
-                                    break;
+                                if ( $modifiedValue )
+                                    $groupHasModified = true;
                             }
                         }
-                        else
-                            $written = fwrite( $fp, "$varKey" . "[]$lineSeparator" );
+                        if ( !$groupHasModified )
+                            continue;
                     }
-                    else
-                    {
-                        $written = fwrite( $fp, "$varKey=$varValue$lineSeparator" );
-                    }
+                    $written = 0;
+                    if ( $i > 0 )
+                        $written = fwrite( $fp, "$lineSeparator" );
                     if ( $written === false )
                     {
                         $writeOK = false;
                         break;
                     }
+                    $written = fwrite( $fp, "[$blockName]$lineSeparator" );
+                    if ( $written === false )
+                    {
+                        $writeOK = false;
+                        break;
+                    }
+                    foreach( array_keys( $this->BlockValues[$blockName] ) as $blockVariable )
+                    {
+                        if ( $onlyModified )
+                        {
+                            if ( !isset( $this->ModifiedBlockValues[$blockName][$blockVariable] ) or
+                                 !$this->ModifiedBlockValues[$blockName][$blockVariable] )
+                                continue;
+                        }
+                        $varKey = $blockVariable;
+                        $varValue = $this->BlockValues[$blockName][$blockVariable];
+                        if ( is_array( $varValue ) )
+                        {
+                            if ( count( $varValue ) > 0 )
+                            {
+                                $customResetArray = ( isset( $this->BlockValues[$blockName]['ResetArrays'] ) and
+                                                      $this->BlockValues[$blockName]['ResetArrays'] == 'false' )
+                                                    ? true
+                                                    : false;
+                                if ( $resetArrays and !$customResetArray )
+                                    $written = fwrite( $fp, "$varKey" . "[]$lineSeparator" );
+                                foreach ( $varValue as $varArrayKey => $varArrayValue )
+                                {
+                                    if ( is_string( $varArrayKey ) )
+                                        $written = fwrite( $fp, "$varKey" . "[$varArrayKey]=$varArrayValue$lineSeparator" );
+                                    else
+                                    {
+                                        if ( $varArrayValue == NULL )
+                                            $written = fwrite( $fp, "$varKey" . "[]$lineSeparator" );
+                                        else
+                                            $written = fwrite( $fp, "$varKey" . "[]=$varArrayValue$lineSeparator" );
+                                    }
+                                    if ( $written === false )
+                                        break;
+                                }
+                            }
+                            else
+                                $written = fwrite( $fp, "$varKey" . "[]$lineSeparator" );
+                        }
+                        else
+                        {
+                            $written = fwrite( $fp, "$varKey=$varValue$lineSeparator" );
+                        }
+                        if ( $written === false )
+                        {
+                            $writeOK = false;
+                            break;
+                        }
+                    }
+                    if ( !$writeOK )
+                        break;
+                    ++$i;
                 }
-                if ( !$writeOK )
-                    break;
-                ++$i;
             }
-        }
-        if ( $writeOK )
-        {
-            if ( $encapsulateInPHP )
+            if ( $writeOK )
             {
-                $written = fwrite( $fp, "*/ ?>" );
+                if ( $encapsulateInPHP )
+                {
+                    $written = fwrite( $fp, "*/ ?>" );
 
-                if ( $written === false )
-                    $writeOK = false;
+                    if ( $written === false )
+                        $writeOK = false;
+                }
             }
-        }
-        @fclose( $fp );
-        if ( !$writeOK )
-        {
-            unlink( $filePath );
-            return false;
+            @fclose( $fp );
+            if ( !$writeOK )
+            {
+                unlink( $filePath );
+                return false;
+            }
         }
 
         chmod( $filePath, self::$filePermission );
@@ -1120,6 +1155,309 @@ class eZINI
         return true;
     }
 
+    /**
+     * Creates an in-memory round-trip representation used to preserve comments and whitespace.
+     *
+     * @param string $contents
+     * @return array
+     */
+    protected function buildRoundTripData( $contents )
+    {
+        $lines = explode( "\n", $contents );
+        return array(
+            'lines' => $lines,
+            'parsed' => $this->parseRoundTripLines( $lines )
+        );
+    }
+
+    /**
+     * Attempts to generate a comment-preserving save output.
+     * Returns false if round-trip mode cannot be safely used.
+     *
+     * @param string $originalFilePath
+     * @param bool $onlyModified
+     * @param bool $resetArrays
+     * @return string|false
+     */
+    protected function buildRoundTripSaveContent( $originalFilePath, $onlyModified, $resetArrays )
+    {
+        if ( !$this->DirectAccess )
+            return false;
+
+        $normalizedPath = $this->normalizePathForRoundTrip( $originalFilePath );
+        if ( !isset( $this->RoundTripData[$normalizedPath] ) )
+        {
+            if ( !$this->loadRoundTripSourceFromFile( $normalizedPath ) )
+                return false;
+        }
+
+        $data = $this->RoundTripData[$normalizedPath];
+        $lines = $data['lines'];
+
+        // Remove deleted sections and settings when full save is requested.
+        if ( !$onlyModified )
+        {
+            $parsed = $this->parseRoundTripLines( $lines );
+            foreach ( array_keys( $parsed['sections'] ) as $sectionName )
+            {
+                if ( !isset( $this->BlockValues[$sectionName] ) )
+                {
+                    $sectionDef = $parsed['sections'][$sectionName];
+                    $length = $sectionDef['end'] - $sectionDef['start'] + 1;
+                    array_splice( $lines, $sectionDef['start'], $length );
+                    $parsed = $this->parseRoundTripLines( $lines );
+                }
+            }
+        }
+
+        foreach ( $this->BlockValues as $blockName => $blockVariables )
+        {
+            if ( $onlyModified && !$this->groupHasModifiedValues( $blockName ) )
+                continue;
+
+            $parsed = $this->parseRoundTripLines( $lines );
+            if ( !isset( $parsed['sections'][$blockName] ) )
+            {
+                $newSectionLines = array();
+                if ( !empty( $lines ) && end( $lines ) !== '' )
+                    $newSectionLines[] = '';
+                $newSectionLines[] = '[' . $blockName . ']';
+
+                foreach ( $blockVariables as $varKey => $varValue )
+                {
+                    if ( $onlyModified && !$this->isVariableModified( $blockName, $varKey ) )
+                        continue;
+                    foreach ( $this->variableToLines( $blockName, $varKey, $varValue, $resetArrays ) as $newLine )
+                    {
+                        $newSectionLines[] = $newLine;
+                    }
+                }
+
+                $lines = array_merge( $lines, $newSectionLines );
+                continue;
+            }
+
+            $sectionSettings = isset( $parsed['settings'][$blockName] ) ? $parsed['settings'][$blockName] : array();
+
+            if ( !$onlyModified )
+            {
+                foreach ( array_keys( $sectionSettings ) as $existingVarName )
+                {
+                    if ( !isset( $blockVariables[$existingVarName] ) )
+                    {
+                        $lineIndexes = $sectionSettings[$existingVarName];
+                        rsort( $lineIndexes );
+                        foreach ( $lineIndexes as $lineIndex )
+                        {
+                            array_splice( $lines, $lineIndex, 1 );
+                        }
+                        $parsed = $this->parseRoundTripLines( $lines );
+                        $sectionSettings = isset( $parsed['settings'][$blockName] ) ? $parsed['settings'][$blockName] : array();
+                    }
+                }
+            }
+
+            foreach ( $blockVariables as $varKey => $varValue )
+            {
+                if ( $onlyModified && !$this->isVariableModified( $blockName, $varKey ) )
+                    continue;
+
+                $newLines = $this->variableToLines( $blockName, $varKey, $varValue, $resetArrays );
+                $parsed = $this->parseRoundTripLines( $lines );
+                $sectionSettings = isset( $parsed['settings'][$blockName] ) ? $parsed['settings'][$blockName] : array();
+
+                if ( isset( $sectionSettings[$varKey] ) )
+                {
+                    $lineIndexes = $sectionSettings[$varKey];
+                    sort( $lineIndexes );
+                    $first = $lineIndexes[0];
+
+                    rsort( $lineIndexes );
+                    foreach ( $lineIndexes as $lineIndex )
+                    {
+                        array_splice( $lines, $lineIndex, 1 );
+                    }
+
+                    array_splice( $lines, $first, 0, $newLines );
+                }
+                else
+                {
+                    $insertAt = $parsed['sections'][$blockName]['end'] + 1;
+                    array_splice( $lines, $insertAt, 0, $newLines );
+                }
+            }
+        }
+
+        return implode( "\n", $lines );
+    }
+
+    /**
+     * Loads round-trip source data directly from disk for direct-access saves.
+     * This is needed when ini values were restored from cache and parseFile() did not run.
+     *
+     * @param string $normalizedPath
+     * @return bool
+     */
+    protected function loadRoundTripSourceFromFile( $normalizedPath )
+    {
+        if ( !$normalizedPath || !file_exists( $normalizedPath ) )
+            return false;
+
+        $contents = file_get_contents( $normalizedPath );
+        if ( $contents === false )
+            return false;
+
+        $contents = str_replace( "\r", '', $contents );
+        if ( $this->Codec )
+            $contents = $this->Codec->convertString( $contents );
+
+        $this->RoundTripData[$normalizedPath] = $this->buildRoundTripData( $contents );
+        return true;
+    }
+
+    /**
+     * Parses ini content lines into section and setting line indexes.
+     *
+     * @param array $lines
+     * @return array
+     */
+    protected function parseRoundTripLines( array $lines )
+    {
+        $sections = array();
+        $settings = array();
+        $currentBlock = '';
+        $lastSection = null;
+
+        foreach ( $lines as $index => $line )
+        {
+            if ( $line === '' || $line[0] === '#' )
+                continue;
+
+            $lineWithoutComment = $line;
+            if ( preg_match( "/^(.+)##.*/", $lineWithoutComment, $regs ) )
+                $lineWithoutComment = $regs[1];
+
+            if ( trim( $lineWithoutComment ) === '' )
+                continue;
+
+            if ( preg_match( "#^\[(.+)\]\s*$#", $lineWithoutComment, $newBlockNameArray ) )
+            {
+                if ( $lastSection !== null )
+                    $sections[$lastSection]['end'] = $index - 1;
+
+                $currentBlock = trim( $newBlockNameArray[1] );
+                $sections[$currentBlock] = array( 'start' => $index, 'end' => count( $lines ) - 1 );
+                $lastSection = $currentBlock;
+                continue;
+            }
+
+            if ( $currentBlock === '' )
+                continue;
+
+            if ( preg_match( "#^([\\w_*@-]+)\\[\\]$#", $lineWithoutComment, $valueArray ) )
+            {
+                $varName = trim( $valueArray[1] );
+                $settings[$currentBlock][$varName][] = $index;
+            }
+            else if ( preg_match( "#^([\\w_*@-]+)(\\[([^\\]]*)\\])?=(.*)$#", $lineWithoutComment, $valueArray ) )
+            {
+                $varName = trim( $valueArray[1] );
+                $settings[$currentBlock][$varName][] = $index;
+            }
+        }
+
+        return array(
+            'sections' => $sections,
+            'settings' => $settings
+        );
+    }
+
+    /**
+     * Normalizes paths for round-trip cache lookups.
+     *
+     * @param string $path
+     * @return string
+     */
+    protected function normalizePathForRoundTrip( $path )
+    {
+        if ( $path === false || $path === null )
+            return '';
+
+        if ( strlen( $path ) > 0 && $path[0] !== '/' )
+        {
+            $path = __DIR__ . '/../../../' . $path;
+        }
+
+        $realPath = realpath( $path );
+        return $realPath !== false ? $realPath : $path;
+    }
+
+    /**
+     * Returns true if at least one variable in group is marked as modified.
+     *
+     * @param string $blockName
+     * @return bool
+     */
+    protected function groupHasModifiedValues( $blockName )
+    {
+        if ( !isset( $this->ModifiedBlockValues[$blockName] ) )
+            return false;
+
+        foreach ( $this->ModifiedBlockValues[$blockName] as $modifiedValue )
+        {
+            if ( $modifiedValue )
+                return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Serializes a variable to ini lines while reusing legacy save formatting.
+     *
+     * @param string $blockName
+     * @param string $varKey
+     * @param mixed $varValue
+     * @param bool $resetArrays
+     * @return array
+     */
+    protected function variableToLines( $blockName, $varKey, $varValue, $resetArrays )
+    {
+        $lines = array();
+        if ( is_array( $varValue ) )
+        {
+            if ( count( $varValue ) > 0 )
+            {
+                $customResetArray = ( isset( $this->BlockValues[$blockName]['ResetArrays'] ) and
+                                      $this->BlockValues[$blockName]['ResetArrays'] == 'false' )
+                                    ? true
+                                    : false;
+                if ( $resetArrays and !$customResetArray )
+                    $lines[] = $varKey . '[]';
+
+                foreach ( $varValue as $varArrayKey => $varArrayValue )
+                {
+                    if ( is_string( $varArrayKey ) )
+                        $lines[] = $varKey . '[' . $varArrayKey . ']=' . $varArrayValue;
+                    else if ( $varArrayValue == null )
+                        $lines[] = $varKey . '[]';
+                    else
+                        $lines[] = $varKey . '[]=' . $varArrayValue;
+                }
+            }
+            else
+            {
+                $lines[] = $varKey . '[]';
+            }
+        }
+        else
+        {
+            $lines[] = $varKey . '=' . $varValue;
+        }
+
+        return $lines;
+    }
+
     /*!
      Removes all read data from .ini files.
     */
@@ -1127,6 +1465,8 @@ class eZINI
     {
         $this->BlockValues = array();
         $this->ModifiedBlockValues = array();
+        $this->RoundTripData = array();
+        $this->LastParsedInputFiles = array();
     }
 
     /*!
@@ -2146,6 +2486,12 @@ class eZINI
 
     /// If \c true eZINI will check each setting (before saving) for correspondence of settings in site.ini[eZINISetting].ReadonlySettingList
     public $ReadOnlySettingsCheck = true;
+
+    /// Parsed round-trip data keyed by normalized absolute file path.
+    public $RoundTripData = array();
+
+    /// Last set of parsed input files for non-placement parse.
+    public $LastParsedInputFiles = array();
 
 }
 
