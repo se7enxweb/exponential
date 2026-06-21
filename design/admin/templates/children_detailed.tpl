@@ -107,6 +107,8 @@ var labelsObj = {ldelim}
                         more_actions_rs: "{'Remove selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         more_actions_ms: "{'Move selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         more_actions_cp: "{'Copy selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        more_actions_hs: "{'Hide selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        more_actions_us: "{'Unhide selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         more_actions_no: "{'Use the checkboxes to select one or more items.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         table_options: "{'Table options'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         first_page: "&laquo;&nbsp;{'first'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",

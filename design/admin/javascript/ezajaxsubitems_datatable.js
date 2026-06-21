@@ -404,22 +404,42 @@ var sortableSubitems = function () {
 
 
         var moreActBtnAction = function( type, args, item ) {
-            if ($('form[name=children] input.ezsubitems_delete_checkbox:checked').length == 0)
+            var clickedItem = (args && args[1]) ? args[1] : item;
+            var selectedCount = $('form[name=children] input.ezsubitems_delete_checkbox:checked').length;
+            if (selectedCount === 0 || !clickedItem)
                 return;
 
-            if (item.value == 0) {
-                $('form[name=children]').append($('<input type="hidden" name="RemoveButton" />')).submit();
-            } else if ( item.value == 2 ) {
-                $('form[name=children]').append($('<input type="hidden" name="CopyButton" />')).submit();
-             } else {
-                $('form[name=children]').append($('<input type="hidden" name="MoveButton" />')).submit();
+            var selectedValue = null;
+            if (typeof clickedItem.value !== 'undefined') {
+                selectedValue = clickedItem.value;
+            } else if (clickedItem.cfg && typeof clickedItem.cfg.getProperty === 'function') {
+                selectedValue = clickedItem.cfg.getProperty('value');
+            }
+
+            if (selectedValue === null || typeof selectedValue === 'undefined')
+                return;
+
+            var form = $('form[name=children]').first();
+
+            if (selectedValue == 0) {
+                form.append($('<input type="hidden" name="RemoveButton" value="1" />')).submit();
+            } else if (selectedValue == 2) {
+                form.append($('<input type="hidden" name="CopyButton" value="1" />')).submit();
+            } else if (selectedValue == 3) {
+                form.append($('<input type="hidden" name="HideButton" value="1" />')).submit();
+            } else if (selectedValue == 4) {
+                form.append($('<input type="hidden" name="UnhideButton" value="1" />')).submit();
+            } else {
+                form.append($('<input type="hidden" name="MoveButton" value="1" />')).submit();
             }
         }
 
         var moreActBtnActions = [
             {text: labelsObj.ACTION_BUTTONS.more_actions_rs, id: "ezopt-menu-remove", value: 0, onclick: {fn: moreActBtnAction}, disabled: false},
             {text: labelsObj.ACTION_BUTTONS.more_actions_ms, id: "ezopt-menu-move", value: 1, onclick: {fn: moreActBtnAction}, disabled: false},
-            {text: labelsObj.ACTION_BUTTONS.more_actions_cp, id: "ezopt-menu-copy", value: 2, onclick: {fn: moreActBtnAction}, disabled: false}
+            {text: labelsObj.ACTION_BUTTONS.more_actions_cp, id: "ezopt-menu-copy", value: 2, onclick: {fn: moreActBtnAction}, disabled: false},
+            {text: labelsObj.ACTION_BUTTONS.more_actions_hs, id: "ezopt-menu-hide", value: 3, onclick: {fn: moreActBtnAction}, disabled: false},
+            {text: labelsObj.ACTION_BUTTONS.more_actions_us, id: "ezopt-menu-unhide", value: 4, onclick: {fn: moreActBtnAction}, disabled: false}
         ];
 
         var noMoreActBtnActions = [
