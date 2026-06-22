@@ -1100,7 +1100,6 @@ input:-moz-placeholder {
     flex-direction: column;
     overflow: hidden;
     background-color: #ffffff;
-    width: 0;
     position: fixed;
     top: var(--header-height);
     bottom: 0;
@@ -1112,7 +1111,6 @@ input:-moz-placeholder {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.25);
     opacity: 0;
     visibility: hidden;
-    width: 15rem;
     /* transition: width 300ms ease, opacity 300ms ease, visibility 300ms ease, inset 300ms ease; */
 }
 
@@ -1121,17 +1119,46 @@ input:-moz-placeholder {
     overflow: auto;
 }
 
+.sidebar.left {
+    left: 0;
+    width: var(--left-sidebar-width, 15rem);
+    font-size: var(--left-sidebar-font-size, 0.8225rem);
+}
+
+.sidebar.left > div {
+    margin: 2rem;
+}
+
+/* Ensure menu items inherit the sidebar font size */
+.sidebar.left ul li,
+.sidebar.left a,
+.sidebar.left p {
+    font-size: inherit;
+}
+
+/* Drag handle for resizing left sidebar */
+.leftmenu-resize-handle {
+    position: absolute;
+    top: 20%;
+    right: -0.5rem;
+    width: 1rem;
+    height: 4rem;
+    z-index: 140;
+    cursor: ew-resize;
+    touch-action: none;
+    background: linear-gradient(90deg, rgba(145, 145, 145, 0), rgba(145, 145, 145, 0.85), rgba(145, 145, 145, 0));
+    border-radius: 999px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
 .sidebar.show {
     opacity: 1;
     visibility: visible;
 }
 
-.sidebar.left {
-    left: 0;
-}
-
 .sidebar.right {
     right: 0;
+    width: 15rem;
 }
 
 .sidebar-controls {
@@ -1244,7 +1271,7 @@ input:-moz-placeholder {
 
 @media screen and (min-width: 1024px) {
     body:has(.sidebar.left.show) {
-        margin-left: calc(15rem + 0.5rem);
+        margin-left: calc(var(--left-sidebar-width, 15rem) + 0.5rem);
     }
 
     body:has(.sidebar.right.show) {
