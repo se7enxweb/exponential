@@ -268,7 +268,7 @@ var sortableSubitems = function () {
                 var colOptionsHTML = '<fieldset>';
                 colOptionsHTML += '<legend>' + labelsObj.TABLE_OPTIONS.header_noipp + '</legend><div class="block">';
 
-                var rowsPerPageDef = [ {id:1, count:10}, {id:2, count:25}, {id:3, count:50} ];
+                var rowsPerPageDef = [ {id:1, count:10}, {id:2, count:25}, {id:3, count:50}, {id:4, count:100}, {id:5, count:200}, {id:6, count:500} ];
 
                 var rowsPerPageDefLen = rowsPerPageDef.length;
                 for (var i = 0, l = rowsPerPageDefLen; i < l ; i++) {
@@ -281,6 +281,50 @@ var sortableSubitems = function () {
                         $.ez.setPreference('admin_list_limit', a.id);
                     }, rowDef);
                 }
+
+                // Custom items per page input field
+                colOptionsHTML += '<div class="table-options-row"><span class="table-options-key"><label for="table-option-custom-input">' + labelsObj.TABLE_OPTIONS.custom_label + '</label></span>';
+                colOptionsHTML += '<span class="table-options-value table-options-custom-value"><input id="table-option-custom-input" type="text" name="TableOptionCustomValue" value="" class="table-options-custom-input" placeholder="Enter number" /> <input id="table-option-custom-radio" type="radio" name="TableOptionValue" value="custom" /></span></div>';
+
+                var handleCustomInput = function() {
+                    var inputVal = document.getElementById("table-option-custom-input").value.trim();
+                    if (inputVal === '') {
+                        return; // Ignore empty input
+                    }
+                    
+                    var customValue = parseInt(inputVal, 10);
+                    if (!isNaN(customValue) && customValue > 0 && customValue <= 10000) {
+                        // Check the custom radio button and uncheck presets
+                        jQuery('input[name="TableOptionValue"]').prop('checked', false);
+                        document.getElementById("table-option-custom-radio").checked = true;
+                        paginator.setRowsPerPage(customValue);
+                    } else {
+                        alert("Please enter a valid number between 1 and 10000");
+                        document.getElementById("table-option-custom-radio").checked = false;
+                        document.getElementById("table-option-custom-input").value = '';
+                    }
+                };
+
+                YAHOO.util.Event.on("table-option-custom-input", "keypress", function(e) {
+                    if (e.keyCode === 13) { // Enter key
+                        YAHOO.util.Event.stopEvent(e);
+                        handleCustomInput();
+                    }
+                });
+
+                YAHOO.util.Event.on("table-option-custom-input", "blur", function(e) {
+                    handleCustomInput();
+                });
+
+                YAHOO.util.Event.on("table-option-custom-radio", "click", function(e) {
+                    var inputVal = document.getElementById("table-option-custom-input").value.trim();
+                    if (inputVal !== '') {
+                        var customValue = parseInt(inputVal, 10);
+                        if (!isNaN(customValue) && customValue > 0 && customValue <= 10000) {
+                            paginator.setRowsPerPage(customValue);
+                        }
+                    }
+                });
 
                 colOptionsHTML += '</div></fieldset><br />';
                 colOptionsHTML += '<fieldset>';
