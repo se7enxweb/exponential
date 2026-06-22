@@ -16,12 +16,38 @@
 
     {* Pr uri header cache
  Need navigation part for cases like content/browse where node id is taken from caller params *}
-    {cache-block keys=array( $module_result.uri, $user_hash, $admin_theme, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash ) ignore_content_expiry}
+    {cache-block keys=array( $module_result.uri, $user_hash, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash ) ignore_content_expiry}
 
     {include uri='design:page_head.tpl'}
 
     {include uri='design:page_head_style.tpl'}
     {include uri='design:page_head_script.tpl'}
+
+    {* Set CSS variables for left sidebar width and font size based on user preference *}
+    {def $left_sidebar_width = '16rem'}
+    {def $left_sidebar_font_size = '0.8225rem'}
+    {if eq( $admin_left_size, 'medium' )}
+        {set $left_sidebar_width = '22rem'}
+        {set $left_sidebar_font_size = '1rem'}
+    {else}
+        {if eq( $admin_left_size, 'large' )}
+            {set $left_sidebar_width = '30rem'}
+            {set $left_sidebar_font_size = '1.305rem'}
+        {else}
+            {* Custom pixel values from drag-resize are passed through as-is *}
+            {if and( $admin_left_size|ne( '' ), $admin_left_size|ne( 'small' ), $admin_left_size|ne( 'medium' ), $admin_left_size|ne( 'large' ) )}
+                {set $left_sidebar_width = $admin_left_size|wash}
+            {/if}
+        {/if}
+    {/if}
+    <style>
+        :root {ldelim} 
+        --left-sidebar-width: {$left_sidebar_width};
+        --left-sidebar-font-size: {$left_sidebar_font_size};
+        {rdelim}
+    </style>
+    {undef $left_sidebar_width}
+    {undef $left_sidebar_font_size}
 
 </head>
 
@@ -113,6 +139,7 @@
     <div id="overlay-mask" style="display:none;"></div>
     <img src={'2/loader.gif'|ezimage()} id="ajaxuploader-loader" style="display:none;"
         alt="{'Loading...'|i18n( 'design/admin/pagelayout' )}" />
+
 </body>
 
 </html>

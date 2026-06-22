@@ -309,3 +309,22 @@
 .table-options-value {
     float: right;
 }
+
+/* Custom items per page input field styles */
+.table-options-custom-value {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.table-options-custom-input {
+    width: 100px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+#table-option-custom-radio {
+    vertical-align: middle;
+}

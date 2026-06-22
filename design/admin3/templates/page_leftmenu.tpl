@@ -1,4 +1,6 @@
 <div id="leftmenu" class="sidebar left">
+    {* Resize handle for drag-to-resize functionality *}
+    <div id="leftmenu-resize-handle" class="leftmenu-resize-handle" aria-hidden="true"></div>
     <div id="leftmenu-design">
         {if is_set( $module_result.left_menu )}
             {include uri=$module_result.left_menu}
