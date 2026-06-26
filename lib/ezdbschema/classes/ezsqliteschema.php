@@ -24,6 +24,14 @@ class eZSQLiteSchema extends eZDBSchemaInterface
             foreach( $tableArray as $tableNameArray )
             {
                 $table_name = current( $tableNameArray );
+                
+                // Skip SQLite system tables (sqlite_sequence, sqlite_stat1, etc.)
+                // These are automatically managed by SQLite and should not be included in schema comparisons
+                if ( strpos( $table_name, 'sqlite_' ) === 0 )
+                {
+                    continue;
+                }
+                
                 if ( !isset( $params['table_include'] ) or
                      ( is_array( $params['table_include'] ) and
                        in_array( $table_name, $params['table_include'] ) ) )
@@ -322,6 +330,24 @@ class eZSQLiteSchema extends eZDBSchemaInterface
             return $sql . ";\n";
         }
         return $sql;
+    }
+
+    /*!
+     * \private
+     * Generate SQL for dropping an index
+     */
+    function generateDropIndexSql( $table_name, $index_name, $def, $params )
+    {
+        // SQLite doesn't support dropping primary keys
+        // Only non-unique and unique indexes can be dropped
+        if ( $def['type'] == 'primary' )
+        {
+            // Primary keys cannot be dropped in SQLite without recreating the table
+            return false;
+        }
+        
+        // SQLite uses: DROP INDEX [IF EXISTS] index_name
+        return "DROP INDEX IF EXISTS " . $this->escapeIdentifier( $index_name ) . ";\n";
     }
 
     /*!
