@@ -367,8 +367,8 @@ class eZISBN13
         $val = 0;
         for ( $i = 0; $i < self::LENGTH; $i++ )
         {
-            $val = $isbnNr{$i};
-            if ( !is_numeric( $isbnNr{$i} ) )
+            $val = $isbnNr[$i];
+            if ( !is_numeric( $isbnNr[$i] ) )
             {
                 $error = ezpI18n::tr( 'kernel/classes/datatypes', 'All ISBN 13 characters need to be numeric' );
                 return false;
