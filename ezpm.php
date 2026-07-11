@@ -55,25 +55,31 @@ function help()
 function helpCreate()
 {
     $cli = eZCLI::instance();
-    $cli->output( "create: Create a new package.\n" .
-                  "usage: create NAME [SUMMARY [VERSION [INSTALLTYPE]]] [PARAMETERS]\n" .
+    $cli->output( "create: Create a new, empty package.\n" .
+                  "usage: create NAME [SUMMARY [VERSION [INSTALLTYPE]]]\n" .
                   "\n" .
                   "SUMMARY:     A short summary of your package\n" .
                   "VERSION:     The version of your package, default is 1.0\n" .
                   "INSTALLTYPE: Use install (default) for a package that installs files or\n" .
                   "             import for a package that can only be imported.\n" .
-                  "Parameters:\n"
+                  "\n" .
+                  "A content-tree package is built in three steps: create, add, export.\n" .
+                  "Example - package the entire content tree from the true root node (ID 1):\n" .
+                  "  create mypackage 'My package summary' 1.0.1 install\n" .
+                  "  add mypackage ezcontentobject 1\n" .
+                  "  export mypackage -d /path/to/output\n"
                   );
 }
 
 function helpExport()
 {
     $cli = eZCLI::instance();
-    $cli->output( "export: Export a part of the eZ Publish installation into a package.\n" .
-                  "usage: export TYPE [PARAMETERS]... [TYPE [PARAMETERS]...]...\n" .
+    $cli->output( "export: Export a built package to a .ezpkg archive.\n" .
+                  "usage: export PACKAGE [-d DIRECTORY]\n" .
                   "\n" .
                   "Options:\n" .
-                  "  -o,--output FILE   export to file\n"
+                  "  -d DIRECTORY   export the .ezpkg archive to DIRECTORY\n" .
+                  "  (no -d)        export the .ezpkg archive to the current directory\n"
                   );
 }
 
@@ -122,8 +128,33 @@ function helpAdd()
                   "usage: add PACKAGE ITEM [ITEMPARAMETERS]...\n" .
                   "\n" .
                   "Items:\n" .
-                  "  group: Add categorization groups\n" .
-                  "  ezcontentclass: Add contentclass definitions\n" .
+                  "  group:           Add categorization groups\n" .
+                  "  ezcontentclass:  Add contentclass definitions\n" .
+                  "  ezcontentobject: Add content objects and their subtrees\n" .
+                  "\n" .
+                  "ezcontentobject parameters:\n" .
+                  "  NODE                 Numeric node ID or URL path of the starting node\n" .
+                  "                       (all children below it are included by default)\n" .
+                  "  --include-classes    Include content classes in the package (default)\n" .
+                  "  --exclude-classes    Do not include content classes\n" .
+                  "  --include-templates  Include template overrides (default)\n" .
+                  "  --exclude-templates  Do not include template overrides\n" .
+                  "  --node-main          Export main node assignment only (default)\n" .
+                  "  --node-selected      Export all selected node assignments\n" .
+                  "  --siteaccess=sa,sa2  SiteAccesses to collect templates from\n" .
+                  "  --language=loc1,loc2 Languages to export (default: all)\n" .
+                  "  --current-version    Export current version only (default)\n" .
+                  "  --all-versions       Export all versions\n" .
+                  "  --minimal-template-set  Include only the minimal template set\n" .
+                  "\n" .
+                  "Examples:\n" .
+                  "  add mypackage ezcontentobject 1\n" .
+                  "    Export the entire content tree starting at the true root node (ID 1)\n" .
+                  "  add mypackage ezcontentobject 60 --exclude-classes\n" .
+                  "    Export the subtree under node 60 without content classes\n" .
+                  "  add mypackage ezcontentobject /content/my-page --siteaccess=sevenx_site_user\n" .
+                  "    Export the subtree under /content/my-page using templates from sevenx_site_user\n" .
+                  "\n" .
                   "Note: Will open up a new release if no open releases exists yet.\n"
                   );
 }
