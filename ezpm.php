@@ -10,7 +10,9 @@
 require 'autoload.php';
 
 $cli = eZCLI::instance();
-$script = eZScript::instance( array( 'debug-message' => '',
+$script = eZScript::instance( array( 
+                                      'description' => 'Exponential Package Manager CLI - Create, Import, Delete, Install, List Exp/eZp Packages',
+                                      'debug-message' => '',
                                       'use-session' => true,
                                       'use-modules' => true,
                                       'use-extensions' => true ) );
