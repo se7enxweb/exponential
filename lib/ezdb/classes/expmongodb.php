@@ -30,6 +30,11 @@ class expMongoDB extends eZDBInterface
     /** @var bool Persistent connections flag (no-op for MongoDB) */
     public $UsePersistentConnection = false;
 
+    function logError( $message )
+    {
+        eZDebug::writeError( $message, 'expMongoDB' );
+    }
+
     public function __construct( $parameters = array() )
     {
         parent::__construct( $parameters );
@@ -38,7 +43,7 @@ class expMongoDB extends eZDBInterface
             $this->getClient()->selectDatabase( $this->DB )->command(['ping' => 1]);
             $this->IsConnected = true;
         } catch ( Exception $e ) {
-            error_log('expMongoDB::__construct connection failed: ' . $e->getMessage());
+            $this->logError('expMongoDB::__construct connection failed: ' . $e->getMessage());
             $this->IsConnected = false;
         }
     }
@@ -72,7 +77,7 @@ class expMongoDB extends eZDBInterface
             $doc = $this->getClient()->selectCollection( $dbName, $table )->findOne($filter);
             $results = $doc === null ? [] : $doc->getArrayCopy();
         } catch (Exception $e) {
-            error_log('expMongoDB::findOne ' . $e->getMessage());
+            $this->logError('expMongoDB::findOne ' . $e->getMessage());
         }
         return $results;
     }
@@ -290,7 +295,7 @@ class expMongoDB extends eZDBInterface
             }
             catch ( Exception $e )
             {
-                error_log( 'expMongoDB::query UPDATE failed: ' . $e->getMessage() . ' SQL: ' . substr( $sql, 0, 200 ) );
+                $this->logError( 'expMongoDB::query UPDATE failed: ' . $e->getMessage() . ' SQL: ' . substr( $sql, 0, 200 ) );
                 return false;
             }
             return true;
@@ -304,7 +309,7 @@ class expMongoDB extends eZDBInterface
             $filter = $this->parseWhereClause( $whereSql );
             if ( empty( $filter ) )
             {
-                error_log( 'expMongoDB::query DELETE with unparseable WHERE: ' . substr( $sql, 0, 200 ) );
+                $this->logError( 'expMongoDB::query DELETE with unparseable WHERE: ' . substr( $sql, 0, 200 ) );
                 return false;
             }
             try
@@ -313,13 +318,13 @@ class expMongoDB extends eZDBInterface
             }
             catch ( Exception $e )
             {
-                error_log( 'expMongoDB::query DELETE failed: ' . $e->getMessage() );
+                $this->logError( 'expMongoDB::query DELETE failed: ' . $e->getMessage() );
                 return false;
             }
             return true;
         }
 
-        error_log( 'expMongoDB::query unhandled SQL: ' . substr( $sql, 0, 300 ) );
+        $this->logError( 'expMongoDB::query unhandled SQL: ' . substr( $sql, 0, 300 ) );
         return false;
     }
 
@@ -373,7 +378,7 @@ class expMongoDB extends eZDBInterface
                 foreach ( $cursor as $doc )
                     $result[] = $doc->getArrayCopy();
             } catch ( Exception $e ) {
-                error_log( 'expMongoDB::arrayQuery SELECT failed: ' . $e->getMessage() . ' SQL: ' . substr( $sql, 0, 200 ) );
+                $this->logError( 'expMongoDB::arrayQuery SELECT failed: ' . $e->getMessage() . ' SQL: ' . substr( $sql, 0, 200 ) );
             }
             return $result;
         }
@@ -428,7 +433,7 @@ class expMongoDB extends eZDBInterface
                 $results[] = $doc->getArrayCopy();
             }
         } catch (Exception $e) {
-            error_log('expMongoDB::aggregate ' . $e->getMessage());
+            $this->logError('expMongoDB::aggregate ' . $e->getMessage());
         }
         if ( $this->OutputSQL )
         {
@@ -455,7 +460,7 @@ class expMongoDB extends eZDBInterface
                 $results[] = $doc->getArrayCopy();
             }
         } catch (Exception $e) {
-            error_log('expMongoDB::find ' . $e->getMessage());
+            $this->logError('expMongoDB::find ' . $e->getMessage());
         }
         return $results;
     }
@@ -527,7 +532,7 @@ class expMongoDB extends eZDBInterface
             $this->getClient()->selectCollection( $dbName, $table )->insertOne( $doc );
             return true;
         } catch ( Exception $e ) {
-            error_log( 'expMongoDB::insert ' . $table . ' ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::insert ' . $table . ' ' . $e->getMessage() );
             return false;
         }
     }
@@ -548,7 +553,7 @@ class expMongoDB extends eZDBInterface
             );
             return true;
         } catch ( Exception $e ) {
-            error_log( 'expMongoDB::upsert ' . $table . ' ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::upsert ' . $table . ' ' . $e->getMessage() );
             return false;
         }
     }
@@ -568,7 +573,7 @@ class expMongoDB extends eZDBInterface
             $max  = ( !empty( $rows ) && isset( $rows[0]['maxVal'] ) ) ? (int) $rows[0]['maxVal'] : 0;
             return $max + 1;
         } catch ( Exception $e ) {
-            error_log( 'expMongoDB::nextSeqID ' . $table . '.' . $column . ' ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::nextSeqID ' . $table . '.' . $column . ' ' . $e->getMessage() );
             return 1;
         }
     }
@@ -609,7 +614,7 @@ class expMongoDB extends eZDBInterface
             $this->getClient()->selectCollection( $dbName, $table )->deleteMany( $filter );
             return true;
         } catch ( Exception $e ) {
-            error_log( 'expMongoDB::deleteWhere ' . $table . ' ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::deleteWhere ' . $table . ' ' . $e->getMessage() );
             return false;
         }
     }
@@ -637,7 +642,7 @@ class expMongoDB extends eZDBInterface
             foreach ( $this->getClient()->selectDatabase( $dbName )->listCollectionNames() as $name )
                 $names[] = $name;
         } catch ( Exception $e ) {
-            error_log( 'expMongoDB::listCollectionNames ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::listCollectionNames ' . $e->getMessage() );
         }
         return $names;
     }
@@ -680,7 +685,7 @@ class expMongoDB extends eZDBInterface
             );
             return (int)( $result['seq'] ?? 1 );
         } catch ( \Exception $e ) {
-            error_log( 'expMongoDB::nextAtomicID ' . $counterName . ' ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::nextAtomicID ' . $counterName . ' ' . $e->getMessage() );
             // Fallback: read max from actual table
             return $this->nextSeqID( $seedTable ?? $counterName, $seedColumn );
         }
@@ -772,7 +777,7 @@ class expMongoDB extends eZDBInterface
             $this->getClient()->selectCollection( $dbName, $table )->updateOne( $filter, $update );
             return true;
         } catch ( \Exception $e ) {
-            error_log( 'expMongoDB::mongoUpdateOne ' . $table . ' ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::mongoUpdateOne ' . $table . ' ' . $e->getMessage() );
             return false;
         }
     }
@@ -787,7 +792,7 @@ class expMongoDB extends eZDBInterface
             $this->getClient()->selectCollection( $dbName, $table )->updateMany( $filter, $update );
             return true;
         } catch ( \Exception $e ) {
-            error_log( 'expMongoDB::mongoUpdateMany ' . $table . ' ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::mongoUpdateMany ' . $table . ' ' . $e->getMessage() );
             return false;
         }
     }
@@ -802,7 +807,7 @@ class expMongoDB extends eZDBInterface
             $this->getClient()->selectCollection( $dbName, $table )->deleteOne( $filter );
             return true;
         } catch ( \Exception $e ) {
-            error_log( 'expMongoDB::mongoDeleteOne ' . $table . ' ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::mongoDeleteOne ' . $table . ' ' . $e->getMessage() );
             return false;
         }
     }
@@ -851,7 +856,7 @@ class expMongoDB extends eZDBInterface
             $this->getClient()->selectCollection( $dbName, $relationName )->drop();
             return true;
         } catch ( \Exception $e ) {
-            error_log( 'expMongoDB::removeRelation ' . $relationName . ' ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::removeRelation ' . $relationName . ' ' . $e->getMessage() );
             return false;
         }
     }
@@ -906,7 +911,7 @@ class expMongoDB extends eZDBInterface
             foreach ( $this->getClient()->listDatabaseNames() as $name )
                 $names[] = $name;
         } catch ( \Exception $e ) {
-            error_log( 'expMongoDB::availableDatabases ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::availableDatabases ' . $e->getMessage() );
             return null;
         }
         return $names ?: false;
@@ -932,7 +937,7 @@ class expMongoDB extends eZDBInterface
         try {
             $this->getClient()->selectDatabase( $dbName )->drop();
         } catch ( \Exception $e ) {
-            error_log( 'expMongoDB::removeDatabase ' . $dbName . ' ' . $e->getMessage() );
+            $this->logError( 'expMongoDB::removeDatabase ' . $dbName . ' ' . $e->getMessage() );
         }
     }
 
