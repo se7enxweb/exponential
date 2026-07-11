@@ -584,8 +584,15 @@ class eZSiteAccess
      */
     static function load( array $access, ?eZINI $siteINI = null )
     {
-        $currentSiteAccess = $GLOBALS['eZCurrentAccess'];
-        unset( $GLOBALS['eZCurrentAccess'] );
+        if ( isset( $GLOBALS['eZCurrentAccess'] ) )
+        {
+            $currentSiteAccess = $GLOBALS['eZCurrentAccess'];
+            unset( $GLOBALS['eZCurrentAccess'] );
+        }
+        else
+        {
+            $currentSiteAccess = null;
+        }
 
         // Clear all ini override dirs
         if ( $siteINI instanceof eZINI )
