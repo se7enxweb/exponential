@@ -328,7 +328,7 @@ class eZImageGDHandler extends eZImageHandler
                 $g = $luminance * $gmod;
                 $b = $luminance * $bmod;
 
-                $color = ImageColorAllocate( $imageObject, $r, $g, $b );
+                $color = ImageColorAllocate( $imageObject, (int)$r, (int)$g, (int)$b );
 
                 ImageSetPixel( $imageObject, $x, $y, $color );
             }
