@@ -128,9 +128,10 @@ function helpAdd()
                   "usage: add PACKAGE ITEM [ITEMPARAMETERS]...\n" .
                   "\n" .
                   "Items:\n" .
-                  "  group:           Add categorization groups\n" .
-                  "  ezcontentclass:  Add contentclass definitions\n" .
-                  "  ezcontentobject: Add content objects and their subtrees\n" .
+                  "  group:             Add categorization groups\n" .
+                  "  ezcontentclass:    Add contentclass definitions\n" .
+                  "  ezcontentobject:   Add content objects and their subtrees\n" .
+                  "  ezcontentsubtree:  Alias for ezcontentobject; exports the node and its subtree\n" .
                   "\n" .
                   "ezcontentobject parameters:\n" .
                   "  NODE                 Numeric node ID or URL path of the starting node\n" .
@@ -866,6 +867,8 @@ foreach ( $commandList as $commandItem )
         if ( $package )
         {
             $itemType = $commandItem['item'];
+            if ( $itemType == 'ezcontentsubtree' )
+                $itemType = 'ezcontentobject';
             switch ( $itemType )
             {
                 case 'group':
