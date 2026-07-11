@@ -498,6 +498,21 @@ $discoverCommands = function() use ( $rootDir, $extractDescription )
         );
     }
 
+    // ── ezpm: — ezpm.php ──────────────────────────────────────────────────
+    $fp = $rootDir . '/ezpm.php';
+    if ( file_exists( $fp ) )
+    {
+        $key = 'ezpm';
+        $commands[ $key ] = array(
+            'name'        => $key,
+            'namespace'   => 'ezpm',
+            'path'        => 'ezpm.php',
+            'type'        => 'php',
+            'binary'      => PHP_BINARY,
+            'description' => $extractDescription( $fp, 'php' ),
+        );
+    }
+
     ksort( $commands );
     return $commands;
 };
@@ -551,6 +566,7 @@ $listCommands = function( $nsFilter = null )
         'shell' => 'shell — bin/shell/*.sh  (Bash shell scripts)',
         'bin'   => 'bin   — bin/*  (Root bin executables)',
         'cron'  => 'cron  — cronjobs/*.php  (Cronjob parts via runcronjobs.php)',
+        'ezpm'  => 'ezpm  — ezpm.php  (eZ Publish package manager)',
     );
 
     $lastCount = 0;
