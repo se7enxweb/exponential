@@ -184,6 +184,8 @@ function helpHelp()
 
 function changeSiteAccessSetting( $siteAccess )
 {
+    global $siteaccess;
+    $siteaccess = $siteAccess;
     $cli = eZCLI::instance();
     if ( file_exists( 'settings/siteaccess/' . $siteAccess) )
     {
@@ -661,7 +663,7 @@ foreach ( $commandList as $commandItem )
     else if ( $commandItem['command'] == 'help' )
     {
         helpHelp();
-        exit( 1 );
+        exit( 0 );
     }
     else if ( $commandItem['command'] == 'delete' )
     {
