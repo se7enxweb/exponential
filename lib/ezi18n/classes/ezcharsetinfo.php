@@ -185,8 +185,11 @@ class eZCharsetInfo
     */
     static function realCharsetCode( $charsetCode )
     {
+        if ( $charsetCode === null )
+            return null;
+
         $aliasTable =& eZCharsetInfo::aliasTable();
-        $charsetCode = strtolower( $charsetCode );
+        $charsetCode = strtolower( (string) $charsetCode );
         if ( isset( $aliasTable[$charsetCode] ) )
             return $aliasTable[$charsetCode];
         // Check alias without any dashes
