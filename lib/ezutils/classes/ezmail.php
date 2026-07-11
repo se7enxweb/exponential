@@ -304,7 +304,7 @@ class eZMail
     function contentType()
     {
 //        return $this->Mail->getHeader( 'Content-Type' );
-        return $this->ContentType['type'];
+        return $this->ContentType['type'] ?? null;
     }
 
     /*!
@@ -315,7 +315,7 @@ class eZMail
     */
     function contentCharset()
     {
-        return $this->ContentType['charset'];
+        return $this->ContentType['charset'] ?? null;
     }
 
     /*!
@@ -326,7 +326,7 @@ class eZMail
     function contentTransferEncoding()
     {
 //        return $this->Mail->getHeader( 'Content-Transfer-Encoding' );
-        return $this->ContentType['transfer-encoding'];
+        return $this->ContentType['transfer-encoding'] ?? null;
     }
 
     /*!
@@ -338,7 +338,7 @@ class eZMail
     {
 //        return $this->Mail->getHeader( 'Content-Disposition' );
 //        return $this->Mail->contentDisposition->disposition;
-        return $this->ContentType['disposition'];
+        return $this->ContentType['disposition'] ?? null;
     }
 
     /*!
