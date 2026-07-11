@@ -14,4 +14,6 @@
 /bin/win32
 /vendor
 /composer.lock
+/coverage
 
+.aider*

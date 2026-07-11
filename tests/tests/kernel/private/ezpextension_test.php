@@ -12,14 +12,14 @@ class ezpExtensionTest extends ezpTestCase
 {
     protected $data = array();
 
-    public function setUp()
+    public function setUp(): void
     {
         ezpINIHelper::setINISetting( 'site.ini', 'ExtensionSettings', 'ExtensionDirectory', 'tests/tests/kernel/classes/extensions' );
         self::clearActiveExtensionsCache();
         parent::setUp();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         ezpINIHelper::restoreINISettings();
         eZCache::clearByID( 'active_extensions' );

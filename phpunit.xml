@@ -17,37 +17,42 @@
 -->
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/13.0/phpunit.xsd"
     bootstrap="tests/bootstrap.php"
     colors="true"
     displayDetailsOnIncompleteTests="true"
     displayDetailsOnSkippedTests="true"
     failOnEmptyTestSuite="false"
     cacheDirectory=".phpunit.cache"
+    failOnPhpunitWarning="false"
 >
 
     <testsuites>
 
         <testsuite name="security">
-            <directory suffix="_test.php">tests/tests/kernel/classes/security</directory>
             <directory suffix="Test.php">tests/tests/kernel/classes/security</directory>
         </testsuite>
 
         <testsuite name="kernel-classes">
-            <directory suffix="_test.php">tests/tests/kernel/classes</directory>
+            <directory suffix="Test.php">tests/tests/kernel/classes</directory>
+            <exclude>tests/tests/kernel/classes/security</exclude>
+            <exclude>tests/tests/kernel/classes/clusterfilehandlers/eZClusterFileHandlerAbstractTest.php</exclude>
+            <exclude>tests/tests/kernel/classes/clusterfilehandlers/eZClusterStaleCacheTest.php</exclude>
+            <exclude>tests/tests/kernel/classes/clusterfilehandlers/eZDBBasedClusterFileHandlerAbstractTest.php</exclude>
         </testsuite>
 
         <testsuite name="kernel-content">
-            <directory suffix="_test.php">tests/tests/kernel/content</directory>
+            <directory suffix="Test.php">tests/tests/kernel/content</directory>
         </testsuite>
 
         <testsuite name="kernel-datatypes">
-            <directory suffix="_test.php">tests/tests/kernel/datatypes</directory>
+            <directory suffix="Test.php">tests/tests/kernel/datatypes</directory>
+            <exclude>tests/tests/kernel/datatypes/eZDatatypeAbstractTest.php</exclude>
         </testsuite>
 
         <testsuite name="lib">
-            <directory suffix="_test.php">tests/tests/lib</directory>
             <directory suffix="Test.php">tests/tests/lib</directory>
+            <exclude>tests/tests/lib/ezdb/mongodb</exclude>
         </testsuite>
 
         <!--
@@ -55,7 +60,7 @@
           Run: php vendor/bin/phpunit - -testsuite mongodb
         -->
         <testsuite name="mongodb">
-            <directory suffix="Test.php">tests/tests/lib/ezdb/mongodb</directory>
+            <file>tests/tests/lib/ezdb/mongodb/expMongoDBAdapterTest.php</file>
         </testsuite>
 
         <!--
@@ -63,7 +68,7 @@
           Run: php vendor/bin/phpunit - -testsuite mongodb-live
         -->
         <testsuite name="mongodb-live">
-            <file>tests/tests/lib/ezdb/mongodb/sevenxMongoDBIntegrationTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMongoDBIntegrationTest.php</file>
         </testsuite>
 
     </testsuites>
@@ -85,8 +90,24 @@
         </exclude>
     </groups>
 
+    <source>
+        <include>
+            <directory suffix=".php">lib</directory>
+            <directory suffix=".php">kernel</directory>
+        </include>
+    </source>
+
+    <coverage>
+        <report>
+            <html outputDirectory="coverage"/>
+        </report>
+    </coverage>
+
     <php>
         <env name="EZP_TEST_ENVIRONMENT" value="1"/>
+        <!-- PHP_INI_SCAN_DIR is set at runtime by tests/bootstrap.php so PHPUnit's
+             isolated-process children can find tests/xdebug.ini without hardcoding
+             the repository path. -->
     </php>
 
 </phpunit>

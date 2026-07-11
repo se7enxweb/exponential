@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZContentObjectTreeNodeTest2 class
  *
@@ -6,6 +7,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZContentObjectTreeNodeTest2 extends ezpDatabaseTestCase

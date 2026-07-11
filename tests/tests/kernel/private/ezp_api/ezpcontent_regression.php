@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZContentObjectRegression class
  *
@@ -7,13 +8,14 @@
  * @version //autogentag//
  * @package tests
  * @backupGlobals disabled
+ * @group database
  */
 
 class ezpContentRegression extends ezpDatabaseTestCase
 {
     protected static $previousUserID;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $currentUser = eZUser::currentUser();
@@ -25,7 +27,7 @@ class ezpContentRegression extends ezpDatabaseTestCase
         }
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         eZUser::setCurrentlyLoggedInUser( eZUser::fetch( self::$previousUserID ), self::$previousUserID );
         parent::tearDown();

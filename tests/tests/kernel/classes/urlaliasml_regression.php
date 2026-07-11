@@ -6,10 +6,13 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * @group urlaliasml
+ * @group database
  */
 class eZURLAliasMLRegression extends ezpDatabaseTestCase
 {
@@ -30,13 +33,7 @@ class eZURLAliasMLRegression extends ezpDatabaseTestCase
      */
     private $frenchLanguage;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "URL Alias ML Regressions" );
-    }
-
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->norskLanguage = eZContentLanguage::addLanguage( "nor-NO", "Norsk" );
@@ -44,7 +41,7 @@ class eZURLAliasMLRegression extends ezpDatabaseTestCase
         $this->frenchLanguage = eZContentLanguage::addLanguage( "fre-FR", "Français" );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->norskLanguage->removeThis();
         $this->frenchLanguage->removeThis();

@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing regression tests for eZTemplateTextOperator
  *
@@ -7,6 +8,7 @@
  * @version //autogentag//
  * @package tests
  *
+ * @group database
  */
 
 class eZTemplateTextOperatorRegression extends ezpDatabaseTestCase

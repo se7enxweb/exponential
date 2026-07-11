@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZURLWildcardRegression class
  *
@@ -6,6 +7,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZURLWildcardRegression extends ezpDatabaseTestCase
@@ -20,7 +22,7 @@ class eZURLWildcardRegression extends ezpDatabaseTestCase
     /**
      * Test case setup
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -36,7 +38,7 @@ class eZURLWildcardRegression extends ezpDatabaseTestCase
     /**
      * Test case teardown
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         eZURLWildcard::removeByIDs( array( $this->wildcard->attribute( 'id' ) ) );
         eZURLWildcard::expireCache();

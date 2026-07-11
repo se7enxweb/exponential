@@ -13,10 +13,6 @@
  */
 class ezpRestApplicationCacheTest extends ezpRestTestCase
 {
-    public function __construct( $name = NULL, array $data = array(), $dataName = '' )
-    {
-        parent::__construct( $name, $data, $dataName );
-    }
 
     /**
      * Provides INI settings for enabled application cache

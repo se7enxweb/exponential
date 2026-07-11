@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZURLTypeRegression class
  *
@@ -6,17 +7,12 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZURLTypeRegression extends ezpDatabaseTestCase
 {
     protected $backupGlobals = FALSE;
-
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZURLType Regression Tests" );
-    }
 
     /**
      * Test scenario for issue #13604: url's are not encoded properly while serializing object of eZURL datatype.

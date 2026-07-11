@@ -22,6 +22,30 @@
 // ── 1. Composer autoloader ────────────────────────────────────────────────────
 require_once __DIR__ . '/../vendor/autoload.php';
 
+// ── 1b. PHPUnit isolated-process children: locate tests/xdebug.ini
+//
+// PHPUnit 13 child processes re-read php.ini and scan directories.  Instead of
+// hardcoding the repository path in phpunit.xml, derive the existing system scan
+// dir from php_ini_scanned_files() and append the tests directory (__DIR__).
+// This is a no-op if PHP_INI_SCAN_DIR is already set.
+if ( !getenv( 'PHP_INI_SCAN_DIR' ) )
+{
+    $scanDir = null;
+    $scannedFiles = php_ini_scanned_files();
+    if ( is_string( $scannedFiles ) && $scannedFiles !== '' )
+    {
+        $firstFile = trim( current( explode( ',', $scannedFiles ) ) );
+        if ( $firstFile !== '' )
+        {
+            $scanDir = dirname( $firstFile );
+        }
+    }
+    if ( $scanDir !== null )
+    {
+        putenv( 'PHP_INI_SCAN_DIR=' . $scanDir . PATH_SEPARATOR . __DIR__ );
+    }
+}
+
 // ── 2. PHPUnit 3.7 → 10 compatibility shims ──────────────────────────────────
 // These lightweight shim classes let the legacy toolkit load without a full
 // rewrite.  They expose the $arguments / $longOptions array API that
@@ -222,6 +246,7 @@ foreach ( $toolkitFiles as $file )
 $optional = [
     'ezpinihelper.php',
     'ezpextensionhelper.php',
+    'ezpdatabasehelper.php',
     'ezptestdatabasehelper.php',
     'ezpregressiontest.php',
     'ezpdatabaseregressiontest.php',
@@ -232,4 +257,12 @@ foreach ( $optional as $file )
     $path = $toolkit . $file;
     if ( file_exists( $path ) )
         require_once $path;
+}
+
+// eZUpdateDebugSettings is referenced by eZSiteAccess::change, which is used
+// by the eZSys tests.  The global functions file is lightweight and does not
+// bootstrap the full kernel.
+if ( file_exists( __DIR__ . '/../kernel/private/classes/global_functions.php' ) )
+{
+    require_once __DIR__ . '/../kernel/private/classes/global_functions.php';
 }

@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZXHTMLXMLOutputRegression class
  *
@@ -6,15 +7,11 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZXHTMLXMLOutputRegression extends ezpDatabaseTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( __CLASS__ . " tests" );
-    }
 
     /**
      * Regression in renderParagraph() after preserveWhiteSpace=false was removed.

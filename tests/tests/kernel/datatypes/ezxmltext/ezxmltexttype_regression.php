@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZXMLTextTypeRegression class
  *
@@ -6,15 +7,11 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZXMLTextTypeRegression extends ezpDatabaseTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZMultiPriceType Regression Tests" );
-    }
 
     /**
      * Regression test for issue {@see #19174 http://issues.ez.no/19174}

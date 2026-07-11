@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZCacheTest class
  *
@@ -6,6 +7,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZCacheTest extends ezpDatabaseTestCase
@@ -14,7 +16,7 @@ class eZCacheTest extends ezpDatabaseTestCase
     const CLASS_IDENTIFIER = 'ezcache_test_class';
     const IMAGE_FILE_PATH = "tests/tests/kernel/datatypes/ezimage/ezimagetype_regression_issue14983.png";
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $imageClass = new ezpClass( self::CLASS_IDENTIFIER, self::CLASS_IDENTIFIER, "<name>" );

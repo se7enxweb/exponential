@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZApproveTypeRegression class
  *
@@ -6,17 +7,13 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZApproveTypeRegression extends ezpDatabaseTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZApproveType Regression Tests" );
-    }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -32,7 +29,7 @@ class eZApproveTypeRegression extends ezpDatabaseTestCase
         eZUser::setCurrentlyLoggedInUser( $anonymous, $anonymous->attribute( 'contentobject_id' ) );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         // Remove trigger
         eZTrigger::removeTriggerForWorkflow( $this->workflow->attribute( 'id' ) );

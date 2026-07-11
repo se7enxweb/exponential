@@ -24,19 +24,6 @@ abstract class ezpRestTestCase extends ezpTestCase
      */
     protected $mvcConfig;
 
-    public function __construct( $name = NULL, array $data = array(), $dataName = '' )
-    {
-        $this->mvcConfig = new ezpMvcConfiguration();
-
-        // Load rest.ini and forces it to load its data
-        $this->restINI = eZINI::instance( 'rest.ini' );
-        $this->restINI->load( true );
-
-        $this->loadDummySettings();
-
-        parent::__construct( $name, $data, $dataName );
-    }
-
     /**
      * Method to initialize dummy settings, mostly in rest.ini
      */

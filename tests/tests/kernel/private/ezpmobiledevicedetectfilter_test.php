@@ -10,7 +10,7 @@
 
 class ezpMobileDeviceDetectFilterTest extends ezpTestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -18,7 +18,7 @@ class ezpMobileDeviceDetectFilterTest extends ezpTestCase
         $_SERVER['HTTP_ACCEPT'] = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         parent::tearDown();
     }

@@ -12,7 +12,7 @@ class ezpAutoloadGeneratorTest extends PHPUnit_Framework_TestCase
 {
   private $autoload_generator;
 
-  public function setUp()
+  public function setUp(): void
   {
     $this->autoload_generator = new eZAutoloadGenerator();
   }

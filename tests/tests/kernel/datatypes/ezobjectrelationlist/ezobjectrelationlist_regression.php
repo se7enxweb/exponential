@@ -5,20 +5,18 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
+ * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  *  object relation list data tupe regression test
+ * @group database
  */
 class eZObjectRelationListDatatypeRegression extends ezpDatabaseTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZObjectRelationList Regression Tests" );
-    }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->xxx = eZContentLanguage::addLanguage( 'xxx-XX', 'XXXX' );
@@ -29,7 +27,7 @@ class eZObjectRelationListDatatypeRegression extends ezpDatabaseTestCase
         eZContentLanguage::clearPrioritizedLanguages();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->xxx->removeThis();
         ezpINIHelper::restoreINISettings();

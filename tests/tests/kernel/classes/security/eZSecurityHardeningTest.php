@@ -29,12 +29,22 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
 {
     // ── Helpers ───────────────────────────────────────────────────────────────
 
+    protected function setUp(): void
+    {
+        eZDB::setInstance( new StubEZDB() );
+    }
+
+    protected function tearDown(): void
+    {
+        eZDB::setInstance( null );
+    }
+
     /**
      * Returns a mock eZDB that records the last query executed.
      * The stub's escapeString does addslashes-level escaping; enough to verify
      * that injection payloads are neutralised before query construction.
      */
-    private function db(): eZDB
+    private function db(): eZDBInterface
     {
         return eZDB::instance();
     }

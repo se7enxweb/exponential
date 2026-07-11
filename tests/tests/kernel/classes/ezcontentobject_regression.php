@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZContentObjectRegression class
  *
@@ -6,17 +7,12 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZContentObjectRegression extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
-
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZContentObject Regression Tests" );
-    }
 
     /**
      * Test regression for #13815: eZContentObject->fetchAttributesByIdentifier

@@ -12,7 +12,7 @@ class ezpTopologicalSortTest extends ezpTestCase
 {
     protected $data = array();
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->data['simple'] = new ezpTopologicalSort(
             array(

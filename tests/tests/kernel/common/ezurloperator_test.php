@@ -10,12 +10,12 @@
 
 class eZURLOperatorTest extends ezpTestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $_POST = $_GET = $_COOKIE = array();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $_POST = $_GET = $_COOKIE = array();
     }

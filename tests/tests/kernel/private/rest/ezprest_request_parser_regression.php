@@ -21,14 +21,8 @@
  */
 class ezpRestHttpRequestParserRegression extends ezpRegressionTest
 {
-    public function __construct()
-    {
-        $this->readDirRecursively( dirname( __FILE__ ) . '/request_parser_data', $this->files, 'data' );
 
-        parent::__construct();
-    }
-
-    public function setUp()
+    public function setUp(): void
     {
         $this->serverArray = $_SERVER;
         $this->getArray = $_GET;
@@ -38,7 +32,7 @@ class ezpRestHttpRequestParserRegression extends ezpRegressionTest
         $this->cookieArray  = $_COOKIE;
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $_SERVER = $this->serverArray;
         $_GET = $this->getArray;

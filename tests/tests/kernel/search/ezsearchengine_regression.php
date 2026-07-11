@@ -15,7 +15,7 @@ class eZSearchEngineRegression extends ezpTestCase
      */
     private $searchEngine;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->searchEngine = new eZSearchEngine;
     }

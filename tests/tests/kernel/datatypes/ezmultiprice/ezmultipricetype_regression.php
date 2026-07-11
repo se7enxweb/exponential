@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZMultiPriceTypeRegression class
  *
@@ -6,15 +7,11 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZMultiPriceTypeRegression extends ezpDatabaseTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZMultiPriceType Regression Tests" );
-    }
 
     /**
      * Test scenario for issue #13712: Multiprice datatype shows wrong price after multiple calls in template

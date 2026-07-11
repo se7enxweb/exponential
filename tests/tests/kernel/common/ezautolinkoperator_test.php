@@ -13,17 +13,12 @@
  */
 class eZAutoLinkOperatorTest extends ezpTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZAutoLinkOperator Tests" );
-    }
 
-    public function setUp()
+    public function setUp(): void
     {
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
     }
 

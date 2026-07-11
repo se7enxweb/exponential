@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZImageTypeRegression class
  *
@@ -6,6 +7,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZImageTypeRegression extends ezpDatabaseTestCase
@@ -30,13 +32,7 @@ class eZImageTypeRegression extends ezpDatabaseTestCase
      */
     private $fileAttribute;
 
-    public function __construct( $name = null, array $data = array(), $dataName = '' )
-    {
-        parent::__construct( $name, $data, $dataName );
-        $this->setName( "eZImageType Regression Tests" );
-    }
-
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $classIdentifier = "ezimagetype_test_class";
@@ -57,7 +53,7 @@ class eZImageTypeRegression extends ezpDatabaseTestCase
         $this->imageObject->refresh();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->fileAttribute = null;
         $this->imageObject->remove();

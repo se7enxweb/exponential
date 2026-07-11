@@ -12,7 +12,7 @@ class ezpEventTest extends ezpTestCase
 {
     protected $event = null;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         ezpEvent::resetInstance();
@@ -24,7 +24,7 @@ class ezpEventTest extends ezpTestCase
         $this->event->registerEventListeners();
     }
     
-    public function tearDown()
+    public function tearDown(): void
     {
         ezpINIHelper::restoreINISettings();
         $this->event = null;

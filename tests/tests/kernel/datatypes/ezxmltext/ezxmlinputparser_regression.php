@@ -17,7 +17,7 @@ class eZXMLInputParserRegression extends ezpTestCase
      */
     protected $parser;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->parser = new eZXMLInputParser;
     }

@@ -1,19 +1,16 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZOrderRegression class
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
+ * @group database
  */
 
 class eZOrderRegression extends ezpDatabaseTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZOrder Regression Tests" );
-    }
 
     public function testIssue18233()
     {

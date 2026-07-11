@@ -1,4 +1,6 @@
 <?php
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
+
 /**
  * PHPUnit 10 tests for the PHP 8 compatibility bugfixes applied to
  * ezpSessionHandlerDB (lib/ezsession/classes/ezpsessionhandlerdb.php).
@@ -20,128 +22,38 @@
  *
  * These tests use lightweight hand-rolled stubs for all eZ kernel dependencies
  * (eZDB, eZINI, eZSession, ezpEvent) so no live database or eZ kernel boot is
- * required. The real ezpSessionHandler and ezpSessionHandlerDB class files are
- * loaded via require_once. Everything runs in-process under PHPUnit 10.
+ * required. The stubs live in a separate file and are loaded only in the test
+ * process so they do not shadow the real kernel classes for other suites.
  *
  * @group ezsession
  * @package tests
  */
 
-// ── Stubs for eZ kernel classes ───────────────────────────────────────────────
-// IMPORTANT: define stubs BEFORE loading the class-under-test so that
-// its dependency references (eZDB, eZINI, eZSession, ezpEvent) resolve
-// without a live eZ kernel.
-
-/**
- * Stub eZDB instance returned by eZDB::instance().
- * Tests configure $connected, $queryResult, and record executed queries.
- */
-class StubEZDB
-{
-    public bool $connected;
-    /** @var array|false */
-    public $queryResult;
-    /** @var string[] recorded SELECT queries */
-    public array $selectQueries = [];
-    /** @var string[] recorded DELETE / other queries */
-    public array $deleteQueries = [];
-
-    public function __construct( bool $connected = true, $queryResult = false )
-    {
-        $this->connected = $connected;
-        $this->queryResult = $queryResult;
-    }
-
-    public function isConnected(): bool { return $this->connected; }
-
-    public function escapeString( string $s ): string { return addslashes( $s ); }
-
-    /** @return array|false */
-    public function arrayQuery( string $sql, array $params = [] )
-    {
-        $this->selectQueries[] = $sql;
-        return $this->queryResult;
-    }
-
-    public function query( string $sql ): bool
-    {
-        $this->deleteQueries[] = $sql;
-        return true;
-    }
-}
-
-/** Global stub eZDB so eZDB::instance() works without autoloader. */
-class eZDB
-{
-    public static StubEZDB $stub;
-
-    public static function instance(): StubEZDB
-    {
-        return self::$stub;
-    }
-}
-
-/** Minimal eZINI stub. */
-class eZINI
-{
-    public static function instance(): self { return new self(); }
-
-    public function variable( string $section, string $key ): mixed
-    {
-        // Return a typical 3600-second session timeout.
-        return 3600;
-    }
-}
-
-/** Minimal eZSession stub. */
-class eZSession
-{
-    public static ?int $userId = null;
-
-    public static function setUserID( int $id ): void { self::$userId = $id; }
-    public static function userID(): int { return self::$userId ?? 0; }
-    public static function triggerCallback( string $event, array $args = [] ): void {}
-    public static function garbageCollector( int $ts ): void {}
-}
-
-/** Minimal ezpEvent stub. */
-class ezpEvent
-{
-    public static self $instance;
-
-    public static function getInstance(): self
-    {
-        if ( !isset( self::$instance ) )
-            self::$instance = new self();
-        return self::$instance;
-    }
-
-    public function notify( string $event, array $args = [] ): void {}
-}
-
-// ── Load the classes under test ───────────────────────────────────────────────
-// ezpsessionhandler.php has zero external eZ dependencies; load it first so
-// that the DB handler (which extends it) can resolve its parent class.
-// The stubs above satisfy all remaining references in ezpsessionhandlerdb.php.
-
-require_once __DIR__ . '/../../../../lib/ezsession/classes/ezpsessionhandler.php';
-require_once __DIR__ . '/../../../../lib/ezsession/classes/ezpsessionhandlerdb.php';
-
-// ── Test class ────────────────────────────────────────────────────────────────
-
 /**
  * @covers ezpSessionHandlerDB
  */
+#[RunTestsInSeparateProcesses]
 class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
 {
     private ezpSessionHandlerDB $handler;
-    private StubEZDB $db;
+    private StubSessionEZDB $db;
+
+    public static function setUpBeforeClass(): void
+    {
+        // Load the stubs and the classes under test inside the isolated process.
+        // ezpsessionhandler.php has zero external eZ dependencies; load it first
+        // so that the DB handler (which extends it) can resolve its parent class.
+        require_once __DIR__ . '/../../../../lib/ezsession/classes/ezpsessionhandler.php';
+        require_once __DIR__ . '/../../../../lib/ezsession/classes/ezpsessionhandlerdb.php';
+        require_once __DIR__ . '/EzpSessionHandlerDBPhp8BugfixesTestStubs.php';
+    }
 
     protected function setUp(): void
     {
-        $this->db      = new StubEZDB( connected: true, queryResult: false );
-        eZDB::$stub    = $this->db;
-        eZSession::$userId = null;
+        $this->db      = new StubSessionEZDB( connected: true, queryResult: false );
+        eZDB::setInstance( $this->db );
+        eZSession::setUserID( 0 );
+        eZINI::instance()->setVariable( 'Session', 'SessionTimeout', 3600 );
         // handler with $userHasCookie = false so reads always short-circuit
         // to the "no-cookie" path and return false/'' without a DB query.
         $this->handler = new ezpSessionHandlerDB( false );
@@ -230,7 +142,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
             $result,
             'read() must return session data string when a matching row is found'
         );
-        $this->assertSame( 42, eZSession::$userId );
+        $this->assertSame( 42, eZSession::userID() );
     }
 
     /**
@@ -378,7 +290,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
 
         // One iteration returns rows, second returns nothing (loop exits).
         $callCount = 0;
-        $db = $this->createStub( StubEZDB::class );
+        $db = $this->createStub( StubSessionEZDB::class );
 
         $db->method( 'isConnected' )->willReturn( true );
         $db->method( 'escapeString' )->willReturnArgument( 0 );
@@ -389,7 +301,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
             return $callCount === 1 ? [ 'session-key-abc' ] : false;
         } );
 
-        eZDB::$stub = $db;
+        eZDB::setInstance( $db );
         $handler = new ezpSessionHandlerDB( false );
         $handler->gcSessionsPrIteration = 50;
 
@@ -416,7 +328,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
         ini_set( 'max_execution_time', '300' );
 
         $callCount = 0;
-        $db = $this->createStub( StubEZDB::class );
+        $db = $this->createStub( StubSessionEZDB::class );
         $db->method( 'isConnected' )->willReturn( true );
         $db->method( 'escapeString' )->willReturnArgument( 0 );
         $db->method( 'query' )->willReturn( true );
@@ -427,7 +339,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
             return false; // exit loop on 3rd call
         } );
 
-        eZDB::$stub = $db;
+        eZDB::setInstance( $db );
         $handler = new ezpSessionHandlerDB( false );
         $handler->gcSessionsPrIteration = 1;
 

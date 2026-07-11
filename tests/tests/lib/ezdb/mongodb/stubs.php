@@ -341,10 +341,11 @@ class expMongoDBTestable extends expMongoDB
         $this->ErrorMessage       = '';
         $this->ErrorNumber        = 0;
         $this->RecordError        = true;
+        $this->DB                 = 'mongo';
     }
 
     /** @override — return our in-process stub client */
-    protected function getClient(): StubMongoClient
+    public function getClient(): StubMongoClient
     {
         return new StubMongoClient( $this->stubCollections );
     }

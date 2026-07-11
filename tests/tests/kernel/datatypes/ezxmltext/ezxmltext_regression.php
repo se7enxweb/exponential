@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZXMLTextRegression class
  *
@@ -6,23 +7,19 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZXMLTextRegression extends ezpDatabaseTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZXMLText Datatype Regression Tests" );
-    }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->language = eZContentLanguage::addLanguage( "nor-NO", "Norsk" );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         if ( $this->language instanceof eZContentLanguage )
         {

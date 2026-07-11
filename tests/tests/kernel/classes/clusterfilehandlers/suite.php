@@ -14,7 +14,7 @@ class eZClusterTestSuite extends ezpDatabaseTestSuite
         array( 'kernel/sql/', 'cluster_dfs_schema.sql' ),
     );
 
-    public function setUp()
+    public function setUp(): void
     {
         self::$isDatabaseSetup = false;
         parent::setUp();

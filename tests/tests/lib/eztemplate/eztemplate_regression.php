@@ -1,4 +1,8 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
+/**
+ * @group database
+ */
 class eZTemplateRegression extends ezpDatabaseTestCase
 {
     /**

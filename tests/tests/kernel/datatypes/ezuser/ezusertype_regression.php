@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZUserTypeRegression class
  *
@@ -6,6 +7,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZUserTypeRegression extends ezpDatabaseTestCase
@@ -18,13 +20,7 @@ class eZUserTypeRegression extends ezpDatabaseTestCase
     protected $userLogin;
     protected $backupGlobals = false;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( __CLASS__ . " tests" );
-    }
-
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -56,7 +52,7 @@ class eZUserTypeRegression extends ezpDatabaseTestCase
         $this->userObject = $contentObject;
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->userObject = null;
         $this->userEmail = null;

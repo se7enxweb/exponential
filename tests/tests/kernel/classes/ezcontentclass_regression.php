@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZContentClassRegression class
  *
@@ -6,17 +7,13 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZContentClassRegression extends ezpDatabaseTestCase
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZContentClass Regression Tests" );
-    }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -25,7 +22,7 @@ class eZContentClassRegression extends ezpDatabaseTestCase
         $this->class->store();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         eZContentClassOperations::remove( $this->class->id );
         parent::tearDown();

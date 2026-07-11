@@ -6,10 +6,13 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * @backupGlobals disabled
+ * @group database
  */
 class eZContentOperationDeleteObjectRegression extends ezpDatabaseTestCase
 {
@@ -21,13 +24,7 @@ class eZContentOperationDeleteObjectRegression extends ezpDatabaseTestCase
 
     private $objectIds = array();
 
-    public function __construct( $name = NULL, array $data = array(), $dataName = '' )
-    {
-        parent::__construct( $name, $data, $dataName );
-        $this->setName( "eZContentOperationDeleteObject Regression Tests" );
-    }
-
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -48,7 +45,7 @@ class eZContentOperationDeleteObjectRegression extends ezpDatabaseTestCase
         $this->objectIds[] = $this->article->object->attribute( 'id' );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->folder->remove();
         $this->article->remove();

@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZSubTreeNotificationRuleRegression class
  *
@@ -6,6 +7,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZSubtreeNotificationRuleRegression extends ezpDatabaseTestCase
@@ -13,13 +15,7 @@ class eZSubtreeNotificationRuleRegression extends ezpDatabaseTestCase
     protected $backupGlobals = false;
     protected $policy;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setName( "eZSubTreeNotificationRule Regression Tests" );
-    }
-
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -32,7 +28,7 @@ class eZSubtreeNotificationRuleRegression extends ezpDatabaseTestCase
         );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         eZPolicyLimitation::removeByID(
             $this->policy->attribute( 'id' )

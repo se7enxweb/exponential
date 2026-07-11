@@ -1,4 +1,5 @@
 <?php
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZContentObjectTest2 class
  *
@@ -6,6 +7,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
 class eZContentObjectTest2 extends ezpDatabaseTestCase
@@ -13,7 +15,7 @@ class eZContentObjectTest2 extends ezpDatabaseTestCase
     protected $backupGlobals = false;
     protected $article;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -23,7 +25,7 @@ class eZContentObjectTest2 extends ezpDatabaseTestCase
         $this->article->addTranslation( "nor-NO", array( "title" => "Norsk title of article for " . __CLASS__ ) );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->article->remove();
         parent::tearDown();

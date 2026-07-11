@@ -12,7 +12,7 @@ class ezpMobileDeviceRegexpFilterTest extends ezpTestCase
 {
     protected $mobileDeviceDetect;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -22,7 +22,7 @@ class ezpMobileDeviceRegexpFilterTest extends ezpTestCase
         $this->mobileDeviceDetect = $this->getMock( 'ezpMobileDeviceRegexpFilter', null );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         parent::tearDown();
 

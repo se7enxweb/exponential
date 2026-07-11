@@ -6,28 +6,25 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests
+ * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * @group ezcontentlanguage
+ * @group database
  */
 class eZContentLanguageRegression extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
 
-    public function __construct( $name = NULL, array $data = array(), $dataName = '' )
-    {
-        parent::__construct( $name, $data, $dataName );
-        $this->setName( "eZContentLanguage Regression Tests" );
-    }
-
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         eZContentLanguage::addLanguage( 'nno-NO', 'Nynorsk' );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $nor = eZContentLanguage::fetchByLocale( 'nno-NO' );
         $dan = eZContentLanguage::fetchByLocale( 'dan-DK' );
