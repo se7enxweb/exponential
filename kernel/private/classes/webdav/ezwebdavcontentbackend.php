@@ -235,7 +235,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
             $source = $recurseCollections[$i];
 
             // add the slash at the end of the path if it is missing
-            if ( $source{strlen( $source ) - 1} !== '/' )
+            if ( $source[strlen( $source ) - 1] !== '/' )
             {
                 $source .= '/';
             }
@@ -1783,7 +1783,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         // Always add the current collection
         $contentEntry = array();
         $scriptURL = $requestUri;
-        if ( $scriptURL{strlen( $scriptURL ) - 1} !== '/' )
+        if ( $scriptURL[strlen( $scriptURL ) - 1] !== '/' )
         {
             $scriptURL .= "/";
         }
@@ -1801,7 +1801,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         if ( $depth > 0 )
         {
             $scriptURL = $requestUri;
-            if ( $scriptURL{strlen( $scriptURL ) - 1} !== '/' )
+            if ( $scriptURL[strlen( $scriptURL ) - 1] !== '/' )
             {
                 $scriptURL .= "/";
             }
@@ -1988,7 +1988,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         $thisNodeInfo = $this->fetchNodeInfo( $fullPath, $node );
 
         $scriptURL = $fullPath;
-        if ( $scriptURL{strlen( $scriptURL ) - 1} !== '/' )
+        if ( $scriptURL[strlen( $scriptURL ) - 1] !== '/' )
         {
             $scriptURL .= "/";
         }
@@ -2029,7 +2029,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
 
         // add a slash at the end of the path, if it is missing
         $scriptURL = $target;
-        if ( $scriptURL{strlen( $scriptURL ) - 1} !== '/' )
+        if ( $scriptURL[strlen( $scriptURL ) - 1] !== '/' )
         {
             $scriptURL .= "/";
         }
