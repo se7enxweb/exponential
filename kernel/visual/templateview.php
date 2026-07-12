@@ -66,6 +66,7 @@ if ( $module->isCurrentAction( 'UpdateOverride' ) )
         $priorityArray = $http->postVariable( 'PriorityArray' );
         $matchArrayPost = $http->hasPostVariable( 'MatchArray' ) ? $http->postVariable( 'MatchArray' ) : array();
         $newMatchArray = $http->hasPostVariable( 'NewMatch' ) ? $http->postVariable( 'NewMatch' ) : array();
+        $removeMatchArray = $http->hasPostVariable( 'RemoveMatchArray' ) ? $http->postVariable( 'RemoveMatchArray' ) : array();
 
         // Clear stale INI cache before loading override.ini so newly
         // created or reordered overrides are not lost.
@@ -87,6 +88,15 @@ if ( $module->isCurrentAction( 'UpdateOverride' ) )
             // Build the Match array from existing conditions edited in the form
             // plus any new condition the user added.
             $matchArray = isset( $matchArrayPost[$overrideName] ) ? $matchArrayPost[$overrideName] : array();
+
+            // Remove any condition keys that the user marked for removal.
+            if ( isset( $removeMatchArray[$overrideName] ) )
+            {
+                foreach ( array_keys( $removeMatchArray[$overrideName] ) as $removeMatchKey )
+                {
+                    unset( $matchArray[$removeMatchKey] );
+                }
+            }
 
             if ( isset( $newMatchArray[$overrideName] ) )
             {

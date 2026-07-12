@@ -1929,7 +1929,7 @@ a5ab9adec5c8a4f1b369987bd8ed87e4  design/admin/templates/visual/menuconfig.tpl
 7cf5905f6a1a2059ade8271ee15e747a  design/admin/templates/visual/templateedit.tpl
 c665b114c92eb6b279cddab770a1cd52  design/admin/templates/visual/templateedit_error.tpl
 a50dbbb7f5bd2d774da5916fe5984a6d  design/admin/templates/visual/templatelist.tpl
-f9424b0ffeee4c9743041f9c77566c68  design/admin/templates/visual/templateview.tpl
+a1481afa8a32b2c89c91709f12abafc4  design/admin/templates/visual/templateview.tpl
 99bffc8a164702c52b762b1dd300a15c  design/admin/templates/visual/toolbar.tpl
 e0bcde19ca3e377bb55d86014ee0c876  design/admin/templates/visual/toolbarlist.tpl
 4d134d36aa5aafe1a2197c8ae64a1ae9  design/admin/templates/window_controls.tpl
@@ -10982,7 +10982,7 @@ b725d7f6584ee9c7321511d5478729a0  kernel/visual/module.php
 66ee41a14b2e03f054f848beec165b88  kernel/visual/templatecreate.php
 ed389f5606292ceb374a0c332654afc8  kernel/visual/templateedit.php
 fdd076c5686e54ba0e5a00ba34eb0c91  kernel/visual/templatelist.php
-1f09ca2aa0e3803d9ab159fdae927507  kernel/visual/templateview.php
+2eb2e8996f713aaaed4c559c107ffdf7  kernel/visual/templateview.php
 9f4c62b16c7f3b4eb827059a3dc95b35  kernel/visual/toolbar.php
 b63f3d8bebb4cc2cb412db3f4ecbc7bc  kernel/visual/toolbarlist.php
 e561a1057a9a679c77818c20f1798287  kernel/workflow/edit.php

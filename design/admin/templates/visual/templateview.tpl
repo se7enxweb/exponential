@@ -91,6 +91,7 @@
             <div class="templateview-condition" style="margin-bottom: 2px;">
                 <label style="display:inline-block; min-width: 120px; font-weight: bold;">{$:key}</label>
                 <input type="text" name="MatchArray[{$CustomMatch.item.override_name}][{$:key}]" value="{$:item|wash()}" size="24" />
+                <input type="checkbox" name="RemoveMatchArray[{$CustomMatch.item.override_name}][{$:key}]" value="1" title="Remove this condition" />
             </div>
             {/section}
         {/section}
@@ -169,3 +170,50 @@
 </div>
 
 </form>
+
+<script type="text/javascript">
+/* Submit the templateview form with UpdateOverrideButton when Enter/Return is
+ * pressed inside a form field. This prevents the browser from accidentally
+ * triggering the first submit button (Remove selected) instead of the intended
+ * Update overrides action. */
+(function()
+{
+    var form = document.forms['templateview'];
+    if ( !form )
+    {
+        return;
+    }
+
+    var onKeyDown = function( e )
+    {
+        if ( e.keyCode === 13 || e.which === 13 || e.key === 'Enter' )
+        {
+            var target = e.target || e.srcElement;
+            if ( target && ( target.tagName === 'SELECT' || target.tagName === 'TEXTAREA' ||
+                             ( target.tagName === 'INPUT' && ( target.type === 'text' || target.type === 'number' ) ) ) )
+            {
+                if ( typeof e.preventDefault === 'function' )
+                    e.preventDefault();
+                else
+                    e.returnValue = false;
+
+                if ( form.UpdateOverrideButton )
+                    form.UpdateOverrideButton.click();
+                else
+                    form.submit();
+
+                return false;
+            }
+        }
+    };
+
+    if ( form.addEventListener )
+    {
+        form.addEventListener( 'keydown', onKeyDown, false );
+    }
+    else if ( form.attachEvent )
+    {
+        form.attachEvent( 'onkeydown', onKeyDown );
+    }
+})();
+</script>
