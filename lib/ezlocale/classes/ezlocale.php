@@ -120,6 +120,14 @@ class eZLocale
      */
     public function __construct( $localeString )
     {
+        // Guard against empty or non-locale values (e.g. a corrupted '0' locale
+        // in ezcontent_language). Fall back to the configured site locale.
+        if ( !is_string( $localeString ) || trim( $localeString ) === '' || $localeString === '0' || ( is_numeric( $localeString ) && (int)$localeString === 0 ) )
+        {
+            $ini = eZINI::instance();
+            $localeString = $ini->variable( 'RegionalSettings', 'Locale' );
+        }
+
         $this->IsValid = false;
         $this->TimePHPArray = array( 'g', 'G', 'h', 'H', 'i', 's', 'U', 'I', 'L', 't' );
         $this->DatePHPArray = array( 'd', 'j', 'm', 'n', 'O', 'S', 'T', 'U', 'w', 'W', 'Y', 'y', 'z', 'Z', 'I', 'L', 't' );
