@@ -1926,7 +1926,7 @@ f689abec7eaeaabefaff96b51350e39d  design/admin/templates/user/password.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin/templates/user/success.tpl
 a5ab9adec5c8a4f1b369987bd8ed87e4  design/admin/templates/visual/menuconfig.tpl
 8fa2e7b1ff8248dae643c018c73ff077  design/admin/templates/visual/templatecreate.tpl
-accc9ed5c2a99306a80fb6790a90eeba  design/admin/templates/visual/templateedit.tpl
+7cf5905f6a1a2059ade8271ee15e747a  design/admin/templates/visual/templateedit.tpl
 c665b114c92eb6b279cddab770a1cd52  design/admin/templates/visual/templateedit_error.tpl
 a50dbbb7f5bd2d774da5916fe5984a6d  design/admin/templates/visual/templatelist.tpl
 bd03302c9736f7b1f40e7269a8e8e3e0  design/admin/templates/visual/templateview.tpl
@@ -3558,7 +3558,7 @@ e85deb81eaa9d053fad5769389e1e02c  design/standard/templates/user/setting.tpl
 c75da2a467c7f8a005d4ab7016b0f465  design/standard/templates/user/unactivated.tpl
 1e0a20dce2057d12fcdb150ca2110a54  design/standard/templates/visual/menuconfig.tpl
 600a514e3165444fb984f9ec3eea5899  design/standard/templates/visual/templatecreate.tpl
-f37d38ad16b7f9a89e6d4fa3e78177a9  design/standard/templates/visual/templateedit.tpl
+598ac5249e672239a94ffe6c3667d61a  design/standard/templates/visual/templateedit.tpl
 f273fbb63c8ee5207959444a527b5a6a  design/standard/templates/visual/templateedit_error.tpl
 f17bd7f3f6976eb78af8618ada7cfb79  design/standard/templates/visual/templatelist.tpl
 7b872681b94ba63097859a1bcda447d0  design/standard/templates/visual/templateview.tpl

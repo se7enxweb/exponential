@@ -14,7 +14,7 @@
 <div class="context-attributes">
 <div class="block">
 
-<textarea class="box" name="TemplateContent" cols="40" rows="30">{$template_content|wash(xhtml)}</textarea>
+<textarea class="box template-editor" name="TemplateContent" cols="40" rows="30" style="width: 100%; min-width: 100%; max-width: 100%; min-height: 70vh; height: auto; resize: vertical; box-sizing: border-box; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 14px; line-height: 1.5; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background-color: #fafafa; color: #333; white-space: pre; overflow: auto; tab-size: 4;" spellcheck="false" wrap="off">{$template_content|wash(xhtml)}</textarea>
 
 </div>
 </div>
