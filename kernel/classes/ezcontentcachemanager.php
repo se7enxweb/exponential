@@ -496,15 +496,18 @@ class eZContentCacheManager
         $objectClassIdentifier = $contentObject->attribute( 'class_identifier' );
         $dependentClassInfo = eZContentCacheManager::dependencyInfo( $objectClassIdentifier );
 
-        if ( $dependentClassInfo['clear_cache_type'] === self::CLEAR_NO_CACHE )
+        if ( is_array( $dependentClassInfo ) )
         {
-            // BC: Allow smart cache clear setting to specify no caching setting
-            $clearCacheType = self::CLEAR_NO_CACHE;
-        }
-        else if ( $dependentClassInfo['clear_cache_exclusive'] === true )
-        {
-            // use class specific smart cache rules exclusivly
-            $clearCacheType = $dependentClassInfo['clear_cache_type'];
+            if ( $dependentClassInfo['clear_cache_type'] === self::CLEAR_NO_CACHE )
+            {
+                // BC: Allow smart cache clear setting to specify no caching setting
+                $clearCacheType = self::CLEAR_NO_CACHE;
+            }
+            else if ( $dependentClassInfo['clear_cache_exclusive'] === true )
+            {
+                // use class specific smart cache rules exclusivly
+                $clearCacheType = $dependentClassInfo['clear_cache_type'];
+            }
         }
 
         if ( $clearCacheType === self::CLEAR_NO_CACHE )
@@ -544,7 +547,7 @@ class eZContentCacheManager
             eZContentCacheManager::appendSiblingsNodeIDs( $assignedNodes, $nodeList );
         }
 
-        if ( $dependentClassInfo['clear_cache_type'] & self::CLEAR_SIBLINGS_CACHE )
+        if ( is_array( $dependentClassInfo ) && ( $dependentClassInfo['clear_cache_type'] & self::CLEAR_SIBLINGS_CACHE ) )
         {
             if ( !( $clearCacheType & self::CLEAR_SIBLINGS_CACHE ) )
             {
@@ -562,7 +565,7 @@ class eZContentCacheManager
             eZContentCacheManager::appendChildrenNodeIDs( $assignedNodes, $nodeList );
         }
 
-        if ( $dependentClassInfo['clear_cache_type'] & self::CLEAR_CHILDREN_CACHE )
+        if ( is_array( $dependentClassInfo ) && ( $dependentClassInfo['clear_cache_type'] & self::CLEAR_CHILDREN_CACHE ) )
         {
             if ( !( $clearCacheType & self::CLEAR_CHILDREN_CACHE ) )
             {
