@@ -64,6 +64,8 @@ if ( $module->isCurrentAction( 'UpdateOverride' ) )
     if ( $http->hasPostVariable( 'PriorityArray' ) )
     {
         $priorityArray = $http->postVariable( 'PriorityArray' );
+        $matchArrayPost = $http->hasPostVariable( 'MatchArray' ) ? $http->postVariable( 'MatchArray' ) : array();
+        $newMatchArray = $http->hasPostVariable( 'NewMatch' ) ? $http->postVariable( 'NewMatch' ) : array();
 
         // Clear stale INI cache before loading override.ini so newly
         // created or reordered overrides are not lost.
@@ -74,13 +76,38 @@ if ( $module->isCurrentAction( 'UpdateOverride' ) )
         $overrideINI->prependOverrideDir( "siteaccess/$siteAccess", false, 'siteaccess' );
         $overrideINI->loadCache();
 
-        // Store the user-supplied priority values in each override group.
-        // eZTemplateDesignResource::overrideArray() sorts by Priority when
-        // present, so this is what actually controls the override order.
+        // Store the user-supplied priority values and match conditions in each
+        // override group. Priority controls the override order; Match controls
+        // which rule applies.
         foreach ( array_keys( $overrideINI->groups() ) as $overrideName )
         {
             $priority = isset( $priorityArray[$overrideName] ) ? $priorityArray[$overrideName] : 0;
             $overrideINI->setVariable( $overrideName, 'Priority', $priority );
+
+            // Build the Match array from existing conditions edited in the form
+            // plus any new condition the user added.
+            $matchArray = isset( $matchArrayPost[$overrideName] ) ? $matchArrayPost[$overrideName] : array();
+
+            if ( isset( $newMatchArray[$overrideName] ) )
+            {
+                $newKey = isset( $newMatchArray[$overrideName]['key'] ) ? trim( $newMatchArray[$overrideName]['key'] ) : '';
+                $newValue = isset( $newMatchArray[$overrideName]['value'] ) ? $newMatchArray[$overrideName]['value'] : '';
+                if ( $newKey != '' && trim( $newValue ) != '' )
+                {
+                    $matchArray[$newKey] = $newValue;
+                }
+            }
+
+            foreach ( array_keys( $matchArray ) as $matchKey )
+            {
+                if ( $matchArray[$matchKey] == -1 or trim( $matchArray[$matchKey] ) == "" )
+                    unset( $matchArray[$matchKey] );
+            }
+
+            if ( !empty( $matchArray ) )
+            {
+                $overrideINI->setVariable( $overrideName, 'Match', $matchArray );
+            }
         }
 
         $filePermission = $ini->variable( 'FileSettings', 'StorageFilePermissions' );
@@ -91,7 +118,7 @@ if ( $module->isCurrentAction( 'UpdateOverride' ) )
         umask( $oldumask );
 
         // Clear global INI cache and template override cache so priority
-        // changes are reflected in the override list.
+        // and match changes are reflected in the override list.
         eZCache::clearByID( array( 'global_ini', 'template-override' ) );
 
         // Refresh the override array for the template view.

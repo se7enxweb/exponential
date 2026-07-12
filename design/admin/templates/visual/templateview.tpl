@@ -88,12 +88,35 @@
     <td>
         {section show=is_set( $CustomMatch.item.conditions )}
             {section name=Condition  loop=$CustomMatch.item.conditions}
-            {$:key} : {$:item}
-            {delimiter}
-            <br />
-            {/delimiter}
+            <div class="templateview-condition" style="margin-bottom: 2px;">
+                <label style="display:inline-block; min-width: 120px; font-weight: bold;">{$:key}</label>
+                <input type="text" name="MatchArray[{$CustomMatch.item.override_name}][{$:key}]" value="{$:item|wash()}" size="24" />
+            </div>
             {/section}
-    {/section}
+        {/section}
+        <div class="templateview-condition" style="margin-top: 6px;">
+            <select name="NewMatch[{$CustomMatch.item.override_name}][key]" style="min-width: 124px;">
+                <option value="">{'Add condition'|i18n( 'design/admin/visual/templateview' )}</option>
+                <option value="class_identifier">class_identifier</option>
+                <option value="class">class</option>
+                <option value="node">node</option>
+                <option value="object">object</option>
+                <option value="section">section</option>
+                <option value="section_identifier">section_identifier</option>
+                <option value="remote_id">remote_id</option>
+                <option value="node_remote_id">node_remote_id</option>
+                <option value="parent_node">parent_node</option>
+                <option value="class_group">class_group</option>
+                <option value="depth">depth</option>
+                <option value="url_alias">url_alias</option>
+                <option value="viewmode">viewmode</option>
+                <option value="navigation_part_identifier">navigation_part_identifier</option>
+                <option value="persistent_variable">persistent_variable</option>
+                <option value="state">state</option>
+                <option value="state_identifier">state_identifier</option>
+            </select>
+            <input type="text" name="NewMatch[{$CustomMatch.item.override_name}][value]" value="" size="24" />
+        </div>
     </td>
     <td><input type="text" name="PriorityArray[{$CustomMatch.item.override_name}]" size="2" value="{$CustomMatch.number}" /></td>
 
@@ -133,9 +156,9 @@
         </div>
         <div class="button-right">
             {if $template_settings.custom_match}
-            <input class="button" type="submit" name="UpdateOverrideButton" value="{'Update priorities'|i18n( 'design/admin/visual/templateview' )}" />
+            <input class="button" type="submit" name="UpdateOverrideButton" value="{'Update overrides'|i18n( 'design/admin/visual/templateview' )}" />
             {else}
-            <input class="button-disabled" type="submit" name="UpdateOverrideButton" value="{'Update priorities'|i18n( 'design/admin/visual/templateview' )}" disabled="disabled"/>
+            <input class="button-disabled" type="submit" name="UpdateOverrideButton" value="{'Update overrides'|i18n( 'design/admin/visual/templateview' )}" disabled="disabled"/>
             {/if}
         </div>
         <div class="break"></div>
