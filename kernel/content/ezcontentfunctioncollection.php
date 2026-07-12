@@ -600,6 +600,31 @@ class eZContentFunctionCollection
         return array( 'result' => $classList );
     }
 
+    static public function fetchClassList( $asObject = true, $groupList = false, $sorts = null, $limit = null )
+    {
+        $classList = eZContentClass::fetchAllClasses( $asObject, true, $groupList );
+
+        if ( $sorts !== null )
+        {
+            $sortMap = array();
+            foreach ( $classList as $class )
+            {
+                $sortValue = $asObject ? $class->attribute( 'name' ) : $class['name'];
+                $sortMap[] = $sortValue;
+            }
+            array_multisort( $sortMap, SORT_ASC, SORT_REGULAR, $classList );
+        }
+
+        if ( $limit !== null && is_array( $limit ) )
+        {
+            $offset = isset( $limit['offset'] ) ? (int) $limit['offset'] : 0;
+            $length = isset( $limit['length'] ) ? (int) $limit['length'] : null;
+            $classList = array_slice( $classList, $offset, $length );
+        }
+
+        return array( 'result' => $classList );
+    }
+
     static public function canInstantiateClasses( $parentNode )
     {
         if ( is_object( $parentNode ) )

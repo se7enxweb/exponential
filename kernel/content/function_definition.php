@@ -679,6 +679,28 @@ $FunctionList['can_instantiate_class_list'] = array( 'name' => 'can_instantiate_
                                                                                    'required' => false,
                                                                                    'default' => false ) ) );
 
+$FunctionList['class_list'] = array( 'name' => 'class_list',
+                                                     'operation_types' => array( 'read' ),
+                                                     'call_method' => array( 'class' => 'eZContentFunctionCollection',
+                                                                             'method' => 'fetchClassList' ),
+                                                     'parameter_type' => 'standard',
+                                                     'parameters' => array( array( 'name' => 'as_object',
+                                                                                   'type' => 'bool',
+                                                                                   'required' => false,
+                                                                                   'default' => true ),
+                                                                            array( 'name' => 'group_list',
+                                                                                   'type' => 'array',
+                                                                                   'required' => false,
+                                                                                   'default' => false ),
+                                                                            array( 'name' => 'sorts',
+                                                                                   'type' => 'array',
+                                                                                   'required' => false,
+                                                                                   'default' => null ),
+                                                                            array( 'name' => 'limit',
+                                                                                   'type' => 'array',
+                                                                                   'required' => false,
+                                                                                   'default' => null ) ) );
+
 $FunctionList['can_instantiate_classes'] = array( 'name' => 'can_instantiate_classes',
                                                   'operation_types' => array( 'read' ),
                                                   'call_method' => array( 'class' => 'eZContentFunctionCollection',
