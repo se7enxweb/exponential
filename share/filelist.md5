@@ -1929,7 +1929,7 @@ a5ab9adec5c8a4f1b369987bd8ed87e4  design/admin/templates/visual/menuconfig.tpl
 7cf5905f6a1a2059ade8271ee15e747a  design/admin/templates/visual/templateedit.tpl
 c665b114c92eb6b279cddab770a1cd52  design/admin/templates/visual/templateedit_error.tpl
 a50dbbb7f5bd2d774da5916fe5984a6d  design/admin/templates/visual/templatelist.tpl
-a1481afa8a32b2c89c91709f12abafc4  design/admin/templates/visual/templateview.tpl
+1a49998215f5ff728bd6b98124b7ecf0  design/admin/templates/visual/templateview.tpl
 99bffc8a164702c52b762b1dd300a15c  design/admin/templates/visual/toolbar.tpl
 e0bcde19ca3e377bb55d86014ee0c876  design/admin/templates/visual/toolbarlist.tpl
 4d134d36aa5aafe1a2197c8ae64a1ae9  design/admin/templates/window_controls.tpl
