@@ -1912,6 +1912,24 @@ class eZPackage
         if ( !isset( $installParameters['path'] ) )
             $installParameters['path'] = false;
         $continueOnError = isset( $installParameters['continue-on-error'] ) && $installParameters['continue-on-error'];
+
+        // Deduplicate install items while preserving order. Some packages may
+        // contain duplicate install entries (e.g. repeated ezpm add operations);
+        // processing them again only wastes time and can cause version bloat.
+        $seenItems = array();
+        $deduplicatedItems = array();
+        foreach ( $installItems as $item )
+        {
+            $filename = isset( $item['filename'] ) ? $item['filename'] : '';
+            $subdirectory = isset( $item['sub-directory'] ) ? $item['sub-directory'] : '';
+            $key = $item['type'] . '|' . $filename . '|' . $subdirectory;
+            if ( isset( $seenItems[$key] ) )
+                continue;
+            $seenItems[$key] = true;
+            $deduplicatedItems[] = $item;
+        }
+        $installItems = $deduplicatedItems;
+
         $installResult = true;
         foreach ( $installItems as $item )
         {
