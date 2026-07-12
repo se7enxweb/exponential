@@ -209,6 +209,12 @@ class eZContentClassPackageHandler extends eZPackageHandler
             switch( $choosenAction )
             {
             case eZPackage::NON_INTERACTIVE:
+                // Non-interactive installs (e.g. CLI) must not destructively
+                // replace existing classes and their content objects.
+                eZDebug::writeNotice( "Class '$className' already exists, skipping in non-interactive mode.", 'eZContentClassPackageHandler' );
+            case self::ACTION_SKIP:
+                return true;
+
             case self::ACTION_REPLACE:
                 if ( eZContentClassOperations::remove( $class->attribute( 'id' ) ) == false )
                 {
@@ -217,9 +223,6 @@ class eZContentClassPackageHandler extends eZPackageHandler
                 }
                 eZDebug::writeNotice( "Class '$className' will be replaced.", 'eZContentClassPackageHandler' );
                 break;
-
-            case self::ACTION_SKIP:
-                return true;
 
             case self::ACTION_NEW:
                 $class->setAttribute( 'remote_id', eZRemoteIdUtility::generate( 'class' ) );
