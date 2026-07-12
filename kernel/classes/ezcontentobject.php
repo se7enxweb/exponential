@@ -6514,15 +6514,26 @@ class eZContentObject extends eZPersistentObject
             }
         }
 
-        foreach ( $versionList[$versionListActiveVersion]['node_list'] as $nodeInfo )
+        // If the package did not specify an active version (or has no versions), fall
+        // back to the last processed version before trying to set node priorities.
+        if ( $versionListActiveVersion === '' && $lastVersion !== false )
         {
-            unset( $parentNode );
-            $parentNode = eZContentObjectTreeNode::fetchNode( $contentObject->attribute( 'id' ),
-                                                               $nodeInfo['parent_node'] );
-            if ( is_object( $parentNode ) )
+            $versionListActiveVersion = $lastVersion;
+        }
+
+        if ( isset( $versionList[$versionListActiveVersion] ) &&
+             is_array( $versionList[$versionListActiveVersion]['node_list'] ) )
+        {
+            foreach ( $versionList[$versionListActiveVersion]['node_list'] as $nodeInfo )
             {
-                $parentNode->setAttribute( 'priority', $nodeInfo['priority'] );
-                $parentNode->store( array( 'priority' ) );
+                unset( $parentNode );
+                $parentNode = eZContentObjectTreeNode::fetchNode( $contentObject->attribute( 'id' ),
+                                                                   $nodeInfo['parent_node'] );
+                if ( is_object( $parentNode ) )
+                {
+                    $parentNode->setAttribute( 'priority', $nodeInfo['priority'] );
+                    $parentNode->store( array( 'priority' ) );
+                }
             }
         }
 
