@@ -176,10 +176,19 @@ class eZContentObjectPackageHandler extends eZPackageHandler
         if ( $isSubtree )
         {
             $nodeArray = eZContentObjectTreeNode::subTreeByNodeID( array( 'AsObject' => false ), $nodeID );
+            if ( !is_array( $nodeArray ) )
+                $nodeArray = array();
+            $totalCount = count( $nodeArray ) + 1;
+            $i = 1;
             foreach( $nodeArray as $node )
             {
                 $this->NodeIDArray[] = $node['node_id'];
+                ++$i;
+                if ( class_exists( 'eZPMStatus' ) && $i % 100 == 0 )
+                    eZPMStatus::instance()->update( 'Collecting subtree nodes', $i, $totalCount );
             }
+            if ( class_exists( 'eZPMStatus' ) && $i % 100 != 0 )
+                eZPMStatus::instance()->update( 'Collecting subtree nodes', $i, $totalCount );
         }
     }
 
@@ -194,14 +203,28 @@ class eZContentObjectPackageHandler extends eZPackageHandler
         $this->Package = $package;
         $remoteIDArray = array();
         $this->NodeIDArray = array_unique( $this->NodeIDArray );
+        $nodeCount = count( $this->NodeIDArray );
+        if ( class_exists( 'eZPMStatus' ) && $nodeCount > 0 )
+            eZPMStatus::instance()->update( 'Fetching node objects', 0, $nodeCount );
+        $i = 0;
         foreach( $this->NodeIDArray as $nodeID )
         {
-            $this->NodeObjectArray[(string)$nodeID] = eZContentObjectTreeNode::fetch( $nodeID );
+            $node = eZContentObjectTreeNode::fetch( $nodeID );
+            if ( !is_object( $node ) )
+                continue;
+            $this->NodeObjectArray[(string)$nodeID] = $node;
+            ++$i;
+            if ( class_exists( 'eZPMStatus' ) && $i % 100 == 0 )
+                eZPMStatus::instance()->update( 'Fetching node objects', $i, $nodeCount );
         }
+        if ( class_exists( 'eZPMStatus' ) && $i % 100 != 0 && $nodeCount > 0 )
+            eZPMStatus::instance()->update( 'Fetching node objects', $i, $nodeCount );
 
         foreach( $this->RootNodeIDArray as $nodeID )
         {
-            $this->RootNodeObjectArray[(string)$nodeID] = eZContentObjectTreeNode::fetch( $nodeID );
+            $rootNode = eZContentObjectTreeNode::fetch( $nodeID );
+            if ( is_object( $rootNode ) )
+                $this->RootNodeObjectArray[(string)$nodeID] = $rootNode;
         }
 
         $this->generateObjectArray( $options['node_assignment'] );
@@ -275,6 +298,8 @@ class eZContentObjectPackageHandler extends eZPackageHandler
 
         foreach( $this->RootNodeObjectArray as $rootNode )
         {
+            if ( !is_object( $rootNode ) )
+                continue;
             unset( $topNode );
             $topNode = $dom->createElement( 'top-node' );
             $topNode->appendChild( $dom->createTextNode( $rootNode->attribute( 'name' ) ) );
@@ -341,9 +366,21 @@ class eZContentObjectPackageHandler extends eZPackageHandler
 
         $dom->appendChild( $objectListNode );
 
+        $objectCount = count( $this->ObjectArray );
+        $i = 0;
+        if ( class_exists( 'eZPMStatus' ) && $objectCount > 0 )
+            eZPMStatus::instance()->update( 'Serializing content objects', 0, $objectCount );
         foreach( array_keys( $this->ObjectArray ) as $objectID )
         {
+            if ( !is_object( $this->ObjectArray[$objectID] ) )
+                continue;
             $objectNode = $this->ObjectArray[$objectID]->serialize( $this->Package, $version, $options, $this->NodeObjectArray, $this->RootNodeIDArray );
+            ++$i;
+            if ( class_exists( 'eZPMStatus' ) && $i % 100 == 0 )
+                eZPMStatus::instance()->update( 'Serializing content objects', $i, $objectCount );
+
+            if ( !is_object( $objectNode ) )
+                continue;
 
             if ( $storeToMultiple )
             {
@@ -369,6 +406,8 @@ class eZContentObjectPackageHandler extends eZPackageHandler
             }
             unset( $objectNode );
         }
+        if ( class_exists( 'eZPMStatus' ) && $objectCount > 0 && $i % 100 != 0 )
+            eZPMStatus::instance()->update( 'Serializing content objects', $i, $objectCount );
 
         return $objectListNode;
     }
@@ -383,16 +422,22 @@ class eZContentObjectPackageHandler extends eZPackageHandler
     {
         foreach( $this->NodeObjectArray as $contentNode )
         {
+            if ( !is_object( $contentNode ) )
+                continue;
             if ( $nodeAssignment == 'main' )
             {
                 if ( $contentNode->attribute( 'main_node_id' ) == $contentNode->attribute( 'node_id' ) )
                 {
-                    $this->ObjectArray[(string)$contentNode->attribute( 'contentobject_id' )] = $contentNode->object();
+                    $object = $contentNode->object();
+                    if ( is_object( $object ) )
+                        $this->ObjectArray[(string)$contentNode->attribute( 'contentobject_id' )] = $object;
                 }
             }
             else
             {
-                $this->ObjectArray[(string)$contentNode->attribute( 'contentobject_id' )] = $contentNode->object();
+                $object = $contentNode->object();
+                if ( is_object( $object ) )
+                    $this->ObjectArray[(string)$contentNode->attribute( 'contentobject_id' )] = $object;
             }
         }
     }
@@ -1008,6 +1053,11 @@ class eZContentObjectPackageHandler extends eZPackageHandler
         $handlerType = $this->handlerType();
         $firstInstalledID = null;
 
+        $objectCount = $objectNodes instanceof DOMNodeList ? $objectNodes->length : count( $objectNodes );
+        $i = 0;
+        if ( class_exists( 'eZPMStatus' ) && $objectCount > 0 )
+            eZPMStatus::instance()->update( 'Installing content objects', 0, $objectCount );
+
         foreach( $objectNodes as $objectNode )
         {
             $realObjectNode = $this->getRealObjectNode( $objectNode );
@@ -1026,9 +1076,16 @@ class eZContentObjectPackageHandler extends eZPackageHandler
                 $firstInstalledID = $realObjectNode->getAttribute( 'remote_id' );
             }
 
+            $objectRemoteID = $realObjectNode->getAttribute( 'remote_id' );
             $newObject = eZContentObject::unserialize( $this->Package, $realObjectNode, $installParameters, $userID, $handlerType );
             if ( !$newObject )
             {
+                $errorDescription = ezpI18n::tr( 'kernel/package', "Failed to install content object '%remote_id'", false,
+                                                 array( '%remote_id' => $objectRemoteID ) );
+                eZDebug::writeError( $errorDescription, 'eZContentObjectPackageHandler::installContentObjects' );
+                $installParameters['error'] = array( 'error_code' => self::INSTALL_OBJECTS_ERROR_RANGE_FROM,
+                                                     'element_id' => $objectRemoteID,
+                                                     'description' => $errorDescription );
                 return false;
             }
 
@@ -1039,11 +1096,27 @@ class eZContentObjectPackageHandler extends eZPackageHandler
             }
             unset( $realObjectNode );
 
+            ++$i;
+            if ( class_exists( 'eZPMStatus' ) )
+                eZPMStatus::instance()->update( 'Installing content objects', $i, $objectCount );
+
+            // Commit the package-install transaction in batches so a huge object
+            // package does not hold database locks for the entire install.
+            if ( $i > 0 && $i % 50 == 0 )
+            {
+                $db = eZDB::instance();
+                $db->commit();
+                $db->begin();
+            }
+
             if ( isset( $installParameters['error'] ) && count( $installParameters['error'] ) )
             {
                 $installParameters['error'] = array();
             }
         }
+
+        if ( class_exists( 'eZPMStatus' ) && $objectCount > 0 && $i % 100 != 0 )
+            eZPMStatus::instance()->update( 'Installing content objects', $i, $objectCount );
 
         $this->installSuspendedNodeAssignment( $installParameters );
         $this->installSuspendedObjectRelations( $installParameters );
@@ -1420,13 +1493,15 @@ class eZContentObjectPackageHandler extends eZPackageHandler
 
     function add( $packageType, $package, $cli, $parameters )
     {
+        if ( class_exists( 'eZPMStatus' ) )
+            eZPMStatus::instance()->update( 'Collecting subtree nodes', 0, 0 );
         $options = array();
         foreach ( $parameters['node-list'] as $nodeItem )
         {
             $nodeIDList = $nodeItem['node-id-list'];
             foreach ( $nodeIDList as $nodeIDItem )
             {
-                $this->addNode( $nodeIDItem['id'], $nodeIDItem['subtree'] );
+                $nodeID = $nodeIDItem['id'];
                 unset( $node );
                 $node = false;
                 if ( isset( $nodeIDItem['node'] ) )
@@ -1435,9 +1510,18 @@ class eZContentObjectPackageHandler extends eZPackageHandler
                 }
                 else
                 {
-                    $node = eZContentObjectTreeNode::fetch( $nodeIDItem['id'] );
+                    $node = eZContentObjectTreeNode::fetch( $nodeID );
                 }
-                $cli->notice( "Adding node /" . $node->pathWithNames() . " to package" );
+                if ( !is_object( $node ) )
+                {
+                    $cli->error( "Could not find content-node using ID " . $nodeID );
+                    continue;
+                }
+                $this->addNode( $nodeID, $nodeIDItem['subtree'] );
+                if ( class_exists( 'eZPMStatus' ) )
+                    eZPMStatus::instance()->update( "Adding node /" . $node->pathWithNames() . " to package", 0, 0 );
+                else
+                    $cli->notice( "Adding node /" . $node->pathWithNames() . " to package" );
             }
         }
         $options['include_classes'] = $parameters['include-classes'];
@@ -1572,7 +1656,7 @@ class eZContentObjectPackageHandler extends eZPackageHandler
                     {
                         $error = true;
                         $nodeID = false;
-                        $cli->notice( "Could not find content-node using ID " . $cli->stylize( 'emphasize', $nodeID ) );
+                        $cli->notice( "Could not find content-node using ID " . $cli->stylize( 'emphasize', $argument ) );
                     }
                 }
                 else
