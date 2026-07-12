@@ -66,7 +66,7 @@ class ezpRestVersionedRoute implements ezcMvcRoute, ezcMvcReversibleRoute
      *
      * @param array $arguments
      */
-    public function generateUrl( array $arguments = null )
+    public function generateUrl( ?array $arguments = null )
     {
         // ezpRestPrefixFilterInterface::getScheme() ==> '/v'
         $apiPrefix = ezpRestPrefixFilterInterface::getApiPrefix() . '/';
