@@ -69,6 +69,7 @@ $ViewList['templatecreate'] = array(
     'params' => array( ),
     'unordered_params' => array( 'siteAccess' => 'SiteAccess',
                                  'classID' => 'ClassID',
-                                 'nodeID' => 'NodeID' ) );
+                                 'nodeID' => 'NodeID',
+                                 'objectID' => 'ObjectID' ) );
 
 ?>

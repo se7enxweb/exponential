@@ -39,6 +39,8 @@ if ( !$http->hasSessionVariable( 'eZTemplateAdminCurrentSiteAccess' ) )
 
 $siteAccess = $http->sessionVariable( 'eZTemplateAdminCurrentSiteAccess' );
 
+$overrideArray = eZTemplateDesignResource::overrideArray( $siteAccess );
+
 if ( $module->isCurrentAction( 'NewOverride' ) )
 {
     if ( $http->hasPostVariable( 'CurrentSiteAccess' ) )
@@ -46,7 +48,14 @@ if ( $module->isCurrentAction( 'NewOverride' ) )
         $http->setSessionVariable( 'eZTemplateAdminCurrentSiteAccess', $http->postVariable( 'CurrentSiteAccess' ) );
     }
 
-    $module->redirectTo( '/visual/templatecreate'. $template );
+    if ( isset( $overrideArray[$template] ) && !empty( $overrideArray[$template]['base_dir'] ) )
+    {
+        $module->redirectTo( '/visual/templatecreate'. $template );
+    }
+    else
+    {
+        $module->redirectTo( '/visual/templatelist' );
+    }
     return eZModule::HOOK_STATUS_CANCEL_RUN;
 }
 
@@ -56,21 +65,23 @@ if ( $module->isCurrentAction( 'UpdateOverride' ) )
     {
         $priorityArray = $http->postVariable( 'PriorityArray' );
 
+        // Clear stale INI cache before loading override.ini so newly
+        // created or reordered overrides are not lost.
+        eZCache::clearByID( array( 'global_ini', 'template-override' ) );
+
         // Load override.ini for the current siteaccess
         $overrideINI = eZINI::instance( 'override.ini', 'settings', null, null, true );
         $overrideINI->prependOverrideDir( "siteaccess/$siteAccess", false, 'siteaccess' );
         $overrideINI->loadCache();
 
-        asort( $priorityArray );
-        $currentINIGroups =& $overrideINI->groups();
-
-        $newGroupArray = array();
-        foreach ( array_keys( $priorityArray ) as $key )
+        // Store the user-supplied priority values in each override group.
+        // eZTemplateDesignResource::overrideArray() sorts by Priority when
+        // present, so this is what actually controls the override order.
+        foreach ( array_keys( $overrideINI->groups() ) as $overrideName )
         {
-            $newGroupArray[$key] = $currentINIGroups[$key];
-            unset( $currentINIGroups[$key] );
+            $priority = isset( $priorityArray[$overrideName] ) ? $priorityArray[$overrideName] : 0;
+            $overrideINI->setVariable( $overrideName, 'Priority', $priority );
         }
-        $overrideINI->setGroups( array_merge( $currentINIGroups, $newGroupArray ) );
 
         $filePermission = $ini->variable( 'FileSettings', 'StorageFilePermissions' );
 
@@ -78,6 +89,13 @@ if ( $module->isCurrentAction( 'UpdateOverride' ) )
         $overrideINI->save( "siteaccess/$siteAccess/override.ini.append" );
         chmod( "settings/siteaccess/$siteAccess/override.ini.append", octdec( $filePermission ) );
         umask( $oldumask );
+
+        // Clear global INI cache and template override cache so priority
+        // changes are reflected in the override list.
+        eZCache::clearByID( array( 'global_ini', 'template-override' ) );
+
+        // Refresh the override array for the template view.
+        $overrideArray = eZTemplateDesignResource::overrideArray( $siteAccess );
     }
 }
 
@@ -91,6 +109,10 @@ if ( $module->isCurrentAction( 'RemoveOverride' ) )
         $removeOverrideArray = $http->postVariable( 'RemoveOverrideArray' );
         // TODO: read from correct site.ini
         $siteBase = $siteAccess;
+
+        // Clear stale INI cache before loading so the group to be removed
+        // is guaranteed to be present in the override.ini object.
+        eZCache::clearByID( array( 'global_ini', 'template-override' ) );
 
         // Load override.ini for the current siteaccess
         $overrideINI = eZINI::instance( 'override.ini', 'settings', null, null, true );
@@ -107,16 +129,37 @@ if ( $module->isCurrentAction( 'RemoveOverride' ) )
         {
             $group = $overrideINI->group( $removeOverride );
 
-            $fileName = "design/$siteBase/override/templates/" . $group['MatchFile'];
+            // Try to find the actual file path from the override array.
+            $fileName = false;
+            if ( isset( $overrideArray[$template]['custom_match'] ) )
+            {
+                foreach ( $overrideArray[$template]['custom_match'] as $customMatch )
+                {
+                    if ( isset( $customMatch['override_name'] ) &&
+                         $customMatch['override_name'] === $removeOverride &&
+                         !empty( $customMatch['match_file'] ) )
+                    {
+                        $fileName = $customMatch['match_file'];
+                        break;
+                    }
+                }
+            }
 
-            if ( unlink( $fileName ) )
+            // Fall back to the legacy site-design path if we cannot resolve it.
+            if ( $fileName === false )
             {
-                $overrideINI->removeGroup( $removeOverride );
+                $fileName = "design/$siteBase/override/templates/" . $group['MatchFile'];
             }
-            else
+
+            if ( $fileName !== false && file_exists( $fileName ) )
             {
-                $notRemoved[] = array( 'filename' => $fileName );
+                if ( !unlink( $fileName ) )
+                {
+                    $notRemoved[] = array( 'filename' => $fileName );
+                }
             }
+
+            $overrideINI->removeGroup( $removeOverride );
         }
         if ( $overrideINI->save( "siteaccess/$siteAccess/override.ini.append" ) == false )
         {
@@ -126,14 +169,14 @@ if ( $module->isCurrentAction( 'RemoveOverride' ) )
         // Expire content view cache
         eZContentCacheManager::clearAllContentCache();
 
-        // Clear override cache
-        $cachedDir = eZSys::cacheDirectory();
-        $cachedDir .= "/override/";
-        eZDir::recursiveDelete( $cachedDir );
+        // Clear global INI cache and template override cache so the removed
+        // override.ini group is no longer shown in the list.
+        eZCache::clearByID( array( 'global_ini', 'template-override' ) );
+
+        // Refresh the override array for the template view.
+        $overrideArray = eZTemplateDesignResource::overrideArray( $siteAccess );
     }
 }
-
-$overrideArray = eZTemplateDesignResource::overrideArray( $siteAccess );
 
 $templateSettings = false;
 if ( isset( $overrideArray[$template] ) )
@@ -142,12 +185,21 @@ if ( isset( $overrideArray[$template] ) )
 }
 
 if ( !isset( $templateSettings['custom_match'] ) )
-    $templateSettings['custom_match'] = 0;
+    $templateSettings['custom_match'] = array();
+
+if ( !isset( $templateSettings['template'] ) )
+    $templateSettings['template'] = $template;
+
+if ( !isset( $templateSettings['base_dir'] ) )
+    $templateSettings['base_dir'] = '';
+
+$newOverrideAllowed = ( $templateSettings['base_dir'] !== '' );
 
 $tpl->setVariable( 'template_settings', $templateSettings );
 $tpl->setVariable( 'current_siteaccess', $siteAccess );
 $tpl->setVariable( 'not_removed', $notRemoved );
 $tpl->setVariable( 'ini_not_saved', $overrideINISaveFailed );
+$tpl->setVariable( 'new_override_allowed', $newOverrideAllowed );
 
 $siteINI = eZINI::instance( 'site.ini' );
 if ( $siteINI->variable( 'BackwardCompatibilitySettings', 'UsingDesignAdmin34' ) == 'enabled' )

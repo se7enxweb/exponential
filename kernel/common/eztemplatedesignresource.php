@@ -872,6 +872,23 @@ class eZTemplateDesignResource extends eZTemplateFileResource
             $overrideSettingGroups = array_merge( $overrideSettingGroups, $GLOBALS['eZDesignOverrides'] );
         }
 
+        // Sort by Priority when present. Lower values are evaluated first.
+        $priorityMap = array();
+        foreach ( $overrideSettingGroups as $overrideName => $overrideSetting )
+        {
+            $priorityMap[$overrideName] = isset( $overrideSetting['Priority'] ) && $overrideSetting['Priority'] !== ''
+                ? (int)$overrideSetting['Priority']
+                : PHP_INT_MAX;
+        }
+        asort( $priorityMap, SORT_NUMERIC );
+
+        $sortedOverrideSettingGroups = array();
+        foreach ( array_keys( $priorityMap ) as $overrideName )
+        {
+            $sortedOverrideSettingGroups[$overrideName] = $overrideSettingGroups[$overrideName];
+        }
+        $overrideSettingGroups = $sortedOverrideSettingGroups;
+
         foreach ( $overrideSettingGroups as $overrideName => $overrideSetting )
         {
             if( !isset( $overrideSetting['Source'] ) )

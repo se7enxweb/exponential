@@ -6,7 +6,13 @@
 
 {if eq( $error, 'invalid_name' )}
 <div class="message-error">
-<h2>{'Invalid name. You can only use the characters a-z, numbers and _.'|i18n( 'design/admin/visual/templatecreate' )}</h2>
+<h2>{'Invalid name. You can only use the characters a-z, numbers, _ and / (for subdirectories).'|i18n( 'design/admin/visual/templatecreate' )}</h2>
+</div>
+{/if}
+
+{if eq( $error, 'invalid_template' )}
+<div class="message-error">
+<h2>{'The selected template is not a source template and cannot be used to create an override.'|i18n( 'design/admin/visual/templatecreate' )}</h2>
 </div>
 {/if}
 
@@ -85,6 +91,10 @@
     </td>
 </tr>
 <tr>
+    <td>{'Object ID'|i18n( 'design/admin/visual/templatecreate' )}:</td>
+    <td><input type="text" size="5" value="{$override_keys['objectID']}" name="Match[object]" /></td>
+</tr>
+<tr>
     <td>{'Node ID'|i18n( 'design/admin/visual/templatecreate' )}:</td>
     <td><input type="text" size="5" value="{$override_keys['nodeID']}" name="Match[node]" /></td>
 </tr>
@@ -96,6 +106,12 @@
 <label>{'Base template on'|i18n( 'design/admin/visual/templatecreate' )}:</label>
 <input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}<br />
 <input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}<br />
+<select name="TemplateSource">
+    <option value="">{'Automatic (class-specific override if available, otherwise source)'|i18n( 'design/admin/visual/templatecreate' )}</option>
+    {foreach $default_template_sources as $source}
+    <option value="{$source.path}">{$source.label}</option>
+    {/foreach}
+</select><br />
 <input type="radio" name="TemplateContent" value="ContainerTemplate" />{'Container (with children)'|i18n( 'design/admin/visual/templatecreate' )}<br />
 <input type="radio" name="TemplateContent" value="ViewTemplate" />{'View (without children)'|i18n( 'design/admin/visual/templatecreate' )}<br />
 </div>
@@ -117,8 +133,8 @@
     <td>
     <select name="Match[class_identifier]">
         <option value="-1">{'Any'|i18n( 'design/admin/visual/templatecreate' )}</option>
-        {section name=Class loop=fetch('content', 'can_instantiate_class_list')}
-        <option value="{fetch( content, class, hash( class_id, $Class:item.id ) ).identifier}">{$Class:item.name|wash}</option>
+        {section name=Class loop=fetch('content', 'class_list', hash('sorts', array()))}
+        <option value="{$Class:item.identifier}">{$Class:item.name|wash}</option>
         {/section}
     </select>
     </td>
@@ -159,7 +175,12 @@
 
 <input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}<br />
 <input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}<br />
-<input type="radio" name="TemplateContent" value="ContainerTemplate" />{'Container (with children)'|i18n( 'design/admin/visual/templatecreate' )}<br />
+<select name="TemplateSource">
+    <option value="">{'Automatic (class-specific override if available, otherwise source)'|i18n( 'design/admin/visual/templatecreate' )}</option>
+    {foreach $default_template_sources as $source}
+    <option value="{$source.path}">{$source.label}</option>
+    {/foreach}
+</select><br />
 <input type="radio" name="TemplateContent" value="ViewTemplate" />{'View (without children)'|i18n( 'design/admin/visual/templatecreate' )}<br />
 </div>
 
@@ -171,6 +192,12 @@
     <div class="object">
     <input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}<br />
     <input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}<br />
+    <select name="TemplateSource">
+        <option value="">{'Automatic (source template)'|i18n( 'design/admin/visual/templatecreate' )}</option>
+        {foreach $default_template_sources as $source}
+        <option value="{$source.path}">{$source.label}</option>
+        {/foreach}
+    </select><br />
     </div>
 {/case}
 {case}
@@ -180,6 +207,12 @@
     <div class="object">
     <input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}<br />
     <input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}<br />
+    <select name="TemplateSource">
+        <option value="">{'Automatic (source template)'|i18n( 'design/admin/visual/templatecreate' )}</option>
+        {foreach $default_template_sources as $source}
+        <option value="{$source.path}">{$source.label}</option>
+        {/foreach}
+    </select><br />
     </div>
 {/case}
 {/switch}

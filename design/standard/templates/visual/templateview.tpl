@@ -39,7 +39,11 @@
 
 <div class="block">
 <label>{'Default template resource'|i18n( 'design/standard/visual/templateview' )}:</label>
+{if $template_settings.base_dir}
 {$template_settings.base_dir}
+{else}
+{'No source template resource found.'|i18n( 'design/standard/visual/templateview' )}
+{/if}
 </div>
 
 
@@ -123,7 +127,9 @@
         <input class="button-disabled" type="submit" name="RemoveOverrideButton" value="{'Remove selected'|i18n( 'design/standard/visual/templateview' )}" disabled="disabled"/>
         {/if}
 
+        {if $new_override_allowed}
         <input class="button" type="submit" name="NewOverrideButton" value="{'New override'|i18n( 'design/standard/visual/templateview' )}" title="{'Create a new template override.'|i18n( 'design/standard/visual/templateview' )}" />
+        {/if}
         </div>
         <div class="button-right">
             {if $template_settings.custom_match}
