@@ -287,6 +287,15 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
         {
             $object = $this->ObjectArray["$objectID"];
         }
+        elseif ( $objectID )
+        {
+            $object = eZContentObject::fetch( $objectID );
+            if ( !$object || !( $object instanceof eZContentObject ) )
+            {
+                eZDebug::writeWarning( "Can't fetch object #$objectID", "XML output handler: embed" );
+                return $ret;
+            }
+        }
         else
         {
             $nodeID = (int) $element->getAttribute( 'node_id' );
@@ -295,6 +304,14 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
                 if ( isset( $this->NodeArray[$nodeID] ) )
                 {
                     $node = $this->NodeArray[$nodeID];
+                }
+                else
+                {
+                    $node = eZContentObjectTreeNode::fetch( $nodeID );
+                }
+
+                if ( $node instanceof eZContentObjectTreeNode )
+                {
                     $objectID = $node->attribute( 'contentobject_id' );
                     $object = $node->object();
                     $tplSuffix = '_node';
@@ -309,7 +326,7 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
 
         if ( !isset( $object ) || !$object || !( $object instanceof eZContentObject ) )
         {
-            eZDebug::writeWarning( "Can't fetch object #$objectID", "XML output handler: embed" );
+            eZDebug::writeWarning( "Can't fetch object #" . ( $objectID ? $objectID : '' ), "XML output handler: embed" );
             return $ret;
         }
         if ( $object->attribute( 'status' ) != eZContentObject::STATUS_PUBLISHED )
