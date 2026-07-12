@@ -330,6 +330,8 @@ class eZDebug
     {
         if ( error_reporting() == 0 ) // @ error-control operator is used
             return;
+        if ( !( error_reporting() & $errno ) ) // respect PHP error_reporting levels
+            return true;
         if ( !eZDebug::isDebugEnabled() )
             return;
         $str = "$errstr in $errfile on line $errline";
