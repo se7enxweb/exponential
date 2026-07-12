@@ -87,9 +87,13 @@ function helpInstall()
 {
     $cli = eZCLI::instance();
     $cli->output( "install: Install an eZ Publish package.\n" .
-                  "usage: install PACKAGE\n" .
+                  "usage: install PACKAGE [-d NODE_ID | --destination-node-id NODE_ID]\n" .
                   "\n" .
-                  "PACKAGE is the name of the of package\n"
+                  "PACKAGE is the name of the of package\n" .
+                  "\n" .
+                  "Options:\n" .
+                  "  -d NODE_ID, --destination-node-id NODE_ID  install content objects under the given parent node ID\n" .
+                  "                                  (default is the root node, 2)\n"
                   );
 }
 
@@ -273,14 +277,15 @@ function resetCommandItem()
                           'summary' => false,
                           'installtype' => false,
                           'version' => false,
-                          'file' => false );
+                          'file' => false,
+                          'destination-node-id' => false );
     return $commandItem;
 }
 
 $commandItem = resetCommandItem();
 
 $optionsWithData = array( 's', 'o', 'l', 'p', 'r' );
-$longOptionsWithData = array( 'siteaccess', 'login', 'password', 'repos',
+$longOptionsWithData = array( 'siteaccess', 'login', 'password', 'repos', 'destination-node-id',
                               'db-type', 'db-name', 'db-user', 'db-password', 'db-socket', 'db-host' );
 
 $commandAlias = array();
@@ -370,6 +375,10 @@ for ( $i = 1; $i < count( $argv ); ++$i )
             {
                 $repositoryID = $optionData;
             }
+            else if ( $flag == 'destination-node-id' )
+            {
+                $commandItem['destination-node-id'] = (int)$optionData;
+            }
             else if ( $flag == 'db-user' )
             {
                 $dbUser = $optionData;
@@ -424,50 +433,7 @@ for ( $i = 1; $i < count( $argv ); ++$i )
             {
                 $useColors = true;
             }
-            else if ( $flag == 'd' )
-            {
-                $debugOutput = true;
-                if ( strlen( $arg ) > 2 )
-                {
-                    $levels = explode( ',', substr( $arg, 2 ) );
-                    $allowedDebugLevels = array();
-                    foreach ( $levels as $level )
-                    {
-                        if ( $level == 'all' )
-                        {
-                            $useDebugAccumulators = true;
-                            $allowedDebugLevels = false;
-                            $useDebugTimingpoints = true;
-                            break;
-                        }
-                        if ( $level == 'accumulator' )
-                        {
-                            $useDebugAccumulators = true;
-                            continue;
-                        }
-                        if ( $level == 'timing' )
-                        {
-                            $useDebugTimingpoints = true;
-                            continue;
-                        }
-                        if ( $level == 'include' )
-                        {
-                            $useIncludeFiles = true;
-                        }
-                        if ( $level == 'error' )
-                            $level = eZDebug::LEVEL_ERROR;
-                        else if ( $level == 'warning' )
-                            $level = eZDebug::LEVEL_WARNING;
-                        else if ( $level == 'debug' )
-                            $level = eZDebug::LEVEL_DEBUG;
-                        else if ( $level == 'notice' )
-                            $level = eZDebug::LEVEL_NOTICE;
-                        else if ( $level == 'timing' )
-                            $level = eZDebug::LEVEL_TIMING_POINT;
-                        $allowedDebugLevels[] = $level;
-                    }
-                }
-            }
+
             else if ( $flag == 's' )
             {
                 changeSiteAccessSetting( $optionData );
@@ -483,6 +449,67 @@ for ( $i = 1; $i < count( $argv ); ++$i )
             else if ( $flag == 'r' )
             {
                 $repositoryID = $optionData;
+            }
+            else if ( $flag == 'd' )
+            {
+                // For the install command, -d is the destination node ID.
+                // Use --debug for debug output in install commands.
+                if ( $commandItem['command'] === 'install' )
+                {
+                    if ( strlen( $arg ) > 2 )
+                    {
+                        $commandItem['destination-node-id'] = (int)substr( $arg, 2 );
+                    }
+                    else if ( isset( $argv[$i+1] ) && is_numeric( $argv[$i+1] ) )
+                    {
+                        $commandItem['destination-node-id'] = (int)$argv[$i+1];
+                        ++$i;
+                    }
+                }
+                else
+                {
+                    $debugOutput = true;
+                    if ( strlen( $arg ) > 2 )
+                    {
+                        $levels = explode( ',', substr( $arg, 2 ) );
+                        $allowedDebugLevels = array();
+                        foreach ( $levels as $level )
+                        {
+                            if ( $level == 'all' )
+                            {
+                                $useDebugAccumulators = true;
+                                $allowedDebugLevels = false;
+                                $useDebugTimingpoints = true;
+                                break;
+                            }
+                            if ( $level == 'accumulator' )
+                            {
+                                $useDebugAccumulators = true;
+                                continue;
+                            }
+                            if ( $level == 'timing' )
+                            {
+                                $useDebugTimingpoints = true;
+                                continue;
+                            }
+                            if ( $level == 'include' )
+                            {
+                                $useIncludeFiles = true;
+                            }
+                            if ( $level == 'error' )
+                                $level = eZDebug::LEVEL_ERROR;
+                            else if ( $level == 'warning' )
+                                $level = eZDebug::LEVEL_WARNING;
+                            else if ( $level == 'debug' )
+                                $level = eZDebug::LEVEL_DEBUG;
+                            else if ( $level == 'notice' )
+                                $level = eZDebug::LEVEL_NOTICE;
+                            else if ( $level == 'timing' )
+                                $level = eZDebug::LEVEL_TIMING_POINT;
+                            $allowedDebugLevels[] = $level;
+                        }
+                    }
+                }
             }
         }
     }
@@ -718,6 +745,13 @@ if ( $webOutput )
 $cli->setUseStyles( $useColors );
 $script->setDebugMessage( "\n\n" . str_repeat( '#', 36 ) . $cli->style( 'emphasize' ) . " DEBUG " . $cli->style( 'emphasize-end' )  . str_repeat( '#', 36 ) . "\n" );
 
+if ( !$siteaccess )
+{
+    $siteaccess = eZINI::instance()->variable( 'SiteSettings', 'DefaultAccess' );
+    if ( !$siteaccess )
+        $siteaccess = 'sevenx_site_user';
+}
+
 $script->setUseSiteAccess( $siteaccess );
 
 // Check the database settings and initialize them as current settings
@@ -779,6 +813,44 @@ foreach ( $commandList as $commandItem )
 {
     $command = $commandItem['command'];
 
+    // Prevent concurrent long-running install/add commands from clobbering each
+    // other and causing database lock-wait timeouts.
+    if ( $command == 'install' || $command == 'add' )
+    {
+        $lockFile = eZDir::path( array( eZSys::varDirectory(), 'ezpm' ) ) . '.lock';
+        eZDir::mkdir( eZSys::varDirectory(), false, true );
+        $lockHandle = @fopen( $lockFile, 'c' );
+        if ( $lockHandle && !@flock( $lockHandle, LOCK_EX | LOCK_NB ) )
+        {
+            $cli->error( 'Another ezpm process is currently running. Please wait for it to finish, or kill it with `killall -9 php` and try again.' );
+            $script->shutdown( 1 );
+        }
+    }
+
+    if ( $command != 'help' )
+        eZPMStatus::instance()->start( $command, 'Command: ' . $command );
+
+    // For long install/add operations, disable view/template cache clearing and
+    // delay search indexing until after the run. This is safe for package
+    // installation because no frontend pages are being served, and the user can
+    // rebuild search indexes later with the updatesearchindex script.
+    if ( $command == 'install' || $command == 'add' )
+    {
+        eZINI::instance( 'site.ini' )->setVariables(
+            array(
+                'ContentSettings' => array(
+                    'ViewCaching' => 'disabled',
+                ),
+                'TemplateSettings' => array(
+                    'TemplateCache' => 'disabled',
+                ),
+                'SearchSettings' => array(
+                    'DelayedIndexing' => 'enabled',
+                ),
+            )
+        );
+    }
+
     if ( $command == 'list' )
     {
         $fetchParameters = array();
@@ -796,7 +868,7 @@ foreach ( $commandList as $commandItem )
             foreach ( $packages as $package )
             {
                 $packageRepInfo = $package->currentRepositoryInformation();
-                $cli->output( '[' . $packageRepInfo['id'] . '] ' . $package->attribute( 'name' ) . '  ver.' . $package->attribute( 'version-number' ) . '-' . $package->attribute( 'release-number' ) . ' (' . $cli->stylize( 'emphasize', $package->attribute( 'summary' ) ) . ')' );
+                $cli->output( '[' . $packageRepInfo['id'] . '] ' . $cli->stylize( 'blue', $package->attribute( 'name' ) ) . '  ver.' . $package->attribute( 'version-number' ) . '-' . $package->attribute( 'release-number' ) . ' (' . $cli->stylize( 'emphasize', $package->attribute( 'summary' ) ) . ')' );
             }
         }
         else
@@ -823,7 +895,7 @@ foreach ( $commandList as $commandItem )
                 $showInfo = true;
             if ( $showInfo )
             {
-                $cli->output( "Name        : " . $package->attribute( 'name' ) . str_repeat( ' ', 30 - strlen( $package->attribute( 'name' ) ) ) . "Vendor  : " . $package->attribute( 'vendor' ) );
+                $cli->output( "Name        : " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) . str_repeat( ' ', 30 - strlen( $package->attribute( 'name' ) ) ) . "Vendor  : " . $package->attribute( 'vendor' ) );
                 $cli->output( "Version     : " . $package->attribute( 'version-number' ) . str_repeat( ' ', 30 - strlen( $package->attribute( 'version-number' ) ) ) . "Source  : " . $package->attribute( 'source' ) );
                 $cli->output( "Release     : " . $package->attribute( 'release-number' ) . str_repeat( ' ', 30 - strlen( $package->attribute( 'release-number' ) ) ) . "Licence : " . $package->attribute( 'licence' ) );
                 $cli->output( "Summary     : " . $package->attribute( 'summary' ) . str_repeat( ' ', 30 - strlen( $package->attribute( 'summary' ) ) ) . "State   : " . $package->attribute( 'state' ) );
@@ -856,7 +928,11 @@ foreach ( $commandList as $commandItem )
             }
         }
         else
-            $cli->output( "package " . $commandItem['name'] . " is not in the repository" );
+        {
+            $cli->output( "package " . $cli->stylize( 'blue', $commandItem['name'] ) . " is not in the repository" );
+            $script->setExitCode( 1 );
+            eZPMStatus::instance()->fail();
+        }
     }
     else if ( $command == 'add' )
     {
@@ -899,21 +975,51 @@ foreach ( $commandList as $commandItem )
                         {
                             $handler->add( $itemType, $package, $cli, $parameters );
                             $package->store();
+                            if ( ( $itemType == 'ezcontentobject' || $itemType == 'ezcontentsubtree' ) &&
+                                 isset( $parameters['node-list'] ) )
+                            {
+                                eZPMStatus::instance()->newline();
+                                foreach ( $parameters['node-list'] as $nodeItem )
+                                {
+                                    foreach ( $nodeItem['node-id-list'] as $nodeIDItem )
+                                    {
+                                        $node = isset( $nodeIDItem['node'] ) && is_object( $nodeIDItem['node'] ) ? $nodeIDItem['node'] : eZContentObjectTreeNode::fetch( $nodeIDItem['id'] );
+                                        if ( is_object( $node ) )
+                                        {
+                                            $nodePath = $node->pathWithNames();
+                                            $nodePath = $nodePath !== '' ? '/' . $nodePath : '/';
+                                            $cli->output( "Added subtree rooted at " . $cli->stylize( 'dir', $nodePath ) .
+                                                          " (node ID " . $nodeIDItem['id'] . ") to package " .
+                                                          $cli->stylize( 'blue', $package->attribute( 'name' ) ) . "-" .
+                                                          $cli->stylize( 'symbol', $package->attribute( 'version-number' ) . "-" . $package->attribute( 'release-number' ) ) );
+                                        }
+                                    }
+                                }
+                            }
                         }
                         else
                         {
                             $cli->error( "Failed adding items to package" );
                             $script->setExitCode( 1 );
+                            eZPMStatus::instance()->fail();
                             break 2;
                         }
                     }
                     else
+                    {
                         $cli->error( "Unknown package item type $itemType" );
+                        $script->setExitCode( 1 );
+                        eZPMStatus::instance()->fail();
+                    }
                 } break;
             }
         }
         else
-            $cli->output( "package " . $commandItem['name'] . " is not in the repository" );
+        {
+            $cli->output( "package " . $cli->stylize( 'blue', $commandItem['name'] ) . " is not in the repository" );
+            $script->setExitCode( 1 );
+            eZPMStatus::instance()->fail();
+        }
     }
     else if ( $command == 'set' )
     {
@@ -930,6 +1036,7 @@ foreach ( $commandList as $commandItem )
         {
             helpSet();
             $script->setExitCode( 1 );
+            eZPMStatus::instance()->fail();
         }
         else
         {
@@ -951,14 +1058,18 @@ foreach ( $commandList as $commandItem )
                     case 'state':
                     {
                         $package->setAttribute( $commandItem['attribute'], $commandItem['attribute-value'] );
-                        $cli->output( "Attribute " . $cli->style( 'symbol' ) . $commandItem['attribute'] . $cli->style( 'emphasize-end' ) .
-                                      " was set to " . $cli->style( 'symbol' ) . $commandItem['attribute-value'] . $cli->style( 'emphasize-end' ) );
+                        $cli->output( "Attribute " . $cli->style( 'symbol' ) . $commandItem['attribute'] . $cli->style( 'symbol-end' ) .
+                                      " was set to " . $cli->style( 'symbol' ) . $commandItem['attribute-value'] . $cli->style( 'symbol-end' ) );
                     } break;
                 }
                 $package->store();
             }
             else
-                $cli->output( "package " . $commandItem['name'] . " is not in repository" );
+            {
+                $cli->output( "package " . $cli->stylize( 'blue', $commandItem['name'] ) . " is not in repository" );
+                $script->setExitCode( 1 );
+                eZPMStatus::instance()->fail();
+            }
         }
     }
     else if ( $command == 'import' )
@@ -973,24 +1084,32 @@ foreach ( $commandList as $commandItem )
 
             if ( $package instanceof eZPackage )
             {
-                $cli->output( "Package " . $cli->stylize( 'emphasize', $packageName ) . " sucessfully imported" );
+                $cli->output( "Package " . $cli->stylize( 'blue', $packageName ) . " sucessfully imported" );
             }
             else if ( $package == eZPackage::STATUS_ALREADY_EXISTS )
             {
-                $cli->error( "Could not import package " . $cli->stylize( 'emphasize', $packageName ) . ", it already exists" );
+                $cli->error( "Could not import package " . $cli->stylize( 'blue', $packageName ) . ", it already exists" );
+                $script->setExitCode( 1 );
+                eZPMStatus::instance()->fail();
             }
             else if ( $package == eZPackage::STATUS_INVALID_NAME )
             {
-                $cli->error( "Could not import package " . $cli->stylize( 'emphasize', $packageName ) . ", its name is invalid" );
+                $cli->error( "Could not import package " . $cli->stylize( 'blue', $packageName ) . ", its name is invalid" );
+                $script->setExitCode( 1 );
+                eZPMStatus::instance()->fail();
             }
             else
             {
                 $cli->error( "Could not import package " . $packageFile . ", invalid package file" );
+                $script->setExitCode( 1 );
+                eZPMStatus::instance()->fail();
             }
         }
         else
         {
             $cli->error( "Could not import package " . $packageFile . ", file was not found" );
+            $script->setExitCode( 1 );
+            eZPMStatus::instance()->fail();
         }
     }
     else if ( $command == 'install' )
@@ -999,21 +1118,52 @@ foreach ( $commandList as $commandItem )
         if ( $package )
         {
             $user = eZUser::currentUser();
+            $userID = is_object( $user ) ? $user->attribute( 'contentobject_id' ) : 0;
+            $topNodeID = ( $commandItem['destination-node-id'] !== false && (int)$commandItem['destination-node-id'] > 0 ) ? (int)$commandItem['destination-node-id'] : 2;
             $installParameters = array( 'site_access_map' => array( '*' => $siteaccess ),
-                                        'top_nodes_map' => array( '*' => 2 ),
+                                        'top_nodes_map' => array( '*' => $topNodeID ),
                                         'design_map' => array( '*' => $siteaccess ),
                                         'restore_dates' => true,
-                                        'user_id' => $user->attribute( 'contentobject_id' ),
+                                        'user_id' => $userID,
                                         'non-interactive' => true,
                                         'language_map' => $package->defaultLanguageMap() );
             $result = $package->install( $installParameters );
             if ( $result )
-                $cli->output( "Package " . $cli->stylize( 'emphasize', $package->attribute( 'name' ) ) . " sucessfully installed" );
+            {
+                $cli->output( "Package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) . " sucessfully installed" );
+            }
             else
-                $cli->error( "Failed to install package " . $cli->stylize( 'emphasize', $package->attribute( 'name' ) ) );
+            {
+                $cli->error( "Failed to install package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) );
+                if ( isset( $installParameters['error'] ) && is_array( $installParameters['error'] ) && count( $installParameters['error'] ) )
+                {
+                    if ( isset( $installParameters['error']['description'] ) && $installParameters['error']['description'] )
+                    {
+                        $cli->error( "Details: " . $installParameters['error']['description'] );
+                    }
+                    if ( isset( $installParameters['error']['element_id'] ) && $installParameters['error']['element_id'] )
+                    {
+                        $cli->error( "Element ID: " . $installParameters['error']['element_id'] );
+                    }
+                    if ( !isset( $installParameters['error']['description'] ) && isset( $installParameters['error']['error_code'] ) )
+                    {
+                        $cli->error( "Error code: " . $installParameters['error']['error_code'] );
+                    }
+                }
+                else
+                {
+                    $cli->notice( "Run with --debug to see full eZDebug output for the failing install item." );
+                }
+                $script->setExitCode( 1 );
+                eZPMStatus::instance()->fail();
+            }
         }
         else
-            $cli->error( "Could not open package " . $commandItem['name'] );
+        {
+            $cli->error( "Could not open package " . $cli->stylize( 'blue', $commandItem['name'] ) );
+            $script->setExitCode( 1 );
+            eZPMStatus::instance()->fail();
+        }
     }
     else if ( $command == 'export' )
     {
@@ -1029,21 +1179,45 @@ foreach ( $commandList as $commandItem )
                 if ( !file_exists( $exportDirectory ) )
                 {
                     $cli->warning( "The directory " . $cli->style( 'dir' ) . $exportDirectory . $cli->style( 'dir-end' ) . " does not exist, cannot export package" );
+                    $script->setExitCode( 1 );
+                    eZPMStatus::instance()->fail();
                 }
                 else
                 {
-                    $package->exportToArchive( $exportDirectory . eZSys::fileSeparator() . $package->exportName() );
-                    $cli->output( "Package " . $cli->stylize( 'symbol', $package->attribute( 'name' ) ) . " exported to directory " . $cli->stylize( 'dir', $exportDirectory ) );
+                    $exportPath = $package->exportToArchive( $exportDirectory . eZSys::fileSeparator() . $package->exportName() );
+                    if ( $exportPath )
+                    {
+                        $cli->output( "Package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) . " exported to directory " . $cli->stylize( 'dir', $exportDirectory ) );
+                    }
+                    else
+                    {
+                        $cli->error( "Failed to export package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) );
+                        $script->setExitCode( 1 );
+                        eZPMStatus::instance()->fail();
+                    }
                 }
             }
             else
             {
                 $exportPath = $package->exportToArchive( $package->exportName() );
-                $cli->output( "Package " . $cli->stylize( 'symbol', $package->attribute( 'name' ) ) . " exported to file " . $cli->stylize( 'file', $exportPath ) );
+                if ( $exportPath )
+                {
+                    $cli->output( "Package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) . " exported to file " . $cli->stylize( 'file', $exportPath ) );
+                }
+                else
+                {
+                    $cli->error( "Failed to export package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) );
+                    $script->setExitCode( 1 );
+                    eZPMStatus::instance()->fail();
+                }
             }
         }
         else
-            $cli->error( "Could not locate package " . $cli->stylize( 'emphasize', $commandItem['name'] ) );
+        {
+            $cli->error( "Could not locate package " . $cli->stylize( 'blue', $commandItem['name'] ) );
+            $script->setExitCode( 1 );
+            eZPMStatus::instance()->fail();
+        }
     }
     else if ( $command == 'create' )
     {
@@ -1054,7 +1228,7 @@ foreach ( $commandList as $commandItem )
                                       false, $repositoryID );
 
         $user = eZUser::currentUser();
-        $userObject = $user->attribute( 'contentobject' );
+        $userObject = is_object( $user ) ? $user->attribute( 'contentobject' ) : false;
 
         $commandItem['licence'] = 'GPL';
         if ( !in_array( $commandItem['installtype'], array( 'install', 'import' ) ) )
@@ -1072,7 +1246,7 @@ foreach ( $commandList as $commandItem )
             $package->appendChange( $userObject->attribute( 'name' ), $user->attribute( 'email' ), 'Creation of package' );
 
         $package->store();
-        $text = "Created package " . $cli->stylize( 'symbol', $commandItem['name'] ) . "-" . $cli->stylize( 'symbol', $commandItem['version'] );
+        $text = "Created package " . $cli->stylize( 'blue', $commandItem['name'] ) . "-" . $cli->stylize( 'symbol', $commandItem['version'] );
         if ( $commandItem['summary'] )
             $text .= " " . $cli->stylize( 'archive', $commandItem['summary'] );
         $cli->output( $text );
@@ -1085,14 +1259,21 @@ foreach ( $commandList as $commandItem )
         if ( $package )
         {
             $package->remove();
-            $cli->output( "Package " . $commandItem['name'] . " deleted." );
+            $cli->output( "Package " . $cli->stylize( 'blue', $commandItem['name'] ) . " deleted." );
         }
         else
-            $cli->error( "Could not open package " . $commandItem['name'] );
+        {
+            $cli->error( "Could not open package " . $cli->stylize( 'blue', $commandItem['name'] ) );
+            $script->setExitCode( 1 );
+            eZPMStatus::instance()->fail();
+        }
+        eZPMStatus::instance()->end();
     }
 }
 
 $cli->output();
+
+eZPMStatus::instance()->end();
 
 $script->shutdown();
 
