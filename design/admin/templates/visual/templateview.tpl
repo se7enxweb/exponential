@@ -172,6 +172,7 @@
 </form>
 
 <script type="text/javascript">
+{literal}
 /* Submit the templateview form with UpdateOverrideButton when Enter/Return is
  * pressed inside a form field. This prevents the browser from accidentally
  * triggering the first submit button (Remove selected) instead of the intended
@@ -216,4 +217,5 @@
         form.attachEvent( 'onkeydown', onKeyDown );
     }
 })();
+{/literal}
 </script>
