@@ -7,14 +7,14 @@
  */
 
 /**
- * eZPMStatus - lightweight CLI progress/status reporter for ezpm.
+ * expScriptStatus - lightweight CLI progress/status reporter.
  *
  * Shows a single status line that updates in place (\r) with:
  *   [command] description | percent (current/total) | elapsed | end | end @ time
  *
  * Respects --quiet and is auto-finalised at script shutdown.
  */
-class eZPMStatus
+class expScriptStatus
 {
     private static $instance = null;
     private $cli;
@@ -40,7 +40,7 @@ class eZPMStatus
     public static function instance()
     {
         if ( self::$instance === null )
-            self::$instance = new eZPMStatus();
+            self::$instance = new expScriptStatus();
         return self::$instance;
     }
 

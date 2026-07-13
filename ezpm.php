@@ -828,7 +828,7 @@ foreach ( $commandList as $commandItem )
     }
 
     if ( $command != 'help' )
-        eZPMStatus::instance()->start( $command, 'Command: ' . $command );
+        expScriptStatus::instance()->start( $command, 'Command: ' . $command );
 
     // For long install/add operations, disable view/template cache clearing and
     // delay search indexing until after the run. This is safe for package
@@ -931,7 +931,7 @@ foreach ( $commandList as $commandItem )
         {
             $cli->output( "package " . $cli->stylize( 'blue', $commandItem['name'] ) . " is not in the repository" );
             $script->setExitCode( 1 );
-            eZPMStatus::instance()->fail();
+            expScriptStatus::instance()->fail();
         }
     }
     else if ( $command == 'add' )
@@ -978,7 +978,7 @@ foreach ( $commandList as $commandItem )
                             if ( ( $itemType == 'ezcontentobject' || $itemType == 'ezcontentsubtree' ) &&
                                  isset( $parameters['node-list'] ) )
                             {
-                                eZPMStatus::instance()->newline();
+                                expScriptStatus::instance()->newline();
                                 foreach ( $parameters['node-list'] as $nodeItem )
                                 {
                                     foreach ( $nodeItem['node-id-list'] as $nodeIDItem )
@@ -1001,7 +1001,7 @@ foreach ( $commandList as $commandItem )
                         {
                             $cli->error( "Failed adding items to package" );
                             $script->setExitCode( 1 );
-                            eZPMStatus::instance()->fail();
+                            expScriptStatus::instance()->fail();
                             break 2;
                         }
                     }
@@ -1009,7 +1009,7 @@ foreach ( $commandList as $commandItem )
                     {
                         $cli->error( "Unknown package item type $itemType" );
                         $script->setExitCode( 1 );
-                        eZPMStatus::instance()->fail();
+                        expScriptStatus::instance()->fail();
                     }
                 } break;
             }
@@ -1018,7 +1018,7 @@ foreach ( $commandList as $commandItem )
         {
             $cli->output( "package " . $cli->stylize( 'blue', $commandItem['name'] ) . " is not in the repository" );
             $script->setExitCode( 1 );
-            eZPMStatus::instance()->fail();
+            expScriptStatus::instance()->fail();
         }
     }
     else if ( $command == 'set' )
@@ -1036,7 +1036,7 @@ foreach ( $commandList as $commandItem )
         {
             helpSet();
             $script->setExitCode( 1 );
-            eZPMStatus::instance()->fail();
+            expScriptStatus::instance()->fail();
         }
         else
         {
@@ -1068,7 +1068,7 @@ foreach ( $commandList as $commandItem )
             {
                 $cli->output( "package " . $cli->stylize( 'blue', $commandItem['name'] ) . " is not in repository" );
                 $script->setExitCode( 1 );
-                eZPMStatus::instance()->fail();
+                expScriptStatus::instance()->fail();
             }
         }
     }
@@ -1090,26 +1090,26 @@ foreach ( $commandList as $commandItem )
             {
                 $cli->error( "Could not import package " . $cli->stylize( 'blue', $packageName ) . ", it already exists" );
                 $script->setExitCode( 1 );
-                eZPMStatus::instance()->fail();
+                expScriptStatus::instance()->fail();
             }
             else if ( $package == eZPackage::STATUS_INVALID_NAME )
             {
                 $cli->error( "Could not import package " . $cli->stylize( 'blue', $packageName ) . ", its name is invalid" );
                 $script->setExitCode( 1 );
-                eZPMStatus::instance()->fail();
+                expScriptStatus::instance()->fail();
             }
             else
             {
                 $cli->error( "Could not import package " . $packageFile . ", invalid package file" );
                 $script->setExitCode( 1 );
-                eZPMStatus::instance()->fail();
+                expScriptStatus::instance()->fail();
             }
         }
         else
         {
             $cli->error( "Could not import package " . $packageFile . ", file was not found" );
             $script->setExitCode( 1 );
-            eZPMStatus::instance()->fail();
+            expScriptStatus::instance()->fail();
         }
     }
     else if ( $command == 'install' )
@@ -1155,14 +1155,14 @@ foreach ( $commandList as $commandItem )
                     $cli->notice( "Run with --debug to see full eZDebug output for the failing install item." );
                 }
                 $script->setExitCode( 1 );
-                eZPMStatus::instance()->fail();
+                expScriptStatus::instance()->fail();
             }
         }
         else
         {
             $cli->error( "Could not open package " . $cli->stylize( 'blue', $commandItem['name'] ) );
             $script->setExitCode( 1 );
-            eZPMStatus::instance()->fail();
+            expScriptStatus::instance()->fail();
         }
     }
     else if ( $command == 'export' )
@@ -1180,7 +1180,7 @@ foreach ( $commandList as $commandItem )
                 {
                     $cli->warning( "The directory " . $cli->style( 'dir' ) . $exportDirectory . $cli->style( 'dir-end' ) . " does not exist, cannot export package" );
                     $script->setExitCode( 1 );
-                    eZPMStatus::instance()->fail();
+                    expScriptStatus::instance()->fail();
                 }
                 else
                 {
@@ -1193,7 +1193,7 @@ foreach ( $commandList as $commandItem )
                     {
                         $cli->error( "Failed to export package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) );
                         $script->setExitCode( 1 );
-                        eZPMStatus::instance()->fail();
+                        expScriptStatus::instance()->fail();
                     }
                 }
             }
@@ -1208,7 +1208,7 @@ foreach ( $commandList as $commandItem )
                 {
                     $cli->error( "Failed to export package " . $cli->stylize( 'blue', $package->attribute( 'name' ) ) );
                     $script->setExitCode( 1 );
-                    eZPMStatus::instance()->fail();
+                    expScriptStatus::instance()->fail();
                 }
             }
         }
@@ -1216,7 +1216,7 @@ foreach ( $commandList as $commandItem )
         {
             $cli->error( "Could not locate package " . $cli->stylize( 'blue', $commandItem['name'] ) );
             $script->setExitCode( 1 );
-            eZPMStatus::instance()->fail();
+            expScriptStatus::instance()->fail();
         }
     }
     else if ( $command == 'create' )
@@ -1265,15 +1265,15 @@ foreach ( $commandList as $commandItem )
         {
             $cli->error( "Could not open package " . $cli->stylize( 'blue', $commandItem['name'] ) );
             $script->setExitCode( 1 );
-            eZPMStatus::instance()->fail();
+            expScriptStatus::instance()->fail();
         }
-        eZPMStatus::instance()->end();
+        expScriptStatus::instance()->end();
     }
 }
 
 $cli->output();
 
-eZPMStatus::instance()->end();
+expScriptStatus::instance()->end();
 
 $script->shutdown();
 

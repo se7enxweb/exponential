@@ -38,7 +38,7 @@ class eZStepPackageLanguageOptions extends eZStepInstaller
         }
 
         // Add site languages.
-        $siteLanguageLocaleList = $this->PersistenceList['regional_info']['languages'];
+        $siteLanguageLocaleList = (array) $this->PersistenceList['regional_info']['languages'];
         foreach( $siteLanguageLocaleList as $siteLanguage )
             $languageMap[$siteLanguage] = $siteLanguage;
 
@@ -71,7 +71,7 @@ class eZStepPackageLanguageOptions extends eZStepInstaller
         //
         // Get info about package and site languages
         //
-        $siteLanguageLocaleList = $this->PersistenceList['regional_info']['languages'];
+        $siteLanguageLocaleList = (array) $this->PersistenceList['regional_info']['languages'];
 
         $packageNameList = array();
         $packageLanguageLocaleList = array();

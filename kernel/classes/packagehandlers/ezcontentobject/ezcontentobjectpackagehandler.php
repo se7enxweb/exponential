@@ -184,11 +184,11 @@ class eZContentObjectPackageHandler extends eZPackageHandler
             {
                 $this->NodeIDArray[] = $node['node_id'];
                 ++$i;
-                if ( class_exists( 'eZPMStatus' ) && $i % 100 == 0 )
-                    eZPMStatus::instance()->update( 'Collecting subtree nodes', $i, $totalCount );
+                if ( class_exists( 'expScriptStatus' ) && $i % 100 == 0 )
+                    expScriptStatus::instance()->update( 'Collecting subtree nodes', $i, $totalCount );
             }
-            if ( class_exists( 'eZPMStatus' ) && $i % 100 != 0 )
-                eZPMStatus::instance()->update( 'Collecting subtree nodes', $i, $totalCount );
+            if ( class_exists( 'expScriptStatus' ) && $i % 100 != 0 )
+                expScriptStatus::instance()->update( 'Collecting subtree nodes', $i, $totalCount );
         }
     }
 
@@ -204,8 +204,8 @@ class eZContentObjectPackageHandler extends eZPackageHandler
         $remoteIDArray = array();
         $this->NodeIDArray = array_unique( $this->NodeIDArray );
         $nodeCount = count( $this->NodeIDArray );
-        if ( class_exists( 'eZPMStatus' ) && $nodeCount > 0 )
-            eZPMStatus::instance()->update( 'Fetching node objects', 0, $nodeCount );
+        if ( class_exists( 'expScriptStatus' ) && $nodeCount > 0 )
+            expScriptStatus::instance()->update( 'Fetching node objects', 0, $nodeCount );
         $i = 0;
         foreach( $this->NodeIDArray as $nodeID )
         {
@@ -214,11 +214,11 @@ class eZContentObjectPackageHandler extends eZPackageHandler
                 continue;
             $this->NodeObjectArray[(string)$nodeID] = $node;
             ++$i;
-            if ( class_exists( 'eZPMStatus' ) && $i % 100 == 0 )
-                eZPMStatus::instance()->update( 'Fetching node objects', $i, $nodeCount );
+            if ( class_exists( 'expScriptStatus' ) && $i % 100 == 0 )
+                expScriptStatus::instance()->update( 'Fetching node objects', $i, $nodeCount );
         }
-        if ( class_exists( 'eZPMStatus' ) && $i % 100 != 0 && $nodeCount > 0 )
-            eZPMStatus::instance()->update( 'Fetching node objects', $i, $nodeCount );
+        if ( class_exists( 'expScriptStatus' ) && $i % 100 != 0 && $nodeCount > 0 )
+            expScriptStatus::instance()->update( 'Fetching node objects', $i, $nodeCount );
 
         foreach( $this->RootNodeIDArray as $nodeID )
         {
@@ -368,16 +368,16 @@ class eZContentObjectPackageHandler extends eZPackageHandler
 
         $objectCount = count( $this->ObjectArray );
         $i = 0;
-        if ( class_exists( 'eZPMStatus' ) && $objectCount > 0 )
-            eZPMStatus::instance()->update( 'Serializing content objects', 0, $objectCount );
+        if ( class_exists( 'expScriptStatus' ) && $objectCount > 0 )
+            expScriptStatus::instance()->update( 'Serializing content objects', 0, $objectCount );
         foreach( array_keys( $this->ObjectArray ) as $objectID )
         {
             if ( !is_object( $this->ObjectArray[$objectID] ) )
                 continue;
             $objectNode = $this->ObjectArray[$objectID]->serialize( $this->Package, $version, $options, $this->NodeObjectArray, $this->RootNodeIDArray );
             ++$i;
-            if ( class_exists( 'eZPMStatus' ) && $i % 100 == 0 )
-                eZPMStatus::instance()->update( 'Serializing content objects', $i, $objectCount );
+            if ( class_exists( 'expScriptStatus' ) && $i % 100 == 0 )
+                expScriptStatus::instance()->update( 'Serializing content objects', $i, $objectCount );
 
             if ( !is_object( $objectNode ) )
                 continue;
@@ -406,8 +406,8 @@ class eZContentObjectPackageHandler extends eZPackageHandler
             }
             unset( $objectNode );
         }
-        if ( class_exists( 'eZPMStatus' ) && $objectCount > 0 && $i % 100 != 0 )
-            eZPMStatus::instance()->update( 'Serializing content objects', $i, $objectCount );
+        if ( class_exists( 'expScriptStatus' ) && $objectCount > 0 && $i % 100 != 0 )
+            expScriptStatus::instance()->update( 'Serializing content objects', $i, $objectCount );
 
         return $objectListNode;
     }
@@ -1055,8 +1055,8 @@ class eZContentObjectPackageHandler extends eZPackageHandler
 
         $objectCount = $objectNodes instanceof DOMNodeList ? $objectNodes->length : count( $objectNodes );
         $i = 0;
-        if ( class_exists( 'eZPMStatus' ) && $objectCount > 0 )
-            eZPMStatus::instance()->update( 'Installing content objects', 0, $objectCount );
+        if ( class_exists( 'expScriptStatus' ) && $objectCount > 0 )
+            expScriptStatus::instance()->update( 'Installing content objects', 0, $objectCount );
 
         foreach( $objectNodes as $objectNode )
         {
@@ -1097,8 +1097,8 @@ class eZContentObjectPackageHandler extends eZPackageHandler
             unset( $realObjectNode );
 
             ++$i;
-            if ( class_exists( 'eZPMStatus' ) )
-                eZPMStatus::instance()->update( 'Installing content objects', $i, $objectCount );
+            if ( class_exists( 'expScriptStatus' ) )
+                expScriptStatus::instance()->update( 'Installing content objects', $i, $objectCount );
 
             // Commit the package-install transaction in batches so a huge object
             // package does not hold database locks for the entire install.
@@ -1115,8 +1115,8 @@ class eZContentObjectPackageHandler extends eZPackageHandler
             }
         }
 
-        if ( class_exists( 'eZPMStatus' ) && $objectCount > 0 && $i % 100 != 0 )
-            eZPMStatus::instance()->update( 'Installing content objects', $i, $objectCount );
+        if ( class_exists( 'expScriptStatus' ) && $objectCount > 0 && $i % 100 != 0 )
+            expScriptStatus::instance()->update( 'Installing content objects', $i, $objectCount );
 
         $this->installSuspendedNodeAssignment( $installParameters );
         $this->installSuspendedObjectRelations( $installParameters );
@@ -1493,8 +1493,8 @@ class eZContentObjectPackageHandler extends eZPackageHandler
 
     function add( $packageType, $package, $cli, $parameters )
     {
-        if ( class_exists( 'eZPMStatus' ) )
-            eZPMStatus::instance()->update( 'Collecting subtree nodes', 0, 0 );
+        if ( class_exists( 'expScriptStatus' ) )
+            expScriptStatus::instance()->update( 'Collecting subtree nodes', 0, 0 );
         $options = array();
         foreach ( $parameters['node-list'] as $nodeItem )
         {
@@ -1518,8 +1518,8 @@ class eZContentObjectPackageHandler extends eZPackageHandler
                     continue;
                 }
                 $this->addNode( $nodeID, $nodeIDItem['subtree'] );
-                if ( class_exists( 'eZPMStatus' ) )
-                    eZPMStatus::instance()->update( "Adding node /" . $node->pathWithNames() . " to package", 0, 0 );
+                if ( class_exists( 'expScriptStatus' ) )
+                    expScriptStatus::instance()->update( "Adding node /" . $node->pathWithNames() . " to package", 0, 0 );
                 else
                     $cli->notice( "Adding node /" . $node->pathWithNames() . " to package" );
             }

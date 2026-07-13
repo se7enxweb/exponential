@@ -303,6 +303,25 @@ $discoverCommands = function() use ( $rootDir, $extractDescription )
         );
     }
 
+    // ── bin/php/* subdirectories — namespaced PHP scripts (e.g. kickstarter:ini) ──
+    foreach ( glob( $rootDir . '/bin/php/*', GLOB_ONLYDIR ) ?: array() as $subDir )
+    {
+        $ns = basename( $subDir );
+        foreach ( glob( $subDir . '/*.php' ) ?: array() as $fp )
+        {
+            $name = basename( $fp, '.php' );
+            $key = $ns . ':' . $name;
+            $commands[ $key ] = array(
+                'name'        => $key,
+                'namespace'   => $ns,
+                'path'        => 'bin/php/' . $ns . '/' . $name . '.php',
+                'type'        => 'php',
+                'binary'      => PHP_BINARY,
+                'description' => $extractDescription( $fp, 'php' ),
+            );
+        }
+    }
+
     // ── shell: — bin/shell/*.sh ───────────────────────────────────────────────
     foreach ( glob( $rootDir . '/bin/shell/*.sh' ) ?: array() as $fp )
     {
@@ -562,11 +581,12 @@ $listCommands = function( $nsFilter = null )
     }
 
     $nsLabels = array(
-        'exp'   => 'exp   — bin/php/*.php  (Exponential PHP scripts)',
-        'shell' => 'shell — bin/shell/*.sh  (Bash shell scripts)',
-        'bin'   => 'bin   — bin/*  (Root bin executables)',
-        'cron'  => 'cron  — cronjobs/*.php  (Cronjob parts via runcronjobs.php)',
-        'ezpm'  => 'ezpm  — ezpm.php  (eZ Publish package manager)',
+        'exp'        => 'exp        — bin/php/*.php  (Exponential PHP scripts)',
+        'kickstarter' => 'kickstarter — bin/php/kickstarter/*.php  (Interactive kickstart.ini generator)',
+        'shell'      => 'shell      — bin/shell/*.sh  (Bash shell scripts)',
+        'bin'        => 'bin        — bin/*  (Root bin executables)',
+        'cron'       => 'cron       — cronjobs/*.php  (Cronjob parts via runcronjobs.php)',
+        'ezpm'       => 'ezpm       — ezpm.php  (eZ Publish package manager)',
     );
 
     $lastCount = 0;

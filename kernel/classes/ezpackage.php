@@ -1110,7 +1110,7 @@ class eZPackage
      * @return eZPackage The eZPackage object if successfull, or one of the
      *         STATUS_* class constants if an error occurs
      */
-    static function import( $archiveName, &$packageName, $dbAvailable = true, $repositoryID = false )
+    static function import( $archiveName, &$packageName, $dbAvailable = true, $repositoryID = false, $skipExisting = false )
     {
         if ( is_dir( $archiveName ) )
         {
@@ -1174,10 +1174,13 @@ class eZPackage
                     $repositoryID = $package->attribute( 'vendor-dir' );
                 }
 
-                $existingPackage = eZPackage::fetch( $packageName, false, false, $dbAvailable );
-                if ( $existingPackage )
+                if ( !$skipExisting )
                 {
-                    return eZPackage::STATUS_ALREADY_EXISTS;
+                    $existingPackage = eZPackage::fetch( $packageName, false, false, $dbAvailable );
+                    if ( $existingPackage )
+                    {
+                        return eZPackage::STATUS_ALREADY_EXISTS;
+                    }
                 }
 
                 unset( $package );

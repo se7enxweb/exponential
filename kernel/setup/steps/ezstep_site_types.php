@@ -154,20 +154,23 @@ class eZStepSiteTypes extends eZStepInstaller
      * \private
      * \return false on error, package object otherwise.
      */
-    function downloadAndImportPackage( $packageName, $packageUrl, $forceDownload = false )
+    function downloadAndImportPackage( $packageName, $packageUrl, $forceDownload = false, $repositoryID = false, $skipExisting = false )
     {
-        $package = eZPackage::fetch( $packageName, false, false, false );
-
-        if ( is_object( $package ) )
+        if ( !$skipExisting )
         {
-            if ( $forceDownload )
+            $package = eZPackage::fetch( $packageName, false, false, false );
+
+            if ( is_object( $package ) )
             {
-                $package->remove();
-            }
-            else
-            {
-                eZDebug::writeNotice( "Skipping download of package '$packageName': package already exists." );
-                return $package;
+                if ( $forceDownload )
+                {
+                    $package->remove();
+                }
+                else
+                {
+                    eZDebug::writeNotice( "Skipping download of package '$packageName': package already exists." );
+                    return $package;
+                }
             }
         }
 
@@ -182,7 +185,7 @@ class eZStepSiteTypes extends eZStepInstaller
             return false;
         }
 
-        $package = eZPackage::import( $archiveName, $packageName, false );
+        $package = eZPackage::import( $archiveName, $packageName, false, $repositoryID, $skipExisting );
 
         // Remove downloaded ezpkg file
         $ezFileHandler = new eZFileHandler();
@@ -212,7 +215,7 @@ class eZStepSiteTypes extends eZStepInstaller
      *
      * \private
      */
-    function downloadDependantPackages( $sitePackage )
+    function downloadDependantPackages( $sitePackage, $repositoryID = false, $skipExisting = false )
     {
         $dependencies = $sitePackage->attribute( 'dependencies' );
         $requirements = $dependencies['requires'];
@@ -230,30 +233,39 @@ class eZStepSiteTypes extends eZStepInstaller
             $downloadNewPackage   = false;
             $removeCurrentPackage = false;
 
-            // try to fetch the required package
-            $package = eZPackage::fetch( $requiredPackageName, false, false, false );
-
-            // if it already exists
-            if ( is_object( $package ) )
+            if ( $skipExisting )
             {
-                // check its version
-                $currentPackageVersion = $package->getVersion();
-
-                // if existing package's version is less than required one
-                // we remove the package and download newer one.
-
-                if ( version_compare( $currentPackageVersion, $requiredPackageVersion ) < 0 )
-                {
-                    $downloadNewPackage   = true;
-                    $removeCurrentPackage = true;
-                }
-
-                // else (if the version is greater or equal to the required one)
-                // then do nothing (skip downloading)
+                // Dry-run mode: download all required packages from the remote
+                // source so the full dependency chain can be verified.
+                $downloadNewPackage = true;
             }
             else
-                // if the package does not exist, we download it.
-                $downloadNewPackage   = true;
+            {
+                // try to fetch the required package
+                $package = eZPackage::fetch( $requiredPackageName, false, false, false );
+
+                // if it already exists
+                if ( is_object( $package ) )
+                {
+                    // check its version
+                    $currentPackageVersion = $package->getVersion();
+
+                    // if existing package's version is less than required one
+                    // we remove the package and download newer one.
+
+                    if ( version_compare( $currentPackageVersion, $requiredPackageVersion ) < 0 )
+                    {
+                        $downloadNewPackage   = true;
+                        $removeCurrentPackage = true;
+                    }
+
+                    // else (if the version is greater or equal to the required one)
+                    // then do nothing (skip downloading)
+                }
+                else
+                    // if the package does not exist, we download it.
+                    $downloadNewPackage   = true;
+            }
 
             if ( $removeCurrentPackage )
             {
@@ -275,7 +287,7 @@ class eZStepSiteTypes extends eZStepInstaller
                 }
 
                 $requiredPackageURL = $remotePackagesInfo[$requiredPackageName]['url'];
-                $rc = $this->downloadAndImportPackage( $requiredPackageName, $requiredPackageURL );
+                $rc = $this->downloadAndImportPackage( $requiredPackageName, $requiredPackageURL, false, $repositoryID, $skipExisting );
                 if( !is_object( $rc ) )
                 {
                     return false;
@@ -431,7 +443,7 @@ class eZStepSiteTypes extends eZStepInstaller
                 }
             }
 
-            $sitePackages = $this->createSitePackagesList( $remoteSitePackages, $importedSitePackages, $dependenciesStatus );
+            $sitePackages = $this->createSitePackagesList( $remoteSitePackages, $importedSitePackages, $dependenciesStatus, true );
             $chosenSitePackage = $data['Site_package'];
             $downloaded = false;
             foreach( $sitePackages as $sitePackagesInfo )
@@ -443,13 +455,19 @@ class eZStepSiteTypes extends eZStepInstaller
             }
             if ( isset( $sitePackagesInfoChoosen ) and array_key_exists( 'url', $sitePackagesInfoChoosen ) )
             {
-                // we already know that we should download the package anyway as it has newer version
-                // so use force download mode
-                $package = $this->downloadAndImportPackage( $chosenSitePackage, $sitePackagesInfoChoosen['url'], true );
+                // Dry-run mode imports into a temporary repository so it does not overwrite
+                // the locally cached packages before the install is confirmed.
+                $dryRun = ( isset( $this->Http ) && $this->Http->hasPostVariable( 'eZSetupKickstartDryRun' ) );
+                $repositoryID = $dryRun ? 'dryrun' : false;
+                $skipExisting = $dryRun;
+                // In kickstart mode the remote package list should take precedence over the
+                // local repository, because the package index uses different version data.
+                $forceDownload = !$dryRun;
+
+                $package = $this->downloadAndImportPackage( $chosenSitePackage, $sitePackagesInfoChoosen['url'], $forceDownload, $repositoryID, $skipExisting );
                 if ( is_object( $package ) )
                 {
-
-                    $downloadDependandPackagesResult = $this->downloadDependantPackages( $package );
+                    $downloadDependandPackagesResult = $this->downloadDependantPackages( $package, $repositoryID, $skipExisting );
                     if ( $downloadDependandPackagesResult != false )
                     {
                         $downloaded = true;
@@ -491,7 +509,7 @@ class eZStepSiteTypes extends eZStepInstaller
     /**
      * \private
      */
-    function createSitePackagesList( $remoteSitePackages, $importedSitePackages, $dependenciesStatus )
+    function createSitePackagesList( $remoteSitePackages, $importedSitePackages, $dependenciesStatus, $preferRemote = false )
     {
         $sitePackages = array();
 
@@ -511,6 +529,12 @@ class eZStepSiteTypes extends eZStepInstaller
 
             if ( isset( $sitePackages[$packageName] ) )
             {
+                // Kickstart mode should prefer the remote package list. The package index
+                // version attribute is not comparable with the local package version, so
+                // always keep the remote entry when a kickstart configuration is active.
+                if ( $preferRemote )
+                    continue;
+
                 $remoteVersion = $sitePackages[$packageName]['version'];
                 $localVersion = $packageVersion;
 
