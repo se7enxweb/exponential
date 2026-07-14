@@ -48,6 +48,7 @@
   the static setIsDebugEnabled() function. The class will then give information about
   which files are load, if cache files are used and when cache files are written.
 */
+#[AllowDynamicProperties]
 class eZINI
 {
     /**

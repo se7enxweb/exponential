@@ -14,6 +14,7 @@
 
 */
 
+#[AllowDynamicProperties]
 class eZWorkflowProcess extends eZPersistentObject
 {
     /**

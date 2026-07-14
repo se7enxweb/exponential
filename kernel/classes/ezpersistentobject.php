@@ -33,6 +33,7 @@
  *
  * @package eZKernel
  */
+#[AllowDynamicProperties]
 class eZPersistentObject
 {
     /**
