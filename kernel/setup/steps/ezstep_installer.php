@@ -484,6 +484,15 @@ class eZStepInstaller
             }
         }
 
+        // If the connection is not valid, there is no point in checking charset;
+        // report the connection failure immediately. This can happen when the user
+        // provides a database name that does not exist or that they have no access to.
+        if ( $result['connected'] === false )
+        {
+            $result['error_code'] = self::DB_ERROR_CONNECTION_FAILED;
+            return $result;
+        }
+
         $result['use_unicode'] = false;
         if ( $db->isCharsetSupported( 'utf-8' ) )
         {

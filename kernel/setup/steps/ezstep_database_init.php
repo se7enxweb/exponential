@@ -87,24 +87,56 @@ class eZStepDatabaseInit extends eZStepInstaller
         if ( !$result['status'] )
         {
             $this->Error = $result['error_code'];
+            $dbInfo = $this->PersistenceList['database_info'];
+            $dbLog = "eZStepDatabaseInit: connection check failed (error code {$result['error_code']}) for server '{$dbInfo['server']}', user '{$dbInfo['user']}', db '{$dbInfo['dbname']}' (type '{$dbInfo['type']}')";
+            eZLog::write( $dbLog, 'setup.log' );
             return false;
         }
 
         $db = $result['db_instance'];
         $this->PersistenceList['database_info']['use_unicode'] = $result['use_unicode'];
-        $availDatabases = $db->availableDatabases();
+
+        // For MySQL/MariaDB, if the user explicitly provided a database name, we do
+        // not need to enumerate available databases (which requires the global SHOW
+        // DATABASES privilege and may access the 'mysql' system database). We can
+        // simply use the named database directly.
+        if ( in_array( $databaseInfo['type'], array( 'mysql', 'mysqli' ) ) &&
+             !empty( $databaseInfo['dbname'] ) )
+        {
+            $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );
+            return true;
+        }
+
+        try
+        {
+            $availDatabases = $db->availableDatabases();
+        }
+        catch ( Exception $e )
+        {
+            $dbInfo = $this->PersistenceList['database_info'];
+            eZLog::write( "eZStepDatabaseInit: availableDatabases() failed for server '{$dbInfo['server']}', user '{$dbInfo['user']}', db '{$dbInfo['dbname']}' (type '{$dbInfo['type']}') exception: " . get_class( $e ) . ' - ' . $e->getMessage(), 'setup.log' );
+            $availDatabases = null;
+        }
 
         if ( $availDatabases === false ) // not possible to determine if username and password is correct here
         {
             return true;
         }
-        else if ( count( $availDatabases ) > 0 ) // login succeeded, and at least one database available
+        else if ( is_countable( $availDatabases ) && count( $availDatabases ) > 0 ) // login succeeded, and at least one database available
         {
             $this->PersistenceList['database_info_available'] = $availDatabases;
             return true;
         }
-        else if ( $availDatabases == null && $db->isConnected() === true )
+        else if ( $availDatabases === null && $db->isConnected() === true )
         {
+            // availableDatabases() failed (e.g. SHOW DATABASES denied) but we are still
+            // connected. If we have an explicit database name, use that; otherwise there
+            // is genuinely no database available.
+            if ( !empty( $databaseInfo['dbname'] ) )
+            {
+                $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );
+                return true;
+            }
             $this->Error = eZStepInstaller::DB_ERROR_NO_DATABASES;
             return false;
         }
@@ -140,6 +172,9 @@ class eZStepDatabaseInit extends eZStepInstaller
             if ( !$result['status'] )
             {
                 $this->Error = $result['error_code'];
+                $dbInfo = $this->PersistenceList['database_info'];
+                $dbLog = "eZStepDatabaseInit (kickstart): connection check failed (error code {$result['error_code']}) for server '{$dbInfo['server']}', user '{$dbInfo['user']}', db '{$dbInfo['dbname']}' (type '{$dbInfo['type']}')";
+                eZLog::write( $dbLog, 'setup.log' );
                 return false;
             }
 

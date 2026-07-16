@@ -34,6 +34,10 @@ class expScriptStatus
     private function __construct()
     {
         $this->cli = eZCLI::instance();
+        // STDOUT is a CLI-only constant. In a web SAPI it is undefined and
+        // using it below would throw an "Undefined constant" fatal error.
+        if ( !defined( 'STDOUT' ) )
+            define( 'STDOUT', '' );
         register_shutdown_function( array( $this, 'end' ) );
     }
 

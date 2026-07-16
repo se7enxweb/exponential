@@ -140,6 +140,9 @@ class eZStepSiteDetails extends eZStepInstaller
             $this->storeSiteType( $siteType );
             $this->Error[0] = array( 'type' => 'db',
                                             'error_code' => $result['error_code'] );
+            $dbInfo = $this->PersistenceList['database_info'];
+            $dbLog = "eZStepSiteDetails: database requirement check failed (error code {$result['error_code']}) for site '{$siteType['database']}', server '{$dbInfo['server']}', user '{$dbInfo['user']}', db '{$dbInfo['dbname']}' (type '{$dbInfo['type']}')";
+            eZLog::write( $dbLog, 'setup.log' );
             return false;
         }
         // Store charset if found
@@ -295,13 +298,15 @@ class eZStepSiteDetails extends eZStepInstaller
         $dbServer = $databaseInfo['server'];
         $dbPort = $databaseInfo['port'];
 
-        if ( $databaseInfo['info']['type'] == 'mysqli' )
+        // For MySQL/MariaDB, always prefer the explicitly typed database name.
+        // Falling back to the 'mysql' system database requires root/DBA privileges
+        // and breaks on shared hosting where the application user only has access
+        // to their own database. If no name is provided, we leave the database
+        // parameter empty so we connect to the server without selecting a DB.
+        if ( in_array( $databaseInfo['info']['type'], array( 'mysql', 'mysqli' ) ) )
         {
-            // For MySQL, prefer the explicitly typed dbname so a non-root user
-            // can connect directly to their database without needing access to
-            // the 'mysql' system database (which SHOW DATABASES requires).
             $explicitName = isset( $databaseInfo['dbname'] ) ? trim( $databaseInfo['dbname'] ) : '';
-            $dbName = $explicitName !== '' ? $explicitName : 'mysql';
+            $dbName = $explicitName !== '' ? $explicitName : '';
         }
         else
             $dbName = isset( $databaseInfo['dbname'] ) ? $databaseInfo['dbname'] : $databaseInfo['database'];
@@ -330,10 +335,30 @@ class eZStepSiteDetails extends eZStepInstaller
 
         $this->PersistenceList['database_info']['database'] = $dbParameters['database'];
 
-        $db = eZDB::instance( $dbDriver, $dbParameters, true );
+        try
+        {
+            $db = eZDB::instance( $dbDriver, $dbParameters, true );
+        }
+        catch ( eZDBNoConnectionException $e )
+        {
+            // The server could not be reached at all. Leave the database list empty
+            // so the user can still edit the form and try again.
+            $this->PersistenceList['database_info_available'] = array();
+            eZLog::write( "eZStepSiteDetails: eZDBNoConnectionException for server '{$dbParameters['server']}', user '{$dbParameters['user']}', db '{$dbParameters['database']}': " . $e->getMessage(), 'setup.log' );
+            return false;
+        }
+        catch ( Exception $e )
+        {
+            // Any other connection error (e.g. ErrorException from a MySQLi warning)
+            // should not be fatal; log it and let the user correct the form.
+            $this->PersistenceList['database_info_available'] = array();
+            eZLog::write( "eZStepSiteDetails: unexpected exception for server '{$dbParameters['server']}', user '{$dbParameters['user']}', db '{$dbParameters['database']}': " . get_class( $e ) . ' - ' . $e->getMessage(), 'setup.log' );
+            return false;
+        }
 
-        // If a specific database name was provided for MySQL, skip SHOW DATABASES
-        // (which requires global privileges) and use the named db directly.
+        // For MySQL/MariaDB, use the named database directly and skip the
+        // SHOW DATABASES call (which requires global privileges and may access
+        // the 'mysql' system database). This makes shared-hosting installs work.
         if ( in_array( $databaseInfo['info']['type'], array( 'mysql', 'mysqli' ) ) &&
              isset( $databaseInfo['dbname'] ) && trim( $databaseInfo['dbname'] ) !== '' )
         {
@@ -341,10 +366,30 @@ class eZStepSiteDetails extends eZStepInstaller
             return false;
         }
 
-        $availDatabases = $db->availableDatabases();
+        try
+        {
+            $availDatabases = $db->availableDatabases();
+        }
+        catch ( Exception $e )
+        {
+            $availDatabases = null;
+        }
+
         if ( is_countable( $availDatabases ) && count( $availDatabases ) > 0 )
         {
             $this->PersistenceList['database_info_available'] = $availDatabases;
+        }
+        else if ( is_countable( $availDatabases ) && count( $availDatabases ) == 0 )
+        {
+            // The server returned an empty list of databases, but the connection
+            // succeeded. Provide an empty list so the template does not fail.
+            $this->PersistenceList['database_info_available'] = array();
+        }
+        else if ( $availDatabases === null && $db->isConnected() === true && !empty( $databaseInfo['dbname'] ) )
+        {
+            // SHOW DATABASES may be denied on shared hosting; fall back to the
+            // database name the user provided earlier.
+            $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );
         }
 
         return false; // Always show site details
@@ -358,8 +403,8 @@ class eZStepSiteDetails extends eZStepInstaller
         if( $this->PersistenceList['database_info']['type'] == 'sqlite3' )
             $siteType['database'] = 'sqlite.db';
 
-        $availableDatabaseList = false;
-        if ( isset( $this->PersistenceList['database_info_available'] ) )
+        $availableDatabaseList = array();
+        if ( isset( $this->PersistenceList['database_info_available'] ) && is_array( $this->PersistenceList['database_info_available'] ) )
         {
             $availableDatabaseList = $this->PersistenceList['database_info_available'];
         }
@@ -383,7 +428,7 @@ class eZStepSiteDetails extends eZStepInstaller
             $siteType['db_not_empty'] = 0;
         if ( !isset( $siteType['database'] ) )
         {
-            if ( is_array( $databaseList ) )
+            if ( is_array( $databaseList ) && count( $databaseList ) > 0 )
             {
                 $matchedDBName = false;
                 // First try database name match

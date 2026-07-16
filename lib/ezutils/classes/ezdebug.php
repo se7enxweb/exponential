@@ -279,6 +279,9 @@ class eZDebug
 
             case self::HANDLE_NONE:
             {
+                // HANDLE_NONE means no PHP errors should be intercepted by eZDebug,
+                // so make sure any custom handler we installed is removed.
+                restore_error_handler();
             }
         }
         $oldHandleType = $instance->HandleType;

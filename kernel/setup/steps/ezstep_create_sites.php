@@ -425,12 +425,24 @@ class eZStepCreateSites extends eZStepInstaller
                                'socket' => $dbSocket,
                                'database' => $dbName,
                                'charset' => $dbCharset );
-        $db = eZDB::instance( $dbDriver, $dbParameters, true );
+        try
+        {
+            $db = eZDB::instance( $dbDriver, $dbParameters, true );
+        }
+        catch ( Exception $e )
+        {
+            $resultArray['errors'][] = array( 'code' => 'EZSW-005',
+                                              'text' => ( "Failed connecting to database $dbName\n" .
+                                                          $e->getMessage() ) );
+            eZLog::write( "eZStepCreateSites: exception connecting to database '$dbName' on server '{$dbParameters['server']}', user '{$dbParameters['user']}': " . get_class( $e ) . ' - ' . $e->getMessage(), 'setup.log' );
+            return false;
+        }
         if ( !$db->isConnected() )
         {
             $resultArray['errors'][] = array( 'code' => 'EZSW-005',
                                               'text' => ( "Failed connecting to database $dbName\n" .
                                                           $db->errorMessage() ) );
+            eZLog::write( "eZStepCreateSites: not connected to database '$dbName' on server '{$dbParameters['server']}', user '{$dbParameters['user']}', error: " . $db->errorMessage(), 'setup.log' );
             return false;
         }
         eZDB::setInstance( $db );

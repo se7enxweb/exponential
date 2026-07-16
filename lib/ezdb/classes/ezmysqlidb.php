@@ -133,17 +133,28 @@ class eZMySQLiDB extends eZDBInterface
         if ( !$connection )
         {
             eZDebug::writeError( "Connection error: Couldn't connect to database server. Please try again later or inform the system administrator.\n{$this->ErrorMessage}", __CLASS__ );
+            eZLog::write( "eZMySQLiDB connection failed to server '{$server}' error #{$this->ErrorNumber}: {$this->ErrorMessage}", 'error.log' );
             $this->IsConnected = false;
             throw new eZDBNoConnectionException( $server, $this->ErrorMessage, $this->ErrorNumber );
         }
 
         if ( $this->IsConnected && $db != null )
         {
-            $ret = mysqli_select_db( $connection, $db );
+            $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
+            try
+            {
+                $ret = mysqli_select_db( $connection, $db );
+            }
+            catch( ErrorException $e )
+            {
+                $ret = false;
+            }
+            eZDebug::setHandleType( $oldHandling );
             if ( !$ret )
             {
                 $this->setError( $connection );
                 eZDebug::writeError( "Connection error: Couldn't select the database. Please try again later or inform the system administrator.\n{$this->ErrorMessage}", __CLASS__ );
+                eZLog::write( "eZMySQLiDB couldn't select database '{$db}' error #{$this->ErrorNumber}: {$this->ErrorMessage}", 'error.log' );
                 $this->IsConnected = false;
             }
         }
@@ -156,7 +167,16 @@ class eZMySQLiDB extends eZDBInterface
 
         if ( $this->IsConnected and $charset !== null )
         {
-            $status = mysqli_set_charset( $connection, eZMySQLCharset::mapTo( $charset ) );
+            $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
+            try
+            {
+                $status = mysqli_set_charset( $connection, eZMySQLCharset::mapTo( $charset ) );
+            }
+            catch( ErrorException $e )
+            {
+                $status = false;
+            }
+            eZDebug::setHandleType( $oldHandling );
             if ( !$status )
             {
                 $this->setError();
@@ -407,6 +427,7 @@ class eZMySQLiDB extends eZDBInterface
                 $this->setError();
                 $errorMessage = 'Query error (' . $this->ErrorNumber . '): ' . $this->ErrorMessage . '. Query: ' . $sql;
                 eZDebug::writeError( $errorMessage, __CLASS__  );
+                eZLog::write( $errorMessage, 'error.log' );
                 $oldRecordError = $this->RecordError;
                 // Turn off error handling while we unlock
                 $this->RecordError = false;
@@ -696,9 +717,16 @@ class eZMySQLiDB extends eZDBInterface
                 $db = $this->DB;
             }
 
+            // Do not attempt to list tables if no database has been selected.
+            // This can happen during the setup wizard before a database name is chosen.
+            if ( !is_string( $db ) || trim( $db ) === '' )
+                return $tables;
+
             $query = 'SHOW TABLES from `' . $db .'`';
             $result = mysqli_query( $connection, $query );
             $this->reportQuery( __CLASS__, $query, false, false );
+            if ( !$result )
+                return $tables;
             while( $row = mysqli_fetch_row( $result ) )
             {
                 $tableName = $row[0];
@@ -909,7 +937,7 @@ class eZMySQLiDB extends eZDBInterface
     {
         $databaseArray = mysqli_query( $this->DBConnection, 'SHOW DATABASES' );
 
-        if ( $this->errorNumber() != 0 )
+        if ( !$databaseArray or $this->errorNumber() != 0 )
         {
             return null;
         }
