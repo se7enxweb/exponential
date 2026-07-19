@@ -10,7 +10,7 @@
             $check_visibility|not,
             fetch( content, node, hash( node_id, $Relations.item.node_id ) ).is_invisible|not
         )}
-            {content_view_gui view=embed content_object=$content}<br />
+            {content_view_gui view=embed content_object=$content}<br>
             {set $has_readable_related = true()}
         {/if}
     {/if}

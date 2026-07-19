@@ -13,8 +13,8 @@
 {default ui_context=''}
 <div class="block">
 {if is_set( $module_result.content_info.node_id )}
-  <input type="hidden" name="NodeID" value="{$module_result.content_info.node_id}" />
-  <input type="hidden" name="ObjectID" value="{$module_result.content_info.object_id}" />
+  <input type="hidden" name="NodeID" value="{$module_result.content_info.node_id}">
+  <input type="hidden" name="ObjectID" value="{$module_result.content_info.object_id}">
 {/if}
 <select{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} name="CacheTypeValue">
    {section loop=$caches_list}
@@ -29,7 +29,7 @@
 </select>
 </div>
 <div class="block">
-    <input {eq( $ui_context, 'edit' )|choose( 'class="button"', 'class="button-disabled"' )}{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} type="submit" name="ClearCacheButton" value="{'Clear'|i18n( 'design/standard/pagelayout' )}" />
+    <input {eq( $ui_context, 'edit' )|choose( 'class="button"', 'class="button-disabled"' )}{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} type="submit" name="ClearCacheButton" value="{'Clear'|i18n( 'design/standard/pagelayout' )}">
 </div>
 {/default}
 </form>

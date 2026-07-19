@@ -504,8 +504,8 @@ function generatePagelayoutTemplate( $http, $template, $fileName )
                  '<!DOCTYPE html>' . "\n" .
                  '<html lang="en">' .
                  '<head>' . "\n" .
-                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/core.css"|ezdesign} />' . "\n" .
-                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/debug.css"|ezdesign} />' . "\n" .
+                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/core.css"|ezdesign}>' . "\n" .
+                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/debug.css"|ezdesign}>' . "\n" .
                  '    {include uri="design:page_head.tpl"}' . "\n" .
                  '</head>' . "\n" .
                  '<body>' . "\n" .
@@ -537,8 +537,8 @@ function generateDefaultTemplate( $http, $template, $fileName )
                  '<!DOCTYPE html>' . "\n" .
                  '<html lang="en">' .
                  '<head>' . "\n" .
-                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/core.css"|ezdesign} />' . "\n" .
-                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/debug.css"|ezdesign} />' . "\n" .
+                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/core.css"|ezdesign}>' . "\n" .
+                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/debug.css"|ezdesign}>' . "\n" .
                  '    {include uri="design:page_head.tpl"}' . "\n" .
                  '</head>' . "\n" .
                  '<body>' . "\n" .

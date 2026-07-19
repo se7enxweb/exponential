@@ -286,7 +286,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 function()
                 {
                     header("HTTP/1.1 500 Internal Server Error");
-                    echo "<b>Fatal error</b>: The web server did not finish its request<br/>";
+                    echo "<b>Fatal error</b>: The web server did not finish its request<br>";
                     if ( ini_get('display_errors') == 1 )
                     {
                         if ( eZDebug::isDebugEnabled() )

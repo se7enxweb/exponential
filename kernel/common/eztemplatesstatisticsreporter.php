@@ -111,8 +111,8 @@ class eZTemplatesStatisticsReporter
                            "<td><a href=\"$requestedTemplateViewURI\">$requestedTemplateName</a></td>" .
                            "<td>$actualTemplateNameOutput</td>" .
                            "<td>$templateFileName</td>" .
-                           "<td><a href=\"$templateEditURI/(siteAccess)/$currentSiteAccess\"><img src=\"$editIconFile\" width=\"$iconSizeX\" height=\"$iconSizeY\" alt=\"Edit template\" title=\"Edit template\" /></a></td>".
-                           "<td><a href=\"$templateOverrideURI/(siteAccess)/$currentSiteAccess\"><img src=\"$overrideIconFile\" width=\"$iconSizeX\" height=\"$iconSizeY\" alt=\"Override template\" title=\"Override template\" /></a></td></tr>" );
+                           "<td><a href=\"$templateEditURI/(siteAccess)/$currentSiteAccess\"><img src=\"$editIconFile\" width=\"$iconSizeX\" height=\"$iconSizeY\" alt=\"Edit template\" title=\"Edit template\"></a></td>".
+                           "<td><a href=\"$templateOverrideURI/(siteAccess)/$currentSiteAccess\"><img src=\"$overrideIconFile\" width=\"$iconSizeX\" height=\"$iconSizeY\" alt=\"Override template\" title=\"Override template\"></a></td></tr>" );
 
                     $j++;
                 }
@@ -128,7 +128,7 @@ class eZTemplatesStatisticsReporter
 
         if ( $as_html )
         {
-            $stats .= "<tr><td colspan=\"6\"><b>&nbsp;Number of times templates used: $totalTemplatesCount<br />&nbsp;Number of unique templates used: $totalUniqueTemplatesCopunt</b></td></tr>";
+            $stats .= "<tr><td colspan=\"6\"><b>&nbsp;Number of times templates used: $totalTemplatesCount<br>&nbsp;Number of unique templates used: $totalUniqueTemplatesCopunt</b></td></tr>";
             $stats .= "</table>";
         }
         else

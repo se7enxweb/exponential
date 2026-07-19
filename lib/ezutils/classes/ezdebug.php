@@ -313,7 +313,7 @@ class eZDebug
     {
         if ( $this->recursionFlag )
         {
-            print( "Fatal debug error: A recursion in debug error handler was detected, aborting debug message.<br/>" );
+            print( "Fatal debug error: A recursion in debug error handler was detected, aborting debug message.<br>" );
             $this->recursionFlag = false;
             return;
         }
@@ -1504,13 +1504,8 @@ class eZDebug
 
             if ( !$this->UseCSS )
             {
-                echo "<style type='text/css'>
-                <!--
-                ";
-                readfile( 'design/standard/stylesheets/debug.css' );
-                echo "
--->
-</style>";
+                $wwwDir = eZSys::wwwDir();
+                echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"$wwwDir/design/standard/stylesheets/debug.css\">\n";
             }
             echo "<table id='main-debug-table' title='Table for actual debug output, shows notices, warnings and errors'>";
         }

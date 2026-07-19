@@ -7,15 +7,15 @@
 {default ui_context=''}
 
 <div class="block">
-<input type="hidden" name="SiteAccess" value="{$siteaccess|wash}" />
+<input type="hidden" name="SiteAccess" value="{$siteaccess|wash}" >
 
 {section show=eq( $siteaccess, 'global_override' )}
    {section loop=$settings_list}
-     <input type="hidden" name="AllSettingsList[]" value="{$:item|wash}"/>
+     <input type="hidden" name="AllSettingsList[]" value="{$:item|wash}">
      {let setting=$:item|explode( ';' )}
      {let debug_output=ezini( $setting.0, $setting.1, $setting.2, 'settings/override', true )}
       <label>
-      <input type="checkbox" {or( eq( $debug_output, 'enabled' ), eq( $debug_output, 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" />
+      <input type="checkbox" {or( eq( $debug_output, 'enabled' ), eq( $debug_output, 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" >
          {if eq( $debug_output, '' )}
             <span class="disabled">{$setting.3|wash}</span>
          {else}
@@ -27,19 +27,19 @@
    {/section}
 {section-else}
    {section loop=$settings_list}
-      <input type="hidden" name="AllSettingsList[]" value="{$:item|wash}" />
+      <input type="hidden" name="AllSettingsList[]" value="{$:item|wash}" >
       {let setting=$:item|explode( ';' )}
       {let debug_output=ezini( $setting.0, $setting.1, $setting.2, concat( 'settings/siteaccess/', $siteaccess ), true )
            debug_output_override=ezini( $setting.0, $setting.1, $setting.2, 'settings/override', true )}
          <label>
       {if ne( $debug_output_override, '' )}
-         <input type="checkbox"{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} {or( eq( $debug_output_override, 'enabled' ), eq( $debug_output_override, 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" />
+         <input type="checkbox"{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} {or( eq( $debug_output_override, 'enabled' ), eq( $debug_output_override, 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" >
          <span class="overriden">{$setting.3|wash}</span>
       {else}
          {if eq( $debug_output, '' )}
-            <input type="checkbox"{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} {or( eq( ezini( $setting.0, $setting.1, $setting.2 ), 'enabled' ), eq( ezini( $setting.0, $setting.1, $setting.2 ), 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" />
+            <input type="checkbox"{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} {or( eq( ezini( $setting.0, $setting.1, $setting.2 ), 'enabled' ), eq( ezini( $setting.0, $setting.1, $setting.2 ), 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" >
          {else}
-            <input type="checkbox"{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} {or( eq( $debug_output, 'enabled' ), eq( $debug_output, 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" />
+            <input type="checkbox"{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} {or( eq( $debug_output, 'enabled' ), eq( $debug_output, 'true' ) )|choose( '', 'checked="checked" ' )}name="SelectedList[]" value="{$:index}" >
          {/if}
             {$setting.3|wash}
       {/if}
@@ -63,7 +63,7 @@
     {/let}
 {/section}
 <div class="block">
-<input {eq( $ui_context, 'edit' )|choose( "class='button'", "class='button-disabled'" )}{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} type="submit" name="SetButton" value="{'Set'|i18n( 'design/standard/pagelayout' )}" />
+<input {eq( $ui_context, 'edit' )|choose( "class='button'", "class='button-disabled'" )}{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} type="submit" name="SetButton" value="{'Set'|i18n( 'design/standard/pagelayout' )}" >
 </div>
 
 {/default}

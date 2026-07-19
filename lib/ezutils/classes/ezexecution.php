@@ -184,7 +184,7 @@ class eZExecution
             header( 'HTTP/1.x 500 Internal Server Error' );
             header( 'Content-Type: text/html' );
 
-            echo "An unexpected error has occurred. Please contact the webmaster.<br />";
+            echo "An unexpected error has occurred. Please contact the webmaster.<br>";
 
             if( eZDebug::isDebugEnabled() )
             {

@@ -81,7 +81,7 @@ class eZTemplateNl2BrOperator
     function modify( $tpl, $operatorName, $operatorParameters, $rootNamespace, $currentNamespace, &$operatorValue, $namedParameters, $placement )
     {
         $operatorValue = str_replace( "\n",
-                                      "<br />",
+                                      "<br>",
                                       $operatorValue );
     }
 
