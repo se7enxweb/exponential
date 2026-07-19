@@ -20,7 +20,7 @@
 <a id="{$custom_attribute_id}_browse_link" class=" atr_link_browse_link" href="JavaScript:void(0);" title="{'Browse'|i18n('design/standard/ezoe')}"><img width="16" height="16" border="0" alt="{'Browse'|i18n('design/standard/ezoe')}" src={"tango/folder.png"|ezimage} /></a>
 <a id="{$custom_attribute_id}_bookmark_link" class="atr_link_bookmark_link" href="JavaScript:void(0);" title="{'Bookmarks'|i18n( 'design/admin/content/browse' )}"><img width="16" height="16" border="0" alt="{'Bookmarks'|i18n( 'design/admin/content/browse' )}" src={"tango/bookmark-new.png"|ezimage} /></a>
 <span id="{$custom_attribute_id}_source_info" class="atr_link_source_info"></span>
-<br />
+<br>
 
 {set $custom_attribute_classes = $custom_attribute_classes|append( 'link_href_input' )}
 <input type="text" name="{$custom_attribute}" id="{$custom_attribute_id}_source" value="{$custom_attribute_default|wash}"{if $custom_attribute_disabled} disabled="disabled"{/if} class="{$custom_attribute_classes|implode(' ')}" title="{$custom_attribute_title|wash}" />

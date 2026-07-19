@@ -570,7 +570,7 @@ class eZOEInputParser extends eZXMLInputParser
 
         $text = substr( $data, $pos, $prePos - $pos );
         // Fix empty paragraphs in Gecko (<p><br></p>)
-        if ( $text === '<br>' || $text === '<BR>' || $text === '<br />' )
+        if ( $text === '<br>' || $text === '<BR>' || $text === '<br>' )
         {
             if ( !$this->XMLSchema->Schema['paragraph']['childrenRequired'] )
             {

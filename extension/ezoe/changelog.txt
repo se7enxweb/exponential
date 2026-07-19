@@ -491,7 +491,7 @@ eZ Online Editor 5.x extension Changelog
 * link and anchor dialogue
 * table and table cell dialogue
 * made custom attributes work on em and strong tags without class
-* generate table xhtml with tbody and <br /> in empty cells to avoid browser bugs
+* generate table xhtml with tbody and <br> in empty cells to avoid browser bugs
 * skip duplicated custom attributes
 * removed some more unimportant gui buttons to trim editor space (width)
   and organised the buttons more like old OE

@@ -163,7 +163,7 @@
             {/literal}
         {rdelim},
         paste_postprocess: function(pl, o) {ldelim}
-            // removes \n after <br />, this is for paste of text
+            // removes \n after <br>, this is for paste of text
             // with soft carriage return from Word in Firefox
             // see issue http://issues.ez.no/18702
             o.node.innerHTML = o.node.innerHTML.replace(/<br\s?.*\/?>\n/gi,'<br>'); 
@@ -174,7 +174,7 @@
                 && o.node.firstChild.tagName
                 && o.node.firstChild.tagName.toLowerCase() === 'pre'
             ) {
-                o.node.innerHTML = o.node.firstChild.innerHTML.replace(/\n/g, "<br />");
+                o.node.innerHTML = o.node.firstChild.innerHTML.replace(/\n/g, "<br>");
             }
             {/literal}
         {rdelim}
@@ -240,7 +240,7 @@
     {ezscript_require( 'ezjsc::jquery' )}
     {let aliased_handler=$input_handler.aliased_handler}
     {include uri=concat("design:content/datatype/edit/",$aliased_handler.edit_template_name,".tpl") input_handler=$aliased_handler}
-    <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_enable_editor]" value="{'Enable editor'|i18n('design/standard/content/datatype')}" /><br />
+    <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_enable_editor]" value="{'Enable editor'|i18n('design/standard/content/datatype')}" /><br>
     {/let}
 {/if}
 {/default}

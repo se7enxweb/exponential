@@ -72,12 +72,9 @@ class ezjscPacker
     static function buildJavascriptTag( $scriptFiles, $type = 'text/javascript', $lang = '', $charset = 'utf-8', $packLevel = 2, $indexDirInCacheHash = true )
     {
         $ret = '';
-        $lang = $lang ? ' language="' . $lang . '"' : '';
         $http = eZHTTPTool::instance();
         $useFullUrl = ( isset( $http->UseFullUrl ) && $http->UseFullUrl );
         $packedFiles = ezjscPacker::packFiles( $scriptFiles, 'javascript/', '.js', $packLevel, $indexDirInCacheHash );
-        if ( $charset )
-            $charset = " charset=\"$charset\"";
         foreach ( $packedFiles as $packedFile )
         {
             // Is this a js file or js content?
@@ -90,11 +87,11 @@ class ezjscPacker
                 {
                     $packedFile = $http->createRedirectUrl( $packedFile, array( 'pre_url' => false ) );
                 }
-                $ret .= "<script$lang type=\"$type\" src=\"$packedFile\"$charset></script>\r\n";
+                $ret .= "<script src=\"$packedFile\"></script>\r\n";
             }
             else
             {
-                $ret .=  $packedFile ? "<script$lang type=\"$type\">\r\n$packedFile\r\n</script>\r\n" : '';
+                $ret .=  $packedFile ? "<script>\r\n$packedFile\r\n</script>\r\n" : '';
             }
         }
         return $ret;
@@ -130,11 +127,11 @@ class ezjscPacker
                 {
                     $packedFile = $http->createRedirectUrl( $packedFile, array( 'pre_url' => false ) );
                 }
-                $ret .= "<link rel=\"$rel\" type=\"$type\" href=\"$packedFile\"$media />\r\n";
+                $ret .= "<link rel=\"$rel\" href=\"$packedFile\"$media>\r\n";
             }
             else
             {
-                $ret .= $packedFile ? "<style type=\"$type\"$media>\r\n$packedFile\r\n</style>\r\n" : '';
+                $ret .= $packedFile ? "<style$media>\r\n$packedFile\r\n</style>\r\n" : '';
             }
         }
         return $ret;
@@ -614,7 +611,7 @@ class ezjscPacker
             if ( !$file )
                 continue;
             else if ( $stats !== '' )
-                $stats .= '<br />';
+                $stats .= '<br>';
 
             $stats .= "<span class='debuginfo' title='Served directly from external source(not part of cache file)'>{$file}</span>";
         }
@@ -624,7 +621,7 @@ class ezjscPacker
             if ( !$file )
                 continue;
             elseif ( $stats !== '' )
-                $stats .= '<br />';
+                $stats .= '<br>';
 
             if ( $file instanceOf ezjscServerRouter )
                 $stats .= $file->getName();

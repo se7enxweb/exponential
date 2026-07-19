@@ -743,7 +743,7 @@ class eZOEXMLInput extends eZXMLInputHandler
         }
         else /* if ( $browserEngineName !== 'Presto' ) */
         {
-            $output = str_replace( '<p></p>', '<p><br /></p>', $output );
+            $output = str_replace( '<p></p>', '<p><br></p>', $output );
         }
 
         $output = str_replace( array( "\n", "\xC2\xA0" ), array( '', '&nbsp;' ), $output );
@@ -756,7 +756,7 @@ class eZOEXMLInput extends eZXMLInputHandler
             }
             else
             {
-                $output .= '<p><br /></p>';
+                $output .= '<p><br></p>';
             }
         }
 
@@ -1376,7 +1376,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                 $customAttributePart = self::getCustomAttrPart( $tag, $styleString );
 
                 $literalText = htmlspecialchars( $literalText );
-                $literalText = str_replace( "\n", '<br />', $literalText );
+                $literalText = str_replace( "\n", '<br>', $literalText );
 
                 if ( $className != '' )
                     $customAttributePart .= ' class="' . $className . '"';
@@ -1589,7 +1589,7 @@ class eZOEXMLInput extends eZXMLInputHandler
 
             case 'line' :
             {
-                $output .= $childTagText . '<br />';
+                $output .= $childTagText . '<br>';
             }break;
 
             case 'anchor' :

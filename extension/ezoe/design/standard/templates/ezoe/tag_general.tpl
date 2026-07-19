@@ -16,7 +16,7 @@ tinyMCEPopup.onInit.add( eZOEPopupUtils.BIND( eZOEPopupUtils.init, window, {ldel
         // after the tag that has been added, see http://issues.ez.no/18209
         if ( !element.nextSibling || element.nextSibling.nodeName.toLowerCase() !== 'p' ) {ldelim}
 
-            var e = editor.dom.create( 'p', false, tinymce.isIE ? '&nbsp;' : '<br />' );
+            var e = editor.dom.create( 'p', false, tinymce.isIE ? '&nbsp;' : '<br>' );
             editor.dom.insertAfter( e, element );
         {rdelim}
         return false;

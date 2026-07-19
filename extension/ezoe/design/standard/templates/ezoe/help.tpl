@@ -206,8 +206,8 @@ tinyMCEPopup.onInit.add( function(){
 
             <div id="general_panel" class="panel">
                 <h3>{'About'|i18n('design/standard/ezoe')} {$ezoe_name}</h3>
-                <p>{'Version'|i18n('design/standard/ezoe')}: {$ezoe_version|wash}<br />
-                   {'License'|i18n('design/standard/ezoe')}: {$ezoe_license|wash}<br />
+                <p>{'Version'|i18n('design/standard/ezoe')}: {$ezoe_version|wash}<br>
+                   {'License'|i18n('design/standard/ezoe')}: {$ezoe_license|wash}<br>
                    {$ezoe_copyright|wash}</p>
                 <p>For more information about this software visit the <a href="http://ez.no" target="_blank">eZ Systems</a> website.</p>
 
