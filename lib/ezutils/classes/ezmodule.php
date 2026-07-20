@@ -1908,6 +1908,7 @@ class eZModule
 
             foreach ( $extensionRepositories as $extensionRepository )
             {
+                $extensionRepository = eZExtension::extensionName( $extensionRepository );
                 $extPath = $extensionDirectory . '/' . $extensionRepository;
                 $modulePath = $extPath . '/modules';
                 if ( !in_array( $extensionRepository, $activeExtensions ) )

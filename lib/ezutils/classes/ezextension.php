@@ -45,6 +45,46 @@ class eZExtension
     }
 
     /**
+     * Extension directory name cache
+     */
+    protected static $extensionNameCache = array();
+
+    /**
+     * Return the actual case-sensitive extension directory name for a given name.
+     * If the exact name already exists it is returned as-is. Otherwise the
+     * extension directory is scanned for a case-insensitive directory match.
+     *
+     * @param string $name
+     * @return string
+     */
+    public static function extensionName( $name )
+    {
+        if ( isset( self::$extensionNameCache[$name] ) )
+            return self::$extensionNameCache[$name];
+
+        $base = self::baseDirectory();
+        $direct = $base . '/' . $name;
+
+        if ( file_exists( $direct ) )
+        {
+            self::$extensionNameCache[$name] = $name;
+            return $name;
+        }
+
+        foreach ( scandir( $base ) as $entry )
+        {
+            if ( strcasecmp( $entry, $name ) === 0 && is_dir( $base . '/' . $entry ) )
+            {
+                self::$extensionNameCache[$name] = $entry;
+                return $entry;
+            }
+        }
+
+        self::$extensionNameCache[$name] = $name;
+        return $name;
+    }
+
+    /**
      * Return an array with activated extensions.
      *
      * @note Default extensions are those who are loaded before a siteaccess are determined while access extensions
@@ -81,6 +121,11 @@ class eZExtension
             $activeExtensions = array_merge( $activeExtensions,
                                              $GLOBALS['eZActiveExtensions'] );
         }
+
+        // Resolve extension directory names to their real case-sensitive names.
+        // This allows ActiveExtensions and module/design repository references
+        // to use a different case than the directory on disk (e.g. 'adminaid' vs 'AdminAid').
+        $activeExtensions = array_map( array( 'eZExtension', 'extensionName' ), $activeExtensions );
 
         // return empty array as is to avoid further unneeded overhead
         if ( !isset( $activeExtensions[0] ) )

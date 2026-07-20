@@ -757,6 +757,7 @@ class eZTemplateDesignResource extends eZTemplateFileResource
         {
             foreach ( $extensions as $extension )
             {
+                $extension = eZExtension::extensionName( $extension );
                 $path = "$extensionDirectory/$extension/$designStartPath/$design";
                 if ( file_exists( $path ) )
                 {
