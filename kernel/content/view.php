@@ -180,14 +180,18 @@ else
             false
         );
 
-        $result = eZClusterFileHandler::instance( $cacheFileArray['cache_path'] )
-            ->processCache(
-                array( 'eZNodeviewfunctions', 'contentViewRetrieve' ),
-                array( 'eZNodeviewfunctions', 'contentViewGenerate' ),
-                null,
-                null,
-                $args
-            );
+        $sevenxValkeyCacheBlock = sevenxValkeyCacheBlock::instance();
+
+        $result = $sevenxValkeyCacheBlock->get( $cacheFileArray['cache_path'], true, 0, $NodeID, 0 );
+
+        if ( $result === false )
+        {
+            $data = eZNodeviewfunctions::contentViewGenerate( false, $args );
+
+            $result = $data['content']; // Return the $Result array
+
+            $sevenxValkeyCacheBlock->put( $cacheFileArray['cache_path'], $result, 3600, 0, $NodeID );
+        }
 
         // check if $result is an array (could also be eZClusterFileFailure) and contains responseHeaders
         if ( is_array( $result ) && !empty( $result['responseHeaders'] ) )

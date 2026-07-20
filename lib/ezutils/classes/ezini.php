@@ -577,17 +577,35 @@ class eZINI
         }
 
         $data = false;// this will contain cache data if cache data is valid
-        if ( file_exists( $cachedFile ) )
+        $fromRedis = false;
+
+        // Try Redis/Valkey backed INI cache first (sevenx_valkey_cache)
+        if ( class_exists( 'sevenxValkeyINICache' ) )
+        {
+            $iniCache = sevenxValkeyINICache::instance();
+            if ( $iniCache->isEnabled() )
+            {
+                $data = $iniCache->load( $cachedFile );
+                $fromRedis = ( $data !== false );
+                if ( $fromRedis && self::isDebugEnabled() )
+                    eZDebug::writeNotice( "Loading Redis cache '$cachedFile' for file '" . $this->FileName . "'", __METHOD__ );
+            }
+        }
+
+        if ( !$fromRedis && file_exists( $cachedFile ) )
         {
             if ( self::isDebugEnabled() )
                 eZDebug::writeNotice( "Loading cache '$cachedFile' for file '" . $this->FileName . "'", __METHOD__ );
 
             include( $cachedFile );
+        }
 
+        if ( $data !== false )
+        {
             if ( !isset( $data['rev'] ) || $data['rev'] != eZINI::CONFIG_CACHE_REV )
             {
                 if ( self::isDebugEnabled() )
-                    eZDebug::writeNotice( "Old structure in cache file used, recreating '$cachedFile' to new structure", __METHOD__ );
+                    eZDebug::writeNotice( "Old structure in cache used, recreating '$cachedFile' to new structure", __METHOD__ );
                 $data = false;
                 $this->reset();
             }
@@ -676,6 +694,27 @@ class eZINI
      */
     protected function saveCache( $cachedDir, $cachedFile, array $data, array $inputFiles, $iniFile )
     {
+        // Build the cache array exactly as the file-based cache does
+        $cacheData = array(
+            'rev' => eZINI::CONFIG_CACHE_REV,
+            'created' => date( 'c' ),
+            'files' => $inputFiles,
+            'file' => $iniFile,
+            'charset' => $this->Codec ? $this->Codec->RequestedOutputCharsetCode : $this->Charset,
+            'val' => $data,
+        );
+
+        // Store the compiled INI cache in Redis/Valkey if the extension is enabled
+        if ( class_exists( 'sevenxValkeyINICache' ) )
+        {
+            $iniCache = sevenxValkeyINICache::instance();
+            if ( $iniCache->isEnabled() )
+            {
+                if ( $iniCache->save( $cachedFile, $cacheData ) )
+                    return true;
+            }
+        }
+
         if ( !file_exists( $cachedDir ) )
         {
             if ( !eZDir::mkdir( $cachedDir, 0777, true ) )
@@ -933,6 +972,19 @@ class eZINI
     */
     function resetCache()
     {
+        if ( class_exists( 'sevenxValkeyINICache' ) )
+        {
+            $iniCache = sevenxValkeyINICache::instance();
+            if ( $iniCache->isEnabled() )
+            {
+                if ( $this->CacheFile )
+                    $iniCache->delete( $this->CacheFile );
+                if ( $this->PlacementCacheFile )
+                    $iniCache->delete( $this->PlacementCacheFile );
+                return;
+            }
+        }
+
         if ( $this->CacheFile && file_exists( $this->CacheFile ) )
             unlink( $this->CacheFile );
         if ( $this->PlacementCacheFile && file_exists( $this->PlacementCacheFile ) )
