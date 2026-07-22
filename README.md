@@ -3,16 +3,20 @@
 <img width="1200" height="693" alt="MongoDB-exp" src="https://github.com/user-attachments/assets/ef51c832-149e-4742-8b41-6f2c07ea6b6b" />
 ![Exponential - Project Logo](https://github.com/user-attachments/assets/c2f9e973-0b4f-4e58-ac76-f0308775e3c1)
 
-# Important Notice for New Users
+# Important Notice for New or first time Users
 
-**Exponential 6.0.x requires Composer to be installed and run before it can be used.**
+**Exponential 6.0.x requires Composer to be installed and command composer install run before Exponential can be used.**
 
-To install and run Exponential 6.0.x, you must first:
+To install Exponential, first download the softare (this repository) and run composer install inside of the root Exponential 6.0.x installation directory.
+To do this, you must first:
 
-1. Download and install Composer from [getcomposer.org](https://getcomposer.org/download/)
+1. Install Composer from [getcomposer.org](https://getcomposer.org/download/)
+1. Download Exponential 6.0.x and then from within the web server root directory:
 2. Run `composer install` in the root directory of the Exponential installation
 
-Failure to do so will result in the software not running properly.
+Failure to perform these required steps will result in the software not running properly or at all.
+
+Please install responsibly and install (via composer) the software's php libraries required before attempting to use the software.
 
 # Exponential Project Notice : 2025.08.12
 
