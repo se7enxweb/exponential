@@ -49,6 +49,7 @@
         "se7enxweb/sevenx_dse": "~1.0.0",
         "se7enxweb/sevenx_themes_simple": "~1.0.4",
         "se7enxweb/syndication": "~1.2.0",
+        "se7enxweb/powercontent": "~6.0.14",
         "se7enxweb/ezgmaplocation": "~6.0.0",
         "se7enxweb/ezie": "~6.0.0",
         "se7enxweb/ezmbpaex": "~6.0.0",
