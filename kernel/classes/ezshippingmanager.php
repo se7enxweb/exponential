@@ -125,10 +125,13 @@ class eZShippingManager
         $repositoryDirectories = $shopINI->variable( 'ShippingSettings', 'RepositoryDirectories' );
         $extensionDirectories = $shopINI->variable( 'ShippingSettings', 'ExtensionDirectories' );
 
-        $baseDirectory = eZExtension::baseDirectory();
         foreach ( $extensionDirectories as $extensionDirectory )
         {
-            $extensionPath = $baseDirectory . '/' . $extensionDirectory . '/shippinghandlers';
+            $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+            if ( $extensionBase === false )
+                continue;
+
+            $extensionPath = $extensionBase . '/shippinghandlers';
             if ( file_exists( $extensionPath ) )
                 $repositoryDirectories[] = $extensionPath;
         }
@@ -185,10 +188,13 @@ class eZShippingManager
         $repositoryDirectories = $shopINI->variable( 'BasketInfoSettings', 'RepositoryDirectories' );
         $extensionDirectories = $shopINI->variable( 'BasketInfoSettings', 'ExtensionDirectories' );
 
-        $baseDirectory = eZExtension::baseDirectory();
         foreach ( $extensionDirectories as $extensionDirectory )
         {
-            $extensionPath = $baseDirectory . '/' . $extensionDirectory . '/basketinfohandlers';
+            $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+            if ( $extensionBase === false )
+                continue;
+
+            $extensionPath = $extensionBase . '/basketinfohandlers';
             if ( file_exists( $extensionPath ) )
                 $repositoryDirectories[] = $extensionPath;
         }

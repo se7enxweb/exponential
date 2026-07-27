@@ -121,7 +121,6 @@ else
     if ( $forceCompile )
         eZTemplateCompiler::setSettings( array( 'generate' => true ) );
 
-    $extensionDirectory = eZExtension::baseDirectory();
     $designINI = eZINI::instance( 'design.ini' );
     $extensions = $designINI->variable( 'ExtensionSettings', 'DesignExtensions' );
 
@@ -135,8 +134,12 @@ else
 
         foreach( $extensions as $extension )
         {
-            $files = array_merge( $files, eZDir::recursiveFindRelative( '', "$extensionDirectory/$extension/$baseDir/templates", "\.tpl" ) );
-            $files = array_merge( $files, eZDir::recursiveFindRelative( '', "$extensionDirectory/$extension/$baseDir/override/templates", "\.tpl" ) );
+            $extensionPath = eZExtension::extensionPath( $extension );
+            if ( $extensionPath === false )
+                continue;
+
+            $files = array_merge( $files, eZDir::recursiveFindRelative( '', "$extensionPath/$baseDir/templates", "\.tpl" ) );
+            $files = array_merge( $files, eZDir::recursiveFindRelative( '', "$extensionPath/$baseDir/override/templates", "\.tpl" ) );
         }
 
         $script->resetIteration( count( $files ) );

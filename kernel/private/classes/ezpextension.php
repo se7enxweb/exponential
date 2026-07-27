@@ -57,7 +57,11 @@ class ezpExtension
     {
         $return = array( 'before' => array(), 'after' => array() );
 
-        if ( is_readable( $XMLDependencyFile = eZExtension::baseDirectory() . "/{$this->name}/extension.xml" ) )
+        $extensionPath = eZExtension::extensionPath( $this->name );
+        if ( $extensionPath === false )
+            return $return;
+
+        if ( is_readable( $XMLDependencyFile = $extensionPath . "/extension.xml" ) )
         {
             libxml_use_internal_errors( true );
             $xml = simplexml_load_file( $XMLDependencyFile );
@@ -106,8 +110,12 @@ class ezpExtension
      */
     public function getInfo()
     {
+        $extensionPath = eZExtension::extensionPath( $this->name );
+        if ( $extensionPath === false )
+            return null;
+
         // try extension.xml first
-        if ( is_readable( $XMLFilePath = eZExtension::baseDirectory() . "/{$this->name}/extension.xml" ) )
+        if ( is_readable( $XMLFilePath = $extensionPath . "/extension.xml" ) )
         {
             $infoFields = array( 'name', 'description', 'version', 'copyright', 'author', 'license', 'info_url' );
 
@@ -151,7 +159,7 @@ class ezpExtension
             return $return;
         }
         // then try ezinfo.php, for backwards compatibility
-        elseif ( is_readable( $infoFilePath = eZExtension::baseDirectory() . "/{$this->name}/ezinfo.php" ) )
+        elseif ( is_readable( $infoFilePath = $extensionPath . "/ezinfo.php" ) )
         {
             include_once( $infoFilePath );
             $className = $this->name . 'Info';

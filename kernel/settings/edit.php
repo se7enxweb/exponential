@@ -200,10 +200,13 @@ $values['override'] = getVariable( $block, $settingName, $iniFile, "settings/ove
 // Get values from extensions
 $ini = eZINI::instance();
 $extensions = $ini->hasVariable( 'ExtensionSettings','ActiveExtensions' ) ? $ini->variable( 'ExtensionSettings','ActiveExtensions' ) : array();
-$extensionDir = $ini->hasVariable( 'ExtensionSettings','ExtensionDirectory' ) ? $ini->variable( 'ExtensionSettings','ExtensionDirectory' ) : 'extension';
 foreach ( $extensions as $extension )
 {
-    $extValue = getVariable( $block, $settingName, $iniFile, "$extensionDir/$extension/settings" );
+    $extensionPath = eZExtension::extensionPath( $extension );
+    if ( $extensionPath === false )
+        continue;
+
+    $extValue = getVariable( $block, $settingName, $iniFile, "$extensionPath/settings" );
     $values['extensions'][$extension] = $extValue;
 }
 

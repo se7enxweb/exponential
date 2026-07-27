@@ -64,12 +64,11 @@ class eZExtensionPackageHandler extends eZPackageHandler
     {
         $extensionName = $content->getAttribute( 'name' );
 
-        $siteINI = eZINI::instance();
-        $extensionDir = $siteINI->variable( 'ExtensionSettings', 'ExtensionDirectory' ) . '/' . $extensionName;
+        $extensionDir = eZExtension::extensionPath( $extensionName );
 
         // TODO: don't delete modified files?
 
-        if ( file_exists( $extensionDir ) )
+        if ( $extensionDir !== false && file_exists( $extensionDir ) )
             eZDir::recursiveDelete( $extensionDir );
 
         // Deactivate extension
@@ -115,13 +114,13 @@ class eZExtensionPackageHandler extends eZPackageHandler
             return false;
         }
 
-        $siteINI = eZINI::instance();
-        $extensionRootDir = $siteINI->variable( 'ExtensionSettings', 'ExtensionDirectory' );
+        $extensionRootDir = eZExtension::baseDirectory();
         $extensionDir = $extensionRootDir . '/' . $extensionName;
+        $existingExtensionPath = eZExtension::extensionPath( $extensionName );
         $packageExtensionDir = $package->path() . '/' . $parameters['sub-directory'] . '/' . $extensionName;
 
         // Error: extension already exists.
-        if ( file_exists( $extensionDir ) )
+        if ( $existingExtensionPath !== false && file_exists( $existingExtensionPath ) )
         {
             $description = ezpI18n::tr( 'kernel/package', "Extension '%extensionname' already exists.",
                                    false, array( '%extensionname' => $extensionName ) );
@@ -134,7 +133,11 @@ class eZExtensionPackageHandler extends eZPackageHandler
 
             case eZPackage::NON_INTERACTIVE:
             case self::ACTION_REPLACE:
-                eZDir::recursiveDelete( $extensionDir );
+                eZDir::recursiveDelete( $existingExtensionPath );
+                if ( $existingExtensionPath !== $extensionDir && file_exists( $extensionDir ) )
+                {
+                    eZDir::recursiveDelete( $extensionDir );
+                }
                 break;
 
             default:
@@ -235,7 +238,18 @@ class eZExtensionPackageHandler extends eZPackageHandler
         $arguments = array_unique( $arguments );
         $extensionsToAdd = array();
 
-        $extensionList = eZDir::findSubItems( eZExtension::baseDirectory(), 'dl' );
+        $extensionList = array();
+        foreach ( eZExtension::extensionRootDirectories() as $extensionRoot )
+        {
+            if ( is_dir( $extensionRoot ) )
+            {
+                foreach ( eZDir::findSubItems( $extensionRoot, 'dl' ) as $extensionName )
+                {
+                    $extensionList[$extensionName] = $extensionName;
+                }
+            }
+        }
+        $extensionList = array_values( $extensionList );
 
         foreach ( $arguments as $argument )
         {

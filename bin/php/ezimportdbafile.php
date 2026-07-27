@@ -58,7 +58,11 @@ if ( $dataTypeName !== null and
                            '  checked dba-data file - ' . $dataType->getDBAFilePath( false );
             foreach ( $activeExtensions as $activeExtension )
             {
-                $fileName = eZExtension::baseDirectory() . '/' . $activeExtension .
+                $extensionPath = eZExtension::extensionPath( $activeExtension );
+                if ( $extensionPath === false )
+                    continue;
+
+                $fileName = $extensionPath .
                             '/datatypes/' . $dataType->DataTypeString . '/' . $dataType->getDBAFileName();
                 $errorString .= "\n" . str_repeat( ' ', 23 ) . ' - ' . $fileName;
                 if ( file_exists( $fileName ) )

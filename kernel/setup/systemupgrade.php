@@ -28,10 +28,13 @@ if ( $Module->isCurrentAction( 'MD5Check' ) )
     {
         $checkResult = eZMD5::checkMD5Sums( eZMD5::CHECK_SUM_LIST_FILE );
 
-        $extensionsDir = eZExtension::baseDirectory();
         foreach( eZextension::activeExtensions() as $activeExtension )
         {
-            $extensionPath = "$extensionsDir/$activeExtension/";
+            $extensionPath = eZExtension::extensionPath( $activeExtension );
+            if ( $extensionPath === false )
+                continue;
+
+            $extensionPath .= '/';
             if ( file_exists( $extensionPath . eZMD5::CHECK_SUM_LIST_FILE ) )
             {
                 $checkResult = array_merge( $checkResult, eZMD5::checkMD5Sums( $extensionPath . eZMD5::CHECK_SUM_LIST_FILE, $extensionPath ) );
@@ -57,12 +60,16 @@ if ( $Module->isCurrentAction( 'DBCheck' ) )
     $originalSchema = eZDbSchema::read( 'share/db_schema.dba' );
 
     // merge schemas from all active extensions that declare some db schema
-    $extensionsdir = eZExtension::baseDirectory();
     foreach( eZExtension::activeExtensions() as $activeextension )
     {
-        if ( file_exists( $extensionsdir . '/' . $activeextension . '/share/db_schema.dba' ) )
+        $extensionPath = eZExtension::extensionPath( $activeextension );
+        if ( $extensionPath === false )
+            continue;
+
+        $schemaFile = $extensionPath . '/share/db_schema.dba';
+        if ( file_exists( $schemaFile ) )
         {
-            if ( $extensionschema = eZDbSchema::read( $extensionsdir . '/' . $activeextension . '/share/db_schema.dba' ) )
+            if ( $extensionschema = eZDbSchema::read( $schemaFile ) )
             {
                 $originalSchema = eZDbSchema::merge( $originalSchema, $extensionschema );
             }

@@ -71,7 +71,6 @@ function getThirdPartySoftware( $pathToFile )
 function getExtensionsInfo()
 {
     $siteINI = eZINI::instance();
-    $extensionDir = $siteINI->variable( 'ExtensionSettings', 'ExtensionDirectory' );
     $selectedExtensionArray       = $siteINI->variable( 'ExtensionSettings', "ActiveExtensions" );
     $selectedAccessExtensionArray = $siteINI->variable( 'ExtensionSettings', "ActiveAccessExtensions" );
     $selectedExtensions           = array_merge( $selectedExtensionArray, $selectedAccessExtensionArray );

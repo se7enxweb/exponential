@@ -1302,7 +1302,6 @@ class eZDataType
             return false;
         }
 
-        $baseDirectory = eZExtension::baseDirectory();
         $contentINI = eZINI::instance( 'content.ini' );
 
         $extensionDirectories = $contentINI->variable( 'DataTypeSettings', 'ExtensionDirectories' );
@@ -1312,7 +1311,11 @@ class eZDataType
 
         foreach ( $extensionDirectories as $extensionDirectory )
         {
-            $extensionPath = $baseDirectory . '/' . $extensionDirectory . '/datatypes';
+            $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+            if ( $extensionBase === false )
+                continue;
+
+            $extensionPath = $extensionBase . '/datatypes';
             $triedDirectories[] = $extensionPath;
             if ( file_exists( $extensionPath ) )
             {
@@ -1430,8 +1433,11 @@ class eZDataType
         $fileName = false;
         foreach ( $activeExtensions as $activeExtension )
         {
-            $extesionFileName = eZExtension::baseDirectory() . '/' . $activeExtension .
-                                '/datatypes/' . $dataTypeString . '/' . $dbaFileName;
+            $extensionPath = eZExtension::extensionPath( $activeExtension );
+            if ( $extensionPath === false )
+                continue;
+
+            $extesionFileName = $extensionPath . '/datatypes/' . $dataTypeString . '/' . $dbaFileName;
             if ( file_exists( $extesionFileName ) )
             {
                 $fileName = $extesionFileName;

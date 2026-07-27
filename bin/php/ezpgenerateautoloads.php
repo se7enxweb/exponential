@@ -36,11 +36,15 @@ else if ( file_exists( "{$legacyVendorDir}/autoload.php" ) )
     require_once "{$legacyVendorDir}/autoload.php";
 }
 
-require 'kernel/private/classes/ezautoloadgenerator.php';
-require 'kernel/private/interfaces/ezpautoloadoutput.php';
-require 'kernel/private/classes/ezpautoloadclioutput.php';
-require 'kernel/private/options/ezpautoloadgeneratoroptions.php';
-require 'kernel/private/structs/ezpautoloadfilefindcontext.php';
+// Load the Exponential autoloader and eZExtension so the generator can read
+// the AdditionalExtensionDirectories INI setting.
+require_once 'autoload.php';
+
+require_once 'kernel/private/classes/ezautoloadgenerator.php';
+require_once 'kernel/private/interfaces/ezpautoloadoutput.php';
+require_once 'kernel/private/classes/ezpautoloadclioutput.php';
+require_once 'kernel/private/options/ezpautoloadgeneratoroptions.php';
+require_once 'kernel/private/structs/ezpautoloadfilefindcontext.php';
 
 //}
 

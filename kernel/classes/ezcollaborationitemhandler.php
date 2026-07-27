@@ -476,10 +476,13 @@ class eZCollaborationItemHandler
     {
         $extensions = eZCollaborationItemHandler::extensionRepositories();
         $repositories = eZCollaborationItemHandler::defaultRepositories();
-        $extensionRoot = eZExtension::baseDirectory();
         foreach ( $extensions as $extension )
         {
-            $handlerPath = eZDir::path( array( $extensionRoot, $extension, 'collaboration' ) );
+            $extensionPath = eZExtension::extensionPath( $extension );
+            if ( $extensionPath === false )
+                continue;
+
+            $handlerPath = eZDir::path( array( $extensionPath, 'collaboration' ) );
             if ( file_exists( $handlerPath ) )
                 $repositories[] = $handlerPath;
         }

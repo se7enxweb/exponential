@@ -134,13 +134,16 @@ class eZNotificationEventType
             return false;
         }
 
-        $baseDirectory = eZExtension::baseDirectory();
         $notificationINI = eZINI::instance( 'notification.ini' );
         $repositoryDirectories = $notificationINI->variable( 'NotificationEventTypeSettings', 'RepositoryDirectories' );
         $extensionDirectories = $notificationINI->variable( 'NotificationEventTypeSettings', 'ExtensionDirectories' );
         foreach ( $extensionDirectories as $extensionDirectory )
         {
-            $extensionPath = $baseDirectory . '/' . $extensionDirectory . '/notificationtypes';
+            $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+            if ( $extensionBase === false )
+                continue;
+
+            $extensionPath = $extensionBase . '/notificationtypes';
             if ( file_exists( $extensionPath ) )
                 $repositoryDirectories[] = $extensionPath;
         }

@@ -79,7 +79,18 @@ class eZExtensionPackageCreator extends eZPackageCreationHandler
 
     function loadExtensionName( $package, $http, $step, &$persistentData, $tpl )
     {
-        $extensionList = eZDir::findSubItems( eZExtension::baseDirectory(), 'dl' );
+        $extensionList = array();
+        foreach ( eZExtension::extensionRootDirectories() as $extensionDir )
+        {
+            if ( !is_dir( $extensionDir ) )
+                continue;
+
+            foreach ( eZDir::findSubItems( $extensionDir, 'dl' ) as $extensionName )
+            {
+                $extensionList[$extensionName] = $extensionName;
+            }
+        }
+        $extensionList = array_values( $extensionList );
         $tpl->setVariable( 'extension_list', $extensionList );
     }
 

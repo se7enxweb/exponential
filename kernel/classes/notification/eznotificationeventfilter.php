@@ -64,14 +64,17 @@ class eZNotificationEventFilter
 
     static function availableHandlers()
     {
-        $baseDirectory = eZExtension::baseDirectory();
         $notificationINI = eZINI::instance( 'notification.ini' );
         $availableHandlers = $notificationINI->variable( 'NotificationEventHandlerSettings', 'AvailableNotificationEventTypes' );
         $repositoryDirectories = array();
         $extensionDirectories = $notificationINI->variable( 'NotificationEventHandlerSettings', 'ExtensionDirectories' );
         foreach ( $extensionDirectories as $extensionDirectory )
         {
-            $extensionPath = $baseDirectory . '/' . $extensionDirectory . '/notification/handler';
+            $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+            if ( $extensionBase === false )
+                continue;
+
+            $extensionPath = $extensionBase . '/notification/handler';
             if ( file_exists( $extensionPath ) )
                 $repositoryDirectories[] = $extensionPath;
         }
@@ -90,13 +93,16 @@ class eZNotificationEventFilter
         $foundHandler = false;
         $includeFile = '';
 
-        $baseDirectory = eZExtension::baseDirectory();
         $notificationINI = eZINI::instance( 'notification.ini' );
         $repositoryDirectories = $notificationINI->variable( 'NotificationEventHandlerSettings', 'RepositoryDirectories' );
         $extensionDirectories = $notificationINI->variable( 'NotificationEventHandlerSettings', 'ExtensionDirectories' );
         foreach ( $extensionDirectories as $extensionDirectory )
         {
-            $extensionPath = "{$baseDirectory}/{$extensionDirectory}/notification/handler/";
+            $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+            if ( $extensionBase === false )
+                continue;
+
+            $extensionPath = $extensionBase . '/notification/handler/';
             if ( file_exists( $extensionPath ) )
                 $repositoryDirectories[] = $extensionPath;
         }

@@ -119,14 +119,9 @@ class eZWordToImageOperator
 
                 // Build the list of repositories to search
                 $siteDir = eZSys::siteDir();
-                $extensionDirectory = eZExtension::baseDirectory();
                 if ( !is_array( $extensions ) )
                     $extensions = array();
-                $matches = array( $defaultRepository );
-                foreach ( $extensions as $extension )
-                {
-                    $matches[] = "$extensionDirectory/$extension/icons";
-                }
+                $matches = array_merge( array( $defaultRepository ), eZExtension::expandedPathList( $extensions, 'icons' ) );
 
                 $iconInfo = false;
                 foreach ( $availableThemes as $theme )
@@ -303,13 +298,8 @@ class eZWordToImageOperator
                     $extensions = array();
 
                 $siteDir = eZSys::siteDir();
-                $extensionDirectory = eZExtension::baseDirectory();
 
-                $matches = array();
-                foreach ( $extensions as $extension )
-                {
-                    $matches[] = "$extensionDirectory/$extension/icons";
-                }
+                $matches = eZExtension::expandedPathList( $extensions, 'icons' );
                 $matches[] = $defaultRepository;
 
                 $iconPath = false;
@@ -384,7 +374,6 @@ class eZWordToImageOperator
                     $extensions = array();
 
                 $siteDir = eZSys::siteDir();
-                $extensionDirectory = eZExtension::baseDirectory();
 
                 $groups = array( 'mimetype_icon' => 'MimeIcons',
                                  'class_icon' => 'ClassIcons',
@@ -408,11 +397,7 @@ class eZWordToImageOperator
                     array_push( $availableThemes, $standardTheme );
 
                 // Build the list of repositories to search
-                $matches = array();
-                foreach ( $extensions as $extension )
-                {
-                    $matches[] = "$extensionDirectory/$extension/icons";
-                }
+                $matches = eZExtension::expandedPathList( $extensions, 'icons' );
                 $matches[] = $defaultRepository;
 
                 $sizeName = isset( $operatorParameters[0] )

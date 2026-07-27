@@ -50,6 +50,11 @@ class eZExtension
     protected static $extensionNameCache = array();
 
     /**
+     * Extension path cache
+     */
+    protected static $extensionPathCache = array();
+
+    /**
      * Return the actual case-sensitive extension directory name for a given name.
      * If the exact name already exists it is returned as-is. Otherwise the
      * extension directory is scanned for a case-insensitive directory match.
@@ -62,26 +67,110 @@ class eZExtension
         if ( isset( self::$extensionNameCache[$name] ) )
             return self::$extensionNameCache[$name];
 
-        $base = self::baseDirectory();
-        $direct = $base . '/' . $name;
-
-        if ( file_exists( $direct ) )
+        $path = self::extensionPath( $name );
+        if ( $path !== false )
         {
-            self::$extensionNameCache[$name] = $name;
-            return $name;
-        }
-
-        foreach ( scandir( $base ) as $entry )
-        {
-            if ( strcasecmp( $entry, $name ) === 0 && is_dir( $base . '/' . $entry ) )
-            {
-                self::$extensionNameCache[$name] = $entry;
-                return $entry;
-            }
+            $realName = basename( $path );
+            self::$extensionNameCache[$name] = $realName;
+            return $realName;
         }
 
         self::$extensionNameCache[$name] = $name;
         return $name;
+    }
+
+    /**
+     * Return the configured extension repository roots in priority order
+     * (low to high). The classic ExtensionDirectory is always first;
+     * AdditionalExtensionDirectories are appended afterwards.
+     *
+     * @param eZINI|null $siteINI Optional site.ini instance
+     * @return array
+     */
+    static function extensionRootDirectories( eZINI|null $siteINI = null ) : array
+    {
+        if ( $siteINI === null )
+            $siteINI = eZINI::instance();
+
+        $roots = array();
+
+        $base = $siteINI->variable( 'ExtensionSettings', 'ExtensionDirectory' );
+        if ( $base !== false && $base !== '' )
+            $roots[] = $base;
+
+        if ( $siteINI->hasVariable( 'ExtensionSettings', 'AdditionalExtensionDirectories' ) )
+        {
+            $additional = (array) $siteINI->variable( 'ExtensionSettings', 'AdditionalExtensionDirectories' );
+            foreach ( $additional as $dir )
+            {
+                $dir = trim( $dir );
+                if ( $dir !== '' )
+                    $roots[] = $dir;
+            }
+        }
+
+        $roots = array_values( array_unique( $roots ) );
+        $roots = self::filterExtensionRootDirectories( $roots );
+        return $roots;
+    }
+
+    /**
+     * Filter hook for extension root directories.
+     * Extensions or project code can redefine this to add roots dynamically.
+     *
+     * @param array $roots
+     * @return array
+     */
+    static function filterExtensionRootDirectories( array $roots ) : array
+    {
+        return $roots;
+    }
+
+    /**
+     * Return the full filesystem path for an extension name, respecting
+     * AdditionalExtensionDirectories precedence (last configured root wins).
+     *
+     * @param string $name
+     * @param eZINI|null $siteINI
+     * @return string|false Full path or false if not found
+     */
+    public static function extensionPath( $name, eZINI|null $siteINI = null )
+    {
+        if ( isset( self::$extensionPathCache[$name] ) )
+            return self::$extensionPathCache[$name];
+
+        $roots = self::extensionRootDirectories( $siteINI );
+        // Search from highest priority (last) to lowest (first) so the
+        // AdditionalExtensionDirectories override rule is applied.
+        $roots = array_reverse( $roots );
+
+        foreach ( $roots as $root )
+        {
+            if ( !is_dir( $root ) )
+                continue;
+
+            $root = rtrim( $root, '/\\' );
+            $direct = $root . '/' . $name;
+            if ( file_exists( $direct ) && is_dir( $direct ) )
+            {
+                self::$extensionPathCache[$name] = $direct;
+                return $direct;
+            }
+
+            foreach ( scandir( $root ) as $entry )
+            {
+                if ( $entry === '.' || $entry === '..' )
+                    continue;
+                if ( strcasecmp( $entry, $name ) === 0 && is_dir( $root . '/' . $entry ) )
+                {
+                    $path = $root . '/' . $entry;
+                    self::$extensionPathCache[$name] = $path;
+                    return $path;
+                }
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -148,8 +237,11 @@ class eZExtension
         }
 
         // cache has to be stored by siteaccess + $extensionType
-        $extensionDirectory = self::baseDirectory();
+        $rootDirectories = self::extensionRootDirectories( $siteINI );
+        $extensionDirectory = self::baseDirectory( $siteINI );
         $expiryHandler = eZExpiryHandler::instance();
+        // Include the configured roots in the cache key so a root list change invalidates the cache
+        $cacheIdentifier = md5( serialize( $activeExtensions ) . serialize( $rootDirectories ) );
         $phpCache = new eZPHPCreator( self::CACHE_DIR, "active_extensions_{$cacheIdentifier}.php" );
         $expiryTime = $expiryHandler->hasTimestamp( 'active-extensions-cache' ) ? $expiryHandler->timestamp( 'active-extensions-cache' ) : 0;
 
@@ -160,9 +252,10 @@ class eZExtension
             // Check that all extensions defined actually exists before storing cache
             foreach ( self::$activeExtensionsCache[$cacheIdentifier] as $activeExtension )
             {
-                if ( !file_exists( $extensionDirectory . '/' . $activeExtension ) )
+                $extensionPath = self::extensionPath( $activeExtension, $siteINI );
+                if ( $extensionPath === false )
                 {
-                    eZDebug::writeError( "Extension '$activeExtension' does not exist, looked for directory '" . $extensionDirectory . '/' . $activeExtension . "'", __METHOD__ );
+                    eZDebug::writeError( "Extension '$activeExtension' does not exist, looked for directory in roots: " . implode( ', ', $rootDirectories ), __METHOD__ );
                 }
             }
 
@@ -241,12 +334,15 @@ class eZExtension
             eZDebug::writeStrict( "Setting parameter \$extensionType to false is deprecated as of 4.4, see doc/bc/4.4!", __METHOD__ );
         }
 
-        $extensionDirectory = self::baseDirectory();
         $activeExtensions   = self::activeExtensions( $extensionType, $siteINI );
         $hasExtensions = false;
         foreach ( $activeExtensions as $activeExtension )
         {
-            $extensionSettingsPath = $extensionDirectory . '/' . $activeExtension . '/settings';
+            $extensionPath = self::extensionPath( $activeExtension, $siteINI );
+            if ( $extensionPath === false )
+                continue;
+
+            $extensionSettingsPath = $extensionPath . '/settings';
 
             if ( $extensionType === 'access' )
                 $siteINI->prependOverrideDir( $extensionSettingsPath, true, 'extension:' . $activeExtension, 'sa-extension' );
@@ -304,7 +400,9 @@ class eZExtension
             $accessName = $GLOBALS['eZCurrentAccess']['name'];
         }
 
-        $extensionSettingsPath = eZExtension::baseDirectory() . '/' . $extension;
+        $extensionSettingsPath = eZExtension::extensionPath( $extension );
+        if ( $extensionSettingsPath === false )
+            return;
 
         if ( $identifier === null )
         {
@@ -379,13 +477,15 @@ class eZExtension
     static function expandedPathList( $extensionList, $subdirectory = false )
     {
         $pathList = array();
-        $extensionBase = eZExtension::baseDirectory();
         foreach ( $extensionList as $extensionName )
         {
-            $path = $extensionBase . '/' . $extensionName;
+            $extensionPath = eZExtension::extensionPath( $extensionName );
+            if ( $extensionPath === false )
+                continue;
+
             if ( $subdirectory )
-                $path .= '/' . $subdirectory;
-            $pathList[] = $path;
+                $extensionPath .= '/' . $subdirectory;
+            $pathList[] = $extensionPath;
         }
         return $pathList;
     }

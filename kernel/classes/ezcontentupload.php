@@ -1388,13 +1388,16 @@ class eZContentUpload
 
         if ( $handlerName !== false )
         {
-            $baseDirectory = eZExtension::baseDirectory();
             $extensionDirectories = eZExtension::activeExtensions();
 
             // Check all extension directories for an upload handler for this mimetype
             foreach ( $extensionDirectories as $extensionDirectory )
             {
-                $handlerPath = $baseDirectory . '/' . $extensionDirectory . '/uploadhandlers/' . $handlerName . ".php";
+                $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+                if ( $extensionBase === false )
+                    continue;
+
+                $handlerPath = $extensionBase . '/uploadhandlers/' . $handlerName . ".php";
                 if ( !file_exists( $handlerPath ) )
                     continue;
 

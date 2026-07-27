@@ -123,11 +123,9 @@ class eZTSTranslator extends eZTranslatorHandler
         if ( !$this->RootCache )
         {
             $roots = array( $ini->variable( 'RegionalSettings', 'TranslationRepository' ) );
-            $extensionBase = eZExtension::baseDirectory();
             $translationExtensions = $ini->variable( 'RegionalSettings', 'TranslationExtensions' );
-            foreach ( $translationExtensions as $translationExtension )
+            foreach ( eZExtension::expandedPathList( $translationExtensions, 'translations' ) as $extensionPath )
             {
-                $extensionPath = $extensionBase . '/' . $translationExtension . '/translations';
                 if ( !$checkMTime || file_exists( $extensionPath ) )
                 {
                     $roots[] = $extensionPath;

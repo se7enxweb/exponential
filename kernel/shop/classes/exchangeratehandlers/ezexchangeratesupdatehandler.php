@@ -51,11 +51,14 @@ class eZExchangeRatesUpdateHandler
         $repositoryDirectories = $shopINI->variable( 'ExchangeRatesSettings', 'RepositoryDirectories' );
         $extensionDirectories = $shopINI->variable( 'ExchangeRatesSettings', 'ExtensionDirectories' );
 
-        $baseDirectory = eZExtension::baseDirectory();
         foreach ( $extensionDirectories as $extensionDirectory )
         {
             if ( !empty( $extensionDirectory ) )
-                $dirList[] = $baseDirectory . '/' . $extensionDirectory . '/exchangeratehandlers';
+            {
+                $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+                if ( $extensionBase !== false )
+                    $dirList[] = $extensionBase . '/exchangeratehandlers';
+            }
         }
 
         foreach ( $repositoryDirectories as $repositoryDirectory )

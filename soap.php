@@ -109,7 +109,11 @@ if ( $enableSOAP == 'true' )
 
     foreach( $soapINI->variable( 'ExtensionSettings', 'SOAPExtensions' ) as $extension )
     {
-        include_once( eZExtension::baseDirectory() . '/' . $extension . '/soap/initialize.php' );
+        $extensionPath = eZExtension::extensionPath( $extension );
+        if ( $extensionPath !== false )
+        {
+            include_once( $extensionPath . '/soap/initialize.php' );
+        }
     }
 
     $server->processRequest();

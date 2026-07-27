@@ -1592,12 +1592,15 @@ else if ( $http->hasPostVariable( "ContentObjectID" )  )
         }
 
         // look for custom content action handlers
-        $baseDirectory = eZExtension::baseDirectory();
         $contentINI = eZINI::instance( 'content.ini' );
         $extensionDirectories = $contentINI->variable( 'ActionSettings', 'ExtensionDirectories' );
         foreach ( $extensionDirectories as $extensionDirectory )
         {
-            $extensionPath = $baseDirectory . '/' . $extensionDirectory . '/actions/content_actionhandler.php';
+            $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+            if ( $extensionBase === false )
+                continue;
+
+            $extensionPath = $extensionBase . '/actions/content_actionhandler.php';
             if ( file_exists( $extensionPath ) )
             {
                 include_once( $extensionPath );

@@ -883,7 +883,11 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 if ( $filterINI->hasVariable( $extendedAttributeFilterID, 'ExtensionName' ) )
                 {
                     $extensionName = $filterINI->variable( $extendedAttributeFilterID, 'ExtensionName' );
-                    include_once( eZExtension::baseDirectory() . "/$extensionName/$filterFile" );
+                    $extensionPath = eZExtension::extensionPath( $extensionName );
+                    if ( $extensionPath !== false )
+                    {
+                        include_once( $extensionPath . "/$filterFile" );
+                    }
                 }
                 else
                 {

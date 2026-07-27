@@ -1902,16 +1902,21 @@ class eZModule
         if ( $useExtensions )
         {
             $extensionRepositories = $moduleINI->variable( 'ModuleSettings', 'ExtensionRepositories' );
-            $extensionDirectory = eZExtension::baseDirectory();
             $activeExtensions = eZExtension::activeExtensions();
             $globalExtensionRepositories = array();
 
             foreach ( $extensionRepositories as $extensionRepository )
             {
                 $extensionRepository = eZExtension::extensionName( $extensionRepository );
-                $extPath = $extensionDirectory . '/' . $extensionRepository;
+                $extPath = eZExtension::extensionPath( $extensionRepository );
                 $modulePath = $extPath . '/modules';
-                if ( !in_array( $extensionRepository, $activeExtensions ) )
+                if ( $extPath === false )
+                {
+                    eZDebug::writeWarning( "Extension '$extensionRepository' was reported to have modules but the extension itself does not exist.\n" .
+                                           "Check the setting ModuleSettings/ExtensionRepositories in module.ini for your extensions.\n" .
+                                           "You should probably remove this extension from the list." );
+                }
+                else if ( !in_array( $extensionRepository, $activeExtensions ) )
                 {
                     eZDebug::writeWarning( "Extension '$extensionRepository' was reported to have modules but has not yet been activated.\n" .
                                            "Check the setting ModuleSettings/ExtensionRepositories in module.ini for your extensions\n" .
@@ -1920,12 +1925,6 @@ class eZModule
                 else if ( file_exists( $modulePath ) )
                 {
                     $globalExtensionRepositories[] = $modulePath;
-                }
-                else if ( !file_exists( $extPath ) )
-                {
-                    eZDebug::writeWarning( "Extension '$extensionRepository' was reported to have modules but the extension itself does not exist.\n" .
-                                           "Check the setting ModuleSettings/ExtensionRepositories in module.ini for your extensions.\n" .
-                                           "You should probably remove this extension from the list." );
                 }
                 else
                 {

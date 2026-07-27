@@ -75,10 +75,13 @@ class eZSiteAccess
             return $currentPath;
 
         $activeExtensions = eZExtension::activeExtensions();
-        $baseDir = eZExtension::baseDirectory();
         foreach ( $activeExtensions as $extension )
         {
-            $currentPath = $baseDir . '/' . $extension . '/settings/siteaccess/' . $siteAccess;
+            $extensionPath = eZExtension::extensionPath( $extension );
+            if ( $extensionPath === false )
+                continue;
+
+            $currentPath = $extensionPath . '/settings/siteaccess/' . $siteAccess;
             if ( file_exists( $currentPath ) )
                 return $currentPath;
         }

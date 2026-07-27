@@ -12,8 +12,19 @@ $module = $Params['Module'];
 
 $tpl = eZTemplate::factory();
 
-$extensionDir = eZExtension::baseDirectory();
-$availableExtensionArray = eZDir::findSubItems( $extensionDir, 'dl' );
+$availableExtensionArray = array();
+foreach ( eZExtension::extensionRootDirectories() as $extensionDir )
+{
+    if ( !is_dir( $extensionDir ) )
+        continue;
+
+    foreach ( eZDir::findSubItems( $extensionDir, 'dl' ) as $extensionName )
+    {
+        // Later roots override earlier roots
+        $availableExtensionArray[$extensionName] = $extensionName;
+    }
+}
+$availableExtensionArray = array_values( $availableExtensionArray );
 
 // open site.ini for reading
 $siteINI = eZINI::instance();

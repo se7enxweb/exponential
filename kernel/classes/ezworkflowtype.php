@@ -196,13 +196,16 @@ class eZWorkflowType
         $group = $typeElements[0];
         $type = $typeElements[1];
 
-        $baseDirectory = eZExtension::baseDirectory();
         $wfINI = eZINI::instance( 'workflow.ini' );
         $repositoryDirectories = $wfINI->variable( 'EventSettings', 'RepositoryDirectories' );
         $extensionDirectories = $wfINI->variable( 'EventSettings', 'ExtensionDirectories' );
         foreach ( $extensionDirectories as $extensionDirectory )
         {
-            $extensionPath = $baseDirectory . '/' . $extensionDirectory . '/eventtypes';
+            $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+            if ( $extensionBase === false )
+                continue;
+
+            $extensionPath = $extensionBase . '/eventtypes';
             if ( file_exists( $extensionPath ) )
                 $repositoryDirectories[] = $extensionPath;
         }

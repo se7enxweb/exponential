@@ -142,7 +142,14 @@ EOT;
             // The default eZ Publish test suite with all core tests
             $suite = new eZTestSuite();
             // Add the extension directories to search for test suites
-            $directories = eZDir::findSubitems( eZExtension::baseDirectory(), 'dl', true );
+            $directories = array();
+            foreach ( eZExtension::extensionRootDirectories() as $extensionRoot )
+            {
+                if ( is_dir( $extensionRoot ) )
+                {
+                    $directories = array_merge( $directories, eZDir::findSubitems( $extensionRoot, 'dl', true ) );
+                }
+            }
         }
         else
         {
@@ -197,7 +204,14 @@ EOT;
         $suite = new eZTestSuite;
 
         // Add suites from extensions.
-        $extensions = eZDir::findSubitems( eZExtension::baseDirectory(), 'dl', true );
+        $extensions = array();
+        foreach ( eZExtension::extensionRootDirectories() as $extensionRoot )
+        {
+            if ( is_dir( $extensionRoot ) )
+            {
+                $extensions = array_merge( $extensions, eZDir::findSubitems( $extensionRoot, 'dl', true ) );
+            }
+        }
 
         foreach( $extensions as $extension )
         {
@@ -257,7 +271,16 @@ EOT;
      */
     protected function normalizeExtensionPath( $path )
     {
-        if ( strpos( $path, eZExtension::baseDirectory() ) === false )
+        $inRoot = false;
+        foreach ( eZExtension::extensionRootDirectories() as $extensionRoot )
+        {
+            if ( strpos( $path, $extensionRoot ) !== false )
+            {
+                $inRoot = true;
+                break;
+            }
+        }
+        if ( !$inRoot )
             $path = eZDir::path( array( eZExtension::baseDirectory(), $path ) );
 
         return $path;

@@ -68,9 +68,6 @@ class eZInstallScriptPackageHandler extends eZPackageHandler
 
     function add( $packageType, $package, $cli, $parameters )
     {
-        $siteINI = eZINI::instance();
-        $extensionDir = $siteINI->variable( 'ExtensionSettings', 'ExtensionDirectory' );
-
         //$cli->output( var_export( $parameters, true ) );
         foreach ( $parameters as $scriptItem )
         {

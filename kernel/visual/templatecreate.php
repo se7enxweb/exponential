@@ -127,7 +127,11 @@ if ( $module->isCurrentAction( 'CreateOverride' ) )
         $filePath = "design/$siteDesign/override/templates";
         if ( $designExtension !== '' )
         {
-            $filePath = eZExtension::baseDirectory() . "/" . $designExtension . "/" . $filePath;
+            $extensionPath = eZExtension::extensionPath( $designExtension );
+            if ( $extensionPath !== false )
+            {
+                $filePath = $extensionPath . "/" . $filePath;
+            }
         }
         $fileName = $filePath . "/" . $templateName . ".tpl";
 

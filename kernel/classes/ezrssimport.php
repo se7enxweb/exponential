@@ -398,9 +398,14 @@ class eZRSSImport extends eZPersistentObject
         $ini = eZINI::instance();
         foreach( $ini->variable( 'RSSSettings', 'ActiveExtensions' ) as $activeExtension )
         {
-            if ( file_exists( eZExtension::baseDirectory() . '/' . $activeExtension . '/rss/' . $activeExtension . 'rssimport.php' ) )
+            $extensionPath = eZExtension::extensionPath( $activeExtension );
+            if ( $extensionPath === false )
+                continue;
+
+            $rssImportFile = $extensionPath . '/rss/' . $activeExtension . 'rssimport.php';
+            if ( file_exists( $rssImportFile ) )
             {
-                include_once( eZExtension::baseDirectory() . '/' . $activeExtension . '/rss/' . $activeExtension . 'rssimport.php' );
+                include_once( $rssImportFile );
                 $fieldDefinition = eZRSSImport::arrayMergeRecursive( $fieldDefinition, call_user_func( array(  $activeExtension . 'rssimport', 'rssFieldDefinition' ), array() ) );
             }
         }

@@ -418,13 +418,9 @@ class eZFilePackageHandler extends eZPackageHandler
                     } break;
                 }
                 $designDirectories = array( 'design' );
-                $extensionBaseDirectory = eZExtension::baseDirectory();
                 $ini = eZINI::instance( 'design.ini' );
                 $extensionDesigns = $ini->variable( 'ExtensionSettings', 'DesignExtensions' );
-                foreach ( $extensionDesigns as $extensionDesign )
-                {
-                    $designDirectories[] = $extensionBaseDirectory . '/' . $extensionDesign . '/design';
-                }
+                $designDirectories = array_merge( $designDirectories, eZExtension::expandedPathList( $extensionDesigns, 'design' ) );
                 if ( file_exists( $file ) )
                 {
                     $preg = '#^';

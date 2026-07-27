@@ -411,7 +411,6 @@ function siteAccessMap( $siteAccessNameArray )
 
 function checkSiteaccess( $siteAccess, $bailOutOnError = false )
 {
-    $extensionBaseDir = eZExtension::baseDirectory();
     $extensionNameArray = eZExtension::activeExtensions();
     $siteAccessSettingsDir = '/settings/siteaccess/';
     $siteAccessExists = false;
@@ -425,7 +424,11 @@ function checkSiteaccess( $siteAccess, $bailOutOnError = false )
         // Not found, check if it exists in extensions
         foreach( $extensionNameArray as $extensionName )
         {
-            $extensionSiteaccessPath = $extensionBaseDir . '/' . $extensionName . $siteAccessSettingsDir . $siteAccess;
+            $extensionBase = eZExtension::extensionPath( $extensionName );
+            if ( $extensionBase === false )
+                continue;
+
+            $extensionSiteaccessPath = $extensionBase . $siteAccessSettingsDir . $siteAccess;
             if( file_exists( $extensionSiteaccessPath ) )
             {
                 $siteAccessExists = true;

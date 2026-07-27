@@ -61,7 +61,14 @@ class eZContentObjectEditHandler
         $contentINI = eZINI::instance( 'content.ini' );
         foreach( array_unique( $contentINI->variable( 'EditSettings', 'ExtensionDirectories' ) ) as $extensionDirectory )
         {
-            $fileName = eZExtension::baseDirectory() . '/' . $extensionDirectory . '/content/' . $extensionDirectory . 'handler.php';
+            $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+            if ( $extensionBase === false )
+            {
+                eZDebug::writeError( 'Could not find extension directory for content object edit handler ( defined in content.ini ) : ' . $extensionDirectory );
+                continue;
+            }
+
+            $fileName = $extensionBase . '/content/' . $extensionDirectory . 'handler.php';
             if ( file_exists( $fileName ) )
             {
                 include_once( $fileName );
@@ -89,7 +96,14 @@ class eZContentObjectEditHandler
         $contentINI = eZINI::instance( 'content.ini' );
         foreach( array_unique( $contentINI->variable( 'EditSettings', 'ExtensionDirectories' ) ) as $extensionDirectory )
         {
-            $fileName = eZExtension::baseDirectory() . '/' . $extensionDirectory . '/content/' . $extensionDirectory . 'handler.php';
+            $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+            if ( $extensionBase === false )
+            {
+                eZDebug::writeError( 'Could not find extension directory for content object edit handler ( defined in content.ini ) : ' . $extensionDirectory );
+                continue;
+            }
+
+            $fileName = $extensionBase . '/content/' . $extensionDirectory . 'handler.php';
             if ( file_exists( $fileName ) )
             {
                 include_once( $fileName );

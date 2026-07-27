@@ -284,10 +284,13 @@ class eZVATManager
         $repositoryDirectories = $shopINI->variable( 'VATSettings', 'RepositoryDirectories' );
         $extensionDirectories = $shopINI->variable( 'VATSettings', 'ExtensionDirectories' );
 
-        $baseDirectory = eZExtension::baseDirectory();
         foreach ( $extensionDirectories as $extensionDirectory )
         {
-            $extensionPath = $baseDirectory . '/' . $extensionDirectory . '/vathandlers';
+            $extensionBase = eZExtension::extensionPath( $extensionDirectory );
+            if ( $extensionBase === false )
+                continue;
+
+            $extensionPath = $extensionBase . '/vathandlers';
             if ( file_exists( $extensionPath ) )
                 $repositoryDirectories[] = $extensionPath;
         }

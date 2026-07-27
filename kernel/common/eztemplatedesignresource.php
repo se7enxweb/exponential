@@ -749,7 +749,6 @@ class eZTemplateDesignResource extends eZTemplateFileResource
         $siteDesignList   = array_unique( $siteDesignList );
 
         $designBaseList     = array();
-        $extensionDirectory = eZExtension::baseDirectory();
         $designStartPath    = eZTemplateDesignResource::designStartPath();
         $extensions         = eZTemplateDesignResource::designExtensions();
 
@@ -758,7 +757,11 @@ class eZTemplateDesignResource extends eZTemplateFileResource
             foreach ( $extensions as $extension )
             {
                 $extension = eZExtension::extensionName( $extension );
-                $path = "$extensionDirectory/$extension/$designStartPath/$design";
+                $extensionPath = eZExtension::extensionPath( $extension );
+                if ( $extensionPath === false )
+                    continue;
+
+                $path = "$extensionPath/$designStartPath/$design";
                 if ( file_exists( $path ) )
                 {
                     $designBaseList[] = $path;

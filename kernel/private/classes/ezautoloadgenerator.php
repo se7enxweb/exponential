@@ -293,6 +293,107 @@ class eZAutoloadGenerator
     }
 
     /**
+     * Returns the configured extension repository roots. If the eZExtension
+     * class is available (autoload.php loaded) the INI setting is used,
+     * otherwise the legacy default 'extension' is returned.
+     *
+     * @return array
+     */
+    protected function getExtensionRoots()
+    {
+        if ( class_exists( 'eZExtension' ) )
+        {
+            return eZExtension::extensionRootDirectories();
+        }
+        return array( 'extension' );
+    }
+
+    /**
+     * Collects all extension package directories across the configured roots,
+     * applying the later-root-wins precedence rule.
+     *
+     * @return array Extension name => absolute path
+     */
+    protected function collectExtensionPackages()
+    {
+        $roots = $this->getExtensionRoots();
+        $packages = array();
+        foreach ( $roots as $root )
+        {
+            $root = rtrim( $root, '/\\' );
+            if ( !is_dir( $root ) )
+                continue;
+
+            $d = @dir( $root );
+            if ( !$d )
+                continue;
+
+            while ( ( $entry = $d->read() ) !== false )
+            {
+                if ( $entry === '.' || $entry === '..' )
+                    continue;
+
+                $fullPath = $root . DIRECTORY_SEPARATOR . $entry;
+                if ( is_dir( $fullPath ) )
+                {
+                    // later roots override earlier ones
+                    $packages[$entry] = $fullPath;
+                }
+            }
+            $d->close();
+        }
+        return $packages;
+    }
+
+    /**
+     * Builds the file list for extension classes / kernel overrides across
+     * all configured extension roots.
+     *
+     * @param array $extraExcludeDirs
+     * @return array
+     */
+    protected function buildExtensionFileList( array $extraExcludeDirs )
+    {
+        $files = array();
+        foreach ( $this->collectExtensionPackages() as $packagePath )
+        {
+            $extraExcludeExtensionDirs = $extraExcludeDirs;
+            $extraExcludeExtensionDirs[] = '@^' . preg_quote( $packagePath, '@' ) . preg_quote( DIRECTORY_SEPARATOR, '@' ) . 'tests@';
+            $packageFiles = $this->buildFileList( $packagePath, $extraExcludeExtensionDirs );
+            if ( is_array( $packageFiles ) )
+            {
+                $files = array_merge( $files, $packageFiles );
+            }
+        }
+        return $files;
+    }
+
+    /**
+     * Builds the file list for extension test files across all configured
+     * extension roots.
+     *
+     * @param array $extraExcludeDirs
+     * @return array
+     */
+    protected function buildExtensionTestsFileList( array $extraExcludeDirs )
+    {
+        $files = array();
+        foreach ( $this->collectExtensionPackages() as $packagePath )
+        {
+            $testsPath = $packagePath . DIRECTORY_SEPARATOR . 'tests';
+            if ( is_dir( $testsPath ) )
+            {
+                $packageFiles = $this->buildFileList( $testsPath, $extraExcludeDirs );
+                if ( is_array( $packageFiles ) )
+                {
+                    $files = array_merge( $files, $packageFiles );
+                }
+            }
+        }
+        return $files;
+    }
+
+    /**
      * Returns an array indexed by location for classes and their filenames.
      *
      * @param string $path The base path to start the search from.
@@ -328,24 +429,22 @@ class eZAutoloadGenerator
             {
                 case self::MODE_KERNEL:
                     $extraExcludeKernelDirs = $extraExcludeDirs;
-                    $extraExcludeKernelDirs[] = "@^{$sanitisedBasePath}{$dirSep}extension@";
+                    foreach ( $this->getExtensionRoots() as $root )
+                    {
+                        $extraExcludeKernelDirs[] = "@^{$sanitisedBasePath}{$dirSep}" . preg_quote( $root, '@' ) . "@";
+                    }
                     $extraExcludeKernelDirs[] = "@^{$sanitisedBasePath}{$dirSep}tests@";
                     $retFiles[$modusOperandi] = $this->buildFileList( $sanitisedBasePath, $extraExcludeKernelDirs );
                     break;
 
                 case self::MODE_EXTENSION:
                 case self::MODE_KERNEL_OVERRIDE:
-                    $extraExcludeExtensionDirs = $extraExcludeDirs;
-                    $extraExcludeExtensionDirs[] = "@^{$sanitisedBasePath}{$dirSep}extension{$dirSep}[^{$dirSep}]+{$dirSep}tests@";
-                    $retFiles[$modusOperandi] = $this->buildFileList( "$sanitisedBasePath/extension", $extraExcludeExtensionDirs );
+                    $retFiles[$modusOperandi] = $this->buildExtensionFileList( $extraExcludeDirs );
                     break;
 
                 case self::MODE_TESTS:
                     $retFiles[$modusOperandi] = $this->buildFileList( "$sanitisedBasePath/tests", $extraExcludeDirs );
-                    $extraExcludeExtensionDirs = $extraExcludeDirs;
-                    $extraExcludeExtensionDirs[] = "@^{$sanitisedBasePath}{$dirSep}extension{$dirSep}[^{$dirSep}]+{$dirSep}(?!tests)@";
-                    $extensionTestFiles = $this->buildFileList("$sanitisedBasePath/extension", $extraExcludeExtensionDirs );
-                    $retFiles[$modusOperandi] = array_merge( $retFiles[$modusOperandi], $extensionTestFiles );
+                    $retFiles[$modusOperandi] = array_merge( $retFiles[$modusOperandi], $this->buildExtensionTestsFileList( $extraExcludeDirs ) );
                     break;
 
                 case self::MODE_SINGLE_EXTENSION:

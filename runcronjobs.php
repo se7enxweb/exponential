@@ -84,13 +84,15 @@ function changeSiteAccessSetting( &$siteaccess, $optionData )
 */
 function isExtensionSiteaccess( $siteaccessName )
 {
-    $ini = eZINI::instance();
-    $extensionDirectory = $ini->variable( 'ExtensionSettings', 'ExtensionDirectory' );
-    $activeExtensions = $ini->variable( 'ExtensionSettings', 'ActiveExtensions' );
+    $activeExtensions = eZINI::instance()->variable( 'ExtensionSettings', 'ActiveExtensions' );
 
     foreach ( $activeExtensions as $extensionName )
     {
-        $possibleExtensionPath = $extensionDirectory . '/' . $extensionName . '/settings/siteaccess/' . $siteaccessName;
+        $extensionPath = eZExtension::extensionPath( $extensionName );
+        if ( $extensionPath === false )
+            continue;
+
+        $possibleExtensionPath = $extensionPath . '/settings/siteaccess/' . $siteaccessName;
         if ( file_exists( $possibleExtensionPath ) )
             return true;
     }
