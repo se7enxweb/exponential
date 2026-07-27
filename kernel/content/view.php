@@ -186,13 +186,21 @@ else
 
             $result = $sevenxValkeyCacheBlock->get( $cacheFileArray['cache_path'], true, 0, $NodeID, 0 );
 
-            if ( $result === false )
+            if ( is_array( $result ) && isset( $result['no_cache'] ) && $result['no_cache'] )
+            {
+                $data = eZNodeviewfunctions::contentViewGenerate( false, $args );
+                $result = $data['content'];
+            }
+            else if ( $result === false )
             {
                 $data = eZNodeviewfunctions::contentViewGenerate( false, $args );
 
                 $result = $data['content']; // Return the $Result array
 
-                $sevenxValkeyCacheBlock->put( $cacheFileArray['cache_path'], $result, 3600, 0, $NodeID );
+                if ( !isset( $result['no_cache'] ) || !$result['no_cache'] )
+                {
+                    $sevenxValkeyCacheBlock->put( $cacheFileArray['cache_path'], $result, 3600, 0, $NodeID );
+                }
             }
         }
         else
