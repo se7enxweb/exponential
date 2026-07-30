@@ -1024,8 +1024,19 @@ class eZScript
                         $cli = eZCLI::instance();
 
                         $cli->warning( 'With great power comes great responsibility.' );
-                        $cli->warning( "You have 10 seconds to break the script (press Ctrl-C)." );
-                        sleep( 10 );
+
+                        $ini = eZINI::instance( 'ezscript.ini' );
+                        $rootDelay = 10;
+                        if ( $ini->hasVariable( 'eZScriptSettings', 'RootDelay' ) )
+                        {
+                            $rootDelay = (int) $ini->variable( 'eZScriptSettings', 'RootDelay' );
+                        }
+
+                        if ( $rootDelay > 0 )
+                        {
+                            $cli->warning( "You have $rootDelay seconds to break the script (press Ctrl-C)." );
+                            sleep( $rootDelay );
+                        }
                     }
                 }
             }
