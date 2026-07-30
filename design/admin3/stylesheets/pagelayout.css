@@ -255,6 +255,39 @@ div.tabs-content.disabled div.tab-content {
     display: none;
 }
 
+#window-controls .tab-content.hide {
+    display: none;
+}
+
+#window-controls {
+    resize: vertical;
+    overflow: hidden;
+    height: 20em;
+    min-height: 20em;
+    display: block;
+}
+
+#window-controls .tabs-content {
+    height: calc(100% - 2.5em);
+    width: 100%;
+    overflow: hidden;
+}
+
+#window-controls .tab-content {
+    padding: 1em;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#window-controls.layouts-active {
+    height: 22em;
+    min-height: 22em;
+}
+
 /* PATH */
 #path {
     padding: 0;

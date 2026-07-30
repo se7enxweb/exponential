@@ -101,8 +101,12 @@
         {/if}
     </li>
 
+{set $additional_tabs_count = $additional_tabs_count|inc(1)}
+{include uri='design:window_controls_extratabs.tpl'}
+{set $additional_tabs_count = $additional_tabs_count|dec(1)}
+
     {* Ordering *}
-    <li id="node-tab-ordering" class="{if $additional_tabs}middle{else}last{/if}{if $node_tab_index|eq('ordering')} selected{/if}">
+    <li id="node-tab-ordering" class="last{if $node_tab_index|eq('ordering')} selected{/if}">
         {if $tabs_disabled}
             <span class="disabled" title="{'Tab is disabled, enable with toggler to the left of these tabs.'|i18n( 'design/admin/node/view/full' )}">{'Ordering'|i18n( 'design/admin/node/view/full' )}</span>
         {else}
@@ -110,7 +114,6 @@
         {/if}
     </li>
 
-{include uri='design:window_controls_extratabs.tpl'}
 </ul>
 <div class="float-break"></div>
 

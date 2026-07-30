@@ -66,6 +66,12 @@ jQuery(function( $ )
                 li.addClass('selected');
                 $( '#' + id + '-content' ).addClass('selected').removeClass('hide');
 
+                var wc = li[0].parentNode.parentNode;
+                if ( wc && wc.id === 'window-controls' )
+                {
+                    $( wc ).toggleClass( 'layouts-active', id === 'node-tab-layouts' );
+                }
+
                 if ( save ) NodeTab.timeout = setTimeout( function(){ NodeTab.saveOpenTab( id ) }, 400 );
             }
         },
