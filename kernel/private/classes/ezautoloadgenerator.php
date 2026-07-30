@@ -454,6 +454,7 @@ class eZAutoloadGenerator
         }
 
         //Make all the paths relative to $path
+        $realBasePath = realpath( $path );
         foreach ( $retFiles as &$fileBundle )
         {
             foreach ( $fileBundle as $key => &$file )
@@ -464,7 +465,11 @@ class eZAutoloadGenerator
                 {
                     $file = strtr( $file, '/', DIRECTORY_SEPARATOR );
                 }
-                $fileBundle[$key] = ezcBaseFile::calculateRelativePath( $file, $path );
+                $realFile = realpath( $file );
+                if ( $realFile !== false )
+                {
+                    $fileBundle[$key] = ezcBaseFile::calculateRelativePath( $realFile, $realBasePath );
+                }
             }
         }
         unset( $file, $fileBundle );
@@ -480,8 +485,11 @@ class eZAutoloadGenerator
      */
     protected function buildFileList( $path, $extraFilter = null )
     {
+        $path = realpath( $path );
+        if ( $path === false )
+            return false;
         $dirSep = preg_quote( DIRECTORY_SEPARATOR );
-        $exclusionFilter = array( "@^{$path}{$dirSep}(var|settings|benchmarks|bin|autoload|port_info|update|templates|tmp|UnitTest|lib{$dirSep}ezc)@" );
+        $exclusionFilter = array( "@^{$path}{$dirSep}(var|settings|benchmarks|bin|autoload|port_info|update|templates|tmp|UnitTest|lib{$dirSep}ezc)($|{$dirSep})@" );
 
         if ( !empty( $extraFilter ) and is_array( $extraFilter ) )
         {
@@ -516,7 +524,6 @@ class eZAutoloadGenerator
         if ( is_string( $excludeFilters ) )
           $excludeFilters = array( $excludeFilters );
 
-        $gen->log( "Scanning for PHP-files." );
         $gen->startProgressOutput( self::OUTPUT_PROGRESS_PHASE1 );
 
         // create the context, and then start walking over the array
@@ -681,7 +688,6 @@ class eZAutoloadGenerator
     protected function getClassFileList( $fileList, $mode )
     {
         $retArray = array();
-        $this->log( "Searching for classes (tokenizing)." );
         $statArray = array( 'nFiles' => count( $fileList ),
                             'classCount' => 0,
                             'classAdded' => 0,
