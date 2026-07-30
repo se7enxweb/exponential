@@ -1909,6 +1909,39 @@ class eZPackage
      */
     function install( &$installParameters )
     {
+        $pkgName = $this->attribute( 'name' );
+        static $installing = array();
+        if ( isset( $installing[$pkgName] ) )
+            return true;
+        $installing[$pkgName] = true;
+
+        // apt-like: pre-install all required packages before this one so that
+        // a site package with install_type=import still pulls in its declared
+        // dependencies (e.g. sevenx_site_simple -> sevenx_democontent images).
+        $dependencies = $this->attribute( 'dependencies' );
+        if ( isset( $dependencies['requires'] ) && is_array( $dependencies['requires'] ) )
+        {
+            foreach ( $dependencies['requires'] as $req )
+            {
+                $reqName = isset( $req['name'] ) ? $req['name'] : false;
+                if ( !$reqName )
+                    continue;
+                $reqPackage = eZPackage::fetch( $reqName );
+                if ( !$reqPackage )
+                {
+                    eZDebug::writeWarning( "Required package '$reqName' not found for '$pkgName'", __METHOD__ );
+                    continue;
+                }
+                if ( !$reqPackage->install( $installParameters ) )
+                {
+                    eZDebug::writeError( "Failed to install required package '$reqName' for '$pkgName'", __METHOD__ );
+                    unset( $installing[$pkgName] );
+                    return false;
+                }
+            }
+        }
+        unset( $installing[$pkgName] );
+
         if ( $this->Parameters['install_type'] != 'install' )
             return true;
         $installItems = $this->Parameters['install'];
