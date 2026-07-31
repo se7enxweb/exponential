@@ -341,8 +341,10 @@ class eZXMLOutputHandler
                     $attrName = $attrNode->nodeName;
                 }
 
-                // classes check
-                if ( $attrName == 'class' )
+                // classes check; docbook elements imported from Ibexa are not
+                // part of the eZXML schema, so only enforce the class
+                // whitelist for schema-registered tags.
+                if ( $attrName == 'class' && in_array( $tagName, $this->XMLSchema->availableElements() ) )
                 {
                     $classesList = $this->XMLSchema->getClassesList( $tagName );
                     if ( !in_array( $attrNode->value, $classesList ) )
