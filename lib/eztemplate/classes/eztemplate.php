@@ -556,6 +556,18 @@ class eZTemplate
             setlocale( LC_CTYPE, $savedLocale );
         }
 
+        // Development aid: name each rendered template in the output, the way
+        // Symfony/Twig debug does. Applies to both the compiled and interpreted
+        // paths because it wraps the finished text. Off unless
+        // [TemplateSettings]ShowTemplatePathComments=enabled.
+        if ( self::showTemplatePathComments() )
+        {
+            $templatePath = isset( $resourceData['template-filename'] ) && $resourceData['template-filename']
+                ? $resourceData['template-filename']
+                : $template;
+            $text = self::wrapWithTemplatePathComment( $text, $templatePath );
+        }
+
         if ( $returnResourceData )
         {
             $resourceData['result_text'] = $text;
@@ -822,6 +834,18 @@ class eZTemplate
             setlocale( LC_CTYPE, $resourceData['locales'] );
         }
 
+        // Every {include} lands here, so this is where the per-template debug
+        // comments are emitted. Pushed around the render rather than wrapping a
+        // string, because the compiled path appends straight into $textElements.
+        $pathCommentTemplate = false;
+        if ( self::showTemplatePathComments() )
+        {
+            $pathCommentTemplate = isset( $resourceData['template-filename'] ) && $resourceData['template-filename']
+                ? $resourceData['template-filename']
+                : $uri;
+            $textElements[] = self::templatePathComment( 'START', $pathCommentTemplate );
+        }
+
         if ( $resourceData['compiled-template'] )
         {
             if ( $this->executeCompiledTemplate( $resourceData, $textElements, $rootNamespace, $currentNamespace, $extraParameters ) )
@@ -841,6 +865,9 @@ class eZTemplate
             $this->setIncludeOutput( $uri, $text );
             $textElements[] = $text;
         }
+
+        if ( $pathCommentTemplate !== false )
+            $textElements[] = self::templatePathComment( 'STOP', $pathCommentTemplate );
 
         if ( $resourceData['locales'] && !empty( $resourceData['locales'] ) )
         {
@@ -2469,6 +2496,63 @@ class eZTemplate
         if ( !isset( $GLOBALS['eZTemplateDebugInternalsEnabled'] ) )
              $GLOBALS['eZTemplateDebugInternalsEnabled'] = eZTemplate::DEBUG_INTERNALS;
         return $GLOBALS['eZTemplateDebugInternalsEnabled'];
+    }
+
+    /**
+     * Whether each rendered template is wrapped in HTML comments naming its path,
+     * mirroring the Symfony/Twig debug output.
+     *
+     * Controlled by [TemplateSettings]ShowTemplatePathComments in site.ini and
+     * disabled unless it is explicitly 'enabled', so production pays only one
+     * cached INI lookup per request.
+     *
+     * @return bool
+     */
+    static function showTemplatePathComments()
+    {
+        if ( !isset( $GLOBALS['eZTemplateShowTemplatePathComments'] ) )
+        {
+            $enabled = false;
+            $ini = eZINI::instance();
+            if ( $ini->hasVariable( 'TemplateSettings', 'ShowTemplatePathComments' ) )
+                $enabled = ( $ini->variable( 'TemplateSettings', 'ShowTemplatePathComments' ) === 'enabled' );
+            $GLOBALS['eZTemplateShowTemplatePathComments'] = $enabled;
+        }
+        return $GLOBALS['eZTemplateShowTemplatePathComments'];
+    }
+
+    /**
+     * Wraps rendered template output in START/STOP HTML comments naming the template.
+     *
+     * @param string $text rendered template output
+     * @param string $path template path to report
+     * @return string
+     */
+    static function wrapWithTemplatePathComment( $text, $path )
+    {
+        if ( !is_string( $path ) or $path === '' or $text === '' or $text === null )
+            return $text;
+
+        return self::templatePathComment( 'START', $path ) . $text
+             . self::templatePathComment( 'STOP', $path );
+    }
+
+    /**
+     * One START/STOP template path comment.
+     *
+     * @param string $marker 'START' or 'STOP'
+     * @param string $path
+     * @return string empty string when $path is unusable
+     */
+    static function templatePathComment( $marker, $path )
+    {
+        if ( !is_string( $path ) or $path === '' )
+            return '';
+
+        // `--` and `>` would close or invalidate the comment.
+        $safePath = str_replace( array( '--', '>' ), array( '- -', '' ), $path );
+
+        return "\n<!-- $marker $safePath -->\n";
     }
 
     /*!
