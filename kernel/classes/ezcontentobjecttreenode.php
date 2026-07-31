@@ -1688,13 +1688,15 @@ class eZContentObjectTreeNode extends eZPersistentObject
                     {
                         case 'Class':
                         {
-                            $sqlPartPart[] = 'ezcontentobject.contentclass_id in (' . implode( ', ', $limitationArray[$ident] ) . ')';
+                            if ( is_array( $limitationArray[$ident] ) && count( $limitationArray[$ident] ) > 0 )
+                                $sqlPartPart[] = 'ezcontentobject.contentclass_id in (' . implode( ', ', $limitationArray[$ident] ) . ')';
                         } break;
 
                         case 'Section':
                         case 'User_Section':
                         {
-                            $sqlPartPart[] = 'ezcontentobject.section_id in (' . implode( ', ', $limitationArray[$ident] ) . ')';
+                            if ( is_array( $limitationArray[$ident] ) && count( $limitationArray[$ident] ) > 0 )
+                                $sqlPartPart[] = 'ezcontentobject.section_id in (' . implode( ', ', $limitationArray[$ident] ) . ')';
                         } break;
 
                         case 'Owner':
@@ -1803,9 +1805,11 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 {
                     $sqlPartPart[] = '( ' . implode( ' ) OR ( ', $sqlPartPartPart ) . ' )';
                 }
-                $sqlParts[] = implode( ' AND ', $sqlPartPart );
+                if ( count( $sqlPartPart ) > 0 )
+                    $sqlParts[] = implode( ' AND ', $sqlPartPart );
             }
-            $sqlPermissionCheckingWhere .= ' AND ((' . implode( ") OR (", $sqlParts ) . ')) ';
+            if ( count( $sqlParts ) > 0 )
+                $sqlPermissionCheckingWhere .= ' AND ((' . implode( ") OR (", $sqlParts ) . ')) ';
         }
 
         $sqlPermissionChecking = array( 'from' => $sqlPermissionCheckingFrom,
