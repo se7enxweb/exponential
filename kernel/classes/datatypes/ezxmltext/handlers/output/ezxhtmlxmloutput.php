@@ -121,6 +121,16 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
                              'renderHandler' => 'renderCustom',
                              'attrNamesTemplate' => array( 'name' => false ) ),
 
+    // Imported Ibexa docbook embeds (ezembed elements with xlink:href refs)
+    'ezembed'      => array( 'renderHandler' => 'renderAll',
+                             'attrNamesTemplate' => array( 'xlink:href' => 'href',
+                                                           'ezxhtml:class' => 'classification',
+                                                           'view' => 'embed_view' ) ),
+
+    // Imported Ibexa docbook paragraphs keep their css class
+    'para'         => array( 'renderHandler' => 'renderAll',
+                             'attrNamesTemplate' => array( 'ezxhtml:class' => 'classification' ) ),
+
     '#text'        => array( 'quickRender' => true,
                              'renderHandler' => 'renderText' )
     );
@@ -688,8 +698,12 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
             }
             $text = htmlspecialchars( $element->textContent );
             $text = str_replace( array( '&amp;nbsp;', "\xC2\xA0" ), '&nbsp;', $text);
-            // Get rid of linebreak and spaces stored in xml file
-            $text = str_replace( "\n", '', $text );
+            // Get rid of linebreak and spaces stored in xml file; inside
+            // imported docbook literallayout they are significant line breaks.
+            if ( $element->parentNode && $element->parentNode->localName === 'literallayout' )
+                $text = str_replace( "\n", "<br/>", $text );
+            else
+                $text = str_replace( "\n", '', $text );
 
             if ( $this->AllowMultipleSpaces )
                 $text = str_replace( '  ', ' &nbsp;', $text );
