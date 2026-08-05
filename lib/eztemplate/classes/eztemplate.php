@@ -565,7 +565,10 @@ class eZTemplate
             $templatePath = isset( $resourceData['template-filename'] ) && $resourceData['template-filename']
                 ? $resourceData['template-filename']
                 : $template;
-            $text = self::wrapWithTemplatePathComment( $text, $templatePath );
+            $templateBase = isset( $resourceData['template-source'] ) && $resourceData['template-source']
+                ? $resourceData['template-source']
+                : ( isset( $resourceData['template-name'] ) ? $resourceData['template-name'] : $template );
+            $text = self::wrapWithTemplatePathComment( $text, $templatePath, $templateBase );
         }
 
         if ( $returnResourceData )
@@ -838,12 +841,16 @@ class eZTemplate
         // comments are emitted. Pushed around the render rather than wrapping a
         // string, because the compiled path appends straight into $textElements.
         $pathCommentTemplate = false;
+        $pathCommentBase = false;
         if ( self::showTemplatePathComments() )
         {
             $pathCommentTemplate = isset( $resourceData['template-filename'] ) && $resourceData['template-filename']
                 ? $resourceData['template-filename']
                 : $uri;
-            $textElements[] = self::templatePathComment( 'START', $pathCommentTemplate );
+            $pathCommentBase = isset( $resourceData['template-source'] ) && $resourceData['template-source']
+                ? $resourceData['template-source']
+                : ( isset( $resourceData['template-name'] ) ? $resourceData['template-name'] : $uri );
+            $textElements[] = self::templatePathComment( 'START', $pathCommentTemplate, $pathCommentBase );
         }
 
         if ( $resourceData['compiled-template'] )
@@ -867,7 +874,7 @@ class eZTemplate
         }
 
         if ( $pathCommentTemplate !== false )
-            $textElements[] = self::templatePathComment( 'STOP', $pathCommentTemplate );
+            $textElements[] = self::templatePathComment( 'STOP', $pathCommentTemplate, $pathCommentBase );
 
         if ( $resourceData['locales'] && !empty( $resourceData['locales'] ) )
         {
@@ -2528,13 +2535,13 @@ class eZTemplate
      * @param string $path template path to report
      * @return string
      */
-    static function wrapWithTemplatePathComment( $text, $path )
+    static function wrapWithTemplatePathComment( $text, $path, $base = false )
     {
         if ( !is_string( $path ) or $path === '' or $text === '' or $text === null )
             return $text;
 
-        return self::templatePathComment( 'START', $path ) . $text
-             . self::templatePathComment( 'STOP', $path );
+        return self::templatePathComment( 'START', $path, $base ) . $text
+             . self::templatePathComment( 'STOP', $path, $base );
     }
 
     /**
@@ -2544,13 +2551,20 @@ class eZTemplate
      * @param string $path
      * @return string empty string when $path is unusable
      */
-    static function templatePathComment( $marker, $path )
+    static function templatePathComment( $marker, $path, $base = false )
     {
         if ( !is_string( $path ) or $path === '' )
             return '';
 
         // `--` and `>` would close or invalidate the comment.
         $safePath = str_replace( array( '--', '>' ), array( '- -', '' ), $path );
+
+        if ( is_string( $base ) and $base !== '' and
+             ( basename( $safePath ) !== basename( $base ) ) )
+        {
+            $safeBase = str_replace( array( '--', '>' ), array( '- -', '' ), $base );
+            $safePath .= ' (' . $safeBase . ')';
+        }
 
         return "\n<!-- $marker $safePath -->\n";
     }

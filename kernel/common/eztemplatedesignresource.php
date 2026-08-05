@@ -391,6 +391,7 @@ class eZTemplateDesignResource extends eZTemplateFileResource
             $tpl->setVariable( 'used', $usedKeys, 'DesignKeys' );
             $tpl->setVariable( 'matched', $matchedKeys, 'DesignKeys' );
             $resourceData['template-filename'] = $file;
+            $resourceData['template-source'] = $path;
             $result = eZTemplateFileResource::handleResourceData( $tpl, $this, $resourceData, $method, $extraParameters );
         }
         else
