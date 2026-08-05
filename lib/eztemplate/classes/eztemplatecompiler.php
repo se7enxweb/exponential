@@ -2174,6 +2174,10 @@ $rbracket
 
                         }
 
+                        $templatePathText = $php->thisVariableText( $tmpResourceData['template-filename'], 0, 0, false );
+                        $templateSource = isset( $tmpResourceData['template-source'] ) ? $tmpResourceData['template-source'] : $tmpResourceData['template-name'];
+                        $templateSourceText = $php->thisVariableText( $templateSource, 0, 0, false );
+
                         /* Generate code to do a namespace switch and includes the template */
                         $code = "\$resourceFound = true;\n\$namespaceStack[] = array( \$rootNamespace, \$currentNamespace );\n";
                         if ( $newRootNamespace )
@@ -2189,7 +2193,9 @@ $rbracket
                         $code .=
                             "\$tpl->createLocalVariablesList();\n" .
                             "\$tpl->appendTemplateFetch( $uriText );\n" . // Make sure the template file is recorded, like in loadURIRoot
+                            "if ( eZTemplate::showTemplatePathComments() )\n{\n    \$$textName .= eZTemplate::templatePathComment( 'START', $templatePathText, $templateSourceText );\n}\n" .
                             "include( '" . eZTemplateCompiler::TemplatePrefix() . "' . $phpScriptText );\n" .
+                            "if ( eZTemplate::showTemplatePathComments() )\n{\n    \$$textName .= eZTemplate::templatePathComment( 'STOP', $templatePathText, $templateSourceText );\n}\n" .
                             "\$tpl->unsetLocalVariables();\n" .
                             "\$tpl->destroyLocalVariablesList();\n" .
                             "list( \$rootNamespace, \$currentNamespace ) = array_pop( \$namespaceStack );\n";
