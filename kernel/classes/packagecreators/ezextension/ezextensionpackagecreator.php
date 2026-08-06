@@ -90,8 +90,17 @@ class eZExtensionPackageCreator extends eZPackageCreationHandler
                 $extensionList[$extensionName] = $extensionName;
             }
         }
+        natcasesort( $extensionList );
+
+        $extensionInfo = array();
+        foreach ( $extensionList as $extensionName )
+        {
+            $extensionInfo[$extensionName] = eZExtension::extensionInfo( $extensionName );
+        }
+
         $extensionList = array_values( $extensionList );
         $tpl->setVariable( 'extension_list', $extensionList );
+        $tpl->setVariable( 'extension_info', $extensionInfo );
     }
 
     function validateExtensionName( $package, $http, $currentStepID, &$stepMap, &$persistentData, &$errorList )
