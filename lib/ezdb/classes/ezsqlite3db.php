@@ -91,12 +91,15 @@ class eZSQLite3DB extends eZDBInterface
             if( !file_exists( $fullPath ) )
                 $fh = fopen($fullPath, 'w') or eZDebug::writeError( "Connection error: Couldn't create database file. Please try again later or inform the system administrator.", "eZSQLite3DB" );
             $connection = new SQLite3( $fullPath );
-            eZDebug::writeDebug( $connection );
+            eZDebug::writeDebug( "Opened SQLite3 database: $fullPath", __METHOD__ );
 
             if ( $connection )
             {
                 $error = $connection->lastErrorCode();
-                eZDebug::writeDebug( gettype( $error ) . '(' . ( $error ? 'true' : 'false' ) . ')' );
+                if ( $error !== 0 )
+                {
+                    eZDebug::writeDebug( "SQLite3 error code: $error - " . $connection->lastErrorMsg(), __METHOD__ );
+                }
             }
             $numAttempts++;
         }
