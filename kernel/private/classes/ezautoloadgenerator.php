@@ -537,7 +537,6 @@ class eZAutoloadGenerator
         sort( $context->elements );
 
         $gen->stopProgressOutput( self::OUTPUT_PROGRESS_PHASE1 );
-        $gen->log( "Scan complete. Found {$context->count} PHP files." );
 
         return $context->elements;
     }
