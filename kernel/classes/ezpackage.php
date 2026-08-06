@@ -1043,8 +1043,13 @@ class eZPackage
     /*!
      Exports the package as a gzip compressed tarball to the directory \a $archivePath
     */
-    function exportToArchive( $archivePath )
+    function exportToArchive( $archivePath, $format = 'tar.gz' )
     {
+        $format = strtolower( $format );
+        $validFormats = array( 'tar.gz', 'tar.bz2', 'zip', 'ezpkg' );
+        if ( !in_array( $format, $validFormats ) )
+            $format = 'tar.gz';
+
         $temporaryExportPath = eZPackage::temporaryExportPath();
         $tempPath = $temporaryExportPath . '/' . $this->attribute( 'name' );
         $this->removeFiles( $tempPath );
@@ -1073,9 +1078,17 @@ class eZPackage
                 eZDir::copy( $dir, $destDir );
         }
 
-        $tarArchivePath = $temporaryExportPath . '/archive.tmp';
-        $tarArchive = ezcArchive::open( $tarArchivePath, ezcArchive::TAR_USTAR );
-        $tarArchive->truncate();
+        $archiveTmpPath = $temporaryExportPath . '/archive.tmp';
+
+        if ( $format === 'zip' )
+        {
+            $archive = ezcArchive::open( $archiveTmpPath, ezcArchive::ZIP );
+        }
+        else
+        {
+            $archive = ezcArchive::open( $archiveTmpPath, ezcArchive::TAR_USTAR );
+        }
+        $archive->truncate();
 
         $prefix = $tempPath . '/';
         $fileList = array();
@@ -1086,14 +1099,25 @@ class eZPackage
             $path = $fileInfo['type'] === 'dir' ?
                 $fileInfo['path'] . '/' . $fileInfo['name'] . '/' :
                 $fileInfo['path'] . '/' . $fileInfo['name'];
-            $tarArchive->append( array( $path ), $prefix );
+            $archive->append( array( $path ), $prefix );
         }
 
-        $tarArchive->close();
+        $archive->close();
 
-        copy( $tarArchivePath, "compress.zlib://$archivePath" );
+        if ( $format === 'tar.gz' || $format === 'ezpkg' )
+        {
+            copy( $archiveTmpPath, "compress.zlib://$archivePath" );
+        }
+        else if ( $format === 'tar.bz2' )
+        {
+            copy( $archiveTmpPath, "compress.bzip2://$archivePath" );
+        }
+        else if ( $format === 'zip' )
+        {
+            copy( $archiveTmpPath, $archivePath );
+        }
 
-        unlink( $tarArchivePath );
+        unlink( $archiveTmpPath );
 
         $this->removeFiles( $tempPath );
         return $archivePath;

@@ -107,7 +107,7 @@ $ViewList["extensions"] = array(
     "default_navigation_part" => 'ezsetupnavigationpart',
     'single_post_actions' => array( 'ActivateExtensionsButton' => 'ActivateExtensions',
                                     'GenerateAutoloadArraysButton' => 'GenerateAutoloadArrays' ),
-    "params" => array( ) );
+    "params" => array( 'ExtensionName', 'ExtensionFormat' ) );
 
 $ViewList['menu'] = array(
     'functions' => array( 'setup' ),

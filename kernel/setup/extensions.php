@@ -9,8 +9,58 @@
 $http = eZHTTPTool::instance();
 $module = $Params['Module'];
 
+// Direct extension download via view parameters: /setup/extensions/<name>/<format>
+$downloadName   = isset( $Params['ExtensionName'] ) ? $Params['ExtensionName'] : false;
+$downloadFormat = isset( $Params['ExtensionFormat'] ) ? strtolower( $Params['ExtensionFormat'] ) : false;
+$validFormats   = array( 'tar.gz', 'tar.bz2', 'zip', 'ezpkg' );
+
+if ( $downloadName && $downloadFormat &&
+     in_array( $downloadFormat, $validFormats ) &&
+     eZExtension::extensionPath( $downloadName ) !== false )
+{
+    $temporaryExportPath = eZPackage::temporaryExportPath();
+    $archiveFile         = $temporaryExportPath . '/' . $downloadName . '.' . $downloadFormat;
+
+    $package = eZPackage::create( $downloadName . '_' . time() );
+    $package->setAttribute( 'is_active', true );
+    eZPackage::packageHandler( 'ezextension' )->addExtension( $package, $downloadName );
+    $package->exportToArchive( $archiveFile, $downloadFormat );
+
+    $mimeTypes = array(
+        'tar.gz'  => 'application/x-gzip',
+        'tar.bz2' => 'application/x-bzip2',
+        'zip'     => 'application/zip',
+        'ezpkg'   => 'application/octet-stream',
+    );
+    $contentType = isset( $mimeTypes[$downloadFormat] ) ? $mimeTypes[$downloadFormat] : 'application/octet-stream';
+    $downloadFileName = preg_replace( '/[^a-zA-Z0-9_-]/', '_', $downloadName ) . '.' . $downloadFormat;
+
+    if ( file_exists( $archiveFile ) )
+    {
+        header( 'Content-Type: ' . $contentType );
+        header( 'Content-Disposition: attachment; filename="' . $downloadFileName . '"' );
+        header( 'Content-Length: ' . filesize( $archiveFile ) );
+        readfile( $archiveFile );
+        unlink( $archiveFile );
+        eZExecution::cleanExit();
+    }
+}
 
 $tpl = eZTemplate::factory();
+
+// Sorting: default A-Z by name, overridable via GET for click-to-sort headers
+$sortBy    = 'name';
+$sortOrder = 'asc';
+if ( $http->hasGetVariable( 'SortBy' ) )
+{
+    $sortBy = strtolower( $http->getVariable( 'SortBy' ) );
+}
+if ( $http->hasGetVariable( 'SortOrder' ) )
+{
+    $sortOrder = strtolower( $http->getVariable( 'SortOrder' ) );
+}
+$sortBy    = in_array( $sortBy, array( 'name', 'version', 'mtime' ) ) ? $sortBy : 'name';
+$sortOrder = in_array( $sortOrder, array( 'asc', 'desc' ) ) ? $sortOrder : 'asc';
 
 $availableExtensionArray = array();
 foreach ( eZExtension::extensionRootDirectories() as $extensionDir )
@@ -24,7 +74,43 @@ foreach ( eZExtension::extensionRootDirectories() as $extensionDir )
         $availableExtensionArray[$extensionName] = $extensionName;
     }
 }
-$availableExtensionArray = array_values( $availableExtensionArray );
+
+// Collect metadata for sorting and display
+$extensionInfo = array();
+foreach ( $availableExtensionArray as $extensionName )
+{
+    $extensionInfo[$extensionName] = eZExtension::extensionInfo( $extensionName );
+}
+
+uasort( $extensionInfo, function( $a, $b ) use ( $sortBy ) {
+    if ( $sortBy === 'mtime' )
+    {
+        $aVal = (int) $a['mtime'];
+        $bVal = (int) $b['mtime'];
+        if ( $aVal === $bVal ) return 0;
+        return $aVal < $bVal ? -1 : 1;
+    }
+    else if ( $sortBy === 'version' )
+    {
+        $aVal = isset( $a['version'] ) && is_string( $a['version'] ) ? $a['version'] : '0';
+        $bVal = isset( $b['version'] ) && is_string( $b['version'] ) ? $b['version'] : '0';
+        return version_compare( $aVal, $bVal );
+    }
+    else
+    {
+        $aVal = isset( $a['name'] ) ? (string) $a['name'] : '';
+        $bVal = isset( $b['name'] ) ? (string) $b['name'] : '';
+    }
+    if ( $aVal === $bVal ) return 0;
+    return strnatcasecmp( $aVal, $bVal );
+} );
+
+if ( $sortOrder === 'desc' )
+{
+    $extensionInfo = array_reverse( $extensionInfo, true );
+}
+
+$availableExtensionArray = array_keys( $extensionInfo );
 
 // open site.ini for reading
 $siteINI = eZINI::instance();
@@ -95,6 +181,9 @@ if ( $module->isCurrentAction( 'GenerateAutoloadArrays' ) )
 
 $tpl->setVariable( "available_extension_array", $availableExtensionArray );
 $tpl->setVariable( "selected_extension_array", $selectedExtensions );
+$tpl->setVariable( "extension_info", $extensionInfo );
+$tpl->setVariable( "sort_by", $sortBy );
+$tpl->setVariable( "sort_order", $sortOrder );
 
 $Result = array();
 $Result['content'] = $tpl->fetch( "design:setup/extensions.tpl" );

@@ -628,7 +628,61 @@ class eZExtension
     */
     static function extensionInfo( $extension )
     {
-        return ezpExtension::getInstance( $extension )->getInfo();
+        $path = eZExtension::extensionPath( $extension );
+        if ( $path === false )
+        {
+            return null;
+        }
+
+        $info = ezpExtension::getInstance( $extension )->getInfo();
+        if ( !is_array( $info ) )
+            $info = array();
+
+        $version = false;
+        foreach ( $info as $key => $value )
+        {
+            if ( is_string( $value ) && strtolower( $key ) === 'version' && $value !== '' )
+            {
+                $version = $value;
+                break;
+            }
+        }
+
+        // Composer fallback for version
+        if ( $version === false && is_readable( $path . '/composer.json' ) )
+        {
+            $composer = json_decode( file_get_contents( $path . '/composer.json' ), true );
+            if ( is_array( $composer ) && isset( $composer['version'] ) && $composer['version'] !== '' )
+                $version = $composer['version'];
+        }
+
+        // Newest file modification time inside the extension tree
+        $fileList = array();
+        eZDir::recursiveList( $path, '', $fileList );
+
+        $mtime = 0;
+        foreach ( $fileList as $item )
+        {
+            if ( $item['type'] !== 'file' )
+                continue;
+
+            $filePath = eZDir::path( array( $path, $item['path'], $item['name'] ) );
+            if ( !@file_exists( $filePath ) )
+                continue;
+
+            $fileMtime = @filemtime( $filePath );
+            if ( $fileMtime > $mtime )
+                $mtime = $fileMtime;
+        }
+
+        if ( $mtime == 0 )
+            $mtime = @filemtime( $path );
+
+        $info['version'] = $version;
+        $info['mtime'] = $mtime;
+        $info['mtime_formatted'] = ( $mtime > 0 ) ? date( 'Y-m-d H:i', $mtime ) : false;
+
+        return $info;
     }
 
     /*!
