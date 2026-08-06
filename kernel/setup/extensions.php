@@ -42,6 +42,7 @@ if ( $downloadName && $downloadFormat &&
         header( 'Content-Length: ' . filesize( $archiveFile ) );
         readfile( $archiveFile );
         unlink( $archiveFile );
+        $package->removeFiles( $package->path() );
         eZExecution::cleanExit();
     }
 }
