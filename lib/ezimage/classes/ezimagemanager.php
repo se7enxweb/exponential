@@ -830,26 +830,38 @@ class eZImageManager
         if ( !$referenceAlias )
             $referenceAlias = 'original';
 
+        $context = '';
+        if ( isset( $parameters['contentobject_id'] ) )
+        {
+            $context = 'ContentObjectID: ' . $parameters['contentobject_id'];
+            if ( isset( $parameters['attribute_id'] ) )
+                $context .= ', AttributeID: ' . $parameters['attribute_id'];
+            $context .= '. ';
+        }
+
         // generate the reference alias if it hasn't been generated yet
         $hasReference = false;
         if ( array_key_exists( $referenceAlias, $existingAliasList ) )
         {
             $fileHandler = eZClusterFileHandler::instance();
-            if ( $fileHandler->fileExists( $existingAliasList[$referenceAlias]['url'] ) )
+            $referenceUrl = isset( $existingAliasList[$referenceAlias]['url'] ) ? $existingAliasList[$referenceAlias]['url'] : '<no url>';
+            $existingAliases = implode( ', ', array_keys( $existingAliasList ) );
+            if ( $fileHandler->fileExists( $referenceUrl ) )
             {
                 $hasReference = true;
             }
             else
             {
-                eZDebug::writeError( "The reference alias $referenceAlias file {$existingAliasList[$referenceAlias]['url']} does not exist", __METHOD__ );
-                eZDebug::writeError( "Error ocurred using URI: " . $_SERVER['REQUEST_URI'] , __METHOD__ );
+                eZDebug::writeNotice( $context . "The reference alias '$referenceAlias' (for alias '$aliasName') file '$referenceUrl' does not exist. Existing aliases: [$existingAliases]. URI: " . $_SERVER['REQUEST_URI'], __METHOD__ );
             }
         }
         if ( !$hasReference )
         {
             if ( $referenceAlias == 'original' )
             {
-                eZDebug::writeError( "Original alias does not exist, cannot create other aliases without it" );
+                $existingAliases = isset( $existingAliasList ) ? implode( ', ', array_keys( $existingAliasList ) ) : '<none>';
+                $originalUrl = isset( $existingAliasList['original']['url'] ) ? $existingAliasList['original']['url'] : '<no url>';
+                eZDebug::writeNotice( $context . "Original alias does not exist, cannot create other aliases without it. Target alias: '$aliasName'. Existing aliases: [$existingAliases]. Original url: '$originalUrl'. URI: " . $_SERVER['REQUEST_URI'], __METHOD__ );
                 return false;
             }
             if ( !$this->createImageAlias( $referenceAlias, $existingAliasList, $parameters ) )

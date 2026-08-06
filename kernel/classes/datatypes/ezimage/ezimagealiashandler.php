@@ -434,7 +434,9 @@ class eZImageAliasHandler
             $original = $aliasList['original'];
             $basename = $original['basename'];
             if ( $imageManager->createImageAlias( $aliasName, $aliasList,
-                                                  array( 'basename' => $basename ) ) )
+                                                  array( 'basename' => $basename,
+                                                         'contentobject_id' => $this->ContentObjectAttributeData['contentobject_id'],
+                                                         'attribute_id' => $this->ContentObjectAttributeData['id'] ) ) )
             {
                 $text = $this->displayText( $original['alternative_text'] );
                 $originalFilename = $original['original_filename'];
