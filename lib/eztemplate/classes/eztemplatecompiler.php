@@ -2730,6 +2730,8 @@ else
     {
         $variableData = $node[2];
         $persistence = array();
+        if ( isset( $node[3] ) and is_array( $node[3] ) )
+            $parameters['node-placement'] = $node[3];
         eZTemplateCompiler::generateVariableDataCode( $php, $tpl, $variableData, $knownTypes, $dataInspection, $persistence, $parameters, $resourceData );
     }
 
@@ -2795,9 +2797,22 @@ else
                 $indexName = "'{$variableDataItem[1][0][1]}'";
 
                 // Add sanity checking
+                $uriText = addcslashes( $resourceData['uri'], '"\\$' );
+                $placementCode = 'false';
+                if ( isset( $parameters['node-placement'] ) and is_array( $parameters['node-placement'] ) and
+                     isset( $parameters['node-placement'][0][0] ) and
+                     isset( $parameters['node-placement'][0][1] ) and
+                     isset( $parameters['node-placement'][2] ) )
+                {
+                    $line = $parameters['node-placement'][0][0];
+                    $column = $parameters['node-placement'][0][1];
+                    $file = $parameters['node-placement'][2];
+                    $fileText = eZPHPCreator::variableText( $file, 0, 0, false );
+                    $placementCode = "array( array( $line, $column ), false, $fileText )";
+                }
                 $code .= ( "if ( !isset( {$phpVar}[{$indexName}] ) )\n" .
                            "{\n" .
-                           "    \$tpl->error( 'eZTemplateCompiler" . ( $resourceData['use-comments'] ? ( ":" . __LINE__ ) : "" ) . "', \"PHP variable \\$phpVar"."[{$indexName}] does not exist, cannot fetch the value.\" );\n" .
+                           "    \$tpl->warning( 'eZTemplateCompiler" . ( $resourceData['use-comments'] ? ( ":" . __LINE__ ) : "" ) . "', \"PHP variable \\$phpVar"."[{$indexName}] does not exist in template variable, using null.\", $placementCode );\n" .
                            "    $phpVar = null;\n" .
                            "}\n" .
                            "else\n    " );
