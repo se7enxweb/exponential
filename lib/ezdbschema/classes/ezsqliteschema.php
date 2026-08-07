@@ -397,7 +397,7 @@ class eZSQLiteSchema extends eZDBSchemaInterface
         }
         else
         {
-            $incrementText = ""; /*"PRIMARY KEY"*/
+            $incrementText = "PRIMARY KEY AUTOINCREMENT";
             if ( $diffFriendly )
             {
                 $sql_def .= "INTEGER\n    $incrementText";
@@ -472,12 +472,15 @@ class eZSQLiteSchema extends eZDBSchemaInterface
         // Make sure the order is as defined by 'offset'
         $indexes = $tableDef['indexes'];
 
-        // We need to add all keys in table definition
-        foreach ( $indexes as $index_name => $index_def )
+        // We need to add all keys in table definition (skip table-level primary if the field already declares it)
+        if ( !$skip_pk )
         {
-            if ( $index_def['type'] == 'primary' )
+            foreach ( $indexes as $index_name => $index_def )
             {
-                $sql_fields[] = ( $diffFriendly ? '' : '  ' ) . self::generateAddIndexSql( $tableName, $index_name, $index_def, $params, true );
+                if ( $index_def['type'] == 'primary' )
+                {
+                    $sql_fields[] = ( $diffFriendly ? '' : '  ' ) . self::generateAddIndexSql( $tableName, $index_name, $index_def, $params, true );
+                }
             }
         }
         $sql .= join( ",\n", $sql_fields );
