@@ -62,6 +62,9 @@ $eZTemplateOperatorArray[] = array( 'class' => 'eZTOCOperator',
 $eZTemplateOperatorArray[] = array( 'class' => 'eZModuleOperator',
                                     'operator_names' => array( 'ezmodule' ) );
 
+$eZTemplateOperatorArray[] = array( 'class' => 'ExpInstallationOperator',
+                                    'operator_names' => array( 'installation_name', 'is_production_system' ) );
+
 // Function autoloading
 
 $eZTemplateFunctionArray = array();
