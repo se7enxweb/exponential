@@ -850,6 +850,15 @@ class eZTemplate
             $pathCommentBase = isset( $resourceData['template-source'] ) && $resourceData['template-source']
                 ? $resourceData['template-source']
                 : ( isset( $resourceData['template-name'] ) ? $resourceData['template-name'] : $uri );
+            $sourceFromMatch = eZTemplateDesignResource::sourceForMatchFile( $resourceData['template-filename'] );
+            if ( is_string( $sourceFromMatch ) &&
+                 $sourceFromMatch !== '' &&
+                 $sourceFromMatch !== $pathCommentBase &&
+                 strpos( $pathCommentBase, $sourceFromMatch ) === false &&
+                 strpos( $sourceFromMatch, $pathCommentBase ) === false )
+            {
+                $pathCommentBase = $sourceFromMatch;
+            }
             $textElements[] = self::templatePathComment( 'START', $pathCommentTemplate, $pathCommentBase );
         }
 
@@ -2559,8 +2568,7 @@ class eZTemplate
         // `--` and `>` would close or invalidate the comment.
         $safePath = str_replace( array( '--', '>' ), array( '- -', '' ), $path );
 
-        if ( is_string( $base ) and $base !== '' and
-             ( basename( $safePath ) !== basename( $base ) ) )
+        if ( is_string( $base ) and $base !== '' and $base !== $path )
         {
             $safeBase = str_replace( array( '--', '>' ), array( '- -', '' ), $base );
             $safePath .= ' (' . $safeBase . ')';

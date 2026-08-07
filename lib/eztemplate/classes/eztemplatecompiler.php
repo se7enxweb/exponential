@@ -2175,7 +2175,17 @@ $rbracket
                         }
 
                         $templatePathText = $php->thisVariableText( $tmpResourceData['template-filename'], 0, 0, false );
-                        $templateSource = isset( $tmpResourceData['template-source'] ) ? $tmpResourceData['template-source'] : $tmpResourceData['template-name'];
+                        $templateSource = false;
+                        if ( isset( $tmpResourceData['template-source'] ) )
+                            $templateSource = $tmpResourceData['template-source'];
+                        if ( !is_string( $templateSource ) || $templateSource === '' )
+                        {
+                            $templateSource = eZTemplateDesignResource::sourceForMatchFile( $tmpResourceData['template-filename'] );
+                            if ( !is_string( $templateSource ) || $templateSource === '' )
+                            {
+                                $templateSource = isset( $tmpResourceData['template-name'] ) ? $tmpResourceData['template-name'] : $originalURI;
+                            }
+                        }
                         $templateSourceText = $php->thisVariableText( $templateSource, 0, 0, false );
 
                         /* Generate code to do a namespace switch and includes the template */

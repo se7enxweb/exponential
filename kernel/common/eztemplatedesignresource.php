@@ -28,6 +28,15 @@ class eZTemplateDesignResource extends eZTemplateFileResource
     protected static $overrideArrayCache = null;
 
     /**
+     * Contains in memory cache of source lookup by resolved match file path.
+     *
+     * @static
+     * @protected
+     * @var $sourceByMatchFileCache null|array
+     */
+    protected static $sourceByMatchFileCache = null;
+
+    /**
      * Constructor
      *
      * @param string $name
@@ -830,6 +839,56 @@ class eZTemplateDesignResource extends eZTemplateFileResource
      * @static
      * @return array
      */
+    /**
+     * Returns the original template source path for a resolved match file.
+     * @param string $matchFile
+     * @return string|false
+     */
+    static function sourceForMatchFile( $matchFile )
+    {
+        if ( self::$sourceByMatchFileCache === null )
+        {
+            eZTemplateDesignResource::overrideArray();
+        }
+        $bestSource = false;
+        if ( is_array( self::$sourceByMatchFileCache ) )
+        {
+            if ( isset( self::$sourceByMatchFileCache[$matchFile] ) )
+            {
+                $bestSource = self::$sourceByMatchFileCache[$matchFile];
+            }
+            foreach ( self::$sourceByMatchFileCache as $candidate => $source )
+            {
+                if ( substr( $matchFile, -strlen( $candidate ) ) === $candidate )
+                {
+                    if ( strpos( $matchFile, $source ) === false )
+                    {
+                        return $source;
+                    }
+                    if ( $bestSource === false )
+                    {
+                        $bestSource = $source;
+                    }
+                }
+            }
+        }
+        if ( $bestSource !== false )
+        {
+            return $bestSource;
+        }
+        if ( preg_match( '#/templates/content/views/([^/]+)/[^/]+\.tpl$#', $matchFile, $matches ) )
+        {
+            $view = $matches[1];
+            $matchFileArray = eZTemplateDesignResource::overrideArray();
+            $sourceKey = "/node/view/{$view}.tpl";
+            if ( isset( $matchFileArray[$sourceKey] ) )
+            {
+                return ltrim( $sourceKey, '/' );
+            }
+        }
+        return false;
+    }
+
     static function overrideArray( $siteAccess = false )
     {
 
@@ -918,6 +977,7 @@ class eZTemplateDesignResource extends eZTemplateFileResource
             $customMatchArray = array();
             $customMatchArray['conditions'] = isset( $overrideSetting['Match'] ) ? $overrideSetting['Match'] : null;
             $customMatchArray['match_file'] = $overrideMatchFilePath;
+            $customMatchArray['match_file_raw'] = $overrideMatchFile;
             $customMatchArray['override_name'] = $overrideName;
 
             $matchFileArray[$overrideSource]['custom_match'][] = $customMatchArray;
@@ -944,6 +1004,30 @@ class eZTemplateDesignResource extends eZTemplateFileResource
         if ( $siteAccess === false )
         {
             self::$overrideArrayCache = $matchFileArray;
+        }
+
+        self::$sourceByMatchFileCache = array();
+        foreach ( $matchFileArray as $source => $matchInfo )
+        {
+            $source = ltrim( $source, '/' );
+            if ( isset( $matchInfo['base_dir'] ) and isset( $matchInfo['template'] ) )
+            {
+                self::$sourceByMatchFileCache[$matchInfo['base_dir'] . $matchInfo['template']] = $source;
+            }
+            if ( isset( $matchInfo['custom_match'] ) and is_array( $matchInfo['custom_match'] ) )
+            {
+                foreach ( $matchInfo['custom_match'] as $customMatch )
+                {
+                    if ( isset( $customMatch['match_file'] ) )
+                    {
+                        self::$sourceByMatchFileCache[$customMatch['match_file']] = $source;
+                    }
+                    if ( isset( $customMatch['match_file_raw'] ) )
+                    {
+                        self::$sourceByMatchFileCache[$customMatch['match_file_raw']] = $source;
+                    }
+                }
+            }
         }
 
         return $matchFileArray;
