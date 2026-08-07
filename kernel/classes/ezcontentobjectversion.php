@@ -1774,10 +1774,13 @@ class eZContentObjectVersion extends eZPersistentObject
             }
         }
         $initialLanguage = $this->attribute( 'initial_language' );
-        $initialLanguageCode = $initialLanguage->attribute( 'locale' );
-        if ( in_array( $initialLanguageCode, $exportedLanguages ) )
+        if ( is_object( $initialLanguage ) )
         {
-            $versionNode->setAttribute( 'initial_language', $initialLanguageCode );
+            $initialLanguageCode = $initialLanguage->attribute( 'locale' );
+            if ( in_array( $initialLanguageCode, $exportedLanguages ) )
+            {
+                $versionNode->setAttribute( 'initial_language', $initialLanguageCode );
+            }
         }
 
         if ( $options['related_objects'] === 'selected' )
