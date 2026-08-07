@@ -963,6 +963,34 @@ class eZContentObject extends eZPersistentObject
     }
 
     /**
+     * Formats a "not found" error with the object id and the caller file/line.
+     */
+    private static function fetchErrorMessage( $id )
+    {
+        $message = "Object not found (id=" . var_export( $id, true ) . ")";
+        $backtrace = debug_backtrace( DEBUG_BACKTRACE_IGNORE_ARGS );
+        foreach ( $backtrace as $trace )
+        {
+            if ( !isset( $trace['file'] ) )
+            {
+                continue;
+            }
+            $class = isset( $trace['class'] ) ? $trace['class'] : '';
+            if ( $class === 'eZContentObject' )
+            {
+                continue;
+            }
+            $message .= " from " . $trace['file'] . ':' . $trace['line'];
+            if ( $class !== '' || isset( $trace['function'] ) )
+            {
+                $message .= ' [' . $class . ( isset( $trace['type'] ) ? $trace['type'] : '' ) . ( isset( $trace['function'] ) ? $trace['function'] : '' ) . ']';
+            }
+            break;
+        }
+        return $message;
+    }
+
+    /**
      * Fetches a content object by ID
      *
      * @param int $id ID of the content object to fetch
@@ -1026,7 +1054,7 @@ class eZContentObject extends eZPersistentObject
             }
             else
             {
-                eZDebug::writeError( "Object not found ($id)", __METHOD__ );
+                eZDebug::writeError( self::fetchErrorMessage( $id ), __METHOD__ );
                 $retValue = null;
                 return $retValue;
             }
@@ -1119,7 +1147,7 @@ class eZContentObject extends eZPersistentObject
             ] );
             if ( !is_array( $rows ) || count( $rows ) !== 1 )
             {
-                eZDebug::writeError( "Object not found ($id)", __METHOD__ );
+                eZDebug::writeError( self::fetchErrorMessage( $id ), __METHOD__ );
                 return null;
             }
             $objectArray = $rows[0];
@@ -1137,7 +1165,7 @@ class eZContentObject extends eZPersistentObject
 
         if ( !is_array( $resArray ) || count( $resArray ) !== 1 )
         {
-            eZDebug::writeError( "Object not found ($id)", __METHOD__ );
+            eZDebug::writeError( self::fetchErrorMessage( $id ), __METHOD__ );
             return null;
         }
 
