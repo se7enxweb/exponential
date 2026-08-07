@@ -1752,8 +1752,11 @@ class eZContentObjectVersion extends eZPersistentObject
             foreach ( $attributes as $attribute )
             {
                 $serializedAttributeNode = $attribute->serialize( $package );
-                $importedSerializedAttributeNode = $dom->importNode( $serializedAttributeNode, true );
-                $translationNode->appendChild( $importedSerializedAttributeNode );
+                if ( is_object( $serializedAttributeNode ) )
+                {
+                    $importedSerializedAttributeNode = $dom->importNode( $serializedAttributeNode, true );
+                    $translationNode->appendChild( $importedSerializedAttributeNode );
+                }
             }
 
             $versionNode->appendChild( $translationNode );
