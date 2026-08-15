@@ -1148,7 +1148,7 @@ class eZContentClassAttribute extends eZPersistentObject
         {
             unset( $GLOBALS['eZContentClassAttributeCacheList'] );
         }
-        if ( $contentClassAttributeID !== false )
+        if ( $contentClassAttributeID !== false && $contentClassAttributeID !== null )
         {
             if ( isset( $GLOBALS['eZContentClassAttributeCache'][$contentClassAttributeID] ) )
             {

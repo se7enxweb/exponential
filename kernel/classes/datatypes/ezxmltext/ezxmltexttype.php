@@ -171,7 +171,11 @@ class eZXMLTextType extends eZDataType
             $xmlText = eZXMLTextType::rawXMLText( $attribute );
 
             $dom = new DOMDocument( '1.0', 'utf-8' );
-            if ( empty( $xmlText ) || !$dom->loadXML( $xmlText ) )
+            $useInternalErrors = libxml_use_internal_errors( true );
+            $shouldContinue = ( empty( $xmlText ) || !$dom->loadXML( $xmlText ) );
+            libxml_clear_errors();
+            libxml_use_internal_errors( $useInternalErrors );
+            if ( $shouldContinue )
                 continue;
 
             // urls
@@ -407,7 +411,10 @@ class eZXMLTextType extends eZDataType
         {
             return $metaData;
         }
+        $useInternalErrors = libxml_use_internal_errors( true );
         $success = $dom->loadXML( $text );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useInternalErrors );
 
         if ( $success )
         {

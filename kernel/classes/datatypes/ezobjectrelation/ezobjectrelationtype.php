@@ -563,7 +563,7 @@ class eZObjectRelationType extends eZDataType
 
         $attributeXMLContent = $this->defaultClassAttributeContent();
         $xmlText = $classObjectAttribute->attribute( 'data_text5' );
-        if ( trim( $xmlText ) != '' )
+        if ( is_string( $xmlText ) && trim( $xmlText ) != '' )
         {
             $doc = $this->parseXML( $xmlText );
             $attributeXMLContent = $this->createClassContentStructure( $doc );

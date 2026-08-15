@@ -382,8 +382,8 @@ class eZStepCreateSites extends eZStepInstaller
             } break;
             case 'hostname':
             {
-                $userSiteaccessName = $siteType['identifier'] . '_' . 'user';
-                $adminSiteaccessName = $siteType['identifier'] . '_' . 'admin';
+                $userSiteaccessName = 'site';
+                $adminSiteaccessName = 'admin';
                 $accessMap['hostname'][$siteType['access_type_value']] = $userSiteaccessName;
                 $accessMap['hostname'][$siteType['admin_access_type_value']] = $adminSiteaccessName;
             } break;

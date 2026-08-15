@@ -712,7 +712,7 @@ class eZObjectRelationListType extends eZDataType
     function initializeClassAttribute( $classAttribute )
     {
         $xmlText = $classAttribute->attribute( 'data_text5' );
-        if ( trim( $xmlText ) == '' )
+        if ( !is_string( $xmlText ) || trim( $xmlText ) == '' )
         {
             $content = $this->defaultClassAttributeContent();
             return $this->storeClassAttributeContent( $classAttribute, $content );
@@ -1458,7 +1458,7 @@ class eZObjectRelationListType extends eZDataType
     function classAttributeContent( $classAttribute )
     {
         $xmlText = $classAttribute->attribute( 'data_text5' );
-        if ( trim( $xmlText ) == '' )
+        if ( !is_string( $xmlText ) || trim( $xmlText ) == '' )
         {
             return $this->defaultClassAttributeContent();
         }

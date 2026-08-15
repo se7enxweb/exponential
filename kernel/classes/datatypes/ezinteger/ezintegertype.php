@@ -466,9 +466,13 @@ class eZIntegerType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $defaultValue = $attributeParametersNode->getElementsByTagName( 'default-value' )->item( 0 )->textContent;
-        $minValue = $attributeParametersNode->getElementsByTagName( 'min-value' )->item( 0 )->textContent;
-        $maxValue = $attributeParametersNode->getElementsByTagName( 'max-value' )->item( 0 )->textContent;
+        $defaultValueNode = $attributeParametersNode->getElementsByTagName( 'default-value' )->item( 0 );
+        $minValueNode = $attributeParametersNode->getElementsByTagName( 'min-value' )->item( 0 );
+        $maxValueNode = $attributeParametersNode->getElementsByTagName( 'max-value' )->item( 0 );
+
+        $defaultValue = $defaultValueNode instanceof DOMNode ? $defaultValueNode->textContent : '';
+        $minValue = $minValueNode instanceof DOMNode ? $minValueNode->textContent : '';
+        $maxValue = $maxValueNode instanceof DOMNode ? $maxValueNode->textContent : '';
 
         if ( strlen( $minValue ) > 0 and strlen( $maxValue ) > 0 )
             $minMaxState = self::HAS_MIN_MAX_VALUE;

@@ -292,6 +292,24 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
 
         $tplSuffix = '';
         $objectID = $element->getAttribute( 'object_id' );
+
+        // Resolve object_remote_id to object_id for embedded media images.
+        $remoteID = $element->getAttribute( 'object_remote_id' );
+        if ( !$objectID && $remoteID )
+        {
+            $object = eZContentObject::fetchByRemoteID( $remoteID );
+            if ( $object && $object instanceof eZContentObject )
+            {
+                $objectID = $object->attribute( 'id' );
+                unset( $attributes['object_remote_id'] );
+            }
+            else
+            {
+                eZDebug::writeWarning( "Can't fetch remote object $remoteID", "XML output handler: embed" );
+                return $ret;
+            }
+        }
+
         if ( $objectID &&
              !empty( $this->ObjectArray["$objectID"] ) )
         {

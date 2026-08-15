@@ -39,7 +39,9 @@ class eZContentOperationCollection
 
         if ( $node === null )
 //            return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+        {
             return false;
+        }
 
 
         $object = $node->attribute( 'object' );

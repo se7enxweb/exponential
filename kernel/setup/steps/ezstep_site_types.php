@@ -460,9 +460,9 @@ class eZStepSiteTypes extends eZStepInstaller
                 $dryRun = ( isset( $this->Http ) && $this->Http->hasPostVariable( 'eZSetupKickstartDryRun' ) );
                 $repositoryID = $dryRun ? 'dryrun' : false;
                 $skipExisting = $dryRun;
-                // In kickstart mode the remote package list should take precedence over the
-                // local repository, because the package index uses different version data.
-                $forceDownload = !$dryRun;
+                // In kickstart mode, prefer local packages and only download from the
+                // remote repository if the package is missing locally.
+                $forceDownload = false;
 
                 $package = $this->downloadAndImportPackage( $chosenSitePackage, $sitePackagesInfoChoosen['url'], $forceDownload, $repositoryID, $skipExisting );
                 if ( is_object( $package ) )

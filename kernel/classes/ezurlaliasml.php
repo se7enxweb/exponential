@@ -286,7 +286,7 @@ class eZURLAliasML extends eZPersistentObject
             $this->IsOriginal = true;
         if ( $this->Action == "nop:" ) // nop entries can always be replaced
             $this->IsOriginal = false;
-        if ( strlen( $this->ActionType ) == 0 )
+        if ( strlen( (string)$this->ActionType ) == 0 )
         {
             if ( preg_match( "#^(.+):#", $this->Action, $matches ) )
                 $this->ActionType = $matches[1];
