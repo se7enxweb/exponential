@@ -371,27 +371,25 @@ class eZStepCreateSites extends eZStepInstaller
         // request_terminate_timeout is the only remaining wall-clock cap.
         @set_time_limit( 0 );
 
+        // The canonical public/admin siteaccess names for this installation.
+        $userSiteaccessName = 'site';
+        $adminSiteaccessName = 'admin';
+
         switch ( $siteType['access_type'] )
         {
             case 'port':
             {
-                $userSiteaccessName = $siteType['identifier'] . '_' . 'user';
-                $adminSiteaccessName = $siteType['identifier'] . '_' . 'admin';
                 $accessMap['port'][$siteType['access_type_value']] = $userSiteaccessName;
                 $accessMap['port'][$siteType['admin_access_type_value']] = $adminSiteaccessName;
             } break;
             case 'hostname':
             {
-                $userSiteaccessName = 'site';
-                $adminSiteaccessName = 'admin';
                 $accessMap['hostname'][$siteType['access_type_value']] = $userSiteaccessName;
                 $accessMap['hostname'][$siteType['admin_access_type_value']] = $adminSiteaccessName;
             } break;
             case 'url':
             default:
             {
-                $userSiteaccessName = $siteType['access_type_value'];
-                $adminSiteaccessName = $siteType['admin_access_type_value'];
                 $accessMap['url'][$siteType['access_type_value']] = $userSiteaccessName;
                 $accessMap['url'][$siteType['admin_access_type_value']] = $adminSiteaccessName;
             } break;
