@@ -57,6 +57,8 @@ return array(
       'EmptyStaticConnections'                                                                            => 'vendor/zetacomponents/signal-slot/tests/test_classes.php',
       'EncryptionTest'                                                                                    => 'vendor/zetacomponents/authentication/tests/filters/token/data/encryption.php',
       'EntryPathTest'                                                                                     => 'vendor/zetacomponents/archive/tests/entry_path_test.php',
+      'ExpInstallationDetailsOutputFilter'                                                                => 'kernel/classes/expinstallationdetailsoutputfilter.php',
+      'ExpInstallationOperator'                                                                           => 'kernel/classes/expinstallationoperator.php',
       'ExtendedMail'                                                                                      => 'vendor/zetacomponents/mail/tests/parser/data/classes/custom_classes.php',
       'Fire'                                                                                              => 'vendor/zetacomponents/signal-slot/tests/static_connections_base_test.php',
       'HelloClass'                                                                                        => 'vendor/zetacomponents/signal-slot/docs/tutorial_slot_types_example2.php',
