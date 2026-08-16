@@ -15,6 +15,7 @@ class eZSiteAccessMatchHostUriTest extends ezpTestCase
     public function setUp(): void
     {
         parent::setUp();
+        ezpINIHelper::setINISetting( "site.ini", "SiteSettings", "DefaultAccess", "admin" );
         ezpINIHelper::setINISetting( "site.ini", "SiteAccessSettings", "MatchOrder", "host_uri" );
         ezpINIHelper::setINISetting(
             "site.ini",
