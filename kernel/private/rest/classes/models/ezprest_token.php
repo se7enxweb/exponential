@@ -91,11 +91,12 @@ class ezpRestToken implements ezcPersistentObject
      */
      public static function generateToken( $vary )
      {
-         mt_srand( base_convert( substr( md5( $vary ), 0, 6 ), 36, 10 ) * microtime( true ) );
-         $a = base_convert( mt_rand(), 10, 36 );
-         $b = base_convert( mt_rand(), 10, 36 );
-         $token = substr( $b . $a, 1, 8 );
-         $tokenHash = sha1( $token );
+         // Security fix (F-01, CWE-330/338): the previous implementation seeded
+         // mt_rand() from a low-entropy value and produced an 8-char token, which
+         // is predictable/brute-forceable. Use a cryptographically secure source.
+         // $vary is kept for signature compatibility but is no longer an entropy
+         // source. The return value stays a hex string (column-width compatible).
+         $tokenHash = bin2hex( random_bytes( 20 ) );
 
          return $tokenHash;
      }
