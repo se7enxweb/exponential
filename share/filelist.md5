@@ -16098,7 +16098,7 @@ ac0e7f256b7eee19367e0a1e12915773  lib/ezutils/classes/ezfloatvalidator.php
 b008cd839568d0cc24f5484274ea91e2  lib/ezutils/classes/ezhttpfile.php
 1967495ec268059798b1c656577c09d0  lib/ezutils/classes/ezhttppersistence.php
 ce1da2761bd79e81221750f76f70222c  lib/ezutils/classes/ezhttptool.php
-118ccd25c37deb327bfcd3961ebf9d73  lib/ezutils/classes/ezini.php
+359e9116c1472e0e5ca1bc5e3846276f  lib/ezutils/classes/ezini.php
 b2781bccfa90dafac49bdf11dcfaf1a0  lib/ezutils/classes/ezinputvalidator.php
 f05703f9ece7ae776c9bed2606486725  lib/ezutils/classes/ezintegervalidator.php
 409c83ba9623749fb60509b3011c8619  lib/ezutils/classes/ezmail.php
@@ -19546,7 +19546,7 @@ f5d4d91edc9244816f9f899fb93083f9  tests/tests/kernel/classes/eZContentFunctionsT
 b42ac940e62b6549d79793edaf733cf6  tests/tests/kernel/classes/eZContentObjectStateTest.php
 68634e40cde8f17ab982829d0b09cc84  tests/tests/kernel/classes/eZContentObjectTest.php
 c4bfbe17e85d28b4a9c30542a11a9535  tests/tests/kernel/classes/eZContentObjectTreeNodeTest.php
-7b81b51ff100129f0c669c0d1da93ea3  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
+db2e70cb930028db8587463d76c53be5  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
 bc1be17c02dde2f94fe4bbcf40f132a5  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
 2943ce8b678fe9da063b50376cbdb14f  tests/tests/kernel/classes/eZExtensionWithoutOrderingTest.php
 d01eeb9f02661238fb98c7777f00eef3  tests/tests/kernel/classes/eZNodeAssignmentTest.php
@@ -19558,7 +19558,7 @@ e2d61cf487f8dd53eacd383add42a83f  tests/tests/kernel/classes/eZProductCollection
 65191b1020fa840fce48ce8ad19f5476  tests/tests/kernel/classes/eZRSSExportTest.php
 596e6b5000ea14d3c4ff5dc3f74969e7  tests/tests/kernel/classes/eZRoleTest.php
 c8e002e744519775fba6164ae17bfe9d  tests/tests/kernel/classes/eZSectionTest.php
-5810e8f18512ab15451b9b00c47c8923  tests/tests/kernel/classes/eZSiteAccessMatchHostUriTest.php
+26e3fccbaa22c10aeece1ed0325e6cd2  tests/tests/kernel/classes/eZSiteAccessMatchHostUriTest.php
 03610cb4858b81485d64979a4d6d0577  tests/tests/kernel/classes/eZSiteAccess_Test.php
 d99a27816656ea3faa2c53d39d51c7cd  tests/tests/kernel/classes/eZSiteDataTest.php
 ca4c78b1e816a606a9d0e251afb57233  tests/tests/kernel/classes/eZSiteInstallerTest.php
@@ -19950,7 +19950,7 @@ b45a8783506d4e33acd3f6243dc99708  tests/tests/lib/eztemplate/eztemplatestringope
 a61040cb1a3f66819c65d6e1c243b127  tests/tests/lib/eztemplate/eztemplatetextoperator_regression_testIssue15852_static.tpl
 ccb160eb5dac7443ecfab42c95e83c2c  tests/tests/lib/eztemplate/suite.php
 4e1af52796f912670bb60f80ebddafda  tests/tests/lib/ezutils/eZHTTPToolTest.php
-c1b634c0ba13483c3ecf74306c759fef  tests/tests/lib/ezutils/eZINITest.php
+b2a6f6704be1fe027b87bb5c4607f23c  tests/tests/lib/ezutils/eZINITest.php
 4cbaa125a592f66569502b1bef2845bd  tests/tests/lib/ezutils/eZMailEzcTest.php
 70979b8034b746d538f16fdf2146cd7d  tests/tests/lib/ezutils/eZMailTest.php
 6a041748b8d90752ae3cbaf02751a3ee  tests/tests/lib/ezutils/eZSysTest.php
@@ -19958,7 +19958,7 @@ d2384956437497d84d83e3384b9626b6  tests/tests/lib/ezutils/eZURITest.php
 92709cc965d12de3e7ae7168fb8cb2da  tests/tests/lib/ezutils/ezdebug_regression.php
 59f5a51fddfbe3dcd0aa8bdd61c01a39  tests/tests/lib/ezutils/ezhttptool_regression.php
 5d05d38bc49c68ee71d9b092f9bde681  tests/tests/lib/ezutils/ezhttptool_test.php
-5f5056aae658ff4d3f4a14175f5c124e  tests/tests/lib/ezutils/ezini_test.php
+a8682e5c2af53c88e481eb6684d5e4a9  tests/tests/lib/ezutils/ezini_test.php
 4cbaa125a592f66569502b1bef2845bd  tests/tests/lib/ezutils/ezmail_ezc_test.php
 dfad48a92d09346a497dfc645e7b7d9f  tests/tests/lib/ezutils/ezmail_test.php
 d9eba5b6398e1ed9cb22b279448722ca  tests/tests/lib/ezutils/ezmutex_regression.php

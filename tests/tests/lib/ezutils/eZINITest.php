@@ -388,12 +388,3 @@ class eZINITest extends ezpTestCase
     }
 }
 
-// Compatibility alias for PHPUnit runners that infer class names from *_test.php filenames.
-if ( !class_exists( 'ezini_test', false ) )
-{
-    class ezini_test extends eZINITest
-    {
-    }
-}
-
-?>
