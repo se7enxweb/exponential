@@ -1315,9 +1315,19 @@ class eZINI
                 if ( $onlyModified && !$this->isVariableModified( $blockName, $varKey ) )
                     continue;
 
-                $newLines = $this->variableToLines( $blockName, $varKey, $varValue, $resetArrays );
                 $parsed = $this->parseRoundTripLines( $lines );
                 $sectionSettings = isset( $parsed['settings'][$blockName] ) ? $parsed['settings'][$blockName] : array();
+
+                // Round-trip mode patches only targeted keys (see
+                // doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md). A variable that already
+                // exists on disk and was never touched via setVariable() must be
+                // left byte-for-byte as-is, even on a full ($onlyModified = false)
+                // save - otherwise every array setting in the file gets reformatted
+                // from BlockValues and loses pre-existing "Key[]" reset markers.
+                if ( isset( $sectionSettings[$varKey] ) && !$this->isVariableModified( $blockName, $varKey ) )
+                    continue;
+
+                $newLines = $this->variableToLines( $blockName, $varKey, $varValue, $resetArrays );
 
                 if ( isset( $sectionSettings[$varKey] ) )
                 {
