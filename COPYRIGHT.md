@@ -1,6 +1,6 @@
 # Exponential Copyright
 
-Copyright © 1998 - 2025, 7x. All rights reserved.
+Copyright © 1998 - 2025, 7x / Exponential Foundation. All rights reserved.
 
 This file is part of Exponential.
 
