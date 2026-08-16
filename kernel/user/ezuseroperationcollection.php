@@ -87,7 +87,9 @@ class eZUserOperationCollection
             // Disable user account and send verification mail to the user
 
             // Create enable account hash and send it to the newly registered user
-            $hash = md5( mt_rand() . time() . $userID );
+            // Security fix (F-02, CWE-330): mt_rand()/time() are predictable, which
+            // makes the activation link guessable. Use a CSPRNG instead.
+            $hash = bin2hex( random_bytes( 16 ) );
 
             if ( eZOperationHandler::operationIsAvailable( 'user_activation' ) )
             {
