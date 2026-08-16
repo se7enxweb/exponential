@@ -13,6 +13,24 @@ class eZExtensionAdditionalDirectoriesTest extends ezpTestCase
     protected static $baseExtensionDir = 'tests/tests/kernel/classes/extensions';
     protected static $additionalExtensionDir = 'tests/tests/kernel/classes/extension_src';
 
+    /**
+     * Detects whether the runtime filesystem is case-sensitive.
+     *
+     * On a case-insensitive filesystem a path with a different case still points
+     * to the same file, so case-specific assertions have to be skipped.
+     */
+    private static function isFilesystemCaseSensitive()
+    {
+        $tempFile = @tempnam( sys_get_temp_dir(), 'ezcase' );
+        if ( $tempFile === false )
+            return true; // default to case-sensitive if we cannot probe
+
+        $lowerCaseFile = strtolower( $tempFile );
+        $isCaseSensitive = !file_exists( $lowerCaseFile );
+        @unlink( $tempFile );
+        return $isCaseSensitive;
+    }
+
     public function setUp(): void
     {
         ezpINIHelper::setINISetting( 'site.ini', 'ExtensionSettings', 'ExtensionDirectory', self::$baseExtensionDir );
@@ -39,6 +57,9 @@ class eZExtensionAdditionalDirectoriesTest extends ezpTestCase
 
     public function testExtensionPathReturnsAdditionalRootWhenOverridden()
     {
+        if ( !self::isFilesystemCaseSensitive() )
+            $this->markTestSkipped( 'Case-specific path resolution cannot be verified on a case-insensitive filesystem.' );
+
         $path = eZExtension::extensionPath( 'override_ext' );
         $this->assertSame( self::$additionalExtensionDir . '/override_ext', $path );
     }
@@ -51,6 +72,9 @@ class eZExtensionAdditionalDirectoriesTest extends ezpTestCase
 
     public function testExtensionNameResolvesCaseFromAdditionalRoot()
     {
+        if ( !self::isFilesystemCaseSensitive() )
+            $this->markTestSkipped( 'Case-specific name resolution cannot be verified on a case-insensitive filesystem.' );
+
         $this->assertSame( 'CaseExt', eZExtension::extensionName( 'caseext' ) );
     }
 

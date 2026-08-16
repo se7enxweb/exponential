@@ -153,8 +153,31 @@ class eZExtension
             $direct = $root . '/' . $name;
             if ( file_exists( $direct ) && is_dir( $direct ) )
             {
-                self::$extensionPathCache[$name] = $direct;
-                return $direct;
+                // The directory was found, but on a case-insensitive filesystem
+                // the caller's name may not match the real on-disk case.
+                // Scan the parent directory and return the exact entry name.
+                $realName = null;
+                foreach ( scandir( $root ) as $entry )
+                {
+                    if ( $entry === '.' || $entry === '..' || !is_dir( $root . '/' . $entry ) )
+                        continue;
+
+                    if ( $entry === $name )
+                    {
+                        $realName = $entry;
+                        break;
+                    }
+
+                    if ( $realName === null && strcasecmp( $entry, $name ) === 0 )
+                        $realName = $entry;
+                }
+
+                if ( $realName !== null )
+                {
+                    $path = $root . '/' . $realName;
+                    self::$extensionPathCache[$name] = $path;
+                    return $path;
+                }
             }
 
             foreach ( scandir( $root ) as $entry )
