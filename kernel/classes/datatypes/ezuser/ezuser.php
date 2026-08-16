@@ -1094,7 +1094,12 @@ WHERE user_id = '" . $userID . "' AND
                     $GLOBALS['eZFailedLoginAttemptUserID'] = $userID;
 
                     $userSetting = eZUserSetting::fetch( $userID );
-                    $isEnabled = $userSetting ? $userSetting->attribute( "is_enabled" ) : true;
+                    // Security fix (F-06, CWE-636/697): fail closed. A user with no
+                    // ezuser_setting row must not be treated as enabled. Normal
+                    // disabling keeps the row (is_enabled=0), so this only affects
+                    // accounts created without a settings row (SQL/package/migration);
+                    // create the row on import if such accounts must be able to log in.
+                    $isEnabled = $userSetting ? (bool) $userSetting->attribute( "is_enabled" ) : false;
                     if ( $hashType != eZUser::hashType() and
                          strtolower( $ini->variable( 'UserSettings', 'UpdateHash' ) ) == 'true' )
                     {
