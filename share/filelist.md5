@@ -3379,7 +3379,6 @@ ad95a4668ddef0b147c3b4519e3e374a  design/simple/images/footer_bg.png
 a5648319b90a195e2ed99bba6bff4d27  design/simple/images/greensheepseeds.png
 b55cb7263a6a0fddf6579475a0646889  design/simple/images/instagram.png
 c7f5a7908e2046d7fa3fc4484a699029  design/simple/images/logo.png
-e6c2415c0ace414e5153670314ce99a9  design/simple/javascript/jquery-3.7.0.min.js
 5b23ded83b6a631b06040ed574e43dd6  design/simple/javascript/jquery.magnific-popup.js
 1a26122e0d3b15f378dcf0f8592488c6  design/simple/javascript/main.js
 088feca59873eb0e294b6a3e15584c2a  design/simple/javascript/main.min.js
@@ -7032,7 +7031,7 @@ b3c4f1886cec3cb20f3b5b7d24aefdd6  extension/exppayment_stripe/patches/4.2.0/kern
 a36b536ce4d84a50d55fa4694d6495f0  extension/exppayment_stripe/patches/4.2.0/kernel/shop/confirmorder.php.original
 ef13d9593d1cd5441ae38a8c1d28d4ee  extension/exppayment_stripe/patches/4.2.0/kernel/shop/confirmorder.php.patched
 69d4be2f2c2a1a6ae2784b189d1d4fad  extension/exppayment_stripe/settings/design.ini.append.php
-126f7fcf942f59b115829cdc4391bcbc  extension/exppayment_stripe/settings/ezjscore.ini
+b9c9c699511da82e0d2dd72c841178dc  extension/exppayment_stripe/settings/ezjscore.ini
 30efe27a0239f38c6a84554a0ca36f77  extension/exppayment_stripe/settings/module.ini.append
 11586d58e038c64c68ea414d51efb28d  extension/exppayment_stripe/settings/module.ini.append.php
 02d7d3e1105e5b199673af56ff2256d0  extension/exppayment_stripe/settings/paymentgateways.ini.append.php
@@ -8979,7 +8978,7 @@ bc1a3f432f301036a4c4780bdf605611  extension/ezie/design/standard/stylesheets/ezi
 b3ae776004136e1df0ef2853a9307d58  extension/ezie/design/standard/templates/ezie/ajax_responses/default_action_response.tpl
 1cadf018e4d7b4ba361d56532287f21f  extension/ezie/design/standard/templates/ezie/ajax_responses/empty_json_response.tpl
 848fe07e30dfeca040db9a82267f48a1  extension/ezie/design/standard/templates/ezie/ajax_responses/prepare.tpl
-11fa3c19de3e95904ae97810551623df  extension/ezie/design/standard/templates/ezie/gui.tpl
+38b021796e4bb582cdc220746ffb3762  extension/ezie/design/standard/templates/ezie/gui.tpl
 40865d6a82e6488921de1f3d7c34fe89  extension/ezie/doc/INSTALL
 0fdb7b6523ce712e77ee4987b3628600  extension/ezie/doc/KNOWN_ISSUES
 673a6c47c03067f308ddfdac15674f61  extension/ezie/doc/TODO
@@ -9032,15 +9031,13 @@ a121a753cc502a75fc503a3baa4d7382  extension/ezjscore/classes/ezjscjavascriptopti
 ac7619b7bf3ad62dd45760f8b3cb8c91  extension/ezjscore/classes/ezjscpacker.php
 38bac1e247d419806ea58986db8db2b5  extension/ezjscore/classes/ezjscserverfunctions.php
 bebf3086c47910b2ff7b4780f3b15659  extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php
-015308bdfa9e3d0af1b2acbbcdcd373e  extension/ezjscore/classes/ezjscserverfunctionsjs.php
+6ae71bb25beb41d461b906d5b83efe88  extension/ezjscore/classes/ezjscserverfunctionsjs.php
 633d6cdc2da127ba03f81aab27df3581  extension/ezjscore/classes/ezjscserverfunctionsnode.php
 c3a01ab4d380dbb0991eb50f49c7aeef  extension/ezjscore/classes/ezjscserverfunctionspublishingqueue.php
 40fa144ef16401fc426d87448733756d  extension/ezjscore/classes/ezjscserverrouter.php
-bdce12c949e78d570c8d44e9c2b23508  extension/ezjscore/design/standard/javascript/jquery-1.10.2.min.js
 12e87d2f3a4c8b347ab13a0764d420a3  extension/ezjscore/design/standard/javascript/jquery-3.7.1.js
 2c872dbe60f4ba70fb85356113d8b35e  extension/ezjscore/design/standard/javascript/jquery-3.7.1.min.js
-eb77f85b8d1437896f0442b57512c720  extension/ezjscore/design/standard/javascript/jquery-migrate-1.1.1.min.js
-eb05d8d73b5b13d8d84308a4751ece96  extension/ezjscore/design/standard/javascript/jquery-migrate-1.2.1.min.js
+9ffeb32e2d9efbf8f70caabded242267  extension/ezjscore/design/standard/javascript/jquery-migrate-3.4.1.min.js
 1da1499aa5174c89c6c3b3609fbae138  extension/ezjscore/design/standard/javascript/jquery-ui-1.10.3.custom.min.js
 6493b1f3d0dc32abb87421c92eabb3f2  extension/ezjscore/design/standard/lib/yui/2.8.2/build/animation/animation-debug.js
 12f97e9124a4d0a92bfcb2ed24e03125  extension/ezjscore/design/standard/lib/yui/2.8.2/build/animation/animation-min.js
@@ -11408,7 +11405,7 @@ d74ebfc49529328d708ae3f1f7d1c918  extension/ezjscore/modules/ezjscore/hello.php
 9e8cde544bb97690275aac1e36370299  extension/ezjscore/modules/ezjscore/module.php
 91b9976788ec51cff6e5ecc6c867c50c  extension/ezjscore/modules/ezjscore/run.php
 cd79b07cce2bbd4e295736ff7c4d9bea  extension/ezjscore/settings/design.ini.append.php
-ea122a99c9045da539702bc058e7df80  extension/ezjscore/settings/ezjscore.ini
+63bcfba4f2d3ee1bb6b9579b2544c084  extension/ezjscore/settings/ezjscore.ini
 a13eb1cb59361c9f259aa92f7a3b995b  extension/ezjscore/settings/module.ini.append.php
 3ea2d0a96e8ee46b2196a54ecc4b3c86  extension/ezjscore/settings/site.ini.append.php
 bfcbb56e6bf327386b91e12569b2a42e  extension/ezjscore/translations/untranslated/translation.ts
@@ -14668,7 +14665,6 @@ ad95a4668ddef0b147c3b4519e3e374a  extension/sevenx_themes_simple/design/simple/i
 a5648319b90a195e2ed99bba6bff4d27  extension/sevenx_themes_simple/design/simple/images/greensheepseeds.png
 b55cb7263a6a0fddf6579475a0646889  extension/sevenx_themes_simple/design/simple/images/instagram.png
 c7f5a7908e2046d7fa3fc4484a699029  extension/sevenx_themes_simple/design/simple/images/logo.png
-e6c2415c0ace414e5153670314ce99a9  extension/sevenx_themes_simple/design/simple/javascript/jquery-3.7.0.min.js
 5b23ded83b6a631b06040ed574e43dd6  extension/sevenx_themes_simple/design/simple/javascript/jquery.magnific-popup.js
 1a26122e0d3b15f378dcf0f8592488c6  extension/sevenx_themes_simple/design/simple/javascript/main.js
 088feca59873eb0e294b6a3e15584c2a  extension/sevenx_themes_simple/design/simple/javascript/main.min.js
@@ -14803,9 +14799,9 @@ eac8d17d3d1a34af20af533c55113e6a  extension/sevenx_themes_simple/packages/produc
 8f5241e07d8ea87ab586e673830e619d  extension/sevenx_themes_simple/packages/user_group-1.0-1.ezpkg
 4871d59ab8c5f1ae00b7d45848209b02  extension/sevenx_themes_simple/settings/design.ini.append.php
 7de76c0891cacd24ab8aab2359b310a7  extension/sevenx_themes_simple/settings/site.ini.append.php
-5932859418f3b5e7a3715f7cd29b7f7b  extension/sevenx_themes_simple/settings/siteaccess/sevenx_site_user/ezjscore.ini
+040e1f3197238741d736cc842e16a9df  extension/sevenx_themes_simple/settings/siteaccess/sevenx_site_user/ezjscore.ini
 0e86dcbf99d326a22920a681bfcce51b  extension/sevenx_themes_simple/settings/siteaccess/sevenx_site_user/override.ini.append.php
-5932859418f3b5e7a3715f7cd29b7f7b  extension/sevenx_themes_simple/settings/siteaccess/site/ezjscore.ini
+040e1f3197238741d736cc842e16a9df  extension/sevenx_themes_simple/settings/siteaccess/site/ezjscore.ini
 0e86dcbf99d326a22920a681bfcce51b  extension/sevenx_themes_simple/settings/siteaccess/site/override.ini.append.php
 b502aeed477a6de4d4dd69da4ba32331  extension/str_replace/.github/FUNDING.yml
 eb723b61539feef013de476e68b5c50a  extension/str_replace/LICENSE
