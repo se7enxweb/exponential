@@ -32,7 +32,9 @@ class eZPDFParser
 
         // fetch the module printout
         ob_start();
-        passthru( "$textExtractionTool $fileName" );
+        // Security hardening (F-05, CWE-78): escape the shell arguments so a path
+        // containing shell metacharacters cannot alter the command.
+        passthru( escapeshellcmd( $textExtractionTool ) . ' ' . escapeshellarg( $fileName ) );
         $metaData = ob_get_contents();
         ob_end_clean();
 

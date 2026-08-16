@@ -30,7 +30,8 @@ class eZWordParser
         $perm = octdec( eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) );
         chmod( $tmpName, $perm );
 
-        exec( "$textExtractionTool $fileName > $tmpName", $ret );
+        // Security hardening (F-05, CWE-78): escape shell arguments.
+        exec( escapeshellcmd( $textExtractionTool ) . ' ' . escapeshellarg( $fileName ) . ' > ' . escapeshellarg( $tmpName ), $ret );
 
         $metaData = "";
         if ( file_exists( $tmpName ) )
