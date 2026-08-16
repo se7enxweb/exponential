@@ -14,6 +14,7 @@ if ( $ezoeIni->hasVariable( 'AtD', 'api_key' )
     $API_KEY = $ezoeIni->variable( 'AtD', 'api_key' );
 }
 
+$postText = '';
 if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
 {
    $postText = trim( file_get_contents('php://input') );
@@ -27,7 +28,11 @@ if ( $API_KEY !== '' )
 // I am a vampire
 // I have lost my fangs
 
-$url = $_GET['url'];
+// Security fix (F-03, CWE-93): $_GET['url'] is used as the request path in a
+// hand-built HTTP request; strip CR/LF so it cannot inject extra headers into
+// the upstream request. $postText is also initialised above to avoid using an
+// undefined variable on non-POST requests.
+$url = isset( $_GET['url'] ) ? str_replace( array( "\r", "\n" ), '', $_GET['url'] ) : '';
 
 /* this function directly from akismet.php by Matt Mullenweg.  *props* */
 function AtD_http_post($request, $host, $path, $port = 80) 
