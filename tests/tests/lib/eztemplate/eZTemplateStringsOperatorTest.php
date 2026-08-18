@@ -82,8 +82,6 @@ if ( !class_exists( 'eZTemplateNodeTool', false ) )
 
 class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
 {
-    protected $backupGlobals = false;
-
     /** @var eZTemplateStringsOperator */
     private $op;
 
