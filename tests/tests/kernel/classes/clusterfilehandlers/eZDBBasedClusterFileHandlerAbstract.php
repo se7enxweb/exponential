@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the eZDBBasedClusterFileHandlerAbstractTest class.
+ * File containing the eZDBBasedClusterFileHandlerAbstract class.
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -9,7 +9,7 @@
  * @group database
  */
 
-require_once __DIR__ . '/eZClusterFileHandlerAbstractTest.php';
+require_once __DIR__ . '/eZClusterFileHandlerAbstract.php';
 
 /**
  * Abstract class that gathers common cluster file handlers tests
@@ -18,7 +18,7 @@ require_once __DIR__ . '/eZClusterFileHandlerAbstractTest.php';
 /**
  * @group database
  */
-abstract class eZDBBasedClusterFileHandlerAbstractTest extends eZClusterFileHandlerAbstractTest
+abstract class eZDBBasedClusterFileHandlerAbstract extends eZClusterFileHandlerAbstract
 {
     /**
      * @var eZMySQLiDB

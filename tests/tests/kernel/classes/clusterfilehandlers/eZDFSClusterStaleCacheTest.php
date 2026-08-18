@@ -9,7 +9,7 @@
  * @group database
  */
 
-require_once __DIR__ . '/eZClusterStaleCacheTest.php';
+require_once __DIR__ . '/eZClusterStaleCacheBase.php';
 
 #[\PHPUnit\Framework\Attributes\Group('database')]
 /**
@@ -20,7 +20,7 @@ require_once __DIR__ . '/eZClusterStaleCacheTest.php';
  * @group database
 
  */
-class eZDFSClusterStaleCacheTest extends eZClusterStaleCacheTest
+class eZDFSClusterStaleCacheTest extends eZClusterStaleCacheBase
 {
     /**
      * Path to the DFS mount

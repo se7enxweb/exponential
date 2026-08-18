@@ -8,7 +8,7 @@
  * @group database
  */
 
-require_once __DIR__ . '/eZDBBasedClusterFileHandlerAbstractTest.php';
+require_once __DIR__ . '/eZDBBasedClusterFileHandlerAbstract.php';
 
 #[\PHPUnit\Framework\Attributes\Group('database')]
 /**
@@ -17,7 +17,7 @@ require_once __DIR__ . '/eZDBBasedClusterFileHandlerAbstractTest.php';
  * @group eZDFS
  * @group database
  */
-class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstractTest
+class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstract
 {
     /**
      * @var string

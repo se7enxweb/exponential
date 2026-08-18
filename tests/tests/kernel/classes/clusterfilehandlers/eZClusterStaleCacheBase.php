@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the eZDBBasedClusterFileHandlerAbstractTest class.
+ * File containing the eZClusterStaleCacheBase class.
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -16,7 +16,7 @@
 /**
  * @group database
  */
-abstract class eZClusterStaleCacheTest extends ezpDatabaseTestCase
+abstract class eZClusterStaleCacheBase extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
 

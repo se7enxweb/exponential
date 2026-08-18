@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../eZDatatypeAbstractTest.php';
+require_once __DIR__ . '/../eZDatatypeAbstract.php';
 #[\PHPUnit\Framework\Attributes\Group('database')]
 /**
  * File containing the eZStringTypeTest class
@@ -10,7 +10,7 @@ require_once __DIR__ . '/../eZDatatypeAbstractTest.php';
  * @package tests
  * @group database
  */
-class eZStringTypeTest extends eZDatatypeAbstractTest
+class eZStringTypeTest extends eZDatatypeAbstract
 {
 
     private function defaultDataSet()
