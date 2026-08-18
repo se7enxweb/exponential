@@ -138,7 +138,7 @@ class eZMailEzcTest extends ezpTestCase
         $mail->addCc( $this->adminEmail, $this->adminName );
 
         $result = $mail->ccReceiverTextList();
-        $expected = array( 'ezp-unittests-01@ez.no' );
+        $expected = array( $this->adminEmail );
 
         $this->assertEquals( $expected, $result );
     }
@@ -164,7 +164,7 @@ class eZMailEzcTest extends ezpTestCase
         $mail->addBcc( $this->adminEmail, $this->adminName );
 
         $result = $mail->bccReceiverTextList();
-        $expected = array( 'ezp-unittests-01@ez.no' );
+        $expected = array( $this->adminEmail );
 
         $this->assertEquals( $expected, $result );
     }

@@ -98,9 +98,18 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
 
         self::$mysqlBootstrapAttempted = true;
 
-        self::$mysql = @new mysqli(
-            self::MYSQL_HOST, self::MYSQL_USER, self::MYSQL_PASS, self::MYSQL_DB
-        );
+        try
+        {
+            self::$mysql = @new mysqli(
+                self::MYSQL_HOST, self::MYSQL_USER, self::MYSQL_PASS, self::MYSQL_DB
+            );
+        }
+        catch ( mysqli_sql_exception $e )
+        {
+            self::$mysql = null;
+            return;
+        }
+
         if ( self::$mysql->connect_errno )
         {
             self::$mysql = null;
