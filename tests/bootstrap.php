@@ -22,11 +22,15 @@
 // ── 1. Composer autoloader ────────────────────────────────────────────────────
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// PHPUnit 11+ removed PHPUnit\TextUI\Configuration\Registry.
-// Older isolated-process code paths still reference it, so provide a minimal shim.
-if ( !class_exists( 'PHPUnit\\TextUI\\Configuration\\Registry' ) )
+// PHPUnit 11 isolated-process child processes use the PHPUNIT_COMPOSER_INSTALL
+// constant to locate vendor/autoload.php.  When tests are run via
+// tests/runtests.php (rather than vendor/bin/phpunit), the constant is never
+// defined, so child processes receive an empty autoload path and cannot load
+// any PHPUnit classes — including PHPUnit\TextUI\Configuration\Registry.
+// Define it here so SeparateProcessTestRunner injects the correct path.
+if ( !defined( 'PHPUNIT_COMPOSER_INSTALL' ) )
 {
-    require_once __DIR__ . '/compat/PHPUnit/TextUI/Configuration/Registry.php';
+    define( 'PHPUNIT_COMPOSER_INSTALL', __DIR__ . '/../vendor/autoload.php' );
 }
 
 // ── 1b. PHPUnit isolated-process children: locate tests/xdebug.ini
