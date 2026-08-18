@@ -194,7 +194,6 @@ class eZImageGDHandler extends eZImageHandler
                 $returnCode = $outputFunction( $outputImage, $outputFile );
             }
 
-            ImageDestroy( $outputImage );
         }
         else
             $returnCode = false;
