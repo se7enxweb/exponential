@@ -33,7 +33,7 @@ class eZContentObjectStateGroupTest extends ezpDatabaseTestCase
         $this->assertFalse( $stateGroup->isValid( $messages ), "Invalid state group identifier '$identifier' was accepted" );
     }
 
-    public static function providerCreateWithvalidIdentifier()
+    public static function providerCreateWithValidIdentifier()
     {
         return array(
             array( 'lowercasechars' ),
