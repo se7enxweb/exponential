@@ -60,7 +60,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock', 'composer.json', '.github/workflows/phpunit.yml') }}
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Install dependencies
@@ -165,7 +165,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache-db.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock', 'composer.json', '.github/workflows/phpunit.yml') }}
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Install dependencies
