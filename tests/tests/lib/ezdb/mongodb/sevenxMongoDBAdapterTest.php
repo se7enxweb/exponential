@@ -25,7 +25,7 @@ require_once __DIR__ . '/stubs.php';
 /**
  * Unit tests for expMongoDB — no live database required.
  */
-class expMongoDBAdapterTest extends PHPUnit\Framework\TestCase
+class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
 {
     // ── Helpers ───────────────────────────────────────────────────────────────
 
