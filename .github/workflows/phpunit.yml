@@ -68,6 +68,14 @@ jobs:
             composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
           fi
 
+      - name: Ensure vendor is present
+        run: |
+          if [[ ! -x vendor/bin/phpunit ]]; then
+            echo "vendor/bin/phpunit is missing, reinstalling dependencies"
+            composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
+          fi
+          test -x vendor/bin/phpunit
+
       # Optional but recommended – regenerates autoloads the same way the project does
       - name: Generate autoloads
         run: php bin/php/ezpgenerateautoloads.php -s -e || true
