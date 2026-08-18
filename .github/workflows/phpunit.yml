@@ -91,6 +91,10 @@ jobs:
       - name: Run PHPUnit
         run: vendor/bin/phpunit --colors=always
 
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
+
   phpunit-db:
     name: Database tests (${{ matrix.db }}, PHP ${{ matrix.php }})
     runs-on: ubuntu-latest
@@ -167,13 +171,7 @@ jobs:
       - name: Install dependencies
         run: |
           cp composer.json "${CI_COMPOSER_FILE}"
-          if [[ "${{ matrix.php }}" == "8.1" || "${{ matrix.php }}" == "8.2" || "${{ matrix.php }}" == "8.3" ]]; then
-            if [[ "${{ matrix.php }}" == "8.1" ]]; then
-              export PHPUNIT_VERSION="^10.5"
-            else
-              export PHPUNIT_VERSION="^11.5"
-            fi
-          fi
+          export PHPUNIT_VERSION="^11.5"
           php -r '$file = getenv("CI_COMPOSER_FILE"); $data = json_decode(file_get_contents($file), true, 512, JSON_THROW_ON_ERROR); if (($phpunit = getenv("PHPUNIT_VERSION")) !== false && $phpunit !== "") { $data["require-dev"]["phpunit/phpunit"] = $phpunit; } $data["require-dev"]["mongodb/mongodb"] = "^1.21"; file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL);'
           COMPOSER="${CI_COMPOSER_FILE}" composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
 
@@ -205,3 +203,7 @@ jobs:
           TEST_TIMEZONE=$(shuf -e UTC America/New_York Asia/Kolkata -n 1)
           echo "$TEST_TIMEZONE"
           php -d date.timezone="$TEST_TIMEZONE" tests/runtests.php --dsn "${{ matrix.dsn }}" --db-per-test tests extension/ezoe
+
+      - name: Clean CI Composer overlay
+        if: always()
+        run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
