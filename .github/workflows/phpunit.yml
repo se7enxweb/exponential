@@ -57,9 +57,9 @@ jobs:
             trap 'rm -f composer.ci-phpunit-legacy.json composer.ci-phpunit-legacy.lock' EXIT
             cp composer.json composer.ci-phpunit-legacy.json
             php -r '$file = "composer.ci-phpunit-legacy.json"; $data = json_decode(file_get_contents($file), true, 512, JSON_THROW_ON_ERROR); $data["require-dev"]["phpunit/phpunit"] = "^11.5"; file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL);'
-            COMPOSER=composer.ci-phpunit-legacy.json composer install --prefer-dist --no-progress --no-interaction --no-scripts --ignore-platform-req=php
+            COMPOSER=composer.ci-phpunit-legacy.json composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
           else
-            composer install --prefer-dist --no-progress --no-interaction --no-scripts --ignore-platform-req=php
+            composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
           fi
 
       # Optional but recommended – regenerates autoloads the same way the project does
