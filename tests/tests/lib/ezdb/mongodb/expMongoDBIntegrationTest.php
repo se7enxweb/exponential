@@ -87,6 +87,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
         }
         catch ( Exception $e )
         {
+            self::$mongoClient    = null;
             self::$mongoSkipReason = 'Cannot connect to MongoDB: ' . $e->getMessage();
         }
     }
