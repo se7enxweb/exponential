@@ -119,11 +119,8 @@ class ezpRestApplicationCacheTest extends ezpRestTestCase
 
         $refObj = new ReflectionObject( $controller );
         $refINIProperty = $refObj->getProperty( 'restINI' );
-        $refINIProperty->setAccessible( true );
         $refINIProperty->setValue( $controller, $this->restINI ); // Forced to do so as using Reflection API makes the object not to use the same singletons...
         $refMethod = $refObj->getMethod( 'isCacheEnabled' );
-        $refMethod->setAccessible( true );
-
         self::assertTrue( $refMethod->invoke( $controller ), 'Rest application cache should be enabled with provided settings : '.print_r( $iniVariables, true ) );
         $this->restINI->load(); // Be sure to reset INI settings
     }
@@ -142,11 +139,8 @@ class ezpRestApplicationCacheTest extends ezpRestTestCase
 
         $refObj = new ReflectionObject( $controller );
         $refINIProperty = $refObj->getProperty( 'restINI' );
-        $refINIProperty->setAccessible( true );
         $refINIProperty->setValue( $controller, $this->restINI );
         $refMethod = $refObj->getMethod( 'isCacheEnabled' );
-        $refMethod->setAccessible( true );
-
         self::assertFalse( $refMethod->invoke( $controller ), 'Rest application cache should be disabled with provided settings : '.print_r( $iniVariables, true ) );
         $this->restINI->load(); // Be sure to reset INI settings
     }
@@ -205,11 +199,8 @@ class ezpRestApplicationCacheTest extends ezpRestTestCase
 
         $refObj = new ReflectionObject( $controller );
         $refINIProperty = $refObj->getProperty( 'restINI' );
-        $refINIProperty->setAccessible( true );
         $refINIProperty->setValue( $controller, $this->restINI ); // Forced to do so as using Reflection API makes the object not to use the same singletons...
         $refMethod = $refObj->getMethod( 'getActionTTL' );
-        $refMethod->setAccessible( true );
-
         $actionSectionName = $routingInfos->controllerClass.'_'.$routingInfos->action.'_CacheSettings';
         $controllerSectionName = $routingInfos->controllerClass.'_CacheSettings';
         if( $this->restINI->hasVariable( $actionSectionName, 'CacheTTL' ) )
@@ -336,7 +327,6 @@ class ezpRestApplicationCacheTest extends ezpRestTestCase
 
         $refObj = new ReflectionObject( $controller );
         $refMethod = $refObj->getMethod( 'generateCacheId' );
-        $refMethod->setAccessible( true );
         self::assertSame( $hashedCacheId, $refMethod->invoke( $controller ),
                           'Cache ID algo must take into account : API Name, API Version, Controller class, Action, Internal variables, Content variables' );
 

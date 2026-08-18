@@ -206,7 +206,6 @@ class eZSysTest extends ezpTestCase
     public function testGetValidWwwDir( $expected, $phpSelf, $scriptFileName, $index )
     {
         $method = new ReflectionMethod( 'eZSys', 'getValidwwwDir' );
-        $method->setAccessible( true );
 
         self::assertEquals( $expected, $method->invoke( null, $phpSelf, $scriptFileName, $index ) );
     }

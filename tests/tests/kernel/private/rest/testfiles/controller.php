@@ -43,7 +43,6 @@ class ezpRestTestController extends ezpRestMvcController
             case 'cacheId':
                 $refObj = new ReflectionObject( $this );
                 $refMethod = $refObj->getMethod( 'generateCacheId' );
-                $refMethod->setAccessible( true );
                 $ret = $refMethod->invoke( $this );
             break;
 
