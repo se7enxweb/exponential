@@ -22,6 +22,9 @@ on:
 permissions:
   contents: read
 
+env:
+  CI_COMPOSER_FILE: composer.ci-phpunit.json
+
 jobs:
   phpunit:
     name: PHPUnit (PHP ${{ matrix.php }})
@@ -40,14 +43,14 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, mysqli, pdo_mysql, pdo_sqlite, zip
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, mongodb, mysqli, pdo_mysql, pdo_sqlite, zip
           coverage: xdebug
           tools: composer:v2
 
-      - name: Install ImageMagick
+      - name: Install system packages
         run: |
           sudo apt-get update
-          sudo apt-get install -y imagemagick
+          sudo apt-get install -y imagemagick libbson-dev libmongoc-dev
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -62,25 +65,22 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
           if [[ "${{ matrix.php }}" == "8.1" || "${{ matrix.php }}" == "8.2" || "${{ matrix.php }}" == "8.3" ]]; then
-            trap 'rm -f composer.ci-phpunit-legacy.json composer.ci-phpunit-legacy.lock' EXIT
-            cp composer.json composer.ci-phpunit-legacy.json
             if [[ "${{ matrix.php }}" == "8.1" ]]; then
               export PHPUNIT_VERSION="^10.5"
             else
               export PHPUNIT_VERSION="^11.5"
             fi
-            php -r '$file = "composer.ci-phpunit-legacy.json"; $data = json_decode(file_get_contents($file), true, 512, JSON_THROW_ON_ERROR); $data["require-dev"]["phpunit/phpunit"] = getenv("PHPUNIT_VERSION"); file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL);'
-            COMPOSER=composer.ci-phpunit-legacy.json composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
-          else
-            composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
           fi
+          php -r '$file = getenv("CI_COMPOSER_FILE"); $data = json_decode(file_get_contents($file), true, 512, JSON_THROW_ON_ERROR); if (($phpunit = getenv("PHPUNIT_VERSION")) !== false && $phpunit !== "") { $data["require-dev"]["phpunit/phpunit"] = $phpunit; } $data["require-dev"]["mongodb/mongodb"] = "^1.21"; file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL);'
+          COMPOSER="${CI_COMPOSER_FILE}" composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
 
       - name: Ensure vendor is present
         run: |
           if [[ ! -x vendor/bin/phpunit ]]; then
             echo "vendor/bin/phpunit is missing, reinstalling dependencies"
-            composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
+            COMPOSER="${CI_COMPOSER_FILE}" composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
           fi
           test -x vendor/bin/phpunit
 
@@ -144,14 +144,14 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, mysqli, pgsql, pdo_mysql, pdo_pgsql, pdo_sqlite, zip
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, mongodb, mysqli, pgsql, pdo_mysql, pdo_pgsql, pdo_sqlite, zip
           coverage: none
           tools: composer:v2
 
-      - name: Install ImageMagick
+      - name: Install system packages
         run: |
           sudo apt-get update
-          sudo apt-get install -y imagemagick
+          sudo apt-get install -y imagemagick libbson-dev libmongoc-dev
 
       - name: Get Composer cache directory
         id: composer-cache-db
@@ -166,25 +166,22 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cp composer.json "${CI_COMPOSER_FILE}"
           if [[ "${{ matrix.php }}" == "8.1" || "${{ matrix.php }}" == "8.2" || "${{ matrix.php }}" == "8.3" ]]; then
-            trap 'rm -f composer.ci-phpunit-legacy.json composer.ci-phpunit-legacy.lock' EXIT
-            cp composer.json composer.ci-phpunit-legacy.json
             if [[ "${{ matrix.php }}" == "8.1" ]]; then
               export PHPUNIT_VERSION="^10.5"
             else
               export PHPUNIT_VERSION="^11.5"
             fi
-            php -r '$file = "composer.ci-phpunit-legacy.json"; $data = json_decode(file_get_contents($file), true, 512, JSON_THROW_ON_ERROR); $data["require-dev"]["phpunit/phpunit"] = getenv("PHPUNIT_VERSION"); file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL);'
-            COMPOSER=composer.ci-phpunit-legacy.json composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
-          else
-            composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
           fi
+          php -r '$file = getenv("CI_COMPOSER_FILE"); $data = json_decode(file_get_contents($file), true, 512, JSON_THROW_ON_ERROR); if (($phpunit = getenv("PHPUNIT_VERSION")) !== false && $phpunit !== "") { $data["require-dev"]["phpunit/phpunit"] = $phpunit; } $data["require-dev"]["mongodb/mongodb"] = "^1.21"; file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL);'
+          COMPOSER="${CI_COMPOSER_FILE}" composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
 
       - name: Ensure vendor is present
         run: |
           if [[ ! -x vendor/bin/phpunit ]]; then
             echo "vendor/bin/phpunit is missing, reinstalling dependencies"
-            composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
+            COMPOSER="${CI_COMPOSER_FILE}" composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
           fi
           test -x vendor/bin/phpunit
 
