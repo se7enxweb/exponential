@@ -49,7 +49,7 @@ class eZPendingActionsTest extends ezpDatabaseTestCase
         }
 
         $res = eZPendingActions::fetchByAction( 'test' );
-        $this->assertInternalType( PHPUnit_Framework_Constraint_IsType::TYPE_ARRAY, $res );
+        $this->assertIsArray( $res );
         foreach($res as $row)
         {
             $this->assertInstanceOf( 'eZPendingActions', $row );
@@ -59,7 +59,7 @@ class eZPendingActionsTest extends ezpDatabaseTestCase
 
         $dateFilter = array( '<=', time() );
         $res = eZPendingActions::fetchByAction( 'test', $dateFilter );
-        $this->assertInternalType( PHPUnit_Framework_Constraint_IsType::TYPE_ARRAY, $res );
+        $this->assertIsArray( $res );
     }
 
     /**

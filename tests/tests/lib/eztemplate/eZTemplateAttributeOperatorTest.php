@@ -47,23 +47,16 @@ class eZTemplateAttributeOperatorTest extends ezpDatabaseTestCase
         $node = eZContentObjectTreeNode::fetch( $nodeId );
         $attrOp = new eZTemplateAttributeOperator();
         $outputTxt = '';
-        $formatterMock = $this->getMock( 'ezpAttributeOperatorFormatterInterface' );
+        $formatterMock = $this->createMock( 'ezpAttributeOperatorFormatterInterface' );
         $formatterMock->expects( $this->any() )
                       ->method( 'line' )
                       ->will( $this->returnValue( __METHOD__ ) );
 
-        try
-        {
-            $attrOp->displayVariable( $node, $formatterMock, true, 2, 0, $outputTxt );
-        }
-        catch ( PHPUnit_Framework_Error $e )
-        {
-            self::fail( "eZTemplateAttributeOperator raises an error when working with objects." );
-        }
+        $attrOp->displayVariable( $node, $formatterMock, true, 2, 0, $outputTxt );
 
         self::assertNotNull( $outputTxt, "Output text is empty." );
         // this is an approxmiate test. The output shoudl contain the name of the object it has been generated correctly.
-        self::assertContains( __METHOD__, $outputTxt, "There is something wrong with the output of the attribute operator. Object name not found." );
+        self::assertStringContainsString( __METHOD__, $outputTxt, "There is something wrong with the output of the attribute operator. Object name not found." );
     }
 }
 ?>

@@ -167,9 +167,6 @@ class eZSQLite3MirrorTest extends PHPUnit\Framework\TestCase
 
     private function assertRegexCompat( string $pattern, string $subject, string $message = '' ): void
     {
-        if ( method_exists( $this, 'assertMatchesRegularExpression' ) )
-            $this->assertMatchesRegularExpression( $pattern, $subject, $message );
-        else
-            $this->assertRegExp( $pattern, $subject, $message );
+        $this->assertMatchesRegularExpression( $pattern, $subject, $message );
     }
 }

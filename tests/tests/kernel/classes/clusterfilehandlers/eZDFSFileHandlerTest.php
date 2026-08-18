@@ -256,7 +256,7 @@ class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstract
     public function testConstructor()
     {
         $clusterHandler = eZClusterFileHandler::instance();
-        self::assertInternalType( 'object', $clusterHandler,
+        self::assertIsObject( $clusterHandler,
             "eZClusterFileHandler::instance() didn't return an object" );
         self::assertInstanceOf( 'eZDFSFileHandler', $clusterHandler,
             "eZClusterFileHandler::instance() didn't return an eZDFSFileHandler" );
@@ -560,7 +560,7 @@ class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstract
 
         $clusterHandler = eZClusterFileHandler::instance( $testFile );
         $stat = $clusterHandler->stat();
-        self::assertInternalType( 'array', $stat );
+        self::assertIsArray( $stat );
         self::assertArrayHasKey( 'name', $stat );
 
         $this->removeFile( $testFile );
@@ -587,7 +587,7 @@ class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstract
 
         $clusterHandler = eZClusterFileHandler::instance( $testFile );
         $size = $clusterHandler->size();
-        self::assertInternalType( "int", $size );
+        self::assertIsInt( $size );
         self::assertEquals( strlen( $contents ), $size );
 
         $this->removeFile( $testFile );
@@ -614,7 +614,7 @@ class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstract
 
         $clusterHandler = eZClusterFileHandler::instance( $testFile );
         $mtime = $clusterHandler->mtime();
-        self::assertInternalType( 'int', $mtime );
+        self::assertIsInt( $mtime );
         self::assertEquals( $curtime, $mtime );
 
         $this->removeFile( $testFile );
@@ -639,7 +639,7 @@ class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstract
 
         $clusterHandler = eZClusterFileHandler::instance( $testFile );
         $name = $clusterHandler->name();
-        self::assertInternalType( 'string', $name );
+        self::assertIsString( $name );
         self::assertEquals( $testFile, $name );
 
         $this->removeFile( $testFile );

@@ -22,6 +22,7 @@
     colors="true"
     displayDetailsOnIncompleteTests="true"
     displayDetailsOnSkippedTests="true"
+    displayDetailsOnTestsThatTriggerDeprecations="true"
     failOnEmptyTestSuite="false"
     cacheDirectory=".phpunit.cache"
     failOnPhpunitWarning="false"
