@@ -11,9 +11,9 @@
 
 set_time_limit( 0 );
 
-require_once 'vendor/autoload.php';
+require_once __DIR__ . '/bootstrap.php';
 
-require_once 'autoload.php';
+require_once __DIR__ . '/../autoload.php';
 
 if ( !class_exists( 'ezpTestRunner', true ) )
 {

@@ -72,6 +72,17 @@ if ( !class_exists( 'PHPUnit_Framework_TestCase', false ) )
     class_alias( \PHPUnit\Framework\TestCase::class, 'PHPUnit_Framework_TestCase' );
 }
 
+if ( !class_exists( 'PHPUnit_Runner_Version', false ) )
+{
+    class PHPUnit_Runner_Version
+    {
+        public static function id(): string
+        {
+            return \PHPUnit\Runner\Version::id();
+        }
+    }
+}
+
 if ( !class_exists( 'PHPUnit_Framework_TestSuite', false ) )
 {
     class PHPUnit_Framework_TestSuite
