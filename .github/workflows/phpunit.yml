@@ -87,3 +87,121 @@ jobs:
 
       - name: Run PHPUnit
         run: vendor/bin/phpunit --colors=always
+
+  phpunit-db:
+    name: Database tests (${{ matrix.db }}, PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php: '8.3'
+            db: mysql
+            dsn: mysql://root@127.0.0.1/testdb
+          - php: '8.3'
+            db: postgresql
+            dsn: postgresql://postgres@127.0.0.1/testdb
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: testdb
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+      postgresql:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -h 127.0.0.1 -U postgres -d postgres"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+
+    env:
+      TEST_DB_NAME: testdb
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, mysqli, pgsql, pdo_mysql, pdo_pgsql, pdo_sqlite, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+
+      - name: Get Composer cache directory
+        id: composer-cache-db
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache-db.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: |
+          if [[ "${{ matrix.php }}" == "8.1" || "${{ matrix.php }}" == "8.2" || "${{ matrix.php }}" == "8.3" ]]; then
+            trap 'rm -f composer.ci-phpunit-legacy.json composer.ci-phpunit-legacy.lock' EXIT
+            cp composer.json composer.ci-phpunit-legacy.json
+            if [[ "${{ matrix.php }}" == "8.1" ]]; then
+              export PHPUNIT_VERSION="^10.5"
+            else
+              export PHPUNIT_VERSION="^11.5"
+            fi
+            php -r '$file = "composer.ci-phpunit-legacy.json"; $data = json_decode(file_get_contents($file), true, 512, JSON_THROW_ON_ERROR); $data["require-dev"]["phpunit/phpunit"] = getenv("PHPUNIT_VERSION"); file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL);'
+            COMPOSER=composer.ci-phpunit-legacy.json composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
+          else
+            composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
+          fi
+
+      - name: Ensure vendor is present
+        run: |
+          if [[ ! -x vendor/bin/phpunit ]]; then
+            echo "vendor/bin/phpunit is missing, reinstalling dependencies"
+            composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
+          fi
+          test -x vendor/bin/phpunit
+
+      - name: Generate autoloads
+        run: php bin/php/ezpgenerateautoloads.php -s -e || true
+
+      - name: Prepare database
+        run: |
+          case "${{ matrix.db }}" in
+            mysql)
+              mysql -h 127.0.0.1 -uroot -e "CREATE DATABASE IF NOT EXISTS ${TEST_DB_NAME};"
+              ;;
+            postgresql)
+              psql -v ON_ERROR_STOP=1 -h 127.0.0.1 -U postgres -d postgres -c "CREATE DATABASE ${TEST_DB_NAME};"
+              psql -v ON_ERROR_STOP=1 -h 127.0.0.1 -U postgres -d "${TEST_DB_NAME}" -c "CREATE EXTENSION IF NOT EXISTS pgcrypto;"
+              ;;
+          esac
+
+      - name: Run database tests
+        run: |
+          TEST_TIMEZONE=$(shuf -e UTC America/New_York Asia/Calcutta -n 1)
+          echo "$TEST_TIMEZONE"
+          php -d date.timezone="$TEST_TIMEZONE" tests/runtests.php --dsn "${{ matrix.dsn }}" --db-per-test tests extension/ezoe
