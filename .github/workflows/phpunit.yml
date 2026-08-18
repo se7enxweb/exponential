@@ -202,6 +202,6 @@ jobs:
 
       - name: Run database tests
         run: |
-          TEST_TIMEZONE=$(shuf -e UTC America/New_York Asia/Calcutta -n 1)
+          TEST_TIMEZONE=$(shuf -e UTC America/New_York Asia/Kolkata -n 1)
           echo "$TEST_TIMEZONE"
           php -d date.timezone="$TEST_TIMEZONE" tests/runtests.php --dsn "${{ matrix.dsn }}" --db-per-test tests extension/ezoe
