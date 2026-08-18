@@ -100,8 +100,6 @@ class eZDebugRegression extends ezpTestCase
     {
         $class = new ReflectionClass( 'eZDebug' );
         $methodIsAllowedByCurrentIP = $class->getMethod( 'isIPInNetIPv6' );
-        $methodIsAllowedByCurrentIP->setAccessible( true );
-
         $object = new eZDebug();
         $this->assertEquals( true, $methodIsAllowedByCurrentIP->invokeArgs( $object, array( '::1', '::1/32' ) ) );
         $this->assertEquals( true, $methodIsAllowedByCurrentIP->invokeArgs( $object, array( '::2', '::1/32' ) ) );
@@ -124,8 +122,6 @@ class eZDebugRegression extends ezpTestCase
     {
         $class = new ReflectionClass( 'eZDebug' );
         $methodIsAllowedByCurrentIP = $class->getMethod( 'packedToBin' );
-        $methodIsAllowedByCurrentIP->setAccessible( true );
-
         $object = new eZDebug();
         $this->assertEquals( '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001', $methodIsAllowedByCurrentIP->invokeArgs( $object, array( inet_pton( '::1' ) ) ) );
         $this->assertEquals( '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111', $methodIsAllowedByCurrentIP->invokeArgs( $object, array( inet_pton( '::7' ) ) ) );
@@ -144,8 +140,6 @@ class eZDebugRegression extends ezpTestCase
     {
         $class = new ReflectionClass( 'eZDebug' );
         $methodIsAllowedByCurrentIP = $class->getMethod( 'isAllowedByCurrentIP' );
-        $methodIsAllowedByCurrentIP->setAccessible( true );
-
         $object = new eZDebug();
         $this->assertEquals( true, $methodIsAllowedByCurrentIP->invokeArgs( $object, array( array( '::1/32', 'commandline' ) ) ) );
     }
@@ -161,8 +155,6 @@ class eZDebugRegression extends ezpTestCase
     {
         $class = new ReflectionClass( 'eZDebug' );
         $methodIsAllowedByCurrentIP = $class->getMethod( 'isAllowedByCurrentIP' );
-        $methodIsAllowedByCurrentIP->setAccessible( true );
-
         $object = new eZDebug();
         $this->assertEquals( true, $methodIsAllowedByCurrentIP->invokeArgs( $object, array( array( '2001:db8:1234::/48', 'commandline' ) ) ) );
     }
@@ -178,8 +170,6 @@ class eZDebugRegression extends ezpTestCase
     {
         $class = new ReflectionClass( 'eZDebug' );
         $methodIsAllowedByCurrentIP = $class->getMethod( 'isAllowedByCurrentIP' );
-        $methodIsAllowedByCurrentIP->setAccessible( true );
-
         $object = new eZDebug();
         $this->assertEquals( true, $methodIsAllowedByCurrentIP->invokeArgs( $object, array( array( '127.0.0.1/32', 'commandline' ) ) ) );
     }
@@ -195,8 +185,6 @@ class eZDebugRegression extends ezpTestCase
     {
         $class = new ReflectionClass( 'eZDebug' );
         $methodIsAllowedByCurrentIP = $class->getMethod( 'isAllowedByCurrentIP' );
-        $methodIsAllowedByCurrentIP->setAccessible( true );
-
         $object = new eZDebug();
         $this->assertEquals( true, $methodIsAllowedByCurrentIP->invokeArgs( $object, array( array( '192.0.2.0/24', 'commandline' ) ) ) );
     }

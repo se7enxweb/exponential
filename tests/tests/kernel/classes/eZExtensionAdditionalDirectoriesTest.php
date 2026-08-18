@@ -122,11 +122,9 @@ class eZExtensionAdditionalDirectoriesTest extends ezpTestCase
         $reflection = new ReflectionClass( 'eZExtension' );
 
         $nameCache = $reflection->getProperty( 'extensionNameCache' );
-        $nameCache->setAccessible( true );
         $nameCache->setValue( null, array() );
 
         $pathCache = $reflection->getProperty( 'extensionPathCache' );
-        $pathCache->setAccessible( true );
         $pathCache->setValue( null, array() );
     }
 
