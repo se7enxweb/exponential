@@ -9,7 +9,7 @@
  * @group database
  */
 
-require_once __DIR__ . '/eZClusterFileHandlerAbstractTest.php';
+require_once __DIR__ . '/eZClusterFileHandlerAbstract.php';
 
 /**
  * Abstract class that gathers common cluster file handlers tests

@@ -447,7 +447,7 @@ class eZMailTest extends ezpTestCase
         $endl = "\r\n";
 
         if ( empty( $users ) )
-            return array( array( '', '' ) );
+            return array();
 
         /*
             Each entry in this array is an array consisting of two arrays.
@@ -748,6 +748,7 @@ class eZMailTest extends ezpTestCase
     }
 
     #[DataProvider('providerTestSendEmail')]
+    #[\PHPUnit\Framework\Attributes\Group('mail-live')]
     public function testSendEmail( $sendData, $expectedResult )
     {
         if( empty( $sendData ) )
@@ -939,6 +940,7 @@ class eZMailTest extends ezpTestCase
         $this->assertFalse( strpos( $mail->Mail->generateHeaders(), 'Bcc: Jim Doe <jimdoe@example.com>' ) > 0 );
     }
 
+    #[\PHPUnit\Framework\Attributes\Group('mail-live')]
     public function testSSLSending()
     {
         // test SSL
@@ -947,7 +949,7 @@ class eZMailTest extends ezpTestCase
         //if SSL information is not set, skip this test
         if ( empty( $mailSetting ) || empty( $mailSetting['TransportServer'] ) )
         {
-            self::markTestSkipped( 'SSL mail settings not configured' );
+            $this->markTestSkipped( 'SSL mail settings not configured' );
         }
         $siteINI = eZINI::instance();
         $backupSetting = $siteINI->group( 'MailSettings' );

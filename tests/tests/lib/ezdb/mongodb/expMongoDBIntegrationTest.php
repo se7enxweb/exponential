@@ -23,6 +23,7 @@
 /**
  * Integration tests — require live MongoDB + MySQL.
  */
+#[\PHPUnit\Framework\Attributes\Group('mongodb-live')]
 class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
 {
     private const MONGO_URI  = 'mongodb://db:publishing$8088@localhost:27017/exp';

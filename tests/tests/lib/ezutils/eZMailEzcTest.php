@@ -96,6 +96,7 @@ class eZMailEzcTest extends ezpTestCase
     /**
      * kernel/content/tipafriend.php
      */
+    #[\PHPUnit\Framework\Attributes\Group('mail-live')]
     public function testTipAFriend()
     {
         $this->requireConfiguredSmtp();
@@ -224,6 +225,7 @@ class eZMailEzcTest extends ezpTestCase
         $this->assertEquals( $ezcExpected, $ezcResult );
     }
 
+    #[\PHPUnit\Framework\Attributes\Group('mail-live')]
     public function testRegressionWrongPasswordCatchException()
     {
         $settings = $this->requireConfiguredSmtp();

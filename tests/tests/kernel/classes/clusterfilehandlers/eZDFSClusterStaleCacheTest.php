@@ -9,7 +9,7 @@
  * @group database
  */
 
-require_once __DIR__ . '/eZClusterStaleCacheTest.php';
+require_once __DIR__ . '/eZClusterStaleCacheBase.php';
 
 #[\PHPUnit\Framework\Attributes\Group('database')]
 /**

@@ -8,7 +8,7 @@
  * @group database
  */
 
-require_once __DIR__ . '/eZDBBasedClusterFileHandlerAbstractTest.php';
+require_once __DIR__ . '/eZDBBasedClusterFileHandlerAbstract.php';
 
 #[\PHPUnit\Framework\Attributes\Group('database')]
 /**
