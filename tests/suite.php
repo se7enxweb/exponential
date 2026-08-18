@@ -8,6 +8,10 @@
  * @package tests
  */
 
+// Load PHPUnit compatibility shims and toolkit classes before the class
+// declaration below references ezpTestSuite.
+require_once __DIR__ . '/bootstrap.php';
+
 class eZTestSuite extends ezpTestSuite
 {
     public function __construct()
