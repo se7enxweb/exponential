@@ -26,28 +26,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 // Older isolated-process code paths still reference it, so provide a minimal shim.
 if ( !class_exists( 'PHPUnit\\TextUI\\Configuration\\Registry', false ) )
 {
-    eval(
-        'namespace PHPUnit\\TextUI\\Configuration;
-         final class Registry
-         {
-             private static $configuration;
-
-             public static function get()
-             {
-                 return self::$configuration;
-             }
-
-             public static function set( $configuration ): void
-             {
-                 self::$configuration = $configuration;
-             }
-
-             public static function init( $configuration ): void
-             {
-                 self::$configuration = $configuration;
-             }
-         }'
-    );
+    require_once __DIR__ . '/compat/PHPUnit/TextUI/Configuration/Registry.php';
 }
 
 // ── 1b. PHPUnit isolated-process children: locate tests/xdebug.ini

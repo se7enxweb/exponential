@@ -204,6 +204,7 @@ jobs:
 
       - name: Run database tests
         run: |
+          # Keep DB suite timezone deterministic for CI stability.
           TEST_TIMEZONE=America/Los_Angeles
           echo "$TEST_TIMEZONE"
           php -d date.timezone="$TEST_TIMEZONE" tests/runtests.php --dsn "${{ matrix.dsn }}" --db-per-test tests extension/ezoe
