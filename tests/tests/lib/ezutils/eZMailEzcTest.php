@@ -24,6 +24,7 @@ class eZMailEzcTest extends ezpTestCase
     protected function smtpSettings()
     {
         $ini = eZINI::instance( 'test_ezmail_plain.ini' );
+        $adminEmail = $ini->hasVariable( 'TestAccounts', 'AdminEmail' ) ? trim( (string)$ini->variable( 'TestAccounts', 'AdminEmail' ) ) : '';
 
         $settings = array(
             'TransportServer' => $ini->hasVariable( 'MailSettings', 'TransportServer' ) ? trim( (string)$ini->variable( 'MailSettings', 'TransportServer' ) ) : '',
@@ -33,7 +34,9 @@ class eZMailEzcTest extends ezpTestCase
             'TransportPassword' => $ini->hasVariable( 'MailSettings', 'TransportPassword' ) ? (string)$ini->variable( 'MailSettings', 'TransportPassword' ) : '',
         );
 
-        if ( $settings['TransportUser'] && eZMail::validate( $settings['TransportUser'] ) )
+        if ( $adminEmail && eZMail::validate( $adminEmail ) )
+            $this->adminEmail = $adminEmail;
+        elseif ( $settings['TransportUser'] && eZMail::validate( $settings['TransportUser'] ) )
             $this->adminEmail = $settings['TransportUser'];
 
         return $settings;
@@ -45,6 +48,9 @@ class eZMailEzcTest extends ezpTestCase
 
         if ( $settings['TransportServer'] === '' )
             $this->markTestSkipped( 'SMTP test host is not configured in test_ezmail_plain.ini' );
+
+        if ( !eZMail::validate( $this->adminEmail ) )
+            $this->markTestSkipped( 'SMTP test sender email is not configured in test_ezmail_plain.ini' );
 
         if ( $requirePassword && $settings['TransportPassword'] === '' )
             $this->markTestSkipped( 'SMTP test password is not configured in test_ezmail_plain.ini' );
