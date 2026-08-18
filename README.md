@@ -5,7 +5,7 @@
 
 # Important Notice for New or first time Users
 
-**Exponential 6.0.x requires Composer to be installed and command composer install run before Exponential can be used.**
+**Exponential 6.0.x specifically requires the php package manager called Composer to be installed and run the command `composer install;` run before Exponential can be used.**
 
 To install Exponential, first download the softare (this repository) and run composer install inside of the root Exponential 6.0.x installation directory.
 To do this, you must first:
