@@ -12,7 +12,7 @@
 
 class eZContentObjectStateTest extends ezpDatabaseTestCase
 {
-    public function providerCreateWithInvalidIdentifier()
+    public static function providerCreateWithInvalidIdentifier()
     {
         return array(
             array( 'WithUpperCaseChars' ),
@@ -33,7 +33,7 @@ class eZContentObjectStateTest extends ezpDatabaseTestCase
         $this->assertFalse( $state->isValid( $messages ), "Invalid state identifier '$identifier' was accepted" );
     }
 
-    public function providerCreateWithvalidIdentifier()
+    public static function providerCreateWithvalidIdentifier()
     {
         return array(
             array( 'lowercasechars' ),

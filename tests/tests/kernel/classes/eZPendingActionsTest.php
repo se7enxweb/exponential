@@ -111,7 +111,7 @@ class eZPendingActionsTest extends ezpDatabaseTestCase
      * Provider for self::testBadDateFilter()
      * @see testBadDateFilter()
      */
-    public function providerForTestBadDateFilter()
+    public static function providerForTestBadDateFilter()
     {
         return array(
             array( array( time(), '=' ) ), // Wrong order
