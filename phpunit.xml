@@ -18,7 +18,7 @@
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/13.0/phpunit.xsd"
-    bootstrap="tests/bootstrap.php"
+    bootstrap="tests/suite.php"
     colors="true"
     displayDetailsOnIncompleteTests="true"
     displayDetailsOnSkippedTests="true"
@@ -105,7 +105,7 @@
 
     <php>
         <env name="EZP_TEST_ENVIRONMENT" value="1"/>
-        <!-- PHP_INI_SCAN_DIR is set at runtime by tests/bootstrap.php so PHPUnit's
+        <!-- PHP_INI_SCAN_DIR is set at runtime by tests/suite.php so PHPUnit's
              isolated-process children can find tests/xdebug.ini without hardcoding
              the repository path. -->
     </php>
