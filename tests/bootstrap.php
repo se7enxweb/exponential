@@ -155,8 +155,11 @@ if ( !class_exists( 'PHPUnit_TextUI_Command', false ) )
         public function run( array $argv, bool $exit = true ): int
         {
             $filtered = [ $argv[0] ?? 'phpunit' ];
-            foreach ( array_slice( $argv, 1 ) as $arg )
+            $index = 1;
+            $argc = count( $argv );
+            while ( $index < $argc )
             {
+                $arg = $argv[$index];
                 foreach ( $this->longOptions as $opt => $handler )
                 {
                     $key = rtrim( $opt, '=' );
@@ -165,16 +168,27 @@ if ( !class_exists( 'PHPUnit_TextUI_Command', false ) )
                         $value = substr( $arg, strlen( "--{$key}=" ) );
                         if ( method_exists( $this, $handler ) )
                             $this->$handler( $value );
+                        $index++;
+                        continue 2;
+                    }
+                    if ( str_ends_with( $opt, '=' ) && $arg === "--{$key}" && ( $index + 1 ) < $argc )
+                    {
+                        $value = $argv[$index + 1];
+                        if ( method_exists( $this, $handler ) )
+                            $this->$handler( $value );
+                        $index += 2;
                         continue 2;
                     }
                     if ( !str_ends_with( $opt, '=' ) && $arg === "--{$key}" )
                     {
                         if ( method_exists( $this, $handler ) )
                             $this->$handler();
+                        $index++;
                         continue 2;
                     }
                 }
                 $filtered[] = $arg;
+                $index++;
             }
 
             $app = new PHPUnit\TextUI\Application();
