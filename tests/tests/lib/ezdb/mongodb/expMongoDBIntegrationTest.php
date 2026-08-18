@@ -50,6 +50,15 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /** @var bool */
     private static $mysqlBootstrapAttempted = false;
 
+    public static function setUpBeforeClass(): void
+    {
+        self::$mongoClient = null;
+        self::$mysql = null;
+        self::$mongoBootstrapAttempted = false;
+        self::$mongoSkipReason = null;
+        self::$mysqlBootstrapAttempted = false;
+    }
+
     private static function bootstrapMongo(): void
     {
         if ( self::$mongoBootstrapAttempted )
@@ -62,6 +71,8 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
             self::$mongoSkipReason = 'MongoDB PHP extension not loaded';
             return;
         }
+
+        require_once __DIR__ . '/../../../../../vendor/autoload.php';
 
         if ( !class_exists( 'MongoDB\\Client' ) )
         {

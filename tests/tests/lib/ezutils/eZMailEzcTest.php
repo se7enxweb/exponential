@@ -13,7 +13,7 @@
  */
 class eZMailEzcTest extends ezpTestCase
 {
-    public $adminEmail = 'ezp-unittests-01@ez.no';
+    public $adminEmail = 'support+exp-unittest-gh@se7enx.com';
     public $adminName = 'Admin';
 
     public static function imapIsEnabled()
@@ -25,21 +25,38 @@ class eZMailEzcTest extends ezpTestCase
     {
         $ini = eZINI::instance( 'test_ezmail_plain.ini' );
         $adminEmail = $ini->hasVariable( 'TestAccounts', 'AdminEmail' ) ? trim( (string)$ini->variable( 'TestAccounts', 'AdminEmail' ) ) : '';
+        $transportUser = $ini->hasVariable( 'MailSettings', 'TransportUser' ) ? trim( (string)$ini->variable( 'MailSettings', 'TransportUser' ) ) : '';
+        $resolvedAdminEmail = eZMail::validate( $adminEmail ) ? $adminEmail : ( eZMail::validate( $transportUser ) ? $transportUser : $this->adminEmail );
 
         $settings = array(
             'TransportServer' => $ini->hasVariable( 'MailSettings', 'TransportServer' ) ? trim( (string)$ini->variable( 'MailSettings', 'TransportServer' ) ) : '',
             'TransportConnectionType' => $ini->hasVariable( 'MailSettings', 'TransportConnectionType' ) ? trim( (string)$ini->variable( 'MailSettings', 'TransportConnectionType' ) ) : '',
             'TransportPort' => $ini->hasVariable( 'MailSettings', 'TransportPort' ) ? (int)$ini->variable( 'MailSettings', 'TransportPort' ) : 25,
-            'TransportUser' => $ini->hasVariable( 'MailSettings', 'TransportUser' ) ? trim( (string)$ini->variable( 'MailSettings', 'TransportUser' ) ) : '',
+            'TransportUser' => $transportUser,
             'TransportPassword' => $ini->hasVariable( 'MailSettings', 'TransportPassword' ) ? (string)$ini->variable( 'MailSettings', 'TransportPassword' ) : '',
+            'AdminEmail' => $resolvedAdminEmail,
         );
 
-        if ( $adminEmail && eZMail::validate( $adminEmail ) )
-            $this->adminEmail = $adminEmail;
-        elseif ( $settings['TransportUser'] && eZMail::validate( $settings['TransportUser'] ) )
-            $this->adminEmail = $settings['TransportUser'];
-
         return $settings;
+    }
+
+    protected function applyMailIdentity( $email )
+    {
+        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'AdminEmail', $email );
+        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'EmailSender', $email );
+        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'EmailReplyTo', $email );
+        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'DebugReceiverEmail', $email );
+    }
+
+    protected function applySmtpSettings( $settings )
+    {
+        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'Transport', 'SMTP' );
+        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'TransportServer', $settings['TransportServer'] );
+        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'TransportConnectionType', $settings['TransportConnectionType'] );
+        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'TransportPort', $settings['TransportPort'] );
+        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'TransportUser', $settings['TransportUser'] );
+        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'TransportPassword', $settings['TransportPassword'] );
+        $this->applyMailIdentity( $settings['AdminEmail'] );
     }
 
     protected function requireConfiguredSmtp( $requirePassword = true )
@@ -49,11 +66,14 @@ class eZMailEzcTest extends ezpTestCase
         if ( $settings['TransportServer'] === '' )
             $this->markTestSkipped( 'SMTP test host is not configured in test_ezmail_plain.ini' );
 
-        if ( !eZMail::validate( $this->adminEmail ) )
+        if ( !eZMail::validate( $settings['AdminEmail'] ) )
             $this->markTestSkipped( 'SMTP test sender email is not configured in test_ezmail_plain.ini' );
 
         if ( $requirePassword && $settings['TransportPassword'] === '' )
             $this->markTestSkipped( 'SMTP test password is not configured in test_ezmail_plain.ini' );
+
+        $this->adminEmail = $settings['AdminEmail'];
+        $this->applySmtpSettings( $settings );
 
         return $settings;
     }
@@ -62,20 +82,8 @@ class eZMailEzcTest extends ezpTestCase
     {
         parent::setUp();
 
-        $settings = $this->smtpSettings();
-
-        // Setup default settings, change these in each test when needed
-        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'Transport', 'SMTP' );
-        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'TransportServer', $settings['TransportServer'] );
-        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'TransportConnectionType', $settings['TransportConnectionType'] );
-        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'TransportPort', $settings['TransportPort'] );
-        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'TransportUser', $settings['TransportUser'] );
-        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'TransportPassword', $settings['TransportPassword'] );
-        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'AdminEmail', $this->adminEmail );
-        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'EmailSender', $this->adminEmail );
-        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'EmailReplyTo', $this->adminEmail );
         ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'DebugSending', 'disabled' );
-        ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'DebugReceiverEmail', $this->adminEmail );
+        $this->applyMailIdentity( $this->adminEmail );
     }
 
     public function tearDown(): void
