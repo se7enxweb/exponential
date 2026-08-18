@@ -19,6 +19,9 @@ on:
       - '.github/workflows/phpunit.yml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   phpunit:
     name: PHPUnit (PHP ${{ matrix.php }})
