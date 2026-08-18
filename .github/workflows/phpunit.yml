@@ -98,16 +98,16 @@ jobs:
         include:
           - php: '8.3'
             db: mysql
-            dsn: mysql://root@127.0.0.1/testdb
+            dsn: 'mysql://root@127.0.0.1/testdb'
           - php: '8.3'
             db: postgresql
-            dsn: postgresql://postgres@127.0.0.1/testdb
+            dsn: 'postgresql://postgres@127.0.0.1/testdb'
 
     services:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
           MYSQL_DATABASE: testdb
         ports:
           - 3306:3306
