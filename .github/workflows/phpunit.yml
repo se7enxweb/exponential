@@ -74,7 +74,11 @@ jobs:
             fi
           fi
           php -r '$file = getenv("CI_COMPOSER_FILE"); $data = json_decode(file_get_contents($file), true, 512, JSON_THROW_ON_ERROR); if (($phpunit = getenv("PHPUNIT_VERSION")) !== false && $phpunit !== "") { $data["require-dev"]["phpunit/phpunit"] = $phpunit; } $data["require-dev"]["mongodb/mongodb"] = "^1.21 || ^2.0"; file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL);'
-          COMPOSER="${CI_COMPOSER_FILE}" composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+          if [[ -n "${PHPUNIT_VERSION:-}" ]]; then
+            COMPOSER="${CI_COMPOSER_FILE}" composer update phpunit/phpunit --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+          else
+            COMPOSER="${CI_COMPOSER_FILE}" composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+          fi
 
       - name: Ensure vendor is present
         run: |
@@ -173,7 +177,7 @@ jobs:
           cp composer.json "${CI_COMPOSER_FILE}"
           export PHPUNIT_VERSION="^11.5"
           php -r '$file = getenv("CI_COMPOSER_FILE"); $data = json_decode(file_get_contents($file), true, 512, JSON_THROW_ON_ERROR); if (($phpunit = getenv("PHPUNIT_VERSION")) !== false && $phpunit !== "") { $data["require-dev"]["phpunit/phpunit"] = $phpunit; } $data["require-dev"]["mongodb/mongodb"] = "^1.21 || ^2.0"; file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL);'
-          COMPOSER="${CI_COMPOSER_FILE}" composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+          COMPOSER="${CI_COMPOSER_FILE}" composer update phpunit/phpunit --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
 
       - name: Ensure vendor is present
         run: |
