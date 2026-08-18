@@ -31,7 +31,7 @@ class PHPUnitTextUICommandShimTest extends \PHPUnit\Framework\TestCase
         if ( $script === false )
             $this->fail( 'Unable to create temporary script.' );
 
-        $repoRoot = realpath( __DIR__ . '/../../../../..' );
+        $repoRoot = realpath( __DIR__ . '/../../../..' );
         if ( $repoRoot === false )
             $this->fail( 'Unable to resolve repository root.' );
 
