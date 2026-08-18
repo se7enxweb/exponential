@@ -37,7 +37,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, libxml, mbstring, pcre, json, iconv, reflection, session, spl, simplexml, gd, mysqli, pdo_mysql, pdo_sqlite, zip
-          coverage: none
+          coverage: xdebug
           tools: composer:v2
 
       - name: Get Composer cache directory
