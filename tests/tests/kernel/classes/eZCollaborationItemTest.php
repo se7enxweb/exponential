@@ -49,7 +49,7 @@ class eZCollaborationItemTest extends ezpDatabaseTestCase
         );
     }
 
-    public function providerForIsParticipant()
+    public static function providerForIsParticipant()
     {
         return array(
             array( true, 1 ),

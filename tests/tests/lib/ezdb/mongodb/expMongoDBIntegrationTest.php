@@ -51,6 +51,9 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
 
         require_once __DIR__ . '/../../../../../vendor/autoload.php';
 
+        if ( !class_exists( 'MongoDB\\Client' ) )
+            self::markTestSkipped( 'MongoDB library is not installed' );
+
         try
         {
             self::$mongoClient = new MongoDB\Client( self::MONGO_URI );

@@ -12,6 +12,7 @@ class eZExtensionAdditionalDirectoriesTest extends ezpTestCase
 {
     protected static $baseExtensionDir = 'tests/tests/kernel/classes/extensions';
     protected static $additionalExtensionDir = 'tests/tests/kernel/classes/extension_src';
+    protected static $createdFixtureDirectories = array();
 
     /**
      * Detects whether the runtime filesystem is case-sensitive.
@@ -33,6 +34,7 @@ class eZExtensionAdditionalDirectoriesTest extends ezpTestCase
 
     public function setUp(): void
     {
+        self::createExtensionFixtures();
         ezpINIHelper::setINISetting( 'site.ini', 'ExtensionSettings', 'ExtensionDirectory', self::$baseExtensionDir );
         ezpINIHelper::setINISetting( 'site.ini', 'ExtensionSettings', 'AdditionalExtensionDirectories', array( self::$additionalExtensionDir ) );
         ezpINIHelper::setINISetting( 'site.ini', 'ExtensionSettings', 'ExtensionOrdering', 'disabled' );
@@ -45,6 +47,7 @@ class eZExtensionAdditionalDirectoriesTest extends ezpTestCase
         ezpINIHelper::restoreINISettings();
         eZExtension::clearActiveExtensionsMemoryCache();
         self::clearExtensionCaches();
+        self::removeCreatedExtensionFixtures();
     }
 
     public function testExtensionRootDirectoriesReturnsBaseAndAdditional()
@@ -125,5 +128,36 @@ class eZExtensionAdditionalDirectoriesTest extends ezpTestCase
         $pathCache = $reflection->getProperty( 'extensionPathCache' );
         $pathCache->setAccessible( true );
         $pathCache->setValue( null, array() );
+    }
+
+    private static function createExtensionFixtures()
+    {
+        self::$createdFixtureDirectories = array();
+
+        foreach ( array(
+            self::$additionalExtensionDir,
+            self::$baseExtensionDir . '/override_ext',
+            self::$additionalExtensionDir . '/override_ext',
+            self::$additionalExtensionDir . '/custom_ext',
+            self::$additionalExtensionDir . '/CaseExt',
+        ) as $directory )
+        {
+            if ( !is_dir( $directory ) )
+            {
+                mkdir( $directory, 0777, true );
+                self::$createdFixtureDirectories[] = $directory;
+            }
+        }
+    }
+
+    private static function removeCreatedExtensionFixtures()
+    {
+        foreach ( array_reverse( self::$createdFixtureDirectories ) as $directory )
+        {
+            if ( is_dir( $directory ) )
+                rmdir( $directory );
+        }
+
+        self::$createdFixtureDirectories = array();
     }
 }

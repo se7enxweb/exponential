@@ -74,8 +74,8 @@ class eZImageManagerTest extends ezpTestCase
      */
     public function testMultiHandlerAlias()
     {
-        if ( !self::gdIsEnabled() && !self::imageMagickIsEnabled() )
-            $this->markTestSkipped( 'Neither GD nor ImageMagick are enabled' );
+        if ( !self::imageMagickIsEnabled() )
+            $this->markTestSkipped( 'ImageMagick is not installed' );
 
         $aliasList = $this->imageIni->variable( 'AliasSettings', 'AliasList' );
         array_push( $aliasList, 'multihandler' );
