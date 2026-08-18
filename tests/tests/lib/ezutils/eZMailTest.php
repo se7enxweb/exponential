@@ -917,9 +917,8 @@ class eZMailTest extends ezpTestCase
     /**
      * See site.ini [MailSettings] ExcludeHeaders
      */
-    public function testExcludeHaders()
+    public function testExcludeHeaders()
     {
-        self::markTestSkipped( "Tests needs to use other email addresses" );
         ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'Transport', 'SMTP' );
         ezpINIHelper::setINISetting( 'site.ini', 'MailSettings', 'ExcludeHeaders', array( 'bcc' ) );
 
