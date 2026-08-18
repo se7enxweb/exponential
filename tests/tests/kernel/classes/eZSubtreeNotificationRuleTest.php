@@ -34,11 +34,11 @@ class eZSubtreeNotificationRuleTest extends ezpDatabaseTestCase
         $articleContentObject = $article->object;
 
         $list = eZSubtreeNotificationRule::fetchUserList( array( 2, 43 ), $articleContentObject );
-        $this->assertInternalType( 'array', $list,
+        $this->assertIsArray( $list,
             "Return value should have been an array" );
         $this->assertEquals( 1, count( $list ),
             "Return value should have one item" );
-        $this->assertInternalType( 'array', $list[0] );
+        $this->assertIsArray( $list[0] );
         $this->assertArrayHasKey( 'user_id', $list[0] );
         $this->assertArrayHasKey( 'use_digest', $list[0] );
         $this->assertArrayHasKey( 'address', $list[0] );

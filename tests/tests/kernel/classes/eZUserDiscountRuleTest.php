@@ -51,7 +51,7 @@ class eZUserDiscountRuleTest extends ezpDatabaseTestCase
         // eZUserDiscountRule, and return the 5 rules, since no duplicates will
         // be returned
         $rules = eZUserDiscountRule::fetchByUserIDArray( array( 1, 2 ) );
-        $this->assertInternalType( 'array', $rules,
+        $this->assertIsArray( $rules,
             "Return value should have been an array" );
         $this->assertEquals( 5, count( $rules ),
             "Return value should contain 5 items" );

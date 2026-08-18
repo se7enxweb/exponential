@@ -259,7 +259,7 @@ class eZContentObjectTest extends ezpDatabaseTestCase
     {
         $fetchedObject = eZContentObject::fetchByNodeID( 2, false );
         $def = eZContentObject::definition();
-        self::assertInternalType( PHPUnit_Framework_Constraint_IsType::TYPE_ARRAY , $fetchedObject, "eZContentObject::fetchByNodeID() with \$asObject=false must return an array" );
+        self::assertIsArray( $fetchedObject, "eZContentObject::fetchByNodeID() with \$asObject=false must return an array" );
         foreach ( $def['fields'] as $key => $fieldDef )
         {
             self::assertArrayHasKey( $key, $fetchedObject, "eZContentObject::fetchByNodeID() with \$asObject=false must return an array with '$key' key" );
@@ -308,8 +308,7 @@ class eZContentObjectTest extends ezpDatabaseTestCase
     public function testFetchByNodeIDArrayAsObject()
     {
         $fetchedObjects = eZContentObject::fetchByNodeID( array( 2 ) );
-        self::assertInternalType(
-            PHPUnit_Framework_Constraint_IsType::TYPE_ARRAY,
+        self::assertIsArray(
             $fetchedObjects,
             "eZContentObject::fetchByNodeID() must return an array of eZContentObject instances indexed by nodeIds if an array of nodeIds is passed as param"
         );
@@ -326,13 +325,12 @@ class eZContentObjectTest extends ezpDatabaseTestCase
     public function testFetchByNodeIDArrayAsRow()
     {
         $fetchedObjects = eZContentObject::fetchByNodeID( array( 2 ), false );
-        self::assertInternalType(
-            PHPUnit_Framework_Constraint_IsType::TYPE_ARRAY,
+        self::assertIsArray(
             $fetchedObjects,
             "eZContentObject::fetchByNodeID() must return an array of eZContentObject instances if an array of nodeIds is passed as param"
         );
 
-        self::assertInternalType( PHPUnit_Framework_Constraint_IsType::TYPE_ARRAY, $fetchedObjects[2], "eZContentObject::fetchByNodeID() must return an array indexed by nodeIds of eZContentObject array representation if an array of nodeIds is passed as param" );
+        self::assertIsArray( $fetchedObjects[2], "eZContentObject::fetchByNodeID() must return an array indexed by nodeIds of eZContentObject array representation if an array of nodeIds is passed as param" );
     }
 }
 

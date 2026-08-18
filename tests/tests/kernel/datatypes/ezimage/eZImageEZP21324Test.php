@@ -152,7 +152,7 @@ class eZImageEZP21324Test extends ezpDatabaseTestCase
 
         foreach ( $imageAliases as $alias )
         {
-            self::assertFileNotExists( $alias['full_path'] );
+            self::assertFileDoesNotExist( $alias['full_path'] );
         }
     }
 

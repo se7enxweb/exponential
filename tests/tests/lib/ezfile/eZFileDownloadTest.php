@@ -58,7 +58,7 @@ class eZFileDownloadTest extends ezpTestCase
     public function testDownloadOffsetSizeWayTooHigh()
     {
         ob_start();
-        $this->assertTrue( eZFile::downloadContent( $this->file, 8000, 1e5 ) );
+        $this->assertTrue( eZFile::downloadContent( $this->file, 8000, 100000 ) );
         $this->assertEquals( substr( $this->content, 8000 ) , ob_get_clean() );
     }
 

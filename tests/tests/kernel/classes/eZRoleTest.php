@@ -21,7 +21,7 @@ class eZRoleTest extends ezpDatabaseTestCase
     {
         // test with an empty array
         $roles = eZRole::fetchByUser( array() );
-        $this->assertInternalType( 'array', $roles,
+        $this->assertIsArray( $roles,
             "eZRole::fetchByUser with an empty array should have returned an array" );
         $this->assertEquals( 0, count( $roles ),
             "eZRole::fetchByUser with an empty array should have returned an empty array" );
@@ -31,7 +31,7 @@ class eZRoleTest extends ezpDatabaseTestCase
         // by group
         $parameter = array( self::$anonymousUserID, self::$adminUserID );
         $roles = eZRole::fetchByUser( $parameter );
-        $this->assertInternalType( 'array', $roles,
+        $this->assertIsArray( $roles,
             "eZRole::fetchByUser with admin & anonymous should have returned an array" );
         $this->assertEquals( 0, count( $roles ),
             "eZRole::fetchByUser with admin & anonymous should have returned an empty array" );
@@ -44,7 +44,7 @@ class eZRoleTest extends ezpDatabaseTestCase
         // and administrator roles
         $parameter = array( self::$anonymousUserID, self::$adminUserID );
         $roles = eZRole::fetchByUser( $parameter, true );
-        $this->assertInternalType( 'array', $roles,
+        $this->assertIsArray( $roles,
             "recursive eZRole::fetchByUser with admin & anonymous should have returned an array" );
         $this->assertEquals( 2, count( $roles ),
             "recursive eZRole::fetchByUser with admin & anonymous should have returned an empty array" );
@@ -61,7 +61,7 @@ class eZRoleTest extends ezpDatabaseTestCase
     {
         // fetch roles ID for anonymous group
         $roles = eZRole::fetchIDListByUser( array( self::$anonymousGroupID ) );
-        $this->assertInternalType( 'array', $roles, "The method should have returned an array" );
+        $this->assertIsArray( $roles, "The method should have returned an array" );
         $this->assertEquals( 1, count( $roles ), "The array should contain one item" );
         $this->assertEquals( 1, $roles[0], "The returned role ID should be 1 (anonymous role)" );
     }
