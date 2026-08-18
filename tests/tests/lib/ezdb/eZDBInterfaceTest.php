@@ -10,7 +10,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
  * @package tests
  */
 
-class eZDBInterfaceTest extends ezpDatabaseTestCase
+class eZDBInterfaceTest extends ezpTestCase
 {
     public function setUp(): void
     {

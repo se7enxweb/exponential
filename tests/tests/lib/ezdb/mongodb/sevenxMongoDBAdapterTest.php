@@ -55,7 +55,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     public function testQueryReturnsFalse(): void
     {
         $this->assertFalse( $this->db->query( "SELECT 1" ) );
-        $this->assertFalse( $this->db->query( "UPDATE ezcontentobject SET status=1 WHERE id=99" ) );
+        $this->assertFalse( $this->db->query( "INSERT INTO ezcontentobject (id) VALUES (1)" ) );
     }
 
     // ── escapeString ──────────────────────────────────────────────────────────
@@ -450,7 +450,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     public function testArrayQueryReturnsEmptyArray(): void
     {
         eZDebug::reset();
-        $result = $this->db->arrayQuery( "SELECT * FROM ezcontentobject WHERE id=1" );
+        $result = $this->db->arrayQuery( "SELECT * FROM ezcontentobject GROUP BY id" );
         $this->assertIsArray( $result );
         $this->assertCount( 0, $result );
         // Warning must be routed through eZDebug, not emitted to error_log / stderr

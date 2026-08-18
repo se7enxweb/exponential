@@ -22,6 +22,13 @@
 // ── 1. Composer autoloader ────────────────────────────────────────────────────
 require_once __DIR__ . '/../vendor/autoload.php';
 
+// PHPUnit 11+ removed PHPUnit\TextUI\Configuration\Registry.
+// Older isolated-process code paths still reference it, so provide a minimal shim.
+if ( !class_exists( 'PHPUnit\\TextUI\\Configuration\\Registry', false ) )
+{
+    require_once __DIR__ . '/compat/PHPUnit/TextUI/Configuration/Registry.php';
+}
+
 // ── 1b. PHPUnit isolated-process children: locate tests/xdebug.ini
 //
 // PHPUnit 13 child processes re-read php.ini and scan directories.  Instead of
