@@ -41,18 +41,33 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /** @var mysqli */
     private static $mysql;
 
-    // ── Bootstrap ─────────────────────────────────────────────────────────────
+    /** @var bool */
+    private static $mongoBootstrapAttempted = false;
 
-    public static function setUpBeforeClass(): void
+    /** @var string|null */
+    private static $mongoSkipReason = null;
+
+    /** @var bool */
+    private static $mysqlBootstrapAttempted = false;
+
+    private static function bootstrapMongo(): void
     {
-        // MongoDB
-        if ( !extension_loaded( 'mongodb' ) )
-            self::markTestSkipped( 'MongoDB PHP extension not loaded' );
+        if ( self::$mongoBootstrapAttempted )
+            return;
 
-        require_once __DIR__ . '/../../../../../vendor/autoload.php';
+        self::$mongoBootstrapAttempted = true;
+
+        if ( !extension_loaded( 'mongodb' ) )
+        {
+            self::$mongoSkipReason = 'MongoDB PHP extension not loaded';
+            return;
+        }
 
         if ( !class_exists( 'MongoDB\\Client' ) )
-            self::markTestSkipped( 'MongoDB library is not installed' );
+        {
+            self::$mongoSkipReason = 'MongoDB library is not installed';
+            return;
+        }
 
         try
         {
@@ -61,10 +76,17 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
         }
         catch ( Exception $e )
         {
-            self::markTestSkipped( 'Cannot connect to MongoDB: ' . $e->getMessage() );
+            self::$mongoSkipReason = 'Cannot connect to MongoDB: ' . $e->getMessage();
         }
+    }
 
-        // MySQL
+    private static function bootstrapMySQL(): void
+    {
+        if ( self::$mysqlBootstrapAttempted )
+            return;
+
+        self::$mysqlBootstrapAttempted = true;
+
         self::$mysql = @new mysqli(
             self::MYSQL_HOST, self::MYSQL_USER, self::MYSQL_PASS, self::MYSQL_DB
         );
@@ -75,8 +97,18 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    private function requireMongo(): void
+    {
+        self::bootstrapMongo();
+        if ( self::$mongoSkipReason !== null )
+            $this->markTestSkipped( self::$mongoSkipReason );
+    }
+
     protected function tearDown(): void
     {
+        if ( self::$mongoClient === null )
+            return;
+
         // Always remove test documents written during this test.
         self::$mongoClient
             ->selectCollection( self::MONGO_DB, self::TEST_COL )
@@ -89,6 +121,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
 
     private function skipIfNoMySQL(): void
     {
+        self::bootstrapMySQL();
         if ( self::$mysql === null )
             $this->markTestSkipped( 'Cannot connect to MySQL/MariaDB' );
     }
@@ -100,6 +133,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
      */
     public function testMongoPingSucceeds(): void
     {
+        $this->requireMongo();
         $result = self::$mongoClient
             ->selectDatabase( self::MONGO_DB )
             ->command( [ 'ping' => 1 ] );
@@ -113,6 +147,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
      */
     public function testMongoInsertAndAggregate(): void
     {
+        $this->requireMongo();
         $col = self::$mongoClient->selectCollection( self::MONGO_DB, self::TEST_COL );
 
         // Insert two test documents
@@ -136,6 +171,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
      */
     public function testMongoUpsertUpdatesExisting(): void
     {
+        $this->requireMongo();
         $col = self::$mongoClient->selectCollection( self::MONGO_DB, self::TEST_COL );
         $col->insertOne( [ 'type' => 'phpunit_upsert', 'key' => 'k1', 'val' => 'old' ] );
 
@@ -155,6 +191,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
      */
     public function testMongoDeleteMany(): void
     {
+        $this->requireMongo();
         $col = self::$mongoClient->selectCollection( self::MONGO_DB, self::TEST_COL );
         $col->insertOne( [ 'type' => 'phpunit_del', 'id' => 1 ] );
         $col->insertOne( [ 'type' => 'phpunit_del', 'id' => 2 ] );
@@ -173,6 +210,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
      */
     public function testMongoUpdateOneIncrement(): void
     {
+        $this->requireMongo();
         $col = self::$mongoClient->selectCollection( self::MONGO_DB, self::SEQ_COL );
         // Remove any leftover from a previous run first
         $col->deleteMany( [ '_id' => 'phpunit_seq_test' ] );
@@ -194,6 +232,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
      */
     public function testMongoExpectedCollectionsExist(): void
     {
+        $this->requireMongo();
         $names = iterator_to_array(
             self::$mongoClient->selectDatabase( self::MONGO_DB )->listCollectionNames()
         );
@@ -221,6 +260,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
      */
     public function testMongoContentObjectDocumentStructure(): void
     {
+        $this->requireMongo();
         $doc = self::$mongoClient
             ->selectCollection( self::MONGO_DB, 'ezcontentobject' )
             ->findOne( [] );
@@ -244,6 +284,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
      */
     public function testMongoTreeNodeHasPathString(): void
     {
+        $this->requireMongo();
         $doc = self::$mongoClient
             ->selectCollection( self::MONGO_DB, 'ezcontentobject_tree' )
             ->findOne( [] );
@@ -369,6 +410,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
      */
     public function testContentObjectCountMatchesBetweenEngines(): void
     {
+        $this->requireMongo();
         $this->skipIfNoMySQL();
 
         $r = self::$mysql->query( 'SELECT COUNT(*) AS c FROM ezcontentobject WHERE status=1' );
