@@ -17,6 +17,7 @@ on:
       - 'composer.lock'
       - 'phpunit.xml'
       - '.github/workflows/phpunit.yml'
+  workflow_dispatch:
 
 jobs:
   phpunit:
