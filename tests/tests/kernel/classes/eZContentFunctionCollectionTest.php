@@ -14,7 +14,7 @@
 class eZContentFunctionCollectionTest extends ezpDatabaseTestCase
 {
 
-    protected bool $backupGlobals = false;
+    protected $backupGlobals = false;
 
     /**
      * Unit test for eZContentFunctionCollection::fetchRelatedObjects
