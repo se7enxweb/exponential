@@ -17,7 +17,7 @@ require_once __DIR__ . '/eZDBBasedClusterFileHandlerAbstract.php';
  * @group eZDFS
  * @group database
  */
-class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstractTest
+class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstract
 {
     /**
      * @var string

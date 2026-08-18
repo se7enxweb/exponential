@@ -18,7 +18,7 @@ require_once __DIR__ . '/eZClusterFileHandlerAbstract.php';
  * @group eZFS
  * @group database
  */
-class eZFSFileHandlerTest extends eZClusterFileHandlerAbstractTest
+class eZFSFileHandlerTest extends eZClusterFileHandlerAbstract
 {
     protected $backupGlobals = false;
 

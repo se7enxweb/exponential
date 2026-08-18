@@ -15,7 +15,7 @@
 /**
  * @group database
  */
-abstract class eZClusterFileHandlerAbstractTest extends ezpDatabaseTestCase
+abstract class eZClusterFileHandlerAbstract extends ezpDatabaseTestCase
 {
     /**
      * Tested cluster class

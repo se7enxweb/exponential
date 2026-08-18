@@ -16,7 +16,7 @@
 /**
  * @group database
  */
-abstract class eZClusterStaleCacheTest extends ezpDatabaseTestCase
+abstract class eZClusterStaleCacheBase extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
 

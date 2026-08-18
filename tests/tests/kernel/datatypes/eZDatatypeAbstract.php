@@ -16,7 +16,7 @@
 /**
  * @group database
  */
-abstract class eZDatatypeAbstractTest extends ezpDatabaseTestCase
+abstract class eZDatatypeAbstract extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
 

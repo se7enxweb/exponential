@@ -10,7 +10,7 @@ require_once __DIR__ . '/../eZDatatypeAbstract.php';
  * @package tests
  * @group database
  */
-class eZEmailTypeTest extends eZDatatypeAbstractTest
+class eZEmailTypeTest extends eZDatatypeAbstract
 {
 
     private function defaultDataSet()

@@ -447,7 +447,7 @@ class eZMailTest extends ezpTestCase
         $endl = "\r\n";
 
         if ( empty( $users ) )
-            return array();
+            return array( array( '', '' ) );
 
         /*
             Each entry in this array is an array consisting of two arrays.
