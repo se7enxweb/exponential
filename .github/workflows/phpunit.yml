@@ -52,7 +52,7 @@ jobs:
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-interaction
+        run: composer install --prefer-dist --no-progress --no-interaction --ignore-platform-req=php
 
       # Optional but recommended – regenerates autoloads the same way the project does
       - name: Generate autoloads
