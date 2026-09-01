@@ -76,6 +76,7 @@
         "se7enxweb/ezupdate": "~1.0.1",
         "se7enxweb/git_manager": "~2.0.1",
         "se7enxweb/exp_enhanced_link": "~1.0.1",
+        "se7enxweb/ngclasslist": "~1.1",
 	"se7enxweb/explayouts": "~1.0.0",
         "se7enxweb/explayouts-api": "~1.0.0",
         "se7enxweb/explayouts-content-browser": "~1.0.0",
