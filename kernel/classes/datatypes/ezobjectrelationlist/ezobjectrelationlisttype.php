@@ -1822,7 +1822,9 @@ class eZObjectRelationListType extends eZDataType
                 $relationItem = $relationItems->item( $i );
                 // Add related object remote id as attribute to the relation item.
                 $relatedObjectID = $relationItem->getAttribute( 'contentobject-id' );
-                $relatedObject = eZContentObject::fetch( $relatedObjectID );
+                $relatedObject = $relatedObjectID ? eZContentObject::fetch( $relatedObjectID ) : null;
+                if ( !$relatedObject )
+                    continue;
                 $relatedObjectRemoteID = $relatedObject->attribute( 'remote_id' );
                 $relationItem->setAttribute( 'contentobject-remote-id', $relatedObjectRemoteID );
 
