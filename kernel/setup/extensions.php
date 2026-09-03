@@ -63,47 +63,35 @@ if ( $http->hasGetVariable( 'SortOrder' ) )
 $sortBy    = in_array( $sortBy, array( 'name', 'version', 'mtime' ) ) ? $sortBy : 'name';
 $sortOrder = in_array( $sortOrder, array( 'asc', 'desc' ) ) ? $sortOrder : 'asc';
 
-$availableExtensionArray = array();
-foreach ( eZExtension::extensionRootDirectories() as $extensionDir )
-{
-    if ( !is_dir( $extensionDir ) )
-        continue;
-
-    foreach ( eZDir::findSubItems( $extensionDir, 'dl' ) as $extensionName )
-    {
-        // Later roots override earlier roots
-        $availableExtensionArray[$extensionName] = $extensionName;
-    }
-}
-
-// Collect metadata for sorting and display
-$extensionInfo = array();
-foreach ( $availableExtensionArray as $extensionName )
-{
-    $extensionInfo[$extensionName] = eZExtension::extensionInfo( $extensionName );
-}
+// Use expInfo to collect and normalise all extension metadata
+$extensionInfo = expInfo::availableExtensions();
 
 uasort( $extensionInfo, function( $a, $b ) use ( $sortBy ) {
+    $nameA = (string) $a['extension_name'];
+    $nameB = (string) $b['extension_name'];
+
     if ( $sortBy === 'mtime' )
     {
         $aVal = (int) $a['mtime'];
         $bVal = (int) $b['mtime'];
-        if ( $aVal === $bVal ) return 0;
-        return $aVal < $bVal ? -1 : 1;
+        if ( $aVal !== $bVal )
+            return $aVal < $bVal ? -1 : 1;
+        return strnatcasecmp( $nameA, $nameB );
     }
     else if ( $sortBy === 'version' )
     {
         $aVal = isset( $a['version'] ) && is_string( $a['version'] ) ? $a['version'] : '0';
         $bVal = isset( $b['version'] ) && is_string( $b['version'] ) ? $b['version'] : '0';
-        return version_compare( $aVal, $bVal );
+        $cmp = version_compare( $aVal, $bVal );
+        if ( $cmp !== 0 )
+            return $cmp;
+        return strnatcasecmp( $nameA, $nameB );
     }
     else
     {
-        $aVal = isset( $a['name'] ) ? (string) $a['name'] : '';
-        $bVal = isset( $b['name'] ) ? (string) $b['name'] : '';
+        // Sort by the extension (directory) name, which matches the visible "Name" column
+        return strnatcasecmp( $nameA, $nameB );
     }
-    if ( $aVal === $bVal ) return 0;
-    return strnatcasecmp( $aVal, $bVal );
 } );
 
 if ( $sortOrder === 'desc' )
@@ -233,4 +221,7 @@ function updateAutoload( $tpl = null )
     }
 }
 
+/* expInfo::availableExtensions() now provides normalised extension metadata */
+
 ?>
+

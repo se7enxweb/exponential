@@ -102,6 +102,9 @@ $eZTemplateOperatorArray[] = array( 'class' => 'eZTemplateDigestOperator',
                                                                'md5',
                                                                'rot13', ) );
 
+$eZTemplateOperatorArray[] = array( 'class' => 'eZTemplateExpInfoOperator',
+                                    'operator_names' => array( 'expinfo' ) );
+
 $eZTemplateOperatorArray[] = array( 'class' => 'eZTemplateStringsOperator',
                                     'operator_names' => array(
                                         // No-parameter operators (input only)

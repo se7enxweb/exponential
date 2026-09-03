@@ -28,6 +28,8 @@
 <tr>
     <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/setup/extensions' )}" title="{'Toggle all.'|i18n( 'design/admin/content/translations' )}" onclick="ezjs_toggleCheckboxes( document.extensionform, 'ActiveExtensionList[]' ); return false;"/></th>
     <th><a href={concat( '/setup/extensions?SortBy=name&amp;SortOrder=', cond( and( $sort_by|eq('name'), $sort_order|eq('asc') ), 'desc', 'asc' ) )|ezurl} class="sortable-header">{'Name'|i18n( 'design/admin/setup/extensions' )}</a></th>
+    <th>{'Extension'|i18n( 'design/admin/setup/extensions' )}</th>
+    <th>{'License'|i18n( 'design/admin/setup/extensions' )}</th>
     <th><a href={concat( '/setup/extensions?SortBy=version&amp;SortOrder=', cond( and( $sort_by|eq('version'), $sort_order|eq('asc') ), 'desc', 'asc' ) )|ezurl} class="sortable-header">{'Version'|i18n( 'design/admin/setup/extensions' )}</a></th>
     <th><a href={concat( '/setup/extensions?SortBy=mtime&amp;SortOrder=', cond( and( $sort_by|eq('mtime'), $sort_order|eq('asc') ), 'desc', 'asc' ) )|ezurl} class="sortable-header">{'Modified'|i18n( 'design/admin/setup/extensions' )}</a></th>
     <th>{'Info'|i18n( 'design/admin/setup/extensions' )}</th>
@@ -37,8 +39,12 @@
 <tr class="{$Extensions.sequence}">
     {* Status. *}
     <td><input type="checkbox" name="ActiveExtensionList[]" value="{$Extensions.item}" {if $selected_extension_array|contains($Extensions.item)}checked="checked"{/if} title="{'Activate or deactivate extension. Use the "Update" button to apply the changes.'|i18n( 'design/admin/setup/extensions' )|wash}" /></td>
-    {* Name. *}
+    {* Name (folder). *}
     <td><a href="#" class="extension-name-link" data-name="{$Extensions.item|wash}">{$Extensions.item|wash}</a></td>
+    {* Full extension name. *}
+    <td>{if $ext.name}{$ext.name|wash}{else}—{/if}</td>
+    {* License. *}
+    <td>{if $ext.license}{$ext.license|wash}{else}—{/if}</td>
     {* Version. *}
     <td>{if $ext.version}{$ext.version|wash}{else}—{/if}</td>
     {* Modified. *}
@@ -47,13 +53,14 @@
     <td><a href="#" class="extension-info-link" data-name="{$Extensions.item|wash}">{'Details'|i18n( 'design/admin/setup/extensions' )}</a></td>
 </tr>
 <tr class="{$Extensions.sequence} extension-card-row" id="extension-card-{$Extensions.item|wash}" style="display:none;">
-    <td colspan="5" class="extension-card-cell">
+    <td colspan="7" class="extension-card-cell">
         <div class="extension-card">
-            <h3>{$ext.name|wash}</h3>
+            <h3>{$ext.name|wash} <span class="extension-folder">({$Extensions.item|wash})</span></h3>
             {if $ext.meta.description}<p>{$ext.meta.description|wash}</p>{/if}
             <dl>
                 {if $ext.version}<dt>{'Version'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$ext.version|wash}</dd>{/if}
                 {if $ext.mtime_formatted}<dt>{'Modified'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$ext.mtime_formatted|wash}</dd>{/if}
+                {if $ext.meta.copyright}<dt>{'Copyright'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$ext.meta.copyright|wash}</dd>{/if}
                 {if $ext.meta.author}<dt>{'Author'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$ext.meta.author|wash}</dd>{/if}
                 {if $ext.meta.license}<dt>{'License'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$ext.meta.license|wash}</dd>{/if}
                 {if $ext.meta.info_url}<dt>{'Info URL'|i18n( 'design/admin/setup/extensions' )}</dt><dd><a href="{$ext.meta.info_url|wash}" target="_blank">{$ext.meta.info_url|wash}</a></dd>{/if}
