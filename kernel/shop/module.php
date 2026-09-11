@@ -35,6 +35,21 @@ $ViewList["basket"] = array(
     'unordered_params' => array( 'error' => 'Error' ),
     "params" => array(  ) );
 
+// The same page under whatever name shop.ini [BasketSettings] BasketViewName
+// is set to - cart, buyer, anything. It is registered alongside basket rather
+// than instead of it, so an existing link to /shop/basket/ keeps resolving
+// while the shop itself sends people to the configured name.
+$basketViewName = eZBasket::viewName();
+if ( $basketViewName !== 'basket' )
+{
+    $ViewList[$basketViewName] = array(
+        "functions" => array( 'buy' ),
+        "script" => "basket.php",
+        "default_navigation_part" => 'ezmynavigationpart',
+        'unordered_params' => array( 'error' => 'Error' ),
+        "params" => array(  ) );
+}
+
 $ViewList["register"] = array(
     "functions" => array( 'buy' ),
     "script" => "register.php",

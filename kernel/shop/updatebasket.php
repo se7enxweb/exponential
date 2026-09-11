@@ -50,6 +50,6 @@ switch( $operationResult['status'] )
     }break;
 }
 
-$module->redirectTo( '/shop/basket/' );
+$module->redirectTo( '/shop/' . eZBasket::viewName() . '/' );
 
 ?>

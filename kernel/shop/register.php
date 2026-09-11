@@ -14,7 +14,7 @@ $tpl = eZTemplate::factory();
 
 if ( $module->isCurrentAction( 'Cancel' ) )
 {
-    $module->redirectTo( '/shop/basket/' );
+    $module->redirectTo( '/shop/' . eZBasket::viewName() . '/' );
     return;
 }
 

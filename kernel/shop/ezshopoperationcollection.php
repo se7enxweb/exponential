@@ -289,6 +289,14 @@ class eZShopOperationCollection
     */
     function addToBasket( $objectID, $optionList, $quantity )
     {
+        // The caller hands over the session's option list, which is false for a
+        // product that has no options - shop/add.php reads it straight out of
+        // AddToBasket_OptionList_<id>. Everything below treats it as an array,
+        // and array_keys( false ) is fatal on PHP 8, so without this no
+        // option-less product could be put in the basket at all.
+        if ( !is_array( $optionList ) )
+            $optionList = array();
+
         $object = eZContentObject::fetch( $objectID );
         $nodeID = $object->attribute( 'main_node_id' );
         $price = 0.0;
