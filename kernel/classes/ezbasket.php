@@ -18,6 +18,65 @@
 
 class eZBasket extends eZPersistentObject
 {
+
+    /**
+     * The view name the shop uses for the basket page.
+     *
+     * Set with shop.ini [BasketSettings] BasketViewName. Any simple token
+     * works - basket, cart, buyer - and the shop is then served at
+     * /shop/<name>/, with every redirect, form action and breadcrumb following
+     * it. kernel/shop/module.php registers the configured name as a view in
+     * its own right, so no name is special-cased anywhere.
+     *
+     * The value has to be usable in a URL and as a view name, so anything
+     * outside letters, digits, dash and underscore is refused rather than
+     * quietly producing a path that routes nowhere.
+     *
+     * @return string
+     */
+    static function viewName()
+    {
+        $ini = eZINI::instance( 'shop.ini' );
+        $name = $ini->hasVariable( 'BasketSettings', 'BasketViewName' )
+              ? trim( $ini->variable( 'BasketSettings', 'BasketViewName' ) )
+              : '';
+
+        if ( $name === '' || !preg_match( '/^[a-zA-Z0-9_-]+$/', $name ) )
+        {
+            return 'basket';
+        }
+
+        return $name;
+    }
+
+    /**
+     * The template basket.php should render for the configured view name.
+     *
+     * A design may supply shop/<name>.tpl to style that name differently -
+     * shop/cart.tpl ships as an example. When there is no such template, and
+     * for any name nobody has themed, the ordinary shop/basket.tpl is used, so
+     * a new name works without anyone having to add a file for it.
+     *
+     * @return string the template name, without the .tpl suffix
+     */
+    static function viewTemplate()
+    {
+        $name = eZBasket::viewName();
+        if ( $name === 'basket' )
+        {
+            return 'basket';
+        }
+
+        $triedFiles = array();
+        $match = eZTemplateDesignResource::fileMatch(
+            eZTemplateDesignResource::allDesignBases(),
+            'templates',
+            'shop/' . $name . '.tpl',
+            $triedFiles );
+
+        return $match === false ? 'basket' : $name;
+    }
+
     public $ProductCollectionID;
     public $SessionID;
     public $OrderID;
@@ -312,8 +371,15 @@ class eZBasket extends eZPersistentObject
             $http = eZHTTPTool::instance();
             $sessionID = $http->sessionID();
 
+            // order_id is part of the condition on purpose. Once a basket has
+            // been turned into an order it must never be handed back as the
+            // current one: it keeps its row, and a checked-out basket whose
+            // session_id has since been blanked would otherwise match every
+            // request that reaches this point without a session id, so each
+            // add-to-basket landed in a dead basket and the shop looked empty.
             $basketList = eZPersistentObject::fetchObjectList( eZBasket::definition(),
-                                                                null, array( "session_id" => $sessionID ),
+                                                                null, array( "session_id" => $sessionID,
+                                                                             "order_id" => 0 ),
                                                                 null, null,
                                                                 $asObject );
         }

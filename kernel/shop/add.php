@@ -33,7 +33,16 @@ $error = $basket->canAddProduct( $object );
 if ( $error !== eZError::SHOP_OK )
     return $Module->handleError( $error, 'shop' );
 
-$OptionList = $http->sessionVariable( "AddToBasket_OptionList_" . $ObjectID );
+// The addtobasket operation declares option_list as a required parameter of
+// type array (see kernel/shop/operation_definition.php). The session variable
+// is simply unset for a product that has no options, so this used to hand the
+// handler a null: the parameter check then failed and the operation returned
+// without ever running its body, so the add silently did nothing.
+$OptionList = $http->hasSessionVariable( "AddToBasket_OptionList_" . $ObjectID )
+              ? $http->sessionVariable( "AddToBasket_OptionList_" . $ObjectID )
+              : array();
+if ( !is_array( $OptionList ) )
+    $OptionList = array();
 
 $operationResult = eZOperationHandler::execute( 'shop', 'addtobasket', array( 'basket_id' => $basket->attribute( 'id' ),
                                                                               'object_id' => $ObjectID,
@@ -78,7 +87,7 @@ switch( $operationResult['status'] )
         {
             $http = eZHTTPTool::instance();
             $http->setSessionVariable( "BasketError", $operationResult['error_data'] );
-            $module->redirectTo( $module->functionURI( "basket" ) . "/(error)/options" );
+            $module->redirectTo( $module->functionURI( eZBasket::viewName() ) . "/(error)/options" );
             return;
         }
         else if ( isset( $operationResult['result'] ) )
@@ -112,6 +121,6 @@ $ini = eZINI::instance();
 if ( $ini->variable( 'ShopSettings', 'RedirectAfterAddToBasket' ) == 'reload' )
     $module->redirectTo( $http->sessionVariable( "FromPage" ) );
 else
-    $module->redirectTo( "/shop/basket/" );
+    $module->redirectTo( '/shop/' . eZBasket::viewName() . '/' );
 
 ?>

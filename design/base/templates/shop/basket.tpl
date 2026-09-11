@@ -1,6 +1,6 @@
 <div class="shop-basket">
 
-    <form method="post" action={"/shop/basket/"|ezurl}>
+    <form method="post" action={concat('/shop/',cond(is_set($basket_view_name),$basket_view_name,'basket'),'/')|ezurl}>
 
     <h1>{"Basket"|i18n("design/base/shop")}</h1>
 

@@ -76,6 +76,7 @@ class eZUserShopAccountHandler
         $street2 = '';
         $zip = '';
         $place = '';
+        $phone = '';
         $country = '';
         $comment = '';
         $state = '';
@@ -123,7 +124,13 @@ class eZUserShopAccountHandler
                 $zip = $zipNode->textContent;
             }
 
-            $placeNode = $dom->getElementsByTagName( 'place' )->item( 0 );
+            // Orders are stored with <city>; older ones used <place>. Read the
+            // new tag first and fall back, so existing orders keep rendering.
+            $placeNode = $dom->getElementsByTagName( 'city' )->item( 0 );
+            if ( !$placeNode )
+            {
+                $placeNode = $dom->getElementsByTagName( 'place' )->item( 0 );
+            }
             if ( $placeNode )
             {
                 $place = $placeNode->textContent;
@@ -141,6 +148,12 @@ class eZUserShopAccountHandler
                 $country = $countryNode->textContent;
             }
 
+            $phoneNode = $dom->getElementsByTagName( 'phone' )->item( 0 );
+            if ( $phoneNode )
+            {
+                $phone = $phoneNode->textContent;
+            }
+
             $commentNode = $dom->getElementsByTagName( 'comment' )->item( 0 );
             if ( $commentNode )
             {
@@ -154,7 +167,11 @@ class eZUserShopAccountHandler
                       'street1' => $street1,
                       'street2' => $street2,
                       'zip' => $zip,
+                      // 'city' is the current name; 'place' is kept so existing
+                      // templates and handlers carry on working unchanged.
                       'place' => $place,
+                      'city' => $place,
+                      'phone' => $phone,
                       'state' => $state,
                       'country' => $country,
                       'comment' => $comment,

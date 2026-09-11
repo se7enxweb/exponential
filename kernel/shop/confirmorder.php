@@ -37,7 +37,7 @@ if ( $order instanceof eZOrder )
     if ( $http->hasPostVariable( "CancelButton" ) )
     {
         $order->purge( /*$removeCollection = */ false );
-        $module->redirectTo( '/shop/basket/' );
+        $module->redirectTo( '/shop/' . eZBasket::viewName() . '/' );
         return;
     }
 

@@ -108,11 +108,11 @@ if ( $http->hasPostVariable( "RemoveProductItemButton" ) )
 
         if ( $itemCountError )
         {
-            $module->redirectTo( $module->functionURI( "basket" ) . "/(error)/invaliditemcount" );
+            $module->redirectTo( $module->functionURI( eZBasket::viewName() ) . "/(error)/invaliditemcount" );
             return;
         }
 
-        $module->redirectTo( $module->functionURI( "basket" ) . "/" );
+        $module->redirectTo( $module->functionURI( eZBasket::viewName() ) . "/" );
         return;
     }
 }
@@ -129,7 +129,7 @@ if ( $http->hasPostVariable( "StoreChangesButton" ) )
         if ( !is_numeric( $itemCount ) or $itemCount < 0 )
         {
             // Redirect to basket
-            $module->redirectTo( $module->functionURI( "basket" ) . "/(error)/invaliditemcount" );
+            $module->redirectTo( $module->functionURI( eZBasket::viewName() ) . "/(error)/invaliditemcount" );
             return;
         }
     }
@@ -175,7 +175,7 @@ if ( $http->hasPostVariable( "ContinueShoppingButton" ) )
         if ( $itemCountError )
         {
             // Redirect to basket
-            $module->redirectTo( $module->functionURI( "basket" ) . "/(error)/invaliditemcount" );
+            $module->redirectTo( $module->functionURI( eZBasket::viewName() ) . "/(error)/invaliditemcount" );
             return;
         }
     }
@@ -212,7 +212,7 @@ if ( $http->hasPostVariable( "CheckoutButton" ) or ( $doCheckout === true ) )
         if ( $counteditems == 0 )
         {
             $zeroproduct = true;
-            return $module->redirectTo( $module->functionURI( "basket" ) );
+            return $module->redirectTo( $module->functionURI( eZBasket::viewName() ) );
         }
 
         $itemIDList = $http->postVariable( "ProductItemIDList" );
@@ -242,7 +242,7 @@ if ( $http->hasPostVariable( "CheckoutButton" ) or ( $doCheckout === true ) )
             if ( $itemCountError )
             {
                 // Redirect to basket
-                $module->redirectTo( $module->functionURI( "basket" ) . "/(error)/invaliditemcount" );
+                $module->redirectTo( $module->functionURI( eZBasket::viewName() ) . "/(error)/invaliditemcount" );
                 return;
             }
         }
@@ -335,7 +335,20 @@ if ( $shippingInfo !== null )
 }
 
 $Result = array();
-$Result['content'] = $tpl->fetch( "design:shop/basket.tpl" );
+// Templates post back to the basket page, so they need the configured view
+// name as well; the form action is a URI and must follow the setting.
+$tpl->setVariable( 'basket_view_name', eZBasket::viewName() );
+
+// The template follows the configured view name too, so a shop served at
+// /shop/cart/ renders shop/cart.tpl and can be styled separately. The
+// shipped cart.tpl includes basket.tpl, so a design that only overrides
+// shop/basket.tpl still applies.
+$Result['content'] = $tpl->fetch( 'design:shop/' . eZBasket::viewTemplate() . '.tpl' );
+// The breadcrumb follows the configured view name, so a site served at
+// /shop/cart/ does not label the page Basket. Both strings stay translatable
+// in their own right.
 $Result['path'] = array( array( 'url' => false,
-                                'text' => ezpI18n::tr( 'kernel/shop', 'Basket' ) ) );
+                                'text' => eZBasket::viewName() === 'cart'
+                                          ? ezpI18n::tr( 'kernel/shop', 'Cart' )
+                                          : ezpI18n::tr( 'kernel/shop', 'Basket' ) ) );
 ?>

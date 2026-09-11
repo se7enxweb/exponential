@@ -14,7 +14,7 @@ $tpl = eZTemplate::factory();
 
 if ( $module->isCurrentAction( 'Cancel' ) )
 {
-    $module->redirectTo( '/shop/basket/' );
+    $module->redirectTo( '/shop/' . eZBasket::viewName() . '/' );
     return;
 }
 
@@ -33,7 +33,7 @@ if ( $user->isRegistered() )
 }
 
 // Initialize variables
-$street1 = $street2 = $zip = $place = $state = $country = $comment = '';
+$street1 = $street2 = $zip = $place = $state = $country = $comment = $phone = '';
 
 
 // Check if user has an earlier order, copy order info from that one
@@ -44,7 +44,12 @@ if ( count( $orderList ) > 0 and  $user->isRegistered() )
     $street1 = $accountInfo['street1'];
     $street2 = $accountInfo['street2'];
     $zip = $accountInfo['zip'];
-    $place = $accountInfo['place'];
+    // The handler returns the address under both names; prefer the current
+    // one and fall back for orders stored before the rename.
+    $place = isset( $accountInfo['city'] ) && $accountInfo['city'] !== ''
+             ? $accountInfo['city'] : $accountInfo['place'];
+    if ( isset( $accountInfo['phone'] ) )
+        $phone = $accountInfo['phone'];
     $state = $accountInfo['state'];
     $country = $accountInfo['country'];
 }
@@ -63,17 +68,37 @@ if ( $module->isCurrentAction( 'Store' ) )
     if ( ! eZMail::validate( $email ) )
         $inputIsValid = false;
 
+    // Line 1 is the address; line 2 is the optional extra. The shipped code
+    // had this the wrong way round - it required Street2 and ignored Street1,
+    // so a form filled in the obvious way, with line 1 only, could not be
+    // submitted and gave no clue why. The stray indentation on that if
+    // suggests it was never meant to hang off Street2 at all.
     $street1 = $http->postVariable( "Street1" );
+    if ( trim( $street1 ) == "" )
+        $inputIsValid = false;
     $street2 = $http->postVariable( "Street2" );
-        if ( trim( $street2 ) == "" )
-            $inputIsValid = false;
 
     $zip = $http->postVariable( "Zip" );
     if ( trim( $zip ) == "" )
         $inputIsValid = false;
-    $place = $http->postVariable( "Place" );
+    // The field was renamed from Place to City. Accept either so a form that
+    // has not been updated keeps posting successfully.
+    $place = $http->hasPostVariable( "City" )
+             ? $http->postVariable( "City" )
+             : $http->postVariable( "Place" );
     if ( trim( $place ) == "" )
         $inputIsValid = false;
+    // Phone is required only when the form actually offers it. The shipped
+    // shop/userregister.tpl in design/standard, design/admin, ezwebin and
+    // ezdemo has no Phone input, so requiring it unconditionally would make
+    // those forms impossible to submit.
+    $phone = '';
+    if ( $http->hasPostVariable( "Phone" ) )
+    {
+        $phone = $http->postVariable( "Phone" );
+        if ( trim( $phone ) == "" )
+            $inputIsValid = false;
+    }
     $state = $http->postVariable( "State" );
     $country = $http->postVariable( "Country" );
     if ( trim( $country ) == "" )
@@ -113,7 +138,9 @@ if ( $module->isCurrentAction( 'Store' ) )
         $zipNode = $doc->createElement( "zip", $zip );
         $root->appendChild( $zipNode );
 
-        $placeNode = $doc->createElement( "place", $place );
+        // Stored as <city>; eZUserShopAccountHandler reads <place> too, so
+        // orders written before the rename still render.
+        $placeNode = $doc->createElement( "city", $place );
         $root->appendChild( $placeNode );
 
         $stateNode = $doc->createElement( "state", $state );
@@ -121,6 +148,9 @@ if ( $module->isCurrentAction( 'Store' ) )
 
         $countryNode = $doc->createElement( "country", $country );
         $root->appendChild( $countryNode );
+
+        $phoneNode = $doc->createElement( "phone", $phone );
+        $root->appendChild( $phoneNode );
 
         $commentNode = $doc->createElement( "comment", $comment );
         $root->appendChild( $commentNode );
@@ -154,6 +184,8 @@ $tpl->setVariable( "street1", $street1 );
 $tpl->setVariable( "street2", $street2 );
 $tpl->setVariable( "zip", $zip );
 $tpl->setVariable( "place", $place );
+$tpl->setVariable( "city", $place );
+$tpl->setVariable( "phone", $phone );
 $tpl->setVariable( "state", $state );
 $tpl->setVariable( "country", $country );
 $tpl->setVariable( "comment", $comment );
