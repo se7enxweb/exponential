@@ -15,5 +15,6 @@
 /vendor
 /composer.lock
 /coverage
+/ai/
 
 .aider*
