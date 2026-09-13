@@ -90,6 +90,7 @@
         "se7enxweb/explayouts-ui": "~1.0.0",
         "se7enxweb/explayouts-ui-api": "~1.0.0",
         "se7enxweb/expquery-translator": "~1.0.0",
+        "se7enxweb/expchangeclass": "~1.0.0",
         "se7enxweb/expsite-api": "~1.0.0",
         "se7enxweb/expsite-app": "~1.0.0",
         "se7enxweb/expsite-core": "~1.0.0",
