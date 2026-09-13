@@ -24,11 +24,15 @@ class expKickstarter
     private $startStep;
     private $stopStep;
     private $force;
+    private $startTime;
 
     public function __construct( $rootDir, $argv = null )
     {
-        $this->rootDir = $rootDir;
-        $this->argv    = is_array( $argv ) ? $argv : array();
+        $this->rootDir   = $rootDir;
+        $this->argv      = is_array( $argv ) ? $argv : array();
+        // Recorded before anything runs so the summary can report how long the
+        // whole invocation took, not just the part after the wizard started.
+        $this->startTime = microtime( true );
     }
 
     public function run()
@@ -562,9 +566,13 @@ class expKickstarter
         $this->cli->output( 'Setup summary' );
         $this->cli->output( str_repeat( '-', 50 ) );
 
+        // The early return below is why this is not simply appended at the end
+        // of the method: a run that selected no site type still needs to say
+        // when it finished.
         if ( !isset( $this->persistenceList['chosen_site_package']['0'] ) )
         {
             $this->cli->output( 'No site type was selected. Stopped at step: ' . $this->stopStep );
+            $this->showFinishTime();
             return;
         }
 
@@ -578,5 +586,31 @@ class expKickstarter
         $this->cli->output( 'Access type:  ' . $siteType['access_type'] );
         $this->cli->output( 'Site URL:     ' . $urls['url'] );
         $this->cli->output( 'Admin URL:    ' . $urls['admin_url'] );
+
+        $this->showFinishTime();
+    }
+
+    /**
+     * Close the summary with when the run finished and how long it took.
+     *
+     * Two runs of the same kickstart.ini otherwise produce byte-identical
+     * output, so there is no way to tell a fresh install from scrollback of an
+     * earlier one. The timestamp makes every run distinguishable, and the
+     * elapsed time saves reaching for a stopwatch to compare them.
+     */
+    private function showFinishTime()
+    {
+        $this->cli->output( str_repeat( '-', 50 ) );
+        $this->cli->output( 'Finished:     ' . date( 'Y-m-d H:i:s T' ) );
+
+        if ( $this->startTime )
+        {
+            $seconds = microtime( true ) - $this->startTime;
+            $this->cli->output( 'Elapsed:      ' . sprintf( '%02d:%02d:%02d (%.1f seconds)',
+                                                            (int) ( $seconds / 3600 ),
+                                                            (int) ( $seconds / 60 ) % 60,
+                                                            (int) $seconds % 60,
+                                                            $seconds ) );
+        }
     }
 }
