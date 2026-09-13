@@ -205,13 +205,7 @@ $data = array (
     ),
     'rows' => 
     array (
-      0 => 
-      array (
-        0 => '0',
-        1 => '2',
-        2 => 'eng-US',
-        3 => 'English (United States)',
-      ),
+    
     ),
   ),
   'ezcontentclass' => 
