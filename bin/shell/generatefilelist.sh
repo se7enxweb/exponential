@@ -45,6 +45,10 @@ EXCLUDE_PATHS[extension_vendor]='./extension/*/vendor/*'
 EXCLUDE_FIXED=('./share/filelist.md5')
 EXCLUDE_NAMES=('*.pyc')
 
+# Exclusions added at runtime with --exclude=<value>. Both may be repeated.
+EXCLUDE_EXTRA_PATHS=()
+EXCLUDE_EXTRA_NAMES=()
+
 # ── Option parsing ────────────────────────────────────────────────────────
 DRY_RUN=0
 
@@ -59,6 +63,29 @@ for arg in "$@"; do
                 unset "EXCLUDE_PATHS[$KEY]"
             else
                 echo "Warning: --include=$KEY does not match any default exclusion (known keys: ${!EXCLUDE_PATHS[*]})"
+            fi
+            ;;
+        --exclude=*)
+            VALUE="${arg#--exclude=}"
+            if [[ -z "$VALUE" ]]; then
+                echo "ERROR: --exclude= needs a value — run $0 --help"
+                exit 1
+            fi
+            if [[ "$VALUE" == \*.* && "$VALUE" != */* ]]; then
+                # A bare glob such as *.log: match on the file name at any depth.
+                EXCLUDE_EXTRA_NAMES+=( "$VALUE" )
+            elif [[ "$VALUE" == */* || "$VALUE" == *\** ]]; then
+                # Anything with a slash or a wildcard is used as a find -path
+                # pattern as given, with ./ added so it anchors at the root.
+                case "$VALUE" in
+                    ./*|\**) ;;
+                    *) VALUE="./$VALUE" ;;
+                esac
+                EXCLUDE_EXTRA_PATHS+=( "$VALUE" )
+            else
+                # A plain name such as ai or .git: exclude it wherever it sits,
+                # at the root and nested inside extensions.
+                EXCLUDE_EXTRA_PATHS+=( "./$VALUE/*" "*/$VALUE/*" )
             fi
             ;;
         --help|-h)
@@ -76,6 +103,11 @@ for arg in "$@"; do
             echo "  --dry-run           Preview the file count without writing anything"
             echo "  --include=<key>     Remove a path from the default exclusion list."
             echo "                      May be specified multiple times."
+            echo "  --exclude=<value>   Exclude something extra. May be specified"
+            echo "                      multiple times, and combined with --include."
+            echo "                        ai            a directory, wherever it sits"
+            echo "                        ./ai/*        a find -path pattern, as given"
+            echo "                        '*.log'       a file name glob, at any depth"
             echo "  --help, -h          This message"
             echo
             echo "Default excluded paths (use --include=<key> to include):"
@@ -95,6 +127,14 @@ for arg in "$@"; do
             echo
             echo "  # Include both vendor/ and extension vendor dirs:"
             echo "  bash bin/shell/generatefilelist.sh --include=vendor --include=extension_vendor"
+            echo
+            echo "  # Include extension/, and leave out working directories that"
+            echo "  # are not part of a release:"
+            echo "  bash bin/shell/generatefilelist.sh --include=extension --exclude=ai"
+            echo
+            echo "  # Several at once:"
+            echo "  bash bin/shell/generatefilelist.sh --exclude=ai --exclude=node_modules \\"
+            echo "                                    --exclude=.git --exclude='"'"'*.backup_*'"'"'"
             echo
             exit 0
             ;;
@@ -127,6 +167,12 @@ done
 for name in "${EXCLUDE_NAMES[@]}"; do
     FIND_ARGS+=( -not -name "$name" )
 done
+for pattern in "${EXCLUDE_EXTRA_PATHS[@]}"; do
+    FIND_ARGS+=( -not -path "$pattern" )
+done
+for name in "${EXCLUDE_EXTRA_NAMES[@]}"; do
+    FIND_ARGS+=( -not -name "$name" )
+done
 
 mapfile -t FILES < <(
     find -L . -type f "${FIND_ARGS[@]}" \
@@ -144,6 +190,16 @@ fi
 
 echo -n "  found ${FILE_COUNT} files"
 echo_success
+
+if [[ ${#EXCLUDE_EXTRA_PATHS[@]} -gt 0 || ${#EXCLUDE_EXTRA_NAMES[@]} -gt 0 ]]; then
+    echo "Extra exclusions applied:"
+    for pattern in "${EXCLUDE_EXTRA_PATHS[@]}"; do
+        echo "  path  $pattern"
+    done
+    for name in "${EXCLUDE_EXTRA_NAMES[@]}"; do
+        echo "  name  $name"
+    done
+fi
 
 # ── Dry-run exit ──────────────────────────────────────────────────────────
 if [[ "$DRY_RUN" -eq 1 ]]; then
