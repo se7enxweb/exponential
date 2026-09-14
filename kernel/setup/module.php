@@ -101,7 +101,10 @@ $ViewList["radsurvey"] = array(
                                  // The class loader check takes seconds, so it
                                  // is asked for in the address rather than run
                                  // every time the page is opened.
-                                 'check'  => 'Check' ),
+                                 'check'  => 'Check',
+                                 // Which kind of finding, so a number in the
+                                 // summary can link to the ones behind it.
+                                 'kind'   => 'Kind' ),
     "params" => array( ) );
 
 $ViewList["settingsextension"] = array(

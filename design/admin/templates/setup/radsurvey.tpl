@@ -20,6 +20,33 @@
 .sv-summary b { font-size: 1.6rem; line-height: 1.1; }
 .sv-summary .sv-label { font-size: .78em; text-transform: uppercase; letter-spacing: .05em; color: var(--sv-muted); font-weight: 600; }
 
+.sv-figure {
+    display: flex; flex-direction: column; gap: .1rem; text-decoration: none; color: inherit;
+    border-bottom: 2px solid transparent; padding-bottom: .1rem;
+}
+.sv-figure b { font-size: 1.6rem; line-height: 1.1; }
+.sv-figure:hover { border-bottom-color: var(--sv-accent); }
+.sv-figure.is-bad b { color: var(--sv-bad); }
+.sv-figure.is-bad:hover { border-bottom-color: var(--sv-bad); }
+
+.sv-kinds { display: flex; flex-wrap: wrap; gap: .4rem; padding: 0 0 1rem 0; }
+.sv-kind {
+    display: inline-flex; gap: .4rem; align-items: baseline; text-decoration: none; color: inherit;
+    border: 1px solid var(--sv-line); border-left-width: 4px; border-radius: 6px;
+    padding: .3rem .6rem; background: #fff; font-size: .92em;
+}
+.sv-kind:hover { border-color: #9a9aa0; }
+.sv-kind.is-broken { border-left-color: var(--sv-bad); }
+.sv-kind.is-odd { border-left-color: var(--sv-ok); }
+.sv-kind.is-note { border-left-color: #c9c9ce; }
+.sv-kind.is-current { background: #eef4ff; border-color: var(--sv-accent); }
+.sv-kind b { font-weight: 700; }
+
+.sv-fix { margin: .35rem 0 .1rem 0; padding: .5rem .7rem; background: #fbfbfc; border: 1px solid var(--sv-line); border-radius: 6px; }
+.sv-fix-head { font-size: .78em; text-transform: uppercase; letter-spacing: .05em; color: var(--sv-muted); font-weight: 700; display: block; padding-bottom: .25rem; }
+.sv-fix ol { margin: 0; padding-left: 1.1rem; }
+.sv-fix li { padding: .1rem 0; white-space: normal; }
+
 .sv-tabs { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0 0 1rem 0; }
 .sv-tab {
     display: flex; flex-direction: column; gap: .1rem; flex: 1 1 14rem; min-width: 0;
@@ -77,10 +104,10 @@
     <span><b>{$survey_counts.contracts}</b><span class="sv-label">{'contracts to implement'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
     <span><b>{$survey_counts.aliases}</b><span class="sv-label">{'take an alias instead'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
 {if $survey_health.broken|gt( 0 )}
-    <span><b style="color:#b4232c">{$survey_health.broken}</b><span class="sv-label">{'configured and cannot work'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
+    <a class="sv-figure is-bad" href={$survey_problems_url|ezurl}><b>{$survey_health.broken}</b><span class="sv-label">{'configured and cannot work'|i18n( 'design/admin/setup/rad/survey' )}</span></a>
 {/if}
 {if $survey_counts.broken|gt( 0 )}
-    <span><b style="color:#b4232c">{$survey_counts.broken}</b><span class="sv-label">{'look like a class and are not one'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
+    <a class="sv-figure is-bad" href={$survey_unknown_url|ezurl}><b>{$survey_counts.broken}</b><span class="sv-label">{'look like a class and are not one'|i18n( 'design/admin/setup/rad/survey' )}</span></a>
 {/if}
 </div>
 
@@ -107,6 +134,17 @@
 </form>
 
 {if eq( $survey_show, 'problems' )}
+<div class="sv-kinds">
+    <a class="sv-kind{if eq( $survey_kind, '' )} is-current{/if}" href={$survey_problems_url|ezurl}>
+        <b>{'Everything'|i18n( 'design/admin/setup/rad/survey' )}</b>
+    </a>
+{foreach $survey_health_kinds as $sv_kind}
+    <a class="sv-kind is-{$sv_kind.severity|wash}{if eq( $survey_kind, $sv_kind.key )} is-current{/if}" href={$sv_kind.url|ezurl}>
+        <b>{$sv_kind.count}</b> <span>{$sv_kind.check|i18n( 'design/admin/setup/rad/survey' )|wash}</span>
+    </a>
+{/foreach}
+</div>
+
 <p class="sv-meta">
 {if eq( $survey_check, 'classes' )}
     {'Every class this installation declares has been loaded in a child process. That is the only way to find one php refuses, and a class php refuses ends the request that touches it rather than merely failing.'|i18n( 'design/admin/setup/rad/survey' )}
@@ -147,7 +185,16 @@
     <td><code>{$sv_row.one|wash}</code></td>
     <td><code>{$sv_row.two|wash}</code></td>
     <td><code>{$sv_row.three|wash}</code></td>
-    <td class="sv-value"><code>{$sv_row.four|wash}</code></td>
+    <td class="sv-value">{if eq( $survey_show, 'problems' )}{$sv_row.four|wash}{else}<code>{$sv_row.four|wash}</code>{/if}
+    {if $sv_row.fix|count|gt( 0 )}
+        <div class="sv-fix">
+            <span class="sv-fix-head">{'How to fix it'|i18n( 'design/admin/setup/rad/survey' )}</span>
+            <ol>
+            {foreach $sv_row.fix as $sv_step}<li>{$sv_step|i18n( 'design/admin/setup/rad/survey' )|wash}</li>{/foreach}
+            </ol>
+        </div>
+    {/if}
+    </td>
     <td class="sv-where"><code>{$sv_row.note|wash}</code></td>
 </tr>
 {/foreach}

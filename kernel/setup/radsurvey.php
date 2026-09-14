@@ -53,6 +53,11 @@ $find = isset( $Params['Find'] ) && is_string( $Params['Find'] )
 $offset  = isset( $Params['Offset'] ) ? (int) $Params['Offset'] : 0;
 $perPage = 100;
 
+// Read before the section switch, because the address builder below needs it
+// whichever section is being drawn.
+$kindParam = isset( $Params['Kind'] ) && is_string( $Params['Kind'] )
+             ? preg_replace( '/[^a-z0-9-]+/', '', strtolower( $Params['Kind'] ) ) : '';
+
 $survey = expRADSurvey::survey();
 $counts = $survey['counts'];
 
@@ -104,13 +109,22 @@ switch ( $show )
 
         usort( $findings, array( 'expRADHealth', 'compare' ) );
 
+        // Narrowing to one kind, so a number in the summary can link straight
+        // to the findings behind it rather than to a page of everything.
+        $kind = $kindParam;
+
+        if ( $kind !== '' )
+            $findings = array_values( array_filter( $findings,
+                function ( $finding ) use ( $kind ) { return $finding['key'] === $kind; } ) );
+
         foreach ( $findings as $finding )
             $rows[] = array(
                 'one'   => $finding['check'],
                 'two'   => $finding['severity'],
                 'three' => $finding['what'],
-                'four'  => $finding['fix'],
+                'four'  => $finding['means'],
                 'note'  => $finding['where'],
+                'fix'   => $finding['fix'],
                 'state' => $finding['severity'] === expRADHealth::BROKEN ? 'bad'
                          : ( $finding['severity'] === expRADHealth::ODD ? 'ok' : 'empty' ) );
         break;
@@ -204,6 +218,12 @@ switch ( $show )
                          : ( $entry['shape'] === 'unknown' ? 'bad' : 'empty' ) );
 }
 
+// Every row answers the same questions, so the template does not have to know
+// which section it is drawing.
+foreach ( $rows as $at => $row )
+    if ( !isset( $row['fix'] ) )
+        $rows[$at]['fix'] = array();
+
 // ── Narrowing, then paging ──────────────────────────────────────────────────
 if ( $find !== '' )
 {
@@ -223,10 +243,11 @@ $page   = array_slice( $rows, $offset, $perPage );
 
 // The address of this view, with whatever is set and nothing that is not, so a
 // link out of the page comes back to the same place.
-$address = function ( $show, $offset, $find ) {
+$address = function ( $show, $offset, $find ) use ( $kindParam ) {
     $url = '/setup/radsurvey/(show)/' . rawurlencode( $show );
     $url .= $offset ? '/(offset)/' . (int) $offset : '';
     $url .= $find !== '' ? '/(find)/' . rawurlencode( $find ) : '';
+    $url .= $kindParam !== '' ? '/(kind)/' . rawurlencode( $kindParam ) : '';
 
     return $url;
 };
@@ -256,6 +277,27 @@ for ( $at = 0; $at < $total; $at += $perPage )
 // things are broken rather than making somebody click to find out.
 $health = expRADHealth::counts();
 
+// Every kind of finding, with a link straight to the ones behind it. A number
+// on a page that cannot be clicked is a number somebody has to go and look for.
+$healthKinds = array();
+foreach ( expRADHealth::kinds() as $key => $kind )
+    $healthKinds[] = array_merge( $kind, array(
+        'url' => '/setup/radsurvey/(show)/problems/(kind)/' . rawurlencode( $key ) ) );
+
+usort( $healthKinds, function ( $a, $b ) {
+    $order = array( expRADHealth::BROKEN => 0, expRADHealth::ODD => 1, expRADHealth::NOTE => 2 );
+    return $order[$a['severity']] === $order[$b['severity']]
+           ? strcmp( $a['check'], $b['check'] )
+           : ( $order[$a['severity']] < $order[$b['severity']] ? -1 : 1 );
+} );
+
+$tpl->setVariable( 'survey_health_kinds', $healthKinds );
+$tpl->setVariable( 'survey_kind', $kindParam );
+$tpl->setVariable( 'survey_problems_url', '/setup/radsurvey/(show)/problems' );
+// The one finding kind that lives in the settings section rather than the
+// problems one, so its number on the summary has somewhere to go too.
+$tpl->setVariable( 'survey_unknown_url',
+                   '/setup/radsurvey/(show)/problems/(kind)/' . expRADHealth::keyOf( 'Setting names no class' ) );
 $tpl->setVariable( 'survey_health', $health );
 $tpl->setVariable( 'survey_check', isset( $Params['Check'] ) ? $Params['Check'] : '' );
 $tpl->setVariable( 'survey_check_url', '/setup/radsurvey/(show)/problems/(check)/classes' );
