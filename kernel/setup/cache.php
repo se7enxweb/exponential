@@ -81,25 +81,49 @@ if ( $module->isCurrentAction( 'ClearCache' ) && $module->hasActionParameter( 'C
     $cacheCleared['list'] = $cacheItemList;
 }
 
+// Which sites can be generated, and where the pages are written. Shown on the
+// page so the operator chooses a site before pressing the button, and can see
+// the target directory without reading two ini files.
+require_once 'kernel/setup/expstaticcacherunner.php';
+$staticCacheSiteAccessList = expStaticCacheRunner::availableSiteAccesses();
+$staticCacheStorageDir = expStaticCacheRunner::storageDirectory();
+$staticCacheEnabled = $ini->variable( 'ContentSettings', 'StaticCache' ) == 'enabled';
+
 if ( $module->isCurrentAction( 'RegenerateStaticCache' ) )
 {
-    // get staticCacheHandler instance
-    $optionArray = array( 'iniFile'      => 'site.ini',
-                          'iniSection'   => 'ContentSettings',
-                          'iniVariable'  => 'StaticCacheHandler' );
+    // The chosen site, empty meaning every cacheable one. Only a name this
+    // installation serves is accepted.
+    $staticCacheSiteAccess = $module->hasActionParameter( 'StaticCacheSiteAccess' )
+                           ? (string)$module->actionParameter( 'StaticCacheSiteAccess' ) : '';
+    if ( $staticCacheSiteAccess !== '' &&
+         !in_array( $staticCacheSiteAccess, eZStaticCache::cacheableSiteAccessList(), true ) )
+        $staticCacheSiteAccess = '';
 
-    $options = new ezpExtensionOptions( $optionArray );
-    $staticCacheHandler = eZExtension::getHandlerClass( $options );
-	
-    $staticCacheHandler->generateCache( true, true );
+    // The same runner the streamed console uses, so the two cannot behave
+    // differently. This path is the fallback for a browser without
+    // EventSource: it produces the same files, it just says nothing until it
+    // is finished.
+    $staticCacheStored = 0;
+    $runner = new expStaticCacheRunner(
+        function ( $type, $message, array $data = array() ) use ( &$staticCacheStored )
+        {
+            if ( $type === 'done' && isset( $data['stored'] ) )
+                $staticCacheStored = (int)$data['stored'];
+        },
+        array( 'siteaccess' => $staticCacheSiteAccess ) );
+    $runner->run();
 
-    $staticCacheHandlerClassName = $ini->variable( 'ContentSettings', 'StaticCacheHandler' );
-    $staticCacheHandlerClassName::executeActions();
-
-    $cacheCleared['static'] = true;
+    // Report what happened rather than that the code ran. This was set to true
+    // unconditionally, so a run that wrote nothing - and the shipped
+    // configuration could write nothing at all - still reported success.
+    $cacheCleared['static'] = $staticCacheStored;
 }
 
 $tpl->setVariable( "cache_cleared", $cacheCleared );
+$tpl->setVariable( 'static_cache_siteaccess_list', $staticCacheSiteAccessList );
+$tpl->setVariable( 'static_cache_storage_dir', $staticCacheStorageDir );
+$tpl->setVariable( 'static_cache_enabled', $staticCacheEnabled );
+$tpl->setVariable( 'static_cache_stream_url', 'setup/staticcachestream' );
 $tpl->setVariable( "cache_enabled", $cacheEnabled );
 $tpl->setVariable( 'cache_list', $cacheList );
 

@@ -32,7 +32,10 @@ $ViewList["cache"] = array(
                                     'ClearINICacheButton' => 'ClearINICache',
                                     'ClearTemplateCacheButton' => 'ClearTemplateCache',
                                     'RegenerateStaticCacheButton' => 'RegenerateStaticCache' ),
-    'post_action_parameters' => array( 'ClearCache' => array( 'CacheList' => 'CacheList' ) ),
+    'post_action_parameters' => array( 'ClearCache' => array( 'CacheList' => 'CacheList' ),
+                                       // Which site to generate, chosen on the
+                                       // page before the button is pressed.
+                                       'RegenerateStaticCache' => array( 'StaticCacheSiteAccess' => 'StaticCacheSiteAccess' ) ),
     "params" => array() );
 
 $ViewList['cachetoolbar'] = array(
@@ -133,6 +136,21 @@ $ViewList['preloadstream'] = array(
     'params' => array(),
     'unordered_params' => array( 'maxpages' => 'MaxPages',
                                  'maxdepth' => 'MaxDepth' ) );
+
+// The stream that drives the static cache generator on the cache view. A view
+// rather than a standalone entry point so it goes through the same siteaccess
+// and policy checks as the page that opens it, and the same managecache policy
+// as the rest of setup/cache.
+$ViewList['staticcachestream'] = array(
+    'functions' => array( 'managecache' ),
+    'script' => 'staticcachestream.php',
+    'ui_context' => 'ajax',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array(),
+    'unordered_params' => array( 'siteaccess' => 'SiteAccess',
+                                 'maxpages' => 'MaxPages',
+                                 'maxdepth' => 'MaxDepth',
+                                 'purge' => 'Purge' ) );
 
 $ViewList['systemupgrade'] = array(
     'functions' => array( 'setup' ),
