@@ -1,0 +1,441 @@
+<?php
+/**
+ * File containing the expPreloadRunner class.
+ *
+ * The preloader as a library: it warms the site's page caches and reports what
+ * it did through a callback, so the same code can drive a terminal, an
+ * administration view or anything else.
+ *
+ * bin/php/preload.php did this work inline and shelled out to curl and wget,
+ * which is fine for a terminal but unusable from a module view: wget need not
+ * be installed, shell_exec is often disabled under php-fpm, and neither gives
+ * the caller anything to render progressively. The reference implementation in
+ * exponentialbasic went the other way and had the administration page spawn the
+ * command line script, which means the web request inherits the script's
+ * environment, its exit codes and its assumptions about being a tty.
+ *
+ * This runs in process on the curl extension, and crawls with its own queue
+ * rather than wget, so the administration view needs no shell access and no
+ * external binaries.
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @package kernel
+ */
+
+class expPreloadRunner
+{
+    /**
+     * Extensions never worth requesting: fetching them warms nothing, and on a
+     * media heavy site they are the bulk of the links on a page.
+     */
+    const SKIP_EXTENSIONS =
+        'jpg,jpeg,png,gif,webp,svg,ico,bmp,tiff,avif,' .
+        'css,js,map,woff,woff2,ttf,eot,otf,' .
+        'mp3,mp4,m4a,m4v,mov,avi,mkv,webm,ogg,oga,ogv,wav,flac,' .
+        'pdf,doc,docx,xls,xlsx,ppt,pptx,odt,ods,odp,rtf,txt,csv,epub,mobi,' .
+        'zip,tar,gz,tgz,bz2,xz,zst,rar,7z,cab,iso,dmg,img,bin,deb,rpm,apk,exe,msi,pkg,' .
+        'json,xml,rss,atom,yaml,yml,sql,db,sqlite';
+
+    /**
+     * Paths that are never public pages and must not be crawled.
+     *
+     * The administration modules matter more than they look. With debug output
+     * enabled every rendered page carries the toolbar's template links, and on
+     * a single content page those outnumber the real links four to one - 81
+     * /visual/ links against 18 content ones on /healthy-eating. Left in, the
+     * crawler spends its whole budget opening the template editor instead of
+     * warming the site, and does so as whatever user the request runs as.
+     *
+     * Content lives under url aliases, so excluding module paths costs nothing.
+     * content/search is the exception and stays: it is a real public page.
+     */
+    const SKIP_PATTERN =
+        '#^/(visual|setup|package|class|role|section|settings|workflow|' .
+        'infocollector|notification|pdf|trigger|state|collaboration|ezinfo)(/|$)' .
+        '|^/content/(edit|draft|history|translations|versionview|removeobject|' .
+        'copy|move|browse|action|upload|trash|bookmark|pendinglist)(/|$)' .
+        '|^/user/(login|logout|preferences|setting)(/|$)' .
+        '|/(stats|calendar|groupeventcalendar)(/|$)#';
+
+    private $emit;
+    private $options;
+    private $seen = array();
+    private $queue = array();
+    private $siteaccessNames = null;
+
+    private $counts = array(
+        'fetched' => 0, 'skipped' => 0, 'broken' => 0, 'denied' => 0, 'bytes' => 0 );
+
+    /**
+     * @param callable $emit  Called as $emit( $type, $message, $data ). Types are
+     *                        'phase', 'ok', 'warn', 'error', 'info' and 'done';
+     *                        a front end may render them however it likes.
+     * @param array    $options  base_url, max_pages, max_depth, timeout.
+     */
+    public function __construct( $emit, array $options = array() )
+    {
+        $this->emit = $emit;
+        $this->options = $options + array(
+            'base_url'   => '',
+            'siteaccess' => '',
+            'max_pages'  => 250,
+            'max_depth'  => 3,
+            'timeout'    => 20,
+        );
+    }
+
+    private function say( $type, $message, array $data = array() )
+    {
+        call_user_func( $this->emit, $type, $message, $data );
+    }
+
+    /**
+     * The site's base url, from site.ini unless the caller supplied one.
+     *
+     * SiteURL is stored without a scheme, so one is added rather than assumed
+     * further down where a missing scheme would silently produce a relative url.
+     */
+    public function baseUrl()
+    {
+        $url = trim( (string)$this->options['base_url'] );
+
+        // Which site to warm has to be asked for, not assumed from the current
+        // siteaccess. Run from the administration interface the current
+        // siteaccess is the admin one, whose SiteURL is the administration host
+        // - localhost on a default install - so warming it would warm nothing a
+        // visitor ever sees. The command line script takes --siteaccess for the
+        // same reason.
+        if ( $url === '' && trim( (string)$this->options['siteaccess'] ) !== '' )
+        {
+            $siteaccess = trim( (string)$this->options['siteaccess'] );
+            $dir = 'settings/siteaccess/' . $siteaccess;
+            if ( file_exists( $dir . '/site.ini.append.php' ) )
+            {
+                $saIni = eZINI::instance( 'site.ini.append.php', $dir, null, false, null, true );
+                if ( $saIni->hasVariable( 'SiteSettings', 'SiteURL' ) )
+                    $url = (string)$saIni->variable( 'SiteSettings', 'SiteURL' );
+            }
+        }
+
+        if ( $url === '' )
+        {
+            $ini = eZINI::instance( 'site.ini' );
+            if ( !$ini->hasVariable( 'SiteSettings', 'SiteURL' ) )
+                return false;
+            $url = (string)$ini->variable( 'SiteSettings', 'SiteURL' );
+        }
+
+        $url = rtrim( trim( $url ), '/' );
+        if ( $url === '' )
+            return false;
+        if ( strpos( $url, '://' ) === false )
+            $url = 'https://' . $url;
+        return $url;
+    }
+
+    /**
+     * The pages to start from: the site root plus any URLTranslationKeyword
+     * sections, matching what the command line script warms first.
+     */
+    public function startUrls( $base )
+    {
+        $urls = array( $base . '/' );
+
+        $ini = eZINI::instance( 'site.ini' );
+        $siteaccess = trim( (string)$this->options['siteaccess'] );
+        if ( $siteaccess !== '' && file_exists( 'settings/siteaccess/' . $siteaccess . '/site.ini.append.php' ) )
+            $ini = eZINI::instance( 'site.ini.append.php', 'settings/siteaccess/' . $siteaccess, null, false, null, true );
+
+        if ( $ini->hasVariable( 'SiteSettings', 'URLTranslationKeyword' ) )
+        {
+            $keywords = (string)$ini->variable( 'SiteSettings', 'URLTranslationKeyword' );
+            foreach ( explode( ';', $keywords ) as $keyword )
+            {
+                $keyword = trim( $keyword, "/ \t\n\r" );
+                if ( $keyword !== '' )
+                    $urls[] = $base . '/' . $keyword . '/';
+            }
+        }
+
+        return array_values( array_unique( $urls ) );
+    }
+
+    /** One request. Returns status, timing, size and body. */
+    private function fetch( $url )
+    {
+        $started = microtime( true );
+        $ch = curl_init();
+        curl_setopt_array( $ch, array(
+            CURLOPT_URL            => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_MAXREDIRS      => 3,
+            CURLOPT_TIMEOUT        => (int)$this->options['timeout'],
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => 0,
+            CURLOPT_USERAGENT      => 'Exponential preloader',
+            CURLOPT_ENCODING       => '',
+        ) );
+        $body = curl_exec( $ch );
+        $status = (int)curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+        $type = (string)curl_getinfo( $ch, CURLINFO_CONTENT_TYPE );
+        $error = curl_error( $ch );
+        curl_close( $ch );
+
+        return array(
+            'status'  => $status,
+            'ms'      => (int)round( ( microtime( true ) - $started ) * 1000 ),
+            'bytes'   => $body === false ? 0 : strlen( $body ),
+            'type'    => $type,
+            'body'    => $body === false ? '' : $body,
+            'error'   => $error,
+        );
+    }
+
+    /**
+     * The siteaccess names this installation serves, for stripping a url prefix.
+     */
+    private function siteaccessNames()
+    {
+        if ( $this->siteaccessNames !== null )
+            return $this->siteaccessNames;
+
+        $ini = eZINI::instance( 'site.ini' );
+        $names = array();
+        foreach ( array( 'AvailableSiteAccessList', 'RelatedSiteAccessList' ) as $key )
+        {
+            if ( !$ini->hasVariable( 'SiteAccessSettings', $key ) )
+                continue;
+            foreach ( (array)$ini->variable( 'SiteAccessSettings', $key ) as $name )
+            {
+                $name = trim( (string)$name );
+                if ( $name !== '' )
+                    $names[$name] = true;
+            }
+        }
+
+        $this->siteaccessNames = $names;
+        return $names;
+    }
+
+    /**
+     * True when the path addresses a module rather than content.
+     *
+     * The module segment is not always first. With uri matching in play the
+     * same view is reachable as /visual/templateview/... and as
+     * /bold_ger/visual/templateview/..., so a pattern anchored at the start of
+     * the path misses every siteaccess-prefixed form - which is most of them on
+     * a multi-siteaccess installation. One leading segment is removed when it
+     * names a siteaccess this installation actually serves; anything else is
+     * left alone, so a content path is never truncated.
+     */
+    private function isModulePath( $path )
+    {
+        if ( preg_match( self::SKIP_PATTERN, $path ) )
+            return true;
+
+        if ( preg_match( '#^/([^/]+)(/.*)$#', $path, $m ) )
+        {
+            $names = $this->siteaccessNames();
+            if ( isset( $names[$m[1]] ) && preg_match( self::SKIP_PATTERN, $m[2] ) )
+                return true;
+        }
+
+        return false;
+    }
+
+    /** Same-host page links worth queueing, absolute and de-fragmented. */
+    private function linksFrom( $html, $pageUrl, $base )
+    {
+        $links = array();
+        if ( $html === '' || !preg_match_all( '#<a\b[^>]*href="([^"]+)"#i', $html, $m ) )
+            return $links;
+
+        $skip = array_flip( explode( ',', self::SKIP_EXTENSIONS ) );
+        $host = parse_url( $base, PHP_URL_HOST );
+
+        foreach ( $m[1] as $href )
+        {
+            $href = html_entity_decode( $href, ENT_QUOTES, 'UTF-8' );
+            $href = strtok( $href, '#' );
+            if ( $href === false || $href === '' )
+                continue;
+            if ( preg_match( '#^(mailto|tel|javascript|data):#i', $href ) )
+                continue;
+
+            if ( strpos( $href, '//' ) === 0 )
+                $url = 'https:' . $href;
+            elseif ( strpos( $href, '://' ) !== false )
+                $url = $href;
+            elseif ( $href[0] === '/' )
+                $url = $base . $href;
+            else
+                $url = rtrim( dirname( $pageUrl . 'x' ), '/' ) . '/' . $href;
+
+            if ( parse_url( $url, PHP_URL_HOST ) !== $host )
+                continue;
+
+            $url = $this->normalise( $url );
+
+            $path = (string)parse_url( $url, PHP_URL_PATH );
+            $ext = strtolower( (string)pathinfo( $path, PATHINFO_EXTENSION ) );
+            if ( $ext !== '' && isset( $skip[$ext] ) )
+                continue;
+            if ( $this->isModulePath( $path ) )
+                continue;
+
+            $links[$url] = true;
+        }
+
+        return array_keys( $links );
+    }
+
+    /**
+     * Warm the site. Phase one is the section pages, phase two crawls outwards
+     * from them, both bounded by max_pages so a view cannot run away.
+     */
+    public function run()
+    {
+        $base = $this->baseUrl();
+        if ( $base === false )
+        {
+            $this->say( 'error', 'Cannot determine the site url: SiteSettings/SiteURL is not set in site.ini.' );
+            $this->say( 'done', 'Nothing was warmed.', array( 'counts' => $this->counts ) );
+            return false;
+        }
+
+        $started = microtime( true );
+        $this->say( 'info', 'Base url: ' . $base );
+        $this->say( 'info', sprintf( 'Limits: %d pages, depth %d, %ds per request.',
+                                     $this->options['max_pages'], $this->options['max_depth'],
+                                     $this->options['timeout'] ) );
+
+        $start = $this->startUrls( $base );
+        $this->say( 'phase', sprintf( 'Phase 1 of 2 - section pages (%d)', count( $start ) ) );
+
+        foreach ( $start as $url )
+            $this->visit( $url, $base, 0, true );
+
+        $this->say( 'phase', 'Phase 2 of 2 - crawling the rest of the site' );
+
+        while ( $this->queue )
+        {
+            if ( $this->counts['fetched'] >= $this->options['max_pages'] )
+            {
+                $this->say( 'warn', sprintf( 'Reached the limit of %d pages; %d queued urls were left.',
+                                             $this->options['max_pages'], count( $this->queue ) ) );
+                break;
+            }
+            $next = array_shift( $this->queue );
+            $this->visit( $next['url'], $base, $next['depth'], false );
+        }
+
+        $elapsed = round( microtime( true ) - $started, 1 );
+        $this->say( 'done', sprintf(
+            '%d warmed, %d skipped, %d broken, %d denied, %s in %ss.',
+            $this->counts['fetched'], $this->counts['skipped'], $this->counts['broken'],
+            $this->counts['denied'], $this->formatBytes( $this->counts['bytes'] ), $elapsed ),
+            array( 'counts' => $this->counts, 'seconds' => $elapsed ) );
+
+        return $this->counts['broken'] === 0;
+    }
+
+    private function visit( $url, $base, $depth, $isSection )
+    {
+        if ( isset( $this->seen[$url] ) )
+            return;
+        $this->seen[$url] = true;
+
+        $result = $this->fetch( $url );
+        $path = (string)parse_url( $url, PHP_URL_PATH );
+        if ( $path === '' ) $path = '/';
+
+        if ( $result['status'] === 0 )
+        {
+            ++$this->counts['broken'];
+            $this->say( 'error', sprintf( '%s  %s', $path, $result['error'] !== '' ? $result['error'] : 'no response' ) );
+            return;
+        }
+
+        // 401 and 403 are expected on a site with protected areas; they are not
+        // failures of the preloader and are counted apart from broken links.
+        if ( $result['status'] === 401 || $result['status'] === 403 )
+        {
+            ++$this->counts['denied'];
+            $this->say( 'warn', sprintf( '%s  %d access denied', $path, $result['status'] ) );
+            return;
+        }
+
+        if ( $result['status'] >= 400 )
+        {
+            ++$this->counts['broken'];
+            $this->say( 'error', sprintf( '%s  %d', $path, $result['status'] ) );
+            return;
+        }
+
+        if ( stripos( $result['type'], 'text/html' ) === false )
+        {
+            ++$this->counts['skipped'];
+            return;
+        }
+
+        ++$this->counts['fetched'];
+        $this->counts['bytes'] += $result['bytes'];
+
+        $this->say( $isSection ? 'phase-item' : 'ok', sprintf( '%-52s %3d  %5dms  %s',
+            $this->shorten( $path, 52 ), $result['status'], $result['ms'],
+            $this->formatBytes( $result['bytes'] ) ),
+            array( 'url' => $url, 'status' => $result['status'], 'ms' => $result['ms'] ) );
+
+        if ( $depth >= $this->options['max_depth'] )
+            return;
+
+        foreach ( $this->linksFrom( $result['body'], $url, $base ) as $link )
+        {
+            if ( isset( $this->seen[$link] ) )
+                continue;
+            $this->queue[] = array( 'url' => $link, 'depth' => $depth + 1 );
+        }
+    }
+
+    /**
+     * Collapse the forms of a url that address the same page.
+     *
+     * A site that still emits /index.php/foo alongside /foo would otherwise be
+     * crawled twice over, and on a bounded run the duplicates crowd out pages
+     * that have not been warmed at all. The trailing slash is normalised for
+     * the same reason.
+     */
+    private function normalise( $url )
+    {
+        $url = preg_replace( '#/index\\.php(?=/|$)#', '', $url, 1 );
+        $parts = parse_url( $url );
+        if ( !isset( $parts['path'] ) || $parts['path'] === '' )
+            $url = rtrim( $url, '/' ) . '/';
+        return $url;
+    }
+
+    private function shorten( $text, $width )
+    {
+        if ( strlen( $text ) <= $width )
+            return $text;
+        return substr( $text, 0, $width - 1 ) . "\xe2\x80\xa6";
+    }
+
+    private function formatBytes( $bytes )
+    {
+        if ( $bytes < 1024 )
+            return $bytes . 'B';
+        if ( $bytes < 1048576 )
+            return round( $bytes / 1024, 1 ) . 'K';
+        return round( $bytes / 1048576, 1 ) . 'M';
+    }
+
+    public function counts()
+    {
+        return $this->counts;
+    }
+}
+
+?>

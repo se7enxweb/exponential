@@ -115,6 +115,25 @@ $ViewList['menu'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'params' => array( ) );
 
+// The preloader's console, and the stream that drives it. The stream is a view
+// rather than a standalone entry point so it goes through the same siteaccess
+// and policy checks as the page that opens it.
+$ViewList['preload'] = array(
+    'functions' => array( 'preload' ),
+    'script' => 'preload.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array() );
+
+$ViewList['preloadstream'] = array(
+    'functions' => array( 'preload' ),
+    'script' => 'preloadstream.php',
+    'ui_context' => 'ajax',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array(),
+    'unordered_params' => array( 'maxpages' => 'MaxPages',
+                                 'maxdepth' => 'MaxDepth' ) );
+
 $ViewList['systemupgrade'] = array(
     'functions' => array( 'setup' ),
     'script' => 'systemupgrade.php',
@@ -188,6 +207,7 @@ $FunctionList = array();
 $FunctionList['administrate'] = array();
 $FunctionList['install'] = array();
 $FunctionList['managecache'] = array();
+$FunctionList['preload'] = array();
 $FunctionList['setup'] = array();
 $FunctionList['system_info'] = array();
 
