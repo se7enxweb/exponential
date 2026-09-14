@@ -17,10 +17,10 @@ where it can be searched.
 
 | | |
 | --- | --- |
-| Extension points | **924** |
+| Extension points | **1027** |
 | ini files read | 381 |
-| Settings naming a class | 367 (350 resolve to a class, 16 take an alias, 1 look like a class and are not one) |
-| Directories searched for handlers | 116 |
+| Settings naming a class | 350 (333 resolve to a class, 16 take an alias, 1 look like a class and are not one) |
+| Directories searched for handlers | 236 |
 | Interfaces and abstract classes | 41 (29 implemented) |
 | Modules | 57 |
 | Module views | 400 |
@@ -222,16 +222,6 @@ so a lower case value that names no class is an *alias* doing its job. A row mar
 | `SchemaSettings` | `SchemaHandlerClasses[postgresql]` | `eZPgsqlSchema` | `lib/ezdbschema/classes/ezpgsqlschema.php` |
 | `SchemaSettings` | `SchemaHandlerClasses[sqlite3]` | `eZSQLiteSchema` | `lib/ezdbschema/classes/ezsqliteschema.php` |
 | `SchemaSettings` | `SchemaHandlerClasses[sqlite]` | `eZSQLiteSchema` | `lib/ezdbschema/classes/ezsqliteschema.php` |
-
-### design.ini (5)
-
-| Section | Setting | Value | Declared in |
-| --- | --- | --- | --- |
-| `ExtensionSettings` | `DesignExtensions[]` | `ezgmaplocation` | `extension/ezgmaplocation/classes/ezgmaplocation.php` |
-| `ExtensionSettings` | `DesignExtensions[]` | `ezpm` | `extension/ezpm/classes/ezpm.php` |
-| `ExtensionSettings` | `DesignExtensions[]` | `eztags` | `extension/eztags/datatypes/eztags/eztags.php` |
-| `ExtensionSettings` | `DesignExtensions[]` | `powercontent` | `extension/powercontent/classes/powercontent.php` |
-| `ExtensionSettings` | `DesignExtensions[]` | `xrowmetadata` | `extension/xrowmetadata/classes/structs/xrowmetadata.php` |
 
 ### error.ini (2)
 
@@ -451,13 +441,6 @@ so a lower case value that names no class is an *alias* doing its job. A row mar
 | `TopAdminMenu` | `Tabs[]` | `eztags` | `extension/eztags/datatypes/eztags/eztags.php` |
 | `TopAdminMenu` | `Tabs[]` | `gitmanager` | `extension/git_manager/classes/git_manager.php` |
 
-### module.ini (2)
-
-| Section | Setting | Value | Declared in |
-| --- | --- | --- | --- |
-| `ModuleSettings` | `ModuleList[]` | `error` | `(declared at runtime)` |
-| `ModuleSettings` | `ModuleList[]` | `powercontent` | `extension/powercontent/classes/powercontent.php` |
-
 ### notification.ini (2)
 
 | Section | Setting | Value | Declared in |
@@ -525,7 +508,7 @@ so a lower case value that names no class is an *alias* doing its job. A row mar
 | `AccountSettings` | `Handler` | `ezuser` | `kernel/classes/datatypes/ezuser/ezuser.php` |
 | `ConfirmOrderSettings` | `Handler` | `ezdefault` | *alias* |
 
-### site.ini (39)
+### site.ini (29)
 
 | Section | Setting | Value | Declared in |
 | --- | --- | --- | --- |
@@ -546,22 +529,12 @@ so a lower case value that names no class is an *alias* doing its job. A row mar
 | `DatabaseSettings` | `ImplementationAlias[postgresql]` | `eZPostgreSQLDB` | `lib/ezdb/classes/ezpostgresqldb.php` |
 | `DatabaseSettings` | `ImplementationAlias[sqlite3]` | `eZSQLite3DB` | `lib/ezdb/classes/ezsqlite3db.php` |
 | `DebugSettings` | `AlwaysLog[]` | `error` | `(declared at runtime)` |
-| `ExtensionSettings` | `ActiveExtensions[]` | `xrowmetadata` | `extension/xrowmetadata/classes/structs/xrowmetadata.php` |
-| `ExtensionSettings` | `ActiveExtensions[]` | `ezgmaplocation` | `extension/ezgmaplocation/classes/ezgmaplocation.php` |
-| `ExtensionSettings` | `ActiveExtensions[]` | `owsimpleoperator` | `extension/owsimpleoperator/autoloads/owsimpleoperator.php` |
-| `ExtensionSettings` | `ActiveExtensions[]` | `eztags` | `extension/eztags/datatypes/eztags/eztags.php` |
-| `ExtensionSettings` | `ActiveExtensions[]` | `powercontent` | `extension/powercontent/classes/powercontent.php` |
-| `ExtensionSettings` | `ActiveExtensions[]` | `ezprestapiprovider` | `extension/ezprestapiprovider/classes/rest_provider.php` |
 | `FileSettings` | `CacheDir` | `cache` | `vendor/zetacomponents/signal-slot/docs/tutorial_multiple_slots_example.php` |
 | `MailSettings` | `Transport` | `sendmail` | *alias* |
 | `MailSettings` | `TransportAlias[file]` | `eZFileTransport` | `lib/ezutils/classes/ezfiletransport.php` |
 | `MailSettings` | `TransportAlias[sendmail]` | `eZSendmailTransport` | `lib/ezutils/classes/ezsendmailtransport.php` |
 | `MailSettings` | `TransportAlias[smtp]` | `eZSMTPTransport` | `lib/ezutils/classes/ezsmtptransport.php` |
 | `RegionalSettings` | `LanguageSwitcherClass` | `ezpLanguageSwitcher` | `kernel/private/classes/ezplanguageswitcher.php` |
-| `RegionalSettings` | `TranslationExtensions[]` | `ezgmaplocation` | `extension/ezgmaplocation/classes/ezgmaplocation.php` |
-| `RegionalSettings` | `TranslationExtensions[]` | `ezpm` | `extension/ezpm/classes/ezpm.php` |
-| `RegionalSettings` | `TranslationExtensions[]` | `eztags` | `extension/eztags/datatypes/eztags/eztags.php` |
-| `RegionalSettings` | `TranslationExtensions[]` | `xrowmetadata` | `extension/xrowmetadata/classes/structs/xrowmetadata.php` |
 | `SearchSettings` | `SearchEngine` | `eZSearchEngine` | `kernel/search/plugins/ezsearchengine/ezsearchengine.php` |
 | `SiteAccessSettings` | `MobileDeviceFilterClass` | `ezpMobileDeviceRegexpFilter` | `kernel/private/classes/ezpmobiledeviceregexpfilter.php` |
 | `SiteSettings` | `ErrorHandler` | `displayerror` | *alias* |
@@ -629,42 +602,127 @@ reason a handler that looks right does nothing.
 | `cronjob.ini` | `CronjobSettings` | `ExtensionDirectories` | `ezmbpaex` |
 | `cronjob.ini` | `CronjobSettings` | `ExtensionDirectories` | `syndication` |
 | `cronjob.ini` | `CronjobSettings` | `ExtensionDirectories` | `xrowmetadata` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | empty |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `expauthentication_2fa` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `autonotifications` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `autorss` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `bccie` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `bcgooglesitemaps` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `bcwebsitestatistics` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `birthday` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `cjw_newsletter` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `enhancedezbinaryfile` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `enhancedselection2` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `expchangeclass` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `expdse` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `explayouts` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `explayouts_content_browser_ui` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `explayouts_relation_list_query` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `explayouts_site_api` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `explayouts_tags_query` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `explayouts_ui` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `explayouts_ui_api` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `expsite_api` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `expsite_core` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezauthorize` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezautosave` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezdemo` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezflow` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezgmaplocation` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezie` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezjscore` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezmbpaex` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezmultiupload` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezodf` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezoe` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezownerchange` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezpm` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezssp` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezstarrating` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `eztags` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezupdate` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezwebin` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ezwt` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `git_manager` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `hcaptcha` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `ngclasslist` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `powercontent` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `recaptcha` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `sevenx_dse` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `sevenx_themes_media` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `sevenx_themes_simple` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `sevenx_themes_super` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `swark` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `syndication` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `xrowextract` |
+| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `xrowmetadata` |
 | `ezxml.ini` | `HandlerSettings` | `ExtensionRepositories` | `ezoe` |
+| `icon.ini` | `ExtensionSettings` | `IconExtensions` | empty |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | empty |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `class`, `collaboration`, `content`, `error`, `ezinfo` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `bccie` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `bccie` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `bcgooglesitemaps` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `cjw_newsletter` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `newsletter` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `expchangeclass` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `expdse` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `dse` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `explayouts` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `explayouts` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `explayouts_content_browser_ui` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `explayouts_content_browser_ui` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `explayouts_ui` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `explayouts_ui` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `explayouts_ui_api` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `explayouts_ui_api` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezauthorize` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezauthorize` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezflow` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `ezflow`, `flash` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezie` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `ezie` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezjscore` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `ezjscore` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezmbpaex` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `userpaex` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezmultiupload` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `ezmultiupload` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezodf` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `ezodf` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezoe` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `ezoe` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezownerchange` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `owner` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezpaypal` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `paypal` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezpm` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `pm` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `eztags` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `tags` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezupdate` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `update` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `ezwt` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `websitetoolbar` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `git_manager` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `git_manager` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `hcaptcha` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `hcaptcha` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `nxc_powercontent` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `content` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `powercontent` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `powercontent` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `recaptcha` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `recaptcha` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `sevenx_dse` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `dse` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `sevenx_themes_media` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `info-collection` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `syndication` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `xrowextract` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `xrowextract` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `xrowmetadata` |
+| `module.ini` | `ModuleSettings` | `ModuleList` | `sitemaps` |
 | `notification.ini` | `NotificationEventHandlerSettings` | `RepositoryDirectories` | `kernel/classes/notification/handler/` |
 | `notification.ini` | `NotificationEventHandlerSettings` | `ExtensionDirectories` | empty |
 | `notification.ini` | `NotificationEventTypeSettings` | `RepositoryDirectories` | `kernel/classes/notification/event/` |
@@ -682,9 +740,44 @@ reason a handler that looks right does nothing.
 | `shop.ini` | `VATSettings` | `RepositoryDirectories` | `kernel/classes/vathandlers` |
 | `shop.ini` | `VATSettings` | `ExtensionDirectories` | empty |
 | `shopaccount.ini` | `HandlerSettings` | `ExtensionRepositories` | empty |
+| `site.ini` | `DesignSettings` | `DesignLocationCache` | `disabled` |
+| `site.ini` | `DesignSettings` | `DesignLocationCache` | `enabled` |
+| `site.ini` | `DesignSettings` | `DesignExtensions` | `expsite_app` |
 | `site.ini` | `ExtensionSettings` | `ExtensionDirectory` | `extension` |
+| `site.ini` | `ExtensionSettings` | `AdditionalExtensionDirectories` | empty |
+| `site.ini` | `ExtensionSettings` | `ActiveExtensions` | `xrowmetadata` |
+| `site.ini` | `ExtensionSettings` | `ActiveAccessExtensions` | empty |
+| `site.ini` | `ExtensionSettings` | `ActiveExtensions` | `ezjscore`, `ezoe`, `ezformtoken`, `xrowmetadata`, `ezjscore` |
+| `site.ini` | `ExtensionSettings` | `ActiveExtensions` | `expsite_app` |
+| `site.ini` | `RSSSettings` | `ActiveExtensions` | empty |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | empty |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `autonotifications` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `bccie` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `birthday` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `enhancedezbinaryfile` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezautosave` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezdemo` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezflow` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezgmaplocation` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezie` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezmbpaex` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezmultiupload` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezodf` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezoe` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezpm` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezstarrating` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `eztags` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezwebin` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ezwt` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `hcaptcha` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `ngclasslist` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `recaptcha` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `xrowextract` |
+| `site.ini` | `RegionalSettings` | `TranslationExtensions` | `xrowmetadata` |
 | `site.ini` | `SearchSettings` | `ExtensionDirectories` | empty |
+| `site.ini` | `TemplateSettings` | `AutoloadPathList` | `lib/eztemplate/classes/`, `kernel/common/`, `lib/ezpdf/classes/`, `kernel/private/eztemplate/` |
 | `site.ini` | `TemplateSettings` | `ExtensionAutoloadPath` | empty |
+| `site.ini` | `TemplateSettings` | `AutoloadPathList` | `extension/bcwebsitestatistics/autoloads/` |
 | `site.ini` | `TemplateSettings` | `ExtensionRepositories` | `bcwebsitestatistics` |
 | `site.ini` | `TemplateSettings` | `ExtensionAutoloadPath` | `cjw_newsletter` |
 | `site.ini` | `TemplateSettings` | `ExtensionAutoloadPath` | `enhancedezbinaryfile` |

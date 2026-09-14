@@ -91,8 +91,24 @@ class expSettingsExtensionWizard extends expExtensionWizard
             'ini'     => 'site.ini',
             'default' => false,
             'summary' => 'Settings that apply to one siteaccess only, kept with the extension.',
-            'what'    => 'Settings in settings/siteaccess/ belong to the installation and are awkward to deploy with an extension. The same settings under an extension travel with it, and can be switched on and off with it.',
+            'what'    => 'Settings in settings/siteaccess/ belong to the installation and are awkward to deploy with an extension. The same settings under an extension travel with it, and can be switched on and off with it. It is also what makes a site extension possible: one package carrying a whole site - its design, its siteaccesses, its overrides and its code.',
             'note'    => 'These are only read when the extension is listed in ActiveAccessExtensions[] as well as ActiveExtensions[]. Being active is not enough, and this is the line that is forgotten.' ),
+
+        'roots' => array(
+            'label'   => 'Additional extension roots',
+            'ini'     => 'site.ini',
+            'default' => false,
+            'summary' => 'Somewhere other than extension/ for extensions to live.',
+            'what'    => 'A second root - extension_src/ is the usual name - separates what a project wrote from what it took from elsewhere, so who owns a package is readable off the directory layout rather than off a list somebody maintains. Everything in the kernel goes through eZExtension::extensionPath(), so a new root is seen by all of it at once.',
+            'note'    => 'An extension of the same name in a later root shadows the one before it. That is how a vendor package is forked without being edited - copy it across, change it there - and also how one gets shadowed by accident. The autoload generator scans every root, so the autoloads have to be regenerated after adding one.' ),
+
+        'icons' => array(
+            'label'   => 'Icon theme',
+            'ini'     => 'icon.ini',
+            'default' => false,
+            'summary' => 'A set of icons an extension brings with it.',
+            'what'    => 'Icons used to mean patching the kernel or copying files into share/icons. An extension can now carry a theme of its own, searched before the ones that ship, with the whole chain falling back: this theme, then any additional themes, then the standard one, and within each, extensions before share/icons.',
+            'note'    => 'A missing icon takes the theme default rather than drawing a broken image, so a half finished theme is safe to install. Icons are served as static files, so none of this costs php time per image.' ),
         );
     }
 
@@ -215,6 +231,10 @@ class expSettingsExtensionWizard extends expExtensionWizard
                 'label' => 'Listener class',
                 'description' => 'The class the event listeners point at, with a method per event and a note saying whether what it returns is used or ignored. Written only when events are chosen.',
                 'default' => true ),
+            'examples' => array(
+                'label' => 'API examples',
+                'description' => 'How to read these settings back from code, how to write an ini from a script without losing its comments, and how to find an extension whatever root it lives in.',
+                'default' => true ),
             'readme' => array(
                 'label' => 'README.md',
                 'description' => 'What each setting does, why it is where it is, and what has to be cleared before it takes effect.',
@@ -262,6 +282,7 @@ class expSettingsExtensionWizard extends expExtensionWizard
             'version'  => self::text( isset( $input['version'] ) ? $input['version'] : '', 20 ),
             'licence'  => self::licence_id( isset( $input['licence'] ) ? $input['licence'] : '' ),
             'siteaccess' => self::safeIdentifier( isset( $input['siteaccess'] ) ? $input['siteaccess'] : '' ),
+            'theme'      => self::safeIdentifier( isset( $input['theme'] ) ? $input['theme'] : '' ),
         );
 
         $settings['aliases']   = self::aliasList( isset( $input['aliases'] ) ? $input['aliases'] : '' );
@@ -270,6 +291,8 @@ class expSettingsExtensionWizard extends expExtensionWizard
         $settings['forms']     = self::formList( isset( $input['forms'] ) ? $input['forms'] : '' );
         $settings['operations']= self::operationList( isset( $input['operations'] ) ? $input['operations'] : '' );
         $settings['overrides'] = self::overrideList( isset( $input['overrides'] ) ? $input['overrides'] : '' );
+        $settings['roots']     = self::rootList( isset( $input['roots'] ) ? $input['roots'] : '' );
+        $settings['sizes']     = self::sizeList( isset( $input['sizes'] ) ? $input['sizes'] : '' );
 
         if ( $settings['class'] === '' && $settings['name'] !== '' )
             $settings['class'] = self::safeClass( str_replace( '_', '', $settings['name'] ) . 'Listener' );
@@ -281,6 +304,11 @@ class expSettingsExtensionWizard extends expExtensionWizard
             $settings['vendor'] = 'exponential';
         if ( $settings['summary'] === '' )
             $settings['summary'] = 'Settings for Exponential.';
+        if ( $settings['theme'] === '' && $settings['name'] !== '' )
+            $settings['theme'] = self::safeIdentifier( $settings['name'] );
+        if ( count( $settings['sizes'] ) === 0 )
+            $settings['sizes'] = array( array( 'name' => 'normal', 'directory' => '32x32' ),
+                                        array( 'name' => 'small',  'directory' => '16x16' ) );
 
         $chosen = isset( $input['parts'] ) && is_array( $input['parts'] ) ? $input['parts'] : null;
         foreach ( self::parts() as $key => $part )
@@ -523,6 +551,94 @@ class expSettingsExtensionWizard extends expExtensionWizard
     }
 
     /**
+     * The extension roots, one per line.
+     *
+     * A root is a directory relative to the installation. Absolute paths and
+     * anything climbing out with .. are refused: this ends up in an ini that
+     * decides where php is loaded from, and it is the last place to be relaxed
+     * about a path.
+     *
+     * @param mixed $value
+     * @return array of string
+     */
+    public static function rootList( $value )
+    {
+        if ( !is_scalar( $value ) )
+            return array();
+
+        $roots = array();
+
+        foreach ( preg_split( '/[\r\n,]+/', (string) $value ) as $line )
+        {
+            $line = trim( $line );
+
+            if ( $line === '' )
+                continue;
+
+            // An absolute path is refused rather than made relative by taking
+            // the slash off. /etc is not a request for ./etc, and turning one
+            // into the other is how a typo becomes a root nobody meant.
+            if ( $line[0] === '/' || $line[0] === '\\' || preg_match( '#^[A-Za-z]:#', $line ) )
+                continue;
+
+            $line = rtrim( $line, '/' );
+
+            if ( $line === '' )
+                continue;
+
+            if ( !preg_match( '#^[A-Za-z0-9_][A-Za-z0-9_.-]*(/[A-Za-z0-9_][A-Za-z0-9_.-]*)*$#', $line ) )
+                continue;
+
+            if ( strpos( $line, '..' ) !== false )
+                continue;
+
+            if ( !in_array( $line, $roots, true ) )
+                $roots[] = $line;
+
+            if ( count( $roots ) >= 10 )
+                break;
+        }
+
+        return $roots;
+    }
+
+    /**
+     * The icon sizes, one per line: a name, then the directory it lives in.
+     *
+     * @param mixed $value
+     * @return array
+     */
+    public static function sizeList( $value )
+    {
+        if ( !is_scalar( $value ) )
+            return array();
+
+        $sizes = array();
+
+        foreach ( preg_split( '/[\r\n,]+/', (string) $value ) as $line )
+        {
+            $line = trim( $line );
+
+            if ( $line === '' )
+                continue;
+
+            $bits      = preg_split( '/[\s:=]+/', $line );
+            $name      = self::safeIdentifier( isset( $bits[0] ) ? $bits[0] : '' );
+            $directory = isset( $bits[1] ) ? trim( $bits[1] ) : '';
+
+            if ( $name === '' || !preg_match( '/^[A-Za-z0-9_-]{1,20}$/', $directory ) )
+                continue;
+
+            $sizes[] = array( 'name' => $name, 'directory' => $directory );
+
+            if ( count( $sizes ) >= 10 )
+                break;
+        }
+
+        return $sizes;
+    }
+
+    /**
      * A class name: letters and digits, starting with a letter.
      *
      * @param string $value
@@ -598,6 +714,25 @@ class expSettingsExtensionWizard extends expExtensionWizard
         if ( $settings['parts']['trigger'] && count( $settings['operations'] ) === 0 )
             $problems[] = 'Trigger operations were chosen and none were named.';
 
+        if ( $settings['parts']['roots'] && count( $settings['roots'] ) === 0 )
+            $problems[] = 'Additional extension roots were chosen and none were named. One per line, relative to the installation: extension_src';
+
+        foreach ( $settings['roots'] as $root )
+            if ( $root === 'extension' )
+                $problems[] = 'extension is already the first root and does not need naming again. Naming it twice changes nothing, but it reads as though it does.';
+
+        if ( $settings['parts']['icons'] )
+        {
+            if ( $settings['theme'] === '' )
+                $problems[] = 'An icon theme needs a name: lower case letters, digits and underscores.';
+
+            if ( count( $settings['sizes'] ) === 0 )
+                $problems[] = 'An icon theme needs at least one size. One per line, as: normal 32x32';
+
+            foreach ( self::takenThemes( $settings ) as $theme )
+                $problems[] = 'An icon theme called ' . $theme . ' is already searched on this installation. Two themes of the same name shadow each other by root order rather than merging; choose another name.';
+        }
+
         if ( $settings['parts']['siteaccess'] )
         {
             if ( $settings['siteaccess'] === '' )
@@ -613,6 +748,31 @@ class expSettingsExtensionWizard extends expExtensionWizard
             $problems[] = 'An image alias called ' . $alias . ' already exists on this installation. Writing it again redefines it, and every image served through it changes. Choose another name, or say so deliberately by removing this check.';
 
         return $problems;
+    }
+
+    /**
+     * Whether an icon theme of this name is already searched.
+     *
+     * @param array $settings
+     * @return array of string
+     */
+    public static function takenThemes( array $settings )
+    {
+        if ( !$settings['parts']['icons'] || $settings['theme'] === '' )
+            return array();
+
+        $ini    = eZINI::instance( 'icon.ini' );
+        $themes = array();
+
+        foreach ( array( 'Theme', 'StandardTheme' ) as $variable )
+            if ( $ini->hasVariable( 'IconSettings', $variable ) )
+                $themes[] = (string) $ini->variable( 'IconSettings', $variable );
+
+        if ( $ini->hasVariable( 'IconSettings', 'AdditionalThemeList' ) )
+            foreach ( (array) $ini->variable( 'IconSettings', 'AdditionalThemeList' ) as $theme )
+                $themes[] = (string) $theme;
+
+        return in_array( $settings['theme'], $themes, true ) ? array( $settings['theme'] ) : array();
     }
 
     /**
@@ -650,7 +810,9 @@ class expSettingsExtensionWizard extends expExtensionWizard
             'viewcache'  => count( $settings['rules'] ),
             'collect'    => count( $settings['forms'] ),
             'trigger'    => count( $settings['operations'] ),
-            'siteaccess' => count( $settings['overrides'] ) && $settings['siteaccess'] !== '' );
+            'siteaccess' => count( $settings['overrides'] ) && $settings['siteaccess'] !== '',
+            'roots'      => count( $settings['roots'] ),
+            'icons'      => $settings['theme'] !== '' && count( $settings['sizes'] ) );
 
         $chosen = array();
         foreach ( self::topics() as $key => $topic )
@@ -704,6 +866,29 @@ class expSettingsExtensionWizard extends expExtensionWizard
         if ( in_array( 'siteaccess', $topics, true ) )
             foreach ( self::siteaccessFiles( $settings ) as $path => $contents )
                 $files[$path] = $contents;
+
+        if ( in_array( 'roots', $topics, true ) )
+        {
+            $files['settings/site.ini.append.php'] = isset( $files['settings/site.ini.append.php'] )
+                ? self::merged( $files['settings/site.ini.append.php'], self::rootsIni( $settings ) )
+                : self::rootsIni( $settings );
+
+            foreach ( $settings['roots'] as $root )
+                $files['doc/' . str_replace( '/', '_', $root ) . '.md'] = self::rootNotes( $settings, $root );
+        }
+
+        if ( in_array( 'icons', $topics, true ) )
+        {
+            $files['settings/icon.ini.append.php'] = self::iconIni( $settings );
+            $files['icons/' . $settings['theme'] . '/icon.ini'] = self::themeIni( $settings );
+
+            foreach ( $settings['sizes'] as $size )
+                $files['icons/' . $settings['theme'] . '/' . $size['directory'] . '/README.md']
+                    = self::iconNotes( $settings, $size );
+        }
+
+        if ( $parts['examples'] )
+            $files['doc/examples.php'] = self::examples( $settings );
 
         if ( $parts['ezinfo'] )
             $files['ezinfo.php'] = self::ezinfo( $settings );
@@ -1096,6 +1281,314 @@ class expSettingsExtensionWizard extends expExtensionWizard
         }
 
         return $files;
+    }
+
+    /**
+     * Two ini files for the same file, joined into one.
+     *
+     * The roots topic and the events topic both write site.ini. Writing the
+     * second over the first would lose the first silently, which is the sort of
+     * thing a generator should not do to somebody.
+     *
+     * @param string $first
+     * @param string $second
+     * @return string
+     */
+    protected static function merged( $first, $second )
+    {
+        // Each carries the php wrapper and the closing comment. The join keeps
+        // the head of the first and the body of the second.
+        $tail = strpos( $second, "\n[" );
+
+        if ( $tail === false )
+            return $first;
+
+        $body = substr( $second, $tail );
+        $body = preg_replace( '#\n\*/ \?>\n?$#', '', $body );
+
+        return preg_replace( '#\n\*/ \?>\n?$#', '', $first ) . "\n" . $body . "\n*/ ?>\n";
+    }
+
+    /**
+     * site.ini: where else extensions may live.
+     *
+     * @param array $settings
+     * @return string
+     */
+    protected static function rootsIni( array $settings )
+    {
+        $ini  = self::iniHeader( $settings, 'Additional extension roots' );
+        $ini .= "[ExtensionSettings]\n";
+        $ini .= "# extension/ is always the first root and is not named here. Each line\n";
+        $ini .= "# below is another one, searched after it - and an extension of the same\n";
+        $ini .= "# name in a later root shadows the one before it. That is how a package\n";
+        $ini .= "# taken from elsewhere is forked without being edited, and also how one\n";
+        $ini .= "# gets shadowed by accident.\n";
+
+        foreach ( $settings['roots'] as $root )
+            $ini .= "AdditionalExtensionDirectories[]=" . $root . "\n";
+
+        $ini .= "\n# The directory has to exist before anything is found in it, and the\n";
+        $ini .= "# autoload generator scans every root - so after adding one:\n";
+        $ini .= "#\n";
+        $ini .= "#     php bin/php/ezpgenerateautoloads.php\n";
+        $ini .= "#\n";
+        $ini .= "# No composer dump-autoload: moving a package between roots is a copy and\n";
+        $ini .= "# nothing else.\n";
+        $ini .= "\n*/ ?>\n";
+
+        return $ini;
+    }
+
+    /**
+     * What a root is for, left in it so the layout explains itself.
+     *
+     * @param array $settings
+     * @param string $root
+     * @return string
+     */
+    protected static function rootNotes( array $settings, $root )
+    {
+        $md  = "# " . $root . "\n\n";
+        $md .= "An extension root, named in `site.ini [ExtensionSettings] AdditionalExtensionDirectories[]`\n";
+        $md .= "by the " . $settings['title'] . " extension.\n\n";
+
+        $md .= "## What goes in here\n\n";
+        $md .= "Whatever this project wrote, as against whatever it took from elsewhere. The\n";
+        $md .= "split is the point: which is which should be readable off the directory\n";
+        $md .= "layout rather than off a list somebody has to maintain.\n\n";
+
+        $md .= "## How it resolves\n\n";
+        $md .= "`extension/` is searched first and this root after it, so an extension of the\n";
+        $md .= "same name **here** wins. To fork a package without editing it:\n\n";
+        $md .= "```\ncp -r extension/theirs " . $root . "/theirs\n```\n\n";
+        $md .= "and change it here. Nothing else - no manifest, no autoload dump - and the\n";
+        $md .= "original stays where it was, readable, for the next time it is compared.\n\n";
+        $md .= "The same rule is how a package gets shadowed by accident, so a name that\n";
+        $md .= "already exists in `extension/` is worth checking before it is used here.\n\n";
+
+        $md .= "## After adding or moving anything\n\n";
+        $md .= "```\nphp bin/php/ezpgenerateautoloads.php\nphp bin/php/ezcache.php --clear-all\n```\n\n";
+        $md .= "The generator scans every configured root and writes the union of them to\n";
+        $md .= "`var/autoload/`.\n\n";
+
+        $md .= "## Reading it from code\n\n";
+        $md .= "Never build a path out of `extension/` and a name. It is wrong the moment a\n";
+        $md .= "second root exists:\n\n";
+        $md .= "```php\n";
+        $md .= "// Wrong, and was wrong quietly until this root appeared.\n";
+        $md .= "\$path = 'extension/' . \$name . '/settings';\n\n";
+        $md .= "// Right, whatever root it turns out to be in.\n";
+        $md .= "\$path = eZExtension::extensionPath( \$name ) . '/settings';\n";
+        $md .= "```\n";
+
+        return $md;
+    }
+
+    /**
+     * icon.ini: the extension whose icons are searched, and the theme.
+     *
+     * @param array $settings
+     * @return string
+     */
+    protected static function iconIni( array $settings )
+    {
+        $ini  = self::iniHeader( $settings, 'Icon theme' );
+        $ini .= "[ExtensionSettings]\n";
+        $ini .= "# The extension whose icons/ directory is searched. Without this line the\n";
+        $ini .= "# theme below is looked for in share/icons and not found.\n";
+        $ini .= "IconExtensions[]=" . $settings['name'] . "\n\n";
+
+        $ini .= "[IconSettings]\n";
+        $ini .= "# Added to the search rather than made the current theme. Everything the\n";
+        $ini .= "# site already draws keeps drawing, and anything this theme has is used in\n";
+        $ini .= "# preference to the standard one.\n";
+        $ini .= "AdditionalThemeList[]=" . $settings['theme'] . "\n\n";
+
+        $ini .= "# To use it for everything instead, uncomment this - and be sure the theme\n";
+        $ini .= "# is complete first, because the current theme is searched before the\n";
+        $ini .= "# additional ones and anything it does not have falls through to\n";
+        $ini .= "# StandardTheme.\n";
+        $ini .= "# Theme=" . $settings['theme'] . "\n";
+        $ini .= "\n*/ ?>\n";
+
+        return $ini;
+    }
+
+    /**
+     * The theme's own icon.ini, which is what says it is a theme.
+     *
+     * @param array $settings
+     * @return string
+     */
+    protected static function themeIni( array $settings )
+    {
+        $ini  = "#?ini charset=\"utf-8\"?\n";
+        $ini .= "# " . self::commentText( $settings['theme'] ) . " icon theme.\n";
+        $ini .= "#\n";
+        $ini .= "# Written by the " . static::wizardName() . " in the admin interface.\n";
+        $ini .= "# This file is what makes the directory beside it a theme rather than a\n";
+        $ini .= "# folder of images: the sizes below are the subdirectories searched, and a\n";
+        $ini .= "# size that is not listed is never looked in.\n\n";
+
+        $ini .= "[IconSettings]\n";
+        $ini .= "Sizes[]\n";
+        foreach ( $settings['sizes'] as $size )
+            $ini .= "Sizes[" . $size['name'] . "]=" . $size['directory'] . "\n";
+
+        $ini .= "\n# A size written as <width>x<height> gives the img tag its dimensions as\n";
+        $ini .= "# well as naming the directory. A size named anything else names only the\n";
+        $ini .= "# directory, and the image is drawn at whatever size it happens to be.\n";
+
+        $ini .= "\n[ClassIcons]\n";
+        $ini .= "# The icon used for a content class with no icon of its own. Without a\n";
+        $ini .= "# default, a class this theme does not know draws nothing.\n";
+        $ini .= "Default=mimetypes/unknown.png\n\n";
+        $ini .= "# One line per content class identifier, naming a file inside each size\n";
+        $ini .= "# directory:\n";
+        $ini .= "# ClassMap[]\n";
+        $ini .= "# ClassMap[article]=mimetypes/document.png\n";
+        $ini .= "# ClassMap[folder]=filesystems/folder.png\n";
+
+        $ini .= "\n[MimeIcons]\n";
+        $ini .= "Default=mimetypes/binary.png\n";
+        $ini .= "# MimeMap[]\n";
+        $ini .= "# MimeMap[image]=mimetypes/image.png\n";
+        $ini .= "# MimeMap[application/pdf]=mimetypes/pdf.png\n";
+
+        return $ini;
+    }
+
+    /**
+     * What belongs in one size directory.
+     *
+     * Written as a README rather than left empty, because an empty directory
+     * does not survive being copied about and a theme with a missing size
+     * directory simply finds nothing in it.
+     *
+     * @param array $settings
+     * @param array $size
+     * @return string
+     */
+    protected static function iconNotes( array $settings, array $size )
+    {
+        $md  = "# " . $settings['theme'] . " icons, " . $size['name'] . "\n\n";
+        $md .= "Every icon this theme has at the **" . $size['name'] . "** size, in the layout\n";
+        $md .= "the ini beside them expects:\n\n";
+        $md .= "```\n";
+        $md .= "icons/" . $settings['theme'] . "/" . $size['directory'] . "/mimetypes/*.png\n";
+        $md .= "icons/" . $settings['theme'] . "/" . $size['directory'] . "/filesystems/*.png\n";
+        $md .= "icons/" . $settings['theme'] . "/" . $size['directory'] . "/actions/*.png\n";
+        $md .= "```\n\n";
+        $md .= "The subdirectory is part of the name in `ClassMap[]` and `MimeMap[]`, so\n";
+        $md .= "`ClassMap[article]=mimetypes/document.png` looks here for\n";
+        $md .= "`mimetypes/document.png`.\n\n";
+
+        $md .= "## What can be left out\n\n";
+        $md .= "All of it. A theme with three icons in it works: anything it does not have\n";
+        $md .= "falls through to the next theme and then to `share/icons`, and anything\n";
+        $md .= "nothing has takes the `Default` from the ini. Nothing draws a broken image.\n\n";
+
+        $md .= "This file is here so the directory survives being copied, committed and\n";
+        $md .= "packaged. An empty directory does not, and a size directory that has gone\n";
+        $md .= "is a size that silently finds nothing.\n";
+
+        return $md;
+    }
+
+    /**
+     * Reading these settings back, and writing an ini from a script.
+     *
+     * @param array $settings
+     * @return string
+     */
+    protected static function examples( array $settings )
+    {
+        $php  = "<?php\n/**\n * " . $settings['title'] . " - worked examples.\n *\n";
+        $php .= " * Not part of the extension: a file to read, and to copy lines out of.\n *\n";
+        $php .= self::licenceNotice( $settings );
+        $php .= " */\n\n";
+        $php .= "// Nothing below runs on its own.\nreturn;\n\n";
+
+        $php .= "// \xe2\x94\x80\xe2\x94\x80\xe2\x94\x80 Finding an extension, whatever root it is in ";
+        $php .= str_repeat( "\xe2\x94\x80", 20 ) . "\n//\n";
+        $php .= "// Building a path out of 'extension/' and a name was always a shortcut and\n";
+        $php .= "// is now simply wrong: an extension can be in any configured root, and the\n";
+        $php .= "// one that answers is the one in the last root that has it.\n\n";
+        $php .= "\$path = eZExtension::extensionPath( 'my_extension' );   // false when there is none\n\n";
+        $php .= "// Every root, in the order they are searched:\n";
+        $php .= "print_r( eZExtension::extensionRootDirectories() );\n\n";
+        $php .= "// The real directory name, which may differ from what was asked for on a\n";
+        $php .= "// filesystem that does not care about case:\n";
+        $php .= "echo eZExtension::extensionName( 'My_Extension' ), PHP_EOL;\n\n";
+        $php .= "// Every active extension that has a given subdirectory - the shape almost\n";
+        $php .= "// every handler lookup in the kernel is built on:\n";
+        $php .= "print_r( eZExtension::expandedPathList( \$extensionList, 'datatypes' ) );\n\n\n";
+
+        $php .= "// \xe2\x94\x80\xe2\x94\x80\xe2\x94\x80 Adding a root from code rather than from an ini ";
+        $php .= str_repeat( "\xe2\x94\x80", 17 ) . "\n//\n";
+        $php .= "// When the root depends on something an ini cannot know - which machine\n";
+        $php .= "// this is, what a deployment put on disk - the list can be decided at\n";
+        $php .= "// runtime instead. eZExtension::filterExtensionRootDirectories() is called\n";
+        $php .= "// with the configured roots and its answer is what gets searched.\n";
+        $php .= "//\n";
+        $php .= "// It is a kernel override, which is the heaviest way to extend anything\n";
+        $php .= "// here: nothing registers it by name, so two extensions overriding the same\n";
+        $php .= "// class is a fight neither of them knows it is in. Worth it for this and\n";
+        $php .= "// little else.\n\n\n";
+
+        $php .= "// \xe2\x94\x80\xe2\x94\x80\xe2\x94\x80 Reading a setting " . str_repeat( "\xe2\x94\x80", 45 ) . "\n//\n";
+        $php .= "\$ini = eZINI::instance( 'site.ini' );\n\n";
+        $php .= "// hasVariable first, always. variable() on something that is not there is\n";
+        $php .= "// an error in the log and a false you were not expecting.\n";
+        $php .= "if ( \$ini->hasVariable( 'ExtensionSettings', 'ActiveExtensions' ) )\n";
+        $php .= "    print_r( \$ini->variable( 'ExtensionSettings', 'ActiveExtensions' ) );\n\n";
+        $php .= "// A whole section at once, as name to value:\n";
+        $php .= "print_r( \$ini->group( 'ExtensionSettings' ) );\n\n\n";
+
+        $php .= "// \xe2\x94\x80\xe2\x94\x80\xe2\x94\x80 Writing one, without ruining the file ";
+        $php .= str_repeat( "\xe2\x94\x80", 26 ) . "\n//\n";
+        $php .= "// What the settings editor in the admin does, and what an installer or an\n";
+        $php .= "// upgrade script needs. Since 6.0 a direct access write keeps the comments\n";
+        $php .= "// and the ordering of the file it edits, so the change can still be read by\n";
+        $php .= "// whoever has to maintain it afterwards.\n\n";
+        $php .= "// directAccess true: this one file, not the merged view of every file that\n";
+        $php .= "// contributes to the setting. Writing through the merged view would put the\n";
+        $php .= "// whole resolved configuration into one override, which is how a site ends\n";
+        $php .= "// up with settings nobody chose.\n";
+        $php .= "\$ini = new eZINI( 'site.ini.append.php', 'settings/override', null, false, null, true );\n\n";
+        $php .= "\$ini->setVariable( 'SiteSettings', 'SiteName', 'A new name' );\n";
+        $php .= "\$ini->save();\n\n";
+        $php .= "// An array setting is set whole, not appended to:\n";
+        $php .= "\$ini->setVariable( 'ExtensionSettings', 'ActiveExtensions',\n";
+        $php .= "                   array( 'ezjscore', '" . self::phpString( $settings['name'] ) . "' ) );\n";
+        $php .= "\$ini->save();\n\n";
+        $php .= "// Then the caches, or nothing reads the change until they expire:\n";
+        $php .= "eZCache::clearByID( array( 'ini' ) );\n\n\n";
+
+        if ( !empty( $settings['parts']['icons'] ) )
+        {
+            $php .= "// \xe2\x94\x80\xe2\x94\x80\xe2\x94\x80 Using an icon " . str_repeat( "\xe2\x94\x80", 49 ) . "\n//\n";
+            $php .= "// In a template, which is where these are nearly always wanted:\n";
+            $php .= "//\n";
+            $php .= "//     {\$node.object.content_class.identifier|class_icon( small )}\n";
+            $php .= "//     {\$file.mime_type|mimetype_icon( normal )}\n";
+            $php .= "//\n";
+            $php .= "// The theme in this extension is searched before share/icons, and a name\n";
+            $php .= "// it does not have falls through rather than breaking the page.\n\n\n";
+        }
+
+        $php .= "// \xe2\x94\x80\xe2\x94\x80\xe2\x94\x80 When a change does nothing " . str_repeat( "\xe2\x94\x80", 37 ) . "\n//\n";
+        $php .= "// Settings are cached compiled. Three things, in this order:\n";
+        $php .= "//\n";
+        $php .= "//   1. The extension is in ActiveExtensions[].\n";
+        $php .= "//   2. For anything under settings/siteaccess/, it is in\n";
+        $php .= "//      ActiveAccessExtensions[] as well. Being active is not enough.\n";
+        $php .= "//   3. The caches are cleared.\n";
+        $php .= "//\n";
+        $php .= "//      php bin/php/ezcache.php --clear-all\n";
+
+        return $php;
     }
 
     // ── Documentation ────────────────────────────────────────────────────────

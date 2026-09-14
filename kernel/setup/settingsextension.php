@@ -16,7 +16,8 @@ $tpl  = eZTemplate::factory();
 
 $input = array();
 foreach ( array( 'name', 'class', 'title', 'summary', 'author', 'vendor', 'version', 'licence',
-                 'siteaccess', 'aliases', 'rules', 'forms', 'operations', 'overrides' ) as $field )
+                 'siteaccess', 'aliases', 'rules', 'forms', 'operations', 'overrides',
+                 'roots', 'theme', 'sizes' ) as $field )
 {
     if ( $http->hasPostVariable( $field ) && is_scalar( $http->postVariable( $field ) ) )
         $input[$field] = $http->postVariable( $field );
@@ -80,7 +81,7 @@ foreach ( $files as $path => $contents )
 // The boxes are posted back as typed rather than as the wizard read them, so a
 // half typed list is not rewritten under the cursor.
 $raw = array();
-foreach ( array( 'aliases', 'rules', 'forms', 'operations', 'overrides' ) as $field )
+foreach ( array( 'aliases', 'rules', 'forms', 'operations', 'overrides', 'roots', 'sizes' ) as $field )
     $raw[$field] = isset( $input[$field] ) ? $input[$field] : '';
 
 $topics = array();

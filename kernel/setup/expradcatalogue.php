@@ -72,6 +72,7 @@ class expRADCatalogue
             'file'      => 'A file in a place the kernel looks by name. Nothing registers it; being there is the registration.',
             'design'    => 'A template in a design, found through the design chain rather than by being named anywhere.',
             'ini'       => 'Settings only. Nothing is written but ini, and the behaviour changes.',
+            'override'  => 'A kernel class replaced by one of your own through the override autoload path. The heaviest of these mechanisms and the last resort: nothing registers the replacement by name, so two extensions replacing the same class is a fight neither of them knows it is in.',
         );
     }
 
@@ -593,6 +594,72 @@ class expRADCatalogue
             'mechanism' => 'directory',
             'source' => 'kernel/classes/datatypes/ezuser',
             'tool'  => 'setup/handlerextension/login' ),
+
+        'extensionroot' => array(
+            'group' => 'access',
+            'title' => 'Additional extension roots',
+            'what'  => 'Where extensions may live, beyond extension/. A second root - extension_src/ is the usual name - separates what a project wrote from what it took from elsewhere, so ownership is readable off the directory layout rather than off a list somebody maintains. An extension of the same name in a later root shadows the one before it, which is how a vendor package is forked without being edited.',
+            'where' => 'settings/override/site.ini.append.php, and the root directory itself',
+            'register' => 'site.ini [ExtensionSettings] AdditionalExtensionDirectories[]',
+            'contract' => 'Settings only. Every consumer goes through eZExtension::extensionPath() and expandedPathList(), so nothing needs changing to see a new root',
+            'mechanism' => 'ini',
+            'source' => 'lib/ezutils/classes/ezextension.php',
+            'tool'  => 'setup/settingsextension' ),
+
+        'extensionrootfilter' => array(
+            'group' => 'access',
+            'title' => 'Extension root filter',
+            'what'  => 'The last word on which roots are searched, in code rather than in settings. Redefining it is how a root is worked out at runtime - from an environment variable, from which machine this is, from what a deployment put on disk - rather than written into an ini that has to differ per installation.',
+            'where' => 'A kernel override of lib/ezutils/classes/ezextension.php',
+            'register' => 'Nothing registers it: the kernel calls eZExtension::filterExtensionRootDirectories() and uses what comes back',
+            'contract' => 'static filterExtensionRootDirectories( array $roots ) : array',
+            'mechanism' => 'override',
+            'source' => 'lib/ezutils/classes/ezextension.php',
+            'tool'  => false ),
+
+        'siteextension' => array(
+            'group' => 'access',
+            'title' => 'Site extension',
+            'what'  => 'One extension carrying a whole site: its design, its siteaccesses, its grouped settings overrides, its modules and its code. What makes this possible rather than merely tidy is that an extension can now hold settings/siteaccess/<name>/ of its own, so the siteaccess travels with the thing that defines it instead of living in settings/ on one machine.',
+            'where' => 'extension/<name>/{design,settings/siteaccess/<sa>,modules,classes,autoloads}/',
+            'register' => 'site.ini [ExtensionSettings] ActiveExtensions[] and ActiveAccessExtensions[], plus AdditionalExtensionDirectories[] when it lives outside extension/',
+            'contract' => 'No class: a directory laid out the way the kernel looks',
+            'mechanism' => 'directory',
+            'source' => 'doc/bc/6.0/AdditionalExtensionDirectories.md',
+            'tool'  => 'setup/settingsextension' ),
+
+        'iconextension' => array(
+            'group' => 'templates',
+            'title' => 'Icon theme in an extension',
+            'what'  => 'A set of icons an extension brings with it, searched before the ones that ship. The whole chain falls back: the current theme, then any additional themes, then the standard one; and within each, extension directories before share/icons. A missing icon takes the theme default rather than drawing a broken image.',
+            'where' => 'extension/<name>/icons/<theme>/',
+            'register' => 'icon.ini [ExtensionSettings] IconExtensions[], and [IconSettings] Theme or AdditionalThemeList[]',
+            'contract' => 'Image files named after what they illustrate. Served as static files, so no php runs per image',
+            'mechanism' => 'ini',
+            'source' => 'kernel/common/ezwordtoimageoperator.php',
+            'tool'  => 'setup/settingsextension' ),
+
+        'inicache' => array(
+            'group' => 'storage',
+            'title' => 'Compiled settings and view cache in Redis',
+            'what'  => 'Two places the kernel will hand its caches to Redis or Valkey if something answers for them: the compiled ini cache, and the content view cache. Neither is an ini setting - the kernel asks whether a class exists and uses it if it does, so an installation without the extension behaves exactly as before.',
+            'where' => 'A class named sevenxValkeyINICache or sevenxValkeyCacheBlock, anywhere the autoloader can see it',
+            'register' => 'Nothing registers them: class_exists() decides',
+            'contract' => 'instance(), then get() and put() for the block cache; instance() and the compiled file interface for the ini cache',
+            'mechanism' => 'handler',
+            'source' => 'lib/ezutils/classes/ezini.php',
+            'tool'  => false ),
+
+        'inisave' => array(
+            'group' => 'access',
+            'title' => 'Writing settings from code',
+            'what'  => 'Changing an ini file from php rather than by hand: what the settings editor in the admin does, and what an installer or an upgrade script needs. Since 6.0 a direct access write keeps the comments and the ordering of the file it edits rather than rewriting it as bare key and value, so a generated change can be read afterwards by whoever has to maintain it.',
+            'where' => 'Any script or module view',
+            'register' => 'Nothing to register: eZINI with directAccess true, then setVariable() and save()',
+            'contract' => 'setVariable( $section, $name, $value ) then save(); the file keeps its comments',
+            'mechanism' => 'file',
+            'source' => 'lib/ezutils/classes/ezini.php',
+            'tool'  => 'setup/settingsextension' ),
 
         'accessextension' => array(
             'group' => 'access',

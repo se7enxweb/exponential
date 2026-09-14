@@ -22,6 +22,9 @@
 <p><label>{'View cache rules'|i18n('design/standard/setup')}:<br /><textarea name="rules" rows="3" cols="50">{$wizard_raw.rules|wash}</textarea></label></p>
 <p><label>{'Information collection'|i18n('design/standard/setup')}:<br /><textarea name="forms" rows="3" cols="50">{$wizard_raw.forms|wash}</textarea></label></p>
 <p><label>{'Trigger operations'|i18n('design/standard/setup')}: <input type="text" name="operations" value="{$wizard_raw.operations|wash}" /></label></p>
+<p><label>{'Additional extension roots'|i18n('design/standard/setup')}:<br /><textarea name="roots" rows="2" cols="50">{$wizard_raw.roots|wash}</textarea></label></p>
+<p><label>{'Icon theme name'|i18n('design/standard/setup')}: <input type="text" name="theme" value="{$wizard_settings.theme|wash}" /></label></p>
+<p><label>{'Icon sizes'|i18n('design/standard/setup')}:<br /><textarea name="sizes" rows="2" cols="50">{$wizard_raw.sizes|wash}</textarea></label></p>
 <p><label>{'Siteaccess'|i18n('design/standard/setup')}: <input type="text" name="siteaccess" value="{$wizard_settings.siteaccess|wash}" /></label></p>
 <p><label>{'Siteaccess settings'|i18n('design/standard/setup')}:<br /><textarea name="overrides" rows="3" cols="50">{$wizard_raw.overrides|wash}</textarea></label></p>
 

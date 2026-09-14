@@ -89,7 +89,15 @@ class expRADSurvey
                 {
                     $bare = preg_replace( '/\[.*$/', '', $variable );
 
-                    if ( preg_match( '/^(RepositoryDirectories|ExtensionDirectories|ExtensionRepositories|ExtensionAutoloadPath|ExtensionDirectory)$/i', $bare ) )
+                    // Everything that names a place to look, or an extension to
+                    // look in. The last four arrived with 6.0 and were missing
+                    // here until the catalogue was written up: a survey that
+                    // does not know about a root is a survey of the wrong tree.
+                    if ( preg_match( '/^(RepositoryDirectories|ExtensionDirectories|ExtensionRepositories'
+                                   . '|ExtensionAutoloadPath|ExtensionDirectory|AdditionalExtensionDirectories'
+                                   . '|ActiveExtensions|ActiveAccessExtensions|DesignExtensions'
+                                   . '|IconExtensions|TranslationExtensions|ModuleList|AdditionalThemeList'
+                                   . '|DesignLocationCache|AutoloadPathList)$/i', $bare ) )
                     {
                         $repositories[] = array(
                             'ini'      => $file['ini'],

@@ -204,6 +204,32 @@
 </div>
 </div>
 
+<div class="se-card{if $wizard_settings.parts.roots|not} is-off{/if}">
+<h2>{'Additional extension roots'|i18n( 'design/admin/setup/rad/settings' )}</h2>
+<span class="se-meta">{'One per line, relative to the installation. extension/ is always first and is not named here; each of these is searched after it, and an extension of the same name in a later root shadows the one before it.'|i18n( 'design/admin/setup/rad/settings' )}</span>
+
+<div class="se-field">
+    <textarea name="roots" rows="2" placeholder="extension_src">{$wizard_raw.roots|wash}</textarea>
+    <span class="se-hint">{'The directory has to exist, and the autoloads have to be regenerated after adding one. Moving a package between roots is a copy and nothing else.'|i18n( 'design/admin/setup/rad/settings' )}</span>
+</div>
+</div>
+
+<div class="se-card{if $wizard_settings.parts.icons|not} is-off{/if}">
+<h2>{'Icon theme'|i18n( 'design/admin/setup/rad/settings' )}</h2>
+<span class="se-meta">{'A set of icons this extension carries, searched before the ones that ship. Added to the search rather than made the current theme, so everything the site already draws keeps drawing.'|i18n( 'design/admin/setup/rad/settings' )}</span>
+
+<div class="se-field">
+    <label for="seTheme">{'Theme name'|i18n( 'design/admin/setup/rad/settings' )}</label>
+    <input type="text" id="seTheme" name="theme" value="{$wizard_settings.theme|wash}" autocomplete="off" />
+</div>
+
+<div class="se-field">
+    <label for="seSizes">{'Sizes'|i18n( 'design/admin/setup/rad/settings' )}</label>
+    <textarea id="seSizes" name="sizes" rows="2" placeholder="normal 32x32&#10;small 16x16">{$wizard_raw.sizes|wash}</textarea>
+    <span class="se-hint">{'One per line: a name, then the directory it lives in. A size written as width by height gives the img tag its dimensions as well.'|i18n( 'design/admin/setup/rad/settings' )}</span>
+</div>
+</div>
+
 <div class="se-card{if $wizard_settings.parts.siteaccess|not} is-off{/if}">
 <h2>{'Siteaccess settings'|i18n( 'design/admin/setup/rad/settings' )}</h2>
 <span class="se-meta">{'Settings that apply to one siteaccess only and travel with this extension rather than living in settings/.'|i18n( 'design/admin/setup/rad/settings' )}</span>
