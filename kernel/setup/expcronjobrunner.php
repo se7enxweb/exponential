@@ -290,10 +290,49 @@ class expCronjobRunner
             return $empty;
 
         $state = $state + $empty;
-        $state['running'] = self::pidIsAlive( (int)$state['pid'] );
+        $state['running'] = self::pidIsRunningCronjob( (int)$state['pid'] );
         $state['elapsed'] = $state['started'] ? time() - (int)$state['started'] : 0;
 
+        // A last defence for a host with no /proc to read, where a reused pid
+        // cannot be told apart from the job that recorded it: nothing is
+        // believed to be running for longer than twice the time a cronjob
+        // script is allowed to take. Without it a stale state file could block
+        // every launch until somebody deleted it by hand.
+        $maxTime = (int)eZINI::instance( 'cronjob.ini' )->variable( 'CronjobSettings', 'MaxScriptExecutionTime' );
+        if ( $maxTime > 0 && $state['elapsed'] > 2 * $maxTime )
+            $state['running'] = false;
+
         return $state;
+    }
+
+    /**
+     * Whether a pid is still one of our cronjobs, rather than merely a live
+     * process.
+     *
+     * Process ids are reused. A state file left behind by a job that ended -
+     * after a crash, a reboot, or a kill that never got to rewrite it - will
+     * eventually name a pid belonging to something else entirely, and a plain
+     * liveness test then reports a cronjob running forever: every card says
+     * "Another job is running" and nothing can be launched again. The command
+     * line is read as well, so only a process that really is runcronjobs.php
+     * counts.
+     *
+     * Where /proc is not mounted there is nothing to read, so liveness alone
+     * has to do; the age check below covers that case instead.
+     */
+    private static function pidIsRunningCronjob( $pid )
+    {
+        if ( !self::pidIsAlive( $pid ) )
+            return false;
+
+        $cmdline = '/proc/' . (int)$pid . '/cmdline';
+        if ( is_readable( $cmdline ) )
+        {
+            $command = (string)@file_get_contents( $cmdline );
+            return strpos( $command, 'runcronjobs.php' ) !== false;
+        }
+
+        return true;
     }
 
     /**

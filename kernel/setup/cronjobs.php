@@ -20,7 +20,22 @@ $Module = $Params['Module'];
 $module = $Params['Module'];
 $http = eZHTTPTool::instance();
 
+// Every action answers with a redirect rather than a page, so the address the
+// browser ends on is a plain get.
+//
+// Rendering the result of the post directly left the page as the response to a
+// post: reloading it - which the console does once a job finishes, so the
+// controls stop showing a Stop button for something that has ended - made the
+// browser offer to resend the form, and confirming relaunched the job. Accept,
+// finish, reload, offer, accept: the same cronjob started over and over for as
+// long as the operator kept clicking through the prompt. With the redirect
+// there is no post left to repeat.
+//
+// The message the action produced is carried across in the session, because a
+// redirect cannot carry it and it should not be in the address bar.
+$feedbackKey = 'eZCronjobFeedback';
 $feedback = array();
+$actionTaken = false;
 
 if ( $module->isCurrentAction( 'LaunchCronjob' ) )
 {
@@ -29,18 +44,59 @@ if ( $module->isCurrentAction( 'LaunchCronjob' ) )
 
     $result = expCronjobRunner::launch( $part, $siteaccess );
     $feedback[] = array( 'ok' => $result['ok'], 'message' => $result['message'] );
+    $actionTaken = true;
 }
 
 if ( $module->isCurrentAction( 'StopCronjob' ) )
 {
     $result = expCronjobRunner::stop();
     $feedback[] = array( 'ok' => $result['ok'], 'message' => $result['message'] );
+    $actionTaken = true;
 }
 
 if ( $module->isCurrentAction( 'ClearCronjobLog' ) )
 {
     $result = expCronjobRunner::clearLogs();
     $feedback[] = array( 'ok' => $result['ok'], 'message' => $result['message'] );
+    $actionTaken = true;
+}
+
+// Asked for the answer rather than a new page, so the console can act on it
+// without the page going anywhere. The action above has already run either way;
+// this only decides how it is reported.
+if ( $actionTaken && $http->hasVariable( 'Ajax' ) )
+{
+    while ( ob_get_level() > 0 )
+        ob_end_clean();
+
+    header( 'Content-Type: application/json; charset=utf-8' );
+    header( 'Cache-Control: no-cache, no-store, must-revalidate' );
+
+    $status = expCronjobRunner::status();
+    echo json_encode( array(
+        'ok'         => $result['ok'],
+        'message'    => $result['message'],
+        'running'    => (bool)$status['running'],
+        'part'       => $status['part'],
+        'siteaccess' => $status['siteaccess'],
+        'pid'        => (int)$status['pid'],
+        'elapsed'    => (int)$status['elapsed'],
+        'offset'     => file_exists( expCronjobRunner::logFile() ) ? filesize( expCronjobRunner::logFile() ) : 0 ) );
+
+    eZExecution::cleanExit();
+}
+
+if ( $actionTaken )
+{
+    $http->setSessionVariable( $feedbackKey, $feedback );
+    return $module->redirectTo( $module->functionURI( 'cronjobs' ) );
+}
+
+// Whatever the last action said, shown once and then forgotten.
+if ( $http->hasSessionVariable( $feedbackKey ) )
+{
+    $feedback = (array)$http->sessionVariable( $feedbackKey );
+    $http->removeSessionVariable( $feedbackKey );
 }
 
 $parts = expCronjobRunner::parts();

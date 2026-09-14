@@ -130,25 +130,33 @@
 <div class="exp-feedback {if $cronjob_message.ok}is-ok{else}is-bad{/if}">{$cronjob_message.message|wash}</div>
 {/foreach}
 
+{* What an action says when the console runs it in place. Empty and hidden
+   until there is something to put in it. *}
+<div class="exp-feedback" id="cronjob-feedback" style="display:none;"></div>
+
 {if $cronjob_php_binary|eq('')}
 <div class="exp-feedback is-bad">
     {'No php command line binary could be found, so nothing can be launched from here. Set cronjob.ini [AdminSettings] PhpCliPath to its full path.'|i18n( 'design/admin/setup/cronjobs' )}
 </div>
 {/if}
 
-<div class="exp-status">
-    <span class="exp-pill{if $cronjob_status.running} is-running{/if}">
+{* Everything that changes when a job starts or ends is addressable, so the
+   console can bring the page up to date without fetching it again. *}
+<div class="exp-status" id="cronjob-status">
+    <span class="exp-pill{if $cronjob_status.running} is-running{/if}" id="cronjob-pill">
         <span class="exp-dot"></span>
+        <span class="exp-pill-text">
         {if $cronjob_status.running}
             {'Running'|i18n( 'design/admin/setup/cronjobs' )}: {$cronjob_status.part|wash}
         {else}
             {'Idle'|i18n( 'design/admin/setup/cronjobs' )}
         {/if}
+        </span>
     </span>
     {if $cronjob_status.running}
-    <span class="exp-meta">{'Site'|i18n( 'design/admin/setup/cronjobs' )}: {$cronjob_status.siteaccess|wash}</span>
-    <span class="exp-meta">{'Process'|i18n( 'design/admin/setup/cronjobs' )}: {$cronjob_status.pid}</span>
-    <span class="exp-meta">{'Elapsed'|i18n( 'design/admin/setup/cronjobs' )}: {$cronjob_status.elapsed}s</span>
+    <span class="exp-meta exp-running-meta">{'Site'|i18n( 'design/admin/setup/cronjobs' )}: {$cronjob_status.siteaccess|wash}</span>
+    <span class="exp-meta exp-running-meta">{'Process'|i18n( 'design/admin/setup/cronjobs' )}: {$cronjob_status.pid}</span>
+    <span class="exp-meta exp-running-meta" id="cronjob-elapsed">{'Elapsed'|i18n( 'design/admin/setup/cronjobs' )}: {$cronjob_status.elapsed}s</span>
     {/if}
     <span class="exp-meta">{'Log'|i18n( 'design/admin/setup/cronjobs' )}: <code>{$cronjob_log_file|wash}</code></span>
     {if $cronjob_php_binary|ne('')}
@@ -169,16 +177,20 @@
         {/foreach}
         </select>
     </div>
-    <button type="submit" class="exp-btn" name="StopCronjobButton" value="1"{if $cronjob_status.running|not} disabled="disabled"{/if}>{'Stop running job'|i18n( 'design/admin/setup/cronjobs' )}</button>
-    <button type="submit" class="exp-btn" name="ClearCronjobLogButton" value="1">{'Clear logs'|i18n( 'design/admin/setup/cronjobs' )}</button>
+    <button type="submit" class="exp-btn" id="cronjob-stop" name="StopCronjobButton" value="1"{if $cronjob_status.running|not} disabled="disabled"{/if}>{'Stop running job'|i18n( 'design/admin/setup/cronjobs' )}</button>
+    <button type="submit" class="exp-btn" id="cronjob-clear" name="ClearCronjobLogButton" value="1">{'Clear logs'|i18n( 'design/admin/setup/cronjobs' )}</button>
 </div>
 
 <div class="exp-grid">
 {foreach $cronjob_parts as $cronjob_part}
-    {def $cronjob_runnable = and( $cronjob_part.forbidden|not,
-                                  $cronjob_part.missing|lt( $cronjob_part.scripts|count ),
-                                  $cronjob_status.running|not,
-                                  $cronjob_php_binary|ne('') )}
+    {* Blocked for good - forbidden, scripts missing, no php - is not the same
+       as blocked because something else is running, which stops being true the
+       moment the console sees the job finish. The card records which it is so
+       the console knows what it may re-enable. *}
+    {def $cronjob_blocked = or( $cronjob_part.forbidden,
+                                $cronjob_part.missing|ge( $cronjob_part.scripts|count ),
+                                $cronjob_php_binary|eq('') )
+         $cronjob_runnable = and( $cronjob_blocked|not, $cronjob_status.running|not )}
     <div class="exp-card{if $cronjob_part.forbidden} is-forbidden{/if}{if and( $cronjob_status.running, eq( $cronjob_status.part, $cronjob_part.name ) )} is-current{/if}">
         <div class="exp-card-head">
             <h3>{$cronjob_part.label|wash}</h3>
@@ -192,18 +204,19 @@
         <div class="exp-card-foot">
             {* The button carries the part name as its own value, so one form
                serves every card and no javascript is needed to launch one. *}
-            <button type="submit" class="exp-btn exp-btn-primary" name="LaunchCronjobButton"
+            <button type="submit" class="exp-btn exp-btn-primary exp-run" name="LaunchCronjobButton"
+                    data-blocked="{if $cronjob_blocked}1{else}0{/if}"
                     value="{$cronjob_part.name|wash}"{if $cronjob_runnable|not} disabled="disabled"{/if}>{'Run now'|i18n( 'design/admin/setup/cronjobs' )}</button>
             {if $cronjob_part.forbidden}
                 <span class="exp-note">{'Blocked by cronjob.ini ForbiddenParts.'|i18n( 'design/admin/setup/cronjobs' )}</span>
             {elseif $cronjob_part.missing|gt(0)}
                 <span class="exp-note">{$cronjob_part.missing} {'of its scripts are missing.'|i18n( 'design/admin/setup/cronjobs' )}</span>
             {elseif $cronjob_status.running}
-                <span class="exp-note">{'Another job is running.'|i18n( 'design/admin/setup/cronjobs' )}</span>
+                <span class="exp-note exp-note-busy">{'Another job is running.'|i18n( 'design/admin/setup/cronjobs' )}</span>
             {/if}
         </div>
     </div>
-    {undef $cronjob_runnable}
+    {undef $cronjob_runnable $cronjob_blocked}
 {/foreach}
 </div>
 
@@ -220,6 +233,7 @@
    one is passed through untouched - which is the point, since javascript is
    full of braces the template engine would otherwise try to parse. *}
 <script type="text/javascript">
+var expCronjobActionUrl = {'setup/cronjobs'|ezurl()};
 var expCronjobStreamUrl = {$cronjob_stream_url|ezurl()};
 var expCronjobRunning   = {if $cronjob_status.running}true{else}false{/if};
 var expCronjobOffset    = {$cronjob_log_offset};
@@ -227,70 +241,218 @@ var expCronjobOffset    = {$cronjob_log_offset};
 (function () {
     var consoleEl = document.getElementById( 'cronjob-console' );
     var statusEl  = document.getElementById( 'cronjob-stream-status' );
+    var stopBtn   = document.getElementById( 'cronjob-stop' );
+    var clearBtn  = document.getElementById( 'cronjob-clear' );
+    var saEl      = document.getElementById( 'cronjob-siteaccess' );
+    var feedEl    = document.getElementById( 'cronjob-feedback' );
     if ( !consoleEl || typeof window.EventSource === 'undefined' )
-        return;
+        return;   // The form posts on its own; nothing below is needed.
 
     var colours = {
         phase: '#7fd1ff', ok: '#d8d8d8', warn: '#e8c765',
         error: '#ff8a80', info: '#9a9a9a', done: '#7fd1ff'
     };
     var source = null;
+    var elapsedTimer = null;
+    var offset = expCronjobOffset;
 
-    function write( type, text ) {
+    function each( selector, fn ) {
+        var nodes = document.querySelectorAll( selector ), i;
+        for ( i = 0; i < nodes.length; i++ ) fn( nodes[i] );
+    }
+
+    function text( el, value ) {
+        el.innerHTML = '';
+        el.appendChild( document.createTextNode( value ) );
+    }
+
+    function write( type, line ) {
         var atBottom = consoleEl.scrollTop + consoleEl.clientHeight >= consoleEl.scrollHeight - 8;
-        var line = document.createElement( 'div' );
-        line.style.color = colours[type] || '#d8d8d8';
-        if ( type === 'phase' || type === 'done' ) line.style.fontWeight = 'bold';
-        line.appendChild( document.createTextNode( text ) );
-        consoleEl.appendChild( line );
+        var el = document.createElement( 'div' );
+        el.style.color = colours[type] || '#d8d8d8';
+        if ( type === 'phase' || type === 'done' ) el.style.fontWeight = 'bold';
+        el.appendChild( document.createTextNode( line ) );
+        consoleEl.appendChild( el );
         if ( atBottom ) consoleEl.scrollTop = consoleEl.scrollHeight;
     }
 
-    function say( text ) {
-        statusEl.innerHTML = '';
-        statusEl.appendChild( document.createTextNode( text ) );
+    function say( value ) { text( statusEl, value ); }
+
+    function feedback( ok, message ) {
+        if ( !feedEl ) return;
+        feedEl.className = 'exp-feedback ' + ( ok ? 'is-ok' : 'is-bad' );
+        feedEl.style.display = 'block';
+        text( feedEl, message );
     }
 
-    function stop( message ) {
+    function pillText( value, running ) {
+        var pill = document.getElementById( 'cronjob-pill' );
+        if ( !pill ) return;
+        pill.className = 'exp-pill' + ( running ? ' is-running' : '' );
+        var label = pill.getElementsByClassName( 'exp-pill-text' )[0];
+        if ( label ) text( label, value );
+    }
+
+    // The page is never fetched again, in either direction. Everything an
+    // action or a finished job changes is on this page already, so it is
+    // changed here. Reloading was not just unnecessary: a reload repeats the
+    // request that produced the page, so the form post that started a job was
+    // offered for resending, and confirming launched it again - and again.
+    function markIdle() {
+        pillText( 'Idle', false );
+        each( '.exp-running-meta', function ( el ) { el.parentNode.removeChild( el ); } );
+        each( '.exp-note-busy', function ( el ) { el.parentNode.removeChild( el ); } );
+        each( '.exp-card.is-current', function ( el ) {
+            el.className = el.className.replace( / ?is-current/, '' );
+        } );
+        if ( stopBtn ) stopBtn.disabled = true;
+        // Only the ones that were waiting on this job. A part that is forbidden,
+        // missing its scripts, or has no php to run with stays disabled.
+        each( '.exp-run', function ( el ) {
+            if ( el.getAttribute( 'data-blocked' ) !== '1' ) el.disabled = false;
+        } );
+        if ( elapsedTimer ) { window.clearInterval( elapsedTimer ); elapsedTimer = null; }
+    }
+
+    function markRunning( part, siteaccess, pid ) {
+        pillText( 'Running: ' + part, true );
+
+        var strip = document.getElementById( 'cronjob-status' );
+        if ( strip ) {
+            each( '.exp-running-meta', function ( el ) { el.parentNode.removeChild( el ); } );
+            var meta = [ [ 'Site: ' + siteaccess, null ],
+                         [ 'Process: ' + pid, null ],
+                         [ 'Elapsed: 0s', 'cronjob-elapsed' ] ];
+            for ( var i = 0; i < meta.length; i++ ) {
+                var span = document.createElement( 'span' );
+                span.className = 'exp-meta exp-running-meta';
+                if ( meta[i][1] ) span.id = meta[i][1];
+                span.appendChild( document.createTextNode( meta[i][0] ) );
+                strip.appendChild( span );
+            }
+        }
+
+        each( '.exp-run', function ( el ) { el.disabled = true; } );
+        if ( stopBtn ) stopBtn.disabled = false;
+
+        each( '.exp-card', function ( el ) {
+            var button = el.getElementsByClassName( 'exp-run' )[0];
+            if ( button && button.value === part && el.className.indexOf( 'is-current' ) === -1 )
+                el.className += ' is-current';
+        } );
+
+        startElapsed( 0 );
+        follow();
+    }
+
+    function startElapsed( from ) {
+        if ( elapsedTimer ) window.clearInterval( elapsedTimer );
+        var el = document.getElementById( 'cronjob-elapsed' );
+        if ( !el ) return;
+        var openedAt = new Date().getTime();
+        elapsedTimer = window.setInterval( function () {
+            text( el, 'Elapsed: ' + ( from + Math.round( ( new Date().getTime() - openedAt ) / 1000 ) ) + 's' );
+        }, 1000 );
+    }
+
+    function follow() {
+        if ( source ) return;
+        say( 'following…' );
+        source = new EventSource( expCronjobStreamUrl + '?Offset=' + offset );
+
+        source.onmessage = function ( event ) {
+            var payload;
+            try { payload = JSON.parse( event.data ); }
+            catch ( e ) { return; }
+            if ( typeof payload.offset === 'number' ) offset = payload.offset;
+            write( payload.type, payload.message );
+            if ( payload.type === 'done' ) { close( 'finished' ); markIdle(); }
+        };
+
+        source.addEventListener( 'end', function () { close( 'finished' ); markIdle(); } );
+
+        source.onerror = function () {
+            // EventSource reconnects by itself, which would start the tail over
+            // from the offset this page was rendered with and reprint it all.
+            close( 'stream closed' );
+        };
+    }
+
+    function close( message ) {
         if ( source ) { source.close(); source = null; }
         say( message );
     }
 
-    // Only follow when something is actually running. The page already printed
-    // what the log holds, so with nothing running there is nothing to add, and
-    // opening a stream would hold a php worker open for no reason.
-    if ( !expCronjobRunning ) {
-        consoleEl.scrollTop = consoleEl.scrollHeight;
-        return;
+    // An action asks for its answer rather than a new page. The same view does
+    // the same work either way; only the reply differs.
+    function act( fields, onDone ) {
+        var body = 'Ajax=1', key;
+        for ( key in fields )
+            body += '&' + encodeURIComponent( key ) + '=' + encodeURIComponent( fields[key] );
+
+        var request = new XMLHttpRequest();
+        request.open( 'POST', expCronjobActionUrl, true );
+        request.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+        request.onreadystatechange = function () {
+            if ( request.readyState !== 4 ) return;
+            var answer;
+            try { answer = JSON.parse( request.responseText ); }
+            catch ( e ) { answer = { ok: false, message: 'The server did not answer as expected.' }; }
+            feedback( answer.ok, answer.message );
+            onDone( answer );
+        };
+        request.send( body );
     }
 
-    say( 'following…' );
-    // Offset is where the page's own copy of the log ends, so the stream picks
-    // up from there instead of reprinting it.
-    source = new EventSource( expCronjobStreamUrl + '?Offset=' + expCronjobOffset );
+    each( '.exp-run', function ( button ) {
+        button.onclick = function ( event ) {
+            if ( event && event.preventDefault ) event.preventDefault();
+            var part = button.value;
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+            act( { LaunchCronjobButton: part,
+                   CronjobSiteAccess: saEl ? saEl.value : '' }, function ( answer ) {
+                if ( !answer.ok ) return;
+                if ( typeof answer.offset === 'number' ) offset = answer.offset;
+                markRunning( answer.part || part, answer.siteaccess, answer.pid );
+            } );
+            return false;
+        };
+    } );
 
-    source.onmessage = function ( event ) {
-        var payload;
-        try { payload = JSON.parse( event.data ); }
-        catch ( e ) { return; }
-        write( payload.type, payload.message );
-        if ( payload.type === 'done' ) {
-            stop( 'finished' );
-            // The controls reflect a job that is no longer running, so the page
-            // is reloaded once rather than left showing a stale Stop button.
-            window.setTimeout( function () { window.location.reload(); }, 1200 );
-        }
-    };
+    if ( stopBtn ) {
+        stopBtn.onclick = function ( event ) {
+            if ( event && event.preventDefault ) event.preventDefault();
+            act( { StopCronjobButton: '1' }, function () {} );
+            return false;   // The stream sees the job end and settles the rest.
+        };
+    }
 
-    source.addEventListener( 'end', function () { stop( 'finished' ); } );
-
-    source.onerror = function () {
-        // EventSource reconnects by itself, which would start the tail again
-        // from the offset the page was rendered with and reprint everything.
-        stop( 'stream closed' );
-    };
+    if ( clearBtn ) {
+        clearBtn.onclick = function ( event ) {
+            if ( event && event.preventDefault ) event.preventDefault();
+            act( { ClearCronjobLogButton: '1' }, function () {
+                consoleEl.innerHTML = '';
+                offset = 0;
+            } );
+            return false;
+        };
+    }
 
     consoleEl.scrollTop = consoleEl.scrollHeight;
+
+    // Only follow when something is actually running. With nothing running the
+    // page already shows what the log holds, and opening a stream would hold a
+    // php worker for no reason.
+    if ( expCronjobRunning ) {
+        var el = document.getElementById( 'cronjob-elapsed' );
+        var from = 0;
+        if ( el ) {
+            from = parseInt( ( el.textContent || el.innerText ).replace( /[^0-9]/g, '' ), 10 );
+            if ( isNaN( from ) ) from = 0;
+        }
+        startElapsed( from );
+        follow();
+    }
 })();
 {/literal}
 </script>
