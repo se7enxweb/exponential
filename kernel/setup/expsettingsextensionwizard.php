@@ -22,6 +22,7 @@
  */
 
 require_once 'kernel/setup/expextensionwizard.php';
+require_once 'kernel/setup/expradsurvey.php';
 
 class expSettingsExtensionWizard extends expExtensionWizard
 {
@@ -142,39 +143,67 @@ class expSettingsExtensionWizard extends expExtensionWizard
     }
 
     /**
-     * The events the kernel announces, and which kind each is.
+     * The events something can listen to, and what each is for.
      *
-     * A notify event ignores what a listener returns. A filter event uses it -
-     * so a filter listener that forgets to return the value destroys it, which
-     * is the one mistake worth guarding against here.
+     * The list and the kinds come from the survey, which sweeps them out of the
+     * source. They used to be written here by hand, and by the time anybody
+     * looked three of them were wrong: request/preinput and request/input were
+     * called filters and are notifies, and content/cache was called a notify
+     * and is announced both ways. Getting that backwards matters - a listener
+     * on a filter that forgets to return the value destroys it - so the kernel
+     * decides, and only the description is written here.
+     *
+     * An event with no description still appears. Better a name and no note
+     * than an event this page pretends does not exist.
      *
      * @return array
      */
     public static function events()
     {
+        $described = self::eventDescriptions();
+        $events    = array();
+
+        foreach ( expRADSurvey::events() as $name => $event )
+            $events[$name] = array(
+                'kind' => $event['kind'],
+                'what' => isset( $described[$name] )
+                          ? $described[$name]
+                          : 'Announced in ' . implode( ', ', array_slice( $event['where'], 0, 2 ) )
+                            . '. Read the call to see what it is handed.' );
+
+        return $events;
+    }
+
+    /**
+     * What each event is for, where anybody has said.
+     *
+     * @return array
+     */
+    protected static function eventDescriptions()
+    {
         return array(
-            'request/preinput'   => array( 'kind' => 'filter', 'what' => 'The request has arrived and nothing has looked at it yet.' ),
-            'request/input'      => array( 'kind' => 'filter', 'what' => 'The request, after the kernel has read it.' ),
-            'response/preoutput' => array( 'kind' => 'filter', 'what' => 'The page has been built and is about to be wrapped. The last place to change what a template produced.' ),
-            'response/output'    => array( 'kind' => 'filter', 'what' => 'The whole page, about to be sent. Whatever is returned is what the browser gets.' ),
-            'content/view'       => array( 'kind' => 'filter', 'what' => 'A node is about to be viewed; the node id is passed and the one returned is used. How a request for one node is answered with another.' ),
-            'content/cache'      => array( 'kind' => 'notify', 'what' => 'View caches are being cleared for a list of nodes.' ),
-            'content/cache/all'  => array( 'kind' => 'notify', 'what' => 'Every view cache is being cleared.' ),
-            'content/cache/version' => array( 'kind' => 'notify', 'what' => 'One version of one object had its cache cleared.' ),
-            'content/download'   => array( 'kind' => 'notify', 'what' => 'A file attribute is being served. Where a download count belongs.' ),
-            'content/class/cache' => array( 'kind' => 'notify', 'what' => 'A content class changed and its cache is going.' ),
-            'content/section/cache' => array( 'kind' => 'notify', 'what' => 'A section changed.' ),
-            'content/state/assign' => array( 'kind' => 'notify', 'what' => 'An object state was assigned to an object.' ),
-            'content/translations/cache' => array( 'kind' => 'notify', 'what' => 'The list of languages changed.' ),
-            'image/alias'        => array( 'kind' => 'notify', 'what' => 'An image alias was generated. Where a copy to somewhere else belongs.' ),
-            'image/purgeAliases' => array( 'kind' => 'notify', 'what' => 'Generated image files are being removed for good.' ),
-            'image/removeAliases' => array( 'kind' => 'notify', 'what' => 'Generated image files are being removed.' ),
-            'image/trashAliases' => array( 'kind' => 'notify', 'what' => 'An object with images went to the trash, so its aliases went with it.' ),
-            'session/regenerate' => array( 'kind' => 'notify', 'what' => 'A session was given a new id, which happens on login.' ),
-            'session/destroy'    => array( 'kind' => 'notify', 'what' => 'A session was forgotten, which happens on logout.' ),
-            'session/cleanup'    => array( 'kind' => 'notify', 'what' => 'Every session was forgotten.' ),
-            'session/gc'         => array( 'kind' => 'notify', 'what' => 'Old sessions were collected.' ),
-            'user/cache/all'     => array( 'kind' => 'notify', 'what' => 'Every user cache is going, which happens when roles change.' ),
+            'content/cache' => 'View caches are being cleared for a list of nodes.',
+            'content/cache/all' => 'Every view cache is being cleared.',
+            'content/cache/version' => 'One version of one object had its cache cleared.',
+            'content/class/cache' => 'A content class changed and its cache is going.',
+            'content/download' => 'A file attribute is being served. Where a download count belongs.',
+            'content/section/cache' => 'A section changed.',
+            'content/state/assign' => 'An object state was assigned to an object.',
+            'content/translations/cache' => 'The list of languages changed.',
+            'content/view' => 'A node is about to be viewed; the node id is passed and the one returned is used. How a request for one node is answered with another.',
+            'image/alias' => 'An image alias was generated. Where a copy to somewhere else belongs.',
+            'image/purgeAliases' => 'Generated image files are being removed for good.',
+            'image/removeAliases' => 'Generated image files are being removed.',
+            'image/trashAliases' => 'An object with images went to the trash, so its aliases went with it.',
+            'request/input' => 'The request, after the kernel has read it.',
+            'request/preinput' => 'The request has arrived and nothing has looked at it yet.',
+            'response/output' => 'The whole page, about to be sent. Whatever is returned is what the browser gets.',
+            'response/preoutput' => 'The page has been built and is about to be wrapped. The last place to change what a template produced.',
+            'session/cleanup' => 'Every session was forgotten.',
+            'session/destroy' => 'A session was forgotten, which happens on logout.',
+            'session/gc' => 'Old sessions were collected.',
+            'session/regenerate' => 'A session was given a new id, which happens on login.',
+            'user/cache/all' => 'Every user cache is going, which happens when roles change.',
         );
     }
 

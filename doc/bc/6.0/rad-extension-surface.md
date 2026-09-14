@@ -17,14 +17,18 @@ where it can be searched.
 
 | | |
 | --- | --- |
-| Extension points | **1027** |
+| Extension points | **1737** |
 | ini files read | 381 |
 | Settings naming a class | 350 (333 resolve to a class, 16 take an alias, 1 look like a class and are not one) |
-| Directories searched for handlers | 236 |
+| Places the kernel looks | 236 |
 | Interfaces and abstract classes | 41 (29 implemented) |
 | Modules | 57 |
 | Module views | 400 |
 | Policy functions | 179 |
+| Template operators and functions | 414 (364 operators, 50 functions) |
+| Events something can listen to | 34 |
+| Templates already overridden | 259 |
+| Kernel classes replaced | 3 |
 
 A count is not a promise that all of them are worth extending. It is a promise that
 none of them was left out because nobody remembered it.
@@ -564,12 +568,12 @@ so a lower case value that names no class is an *alias* doing its job. A row mar
 | `CreateSettings` | `MimeUploadHandlerMap[application/rtf]` | `ezopenofficeuploadhandler` | `extension/ezodf/uploadhandlers/ezopenofficeuploadhandler.php` |
 | `CreateSettings` | `MimeUploadHandlerMap[application/vnd.oasis.opendocument.text]` | `ezopenofficeuploadhandler` | `extension/ezodf/uploadhandlers/ezopenofficeuploadhandler.php` |
 
-## Directories searched for handlers
+## Places the kernel looks
 
-Places the kernel looks for a file whose path it works out from a name. Add your
-extension to one of these and your file is found; leave it out and the class is
-never loaded, however correctly it is written. This is the single most common
-reason a handler that looks right does nothing.
+Every setting that names a directory to search or an extension to search in. Add
+your extension to one of these and your file is found; leave it out and the class
+is never loaded, however correctly it is written. Most of the time something works
+and should not, or does not work and should, the answer is one of these lines.
 
 | ini | Section | Setting | Currently |
 | --- | --- | --- | --- |
@@ -1704,4 +1708,763 @@ Fetch functions: `workflow_statuses`, `workflow_type_statuses`
 | View | Needs | Parameters |
 | --- | --- | --- |
 | `xrowextract/csv` | `csv` | 0 |
+
+## What a template can call
+
+Every operator and function the engine has been taught, read out of the autoload
+arrays where they are really declared - there is no ini listing them, which is why
+an operator that is not found is so often looked for in the wrong place.
+
+A row marked **not active** belongs to an extension that is not switched on here:
+the name is declared and nothing answers to it.
+
+### Operators (364)
+
+| Name | Class | Declared in |
+| --- | --- | --- |
+| `abs` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `absolute_url` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `action_icon` | `eZWordToImageOperator` | `kernel/common/eztemplateautoload.php` |
+| `add_view_parameters` | `SwarkAddViewParametersOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `addcslashes` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `addslashes` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `alphabet` | `eZAlphabetOperator` | `kernel/common/eztemplateautoload.php` |
+| `and` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `app` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `append` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `array` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `array_append` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `array_merge` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `array_prepend` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `array_search` | `SwarkArraySearchOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `array_sum` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `arsort` | `SwarkARSortOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `asort` | `SwarkASortOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `asset` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `attribute` | `eZTemplateAttributeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `autolink` | `eZAutoLinkOperator` | `kernel/common/eztemplateautoload.php` |
+| `bc_ga_formatNumericDecimal` | `BCWebsiteStatisticsOperators` | `extension/bcwebsitestatistics/autoloads/bcwebsitestatisticsoperators.php` |
+| `bc_ga_jsEscapedString` | `BCWebsiteStatisticsOperators` | `extension/bcwebsitestatistics/autoloads/bcwebsitestatisticsoperators.php` |
+| `bc_ga_urchin` | `BCWebsiteStatisticsOperators` | `extension/bcwebsitestatistics/autoloads/bcwebsitestatisticsoperators.php` |
+| `bc_ga_urchinOrder` | `BCWebsiteStatisticsOperators` | `extension/bcwebsitestatistics/autoloads/bcwebsitestatisticsoperators.php` |
+| `bc_ga_xmlAttributeValue` | `BCWebsiteStatisticsOperators` | `extension/bcwebsitestatistics/autoloads/bcwebsitestatisticsoperators.php` |
+| `begins_with` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `bin2hex` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `break` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `ceil` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `charset` | `SwarkCharsetOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `choose` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `chr` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `chunk_split` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `cjw_newsletter_preg_replace` | `CjwNewsletterOperators` | `extension/cjw_newsletter/autoloads/cjwnewsletteroperators.php` |
+| `cjw_newsletter_str_replace` | `CjwNewsletterOperators` | `extension/cjw_newsletter/autoloads/cjwnewsletteroperators.php` |
+| `cjw_newsletter_variable` | `CjwNewsletterOperators` | `extension/cjw_newsletter/autoloads/cjwnewsletteroperators.php` |
+| `class_icon` | `eZWordToImageOperator` | `kernel/common/eztemplateautoload.php` |
+| `classgroup_icon` | `eZWordToImageOperator` | `kernel/common/eztemplateautoload.php` |
+| `clear_object_cache` | `SwarkClearObjectCacheOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `compare` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `component_content` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `concat` | `eZTemplateTextOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `cond` | `eZTemplateControlOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `contains` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `content_link` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `content_structure_tree` | `eZContentStructureTreeOperator` | `kernel/common/eztemplateautoload.php` |
+| `content_tags` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `controller` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `convert_uudecode` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `convert_uuencode` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `cookie` | `SwarkCookieOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `count` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `count_chars` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `count_words` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `crc32` | `eZTemplateDigestOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `current_layout` | `SwarkCurrentLayoutOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `current_siteaccess` | `SwarkCurrentSiteaccessOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `currentdate` | `eZTemplateLocaleOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `d18n` | `eZi18nOperator` | `kernel/common/eztemplateautoload.php` |
+| `datetime` | `eZTemplateLocaleOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `debug` | `SwarkDebugOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `debug_attributes` | `SwarkDebugAttributesOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `dec` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `div` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `downcase` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `dump` | `eZTemplateAttributeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `embed_image` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `ends_with` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `enhanced_link` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `eq` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `ereg_replace` | `PHPFunctionOperator` | `extension/owsimpleoperator/autoloads/phpfunctionoperator.php` |
+| `expinfo` | `eZTemplateExpInfoOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `expl_first` | `ExplBlockOperator` | `extension/explayouts/classes/explblockoperator.php` |
+| `expl_has` | `ExplBlockOperator` | `extension/explayouts/classes/explblockoperator.php` |
+| `expl_parse` | `ExplBlockOperator` | `extension/explayouts/classes/explblockoperator.php` |
+| `expl_strip` | `ExplBlockOperator` | `extension/explayouts/classes/explblockoperator.php` |
+| `explode` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `extract` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `extract_left` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `extract_right` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `exturl` | `eZURLOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezarchive` | `eZArchive` | `extension/ezdemo/autoloads/ezarchive.php` |
+| `ezarchive` | `eZArchive` | `extension/ezwebin/autoloads/ezarchive.php` |
+| `ezcreateclasslistgroups` | `eZCreateClassListGroups` | `extension/ezwt/autoloads/ezcreateclasslistgroups.php` |
+| `ezcss` | `ezjscPackerTemplateFunctions` | `extension/ezjscore/autoloads/ezjscpackertemplatefunctions.php` |
+| `ezcss_load` | `ezjscPackerTemplateFunctions` | `extension/ezjscore/autoloads/ezjscpackertemplatefunctions.php` |
+| `ezcss_require` | `ezjscPackerTemplateFunctions` | `extension/ezjscore/autoloads/ezjscpackertemplatefunctions.php` |
+| `ezcssfiles` | `ezjscPackerTemplateFunctions` | `extension/ezjscore/autoloads/ezjscpackertemplatefunctions.php` |
+| `ezdesign` | `eZURLOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezhttp` | `eZURLOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezhttp_hasvariable` | `eZURLOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezimage` | `eZURLOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezini` | `eZURLOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezini_hasvariable` | `eZURLOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezkeywordlist` | `eZKeywordList` | `extension/ezdemo/autoloads/ezkeywordlist.php` |
+| `ezkeywordlist` | `eZKeywordList` | `extension/ezwebin/autoloads/ezkeywordlist.php` |
+| `ezmodule` | `eZModuleOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezoe_ini_section` | `eZOETemplateUtils` | `extension/ezoe/autoloads/ezoetemplateutils.php` |
+| `ezpackage` | `eZPackageOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezpagedata` | `eZPageData` | `extension/ezdemo/autoloads/ezpagedata.php` |
+| `ezpagedata` | `eZPageData` | `extension/ezwebin/autoloads/ezpagedata.php` |
+| `ezpagedata_append` | `eZPageData` | `extension/ezdemo/autoloads/ezpagedata.php` |
+| `ezpagedata_append` | `eZPageData` | `extension/ezwebin/autoloads/ezpagedata.php` |
+| `ezpagedata_set` | `eZPageData` | `extension/ezdemo/autoloads/ezpagedata.php` |
+| `ezpagedata_set` | `eZPageData` | `extension/ezwebin/autoloads/ezpagedata.php` |
+| `ezpreference` | `eZKernelOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezroot` | `eZURLOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezscript` | `ezjscPackerTemplateFunctions` | `extension/ezjscore/autoloads/ezjscpackertemplatefunctions.php` |
+| `ezscript_load` | `ezjscPackerTemplateFunctions` | `extension/ezjscore/autoloads/ezjscpackertemplatefunctions.php` |
+| `ezscript_require` | `ezjscPackerTemplateFunctions` | `extension/ezjscore/autoloads/ezjscpackertemplatefunctions.php` |
+| `ezscriptfiles` | `ezjscPackerTemplateFunctions` | `extension/ezjscore/autoloads/ezjscpackertemplatefunctions.php` |
+| `ezstr_replace` *(not active)* | `MyStrReplaceOperator` | `extension/str_replace/autoloads/str_replace_controloperator.php` |
+| `ezsys` | `eZURLOperator` | `kernel/common/eztemplateautoload.php` |
+| `eztagcloud` | `eZTagCloud` | `extension/ezdemo/autoloads/eztagcloud.php` |
+| `eztagcloud` | `eZTagCloud` | `extension/ezwebin/autoloads/eztagcloud.php` |
+| `eztags_parent_string` | `eZTagsTemplateFunctions` | `extension/eztags/autoloads/eztagstemplatefunctions.php` |
+| `eztagscloud` | `eZTagsCloud` | `extension/eztags/autoloads/eztagscloud.php` |
+| `eztoc` | `eZTOCOperator` | `kernel/common/eztemplateautoload.php` |
+| `ezurl` | `eZURLOperator` | `kernel/common/eztemplateautoload.php` |
+| `false` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `feedreader` *(not active)* | `eZFeedReader` | `extension/ezflow/autoloads/ezfeedreader.php` |
+| `fetch` | `eZTemplateExecuteOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `fetch_alias` | `eZTemplateExecuteOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `fetch_by_starrating` | `ezsrTemplateOperators` | `extension/ezstarrating/autoloads/ezsrtemplateoperators.php` |
+| `fetch_starrating_data` | `ezsrTemplateOperators` | `extension/ezstarrating/autoloads/ezsrtemplateoperators.php` |
+| `fetch_starrating_stats` | `ezsrTemplateOperators` | `extension/ezstarrating/autoloads/ezsrtemplateoperators.php` |
+| `fieldRelation` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `fieldRelations` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `fieldValue` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `file_get_contents` | `PHPFunctionOperator` | `extension/owsimpleoperator/autoloads/phpfunctionoperator.php` |
+| `filterChildren` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `filterFieldRelationLocations` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `filterFieldRelations` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `firstNonEmptyField` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `first_set` | `eZTemplateControlOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `flag_icon` | `eZWordToImageOperator` | `kernel/common/eztemplateautoload.php` |
+| `float` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `floor` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `ge` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `getParameter` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `get_class` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `get_netgen_open_graph` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `get_type` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `getdate` | `PHPFunctionOperator` | `extension/owsimpleoperator/autoloads/phpfunctionoperator.php` |
+| `gettime` | `eZTemplateLocaleOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `gt` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `hasField` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `hasParameter` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `has_access_to_limitation` | `ezjscAccessTemplateFunctions` | `extension/ezjscore/autoloads/ezjscaccesstemplatefunctions.php` |
+| `hash` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `haveToPaginate` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `hcaptcha_get_html` *(not active)* | `hCaptchaTemplateOperator` | `extension/hcaptcha/autoloads/hcaptchatemplateoperator.php` |
+| `hebrev` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `hex2bin` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `html_entity_decode` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `htmlentities` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `htmlspecialchars_decode` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `i18n` | `eZi18nOperator` | `kernel/common/eztemplateautoload.php` |
+| `ibexa` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `ibexa_path` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `ibexa_url` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `icon` | `eZWordToImageOperator` | `kernel/common/eztemplateautoload.php` |
+| `icon_info` | `eZWordToImageOperator` | `kernel/common/eztemplateautoload.php` |
+| `image` | `eZTemplateImageOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `image` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `image_link` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `imagefile` | `eZTemplateImageOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `implode` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `inc` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `indent` | `eZTemplateTextOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `insert` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `installation_name` | `ExpInstallationOperator` | `kernel/common/eztemplateautoload.php` |
+| `int` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `intro` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `is_array` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `is_boolean` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `is_class` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `is_float` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `is_integer` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `is_null` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `is_numeric` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `is_object` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `is_post_request` | `SwarkIsPostRequestOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `is_production_system` | `ExpInstallationOperator` | `kernel/common/eztemplateautoload.php` |
+| `is_set` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `is_string` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `is_unset` | `eZTemplateTypeOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `item_content_link` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `item_image_link` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `item_params` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `item_view_template` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `json` *(not active)* | `eZJSON` | `extension/ezflow/autoloads/ezjson.php` |
+| `json_encode` | `ezjscEncodingTemplateFunctions` | `extension/ezjscore/autoloads/ezjscencodingtemplatefunctions.php` |
+| `json_encode` | `SwarkJSONEncodeOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `krsort` | `SwarkKRSortOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `ksort` | `SwarkKSortOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `l10n` | `eZTemplateLocaleOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `latest_tags` | `eZTagsTemplateFunctions` | `extension/eztags/autoloads/eztagstemplatefunctions.php` |
+| `layout_title` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `lcfirst` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `le` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `levenshtein` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `locale` | `eZTemplateLocaleOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `lt` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `ltrim` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `ltrim` | `SwarkLTrimOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `makedate` | `eZTemplateLocaleOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `maketime` | `eZTemplateLocaleOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `max` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `md5` | `eZTemplateDigestOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `merge` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `metadata` | `xrowMetaDataOperator` | `extension/xrowmetadata/autoloads/xrowmetadataoperator.php` |
+| `metaphone` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `mimetype_icon` | `eZWordToImageOperator` | `kernel/common/eztemplateautoload.php` |
+| `min` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `mktime` | `PHPFunctionOperator` | `extension/owsimpleoperator/autoloads/phpfunctionoperator.php` |
+| `mod` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `modify_view_parameter` | `SwarkModifyViewParameterOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `module_params` | `eZModuleParamsOperator` | `kernel/common/eztemplateautoload.php` |
+| `month_overview` | `eZDateOperatorCollection` | `kernel/common/eztemplateautoload.php` |
+| `mul` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `ne` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `ng_image_alias` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `ng_query` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `ng_render_field` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `ng_view_content` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `nglayouts_render_result` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `nglayouts_render_zone` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `ngsite` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `ngsite_group_fields` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `ngsite_language_name` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `ngsite_topic_path` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `nl2br` | `eZTemplateNl2BrOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `node_encode` | `ezjscEncodingTemplateFunctions` | `extension/ezjscore/autoloads/ezjscencodingtemplatefunctions.php` |
+| `not` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `null` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `number_format` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `or` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `ord` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `pad` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `pagelink` *(not active)* | `eZPageLink` | `extension/ezflow/autoloads/ezpagelink.php` |
+| `pagerfanta` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `parameter` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `parent` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `parsexml` | `TemplateParseXMLOperator` | `extension/enhancedezbinaryfile/autoloads/templateparsexmloperator.php` |
+| `path` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `pdf` | `eZPDF` | `lib/ezpdf/classes/eztemplateautoload.php` |
+| `player` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `player_slide` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `poster` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `poster_slide` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `preg_match` | `SwarkPregMatchOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `preg_replace` | `SwarkPregReplaceOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `prepend` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `quoted_printable_decode` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `quoted_printable_encode` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `quotemeta` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `rand` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `range` | `SwarkRangeOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `recaptcha_get_html` | `reCAPTCHATemplateOperator` | `extension/recaptcha/autoloads/recaptchatemplateoperator.php` |
+| `recipe_schema` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `red5list` *(not active)* | `eZRed5StreamListOperator` | `extension/ezflow/autoloads/ezred5streamlist.php` |
+| `redirect` | `SwarkRedirectOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `redirect_to_site_root` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `remove` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `remove_array_element` | `SwarkRemoveArrayElementOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `render` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `render_esi` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `repeat` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `replace` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `return` | `SwarkReturnOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `reverse` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `ristring` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `roman` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `rot13` | `eZTemplateDigestOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `round` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `rsort` | `SwarkRSortOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `rstring` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `rtrim` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `rtrim` | `SwarkRTrimOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `saveXML` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `server` | `SwarkServerOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `set_array_element` | `SwarkSetArrayElementOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `shorten` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `shortenw` | `SwarkShortenWOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `shuffle` | `SwarkShuffleOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `si` | `eZTemplateUnitOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `similar_text` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `simpletags` | `eZSimpleTagsOperator` | `kernel/common/eztemplateautoload.php` |
+| `simplify` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `sort` | `SwarkSortOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `soundex` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `split_by_length` | `SwarkSplitByLengthOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `sprintf` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `str_contains` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `str_ends_with` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `str_getcsv` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `str_replace` | `PHPFunctionOperator` | `extension/owsimpleoperator/autoloads/phpfunctionoperator.php` |
+| `str_replace` | `SwarkStrReplaceOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `str_rot13` | `PHPFunctionOperator` | `extension/owsimpleoperator/autoloads/phpfunctionoperator.php` |
+| `str_shuffle` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `str_split` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `str_starts_with` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `str_word_count` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strcasecmp` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strcmp` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strcoll` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strcspn` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strip_tags` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `stripcslashes` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `stripos` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `stripslashes` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `stristr` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strlen` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strnatcasecmp` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strnatcmp` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strncasecmp` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strncmp` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strpbrk` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strpos` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strpos` | `SwarkStrPosOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `strrchr` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strripos` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strrpos` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strrpos` | `SwarkStrRPosOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `strspn` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strstr` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strtok` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `strtr` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `sub` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `substr` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `substr` | `SwarkSubStrOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `substr_compare` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `substr_count` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `substr_replace` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `sum` | `eZTemplateArithmeticOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `tag_icon` | `eZTagsTemplateFunctions` | `extension/eztags/autoloads/eztagstemplatefunctions.php` |
+| `tag_url` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `texttoimage` | `eZTemplateImageOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `time` | `PHPFunctionOperator` | `extension/owsimpleoperator/autoloads/phpfunctionoperator.php` |
+| `title` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `topmenu` | `eZTopMenuOperator` | `kernel/common/eztemplateautoload.php` |
+| `tpl_block_template` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `trans` | `sevenxThemesMediaOperators` | `extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php` |
+| `treemenu` | `eZTreeMenuOperator` | `kernel/common/eztemplateautoload.php` |
+| `trim` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `trim` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `true` | `eZTemplateLogicOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `unique` | `eZTemplateArrayOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `unserialize` | `eZUnserialize` | `extension/ezflow/autoloads/ezunserialize.php` |
+| `upcase` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `upfirst` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `upword` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `uri_path_segment` | `SwarkURIPathSegmentOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `user_id_by_login` | `SwarkUserIDByLoginOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `user_limitations` | `eZTagsTemplateFunctions` | `extension/eztags/autoloads/eztagstemplatefunctions.php` |
+| `variable_names` | `SwarkVariableNamesOperator` | `extension/swark/autoloads/eztemplateautoload.php` |
+| `vsprintf` | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `wash` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `wordtoimage` | `eZWordToImageOperator` | `kernel/common/eztemplateautoload.php` |
+| `wrap` | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `x18n` | `eZi18nOperator` | `kernel/common/eztemplateautoload.php` |
+| `xml_encode` | `ezjscEncodingTemplateFunctions` | `extension/ezjscore/autoloads/ezjscencodingtemplatefunctions.php` |
+
+### Functions (50)
+
+| Name | Class | Declared in |
+| --- | --- | --- |
+| `append-block` | `eZTemplateBlockFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `attribute_diff_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `attribute_edit_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `attribute_pdf_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `attribute_result_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `attribute_view_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `block_edit_gui` | `eZPageForwardInit` | `extension/ezflow/autoloads/eztemplateautoload.php` |
+| `block_view_gui` | `eZPageForwardInit` | `extension/ezflow/autoloads/eztemplateautoload.php` |
+| `cache-block` | `eZTemplateCacheFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `class_attribute_edit_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `class_attribute_view_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `collaboration_icon` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `collaboration_participation_view` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `collaboration_simple_message_view` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `collaboration_view_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `content_pdf_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `content_version_view_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `content_view_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `debug-accumulator` | `eZTemplateDebugFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `debug-log` | `eZTemplateDebugFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `debug-timing-point` | `eZTemplateDebugFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `debug-trace` | `eZTemplateDebugFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `def` | `eZTemplateDefFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `default` | `eZTemplateSetFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `do` | `eZTemplateDoFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `event_edit_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `event_view_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `explblock` | `ExplBlockFunction` | `extension/explayouts/classes/explblockfunction.php` |
+| `for` | `eZTemplateForFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `foreach` | `eZTemplateForeachFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `if` | `eZTemplateIfFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `include` | `eZTemplateIncludeFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `ldelim` | `eZTemplateDelimitFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `let` | `eZTemplateSetFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `menu` | `eZTemplateMenuFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `node_view_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `powercontent_attribute_create_gui` | `eZPowercontentForwardInit` | `extension/powercontent/autoloads/eztemplateautoload.php` |
+| `powercontent_create_gui` | `eZPowercontentForwardInit` | `extension/powercontent/autoloads/eztemplateautoload.php` |
+| `rdelim` | `eZTemplateDelimitFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `related_view_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `run-once` | `eZTemplateBlockFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `section` | `eZTemplateSectionFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `sequence` | `eZTemplateSequenceFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `set` | `eZTemplateSetFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `set-block` | `eZTemplateBlockFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `shop_account_view_gui` | `eZObjectForwardInit` | `kernel/common/eztemplateautoload.php` |
+| `switch` | `eZTemplateSwitchFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `tool_bar` | `eZTemplateToolbarFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `undef` | `eZTemplateDefFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+| `while` | `eZTemplateWhileFunction` | `lib/eztemplate/classes/eztemplateautoload.php` |
+
+## Events something can listen to
+
+Registered as `site.ini [Event] Listeners[]=<event>@<Class>::<method>`. The
+lightest way there is to add behaviour: no module, no handler, no class to
+replace, just a static method that runs when something happens.
+
+A **filter** event uses what the listener returns, so one that forgets to return
+the value destroys it. A **notify** event ignores it.
+
+| Event | Kind | Announced in |
+| --- | --- | --- |
+| `content/cache` | filter | `kernel/classes/ezcontentcachemanager.php`, `kernel/content/ezcontentoperationcollection.php`, `kernel/content/urlalias.php` |
+| `content/cache/all` | notify | `kernel/classes/ezcache.php`, `kernel/classes/ezcontentcachemanager.php` |
+| `content/cache/version` | notify | `kernel/content/attribute_edit.php`, `extension/ezautosave/classes/ezjscserverfunctionsautosave.php`, `extension/nxc_powercontent/modules/content/attribute_edit.php` |
+| `content/class/cache` | notify | `kernel/class/delete.php`, `kernel/class/edit.php`, `kernel/class/removeclass.php` |
+| `content/class/cache/all` | notify | `kernel/classes/ezcache.php` |
+| `content/class/group/cache` | notify | `kernel/class/groupedit.php`, `kernel/class/removegroup.php` |
+| `content/download` | notify | `kernel/content/download.php`, `extension/nxc_powercontent/modules/content/download.php` |
+| `content/section/cache` | notify | `kernel/section/edit.php`, `kernel/section/list.php` |
+| `content/state/assign` | notify | `kernel/content/ezcontentoperationcollection.php`, `extension/nxc_powercontent/modules/content/ezcontentoperationcollection.php` |
+| `content/state/cache` | notify | `kernel/state/edit.php` |
+| `content/state/cache/all` | notify | `kernel/classes/ezcache.php` |
+| `content/state/group/cache` | notify | `kernel/state/group_edit.php`, `kernel/state/groups.php` |
+| `content/translations/cache` | notify | `kernel/content/translations.php`, `extension/nxc_powercontent/modules/content/translations.php` |
+| `content/view` | filter | `kernel/content/view.php`, `extension/nxc_powercontent/modules/content/view.php` |
+| `image/alias` | notify | `lib/ezimage/classes/ezimagemanager.php` |
+| `image/invalidateAliases` | notify | `kernel/classes/ezcache.php` |
+| `image/purgeAliases` | notify | `kernel/classes/datatypes/ezimage/ezimagealiashandler.php` |
+| `image/removeAliases` | notify | `kernel/classes/datatypes/ezimage/ezimagealiashandler.php` |
+| `image/trashAliases` | notify | `kernel/classes/datatypes/ezimage/ezimagetype.php` |
+| `request/input` | notify | `kernel/private/classes/ezpkernelweb.php` |
+| `request/preinput` | notify | `kernel/private/classes/ezpkernelweb.php` |
+| `response/output` | filter | `kernel/private/classes/global_functions.php`, `lib/ezutils/classes/ezdebug.php`, `extension/ezjscore/modules/ezjscore/run.php` |
+| `response/preoutput` | filter | `kernel/private/classes/global_functions.php` |
+| `session/cleanup` | notify | `lib/ezsession/classes/ezpsessionhandlerdb.php`, `lib/ezsession/classes/ezpsessionhandlerphp.php` |
+| `session/destroy` | notify | `lib/ezsession/classes/ezpsessionhandlerdb.php`, `lib/ezsession/classes/ezpsessionhandlerphp.php`, `lib/ezsession/classes/ezpsessionhandlersymfony.php` |
+| `session/gc` | notify | `lib/ezsession/classes/ezpsessionhandlerdb.php`, `lib/ezsession/classes/ezpsessionhandlerphp.php`, `lib/ezsession/classes/ezpsessionhandlersymfony.php` |
+| `session/regenerate` | notify | `lib/ezsession/classes/ezpsessionhandlerdb.php`, `lib/ezsession/classes/ezpsessionhandlerphp.php`, `lib/ezsession/classes/ezpsessionhandlersymfony.php` |
+| `tag/add` | filter | `extension/eztags/datatypes/eztags/eztags.php`, `extension/eztags/modules/tags/add.php`, `extension/eztags/modules/tags/addsynonym.php` |
+| `tag/delete` | filter | `extension/eztags/modules/tags/delete.php`, `extension/eztags/modules/tags/deletesynonym.php`, `extension/eztags/modules/tags/deletetags.php` |
+| `tag/edit` | filter | `extension/eztags/modules/tags/edit.php`, `extension/eztags/modules/tags/editsynonym.php`, `extension/eztags/modules/tags/movetags.php` |
+| `tag/makesynonym` | filter | `extension/eztags/modules/tags/addsynonym.php`, `extension/eztags/modules/tags/makesynonym.php` |
+| `tag/merge` | filter | `extension/eztags/modules/tags/merge.php` |
+| `tag/transferobjects` | filter | `extension/eztags/modules/tags/deletesynonym.php` |
+| `user/cache/all` | notify | `kernel/classes/ezcache.php` |
+
+## Templates already replaced
+
+Each is a place a template has already been overridden - something to learn from,
+and something to collide with, since two overrides matching the same thing are
+decided by load order rather than by intent.
+
+| Name | Replaces | With |
+| --- | --- | --- |
+| `article` | `node/view/admin_preview.tpl` | `admin_preview/article.tpl` |
+| `article_listitem` | `node/view/listitem.tpl` | `listitem/article.tpl` |
+| `article_listitem` | `node/view/listitem.tpl` | `listitem/article.tpl` |
+| `billboard_banner` | `content/view/billboard.tpl` | `billboard/banner.tpl` |
+| `billboard_banner` | `content/view/billboard.tpl` | `billboard/banner.tpl` |
+| `billboard_flash` | `content/view/billboard.tpl` | `billboard/flash.tpl` |
+| `billboard_flash` | `content/view/billboard.tpl` | `billboard/flash.tpl` |
+| `comment` | `node/view/admin_preview.tpl` | `admin_preview/comment.tpl` |
+| `company` | `node/view/admin_preview.tpl` | `admin_preview/company.tpl` |
+| `edit_comment` | `content/edit.tpl` | `edit/comment.tpl` |
+| `edit_comment` | `content/edit.tpl` | `edit/comment.tpl` |
+| `edit_ezsubtreesubscription_forum_topic` | `content/datatype/edit/ezsubtreesubscription.tpl` | `datatype/edit/forum_topic.tpl` |
+| `edit_ezsubtreesubscription_forum_topic` | `content/datatype/edit/ezsubtreesubscription.tpl` | `datatype/edit/forum_topic.tpl` |
+| `edit_file` | `content/edit.tpl` | `edit/file.tpl` |
+| `edit_file` | `content/edit.tpl` | `edit/file.tpl` |
+| `edit_forum_reply` | `content/edit.tpl` | `edit/forum_reply.tpl` |
+| `edit_forum_reply` | `content/edit.tpl` | `edit/forum_reply.tpl` |
+| `edit_forum_topic` | `content/edit.tpl` | `edit/forum_topic.tpl` |
+| `edit_forum_topic` | `content/edit.tpl` | `edit/forum_topic.tpl` |
+| `embed-inline_image` | `content/view/embed-inline.tpl` | `embed-inline_image.tpl` |
+| `embed-inline_node_image` | `node/view/embed-inline.tpl` | `embed-inline_image.tpl` |
+| `embed_article` | `content/view/embed.tpl` | `embed/article.tpl` |
+| `embed_article` | `content/view/embed.tpl` | `embed/article.tpl` |
+| `embed_banner` | `content/view/embed.tpl` | `embed/banner.tpl` |
+| `embed_banner` | `content/view/embed.tpl` | `embed/banner.tpl` |
+| `embed_event_calendar` | `content/view/embed.tpl` | `embed/event_calendar.tpl` |
+| `embed_event_calendar` | `content/view/embed.tpl` | `embed/event_calendar.tpl` |
+| `embed_file` | `content/view/embed.tpl` | `embed/file.tpl` |
+| `embed_file` | `content/view/embed.tpl` | `embed/file.tpl` |
+| `embed_flash` | `content/view/embed.tpl` | `embed/flash.tpl` |
+| `embed_flash` | `content/view/embed.tpl` | `embed/flash.tpl` |
+| `embed_folder` | `content/view/embed.tpl` | `embed/folder.tpl` |
+| `embed_folder` | `content/view/embed.tpl` | `embed/folder.tpl` |
+| `embed_forum` | `content/view/embed.tpl` | `embed/forum.tpl` |
+| `embed_forum` | `content/view/embed.tpl` | `embed/forum.tpl` |
+| `embed_gallery` | `content/view/embed.tpl` | `embed/gallery.tpl` |
+| `embed_gallery` | `content/view/embed.tpl` | `embed/gallery.tpl` |
+| `embed_horizontallylistedsubitems_article` | `node/view/horizontallylistedsubitems.tpl` | `horizontallylistedsubitems/article.tpl` |
+| `embed_horizontallylistedsubitems_article` | `node/view/horizontallylistedsubitems.tpl` | `horizontallylistedsubitems/article.tpl` |
+| `embed_horizontallylistedsubitems_event` | `node/view/horizontallylistedsubitems.tpl` | `horizontallylistedsubitems/event.tpl` |
+| `embed_horizontallylistedsubitems_event` | `node/view/horizontallylistedsubitems.tpl` | `horizontallylistedsubitems/event.tpl` |
+| `embed_horizontallylistedsubitems_image` | `node/view/horizontallylistedsubitems.tpl` | `horizontallylistedsubitems/image.tpl` |
+| `embed_horizontallylistedsubitems_image` | `node/view/horizontallylistedsubitems.tpl` | `horizontallylistedsubitems/image.tpl` |
+| `embed_horizontallylistedsubitems_product` | `node/view/horizontallylistedsubitems.tpl` | `horizontallylistedsubitems/product.tpl` |
+| `embed_horizontallylistedsubitems_product` | `node/view/horizontallylistedsubitems.tpl` | `horizontallylistedsubitems/product.tpl` |
+| `embed_image` | `content/view/embed.tpl` | `embed_image.tpl` |
+| `embed_image` | `content/view/embed.tpl` | `embed/image.tpl` |
+| `embed_image` | `content/view/embed.tpl` | `embed/image.tpl` |
+| `embed_inline_image` | `content/view/embed-inline.tpl` | `embed-inline/image.tpl` |
+| `embed_inline_image` | `content/view/embed-inline.tpl` | `embed-inline/image.tpl` |
+| `embed_itemizedsubitems_documentation_page` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/documentation_page.tpl` |
+| `embed_itemizedsubitems_documentation_page` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/documentation_page.tpl` |
+| `embed_itemizedsubitems_event_calendar` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/event_calendar.tpl` |
+| `embed_itemizedsubitems_event_calendar` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/event_calendar.tpl` |
+| `embed_itemizedsubitems_folder` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/folder.tpl` |
+| `embed_itemizedsubitems_folder` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/folder.tpl` |
+| `embed_itemizedsubitems_forum` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/forum.tpl` |
+| `embed_itemizedsubitems_forum` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/forum.tpl` |
+| `embed_itemizedsubitems_gallery` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/gallery.tpl` |
+| `embed_itemizedsubitems_gallery` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/gallery.tpl` |
+| `embed_itemizedsubitems_itemized_sub_items` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/itemized_sub_items.tpl` |
+| `embed_itemizedsubitems_itemized_sub_items` | `content/view/itemizedsubitems.tpl` | `itemizedsubitems/itemized_sub_items.tpl` |
+| `embed_node_image` | `node/view/embed.tpl` | `embed_image.tpl` |
+| `embed_poll` | `content/view/embed.tpl` | `embed/poll.tpl` |
+| `embed_poll` | `content/view/embed.tpl` | `embed/poll.tpl` |
+| `embed_product` | `content/view/embed.tpl` | `embed/product.tpl` |
+| `embed_product` | `content/view/embed.tpl` | `embed/product.tpl` |
+| `embed_quicktime` | `content/view/embed.tpl` | `embed/quicktime.tpl` |
+| `embed_quicktime` | `content/view/embed.tpl` | `embed/quicktime.tpl` |
+| `embed_real_video` | `content/view/embed.tpl` | `embed/real_video.tpl` |
+| `embed_real_video` | `content/view/embed.tpl` | `embed/real_video.tpl` |
+| `embed_windows_media` | `content/view/embed.tpl` | `embed/windows_media.tpl` |
+| `embed_windows_media` | `content/view/embed.tpl` | `embed/windows_media.tpl` |
+| `factbox` | `content/datatype/view/ezxmltags/factbox.tpl` | `datatype/ezxmltext/factbox.tpl` |
+| `factbox` | `content/datatype/view/ezxmltags/factbox.tpl` | `datatype/ezxmltext/factbox.tpl` |
+| `feedback_form` | `node/view/admin_preview.tpl` | `admin_preview/feedback_form.tpl` |
+| `file` | `node/view/admin_preview.tpl` | `admin_preview/file.tpl` |
+| `flash` | `node/view/admin_preview.tpl` | `admin_preview/flash.tpl` |
+| `folder` | `node/view/admin_preview.tpl` | `admin_preview/folder.tpl` |
+| `forum` | `node/view/admin_preview.tpl` | `admin_preview/forum.tpl` |
+| `forum_reply` | `node/view/admin_preview.tpl` | `admin_preview/forum_reply.tpl` |
+| `forum_topic` | `node/view/admin_preview.tpl` | `admin_preview/forum_topic.tpl` |
+| `full_article` | `node/view/full.tpl` | `full/article.tpl` |
+| `full_article` | `node/view/full.tpl` | `full/article.tpl` |
+| `full_article_mainpage` | `node/view/full.tpl` | `full/article_mainpage.tpl` |
+| `full_article_mainpage` | `node/view/full.tpl` | `full/article_mainpage.tpl` |
+| `full_article_sevenx_themes_super` | `node/view/full.tpl` | `full/article.tpl` |
+| `full_article_subpage` | `node/view/full.tpl` | `full/article_subpage.tpl` |
+| `full_article_subpage` | `node/view/full.tpl` | `full/article_subpage.tpl` |
+| `full_banner` | `node/view/full.tpl` | `full/banner.tpl` |
+| `full_banner` | `node/view/full.tpl` | `full/banner.tpl` |
+| `full_blog` | `node/view/full.tpl` | `full/blog.tpl` |
+| `full_blog` | `node/view/full.tpl` | `full/blog.tpl` |
+| `full_blog_post` | `node/view/full.tpl` | `full/blog_post.tpl` |
+| `full_blog_post` | `node/view/full.tpl` | `full/blog_post.tpl` |
+| `full_comment` | `node/view/full.tpl` | `full/comment.tpl` |
+| `full_comment` | `node/view/full.tpl` | `full/comment.tpl` |
+| `full_documentation_page` | `node/view/full.tpl` | `full/documentation_page.tpl` |
+| `full_documentation_page` | `node/view/full.tpl` | `full/documentation_page.tpl` |
+| `full_event` | `node/view/full.tpl` | `full/event.tpl` |
+| `full_event` | `node/view/full.tpl` | `full/event.tpl` |
+| `full_event_calendar` | `node/view/full.tpl` | `full/event_calendar.tpl` |
+| `full_event_calendar` | `node/view/full.tpl` | `full/event_calendar.tpl` |
+| `full_feedback_form` | `node/view/full.tpl` | `full/feedback_form.tpl` |
+| `full_feedback_form` | `node/view/full.tpl` | `full/feedback_form.tpl` |
+| `full_file` | `node/view/full.tpl` | `full/file.tpl` |
+| `full_file` | `node/view/full.tpl` | `full/file.tpl` |
+| `full_flash` | `node/view/full.tpl` | `full/flash.tpl` |
+| `full_flash` | `node/view/full.tpl` | `full/flash.tpl` |
+| `full_folder` | `node/view/full.tpl` | `full/folder.tpl` |
+| `full_folder` | `node/view/full.tpl` | `full/folder.tpl` |
+| `full_forum` | `node/view/full.tpl` | `full/forum.tpl` |
+| `full_forum` | `node/view/full.tpl` | `full/forum.tpl` |
+| `full_forum_reply` | `node/view/full.tpl` | `full/forum_reply.tpl` |
+| `full_forum_reply` | `node/view/full.tpl` | `full/forum_reply.tpl` |
+| `full_forum_topic` | `node/view/full.tpl` | `full/forum_topic.tpl` |
+| `full_forum_topic` | `node/view/full.tpl` | `full/forum_topic.tpl` |
+| `full_forums` | `node/view/full.tpl` | `full/forums.tpl` |
+| `full_forums` | `node/view/full.tpl` | `full/forums.tpl` |
+| `full_frontpage` | `node/view/full.tpl` | `full/frontpage.tpl` |
+| `full_frontpage` | `node/view/full.tpl` | `full/frontpage.tpl` |
+| `full_gallery` | `node/view/full.tpl` | `full/gallery.tpl` |
+| `full_gallery` | `node/view/full.tpl` | `full/gallery.tpl` |
+| `full_geo_article` | `node/view/full.tpl` | `full/geo_article.tpl` |
+| `full_geo_article` | `node/view/full.tpl` | `full/geo_article.tpl` |
+| `full_image` | `node/view/full.tpl` | `full/image.tpl` |
+| `full_image` | `node/view/full.tpl` | `full/image.tpl` |
+| `full_infobox` | `node/view/full.tpl` | `full/infobox.tpl` |
+| `full_infobox` | `node/view/full.tpl` | `full/infobox.tpl` |
+| `full_link` | `node/view/full.tpl` | `full/link.tpl` |
+| `full_link` | `node/view/full.tpl` | `full/link.tpl` |
+| `full_multicalendar` | `node/view/full.tpl` | `full/multicalendar.tpl` |
+| `full_multicalendar` | `node/view/full.tpl` | `full/multicalendar.tpl` |
+| `full_poll` | `node/view/full.tpl` | `full/poll.tpl` |
+| `full_poll` | `node/view/full.tpl` | `full/poll.tpl` |
+| `full_product` | `node/view/full.tpl` | `full/product.tpl` |
+| `full_product` | `node/view/full.tpl` | `full/product.tpl` |
+| `full_quicktime` | `node/view/full.tpl` | `full/quicktime.tpl` |
+| `full_quicktime` | `node/view/full.tpl` | `full/quicktime.tpl` |
+| `full_real_video` | `node/view/full.tpl` | `full/real_video.tpl` |
+| `full_real_video` | `node/view/full.tpl` | `full/real_video.tpl` |
+| `full_silverlight` | `node/view/full.tpl` | `full/silverlight.tpl` |
+| `full_silverlight` | `node/view/full.tpl` | `full/silverlight.tpl` |
+| `full_windows_media` | `node/view/full.tpl` | `full/windows_media.tpl` |
+| `full_windows_media` | `node/view/full.tpl` | `full/windows_media.tpl` |
+| `gallery` | `node/view/admin_preview.tpl` | `admin_preview/gallery.tpl` |
+| `googlesitemap_node_view` | `node/view/googlesitemap.tpl` | `googlesitemapdynamic/sitemap.tpl` |
+| `googlesitemap_view` | `googlesitemapdynamic/sitemap.tpl` | `googlesitemapdynamic/sitemap.tpl` |
+| `highlighted_object` | `content/view/embed.tpl` | `embed/highlighted_object.tpl` |
+| `highlighted_object` | `content/view/embed.tpl` | `embed/highlighted_object.tpl` |
+| `horizontally_listed_sub_items` | `content/view/embed.tpl` | `embed/horizontally_listed_sub_items.tpl` |
+| `horizontally_listed_sub_items` | `content/view/embed.tpl` | `embed/horizontally_listed_sub_items.tpl` |
+| `image` | `node/view/admin_preview.tpl` | `admin_preview/image.tpl` |
+| `image_galleryline` | `node/view/galleryline.tpl` | `galleryline/image.tpl` |
+| `image_galleryline` | `node/view/galleryline.tpl` | `galleryline/image.tpl` |
+| `image_galleryslide` | `node/view/galleryslide.tpl` | `galleryslide/image.tpl` |
+| `image_galleryslide` | `node/view/galleryslide.tpl` | `galleryslide/image.tpl` |
+| `image_listitem` | `node/view/listitem.tpl` | `listitem/image.tpl` |
+| `image_listitem` | `node/view/listitem.tpl` | `listitem/image.tpl` |
+| `itemized_sub_items` | `content/view/embed.tpl` | `embed/itemized_sub_items.tpl` |
+| `itemized_sub_items` | `content/view/embed.tpl` | `embed/itemized_sub_items.tpl` |
+| `itemized_subtree_items` | `content/view/embed.tpl` | `embed/itemized_subtree_items.tpl` |
+| `itemized_subtree_items` | `content/view/embed.tpl` | `embed/itemized_subtree_items.tpl` |
+| `line_article` | `node/view/line.tpl` | `line/article.tpl` |
+| `line_article` | `node/view/line.tpl` | `line/article.tpl` |
+| `line_article_mainpage` | `node/view/line.tpl` | `line/article_mainpage.tpl` |
+| `line_article_mainpage` | `node/view/line.tpl` | `line/article_mainpage.tpl` |
+| `line_article_subpage` | `node/view/line.tpl` | `line/article_subpage.tpl` |
+| `line_article_subpage` | `node/view/line.tpl` | `line/article_subpage.tpl` |
+| `line_banner` | `node/view/line.tpl` | `line/banner.tpl` |
+| `line_banner` | `node/view/line.tpl` | `line/banner.tpl` |
+| `line_blog` | `node/view/line.tpl` | `line/blog.tpl` |
+| `line_blog` | `node/view/line.tpl` | `line/blog.tpl` |
+| `line_blog_post` | `node/view/line.tpl` | `line/blog_post.tpl` |
+| `line_blog_post` | `node/view/line.tpl` | `line/blog_post.tpl` |
+| `line_comment` | `node/view/line.tpl` | `line/comment.tpl` |
+| `line_comment` | `node/view/line.tpl` | `line/comment.tpl` |
+| `line_documentation_page` | `node/view/line.tpl` | `line/documentation_page.tpl` |
+| `line_documentation_page` | `node/view/line.tpl` | `line/documentation_page.tpl` |
+| `line_event` | `node/view/line.tpl` | `line/event.tpl` |
+| `line_event` | `node/view/line.tpl` | `line/event.tpl` |
+| `line_event_calendar` | `node/view/line.tpl` | `line/event_calendar.tpl` |
+| `line_event_calendar` | `node/view/line.tpl` | `line/event_calendar.tpl` |
+| `line_feedback_form` | `node/view/line.tpl` | `line/feedback_form.tpl` |
+| `line_feedback_form` | `node/view/line.tpl` | `line/feedback_form.tpl` |
+| `line_file` | `node/view/line.tpl` | `line/file.tpl` |
+| `line_file` | `node/view/line.tpl` | `line/file.tpl` |
+| `line_flash` | `node/view/line.tpl` | `line/flash.tpl` |
+| `line_flash` | `node/view/line.tpl` | `line/flash.tpl` |
+| `line_folder` | `node/view/line.tpl` | `line/folder.tpl` |
+| `line_folder` | `node/view/line.tpl` | `line/folder.tpl` |
+| `line_forum` | `node/view/line.tpl` | `line/forum.tpl` |
+| `line_forum` | `node/view/line.tpl` | `line/forum.tpl` |
+| `line_forum_reply` | `node/view/line.tpl` | `line/forum_reply.tpl` |
+| `line_forum_reply` | `node/view/line.tpl` | `line/forum_reply.tpl` |
+| `line_forum_topic` | `node/view/line.tpl` | `line/forum_topic.tpl` |
+| `line_forum_topic` | `node/view/line.tpl` | `line/forum_topic.tpl` |
+| `line_forums` | `node/view/line.tpl` | `line/forums.tpl` |
+| `line_forums` | `node/view/line.tpl` | `line/forums.tpl` |
+| `line_gallery` | `node/view/line.tpl` | `line/gallery.tpl` |
+| `line_gallery` | `node/view/line.tpl` | `line/gallery.tpl` |
+| `line_geo_article` | `node/view/line.tpl` | `line/geo_article.tpl` |
+| `line_geo_article` | `node/view/line.tpl` | `line/geo_article.tpl` |
+| `line_image` | `node/view/line.tpl` | `line/image.tpl` |
+| `line_image` | `node/view/line.tpl` | `line/image.tpl` |
+| `line_infobox` | `node/view/line.tpl` | `line/infobox.tpl` |
+| `line_infobox` | `node/view/line.tpl` | `line/infobox.tpl` |
+| `line_link` | `node/view/line.tpl` | `line/link.tpl` |
+| `line_link` | `node/view/line.tpl` | `line/link.tpl` |
+| `line_multicalendar` | `node/view/line.tpl` | `line/multicalendar.tpl` |
+| `line_multicalendar` | `node/view/line.tpl` | `line/multicalendar.tpl` |
+| `line_poll` | `node/view/line.tpl` | `line/poll.tpl` |
+| `line_poll` | `node/view/line.tpl` | `line/poll.tpl` |
+| `line_product` | `node/view/line.tpl` | `line/product.tpl` |
+| `line_product` | `node/view/line.tpl` | `line/product.tpl` |
+| `line_quicktime` | `node/view/line.tpl` | `line/quicktime.tpl` |
+| `line_quicktime` | `node/view/line.tpl` | `line/quicktime.tpl` |
+| `line_real_video` | `node/view/line.tpl` | `line/real_video.tpl` |
+| `line_real_video` | `node/view/line.tpl` | `line/real_video.tpl` |
+| `line_silverlight` | `node/view/line.tpl` | `line/silverlight.tpl` |
+| `line_silverlight` | `node/view/line.tpl` | `line/silverlight.tpl` |
+| `line_thumbnail_article` | `content/view/line_thumbnail.tpl` | `content/view/line_thumbnail/article.tpl` |
+| `line_thumbnail_file` | `content/view/line_thumbnail.tpl` | `content/view/line_thumbnail/file.tpl` |
+| `line_thumbnail_flash_player` | `content/view/line_thumbnail.tpl` | `content/view/line_thumbnail/flash_player.tpl` |
+| `line_thumbnail_image` | `content/view/line_thumbnail.tpl` | `content/view/line_thumbnail/image.tpl` |
+| `line_windows_media` | `node/view/line.tpl` | `line/windows_media.tpl` |
+| `line_windows_media` | `node/view/line.tpl` | `line/windows_media.tpl` |
+| `link` | `node/view/admin_preview.tpl` | `admin_preview/link.tpl` |
+| `node/view/full#cjw_newsletter_edition` | `node/view/full.tpl` | `node/view/full/cjw_newsletter_edition.tpl` |
+| `node/view/full#cjw_newsletter_list` | `node/view/full.tpl` | `node/view/full/cjw_newsletter_list.tpl` |
+| `node/view/full#cjw_newsletter_list_virtual` | `node/view/full.tpl` | `node/view/full/cjw_newsletter_list_virtual.tpl` |
+| `node/view/line#cjw_newsletter_edition` | `node/view/line.tpl` | `node/view/line/cjw_newsletter_edition.tpl` |
+| `pdf_category` | `node/view/pdf.tpl` | `pdf_category.tpl` |
+| `pdf_recipe` | `node/view/pdf.tpl` | `pdf_recipe.tpl` |
+| `person` | `node/view/admin_preview.tpl` | `admin_preview/person.tpl` |
+| `poll` | `node/view/admin_preview.tpl` | `admin_preview/poll.tpl` |
+| `product` | `node/view/admin_preview.tpl` | `admin_preview/product.tpl` |
+| `quicktime` | `node/view/admin_preview.tpl` | `admin_preview/quicktime.tpl` |
+| `quote` | `content/datatype/view/ezxmltags/quote.tpl` | `datatype/ezxmltext/quote.tpl` |
+| `quote` | `content/datatype/view/ezxmltags/quote.tpl` | `datatype/ezxmltext/quote.tpl` |
+| `real_video` | `node/view/admin_preview.tpl` | `admin_preview/real_video.tpl` |
+| `review` | `node/view/admin_preview.tpl` | `admin_preview/review.tpl` |
+| `table_cols` | `content/datatype/view/ezxmltags/table.tpl` | `datatype/ezxmltext/table_cols.tpl` |
+| `table_cols` | `content/datatype/view/ezxmltags/table.tpl` | `datatype/ezxmltext/table_cols.tpl` |
+| `table_comparison` | `content/datatype/view/ezxmltags/table.tpl` | `datatype/ezxmltext/table_comparison.tpl` |
+| `table_comparison` | `content/datatype/view/ezxmltags/table.tpl` | `datatype/ezxmltext/table_comparison.tpl` |
+| `thumbnail_banner` | `node/view/thumbnail.tpl` | `thumbnail/image.tpl` |
+| `thumbnail_banner_browse` | `node/view/browse_thumbnail.tpl` | `thumbnail/image_browse.tpl` |
+| `thumbnail_image` | `node/view/thumbnail.tpl` | `thumbnail/image.tpl` |
+| `thumbnail_image_browse` | `node/view/browse_thumbnail.tpl` | `thumbnail/image_browse.tpl` |
+| `tiny_image` | `content/view/tiny.tpl` | `tiny_image.tpl` |
+| `tiny_image` | `content/view/tiny.tpl` | `tiny_image.tpl` |
+| `tiny_image` | `content/view/tiny.tpl` | `tiny_image.tpl` |
+| `tiny_image` | `content/view/tiny.tpl` | `tiny_image.tpl` |
+| `tiny_image` | `content/view/tiny.tpl` | `tiny_image.tpl` |
+| `vertically_listed_sub_items` | `content/view/embed.tpl` | `embed/vertically_listed_sub_items.tpl` |
+| `vertically_listed_sub_items` | `content/view/embed.tpl` | `embed/vertically_listed_sub_items.tpl` |
+| `weblog` | `node/view/admin_preview.tpl` | `admin_preview/weblog.tpl` |
+| `windows_media` | `node/view/admin_preview.tpl` | `admin_preview/windows_media.tpl` |
+
+## Kernel classes replaced outright
+
+The heaviest mechanism there is, and the first thing to know before anything
+else is diagnosed: a replaced kernel class is not the kernel any more, whatever
+the kernel source says.
+
+| Class | Replaced by | Instead of |
+| --- | --- | --- |
+| `eZContentFunctionCollection` | `extension/nxc_powercontent/modules/content/ezcontentfunctioncollection.php` | `kernel/content/ezcontentfunctioncollection.php` |
+| `eZContentOperationCollection` | `extension/nxc_powercontent/modules/content/ezcontentoperationcollection.php` | `kernel/content/ezcontentoperationcollection.php` |
+| `ezpContentPublishingBehaviour` | `extension/nxc_powercontent/modules/content/ezcontentpublishingbehaviour.php` | `kernel/content/ezcontentpublishingbehaviour.php` |
 

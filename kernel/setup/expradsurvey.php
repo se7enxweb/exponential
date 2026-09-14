@@ -166,8 +166,13 @@ class expRADSurvey
         usort( $settings, array( __CLASS__, 'compareSettings' ) );
         usort( $repositories, array( __CLASS__, 'compareRepositories' ) );
 
+        // contracts() fills self::$Events as it walks, so it runs first.
         $contracts = self::contracts();
         $modules   = self::modules();
+        $callables = self::templateCallables();
+        $overrides = self::overrides();
+        $replaced  = self::kernelOverrides();
+        $events    = (array) self::$Events;
 
         $views    = 0;
         $policies = 0;
@@ -182,6 +187,10 @@ class expRADSurvey
             'repositories' => $repositories,
             'contracts'    => $contracts,
             'modules'      => $modules,
+            'callables'    => $callables,
+            'events'       => $events,
+            'overrides'    => $overrides,
+            'replaced'     => $replaced,
             'files'        => $files,
             'counts'       => array(
                 'ini'          => count( $files ),
@@ -194,12 +203,22 @@ class expRADSurvey
                 'implemented'  => count( array_filter( $contracts, array( __CLASS__, 'isImplemented' ) ) ),
                 'modules'      => count( $modules ),
                 'views'        => $views,
-                'policies'     => $policies ) );
+                'policies'     => $policies,
+                'callables'    => count( $callables ),
+                'operators'    => count( array_filter( $callables, function ( $c ) { return $c['kind'] === 'operator'; } ) ),
+                'functions'    => count( array_filter( $callables, function ( $c ) { return $c['kind'] === 'function'; } ) ),
+                'events'       => count( $events ),
+                'overrides'    => count( $overrides ),
+                'replaced'     => count( $replaced ) ) );
 
         self::$Survey['counts']['total'] = self::$Survey['counts']['settings']
                                          + self::$Survey['counts']['repositories']
                                          + self::$Survey['counts']['contracts']
-                                         + self::$Survey['counts']['views'];
+                                         + self::$Survey['counts']['views']
+                                         + self::$Survey['counts']['callables']
+                                         + self::$Survey['counts']['events']
+                                         + self::$Survey['counts']['overrides']
+                                         + self::$Survey['counts']['replaced'];
 
         return self::$Survey;
     }
@@ -522,29 +541,60 @@ class expRADSurvey
             }
         }
 
-        // Who implements each of them. One pass over the same files rather than
-        // one per contract, which would be a few hundred passes.
-        if ( count( $contracts ) )
+        // Who implements each of them, and every event the kernel announces.
+        // Both want a walk of the same files, so they share one: separately
+        // they would be two passes over several thousand files for no reason.
+        $names = count( $contracts )
+                 ? '(' . implode( '|', array_map( 'preg_quote', array_keys( $contracts ) ) ) . ')'
+                 : false;
+
+        self::$Events = array();
+
+        foreach ( self::sourceFiles( true ) as $path )
         {
-            $names = '(' . implode( '|', array_map( 'preg_quote', array_keys( $contracts ) ) ) . ')';
+            $contents = @file_get_contents( $path );
 
-            foreach ( self::sourceFiles( true ) as $path )
-            {
-                $contents = @file_get_contents( $path );
+            if ( $contents === false )
+                continue;
 
-                if ( $contents === false )
-                    continue;
-
-                if ( !preg_match_all( '/^class\s+([A-Za-z_][A-Za-z0-9_]*)\s+(?:extends|implements)\s+[^{]*\b' . $names . '\b/mi',
-                                      $contents, $found, PREG_SET_ORDER ) )
-                    continue;
-
+            if ( $names !== false
+                 && preg_match_all( '/^class\s+([A-Za-z_][A-Za-z0-9_]*)\s+(?:extends|implements)\s+[^{]*\b' . $names . '\b/mi',
+                                    $contents, $found, PREG_SET_ORDER ) )
                 foreach ( $found as $match )
                     if ( isset( $contracts[$match[2]] ) && !in_array( $match[1], $contracts[$match[2]]['implementations'], true ) )
                         $contracts[$match[2]]['implementations'][] = $match[1];
+
+            // Cheap enough to check before running the expensive pattern, and
+            // most files have nothing to do with events.
+            if ( strpos( $contents, 'ezpEvent' ) === false )
+                continue;
+
+            if ( !preg_match_all( "/ezpEvent::getInstance\(\)\s*->\s*(notify|filter)\(\s*'([^']+)'/s",
+                                  $contents, $found, PREG_SET_ORDER ) )
+                continue;
+
+            foreach ( $found as $match )
+            {
+                $event = $match[2];
+
+                if ( !isset( self::$Events[$event] ) )
+                    self::$Events[$event] = array( 'event' => $event,
+                                                   'kind'  => $match[1],
+                                                   'where' => array() );
+
+                // A filter and a notify of the same name is possible and worth
+                // seeing: what a listener returns matters for one and not the
+                // other, so the stricter of the two is what a listener has to
+                // satisfy.
+                if ( $match[1] === 'filter' )
+                    self::$Events[$event]['kind'] = 'filter';
+
+                if ( !in_array( $path, self::$Events[$event]['where'], true ) )
+                    self::$Events[$event]['where'][] = $path;
             }
         }
 
+        ksort( self::$Events );
         ksort( $contracts );
 
         return array_values( $contracts );
@@ -633,6 +683,194 @@ class expRADSurvey
         }
 
         return $files;
+    }
+
+    /**
+     * Every event the kernel announces, collected during the contract walk.
+     *
+     * @var array|null
+     */
+    protected static $Events = null;
+
+    /**
+     * Every event something can listen to.
+     *
+     * Swept out of the source rather than listed, because a list of these goes
+     * out of date the first time somebody adds one and nobody notices for a
+     * year.
+     *
+     * @return array
+     */
+    public static function events()
+    {
+        if ( self::$Events === null )
+            self::survey();
+
+        return (array) self::$Events;
+    }
+
+    // ── What a template can call ─────────────────────────────────────────────
+
+    /**
+     * Every operator and function the template engine has been taught.
+     *
+     * Read out of the autoload arrays, which is where they are really declared
+     * - there is no ini listing them, and asking the engine would mean building
+     * it. The array is read by including the file in a scope of its own, the
+     * same way the engine reads it.
+     *
+     * @return array
+     */
+    public static function templateCallables()
+    {
+        $callables = array();
+
+        foreach ( self::templateAutoloadFiles() as $path )
+        {
+            $declared = self::includeInScope( $path );
+
+            foreach ( array( 'eZTemplateOperatorArray' => 'operator',
+                             'eZTemplateFunctionArray' => 'function' ) as $variable => $kind )
+            {
+                if ( !isset( $declared[$variable] ) || !is_array( $declared[$variable] ) )
+                    continue;
+
+                foreach ( $declared[$variable] as $entry )
+                {
+                    if ( !is_array( $entry ) )
+                        continue;
+
+                    $names = $kind === 'operator'
+                             ? ( isset( $entry['operator_names'] ) ? $entry['operator_names'] : array() )
+                             : ( isset( $entry['function_names'] ) ? $entry['function_names'] : array() );
+
+                    foreach ( (array) $names as $name )
+                    {
+                        if ( !is_string( $name ) || $name === '' )
+                            continue;
+
+                        $callables[] = array(
+                            'name'   => $name,
+                            'kind'   => $kind,
+                            'class'  => isset( $entry['class'] ) && is_string( $entry['class'] )
+                                        ? $entry['class']
+                                        : ( isset( $entry['function'] ) && is_string( $entry['function'] )
+                                            ? $entry['function'] : '' ),
+                            'script' => isset( $entry['script'] ) && is_string( $entry['script'] ) ? $entry['script'] : '',
+                            'from'   => $path );
+                    }
+                }
+            }
+        }
+
+        usort( $callables, function ( $a, $b ) {
+            return $a['kind'] === $b['kind'] ? strcmp( $a['name'], $b['name'] ) : strcmp( $a['kind'], $b['kind'] );
+        } );
+
+        return $callables;
+    }
+
+    /**
+     * Where template autoload files are.
+     *
+     * @return array of string
+     */
+    protected static function templateAutoloadFiles()
+    {
+        return array_merge(
+            (array) glob( 'kernel/*/eztemplateautoload.php' ),
+            (array) glob( 'lib/*/*/eztemplateautoload.php' ),
+            (array) glob( 'extension/*/autoloads/eztemplateautoload.php' ) );
+    }
+
+    // ── Template overrides, and kernel classes replaced ──────────────────────
+
+    /**
+     * Every template override registered on this installation.
+     *
+     * An override is a point too: it is a place a template has already been
+     * replaced, which is both a thing to learn from and a thing to collide
+     * with.
+     *
+     * @return array
+     */
+    public static function overrides()
+    {
+        $overrides = array();
+
+        $files = array_merge(
+            (array) glob( 'settings/override.ini' ),
+            (array) glob( 'settings/override/override.ini.append.php' ),
+            (array) glob( 'settings/siteaccess/*/override.ini.append.php' ),
+            (array) glob( 'extension/*/settings/override.ini*' ),
+            (array) glob( 'extension/*/settings/*/override.ini*' ) );
+
+        foreach ( $files as $path )
+            foreach ( self::parseIni( $path ) as $section => $variables )
+            {
+                $first = function ( $name ) use ( $variables ) {
+                    return isset( $variables[$name][0] ) ? $variables[$name][0] : '';
+                };
+
+                $overrides[] = array(
+                    'name'   => $section,
+                    'source' => $first( 'Source' ),
+                    'match'  => $first( 'MatchFile' ),
+                    'subdir' => $first( 'Subdir' ),
+                    'from'   => $path );
+            }
+
+        usort( $overrides, function ( $a, $b ) { return strcmp( $a['name'], $b['name'] ); } );
+
+        return $overrides;
+    }
+
+    /**
+     * Kernel classes this installation has replaced outright.
+     *
+     * The heaviest mechanism there is, and the one worth knowing about before
+     * anything else is diagnosed: a replaced kernel class is not in the kernel
+     * any more, whatever the kernel source says.
+     *
+     * @return array
+     */
+    public static function kernelOverrides()
+    {
+        $map = is_file( 'var/autoload/ezp_override.php' ) ? @include 'var/autoload/ezp_override.php' : false;
+
+        if ( !is_array( $map ) )
+            return array();
+
+        $overrides = array();
+
+        foreach ( $map as $class => $path )
+            $overrides[] = array( 'class'  => (string) $class,
+                                  'path'   => (string) $path,
+                                  'kernel' => self::kernelFileOf( (string) $class ) );
+
+        usort( $overrides, function ( $a, $b ) { return strcmp( $a['class'], $b['class'] ); } );
+
+        return $overrides;
+    }
+
+    /**
+     * Where the kernel's own copy of a class is, for something that overrides it.
+     *
+     * @param string $class
+     * @return string
+     */
+    protected static function kernelFileOf( $class )
+    {
+        $map = is_file( 'autoload/ezp_kernel.php' ) ? @include 'autoload/ezp_kernel.php' : false;
+
+        if ( !is_array( $map ) )
+            return '';
+
+        foreach ( $map as $name => $path )
+            if ( strcasecmp( (string) $name, $class ) === 0 )
+                return (string) $path;
+
+        return '';
     }
 
     // ── Modules and their views ──────────────────────────────────────────────

@@ -24,12 +24,20 @@ $tpl = eZTemplate::factory();
 $sections = array(
     'settings'     => array( 'title' => 'Settings that name a class',
                              'what'  => 'Every setting on this installation whose value is a class, or whose name says it takes one. Change one of these and something else answers instead.' ),
-    'repositories' => array( 'title' => 'Directories searched for handlers',
-                             'what'  => 'Places the kernel looks for a file whose path it works out from a name. Add your extension to one of these and your file is found; leave it out and the class is never loaded however correctly it is written.' ),
+    'repositories' => array( 'title' => 'Places the kernel looks',
+                             'what'  => 'Every setting that names a directory to search or an extension to search in. Add your extension to one of these and your file is found; leave it out and the class is never loaded however correctly it is written. Most of the time something works and should not, or does not work and should, the answer is one of these lines.' ),
     'contracts'    => array( 'title' => 'Interfaces and abstract classes',
                              'what'  => 'What the kernel declares for somebody else to implement, with how many methods each asks for and what already implements it. The ones with many methods and one implementation are the deep water.' ),
     'modules'      => array( 'title' => 'Modules and their views',
-                             'what'  => 'Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.' ) );
+                             'what'  => 'Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.' ),
+    'callables'    => array( 'title' => 'What a template can call',
+                             'what'  => 'Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.' ),
+    'events'       => array( 'title' => 'Events something can listen to',
+                             'what'  => 'Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.' ),
+    'overrides'    => array( 'title' => 'Templates already replaced',
+                             'what'  => 'Every override registered here. Each is a place a template has already been replaced - which is both something to learn from and something to collide with, since two overrides matching the same thing are decided by load order rather than by intent.' ),
+    'replaced'     => array( 'title' => 'Kernel classes replaced outright',
+                             'what'  => 'The heaviest mechanism there is, and the first thing to know before anything else is diagnosed: a replaced kernel class is not the kernel any more, whatever the kernel source says.' ) );
 
 $show = isset( $Params['Show'] ) && isset( $sections[$Params['Show']] ) ? $Params['Show'] : 'settings';
 
@@ -44,6 +52,11 @@ $perPage = 100;
 
 $survey = expRADSurvey::survey();
 $counts = $survey['counts'];
+
+// Asked for once rather than per row: whether the engine really answers to an
+// operator is the difference between a name that is declared and one that
+// works, and that is the most useful thing this page can say about it.
+$template = eZTemplate::factory();
 
 // ── The rows for whichever section is being shown ───────────────────────────
 $rows = array();
@@ -72,6 +85,55 @@ switch ( $show )
                            : 'nothing implements it yet',
                 'note'  => $entry['source'],
                 'state' => count( $entry['implementations'] ) ? 'ok' : 'empty' );
+        break;
+
+    case 'callables':
+        foreach ( $survey['callables'] as $entry )
+        {
+            $live = $entry['kind'] === 'function'
+                    || ( is_array( $template->Operators ) && isset( $template->Operators[$entry['name']] ) );
+
+            $rows[] = array(
+                'one'   => $entry['name'],
+                'two'   => $entry['kind'],
+                'three' => $live ? 'live' : 'declared, not active',
+                'four'  => $entry['class'],
+                'note'  => $entry['script'] !== '' ? $entry['script'] : $entry['from'],
+                'state' => $live ? 'ok' : 'empty' );
+        }
+        break;
+
+    case 'events':
+        foreach ( $survey['events'] as $entry )
+            $rows[] = array(
+                'one'   => $entry['event'],
+                'two'   => $entry['kind'],
+                'three' => $entry['kind'] === 'filter' ? 'return the value' : 'return value ignored',
+                'four'  => count( $entry['where'] ) . ' place' . ( count( $entry['where'] ) === 1 ? '' : 's' ),
+                'note'  => implode( ', ', array_slice( $entry['where'], 0, 3 ) ),
+                'state' => $entry['kind'] === 'filter' ? 'ok' : 'empty' );
+        break;
+
+    case 'overrides':
+        foreach ( $survey['overrides'] as $entry )
+            $rows[] = array(
+                'one'   => $entry['name'],
+                'two'   => $entry['source'],
+                'three' => $entry['match'],
+                'four'  => $entry['subdir'],
+                'note'  => $entry['from'],
+                'state' => $entry['source'] !== '' ? 'ok' : 'empty' );
+        break;
+
+    case 'replaced':
+        foreach ( $survey['replaced'] as $entry )
+            $rows[] = array(
+                'one'   => $entry['class'],
+                'two'   => 'kernel override',
+                'three' => $entry['kernel'] !== '' ? 'replaces a kernel class' : 'replaces nothing in the kernel',
+                'four'  => $entry['path'],
+                'note'  => $entry['kernel'],
+                'state' => $entry['kernel'] !== '' ? 'ok' : 'bad' );
         break;
 
     case 'modules':
@@ -150,6 +212,7 @@ foreach ( $sections as $key => $section )
                      'count'   => $key === 'modules'
                                   ? $counts['views'] + $counts['modules']
                                   : ( isset( $counts[$key] ) ? $counts[$key] : 0 ),
+                     'current_label' => $section['title'],
                      'url'     => $address( $key, 0, $find ) );
 
 $pages = array();
