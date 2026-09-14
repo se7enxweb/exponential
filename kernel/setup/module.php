@@ -146,12 +146,18 @@ $ViewList['cronjobs'] = array(
     'ui_context' => 'administration',
     'default_navigation_part' => 'ezsetupnavigationpart',
     'single_post_actions' => array( 'LaunchCronjobButton' => 'LaunchCronjob',
+                                    'LaunchCronjobScriptButton' => 'LaunchCronjobScript',
                                     'StopCronjobButton' => 'StopCronjob',
                                     'ClearCronjobLogButton' => 'ClearCronjobLog' ),
     // Each part's own submit button carries the part name as its value, so one
     // form serves every part and the page needs no javascript to launch one.
     'post_action_parameters' => array( 'LaunchCronjob' => array( 'CronjobPart' => 'LaunchCronjobButton',
-                                                                 'CronjobSiteAccess' => 'CronjobSiteAccess' ) ),
+                                                                 'CronjobSiteAccess' => 'CronjobSiteAccess' ),
+                                       // The button carries "part|script", so one
+                                       // form can run any single script without a
+                                       // field per row.
+                                       'LaunchCronjobScript' => array( 'CronjobTarget' => 'LaunchCronjobScriptButton',
+                                                                       'CronjobSiteAccess' => 'CronjobSiteAccess' ) ),
     'params' => array() );
 
 $ViewList['cronjobsstream'] = array(

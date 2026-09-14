@@ -42,6 +42,45 @@ class expCronjobRunner
     const GLOBAL_PART = 'global';
 
     /**
+     * Runs one of this class's own static methods and always comes back with
+     * something to report.
+     *
+     * Whatever goes wrong underneath - a disk that will not take the log, a php
+     * binary that has gone away, a process that cannot be signalled - the
+     * answer has to be an answer. The console is waiting for one, and an error
+     * page tells it nothing it can act on while leaving its controls disabled
+     * with nothing running.
+     *
+     * It lives here rather than in the view because a view file is included
+     * once per request, and a plain function declared in one cannot be declared
+     * again in a process that runs the view more than once.
+     *
+     * @param string $method
+     * @param array $arguments
+     * @return array ok, message.
+     */
+    public static function attempt( $method, array $arguments = array() )
+    {
+        try
+        {
+            $result = call_user_func_array( array( 'expCronjobRunner', $method ), $arguments );
+
+            if ( !is_array( $result ) || !isset( $result['ok'] ) )
+                return array( 'ok' => false, 'message' => 'The cronjob console got no answer from ' . $method . '.' );
+
+            if ( !isset( $result['message'] ) )
+                $result['message'] = $result['ok'] ? 'Done.' : 'It did not work, and did not say why.';
+
+            return $result;
+        }
+        catch ( Exception $e )
+        {
+            eZDebug::writeError( $e->getMessage(), __METHOD__ );
+            return array( 'ok' => false, 'message' => 'The cronjob console failed: ' . $e->getMessage() );
+        }
+    }
+
+    /**
      * Settings read from cronjob.ini [AdminSettings], with the values used when
      * the section is absent so an installation that has not been updated still
      * works.
@@ -364,10 +403,39 @@ class expCronjobRunner
      */
     public static function launch( $part, $siteaccess )
     {
+        return self::launchTarget( $part, false, $siteaccess );
+    }
+
+    /**
+     * Runs one named script of a part, rather than the whole part.
+     *
+     * @param string $part
+     * @param string $script A script name from that part.
+     * @param string $siteaccess
+     * @return array ok, message, pid.
+     */
+    public static function launchScript( $part, $script, $siteaccess )
+    {
+        return self::launchTarget( $part, $script, $siteaccess );
+    }
+
+    /**
+     * Starts a part, or one script of it, and leaves it running.
+     *
+     * @param string $part
+     * @param string|false $script false for the whole part.
+     * @param string $siteaccess
+     * @return array
+     */
+    private static function launchTarget( $part, $script, $siteaccess )
+    {
         $refuse = function ( $message ) { return array( 'ok' => false, 'message' => $message, 'pid' => 0, 'command' => '' ); };
 
         if ( !self::isLaunchable( $part ) )
             return $refuse( 'No cronjob part named "' . $part . '" can be launched from here.' );
+
+        if ( $script !== false && !self::partHasScript( $part, $script ) )
+            return $refuse( 'The "' . $part . '" part has no script called "' . $script . '".' );
 
         if ( !in_array( $siteaccess, self::siteAccessList(), true ) )
             return $refuse( 'No siteaccess named "' . $siteaccess . '" is served by this installation.' );
@@ -383,22 +451,32 @@ class expCronjobRunner
         if ( !function_exists( 'proc_open' ) )
             return $refuse( 'proc_open is disabled, so a cronjob cannot be started from the interface. Run it from a shell.' );
 
-        $root = rtrim( eZSys::rootDir(), '/' );
-        if ( $root === '' )
-            $root = rtrim( getcwd(), '/' );
+        $root = self::installationRoot();
 
-        $script = $root . '/runcronjobs.php';
-        if ( !file_exists( $script ) )
-            return $refuse( 'runcronjobs.php is not where it should be: ' . $script );
+        $runner = $root . '/runcronjobs.php';
+        if ( !file_exists( $runner ) )
+            return $refuse( 'runcronjobs.php is not where it should be: ' . $runner );
 
-        $log = self::logFile();
+        // A log of its own, so "what did the sitemap job say last night" is a
+        // question with one answer rather than a search through everything that
+        // has run since.
+        $log = self::targetLogFile( $part, $script );
         $error = self::errorFile();
 
-        // The part is only named when it is not the global one: runcronjobs.php
-        // runs the [CronjobSettings] scripts when it is given no part at all.
-        $arguments = array( escapeshellarg( $script ), '-s', escapeshellarg( $siteaccess ), '--no-colors' );
-        if ( $part !== self::GLOBAL_PART )
+        $arguments = array( escapeshellarg( $runner ), '-s', escapeshellarg( $siteaccess ), '--no-colors' );
+        if ( $script !== false )
+        {
+            // One script. The part is not named as well: runcronjobs.php looks
+            // the script up in the directories cronjob.ini gives it.
+            $arguments[] = '--script=' . escapeshellarg( $script );
+        }
+        else if ( $part !== self::GLOBAL_PART )
+        {
+            // The part is only named when it is not the global one:
+            // runcronjobs.php runs the [CronjobSettings] scripts when it is
+            // given no part at all.
             $arguments[] = escapeshellarg( $part );
+        }
 
         $pidFile = self::varPath( 'cronjobs/run.pid' );
         @unlink( $pidFile );
@@ -421,8 +499,10 @@ class expCronjobRunner
             escapeshellarg( $root ), escapeshellarg( $inner ),
             escapeshellarg( $log ), escapeshellarg( $error ) );
 
-        $header = sprintf( "\n===== %s | part %s | siteaccess %s =====\n",
-                           date( 'Y-m-d H:i:s T' ), $part, $siteaccess );
+        $header = sprintf( "\n===== %s | %s | siteaccess %s =====\n",
+                           date( 'Y-m-d H:i:s T' ),
+                           $script === false ? 'part ' . $part : 'script ' . $script . ' of ' . $part,
+                           $siteaccess );
         file_put_contents( $log, $header, FILE_APPEND );
 
         $descriptors = array( 0 => array( 'pipe', 'r' ),
@@ -457,15 +537,429 @@ class expCronjobRunner
         if ( $pid < 1 )
             return $refuse( 'The cronjob was started but did not report its process id, so it cannot be followed or stopped from here. Check ' . $error . '.' );
 
+        $started = time();
         file_put_contents( self::stateFile(), json_encode( array(
             'pid'        => $pid,
             'part'       => $part,
+            'script'     => $script === false ? '' : $script,
             'siteaccess' => $siteaccess,
-            'started'    => time(),
+            'started'    => $started,
             'log'        => $log ) ) );
 
+        self::recordStart( array( 'part' => $part,
+                                  'script' => $script === false ? '' : $script,
+                                  'siteaccess' => $siteaccess,
+                                  'pid' => $pid,
+                                  'started' => $started,
+                                  'finished' => null,
+                                  'errors' => 0,
+                                  'log' => $log ) );
+
+        $what = $script === false ? 'the "' . $part . '" part' : $script;
         return array( 'ok' => true, 'pid' => $pid, 'command' => $command,
-                      'message' => 'Started the "' . $part . '" part for ' . $siteaccess . ' as process ' . $pid . '.' );
+                      'message' => 'Started ' . $what . ' for ' . $siteaccess . ' as process ' . $pid . '.' );
+    }
+
+    /**
+     * Whether a part lists the given script.
+     */
+    public static function partHasScript( $part, $script )
+    {
+        foreach ( self::parts() as $candidate )
+        {
+            if ( $candidate['name'] !== $part )
+                continue;
+
+            foreach ( $candidate['scripts'] as $entry )
+            {
+                if ( $entry['name'] === $script )
+                    return $entry['path'] !== false;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * A name that is safe to put in a path.
+     */
+    private static function safeName( $name )
+    {
+        $name = preg_replace( '/[^A-Za-z0-9_.-]/', '_', (string)$name );
+        return $name === '' ? 'unnamed' : $name;
+    }
+
+    /**
+     * Where the output of one part, or one script of it, is kept.
+     *
+     * A log each, so what a particular job said last night is one file rather
+     * than a search through everything that has run since. A whole part writes
+     * to _part.log beside the scripts it ran.
+     *
+     * @param string $part
+     * @param string|false $script
+     * @return string
+     */
+    public static function targetLogFile( $part, $script = false )
+    {
+        $name = $script === false ? '_part' : basename( $script, '.php' );
+
+        return self::varPath( 'cronjobs/' . self::safeName( $part ) . '/' . self::safeName( $name ) . '.log' );
+    }
+
+    /**
+     * The file the run history is kept in.
+     */
+    public static function historyFile()
+    {
+        return self::varPath( 'cronjobs/history.json' );
+    }
+
+    /**
+     * Adds a run to the history, newest first.
+     */
+    private static function recordStart( array $entry )
+    {
+        $history = self::readHistory();
+        array_unshift( $history, $entry );
+
+        // Enough to see a pattern, not enough to grow without end.
+        $keep = (int)self::setting( 'HistoryLength', 100 );
+        if ( $keep < 1 )
+            $keep = 100;
+        $history = array_slice( $history, 0, $keep );
+
+        self::writeHistory( $history );
+    }
+
+    private static function readHistory()
+    {
+        $file = self::historyFile();
+        if ( !file_exists( $file ) )
+            return array();
+
+        $history = json_decode( (string)file_get_contents( $file ), true );
+
+        return is_array( $history ) ? $history : array();
+    }
+
+    private static function writeHistory( array $history )
+    {
+        $encoded = json_encode( $history );
+        if ( $encoded !== false )
+            file_put_contents( self::historyFile(), $encoded );
+    }
+
+    /**
+     * What has run, newest first.
+     *
+     * A run is recorded when it starts, because that is the only moment this
+     * process knows about it - the job outlives the request that asked for it.
+     * When it has ended, nothing tells us; so a run that is no longer alive is
+     * settled here, on the first read after it finished: the time taken comes
+     * from its log, and the errors from counting what the log says.
+     *
+     * @param int $limit
+     * @return array
+     */
+    public static function history( $limit = 20 )
+    {
+        $history = self::readHistory();
+        $changed = false;
+
+        foreach ( $history as $index => $entry )
+        {
+            if ( isset( $entry['finished'] ) && $entry['finished'] !== null )
+                continue;
+
+            $pid = isset( $entry['pid'] ) ? (int)$entry['pid'] : 0;
+            if ( $pid > 0 && self::pidIsRunningCronjob( $pid ) )
+                continue;   // still going
+
+            $log = isset( $entry['log'] ) ? $entry['log'] : '';
+            $finished = ( $log !== '' && file_exists( $log ) ) ? filemtime( $log ) : time();
+            if ( isset( $entry['started'] ) && $finished < $entry['started'] )
+                $finished = $entry['started'];
+
+            $history[$index]['finished'] = $finished;
+            $history[$index]['errors'] = self::countErrors( $log, isset( $entry['started'] ) ? $entry['started'] : 0 );
+            $changed = true;
+        }
+
+        if ( $changed )
+            self::writeHistory( $history );
+
+        foreach ( $history as $index => $entry )
+        {
+            $history[$index]['running'] = ( $entry['finished'] === null );
+            $history[$index]['seconds'] = $entry['finished'] === null
+                                        ? time() - (int)$entry['started']
+                                        : (int)$entry['finished'] - (int)$entry['started'];
+            $history[$index]['label'] = $entry['script'] !== ''
+                                      ? $entry['script'] . ' (' . $entry['part'] . ')'
+                                      : self::label( $entry['part'] );
+        }
+
+        return array_slice( $history, 0, max( 1, (int)$limit ) );
+    }
+
+    /**
+     * How many lines of a log look like something went wrong.
+     *
+     * Only the part of the log written by this run is counted, which is why
+     * the run's start time is passed in: a log is appended to, and the errors
+     * of a week ago are not the errors of this run.
+     */
+    private static function countErrors( $log, $since )
+    {
+        if ( $log === '' || !file_exists( $log ) )
+            return 0;
+
+        $text = self::tail( $log, 262144 );
+        $lines = explode( "\n", $text );
+
+        // Everything after the last run header, which carries the time.
+        $start = 0;
+        foreach ( $lines as $index => $line )
+        {
+            if ( strpos( $line, '=====' ) === 0 )
+                $start = $index;
+        }
+        $lines = array_slice( $lines, $start );
+
+        $errors = 0;
+        foreach ( $lines as $line )
+        {
+            if ( preg_match( '/\b(error|fatal|exception|failed|failure|warning)\b/i', $line ) )
+                $errors++;
+        }
+
+        return $errors;
+    }
+
+    /**
+     * Scripts sitting in the cronjob directories that no part names.
+     *
+     * They are on disk and they never run, because nothing in cronjob.ini
+     * refers to them. Worth showing beside the ones that do run, so the
+     * difference between what is installed and what is scheduled is visible
+     * rather than something to be worked out.
+     *
+     * @return array
+     */
+    public static function availableScripts()
+    {
+        $referenced = array();
+        foreach ( self::parts() as $part )
+        {
+            foreach ( $part['scripts'] as $entry )
+                $referenced[$entry['name']] = true;
+        }
+
+        $found = array();
+        foreach ( self::scriptDirectories() as $directory )
+        {
+            foreach ( (array)glob( rtrim( $directory, '/' ) . '/*.php' ) as $file )
+            {
+                $name = basename( $file );
+                if ( isset( $referenced[$name] ) || isset( $found[$name] ) )
+                    continue;
+
+                $found[$name] = array( 'name' => $name,
+                                       'path' => $file,
+                                       'directory' => dirname( $file ) );
+            }
+        }
+
+        ksort( $found );
+
+        return array_values( $found );
+    }
+
+    /**
+     * The crontab line that would run a part on a schedule.
+     *
+     * Written out in full, with the same php binary and the same root this
+     * console uses, so it can be pasted into a crontab and be right rather
+     * than nearly right.
+     *
+     * The schedule is a suggestion, and can be set per part in cronjob.ini
+     * [AdminSettings] as CrontabSchedule_<part>.
+     *
+     * @param string $part
+     * @param string $siteaccess
+     * @return string
+     */
+    /**
+     * The crontab as it actually is, for the user this site runs as.
+     *
+     * Read, not guessed. The lines this console suggests are generated from
+     * this installation's own paths, and a generated line says nothing about
+     * whether anything is scheduled - so what is really there is read as well,
+     * and the two are shown apart.
+     *
+     * @return array available, lines, note.
+     */
+    /**
+     * The account the web server, and so this page, runs as.
+     *
+     * Which matters, because crontab -l reads that account's crontab and no
+     * other - entries under a different user are invisible from here.
+     *
+     * @return string the user name, or the numeric id when it cannot be named.
+     */
+    public static function systemUser()
+    {
+        if ( function_exists( 'posix_geteuid' ) && function_exists( 'posix_getpwuid' ) )
+        {
+            $info = @posix_getpwuid( posix_geteuid() );
+            if ( is_array( $info ) && isset( $info['name'] ) && $info['name'] !== '' )
+                return $info['name'];
+        }
+
+        $env = getenv( 'USER' );
+        if ( $env !== false && $env !== '' )
+            return $env;
+
+        return function_exists( 'posix_geteuid' ) ? (string) posix_geteuid() : 'unknown';
+    }
+
+    public static function installedCrontab()
+    {
+        // exec, not shell_exec: an empty crontab and an unreadable one both give
+        // no output, and only the exit status tells them apart. crontab -l exits
+        // 0 for a crontab that exists, 1 when the user has none.
+        if ( !function_exists( 'exec' ) )
+            return array( 'available' => false, 'lines' => array(),
+                          'note' => 'exec is disabled, so the crontab cannot be read from here.' );
+
+        $raw = array();
+        $status = 1;
+        @exec( 'crontab -l 2>/dev/null', $raw, $status );
+
+        if ( $status !== 0 )
+            return array( 'available' => false, 'lines' => array(),
+                          'note' => 'The user this site runs as (' . self::systemUser() . ') has no crontab, '
+                                  . 'or crontab is not on the path. The entries below would be added to it.' );
+
+        $lines = array();
+        foreach ( $raw as $line )
+        {
+            $line = trim( $line );
+            if ( $line === '' || $line[0] === '#' )
+                continue;
+            $lines[] = $line;
+        }
+
+        return array( 'available' => true, 'lines' => $lines, 'note' => '' );
+    }
+
+    /**
+     * Which parts of this installation are actually scheduled, and by what line.
+     *
+     * A crontab holds entries for every site on the machine, so only lines that
+     * name this installation's own root count. The part is whatever bare word
+     * is left after the script and its options.
+     *
+     * @return array part name => the crontab line that runs it.
+     */
+    public static function scheduledParts()
+    {
+        $crontab = self::installedCrontab();
+        if ( !$crontab['available'] )
+            return array();
+
+        $root = self::installationRoot();
+        $scheduled = array();
+
+        foreach ( $crontab['lines'] as $line )
+        {
+            if ( strpos( $line, 'runcronjobs.php' ) === false )
+                continue;
+            if ( strpos( $line, $root ) === false )
+                continue;   // some other installation on the same machine
+
+            // Everything after the script name, minus its options, leaves the
+            // part - or nothing at all, which is the global one.
+            $after = substr( $line, strpos( $line, 'runcronjobs.php' ) + strlen( 'runcronjobs.php' ) );
+            $after = str_replace( array( ';', '&&' ), ' ', $after );
+            $after = preg_replace( '#>\s*/dev/null.*#', '', $after );
+
+            $part = self::GLOBAL_PART;
+            $tokens = preg_split( '/\s+/', trim( $after ) );
+            for ( $i = 0; $i < count( $tokens ); $i++ )
+            {
+                $token = $tokens[$i];
+                if ( $token === '' )
+                    continue;
+                if ( $token === '-s' || $token === '--siteaccess' )
+                {
+                    $i++;   // the siteaccess that follows it
+                    continue;
+                }
+                if ( $token[0] === '-' )
+                    continue;
+
+                $part = $token;
+                break;
+            }
+
+            if ( !isset( $scheduled[$part] ) )
+                $scheduled[$part] = $line;
+        }
+
+        return $scheduled;
+    }
+
+    /**
+     * Where this installation actually lives.
+     *
+     * Not eZSys::rootDir(), which is the document root of whatever host served
+     * the request: the administration interface is reached through its own
+     * vhost, whose directory is a set of symlinks into the real one, so a
+     * crontab line built from it named a path that works by accident and reads
+     * as the wrong installation. This class sits in kernel/setup, so the root
+     * is two directories above it, resolved through any symlinks.
+     *
+     * @return string
+     */
+    public static function installationRoot()
+    {
+        $root = realpath( dirname( __FILE__ ) . '/../..' );
+        if ( $root !== false && $root !== '' )
+            return rtrim( $root, '/' );
+
+        $root = rtrim( (string)eZSys::rootDir(), '/' );
+
+        return $root !== '' ? $root : rtrim( getcwd(), '/' );
+    }
+
+    /**
+     * The schedule alone, without the command.
+     */
+    public static function crontabSchedule( $part )
+    {
+        $defaults = array( 'frequent' => '*/5 * * * *',
+                           self::GLOBAL_PART => '*/15 * * * *',
+                           'infrequent' => '17 * * * *' );
+
+        return (string)self::setting( 'CrontabSchedule_' . $part,
+                                      isset( $defaults[$part] ) ? $defaults[$part] : '0 * * * *' );
+    }
+
+    public static function crontabLine( $part, $siteaccess )
+    {
+        $schedule = self::crontabSchedule( $part );
+
+        $php = self::phpBinary();
+        if ( $php === false )
+            $php = 'php';
+
+        $command = $php . ' runcronjobs.php -s ' . $siteaccess;
+        if ( $part !== self::GLOBAL_PART )
+            $command .= ' ' . $part;
+
+        return $schedule . ' cd ' . self::installationRoot() . ' && ' . $command . ' >/dev/null 2>&1';
     }
 
     /**

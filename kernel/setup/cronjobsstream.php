@@ -51,9 +51,29 @@ $send = function ( $type, $message, array $data = array() )
     flush();
 };
 
-$logFile = expCronjobRunner::logFile();
-$errorFile = expCronjobRunner::errorFile();
+// The log of whatever is actually running, not a fixed one.
+//
+// Every part and every script keeps its own log now, so following one shared
+// file showed nothing at all: the file existed, stayed empty, and the console
+// sat there with a heading and no output while the job ran perfectly well into
+// a log nobody was reading.
 $status = expCronjobRunner::status();
+$errorFile = expCronjobRunner::errorFile();
+
+function expCronjobStreamLog( $status )
+{
+    if ( isset( $status['log'] ) && $status['log'] !== '' )
+        return $status['log'];
+
+    // Nothing running: show the log of the last thing that did.
+    $history = expCronjobRunner::history( 1 );
+    if ( isset( $history[0]['log'] ) && $history[0]['log'] !== '' )
+        return $history[0]['log'];
+
+    return expCronjobRunner::logFile();
+}
+
+$logFile = expCronjobStreamLog( $status );
 
 if ( !$status['running'] )
 {
@@ -74,6 +94,18 @@ $idleSince = false;
 while ( true )
 {
     clearstatcache();
+
+    // A queued run starts a different job writing a different log. When that
+    // happens the stream follows the new one from its beginning rather than
+    // going quiet for the rest of the queue.
+    $current = expCronjobRunner::status();
+    $currentLog = expCronjobStreamLog( $current );
+    if ( $currentLog !== $logFile )
+    {
+        $logFile = $currentLog;
+        $offset = 0;
+        $send( 'phase', 'Following ' . basename( dirname( $logFile ) ) . '/' . basename( $logFile ) . '.' );
+    }
 
     $size = file_exists( $logFile ) ? filesize( $logFile ) : 0;
     if ( $size > $offset )

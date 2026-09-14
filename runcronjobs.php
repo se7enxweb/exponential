@@ -54,6 +54,9 @@ function help()
                   "  --logfiles         create log files\n" .
                   "  --no-logfiles      do not create log files (default)\n" .
                   "  --list             list all cronjobs parts and the scripts contained by each one\n" .
+                  "  --script=<file>    run one named script instead of a whole part, for instance\n" .
+                  "                     --script=notification.php. The file is looked for in the\n" .
+                  "                     directories cronjob.ini names; only its file name is used\n" .
                   "  --no-colors        do not use ANSI coloring (default)\n" );
 }
 
@@ -111,9 +114,13 @@ $useLogFiles = false;
 $showSQL = false;
 $cronPart = false;
 $listCronjobs = false;
+// One named script instead of a whole part. Everything else about the run is
+// the same: the same siteaccess handling, the same per script mutex, the same
+// output, so a single script cannot collide with the part it belongs to.
+$cronScript = false;
 
 $optionsWithData = array( 's' );
-$longOptionsWithData = array( 'siteaccess' );
+$longOptionsWithData = array( 'siteaccess', 'script' );
 
 $readOptions = true;
 $siteAccessSet = false;
@@ -129,10 +136,24 @@ for ( $i = 1, $count = count( $argv ); $i < $count; ++$i )
              $arg[1] == '-' )
         {
             $flag = substr( $arg, 2 );
+            // Both --option value and --option=value, so a caller can write
+            // whichever reads better and neither is a surprise.
+            $inlineData = false;
+            if ( strpos( $flag, '=' ) !== false )
+            {
+                list( $flag, $inlineData ) = explode( '=', $flag, 2 );
+            }
             if ( in_array( $flag, $longOptionsWithData ) )
             {
-                $optionData = $argv[$i+1];
-                ++$i;
+                if ( $inlineData !== false )
+                {
+                    $optionData = $inlineData;
+                }
+                else
+                {
+                    $optionData = isset( $argv[$i+1] ) ? $argv[$i+1] : false;
+                    ++$i;
+                }
             }
             if ( $flag == 'help' )
             {
@@ -142,6 +163,10 @@ for ( $i = 1, $count = count( $argv ); $i < $count; ++$i )
             else if ( $flag == 'siteaccess' )
             {
                 $siteAccessSet = $optionData;
+            }
+            else if ( $flag == 'script' )
+            {
+                $cronScript = $optionData;
             }
             else if ( $flag == 'debug' )
             {
@@ -346,10 +371,22 @@ if ( $listCronjobs )
     $script->shutdown( 0 );
 }
 
-$scriptGroup = 'CronjobSettings';
-if ( $cronPart !== false )
-    $scriptGroup = "CronjobPart-$cronPart";
-$scripts = $ini->variable( $scriptGroup, 'Scripts' );
+if ( $cronScript !== false && $cronScript !== '' )
+{
+    // Only the file name is taken, so a path cannot be used to reach a script
+    // outside the directories cronjob.ini names. The loop below looks for it
+    // in each of them and skips it if it is in none.
+    $scripts = array( basename( $cronScript ) );
+    if ( !$isQuiet )
+        $cli->output( "Running cronjob script '" . $scripts[0] . "'" );
+}
+else
+{
+    $scriptGroup = 'CronjobSettings';
+    if ( $cronPart !== false )
+        $scriptGroup = "CronjobPart-$cronPart";
+    $scripts = $ini->variable( $scriptGroup, 'Scripts' );
+}
 
 if ( !is_array( $scripts ) or empty( $scripts ) )
 {
