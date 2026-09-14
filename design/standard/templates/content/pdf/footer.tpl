@@ -28,9 +28,24 @@
 		     page, "odd|even|all",
 		     pageOffset, 0 ) )  *}
 
-{pdf(footer, hash( text, "Exponential PDF export"|i18n( "design/standard/content/pdf" )|wash(pdf),
-                   size, 10,
-	           align, "left" ) ) }
+{* The left hand footer line belongs to the export, which sets show_footer and
+   footer_text from its own edit page. Neither is set when a pdf is produced
+   some other way, so the wording that was hard coded here is still the
+   default. *}
+{default show_footer=1
+         footer_text=''}
+{if $show_footer|eq(1)}
+  {if $footer_text|ne('')}
+    {pdf(footer, hash( text, $footer_text|wash(pdf),
+                       size, 10,
+                       align, "left" ) ) }
+  {else}
+    {pdf(footer, hash( text, "Exponential PDF export"|i18n( "design/standard/content/pdf" )|wash(pdf),
+                       size, 10,
+                       align, "left" ) ) }
+  {/if}
+{/if}
+{/default}
 {pdf(footer, hash( text, "#page of #total"|i18n( "design/standard/content/pdf" )|wash(pdf),
                    align, "right",
 		   size, 10 ) ) }

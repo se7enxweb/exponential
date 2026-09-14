@@ -47,6 +47,19 @@ class eZPDFExport extends eZPersistentObject
                                                               'datatype' => 'text',
                                                               'default' => '',
                                                               'required' => false ),
+                                         // Whether the footer carries a line of
+                                         // text, and what it says. It used to be
+                                         // the words "Exponential PDF export",
+                                         // written into a template, on every page
+                                         // of every export anybody ever made.
+                                         'show_footer' => array( 'name' => 'ShowFooter',
+                                                                 'datatype' => 'integer',
+                                                                 'default' => 1,
+                                                                 'required' => true ),
+                                         'footer_text' => array( 'name' => 'FooterText',
+                                                                 'datatype' => 'string',
+                                                                 'default' => '',
+                                                                 'required' => false ),
                                          'source_node_id' => array( 'name' => 'SourceNodeID',
                                                                     'datatype' => 'int',
                                                                     'default' => '',

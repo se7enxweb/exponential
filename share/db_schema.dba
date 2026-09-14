@@ -4797,6 +4797,20 @@ $schema = array (
     'name' => 'ezpdf_export',
     'fields' => 
     array (
+      'footer_text' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'default' => '',
+        'not_null' => '1',
+      ),
+      'show_footer' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'default' => '1',
+        'not_null' => '1',
+      ),
       'created' => 
       array (
         'length' => 11,

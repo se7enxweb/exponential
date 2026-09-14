@@ -41,6 +41,15 @@
         <label>{'Sub text'|i18n( 'design/admin/pdf/edit' )}:</label>
         <textarea class="box" name="SubText" cols="64" rows="3">{$pdf_export.sub_text|wash}</textarea>
     </div>
+
+    {* Footer. The line that used to read "Exponential PDF export" on every page
+       of every export, because it was written into a template. *}
+    <div class="block">
+        <label>{'Footer text'|i18n( 'design/admin/pdf/edit' )}:</label>
+        <input type="checkbox" name="ShowFooter" {if $pdf_export.show_footer|eq(1)}checked="checked"{/if} />
+        <input class="box" type="text" name="FooterText" size="48" value="{$pdf_export.footer_text|wash}" />
+        <div class="context-information">{'Shown at the foot of every page, beside the page number. Leave the box empty for the default wording, or clear the tick for no text at all.'|i18n( 'design/admin/pdf/edit' )}</div>
+    </div>
     </fieldset>
 
     {* Source node. *}

@@ -84,6 +84,8 @@ if ( $Module->isCurrentAction( 'BrowseSource' ) || // Store PDF export objects
     $pdfExport->setAttribute( 'show_frontpage', $Module->hasActionParameter( 'DisplayFrontpage' ) ? 1 : 0 );
     $pdfExport->setAttribute( 'intro_text', $Module->actionParameter( 'IntroText' ) );
     $pdfExport->setAttribute( 'sub_text', $Module->actionParameter( 'SubText' ) );
+    $pdfExport->setAttribute( 'show_footer', $Module->hasActionParameter( 'ShowFooter' ) ? 1 : 0 );
+    $pdfExport->setAttribute( 'footer_text', (string)$Module->actionParameter( 'FooterText' ) );
     $pdfExport->setAttribute( 'export_structure', $Module->actionParameter( 'ExportType' ) );
     if ( $Module->actionParameter( 'ExportType' ) == 'tree' && $Module->hasActionParameter( 'ClassList' ) )
         $pdfExport->setAttribute( 'export_classes', implode( ':', $Module->actionParameter( 'ClassList' ) ) );
@@ -198,6 +200,10 @@ function generatePDF( $pdfExport, $toFile = false )
                            $pdfExport->attribute( 'export_structure' ) == 'tree' ? 1 : 0 );
         $tpl->setVariable( 'class_array', explode( ':', $pdfExport->attribute( 'export_classes' ) ) );
         $tpl->setVariable( 'show_frontpage', $pdfExport->attribute( 'show_frontpage' ) );
+        // The footer line, as this export wants it. Left empty the shipped
+        // wording is used; switched off there is no line of text at all.
+        $tpl->setVariable( 'show_footer', $pdfExport->attribute( 'show_footer' ) );
+        $tpl->setVariable( 'footer_text', (string)$pdfExport->attribute( 'footer_text' ) );
         if ( $pdfExport->attribute( 'show_frontpage' ) == 1 )
         {
             $tpl->setVariable( 'intro_text', $pdfExport->attribute( 'intro_text' ) );
