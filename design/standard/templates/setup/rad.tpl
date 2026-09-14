@@ -4,16 +4,23 @@
     {'The rapid application development (RAD) tools allow you to easily get started with creating new functionality for Exponential.'|i18n('design/standard/setup')}
 </p>
 
-<h2>{'Tools'|i18n('design/standard/setup','RAD Tools')}</h2>
-<ul>
-    <li>
-        <a href={'setup/templateoperator'|ezurl}>{'Template operator wizard'|i18n('design/standard/setup')}</a>
-    </li>
-    <li>
-        <a href={'setup/datatype'|ezurl}>{'Datatype wizard'|i18n('design/standard/setup')}</a>
-    </li>
-    <li>
-        <a href={'setup/designextension'|ezurl}>{'Design extension wizard'|i18n('design/standard/setup')}</a>
-    </li>
-</ul>
+<p>
+    {'%covered of the %total extension points this system offers have a tool on this page. The rest are listed with what they are, where the file goes and what registers it.'|i18n('design/standard/setup',,hash( '%covered', $rad_coverage.covered, '%total', $rad_coverage.total ))}
+</p>
 
+{foreach $rad_groups as $group}
+<h2>{$group.title|wash}</h2>
+<p>{$group.description|wash}</p>
+<ul>
+{foreach $group.points as $point}
+    <li>
+    {if $point.tool}
+        <a href={$point.tool|ezurl}>{$point.title|wash}</a> &ndash; {$point.what|wash}
+    {else}
+        <strong>{$point.title|wash}</strong> &ndash; {$point.what|wash}
+        <br />{'Register in'|i18n('design/standard/setup')}: <code>{$point.register|wash}</code>
+    {/if}
+    </li>
+{/foreach}
+</ul>
+{/foreach}

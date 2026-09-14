@@ -62,7 +62,18 @@
 .dew-part:hover { background: #f6f7f9; }
 .dew-part input { margin-top: .25rem; }
 .dew-part .dew-part-label { font-weight: 600; }
-.dew-part .dew-meta { display: block; }
+.dew-part .dew-meta { display: block; overflow-wrap: anywhere; }
+/* The text beside a tick box is a sentence, not a word: it has to be allowed
+   to wrap, which inside a flex row means saying so. */
+.dew-part > span { flex: 1 1 auto; min-width: 0; }
+.dew-part .dew-part-label { display: block; }
+.dew-part input { flex: 0 0 auto; }
+/* The admin stylesheet gives every label white-space: nowrap, which is right
+   for a one word label beside a box and wrong for a sentence: the text ran off
+   the side of the card and was clipped by .box-content, so it could not be read
+   at all. These are sentences, and they wrap. */
+.dew-part, .dew-part * { white-space: normal; }
+.dew-field label, .dew-field .dew-hint { white-space: normal; }
 
 .dew-toolbar { display: flex; flex-wrap: wrap; gap: .5rem; padding: .2rem 0 .9rem 0; }
 .dew-btn {
@@ -103,6 +114,15 @@
 }
 .dew-summary { display: flex; flex-wrap: wrap; gap: 1.4rem; padding-bottom: .9rem; }
 .dew-summary b { display: block; font-size: 1.3rem; line-height: 1.2; }
+
+/* Keeping everything inside the box it was given. A preview of generated code
+   is as wide as its widest line and would otherwise push the page out past its
+   right edge. */
+.dew-card, .dew-col { min-width: 0; }
+.exp-dew pre { max-width: 100%; overflow-x: auto; white-space: pre; }
+.exp-dew code { overflow-wrap: anywhere; }
+.dew-file-path { overflow-wrap: anywhere; min-width: 0; }
+.dew-tree li { overflow-wrap: anywhere; }
 </style>
 {/literal}
 

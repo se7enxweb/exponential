@@ -83,11 +83,36 @@ $ViewList["rad"] = array(
     "script" => "rad.php",
     'ui_context' => 'administration',
     "default_navigation_part" => 'ezsetupnavigationpart',
+    // Which of the extension points to list. In the address so a filtered list
+    // can be linked to and come back the same.
+    'unordered_params' => array( 'show' => 'Show' ),
     "params" => array( ) );
 
 $ViewList["designextension"] = array(
     'functions' => array( 'setup' ),
     "script" => "designextension.php",
+    'ui_context' => 'administration',
+    "default_navigation_part" => 'ezsetupnavigationpart',
+    "params" => array( ) );
+
+$ViewList["handlerextension"] = array(
+    'functions' => array( 'setup' ),
+    "script" => "handlerextension.php",
+    'ui_context' => 'administration',
+    "default_navigation_part" => 'ezsetupnavigationpart',
+    // Which kind of handler, so each is its own address and its own tool.
+    "params" => array( 'Kind' ) );
+
+$ViewList["workflowevent"] = array(
+    'functions' => array( 'setup' ),
+    "script" => "workflowevent.php",
+    'ui_context' => 'administration',
+    "default_navigation_part" => 'ezsetupnavigationpart',
+    "params" => array( ) );
+
+$ViewList["moduleextension"] = array(
+    'functions' => array( 'setup' ),
+    "script" => "moduleextension.php",
     'ui_context' => 'administration',
     "default_navigation_part" => 'ezsetupnavigationpart',
     "params" => array( ) );
