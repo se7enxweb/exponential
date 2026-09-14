@@ -236,11 +236,52 @@ class eZRSSExport extends eZPersistentObject
      \static
       Fetches complete list of RSS Exports.
     */
-    static function fetchList( $asObject = true )
+    /**
+     * Fetches the valid RSS exports, a page at a time when asked.
+     *
+     * A list view with thousands of feeds in it must not pull them all into
+     * memory to show twenty five, so an offset and a length can be given. With
+     * neither, the whole list comes back as it always did.
+     *
+     * @param bool $asObject
+     * @param int|false $offset first row to return.
+     * @param int|false $limit  how many rows to return, false for all of them.
+     * @param array|null $sorts  field => 'asc'|'desc', or null for the default order.
+     * @return array
+     */
+    static function fetchList( $asObject = true, $offset = false, $limit = false, $sorts = null )
     {
+        $limitArray = null;
+        if ( $limit !== false && $limit !== null )
+            $limitArray = array( 'offset' => (int) $offset, 'length' => (int) $limit );
+
         return eZPersistentObject::fetchObjectList( eZRSSExport::definition(),
-                                                    null, array( 'status' => self::STATUS_VALID ), null, null,
+                                                    null, array( 'status' => self::STATUS_VALID ), $sorts, $limitArray,
                                                     $asObject );
+    }
+
+    /**
+     * The columns the list can be sorted by.
+     *
+     * A column not named here is refused, so what reaches the order clause is
+     * always a real field of this table.
+     *
+     * @return array of field name.
+     */
+    static function sortableFields()
+    {
+        return array( 'id', 'title', 'access_url', 'rss_version', 'active', 'modifier_id', 'modified' );
+    }
+
+    /**
+     * How many valid RSS exports there are, without fetching any of them.
+     *
+     * @return int
+     */
+    static function fetchListCount()
+    {
+        return (int) eZPersistentObject::count( eZRSSExport::definition(),
+                                                array( 'status' => self::STATUS_VALID ) );
     }
 
     function itemList()

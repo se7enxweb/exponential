@@ -13,7 +13,16 @@ $ViewList['list'] = array(
     'script' => 'list.php',
     'functions' => array( 'edit' ),
     'default_navigation_part' => 'ezsetupnavigationpart',
-    'unordered_params' => array( 'language' => 'Language' ) );
+    // The two lists page independently, so each carries its own offset; the
+    // page size is shared and remembered between visits.
+    'unordered_params' => array( 'language'     => 'Language',
+                                 'offset'       => 'Offset',
+                                 'sort'         => 'Sort',
+                                 'dir'          => 'Dir',
+                                 'importoffset' => 'ImportOffset',
+                                 'importsort'   => 'ImportSort',
+                                 'importdir'    => 'ImportDir',
+                                 'limit'        => 'Limit' ) );
 
 $ViewList['edit_export'] = array(
     'script' => 'edit_export.php',

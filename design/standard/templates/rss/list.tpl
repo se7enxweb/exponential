@@ -11,18 +11,22 @@
 
 <table class="list" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-    <th>{"Name"|i18n("design/standard/rss/list")}</th>
-    <th>{"Version"|i18n("design/standard/rss/list")}</th>
-    <th>{"Active"|i18n("design/standard/rss/list")}</th>
-    <th>{"Modifier"|i18n("design/standard/rss/list")}</th>
-    <th>{"Modified"|i18n("design/standard/rss/list")}</th>
+    {include uri="design:rss/sortheader.tpl" key="id"          label="ID"|i18n("design/standard/rss/list")       sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri="design:rss/sortheader.tpl" key="title"       label="Name"|i18n("design/standard/rss/list")     sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri="design:rss/sortheader.tpl" key="access_url"  label="URI"|i18n("design/standard/rss/list")      sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri="design:rss/sortheader.tpl" key="rss_version" label="Version"|i18n("design/standard/rss/list")  sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri="design:rss/sortheader.tpl" key="active"      label="Active"|i18n("design/standard/rss/list")   sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri="design:rss/sortheader.tpl" key="modifier_id" label="Modifier"|i18n("design/standard/rss/list") sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri="design:rss/sortheader.tpl" key="modified"    label="Modified"|i18n("design/standard/rss/list") sort=$rssexport_sort suffix=$rssexport_sort.suffix}
     <th>{"Edit"|i18n("design/standard/rss/list")}</th>
     <th>{"Remove"|i18n("design/standard/rss/list")}</th>
 </tr>
 
 {section name=RSSExport loop=$rssexport_list sequence=array(bglight,bgdark)}
 <tr>
+    <td class="{$RSSExport:sequence}">{$RSSExport:item.id}</td>
     <td class="{$RSSExport:sequence}"><a href={concat("rss/feed/",$RSSExport:item.access_url)|ezurl}>{$RSSExport:item.title|wash}</a></td>
+    <td class="{$RSSExport:sequence}"><code>{$RSSExport:item.access_url|wash}</code></td>
     <td class="{$RSSExport:sequence}">{$RSSExport:item.rss_version|wash}</td>
     <td class="{$RSSExport:sequence}">{if $RSSExport:item.active|eq(1)}{"Yes"|i18n("design/standard/rss/list")}{else}{"No"|i18n("design/standard/rss/list")}{/if}</td>
     <td class="{$RSSExport:sequence}">{content_view_gui view=text_linked content_object=$RSSExport:item.modifier.contentobject}</td>
@@ -32,7 +36,7 @@
 </tr>
 {/section}
 <tr>
-  <td colspan="6">
+  <td colspan="8">
     {include uri="design:gui/button.tpl" name=newgroup id_name=NewExportButton value="New export"|i18n("design/standard/rss/list")}
   </td>
   <td align="right">
@@ -40,6 +44,9 @@
   </td>
 </tr>
 </table>
+
+{* The view fetches one page at a time, so without this the rest is unreachable. *}
+{include uri="design:rss/pagination.tpl" pager=$rssexport_pager page_uri="/rss/list"}
 
 </form>
 
@@ -51,17 +58,21 @@
 
 <table class="list" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-    <th>{"Name"|i18n("design/standard/rss/list")}</th>
-    <th>{"Active"|i18n("design/standard/rss/list")}</th>
-    <th>{"Modifier"|i18n("design/standard/rss/list")}</th>
-    <th>{"Modified"|i18n("design/standard/rss/list")}</th>
+    {include uri="design:rss/sortheader.tpl" key="id"          label="ID"|i18n("design/standard/rss/list")         sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name="importsort" dir_name="importdir"}
+    {include uri="design:rss/sortheader.tpl" key="name"        label="Name"|i18n("design/standard/rss/list")       sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name="importsort" dir_name="importdir"}
+    {include uri="design:rss/sortheader.tpl" key="url"         label="Source URL"|i18n("design/standard/rss/list") sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name="importsort" dir_name="importdir"}
+    {include uri="design:rss/sortheader.tpl" key="active"      label="Active"|i18n("design/standard/rss/list")     sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name="importsort" dir_name="importdir"}
+    {include uri="design:rss/sortheader.tpl" key="modifier_id" label="Modifier"|i18n("design/standard/rss/list")   sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name="importsort" dir_name="importdir"}
+    {include uri="design:rss/sortheader.tpl" key="modified"    label="Modified"|i18n("design/standard/rss/list")   sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name="importsort" dir_name="importdir"}
     <th>{"Edit"|i18n("design/standard/rss/list")}</th>
     <th>{"Remove"|i18n("design/standard/rss/list")}</th>
 </tr>
 
 {section name=RSSImport loop=$rssimport_list sequence=array(bglight,bgdark)}
 <tr>
+    <td class="{$RSSImport:sequence}">{$RSSImport:item.id}</td>
     <td class="{$RSSImport:sequence}"><a href={concat("rss/edit_import/",$RSSImport:item.id)|ezurl}>{$RSSImport:item.name|wash}</a></td>
+    <td class="{$RSSImport:sequence}"><code>{$RSSImport:item.url|wash}</code></td>
     <td class="{$RSSImport:sequence}">{if $RSSImport:item.active|eq(1)}{"Yes"|i18n("design/standard/rss/list")}{else}{"No"|i18n("design/standard/rss/list")}{/if}</td>
     <td class="{$RSSImport:sequence}">{content_view_gui view=text_linked content_object=$RSSImport:item.modifier.contentobject}</td>
     <td class="{$RSSImport:sequence}"><span class="small">{$RSSImport:item.modified|l10n(shortdatetime)}</span></td>
@@ -70,7 +81,7 @@
 </tr>
 {/section}
 <tr>
-  <td colspan="5">
+  <td colspan="7">
     {include uri="design:gui/button.tpl" name=newgroup id_name=NewImportButton value="New import"|i18n("design/standard/rss/list")}
   </td>
   <td align="right">
@@ -78,5 +89,7 @@
   </td>
 </tr>
 </table>
+
+{include uri="design:rss/pagination.tpl" pager=$rssimport_pager page_uri="/rss/list"}
 
 </form>

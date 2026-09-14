@@ -186,16 +186,57 @@ class eZRSSImport extends eZPersistentObject
      \static
       Fetches complete list of RSS Imports.
     */
-    static function fetchList( $asObject = true, $status = eZRSSImport::STATUS_VALID )
+    /**
+     * Fetches the RSS imports, a page at a time when asked.
+     *
+     * @param bool $asObject
+     * @param int|false $status the status to filter on, false for every status.
+     * @param int|false $offset first row to return.
+     * @param int|false $limit  how many rows to return, false for all of them.
+     * @param array|null $sorts  field => 'asc'|'desc', or null for the default order.
+     * @return array
+     */
+    static function fetchList( $asObject = true, $status = eZRSSImport::STATUS_VALID, $offset = false, $limit = false, $sorts = null )
     {
         $cond = null;
         if ( $status !== false )
         {
             $cond = array( 'status' => $status );
         }
+
+        $limitArray = null;
+        if ( $limit !== false && $limit !== null )
+            $limitArray = array( 'offset' => (int) $offset, 'length' => (int) $limit );
+
         return eZPersistentObject::fetchObjectList( eZRSSImport::definition(),
-                                                    null, $cond, null, null,
+                                                    null, $cond, $sorts, $limitArray,
                                                     $asObject );
+    }
+
+    /**
+     * The columns the list can be sorted by.
+     *
+     * @return array of field name.
+     */
+    static function sortableFields()
+    {
+        return array( 'id', 'name', 'url', 'active', 'modifier_id', 'modified' );
+    }
+
+    /**
+     * How many RSS imports there are, without fetching any of them.
+     *
+     * @param int|false $status the status to filter on, false for every status.
+     * @return int
+     */
+    static function fetchListCount( $status = eZRSSImport::STATUS_VALID )
+    {
+        $cond = null;
+        if ( $status !== false )
+        {
+            $cond = array( 'status' => $status );
+        }
+        return (int) eZPersistentObject::count( eZRSSImport::definition(), $cond );
     }
 
     /*!
