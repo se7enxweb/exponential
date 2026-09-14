@@ -52,10 +52,14 @@ class expPreloadRunner
      */
     const SKIP_PATTERN =
         '#^/(visual|setup|package|class|role|section|settings|workflow|' .
-        'infocollector|notification|pdf|trigger|state|collaboration|ezinfo)(/|$)' .
+        'infocollector|notification|pdf|trigger|state|collaboration|ezinfo|' .
+        'switchlanguage)(/|$)' .
         '|^/content/(edit|draft|history|translations|versionview|removeobject|' .
-        'copy|move|browse|action|upload|trash|bookmark|pendinglist)(/|$)' .
+        'copy|move|browse|action|upload|trash|bookmark|pendinglist|search)(/|$)' .
         '|^/user/(login|logout|preferences|setting)(/|$)' .
+        // The debug block at the foot of a page emits its own links. They are
+        // not pages, they 404, and on a bounded run they crowd out real ones.
+        '|^/(collapse-[0-9]+|debug-end)(/|$)' .
         '|/(stats|calendar|groupeventcalendar)(/|$)#';
 
     private $emit;
@@ -63,6 +67,7 @@ class expPreloadRunner
     private $seen = array();
     private $queue = array();
     private $siteaccessNames = null;
+    private $storeCallback = null;
 
     private $counts = array(
         'fetched' => 0, 'skipped' => 0, 'broken' => 0, 'denied' => 0, 'bytes' => 0 );
@@ -78,11 +83,27 @@ class expPreloadRunner
         $this->emit = $emit;
         $this->options = $options + array(
             'base_url'   => '',
+            'base_path'  => null,
             'siteaccess' => '',
             'max_pages'  => 250,
             'max_depth'  => 3,
             'timeout'    => 20,
         );
+    }
+
+    /**
+     * Registers a callable handed every page that was fetched successfully, as
+     * ( $url, $path, $body ).
+     *
+     * The crawl already holds the rendered html of every page a visitor can
+     * reach. The static cache generator stores exactly that, so it needs no
+     * request of its own and no second opinion about which urls exist.
+     *
+     * @param callable|null $callback
+     */
+    public function setStoreCallback( $callback )
+    {
+        $this->storeCallback = $callback;
     }
 
     private function say( $type, $message, array $data = array() )
@@ -135,11 +156,57 @@ class expPreloadRunner
     }
 
     /**
+     * The url prefix that selects this siteaccess on its host, '' when it is
+     * matched by host alone.
+     *
+     * Without this every siteaccess sharing a host was warmed at the host root,
+     * which is the default site: choosing Bold Agency warmed Fit & Healthy and
+     * reported success. MatchOrder decides which it is, and a siteaccess named
+     * in the host map is reached at the root of that host.
+     */
+    public function basePath()
+    {
+        if ( $this->options['base_path'] !== null )
+            return rtrim( (string)$this->options['base_path'], '/' );
+
+        $siteaccess = trim( (string)$this->options['siteaccess'] );
+        if ( $siteaccess === '' )
+            return '';
+
+        $ini = eZINI::instance( 'site.ini' );
+        foreach ( (array)$ini->variableArray( 'SiteAccessSettings', 'MatchOrder' ) as $matchOrder )
+        {
+            if ( $matchOrder === 'host' && $ini->hasVariable( 'SiteAccessSettings', 'HostMatchMapItems' ) )
+            {
+                foreach ( (array)$ini->variable( 'SiteAccessSettings', 'HostMatchMapItems' ) as $item )
+                {
+                    $parts = explode( ';', $item );
+                    if ( isset( $parts[1] ) && $parts[1] === $siteaccess )
+                        return '';
+                }
+            }
+            else if ( $matchOrder === 'host_uri' && $ini->hasVariable( 'SiteAccessSettings', 'HostUriMatchMapItems' ) )
+            {
+                foreach ( (array)$ini->variable( 'SiteAccessSettings', 'HostUriMatchMapItems' ) as $item )
+                {
+                    $parts = explode( ';', $item );
+                    if ( isset( $parts[2] ) && $parts[2] === $siteaccess )
+                        return $parts[1] !== '' ? '/' . trim( $parts[1], '/' ) : '';
+                }
+            }
+        }
+
+        // Matched on the first url segment, which is the siteaccess name.
+        return '/' . $siteaccess;
+    }
+
+    /**
      * The pages to start from: the site root plus any URLTranslationKeyword
      * sections, matching what the command line script warms first.
      */
     public function startUrls( $base )
     {
+        $base = $base . $this->basePath();
         $urls = array( $base . '/' );
 
         $ini = eZINI::instance( 'site.ini' );
@@ -157,6 +224,9 @@ class expPreloadRunner
                     $urls[] = $base . '/' . $keyword . '/';
             }
         }
+
+        foreach ( $urls as $key => $url )
+            $urls[$key] = $this->normalise( $url );
 
         return array_values( array_unique( $urls ) );
     }
@@ -245,6 +315,33 @@ class expPreloadRunner
         return false;
     }
 
+    /**
+     * Whether a path belongs to the site being warmed.
+     *
+     * One host can serve several siteaccesses, so same-host is not the same as
+     * same-site: without this, warming Bold Agency followed every link into
+     * Fit & Healthy and back, and the static cache generator stored the other
+     * site's pages under this one's name.
+     */
+    private function belongsToSite( $path )
+    {
+        $basePath = $this->basePath();
+
+        if ( $basePath !== '' )
+            return $path === $basePath || strpos( $path, $basePath . '/' ) === 0;
+
+        // Matched by host, so this site is everything on it that does not begin
+        // with the name of another siteaccess.
+        if ( preg_match( '#^/([^/]+)(/|$)#', $path, $m ) )
+        {
+            $names = $this->siteaccessNames();
+            if ( isset( $names[$m[1]] ) )
+                return false;
+        }
+
+        return true;
+    }
+
     /** Same-host page links worth queueing, absolute and de-fragmented. */
     private function linksFrom( $html, $pageUrl, $base )
     {
@@ -279,6 +376,8 @@ class expPreloadRunner
             $url = $this->normalise( $url );
 
             $path = (string)parse_url( $url, PHP_URL_PATH );
+            if ( $path !== '' && !$this->belongsToSite( $path ) )
+                continue;
             $ext = strtolower( (string)pathinfo( $path, PATHINFO_EXTENSION ) );
             if ( $ext !== '' && isset( $skip[$ext] ) )
                 continue;
@@ -388,6 +487,9 @@ class expPreloadRunner
             $this->formatBytes( $result['bytes'] ) ),
             array( 'url' => $url, 'status' => $result['status'], 'ms' => $result['ms'] ) );
 
+        if ( $this->storeCallback )
+            call_user_func( $this->storeCallback, $url, $path, $result['body'] );
+
         if ( $depth >= $this->options['max_depth'] )
             return;
 
@@ -410,9 +512,19 @@ class expPreloadRunner
     private function normalise( $url )
     {
         $url = preg_replace( '#/index\\.php(?=/|$)#', '', $url, 1 );
+
         $parts = parse_url( $url );
-        if ( !isset( $parts['path'] ) || $parts['path'] === '' )
-            $url = rtrim( $url, '/' ) . '/';
+        $path = isset( $parts['path'] ) ? $parts['path'] : '';
+
+        if ( $path === '' )
+            return rtrim( $url, '/' ) . '/';
+
+        // /bold and /bold/ are one page, and were being fetched and stored as
+        // two. The host root keeps its slash because there is nothing else of
+        // it to keep.
+        if ( $path !== '/' && substr( $path, -1 ) === '/' )
+            $url = substr( $url, 0, strrpos( $url, '/' ) );
+
         return $url;
     }
 
