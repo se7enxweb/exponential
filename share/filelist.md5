@@ -134,7 +134,7 @@ da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.def
 a48cd45ad68d095271fe9467060e53a5  clr
 d943eaf1b6b4e4ab0bf714d9bb1d1749  composer.ci-phpunit.json
 5a0706837f2f316caf933f8a8cb2986c  composer.ci-phpunit.lock
-565c0599f7927dbbe5dd8f0f1506aa2e  composer.json
+623558902d3a9f16a50db202e01e5e31  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 d77f7f99abd083dc48fceaf4bf996f62  composer.lock
 f6639c1204722f978072a5f5238027ae  config.php
@@ -2876,9 +2876,9 @@ a26951adc7dd8e2ed2eef78363966cfa  extension/bcwebsitestatistics/settings/overrid
 e0bb76d1ef52207f6fae4ebeb423724f  extension/bcwebsitestatistics/settings/workflow.ini.append.php
 032f30c342b39ee63729737362e40f9d  extension/bcwebsitestatistics/workflowtypes/event/ezreceipt/ezreceipttype.php
 b502aeed477a6de4d4dd69da4ba32331  extension/birthday/.github/FUNDING.yml
-c75a202c3d711f822b4efd10c93bb70f  extension/birthday/classes/parsers/ezbirthdaycsvhandler.php
-e0a1bcce8d8f6aeb069bbe3fbcb2e0cf  extension/birthday/classes/parsers/ezbirthdaycsvhandler.php.7x
-2bc0e3fc9b1518657bb9471fa323b2ef  extension/birthday/composer.json
+4e17b1d376e68b419dcff3cc121db6ed  extension/birthday/classes/parsers/ezbirthdaycsvhandler.php
+d8220746298eec4fd0d2346c5be02f1f  extension/birthday/classes/parsers/ezbirthdaycsvhandler.php.7x
+9efaa9dd966b0d53a8de687ba8d7ab15  extension/birthday/composer.json
 25241a49d7da52b87fc866f412a614aa  extension/birthday/datatypes/ezbirthday/ezbirthday.php
 c67c22aeabc476a50cb3cb4820846f54  extension/birthday/datatypes/ezbirthday/ezbirthdaytype.php
 34dd62c1850089ad56d03adb02c5e3ea  extension/birthday/design/standard/templates/class/datatype/edit/ezbirthday.tpl
@@ -2887,9 +2887,9 @@ acd3cef78eaade9d01d7d6cf5394cf70  extension/birthday/design/standard/templates/c
 7519e8e9403fb14a05cc6a38d16b99b1  extension/birthday/design/standard/templates/content/datatype/edit/ezbirthday.tpl
 5b320a3dcc4ec5e580bdb392410e4305  extension/birthday/design/standard/templates/content/datatype/result/info/ezbirthday.tpl
 9c15ed633f249137d8299e53c96e0391  extension/birthday/design/standard/templates/content/datatype/view/ezbirthday.tpl
-e00e5d83c69295b00af5ecd90ea10936  extension/birthday/extension.xml
+b5b2b2f41107542ce1ae6d4e9d3cca32  extension/birthday/extension.xml
 9f3a1249c3056b3cb525056fffad0780  extension/birthday/settings/content.ini.append
-cf697c2a1ce7eae869e6c84778746a72  extension/birthday/settings/csv.ini.append.php
+f67726c61ed8ba71e1cc4d8249561bd0  extension/birthday/settings/csv.ini.append.php
 e31434562a17501d2603dab6e62f97bd  extension/birthday/settings/design.ini.append.php
 2b4b6bb6c76432c0b6bdb9a10c13c625  extension/birthday/settings/site.ini.append.php
 16cd005b4fa32bcc7832bdcca94395d2  extension/birthday/translations/fre-FR/translation.ts
