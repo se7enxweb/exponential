@@ -12,7 +12,7 @@ knowledge was spread across `kernel/`, `lib/` and a dozen settings files.
 from it. A point with a tool and a point without are listed the same way, so
 neither can be forgotten.
 
-**47 extension points, 26 with a tool.**
+**47 extension points, 31 with a tool.**
 
 Every entry was checked against this installation's own source; the *Kernel*
 column names the file the mechanism actually lives in.
@@ -95,30 +95,30 @@ What turns stored rich text into what a visitor sees.
 | Mechanism | handler |
 | Kernel | `kernel/classes/datatypes/ezxmltext/ezxmltext.php` |
 
-### Information collector action  
+### Information collection behaviour  
 *No tool yet.*
 
-What happens to what a visitor typed into a form on a page - beyond storing it.
+What happens when a visitor fills in a form built out of content: what the submission is called, whether it is kept, whether it is emailed, and what the visitor is shown afterwards. Matched per content class, so a poll and a contact form built the same way behave differently.
 
 | | |
 |---|---|
-| Code | `extension/<name>/classes/<name>collectedinfo.php` |
-| Registered by | collect.ini, and the class attributes marked as collecting information |
-| Contract | `A handler called after eZInformationCollection is stored` |
-| Mechanism | handler |
+| Code | `settings/override/collect.ini.append.php, and templates under content/collectedinfo/` |
+| Registered by | collect.ini [InfoSettings] TypeList[<class>], [EmailSettings] SendEmailList[<class>], [CollectionSettings] CollectAnonymousDataList[<class>], [DisplaySettings] DisplayList[<class>] |
+| Contract | `No class to write: a setting per content class, and a template per type` |
+| Mechanism | ini |
 | Kernel | `kernel/classes/ezinformationcollection.php` |
 
-### View cache cleanup handler  
+### View cache clearing rules  
 *No tool yet.*
 
-Which other pages have to be forgotten when one object changes.
+Which other pages have to be rebuilt when one object is published. The default clears the object, its parents and what relates to it; a group named after a content class identifier says what else - a listing that has to change when a comment is posted, an object somewhere else entirely.
 
 | | |
 |---|---|
-| Code | `extension/<name>/classes/<name>cachemanager.php` |
-| Registered by | viewcache.ini, and site.ini [ContentSettings] CacheManagerHandler |
-| Contract | `Implements the cache manager handler interface` |
-| Mechanism | handler |
+| Code | `settings/override/viewcache.ini.append.php` |
+| Registered by | viewcache.ini [ViewCacheSettings] SmartCacheClear=enabled, then a [<class_identifier>] group with ClearCacheMethod[], DependentClassIdentifier[] and AdditionalObjectIDs[] |
+| Contract | `No class to write: a group per content class identifier` |
+| Mechanism | ini |
 | Kernel | `kernel/classes/ezcontentcachemanager.php` |
 
 ## Templates and design
@@ -152,17 +152,17 @@ Something a template can ask a module for: fetch( 'module', 'thing', hash( ... )
 | Kernel | `lib/ezutils/classes/ezfunctionhandler.php` |
 
 ### Attribute operator  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/attributeoperator`
 
 An operator that applies to a content attribute of a particular datatype.
 
 | | |
 |---|---|
 | Code | `extension/<name>/classes/<name>attributeoperator.php` |
-| Registered by | template.ini, through the attribute operator manager |
-| Contract | `Implements ezpAttributeOperatorInterface` |
+| Registered by | template.ini [AttributeOperator] OutputFormatter[<format>] |
+| Contract | `Implements ezpAttributeOperatorFormatterInterface` |
 | Mechanism | handler |
-| Kernel | `kernel/private/eztemplate/ezpattributeoperatormanager.php` |
+| Kernel | `kernel/private/eztemplate/ezpattributeoperatorformatterinterface.php` |
 
 ### Fetch alias  
 *No tool yet.*
@@ -273,20 +273,20 @@ A set of addresses answering outside the template system, for something else to 
 | Kernel | `kernel/private/rest/classes/rest_provider.php` |
 
 ### REST route filter  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/restroutefilter`
 
 Something that inspects or changes a REST request before it is routed.
 
 | | |
 |---|---|
 | Code | `extension/<name>/classes/rest/<name>routefilter.php` |
-| Registered by | rest.ini |
-| Contract | `Implements ezpRestRouteFilterInterface` |
+| Registered by | rest.ini [RouteSettings] RouteSettingImpl |
+| Contract | `Extends ezpRestRouteFilterInterface` |
 | Mechanism | handler |
 | Kernel | `kernel/private/rest/classes/interfaces/route_filter.php` |
 
 ### Server-side ajax function  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/ajaxfunction`
 
 Something the browser can call and get json back from, without a page.
 
@@ -532,7 +532,7 @@ A kind of thing that can be put in a package and taken out again.
 | Kernel | `kernel/classes/ezpackagehandler.php` |
 
 ### Package creation handler  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/packagecreation`
 
 The steps the admin interface walks through when a package is made.
 
@@ -545,7 +545,7 @@ The steps the admin interface walks through when a package is made.
 | Kernel | `kernel/classes/ezpackagecreationhandler.php` |
 
 ### Package installation handler  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/packageinstall`
 
 What happens when a package is installed or taken back out.
 

@@ -144,23 +144,23 @@ class expRADCatalogue
 
         'infocollector' => array(
             'group' => 'content',
-            'title' => 'Information collector action',
-            'what'  => 'What happens to what a visitor typed into a form on a page - beyond storing it.',
-            'where' => 'extension/<name>/classes/<name>collectedinfo.php',
-            'register' => 'collect.ini, and the class attributes marked as collecting information',
-            'contract' => 'A handler called after eZInformationCollection is stored',
-            'mechanism' => 'handler',
+            'title' => 'Information collection behaviour',
+            'what'  => 'What happens when a visitor fills in a form built out of content: what the submission is called, whether it is kept, whether it is emailed, and what the visitor is shown afterwards. Matched per content class, so a poll and a contact form built the same way behave differently.',
+            'where' => 'settings/override/collect.ini.append.php, and templates under content/collectedinfo/',
+            'register' => 'collect.ini [InfoSettings] TypeList[<class>], [EmailSettings] SendEmailList[<class>], [CollectionSettings] CollectAnonymousDataList[<class>], [DisplaySettings] DisplayList[<class>]',
+            'contract' => 'No class to write: a setting per content class, and a template per type',
+            'mechanism' => 'ini',
             'source' => 'kernel/classes/ezinformationcollection.php',
             'tool'  => false ),
 
         'viewcachecleanup' => array(
             'group' => 'content',
-            'title' => 'View cache cleanup handler',
-            'what'  => 'Which other pages have to be forgotten when one object changes.',
-            'where' => 'extension/<name>/classes/<name>cachemanager.php',
-            'register' => 'viewcache.ini, and site.ini [ContentSettings] CacheManagerHandler',
-            'contract' => 'Implements the cache manager handler interface',
-            'mechanism' => 'handler',
+            'title' => 'View cache clearing rules',
+            'what'  => 'Which other pages have to be rebuilt when one object is published. The default clears the object, its parents and what relates to it; a group named after a content class identifier says what else - a listing that has to change when a comment is posted, an object somewhere else entirely.',
+            'where' => 'settings/override/viewcache.ini.append.php',
+            'register' => 'viewcache.ini [ViewCacheSettings] SmartCacheClear=enabled, then a [<class_identifier>] group with ClearCacheMethod[], DependentClassIdentifier[] and AdditionalObjectIDs[]',
+            'contract' => 'No class to write: a group per content class identifier',
+            'mechanism' => 'ini',
             'source' => 'kernel/classes/ezcontentcachemanager.php',
             'tool'  => false ),
 
@@ -193,11 +193,11 @@ class expRADCatalogue
             'title' => 'Attribute operator',
             'what'  => 'An operator that applies to a content attribute of a particular datatype.',
             'where' => 'extension/<name>/classes/<name>attributeoperator.php',
-            'register' => 'template.ini, through the attribute operator manager',
-            'contract' => 'Implements ezpAttributeOperatorInterface',
+            'register' => 'template.ini [AttributeOperator] OutputFormatter[<format>]',
+            'contract' => 'Implements ezpAttributeOperatorFormatterInterface',
             'mechanism' => 'handler',
-            'source' => 'kernel/private/eztemplate/ezpattributeoperatormanager.php',
-            'tool'  => false ),
+            'source' => 'kernel/private/eztemplate/ezpattributeoperatorformatterinterface.php',
+            'tool'  => 'setup/handlerextension/attributeoperator' ),
 
         'fetchalias' => array(
             'group' => 'templates',
@@ -294,11 +294,11 @@ class expRADCatalogue
             'title' => 'REST route filter',
             'what'  => 'Something that inspects or changes a REST request before it is routed.',
             'where' => 'extension/<name>/classes/rest/<name>routefilter.php',
-            'register' => 'rest.ini',
-            'contract' => 'Implements ezpRestRouteFilterInterface',
+            'register' => 'rest.ini [RouteSettings] RouteSettingImpl',
+            'contract' => 'Extends ezpRestRouteFilterInterface',
             'mechanism' => 'handler',
             'source' => 'kernel/private/rest/classes/interfaces/route_filter.php',
-            'tool'  => false ),
+            'tool'  => 'setup/handlerextension/restroutefilter' ),
 
         'ajaxfunction' => array(
             'group' => 'modules',
@@ -309,7 +309,7 @@ class expRADCatalogue
             'contract' => 'Static methods taking an argument list',
             'mechanism' => 'handler',
             'source' => 'extension/ezjscore',
-            'tool'  => false ),
+            'tool'  => 'setup/handlerextension/ajaxfunction' ),
 
         // ── Workflow, events and jobs ───────────────────────────────────────
 
@@ -513,7 +513,7 @@ class expRADCatalogue
             'contract' => 'extends eZPackageCreationHandler',
             'mechanism' => 'handler',
             'source' => 'kernel/classes/ezpackagecreationhandler.php',
-            'tool'  => false ),
+            'tool'  => 'setup/handlerextension/packagecreation' ),
 
         'packageinstall' => array(
             'group' => 'packaging',
@@ -524,7 +524,7 @@ class expRADCatalogue
             'contract' => 'extends eZPackageInstallationHandler',
             'mechanism' => 'handler',
             'source' => 'kernel/classes/ezpackageinstallationhandler.php',
-            'tool'  => false ),
+            'tool'  => 'setup/handlerextension/packageinstall' ),
 
         'vathandler' => array(
             'group' => 'packaging',

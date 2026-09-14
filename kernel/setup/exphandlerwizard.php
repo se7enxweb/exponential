@@ -701,6 +701,175 @@ class expHandlerWizard extends expExtensionWizard
                 array( 'name' => 'baseCurrency', 'signature' => 'baseCurrency()',
                        'returns' => "''",
                        'what' => 'Which currency the rates are against. The shop converts through this, so it has to be one it knows.' ) ) ),
+
+        'attributeoperator' => array(
+            'title'    => 'Attribute operator format',
+            'what'     => 'A new format the |attribute template operator can print in.',
+            'why'      => 'attribute( show ) is how a template author finds out what is in a variable, and it prints html because that is where it usually goes. A formatter of your own prints the same walk as json for a browser console, as plain text for a log, or as anything else that reads better than a table in a page.',
+            'base'     => 'ezpAttributeOperatorFormatterInterface',
+            'source'   => 'kernel/private/eztemplate/ezpattributeoperatorformatterinterface.php',
+            'ini'      => 'template.ini',
+            'section'  => 'AttributeOperator',
+            'variable' => 'OutputFormatter',
+            'aliased'  => true,
+            'interface' => true,
+            'suffix'   => 'attributeformatter',
+            'note'     => 'The alias is the third argument to the operator: {$node|attribute( show, 2, myformat )}. It has to be a word a template author will remember, because nothing lists them.',
+            'methods'  => array(
+                array( 'name' => 'header', 'signature' => 'header( $value, $showValues )',
+                       'returns' => "''",
+                       'what' => 'What comes before the walk: a table head, an opening bracket, a line saying what is being shown. Called once, before any line.' ),
+                array( 'name' => 'line', 'signature' => 'line( $key, $item, $showValues, $level )',
+                       'returns' => "''",
+                       'what' => 'One key and its value, at a depth. Called once per attribute, depth first. $showValues says whether the value is wanted or only the name, and $level is how deep, which is what indenting reads.' ),
+                array( 'name' => 'exportScalar', 'signature' => 'exportScalar( $value )',
+                       'returns' => "''",
+                       'what' => 'One plain value on its way into the output. This is where escaping belongs: what is being printed is content, and it is being printed into a page.' ) ) ),
+
+        'restroutefilter' => array(
+            'title'    => 'REST route filter',
+            'what'     => 'What decides whether a REST route needs the caller to have proved who they are.',
+            'why'      => 'The filter that ships reads a list of exceptions out of rest.ini. A filter of your own can decide per request - by route, by method, by what is being asked for - which is the difference between one public endpoint and a second copy of the api with the authentication taken out.',
+            'base'     => 'ezpRestRouteFilterInterface',
+            'source'   => 'kernel/private/rest/classes/interfaces/route_filter.php',
+            'ini'      => 'rest.ini',
+            'section'  => 'RouteSettings',
+            'variable' => 'RouteSettingImpl',
+            'aliased'  => false,
+            'suffix'   => 'routefilter',
+            'note'     => 'This one decides who may reach what. A filter that answers false too easily opens the whole api; the safe default is to let nothing through that is not listed.',
+            'methods'  => array(
+                array( 'name' => 'shallDoActionWithRoute', 'signature' => 'shallDoActionWithRoute( $routeInfo )',
+                       'returns' => 'true',
+                       'what' => 'Whether this route still has to be authenticated. True means it does, which is the safe answer; false lets the request past without a caller. Returning true when unsure is how a mistake here costs nothing.' ) ) ),
+
+        'ajaxfunction' => array(
+            'title'    => 'Server side ajax function',
+            'what'     => 'A class of functions a page can call over http and get json back from.',
+            'why'      => 'A module view is a page: it has a template, a layout and a policy. An ajax function is a method that takes an argument list and returns a value, reached at one address, with the answer encoded for you. It is the right shape for the small things a page asks for while it is open.',
+            'base'     => 'ezjscServerFunctions',
+            'source'   => 'extension/ezjscore/classes/ezjscserverfunctions.php',
+            'ini'      => 'ezjscore.ini',
+            'section'  => 'ezjscServer',
+            'variable' => 'FunctionList',
+            'aliased'  => false,
+            'appended' => true,
+            'suffix'   => 'serverfunctions',
+            'note'     => 'The arguments arrive from the browser as strings in an array. Nothing has checked them. Everything this class does with them is as exposed as a module view, and has none of a module view\'s policy checking unless it is asked for below.',
+            'extra'    => array(
+                array( 'section'  => 'ezjscServer_%alias%',
+                       'variable' => 'Class',
+                       'value'    => '%class%',
+                       'what'     => 'The class the alias above stands for.' ),
+                array( 'section'  => 'ezjscServer_%alias%',
+                       'variable' => 'Functions[]',
+                       'value'    => 'call',
+                       'what'     => 'The functions that may be reached. Anything not listed here cannot be called from a browser, which is the point of listing them.' ),
+                array( 'section'  => 'ezjscServer_%alias%',
+                       'variable' => 'PermissionPrFunction',
+                       'value'    => 'enabled',
+                       'what'     => 'Check a policy for each function separately rather than one for the class. With this on, add <alias>_<function> to a role before anybody can call it.' ) ),
+            'methods'  => array(
+                array( 'name' => 'call', 'signature' => 'call( $args )',
+                       'static' => true,
+                       'new' => true,
+                       'returns' => 'array()',
+                       'what' => 'The function itself. $args is what the browser sent, as an array of strings, in the order it sent them - untrusted, unchecked, and every one of them to be looked at before it is used. Whatever is returned is encoded and sent back.' ),
+                array( 'name' => 'getCacheTime', 'signature' => 'getCacheTime( $functionName )',
+                       'static' => true,
+                       'returns' => '0',
+                       'what' => 'How long an answer may be kept. Return -1 for an answer that must never be cached, which is anything that depends on who is asking.' ) ) ),
+
+        'packagecreation' => array(
+            'title'    => 'Package creation handler',
+            'what'     => 'A wizard in the admin that gathers something up into a package.',
+            'why'      => 'The export screens for classes, objects, styles and extensions are each one of these. A handler of your own adds a screen of the same kind for whatever an extension owns, with the steps, the forms and the validation it needs, rather than a document telling somebody what to copy.',
+            'base'     => 'eZPackageCreationHandler',
+            'source'   => 'kernel/classes/ezpackagecreationhandler.php',
+            'ini'      => 'package.ini',
+            'section'  => 'CreationSettings',
+            'variable' => 'HandlerAlias',
+            'aliased'  => true,
+            'suffix'   => 'packagecreator',
+            'note'     => 'A creation handler pairs with a package handler: this gathers the item up, and that one installs it somewhere else. Neither is much use alone.',
+            'constructor' => array(
+                'what' => 'The steps the wizard walks, in order. The four below the first are the ones every package needs; the first is yours. Each step names a template and up to three methods.',
+                'parameters' => '$id',
+                'body' => array(
+                    '$steps = array();',
+                    '',
+                    "// One step of your own. The template is looked for in",
+                    "// design/<design>/templates/packagecreators/ .",
+                    "\$steps[] = array( 'id'      => 'mystep',",
+                    "                  'name'    => ezpI18n::tr( 'extension/%extension%', 'What to include' ),",
+                    "                  'methods' => array( 'initialize' => 'initializeMyStep',",
+                    "                                      'validate'   => 'validateMyStep',",
+                    "                                      'commit'     => 'commitMyStep' ),",
+                    "                  'template' => 'mystep.tpl' );",
+                    '',
+                    '// The steps every package has. Leave these last.',
+                    '$steps[] = $this->packageInformationStep();',
+                    '$steps[] = $this->packageMaintainerStep();',
+                    '$steps[] = $this->packageChangelogStep();',
+                    '',
+                    "parent::__construct( \$id, ezpI18n::tr( 'extension/%extension%', 'My export' ), \$steps );" ) ),
+            'methods'  => array(
+                array( 'name' => 'initializeStep', 'signature' => 'initializeStep( $package, $http, $step, &$persistentData, $tpl )',
+                       'returns' => 'true',
+                       'what' => 'Puts what a step needs in front of the person: lists to pick from, defaults, anything fetched. Runs before the form is drawn.' ),
+                array( 'name' => 'validateStep', 'signature' => 'validateStep( $package, $http, $currentStepID, &$stepMap, &$persistentData, &$errorList )',
+                       'returns' => 'eZPackageCreationHandler::STEP_VALIDATION_STATE_VALID',
+                       'what' => 'Checks what was sent. Add a message to $errorList and return INVALID to keep the person on this step; nothing is stored until every step has passed.' ),
+                array( 'name' => 'commitStep', 'signature' => 'commitStep( $package, $http, $step, &$persistentData, $tpl )',
+                       'returns' => 'true',
+                       'what' => 'Writes this step\'s answer into the package being built. By the time this runs the answer has been checked.' ),
+                array( 'name' => 'finalize', 'signature' => 'finalize( &$package, $http, &$persistentData )',
+                       'returns' => 'true',
+                       'what' => 'The last thing, once every step is done: the place to put the files into the package and write the install nodes that the package handler will read back.' ) ) ),
+
+        'packageinstall' => array(
+            'title'    => 'Package installation handler',
+            'what'     => 'A wizard in the admin that puts a package item in, with the questions that go with it.',
+            'why'      => 'Installing is rarely one button: something already exists, a name clashes, a choice has to be made. This is where those questions are asked, once, instead of the install half failing and leaving somebody to work out what happened.',
+            'base'     => 'eZPackageInstallationHandler',
+            'source'   => 'kernel/classes/ezpackageinstallationhandler.php',
+            'ini'      => 'package.ini',
+            'section'  => 'InstallerSettings',
+            'variable' => 'HandlerAlias',
+            'aliased'  => true,
+            'suffix'   => 'packageinstaller',
+            'note'     => 'The alias here and the alias of the package handler that carries the item are the same word. If they disagree the item is carried and never offered.',
+            'constructor' => array(
+                'what' => 'The kernel builds this with the package and the item it is about to install. The steps are the questions asked before it goes in.',
+                'parameters' => '$package, $type, $installItem, $name = null, $steps = null',
+                'body' => array(
+                    '$steps = array();',
+                    '',
+                    "\$steps[] = array( 'id'      => 'mystep',",
+                    "                  'name'    => ezpI18n::tr( 'extension/%extension%', 'How to install this' ),",
+                    "                  'methods' => array( 'initialize' => 'initializeMyStep',",
+                    "                                      'validate'   => 'validateMyStep',",
+                    "                                      'commit'     => 'commitMyStep' ),",
+                    "                  'template' => 'mystep.tpl' );",
+                    '',
+                    "parent::__construct( \$package, \$type, \$installItem,",
+                    "                     ezpI18n::tr( 'extension/%extension%', 'My install' ), \$steps );" ) ),
+            'methods'  => array(
+                array( 'name' => 'initializeStep', 'signature' => 'initializeStep( $package, $http, $step, &$persistentData, $tpl, $module )',
+                       'returns' => 'true',
+                       'what' => 'Works out what the person has to be asked - what already exists, what would be replaced - and puts it in front of them.' ),
+                array( 'name' => 'validateStep', 'signature' => 'validateStep( $package, $http, $currentStepID, &$stepMap, &$persistentData, &$errorList )',
+                       'returns' => 'eZPackageInstallationHandler::STEP_VALIDATION_STATE_VALID',
+                       'what' => 'Checks the answer before anything is changed. Nothing has been installed yet at this point, and that is the whole value of the step.' ),
+                array( 'name' => 'commitStep', 'signature' => 'commitStep( $package, $http, $step, &$persistentData, $tpl )',
+                       'returns' => 'true',
+                       'what' => 'Remembers the answer for the install itself to read.' ),
+                array( 'name' => 'finalize', 'signature' => 'finalize( $package, $http, &$persistentData )',
+                       'returns' => 'true',
+                       'what' => 'Does the install, with every question already answered.' ),
+                array( 'name' => 'reset', 'signature' => 'reset()',
+                       'returns' => 'true',
+                       'what' => 'Forgets a half finished run, so that starting again starts clean rather than carrying the last attempt.' ) ) ),
         );
     }
 
@@ -1040,8 +1209,16 @@ class expHandlerWizard extends expExtensionWizard
             $body  = "    /**\n";
             $body .= "     * " . wordwrap( $recipe['constructor']['what'], 70, "\n     * " ) . "\n";
             $body .= "     */\n";
-            $body .= "    public function __construct()\n    {\n";
-            $body .= "        parent::__construct( " . $recipe['constructor']['arguments'] . " );\n";
+            $body .= "    public function __construct( "
+                   . ( isset( $recipe['constructor']['parameters'] ) ? $recipe['constructor']['parameters'] : '' )
+                   . " )\n    {\n";
+
+            if ( isset( $recipe['constructor']['body'] ) )
+                foreach ( $recipe['constructor']['body'] as $line )
+                    $body .= $line === '' ? "\n" : "        " . $line . "\n";
+            else
+                $body .= "        parent::__construct( " . $recipe['constructor']['arguments'] . " );\n";
+
             $body .= "    }";
             $methods[] = $body;
         }
@@ -1159,8 +1336,10 @@ class expHandlerWizard extends expExtensionWizard
             // An appended array: the kernel walks it and looks for a file whose
             // path it works out from the name. The class is never named here.
             $ini .= "# One more entry in the list the kernel walks. It is the name, not the\n";
-            $ini .= "# class: the file is looked for at a path worked out from it, which is\n";
-            $ini .= "# " . self::classPath( $settings, $recipe ) . " inside this extension.\n";
+            $ini .= empty( $recipe['path'] )
+                    ? "# class: what the name stands for is said below.\n"
+                    : "# class: the file is looked for at a path worked out from it, which is\n"
+                      . "# " . self::classPath( $settings, $recipe ) . " inside this extension.\n";
             $ini .= $recipe['variable'] . "[]=" . $settings['alias'] . "\n";
         }
         elseif ( $recipe['aliased'] )
@@ -1178,13 +1357,32 @@ class expHandlerWizard extends expExtensionWizard
         // Anything else the setting needs before the entry above is looked at:
         // usually the directory the file is looked for in.
         if ( !empty( $recipe['extra'] ) )
+        {
+            $section = $recipe['section'];
+
             foreach ( $recipe['extra'] as $line )
             {
+                // A setting in another section opens that section. They are
+                // written in the order the recipe gives, so a recipe that
+                // jumps back and forth writes a file that says so.
+                $wanted = isset( $line['section'] )
+                          ? str_replace( array( '%extension%', '%alias%', '%class%' ),
+                                         array( $settings['name'], $settings['alias'], $settings['class'] ),
+                                         $line['section'] )
+                          : $recipe['section'];
+
+                if ( $wanted !== $section )
+                {
+                    $ini .= "\n[" . $wanted . "]\n";
+                    $section = $wanted;
+                }
+
                 $ini .= "\n# " . wordwrap( $line['what'], 72, "\n# " ) . "\n";
                 $ini .= $line['variable'] . "=" . str_replace( array( '%extension%', '%alias%', '%class%' ),
                                                                array( $settings['name'], $settings['alias'], $settings['class'] ),
                                                                $line['value'] ) . "\n";
             }
+        }
 
         if ( $recipe['note'] !== '' )
             $ini .= "\n# " . wordwrap( $recipe['note'], 72, "\n# " ) . "\n";
@@ -1727,6 +1925,145 @@ class expHandlerWizard extends expExtensionWizard
                            'code'  => "foreach ( eZCurrencyData::fetchList() as \$currency )\n"
                                     . "    echo \$currency->attribute( 'code' ), ' ',\n"
                                     . "         \$currency->attribute( 'rate_value' ), PHP_EOL;" ) );
+
+            case 'attributeoperator':
+                return array(
+                    array( 'title' => 'What a template author writes',
+                           'what'  => 'The third argument to the operator is the alias this formatter is registered under.',
+                           'code'  => "// {\$node|attribute( show, 2, " . $settings['alias'] . " )}\n"
+                                    . "//\n"
+                                    . "// show   - print the values as well as the names\n"
+                                    . "// 2      - how many levels down to go\n"
+                                    . "// " . str_pad( $settings['alias'], 6 ) . " - this formatter" ),
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'The manager builds the formatter named for the format, then walks the variable and calls header() once and line() for everything in it.',
+                           'code'  => "\$output  = \$formatter->header( \$value, \$showValues );\n"
+                                    . "\$output .= \$formatter->line( 'name', 'My article', true, 0 );\n"
+                                    . "\$output .= \$formatter->line( 'id', 42, true, 1 );" ),
+                    array( 'title' => 'Trying it alone',
+                           'what'  => 'The three methods take plain values, so the whole formatter can be exercised without a template anywhere near it.',
+                           'code'  => "\$formatter = new " . $class . "();\n\n"
+                                    . "echo \$formatter->header( array( 'a' => 1 ), true );\n"
+                                    . "echo \$formatter->line( 'a', 1, true, 0 );" ),
+                    array( 'title' => 'The part that matters', 'in' => 'class',
+                           'what'  => 'What is being printed is content, and it is being printed into a page. exportScalar() is where that is made safe, once, rather than in each of the other two.',
+                           'code'  => "public function exportScalar( \$value )\n"
+                                    . "{\n"
+                                    . "    return htmlspecialchars( (string) \$value, ENT_QUOTES, 'UTF-8' );\n"
+                                    . "}" ) );
+
+            case 'restroutefilter':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'Before a REST request is answered, the filter is asked whether that route still needs a caller who has proved who they are.',
+                           'code'  => "// kernel/private/rest/classes/auth/auth_configuration.php\n"
+                                    . "\$filter = ezpRestRouteFilterInterface::getRouteFilter();\n\n"
+                                    . "if ( \$filter->shallDoActionWithRoute( \$routeInfo ) )\n"
+                                    . "{\n"
+                                    . "    // The request is authenticated before it is answered.\n"
+                                    . "}" ),
+                    array( 'title' => 'What is in $routeInfo',
+                           'what'  => 'The controller and the action that matched, and the version asked for. That is what a decision can be made on.',
+                           'code'  => "// \$routeInfo->controllerClass   e.g. ezpRestContentController\n"
+                                    . "// \$routeInfo->action            e.g. viewContent\n"
+                                    . "// \$routeInfo->version           e.g. 1" ),
+                    array( 'title' => 'The safe shape', 'in' => 'class',
+                           'what'  => 'A list of what may be reached without a caller, and true for everything else. Written the other way round - a list of what must be authenticated - a route added later is public by accident.',
+                           'code'  => "public function shallDoActionWithRoute( \$routeInfo )\n"
+                                    . "{\n"
+                                    . "    \$open = array( 'MyPublicController_ping' );\n\n"
+                                    . "    \$route = \$routeInfo->controllerClass . '_' . \$routeInfo->action;\n\n"
+                                    . "    return !in_array( \$route, \$open, true );\n"
+                                    . "}" ) );
+
+            case 'ajaxfunction':
+                return array(
+                    array( 'title' => 'Calling it from a page',
+                           'what'  => 'One address, the alias, the function, then the arguments. The answer comes back as json.',
+                           'code'  => "// GET /ezjscore/call/" . $settings['alias'] . "::call::42\n"
+                                    . "//\n"
+                                    . "// {\\\"content\\\":...,\\\"error_text\\\":\\\"\\\",\\\"error_code\\\":0}\n\n"
+                                    . "// With the javascript ezjscore ships:\n"
+                                    . "// ez.setLoading( true );\n"
+                                    . "// \$.ez( '" . $settings['alias'] . "::call', [ 42 ], function( data ) {\n"
+                                    . "//     console.log( data.content );\n"
+                                    . "// } );" ),
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'The router reads the alias out of ezjscore.ini, checks the function is one that may be called, checks the policy if one is asked for, and then calls it.',
+                           'code'  => "\$router = ezjscServerRouter::getInstance( array( " . self::phpString( $settings['alias'] ) . ", 'call', '42' ) );\n"
+                                    . "\$result = \$router->call();" ),
+                    array( 'title' => 'What arrives, and what it is worth', 'in' => 'class',
+                           'what'  => 'An array of strings, straight off the query string, from anyone who can reach the site. Nothing has looked at them. Every one has to be checked here, because there is nowhere else it will be.',
+                           'code'  => "public static function call( \$args )\n"
+                                    . "{\n"
+                                    . "    \$id = isset( \$args[0] ) ? (int) \$args[0] : 0;\n\n"
+                                    . "    \$node = eZContentObjectTreeNode::fetch( \$id );\n"
+                                    . "    if ( !\$node instanceof eZContentObjectTreeNode )\n"
+                                    . "        throw new ezcBaseFunctionalityNotSupportedException( 'node', 'not found' );\n\n"
+                                    . "    // Being able to call the function is not the same as being\n"
+                                    . "    // allowed to see what it answers with.\n"
+                                    . "    if ( !\$node->attribute( 'can_read' ) )\n"
+                                    . "        throw new ezcBaseFunctionalityNotSupportedException( 'node', 'denied' );\n\n"
+                                    . "    return array( 'name' => \$node->attribute( 'name' ) );\n"
+                                    . "}" ),
+                    array( 'title' => 'Who may call it',
+                           'what'  => 'With PermissionPrFunction on, each function needs its own policy on a role before anybody reaches it. Without it, listing a function in Functions[] is the only thing standing in the way.',
+                           'code'  => "// A policy on the role: ezjscore / call / FunctionList "
+                                    . $settings['alias'] . "_call" ) );
+
+            case 'packagecreation':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'The export screen in the admin builds the handler by alias and walks its steps.',
+                           'code'  => "\$handler = eZPackageCreationHandler::instance( " . self::phpString( $settings['alias'] ) . " );\n\n"
+                                    . "\$package = eZPackage::create( 'mypackage', array( 'name' => 'My package' ) );\n"
+                                    . "\$handler->generateStepMap( \$package, \$persistentData );" ),
+                    array( 'title' => 'What a step looks like',
+                           'what'  => 'An id, a name a person reads, up to three methods, and a template. The methods are named in the map; nothing looks for them by convention.',
+                           'code'  => "\$step = array( 'id'       => 'mystep',\n"
+                                    . "               'name'     => 'What to include',\n"
+                                    . "               'methods'  => array( 'initialize' => 'initializeMyStep',\n"
+                                    . "                                    'validate'   => 'validateMyStep',\n"
+                                    . "                                    'commit'     => 'commitMyStep' ),\n"
+                                    . "               'template' => 'mystep.tpl' );" ),
+                    array( 'title' => 'Stopping on a bad answer', 'in' => 'class',
+                           'what'  => 'The person stays on the step until it passes. Nothing is written until every step has, so a wizard that checks properly cannot half build a package.',
+                           'code'  => "public function validateMyStep( \$package, \$http, \$currentStepID, &\$stepMap, &\$persistentData, &\$errorList )\n"
+                                    . "{\n"
+                                    . "    if ( !\$http->hasPostVariable( 'MyThing' ) )\n"
+                                    . "    {\n"
+                                    . "        \$errorList[] = array( 'description' => 'Choose something first.' );\n\n"
+                                    . "        return eZPackageCreationHandler::STEP_VALIDATION_STATE_INVALID;\n"
+                                    . "    }\n\n"
+                                    . "    \$persistentData['my_thing'] = \$http->postVariable( 'MyThing' );\n\n"
+                                    . "    return eZPackageCreationHandler::STEP_VALIDATION_STATE_VALID;\n"
+                                    . "}" ),
+                    array( 'title' => 'The template',
+                           'what'  => 'Looked for under packagecreators/ in the design. It draws the form; the methods above read it back.',
+                           'code'  => "// design/<design>/templates/packagecreators/mystep.tpl" ) );
+
+            case 'packageinstall':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'When a package is installed, each item is offered to the installation handler registered for its type, which asks its questions before anything changes.',
+                           'code'  => "\$handler = eZPackageInstallationHandler::instance( \$package,\n"
+                                    . "                                                 " . self::phpString( $settings['alias'] ) . ",\n"
+                                    . "                                                 \$installItem );\n\n"
+                                    . "\$handler->generateStepMap( \$package, \$persistentData );" ),
+                    array( 'title' => 'Asking before changing', 'in' => 'class',
+                           'what'  => 'The value of a step is that it runs while nothing has happened yet. Whatever already exists can be reported, and a choice offered, rather than discovered halfway through.',
+                           'code'  => "public function initializeMyStep( \$package, \$http, \$step, &\$persistentData, \$tpl, \$module )\n"
+                                    . "{\n"
+                                    . "    \$tpl->setVariable( 'existing', \$this->whatIsAlreadyHere( \$package ) );\n\n"
+                                    . "    return true;\n"
+                                    . "}" ),
+                    array( 'title' => 'Starting again cleanly',
+                           'what'  => 'reset() is what makes a second attempt a second attempt rather than a continuation of a failed first one.',
+                           'code'  => "\$handler->reset();" ),
+                    array( 'title' => 'The pair',
+                           'what'  => 'This handler and the package handler that carries the item share one alias. They are two halves of the same thing: one puts the item in a package, the other takes it out again.',
+                           'code'  => "// package.ini [PackageSettings]   HandlerAlias[" . $settings['alias'] . "]=...\n"
+                                    . "// package.ini [InstallerSettings] HandlerAlias[" . $settings['alias'] . "]=" . $class ) );
         }
 
         return array();
