@@ -805,16 +805,39 @@ language_locale='eng-GB'";
             $contentClassList = eZContentClass::fetchList();
             foreach( $contentClassList as $contentClass )
             {
+                // Only carry a name across when there is one to carry.
+                //
+                // This block converts a base install seeded in eng-GB to the
+                // chosen primary language. When the base data is already seeded
+                // in that language there is no eng-GB entry at all, so name()
+                // returns an empty string - and that empty string was written
+                // straight over the real name. eZContentClass::store() then
+                // serialised it as a:2:{s:6:"eng-US";s:0:"";...}, which is what
+                // an initDefault() name list looks like, leaving every class the
+                // base data seeds - folder, article, user, user_group, image,
+                // file, link, comment, common_ini_settings, template_look - and
+                // all of their attributes with a blank label in every interface
+                // that prints one.
+                //
+                // The ezcontentclass_name rows escaped because the UPDATE above
+                // only rewrites rows whose locale is eng-GB, and because
+                // setHasDirtyData( false ) below deliberately skips rewriting
+                // them - which is why the names survived in that table while the
+                // serialized column was emptied.
                 $classAttributes = $contentClass->fetchAttributes();
                 foreach( $classAttributes as $classAttribute )
                 {
-                    $classAttribute->NameList->setName( $classAttribute->NameList->name( 'eng-GB' ), $primaryLanguageLocaleCode );
+                    $engName = $classAttribute->NameList->name( 'eng-GB' );
+                    if ( $engName !== false && trim( (string)$engName ) !== '' )
+                        $classAttribute->NameList->setName( $engName, $primaryLanguageLocaleCode );
                     $classAttribute->NameList->setAlwaysAvailableLanguage( $primaryLanguageLocaleCode );
                     $classAttribute->NameList->removeName( 'eng-GB' );
                     $classAttribute->store();
                 }
 
-                $contentClass->NameList->setName( $contentClass->NameList->name( 'eng-GB' ), $primaryLanguageLocaleCode );
+                $engName = $contentClass->NameList->name( 'eng-GB' );
+                if ( $engName !== false && trim( (string)$engName ) !== '' )
+                    $contentClass->NameList->setName( $engName, $primaryLanguageLocaleCode );
                 $contentClass->NameList->setAlwaysAvailableLanguage( $primaryLanguageLocaleCode );
                 $contentClass->NameList->removeName( 'eng-GB' );
                 $contentClass->NameList->setHasDirtyData( false ); // to not update 'ezcontentclass_name', because we've already updated it.
