@@ -88,6 +88,18 @@ $ViewList["rad"] = array(
     'unordered_params' => array( 'show' => 'Show' ),
     "params" => array( ) );
 
+$ViewList["radsurvey"] = array(
+    'functions' => array( 'setup' ),
+    "script" => "radsurvey.php",
+    'ui_context' => 'administration',
+    "default_navigation_part" => 'ezsetupnavigationpart',
+    // Which part of the survey to show, and how far down it. In the address so
+    // a place in a list of several hundred can be linked to.
+    'unordered_params' => array( 'show'   => 'Show',
+                                 'offset' => 'Offset',
+                                 'find'   => 'Find' ),
+    "params" => array( ) );
+
 $ViewList["designextension"] = array(
     'functions' => array( 'setup' ),
     "script" => "designextension.php",

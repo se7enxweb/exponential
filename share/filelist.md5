@@ -512,7 +512,8 @@ fc3da246e798dc46db130b5e72764902  design/admin/templates/setup/extensions.tpl
 7f9d1052a5207dc44c8791f26b779c3c  design/admin/templates/setup/moduleextension.tpl
 90c785118b3bb69bbcac45a6f74a2df4  design/admin/templates/setup/preload.tpl
 77d5784c529f92b24eef559b269adaf1  design/admin/templates/setup/quick_settings.tpl
-15acc46e4979c972cb33b0162ad75ef4  design/admin/templates/setup/rad.tpl
+0d159ce4f4cc9dac5b518380a12f500d  design/admin/templates/setup/rad.tpl
+0a163ebd167c415f38f0276f8beb9b3b  design/admin/templates/setup/radsurvey.tpl
 3e4dedd3cf80826a520f08b546a2d39c  design/admin/templates/setup/session.tpl
 600915d1b26d3b37aaee246ffd0045be  design/admin/templates/setup/systemupgrade.tpl
 2213f31deb144ac417374f43edec982a  design/admin/templates/setup/templateoperator.tpl
@@ -2077,6 +2078,7 @@ bd6e09375a4ba8fb7f56980818d622be  design/standard/templates/setup/persistence.tp
 0612b56c79eebd0c2c1bd5331ef02dd9  design/standard/templates/setup/progress_bar.tpl
 336e103d6197cd3f8e79b748f7631ebd  design/standard/templates/setup/quick_settings.tpl
 efeb4ba3b956e844fee092f5b6397480  design/standard/templates/setup/rad.tpl
+cea6b6108b8edc1f7845d321c9681675  design/standard/templates/setup/radsurvey.tpl
 0d3f25ede375dc0632be8b80388f7ead  design/standard/templates/setup/registration_email.tpl
 cc7c1852194de98b13c2c3e89aa88e0e  design/standard/templates/setup/session.tpl
 6e514250bd29d924a22c8a7f80e7a6d0  design/standard/templates/setup/session_no_db.tpl
@@ -2279,6 +2281,7 @@ e03c2aa19443976efb300d6226d8b71d  doc/bc/6.0/kickstartercli.md
 593913f38a2dc56e3755f5c53f3315e1  doc/bc/6.0/phpunitv13forPHP841.md
 1f0fe8da97e4dc2830fed4619ac01ee0  doc/bc/6.0/preload.md
 c53e992620df05619bd2c342a547b75f  doc/bc/6.0/rad-extension-points.md
+62dd25fab2103487a25e557498ef09ef  doc/bc/6.0/rad-extension-surface.md
 02cab810b7ee149bb10c8ebb1d63d266  doc/bc/6.0/rad-security.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
 adac5192811bf518d52266dd4a6b0e72  doc/branch-overview
@@ -12216,6 +12219,7 @@ f6608ebf0cf4ba591456b1d1a381d5ff  kernel/setup/exphandlerwizard.php
 a28b9f6cfbad6cf34f0e63039489f455  kernel/setup/expmoduleextensionwizard.php
 4ce3d1f6fbb5288f690fa0caae27a406  kernel/setup/exppreloadrunner.php
 f27a41131bf16f219c3f1f8f7688ca20  kernel/setup/expradcatalogue.php
+334d7ae6b5bb479cb7cf0af9b8ca1c66  kernel/setup/expradsurvey.php
 31f82634133388e1a9a5c3ab12d50eb0  kernel/setup/expstaticcacherunner.php
 d110a85552db88cc9057342eafaf749b  kernel/setup/exptemplateextensionwizard.php
 dee99141d9dcbbbb2560931f4f16ec29  kernel/setup/expworkfloweventwizard.php
@@ -12229,11 +12233,12 @@ b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
 282ca080da3e7e76e5d6b97fd307f9da  kernel/setup/handlerextension.php
 3135f4cefe2acd041cfc3fe6e5ee3879  kernel/setup/info.php
 18ecee0d07126e49f164552b002eaf7e  kernel/setup/menuconfig.php
-97269e82b9787337fd6d61ad952bca23  kernel/setup/module.php
+703f1e65ae8025289258108c3ba6e65a  kernel/setup/module.php
 a11eedef660d2f8992bcbaa26861097f  kernel/setup/moduleextension.php
 846edf76592a6173514e0b302ea5274b  kernel/setup/preload.php
 532ddefd251ca7a4047dd13962ed3fc5  kernel/setup/preloadstream.php
-da7c98aac00d8ab785e2afc46a815a57  kernel/setup/rad.php
+abf5f51b260a722c6259ebea3bc30ef7  kernel/setup/rad.php
+54cc0c2c29b5efb8df999ef4e52be285  kernel/setup/radsurvey.php
 9a57b699ad6687e590fdb2b8db19a743  kernel/setup/session.php
 f0bb2d78d2da0a115870dc0708978214  kernel/setup/settingstoolbar.php
 11d6f43693270057c21a4a8d78e96ef3  kernel/setup/setupmenu.php

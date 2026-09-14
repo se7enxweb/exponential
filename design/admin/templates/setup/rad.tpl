@@ -57,6 +57,18 @@
 /* The filter sits on its own line with room under it. The admin toolbar floats
    its contents, so without clearing it the first group heading comes up beside
    the filter instead of below it. */
+.rad-survey-note { padding: 0 0 1.2rem 0; }
+.rad-survey-link {
+    display: flex; gap: .9rem; align-items: center; text-decoration: none; color: inherit;
+    border: 1px solid var(--rad-line); border-left: 4px solid var(--rad-accent);
+    border-radius: 8px; padding: .8rem 1rem; background: #fcfcfd;
+}
+.rad-survey-link:hover { border-color: #9a9aa0; border-left-color: var(--rad-accent); }
+.rad-survey-link > span { min-width: 0; }
+.rad-survey-count { flex: 0 0 auto; font-size: 1.6rem; font-weight: 700; color: var(--rad-accent); line-height: 1; }
+.rad-survey-link b { display: block; }
+.rad-survey-link .rad-meta { display: block; white-space: normal; }
+
 .rad-filter { display: block; padding: 0 0 .4rem 0; }
 .rad-filter:after { content: ""; display: block; clear: both; }
 .rad-filter p.table-preferences { margin: 0; }
@@ -78,12 +90,25 @@
 </div>
 
 <div class="rad-summary">
-    <span><b>{$rad_coverage.total}</b> {'extension points'|i18n( 'design/admin/setup/rad' )}</span>
+    <span><b>{$rad_coverage.total}</b> {'extension points written up'|i18n( 'design/admin/setup/rad' )}</span>
     <span><b>{$rad_coverage.covered}</b> {'with a tool'|i18n( 'design/admin/setup/rad' )}</span>
     <span class="rad-meta">{'The rest are documented, and each is a tool waiting to be written.'|i18n( 'design/admin/setup/rad' )}</span>
 {if ne( $rad_filter, 'all' )}
     <span class="rad-meta">{'Showing %shown of them.'|i18n( 'design/admin/setup/rad',, hash( '%shown', $rad_shown ) )}</span>
 {/if}
+</div>
+
+{* The written list is the map. The survey is the territory, and it is a good
+   deal larger than the map - which is worth saying on the page rather than
+   leaving somebody to think forty odd points is the size of this system. *}
+<div class="rad-survey-note">
+<a class="rad-survey-link" href={'setup/radsurvey'|ezurl}>
+    <span class="rad-survey-count">{$rad_survey.counts.total}</span>
+    <span>
+        <b>{'Extension point survey'|i18n( 'design/admin/setup/rad' )}</b>
+        <span class="rad-meta">{'The list above is written by hand. This one is read off disk on every request: %settings settings that name a class across %ini ini files, %views module views, %repositories directories searched for handlers, and %contracts interfaces waiting to be implemented.'|i18n( 'design/admin/setup/rad',, hash( '%settings', $rad_survey.counts.settings, '%ini', $rad_survey.counts.ini, '%views', $rad_survey.counts.views, '%repositories', $rad_survey.counts.repositories, '%contracts', $rad_survey.counts.contracts ) )}</span>
+    </span>
+</a>
 </div>
 
 {* Which of them to list. Links rather than a script, so a filtered list can be

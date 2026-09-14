@@ -11,6 +11,7 @@
 $module = $Params['Module'];
 
 require_once 'kernel/setup/expradcatalogue.php';
+require_once 'kernel/setup/expradsurvey.php';
 
 $tpl = eZTemplate::factory();
 
@@ -49,6 +50,10 @@ foreach ( expRADCatalogue::filters() as $key => $label )
                         'current' => $key === $filter,
                         'url'     => $key === 'all' ? '/setup/rad' : '/setup/rad/(show)/' . $key );
 
+// The curated list is what somebody reads; the survey is what is actually
+// here. The page carries the survey's headline numbers so that nobody mistakes
+// forty eight written points for the size of this system.
+$tpl->setVariable( 'rad_survey', expRADSurvey::survey() );
 $tpl->setVariable( 'rad_groups', $groups );
 $tpl->setVariable( 'rad_mechanisms', expRADCatalogue::mechanisms() );
 $tpl->setVariable( 'rad_coverage', expRADCatalogue::coverage() );
