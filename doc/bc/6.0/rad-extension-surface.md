@@ -19,7 +19,7 @@ where it can be searched.
 | --- | --- |
 | Extension points | **921** |
 | ini files read | 381 |
-| Settings naming a class | 367 (350 resolve, 17 do not) |
+| Settings naming a class | 367 (350 resolve to a class, 16 take an alias, 1 look like a class and are not one) |
 | Directories searched for handlers | 116 |
 | Interfaces and abstract classes | 41 (29 implemented) |
 | Modules | 57 |
@@ -31,10 +31,13 @@ none of them was left out because nobody remembered it.
 
 ## Settings that name a class
 
-Change one of these and something else answers instead. A row marked **missing**
-names something that looks like a class and is not declared anywhere: either the
-setting takes an alias resolved somewhere else, or the registration is broken and
-whatever it was meant to switch on has never run.
+Change one of these and something else answers instead.
+
+Several of these settings take an alias rather than a class, and the two cannot be
+told apart by looking at the setting - only by looking at the value. Every class in
+this system has a capital in it somewhere and every alias is one lower case word,
+so a lower case value that names no class is an *alias* doing its job. A row marked
+**not declared** is shaped like a class and is not one, which is worth a look.
 
 ### admininterface.ini (1)
 
@@ -46,9 +49,9 @@ whatever it was meant to switch on has never run.
 
 | Section | Setting | Value | Declared in |
 | --- | --- | --- | --- |
-| `HandlerSettings` | `MetaDataExtractor[application/msword]` | `ezword` | **missing** |
+| `HandlerSettings` | `MetaDataExtractor[application/msword]` | `ezword` | *alias* |
 | `HandlerSettings` | `MetaDataExtractor[application/pdf]` | `ezpdf` | `lib/ezpdf/classes/ezpdf.php` |
-| `HandlerSettings` | `MetaDataExtractor[text/plain]` | `ezplaintext` | **missing** |
+| `HandlerSettings` | `MetaDataExtractor[text/plain]` | `ezplaintext` | *alias* |
 
 ### block.ini (5)
 
@@ -234,8 +237,8 @@ whatever it was meant to switch on has never run.
 
 | Section | Setting | Value | Declared in |
 | --- | --- | --- | --- |
-| `ErrorSettings` | `DefaultErrorHandler` | `displayerror` | **missing** |
-| `ErrorSettings-kernel` | `ErrorHandler[1]` | `embed` | **missing** |
+| `ErrorSettings` | `DefaultErrorHandler` | `displayerror` | *alias* |
+| `ErrorSettings-kernel` | `ErrorHandler[1]` | `embed` | *alias* |
 
 ### explayouts.ini (58)
 
@@ -382,7 +385,7 @@ whatever it was meant to switch on has never run.
 
 | Section | Setting | Value | Declared in |
 | --- | --- | --- | --- |
-| `TransportSettings` | `DefaultTransport` | `stdio` | **missing** |
+| `TransportSettings` | `DefaultTransport` | `stdio` | *alias* |
 
 ### ezoe.ini (1)
 
@@ -436,9 +439,9 @@ whatever it was meant to switch on has never run.
 
 | Section | Setting | Value | Declared in |
 | --- | --- | --- | --- |
-| `EXIFAnalyzer` | `Handler` | `ezexif` | **missing** |
+| `EXIFAnalyzer` | `Handler` | `ezexif` | *alias* |
 | `GD` | `Handler` | `eZImageGDFactory` | `lib/ezimage/classes/ezimagegdfactory.php` |
-| `GIFAnalyzer` | `Handler` | `ezgif` | **missing** |
+| `GIFAnalyzer` | `Handler` | `ezgif` | *alias* |
 | `ImageMagick` | `Handler` | `eZImageShellFactory` | `lib/ezimage/classes/ezimageshellfactory.php` |
 
 ### menu.ini (2)
@@ -460,7 +463,7 @@ whatever it was meant to switch on has never run.
 | Section | Setting | Value | Declared in |
 | --- | --- | --- | --- |
 | `RuleSettings` | `Alias[keyword]` | `ezkeyword` | `kernel/classes/datatypes/ezkeyword/ezkeyword.php` |
-| `TransportSettings` | `DefaultTransport` | `mail` | **missing** |
+| `TransportSettings` | `DefaultTransport` | `mail` | *alias* |
 
 ### package.ini (21)
 
@@ -511,8 +514,8 @@ whatever it was meant to switch on has never run.
 
 | Section | Setting | Value | Declared in |
 | --- | --- | --- | --- |
-| `BasketInfoSettings` | `Handler` | `ezdefault` | **missing** |
-| `ExchangeRatesSettings` | `ExchangeRatesUpdateHandler` | `eZECB` | **missing** |
+| `BasketInfoSettings` | `Handler` | `ezdefault` | *alias* |
+| `ExchangeRatesSettings` | `ExchangeRatesUpdateHandler` | `eZECB` | **not declared** |
 | `MathSettings` | `MathHandler` | `eZPHPMath` | `lib/ezmath/classes/mathhandlers/ezphpmath.php` |
 
 ### shopaccount.ini (2)
@@ -520,7 +523,7 @@ whatever it was meant to switch on has never run.
 | Section | Setting | Value | Declared in |
 | --- | --- | --- | --- |
 | `AccountSettings` | `Handler` | `ezuser` | `kernel/classes/datatypes/ezuser/ezuser.php` |
-| `ConfirmOrderSettings` | `Handler` | `ezdefault` | **missing** |
+| `ConfirmOrderSettings` | `Handler` | `ezdefault` | *alias* |
 
 ### site.ini (39)
 
@@ -532,7 +535,7 @@ whatever it was meant to switch on has never run.
 | `ContentSettings` | `ContentClassEditHandler` | `eZContentClassEditHandler` | `kernel/classes/ezcontentclassedithandler.php` |
 | `ContentSettings` | `DatatypeBlackListForExternal[]` | `ezuser` | `kernel/classes/datatypes/ezuser/ezuser.php` |
 | `ContentSettings` | `StaticCacheHandler` | `eZStaticCache` | `kernel/classes/ezstaticcache.php` |
-| `DatabaseSettings` | `DatabaseImplementation` | `ezmysqli` | **missing** |
+| `DatabaseSettings` | `DatabaseImplementation` | `ezmysqli` | *alias* |
 | `DatabaseSettings` | `ImplementationAlias[ezmysql]` | `eZMySQLiDB` | `lib/ezdb/classes/ezmysqlidb.php` |
 | `DatabaseSettings` | `ImplementationAlias[ezmysqli]` | `eZMySQLiDB` | `lib/ezdb/classes/ezmysqlidb.php` |
 | `DatabaseSettings` | `ImplementationAlias[ezpostgresql]` | `eZPostgreSQLDB` | `lib/ezdb/classes/ezpostgresqldb.php` |
@@ -550,7 +553,7 @@ whatever it was meant to switch on has never run.
 | `ExtensionSettings` | `ActiveExtensions[]` | `powercontent` | `extension/powercontent/classes/powercontent.php` |
 | `ExtensionSettings` | `ActiveExtensions[]` | `ezprestapiprovider` | `extension/ezprestapiprovider/classes/rest_provider.php` |
 | `FileSettings` | `CacheDir` | `cache` | `vendor/zetacomponents/signal-slot/docs/tutorial_multiple_slots_example.php` |
-| `MailSettings` | `Transport` | `sendmail` | **missing** |
+| `MailSettings` | `Transport` | `sendmail` | *alias* |
 | `MailSettings` | `TransportAlias[file]` | `eZFileTransport` | `lib/ezutils/classes/ezfiletransport.php` |
 | `MailSettings` | `TransportAlias[sendmail]` | `eZSendmailTransport` | `lib/ezutils/classes/ezsendmailtransport.php` |
 | `MailSettings` | `TransportAlias[smtp]` | `eZSMTPTransport` | `lib/ezutils/classes/ezsmtptransport.php` |
@@ -561,10 +564,10 @@ whatever it was meant to switch on has never run.
 | `RegionalSettings` | `TranslationExtensions[]` | `xrowmetadata` | `extension/xrowmetadata/classes/structs/xrowmetadata.php` |
 | `SearchSettings` | `SearchEngine` | `eZSearchEngine` | `kernel/search/plugins/ezsearchengine/ezsearchengine.php` |
 | `SiteAccessSettings` | `MobileDeviceFilterClass` | `ezpMobileDeviceRegexpFilter` | `kernel/private/classes/ezpmobiledeviceregexpfilter.php` |
-| `SiteSettings` | `ErrorHandler` | `displayerror` | **missing** |
+| `SiteSettings` | `ErrorHandler` | `displayerror` | *alias* |
 | `URLTranslator` | `FilterClasses[]` | `eZURLAliasFilterAppendNodeID` | `kernel/private/classes/urlaliasfilters/ezurlaliasfilterappendnodeid.php` |
-| `UserSettings` | `LoginHandler[]` | `standard` | **missing** |
-| `UserSettings` | `LoginHandler[]` | `paex` | **missing** |
+| `UserSettings` | `LoginHandler[]` | `standard` | *alias* |
+| `UserSettings` | `LoginHandler[]` | `paex` | *alias* |
 
 ### syndication.ini (1)
 
@@ -576,7 +579,7 @@ whatever it was meant to switch on has never run.
 
 | Section | Setting | Value | Declared in |
 | --- | --- | --- | --- |
-| `AttributeOperator` | `DefaultFormatter` | `html` | **missing** |
+| `AttributeOperator` | `DefaultFormatter` | `html` | *alias* |
 | `AttributeOperator` | `OutputFormatter[html]` | `ezpAttributeOperatorHTMLFormatter` | `kernel/private/eztemplate/ezpattributeoperatorhtmlformatter.php` |
 | `AttributeOperator` | `OutputFormatter[text]` | `ezpAttributeOperatorTextFormatter` | `kernel/private/eztemplate/ezpattributeoperatortextformatter.php` |
 

@@ -107,9 +107,11 @@ switch ( $show )
                 'two'   => '[' . $entry['section'] . ']',
                 'three' => $entry['variable'],
                 'four'  => $entry['value'],
-                'note'  => $entry['exists'] ? $entry['source']
-                                            : ( $entry['is_class'] ? 'no class of that name is declared' : '' ),
-                'state' => $entry['exists'] ? 'ok' : ( $entry['is_class'] ? 'bad' : 'empty' ) );
+                'note'  => $entry['shape'] === 'class'   ? $entry['source']
+                         : ( $entry['shape'] === 'unknown' ? 'looks like a class, and nothing declares one'
+                                                           : 'an alias, resolved somewhere else' ),
+                'state' => $entry['shape'] === 'class'   ? 'ok'
+                         : ( $entry['shape'] === 'unknown' ? 'bad' : 'empty' ) );
 }
 
 // ── Narrowing, then paging ──────────────────────────────────────────────────

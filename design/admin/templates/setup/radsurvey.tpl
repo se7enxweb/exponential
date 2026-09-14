@@ -75,8 +75,9 @@
     <span><b>{$survey_counts.settings}</b><span class="sv-label">{'settings naming a class'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
     <span><b>{$survey_counts.views}</b><span class="sv-label">{'module views'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
     <span><b>{$survey_counts.contracts}</b><span class="sv-label">{'contracts to implement'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
+    <span><b>{$survey_counts.aliases}</b><span class="sv-label">{'take an alias instead'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
 {if $survey_counts.broken|gt( 0 )}
-    <span><b style="color:#b4232c">{$survey_counts.broken}</b><span class="sv-label">{'name a class that is not there'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
+    <span><b style="color:#b4232c">{$survey_counts.broken}</b><span class="sv-label">{'look like a class and are not one'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
 {/if}
 </div>
 
@@ -147,11 +148,11 @@
 </p>
 <p class="sv-meta">
     <span class="sv-dot is-bad"></span>
-    {'The setting names something that looks like a class and nothing declares it. Either it is an alias resolved somewhere else, or the registration is broken and whatever it was meant to switch on has never run.'|i18n( 'design/admin/setup/rad/survey' )}
+    {'The value has a capital in it, so it is shaped like a class name, and nothing declares a class of that name. Either the registration is broken and whatever it was meant to switch on has never run, or it is an alias that happens to be capitalised.'|i18n( 'design/admin/setup/rad/survey' )}
 </p>
 <p class="sv-meta">
     <span class="sv-dot is-empty"></span>
-    {'Nothing is set, or nothing implements it yet. An empty repository directory list is normal; an interface nothing implements is an extension point nobody has taken up.'|i18n( 'design/admin/setup/rad/survey' )}
+    {'One lower case word, so it is an alias that something else turns into a class - or, in the other lists, nothing is set and nothing implements it yet. An empty repository directory list is normal; an interface nothing implements is a point nobody has taken up.'|i18n( 'design/admin/setup/rad/survey' )}
 </p>
 </div>
 

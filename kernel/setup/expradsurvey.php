@@ -114,6 +114,18 @@ class expRADSurvey
                         $looksLikeClass = preg_match( self::CLASS_PATTERN, $value ) === 1;
                         $source         = $looksLikeClass ? self::fileOf( $value ) : '';
 
+                        // Several of these settings take an alias rather than a
+                        // class, and the two cannot be told apart by looking at
+                        // the setting. They can be told apart by looking at the
+                        // value: every class in this system has a capital in it
+                        // somewhere and every alias is one lower case word. So a
+                        // lower case value that names no class is an alias doing
+                        // its job, and only a class shaped one is worth a second
+                        // look. Saying otherwise would report a dozen perfectly
+                        // healthy settings as broken.
+                        $shape = $source !== ''       ? 'class'
+                               : ( $looksLikeClass && preg_match( '/[A-Z]/', $value ) ? 'unknown' : 'alias' );
+
                         // Two ways in. Either the variable is named like one
                         // that takes a handler, or the value is a class this
                         // installation really has - which is the stronger
@@ -130,6 +142,7 @@ class expRADSurvey
                             'bare'     => $bare,
                             'value'    => $value,
                             'is_class' => $looksLikeClass,
+                            'shape'    => $shape,
                             'exists'   => $source !== '',
                             'source'   => $source,
                             'by_name'  => $named );
@@ -167,6 +180,7 @@ class expRADSurvey
                 'settings'     => count( $settings ),
                 'live'         => count( array_filter( $settings, array( __CLASS__, 'isLive' ) ) ),
                 'broken'       => count( array_filter( $settings, array( __CLASS__, 'isBroken' ) ) ),
+                'aliases'      => count( array_filter( $settings, array( __CLASS__, 'isAlias' ) ) ),
                 'repositories' => count( $repositories ),
                 'contracts'    => count( $contracts ),
                 'implemented'  => count( array_filter( $contracts, array( __CLASS__, 'isImplemented' ) ) ),
@@ -201,7 +215,18 @@ class expRADSurvey
      */
     public static function isBroken( array $setting )
     {
-        return $setting['is_class'] && !$setting['exists'];
+        return $setting['shape'] === 'unknown';
+    }
+
+    /**
+     * Whether a setting takes an alias that something else resolves.
+     *
+     * @param array $setting
+     * @return bool
+     */
+    public static function isAlias( array $setting )
+    {
+        return $setting['shape'] === 'alias';
     }
 
     /**
