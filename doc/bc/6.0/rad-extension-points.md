@@ -12,7 +12,7 @@ knowledge was spread across `kernel/`, `lib/` and a dozen settings files.
 from it. A point with a tool and a point without are listed the same way, so
 neither can be forgotten.
 
-**47 extension points, 22 with a tool.**
+**47 extension points, 26 with a tool.**
 
 Every entry was checked against this installation's own source; the *Kernel*
 column names the file the mechanism actually lives in.
@@ -558,7 +558,7 @@ What happens when a package is installed or taken back out.
 | Kernel | `kernel/classes/ezpackageinstallationhandler.php` |
 
 ### VAT handler  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/vat`
 
 What rate of tax applies to what, for whom.
 
@@ -571,7 +571,7 @@ What rate of tax applies to what, for whom.
 | Kernel | `kernel/classes/ezvatmanager.php` |
 
 ### Shipping handler  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/shipping`
 
 What delivery costs, and what the options are.
 
@@ -584,7 +584,7 @@ What delivery costs, and what the options are.
 | Kernel | `kernel/classes/ezshippingmanager.php` |
 
 ### Basket info handler  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/basketinfo`
 
 What a basket line says about itself: name, price, and what it is.
 
@@ -597,7 +597,7 @@ What a basket line says about itself: name, price, and what it is.
 | Kernel | `kernel/classes/basketinfohandlers/ezdefaultbasketinfohandler.php` |
 
 ### Exchange rate handler  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/exchangerate`
 
 Where the rate between two currencies comes from.
 

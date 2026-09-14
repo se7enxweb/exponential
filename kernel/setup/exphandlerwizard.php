@@ -580,6 +580,127 @@ class expHandlerWizard extends expExtensionWizard
                        'byref' => true,
                        'returns' => "''",
                        'what' => 'Which template draws the attribute as a whole.' ) ) ),
+
+        'vat' => array(
+            'title'    => 'VAT handler',
+            'what'     => 'What decides which rate of tax a product is sold at.',
+            'why'      => 'The handler that ships reads the rate off the product class and the buyer country. A handler of your own is how any other rule applies - a category held elsewhere, a rate that depends on the buyer rather than the goods, a rate fetched from a service - without a copy of the tax rules in every template.',
+            'base'     => 'eZDefaultVATHandler',
+            'source'   => 'kernel/classes/vathandlers/ezdefaultvathandler.php',
+            'ini'      => 'shop.ini',
+            'section'  => 'VATSettings',
+            'variable' => 'Handler',
+            'aliased'  => false,
+            'namesAlias' => true,
+            'classFrom' => '%alias%VATHandler',
+            'path'     => 'vathandlers/%alias%vathandler.php',
+            'suffix'   => 'vathandler',
+            'override' => true,
+            'extra'    => array(
+                array( 'variable' => 'ExtensionDirectories[]',
+                       'value'    => '%extension%',
+                       'what'     => 'The extension whose vathandlers/ directory is searched. Without this line the file is never looked for.' ) ),
+            'note'     => 'The class name and the file name are both worked out from the setting above, so neither is free to change on its own.',
+            'methods'  => array(
+                array( 'name' => 'getVatPercent', 'signature' => 'getVatPercent( $object, $country )',
+                       'returns' => 'false',
+                       'what' => 'The rate for this product sold into this country, as a number - 25 for twenty five per cent. Return false when there is no answer, and the sale is refused rather than taxed at a guess. Called for every line of every basket, so it wants to be cheap.' ),
+                array( 'name' => 'getProductCategory', 'signature' => 'getProductCategory( $object )',
+                       'returns' => 'false',
+                       'what' => 'Which category of goods this is, when the rate depends on the category rather than on the product. Return an eZProductCategory, or false.' ),
+                array( 'name' => 'chooseVatType', 'signature' => 'chooseVatType( $productCategory, $country )',
+                       'returns' => 'false',
+                       'what' => 'Which of the configured VAT types applies to a category in a country. This is the rule, in one place; getVatPercent() only reads the number off what this chooses.' ) ) ),
+
+        'shipping' => array(
+            'title'    => 'Shipping handler',
+            'what'     => 'What a basket costs to deliver.',
+            'why'      => 'Nothing ships as a default, so without a handler of your own the shop has no shipping at all. This is where a weight table, a flat rate, a carrier api or free delivery over a threshold lives.',
+            'base'     => 'eZShippingManager',
+            'source'   => 'kernel/classes/ezshippingmanager.php',
+            'ini'      => 'shop.ini',
+            'section'  => 'ShippingSettings',
+            'variable' => 'Handler',
+            'aliased'  => false,
+            'namesAlias' => true,
+            'standalone' => true,
+            'classFrom' => '%alias%ShippingHandler',
+            'path'     => 'shippinghandlers/%alias%shippinghandler.php',
+            'suffix'   => 'shippinghandler',
+            'extra'    => array(
+                array( 'variable' => 'ExtensionDirectories[]',
+                       'value'    => '%extension%',
+                       'what'     => 'The extension whose shippinghandlers/ directory is searched. Without this line the file is never looked for.' ) ),
+            'note'     => 'There is no shipping handler by default, so nothing is being replaced here: until one is registered a basket has no delivery cost at all.',
+            'methods'  => array(
+                array( 'name' => 'getShippingInfo', 'signature' => 'getShippingInfo( $productCollectionID )',
+                       'returns' => 'false',
+                       'what' => "What delivery costs, as array( 'description' => ..., 'cost' => ..., 'vat_value' => ..., 'is_vat_inc' => ... ). A shipping_items key may carry one such array per parcel when the basket is split. Return false for no charge. Read on every basket and checkout page." ),
+                array( 'name' => 'updateShippingInfo', 'signature' => 'updateShippingInfo( $productCollectionID )',
+                       'returns' => 'false',
+                       'what' => 'Works the cost out again because the basket changed. The place to call a carrier, if one is called at all - not getShippingInfo(), which is read far more often.' ),
+                array( 'name' => 'purgeShippingInfo', 'signature' => 'purgeShippingInfo( $productCollectionID )',
+                       'returns' => 'true',
+                       'what' => 'Forgets whatever was worked out for this basket. Called when the basket is emptied or the order placed.' ) ) ),
+
+        'basketinfo' => array(
+            'title'    => 'Basket info handler',
+            'what'     => 'What the basket totals come to, once everything else has had its say.',
+            'why'      => 'This runs after the prices, the VAT and the shipping are known and may change the totals. It is where a discount code, a member price, a rounding rule or a minimum order charge belongs - in one place, rather than in every template that shows a total.',
+            'base'     => 'eZDefaultBasketInfoHandler',
+            'source'   => 'kernel/classes/basketinfohandlers/ezdefaultbasketinfohandler.php',
+            'ini'      => 'shop.ini',
+            'section'  => 'BasketInfoSettings',
+            'variable' => 'Handler',
+            'aliased'  => false,
+            'namesAlias' => true,
+            'classFrom' => '%alias%BasketInfoHandler',
+            'path'     => 'basketinfohandlers/%alias%basketinfohandler.php',
+            'suffix'   => 'basketinfohandler',
+            'override' => true,
+            'extra'    => array(
+                array( 'variable' => 'ExtensionDirectories[]',
+                       'value'    => '%extension%',
+                       'what'     => 'The extension whose basketinfohandlers/ directory is searched. Without this line the file is never looked for.' ) ),
+            'note'     => 'ezdefault is registered out of the box. Registering another replaces it, so whatever the default did has to be done here too, or be deliberately dropped.',
+            'methods'  => array(
+                array( 'name' => 'updatePriceInfo', 'signature' => 'updatePriceInfo( $productCollectionID, &$basketInfo )',
+                       'returns' => 'true',
+                       'what' => "Changes the totals in place. \$basketInfo carries total_ex_vat, total_inc_vat and the per rate lists; whatever is left in it is what the basket and the order show. Called on every basket page, so anything slow here is felt everywhere." ) ) ),
+
+        'exchangerate' => array(
+            'title'    => 'Exchange rate handler',
+            'what'     => 'Where the rates between the shop currencies come from.',
+            'why'      => 'The handler that ships reads the European Central Bank feed, which covers the currencies it covers and no others. A handler of your own is how rates come from a bank, a provider, or a spreadsheet a person maintains - updated by the same cronjob, stored the same way, shown in the same place.',
+            'base'     => 'eZExchangeRatesUpdateHandler',
+            'source'   => 'kernel/shop/classes/exchangeratehandlers/ezexchangeratesupdatehandler.php',
+            'ini'      => 'shop.ini',
+            'section'  => 'ExchangeRatesSettings',
+            'variable' => 'ExchangeRatesUpdateHandler',
+            'aliased'  => false,
+            'namesAlias' => true,
+            'classFrom' => '%alias%handler',
+            'path'     => 'exchangeratehandlers/%alias%/%alias%handler.php',
+            'suffix'   => 'handler',
+            'override' => true,
+            'extra'    => array(
+                array( 'variable' => 'ExtensionDirectories[]',
+                       'value'    => '%extension%',
+                       'what'     => 'The extension whose exchangeratehandlers/ directory is searched. Without this line the file is never looked for.' ) ),
+            'note'     => 'The alias goes in the directory name, the file name and the class name. All three are lower case, because the kernel lower cases the setting before it looks.',
+            'methods'  => array(
+                array( 'name' => 'initialize', 'signature' => 'initialize( $params = array() )',
+                       'returns' => 'true',
+                       'what' => 'Reads whatever the handler needs to know before it can ask for rates - a url, a key, a list of currencies. Called before requestRates().' ),
+                array( 'name' => 'requestRates', 'signature' => 'requestRates()',
+                       'returns' => 'true',
+                       'what' => 'Fetches the rates and puts them in place with setRateList() and setBaseCurrency(). Return false on a failure rather than storing half a list: a partial update leaves some prices converted at yesterday\'s rate and some at the wrong one.' ),
+                array( 'name' => 'rateList', 'signature' => 'rateList()',
+                       'returns' => 'array()',
+                       'what' => 'What was fetched, as currency code to rate against the base. Read by the shop after requestRates() has run.' ),
+                array( 'name' => 'baseCurrency', 'signature' => 'baseCurrency()',
+                       'returns' => "''",
+                       'what' => 'Which currency the rates are against. The shop converts through this, so it has to be one it knows.' ) ) ),
         );
     }
 
@@ -676,6 +797,14 @@ class expHandlerWizard extends expExtensionWizard
             $settings['class'] = self::safeClass( str_replace( '_', '', $settings['name'] ) . $recipe['suffix'] );
         if ( $settings['alias'] === '' && $settings['name'] !== '' )
             $settings['alias'] = self::safeAlias( $settings['name'] );
+
+        // Some kinds are not looked up: the kernel builds the class name out of
+        // the alias and includes a file whose path it builds the same way. For
+        // those the name is not a choice, and offering it as one only invites
+        // a handler that is never found.
+        if ( !empty( $recipe['classFrom'] ) && $settings['alias'] !== '' )
+            $settings['class'] = self::safeClass(
+                str_replace( '%alias%', $settings['alias'], $recipe['classFrom'] ) );
         if ( $settings['title'] === '' && $settings['name'] !== '' )
             $settings['title'] = ucwords( str_replace( '_', ' ', $settings['name'] ) );
         if ( $settings['version'] === '' )
@@ -747,7 +876,9 @@ class expHandlerWizard extends expExtensionWizard
         if ( $settings['class'] === '' )
             $problems[] = 'The class needs a name: letters and digits, starting with a letter.';
 
-        if ( $recipe !== false && ( $recipe['aliased'] || !empty( $recipe['appended'] ) ) && $settings['alias'] === '' )
+        if ( $recipe !== false
+             && ( $recipe['aliased'] || !empty( $recipe['appended'] ) || !empty( $recipe['namesAlias'] ) )
+             && $settings['alias'] === '' )
             $problems[] = 'This kind of handler is named by an alias, and the alias is empty.';
 
         // A class that already exists would be loaded instead of, or as well as,
@@ -857,10 +988,15 @@ class expHandlerWizard extends expExtensionWizard
 
         $php  = "<?php\n/**\n * " . $class . " - " . $recipe['title'] . ".\n *\n";
         $php .= " * " . wordwrap( $recipe['what'], 74, "\n * " ) . "\n *\n";
-        $php .= !empty( $recipe['interface'] )
-                ? " * Satisfies " . $recipe['base'] . ", which the kernel loads in place of its\n"
-                  . " * own. Registered in\n"
-                : " * Replaces what " . $recipe['base'] . " does by default. Registered in\n";
+        if ( !empty( $recipe['standalone'] ) )
+            $php .= " * Answers the calls " . $recipe['base'] . " makes. There is nothing to\n"
+                  . " * extend: the contract is the method list below, and nothing else.\n"
+                  . " * Registered in\n";
+        elseif ( !empty( $recipe['interface'] ) )
+            $php .= " * Satisfies " . $recipe['base'] . ", which the kernel loads in place of its\n"
+                  . " * own. Registered in\n";
+        else
+            $php .= " * Replaces what " . $recipe['base'] . " does by default. Registered in\n";
         $php .= " * " . $recipe['ini'] . " [" . $recipe['section'] . "] " . $recipe['variable'];
         $php .= $recipe['aliased'] ? "[" . $settings['alias'] . "]" : '';
         $php .= ".\n *\n";
@@ -870,7 +1006,11 @@ class expHandlerWizard extends expExtensionWizard
         $php .= self::licenceNotice( $settings );
         $php .= " */\n\n";
         $keyword = !empty( $recipe['interface'] ) ? 'implements' : 'extends';
-        $php .= "class " . $class . " " . $keyword . " " . $recipe['base'] . "\n{\n";
+        $php .= "class " . $class;
+        // A contract with nothing behind it: the kernel only asks that the
+        // methods are there, so there is nothing to extend.
+        $php .= empty( $recipe['standalone'] ) ? " " . $keyword . " " . $recipe['base'] : '';
+        $php .= "\n{\n";
 
         // A name that has to be the same in three places is a name worth having
         // in exactly one: the ini, the directory and the class all read it from
@@ -1005,7 +1145,16 @@ class expHandlerWizard extends expExtensionWizard
         $ini  = self::iniHeader( $settings, $recipe['title'] . ' registration' );
         $ini .= "[" . $recipe['section'] . "]\n";
 
-        if ( !empty( $recipe['appended'] ) )
+        if ( !empty( $recipe['namesAlias'] ) )
+        {
+            // The kernel builds the class name and the file path out of this
+            // one word. Nothing names the class anywhere.
+            $ini .= "# The name the kernel works both the file path and the class name out\n";
+            $ini .= "# of: " . self::classPath( $settings, $recipe ) . ",\n";
+            $ini .= "# holding class " . $settings['class'] . ".\n";
+            $ini .= $recipe['variable'] . "=" . $settings['alias'] . "\n";
+        }
+        elseif ( !empty( $recipe['appended'] ) )
         {
             // An appended array: the kernel walks it and looks for a file whose
             // path it works out from the name. The class is never named here.
@@ -1462,6 +1611,122 @@ class expHandlerWizard extends expExtensionWizard
                                     . "               : \$content;\n"
                                     . "    }\n"
                                     . "}" ) );
+
+            case 'vat':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'Every price shown with tax goes through the manager, which builds whichever handler the setting names.',
+                           'code'  => "\$percent = eZVATManager::getVAT( \$contentObject, \$country );\n\n"
+                                    . "// And, where the buyer is known:\n"
+                                    . "\$percent = eZVATManager::getVAT( \$contentObject, false, \$user );" ),
+                    array( 'title' => 'Trying it alone',
+                           'what'  => 'Built by name rather than through the setting, so the default cannot answer instead.',
+                           'code'  => "\$handler = new " . $class . "();\n\n"
+                                    . "var_dump( \$handler->getVatPercent( eZContentObject::fetch( 42 ), 'GB' ) );" ),
+                    array( 'title' => 'Refusing to guess', 'in' => 'class',
+                           'what'  => 'Returning false stops the sale rather than taxing it at a rate nobody chose. Charging the wrong tax quietly is worse than not selling.',
+                           'code'  => "public function getVatPercent( \$object, \$country )\n"
+                                    . "{\n"
+                                    . "    \$category = \$this->getProductCategory( \$object );\n"
+                                    . "    if ( !\$category )\n"
+                                    . "        return false;\n\n"
+                                    . "    \$type = \$this->chooseVatType( \$category, \$country );\n\n"
+                                    . "    return \$type ? \$type->attribute( 'percentage' ) : false;\n"
+                                    . "}" ) );
+
+            case 'shipping':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'The basket and checkout pages ask the manager, which builds whichever handler the setting names. Without a handler there is no delivery cost at all.',
+                           'code'  => "\$info = eZShippingManager::getShippingInfo( \$basket->attribute( 'productcollection_id' ) );\n\n"
+                                    . "if ( \$info !== false )\n"
+                                    . "    echo \$info['description'], ': ', \$info['cost'], PHP_EOL;" ),
+                    array( 'title' => 'What to give back',
+                           'what'  => 'One charge for the whole basket, or one per parcel under shipping_items when it is split. is_vat_inc says whether the cost already has tax in it, and getting that wrong is a rounding error nobody finds for months.',
+                           'code'  => "return array(\n"
+                                    . "    'description' => 'Next day delivery',\n"
+                                    . "    'cost'        => 9.99,\n"
+                                    . "    'vat_value'   => 20,\n"
+                                    . "    'is_vat_inc'  => 0 );\n\n"
+                                    . "// Or, when it goes in more than one parcel:\n"
+                                    . "return array(\n"
+                                    . "    'description'    => 'Two parcels',\n"
+                                    . "    'cost'           => 14.98,\n"
+                                    . "    'vat_value'      => 20,\n"
+                                    . "    'is_vat_inc'     => 0,\n"
+                                    . "    'shipping_items' => array(\n"
+                                    . "        array( 'cost' => 9.99, 'vat_value' => 20, 'is_vat_inc' => 0 ),\n"
+                                    . "        array( 'cost' => 4.99, 'vat_value' => 20, 'is_vat_inc' => 0 ) ) );" ),
+                    array( 'title' => 'Where the slow work goes', 'in' => 'class',
+                           'what'  => 'getShippingInfo() is read on every page that shows a basket. Anything that has to be asked of a carrier belongs in updateShippingInfo(), which runs only when the basket changes, with the answer kept in between.',
+                           'code'  => "public function updateShippingInfo( \$productCollectionID )\n"
+                                    . "{\n"
+                                    . "    \$cost = \$this->askTheCarrier( \$productCollectionID );\n"
+                                    . "    \$this->remember( \$productCollectionID, \$cost );\n\n"
+                                    . "    return true;\n"
+                                    . "}\n\n"
+                                    . "public function getShippingInfo( \$productCollectionID )\n"
+                                    . "{\n"
+                                    . "    return \$this->remembered( \$productCollectionID );\n"
+                                    . "}" ),
+                    array( 'title' => 'In a template',
+                           'what'  => 'What the handler returns is what the basket template is given.',
+                           'code'  => "// {def \$shipping=fetch( 'shop', 'basket' ).shipping_info}\n"
+                                    . "// {\$shipping.description}: {\$shipping.cost|l10n( 'currency' )}" ) );
+
+            case 'basketinfo':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'The handler is asked after the prices, the tax and the shipping are all known, and may change the totals before anything is shown.',
+                           'code'  => "\$basketInfo = eZShippingManager::updateBasketInfo( \$productCollectionID, \$basketInfo );\n\n"
+                                    . "echo \$basketInfo['total_ex_vat'], ' / ', \$basketInfo['total_inc_vat'];" ),
+                    array( 'title' => 'Changing a total', 'in' => 'class',
+                           'what'  => 'The array is passed by reference: change it in place and give back true. Whatever is left in it is what the basket page, the order and the confirmation email all show, so the three cannot disagree.',
+                           'code'  => "public function updatePriceInfo( \$productCollectionID, &\$basketInfo )\n"
+                                    . "{\n"
+                                    . "    parent::updatePriceInfo( \$productCollectionID, \$basketInfo );\n\n"
+                                    . "    if ( \$basketInfo['total_ex_vat'] < 25 )\n"
+                                    . "    {\n"
+                                    . "        \$basketInfo['total_ex_vat']  += 3.00;\n"
+                                    . "        \$basketInfo['total_inc_vat'] += 3.60;\n"
+                                    . "    }\n\n"
+                                    . "    return true;\n"
+                                    . "}" ),
+                    array( 'title' => 'What is in the array',
+                           'what'  => 'The totals, and the same split by rate of tax. Change a total without changing the list it came from and the two stop adding up, which shows on the invoice and not before.',
+                           'code'  => "// total_ex_vat            the whole basket before tax\n"
+                                    . "// total_inc_vat           and after it\n"
+                                    . "// price_list_ex_vat       per rate of tax, before\n"
+                                    . "// price_list_inc_vat      per rate of tax, after" ) );
+
+            case 'exchangerate':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'The currency cronjob builds the handler by name and asks it for the rates.',
+                           'code'  => "// php runcronjobs.php -s <siteaccess> currency\n"
+                                    . "\$handler = eZExchangeRatesUpdateHandler::create( " . self::phpString( $settings['alias'] ) . " );\n"
+                                    . "\$handler->initialize();\n\n"
+                                    . "if ( \$handler->requestRates() )\n"
+                                    . "{\n"
+                                    . "    print_r( \$handler->rateList() );\n"
+                                    . "    echo \$handler->baseCurrency(), PHP_EOL;\n"
+                                    . "}" ),
+                    array( 'title' => 'Fetching them', 'in' => 'class',
+                           'what'  => 'Store the whole list or none of it. Half a list leaves some prices converted at the new rate and some at the old, and nothing in the shop will say so.',
+                           'code'  => "public function requestRates()\n"
+                                    . "{\n"
+                                    . "    \$rates = \$this->fetchFromWherever();\n\n"
+                                    . "    if ( !is_array( \$rates ) || !count( \$rates ) )\n"
+                                    . "        return false;\n\n"
+                                    . "    \$this->setBaseCurrency( 'EUR' );\n"
+                                    . "    \$this->setRateList( \$rates );   // array( 'GBP' => 0.85, 'USD' => 1.09 )\n\n"
+                                    . "    return true;\n"
+                                    . "}" ),
+                    array( 'title' => 'What the shop does with them',
+                           'what'  => 'The rates are stored against the currencies the shop knows. A currency the list does not mention keeps the rate it had.',
+                           'code'  => "foreach ( eZCurrencyData::fetchList() as \$currency )\n"
+                                    . "    echo \$currency->attribute( 'code' ), ' ',\n"
+                                    . "         \$currency->attribute( 'rate_value' ), PHP_EOL;" ) );
         }
 
         return array();
@@ -1520,7 +1785,8 @@ class expHandlerWizard extends expExtensionWizard
             // parent:: is valid php. An interface cannot be extended, so those
             // stand alone - and none of their examples calls parent.
             $php .= "class " . $settings['class'] . "Examples";
-            $php .= empty( $recipe['interface'] ) ? " extends " . $recipe['base'] : '';
+            $php .= empty( $recipe['interface'] ) && empty( $recipe['standalone'] )
+                    ? " extends " . $recipe['base'] : '';
             $php .= "\n{\n";
 
             $bodies = array();

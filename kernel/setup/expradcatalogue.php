@@ -535,7 +535,7 @@ class expRADCatalogue
             'contract' => 'Implements the VAT handler interface',
             'mechanism' => 'directory',
             'source' => 'kernel/classes/ezvatmanager.php',
-            'tool'  => false ),
+            'tool'  => 'setup/handlerextension/vat' ),
 
         'shippinghandler' => array(
             'group' => 'packaging',
@@ -546,7 +546,7 @@ class expRADCatalogue
             'contract' => 'Implements the shipping handler interface',
             'mechanism' => 'directory',
             'source' => 'kernel/classes/ezshippingmanager.php',
-            'tool'  => false ),
+            'tool'  => 'setup/handlerextension/shipping' ),
 
         'basketinfo' => array(
             'group' => 'packaging',
@@ -557,7 +557,7 @@ class expRADCatalogue
             'contract' => 'Implements the basket info handler interface',
             'mechanism' => 'directory',
             'source' => 'kernel/classes/basketinfohandlers/ezdefaultbasketinfohandler.php',
-            'tool'  => false ),
+            'tool'  => 'setup/handlerextension/basketinfo' ),
 
         'exchangerate' => array(
             'group' => 'packaging',
@@ -568,7 +568,7 @@ class expRADCatalogue
             'contract' => 'Implements the exchange rate handler interface',
             'mechanism' => 'directory',
             'source' => 'kernel/shop/classes/exchangeratehandlers/ezexchangeratesupdatehandler.php',
-            'tool'  => false ),
+            'tool'  => 'setup/handlerextension/exchangerate' ),
 
         // ── Users, access and language ──────────────────────────────────────
 
