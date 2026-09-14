@@ -301,6 +301,94 @@ class expRADCatalogue
             'source' => 'kernel/private/rest/classes/rest_provider.php',
             'tool'  => 'setup/handlerextension/restprovider' ),
 
+        'urlaliasfilter' => array(
+            'group' => 'access',
+            'title' => 'URL alias filter',
+            'what'  => 'Runs over every url this system generates, before it is stored, and may rewrite it. The nearest thing here to an output filter over addresses: every alias, for every object, in every language, passes through it as it is made.',
+            'where' => 'extension/<name>/classes/<name>urlfilter.php',
+            'register' => 'site.ini [URLTranslator] FilterClasses[]',
+            'contract' => 'extends eZURLAliasFilter, and implements process( $text, &$languageObject, &$caller )',
+            'mechanism' => 'handler',
+            'source' => 'kernel/classes/ezurlaliasfilter.php',
+            'tool'  => 'setup/handlerextension/urlfilter' ),
+
+        'publishfilter' => array(
+            'group' => 'content',
+            'title' => 'Asynchronous publishing filter',
+            'what'  => 'Decides whether a version is published in the request or handed to the queue. Publishing a large object blocks whoever pressed the button; a queue that takes everything makes small edits feel broken. This is where that line is drawn.',
+            'where' => 'extension/<name>/classes/<name>publishfilter.php',
+            'register' => 'content.ini [PublishingSettings] AsynchronousPublishingFilters[]',
+            'contract' => 'Implements ezpAsynchronousPublishingFilterInterface: one accept() method',
+            'mechanism' => 'handler',
+            'source' => 'kernel/private/interfaces/asynchronouspublishingfilter.php',
+            'tool'  => 'setup/handlerextension/publishfilter' ),
+
+        'mobilefilter' => array(
+            'group' => 'access',
+            'title' => 'Mobile device filter',
+            'what'  => 'Decides whether a request came from a phone and what to do about it. The one that ships matches user agent strings against patterns, which ages badly; a filter of its own can use a header a proxy sets or a hint the browser gives.',
+            'where' => 'extension/<name>/classes/<name>mobilefilter.php',
+            'register' => 'site.ini [SiteAccessSettings] MobileDeviceFilterClass',
+            'contract' => 'Implements ezpMobileDeviceDetectFilterInterface: process, isMobileDevice, getUserAgentAlias, redirect',
+            'mechanism' => 'handler',
+            'source' => 'kernel/private/classes/ezpmobiledevicedetectfilterinterface.php',
+            'tool'  => 'setup/handlerextension/mobilefilter' ),
+
+        'restprerouting' => array(
+            'group' => 'access',
+            'title' => 'REST pre routing filter',
+            'what'  => 'The earliest place there is to see a REST request. Nothing has been matched and no controller chosen, so a request can be rewritten or turned away before anything has committed to answering it - and before authentication, so about a caller nobody has identified.',
+            'where' => 'extension/<name>/classes/<name>preroutingfilter.php',
+            'register' => 'rest.ini [PreRoutingFilters] Filters[]',
+            'contract' => 'Implements ezpRestPreRoutingFilterInterface',
+            'mechanism' => 'handler',
+            'source' => 'kernel/private/rest/classes/interfaces/prerouting_filter.php',
+            'tool'  => 'setup/handlerextension/restprerouting' ),
+
+        'restrequestfilter' => array(
+            'group' => 'access',
+            'title' => 'REST request filter',
+            'what'  => 'Runs once the request object is built and the route is known, so it knows which controller is about to answer. Where a header is read, a parameter normalised, or a request refused on grounds that depend on what it asked for.',
+            'where' => 'extension/<name>/classes/<name>requestfilter.php',
+            'register' => 'rest.ini [RequestFilters] Filters[]',
+            'contract' => 'Implements ezpRestRequestFilterInterface',
+            'mechanism' => 'handler',
+            'source' => 'kernel/private/rest/classes/interfaces/request_filter.php',
+            'tool'  => 'setup/handlerextension/restrequestfilter' ),
+
+        'restresultfilter' => array(
+            'group' => 'access',
+            'title' => 'REST result filter',
+            'what'  => 'Runs after the controller has worked out its answer and before it becomes json or xml. The result is still ordinary php here, so it can be added to or reshaped once for every format rather than in each renderer.',
+            'where' => 'extension/<name>/classes/<name>resultfilter.php',
+            'register' => 'rest.ini [ResultFilters] Filters[]',
+            'contract' => 'Implements ezpRestResultFilterInterface',
+            'mechanism' => 'handler',
+            'source' => 'kernel/private/rest/classes/interfaces/result_filter.php',
+            'tool'  => 'setup/handlerextension/restresultfilter' ),
+
+        'restresponsefilter' => array(
+            'group' => 'access',
+            'title' => 'REST response filter',
+            'what'  => 'The output filter of the REST layer: the last thing that happens before an answer leaves. A header on every response, a body wrapped, a content type changed, without touching a controller.',
+            'where' => 'extension/<name>/classes/<name>responsefilter.php',
+            'register' => 'rest.ini [ResponseFilters] Filters[]',
+            'contract' => 'Implements ezpRestResponseFilterInterface',
+            'mechanism' => 'handler',
+            'source' => 'kernel/private/rest/classes/interfaces/response_filter.php',
+            'tool'  => 'setup/handlerextension/restresponsefilter' ),
+
+        'restprefixfilter' => array(
+            'group' => 'access',
+            'title' => 'REST prefix filter',
+            'what'  => 'What decides where the api lives and which version of it a request asked for. The one that ships reads a regular expression; replacing it is how the api moves off /api/ or takes its version from somewhere other than the path.',
+            'where' => 'extension/<name>/classes/<name>prefixfilter.php',
+            'register' => 'rest.ini [System] PrefixFilterClass',
+            'contract' => 'Extends ezpRestPrefixFilterInterface: parseVersionValue() and filter()',
+            'mechanism' => 'handler',
+            'source' => 'kernel/private/rest/classes/prefix_filter.php',
+            'tool'  => false ),
+
         'restroutefilter' => array(
             'group' => 'modules',
             'title' => 'REST route filter',

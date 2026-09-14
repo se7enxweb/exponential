@@ -12,7 +12,7 @@ knowledge was spread across `kernel/`, `lib/` and a dozen settings files.
 from it. A point with a tool and a point without are listed the same way, so
 neither can be forgotten.
 
-**54 extension points, 52 with a tool.**
+**62 extension points, 59 with a tool.**
 
 Every entry was checked against this installation's own source; the *Kernel*
 column names the file the mechanism actually lives in.
@@ -121,6 +121,19 @@ Which other pages have to be rebuilt when one object is published. The default c
 | Contract | `No class to write: a group per content class identifier` |
 | Mechanism | ini |
 | Kernel | `kernel/classes/ezcontentcachemanager.php` |
+
+### Asynchronous publishing filter  
+*Tool:* `/setup/handlerextension/publishfilter`
+
+Decides whether a version is published in the request or handed to the queue. Publishing a large object blocks whoever pressed the button; a queue that takes everything makes small edits feel broken. This is where that line is drawn.
+
+| | |
+|---|---|
+| Code | `extension/<name>/classes/<name>publishfilter.php` |
+| Registered by | content.ini [PublishingSettings] AsynchronousPublishingFilters[] |
+| Contract | `Implements ezpAsynchronousPublishingFilterInterface: one accept() method` |
+| Mechanism | handler |
+| Kernel | `kernel/private/interfaces/asynchronouspublishingfilter.php` |
 
 ## Templates and design
 
@@ -652,6 +665,97 @@ Where the rate between two currencies comes from.
 ## Users, access and language
 
 Who gets in, what they may do, and in what language.
+
+### URL alias filter  
+*Tool:* `/setup/handlerextension/urlfilter`
+
+Runs over every url this system generates, before it is stored, and may rewrite it. The nearest thing here to an output filter over addresses: every alias, for every object, in every language, passes through it as it is made.
+
+| | |
+|---|---|
+| Code | `extension/<name>/classes/<name>urlfilter.php` |
+| Registered by | site.ini [URLTranslator] FilterClasses[] |
+| Contract | `extends eZURLAliasFilter, and implements process( $text, &$languageObject, &$caller )` |
+| Mechanism | handler |
+| Kernel | `kernel/classes/ezurlaliasfilter.php` |
+
+### Mobile device filter  
+*Tool:* `/setup/handlerextension/mobilefilter`
+
+Decides whether a request came from a phone and what to do about it. The one that ships matches user agent strings against patterns, which ages badly; a filter of its own can use a header a proxy sets or a hint the browser gives.
+
+| | |
+|---|---|
+| Code | `extension/<name>/classes/<name>mobilefilter.php` |
+| Registered by | site.ini [SiteAccessSettings] MobileDeviceFilterClass |
+| Contract | `Implements ezpMobileDeviceDetectFilterInterface: process, isMobileDevice, getUserAgentAlias, redirect` |
+| Mechanism | handler |
+| Kernel | `kernel/private/classes/ezpmobiledevicedetectfilterinterface.php` |
+
+### REST pre routing filter  
+*Tool:* `/setup/handlerextension/restprerouting`
+
+The earliest place there is to see a REST request. Nothing has been matched and no controller chosen, so a request can be rewritten or turned away before anything has committed to answering it - and before authentication, so about a caller nobody has identified.
+
+| | |
+|---|---|
+| Code | `extension/<name>/classes/<name>preroutingfilter.php` |
+| Registered by | rest.ini [PreRoutingFilters] Filters[] |
+| Contract | `Implements ezpRestPreRoutingFilterInterface` |
+| Mechanism | handler |
+| Kernel | `kernel/private/rest/classes/interfaces/prerouting_filter.php` |
+
+### REST request filter  
+*Tool:* `/setup/handlerextension/restrequestfilter`
+
+Runs once the request object is built and the route is known, so it knows which controller is about to answer. Where a header is read, a parameter normalised, or a request refused on grounds that depend on what it asked for.
+
+| | |
+|---|---|
+| Code | `extension/<name>/classes/<name>requestfilter.php` |
+| Registered by | rest.ini [RequestFilters] Filters[] |
+| Contract | `Implements ezpRestRequestFilterInterface` |
+| Mechanism | handler |
+| Kernel | `kernel/private/rest/classes/interfaces/request_filter.php` |
+
+### REST result filter  
+*Tool:* `/setup/handlerextension/restresultfilter`
+
+Runs after the controller has worked out its answer and before it becomes json or xml. The result is still ordinary php here, so it can be added to or reshaped once for every format rather than in each renderer.
+
+| | |
+|---|---|
+| Code | `extension/<name>/classes/<name>resultfilter.php` |
+| Registered by | rest.ini [ResultFilters] Filters[] |
+| Contract | `Implements ezpRestResultFilterInterface` |
+| Mechanism | handler |
+| Kernel | `kernel/private/rest/classes/interfaces/result_filter.php` |
+
+### REST response filter  
+*Tool:* `/setup/handlerextension/restresponsefilter`
+
+The output filter of the REST layer: the last thing that happens before an answer leaves. A header on every response, a body wrapped, a content type changed, without touching a controller.
+
+| | |
+|---|---|
+| Code | `extension/<name>/classes/<name>responsefilter.php` |
+| Registered by | rest.ini [ResponseFilters] Filters[] |
+| Contract | `Implements ezpRestResponseFilterInterface` |
+| Mechanism | handler |
+| Kernel | `kernel/private/rest/classes/interfaces/response_filter.php` |
+
+### REST prefix filter  
+*No tool yet.*
+
+What decides where the api lives and which version of it a request asked for. The one that ships reads a regular expression; replacing it is how the api moves off /api/ or takes its version from somewhere other than the path.
+
+| | |
+|---|---|
+| Code | `extension/<name>/classes/<name>prefixfilter.php` |
+| Registered by | rest.ini [System] PrefixFilterClass |
+| Contract | `Extends ezpRestPrefixFilterInterface: parseVersionValue() and filter()` |
+| Mechanism | handler |
+| Kernel | `kernel/private/rest/classes/prefix_filter.php` |
 
 ### User login handler  
 *Tool:* `/setup/handlerextension/login`

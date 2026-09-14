@@ -2286,7 +2286,7 @@ e03c2aa19443976efb300d6226d8b71d  doc/bc/6.0/kickstartercli.md
 82e9ad363eeb8a1d0090ed20cf756a7e  doc/bc/6.0/phpunitv13.md
 593913f38a2dc56e3755f5c53f3315e1  doc/bc/6.0/phpunitv13forPHP841.md
 1f0fe8da97e4dc2830fed4619ac01ee0  doc/bc/6.0/preload.md
-4abb68298d49e7b9c8fab5feb2ee85a2  doc/bc/6.0/rad-extension-points.md
+44ff32d42760f87a9a20648a94329c7f  doc/bc/6.0/rad-extension-points.md
 a9889018c6fdb554766dafbd34041dec  doc/bc/6.0/rad-extension-surface.md
 02cab810b7ee149bb10c8ebb1d63d266  doc/bc/6.0/rad-security.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
@@ -12224,11 +12224,11 @@ dc12533d2431c1a7979c5246efa0496c  kernel/setup/expcronjobrunner.php
 0f0fe2f6269a6b9a44711ab935980ea2  kernel/setup/expdatatypewizard.php
 c94610a0583f4b2ed2a94e1bd8508cad  kernel/setup/expdesignextensionwizard.php
 4347b565e754e997d0231b86d3d53402  kernel/setup/expextensionwizard.php
-dfb48b553d8af23921f5e084f49d3177  kernel/setup/exphandlerwizard.php
+2e1459c37aba6f6d83347b71430eb335  kernel/setup/exphandlerwizard.php
 997a53f118e80d664aef085a274a078a  kernel/setup/expmoduleextensionwizard.php
 8b7bfe89f10c792f60d94aaf34df524a  kernel/setup/expmodulewizard.php
 4ce3d1f6fbb5288f690fa0caae27a406  kernel/setup/exppreloadrunner.php
-0ee157c1259dcb8fd98da3982e50ec8d  kernel/setup/expradcatalogue.php
+827e1745aa35c8d8724fb791b3c284c3  kernel/setup/expradcatalogue.php
 2f8d321e8cc7bba2b115ed2047e3e658  kernel/setup/expradsurvey.php
 4a99346606f473f682f6328e5e6950fa  kernel/setup/expsettingsextensionwizard.php
 31f82634133388e1a9a5c3ab12d50eb0  kernel/setup/expstaticcacherunner.php

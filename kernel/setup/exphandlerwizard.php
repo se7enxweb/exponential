@@ -581,6 +581,189 @@ class expHandlerWizard extends expExtensionWizard
                        'returns' => "''",
                        'what' => 'Which template draws the attribute as a whole.' ) ) ),
 
+        'urlfilter' => array(
+            'title'    => 'URL alias filter',
+            'what'     => 'Runs over every url this system generates, before it is stored, and may rewrite it.',
+            'why'      => 'This is the nearest thing here to an output filter over addresses: every url alias, for every object, in every language, passes through it as it is made. It is how a prefix is added, a word is stripped, or a house rule about what a url may contain is enforced in one place rather than in every template that links.',
+            'base'     => 'eZURLAliasFilter',
+            'source'   => 'kernel/classes/ezurlaliasfilter.php',
+            'ini'      => 'site.ini',
+            'section'  => 'URLTranslator',
+            'variable' => 'FilterClasses',
+            'aliased'  => false,
+            'appended' => true,
+            'appendClass' => true,
+            'suffix'   => 'urlfilter',
+            'note'     => 'Filters run in the order they are listed, each given what the last returned. The url is stored as the last one leaves it, so changing a filter does not change the urls already made - those need bin/php/updateniceurls.php.',
+            'methods'  => array(
+                array( 'name' => 'process', 'signature' => 'process( $text, &$languageObject, &$caller )',
+                       'returns' => '$text',
+                       'what' => 'The url as it stands, and the url as it should be stored. Returning $text unchanged is a filter that does nothing, which is what this does until it is written. Returning an empty string is not: an object with no url alias is unreachable by name.' ) ) ),
+
+        'publishfilter' => array(
+            'title'    => 'Asynchronous publishing filter',
+            'what'     => 'Decides whether a version is published in the request or handed to the queue.',
+            'why'      => 'Publishing a large object blocks whoever pressed the button. Handing it to the queue does not, but a queue that takes everything makes the site feel wrong for small edits. A filter of your own is where that line gets drawn - by size, by class, by who is editing, by time of day.',
+            'base'     => 'ezpAsynchronousPublishingFilterInterface',
+            'source'   => 'kernel/private/interfaces/asynchronouspublishingfilter.php',
+            'ini'      => 'content.ini',
+            'section'  => 'PublishingSettings',
+            'variable' => 'AsynchronousPublishingFilters',
+            'aliased'  => false,
+            'appended' => true,
+            'appendClass' => true,
+            'interface' => true,
+            'suffix'   => 'publishfilter',
+            'note'     => 'Every filter has to accept before a version goes to the queue: one refusal is enough to publish it in the request. That way round on purpose - the safe answer is the one that happens now.',
+            'constructor' => array(
+                'what' => 'The version being published. Everything this filter decides on is reached through it.',
+                'parameters' => '$version',
+                'body' => array( '$this->version = $version;' ) ),
+            'properties' => array(
+                array( 'name' => 'version', 'what' => 'The eZContentObjectVersion this is deciding about.' ) ),
+            'methods'  => array(
+                array( 'name' => 'accept', 'signature' => 'accept()',
+                       'returns' => 'true',
+                       'what' => 'Whether this version may go to the queue. True is the same answer the system gives with no filter at all, so this changes nothing until it is written. False publishes it here and now, which is slower and always correct.' ) ) ),
+
+        'mobilefilter' => array(
+            'title'    => 'Mobile device filter',
+            'what'     => 'Decides whether a request came from a phone, and what to do about it.',
+            'why'      => 'The one that ships matches user agents against a list of patterns, which ages badly. A filter of your own can use a header a proxy sets, a hint the browser gives, or anything else that is actually reliable - and decide whether to redirect or simply to say so and let the templates differ.',
+            'base'     => 'ezpMobileDeviceDetectFilterInterface',
+            'source'   => 'kernel/private/classes/ezpmobiledevicedetectfilterinterface.php',
+            'ini'      => 'site.ini',
+            'section'  => 'SiteAccessSettings',
+            'variable' => 'MobileDeviceFilterClass',
+            'aliased'  => false,
+            'interface' => true,
+            'suffix'   => 'mobilefilter',
+            'note'     => 'This runs before the siteaccess is settled and on every request, cached or not. Anything slow here is paid for by every visitor, and anything that varies the answer without varying the cache key serves the wrong page to somebody.',
+            'methods'  => array(
+                array( 'name' => 'process', 'signature' => 'process()',
+                       'returns' => 'null',
+                       'what' => 'Called first. Work out what this is and remember it; the three below are asked afterwards and should not repeat the work.' ),
+                array( 'name' => 'isMobileDevice', 'signature' => 'isMobileDevice()',
+                       'returns' => 'false',
+                       'what' => 'Whether this is a phone. False is what a site with no filter answers, so nothing changes until this is written.' ),
+                array( 'name' => 'getUserAgentAlias', 'signature' => 'getUserAgentAlias()',
+                       'returns' => "''",
+                       'what' => 'A short word for the kind of device, matched against the alias list in the settings. It is part of the cache key, so two devices that should see different pages must not share a word.' ),
+                array( 'name' => 'redirect', 'signature' => 'redirect()',
+                       'returns' => 'null',
+                       'what' => 'Send the visitor somewhere else, if that is the answer. Doing nothing here keeps them where they are and lets the templates differ instead, which is usually the better of the two.' ) ) ),
+
+        'restprerouting' => array(
+            'title'    => 'REST pre routing filter',
+            'what'     => 'Runs before the REST routes are even built.',
+            'why'      => 'The earliest place there is to see a REST request. Nothing has been matched and no controller has been chosen, so this is where a request is rewritten, refused, or sent somewhere else entirely before anything has committed to answering it.',
+            'base'     => 'ezpRestPreRoutingFilterInterface',
+            'source'   => 'kernel/private/rest/classes/interfaces/prerouting_filter.php',
+            'ini'      => 'rest.ini',
+            'section'  => 'PreRoutingFilters',
+            'variable' => 'Filters',
+            'aliased'  => false,
+            'appended' => true,
+            'appendClass' => true,
+            'interface' => true,
+            'suffix'   => 'preroutingfilter',
+            'note'     => 'Filters run in the order they are listed. This one runs before authentication as well as before routing, so anything it decides is decided about a caller nobody has identified yet.',
+            'constructor' => array(
+                'what' => 'The request, before anything has looked at it.',
+                'parameters' => '$request',
+                'body' => array( '$this->request = $request;' ) ),
+            'properties' => array(
+                array( 'name' => 'request', 'what' => 'The ezcMvcRequest as it arrived.' ) ),
+            'methods'  => array(
+                array( 'name' => 'filter', 'signature' => 'filter()',
+                       'returns' => 'null',
+                       'what' => 'Do whatever is to be done. The request is held on this object and may be changed in place; returning nothing lets it carry on exactly as it was.' ) ) ),
+
+        'restrequestfilter' => array(
+            'title'    => 'REST request filter',
+            'what'     => 'Runs once the request object is built and the route is known.',
+            'why'      => 'Later than the pre routing filter and better informed: the route has been matched, so this knows which controller is about to answer. Where a header is read, a parameter is normalised, or a request is turned away on grounds that depend on what it asked for.',
+            'base'     => 'ezpRestRequestFilterInterface',
+            'source'   => 'kernel/private/rest/classes/interfaces/request_filter.php',
+            'ini'      => 'rest.ini',
+            'section'  => 'RequestFilters',
+            'variable' => 'Filters',
+            'aliased'  => false,
+            'appended' => true,
+            'appendClass' => true,
+            'interface' => true,
+            'suffix'   => 'requestfilter',
+            'note'     => 'The request object is shared. Changing it here changes what the controller is given, which is the point - and also why two filters that both rewrite the same thing are worth thinking about.',
+            'constructor' => array(
+                'what' => 'The route that matched and the request that matched it.',
+                'parameters' => '$routeInfo, $request',
+                'body' => array( '$this->routeInfo = $routeInfo;', '$this->request = $request;' ) ),
+            'properties' => array(
+                array( 'name' => 'routeInfo', 'what' => 'Which controller and action the request matched.' ),
+                array( 'name' => 'request', 'what' => 'The ezcMvcRequest, which may be changed in place.' ) ),
+            'methods'  => array(
+                array( 'name' => 'filter', 'signature' => 'filter()',
+                       'returns' => 'null',
+                       'what' => 'Change the request, or let it be. Nothing has answered yet.' ) ) ),
+
+        'restresultfilter' => array(
+            'title'    => 'REST result filter',
+            'what'     => 'Runs after the controller has worked out its answer, before it is turned into a response.',
+            'why'      => 'The result is still data at this point rather than json or xml, so this is the place to add to it, take something out of it, or reshape it - once, for every format, rather than in each renderer.',
+            'base'     => 'ezpRestResultFilterInterface',
+            'source'   => 'kernel/private/rest/classes/interfaces/result_filter.php',
+            'ini'      => 'rest.ini',
+            'section'  => 'ResultFilters',
+            'variable' => 'Filters',
+            'aliased'  => false,
+            'appended' => true,
+            'appendClass' => true,
+            'interface' => true,
+            'suffix'   => 'resultfilter',
+            'note'     => 'Whatever is added here is serialised and sent. Anything that should not leave the building must not be put on the result, however convenient it is to have it there.',
+            'constructor' => array(
+                'what' => 'The route, the request, and what the controller decided.',
+                'parameters' => '$routeInfo, $request, $result',
+                'body' => array( '$this->routeInfo = $routeInfo;', '$this->request = $request;', '$this->result = $result;' ) ),
+            'properties' => array(
+                array( 'name' => 'routeInfo', 'what' => 'Which controller and action answered.' ),
+                array( 'name' => 'request', 'what' => 'What was asked.' ),
+                array( 'name' => 'result', 'what' => 'The ezpRestMvcResult, still data rather than a format.' ) ),
+            'methods'  => array(
+                array( 'name' => 'filter', 'signature' => 'filter()',
+                       'returns' => 'null',
+                       'what' => 'Change the result in place. It has not been serialised yet, so this is the last point at which it is still ordinary php.' ) ) ),
+
+        'restresponsefilter' => array(
+            'title'    => 'REST response filter',
+            'what'     => 'Runs on the finished response, after the view has generated it.',
+            'why'      => 'The last thing that happens before a REST answer leaves. This is the output filter of the REST layer: a header added to every answer, a body wrapped, a content type changed, without touching a single controller.',
+            'base'     => 'ezpRestResponseFilterInterface',
+            'source'   => 'kernel/private/rest/classes/interfaces/response_filter.php',
+            'ini'      => 'rest.ini',
+            'section'  => 'ResponseFilters',
+            'variable' => 'Filters',
+            'aliased'  => false,
+            'appended' => true,
+            'appendClass' => true,
+            'interface' => true,
+            'suffix'   => 'responsefilter',
+            'note'     => 'Everything has been decided by the time this runs, including the status. Changing the body without changing the headers that describe it - the length, the type - is how a response becomes one nothing can read.',
+            'constructor' => array(
+                'what' => 'Everything: the route, the request, the result and the response built from it.',
+                'parameters' => '$routeInfo, $request, $result, $response',
+                'body' => array( '$this->routeInfo = $routeInfo;', '$this->request = $request;',
+                                 '$this->result = $result;', '$this->response = $response;' ) ),
+            'properties' => array(
+                array( 'name' => 'routeInfo', 'what' => 'Which controller and action answered.' ),
+                array( 'name' => 'request', 'what' => 'What was asked.' ),
+                array( 'name' => 'result', 'what' => 'What the controller decided.' ),
+                array( 'name' => 'response', 'what' => 'The ezcMvcResponse about to be sent, which may be changed in place.' ) ),
+            'methods'  => array(
+                array( 'name' => 'filter', 'signature' => 'filter()',
+                       'returns' => 'null',
+                       'what' => 'The last word on what is sent. Change the response in place; nothing looks at what this returns.' ) ) ),
+
         'login' => array(
             'title'    => 'User login handler',
             'what'     => 'Where the system goes to find out whether a password is right.',
@@ -1076,7 +1259,9 @@ class expHandlerWizard extends expExtensionWizard
             $problems[] = 'The class needs a name: letters and digits, starting with a letter.';
 
         if ( $recipe !== false
-             && ( $recipe['aliased'] || !empty( $recipe['appended'] ) || !empty( $recipe['namesAlias'] ) )
+             && ( $recipe['aliased']
+                  || ( !empty( $recipe['appended'] ) && empty( $recipe['appendClass'] ) )
+                  || !empty( $recipe['namesAlias'] ) )
              && $settings['alias'] === '' )
             $problems[] = 'This kind of handler is named by an alias, and the alias is empty.';
 
@@ -1229,6 +1414,20 @@ class expHandlerWizard extends expExtensionWizard
             }
         }
 
+        // What the constructor was handed, kept for the methods that follow.
+        // These filters are built with everything they need and then asked one
+        // question, so the arguments have to live somewhere between the two.
+        if ( !empty( $recipe['properties'] ) )
+        {
+            foreach ( $recipe['properties'] as $property )
+            {
+                $php .= "    /**\n";
+                $php .= "     * " . wordwrap( $property['what'], 70, "\n     * " ) . "\n";
+                $php .= "     */\n";
+                $php .= "    protected \$" . $property['name'] . ";\n\n";
+            }
+        }
+
         $methods = array();
 
         // Some bases are built by the kernel with no arguments and have to tell
@@ -1360,6 +1559,16 @@ class expHandlerWizard extends expExtensionWizard
             $ini .= "# of: " . self::classPath( $settings, $recipe ) . ",\n";
             $ini .= "# holding class " . $settings['class'] . ".\n";
             $ini .= $recipe['variable'] . "=" . $settings['alias'] . "\n";
+        }
+        elseif ( !empty( $recipe['appendClass'] ) )
+        {
+            // An appended array of class names. The kernel does new $value on
+            // each in turn, so the class goes here and there is no alias in it
+            // anywhere - which is worth saying, because the sections beside
+            // this one in the same file do take aliases.
+            $ini .= "# One more entry in the list the kernel walks, and it is the class\n";
+            $ini .= "# itself: each is built with new, in the order they are listed here.\n";
+            $ini .= $recipe['variable'] . "[]=" . $settings['class'] . "\n";
         }
         elseif ( !empty( $recipe['appended'] ) )
         {
@@ -2139,6 +2348,134 @@ class expHandlerWizard extends expExtensionWizard
                            'code'  => "// site.ini [UserSettings]\n"
                                     . "// LoginHandler[]=standard\n"
                                     . "// LoginHandler[]=" . $settings['alias'] ) );
+
+            case 'urlfilter':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'Every filter listed is built and run in turn, each handed what the last returned, whenever a url alias is made.',
+                           'code'  => "// kernel/classes/ezurlaliasfilter.php\n"
+                                    . "\$text = eZURLAliasFilter::processFilters( \$text, \$languageObject, \$caller );" ),
+                    array( 'title' => 'Trying it alone',
+                           'what'  => 'No database and no content needed: it takes a string and gives one back.',
+                           'code'  => "\$filter = new " . $class . "();\n\n"
+                                    . "echo \$filter->process( 'My Article Name', \$language, \$caller );" ),
+                    array( 'title' => 'The one rule', 'in' => 'class',
+                           'what'  => 'Give back a url. An empty string is not a url: an object whose alias is empty cannot be reached by name at all, and the only way back is to regenerate every alias on the site.',
+                           'code'  => "public function process( \$text, &\$languageObject, &\$caller )\n"
+                                    . "{\n"
+                                    . "    \$filtered = \$this->myRule( \$text );\n\n"
+                                    . "    // Never return nothing. If the rule emptied it, the original\n"
+                                    . "    // was better than what came out.\n"
+                                    . "    return \$filtered !== '' ? \$filtered : \$text;\n"
+                                    . "}" ),
+                    array( 'title' => 'Changing it later',
+                           'what'  => 'A filter only runs when an alias is made. Existing urls were stored as the old filter left them and stay that way.',
+                           'code'  => "// php bin/php/updateniceurls.php -s <siteaccess>" ) );
+
+            case 'publishfilter':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'Every filter is asked, and one refusal is enough to publish the version in this request rather than in the queue.',
+                           'code'  => "// kernel/classes/ezcontentoperationcollection.php\n"
+                                    . "foreach ( \$filters as \$filterClass )\n"
+                                    . "{\n"
+                                    . "    \$filter = new \$filterClass( \$version );\n\n"
+                                    . "    if ( !\$filter->accept() )\n"
+                                    . "    {\n"
+                                    . "        // One refusal is enough: published here and now instead.\n"
+                                    . "        break;\n"
+                                    . "    }\n"
+                                    . "}" ),
+                    array( 'title' => 'Trying it alone',
+                           'what'  => 'It takes a version and answers a boolean, so a test needs one object and nothing else.',
+                           'code'  => "\$version = eZContentObject::fetch( 42 )->currentVersion();\n"
+                                    . "\$filter  = new " . $class . "( \$version );\n\n"
+                                    . "var_dump( \$filter->accept() );" ),
+                    array( 'title' => 'Drawing the line', 'in' => 'class',
+                           'what'  => 'The queue is for work that would keep somebody waiting. Small edits are better published now, because the queue has a delay of its own and an editor who cannot see their change assumes it did not save.',
+                           'code'  => "public function accept()\n"
+                                    . "{\n"
+                                    . "    \$object = \$this->version->attribute( 'contentobject' );\n\n"
+                                    . "    // Only the ones big enough to be worth the wait.\n"
+                                    . "    return \$object->attribute( 'class_identifier' ) === 'big_thing';\n"
+                                    . "}" ),
+                    array( 'title' => 'And the queue has to be running',
+                           'what'  => 'Nothing publishes itself. A version accepted into the queue sits there until the cronjob takes it.',
+                           'code'  => "// php runcronjobs.php -s <siteaccess> asynchronouspublishing" ) );
+
+            case 'mobilefilter':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'Built and run before the siteaccess is settled, on every request. process() first, then the three questions.',
+                           'code'  => "\$filter = new " . $class . "();\n"
+                                    . "\$filter->process();\n\n"
+                                    . "if ( \$filter->isMobileDevice() )\n"
+                                    . "    \$alias = \$filter->getUserAgentAlias();" ),
+                    array( 'title' => 'Work once, answer three times', 'in' => 'class',
+                           'what'  => 'This runs on every request including cached ones, so the work belongs in process() and the three answers should be free.',
+                           'code'  => "public function process()\n"
+                                    . "{\n"
+                                    . "    // A header a proxy set is worth more than a user agent string,\n"
+                                    . "    // which is a guess about a guess.\n"
+                                    . "    \$this->mobile = isset( \$_SERVER['HTTP_X_DEVICE'] )\n"
+                                    . "                    && \$_SERVER['HTTP_X_DEVICE'] === 'mobile';\n"
+                                    . "}\n\n"
+                                    . "public function isMobileDevice()\n"
+                                    . "{\n"
+                                    . "    return \$this->mobile;\n"
+                                    . "}" ),
+                    array( 'title' => 'The part that goes wrong',
+                           'what'  => 'The alias is part of the cache key. Two devices that must see different pages and share a word will be served each other\'s, once, and then for as long as the cache lives.',
+                           'code'  => "// site.ini [SiteAccessSettings]\n"
+                                    . "// MobileDeviceFilterClass=" . $class . "\n"
+                                    . "// MobileDeviceUserAgentAliasList[]=mobile;phone\n"
+                                    . "// MobileDeviceUserAgentAliasList[]=tablet;pad" ) );
+
+            case 'restprerouting':
+            case 'restrequestfilter':
+            case 'restresultfilter':
+            case 'restresponsefilter':
+                $stage = array(
+                    'restprerouting'     => array( 'when' => 'before the routes are built',
+                                                   'has'  => 'nothing but the request',
+                                                   'holds'=> '$this->request' ),
+                    'restrequestfilter'  => array( 'when' => 'once the route is known',
+                                                   'has'  => 'the route and the request',
+                                                   'holds'=> '$this->request' ),
+                    'restresultfilter'   => array( 'when' => 'once the controller has answered',
+                                                   'has'  => 'the result, still as data',
+                                                   'holds'=> '$this->result' ),
+                    'restresponsefilter' => array( 'when' => 'once the response is built',
+                                                   'has'  => 'everything, including the finished response',
+                                                   'holds'=> '$this->response' ) );
+
+                $at = $stage[$settings['kind']];
+
+                return array(
+                    array( 'title' => 'Where this sits',
+                           'what'  => 'The REST layer runs four sets of filters, in this order. Each is a different amount of knowledge about what is happening.',
+                           'code'  => "//  1  PreRoutingFilters   before the routes are built\n"
+                                    . "//  2  RequestFilters      once the route is known\n"
+                                    . "//  3  ResultFilters       once the controller has answered\n"
+                                    . "//  4  ResponseFilters     once the response is built\n"
+                                    . "//\n"
+                                    . "// This one runs " . $at['when'] . ", and is given " . $at['has'] . "." ),
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'Each filter named in its section is built with what is known at that point and asked once.',
+                           'code'  => "\$filter = new " . $class . "( /* what the constructor takes */ );\n"
+                                    . "\$filter->filter();" ),
+                    array( 'title' => 'Changing things in place', 'in' => 'class',
+                           'what'  => 'Nothing reads what filter() returns. What it changes on the object it was given is the whole of its effect.',
+                           'code'  => "public function filter()\n"
+                                    . "{\n"
+                                    . "    // " . $at['holds'] . " is what this stage can change.\n"
+                                    . "    // Not written yet; leaving it alone is a filter that does\n"
+                                    . "    // nothing, which is what this is until it is.\n"
+                                    . "}" ),
+                    array( 'title' => 'Switching it on',
+                           'what'  => 'Filters run in the order they are listed, so a filter that depends on another goes after it.',
+                           'code'  => "// rest.ini [" . $recipe['section'] . "]\n"
+                                    . "// Filters[]=" . $class ) );
         }
 
         return array();
