@@ -265,7 +265,7 @@ class expRADCatalogue
             'contract' => '$Module, $ViewList and $FunctionList',
             'mechanism' => 'directory',
             'source' => 'lib/ezutils/classes/ezmodule.php',
-            'tool'  => false ),
+            'tool'  => 'setup/modulewizard' ),
 
         'view' => array(
             'group' => 'modules',
@@ -276,7 +276,7 @@ class expRADCatalogue
             'contract' => 'A script setting $Result',
             'mechanism' => 'file',
             'source' => 'lib/ezutils/classes/ezmodule.php',
-            'tool'  => false ),
+            'tool'  => 'setup/modulewizard' ),
 
         'policy' => array(
             'group' => 'modules',
@@ -287,7 +287,7 @@ class expRADCatalogue
             'contract' => 'Names, and a limitation description per function',
             'mechanism' => 'file',
             'source' => 'kernel/classes/ezrole.php',
-            'tool'  => false ),
+            'tool'  => 'setup/modulewizard' ),
 
         'restprovider' => array(
             'group' => 'modules',

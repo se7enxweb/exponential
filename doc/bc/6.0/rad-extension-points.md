@@ -12,7 +12,7 @@ knowledge was spread across `kernel/`, `lib/` and a dozen settings files.
 from it. A point with a tool and a point without are listed the same way, so
 neither can be forgotten.
 
-**48 extension points, 45 with a tool.**
+**48 extension points, 48 with a tool.**
 
 Every entry was checked against this installation's own source; the *Kernel*
 column names the file the mechanism actually lives in.
@@ -234,7 +234,7 @@ Administration and a template API for tables that already exist, here or on anot
 | Kernel | `kernel/classes/ezpersistentobject.php` |
 
 ### Module  
-*No tool yet.*
+*Tool:* `/setup/modulewizard`
 
 A new address the site answers on, with its own views and its own policies.
 
@@ -247,7 +247,7 @@ A new address the site answers on, with its own views and its own policies.
 | Kernel | `lib/ezutils/classes/ezmodule.php` |
 
 ### View for an existing module  
-*No tool yet.*
+*Tool:* `/setup/modulewizard`
 
 One more thing an existing module can be asked to do.
 
@@ -260,7 +260,7 @@ One more thing an existing module can be asked to do.
 | Kernel | `lib/ezutils/classes/ezmodule.php` |
 
 ### Policy function and limitation  
-*No tool yet.*
+*Tool:* `/setup/modulewizard`
 
 A thing a role can be granted, and what it can be narrowed by.
 

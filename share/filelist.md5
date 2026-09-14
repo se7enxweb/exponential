@@ -511,6 +511,7 @@ fc3da246e798dc46db130b5e72764902  design/admin/templates/setup/extensions.tpl
 9a1144de0b4042a411f4374ddf2d6050  design/admin/templates/setup/handlerextension.tpl
 855efa53d457a7582a574011ed79a36f  design/admin/templates/setup/info.tpl
 7f9d1052a5207dc44c8791f26b779c3c  design/admin/templates/setup/moduleextension.tpl
+377b53b0f333488da73e7236059512a4  design/admin/templates/setup/modulewizard.tpl
 90c785118b3bb69bbcac45a6f74a2df4  design/admin/templates/setup/preload.tpl
 77d5784c529f92b24eef559b269adaf1  design/admin/templates/setup/quick_settings.tpl
 0d159ce4f4cc9dac5b518380a12f500d  design/admin/templates/setup/rad.tpl
@@ -2076,6 +2077,7 @@ f3cecb8bd938e6e93d2dedbcc7b98d32  design/standard/templates/setup/init/system_fi
 984c51be59e3516e1b15e023a15a7793  design/standard/templates/setup/init/welcome.tpl
 2e7667e9c5ff829fc723edebee81657a  design/standard/templates/setup/init/welcome_help.tpl
 228f465a0003026def8a49e3990027f0  design/standard/templates/setup/menuconfig.tpl
+eeadb90710a1bd3e1d646a197849e64c  design/standard/templates/setup/modulewizard.tpl
 ef3d758fe8d4b6fc0a63c763ff5d6001  design/standard/templates/setup/page_copyright.tpl
 bd6e09375a4ba8fb7f56980818d622be  design/standard/templates/setup/persistence.tpl
 0612b56c79eebd0c2c1bd5331ef02dd9  design/standard/templates/setup/progress_bar.tpl
@@ -2284,8 +2286,8 @@ e03c2aa19443976efb300d6226d8b71d  doc/bc/6.0/kickstartercli.md
 82e9ad363eeb8a1d0090ed20cf756a7e  doc/bc/6.0/phpunitv13.md
 593913f38a2dc56e3755f5c53f3315e1  doc/bc/6.0/phpunitv13forPHP841.md
 1f0fe8da97e4dc2830fed4619ac01ee0  doc/bc/6.0/preload.md
-c4fc9fd339a44c87122f4739b40b0ecc  doc/bc/6.0/rad-extension-points.md
-0b07cc377ada49dc1dd353b2861d6009  doc/bc/6.0/rad-extension-surface.md
+7b66ba845be8a6db32cab3f3210493a7  doc/bc/6.0/rad-extension-points.md
+b3a2618850e1bdedca754b45e22ac901  doc/bc/6.0/rad-extension-surface.md
 02cab810b7ee149bb10c8ebb1d63d266  doc/bc/6.0/rad-security.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
 adac5192811bf518d52266dd4a6b0e72  doc/branch-overview
@@ -12223,8 +12225,9 @@ c94610a0583f4b2ed2a94e1bd8508cad  kernel/setup/expdesignextensionwizard.php
 4347b565e754e997d0231b86d3d53402  kernel/setup/expextensionwizard.php
 dfb48b553d8af23921f5e084f49d3177  kernel/setup/exphandlerwizard.php
 997a53f118e80d664aef085a274a078a  kernel/setup/expmoduleextensionwizard.php
+8b7bfe89f10c792f60d94aaf34df524a  kernel/setup/expmodulewizard.php
 4ce3d1f6fbb5288f690fa0caae27a406  kernel/setup/exppreloadrunner.php
-449b98ed2166d57a14592e269ad7c0a5  kernel/setup/expradcatalogue.php
+772cc5e124f7c78a316cceb8deba4c0e  kernel/setup/expradcatalogue.php
 c105381f219470e6960fe2be6523f08d  kernel/setup/expradsurvey.php
 c7207d2519c5df2683b570c8fdc2fe22  kernel/setup/expsettingsextensionwizard.php
 31f82634133388e1a9a5c3ab12d50eb0  kernel/setup/expstaticcacherunner.php
@@ -12240,8 +12243,9 @@ b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
 004141a5f38e662b67e4b8f8408a9900  kernel/setup/handlerextension.php
 3135f4cefe2acd041cfc3fe6e5ee3879  kernel/setup/info.php
 18ecee0d07126e49f164552b002eaf7e  kernel/setup/menuconfig.php
-bfffc6c81b5b39f7667f767907cfd5d2  kernel/setup/module.php
+8e45acfd5e411fb8e448bc2669396913  kernel/setup/module.php
 814782eb26cbb236f91c42ecbe7ff7b2  kernel/setup/moduleextension.php
+24983240c441790c403f6eb4b03822c6  kernel/setup/modulewizard.php
 846edf76592a6173514e0b302ea5274b  kernel/setup/preload.php
 532ddefd251ca7a4047dd13962ed3fc5  kernel/setup/preloadstream.php
 abf5f51b260a722c6259ebea3bc30ef7  kernel/setup/rad.php

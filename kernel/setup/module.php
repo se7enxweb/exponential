@@ -114,6 +114,13 @@ $ViewList["contentextension"] = array(
     "default_navigation_part" => 'ezsetupnavigationpart',
     "params" => array( ) );
 
+$ViewList["modulewizard"] = array(
+    'functions' => array( 'setup' ),
+    "script" => "modulewizard.php",
+    'ui_context' => 'administration',
+    "default_navigation_part" => 'ezsetupnavigationpart',
+    "params" => array( ) );
+
 $ViewList["designextension"] = array(
     'functions' => array( 'setup' ),
     "script" => "designextension.php",
