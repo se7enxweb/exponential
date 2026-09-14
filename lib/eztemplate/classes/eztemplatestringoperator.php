@@ -400,6 +400,15 @@ class eZTemplateStringOperator
 
             case 'pdf':
             {
+                // Html entities are decoded first, before any directive is put
+                // in. Content stored as xml keeps its entities - &nbsp; between
+                // a quantity and its unit, &amp; in a title - and nothing
+                // downstream decoded them, so they were typeset literally: a
+                // recipe read "85g /&nbsp;3 ounces spinach" on the page. This
+                // has to happen before the callbacks below are inserted, or it
+                // would decode those as well.
+                $operatorValue = html_entity_decode( (string) $operatorValue, ENT_QUOTES, 'UTF-8' );
+
                 $operatorValue = str_replace( array( ' ', // use default callback functions in ezpdf library
                                                      "\r\n",
                                                      "\t" ),
