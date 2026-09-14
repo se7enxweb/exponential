@@ -316,6 +316,64 @@ class eZRSSImport extends eZPersistentObject
         return $retValue;
     }
 
+    /**
+     * Whether an address is one this server should be fetching.
+     *
+     * Only http and https, and only with a host in them. Everything else -
+     * file:, ftp:, gopher:, php://, a bare path - is refused: the fetch happens
+     * on the server, with whatever the server can reach, and a feed address is
+     * not a reason to go looking at the local disk.
+     *
+     * @param string $url
+     * @return bool
+     */
+    static function isFetchableURL( $url )
+    {
+        return self::fetchableURL( $url ) !== false;
+    }
+
+    /**
+     * The address to actually fetch, or false if it is not one to fetch.
+     *
+     * Returns the trimmed address rather than a yes or no, so the caller hands
+     * curl exactly the string that was checked. Checking one string and
+     * fetching another is how a trailing newline - harmless to the check -
+     * reaches a library that may treat it as the start of something else.
+     *
+     * @param mixed $url
+     * @return string|false
+     */
+    static function fetchableURL( $url )
+    {
+        if ( !is_string( $url ) )
+            return false;
+
+        // A null byte is refused before anything else, and wherever it sits.
+        // trim() would quietly remove one from the end, and a string that has
+        // been through a C library with a null in it is not the string anybody
+        // looked at.
+        if ( strpos( $url, "\0" ) !== false )
+            return false;
+
+        $url = trim( $url );
+        if ( $url === '' || strlen( $url ) > 2048 )
+            return false;
+
+        // No control characters or whitespace left inside: both are used to
+        // slip a scheme past a check that only looks at the beginning.
+        if ( preg_match( '/[\x00-\x20\x7F]/', $url ) )
+            return false;
+
+        $parts = @parse_url( $url );
+        if ( !is_array( $parts ) || !isset( $parts['scheme'], $parts['host'] ) )
+            return false;
+
+        if ( !in_array( strtolower( $parts['scheme'] ), array( 'http', 'https' ), true ) )
+            return false;
+
+        return trim( $parts['host'] ) !== '' ? $url : false;
+    }
+
     /*!
      \static
      Analize RSS import, and get RSS version number
@@ -326,17 +384,38 @@ class eZRSSImport extends eZPersistentObject
     */
     static function getRSSVersion( $url )
     {
+        // The address is typed into the admin interface and then fetched by the
+        // server, so it has to be an address the server should be fetching. curl
+        // will happily open file://, and follows redirects into whatever they
+        // point at, which turns a feed address into a way of reading the disk.
+        $url = self::fetchableURL( $url );
+        if ( $url === false )
+        {
+            eZDebug::writeError( 'Refusing to fetch a feed from an address that is not http or https', __METHOD__ );
+            return false;
+        }
+
         $xmlData = eZHTTPTool::getDataByURL( $url );
 
-        if ( $xmlData === false )
+        if ( $xmlData === false || !is_string( $xmlData ) || trim( $xmlData ) === '' )
             return false;
 
         // Create DomDocument from http data
-
+        //
+        // The document comes from somewhere else, so it is parsed with external
+        // entities refused and the network switched off: a feed that declares a
+        // DTD pointing at a local file must not be able to read that file, and
+        // must not be able to make this server fetch anything on its behalf.
         $domDocument = new DOMDocument( '1.0', 'utf-8' );
-        $success = $domDocument->loadXML( $xmlData );
+        $domDocument->resolveExternals = false;
+        $domDocument->substituteEntities = false;
 
-        if ( !$success )
+        $previousErrors = libxml_use_internal_errors( true );
+        $success = $domDocument->loadXML( $xmlData, LIBXML_NONET );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $previousErrors );
+
+        if ( !$success || !$domDocument->documentElement instanceof DOMElement )
         {
             return false;
         }

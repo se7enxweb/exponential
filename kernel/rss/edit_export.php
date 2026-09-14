@@ -260,7 +260,10 @@ $opmlBrowserPager  = null;
 $opmlBrowserList   = array();
 $opmlSelected      = array();
 
-if ( $isOPML && is_numeric( $rssExportID ) )
+// The draft can go between one request and the next: a timeout collects it, or
+// somebody removes the export from another window. Nothing below is worth doing
+// without it, and every line of it would be working on a null.
+if ( $isOPML && is_numeric( $rssExportID ) && $rssExport instanceof eZRSSExport )
 {
     // Anything that moves the browser, or changes the outlines, saves what is
     // on the page first - otherwise paging the browser would throw away an
@@ -280,7 +283,12 @@ if ( $isOPML && is_numeric( $rssExportID ) )
     if ( $touched && $http->hasPostVariable( 'RSSExport_ID' ) )
     {
         eZRSSEditFunction::storeRSSExport( $Module, $http );
-        $rssExport = eZRSSExport::fetch( $rssExportID, true, eZRSSExport::STATUS_DRAFT );
+
+        // Storing can take the draft up again from the published row, so read
+        // it back rather than carrying on with the copy from before.
+        $reread = eZRSSExport::fetch( $rssExportID, true, eZRSSExport::STATUS_DRAFT );
+        if ( $reread instanceof eZRSSExport )
+            $rssExport = $reread;
     }
 
     // Feeds ticked in the browser join the document.
@@ -407,7 +415,15 @@ $numberOfObjectsDefault = $config->variable( 'RSSSettings', 'NumberOfObjectsDefa
 // Get Classes and class attributes
 $classArray = eZContentClass::fetchList();
 
-$tpl->setVariable( 'rss_version_array', $rssVersionArray );
+// The drop-down shows what each format is called; the value behind each option
+// stays the stored one, so nothing that reads or writes rss_version changes.
+$rssVersionOptions = array();
+foreach ( (array) $rssVersionArray as $rssVersionItem )
+    $rssVersionOptions[] = array( 'value' => $rssVersionItem,
+                                  'label' => eZRSSExport::formatLabel( $rssVersionItem ) );
+
+$tpl->setVariable( 'rss_version_array', $rssVersionArray );   // kept for older override templates
+$tpl->setVariable( 'rss_version_options', $rssVersionOptions );
 $tpl->setVariable( 'rss_version_default', $rssDefaultVersion );
 $tpl->setVariable( 'number_of_objects_array', $numberOfObjectsArray );
 $tpl->setVariable( 'number_of_objects_default', $numberOfObjectsDefault );
@@ -416,7 +432,9 @@ $tpl->setVariable( 'rss_class_array', $classArray );
 
 // What the OPML half of the page draws itself from.
 $tpl->setVariable( 'rss_is_opml', $isOPML );
-$tpl->setVariable( 'opml_head', $rssExport->opmlHead() );
+$tpl->setVariable( 'opml_head', $rssExport instanceof eZRSSExport
+                                ? $rssExport->opmlHead()
+                                : eZRSSExport::create( 0 )->opmlHead() );
 $opmlItems = $isOPML && is_numeric( $rssExportID )
              ? eZRSSExportOPMLItem::fetchList( $rssExportID, eZRSSExport::STATUS_DRAFT )
              : array();

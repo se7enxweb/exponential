@@ -102,20 +102,22 @@ table.list th.sorted button.sort-button { font-weight: 700; }
     {/if}
 
     <div class="block">
-    <label class="inline" for="rssExportVersion">{'RSS version'|i18n( 'design/admin/rss/edit_export' )}:</label>
-    <select id="rssExportVersion" name="RSSVersion" title="{'Use this drop-down menu to select the RSS version to use for the export. You must select RSS 2.0 in order to export the image selected above.'|i18n('design/admin/rss/edit_export')}">
-    {foreach $rss_version_array as $rss_version_item}
+    <label class="inline" for="rssExportVersion">{'Feed format'|i18n( 'design/admin/rss/edit_export' )}:</label>
+    {* The value behind each option is the stored one - 1.0, 2.0, ATOM, OPML -
+       and only the wording in front of it says which format that is. *}
+    <select id="rssExportVersion" name="RSSVersion" title="{'Which format this export is written in. RSS and Atom are feeds of articles; OPML is a list of other feeds. Only RSS 2.0 carries the image selected above.'|i18n('design/admin/rss/edit_export')}">
+    {foreach $rss_version_options as $rss_version_option}
     <option
     {if eq( $rss_export.rss_version, '' )}
-      {if eq( $rss_version_item, $rss_version_default )}
+      {if eq( $rss_version_option.value, $rss_version_default )}
         selected="selected"
       {/if}
     {else}
-      {if eq( $rss_version_item, $rss_export.rss_version )}
+      {if eq( $rss_version_option.value, $rss_export.rss_version )}
         selected="selected"
       {/if}
     {/if}
-      value="{$rss_version_item}">{$rss_version_item|wash}</option>
+      value="{$rss_version_option.value|wash}">{$rss_version_option.label|wash}</option>
     {/foreach}
     </select>
     </div>

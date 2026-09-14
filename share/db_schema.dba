@@ -5802,7 +5802,7 @@ $schema = array (
       'opml_head' => 
       array (
         'type' => 'longtext',
-        'default' => NULL,
+        'default' => false,
       ),
       'active' => 
       array (

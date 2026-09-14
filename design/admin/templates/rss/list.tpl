@@ -18,18 +18,6 @@
 .rss-pagination-pages .current { background: #4a4a52; border-color: #4a4a52; color: #fff; font-weight: 700; }
 .rss-pagination-pages .disabled { color: #b0b0b6; border-color: #e6e6ea; }
 .rss-pagination-of { margin: .35rem 0 0 0 !important; color: #666; font-size: .9em; }
-.rss-pagesize {
-    display: flex; flex-wrap: wrap; align-items: center; gap: .4rem;
-    padding-bottom: .9rem; line-height: 1.9;
-}
-.rss-pagesize > span:first-child { padding-right: .2rem; }
-.rss-pagesize a,
-.rss-pagesize .current {
-    display: inline-block; padding: .15rem .5rem;
-    border: 1px solid #d5d5da; border-radius: 4px; text-decoration: none;
-}
-.rss-pagesize .current { background: #4a4a52; border-color: #4a4a52; color: #fff; font-weight: 700; }
-
 /* Sortable headings. The whole cell reacts, but the link inside it is what
    actually carries the address. */
 table.list th.sortable { cursor: pointer; white-space: nowrap; }
@@ -54,14 +42,19 @@ table.list td.rss-uri code {
 
 <h2 class="context-title">{'RSS exports (%exports_count)'|i18n( 'design/admin/rss/list',, hash( '%exports_count', $rssexport_count ) )}</h2>
 
-{* How many rows a page holds. Changing it starts both lists again from the
-   top, and is remembered for the next visit. *}
-<div class="rss-pagesize">
-    <span>{'Per page'|i18n( 'design/admin/rss/list' )}:</span>
-    {foreach $page_limit_links as $rss_limit}
-        {if $rss_limit.current}<span class="current">{$rss_limit.limit}</span>
-        {else}<a href={concat( '/rss/list', $rss_limit.suffix )|ezurl}>{$rss_limit.limit}</a>{/if}
-    {/foreach}
+{* How many rows a page holds. The same control, and the same markup, that
+   /section/list and the other admin lists use, so it is styled by the admin
+   stylesheet rather than by anything of its own. Changing it starts both lists
+   again from the top, and is remembered for the next visit. *}
+<div class="context-toolbar">
+<div class="button-left">
+<p class="table-preferences">
+{foreach $page_limit_links as $rss_limit}
+    {if $rss_limit.current}<span class="current">{$rss_limit.limit}</span>
+    {else}<a href={concat( '/rss/list', $rss_limit.suffix )|ezurl}>{$rss_limit.limit}</a>{/if}
+{/foreach}
+</p>
+</div>
 </div>
 
 

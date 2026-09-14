@@ -24,6 +24,44 @@
  */
 class eZRSSExportOPMLItem extends eZPersistentObject
 {
+    /**
+     * How many rows one press of a button may add or remove.
+     *
+     * The browser never offers more than its largest page, so anything beyond
+     * this did not come from the page. Refusing the excess keeps a hand made
+     * post from turning one click into ten thousand queries.
+     */
+    const MAX_BULK = 250;
+
+    /**
+     * The width of the text columns. Anything longer is cut here rather than by
+     * the database, which on a strict server refuses the row instead of
+     * trimming it, and the save would fail with nothing to show for it.
+     */
+    const MAX_TEXT = 255;
+
+    /**
+     * Shorter columns, kept in step with the schema.
+     */
+    const MAX_SHORT = 50;
+
+    /**
+     * How deep outlines may nest before the document stops going down.
+     *
+     * A chain longer than this is not a document anyone meant to write, and
+     * following it costs a stack frame a level.
+     */
+    const MAX_DEPTH = 20;
+
+    /**
+     * The address schemes an outline may point at.
+     *
+     * An OPML document is read by other people's software, which follows what
+     * it finds. javascript:, data: and file: addresses have no business in a
+     * subscription list, so they are dropped rather than written out.
+     */
+    const ALLOWED_SCHEMES = 'http,https';
+
     public $ID;
     public $RSSExportID;
     public $ParentID;
@@ -253,28 +291,52 @@ class eZRSSExportOPMLItem extends eZPersistentObject
      */
     static function addTargets( $exportId, array $targetIDs, $status = eZRSSExport::STATUS_DRAFT )
     {
+        $exportId = (int) $exportId;
         $already  = self::selectedTargetIDs( $exportId, $status );
+
+        // Whittle the list down before touching the database at all. Nothing
+        // that is not a number, nothing twice, never itself - an export listing
+        // itself is a loop for whatever reads it - and never more than a page
+        // full, because a longer list did not come from the page.
+        $wanted = array();
+        foreach ( $targetIDs as $targetID )
+        {
+            if ( !is_scalar( $targetID ) || !is_numeric( $targetID ) )
+                continue;
+
+            $targetID = (int) $targetID;
+            if ( $targetID <= 0 || $targetID === $exportId || isset( $already[$targetID] ) || isset( $wanted[$targetID] ) )
+                continue;
+
+            $wanted[$targetID] = $targetID;
+            if ( count( $wanted ) >= self::MAX_BULK )
+                break;
+        }
+
+        if ( !count( $wanted ) )
+            return 0;
+
+        // One query to find out which of them are real, rather than one each.
+        $db = eZDB::instance();
+        $rows = $db->arrayQuery( 'SELECT id FROM ezrss_export WHERE status=' . (int) eZRSSExport::STATUS_VALID
+                                 . ' AND id IN (' . implode( ',', $wanted ) . ')' );
+
+        $real = array();
+        foreach ( $rows as $row )
+            $real[] = (int) $row['id'];
+
+        if ( !count( $real ) )
+            return 0;
+
         $priority = self::nextPriority( $exportId, $status );
         $added    = 0;
 
-        $db = eZDB::instance();
         $db->begin();
-        foreach ( $targetIDs as $targetID )
+        foreach ( $real as $targetID )
         {
-            $targetID = (int) $targetID;
-
-            // Nothing that does not exist, nothing twice, and never itself:
-            // an OPML export listing itself is a loop for whatever reads it.
-            if ( $targetID <= 0 || $targetID == (int) $exportId || isset( $already[$targetID] ) )
-                continue;
-            if ( !eZRSSExport::fetch( $targetID, true, eZRSSExport::STATUS_VALID ) )
-                continue;
-
             $item = self::create( $exportId, $targetID, $priority++ );
             $item->setAttribute( 'status', $status );
             $item->store();
-
-            $already[$targetID] = $targetID;
             $added++;
         }
         $db->commit();
@@ -293,8 +355,14 @@ class eZRSSExportOPMLItem extends eZPersistentObject
     {
         $clean = array();
         foreach ( $itemIDs as $itemID )
-            if ( (int) $itemID > 0 )
-                $clean[] = (int) $itemID;
+        {
+            if ( !is_scalar( $itemID ) || !is_numeric( $itemID ) || (int) $itemID <= 0 )
+                continue;
+
+            $clean[(int) $itemID] = (int) $itemID;
+            if ( count( $clean ) >= self::MAX_BULK )
+                break;   // more than a page full did not come from the page
+        }
 
         if ( !count( $clean ) )
             return 0;
@@ -475,6 +543,12 @@ class eZRSSExportOPMLItem extends eZPersistentObject
         $url         = $this->URL;
         $version     = '';
 
+        // An export that is not active is not served, so listing it would hand
+        // a reader an address that answers with an error - and would publish
+        // the name of a feed somebody has deliberately taken out of service.
+        if ( $target && !$target->attribute( 'active' ) )
+            $target = null;
+
         if ( $target )
         {
             if ( $text === '' )        $text = $target->attribute( 'title' );
@@ -521,19 +595,101 @@ class eZRSSExportOPMLItem extends eZPersistentObject
         if ( $text === '' )
             return null;
 
-        return array( 'type'          => $type,
-                      'text'          => $text,
-                      'title'         => $title,
-                      'description'   => $description,
-                      'category'      => $this->Category,
-                      'language'      => $this->Language,
+        // Everything that goes into the document goes through the two guards
+        // above: text that xml can carry, and addresses a reader can follow.
+        $xmlUrl  = self::safeURL( $xmlUrl );
+        $htmlUrl = self::safeURL( $htmlUrl );
+        $url     = self::safeURL( $url );
+
+        // Checked a second time: the guard may have just emptied the address
+        // that made the line worth writing.
+        if ( $type === 'rss' && $xmlUrl === '' )
+            return null;
+        if ( ( $type === 'link' || $type === 'include' ) && $url === '' )
+            return null;
+
+        return array( 'type'          => self::safeText( $type, self::MAX_SHORT ),
+                      'text'          => self::safeText( $text ),
+                      'title'         => self::safeText( $title ),
+                      'description'   => self::safeText( $description ),
+                      'category'      => self::safeText( $this->Category ),
+                      'language'      => self::safeText( $this->Language, self::MAX_SHORT ),
                       'xmlUrl'        => $xmlUrl,
                       'htmlUrl'       => $htmlUrl,
                       'url'           => $url,
-                      'version'       => $version,
+                      'version'       => self::safeText( $version, self::MAX_SHORT ),
                       'isComment'     => (bool) $this->IsComment,
                       'isBreakpoint'  => (bool) $this->IsBreakpoint,
                       'created'       => (int) $this->Created );
+    }
+
+    /**
+     * Text that can be written into a document without breaking it.
+     *
+     * XML 1.0 has no way to carry most control characters - not escaped, not
+     * as a reference - so a stray one stored years ago would produce a document
+     * that nothing can parse. They are dropped here, on the way out and on the
+     * way in, along with any length the column cannot hold.
+     *
+     * @param mixed $value
+     * @param int $max longest result, in characters.
+     * @return string
+     */
+    static function safeText( $value, $max = self::MAX_TEXT )
+    {
+        if ( is_array( $value ) || is_object( $value ) )
+            return '';
+
+        $value = (string) $value;
+
+        // Tab, newline and carriage return are the only control characters XML
+        // allows; the rest go, whatever encoding they arrived in.
+        $value = preg_replace( '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $value );
+        if ( $value === null )   // invalid utf-8 makes preg_replace give up
+            return '';
+
+        $value = trim( $value );
+
+        if ( $max > 0 && mb_strlen( $value, 'UTF-8' ) > $max )
+            $value = mb_substr( $value, 0, $max, 'UTF-8' );
+
+        return $value;
+    }
+
+    /**
+     * An address that is safe to put in front of somebody else's reader.
+     *
+     * Only the schemes in ALLOWED_SCHEMES survive, plus addresses relative to
+     * the site. Anything else - javascript:, data:, file:, a scheme nobody has
+     * heard of - comes back empty, and the caller leaves the attribute out.
+     *
+     * @param mixed $value
+     * @param int $max
+     * @return string
+     */
+    static function safeURL( $value, $max = self::MAX_TEXT )
+    {
+        $value = self::safeText( $value, $max );
+        if ( $value === '' )
+            return '';
+
+        // Whitespace inside an address is never meaningful and is how a scheme
+        // gets smuggled past a check: "java\nscript:alert(1)".
+        $value = preg_replace( '/\s+/u', '', $value );
+        if ( $value === null || $value === '' )
+            return '';
+
+        // Relative to the site, or to the protocol. Neither can name a scheme.
+        if ( strpos( $value, '//' ) === 0 || strpos( $value, '/' ) === 0 )
+            return $value;
+
+        $colon = strpos( $value, ':' );
+        if ( $colon === false )
+            return $value;   // a bare path
+
+        $scheme = strtolower( substr( $value, 0, $colon ) );
+
+        return in_array( $scheme, explode( ',', self::ALLOWED_SCHEMES ), true ) ? $value : '';
     }
 
     /**
@@ -584,9 +740,14 @@ class eZRSSExportOPMLItem extends eZPersistentObject
      * @param int $status
      * @return array of array( 'item' => eZRSSExportOPMLItem, 'children' => array( ... ) )
      */
-    static function fetchTree( $exportId, $status = eZRSSExport::STATUS_VALID )
+    static function fetchTree( $exportId, $status = eZRSSExport::STATUS_VALID, $limit = false )
     {
         $items = self::fetchList( $exportId, $status );
+
+        // A document with more lines than this is not one anybody is reading;
+        // the rest are left out rather than held in memory to be written.
+        if ( $limit !== false && count( $items ) > (int) $limit )
+            $items = array_slice( $items, 0, (int) $limit );
 
         $byId = array();
         foreach ( $items as $item )

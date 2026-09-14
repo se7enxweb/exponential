@@ -82,6 +82,16 @@ else
     }
 }
 
+// A version nobody writes, or a document that could not be produced, leaves
+// nothing to send. Answering with a successful but empty body tells a reader
+// the feed is fine and empty, which is worse than telling it plainly.
+if ( !is_string( $rssContent ) || trim( $rssContent ) === '' )
+{
+    eZDebug::writeError( 'Nothing to serve for RSS feed ' . $feedName
+                         . ' (version ' . $RSSExport->attribute( 'rss_version' ) . ')', __FILE__ );
+    return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+}
+
 // Set header settings
 $httpCharset = eZTextCodec::httpCharset();
 header( 'Last-Modified: ' . $lastModified );

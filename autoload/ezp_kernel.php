@@ -2037,6 +2037,7 @@ return array(
       'eZRSSExport'                                                                                       => 'kernel/classes/ezrssexport.php',
       'eZRSSExportItem'                                                                                   => 'kernel/classes/ezrssexportitem.php',
       'eZRSSExportOPMLItem'                                                                               => 'kernel/classes/ezrssexportopmlitem.php',
+      'eZRSSListPager'                                                                                    => 'kernel/rss/ezrsslistpager.php',
       'eZRSSFunctionCollection'                                                                           => 'kernel/rss/ezrssfunctioncollection.php',
       'eZRSSImport'                                                                                       => 'kernel/classes/ezrssimport.php',
       'eZRandomTranslator'                                                                                => 'lib/ezi18n/classes/ezrandomtranslator.php',

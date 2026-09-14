@@ -185,8 +185,12 @@ class eZRSSEditFunction
                              'expansionState', 'vertScrollState',
                              'windowTop', 'windowLeft', 'windowBottom', 'windowRight' ) as $field )
             {
-                if ( $http->hasPostVariable( 'OPMLHead_' . $field ) )
-                    $head[$field] = $http->postVariable( 'OPMLHead_' . $field );
+                if ( !$http->hasPostVariable( 'OPMLHead_' . $field ) )
+                    continue;
+
+                $value = $http->postVariable( 'OPMLHead_' . $field );
+                if ( is_scalar( $value ) )
+                    $head[$field] = $value;   // setOPMLHead checks and caps each one
             }
             $rssExport->setOPMLHead( $head );
 
@@ -247,6 +251,11 @@ class eZRSSEditFunction
         if ( !is_array( $ids ) )
             return;
 
+        // The page never draws more rows than this, so a longer list did not
+        // come from the page.
+        if ( count( $ids ) > eZRSSExportOPMLItem::MAX_BULK )
+            $ids = array_slice( $ids, 0, eZRSSExportOPMLItem::MAX_BULK );
+
         $text     = $http->hasPostVariable( 'OPMLItem_Text' ) ? $http->postVariable( 'OPMLItem_Text' ) : array();
         $title    = $http->hasPostVariable( 'OPMLItem_Title' ) ? $http->postVariable( 'OPMLItem_Title' ) : array();
         $desc     = $http->hasPostVariable( 'OPMLItem_Description' ) ? $http->postVariable( 'OPMLItem_Description' ) : array();
@@ -262,6 +271,14 @@ class eZRSSEditFunction
         $break    = $http->hasPostVariable( 'OPMLItem_IsBreakpoint' ) ? $http->postVariable( 'OPMLItem_IsBreakpoint' ) : array();
         $subnodes = $http->hasPostVariable( 'OPMLItem_Subnodes' ) ? $http->postVariable( 'OPMLItem_Subnodes' ) : array();
 
+        // Every one of the above is a post variable and can arrive as anything
+        // at all; a string where an array is expected would make the reads
+        // below index into characters.
+        foreach ( array( 'text', 'title', 'desc', 'category', 'language', 'type', 'parent',
+                         'priority', 'xmlUrl', 'htmlUrl', 'url', 'comment', 'break', 'subnodes' ) as $bag )
+            if ( !is_array( $$bag ) )
+                $$bag = array();
+
         $types = array_keys( eZRSSExportOPMLItem::outlineTypes() );
 
         $db = eZDB::instance();
@@ -272,24 +289,31 @@ class eZRSSEditFunction
             if ( !$item || (int) $item->attribute( 'rssexport_id' ) !== (int) $exportID )
                 continue;   // not ours, or gone since the page was drawn
 
-            $item->setAttribute( 'outline_text', isset( $text[$itemID] ) ? $text[$itemID] : '' );
-            $item->setAttribute( 'title', isset( $title[$itemID] ) ? $title[$itemID] : '' );
-            $item->setAttribute( 'description', isset( $desc[$itemID] ) ? $desc[$itemID] : '' );
-            $item->setAttribute( 'category', isset( $category[$itemID] ) ? $category[$itemID] : '' );
-            $item->setAttribute( 'language', isset( $language[$itemID] ) ? $language[$itemID] : '' );
-            $item->setAttribute( 'xml_url', isset( $xmlUrl[$itemID] ) ? $xmlUrl[$itemID] : '' );
-            $item->setAttribute( 'html_url', isset( $htmlUrl[$itemID] ) ? $htmlUrl[$itemID] : '' );
-            $item->setAttribute( 'url', isset( $url[$itemID] ) ? $url[$itemID] : '' );
+            // Trimmed to what the column holds, and stripped of characters no
+            // xml document can carry, before it is stored - not after, when a
+            // strict database would already have refused the row.
+            $item->setAttribute( 'outline_text', eZRSSExportOPMLItem::safeText( isset( $text[$itemID] ) ? $text[$itemID] : '' ) );
+            $item->setAttribute( 'title', eZRSSExportOPMLItem::safeText( isset( $title[$itemID] ) ? $title[$itemID] : '' ) );
+            $item->setAttribute( 'description', eZRSSExportOPMLItem::safeText( isset( $desc[$itemID] ) ? $desc[$itemID] : '' ) );
+            $item->setAttribute( 'category', eZRSSExportOPMLItem::safeText( isset( $category[$itemID] ) ? $category[$itemID] : '' ) );
+            $item->setAttribute( 'language', eZRSSExportOPMLItem::safeText( isset( $language[$itemID] ) ? $language[$itemID] : '', eZRSSExportOPMLItem::MAX_SHORT ) );
+
+            // Addresses are checked here as well as on the way out, so an
+            // address a reader must not follow is never stored in the first
+            // place and cannot be seen in the edit page either.
+            $item->setAttribute( 'xml_url', eZRSSExportOPMLItem::safeURL( isset( $xmlUrl[$itemID] ) ? $xmlUrl[$itemID] : '' ) );
+            $item->setAttribute( 'html_url', eZRSSExportOPMLItem::safeURL( isset( $htmlUrl[$itemID] ) ? $htmlUrl[$itemID] : '' ) );
+            $item->setAttribute( 'url', eZRSSExportOPMLItem::safeURL( isset( $url[$itemID] ) ? $url[$itemID] : '' ) );
 
             if ( isset( $type[$itemID] ) && in_array( $type[$itemID], $types, true ) )
                 $item->setAttribute( 'outline_type', $type[$itemID] );
 
-            if ( isset( $priority[$itemID] ) && is_numeric( $priority[$itemID] ) )
-                $item->setAttribute( 'priority', (int) $priority[$itemID] );
+            if ( isset( $priority[$itemID] ) && is_scalar( $priority[$itemID] ) && is_numeric( $priority[$itemID] ) )
+                $item->setAttribute( 'priority', max( 0, min( 999999, (int) $priority[$itemID] ) ) );
 
             // A line cannot be its own parent, and a parent it does not share an
             // export with would put it in somebody else's document.
-            if ( isset( $parent[$itemID] ) && is_numeric( $parent[$itemID] ) )
+            if ( isset( $parent[$itemID] ) && is_scalar( $parent[$itemID] ) && is_numeric( $parent[$itemID] ) )
             {
                 $parentID = (int) $parent[$itemID];
                 if ( $parentID === (int) $itemID )

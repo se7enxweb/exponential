@@ -339,7 +339,9 @@ class eZRSSExport extends eZPersistentObject
         if ( $excludeID !== false && is_numeric( $excludeID ) )
             $where .= ' AND id<>' . (int) $excludeID;
 
-        $search = trim( (string) $search );
+        // Longer than any name in the table, so nothing beyond this could match
+        // anything; the cap is there to keep the query itself a sensible size.
+        $search = eZRSSExportOPMLItem::safeText( $search, 255 );
         if ( $search !== '' )
         {
             // The wildcards belong to the query, not to what was typed.
@@ -486,8 +488,23 @@ class eZRSSExport extends eZPersistentObject
                 {
                     // OPML is a list of feeds rather than a list of articles,
                     // and the Feed component does not write it, so it is
-                    // written here.
-                    return $this->generateOPML();
+                    // written here. This is a public address: whatever goes
+                    // wrong behind it, something valid has to come back, or a
+                    // reader is handed a stack trace.
+                    try
+                    {
+                        return $this->generateOPML();
+                    }
+                    catch ( Exception $e )
+                    {
+                        eZDebug::writeError( $e->getMessage(), __METHOD__ );
+                        return self::emptyOPML( $this->attribute( 'title' ) );
+                    }
+                    catch ( Throwable $e )
+                    {
+                        eZDebug::writeError( $e->getMessage(), __METHOD__ );
+                        return self::emptyOPML( $this->attribute( 'title' ) );
+                    }
                 } break;
 
                 default:
@@ -502,6 +519,40 @@ class eZRSSExport extends eZPersistentObject
         }
 
         return null;
+    }
+
+    /**
+     * What each stored format value is called in the interface.
+     *
+     * The values themselves - '1.0', '2.0', 'ATOM', 'OPML' - are what is stored,
+     * posted and read by everything that already exists, and none of them
+     * change. This only says how to write them where a person reads them: "2.0"
+     * on its own does not say which format it is the version of.
+     *
+     * @return array stored value => the words for it.
+     */
+    static function formatLabels()
+    {
+        return array( '1.0'  => 'RSS 1.0 (RDF)',
+                      '2.0'  => 'RSS 2.0',
+                      'ATOM' => 'Atom 1.0',
+                      'OPML' => 'OPML 2.0 (list of feeds)' );
+    }
+
+    /**
+     * The words for one stored format value.
+     *
+     * A value nobody has a name for - one an extension has added to
+     * AvailableVersionList - is shown as it stands rather than hidden.
+     *
+     * @param string $version
+     * @return string
+     */
+    static function formatLabel( $version )
+    {
+        $labels = self::formatLabels();
+
+        return isset( $labels[$version] ) ? $labels[$version] : (string) $version;
     }
 
     /**
@@ -564,10 +615,31 @@ class eZRSSExport extends eZPersistentObject
     {
         $keep = array();
         foreach ( array_keys( $this->opmlHead() ) as $key )
-            if ( isset( $head[$key] ) && is_scalar( $head[$key] ) )
-                $keep[$key] = (string) $head[$key];
+        {
+            if ( !isset( $head[$key] ) || !is_scalar( $head[$key] ) )
+                continue;
 
-        $this->setAttribute( 'opml_head', json_encode( $keep ) );
+            $value = eZRSSExportOPMLItem::safeText( $head[$key], 1024 );
+
+            // The window and scroll fields are numbers, or lists of them, and
+            // docs is an address. Anything else in them is somebody trying
+            // their luck, and is dropped rather than stored to be written out.
+            if ( $key === 'docs' )
+                $value = eZRSSExportOPMLItem::safeURL( $value );
+            else if ( in_array( $key, array( 'expansionState', 'vertScrollState',
+                                             'windowTop', 'windowLeft',
+                                             'windowBottom', 'windowRight' ), true ) )
+                $value = preg_match( '/^-?\d+(\s*,\s*-?\d+)*$/', $value ) ? $value : '';
+            else if ( $key === 'ownerEmail' )
+                $value = filter_var( $value, FILTER_VALIDATE_EMAIL ) ? $value : '';
+
+            if ( $value !== '' )
+                $keep[$key] = $value;
+        }
+
+        $encoded = json_encode( $keep );
+
+        $this->setAttribute( 'opml_head', is_string( $encoded ) ? $encoded : '' );
     }
 
     /**
@@ -624,7 +696,7 @@ class eZRSSExport extends eZPersistentObject
             'ownerEmail'      => $stored['ownerEmail'] !== '' ? $stored['ownerEmail']
                                  : $ini->variable( 'MailSettings', 'AdminEmail' ),
             'ownerId'         => $stored['ownerId'],
-            'docs'            => $stored['docs'],
+            'docs'            => eZRSSExportOPMLItem::safeURL( $stored['docs'] ),
             'expansionState'  => $stored['expansionState'],
             'vertScrollState' => $stored['vertScrollState'],
             'windowTop'       => $stored['windowTop'],
@@ -634,25 +706,34 @@ class eZRSSExport extends eZPersistentObject
 
         foreach ( $elements as $name => $value )
         {
-            if ( $value === '' || $value === null )
+            $value = eZRSSExportOPMLItem::safeText( $value, 1024 );
+            if ( $value === '' )
                 continue;
-            $head->appendChild( $doc->createElement( $name, htmlspecialchars( $value, ENT_QUOTES, 'UTF-8' ) ) );
+
+            // A text node rather than createElement's second argument, which
+            // takes its value as markup: an ampersand in a title would
+            // otherwise have to be escaped by hand, and escaping it twice is
+            // just as wrong as not escaping it at all.
+            $element = $doc->createElement( $name );
+            $element->appendChild( $doc->createTextNode( $value ) );
+            $head->appendChild( $element );
         }
 
         $body = $doc->createElement( 'body' );
         $opml->appendChild( $body );
 
         $written = $this->appendOPMLOutlines(
-            $doc, $body, eZRSSExportOPMLItem::fetchTree( $this->ID, $this->Status ), $baseURL );
+            $doc, $body,
+            eZRSSExportOPMLItem::fetchTree( $this->ID, $this->Status, self::opmlMaxOutlines() ),
+            $baseURL );
 
         // OPML says the body holds one or more outlines. An export with nothing
         // in it yet would otherwise produce a document a validator rejects.
         if ( !$written )
         {
             $outline = $doc->createElement( 'outline' );
-            $outline->setAttribute( 'text', $this->attribute( 'title' ) != ''
-                                            ? $this->attribute( 'title' )
-                                            : 'Empty' );
+            $emptyText = eZRSSExportOPMLItem::safeText( $this->attribute( 'title' ) );
+            $outline->setAttribute( 'text', $emptyText !== '' ? $emptyText : 'Empty' );
             $body->appendChild( $outline );
         }
 
@@ -668,9 +749,14 @@ class eZRSSExport extends eZPersistentObject
      * @param string $baseURL
      * @return int how many outlines were written.
      */
-    protected function appendOPMLOutlines( DOMDocument $doc, DOMElement $parent, array $branch, $baseURL )
+    protected function appendOPMLOutlines( DOMDocument $doc, DOMElement $parent, array $branch, $baseURL, $depth = 0 )
     {
         $written = 0;
+
+        // Outlines nest, and a chain longer than this is not a document anyone
+        // meant to write. Stopping is better than following it down.
+        if ( $depth >= eZRSSExportOPMLItem::MAX_DEPTH )
+            return 0;
 
         foreach ( $branch as $node )
         {
@@ -688,8 +774,8 @@ class eZRSSExport extends eZPersistentObject
 
             if ( $outline === null )
             {
-                $element->setAttribute( 'text', $item->attribute( 'title' ) != ''
-                                                ? $item->attribute( 'title' ) : 'Group' );
+                $groupText = eZRSSExportOPMLItem::safeText( $item->attribute( 'title' ) );
+                $element->setAttribute( 'text', $groupText !== '' ? $groupText : 'Group' );
             }
             else
             {
@@ -725,10 +811,67 @@ class eZRSSExport extends eZPersistentObject
             $written++;
 
             if ( count( $children ) )
-                $written += $this->appendOPMLOutlines( $doc, $element, $children, $baseURL );
+                $written += $this->appendOPMLOutlines( $doc, $element, $children, $baseURL, $depth + 1 );
         }
 
         return $written;
+    }
+
+    /**
+     * The most outlines one document will carry.
+     *
+     * Settable, because what is too many depends on the installation, but
+     * bounded whatever the setting says: a document large enough to exhaust
+     * memory is served from a public address, so it would take the site down
+     * rather than just itself.
+     *
+     * @return int
+     */
+    static function opmlMaxOutlines()
+    {
+        $ini = eZINI::instance( 'site.ini' );
+        $limit = $ini->hasVariable( 'RSSSettings', 'OPMLMaxOutlines' )
+                 ? (int) $ini->variable( 'RSSSettings', 'OPMLMaxOutlines' )
+                 : 5000;
+
+        return max( 1, min( $limit, 50000 ) );
+    }
+
+    /**
+     * A document to fall back on when the real one cannot be produced.
+     *
+     * Valid OPML, because whatever is reading it should be told the list is
+     * empty rather than handed something it cannot parse.
+     *
+     * @param string $title
+     * @return string
+     */
+    static function emptyOPML( $title = '' )
+    {
+        $doc = new DOMDocument( '1.0', 'utf-8' );
+        $doc->formatOutput = true;
+
+        $opml = $doc->createElement( 'opml' );
+        $opml->setAttribute( 'version', '2.0' );
+        $doc->appendChild( $opml );
+
+        $title = eZRSSExportOPMLItem::safeText( $title );
+        if ( $title === '' )
+            $title = 'OPML';
+
+        $head = $doc->createElement( 'head' );
+        $titleElement = $doc->createElement( 'title' );
+        $titleElement->appendChild( $doc->createTextNode( $title ) );
+        $head->appendChild( $titleElement );
+        $opml->appendChild( $head );
+
+        $body = $doc->createElement( 'body' );
+        $outline = $doc->createElement( 'outline' );
+        $outline->setAttribute( 'text', $title );
+        $body->appendChild( $outline );
+        $opml->appendChild( $body );
+
+        return $doc->saveXML();
     }
 
     /**
