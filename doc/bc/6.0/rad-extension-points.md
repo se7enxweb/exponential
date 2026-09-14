@@ -12,7 +12,7 @@ knowledge was spread across `kernel/`, `lib/` and a dozen settings files.
 from it. A point with a tool and a point without are listed the same way, so
 neither can be forgotten.
 
-**47 extension points, 31 with a tool.**
+**48 extension points, 34 with a tool.**
 
 Every entry was checked against this installation's own source; the *Kernel*
 column names the file the mechanism actually lives in.
@@ -38,7 +38,7 @@ A kind of value a content class attribute can hold, with its own editing, valida
 | | |
 |---|---|
 | Code | `extension/<name>/datatypes/<datatype>/<datatype>type.php` |
-| Registered by | datatype.ini [DataTypeSettings] ExtensionDirectories[] and AvailableDataTypes[] |
+| Registered by | content.ini [DataTypeSettings] ExtensionDirectories[] and AvailableDataTypes[], plus design.ini [ExtensionSettings] DesignExtensions[] or it draws nothing |
 | Contract | `extends eZDataType` |
 | Mechanism | directory |
 | Kernel | `kernel/classes/ezdatatype.php` |
@@ -128,18 +128,18 @@ What a template can call, and what a design can replace.
 ### Template operator  
 *Tool:* `/setup/templateoperator`
 
-Something a template can pipe a value through: {$value|my_operator()}.
+Something a template can pipe a value through: {$value|my_operator()}. One class may answer to many names, and what it promises the compiler decides whether it runs once at compile time or on every request for ever.
 
 | | |
 |---|---|
 | Code | `extension/<name>/autoloads/<name>operators.php` |
-| Registered by | site.ini [TemplateSettings] ExtensionAutoloadPath[] |
-| Contract | `operatorList(), namedParameterList() and modify()` |
+| Registered by | site.ini [TemplateSettings] ExtensionAutoloadPath[], through $eZTemplateOperatorArray in autoloads/eztemplateautoload.php - not an ini naming the class |
+| Contract | `operatorList(), namedParameterList(), operatorTemplateHints() and modify()` |
 | Mechanism | autoload |
 | Kernel | `lib/eztemplate/classes/eztemplate.php` |
 
 ### Template fetch function  
-*No tool yet.*
+*Tool:* `/setup/templateoperator`
 
 Something a template can ask a module for: fetch( 'module', 'thing', hash( ... ) ).
 
@@ -164,8 +164,21 @@ An operator that applies to a content attribute of a particular datatype.
 | Mechanism | handler |
 | Kernel | `kernel/private/eztemplate/ezpattributeoperatorformatterinterface.php` |
 
+### Template function  
+*Tool:* `/setup/templateoperator`
+
+Something a template calls rather than pipes through: {my_function arg=1}, optionally with a body it may draw none, one or many times. How {section} and {foreach} are built.
+
+| | |
+|---|---|
+| Code | `extension/<name>/autoloads/<name>functions.php` |
+| Registered by | site.ini [TemplateSettings] ExtensionAutoloadPath[], through $eZTemplateFunctionArray in autoloads/eztemplateautoload.php |
+| Contract | `functionList(), attributeList(), hasChildren() and process()` |
+| Mechanism | autoload |
+| Kernel | `lib/eztemplate/classes/eztemplatesectionfunction.php` |
+
 ### Fetch alias  
-*No tool yet.*
+*Tool:* `/setup/templateoperator`
 
 A name for a fetch that is written out in full somewhere else, so templates can be short.
 

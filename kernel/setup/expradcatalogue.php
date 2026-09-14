@@ -92,7 +92,7 @@ class expRADCatalogue
             'title' => 'Datatype',
             'what'  => 'A kind of value a content class attribute can hold, with its own editing, validation, storage and display.',
             'where' => 'extension/<name>/datatypes/<datatype>/<datatype>type.php',
-            'register' => 'datatype.ini [DataTypeSettings] ExtensionDirectories[] and AvailableDataTypes[]',
+            'register' => 'content.ini [DataTypeSettings] ExtensionDirectories[] and AvailableDataTypes[], plus design.ini [ExtensionSettings] DesignExtensions[] or it draws nothing',
             'contract' => 'extends eZDataType',
             'mechanism' => 'directory',
             'source' => 'kernel/classes/ezdatatype.php',
@@ -169,10 +169,10 @@ class expRADCatalogue
         'operator' => array(
             'group' => 'templates',
             'title' => 'Template operator',
-            'what'  => 'Something a template can pipe a value through: {$value|my_operator()}.',
+            'what'  => 'Something a template can pipe a value through: {$value|my_operator()}. One class may answer to many names, and what it promises the compiler decides whether it runs once at compile time or on every request for ever.',
             'where' => 'extension/<name>/autoloads/<name>operators.php',
-            'register' => 'site.ini [TemplateSettings] ExtensionAutoloadPath[]',
-            'contract' => 'operatorList(), namedParameterList() and modify()',
+            'register' => 'site.ini [TemplateSettings] ExtensionAutoloadPath[], through $eZTemplateOperatorArray in autoloads/eztemplateautoload.php - not an ini naming the class',
+            'contract' => 'operatorList(), namedParameterList(), operatorTemplateHints() and modify()',
             'mechanism' => 'autoload',
             'source' => 'lib/eztemplate/classes/eztemplate.php',
             'tool'  => 'setup/templateoperator' ),
@@ -186,7 +186,7 @@ class expRADCatalogue
             'contract' => 'A $FunctionList naming a class and method per function',
             'mechanism' => 'file',
             'source' => 'lib/ezutils/classes/ezfunctionhandler.php',
-            'tool'  => false ),
+            'tool'  => 'setup/templateoperator' ),
 
         'attributeoperator' => array(
             'group' => 'templates',
@@ -199,6 +199,17 @@ class expRADCatalogue
             'source' => 'kernel/private/eztemplate/ezpattributeoperatorformatterinterface.php',
             'tool'  => 'setup/handlerextension/attributeoperator' ),
 
+        'templatefunction' => array(
+            'group' => 'templates',
+            'title' => 'Template function',
+            'what'  => 'Something a template calls rather than pipes through: {my_function arg=1}, optionally with a body it may draw none, one or many times. How {section} and {foreach} are built.',
+            'where' => 'extension/<name>/autoloads/<name>functions.php',
+            'register' => 'site.ini [TemplateSettings] ExtensionAutoloadPath[], through $eZTemplateFunctionArray in autoloads/eztemplateautoload.php',
+            'contract' => 'functionList(), attributeList(), hasChildren() and process()',
+            'mechanism' => 'autoload',
+            'source' => 'lib/eztemplate/classes/eztemplatesectionfunction.php',
+            'tool'  => 'setup/templateoperator' ),
+
         'fetchalias' => array(
             'group' => 'templates',
             'title' => 'Fetch alias',
@@ -208,7 +219,7 @@ class expRADCatalogue
             'contract' => 'Settings only',
             'mechanism' => 'ini',
             'source' => 'settings/fetchalias.ini',
-            'tool'  => false ),
+            'tool'  => 'setup/templateoperator' ),
 
         'design' => array(
             'group' => 'templates',
