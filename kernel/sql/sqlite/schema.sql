@@ -738,6 +738,7 @@ CREATE TABLE `ezrole` (
 );
 CREATE TABLE `ezrss_export` (
   `access_url` varchar(255) DEFAULT NULL
+,  `opml_head` longtext
 ,  `active` integer DEFAULT NULL
 ,  `created` integer DEFAULT NULL
 ,  `creator_id` integer DEFAULT NULL
@@ -766,6 +767,28 @@ CREATE TABLE `ezrss_export_item` (
 ,  `status` integer NOT NULL DEFAULT '0'
 ,  `subnodes` integer NOT NULL DEFAULT '0'
 ,  `title` varchar(255) DEFAULT NULL
+);
+CREATE TABLE `ezrss_export_opml_item` (
+  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `rssexport_id` integer NOT NULL DEFAULT '0'
+,  `parent_id` integer NOT NULL DEFAULT '0'
+,  `priority` integer NOT NULL DEFAULT '0'
+,  `target_export_id` integer NOT NULL DEFAULT '0'
+,  `source_node_id` integer NOT NULL DEFAULT '0'
+,  `subnodes` integer NOT NULL DEFAULT '0'
+,  `outline_type` varchar(50) DEFAULT 'rss'
+,  `outline_text` varchar(255) DEFAULT NULL
+,  `title` varchar(255) DEFAULT NULL
+,  `description` varchar(255) DEFAULT NULL
+,  `category` varchar(255) DEFAULT NULL
+,  `language` varchar(50) DEFAULT NULL
+,  `xml_url` varchar(255) DEFAULT NULL
+,  `html_url` varchar(255) DEFAULT NULL
+,  `url` varchar(255) DEFAULT NULL
+,  `is_comment` integer NOT NULL DEFAULT '0'
+,  `is_breakpoint` integer NOT NULL DEFAULT '0'
+,  `created` integer NOT NULL DEFAULT '0'
+,  `status` integer NOT NULL DEFAULT '0'
 );
 CREATE TABLE `ezrss_import` (
   `active` integer DEFAULT NULL
@@ -1167,6 +1190,7 @@ CREATE INDEX "idx_ezscheduled_script_ezscheduled_script_timestamp" ON "ezschedul
 CREATE INDEX "idx_ezoperation_memento_ezoperation_memento_memento_key_main" ON "ezoperation_memento" (`memento_key`,`main`);
 CREATE INDEX "idx_ezenumvalue_ezenumvalue_co_cl_attr_id_co_class_att_ver" ON "ezenumvalue" (`contentclass_attribute_id`,`contentclass_attribute_version`);
 CREATE INDEX "idx_ezrss_export_item_ezrss_export_rsseid" ON "ezrss_export_item" (`rssexport_id`);
+CREATE INDEX "idx_ezrss_export_opml_item_ezrss_export_opml_rsseid" ON "ezrss_export_opml_item" (`rssexport_id`);
 CREATE INDEX "idx_ezworkflow_event_wid_version_placement" ON "ezworkflow_event" (`workflow_id`,`version`,`placement`);
 CREATE INDEX "idx_ezcontentbrowsebookmark_ezcontentbrowsebookmark_user" ON "ezcontentbrowsebookmark" (`user_id`);
 CREATE INDEX "idx_ezcontentobject_link_ezco_link_from" ON "ezcontentobject_link" (`from_contentobject_id`,`from_contentobject_version`,`contentclassattribute_id`);

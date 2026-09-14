@@ -29,6 +29,7 @@ class eZRSSExport extends eZPersistentObject
     public $RSSVersion;
     public $AccessURL;
     public $Active;
+    public $OPMLHead;
 
     const STATUS_VALID = 1;
     const STATUS_DRAFT = 0;
@@ -108,9 +109,19 @@ class eZRSSExport extends eZPersistentObject
                                          'main_node_only' => array( 'name' => 'MainNodeOnly',
                                                                     'datatype' => 'integer',
                                                                     'default' => 0,
-                                                                    'required' => true ) ),
+                                                                    'required' => true ),
+                                         // The OPML head fields - owner, docs,
+                                         // expansion and window state - as json.
+                                         // Only an OPML export ever fills it in.
+                                         'opml_head' => array( 'name' => 'OPMLHead',
+                                                               'datatype' => 'string',
+                                                               'default' => '',
+                                                               'required' => false ) ),
                       'keys' => array( 'id', 'status' ),
                       'function_attributes' => array( 'item_list' => 'itemList',
+                                                      'is_opml' => 'isOPML',
+                                                      'opml_item_list' => 'opmlItemList',
+                                                      'opml_head_data' => 'opmlHead',
                                                       'modifier' => 'modifier',
                                                       'rss-xml-content' => 'rssXmlContent', // new attribute which uses the Feed component
                                                       'image_path' => 'imagePath',
@@ -146,7 +157,8 @@ class eZRSSExport extends eZPersistentObject
                       'description' => '',
                       'image_id' => 0,
                       'active' => 1,
-                      'access_url' => '' );
+                      'access_url' => '',
+                      'opml_head' => '' );
         return new eZRSSExport( $row );
     }
 
@@ -197,6 +209,10 @@ class eZRSSExport extends eZPersistentObject
         {
             $item->remove();
         }
+        // The outlines of this status go with it. Only this status: removing a
+        // draft must leave the published document standing, exactly as the
+        // export items above do.
+        eZRSSExportOPMLItem::removeByExport( $this->ID, $this->Status );
         $this->remove();
         $db->commit();
     }
@@ -258,6 +274,107 @@ class eZRSSExport extends eZPersistentObject
         return eZPersistentObject::fetchObjectList( eZRSSExport::definition(),
                                                     null, array( 'status' => self::STATUS_VALID ), $sorts, $limitArray,
                                                     $asObject );
+    }
+
+    /**
+     * One page of feeds for the browser on an OPML export's edit page.
+     *
+     * eZPersistentObject can filter, but it joins its conditions with AND, and
+     * a search box has to look in more than one column at once. The where
+     * clause is therefore built here - from a term that is escaped and has its
+     * own wildcards defused, so a name containing a percent sign searches for
+     * that sign rather than for everything.
+     *
+     * @param string $search     what to look for in the name, address or description.
+     * @param int    $offset
+     * @param int    $limit
+     * @param array|null $sorts  field => 'asc'|'desc'.
+     * @param int|false $excludeID an export to leave out, normally the one being edited.
+     * @return array of eZRSSExport
+     */
+    static function fetchBrowserList( $search = '', $offset = 0, $limit = 25, $sorts = null, $excludeID = false )
+    {
+        $db    = eZDB::instance();
+        $where = self::browserCondition( $db, $search, $excludeID );
+        $order = self::browserOrder( $sorts );
+
+        $rows = $db->arrayQuery( 'SELECT * FROM ezrss_export WHERE ' . $where . $order,
+                                 array( 'offset' => (int) $offset, 'limit' => (int) $limit ) );
+
+        $exports = array();
+        foreach ( $rows as $row )
+            $exports[] = new eZRSSExport( $row );
+
+        return $exports;
+    }
+
+    /**
+     * How many feeds that browser has to page through.
+     *
+     * @param string $search
+     * @param int|false $excludeID
+     * @return int
+     */
+    static function fetchBrowserListCount( $search = '', $excludeID = false )
+    {
+        $db   = eZDB::instance();
+        $rows = $db->arrayQuery( 'SELECT COUNT(*) AS c FROM ezrss_export WHERE '
+                                 . self::browserCondition( $db, $search, $excludeID ) );
+
+        return count( $rows ) ? (int) $rows[0]['c'] : 0;
+    }
+
+    /**
+     * The where clause both of the above share.
+     *
+     * @param eZDBInterface $db
+     * @param string $search
+     * @param int|false $excludeID
+     * @return string
+     */
+    protected static function browserCondition( $db, $search, $excludeID )
+    {
+        $where = 'status=' . (int) self::STATUS_VALID;
+
+        if ( $excludeID !== false && is_numeric( $excludeID ) )
+            $where .= ' AND id<>' . (int) $excludeID;
+
+        $search = trim( (string) $search );
+        if ( $search !== '' )
+        {
+            // The wildcards belong to the query, not to what was typed.
+            $term = str_replace( array( '\\', '%', '_' ), array( '\\\\', '\\%', '\\_' ), $search );
+            $term = '%' . $db->escapeString( $term ) . '%';
+            $where .= " AND ( title LIKE '$term' OR access_url LIKE '$term' OR description LIKE '$term' )";
+        }
+
+        return $where;
+    }
+
+    /**
+     * The order clause, from a sort the caller has already had checked.
+     *
+     * @param array|null $sorts
+     * @return string
+     */
+    protected static function browserOrder( $sorts )
+    {
+        if ( !is_array( $sorts ) || !count( $sorts ) )
+            return ' ORDER BY title ASC';
+
+        $fields = self::sortableFields();
+        $parts  = array();
+
+        foreach ( $sorts as $field => $direction )
+        {
+            // Belt and braces: the caller settles on a column from the list
+            // above, and nothing else is allowed to reach the clause here.
+            if ( !in_array( $field, $fields, true ) )
+                continue;
+            $parts[] = $field . ( strtolower( $direction ) === 'desc' ? ' DESC' : ' ASC' );
+        }
+
+        return count( $parts ) ? ' ORDER BY ' . implode( ', ', $parts ) : ' ORDER BY title ASC';
     }
 
     /**
@@ -365,6 +482,14 @@ class eZRSSExport extends eZPersistentObject
                     return $this->generateFeed( 'atom' );
                 } break;
 
+                case 'OPML':
+                {
+                    // OPML is a list of feeds rather than a list of articles,
+                    // and the Feed component does not write it, so it is
+                    // written here.
+                    return $this->generateOPML();
+                } break;
+
                 default:
                 {
                     return null;
@@ -377,6 +502,246 @@ class eZRSSExport extends eZPersistentObject
         }
 
         return null;
+    }
+
+    /**
+     * Whether this export is written as OPML rather than as a feed of articles.
+     *
+     * @return bool
+     */
+    function isOPML()
+    {
+        return $this->attribute( 'rss_version' ) === 'OPML';
+    }
+
+    /**
+     * The lines of this OPML export.
+     *
+     * @return array of eZRSSExportOPMLItem
+     */
+    function opmlItemList()
+    {
+        return eZRSSExportOPMLItem::fetchList( $this->ID, $this->Status );
+    }
+
+    /**
+     * The OPML head fields, as a hash the edit page and the writer can read.
+     *
+     * Stored as json in one column. Anything unreadable there is treated as
+     * nothing having been filled in, rather than breaking the page that is
+     * trying to show it.
+     *
+     * @return array
+     */
+    function opmlHead()
+    {
+        $defaults = array( 'ownerName' => '', 'ownerEmail' => '', 'ownerId' => '',
+                           'docs' => 'http://opml.org/spec2.opml',
+                           'expansionState' => '', 'vertScrollState' => '',
+                           'windowTop' => '', 'windowLeft' => '',
+                           'windowBottom' => '', 'windowRight' => '' );
+
+        $stored = is_string( $this->OPMLHead ) && $this->OPMLHead !== ''
+                  ? json_decode( $this->OPMLHead, true )
+                  : null;
+
+        if ( !is_array( $stored ) )
+            return $defaults;
+
+        foreach ( $defaults as $key => $value )
+            if ( isset( $stored[$key] ) && is_scalar( $stored[$key] ) )
+                $defaults[$key] = (string) $stored[$key];
+
+        return $defaults;
+    }
+
+    /**
+     * Records the OPML head fields, keeping only the ones OPML defines.
+     *
+     * @param array $head
+     */
+    function setOPMLHead( array $head )
+    {
+        $keep = array();
+        foreach ( array_keys( $this->opmlHead() ) as $key )
+            if ( isset( $head[$key] ) && is_scalar( $head[$key] ) )
+                $keep[$key] = (string) $head[$key];
+
+        $this->setAttribute( 'opml_head', json_encode( $keep ) );
+    }
+
+    /**
+     * Writes this export as an OPML 2.0 document.
+     *
+     * Built with DOM rather than by pasting strings together, so a title with
+     * an ampersand in it cannot produce a document nothing will parse. What is
+     * written follows the OPML 2.0 specification: a head of optional elements,
+     * a body of at least one outline, every outline carrying text, and every
+     * outline of type rss carrying xmlUrl.
+     *
+     * @return string
+     */
+    function generateOPML()
+    {
+        $ini = eZINI::instance();
+
+        if ( $this->attribute( 'url' ) == '' )
+        {
+            $baseURL = '';
+            eZURI::transformURI( $baseURL, false, 'full' );
+        }
+        else
+        {
+            $baseURL = $this->attribute( 'url' );
+        }
+
+        $doc = new DOMDocument( '1.0', 'utf-8' );
+        $doc->formatOutput = true;
+
+        $opml = $doc->createElement( 'opml' );
+        $opml->setAttribute( 'version', '2.0' );
+        $doc->appendChild( $opml );
+
+        $head = $doc->createElement( 'head' );
+        $opml->appendChild( $head );
+
+        $stored = $this->opmlHead();
+
+        // The owner's name is worth filling in from the export's creator when
+        // nobody has typed one, because a reader shows it beside the list.
+        if ( $stored['ownerName'] === '' )
+        {
+            $creator = eZContentObject::fetch( $this->attribute( 'creator_id' ) );
+            if ( $creator instanceof eZContentObject )
+                $stored['ownerName'] = $creator->attribute( 'name' );
+        }
+
+        $elements = array(
+            'title'           => $this->attribute( 'title' ),
+            'dateCreated'     => self::opmlDate( $this->attribute( 'created' ) ),
+            'dateModified'    => self::opmlDate( $this->attribute( 'modified' ) ),
+            'ownerName'       => $stored['ownerName'],
+            'ownerEmail'      => $stored['ownerEmail'] !== '' ? $stored['ownerEmail']
+                                 : $ini->variable( 'MailSettings', 'AdminEmail' ),
+            'ownerId'         => $stored['ownerId'],
+            'docs'            => $stored['docs'],
+            'expansionState'  => $stored['expansionState'],
+            'vertScrollState' => $stored['vertScrollState'],
+            'windowTop'       => $stored['windowTop'],
+            'windowLeft'      => $stored['windowLeft'],
+            'windowBottom'    => $stored['windowBottom'],
+            'windowRight'     => $stored['windowRight'] );
+
+        foreach ( $elements as $name => $value )
+        {
+            if ( $value === '' || $value === null )
+                continue;
+            $head->appendChild( $doc->createElement( $name, htmlspecialchars( $value, ENT_QUOTES, 'UTF-8' ) ) );
+        }
+
+        $body = $doc->createElement( 'body' );
+        $opml->appendChild( $body );
+
+        $written = $this->appendOPMLOutlines(
+            $doc, $body, eZRSSExportOPMLItem::fetchTree( $this->ID, $this->Status ), $baseURL );
+
+        // OPML says the body holds one or more outlines. An export with nothing
+        // in it yet would otherwise produce a document a validator rejects.
+        if ( !$written )
+        {
+            $outline = $doc->createElement( 'outline' );
+            $outline->setAttribute( 'text', $this->attribute( 'title' ) != ''
+                                            ? $this->attribute( 'title' )
+                                            : 'Empty' );
+            $body->appendChild( $outline );
+        }
+
+        return $doc->saveXML();
+    }
+
+    /**
+     * Writes one level of outlines, and whatever hangs below them.
+     *
+     * @param DOMDocument $doc
+     * @param DOMElement $parent
+     * @param array $branch from eZRSSExportOPMLItem::fetchTree().
+     * @param string $baseURL
+     * @return int how many outlines were written.
+     */
+    protected function appendOPMLOutlines( DOMDocument $doc, DOMElement $parent, array $branch, $baseURL )
+    {
+        $written = 0;
+
+        foreach ( $branch as $node )
+        {
+            $item     = $node['item'];
+            $children = $node['children'];
+            $outline  = $item->outline( $baseURL );
+
+            // A line pointing at a feed that has since been deleted says
+            // nothing useful; it is left out rather than written as a dead
+            // entry. A group with something under it is kept either way.
+            if ( $outline === null && !count( $children ) )
+                continue;
+
+            $element = $doc->createElement( 'outline' );
+
+            if ( $outline === null )
+            {
+                $element->setAttribute( 'text', $item->attribute( 'title' ) != ''
+                                                ? $item->attribute( 'title' ) : 'Group' );
+            }
+            else
+            {
+                $element->setAttribute( 'text', $outline['text'] );
+
+                // type is left off a plain group: OPML gives no type for one,
+                // and a made up value is worse than none.
+                if ( $outline['type'] !== '' && $outline['type'] !== 'group' )
+                    $element->setAttribute( 'type', $outline['type'] );
+
+                foreach ( array( 'title'       => 'title',
+                                 'description' => 'description',
+                                 'category'    => 'category',
+                                 'language'    => 'language',
+                                 'xmlUrl'      => 'xmlUrl',
+                                 'htmlUrl'     => 'htmlUrl',
+                                 'url'         => 'url',
+                                 'version'     => 'version' ) as $key => $attribute )
+                {
+                    if ( isset( $outline[$key] ) && $outline[$key] !== '' )
+                        $element->setAttribute( $attribute, $outline[$key] );
+                }
+
+                if ( $outline['isComment'] )
+                    $element->setAttribute( 'isComment', 'true' );
+                if ( $outline['isBreakpoint'] )
+                    $element->setAttribute( 'isBreakpoint', 'true' );
+                if ( $outline['created'] )
+                    $element->setAttribute( 'created', self::opmlDate( $outline['created'] ) );
+            }
+
+            $parent->appendChild( $element );
+            $written++;
+
+            if ( count( $children ) )
+                $written += $this->appendOPMLOutlines( $doc, $element, $children, $baseURL );
+        }
+
+        return $written;
+    }
+
+    /**
+     * A timestamp as OPML writes dates, which is the RFC 822 form.
+     *
+     * @param int $timestamp
+     * @return string empty when there is no date to write.
+     */
+    static function opmlDate( $timestamp )
+    {
+        $timestamp = (int) $timestamp;
+
+        return $timestamp > 0 ? gmdate( 'D, d M Y H:i:s', $timestamp ) . ' GMT' : '';
     }
 
     /*!

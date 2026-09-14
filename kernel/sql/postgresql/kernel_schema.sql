@@ -841,6 +841,15 @@ CREATE SEQUENCE ezrss_export_item_id_seq
 
 
 
+CREATE SEQUENCE ezrss_export_opml_item_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
 CREATE SEQUENCE ezrss_import_id_seq
     START 1
     INCREMENT 1
@@ -2422,6 +2431,7 @@ CREATE TABLE ezrole (
 
 CREATE TABLE ezrss_export (
     access_url character varying(255),
+    opml_head text,
     active integer,
     created integer,
     creator_id integer,
@@ -2462,6 +2472,31 @@ CREATE TABLE ezrss_export_item (
 
 
 
+
+
+
+CREATE TABLE ezrss_export_opml_item (
+    id integer DEFAULT nextval('ezrss_export_opml_item_id_seq'::text) NOT NULL,
+    rssexport_id integer DEFAULT 0 NOT NULL,
+    parent_id integer DEFAULT 0 NOT NULL,
+    priority integer DEFAULT 0 NOT NULL,
+    target_export_id integer DEFAULT 0 NOT NULL,
+    source_node_id integer DEFAULT 0 NOT NULL,
+    subnodes integer DEFAULT 0 NOT NULL,
+    outline_type character varying(50) DEFAULT 'rss'::character varying,
+    outline_text character varying(255),
+    title character varying(255),
+    description character varying(255),
+    category character varying(255),
+    language character varying(50),
+    xml_url character varying(255),
+    html_url character varying(255),
+    url character varying(255),
+    is_comment integer DEFAULT 0 NOT NULL,
+    is_breakpoint integer DEFAULT 0 NOT NULL,
+    created integer DEFAULT 0 NOT NULL,
+    status integer DEFAULT 0 NOT NULL
+);
 
 
 
@@ -3735,6 +3770,8 @@ CREATE INDEX ezproductcollection_item_opt_item_id ON ezproductcollection_item_op
 
 CREATE INDEX ezrss_export_rsseid ON ezrss_export_item USING btree (rssexport_id);
 
+CREATE INDEX ezrss_export_opml_rsseid ON ezrss_export_opml_item USING btree (rssexport_id);
+
 
 
 
@@ -4809,6 +4846,10 @@ ALTER TABLE ONLY ezrss_export
 
 ALTER TABLE ONLY ezrss_export_item
     ADD CONSTRAINT ezrss_export_item_pkey PRIMARY KEY (id, status);
+
+
+ALTER TABLE ONLY ezrss_export_opml_item
+    ADD CONSTRAINT ezrss_export_opml_item_pkey PRIMARY KEY (id, status);
 
 
 

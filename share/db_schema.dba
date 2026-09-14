@@ -5799,6 +5799,11 @@ $schema = array (
         'type' => 'varchar',
         'default' => NULL,
       ),
+      'opml_head' => 
+      array (
+        'type' => 'longtext',
+        'default' => NULL,
+      ),
       'active' => 
       array (
         'length' => 11,
@@ -5989,6 +5994,162 @@ $schema = array (
         ),
       ),
       'ezrss_export_rsseid' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'rssexport_id',
+        ),
+      ),
+    ),
+  ),
+  'ezrss_export_opml_item' => 
+  array (
+    'name' => 'ezrss_export_opml_item',
+    'fields' => 
+    array (
+      'category' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'created' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'description' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'html_url' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'is_breakpoint' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'is_comment' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'language' => 
+      array (
+        'length' => 50,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'outline_text' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'outline_type' => 
+      array (
+        'length' => 50,
+        'type' => 'varchar',
+        'default' => 'rss',
+      ),
+      'parent_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'priority' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'rssexport_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'source_node_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'status' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'subnodes' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'target_export_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'title' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'url' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'xml_url' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+          1 => 'status',
+        ),
+      ),
+      'ezrss_export_opml_rsseid' => 
       array (
         'type' => 'non-unique',
         'fields' => 

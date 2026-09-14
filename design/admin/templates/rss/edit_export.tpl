@@ -1,3 +1,45 @@
+{* An OPML export lists feeds rather than articles, so the page shows it a
+   different set of controls. Which half is on screen follows the format
+   drop-down below, both here and on the server. *}
+{literal}
+<style type="text/css">
+.opml-meta { color: #666; font-size: .92em; }
+.opml-gone { color: #a33; }
+.opml-outlines td, .opml-browser td { vertical-align: middle; padding-top: .4rem; padding-bottom: .4rem; }
+.opml-outlines input[type=text] { font: inherit; padding: .2rem .3rem; }
+.opml-outlines code, .opml-browser code {
+    font-family: Menlo, Consolas, monospace; font-size: .92em;
+    background: #f4f4f5; border: 1px solid #e6e6ea; border-radius: 3px; padding: 0 .3rem;
+}
+.opml-more summary { cursor: pointer; color: #555; padding: .2rem 0; }
+.opml-more-grid { display: flex; flex-wrap: wrap; gap: .9rem 1.4rem; padding: .6rem 0 .2rem 0; }
+.opml-more-grid > span { display: flex; flex-direction: column; gap: .2rem; }
+.opml-more-grid label { font-size: .85em; color: #666; }
+.opml-more-flags { flex-direction: row !important; align-items: center; gap: 1rem !important; }
+.opml-more-flags label { font-size: .95em; color: inherit; }
+.opml-actions { display: flex; flex-wrap: wrap; gap: .6rem; padding-top: .9rem; }
+.opml-browser-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding-bottom: .9rem; }
+.opml-browser-pages { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem; padding-top: .9rem; }
+.opml-browser-pages .current {
+    display: inline-block; padding: .2rem .5rem; border: 1px solid #4a4a52;
+    border-radius: 4px; background: #4a4a52; color: #fff; font-weight: 700;
+}
+.opml-already td { opacity: .65; }
+.opml-tick { color: #2a7; font-weight: 700; }
+.opml-window { display: flex; flex-wrap: wrap; align-items: flex-end; gap: .6rem 1rem; }
+.opml-window-field { display: flex; flex-direction: column; gap: .2rem; }
+.opml-window-field label { font-size: .85em; color: #666; }
+table.list th.sortable { white-space: nowrap; }
+table.list th.sortable button.sort-button {
+    background: none; border: 0; padding: 0; margin: 0; font: inherit;
+    color: inherit; cursor: pointer;
+}
+table.list th.sortable:hover button.sort-button { text-decoration: underline; }
+table.list th.sorted button.sort-button { font-weight: 700; }
+.sort-arrow { display: inline-block; width: 1em; font-size: .8em; color: #6a6a72; }
+</style>
+{/literal}
+
 <form action={"rss/edit_export"|ezurl} method="post" name="RSSExport">
 
 <div class="context-block">
@@ -78,7 +120,7 @@
     </select>
     </div>
 
-    <div class="block">
+    <div class="block" id="rssExportLimitBlock"{if $rss_is_opml} style="display:none;"{/if}>
     <label class="inline" for="rssExportLimit">{'Number of objects'|i18n( 'design/admin/rss/edit_export' )}:</label>
     <select id="rssExportLimit" name="NumberOfObjects" title="{'Use this drop-down to select the maximum number of objects included in the RSS feed.'|i18n('design/admin/rss/edit_export')}">
     {foreach $number_of_objects_array as $number_of_objects_item}
@@ -118,6 +160,7 @@
     </fieldset></div>   
     
     
+<div id="rssExportSources"{if $rss_is_opml} style="display:none;"{/if}>
     {section name=Source loop=$rss_export.item_list}
     <div class="block"><fieldset>
        <legend>{'Source'|i18n( 'design/admin/rss/edit_export' )} {sum($Source:index, 1)}</legend>
@@ -207,6 +250,20 @@
        <input class="button" type="submit" name="{concat( 'RemoveSource_', $Source:index )}" value="{'Remove this source'|i18n( 'design/admin/rss/edit_export' )}" title="{'Click to remove this source from the RSS export.'|i18n('design/admin/rss/edit_export')}" />
     </fieldset></div>
     {/section}
+</div>
+
+{* The OPML half. Shown when the format is OPML, and only then. *}
+<div id="rssExportOPML"{if $rss_is_opml|not} style="display:none;"{/if}>
+{include uri='design:rss/edit_export_opml.tpl'
+         opml_head=$opml_head
+         opml_items=$opml_items
+         opml_groups=$opml_groups
+         opml_outline_types=$opml_outline_types
+         opml_browser_list=$opml_browser_list
+         opml_browser_pager=$opml_browser_pager
+         opml_browser_search=$opml_browser_search
+         opml_browser_limits=$opml_browser_limits}
+</div>
 
 </div>
 
@@ -217,7 +274,7 @@
     <div class="block">
         <input class="defaultbutton" type="submit" name="StoreButton" value="{'OK'|i18n( 'design/admin/rss/edit_export' )}" title="{'Apply the changes and return to the RSS overview.'|i18n('design/admin/rss/edit_export')}" />
         <input class="button" type="submit" name="RemoveButton" value="{'Cancel'|i18n( 'design/admin/rss/edit_export' )}" title="{'Cancel the changes and return to the RSS overview.'|i18n('design/admin/rss/edit_export')}" />
-        <input class="button" type="submit" name="AddSourceButton" value="{'Add source'|i18n( 'design/admin/rss/edit_export' )}" title="{'Click to add a new source to the RSS export.'|i18n('design/admin/rss/edit_export')}" />        
+        <span id="rssExportAddSource"{if $rss_is_opml} style="display:none;"{/if}><input class="button" type="submit" name="AddSourceButton" value="{'Add source'|i18n( 'design/admin/rss/edit_export' )}" title="{'Click to add a new source to the RSS export.'|i18n('design/admin/rss/edit_export')}" /></span>        
     </div>
 {* DESIGN: Control bar END *}
     </div>
@@ -232,5 +289,43 @@ jQuery(function( $ )//called on document.ready
     document.getElementById('exportName').select();
     document.getElementById('exportName').focus();
 });
+
+( function () {
+    var version = document.getElementById( 'rssExportVersion' );
+    if ( !version ) return;
+
+    // Which half of the page applies follows the format. The server decides
+    // the same thing after every submit; this only saves waiting for one.
+    function show()
+    {
+        var opml    = version.value === 'OPML',
+            sources = document.getElementById( 'rssExportSources' ),
+            panel   = document.getElementById( 'rssExportOPML' ),
+            add     = document.getElementById( 'rssExportAddSource' ),
+            limit   = document.getElementById( 'rssExportLimitBlock' );
+
+        if ( sources ) sources.style.display = opml ? 'none' : '';
+        if ( panel )   panel.style.display   = opml ? '' : 'none';
+        if ( add )     add.style.display     = opml ? 'none' : '';
+        if ( limit )   limit.style.display   = opml ? 'none' : '';
+    }
+
+    version.onchange = show;
+    show();
+
+    // Enter in the browser's search box should search, not save and leave: the
+    // first submit button in the form is OK, and that is what Enter would hit.
+    var search = document.getElementById( 'feedBrowserSearch' ),
+        apply  = document.getElementById( 'feedBrowserApply' );
+    if ( search && apply )
+    {
+        search.onkeydown = function ( event ) {
+            var key = ( event || window.event ).keyCode;
+            if ( key !== 13 ) return true;
+            apply.click();
+            return false;
+        };
+    }
+} )();
 </script>
 {/literal}

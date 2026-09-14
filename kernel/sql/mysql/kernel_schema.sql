@@ -1279,6 +1279,7 @@ CREATE TABLE ezrole (
 
 CREATE TABLE ezrss_export (
   access_url varchar(255) default NULL,
+  opml_head longtext,
   active int(11) default NULL,
   created int(11) default NULL,
   creator_id int(11) default NULL,
@@ -1318,6 +1319,33 @@ CREATE TABLE ezrss_export_item (
 ) ENGINE=InnoDB;
 
 
+
+
+
+CREATE TABLE ezrss_export_opml_item (
+  id int(11) NOT NULL auto_increment,
+  rssexport_id int(11) NOT NULL default 0,
+  parent_id int(11) NOT NULL default 0,
+  priority int(11) NOT NULL default 0,
+  target_export_id int(11) NOT NULL default 0,
+  source_node_id int(11) NOT NULL default 0,
+  subnodes int(11) NOT NULL default 0,
+  outline_type varchar(50) default 'rss',
+  outline_text varchar(255) default NULL,
+  title varchar(255) default NULL,
+  description varchar(255) default NULL,
+  category varchar(255) default NULL,
+  language varchar(50) default NULL,
+  xml_url varchar(255) default NULL,
+  html_url varchar(255) default NULL,
+  url varchar(255) default NULL,
+  is_comment int(11) NOT NULL default 0,
+  is_breakpoint int(11) NOT NULL default 0,
+  created int(11) NOT NULL default 0,
+  status int(11) NOT NULL default 0,
+  PRIMARY KEY  (id,status),
+  KEY ezrss_export_opml_rsseid (rssexport_id)
+) ENGINE=InnoDB;
 
 
 

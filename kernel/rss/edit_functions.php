@@ -40,8 +40,16 @@ class eZRSSEditFunction
 
         $db = eZDB::instance();
         $db->begin();
+
+        // An OPML export lists feeds, not articles: it has no content source
+        // and no class mapping, so the source rows below are neither read nor
+        // validated for one. Validating them would fail an export that is
+        // perfectly correct, because its empty source row names no class.
+        $isOPML = $http->hasPostVariable( 'RSSVersion' )
+                  && $http->postVariable( 'RSSVersion' ) === 'OPML';
+
         /* Create the new RSS feed */
-        for ( $itemCount = 0; $itemCount < $http->postVariable( 'Item_Count' ); $itemCount++ )
+        for ( $itemCount = 0; !$isOPML && $itemCount < $http->postVariable( 'Item_Count' ); $itemCount++ )
         {
             if ( $skipValuesID == $http->postVariable( 'Item_ID_' . $itemCount ) )
             {
@@ -123,7 +131,34 @@ class eZRSSEditFunction
                 $rssExportItem->store();
             }
         }
-        $rssExport = eZRSSExport::fetch( $http->postVariable( 'RSSExport_ID' ), true, eZRSSExport::STATUS_DRAFT );
+        $rssExportID = $http->postVariable( 'RSSExport_ID' );
+        $rssExport = eZRSSExport::fetch( $rssExportID, true, eZRSSExport::STATUS_DRAFT );
+
+        // The draft can be gone by the time Save is pressed: the edit timed out
+        // and the draft was collected, or it was cleared from elsewhere while
+        // this page sat open. Taking the published row up again lets the save
+        // land rather than throwing away everything that was typed - and saying
+        // so plainly beats a fatal on a null.
+        if ( !$rssExport instanceof eZRSSExport )
+        {
+            $rssExport = eZRSSExport::fetch( $rssExportID, true, eZRSSExport::STATUS_VALID );
+            if ( $rssExport instanceof eZRSSExport )
+            {
+                $rssExport->setAttribute( 'status', eZRSSExport::STATUS_DRAFT );
+                $rssExport->store();
+            }
+        }
+
+        if ( !$rssExport instanceof eZRSSExport )
+        {
+            $db->commit();
+            return array( 'valid' => false,
+                          'published' => false,
+                          'validation_errors' => array(
+                              ezpI18n::tr( 'kernel/rss/edit_export',
+                                           'This RSS export no longer exists. It may have been removed while this page was open.' ) ) );
+        }
+
         $rssExport->setAttribute( 'title', $http->postVariable( 'title' ) );
         $rssExport->setAttribute( 'url', $http->postVariable( 'url' ) );
         // $rssExport->setAttribute( 'site_access', $http->postVariable( 'SiteAccess' ) );
@@ -140,6 +175,23 @@ class eZRSSEditFunction
             $rssExport->setAttribute( 'active', 0 );
         }
         $rssExport->setAttribute( 'access_url', str_replace( array( '/', '?', '&', '>', '<' ), '',  $http->postVariable( 'Access_URL' ) ) );
+
+        // The OPML head, and the wording of the outlines, both of which only an
+        // OPML export has a page to set them on.
+        if ( $isOPML )
+        {
+            $head = array();
+            foreach ( array( 'ownerName', 'ownerEmail', 'ownerId', 'docs',
+                             'expansionState', 'vertScrollState',
+                             'windowTop', 'windowLeft', 'windowBottom', 'windowRight' ) as $field )
+            {
+                if ( $http->hasPostVariable( 'OPMLHead_' . $field ) )
+                    $head[$field] = $http->postVariable( 'OPMLHead_' . $field );
+            }
+            $rssExport->setOPMLHead( $head );
+
+            self::storeOPMLItems( $http, $rssExport->attribute( 'id' ) );
+        }
         if ( $http->hasPostVariable( 'MainNodeOnly' ) )
         {
             $rssExport->setAttribute( 'main_node_only', 1 );
@@ -153,6 +205,16 @@ class eZRSSEditFunction
         if ( $publish && $valid )
         {
             $rssExport->store( true );
+
+            // The outlines follow the export: the draft rows become the valid
+            // ones, and the draft is cleared out behind them.
+            if ( $isOPML )
+            {
+                eZRSSExportOPMLItem::copyStatus( $rssExport->attribute( 'id' ),
+                                                 eZRSSExport::STATUS_DRAFT,
+                                                 eZRSSExport::STATUS_VALID );
+            }
+
             // remove draft
             $rssExport->remove();
             $published = true;
@@ -165,6 +227,89 @@ class eZRSSEditFunction
         return array( 'valid' => $valid,
                       'published' => $published,
                       'validation_errors' => $validationErrors );
+    }
+
+    /**
+     * Writes back what was typed into the outline rows of an OPML export.
+     *
+     * Each row on the page carries its own id, so a row removed or added since
+     * the page was drawn cannot make the values land on the wrong outline.
+     *
+     * @param eZHTTPTool $http
+     * @param int $exportID
+     */
+    static function storeOPMLItems( $http, $exportID )
+    {
+        if ( !$http->hasPostVariable( 'OPMLItem_ID' ) )
+            return;
+
+        $ids = $http->postVariable( 'OPMLItem_ID' );
+        if ( !is_array( $ids ) )
+            return;
+
+        $text     = $http->hasPostVariable( 'OPMLItem_Text' ) ? $http->postVariable( 'OPMLItem_Text' ) : array();
+        $title    = $http->hasPostVariable( 'OPMLItem_Title' ) ? $http->postVariable( 'OPMLItem_Title' ) : array();
+        $desc     = $http->hasPostVariable( 'OPMLItem_Description' ) ? $http->postVariable( 'OPMLItem_Description' ) : array();
+        $category = $http->hasPostVariable( 'OPMLItem_Category' ) ? $http->postVariable( 'OPMLItem_Category' ) : array();
+        $language = $http->hasPostVariable( 'OPMLItem_Language' ) ? $http->postVariable( 'OPMLItem_Language' ) : array();
+        $type     = $http->hasPostVariable( 'OPMLItem_Type' ) ? $http->postVariable( 'OPMLItem_Type' ) : array();
+        $parent   = $http->hasPostVariable( 'OPMLItem_Parent' ) ? $http->postVariable( 'OPMLItem_Parent' ) : array();
+        $priority = $http->hasPostVariable( 'OPMLItem_Priority' ) ? $http->postVariable( 'OPMLItem_Priority' ) : array();
+        $xmlUrl   = $http->hasPostVariable( 'OPMLItem_XmlUrl' ) ? $http->postVariable( 'OPMLItem_XmlUrl' ) : array();
+        $htmlUrl  = $http->hasPostVariable( 'OPMLItem_HtmlUrl' ) ? $http->postVariable( 'OPMLItem_HtmlUrl' ) : array();
+        $url      = $http->hasPostVariable( 'OPMLItem_Url' ) ? $http->postVariable( 'OPMLItem_Url' ) : array();
+        $comment  = $http->hasPostVariable( 'OPMLItem_IsComment' ) ? $http->postVariable( 'OPMLItem_IsComment' ) : array();
+        $break    = $http->hasPostVariable( 'OPMLItem_IsBreakpoint' ) ? $http->postVariable( 'OPMLItem_IsBreakpoint' ) : array();
+        $subnodes = $http->hasPostVariable( 'OPMLItem_Subnodes' ) ? $http->postVariable( 'OPMLItem_Subnodes' ) : array();
+
+        $types = array_keys( eZRSSExportOPMLItem::outlineTypes() );
+
+        $db = eZDB::instance();
+        $db->begin();
+        foreach ( $ids as $itemID )
+        {
+            $item = eZRSSExportOPMLItem::fetch( $itemID, true, eZRSSExport::STATUS_DRAFT );
+            if ( !$item || (int) $item->attribute( 'rssexport_id' ) !== (int) $exportID )
+                continue;   // not ours, or gone since the page was drawn
+
+            $item->setAttribute( 'outline_text', isset( $text[$itemID] ) ? $text[$itemID] : '' );
+            $item->setAttribute( 'title', isset( $title[$itemID] ) ? $title[$itemID] : '' );
+            $item->setAttribute( 'description', isset( $desc[$itemID] ) ? $desc[$itemID] : '' );
+            $item->setAttribute( 'category', isset( $category[$itemID] ) ? $category[$itemID] : '' );
+            $item->setAttribute( 'language', isset( $language[$itemID] ) ? $language[$itemID] : '' );
+            $item->setAttribute( 'xml_url', isset( $xmlUrl[$itemID] ) ? $xmlUrl[$itemID] : '' );
+            $item->setAttribute( 'html_url', isset( $htmlUrl[$itemID] ) ? $htmlUrl[$itemID] : '' );
+            $item->setAttribute( 'url', isset( $url[$itemID] ) ? $url[$itemID] : '' );
+
+            if ( isset( $type[$itemID] ) && in_array( $type[$itemID], $types, true ) )
+                $item->setAttribute( 'outline_type', $type[$itemID] );
+
+            if ( isset( $priority[$itemID] ) && is_numeric( $priority[$itemID] ) )
+                $item->setAttribute( 'priority', (int) $priority[$itemID] );
+
+            // A line cannot be its own parent, and a parent it does not share an
+            // export with would put it in somebody else's document.
+            if ( isset( $parent[$itemID] ) && is_numeric( $parent[$itemID] ) )
+            {
+                $parentID = (int) $parent[$itemID];
+                if ( $parentID === (int) $itemID )
+                    $parentID = 0;
+                if ( $parentID )
+                {
+                    $parentItem = eZRSSExportOPMLItem::fetch( $parentID, true, eZRSSExport::STATUS_DRAFT );
+                    if ( !$parentItem || (int) $parentItem->attribute( 'rssexport_id' ) !== (int) $exportID )
+                        $parentID = 0;
+                }
+                $item->setAttribute( 'parent_id', $parentID );
+            }
+
+            $item->setAttribute( 'is_comment', isset( $comment[$itemID] ) ? 1 : 0 );
+            $item->setAttribute( 'is_breakpoint', isset( $break[$itemID] ) ? 1 : 0 );
+            $item->setAttribute( 'subnodes', isset( $subnodes[$itemID] ) ? 1 : 0 );
+
+            $item->store();
+        }
+        $db->commit();
     }
 
     /**

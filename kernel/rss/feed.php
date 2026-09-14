@@ -86,10 +86,21 @@ else
 $httpCharset = eZTextCodec::httpCharset();
 header( 'Last-Modified: ' . $lastModified );
 
-if ( $RSSExport->attribute( 'rss_version' ) === 'ATOM' )
-    header( 'Content-Type: application/xml; charset=' . $httpCharset );
-else
-    header( 'Content-Type: application/rss+xml; charset=' . $httpCharset );
+switch ( $RSSExport->attribute( 'rss_version' ) )
+{
+    // An OPML document is a list of feeds, not a feed, and readers look for
+    // this type when deciding whether they can subscribe to the lot.
+    case 'OPML':
+        header( 'Content-Type: text/x-opml; charset=' . $httpCharset );
+        break;
+
+    case 'ATOM':
+        header( 'Content-Type: application/xml; charset=' . $httpCharset );
+        break;
+
+    default:
+        header( 'Content-Type: application/rss+xml; charset=' . $httpCharset );
+}
 
 header( 'Content-Length: ' . strlen( $rssContent ) );
 header( 'X-Powered-By: ' . eZPublishSDK::EDITION );
