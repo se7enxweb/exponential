@@ -137,6 +137,31 @@ $ViewList['preloadstream'] = array(
     'unordered_params' => array( 'maxpages' => 'MaxPages',
                                  'maxdepth' => 'MaxDepth' ) );
 
+// The cronjobs console, and the stream that follows a running job's output.
+// Launch, stop and clear are actions on the console rather than views of their
+// own, so they go through this module's post action handling and one policy.
+$ViewList['cronjobs'] = array(
+    'functions' => array( 'managecronjobs' ),
+    'script' => 'cronjobs.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'single_post_actions' => array( 'LaunchCronjobButton' => 'LaunchCronjob',
+                                    'StopCronjobButton' => 'StopCronjob',
+                                    'ClearCronjobLogButton' => 'ClearCronjobLog' ),
+    // Each part's own submit button carries the part name as its value, so one
+    // form serves every part and the page needs no javascript to launch one.
+    'post_action_parameters' => array( 'LaunchCronjob' => array( 'CronjobPart' => 'LaunchCronjobButton',
+                                                                 'CronjobSiteAccess' => 'CronjobSiteAccess' ) ),
+    'params' => array() );
+
+$ViewList['cronjobsstream'] = array(
+    'functions' => array( 'managecronjobs' ),
+    'script' => 'cronjobsstream.php',
+    'ui_context' => 'ajax',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array(),
+    'unordered_params' => array( 'offset' => 'Offset' ) );
+
 // The stream that drives the static cache generator on the cache view. A view
 // rather than a standalone entry point so it goes through the same siteaccess
 // and policy checks as the page that opens it, and the same managecache policy
@@ -225,6 +250,7 @@ $FunctionList = array();
 $FunctionList['administrate'] = array();
 $FunctionList['install'] = array();
 $FunctionList['managecache'] = array();
+$FunctionList['managecronjobs'] = array();
 $FunctionList['preload'] = array();
 $FunctionList['setup'] = array();
 $FunctionList['system_info'] = array();
