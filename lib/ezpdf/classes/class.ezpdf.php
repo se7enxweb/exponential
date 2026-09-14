@@ -1215,6 +1215,23 @@ class Cezpdf extends Cpdf
         return $this->alink( $info, 1 );
     }
 
+    /**
+     * Whether a link is underlined as well as coloured.
+     *
+     * On unless pdf.ini [PDFGeneral] LinkUnderline says otherwise. With it off
+     * a link is still blue and still clickable, just not underlined.
+     *
+     * @return bool
+     */
+    static function linkUnderlineEnabled()
+    {
+        $ini = eZINI::instance( 'pdf.ini' );
+        if ( !$ini->hasVariable( 'PDFGeneral', 'LinkUnderline' ) )
+            return true;
+
+        return $ini->variable( 'PDFGeneral', 'LinkUnderline' ) === 'enabled';
+    }
+
     function alink( $info, $internal = 0 )
     {
         // a callback function to support the formation of clickable links within the document
@@ -1246,6 +1263,7 @@ class Cezpdf extends Cpdf
                     $this->setLineStyle( $thick );
                 }
                 break;
+
             case 'end':
             case 'eol':
                 // the end of the link
@@ -1263,7 +1281,10 @@ class Cezpdf extends Cpdf
                     $drop = $start['height'] * $lineFactor * 1.5;
                     $dropx = cos( $a ) * $drop;
                     $dropy = -sin( $a ) * $drop;
-                    $this->line( $start['x'] - $dropx, $start['y'] - $dropy, $info['x'] - $dropx, $info['y'] - $dropy );
+                    // The rule only, not the link: addLink below is what makes
+                    // the words clickable, and that is kept either way.
+                    if ( Cezpdf::linkUnderlineEnabled() )
+                        $this->line( $start['x'] - $dropx, $start['y'] - $dropy, $info['x'] - $dropx, $info['y'] - $dropy );
                     $this->addLink( $start['url'], $start['x'], $start['y'] + $start['decender'], $info['x'], $start['y'] + $start['decender'] + $start['height'] );
                     $this->restoreState();
                 }

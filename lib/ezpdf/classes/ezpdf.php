@@ -144,13 +144,7 @@ class eZPDF
                 $rows = str_replace( array( ' ', "\t", "\r\n", "\n" ),
                                                           '',
                                                           $rows );
-                $httpCharset = eZTextCodec::internalCharset();
-                $outputCharset = $config->hasVariable( 'PDFGeneral', 'OutputCharset' )
-                                 ? $config->variable( 'PDFGeneral', 'OutputCharset' )
-                                 : 'iso-8859-1';
-                $codec = eZTextCodec::instance( $httpCharset, $outputCharset );
-                // Convert current text to $outputCharset (by default iso-8859-1)
-                $rows = $codec->convertString( $rows );
+                $rows = eZPDF::toOutputCharset( $rows );
 
                 $operatorValue .= urlencode( $rows );
 
@@ -269,7 +263,7 @@ class eZPDF
             case 'stream':
             {
                 $this->PDF->ezStream();
-            }
+            } break;
 
             case 'close':
             {
@@ -310,13 +304,7 @@ class eZPDF
                 }
 
                 $text = str_replace( array( ' ', "\n", "\t" ), '', $text );
-                $httpCharset = eZTextCodec::internalCharset();
-                $outputCharset = $config->hasVariable( 'PDFGeneral', 'OutputCharset' )
-                                 ? $config->variable( 'PDFGeneral', 'OutputCharset' )
-                                 : 'iso-8859-1';
-                $codec = eZTextCodec::instance( $httpCharset, $outputCharset );
-                // Convert current text to $outputCharset (by default iso-8859-1)
-                $text = $codec->convertString( $text );
+                $text = eZPDF::toOutputCharset( $text );
 
                 $this->PDF->ezText( $text );
                 eZDebug::writeNotice( 'Execute text in PDF, length: "'. strlen( $text ) .'"', __METHOD__ );
@@ -389,13 +377,7 @@ class eZPDF
 
                 if ( isset( $frameDesc['block_code'] ) )
                 {
-                    $httpCharset = eZTextCodec::internalCharset();
-                    $outputCharset = $config->hasVariable( 'PDFGeneral', 'OutputCharset' )
-                                 ? $config->variable( 'PDFGeneral', 'OutputCharset' )
-                                 : 'iso-8859-1';
-                    $codec = eZTextCodec::instance( $httpCharset, $outputCharset );
-                    // Convert current text to $outputCharset (by default iso-8859-1)
-                    $frameDesc['block_code'] = $codec->convertString( $frameDesc['block_code'] );
+                    $frameDesc['block_code'] = eZPDF::toOutputCharset( $frameDesc['block_code'] );
                     $operatorValue .= urlencode( $frameDesc['block_code'] );
                 }
 
@@ -464,13 +446,7 @@ class eZPDF
 
                 if ( isset( $frameDesc['text'] ) )
                 {
-                    $httpCharset = eZTextCodec::internalCharset();
-                    $outputCharset = $config->hasVariable( 'PDFGeneral', 'OutputCharset' )
-                                 ? $config->variable( 'PDFGeneral', 'OutputCharset' )
-                                 : 'iso-8859-1';
-                    $codec = eZTextCodec::instance( $httpCharset, $outputCharset );
-                    // Convert current text to $outputCharset (by default iso-8859-1)
-                    $frameDesc['text'] = $codec->convertString( $frameDesc['text'] );
+                    $frameDesc['text'] = eZPDF::toOutputCharset( $frameDesc['text'] );
                     $operatorValue .= urlencode( $frameDesc['text'] );
                 }
 
@@ -612,13 +588,7 @@ class eZPDF
                 $text = str_replace( array( ' ', "\t", "\r\n", "\n" ),
                                      '',
                                      $text );
-                $httpCharset = eZTextCodec::internalCharset();
-                $outputCharset = $config->hasVariable( 'PDFGeneral', 'OutputCharset' )
-                             ? $config->variable( 'PDFGeneral', 'OutputCharset' )
-                             : 'iso-8859-1';
-                $codec = eZTextCodec::instance( $httpCharset, $outputCharset );
-                // Convert current text to $outputCharset (by default iso-8859-1)
-                $text = $codec->convertString( $text );
+                $text = eZPDF::toOutputCharset( $text );
 
                 $operatorValue .= '>'. urlencode( $text ) .'</ezGroup:callFrontpage>';
 
@@ -653,13 +623,7 @@ class eZPDF
                 $text = $tpl->elementValue( $operatorParameters[1], $rootNamespace, $currentNamespace );
 
                 $text = str_replace( array( ' ', "\n", "\t" ), '', $text );
-                $httpCharset = eZTextCodec::internalCharset();
-                $outputCharset = $config->hasVariable( 'PDFGeneral', 'OutputCharset' )
-                             ? $config->variable( 'PDFGeneral', 'OutputCharset' )
-                             : 'iso-8859-1';
-                $codec = eZTextCodec::instance( $httpCharset, $outputCharset );
-                // Convert current text to $outputCharset (by default iso-8859-1)
-                $text = $codec->convertString( $text );
+                $text = eZPDF::toOutputCharset( $text );
 
                 $operatorValue = '<C:callKeyword:'. rawurlencode( $text ) .'>';
             } break;
@@ -976,13 +940,7 @@ class eZPDF
                     }
                 }
 
-                $httpCharset = eZTextCodec::internalCharset();
-                $outputCharset = $config->hasVariable( 'PDFGeneral', 'OutputCharset' )
-                             ? $config->variable( 'PDFGeneral', 'OutputCharset' )
-                             : 'iso-8859-1';
-                $codec = eZTextCodec::instance( $httpCharset, $outputCharset );
-                // Convert current text to $outputCharset (by default iso-8859-1)
-                $parameters['text'] = $codec->convertString( $parameters['text'] );
+                $parameters['text'] = eZPDF::toOutputCharset( $parameters['text'] );
 
                 $operatorValue .= '>';
                 $operatorValue .= urlencode( $parameters['text'] );
@@ -1035,13 +993,7 @@ class eZPDF
                             }
                         }
 
-                        $httpCharset = eZTextCodec::internalCharset();
-                        $outputCharset = $config->hasVariable( 'PDFGeneral', 'OutputCharset' )
-                                     ? $config->variable( 'PDFGeneral', 'OutputCharset' )
-                                     : 'iso-8859-1';
-                        $codec = eZTextCodec::instance( $httpCharset, $outputCharset );
-                        // Convert current text to $outputCharset (by default iso-8859-1)
-                        $text = $codec->convertString( $text );
+                        $text = eZPDF::toOutputCharset( $text );
 
                         $operatorValue .= '>' . urlencode( $text ) . '</ezGroup::callTextFrame>';
 
@@ -1060,15 +1012,126 @@ class eZPDF
 
     }
 
+    /**
+     * Whether the configured font can hold the whole of unicode.
+     *
+     * A truetype file can, because it is embedded as a composite font; the
+     * bundled afm faces cannot, because they are simple fonts with 256 slots.
+     *
+     * @return bool
+     */
+    public static function isUnicodeFont()
+    {
+        $ini = eZINI::instance( 'pdf.ini' );
+        $font = $ini->hasVariable( 'PDFGeneral', 'Font' )
+              ? trim( (string)$ini->variable( 'PDFGeneral', 'Font' ) ) : '';
+
+        return substr( strtolower( $font ), -4 ) === '.ttf';
+    }
+
+    /**
+     * Converts text from the site's charset to the one the pdf is written in.
+     *
+     * Was six copies of the same four lines, each defaulting to iso-8859-1.
+     * That default was the wrong one: the fonts are emitted with
+     * /Encoding /WinAnsiEncoding, and WinAnsi and iso-8859-1 disagree over
+     * 0x80-0x9F - which is where the em dash, the euro sign, the bullet and
+     * the curly quotes live. The font could draw them; the conversion threw
+     * them away first and wrote a question mark. windows-1252 is what
+     * WinAnsiEncoding actually is, so that is the default now.
+     *
+     * Transliteration, on unless it is turned off, degrades whatever is still
+     * unmappable to its closest ascii rather than to a question mark, so a
+     * Polish or Czech name comes out readable instead of eaten.
+     *
+     * A multi byte charset is refused. The fonts this library writes are
+     * simple fonts with a 256 entry encoding, so utf-8 text would be drawn one
+     * byte at a time and read as mojibake - cafÃ© rather than café. Rendering
+     * utf-8 properly needs a composite font with an embedded truetype face,
+     * which this library does not produce.
+     *
+     * @param string $text
+     * @return string
+     */
+    public static function toOutputCharset( $text )
+    {
+        $ini = eZINI::instance( 'pdf.ini' );
+
+        // A truetype font is embedded as a composite font, which addresses its
+        // glyphs by number and so has room for the whole of unicode. There is
+        // nothing to convert to and nothing to lose: the text goes through as
+        // the utf-8 it already is.
+        if ( self::isUnicodeFont() )
+            return $text;
+
+        $charset = $ini->hasVariable( 'PDFGeneral', 'OutputCharset' )
+                 ? trim( (string)$ini->variable( 'PDFGeneral', 'OutputCharset' ) ) : '';
+        if ( $charset === '' )
+            $charset = 'windows-1252';
+
+        $normalised = strtolower( str_replace( '_', '-', $charset ) );
+        if ( in_array( $normalised, array( 'utf-8', 'utf8', 'utf-16', 'utf-16le', 'utf-16be', 'utf-32' ), true ) )
+        {
+            eZDebug::writeError( "pdf.ini [PDFGeneral] OutputCharset is '$charset'. The fonts written by this library "
+                               . 'use a 256 entry encoding, so multi byte text is drawn one byte at a time and comes '
+                               . 'out unreadable. Falling back to windows-1252.', __METHOD__ );
+            $charset = 'windows-1252';
+        }
+
+        $internal = eZTextCodec::internalCharset();
+        if ( strcasecmp( $internal, $charset ) === 0 )
+            return $text;
+
+        $transliterate = !$ini->hasVariable( 'PDFGeneral', 'Transliterate' )
+                      || $ini->variable( 'PDFGeneral', 'Transliterate' ) !== 'disabled';
+
+        if ( $transliterate && function_exists( 'iconv' ) )
+        {
+            $converted = @iconv( $internal, $charset . '//TRANSLIT//IGNORE', (string)$text );
+            if ( $converted !== false )
+                return $converted;
+        }
+
+        $codec = eZTextCodec::instance( $internal, $charset );
+        return $codec ? $codec->convertString( $text ) : $text;
+    }
+
     /*
      \private
      Create PDF object
     */
     function createPDF( $paper = 'a4', $orientation = 'portrait' )
     {
+        $ini = eZINI::instance( 'pdf.ini' );
+
+        $font = $ini->hasVariable( 'PDFGeneral', 'Font' )
+              ? trim( (string)$ini->variable( 'PDFGeneral', 'Font' ) ) : '';
+        if ( $font === '' )
+            $font = 'lib/ezpdf/classes/fonts/Helvetica';
+
+        // Which of the font's 256 slots hold which glyph. It has to agree with
+        // OutputCharset or the accents land on the wrong characters:
+        // WinAnsiEncoding is windows-1252, MacRomanEncoding is mac-roman, and
+        // the fonts' own StandardEncoding is neither.
+        $encoding = $ini->hasVariable( 'PDFGeneral', 'FontEncoding' )
+                  ? trim( (string)$ini->variable( 'PDFGeneral', 'FontEncoding' ) ) : '';
+        if ( $encoding === '' )
+            $encoding = 'WinAnsiEncoding';
+
         $this->PDF = new eZPDFTable( $paper, $orientation );
-        $this->PDF->selectFont( 'lib/ezpdf/classes/fonts/Helvetica' );
-        eZDebug::writeNotice( 'PDF: File created' );
+
+        if ( self::isUnicodeFont() )
+        {
+            // A composite font has no 256 slot table for an encoding to
+            // describe, so none is passed: the text carries glyph numbers.
+            $this->PDF->selectFont( $font );
+            eZDebug::writeNotice( 'PDF: File created using ' . $font . ' as a unicode font' );
+        }
+        else
+        {
+            $this->PDF->selectFont( $font, array( 'encoding' => $encoding ) );
+            eZDebug::writeNotice( 'PDF: File created using ' . $font . ' with ' . $encoding );
+        }
     }
 
     /// The array of operators, used for registering operators

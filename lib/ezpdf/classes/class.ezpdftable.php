@@ -1128,7 +1128,7 @@ class eZPDFTable extends Cezpdf
 
         if ( isset( $params['fontName'] ) )
         {
-            $options['fontName'] = 'lib/ezpdf/classes/fonts/'. $params['fontName'];
+            $options['fontName'] = eZPDFTable::resolveFontName( $params['fontName'] );
         }
 
         $this->addToPreStack( $options );
@@ -1142,6 +1142,82 @@ class eZPDFTable extends Cezpdf
     /**
      * Function for insert image
      */
+    /*!
+     Shrinks an image to fit the page, keeping its proportions.
+
+     The limits come from pdf.ini [PDFGeneral]: MaxImageWidth and
+     MaxImageHeight, both in points, with 72 to the inch. Left empty or zero
+     each falls back to what the page actually has room for - the paper less
+     its margins - which is the sensible ceiling and needs no configuring.
+     ImageScaling=disabled turns the whole thing off and gives back the old
+     behaviour of drawing images at whatever size they were handed over at.
+
+     Only ever scales down. An image smaller than the limits is left alone
+     rather than blown up to fill them.
+
+     \param width  in points, adjusted in place
+     \param height in points, adjusted in place
+    */
+    function constrainImage( &$width, &$height )
+    {
+        $width = (float)$width;
+        $height = (float)$height;
+        if ( $width <= 0 || $height <= 0 )
+            return;
+
+        $ini = eZINI::instance( 'pdf.ini' );
+
+        if ( $ini->hasVariable( 'PDFGeneral', 'ImageScaling' )
+             && $ini->variable( 'PDFGeneral', 'ImageScaling' ) === 'disabled' )
+            return;
+
+        $setting = function ( $name ) use ( $ini )
+        {
+            if ( !$ini->hasVariable( 'PDFGeneral', $name ) )
+                return 0.0;
+            return (float)trim( (string)$ini->variable( 'PDFGeneral', $name ) );
+        };
+
+        // The margins as configured, not as they stand. An image that floats
+        // pushes the running margin aside so the text flows around it, and
+        // those pushes accumulate: after a few pictures the left margin had
+        // grown past the width of the paper, the room left worked out
+        // negative, and the limit was quietly skipped - which is why some
+        // images were still drawn at twice the width of the page.
+        $left = $setting( 'LeftMargin' );
+        $right = $setting( 'RightMargin' );
+        $top = $setting( 'TopMargin' );
+        $bottom = $setting( 'BottomMargin' );
+
+        $pageWidth = (float)$this->ez['pageWidth'];
+        $pageHeight = (float)$this->ez['pageHeight'];
+
+        $maxWidth = $setting( 'MaxImageWidth' );
+        if ( $maxWidth <= 0 )
+            $maxWidth = $pageWidth - $left - $right;
+        if ( $maxWidth <= 0 )
+            $maxWidth = $pageWidth;
+
+        $maxHeight = $setting( 'MaxImageHeight' );
+        if ( $maxHeight <= 0 )
+            $maxHeight = $pageHeight - $top - $bottom;
+        if ( $maxHeight <= 0 )
+            $maxHeight = $pageHeight;
+
+        // One scale for both, so the picture keeps its shape.
+        $scale = 1.0;
+        if ( $maxWidth > 0 && $width > $maxWidth )
+            $scale = $maxWidth / $width;
+        if ( $maxHeight > 0 && $height * $scale > $maxHeight )
+            $scale = $maxHeight / $height;
+
+        if ( $scale >= 1.0 )
+            return;
+
+        $width = (int)floor( $width * $scale );
+        $height = (int)floor( $height * $scale );
+    }
+
     function callImage( $info )
     {
         $params = array();
@@ -1160,6 +1236,13 @@ class eZPDFTable extends Cezpdf
         {
             $params['static'] = false;
         }
+
+        // Before anything is measured against it. The width and height that
+        // arrive here are the image's pixel dimensions, handed straight
+        // through by the templates and then used as points - so a 1600 pixel
+        // photograph asked for 1600 points on a page 595 points wide and ran
+        // off it in every direction, over the margins and past the paper.
+        $this->constrainImage( $params['width'], $params['height'] );
 
         if ( $this->yOffset()-$params['height'] < $this->ez['bottomMargin'] )
         {
@@ -1226,6 +1309,26 @@ class eZPDFTable extends Cezpdf
             $xOffset = $params['x'];
             $leftMargin = false;
             $rightMargin = false;
+        }
+        else
+        {
+            // Keep it on the paper. Every position above is worked out from
+            // the running margins, and a floated image pushes those aside so
+            // text can flow past it - so with two images on one band the
+            // second was placed beyond where the first had pushed the margin
+            // to, which put it off the right hand edge of the page. An
+            // explicit x is left alone; that is the caller being deliberate.
+            $ini = eZINI::instance( 'pdf.ini' );
+            $configuredLeft = $ini->hasVariable( 'PDFGeneral', 'LeftMargin' )
+                            ? (float)$ini->variable( 'PDFGeneral', 'LeftMargin' ) : $this->ez['leftMargin'];
+            $configuredRight = $ini->hasVariable( 'PDFGeneral', 'RightMargin' )
+                             ? (float)$ini->variable( 'PDFGeneral', 'RightMargin' ) : $this->ez['rightMargin'];
+
+            $rightmost = $this->ez['pageWidth'] - $configuredRight - $params['width'];
+            if ( $xOffset > $rightmost )
+                $xOffset = $rightmost;
+            if ( $xOffset < $configuredLeft )
+                $xOffset = $configuredLeft;
         }
 
         $yOffset = $this->yOffset();
@@ -1509,7 +1612,7 @@ class eZPDFTable extends Cezpdf
 
         if ( isset( $params['name'] ) )
         {
-            $options['fontName'] = 'lib/ezpdf/classes/fonts/'. $params['name'];
+            $options['fontName'] = eZPDFTable::resolveFontName( $params['name'] );
         }
 
         if ( isset( $params['size'] ) )
@@ -2495,7 +2598,7 @@ class eZPDFTable extends Cezpdf
 
             $documentSpec =& $outputElement['docSpec'];
 
-            if ( isset( $documentSpec['fontName'] ) )
+            if ( isset( $documentSpec['fontName'] ) && $documentSpec['fontName'] !== false )
             {
                 $this->selectFont( $documentSpec['fontName'] );
             }
@@ -2692,7 +2795,7 @@ class eZPDFTable extends Cezpdf
 
         if ( isset( $params['font'] ) )
         {
-            $options['fontName'] = 'lib/ezpdf/classes/fonts/'. $params['font'];
+            $options['fontName'] = eZPDFTable::resolveFontName( $params['font'] );
         }
 
         if ( isset( $params['size'] ) )
@@ -2748,11 +2851,38 @@ class eZPDFTable extends Cezpdf
 
         $this->DocSpecStack[] = $docSpecArray;
 
+        // false means no font was asked for, so whichever is current is kept.
+        //
+        // This named Helvetica outright. The stack is built here, in the
+        // constructor, before anything has had a chance to choose a font, and
+        // every run of text then re-selected that name - so a font selected by
+        // the caller was used for nothing. With a truetype face chosen the text
+        // was still drawn with Helvetica, one byte at a time, and everything
+        // outside its 256 slots came out as mojibake.
         $this->PreStack = array( array( 'justification' => $this->justification(),
                                         'fontSize' => $this->fontSize(),
-                                        'fontName' => 'lib/ezpdf/classes/fonts/Helvetica',
+                                        'fontName' => false,
                                         'cmyk' => eZMath:: rgbToCMYK2( 0, 0, 0 ) ) );
         $this->DocSpecification = array();
+    }
+
+    /*!
+     Resolves a font as named by a template.
+
+     A bare name is one of the faces shipped beside this library. Anything that
+     looks like a path - and a truetype file always does - is taken as given,
+     so a document can ask for a font that lives anywhere on the system.
+
+     \param name
+     \return font path
+    */
+    static function resolveFontName( $name )
+    {
+        $name = (string)$name;
+        if ( strpos( $name, '/' ) !== false || substr( strtolower( $name ), -4 ) === '.ttf' )
+            return $name;
+
+        return 'lib/ezpdf/classes/fonts/' . $name;
     }
 
     /*!

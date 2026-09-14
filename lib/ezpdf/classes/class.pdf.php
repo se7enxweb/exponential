@@ -862,6 +862,21 @@ class Cpdf
                                                           'SubType' => 'Type1' ) );
             $fontNum = $this->numFonts;
             $this->objects[$id]['info']['fontNum'] = $fontNum;
+
+            // A composite font brings its own subtype and the objects that go
+            // with it, and needs none of the encoding handling below: it is
+            // addressed by glyph number, not through a 256 entry table.
+            if ( isset( $options['SubType'] ) && $options['SubType'] === 'Type0' )
+            {
+                foreach ( array( 'SubType', 'fontKey', 'descendant', 'toUnicode' ) as $key )
+                    $this->objects[$id]['info'][$key] = $options[$key];
+                if ( isset( $options['fontNum'] ) )
+                    $this->objects[$id]['info']['fontNum'] = $options['fontNum'];
+
+                $this->o_pages( $this->currentNode, 'font',
+                                array( 'fontNum' => $this->objects[$id]['info']['fontNum'], 'objNum' => $id ) );
+                break;
+            }
             // deal with the encoding and the differences
             if ( isset( $options['differences'] ) )
             {
@@ -916,6 +931,20 @@ class Cpdf
             break;
 
         case 'out':
+            if ( $o['info']['SubType'] === 'Type0' )
+            {
+                // Identity-H means the two byte codes in the text are the
+                // font's own glyph numbers, with no table in between.
+                $res = "\n" . $id . " 0 obj\n<< /Type /Font\n/Subtype /Type0\n";
+                $res .= '/Name /F' . $o['info']['fontNum'] . "\n";
+                $res .= '/BaseFont /' . $o['info']['name'] . "\n";
+                $res .= "/Encoding /Identity-H\n";
+                $res .= '/DescendantFonts [' . $o['info']['descendant'] . " 0 R]\n";
+                $res .= '/ToUnicode ' . $o['info']['toUnicode'] . " 0 R\n";
+                $res .= ">>\nendobj";
+                return $res;
+            }
+
             $res = "\n" . $id . " 0 obj\n<< /Type /Font\n/Subtype /" . $o['info']['SubType'] . "\n";
             $res.= "/Name /F" . $o['info']['fontNum'] . "\n";
             $res.= "/BaseFont /" . $o['info']['name'] . "\n";
@@ -1896,6 +1925,12 @@ class Cpdf
      */
     function selectFont( $fontName, $encoding = '', $set = 1 )
     {
+        // A truetype file is taken as a request for a composite font, which is
+        // the only kind that can hold the whole of unicode. Everything else
+        // keeps the simple 256 slot path it always had.
+        if ( substr( strtolower( $fontName ), -4 ) === '.ttf' )
+            return $this->selectUnicodeFont( $fontName, $set );
+
         if ( !isset( $this->fonts[$fontName] ) )
         {
             // load the file
@@ -2126,6 +2161,361 @@ class Cpdf
             $this->setCurrentFont();
         }
         return $this->currentFontNum;
+    }
+
+    /**
+     * Registers a truetype font as a composite font and selects it.
+     *
+     * A composite font addresses its glyphs by number rather than by a
+     * position in a 256 entry table, so a document can use every character the
+     * font has instead of the 224 a single byte charset can name. That is what
+     * makes utf-8 work rather than be transliterated into whatever the nearest
+     * single byte charset could hold.
+     *
+     * Five objects make one up: this Type0, the descendant that carries the
+     * widths, the descriptor, the font file itself, and the map back to
+     * unicode that lets the text be selected, searched and copied out of the
+     * finished document.
+     *
+     * @param string $path Path to a .ttf file.
+     * @param int $set Whether to make it the current font.
+     * @return int
+     */
+    function selectUnicodeFont( $path, $set = 1 )
+    {
+        if ( !isset( $this->fonts[$path] ) )
+        {
+            require_once 'lib/ezpdf/classes/eztruetypefont.php';
+
+            try
+            {
+                $ttf = new eZPDFTrueTypeFont( $path );
+            }
+            catch ( Exception $e )
+            {
+                $this->addMessage( 'selectUnicodeFont: ' . $e->getMessage() );
+                return $this->currentFontNum;
+            }
+
+            $this->numFonts++;
+            $fontNum = $this->numFonts;
+
+            $this->numObj++;  $fontObj = $this->numObj;
+            $this->numObj++;  $cidObj = $this->numObj;
+            $this->numObj++;  $descriptorObj = $this->numObj;
+            $this->numObj++;  $fileObj = $this->numObj;
+            $this->numObj++;  $toUnicodeObj = $this->numObj;
+
+            $metrics = $ttf->descriptor();
+
+            $this->fonts[$path] = array(
+                'isUnicode'  => true,
+                'ttf'        => $ttf,
+                'name'       => $ttf->postScriptName(),
+                // The metrics the layout reads straight off the font entry.
+                // Without FontBBox getFontHeight() worked out a line height of
+                // nothing and every line was drawn on top of the one before,
+                // which made a page of overlapping text rather than a page.
+                'FontName'    => $ttf->postScriptName(),
+                'FontBBox'    => $metrics['FontBBox'],
+                'Ascender'    => $metrics['Ascent'],
+                'Descender'   => $metrics['Descent'],
+                'CapHeight'   => $metrics['CapHeight'],
+                'ItalicAngle' => $metrics['ItalicAngle'],
+                'UnderlinePosition'  => -100,
+                'UnderlineThickness' => 50,
+                // Keyed by code point rather than by byte, so the width lookups
+                // the layout already does keep working unchanged.
+                'C'          => array(),
+                // glyph => code point, for the widths and the unicode map, both
+                // of which are written once the document is finished and every
+                // character used is known.
+                'usedGlyphs' => array(),
+                'fontNum'    => $fontNum,
+                'fontObj'    => $fontObj,
+                '_version_'  => 1 );
+
+            $descriptor = $metrics;
+            $descriptor['FontName'] = $ttf->postScriptName();
+            $descriptor['FontFile2'] = $fileObj;
+            $descriptor['MissingWidth'] = 0;
+
+            $this->o_font( $fontObj, 'new', array( 'name' => $ttf->postScriptName(),
+                                                   'fontNum' => $fontNum,
+                                                   'SubType' => 'Type0',
+                                                   'fontKey' => $path,
+                                                   'descendant' => $cidObj,
+                                                   'toUnicode' => $toUnicodeObj ) );
+            $this->o_fontCID( $cidObj, 'new', array( 'fontKey' => $path,
+                                                     'name' => $ttf->postScriptName(),
+                                                     'descriptor' => $descriptorObj ) );
+            $this->o_fontDescriptor( $descriptorObj, 'new', $descriptor );
+            $this->o_fontFile2( $fileObj, 'new', array( 'fontKey' => $path ) );
+            $this->o_toUnicode( $toUnicodeObj, 'new', array( 'fontKey' => $path ) );
+
+            $name = basename( $path, '.ttf' );
+            if ( !isset( $this->fontFamilies[$name] ) )
+            {
+                // Bold and italic of a truetype family are separate files. If
+                // they are beside this one they are used; if not, <b> and <i>
+                // simply keep the regular face rather than failing.
+                $family = array();
+                foreach ( array( 'b' => '-Bold', 'i' => '-Oblique', 'bi' => '-BoldOblique', 'ib' => '-BoldOblique' ) as $key => $suffix )
+                {
+                    $candidate = dirname( $path ) . '/' . $name . $suffix . '.ttf';
+                    if ( file_exists( $candidate ) )
+                        $family[$key] = $candidate;
+                }
+                if ( $family )
+                {
+                    $family['' ] = $path;
+                    $this->setFontFamily( $path, $family );
+                }
+            }
+        }
+
+        if ( $set && isset( $this->fonts[$path] ) )
+        {
+            $this->currentBaseFont = $path;
+            $this->setCurrentFont();
+        }
+
+        return $this->currentFontNum;
+    }
+
+    /**
+     * Whether the named font addresses its glyphs by number.
+     */
+    function PRVTfontIsUnicode( $font )
+    {
+        return isset( $this->fonts[$font]['isUnicode'] ) && $this->fonts[$font]['isUnicode'];
+    }
+
+    /**
+     * The character at $i as a unicode code point, moving $i to the last byte
+     * of the sequence so the caller's loop lands on the next character.
+     *
+     * The directives the text may carry - <b>, </i>, <c:callback> - are all
+     * ascii, and utf-8 never puts an ascii byte inside a multi byte sequence,
+     * so the scanning around this can go on working a byte at a time.
+     */
+    function PRVTnextCodePoint( &$text, &$i )
+    {
+        $byte = ord( $text[$i] );
+        if ( $byte < 0x80 )
+            return $byte;
+
+        $length = strlen( $text );
+        if ( ( $byte & 0xE0 ) === 0xC0 && $i + 1 < $length )
+        {
+            $point = ( ( $byte & 0x1F ) << 6 ) | ( ord( $text[$i+1] ) & 0x3F );
+            $i += 1;
+            return $point;
+        }
+        if ( ( $byte & 0xF0 ) === 0xE0 && $i + 2 < $length )
+        {
+            $point = ( ( $byte & 0x0F ) << 12 ) | ( ( ord( $text[$i+1] ) & 0x3F ) << 6 )
+                   | ( ord( $text[$i+2] ) & 0x3F );
+            $i += 2;
+            return $point;
+        }
+        if ( ( $byte & 0xF8 ) === 0xF0 && $i + 3 < $length )
+        {
+            $point = ( ( $byte & 0x07 ) << 18 ) | ( ( ord( $text[$i+1] ) & 0x3F ) << 12 )
+                   | ( ( ord( $text[$i+2] ) & 0x3F ) << 6 ) | ( ord( $text[$i+3] ) & 0x3F );
+            $i += 3;
+            return $point;
+        }
+
+        // Not valid utf-8. Taken as one latin-1 character so the text is never
+        // silently shortened.
+        return $byte;
+    }
+
+    /**
+     * Width of a code point in the given composite font, remembering the glyph
+     * so that it is written into the widths and the unicode map.
+     */
+    function PRVTunicodeWidth( $font, $codePoint )
+    {
+        if ( isset( $this->fonts[$font]['C'][$codePoint]['WX'] ) )
+            return $this->fonts[$font]['C'][$codePoint]['WX'];
+
+        $ttf = $this->fonts[$font]['ttf'];
+        $glyph = $ttf->glyphIndex( $codePoint );
+        $width = $ttf->glyphWidth( $glyph );
+
+        $this->fonts[$font]['C'][$codePoint] = array( 'WX' => $width, 'G' => $glyph );
+        $this->fonts[$font]['usedGlyphs'][$glyph] = $codePoint;
+
+        return $width;
+    }
+
+    /**
+     * One run of text as it goes into a content stream.
+     *
+     * A simple font takes the bytes as they are. A composite font takes glyph
+     * numbers, two bytes each, written as hex.
+     */
+    function PRVTshowText( $text )
+    {
+        $font = $this->currentFont;
+        if ( !$this->PRVTfontIsUnicode( $font ) )
+            return ' (' . $this->filterText( $text ) . ') Tj';
+
+        $hex = '';
+        $length = strlen( $text );
+        for ( $i = 0; $i < $length; $i++ )
+        {
+            $point = $this->PRVTnextCodePoint( $text, $i );
+            $this->PRVTunicodeWidth( $font, $point );
+            $hex .= sprintf( '%04X', $this->fonts[$font]['C'][$point]['G'] );
+        }
+
+        return ' <' . $hex . '> Tj';
+    }
+
+    /**
+     * The descendant of a composite font, which is where the widths live.
+     */
+    function o_fontCID( $id, $action, $options = '' )
+    {
+        if ( $action != 'new' )
+            $o =& $this->objects[$id];
+
+        switch ( $action )
+        {
+        case 'new':
+            $this->objects[$id] = array( 't' => 'fontCID', 'info' => $options );
+            break;
+
+        case 'out':
+            $font = $this->fonts[$o['info']['fontKey']];
+
+            // Only the glyphs the document actually used are described. A
+            // width for all six thousand would be pointless and large.
+            $glyphs = array_keys( $font['usedGlyphs'] );
+            sort( $glyphs, SORT_NUMERIC );
+
+            $widths = '';
+            foreach ( $glyphs as $glyph )
+            {
+                $point = $font['usedGlyphs'][$glyph];
+                $widths .= $glyph . ' [' . $font['C'][$point]['WX'] . '] ';
+            }
+
+            $res = "\n" . $id . " 0 obj\n<< /Type /Font\n/Subtype /CIDFontType2\n";
+            $res .= '/BaseFont /' . $o['info']['name'] . "\n";
+            $res .= "/CIDSystemInfo << /Registry (Adobe) /Ordering (Identity) /Supplement 0 >>\n";
+            $res .= '/FontDescriptor ' . $o['info']['descriptor'] . " 0 R\n";
+            $res .= "/DW 1000\n";
+            if ( $widths !== '' )
+                $res .= '/W [ ' . trim( $widths ) . " ]\n";
+            // The glyph numbers in the text are the font's own, so the map
+            // from one to the other is the identity.
+            $res .= "/CIDToGIDMap /Identity\n";
+            $res .= ">>\nendobj";
+            return $res;
+        }
+    }
+
+    /**
+     * The truetype file itself, embedded so the document renders the same
+     * wherever it is opened.
+     */
+    function o_fontFile2( $id, $action, $options = '' )
+    {
+        if ( $action != 'new' )
+            $o =& $this->objects[$id];
+
+        switch ( $action )
+        {
+        case 'new':
+            $this->objects[$id] = array( 't' => 'fontFile2', 'info' => $options );
+            break;
+
+        case 'out':
+            $data = $this->fonts[$o['info']['fontKey']]['ttf']->fontData();
+            $original = strlen( $data );
+
+            $filter = '';
+            if ( function_exists( 'gzcompress' ) )
+            {
+                $compressed = gzcompress( $data, 6 );
+                if ( $compressed !== false && strlen( $compressed ) < $original )
+                {
+                    $data = $compressed;
+                    $filter = "/Filter /FlateDecode\n";
+                }
+            }
+
+            $res = "\n" . $id . " 0 obj\n<< " . $filter;
+            $res .= '/Length ' . strlen( $data ) . "\n";
+            // Length1 is the size before compression, which is what a viewer
+            // needs to know to load the face.
+            $res .= '/Length1 ' . $original . "\n";
+            $res .= ">>\nstream\n" . $data . "\nendstream\nendobj";
+            return $res;
+        }
+    }
+
+    /**
+     * The map from the glyph numbers in the text back to unicode.
+     *
+     * Without it the page looks right and every attempt to select, search or
+     * copy the text gives nothing back, because nothing in the file says what
+     * glyph 171 is a picture of.
+     */
+    function o_toUnicode( $id, $action, $options = '' )
+    {
+        if ( $action != 'new' )
+            $o =& $this->objects[$id];
+
+        switch ( $action )
+        {
+        case 'new':
+            $this->objects[$id] = array( 't' => 'toUnicode', 'info' => $options );
+            break;
+
+        case 'out':
+            $font = $this->fonts[$o['info']['fontKey']];
+            $glyphs = array_keys( $font['usedGlyphs'] );
+            sort( $glyphs, SORT_NUMERIC );
+
+            $map = "/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n"
+                 . "/CIDSystemInfo << /Registry (Adobe) /Ordering (UCS) /Supplement 0 >> def\n"
+                 . "/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n"
+                 . "1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange\n";
+
+            // A bfchar block holds at most a hundred entries.
+            $chunks = array_chunk( $glyphs, 100 );
+            foreach ( $chunks as $chunk )
+            {
+                $map .= count( $chunk ) . " beginbfchar\n";
+                foreach ( $chunk as $glyph )
+                {
+                    $point = $font['usedGlyphs'][$glyph];
+                    if ( $point > 0xFFFF )
+                    {
+                        // Beyond the basic plane the destination is a utf-16
+                        // surrogate pair.
+                        $point -= 0x10000;
+                        $target = sprintf( '%04X%04X', 0xD800 + ( $point >> 10 ), 0xDC00 + ( $point & 0x3FF ) );
+                    }
+                    else
+                    {
+                        $target = sprintf( '%04X', $point );
+                    }
+                    $map .= sprintf( "<%04X> <%s>\n", $glyph, $target );
+                }
+                $map .= "endbfchar\n";
+            }
+
+            $map .= "endcmap\nCMapName currentdict /CMap defineresource pop\nend\nend";
+
+            $res = "\n" . $id . " 0 obj\n<< /Length " . strlen( $map ) . " >>\nstream\n" . $map . "\nendstream\nendobj";
+            return $res;
+        }
     }
 
     /**
@@ -2715,7 +3105,27 @@ class Cpdf
                     if ( $text[$j] == '>' )
                     {
                         if ( $final === true )
-                            $this->currentTextState = substr( $this->currentTextState, 0, $p).substr( $this->currentTextState, $p+1);
+                        {
+                            // Closing a bold or italic run takes that letter
+                            // back out of the font state, leaving whatever is
+                            // still open around it.
+                            //
+                            // $p was never assigned - not here and nowhere else
+                            // in this function. The two lines that find which
+                            // letter to remove had been lost from this copy of
+                            // the library. Undefined, $p is null, and
+                            // substr( $s, 0, null ) returns the whole string
+                            // under php 8 where it returned an empty one
+                            // before, so rather than dropping one character
+                            // this appended the state to itself: every </b> and
+                            // every </i> doubled it. Thirty of them is a
+                            // gigabyte, which is why generating anything with
+                            // formatted text in it exhausted memory instead of
+                            // producing a file.
+                            $p = strrpos( $this->currentTextState, $text[$j-1] );
+                            if ( $p !== false )
+                                $this->currentTextState = substr( $this->currentTextState, 0, $p ) . substr( $this->currentTextState, $p + 1 );
+                        }
                         $directive = $j-$i+1;
                     }
                     break;
@@ -2764,7 +3174,23 @@ class Cpdf
                                     {
                                         $x = $this->xOffset();
                                     }
-                                    $tmp = $this->PRVTgetTextPosition( $x, $y, $angle, $size, $wordSpaceAdjust, substr( $text, $startInfo['i'], $i-$startInfo['i'] ) );
+                                    // Measured from where the callback began, not
+                                    // from where the line began.
+                                    //
+                                    // The width worked out here is the width of the
+                                    // callback's own text - for a link, the words of
+                                    // the link. It was being added to $x, which at
+                                    // this point is still the start of the line, so
+                                    // the end of a link came out as "line start plus
+                                    // the length of the link" instead of "link start
+                                    // plus the length of the link". Everything after
+                                    // a link on that line was then drawn from that
+                                    // wrong point: in a recipe credit the slash
+                                    // between two links landed in the middle of the
+                                    // first one, reading "Mak/e Better Food", and the
+                                    // rule under the link stopped two characters in.
+                                    $startX = isset( $startInfo['x'] ) ? $startInfo['x'] : $x;
+                                    $tmp = $this->PRVTgetTextPosition( $startX, $y, $angle, $size, $wordSpaceAdjust, substr( $text, $startInfo['i'], $i-$startInfo['i'] ) );
                                     $info = array( 'x' => $tmp[0],'y' => $tmp[1], 'angle' => $angle, 'status' => 'end', 'p' => $parm, 'nCallback' => $this->nCallback );
 
                                     $x = $tmp[0];
@@ -2963,7 +3389,7 @@ class Cpdf
                 {
                     $part = substr($text,$start,$i-$start);
                     $this->objects[$this->currentContents]['c'].=' /F'.$this->currentFontNum.' '.sprintf('%.1F',$size).' Tf ';
-                    $this->objects[$this->currentContents]['c'].=' ('.$this->filterText($part).') Tj';
+                    $this->objects[$this->currentContents]['c'].= $this->PRVTshowText( $part );
                 }
                 if ( !$directiveArray['run_final'] )
                 {
@@ -3013,7 +3439,7 @@ class Cpdf
         {
             $part = substr($text,$start);
             $this->objects[$this->currentContents]['c'].=' /F'.$this->currentFontNum.' '.sprintf('%.1F',$size).' Tf ';
-            $this->objects[$this->currentContents]['c'].=' ('.$this->filterText($part).') Tj';
+            $this->objects[$this->currentContents]['c'].= $this->PRVTshowText( $part );
         }
         $this->objects[$this->currentContents]['c'].=' ET';
 
@@ -3075,6 +3501,10 @@ class Cpdf
                     $cf = $this->currentFont;
                 }
                 $i = $i + $directive-1;
+            }
+            else if ( $this->PRVTfontIsUnicode( $cf ) )
+            {
+                $w += $this->PRVTunicodeWidth( $cf, $this->PRVTnextCodePoint( $text, $i ) );
             }
             else
             {
@@ -3206,6 +3636,17 @@ class Cpdf
             }
             else
             {
+                if ( $this->PRVTfontIsUnicode( $cf ) )
+                {
+                    // One character can be several bytes, so the position has
+                    // to move with it; $i is passed by reference and left on
+                    // the last byte so the loop's own step lands correctly.
+                    $cOrd = $this->PRVTnextCodePoint( $text, $i );
+                    $cOrd2 = $cOrd;
+                    $w += $this->PRVTunicodeWidth( $cf, $cOrd );
+                }
+                else
+                {
                 $cOrd = ord($text[$i]);
                 if ( isset( $this->fonts[$cf]['differences'][$cOrd] ) )
                 {
@@ -3224,6 +3665,7 @@ class Cpdf
                 else
                 {
                     $w += 700;
+                }
                 }
 
                 if ( $w > $tw )
