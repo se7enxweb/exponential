@@ -85,6 +85,13 @@ $ViewList["rad"] = array(
     "default_navigation_part" => 'ezsetupnavigationpart',
     "params" => array( ) );
 
+$ViewList["designextension"] = array(
+    'functions' => array( 'setup' ),
+    "script" => "designextension.php",
+    'ui_context' => 'administration',
+    "default_navigation_part" => 'ezsetupnavigationpart',
+    "params" => array( ) );
+
 $ViewList["datatype"] = array(
     'functions' => array( 'setup' ),
     "script" => "datatype.php",
