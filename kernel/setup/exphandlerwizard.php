@@ -581,6 +581,91 @@ class expHandlerWizard extends expExtensionWizard
                        'returns' => "''",
                        'what' => 'Which template draws the attribute as a whole.' ) ) ),
 
+        'paymentgateway' => array(
+            'title'    => 'Payment gateway',
+            'what'     => 'Takes a basket to somewhere money can be paid, and takes the answer back.',
+            'why'      => 'The shop can price a basket, tax it and deliver it, and stops at taking money. A gateway is the piece that does not ship: it sends the buyer to whoever holds the card details, waits, and tells the workflow whether the payment happened.',
+            'base'     => 'eZRedirectGateway',
+            'source'   => 'kernel/shop/classes/ezredirectgateway.php',
+            'ini'      => 'paymentgateways.ini',
+            'section'  => 'GatewaysSettings',
+            'variable' => 'AvailableGateways',
+            'aliased'  => false,
+            'appended' => true,
+            'override' => true,
+            'path'     => 'paymentgateways/%alias%gateway.php',
+            'suffix'   => 'gateway',
+            'extra'    => array(
+                array( 'variable' => 'GatewaysDirectories[]',
+                       'value'    => 'extension/%extension%/paymentgateways',
+                       'what'     => 'The directory the gateway file is looked for in. A path rather than an extension name, because this setting has always taken one - so a gateway installed under another extension root needs this line changed to match.' ) ),
+            'note'     => 'The class registers itself at the foot of its own file, with eZPaymentGatewayType::registerGateway(). Without that line the file is found, loaded, and the gateway never appears in the workflow event - and nothing says why.',
+            'registers' => "// This is what makes it a gateway. The file is loaded for this line as\n"
+                         . "// much as for the class, and without it nothing knows the gateway\n"
+                         . "// exists.\n"
+                         . "eZPaymentGatewayType::registerGateway(\n"
+                         . "    %class%::GATEWAY_TYPE, '%alias%gateway', '%title%' );",
+            'constants' => array(
+                array( 'name' => 'GATEWAY_TYPE', 'value' => '%alias%',
+                       'what' => 'The name this gateway is known by, in paymentgateways.ini, in the workflow event, and in every order that was paid through it. It cannot change once an order exists.' ) ),
+            'methods'  => array(
+                array( 'name' => 'execute', 'signature' => 'execute( $process, $event )',
+                       'returns' => 'eZWorkflowType::STATUS_ACCEPTED',
+                       'what' => 'Called by the workflow when an order is placed, and again when the buyer comes back. Return STATUS_FETCH_TEMPLATE_REPEAT to send them away and wait; STATUS_ACCEPTED when the money is confirmed; STATUS_REJECTED when it is not. Called more than once for one order, so it has to know which visit this is.' ),
+                array( 'name' => 'createPaymentObject', 'signature' => 'createPaymentObject( $processID, $orderID )',
+                       'returns' => 'false',
+                       'what' => 'The row that remembers this payment between the two visits. It is the only thing that survives the trip to the gateway and back, so whatever will be needed to check the answer has to be in it.' ),
+                array( 'name' => 'needCleanup', 'signature' => 'needCleanup()',
+                       'returns' => 'true',
+                       'what' => 'Whether abandoned payments should be tidied up. True unless nothing is stored, because a buyer who changes their mind at the gateway leaves a row behind for ever otherwise.' ),
+                array( 'name' => 'cleanup', 'signature' => 'cleanup( $process, $event )',
+                       'returns' => 'null',
+                       'what' => 'Removes what this payment left behind. Called for payments that were started and never finished, so it must cope with a payment that got nowhere.' ),
+                array( 'name' => 'createShortDescription', 'signature' => 'createShortDescription( $order, $maxDescLen )',
+                       'returns' => "''",
+                       'what' => 'What the buyer sees on their statement, cut to whatever length the gateway allows. Some refuse anything longer and some silently truncate, which is worse.' ) ) ),
+
+        'paymentgatewaydirect' => array(
+            'title'    => 'Payment gateway, transparent',
+            'what'     => 'Takes the payment without the buyer ever leaving the site.',
+            'why'      => 'The common shape now, and the one people mean when they say payment gateway. The card details are collected on your own checkout page - or by the gateway\'s javascript, which hands back a token instead - and the charge is made server to server while the buyer waits. No redirect, no coming back, no second visit: one call to execute() decides the order.',
+            'base'     => 'eZPaymentGateway',
+            'source'   => 'kernel/shop/classes/ezpaymentgateway.php',
+            'ini'      => 'paymentgateways.ini',
+            'section'  => 'GatewaysSettings',
+            'variable' => 'AvailableGateways',
+            'aliased'  => false,
+            'appended' => true,
+            'override' => true,
+            'path'     => 'paymentgateways/%alias%gateway.php',
+            'suffix'   => 'gateway',
+            'extra'    => array(
+                array( 'variable' => 'GatewaysDirectories[]',
+                       'value'    => 'extension/%extension%/paymentgateways',
+                       'what'     => 'The directory the gateway file is looked for in. A path rather than an extension name, because this setting has always taken one.' ) ),
+            'note'     => 'Extends eZPaymentGateway rather than eZRedirectGateway, which is the whole difference: no payment object is needed to survive a trip away and back, because there is no trip. It also means the money is taken inside the request the buyer is waiting on, so a slow gateway is a slow checkout and a timeout is a genuinely ambiguous state.',
+            'constants' => array(
+                array( 'name' => 'GATEWAY_TYPE', 'value' => '%alias%',
+                       'what' => 'The name this gateway is known by, in paymentgateways.ini, in the workflow event, and in every order paid through it. It cannot change once an order exists.' ) ),
+            'registers' => "// This is what makes it a gateway. The file is loaded for this line as\n"
+                         . "// much as for the class, and without it nothing knows the gateway\n"
+                         . "// exists.\n"
+                         . "eZPaymentGatewayType::registerGateway(\n"
+                         . "    %class%::GATEWAY_TYPE, '%alias%gateway', '%title%' );",
+            'methods'  => array(
+                array( 'name' => 'execute', 'signature' => 'execute( $process, $event )',
+                       'returns' => 'eZWorkflowType::STATUS_ACCEPTED',
+                       'what' => 'The whole thing, in one call. Take what the checkout collected, charge it, and answer: STATUS_ACCEPTED when the money is taken, STATUS_REJECTED when it is refused. Unlike a redirect gateway this is called once, so there is no second visit to correct a wrong answer in.' ),
+                array( 'name' => 'needCleanup', 'signature' => 'needCleanup()',
+                       'returns' => 'false',
+                       'what' => 'False is usually right here. Cleanup exists for payments abandoned between two visits, and this kind has only one - but return true if a record is written before the charge is attempted.' ),
+                array( 'name' => 'cleanup', 'signature' => 'cleanup( $process, $event )',
+                       'returns' => 'null',
+                       'what' => 'Only reached when needCleanup() says so. For this shape it means a charge that was started and whose answer never arrived, which is the case worth being careful about rather than tidy about.' ),
+                array( 'name' => 'createShortDescription', 'signature' => 'createShortDescription( $order, $maxDescLen )',
+                       'returns' => "''",
+                       'what' => 'What the buyer sees on their statement, cut to whatever length the gateway allows. Some refuse anything longer and some silently truncate, which is worse.' ) ) ),
+
         'urlfilter' => array(
             'title'    => 'URL alias filter',
             'what'     => 'Runs over every url this system generates, before it is stored, and may rewrite it.',
@@ -1495,6 +1580,15 @@ class expHandlerWizard extends expExtensionWizard
 
         $php .= implode( "\n\n", $methods ) . "\n}\n";
 
+        // Some kinds register themselves as they are loaded rather than being
+        // named by an ini alone. Without the line the file is found, loaded,
+        // and the thing it declares never appears.
+        if ( !empty( $recipe['registers'] ) )
+            $php .= "\n" . str_replace( array( '%class%', '%alias%', '%title%' ),
+                                        array( $settings['class'], $settings['alias'],
+                                               self::phpString( $settings['title'] ) ),
+                                        $recipe['registers'] ) . "\n";
+
         return $php;
     }
 
@@ -2348,6 +2442,123 @@ class expHandlerWizard extends expExtensionWizard
                            'code'  => "// site.ini [UserSettings]\n"
                                     . "// LoginHandler[]=standard\n"
                                     . "// LoginHandler[]=" . $settings['alias'] ) );
+
+            case 'paymentgatewaydirect':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'The same as for a redirect gateway, except that the one call is the whole conversation: nothing is sent away and nothing comes back.',
+                           'code'  => "\$gateway = eZPaymentGatewayType::createGateway( " . self::phpString( $settings['alias'] ) . " );\n\n"
+                                    . "// Answers ACCEPTED or REJECTED. There is no second visit.\n"
+                                    . "\$status = \$gateway->execute( \$process, \$event );" ),
+                    array( 'title' => 'Taking the payment', 'in' => 'class',
+                           'what'  => 'One pass. The order is on the process; what the checkout collected is on the request. Charge, and answer.',
+                           'code'  => "public function execute( \$process, \$event )\n"
+                                    . "{\n"
+                                    . "    \$http  = eZHTTPTool::instance();\n"
+                                    . "    \$order = eZOrder::fetch( \$process->attribute( 'order_id' ) );\n\n"
+                                    . "    // A token the gateway's javascript made from the card, not the\n"
+                                    . "    // card. See the note below: this is the whole difference between\n"
+                                    . "    // a checkout somebody can run and one nobody should.\n"
+                                    . "    \$token = \$http->hasPostVariable( 'payment_token' )\n"
+                                    . "             ? (string) \$http->postVariable( 'payment_token' ) : '';\n\n"
+                                    . "    if ( \$token === '' )\n"
+                                    . "        return eZWorkflowType::STATUS_REJECTED;\n\n"
+                                    . "    // Amount from the order, never from the request. A total that\n"
+                                    . "    // came through the browser is a price the buyer chose.\n"
+                                    . "    \$answer = \$this->charge( \$token,\n"
+                                    . "                            \$order->attribute( 'total_inc_vat' ),\n"
+                                    . "                            \$order->attribute( 'currency_code' ),\n"
+                                    . "                            \$this->idempotencyKey( \$order ) );\n\n"
+                                    . "    return \$answer['paid']\n"
+                                    . "           ? eZWorkflowType::STATUS_ACCEPTED\n"
+                                    . "           : eZWorkflowType::STATUS_REJECTED;\n"
+                                    . "}" ),
+                    array( 'title' => 'What must never touch this server',
+                           'what'  => 'A card number posted to your own checkout puts the whole machine, its logs, its backups and everybody with access to them inside the scope of the card rules. Every gateway worth using offers javascript that exchanges the card for a one time token in the browser, so the number never arrives here. Take the token.',
+                           'code'  => "// The form posts payment_token, and no field named anything like\n"
+                                    . "// a card number, expiry or security code.\n"
+                                    . "//\n"
+                                    . "// If one ever does arrive, it must not be logged, must not be put\n"
+                                    . "// on the order, and must not be kept after the charge - and the\n"
+                                    . "// right fix is to stop it arriving rather than to handle it well." ),
+                    array( 'title' => 'Saying it twice must not charge twice', 'in' => 'class',
+                           'what'  => 'The buyer is waiting on this request, so they will reload it. A double submit, a browser retry or a gateway timeout followed by a retry all have to end in one charge. Every gateway supports a key for this; derive it from the order so the same order always produces the same key.',
+                           'code'  => "protected function idempotencyKey( \$order )\n"
+                                    . "{\n"
+                                    . "    // The same order gives the same key however many times this\n"
+                                    . "    // runs, so the gateway charges once and reports the same answer\n"
+                                    . "    // afterwards.\n"
+                                    . "    return 'order-' . (int) \$order->attribute( 'id' );\n"
+                                    . "}" ),
+                    array( 'title' => 'The answer that never came',
+                           'what'  => 'A timeout is the hard case, and the only one unique to this shape. The charge may have succeeded; the network gave up before the answer arrived. Rejecting the order can charge somebody for nothing, and accepting it can give goods away.',
+                           'code'  => "// Ask, do not guess. Every gateway can be asked about a charge by\n"
+                                    . "// the same idempotency key, and that is what it is for:\n"
+                                    . "//\n"
+                                    . "//     \$answer = \$this->askAboutCharge( \$this->idempotencyKey( \$order ) );\n"
+                                    . "//\n"
+                                    . "// If it cannot be asked, reject and leave the order unpaid. An\n"
+                                    . "// unpaid order somebody has to chase is recoverable; a paid order\n"
+                                    . "// nobody recorded is a refund and an apology." ),
+                    array( 'title' => 'Switching it on',
+                           'what'  => 'Exactly as for a redirect gateway - and the workflow is still the step that is forgotten.',
+                           'code'  => "// 1. The extension is active.\n"
+                                    . "// 2. paymentgateways.ini lists " . $settings['alias'] . " and the directory.\n"
+                                    . "// 3. A workflow with a Payment Gateway event, set to this gateway,\n"
+                                    . "//    bound to the shop_confirmorder trigger in the admin.\n"
+                                    . "//\n"
+                                    . "// And the checkout template has to post the token this expects." ) );
+
+            case 'paymentgateway':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'The gateways are loaded and registered once, then the workflow event builds whichever the buyer chose and calls execute() on it.',
+                           'code'  => "// kernel/classes/workflowtypes/event/ezpaymentgateway/\n"
+                                    . "\$gateway = eZPaymentGatewayType::createGateway( " . self::phpString( $settings['alias'] ) . " );\n"
+                                    . "\$gateway->execute( \$process, \$event );" ),
+                    array( 'title' => 'Called twice for one order',
+                           'what'  => 'That is the whole shape of this, and the thing to get right. The first call sends the buyer away; the second happens when they come back, in a different request, possibly days later, possibly never. The process id is what joins the two.',
+                           'code'  => "// First visit: nothing paid yet.\n"
+                                    . "//   store what will be needed, send the buyer off,\n"
+                                    . "//   return STATUS_FETCH_TEMPLATE_REPEAT\n"
+                                    . "//\n"
+                                    . "// Second visit: the gateway has sent them back.\n"
+                                    . "//   read back what was stored, ask the gateway what happened,\n"
+                                    . "//   return STATUS_ACCEPTED or STATUS_REJECTED" ),
+                    array( 'title' => 'Telling the two apart', 'in' => 'class',
+                           'what'  => 'What was stored on the first visit is how the second knows it is the second. A gateway that cannot tell either charges twice or accepts an order nobody paid for.',
+                           'code'  => "public function execute( \$process, \$event )\n"
+                                    . "{\n"
+                                    . "    \$http    = eZHTTPTool::instance();\n"
+                                    . "    \$payment = \$this->fetchPaymentObject( \$process->attribute( 'id' ) );\n\n"
+                                    . "    if ( !\$payment )\n"
+                                    . "    {\n"
+                                    . "        // First visit. Remember this attempt, then send them away.\n"
+                                    . "        \$this->createPaymentObject( \$process->attribute( 'id' ),\n"
+                                    . "                                   \$process->attribute( 'order_id' ) );\n\n"
+                                    . "        \$this->redirectTo( \$this->gatewayUrl( \$process ) );\n\n"
+                                    . "        return eZWorkflowType::STATUS_FETCH_TEMPLATE_REPEAT;\n"
+                                    . "    }\n\n"
+                                    . "    // Second visit. Never believe the browser about whether it was\n"
+                                    . "    // paid: ask the gateway, server to server, about this payment.\n"
+                                    . "    return \$this->gatewaySaysPaid( \$payment )\n"
+                                    . "           ? eZWorkflowType::STATUS_ACCEPTED\n"
+                                    . "           : eZWorkflowType::STATUS_REJECTED;\n"
+                                    . "}" ),
+                    array( 'title' => 'The part that must not be trusted',
+                           'what'  => 'The buyer comes back through their own browser, so everything about that request is theirs to write. An amount, a status or an order id taken from it is a request to be given something for nothing. The only safe answer comes from asking the gateway directly, or from a signature over the whole reply that only the gateway could have made.',
+                           'code'  => "// Never this:\n"
+                                    . "//     if ( \$http->getVariable( 'status' ) === 'paid' )\n"
+                                    . "//\n"
+                                    . "// This:\n"
+                                    . "//     \$answer = \$this->askTheGateway( \$payment->attribute( 'reference' ) );\n"
+                                    . "//     if ( \$answer['amount'] === \$order->attribute( 'total_inc_vat' ) )" ),
+                    array( 'title' => 'Switching it on',
+                           'what'  => 'Three things, and the workflow is the one that is forgotten: a gateway that is registered and not in a workflow is never reached.',
+                           'code'  => "// 1. The extension is active.\n"
+                                    . "// 2. paymentgateways.ini lists " . $settings['alias'] . " and the directory.\n"
+                                    . "// 3. A workflow with a Payment Gateway event, set to this gateway,\n"
+                                    . "//    bound to the shop_confirmorder trigger in the admin." ) );
 
             case 'urlfilter':
                 return array(

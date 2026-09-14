@@ -195,9 +195,15 @@ class eZPaymentGatewayType extends eZWorkflowEventType
 
     /*!
     Each gateway must call this function to become 'available'.
+
+    \note Declared static because that is how it has always been called. Every
+          gateway calls it from the foot of its own file, at include time, with
+          no instance anywhere in sight - which php 7 allowed and php 8 makes a
+          fatal. Undeclared, the class of every payment gateway on the system
+          refused to load, and the request that touched one ended.
     */
 
-    function registerGateway( $gateway, $class_name, $description )
+    static function registerGateway( $gateway, $class_name, $description )
     {
         $gateways =& $GLOBALS["eZPaymentGateways"];
         if ( !is_array( $gateways ) )

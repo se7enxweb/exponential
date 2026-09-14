@@ -97,7 +97,11 @@ $ViewList["radsurvey"] = array(
     // a place in a list of several hundred can be linked to.
     'unordered_params' => array( 'show'   => 'Show',
                                  'offset' => 'Offset',
-                                 'find'   => 'Find' ),
+                                 'find'   => 'Find',
+                                 // The class loader check takes seconds, so it
+                                 // is asked for in the address rather than run
+                                 // every time the page is opened.
+                                 'check'  => 'Check' ),
     "params" => array( ) );
 
 $ViewList["settingsextension"] = array(

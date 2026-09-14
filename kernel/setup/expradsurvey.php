@@ -918,8 +918,15 @@ class expRADSurvey
     protected static function modulePaths()
     {
         return array(
-            'kernel'    => (array) glob( 'kernel/*/module.php' ),
-            'extension' => (array) glob( 'extension/*/modules/*/module.php' ) );
+            // kernel/<module>/ is where most of them are, and
+            // kernel/private/modules/<module>/ is where the rest are. Globbing
+            // only the first missed oauth, oauthadmin and switchlanguage - and
+            // the health check beside this then reported all three as modules
+            // that are listed and not there, which they are not.
+            'kernel'    => array_merge( (array) glob( 'kernel/*/module.php' ),
+                                        (array) glob( 'kernel/private/modules/*/module.php' ) ),
+            'extension' => array_merge( (array) glob( 'extension/*/modules/*/module.php' ),
+                                        (array) glob( 'extension/*/module/*/module.php' ) ) );
     }
 
     /**

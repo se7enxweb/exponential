@@ -17,13 +17,13 @@ where it can be searched.
 
 | | |
 | --- | --- |
-| Extension points | **1737** |
+| Extension points | **1743** |
 | ini files read | 381 |
 | Settings naming a class | 350 (333 resolve to a class, 16 take an alias, 1 look like a class and are not one) |
 | Places the kernel looks | 236 |
 | Interfaces and abstract classes | 41 (29 implemented) |
-| Modules | 57 |
-| Module views | 400 |
+| Modules | 60 |
+| Module views | 406 |
 | Policy functions | 179 |
 | Template operators and functions | 414 (364 operators, 50 functions) |
 | Events something can listen to | 34 |
@@ -1309,6 +1309,25 @@ Fetch functions: `subscription_list`, `subscription_list_count`, `import_subscri
 
 Fetch functions: `handler_list`, `digest_handlers`, `digest_items`, `event_content`, `subscribed_nodes`, `subscribed_nodes_count`
 
+### oauth
+
+`kernel/private/modules/oauth`
+
+| View | Needs | Parameters |
+| --- | --- | --- |
+| `oauth/authorize` | *nothing* | 0 |
+
+### oauthadmin
+
+`kernel/private/modules/oauthadmin`
+
+| View | Needs | Parameters |
+| --- | --- | --- |
+| `oauthadmin/list` | *nothing* | 0 |
+| `oauthadmin/edit` | *nothing* | 1 |
+| `oauthadmin/action` | *nothing* | 0 |
+| `oauthadmin/view` | *nothing* | 1 |
+
 ### owner
 
 `extension/ezownerchange/modules/owner` — policies: `change`
@@ -1464,7 +1483,7 @@ Fetch functions: `object`, `list`, `object_list`, `object_list_count`, `roles`, 
 | `setup/session` | `administrate` | 1 |
 | `setup/info` | `system_info` | 1 |
 | `setup/rad` | `setup` | 0 + 1 named |
-| `setup/radsurvey` | `setup` | 0 + 3 named |
+| `setup/radsurvey` | `setup` | 0 + 4 named |
 | `setup/settingsextension` | `setup` | 0 |
 | `setup/contentextension` | `setup` | 0 |
 | `setup/modulewizard` | `setup` | 0 |
@@ -1555,6 +1574,16 @@ Fetch functions: `basket`, `best_sell_list`, `related_purchase`, `wish_list`, `w
 | `state/group_edit` | `administrate` | 1 |
 | `state/view` | `administrate` | 3 |
 | `state/edit` | `administrate` | 2 |
+
+### switchlanguage
+
+`kernel/private/modules/switchlanguage`
+
+| View | Needs | Parameters |
+| --- | --- | --- |
+| `switchlanguage/to` | *nothing* | 1 |
+
+Fetch functions: `url_alias`
 
 ### syndication
 

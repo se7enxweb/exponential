@@ -626,6 +626,28 @@ class expRADCatalogue
             'source' => 'kernel/classes/ezpackageinstallationhandler.php',
             'tool'  => 'setup/handlerextension/packageinstall' ),
 
+        'paymentgateway' => array(
+            'group' => 'packaging',
+            'title' => 'Payment gateway',
+            'what'  => 'Takes a basket to somewhere money can be paid and brings the answer back. The shop prices, taxes and delivers a basket and stops at taking money: this is the piece that does not ship. It is called twice for one order - once to send the buyer away, once when they return - and the two visits are joined by the payment row it stores in between.',
+            'where' => 'extension/<name>/paymentgateways/<alias>gateway.php',
+            'register' => 'paymentgateways.ini [GatewaysSettings] AvailableGateways[] and GatewaysDirectories[], plus eZPaymentGatewayType::registerGateway() at the foot of the class file, plus a workflow with a Payment Gateway event bound to shop_confirmorder',
+            'contract' => 'extends eZRedirectGateway, or eZPaymentGateway for one that takes payment without leaving the site',
+            'mechanism' => 'directory',
+            'source' => 'kernel/shop/classes/ezredirectgateway.php',
+            'tool'  => 'setup/handlerextension/paymentgateway' ),
+
+        'paymentgatewaydirect' => array(
+            'group' => 'packaging',
+            'title' => 'Payment gateway, transparent',
+            'what'  => 'Takes the payment without the buyer ever leaving the site: the card is exchanged for a token in the browser, and the charge is made server to server while they wait. The common shape now, and a different job from the redirect kind - one call decides the order, so there is no second visit in which to correct a wrong answer, and a timeout is a genuinely ambiguous state that has to be asked about rather than guessed at.',
+            'where' => 'extension/<name>/paymentgateways/<alias>gateway.php',
+            'register' => 'paymentgateways.ini [GatewaysSettings] AvailableGateways[] and GatewaysDirectories[], plus eZPaymentGatewayType::registerGateway() at the foot of the class file, plus a workflow with a Payment Gateway event bound to shop_confirmorder',
+            'contract' => 'extends eZPaymentGateway',
+            'mechanism' => 'directory',
+            'source' => 'kernel/shop/classes/ezpaymentgateway.php',
+            'tool'  => 'setup/handlerextension/paymentgatewaydirect' ),
+
         'vathandler' => array(
             'group' => 'packaging',
             'title' => 'VAT handler',

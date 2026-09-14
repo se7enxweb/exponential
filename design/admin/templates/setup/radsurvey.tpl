@@ -76,6 +76,9 @@
     <span><b>{$survey_counts.views}</b><span class="sv-label">{'module views'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
     <span><b>{$survey_counts.contracts}</b><span class="sv-label">{'contracts to implement'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
     <span><b>{$survey_counts.aliases}</b><span class="sv-label">{'take an alias instead'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
+{if $survey_health.broken|gt( 0 )}
+    <span><b style="color:#b4232c">{$survey_health.broken}</b><span class="sv-label">{'configured and cannot work'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
+{/if}
 {if $survey_counts.broken|gt( 0 )}
     <span><b style="color:#b4232c">{$survey_counts.broken}</b><span class="sv-label">{'look like a class and are not one'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
 {/if}
@@ -103,11 +106,32 @@
     <span class="sv-meta">{'Showing %shown of %total.'|i18n( 'design/admin/setup/rad/survey',, hash( '%shown', $survey_shown, '%total', $survey_total ) )}</span>
 </form>
 
+{if eq( $survey_show, 'problems' )}
+<p class="sv-meta">
+{if eq( $survey_check, 'classes' )}
+    {'Every class this installation declares has been loaded in a child process. That is the only way to find one php refuses, and a class php refuses ends the request that touches it rather than merely failing.'|i18n( 'design/admin/setup/rad/survey' )}
+{else}
+    <a class="sv-btn" href={$survey_check_url|ezurl}>{'Also load every class'|i18n( 'design/admin/setup/rad/survey' )}</a>
+    {'Takes a few seconds. It loads every class this installation declares, in a child process so that one php refuses cannot take this page with it - which is how the last fault of that kind was found.'|i18n( 'design/admin/setup/rad/survey' )}
+{/if}
+</p>
+{/if}
+
 {if $survey_total|eq( 0 )}
 <p class="sv-meta">{'Nothing here matches that.'|i18n( 'design/admin/setup/rad/survey' )}</p>
 {else}
 <div class="sv-scroll">
 <table class="sv-table">
+{if eq( $survey_show, 'problems' )}
+<tr>
+    <th>&nbsp;</th>
+    <th>{'What is wrong'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th>{'How much'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th>{'Which one'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th>{'What it means'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th>{'Where'|i18n( 'design/admin/setup/rad/survey' )}</th>
+</tr>
+{else}
 <tr>
     <th>&nbsp;</th>
     <th>{'Where'|i18n( 'design/admin/setup/rad/survey' )}</th>
@@ -116,6 +140,7 @@
     <th>{'Value'|i18n( 'design/admin/setup/rad/survey' )}</th>
     <th>{'Declared in'|i18n( 'design/admin/setup/rad/survey' )}</th>
 </tr>
+{/if}
 {foreach $survey_rows as $sv_row}
 <tr>
     <td><span class="sv-dot{if eq( $sv_row.state, 'bad' )} is-bad{elseif eq( $sv_row.state, 'empty' )} is-empty{/if}"></span></td>

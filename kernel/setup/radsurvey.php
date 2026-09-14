@@ -17,6 +17,7 @@
 $Module = $Params['Module'];
 
 require_once 'kernel/setup/expradsurvey.php';
+require_once 'kernel/setup/expradhealth.php';
 
 $tpl = eZTemplate::factory();
 
@@ -36,6 +37,8 @@ $sections = array(
                              'what'  => 'Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.' ),
     'overrides'    => array( 'title' => 'Templates already replaced',
                              'what'  => 'Every override registered here. Each is a place a template has already been replaced - which is both something to learn from and something to collide with, since two overrides matching the same thing are decided by load order rather than by intent.' ),
+    'problems'     => array( 'title' => 'What is configured and cannot work',
+                             'what'  => 'The same walk over the same files, asked the other question: not where something could go, but what is here that points at nothing. A module listed and not found answers every address under it with an error; a datatype offered and not found cannot be added and hides the values of the attributes that already use it. Add (check)/classes to the address to load every class as well, which takes a few seconds and is the only way to find one php refuses.' ),
     'replaced'     => array( 'title' => 'Kernel classes replaced outright',
                              'what'  => 'The heaviest mechanism there is, and the first thing to know before anything else is diagnosed: a replaced kernel class is not the kernel any more, whatever the kernel source says.' ) );
 
@@ -85,6 +88,31 @@ switch ( $show )
                            : 'nothing implements it yet',
                 'note'  => $entry['source'],
                 'state' => count( $entry['implementations'] ) ? 'ok' : 'empty' );
+        break;
+
+    case 'problems':
+        $findings = expRADHealth::findings();
+
+        // The class loader check is seconds rather than milliseconds, so it is
+        // asked for rather than done on every visit.
+        $loader = isset( $Params['Check'] ) && $Params['Check'] === 'classes'
+                  ? expRADHealth::loaderFindings()
+                  : array( 'ran' => false, 'checked' => 0, 'findings' => array(), 'message' => '' );
+
+        foreach ( $loader['findings'] as $finding )
+            $findings[] = $finding;
+
+        usort( $findings, array( 'expRADHealth', 'compare' ) );
+
+        foreach ( $findings as $finding )
+            $rows[] = array(
+                'one'   => $finding['check'],
+                'two'   => $finding['severity'],
+                'three' => $finding['what'],
+                'four'  => $finding['fix'],
+                'note'  => $finding['where'],
+                'state' => $finding['severity'] === expRADHealth::BROKEN ? 'bad'
+                         : ( $finding['severity'] === expRADHealth::ODD ? 'ok' : 'empty' ) );
         break;
 
     case 'callables':
@@ -211,7 +239,9 @@ foreach ( $sections as $key => $section )
                      'current' => $key === $show,
                      'count'   => $key === 'modules'
                                   ? $counts['views'] + $counts['modules']
-                                  : ( isset( $counts[$key] ) ? $counts[$key] : 0 ),
+                                  : ( $key === 'problems'
+                                      ? expRADHealth::counts()['total']
+                                      : ( isset( $counts[$key] ) ? $counts[$key] : 0 ) ),
                      'current_label' => $section['title'],
                      'url'     => $address( $key, 0, $find ) );
 
@@ -222,6 +252,13 @@ for ( $at = 0; $at < $total; $at += $perPage )
                       'current' => $at === $offset,
                       'url'     => $address( $show, $at, $find ) );
 
+// The headline numbers of the health check, so the page can lead with how many
+// things are broken rather than making somebody click to find out.
+$health = expRADHealth::counts();
+
+$tpl->setVariable( 'survey_health', $health );
+$tpl->setVariable( 'survey_check', isset( $Params['Check'] ) ? $Params['Check'] : '' );
+$tpl->setVariable( 'survey_check_url', '/setup/radsurvey/(show)/problems/(check)/classes' );
 $tpl->setVariable( 'survey_counts', $counts );
 $tpl->setVariable( 'survey_tabs', $tabs );
 $tpl->setVariable( 'survey_show', $show );

@@ -12,7 +12,7 @@ knowledge was spread across `kernel/`, `lib/` and a dozen settings files.
 from it. A point with a tool and a point without are listed the same way, so
 neither can be forgotten.
 
-**62 extension points, 59 with a tool.**
+**64 extension points, 61 with a tool.**
 
 Every entry was checked against this installation's own source; the *Kernel*
 column names the file the mechanism actually lives in.
@@ -609,6 +609,32 @@ What happens when a package is installed or taken back out.
 | Contract | `extends eZPackageInstallationHandler` |
 | Mechanism | handler |
 | Kernel | `kernel/classes/ezpackageinstallationhandler.php` |
+
+### Payment gateway  
+*Tool:* `/setup/handlerextension/paymentgateway`
+
+Takes a basket to somewhere money can be paid and brings the answer back. The shop prices, taxes and delivers a basket and stops at taking money: this is the piece that does not ship. It is called twice for one order - once to send the buyer away, once when they return - and the two visits are joined by the payment row it stores in between.
+
+| | |
+|---|---|
+| Code | `extension/<name>/paymentgateways/<alias>gateway.php` |
+| Registered by | paymentgateways.ini [GatewaysSettings] AvailableGateways[] and GatewaysDirectories[], plus eZPaymentGatewayType::registerGateway() at the foot of the class file, plus a workflow with a Payment Gateway event bound to shop_confirmorder |
+| Contract | `extends eZRedirectGateway, or eZPaymentGateway for one that takes payment without leaving the site` |
+| Mechanism | directory |
+| Kernel | `kernel/shop/classes/ezredirectgateway.php` |
+
+### Payment gateway, transparent  
+*Tool:* `/setup/handlerextension/paymentgatewaydirect`
+
+Takes the payment without the buyer ever leaving the site: the card is exchanged for a token in the browser, and the charge is made server to server while they wait. The common shape now, and a different job from the redirect kind - one call decides the order, so there is no second visit in which to correct a wrong answer, and a timeout is a genuinely ambiguous state that has to be asked about rather than guessed at.
+
+| | |
+|---|---|
+| Code | `extension/<name>/paymentgateways/<alias>gateway.php` |
+| Registered by | paymentgateways.ini [GatewaysSettings] AvailableGateways[] and GatewaysDirectories[], plus eZPaymentGatewayType::registerGateway() at the foot of the class file, plus a workflow with a Payment Gateway event bound to shop_confirmorder |
+| Contract | `extends eZPaymentGateway` |
+| Mechanism | directory |
+| Kernel | `kernel/shop/classes/ezpaymentgateway.php` |
 
 ### VAT handler  
 *Tool:* `/setup/handlerextension/vat`
