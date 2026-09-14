@@ -151,7 +151,7 @@ class expRADCatalogue
             'contract' => 'No class to write: a setting per content class, and a template per type',
             'mechanism' => 'ini',
             'source' => 'kernel/classes/ezinformationcollection.php',
-            'tool'  => false ),
+            'tool'  => 'setup/settingsextension' ),
 
         'viewcachecleanup' => array(
             'group' => 'content',
@@ -162,7 +162,7 @@ class expRADCatalogue
             'contract' => 'No class to write: a group per content class identifier',
             'mechanism' => 'ini',
             'source' => 'kernel/classes/ezcontentcachemanager.php',
-            'tool'  => false ),
+            'tool'  => 'setup/settingsextension' ),
 
         // ── Templates and design ────────────────────────────────────────────
 
@@ -344,7 +344,7 @@ class expRADCatalogue
             'contract' => 'Settings, and an operation body with a trigger in it',
             'mechanism' => 'ini',
             'source' => 'kernel/classes/eztrigger.php',
-            'tool'  => false ),
+            'tool'  => 'setup/settingsextension' ),
 
         'notificationtype' => array(
             'group' => 'workflow',
@@ -388,7 +388,7 @@ class expRADCatalogue
             'contract' => 'A callable taking whatever the event passes',
             'mechanism' => 'ini',
             'source' => 'kernel/private/classes/ezpevent.php',
-            'tool'  => false ),
+            'tool'  => 'setup/settingsextension' ),
 
         // ── Storage and infrastructure ──────────────────────────────────────
 
@@ -500,7 +500,7 @@ class expRADCatalogue
             'contract' => 'Settings, and optionally an eZImageHandler class',
             'mechanism' => 'ini',
             'source' => 'lib/ezimage/classes/ezimagemanager.php',
-            'tool'  => false ),
+            'tool'  => 'setup/settingsextension' ),
 
         // ── Packaging and shop ──────────────────────────────────────────────
 
@@ -588,11 +588,11 @@ class expRADCatalogue
             'title' => 'User login handler',
             'what'  => 'Where a user is checked against when they log in - a directory, another system, anything.',
             'where' => 'extension/<name>/user/<handler>/<handler>user.php',
-            'register' => 'site.ini [UserSettings] ExtensionDirectory and AuthenticationMatch',
+            'register' => 'site.ini [UserSettings] LoginHandler[] and ExtensionDirectory[]',
             'contract' => 'extends eZUser and implements loginUser()',
             'mechanism' => 'directory',
             'source' => 'kernel/classes/datatypes/ezuser',
-            'tool'  => false ),
+            'tool'  => 'setup/handlerextension/login' ),
 
         'accessextension' => array(
             'group' => 'access',
@@ -603,7 +603,7 @@ class expRADCatalogue
             'contract' => 'Settings only',
             'mechanism' => 'ini',
             'source' => 'lib/ezutils/classes/ezini.php',
-            'tool'  => false ),
+            'tool'  => 'setup/settingsextension' ),
 
         'translation' => array(
             'group' => 'access',

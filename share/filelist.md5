@@ -515,6 +515,7 @@ fc3da246e798dc46db130b5e72764902  design/admin/templates/setup/extensions.tpl
 0d159ce4f4cc9dac5b518380a12f500d  design/admin/templates/setup/rad.tpl
 ef488f694b9b6259f966a8aba732d066  design/admin/templates/setup/radsurvey.tpl
 3e4dedd3cf80826a520f08b546a2d39c  design/admin/templates/setup/session.tpl
+85e2f97a3c928cef4747dc873c5993e9  design/admin/templates/setup/settingsextension.tpl
 600915d1b26d3b37aaee246ffd0045be  design/admin/templates/setup/systemupgrade.tpl
 2213f31deb144ac417374f43edec982a  design/admin/templates/setup/templateoperator.tpl
 713f58d21aa6b58f4d4ca88b69092cfa  design/admin/templates/setup/templateoperator_basic.tpl
@@ -2082,6 +2083,7 @@ cea6b6108b8edc1f7845d321c9681675  design/standard/templates/setup/radsurvey.tpl
 0d3f25ede375dc0632be8b80388f7ead  design/standard/templates/setup/registration_email.tpl
 cc7c1852194de98b13c2c3e89aa88e0e  design/standard/templates/setup/session.tpl
 6e514250bd29d924a22c8a7f80e7a6d0  design/standard/templates/setup/session_no_db.tpl
+0e4db3d93faac61176a62de2c0166cfd  design/standard/templates/setup/settingsextension.tpl
 e2a657a42dc9e3897395aa33d132abf3  design/standard/templates/setup/setupmenu.tpl
 b657b8c4a72faa46f21b9684ad232d6f  design/standard/templates/setup/summary.tpl
 ac204ddd015ba1d22ccaa5a1962912a2  design/standard/templates/setup/systemupgrade.tpl
@@ -2280,8 +2282,8 @@ e03c2aa19443976efb300d6226d8b71d  doc/bc/6.0/kickstartercli.md
 82e9ad363eeb8a1d0090ed20cf756a7e  doc/bc/6.0/phpunitv13.md
 593913f38a2dc56e3755f5c53f3315e1  doc/bc/6.0/phpunitv13forPHP841.md
 1f0fe8da97e4dc2830fed4619ac01ee0  doc/bc/6.0/preload.md
-c53e992620df05619bd2c342a547b75f  doc/bc/6.0/rad-extension-points.md
-885178faf0a90e9c9f3e7d2298b81ecb  doc/bc/6.0/rad-extension-surface.md
+6b81c249b6bdf7f50bba4aa2303b32cc  doc/bc/6.0/rad-extension-points.md
+7433bda47c2d7388b474538bc12cf6ac  doc/bc/6.0/rad-extension-surface.md
 02cab810b7ee149bb10c8ebb1d63d266  doc/bc/6.0/rad-security.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
 adac5192811bf518d52266dd4a6b0e72  doc/branch-overview
@@ -12215,11 +12217,12 @@ dc12533d2431c1a7979c5246efa0496c  kernel/setup/expcronjobrunner.php
 1e4e111620a064517ae963b304c0a62c  kernel/setup/expdatatypewizard.php
 e863034b26c81139fd92b57c79fa60be  kernel/setup/expdesignextensionwizard.php
 3abb7089f678e7c1d98fc1731cb3d2aa  kernel/setup/expextensionwizard.php
-f6608ebf0cf4ba591456b1d1a381d5ff  kernel/setup/exphandlerwizard.php
+51e19f0698d5cf6a25426872de94fc14  kernel/setup/exphandlerwizard.php
 a28b9f6cfbad6cf34f0e63039489f455  kernel/setup/expmoduleextensionwizard.php
 4ce3d1f6fbb5288f690fa0caae27a406  kernel/setup/exppreloadrunner.php
-f27a41131bf16f219c3f1f8f7688ca20  kernel/setup/expradcatalogue.php
+16742ed7516b477f52278c79436ca4a6  kernel/setup/expradcatalogue.php
 f9675f8f63a9415b0f822af01fc72c0c  kernel/setup/expradsurvey.php
+8ed4a6c2cd1dd80c91a1cffaf2f764db  kernel/setup/expsettingsextensionwizard.php
 31f82634133388e1a9a5c3ab12d50eb0  kernel/setup/expstaticcacherunner.php
 d110a85552db88cc9057342eafaf749b  kernel/setup/exptemplateextensionwizard.php
 dee99141d9dcbbbb2560931f4f16ec29  kernel/setup/expworkfloweventwizard.php
@@ -12233,13 +12236,14 @@ b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
 282ca080da3e7e76e5d6b97fd307f9da  kernel/setup/handlerextension.php
 3135f4cefe2acd041cfc3fe6e5ee3879  kernel/setup/info.php
 18ecee0d07126e49f164552b002eaf7e  kernel/setup/menuconfig.php
-703f1e65ae8025289258108c3ba6e65a  kernel/setup/module.php
+c670eeff9286cc739c3feba608810dca  kernel/setup/module.php
 a11eedef660d2f8992bcbaa26861097f  kernel/setup/moduleextension.php
 846edf76592a6173514e0b302ea5274b  kernel/setup/preload.php
 532ddefd251ca7a4047dd13962ed3fc5  kernel/setup/preloadstream.php
 abf5f51b260a722c6259ebea3bc30ef7  kernel/setup/rad.php
 8ff1e6f370d6d6d9273a5168456d1087  kernel/setup/radsurvey.php
 9a57b699ad6687e590fdb2b8db19a743  kernel/setup/session.php
+837ddb971c9e9941ee9a5300966d9d1a  kernel/setup/settingsextension.php
 f0bb2d78d2da0a115870dc0708978214  kernel/setup/settingstoolbar.php
 11d6f43693270057c21a4a8d78e96ef3  kernel/setup/setupmenu.php
 000fff131e21d5db77dc022f0d1bba6a  kernel/setup/staticcachestream.php

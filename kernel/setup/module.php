@@ -100,6 +100,13 @@ $ViewList["radsurvey"] = array(
                                  'find'   => 'Find' ),
     "params" => array( ) );
 
+$ViewList["settingsextension"] = array(
+    'functions' => array( 'setup' ),
+    "script" => "settingsextension.php",
+    'ui_context' => 'administration',
+    "default_navigation_part" => 'ezsetupnavigationpart',
+    "params" => array( ) );
+
 $ViewList["designextension"] = array(
     'functions' => array( 'setup' ),
     "script" => "designextension.php",

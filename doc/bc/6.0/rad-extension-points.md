@@ -12,7 +12,7 @@ knowledge was spread across `kernel/`, `lib/` and a dozen settings files.
 from it. A point with a tool and a point without are listed the same way, so
 neither can be forgotten.
 
-**48 extension points, 34 with a tool.**
+**48 extension points, 41 with a tool.**
 
 Every entry was checked against this installation's own source; the *Kernel*
 column names the file the mechanism actually lives in.
@@ -96,7 +96,7 @@ What turns stored rich text into what a visitor sees.
 | Kernel | `kernel/classes/datatypes/ezxmltext/ezxmltext.php` |
 
 ### Information collection behaviour  
-*No tool yet.*
+*Tool:* `/setup/settingsextension`
 
 What happens when a visitor fills in a form built out of content: what the submission is called, whether it is kept, whether it is emailed, and what the visitor is shown afterwards. Matched per content class, so a poll and a contact form built the same way behave differently.
 
@@ -109,7 +109,7 @@ What happens when a visitor fills in a form built out of content: what the submi
 | Kernel | `kernel/classes/ezinformationcollection.php` |
 
 ### View cache clearing rules  
-*No tool yet.*
+*Tool:* `/setup/settingsextension`
 
 Which other pages have to be rebuilt when one object is published. The default clears the object, its parents and what relates to it; a group named after a content class identifier says what else - a listing that has to change when a comment is posted, an object somewhere else entirely.
 
@@ -329,7 +329,7 @@ A step a workflow can take when something is published, moved or removed.
 | Kernel | `kernel/classes/ezworkfloweventtype.php` |
 
 ### Trigger  
-*No tool yet.*
+*Tool:* `/setup/settingsextension`
 
 The point in an operation where a workflow is given the chance to run.
 
@@ -381,7 +381,7 @@ Something that runs on its own, on a schedule, outside any request.
 | Kernel | `runcronjobs.php` |
 
 ### Kernel event listener  
-*No tool yet.*
+*Tool:* `/setup/settingsextension`
 
 Something called when the kernel reaches a named point, such as a request arriving.
 
@@ -515,7 +515,7 @@ What writes pages to disk so the web server can serve them without php.
 | Kernel | `kernel/setup/expstaticcacherunner.php` |
 
 ### Image handler and aliases  
-*No tool yet.*
+*Tool:* `/setup/settingsextension`
 
 How an image is scaled and what sizes exist.
 
@@ -627,20 +627,20 @@ Where the rate between two currencies comes from.
 Who gets in, what they may do, and in what language.
 
 ### User login handler  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/login`
 
 Where a user is checked against when they log in - a directory, another system, anything.
 
 | | |
 |---|---|
 | Code | `extension/<name>/user/<handler>/<handler>user.php` |
-| Registered by | site.ini [UserSettings] ExtensionDirectory and AuthenticationMatch |
+| Registered by | site.ini [UserSettings] LoginHandler[] and ExtensionDirectory[] |
 | Contract | `extends eZUser and implements loginUser()` |
 | Mechanism | directory |
 | Kernel | `kernel/classes/datatypes/ezuser` |
 
 ### Siteaccess settings extension  
-*No tool yet.*
+*Tool:* `/setup/settingsextension`
 
 Settings that apply to one siteaccess only, kept with the extension rather than in settings/.
 

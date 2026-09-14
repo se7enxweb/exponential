@@ -581,6 +581,36 @@ class expHandlerWizard extends expExtensionWizard
                        'returns' => "''",
                        'what' => 'Which template draws the attribute as a whole.' ) ) ),
 
+        'login' => array(
+            'title'    => 'User login handler',
+            'what'     => 'Where the system goes to find out whether a password is right.',
+            'why'      => 'The default checks a hash in ezuser. A handler of your own asks somebody else - a directory, a single sign on service, another application - and makes the user here when the answer comes back yes. It is how a site stops being the place passwords are kept.',
+            'base'     => 'eZUser',
+            'source'   => 'kernel/classes/datatypes/ezuser/ezuserloginhandler.php',
+            'ini'      => 'site.ini',
+            'section'  => 'UserSettings',
+            'variable' => 'LoginHandler',
+            'aliased'  => false,
+            'appended' => true,
+            'classFrom' => 'eZ%alias%User',
+            'path'     => 'login_handler/ez%alias%user.php',
+            'suffix'   => 'user',
+            'override' => true,
+            'extra'    => array(
+                array( 'variable' => 'ExtensionDirectory[]',
+                       'value'    => '%extension%',
+                       'what'     => 'The extension whose login_handler/ directory is searched. Without this line the file is never looked for, however correctly it is named.' ) ),
+            'note'     => 'The class name and the file name are both worked out from the setting: LoginHandler[]=x means class eZxUser in login_handler/ezxuser.php. All three have to agree or the handler is reported missing and the default answers instead - which means a site that looks like it is using your handler and is not.',
+            'methods'  => array(
+                array( 'name' => 'loginUser', 'signature' => 'loginUser( $login, $password, $authenticationMatch = false )',
+                       'static' => true,
+                       'returns' => 'false',
+                       'what' => 'The whole job. Given a name and a password, return an eZUser when they are right and false when they are not. Returning anything for a wrong password is the worst bug it is possible to write here, so fail closed: anything unexpected - a service that is down, an answer that does not parse, a user with no name - returns false.' ),
+                array( 'name' => 'fetchByName', 'signature' => 'fetchByName( $login, $asObject = true )',
+                       'static' => true,
+                       'returns' => 'false',
+                       'what' => 'Finds the local user row for a name. A handler authenticating elsewhere still needs a user here to own content and carry roles, and this is where one is found or made.' ) ) ),
+
         'vat' => array(
             'title'    => 'VAT handler',
             'what'     => 'What decides which rate of tax a product is sold at.',
@@ -2064,6 +2094,51 @@ class expHandlerWizard extends expExtensionWizard
                            'what'  => 'This handler and the package handler that carries the item share one alias. They are two halves of the same thing: one puts the item in a package, the other takes it out again.',
                            'code'  => "// package.ini [PackageSettings]   HandlerAlias[" . $settings['alias'] . "]=...\n"
                                     . "// package.ini [InstallerSettings] HandlerAlias[" . $settings['alias'] . "]=" . $class ) );
+
+            case 'login':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'Every handler listed in site.ini is tried in turn until one says yes. The default, standard, is eZUser itself, so leaving it in the list means a local password still works.',
+                           'code'  => "// kernel/classes/datatypes/ezuser/ezuserloginhandler.php\n"
+                                    . "\$handler = eZUserLoginHandler::instance( " . self::phpString( $settings['alias'] ) . " );\n"
+                                    . "\$user = \$handler->loginUser( \$login, \$password );" ),
+                    array( 'title' => 'Trying it alone',
+                           'what'  => 'The one test worth writing, and the one people skip: that a wrong password is refused. A handler that lets everybody in passes every other test there is.',
+                           'code'  => "\$user = " . $class . "::loginUser( 'someone', 'the right password' );\n"
+                                    . "var_dump( \$user instanceof eZUser );   // true\n\n"
+                                    . "\$user = " . $class . "::loginUser( 'someone', 'not the right password' );\n"
+                                    . "var_dump( \$user );                     // false, and nothing else" ),
+                    array( 'title' => 'Failing closed', 'in' => 'class',
+                           'what'  => 'Everything that is not a definite yes is a no. A service that is down, an answer that does not parse, an empty name: all false. The temptation is to let people in when the directory is unreachable, and that is how a site is opened by an outage.',
+                           'code'  => "public static function loginUser( \$login, \$password, \$authenticationMatch = false )\n"
+                                    . "{\n"
+                                    . "    if ( !is_string( \$login ) || \$login === '' || \$password === '' )\n"
+                                    . "        return false;\n\n"
+                                    . "    try\n"
+                                    . "    {\n"
+                                    . "        if ( !self::somebodyElseSaysYes( \$login, \$password ) )\n"
+                                    . "            return false;\n"
+                                    . "    }\n"
+                                    . "    catch ( Exception \$e )\n"
+                                    . "    {\n"
+                                    . "        eZDebug::writeError( \$e->getMessage(), __METHOD__ );\n\n"
+                                    . "        // The service is down. Nobody gets in rather than everybody.\n"
+                                    . "        return false;\n"
+                                    . "    }\n\n"
+                                    . "    \$user = self::fetchByName( \$login );\n\n"
+                                    . "    return \$user instanceof eZUser ? \$user : self::makeOne( \$login );\n"
+                                    . "}" ),
+                    array( 'title' => 'The user still has to exist here',
+                           'what'  => 'Authenticating elsewhere does not remove the need for a local user: content is owned by one, roles are granted to one, and the admin lists them. A handler that authenticates and makes nobody leaves the visitor logged in as anonymous.',
+                           'code'  => "\$user = eZUser::create( \$parentNodeID );\n"
+                                    . "\$user->setAttribute( 'login', \$login );\n"
+                                    . "\$user->setAttribute( 'email', \$email );\n"
+                                    . "\$user->store();" ),
+                    array( 'title' => 'Switching it on carefully',
+                           'what'  => 'Leave standard in the list while testing. Taking it out before the new handler is proved locks everybody out of the site, including whoever would have to put it back.',
+                           'code'  => "// site.ini [UserSettings]\n"
+                                    . "// LoginHandler[]=standard\n"
+                                    . "// LoginHandler[]=" . $settings['alias'] ) );
         }
 
         return array();

@@ -17,13 +17,13 @@ where it can be searched.
 
 | | |
 | --- | --- |
-| Extension points | **921** |
+| Extension points | **922** |
 | ini files read | 381 |
 | Settings naming a class | 367 (350 resolve to a class, 16 take an alias, 1 look like a class and are not one) |
 | Directories searched for handlers | 116 |
 | Interfaces and abstract classes | 41 (29 implemented) |
 | Modules | 57 |
-| Module views | 397 |
+| Module views | 398 |
 | Policy functions | 179 |
 
 A count is not a promise that all of them are worth extending. It is a promise that
@@ -1368,6 +1368,7 @@ Fetch functions: `object`, `list`, `object_list`, `object_list_count`, `roles`, 
 | `setup/info` | `system_info` | 1 |
 | `setup/rad` | `setup` | 0 + 1 named |
 | `setup/radsurvey` | `setup` | 0 + 3 named |
+| `setup/settingsextension` | `setup` | 0 |
 | `setup/designextension` | `setup` | 0 |
 | `setup/handlerextension` | `setup` | 1 |
 | `setup/workflowevent` | `setup` | 0 |
