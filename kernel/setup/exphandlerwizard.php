@@ -666,6 +666,74 @@ class expHandlerWizard extends expExtensionWizard
                        'returns' => "''",
                        'what' => 'What the buyer sees on their statement, cut to whatever length the gateway allows. Some refuse anything longer and some silently truncate, which is worse.' ) ) ),
 
+        'restprefix' => array(
+            'title'    => 'REST prefix filter',
+            'what'     => 'Decides where the api lives, and which version of it a request asked for.',
+            'why'      => 'The one that ships reads /api/<provider>/v<n>/ out of the path with a regular expression. Replacing it is how the api moves somewhere else, or takes its version from a header or an Accept type instead of from the path - which is what most people mean by versioning an api now.',
+            'base'     => 'ezpRestPrefixFilterInterface',
+            'source'   => 'kernel/private/rest/classes/prefix_filter.php',
+            'ini'      => 'rest.ini',
+            'section'  => 'System',
+            'variable' => 'PrefixFilterClass',
+            'aliased'  => false,
+            'suffix'   => 'prefixfilter',
+            'note'     => 'This runs before anything is routed, so it decides which requests are REST requests at all. A filter that claims too much takes over addresses the rest of the site was answering.',
+            'constructor' => array(
+                'what' => 'The request, and the prefix the settings say the api lives under. The type on the first argument is not decoration: the base declares it, and leaving it off makes the declaration incompatible and the class unloadable.',
+                'parameters' => 'ezcMvcRequest $request, $apiPrefix',
+                'body' => array( '$this->request = $request;',
+                                 '',
+                                 '// The base holds this one, statically, and getApiPrefix()',
+                                 '// reads it from there. Declaring it again here is a fatal.',
+                                 'self::$apiPrefix = $apiPrefix;' ) ),
+            'properties' => array(
+                array( 'name' => 'request', 'what' => 'The ezcMvcRequest, whose uri this may rewrite.' ) ),
+            'methods'  => array(
+                array( 'name' => 'filter', 'signature' => 'filter()',
+                       'returns' => 'false',
+                       'what' => 'Whether this request is for the api, and if it is, taking the prefix off its uri so the routes can match what is left. False means it is not a REST request and the rest of the site should answer it.' ),
+                array( 'name' => 'parseVersionValue', 'signature' => 'parseVersionValue()',
+                       'returns' => '1',
+                       'what' => 'Which version of the api was asked for. Out of the path in the one that ships; a header or an Accept type is the usual alternative, and this is the single place that decision lives.' ) ) ),
+
+        'inicache' => array(
+            'title'    => 'Compiled settings cache',
+            'what'     => 'Keeps the compiled ini cache somewhere shared, rather than on each machine.',
+            'why'      => 'Settings are compiled once and read on every request. On one machine a file is the right answer; on several it means every machine compiling the same thing and clearing it separately. Putting it in Redis or Valkey makes it one cache, cleared once.',
+            'base'     => '',
+            'source'   => 'lib/ezutils/classes/ezini.php',
+            'ini'      => '',
+            'section'  => '',
+            'variable' => '',
+            'aliased'  => false,
+            'standalone' => true,
+            'unregistered' => true,
+            'classFixed' => 'sevenxValkeyINICache',
+            'suffix'   => 'inicache',
+            'note'     => 'Nothing registers this. The kernel asks class_exists( \'sevenxValkeyINICache\' ) and uses it if the answer is yes, so the class has to have exactly that name and the extension has to be active - and an installation without it behaves exactly as before. The name is not a choice.',
+            'methods'  => array(
+                array( 'name' => 'instance', 'signature' => 'instance()',
+                       'static' => true,
+                       'new' => true,
+                       'returns' => 'self::$Instance === null ? self::$Instance = new self() : self::$Instance',
+                       'what' => 'The one instance. The kernel asks for it several times a request and never constructs one itself.' ),
+                array( 'name' => 'isEnabled', 'signature' => 'isEnabled()',
+                       'new' => true,
+                       'returns' => 'false',
+                       'what' => 'Whether to use it at all. Asked before every other method, so returning false here is how the whole thing switches off without being uninstalled - and it is what this returns until it is written, so installing it changes nothing.' ),
+                array( 'name' => 'load', 'signature' => 'load( $cacheFile )',
+                       'new' => true,
+                       'returns' => 'false',
+                       'what' => 'The compiled settings for one cache file, or false when they are not there. False is not a failure: it means compile them and save them.' ),
+                array( 'name' => 'save', 'signature' => 'save( $cacheFile, $data )',
+                       'new' => true,
+                       'returns' => 'false',
+                       'what' => 'Keeps them. Return false and the kernel writes its own file instead, so a store that is temporarily unreachable costs speed rather than the site.' ),
+                array( 'name' => 'delete', 'signature' => 'delete( $cacheFile )',
+                       'new' => true,
+                       'returns' => 'true',
+                       'what' => 'Forgets one. Called when the settings caches are cleared, and the one that must not be missed: settings that outlive a clear are the worst kind of stale.' ) ) ),
+
         'urlfilter' => array(
             'title'    => 'URL alias filter',
             'what'     => 'Runs over every url this system generates, before it is stored, and may rewrite it.',
@@ -1272,6 +1340,12 @@ class expHandlerWizard extends expExtensionWizard
         if ( !empty( $recipe['classFrom'] ) && $settings['alias'] !== '' )
             $settings['class'] = self::safeClass(
                 str_replace( '%alias%', $settings['alias'], $recipe['classFrom'] ) );
+
+        // And some kinds have no choice of name at all: the kernel asks whether
+        // a class of one exact name exists, so anything else is a class nobody
+        // will ever look for.
+        if ( !empty( $recipe['classFixed'] ) )
+            $settings['class'] = $recipe['classFixed'];
         if ( $settings['title'] === '' && $settings['name'] !== '' )
             $settings['title'] = ucwords( str_replace( '_', ' ', $settings['name'] ) );
         if ( $settings['version'] === '' )
@@ -1352,8 +1426,12 @@ class expHandlerWizard extends expExtensionWizard
 
         // A class that already exists would be loaded instead of, or as well as,
         // the one being written.
+        // A fixed name is allowed to exist already only in the sense that this
+        // would replace it, which is worth saying rather than refusing.
         if ( $settings['class'] !== '' && class_exists( $settings['class'] ) )
-            $problems[] = 'A class called ' . $settings['class'] . ' already exists on this installation. Choose another name.';
+            $problems[] = $recipe !== false && !empty( $recipe['classFixed'] )
+                ? 'Something on this installation already declares ' . $settings['class'] . ', and the kernel uses whichever it finds. Two of these cannot both be in place.'
+                : 'A class called ' . $settings['class'] . ' already exists on this installation. Choose another name.';
 
         return $problems;
     }
@@ -1379,7 +1457,9 @@ class expHandlerWizard extends expExtensionWizard
         if ( $parts['handler'] )
             $files[self::classPath( $settings, $recipe )] = self::handlerClass( $settings, $recipe );
 
-        if ( $parts['settings'] )
+        // A kind nothing registers writes no ini, because there is nothing to
+        // put in one.
+        if ( $parts['settings'] && empty( $recipe['unregistered'] ) )
             $files['settings/' . $recipe['ini'] . '.append.php'] = self::handlerIni( $settings, $recipe );
 
         if ( $parts['examples'] )
@@ -2442,6 +2522,83 @@ class expHandlerWizard extends expExtensionWizard
                            'code'  => "// site.ini [UserSettings]\n"
                                     . "// LoginHandler[]=standard\n"
                                     . "// LoginHandler[]=" . $settings['alias'] ) );
+
+            case 'restprefix':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'Built before anything is routed, and asked whether this request belongs to the api at all.',
+                           'code'  => "// kernel/private/rest/classes/prefix_filter.php\n"
+                                    . "\$filter = new " . $class . "( \$request, \$apiPrefix );\n\n"
+                                    . "if ( \$filter->filter() )\n"
+                                    . "{\n"
+                                    . "    // A REST request. The prefix has been taken off the uri and\n"
+                                    . "    // the version noted; the routes match what is left.\n"
+                                    . "}" ),
+                    array( 'title' => 'Deciding what is yours', 'in' => 'class',
+                           'what'  => 'This runs before routing, so it decides which addresses are REST addresses at all. A filter that claims too much takes over urls the rest of the site was answering, and the symptom is content pages returning api errors.',
+                           'code'  => "public function filter()\n"
+                                    . "{\n"
+                                    . "    \$uri = \$this->request->uri;\n\n"
+                                    . "    if ( strpos( \$uri, self::getApiPrefix() ) !== 0 )\n"
+                                    . "        return false;   // not ours; leave it alone\n\n"
+                                    . "    \$this->request->uri = substr( \$uri, strlen( self::getApiPrefix() ) );\n\n"
+                                    . "    return true;\n"
+                                    . "}" ),
+                    array( 'title' => 'Versioning somewhere other than the path', 'in' => 'class',
+                           'what'  => 'The one that ships reads v1 out of the url. A header or an Accept type is the usual alternative, and this is the single place that decision lives - so changing it changes the whole api and nothing else.',
+                           'code'  => "public function parseVersionValue()\n"
+                                    . "{\n"
+                                    . "    // Accept: application/vnd.mysite.v2+json\n"
+                                    . "    \$accept = isset( \$_SERVER['HTTP_ACCEPT'] ) ? \$_SERVER['HTTP_ACCEPT'] : '';\n\n"
+                                    . "    return preg_match( '/\\\\.v(\\\\d+)\\\\+/', \$accept, \$found ) ? (int) \$found[1] : 1;\n"
+                                    . "}" ),
+                    array( 'title' => 'The constructor is not a suggestion',
+                           'what'  => 'The base declares it abstract with a type on the request, and holds the prefix in a static of its own. Leaving the type off, or declaring the prefix again here, makes the class unloadable rather than merely wrong - and an unloadable class ends the request that touches it.',
+                           'code'  => "// Declared by the base:\n"
+                                    . "//     abstract public function __construct( ezcMvcRequest \$request, \$apiPrefix );\n"
+                                    . "//     protected static \$apiPrefix = null;" ) );
+
+            case 'inicache':
+                return array(
+                    array( 'title' => 'What the kernel does',
+                           'what'  => 'No ini and no alias: it asks whether a class of this exact name exists, and uses it if it does. An installation without the extension behaves exactly as it did.',
+                           'code'  => "// lib/ezutils/classes/ezini.php\n"
+                                    . "if ( class_exists( 'sevenxValkeyINICache' ) )\n"
+                                    . "{\n"
+                                    . "    \$cache = sevenxValkeyINICache::instance();\n\n"
+                                    . "    if ( \$cache->isEnabled() )\n"
+                                    . "        \$data = \$cache->load( \$cachedFile );\n"
+                                    . "}" ),
+                    array( 'title' => 'The name is the registration',
+                           'what'  => 'Because class_exists decides, the class has to be called exactly this and the extension has to be active. Rename it and nothing looks for it; there is no setting anywhere that would say so.',
+                           'code'  => "class " . $class . "\n{\n    // and nothing else will do\n}" ),
+                    array( 'title' => 'Failing softly', 'in' => 'class',
+                           'what'  => 'Settings are read on every request, so a store that is unreachable must cost speed and not the site. Every method has an answer that means carry on without me.',
+                           'code'  => "public function load( \$cacheFile )\n"
+                                    . "{\n"
+                                    . "    try\n"
+                                    . "    {\n"
+                                    . "        \$data = \$this->redis()->get( \$this->keyFor( \$cacheFile ) );\n"
+                                    . "    }\n"
+                                    . "    catch ( Exception \$e )\n"
+                                    . "    {\n"
+                                    . "        // The kernel compiles the settings and writes its own file.\n"
+                                    . "        return false;\n"
+                                    . "    }\n\n"
+                                    . "    return \$data === null ? false : \$data;\n"
+                                    . "}" ),
+                    array( 'title' => 'The one that must not be missed',
+                           'what'  => 'delete() is called when the settings caches are cleared. Settings that outlive a clear are the worst kind of stale: everything looks right, the file on disk is right, and the site is reading something else.',
+                           'code'  => "// php bin/php/ezcache.php --clear-id=ini\n"
+                                    . "//\n"
+                                    . "// reaches eZINI::resetCache(), which reaches delete() here. If\n"
+                                    . "// this quietly fails, nothing else will notice." ),
+                    array( 'title' => 'Sharing it between machines',
+                           'what'  => 'The reason to do this at all. One cache for every machine means one compile and one clear, rather than each machine keeping its own and being cleared separately - which is where two machines serving different settings comes from.',
+                           'code'  => "// Keys have to include something that changes when the settings\n"
+                                    . "// do, or a deploy leaves the old ones in place:\n"
+                                    . "//\n"
+                                    . "//     'ini:' . \$release . ':' . \$siteaccess . ':' . \$cacheFile" ) );
 
             case 'paymentgatewaydirect':
                 return array(

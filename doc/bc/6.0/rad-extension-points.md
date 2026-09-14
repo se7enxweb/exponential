@@ -12,7 +12,7 @@ knowledge was spread across `kernel/`, `lib/` and a dozen settings files.
 from it. A point with a tool and a point without are listed the same way, so
 neither can be forgotten.
 
-**64 extension points, 61 with a tool.**
+**64 extension points, 64 with a tool.**
 
 Every entry was checked against this installation's own source; the *Kernel*
 column names the file the mechanism actually lives in.
@@ -555,7 +555,7 @@ How an image is scaled and what sizes exist.
 | Kernel | `lib/ezimage/classes/ezimagemanager.php` |
 
 ### Compiled settings and view cache in Redis  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/inicache`
 
 Two places the kernel will hand its caches to Redis or Valkey if something answers for them: the compiled ini cache, and the content view cache. Neither is an ini setting - the kernel asks whether a class exists and uses it if it does, so an installation without the extension behaves exactly as before.
 
@@ -771,7 +771,7 @@ The output filter of the REST layer: the last thing that happens before an answe
 | Kernel | `kernel/private/rest/classes/interfaces/response_filter.php` |
 
 ### REST prefix filter  
-*No tool yet.*
+*Tool:* `/setup/handlerextension/restprefix`
 
 What decides where the api lives and which version of it a request asked for. The one that ships reads a regular expression; replacing it is how the api moves off /api/ or takes its version from somewhere other than the path.
 
@@ -810,7 +810,7 @@ Where extensions may live, beyond extension/. A second root - extension_src/ is 
 | Kernel | `lib/ezutils/classes/ezextension.php` |
 
 ### Extension root filter  
-*No tool yet.*
+*Tool:* `/setup/kerneloverride`
 
 The last word on which roots are searched, in code rather than in settings. Redefining it is how a root is worked out at runtime - from an environment variable, from which machine this is, from what a deployment put on disk - rather than written into an ini that has to differ per installation.
 

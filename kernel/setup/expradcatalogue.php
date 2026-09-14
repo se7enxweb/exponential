@@ -387,7 +387,7 @@ class expRADCatalogue
             'contract' => 'Extends ezpRestPrefixFilterInterface: parseVersionValue() and filter()',
             'mechanism' => 'handler',
             'source' => 'kernel/private/rest/classes/prefix_filter.php',
-            'tool'  => false ),
+            'tool'  => 'setup/handlerextension/restprefix' ),
 
         'restroutefilter' => array(
             'group' => 'modules',
@@ -725,7 +725,7 @@ class expRADCatalogue
             'contract' => 'static filterExtensionRootDirectories( array $roots ) : array',
             'mechanism' => 'override',
             'source' => 'lib/ezutils/classes/ezextension.php',
-            'tool'  => false ),
+            'tool'  => 'setup/kerneloverride' ),
 
         'siteextension' => array(
             'group' => 'access',
@@ -758,7 +758,7 @@ class expRADCatalogue
             'contract' => 'instance(), then get() and put() for the block cache; instance() and the compiled file interface for the ini cache',
             'mechanism' => 'handler',
             'source' => 'lib/ezutils/classes/ezini.php',
-            'tool'  => false ),
+            'tool'  => 'setup/handlerextension/inicache' ),
 
         'inisave' => array(
             'group' => 'access',

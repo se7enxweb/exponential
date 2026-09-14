@@ -17,13 +17,13 @@ where it can be searched.
 
 | | |
 | --- | --- |
-| Extension points | **1743** |
+| Extension points | **1744** |
 | ini files read | 381 |
 | Settings naming a class | 350 (333 resolve to a class, 16 take an alias, 1 look like a class and are not one) |
 | Places the kernel looks | 236 |
 | Interfaces and abstract classes | 41 (29 implemented) |
 | Modules | 60 |
-| Module views | 406 |
+| Module views | 407 |
 | Policy functions | 179 |
 | Template operators and functions | 414 (364 operators, 50 functions) |
 | Events something can listen to | 34 |
@@ -1487,6 +1487,7 @@ Fetch functions: `object`, `list`, `object_list`, `object_list_count`, `roles`, 
 | `setup/settingsextension` | `setup` | 0 |
 | `setup/contentextension` | `setup` | 0 |
 | `setup/modulewizard` | `setup` | 0 |
+| `setup/kerneloverride` | `setup` | 0 |
 | `setup/designextension` | `setup` | 0 |
 | `setup/handlerextension` | `setup` | 1 |
 | `setup/workflowevent` | `setup` | 0 |
