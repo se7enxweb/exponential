@@ -16,7 +16,7 @@
  * does not exist is reported too, because a broken handler registration is
  * worth seeing. Whoever reads it can tell the difference.
  *
- * @copyright Copyright (C) Exponential Open Source Project. All rights reserved.
+ * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package kernel
  */

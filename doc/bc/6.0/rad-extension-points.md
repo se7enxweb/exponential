@@ -12,7 +12,7 @@ knowledge was spread across `kernel/`, `lib/` and a dozen settings files.
 from it. A point with a tool and a point without are listed the same way, so
 neither can be forgotten.
 
-**48 extension points, 41 with a tool.**
+**48 extension points, 45 with a tool.**
 
 Every entry was checked against this installation's own source; the *Kernel*
 column names the file the mechanism actually lives in.
@@ -44,7 +44,7 @@ A kind of value a content class attribute can hold, with its own editing, valida
 | Kernel | `kernel/classes/ezdatatype.php` |
 
 ### Content class  
-*No tool yet.*
+*Tool:* `/setup/contentextension`
 
 A type of content: its attributes, their datatypes, and how an instance of it is named.
 
@@ -57,7 +57,7 @@ A type of content: its attributes, their datatypes, and how an instance of it is
 | Kernel | `kernel/classes/ezcontentclass.php` |
 
 ### XML custom tag  
-*No tool yet.*
+*Tool:* `/setup/contentextension`
 
 A tag authors can use in rich text, with its own attributes and its own template.
 
@@ -204,7 +204,7 @@ The templates, stylesheets and images a site is drawn with.
 | Kernel | `kernel/common/eztemplatedesignresource.php` |
 
 ### Template override set  
-*No tool yet.*
+*Tool:* `/setup/designextension`
 
 A template used in place of another, for the content it matches and nothing else.
 
@@ -653,7 +653,7 @@ Settings that apply to one siteaccess only, kept with the extension rather than 
 | Kernel | `lib/ezutils/classes/ezini.php` |
 
 ### Translation  
-*No tool yet.*
+*Tool:* `/setup/contentextension`
 
 The words the interface uses, in another language.
 

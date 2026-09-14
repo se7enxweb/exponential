@@ -20,7 +20,7 @@
  *   php tests/bin/ezptestrunner.php --list-suites            # list defined suites
  *   php tests/bin/ezptestrunner.php --list-groups            # list defined groups
  *
- * @copyright Copyright (C) Exponential Open Source Project. All rights reserved.
+ * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
  */

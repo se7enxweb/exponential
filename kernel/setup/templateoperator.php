@@ -8,7 +8,7 @@
  * operators, functions, fetch functions and fetch aliases, with the
  * registration that makes each of them reachable.
  *
- * @copyright Copyright (C) Exponential Open Source Project. All rights reserved.
+ * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package kernel
  */

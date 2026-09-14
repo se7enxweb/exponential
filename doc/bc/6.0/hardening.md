@@ -5,7 +5,7 @@
 
 > **Notification:** This document and all associated test results were prepared by the
 > automated patch session (GitHub Copilot / Claude Sonnet 4.6) and are intended for
-> distribution to the Exponential Open Source Project security team lead at
+> distribution to the 7x / Exponential Foundation security team lead at
 > **security@exponential.earth** for review, sign-off, and tracking prior to the 6.0.13
 > release tag. All findings, fixes, test evidence, and open items are contained herein.
 

@@ -11,7 +11,7 @@
  * Tests that require a live MongoDB or MySQL connection are kept in
  * expMongoDBIntegrationTest.php (@group mongodb-live).
  *
- * @copyright Copyright (C) Exponential Open Source Project. All rights reserved.
+ * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
  * @group mongodb

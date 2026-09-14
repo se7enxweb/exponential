@@ -9,7 +9,7 @@
  * replaced or added to. It is read off disk on every request, so an extension
  * installed this morning is in it this afternoon.
  *
- * @copyright Copyright (C) Exponential Open Source Project. All rights reserved.
+ * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package kernel
  */

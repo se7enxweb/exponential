@@ -16,7 +16,7 @@
  *   trigger operations  which operations a workflow may be bound to
  *   siteaccess settings settings that apply to one siteaccess only
  *
- * @copyright Copyright (C) Exponential Open Source Project. All rights reserved.
+ * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package kernel
  */

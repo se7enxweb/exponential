@@ -10,7 +10,7 @@
  * that replaces the real MongoDB\Client with an in-process stub backed by
  * PHP arrays, giving full control over what aggregate/find/insert/etc return.
  *
- * @copyright Copyright (C) Exponential Open Source Project. All rights reserved.
+ * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
  * @group mongodb

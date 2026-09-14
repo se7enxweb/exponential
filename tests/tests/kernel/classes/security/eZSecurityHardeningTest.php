@@ -14,7 +14,7 @@
  *  SEC-06 — Shell injection via ClipImage handler transformation args
  *  SEC-07 — Reflected XSS via eZTemplatePHPOperator
  *
- * @copyright Copyright (C) Exponential Open Source Project. All rights reserved.
+ * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
  * @group security

@@ -2,7 +2,7 @@
 /**
  * File containing the expRADCatalogue class.
  *
- * @copyright Copyright (C) Exponential Open Source Project. All rights reserved.
+ * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package kernel
  */
@@ -107,7 +107,7 @@ class expRADCatalogue
             'contract' => 'eZContentClass definition, as a class package',
             'mechanism' => 'file',
             'source' => 'kernel/classes/ezcontentclass.php',
-            'tool'  => false ),
+            'tool'  => 'setup/contentextension' ),
 
         'customtag' => array(
             'group' => 'content',
@@ -118,7 +118,7 @@ class expRADCatalogue
             'contract' => 'A template, plus ini describing the attributes',
             'mechanism' => 'design',
             'source' => 'settings/content.ini',
-            'tool'  => false ),
+            'tool'  => 'setup/contentextension' ),
 
         'xmlinput' => array(
             'group' => 'content',
@@ -241,7 +241,7 @@ class expRADCatalogue
             'contract' => 'Source, MatchFile, Subdir and Match lines',
             'mechanism' => 'design',
             'source' => 'kernel/common/eztemplatedesignresource.php',
-            'tool'  => false ),
+            'tool'  => 'setup/designextension' ),
 
         // ── Modules and views ───────────────────────────────────────────────
 
@@ -614,7 +614,7 @@ class expRADCatalogue
             'contract' => 'A ts file of contexts and messages',
             'mechanism' => 'file',
             'source' => 'lib/ezi18n/classes/eztranslationcache.php',
-            'tool'  => false ),
+            'tool'  => 'setup/contentextension' ),
 
         'rssimporthandler' => array(
             'group' => 'access',
