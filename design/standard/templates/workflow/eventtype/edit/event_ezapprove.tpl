@@ -34,8 +34,7 @@
     </tr>
     {section var=User loop=$event.approve_users sequence=array( bglight, bgdark )}
         <tr class="{$User.sequence}">
-            <td><input type="checkbox" name="DeleteApproveUserIDArray_{$event.id}[]" value="{$User.item}" />
-            <input type="hidden" name="WorkflowEvent_event_user_id_{$event.id}[]" value="{$User.item}" /></td>
+            <td><input type="checkbox" name="DeleteApproveUserIDArray_{$event.id}[]" value="{$User.item}" /></td>
             <td>{fetch(content, object, hash( object_id, $User.item)).name|wash}</td>
         </tr>
     {/section}
@@ -64,8 +63,7 @@
     </tr>
     {section var=Group loop=$event.approve_groups sequence=array( bglight, bgdark )}
         <tr class="{$Group.sequence}">
-            <td><input type="checkbox" name="DeleteApproveGroupIDArray_{$event.id}[]" value="{$Group.item}" />
-            <input type="hidden" name="WorkflowEvent_event_user_id_{$event.id}[]" value="{$Group.item}" /></td>
+            <td><input type="checkbox" name="DeleteApproveGroupIDArray_{$event.id}[]" value="{$Group.item}" /></td>
             <td>{fetch(content, object, hash( object_id, $Group.item)).name|wash}</td>
         </tr>
     {/section}
@@ -94,8 +92,7 @@
 </tr>
 {section var=User loop=$event.selected_usergroups sequence=array( bglight, bgdark )}
 <tr class="{$User.sequence}">
-<td><input type="checkbox" name="DeleteExcludeUserIDArray_{$event.id}[]" value="{$User.item}" />
-    <input type="hidden" name="WorkflowEvent_event_user_id_{$event.id}[]" value="{$User.item}" /></td>
+<td><input type="checkbox" name="DeleteExcludeUserIDArray_{$event.id}[]" value="{$User.item}" /></td>
 <td>{fetch(content, object, hash( object_id, $User.item)).name|wash}</td>
 </tr>
 {/section}

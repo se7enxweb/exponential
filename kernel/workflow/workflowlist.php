@@ -29,6 +29,36 @@ if ( $http->hasPostVariable( 'NewWorkflowButton' ) )
     return;
 }
 
+/**
+ * Removes a workflow and everything that belongs to it.
+ *
+ * Its trigger, its group links, its events and both of its versions - the
+ * published one and the temporary one an unfinished edit leaves behind. Doing
+ * less than this is what leaves a workflow list that looks empty over a
+ * database that is not.
+ *
+ * @param int $workflowID
+ */
+function removeWorkflowCompletely( $workflowID )
+{
+    $workflowID = (int) $workflowID;
+
+    eZTrigger::removeTriggerForWorkflow( $workflowID );
+
+    // Version 0 is the published workflow and version 1 the temporary one; a
+    // workflow that has never been edited has only the first.
+    foreach ( array( 0, 1 ) as $version )
+    {
+        eZWorkflowGroupLink::removeWorkflowMembers( $workflowID, $version );
+
+        $workflow = eZWorkflow::fetch( $workflowID, true, $version );
+
+        // removeThis( true ) takes the events of that version with it.
+        if ( $workflow instanceof eZWorkflow )
+            $workflow->removeThis( true );
+    }
+}
+
 if ( $http->hasPostVariable( 'DeleteButton' ) and
      $http->hasPostVariable( 'Workflow_id_checked' ) )
 {
@@ -46,11 +76,13 @@ if ( $http->hasPostVariable( 'DeleteButton' ) and
                 $workflowInGroups = $workflow->attribute( 'ingroup_list' );
                 if ( count( $workflowInGroups ) == 1 )
                 {
-                    //remove entry from eztrigger table also, if it exists there.
-                    eZTrigger::removeTriggerForWorkflow( $workflowID );
-
-                    // if there is only one group which the workflow belongs to, delete (=disable) it:
-                    eZWorkflow::setIsEnabled( false, $workflowID );
+                    // The last group it belonged to, so it is being removed
+                    // rather than unfiled: really remove it. This used only to
+                    // disable it - the comment here said "delete (=disable)" -
+                    // while the branch that did the removing read a post
+                    // variable no form has ever sent, so nothing ever reached
+                    // it and no workflow was ever actually deleted.
+                    removeWorkflowCompletely( $workflowID );
                 }
                 else
                 {
@@ -61,26 +93,17 @@ if ( $http->hasPostVariable( 'DeleteButton' ) and
             }
             else
             {
-                // just for sure :-)
-                eZWorkflow::setIsEnabled( false, $workflowID );
+                // No row for it any more; clear whatever it left behind.
+                removeWorkflowCompletely( $workflowID );
             }
         }
     }
     else
     {
-        // if there is no CurrentGroupID variable, disable every group in variable Workflow_id_checked:
-        eZWorkflow::setIsEnabled( false, $http->postVariable( 'Workflow_id_checked' ) );
-    }
-}
-
-if ( $http->hasPostVariable( 'DeleteButton' ) and
-     $http->hasPostVariable( 'Temp_Workflow_id_checked' ) )
-{
-    $checkedIDs = $http->postVariable( 'Temp_Workflow_id_checked' );
-    foreach ( $checkedIDs as $checkedID )
-    {
-        eZWorkflow::removeWorkflow( $checkedID, 1 );
-        eZWorkflowGroupLink::removeWorkflowMembers( $checkedID, 1 );
+        // Removed from the list rather than from a group, so there is no group
+        // to leave them in.
+        foreach ( (array) $http->postVariable( 'Workflow_id_checked' ) as $workflowID )
+            removeWorkflowCompletely( $workflowID );
     }
 }
 

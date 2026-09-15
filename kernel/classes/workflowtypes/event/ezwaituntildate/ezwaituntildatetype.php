@@ -143,8 +143,29 @@ class eZWaitUntilDateType  extends eZWorkflowEventType
             {
                 $waitUntilDate = $workflowEvent->content( );
 
-                $classIDList = $http->postVariable( 'WorkflowEvent' . '_event_ezwaituntildate_' . 'class_' . $workflowEvent->attribute( 'id' )  );
-                $classAttributeIDList = $http->postVariable( 'WorkflowEvent' . '_event_ezwaituntildate_' . 'classattribute_' . $workflowEvent->attribute( 'id' )  );
+                $classVariable     = 'WorkflowEvent_event_ezwaituntildate_class_' . $id;
+                $attributeVariable = 'WorkflowEvent_event_ezwaituntildate_classattribute_' . $id;
+
+                // Neither select is guaranteed to have sent anything: the
+                // attribute list is only filled once a class has been chosen
+                // and its attributes loaded, so pressing this with an empty
+                // one used to read a variable that was not there and then
+                // index [0] of it.
+                if ( !$http->hasPostVariable( $classVariable ) ||
+                     !$http->hasPostVariable( $attributeVariable ) )
+                {
+                    eZDebug::writeError( 'no class and attribute chosen to add', __METHOD__ );
+                    break;
+                }
+
+                $classIDList          = (array) $http->postVariable( $classVariable );
+                $classAttributeIDList = (array) $http->postVariable( $attributeVariable );
+
+                if ( !isset( $classIDList[0] ) || !isset( $classAttributeIDList[0] ) )
+                {
+                    eZDebug::writeError( 'no class and attribute chosen to add', __METHOD__ );
+                    break;
+                }
 
                 $waitUntilDate->addEntry(  $classAttributeIDList[0], $classIDList[0] );
                 $workflowEvent->setContent( $waitUntilDate );
@@ -153,7 +174,17 @@ class eZWaitUntilDateType  extends eZWorkflowEventType
             {
                 $version = $workflowEvent->attribute( "version" );
                 $postvarname = "WorkflowEvent" . "_data_waituntildate_remove_" . $workflowEvent->attribute( "id" );
-                $arrayRemove = $http->postVariable( $postvarname );
+
+                // Unticked checkboxes send nothing at all, so pressing Remove
+                // with none selected sent no variable rather than an empty
+                // one, and this read it regardless and then walked it.
+                if ( !$http->hasPostVariable( $postvarname ) )
+                {
+                    eZDebug::writeError( 'nothing selected to remove', __METHOD__ );
+                    break;
+                }
+
+                $arrayRemove = (array) $http->postVariable( $postvarname );
                 $waitUntilDate = $workflowEvent->content( );
 
                 foreach( $arrayRemove as $entryID )
