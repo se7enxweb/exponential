@@ -21,7 +21,21 @@
 <br />
 <div class="block">
     <label>{'Select ini file to view'|i18n('design/admin/settings')}:&nbsp;
+    {* The files worth reaching for first, then a labelled rule, then the rest
+       alphabetically. Which are which comes from site.ini, not from here. *}
     <select name="selectedINIFile">
+        {if $ini_files_common}
+        <optgroup label="{'Most used'|i18n('design/admin/settings')}">
+        {foreach $ini_files_common as $common_ini}
+            <option value="{$common_ini|wash}"{if eq( $common_ini, $ini_file )} selected="selected"{/if}>{$common_ini|wash}</option>
+        {/foreach}
+        </optgroup>
+        <optgroup label="{'All ini files'|i18n('design/admin/settings')}">
+        {foreach $ini_files_other as $other_ini}
+            <option value="{$other_ini|wash}"{if eq( $other_ini, $ini_file )} selected="selected"{/if}>{$other_ini|wash}</option>
+        {/foreach}
+        </optgroup>
+        {else}
         {section var=Files loop=$ini_files}
             {if eq( $Files.item, $ini_file )}
                 <option value="{$Files.item}" selected="selected">{$Files.item}</option>
@@ -29,6 +43,7 @@
                 <option value="{$Files.item}">{$Files.item}</option>
             {/if}
         {/section}
+        {/if}
     </select></label>
     <label>{'Select siteaccess'|i18n('design/admin/settings')}:&nbsp;
     <select name="CurrentSiteAccess">

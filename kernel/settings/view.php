@@ -226,7 +226,30 @@ $iniFiles = preg_replace('%.*/%', '', $iniFiles );
 $iniFiles = preg_replace('%\.ini.*%', '.ini', $iniFiles );
 sort( $iniFiles );
 
-$tpl->setVariable( 'ini_files', array_unique( $iniFiles ) );
+$iniFiles = array_values( array_unique( $iniFiles ) );
+
+// The drop-down is a hundred entries long and a dozen of them are what anyone
+// is ever looking for, so the common ones are offered first, above a separator.
+// Which ones those are is a setting rather than a list in here: an installation
+// that lives in different files can say so without patching the kernel.
+$commonINIFiles = array();
+foreach ( (array) eZINI::instance()->variable( 'SettingsViewSettings', 'CommonINIFileList' ) as $candidate )
+{
+    $candidate = trim( $candidate );
+
+    // Only what this installation actually has. A name that is listed and not
+    // present would otherwise be offered and then fail to open.
+    if ( $candidate !== '' && in_array( $candidate, $iniFiles, true )
+         && !in_array( $candidate, $commonINIFiles, true ) )
+        $commonINIFiles[] = $candidate;
+}
+
+// The rest keep the alphabetical order they were sorted into above.
+$otherINIFiles = array_values( array_diff( $iniFiles, $commonINIFiles ) );
+
+$tpl->setVariable( 'ini_files', $iniFiles );
+$tpl->setVariable( 'ini_files_common', $commonINIFiles );
+$tpl->setVariable( 'ini_files_other', $otherINIFiles );
 $tpl->setVariable( 'siteaccess_list', $siteAccessList );
 $tpl->setVariable( 'current_siteaccess', $currentSiteAccess );
 
