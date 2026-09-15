@@ -581,8 +581,15 @@ class eZRSSExportOPMLItem extends eZPersistentObject
             // Fed by content: the node's name and its address, which is what a
             // reader following a link outline is going to want.
             if ( $text === '' ) $text = $node->attribute( 'name' );
-            $nodeURL = $node->attribute( 'url_alias' );
-            eZURI::transformURI( $nodeURL, false, 'full' );
+
+            // Built against this document's own site, the same way the feed
+            // branch above builds its addresses. transformURI( 'full' ) was
+            // wrong here: it prefixes the host of the request doing the
+            // generating, which is the administration host whenever a feed is
+            // looked at or regenerated from the admin, so a reader was handed
+            // an address on a site they have no business reaching.
+            $nodeURL = self::absolute( $baseURL, $node->attribute( 'url_alias' ) );
+
             if ( $url === '' )     $url = $nodeURL;
             if ( $htmlUrl === '' ) $htmlUrl = $nodeURL;
         }
