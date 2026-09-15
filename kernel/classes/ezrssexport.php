@@ -140,6 +140,80 @@ class eZRSSExport extends eZPersistentObject
 
      \return the URL alias object
     */
+    /**
+     * The address a feed should advertise itself and its links under.
+     *
+     * A feed is published for a public siteaccess, but it is written and
+     * generated from the administration siteaccess, so the siteaccess that
+     * happens to be executing is the wrong thing to ask. Asking it gave every
+     * export here 'http://localhost' - the admin siteaccess's own SiteURL -
+     * and, where the stored url was empty, the edit host instead, which is
+     * never somewhere a reader can follow.
+     *
+     * So: the siteaccess the export is for, if it names one; otherwise the
+     * default siteaccess, which is what a reader reaching the site plainly
+     * gets. Only if neither can be read does it fall back to the running
+     * configuration.
+     *
+     * @param string|false $siteAccess the export's site_access, if it has one.
+     * @return string scheme and host, no trailing slash, e.g. https://example.com
+     */
+    static function publicSiteURL( $siteAccess = false )
+    {
+        $ini = eZINI::instance();
+
+        $candidates = array();
+        if ( is_string( $siteAccess ) && $siteAccess !== '' )
+            $candidates[] = $siteAccess;
+        $candidates[] = $ini->variable( 'SiteSettings', 'DefaultAccess' );
+
+        $host = '';
+        foreach ( $candidates as $name )
+        {
+            if ( !is_string( $name ) || $name === '' )
+                continue;
+
+            $dir = 'settings/siteaccess/' . $name;
+            if ( !is_dir( $dir ) )
+                continue;
+
+            $saINI = eZINI::instance( 'site.ini', $dir, null, false, null, true );
+            if ( !$saINI || !$saINI->hasVariable( 'SiteSettings', 'SiteURL' ) )
+                continue;
+
+            $candidate = trim( $saINI->variable( 'SiteSettings', 'SiteURL' ) );
+            // localhost is what an unconfigured siteaccess says; it is never
+            // an address a feed reader can use, so keep looking.
+            if ( $candidate === '' || $candidate === 'localhost' )
+                continue;
+
+            $host = $candidate;
+            break;
+        }
+
+        if ( $host === '' )
+            $host = trim( (string) $ini->variable( 'SiteSettings', 'SiteURL' ) );
+
+        $host = rtrim( $host, '/' );
+
+        // A host already carrying a scheme is taken as given.
+        if ( preg_match( '#^https?://#i', $host ) )
+            return $host;
+
+        // Inside a request, follow the request. Outside one - a cron
+        // regeneration, a repair script - there is no request to follow, and a
+        // feed address is a public, long lived thing that gets written into
+        // other people's readers: https is the right default to commit to
+        // there. A site genuinely served over plain http can say so by putting
+        // the scheme into SiteURL, which is honoured just above.
+        $scheme = 'https';
+
+        if ( eZSys::serverVariable( 'REQUEST_URI', true ) !== null )
+            $scheme = eZSys::isSSLNow() ? 'https' : 'http';
+
+        return $scheme . '://' . $host;
+    }
+
     static function create( $user_id )
     {
         $config = eZINI::instance( 'site.ini' );
@@ -153,7 +227,10 @@ class eZRSSExport extends eZPersistentObject
                       'creator_id' => $user_id,
                       'created' => $dateTime,
                       'status' => self::STATUS_DRAFT,
-                      'url' => 'http://'. $config->variable( 'SiteSettings', 'SiteURL' ),
+                      // The public site, not whichever siteaccess is creating
+                      // this - that is the admin one, and its SiteURL is no use
+                      // to a reader. See publicSiteURL().
+                      'url' => self::publicSiteURL(),
                       'description' => '',
                       'image_id' => 0,
                       'active' => 1,
@@ -657,15 +734,15 @@ class eZRSSExport extends eZPersistentObject
     {
         $ini = eZINI::instance();
 
-        if ( $this->attribute( 'url' ) == '' )
-        {
-            $baseURL = '';
-            eZURI::transformURI( $baseURL, false, 'full' );
-        }
-        else
-        {
-            $baseURL = $this->attribute( 'url' );
-        }
+        // Empty means nobody has said where this feed lives, and the answer is
+        // the public site it is published for - not transformURI(), which
+        // answers with the host of the request doing the generating. That is
+        // the administration host whenever a feed is looked at or regenerated
+        // from the admin, and it is not somewhere a reader can follow.
+        $baseURL = trim( (string) $this->attribute( 'url' ) );
+
+        if ( $baseURL === '' )
+            $baseURL = self::publicSiteURL( $this->attribute( 'site_access' ) );
 
         $doc = new DOMDocument( '1.0', 'utf-8' );
         $doc->formatOutput = true;
