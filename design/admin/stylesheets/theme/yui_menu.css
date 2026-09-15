@@ -532,6 +532,13 @@ a.yuimenuitemlabel-disabled{
     background-image: url('../../images/2/icon-sitemap-16x16.png');
 }
 
+/* Edit selected, in the sub items More actions menu. The same icon the single
+   item Edit uses: it is the same act on more than one thing, and a menu where
+   one entry has no icon reads as a mistake. */
+#ezopt-menu-multiedit {
+    background-image: url('../../images/2/icon-edit-16x16.png');
+}
+
 #ezopt-menu-remove,
 #ezopt-menu-edit,
 #ezopt-menu-preview,
@@ -540,6 +547,7 @@ a.yuimenuitemlabel-disabled{
 #ezopt-menu-copy,
 #ezopt-menu-copy-subtree,
 #ezopt-menu-multiupload,
+#ezopt-menu-multiedit,
 #ezopt-menu-list {
     background-repeat: no-repeat;
     background-position: 5% 50%;

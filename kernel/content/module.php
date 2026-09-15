@@ -10,6 +10,26 @@ $Module = array( 'name' => 'eZContentObject',
                  'variable_params' => true );
 
 $ViewList = array();
+
+// Editing several objects at once, in one form.
+//
+// A separate view rather than a mode of 'edit': that one is a single object
+// state machine - language choice, version conflicts, placement, browse for
+// nodes - and threading a list through every one of its branches would put the
+// thing everybody uses all day at risk for the sake of a thing they use
+// occasionally. What is shared is everything that matters: the datatype edit
+// templates, fetchInput/validateInput/storeInput, and the publish operation.
+$ViewList['multiedit'] = array(
+    'functions' => array( 'edit' ),
+    'default_navigation_part' => 'ezcontentnavigationpart',
+    'ui_context' => 'edit',
+    'single_post_actions' => array( 'MultiPublishButton' => 'MultiPublish',
+                                    'MultiEditCreateButton' => 'MultiCreate',
+                                    'MultiStoreButton'   => 'MultiStore',
+                                    'MultiDiscardButton' => 'MultiDiscard' ),
+    'script' => 'multiedit.php',
+    'params' => array(),
+    'unordered_params' => array( 'language' => 'Language' ) );
 $ViewList['edit'] = array(
     'functions' => array( 'edit or create' ),
     'default_navigation_part' => 'ezcontentnavigationpart',

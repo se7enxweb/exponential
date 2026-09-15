@@ -446,6 +446,36 @@ var sortableSubitems = function () {
             createNewBtnMenu.setItemGroupTitle(groupName, i);
         }
 
+        // Create several at once. A plain button rather than a second class
+        // menu: the type and the how-many are asked for together on the next
+        // page, where there is room to say what is about to happen, and this
+        // list already has one menu of classes on it.
+        var createMultiBtn = new YAHOO.widget.Button({
+            type: "push",
+            id: "ezbtn-new-multi",
+            label: labelsObj.ACTION_BUTTONS.create_multiple,
+            name: "create-multiple-button",
+            container: "action-controls",
+            onclick: { fn: function () {
+                var multiEditURL = ( typeof eZExpMultiEditURL !== 'undefined' && eZExpMultiEditURL )
+                                   ? eZExpMultiEditURL : '/content/multiedit';
+
+                // The parent is this list's own node; the sub items form
+                // already carries it as ContentNodeID.
+                var form   = $('form[name=children]').first(),
+                    parent = form.find('input[name=ContentNodeID]').val();
+
+                form.attr('action', multiEditURL)
+                    .append($('<input type="hidden" name="MultiEditCreateParent" />').val(parent))
+                    .append($('<input type="hidden" name="MultiEditReturnURI" />')
+                                .val(window.location.pathname))
+                    .submit();
+            } }
+        });
+
+        // Nothing may be created here, so nothing may be created several times.
+        if (createGroups.length === 0) createMultiBtn.set('disabled', true);
+
 
         var moreActBtnAction = function( type, args, item ) {
             var clickedItem = (args && args[1]) ? args[1] : item;
@@ -473,6 +503,23 @@ var sortableSubitems = function () {
                 form.append($('<input type="hidden" name="HideButton" value="1" />')).submit();
             } else if (selectedValue == 4) {
                 form.append($('<input type="hidden" name="UnhideButton" value="1" />')).submit();
+            } else if (selectedValue == 5) {
+                // Edit the selection in one form. The checkboxes are named
+                // DeleteIDArray - a name this list reuses for every bulk
+                // action - and carry node ids, which content/multiedit
+                // resolves; the return uri brings the reader back to this
+                // list rather than to a dashboard they did not come from.
+                // typeof, not a bare read: the variable is set by the template
+                // that draws this list, and a template that does not set it
+                // would otherwise throw a ReferenceError here and the menu
+                // item would do nothing at all.
+                var multiEditURL = ( typeof eZExpMultiEditURL !== 'undefined' && eZExpMultiEditURL )
+                                   ? eZExpMultiEditURL : '/content/multiedit';
+
+                form.attr('action', multiEditURL)
+                    .append($('<input type="hidden" name="MultiEditReturnURI" />')
+                                .val(window.location.pathname))
+                    .submit();
             } else {
                 form.append($('<input type="hidden" name="MoveButton" value="1" />')).submit();
             }
@@ -483,7 +530,8 @@ var sortableSubitems = function () {
             {text: labelsObj.ACTION_BUTTONS.more_actions_ms, id: "ezopt-menu-move", value: 1, onclick: {fn: moreActBtnAction}, disabled: false},
             {text: labelsObj.ACTION_BUTTONS.more_actions_cp, id: "ezopt-menu-copy", value: 2, onclick: {fn: moreActBtnAction}, disabled: false},
             {text: labelsObj.ACTION_BUTTONS.more_actions_hs, id: "ezopt-menu-hide", value: 3, onclick: {fn: moreActBtnAction}, disabled: false},
-            {text: labelsObj.ACTION_BUTTONS.more_actions_us, id: "ezopt-menu-unhide", value: 4, onclick: {fn: moreActBtnAction}, disabled: false}
+            {text: labelsObj.ACTION_BUTTONS.more_actions_us, id: "ezopt-menu-unhide", value: 4, onclick: {fn: moreActBtnAction}, disabled: false},
+            {text: labelsObj.ACTION_BUTTONS.more_actions_me, id: "ezopt-menu-multiedit", value: 5, onclick: {fn: moreActBtnAction}, disabled: false}
         ];
 
         var noMoreActBtnActions = [
