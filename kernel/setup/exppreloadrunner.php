@@ -57,10 +57,21 @@ class expPreloadRunner
         '|^/content/(edit|draft|history|translations|versionview|removeobject|' .
         'copy|move|browse|action|upload|trash|bookmark|pendinglist|search)(/|$)' .
         '|^/user/(login|logout|preferences|setting)(/|$)' .
-        // The debug block at the foot of a page emits its own links. They are
-        // not pages, they 404, and on a bounded run they crowd out real ones.
-        '|^/(collapse-[0-9]+|debug-end)(/|$)' .
+        // The debug block at the foot of a page. These are fragment targets,
+        // and they reached this list only because fragments were being parsed
+        // into paths; that is fixed, and the rule is kept, unanchored now, in
+        // case a template emits a real link to either.
+        '|/(collapse-[0-9]+|debug-end)(/|$)' .
         '|/(stats|calendar|groupeventcalendar)(/|$)#';
+
+    /**
+     * How many linking pages to keep per broken target.
+     *
+     * A broken link in a template or in the site menu is on every page of the
+     * site, and listing four thousand of them helps nobody: the first few name
+     * the pattern, and the count says how far it reaches.
+     */
+    const MAX_REFERRERS = 20;
 
     private $emit;
     private $options;
@@ -69,13 +80,27 @@ class expPreloadRunner
     private $siteaccessNames = null;
     private $storeCallback = null;
 
+    /** target url => array( linking page url => true ), capped. */
+    private $referrers = array();
+
+    /** target url => how many further linking pages were seen past the cap. */
+    private $referrersOver = array();
+
+    /** Everything that did not come back as a page, in the order found. */
+    private $problems = array();
+
     private $counts = array(
         'fetched' => 0, 'skipped' => 0, 'broken' => 0, 'denied' => 0, 'bytes' => 0 );
 
     /**
      * @param callable $emit  Called as $emit( $type, $message, $data ). Types are
-     *                        'phase', 'ok', 'warn', 'error', 'info' and 'done';
-     *                        a front end may render them however it likes.
+     *                        'phase', 'ok', 'warn', 'error', 'info', 'report'
+     *                        and 'done'; a front end may render them however it
+     *                        likes. 'report' closes the run and carries a
+     *                        'broken' array of
+     *                        ( url, path, status, reason, referrers, more ),
+     *                        one entry per broken target, for a front end that
+     *                        can do more with it than print it.
      * @param array    $options  base_url, max_pages, max_depth, timeout.
      */
     public function __construct( $emit, array $options = array() )
@@ -355,8 +380,22 @@ class expPreloadRunner
         foreach ( $m[1] as $href )
         {
             $href = html_entity_decode( $href, ENT_QUOTES, 'UTF-8' );
-            $href = strtok( $href, '#' );
-            if ( $href === false || $href === '' )
+
+            // Cut the fragment off, and keep what is left even when that is
+            // nothing. strtok() was used here, and it skips leading delimiters:
+            // given '#main' it hands back 'main', not ''. Every in-page anchor
+            // on the site therefore became a relative link and was requested -
+            // the skip link '#main' as /main, the debug toolbar's '#debug-end'
+            // as /debug-end, and from a deeper page as /tags/view/main and the
+            // like. None of them exist, so every page on the site contributed
+            // a 404 that no editor could act on, because there is no such link
+            // to find and nothing to repair.
+            $hash = strpos( $href, '#' );
+            if ( $hash !== false )
+                $href = substr( $href, 0, $hash );
+
+            $href = trim( $href );
+            if ( $href === '' )
                 continue;
             if ( preg_match( '#^(mailto|tel|javascript|data):#i', $href ) )
                 continue;
@@ -430,6 +469,8 @@ class expPreloadRunner
             $this->visit( $next['url'], $base, $next['depth'], false );
         }
 
+        $this->report();
+
         $elapsed = round( microtime( true ) - $started, 1 );
         $this->say( 'done', sprintf(
             '%d warmed, %d skipped, %d broken, %d denied, %s in %ss.',
@@ -453,7 +494,10 @@ class expPreloadRunner
         if ( $result['status'] === 0 )
         {
             ++$this->counts['broken'];
-            $this->say( 'error', sprintf( '%s  %s', $path, $result['error'] !== '' ? $result['error'] : 'no response' ) );
+            $this->noteProblem( $url, 0, 'No response' );
+            $this->say( 'error', sprintf( '%s  %s%s', $path,
+                                          $result['error'] !== '' ? $result['error'] : 'no response',
+                                          $this->referrerNote( $url ) ) );
             return;
         }
 
@@ -462,14 +506,19 @@ class expPreloadRunner
         if ( $result['status'] === 401 || $result['status'] === 403 )
         {
             ++$this->counts['denied'];
-            $this->say( 'warn', sprintf( '%s  %d access denied', $path, $result['status'] ) );
+            $this->say( 'warn', sprintf( '%s  %d access denied%s', $path, $result['status'],
+                                         $this->referrerNote( $url ) ) );
             return;
         }
 
         if ( $result['status'] >= 400 )
         {
             ++$this->counts['broken'];
-            $this->say( 'error', sprintf( '%s  %d', $path, $result['status'] ) );
+            $this->noteProblem( $url, $result['status'],
+                                $result['status'] === 404 ? 'Missing pages (404)'
+                                                          : sprintf( 'Server errors (%d)', $result['status'] ) );
+            $this->say( 'error', sprintf( '%s  %d%s', $path, $result['status'],
+                                          $this->referrerNote( $url ) ) );
             return;
         }
 
@@ -495,10 +544,152 @@ class expPreloadRunner
 
         foreach ( $this->linksFrom( $result['body'], $url, $base ) as $link )
         {
+            // Noted before the seen test, not after: a link that is already
+            // queued or already fetched is still a link from this page, and if
+            // it turns out to be broken this page is one of the ones that has
+            // to be edited.
+            $this->noteReferrer( $link, $url );
+
             if ( isset( $this->seen[$link] ) )
                 continue;
             $this->queue[] = array( 'url' => $link, 'depth' => $depth + 1 );
         }
+    }
+
+    /** Remember that $from links to $target. */
+    private function noteReferrer( $target, $from )
+    {
+        if ( $target === $from )
+            return;
+
+        if ( !isset( $this->referrers[$target] ) )
+            $this->referrers[$target] = array();
+
+        if ( isset( $this->referrers[$target][$from] ) )
+            return;
+
+        if ( count( $this->referrers[$target] ) >= self::MAX_REFERRERS )
+        {
+            $this->referrersOver[$target] = isset( $this->referrersOver[$target] )
+                                          ? $this->referrersOver[$target] + 1 : 1;
+            return;
+        }
+
+        $this->referrers[$target][$from] = true;
+    }
+
+    /** The pages that link to $url, in the order they were crawled. */
+    public function referrersOf( $url )
+    {
+        return isset( $this->referrers[$url] ) ? array_keys( $this->referrers[$url] ) : array();
+    }
+
+    /**
+     * Records a url that did not come back as a page, with the pages that link
+     * to it, so the report can say where the editing has to happen.
+     */
+    private function noteProblem( $url, $status, $reason )
+    {
+        $from = $this->referrersOf( $url );
+
+        $this->problems[] = array(
+            'url'       => $url,
+            'path'      => (string)parse_url( $url, PHP_URL_PATH ),
+            'status'    => (int)$status,
+            'reason'    => $reason,
+            'referrers' => $from,
+            'more'      => isset( $this->referrersOver[$url] ) ? (int)$this->referrersOver[$url] : 0,
+        );
+    }
+
+    /** ' - from /fitness' and the like, to put on the line as it is printed. */
+    private function referrerNote( $url )
+    {
+        $from = $this->referrersOf( $url );
+        if ( !$from )
+            return '  (a starting page)';
+
+        $first = (string)parse_url( $from[0], PHP_URL_PATH );
+        if ( $first === '' ) $first = '/';
+
+        $others = count( $from ) - 1 + ( isset( $this->referrersOver[$url] ) ? $this->referrersOver[$url] : 0 );
+
+        return '  linked from ' . $this->shorten( $first, 40 )
+             . ( $others > 0 ? sprintf( ' and %d other page%s', $others, $others === 1 ? '' : 's' ) : '' );
+    }
+
+    /**
+     * The closing report: every url that did not come back as a page, and for
+     * each of them the full address of every page that links to it.
+     *
+     * The running output is a log, and on a site of any size the failures
+     * scroll past between hundreds of successes. What an editor needs is the
+     * other way round - the broken target once, and then the pages to open and
+     * fix - and they need the whole address, because that is what goes in the
+     * address bar. The same list is handed to the front end as data, so a view
+     * can make the addresses clickable.
+     */
+    private function report()
+    {
+        if ( !$this->problems )
+        {
+            $this->say( 'report', 'No broken links were found.', array( 'broken' => array() ) );
+            return;
+        }
+
+        // One entry per target: the same missing page reached from two places
+        // is one thing to fix, not two.
+        $pages = array();
+        foreach ( $this->problems as $problem )
+            $pages[$problem['url']] = $problem;
+
+        $groups = array();
+        foreach ( $pages as $problem )
+            $groups[$problem['reason']][] = $problem;
+        ksort( $groups );
+
+        $linking = array();
+        foreach ( $pages as $problem )
+            foreach ( $problem['referrers'] as $from )
+                $linking[$from] = true;
+
+        $lines = array( '' );
+        $lines[] = sprintf( '%d broken link%s on %d page%s of this site.',
+                            count( $pages ), count( $pages ) === 1 ? '' : 's',
+                            count( $linking ), count( $linking ) === 1 ? '' : 's' );
+
+        foreach ( $groups as $reason => $entries )
+        {
+            $lines[] = '';
+            $lines[] = sprintf( '%s (%d)', $reason, count( $entries ) );
+
+            foreach ( $entries as $problem )
+            {
+                $lines[] = '';
+                $lines[] = '  ' . $problem['url'];
+
+                if ( !$problem['referrers'] )
+                {
+                    $lines[] = '      a starting page; nothing on the site links to it';
+                    continue;
+                }
+
+                $lines[] = sprintf( '      linked from %d page%s:',
+                                    count( $problem['referrers'] ) + $problem['more'],
+                                    ( count( $problem['referrers'] ) + $problem['more'] ) === 1 ? '' : 's' );
+
+                foreach ( $problem['referrers'] as $from )
+                    $lines[] = '        ' . $from;
+
+                if ( $problem['more'] > 0 )
+                    $lines[] = sprintf( '        ... and %d more', $problem['more'] );
+            }
+        }
+
+        $lines[] = '';
+        $lines[] = 'Open each page listed under a broken link, correct the link, then run this again.';
+
+        $this->say( 'report', implode( "\n", $lines ), array( 'broken' => array_values( $pages ) ) );
     }
 
     /**
@@ -547,6 +738,20 @@ class expPreloadRunner
     public function counts()
     {
         return $this->counts;
+    }
+
+    /**
+     * Every url that did not come back as a page, with the pages linking to it.
+     *
+     * @return array of ( url, path, status, reason, referrers, more )
+     */
+    public function problems()
+    {
+        $pages = array();
+        foreach ( $this->problems as $problem )
+            $pages[$problem['url']] = $problem;
+
+        return array_values( $pages );
     }
 }
 

@@ -166,6 +166,74 @@ A broken link means one of your pages contains a hyperlink whose target does not
 exist or returns an error. These are worth fixing but do not prevent caching —
 the rest of the site is still fully warmed.
 
+#### The broken link report
+
+Knowing that `/careers` is missing is only half of what an editor needs. The
+other half is **which pages link to it**, because those are the pages that have
+to be opened and corrected.
+
+Every run therefore ends with a report: each missing target once, with the full
+address of every page that links to it.
+
+```
+1 broken link on 4 pages of this site.
+
+Missing pages (404) (1)
+
+  https://alpha.example.com/bold_eng/careers?nekisufiks
+      linked from 4 pages:
+        https://alpha.example.com/
+        https://alpha.example.com/authors/tom-horvat
+        https://alpha.example.com/authors/jane-smith
+        https://alpha.example.com/authors/john-doe
+
+Open each page listed under a broken link, correct the link, then run this again.
+```
+
+Addresses are absolute, so they can be pasted into a browser as they are.
+Failures are grouped by kind — `Missing pages (404)` separately from
+`Server errors (500)` and from `No response` — because they are different
+problems for different people.
+
+Each line in the running log names its source as well:
+
+```
+/bold_eng/careers  404  linked from / and 3 other pages
+```
+
+At most **20** linking pages are listed per broken target, with a count of the
+rest. A broken link in a template or a site menu appears on every page of the
+site, and listing four thousand of them helps nobody — the first few name the
+pattern.
+
+In **Setup → Preload Sites** the same report is drawn below the console as a
+table of clickable links, so a broken target and its pages can be opened in new
+tabs and fixed without transcribing anything. The plain text stays in the
+console too, so selecting the whole log still carries it.
+
+#### Fragments are not pages
+
+Before this, every page of the site reported one or two broken links that did
+not exist:
+
+```
+/main        404
+/debug-end   404
+/fitness/main       404
+/tags/view/Topics/main  404
+```
+
+There is no such page, and no link to fix. The crawler was cutting the fragment
+off an `href` with `strtok( $href, '#' )`, and `strtok` skips *leading*
+delimiters: given `#main` it returns `main`, not an empty string. So the skip
+link every page carries — `<a href="#main">` — became a relative link, resolved
+against whatever page was being read, and was requested as a page.
+
+Fragments are now cut with `strpos`/`substr`, which keeps the empty result, and
+a fragment-only `href` is discarded like any other empty one. This also removes
+a whole class of pointless requests from a bounded run: on a 250 page budget the
+crawler was spending a request per page on an address that could never exist.
+
 ---
 
 ## Running on a cron job

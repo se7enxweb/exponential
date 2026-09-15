@@ -61,6 +61,11 @@
      height:26em;overflow:auto;font:12px/1.5 monospace;border:1px solid #444;
      margin:0;white-space:pre-wrap;word-break:break-word;">{'Idle. Press Start preloading to begin.'|i18n('design/admin/setup/preload')}</pre>
 
+{* The console is a log and a broken link scrolls past in the middle of it.
+   This is the same information the other way round: each missing page once,
+   and under it the pages an editor has to open to repair it. *}
+<div id="preload-broken" style="margin-top:1em;"></div>
+
 <script type="text/javascript">
 (function () {ldelim}
     var streamUrl = {$stream_url|ezurl()};
@@ -78,6 +83,7 @@
         warn:         '#e8c765',
         error:        '#ff8a80',
         info:         '#9a9a9a',
+        report:       '#ffd9d9',
         done:         '#7fd1ff'
     {rdelim};
 
@@ -97,6 +103,115 @@
             consoleEl.scrollTop = consoleEl.scrollHeight;
     {rdelim}
 
+    var brokenEl = document.getElementById( 'preload-broken' );
+
+    function textCell( row, text, nowrap )
+    {ldelim}
+        var td = document.createElement( 'td' );
+        if ( nowrap ) td.style.whiteSpace = 'nowrap';
+        td.appendChild( document.createTextNode( text ) );
+        row.appendChild( td );
+        return td;
+    {rdelim}
+
+    // Only ever an address this installation's own crawl produced, and only
+    // ever as an http address: anything else goes in as text.
+    function link( url )
+    {ldelim}
+        if ( !/^https?:\/\//i.test( url ) )
+            return document.createTextNode( url );
+        var a = document.createElement( 'a' );
+        a.setAttribute( 'href', url );
+        a.setAttribute( 'target', '_blank' );
+        a.setAttribute( 'rel', 'noopener' );
+        a.appendChild( document.createTextNode( url ) );
+        return a;
+    {rdelim}
+
+    function renderBroken( broken )
+    {ldelim}
+        brokenEl.innerHTML = '';
+        if ( !broken || !broken.length )
+        {ldelim}
+            var okEl = document.createElement( 'p' );
+            okEl.appendChild( document.createTextNode(
+                'No broken links were found.' ) );
+            brokenEl.appendChild( okEl );
+            return;
+        {rdelim}
+
+        var pages = {ldelim}{rdelim}, pageCount = 0, i, j;
+        for ( i = 0; i < broken.length; i++ )
+            for ( j = 0; j < ( broken[i].referrers || [] ).length; j++ )
+                if ( !pages[ broken[i].referrers[j] ] )
+                {ldelim} pages[ broken[i].referrers[j] ] = true; pageCount++; {rdelim}
+
+        var head = document.createElement( 'h2' );
+        head.appendChild( document.createTextNode(
+            broken.length + ( broken.length === 1 ? ' broken link' : ' broken links' )
+            + ' on ' + pageCount + ( pageCount === 1 ? ' page' : ' pages' ) ) );
+        brokenEl.appendChild( head );
+
+        var hint = document.createElement( 'p' );
+        hint.appendChild( document.createTextNode(
+            'Open each page in the right hand column, correct the link, then run this again.' ) );
+        brokenEl.appendChild( hint );
+
+        var table = document.createElement( 'table' );
+        table.className = 'list';
+        table.setAttribute( 'cellspacing', '0' );
+        table.style.width = '100%';
+
+        var hr = document.createElement( 'tr' );
+        [ 'Broken link', 'Status', 'Linked from' ].forEach( function ( label )
+        {ldelim}
+            var th = document.createElement( 'th' );
+            th.appendChild( document.createTextNode( label ) );
+            hr.appendChild( th );
+        {rdelim} );
+        table.appendChild( hr );
+
+        for ( i = 0; i < broken.length; i++ )
+        {ldelim}
+            var entry = broken[i];
+            var tr = document.createElement( 'tr' );
+            tr.className = ( i % 2 ) ? 'bgdark' : 'bglight';
+
+            var td = document.createElement( 'td' );
+            td.style.wordBreak = 'break-all';
+            td.appendChild( link( entry.url ) );
+            tr.appendChild( td );
+
+            textCell( tr, entry.status ? String( entry.status ) : 'no response', true );
+
+            var from = document.createElement( 'td' );
+            from.style.wordBreak = 'break-all';
+            var list = entry.referrers || [];
+
+            if ( !list.length )
+            {ldelim}
+                from.appendChild( document.createTextNode(
+                    'a starting page; nothing on the site links to it' ) );
+            {rdelim}
+            else
+            {ldelim}
+                for ( j = 0; j < list.length; j++ )
+                {ldelim}
+                    from.appendChild( link( list[j] ) );
+                    from.appendChild( document.createElement( 'br' ) );
+                {rdelim}
+                if ( entry.more > 0 )
+                    from.appendChild( document.createTextNode(
+                        '... and ' + entry.more + ' more' ) );
+            {rdelim}
+
+            tr.appendChild( from );
+            table.appendChild( tr );
+        {rdelim}
+
+        brokenEl.appendChild( table );
+    {rdelim}
+
     function finish( message )
     {ldelim}
         if ( source ) {ldelim} source.close(); source = null; {rdelim}
@@ -110,6 +225,7 @@
     {ldelim}
         if ( source ) return;
         consoleEl.innerHTML = '';
+        brokenEl.innerHTML = '';
         lines = 0;
 
         var pages = parseInt( document.getElementById( 'preload-max-pages' ).value, 10 );
@@ -135,6 +251,15 @@
             var payload;
             try {ldelim} payload = JSON.parse( event.data ); {rdelim}
             catch ( e ) {ldelim} return; {rdelim}
+            if ( payload.type === 'report' )
+            {ldelim}
+                renderBroken( payload.broken );
+                // The console keeps the plain text of the report as well, so
+                // that selecting the whole log still carries it.
+                write( 'report', payload.message );
+                return;
+            {rdelim}
+
             write( payload.type, payload.message );
             if ( payload.type === 'done' )
                 finish( 'finished' );
