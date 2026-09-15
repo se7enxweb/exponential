@@ -1011,6 +1011,46 @@ $FunctionList['keyword_count'] = array( 'name' => 'keyword_count',
                                                                       'required' => false,
                                                                       'default' => 1 ) ) );
 
+
+// The locations of one object, a page at a time.
+//
+// The locations tab used to draw every one of them: an object placed in many
+// thousands of places - a widely reused piece of content - loaded all of them,
+// fetched a path per row, and took the page down before it drew anything. The
+// offset and limit here are honoured by the query, not by the template.
+$FunctionList['assigned_nodes'] = array( 'name' => 'assigned_nodes',
+                                         'operation_types' => array( 'read' ),
+                                         'call_method' => array( 'class' => 'eZContentFunctionCollection',
+                                                                 'method' => 'fetchAssignedNodes' ),
+                                         'parameter_type' => 'standard',
+                                         'parameters' => array( array( 'name' => 'object_id',
+                                                                       'type' => 'integer',
+                                                                       'required' => true ),
+                                                                array( 'name' => 'offset',
+                                                                       'type' => 'integer',
+                                                                       'required' => false,
+                                                                       'default' => 0 ),
+                                                                array( 'name' => 'limit',
+                                                                       'type' => 'integer',
+                                                                       'required' => false,
+                                                                       'default' => false ),
+                                                                array( 'name' => 'sort_field',
+                                                                       'type' => 'string',
+                                                                       'required' => false,
+                                                                       'default' => false ),
+                                                                array( 'name' => 'sort_order',
+                                                                       'type' => 'string',
+                                                                       'required' => false,
+                                                                       'default' => 'asc' ) ) );
+
+$FunctionList['assigned_node_count'] = array( 'name' => 'assigned_node_count',
+                                              'operation_types' => array( 'read' ),
+                                              'call_method' => array( 'class' => 'eZContentFunctionCollection',
+                                                                      'method' => 'fetchAssignedNodeCount' ),
+                                              'parameter_type' => 'standard',
+                                              'parameters' => array( array( 'name' => 'object_id',
+                                                                            'type' => 'integer',
+                                                                            'required' => true ) ) );
 $FunctionList['access'] = array( 'name' => 'access',
                                  'operation_types' => array( 'read' ),
                                  'call_method' => array( 'class' => 'eZContentFunctionCollection',

@@ -1554,6 +1554,51 @@ class eZContentFunctionCollection
 
         return array( 'result' => $expiryHandler->timestamp( 'content-tree-menu' ) );
     }
+
+    /**
+     * One page of the nodes an object is placed at.
+     *
+     * The limit reaches the query. Reading every location to show a screenful
+     * of them is what made the locations tab fall over on an object with a lot
+     * of them, and slicing in the template would have kept the fetch.
+     *
+     * sort_field is checked against the list of sortable columns inside
+     * assignedNodes(), so a template may hand it a view parameter unexamined.
+     *
+     * @param int $objectID
+     * @param int $offset
+     * @param int|false $limit
+     * @param string|false $sortField one of eZContentObject::sortColumnsForAssignedNodes()
+     * @param string $sortOrder 'asc' or 'desc'
+     * @return array
+     */
+    static public function fetchAssignedNodes( $objectID, $offset = 0, $limit = false,
+                                               $sortField = false, $sortOrder = 'asc' )
+    {
+        $object = eZContentObject::fetch( (int) $objectID );
+
+        if ( !$object instanceof eZContentObject )
+            return array( 'result' => array() );
+
+        return array( 'result' => $object->assignedNodes( true, false, (int) $offset, $limit,
+                                                          $sortField, $sortOrder ) );
+    }
+
+    /**
+     * How many nodes an object is placed at.
+     *
+     * @param int $objectID
+     * @return array
+     */
+    static public function fetchAssignedNodeCount( $objectID )
+    {
+        $object = eZContentObject::fetch( (int) $objectID );
+
+        if ( !$object instanceof eZContentObject )
+            return array( 'result' => 0 );
+
+        return array( 'result' => $object->assignedNodeCount() );
+    }
 }
 
 ?>

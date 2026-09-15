@@ -40,6 +40,29 @@ class eZContentObject extends eZPersistentObject
     const RELATION_ATTRIBUTE = 8;
 
     /**
+     * The columns the locations list may be sorted on.
+     *
+     * The keys are what a url may say; the values are sql. Nothing outside
+     * this table reaches a query, which is the whole point of holding it in
+     * one place: the template sends whatever the address bar contains.
+     *
+     * 'children' and 'main' are not columns of ezcontentobject_tree, so
+     * assignedNodes() adds them to the select when they are asked for, and
+     * only then - counting the children of every location is not free.
+     *
+     * @return array
+     */
+    static function sortColumnsForAssignedNodes()
+    {
+        return array(
+            'path'       => 'ezcontentobject_tree.path_identification_string',
+            'children'   => 'sort_children_count',
+            'visibility' => 'ezcontentobject_tree.is_invisible, ezcontentobject_tree.is_hidden',
+            'main'       => 'sort_is_main',
+        );
+    }
+
+    /**
      * Initializes the object with $row.
      *
      * If $row is an integer, it will try to fetch it from the database using it as the unique ID.
@@ -4597,20 +4620,46 @@ class eZContentObject extends eZPersistentObject
     }
 
     /**
-     * Returns the node assignments for the current object.
+     * The nodes this object is placed at.
+     *
+     * $offset and $limit are honoured by the query rather than by whatever
+     * reads the result. An object can have any number of locations - a widely
+     * reused piece of content can have tens of thousands - and loading them
+     * all to show twenty five is what takes a page down.
+     *
+     * $sortField sorts in the database for the same reason: with one page in
+     * hand there is nothing to sort afterwards. It is one of the keys of
+     * sortColumnsForAssignedNodes(), and anything else is ignored, so the
+     * value can come straight off a url without being able to reach the sql.
      *
      * @param boolean $asObject
      * @param boolean $checkVisibility if true, the visibility and the setting
      * site.ini/[SiteAccessSettings]/ShowHiddenNodes are taken into account.
+     * @param int|false $offset
+     * @param int|false $limit
+     * @param string|false $sortField
+     * @param string $sortOrder 'asc' or 'desc'
      * @return eZContentObjectTreeNode[]|array[]
      */
-    function assignedNodes( $asObject = true, $checkVisibility = false )
+    function assignedNodes( $asObject = true, $checkVisibility = false, $offset = false, $limit = false,
+                            $sortField = false, $sortOrder = 'asc' )
     {
         $contentobjectID = $this->attribute( 'id' );
         if ( $contentobjectID == null )
         {
             return array();
         }
+
+        $queryParameters = array();
+        if ( $limit !== false && (int) $limit > 0 )
+            $queryParameters = array( 'offset' => (int) $offset, 'limit' => (int) $limit );
+
+        // An unknown column sorts the way the list has always sorted, in tree
+        // order, rather than failing: the value arrives from a url.
+        $sortColumns = self::sortColumnsForAssignedNodes();
+        $sortField   = ( is_string( $sortField ) && isset( $sortColumns[$sortField] ) ) ? $sortField : false;
+        $sortOrder   = ( strtolower( (string) $sortOrder ) === 'desc' ) ? 'DESC' : 'ASC';
+
         $visibilitySQL = '';
         if (
             $checkVisibility === true
@@ -4662,13 +4711,83 @@ class eZContentObject extends eZPersistentObject
                     'is_container'               => '$_cls.is_container',
                 ] ],
                 [ '$project' => [ '_id' => 0, '_obj' => 0, '_cls' => 0 ] ],
-                [ '$sort'    => [ 'path_string' => 1 ] ],
             ];
+
+            // The same sort as the sql branch. path_string is appended for the
+            // same reason: a stable order while paging.
+            $mongoDirection = ( $sortOrder === 'DESC' ) ? -1 : 1;
+            $mongoSort      = [];
+
+            switch ( $sortField )
+            {
+                case 'path':
+                    $mongoSort['path_identification_string'] = $mongoDirection;
+                    break;
+
+                case 'visibility':
+                    $mongoSort['is_invisible'] = $mongoDirection;
+                    $mongoSort['is_hidden']    = $mongoDirection;
+                    break;
+
+                case 'main':
+                    $pipeline[] = [ '$addFields' => [
+                        'sort_is_main' => [ '$cond' => [
+                            [ '$eq' => [ '$node_id', '$main_node_id' ] ], 1, 0 ] ] ] ];
+                    $mongoSort['sort_is_main'] = $mongoDirection;
+                    break;
+
+                case 'children':
+                    $pipeline[] = [ '$lookup' => [
+                        'from'         => 'ezcontentobject_tree',
+                        'localField'   => 'node_id',
+                        'foreignField' => 'parent_node_id',
+                        'as'           => '_kids',
+                    ] ];
+                    $pipeline[] = [ '$addFields' => [ 'sort_children_count' => [ '$size' => '$_kids' ] ] ];
+                    $pipeline[] = [ '$project' => [ '_kids' => 0 ] ];
+                    $mongoSort['sort_children_count'] = $mongoDirection;
+                    break;
+            }
+
+            $mongoSort['path_string'] = 1;
+            $pipeline[] = [ '$sort' => $mongoSort ];
+
+            // The same window as the sql branch, so a caller asking for one
+            // page gets one page whichever database is underneath.
+            if ( $limit !== false && (int) $limit > 0 )
+            {
+                if ( (int) $offset > 0 )
+                    $pipeline[] = [ '$skip' => (int) $offset ];
+
+                $pipeline[] = [ '$limit' => (int) $limit ];
+            }
+
             $nodesListArray = $db->aggregate( 'ezcontentobject_tree', $pipeline );
             if ( $nodesListArray === false ) $nodesListArray = [];
         }
         else
         {
+        // Two of the sortable columns are not stored. They are computed only
+        // when they are the one being sorted on, so the ordinary listing pays
+        // nothing for them - the per row count in particular is the expensive
+        // part of drawing this list and there is no reason to run it twice.
+        $extraColumnsSQL = '';
+        if ( $sortField === 'children' )
+            $extraColumnsSQL = ", ( SELECT COUNT(*) FROM ezcontentobject_tree AS ezchild "
+                             . "WHERE ezchild.parent_node_id = ezcontentobject_tree.node_id ) AS sort_children_count ";
+        else if ( $sortField === 'main' )
+            $extraColumnsSQL = ", CASE WHEN ezcontentobject_tree.node_id = ezcontentobject_tree.main_node_id "
+                             . "THEN 1 ELSE 0 END AS sort_is_main ";
+
+        // path_string is kept as the last key so that a sort on a column full
+        // of equal values - every location visible, one location main - stays
+        // in the same order from one page to the next instead of being left to
+        // the database to decide, which would drop and repeat rows while paging.
+        $orderSQL = "ORDER BY path_string";
+        if ( $sortField !== false )
+            $orderSQL = "ORDER BY " . implode( " $sortOrder, ", explode( ', ', $sortColumns[$sortField] ) )
+                      . " $sortOrder, path_string";
+
         $nodesListArray = $db->arrayQuery(
             "SELECT " .
             "ezcontentobject.contentclass_id, ezcontentobject.current_version, ezcontentobject.initial_language_id, ezcontentobject.language_mask, " .
@@ -4679,12 +4798,14 @@ class eZContentObject extends eZPersistentObject
             "ezcontentobject_tree.sort_field, ezcontentobject_tree.sort_order, ezcontentclass.serialized_name_list as class_serialized_name_list, " .
             "ezcontentclass.identifier as class_identifier, " .
             "ezcontentclass.is_container as is_container " .
+            $extraColumnsSQL .
             "FROM ezcontentobject_tree " .
             "INNER JOIN ezcontentobject ON (ezcontentobject_tree.contentobject_id = ezcontentobject.id) " .
             "INNER JOIN ezcontentclass ON (ezcontentclass.version = 0 AND ezcontentclass.id = ezcontentobject.contentclass_id) " .
             "WHERE contentobject_id = $contentobjectID " .
             $visibilitySQL .
-            "ORDER BY path_string"
+            $orderSQL,
+            $queryParameters
         );
         } // end mongo/sql branch
         if ( $asObject == true )
@@ -4693,6 +4814,40 @@ class eZContentObject extends eZPersistentObject
         }
         else
             return $nodesListArray;
+    }
+
+    /**
+     * How many nodes this object is placed at.
+     *
+     * Counted in the database. A pager needs the total to know how many pages
+     * there are, and fetching the rows to count them would undo the point of
+     * paging them.
+     *
+     * @param bool $checkVisibility
+     * @return int
+     */
+    function assignedNodeCount( $checkVisibility = false )
+    {
+        $contentobjectID = (int) $this->attribute( 'id' );
+
+        if ( !$contentobjectID )
+            return 0;
+
+        $db = eZDB::instance();
+
+        $visibilitySQL = '';
+        if ( $checkVisibility === true
+             && eZINI::instance()->variable( 'SiteAccessSettings', 'ShowHiddenNodes' ) !== 'true' )
+            $visibilitySQL = 'AND is_invisible = 0 ';
+
+        if ( $db->databaseName() === 'mongo' )
+            return (int) $db->count( 'ezcontentobject_tree',
+                                     array( 'contentobject_id' => $contentobjectID ) );
+
+        $rows = $db->arrayQuery( "SELECT COUNT(*) AS count FROM ezcontentobject_tree "
+                               . "WHERE contentobject_id = $contentobjectID " . $visibilitySQL );
+
+        return isset( $rows[0]['count'] ) ? (int) $rows[0]['count'] : 0;
     }
 
     /**

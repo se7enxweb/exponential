@@ -1,0 +1,206 @@
+# The locations tab: paging and sorting
+
+The **Locations** tab of the item view lists every place a piece of content is
+put. It used to list all of them, on one screen, with no way to order them.
+
+That is fine for the three or four locations most items have. It is not fine
+for content that is reused: a landing page placed under every product, a shared
+form, a piece of boilerplate. Those objects reach thousands of locations, and
+at that size the tab did not merely get long — it did not render. The template
+fetched the entire assignment list, then asked the database for the ancestor
+path of every row to print it, then asked again for the sub item count of every
+row. Fifty thousand locations meant a hundred thousand queries before the first
+byte, and the request died.
+
+The tab now fetches one page and sorts in the database.
+
+---
+
+## Using it
+
+### Paging
+
+The page size is `content.ini`:
+
+```ini
+[LocationsSettings]
+LocationsPerPage=25
+```
+
+Override it per siteaccess like any other setting. The pager appears only when
+there is more than one page, and it is the same pager the rest of the
+administration interface uses.
+
+The position is carried on the address as `(location_offset)`:
+
+```
+/content/view/full/133/(location_offset)/25/(tab)/locations
+```
+
+It is deliberately **not** `(offset)`. The item view already pages its sub
+items list with `(offset)`, and sharing the name would have meant that turning
+to the second page of locations also turned the sub items list, and the
+reverse.
+
+### Sorting
+
+Every column heading except the selection checkbox is a link. Following one
+sorts the whole list — not the twenty five rows on screen — and returns to the
+first page, because page eleven of the old order says nothing about the new
+one. Following the heading that is already sorted reverses it. The sorted
+heading is marked with the administration interface's own arrow.
+
+| Heading | Sorts on |
+|---|---|
+| Location | the location's path, alphabetically |
+| Sub items | how many children each location has |
+| Visibility | visible, then hidden by a parent, then hidden |
+| Main | the main location first when descending |
+
+The order is carried as `(location_sort)` and `(location_sort_order)`:
+
+```
+/content/view/full/133/(location_sort)/children/(location_sort_order)/desc/(tab)/locations
+```
+
+Sorting and paging combine: the pager keeps the sort, and the headings keep
+everything else on the address, the tab included.
+
+With no sort asked for, the list is in tree order exactly as it always was.
+
+---
+
+## What changed
+
+### `eZContentObject::assignedNodes()`
+
+```php
+function assignedNodes( $asObject = true, $checkVisibility = false, $offset = false, $limit = false,
+                        $sortField = false, $sortOrder = 'asc' )
+```
+
+The four existing arguments behave as before, and every existing caller — there
+are around twenty in the kernel — passes at most two, so all of them keep the
+whole list in tree order.
+
+`$offset` and `$limit` reach the query rather than the result. Slicing
+afterwards would have kept the fetch, which is the expensive half.
+
+`$sortField` is a key of `eZContentObject::sortColumnsForAssignedNodes()`:
+
+```php
+static function sortColumnsForAssignedNodes()
+{
+    return array(
+        'path'       => 'ezcontentobject_tree.path_identification_string',
+        'children'   => 'sort_children_count',
+        'visibility' => 'ezcontentobject_tree.is_invisible, ezcontentobject_tree.is_hidden',
+        'main'       => 'sort_is_main',
+    );
+}
+```
+
+Anything that is not a key of that table is ignored and the list comes back in
+tree order. That is what allows the template to hand a view parameter straight
+through: the value arrives from the address bar, and no part of it is ever
+concatenated into sql. `$sortOrder` is likewise reduced to one of two literals.
+
+Two of the four columns are not stored. `children` needs a count of each
+location's children and `main` needs a comparison against the main node, so
+they are added to the select **only when they are the column being sorted on** —
+counting the children of fifty thousand locations is not something an ordinary
+listing should pay for.
+
+Every sort ends with `path_string`. Without a final unique key, a sort on a
+column where most rows are equal — every location visible, one location main —
+leaves the order of the equal rows to the database, and it is free to choose
+differently on each query. Paging through such a list drops some rows and
+repeats others.
+
+The mongo branch does the same work: the same window, the same four sorts, with
+`sort_is_main` and `sort_children_count` built in the pipeline.
+
+### `eZContentObject::assignedNodeCount()`
+
+New. One `COUNT(*)`, because the pager needs the total and the page does not
+contain it.
+
+The template uses it for the "is there more than one location here" tests as
+well — those used to count the fetched array, which is now a single page, and
+would have said "only one location" on the last page of a long list and
+disabled the controls.
+
+### Fetch functions
+
+```
+{fetch( 'content', 'assigned_nodes',
+        hash( 'object_id', 74, 'offset', 0, 'limit', 25,
+              'sort_field', 'children', 'sort_order', 'desc' ) )}
+
+{fetch( 'content', 'assigned_node_count', hash( 'object_id', 74 ) )}
+```
+
+`offset`, `limit`, `sort_field` and `sort_order` are all optional.
+
+### `navigator/google.tpl`
+
+The shared pager gained one parameter:
+
+```
+{include uri='design:navigator/google.tpl'
+         offset_name='location_offset'
+         page_uri=concat( '/content/view/full/', $node.node_id )
+         item_count=$assignment_count
+         view_parameters=$view_parameters
+         item_limit=$locations_limit}
+```
+
+`offset_name` defaults to `'offset'`, so the twenty or so templates that
+include this pager are untouched. It controls both the parameter the pager
+writes and the one it leaves out when it copies the other view parameters
+forward — which is what lets one page carry two independent pagers.
+
+No `page_uri_suffix` is given: `view_parameters` already carries
+`(tab)/locations`, and the pager appends every parameter except its own offset,
+so a suffix would put the tab in the address twice.
+
+### Styling
+
+None. The sortable headings use `yui-dt-sortable` and `yui-dt-asc` /
+`yui-dt-desc`, which are the classes the trashed items list already uses and
+which `theme/yui_datatable.css` — loaded on every administration page — already
+draws. No stylesheet was touched.
+
+---
+
+## Files
+
+| File | Change |
+|---|---|
+| `kernel/classes/ezcontentobject.php` | `assignedNodes()` window and sort, `assignedNodeCount()`, `sortColumnsForAssignedNodes()` |
+| `kernel/content/function_definition.php` | `assigned_nodes`, `assigned_node_count` |
+| `kernel/content/ezcontentfunctioncollection.php` | `fetchAssignedNodes()`, `fetchAssignedNodeCount()` |
+| `design/admin/templates/locations.tpl` | one page, sortable headings, pager |
+| `design/admin/templates/navigator/google.tpl` | `offset_name` |
+| `settings/content.ini` | `[LocationsSettings] LocationsPerPage` |
+
+---
+
+## Tests
+
+`ai/bin/one/test_locations_pagination.py` drives the tab in a browser:
+
+```
+NODE=133 LIMIT=25 EZ_ADMIN_PASSWORD=... python3 ai/bin/one/test_locations_pagination.py
+```
+
+Point `NODE` at an item with more locations than one page holds; with fewer the
+run proves nothing and says so. It checks that one page is drawn and not the
+whole list, that the pager appears and uses its own offset, that the second
+page holds different rows, that each column sorts both ways and marks itself,
+that a sort value that is not a column is ignored rather than run, that the
+pager keeps the sort and the headings keep the tab, and — because the shared
+pager was changed — that an ordinary list elsewhere still pages on `(offset)`.
+
+Measured against an item with 2001 locations: the tab renders in about a
+second. Before this it did not render.
