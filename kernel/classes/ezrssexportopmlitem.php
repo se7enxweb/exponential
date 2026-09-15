@@ -170,6 +170,13 @@ class eZRSSExportOPMLItem extends eZPersistentObject
                                                             'required' => true ) ),
                       'keys' => array( 'id', 'status' ),
                       'function_attributes' => array( 'target'      => 'targetExport',
+                                                      // Without these two the edit page cannot see a
+                                                      // chosen node: sourceNode() and sourcePath() were
+                                                      // written and never exposed, so the row went on
+                                                      // offering "Browse content" after a node had been
+                                                      // picked and stored.
+                                                      'source_node' => 'sourceNode',
+                                                      'source_path' => 'sourcePath',
                                                       'outline'     => 'outline',
                                                       'target_gone' => 'targetGone' ),
                       'increment_key' => 'id',
