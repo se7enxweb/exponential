@@ -72,3 +72,5 @@ ALTER TABLE ONLY ezrss_export_opml_item
     ADD CONSTRAINT ezrss_export_opml_item_pkey PRIMARY KEY (id, status);
 
 CREATE INDEX ezrss_export_opml_rsseid ON ezrss_export_opml_item USING btree (rssexport_id);
+
+ALTER TABLE ezrss_export ADD COLUMN podcast_head text;

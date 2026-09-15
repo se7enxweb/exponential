@@ -65,3 +65,14 @@ CREATE TABLE ezrss_export_opml_item (
   PRIMARY KEY  (id,status),
   KEY ezrss_export_opml_rsseid (rssexport_id)
 ) ENGINE=InnoDB;
+
+--
+-- podcast_head carries the channel level fields an Apple Podcasts feed needs
+-- and no other format has anywhere to put: author, owner name and email,
+-- artwork, category and subcategory, explicit, and whether the show is
+-- episodic or serial. Json in one column, for the same reason opml_head is:
+-- written once, read once, never searched on, and empty on any installation
+-- with no podcast.
+--
+
+ALTER TABLE ezrss_export ADD COLUMN podcast_head longtext;

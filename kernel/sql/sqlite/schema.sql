@@ -739,6 +739,7 @@ CREATE TABLE `ezrole` (
 CREATE TABLE `ezrss_export` (
   `access_url` varchar(255) DEFAULT NULL
 ,  `opml_head` longtext
+,  `podcast_head` longtext
 ,  `active` integer DEFAULT NULL
 ,  `created` integer DEFAULT NULL
 ,  `creator_id` integer DEFAULT NULL

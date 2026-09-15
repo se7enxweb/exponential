@@ -2432,6 +2432,7 @@ CREATE TABLE ezrole (
 CREATE TABLE ezrss_export (
     access_url character varying(255),
     opml_head text,
+    podcast_head text,
     active integer,
     created integer,
     creator_id integer,

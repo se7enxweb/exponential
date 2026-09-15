@@ -5804,6 +5804,11 @@ $schema = array (
         'type' => 'longtext',
         'default' => false,
       ),
+      'podcast_head' => 
+      array (
+        'type' => 'longtext',
+        'default' => false,
+      ),
       'active' => 
       array (
         'length' => 11,

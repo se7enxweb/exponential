@@ -196,6 +196,32 @@ class eZRSSEditFunction
 
             self::storeOPMLItems( $http, $rssExport->attribute( 'id' ) );
         }
+
+        // The podcast channel fields, which only an Apple Podcasts export has a
+        // page to set them on. Checkboxes post nothing when they are off, so
+        // the booleans are read from whether they arrived at all rather than
+        // from their value.
+        if ( $http->hasPostVariable( 'RSSVersion' ) && $http->postVariable( 'RSSVersion' ) === 'ITUNES' )
+        {
+            $head = array();
+
+            foreach ( array( 'author', 'ownerName', 'ownerEmail', 'imageUrl',
+                             'category', 'subcategory', 'type', 'summary',
+                             'subtitle', 'copyright', 'language', 'newFeedUrl' ) as $field )
+            {
+                if ( !$http->hasPostVariable( 'Podcast_' . $field ) )
+                    continue;
+
+                $value = $http->postVariable( 'Podcast_' . $field );
+                if ( is_scalar( $value ) )
+                    $head[$field] = $value;   // setPodcastHead checks and caps each one
+            }
+
+            foreach ( array( 'explicit', 'block', 'complete' ) as $field )
+                $head[$field] = $http->hasPostVariable( 'Podcast_' . $field ) ? 'true' : 'false';
+
+            $rssExport->setPodcastHead( $head );
+        }
         if ( $http->hasPostVariable( 'MainNodeOnly' ) )
         {
             $rssExport->setAttribute( 'main_node_only', 1 );

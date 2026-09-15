@@ -430,7 +430,26 @@ $tpl->setVariable( 'number_of_objects_default', $numberOfObjectsDefault );
 
 $tpl->setVariable( 'rss_class_array', $classArray );
 
-// What the OPML half of the page draws itself from.
+// What the OPML half of the page draws itself from: see further down, after
+// the podcast half.
+
+// What the podcast half of the page draws itself from. The categories come
+// from the class rather than the template so that Apple revising its list is
+// one change in one place.
+$isPodcast = $rssExport instanceof eZRSSExport
+             && ( $rssExport->attribute( 'rss_version' ) === 'ITUNES'
+                  || ( $http->hasPostVariable( 'RSSVersion' )
+                       && $http->postVariable( 'RSSVersion' ) === 'ITUNES' ) );
+
+$podcastCategories = array();
+foreach ( eZRSSExport::podcastCategories() as $podcastCategory => $podcastSubs )
+    $podcastCategories[] = array( 'name' => $podcastCategory, 'subcategories' => $podcastSubs );
+
+$tpl->setVariable( 'rss_is_podcast', $isPodcast );
+$tpl->setVariable( 'podcast_head', $rssExport instanceof eZRSSExport
+                                   ? $rssExport->podcastHead()
+                                   : eZRSSExport::create( 0 )->podcastHead() );
+$tpl->setVariable( 'podcast_categories', $podcastCategories );
 $tpl->setVariable( 'rss_is_opml', $isOPML );
 $tpl->setVariable( 'opml_head', $rssExport instanceof eZRSSExport
                                 ? $rssExport->opmlHead()

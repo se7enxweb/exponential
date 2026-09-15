@@ -254,6 +254,106 @@ table.list th.sorted button.sort-button { font-weight: 700; }
     {/section}
 </div>
 
+
+{* The Apple Podcasts half. Shown when the format is Apple Podcasts, and only
+   then. These are the channel fields RSS 2.0 has nowhere to put and Apple
+   rejects a feed for missing, so the ones it requires are marked as such. *}
+<div id="rssExportPodcast"{if $rss_is_podcast|not} style="display:none;"{/if}>
+<div class="block">
+    <h2>{'Apple Podcasts'|i18n( 'design/admin/rss/edit_export' )}</h2>
+    <p class="podcast-note">{'Apple reads these from the itunes namespace. A feed missing one it requires is rejected outright, so the required ones are marked. Everything else is optional and left out of the document when empty.'|i18n( 'design/admin/rss/edit_export' )}</p>
+</div>
+
+<div class="block">
+    <label class="inline" for="podcastAuthor">{'Author'|i18n( 'design/admin/rss/edit_export' )}:</label>
+    <input class="halfbox" type="text" id="podcastAuthor" name="Podcast_author" value="{$podcast_head.author|wash}" size="50" title="{'The name shown as the show\'s author.'|i18n('design/admin/rss/edit_export')|wash}" />
+</div>
+
+<div class="block">
+    <label class="inline" for="podcastOwnerName">{'Owner name'|i18n( 'design/admin/rss/edit_export' )} <em>({'required'|i18n( 'design/admin/rss/edit_export' )})</em>:</label>
+    <input class="halfbox" type="text" id="podcastOwnerName" name="Podcast_ownerName" value="{$podcast_head.ownerName|wash}" size="50" />
+</div>
+
+<div class="block">
+    <label class="inline" for="podcastOwnerEmail">{'Owner email'|i18n( 'design/admin/rss/edit_export' )} <em>({'required'|i18n( 'design/admin/rss/edit_export' )})</em>:</label>
+    <input class="halfbox" type="text" id="podcastOwnerEmail" name="Podcast_ownerEmail" value="{$podcast_head.ownerEmail|wash}" size="50" title="{'Apple writes to this address to confirm the show is yours. It is not published in the directory.'|i18n('design/admin/rss/edit_export')|wash}" />
+</div>
+
+<div class="block">
+    <label class="inline" for="podcastImageUrl">{'Artwork address'|i18n( 'design/admin/rss/edit_export' )} <em>({'required'|i18n( 'design/admin/rss/edit_export' )})</em>:</label>
+    <input class="halfbox" type="text" id="podcastImageUrl" name="Podcast_imageUrl" value="{$podcast_head.imageUrl|wash}" size="80" title="{'A square jpeg or png between 1400 and 3000 pixels, reachable without a login. Apple fetches it; a link it cannot follow is the commonest reason a feed is rejected.'|i18n('design/admin/rss/edit_export')|wash}" />
+</div>
+
+<div class="block">
+    <label class="inline" for="podcastCategory">{'Category'|i18n( 'design/admin/rss/edit_export' )} <em>({'required'|i18n( 'design/admin/rss/edit_export' )})</em>:</label>
+    <select id="podcastCategory" name="Podcast_category">
+        <option value="">{'Choose one'|i18n( 'design/admin/rss/edit_export' )}</option>
+    {foreach $podcast_categories as $podcast_category}
+        <option value="{$podcast_category.name|wash}"{if eq( $podcast_head.category, $podcast_category.name )} selected="selected"{/if}>{$podcast_category.name|wash}</option>
+    {/foreach}
+    </select>
+
+    <label class="inline" for="podcastSubcategory">{'Subcategory'|i18n( 'design/admin/rss/edit_export' )}:</label>
+    <select id="podcastSubcategory" name="Podcast_subcategory">
+        <option value="">{'None'|i18n( 'design/admin/rss/edit_export' )}</option>
+    {foreach $podcast_categories as $podcast_category}
+        {foreach $podcast_category.subcategories as $podcast_subcategory}
+        <option value="{$podcast_subcategory|wash}" data-parent="{$podcast_category.name|wash}"{if eq( $podcast_head.subcategory, $podcast_subcategory )} selected="selected"{/if}>{$podcast_subcategory|wash}</option>
+        {/foreach}
+    {/foreach}
+    </select>
+</div>
+
+<div class="block">
+    <label class="inline" for="podcastType">{'Show type'|i18n( 'design/admin/rss/edit_export' )}:</label>
+    <select id="podcastType" name="Podcast_type">
+        <option value="episodic"{if eq( $podcast_head.type, 'episodic' )} selected="selected"{/if}>{'Episodic - newest first'|i18n( 'design/admin/rss/edit_export' )}</option>
+        <option value="serial"{if eq( $podcast_head.type, 'serial' )} selected="selected"{/if}>{'Serial - oldest first'|i18n( 'design/admin/rss/edit_export' )}</option>
+    </select>
+
+    <label class="inline" for="podcastLanguage">{'Language'|i18n( 'design/admin/rss/edit_export' )}:</label>
+    <input type="text" id="podcastLanguage" name="Podcast_language" value="{$podcast_head.language|wash}" size="8" title="{'A two letter code such as en, or a regional one such as en-us. Left empty the siteaccess language is used.'|i18n('design/admin/rss/edit_export')|wash}" />
+</div>
+
+<div class="block">
+    <label class="inline" for="podcastSubtitle">{'Subtitle'|i18n( 'design/admin/rss/edit_export' )}:</label>
+    <input class="halfbox" type="text" id="podcastSubtitle" name="Podcast_subtitle" value="{$podcast_head.subtitle|wash}" size="80" />
+</div>
+
+<div class="block">
+    <label class="inline" for="podcastSummary">{'Summary'|i18n( 'design/admin/rss/edit_export' )}:</label>
+    <textarea class="halfbox" id="podcastSummary" name="Podcast_summary" cols="70" rows="3">{$podcast_head.summary|wash}</textarea>
+</div>
+
+<div class="block">
+    <label class="inline" for="podcastCopyright">{'Copyright'|i18n( 'design/admin/rss/edit_export' )}:</label>
+    <input class="halfbox" type="text" id="podcastCopyright" name="Podcast_copyright" value="{$podcast_head.copyright|wash}" size="50" />
+</div>
+
+<div class="block">
+    <input type="checkbox" id="podcastExplicit" name="Podcast_explicit" value="1"{if eq( $podcast_head.explicit, 'true' )} checked="checked"{/if} />
+    <label class="inline" for="podcastExplicit">{'Contains explicit content'|i18n( 'design/admin/rss/edit_export' )}</label>
+</div>
+
+<div class="block">
+    <input type="checkbox" id="podcastComplete" name="Podcast_complete" value="1"{if eq( $podcast_head.complete, 'true' )} checked="checked"{/if} />
+    <label class="inline" for="podcastComplete">{'The show is finished - no further episodes'|i18n( 'design/admin/rss/edit_export' )}</label>
+</div>
+
+<div class="block">
+    <input type="checkbox" id="podcastBlock" name="Podcast_block" value="1"{if eq( $podcast_head.block, 'true' )} checked="checked"{/if} />
+    <label class="inline" for="podcastBlock">{'Keep the show out of the Apple Podcasts directory'|i18n( 'design/admin/rss/edit_export' )}</label>
+</div>
+
+<div class="block">
+    <label class="inline" for="podcastNewFeedUrl">{'Moved to'|i18n( 'design/admin/rss/edit_export' )}:</label>
+    <input class="halfbox" type="text" id="podcastNewFeedUrl" name="Podcast_newFeedUrl" value="{$podcast_head.newFeedUrl|wash}" size="80" title="{'The feed\'s new address, if it has moved. Apple follows it and updates every subscriber.'|i18n('design/admin/rss/edit_export')|wash}" />
+</div>
+
+<div class="block">
+    <p class="podcast-note">{'Each episode needs a source below whose enclosure is mapped to a media or file attribute. An episode with no enclosure is left out of the feed, because Apple rejects a feed containing one.'|i18n( 'design/admin/rss/edit_export' )}</p>
+</div>
+</div>
 {* The OPML half. Shown when the format is OPML, and only then. *}
 <div id="rssExportOPML"{if $rss_is_opml|not} style="display:none;"{/if}>
 {include uri='design:rss/edit_export_opml.tpl'
@@ -301,18 +401,57 @@ jQuery(function( $ )//called on document.ready
     function show()
     {
         var opml    = version.value === 'OPML',
+            podcast = version.value === 'ITUNES',
             sources = document.getElementById( 'rssExportSources' ),
             panel   = document.getElementById( 'rssExportOPML' ),
+            pod     = document.getElementById( 'rssExportPodcast' ),
             add     = document.getElementById( 'rssExportAddSource' ),
             limit   = document.getElementById( 'rssExportLimitBlock' );
 
+        // A podcast keeps its sources: the episodes come from content, the
+        // same way every feed of articles does. Only OPML replaces them with
+        // a list of other feeds.
         if ( sources ) sources.style.display = opml ? 'none' : '';
         if ( panel )   panel.style.display   = opml ? '' : 'none';
+        if ( pod )     pod.style.display     = podcast ? '' : 'none';
         if ( add )     add.style.display     = opml ? 'none' : '';
         if ( limit )   limit.style.display   = opml ? 'none' : '';
+
+        subcategories();
+    }
+
+    // Only the subcategories of the chosen category are worth offering; Apple
+    // rejects a pairing that is not one of its own.
+    function subcategories()
+    {
+        var category = document.getElementById( 'podcastCategory' ),
+            sub      = document.getElementById( 'podcastSubcategory' );
+
+        if ( !category || !sub ) return;
+
+        var chosen = category.value, cleared = false;
+
+        for ( var i = 0; i < sub.options.length; i++ )
+        {
+            var option = sub.options[i],
+                parent = option.getAttribute( 'data-parent' );
+
+            if ( !parent ) continue;                       // the "None" entry
+
+            var applies = parent === chosen;
+            option.hidden   = !applies;
+            option.disabled = !applies;
+
+            if ( !applies && option.selected ) { option.selected = false; cleared = true; }
+        }
+
+        if ( cleared ) sub.selectedIndex = 0;
     }
 
     version.onchange = show;
+
+    var podcastCategory = document.getElementById( 'podcastCategory' );
+    if ( podcastCategory ) podcastCategory.onchange = subcategories;
     show();
 
     // Enter in the browser's search box should search, not save and leave: the

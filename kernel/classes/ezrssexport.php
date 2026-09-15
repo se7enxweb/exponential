@@ -31,6 +31,9 @@ class eZRSSExport extends eZPersistentObject
     public $Active;
     public $OPMLHead;
 
+    /// The podcast channel fields, as json. See podcastHead().
+    public $PodcastHead;
+
     const STATUS_VALID = 1;
     const STATUS_DRAFT = 0;
 
@@ -116,10 +119,20 @@ class eZRSSExport extends eZPersistentObject
                                          'opml_head' => array( 'name' => 'OPMLHead',
                                                                'datatype' => 'string',
                                                                'default' => '',
-                                                               'required' => false ) ),
+                                                               'required' => false ),
+                                         // The channel fields an Apple Podcasts
+                                         // feed needs and no other format has
+                                         // anywhere to put, as json. Only a
+                                         // podcast export ever fills it in.
+                                         'podcast_head' => array( 'name' => 'PodcastHead',
+                                                                  'datatype' => 'string',
+                                                                  'default' => '',
+                                                                  'required' => false ) ),
                       'keys' => array( 'id', 'status' ),
                       'function_attributes' => array( 'item_list' => 'itemList',
                                                       'is_opml' => 'isOPML',
+                                                      'is_podcast' => 'isPodcast',
+                                                      'podcast_head_data' => 'podcastHead',
                                                       'opml_item_list' => 'opmlItemList',
                                                       'opml_head_data' => 'opmlHead',
                                                       'modifier' => 'modifier',
@@ -561,6 +574,27 @@ class eZRSSExport extends eZPersistentObject
                     return $this->generateFeed( 'atom' );
                 } break;
 
+                case 'ITUNES':
+                {
+                    // Same reasoning as OPML below: this is a public address,
+                    // and whatever goes wrong behind it something well formed
+                    // has to come back rather than a stack trace.
+                    try
+                    {
+                        return $this->generateITunes();
+                    }
+                    catch ( Exception $e )
+                    {
+                        eZDebug::writeError( $e->getMessage(), __METHOD__ );
+                        return self::emptyPodcast( $this->attribute( 'title' ) );
+                    }
+                    catch ( Throwable $e )
+                    {
+                        eZDebug::writeError( $e->getMessage(), __METHOD__ );
+                        return self::emptyPodcast( $this->attribute( 'title' ) );
+                    }
+                } break;
+
                 case 'OPML':
                 {
                     // OPML is a list of feeds rather than a list of articles,
@@ -610,10 +644,11 @@ class eZRSSExport extends eZPersistentObject
      */
     static function formatLabels()
     {
-        return array( '1.0'  => 'RSS 1.0 (RDF)',
-                      '2.0'  => 'RSS 2.0',
-                      'ATOM' => 'Atom 1.0',
-                      'OPML' => 'OPML 2.0 (list of feeds)' );
+        return array( '1.0'    => 'RSS 1.0 (RDF)',
+                      '2.0'    => 'RSS 2.0',
+                      'ATOM'   => 'Atom 1.0',
+                      'OPML'   => 'OPML 2.0 (list of feeds)',
+                      'ITUNES' => 'Apple Podcasts (RSS 2.0 + iTunes)' );
     }
 
     /**
@@ -640,6 +675,579 @@ class eZRSSExport extends eZPersistentObject
     function isOPML()
     {
         return $this->attribute( 'rss_version' ) === 'OPML';
+    }
+
+
+
+    /**
+     * Writes this export as an Apple Podcasts feed.
+     *
+     * RSS 2.0 with the iTunes namespace. Apple ingests plain RSS and reads the
+     * itunes: elements for everything RSS has no room for - who the show is by,
+     * its artwork, its category, whether it is explicit - and rejects the feed
+     * outright if any of the required ones are missing, so this writes them
+     * from podcastHead() and leaves out only what is genuinely optional.
+     *
+     * Written with DOM rather than the Feed component for the same reason OPML
+     * is: the component does not know this vocabulary, and the requirements are
+     * exact enough that it is better to be able to see every element being
+     * written than to hope a general writer emits them the way Apple wants.
+     *
+     * @return string XML document.
+     */
+    function generateITunes()
+    {
+        $head    = $this->podcastHead();
+        $baseURL = trim( (string) $this->attribute( 'url' ) );
+
+        if ( $baseURL === '' )
+            $baseURL = self::publicSiteURL( $this->attribute( 'site_access' ) );
+
+        $baseURL = rtrim( $baseURL, '/' );
+
+        $doc = new DOMDocument( '1.0', 'utf-8' );
+        $doc->formatOutput = true;
+
+        $rss = $doc->createElement( 'rss' );
+        $rss->setAttribute( 'version', '2.0' );
+        $rss->setAttribute( 'xmlns:itunes', 'http://www.itunes.com/dtds/podcast-1.0.dtd' );
+        $rss->setAttribute( 'xmlns:content', 'http://purl.org/rss/1.0/modules/content/' );
+        $rss->setAttribute( 'xmlns:atom', 'http://www.w3.org/2005/Atom' );
+        $doc->appendChild( $rss );
+
+        $channel = $doc->createElement( 'channel' );
+        $rss->appendChild( $channel );
+
+        $feedURL = $baseURL . '/rss/feed/' . $this->attribute( 'access_url' );
+
+        // ── required by Apple ────────────────────────────────────────────────
+        self::element( $doc, $channel, 'title', $this->attribute( 'title' ) );
+        self::element( $doc, $channel, 'link', $baseURL );
+        self::element( $doc, $channel, 'description', $this->attribute( 'description' ) );
+
+        $language = $head['language'] !== ''
+                    ? $head['language']
+                    : eZLocale::instance()->httpLocaleCode();
+        self::element( $doc, $channel, 'language', $language );
+
+        // itunes:image carries its address in an href attribute and has no text
+        // content. Written as text it is silently ignored, which is the single
+        // most common reason a feed is rejected for having no artwork.
+        if ( $head['imageUrl'] !== '' )
+        {
+            $image = $doc->createElement( 'itunes:image' );
+            $image->setAttribute( 'href', $head['imageUrl'] );
+            $channel->appendChild( $image );
+        }
+
+        if ( $head['category'] !== '' )
+        {
+            $category = $doc->createElement( 'itunes:category' );
+            $category->setAttribute( 'text', $head['category'] );
+
+            if ( $head['subcategory'] !== '' )
+            {
+                $sub = $doc->createElement( 'itunes:category' );
+                $sub->setAttribute( 'text', $head['subcategory'] );
+                $category->appendChild( $sub );
+            }
+
+            $channel->appendChild( $category );
+        }
+
+        self::element( $doc, $channel, 'itunes:explicit',
+                       $head['explicit'] === 'true' ? 'true' : 'false' );
+
+        // ── recommended ──────────────────────────────────────────────────────
+        self::element( $doc, $channel, 'itunes:author', $head['author'] );
+        self::element( $doc, $channel, 'itunes:title', $this->attribute( 'title' ) );
+        self::element( $doc, $channel, 'itunes:subtitle', $head['subtitle'] );
+        self::element( $doc, $channel, 'itunes:summary', $head['summary'] );
+        self::element( $doc, $channel, 'copyright', $head['copyright'] );
+        self::element( $doc, $channel, 'itunes:type',
+                       $head['type'] === 'serial' ? 'serial' : 'episodic' );
+
+        if ( $head['ownerName'] !== '' || $head['ownerEmail'] !== '' )
+        {
+            $owner = $doc->createElement( 'itunes:owner' );
+            self::element( $doc, $owner, 'itunes:name', $head['ownerName'] );
+            self::element( $doc, $owner, 'itunes:email', $head['ownerEmail'] );
+            $channel->appendChild( $owner );
+        }
+
+        // ── lifecycle, written only when set ─────────────────────────────────
+        if ( $head['block'] === 'true' )
+            self::element( $doc, $channel, 'itunes:block', 'Yes' );
+        if ( $head['complete'] === 'true' )
+            self::element( $doc, $channel, 'itunes:complete', 'Yes' );
+        if ( $head['newFeedUrl'] !== '' )
+            self::element( $doc, $channel, 'itunes:new-feed-url', $head['newFeedUrl'] );
+
+        // Where this document lives, so a reader that has been handed a copy
+        // can find the original.
+        $self = $doc->createElement( 'atom:link' );
+        $self->setAttribute( 'href', $feedURL );
+        $self->setAttribute( 'rel', 'self' );
+        $self->setAttribute( 'type', 'application/rss+xml' );
+        $channel->appendChild( $self );
+
+        self::element( $doc, $channel, 'lastBuildDate', date( DATE_RFC2822 ) );
+        self::element( $doc, $channel, 'generator', eZPublishSDK::EDITION );
+
+        // ── episodes ─────────────────────────────────────────────────────────
+        foreach ( $this->podcastItemList( $baseURL ) as $episode )
+        {
+            // An episode with nothing to play is not an episode. Apple rejects
+            // the feed rather than the item, so it is left out here.
+            if ( $episode['enclosureUrl'] === '' )
+                continue;
+
+            $item = $doc->createElement( 'item' );
+            $channel->appendChild( $item );
+
+            self::element( $doc, $item, 'title', $episode['title'] );
+            self::element( $doc, $item, 'itunes:title', $episode['title'] );
+            self::element( $doc, $item, 'link', $episode['link'] );
+            self::element( $doc, $item, 'description', $episode['description'] );
+            self::element( $doc, $item, 'pubDate', $episode['pubDate'] );
+
+            $enclosure = $doc->createElement( 'enclosure' );
+            $enclosure->setAttribute( 'url', $episode['enclosureUrl'] );
+            // The byte length has to be the real one; a wrong length is the
+            // second most common reason a feed is rejected.
+            $enclosure->setAttribute( 'length', (string) $episode['enclosureLength'] );
+            $enclosure->setAttribute( 'type', $episode['enclosureType'] );
+            $item->appendChild( $enclosure );
+
+            // A guid must never change for an episode, or every reader treats
+            // it as new. The object's remote id is the one thing about it that
+            // survives being moved, renamed and republished.
+            $guid = $doc->createElement( 'guid', htmlspecialchars( $episode['guid'], ENT_XML1, 'UTF-8' ) );
+            $guid->setAttribute( 'isPermaLink', 'false' );
+            $item->appendChild( $guid );
+
+            if ( $episode['duration'] !== '' )
+                self::element( $doc, $item, 'itunes:duration', $episode['duration'] );
+
+            self::element( $doc, $item, 'itunes:explicit',
+                           $head['explicit'] === 'true' ? 'true' : 'false' );
+
+            if ( $episode['author'] !== '' )
+                self::element( $doc, $item, 'itunes:author', $episode['author'] );
+
+            if ( $episode['category'] !== '' )
+                self::element( $doc, $item, 'category', $episode['category'] );
+        }
+
+        return $doc->saveXML();
+    }
+
+    /**
+     * Appends a simple element carrying text, and nothing when there is none.
+     *
+     * @param DOMDocument $doc
+     * @param DOMNode $parent
+     * @param string $name
+     * @param string $value
+     */
+    static function element( DOMDocument $doc, DOMNode $parent, $name, $value )
+    {
+        $value = (string) $value;
+
+        if ( trim( $value ) === '' )
+            return;
+
+        $element = $doc->createElement( $name );
+        $element->appendChild( $doc->createTextNode( $value ) );
+        $parent->appendChild( $element );
+    }
+
+    /**
+     * The episodes of this export, as plain values the writer can use.
+     *
+     * The sources and the class attribute mapping are the ones every other
+     * format uses, read the same way; what is different is that a podcast item
+     * stands or falls on its enclosure, so the file is resolved here rather
+     * than left to the writer.
+     *
+     * @param string $baseURL the site addresses are built against.
+     * @return array of episode.
+     */
+    function podcastItemList( $baseURL )
+    {
+        $episodes = array();
+
+        $sources = eZRSSExportItem::fetchFilteredList(
+            array( 'rssexport_id' => $this->ID, 'status' => $this->Status ) );
+
+        $nodes = eZRSSExportItem::fetchNodeList( $sources, $this->getObjectListFilter() );
+
+        if ( !is_array( $nodes ) || !count( $nodes ) )
+            return $episodes;
+
+        $mappings   = eZRSSExportItem::getAttributeMappings( $sources );
+        $useAlias   = eZINI::instance()->variable( 'URLTranslator', 'Translation' ) == 'enabled';
+
+        foreach ( $nodes as $node )
+        {
+            if ( $node->attribute( 'is_hidden' ) && !eZContentObjectTreeNode::showInvisibleNodes() )
+                continue;
+
+            $object  = $node->attribute( 'object' );
+            $dataMap = $object->dataMap();
+
+            $mapping = false;
+            foreach ( $mappings as $candidate )
+            {
+                if ( $candidate[0]->attribute( 'class_id' ) == $object->attribute( 'contentclass_id' ) &&
+                     in_array( $candidate[0]->attribute( 'source_node_id' ), $node->attribute( 'path_array' ) ) )
+                {
+                    $mapping = $candidate[0];
+                    break;
+                }
+            }
+
+            if ( !$mapping )
+                continue;
+
+            $link = $useAlias
+                    ? $this->urlEncodePath( $baseURL . '/' . $node->urlAlias() )
+                    : $baseURL . '/content/view/full/' . $node->attribute( 'node_id' );
+
+            $episode = array(
+                'title'           => self::podcastText( $dataMap, $mapping->attribute( 'title' ) ),
+                'description'     => self::podcastText( $dataMap, $mapping->attribute( 'description' ) ),
+                'category'        => self::podcastText( $dataMap, $mapping->attribute( 'category' ) ),
+                'link'            => $link,
+                'guid'            => $object->attribute( 'remote_id' ),
+                'pubDate'         => date( DATE_RFC2822, $node->attribute( 'object' )->attribute( 'published' ) ),
+                'author'          => '',
+                'duration'        => '',
+                'enclosureUrl'    => '',
+                'enclosureLength' => 0,
+                'enclosureType'   => '' );
+
+            if ( $episode['title'] === '' )
+                $episode['title'] = $object->attribute( 'name' );
+
+            $creator = $node->attribute( 'creator' );
+            if ( $creator instanceof eZContentObject )
+                $episode['author'] = $creator->attribute( 'name' );
+
+            $identifier = $mapping->attribute( 'enclosure' );
+            $attribute  = $identifier && isset( $dataMap[$identifier] ) ? $dataMap[$identifier] : false;
+            $content    = $attribute ? $attribute->attribute( 'content' ) : false;
+
+            if ( $content instanceof eZMedia || $content instanceof eZBinaryFile )
+            {
+                $episode['enclosureLength'] = (int) $content->attribute( 'filesize' );
+                $episode['enclosureType']   = (string) $content->attribute( 'mime_type' );
+                $episode['enclosureUrl']    = $baseURL . '/content/download/'
+                                            . $attribute->attribute( 'contentobject_id' ) . '/'
+                                            . $content->attribute( 'contentobject_attribute_id' ) . '/'
+                                            . urlencode( $content->attribute( 'original_filename' ) );
+
+                $duration = self::audioDuration( $content );
+                if ( $duration !== false )
+                    $episode['duration'] = $duration;
+            }
+
+            $episodes[] = $episode;
+        }
+
+        return $episodes;
+    }
+
+    /**
+     * One mapped class attribute as plain text, or an empty string.
+     *
+     * @param array $dataMap
+     * @param string|false $identifier
+     * @return string
+     */
+    static function podcastText( $dataMap, $identifier )
+    {
+        if ( !$identifier || !isset( $dataMap[$identifier] ) )
+            return '';
+
+        $content = $dataMap[$identifier]->attribute( 'content' );
+
+        if ( $content instanceof eZXMLText )
+            return (string) $content->attribute( 'output' )->attribute( 'output_text' );
+
+        if ( $content instanceof eZKeyword )
+            return (string) $content->keywordString();
+
+        return is_scalar( $content ) ? (string) $content : '';
+    }
+
+    /**
+     * How long an audio enclosure runs, as itunes:duration wants it.
+     *
+     * Read from the file rather than from a field, because there is no field:
+     * the media datatypes record a size and a type and not a length. Only
+     * constant bitrate MPEG audio is worked out, which is what an exported mp3
+     * is; anything else returns false and the tag is left out, which is allowed
+     * - a wrong duration is worse than none.
+     *
+     * @param eZMedia|eZBinaryFile $content
+     * @return string|false HH:MM:SS.
+     */
+    static function audioDuration( $content )
+    {
+        $path = false;
+
+        if ( method_exists( $content, 'filePath' ) )
+            $path = $content->filePath();
+        else if ( $content->hasAttribute( 'filepath' ) )
+            $path = $content->attribute( 'filepath' );
+
+        if ( !$path )
+            return false;
+
+        $file = eZClusterFileHandler::instance( $path );
+        if ( !$file->exists() )
+            return false;
+
+        $handle = @fopen( $path, 'rb' );
+        if ( !$handle )
+            return false;
+
+        $seconds = false;
+        $bytes   = (int) $content->attribute( 'filesize' );
+
+        // Walk far enough in to clear an id3 tag, looking for the first frame
+        // header: eleven set bits, then version, layer and bitrate.
+        $buffer = fread( $handle, 65536 );
+        fclose( $handle );
+
+        if ( !is_string( $buffer ) )
+            return false;
+
+        $rates = array( 0, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320, 0 );
+
+        for ( $i = 0; $i < strlen( $buffer ) - 4; $i++ )
+        {
+            if ( ord( $buffer[$i] ) !== 0xFF || ( ord( $buffer[$i + 1] ) & 0xE0 ) !== 0xE0 )
+                continue;
+
+            $version = ( ord( $buffer[$i + 1] ) >> 3 ) & 0x03;   // 3 is MPEG 1
+            $layer   = ( ord( $buffer[$i + 1] ) >> 1 ) & 0x03;   // 1 is layer III
+            $rate    = ( ord( $buffer[$i + 2] ) >> 4 ) & 0x0F;
+
+            if ( $version !== 3 || $layer !== 1 || $rate === 0 || $rate === 0x0F )
+                continue;
+
+            $bitrate = $rates[$rate] * 1000;
+            if ( $bitrate < 1 )
+                continue;
+
+            // Everything from the first frame to the end of the file, at a
+            // constant rate.
+            $seconds = (int) floor( ( ( $bytes - $i ) * 8 ) / $bitrate );
+            break;
+        }
+
+        if ( $seconds === false || $seconds < 1 )
+            return false;
+
+        return sprintf( '%02d:%02d:%02d',
+                        floor( $seconds / 3600 ),
+                        floor( ( $seconds % 3600 ) / 60 ),
+                        $seconds % 60 );
+    }
+    /**
+     * The categories Apple Podcasts accepts, and their subcategories.
+     *
+     * Apple rejects a feed whose itunes:category is not one of these, spelled
+     * exactly as it appears here, so the list is data rather than something
+     * typed into a box. It is the list Apple published with the 2019 revision.
+     *
+     * If Apple revises it, this is the one place to change, and the edit page
+     * and the writer both follow.
+     *
+     * @return array category => array of subcategory.
+     */
+    static function podcastCategories()
+    {
+        return array(
+            'Arts' => array( 'Books', 'Design', 'Fashion & Beauty', 'Food',
+                             'Performing Arts', 'Visual Arts' ),
+            'Business' => array( 'Careers', 'Entrepreneurship', 'Investing',
+                                 'Management', 'Marketing', 'Non-Profit' ),
+            'Comedy' => array( 'Comedy Interviews', 'Improv', 'Stand-Up' ),
+            'Education' => array( 'Courses', 'How To', 'Language Learning',
+                                  'Self-Improvement' ),
+            'Fiction' => array( 'Comedy Fiction', 'Drama', 'Science Fiction' ),
+            'Government' => array(),
+            'History' => array(),
+            'Health & Fitness' => array( 'Alternative Health', 'Fitness', 'Medicine',
+                                         'Mental Health', 'Nutrition', 'Sexuality' ),
+            'Kids & Family' => array( 'Education for Kids', 'Parenting',
+                                      'Pets & Animals', 'Stories for Kids' ),
+            'Leisure' => array( 'Animation & Manga', 'Automotive', 'Aviation', 'Crafts',
+                                'Games', 'Hobbies', 'Home & Garden', 'Video Games' ),
+            'Music' => array( 'Music Commentary', 'Music History', 'Music Interviews' ),
+            'News' => array( 'Business News', 'Daily News', 'Entertainment News',
+                             'News Commentary', 'Politics', 'Sports News', 'Tech News' ),
+            'Religion & Spirituality' => array( 'Buddhism', 'Christianity', 'Hinduism',
+                                                'Islam', 'Judaism', 'Religion', 'Spirituality' ),
+            'Science' => array( 'Astronomy', 'Chemistry', 'Earth Sciences', 'Life Sciences',
+                                'Mathematics', 'Natural Sciences', 'Nature', 'Physics',
+                                'Social Sciences' ),
+            'Society & Culture' => array( 'Documentary', 'Personal Journals', 'Philosophy',
+                                          'Places & Travel', 'Relationships' ),
+            'Sports' => array( 'Baseball', 'Basketball', 'Cricket', 'Fantasy Sports',
+                               'Football', 'Golf', 'Hockey', 'Rugby', 'Running', 'Soccer',
+                               'Swimming', 'Tennis', 'Volleyball', 'Wilderness', 'Wrestling' ),
+            'Technology' => array(),
+            'True Crime' => array(),
+            'TV & Film' => array( 'After Shows', 'Film History', 'Film Interviews',
+                                  'Film Reviews', 'TV Reviews' ) );
+    }
+
+    /**
+     * A category name if Apple lists it, otherwise an empty string.
+     *
+     * @param string $value the name to check.
+     * @param string|false $parent when checking a subcategory, the category it
+     *        has to belong to. False checks a top level category.
+     * @return string
+     */
+    static function knownPodcastCategory( $value, $parent = false )
+    {
+        $value = trim( (string) $value );
+
+        if ( $value === '' )
+            return '';
+
+        $categories = self::podcastCategories();
+
+        if ( $parent === false )
+            return isset( $categories[$value] ) ? $value : '';
+
+        $parent = trim( (string) $parent );
+
+        return isset( $categories[$parent] ) && in_array( $value, $categories[$parent], true )
+               ? $value : '';
+    }
+    /**
+     * Whether this export is written as an Apple Podcasts feed.
+     *
+     * @return bool
+     */
+    function isPodcast()
+    {
+        return $this->attribute( 'rss_version' ) === 'ITUNES';
+    }
+
+    /**
+     * The podcast channel fields, as a hash the edit page and the writer read.
+     *
+     * Apple requires a handful of things RSS 2.0 has nowhere to put - who the
+     * show is by, who owns it, its artwork, its category, whether it is
+     * explicit - and rejects a feed missing any of them. They are kept as json
+     * in one column for the same reason the OPML head is: written once, read
+     * once, never searched on.
+     *
+     * Anything unreadable in the column is treated as nothing having been
+     * filled in, rather than breaking the page trying to show it.
+     *
+     * @return array
+     */
+    function podcastHead()
+    {
+        $defaults = array( 'author'      => '',
+                           'ownerName'   => '',
+                           'ownerEmail'  => '',
+                           'imageUrl'    => '',
+                           'category'    => '',
+                           'subcategory' => '',
+                           'explicit'    => 'false',
+                           'type'        => 'episodic',
+                           'summary'     => '',
+                           'subtitle'    => '',
+                           'copyright'   => '',
+                           'language'    => '',
+                           'block'       => '',
+                           'complete'    => '',
+                           'newFeedUrl'  => '' );
+
+        $stored = is_string( $this->PodcastHead ) && $this->PodcastHead !== ''
+                  ? json_decode( $this->PodcastHead, true )
+                  : null;
+
+        if ( !is_array( $stored ) )
+            return $defaults;
+
+        foreach ( $defaults as $key => $value )
+            if ( isset( $stored[$key] ) && is_scalar( $stored[$key] ) )
+                $defaults[$key] = (string) $stored[$key];
+
+        return $defaults;
+    }
+
+    /**
+     * Records the podcast channel fields, keeping only the ones Apple defines.
+     *
+     * Values are held to what the format allows rather than stored as typed
+     * and rejected later by Apple, where the reason would not be visible.
+     *
+     * @param array $head
+     */
+    function setPodcastHead( array $head )
+    {
+        $keep     = array();
+        $defaults = $this->podcastHead();
+
+        foreach ( array_keys( $defaults ) as $key )
+        {
+            if ( !isset( $head[$key] ) || !is_scalar( $head[$key] ) )
+            {
+                $keep[$key] = $defaults[$key];
+                continue;
+            }
+
+            $value = trim( (string) $head[$key] );
+
+            switch ( $key )
+            {
+                case 'imageUrl':
+                case 'newFeedUrl':
+                    $value = eZRSSExportOPMLItem::safeURL( $value );
+                    break;
+
+                // itunes:explicit is a boolean in the spec, and Apple reads
+                // anything else as missing.
+                case 'explicit':
+                case 'block':
+                case 'complete':
+                    $value = in_array( strtolower( $value ), array( 'true', 'yes', '1' ), true )
+                             ? 'true' : ( $value === '' ? '' : 'false' );
+                    if ( $key === 'explicit' && $value === '' )
+                        $value = 'false';
+                    break;
+
+                case 'type':
+                    $value = $value === 'serial' ? 'serial' : 'episodic';
+                    break;
+
+                case 'category':
+                case 'subcategory':
+                    // Only a category Apple actually lists; anything else is
+                    // dropped rather than written out to be rejected.
+                    $value = self::knownPodcastCategory( $value,
+                                 $key === 'subcategory' ? $head['category'] : false );
+                    break;
+
+                default:
+                    $value = eZRSSExportOPMLItem::safeText( $value, 1024 );
+            }
+
+            $keep[$key] = $value;
+        }
+
+        $this->setAttribute( 'podcast_head', json_encode( $keep ) );
     }
 
     /**
@@ -914,6 +1522,41 @@ class eZRSSExport extends eZPersistentObject
         return max( 1, min( $limit, 50000 ) );
     }
 
+
+    /**
+     * A well formed podcast feed with no episodes.
+     *
+     * What a reader gets when generation failed. It carries the channel
+     * elements Apple requires so that the answer is a feed with nothing in it
+     * rather than something no client can parse.
+     *
+     * @param string $title
+     * @return string XML document.
+     */
+    static function emptyPodcast( $title = '' )
+    {
+        $doc = new DOMDocument( '1.0', 'utf-8' );
+        $doc->formatOutput = true;
+
+        $rss = $doc->createElement( 'rss' );
+        $rss->setAttribute( 'version', '2.0' );
+        $rss->setAttribute( 'xmlns:itunes', 'http://www.itunes.com/dtds/podcast-1.0.dtd' );
+        $doc->appendChild( $rss );
+
+        $channel = $doc->createElement( 'channel' );
+        $rss->appendChild( $channel );
+
+        $title = eZRSSExportOPMLItem::safeText( $title );
+        if ( $title === '' )
+            $title = 'Podcast';
+
+        self::element( $doc, $channel, 'title', $title );
+        self::element( $doc, $channel, 'description', $title );
+        self::element( $doc, $channel, 'language', eZLocale::instance()->httpLocaleCode() );
+        self::element( $doc, $channel, 'itunes:explicit', 'false' );
+
+        return $doc->saveXML();
+    }
     /**
      * A document to fall back on when the real one cannot be produced.
      *

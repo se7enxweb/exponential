@@ -1280,6 +1280,7 @@ CREATE TABLE ezrole (
 CREATE TABLE ezrss_export (
   access_url varchar(255) default NULL,
   opml_head longtext,
+  podcast_head longtext,
   active int(11) default NULL,
   created int(11) default NULL,
   creator_id int(11) default NULL,
