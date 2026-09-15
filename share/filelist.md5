@@ -14,7 +14,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 b823502feaf9e198f04acc6cf0aa75b5  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 bb00515f3bb9b7d88590327bfbb94b4f  autoload.php
-6af9389dcfa7e9d1c43f0ceee819301d  autoload/ezp_kernel.php
+a90729c438cee91ac6770ac5a92fe84a  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
 e987da229be60f6c0644adee57d39fb3  benchmarks/classes/ezbenchmarkclirunner.php
@@ -44,6 +44,7 @@ f95bb2147e482bc505609bd3bff02321  bin/php/backup_hp_layouts_sqlite.php
 21776e40dfdeaa027e104b17041a9bd5  bin/php/checkclasses.php
 d61ceef77471128c0f99c9e812be92bf  bin/php/checkdbfiles.php
 201c5ed7a86579d00b2e0ed5c4867a2a  bin/php/cleanuppolicies.php
+a69fdb487f6faa712207dfe6939895fa  bin/php/cleanuprss.php
 accf91aa4b2cda8e881cfba259c78046  bin/php/cleanupversions.php
 2c9b2900cfb4392cbfc981086249d232  bin/php/clusterize.php
 96783a1d793c2992be7ec8af52951b0f  bin/php/clusterpurge.php
@@ -136,6 +137,7 @@ d77f7f99abd083dc48fceaf4bf996f62  composer.lock
 f6639c1204722f978072a5f5238027ae  config.php
 f7b8787e36dfb6f74f57759abd9f61a0  config.php-RECOMMENDED
 2b17a4a2a7e33ac8de3c9ba9f86001b2  cronjobs/basket_cleanup.php
+ed5fc255e0af673a7e4c24f8de51cb30  cronjobs/cleanuprss.php
 156cc356a0830ec5ff1093992ccaf746  cronjobs/clusterpurge.php
 9c181a949f9c259be9edfeb82d13cffa  cronjobs/hide.php
 de10cc9abc7f109dae0b5d6323f8a3e3  cronjobs/indexcontent.php
@@ -2272,6 +2274,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 0cd6ea7c1afc1630098e2b140280809e  doc/bc/6.0/LAYOUTS.md
 9f891edb37a5b3eeb1b61fce30ce4961  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 56ac2c20e1a810bc21c837969e061826  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
+52f44a66f9f78c5a65043521fdd6a504  doc/bc/6.0/cleanuprss.md
 b9af9e03efe35ee629e493d0d9c6437e  doc/bc/6.0/console.md
 d235809fe8490e97218403d3cfe12404  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 31591936b3e3a619643b71a2587b5ed2  doc/bc/6.0/expinfo-operator.md
@@ -11684,6 +11687,7 @@ e0ec2be7ab334f49db925ada56c2befc  kernel/classes/datatypes/ezxmltext/ezxmltextty
 42602e3dd7680c0dc3c41e9ffd305cba  kernel/classes/datatypes/ezxmltext/handlers/output/ezpdfxmloutput.php
 3f481aa0c6ec73f490d65b94efd5e25f  kernel/classes/datatypes/ezxmltext/handlers/output/ezplainxmloutput.php
 fd1cc980bbf2856ff3e73c3490103136  kernel/classes/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput.php
+0965c4a51ebfa3353d4a4bcf0ab9adc6  kernel/classes/expcleanuprss.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
 7ad2230bf3a7724a0bb2b6216d3b6fb7  kernel/classes/expkickstarter.php
@@ -12633,10 +12637,10 @@ a1be7ab463d96b8940b0b6ad2148a34e  settings/audit.ini
 69b7abd76c6aad8b54776c6f2b9bb65e  settings/codetemplate.ini
 de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 182107cb19ce2f10279176af2ccb2819  settings/collect.ini
-3726301dfba3e40f1c1ae0611edd8e05  settings/content.ini
+4c972db0168f9c87cd8001bfdc4d3fd2  settings/content.ini
 eff59488a83d12bd2f5688e65015eace  settings/contentstructuremenu.ini
 bbef6be3b98786e0ac5391c2f9993b6f  settings/country.ini
-c466d13a2f46abe2c239991cfbcafea8  settings/cronjob.ini
+826d6fdaf6f38906fa78b2129ed33cdb  settings/cronjob.ini
 3d404c392cd00c7c1332ea337359c8b7  settings/dashboard.ini
 d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
