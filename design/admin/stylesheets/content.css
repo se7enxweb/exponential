@@ -267,3 +267,15 @@ fieldset.ezcca-collapsible.ezcca-collapsed legend a
     color:#333;
     font-size:1.1em;
 }
+
+/* Sortable column headings.
+
+   Shared by the rss list and the locations tab of an item, both of which sort
+   in the database because they are shown a page at a time. The heading keeps
+   the ordinary heading colour - the column being sorted is marked by the bold
+   label and the arrow, not by repainting the cell. */
+table.list th.sortable { cursor: pointer; white-space: nowrap; }
+table.list th.sortable a.sort-link { display: block; text-decoration: none; color: inherit; }
+table.list th.sortable:hover a.sort-link { text-decoration: underline; }
+table.list th.sorted a.sort-link { font-weight: 700; }
+.sort-arrow { display: inline-block; width: 1em; font-size: .8em; color: #6a6a72; }

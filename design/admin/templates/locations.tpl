@@ -15,6 +15,9 @@
                           $view_parameters.location_sort, '' )
      locations_sort_order=cond( eq( $view_parameters.location_sort_order, 'desc' ), 'desc', 'asc' )
      locations_sort_uri=concat( '/content/view/full/', $node.node_id )
+     locations_sort_state=hash( 'field', $locations_sort,
+                                'direction', $locations_sort_order,
+                                'opposite', cond( eq( $locations_sort_order, 'asc' ), 'desc', 'asc' ) )
      locations_carried_parameters=''
      assignment_count=fetch( 'content', 'assigned_node_count',
                              hash( 'object_id', $node.object.id ) )
@@ -59,48 +62,15 @@
 <table id="tab-locations-list" class="list" cellspacing="0" summary="{'Locations (aka Nodes) for current object.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
     <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/node/view/full' )}" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )}" onclick="ezjs_toggleCheckboxes( document.locationsform, 'LocationIDSelection[]' ); return false;"/></th>
-{* The headings sort the whole list, not the page on screen: with one page
-   of a possible fifty thousand locations in hand there is nothing useful to
-   sort here, so the column travels on the address and the database does it.
-   The classes are the admin's own sortable column classes, so the arrow and
-   the active heading come from the stylesheet already loaded. *}
-    <th class="wide yui-dt-sortable{if eq( $locations_sort, 'path' )} yui-dt-{$locations_sort_order}{/if}">
-        <div class="yui-dt-liner"><span class="yui-dt-label">
-        <a href={concat( $locations_sort_uri, '/(location_sort)/path/(location_sort_order)/',
-                         cond( and( eq( $locations_sort, 'path' ), eq( $locations_sort_order, 'asc' ) ),
-                               'desc', 'asc' ),
-                         $locations_carried_parameters )|ezurl}
-           title="{'Sort by location.'|i18n( 'design/admin/node/view/full' )}" class="yui-dt-sortable">{'Location'|i18n( 'design/admin/node/view/full' )}</a>
-        </span></div>
-    </th>
-    <th class="tight yui-dt-sortable{if eq( $locations_sort, 'children' )} yui-dt-{$locations_sort_order}{/if}">
-        <div class="yui-dt-liner"><span class="yui-dt-label">
-        <a href={concat( $locations_sort_uri, '/(location_sort)/children/(location_sort_order)/',
-                         cond( and( eq( $locations_sort, 'children' ), eq( $locations_sort_order, 'asc' ) ),
-                               'desc', 'asc' ),
-                         $locations_carried_parameters )|ezurl}
-           title="{'Sort by number of sub items.'|i18n( 'design/admin/node/view/full' )}" class="yui-dt-sortable">{'Sub items'|i18n( 'design/admin/node/view/full' )}</a>
-        </span></div>
-    </th>
+{* The headings sort the whole list, not the page on screen: with one page of
+   a possible fifty thousand locations in hand there is nothing useful to sort
+   here, so the column travels on the address and the database does it. The
+   heading itself is the same one the rss list uses, so the two look alike. *}
+{include uri='design:parts/sortheader.tpl' key='path'       label='Location'|i18n( 'design/admin/node/view/full' )   sort=$locations_sort_state page_uri=$locations_sort_uri sort_name='location_sort' dir_name='location_sort_order' suffix=$locations_carried_parameters cell_class='wide'}
+{include uri='design:parts/sortheader.tpl' key='children'   label='Sub items'|i18n( 'design/admin/node/view/full' )  sort=$locations_sort_state page_uri=$locations_sort_uri sort_name='location_sort' dir_name='location_sort_order' suffix=$locations_carried_parameters cell_class='tight'}
 {*   <th class="tight">{'Sorting'|i18n( 'design/admin/node/view/full' )}</th> *}
-    <th class="tight yui-dt-sortable{if eq( $locations_sort, 'visibility' )} yui-dt-{$locations_sort_order}{/if}">
-        <div class="yui-dt-liner"><span class="yui-dt-label">
-        <a href={concat( $locations_sort_uri, '/(location_sort)/visibility/(location_sort_order)/',
-                         cond( and( eq( $locations_sort, 'visibility' ), eq( $locations_sort_order, 'asc' ) ),
-                               'desc', 'asc' ),
-                         $locations_carried_parameters )|ezurl}
-           title="{'Sort by visibility.'|i18n( 'design/admin/node/view/full' )}" class="yui-dt-sortable">{'Visibility'|i18n( 'design/admin/node/view/full' )}</a>
-        </span></div>
-    </th>
-    <th class="tight yui-dt-sortable{if eq( $locations_sort, 'main' )} yui-dt-{$locations_sort_order}{/if}">
-        <div class="yui-dt-liner"><span class="yui-dt-label">
-        <a href={concat( $locations_sort_uri, '/(location_sort)/main/(location_sort_order)/',
-                         cond( and( eq( $locations_sort, 'main' ), eq( $locations_sort_order, 'asc' ) ),
-                               'desc', 'asc' ),
-                         $locations_carried_parameters )|ezurl}
-           title="{'Sort by main location.'|i18n( 'design/admin/node/view/full' )}" class="yui-dt-sortable">{'Main'|i18n( 'design/admin/node/view/full' )}</a>
-        </span></div>
-    </th>
+{include uri='design:parts/sortheader.tpl' key='visibility' label='Visibility'|i18n( 'design/admin/node/view/full' ) sort=$locations_sort_state page_uri=$locations_sort_uri sort_name='location_sort' dir_name='location_sort_order' suffix=$locations_carried_parameters cell_class='tight'}
+{include uri='design:parts/sortheader.tpl' key='main'       label='Main'|i18n( 'design/admin/node/view/full' )       sort=$locations_sort_state page_uri=$locations_sort_uri sort_name='location_sort' dir_name='location_sort_order' suffix=$locations_carried_parameters cell_class='tight'}
 </tr>
 {foreach $assigned_nodes as $assignment_node
          sequence array( bglight, bgdark ) as $sequence}

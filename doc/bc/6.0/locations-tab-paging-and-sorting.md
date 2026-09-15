@@ -164,12 +164,35 @@ No `page_uri_suffix` is given: `view_parameters` already carries
 `(tab)/locations`, and the pager appends every parameter except its own offset,
 so a suffix would put the tab in the address twice.
 
-### Styling
+### The heading itself
 
-None. The sortable headings use `yui-dt-sortable` and `yui-dt-asc` /
-`yui-dt-desc`, which are the classes the trashed items list already uses and
-which `theme/yui_datatable.css` — loaded on every administration page — already
-draws. No stylesheet was touched.
+The headings are `design/standard/templates/parts/sortheader.tpl`, the same
+component the RSS list uses, so the two pages look and behave alike rather than
+each growing its own. It takes the column key, the label, the current sort, and
+a `suffix` appended to the address as it is — which is how the locations tab
+keeps `(tab)/locations` on every heading link.
+
+```
+{include uri='design:parts/sortheader.tpl'
+         key='children'
+         label='Sub items'|i18n( 'design/admin/node/view/full' )
+         sort=$locations_sort_state
+         page_uri=$locations_sort_uri
+         sort_name='location_sort'
+         dir_name='location_sort_order'
+         suffix=$locations_carried_parameters
+         cell_class='tight'}
+```
+
+`sort` is `hash( 'field', …, 'direction', 'asc'|'desc', 'opposite', … )`.
+
+The heading is a plain link, so it works with JavaScript switched off.
+
+The rules for `th.sortable` / `th.sorted` / `.sort-arrow` live in
+`design/admin/stylesheets/content.css`, which every administration page loads,
+so the two lists cannot drift apart. The column being sorted keeps the ordinary
+heading colour and is marked by the bold label and the arrow — not by
+repainting the cell.
 
 ---
 
@@ -182,6 +205,9 @@ draws. No stylesheet was touched.
 | `kernel/content/ezcontentfunctioncollection.php` | `fetchAssignedNodes()`, `fetchAssignedNodeCount()` |
 | `design/admin/templates/locations.tpl` | one page, sortable headings, pager |
 | `design/admin/templates/navigator/google.tpl` | `offset_name` |
+| `design/standard/templates/parts/sortheader.tpl` | the shared sortable heading, moved here from `rss/` |
+| `design/admin/templates/rss/list.tpl` | includes it from its new place; its heading rules moved to the stylesheet |
+| `design/admin/stylesheets/content.css` | `th.sortable`, `th.sorted`, `.sort-arrow` |
 | `settings/content.ini` | `[LocationsSettings] LocationsPerPage` |
 
 ---
@@ -197,7 +223,8 @@ NODE=133 LIMIT=25 EZ_ADMIN_PASSWORD=... python3 ai/bin/one/test_locations_pagina
 Point `NODE` at an item with more locations than one page holds; with fewer the
 run proves nothing and says so. It checks that one page is drawn and not the
 whole list, that the pager appears and uses its own offset, that the second
-page holds different rows, that each column sorts both ways and marks itself,
+page holds different rows, that each column sorts both ways, marks itself and draws the same as the RSS
+list,
 that a sort value that is not a column is ignored rather than run, that the
 pager keeps the sort and the headings keep the tab, and — because the shared
 pager was changed — that an ordinary list elsewhere still pages on `(offset)`.

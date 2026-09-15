@@ -261,7 +261,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin/override/templates/embed-inline_i
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-1fe4e9bc5a6ecce020760992c3b1d09d  design/admin/stylesheets/content.css
+a38bee4967d206ec177b5a0f4f8fde92  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 385603746948cfdd8e7540bdf7b5d2b0  design/admin/stylesheets/pagelayout.css
 c28a2b8fef839e911313919afddcc3eb  design/admin/stylesheets/theme/modalwindow.css
@@ -385,7 +385,7 @@ fa73d3e3be3e3b0d90f4e5c3f0340763  design/admin/templates/infocollector/collectio
 865e7562daf6f73fba5603805ad895ae  design/admin/templates/infocollector/confirmremoval.tpl
 c6d0d0eee1c9bc2a3a1f5998e2d7023b  design/admin/templates/infocollector/overview.tpl
 de4e5cdee8dfb17cd7debdcb194f465f  design/admin/templates/infocollector/view.tpl
-dade3efc317eacd633f46d2d87e7353e  design/admin/templates/locations.tpl
+b4a98724b1a3d99322e714822065cdc0  design/admin/templates/locations.tpl
 62503147c1e9e9b1efa47f9c32ecfe9d  design/admin/templates/loginpagelayout.tpl
 5a45894006836b042aca25e2dac7ef3d  design/admin/templates/navigator/alphabetical.tpl
 3fb8436c59191e84cb572d212aad2087  design/admin/templates/navigator/google.tpl
@@ -484,7 +484,7 @@ bd0654cfe66361c7cf1d8dbd37801aa2  design/admin/templates/rss/browse_user.tpl
 d221e74cd98a81e69989bba7f6474b07  design/admin/templates/rss/edit_export.tpl
 5b7a222ec628f8bc312d0d89828fdd90  design/admin/templates/rss/edit_export_opml.tpl
 016a467fca0e415fbeface76f5603e37  design/admin/templates/rss/edit_import.tpl
-ca68409c8fed26643f3698b659103391  design/admin/templates/rss/list.tpl
+fd9dc61fbe62908fd01eb30ba489bf90  design/admin/templates/rss/list.tpl
 aa0a1891d40c9de5ea1048320efdad1c  design/admin/templates/search/stats.tpl
 ee13be679bfe3394af9f7dd3e2889744  design/admin/templates/section/assign_notification.tpl
 8e635ee173947720d1b1b4f1b4da1dc2  design/admin/templates/section/browse_assign.tpl
@@ -1972,6 +1972,7 @@ f061d1ccc56b10ebe5653c5e011329e1  design/standard/templates/page_mainarea.tpl
 6fc57af45a8986acee8b4514462fab15  design/standard/templates/page_toptoolbar.tpl
 4ebfe5c829563edc25060b55305538d1  design/standard/templates/page_warning.tpl
 c1dedb67e3f8950459c8a372f9574cdc  design/standard/templates/pagelayout.tpl
+d0ba090df7ef9e13793d7802efb17c85  design/standard/templates/parts/sortheader.tpl
 7c79e04f55cd77d4e6c7caf11a8ce457  design/standard/templates/pdf/edit.tpl
 3d2770d1296f2f8b78c2f822cec52134  design/standard/templates/pdf/list.tpl
 99f4ec1fbb739ec20a27f87faf7c5d3d  design/standard/templates/popup_pagelayout.tpl
@@ -2001,7 +2002,6 @@ afb2970e090cae855ddb7334a9ea81fb  design/standard/templates/rss/edit_import_deni
 2a97920b36b77afa36417a6662a68d4c  design/standard/templates/rss/list.tpl
 042a2da8551433c9ca35494d5b358143  design/standard/templates/rss/pagination.tpl
 677a36d285de3c402cea1aadb170c24b  design/standard/templates/rss/sortbutton.tpl
-6cc7a12a87e4f00e92bc196d34e62bae  design/standard/templates/rss/sortheader.tpl
 0233e82cd698444da453588c011fa5f7  design/standard/templates/search/stats.tpl
 9448a2c13d99bd16aed8bc9327d5dbb2  design/standard/templates/section/assign.tpl
 34ed90fde370e8ab0fe74e572de7182b  design/standard/templates/section/assign_notification.tpl
@@ -2278,7 +2278,7 @@ d235809fe8490e97218403d3cfe12404  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 1bc5d7888e4c8a699b48624c73cbbf35  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 dd8f6ec3976bdee1a688a25ee3761ee9  doc/bc/6.0/hardening.md
 e03c2aa19443976efb300d6226d8b71d  doc/bc/6.0/kickstartercli.md
-52b6cc97f5456936d750afbb20b66842  doc/bc/6.0/locations-tab-paging-and-sorting.md
+5c98db23b75eeec2e9324cd54e19ea51  doc/bc/6.0/locations-tab-paging-and-sorting.md
 8aae77691af6b35a093d9229b3757ed3  doc/bc/6.0/multi-node-edit.md
 885a488ce80a5e6d147ea79d6ed9f42b  doc/bc/6.0/opml.md
 2fc39d399e6978352dd88a9182bca8b0  doc/bc/6.0/php8.md

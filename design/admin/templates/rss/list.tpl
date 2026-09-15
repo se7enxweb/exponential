@@ -18,13 +18,8 @@
 .rss-pagination-pages .current { background: #4a4a52; border-color: #4a4a52; color: #fff; font-weight: 700; }
 .rss-pagination-pages .disabled { color: #b0b0b6; border-color: #e6e6ea; }
 .rss-pagination-of { margin: .35rem 0 0 0 !important; color: #666; font-size: .9em; }
-/* Sortable headings. The whole cell reacts, but the link inside it is what
-   actually carries the address. */
-table.list th.sortable { cursor: pointer; white-space: nowrap; }
-table.list th.sortable a.sort-link { display: block; text-decoration: none; color: inherit; }
-table.list th.sortable:hover a.sort-link { text-decoration: underline; }
-table.list th.sorted a.sort-link { font-weight: 700; }
-.sort-arrow { display: inline-block; width: 1em; font-size: .8em; color: #6a6a72; }
+/* The sortable heading rules live in content.css, so that this page and the
+   locations tab of an item cannot drift apart. */
 table.list td.rss-id { text-align: right; color: #666; white-space: nowrap; }
 table.list td.rss-uri code {
     font-family: Menlo, Consolas, monospace; font-size: .92em;
@@ -67,13 +62,13 @@ table.list td.rss-uri code {
 <table class="list" cellspacing="0">
 <tr>
     <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection'|i18n( 'design/admin/rss/list' )}" onclick="ezjs_toggleCheckboxes( document.rssexportslist, 'DeleteIDArray[]' ); return false;" title="{'Invert selection.'|i18n( 'design/admin/rss/list' )}" /></th>
-    {include uri='design:rss/sortheader.tpl' key='id'          label='ID'|i18n( 'design/admin/rss/list' )       sort=$rssexport_sort suffix=$rssexport_sort.suffix cell_class='tight'}
-    {include uri='design:rss/sortheader.tpl' key='title'       label='Name'|i18n( 'design/admin/rss/list' )     sort=$rssexport_sort suffix=$rssexport_sort.suffix}
-    {include uri='design:rss/sortheader.tpl' key='access_url'  label='URI'|i18n( 'design/admin/rss/list' )      sort=$rssexport_sort suffix=$rssexport_sort.suffix}
-    {include uri='design:rss/sortheader.tpl' key='rss_version' label='Version'|i18n( 'design/admin/rss/list' )  sort=$rssexport_sort suffix=$rssexport_sort.suffix}
-    {include uri='design:rss/sortheader.tpl' key='active'      label='Status'|i18n( 'design/admin/rss/list' )   sort=$rssexport_sort suffix=$rssexport_sort.suffix}
-    {include uri='design:rss/sortheader.tpl' key='modifier_id' label='Modifier'|i18n( 'design/admin/rss/list' ) sort=$rssexport_sort suffix=$rssexport_sort.suffix}
-    {include uri='design:rss/sortheader.tpl' key='modified'    label='Modified'|i18n( 'design/admin/rss/list' ) sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri='design:parts/sortheader.tpl' key='id'          label='ID'|i18n( 'design/admin/rss/list' )       sort=$rssexport_sort suffix=$rssexport_sort.suffix cell_class='tight'}
+    {include uri='design:parts/sortheader.tpl' key='title'       label='Name'|i18n( 'design/admin/rss/list' )     sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri='design:parts/sortheader.tpl' key='access_url'  label='URI'|i18n( 'design/admin/rss/list' )      sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri='design:parts/sortheader.tpl' key='rss_version' label='Version'|i18n( 'design/admin/rss/list' )  sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri='design:parts/sortheader.tpl' key='active'      label='Status'|i18n( 'design/admin/rss/list' )   sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri='design:parts/sortheader.tpl' key='modifier_id' label='Modifier'|i18n( 'design/admin/rss/list' ) sort=$rssexport_sort suffix=$rssexport_sort.suffix}
+    {include uri='design:parts/sortheader.tpl' key='modified'    label='Modified'|i18n( 'design/admin/rss/list' ) sort=$rssexport_sort suffix=$rssexport_sort.suffix}
     <th class="tight">&nbsp;</th>
 </tr>
 {section var=RSSExports loop=$rssexport_list sequence=array( bglight, bgdark )}
@@ -154,12 +149,12 @@ table.list td.rss-uri code {
 <table class="list" cellspacing="0">
 <tr>
     <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection'|i18n( 'design/admin/rss/list' )}" onclick="ezjs_toggleCheckboxes( document.rssimportslist, 'DeleteIDArrayImport[]' ); return false;" title="{'Invert selection.'|i18n( 'design/admin/rss/list' )}" /></th>
-    {include uri='design:rss/sortheader.tpl' key='id'          label='ID'|i18n( 'design/admin/rss/list' )         sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir' cell_class='tight'}
-    {include uri='design:rss/sortheader.tpl' key='name'        label='Name'|i18n( 'design/admin/rss/list' )       sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir'}
-    {include uri='design:rss/sortheader.tpl' key='url'         label='Source URL'|i18n( 'design/admin/rss/list' ) sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir'}
-    {include uri='design:rss/sortheader.tpl' key='active'      label='Status'|i18n( 'design/admin/rss/list' )     sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir'}
-    {include uri='design:rss/sortheader.tpl' key='modifier_id' label='Modifier'|i18n( 'design/admin/rss/list' )   sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir'}
-    {include uri='design:rss/sortheader.tpl' key='modified'    label='Modified'|i18n( 'design/admin/rss/list' )   sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir'}
+    {include uri='design:parts/sortheader.tpl' key='id'          label='ID'|i18n( 'design/admin/rss/list' )         sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir' cell_class='tight'}
+    {include uri='design:parts/sortheader.tpl' key='name'        label='Name'|i18n( 'design/admin/rss/list' )       sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir'}
+    {include uri='design:parts/sortheader.tpl' key='url'         label='Source URL'|i18n( 'design/admin/rss/list' ) sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir'}
+    {include uri='design:parts/sortheader.tpl' key='active'      label='Status'|i18n( 'design/admin/rss/list' )     sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir'}
+    {include uri='design:parts/sortheader.tpl' key='modifier_id' label='Modifier'|i18n( 'design/admin/rss/list' )   sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir'}
+    {include uri='design:parts/sortheader.tpl' key='modified'    label='Modified'|i18n( 'design/admin/rss/list' )   sort=$rssimport_sort suffix=$rssimport_sort.suffix sort_name='importsort' dir_name='importdir'}
     <th class="tight">&nbsp;</th>
 </tr>
 {section var=RSSImports loop=$rssimport_list sequence=array( bglight, bgdark )}
