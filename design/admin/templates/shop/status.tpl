@@ -41,6 +41,19 @@
 </tr>
 {/section}
 </table>
+
+{* Paged; the size is admininterface.ini [PaginationSettings]. *}
+{if $orderstatus_count|gt( $limit )}
+<div class="context-toolbar">
+{include name=StatusNavigator
+         uri='design:navigator/google.tpl'
+         page_uri='/shop/status'
+         item_count=$orderstatus_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+{/if}
+
 {section-else}
 <div class="block">
 <p>{'There are no order statuses.'|i18n( 'design/admin/shop/status' )}</p>

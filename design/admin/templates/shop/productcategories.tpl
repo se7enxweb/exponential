@@ -40,6 +40,19 @@
 </tr>
 {/foreach}
 </table>
+
+{* Paged; the size is admininterface.ini [PaginationSettings]. *}
+{if $productcategory_count|gt( $limit )}
+<div class="context-toolbar">
+{include name=CategoryNavigator
+         uri='design:navigator/google.tpl'
+         page_uri='/shop/productcategories'
+         item_count=$productcategory_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+{/if}
+
 {else}
 <div class="block">
 <p>{'There are no product categories.'|i18n( 'design/admin/shop/productcategories' )}</p>

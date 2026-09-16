@@ -44,6 +44,19 @@
 </tr>
 {/foreach}
 </table>
+
+{* Paged; the size is admininterface.ini [PaginationSettings]. *}
+{if $vatrule_count|gt( $limit )}
+<div class="context-toolbar">
+{include name=VatRuleNavigator
+         uri='design:navigator/google.tpl'
+         page_uri='/shop/vatrules'
+         item_count=$vatrule_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+{/if}
+
 {else}
 <div class="block">
 <p>{'There are no VAT charging rules.'|i18n( 'design/admin/shop/vatrules' )}</p>

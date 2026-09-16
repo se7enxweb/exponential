@@ -12,6 +12,12 @@ $http = eZHTTPTool::instance();
 
 $discountGroupArray = eZDiscountRule::fetchList();
 
+// Paged. The whole list was read and every row of it drawn.
+$pageCount  = count( $discountGroupArray );
+$pageLimit  = expAdminPagination::limit( 'shop/discountgroup' );
+$pageOffset = expAdminPagination::offset( $Params );
+$discountGroupArray = expAdminPagination::page( $discountGroupArray, $pageOffset, $pageLimit );
+
 if ( $http->hasPostVariable( "AddDiscountGroupButton" ) )
 {
     $params = array();
@@ -47,6 +53,9 @@ $module->setTitle( "View discount group" );
 $tpl = eZTemplate::factory();
 $tpl->setVariable( "discountgroup_array", $discountGroupArray );
 $tpl->setVariable( "module", $module );
+$tpl->setVariable( 'discountgroup_count', $pageCount );
+$tpl->setVariable( 'limit', $pageLimit );
+$tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
 
 $Result = array();
 $Result['content'] = $tpl->fetch( "design:shop/discountgroup.tpl" );

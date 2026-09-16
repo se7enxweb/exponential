@@ -25,6 +25,19 @@
 </tr>
 {/section}
 </table>
+
+{* Paged; the size is admininterface.ini [PaginationSettings]. *}
+{if $discountgroup_count|gt( $limit )}
+<div class="context-toolbar">
+{include name=DiscountNavigator
+         uri='design:navigator/google.tpl'
+         page_uri='/shop/discountgroup'
+         item_count=$discountgroup_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+{/if}
+
 {section-else}
 <div class="block">
 <p>{'There are no discount groups.'|i18n( 'design/admin/shop/discountgroup' )}</p>

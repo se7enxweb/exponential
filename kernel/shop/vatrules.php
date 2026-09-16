@@ -182,11 +182,20 @@ if ( $http->hasPostVariable( "SaveCategoriesButton" ) )
 }
 
 $vatRules = eZVatRule::fetchList();
+
+// Paged. The whole list was read and every row of it drawn.
+$pageCount  = count( $vatRules );
+$pageLimit  = expAdminPagination::limit( 'shop/vatrules' );
+$pageOffset = expAdminPagination::offset( $Params );
+$vatRules = expAdminPagination::page( $vatRules, $pageOffset, $pageLimit );
 $errors = findErrors( $vatRules );
 usort( $vatRules, 'compareVatRules' );
 
 $tpl->setVariable( 'rules', $vatRules );
 $tpl->setVariable( 'errors', $errors );
+$tpl->setVariable( 'vatrule_count', $pageCount );
+$tpl->setVariable( 'limit', $pageLimit );
+$tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
 
 $path = array();
 $path[] = array( 'text' => ezpI18n::tr( 'kernel/shop/vatrules', 'VAT rules' ),

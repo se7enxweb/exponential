@@ -73,10 +73,19 @@ if ( $http->hasPostVariable( "RemoveOrderStatusButton" ) )
 
 $orderStatusArray = eZOrderStatus::fetchList( true, true );
 
+// Paged. The whole list was read and every row of it drawn.
+$pageCount  = count( $orderStatusArray );
+$pageLimit  = expAdminPagination::limit( 'shop/status' );
+$pageOffset = expAdminPagination::offset( $Params );
+$orderStatusArray = expAdminPagination::page( $orderStatusArray, $pageOffset, $pageLimit );
+
 $tpl = eZTemplate::factory();
 $tpl->setVariable( "orderstatus_array", $orderStatusArray );
 $tpl->setVariable( "module", $module );
 $tpl->setVariable( "messages", $messages );
+$tpl->setVariable( 'orderstatus_count', $pageCount );
+$tpl->setVariable( 'limit', $pageLimit );
+$tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
 
 $path = array();
 $path[] = array( 'text' => ezpI18n::tr( 'kernel/shop', 'Order list' ),

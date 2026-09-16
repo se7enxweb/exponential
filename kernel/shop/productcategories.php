@@ -174,11 +174,20 @@ elseif ( $module->isCurrentAction( 'StoreChanges' ) )
 // (re-)fetch product categoried list to display them in the template
 $productCategories = eZProductCategory::fetchList();
 
+// Paged. The whole list was read and every row of it drawn.
+$pageCount  = count( $productCategories );
+$pageLimit  = expAdminPagination::limit( 'shop/productcategories' );
+$pageOffset = expAdminPagination::offset( $Params );
+$productCategories = expAdminPagination::page( $productCategories, $pageOffset, $pageLimit );
+
 if ( is_array( $errors ) )
     $errors = array_unique( $errors );
 
 $tpl->setVariable( 'categories', $productCategories );
 $tpl->setVariable( 'errors', $errors );
+$tpl->setVariable( 'productcategory_count', $pageCount );
+$tpl->setVariable( 'limit', $pageLimit );
+$tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
 
 $path = array();
 $path[] = array( 'text' => ezpI18n::tr( 'kernel/shop/productcategories', 'Product categories' ),
