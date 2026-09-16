@@ -102,6 +102,21 @@
 </tr>
 {/section}
 </table>
+
+{* The standard admin pager. The list is paged because a large installation
+   has more of these than a screen should draw at once; the size is
+   admininterface.ini [PaginationSettings]. *}
+{if $class_count|gt( $limit )}
+<div class="context-toolbar">
+{include name=ClassNavigator
+         uri='design:navigator/google.tpl'
+         page_uri=concat( '/class/classlist/', $GroupID )
+         item_count=$class_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+{/if}
+
 {section-else}
 <div class="block">
 <p>{'There are no classes in this group.'|i18n( 'design/admin/class/classlist' )}</p>

@@ -53,6 +53,21 @@
 </tr>
 {/section}
 </table>
+
+{* The standard admin pager. The list is paged because a large installation
+   has more of these than a screen should draw at once; the size is
+   admininterface.ini [PaginationSettings]. *}
+{if $pdfexport_count|gt( $limit )}
+<div class="context-toolbar">
+{include name=PDFNavigator
+         uri='design:navigator/google.tpl'
+         page_uri='/pdf/list'
+         item_count=$pdfexport_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+{/if}
+
 {section-else}
 <div class="block">
 <p>{'There are no PDF exports in the list.'|i18n( 'design/admin/pdf/list' )}</p>

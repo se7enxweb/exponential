@@ -59,6 +59,54 @@ class expAdminPagination
     }
 
     /**
+     * One page of a list that is already in memory.
+     *
+     * Second best, and used where the model has no fetch that takes an offset
+     * and a limit. It bounds what is drawn - which is what takes a page of
+     * hundreds of rows down - but not what is read, so a model that grows a
+     * limited fetch should be given one and used instead of this.
+     *
+     * @param array $items
+     * @param int $offset
+     * @param int $limit
+     * @return array
+     */
+    static function page( $items, $offset, $limit )
+    {
+        if ( !is_array( $items ) )
+            return array();
+
+        $offset = (int)$offset;
+        $limit  = (int)$limit;
+
+        if ( $offset < 0 ) $offset = 0;
+        if ( $limit < 1 )  return $items;
+
+        return array_slice( $items, $offset, $limit, true );
+    }
+
+    /**
+     * The offset a page was asked for, off the address.
+     *
+     * Modules whose view does not declare an Offset parameter still receive
+     * '(offset)/25' among the user parameters, so a list can be paged without
+     * changing the module definition it belongs to.
+     *
+     * @param array $params the module's $Params
+     * @param string $name
+     * @return int
+     */
+    static function offset( $params, $name = 'offset' )
+    {
+        if ( isset( $params['Offset'] ) && $params['Offset'] !== false && $name === 'offset' )
+            return max( 0, (int)$params['Offset'] );
+
+        $user = isset( $params['UserParameters'] ) ? (array)$params['UserParameters'] : array();
+
+        return isset( $user[$name] ) ? max( 0, (int)$user[$name] ) : 0;
+    }
+
+    /**
      * The sizes a list with an items per page selector offers.
      *
      * The list is also what bounds the query: a size that is not on it cannot

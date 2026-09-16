@@ -68,7 +68,15 @@ foreach( $TemplateData as $tpldata )
     $base = $tpldata["http_base"];
     unset( $list );
     $list = eZContentClassGroup::fetchList( false, $asObject );
-    $tpl->setVariable( $tplname, $list );
+
+    $groupCount  = count( $list );
+    $groupLimit  = expAdminPagination::limit( 'class/grouplist' );
+    $groupOffset = expAdminPagination::offset( $Params );
+
+    $tpl->setVariable( $tplname, expAdminPagination::page( $list, $groupOffset, $groupLimit ) );
+    $tpl->setVariable( "group_count", $groupCount );
+    $tpl->setVariable( "limit", $groupLimit );
+    $tpl->setVariable( "view_parameters", array( 'offset' => $groupOffset ) );
 }
 
 $tpl->setVariable( "module", $Module );

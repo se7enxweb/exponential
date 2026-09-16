@@ -43,6 +43,21 @@
 {/section}
 </table>
 
+{* The standard admin pager. The list is paged because a large installation
+   has more of these than a screen should draw at once; the size is
+   admininterface.ini [PaginationSettings]. *}
+{if $group_count|gt( $limit )}
+<div class="context-toolbar">
+{include name=GroupNavigator
+         uri='design:navigator/google.tpl'
+         page_uri='/class/grouplist'
+         item_count=$group_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+{/if}
+
+
 {* DESIGN: Content END *}</div>
 <div class="block">
 <div class="controlbar">

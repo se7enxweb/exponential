@@ -89,6 +89,15 @@ foreach( $TemplateData as $tpldata )
     $base = $tpldata["http_base"];
     unset( $list );
     $list = eZWorkflowGroup::fetchList( $asObject );
+
+    $groupCount  = count( $list );
+    $groupLimit  = expAdminPagination::limit( 'workflow/grouplist' );
+    $groupOffset = expAdminPagination::offset( $Params );
+    $list        = expAdminPagination::page( $list, $groupOffset, $groupLimit );
+
+    $tpl->setVariable( "group_count", $groupCount );
+    $tpl->setVariable( "limit", $groupLimit );
+    $tpl->setVariable( "view_parameters", array( 'offset' => $groupOffset ) );
     removeSelectedGroups( $http, $list, $base );
     $tpl->setVariable( $tplname, $list );
 }

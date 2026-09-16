@@ -65,8 +65,17 @@ foreach( $TemplateData as $tpldata )
 
     $list = eZContentClassClassGroup::fetchClassList( 0, $GroupID, $asObject = true );
     $groupModifier = eZContentObject::fetch( $groupInfo->attribute( 'modifier_id') );
-    $tpl->setVariable( $tplname, $list );
-    $tpl->setVariable( "class_count", count( $list ) );
+
+    // Paged. A group holding every class of a large installation drew every one
+    // of them, each with its language list, on one screen.
+    $classCount  = count( $list );
+    $classLimit  = expAdminPagination::limit( 'class/classlist' );
+    $classOffset = expAdminPagination::offset( $Params );
+
+    $tpl->setVariable( $tplname, expAdminPagination::page( $list, $classOffset, $classLimit ) );
+    $tpl->setVariable( "class_count", $classCount );
+    $tpl->setVariable( "limit", $classLimit );
+    $tpl->setVariable( "view_parameters", array( 'offset' => $classOffset ) );
     $tpl->setVariable( "GroupID", $GroupID );
     $tpl->setVariable( "group", $groupInfo );
     $tpl->setVariable( "group_modifier", $groupModifier );

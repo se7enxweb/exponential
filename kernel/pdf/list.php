@@ -38,6 +38,11 @@ else if ( $Module->isCurrentAction( 'RemoveExport' ) && $Module->hasActionParame
 }
 
 $exportArray = eZPDFExport::fetchList();
+
+$pdfCount  = count( $exportArray );
+$pdfLimit  = expAdminPagination::limit( 'pdf/list' );
+$pdfOffset = expAdminPagination::offset( $Params );
+$exportArray = expAdminPagination::page( $exportArray, $pdfOffset, $pdfLimit );
 $exportList = array();
 foreach( $exportArray as $export )
 {
@@ -47,6 +52,9 @@ foreach( $exportArray as $export )
 $tpl = eZTemplate::factory();
 
 $tpl->setVariable( 'pdfexport_list', $exportList );
+$tpl->setVariable( 'pdfexport_count', $pdfCount );
+$tpl->setVariable( 'limit', $pdfLimit );
+$tpl->setVariable( 'view_parameters', array( 'offset' => $pdfOffset ) );
 
 $Result = array();
 $Result['content'] = $tpl->fetch( "design:pdf/list.tpl" );
