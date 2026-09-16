@@ -14,7 +14,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 b823502feaf9e198f04acc6cf0aa75b5  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 bb00515f3bb9b7d88590327bfbb94b4f  autoload.php
-8c974bf4a3b3a1e576020a8a49815e1b  autoload/ezp_kernel.php
+7af79ff797b845b620abaa36bd93244f  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
 e987da229be60f6c0644adee57d39fb3  benchmarks/classes/ezbenchmarkclirunner.php
@@ -131,7 +131,7 @@ f90ab3789386b943e3c322da2e9c062d  bin/shell/redumpall.sh
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 51bce499f1e818a40a8b0034e0e1a9c1  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-0b3dc649ef542f31f42528ab72db7837  composer.json
+c49cad445d1857bea9c80f897d7f19a6  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 d77f7f99abd083dc48fceaf4bf996f62  composer.lock
 f6639c1204722f978072a5f5238027ae  config.php
@@ -3251,7 +3251,7 @@ d8552f1f063ec2c41c205ea40bcb3fd9  extension/expchangeclass/.gitignore
 31a6023d121d0e45c9623419df3f0ffe  extension/expchangeclass/design/admin/templates/changeclass/map_attributes.tpl
 28e27c3bdb06737ddac5442d88f2d1ba  extension/expchangeclass/design/admin/templates/changeclass/select_class.tpl
 4859132138bca45573b91cc84658b755  extension/expchangeclass/design/admin/templates/popupmenu/classcontextmenu.tpl
-e44276d02097ce49412651a1ed75d600  extension/expchangeclass/design/admin/templates/popupmenu/classsubitemscontextmenu.tpl
+f08dd273b9e9b068fb24fb3a938a1e36  extension/expchangeclass/design/admin/templates/popupmenu/classsubitemscontextmenu.tpl
 6874c3b0e4030fa1b999c8022d8eaf42  extension/expchangeclass/doc/USAGE.md
 c87577e4d57de776c73ae3c11fa5d233  extension/expchangeclass/doc/changelog.txt
 c22a3137c0a1216a68b4c5e1ec8b53c9  extension/expchangeclass/doc/todo.txt
@@ -12682,7 +12682,7 @@ ae26e5e0bcc9ce56b937e973fb35409f  settings/override/i18n.ini.append.php
 2cb911f298238f6bd5d3aef6c7cdef22  settings/override/pdf.ini.append.php
 b2a7c571731039265a99ba0e3fe431fe  settings/override/site.ini
 1a63a2837c1dbb7e5b1fe105400dd393  settings/override/site.ini--sqlite
-89094924b55fecb732354e48711ba071  settings/override/site.ini.append.php
+e2f69b8236d5fabfd0283bb10afd83a3  settings/override/site.ini.append.php
 52980c9a7985ba50c98a27edbab9306a  settings/override/site.ini.append.php.live-backup
 52980c9a7985ba50c98a27edbab9306a  settings/override/site.ini.append.php.live-backup2
 a2fd754ba92623735e9de686c58089df  settings/override/site.ini.append.php.user-backup
