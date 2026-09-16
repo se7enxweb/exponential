@@ -125,7 +125,16 @@ if ( $Params['TranslationID'] )
 
 $availableTranslations = eZContentLanguage::fetchList();
 
+// Paged. The whole list was read and every row of it drawn.
+$pageCount  = count( $availableTranslations );
+$pageLimit  = expAdminPagination::limit( 'content/translations' );
+$pageOffset = expAdminPagination::offset( $Params );
+$availableTranslations = expAdminPagination::page( $availableTranslations, $pageOffset, $pageLimit );
+
 $tpl->setVariable( 'available_translations', $availableTranslations );
+$tpl->setVariable( 'translation_count', $pageCount );
+$tpl->setVariable( 'limit', $pageLimit );
+$tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
 
 $Result['content'] = $tpl->fetch( 'design:content/translations.tpl' );
 $Result['path'] = array( array( 'text' => ezpI18n::tr( 'kernel/content', 'Languages' ),

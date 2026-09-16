@@ -221,12 +221,21 @@ if ( $module->isCurrentAction( 'ConfirmRemoval' ) )
 
 $vatTypeArray = eZVatType::fetchList( true, true );
 
+// Paged. The whole list was read and every row of it drawn.
+$pageCount  = count( $vatTypeArray );
+$pageLimit  = expAdminPagination::limit( 'shop/vattype' );
+$pageOffset = expAdminPagination::offset( $Params );
+$vatTypeArray = expAdminPagination::page( $vatTypeArray, $pageOffset, $pageLimit );
+
 if ( is_array( $errors ) )
     $errors = array_unique( $errors );
 
 $tpl->setVariable( "vattype_array", $vatTypeArray );
 $tpl->setVariable( "module", $module );
 $tpl->setVariable( 'errors', $errors );
+$tpl->setVariable( 'vattype_count', $pageCount );
+$tpl->setVariable( 'limit', $pageLimit );
+$tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
 
 $path = array();
 $path[] = array( 'text' => ezpI18n::tr( 'kernel/shop', 'VAT types' ),

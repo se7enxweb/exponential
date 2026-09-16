@@ -61,6 +61,19 @@
 {/section}
 </table>
 
+{* Paged; the size is admininterface.ini [PaginationSettings]. *}
+{if $translation_count|gt( $limit )}
+<div class="context-toolbar">
+{include name=TranslationNavigator
+         uri='design:navigator/google.tpl'
+         page_uri='/content/translations'
+         item_count=$translation_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+{/if}
+
+
 {* DESIGN: Content END *}</div>
 
 <div class="controlbar">

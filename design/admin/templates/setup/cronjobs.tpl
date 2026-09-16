@@ -370,6 +370,19 @@ tr.exp-section-note th {
 {/if}
 </table>
 
+{* Paged; the size is admininterface.ini [PaginationSettings]. *}
+{if $cronjob_available_count|gt( $limit )}
+<div class="context-toolbar">
+{include name=CronjobNavigator
+         uri='design:navigator/google.tpl'
+         page_uri='/setup/cronjobs'
+         item_count=$cronjob_available_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+{/if}
+
+
 </form>
 
 {* What has run, when, and whether it complained. *}

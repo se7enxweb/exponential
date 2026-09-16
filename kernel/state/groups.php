@@ -12,12 +12,10 @@ $offset = $Params['Offset'];
 $listLimitPreferenceName = 'admin_state_group_list_limit';
 $listLimitPreferenceValue = eZPreferences::value( $listLimitPreferenceName );
 
-switch( $listLimitPreferenceValue )
-{
-    case '2': { $limit = 25; } break;
-    case '3': { $limit = 50; } break;
-    default:  { $limit = 10; } break;
-}
+// The sizes on offer are configured, not written here; the preference holds
+// the position in that list, which is what it has always held.
+list( $limit, $limitChoice, $limitChoices ) =
+    expAdminPagination::chosen( 'state/groups', $listLimitPreferenceName );
 
 $languages = eZContentLanguage::fetchList();
 
@@ -51,6 +49,8 @@ $groupCount = eZPersistentObject::count( eZContentObjectStateGroup::definition()
 $viewParameters = array( 'offset' => $offset );
 
 $tpl->setVariable( 'limit', $limit );
+$tpl->setVariable( 'limit_choices', $limitChoices );
+$tpl->setVariable( 'limit_choice', $limitChoice );
 $tpl->setVariable( 'list_limit_preference_name', $listLimitPreferenceName );
 $tpl->setVariable( 'list_limit_preference_value', $listLimitPreferenceValue );
 $tpl->setVariable( 'groups', $groups );

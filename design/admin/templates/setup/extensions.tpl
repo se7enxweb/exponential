@@ -15,7 +15,7 @@
 
 {* DESIGN: Header START *}<div class="box-header">
 
-<h1 class="context-title">{'Available extensions (%extension_count)'|i18n( 'design/admin/setup/extensions',, hash( '%extension_count', $available_extension_array|count ) )}</h1>
+<h1 class="context-title">{'Available extensions (%extension_count)'|i18n( 'design/admin/setup/extensions',, hash( '%extension_count', $extension_count ) )}</h1>
 
 {* DESIGN: Mainline *}<div class="header-mainline"></div>
 
@@ -78,6 +78,19 @@
 </tr>
 {/section}
 </table>
+
+{* Paged; the size is admininterface.ini [PaginationSettings]. *}
+{if $extension_count|gt( $limit )}
+<div class="context-toolbar">
+{include name=ExtensionNavigator
+         uri='design:navigator/google.tpl'
+         page_uri='/setup/extensions'
+         item_count=$extension_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+{/if}
+
 {section-else}
 <div class="block">
     <p>{'There are no available extensions.'|i18n( 'design/admin/setup/extensions' )}</p>

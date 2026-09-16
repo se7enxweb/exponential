@@ -16,26 +16,15 @@
 <div class="context-toolbar">
 <div class="button-left">
 <p class="table-preferences">
-{switch match=$limit}
-{case match=25}
-<a href={concat('/user/preferences/set/', $list_limit_preference_name, '/1')|ezurl}>10</a>
-<span class="current">25</span>
-<a href={concat('/user/preferences/set/', $list_limit_preference_name, '/3')|ezurl}>50</a>
-{/case}
-
-{case match=50}
-<a href={concat('/user/preferences/set/', $list_limit_preference_name, '/1')|ezurl}>10</a>
-<a href={concat('/user/preferences/set/', $list_limit_preference_name, '/2')|ezurl}>25</a>
-<span class="current">50</span>
-{/case}
-
-{case}
-<span class="current">10</span>
-<a href={concat('/user/preferences/set/', $list_limit_preference_name, '/2')|ezurl}>25</a>
-<a href={concat('/user/preferences/set/', $list_limit_preference_name, '/3')|ezurl}>50</a>
-{/case}
-
-{/switch}
+{* The sizes come from admininterface.ini [PaginationSettings]; the preference
+   stores the position in that list. *}
+{foreach $limit_choices as $limit_index => $limit_option}
+    {if eq( $limit_index|inc, $limit_choice )}
+        <span class="current">{$limit_option}</span>
+    {else}
+        <a href={concat( '/user/preferences/set/', $list_limit_preference_name, '/', $limit_index|inc )|ezurl}>{$limit_option}</a>
+    {/if}
+{/foreach}
 </p>
 </div>
 <div class="break"></div>

@@ -357,7 +357,7 @@ deffb644bbfdf3644f9cf76d6a4901d8  design/admin/templates/content/related/file.tp
 279c0497b4256bea8b803f6fc108a58e  design/admin/templates/content/search.tpl
 c58456f930801986a94ae1c6a68e4fdc  design/admin/templates/content/searchresult.tpl
 19e120ca51505679db67c63946d4aee2  design/admin/templates/content/translationnew.tpl
-eebf8d7f4d52fd20ca60ab79c52f1c1e  design/admin/templates/content/translations.tpl
+83390b5b1d6133f4c55b3edc0422113e  design/admin/templates/content/translations.tpl
 318cec52e564923aa0935f84e329a8b1  design/admin/templates/content/translationview.tpl
 cf0c5502b83682fdea46bb4f56cf2c1f  design/admin/templates/content/trash.tpl
 a1f9f35ddf7628f6d51fb625e579dc78  design/admin/templates/content/upload.tpl
@@ -499,13 +499,13 @@ f25c2fc56e4be195717df6a15439ba40  design/admin/templates/settings/edit.tpl
 c4046e2af288689c12899c1ffc53d5c5  design/admin/templates/settings/view.tpl
 213121e5c655b15a5a26a3f324dd14a4  design/admin/templates/setup/cache.tpl
 e1e60b2d13e25adc9dd7a78da3984dc0  design/admin/templates/setup/contentextension.tpl
-12d69e6bd397cff1dc3d679e30ca373e  design/admin/templates/setup/cronjobs.tpl
+f3512630a9c48ab11be343be60b39c64  design/admin/templates/setup/cronjobs.tpl
 f934ee57061b74a45e9a3ab77e788b14  design/admin/templates/setup/datatype.tpl
 161a4466280769f50dfb372278524759  design/admin/templates/setup/datatype_basic.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 29d3e871e6de1979d29105f427637288  design/admin/templates/setup/datatype_describe.tpl
 ac9b8cde45959bdf348cb0c2868e7e2d  design/admin/templates/setup/designextension.tpl
-fc3da246e798dc46db130b5e72764902  design/admin/templates/setup/extensions.tpl
+9cad5a74d2dc2d080ee96abd6c883a08  design/admin/templates/setup/extensions.tpl
 9a1144de0b4042a411f4374ddf2d6050  design/admin/templates/setup/handlerextension.tpl
 855efa53d457a7582a574011ed79a36f  design/admin/templates/setup/info.tpl
 9728ae823c710f8bdf558810fe857aa5  design/admin/templates/setup/kerneloverride.tpl
@@ -549,13 +549,13 @@ bf967764f67262f33ca9e722aff5a9e3  design/admin/templates/shop/removeproductcateg
 6115bd8ea719e1cade23e0b6981826cb  design/admin/templates/shop/status.tpl
 d2069f305f43c1a767f3a407c9140bcd  design/admin/templates/shop/userregister.tpl
 1057d11b551b317251e444d06e1f98f6  design/admin/templates/shop/vatrules.tpl
-22f0e6eb6e7665d2f0f19417bf1fd4da  design/admin/templates/shop/vattype.tpl
+c6766df803d4b2a402f7cd2da25f7f57  design/admin/templates/shop/vattype.tpl
 9229a326256b772dfa3cd48a4b46897e  design/admin/templates/shop/wishlist.tpl
 c4ada824b622bb2f6cff0d893a3c26b4  design/admin/templates/state/assign.tpl
 8b9f294455e24af5ebe47bc564852c22  design/admin/templates/state/edit.tpl
 701f0420b08cd59ad7c67140e5b9d2fb  design/admin/templates/state/group.tpl
 1c5edb6fdd88732140688f1990fef9aa  design/admin/templates/state/group_edit.tpl
-967e8cd19b5535302f1de434e45fc26f  design/admin/templates/state/groups.tpl
+a421d9699ddfbfd173c83016ac2ae530  design/admin/templates/state/groups.tpl
 eea5d6ee15a9ba5d2ab567d3c2139aab  design/admin/templates/state/view.tpl
 1defb614dfd2a701dec097119bc54c98  design/admin/templates/tabs/user/policies.tpl
 445920c068563275e48552d4bf839276  design/admin/templates/tabs/user/policies_header.tpl
@@ -11936,7 +11936,7 @@ e05fdccd193dc2a1ce64521c5dd9673d  kernel/content/search.php
 a77f32cd17b8b11399f9ac0b27f661a5  kernel/content/state_edit.php
 096507a05488a4a9a042472f532faec9  kernel/content/tipafriend.php
 339432e6501dd35d8eb0cd07894f18cf  kernel/content/translation.php
-6b17ed3cfc5427ed6faa08d39e3b4e86  kernel/content/translations.php
+8bef70cc9348aca95937981b88c728c1  kernel/content/translations.php
 c4a2b34121b70a965a0f41829e74cf20  kernel/content/trash.php
 fcdaad7a9504eab6a65f129e7e81b2c5  kernel/content/treemenu.php
 1c8120bf767adbf5d70b6651be54856d  kernel/content/upload.php
@@ -12088,7 +12088,7 @@ d76b25f3e7cf9556a4c2969d57dec245  kernel/private/interfaces/ezpstaticcache.php
 0940778cd23af7fdcf86c8664d5e38e5  kernel/private/modules/oauth/module.php
 2874155725093458103ba52a05d0de6a  kernel/private/modules/oauthadmin/action.php
 d364635df390b7d30cdec70fb9a2bb15  kernel/private/modules/oauthadmin/edit.php
-299a3d9ff9a9dd89c1b91846f2f61078  kernel/private/modules/oauthadmin/list.php
+6e86c5c6ed4c4592a1bdf35155f283d1  kernel/private/modules/oauthadmin/list.php
 f334e5683b71eca74916ca5612675fad  kernel/private/modules/oauthadmin/module.php
 3c0dabf8265b79dffe1da6287d3724f5  kernel/private/modules/oauthadmin/view.php
 52f6a3c46c49a073d3b025d2196832df  kernel/private/modules/switchlanguage/ezpLanguageSwitcherFunctionCollection.php
@@ -12224,7 +12224,7 @@ b680d1f87ad597bca41fec63320b6c5c  kernel/settings/validation.php
 8b6ee66ea038a8dd73c466afad9769d6  kernel/setup/cache.php
 8a64692e3af63962b8364c2064eb0d26  kernel/setup/cachetoolbar.php
 105122de2a4b7fab8fb08478c785756a  kernel/setup/contentextension.php
-497c6071cd431fcf994468b4d77e4758  kernel/setup/cronjobs.php
+72cd8d60ba71c699ac46fe51802f09c5  kernel/setup/cronjobs.php
 e341a1f1b96964bc62c1a90451149b8f  kernel/setup/cronjobsstream.php
 d523422654c25b021a7cf7dea0bdd175  kernel/setup/datatype.php
 6d13f4e11f3bbb9d80fb6921aa426d84  kernel/setup/designextension.php
@@ -12246,7 +12246,7 @@ c94610a0583f4b2ed2a94e1bd8508cad  kernel/setup/expdesignextensionwizard.php
 31f82634133388e1a9a5c3ab12d50eb0  kernel/setup/expstaticcacherunner.php
 8839c5613c7018ed208ef2a6a9869aa9  kernel/setup/exptemplateextensionwizard.php
 1d77c8ffe724b48e3681194de2bbd003  kernel/setup/expworkfloweventwizard.php
-5134228ee34f02f22ae9b0661efaa92d  kernel/setup/extensions.php
+72052217fb7535aa82983b6a903cc7af  kernel/setup/extensions.php
 29ad3ce952987bce7f1f450bb604a69f  kernel/setup/ezsetup.php
 878ef35d32457db4f7db926b70732842  kernel/setup/ezsetup_summary.php
 6f618b2530aee5d914f63dcec6785cd8  kernel/setup/ezsetupcommon.php
@@ -12346,7 +12346,7 @@ fdef7886ec04db7e2b6da23d964e9508  kernel/shop/unarchiveorder.php
 40cd7d57fc1101cd6031fcadf3603405  kernel/shop/updatebasket.php
 7cce21ebbb382555e1ebd9e309673c93  kernel/shop/userregister.php
 947a7f2f4669e069c89a9b02fb95e7f6  kernel/shop/vatrules.php
-78530eb366ba2828ed17898a5a4f9c05  kernel/shop/vattype.php
+822cc8e878b330b60a2a6429f4aadb1e  kernel/shop/vattype.php
 1a1ad7f71e4de36b5455a54a61814b47  kernel/shop/wishlist.php
 2ada8ccdbea9a903fd55c1fb887e3947  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
@@ -12365,7 +12365,7 @@ d0da8d0b9da797044c264ed40c943124  kernel/sql/sqlite/workingexample.db
 2ac2e45035ef9821b32b41666b301a62  kernel/state/edit.php
 c936d08d4658ea0246b6818588df68e4  kernel/state/group.php
 d91727f3f1dbb8cb0b455e64136cbceb  kernel/state/group_edit.php
-d18fc906c0bbfe62f4a769de5828127a  kernel/state/groups.php
+f0be5f4f0d8c7f52dd489eaa211d110d  kernel/state/groups.php
 f76daef475b352dfd39e4f0a6ccfa454  kernel/state/module.php
 479fdfeeed69c5148a5385c2a7b1fc9f  kernel/state/view.php
 26b25364adf66eeec58131498d500267  kernel/trigger/list.php
@@ -12633,7 +12633,7 @@ dd0000ff484d4812b6cc00fdb70d3e3a  lib/version.php
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 2e28235808e963725c329bd537ecf57e  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
-d8f7f3d3e04a11a09f7c94573139ad0d  settings/admininterface.ini
+c883e17e2ef9df7818365e1b595e19c7  settings/admininterface.ini
 a1be7ab463d96b8940b0b6ad2148a34e  settings/audit.ini
 1b4240b9c4d8b7cfa57f7c76b8e2d1a7  settings/binaryfile.ini
 95c129ae817de28cfc4ff616555fad21  settings/browse.ini

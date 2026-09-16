@@ -41,6 +41,19 @@
 </tr>
 {/section}
 </table>
+
+{* Paged; the size is admininterface.ini [PaginationSettings]. *}
+{if $vattype_count|gt( $limit )}
+<div class="context-toolbar">
+{include name=VatTypeNavigator
+         uri='design:navigator/google.tpl'
+         page_uri='/shop/vattype'
+         item_count=$vattype_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+{/if}
+
 {section-else}
 <div class="block">
 <p>{'There are no VAT types.'|i18n( 'design/admin/shop/vattype' )}</p>

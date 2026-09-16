@@ -168,7 +168,17 @@ if ( $module->isCurrentAction( 'GenerateAutoloadArrays' ) )
     updateAutoload( $tpl );
 }
 
-$tpl->setVariable( "available_extension_array", $availableExtensionArray );
+// Paged. Every extension the installation can see was drawn on one screen,
+// and an installation with a hundred of them is not unusual.
+$pageCount  = count( $availableExtensionArray );
+$pageLimit  = expAdminPagination::limit( 'setup/extensions' );
+$pageOffset = expAdminPagination::offset( $Params );
+
+$tpl->setVariable( "available_extension_array",
+                   expAdminPagination::page( $availableExtensionArray, $pageOffset, $pageLimit ) );
+$tpl->setVariable( "extension_count", $pageCount );
+$tpl->setVariable( "limit", $pageLimit );
+$tpl->setVariable( "view_parameters", array( 'offset' => $pageOffset ) );
 $tpl->setVariable( "selected_extension_array", $selectedExtensions );
 $tpl->setVariable( "extension_info", $extensionInfo );
 $tpl->setVariable( "sort_by", $sortBy );
