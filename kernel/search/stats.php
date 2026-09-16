@@ -6,19 +6,10 @@
  * @package kernel
  */
 
-if ( eZPreferences::value( 'admin_search_stats_limit' ) )
-{
-    switch ( eZPreferences::value( 'admin_search_stats_limit' ) )
-    {
-        case '2': { $limit = 25; } break;
-        case '3': { $limit = 50; } break;
-        default:  { $limit = 10; } break;
-    }
-}
-else
-{
-    $limit = 10;
-}
+// The sizes on offer are configured, not written here; the preference holds
+// the position in that list, which is what it has always held.
+list( $limit, $limitChoice, $limitChoices ) =
+    expAdminPagination::chosen( 'search/stats', 'admin_search_stats_limit' );
 
 $offset = $Params['Offset'];
 if ( !is_numeric( $offset ) )
@@ -52,6 +43,8 @@ else
 $mostFrequentPhraseArray = eZSearchLog::mostFrequentPhraseArray( $viewParameters );
 
 $tpl->setVariable( "view_parameters", $viewParameters );
+$tpl->setVariable( "limit_choices", $limitChoices );
+$tpl->setVariable( "limit_choice", $limitChoice );
 $tpl->setVariable( "most_frequent_phrase_array", $mostFrequentPhraseArray );
 $tpl->setVariable( "search_list_count", $searchListCount[0]['count'] );
 

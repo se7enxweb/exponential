@@ -27,11 +27,14 @@
 <table class="list" cellspacing="0">
 <tr>
     <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/setup/extensions' )}" title="{'Toggle all.'|i18n( 'design/admin/content/translations' )}" onclick="ezjs_toggleCheckboxes( document.extensionform, 'ActiveExtensionList[]' ); return false;"/></th>
-    <th><a href={concat( '/setup/extensions?SortBy=name&amp;SortOrder=', cond( and( $sort_by|eq('name'), $sort_order|eq('asc') ), 'desc', 'asc' ) )|ezurl} class="sortable-header">{'Name'|i18n( 'design/admin/setup/extensions' )}</a></th>
-    <th>{'Extension'|i18n( 'design/admin/setup/extensions' )}</th>
-    <th>{'License'|i18n( 'design/admin/setup/extensions' )}</th>
-    <th><a href={concat( '/setup/extensions?SortBy=version&amp;SortOrder=', cond( and( $sort_by|eq('version'), $sort_order|eq('asc') ), 'desc', 'asc' ) )|ezurl} class="sortable-header">{'Version'|i18n( 'design/admin/setup/extensions' )}</a></th>
-    <th><a href={concat( '/setup/extensions?SortBy=mtime&amp;SortOrder=', cond( and( $sort_by|eq('mtime'), $sort_order|eq('asc') ), 'desc', 'asc' ) )|ezurl} class="sortable-header">{'Modified'|i18n( 'design/admin/setup/extensions' )}</a></th>
+    {* The headings are the shared sortable one, and the column travels as a
+       view parameter so the pager keeps it. Sorting is done over the whole
+       list before it is cut to a page, not over the page. *}
+    {include uri='design:parts/sortheader.tpl' key='name'      label='Name'|i18n( 'design/admin/setup/extensions' )      sort=$extension_sort page_uri='/setup/extensions'}
+    {include uri='design:parts/sortheader.tpl' key='info_name' label='Extension'|i18n( 'design/admin/setup/extensions' ) sort=$extension_sort page_uri='/setup/extensions'}
+    {include uri='design:parts/sortheader.tpl' key='license'   label='License'|i18n( 'design/admin/setup/extensions' )   sort=$extension_sort page_uri='/setup/extensions'}
+    {include uri='design:parts/sortheader.tpl' key='version'   label='Version'|i18n( 'design/admin/setup/extensions' )   sort=$extension_sort page_uri='/setup/extensions'}
+    {include uri='design:parts/sortheader.tpl' key='mtime'     label='Modified'|i18n( 'design/admin/setup/extensions' )  sort=$extension_sort page_uri='/setup/extensions'}
     <th>{'Info'|i18n( 'design/admin/setup/extensions' )}</th>
 </tr>
 {section var=Extensions loop=$available_extension_array sequence=array( bglight, bgdark )}

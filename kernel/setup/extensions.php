@@ -49,19 +49,23 @@ if ( $downloadName && $downloadFormat &&
 
 $tpl = eZTemplate::factory();
 
-// Sorting: default A-Z by name, overridable via GET for click-to-sort headers
-$sortBy    = 'name';
-$sortOrder = 'asc';
-if ( $http->hasGetVariable( 'SortBy' ) )
-{
-    $sortBy = strtolower( $http->getVariable( 'SortBy' ) );
-}
-if ( $http->hasGetVariable( 'SortOrder' ) )
-{
-    $sortOrder = strtolower( $http->getVariable( 'SortOrder' ) );
-}
-$sortBy    = in_array( $sortBy, array( 'name', 'version', 'mtime' ) ) ? $sortBy : 'name';
-$sortOrder = in_array( $sortOrder, array( 'asc', 'desc' ) ) ? $sortOrder : 'asc';
+// Sorting. The column travels on the address as a view parameter rather than
+// in a query string, so that the pager carries it: the pager appends the offset
+// to the page address, and a query string on the end of that address would be
+// left behind - paging would silently reset the order. The old SortBy and
+// SortOrder are still read, so a bookmarked link keeps working.
+$extensionSortColumns = array( 'name', 'info_name', 'license', 'version', 'mtime' );
+
+$userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+
+$sortBy = isset( $userParameters['sort'] ) ? (string)$userParameters['sort']
+        : ( $http->hasGetVariable( 'SortBy' ) ? strtolower( $http->getVariable( 'SortBy' ) ) : 'name' );
+
+$sortOrder = isset( $userParameters['dir'] ) ? (string)$userParameters['dir']
+           : ( $http->hasGetVariable( 'SortOrder' ) ? strtolower( $http->getVariable( 'SortOrder' ) ) : 'asc' );
+
+$sortBy    = in_array( $sortBy, $extensionSortColumns, true ) ? $sortBy : 'name';
+$sortOrder = $sortOrder === 'desc' ? 'desc' : 'asc';
 
 // Use expInfo to collect and normalise all extension metadata
 $extensionInfo = expInfo::availableExtensions();
@@ -86,6 +90,31 @@ uasort( $extensionInfo, function( $a, $b ) use ( $sortBy ) {
         if ( $cmp !== 0 )
             return $cmp;
         return strnatcasecmp( $nameA, $nameB );
+    }
+    else if ( $sortBy === 'info_name' )
+    {
+        // The name the extension gives itself, which carries spaces and
+        // capitals, so it is compared the way a reader would read it. An
+        // extension that declares no name falls back to its directory, which
+        // is what the column shows in its place.
+        $aVal = isset( $a['name'] ) && trim( (string)$a['name'] ) !== '' ? (string)$a['name'] : $nameA;
+        $bVal = isset( $b['name'] ) && trim( (string)$b['name'] ) !== '' ? (string)$b['name'] : $nameB;
+
+        $cmp = strnatcasecmp( trim( $aVal ), trim( $bVal ) );
+        return $cmp !== 0 ? $cmp : strnatcasecmp( $nameA, $nameB );
+    }
+    else if ( $sortBy === 'license' )
+    {
+        // Extensions with no license declared sort together at the end rather
+        // than at the front, where an empty string would put them.
+        $aVal = isset( $a['license'] ) ? trim( (string)$a['license'] ) : '';
+        $bVal = isset( $b['license'] ) ? trim( (string)$b['license'] ) : '';
+
+        if ( ( $aVal === '' ) !== ( $bVal === '' ) )
+            return $aVal === '' ? 1 : -1;
+
+        $cmp = strnatcasecmp( $aVal, $bVal );
+        return $cmp !== 0 ? $cmp : strnatcasecmp( $nameA, $nameB );
     }
     else
     {
@@ -178,7 +207,12 @@ $tpl->setVariable( "available_extension_array",
                    expAdminPagination::page( $availableExtensionArray, $pageOffset, $pageLimit ) );
 $tpl->setVariable( "extension_count", $pageCount );
 $tpl->setVariable( "limit", $pageLimit );
-$tpl->setVariable( "view_parameters", array( 'offset' => $pageOffset ) );
+$tpl->setVariable( "view_parameters", array( 'offset' => $pageOffset,
+                                             'sort'   => $sortBy,
+                                             'dir'    => $sortOrder ) );
+$tpl->setVariable( "extension_sort", array( 'field'     => $sortBy,
+                                            'direction' => $sortOrder,
+                                            'opposite'  => $sortOrder === 'asc' ? 'desc' : 'asc' ) );
 $tpl->setVariable( "selected_extension_array", $selectedExtensions );
 $tpl->setVariable( "extension_info", $extensionInfo );
 $tpl->setVariable( "sort_by", $sortBy );

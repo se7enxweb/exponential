@@ -486,8 +486,8 @@ bd0654cfe66361c7cf1d8dbd37801aa2  design/admin/templates/rss/browse_user.tpl
 d221e74cd98a81e69989bba7f6474b07  design/admin/templates/rss/edit_export.tpl
 5b7a222ec628f8bc312d0d89828fdd90  design/admin/templates/rss/edit_export_opml.tpl
 016a467fca0e415fbeface76f5603e37  design/admin/templates/rss/edit_import.tpl
-fd9dc61fbe62908fd01eb30ba489bf90  design/admin/templates/rss/list.tpl
-aa0a1891d40c9de5ea1048320efdad1c  design/admin/templates/search/stats.tpl
+4002e64c7effa46b58e6bde4cbf94729  design/admin/templates/rss/list.tpl
+88a845cc270c1d940c725f3942e4f802  design/admin/templates/search/stats.tpl
 ee13be679bfe3394af9f7dd3e2889744  design/admin/templates/section/assign_notification.tpl
 8e635ee173947720d1b1b4f1b4da1dc2  design/admin/templates/section/browse_assign.tpl
 e599903ea51c70c31fe980d84539e6f6  design/admin/templates/section/confirmremove.tpl
@@ -505,7 +505,7 @@ f934ee57061b74a45e9a3ab77e788b14  design/admin/templates/setup/datatype.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 29d3e871e6de1979d29105f427637288  design/admin/templates/setup/datatype_describe.tpl
 ac9b8cde45959bdf348cb0c2868e7e2d  design/admin/templates/setup/designextension.tpl
-9cad5a74d2dc2d080ee96abd6c883a08  design/admin/templates/setup/extensions.tpl
+c29e3a846853ed8a4a3d4f91c4874af3  design/admin/templates/setup/extensions.tpl
 9a1144de0b4042a411f4374ddf2d6050  design/admin/templates/setup/handlerextension.tpl
 855efa53d457a7582a574011ed79a36f  design/admin/templates/setup/info.tpl
 9728ae823c710f8bdf558810fe857aa5  design/admin/templates/setup/kerneloverride.tpl
@@ -12210,7 +12210,7 @@ fc5f56e6177a2a5f09cdc32a7c530219  kernel/rss/ezrsslistpager.php
 3b9c489d34fc70ef4ffca49f97fca109  kernel/search/function_definition.php
 d5004deb2de13e5e5588269afa6537ab  kernel/search/module.php
 f5659229f7acd3d3024bf4045ab9a2ce  kernel/search/plugins/ezsearchengine/ezsearchengine.php
-a7a74e8d2691f683e40e8c124b8e11b6  kernel/search/stats.php
+329f92002eb3f76efe17902c5a45faa0  kernel/search/stats.php
 88b38775ac97d6afba3b10934da3556c  kernel/section/assign.php
 55fd26a476f62561003e815e63ac6730  kernel/section/edit.php
 8a769d79bbcce5ac3474317331d45b82  kernel/section/ezsectionfunctioncollection.php
@@ -12247,7 +12247,7 @@ c94610a0583f4b2ed2a94e1bd8508cad  kernel/setup/expdesignextensionwizard.php
 31f82634133388e1a9a5c3ab12d50eb0  kernel/setup/expstaticcacherunner.php
 8839c5613c7018ed208ef2a6a9869aa9  kernel/setup/exptemplateextensionwizard.php
 1d77c8ffe724b48e3681194de2bbd003  kernel/setup/expworkfloweventwizard.php
-72052217fb7535aa82983b6a903cc7af  kernel/setup/extensions.php
+aaaa1258e2a634baf724187b2b8673aa  kernel/setup/extensions.php
 29ad3ce952987bce7f1f450bb604a69f  kernel/setup/ezsetup.php
 878ef35d32457db4f7db926b70732842  kernel/setup/ezsetup_summary.php
 6f618b2530aee5d914f63dcec6785cd8  kernel/setup/ezsetupcommon.php
@@ -12634,7 +12634,7 @@ dd0000ff484d4812b6cc00fdb70d3e3a  lib/version.php
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 2e28235808e963725c329bd537ecf57e  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
-2cd86e03aea6c59a23df3b1a97c15bbf  settings/admininterface.ini
+e1e4d72b8b2e4001f8fb8005edf520b8  settings/admininterface.ini
 a1be7ab463d96b8940b0b6ad2148a34e  settings/audit.ini
 1b4240b9c4d8b7cfa57f7c76b8e2d1a7  settings/binaryfile.ini
 95c129ae817de28cfc4ff616555fad21  settings/browse.ini

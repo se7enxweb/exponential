@@ -37,10 +37,17 @@ table.list td.rss-uri code {
 
 <h2 class="context-title">{'RSS exports (%exports_count)'|i18n( 'design/admin/rss/list',, hash( '%exports_count', $rssexport_count ) )}</h2>
 
-{* How many rows a page holds. The same control, and the same markup, that
-   /section/list and the other admin lists use, so it is styled by the admin
-   stylesheet rather than by anything of its own. Changing it starts both lists
-   again from the top, and is remembered for the next visit. *}
+
+
+
+{* DESIGN: Header END *}</div></div>
+
+{* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
+
+{* How many rows a page holds. The same control, the same markup and the same
+   place in the box as /section/list and the other admin lists: it belongs
+   inside box-content, not in the header, where everything is set a size larger
+   and the numbers came out half again as big as everywhere else. *}
 <div class="context-toolbar">
 <div class="button-left">
 <p class="table-preferences">
@@ -50,13 +57,9 @@ table.list td.rss-uri code {
 {/foreach}
 </p>
 </div>
+<div class="float-break"></div>
 </div>
 
-
-
-{* DESIGN: Header END *}</div></div>
-
-{* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
 {section show=$rssexport_list}
 <table class="list" cellspacing="0">
