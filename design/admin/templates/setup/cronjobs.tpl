@@ -281,7 +281,7 @@ tr.exp-section-note th {
     <th class="tight">{'State'|i18n( 'design/admin/setup/cronjobs' )}</th>
     <th class="tight">{'Run'|i18n( 'design/admin/setup/cronjobs' )}</th>
 </tr>
-{foreach $cronjob_parts as $cronjob_part sequence array( bglight, bgdark ) as $cronjob_seq}
+{foreach $cronjob_parts_page as $cronjob_part sequence array( bglight, bgdark ) as $cronjob_seq}
     {* Blocked for good - forbidden, scripts missing, no php - is not the same
        as blocked because something else is running, which stops being true the
        moment the console sees the job finish. Each row records which it is so
@@ -371,16 +371,19 @@ tr.exp-section-note th {
 </table>
 
 {* Paged; the size is admininterface.ini [PaginationSettings]. *}
-{if $cronjob_available_count|gt( $limit )}
+{if $cronjob_parts_count|gt( $limit )}
 <div class="context-toolbar">
 {include name=CronjobNavigator
          uri='design:navigator/google.tpl'
          page_uri='/setup/cronjobs'
-         item_count=$cronjob_available_count
+         item_count=$cronjob_parts_count
          view_parameters=$view_parameters
          item_limit=$limit}
 </div>
 {/if}
+
+
+
 
 
 </form>

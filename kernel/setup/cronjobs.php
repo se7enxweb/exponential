@@ -192,19 +192,21 @@ foreach ( $parts as $index => $part )
     }
 }
 
-$tpl->setVariable( 'cronjob_parts', $parts );
-// On disk, named by no part, so never run by anything.
-// Paged. The scripts an installation can see grow with its extensions.
-$cronjobScripts = expCronjobRunner::availableScripts();
-$pageCount  = count( $cronjobScripts );
+// The parts and their scripts are the long list on this page - it grows with
+// every extension that adds one - so the table draws a page of them. The
+// select above the table still offers all of them: it is a way of choosing a
+// part to run, and a part missing from it could not be chosen at all.
+$pageCount  = count( $parts );
 $pageLimit  = expAdminPagination::limit( 'setup/cronjobs' );
 $pageOffset = expAdminPagination::offset( $Params );
 
-$tpl->setVariable( 'cronjob_available_scripts',
-                   expAdminPagination::page( $cronjobScripts, $pageOffset, $pageLimit ) );
-$tpl->setVariable( 'cronjob_available_count', $pageCount );
+$tpl->setVariable( 'cronjob_parts', $parts );
+$tpl->setVariable( 'cronjob_parts_page', expAdminPagination::page( $parts, $pageOffset, $pageLimit ) );
+$tpl->setVariable( 'cronjob_parts_count', $pageCount );
 $tpl->setVariable( 'limit', $pageLimit );
 $tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
+// On disk, named by no part, so never run by anything.
+$tpl->setVariable( 'cronjob_available_scripts', expCronjobRunner::availableScripts() );
 // What ran, when, and whether it complained.
 $tpl->setVariable( 'cronjob_history', expCronjobRunner::history( 20 ) );
 // Joined here, not in the template. A newline written between two template

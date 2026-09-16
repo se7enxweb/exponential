@@ -499,7 +499,7 @@ f25c2fc56e4be195717df6a15439ba40  design/admin/templates/settings/edit.tpl
 c4046e2af288689c12899c1ffc53d5c5  design/admin/templates/settings/view.tpl
 213121e5c655b15a5a26a3f324dd14a4  design/admin/templates/setup/cache.tpl
 e1e60b2d13e25adc9dd7a78da3984dc0  design/admin/templates/setup/contentextension.tpl
-f3512630a9c48ab11be343be60b39c64  design/admin/templates/setup/cronjobs.tpl
+f6597a73bfd938e408cedb55a7d32ee8  design/admin/templates/setup/cronjobs.tpl
 f934ee57061b74a45e9a3ab77e788b14  design/admin/templates/setup/datatype.tpl
 161a4466280769f50dfb372278524759  design/admin/templates/setup/datatype_basic.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
@@ -12225,7 +12225,7 @@ b680d1f87ad597bca41fec63320b6c5c  kernel/settings/validation.php
 8b6ee66ea038a8dd73c466afad9769d6  kernel/setup/cache.php
 8a64692e3af63962b8364c2064eb0d26  kernel/setup/cachetoolbar.php
 105122de2a4b7fab8fb08478c785756a  kernel/setup/contentextension.php
-72cd8d60ba71c699ac46fe51802f09c5  kernel/setup/cronjobs.php
+50d92b7586ffb1782ddbe7783b145822  kernel/setup/cronjobs.php
 e341a1f1b96964bc62c1a90451149b8f  kernel/setup/cronjobsstream.php
 d523422654c25b021a7cf7dea0bdd175  kernel/setup/datatype.php
 6d13f4e11f3bbb9d80fb6921aa426d84  kernel/setup/designextension.php
