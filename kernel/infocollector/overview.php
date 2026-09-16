@@ -56,19 +56,9 @@ if( $module->isCurrentAction( 'ConfirmRemoval' ) )
 }
 
 
-if( eZPreferences::value( 'admin_infocollector_list_limit' ) )
-{
-    switch( eZPreferences::value( 'admin_infocollector_list_limit' ) )
-    {
-        case '2': { $limit = 25; } break;
-        case '3': { $limit = 50; } break;
-        default:  { $limit = 10; } break;
-    }
-}
-else
-{
-    $limit = 10;
-}
+// The sizes on offer are configured, not written here; the preference holds
+// the position in that list, which is what it has always held.
+list( $limit, $limitChoice, $limitChoices ) = expAdminPagination::chosen( 'infocollector/overview', 'admin_infocollector_list_limit' );
 
 
 $db = eZDB::instance();
@@ -186,6 +176,8 @@ $viewParameters = array( 'offset' => $offset );
 $tpl = eZTemplate::factory();
 $tpl->setVariable( 'module', $module );
 $tpl->setVariable( 'limit', $limit );
+$tpl->setVariable( 'limit_choices', $limitChoices );
+$tpl->setVariable( 'limit_choice', $limitChoice );
 $tpl->setVariable( 'view_parameters', $viewParameters );
 $tpl->setVariable( 'object_array', $objects );
 $tpl->setVariable( 'object_count', $numberOfInfoCollectorObjects );

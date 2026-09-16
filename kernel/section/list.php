@@ -13,19 +13,9 @@ $tpl->setVariable( 'module', $Module );
 
 $offset = $Params['Offset'];
 
-if( eZPreferences::value( 'admin_section_list_limit' ) )
-{
-    switch( eZPreferences::value( 'admin_section_list_limit' ) )
-    {
-        case '2': { $limit = 25; } break;
-        case '3': { $limit = 50; } break;
-        default:  { $limit = 10; } break;
-    }
-}
-else
-{
-    $limit = 10;
-}
+// The sizes on offer are configured, not written here; the preference holds
+// the position in that list, which is what it has always held.
+list( $limit, $limitChoice, $limitChoices ) = expAdminPagination::chosen( 'section/list', 'admin_section_list_limit' );
 
 if ( $http->hasPostVariable( 'CreateSectionButton' ) )
 {
@@ -126,6 +116,8 @@ $currentUser = eZUser::currentUser();
 $allowedAssignSectionList = $currentUser->canAssignSectionList();
 
 $tpl->setVariable( "limit", $limit );
+$tpl->setVariable( 'limit_choices', $limitChoices );
+$tpl->setVariable( 'limit_choice', $limitChoice );
 $tpl->setVariable( 'section_array', $sectionArray );
 $tpl->setVariable( 'section_count', $sectionCount );
 $tpl->setVariable( 'view_parameters', $viewParameters );

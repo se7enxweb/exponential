@@ -19,26 +19,15 @@
 <div class="context-toolbar">
 <div class="button-left">
 <p class="table-preferences">
-{switch match=$number_of_items}
-{case match=25}
-<a href={'/user/preferences/set/admin_infocollector_list_limit/1'|ezurl}>10</a>
-<span class="current">25</span>
-<a href={'/user/preferences/set/admin_infocollector_list_limit/3'|ezurl}>50</a>
-{/case}
-
-{case match=50}
-<a href={'/user/preferences/set/admin_infocollector_list_limit/1'|ezurl}>10</a>
-<a href={'/user/preferences/set/admin_infocollector_list_limit/2'|ezurl}>25</a>
-<span class="current">50</span>
-{/case}
-
-{case}
-<span class="current">10</span>
-<a href={'/user/preferences/set/admin_infocollector_list_limit/2'|ezurl}>25</a>
-<a href={'/user/preferences/set/admin_infocollector_list_limit/3'|ezurl}>50</a>
-{/case}
-
-{/switch}
+{* The sizes come from admininterface.ini [PaginationSettings]; the preference
+   stores the position in that list. *}
+{foreach $limit_choices as $limit_index => $limit_option}
+    {if eq( $limit_index|inc, $limit_choice )}
+        <span class="current">{$limit_option}</span>
+    {else}
+        <a href={concat( '/user/preferences/set/admin_infocollector_list_limit/', $limit_index|inc )|ezurl} title="{'Show %count items per page.'|i18n( 'design/admin/infocollector/overview',, hash( '%count', $limit_option ) )}">{$limit_option}</a>
+    {/if}
+{/foreach}
 </p>
 </div>
 <div class="float-break"></div>

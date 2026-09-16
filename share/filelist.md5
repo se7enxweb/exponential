@@ -385,7 +385,7 @@ f40a458ba972853fe21fbbda1945fcac  design/admin/templates/error/shop/3.tpl
 91dc046ee37d161132a0893ecca92c6d  design/admin/templates/infocollection_validation.tpl
 fa73d3e3be3e3b0d90f4e5c3f0340763  design/admin/templates/infocollector/collectionlist.tpl
 865e7562daf6f73fba5603805ad895ae  design/admin/templates/infocollector/confirmremoval.tpl
-c6d0d0eee1c9bc2a3a1f5998e2d7023b  design/admin/templates/infocollector/overview.tpl
+6c85d04fe5ac249ae3821408018d8400  design/admin/templates/infocollector/overview.tpl
 de4e5cdee8dfb17cd7debdcb194f465f  design/admin/templates/infocollector/view.tpl
 b4a98724b1a3d99322e714822065cdc0  design/admin/templates/locations.tpl
 62503147c1e9e9b1efa47f9c32ecfe9d  design/admin/templates/loginpagelayout.tpl
@@ -492,7 +492,7 @@ ee13be679bfe3394af9f7dd3e2889744  design/admin/templates/section/assign_notifica
 8e635ee173947720d1b1b4f1b4da1dc2  design/admin/templates/section/browse_assign.tpl
 e599903ea51c70c31fe980d84539e6f6  design/admin/templates/section/confirmremove.tpl
 f2f897fc3888df0390e71febddebb705  design/admin/templates/section/edit.tpl
-15a14132feea42ebf6fd784b8534756a  design/admin/templates/section/list.tpl
+34152d1c76c48c6d2c7a671ea0723213  design/admin/templates/section/list.tpl
 57d02f029413d4f379127a9b57a181e5  design/admin/templates/section/view.tpl
 f25c2fc56e4be195717df6a15439ba40  design/admin/templates/settings/edit.tpl
 113dcb87cad33d168ee61cb74a13307f  design/admin/templates/settings/settings_validation.tpl
@@ -11956,7 +11956,7 @@ e4746aeb291efe4508c292a2694f43c8  kernel/infocollector/collectionlist.php
 64b15d907623343e223bcb9cc55211e0  kernel/infocollector/ezinfocollectorfunctioncollection.php
 d70f9f960f943c14fdbd4b9b3a786239  kernel/infocollector/function_definition.php
 110dbd6be79e670e9cd1d9a7832b2d04  kernel/infocollector/module.php
-92fcc7d008b737439d6bedd7e0fda44f  kernel/infocollector/overview.php
+d9bf39c52320846bd35f1f59a6a50463  kernel/infocollector/overview.php
 5ca624e66bd6ad387253e2824354684e  kernel/infocollector/view.php
 6882235170fbcd910a8a5fed34d84df8  kernel/layout/ezlayoutfunctioncollection.php
 c78493491c795c8671c544a9715bfadd  kernel/layout/function_definition.php
@@ -12214,7 +12214,7 @@ a7a74e8d2691f683e40e8c124b8e11b6  kernel/search/stats.php
 55fd26a476f62561003e815e63ac6730  kernel/section/edit.php
 8a769d79bbcce5ac3474317331d45b82  kernel/section/ezsectionfunctioncollection.php
 f56b4ddc9f61d6773ccf4d30d66bbf5d  kernel/section/function_definition.php
-bbd93ddec35c0d6b958dd3ae218be3d9  kernel/section/list.php
+b9ada7b18e5a4b18d3d071da919f7efa  kernel/section/list.php
 716197044ab7c7b94c589270dc003de9  kernel/section/module.php
 31e7f58e4e1f2e0bffd0321153dec7b7  kernel/section/view.php
 76385e73b4897ad7591dcd725e01ee0f  kernel/settings/edit.php
