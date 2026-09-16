@@ -105,6 +105,19 @@ class eZPackageFunctionCollection
         if ( $packageList === null )
             return array( 'error' => array( 'error_type' => 'kernel',
                                             'error_code' => eZError::KERNEL_NOT_FOUND ) );
+
+        // The window is applied here because fetchPackages() does not apply it:
+        // it passes the parameters on to packageRepositories(), which reads
+        // repository_id out of them and nothing else, so offset and limit have
+        // always been accepted and ignored. A caller asking for twenty five
+        // received every package there was, which is why the package list drew
+        // the whole repository on every page of itself.
+        //
+        // Cutting here rather than inside fetchPackages() keeps every other
+        // caller of it exactly as it was.
+        if ( $limit !== false && (int)$limit > 0 )
+            $packageList = array_slice( $packageList, max( 0, (int)$offset ), (int)$limit );
+
         return array( 'result' => $packageList );
     }
 
