@@ -11,7 +11,7 @@ $module = $Params['Module'];
 $tpl = eZTemplate::factory();
 
 $offset = $Params['Offset'];
-$limit = 50;
+$limit = expAdminPagination::limit( 'shop/archivelist' );
 
 
 if( eZPreferences::value( 'admin_archivelist_sortfield' ) )

@@ -9,7 +9,7 @@
 $module = $Params["Module"];
 
 $offset = $Params['Offset'];
-$limit = 15;
+$limit = expAdminPagination::limit( 'shop/customerlist' );
 
 $tpl = eZTemplate::factory();
 

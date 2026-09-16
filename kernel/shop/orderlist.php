@@ -11,7 +11,7 @@ $module = $Params['Module'];
 $tpl = eZTemplate::factory();
 
 $offset = $Params['Offset'];
-$limit = 15;
+$limit = expAdminPagination::limit( 'shop/orderlist' );
 
 
 if( eZPreferences::value( 'admin_orderlist_sortfield' ) )

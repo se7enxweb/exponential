@@ -2041,6 +2041,7 @@ return array(
       'eZRSSFunctionCollection'                                                                           => 'kernel/rss/ezrssfunctioncollection.php',
       'eZRSSImport'                                                                                       => 'kernel/classes/ezrssimport.php',
       'expCleanupRSS'                                                                                     => 'kernel/classes/expcleanuprss.php',
+      'expAdminPagination'                                                                                => 'kernel/classes/expadminpagination.php',
       'eZRandomTranslator'                                                                                => 'lib/ezi18n/classes/ezrandomtranslator.php',
       'eZRangeOption'                                                                                     => 'kernel/classes/datatypes/ezrangeoption/ezrangeoption.php',
       'eZRangeOptionType'                                                                                 => 'kernel/classes/datatypes/ezrangeoption/ezrangeoptiontype.php',

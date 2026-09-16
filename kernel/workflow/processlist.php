@@ -30,17 +30,11 @@ if ( !is_numeric( $offset ) )
     $offset = 0;
 }
 
-$limitList = array( 1 => 10,
-                    2 => 25,
-                    3 => 50,
-                    4 => 100 );
-$limit = 10;
-$limitId = eZPreferences::value( 'admin_workflow_processlist_limit' );
-
-if ( $limitId and isset( $limitList[$limitId] ) )
-{
-    $limit = $limitList[$limitId];
-}
+// The sizes on offer are configured, not written here; the preference holds
+// the position in that list, which is what it has always held.
+list( $limit, $limitChoice, $limitChoices ) =
+    expAdminPagination::chosen( 'workflow/processlist', 'admin_workflow_processlist_limit',
+                                array( 10, 25, 50, 100 ) );
 
 $viewParameters = array( 'offset' => $offset );
 
@@ -89,6 +83,8 @@ $tpl->setVariable( "module", $Module );
 $tpl->setVariable( "trigger_list", $outList2 );
 $tpl->setVariable( "total_process_count", $totalProcessCount );
 $tpl->setVariable( 'page_limit', $limit );
+$tpl->setVariable( 'limit_choices', $limitChoices );
+$tpl->setVariable( 'limit_choice', $limitChoice );
 $tpl->setVariable( 'list_count', $plistCount );
 $tpl->setVariable( 'view_parameters', $viewParameters );
 

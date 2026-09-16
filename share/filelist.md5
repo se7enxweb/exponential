@@ -14,7 +14,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 b823502feaf9e198f04acc6cf0aa75b5  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 bb00515f3bb9b7d88590327bfbb94b4f  autoload.php
-a90729c438cee91ac6770ac5a92fe84a  autoload/ezp_kernel.php
+8c974bf4a3b3a1e576020a8a49815e1b  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
 e987da229be60f6c0644adee57d39fb3  benchmarks/classes/ezbenchmarkclirunner.php
@@ -529,7 +529,7 @@ e1ba4df851b89582a0c1c84a7b833547  design/admin/templates/setup/workflowevent.tpl
 210907320335067e4ad23399b47a961b  design/admin/templates/shop/browse_discountcustomer.tpl
 973ed42413641cd99c9ebd85f0c3e702  design/admin/templates/shop/browse_discountproduct.tpl
 0397b15cfa71c96e50ce5b6796bc8e69  design/admin/templates/shop/confirmorder.tpl
-b0b703782c8a396ee0ff528e736998f9  design/admin/templates/shop/currencylist.tpl
+1a97425b4724e52553d37aeaab57e09a  design/admin/templates/shop/currencylist.tpl
 f3ff4a52597dcac54938b64e62c12c4f  design/admin/templates/shop/customerlist.tpl
 3d9ffc461b4a76d4b0b90c8c57fc5a49  design/admin/templates/shop/customerorderview.tpl
 0297b44459b1d9a9e82a2ada3ba4d960  design/admin/templates/shop/discountgroup.tpl
@@ -542,7 +542,7 @@ d422067ffaf0e386ee381c9e9e3ccf23  design/admin/templates/shop/editvatrule.tpl
 559970854a040f502b37304906f5ace1  design/admin/templates/shop/orderstatistics.tpl
 f71dbc5a40c1f2d7a8ff2a89a0631904  design/admin/templates/shop/orderview.tpl
 3934d6990d0847ec8d2ae575f0af8231  design/admin/templates/shop/productcategories.tpl
-6131b625a9b39a0b97885165741ed89c  design/admin/templates/shop/productsoverview.tpl
+19d928b2f45c8ba5ccb5f5eeebf11ef9  design/admin/templates/shop/productsoverview.tpl
 e437d2a93d1188090e425dae64cc2bc9  design/admin/templates/shop/removeorder.tpl
 bf967764f67262f33ca9e722aff5a9e3  design/admin/templates/shop/removeproductcategories.tpl
 9df0bf0dc7cffd78eeea0d987e9aeeaf  design/admin/templates/shop/removevattypes.tpl
@@ -597,7 +597,7 @@ e6f2beb981d05020c3f04859b9b191ff  design/admin/templates/workflow/edit.tpl
 ccf8ff98f9e278cda31b41d550ee0be6  design/admin/templates/workflow/eventtype/edit/event_ezwaituntildate.tpl
 e7081b42039be849f2a5fb783a687fe7  design/admin/templates/workflow/groupedit.tpl
 d40d56a87754538c12e5b46f5332a3f9  design/admin/templates/workflow/grouplist.tpl
-fc81f522cf9605d58e59f3f0f8838c46  design/admin/templates/workflow/processlist.tpl
+a378ff862a1c15794667c9b963b5dc9f  design/admin/templates/workflow/processlist.tpl
 70d1bb08e78f1694d97c4b84277970ce  design/admin/templates/workflow/view.tpl
 2f2a21d30560591b6274fb6361464e42  design/admin/templates/workflow/workflowlist.tpl
 a41265a8c8cf4698837a304aae23bb6a  design/admin3/fonts/IcoMoon.eot
@@ -11689,6 +11689,7 @@ e0ec2be7ab334f49db925ada56c2befc  kernel/classes/datatypes/ezxmltext/ezxmltextty
 42602e3dd7680c0dc3c41e9ffd305cba  kernel/classes/datatypes/ezxmltext/handlers/output/ezpdfxmloutput.php
 3f481aa0c6ec73f490d65b94efd5e25f  kernel/classes/datatypes/ezxmltext/handlers/output/ezplainxmloutput.php
 fd1cc980bbf2856ff3e73c3490103136  kernel/classes/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput.php
+d339c69f612a60bd8e952b480079d313  kernel/classes/expadminpagination.php
 0965c4a51ebfa3353d4a4bcf0ab9adc6  kernel/classes/expcleanuprss.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
@@ -12298,7 +12299,7 @@ fd88799fb0a2990fdfb1c921b2bc5cb1  kernel/setup/templateview.php
 44907c27aac8afc287c09b94e602c628  kernel/setup/toolbarlist.php
 f1022ef5d61fde60ae8ef94d8e85a6c0  kernel/setup/workflowevent.php
 89837202c9c8dfbf6cf86a18ae952678  kernel/shop/add.php
-64270e0ed52a8f3f5c9ef145da27000a  kernel/shop/archivelist.php
+3c6193c33a354633f232f9ae04ae2bd6  kernel/shop/archivelist.php
 62bd9fc531ff8eb1a03860af242ec06e  kernel/shop/archiveorder.php
 e9bd3a5bc6126cbb1543341c3f8e94ac  kernel/shop/basket.php
 2ef95e4c79e111b6bbab53107186092f  kernel/shop/checkout.php
@@ -12314,8 +12315,8 @@ adc56524786be82bbd4c5e5bf307b47d  kernel/shop/classes/ezredirectgateway.php
 0ad3d712191e101b263b1f809f58f44f  kernel/shop/classes/ezshopfunctions.php
 dabcca8ffa6bf638022ccfde7260e908  kernel/shop/classes/ezsimpleprice.php
 98add3a6b25a42c2dca221ed2d29a86c  kernel/shop/confirmorder.php
-c4dc428be44a38a2ab4f4c64f053b910  kernel/shop/currencylist.php
-a46ddb644589e33dd7ae08725db04513  kernel/shop/customerlist.php
+defbf5935ae791487e2c0dcc98d8d4d3  kernel/shop/currencylist.php
+44365ddc8cea909674e61da8100d75c9  kernel/shop/customerlist.php
 4ab0498c224b0e5009c96e304d6b67fb  kernel/shop/customerorderview.php
 85307d6a89ec93677df9b55e5557fa3a  kernel/shop/discountgroup.php
 11d16fb43a940b70f521a819f959282e  kernel/shop/discountgroupedit.php
@@ -12329,12 +12330,12 @@ d26b42844a97820d6e57a97d45c6123f  kernel/shop/ezshopoperationcollection.php
 c4010253eabac61babf03327ef4f6b23  kernel/shop/function_definition.php
 f17370d0fb9ce6bbede30f6e238649df  kernel/shop/module.php
 c8dd2912dda8da2e9bbb9e59fda9ccab  kernel/shop/operation_definition.php
-93efed87b369c11d2d3d0a3615d098b0  kernel/shop/orderlist.php
+57949fe7dae7efcff51680ab65d79af2  kernel/shop/orderlist.php
 8e30f3d65a8a00c44347c68b9b9c7c3a  kernel/shop/orderstatistics.php
 db0708dd0ccb7506461e539c8a8a52b9  kernel/shop/orderview.php
 6536d465cc04adc35f794a6a31e09952  kernel/shop/preferredcurrency.php
 87bb98721b2b5578f3d9b413d05a0995  kernel/shop/productcategories.php
-f72f8d44348b8e6611f77d29e21b4994  kernel/shop/productsoverview.php
+088cdd99ee299f8a4e8247d5e5893297  kernel/shop/productsoverview.php
 08b03e5de914fbc75e49e20659f35d03  kernel/shop/register.php
 4a076268865d7d7e3d985052ad866b56  kernel/shop/removeorder.php
 4e97503a168f4100c8ce94aea72fcebd  kernel/shop/setpreferredcurrency.php
@@ -12408,7 +12409,7 @@ e9d80482e46ae3e8b6d2b3d4a7d63420  kernel/workflow/ezworkflowfunctioncollection.p
 44ab1a41e745f8541615671f197410cf  kernel/workflow/list.php
 e12b72e26fa03bcb37b85dca835a421b  kernel/workflow/module.php
 d18d48fb5d6da6299784516cbf63016d  kernel/workflow/process.php
-b855b2543886eaf188ceaad828e2903e  kernel/workflow/processlist.php
+0e9c9f637221afc3df1b32f8da96e5e6  kernel/workflow/processlist.php
 639ca703a53bfae6cb4fda0dc2140fd0  kernel/workflow/run.php
 abb928c7474f1738a4bfb0b4acc6e286  kernel/workflow/view.php
 6aa5aa0a1a208c833cbecbc1c19be80e  kernel/workflow/workflowlist.php
@@ -12632,7 +12633,7 @@ dd0000ff484d4812b6cc00fdb70d3e3a  lib/version.php
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 2e28235808e963725c329bd537ecf57e  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
-a4653162b9377a900a1ffcbe80caca25  settings/admininterface.ini
+d8f7f3d3e04a11a09f7c94573139ad0d  settings/admininterface.ini
 a1be7ab463d96b8940b0b6ad2148a34e  settings/audit.ini
 1b4240b9c4d8b7cfa57f7c76b8e2d1a7  settings/binaryfile.ini
 95c129ae817de28cfc4ff616555fad21  settings/browse.ini

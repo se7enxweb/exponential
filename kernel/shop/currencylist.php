@@ -82,12 +82,10 @@ if ( $error !== false )
         $error['style'] = 'message-feedback';
 }
 
-switch ( eZPreferences::value( 'currencies_list_limit' ) )
-{
-    case '2': { $limit = 25; } break;
-    case '3': { $limit = 50; } break;
-    default:  { $limit = 10; } break;
-}
+// The sizes on offer are configured, not written here; the preference holds
+// the position in that list, which is what it has always held, so the sizes can
+// be changed without resetting anybody's choice.
+list( $limit, $limitChoice, $limitChoices ) = expAdminPagination::chosen( 'shop/currencylist', 'currencies_list_limit' );
 
 // fetch currencies
 $currencyList = eZCurrencyData::fetchList( null, true, $offset, $limit );
@@ -100,6 +98,8 @@ $tpl = eZTemplate::factory();
 $tpl->setVariable( 'currency_list', $currencyList );
 $tpl->setVariable( 'currency_list_count', $currencyCount );
 $tpl->setVariable( 'limit', $limit );
+$tpl->setVariable( 'limit_choices', $limitChoices );
+$tpl->setVariable( 'limit_choice', $limitChoice );
 $tpl->setVariable( 'view_parameters', $viewParameters );
 $tpl->setVariable( 'show_error_message', $error !== false );
 $tpl->setVariable( 'error', $error );

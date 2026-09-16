@@ -51,12 +51,10 @@ if ( count( $productClassList ) > 0 )
 if ( is_object( $productClass ) )
     $priceAttributeIdentifier = eZShopFunctions::priceAttributeIdentifier( $productClass );
 
-switch ( eZPreferences::value( 'productsoverview_list_limit' ) )
-{
-    case '2': { $limit = 25; } break;
-    case '3': { $limit = 50; } break;
-    default:  { $limit = 10; } break;
-}
+// The sizes on offer are configured, not written here; the preference holds
+// the position in that list, which is what it has always held, so the sizes can
+// be changed without resetting anybody's choice.
+list( $limit, $limitChoice, $limitChoices ) = expAdminPagination::chosen( 'shop/productsoverview', 'productsoverview_list_limit' );
 
 $sortingField = eZPreferences::value( 'productsoverview_sorting_field' );
 $sortingOrder = eZPreferences::value( 'productsoverview_sorting_order' );
@@ -70,6 +68,8 @@ $tpl->setVariable( 'price_attribute_identifier', $priceAttributeIdentifier );
 $tpl->setVariable( 'sorting_field', $sortingField );
 $tpl->setVariable( 'sorting_order', $sortingOrder );
 $tpl->setVariable( 'limit', $limit );
+$tpl->setVariable( 'limit_choices', $limitChoices );
+$tpl->setVariable( 'limit_choice', $limitChoice );
 $tpl->setVariable( 'view_parameters', $viewParameters );
 
 $Result = array();

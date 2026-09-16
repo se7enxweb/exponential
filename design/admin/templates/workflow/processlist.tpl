@@ -13,28 +13,18 @@
 <div class="context-toolbar">
 <div class="button-left">
     <p class="table-preferences">
-    {switch match=$page_limit}
-    {case match=25}
-        <a href={'/user/preferences/set/admin_workflow_processlist_limit/1'|ezurl} title="{'Show 10 items per page.'|i18n( 'design/admin/node/view/full' )}">10</a>
-        <span class="current">25</span>
-        <a href={'/user/preferences/set/admin_workflow_processlist_limit/3'|ezurl} title="{'Show 50 items per page.'|i18n( 'design/admin/node/view/full' )}">50</a>
-
-        {/case}
-
-        {case match=50}
-        <a href={'/user/preferences/set/admin_workflow_processlist_limit/1'|ezurl} title="{'Show 10 items per page.'|i18n( 'design/admin/node/view/full' )}">10</a>
-        <a href={'/user/preferences/set/admin_workflow_processlist_limit/2'|ezurl} title="{'Show 25 items per page.'|i18n( 'design/admin/node/view/full' )}">25</a>
-        <span class="current">50</span>
-        {/case}
-
-        {case}
-        <span class="current">10</span>
-        <a href={'/user/preferences/set/admin_workflow_processlist_limit/2'|ezurl} title="{'Show 25 items per page.'|i18n( 'design/admin/node/view/full' )}">25</a>
-        <a href={'/user/preferences/set/admin_workflow_processlist_limit/3'|ezurl} title="{'Show 50 items per page.'|i18n( 'design/admin/node/view/full' )}">50</a>
-        {/case}
-
-        {/switch}
-    </p>
+{* The sizes come from admininterface.ini [PaginationSettings] and the
+   preference stores the position in that list, so a site can offer the sizes
+   its own editors want. They used to be written out here as well as in the
+   module, which meant two lists that had to agree and no way to change either. *}
+{foreach $limit_choices as $limit_index => $limit_option}
+    {if eq( $limit_index|inc, $limit_choice )}
+        <span class="current">{$limit_option}</span>
+    {else}
+        <a href={concat( '/user/preferences/set/admin_workflow_processlist_limit/', $limit_index|inc )|ezurl} title="{'Show %count items per page.'|i18n( 'design/admin/node/view/full',, hash( '%count', $limit_option ) )}">{$limit_option}</a>
+    {/if}
+{/foreach}
+</p>
 </div>
 <div class="float-block"></div>
 </div>
