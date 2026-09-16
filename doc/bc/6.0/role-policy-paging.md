@@ -226,15 +226,20 @@ everything runs as while it is happening.
 
 ---
 
-## Not done: the window is not reachable here
+## Two copies of the policy window, and only one of them renders
 
-`policies.tpl` and `roles.tpl` are included only by
+`design/admin/templates/policies.tpl` and `roles.tpl` are included only by
 `design/admin/override/templates/windows_user.tpl`, and **no `override.ini` in
-this installation registers that file**. Both templates are therefore dead code
-here, and the improvement to `policies.tpl` cannot be seen on
-`/users/members/(tab)/locations` — that page renders `windows.tpl`, which has
-neither window.
+this installation registers that file**. They are dead code here.
 
-The change is kept because it is correct for any installation where the
-override is registered, which is where the stock administration interface puts
-it. Whether this fork meant to drop that window is a separate question.
+The ones that actually render are `design/admin/templates/tabs/user/policies.tpl`
+and `roles.tpl` — additional tabs, declared in `admininterface.ini` and pulled
+in through `window_controls.tpl`. They carried the same unbounded shape, and
+that is the copy the fix has to be in. Both are now bounded; the dead pair is
+left consistent with it rather than left behind.
+
+The engine settles which is which. `Number of unique templates used` in the
+debug report, on a **cold** cache, lists every template that rendered — 64 of
+them for a user group node view, `locations.tpl` and `tabs/user/policies.tpl`
+among them. On a warm cache the same page reports three, because only what was
+rendered fresh is listed: a cached page is not evidence of what a page uses.

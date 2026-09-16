@@ -212,6 +212,37 @@ repainting the cell.
 
 ---
 
+## The tab label counted the whole list
+
+The paging made the *list* cheap and left the *label* above it expensive. Both
+`design/admin/templates/window_controls.tpl` and the `admin3` copy wrote the
+Locations tab like this:
+
+```
+{'Locations (%count)'|i18n( ..., hash( '%count', $node.object.assigned_nodes|count ) )}
+```
+
+`assigned_nodes` is `assignedNodes()` with no limit. So every view of every node
+loaded every location of that object to put a number on a tab — whichever tab
+was open, including the ones that have nothing to do with locations. On an
+object with fifty thousand locations that is the whole cost the paging exists
+to avoid, paid on every page of the administration interface that shows it.
+
+It is `fetch( 'content', 'assigned_node_count', ... )` now: one `COUNT(*)`.
+
+The Policies tab beside it had the same shape and worse:
+
+```
+{def $assigned_policies = fetch( 'user', 'user_role', hash( 'user_id', ... ) )}
+```
+
+`user_role` merges `accessArray()` from every role the user holds and builds
+their entire permission set in PHP — asked for here only to count it. It is now
+the sum of `policy_count` per assigned role, which is one small query per role
+and no policy rows at all.
+
+---
+
 ## Tests
 
 `ai/bin/one/test_locations_pagination.py` drives the tab in a browser:

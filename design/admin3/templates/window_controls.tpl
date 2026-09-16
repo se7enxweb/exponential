@@ -20,9 +20,22 @@
 
 {if $admin_navigation_content_pref|is_string}{set $tabs_disabled = $admin_navigation_content_pref|not}{/if}
 
+{* The counts on the tab labels are counted, not measured by fetching the
+   thing and calling count() on it. Both of these are on every view of a user
+   or a user group, whichever tab is open.
+   
+   assigned_nodes|count above loaded every location of the object to put a
+   number on the Locations tab, which is the one thing the paged locations list
+   exists to avoid. fetch( user, user_role ) here built the user's entire
+   access array in php - every policy of every role they hold, merged - and it
+   was wanted only for the number on the Policies tab. *}
 {if eq( $navigation_part_name, 'ezusernavigationpart' )}
-{def $assigned_policies   = fetch( 'user', 'user_role', hash( 'user_id', $node.contentobject_id ) )
-     $assigned_roles      = fetch( 'user', 'member_of', hash( 'id', $node.contentobject_id ) )}
+{def $assigned_roles      = fetch( 'user', 'member_of', hash( 'id', $node.contentobject_id ) )
+     $assigned_policy_count = 0}
+{foreach $assigned_roles as $wc_role}
+    {set $assigned_policy_count = sum( $assigned_policy_count,
+                                       fetch( 'role', 'policy_count', hash( 'role_id', $wc_role.id ) ) )}
+{/foreach}
 {/if}
 
 {foreach ezini( 'WindowControlsSettings', 'AdditionalTabs', 'admininterface.ini' ) as $tab}
@@ -86,9 +99,9 @@
     {* Locations *}
     <li id="node-tab-locations" class="middle{if $node_tab_index|eq('locations')} selected{/if}">
         {if $tabs_disabled}
-            <span class="disabled" title="{'Tab is disabled, enable with toggler to the left of these tabs.'|i18n( 'design/admin/node/view/full' )}">{'Locations (%count)'|i18n( 'design/admin/node/view/full',, hash( '%count', $node.object.assigned_nodes|count ) )}</span>
+            <span class="disabled" title="{'Tab is disabled, enable with toggler to the left of these tabs.'|i18n( 'design/admin/node/view/full' )}">{'Locations (%count)'|i18n( 'design/admin/node/view/full',, hash( '%count', fetch( 'content', 'assigned_node_count', hash( 'object_id', $node.object.id ) ) ) )}</span>
         {else}
-            <a href={concat( $node_url_alias, '/(tab)/locations' )|ezurl} title="{'Show location overview.'|i18n( 'design/admin/node/view/full' )}">{'Locations (%count)'|i18n( 'design/admin/node/view/full',, hash( '%count', $node.object.assigned_nodes|count ) )}</a>
+            <a href={concat( $node_url_alias, '/(tab)/locations' )|ezurl} title="{'Show location overview.'|i18n( 'design/admin/node/view/full' )}">{'Locations (%count)'|i18n( 'design/admin/node/view/full',, hash( '%count', fetch( 'content', 'assigned_node_count', hash( 'object_id', $node.object.id ) ) ) )}</a>
         {/if}
     </li>
 

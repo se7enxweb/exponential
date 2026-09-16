@@ -557,8 +557,8 @@ c4ada824b622bb2f6cff0d893a3c26b4  design/admin/templates/state/assign.tpl
 1c5edb6fdd88732140688f1990fef9aa  design/admin/templates/state/group_edit.tpl
 967e8cd19b5535302f1de434e45fc26f  design/admin/templates/state/groups.tpl
 eea5d6ee15a9ba5d2ab567d3c2139aab  design/admin/templates/state/view.tpl
-bde165490bd89782caace27e70720f47  design/admin/templates/tabs/user/policies.tpl
-d6620541858736d232727f407aee0a7d  design/admin/templates/tabs/user/policies_header.tpl
+1defb614dfd2a701dec097119bc54c98  design/admin/templates/tabs/user/policies.tpl
+445920c068563275e48552d4bf839276  design/admin/templates/tabs/user/policies_header.tpl
 6929c141fc2d6bd43532ae27d17a7707  design/admin/templates/tabs/user/roles.tpl
 237a0259b99105209be9ec58938d7b04  design/admin/templates/tabs/user/roles_header.tpl
 6e8aaeb18193f1a030687d2ece63b9e5  design/admin/templates/test.tpl
@@ -586,7 +586,7 @@ a50dbbb7f5bd2d774da5916fe5984a6d  design/admin/templates/visual/templatelist.tpl
 1a49998215f5ff728bd6b98124b7ecf0  design/admin/templates/visual/templateview.tpl
 99bffc8a164702c52b762b1dd300a15c  design/admin/templates/visual/toolbar.tpl
 e0bcde19ca3e377bb55d86014ee0c876  design/admin/templates/visual/toolbarlist.tpl
-4d134d36aa5aafe1a2197c8ae64a1ae9  design/admin/templates/window_controls.tpl
+543b75192f6ad0e664301e0cd40f93a2  design/admin/templates/window_controls.tpl
 aba9d45cd7a9ac859372e310bb43be04  design/admin/templates/window_controls_extratabs.tpl
 b4481aa8c6dd7b66accd2fea3c4480ba  design/admin/templates/windows.tpl
 6de7723b1c0bc39a3383cffd028dfd0e  design/admin/templates/windows_extratabs.tpl
@@ -690,7 +690,7 @@ a61924c994509f9d3bd7ed4fe4b29c7b  design/admin3/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin3/templates/page_topmenuitem.tpl
 3ec339b3f69b49654da1e71d6fd1d105  design/admin3/templates/pagelayout.tpl
 5f8ea5f00d6cdd483d800de020b22f9f  design/admin3/templates/parts/user/menu.tpl
-d4ab527f52186cecd10aefaf1a7097c3  design/admin3/templates/window_controls.tpl
+9c8a63f22fbf1ac6100d944d68fd114a  design/admin3/templates/window_controls.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -2281,7 +2281,7 @@ d235809fe8490e97218403d3cfe12404  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 1bc5d7888e4c8a699b48624c73cbbf35  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 dd8f6ec3976bdee1a688a25ee3761ee9  doc/bc/6.0/hardening.md
 e03c2aa19443976efb300d6226d8b71d  doc/bc/6.0/kickstartercli.md
-5c98db23b75eeec2e9324cd54e19ea51  doc/bc/6.0/locations-tab-paging-and-sorting.md
+5f063b419152d919981820ae436cf799  doc/bc/6.0/locations-tab-paging-and-sorting.md
 8aae77691af6b35a093d9229b3757ed3  doc/bc/6.0/multi-node-edit.md
 885a488ce80a5e6d147ea79d6ed9f42b  doc/bc/6.0/opml.md
 2fc39d399e6978352dd88a9182bca8b0  doc/bc/6.0/php8.md
@@ -2292,7 +2292,7 @@ a1af75a37c1ce56738bec292d024352e  doc/bc/6.0/preload.md
 e1736c2b2599b91bb982b5ffd42bd4ce  doc/bc/6.0/rad-extension-points.md
 7044272d1b88c3645967fea9afdf1901  doc/bc/6.0/rad-extension-surface.md
 02cab810b7ee149bb10c8ebb1d63d266  doc/bc/6.0/rad-security.md
-b0ebf835be3d538466d70b3d90c407f2  doc/bc/6.0/role-policy-paging.md
+17c36c78d2049406ad83f0cc175b50df  doc/bc/6.0/role-policy-paging.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
 adac5192811bf518d52266dd4a6b0e72  doc/branch-overview
 0959bdd0da20ca86c663052e954574b8  doc/changelogs/2.9/CHANGELOG-2.9-1

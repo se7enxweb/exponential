@@ -1,5 +1,16 @@
-{* Policy list window *}
-{if $assigned_policies}
+{* Policy list window.
+
+   Bounded. This listed every policy of every role assigned to the user, and
+   each row then asked the database for its limitations and resolved their
+   value names - a list of lists with a query per row. A role is free to carry
+   policies in the hundreds of thousands, and this window is rendered on every
+   view of a user or a user group whichever tab is on top, so at that size no
+   page of the user tree could be opened at all.
+
+   Each role now shows its first few and says how many more there are, with the
+   role's own page - which is paged - for the rest. *}
+{def $policy_preview = ezini( 'RoleSettings', 'PolicyPreviewPerRole', 'site.ini' )|int()}
+{if $assigned_policy_count}
 
 <table class="list" cellspacing="0" summary="{'Policy list and the Role that are assignet to current node.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
@@ -13,9 +24,12 @@
 {* For all roles... *}
 {section var=AssignedRoles loop=$assigned_roles}
 
-{* For each policy (if any) within a role... *}
-{let role_without_cond_policies = fetch(role,role,hash(role_id,$AssignedRoles.item.id))}
-{section var=Policy loop=$:role_without_cond_policies.policies sequence=array( bglight, bgdark )}
+{* For the first few policies of that role... *}
+{let role_policy_count = fetch( 'role', 'policy_count', hash( 'role_id', $AssignedRoles.item.id ) )
+     role_policies     = fetch( 'role', 'policies', hash( 'role_id', $AssignedRoles.item.id,
+                                                          'offset', 0,
+                                                          'limit', $policy_preview ) )}
+{section var=Policy loop=$:role_policies sequence=array( bglight, bgdark )}
 
 <tr class="{$Policy.sequence}">
 
@@ -67,6 +81,15 @@
 
 </tr>
 {/section}
+
+{* What is not shown, and where it is. The role's own page is paged. *}
+{if $:role_policy_count|gt( $policy_preview )}
+<tr class="bglight">
+    <td colspan="5">
+        <a href={concat( '/role/view/', $AssignedRoles.item.id )|ezurl}>{'%count more in the %role_name role'|i18n( 'design/admin/node/view/full',, hash( '%count', sub( $:role_policy_count, $policy_preview ), '%role_name', $AssignedRoles.item.name ) )|wash}</a>
+    </td>
+</tr>
+{/if}
 {/let}
 {/section}
 
