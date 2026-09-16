@@ -16,6 +16,29 @@
 
 class eZPackageFunctionCollection
 {
+    /**
+     * How many packages the list would hold, for the pager.
+     *
+     * Counted by asking for the list without a window, which reads every
+     * package definition the repository holds. Packages live on disk and an
+     * installation has tens of them rather than thousands, so this is the
+     * honest price of a pager here; a repository that ever grew past that
+     * should be given a count that does not read them all.
+     *
+     * @param array|false $filterArray
+     * @param string|false $repositoryID
+     * @return array
+     */
+    function fetchListCount( $filterArray, $repositoryID )
+    {
+        $all = $this->fetchList( $filterArray, false, false, $repositoryID );
+
+        if ( !isset( $all['result'] ) || !is_array( $all['result'] ) )
+            return array( 'result' => 0 );
+
+        return array( 'result' => count( $all['result'] ) );
+    }
+
     function fetchList( $filterArray, $offset, $limit, $repositoryID )
     {
         $filterParams = array();
