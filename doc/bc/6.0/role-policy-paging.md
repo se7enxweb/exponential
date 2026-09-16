@@ -1,0 +1,184 @@
+# Paging the role and policy screens
+
+The same treatment the locations tab got, applied to the permission screens.
+
+An installation that serves many sites accumulates roles, and roles accumulate
+policies. There is no ceiling on either: a role is free to carry hundreds of
+thousands of policies, and on a large multi-site installation they do. The
+screens that show them were written as though they never would.
+
+---
+
+## What was wrong
+
+### `role/edit` and `role/view`
+
+Both did this:
+
+```php
+$policies = $role->attribute( 'policies' );
+```
+
+`policyList()` fetches **every** policy the role has, with no limit, and keeps
+them on the object. That is right for the permission system — it has to see all
+of them to answer a question — and wrong for a screen, which shows twenty five.
+On a role carrying policies in the millions the page exhausts memory before the
+first row is written.
+
+The heading then called `$policies|count`, which is free only because the whole
+list was already in hand — the cost that had to go.
+
+### `role/list`
+
+Already paged its roles. But every view of it also ran:
+
+```php
+$tempRoles = eZRole::fetchList( $temporaryVersions = true );
+$tpl->setVariable( 'temp_roles', $tempRoles );
+```
+
+That is one row per role anybody has open in the editor, unbounded, each loaded
+with its policies — and **no template has ever used `$temp_roles`**. Removed.
+
+### The policies window on a user or user group
+
+`policies.tpl` was the worst of them:
+
+```
+{let assigned_policies=fetch( user, member_of ... )
+     assigned_policies=fetch( user, user_role, hash( user_id, ... ) )}
+```
+
+`fetch( user, user_role )` builds the user's **entire access array** in PHP by
+merging `accessArray()` from every role they hold — and it was asked for only
+to put a number in the heading. Then, for every assigned role, the template
+looped over **every** policy of that role, and each row asked the database for
+its limitations and resolved their value names: unbounded × unbounded, with an
+N+1 inside.
+
+---
+
+## What it does now
+
+### `eZRole::policyCount()` and `eZRole::policyPage()`
+
+```php
+$role->policyCount();                 // SELECT COUNT(*), no rows loaded
+$role->policyPage( $offset, $limit ); // one page, in the query
+```
+
+`policyPage()` deliberately does **not** store its result in `$this->Policies`.
+That property is the whole list as far as every other caller is concerned, and
+a page left there would be silently wrong for all of them.
+
+`policyList()` gained `id` as a final sort key. Without it two policies of the
+same module and function are ordered by whatever the database returns, which is
+free to differ between queries — and a paged view of that drops and repeats
+rows as you page through.
+
+### Fetch functions
+
+```
+{fetch( 'role', 'policy_count', hash( 'role_id', 17 ) )}
+{fetch( 'role', 'policies', hash( 'role_id', 17, 'offset', 0, 'limit', 25 ) )}
+```
+
+### The screens
+
+`role/edit` and `role/view` fetch one page and a count, and carry the offset as
+**`(policy_offset)`** — not `(offset)`, so a second list added to either page
+later does not move with it:
+
+```
+/role/view/17/(policy_offset)/25
+```
+
+The page size is `site.ini`:
+
+```ini
+[RoleSettings]
+PoliciesPerPage=25
+PolicyPreviewPerRole=10
+```
+
+#### One trap worth naming
+
+Editing a role works on a **temporary version**, which is a row of its own with
+an id of its own. The first version of the pager built its links from
+`$role.id` and so pointed at `/role/edit/20` while the page was `/role/edit/17`.
+That is not cosmetic: `/role/edit/<the draft>` edits the draft directly, and
+Apply would then write back to the wrong row. The page uri is now passed in
+from PHP, built from the id in the address.
+
+### The policies window
+
+Each role shows its first `PolicyPreviewPerRole` policies and then a line
+saying how many more there are, linking to the role's own page — which is
+paged. The heading's count comes from `policy_count` per role, not from
+building the access array.
+
+That makes the window bounded by *roles × preview size* rather than by
+*roles × policies*.
+
+---
+
+## Measured
+
+Role 17, 401 policies:
+
+| | before | after |
+|---|---|---|
+| `role/edit/17` | all 401 rows drawn | 25 rows, **0.5 s** |
+| `role/view/17` | all 401 rows drawn | 25 rows, **0.5 s** |
+| heading | counted the list in hand | `Policies (401)` from the database |
+| pager | none | `/role/view/17/(policy_offset)/25` |
+
+---
+
+## Files
+
+| File | |
+|---|---|
+| `kernel/classes/ezrole.php` | `policyCount()`, `policyPage()`, stable sort |
+| `kernel/role/ezrolefunctioncollection.php` | `fetchRolePolicies()`, `fetchRolePolicyCount()` |
+| `kernel/role/function_definition.php` | `policies`, `policy_count` |
+| `kernel/role/edit.php`, `kernel/role/view.php` | one page, a count, `policy_page_uri` |
+| `kernel/role/list.php` | the unused unbounded temp-role fetch removed |
+| `design/admin/templates/role/edit.tpl`, `role/view.tpl` | pager, count from the database |
+| `design/admin/templates/policies.tpl` | bounded preview per role |
+| `settings/site.ini` | `PoliciesPerPage`, `PolicyPreviewPerRole` |
+
+---
+
+## Tests
+
+```
+php ai/bin/one/make_bulk_policies.php 17 400
+ROLE=17 TOTAL=401 EZ_ADMIN_PASSWORD=... python3 ai/bin/one/test_role_policy_paging.py
+php ai/bin/one/make_bulk_policies.php remove 17
+```
+
+18 assertions: both screens render one page quickly, the pager exists and uses
+`(policy_offset)`, **the address keeps the role id rather than the draft's**,
+the heading counts all of them, the last page loads, and `role/list` still
+works. All passing.
+
+`make_bulk_policies.php` also takes `role`/`remove-role`, which builds a
+throwaway role instead of adding thousands of policies to a live one — adding
+them to Administrator works, but it edits the permissions of the account
+everything runs as while it is happening.
+
+---
+
+## Not done: the window is not reachable here
+
+`policies.tpl` and `roles.tpl` are included only by
+`design/admin/override/templates/windows_user.tpl`, and **no `override.ini` in
+this installation registers that file**. Both templates are therefore dead code
+here, and the improvement to `policies.tpl` cannot be seen on
+`/users/members/(tab)/locations` — that page renders `windows.tpl`, which has
+neither window.
+
+The change is kept because it is correct for any installation where the
+override is registered, which is where the stock administration interface puts
+it. Whether this fork meant to drop that window is a separate question.

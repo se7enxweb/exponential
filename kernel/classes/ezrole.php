@@ -786,11 +786,87 @@ class eZRole extends eZPersistentObject
         return $accessArray;
     }
 
+    /**
+     * How many policies this role has.
+     *
+     * The pager needs the total and a page does not contain it. Counted by the
+     * database: a role on a large installation can have more policies than are
+     * worth bringing into php merely to call count() on them.
+     *
+     * @param int|false $roleID defaults to this role
+     * @return int
+     */
+    function policyCount( $roleID = false )
+    {
+        $roleID = $roleID === false ? (int)$this->attribute( 'id' ) : (int)$roleID;
+
+        if ( !$roleID )
+            return 0;
+
+        return (int)eZPersistentObject::count( eZPolicy::definition(),
+                                               array( 'role_id'     => $roleID,
+                                                      'original_id' => 0 ) );
+    }
+
+    /**
+     * One page of this role's policies.
+     *
+     * policyList() loads every policy of the role and keeps them, which is what
+     * the permission system wants - it has to see all of them to answer a
+     * question. A screen does not: it shows twenty five at a time, and on an
+     * installation whose roles carry policies in the millions, loading them all
+     * to show twenty five is the difference between a page that renders and one
+     * that exhausts memory before the first row.
+     *
+     * The result is deliberately not kept in $this->Policies: that property is
+     * the whole list as far as everything else is concerned, and a page left
+     * there would be silently wrong for every caller that expects all of them.
+     *
+     * @param int $offset
+     * @param int|false $limit false for all of them, which is policyList()
+     * @return eZPolicy[]
+     */
+    function policyPage( $offset = 0, $limit = false )
+    {
+        $limits = null;
+        if ( $limit !== false && (int)$limit > 0 )
+            $limits = array( 'offset' => (int)$offset, 'length' => (int)$limit );
+
+        $policies = eZPersistentObject::fetchObjectList(
+            eZPolicy::definition(),
+            null,
+            array( 'role_id'     => (int)$this->attribute( 'id' ),
+                   'original_id' => 0 ),
+            array( 'module_name' => 'asc', 'function_name' => 'asc', 'id' => 'asc' ),
+            $limits, true );
+
+        if ( !is_array( $policies ) )
+            return array();
+
+        // The same decoration policyList() applies, so a row of a page reads
+        // exactly like the same row of the whole list.
+        if ( $this->LimitIdentifier )
+        {
+            foreach ( array_keys( $policies ) as $policyKey )
+            {
+                $policies[$policyKey]->setAttribute( 'limit_identifier', 'User_' . $this->attribute( 'limit_identifier' ) );
+                $policies[$policyKey]->setAttribute( 'limit_value', $this->attribute( 'limit_value' ) );
+                $policies[$policyKey]->setAttribute( 'user_role_id', $this->attribute( 'user_role_id' ) );
+            }
+        }
+
+        return $policies;
+    }
+
     function policyList()
     {
         if ( !isset( $this->Policies ) )
         {
-            $sorting = array( 'module_name' => 'asc', 'function_name' => 'asc' );
+            // id is the tie break. Without it two policies of the same module and
+            // function are ordered by whatever the database returns, which is
+            // free to differ between queries - and a paged view of that drops
+            // and repeats rows as you page through it.
+            $sorting = array( 'module_name' => 'asc', 'function_name' => 'asc', 'id' => 'asc' );
             $policies = eZPersistentObject::fetchObjectList(
                 eZPolicy::definition(),
                 null,

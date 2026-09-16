@@ -457,7 +457,7 @@ cde3445dc0fd729931be753ec2d1886c  design/admin/templates/parts/my/menu.tpl
 0a917005c5079ffe1b4888a0f75605c2  design/admin/templates/pdf/edit.tpl
 47b7941276ceff7fea62cbfb08874cf2  design/admin/templates/pdf/edit_validation.tpl
 a54f6517500ab6e895c6d117967a3858  design/admin/templates/pdf/list.tpl
-2a7219d194939c9f5e9f4a8058568c3b  design/admin/templates/policies.tpl
+b312cbeacfe4c528105643b2941b7554  design/admin/templates/policies.tpl
 23f996c1bf768df117b41f5340051432  design/admin/templates/popupmenu/popup_bookmark_menu.tpl
 9788d828bdf8a82283aaae5f158faaa9  design/admin/templates/popupmenu/popup_class_menu.tpl
 999268e5eaf3982b7306534ba7aa1080  design/admin/templates/popupmenu/popup_context_menu.tpl
@@ -474,10 +474,10 @@ d9fee2f6619ee8465044a7ff4ab6f448  design/admin/templates/relations.tpl
 b71b6326a1ae3acd1916ef7726377a6c  design/admin/templates/role/createpolicystep1.tpl
 b1c3fcefb836463789fdf8d53e0a1188  design/admin/templates/role/createpolicystep2.tpl
 d80e987997dc3d881970e77257a1a579  design/admin/templates/role/createpolicystep3.tpl
-861c60e73848d32efc1462d3c0af7c22  design/admin/templates/role/edit.tpl
+6cda17071c64d1df3efddd04a161f1a3  design/admin/templates/role/edit.tpl
 f8c01135bb7e2884cbe10f0c95b361ad  design/admin/templates/role/list.tpl
 ba29de815cbbffc23c6b2affdd51c7e6  design/admin/templates/role/policyedit.tpl
-62e9a4361e70e42ee6131612355d3077  design/admin/templates/role/view.tpl
+1561bf19e1baaa7540ecf7b43cb14408  design/admin/templates/role/view.tpl
 25eaf3569b53b03b8751d9feed2e6b95  design/admin/templates/roles.tpl
 47230f94fd06f5c248de1f5091b09dfb  design/admin/templates/rss/browse_destination.tpl
 c5ab629376b20828ede5bb3c38fb5e8c  design/admin/templates/rss/browse_image.tpl
@@ -2292,6 +2292,7 @@ a1af75a37c1ce56738bec292d024352e  doc/bc/6.0/preload.md
 e1736c2b2599b91bb982b5ffd42bd4ce  doc/bc/6.0/rad-extension-points.md
 7044272d1b88c3645967fea9afdf1901  doc/bc/6.0/rad-extension-surface.md
 02cab810b7ee149bb10c8ebb1d63d266  doc/bc/6.0/rad-security.md
+a3b0bb9c471ef0bab70a782db6623dec  doc/bc/6.0/role-policy-paging.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
 adac5192811bf518d52266dd4a6b0e72  doc/branch-overview
 0959bdd0da20ca86c663052e954574b8  doc/changelogs/2.9/CHANGELOG-2.9-1
@@ -11773,7 +11774,7 @@ bc9ea8d15ef038f0306166517e5f69ee  kernel/classes/ezproductcategory.php
 73245e0e4ca9610a848c0dc706ac1401  kernel/classes/ezproductcollectionitem.php
 0f5c4a575d4a3ee5e920b79cde2c88ed  kernel/classes/ezproductcollectionitemoption.php
 32554d9feb32a8220a06b2404f2f37ea  kernel/classes/ezredirectmanager.php
-2a8264e29ebd8ccec93840ecb42fce09  kernel/classes/ezrole.php
+d777e037e78c0d132fbb29faffc01e5f  kernel/classes/ezrole.php
 b8581080a60d71312bb7e89ecc25c40f  kernel/classes/ezrssexport.php
 b7521661108b60bfe086f1a48414befe  kernel/classes/ezrssexportitem.php
 723f0081e4efa3775f1592506cbb336f  kernel/classes/ezrssexportopmlitem.php
@@ -12186,13 +12187,13 @@ df080fc568ad46e8ddf1225ac92a35b5  kernel/private/rest/classes/sync/updates.php
 f1f136dec09d6bbc480cfb7dcb34b337  kernel/private/structs/ezpautoloadfilefindcontext.php
 f7107d9fbe4e4f3f64b8e8ddced98961  kernel/role/assign.php
 a1bc36057a790231b443e94bc702bfa6  kernel/role/copy.php
-1c8b2e0492f819b277c01702d258fe02  kernel/role/edit.php
-505b0747304e879ee4bba22421039a9d  kernel/role/ezrolefunctioncollection.php
-5c6cbadd43b96763789cde662034eb2a  kernel/role/function_definition.php
-b3ba990a051baaeb1167655e8a28ea00  kernel/role/list.php
+b640d6987bb4cf5c9549d07b25abc040  kernel/role/edit.php
+7dc8ba7faa49cc987230154d7cf29ff1  kernel/role/ezrolefunctioncollection.php
+cd029849a45369cc74865c96b6791c92  kernel/role/function_definition.php
+7df8519b5e132320b7047e0fa349ef29  kernel/role/list.php
 746ee50d9a9e330e6b7b9161150af45d  kernel/role/module.php
 0c74b231437a7091b8b66c3440a76566  kernel/role/policyedit.php
-afb3d92199e94e18e95dbc796f44d390  kernel/role/view.php
+00b2a1442840dc7b8f143d926739dcb7  kernel/role/view.php
 7d507cf27f5124bc7ebf6b12ee9618d6  kernel/rss/edit_export.php
 c58e43bdbae6bc3813dbc9629eec6d04  kernel/rss/edit_functions.php
 a296faff3da628697adc18101efdaa78  kernel/rss/edit_import.php
@@ -12690,7 +12691,7 @@ a2fd754ba92623735e9de686c58089df  settings/override/site.ini.append.php.user-bac
 241079c46c8f59d2adecefe9bc138813  settings/setup.ini
 3ca6d15ef2b06dd1eab942d5701a1051  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-f979276a478c090f29e683e73b60c4c0  settings/site.ini
+9e54d57ebd59ac591853cd79cb5b1230  settings/site.ini
 3b80d8492cf423b549db5460a410d3dc  settings/siteaccess/admin/content.ini.append.php
 bf92bfcf2bb4064ba1963e6c66caca21  settings/siteaccess/admin/contentstructuremenu.ini.append.php
 6b2cc02d0c3e79de6f9de6a6b78a72c5  settings/siteaccess/admin/ezoe.ini.append.php

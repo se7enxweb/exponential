@@ -75,10 +75,11 @@ $tpl = eZTemplate::factory();
 
 $roles = eZRole::fetchByOffset( $offset, $limit, $asObject = true, $ignoreTemp = true );
 $roleCount = eZRole::roleCount();
-$tempRoles = eZRole::fetchList( $temporaryVersions = true );
+// The temporary roles were fetched here and handed to the template, which has
+// never used them. The list is unbounded - one row per role being edited - and
+// every one of them was loaded with its policies on every view of this page.
 $tpl->setVariable( 'roles', $roles );
 $tpl->setVariable( 'role_count', $roleCount );
-$tpl->setVariable( 'temp_roles', $tempRoles );
 $tpl->setVariable( 'module', $Module );
 $tpl->setVariable( 'view_parameters', $viewParameters );
 $tpl->setVariable( 'limit', $limit );

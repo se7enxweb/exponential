@@ -21,7 +21,7 @@
 
 <div class="block">
 <fieldset>
-<legend>{'Policies (%policies_count)'|i18n( 'design/admin/role/view',, hash( '%policies_count', $policies|count ) )}</legend>
+<legend>{'Policies (%policies_count)'|i18n( 'design/admin/role/view',, hash( '%policies_count', $policy_count ) )}</legend>
 {section show=$policies}
 <table class="list" cellspacing="0">
 <tr>
@@ -72,6 +72,20 @@
 </tr>
 {/section}
 </table>
+{* The standard admin pager, on its own offset so a second list on this page
+   would not move with it. The policy list is paged in the database: a role can
+   carry more policies than a screen can draw or php can hold. *}
+{if $policy_count|gt( $policy_limit )}
+<div class="context-toolbar">
+{include name=PolicyNavigator
+         uri='design:navigator/google.tpl'
+         offset_name='policy_offset'
+         page_uri=$policy_page_uri
+         item_count=$policy_count
+         view_parameters=$view_parameters
+         item_limit=$policy_limit}
+</div>
+{/if}
 {section-else}
 <p>{'There are no policies set up for this role.'|i18n( 'design/admin/role/view' )}</p>
 {/section}
