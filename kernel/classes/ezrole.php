@@ -1243,7 +1243,31 @@ class eZRole extends eZPersistentObject
         }
     }
 
-    static function fetchByOffset( $offset, $limit, $asObject = true, $ignoreTemp = false, $ignoreNew = true )
+    /**
+     * The columns the role list may be sorted on.
+     *
+     * The keys are what a url may say. Nothing outside this table reaches the
+     * query, so the value can come straight off the address bar.
+     *
+     * @return array
+     */
+    static function sortColumnsForList()
+    {
+        return array( 'id' => 'id', 'name' => 'name' );
+    }
+
+    /**
+     * @param int $offset
+     * @param int $limit
+     * @param bool $asObject
+     * @param bool $ignoreTemp
+     * @param bool $ignoreNew
+     * @param string|false $sortField one of sortColumnsForList(); anything else
+     *        sorts by name, which is what this has always done
+     * @param string $sortOrder 'asc' or 'desc'
+     */
+    static function fetchByOffset( $offset, $limit, $asObject = true, $ignoreTemp = false, $ignoreNew = true,
+                                   $sortField = false, $sortOrder = 'asc' )
     {
 
         if ( $ignoreTemp && $ignoreNew )
@@ -1256,10 +1280,23 @@ class eZRole extends eZPersistentObject
         else
             $igTemp = null;
 
+        $columns = self::sortColumnsForList();
+        $column  = ( is_string( $sortField ) && isset( $columns[$sortField] ) ) ? $columns[$sortField] : 'name';
+        // Lower case deliberately: fetchObjectList() tests the direction with
+        // $sort_type == "desc", so anything else - 'DESC' included - is taken
+        // as ascending, silently and with no error.
+        $order   = ( strtolower( (string)$sortOrder ) === 'desc' ) ? 'desc' : 'asc';
+
+        // id is the tie break, so that two roles of the same name keep a stable
+        // order between queries and paging cannot drop or repeat one.
+        $sorting = array( $column => $order );
+        if ( $column !== 'id' )
+            $sorting['id'] = 'asc';
+
         return eZPersistentObject::fetchObjectList( eZRole::definition(),
                                                     null,
                                                     $igTemp,
-                                                    array( 'name' => 'ASC' ),
+                                                    $sorting,
                                                     array( 'offset' => $offset, 'length' => $limit ),
                                                     $asObject );
     }

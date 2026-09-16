@@ -70,10 +70,26 @@ if ( $http->hasPostVariable( 'NewButton' )  )
     return $Module->redirectToView( 'edit', array( $role->attribute( 'id' ) ) );
 }
 
-$viewParameters = array( 'offset' => $offset );
+// Sorted by the database, not in the browser: the list is shown a page at a
+// time, so reordering the rows on screen would sort ten of however many there
+// are. The column is checked against eZRole::sortColumnsForList() inside
+// fetchByOffset(), so it can come straight off the address.
+$userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+
+$sortField = isset( $userParameters['sort'] ) ? (string)$userParameters['sort'] : 'name';
+$sortOrder = ( isset( $userParameters['dir'] ) && strtolower( $userParameters['dir'] ) === 'desc' ) ? 'desc' : 'asc';
+
+$columns = eZRole::sortColumnsForList();
+if ( !isset( $columns[$sortField] ) )
+    $sortField = 'name';
+
+$viewParameters = array( 'offset' => $offset,
+                         'sort'   => $sortField,
+                         'dir'    => $sortOrder );
 $tpl = eZTemplate::factory();
 
-$roles = eZRole::fetchByOffset( $offset, $limit, $asObject = true, $ignoreTemp = true );
+$roles = eZRole::fetchByOffset( $offset, $limit, $asObject = true, $ignoreTemp = true, $ignoreNew = true,
+                                $sortField, $sortOrder );
 $roleCount = eZRole::roleCount();
 // The temporary roles were fetched here and handed to the template, which has
 // never used them. The list is unbounded - one row per role being edited - and
@@ -83,6 +99,9 @@ $tpl->setVariable( 'role_count', $roleCount );
 $tpl->setVariable( 'module', $Module );
 $tpl->setVariable( 'view_parameters', $viewParameters );
 $tpl->setVariable( 'limit', $limit );
+$tpl->setVariable( 'role_sort', array( 'field'     => $sortField,
+                                       'direction' => $sortOrder,
+                                       'opposite'  => $sortOrder === 'asc' ? 'desc' : 'asc' ) );
 
 
 $Result = array();

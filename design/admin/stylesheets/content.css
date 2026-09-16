@@ -279,3 +279,6 @@ table.list th.sortable a.sort-link { display: block; text-decoration: none; colo
 table.list th.sortable:hover a.sort-link { text-decoration: underline; }
 table.list th.sorted a.sort-link { font-weight: 700; }
 .sort-arrow { display: inline-block; width: 1em; font-size: .8em; color: #6a6a72; }
+
+/* The role list's id column: a number, read against the name beside it. */
+table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }

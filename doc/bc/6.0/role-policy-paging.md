@@ -30,7 +30,12 @@ list was already in hand — the cost that had to go.
 
 ### `role/list`
 
-Already paged its roles. But every view of it also ran:
+Already paged its roles, in the database — `fetchByOffset()` with a real
+`LIMIT`, and `roleCount()` a real `COUNT(*)`. It also has a 10/25/50 per-page
+selector, kept as a user preference. What it did not have was any way to order
+the list, or the role id anywhere on screen.
+
+It also ran, on every view:
 
 ```php
 $tempRoles = eZRole::fetchList( $temporaryVersions = true );
@@ -82,6 +87,42 @@ rows as you page through.
 {fetch( 'role', 'policy_count', hash( 'role_id', 17 ) )}
 {fetch( 'role', 'policies', hash( 'role_id', 17, 'offset', 0, 'limit', 25 ) )}
 ```
+
+### The role list: an ID column, and sortable headings
+
+The id is what the rest of the interface addresses a role by — `/role/view/17`,
+`/role/edit/17` — and it was nowhere on the page that lists them. It is now the
+second column, and both it and Name sort:
+
+```
+/role/list/(sort)/id/(dir)/desc
+```
+
+Sorting is done by the database, for the same reason as everywhere else here:
+the list is shown a page at a time, so reordering the rows on screen would sort
+ten of however many there are. The column is checked against
+`eZRole::sortColumnsForList()`, so the value can come straight off the address;
+anything else sorts by name, which is what this has always done. `id` is the
+final sort key, so two roles of the same name keep a stable order and paging
+cannot drop or repeat one.
+
+The headings are `parts/sortheader.tpl` — the same component the RSS list and
+the locations tab use.
+
+#### A trap in eZPersistentObject
+
+`fetchObjectList()` decides the direction with:
+
+```php
+if ( $sort_type == "desc" )
+```
+
+That is case sensitive. `array( 'name' => 'DESC' )` is therefore **ascending**,
+silently, with no error and no warning — which is exactly what the first
+version of this did, marking the heading as descending while the rows came back
+ascending. The sort direction is now lower-cased before it is handed over.
+
+Worth knowing before writing any other sorted `fetchObjectList()` call.
 
 ### The screens
 
@@ -143,7 +184,8 @@ Role 17, 401 policies:
 | `kernel/role/ezrolefunctioncollection.php` | `fetchRolePolicies()`, `fetchRolePolicyCount()` |
 | `kernel/role/function_definition.php` | `policies`, `policy_count` |
 | `kernel/role/edit.php`, `kernel/role/view.php` | one page, a count, `policy_page_uri` |
-| `kernel/role/list.php` | the unused unbounded temp-role fetch removed |
+| `kernel/role/list.php` | sorting, and the unused unbounded temp-role fetch removed |
+| `design/admin/templates/role/list.tpl` | the ID column and sortable headings |
 | `design/admin/templates/role/edit.tpl`, `role/view.tpl` | pager, count from the database |
 | `design/admin/templates/policies.tpl` | bounded preview per role |
 | `settings/site.ini` | `PoliciesPerPage`, `PolicyPreviewPerRole` |
@@ -162,6 +204,20 @@ php ai/bin/one/make_bulk_policies.php remove 17
 `(policy_offset)`, **the address keeps the role id rather than the draft's**,
 the heading counts all of them, the last page loads, and `role/list` still
 works. All passing.
+
+The role list has its own:
+
+```
+php ai/bin/one/make_bulk_policies.php roles 20
+EZ_ADMIN_PASSWORD=... python3 ai/bin/one/test_role_list.py
+php ai/bin/one/make_bulk_policies.php remove-roles
+```
+
+17 assertions: it renders one page of ten with a pager on `(offset)`, the last
+page loads and holds different roles, the per-page selector is intact, both
+headings sort, each column sorts both ways, the sorted one is marked, the pager
+carries the sort, and a sort value that is not a column is ignored rather than
+run. All passing, against 26 roles.
 
 `make_bulk_policies.php` also takes `role`/`remove-role`, which builds a
 throwaway role instead of adding thousands of policies to a live one — adding

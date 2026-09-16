@@ -263,7 +263,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin/override/templates/embed-inline_i
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-a38bee4967d206ec177b5a0f4f8fde92  design/admin/stylesheets/content.css
+1d5cb3e2aeb6cbf400f0e90225a8a9d7  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 385603746948cfdd8e7540bdf7b5d2b0  design/admin/stylesheets/pagelayout.css
 c28a2b8fef839e911313919afddcc3eb  design/admin/stylesheets/theme/modalwindow.css
@@ -475,7 +475,7 @@ b71b6326a1ae3acd1916ef7726377a6c  design/admin/templates/role/createpolicystep1.
 b1c3fcefb836463789fdf8d53e0a1188  design/admin/templates/role/createpolicystep2.tpl
 d80e987997dc3d881970e77257a1a579  design/admin/templates/role/createpolicystep3.tpl
 6cda17071c64d1df3efddd04a161f1a3  design/admin/templates/role/edit.tpl
-f8c01135bb7e2884cbe10f0c95b361ad  design/admin/templates/role/list.tpl
+b9491201edb77f834dd759bab13f48ed  design/admin/templates/role/list.tpl
 ba29de815cbbffc23c6b2affdd51c7e6  design/admin/templates/role/policyedit.tpl
 1561bf19e1baaa7540ecf7b43cb14408  design/admin/templates/role/view.tpl
 25eaf3569b53b03b8751d9feed2e6b95  design/admin/templates/roles.tpl
@@ -2292,7 +2292,7 @@ a1af75a37c1ce56738bec292d024352e  doc/bc/6.0/preload.md
 e1736c2b2599b91bb982b5ffd42bd4ce  doc/bc/6.0/rad-extension-points.md
 7044272d1b88c3645967fea9afdf1901  doc/bc/6.0/rad-extension-surface.md
 02cab810b7ee149bb10c8ebb1d63d266  doc/bc/6.0/rad-security.md
-a3b0bb9c471ef0bab70a782db6623dec  doc/bc/6.0/role-policy-paging.md
+b0ebf835be3d538466d70b3d90c407f2  doc/bc/6.0/role-policy-paging.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
 adac5192811bf518d52266dd4a6b0e72  doc/branch-overview
 0959bdd0da20ca86c663052e954574b8  doc/changelogs/2.9/CHANGELOG-2.9-1
@@ -11774,7 +11774,7 @@ bc9ea8d15ef038f0306166517e5f69ee  kernel/classes/ezproductcategory.php
 73245e0e4ca9610a848c0dc706ac1401  kernel/classes/ezproductcollectionitem.php
 0f5c4a575d4a3ee5e920b79cde2c88ed  kernel/classes/ezproductcollectionitemoption.php
 32554d9feb32a8220a06b2404f2f37ea  kernel/classes/ezredirectmanager.php
-d777e037e78c0d132fbb29faffc01e5f  kernel/classes/ezrole.php
+26015c48044c54136040ad0ce263ff9b  kernel/classes/ezrole.php
 b8581080a60d71312bb7e89ecc25c40f  kernel/classes/ezrssexport.php
 b7521661108b60bfe086f1a48414befe  kernel/classes/ezrssexportitem.php
 723f0081e4efa3775f1592506cbb336f  kernel/classes/ezrssexportopmlitem.php
@@ -12190,7 +12190,7 @@ a1bc36057a790231b443e94bc702bfa6  kernel/role/copy.php
 b640d6987bb4cf5c9549d07b25abc040  kernel/role/edit.php
 7dc8ba7faa49cc987230154d7cf29ff1  kernel/role/ezrolefunctioncollection.php
 cd029849a45369cc74865c96b6791c92  kernel/role/function_definition.php
-7df8519b5e132320b7047e0fa349ef29  kernel/role/list.php
+bdc0a2e822d3d164523238866f284702  kernel/role/list.php
 746ee50d9a9e330e6b7b9161150af45d  kernel/role/module.php
 0c74b231437a7091b8b66c3440a76566  kernel/role/policyedit.php
 00b2a1442840dc7b8f143d926739dcb7  kernel/role/view.php

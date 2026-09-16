@@ -44,7 +44,10 @@
 <table class="list" cellspacing="0">
 <tr>
     <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Toggle selection'|i18n( 'design/admin/role/list')}" onclick="ezjs_toggleCheckboxes( document.roles, 'DeleteIDArray[]' ); return false;"/></th>
-    <th>{'Name'|i18n( 'design/admin/role/list' )}</th>
+    {* Sorted by the database, because the list is shown a page at a time. The
+       heading is the one the rss list and the locations tab use. *}
+    {include uri='design:parts/sortheader.tpl' key='id'   label='ID'|i18n( 'design/admin/role/list' )   sort=$role_sort page_uri='/role/list' cell_class='tight'}
+    {include uri='design:parts/sortheader.tpl' key='name' label='Name'|i18n( 'design/admin/role/list' ) sort=$role_sort page_uri='/role/list'}
     <th class="tight">&nbsp;</th>
     <th class="tight">&nbsp;</th>
     <th class="tight">&nbsp;</th>
@@ -54,6 +57,7 @@
     {let role_name=$Roles.item.name|wash}
     <tr class="{$Roles.sequence}">
     <td class="tight"><input type="checkbox" name="DeleteIDArray[]" value="{$Roles.item.id}" title="{'Select role for removal.'|i18n( 'design/admin/role/list' )}" /></td>
+    <td class="role-id">{$Roles.item.id}</td>
     <td>{'role'|icon( 'small', 'Role'|i18n( 'design/admin/role/list' ) )}&nbsp;<a href={concat( '/role/view/', $Roles.item.id)|ezurl}>{$role_name|wash}</a></td>
     <td><a href={concat( '/role/assign/', $Roles.item.id)|ezurl}><img src={'assign.gif'|ezimage} alt="{'Assign'|i18n( 'design/admin/role/list')}" title="{'Assign the <%role_name> role to a user or a user group.'|i18n( 'design/admin/role/list',, hash( '%role_name', $role_name ) )|wash}" /></a></td>
     <td><a href={concat( '/role/copy/', $Roles.item.id)|ezurl}><img src={'copy.gif'|ezimage} alt="{'Copy'|i18n( 'design/admin/role/list' )}" title="{'Copy the <%role_name> role.'|i18n( 'design/admin/role/list',, hash( '%role_name', $role_name ) )|wash}" /></a></td>
