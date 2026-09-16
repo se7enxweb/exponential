@@ -13,19 +13,17 @@ $Module = $Params['Module'];
 
 $offset = $Params['Offset'];
 
-if( eZPreferences::value( 'admin_role_list_limit' ) )
-{
-    switch( eZPreferences::value( 'admin_role_list_limit' ) )
-    {
-        case '2': { $limit = 25; } break;
-        case '3': { $limit = 50; } break;
-        default:  { $limit = 10; } break;
-    }
-}
-else
-{
-    $limit = 10;
-}
+// The page sizes on offer are configured, not written here. The preference
+// stores the position in that list counting from one, which is what it has
+// always stored - the old 1, 2 and 3 still mean the first, second and third
+// entry - so a site may change the sizes without resetting anyone's choice.
+$roleLimits = eZRole::pageSizes();
+
+$limitChoice = (int)eZPreferences::value( 'admin_role_list_limit' );
+if ( $limitChoice < 1 || $limitChoice > count( $roleLimits ) )
+    $limitChoice = 1;
+
+$limit = $roleLimits[$limitChoice - 1];
 
 if ( $http->hasPostVariable( 'RemoveButton' )  )
 {
@@ -99,6 +97,8 @@ $tpl->setVariable( 'role_count', $roleCount );
 $tpl->setVariable( 'module', $Module );
 $tpl->setVariable( 'view_parameters', $viewParameters );
 $tpl->setVariable( 'limit', $limit );
+$tpl->setVariable( 'limit_choices', $roleLimits );
+$tpl->setVariable( 'limit_choice', $limitChoice );
 $tpl->setVariable( 'role_sort', array( 'field'     => $sortField,
                                        'direction' => $sortOrder,
                                        'opposite'  => $sortOrder === 'asc' ? 'desc' : 'asc' ) );

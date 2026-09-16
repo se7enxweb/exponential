@@ -1251,6 +1251,33 @@ class eZRole extends eZPersistentObject
      *
      * @return array
      */
+    /**
+     * The page sizes the role list offers, from
+     * site.ini [RoleSettings] RolesPerPageList.
+     *
+     * @return int[]
+     */
+    static function pageSizes()
+    {
+        $ini = eZINI::instance( 'site.ini' );
+
+        $sizes = $ini->hasVariable( 'RoleSettings', 'RolesPerPageList' )
+               ? (array)$ini->variable( 'RoleSettings', 'RolesPerPageList' )
+               : array();
+
+        $clean = array();
+        foreach ( $sizes as $size )
+        {
+            $size = (int)$size;
+            if ( $size > 0 && !in_array( $size, $clean, true ) )
+                $clean[] = $size;
+        }
+
+        // Emptied or filled with nonsense, this still has to answer with a
+        // usable page size rather than none at all.
+        return $clean ? $clean : array( 10, 25, 50 );
+    }
+
     static function sortColumnsForList()
     {
         return array( 'id' => 'id', 'name' => 'name' );

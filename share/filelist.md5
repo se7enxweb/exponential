@@ -475,7 +475,7 @@ b71b6326a1ae3acd1916ef7726377a6c  design/admin/templates/role/createpolicystep1.
 b1c3fcefb836463789fdf8d53e0a1188  design/admin/templates/role/createpolicystep2.tpl
 d80e987997dc3d881970e77257a1a579  design/admin/templates/role/createpolicystep3.tpl
 6cda17071c64d1df3efddd04a161f1a3  design/admin/templates/role/edit.tpl
-b9491201edb77f834dd759bab13f48ed  design/admin/templates/role/list.tpl
+a8254ea66cdbf065e79bedc53ee9d3c5  design/admin/templates/role/list.tpl
 ba29de815cbbffc23c6b2affdd51c7e6  design/admin/templates/role/policyedit.tpl
 1561bf19e1baaa7540ecf7b43cb14408  design/admin/templates/role/view.tpl
 25eaf3569b53b03b8751d9feed2e6b95  design/admin/templates/roles.tpl
@@ -2284,6 +2284,7 @@ e03c2aa19443976efb300d6226d8b71d  doc/bc/6.0/kickstartercli.md
 5f063b419152d919981820ae436cf799  doc/bc/6.0/locations-tab-paging-and-sorting.md
 8aae77691af6b35a093d9229b3757ed3  doc/bc/6.0/multi-node-edit.md
 885a488ce80a5e6d147ea79d6ed9f42b  doc/bc/6.0/opml.md
+19841401db47091c937577fe4e18258e  doc/bc/6.0/pagination-settings.md
 2fc39d399e6978352dd88a9182bca8b0  doc/bc/6.0/php8.md
 8827542a19048d2c80e65ab2efd0b6af  doc/bc/6.0/phpunitv10.md
 82e9ad363eeb8a1d0090ed20cf756a7e  doc/bc/6.0/phpunitv13.md
@@ -11774,7 +11775,7 @@ bc9ea8d15ef038f0306166517e5f69ee  kernel/classes/ezproductcategory.php
 73245e0e4ca9610a848c0dc706ac1401  kernel/classes/ezproductcollectionitem.php
 0f5c4a575d4a3ee5e920b79cde2c88ed  kernel/classes/ezproductcollectionitemoption.php
 32554d9feb32a8220a06b2404f2f37ea  kernel/classes/ezredirectmanager.php
-26015c48044c54136040ad0ce263ff9b  kernel/classes/ezrole.php
+70208614869dd463301cf1d52b0c134f  kernel/classes/ezrole.php
 b8581080a60d71312bb7e89ecc25c40f  kernel/classes/ezrssexport.php
 b7521661108b60bfe086f1a48414befe  kernel/classes/ezrssexportitem.php
 723f0081e4efa3775f1592506cbb336f  kernel/classes/ezrssexportopmlitem.php
@@ -12190,7 +12191,7 @@ a1bc36057a790231b443e94bc702bfa6  kernel/role/copy.php
 b640d6987bb4cf5c9549d07b25abc040  kernel/role/edit.php
 7dc8ba7faa49cc987230154d7cf29ff1  kernel/role/ezrolefunctioncollection.php
 cd029849a45369cc74865c96b6791c92  kernel/role/function_definition.php
-bdc0a2e822d3d164523238866f284702  kernel/role/list.php
+0ee47f8657dd7f02ffc276a4531febac  kernel/role/list.php
 746ee50d9a9e330e6b7b9161150af45d  kernel/role/module.php
 0c74b231437a7091b8b66c3440a76566  kernel/role/policyedit.php
 00b2a1442840dc7b8f143d926739dcb7  kernel/role/view.php
@@ -12198,7 +12199,7 @@ bdc0a2e822d3d164523238866f284702  kernel/role/list.php
 c58e43bdbae6bc3813dbc9629eec6d04  kernel/rss/edit_functions.php
 a296faff3da628697adc18101efdaa78  kernel/rss/edit_import.php
 21a375d1e39245640811b8f1d72817cc  kernel/rss/ezrssfunctioncollection.php
-5de74fe4c4b31191138ba46b68a39aa0  kernel/rss/ezrsslistpager.php
+fc5f56e6177a2a5f09cdc32a7c530219  kernel/rss/ezrsslistpager.php
 48f98653eefa7f9617980bf17805bdc5  kernel/rss/feed.php
 555295370c7ea0ecb0f299d123191e21  kernel/rss/function_definition.php
 79d89598b73673fabf02fe5399d757b0  kernel/rss/list.php
@@ -12638,7 +12639,7 @@ a1be7ab463d96b8940b0b6ad2148a34e  settings/audit.ini
 69b7abd76c6aad8b54776c6f2b9bb65e  settings/codetemplate.ini
 de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 182107cb19ce2f10279176af2ccb2819  settings/collect.ini
-4c972db0168f9c87cd8001bfdc4d3fd2  settings/content.ini
+a73debcaedb35ef5b522552ec2506542  settings/content.ini
 eff59488a83d12bd2f5688e65015eace  settings/contentstructuremenu.ini
 bbef6be3b98786e0ac5391c2f9993b6f  settings/country.ini
 826d6fdaf6f38906fa78b2129ed33cdb  settings/cronjob.ini
@@ -12691,7 +12692,7 @@ a2fd754ba92623735e9de686c58089df  settings/override/site.ini.append.php.user-bac
 241079c46c8f59d2adecefe9bc138813  settings/setup.ini
 3ca6d15ef2b06dd1eab942d5701a1051  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-9e54d57ebd59ac591853cd79cb5b1230  settings/site.ini
+9d87c22e7fb4a3713bcbf138392dc883  settings/site.ini
 3b80d8492cf423b549db5460a410d3dc  settings/siteaccess/admin/content.ini.append.php
 bf92bfcf2bb4064ba1963e6c66caca21  settings/siteaccess/admin/contentstructuremenu.ini.append.php
 6b2cc02d0c3e79de6f9de6a6b78a72c5  settings/siteaccess/admin/ezoe.ini.append.php

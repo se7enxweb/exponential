@@ -1,6 +1,5 @@
 <form name="roles" action={concat( $module.functions.list.uri, '/' )|ezurl} method="post" >
 
-{let number_of_items=min( ezpreference( 'admin_role_list_limit' ), 3)|choose( 10, 10, 25, 50 )}
 
 <div class="context-block">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
@@ -12,30 +11,23 @@
 
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
-{* Items per page selector. *}
+{* Items per page selector.
+
+   The sizes come from site.ini [RoleSettings] RolesPerPageList and the
+   preference stores the position in that list, so a site can offer the sizes
+   its own editors want without resetting anyone's choice. They used to be
+   written out here as well as in the module, which meant two lists that had to
+   agree and no way to change either. *}
 <div class="context-toolbar">
 <div class="button-left">
 <p class="table-preferences">
-{switch match=$number_of_items}
-{case match=25}
-<a href={'/user/preferences/set/admin_role_list_limit/1'|ezurl}>10</a>
-<span class="current">25</span>
-<a href={'/user/preferences/set/admin_role_list_limit/3'|ezurl}>50</a>
-{/case}
-
-{case match=50}
-<a href={'/user/preferences/set/admin_role_list_limit/1'|ezurl}>10</a>
-<a href={'/user/preferences/set/admin_role_list_limit/2'|ezurl}>25</a>
-<span class="current">50</span>
-{/case}
-
-{case}
-<span class="current">10</span>
-<a href={'/user/preferences/set/admin_role_list_limit/2'|ezurl}>25</a>
-<a href={'/user/preferences/set/admin_role_list_limit/3'|ezurl}>50</a>
-{/case}
-
-{/switch}
+{foreach $limit_choices as $limit_index => $limit_option}
+    {if eq( $limit_index|inc, $limit_choice )}
+        <span class="current">{$limit_option}</span>
+    {else}
+        <a href={concat( '/user/preferences/set/admin_role_list_limit/', $limit_index|inc )|ezurl}>{$limit_option}</a>
+    {/if}
+{/foreach}
 </p>
 </div>
 <div class="float-break"></div>
@@ -74,7 +66,6 @@
          item_count=$role_count
          view_parameters=$view_parameters
          item_limit=$limit}
-{/let}
 </div>
 
 {* DESIGN: Content END *}</div></div></div>

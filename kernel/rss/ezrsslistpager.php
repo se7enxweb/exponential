@@ -25,9 +25,35 @@ class eZRSSListPager
      *
      * @return array of int
      */
+    /**
+     * The page sizes this list offers, from
+     * content.ini [RSSListSettings] ItemsPerPageList.
+     *
+     * Configured rather than written here, so a site can offer the sizes its
+     * own editors want. The list is also what bounds the query: limit() will
+     * not return a size that is not on it, whatever the url asks for.
+     *
+     * @return int[]
+     */
     public static function limits()
     {
-        return array( 25, 50, 250 );
+        $ini = eZINI::instance( 'content.ini' );
+
+        $limits = $ini->hasVariable( 'RSSListSettings', 'ItemsPerPageList' )
+                ? (array)$ini->variable( 'RSSListSettings', 'ItemsPerPageList' )
+                : array();
+
+        $clean = array();
+        foreach ( $limits as $limit )
+        {
+            $limit = (int)$limit;
+            if ( $limit > 0 && !in_array( $limit, $clean, true ) )
+                $clean[] = $limit;
+        }
+
+        // A setting emptied or filled with nonsense must not leave the list
+        // with no page size at all, which would divide by zero further down.
+        return $clean ? $clean : array( 25, 50, 250 );
     }
 
     /**
