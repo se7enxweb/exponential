@@ -88,7 +88,7 @@
         "se7enxweb/explayouts-standard": "~1.0.0",
         "se7enxweb/explayouts-tags-query": "~1.0.0",
         "se7enxweb/explayouts-ui": "~1.2.1",
-        "se7enxweb/explayouts-ui-api": "~1.2.1",
+        "se7enxweb/explayouts-ui-api": "~1.2.2",
         "se7enxweb/expquery-translator": "~1.0.0",
         "se7enxweb/expchangeclass": "~1.0.1",
         "se7enxweb/expsite-api": "~1.0.0",
