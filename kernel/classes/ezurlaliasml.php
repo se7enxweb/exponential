@@ -269,6 +269,9 @@ class eZURLAliasML extends eZPersistentObject
     */
     function store( $fieldFilters = null )
     {
+        // Any change to the alias rows makes the memo stale.
+        self::$PathByActionListCache = array();
+
         if ( $this->ID === null )
         {
             $this->ID = self::getNewID();
@@ -328,6 +331,8 @@ class eZURLAliasML extends eZPersistentObject
      */
     public static function removeSingleEntry( $parentID, $textMD5, $language )
     {
+        self::$PathByActionListCache = array();
+
         $parentID = (int)$parentID;
         if ( !is_object( $language ) )
             $language = eZContentLanguage::fetchByLocale( $language );
@@ -1496,6 +1501,32 @@ class eZURLAliasML extends eZPersistentObject
      */
     static public function fetchPathByActionList( $actionName, $actionValues, $locale = null )
     {
+        // The same path is asked for many times while one page renders - once
+        // per link to a node, and again for every ancestor of it. On MongoDB
+        // each call is a round trip, and the front page was spending a third
+        // of its query budget re-answering questions it had already answered.
+        // Same inputs, same answer, and the cache lives only for this request.
+        $memoKey = null;
+        if ( is_array( $actionValues ) && $actionValues )
+        {
+            $memoKey = $actionName . '|' . (string) $locale . '|' . implode( ',', $actionValues );
+            if ( array_key_exists( $memoKey, self::$PathByActionListCache ) )
+                return self::$PathByActionListCache[$memoKey];
+        }
+
+        $result = self::computePathByActionList( $actionName, $actionValues, $locale );
+
+        if ( $memoKey !== null )
+            self::$PathByActionListCache[$memoKey] = $result;
+
+        return $result;
+    }
+
+    /** Per-request memo for fetchPathByActionList(); cleared by expireCache(). */
+    static public $PathByActionListCache = array();
+
+    static protected function computePathByActionList( $actionName, $actionValues, $locale = null )
+    {
         if ( !is_array( $actionValues ) || count( $actionValues ) == 0 )
         {
             eZDebug::writeError( "Action values array must not be empty", __METHOD__ );
@@ -1515,8 +1546,30 @@ class eZURLAliasML extends eZPersistentObject
             $actionStrings = [];
             foreach ( $actionValues as $value )
                 $actionStrings[] = $actionName . ':' . $value;
+
+            // The same language filter $filterSQL applies above. Without it
+            // the rows of languages this siteaccess does not serve came back
+            // too, and the loop below - which only ever matches a prioritised
+            // language - fell through to "no row was chosen" for every
+            // German-only node instead of returning quietly the way the SQL
+            // path does. $convert keeps a mask stored as a string or left
+            // null from breaking the comparison.
+            $languageMask = 1; // 1 - always available objects
+            foreach ( eZContentLanguage::prioritizedLanguages() as $language )
+                $languageMask += (int) $language->attribute( 'id' );
+
             $rows = $db->aggregate( 'ezurlalias_ml', [
-                [ '$match' => [ 'action' => [ '$in' => $actionStrings ], 'is_original' => 1, 'is_alias' => 0 ] ],
+                [ '$match' => [
+                    'action' => [ '$in' => $actionStrings ],
+                    'is_original' => 1,
+                    'is_alias' => 0,
+                    '$expr' => [ '$gt' => [
+                        [ '$bitAnd' => [
+                            [ '$convert' => [ 'input' => '$lang_mask', 'to' => 'long',
+                                              'onError' => 0, 'onNull' => 0 ] ],
+                            $languageMask ] ],
+                        0 ] ],
+                ] ],
                 [ '$project' => [ '_id' => 0, 'id' => 1, 'parent' => 1, 'lang_mask' => 1, 'text' => 1, 'action' => 1 ] ],
             ] );
             if ( $rows === false ) $rows = [];

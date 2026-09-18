@@ -444,6 +444,22 @@ class eZSearch
      *
      * @return \ezpSearchEngine|bool Returns false (+ writes debug) if no engine was found
     */
+    /**
+     * True when the engine has been switched off on purpose for this
+     * siteaccess, rather than being missing.
+     *
+     * The bulk import in ezstep_create_sites caches false under the engine's
+     * global to make every eZSearch call a no-op, which is a deliberate
+     * choice. Callers need to be able to tell that apart from a real failure,
+     * or they report one per object - 270 of them on a demo install.
+     */
+    static public function isDisabled()
+    {
+        $instanceName = 'eZSearchPlugin_' . ( $GLOBALS['eZCurrentAccess']['name'] ?? '' );
+
+        return array_key_exists( $instanceName, $GLOBALS ) && $GLOBALS[$instanceName] === false;
+    }
+
     static public function getEngine()
     {
         // Get instance if already created.
@@ -478,6 +494,17 @@ class eZSearch
         {
             $searchEngineFile = implode( '/', array( $directory, strtolower( $searchEngineString ), strtolower( $searchEngineString ) ) ) . '.php';
 
+            // The path is relative to the working directory, so any caller
+            // that has chdir'd - the installer does - failed to find a plugin
+            // sitting right where it always was, and every object publish
+            // then reported that it could not be added to the search engine.
+            if ( !file_exists( $searchEngineFile ) )
+            {
+                $rooted = eZSys::rootDir() . '/' . $searchEngineFile;
+                if ( file_exists( $rooted ) )
+                    $searchEngineFile = $rooted;
+            }
+
             if ( file_exists( $searchEngineFile ) )
             {
                 eZDebugSetting::writeDebug( 'kernel-search-ezsearch', 'Loading search engine from ' . $searchEngineFile, 'eZSearch::getEngine' );
@@ -488,8 +515,12 @@ class eZSearch
             }
         }
 
-        eZDebug::writeDebug( 'Unable to find the search engine:' . $searchEngineString, 'eZSearch' );
-        eZDebug::writeDebug( 'Tried paths: ' . implode( ', ', $directoryList ), 'eZSearch' );
+        // Failing to load the search engine stops every object being indexed,
+        // so it belongs in the error log with the paths that were tried, not
+        // in a debug line nobody reads.
+        eZDebug::writeError( 'Unable to find the search engine "' . $searchEngineString
+            . '"; tried: ' . implode( ', ', $directoryList )
+            . ' (cwd ' . getcwd() . ', root ' . eZSys::rootDir() . ')', 'eZSearch' );
         return false;
     }
 

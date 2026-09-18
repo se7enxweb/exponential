@@ -642,6 +642,12 @@ class eZContentOperationCollection
         if ( $object === null )
             $object = eZContentObject::fetch( $objectID );
 
+        // The engine is switched off on purpose during the bulk import. That
+        // is not a failure, and reporting it as one buried the real errors
+        // under one line per object.
+        if ( eZSearch::isDisabled() )
+            return;
+
         // Register the object in the search engine.
         $needCommit = eZSearch::needCommit();
         if ( eZSearch::needRemoveWithUpdate() )
@@ -654,7 +660,16 @@ class eZContentOperationCollection
         eZDebug::accumulatorStart( 'add_object', 'search_total', 'add object' );
         if ( !eZSearch::addObject( $object, $needCommit ) )
         {
-            eZDebug::writeError( "Failed adding object ID {$object->attribute( 'id' )} in the search engine", __METHOD__ );
+            // Saying only that it failed leaves nothing to act on: the engine
+            // returns false both when it could not be loaded at all and when
+            // it loaded and refused the object. Name which it was.
+            $engine = eZSearch::getEngine();
+            $why = is_object( $engine )
+                ? get_class( $engine ) . ' refused the object'
+                : 'no engine could be loaded for SearchSettings.SearchEngine='
+                  . $ini->variable( 'SearchSettings', 'SearchEngine' );
+            eZDebug::writeError( "Failed adding object ID {$object->attribute( 'id' )} in the search engine: $why",
+                                 __METHOD__ );
         }
         eZDebug::accumulatorStop( 'add_object' );
     }

@@ -35,6 +35,10 @@ class eZImageFile extends eZPersistentObject
                                                               'default' => '',
                                                               'required' => true ) ),
                       'keys' => array( 'id' ),
+                      // ezimagefile.id is auto_increment in the schema. Without
+                      // this the object never learns the id the database gave
+                      // it, and on MongoDB nothing assigned one at all.
+                      'increment_key' => 'id',
                       'class_name' => 'eZImageFile',
                       'name' => 'ezimagefile' );
         return $definition;

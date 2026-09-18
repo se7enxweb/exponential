@@ -138,6 +138,13 @@ class eZStepLanguageOptions extends eZStepInstaller
                 $data['Languages'][] = $data['Primary'];
             $regionalInfo['languages'] = $data['Languages'];
             $regionalInfo['enable_unicode'] = true;
+            // The interactive path a few lines above settles on utf-8 and says
+            // so; the kickstart path left site_charset unset, so CreateSites
+            // fell back to findAppropriateCharset() with use_unicode still at
+            // its default false and picked iso-8859-1. Every unattended
+            // install therefore came out latin-1 while a manual one came out
+            // utf-8, and transliteration turned "Uber uns" into a-ber-uns.
+            $regionalInfo['site_charset'] = 'utf-8';
 
             $this->PersistenceList['regional_info'] = $regionalInfo;
             $this->storePersistenceData();

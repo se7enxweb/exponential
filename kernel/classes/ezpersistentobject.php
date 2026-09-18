@@ -378,6 +378,22 @@ class eZPersistentObject
      * @param array|null $fieldFilters If specified only certain fields will be stored.
      * @return void
      */
+    /**
+     * A short call trace for the MongoDB write guards, so a refused write
+     * names whoever asked for it rather than just the store method.
+     */
+    protected static function mongoCallerTrace()
+    {
+        $frames = array();
+        foreach ( array_slice( debug_backtrace( DEBUG_BACKTRACE_IGNORE_ARGS ), 1, 6 ) as $frame )
+        {
+            if ( !isset( $frame['function'] ) )
+                continue;
+            $frames[] = ( isset( $frame['class'] ) ? $frame['class'] . '::' : '' ) . $frame['function'];
+        }
+        return implode( ' <- ', $frames );
+    }
+
     public static function storeObject( $obj, $fieldFilters = null )
     {
         $db = eZDB::instance();
@@ -512,9 +528,16 @@ class eZPersistentObject
         // MongoDB: bypass SQL path — use native insert / upsert
         if ( $db->databaseName() === 'mongo' )
         {
-            // Build a typed PHP document from the object's current attributes
+            // Build a typed PHP document from the object's current attributes.
+            // $fieldFilters names the only columns the caller wants written;
+            // ignoring it wrote every field of the object, so a stale value
+            // held in memory overwrote a column somebody else had just
+            // changed. The keys stay in regardless, because the filter for the
+            // upsert is built from them.
             $doc = array();
             $allFields = array_diff( array_keys( $fields ), $exclude_fields );
+            if ( $useFieldFilters )
+                $allFields = array_intersect( $allFields, array_merge( $fieldFilters, $keys ) );
             foreach ( $allFields as $fname )
             {
                 $fdef = $fields[$fname];
@@ -541,6 +564,25 @@ class eZPersistentObject
                         $obj->setAttribute( $inc, $newID );
                     }
                 }
+                // A document missing its primary key cannot be found again,
+                // and joins multiply a row for every copy of it. Refusing the
+                // write names the caller instead of leaving the wreckage for a
+                // later read to trip over.
+                $autoField = method_exists( $db, 'autoIncrementField' )
+                    ? $db->autoIncrementField( $table ) : false;
+                foreach ( $keys as $key )
+                {
+                    if ( $key === $autoField )
+                        continue;
+                    if ( !array_key_exists( $key, $doc ) || $doc[$key] === null )
+                    {
+                        eZDebug::writeError(
+                            "Refusing to insert into '$table' with no value for its key '$key': "
+                            . self::mongoCallerTrace(), __METHOD__ );
+                        return;
+                    }
+                }
+
                 $db->insert( $table, $doc );
             }
             else
@@ -557,6 +599,15 @@ class eZPersistentObject
                         $filter[$k] = (float) $kval;
                     else
                         $filter[$k] = (string) $kval;
+
+                    if ( $kval === null )
+                    {
+                        eZDebug::writeError(
+                            "Refusing to upsert into '$table' with a null key '$k', which would "
+                            . 'invent a row rather than update one: ' . self::mongoCallerTrace(),
+                            __METHOD__ );
+                        return;
+                    }
                 }
                 $db->upsert( $table, $filter, $doc );
             }
@@ -1094,7 +1145,14 @@ class eZPersistentObject
                 {
                     $sortStage = [];
                     foreach ( $sortList as $sField => $sDir )
-                        $sortStage[$sField] = ( strtolower( $sDir ) === 'desc' ) ? -1 : 1;
+                    {
+                        // Normally 'asc'/'desc' here, but a boolean reaches this
+                        // from callers that use eZ's SortBy convention, where
+                        // false means descending.
+                        $sortStage[$sField] = is_bool( $sDir )
+                            ? ( $sDir ? 1 : -1 )
+                            : ( strtolower( (string)$sDir ) === 'desc' ? -1 : 1 );
+                    }
                     if ( !empty( $sortStage ) )
                         $pipeline[] = [ '$sort' => $sortStage ];
                 }

@@ -58,6 +58,13 @@ class expMongoSchema extends eZDBSchemaInterface
         {
             if ( !$this->createCollectionsAndIndexes( $schema ) )
                 return false;
+
+            // The driver works out each collection's auto_increment column
+            // from its PRIMARY index and keeps the answer. Those indexes have
+            // only just appeared, so anything it decided beforehand - in the
+            // same process, before the schema existed - has to go.
+            if ( property_exists( $this->DBInstance, 'AutoIncrementFields' ) )
+                $this->DBInstance->AutoIncrementFields = array();
         }
 
         if ( $params['data'] && is_array( $this->Data ) )
@@ -115,17 +122,13 @@ class expMongoSchema extends eZDBSchemaInterface
                     $keyDoc[$fieldName] = 1;
                 }
 
-                // For a primary key that is a single auto_increment column,
-                // MongoDB uses its own sequence mechanism – skip creating a unique index.
-                if ( $indexType === 'primary' && count( $keyDoc ) === 1 )
-                {
-                    $singleField = key( $keyDoc );
-                    if ( isset( $fields[$singleField] ) &&
-                         $fields[$singleField]['type'] === 'auto_increment' )
-                    {
-                        continue;
-                    }
-                }
+                // A primary key on a single auto_increment column used to be
+                // skipped here, on the reasoning that the sequence generator
+                // made the index unnecessary. It does not: the sequence hands
+                // out a value but nothing stops a second document reusing it,
+                // and 537 duplicate ezcontentobject_tree documents were the
+                // result. The index is what MySQL's PRIMARY KEY gave us, and
+                // it makes every id lookup an index seek rather than a scan.
 
                 $options = array( 'name' => $indexName );
                 if ( $indexType === 'primary' || $indexType === 'unique' )
@@ -195,6 +198,26 @@ class expMongoSchema extends eZDBSchemaInterface
                 }
             }
 
+            // The fields of the primary key, so a row already present is
+            // replaced rather than stored a second time. Two extensions ship
+             // the same explayouts rows in their .dba files; MySQL rejected the
+            // second insert on its primary key, and without this every one of
+            // those rows was held twice.
+            $primaryKeyFields = array();
+            if ( isset( $schema[$tableName]['indexes'] ) && is_array( $schema[$tableName]['indexes'] ) )
+            {
+                foreach ( $schema[$tableName]['indexes'] as $indexDef )
+                {
+                    if ( !isset( $indexDef['type'] ) || $indexDef['type'] !== 'primary' )
+                        continue;
+                    if ( !isset( $indexDef['fields'] ) || !is_array( $indexDef['fields'] ) )
+                        continue;
+                    foreach ( $indexDef['fields'] as $fieldEntry )
+                        $primaryKeyFields[] = is_array( $fieldEntry ) ? $fieldEntry['name'] : $fieldEntry;
+                    break;
+                }
+            }
+
             $maxAutoIncrValue = 0;
 
             foreach ( $tableData['rows'] as $row )
@@ -223,14 +246,30 @@ class expMongoSchema extends eZDBSchemaInterface
                         $maxAutoIncrValue = $val;
                 }
 
+                // Only key on fields the row actually carries; a .dba that
+                // omits part of the key would otherwise match every row.
+                $keyFilter = array();
+                foreach ( $primaryKeyFields as $keyField )
+                {
+                    if ( !array_key_exists( $keyField, $doc ) )
+                    {
+                        $keyFilter = array();
+                        break;
+                    }
+                    $keyFilter[$keyField] = $doc[$keyField];
+                }
+
                 try
                 {
-                    $collection->insertOne( $doc );
+                    if ( $keyFilter )
+                        $collection->replaceOne( $keyFilter, $doc, array( 'upsert' => true ) );
+                    else
+                        $collection->insertOne( $doc );
                 }
                 catch ( \Exception $e )
                 {
                     eZDebug::writeWarning(
-                        "MongoDB insertOne into '$tableName': " . $e->getMessage(),
+                        "MongoDB seed write into '$tableName': " . $e->getMessage(),
                         __METHOD__
                     );
                 }

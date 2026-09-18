@@ -1945,6 +1945,20 @@ class eZContentObjectTreeNode extends eZPersistentObject
      * @param int $nodeID
      * @return array|null
      */
+    /**
+     * The MongoDB sort direction for one entry of a SortBy array.
+     *
+     * eZ spells the direction three ways depending on the caller: a boolean
+     * where false means descending, or the strings 'asc' and 'desc'.
+     */
+    static function mongoSortDirection( $direction )
+    {
+        if ( is_bool( $direction ) )
+            return $direction ? 1 : -1;
+
+        return strtolower( (string)$direction ) === 'desc' ? -1 : 1;
+    }
+
     static function subTreeByNodeID( $params = false, $nodeID = 0 )
     {
         if ( !is_numeric( $nodeID ) and !is_array( $nodeID ) )
@@ -2218,7 +2232,11 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 foreach ( $sortItems as $si )
                 {
                     $sField = strtolower( $si[0] ?? '' );
-                    $sDir   = ( isset( $si[1] ) && strtolower( $si[1] ) === 'desc' ) ? -1 : 1;
+                    // eZ writes the direction as a boolean - array( 'published',
+                    // false ) means descending - and only sometimes as a string.
+                    // Comparing it to 'desc' alone matched neither, so every
+                    // list came back oldest-first however it was asked for.
+                    $sDir   = self::mongoSortDirection( $si[1] ?? true );
                     if ( isset( $sortMap[$sField] ) )
                         $sortStage[ $sortMap[$sField] ] = $sDir;
                 }
@@ -6811,7 +6829,14 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $db = eZDB::instance();
         if ( $db->databaseName() === 'mongo' )
         {
-            $db->upsert( 'ezcontentobject_tree', ['contentobject_id' => (int)$objectID], ['contentobject_version' => (int)$newVersion] );
+            // An UPDATE that matches no row is a no-op, so this must not
+            // upsert: upserting invented a node_id-less document for every
+            // object whose tree row did not exist yet, and one remote id then
+            // matched three documents. The SQL below also updates every node
+            // of the object, not just one of them.
+            $db->mongoUpdateMany( 'ezcontentobject_tree',
+                array( 'contentobject_id' => (int)$objectID ),
+                array( '$set' => array( 'contentobject_version' => (int)$newVersion ) ) );
             return;
         }
         $db->query( "UPDATE ezcontentobject_tree SET contentobject_version='$newVersion' WHERE contentobject_id='$objectID'" );

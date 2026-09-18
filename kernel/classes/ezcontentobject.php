@@ -3986,7 +3986,14 @@ class eZContentObject extends eZPersistentObject
                 ];
                 $mongoSort = [];
                 foreach ( $sortByParam as $t )
-                    $mongoSort[$sortMap[$t[0]] ?? $t[0]] = ( isset( $t[1] ) && strtolower( $t[1] ) === 'desc' ) ? -1 : 1;
+                {
+                    // false means descending in eZ's SortBy arrays; a string
+                    // 'desc' means the same. Accept both.
+                    $direction = $t[1] ?? true;
+                    $mongoSort[$sortMap[$t[0]] ?? $t[0]] = is_bool( $direction )
+                        ? ( $direction ? 1 : -1 )
+                        : ( strtolower( (string)$direction ) === 'desc' ? -1 : 1 );
+                }
                 $pipeline[] = [ '$sort' => $mongoSort ];
             }
 
@@ -4841,8 +4848,16 @@ class eZContentObject extends eZPersistentObject
             $visibilitySQL = 'AND is_invisible = 0 ';
 
         if ( $db->databaseName() === 'mongo' )
-            return (int) $db->count( 'ezcontentobject_tree',
-                                     array( 'contentobject_id' => $contentobjectID ) );
+        {
+            // The SQL below narrows to visible nodes when asked; this branch
+            // ignored that and counted every location, so a hidden one still
+            // added a page to the pager.
+            $conditions = array( 'contentobject_id' => $contentobjectID );
+            if ( $visibilitySQL !== '' )
+                $conditions['is_invisible'] = 0;
+
+            return $db->count( 'ezcontentobject_tree', $conditions );
+        }
 
         $rows = $db->arrayQuery( "SELECT COUNT(*) AS count FROM ezcontentobject_tree "
                                . "WHERE contentobject_id = $contentobjectID " . $visibilitySQL );

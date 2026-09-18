@@ -1616,7 +1616,10 @@ class eZSiteInstaller
         $name = strtolower( $this->solutionName() );
         $version = $this->solutionVersion();
 
-        $result = $db->query( "INSERT INTO ezsite_data VALUES( '$name', '$version' )" );
+        // Naming the columns, as the rest of the codebase does: a bare VALUES
+        // list relies on the table's column order, which a document store has
+        // no way to know.
+        $result = $db->query( "INSERT INTO ezsite_data ( name, value ) VALUES( '$name', '$version' )" );
 
         return $result;
     }
