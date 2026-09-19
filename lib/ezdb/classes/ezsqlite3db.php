@@ -117,6 +117,20 @@ class eZSQLite3DB extends eZDBInterface
         else
         {
             $connection->createFunction( 'md5', array( $this, 'md5UDF' ) );
+
+            // MySQL's bitwise aggregates. The content engine folds language
+            // masks with BIT_OR, and SQLite ships no equivalent, so the
+            // statement fails and takes the surrounding transaction with it.
+            $connection->createAggregate( 'BIT_OR',
+                function ( $context, $rows, $value ) { return (int)$context | (int)$value; },
+                function ( $context, $rows ) { return (int)$context; }, 1 );
+            $connection->createAggregate( 'BIT_AND',
+                function ( $context, $rows, $value ) {
+                    // -1 is all bits set, the identity for AND.
+                    return ( $rows <= 1 ? (int)$value : (int)$context & (int)$value );
+                },
+                function ( $context, $rows ) { return $rows > 0 ? (int)$context : 0; }, 1 );
+
             $this->IsConnected = true;
         }
 
@@ -157,15 +171,98 @@ class eZSQLite3DB extends eZDBInterface
     /*!
      \reimp
     */
+    /**
+     * Rewrite MySQL's "UPDATE t a INNER JOIN ( sub ) x ON c SET ..." into the
+     * "UPDATE t AS a SET ... FROM ( sub ) x WHERE c" form SQLite understands.
+     *
+     * SQLite has supported UPDATE ... FROM since 3.33 and accepts an alias on
+     * the target, so the two say the same thing. The content engine rebuilds
+     * its language masks with exactly this shape, and without the rewrite the
+     * statement fails and rolls back the install.
+     *
+     * Anything that does not match is handed back untouched.
+     */
+    function rewriteJoinedUpdate( $sql )
+    {
+        if ( !preg_match( '/^\s*UPDATE\s+(\w+)\s+(\w+)\s+INNER\s+JOIN\s*\(/is', $sql, $head ) )
+            return $sql;
+
+        $table = $head[1];
+        $alias = $head[2];
+
+        // Find the subquery's closing bracket by counting, so brackets inside
+        // it - BIT_OR( ... ), a nested SELECT - do not end it early.
+        $open = strpos( $sql, '(', strlen( $head[0] ) - 1 );
+        if ( $open === false )
+            return $sql;
+
+        $depth = 0;
+        $close = false;
+        for ( $i = $open, $length = strlen( $sql ); $i < $length; $i++ )
+        {
+            if ( $sql[$i] === '(' )
+                $depth++;
+            elseif ( $sql[$i] === ')' )
+            {
+                $depth--;
+                if ( $depth === 0 )
+                {
+                    $close = $i;
+                    break;
+                }
+            }
+        }
+        if ( $close === false )
+            return $sql;
+
+        $subQuery = substr( $sql, $open + 1, $close - $open - 1 );
+        $rest = substr( $sql, $close + 1 );
+
+        if ( !preg_match( '/^\s*(\w+)\s+ON\s+(.+?)\s+SET\s+(.+?)(?:\s+WHERE\s+(.+))?\s*;?\s*$/is',
+            $rest, $tail ) )
+        {
+            return $sql;
+        }
+
+        $subAlias = $tail[1];
+        $onClause = trim( $tail[2] );
+        $setClause = trim( $tail[3] );
+        $whereClause = isset( $tail[4] ) ? trim( $tail[4] ) : '';
+
+        // SQLite wants a bare column on the left of each assignment.
+        $setClause = preg_replace( '/(^|,)(\s*)' . preg_quote( $alias, '/' ) . '\./', '$1$2', $setClause );
+
+        $rewritten = 'UPDATE ' . $table . ' AS ' . $alias
+            . ' SET ' . $setClause
+            . ' FROM ( ' . trim( $subQuery ) . ' ) ' . $subAlias
+            . ' WHERE ' . $onClause
+            . ( $whereClause !== '' ? ' AND ( ' . $whereClause . ' )' : '' );
+
+        return $rewritten;
+    }
+
     function query( $sql, $server = false )
     {
         if ( $this->IsConnected )
         {
+            // MySQL session settings the installers emit around bulk loads.
+            // SQLite has no such switches - it enforces foreign keys only when
+            // asked to, and speaks UTF-8 - so there is nothing to apply and
+            // nothing lost, but failing them aborts the surrounding
+            // transaction and takes the whole install with it.
+            if ( preg_match( '/^\s*SET\s+(?:SESSION\s+|GLOBAL\s+)?(?:FOREIGN_KEY_CHECKS|NAMES|'
+                . 'CHARACTER\s+SET|AUTOCOMMIT|SQL_MODE|UNIQUE_CHECKS)\b/i', $sql ) )
+            {
+                return true;
+            }
+
             if ( $this->OutputSQL )
             {
                 eZDebug::accumulatorStart( 'sqlite3_query', 'sqlite3_total', 'sqlite3_queries' );
                 $this->startTimer();
             }
+
+            $sql = $this->rewriteJoinedUpdate( $sql );
 
             $result = $this->DBConnection->exec( $sql );
             if ( $this->OutputSQL )
@@ -461,7 +558,72 @@ class eZSQLite3DB extends eZDBInterface
     */
     function createDatabase( $dbName )
     {
-        // useless in the contect of SQLite
+        // A SQLite database is a file, and connect() creates it on demand, so
+        // there is nothing to do here beyond making sure the directory exists.
+        $directory = 'var/storage/sqlite3';
+        if ( !file_exists( $directory ) )
+            eZDir::mkdir( $directory, false, true );
+    }
+
+    /**
+     * Empty the database.
+     *
+     * The installers ask for the database to be removed and recreated before
+     * they load a schema. A SQLite database is a file rather than something
+     * the server owns, so the inherited no-op left the previous install in
+     * place and every CREATE TABLE that followed failed with "table already
+     * exists" - which is what stopped a SQLite install part way through.
+     *
+     * The objects are dropped rather than the file unlinked: the connection is
+     * open and other handles may hold the same path, and an emptied database
+     * is what "remove then create" is asking for.
+     */
+    function removeDatabase( $dbName )
+    {
+        if ( !$this->IsConnected )
+            return false;
+
+        $objects = array();
+        $result = $this->DBConnection->query(
+            "SELECT type, name FROM sqlite_master"
+            . " WHERE name NOT LIKE 'sqlite_%'"
+            . " AND type IN ( 'table', 'view', 'index', 'trigger' )" );
+        if ( $result )
+        {
+            while ( $row = $result->fetchArray( SQLITE3_ASSOC ) )
+                $objects[] = $row;
+        }
+
+        // Triggers and views first, then indexes, then the tables they sit on.
+        $order = array( 'trigger' => 0, 'view' => 1, 'index' => 2, 'table' => 3 );
+        usort( $objects, function ( $left, $right ) use ( $order ) {
+            return $order[$left['type']] - $order[$right['type']];
+        } );
+
+        $this->DBConnection->exec( 'PRAGMA foreign_keys = OFF' );
+
+        $removed = 0;
+        foreach ( $objects as $object )
+        {
+            // An index backing a UNIQUE or PRIMARY KEY constraint cannot be
+            // dropped on its own; it goes when its table does.
+            if ( $object['type'] === 'index' && strpos( $object['name'], 'sqlite_autoindex' ) === 0 )
+                continue;
+
+            if ( @$this->DBConnection->exec(
+                'DROP ' . strtoupper( $object['type'] ) . ' IF EXISTS "' . $object['name'] . '"' ) )
+            {
+                $removed++;
+            }
+        }
+
+        $this->DBConnection->exec( 'PRAGMA foreign_keys = ON' );
+        $this->DBConnection->exec( 'VACUUM' );
+
+        eZDebug::writeNotice( "Emptied SQLite database '$dbName': dropped $removed object(s)",
+                              __METHOD__ );
+
+        return true;
     }
 
     /*!
