@@ -1603,15 +1603,64 @@ class eZURLAliasML extends eZPersistentObject
 
         $path = array();
         $lastID = false;
-        foreach ( $actionValues as $actionValue )
+        $orderedActionValues = array_values( $actionValues );
+        foreach ( $orderedActionValues as $actionIndex => $actionValue )
         {
             $action = $actionName . ":" . $actionValue;
             if ( !isset( $actionMap[$action] ) )
             {
+                // An ancestor above the aliased tree owns no alias row of its
+                // own: the multisite installer hands the empty root element to
+                // the siteaccess home node, which leaves the content root
+                // without one. Such an ancestor contributes nothing to the
+                // path, so skip it rather than throwing the path away - doing
+                // the latter made every link on the site fall back to
+                // content/view/full/<id>.
+                //
+                // Only while nothing has been chosen yet: a gap in the middle
+                // of a path really does mean the path cannot be built.
+                if ( !$path && $lastID === false )
+                    continue;
+
 //                eZDebug::writeError( "The action '{$action}' was not found in the database for the current language language filter, cannot calculate path." );
                 return null;
             }
             $actionRows = $actionMap[$action];
+
+            // A node can own more than one alias row. A site's home node owns
+            // both the empty root element and its own named one, and both
+            // carry a bit of the prioritised language, so the language
+            // preference below picks whichever came back first. Picking the
+            // empty one leaves $lastID pointing at a row that none of the
+            // children hang off, the chain check further down then rejects the
+            // whole path, and every link on the site falls back to
+            // content/view/full/<id>.
+            //
+            // Narrow the candidates to the rows the next element actually
+            // hangs off before choosing between them, and only when that
+            // leaves something - a path whose last element is the home node
+            // still resolves to the empty root element, which is correct.
+            if ( count( $actionRows ) > 1 && isset( $orderedActionValues[$actionIndex + 1] ) )
+            {
+                $nextAction = $actionName . ":" . $orderedActionValues[$actionIndex + 1];
+                if ( isset( $actionMap[$nextAction] ) )
+                {
+                    $nextParents = array();
+                    foreach ( $actionMap[$nextAction] as $nextRow )
+                        $nextParents[(int)$nextRow['parent']] = true;
+
+                    $chained = array();
+                    foreach ( $actionRows as $row )
+                    {
+                        if ( isset( $nextParents[(int)$row['id']] ) )
+                            $chained[] = $row;
+                    }
+
+                    if ( $chained )
+                        $actionRows = $chained;
+                }
+            }
+
             $defaultRow = null;
             foreach( $prioritizedLanguages as $language )
             {

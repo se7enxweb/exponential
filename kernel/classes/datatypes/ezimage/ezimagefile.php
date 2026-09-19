@@ -181,6 +181,21 @@ class eZImageFile extends eZPersistentObject
         eZImageFile::removeFilepath( $contentObjectAttributeID, $oldFilepath );
         $result = eZImageFile::appendFilepath( $contentObjectAttributeID, $newFilepath );
 
+        // Translations share one image: the owning attribute holds the file
+        // and the others reference the same path. Only the owner's row was
+        // followed when the file moved, so every sibling was left naming a
+        // path that no longer exists - four dangling rows after an install.
+        // The file really has moved, so the references have to move with it.
+        foreach ( eZImageFile::fetchListByFilePath( $oldFilepath ) as $sharedRow )
+        {
+            $sharedAttributeID = (int) $sharedRow['contentobject_attribute_id'];
+            if ( $sharedAttributeID === (int) $contentObjectAttributeID )
+                continue;
+
+            eZImageFile::removeFilepath( $sharedAttributeID, $oldFilepath );
+            eZImageFile::appendFilepath( $sharedAttributeID, $newFilepath, true );
+        }
+
         $db->commit();
         return $result;
     }
@@ -223,6 +238,72 @@ class eZImageFile extends eZPersistentObject
     }
 
     /**
+     * How many attributes other than the caller's own still point at $filepath.
+     *
+     * The join the SQL path uses is between ezimagefile and
+     * ezcontentobject_attribute; here the image rows are read first and the
+     * attributes they name are then filtered, which gives the same answer
+     * without a join.
+     *
+     * $conditions takes either 'id' with 'exclude_version' and
+     * 'exclude_language' - other versions or translations of one attribute -
+     * or 'other_than_id', for any attribute but that one.
+     */
+    protected static function mongoReferenceCount( $filepath, array $conditions )
+    {
+        $db = eZDB::instance();
+
+        // aggregate() passes the pipeline through untouched; count() and find()
+        // route conditions through translateConditions(), which rewrites a
+        // top-level $or into something else entirely.
+        $attributeIDs = array();
+        foreach ( (array) $db->aggregate( 'ezimagefile', array(
+            array( '$match' => array( 'filepath' => (string) $filepath ) ) ) ) as $imageRow )
+        {
+            $imageRow = (array) $imageRow;
+            if ( isset( $imageRow['contentobject_attribute_id'] ) )
+                $attributeIDs[] = (int) $imageRow['contentobject_attribute_id'];
+        }
+        if ( !$attributeIDs )
+            return 0;
+
+        $filter = array( 'id' => array( '$in' => array_values( array_unique( $attributeIDs ) ) ) );
+
+        if ( isset( $conditions['other_than_id'] ) )
+        {
+            $filter['id'] = array(
+                '$in' => array_values( array_unique( $attributeIDs ) ),
+                '$ne' => (int) $conditions['other_than_id'],
+            );
+        }
+        elseif ( isset( $conditions['id'] ) )
+        {
+            // The SQL also requires the attribute to name the file in its own
+            // data_text, so a stale ezimagefile row does not keep a file alive.
+            $quoted = htmlspecialchars( $filepath, ENT_XML1 | ENT_COMPAT );
+            $filter['id'] = (int) $conditions['id'];
+            $filter['data_text'] = new MongoDB\BSON\Regex(
+                preg_quote( 'url="' . $quoted . '"', '' ), '' );
+            $filter['$or'] = array(
+                array( 'version' => array( '$ne' => (int) $conditions['exclude_version'] ) ),
+                array( 'language_code' => array( '$ne' => (string) $conditions['exclude_language'] ) ),
+            );
+        }
+
+        $counted = (array) $db->aggregate( 'ezcontentobject_attribute', array(
+            array( '$match' => $filter ),
+            array( '$count' => 'n' ),
+        ) );
+
+        if ( !$counted )
+            return 0;
+
+        $first = (array) $counted[0];
+
+        return isset( $first['n'] ) ? (int) $first['n'] : 0;
+    }
+
+    /**
      * Tests if $filepath is referenced by content attributes of the same $attributeId in different $attributeVersion or $languageCode
      *
      * @param string $filepath
@@ -234,6 +315,21 @@ class eZImageFile extends eZPersistentObject
     public static function isReferencedByOtherAttributes( $filepath, $attributeId, $attributeVersion, $languageCode )
     {
         $db = eZDB::instance();
+
+        // MongoDB has no join, and the driver refuses SQL it cannot translate,
+        // so arrayQuery() below hands back an empty array and the count reads
+        // as zero. The caller takes that to mean nothing else references the
+        // file and deletes it - which is why an install left 59 image files
+        // missing while their rows still pointed at them.
+        if ( $db->databaseName() === 'mongo' )
+        {
+            return self::mongoReferenceCount( $filepath, array(
+                'id' => (int) $attributeId,
+                'exclude_version' => (int) $attributeVersion,
+                'exclude_language' => (string) $languageCode,
+            ) ) > 0;
+        }
+
         $filepath = $db->escapeString( $filepath );
 
         // Check eZImageFile and eZContentobjectAttribute for references to the alias file, in another version/language
@@ -267,6 +363,14 @@ class eZImageFile extends eZPersistentObject
     public static function isReferencedByOtherImageFiles( $filepath, $attributeId )
     {
         $db = eZDB::instance();
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            return self::mongoReferenceCount( $filepath, array(
+                'other_than_id' => (int) $attributeId,
+            ) ) > 0;
+        }
+
         $filepath = $db->escapeString( $filepath );
 
         $rows = $db->arrayQuery(
