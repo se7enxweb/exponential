@@ -900,7 +900,10 @@ class expMongoDB extends eZDBInterface
                     // writing one, the same as castSqlLiteral() reads it.
                     elseif ( preg_match( "/^'(.*)'$/s", $val, $sm ) )
                     {
-                        $setFields[$col] = str_replace( "''", "'", stripslashes( $sm[1] ) );
+                        // Typed by the column, not by the quoting: writing a
+                        // quoted number into a numeric column as a string is
+                        // what stopped the next $inc on it from working.
+                        $setFields[$col] = self::castSqlLiteralForColumn( $val, $table, $col );
                     }
                     // A bitwise expression over the row's own columns, which the
                     // kernel writes as raw SQL for the language masks, e.g.
@@ -1081,15 +1084,14 @@ class expMongoDB extends eZDBInterface
                 }
                 $document = array();
                 foreach ( $columns as $index => $column )
-                    $document[$column] = self::castSqlLiteral( $values[$index] );
+                    $document[$column] = self::castSqlLiteralForColumn( $values[$index], $table, $column );
                 $documents[] = $document;
             }
 
             try
             {
                 $collection = $this->getClient()->selectCollection( $this->DB, $table );
-                foreach ( $documents as $index => $document )
-                    $documents[$index] = $this->applyAutoIncrement( $table, $document );
+                $documents = $this->applyAutoIncrementBatch( $table, $documents );
                 $documents = self::toBsonSafe( $documents );
                 if ( count( $documents ) === 1 )
                     $collection->insertOne( $documents[0] );
@@ -1170,7 +1172,7 @@ class expMongoDB extends eZDBInterface
                         . 'the updated table: ' . substr( $sql, 0, 300 ) );
                     return false;
                 }
-                $setFields[$am[2]] = self::castSqlLiteral( trim( $am[3] ) );
+                $setFields[$am[2]] = self::castSqlLiteralForColumn( trim( $am[3] ), $left, $am[2] );
             }
 
             $joinedWhere = $this->parseWhereClause(
@@ -1557,8 +1559,111 @@ class expMongoDB extends eZDBInterface
         return array( array_merge( $empty, $row ) );
     }
 
+    /**
+     * Turn a pipeline that is really a query back into a query.
+     *
+     * Most of what reaches aggregate() is a find() written the long way: a
+     * $match, usually a $sort, and a $project that drops _id. An aggregation
+     * costs several times a find for the same work, and the content engine
+     * issues these by the thousand - on a search reindex, eighty eight of
+     * every ninety eight.
+     *
+     * Only the stages that map exactly onto find() options are accepted, and
+     * only in an order where the two mean the same thing: a $limit ahead of a
+     * $sort limits first, which find cannot express, and a $project ahead of
+     * a $sort can remove the field being sorted on. A second $match would
+     * have to be merged with the first, which is not always the same query.
+     * Anything else keeps the pipeline.
+     *
+     * @param array $pipeline
+     * @return array|false array( 'filter' => array, 'options' => array )
+     */
+    static function findFromSimplePipeline( $pipeline )
+    {
+        if ( !is_array( $pipeline ) || !$pipeline )
+            return false;
+
+        // The order find() imposes: match, then sort, then skip, then limit,
+        // and a projection that applies to what comes out.
+        $order = array( '$match' => 1, '$sort' => 2, '$skip' => 3, '$limit' => 4, '$project' => 5 );
+
+        $filter = array();
+        $options = array();
+        $seen = array();
+        $previous = 0;
+
+        foreach ( $pipeline as $stage )
+        {
+            if ( !is_array( $stage ) || count( $stage ) !== 1 )
+                return false;
+
+            $name = key( $stage );
+            $value = current( $stage );
+
+            if ( !isset( $order[$name] ) || isset( $seen[$name] ) || $order[$name] < $previous )
+                return false;
+
+            $previous = $order[$name];
+            $seen[$name] = true;
+
+            switch ( $name )
+            {
+                case '$match':   $filter = (array) $value;                break;
+                case '$sort':    $options['sort'] = (array) $value;       break;
+                case '$project': $options['projection'] = (array) $value; break;
+                case '$skip':    $options['skip'] = (int) $value;         break;
+                case '$limit':   $options['limit'] = (int) $value;        break;
+            }
+        }
+
+        return array( 'filter' => $filter, 'options' => $options );
+    }
+
+    /**
+     * Run what findFromSimplePipeline() reduced a pipeline to.
+     * Returns rows in the same shape aggregate() would have.
+     */
+    protected function runFind( $table, array $find )
+    {
+        $this->traceStatement( 'find ' . $table . ': ' . json_encode( $find['filter'] ) );
+
+        $results = array();
+        if ( $this->OutputSQL )
+        {
+            eZDebug::accumulatorStart( 'mongodb_query', 'MongoDB Total', 'MongoDB queries' );
+            $this->startTimer();
+        }
+
+        try
+        {
+            $cursor = $this->getClient()->selectCollection( $this->DB, $table )
+                ->find( $find['filter'], $find['options'] );
+            foreach ( $cursor as $document )
+                $results[] = $document->getArrayCopy();
+        }
+        catch ( Exception $e )
+        {
+            $this->logError( 'expMongoDB::runFind ' . $e->getMessage()
+                . ' filter: ' . json_encode( $find['filter'] ) );
+        }
+
+        if ( $this->OutputSQL )
+        {
+            $this->endTimer();
+            $this->reportQuery( __CLASS__, "find($table) " . json_encode( $find['filter'] ),
+                count( $results ), $this->timeTaken() );
+            eZDebug::accumulatorStop( 'mongodb_query' );
+        }
+
+        return $results;
+    }
+
     function aggregate( $table, $pipeline = [] )
     {
+        $find = self::findFromSimplePipeline( $pipeline );
+        if ( $find !== false )
+            return $this->runFind( $table, $find );
+
         $this->traceStatement( 'aggregate ' . $table . ': ' . json_encode( $pipeline ) );
 
         $dbName = $this->DB;
@@ -1878,7 +1983,12 @@ class expMongoDB extends eZDBInterface
         if ( $field === false || ( array_key_exists( $field, $document ) && $document[$field] !== null ) )
             return $document;
 
-        $newID = $this->nextSeqID( $table, $field );
+        // nextSeqID() answers this with a $group taking the maximum over the
+        // whole collection. That is a full scan for one id, and the cost grows
+        // with the collection: indexing a single article wrote hundreds of
+        // ezsearch_object_word_link rows, each one scanning a table already
+        // tens of thousands of rows long. The sequence counter is O(1).
+        $newID = $this->nextAtomicID( $table . '.' . $field, $table, $field );
         if ( !$newID )
             return $document;
 
@@ -1886,6 +1996,103 @@ class expMongoDB extends eZDBInterface
         $this->_lastInsertedID = (int)$newID;
         $this->LastSerialIDs[$table . '.' . $field] = (int)$newID;
         return $document;
+    }
+
+    /**
+     * Give a whole batch of documents their ids in one reservation.
+     *
+     * One document at a time means one round trip each, which is what made a
+     * multi-row INSERT of several hundred rows slow even after the scan was
+     * gone. A single $inc of the batch size reserves a contiguous block, and
+     * the ids are handed out from it locally.
+     *
+     * @param string $table
+     * @param array $documents
+     * @return array the documents, with ids filled in
+     */
+    function applyAutoIncrementBatch( $table, array $documents )
+    {
+        $field = $this->autoIncrementField( $table );
+        if ( $field === false || !$documents )
+            return $documents;
+
+        $needing = array();
+        foreach ( $documents as $index => $document )
+        {
+            if ( !array_key_exists( $field, $document ) || $document[$field] === null )
+                $needing[] = $index;
+        }
+
+        if ( !$needing )
+            return $documents;
+
+        // One id is the ordinary case and the counter already handles it.
+        if ( count( $needing ) === 1 )
+        {
+            $index = $needing[0];
+            $documents[$index] = $this->applyAutoIncrement( $table, $documents[$index] );
+            return $documents;
+        }
+
+        $last = $this->reserveAtomicIDs( $table . '.' . $field, count( $needing ), $table, $field );
+        if ( !$last )
+        {
+            // Fall back to one at a time rather than write rows with no id.
+            foreach ( $needing as $index )
+                $documents[$index] = $this->applyAutoIncrement( $table, $documents[$index] );
+            return $documents;
+        }
+
+        $next = $last - count( $needing ) + 1;
+        foreach ( $needing as $index )
+        {
+            $documents[$index][$field] = (int)$next;
+            $this->_lastInsertedID = (int)$next;
+            $this->LastSerialIDs[$table . '.' . $field] = (int)$next;
+            $next++;
+        }
+
+        return $documents;
+    }
+
+    /**
+     * Reserve $count consecutive sequence values and return the last of them.
+     * Seeds the counter the same way nextAtomicID() does.
+     */
+    function reserveAtomicIDs( $counterName, $count, $seedTable = null, $seedColumn = 'id' )
+    {
+        $count = (int)$count;
+        if ( $count < 1 )
+            return false;
+
+        try
+        {
+            $collection = $this->getClient()->selectCollection( $this->DB, 'ezsequence' );
+
+            if ( $seedTable !== null && $collection->findOne( array( '_id' => $counterName ) ) === null )
+            {
+                $cursor = $this->getClient()->selectCollection( $this->DB, $seedTable )->aggregate( array(
+                    array( '$group' => array( '_id' => null, 'maxVal' => array( '$max' => '$' . $seedColumn ) ) ),
+                ) );
+                $rows = iterator_to_array( $cursor );
+                $seed = ( !empty( $rows ) && isset( $rows[0]['maxVal'] ) ) ? (int)$rows[0]['maxVal'] : 0;
+                $collection->updateOne( array( '_id' => $counterName ),
+                    array( '$setOnInsert' => array( 'seq' => $seed ) ), array( 'upsert' => true ) );
+            }
+
+            $result = $collection->findOneAndUpdate(
+                array( '_id' => $counterName ),
+                array( '$inc' => array( 'seq' => $count ) ),
+                array( 'upsert' => true,
+                       'returnDocument' => \MongoDB\Operation\FindOneAndUpdate::RETURN_DOCUMENT_AFTER ) );
+
+            return isset( $result['seq'] ) ? (int)$result['seq'] : false;
+        }
+        catch ( Exception $e )
+        {
+            $this->logError( 'expMongoDB::reserveAtomicIDs ' . $counterName . ' ' . $e->getMessage() );
+            return false;
+        }
     }
 
     function lastSerialID( $table = false, $column = false )
@@ -2636,6 +2843,114 @@ class expMongoDB extends eZDBInterface
      * Turn one SQL literal into the PHP value it should be stored as, so an
      * integer column does not arrive in the document as a string.
      */
+    /**
+     * The numeric columns of a table, taken from the shipped .dba schema.
+     *
+     * MongoDB stores whatever type it is handed, and the two halves of this
+     * driver disagreed about a quoted number: an INSERT wrote '1' as the
+     * string "1", while a WHERE looked for the integer 1. A row written by
+     * raw SQL could therefore never be found by raw SQL again.
+     *
+     * The consequences were not limited to lookups. MongoDB's $inc refuses a
+     * string, so "SET object_count = object_count + 1" failed on every word
+     * the search indexer touched, and the index stayed at fourteen objects out
+     * of two hundred and eighty four.
+     *
+     * Guessing from the literal is not good enough - a digits-only value in a
+     * genuinely textual column, a remote_id for instance, would be turned into
+     * a number and stop matching what eZPersistentObject writes there. The
+     * .dba is the same description the collections were built from, so it is
+     * what decides the type.
+     *
+     * @param string $table
+     * @return array column => 'int'|'float'
+     */
+    static function numericColumns( $table )
+    {
+        if ( self::$NumericColumns === null )
+            self::$NumericColumns = self::loadNumericColumns();
+
+        return isset( self::$NumericColumns[$table] ) ? self::$NumericColumns[$table] : array();
+    }
+
+    static protected $NumericColumns = null;
+
+    /**
+     * Read every .dba the installation ships and note the numeric columns.
+     * Done once per request; the files are plain PHP and stay in the opcode
+     * cache.
+     */
+    static protected function loadNumericColumns()
+    {
+        $map = array();
+
+        $root = class_exists( 'eZSys' ) ? eZSys::rootDir() : '.';
+        $files = array( $root . '/share/db_schema.dba' );
+
+        if ( class_exists( 'eZExtension' ) )
+        {
+            foreach ( (array) eZExtension::activeExtensions() as $extension )
+                $files[] = $root . '/extension/' . $extension . '/share/db_schema.dba';
+        }
+
+        $integerTypes = array( 'int', 'integer', 'bigint', 'smallint', 'tinyint', 'mediumint' );
+        $floatTypes   = array( 'float', 'double', 'decimal', 'numeric' );
+
+        foreach ( $files as $file )
+        {
+            if ( !is_readable( $file ) )
+                continue;
+
+            $schema = eZDbSchema::readArray( $file );
+            if ( !is_array( $schema ) )
+                continue;
+
+            foreach ( $schema as $tableName => $definition )
+            {
+                if ( !is_array( $definition ) || !isset( $definition['fields'] )
+                  || !is_array( $definition['fields'] ) )
+                    continue;
+
+                foreach ( $definition['fields'] as $column => $field )
+                {
+                    $type = isset( $field['type'] ) ? strtolower( (string) $field['type'] ) : '';
+                    if ( in_array( $type, $integerTypes, true ) )
+                        $map[$tableName][$column] = 'int';
+                    elseif ( in_array( $type, $floatTypes, true ) )
+                        $map[$tableName][$column] = 'float';
+                }
+            }
+        }
+
+        return $map;
+    }
+
+    /**
+     * castSqlLiteral(), with the column's declared type applied.
+     *
+     * Use this wherever a value is written, so what goes into a document is
+     * the type the schema says the column holds rather than the type the SQL
+     * happened to quote it as.
+     */
+    static function castSqlLiteralForColumn( $literal, $table, $column )
+    {
+        $value = self::castSqlLiteral( $literal );
+
+        if ( !is_string( $value ) || $value === '' )
+            return $value;
+
+        $numeric = self::numericColumns( $table );
+        if ( !isset( $numeric[$column] ) )
+            return $value;
+
+        if ( $numeric[$column] === 'int' && preg_match( '/^-?\d+$/', $value ) )
+            return (int) $value;
+        if ( $numeric[$column] === 'float' && is_numeric( $value ) )
+            return (float) $value;
+
+        return $value;
+    }
+
     static function castSqlLiteral( $literal )
     {
         $literal = trim( (string)$literal );
