@@ -131,7 +131,7 @@ f90ab3789386b943e3c322da2e9c062d  bin/shell/redumpall.sh
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 51bce499f1e818a40a8b0034e0e1a9c1  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-07daf3a4e807278f92ba850562db9bca  composer.json
+bd55b6d4b34ec7fbe60a4c7c1bf04b09  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 d77f7f99abd083dc48fceaf4bf996f62  composer.lock
 f6639c1204722f978072a5f5238027ae  config.php
@@ -9408,7 +9408,7 @@ dde140bbd33ff30423460c8c17ac7144  extension/eztags/settings/ezfind.ini.append.ph
 342ab1f92892abedcf4410620984b2c2  extension/eztags/settings/ezjscore.ini.append.php
 b5358589eeec447a2f803b8056e8c317  extension/eztags/settings/ezoe_attributes.ini.append.php
 4936c62194b2d89ae27bf72219e7235c  extension/eztags/settings/eztags.ini
-bf1a08c90b6ea44cd85e2e463bbd261f  extension/eztags/settings/menu.ini.append.php
+6f30024a90b28e645d01ddc6e36d212a  extension/eztags/settings/menu.ini.append.php
 9380da8bf3edf0a5f5412d94aa625cb1  extension/eztags/settings/module.ini.append.php
 f324b08c98455f0259cf2e5b95d9cff8  extension/eztags/settings/site.ini.append.php
 9e4adb6d6b62d65347af03fa16d60209  extension/eztags/settings/template.ini.append.php
