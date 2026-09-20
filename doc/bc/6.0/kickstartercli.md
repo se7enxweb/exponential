@@ -222,6 +222,37 @@ Type=mysqli
 |-------|-------------|
 | `Type` | Database driver: `mysqli`, `pgsql`, `sqlite3`, `mongodb`. |
 
+**Important:** `Type` chooses the driver the *installer* connects with. It does
+not decide the `DatabaseImplementation` written into
+`settings/override/site.ini.append.php` for the finished site. That value is
+taken from the live `site.ini`, and it is deliberately the operator's to set.
+
+The reason is that a driver has more than one name. `mysql`, `mysqli`,
+`ezmysql` and `ezmysqli` all resolve to `eZMySQLiDB` through the
+`ImplementationAlias` block in `settings/site.ini`, and a site may register
+its own alias there for a driver of its own. Deriving the name from whichever
+driver happened to connect would overwrite that choice on every install, so
+the installer keeps it.
+
+The consequence is worth knowing before an install that changes engine. The
+live `site.ini` still holds the name of the engine you are leaving, so the new
+installation is written with the previous engine's implementation beside the
+new host, database and credentials. `settings/override/` outranks every
+siteaccess, so the whole site then tries to speak the old engine's protocol to
+the new server and no page will load.
+
+Set it to match the target before running, for example when moving to MySQL:
+
+```bash
+sed -i '/^\[DatabaseSettings\]/,/^\[/ s/^DatabaseImplementation=.*/DatabaseImplementation=mysqli/' \
+  settings/override/site.ini.append.php
+```
+
+Then run the installer as usual. Afterwards the value in
+`settings/override/site.ini.append.php` and the one in each siteaccess should
+both name the engine you have just installed onto; if they disagree, that is
+what to correct.
+
 ### `database_init`
 
 ```ini
