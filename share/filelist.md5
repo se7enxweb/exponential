@@ -131,7 +131,7 @@ f90ab3789386b943e3c322da2e9c062d  bin/shell/redumpall.sh
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 51bce499f1e818a40a8b0034e0e1a9c1  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-23523ca08ff70921969d9bc81edd6a47  composer.json
+0460fcfaff50690d45898d5e4c688edb  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 d77f7f99abd083dc48fceaf4bf996f62  composer.lock
 f6639c1204722f978072a5f5238027ae  config.php
@@ -11022,7 +11022,7 @@ d51e25fce8b616416de618049ed003e7  extension/sevenx_themes_media/design/media/tem
 cd66be168cd42f18e575ec5aac3129d6  extension/sevenx_themes_media/design/media/templates/pagelayout/head/recipe_schema.tpl
 fdab3f10b5825b1c234634bdc7bace30  extension/sevenx_themes_media/design/media/templates/pagelayout/head/script.tpl
 3df0ab32735d9f3297718028f2fa4067  extension/sevenx_themes_media/design/media/templates/pagelayout/head/style.tpl
-5580bbdbdd501eaa2581d528bca35a4a  extension/sevenx_themes_media/design/media/templates/pagelayout/head/title.tpl
+416d2008c315db811beead40d531991c  extension/sevenx_themes_media/design/media/templates/pagelayout/head/title.tpl
 4b0f0a60dd3dd61f05e4e839f7726b03  extension/sevenx_themes_media/design/media/templates/pagelayout/header.tpl
 655bf0d932e3b82b452f7086251803ae  extension/sevenx_themes_media/design/media/templates/pagelayout/header/language_selector.tpl
 e5ee43fddbdc59b3867ca544ea62ed8f  extension/sevenx_themes_media/design/media/templates/pagelayout/header/main_menu.tpl
@@ -11045,7 +11045,7 @@ e25b9e3532a58d3c406c8f6dbf84a990  extension/sevenx_themes_media/design/media/tem
 3bbadb6474ea8b686ed6dff4f2d6d34d  extension/sevenx_themes_media/design/media/templates/shop/country/edit.tpl
 28b189f1d5228a3dce1e3e97696b1a19  extension/sevenx_themes_media/design/media/templates/shop/orderview.tpl
 8e44e8aa763ab7dec325711e4f38b213  extension/sevenx_themes_media/design/media/templates/shop/userregister.tpl
-9741bfef8a50a86abf2407f1c567e04b  extension/sevenx_themes_media/design/media/templates/tags/view.tpl
+9adb119e4e98e85a965a78fee856fbe1  extension/sevenx_themes_media/design/media/templates/tags/view.tpl
 0cb3704403249d60c28cbd561ad1b868  extension/sevenx_themes_media/design/media/templates/themes/bold/pagelayout/header.tpl
 79f8038d6fe98a7a98a70e3a52d028fa  extension/sevenx_themes_media/design/media/templates/themes/common/browser/item.tpl
 b621300b5a7dce2f4b2c9f7f501e7b1c  extension/sevenx_themes_media/design/media/templates/themes/common/browser/ngcb_preview.tpl
