@@ -51,14 +51,6 @@ class eZSearchEngine implements ezpSearchEngine
      */
     public function addObject( $contentObject, $commit = true )
     {
-        // MongoDB uses a document store — the built-in SQL-word-index tables
-        // (ezsearch_word, ezsearch_object_word_link) are not meaningful, and
-        // every addObject call issues dozens of raw SQL queries that the MongoDB
-        // adapter must translate one by one. Skip indexing entirely; use the
-        // indexcontent cron job or a dedicated search extension instead.
-        if ( eZDB::instance()->databaseName() === 'mongo' )
-            return true;
-
         $contentObjectID = $contentObject->attribute( 'id' );
         $currentVersion = $contentObject->currentVersion();
 
@@ -77,6 +69,21 @@ class eZSearchEngine implements ezpSearchEngine
         $placement = 0;
         $previousWord = '';
 
+        // Every attribute's translations live in the same table, for the same
+        // object and version, and differ only by which class attribute they
+        // belong to. fetchAttributeTranslations() asks for them one class
+        // attribute at a time, so indexing an object cost a query per
+        // searchable field. They are read once here and handed out below.
+        $translationsByClassAttribute = array();
+        foreach ( eZPersistentObject::fetchObjectList(
+                      eZContentObjectAttribute::definition(),
+                      null,
+                      array( 'contentobject_id' => $contentObjectID,
+                             'version' => $currentVersion->attribute( 'version' ) ) ) as $attributeRow )
+        {
+            $translationsByClassAttribute[(int) $attributeRow->attribute( 'contentclassattribute_id' )][] = $attributeRow;
+        }
+
         eZContentObject::recursionProtectionStart();
         foreach ( $currentVersion->contentObjectAttributes() as $attribute )
         {
@@ -84,8 +91,10 @@ class eZSearchEngine implements ezpSearchEngine
             $classAttribute = $attribute->contentClassAttribute();
             if ( $classAttribute->attribute( "is_searchable" ) == 1 )
             {
-                // Fetch attribute translations
-                $attributeTranslations = $attribute->fetchAttributeTranslations();
+                $classAttributeID = (int) $attribute->attribute( 'contentclassattribute_id' );
+                $attributeTranslations = isset( $translationsByClassAttribute[$classAttributeID] )
+                    ? $translationsByClassAttribute[$classAttributeID]
+                    : $attribute->fetchAttributeTranslations();
 
                 foreach ( $attributeTranslations as $translation )
                 {
@@ -172,10 +181,6 @@ class eZSearchEngine implements ezpSearchEngine
     function buildWordIDArray( $indexArrayOnlyWords )
     {
         $db = eZDB::instance();
-        // MongoDB: ezsearch SQL engine is not used with MongoDB — skip indexing silently
-        if ( $db->databaseName() === 'mongo' )
-            return array();
-
 
         // Initialize transformation system
         $trans = eZCharTransform::instance();
@@ -184,7 +189,15 @@ class eZSearchEngine implements ezpSearchEngine
         $wordArray = array();
         // store the words in the index and remember the ID
         $dbName = $db->databaseName();
-        if ( $dbName == 'mysql' )
+
+        // The batched path costs four statements per five hundred words; the
+        // per-word path below costs two per word. That difference is only
+        // bearable on an engine where a statement is cheap, and it is not on
+        // MongoDB, where each one is translated before it is run. Everything
+        // the batched path needs - IN lists, a multi-row INSERT, and an
+        // arithmetic UPDATE - the MongoDB driver handles, so it takes this
+        // route too.
+        if ( in_array( $dbName, array( 'mysql', 'mongo' ), true ) )
         {
             $db->begin();
             for( $arrayCount = 0; $arrayCount < $wordCount; $arrayCount += 500 )
@@ -333,7 +346,12 @@ class eZSearchEngine implements ezpSearchEngine
         }
         $dbName = $db->databaseName();
 
-        if ( $dbName == 'mysql' )
+        // One statement for the whole object rather than one per word. On
+        // MongoDB the per-row branch below meant a translated statement for
+        // every word of every object, which is what made indexing too slow to
+        // use; the driver turns this single multi-row INSERT into one
+        // insertMany.
+        if ( in_array( $dbName, array( 'mysql', 'mongo' ), true ) )
         {
             if ( count( $valuesStringList ) > 0 )
             {
