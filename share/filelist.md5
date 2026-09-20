@@ -131,7 +131,7 @@ f90ab3789386b943e3c322da2e9c062d  bin/shell/redumpall.sh
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 51bce499f1e818a40a8b0034e0e1a9c1  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-60c67427d19c23cb7375846778c55957  composer.json
+23523ca08ff70921969d9bc81edd6a47  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 d77f7f99abd083dc48fceaf4bf996f62  composer.lock
 f6639c1204722f978072a5f5238027ae  config.php
@@ -9284,10 +9284,10 @@ a65c763ef0340e232cfe8c274f56fca0  extension/eztags/.github/FUNDING.yml
 2495c026762040a353277b9674ba3349  extension/eztags/classes/eztagsattributefilter.php
 20c0be903261cf513f8c8db71efd2ead  extension/eztags/classes/eztagsattributelinkobject.php
 70385671c2388f2c128a922528431ef0  extension/eztags/classes/eztagskeyword.php
-f53e9c5625b0a47698c7ced34b9d107c  extension/eztags/classes/eztagsobject.php
+210bb883cee79cfb1abbcc8e94b52b37  extension/eztags/classes/eztagsobject.php
 49c5c0fe12e50e82db5c58bcce979abf  extension/eztags/classes/eztagstreeattributefilter.php
 c13994e5bf2b3470e3c9d647da20bad6  extension/eztags/composer.json
-cbcb7983333bc268a2d9de9da77212a0  extension/eztags/datatypes/eztags/eztags.php
+dc78006dc2ca7748c36a2a7ce33b8484  extension/eztags/datatypes/eztags/eztags.php
 0b5f9dc74ce4364478603f03d8e77ff5  extension/eztags/datatypes/eztags/eztagstype.php
 8a5f4feab0174c088633033cdc19e5d8  extension/eztags/design/admin2/javascript/jquery.eztagschildren.js
 d298ad0855823d5f2a38eb6a7e28afff  extension/eztags/design/admin2/templates/eztags_children.tpl
@@ -10455,7 +10455,7 @@ d44e994b4ce763ab229c202e63510f4d  extension/sevenx_themes_media/INSTALL.md
 bcf8dbf240443e603fa3c3874657b9c8  extension/sevenx_themes_media/LICENSE.md
 53d7d0bed2d7ae70f2a5f506a781a932  extension/sevenx_themes_media/README.md
 f9468d7421be92b2b38201cc15e3717c  extension/sevenx_themes_media/autoloads/eztemplateautoload.php
-b17be957c378ee7b958c5a5140765314  extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php
+7b2ead9f79e32f35ff0f981a95d11b32  extension/sevenx_themes_media/autoloads/sevenxthemesmediaoperators.php
 037ecb1b77e06b8142d6f64ab6121170  extension/sevenx_themes_media/classes/sevenxthemesmediaxhtmlxmloutput.php
 a642295b1604571a78cc03344b202765  extension/sevenx_themes_media/composer.json
 1890f54ab0c182f36fb1f324471db067  extension/sevenx_themes_media/datatypes/eztags/eztagstype.php
