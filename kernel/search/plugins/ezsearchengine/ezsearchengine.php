@@ -191,13 +191,16 @@ class eZSearchEngine implements ezpSearchEngine
         $dbName = $db->databaseName();
 
         // The batched path costs four statements per five hundred words; the
-        // per-word path below costs two per word. That difference is only
-        // bearable on an engine where a statement is cheap, and it is not on
-        // MongoDB, where each one is translated before it is run. Everything
-        // the batched path needs - IN lists, a multi-row INSERT, and an
-        // arithmetic UPDATE - the MongoDB driver handles, so it takes this
-        // route too.
-        if ( in_array( $dbName, array( 'mysql', 'mongo' ), true ) )
+        // per-word path below costs two per word.
+        //
+        // It was reserved for MySQL, from when a multi-row INSERT was a MySQL
+        // extension. It has not been one for a long time: SQLite has accepted
+        // the form since 3.7.11 and PostgreSQL since 8.2, and everything else
+        // the path needs - an IN list and an arithmetic UPDATE - is ordinary
+        // SQL. The MongoDB driver handles all three as well. Every engine
+        // that can run these statements should, because the per-word path is
+        // slow everywhere and merely unusable on MongoDB.
+        if ( in_array( $dbName, array( 'mysql', 'mongo', 'sqlite', 'postgresql' ), true ) )
         {
             $db->begin();
             for( $arrayCount = 0; $arrayCount < $wordCount; $arrayCount += 500 )
@@ -346,12 +349,12 @@ class eZSearchEngine implements ezpSearchEngine
         }
         $dbName = $db->databaseName();
 
-        // One statement for the whole object rather than one per word. On
-        // MongoDB the per-row branch below meant a translated statement for
-        // every word of every object, which is what made indexing too slow to
-        // use; the driver turns this single multi-row INSERT into one
-        // insertMany.
-        if ( in_array( $dbName, array( 'mysql', 'mongo' ), true ) )
+        // One statement for the whole object rather than one per word. The
+        // per-row branch below is a statement for every word of every object,
+        // which is what made indexing on MongoDB too slow to use and is
+        // wasteful on the SQL engines too. Every engine here accepts a
+        // multi-row INSERT; the MongoDB driver turns it into one insertMany.
+        if ( in_array( $dbName, array( 'mysql', 'mongo', 'sqlite', 'postgresql' ), true ) )
         {
             if ( count( $valuesStringList ) > 0 )
             {
