@@ -1243,6 +1243,44 @@ class expMongoDB extends eZDBInterface
             return true;
         }
 
+        // --- CREATE TABLE [IF NOT EXISTS] x ( ... ) --- MongoDB creates a
+        // collection on first write, so the statement exists here for its
+        // indexes. Without a PRIMARY index autoIncrementField() has no key to
+        // read and generated ids come back empty; without the UNIQUE ones
+        // nothing stops a duplicate. Extensions that build a table at runtime
+        // used to get the unhandled-SQL path instead, which returned false and
+        // left them writing into a collection that was never prepared.
+        if ( preg_match( '/^\s*CREATE\s+TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?[`"]?(\w+)[`"]?\s*\((.*)\)[^)]*$/is', $sql, $m ) )
+        {
+            $tableName = trim( $m[1] );
+            try
+            {
+                $collection = $this->getClient()->selectCollection( $dbName, $tableName );
+                foreach ( self::parseCreateTableIndexes( $m[2] ) as $indexName => $index )
+                {
+                    $keyDoc = array();
+                    foreach ( $index['fields'] as $fieldName )
+                        $keyDoc[$fieldName] = 1;
+
+                    $options = array( 'name' => $indexName );
+                    if ( $index['unique'] )
+                        $options['unique'] = true;
+
+                    // Re-issuing an identical index is a no-op in MongoDB, which
+                    // is what IF NOT EXISTS has to mean here.
+                    $collection->createIndex( $keyDoc, $options );
+                }
+            }
+            catch ( Exception $e )
+            {
+                $this->logError( 'expMongoDB::query CREATE TABLE failed: ' . $e->getMessage()
+                    . ' SQL: ' . substr( $sql, 0, 300 ) );
+                return false;
+            }
+            $this->AutoIncrementFields = array();
+            return true;
+        }
+
         // --- SET <session variable> = ... --- MySQL session settings such as
         // FOREIGN_KEY_CHECKS and NAMES. MongoDB enforces no foreign keys and
         // speaks only UTF-8, so there is nothing to apply and nothing lost.
@@ -2398,6 +2436,72 @@ class expMongoDB extends eZDBInterface
         }
 
         return false;
+    }
+
+    /**
+     * Read the index definitions out of a CREATE TABLE body.
+     *
+     * Only the parts MongoDB can act on are taken: the key clauses. Column
+     * definitions and storage options carry nothing a collection can hold, so
+     * they are skipped rather than translated.
+     *
+     * The names mirror MySQL's, because autoIncrementField() looks for an
+     * index called PRIMARY and expMongoSchema writes the same names when it
+     * builds collections from a .dba.
+     *
+     * @param string $body the text between the outer brackets
+     * @return array indexName => array( 'fields' => array, 'unique' => bool )
+     */
+    static function parseCreateTableIndexes( $body )
+    {
+        $indexes = array();
+        $unnamed = 0;
+
+        foreach ( self::splitSqlList( $body ) as $clause )
+        {
+            $clause = trim( $clause );
+
+            if ( preg_match( '/^PRIMARY\s+KEY\s*\((.+?)\)/is', $clause, $m ) )
+            {
+                $indexes['PRIMARY'] = array( 'fields' => self::parseIndexFieldList( $m[1] ), 'unique' => true );
+                continue;
+            }
+
+            if ( preg_match( '/^(UNIQUE)\s+(?:KEY|INDEX)\s*[`"]?(\w*)[`"]?\s*\((.+?)\)/is', $clause, $m )
+              || preg_match( '/^()(?:KEY|INDEX)\s*[`"]?(\w*)[`"]?\s*\((.+?)\)/is', $clause, $m ) )
+            {
+                $name = $m[2] !== '' ? $m[2] : 'idx_' . ( ++$unnamed );
+                $indexes[$name] = array(
+                    'fields' => self::parseIndexFieldList( $m[3] ),
+                    'unique' => strtoupper( $m[1] ) === 'UNIQUE',
+                );
+                continue;
+            }
+
+            // A column definition carrying its own UNIQUE marker.
+            if ( preg_match( '/^[`"]?(\w+)[`"]?\s+[\w()]+.*\bUNIQUE\b/is', $clause, $m ) )
+                $indexes[$m[1]] = array( 'fields' => array( $m[1] ), 'unique' => true );
+        }
+
+        return $indexes;
+    }
+
+    /**
+     * Turn "`a`, b(64), c" from an index clause into plain field names.
+     * A prefix length is a MySQL storage detail with no MongoDB equivalent.
+     */
+    static function parseIndexFieldList( $text )
+    {
+        $fields = array();
+        foreach ( explode( ',', $text ) as $field )
+        {
+            $field = trim( $field );
+            $field = preg_replace( '/\(\s*\d+\s*\)\s*$/', '', $field );
+            $field = trim( $field, " \t`\"[]" );
+            if ( $field !== '' )
+                $fields[] = $field;
+        }
+        return $fields;
     }
 
     /**
