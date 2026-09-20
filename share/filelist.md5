@@ -131,7 +131,7 @@ f90ab3789386b943e3c322da2e9c062d  bin/shell/redumpall.sh
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 51bce499f1e818a40a8b0034e0e1a9c1  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-0460fcfaff50690d45898d5e4c688edb  composer.json
+5fd894be8011fc631cfcd855c0379d31  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 d77f7f99abd083dc48fceaf4bf996f62  composer.lock
 f6639c1204722f978072a5f5238027ae  config.php
@@ -3995,7 +3995,7 @@ b6c35c39bff84d9e73ff43988ad05a91  extension/explayouts_ui/design/admin/styleshee
 a72e6ce30609c74b84d414dc0c8768a7  extension/explayouts_ui/design/admin/templates/explayouts_ui/dashboard.tpl
 c246295f4fb68471b4cad84c566954f5  extension/explayouts_ui/design/admin/templates/explayouts_ui/layout_create.tpl
 2e454de19d867597f97feabfedca3946  extension/explayouts_ui/design/admin/templates/explayouts_ui/layout_edit.tpl
-2771055e958eb14be8267c498a4cb60a  extension/explayouts_ui/design/admin/templates/explayouts_ui/layout_list.tpl
+c4cb11de4cfa883e49413a167bee1790  extension/explayouts_ui/design/admin/templates/explayouts_ui/layout_list.tpl
 1cd631cacbaeb9e6b4c6d7cfb9e4b65d  extension/explayouts_ui/design/admin/templates/explayouts_ui/parts/layouts_sidebar.tpl
 71504a473beb049b4233ae7dcd9ca485  extension/explayouts_ui/design/admin/templates/explayouts_ui/rule_detail.tpl
 56e87c03e8c90fc0486686247c1beda4  extension/explayouts_ui/design/admin/templates/explayouts_ui/rule_edit.tpl
