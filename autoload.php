@@ -7,9 +7,62 @@
  * @version //autogentag//
  * @package kernel
  */
-// Disable the PHAR stream wrapper as it is insecure
-if (PHP_SAPI !== 'cli' && in_array('phar', stream_get_wrappers())) {
-    stream_wrapper_unregister('phar');
+// Disable the PHAR stream wrapper as it is insecure.
+//
+// The vector this was written for in 2018 -- phar metadata being unserialized
+// by an ordinary file operation, turning any influenced path into object
+// instantiation -- is closed. PHP 8 no longer deserializes metadata that way;
+// measured on 8.5.10, a file_exists() on a phar:// path instantiates nothing.
+//
+// The line is not obsolete, because the wrapper also does something PHP 8 did
+// not change: it lets any path-taking function reach *inside* an archive. A
+// file that is a valid image and a valid phar at the same time is trivial to
+// produce, and this application accepts image uploads by design. Measured both
+// ways on this installation: with the wrapper registered, include() on
+// phar://<uploaded>.jpg/payload.php executes the PHP inside the image; with it
+// unregistered, the same call reaches nothing at all.
+//
+// What was wrong was the condition. PHP_SAPI !== 'cli' stood in for "is this a
+// web request", and a persistent-worker server answers that wrongly: it serves
+// public traffic under the CLI SAPI. So this protection was absent on exactly
+// the requests it exists for, and present only on the CLI, where an attacker
+// has no path in. The SAPI is not consulted any more.
+//
+// One case must keep the wrapper: a runtime that is itself read through it.
+// An engine packaged as a phar, or a tool such as phpunit.phar as the entry
+// point, unloads itself mid-run if the wrapper goes. Detected by looking for a
+// phar:// path among the files already included, which covers this file being
+// in one, the entry point being one, and an engine phar that included a copy
+// of this file from disk. EXP_ENGINE_PHAR is the explicit hook for the last
+// case, set by a packaged engine's bootstrap before it reaches here.
+//
+// The answer cannot change within one process, so it is decided once. That
+// matters under a persistent worker, where this file is re-entered on every
+// request and the included-file list grows with the worker's life.
+if ( !defined( 'EXP_RUNTIME_IS_PHAR' ) )
+{
+    $ezpRuntimeIsPhar = strncmp( __FILE__, 'phar://', 7 ) === 0
+                     || defined( 'EXP_ENGINE_PHAR' );
+
+    if ( !$ezpRuntimeIsPhar )
+    {
+        foreach ( get_included_files() as $ezpIncludedFile )
+        {
+            if ( strncmp( $ezpIncludedFile, 'phar://', 7 ) === 0 )
+            {
+                $ezpRuntimeIsPhar = true;
+                break;
+            }
+        }
+    }
+
+    define( 'EXP_RUNTIME_IS_PHAR', $ezpRuntimeIsPhar );
+    unset( $ezpRuntimeIsPhar, $ezpIncludedFile );
+}
+
+if ( !EXP_RUNTIME_IS_PHAR && in_array( 'phar', stream_get_wrappers() ) )
+{
+    stream_wrapper_unregister( 'phar' );
 }
 
 // config.php can set the components path like:

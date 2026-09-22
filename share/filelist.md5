@@ -14,7 +14,7 @@ a184ff1f4cd1fd4ec3a82e7744fd7e62  CONTRIBUTING.md
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 b823502feaf9e198f04acc6cf0aa75b5  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
-bb00515f3bb9b7d88590327bfbb94b4f  autoload.php
+340256a44fe559bfeaed590427112e88  autoload.php
 c436f4c211d78503d9e5d43ddd908907  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
