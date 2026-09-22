@@ -2,7 +2,7 @@ cfae8c7db032f3406baf36eff749cee8  .autoloadignore
 d3c3da531de3f903a6857f522f3ba0db  .gitattributes
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 02046daf5ef60c8c1f8dc00864d79859  .github/workflows/phpunit.yml
-169a021795714b16a66c706f126c1d27  .gitignore
+a285fccd47bfb5a3280757d7bb87acc4  .gitignore
 120e059f21579bca12308ca7bb119a2b  .htaccess
 36dadb1db6c4e493805c365641e8f5fe  .htaccess__backup_must_keep_v01
 ebea2bf16cb16d06aa66de3042fbf247  .htaccess_root
@@ -14,7 +14,7 @@ a184ff1f4cd1fd4ec3a82e7744fd7e62  CONTRIBUTING.md
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 b823502feaf9e198f04acc6cf0aa75b5  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
-340256a44fe559bfeaed590427112e88  autoload.php
+3b96782129fa8a60261a41688f7c0c3c  autoload.php
 c436f4c211d78503d9e5d43ddd908907  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
@@ -85,6 +85,7 @@ e9979b600146bdd25d4957742e641512  bin/php/ezwebinupgrade.php
 180df4500551e7902bf45d85c92a3c49  bin/php/flatten.php
 36d8cb716196471d88c5151f63b9dd42  bin/php/kickstarter.php
 464c842c03c7aee495e3d4ea68542f05  bin/php/makestaticcache.php
+a0323faae719eba60f6a7ace9dafb3f1  bin/php/phar.php
 184abc86baeb156744680e389b660400  bin/php/preload.php
 80eaf192d36d97227b5bcfec202a071f  bin/php/publish_content.php
 186a38d938065cee40067c4f7a774936  bin/php/resetuserpassword.php
@@ -133,7 +134,7 @@ f90ab3789386b943e3c322da2e9c062d  bin/shell/redumpall.sh
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 51bce499f1e818a40a8b0034e0e1a9c1  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-cb99df28ec03857b3f54459634fdf738  composer.json
+0e619d79bc57f47195d8b67a531f1ce2  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 d77f7f99abd083dc48fceaf4bf996f62  composer.lock
 f6639c1204722f978072a5f5238027ae  config.php
@@ -509,7 +510,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 ac9b8cde45959bdf348cb0c2868e7e2d  design/admin/templates/setup/designextension.tpl
 c29e3a846853ed8a4a3d4f91c4874af3  design/admin/templates/setup/extensions.tpl
 9a1144de0b4042a411f4374ddf2d6050  design/admin/templates/setup/handlerextension.tpl
-855efa53d457a7582a574011ed79a36f  design/admin/templates/setup/info.tpl
+b37e15b52463b2ea44f22793c8a96d39  design/admin/templates/setup/info.tpl
 9728ae823c710f8bdf558810fe857aa5  design/admin/templates/setup/kerneloverride.tpl
 7f9d1052a5207dc44c8791f26b779c3c  design/admin/templates/setup/moduleextension.tpl
 377b53b0f333488da73e7236059512a4  design/admin/templates/setup/modulewizard.tpl
@@ -2287,6 +2288,7 @@ e222ad728b939965d51455158c8782fa  doc/bc/6.0/kickstartercli.md
 8aae77691af6b35a093d9229b3757ed3  doc/bc/6.0/multi-node-edit.md
 885a488ce80a5e6d147ea79d6ed9f42b  doc/bc/6.0/opml.md
 991162afe545cb6f8dc7f292e9763ecb  doc/bc/6.0/pagination-settings.md
+abae6c1734063faf8e51879ccd81e06f  doc/bc/6.0/phar.md
 2fc39d399e6978352dd88a9182bca8b0  doc/bc/6.0/php8.md
 8827542a19048d2c80e65ab2efd0b6af  doc/bc/6.0/phpunitv10.md
 82e9ad363eeb8a1d0090ed20cf756a7e  doc/bc/6.0/phpunitv13.md
@@ -11758,6 +11760,7 @@ d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
 7ad2230bf3a7724a0bb2b6216d3b6fb7  kernel/classes/expkickstarter.php
 f356fcde7f2bb1d00f505e2514639808  kernel/classes/expkickstarterini.php
+fdd5c9c1894c2b4b7590b826626ccc1f  kernel/classes/expphar.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 cede6e91dcf9652c1c975febdcd3e0b7  kernel/classes/expvelocity.php
 6688ecc0698f54470a41e08b034c47d3  kernel/classes/ezaudit.php
@@ -12318,7 +12321,7 @@ b2b886461ecd202ac56cf05c9113fd2c  kernel/setup/ezsetupfunctioncollection.php
 324bc16d51431808de8fb6774edf3649  kernel/setup/ezsetuptests.php
 b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
 004141a5f38e662b67e4b8f8408a9900  kernel/setup/handlerextension.php
-54a1e59704fae4fcc3b0fe50ef07f705  kernel/setup/info.php
+e676a89c19afea7abf3d24f61428077d  kernel/setup/info.php
 cb0b8c124634b99b49697c6607147d5f  kernel/setup/kerneloverride.php
 18ecee0d07126e49f164552b002eaf7e  kernel/setup/menuconfig.php
 7a0d4cf942cc990405064a4ae519cc5b  kernel/setup/module.php
@@ -12665,7 +12668,7 @@ ac0e7f256b7eee19367e0a1e12915773  lib/ezutils/classes/ezfloatvalidator.php
 b008cd839568d0cc24f5484274ea91e2  lib/ezutils/classes/ezhttpfile.php
 1967495ec268059798b1c656577c09d0  lib/ezutils/classes/ezhttppersistence.php
 ce1da2761bd79e81221750f76f70222c  lib/ezutils/classes/ezhttptool.php
-359e9116c1472e0e5ca1bc5e3846276f  lib/ezutils/classes/ezini.php
+f6d63bf6fcdeca39ecab5d85f48bd034  lib/ezutils/classes/ezini.php
 b2781bccfa90dafac49bdf11dcfaf1a0  lib/ezutils/classes/ezinputvalidator.php
 f05703f9ece7ae776c9bed2606486725  lib/ezutils/classes/ezintegervalidator.php
 409c83ba9623749fb60509b3011c8619  lib/ezutils/classes/ezmail.php

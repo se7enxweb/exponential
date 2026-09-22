@@ -115,6 +115,102 @@ $tpl->setVariable( 'ezpublish_version', eZPublishSDK::version() . " (" . eZPubli
 $tpl->setVariable( 'ezpublish_extensions', eZExtension::activeExtensions() );
 $tpl->setVariable( 'php_version', phpversion() );
 $tpl->setVariable( 'php_accelerator', $phpAcceleratorInfo );
+// How this request is being executed, and out of what.
+//
+// The engine can be loaded from a thousand files on disk or from one archive,
+// and which it is changes where a stack trace points, what a file listing
+// means, and whether an edited kernel file has any effect at all. That is not
+// something a person -- or an agent reading this page to find its bearings --
+// should have to deduce from a path in an error message.
+$engineInfo = array(
+    'source'        => 'disk',
+    'root'          => defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : '(not published)',
+    'archive'       => '',
+    'archive_built' => '',
+    'archive_bytes' => 0,
+    'archive_files' => 0,
+    'version'       => '',
+    'matches_repo'  => '',
+    'phar_wrapper'  => in_array( 'phar', stream_get_wrappers() ) ? 'registered' : 'unregistered',
+    'phar_readonly' => ini_get( 'phar.readonly' ) ? 'on' : 'off',
+    'opcache'       => 'not loaded',
+);
+
+if ( function_exists( 'opcache_get_status' ) )
+{
+    $opcacheStatus = @opcache_get_status( false );
+    $engineInfo['opcache'] = ( is_array( $opcacheStatus ) && !empty( $opcacheStatus['opcache_enabled'] ) )
+                           ? 'enabled, ' . number_format( (int)$opcacheStatus['opcache_statistics']['num_cached_scripts'] ) . ' scripts cached'
+                           : 'loaded but not enabled';
+}
+
+if ( defined( 'EXP_ENGINE_PHAR' ) )
+{
+    $engineInfo['source'] = 'archive';
+    $engineInfo['archive'] = EXP_ENGINE_PHAR;
+
+    if ( file_exists( EXP_ENGINE_PHAR ) )
+    {
+        $engineInfo['archive_built'] = date( 'Y-m-d H:i:s', filemtime( EXP_ENGINE_PHAR ) );
+        $engineInfo['archive_bytes'] = filesize( EXP_ENGINE_PHAR );
+    }
+
+    // Read through the wrapper the bootstrap deliberately keeps registered in
+    // this mode; there is no other way to reach inside the archive.
+    $engineVersion = @file_get_contents( 'phar://' . EXP_ENGINE_PHAR . '/ENGINE_VERSION' );
+    if ( $engineVersion !== false )
+        $engineInfo['version'] = trim( $engineVersion );
+
+    $engineManifest = @include( 'phar://' . EXP_ENGINE_PHAR . '/MANIFEST.php' );
+    if ( is_array( $engineManifest ) )
+        $engineInfo['archive_files'] = count( $engineManifest );
+}
+
+// Whether the archive was built from what is on disk now. A mismatch is not an
+// error -- the archive only has to carry the classes it carries -- but it is
+// the first thing worth knowing when an edit to a kernel file appears to do
+// nothing.
+if ( class_exists( 'expPhar' ) || file_exists( 'kernel/classes/expphar.php' ) )
+{
+    if ( !class_exists( 'expPhar' ) )
+        @include_once( 'kernel/classes/expphar.php' );
+
+    if ( class_exists( 'expPhar' ) )
+    {
+        if ( $engineInfo['source'] === 'disk' )
+        {
+            $builtPath = expPhar::enginePath();
+            if ( file_exists( $builtPath ) )
+            {
+                $engineInfo['archive'] = $builtPath . ' (built, not in use)';
+                $engineInfo['archive_built'] = date( 'Y-m-d H:i:s', filemtime( $builtPath ) );
+                $engineInfo['archive_bytes'] = filesize( $builtPath );
+
+                // Read it even though it is not in use. An archive that no
+                // longer matches the working tree is exactly what someone
+                // needs to know before switching to it, and the wrapper is
+                // unregistered in this mode, so the service class restores it
+                // around the read and puts it back.
+                $built = expPhar::info();
+                if ( !empty( $built['data']['version'] ) )
+                    $engineInfo['version'] = $built['data']['version'];
+            }
+            else
+            {
+                $engineInfo['archive'] = '(none built)';
+            }
+        }
+
+        $repoVersion = expPhar::version();
+        $engineInfo['matches_repo'] = $engineInfo['version'] === ''
+            ? $repoVersion . ' (no archive to compare)'
+            : ( $engineInfo['version'] === $repoVersion
+                ? 'yes, ' . $repoVersion
+                : 'NO -- archive ' . $engineInfo['version'] . ', working tree ' . $repoVersion );
+    }
+}
+
+$tpl->setVariable( 'engine_info', $engineInfo );
 $tpl->setVariable( 'webserver_info', $webserverInfo );
 $tpl->setVariable( 'database_info', $db->databaseName() );
 $tpl->setVariable( 'database_charset', $db->charset() );

@@ -42,6 +42,67 @@
 </td>
 </tr>
 </table>
+{* Where the running engine came from. Worth its own block rather than a line
+   in Miscellaneous: when a kernel edit appears to do nothing, or a stack trace
+   names a phar:// path, this is the first thing to read. *}
+<table class="list" cellspacing="0">
+<tr>
+    <th><label>{'Engine'|i18n( 'design/admin/setup/info' )}</label></th>
+</tr>
+<tr>
+<td>
+    <div class="block">
+        <label>{'Loaded from'|i18n( 'design/admin/setup/info' )}:</label>
+        {if eq( $engine_info.source, 'archive' )}
+            {'Archive'|i18n( 'design/admin/setup/info' )} &mdash; {$engine_info.archive|wash}
+        {else}
+            {'Individual files on disk'|i18n( 'design/admin/setup/info' )}
+        {/if}
+    </div>
+
+    <div class="block">
+        <label>{'Installation root'|i18n( 'design/admin/setup/info' )}:</label>
+        {$engine_info.root|wash}
+    </div>
+
+    {if eq( $engine_info.source, 'archive' )}
+    <div class="block">
+        <label>{'Archive'|i18n( 'design/admin/setup/info' )}:</label>
+        {$engine_info.archive_files} {'files'|i18n( 'design/admin/setup/info' )},
+        {$engine_info.archive_bytes} {'bytes'|i18n( 'design/admin/setup/info' )},
+        {'built'|i18n( 'design/admin/setup/info' )} {$engine_info.archive_built|wash}
+    </div>
+    {else}
+    <div class="block">
+        <label>{'Archive'|i18n( 'design/admin/setup/info' )}:</label>
+        {$engine_info.archive|wash}
+    </div>
+    {/if}
+
+    <div class="block">
+        <label>{'Archive version'|i18n( 'design/admin/setup/info' )}:</label>
+        {if $engine_info.version}{$engine_info.version|wash}{else}&ndash;{/if}
+    </div>
+
+    <div class="block">
+        <label>{'Matches working tree'|i18n( 'design/admin/setup/info' )}:</label>
+        {$engine_info.matches_repo|wash}
+    </div>
+
+    <div class="block">
+        <label>{'Phar stream wrapper'|i18n( 'design/admin/setup/info' )}:</label>
+        {$engine_info.phar_wrapper|wash}
+        ({'phar.readonly'|i18n( 'design/admin/setup/info' )} {$engine_info.phar_readonly|wash})
+    </div>
+
+    <div class="block">
+        <label>{'Opcode cache'|i18n( 'design/admin/setup/info' )}:</label>
+        {$engine_info.opcache|wash}
+    </div>
+</td>
+</tr>
+</table>
+
 <table class="list" cellspacing="0">
 <tr>
     <th><label>{'PHP'|i18n( 'design/admin/setup/info' )}</label></th>

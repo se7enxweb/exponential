@@ -351,7 +351,15 @@ class eZINI
         if ( $rootDir == "" )
             $rootDir = "settings";
         if ( $rootDir[0] !== "/" )
-            $rootDir = __DIR__ . "/../../../" . $rootDir;
+        {
+            // Three levels up from this file is the installation root only
+            // while this file is on disk. Read out of an engine archive,
+            // __DIR__ names a path inside the archive and settings resolve to
+            // somewhere that does not exist, so every INI read returns false
+            // and the failures surface far away -- an empty cache directory,
+            // a debug setting read as an array.
+            $rootDir = self::installationRoot() . $rootDir;
+        }
         if ( file_exists( $rootDir . '/' . $fileName ) )
             return true;
         else if ( file_exists( $rootDir . '/' . $fileName . '.append.php' ) )
@@ -446,9 +454,31 @@ class eZINI
      The result is a list with expanded paths to the files.
      \return the expanded file list.
     */
+    /**
+     * The installation root, as an absolute path with a trailing slash.
+     *
+     * Five places in this class used to compute it as three levels up from
+     * this file. That is correct only while this file is on disk; read out of
+     * an engine archive, __DIR__ names a path inside the archive, and settings
+     * resolve to somewhere that does not exist. The failure is quiet -- the
+     * base .ini is simply not among the input files, the override still is,
+     * so configuration comes back half-loaded and the errors surface far away.
+     *
+     * EXP_ROOT_DIR is published by autoload.php, which is always on disk.
+     *
+     * @return string
+     */
+    protected static function installationRoot()
+    {
+        if ( defined( 'EXP_ROOT_DIR' ) )
+            return EXP_ROOT_DIR . '/';
+
+        return __DIR__ . "/../../../";
+    }
+
     function findInputFiles( &$inputFiles, &$iniFile )
     {
-        $iniFile = __DIR__ . "/../../../";
+        $iniFile = self::installationRoot();
         if ( $this->RootDir !== false )
             $iniFile .= eZDir::path( array( $this->RootDir, $this->FileName ) );
         else
@@ -562,7 +592,7 @@ class eZINI
         // ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ###
         // $cachedDir = __DIR__ . "/../../../" . self::CONFIG_CACHE_DIR;
         if ( !isset( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) )
-            $GLOBALS['eZINI_CONFIG_CACHE_DIR'] = __DIR__ . "/../../../" . self::CONFIG_CACHE_DIR;
+            $GLOBALS['eZINI_CONFIG_CACHE_DIR'] = self::installationRoot() . self::CONFIG_CACHE_DIR;
         $cachedDir = $GLOBALS['eZINI_CONFIG_CACHE_DIR'];
 
         $fileName = $this->cacheFileName( $placement );
@@ -1448,7 +1478,7 @@ class eZINI
 
         if ( strlen( $path ) > 0 && $path[0] !== '/' )
         {
-            $path = __DIR__ . '/../../../' . $path;
+            $path = self::installationRoot() . $path;
         }
 
         $realPath = realpath( $path );
@@ -2176,7 +2206,7 @@ class eZINI
         }
 
         // changing $path so that it's relative the root eZ Publish (legacy)
-        $path = str_replace( __DIR__ . "/../../../", "", $path );
+        $path = str_replace( self::installationRoot(), "", $path );
         $exploded = explode( '/', $path );
         $directoryCount = count( $exploded );
         switch ( $directoryCount )

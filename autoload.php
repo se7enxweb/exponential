@@ -7,6 +7,37 @@
  * @version //autogentag//
  * @package kernel
  */
+// The installation root, as an absolute path on disk.
+//
+// Kernel code that needs to find settings, extensions or var has always
+// derived them from its own file's location. That works while every file is
+// on disk and stops working the moment any of them is read out of an archive,
+// because __DIR__ then names a path inside the archive. Publishing the root
+// once, from the one file that is always on disk, gives that code something
+// true to ask instead.
+if ( !defined( 'EXP_ROOT_DIR' ) && strncmp( __FILE__, 'phar://', 7 ) !== 0 )
+{
+    define( 'EXP_ROOT_DIR', __DIR__ );
+}
+
+// An engine archive, if this installation is running from one.
+//
+// Resolved before anything else because the phar wrapper check below needs the
+// answer: a runtime read through the wrapper must not unregister it. The
+// environment variable is the switch -- set it and the kernel and library
+// classes come from the archive, leave it unset and they come from disk, and
+// nothing else about the installation differs either way. That is deliberate:
+// the change has to be revertible by one variable, not by a reinstall.
+if ( !defined( 'EXP_ENGINE_PHAR' ) )
+{
+    $ezpEnginePhar = getenv( 'EXP_ENGINE_PHAR' );
+    if ( is_string( $ezpEnginePhar ) && $ezpEnginePhar !== '' && file_exists( $ezpEnginePhar ) )
+    {
+        define( 'EXP_ENGINE_PHAR', $ezpEnginePhar );
+    }
+    unset( $ezpEnginePhar );
+}
+
 // Disable the PHAR stream wrapper as it is insecure.
 //
 // The vector this was written for in 2018 -- phar metadata being unserialized
@@ -111,6 +142,9 @@ if ( !class_exists( 'ezpAutoloader', false ) )
     {
         protected static $ezpClasses = null;
 
+        /** null = not looked at yet, false = no archive, array = what it holds */
+        protected static $ezpPharFiles = null;
+
         public static function autoload( $className )
         {
             if ( self::$ezpClasses === null )
@@ -160,7 +194,36 @@ if ( !class_exists( 'ezpAutoloader', false ) )
 
             if ( isset( self::$ezpClasses[$className] ) )
             {
-                require( __DIR__ . "/" . self::$ezpClasses[$className] );
+                $ezpRelativePath = self::$ezpClasses[$className];
+
+                // Read the archive's own list of what it holds, once. Asking
+                // the archive per class would be a stat per class, which is
+                // the cost this is meant to remove rather than add.
+                if ( self::$ezpPharFiles === null )
+                {
+                    self::$ezpPharFiles = false;
+                    if ( defined( 'EXP_ENGINE_PHAR' ) )
+                    {
+                        $ezpManifest = 'phar://' . EXP_ENGINE_PHAR . '/MANIFEST.php';
+                        if ( file_exists( $ezpManifest ) )
+                        {
+                            self::$ezpPharFiles = require $ezpManifest;
+                        }
+                    }
+                }
+
+                // Only what the archive actually carries comes from it. A file
+                // added to the kernel after the archive was built is still on
+                // disk and is still found, so a stale archive degrades to the
+                // old behaviour for that class instead of failing.
+                if ( self::$ezpPharFiles !== false && isset( self::$ezpPharFiles[$ezpRelativePath] ) )
+                {
+                    require( 'phar://' . EXP_ENGINE_PHAR . '/' . $ezpRelativePath );
+                }
+                else
+                {
+                    require( __DIR__ . "/" . $ezpRelativePath );
+                }
             }
         }
 
@@ -175,6 +238,7 @@ if ( !class_exists( 'ezpAutoloader', false ) )
         public static function reset()
         {
             self::$ezpClasses = null;
+            self::$ezpPharFiles = null;
         }
 
         public static function updateExtensionAutoloadArray()
