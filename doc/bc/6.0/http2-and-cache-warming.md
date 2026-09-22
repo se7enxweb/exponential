@@ -300,3 +300,83 @@ which is the honest signal about what reading alone missed.
 `Panel.php`, `WebSocket.php`, `Trust.php` and `Autohost.php` have had no such
 pass. Memory behaviour over a long soak — a hundred thousand requests against a
 resident process — has not been measured at all.
+
+---
+
+# Measuring it, and choosing a worker count
+
+`vendor/se7enxweb/qbix-webserver/tests/bench-load.php` sweeps the concurrency
+until throughput stops improving and reports where the knee is.
+
+```bash
+php vendor/se7enxweb/qbix-webserver/tests/bench-load.php \
+    https://alpha.se7enx.com:8080/site --levels=1,4,16,32,64 --requests=200
+```
+
+It needs nothing installed: PHP's curl speaks HTTP/2 and `curl_multi` supplies
+the concurrency. Every run writes a CSV under `var/storage/generated/stats/`,
+named with the date, target, protocol, levels, request count and worker count,
+so two runs sort beside each other and say what they were without being opened.
+
+## What it found here
+
+11 cores, 46 GB, and **167.6 MB PSS per worker** — the honest figure, since RSS
+reports 200 MB by double-counting pages shared after fork.
+
+| workers | peak req/s | load | resident |
+|---|---|---|---|
+| 8 | 233.3 | — | 1.7 GB |
+| **16** | **307.0** | 7.8 | 1.5 GB |
+| 32 | 303.4 | 15.6 | 2.9 GB |
+| 64 | 272.8 | 10.5 | 3.2 GB |
+
+Sixteen is the optimum, at roughly 1.5x the core count. Thirty-two bought
+nothing and doubled the load average; sixty-four was worse than sixteen.
+
+`[ServerSettings]Workers` in `settings/velocity.ini`, or an override.
+
+## The cliff matters more than the peak
+
+Per request, at 16 workers:
+
+| in flight | p50 | p90 | p99 | req/s |
+|---|---|---|---|---|
+| 1 | 44 ms | 45 ms | 51 ms | 22 |
+| 4 | 42 ms | 46 ms | 124 ms | 95 |
+| **16** | **28 ms** | 46 ms | 295 ms | **307** |
+| 32 | 70 ms | 445 ms | 465 ms | 227 |
+| 64 | 188 ms | 857 ms | 882 ms | 153 |
+
+At sixteen the p50 *falls* to 28 ms while throughput peaks — requests queue just
+enough to keep every worker busy. Past it, p90 goes 46 to 445 ms, a tenfold
+cliff, while throughput drops. **That is the operating limit, and it arrives
+long before memory does.**
+
+## The ceiling above that is arithmetic, not a measurement
+
+At 167.6 MB per worker on 46 GB: 128 workers wants 21 GB and swaps, 512 wants
+84 GB, 2500 wants 409 GB. Those configurations are impossible rather than slow,
+and no benchmark is needed to say so. Predict before running a sweep.
+
+## What a visitor pays
+
+    dns     7 ms
+    tcp    +0.3 ms
+    tls    +18 ms
+    ttfb   +41 ms
+    -------------
+    total   67 ms     9.4 kB gzipped
+
+A complete page — document plus 35 subresources over one connection — is about
+200 ms.
+
+## Two caveats on all of it
+
+The generator is **closed-loop**, like `ab` and `wrk`: a slow response delays
+the request that would have followed, so the requests never sent are exactly the
+ones that would have been slowest. Read the percentiles as "how it served what
+it accepted", not as what a user would have seen. An open-loop generator at a
+fixed arrival rate is the other half and is not provided.
+
+And these figures describe *this* site's templates on *this* machine. They are
+not a property of the server and should not be quoted as one.

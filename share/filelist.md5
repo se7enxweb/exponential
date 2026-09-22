@@ -2285,7 +2285,7 @@ d235809fe8490e97218403d3cfe12404  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 1bc5d7888e4c8a699b48624c73cbbf35  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 dd8f6ec3976bdee1a688a25ee3761ee9  doc/bc/6.0/hardening.md
 aa6163ba894fd81c26b15462d2176959  doc/bc/6.0/http-caching.md
-d41bfe49171f756c606d78c1712577d1  doc/bc/6.0/http2-and-cache-warming.md
+b5646960289e552f30a3b6e2a6be6399  doc/bc/6.0/http2-and-cache-warming.md
 e222ad728b939965d51455158c8782fa  doc/bc/6.0/kickstartercli.md
 5f063b419152d919981820ae436cf799  doc/bc/6.0/locations-tab-paging-and-sorting.md
 8aae77691af6b35a093d9229b3757ed3  doc/bc/6.0/multi-node-edit.md
