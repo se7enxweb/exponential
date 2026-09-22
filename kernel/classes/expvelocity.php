@@ -161,6 +161,46 @@ class expVelocity
      *
      * @return array
      */
+    /**
+     * The engine archive the server should run from, or '' for the files on disk.
+     *
+     * The bootstrap only loads the engine out of an archive when the
+     * EXP_ENGINE_PHAR environment variable names one that exists. Nothing set
+     * it, so the archive could be built and inspected but never actually run,
+     * and the Setup > System information page could only ever report
+     * "Individual files on disk". Testing the archive meant exporting the
+     * variable by hand into whatever started the server.
+     *
+     * [ServerSettings]EnginePhar takes:
+     *
+     *   disabled   run from the files on disk. The default.
+     *   enabled    run from dist/engine.phar, wherever expPhar puts it.
+     *   <path>     run from that archive, relative to the installation root
+     *              or absolute.
+     *
+     * A path that does not exist is refused rather than ignored: starting from
+     * the files on disk after being asked for an archive looks identical to
+     * success, and the difference only shows up much later.
+     *
+     * @return string absolute path, or ''
+     */
+    public function enginePhar()
+    {
+        $setting = trim( (string)$this->setting( 'ServerSettings', 'EnginePhar', 'disabled' ) );
+
+        if ( $setting === '' || $setting === 'disabled' || $setting === 'false' )
+            return '';
+
+        if ( $setting === 'enabled' || $setting === 'true' )
+        {
+            if ( !class_exists( 'expPhar' ) )
+                @include_once( $this->absolute( 'kernel/classes/expphar.php' ) );
+            return class_exists( 'expPhar' ) ? expPhar::enginePath() : '';
+        }
+
+        return $this->absolute( $setting );
+    }
+
     public function command()
     {
         $documentRoot = $this->absolute( $this->setting( 'ServerSettings', 'DocumentRoot', '' ) );
@@ -464,9 +504,27 @@ class expVelocity
             array_splice( $arguments, $scriptIndex + 1, 0, array( '--config=' . $config ) );
         }
 
+        // The engine archive, if one was asked for.
+        //
+        // It has to be in the environment rather than on the command line
+        // because autoload.php reads it before it has parsed anything, which
+        // is necessarily before any argument could be looked at.
+        $environment = '';
+        $enginePhar = $this->enginePhar();
+        if ( $enginePhar !== '' )
+        {
+            if ( !file_exists( $enginePhar ) )
+                return $this->result( false,
+                    'EnginePhar names an archive that does not exist: ' . $enginePhar
+                    . ' -- build it first, or set EnginePhar=disabled',
+                    $this->status() );
+
+            $environment = 'EXP_ENGINE_PHAR=' . escapeshellarg( $enginePhar ) . ' ';
+        }
+
         // setsid detaches the server from this process group, so it is not
         // taken down with the shell or the script that started it.
-        $command = 'setsid ' . implode( ' ', array_map( 'escapeshellarg', $arguments ) )
+        $command = $environment . 'setsid ' . implode( ' ', array_map( 'escapeshellarg', $arguments ) )
                  . ' > ' . escapeshellarg( $log ) . ' 2>&1 < /dev/null &';
 
         @exec( $command );
@@ -649,6 +707,11 @@ class expVelocity
             'pids'      => $pids,
             'listening' => $ports,
             'https'     => $this->httpsEnabled(),
+            // Which engine the running server was started with. Worth stating
+            // here because it cannot be told apart from the outside: an
+            // archive that failed to load and a run from the files on disk
+            // look exactly the same until something behaves oddly.
+            'engine'    => ( $this->enginePhar() === '' ) ? 'files on disk' : $this->enginePhar(),
             'script'    => $this->scriptPath(),
             'log'       => $this->logFile(),
             'pidFile'   => $this->pidFile(),
