@@ -195,9 +195,14 @@ class expCacheWarm
         // exactly with the cron minutes.
         //
         // The cycle exists to spare visitors the slow path, so it must never
-        // be the reason one waits. Two leaves most of the workers free and
-        // still finishes far inside the cache lifetime.
-        $concurrency = max( 1, (int)( isset( $options['concurrency'] ) ? $options['concurrency'] : 2 ) );
+        // be the reason one waits. One worker of eight leaves the rest free
+        // and still finishes far inside the cache lifetime -- the whole set is
+        // about two minutes against a four minute timer.
+        //
+        // Two was still enough to be felt. An admin page measured 141-287ms
+        // between cycles and 679-1146ms during one, and the minute a cycle ran
+        // carried 290 requests of its own.
+        $concurrency = max( 1, (int)( isset( $options['concurrency'] ) ? $options['concurrency'] : 1 ) );
         $verbose = !empty( $options['verbose'] );
 
         $queue = array_values( $paths );
