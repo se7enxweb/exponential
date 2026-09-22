@@ -133,7 +133,7 @@ f90ab3789386b943e3c322da2e9c062d  bin/shell/redumpall.sh
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 51bce499f1e818a40a8b0034e0e1a9c1  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-f0af49f273671b2f02bb6fdbaef95981  composer.json
+062e39a949ba44a8e2d4f2177973edaf  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 d77f7f99abd083dc48fceaf4bf996f62  composer.lock
 f6639c1204722f978072a5f5238027ae  config.php
