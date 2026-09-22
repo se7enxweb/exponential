@@ -95,6 +95,7 @@ e53af0113356a7991f3cfcb5d99fd22e  bin/php/trashpurge.php
 2b75d418585d3d583adbb28798db5c87  bin/php/updatesearchindex.php
 74691a6f2d9f50d557fddb3cb0c2e4bb  bin/php/velocity.php
 a6745db9ff7d22c904723cbe3dd34cd0  bin/php/verify_aliases.php
+157f7a109bbd709fcde17a213d27ab17  bin/php/warm.php
 a09822bfc03a44fd4e6c17c11bc078a3  bin/shell/checkcalltimeref.sh
 a88df6799d65485b26e92905f6083480  bin/shell/checkcode.sh
 4c31e33d134d00a97f68a3b521214049  bin/shell/checkdbschema.sh
@@ -2284,6 +2285,7 @@ d235809fe8490e97218403d3cfe12404  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 1bc5d7888e4c8a699b48624c73cbbf35  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 dd8f6ec3976bdee1a688a25ee3761ee9  doc/bc/6.0/hardening.md
 aa6163ba894fd81c26b15462d2176959  doc/bc/6.0/http-caching.md
+0d18274022addee0f7d276a00a4c7ea3  doc/bc/6.0/http2-and-cache-warming.md
 e222ad728b939965d51455158c8782fa  doc/bc/6.0/kickstartercli.md
 5f063b419152d919981820ae436cf799  doc/bc/6.0/locations-tab-paging-and-sorting.md
 8aae77691af6b35a093d9229b3757ed3  doc/bc/6.0/multi-node-edit.md
@@ -11756,6 +11758,7 @@ e0ec2be7ab334f49db925ada56c2befc  kernel/classes/datatypes/ezxmltext/ezxmltextty
 3f481aa0c6ec73f490d65b94efd5e25f  kernel/classes/datatypes/ezxmltext/handlers/output/ezplainxmloutput.php
 fd1cc980bbf2856ff3e73c3490103136  kernel/classes/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput.php
 d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
+faf96a8c5b06e581673f96dfff3366dd  kernel/classes/expcachewarm.php
 0965c4a51ebfa3353d4a4bcf0ab9adc6  kernel/classes/expcleanuprss.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
