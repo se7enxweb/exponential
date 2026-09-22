@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZSetupFunctionCollection', false ) ) {
 class eZSetupFunctionCollection
 {
     function fetchFullVersionString()
@@ -67,5 +69,7 @@ class eZSetupFunctionCollection
         return array( 'result' => eZPublishSDK::EDITION );
     }
 }
+}
+
 
 ?>

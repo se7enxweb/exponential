@@ -18,8 +18,8 @@
  * @package kernel
  */
 
-require_once 'kernel/setup/expradsurvey.php';
 
+if ( !class_exists( 'expRADHealth', false ) ) {
 class expRADHealth
 {
     /**
@@ -680,5 +680,9 @@ class expRADHealth
         return $path !== '' ? $path : '(nothing declares it)';
     }
 }
+}
+
+require_once 'kernel/setup/expradsurvey.php';
+
 
 ?>

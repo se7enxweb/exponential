@@ -167,20 +167,57 @@ class eZMySQLiDB extends eZDBInterface
 
         if ( $this->IsConnected and $charset !== null )
         {
+            // Resolve the name BEFORE switching to exception handling.
+            //
+            // This used to read mysqli_set_charset( $connection,
+            // eZMySQLCharset::mapTo( $charset ) ), which puts the class's
+            // autoload inside a window where any notice or warning becomes an
+            // ErrorException and is caught below as "the charset could not be
+            // set". Autoloading probes paths, a probe that misses can raise,
+            // and then the connection silently keeps the server's default --
+            // latin1 here. Nothing is logged and nothing fails: rows just come
+            // back transliterated, so a non-breaking space arrives as "?", XML
+            // fields stop parsing, and pages quietly lose their content.
+            //
+            // It cost a long afternoon to find. Nothing but the call itself
+            // belongs between setHandleType() and the catch.
+            $mappedCharset = eZMySQLCharset::mapTo( $charset );
+
             $oldHandling = eZDebug::setHandleType( eZDebug::HANDLE_EXCEPTION );
             try
             {
-                $status = mysqli_set_charset( $connection, eZMySQLCharset::mapTo( $charset ) );
+                $status = mysqli_set_charset( $connection, $mappedCharset );
             }
             catch( ErrorException $e )
             {
                 $status = false;
             }
             eZDebug::setHandleType( $oldHandling );
-            if ( !$status )
+
+            // Trust what the connection reports, not what the call returned.
+            // The return value can be false for reasons that have nothing to
+            // do with the connection, and running on the wrong charset
+            // corrupts data silently, so it is worth one more round trip to
+            // be sure -- and worth trying again before giving up.
+            $activeCharset = @mysqli_character_set_name( $connection );
+            if ( $activeCharset !== $mappedCharset )
+            {
+                @mysqli_set_charset( $connection, $mappedCharset );
+                $activeCharset = @mysqli_character_set_name( $connection );
+            }
+
+            if ( $activeCharset !== $mappedCharset )
             {
                 $this->setError();
-                eZDebug::writeWarning( "Connection warning: " . mysqli_errno( $connection ) . ": " . mysqli_error( $connection ), "eZMySQLiDB" );
+                eZDebug::writeWarning( "Connection warning: could not set the connection charset to"
+                    . " '$mappedCharset'; it is '$activeCharset'. Text will be transliterated to that"
+                    . " character set on its way out of the database. "
+                    . mysqli_errno( $connection ) . ": " . mysqli_error( $connection ), "eZMySQLiDB" );
+            }
+            else if ( !$status )
+            {
+                eZDebug::writeNotice( "mysqli_set_charset() reported failure but the connection is"
+                    . " '$activeCharset' as requested; continuing.", "eZMySQLiDB" );
             }
         }
 

@@ -8,6 +8,97 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'storeRSSImport' ) ) {
+function storeRSSImport( $rssImport, $http, $publish = false )
+{
+    $rssImport->setAttribute( 'name', $http->postVariable( 'name' ) );
+    $rssImport->setAttribute( 'url', $http->postVariable( 'url' ) );
+    if ( $http->hasPostVariable( 'active' ) )
+        $rssImport->setAttribute( 'active', 1 );
+    else
+        $rssImport->setAttribute( 'active', 0 );
+
+    if ( $http->hasPostVariable( 'Class_ID' ) )
+    {
+        $rssImport->setAttribute( 'class_id', $http->postVariable( 'Class_ID' ) );
+    }
+
+    $importDescription = $rssImport->importDescription();
+    $classAttributeList = eZContentClassAttribute::fetchListByClassID( $rssImport->attribute( 'class_id' ) );
+
+    $importDescription['class_attributes'] = array();
+    foreach( $classAttributeList as $classAttribute )
+    {
+        $postVariableName = 'Class_Attribute_' . $classAttribute->attribute( 'id' );
+        if ( $http->hasPostVariable( $postVariableName ) )
+        {
+            $importDescription['class_attributes'][(string)$classAttribute->attribute( 'id' )] = $http->postVariable( $postVariableName );
+        }
+    }
+
+    $importDescription['object_attributes'] = array();
+    foreach( $rssImport->objectAttributeList() as $key => $attributeName )
+    {
+        $postVariableName = 'Object_Attribute_' . $key;
+        if ( $http->hasPostVariable( $postVariableName ) )
+        {
+            $importDescription['object_attributes'][$key] = $http->postVariable( $postVariableName );
+        }
+    }
+
+    $rssImport->setImportDescription( $importDescription );
+
+    if ( $publish )
+    {
+        $db = eZDB::instance();
+        $db->begin();
+        $rssImport->setAttribute( 'status', eZRSSImport::STATUS_VALID );
+        $rssImport->store();
+        // remove draft
+        $rssImport->setAttribute( 'status', eZRSSImport::STATUS_DRAFT );
+        $rssImport->remove();
+        $db->commit();
+    }
+    else
+    {
+        $rssImport->store();
+    }
+}
+}
+
+if ( !function_exists( 'checkTimeout' ) ) {
+function checkTimeout( $rssImport )
+{
+    $user = eZUser::currentUser();
+    $contentIni = eZINI::instance( 'content.ini' );
+    $timeOut = $contentIni->variable( 'RSSImportSettings', 'DraftTimeout' );
+    if ( $rssImport->attribute( 'modifier_id' ) != $user->attribute( 'contentobject_id' ) &&
+         $rssImport->attribute( 'modified' ) + $timeOut > time() )
+    {
+        // locked editing
+        $tpl = eZTemplate::factory();
+
+        $tpl->setVariable( 'rss_import', $rssImport );
+        $tpl->setVariable( 'rss_import_id', $rssImport->attribute( 'id' ) );
+        $tpl->setVariable( 'lock_timeout', $timeOut );
+
+        $Result = array();
+        $Result['content'] = $tpl->fetch( 'design:rss/edit_import_denied.tpl' );
+        $Result['path'] = array( array( 'url' => false,
+                                        'text' => ezpI18n::tr( 'kernel/rss', 'Really Simple Syndication' ) ) );
+        return $Result;
+    }
+    else if ( $timeOut > 0 && $rssImport->attribute( 'modified' ) + $timeOut < time() )
+    {
+        $rssImport->remove();
+        $rssImport = false;
+    }
+
+    return false;
+}
+}
+
 $Module = $Params['Module'];
 
 
@@ -143,90 +234,6 @@ $Result['path'] = array( array( 'url' => false,
 
 
 
-function storeRSSImport( $rssImport, $http, $publish = false )
-{
-    $rssImport->setAttribute( 'name', $http->postVariable( 'name' ) );
-    $rssImport->setAttribute( 'url', $http->postVariable( 'url' ) );
-    if ( $http->hasPostVariable( 'active' ) )
-        $rssImport->setAttribute( 'active', 1 );
-    else
-        $rssImport->setAttribute( 'active', 0 );
 
-    if ( $http->hasPostVariable( 'Class_ID' ) )
-    {
-        $rssImport->setAttribute( 'class_id', $http->postVariable( 'Class_ID' ) );
-    }
-
-    $importDescription = $rssImport->importDescription();
-    $classAttributeList = eZContentClassAttribute::fetchListByClassID( $rssImport->attribute( 'class_id' ) );
-
-    $importDescription['class_attributes'] = array();
-    foreach( $classAttributeList as $classAttribute )
-    {
-        $postVariableName = 'Class_Attribute_' . $classAttribute->attribute( 'id' );
-        if ( $http->hasPostVariable( $postVariableName ) )
-        {
-            $importDescription['class_attributes'][(string)$classAttribute->attribute( 'id' )] = $http->postVariable( $postVariableName );
-        }
-    }
-
-    $importDescription['object_attributes'] = array();
-    foreach( $rssImport->objectAttributeList() as $key => $attributeName )
-    {
-        $postVariableName = 'Object_Attribute_' . $key;
-        if ( $http->hasPostVariable( $postVariableName ) )
-        {
-            $importDescription['object_attributes'][$key] = $http->postVariable( $postVariableName );
-        }
-    }
-
-    $rssImport->setImportDescription( $importDescription );
-
-    if ( $publish )
-    {
-        $db = eZDB::instance();
-        $db->begin();
-        $rssImport->setAttribute( 'status', eZRSSImport::STATUS_VALID );
-        $rssImport->store();
-        // remove draft
-        $rssImport->setAttribute( 'status', eZRSSImport::STATUS_DRAFT );
-        $rssImport->remove();
-        $db->commit();
-    }
-    else
-    {
-        $rssImport->store();
-    }
-}
-
-function checkTimeout( $rssImport )
-{
-    $user = eZUser::currentUser();
-    $contentIni = eZINI::instance( 'content.ini' );
-    $timeOut = $contentIni->variable( 'RSSImportSettings', 'DraftTimeout' );
-    if ( $rssImport->attribute( 'modifier_id' ) != $user->attribute( 'contentobject_id' ) &&
-         $rssImport->attribute( 'modified' ) + $timeOut > time() )
-    {
-        // locked editing
-        $tpl = eZTemplate::factory();
-
-        $tpl->setVariable( 'rss_import', $rssImport );
-        $tpl->setVariable( 'rss_import_id', $rssImport->attribute( 'id' ) );
-        $tpl->setVariable( 'lock_timeout', $timeOut );
-
-        $Result = array();
-        $Result['content'] = $tpl->fetch( 'design:rss/edit_import_denied.tpl' );
-        $Result['path'] = array( array( 'url' => false,
-                                        'text' => ezpI18n::tr( 'kernel/rss', 'Really Simple Syndication' ) ) );
-        return $Result;
-    }
-    else if ( $timeOut > 0 && $rssImport->attribute( 'modified' ) + $timeOut < time() )
-    {
-        $rssImport->remove();
-        $rssImport = false;
-    }
-
-    return false;
-}
 
 ?>

@@ -17,8 +17,8 @@
  * @package kernel
  */
 
-require_once 'kernel/setup/expextensionwizard.php';
 
+if ( !class_exists( 'expDatatypeWizard', false ) ) {
 class expDatatypeWizard extends expExtensionWizard
 {
     /**
@@ -1281,5 +1281,9 @@ class expDatatypeWizard extends expExtensionWizard
         return $readme;
     }
 }
+}
+
+require_once 'kernel/setup/expextensionwizard.php';
+
 
 ?>

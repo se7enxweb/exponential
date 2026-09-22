@@ -6,6 +6,8 @@
  * @copyright Copyright � 2004-2007, Moxiecode Systems AB, All rights reserved.
  */
 
+
+if ( !function_exists( 'getRequestParam' ) ) {
 /**
  * Returns an request value by name without magic quoting.
  *
@@ -30,6 +32,8 @@ function getRequestParam($name, $default_value = false, $sanitize = false)
 
     return formatParam($_REQUEST[$name], $sanitize);
 }
+}
+
 
 
 $config = array();

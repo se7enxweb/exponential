@@ -6,14 +6,20 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'sectionEditPostFetch' ) ) {
 function sectionEditPostFetch( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage, $fromLanguage, &$validation )
 {
 }
+}
 
+if ( !function_exists( 'sectionEditPreCommit' ) ) {
 function sectionEditPreCommit( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage )
 {
 }
+}
 
+if ( !function_exists( 'sectionEditActionCheck' ) ) {
 function sectionEditActionCheck( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage, $fromLanguage )
 {
     if ( !$module->isCurrentAction( 'SectionEdit' ) )
@@ -31,11 +37,15 @@ function sectionEditActionCheck( $module, $class, $object, $version, $contentObj
                     eZContentCacheManager::clearContentCacheIfNeeded( $object->attribute( 'id' ) );
     $module->redirectToView( 'edit', array( $object->attribute( 'id' ), $editVersion, $editLanguage, $fromLanguage ) );
 }
+}
 
+if ( !function_exists( 'sectionEditPreTemplate' ) ) {
 function sectionEditPreTemplate( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage, $tpl )
 {
 }
+}
 
+if ( !function_exists( 'initializeSectionEdit' ) ) {
 function initializeSectionEdit( $module )
 {
     $module->addHook( 'post_fetch', 'sectionEditPostFetch' );
@@ -43,5 +53,11 @@ function initializeSectionEdit( $module )
     $module->addHook( 'action_check', 'sectionEditActionCheck' );
     $module->addHook( 'pre_template', 'sectionEditPreTemplate' );
 }
+}
+
+
+
+
+
 
 ?>

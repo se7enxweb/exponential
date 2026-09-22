@@ -6,6 +6,42 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'parseArrayToStr' ) ) {
+function parseArrayToStr( $value, $separator )
+{
+    if ( !is_array( $value ) )
+        return $value;
+
+    $valueArray = array();
+
+    foreach( $value as $param=>$key )
+    {
+        if ( !is_numeric( $param ) )
+        {
+            $valueArray[] = "[$param]=$key";
+        }
+        else
+        {
+            $valueArray[] = "=$key";
+        }
+    }
+
+    $value = implode( $separator, $valueArray );
+    return $value;
+}
+}
+
+if ( !function_exists( 'getVariable' ) ) {
+function getVariable( $block, $settingName, $iniFile, $path )
+{
+    $ini = new eZINI( $iniFile, $path, null, null, null, true, true );
+    $result = $ini->hasVariable( $block, $settingName ) ? $ini->variable( $block, $settingName ) : false;
+    $result = parseArrayToStr( $result, '<br>' );
+    return $result;
+}
+}
+
 $settingTypeArray = array( 'array' => 'Array',
                            'true/false' => 'True/False',
                            'enable/disable' => 'Enabled/Disabled',
@@ -148,36 +184,7 @@ if ( $http->hasPostVariable( 'Cancel' ) )
     return $Module->redirectTo( '/settings/view/' . $siteAccess . '/' . $iniFile );
 }
 
-function parseArrayToStr( $value, $separator )
-{
-    if ( !is_array( $value ) )
-        return $value;
 
-    $valueArray = array();
-
-    foreach( $value as $param=>$key )
-    {
-        if ( !is_numeric( $param ) )
-        {
-            $valueArray[] = "[$param]=$key";
-        }
-        else
-        {
-            $valueArray[] = "=$key";
-        }
-    }
-
-    $value = implode( $separator, $valueArray );
-    return $value;
-}
-
-function getVariable( $block, $settingName, $iniFile, $path )
-{
-    $ini = new eZINI( $iniFile, $path, null, null, null, true, true );
-    $result = $ini->hasVariable( $block, $settingName ) ? $ini->variable( $block, $settingName ) : false;
-    $result = parseArrayToStr( $result, '<br>' );
-    return $result;
-}
 
 $ini = eZSiteAccess::getIni( $siteAccess, $iniFile );
 $value = $settingName != '' ? $ini->variable( $block, $settingName ) : '';

@@ -1,0 +1,17 @@
+# Directories the autoload generator must not walk.
+#
+# Every entry is anchored at the installation root, so "vendor" means
+# <root>/vendor and nothing else.
+#
+# vendor/ is Composer's. Its classes are resolved by Composer's own
+# autoloader, and sweeping them into the kernel array duplicates that
+# mapping in a second place that nothing keeps up to date -- a -k run here
+# pulled in 509 MongoDB classes, 51 files from the bundled web server
+# including its test fixtures, and assorted polyfill stubs.
+#
+# ai/ holds tooling and one-off scripts, not application classes.
+#
+# var/ holds caches and compiled templates, which are generated output.
+vendor
+ai
+var

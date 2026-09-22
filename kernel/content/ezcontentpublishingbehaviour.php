@@ -8,6 +8,8 @@
  * @package
  */
 
+
+if ( !class_exists( 'ezpContentPublishingBehaviour', false ) ) {
 /**
  * This class allows for customization of
  * @property bool disableAsynchronousPublishing
@@ -77,4 +79,6 @@ class ezpContentPublishingBehaviour extends ezcBaseOptions
      */
     private static $behaviour = null;
 }
+}
+
 ?>

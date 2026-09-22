@@ -289,7 +289,27 @@ class eZAutoloadGenerator
         }
 
         $defaultExcludeArray = explode( "\n", trim( file_get_contents( $defaultExcludeFile ) ) );
-        return array_merge( $defaultExcludeArray, $this->options->excludeDirs );
+
+        // Drop blank lines and comments.
+        //
+        // Every entry becomes an anchored expression of the form
+        // "@^<basePath>/<entry>@". A blank entry therefore produces
+        // "@^<basePath>/@", which matches every file under the installation
+        // and silently excludes the whole tree -- one stray empty line in
+        // this file and the generated autoload array comes back nearly
+        // empty, with nothing reported. Allowing comments matters for the
+        // same reason: without this, documenting the file breaks it.
+        $cleanedExcludeArray = array();
+        foreach ( $defaultExcludeArray as $excludeEntry )
+        {
+            $excludeEntry = trim( $excludeEntry );
+            if ( $excludeEntry === '' || $excludeEntry[0] === '#' )
+                continue;
+
+            $cleanedExcludeArray[] = $excludeEntry;
+        }
+
+        return array_merge( $cleanedExcludeArray, $this->options->excludeDirs );
     }
 
     /**

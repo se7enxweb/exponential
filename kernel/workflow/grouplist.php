@@ -6,6 +6,8 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'removeSelectedGroups' ) ) {
 function removeSelectedGroups( $http, &$groups, $base )
 {
     if ( $http->hasPostVariable( "DeleteGroupButton" ) )
@@ -48,6 +50,8 @@ function removeSelectedGroups( $http, &$groups, $base )
         }
     }
 }
+}
+
 
 $Module = $Params['Module'];
 

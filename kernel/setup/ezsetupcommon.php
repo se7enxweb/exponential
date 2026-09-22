@@ -8,6 +8,8 @@
 
 // This file holds shared functions for the ezsetup files
 
+
+if ( !function_exists( 'eZSetupCriticalTests' ) ) {
 /*!
  \return an array with tests that need to be run
          and succeed for the setup to continue.
@@ -17,7 +19,9 @@ function eZSetupCriticalTests()
     $ini = eZINI::instance();
     return $ini->variableArray( 'SetupSettings', 'CriticalTests' );
 }
+}
 
+if ( !function_exists( 'eZSetupOptionalTests' ) ) {
 /*!
  \return an array with tests that when run will give information on finetuning.
 */
@@ -26,7 +30,9 @@ function eZSetupOptionalTests()
     $ini = eZINI::instance();
     return $ini->variableArray( 'SetupSettings', 'OptionalTests' );
 }
+}
 
+if ( !function_exists( 'eZSetupDatabaseMap' ) ) {
 function eZSetupDatabaseMap()
 {
     return array( 'mysqli' => array( 'type' => 'mysqli',
@@ -55,7 +61,9 @@ function eZSetupDatabaseMap()
                                       'supports_unicode' => true )
                    );
 }
+}
 
+if ( !function_exists( 'eZSetupFetchPersistenceList' ) ) {
 function eZSetupFetchPersistenceList()
 {
     $persistenceList = array();
@@ -74,7 +82,9 @@ function eZSetupFetchPersistenceList()
 
     return $persistenceList;
 }
+}
 
+if ( !function_exists( 'eZSetupSetPersistencePostVariable' ) ) {
 function eZSetupSetPersistencePostVariable( $var, $value )
 {
     $http = eZHTTPTool::instance();
@@ -90,7 +100,9 @@ function eZSetupSetPersistencePostVariable( $var, $value )
         $http->setPostVariable( 'P_' . $var . '-0', $value );
     }
 }
+}
 
+if ( !function_exists( 'eZSetupMergePersistenceList' ) ) {
 function eZSetupMergePersistenceList( &$persistenceList, $persistenceDataList )
 {
     foreach ( $persistenceDataList as $persistenceData )
@@ -132,7 +144,9 @@ function eZSetupMergePersistenceList( &$persistenceList, $persistenceDataList )
         }
     }
 }
+}
 
+if ( !function_exists( 'eZSetupLanguageList' ) ) {
 function eZSetupLanguageList( &$languageList, &$defaultLanguage, &$defaultExtraLanguages )
 {
     $locales = eZLocale::localeList( true );
@@ -214,5 +228,13 @@ function eZSetupLanguageList( &$languageList, &$defaultLanguage, &$defaultExtraL
     }
     $defaultExtraLanguages = array_unique( array_diff( $defaultExtraLanguages, array( $defaultLanguage ) ) );
 }
+}
+
+
+
+
+
+
+
 
 ?>

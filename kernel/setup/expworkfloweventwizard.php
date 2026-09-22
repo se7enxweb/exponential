@@ -7,8 +7,8 @@
  * @package kernel
  */
 
-require_once 'kernel/setup/expextensionwizard.php';
 
+if ( !class_exists( 'expWorkflowEventWizard', false ) ) {
 /**
  * Builds a workflow event type: a step a workflow can take when something is
  * published, moved, removed, registered or bought.
@@ -1140,3 +1140,7 @@ class expWorkflowEventWizard extends expExtensionWizard
         return $readme;
     }
 }
+}
+
+require_once 'kernel/setup/expextensionwizard.php';
+

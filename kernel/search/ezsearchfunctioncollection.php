@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZSearchFunctionCollection', false ) ) {
 class eZSearchFunctionCollection
 {
     function fetchSearchListCount()
@@ -34,5 +36,7 @@ class eZSearchFunctionCollection
     }
 
 }
+}
+
 
 ?>

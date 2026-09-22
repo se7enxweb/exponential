@@ -6,6 +6,320 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'generateDefaultCopyCode' ) ) {
+function generateDefaultCopyCode( $http, $template, $classIdentifier = '' )
+{
+    $templateCode = "";
+    $siteAccess = $http->sessionVariable( 'eZTemplateAdminCurrentSiteAccess' );
+    $overrideArray = eZTemplateDesignResource::overrideArray( $siteAccess );
+    $bases = eZTemplateDesignResource::allDesignBases( $siteAccess );
+    $templateName = trim( $http->postVariable( 'TemplateName' ) );
+    $templateFileName = $templateName . ".tpl";
+
+    $sourceFileName = false;
+
+    // If a specific source template was selected in the GUI, use it.
+    if ( $http->hasPostVariable( 'TemplateSource' ) )
+    {
+        $selectedSource = trim( $http->postVariable( 'TemplateSource' ) );
+        if ( $selectedSource !== '' && file_exists( $selectedSource ) )
+        {
+            $sourceFileName = $selectedSource;
+        }
+    }
+
+    // Otherwise, for node/object view templates, try the class-specific
+    // override template by convention (e.g. full/frontpage.tpl for class "frontpage").
+    if ( $sourceFileName === false && $classIdentifier !== '' )
+    {
+        $classTemplateFileName = "full/" . $classIdentifier . ".tpl";
+
+        if ( isset( $overrideArray[$template]['custom_match'] ) )
+        {
+            foreach ( $overrideArray[$template]['custom_match'] as $customMatch )
+            {
+                if ( !empty( $customMatch['match_file'] ) &&
+                     substr( $customMatch['match_file'], -strlen( $classTemplateFileName ) ) === $classTemplateFileName )
+                {
+                    $sourceFileName = $customMatch['match_file'];
+                    break;
+                }
+            }
+        }
+
+        if ( $sourceFileName === false )
+        {
+            $triedFiles = array();
+            $fileInfo = eZTemplateDesignResource::fileMatch( $bases, 'override/templates', $classTemplateFileName, $triedFiles );
+            if ( is_array( $fileInfo ) && isset( $fileInfo['path'] ) )
+            {
+                $sourceFileName = $fileInfo['path'];
+            }
+        }
+    }
+
+    // If the new filename matches an existing override for the same source,
+    // copy the existing override contents (e.g. full/frontpage.tpl).
+    if ( $sourceFileName === false && isset( $overrideArray[$template]['custom_match'] ) )
+    {
+        foreach ( $overrideArray[$template]['custom_match'] as $customMatch )
+        {
+            if ( !empty( $customMatch['match_file'] ) &&
+                 substr( $customMatch['match_file'], -strlen( $templateFileName ) ) === $templateFileName )
+            {
+                $sourceFileName = $customMatch['match_file'];
+                break;
+            }
+        }
+    }
+
+    // Finally, fall back to the actual default template for the source.
+    if ( $sourceFileName === false )
+    {
+        if ( isset( $overrideArray[$template] ) &&
+             !empty( $overrideArray[$template]['base_dir'] ) &&
+             !empty( $overrideArray[$template]['template'] ) )
+        {
+            $sourceFileName = $overrideArray[$template]['base_dir'] . $overrideArray[$template]['template'];
+        }
+        else
+        {
+            $templatePath = ltrim( $template, '/' );
+            $triedFiles = array();
+            $fileInfo = eZTemplateDesignResource::fileMatch( $bases, 'templates', $templatePath, $triedFiles );
+            if ( is_array( $fileInfo ) && isset( $fileInfo['path'] ) )
+            {
+                $sourceFileName = $fileInfo['path'];
+            }
+        }
+    }
+
+    if ( $sourceFileName !== false && file_exists( $sourceFileName ) )
+    {
+        $fp = fopen( $sourceFileName, 'rb' );
+        if ( $fp )
+        {
+            $fileSize = @filesize( $sourceFileName );
+            if ( $fileSize !== false && $fileSize > 0 )
+            {
+                $codeFromFile = fread( $fp, $fileSize );
+                $templateCode = preg_replace( '@^{\*\s*DO\sNOT\sEDIT.*?\*}\n(.*)@s', '$1', $codeFromFile );
+            }
+            fclose( $fp );
+        }
+        else
+        {
+            eZDebug::writeError( "Could not open file $sourceFileName, check read permissions" );
+        }
+    }
+    else
+    {
+        eZDebug::writeError( "Template source not found for $templateFileName", __FUNCTION__ );
+    }
+
+    return $templateCode;
+}
+}
+
+if ( !function_exists( 'generateNodeViewTemplate' ) ) {
+function generateNodeViewTemplate( $http, $template, $fileName )
+{
+    $matchArray = $http->postVariable( 'Match' );
+
+    $templateCode = "";
+    $classIdentifier = isset( $matchArray['class_identifier'] ) ? $matchArray['class_identifier'] : '';
+
+    $class = eZContentClass::fetchByIdentifier( $classIdentifier );
+
+    // Check what kind of contents we should create in the template
+    switch ( $http->postVariable( 'TemplateContent' ) )
+    {
+        case 'DefaultCopy' :
+        {
+            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
+        }break;
+
+        case 'ContainerTemplate' :
+        {
+            $templateCode = "<h1>{\$node.name}</h1>\n\n";
+
+            // Append attribute view
+            if ( $class instanceof eZContentClass )
+            {
+                $attributes = $class->fetchAttributes();
+                foreach ( $attributes as $attribute )
+                {
+                    $identifier = $attribute->attribute( 'identifier' );
+                    $name = $attribute->attribute( 'name' );
+                    $templateCode .= "<h2>$name</h2>\n";
+                    $templateCode .= "{attribute_view_gui attribute=\$node.object.data_map.$identifier}\n\n";
+                }
+            }
+
+            $templateCode .= "" .
+                 "{let page_limit=20\n" .
+                 "    children=fetch('content','list',hash(parent_node_id,\$node.node_id,sort_by,\$node.sort_array,limit,\$page_limit,offset,\$view_parameters.offset))" .
+                 "    list_count=fetch('content','list_count',hash(parent_node_id,\$node.node_id))}\n" .
+                 "\n" .
+                 "{section name=Child loop=\$children sequence=array(bglight,bgdark)}\n" .
+                 "{node_view_gui view=line content_node=\$Child:item}\n" .
+                 "{/section}\n" .
+
+                 "{include name=navigator\n" .
+                 "    uri='design:navigator/google.tpl'\n" .
+                 "    page_uri=concat('/content/view','/full/',\$node.node_id)\n" .
+                 "    item_count=\$list_count\n" .
+                 "    view_parameters=\$view_parameters\n" .
+                 "    item_limit=\$page_limit}\n" .
+            "{/let}\n";
+        }break;
+
+        case 'ViewTemplate' :
+        {
+            $templateCode = "<h1>{\$node.name}</h1>\n\n";
+
+            // Append attribute view
+            if ( $class instanceof eZContentClass )
+            {
+                $attributes = $class->fetchAttributes();
+                foreach ( $attributes as $attribute )
+                {
+                    $identifier = $attribute->attribute( 'identifier' );
+                    $name = $attribute->attribute( 'name' );
+                    $templateCode .= "<h2>$name</h2>\n";
+                    $templateCode .= "{attribute_view_gui attribute=\$node.object.data_map.$identifier}\n\n";
+                }
+            }
+
+        }break;
+
+        default:
+        case 'EmptyFile' :
+        {
+        }break;
+    }
+
+    return $templateCode;
+}
+}
+
+if ( !function_exists( 'generateObjectViewTemplate' ) ) {
+function generateObjectViewTemplate( $http, $template, $fileName )
+{
+    $matchArray = $http->postVariable( 'Match' );
+
+    $templateCode = "";
+    $classIdentifier = isset( $matchArray['class_identifier'] ) ? $matchArray['class_identifier'] : '';
+
+    $class = $classIdentifier ? eZContentClass::fetchByIdentifier( $classIdentifier ) : false;
+
+    // Check what kind of contents we should create in the template
+    switch ( $http->postVariable( 'TemplateContent' ) )
+    {
+        case 'DefaultCopy' :
+        {
+            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
+        }break;
+
+        case 'ViewTemplate' :
+        {
+            $templateCode = "<h1>{\$object.name}</h1>\n\n";
+
+            // Append attribute view
+            if ( $class instanceof eZContentClass )
+            {
+                $attributes = $class->fetchAttributes();
+                foreach ( $attributes as $attribute )
+                {
+                    $identifier = $attribute->attribute( 'identifier' );
+                    $name = $attribute->attribute( 'name' );
+                    $templateCode .= "<h2>$name</h2>\n";
+                    $templateCode .= "{attribute_view_gui attribute=\$object.data_map.$identifier}\n\n";
+                }
+            }
+
+        }break;
+
+        default:
+        case 'EmptyFile' :
+        {
+        }break;
+    }
+    return $templateCode;
+}
+}
+
+if ( !function_exists( 'generatePagelayoutTemplate' ) ) {
+function generatePagelayoutTemplate( $http, $template, $fileName )
+{
+    $templateCode = "";
+    $classIdentifier = '';
+    // Check what kind of contents we should create in the template
+    switch ( $http->postVariable( 'TemplateContent' ) )
+    {
+        case 'DefaultCopy' :
+        {
+            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
+        }break;
+
+        default:
+        case 'EmptyFile' :
+        {
+            $templateCode = '{*?template charset=latin1?*}' .
+                 '<!DOCTYPE html>' . "\n" .
+                 '<html lang="en">' .
+                 '<head>' . "\n" .
+                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/core.css"|ezdesign}>' . "\n" .
+                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/debug.css"|ezdesign}>' . "\n" .
+                 '    {include uri="design:page_head.tpl"}' . "\n" .
+                 '</head>' . "\n" .
+                 '<body>' . "\n" .
+                 '{$module_result.content}' . "\n" .
+                 '<!--DEBUG_REPORT-->' . "\n" .
+                 '</body>' . "\n" .
+                 '</html>' . "\n";
+        }break;
+    }
+    return $templateCode;
+}
+}
+
+if ( !function_exists( 'generateDefaultTemplate' ) ) {
+function generateDefaultTemplate( $http, $template, $fileName )
+{
+    $templateCode = "";
+    $classIdentifier = '';
+    // Check what kind of contents we should create in the template
+    switch ( $http->postVariable( 'TemplateContent' ) )
+    {
+        case 'DefaultCopy' :
+        {
+            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
+        }break;
+
+        default:
+        case 'EmptyFile' :
+        {
+            $templateCode = '{*?template charset=latin1?*}' .
+                 '<!DOCTYPE html>' . "\n" .
+                 '<html lang="en">' .
+                 '<head>' . "\n" .
+                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/core.css"|ezdesign}>' . "\n" .
+                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/debug.css"|ezdesign}>' . "\n" .
+                 '    {include uri="design:page_head.tpl"}' . "\n" .
+                 '</head>' . "\n" .
+                 '<body>' . "\n" .
+                 '{$module_result.content}' . "\n" .
+                 '<!--DEBUG_REPORT-->' . "\n" .
+                 '</body>' . "\n" .
+                 '</html>' . "\n";
+        }break;
+    }
+    return $templateCode;
+}
+}
+
 $http = eZHTTPTool::instance();
 $module = $Params['Module'];
 $parameters = $Params["Parameters"];
@@ -251,309 +565,11 @@ else if( $module->isCurrentAction( 'CancelOverride' ) )
 }
 
 
-function generateDefaultCopyCode( $http, $template, $classIdentifier = '' )
-{
-    $templateCode = "";
-    $siteAccess = $http->sessionVariable( 'eZTemplateAdminCurrentSiteAccess' );
-    $overrideArray = eZTemplateDesignResource::overrideArray( $siteAccess );
-    $bases = eZTemplateDesignResource::allDesignBases( $siteAccess );
-    $templateName = trim( $http->postVariable( 'TemplateName' ) );
-    $templateFileName = $templateName . ".tpl";
-
-    $sourceFileName = false;
-
-    // If a specific source template was selected in the GUI, use it.
-    if ( $http->hasPostVariable( 'TemplateSource' ) )
-    {
-        $selectedSource = trim( $http->postVariable( 'TemplateSource' ) );
-        if ( $selectedSource !== '' && file_exists( $selectedSource ) )
-        {
-            $sourceFileName = $selectedSource;
-        }
-    }
-
-    // Otherwise, for node/object view templates, try the class-specific
-    // override template by convention (e.g. full/frontpage.tpl for class "frontpage").
-    if ( $sourceFileName === false && $classIdentifier !== '' )
-    {
-        $classTemplateFileName = "full/" . $classIdentifier . ".tpl";
-
-        if ( isset( $overrideArray[$template]['custom_match'] ) )
-        {
-            foreach ( $overrideArray[$template]['custom_match'] as $customMatch )
-            {
-                if ( !empty( $customMatch['match_file'] ) &&
-                     substr( $customMatch['match_file'], -strlen( $classTemplateFileName ) ) === $classTemplateFileName )
-                {
-                    $sourceFileName = $customMatch['match_file'];
-                    break;
-                }
-            }
-        }
-
-        if ( $sourceFileName === false )
-        {
-            $triedFiles = array();
-            $fileInfo = eZTemplateDesignResource::fileMatch( $bases, 'override/templates', $classTemplateFileName, $triedFiles );
-            if ( is_array( $fileInfo ) && isset( $fileInfo['path'] ) )
-            {
-                $sourceFileName = $fileInfo['path'];
-            }
-        }
-    }
-
-    // If the new filename matches an existing override for the same source,
-    // copy the existing override contents (e.g. full/frontpage.tpl).
-    if ( $sourceFileName === false && isset( $overrideArray[$template]['custom_match'] ) )
-    {
-        foreach ( $overrideArray[$template]['custom_match'] as $customMatch )
-        {
-            if ( !empty( $customMatch['match_file'] ) &&
-                 substr( $customMatch['match_file'], -strlen( $templateFileName ) ) === $templateFileName )
-            {
-                $sourceFileName = $customMatch['match_file'];
-                break;
-            }
-        }
-    }
-
-    // Finally, fall back to the actual default template for the source.
-    if ( $sourceFileName === false )
-    {
-        if ( isset( $overrideArray[$template] ) &&
-             !empty( $overrideArray[$template]['base_dir'] ) &&
-             !empty( $overrideArray[$template]['template'] ) )
-        {
-            $sourceFileName = $overrideArray[$template]['base_dir'] . $overrideArray[$template]['template'];
-        }
-        else
-        {
-            $templatePath = ltrim( $template, '/' );
-            $triedFiles = array();
-            $fileInfo = eZTemplateDesignResource::fileMatch( $bases, 'templates', $templatePath, $triedFiles );
-            if ( is_array( $fileInfo ) && isset( $fileInfo['path'] ) )
-            {
-                $sourceFileName = $fileInfo['path'];
-            }
-        }
-    }
-
-    if ( $sourceFileName !== false && file_exists( $sourceFileName ) )
-    {
-        $fp = fopen( $sourceFileName, 'rb' );
-        if ( $fp )
-        {
-            $fileSize = @filesize( $sourceFileName );
-            if ( $fileSize !== false && $fileSize > 0 )
-            {
-                $codeFromFile = fread( $fp, $fileSize );
-                $templateCode = preg_replace( '@^{\*\s*DO\sNOT\sEDIT.*?\*}\n(.*)@s', '$1', $codeFromFile );
-            }
-            fclose( $fp );
-        }
-        else
-        {
-            eZDebug::writeError( "Could not open file $sourceFileName, check read permissions" );
-        }
-    }
-    else
-    {
-        eZDebug::writeError( "Template source not found for $templateFileName", __FUNCTION__ );
-    }
-
-    return $templateCode;
-}
-
-function generateNodeViewTemplate( $http, $template, $fileName )
-{
-    $matchArray = $http->postVariable( 'Match' );
-
-    $templateCode = "";
-    $classIdentifier = isset( $matchArray['class_identifier'] ) ? $matchArray['class_identifier'] : '';
-
-    $class = eZContentClass::fetchByIdentifier( $classIdentifier );
-
-    // Check what kind of contents we should create in the template
-    switch ( $http->postVariable( 'TemplateContent' ) )
-    {
-        case 'DefaultCopy' :
-        {
-            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
-        }break;
-
-        case 'ContainerTemplate' :
-        {
-            $templateCode = "<h1>{\$node.name}</h1>\n\n";
-
-            // Append attribute view
-            if ( $class instanceof eZContentClass )
-            {
-                $attributes = $class->fetchAttributes();
-                foreach ( $attributes as $attribute )
-                {
-                    $identifier = $attribute->attribute( 'identifier' );
-                    $name = $attribute->attribute( 'name' );
-                    $templateCode .= "<h2>$name</h2>\n";
-                    $templateCode .= "{attribute_view_gui attribute=\$node.object.data_map.$identifier}\n\n";
-                }
-            }
-
-            $templateCode .= "" .
-                 "{let page_limit=20\n" .
-                 "    children=fetch('content','list',hash(parent_node_id,\$node.node_id,sort_by,\$node.sort_array,limit,\$page_limit,offset,\$view_parameters.offset))" .
-                 "    list_count=fetch('content','list_count',hash(parent_node_id,\$node.node_id))}\n" .
-                 "\n" .
-                 "{section name=Child loop=\$children sequence=array(bglight,bgdark)}\n" .
-                 "{node_view_gui view=line content_node=\$Child:item}\n" .
-                 "{/section}\n" .
-
-                 "{include name=navigator\n" .
-                 "    uri='design:navigator/google.tpl'\n" .
-                 "    page_uri=concat('/content/view','/full/',\$node.node_id)\n" .
-                 "    item_count=\$list_count\n" .
-                 "    view_parameters=\$view_parameters\n" .
-                 "    item_limit=\$page_limit}\n" .
-            "{/let}\n";
-        }break;
-
-        case 'ViewTemplate' :
-        {
-            $templateCode = "<h1>{\$node.name}</h1>\n\n";
-
-            // Append attribute view
-            if ( $class instanceof eZContentClass )
-            {
-                $attributes = $class->fetchAttributes();
-                foreach ( $attributes as $attribute )
-                {
-                    $identifier = $attribute->attribute( 'identifier' );
-                    $name = $attribute->attribute( 'name' );
-                    $templateCode .= "<h2>$name</h2>\n";
-                    $templateCode .= "{attribute_view_gui attribute=\$node.object.data_map.$identifier}\n\n";
-                }
-            }
-
-        }break;
-
-        default:
-        case 'EmptyFile' :
-        {
-        }break;
-    }
-
-    return $templateCode;
-}
 
 
-function generateObjectViewTemplate( $http, $template, $fileName )
-{
-    $matchArray = $http->postVariable( 'Match' );
 
-    $templateCode = "";
-    $classIdentifier = isset( $matchArray['class_identifier'] ) ? $matchArray['class_identifier'] : '';
 
-    $class = $classIdentifier ? eZContentClass::fetchByIdentifier( $classIdentifier ) : false;
 
-    // Check what kind of contents we should create in the template
-    switch ( $http->postVariable( 'TemplateContent' ) )
-    {
-        case 'DefaultCopy' :
-        {
-            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
-        }break;
-
-        case 'ViewTemplate' :
-        {
-            $templateCode = "<h1>{\$object.name}</h1>\n\n";
-
-            // Append attribute view
-            if ( $class instanceof eZContentClass )
-            {
-                $attributes = $class->fetchAttributes();
-                foreach ( $attributes as $attribute )
-                {
-                    $identifier = $attribute->attribute( 'identifier' );
-                    $name = $attribute->attribute( 'name' );
-                    $templateCode .= "<h2>$name</h2>\n";
-                    $templateCode .= "{attribute_view_gui attribute=\$object.data_map.$identifier}\n\n";
-                }
-            }
-
-        }break;
-
-        default:
-        case 'EmptyFile' :
-        {
-        }break;
-    }
-    return $templateCode;
-}
-
-function generatePagelayoutTemplate( $http, $template, $fileName )
-{
-    $templateCode = "";
-    $classIdentifier = '';
-    // Check what kind of contents we should create in the template
-    switch ( $http->postVariable( 'TemplateContent' ) )
-    {
-        case 'DefaultCopy' :
-        {
-            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
-        }break;
-
-        default:
-        case 'EmptyFile' :
-        {
-            $templateCode = '{*?template charset=latin1?*}' .
-                 '<!DOCTYPE html>' . "\n" .
-                 '<html lang="en">' .
-                 '<head>' . "\n" .
-                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/core.css"|ezdesign}>' . "\n" .
-                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/debug.css"|ezdesign}>' . "\n" .
-                 '    {include uri="design:page_head.tpl"}' . "\n" .
-                 '</head>' . "\n" .
-                 '<body>' . "\n" .
-                 '{$module_result.content}' . "\n" .
-                 '<!--DEBUG_REPORT-->' . "\n" .
-                 '</body>' . "\n" .
-                 '</html>' . "\n";
-        }break;
-    }
-    return $templateCode;
-}
-
-function generateDefaultTemplate( $http, $template, $fileName )
-{
-    $templateCode = "";
-    $classIdentifier = '';
-    // Check what kind of contents we should create in the template
-    switch ( $http->postVariable( 'TemplateContent' ) )
-    {
-        case 'DefaultCopy' :
-        {
-            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
-        }break;
-
-        default:
-        case 'EmptyFile' :
-        {
-            $templateCode = '{*?template charset=latin1?*}' .
-                 '<!DOCTYPE html>' . "\n" .
-                 '<html lang="en">' .
-                 '<head>' . "\n" .
-                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/core.css"|ezdesign}>' . "\n" .
-                 '    <link rel="stylesheet" type="text/css" href={"stylesheets/debug.css"|ezdesign}>' . "\n" .
-                 '    {include uri="design:page_head.tpl"}' . "\n" .
-                 '</head>' . "\n" .
-                 '<body>' . "\n" .
-                 '{$module_result.content}' . "\n" .
-                 '<!--DEBUG_REPORT-->' . "\n" .
-                 '</body>' . "\n" .
-                 '</html>' . "\n";
-        }break;
-    }
-    return $templateCode;
-}
 
 
 $tpl->setVariable( 'error', $error );

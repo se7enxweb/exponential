@@ -4,6 +4,35 @@
 
 // You get the option of hardcoding your API key here.  Do this if you don't want people seeing
 // your key when they do View -> Source.  
+
+if ( !function_exists( 'AtD_http_post' ) ) {
+/* this function directly from akismet.php by Matt Mullenweg.  *props* */
+function AtD_http_post($request, $host, $path, $port = 80) 
+{
+   $http_request  = "POST $path HTTP/1.0\r\n";
+   $http_request .= "Host: $host\r\n";
+   $http_request .= "Content-Type: application/x-www-form-urlencoded\r\n";
+   $http_request .= "Content-Length: " . strlen($request) . "\r\n";
+   $http_request .= "User-Agent: AtD/0.1\r\n";
+   $http_request .= "\r\n";
+   $http_request .= $request;            
+
+   $response = '';                 
+   if( false != ( $fs = @fsockopen($host, $port, $errno, $errstr, 10) ) ) 
+   {                 
+      fwrite($fs, $http_request);
+
+      while ( !feof($fs) )
+      {
+          $response .= fgets($fs);
+      }
+      fclose($fs);
+      $response = explode("\r\n\r\n", $response, 2);
+   }
+   return $response;
+}
+}
+
 $API_KEY = "";
 
 // But better to set it in ezoe.ini[AtD]api_key
@@ -34,31 +63,6 @@ if ( $API_KEY !== '' )
 // undefined variable on non-POST requests.
 $url = isset( $_GET['url'] ) ? str_replace( array( "\r", "\n" ), '', $_GET['url'] ) : '';
 
-/* this function directly from akismet.php by Matt Mullenweg.  *props* */
-function AtD_http_post($request, $host, $path, $port = 80) 
-{
-   $http_request  = "POST $path HTTP/1.0\r\n";
-   $http_request .= "Host: $host\r\n";
-   $http_request .= "Content-Type: application/x-www-form-urlencoded\r\n";
-   $http_request .= "Content-Length: " . strlen($request) . "\r\n";
-   $http_request .= "User-Agent: AtD/0.1\r\n";
-   $http_request .= "\r\n";
-   $http_request .= $request;            
-
-   $response = '';                 
-   if( false != ( $fs = @fsockopen($host, $port, $errno, $errstr, 10) ) ) 
-   {                 
-      fwrite($fs, $http_request);
-
-      while ( !feof($fs) )
-      {
-          $response .= fgets($fs);
-      }
-      fclose($fs);
-      $response = explode("\r\n\r\n", $response, 2);
-   }
-   return $response;
-}
 
 // So I'm sad and I feel lonely
 // So I cry and I'm very angry

@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZContentOperationCollection', false ) ) {
 class eZContentOperationCollection
 {
     /**
@@ -1736,4 +1738,6 @@ class eZContentOperationCollection
         }
     }
 }
+}
+
 ?>

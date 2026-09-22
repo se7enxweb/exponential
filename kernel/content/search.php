@@ -6,6 +6,8 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'pageLimit' ) ) {
 /*!
  Get search limit
  */
@@ -30,6 +32,8 @@ function pageLimit( $searchPageLimit )
             return 50;
     }
 }
+}
+
 
 $http = eZHTTPTool::instance();
 

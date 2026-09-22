@@ -6,6 +6,8 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'makeTriggerArray' ) ) {
 function makeTriggerArray( $triggerList )
 {
     $triggerArray = array();
@@ -16,6 +18,8 @@ function makeTriggerArray( $triggerList )
     }
     return $triggerArray;
 }
+}
+
 
 
 $http = eZHTTPTool::instance();

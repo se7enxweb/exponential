@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZRoleFunctionCollection', false ) ) {
 class eZRoleFunctionCollection
 {
     function fetchRole( $roleID )
@@ -62,5 +64,7 @@ class eZRoleFunctionCollection
     }
 
 }
+}
+
 
 ?>

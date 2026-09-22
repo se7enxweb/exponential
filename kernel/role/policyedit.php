@@ -6,6 +6,53 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'processDropdownLimitations' ) ) {
+/**
+ * Applies the POST submitted limitations as found in the dropdowns
+ * @param eZPolicy $policy
+ * @param string $currentModule
+ * @param string $currentFunction
+ * @param array $currentFunctionLimitations
+ *
+ * @return bool True if limitations were found, false otherwise
+ */
+function processDropdownLimitations( &$policy, $currentModule, $currentFunction, $currentFunctionLimitations )
+{
+    $hasLimitation = false;
+
+    $http = eZHTTPTool::instance();
+
+    $db = eZDB::instance();
+    $db->begin();
+
+    foreach ( $currentFunctionLimitations as $functionLimitation )
+    {
+        if ( $http->hasPostVariable( $functionLimitation['name'] ) and
+            $functionLimitation['name'] != 'Node' and
+            $functionLimitation['name'] != 'Subtree' )
+        {
+            $limitationValueList = $http->postVariable( $functionLimitation['name'] );
+
+            if ( !in_array('-1', $limitationValueList ) )
+            {
+                $hasLimitation = true;
+                $policyLimitation = eZPolicyLimitation::createNew( $policy->attribute( 'id' ),
+                                                                   $functionLimitation['name'] );
+                foreach ( $limitationValueList as $limitationValue )
+                {
+                    eZPolicyLimitationValue::createNew( $policyLimitation->attribute( 'id' ), $limitationValue );
+                }
+            }
+        }
+    }
+
+    $db->commit();
+
+    return $hasLimitation;
+}
+}
+
 $Module = $Params['Module'];
 $policyID = $Params['PolicyID'];
 
@@ -336,47 +383,4 @@ $Result['path'] = array( array( 'url' => false,
                                 'text' => ezpI18n::tr( 'kernel/role', 'Editing policy' ) ) );
 $Result['content'] = $tpl->fetch( 'design:role/policyedit.tpl' );
 
-/**
- * Applies the POST submitted limitations as found in the dropdowns
- * @param eZPolicy $policy
- * @param string $currentModule
- * @param string $currentFunction
- * @param array $currentFunctionLimitations
- *
- * @return bool True if limitations were found, false otherwise
- */
-function processDropdownLimitations( &$policy, $currentModule, $currentFunction, $currentFunctionLimitations )
-{
-    $hasLimitation = false;
-
-    $http = eZHTTPTool::instance();
-
-    $db = eZDB::instance();
-    $db->begin();
-
-    foreach ( $currentFunctionLimitations as $functionLimitation )
-    {
-        if ( $http->hasPostVariable( $functionLimitation['name'] ) and
-            $functionLimitation['name'] != 'Node' and
-            $functionLimitation['name'] != 'Subtree' )
-        {
-            $limitationValueList = $http->postVariable( $functionLimitation['name'] );
-
-            if ( !in_array('-1', $limitationValueList ) )
-            {
-                $hasLimitation = true;
-                $policyLimitation = eZPolicyLimitation::createNew( $policy->attribute( 'id' ),
-                                                                   $functionLimitation['name'] );
-                foreach ( $limitationValueList as $limitationValue )
-                {
-                    eZPolicyLimitationValue::createNew( $policyLimitation->attribute( 'id' ), $limitationValue );
-                }
-            }
-        }
-    }
-
-    $db->commit();
-
-    return $hasLimitation;
-}
 ?>

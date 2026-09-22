@@ -7,6 +7,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'expRADCatalogue', false ) ) {
 /**
  * Every point this system can be extended at, and what it takes to extend it.
  *
@@ -900,3 +902,5 @@ class expRADCatalogue
         return true;
     }
 }
+}
+

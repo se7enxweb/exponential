@@ -743,6 +743,27 @@ class eZSys
      */
     public static function isSSLNow()
     {
+        // The SAPI says so directly.
+        //
+        // Everything below infers TLS from the port number or from proxy
+        // headers, which cannot recognise TLS served on any port other than
+        // the configured SSLPort. A server listening on, say, 8080 with a
+        // certificate is then treated as plain HTTP, and every absolute URL
+        // built from here comes out as http:// -- including the redirect
+        // after a login or a publish. The browser follows that into a TLS
+        // listener with a plain request and the connection is reset, which
+        // presents as a certificate failure rather than as a wrong URL.
+        //
+        // HTTPS is the CGI variable for exactly this question and Apache,
+        // nginx and FPM all set it, so checking it first changes nothing for
+        // them and makes the answer right everywhere else.
+        if ( isset( $_SERVER['HTTPS'] )
+             && $_SERVER['HTTPS'] !== ''
+             && strtolower( $_SERVER['HTTPS'] ) !== 'off' )
+        {
+            return true;
+        }
+
         $ini = eZINI::instance();
         $sslPort = $ini->variable( 'SiteSettings', 'SSLPort' );
         if ( !$sslPort )

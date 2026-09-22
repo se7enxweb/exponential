@@ -19,8 +19,8 @@
  * @package kernel
  */
 
-require_once 'kernel/setup/expextensionwizard.php';
 
+if ( !class_exists( 'expKernelOverrideWizard', false ) ) {
 class expKernelOverrideWizard extends expExtensionWizard
 {
     /**
@@ -543,5 +543,9 @@ class expKernelOverrideWizard extends expExtensionWizard
         return $readme;
     }
 }
+}
+
+require_once 'kernel/setup/expextensionwizard.php';
+
 
 ?>

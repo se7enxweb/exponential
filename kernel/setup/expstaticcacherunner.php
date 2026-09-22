@@ -28,8 +28,8 @@
  * @package kernel
  */
 
-require_once 'kernel/setup/exppreloadrunner.php';
 
+if ( !class_exists( 'expStaticCacheRunner', false ) ) {
 class expStaticCacheRunner
 {
     /**
@@ -319,5 +319,9 @@ class expStaticCacheRunner
         return round( $bytes / 1048576, 1 ) . 'M';
     }
 }
+}
+
+require_once 'kernel/setup/exppreloadrunner.php';
+
 
 ?>

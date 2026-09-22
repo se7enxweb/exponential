@@ -6,6 +6,8 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'validate' ) ) {
 function validate( $fields, $type, $spacesAllowed = true )
 {
     $validationMessage = '';
@@ -78,5 +80,7 @@ function validate( $fields, $type, $spacesAllowed = true )
                   'type' => $validationErrorType,
                   'message' => $validationMessage );
 }
+}
+
 
 ?>

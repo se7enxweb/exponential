@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZURLFunctionCollection', false ) ) {
 class eZURLFunctionCollection
 {
     function fetchList( $isValid, $offset, $limit, $onlyPublished )
@@ -45,5 +47,7 @@ class eZURLFunctionCollection
     }
 
 }
+}
+
 
 ?>

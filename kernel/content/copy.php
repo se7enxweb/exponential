@@ -6,41 +6,8 @@
  * @package kernel
  */
 
-$Module = $Params['Module'];
-$ObjectID = $Params['ObjectID'];
 
-$http = eZHTTPTool::instance();
-
-if ( $http->hasPostVariable( 'BrowseCancelButton' ) )
-{
-    if ( $http->hasPostVariable( 'BrowseCancelURI' ) )
-    {
-        return $Module->redirectTo( $http->postVariable( 'BrowseCancelURI' ) );
-    }
-}
-
-if ( $ObjectID === null )
-{
-    // ObjectID is returned after browsing
-    $ObjectID = $http->postVariable( 'ObjectID' );
-}
-
-$object = eZContentObject::fetch( $ObjectID );
-
-if ( $object === null )
-    return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-
-if ( !$object->attribute( 'can_read' ) )
-    return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
-
-if ( $Module->isCurrentAction( 'Cancel' ) )
-{
-    $mainParentNodeID = $object->attribute( 'main_parent_node_id' );
-    return $Module->redirectToView( 'view', array( 'full', $mainParentNodeID ) );
-}
-
-$contentINI = eZINI::instance( 'content.ini' );
-
+if ( !function_exists( 'copyObject' ) ) {
 /*!
  Copy the specified object to a given node
 */
@@ -102,7 +69,9 @@ function copyObject( $Module, $object, $allVersions, $newParentNodeID )
     $db->commit();
     return $Module->redirectToView( 'view', array( 'full', $newParentNodeID ) );
 }
+}
 
+if ( !function_exists( 'browse' ) ) {
 /*!
 Browse for node to place the object copy into
 */
@@ -154,7 +123,9 @@ function browse( $Module, $object )
                                     'from_page' => "/content/copy" ),
                              $Module );
 }
+}
 
+if ( !function_exists( 'chooseObjectVersionsToCopy' ) ) {
 /*!
 Redirect to the page that lets a user to choose which versions to copy:
 either all version or the current one.
@@ -172,6 +143,45 @@ function chooseObjectVersionsToCopy( $Module, &$Result, $object )
                                  array( 'url' => false,
                                         'text' => ezpI18n::tr( 'kernel/content', 'Copy' ) ) );
 }
+}
+
+$Module = $Params['Module'];
+$ObjectID = $Params['ObjectID'];
+
+$http = eZHTTPTool::instance();
+
+if ( $http->hasPostVariable( 'BrowseCancelButton' ) )
+{
+    if ( $http->hasPostVariable( 'BrowseCancelURI' ) )
+    {
+        return $Module->redirectTo( $http->postVariable( 'BrowseCancelURI' ) );
+    }
+}
+
+if ( $ObjectID === null )
+{
+    // ObjectID is returned after browsing
+    $ObjectID = $http->postVariable( 'ObjectID' );
+}
+
+$object = eZContentObject::fetch( $ObjectID );
+
+if ( $object === null )
+    return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+
+if ( !$object->attribute( 'can_read' ) )
+    return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+
+if ( $Module->isCurrentAction( 'Cancel' ) )
+{
+    $mainParentNodeID = $object->attribute( 'main_parent_node_id' );
+    return $Module->redirectToView( 'view', array( 'full', $mainParentNodeID ) );
+}
+
+$contentINI = eZINI::instance( 'content.ini' );
+
+
+
 
 /*
  Object copying logic in pseudo-code:

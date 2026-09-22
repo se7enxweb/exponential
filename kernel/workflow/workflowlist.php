@@ -6,29 +6,8 @@
  * @package kernel
  */
 
-$Module = $Params['Module'];
-$WorkflowGroupID = null;
-if ( isset( $Params["GroupID"] ) )
-    $WorkflowGroupID = $Params["GroupID"];
 
-// $execStack = eZExecutionStack::instance();
-// $execStack->clear();
-// $execStack->addEntry( $Module->functionURI( 'list' ),
-//                       $Module->attribute( 'name' ), 'list' );
-
-$http = eZHTTPTool::instance();
-
-if ( $http->hasPostVariable( 'NewWorkflowButton' ) )
-{
-    if ( $http->hasPostVariable( "CurrentGroupID" ) )
-        $GroupID = $http->postVariable( "CurrentGroupID" );
-    if ( $http->hasPostVariable( "CurrentGroupName" ) )
-        $GroupName = $http->postVariable( "CurrentGroupName" );
-    $params = array( null, $GroupID, $GroupName );
-    $Module->run( 'edit', $params );
-    return;
-}
-
+if ( !function_exists( 'removeWorkflowCompletely' ) ) {
 /**
  * Removes a workflow and everything that belongs to it.
  *
@@ -58,6 +37,31 @@ function removeWorkflowCompletely( $workflowID )
             $workflow->removeThis( true );
     }
 }
+}
+
+$Module = $Params['Module'];
+$WorkflowGroupID = null;
+if ( isset( $Params["GroupID"] ) )
+    $WorkflowGroupID = $Params["GroupID"];
+
+// $execStack = eZExecutionStack::instance();
+// $execStack->clear();
+// $execStack->addEntry( $Module->functionURI( 'list' ),
+//                       $Module->attribute( 'name' ), 'list' );
+
+$http = eZHTTPTool::instance();
+
+if ( $http->hasPostVariable( 'NewWorkflowButton' ) )
+{
+    if ( $http->hasPostVariable( "CurrentGroupID" ) )
+        $GroupID = $http->postVariable( "CurrentGroupID" );
+    if ( $http->hasPostVariable( "CurrentGroupName" ) )
+        $GroupName = $http->postVariable( "CurrentGroupName" );
+    $params = array( null, $GroupID, $GroupName );
+    $Module->run( 'edit', $params );
+    return;
+}
+
 
 if ( $http->hasPostVariable( 'DeleteButton' ) and
      $http->hasPostVariable( 'Workflow_id_checked' ) )

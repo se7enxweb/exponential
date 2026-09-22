@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZNotificationFunctionCollection', false ) ) {
 class eZNotificationFunctionCollection
 {
     function handlerList()
@@ -52,5 +54,7 @@ class eZNotificationFunctionCollection
         return array( 'result' => $nodes );
     }
 }
+}
+
 
 ?>

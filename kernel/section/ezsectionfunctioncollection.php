@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZSectionFunctionCollection', false ) ) {
 class eZSectionFunctionCollection
 {
     /**
@@ -134,5 +136,7 @@ class eZSectionFunctionCollection
         return array( 'result' => $userRoles );
     }
 }
+}
+
 
 ?>

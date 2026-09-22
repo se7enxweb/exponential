@@ -6,108 +6,8 @@
  * @package kernel
  */
 
-$tpl = eZTemplate::factory();
-$sessionsRemoved = false;
-$gcSessionsCompleted = true;
-$http = eZHTTPTool::instance();
 
-$module = $Params['Module'];
-
-
-if ( !eZSession::getHandlerInstance()->hasBackendAccess() )
-{
-    $Result = array();
-    $Result['content'] = $tpl->fetch( "design:setup/session_no_db.tpl" );
-    $Result['path'] = array( array( 'url' => false,
-                                    'text' => ezpI18n::tr( 'kernel/setup', 'Session admin' ) ) );
-    return $Result;
-}
-
-
-$param['limit'] = 50;
-
-$filterType = 'registered';
-if ( $http->hasSessionVariable( 'eZSessionFilterType' ) )
-    $filterType = $http->sessionVariable( 'eZSessionFilterType' );
-$expirationFilterType = 'active';
-if ( $http->hasSessionVariable( 'eZSessionExpirationFilterType' ) )
-    $expirationFilterType = $http->sessionVariable( 'eZSessionExpirationFilterType' );
-
-$userID = $Params['UserID'];
-
-if ( $module->isCurrentAction( 'ShowAllUsers' ) )
-{
-    return $module->redirectToView( 'session' );
-}
-else if ( $module->isCurrentAction( 'ChangeFilter' ) )
-{
-    $filterType = $module->actionParameter( 'FilterType' );
-    if ( !in_array( $filterType, array( 'everyone', 'registered', 'anonymous' ) ) )
-        $filterType = 'registered';
-    if ( $module->hasActionParameter( 'InactiveUsersCheckExists' ) )
-    {
-        $expirationFilterType = 'active';
-        if ( $module->hasActionParameter( 'InactiveUsersCheck' ) )
-            $expirationFilterType = 'all';
-    }
-    if ( $module->hasActionParameter( 'ExpirationFilterType' ) )
-    {
-        $expirationFilterType = $module->actionParameter( 'ExpirationFilterType' );
-    }
-    if ( !in_array( $expirationFilterType, array( 'all', 'active' ) ) )
-        $expirationFilterType = 'active';
-    $http->setSessionVariable( 'eZSessionFilterType', $filterType );
-    $http->setSessionVariable( 'eZSessionExpirationFilterType', $expirationFilterType );
-}
-else if ( $module->isCurrentAction( 'RemoveAllSessions' ) )
-{
-    eZSession::cleanup();
-    $sessionsRemoved = true;
-}
-else if ( $module->isCurrentAction( 'RemoveTimedOutSessions' ) )
-{
-    $gcSessionsCompleted = eZSession::garbageCollector();
-    $sessionsRemoved = true;
-}
-else if ( $module->isCurrentAction( 'RemoveSelectedSessions' ) )
-{
-    if ( $userID )
-    {
-        if ( $http->hasPostVariable( 'SessionKeyArray' ) )
-        {
-            $sessionKeyArray = $http->postVariable( 'SessionKeyArray' );
-            foreach ( $sessionKeyArray as $sessionKeyItem )
-            {
-                eZSession::getHandlerInstance()->destroy( $sessionKeyItem );
-            }
-        }
-    }
-    else
-    {
-        if ( $http->hasPostVariable( 'UserIDArray' ) )
-        {
-            $userIDArray = $http->postVariable( 'UserIDArray' );
-            if ( count( $userIDArray ) > 0 )
-            {
-                eZSession::getHandlerInstance()->deleteByUserIDs( $userIDArray );
-            }
-        }
-    }
-}
-
-$viewParameters = $Params['UserParameters'];
-if ( isset( $viewParameters['offset'] ) and
-     is_numeric( $viewParameters['offset'] ) )
-{
-    $param['offset'] = $viewParameters['offset'];
-}
-else
-{
-    $param['offset'] = 0;
-    $viewParameters['offset'] = 0;
-}
-
-
+if ( !function_exists( 'eZFetchActiveSessions' ) ) {
 /*
   Get all sessions by limit and offset, and returns it
 */
@@ -251,7 +151,9 @@ ORDER BY $orderBy";
     }
     return $resultArray;
 }
+}
 
+if ( !function_exists( 'eZFetchActiveSessionCount' ) ) {
 /*
   Counts active sessions according the filters and returns the count.
 */
@@ -322,6 +224,111 @@ function eZFetchActiveSessionCount( $params = array() )
 
     return $rows[0]['count'] ?? 0;
 }
+}
+
+$tpl = eZTemplate::factory();
+$sessionsRemoved = false;
+$gcSessionsCompleted = true;
+$http = eZHTTPTool::instance();
+
+$module = $Params['Module'];
+
+
+if ( !eZSession::getHandlerInstance()->hasBackendAccess() )
+{
+    $Result = array();
+    $Result['content'] = $tpl->fetch( "design:setup/session_no_db.tpl" );
+    $Result['path'] = array( array( 'url' => false,
+                                    'text' => ezpI18n::tr( 'kernel/setup', 'Session admin' ) ) );
+    return $Result;
+}
+
+
+$param['limit'] = 50;
+
+$filterType = 'registered';
+if ( $http->hasSessionVariable( 'eZSessionFilterType' ) )
+    $filterType = $http->sessionVariable( 'eZSessionFilterType' );
+$expirationFilterType = 'active';
+if ( $http->hasSessionVariable( 'eZSessionExpirationFilterType' ) )
+    $expirationFilterType = $http->sessionVariable( 'eZSessionExpirationFilterType' );
+
+$userID = $Params['UserID'];
+
+if ( $module->isCurrentAction( 'ShowAllUsers' ) )
+{
+    return $module->redirectToView( 'session' );
+}
+else if ( $module->isCurrentAction( 'ChangeFilter' ) )
+{
+    $filterType = $module->actionParameter( 'FilterType' );
+    if ( !in_array( $filterType, array( 'everyone', 'registered', 'anonymous' ) ) )
+        $filterType = 'registered';
+    if ( $module->hasActionParameter( 'InactiveUsersCheckExists' ) )
+    {
+        $expirationFilterType = 'active';
+        if ( $module->hasActionParameter( 'InactiveUsersCheck' ) )
+            $expirationFilterType = 'all';
+    }
+    if ( $module->hasActionParameter( 'ExpirationFilterType' ) )
+    {
+        $expirationFilterType = $module->actionParameter( 'ExpirationFilterType' );
+    }
+    if ( !in_array( $expirationFilterType, array( 'all', 'active' ) ) )
+        $expirationFilterType = 'active';
+    $http->setSessionVariable( 'eZSessionFilterType', $filterType );
+    $http->setSessionVariable( 'eZSessionExpirationFilterType', $expirationFilterType );
+}
+else if ( $module->isCurrentAction( 'RemoveAllSessions' ) )
+{
+    eZSession::cleanup();
+    $sessionsRemoved = true;
+}
+else if ( $module->isCurrentAction( 'RemoveTimedOutSessions' ) )
+{
+    $gcSessionsCompleted = eZSession::garbageCollector();
+    $sessionsRemoved = true;
+}
+else if ( $module->isCurrentAction( 'RemoveSelectedSessions' ) )
+{
+    if ( $userID )
+    {
+        if ( $http->hasPostVariable( 'SessionKeyArray' ) )
+        {
+            $sessionKeyArray = $http->postVariable( 'SessionKeyArray' );
+            foreach ( $sessionKeyArray as $sessionKeyItem )
+            {
+                eZSession::getHandlerInstance()->destroy( $sessionKeyItem );
+            }
+        }
+    }
+    else
+    {
+        if ( $http->hasPostVariable( 'UserIDArray' ) )
+        {
+            $userIDArray = $http->postVariable( 'UserIDArray' );
+            if ( count( $userIDArray ) > 0 )
+            {
+                eZSession::getHandlerInstance()->deleteByUserIDs( $userIDArray );
+            }
+        }
+    }
+}
+
+$viewParameters = $Params['UserParameters'];
+if ( isset( $viewParameters['offset'] ) and
+     is_numeric( $viewParameters['offset'] ) )
+{
+    $param['offset'] = $viewParameters['offset'];
+}
+else
+{
+    $param['offset'] = 0;
+    $viewParameters['offset'] = 0;
+}
+
+
+
 
 $param['sortby'] = false;
 $param['filter_type'] = $filterType;

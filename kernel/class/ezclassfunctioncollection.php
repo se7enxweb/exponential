@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZClassFunctionCollection', false ) ) {
 class eZClassFunctionCollection
 {
     function fetchClassListByGroups( $groupFilter, $groupFilterType = 'include' )
@@ -150,5 +152,7 @@ class eZClassFunctionCollection
     }
 
 }
+}
+
 
 ?>

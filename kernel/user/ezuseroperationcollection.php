@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZUserOperationCollection', false ) ) {
 class eZUserOperationCollection
 {
    /**
@@ -395,4 +397,6 @@ class eZUserOperationCollection
         return array( 'status' => true );
     }
 }
+}
+
 ?>

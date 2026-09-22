@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZCollaborationFunctionCollection', false ) ) {
 class eZCollaborationFunctionCollection
 {
     function fetchParticipant( $itemID, $participantID )
@@ -158,5 +160,7 @@ class eZCollaborationFunctionCollection
     }
 
 }
+}
+
 
 ?>

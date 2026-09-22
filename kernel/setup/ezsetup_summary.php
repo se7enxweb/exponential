@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZSetupSummary', false ) ) {
 class eZSetupSummary
 {
     /**
@@ -124,5 +126,7 @@ class eZSetupSummary
     public $Tpl;
     public $PersistenceList;
 }
+}
+
 
 ?>

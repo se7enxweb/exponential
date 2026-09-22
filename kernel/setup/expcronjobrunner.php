@@ -33,6 +33,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'expCronjobRunner', false ) ) {
 class expCronjobRunner
 {
     /**
@@ -1032,5 +1034,7 @@ class expCronjobRunner
         return $content;
     }
 }
+}
+
 
 ?>

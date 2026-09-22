@@ -6,6 +6,8 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'checkRelationAssignments' ) ) {
 function checkRelationAssignments( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage, $fromLanguage, &$validation )
 {
     $http = eZHTTPTool::instance();
@@ -54,11 +56,15 @@ function checkRelationAssignments( $module, $class, $object, $version, $contentO
         return eZModule::HOOK_STATUS_CANCEL_RUN;
     }
 }
+}
 
+if ( !function_exists( 'storeRelationAssignments' ) ) {
 function storeRelationAssignments( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage )
 {
 }
+}
 
+if ( !function_exists( 'checkRelationActions' ) ) {
 function checkRelationActions( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage, $fromLanguage )
 {
     $http = eZHTTPTool::instance();
@@ -214,7 +220,9 @@ function checkRelationActions( $module, $class, $object, $version, $contentObjec
         }
     }
 }
+}
 
+if ( !function_exists( 'handleRelationTemplate' ) ) {
 function handleRelationTemplate( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage, $tpl )
 {
     $relatedObjects = $object->relatedContentObjectArray( $editVersion );
@@ -276,7 +284,9 @@ function handleRelationTemplate( $module, $class, $object, $version, $contentObj
     $tpl->setVariable( 'related_contentobjects_id', $relatedObjectsTypedIDArray );
     $tpl->setVariable( 'grouped_related_contentobjects', $groupedRelatedObjects );
 }
+}
 
+if ( !function_exists( 'initializeRelationEdit' ) ) {
 function initializeRelationEdit( $module )
 {
     $module->addHook( 'post_fetch', 'checkRelationAssignments' );
@@ -284,5 +294,11 @@ function initializeRelationEdit( $module )
     $module->addHook( 'action_check', 'checkRelationActions' );
     $module->addHook( 'pre_template', 'handleRelationTemplate' );
 }
+}
+
+
+
+
+
 
 ?>

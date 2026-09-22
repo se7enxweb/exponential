@@ -21,6 +21,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'expRADSurvey', false ) ) {
 class expRADSurvey
 {
     /**
@@ -1097,5 +1099,7 @@ class expRADSurvey
         return $contracts;
     }
 }
+}
+
 
 ?>

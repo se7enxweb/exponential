@@ -6,11 +6,8 @@
  * @package kernel
  */
 
-$module = $Params['Module'];
-$http = eZHTTPTool::instance();
-$tpl = eZTemplate::factory();
-$errors = false;
 
+if ( !function_exists( 'applyChanges' ) ) {
 /*!
   Apply changes made to VAT types' names and/or percentages.
 
@@ -58,7 +55,9 @@ function applyChanges( $module, $http, $vatTypeArray = false )
 
     return $errors;
 }
+}
 
+if ( !function_exists( 'generateUniqueVatTypeName' ) ) {
 /**
  * Generate a unique VAT type name.
  *
@@ -84,7 +83,9 @@ function generateUniqueVatTypeName( $vatTypes )
     $maxNumber++;
     return "$commonPart $maxNumber";
 }
+}
 
+if ( !function_exists( 'findDependencies' ) ) {
 /**
  * Determine dependent VAT rules and products for the given VAT types.
  *
@@ -122,6 +123,15 @@ function findDependencies( $vatTypeIDList, &$deps, &$haveDeps, &$canRemove )
             $haveDeps = true;
     }
 }
+}
+
+$module = $Params['Module'];
+$http = eZHTTPTool::instance();
+$tpl = eZTemplate::factory();
+$errors = false;
+
+
+
 
 // Add new VAT type.
 if ( $module->isCurrentAction( 'Add' ) )

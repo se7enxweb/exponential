@@ -7,8 +7,8 @@
  * @package kernel
  */
 
-require_once 'kernel/setup/expextensionwizard.php';
 
+if ( !class_exists( 'expModuleExtensionWizard', false ) ) {
 /**
  * Builds a module extension over tables that already exist.
  *
@@ -2515,3 +2515,7 @@ class expModuleExtensionWizard extends expExtensionWizard
         return $php;
     }
 }
+}
+
+require_once 'kernel/setup/expextensionwizard.php';
+

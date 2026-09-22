@@ -8,6 +8,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'ezpLanguageSwitcherFunctionCollection', false ) ) {
 class ezpLanguageSwitcherFunctionCollection
 {
     public function fetchUrlAlias( $nodeId, $path, $locale )
@@ -45,5 +47,7 @@ class ezpLanguageSwitcherFunctionCollection
         return array( 'result' => $urlAlias );
     }
 }
+}
+
 
 ?>

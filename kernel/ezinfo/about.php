@@ -6,10 +6,8 @@
  * @package kernel
  */
 
-define( 'EZ_ABOUT_CONTRIBUTORS_DIR', 'var/storage/contributors' );
-define( 'EZ_ABOUT_THIRDPARTY_SOFTWARE_FILE', 'var/storage/third_party_software.php' );
 
-
+if ( !function_exists( 'getLicense' ) ) {
 /*!
   Returns contents of LICENSE file in ezp legacy root directory, or false on failure.
 */
@@ -17,7 +15,9 @@ function getLicense()
 {
     return file_get_contents( 'LICENSE' );
 }
+}
 
+if ( !function_exists( 'getContributors' ) ) {
 /*!
   Returns list of contributors;
   Searches all php files in \a $pathToDir and tries to fetch contributor's info
@@ -48,7 +48,9 @@ function getContributors( $pathToDir )
     }
     return $contributors;
 }
+}
 
+if ( !function_exists( 'getThirdPartySoftware' ) ) {
 /*!
   Returns third-party software from \a $pathToFile
 */
@@ -64,7 +66,9 @@ function getThirdPartySoftware( $pathToFile )
     $thirdPartySoftware = array_unique( $thirdPartySoftware );
     return $thirdPartySoftware;
 }
+}
 
+if ( !function_exists( 'getExtensionsInfo' ) ) {
 /*!
   Returns active extentions info in run-time
 */
@@ -84,7 +88,9 @@ function getExtensionsInfo()
     }
     return $result;
 }
+}
 
+if ( !function_exists( 'strReplaceByArray' ) ) {
 /*!
   Replaces all occurrences (in \a $subjects) of the search string (keys of \a $searches )
   with the replacement string (values of \a $searches)
@@ -107,6 +113,16 @@ function strReplaceByArray( $searches = array(), $subjects = array() )
     }
     return $retArray;
 }
+}
+
+define( 'EZ_ABOUT_CONTRIBUTORS_DIR', 'var/storage/contributors' );
+define( 'EZ_ABOUT_THIRDPARTY_SOFTWARE_FILE', 'var/storage/third_party_software.php' );
+
+
+
+
+
+
 
 $ezinfo = eZPublishSDK::version( true );
 

@@ -11,6 +11,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'eZMultiEdit', false ) ) {
 class eZMultiEdit
 {
     /// How many objects one form will carry. A selection larger than this is
@@ -715,3 +717,5 @@ class eZMultiEdit
                              'text' => ezpI18n::tr( 'kernel/content', 'Edit several items' ) ) );
     }
 }
+}
+

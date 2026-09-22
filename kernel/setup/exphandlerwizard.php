@@ -7,8 +7,8 @@
  * @package kernel
  */
 
-require_once 'kernel/setup/expextensionwizard.php';
 
+if ( !class_exists( 'expHandlerWizard', false ) ) {
 /**
  * Builds a handler: a class named by an ini setting that the kernel loads in
  * place of its own.
@@ -2986,3 +2986,7 @@ class expHandlerWizard extends expExtensionWizard
         return $readme;
     }
 }
+}
+
+require_once 'kernel/setup/expextensionwizard.php';
+

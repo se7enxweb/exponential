@@ -31,9 +31,8 @@
  * A light redirector to be able to run other modules indirectly w/o having to use empty layout/set/*.
  */
 
-$uriParams = $Params['Parameters'];
-$userParams = $Params['UserParameters'];
 
+if ( !function_exists( 'exitWithInternalError' ) ) {
 // Functions that earlier existed in index_ajax.php (now removed from ezjscore)
 function exitWithInternalError( $errorText )
 {
@@ -50,7 +49,9 @@ function exitWithInternalError( $errorText )
     echo ezjscAjaxContent::autoEncode( array( 'error_text' => $errorText, 'content' => '' ), $contentType );
     eZExecution::cleanExit();
 }
+}
 
+if ( !function_exists( 'hasAccessToBySetting' ) ) {
 function hasAccessToBySetting( $moduleName, $view = false, $policyAccessList = false )
 {
     if ( $policyAccessList !== false )
@@ -62,6 +63,12 @@ function hasAccessToBySetting( $moduleName, $view = false, $policyAccessList = f
     }
     return false;
 }
+}
+
+$uriParams = $Params['Parameters'];
+$userParams = $Params['UserParameters'];
+
+
 
 
 

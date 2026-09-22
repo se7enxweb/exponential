@@ -7,6 +7,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'eZRSSListPager', false ) ) {
 /**
  * Works out one page of a list, and the links that reach the other pages.
  *
@@ -253,3 +255,5 @@ class eZRSSListPager
         return $suffix;
     }
 }
+}
+

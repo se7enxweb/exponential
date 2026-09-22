@@ -15,6 +15,8 @@
  * this describes its own parts and writes its own files; everything an
  * extension has regardless of what is inside it lives here.
  */
+
+if ( !class_exists( 'expExtensionWizard', false ) ) {
 abstract class expExtensionWizard
 {
     /** A name has to be usable as a directory, a design name and an ini value. */
@@ -591,3 +593,5 @@ abstract class expExtensionWizard
         return mb_strlen( $value, 'UTF-8' ) > $max ? mb_substr( $value, 0, $max, 'UTF-8' ) : $value;
     }
 }
+}
+

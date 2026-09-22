@@ -8,6 +8,86 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'generatePDF' ) ) {
+/*!
+ \generate and output PDF data, either to file or stream
+
+ \param PDF export object
+ \param toFile, false if generate to stream, $
+                filename if generate to file
+*/
+function generatePDF( $pdfExport, $toFile = false )
+{
+    if ( $pdfExport == null )
+        return;
+
+    $node = $pdfExport->attribute( 'source_node' );
+    if ( $node )
+    {
+        $object = $node->attribute( 'object' );
+
+        $tpl = eZTemplate::factory();
+
+        $tpl->setVariable( 'node', $node );
+        $tpl->setVariable( 'generate_toc', 1 );
+
+        $tpl->setVariable( 'tree_traverse',
+                           $pdfExport->attribute( 'export_structure' ) == 'tree' ? 1 : 0 );
+        $tpl->setVariable( 'class_array', explode( ':', $pdfExport->attribute( 'export_classes' ) ) );
+        $tpl->setVariable( 'show_frontpage', $pdfExport->attribute( 'show_frontpage' ) );
+        // The footer line, as this export wants it. Left empty the shipped
+        // wording is used; switched off there is no line of text at all.
+        $tpl->setVariable( 'show_footer', $pdfExport->attribute( 'show_footer' ) );
+        $tpl->setVariable( 'footer_text', (string)$pdfExport->attribute( 'footer_text' ) );
+        if ( $pdfExport->attribute( 'show_frontpage' ) == 1 )
+        {
+            $tpl->setVariable( 'intro_text', $pdfExport->attribute( 'intro_text' ) );
+            $tpl->setVariable( 'sub_intro_text', $pdfExport->attribute( 'sub_text' ) );
+        }
+
+        if ( $toFile === false )
+        {
+            $tpl->setVariable( 'generate_stream', 1 );
+        }
+        else
+        {
+            $tpl->setVariable( 'generate_file', 1 );
+            $tpl->setVariable( 'filename', $toFile );
+        }
+
+        $res = eZTemplateDesignResource::instance();
+        $res->setKeys( array( array( 'object', $object->attribute( 'id' ) ),
+                              array( 'node', $node->attribute( 'node_id' ) ),
+                              array( 'parent_node', $node->attribute( 'parent_node_id' ) ),
+                              array( 'class', $object->attribute( 'contentclass_id' ) ),
+                              array( 'class_identifier', $object->attribute( 'class_identifier' ) ),
+                              array( 'depth', $node->attribute( 'depth' ) ),
+                              array( 'url_alias', $node->attribute( 'url_alias' ) )
+                              ) );
+
+        $textElements = array();
+        $uri = 'design:node/view/pdf.tpl';
+        $tpl->setVariable( 'pdf_root_template', 1 );
+        eZTemplateIncludeFunction::handleInclude( $textElements, $uri, $tpl, '', '' );
+        $pdf_definition = implode( '', $textElements );
+
+        $pdf_definition = str_replace( array( ' ',
+                                              "\r\n",
+                                              "\t",
+                                              "\n" ),
+                                       '',
+                                       $pdf_definition );
+
+        $tpl->setVariable( 'pdf_definition', $pdf_definition );
+
+        $uri = 'design:node/view/execute_pdf.tpl';
+        $textElements = '';
+        eZTemplateIncludeFunction::handleInclude( $textElements, $uri, $tpl, '', '' );
+    }
+}
+}
+
 $Module = $Params['Module'];
 $http = eZHTTPTool::instance();
 
@@ -174,81 +254,5 @@ $Result['content'] = $tpl->fetch( 'design:pdf/edit.tpl' );
 $Result['path'] = array( array( 'url' => false,
                                 'text' => ezpI18n::tr( 'pdf/edit', 'PDF Export' ) ) );
 
-/*!
- \generate and output PDF data, either to file or stream
-
- \param PDF export object
- \param toFile, false if generate to stream, $
-                filename if generate to file
-*/
-function generatePDF( $pdfExport, $toFile = false )
-{
-    if ( $pdfExport == null )
-        return;
-
-    $node = $pdfExport->attribute( 'source_node' );
-    if ( $node )
-    {
-        $object = $node->attribute( 'object' );
-
-        $tpl = eZTemplate::factory();
-
-        $tpl->setVariable( 'node', $node );
-        $tpl->setVariable( 'generate_toc', 1 );
-
-        $tpl->setVariable( 'tree_traverse',
-                           $pdfExport->attribute( 'export_structure' ) == 'tree' ? 1 : 0 );
-        $tpl->setVariable( 'class_array', explode( ':', $pdfExport->attribute( 'export_classes' ) ) );
-        $tpl->setVariable( 'show_frontpage', $pdfExport->attribute( 'show_frontpage' ) );
-        // The footer line, as this export wants it. Left empty the shipped
-        // wording is used; switched off there is no line of text at all.
-        $tpl->setVariable( 'show_footer', $pdfExport->attribute( 'show_footer' ) );
-        $tpl->setVariable( 'footer_text', (string)$pdfExport->attribute( 'footer_text' ) );
-        if ( $pdfExport->attribute( 'show_frontpage' ) == 1 )
-        {
-            $tpl->setVariable( 'intro_text', $pdfExport->attribute( 'intro_text' ) );
-            $tpl->setVariable( 'sub_intro_text', $pdfExport->attribute( 'sub_text' ) );
-        }
-
-        if ( $toFile === false )
-        {
-            $tpl->setVariable( 'generate_stream', 1 );
-        }
-        else
-        {
-            $tpl->setVariable( 'generate_file', 1 );
-            $tpl->setVariable( 'filename', $toFile );
-        }
-
-        $res = eZTemplateDesignResource::instance();
-        $res->setKeys( array( array( 'object', $object->attribute( 'id' ) ),
-                              array( 'node', $node->attribute( 'node_id' ) ),
-                              array( 'parent_node', $node->attribute( 'parent_node_id' ) ),
-                              array( 'class', $object->attribute( 'contentclass_id' ) ),
-                              array( 'class_identifier', $object->attribute( 'class_identifier' ) ),
-                              array( 'depth', $node->attribute( 'depth' ) ),
-                              array( 'url_alias', $node->attribute( 'url_alias' ) )
-                              ) );
-
-        $textElements = array();
-        $uri = 'design:node/view/pdf.tpl';
-        $tpl->setVariable( 'pdf_root_template', 1 );
-        eZTemplateIncludeFunction::handleInclude( $textElements, $uri, $tpl, '', '' );
-        $pdf_definition = implode( '', $textElements );
-
-        $pdf_definition = str_replace( array( ' ',
-                                              "\r\n",
-                                              "\t",
-                                              "\n" ),
-                                       '',
-                                       $pdf_definition );
-
-        $tpl->setVariable( 'pdf_definition', $pdf_definition );
-
-        $uri = 'design:node/view/execute_pdf.tpl';
-        $textElements = '';
-        eZTemplateIncludeFunction::handleInclude( $textElements, $uri, $tpl, '', '' );
-    }
-}
 
 ?>

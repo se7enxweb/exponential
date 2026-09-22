@@ -21,9 +21,8 @@
  * @package kernel
  */
 
-require_once 'kernel/setup/expextensionwizard.php';
-require_once 'kernel/setup/expradsurvey.php';
 
+if ( !class_exists( 'expSettingsExtensionWizard', false ) ) {
 class expSettingsExtensionWizard extends expExtensionWizard
 {
     /**
@@ -1725,5 +1724,10 @@ class expSettingsExtensionWizard extends expExtensionWizard
         return $readme;
     }
 }
+}
+
+require_once 'kernel/setup/expextensionwizard.php';
+require_once 'kernel/setup/expradsurvey.php';
+
 
 ?>

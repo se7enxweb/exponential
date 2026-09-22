@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZUserFunctionCollection', false ) ) {
 class eZUserFunctionCollection
 {
     function fetchCurrentUser()
@@ -186,5 +188,7 @@ class eZUserFunctionCollection
         }
     }
 }
+}
+
 
 ?>

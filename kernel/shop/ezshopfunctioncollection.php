@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZShopFunctionCollection', false ) ) {
 class eZShopFunctionCollection
 {
     function fetchBasket( )
@@ -295,5 +297,7 @@ class eZShopFunctionCollection
         return array( 'result' => eZProductCategory::fetchList() );
     }
 }
+}
+
 
 ?>

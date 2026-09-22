@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZPackageFunctionCollection', false ) ) {
 class eZPackageFunctionCollection
 {
     /**
@@ -270,5 +272,7 @@ class eZPackageFunctionCollection
         return array( 'result' => eZPackage::canUsePolicyFunction( 'remove' ) );
     }
 }
+}
+
 
 ?>

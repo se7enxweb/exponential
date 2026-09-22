@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZInfocollectorFunctionCollection', false ) ) {
 class eZInfocollectorFunctionCollection
 {
     static public function fetchCollectedInfoCount( $objectAttributeID, $objectID, $value, $creatorID = false, $userIdentifier = false )
@@ -57,5 +59,7 @@ class eZInfocollectorFunctionCollection
 
 
 }
+}
+
 
 ?>

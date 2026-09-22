@@ -23,6 +23,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'expPreloadRunner', false ) ) {
 class expPreloadRunner
 {
     /**
@@ -754,5 +756,7 @@ class expPreloadRunner
         return array_values( $pages );
     }
 }
+}
+
 
 ?>

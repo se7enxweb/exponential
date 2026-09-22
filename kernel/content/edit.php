@@ -588,6 +588,8 @@ if ( !function_exists( 'checkContentActions' ) )
             return eZModule::HOOK_STATUS_CANCEL_RUN;
         }
 
+        if ( !function_exists( 'computeRedirect' ) )
+        {
         // helper function which computes the redirect after
         // publishing and final store of a draft.
         function computeRedirect( $module, $object, $version, $EditLanguage = false )
@@ -698,6 +700,7 @@ if ( !function_exists( 'checkContentActions' ) )
                 }
             }
 
+        }
         }
 
         if( $module->isCurrentAction( 'StoreExit' ) )

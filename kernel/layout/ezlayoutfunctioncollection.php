@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZLayoutFunctionCollection', false ) ) {
 class eZLayoutFunctionCollection
 {
     function fetchSitedesignList()
@@ -34,5 +36,7 @@ class eZLayoutFunctionCollection
     }
 
 }
+}
+
 
 ?>

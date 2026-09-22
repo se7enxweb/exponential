@@ -8,6 +8,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'eZClassFunctions', false ) ) {
 class eZClassFunctions
 {
     static function addGroup( $classID, $classVersion, $selectedGroup )
@@ -46,5 +48,7 @@ class eZClassFunctions
         return true;
     }
 }
+}
+
 
 ?>

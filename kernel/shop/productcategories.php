@@ -6,6 +6,8 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'applyChanges' ) ) {
 /*!
   Apply changes made to categories' names.
 
@@ -41,7 +43,9 @@ function applyChanges( $module, $http, $productCategories = false )
 
     return $errors;
 }
+}
 
+if ( !function_exists( 'generateUniqueCategoryName' ) ) {
 /**
  * Generate a unique category name.
  *
@@ -67,6 +71,9 @@ function generateUniqueCategoryName( $productCategories )
     $maxNumber++;
     return "$commonPart $maxNumber";
 }
+}
+
+
 
 $module = $Params['Module'];
 $http   = eZHTTPTool::instance();

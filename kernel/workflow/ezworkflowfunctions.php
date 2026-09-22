@@ -8,6 +8,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'eZWorkflowFunctions', false ) ) {
 class eZWorkflowFunctions
 {
     static function addGroup( $workflowID, $workflowVersion, $selectedGroup )
@@ -49,5 +51,7 @@ class eZWorkflowFunctions
         return true;
     }
 }
+}
+
 
 ?>

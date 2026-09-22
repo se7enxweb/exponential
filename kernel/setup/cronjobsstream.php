@@ -16,6 +16,22 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'expCronjobStreamLog' ) ) {
+function expCronjobStreamLog( $status )
+{
+    if ( isset( $status['log'] ) && $status['log'] !== '' )
+        return $status['log'];
+
+    // Nothing running: show the log of the last thing that did.
+    $history = expCronjobRunner::history( 1 );
+    if ( isset( $history[0]['log'] ) && $history[0]['log'] !== '' )
+        return $history[0]['log'];
+
+    return expCronjobRunner::logFile();
+}
+}
+
 require_once 'kernel/setup/expcronjobrunner.php';
 
 $Module = $Params['Module'];
@@ -60,18 +76,6 @@ $send = function ( $type, $message, array $data = array() )
 $status = expCronjobRunner::status();
 $errorFile = expCronjobRunner::errorFile();
 
-function expCronjobStreamLog( $status )
-{
-    if ( isset( $status['log'] ) && $status['log'] !== '' )
-        return $status['log'];
-
-    // Nothing running: show the log of the last thing that did.
-    $history = expCronjobRunner::history( 1 );
-    if ( isset( $history[0]['log'] ) && $history[0]['log'] !== '' )
-        return $history[0]['log'];
-
-    return expCronjobRunner::logFile();
-}
 
 $logFile = expCronjobStreamLog( $status );
 

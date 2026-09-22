@@ -7,8 +7,8 @@
  * @package kernel
  */
 
-require_once 'kernel/setup/expextensionwizard.php';
 
+if ( !class_exists( 'expDesignExtensionWizard', false ) ) {
 /**
  * Builds a design extension: the directories, the settings and the templates
  * that a working design needs, ready to switch on.
@@ -610,3 +610,7 @@ class expDesignExtensionWizard extends expExtensionWizard
     // ── Doing something with them ────────────────────────────────────────────
 
 }
+}
+
+require_once 'kernel/setup/expextensionwizard.php';
+

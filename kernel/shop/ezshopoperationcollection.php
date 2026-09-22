@@ -8,6 +8,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'eZShopOperationCollection', false ) ) {
 /*!
   \class eZShopOperationCollection ezcontentoperationcollection.php
   \brief The class eZShopOperationCollection does
@@ -564,5 +566,7 @@ class eZShopOperationCollection
         return $returnStatus;
     }
 }
+}
+
 
 ?>

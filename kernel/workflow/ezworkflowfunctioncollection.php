@@ -14,6 +14,8 @@
 
 */
 
+
+if ( !class_exists( 'eZWorkflowFunctionCollection', false ) ) {
 class eZWorkflowFunctionCollection
 {
     function fetchWorkflowStatuses()
@@ -27,5 +29,7 @@ class eZWorkflowFunctionCollection
     }
 
 }
+}
+
 
 ?>

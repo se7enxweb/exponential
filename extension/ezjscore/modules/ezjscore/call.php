@@ -31,6 +31,35 @@
  * Lets you call custom php code(s) from javascript to return json / xhtml / xml / text 
  */
 
+
+if ( !function_exists( 'multipleezjscServerCalls' ) ) {
+function multipleezjscServerCalls( $calls, $contentType = 'json' )
+{
+    $r = array();
+    foreach( $calls as $call )
+    {
+        $response = array( 'error_text' => '', 'content' => '' );
+        if( $call instanceOf ezjscServerRouter )
+        {
+            try
+            {
+                $response['content'] =  $call->call();
+            }
+            catch ( Exception $e )
+            {
+                $response['error_text'] = $e->getMessage();
+            }
+        }
+        else
+        {
+            $response['error_text'] = 'Not a valid ezjscServerRouter argument: "' . htmlentities( $call, ENT_QUOTES ) . '"';
+        }
+        $r[] = ezjscAjaxContent::autoEncode( $response, $contentType );
+    }
+    return $r;
+}
+}
+
 $http           = eZHTTPTool::instance();
 $callType       = isset($Params['type']) ? $Params['type'] : 'call';
 $callFnList     = array();
@@ -146,31 +175,6 @@ else
 }
 
 
-function multipleezjscServerCalls( $calls, $contentType = 'json' )
-{
-    $r = array();
-    foreach( $calls as $call )
-    {
-        $response = array( 'error_text' => '', 'content' => '' );
-        if( $call instanceOf ezjscServerRouter )
-        {
-            try
-            {
-                $response['content'] =  $call->call();
-            }
-            catch ( Exception $e )
-            {
-                $response['error_text'] = $e->getMessage();
-            }
-        }
-        else
-        {
-            $response['error_text'] = 'Not a valid ezjscServerRouter argument: "' . htmlentities( $call, ENT_QUOTES ) . '"';
-        }
-        $r[] = ezjscAjaxContent::autoEncode( $response, $contentType );
-    }
-    return $r;
-}
 
 
 

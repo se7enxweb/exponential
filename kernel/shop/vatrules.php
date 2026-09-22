@@ -6,6 +6,8 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'findErrors' ) ) {
 /**
  * Find errors in VAT charging rules.
  *
@@ -90,7 +92,9 @@ function findErrors( $vatRules )
 
     return $errors;
 }
+}
 
+if ( !function_exists( 'compareVatRules' ) ) {
 /**
  * Auxiliary function used to sort VAT rules.
  *
@@ -138,6 +142,9 @@ function compareVatRules($a, $b)
 
     return 0;
 }
+}
+
+
 
 $module = $Params['Module'];
 $http   = eZHTTPTool::instance();

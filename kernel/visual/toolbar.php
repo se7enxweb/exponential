@@ -6,6 +6,49 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'removeRelatedCache' ) ) {
+function removeRelatedCache( $siteAccess )
+{
+    // Delete compiled template
+    $ini = eZINI::instance();
+    $iniPath = eZSiteAccess::findPathToSiteAccess( $siteAccess );
+    $siteINI = eZINI::instance( 'site.ini.append', $iniPath );
+    if ( $siteINI->hasVariable( 'FileSettings', 'CacheDir' ) )
+    {
+        $cacheDir = $siteINI->variable( 'FileSettings', 'CacheDir' );
+        if ( $cacheDir[0] == "/" )
+        {
+            $cacheDir = eZDir::path( array( $cacheDir ) );
+        }
+        else
+        {
+            if ( $siteINI->hasVariable( 'FileSettings', 'VarDir' ) )
+            {
+                $varDir = $siteINI->variable( 'FileSettings', 'VarDir' );
+                $cacheDir = eZDir::path( array( $varDir, $cacheDir ) );
+            }
+        }
+    }
+    else if ( $siteINI->hasVariable( 'FileSettings', 'VarDir' ) )
+    {
+         $varDir = $siteINI->variable( 'FileSettings', 'VarDir' );
+         $cacheDir = $ini->variable( 'FileSettings', 'CacheDir' );
+         $cacheDir = eZDir::path( array( $varDir, $cacheDir ) );
+    }
+    else
+    {
+        $cacheDir =  eZSys::cacheDirectory();
+    }
+    $compiledTemplateDir = $cacheDir . "/template/compiled";
+    eZDir::unlinkWildcard( $compiledTemplateDir . "/", "*pagelayout*.*" );
+    eZCache::clearByTag( 'template-block' );
+
+    // Expire content view cache
+    eZContentCacheManager::clearAllContentCache();
+}
+}
+
 $http = eZHTTPTool::instance();
 $module = $Params['Module'];
 
@@ -355,44 +398,5 @@ $Result['content'] = $tpl->fetch( "design:visual/toolbar.tpl" );
 $Result['path'] = array( array( 'url' => 'visual/toolbarlist',
                                 'text' => ezpI18n::tr( 'kernel/design', 'Toolbar list' ) ) );
 
-function removeRelatedCache( $siteAccess )
-{
-    // Delete compiled template
-    $ini = eZINI::instance();
-    $iniPath = eZSiteAccess::findPathToSiteAccess( $siteAccess );
-    $siteINI = eZINI::instance( 'site.ini.append', $iniPath );
-    if ( $siteINI->hasVariable( 'FileSettings', 'CacheDir' ) )
-    {
-        $cacheDir = $siteINI->variable( 'FileSettings', 'CacheDir' );
-        if ( $cacheDir[0] == "/" )
-        {
-            $cacheDir = eZDir::path( array( $cacheDir ) );
-        }
-        else
-        {
-            if ( $siteINI->hasVariable( 'FileSettings', 'VarDir' ) )
-            {
-                $varDir = $siteINI->variable( 'FileSettings', 'VarDir' );
-                $cacheDir = eZDir::path( array( $varDir, $cacheDir ) );
-            }
-        }
-    }
-    else if ( $siteINI->hasVariable( 'FileSettings', 'VarDir' ) )
-    {
-         $varDir = $siteINI->variable( 'FileSettings', 'VarDir' );
-         $cacheDir = $ini->variable( 'FileSettings', 'CacheDir' );
-         $cacheDir = eZDir::path( array( $varDir, $cacheDir ) );
-    }
-    else
-    {
-        $cacheDir =  eZSys::cacheDirectory();
-    }
-    $compiledTemplateDir = $cacheDir . "/template/compiled";
-    eZDir::unlinkWildcard( $compiledTemplateDir . "/", "*pagelayout*.*" );
-    eZCache::clearByTag( 'template-block' );
-
-    // Expire content view cache
-    eZContentCacheManager::clearAllContentCache();
-}
 
 ?>

@@ -6,6 +6,39 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'validateCurrencyData' ) ) {
+/**
+ * Validates currency data:
+ *  - checks that custom_rate_value & rate_factor are provided and are floats.
+ *
+ * @param array $currencyData Currenty data as submitted. Will be modified to
+ *        remove invalid values since it is passed by reference
+ * @return false|string True if data is valid, an error message if it's not
+ */
+function validateCurrencyData( &$currencyData )
+{
+    $return = false;
+
+    $floatValidator = new eZFloatValidator( 0 );
+    if ( $floatValidator->validate( $currencyData['custom_rate_value'] ) == eZInputValidator::STATE_INVALID )
+    {
+        $return = ezpI18n::tr( 'kernel/shop', "'%value' is not a valid custom rate value (positive number expected)",
+            'Error message', array( '%value' => $currencyData['custom_rate_value'] ) );
+        $currencyData['custom_rate_value'] = '';
+    }
+    if ( $floatValidator->validate( $currencyData['rate_factor'] ) == eZInputValidator::STATE_INVALID )
+    {
+        if ( $return === false )
+            $return = ezpI18n::tr( 'kernel/shop', "'%value' is not a valid rate_factor value (positive number expected)",
+                'Error message', array( '%value' => $currencyData['rate_factor'] ) );
+        $currencyData['rate_factor'] = '';
+    }
+
+    return $return;
+}
+}
+
 $module = $Params['Module'];
 
 $ini = eZINI::instance( 'site.ini' );
@@ -130,33 +163,4 @@ $Result['content'] = $tpl->fetch( "design:shop/editcurrency.tpl" );
 $Result['path'] = array( array( 'text' => $pathText,
                                 'url' => false ) );
 
-/**
- * Validates currency data:
- *  - checks that custom_rate_value & rate_factor are provided and are floats.
- *
- * @param array $currencyData Currenty data as submitted. Will be modified to
- *        remove invalid values since it is passed by reference
- * @return false|string True if data is valid, an error message if it's not
- */
-function validateCurrencyData( &$currencyData )
-{
-    $return = false;
-
-    $floatValidator = new eZFloatValidator( 0 );
-    if ( $floatValidator->validate( $currencyData['custom_rate_value'] ) == eZInputValidator::STATE_INVALID )
-    {
-        $return = ezpI18n::tr( 'kernel/shop', "'%value' is not a valid custom rate value (positive number expected)",
-            'Error message', array( '%value' => $currencyData['custom_rate_value'] ) );
-        $currencyData['custom_rate_value'] = '';
-    }
-    if ( $floatValidator->validate( $currencyData['rate_factor'] ) == eZInputValidator::STATE_INVALID )
-    {
-        if ( $return === false )
-            $return = ezpI18n::tr( 'kernel/shop', "'%value' is not a valid rate_factor value (positive number expected)",
-                'Error message', array( '%value' => $currencyData['rate_factor'] ) );
-        $currencyData['rate_factor'] = '';
-    }
-
-    return $return;
-}
 ?>

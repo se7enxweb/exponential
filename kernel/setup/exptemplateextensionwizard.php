@@ -20,8 +20,8 @@
  * @package kernel
  */
 
-require_once 'kernel/setup/expextensionwizard.php';
 
+if ( !class_exists( 'expTemplateExtensionWizard', false ) ) {
 class expTemplateExtensionWizard extends expExtensionWizard
 {
     /**
@@ -1299,5 +1299,9 @@ class expTemplateExtensionWizard extends expExtensionWizard
         return $readme;
     }
 }
+}
+
+require_once 'kernel/setup/expextensionwizard.php';
+
 
 ?>

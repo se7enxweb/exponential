@@ -6,36 +6,8 @@
  * @package kernel
  */
 
-$Module = $Params['Module'];
-$NodeID = $Params['NodeID'];
 
-$http = eZHTTPTool::instance();
-
-if ( $http->hasPostVariable( 'BrowseCancelButton' ) )
-{
-    if ( $http->hasPostVariable( 'BrowseCancelURI' ) )
-        return $Module->redirectTo( $http->postVariable( 'BrowseCancelURI' ) );
-}
-
-if ( $NodeID === null ) // NodeID is returned after browsing
-{
-    $NodeID = $http->postVariable( 'NodeID' );
-}
-
-$srcNode = eZContentObjectTreeNode::fetch( $NodeID );
-
-if ( $srcNode === null )
-    return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-
-if ( !$srcNode->attribute( 'can_read' ) )
-    return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
-
-if ( $Module->isCurrentAction( 'Cancel' ) )
-{
-    $parentNodeID = $srcNode->attribute( 'parent_node_id' );
-    return $Module->redirectToView( 'view', array( 'full', $parentNodeID ) );
-}
-
+if ( !function_exists( 'copyPublishContentObject' ) ) {
 ///// functions START =============================================================================
 function copyPublishContentObject( $sourceObject,
                                    $sourceSubtreeNodeIDList,
@@ -375,8 +347,9 @@ function copyPublishContentObject( $sourceObject,
     return 0; // source object was copied successfully.
 
 } // function copyPublishContentObject END
+}
 
-
+if ( !function_exists( 'copySubtree' ) ) {
 function copySubtree( $srcNodeID, $dstNodeID, &$notifications, $allVersions, $keepCreator, $keepTime )
 {
     // 1. Copy subtree and form the arrays of accordance of the old and new nodes and content objects.
@@ -736,7 +709,9 @@ function copySubtree( $srcNodeID, $dstNodeID, &$notifications, $allVersions, $ke
     $notifications['Result'] = true;
     return $notifications;
 } // function copySubtree END
+}
 
+if ( !function_exists( 'browse' ) ) {
 /*!
 Browse for node to place the object copy into
 */
@@ -789,7 +764,9 @@ function browse( $Module, $srcNode )
                 'from_page'            => "/content/copysubtree" ),
          $Module );
 }
+}
 
+if ( !function_exists( 'chooseOptionsToCopy' ) ) {
 /*!
 Redirect to the page that lets a user to choose which versions to copy:
 either all version or the current one.
@@ -812,7 +789,9 @@ function chooseOptionsToCopy( $Module, &$Result, $srcNode, $chooseVersions, $cho
                                  array( 'url' => false,
                                         'text' => ezpI18n::tr( 'kernel/content', 'Copy subtree' ) ) );
 }
+}
 
+if ( !function_exists( 'showNotificationAfterCopying' ) ) {
 function showNotificationAfterCopying( $http, $Module, &$Result, &$Notifications, $srcNode )
 {
     $tpl = eZTemplate::factory();
@@ -850,6 +829,43 @@ function showNotificationAfterCopying( $http, $Module, &$Result, &$Notifications
                              array( 'url' => false,
                                     'text' => ezpI18n::tr( 'kernel/content', 'Copy subtree' ) ) );
 }
+}
+
+$Module = $Params['Module'];
+$NodeID = $Params['NodeID'];
+
+$http = eZHTTPTool::instance();
+
+if ( $http->hasPostVariable( 'BrowseCancelButton' ) )
+{
+    if ( $http->hasPostVariable( 'BrowseCancelURI' ) )
+        return $Module->redirectTo( $http->postVariable( 'BrowseCancelURI' ) );
+}
+
+if ( $NodeID === null ) // NodeID is returned after browsing
+{
+    $NodeID = $http->postVariable( 'NodeID' );
+}
+
+$srcNode = eZContentObjectTreeNode::fetch( $NodeID );
+
+if ( $srcNode === null )
+    return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+
+if ( !$srcNode->attribute( 'can_read' ) )
+    return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+
+if ( $Module->isCurrentAction( 'Cancel' ) )
+{
+    $parentNodeID = $srcNode->attribute( 'parent_node_id' );
+    return $Module->redirectToView( 'view', array( 'full', $parentNodeID ) );
+}
+
+
+
+
+
+
 /////////// functions END ==================================================================
 
 $Result = array();

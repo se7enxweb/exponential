@@ -8,9 +8,8 @@
 
 // This file holds the test functions that are used by step 1
 
-define( 'EZ_SETUP_TEST_SUCCESS', 1 );
-define( 'EZ_SETUP_TEST_FAILURE', 2 );
 
+if ( !function_exists( 'eZSetupTestTable' ) ) {
 function eZSetupTestTable()
 {
     return array( 'phpversion' => array( 'eZSetupTestPhpVersion' ),
@@ -43,25 +42,33 @@ function eZSetupTestTable()
                   'timezone' => array( 'eZSetupTestTimeZone' ),
                   'ezcversion' => array( 'eZSetupTestComponentsVersion' ) );
 }
+}
 
+if ( !function_exists( 'eZSetupConfigVariable' ) ) {
 function eZSetupConfigVariable( $type, $name )
 {
     $config = eZINI::instance( 'setup.ini' );
     return ( $config->hasVariable( $type, $name ) ) ? $config->variable( $type, $name ) : false;
 }
+}
 
+if ( !function_exists( 'eZSetupImageConfigVariableArray' ) ) {
 function eZSetupImageConfigVariableArray( $type, $name )
 {
     $config = eZINI::instance( 'image.ini' );
     return ( $config->hasVariable( $type, $name ) ) ? $config->variableArray( $type, $name ) : false;
 }
+}
 
+if ( !function_exists( 'eZSetupConfigVariableArray' ) ) {
 function eZSetupConfigVariableArray( $type, $name )
 {
     $config = eZINI::instance( 'setup.ini' );
     return ( $config->hasVariable( $type, $name ) ) ? $config->variableArray( $type, $name ) : false;
 }
+}
 
+if ( !function_exists( 'eZSetupRunTests' ) ) {
 function eZSetupRunTests( $testList, $client, &$givenPersistentList )
 {
     eZSetupPrvtExtractExtraPaths( $givenPersistentList );
@@ -117,7 +124,9 @@ function eZSetupRunTests( $testList, $client, &$givenPersistentList )
                   'persistence_list' => $persistenceResults,
                   'success_count' => $successCount );
 }
+}
 
+if ( !function_exists( 'eZSetupCheckTestFunctions' ) ) {
 function eZSetupCheckTestFunctions( $type )
 {
     $extensionList = eZSetupConfigVariableArray( $type, 'Extensions' );
@@ -146,7 +155,9 @@ function eZSetupCheckTestFunctions( $type )
                   'persistence_list' => $persistenceData,
                   'test_results' => $testResults );
 }
+}
 
+if ( !function_exists( 'eZSetupTestFileUpload' ) ) {
 function eZSetupTestFileUpload( $type )
 {
     $uploadEnabled = ini_get( 'file_uploads' ) != 0;
@@ -238,7 +249,9 @@ function eZSetupTestFileUpload( $type )
                   'user_info' => $userInfo,
                   'persistent_data' => array( 'result' => array( 'value' => $result ) ) );
 }
+}
 
+if ( !function_exists( 'eZSetupCheckMagicQuotesRuntime' ) ) {
 function eZSetupCheckMagicQuotesRuntime( $type )
 {
     if ( version_compare( PHP_VERSION, '7.4' ) >= 0 ) {
@@ -250,7 +263,9 @@ function eZSetupCheckMagicQuotesRuntime( $type )
     return array( 'result' => $result,
                   'persistent_data' => array( 'result' => array( 'value' => $result ) ) );
 }
+}
 
+if ( !function_exists( 'eZSetupCheckMagicQuotes' ) ) {
 function eZSetupCheckMagicQuotes( $type )
 {
     if ( version_compare( PHP_VERSION, '7.4' ) >= 0 ) {
@@ -263,7 +278,9 @@ function eZSetupCheckMagicQuotes( $type )
     return array( 'result' => $result,
                   'persistent_data' => array( 'result' => array( 'value' => $result ) ) );
 }
+}
 
+if ( !function_exists( 'eZSetupTestComponentsVersion' ) ) {
 /*!
     Test if eZ Components version is greater than required version
     This is currently done by checking existence of class and function
@@ -296,8 +313,9 @@ function eZSetupTestComponentsVersion( $type )
                   'needed_version' => $minVersion,
                   'class_exists' => !$ezcExists );
 }
+}
 
-
+if ( !function_exists( 'eZSetupTestPhpVersion' ) ) {
 /*!
     Test if PHP version is equal or greater than required version
 */
@@ -352,7 +370,9 @@ function eZSetupTestPhpVersion( $type )
                   'current_version' => $currentVersion,
                   'warning_version' => $warningVersion );
 }
+}
 
+if ( !function_exists( 'eZSetupTestVariablesOrder' ) ) {
 function eZSetupTestVariablesOrder( $type )
 {
     $variablesOrder = ini_get( 'variables_order' );
@@ -365,7 +385,9 @@ function eZSetupTestVariablesOrder( $type )
          )
     );
 }
+}
 
+if ( !function_exists( 'eZSetupTestAllowURLFOpen' ) ) {
 /*!
   Test if allowed to open URLs using fopen
 */
@@ -375,7 +397,9 @@ function eZSetupTestAllowURLFOpen( $type )
     return array( 'result' => $allowFOpen,
                   'persistent_data' => array( 'result' => array( 'value' => $allowFOpen ) ) );
 }
+}
 
+if ( !function_exists( 'eZSetupTestFunctionExists' ) ) {
 function eZSetupTestFunctionExists( $type )
 {
     $functionList = eZSetupConfigVariableArray( $type, 'Functions' );
@@ -416,7 +440,9 @@ function eZSetupTestFunctionExists( $type )
                   'failed_extensions' => $failedFunctions,
                   'found_extensions' => $foundFunctions );
 }
+}
 
+if ( !function_exists( 'eZSetupTestExtension' ) ) {
 /*!
     Test if the extensios are loaded
 */
@@ -459,12 +485,9 @@ function eZSetupTestExtension( $type )
                   'failed_extensions' => $failedExtensions,
                   'found_extensions' => $foundExtensions );
 }
+}
 
-
-/*!
-    Test file permissions
-*/
-
+if ( !function_exists( 'eZSetupTestDirectoryPermissions' ) ) {
 function eZSetupTestDirectoryPermissions( $type )
 {
     $dirList = eZSetupConfigVariableArray( $type, 'CheckList' );
@@ -538,7 +561,9 @@ function eZSetupTestDirectoryPermissions( $type )
                   'result_elements' => $resultElements,
                   'result_elements_by_error_code' => $resultElementsByErrorCode );
 }
+}
 
+if ( !function_exists( 'eZSetupTestFilePermissions' ) ) {
 function eZSetupTestFilePermissions( $type )
 {
     $fileList = eZSetupConfigVariableArray( $type, 'CheckList' );
@@ -594,7 +619,9 @@ function eZSetupTestFilePermissions( $type )
                   'current_path' => realpath( '.' ),
                   'result_elements'   => $resultElements );
 }
+}
 
+if ( !function_exists( 'eZSetupPrvPosixExtension' ) ) {
 /*!
   Figures out current user and group running the system by
   using the \c posix extension. If this is not available
@@ -619,8 +646,9 @@ function eZSetupPrvPosixExtension()
     }
     return $userInfo;
 }
+}
 
-
+if ( !function_exists( 'eZSetupCheckExecutable' ) ) {
 /*!
     Test if a program can be found in our path and is executable
 */
@@ -754,9 +782,9 @@ function eZSetupCheckExecutable( $type )
                   'system_search_path' => $systemSearchPaths,
                   'additional_search_path' => $additionalSearchPaths );
 }
+}
 
-
-
+if ( !function_exists( 'testPHPIni' ) ) {
 /*!
     Test php ini settings
 */
@@ -773,8 +801,9 @@ function testPHPIni( $parameters )
     $status = $pass;
     return array( "status" => $status, "pass" => $pass );
 }
+}
 
-
+if ( !function_exists( 'eZSetupCheckGDVersion' ) ) {
 /*!
   Test GD version
 */
@@ -784,7 +813,9 @@ function eZSetupCheckGDVersion( $type )
     return array( 'result' => $result,
                   'persistent_data' => array( 'result' => array( 'value' => $result ) ) );
 }
+}
 
+if ( !function_exists( 'eZSetupMBStringExtension' ) ) {
 /*!
     Test if mbstring is available
 */
@@ -796,8 +827,9 @@ function eZSetupMBStringExtension( $type )
                   'persistent_data' => array( 'result' => array( 'value' => $result ) ),
                   'charset_list' => $charsetList );
 }
+}
 
-
+if ( !function_exists( 'eZSetupCheckRegisterGlobals' ) ) {
 function eZSetupCheckRegisterGlobals( $type )
 {
     $registerGlobals = ini_get( 'register_globals' ) != 0;
@@ -805,7 +837,9 @@ function eZSetupCheckRegisterGlobals( $type )
     return array( 'result' => $result,
                   'persistent_data' => array() );
 }
+}
 
+if ( !function_exists( 'eZSetupTestExecutionTime' ) ) {
 /*!
  Check the php.ini file to get timeout limit
 */
@@ -829,7 +863,9 @@ function eZSetupTestExecutionTime( $type )
                   'required_execution_time' => $minExecutionTime,
                   'current_execution_time' => $execTimeLimit );
 }
+}
 
+if ( !function_exists( 'eZSetupTestMemLimit' ) ) {
 /*!
  Checks the php.ini file to see if the memory limit is set high enough
 */
@@ -874,7 +910,9 @@ function eZSetupTestMemLimit( $type )
                   'required_memory' => $minMemory,
                   'current_memory' => $memoryLimit );
 }
+}
 
+if ( !function_exists( 'eZSetupTestOpenBasedir' ) ) {
 function eZSetupTestOpenBasedir( $type )
 {
     $openBasedir = ini_get( 'open_basedir' );
@@ -890,7 +928,9 @@ function eZSetupTestOpenBasedir( $type )
     }
     return $returnData;
 }
+}
 
+if ( !function_exists( 'eZSetupTestInstaller' ) ) {
 /*!
  Check if setup is installed using windows or linux installer
 
@@ -910,7 +950,9 @@ function eZSetupTestInstaller()
     }
     return false;
 }
+}
 
+if ( !function_exists( 'eZSetupTestSafeMode' ) ) {
 function eZSetupTestSafeMode( $type )
 {
     $safeMode = ini_get( 'safe_mode' ) != 0;
@@ -919,7 +961,9 @@ function eZSetupTestSafeMode( $type )
                   'current_path' => realpath( '.' ),
                   'persistent_data' => array() );
 }
+}
 
+if ( !function_exists( 'eZSetupPrvtVersionCompare' ) ) {
 /*!
  Check if two version arrays are equel, greater or less than each other
 
@@ -950,8 +994,9 @@ function eZSetupPrvtVersionCompare( $versionArray1, $versionArray2 )
     if ( $equal )
         return 0;
 }
+}
 
-
+if ( !function_exists( 'eZSetupPrvtExtractExtraPaths' ) ) {
 /* Find previously saved extra paths and export them
  * to global variables.
  */
@@ -966,7 +1011,9 @@ function eZSetupPrvtExtractExtraPaths( &$givenPersistentList )
             $GLOBALS['eZSetupCheckExecutable_'.$key.'_ExtraPath'] = $val['extra_path'];
     }
 }
+}
 
+if ( !function_exists( 'eZSetupPrvtAreDirAndFilesWritable' ) ) {
 /*! Check if a given directory and all files within that directory
  * are writable
  */
@@ -987,7 +1034,9 @@ function eZSetupPrvtAreDirAndFilesWritable( $dir )
 
    return TRUE;
 }
+}
 
+if ( !function_exists( 'eZSetupTestTimeZone' ) ) {
 function eZSetupTestTimeZone( $something )
 {
     $result = true;
@@ -998,5 +1047,53 @@ function eZSetupTestTimeZone( $something )
 
     return array( 'result' => $result );
 }
+}
+
+define( 'EZ_SETUP_TEST_SUCCESS', 1 );
+define( 'EZ_SETUP_TEST_FAILURE', 2 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!
+    Test file permissions
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>

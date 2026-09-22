@@ -6,6 +6,8 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'checkNodeAssignments' ) ) {
 function checkNodeAssignments( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage, $FromLanguage, &$validation )
 {
     $http = eZHTTPTool::instance();
@@ -105,7 +107,9 @@ function checkNodeAssignments( $module, $class, $object, $version, $contentObjec
         }
     }
 }
+}
 
+if ( !function_exists( 'checkNodeMovements' ) ) {
 function checkNodeMovements( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage, $FromLanguage, &$validation )
 {
     $http = eZHTTPTool::instance();
@@ -220,7 +224,9 @@ function checkNodeMovements( $module, $class, $object, $version, $contentObjectA
         }
     }
 }
+}
 
+if ( !function_exists( 'storeNodeAssignments' ) ) {
 function storeNodeAssignments( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage )
 {
     $http = eZHTTPTool::instance();
@@ -385,7 +391,9 @@ function storeNodeAssignments( $module, $class, $object, $version, $contentObjec
     }
     $db->commit();
 }
+}
 
+if ( !function_exists( 'checkNodeActions' ) ) {
 function checkNodeActions( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage, $fromLanguage )
 {
     // If the object has been previously published we do not allow node assignment operations
@@ -694,7 +702,9 @@ function checkNodeActions( $module, $class, $object, $version, $contentObjectAtt
         }
     }
 }
+}
 
+if ( !function_exists( 'handleNodeTemplate' ) ) {
 function handleNodeTemplate( $module, $class, $object, $version, $contentObjectAttributes, $editVersion, $editLanguage, $tpl )
 {
     // When the object has been published we will use the nodes as
@@ -809,7 +819,9 @@ function handleNodeTemplate( $module, $class, $object, $version, $contentObjectA
     $tpl->setVariable( 'published_node_array', $publishedNodeArray );
     $tpl->setVariable( 'main_node_id', $mainParentNodeID );
 }
+}
 
+if ( !function_exists( 'initializeNodeEdit' ) ) {
 function initializeNodeEdit( $module )
 {
     $module->addHook( 'post_fetch', 'checkNodeAssignments' );
@@ -818,5 +830,12 @@ function initializeNodeEdit( $module )
     $module->addHook( 'action_check', 'checkNodeActions' );
     $module->addHook( 'pre_template', 'handleNodeTemplate' );
 }
+}
+
+
+
+
+
+
 
 ?>

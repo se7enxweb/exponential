@@ -6,6 +6,122 @@
  * @package kernel
  */
 
+
+if ( !function_exists( 'contentPDFPassthrough' ) ) {
+/*!
+  Passthrough PDF cache file, and exit cleanly
+*/
+function contentPDFPassthrough( $cacheFile )
+{
+    $file = eZClusterFileHandler::instance( $cacheFile );
+
+    if( !$file->exists() )
+    {
+        eZDebug::writeError( "Cache-file for pdf doesn't exist", 'content::pdf::contentPDFPassthrough' );
+        return;
+    }
+
+    $file->fetch( true );
+
+    ob_clean();
+
+    header( 'Pragma: ' );
+    header( 'Cache-Control: ' );
+    /* Set cache time out to 10 seconds, this should be good enough to work around an IE bug */
+    header( "Expires: ". gmdate( 'D, d M Y H:i:s', time() + 10 ) . ' GMT' );
+    header( 'X-Powered-By: ' . eZPublishSDK::EDITION );
+
+    header( 'Content-Length: '. $file->size() );
+    header( 'Content-Type: application/pdf' );
+    header( 'Content-Transfer-Encoding: binary' );
+    header( 'Accept-Ranges: bytes' );
+
+    ob_end_clean();
+
+    $fp = @fopen( $cacheFile, 'r' );
+    @fpassthru( $fp );
+    fclose( $fp );
+
+    eZExecution::cleanExit();
+}
+}
+
+if ( !function_exists( 'contentPDFGenerate' ) ) {
+/*!
+  generate PDF, and output stream.
+*/
+function contentPDFGenerate( $cacheFile,
+                             $node,
+                             $object = false,
+                             $viewCacheEnabled = true,
+                             $languageCode = false,
+                             $viewParameters = array() )
+{
+    if ( $languageCode )
+    {
+        $node->setCurrentLanguage( $languageCode );
+    }
+
+    if( $object == false )
+    {
+        $object = $node->attribute( 'object' );
+    }
+
+    $res = eZTemplateDesignResource::instance();
+    $res->setKeys( array( array( 'object', $node->attribute( 'contentobject_id' ) ),
+                          array( 'remote_id', $object->attribute( 'remote_id' ) ),
+                          array( 'node_remote_id', $node->attribute( 'remote_id' ) ),
+                          array( 'section', $object->attribute( 'section_id' ) ),
+                          array( 'node', $node->attribute( 'node_id' ) ),
+                          array( 'parent_node', $node->attribute( 'parent_node_id' ) ),
+                          array( 'class', $object->attribute( 'contentclass_id' ) ),
+                          array( 'depth', $node->attribute( 'depth' ) ),
+                          array( 'url_alias', $node->attribute( 'url_alias' ) ),
+                          array( 'class_group', $object->attribute( 'match_ingroup_id_list' ) ),
+                          array( 'class_identifier', $object->attribute( 'class_identifier' ) ) ) );
+
+    $tpl = eZTemplate::factory();
+
+    $tpl->setVariable( 'view_parameters', $viewParameters );
+
+    $tpl->setVariable( 'node', $node );
+    $tpl->setVariable( 'generate_toc', 0 );
+
+    $tpl->setVariable( 'tree_traverse', 0 );
+    $tpl->setVariable( 'class_array', 0 );
+    $tpl->setVariable( 'show_frontpage', 0 );
+
+    if ( $viewCacheEnabled )
+    {
+        $tpl->setVariable( 'generate_file', 1 );
+        $tpl->setVariable( 'filename', $cacheFile );
+    }
+    else
+    {
+        $tpl->setVariable( 'generate_file', 0 );
+        $tpl->setVariable( 'generate_stream', 1 );
+    }
+
+    $textElements = array();
+    $uri = 'design:node/view/pdf.tpl';
+    $tpl->setVariable( 'pdf_root_template', 1 );
+    eZTemplateIncludeFunction::handleInclude( $textElements, $uri, $tpl, '', '' );
+    $pdf_definition = implode( '', $textElements );
+
+    $pdf_definition = str_replace( array( ' ',
+                                          "\r\n",
+                                          "\t",
+                                          "\n" ),
+                                   '',
+                                   $pdf_definition );
+    $tpl->setVariable( 'pdf_definition', $pdf_definition );
+
+    $uri = 'design:node/view/execute_pdf.tpl';
+    $textElements = '';
+    eZTemplateIncludeFunction::handleInclude( $textElements, $uri, $tpl, '', '' );
+}
+}
+
 $NodeID = $Params['NodeID'];
 $Module = $Params['Module'];
 $LanguageCode = $Params['Language'];
@@ -206,114 +322,5 @@ switch( $operationResult['status'] )
 }
 
 
-/*!
-  Passthrough PDF cache file, and exit cleanly
-*/
-function contentPDFPassthrough( $cacheFile )
-{
-    $file = eZClusterFileHandler::instance( $cacheFile );
 
-    if( !$file->exists() )
-    {
-        eZDebug::writeError( "Cache-file for pdf doesn't exist", 'content::pdf::contentPDFPassthrough' );
-        return;
-    }
-
-    $file->fetch( true );
-
-    ob_clean();
-
-    header( 'Pragma: ' );
-    header( 'Cache-Control: ' );
-    /* Set cache time out to 10 seconds, this should be good enough to work around an IE bug */
-    header( "Expires: ". gmdate( 'D, d M Y H:i:s', time() + 10 ) . ' GMT' );
-    header( 'X-Powered-By: ' . eZPublishSDK::EDITION );
-
-    header( 'Content-Length: '. $file->size() );
-    header( 'Content-Type: application/pdf' );
-    header( 'Content-Transfer-Encoding: binary' );
-    header( 'Accept-Ranges: bytes' );
-
-    ob_end_clean();
-
-    $fp = @fopen( $cacheFile, 'r' );
-    @fpassthru( $fp );
-    fclose( $fp );
-
-    eZExecution::cleanExit();
-}
-
-/*!
-  generate PDF, and output stream.
-*/
-function contentPDFGenerate( $cacheFile,
-                             $node,
-                             $object = false,
-                             $viewCacheEnabled = true,
-                             $languageCode = false,
-                             $viewParameters = array() )
-{
-    if ( $languageCode )
-    {
-        $node->setCurrentLanguage( $languageCode );
-    }
-
-    if( $object == false )
-    {
-        $object = $node->attribute( 'object' );
-    }
-
-    $res = eZTemplateDesignResource::instance();
-    $res->setKeys( array( array( 'object', $node->attribute( 'contentobject_id' ) ),
-                          array( 'remote_id', $object->attribute( 'remote_id' ) ),
-                          array( 'node_remote_id', $node->attribute( 'remote_id' ) ),
-                          array( 'section', $object->attribute( 'section_id' ) ),
-                          array( 'node', $node->attribute( 'node_id' ) ),
-                          array( 'parent_node', $node->attribute( 'parent_node_id' ) ),
-                          array( 'class', $object->attribute( 'contentclass_id' ) ),
-                          array( 'depth', $node->attribute( 'depth' ) ),
-                          array( 'url_alias', $node->attribute( 'url_alias' ) ),
-                          array( 'class_group', $object->attribute( 'match_ingroup_id_list' ) ),
-                          array( 'class_identifier', $object->attribute( 'class_identifier' ) ) ) );
-
-    $tpl = eZTemplate::factory();
-
-    $tpl->setVariable( 'view_parameters', $viewParameters );
-
-    $tpl->setVariable( 'node', $node );
-    $tpl->setVariable( 'generate_toc', 0 );
-
-    $tpl->setVariable( 'tree_traverse', 0 );
-    $tpl->setVariable( 'class_array', 0 );
-    $tpl->setVariable( 'show_frontpage', 0 );
-
-    if ( $viewCacheEnabled )
-    {
-        $tpl->setVariable( 'generate_file', 1 );
-        $tpl->setVariable( 'filename', $cacheFile );
-    }
-    else
-    {
-        $tpl->setVariable( 'generate_file', 0 );
-        $tpl->setVariable( 'generate_stream', 1 );
-    }
-
-    $textElements = array();
-    $uri = 'design:node/view/pdf.tpl';
-    $tpl->setVariable( 'pdf_root_template', 1 );
-    eZTemplateIncludeFunction::handleInclude( $textElements, $uri, $tpl, '', '' );
-    $pdf_definition = implode( '', $textElements );
-
-    $pdf_definition = str_replace( array( ' ',
-                                          "\r\n",
-                                          "\t",
-                                          "\n" ),
-                                   '',
-                                   $pdf_definition );
-    $tpl->setVariable( 'pdf_definition', $pdf_definition );
-
-    $uri = 'design:node/view/execute_pdf.tpl';
-    $textElements = '';
-    eZTemplateIncludeFunction::handleInclude( $textElements, $uri, $tpl, '', '' );
-}
 ?>

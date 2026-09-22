@@ -8,6 +8,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'eZRSSFunctionCollection', false ) ) {
 class eZRSSFunctionCollection
 {
     /**
@@ -49,5 +51,7 @@ class eZRSSFunctionCollection
         return array( 'result' => $rssExport );
     }
 }
+}
+
 
 ?>

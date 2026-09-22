@@ -18,6 +18,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'eZCheckClasses', false ) ) {
 /**
  * The parts of the check worth having in one place.
  */
@@ -229,5 +231,7 @@ class eZCheckClasses
         return $directory . '/' . $what . '-' . getmypid() . '-' . mt_rand() . '.txt';
     }
 }
+}
+
 
 ?>

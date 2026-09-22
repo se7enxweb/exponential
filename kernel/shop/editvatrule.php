@@ -8,12 +8,8 @@
 
 // Parameters: ruleID (optional)
 
-$module = $Params['Module'];
 
-$errors = false;
-$errorHeader = false;
-$productCategories = eZProductCategory::fetchList();
-
+if ( !function_exists( 'checkEnteredData' ) ) {
 /**
  * Check entered data.
  *
@@ -109,6 +105,14 @@ function checkEnteredData( $country, $categories, $vatType, $productCategories, 
 
     return array( $errorHeader, $errors );
 }
+}
+
+$module = $Params['Module'];
+
+$errors = false;
+$errorHeader = false;
+$productCategories = eZProductCategory::fetchList();
+
 
 
 if ( $module->isCurrentAction( 'Cancel' ) )

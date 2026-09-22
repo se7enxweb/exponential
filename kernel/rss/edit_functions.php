@@ -8,6 +8,8 @@
  * @package kernel
  */
 
+
+if ( !class_exists( 'eZRSSEditFunction', false ) ) {
 class eZRSSEditFunction
 {
     /*!
@@ -405,4 +407,6 @@ class eZRSSEditFunction
         $rssExportItem->store();
     }
 }
+}
+
 ?>

@@ -13,6 +13,71 @@
  * @version //autogentag//
  * @package oauth
  */
+
+if ( !function_exists( 'error' ) ) {
+/**
+ * oAuth error handler function. Terminates execution after redirecting.
+ *
+ * @param string $redirectUri The URI the error should be sent to
+ * @param string $errorCode The error code, as defined in section 3.2.1
+ * @param string $message A human readable error message explaining the error
+ *
+ * @return void
+ */
+function error( $redirectUri, $errorCode, $message = null )
+{
+    $location = "{$redirectUri}?error=" . urlencode( $errorCode );
+    if( $message !== null )
+        $location .= '&error_description=' . urlencode( $message );
+    response( '302 Found', $location );
+}
+}
+
+if ( !function_exists( 'response' ) ) {
+/**
+ * oAuth2 response handler function. Terminates execution after sending the headers.
+ *
+ * @param string $httpHeader The HTTP header to be sent as a response
+ * @param string $location The location to redirect to. No redirection is done if not provided.
+ *
+ * @return void
+ */
+function response( $httpHeader, $location = null )
+{
+    header( "HTTP/1.1 $httpHeader" );
+    if ( $location !== null )
+        // debug stuff: echo "header( \"Location: $location\" );\n";
+        header( "Location: $location" );
+    eZExecution::cleanExit();
+}
+}
+
+if ( !function_exists( 'getHTTPVariable' ) ) {
+/**
+ * Helper function that reads an HTTP variable over GET or POST, depending on the stage.
+ * The POST variables AuthorizeButton and DenyButton will make the function read from POST
+ *
+ * @param string $variable
+ * @return mixed The parameter, or false if not set
+ */
+function getHTTPVariable( $variable )
+{
+    static $hasPost;
+    static $http;
+
+    if ( $http === null )
+        $http = eZHTTPTool::instance();
+
+    if ( $hasPost === null )
+        $hasPost = $http->hasPostVariable( 'AuthorizeButton' ) || $http->hasPostVariable( 'DenyButton' );
+
+    if ( $hasPost )
+        return $http->hasPostVariable( $variable ) ? $http->postVariable( $variable ) : false;
+    else
+        return $http->hasGetVariable( $variable ) ? $http->getVariable( $variable ) : false;
+}
+}
+
 $module = $Params['Module'];
 
 // First check for mandatory parameters
@@ -202,61 +267,6 @@ elseif ( $pResponseType ==  'code')
     response( '302 Found', $location );
 }
 
-/**
- * oAuth error handler function. Terminates execution after redirecting.
- *
- * @param string $redirectUri The URI the error should be sent to
- * @param string $errorCode The error code, as defined in section 3.2.1
- * @param string $message A human readable error message explaining the error
- *
- * @return void
- */
-function error( $redirectUri, $errorCode, $message = null )
-{
-    $location = "{$redirectUri}?error=" . urlencode( $errorCode );
-    if( $message !== null )
-        $location .= '&error_description=' . urlencode( $message );
-    response( '302 Found', $location );
-}
 
-/**
- * oAuth2 response handler function. Terminates execution after sending the headers.
- *
- * @param string $httpHeader The HTTP header to be sent as a response
- * @param string $location The location to redirect to. No redirection is done if not provided.
- *
- * @return void
- */
-function response( $httpHeader, $location = null )
-{
-    header( "HTTP/1.1 $httpHeader" );
-    if ( $location !== null )
-        // debug stuff: echo "header( \"Location: $location\" );\n";
-        header( "Location: $location" );
-    eZExecution::cleanExit();
-}
 
-/**
- * Helper function that reads an HTTP variable over GET or POST, depending on the stage.
- * The POST variables AuthorizeButton and DenyButton will make the function read from POST
- *
- * @param string $variable
- * @return mixed The parameter, or false if not set
- */
-function getHTTPVariable( $variable )
-{
-    static $hasPost;
-    static $http;
-
-    if ( $http === null )
-        $http = eZHTTPTool::instance();
-
-    if ( $hasPost === null )
-        $hasPost = $http->hasPostVariable( 'AuthorizeButton' ) || $http->hasPostVariable( 'DenyButton' );
-
-    if ( $hasPost )
-        return $http->hasPostVariable( $variable ) ? $http->postVariable( $variable ) : false;
-    else
-        return $http->hasGetVariable( $variable ) ? $http->getVariable( $variable ) : false;
-}
 ?>
