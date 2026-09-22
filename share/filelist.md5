@@ -11766,7 +11766,7 @@ faf96a8c5b06e581673f96dfff3366dd  kernel/classes/expcachewarm.php
 f356fcde7f2bb1d00f505e2514639808  kernel/classes/expkickstarterini.php
 fdd5c9c1894c2b4b7590b826626ccc1f  kernel/classes/expphar.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
-6aa4fedd5573680b786c282ec26a0928  kernel/classes/expvelocity.php
+fbf18af4d2f02e4aa6dc9670f82cbea8  kernel/classes/expvelocity.php
 6688ecc0698f54470a41e08b034c47d3  kernel/classes/ezaudit.php
 efe6419e2d62b3edba81f61e637c8f52  kernel/classes/ezbasket.php
 2b76818f8885051ed72e1527f96206a1  kernel/classes/ezbinaryfilehandler.php
@@ -12833,7 +12833,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-59f3fc26271073da7772cb5a8ef20508  settings/velocity.ini
+74e1b2b76bb6b9860935e87eeeb848db  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini

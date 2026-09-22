@@ -258,6 +258,27 @@ class expVelocity
         if ( $staticMaxAge > 0 )
             $web['static'] = array( 'maxAge' => $staticMaxAge );
 
+        // HTTP/2, which the server negotiates during the TLS handshake.
+        //
+        // A page here references 41 assets, and over HTTP/1.1 a browser
+        // fetches them about six at a time in waves; over HTTP/2 they share
+        // one connection. Measured on this installation, asset delivery was
+        // 393-418ms against 85-104ms through a front end that spoke it.
+        //
+        // Off unless asked for, in the server and here both. The protocol is
+        // agreed during the handshake and a client does not fall back
+        // afterwards, so a fault is a page that never arrives rather than one
+        // that arrives slowly -- which is also why the server now answers any
+        // stream still open with a page rather than silence.
+        if ( $this->setting( 'ServerSettings', 'HTTP2', 'disabled' ) === 'enabled' )
+        {
+            $web['http2'] = array( 'enabled' => true );
+
+            $errorImage = (string)$this->setting( 'ServerSettings', 'HTTP2ErrorImage', '' );
+            if ( $errorImage !== '' )
+                $web['http2']['errorPage'] = array( 'image' => $this->absolute( $errorImage ) );
+        }
+
         if ( !$web )
             return false;
 
