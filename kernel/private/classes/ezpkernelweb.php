@@ -336,19 +336,36 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         $this->requestInit();
 
         // send header information
-        foreach (
-            eZHTTPHeader::headerOverrideArray( $this->uri ) +
-            array(
-                'Expires' => 'Mon, 26 Jul 1997 05:00:00 GMT',
-                'Last-Modified' => gmdate( 'D, d M Y H:i:s' ) . ' GMT',
-                'Cache-Control' => 'no-cache, must-revalidate',
-                'Pragma' => 'no-cache',
-                'X-Powered-By' => eZPublishSDK::EDITION,
-                'Content-Type' => 'text/html; charset=' . $this->httpCharset,
-                'Served-by' => isset( $_SERVER["SERVER_NAME"] ) ? $_SERVER['SERVER_NAME'] : null,
-                'Content-language' => $this->languageCode
-              ) as $key => $value
-        )
+        $headerOverrides = eZHTTPHeader::headerOverrideArray( $this->uri );
+
+        $headerDefaults = array(
+            'Expires' => 'Mon, 26 Jul 1997 05:00:00 GMT',
+            'Last-Modified' => gmdate( 'D, d M Y H:i:s' ) . ' GMT',
+            'Cache-Control' => 'no-cache, must-revalidate',
+            'Pragma' => 'no-cache',
+            'X-Powered-By' => eZPublishSDK::EDITION,
+            'Content-Type' => 'text/html; charset=' . $this->httpCharset,
+            'Served-by' => isset( $_SERVER["SERVER_NAME"] ) ? $_SERVER['SERVER_NAME'] : null,
+            'Content-language' => $this->languageCode
+        );
+
+        // Pragma is the HTTP/1.0 spelling of Cache-Control and there is no way
+        // to say "cacheable" in it. So when a configured header makes a page
+        // cacheable, leaving the default Pragma in place sends a response that
+        // contradicts itself: "public, max-age=60" beside "no-cache". Browsers
+        // resolve that in favour of Cache-Control, but a proxy is entitled to
+        // read the Pragma and decline to store the page -- which is the whole
+        // point of having set the header.
+        //
+        // Only dropped when Cache-Control was actually overridden. A response
+        // that keeps the default Cache-Control keeps the matching Pragma, so
+        // nothing changes for an installation that has configured nothing.
+        if ( isset( $headerOverrides['Cache-Control'] ) && !isset( $headerOverrides['Pragma'] ) )
+        {
+            unset( $headerDefaults['Pragma'] );
+        }
+
+        foreach ( $headerOverrides + $headerDefaults as $key => $value )
         {
             header( $key . ': ' . $value );
         }

@@ -134,7 +134,7 @@ f90ab3789386b943e3c322da2e9c062d  bin/shell/redumpall.sh
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 51bce499f1e818a40a8b0034e0e1a9c1  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-ff96641694f19d068798cc7e7b7df977  composer.json
+8c902c00aa31d6f3457674b8281e92e7  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 d77f7f99abd083dc48fceaf4bf996f62  composer.lock
 f6639c1204722f978072a5f5238027ae  config.php
@@ -2283,6 +2283,7 @@ d235809fe8490e97218403d3cfe12404  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 31591936b3e3a619643b71a2587b5ed2  doc/bc/6.0/expinfo-operator.md
 1bc5d7888e4c8a699b48624c73cbbf35  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 dd8f6ec3976bdee1a688a25ee3761ee9  doc/bc/6.0/hardening.md
+aa6163ba894fd81c26b15462d2176959  doc/bc/6.0/http-caching.md
 e222ad728b939965d51455158c8782fa  doc/bc/6.0/kickstartercli.md
 5f063b419152d919981820ae436cf799  doc/bc/6.0/locations-tab-paging-and-sorting.md
 8aae77691af6b35a093d9229b3757ed3  doc/bc/6.0/multi-node-edit.md
@@ -11762,7 +11763,7 @@ d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 f356fcde7f2bb1d00f505e2514639808  kernel/classes/expkickstarterini.php
 fdd5c9c1894c2b4b7590b826626ccc1f  kernel/classes/expphar.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
-a85c5bd33ea4986d055a550a971a9d30  kernel/classes/expvelocity.php
+6aa4fedd5573680b786c282ec26a0928  kernel/classes/expvelocity.php
 6688ecc0698f54470a41e08b034c47d3  kernel/classes/ezaudit.php
 efe6419e2d62b3edba81f61e637c8f52  kernel/classes/ezbasket.php
 2b76818f8885051ed72e1527f96206a1  kernel/classes/ezbinaryfilehandler.php
@@ -12114,7 +12115,7 @@ b7cff87cd037f25bcbeaa28af61b30d0  kernel/private/classes/ezpextension.php
 86bdb9f30bc9936abd83ceb015a05379  kernel/private/classes/ezpkernelredirect.php
 c209d9d72daf86a9eb0e0de775a49958  kernel/private/classes/ezpkernelresult.php
 66ad5ad85bc9fe76eac9c2dbbdbc8221  kernel/private/classes/ezpkerneltreemenu.php
-5577a63b213b893018eeec5d04c4d0d7  kernel/private/classes/ezpkernelweb.php
+73535d510836d1f298bcd3bd889134b5  kernel/private/classes/ezpkernelweb.php
 98bbfd6d96390246668385784dfeb7a6  kernel/private/classes/ezplanguageswitcher.php
 2bfb085e092fb0c741d2ba0fec8996ec  kernel/private/classes/ezpmail.php
 a5c6868c21944f98d32c76a4c8c8b234  kernel/private/classes/ezpmobiledevicedetect.php
@@ -12829,7 +12830,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-05310fcc16d334ae4112fac92800786e  settings/velocity.ini
+59f3fc26271073da7772cb5a8ef20508  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini

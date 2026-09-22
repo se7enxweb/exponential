@@ -229,14 +229,39 @@ class expVelocity
      */
     protected function writeServerConfig()
     {
-        if ( !$this->httpsEnabled() )
+        $web = array();
+
+        if ( $this->httpsEnabled() )
+        {
+            $web['https'] = array(
+                'mode' => 'manual',
+                'cert' => $this->absolute( $this->setting( 'HTTPSSettings', 'Certificate', '' ) ),
+                'key'  => $this->absolute( $this->setting( 'HTTPSSettings', 'Key', '' ) ),
+            );
+        }
+
+        // How long a browser may keep a stylesheet, script or image without
+        // asking again.
+        //
+        // The server's own default permits caching and then requires the
+        // client to revalidate anyway, so a page carrying dozens of assets
+        // costs dozens of conditional requests on every view. Measured here:
+        // 41 assets on the front page, every one revalidated every time, while
+        // the same site behind the other web server fetched none of them
+        // again.
+        //
+        // Zero leaves the server's default alone. The trade is staleness: a
+        // file replaced in place is not noticed until the lifetime expires,
+        // which costs nothing for an asset whose URL changes with its content
+        // and is why this is a setting rather than an assumption.
+        $staticMaxAge = (int)$this->setting( 'ServerSettings', 'StaticMaxAge', 0 );
+        if ( $staticMaxAge > 0 )
+            $web['static'] = array( 'maxAge' => $staticMaxAge );
+
+        if ( !$web )
             return false;
 
-        $config = array( 'Q' => array( 'web' => array( 'https' => array(
-            'mode' => 'manual',
-            'cert' => $this->absolute( $this->setting( 'HTTPSSettings', 'Certificate', '' ) ),
-            'key'  => $this->absolute( $this->setting( 'HTTPSSettings', 'Key', '' ) ),
-        ) ) ) );
+        $config = array( 'Q' => array( 'web' => $web ) );
 
         $path = $this->absolute( 'var/tmp/velocity-server.json' );
         $directory = dirname( $path );
