@@ -96,13 +96,60 @@ or a stack trace names a `phar://` path, this is the first thing worth reading.
 
 ### Switch the runtime onto it
 
-Set `EXP_ENGINE_PHAR` in the server's environment. For the persistent-worker
-server this means the environment of the server process, which its workers
-inherit when they fork.
+    [ServerSettings]
+    EnginePhar=enabled
+
+in `settings/velocity.ini`, or an override of it. The value may be:
+
+| | |
+|---|---|
+| `disabled` | the files on disk. The default. |
+| `enabled` | `dist/engine.phar`, wherever `expPhar` puts it. |
+| *a path* | that archive, relative to the installation root or absolute. |
+
+The service exports `EXP_ENGINE_PHAR` into the server's environment at launch,
+and the workers inherit it when they fork. It has to be the environment rather
+than a command line argument, because `autoload.php` reads it before it has
+parsed anything -- which is necessarily before any argument could be consulted.
+
+An archive that is not there stops the server from starting rather than falling
+back to the files on disk. A silent fall back is indistinguishable from success
+and the difference only surfaces much later.
+
+`exp:velocity status` reports which engine is running, for the same reason:
+from outside, an archive that failed to load and an ordinary run look identical.
+
+**Clear the caches when switching, in either direction.** Pages rendered under
+one engine are cached and will be served under the other.
 
 ### Revert
 
-Unset the variable, or delete the archive. There is no other state.
+    EnginePhar=disabled
+
+then clear the caches and restart. Unsetting the variable or deleting the
+archive works too. There is no other state.
+
+### It could not work at all before 0.0.4.8
+
+The compatibility layer in the application server rewrites `header()`,
+`setcookie()` and their kin as each file is included, because under the CLI SAPI
+those functions do nothing on their own. It did that by wrapping the `file://`
+scheme, and code included through `phar://` never passed through it.
+
+So the engine ran from the archive and every one of those calls went nowhere.
+The site rendered the right pages and sent almost nothing with them:
+
+    Content-Type: text/html; charset=UTF-8
+    Content-Length: 76800
+    Connection: close
+
+No `Cache-Control`, so nothing could be cached and every request was rendered --
+75ms became 1.2-1.7s. No `Set-Cookie`, so nobody could sign in: the login
+answered 302 to the right place and set no session. Nothing was logged, because
+nothing failed.
+
+`qbix-webserver` 0.0.4.8 wraps `phar://` as well. If the archive is in use and
+headers or sign-in misbehave, check that version first.
 
 ---
 

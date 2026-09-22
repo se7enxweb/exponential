@@ -155,3 +155,53 @@ that count is the largest remaining item and it is theme work, not server work.
 
 `/showcase` renders in 4.5–21 s, far worse than any other page, and distorts
 the warm cycle. It deserves its own investigation.
+
+---
+
+## Corrections, and what the warmer had to learn since
+
+Three faults were found in the warmer after this was first written, and every
+one of them reported success while it was happening.
+
+**It warmed addresses nobody asks for.** Paths came from `urlAlias()`, which
+gives the bare form, so it filled `/fitness` while visitors asked for
+`/site/fitness` -- a separate cache entry, because the cache keys on host and
+path and this installation reaches the same content both by host match and by
+URI match. Measured: `/fitness` 116ms warm, `/site/fitness` 496ms cold. Both
+forms are warmed now, and both `/site` and `/site/`, which are also distinct.
+
+**It renewed nothing.** Asking for a page returned a cache hit and left the
+entry's expiry untouched, so entries lapsed between runs however often the cron
+fired. Requests now carry `X-Cache-Refresh`, which the server reads past the
+stored copy for, so the page is rendered and stored again. That needs
+`qbix-webserver` 0.0.4.6 or later.
+
+**It then became the reason pages were slow.** Refreshing means rendering, so a
+cycle turned into 285 full renders. An admin page measured 141-287ms between
+cycles and 679-1146ms during one. Concurrency is 1.
+
+The signature worth remembering: **a cached response that is slow is a capacity
+problem, not a rendering one.** The `expires` header said the page came from
+cache while the clock said 1590ms, and that contradiction was the answer.
+
+## The response cache skips on the wrong cookie by default
+
+The server's own default names `PHPSESSID` and `Q_sid`. Those are PHP's and
+Qbix's names, and a browser carrying a stale one of either -- from any Qbix
+application on the same host -- bypassed the cache on every request, while a
+real session sailed through it. 74ms from cache against about 1300ms rendered,
+for pages that were byte for byte identical.
+
+`expVelocity` now derives the list from `[Session]SessionNamePrefix` and writes
+it into the server config. Override with `[ServerSettings]CacheSkipCookies`.
+
+## Signing in did not work over HTTP/2 before 0.0.4.7
+
+Cookies a script sets are carried separately from its headers in a pooled
+response, and the HTTP/2 path never read them, so every `Set-Cookie` was
+dropped. The login answered 302 to the right place and set no session.
+
+It hid well: a browser already holding a session carried on working, and a
+session obtained over HTTP/1.1 is equally good over HTTP/2. Only a fresh
+sign-in on a connection that had negotiated h2 could see it -- every private
+window, and every automated test.

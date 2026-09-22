@@ -2285,13 +2285,13 @@ d235809fe8490e97218403d3cfe12404  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 1bc5d7888e4c8a699b48624c73cbbf35  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 dd8f6ec3976bdee1a688a25ee3761ee9  doc/bc/6.0/hardening.md
 aa6163ba894fd81c26b15462d2176959  doc/bc/6.0/http-caching.md
-0d18274022addee0f7d276a00a4c7ea3  doc/bc/6.0/http2-and-cache-warming.md
+dea42223834ba38116bec0ff00763329  doc/bc/6.0/http2-and-cache-warming.md
 e222ad728b939965d51455158c8782fa  doc/bc/6.0/kickstartercli.md
 5f063b419152d919981820ae436cf799  doc/bc/6.0/locations-tab-paging-and-sorting.md
 8aae77691af6b35a093d9229b3757ed3  doc/bc/6.0/multi-node-edit.md
 885a488ce80a5e6d147ea79d6ed9f42b  doc/bc/6.0/opml.md
 991162afe545cb6f8dc7f292e9763ecb  doc/bc/6.0/pagination-settings.md
-1563f28aa6ca75b9716373156022200b  doc/bc/6.0/phar.md
+0953f54152a455d33e45e5d5a083de5b  doc/bc/6.0/phar.md
 2fc39d399e6978352dd88a9182bca8b0  doc/bc/6.0/php8.md
 8827542a19048d2c80e65ab2efd0b6af  doc/bc/6.0/phpunitv10.md
 82e9ad363eeb8a1d0090ed20cf756a7e  doc/bc/6.0/phpunitv13.md
