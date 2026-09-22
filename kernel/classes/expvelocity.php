@@ -37,6 +37,7 @@
  */
 class expVelocity
 {
+
     /**
      * Seconds to wait between polls when watching for a state change.
      */
@@ -319,6 +320,44 @@ class expVelocity
                 $web['http2']['errorPage'] = array( 'image' => $this->absolute( $errorImage ) );
         }
 
+        // Keep a compressed copy of each static file, instead of building one
+        // per request.
+        //
+        // Every asset was read and gzipped again on every request. The packed
+        // bundles this installation serves cost, measured with gzencode at the
+        // level the server uses:
+        //
+        //     641 kB of JavaScript    25.1 ms
+        //     389 kB of CSS            9.9 ms
+        //     229 kB of JavaScript     9.1 ms
+        //
+        // That is 44ms of compression on one cold page load, spent producing
+        // bytes identical to the last time, in the single event loop every
+        // other connection is waiting on.
+        //
+        // The server has had the cache all along, defaulting to off, and
+        // nothing here switched it on.
+        $webserver = array();
+        $precompress = $this->setting( 'ServerSettings', 'PrecompressStatic', 'enabled' );
+        if ( $precompress !== 'disabled' && $precompress !== 'false' )
+        {
+            $web2 = array( 'enabled' => true );
+
+            $maxFiles = (int)$this->setting( 'ServerSettings', 'PrecompressMaxFiles', 0 );
+            if ( $maxFiles > 0 )
+                $web2['maxFiles'] = $maxFiles;
+
+            $minSize = (int)$this->setting( 'ServerSettings', 'PrecompressMinSize', 0 );
+            if ( $minSize > 0 )
+                $web2['minSize'] = $minSize;
+
+            // Under var/, so it is cleared with everything else and is not in
+            // a shared temporary directory another site could read.
+            $web2['dir'] = $this->absolute( 'var/tmp/precompress' );
+
+            $webserver['precompress'] = $web2;
+        }
+
         // Which cookies mean "this response is personal, do not cache it".
         //
         // The server's own default is PHPSESSID and Q_sid, which are PHP's and
@@ -349,13 +388,123 @@ class expVelocity
             if ( $prefix !== '' )
                 $skip = array( $prefix );
         }
+        $cache = array();
         if ( $skip )
-            $web['cache'] = array( 'skip' => array( 'cookies' => array_values( $skip ) ) );
+            $cache['skip'] = array( 'cookies' => array_values( $skip ) );
 
-        if ( !$web )
+        // How long an expired page may still be served while one request
+        // renders the replacement.
+        //
+        // An entry expires at a moment, so every request in flight for that
+        // page misses at once, and before this each of them rendered it. The
+        // same front page is 0.6ms from cache and 1382ms rendered, so with a
+        // five minute lifetime the page stopped for one and a half seconds
+        // every five minutes -- for everyone who happened to be there, all of
+        // them doing identical work to produce identical bytes. In the load
+        // test it read as p99 111ms at eight concurrent and 182ms at sixteen:
+        // a tail that grows with the number of people present, which is a
+        // stampede and not load.
+        //
+        // With this set, one request renders and everyone else is handed the
+        // copy that already exists. The trade is that a visitor may see a page
+        // up to this many seconds past its lifetime, which for a five minute
+        // lifetime is a page at most six minutes old instead of five.
+        $grace = $this->setting( 'ServerSettings', 'CacheStaleWhileRevalidate', '60' );
+        if ( $grace !== '' && (int)$grace > 0 )
+            $cache['staleWhileRevalidate'] = (int)$grace;
+
+        // How long a 404 is remembered.
+        //
+        // A not-found runs the whole routing and rendering path before
+        // concluding there is nothing there. Measured across 278 public URLs
+        // on this installation, they cost 220-340ms each and none were cached,
+        // so anything walking a list of dead links -- a crawler, an old
+        // sitemap, a page of stale links -- paid full price on every request
+        // and so did the server, with nothing bounding it.
+        //
+        // Short, because the cost of being wrong is a page that exists
+        // appearing not to. A minute blunts a crawl without visibly delaying
+        // a publish.
+        $negative = $this->setting( 'ServerSettings', 'CacheNotFoundSeconds', '60' );
+        if ( $negative !== '' && (int)$negative > 0 )
+            $cache['negativeTtl'] = (int)$negative;
+
+        // Collapse the indentation eZ's templates ship with.
+        //
+        // The front page is 94,090 bytes of which 28,934 are whitespace, and
+        // collapsing the runs leaves 68,842 -- 27% smaller before compression.
+        // gzip already handles repeated whitespace, so the wire saving is
+        // small; the decompressed document is the point, because that is what
+        // the browser parses and what the navigation cache in the browser
+        // stores.
+        $minify = $this->setting( 'ServerSettings', 'MinifyCachedHtml', 'enabled' );
+        if ( $minify !== 'disabled' && $minify !== 'false' )
+            $cache['minifyHtml'] = true;
+
+        // Compress stored entries against a shared dictionary.
+        //
+        // Every page here carries the same head, navigation, footer and asset
+        // URLs, and gzip cannot see any of it: its window is 32KB and starts
+        // empty for each document, so the hundredth page pays full price for a
+        // header the ninety-nine before it also contained. A dictionary is a
+        // block of bytes the compressor may reference before it has seen them.
+        //
+        // Measured on this installation's own 273 cached pages: 1,626,195
+        // bytes as plain gzip against 1,290,140 with the dictionary, 20.7%
+        // smaller, every one round-tripping exactly.
+        //
+        // Build the dictionary before switching this on, with
+        // ai/bin/one/build_middle_out_dictionary_from_cache.php. Without one,
+        // entries are simply stored the ordinary way; nothing breaks.
+        //
+        // MEASURED HERE AND LEFT OFF. Switched on against this cache, 271 of
+        // 272 entries were stored uncompressed anyway, because the cache holds
+        // bodies in wire form -- already gzipped, so a hit needs no compression
+        // work -- and a dictionary cannot shrink gzip output. The 20.7% above
+        // is what it saves on the *plain* HTML, and capturing it would mean
+        // re-compressing on every hit: 20% of cache memory bought with CPU on
+        // every request, on a machine with 24GB free. The wrong trade.
+        //
+        // It is worth switching on where the cache holds uncompressed bodies,
+        // or where memory is the scarce resource rather than CPU.
+        $middleOut = $this->setting( 'ServerSettings', 'MiddleOutCompression', 'disabled' );
+        if ( $middleOut === 'enabled' || $middleOut === 'true' )
+            $cache['middleOut'] = true;
+
+        if ( $cache )
+            $web['cache'] = $cache;
+
+        // How long a connection may sit idle before it is closed, and how many
+        // requests one may carry.
+        //
+        // Every new connection pays a TLS handshake, and on this machine that
+        // is 21ms against 0.3ms of TCP and 1.5ms of work -- by far the most
+        // expensive thing a visitor can be made to do. Session resumption
+        // would make the second handshake cheap, but PHP builds an SSL_CTX per
+        // accepted socket, so there is no shared session cache to resume
+        // against and every connection is a full handshake. Verified with a
+        // single worker, so it is not divergent ticket keys between them:
+        // openssl s_client -reconnect reports New six times and Reused never.
+        //
+        // What is left, then, is to make visitors open fewer connections. An
+        // idle socket costs a few kilobytes; a handshake costs 21ms of CPU.
+        // Someone who reads a page for three minutes and then clicks a link
+        // was paying a fresh handshake at the default of 120 seconds, and now
+        // does not.
+        $idle = (int)$this->setting( 'ServerSettings', 'ConnectionIdleSeconds', '600' );
+        if ( $idle > 0 )
+            $web['http2']['limits']['idleSeconds'] = $idle;
+
+        $perConnection = (int)$this->setting( 'ServerSettings', 'KeepAliveMaxRequests', '1000' );
+        if ( $perConnection > 0 )
+            $webserver['keepAlive'] = array( 'max' => $perConnection );
+
+        if ( !$web && !$webserver )
             return false;
 
         $config = array( 'Q' => array( 'web' => $web ) );
+        if ( $webserver )
+            $config['Q']['webserver'] = $webserver;
 
         $path = $this->absolute( 'var/tmp/velocity-server.json' );
         $directory = dirname( $path );
