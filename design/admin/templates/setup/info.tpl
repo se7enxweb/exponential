@@ -51,12 +51,18 @@
 </tr>
 <tr>
 <td>
+    {* Say which one is running before anything else, and say why.
+       The panel used to list an archive, its version and whether it matched the
+       working tree without ever making clear that none of it was in use, so it
+       read as though the archive might be running and might be stale. *}
     <div class="block">
         <label>{'Loaded from'|i18n( 'design/admin/setup/info' )}:</label>
         {if eq( $engine_info.source, 'archive' )}
-            {'Archive'|i18n( 'design/admin/setup/info' )} &mdash; {$engine_info.archive|wash}
+            {'The archive'|i18n( 'design/admin/setup/info' )} &mdash; {$engine_info.archive|wash}
         {else}
             {'Individual files on disk'|i18n( 'design/admin/setup/info' )}
+            &mdash;
+            {'the archive below is not being used, because the EXP_ENGINE_PHAR environment variable is not set'|i18n( 'design/admin/setup/info' )}
         {/if}
     </div>
 
@@ -74,25 +80,42 @@
     </div>
     {else}
     <div class="block">
-        <label>{'Archive'|i18n( 'design/admin/setup/info' )}:</label>
+        <label>{'Archive on disk'|i18n( 'design/admin/setup/info' )}:</label>
         {$engine_info.archive|wash}
     </div>
     {/if}
 
     <div class="block">
-        <label>{'Archive version'|i18n( 'design/admin/setup/info' )}:</label>
+        <label>{'Archive was built from'|i18n( 'design/admin/setup/info' )}:</label>
         {if $engine_info.version}{$engine_info.version|wash}{else}&ndash;{/if}
     </div>
 
+    {* Only worth saying when it would change what somebody does. An archive
+       that is not running cannot explain a surprising result, so the mismatch
+       is framed as "rebuild before switching" rather than as a failure. *}
     <div class="block">
-        <label>{'Matches working tree'|i18n( 'design/admin/setup/info' )}:</label>
+        <label>{'Archive is current'|i18n( 'design/admin/setup/info' )}:</label>
         {$engine_info.matches_repo|wash}
+        {if and( ne( $engine_info.source, 'archive' ), ne( $engine_info.matches_repo, 'yes' ) )}
+            <br /><small>{'Rebuild it before switching to it; nothing is running from it now.'|i18n( 'design/admin/setup/info' )}</small>
+        {/if}
     </div>
 
+    {* Two unrelated facts, which were on one line and read as one. The wrapper
+       is off because letting any path-taking function reach inside an archive
+       is a real hazard on a site that accepts image uploads; phar.readonly is
+       a separate php.ini setting about whether an archive can be written. *}
     <div class="block">
         <label>{'Phar stream wrapper'|i18n( 'design/admin/setup/info' )}:</label>
         {$engine_info.phar_wrapper|wash}
-        ({'phar.readonly'|i18n( 'design/admin/setup/info' )} {$engine_info.phar_readonly|wash})
+        {if eq( $engine_info.phar_wrapper, 'unregistered' )}
+            <br /><small>{'Deliberate: with it registered, a file that is both a valid image and a valid archive can be executed through a phar:// path.'|i18n( 'design/admin/setup/info' )}</small>
+        {/if}
+    </div>
+
+    <div class="block">
+        <label>{'Writing archives (phar.readonly)'|i18n( 'design/admin/setup/info' )}:</label>
+        {$engine_info.phar_readonly|wash}
     </div>
 
     <div class="block">

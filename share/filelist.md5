@@ -511,7 +511,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 ac9b8cde45959bdf348cb0c2868e7e2d  design/admin/templates/setup/designextension.tpl
 c29e3a846853ed8a4a3d4f91c4874af3  design/admin/templates/setup/extensions.tpl
 9a1144de0b4042a411f4374ddf2d6050  design/admin/templates/setup/handlerextension.tpl
-b37e15b52463b2ea44f22793c8a96d39  design/admin/templates/setup/info.tpl
+d423d0570db678c25b4aee332e785a58  design/admin/templates/setup/info.tpl
 9728ae823c710f8bdf558810fe857aa5  design/admin/templates/setup/kerneloverride.tpl
 7f9d1052a5207dc44c8791f26b779c3c  design/admin/templates/setup/moduleextension.tpl
 377b53b0f333488da73e7236059512a4  design/admin/templates/setup/modulewizard.tpl
