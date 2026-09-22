@@ -279,6 +279,39 @@ class expVelocity
                 $web['http2']['errorPage'] = array( 'image' => $this->absolute( $errorImage ) );
         }
 
+        // Which cookies mean "this response is personal, do not cache it".
+        //
+        // The server's own default is PHPSESSID and Q_sid, which are PHP's and
+        // Qbix's names and are not what signs anybody in here. The effect was
+        // that anyone carrying a stale cookie of either name -- a browser that
+        // had ever touched a Qbix application on this host, for instance --
+        // bypassed the response cache on every request, while a real signed-in
+        // session sailed straight through it.
+        //
+        // Both halves of that were wrong, and the first was expensive: the same
+        // front page is 74ms served from cache and about 1300ms rendered,
+        // because the session path runs 529 queries instead of 122. The pages
+        // were byte for byte identical apart from two packed asset filenames.
+        //
+        // SessionNamePrefix, plus md5 of the siteaccess name where
+        // SessionNamePerSiteAccess is enabled. The public siteaccesses share
+        // the bare prefix; the admin has a name of its own, and an admin
+        // session is no reason to stop caching the public site.
+        $skip = $this->setting( 'ServerSettings', 'CacheSkipCookies', '' );
+        if ( !is_array( $skip ) )
+            $skip = $skip === '' ? array() : array( $skip );
+        if ( !$skip )
+        {
+            $siteIni = eZINI::instance( 'site.ini' );
+            $prefix = $siteIni->hasVariable( 'Session', 'SessionNamePrefix' )
+                    ? (string)$siteIni->variable( 'Session', 'SessionNamePrefix' )
+                    : 'eZSESSID';
+            if ( $prefix !== '' )
+                $skip = array( $prefix );
+        }
+        if ( $skip )
+            $web['cache'] = array( 'skip' => array( 'cookies' => array_values( $skip ) ) );
+
         if ( !$web )
             return false;
 
