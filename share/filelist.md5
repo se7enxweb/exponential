@@ -134,7 +134,7 @@ f90ab3789386b943e3c322da2e9c062d  bin/shell/redumpall.sh
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 51bce499f1e818a40a8b0034e0e1a9c1  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-0e619d79bc57f47195d8b67a531f1ce2  composer.json
+ff96641694f19d068798cc7e7b7df977  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 d77f7f99abd083dc48fceaf4bf996f62  composer.lock
 f6639c1204722f978072a5f5238027ae  config.php
@@ -12114,7 +12114,7 @@ b7cff87cd037f25bcbeaa28af61b30d0  kernel/private/classes/ezpextension.php
 86bdb9f30bc9936abd83ceb015a05379  kernel/private/classes/ezpkernelredirect.php
 c209d9d72daf86a9eb0e0de775a49958  kernel/private/classes/ezpkernelresult.php
 66ad5ad85bc9fe76eac9c2dbbdbc8221  kernel/private/classes/ezpkerneltreemenu.php
-a020c7a44e4ec816b01e2bfb45f2c38e  kernel/private/classes/ezpkernelweb.php
+5577a63b213b893018eeec5d04c4d0d7  kernel/private/classes/ezpkernelweb.php
 98bbfd6d96390246668385784dfeb7a6  kernel/private/classes/ezplanguageswitcher.php
 2bfb085e092fb0c741d2ba0fec8996ec  kernel/private/classes/ezpmail.php
 a5c6868c21944f98d32c76a4c8c8b234  kernel/private/classes/ezpmobiledevicedetect.php

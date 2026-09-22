@@ -250,7 +250,21 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             $this->settings['siteaccess'] :
             eZSiteAccess::match(
                 eZURI::instance( eZSys::requestURI() ),
-                eZSys::hostname(),
+                // Host without the port. HTTP_HOST carries ":8080" whenever the
+                // site is served on a non-default port, and host matching
+                // compares that string against HostMatchMapItems, which name
+                // hosts and not ports -- so the map never matched and the
+                // siteaccess fell through to whatever came next. On this
+                // installation that meant every URL on every page came out
+                // prefixed with the siteaccess name, on the persistent-worker
+                // server only, while the same site behind the other web server
+                // on its default port was fine.
+                //
+                // The port is not being discarded: it is passed as the next
+                // argument, which is where this function expects it and what
+                // port matching uses. eZSys::serverURL() strips it in the same
+                // way for the same reason.
+                preg_replace( '/:\d+$/', '', (string)eZSys::hostname() ),
                 eZSys::serverPort(),
                 eZSys::indexFile()
             )
