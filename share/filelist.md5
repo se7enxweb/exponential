@@ -12318,7 +12318,7 @@ b2b886461ecd202ac56cf05c9113fd2c  kernel/setup/ezsetupfunctioncollection.php
 324bc16d51431808de8fb6774edf3649  kernel/setup/ezsetuptests.php
 b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
 004141a5f38e662b67e4b8f8408a9900  kernel/setup/handlerextension.php
-3135f4cefe2acd041cfc3fe6e5ee3879  kernel/setup/info.php
+54a1e59704fae4fcc3b0fe50ef07f705  kernel/setup/info.php
 cb0b8c124634b99b49697c6607147d5f  kernel/setup/kerneloverride.php
 18ecee0d07126e49f164552b002eaf7e  kernel/setup/menuconfig.php
 7a0d4cf942cc990405064a4ae519cc5b  kernel/setup/module.php

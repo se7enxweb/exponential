@@ -75,6 +75,41 @@ if ( function_exists( 'apache_get_version' ) )
     if ( function_exists( 'apache_get_modules' ) )
         $webserverInfo['modules'] = apache_get_modules();
 }
+elseif ( isset( $_SERVER['SERVER_SOFTWARE'] ) && trim( (string)$_SERVER['SERVER_SOFTWARE'] ) !== '' )
+{
+    // apache_get_version() exists only in the Apache module SAPI, so this page
+    // said it could not extract anything about the web server whenever the
+    // application was not run that way -- under FPM behind Apache or nginx,
+    // and under a persistent-worker server such as QbixServer, which runs it
+    // inside a CLI-family SAPI. In every one of those cases the server does
+    // say who it is, in SERVER_SOFTWARE, conventionally as "Name/version".
+    $software = trim( (string)$_SERVER['SERVER_SOFTWARE'] );
+    $slash = strpos( $software, '/' );
+    $webserverInfo = array(
+        'name'    => $slash === false ? $software : substr( $software, 0, $slash ),
+        'version' => $slash === false ? '' : substr( $software, $slash + 1 ),
+        'modules' => false
+    );
+
+    // There is no apache_get_modules() equivalent here, and inventing one
+    // would be worse than saying nothing. What a reader actually wants from
+    // this box is how the application is being run, so report that instead:
+    // the SAPI, and whether the process handling this request will outlive it.
+    $runtime = array( 'SAPI: ' . php_sapi_name() );
+    if ( defined( 'QBIX_SERVER_VERSION' ) )
+    {
+        // A persistent worker handles many requests in one process, which is
+        // the single most important thing to know when reading any other
+        // number on this page: statics, registries and open handles survive
+        // between requests here and do not under one process per request.
+        $runtime[] = 'persistent workers';
+        if ( class_exists( 'Q_WebServer_Compat', false ) )
+            $runtime[] = 'source transform compatibility layer';
+    }
+    if ( eZSys::isSSLNow() )
+        $runtime[] = 'TLS';
+    $webserverInfo['modules'] = $runtime;
+}
 
 $tpl->setVariable( 'ezpublish_version', eZPublishSDK::version() . " (" . eZPublishSDK::alias() . ")" );
 $tpl->setVariable( 'ezpublish_extensions', eZExtension::activeExtensions() );
