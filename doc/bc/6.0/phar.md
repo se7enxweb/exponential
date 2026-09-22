@@ -232,6 +232,42 @@ that.
 
 ---
 
+## Speed: what was measured, and what to stop trying
+
+The archive was built because a client asked for it and because a single
+stamped artifact is easier to deploy than a thousand files. It was also
+hoped to be faster. It is not.
+
+Everything below was measured on this installation, on a content page, four
+workers per server, with requests round-robined between the servers being
+compared so that anything drifting during a run hits them all equally.
+
+| Change | Result |
+|---|---|
+| **Opcode cache enabled for the server process** | **+18 to +26%** |
+| Engine loaded from the archive | no measurable difference (mean −0.4%) |
+| Cheaper tests in the server's file stream wrapper | +9.7%, then +2.9%, then +0.5% — noise |
+| Opcode cache without timestamp checks | within noise of the cache alone |
+| Opcode cache with a 32M interned string buffer | within noise |
+| Tracing JIT | within noise; worst of five on one run, best on the next |
+
+**Only the opcode cache pays.** It was off because
+`/etc/php.d/99-no-opcache-cli.ini` disables it for every command-line PHP on
+the machine, and the persistent-worker server runs under that interpreter. It
+is now requested per process in `settings/velocity.ini` under `[PHPSettings]`;
+the system-wide file is deliberately untouched.
+
+**Measure by round-robin, never one server after the other.** Timing one and
+then the other reported +3.9%, +7.8%, −19.8% and +7.8% for a change that is
+actually worth about −0.4%. The page costs half a second and the machine does
+other work.
+
+**The remaining time is the application, not the server.** A trivial script
+through the same server answers in about 30ms against roughly 450ms for a
+content page. The next place to look is the database and template rendering.
+
+---
+
 ## Not implemented
 
 Deliberately left undone:
