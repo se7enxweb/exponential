@@ -670,7 +670,7 @@ bb57d7d50de510183570d8844efbd49f  design/admin3/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin3/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin3/images/view-fullscreen.png
 e3bfb91bebf01770b13c4a9ffe2a8f95  design/admin3/javascript/ezadmin_menubar.js
-d2edd3fba124ff033c5d6161e94ea24f  design/admin3/stylesheets/pagelayout.css
+9a58feaca2a26193e21a38586c954a12  design/admin3/stylesheets/pagelayout.css
 5d3b68fdb809c73a6d8dc464e33c61ec  design/admin3/stylesheets/responsive.css
 797584f1b8dbf151af0fa6ad40a03a62  design/admin3/stylesheets/theme/rounded.css
 2b8b9fd91368916a60d6f761224cc8f5  design/admin3/templates/content/browse_mode_list.tpl
@@ -1152,7 +1152,7 @@ e79cb0b07302f28e837aaad59190f464  design/simple/stylesheets/libs/splide/extensio
 166a0ca35731b5d3221d572f9bff239f  design/simple/stylesheets/libs/splide/js/splide.min.js.map
 2861aecaa7fe69f8fca2acdf3f246f44  design/simple/stylesheets/libs/splide/types/index.d.ts
 30b593b71d7672658f89bfea0ab360c9  design/simple/stylesheets/magnific-popup.css
-6a4a55f98a8702f1845e3e4c2e27dcf4  design/simple/stylesheets/main.css
+25c4b20518e90c011b9fe6b31646c20a  design/simple/stylesheets/main.css
 73eff6264c6c359ecf679cba1433b8ad  design/simple/stylesheets/main.min.css
 8b86271270f4292a128c8c85251bdb20  design/simple/stylesheets/main.res.css
 9b80365dba5aaff7428d9d39db06273b  design/simple/stylesheets/main.res.min.css
@@ -1973,7 +1973,7 @@ f061d1ccc56b10ebe5653c5e011329e1  design/standard/templates/page_mainarea.tpl
 7d82ae198f747f325945a9fe2acb8623  design/standard/templates/page_toppath.tpl
 6fc57af45a8986acee8b4514462fab15  design/standard/templates/page_toptoolbar.tpl
 4ebfe5c829563edc25060b55305538d1  design/standard/templates/page_warning.tpl
-c1dedb67e3f8950459c8a372f9574cdc  design/standard/templates/pagelayout.tpl
+ed88bfc13f66408033fd2646b731da8e  design/standard/templates/pagelayout.tpl
 d0ba090df7ef9e13793d7802efb17c85  design/standard/templates/parts/sortheader.tpl
 7c79e04f55cd77d4e6c7caf11a8ce457  design/standard/templates/pdf/edit.tpl
 3d2770d1296f2f8b78c2f822cec52134  design/standard/templates/pdf/list.tpl
@@ -11257,7 +11257,7 @@ e79cb0b07302f28e837aaad59190f464  extension/sevenx_themes_simple/design/simple/s
 166a0ca35731b5d3221d572f9bff239f  extension/sevenx_themes_simple/design/simple/stylesheets/libs/splide/js/splide.min.js.map
 2861aecaa7fe69f8fca2acdf3f246f44  extension/sevenx_themes_simple/design/simple/stylesheets/libs/splide/types/index.d.ts
 30b593b71d7672658f89bfea0ab360c9  extension/sevenx_themes_simple/design/simple/stylesheets/magnific-popup.css
-6a4a55f98a8702f1845e3e4c2e27dcf4  extension/sevenx_themes_simple/design/simple/stylesheets/main.css
+25c4b20518e90c011b9fe6b31646c20a  extension/sevenx_themes_simple/design/simple/stylesheets/main.css
 73eff6264c6c359ecf679cba1433b8ad  extension/sevenx_themes_simple/design/simple/stylesheets/main.min.css
 8b86271270f4292a128c8c85251bdb20  extension/sevenx_themes_simple/design/simple/stylesheets/main.res.css
 9b80365dba5aaff7428d9d39db06273b  extension/sevenx_themes_simple/design/simple/stylesheets/main.res.min.css
