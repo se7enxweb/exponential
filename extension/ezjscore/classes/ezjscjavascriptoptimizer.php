@@ -45,9 +45,40 @@ class ezjscJavascriptOptimizer
         // Remove whitespace from start & end of line + singelline comment + multiple linefeeds
         $script = preg_replace( array( '/\n\s+/', '/\s+\n/', '#\n\s*//.*#', '/\n+/' ), "\n", $script );
 
-        // Remove multiline comments
-        $script = preg_replace( '!(?:\n|\s|^)/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $script );
-        $script = preg_replace( '!(?:;)/\*[^*]*\*+([^/][^*]*\*+)*/!', ';', $script );
+        // Remove multiline comments.
+        //
+        // The replacement puts back whatever whitespace the pattern consumed,
+        // because the pattern deliberately eats one whitespace character in
+        // front of the comment and it matters enormously which one it was.
+        //
+        // Dropping it entirely (the original behaviour) breaks this, which
+        // webpack emits constantly:
+        //
+        //     } // eslint-disable-next-line import/no-unused-modules
+        //     /* harmony default export */ __webpack_exports__["default"] = ({
+        //
+        // -- the newline goes, the assignment slides up onto the // line, and
+        // everything after it is commented out. All three of the media theme's
+        // bundles parsed before this function and failed after it.
+        //
+        // Always replacing it with a newline breaks the other shape, which
+        // webpack emits just as often:
+        //
+        //     popperGenerator: function() { return /* binding */ popperGenerator; }
+        //
+        // -- a newline after "return" is an automatic semicolon, so every
+        // export so written returns undefined. That version parsed cleanly and
+        // took the site down anyway: popperGenerator is not a function.
+        //
+        // Neither constant is right, because the pattern matches both a line
+        // break before a comment on its own line and a space before a comment
+        // in the middle of one. So capture it and restore it.
+        $script = preg_replace( '!(\n|\s|^)/\*[^*]*\*+(?:[^/][^*]*\*+)*/!', '$1', $script );
+        $script = preg_replace( '!(?:;)/\*[^*]*\*+(?:[^/][^*]*\*+)*/!', ';', $script );
+
+        // Collapse the runs of line feeds the step above can leave behind, the
+        // same way the whitespace pass does.
+        $script = preg_replace( '/\n+/', "\n", $script );
 
         return $script;
     }

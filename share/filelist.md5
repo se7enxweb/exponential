@@ -5981,7 +5981,7 @@ c035339171883a614943145ed8bea082  extension/ezjscore/classes/ajaxuploader/ezprel
 565b76ce3514c650d7efcbb35f86189a  extension/ezjscore/classes/ezjscajaxcontent.php
 df81b14a549dc296c2754e9a4cc4db39  extension/ezjscore/classes/ezjsccachemanager.php
 0830585aab0e957df256cf90f871127d  extension/ezjscore/classes/ezjsccssoptimizer.php
-a121a753cc502a75fc503a3baa4d7382  extension/ezjscore/classes/ezjscjavascriptoptimizer.php
+f8be202004edf15732ce7df45aa27730  extension/ezjscore/classes/ezjscjavascriptoptimizer.php
 ac7619b7bf3ad62dd45760f8b3cb8c91  extension/ezjscore/classes/ezjscpacker.php
 38bac1e247d419806ea58986db8db2b5  extension/ezjscore/classes/ezjscserverfunctions.php
 bebf3086c47910b2ff7b4780f3b15659  extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php
