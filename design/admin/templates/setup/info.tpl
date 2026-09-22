@@ -47,7 +47,7 @@
    names a phar:// path, this is the first thing to read. *}
 <table class="list" cellspacing="0">
 <tr>
-    <th><label>{'Engine'|i18n( 'design/admin/setup/info' )}</label></th>
+    <th><label>{'Phar App Engine'|i18n( 'design/admin/setup/info' )}</label></th>
 </tr>
 <tr>
 <td>
@@ -96,8 +96,16 @@
     <div class="block">
         <label>{'Archive is current'|i18n( 'design/admin/setup/info' )}:</label>
         {$engine_info.matches_repo|wash}
-        {if and( ne( $engine_info.source, 'archive' ), ne( $engine_info.matches_repo, 'yes' ) )}
-            <br /><small>{'Rebuild it before switching to it; nothing is running from it now.'|i18n( 'design/admin/setup/info' )}</small>
+        {* Why, and what to do -- a bare "no" leaves a reader to work out which
+           of two version strings is which and whether it matters. *}
+        {if $engine_info.stale_reason}
+            <br /><small>{'Why'|i18n( 'design/admin/setup/info' )}: {$engine_info.stale_reason|wash}.</small>
+            <br /><small>{'To fix'|i18n( 'design/admin/setup/info' )}: <code>{$engine_info.stale_fix|wash}</code></small>
+            {if ne( $engine_info.source, 'archive' )}
+                <br /><small>{'Nothing is running from the archive at the moment, so this is not affecting the site.'|i18n( 'design/admin/setup/info' )}</small>
+            {else}
+                <br /><small>{'The site is running from this archive, so what is on disk is not what is being served.'|i18n( 'design/admin/setup/info' )}</small>
+            {/if}
         {/if}
     </div>
 

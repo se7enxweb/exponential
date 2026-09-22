@@ -202,11 +202,52 @@ if ( class_exists( 'expPhar' ) || file_exists( 'kernel/classes/expphar.php' ) )
         }
 
         $repoVersion = expPhar::version();
+        // Say what differs and what to do about it, not just that something
+        // does. "NO" on its own leaves a reader to work out which of the two
+        // versions is which, whether it matters, and what would put it right.
         $engineInfo['matches_repo'] = $engineInfo['version'] === ''
             ? $repoVersion . ' (no archive to compare)'
             : ( $engineInfo['version'] === $repoVersion
                 ? 'yes, ' . $repoVersion
-                : 'NO -- archive ' . $engineInfo['version'] . ', working tree ' . $repoVersion );
+                : 'no' );
+
+        $engineInfo['archive_version'] = $engineInfo['version'];
+        $engineInfo['tree_version'] = $repoVersion;
+        $engineInfo['stale_reason'] = '';
+        $engineInfo['stale_fix'] = '';
+
+        if ( $engineInfo['version'] !== '' && $engineInfo['version'] !== $repoVersion )
+        {
+            // The two strings are "<base>-<short sha>[-dirty]", so the parts
+            // that differ say which kind of staleness this is.
+            $archiveParts = explode( '-', $engineInfo['version'] );
+            $treeParts    = explode( '-', $repoVersion );
+            $archiveSha   = isset( $archiveParts[1] ) ? $archiveParts[1] : '';
+            $treeSha      = isset( $treeParts[1] ) ? $treeParts[1] : '';
+            $archiveDirty = in_array( 'dirty', $archiveParts, true );
+            $treeDirty    = in_array( 'dirty', $treeParts, true );
+
+            $reasons = array();
+            if ( $archiveSha !== $treeSha && $archiveSha !== '' && $treeSha !== '' )
+                $reasons[] = 'it was built from commit ' . $archiveSha
+                           . ' and the working tree is now at ' . $treeSha;
+            else if ( $archiveSha === $treeSha && ( $archiveDirty || $treeDirty ) )
+                $reasons[] = 'it was built from the same commit, but files have been'
+                           . ' edited since without being committed';
+            else
+                $reasons[] = 'the archive reports ' . $engineInfo['version']
+                           . ' and the working tree reports ' . $repoVersion;
+
+            if ( $treeDirty )
+                $reasons[] = 'the working tree has uncommitted changes, so a rebuild'
+                           . ' will capture whatever is on disk right now';
+
+            $engineInfo['stale_reason'] = implode( '; ', $reasons );
+            $engineInfo['stale_fix'] = 'php bin/php/phar.php build --allow-root-user'
+                . ( $engineInfo['source'] === 'archive'
+                    ? ', then restart the application server so it opens the new archive'
+                    : '' );
+        }
     }
 }
 

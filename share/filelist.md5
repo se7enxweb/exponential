@@ -511,7 +511,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 ac9b8cde45959bdf348cb0c2868e7e2d  design/admin/templates/setup/designextension.tpl
 c29e3a846853ed8a4a3d4f91c4874af3  design/admin/templates/setup/extensions.tpl
 9a1144de0b4042a411f4374ddf2d6050  design/admin/templates/setup/handlerextension.tpl
-d423d0570db678c25b4aee332e785a58  design/admin/templates/setup/info.tpl
+163900cb1618348947bf39b855329379  design/admin/templates/setup/info.tpl
 9728ae823c710f8bdf558810fe857aa5  design/admin/templates/setup/kerneloverride.tpl
 7f9d1052a5207dc44c8791f26b779c3c  design/admin/templates/setup/moduleextension.tpl
 377b53b0f333488da73e7236059512a4  design/admin/templates/setup/modulewizard.tpl
@@ -12325,7 +12325,7 @@ b2b886461ecd202ac56cf05c9113fd2c  kernel/setup/ezsetupfunctioncollection.php
 324bc16d51431808de8fb6774edf3649  kernel/setup/ezsetuptests.php
 b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
 004141a5f38e662b67e4b8f8408a9900  kernel/setup/handlerextension.php
-e676a89c19afea7abf3d24f61428077d  kernel/setup/info.php
+906e96d083c0fddfc9171bd4aa61efa6  kernel/setup/info.php
 cb0b8c124634b99b49697c6607147d5f  kernel/setup/kerneloverride.php
 18ecee0d07126e49f164552b002eaf7e  kernel/setup/menuconfig.php
 7a0d4cf942cc990405064a4ae519cc5b  kernel/setup/module.php
