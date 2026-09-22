@@ -23,7 +23,7 @@
 
 </head>
 
-<body style="background: url(/design/standard/images/grid-background.gif);">
+<body style="background: url({"images/grid-background.gif"|ezdesign});">
 
 {* Top box START *}
 
