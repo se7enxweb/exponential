@@ -75,9 +75,46 @@ class expPhar
      * tree -- refusing would make iterating painful -- so the name is what
      * stops the artifact claiming to be a commit it is not.
      */
+    /** How long a computed version string is reused, in seconds. */
+    const VERSION_CACHE_SECONDS = 60;
+
     public static function version()
     {
         $root = self::root();
+
+        // Remembered for a minute, because working out the "dirty" part costs
+        // a full `git status --porcelain` and this tree has thousands of
+        // untracked files. Measured here: 280ms per call.
+        //
+        // The Setup > System information view asks for this on every view, and
+        // it was most of that page -- 0.62s inside the module against 0.08s of
+        // templates and 0.009s of database for the same request. A version
+        // string on a diagnostic panel does not need to be accurate to the
+        // second, and a stale "dirty" flag for under a minute is a far smaller
+        // problem than a page that takes half a second longer to open.
+        static $memory = null;
+        $now = time();
+        if ( is_array( $memory )
+             and $memory['root'] === $root
+             and $memory['at'] > $now - self::VERSION_CACHE_SECONDS )
+        {
+            return $memory['version'];
+        }
+
+        $cacheFile = eZSys::cacheDirectory() . '/exp/engine-repo-version.php';
+        if ( file_exists( $cacheFile ) )
+        {
+            $cached = @include( $cacheFile );
+            if ( is_array( $cached )
+                 and isset( $cached['root'], $cached['version'], $cached['at'] )
+                 and $cached['root'] === $root
+                 and $cached['at'] > $now - self::VERSION_CACHE_SECONDS )
+            {
+                $memory = $cached;
+                return $cached['version'];
+            }
+        }
+
         $sha = trim( (string)@shell_exec( 'git -C ' . escapeshellarg( $root ) . ' rev-parse --short HEAD 2>/dev/null' ) );
         $dirty = trim( (string)@shell_exec( 'git -C ' . escapeshellarg( $root ) . ' status --porcelain 2>/dev/null' ) );
 
@@ -89,7 +126,16 @@ class expPhar
         if ( $sha !== '' ) $parts[] = $sha;
         if ( $dirty !== '' ) $parts[] = 'dirty';
 
-        return implode( '-', $parts );
+        $version = implode( '-', $parts );
+
+        $memory = array( 'root' => $root, 'version' => $version, 'at' => $now );
+        $directory = dirname( $cacheFile );
+        if ( !is_dir( $directory ) )
+            eZDir::mkdir( $directory, false, true );
+        @file_put_contents( $cacheFile,
+            "<?php\nreturn " . var_export( $memory, true ) . ";\n" );
+
+        return $version;
     }
 
     /**
@@ -243,6 +289,68 @@ class expPhar
     /**
      * What is on disk, and whether the runtime is using it.
      */
+    /**
+     * The version string inside the engine archive, remembered between requests.
+     *
+     * Reading it means opening the archive, and the archive is 18MB: PHP has to
+     * take in and verify its manifest before a single byte of a file inside it
+     * can be read. Measured on this installation, 290-412ms per call.
+     *
+     * The Setup > System information view calls info() on every view, so that
+     * was most of a 663ms page -- against 81ms of templates and 9ms of database
+     * for the same request -- and all of it to print one line saying which
+     * version the archive holds.
+     *
+     * The answer only changes when the archive is rebuilt, so it is cached
+     * against the archive's own size and modification time. A rebuild changes
+     * both and the next call reads through again; nothing has to remember to
+     * clear anything.
+     *
+     * @param string $path
+     * @param int $bytes
+     * @param int $mtime
+     * @return string
+     */
+    protected static function archiveVersion( $path, $bytes, $mtime )
+    {
+        static $memory = array();
+
+        $stamp = $bytes . '-' . $mtime;
+        if ( isset( $memory[$path] ) and $memory[$path]['stamp'] === $stamp )
+            return $memory[$path]['version'];
+
+        $cacheFile = eZSys::cacheDirectory() . '/exp/engine-phar-version.php';
+
+        if ( file_exists( $cacheFile ) )
+        {
+            $cached = @include( $cacheFile );
+            if ( is_array( $cached )
+                 and isset( $cached['stamp'], $cached['version'], $cached['path'] )
+                 and $cached['path'] === $path
+                 and $cached['stamp'] === $stamp )
+            {
+                $memory[$path] = $cached;
+                return $cached['version'];
+            }
+        }
+
+        $v = self::withPharWrapper( function () use ( $path ) {
+            return @file_get_contents( 'phar://' . $path . '/ENGINE_VERSION' );
+        } );
+        $version = $v === false ? '(unreadable)' : trim( $v );
+
+        $entry = array( 'path' => $path, 'stamp' => $stamp, 'version' => $version );
+        $memory[$path] = $entry;
+
+        $directory = dirname( $cacheFile );
+        if ( !is_dir( $directory ) )
+            eZDir::mkdir( $directory, false, true );
+        @file_put_contents( $cacheFile,
+            "<?php\nreturn " . var_export( $entry, true ) . ";\n" );
+
+        return $version;
+    }
+
     public static function info()
     {
         $path = self::enginePath();
@@ -260,10 +368,7 @@ class expPhar
 
         if ( $exists )
         {
-            $v = self::withPharWrapper( function () use ( $path ) {
-                return @file_get_contents( 'phar://' . $path . '/ENGINE_VERSION' );
-            } );
-            $data['version'] = $v === false ? '(unreadable)' : trim( $v );
+            $data['version'] = self::archiveVersion( $path, $data['bytes'], filemtime( $path ) );
         }
 
         return self::ok( $exists ? 'engine phar present' : 'no engine phar built', $data );
