@@ -205,3 +205,98 @@ It hid well: a browser already holding a session carried on working, and a
 session obtained over HTTP/1.1 is equally good over HTTP/2. Only a fresh
 sign-in on a connection that had negotiated h2 could see it -- every private
 window, and every automated test.
+
+---
+
+# Hardening the HTTP/2 connection
+
+An HTTP/2 connection lets one peer ask a server to hold state on its behalf:
+open streams, a header block being assembled, a body being received, bytes
+queued to send. Every one of those was unbounded until `qbix-webserver`
+0.0.4.9.
+
+None of the following need an authenticated user, a malformed frame or a bug.
+They are ordinary protocol use taken to excess, which is what makes them hard
+to see: **no request completes, so nothing is written to an access log while it
+happens.** The first sign is a worker that will not answer.
+
+| limit | default | what it stops |
+|---|---|---|
+| `concurrentStreams` | 128 | streams open at once |
+| `headerListSize` | 64 kB | CONTINUATION with no END_HEADERS |
+| `bodySize` | 64 MB | a body held whole before the application sees it |
+| `readBuffer` | 4 MB | frames announced and never completed |
+| `writeBuffer` | 8 MB | a peer that requests much and stops reading |
+| `resetStreams` | 256 | opening and cancelling, repeatedly |
+| `reflexFrames` | 1000 | PING and SETTINGS, which oblige an answer |
+| `idleSeconds` | 120 | sockets held open saying nothing |
+
+All are overridable under `Q.web.http2.limits`. A configured value of zero or
+less is **ignored** rather than read as "unbounded", because unbounded is the
+state these exist to leave behind.
+
+Two are worth knowing about specifically.
+
+**The stream limit had been advertised and never counted.** SETTINGS told every
+peer 128 for months while nothing enforced it, so a peer that believed us was
+the only thing keeping the number down. A peer is entitled to treat an
+advertised limit as real; one that does not was unopposed.
+
+**The write buffer arrived with a bug fix.** When truncation of large responses
+was fixed, what would not fit in the socket began waiting in memory — which is
+what makes a large response survive a full send buffer, and also means a peer
+that requests a great deal and then simply stops reading hands the process an
+unbounded allocation. It is the quieter half of slowloris, because the request
+was perfectly valid.
+
+Idle connections are swept by the event loop rather than by a timer each, since
+only the loop can see them together and a timer per connection is itself a
+resource a peer could multiply.
+
+## The HPACK decoder read past its buffer
+
+Found by fuzzing rather than by reading: 600 random header blocks produced reads
+as far as **119,315,352 bytes past the end**.
+
+On PHP 8 that is a warning and an empty string rather than a crash, which is
+why it went unnoticed. But a warning is written to the error log once per byte,
+at a frequency the peer chooses, and with `display_errors` on it is written into
+the response body instead.
+
+The worse half is quieter. `substr()` with a length past the end returns what
+there is, so a block declaring a 200-byte header value and supplying 12 had
+those 12 decoded **as the value**. A lying block did not fail; it produced a
+header the peer never sent.
+
+Both sites check before reading now, and a block that will not decode closes the
+connection with `COMPRESSION_ERROR`. That is what RFC 7541 requires and it is
+not bureaucratic: HPACK's dynamic table is shared by every block on the
+connection, so once one has been misread the table is wrong and every block
+after it decodes to something nobody sent. There is no partial recovery worth
+attempting.
+
+## Checking any of this
+
+The server's own suite carries a case per attack. Each **mounts** the attack
+against the connection and asserts it is refused — asserting that a limit
+constant exists would have passed against the state this replaced, where the
+stream limit was advertised and never applied.
+
+```bash
+php vendor/se7enxweb/qbix-webserver/tests/run-unit.php
+```
+
+No server, no socket, no certificate. `tests/run.sh` runs it before starting
+anything, because there is no sense binding a port to discover the frame codec
+is broken.
+
+## What this is not
+
+It is not a security proof. The known HTTP/2 exhaustion classes are bounded and
+each has a test; that is a different claim from "no remaining defects", and the
+two bugs above were found by fuzzing and measurement rather than by reading,
+which is the honest signal about what reading alone missed.
+
+`Panel.php`, `WebSocket.php`, `Trust.php` and `Autohost.php` have had no such
+pass. Memory behaviour over a long soak — a hundred thousand requests against a
+resident process — has not been measured at all.
