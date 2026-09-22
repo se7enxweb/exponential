@@ -27,7 +27,13 @@
 
 class expCacheWarm
 {
-    /** Anything slower than this was almost certainly a cache miss. */
+    /**
+     * Anything slower than this was rendered rather than served from memory.
+     *
+     * Every warm request now carries X-Cache-Refresh, so every page is
+     * rendered by design and this no longer detects a fault -- it reports how
+     * long the slow path takes, which is what a visitor would have paid.
+     */
     const MISS_THRESHOLD_MS = 300;
 
     /**
@@ -98,7 +104,66 @@ class expCacheWarm
                 break;
         }
 
-        return array_values( array_unique( $paths ) );
+        return self::withSiteaccessPrefix( $paths );
+    }
+
+    /**
+     * Add the siteaccess-prefixed form of every path, where one applies.
+     *
+     * The response cache is keyed on host and path, and this installation
+     * answers the same content at two addresses: /fitness, which reaches this
+     * siteaccess by host match, and /site/fitness, which reaches it by URI
+     * match. They are separate cache entries.
+     *
+     * A URL alias is the bare form, so warming only that filled entries nobody
+     * asks for while every page a visitor actually opened was rendered from
+     * cold. Measured before this: /fitness 116ms warm, /site/fitness 496ms
+     * cold, and the front page over a second on every first view.
+     *
+     * So warm both. The extra requests are cheap -- they are cache hits after
+     * the first cycle -- and it does not matter which form a link, a bookmark
+     * or a search result happens to use.
+     *
+     * @param array $paths
+     * @return array
+     */
+    protected static function withSiteaccessPrefix( array $paths )
+    {
+        $name = isset( $GLOBALS['eZCurrentAccess']['name'] )
+              ? (string)$GLOBALS['eZCurrentAccess']['name'] : '';
+        if ( $name === '' )
+            return array_values( array_unique( $paths ) );
+
+        // Only when URI matching is in play; with host matching alone the
+        // prefixed form is a 404 and warming it fills the log with failures.
+        $ini = eZINI::instance();
+        $order = $ini->hasVariable( 'SiteAccessSettings', 'MatchOrder' )
+               ? $ini->variable( 'SiteAccessSettings', 'MatchOrder' ) : '';
+        if ( is_array( $order ) ) $order = implode( ';', $order );
+        if ( strpos( (string)$order, 'uri' ) === false )
+            return array_values( array_unique( $paths ) );
+
+        $prefix = '/' . trim( $name, '/' );
+        $all = array();
+        foreach ( $paths as $path )
+        {
+            $all[] = $path;
+            if ( $path === '/' )
+            {
+                // Both, because both are real front doors and they are
+                // separate cache entries: a link or a bookmark may carry the
+                // trailing slash, and /site/ was still costing a full second
+                // while /site answered in 84ms.
+                $all[] = $prefix;
+                $all[] = $prefix . '/';
+                continue;
+            }
+            if ( strpos( $path, $prefix . '/' ) === 0 or $path === $prefix )
+                continue;
+            $all[] = $prefix . $path;
+        }
+
+        return array_values( array_unique( $all ) );
     }
 
     /**
@@ -119,7 +184,20 @@ class expCacheWarm
 
         $host = isset( $options['host'] ) ? $options['host'] : 'alpha.se7enx.com';
         $base = isset( $options['base'] ) ? $options['base'] : 'http://127.0.0.1:8088';
-        $concurrency = max( 1, (int)( isset( $options['concurrency'] ) ? $options['concurrency'] : 8 ) );
+        // Two, not eight.
+        //
+        // Since the warmer started sending X-Cache-Refresh every page it asks
+        // for is rendered rather than read, so a cycle is 285 full renders
+        // instead of 285 cache hits. At a concurrency above the worker count
+        // that occupies every worker for the length of the cycle, and a real
+        // visitor arriving in that window queues behind it: documents that
+        // answer in 70ms were taking 800-1650ms, and the timestamps lined up
+        // exactly with the cron minutes.
+        //
+        // The cycle exists to spare visitors the slow path, so it must never
+        // be the reason one waits. Two leaves most of the workers free and
+        // still finishes far inside the cache lifetime.
+        $concurrency = max( 1, (int)( isset( $options['concurrency'] ) ? $options['concurrency'] : 2 ) );
         $verbose = !empty( $options['verbose'] );
 
         $queue = array_values( $paths );
@@ -147,6 +225,15 @@ class expCacheWarm
                     // nobody will ever read.
                     'Accept-Encoding: gzip, deflate, br',
                     'User-Agent: Exponential-cache-warmer',
+                    // Renew the stored copy instead of reading it.
+                    //
+                    // A plain request gets a cache hit and leaves the entry's
+                    // expiry where it was, so warming on a shorter timer than
+                    // the cache lifetime still let entries lapse -- the warmer
+                    // reported everything "from_cache" while visitors in the
+                    // gap waited for a full render. This asks the server to
+                    // render and store again.
+                    'X-Cache-Refresh: 1',
                 ),
             ) );
             curl_multi_add_handle( $multi, $ch );
