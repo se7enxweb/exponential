@@ -39,7 +39,10 @@ Previously before 2022, 7x was called Brookins Consulting who was the outspoken 
 # What is Exponential?
 
 ## Recent improvements to Exponential
-Exponential (the application of interest) delivered to users worldwide by a web server (PHP built-in, Apache, Nginx, lighttpd, Among others).
+Exponential (the application of interest) is delivered to users worldwide by a web
+server. It runs behind any of the usual ones, and since 6.0.15 it also ships one
+of its own — **Exponential Velocity** — which is considerably faster. See
+[How Exponential is served](#how-exponential-is-served) below.
 
 Exponential with a full complement of all popular and available php extensions installed like SQLite3 users no longer require a dedicated database server anymore with Exponential 6.
 
@@ -63,9 +66,150 @@ access to the Internet.
 
 (Referred to as `legacy` in Exponential Platform 5.x and Ibexa OSS)
 
+
+# How Exponential is served
+
+Exponential is a PHP application, so something has to accept the request, find
+the right file, and hand PHP the work. You have a choice, and since 6.0.15 that
+choice includes a server built for this application specifically.
+
+## The traditional options
+
+Exponential runs behind any web server that can rewrite a URL — that is, turn a
+readable address like `/recipes/summer-salad` into a request for `index.php`.
+Every server below can do it, and Exponential ships or documents the rules for
+each:
+
+| Server | How it rewrites | Notes |
+|---|---|---|
+| **Apache HTTP Server** | `mod_rewrite`, `.htaccess` | The most widely used; `.htaccess` ships with Exponential |
+| **Nginx** | `try_files` / `rewrite` | Very common; rules go in the server block, not `.htaccess` |
+| **LiteSpeed** and **OpenLiteSpeed** | `.htaccess`-compatible rewrite engine | Reads Apache rules directly in most cases |
+| **Caddy** | `rewrite` / `handle` / `try_files` | Automatic HTTPS out of the box |
+| **Microsoft IIS** | URL Rewrite Module (`web.config`) | Windows hosting |
+| **lighttpd** | `mod_rewrite` | Small footprint |
+| **H2O** | `redirect` / `file.custom-handler` | HTTP/2 focused |
+| **Traefik** | `ReplacePathRegex` middleware | Usually in front of another server |
+
+And for development only:
+
+| **PHP built-in server** | `php -S` with a router script | **Development only.** Single-threaded, no concurrency, not hardened. Never expose it to the internet. |
+
+All of these work. Exponential does not require any particular one.
+
+## Exponential Velocity — the fast option
+
+**Velocity is a web server written in PHP, bundled with Exponential, that keeps
+the application loaded between requests.**
+
+It is based on the Qbix server and is developed alongside Exponential, so the
+two are tuned against each other rather than merely made compatible.
+
+### Why it is faster
+
+A traditional setup starts PHP fresh for every request: load the framework,
+read the settings, connect to the database, render, throw it all away, repeat.
+That work is the majority of a page's cost, and it is identical every time.
+
+Velocity loads the framework **once** into a parent process and forks workers
+that share it. A request arrives and the application is already in memory. On
+top of that it adds a response cache that answers a repeat request without
+waking the application at all.
+
+### What that measures as
+
+These are the figures currently documented for this stack:
+
+> **0.36 ms per cached page, 8,941 requests per second sustained, and repeat
+> visits never touch the network.**
+
+Read honestly, they mean:
+
+- **0.36 ms** is the server's own work to answer a cached page — measured as a
+  median over hundreds of requests, not a best case.
+- **8,941 req/s sustained** was measured on a 12-core machine serving a real
+  page, with **zero errors** at every concurrency tried, up to 384 connections
+  in flight.
+- **Repeat visits never touch the network** refers to the optional navigation
+  cache (a service worker): once a visitor has a page, a return visit is
+  answered by their own browser with no round trip at all.
+
+Every one of those is reproducible with scripts that ship with the project —
+they are not marketing numbers, and the methodology is written down alongside
+them.
+
+### The part that matters even if you never run Velocity
+
+**Most of the speed came from fixing Exponential and the cache, not from the
+server process model.** Those fixes apply wherever Exponential runs:
+
+- a returning visitor's reload is answered with **202 bytes instead of the whole
+  page**, because cached pages now answer conditional requests properly
+- a page's identity is derived from **its content**, so rebuilding a cache entry
+  that produced identical output no longer forces every visitor to download it
+  again
+- when a cached page expires, **one** request rebuilds it while everyone else is
+  served the existing copy — instead of every visitor present rebuilding it at
+  once
+- a "not found" is remembered instead of being rebuilt from scratch every time
+- pages are no longer shipped padded with template indentation
+
+**Exponential 6.0.15+ is fast under load on Apache or Nginx too.** Velocity
+raises the ceiling further; it is not what makes the application quick.
+
+### Using it
+
+```bash
+./bin/php/console exp:velocity start     --allow-root-user
+./bin/php/console exp:velocity status    --allow-root-user
+./bin/php/console exp:velocity restart   --allow-root-user
+./bin/php/console exp:velocity graceful  --allow-root-user   # no dropped connections
+./bin/php/console exp:velocity stop      --allow-root-user
+```
+
+`graceful` re-executes the server without releasing the listening socket, so a
+deploy does not drop requests. `status --json` is there for monitoring.
+
+Settings live in `settings/override/velocity.ini.append.php`. Every one of them
+has a default that works, so a server that configures nothing still runs.
+
+### One thing to know before you rely on it
+
+**Workers keep the application in memory between requests.** After changing a
+template, a setting or a class, restart the server — clearing caches alone will
+not dislodge what a worker already holds. The same applies if the engine is
+being loaded from its archive: rebuild it first.
+
+### When a traditional server is still the right answer
+
+- **You need per-site operating-system isolation.** If several customers must
+  not be able to read each other's data, run one Velocity instance per site
+  behind a proxy, each as its own operating-system user. A single server process
+  serving several sites is a routing convenience, not a security boundary — the
+  process that serves one site can read every file the others hold.
+- **Your hosting will not let you run a long-lived process.** Shared hosting
+  usually will not. Apache or LiteSpeed with `.htaccess` is the answer there.
+- **You already have a tuned Nginx or Apache in front.** Keep it. Velocity is
+  happy behind a reverse proxy, and that is the recommended shape for TLS and
+  certificates anyway.
+
+## In short
+
+| | Traditional server | Exponential Velocity |
+|---|---|---|
+| Application load | every request | once, shared by all workers |
+| Cached page | rendered or proxied | **0.36 ms**, no worker involved |
+| Sustained throughput | depends on pool size | **8,941 req/s** measured |
+| Repeat visit | a round trip | **no network at all** (optional) |
+| Isolation between sites | per vhost/user, as configured | one instance per site |
+| Shared hosting | yes | usually not |
+| Setup | vhost plus rewrite rules | one console command |
+
 # Requirements
 - PHP
-- (Optional) Web server. Used to deliver the website to the end user.
+- (Optional) Web server. Used to deliver the website to the end user. Apache,
+  Nginx, LiteSpeed, Caddy, IIS, lighttpd and others all work — or use the
+  bundled **Exponential Velocity**, which needs nothing installed beyond PHP.
 - (Optional) Database server. Used to store website content (and application information)
 - Composer. Used to download Exponential software packages for installation, also notebly installs the required Zeta Components php libraries.
 - Computer to run the PHP website application.
