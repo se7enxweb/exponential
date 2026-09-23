@@ -552,6 +552,46 @@ class expVelocity
     }
 
     /**
+     * The worker processes belonging to a given parent.
+     *
+     * Used to tell a reload that happened from one that did not: the parent
+     * keeps its pid across a re-exec, so only the set of children it has
+     * forked shows whether it started over.
+     *
+     * @param int $parent
+     * @return array of int, empty when there are none or ps is unavailable
+     */
+    public function childIDs( $parent )
+    {
+        $parent = (int)$parent;
+        if ( $parent <= 0 )
+            return array();
+
+        $script = $this->scriptPath();
+        $output = array();
+        @exec( 'ps -eo pid=,ppid=,args= 2>/dev/null', $output );
+
+        $pids = array();
+        foreach ( $output as $line )
+        {
+            $line = trim( $line );
+            if ( $line === '' || strpos( $line, $script ) === false )
+                continue;
+
+            $parts = preg_split( '/\s+/', $line, 3 );
+            if ( !isset( $parts[1] ) || !ctype_digit( $parts[0] )
+                 || !ctype_digit( $parts[1] ) )
+                continue;
+
+            if ( (int)$parts[1] === $parent )
+                $pids[] = (int)$parts[0];
+        }
+
+        sort( $pids );
+        return $pids;
+    }
+
+    /**
      * The parent process id, from the pid file, when it is still alive.
      *
      * @return int|false
@@ -776,17 +816,40 @@ class expVelocity
         if ( !$parent )
             return $this->restart();
 
+        // What the workers are before the reload, so we can tell afterwards
+        // whether one actually happened.
+        //
+        // Waiting for the ports to come back cannot tell us that. A re-exec
+        // keeps the listening socket open across it -- that is the whole point
+        // of the verb -- so from out here the ports never go away, the very
+        // first poll succeeds, and the reload is reported as done whether or
+        // not anything happened. It reported success for a complete no-op:
+        // parent and every worker carried on with the code they were already
+        // running, while the operator believed the new code was live.
+        //
+        // The parent keeps its pid across a re-exec, because that is what exec
+        // does, so the parent is no use as a witness either. The workers are:
+        // the re-executed parent forks a fresh set, so a changed set of
+        // children is the one observable fact that means it really happened.
+        $before = $this->childIDs( $parent );
+
         $this->control( '--reload' );
 
-        // Re-exec takes a moment and the ports go briefly before they come
-        // back, so wait for them rather than judging it immediately.
         $deadline = microtime( true ) + 20;
         while ( microtime( true ) < $deadline )
         {
-            if ( $this->listeningPorts() )
-                return $this->result( true, 'reloaded', $this->status() );
-
             usleep( (int)( self::POLL_INTERVAL * 1000000 ) );
+
+            $after = $this->childIDs( $parent );
+
+            // A reload is finished when the old workers are gone, new ones are
+            // up, and the ports are answering again. Requiring all three stops
+            // us reporting success while it is still half-way through.
+            if ( $after && !array_intersect( $before, $after )
+                 && $this->listeningPorts() )
+            {
+                return $this->result( true, 'reloaded', $this->status() );
+            }
         }
 
         // It did not come back. Leaving a half-reloaded server behind is
