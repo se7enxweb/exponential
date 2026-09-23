@@ -12119,7 +12119,7 @@ b7cff87cd037f25bcbeaa28af61b30d0  kernel/private/classes/ezpextension.php
 c209d9d72daf86a9eb0e0de775a49958  kernel/private/classes/ezpkernelresult.php
 66ad5ad85bc9fe76eac9c2dbbdbc8221  kernel/private/classes/ezpkerneltreemenu.php
 73535d510836d1f298bcd3bd889134b5  kernel/private/classes/ezpkernelweb.php
-98bbfd6d96390246668385784dfeb7a6  kernel/private/classes/ezplanguageswitcher.php
+6159d249e9b9a74e14a8bf8921c36a41  kernel/private/classes/ezplanguageswitcher.php
 2bfb085e092fb0c741d2ba0fec8996ec  kernel/private/classes/ezpmail.php
 a5c6868c21944f98d32c76a4c8c8b234  kernel/private/classes/ezpmobiledevicedetect.php
 73e449a0a86ac0c538428b6f35a0352f  kernel/private/classes/ezpmobiledevicedetectfilter.php
@@ -12692,7 +12692,7 @@ cdc509fef08d97af3f004b844a249cc2  lib/ezutils/classes/ezregexpvalidator.php
 9515bb770193f4276f459936b9356185  lib/ezutils/classes/ezsendmailtransport.php
 1103a8a67fc36b69007c45929acb88c2  lib/ezutils/classes/ezsmtptransport.php
 a5f2a07d8132fea0b48875b00ed1598b  lib/ezutils/classes/ezstringutils.php
-29e49f12dc9c530bf020f8739e262892  lib/ezutils/classes/ezsys.php
+346077f995d172a343ac5e606280d9c6  lib/ezutils/classes/ezsys.php
 2904e77b48ec0b6d96cd2b4011c8e85e  lib/ezutils/classes/ezsysinfo.php
 3e0948c25179c3f10be6504c8d8baee6  lib/ezutils/classes/eztexttool.php
 e0f80c2d6a884815857e09d969062c66  lib/ezutils/classes/eztimestamp.php

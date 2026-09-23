@@ -819,13 +819,40 @@ class eZSys
             if ( self::isSSLNow() )
             {
                 // https case
+                //
+                // A port the request actually arrived on is kept. Only when the
+                // request carries none is SSLPort consulted.
+                //
+                // This used to discard the real port unconditionally and
+                // substitute the configured one, so an installation reachable
+                // on more than one port could only ever be right about one of
+                // them. Serving the same site through a front-end web server on
+                // 443 and directly on 8080, every absolute URL built while
+                // browsing 8080 -- a canonical link, an Open Graph url, the
+                // redirect a language switch performs -- pointed at 443, and
+                // switching language moved the visitor to the other deployment.
+                //
+                // SSLPort remains the answer when the request does not say,
+                // which is the case this was written for and is unchanged.
+                $requestPort = '';
+                if ( preg_match( '/:(\d+)$/', $host, $matches ) )
+                    $requestPort = $matches[1];
+
                 $host = preg_replace( '/:\d+$/', '', $host );
 
-                $ini = eZINI::instance();
-                $sslPort = $ini->variable( 'SiteSettings', 'SSLPort' );
+                if ( $requestPort !== '' )
+                {
+                    $portString = ( (int)$requestPort == eZSSLZone::DEFAULT_SSL_PORT )
+                                ? '' : ":$requestPort";
+                }
+                else
+                {
+                    $ini = eZINI::instance();
+                    $sslPort = $ini->variable( 'SiteSettings', 'SSLPort' );
+                    $portString = ( $sslPort == eZSSLZone::DEFAULT_SSL_PORT ) ? '' : ":$sslPort";
+                }
 
-                $sslPortString = ( $sslPort == eZSSLZone::DEFAULT_SSL_PORT ) ? '' : ":$sslPort";
-                $url = "https://" . $host  . $sslPortString;
+                $url = "https://" . $host  . $portString;
             }
             else
             {

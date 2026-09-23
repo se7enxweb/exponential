@@ -280,6 +280,29 @@ class ezpLanguageSwitcher implements ezpLanguageSwitcherCapable
 
             default:
                 $host = $saIni->variable( 'SiteSettings', 'SiteURL' );
+
+                // Carry the port the visitor is actually on.
+                //
+                // SiteURL names a host and usually no port, because most
+                // installations are reached on the default one. An installation
+                // served both through a front-end server on 443 and directly on
+                // another port is not, and switching language moved the visitor
+                // from the deployment they were browsing to the other one --
+                // https://host:8080/bold_ger sent them to https://host/bold.
+                //
+                // Only when the target siteaccess names the same host and does
+                // not name a port of its own. A siteaccess on a different host,
+                // or one that has chosen a port, is left exactly as configured.
+                if ( strpos( $host, ':' ) === false )
+                {
+                    $currentHost = eZSys::hostname();
+                    if ( preg_match( '/^(.+):(\d+)$/', (string)$currentHost, $matches )
+                      && strcasecmp( $matches[1], $host ) === 0 )
+                    {
+                        $host .= ':' . $matches[2];
+                    }
+                }
+
                 $host = eZSys::serverProtocol()."://".$host;
                 break;
         }
