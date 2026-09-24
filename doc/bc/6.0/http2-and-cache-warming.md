@@ -192,8 +192,19 @@ application on the same host -- bypassed the cache on every request, while a
 real session sailed through it. 74ms from cache against about 1300ms rendered,
 for pages that were byte for byte identical.
 
-`expVelocity` now derives the list from `[Session]SessionNamePrefix` and writes
-it into the server config. Override with `[ServerSettings]CacheSkipCookies`.
+`expVelocity` now derives the list from `site.ini` and writes it into the server
+config. Override with `[ServerSettings]CacheSkipCookies`.
+
+**Corrected:** the first version of that derivation read `[Session]SessionNamePrefix`
+alone, which is only right with `SessionNameHandler=custom`. With `default` -- the
+`site.ini` default -- PHP names the session cookie, `PHPSESSID`, and the prefix is not
+used at all. An installation on the default handler got a skip list of `eZSESSID`,
+never matched its own session cookie, and with the response cache on answered a
+signed-in request from the cache or stored it for everybody else. The list is now the
+session cookie as the handler names it -- `session.name` for `default`,
+`SessionNamePrefix` for `custom` (matched as a prefix, so it covers
+`<prefix><digest>`) -- plus `is_logged_in`, which the kernel sets for signed-in
+visitors for exactly this purpose.
 
 ## Signing in did not work over HTTP/2 before 0.0.4.7
 

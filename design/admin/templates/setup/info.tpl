@@ -282,6 +282,92 @@
 </tr>
 </table>
 
+{if $response_cache}
+<table class="list" cellspacing="0">
+<tr>
+    <th><label>{'Response cache (web server)'|i18n( 'design/admin/setup/info' )}</label></th>
+</tr>
+<tr>
+<td>
+    <div class="block">
+        <label>{'Status'|i18n( 'design/admin/setup/info' )}:</label>
+        {if $response_cache.enabled}
+            {'enabled'|i18n( 'design/admin/setup/info' )}
+            {if $response_cache.default_ttl|gt( 0 )}
+                &mdash; {'pages without a lifetime of their own are kept for %seconds seconds'|i18n( 'design/admin/setup/info', '', hash( '%seconds', $response_cache.default_ttl ) )}
+            {else}
+                &mdash; {'only responses that bring their own max-age are kept; Exponential sends no-cache, so its pages are not'|i18n( 'design/admin/setup/info' )}
+            {/if}
+        {else}
+            {'disabled'|i18n( 'design/admin/setup/info' )} &mdash; {'every request is rendered'|i18n( 'design/admin/setup/info' )}
+        {/if}
+    </div>
+
+    {if $response_cache.enabled}
+    <div class="block">
+        <label>{'Hits'|i18n( 'design/admin/setup/info' )}:</label>
+        {if $response_cache.stats_available}
+            {$response_cache.hits} {'hits'|i18n( 'design/admin/setup/info' )},
+            {$response_cache.misses} {'misses'|i18n( 'design/admin/setup/info' )},
+            {$response_cache.hit_rate}&nbsp;% {'since the server started'|i18n( 'design/admin/setup/info' )}
+        {else}
+            {'not available'|i18n( 'design/admin/setup/info' )}
+        {/if}
+    </div>
+
+    <div class="block">
+        <label>{'Shared memory (APCu)'|i18n( 'design/admin/setup/info' )}:</label>
+        {if $response_cache.apcu_usable|not}
+            {if $response_cache.apcu_configured}
+                {'configured, but APCu is not enabled for this PHP process (apc.enable_cli) -- entries are kept on disk only'|i18n( 'design/admin/setup/info' )}
+            {else}
+                {'not used'|i18n( 'design/admin/setup/info' )}
+            {/if}
+        {elseif $response_cache.apcu_configured|not}
+            {'available, but switched off for the response cache'|i18n( 'design/admin/setup/info' )}
+        {else}
+            {$response_cache.apcu_entries} {'pages'|i18n( 'design/admin/setup/info' )},
+            {$response_cache.apcu_bytes|si( byte )}
+            ({'entries up to'|i18n( 'design/admin/setup/info' )} {$response_cache.apcu_max_size|si( byte )};
+            {'segment'|i18n( 'design/admin/setup/info' )} {$response_cache.apcu_segment|si( byte )},
+            {$response_cache.apcu_free|si( byte )} {'free'|i18n( 'design/admin/setup/info' )})
+        {/if}
+    </div>
+
+    <div class="block">
+        <label>{'On disk'|i18n( 'design/admin/setup/info' )}:</label>
+        {if $response_cache.file_readable|not}
+            {'the directory does not exist yet or cannot be read'|i18n( 'design/admin/setup/info' )}
+        {else}
+            {if $response_cache.file_counted_all|not}{'at least'|i18n( 'design/admin/setup/info' )} {/if}{$response_cache.file_entries} {'files'|i18n( 'design/admin/setup/info' )},
+            {$response_cache.file_bytes|si( byte )}
+        {/if}
+        <br /><small><code>{$response_cache.dir|wash}</code>{if $response_cache.dir_mode} &mdash; {'directories'|i18n( 'design/admin/setup/info' )} {$response_cache.dir_mode|wash}{/if}{if $response_cache.file_mode}, {'files'|i18n( 'design/admin/setup/info' )} {$response_cache.file_mode|wash}{/if}</small>
+    </div>
+
+    <div class="block">
+        <label>{'Not cached for visitors carrying'|i18n( 'design/admin/setup/info' )}:</label>
+        {if $response_cache.skip_cookies}
+            {foreach $response_cache.skip_cookies as $cookie}<code>{$cookie|wash}</code>{delimiter}, {/delimiter}{/foreach}
+            <small>({'matched as a prefix'|i18n( 'design/admin/setup/info' )})</small>
+        {else}
+            <strong>{'no cookie -- signed-in visitors would be served from the cache'|i18n( 'design/admin/setup/info' )}</strong>
+        {/if}
+    </div>
+
+    <div class="block">
+        <label>{'Further settings'|i18n( 'design/admin/setup/info' )}:</label>
+        {'stale pages served while one request renders'|i18n( 'design/admin/setup/info' )}: {if $response_cache.stale_while_revalidate|gt( 0 )}{$response_cache.stale_while_revalidate}&nbsp;s{else}{'no'|i18n( 'design/admin/setup/info' )}{/if};
+        {'not-found pages remembered'|i18n( 'design/admin/setup/info' )}: {if $response_cache.negative_ttl|gt( 0 )}{$response_cache.negative_ttl}&nbsp;s{else}{'no'|i18n( 'design/admin/setup/info' )}{/if};
+        {'HTML minified'|i18n( 'design/admin/setup/info' )}: {if $response_cache.minify_html}{'yes'|i18n( 'design/admin/setup/info' )}{else}{'no'|i18n( 'design/admin/setup/info' )}{/if};
+        {'expired files swept'|i18n( 'design/admin/setup/info' )}: {if $response_cache.sweep_every|gt( 0 )}{'every %seconds s'|i18n( 'design/admin/setup/info', '', hash( '%seconds', $response_cache.sweep_every ) )}{if $response_cache.sweep_max_age|gt( 0 )}, {'nothing older than %seconds s'|i18n( 'design/admin/setup/info', '', hash( '%seconds', $response_cache.sweep_max_age ) )}{/if}{else}{'no'|i18n( 'design/admin/setup/info' )}{/if}
+    </div>
+    {/if}
+</td>
+</tr>
+</table>
+{/if}
+
 <table class="list" cellspacing="0">
 <tr>
     <th><label>{'Web server (hardware)'|i18n( 'design/admin/setup/info' )}</label></th>

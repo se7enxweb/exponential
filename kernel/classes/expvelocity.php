@@ -130,6 +130,77 @@ class expVelocity
     }
 
     /**
+     * A [CacheSettings] value, falling back to its older [ServerSettings] name.
+     *
+     * The cache settings started out in [ServerSettings] as CacheSkipCookies,
+     * CacheStaleWhileRevalidate and so on, and an installation may still set
+     * them there. The new block wins when it names a value.
+     *
+     * @param string $variable name in [CacheSettings]
+     * @param string|null $legacy name in [ServerSettings], null when there is none
+     * @param mixed $default
+     * @return mixed
+     */
+    protected function cacheSetting( $variable, $legacy, $default )
+    {
+        $value = $this->setting( 'CacheSettings', $variable, null );
+        if ( $value !== null && $value !== '' )
+            return $value;
+        if ( $legacy !== null )
+        {
+            $old = $this->setting( 'ServerSettings', $legacy, null );
+            if ( $old !== null && $old !== '' )
+                return $old;
+        }
+        return $value !== null ? $value : $default;
+    }
+
+    /**
+     * The cookies that mean a visitor is signed in, as site.ini names them.
+     *
+     * @return array
+     */
+    public function sessionCookies()
+    {
+        $siteIni = eZINI::instance( 'site.ini' );
+        $handler = $siteIni->hasVariable( 'Session', 'SessionNameHandler' )
+                 ? (string)$siteIni->variable( 'Session', 'SessionNameHandler' ) : 'default';
+
+        if ( $handler === 'custom' )
+        {
+            $name = $siteIni->hasVariable( 'Session', 'SessionNamePrefix' )
+                  ? (string)$siteIni->variable( 'Session', 'SessionNamePrefix' ) : 'eZSESSID';
+        }
+        else
+        {
+            // What PHP will call it. The server process reads the same php.ini
+            // as this one, and the kernel does not rename it with this handler.
+            $name = (string)ini_get( 'session.name' );
+            if ( $name === '' )
+                $name = 'PHPSESSID';
+        }
+
+        $cookies = array();
+        if ( $name !== '' )
+            $cookies[] = $name;
+        $cookies[] = 'is_logged_in';
+        return $cookies;
+    }
+
+    /**
+     * The default siteaccess, reduced to what is safe in a file name.
+     *
+     * @return string empty when there is none
+     */
+    protected function defaultSiteAccess()
+    {
+        $siteIni = eZINI::instance( 'site.ini' );
+        $name = $siteIni->hasVariable( 'SiteSettings', 'DefaultAccess' )
+              ? (string)$siteIni->variable( 'SiteSettings', 'DefaultAccess' ) : '';
+        return preg_replace( '/[^A-Za-z0-9_-]+/', '', $name );
+    }
+
+    /**
      * Whether TLS is configured and the certificate actually exists.
      *
      * Reporting TLS as enabled when the files are missing produces a server
@@ -232,6 +303,24 @@ class expVelocity
                 $arguments[] = '-d';
                 $arguments[] = $iniOption;
             }
+        }
+
+        // APCu, when the response cache is to use it.
+        //
+        // The extension is off for command-line PHP unless apc.enable_cli
+        // says otherwise, and the server is command-line PHP. Without this
+        // CacheSettings/APCu=enabled did nothing: every entry went to disk,
+        // however small. Asked for per process, like the opcode cache above,
+        // and only when IniOptions does not already decide it.
+        $cacheOn = $this->cacheSetting( 'Enabled', null, 'enabled' );
+        $apcuOn = $this->cacheSetting( 'APCu', null, 'enabled' );
+        if ( ( $cacheOn === 'enabled' || $cacheOn === 'true' )
+             && ( $apcuOn === 'enabled' || $apcuOn === 'true' )
+             && !preg_grep( '/^\s*apc\.enable_cli\s*=/',
+                            (array)$this->setting( 'PHPSettings', 'IniOptions', array() ) ) )
+        {
+            $arguments[] = '-d';
+            $arguments[] = 'apc.enable_cli=1';
         }
 
         $arguments[] = $this->scriptPath();
@@ -372,22 +461,28 @@ class expVelocity
         // because the session path runs 529 queries instead of 122. The pages
         // were byte for byte identical apart from two packed asset filenames.
         //
-        // SessionNamePrefix, plus md5 of the siteaccess name where
-        // SessionNamePerSiteAccess is enabled. The public siteaccesses share
-        // the bare prefix; the admin has a name of its own, and an admin
-        // session is no reason to stop caching the public site.
-        $skip = $this->setting( 'ServerSettings', 'CacheSkipCookies', '' );
+        // Left empty, the list is the session cookie plus is_logged_in.
+        //
+        // Which name the session cookie has depends on SessionNameHandler.
+        // With "custom" it is SessionNamePrefix, followed by md5 of the
+        // siteaccess name where SessionNamePerSiteAccess is enabled -- the
+        // server matches a skip cookie as a prefix, so the bare prefix covers
+        // every siteaccess. With "default", the site.ini default, PHP names it
+        // and SessionNamePrefix is not used at all: the cookie is PHPSESSID.
+        // Reading only the prefix got that case wrong -- on an installation
+        // with the default handler the skip list said eZSESSID, the session
+        // cookie was PHPSESSID, and a signed-in request was answered from the
+        // cache, or stored in it for everybody else.
+        //
+        // is_logged_in is the cookie the kernel sets for exactly this purpose
+        // (ezpKernelWeb, "for use by http cache solutions"), so it is on the
+        // list whichever handler is in use.
+        $skip = $this->cacheSetting( 'SkipCookies', 'CacheSkipCookies', '' );
         if ( !is_array( $skip ) )
             $skip = $skip === '' ? array() : array( $skip );
+        $skip = array_values( array_filter( array_map( 'trim', $skip ), 'strlen' ) );
         if ( !$skip )
-        {
-            $siteIni = eZINI::instance( 'site.ini' );
-            $prefix = $siteIni->hasVariable( 'Session', 'SessionNamePrefix' )
-                    ? (string)$siteIni->variable( 'Session', 'SessionNamePrefix' )
-                    : 'eZSESSID';
-            if ( $prefix !== '' )
-                $skip = array( $prefix );
-        }
+            $skip = $this->sessionCookies();
         $cache = array();
         if ( $skip )
             $cache['skip'] = array( 'cookies' => array_values( $skip ) );
@@ -409,7 +504,7 @@ class expVelocity
         // copy that already exists. The trade is that a visitor may see a page
         // up to this many seconds past its lifetime, which for a five minute
         // lifetime is a page at most six minutes old instead of five.
-        $grace = $this->setting( 'ServerSettings', 'CacheStaleWhileRevalidate', '60' );
+        $grace = $this->cacheSetting( 'StaleWhileRevalidate', 'CacheStaleWhileRevalidate', '60' );
         if ( $grace !== '' && (int)$grace > 0 )
             $cache['staleWhileRevalidate'] = (int)$grace;
 
@@ -425,7 +520,7 @@ class expVelocity
         // Short, because the cost of being wrong is a page that exists
         // appearing not to. A minute blunts a crawl without visibly delaying
         // a publish.
-        $negative = $this->setting( 'ServerSettings', 'CacheNotFoundSeconds', '60' );
+        $negative = $this->cacheSetting( 'NotFoundSeconds', 'CacheNotFoundSeconds', '60' );
         if ( $negative !== '' && (int)$negative > 0 )
             $cache['negativeTtl'] = (int)$negative;
 
@@ -437,7 +532,7 @@ class expVelocity
         // small; the decompressed document is the point, because that is what
         // the browser parses and what the navigation cache in the browser
         // stores.
-        $minify = $this->setting( 'ServerSettings', 'MinifyCachedHtml', 'enabled' );
+        $minify = $this->cacheSetting( 'MinifyHtml', 'MinifyCachedHtml', 'enabled' );
         if ( $minify !== 'disabled' && $minify !== 'false' )
             $cache['minifyHtml'] = true;
 
@@ -467,9 +562,68 @@ class expVelocity
         //
         // It is worth switching on where the cache holds uncompressed bodies,
         // or where memory is the scarce resource rather than CPU.
-        $middleOut = $this->setting( 'ServerSettings', 'MiddleOutCompression', 'disabled' );
+        $middleOut = $this->cacheSetting( 'MiddleOutCompression', 'MiddleOutCompression', 'disabled' );
         if ( $middleOut === 'enabled' || $middleOut === 'true' )
             $cache['middleOut'] = true;
+
+        // Switch it on, and give Exponential's pages a lifetime.
+        //
+        // Everything above only tunes a cache the server keeps off unless
+        // told otherwise, and nothing here told it: an anonymous front page
+        // was rendered on every request, 27 req/s against about 3,500 from
+        // the cache on the same machine. Switching it on is not enough by
+        // itself either. Exponential sends Cache-Control: no-cache,
+        // must-revalidate, which the server does not treat as a refusal, so a
+        // page is stored only when it has a lifetime -- its own max-age, or
+        // DefaultTtl. With neither, nothing is ever cached.
+        //
+        // The trade DefaultTtl makes: an anonymous visitor may see a page up
+        // to that many seconds old, and a page whose content differs between
+        // anonymous visitors without any cookie telling them apart would be
+        // shared between them. Signed-in visitors carry the session cookie and
+        // are never served from here.
+        //
+        // Needs qbix-webserver v0.0.4.26 or later: older versions matched
+        // SkipCookies by exact name and never recognised <prefix><digest>, so
+        // a signed-in visitor's page was stored and handed to everybody else.
+        $enabled = $this->cacheSetting( 'Enabled', null, 'enabled' );
+        if ( $enabled === 'enabled' || $enabled === 'true' )
+        {
+            $cache['enabled'] = true;
+
+            $ttl = (int)$this->cacheSetting( 'DefaultTtl', null, '30' );
+            if ( $ttl > 0 )
+                $cache['defaultTtl'] = $ttl;
+
+            // Under var/, so it is cleared with everything else. Left to
+            // itself the server puts it beside the installation, in
+            // files/cache/reverse of the directory above the document root.
+            $dir = trim( (string)$this->cacheSetting( 'Dir', null, '' ) );
+            $cache['dir'] = $this->absolute( $dir !== '' ? $dir : 'var/cache/qbix-reverse' );
+
+            foreach ( array( 'FileMode' => 'fileMode', 'DirMode' => 'dirMode' ) as $variable => $key )
+            {
+                $value = trim( (string)$this->cacheSetting( $variable, null, '' ) );
+                if ( $value !== '' )
+                    $cache[$key] = $value;
+            }
+
+            // Small responses in shared memory, the rest on disk. The
+            // server uses APCu whenever the extension is loaded; this makes
+            // it a decision.
+            $apcu = $this->cacheSetting( 'APCu', null, 'enabled' );
+            $cache['apcu'] = array( 'enabled' => ( $apcu === 'enabled' || $apcu === 'true' ) );
+            $apcuMax = (int)$this->cacheSetting( 'APCuMaxSize', null, '0' );
+            if ( $apcuMax > 0 )
+                $cache['apcu']['maxSize'] = $apcuMax;
+
+            // Clearing expired files. Without MaxAge an entry whose own
+            // max-age is a year stays on disk for a year.
+            $cache['sweep'] = array(
+                'every'  => (int)$this->cacheSetting( 'SweepEvery', null, '300' ),
+                'maxAge' => (int)$this->cacheSetting( 'SweepMaxAge', null, '86400' ),
+            );
+        }
 
         if ( $cache )
             $web['cache'] = $cache;
@@ -498,6 +652,53 @@ class expVelocity
         $perConnection = (int)$this->setting( 'ServerSettings', 'KeepAliveMaxRequests', '1000' );
         if ( $perConnection > 0 )
             $webserver['keepAlive'] = array( 'max' => $perConnection );
+
+        // One request per worker, then a fresh fork.
+        //
+        // Persistent workers clear a request's state before the next one, and
+        // on this installation that clearing cost more than a new fork: the
+        // rendered front page went from 17.5-19.8 to 23.6-23.9 req/s with the
+        // mode switched and nothing else. It also leaves nothing for the
+        // clearing to miss.
+        //
+        // Needs qbix-webserver v0.0.4.25 or later: older versions lose the
+        // session cookie in this mode, so nobody can sign in.
+        $fork = $this->setting( 'ServerSettings', 'ForkPerRequest', 'enabled' );
+        if ( $fork === 'enabled' || $fork === 'true' )
+            $webserver['forkPerRequest'] = true;
+
+        // The server's access and error log.
+        //
+        // The server writes neither unless its configuration has a log
+        // section, and nothing here wrote one -- so a Velocity install had no
+        // record of a single request, only the console output in LogFile.
+        //
+        // The files are named after the default siteaccess unless named here,
+        // so installations sharing a log directory stay apart.
+        if ( $this->setting( 'LogSettings', 'Enabled', 'enabled' ) === 'enabled' )
+        {
+            $log = array(
+                'dir' => $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/log/qbix' ) ),
+            );
+            foreach ( array( 'Format' => 'format', 'FileMode' => 'fileMode',
+                             'DirMode' => 'dirMode' ) as $variable => $key )
+            {
+                $value = trim( (string)$this->setting( 'LogSettings', $variable, '' ) );
+                if ( $value !== '' )
+                    $log[$key] = $value;
+            }
+
+            $site = $this->defaultSiteAccess();
+            foreach ( array( 'AccessName' => array( 'accessName', 'access' ),
+                             'ErrorName'  => array( 'errorName', 'error' ) ) as $variable => $target )
+            {
+                $name = trim( (string)$this->setting( 'LogSettings', $variable, '' ) );
+                if ( $name === '' )
+                    $name = ( $site !== '' ? $site . '-' : '' ) . $target[1] . '.log';
+                $log[$target[0]] = $name;
+            }
+            $webserver['log'] = $log;
+        }
 
         if ( !$web && !$webserver )
             return false;
