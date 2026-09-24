@@ -211,7 +211,16 @@ if (class_exists('eZContentObject') && method_exists('eZContentObject', 'clearCa
 // touches nothing else, so it does not crash the ezjscore AJAX path (the
 // load-more buttons) the way resetting thousands of statics did. Targeted, not
 // comprehensive: name the one class the render dirties in a way that leaks.
-foreach (array('eZTemplate') as $__cls) {
+//
+// eZTemplateDesignResource is the second: it keeps the whole template location
+// map in a static (overrideArrayCache), built here for the public siteaccess.
+// Kept, every worker's first admin request that compiled a template resolved
+// its includes through that map, and wrote the result to the compiled template
+// cache -- the admin pagelayout came out including the media theme's
+// page_header.tpl, and every signed-in admin page answered 500 with
+// array_unique() on an empty ezini() value (2026-09-24). The globals above were
+// cleared; the static was not.
+foreach (array('eZTemplate', 'eZTemplateDesignResource') as $__cls) {
     if (!class_exists($__cls)) continue;
     try {
         $__rc = new ReflectionClass($__cls);
