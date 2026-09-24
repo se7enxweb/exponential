@@ -130,6 +130,38 @@ class expVelocity
     }
 
     /**
+     * The cookies that mean a visitor is signed in, as site.ini names them.
+     *
+     * @return array
+     */
+    public function sessionCookies()
+    {
+        $siteIni = eZINI::instance( 'site.ini' );
+        $handler = $siteIni->hasVariable( 'Session', 'SessionNameHandler' )
+                 ? (string)$siteIni->variable( 'Session', 'SessionNameHandler' ) : 'default';
+
+        if ( $handler === 'custom' )
+        {
+            $name = $siteIni->hasVariable( 'Session', 'SessionNamePrefix' )
+                  ? (string)$siteIni->variable( 'Session', 'SessionNamePrefix' ) : 'eZSESSID';
+        }
+        else
+        {
+            // What PHP will call it. The server process reads the same php.ini
+            // as this one, and the kernel does not rename it with this handler.
+            $name = (string)ini_get( 'session.name' );
+            if ( $name === '' )
+                $name = 'PHPSESSID';
+        }
+
+        $cookies = array();
+        if ( $name !== '' )
+            $cookies[] = $name;
+        $cookies[] = 'is_logged_in';
+        return $cookies;
+    }
+
+    /**
      * Whether TLS is configured and the certificate actually exists.
      *
      * Reporting TLS as enabled when the files are missing produces a server
@@ -372,22 +404,28 @@ class expVelocity
         // because the session path runs 529 queries instead of 122. The pages
         // were byte for byte identical apart from two packed asset filenames.
         //
-        // SessionNamePrefix, plus md5 of the siteaccess name where
-        // SessionNamePerSiteAccess is enabled. The public siteaccesses share
-        // the bare prefix; the admin has a name of its own, and an admin
-        // session is no reason to stop caching the public site.
+        // Left empty, the list is the session cookie plus is_logged_in.
+        //
+        // Which name the session cookie has depends on SessionNameHandler.
+        // With "custom" it is SessionNamePrefix, followed by md5 of the
+        // siteaccess name where SessionNamePerSiteAccess is enabled -- the
+        // server matches a skip cookie as a prefix, so the bare prefix covers
+        // every siteaccess. With "default", the site.ini default, PHP names it
+        // and SessionNamePrefix is not used at all: the cookie is PHPSESSID.
+        // Reading only the prefix got that case wrong -- on an installation
+        // with the default handler the skip list said eZSESSID, the session
+        // cookie was PHPSESSID, and a signed-in request was answered from the
+        // cache, or stored in it for everybody else.
+        //
+        // is_logged_in is the cookie the kernel sets for exactly this purpose
+        // (ezpKernelWeb, "for use by http cache solutions"), so it is on the
+        // list whichever handler is in use.
         $skip = $this->setting( 'ServerSettings', 'CacheSkipCookies', '' );
         if ( !is_array( $skip ) )
             $skip = $skip === '' ? array() : array( $skip );
+        $skip = array_values( array_filter( array_map( 'trim', $skip ), 'strlen' ) );
         if ( !$skip )
-        {
-            $siteIni = eZINI::instance( 'site.ini' );
-            $prefix = $siteIni->hasVariable( 'Session', 'SessionNamePrefix' )
-                    ? (string)$siteIni->variable( 'Session', 'SessionNamePrefix' )
-                    : 'eZSESSID';
-            if ( $prefix !== '' )
-                $skip = array( $prefix );
-        }
+            $skip = $this->sessionCookies();
         $cache = array();
         if ( $skip )
             $cache['skip'] = array( 'cookies' => array_values( $skip ) );
