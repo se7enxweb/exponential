@@ -216,7 +216,10 @@ class expPhar
             if ( substr( $rel, -4 ) !== '.php' )
                 continue;
             $out = array(); $code = 0;
-            @exec( 'php -l ' . escapeshellarg( $root . '/' . $rel ) . ' 2>&1', $out, $code );
+            // The PHP running this, not whatever "php" the PATH finds: with no
+            // php on the PATH (a minimal container, a service manager's
+            // environment) every file "failed to parse", and the build refused.
+            @exec( escapeshellarg( PHP_BINARY ) . ' -l ' . escapeshellarg( $root . '/' . $rel ) . ' 2>&1', $out, $code );
             if ( $code !== 0 )
                 $bad[] = $rel;
         }
@@ -227,9 +230,18 @@ class expPhar
                 array( 'unparsable' => array_slice( $bad, 0, 20 ) ) );
         }
 
-        @unlink( $output );
+        // Built under a temporary name beside the archive and renamed over it
+        // when complete, so there is always a whole archive at $output. This
+        // used to delete the archive first and write it in place: every build
+        // left a window with none, and two builds at once -- a restart
+        // rebuilding a stale archive while someone ran the build by hand --
+        // left nothing at all, and the server would not start
+        // ("EnginePhar names an archive that does not exist", 2026-09-24).
+        // The name must end in .phar for Phar to write it.
+        $final = $output;
+        $output = dirname( $final ) . '/.' . basename( $final, '.phar' ) . '-' . getmypid() . '-' . bin2hex( random_bytes( 4 ) ) . '.tmp.phar';
 
-        return self::withPharWrapper( function () use ( $output, $root, $files ) {
+        $result = self::withPharWrapper( function () use ( $output, $root, $files ) {
         $phar = new Phar( $output, 0, 'engine.phar' );
         $phar->startBuffering();
 
@@ -263,14 +275,22 @@ class expPhar
         unset( $phar );
 
         return self::ok(
-            'built ' . basename( $output ),
+            'built engine.phar',
             array(
-                'path'    => $output,
                 'version' => $version,
                 'files'   => count( $files ),
                 'bytes'   => filesize( $output ),
             ) );
         } );
+
+        if ( empty( $result['ok'] ) || !is_file( $output ) || !@rename( $output, $final ) )
+        {
+            @unlink( $output );
+            return empty( $result['ok'] ) ? $result : self::fail( "could not move the new archive into place at $final" );
+        }
+        clearstatcache( true, $final );
+        $result['data'] = array( 'path' => $final ) + (array)( $result['data'] ?? array() );
+        return $result;
     }
 
     /**
