@@ -371,17 +371,55 @@ class eZBasket extends eZPersistentObject
             $http = eZHTTPTool::instance();
             $sessionID = $http->sessionID();
 
-            // order_id is part of the condition on purpose. Once a basket has
-            // been turned into an order it must never be handed back as the
-            // current one: it keeps its row, and a checked-out basket whose
-            // session_id has since been blanked would otherwise match every
-            // request that reaches this point without a session id, so each
-            // add-to-basket landed in a dead basket and the shop looked empty.
-            $basketList = eZPersistentObject::fetchObjectList( eZBasket::definition(),
-                                                                null, array( "session_id" => $sessionID,
-                                                                             "order_id" => 0 ),
-                                                                null, null,
-                                                                $asObject );
+            // The session's basket is the one it is shopping with: not yet
+            // attached to an order, or attached to the temporary order of a
+            // checkout still in progress. createOrder() sets order_id at the
+            // start of checkout, so requiring order_id = 0 lost the basket for
+            // the rest of the checkout: Cancel on the confirm order view came
+            // back to an empty basket, and anything that asked for the current
+            // basket meanwhile made a new, empty one.
+            //
+            // A basket whose order is complete is never handed back -- it
+            // belongs to that order -- and a request with no session id matches
+            // no stored basket, so a checked-out basket whose session was
+            // blanked is not shared with every such request.
+            $basketList = array();
+            if ( $sessionID !== '' && $sessionID !== null )
+            {
+                $candidates = eZPersistentObject::fetchObjectList( eZBasket::definition(),
+                                                                   null, array( "session_id" => $sessionID ),
+                                                                   array( 'id' => 'desc' ), null,
+                                                                   $asObject );
+                foreach ( $candidates as $candidate )
+                {
+                    $candidateOrderID = (int)( $asObject ? $candidate->attribute( 'order_id' ) : $candidate['order_id'] );
+                    if ( $candidateOrderID == 0 )
+                    {
+                        $basketList[] = $candidate;
+                        continue;
+                    }
+                    $candidateOrder = eZOrder::fetch( $candidateOrderID );
+                    if ( !$candidateOrder instanceof eZOrder )
+                    {
+                        // Its temporary order was cancelled (purged): the
+                        // basket is the buyer's again, with its items.
+                        $basketObject = $asObject ? $candidate
+                            : eZPersistentObject::fetchObject( eZBasket::definition(), null, array( 'id' => $candidate['id'] ) );
+                        if ( $basketObject instanceof eZBasket )
+                        {
+                            $basketObject->setAttribute( 'order_id', 0 );
+                            $basketObject->store();
+                        }
+                        if ( !$asObject )
+                            $candidate['order_id'] = 0;
+                        $basketList[] = $candidate;
+                    }
+                    else if ( $candidateOrder->attribute( 'is_temporary' ) )
+                    {
+                        $basketList[] = $candidate;
+                    }
+                }
+            }
         }
 
         $currentBasket = false;
