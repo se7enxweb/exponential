@@ -47,15 +47,21 @@ class expMongoDBAdapterTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'mongo', $this->db->databaseName() );
     }
 
-    // ── query() is a no-op ────────────────────────────────────────────────────
+    // ── query() ───────────────────────────────────────────────────────────────
 
     /**
-     * @testdox query() returns false (SQL no-op — MongoDB cannot execute raw SQL)
+     * @testdox query() refuses SQL it cannot translate, and stores a translated INSERT
+     *
+     * The driver translates the INSERT statements the kernel writes into
+     * inserts on the collection; a statement it has no translation for, such
+     * as a bare SELECT, still returns false.
      */
-    public function testQueryReturnsFalse(): void
+    public function testQueryStoresATranslatedInsertAndRefusesTheRest(): void
     {
         $this->assertFalse( $this->db->query( "SELECT 1" ) );
-        $this->assertFalse( $this->db->query( "INSERT INTO ezcontentobject (id) VALUES (1)" ) );
+        $this->assertTrue( $this->db->query( "INSERT INTO ezcontentobject (id) VALUES (1)" ) );
+        $this->assertCount( 1, $this->db->stubCollections['ezcontentobject'] );
+        $this->assertSame( 1, $this->db->stubCollections['ezcontentobject'][0]['id'] );
     }
 
     // ── escapeString ──────────────────────────────────────────────────────────
@@ -260,12 +266,15 @@ class expMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox md5() wraps expression in MD5(...)
+     * @testdox md5() hashes a quoted literal itself, and wraps a column reference in MD5(...)
+     *
+     * MongoDB has no MD5 function, so the kernel's usual call -- a quoted
+     * literal going straight into a WHERE -- is answered with the hash itself.
      */
     public function testMd5(): void
     {
-        $expr = $this->db->md5( "'hello'" );
-        $this->assertStringContainsString( 'MD5', strtoupper( $expr ) );
+        $this->assertSame( "'" . md5( 'hello' ) . "'", $this->db->md5( "'hello'" ) );
+        $this->assertStringContainsString( 'MD5', strtoupper( $this->db->md5( 'name' ) ) );
     }
 
     /**

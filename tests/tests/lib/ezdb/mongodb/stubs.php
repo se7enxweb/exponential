@@ -166,6 +166,13 @@ if ( !class_exists( 'StubMongoCollection', false ) )
             return array_map( fn( $r ) => new StubMongoDocument( $r ), $rows );
         }
 
+        /**
+         * No indexes: the adapter reads a collection's PRIMARY index to find
+         * its auto_increment key, and a stub collection has none, so inserts
+         * are stored exactly as given.
+         */
+        public function listIndexes(): array { return []; }
+
         public function findOne( array $filter = [], array $options = [] ): ?StubMongoDocument
         {
             foreach ( $this->rows as $row )

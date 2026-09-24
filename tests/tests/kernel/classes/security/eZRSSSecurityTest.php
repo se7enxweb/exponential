@@ -222,11 +222,12 @@ class eZRSSSecurityTest extends PHPUnit\Framework\TestCase
     /**
      * The drop-down was relabelled so a person can tell the formats apart. The
      * values behind the labels are what is stored and what everything else
-     * reads, and they do not change.
+     * reads, and they do not change. ITUNES (Apple Podcasts) was added after
+     * them, as a new value; the existing four keep theirs, in their order.
      */
     public function testRSS07TheWordsChangedButTheStoredValuesDidNot()
     {
-        self::assertSame( array( '1.0', '2.0', 'ATOM', 'OPML' ),
+        self::assertSame( array( '1.0', '2.0', 'ATOM', 'OPML', 'ITUNES' ),
                           array_keys( eZRSSExport::formatLabels() ) );
     }
 }
