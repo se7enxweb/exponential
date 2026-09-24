@@ -369,6 +369,11 @@ At 167.6 MB per worker on 46 GB: 128 workers wants 21 GB and swaps, 512 wants
 84 GB, 2500 wants 409 GB. Those configurations are impossible rather than slow,
 and no benchmark is needed to say so. Predict before running a sweep.
 
+This per-worker figure is the one lever the warm-up moves: rendering in the
+parent before the fork cuts it roughly tenfold (see *Sharing memory across the
+pool*), which raises this ceiling accordingly — though never the throughput
+cliff or the event-loop ceiling, which memory does not touch.
+
 ## What a visitor pays
 
     dns     7 ms
@@ -391,3 +396,179 @@ fixed arrival rate is the other half and is not provided.
 
 And these figures describe *this* site's templates on *this* machine. They are
 not a property of the server and should not be quoted as one.
+
+---
+
+# The ceiling the single event loop imposes
+
+The memory arithmetic above says how many workers *fit*. There is a second,
+lower ceiling that says how many can *run*, and it is not about memory at all.
+
+The parent is one process running one event loop. It alone accepts connections
+and services the dashboard's WebSocket; the workers only handle requests handed
+to them. Fork enough workers and they starve that one process of CPU. Measured
+here: at **1250 workers on 12 cores every request timed out at 45 s** and the
+dashboard sat on a red "connecting" that never resolved — the WebSocket upgrade
+never got a turn on the CPU. Reverting to a few hundred restored service at
+once. Load was moderate throughout; this is starvation of one scheduler slot,
+not saturation.
+
+So there are three limits, and they arrive in this order as the count rises:
+the **throughput cliff** (here ~16, where p90 turns over — the real operating
+limit), the **event-loop ceiling** (a few hundred, where the parent can no
+longer stay responsive), and the **memory ceiling** (arithmetic, highest of the
+three). Tune to the first. The others are failure modes to stay well below, not
+targets.
+
+## Monitoring must not become the load
+
+A corollary learned by breaking it: the dashboard read `/proc/<pid>/smaps_rollup`
+for **every** worker to report real (PSS) memory, and it did so inside the event
+loop, every couple of seconds while a dashboard was open. The kernel computes
+`smaps_rollup` by walking all of a process's mappings, so at hundreds of workers
+that read stalled the loop long enough to wedge the whole server — the same
+symptom as the ceiling above, from an unrelated cause. The fix was to **sample**:
+read at most ~24 workers, scale the average to the count, add the parent read
+exactly. Any per-worker work on the request path has to be bounded the same way,
+because the pool size is not.
+
+---
+
+# Sharing memory across the pool: warming a render in the parent
+
+A worker builds the framework's per-request working set — compiled templates,
+the resolved layout, the object graph — the first time it serves a page, and
+keeps it: measured flat at ~209 MB private across 800 requests, once per worker.
+That set lives in the Zend allocator's arena, which is anonymous memory, which
+`fork()` shares copy-on-write. So if it is grown in the **parent**, before the
+workers exist, every worker inherits it shared and pays only for what a request
+needs beyond the shared baseline.
+
+`bin/php/velocity-warmup.php`, wired through `Q.webserver.preload` and gated by
+`[ServerSettings]PreloadWarmup`, renders a representative page in the parent
+once, before the fork. Measured effect: **~17–24 MB private per warm worker
+with it, versus ~209 MB without** — the difference between warming the whole
+pool costing a few GB and costing over a hundred.
+
+It is off by default, and the reason is the whole point of the next section: a
+render leaves state behind, the pool's statics snapshot freezes that state as
+every worker's baseline, and the wrong state frozen there is served to real
+visitors. Getting the warm-up right *is* getting the reset right.
+
+---
+
+# The global scope a persistent worker must protect
+
+This is the load-bearing lesson of the whole model, and it is not specific to
+the warm-up: **any state a request leaves in a static property or in `$GLOBALS`
+is inherited by the next request in that worker.** Under one process per request
+the OS threw that state away at exit; under a persistent worker it survives, and
+under a warm-up it is frozen into every worker at once. Three real defects here,
+each a different frozen global, each serving something wrong to a visitor,
+proved the point:
+
+- Frozen **request routing** made every url serve the front page.
+- A frozen **partial template-override map** left some page types without their
+  override.
+- A frozen **"assets already emitted" flag** made the search page skip its CSS.
+
+The state divides into three kinds. The discipline is to know which kind each
+global is, because the wrong move for one kind is the right move for another.
+
+### 1. Request-scoped — must be cleared between requests (or after a warm-up)
+
+Identity, the request, where it routed, and any handle to the outside world.
+Never share it; never let it persist. In Exponential these are:
+
+| Global / static | What it holds |
+|---|---|
+| `eZRequestedModule`, `eZRequestedModuleParams`, `eZRequestedURI` | the request and its routing |
+| `eZURIRequestInstance`, `eZGlobalRequestURI`, `eZModuleViewStack` | the parsed URI and view stack |
+| `eZSys` instance (`eZSys::setInstance(null)`) | server paths, script name, the URL the page builds links from |
+| `ezpKernel::$instance` | the kernel object holding the last request/response |
+| `eZCurrentAccess` | the resolved siteaccess |
+| `eZUserGlobalInstance*`, `eZUserBuiltins` | the current user — sharing it leaks one visitor's identity to the next |
+| `eZDBGlobalInstance` | the database connection — a forked child sharing the parent's socket interleaves traffic on the wire and corrupts it; close it before the fork |
+| `eZHTTPToolInstance`, `eZExpiryHandlerInstance` | per-request request/expiry helpers |
+| content object cache (`eZContentObject::clearCache()`) | the rendered page's objects |
+
+### 2. Caches that must be *whole* to be correct — clear so they rebuild
+
+The subtle kind. These are performance caches, not identity, so sharing them
+looks safe — but a cache populated by *one* page is **partial**, and a partial
+cache is worse than an empty one, because code trusts it as complete and stops
+looking. Two here, and both bit:
+
+| Global / static | Why partial is wrong |
+|---|---|
+| `eZOverrideTemplateCacheMap` | built for the warmed page's templates only; other page types found no override and rendered the wrong template |
+| `ezjscPackerTemplateFunctions::$loaded` (and `$persistentVariable`) | the asset packer sets `$loaded['css_files'] = true` once a page emits its stylesheet; frozen true, the next page believes its CSS is already there and omits the `<link>` — this is why the *search* page specifically came back unstyled |
+
+Clear these so each request rebuilds a complete one. The memory freed returns to
+the arena, not the OS, so clearing them does not cost the warm-up's benefit.
+
+### 3. Registries — expensive, identical every request, safe to keep
+
+Type and path registries, parsed configuration, locale and charset tables.
+These are why the warm-up saves memory: build them once, share them. Keep them.
+
+`eZDataTypes*`, `eZWorkflowTypes*`, `eZNotificationEventTypes*`,
+`eZModuleGlobalPathList`, the INI caches, the locale and charset tables, and the
+template design *configuration* (bases, settings, compiler directory — but **not**
+the override cache map from kind 2). `[ServerSettings]KeepGlobals` names the ones
+the between-request reset preserves; the warm-up's keep-set is the same idea.
+
+### How to find them in a codebase that was not built for this
+
+They do not announce themselves. Two techniques found every one above:
+
+- **Dump `$GLOBALS` after a render** and categorise each key by name and size
+  (a short script that walks `$GLOBALS` will do). The request-scoped ones stand out;
+  the big ones are usually the caches.
+- **Grep for the symptom, not the state.** The CSS defect was found not by
+  reading globals but by grepping the codebase for where `css_files` is set,
+  which led straight to the packer's `$loaded` static.
+
+And verify by behaviour, never by inspection: after any change to what the
+warm-up renders or clears, confirm that **several distinct urls return distinct
+content and each carries a resolving stylesheet.** Reset bugs are invisible in a
+single request; they only appear on the second, different one.
+
+### The list is not the fix — the discipline is
+
+Everything above is a real, load-bearing catalogue, and it is still **not
+exhaustive**. Three leaks were found and fixed by name; a fourth then appeared
+anyway — the home page rendered a different node's layout and breadcrumb,
+because the render had coupled yet another piece of request context into shared
+scope that no entry above names. That is the actual lesson, and it is stronger
+than any list: **in a `$GLOBALS`-heavy framework not built for a shared worker,
+you cannot enumerate the request-scoped state, so do not try to.** A hand-kept
+clear-list converges slowly if at all, and every gap in it ships a wrong page.
+
+The robust design is the opposite of a clear-list: snapshot the *entire*
+post-bootstrap scope once — every static property and every `$GLOBALS` key that
+exists after the kernel initialises but before any request is served — and
+restore *to that* after each request (or after a warm-up render), rather than
+naming what to remove. The engine's between-request reset already works this way
+for statics; a warm-up that renders before the snapshot has to bring `$GLOBALS`
+under the same regime, and until it does, rendering in the parent is not safe to
+enable on a site with real content. The memory it would save is rarely the
+constraint that matters — the throughput cliff and the event-loop ceiling arrive
+first — so this is an optimisation to reach for only after those are addressed,
+and only with a full page-and-asset regression to catch exactly the class of bug
+that a clear-list misses.
+
+**This was carried out, and it works.** `bin/php/velocity-warmup.php` renders in
+the parent, then resets *every* user-class static property to its declared
+default and clears the request globals, keeping only the pure config and type
+registries (`eZINI`, `eZDataType`, `eZWorkflowType`, `eZModule`, `eZExtension`,
+`eZLocale`, `eZCharsetInfo`, `eZTextCodec`) — expensive to rebuild, holding no
+request state. That single move cleared all four contamination classes at once,
+including the current-node the breadcrumb read, where naming leaks had not
+converged after three fixes. The registries stay shared, so the memory holds:
+~21 MB per warm worker against ~209 without. The one rule that made it safe was
+keeping *only* pure configuration in the skip-list — resetting the registries as
+well timed pages out and doubled memory, and keeping the template or
+content-class caches let the breadcrumb leak straight back. The verification that
+catches that specific leak is a pair: the home page must have **no** breadcrumb
+and a deep page must have **its own** — a single URL will not show it.
