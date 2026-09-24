@@ -1755,6 +1755,82 @@ class expVelocity
         return $stale;
     }
 
+    /**
+     * Rewrite a command line into the one form eZCLI::getOptions() reads, so
+     * exp:velocity takes GNU and BSD spellings alike, as the engine's own
+     * qbixconsole, qbixctl and qbixserver.php do:
+     *
+     *   --name=V  --name V  -name=V  -name V   an option that takes a value
+     *   --name    -name                        a flag
+     *   --no-name                              a flag turned off (last one wins)
+     *   --                                     ends the options
+     *
+     * Only a word that is a known long name is read as a single-dash long
+     * option, so eZ's one-letter options (-s admin, -v, -d) keep their meaning.
+     * A value option takes the next word only when it does not start with a
+     * dash. A real option named no-something (--no-colors) is left alone.
+     * Everything after "--" is handed back apart, never parsed, so it reaches
+     * the engine's own console untouched (exp:velocity ctl status -- --json).
+     *
+     * @param array $args the command line, without the program name
+     * @param array $valued long names that take a value
+     * @param array $flags long names that do not
+     * @return array array( $argumentsForEzcli, $afterDoubleDash )
+     */
+    public static function normalizeCliArguments( array $args, array $valued, array $flags )
+    {
+        $out = array();
+        $tail = array();
+        $flagAt = array();
+        $args = array_values( $args );
+        for ( $i = 0, $n = count( $args ); $i < $n; $i++ )
+        {
+            $arg = (string)$args[$i];
+            if ( $arg === '--' )
+            {
+                $tail = array_slice( $args, $i + 1 );
+                break;
+            }
+            if ( !preg_match( '/^(--?)([A-Za-z][\w-]+)(=.*)?$/s', $arg, $m ) )
+            {
+                $out[] = $arg;
+                continue;
+            }
+            $name = $m[2];
+            $eq = isset( $m[3] ) ? $m[3] : '';
+            $isValued = in_array( $name, $valued, true );
+            $isFlag = in_array( $name, $flags, true );
+            if ( !$isValued && !$isFlag && strncmp( $name, 'no-', 3 ) === 0
+                 && in_array( substr( $name, 3 ), $flags, true ) && $eq === '' )
+            {
+                // --no-json: drop every earlier --json, and add none.
+                $off = substr( $name, 3 );
+                if ( isset( $flagAt[$off] ) )
+                {
+                    foreach ( $flagAt[$off] as $at )
+                        $out[$at] = null;
+                    unset( $flagAt[$off] );
+                }
+                continue;
+            }
+            if ( !$isValued && !$isFlag )
+            {
+                $out[] = $arg;
+                continue;
+            }
+            if ( $isValued && $eq === '' && $i + 1 < $n
+                 && ( (string)$args[$i + 1] === '' || ( (string)$args[$i + 1] )[0] !== '-' ) )
+            {
+                $out[] = '--' . $name . '=' . $args[++$i];
+                continue;
+            }
+            if ( $isFlag && $eq === '' )
+                $flagAt[$name][] = count( $out );
+            $out[] = '--' . $name . $eq;
+        }
+        return array( array_values( array_filter( $out, function ( $a ) { return $a !== null; } ) ), $tail );
+    }
+
     protected function result( $ok, $message, $data = null )
     {
         return array( 'ok' => (bool)$ok, 'message' => $message, 'data' => $data );

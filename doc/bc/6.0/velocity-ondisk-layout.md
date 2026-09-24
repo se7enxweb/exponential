@@ -49,6 +49,15 @@ so an unrelated server or the test suite is not affected by a machine's `/etc/vc
 resolved paths and migration state); `exp:velocity layout migrate` runs the migration
 explicitly. Enabling creates the relative symlink; disabling removes only the symlink.
 
+### Option styles
+
+`exp:velocity` takes the same GNU and BSD spellings as the engine's own tools:
+`--keep-global=A,B`, `--keep-global A,B`, `-keep-global=A,B` and `-keep-global A,B` are
+the same, `-json` is `--json`, `--no-json` turns it off again, and everything after `--`
+is passed on untouched — `exp:velocity ctl server:status -- --json` hands `--json` to the
+engine's console rather than reading it here. eZ's one-letter options (`-s admin`, `-v`,
+`-d`) and real options named `no-…` (`--no-colors`) are unchanged.
+
 ## Who writes what
 
 - `velocity.ini` (Exponential's settings) remains the source for what `exp:velocity`

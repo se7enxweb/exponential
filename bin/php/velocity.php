@@ -59,10 +59,22 @@ $script = eZScript::instance( array( 'description' => (
 
 $script->startup();
 
+// GNU and BSD spellings alike (--name V, -name=V, -name, --no-name, --), as the
+// engine's own console takes them; eZCLI reads only --name=V and --name. Names
+// that take a value: this script's and eZScript's standard ones.
+list( $velocityArgs, $velocityTail ) = expVelocity::normalizeCliArguments(
+    array_slice( $_SERVER['argv'], 1 ),
+    array( 'keep-global', 'siteaccess', 'login', 'password' ),
+    array( 'json', 'help', 'quiet', 'verbose', 'colors', 'no-colors', 'logfiles', 'no-logfiles',
+           'allow-root-user', 'debug' ) );
+
 $options = $script->getOptions( '[json][keep-global:]', '[command]',
     array( 'json' => 'Report as JSON, for a caller that is not a person',
            'keep-global' => 'More globals to keep between requests (comma-separated), appended to the '
-                          . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command' ) );
+                          . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command' ),
+    $velocityArgs );
+// After "--": plain arguments, never read as options here.
+$options['arguments'] = array_merge( $options['arguments'], $velocityTail );
 $script->initialize();
 
 $verbs = array( 'start', 'stop', 'graceful', 'restart', 'kill', 'status',
