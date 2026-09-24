@@ -27,3 +27,4 @@ dist/
 # Private working notes in the root, never part of the project
 /qbix.md
 /qbix-settings.md
+/var/*/secrets/

@@ -125,7 +125,9 @@ class eZOrder extends eZPersistentObject
                                                       'account_name' => 'accountName',
                                                       'account_email' => 'accountEmail',
                                                       'productcollection' => 'productCollection',
-                                                      'order_info' => 'orderInfo' ),
+                                                      'order_info' => 'orderInfo',
+                                                      'receipt_url' => 'receiptURL',
+                                                      'link_url' => 'linkURL' ),
                       "keys" => array( "id" ),
                       "increment_key" => "id",
                       "class_name" => "eZOrder",
@@ -1448,6 +1450,28 @@ class eZOrder extends eZPersistentObject
         $db->query( "DELETE FROM ezorder_status_history" );
         $db->query( "DELETE FROM ezorder" );
         $db->commit();
+    }
+
+    /**
+     * The internal address of this order's permanent receipt
+     * (shop/orderreceipt/<token>); pass it through ezurl before printing.
+     *
+     * @return string
+     */
+    function receiptURL()
+    {
+        return eZShopReceipt::receiptURL( $this );
+    }
+
+    /**
+     * The internal address the system links this order to: the receipt or
+     * the order view, as shop.ini [OrderViewSettings] OrderLinkView says.
+     *
+     * @return string
+     */
+    function linkURL()
+    {
+        return eZShopReceipt::linkURL( $this );
     }
 
     function orderInfo()

@@ -393,6 +393,7 @@ return array(
       'eZShopFunctionCollection'                           => 'kernel/shop/ezshopfunctioncollection.php',
       'eZShopFunctions'                                    => 'kernel/shop/classes/ezshopfunctions.php',
       'eZShopOperationCollection'                          => 'kernel/shop/ezshopoperationcollection.php',
+      'eZShopReceipt'                                      => 'kernel/shop/classes/ezshopreceipt.php',
       'eZShuffleTranslator'                                => 'lib/ezi18n/classes/ezshuffletranslator.php',
       'eZSimplePrice'                                      => 'kernel/shop/classes/ezsimpleprice.php',
       'eZSimpleShippingType'                               => 'kernel/classes/workflowtypes/event/ezsimpleshipping/ezsimpleshippingtype.php',

@@ -22,6 +22,21 @@ $ViewList["orderview"] = array(
     "default_navigation_part" => 'ezshopnavigationpart',
     "params" => array( "OrderID" ) );
 
+// An order's permanent receipt. No policy function: the view itself decides,
+// and a visitor who is not signed in gets the login form (eZShopReceipt).
+$ViewList["orderreceipt"] = array(
+    "functions" => array(),
+    "script" => "orderreceipt.php",
+    "default_navigation_part" => 'ezshopnavigationpart',
+    "params" => array( "Token" ) );
+
+// The common misspelling, redirected permanently to orderreceipt.
+$ViewList["orderreciept"] = array(
+    "functions" => array(),
+    "script" => "orderreciept.php",
+    "default_navigation_part" => 'ezshopnavigationpart',
+    "params" => array( "Token" ) );
+
 $ViewList['updatebasket'] = array(
     'functions' => array( 'buy' ),
     'script' => 'updatebasket.php',
