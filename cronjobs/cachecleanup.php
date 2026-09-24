@@ -56,11 +56,6 @@ $now = time();
 $ageLimit = $maxAge > 0 ? $now - $maxAge : 0;
 $cacheDir = eZSys::cacheDirectory();
 $contentCacheDir = $cacheDir . '/' . eZINI::instance()->variable( 'ContentSettings', 'CacheDir' );
-// In the cache directory, next to what is renamed into it, so that the rename
-// never crosses a file system; inside a linked cache directory for its contents
-$trashName = '.cleanup-trash';
-// Every trash seen, whether made now or left behind by an interrupted run
-$trashes = array();
 // Not a PHP file: the opcode cache would keep serving an old version of it
 $stateFile = $cacheDir . '/cachecleanup-state.json';
 $state = is_file( $stateFile ) ? json_decode( (string)file_get_contents( $stateFile ), true ) : null;
@@ -87,7 +82,7 @@ $areas = array(
  * Removes the .cache files below $dir modified before $before, and the
  * directories that leaves empty.
  */
-$sweep = function( $dir, $before, &$stats, &$seen ) use ( &$sweep, &$trashes, $trashName, $sleep )
+$sweep = function( $dir, $before, &$stats, &$seen ) use ( &$sweep, $sleep )
 {
     // A link back up the tree must not send this round in circles
     $real = realpath( $dir );
@@ -105,9 +100,10 @@ $sweep = function( $dir, $before, &$stats, &$seen ) use ( &$sweep, &$trashes, $t
             continue;
 
         $path = $dir . '/' . $entry;
-        if ( $entry === $trashName )
+        // Left behind by an interrupted run; emptied at the end
+        if ( $entry === eZCacheTrash::TRASH_NAME )
         {
-            $trashes[$path] = true;
+            eZCacheTrash::register( $path );
             continue;
         }
         if ( is_dir( $path ) )
@@ -135,70 +131,10 @@ $sweep = function( $dir, $before, &$stats, &$seen ) use ( &$sweep, &$trashes, $t
     }
 };
 
-/**
- * Renames everything in $dir into $dir/.cleanup-trash, one entry at a time.
- * Links are not moved but descended into. Returns false if anything stayed.
- */
-$moveAside = function( $dir, &$moved, &$seen ) use ( &$moveAside, &$trashes, $trashName )
-{
-    $real = realpath( $dir );
-    if ( $real === false || isset( $seen[$real] ) )
-        return true;
-    $seen[$real] = true;
-
-    $entries = @scandir( $dir );
-    if ( $entries === false )
-        return false;
-
-    $trash = $dir . '/' . $trashName;
-    $complete = true;
-    foreach ( $entries as $entry )
-    {
-        if ( $entry === '.' || $entry === '..' || $entry === $trashName )
-            continue;
-
-        $path = $dir . '/' . $entry;
-        if ( is_link( $path ) )
-        {
-            if ( is_dir( $path ) && !$moveAside( $path, $moved, $seen ) )
-                $complete = false;
-            continue;
-        }
-        if ( !is_dir( $trash ) )
-            eZDir::mkdir( $trash, false, true );
-        if ( @rename( $path, $trash . '/' . $entry . '-' . md5( uniqid( 'cachecleanup' . getmypid(), true ) ) ) )
-            ++$moved;
-        else
-            $complete = false;
-    }
-    if ( is_dir( $trash ) )
-        $trashes[$trash] = true;
-    return $complete;
-};
-
-/**
- * Deletes $path and everything below it. A link is removed, never followed:
- * what it points at is not this cache's to delete. Another run may be deleting
- * the same tree at the same time, so anything already gone is simply skipped.
- */
-$remove = function( $path ) use ( &$remove )
-{
-    if ( is_link( $path ) || !is_dir( $path ) )
-        return @unlink( $path );
-    $entries = @scandir( $path );
-    if ( $entries !== false )
-    {
-        foreach ( $entries as $entry )
-        {
-            if ( $entry !== '.' && $entry !== '..' )
-                $remove( $path . '/' . $entry );
-        }
-    }
-    return @rmdir( $path );
-};
-
 // First every rename, so that no cache waits behind a sweep or a delete
-// before its new, empty tree is there to be generated into
+// before its new, empty tree is there to be generated into; nothing is deleted
+// before the end()
+eZCacheTrash::begin();
 $toSweep = array();
 foreach ( $areas as $name => $area )
 {
@@ -210,24 +146,10 @@ foreach ( $areas as $name => $area )
 
     if ( $renameAfterClear && $handled !== null && $expiry > $handled )
     {
-        $cleared = "$name: cleared at " . date( 'Y-m-d H:i:s', $expiry );
-        if ( !is_link( $dir ) )
-        {
-            $trash = $cacheDir . '/' . $trashName;
-            if ( !is_dir( $trash ) )
-                eZDir::mkdir( $trash, false, true );
-            if ( @rename( $dir, $trash . '/' . basename( $dir ) . '-' . md5( uniqid( 'cachecleanup' . getmypid(), true ) ) ) )
-            {
-                $trashes[$trash] = true;
-                $cli->output( "$cleared, moved aside" );
-                continue;
-            }
-        }
-        // A link, or a rename that failed: move what is inside instead
-        $moved = 0;
-        $seen = array();
-        $complete = $moveAside( $dir, $moved, $seen );
-        $cli->output( "$cleared, $moved entries moved aside" );
+        // As a whole into the cache directory's trash; a link is emptied into
+        // a trash inside it instead
+        $complete = eZCacheTrash::discard( $dir );
+        $cli->output( "$name: cleared at " . date( 'Y-m-d H:i:s', $expiry ) . ", moved aside" );
         if ( $complete )
             continue;
         $cli->output( "$name: not everything could be moved aside, removing the rest file by file" );
@@ -249,28 +171,11 @@ foreach ( $toSweep as $name => $area )
 
 eZFile::create( basename( $stateFile ), dirname( $stateFile ), json_encode( $state ), true );
 
-if ( is_dir( $cacheDir . '/' . $trashName ) )
-    $trashes[$cacheDir . '/' . $trashName] = true;
-
-// Last the deleting, with every cache already generating into its new tree.
-// Also whatever an interrupted run left behind, since the sweep notes those too.
-// What is inside a trash goes, the trash itself stays: another run may be
-// renaming into it right now, and would fail if it vanished under it. Every
-// entry has a name of its own, so a second run moving a cache aside again
-// before the first has finished deleting never meets the first one's entries;
-// if both delete the same tree, each file is only gone once.
-$emptied = 0;
-foreach ( array_keys( $trashes ) as $trash )
-{
-    foreach ( (array)@scandir( $trash ) as $entry )
-    {
-        if ( is_string( $entry ) && $entry !== '.' && $entry !== '..' )
-        {
-            $remove( $trash . '/' . $entry );
-            ++$emptied;
-        }
-    }
-}
+// Last the deleting, with every cache already generating into its new tree,
+// including whatever an interrupted run left behind
+eZCacheTrash::register( $cacheDir . '/' . eZCacheTrash::TRASH_NAME );
+$emptied = eZCacheTrash::flush();
+eZCacheTrash::end();
 if ( $emptied > 0 )
 {
     $cli->output( "Deleted $emptied moved-aside " . ( $emptied === 1 ? 'entry' : 'entries' ) );
