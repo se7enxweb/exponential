@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 me=$(dirname $0)
 mkdir -p $me/out

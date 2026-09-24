@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # @description Build style and design distribution packages
 # @long-description Assembles and packages Exponential design resources (CSS, images, templates) into distributable archives for inclusion in a release. Sources distcommon.sh and packagescommon.sh.
 

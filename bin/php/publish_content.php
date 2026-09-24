@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 /**
  * File containing the publish_content.php bin script

@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 /**
  * File containing the engine phar command.

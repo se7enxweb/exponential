@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # @description Display translation coverage statistics for specified locales
 # @long-description Computes and displays the percentage of strings translated for each specified locale. Supports --extension <ext> to show stats for a single extension. Usage: i18nstats.sh [LOCALE...]
 

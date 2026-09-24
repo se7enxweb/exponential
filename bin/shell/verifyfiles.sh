@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # @description Verify repository file integrity against share/filelist.md5 checksums
 # @long-description Runs md5sum --check against share/filelist.md5 and reports files that have changed or gone missing, with a summary and a meaningful exit status. Use to detect unauthorized modifications to the codebase, and to confirm a freshly generated manifest is clean.
 #

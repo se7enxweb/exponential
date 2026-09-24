@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 /**
  * File containing the updateisbn13.php bin script

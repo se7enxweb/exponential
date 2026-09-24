@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # @description Build i18n translation distribution packages for specified locales
 # @long-description Creates distributable translation packages for one or more locales. Supports --locale and an optional TARGET argument for the output directory. Usage: makei18ndist.sh [OPTIONS] LOCALE [TARGET]
 

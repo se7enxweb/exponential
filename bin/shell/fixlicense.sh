@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # @description Update legacy eZ Systems license URLs in PHP source files
 # @long-description Rewrites the old license URL (ez.no/home/licences/professional) to the current URL (ez.no/products/licences/professional) in all PHP files under the current directory using sed in-place replacement.
 

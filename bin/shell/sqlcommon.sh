@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # @description Shared database connection variables sourced by SQL scripts (not executable)
 # @long-description Initialises database connection variables (host, user, password, database) used by checkdbschema.sh, checkdbupdate.sh, redumpall.sh, sqlredump.sh and other DB scripts. Source — do not run directly.
 

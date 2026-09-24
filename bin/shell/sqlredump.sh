@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # @description Re-dump a specific SQL schema or data set to a named output file
 # @long-description Exports a single SQL schema or data dump to a specified output file. Used for regenerating individual SQL files after targeted schema modifications without doing a full redumpall.
 

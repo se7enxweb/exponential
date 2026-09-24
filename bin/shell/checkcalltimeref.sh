@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # @description Check PHP source files for deprecated call-time pass-by-reference usage
 # @long-description Scans a PHP file for the deprecated call-time pass-by-reference pattern (& before a function call argument). These patterns cause E_DEPRECATED in PHP 5.3+ and fatal errors in PHP 7+.
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # @description Control and manage i18n translation source files
 # @long-description Finds and processes PHP and template source files containing translatable strings for extraction into .ts translation files. Part of the Exponential translation workflow.
 

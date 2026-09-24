@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # @description Check PHP source files for print() statement usage
 # @long-description Searches a PHP file for print() calls. The Exponential coding standard requires echo instead of print for output. Skips SDK and scrap directories.
 

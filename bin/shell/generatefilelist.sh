@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # @description Generate share/filelist.md5 file integrity checksums for the current release
 # @long-description Walks the repository and computes MD5 checksums for all tracked files, writing the result to share/filelist.md5. This file is used by verifyfiles.sh to detect unauthorized modifications.
 # generatefilelist.sh — generate share/filelist.md5 for the current release.

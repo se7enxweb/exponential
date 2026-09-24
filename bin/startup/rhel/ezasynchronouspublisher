@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 #
 # ezasynchronouspublisher       Exponential asychronous publishing init script for RHEL and SLES
 #

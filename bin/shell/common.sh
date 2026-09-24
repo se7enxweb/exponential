@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 VERSION="5.90.0alpha1"
 VERSION_RELEASE="0"
