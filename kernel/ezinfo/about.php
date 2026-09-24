@@ -30,7 +30,9 @@ function getContributors( $pathToDir )
     {
         foreach ( $contribFiles as $contribFile )
         {
-            include_once( $contribFile );
+            // include, not include_once: a persistent worker would skip the file on later
+            // views, leaving the About page empty
+            include( $contribFile );
             if ( !isset( $contributorSettings ) )
                 continue;
 
@@ -59,7 +61,8 @@ function getThirdPartySoftware( $pathToFile )
     if ( !file_exists( $pathToFile ) )
         return array();
 
-    include_once( $pathToFile );
+    // include, not include_once, so later views in a persistent worker still read it
+    include( $pathToFile );
     if ( !isset( $thirdPartySoftware ) )
         return array();
 
@@ -115,8 +118,11 @@ function strReplaceByArray( $searches = array(), $subjects = array() )
 }
 }
 
-define( 'EZ_ABOUT_CONTRIBUTORS_DIR', 'var/storage/contributors' );
-define( 'EZ_ABOUT_THIRDPARTY_SOFTWARE_FILE', 'var/storage/third_party_software.php' );
+// Guarded: a persistent worker runs this view many times, and a second define() warns
+if ( !defined( 'EZ_ABOUT_CONTRIBUTORS_DIR' ) )
+    define( 'EZ_ABOUT_CONTRIBUTORS_DIR', 'var/storage/contributors' );
+if ( !defined( 'EZ_ABOUT_THIRDPARTY_SOFTWARE_FILE' ) )
+    define( 'EZ_ABOUT_THIRDPARTY_SOFTWARE_FILE', 'var/storage/third_party_software.php' );
 
 
 

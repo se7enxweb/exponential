@@ -130,6 +130,16 @@ class eZURLAliasML extends eZPersistentObject
      */
     private static $charset = null;
 
+    /**
+     * Per-request cache of MongoDB URL alias segment lookups, used by translate().
+     * A static property (not a function static) so a persistent worker starts
+     * each request empty: new, renamed and moved aliases are seen, and the
+     * cache cannot grow for the life of the worker.
+     *
+     * @var array
+     */
+    private static $mongoSegmentCache = array();
+
     public function __construct( $row )
     {
         parent::__construct( $row );
@@ -2100,9 +2110,9 @@ class eZURLAliasML extends eZPersistentObject
         {
             // Iterative per-segment lookup: mirrors the MySQL multi-table JOIN
             // by walking the parent→link chain one path segment at a time.
-            // Static cache avoids repeated MongoDB round-trips for the same
-            // (parent, text_md5) pair within one PHP request (e.g. admin nav links).
-            static $mongoSegmentCache = [];
+            // self::$mongoSegmentCache avoids repeated MongoDB round-trips for the
+            // same (parent, text_md5) pair within one request (e.g. admin nav links).
+            $mongoSegmentCache =& self::$mongoSegmentCache;
 
             $elements = explode( '/', $internalURIString );
             $len      = count( $elements );

@@ -63,12 +63,16 @@ class ezpExtension
 
         if ( is_readable( $XMLDependencyFile = $extensionPath . "/extension.xml" ) )
         {
-            libxml_use_internal_errors( true );
+            $useErrors = libxml_use_internal_errors( true );
             $xml = simplexml_load_file( $XMLDependencyFile );
+            $xmlErrors = libxml_get_errors();
+            // Mode and error list are process-wide: restore them, or a persistent worker keeps collecting errors
+            libxml_clear_errors();
+            libxml_use_internal_errors( $useErrors );
             // xml parsing error
             if ( $xml === false )
             {
-                eZDebug::writeError( libxml_get_errors(), "ezpExtension( {$this->name} )::getLoadingOrder()" );
+                eZDebug::writeError( $xmlErrors, "ezpExtension( {$this->name} )::getLoadingOrder()" );
                 return null;
             }
             foreach ( $xml->dependencies as $dependenciesNode )
@@ -119,12 +123,16 @@ class ezpExtension
         {
             $infoFields = array( 'name', 'description', 'version', 'copyright', 'author', 'license', 'info_url' );
 
-            libxml_use_internal_errors( true );
+            $useErrors = libxml_use_internal_errors( true );
             $xml = simplexml_load_file( $XMLFilePath );
+            $xmlErrors = libxml_get_errors();
+            // Mode and error list are process-wide: restore them, or a persistent worker keeps collecting errors
+            libxml_clear_errors();
+            libxml_use_internal_errors( $useErrors );
             // xml parsing error
             if ( $xml === false )
             {
-                eZDebug::writeError( libxml_get_errors(), "ezpExtension({$this->name})::getInfo()" );
+                eZDebug::writeError( $xmlErrors, "ezpExtension({$this->name})::getInfo()" );
                 return null;
             }
             $return = array();

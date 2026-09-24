@@ -99,7 +99,6 @@ class eZXMLTextType extends eZDataType
     {
         parent::__construct( self::DATA_TYPE_STRING, ezpI18n::tr( 'kernel/classes/datatypes', "XML block", 'Datatype name' ),
                            array( 'serialize_supported' => true ) );
-        $this->deletedStoredObjectAttribute = array();
     }
 
     /*!
@@ -785,7 +784,7 @@ class eZXMLTextType extends eZDataType
     {
         $contentObjectAttributeID = $contentObjectAttribute->attribute( "id" );
 
-        if ( isset( $this->deletedStoredObjectAttribute[ $contentObjectAttributeID ] ) )
+        if ( isset( self::$deletedStoredObjectAttribute[ $contentObjectAttributeID ] ) )
             return;
 
         $db = eZDB::instance();
@@ -852,7 +851,7 @@ class eZXMLTextType extends eZDataType
         /* If all the versions/urls of the attribute were removed, do not try to remove them again */
         if ( $version == null )
         {
-            $this->deletedStoredObjectAttribute[ $contentObjectAttributeID ] = true;
+            self::$deletedStoredObjectAttribute[ $contentObjectAttributeID ] = true;
         }
     }
 
@@ -881,10 +880,12 @@ class eZXMLTextType extends eZDataType
     }
 
     /**
-     * List of fully deleted object attributes by id, used to know when we don't need to perform additional url cleanup
+     * List of fully deleted object attributes by id, used to know when we don't need to perform additional url cleanup.
+     * Static, per request: the datatype object is a kept global in a persistent worker, so an
+     * instance property grew for the worker's life and crossed siteaccess databases.
      * @var array
      */
-    protected $deletedStoredObjectAttribute;
+    protected static $deletedStoredObjectAttribute = array();
 }
 
 eZDataType::register( eZXMLTextType::DATA_TYPE_STRING, "eZXMLTextType" );

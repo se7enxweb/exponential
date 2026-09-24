@@ -211,8 +211,11 @@ class expInfo
         $xmlLoaded = false;
         if ( is_readable( $xmlFile ) )
         {
-            libxml_use_internal_errors( true );
+            $useErrors = libxml_use_internal_errors( true );
             $xml = @simplexml_load_file( $xmlFile );
+            // Mode and error list are process-wide: restore them, or a persistent worker keeps collecting errors
+            libxml_clear_errors();
+            libxml_use_internal_errors( $useErrors );
             if ( $xml !== false )
             {
                 $xmlLoaded = true;

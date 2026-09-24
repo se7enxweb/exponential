@@ -332,6 +332,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 $this->mobileDeviceDetect->redirect();
         }
 
+        $obLevel = ob_get_level();
         ob_start();
         $this->requestInit();
 
@@ -374,9 +375,14 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         {
             $moduleResult = $this->dispatchLoop();
         }
-        catch ( Exception $e )
+        catch ( Throwable $e )
         {
-            $this->shutdown();
+            if ( $e instanceof Exception )
+                $this->shutdown();
+            // Close our buffer (a persistent worker never ends the request to do it); flushed,
+            // as request end used to, so what was buffered still goes out ahead of the error
+            if ( ob_get_level() > $obLevel )
+                ob_end_flush();
             throw $e;
         }
 
@@ -411,7 +417,12 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         if ( $this->module->exitStatus() == eZModule::STATUS_REDIRECT )
         {
             $this->shutdown();
-            return $this->redirect();
+            $redirect = $this->redirect();
+            // Close our buffer (a persistent worker never ends the request to do it), after
+            // redirect() set its headers; flushed, as request end used to, so output is unchanged
+            if ( ob_get_level() > $obLevel )
+                ob_end_flush();
+            return $redirect;
         }
 
         $uiContextName = $this->module->uiContextName();

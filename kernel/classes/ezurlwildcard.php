@@ -44,6 +44,12 @@ class eZURLWildcard extends eZPersistentObject
     protected static $cacheFiles = array();
 
     /**
+     * Per-request cache for cacheInfo()
+     * @var array|null
+     */
+    protected static $cacheInfo = null;
+
+    /**
      * Wildcards index local cache
      * @var array
      */
@@ -349,7 +355,9 @@ class eZURLWildcard extends eZPersistentObject
      */
     protected static function cacheInfo()
     {
-        static $cacheInfo = null;
+        // A static property, not a function static: a persistent worker resets it per
+        // request, so each siteaccess gets its own VarDir and database cache key
+        $cacheInfo =& self::$cacheInfo;
 
         if ( $cacheInfo == null )
         {

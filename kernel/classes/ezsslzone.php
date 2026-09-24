@@ -153,7 +153,9 @@ class eZSSLZone
             else // if the cache file exists
             {
                 // let's read its contents and return them
-                include_once( $cacheFileName ); // stores array to $pathStringsArray
+                // include, not include_once: a persistent worker would skip it on a later
+                // request and leave $pathStringsArray undefined
+                include( $cacheFileName ); // stores array to $pathStringsArray
                 return $GLOBALS['eZSSLZonesCachedPathStrings'] = $pathStringsArray;
             }
         }

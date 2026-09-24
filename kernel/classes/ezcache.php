@@ -21,13 +21,22 @@
 class eZCache
 {
     /**
+     * Per-request cache for fetchList(): its names are translated in the current
+     * locale and its flags come from the current siteaccess
+     *
+     * @var array|null
+     */
+    protected static $cacheList = null;
+
+    /**
      * Return a list of all cache items in the system.
      *
      * @return array The list of cache items
      */
     static function fetchList()
     {
-        static $cacheList = null;
+        // A static property, not a function static, so a persistent worker resets it per request
+        $cacheList =& self::$cacheList;
         if ( $cacheList === null )
         {
             $ini = eZINI::instance();

@@ -291,7 +291,9 @@ class eZTemplateDesignResource extends eZTemplateFileResource
 
             if ( $overrideCacheFile )
             {
-                include_once( $overrideCacheFile );
+                // Not include_once: the file only sets the global, and a persistent
+                // worker clears globals per request but never re-includes a file.
+                include( $overrideCacheFile );
             }
         }
 

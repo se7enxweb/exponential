@@ -636,6 +636,9 @@ class eZXMLInputParser
         );
         $errorHanding = libxml_use_internal_errors( true );
         $simpleXml = simplexml_load_string( $code );
+        // Clear before restoring: if internal errors were already on, restoring
+        // alone keeps this parse's errors queued for the life of a persistent worker
+        libxml_clear_errors();
         libxml_use_internal_errors( $errorHanding );
         return ( $simpleXml !== false );
     }

@@ -35,6 +35,15 @@
 class ezjscServerFunctionsJs extends ezjscServerFunctions
 {
     /**
+     * Per-request caches for getIndexDir() / getDesignFile(); null means "not computed".
+     * Static properties rather than function statics, so a persistent worker resets
+     * them between requests and each siteaccess gets its own index dir and design bases.
+     */
+    protected static $cachedIndexDir = null;
+    protected static $cachedDesignBases = null;
+    protected static $cachedWwwDir = null;
+
+    /**
      * Example function for returning time stamp + first function argument if present
      *
      * @param array $args
@@ -613,12 +622,11 @@ YUI( YUI3_config ).add('io-ez', function( Y )
      */
     protected static function getIndexDir()
     {
-        static $cachedIndexDir = null;
-        if ( $cachedIndexDir === null )
+        if ( self::$cachedIndexDir === null )
         {
-            $cachedIndexDir = eZSys::indexDir() . '/';
+            self::$cachedIndexDir = eZSys::indexDir() . '/';
         }
-        return $cachedIndexDir;
+        return self::$cachedIndexDir;
     }
 
     /**
@@ -628,15 +636,14 @@ YUI( YUI3_config ).add('io-ez', function( Y )
      */
     protected static function getDesignFile( $file )
     {
-        static $bases = null;
-        static $wwwDir = null;
-        if ( $bases === null )
-            $bases = eZTemplateDesignResource::allDesignBases();
-        if ( $wwwDir === null )
-            $wwwDir = eZSys::wwwDir() . '/';
+        if ( self::$cachedDesignBases === null )
+            self::$cachedDesignBases = eZTemplateDesignResource::allDesignBases();
+        if ( self::$cachedWwwDir === null )
+            self::$cachedWwwDir = eZSys::wwwDir() . '/';
+        $wwwDir = self::$cachedWwwDir;
 
         $triedFiles = array();
-        $match = eZTemplateDesignResource::fileMatch( $bases, '', $file, $triedFiles );
+        $match = eZTemplateDesignResource::fileMatch( self::$cachedDesignBases, '', $file, $triedFiles );
         if ( $match === false )
         {
             eZDebug::writeWarning( "Could not find: $file", __METHOD__ );

@@ -69,6 +69,18 @@ class ezpRestClient
      */
     public $version = null;
 
+    /**
+     * Cached owner for _owner(); false means "not fetched". Not part of getState().
+     * @var eZUser|null|false
+     */
+    private $ownerCache = false;
+
+    /**
+     * owner_id the cached owner was fetched for
+     * @var int|null
+     */
+    private $ownerCacheId = null;
+
     public function getState()
     {
         $result = array();
@@ -144,14 +156,17 @@ class ezpRestClient
      */
     protected function _owner()
     {
-        static $owner = false;
-
-        if ( $owner === false )
+        // Cached per instance (and per owner_id), not in a method static: a
+        // method static is shared by every ezpRestClient object and, under a
+        // persistent worker, by every request, so it returned the first
+        // client's owner for all later clients.
+        if ( $this->ownerCache === false || $this->ownerCacheId !== $this->owner_id )
         {
-            $owner = eZUser::fetch( $this->owner_id );
+            $this->ownerCache = eZUser::fetch( $this->owner_id );
+            $this->ownerCacheId = $this->owner_id;
         }
 
-        return $owner;
+        return $this->ownerCache;
     }
 
     public function __isset( $propertyName )

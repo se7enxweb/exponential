@@ -26,6 +26,13 @@ class eZContentObjectStateGroup extends eZPersistentObject
      */
     static $allowInternalCUD = false;
 
+    /**
+     * Per-request cache for limitations()
+     *
+     * @var array|null
+     */
+    protected static $limitationsCache = null;
+
     public static function definition()
     {
         static $definition = array( "fields" => array( "id" => array( "name" => "ID",
@@ -668,7 +675,9 @@ class eZContentObjectStateGroup extends eZPersistentObject
      */
     public static function limitations()
     {
-        static $limitations;
+        // A static property, not a function static: a persistent worker resets it per
+        // request, so a new state group and another siteaccess's database are seen
+        $limitations =& self::$limitationsCache;
 
         if ( $limitations === null )
         {

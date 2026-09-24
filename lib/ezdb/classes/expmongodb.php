@@ -57,6 +57,8 @@ class expMongoDB extends eZDBInterface
     static $ProfileCounts = array();
     static $ProfileTotal = 0;
     static $ProfileStarted = 0.0;
+    /** Whether profiling is on for this request; null until the first statement checks. */
+    static $ProfileOn = null;
 
     /**
      * Count statements for the current request.
@@ -69,7 +71,9 @@ class expMongoDB extends eZDBInterface
      */
     static function profileStatement( $what )
     {
-        static $on = null;
+        // A static property, not a function static: a persistent worker resets it per
+        // request, so the flag file is re-checked and writeProfile() re-registered each request
+        $on =& self::$ProfileOn;
         if ( $on === null )
         {
             // Absolute: php-fpm does not run from the project root, so a
@@ -157,17 +161,20 @@ class expMongoDB extends eZDBInterface
 
     public function getClient()
     {
-        static $client = null;
-        if ( $client === null ) {
-            $server = $this->Server ?: 'localhost';
-            $port   = $this->Port   ?: 27017;
-            $user   = rawurlencode( $this->User );
-            $pass   = rawurlencode( $this->Password );
-            $dbName = $this->DB;
-            $uri = 'mongodb://' . $user . ':' . $pass . '@' . $server . ':' . $port . '/' . $dbName;
-            $client = new MongoDB\Client($uri);
-        }
-        return $client;
+        // One client per connection URI, kept for the life of the process so a persistent
+        // worker reuses its connections; keyed, so a later instance for another server,
+        // user or database (another siteaccess) does not get the first instance's client.
+        // Bounded by the number of configured databases.
+        static $clients = array();
+        $server = $this->Server ?: 'localhost';
+        $port   = $this->Port   ?: 27017;
+        $user   = rawurlencode( $this->User );
+        $pass   = rawurlencode( $this->Password );
+        $dbName = $this->DB;
+        $uri = 'mongodb://' . $user . ':' . $pass . '@' . $server . ':' . $port . '/' . $dbName;
+        if ( !isset( $clients[$uri] ) )
+            $clients[$uri] = new MongoDB\Client($uri);
+        return $clients[$uri];
     }
 
     function findOne( $table, $condition, $server = false )

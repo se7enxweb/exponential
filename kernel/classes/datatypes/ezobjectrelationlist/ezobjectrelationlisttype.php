@@ -26,6 +26,15 @@ class eZObjectRelationListType extends eZDataType
 {
     const DATA_TYPE_STRING = "ezobjectrelationlist";
 
+    /**
+     * Per-request map of sub-objects already copied by initializeObjectAttribute(),
+     * [source object id][new object id] => array( 'to' => copy id, ... ). A static
+     * property, not a function static, so a persistent worker resets it per request.
+     *
+     * @var array
+     */
+    protected static $copiedRelatedAccordance = array();
+
     public function __construct()
     {
         parent::__construct( self::DATA_TYPE_STRING, ezpI18n::tr( 'kernel/classes/datatypes', "Object relations", 'Datatype name' ),
@@ -576,9 +585,7 @@ class eZObjectRelationListType extends eZDataType
     function initializeObjectAttribute( $contentObjectAttribute, $currentVersion, $originalContentObjectAttribute )
     {
 
-        static $copiedRelatedAccordance;
-        if ( !isset( $copiedRelatedAccordance ) )
-            $copiedRelatedAccordance = array();
+        $copiedRelatedAccordance =& self::$copiedRelatedAccordance;
 
         if ( $currentVersion != false )
         {

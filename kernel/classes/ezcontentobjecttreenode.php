@@ -1884,18 +1884,26 @@ class eZContentObjectTreeNode extends eZPersistentObject
     */
     static function showInvisibleNodes()
     {
-        static $cachedResult;
-
-        if ( !isset( $cachedResult ) )
+        // Cached in a static property, not a function static: under a
+        // persistent worker the property is reset between requests, so each
+        // request (and siteaccess) reads its own ShowHiddenNodes setting.
+        if ( self::$showInvisibleNodesCache === null )
         {
             $ini = eZINI::instance( 'site.ini' );
-            $cachedResult = $ini->hasVariable( 'SiteAccessSettings', 'ShowHiddenNodes' ) ?
-                            $ini->variable( 'SiteAccessSettings', 'ShowHiddenNodes' ) == 'true' :
-                            true;
+            self::$showInvisibleNodesCache = $ini->hasVariable( 'SiteAccessSettings', 'ShowHiddenNodes' ) ?
+                                             $ini->variable( 'SiteAccessSettings', 'ShowHiddenNodes' ) == 'true' :
+                                             true;
         }
 
-        return $cachedResult;
+        return self::$showInvisibleNodesCache;
     }
+
+    /**
+     * Per-request cache for showInvisibleNodes(); null means "not computed".
+     *
+     * @var bool|null
+     */
+    protected static $showInvisibleNodesCache = null;
 
     /*!
         \a static

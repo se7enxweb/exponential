@@ -14,9 +14,39 @@
 
 class eZPaymentLogger
 {
+    /**
+     * The file is opened for each write rather than held open: loggers live on
+     * workflow type objects, which a persistent worker keeps for its whole life,
+     * so a held handle would outlive log rotation and pin the file.
+     */
     public function __construct( $fileName, $mode )
     {
-        $this->file = fopen( $fileName, $mode );
+        $this->fileName = $fileName;
+        $this->mode = $mode;
+    }
+
+    /**
+     * Opens the log for one write. A truncating mode ("wt") applies to the
+     * first write only, as it did when the file was opened once; later writes append.
+     *
+     * @return resource|false
+     */
+    protected function openFile()
+    {
+        $handle = @fopen( $this->fileName, $this->mode );
+        if ( $handle && $this->mode[0] === 'w' )
+            $this->mode = 'a' . substr( $this->mode, 1 );
+        return $handle;
+    }
+
+    protected function writeLine( $line )
+    {
+        $handle = $this->openFile();
+        if ( $handle )
+        {
+            fputs( $handle, $line );
+            fclose( $handle );
+        }
     }
 
     static function CreateNew($fileName)
@@ -31,32 +61,26 @@ class eZPaymentLogger
 
     function writeString( $string, $label='' )
     {
-        if( $this->file )
-        {
-            if ( is_object( $string ) || is_array( $string ) )
-                $string = eZDebug::dumpVariable( $string );
+        if ( is_object( $string ) || is_array( $string ) )
+            $string = eZDebug::dumpVariable( $string );
 
-            if( $label == '' )
-                fputs( $this->file, $string."\r\n" );
-            else
-                fputs( $this->file, $label . ': ' . $string."\r\n" );
-        }
+        if( $label == '' )
+            $this->writeLine( $string."\r\n" );
+        else
+            $this->writeLine( $label . ': ' . $string."\r\n" );
     }
 
     function writeTimedString( $string, $label='' )
     {
-        if( $this->file )
-        {
-            $time = $this->getTime();
+        $time = $this->getTime();
 
-            if ( is_object( $string ) || is_array( $string ) )
-                $string = eZDebug::dumpVariable( $string );
+        if ( is_object( $string ) || is_array( $string ) )
+            $string = eZDebug::dumpVariable( $string );
 
-            if( $label == '' )
-                fputs( $this->file, $time. '  '. $string. "\n" );
-            else
-                fputs( $this->file, $time. '  '. $label. ': '. $string. "\n" );
-        }
+        if( $label == '' )
+            $this->writeLine( $time. '  '. $string. "\n" );
+        else
+            $this->writeLine( $time. '  '. $label. ': '. $string. "\n" );
     }
 
     static function getTime()
@@ -65,6 +89,11 @@ class eZPaymentLogger
         return $time;
     }
 
-    public $file;
+    /**
+     * @deprecated No handle is held any more (see __construct()); always null.
+     */
+    public $file = null;
+    public $fileName;
+    public $mode;
 }
 ?>

@@ -52,6 +52,16 @@
 class ezjscPacker
 {
     /**
+     * Per-request caches for getCacheDir() / getWwwDir() / getIndexDir(); null means
+     * "not computed". Static properties rather than function statics, so a persistent
+     * worker resets them between requests and each siteaccess (VarDir, index dir)
+     * gets its own values.
+     */
+    protected static $cachedCacheDir = null;
+    protected static $cachedWwwDir = null;
+    protected static $cachedIndexDir = null;
+
+    /**
      * Constructor
      */
     protected function __construct()
@@ -166,34 +176,31 @@ class ezjscPacker
     // static :: gets the cache dir
     protected static function getCacheDir()
     {
-        static $cacheDir = null;
-        if ( $cacheDir === null )
+        if ( self::$cachedCacheDir === null )
         {
-            $cacheDir = eZSys::cacheDirectory() . '/public/';
+            self::$cachedCacheDir = eZSys::cacheDirectory() . '/public/';
         }
-        return $cacheDir;
+        return self::$cachedCacheDir;
     }
 
     // static :: gets the www dir
     protected static function getWwwDir()
     {
-        static $wwwDir = null;
-        if ( $wwwDir === null )
+        if ( self::$cachedWwwDir === null )
         {
-            $wwwDir = eZSys::wwwDir() . '/';
+            self::$cachedWwwDir = eZSys::wwwDir() . '/';
         }
-        return $wwwDir;
+        return self::$cachedWwwDir;
     }
 
     // static :: gets the index dir (including index.php and siteaccess name if that is part of url)
     protected static function getIndexDir()
     {
-        static $indexDir = null;
-        if ( $indexDir === null )
+        if ( self::$cachedIndexDir === null )
         {
-            $indexDir = eZSys::indexDir() . '/';
+            self::$cachedIndexDir = eZSys::indexDir() . '/';
         }
-        return $indexDir;
+        return self::$cachedIndexDir;
     }
 
     /**

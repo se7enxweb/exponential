@@ -62,14 +62,11 @@ if ( !function_exists( 'getHTTPVariable' ) ) {
  */
 function getHTTPVariable( $variable )
 {
-    static $hasPost;
-    static $http;
-
-    if ( $http === null )
-        $http = eZHTTPTool::instance();
-
-    if ( $hasPost === null )
-        $hasPost = $http->hasPostVariable( 'AuthorizeButton' ) || $http->hasPostVariable( 'DenyButton' );
+    // Computed on every call, not kept in function statics: this function is
+    // declared once per persistent worker, so a static $hasPost would be fixed
+    // by the first request and later Authorize/Deny POSTs would be read as GET.
+    $http = eZHTTPTool::instance();
+    $hasPost = $http->hasPostVariable( 'AuthorizeButton' ) || $http->hasPostVariable( 'DenyButton' );
 
     if ( $hasPost )
         return $http->hasPostVariable( $variable ) ? $http->postVariable( $variable ) : false;

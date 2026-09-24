@@ -117,7 +117,15 @@ class eZFSFileHandler implements eZClusterFileHandlerInterface
                 eZDebugSetting::writeDebug( 'kernel-clustering', ' clearstatcache called on ' . $this->filePath, __METHOD__ );
             }
 
-            $this->metaData = file_exists( $this->filePath ) ? stat( $this->filePath ) : false;
+            // Only size and mtime are ever read from the metadata (here and
+            // through stat(), as the DFS handler returns). filesize() and
+            // filemtime() give exactly those, and under Exponential Velocity
+            // they are answered without a full stat through the file wrapper,
+            // which costs the worker a resource per call; a page stats every
+            // image variation it shows.
+            $this->metaData = file_exists( $this->filePath )
+                ? array( 'size' => filesize( $this->filePath ), 'mtime' => filemtime( $this->filePath ) )
+                : false;
             eZDebug::accumulatorStop( 'dbfile' );
         }
     }
