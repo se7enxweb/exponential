@@ -1,5 +1,9 @@
 {set-block scope=root variable=subject}{"Order"|i18n("design/standard/shop")}: {$order.order_nr}{/set-block}
 {"Order"|i18n("design/standard/shop")}: {$order.order_nr}
+{if $order.link_url|begins_with( '/shop/orderreceipt/' )}
+{"Your receipt (sign in to view it; the address does not expire)"|i18n("design/standard/shop")}:
+{$order.link_url|ezurl( 'no', 'full' )}
+{/if}
 
 {shop_account_view_gui view=ascii order=$order}
 

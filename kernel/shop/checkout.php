@@ -95,7 +95,7 @@ if ( $order instanceof eZOrder )
             if ( $order->attribute( 'is_temporary' ) == 0 )
             {
                 $http->removeSessionVariable( "CheckoutAttempt" );
-                $module->redirectTo( '/shop/orderview/' . $orderID );
+                $module->redirectTo( eZShopReceipt::linkURLForID( $orderID ) );
                 return;
             }
             else
@@ -141,7 +141,7 @@ if ( $order instanceof eZOrder )
             }
         }
    }
-   $module->redirectTo( '/shop/orderview/' . $orderID );
+   $module->redirectTo( eZShopReceipt::linkURLForID( $orderID ) );
    return;
 
 }

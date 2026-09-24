@@ -34,7 +34,7 @@ if ( !$order->attribute( 'is_temporary' ) )
 {
     $http->removeSessionVariable( 'MyTemporaryOrderID' );
     if ( $http->hasSessionVariable( 'UserOrderID' ) && $http->sessionVariable( 'UserOrderID' ) == $order->attribute( 'id' ) )
-        $module->redirectTo( '/shop/orderview/' . $order->attribute( 'id' ) . '/' );
+        $module->redirectTo( eZShopReceipt::linkURL( $order ) );
     else
         $module->redirectTo( '/shop/' . eZBasket::viewName() . '/' );
     return;
