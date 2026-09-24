@@ -15,6 +15,9 @@
  *   extension/<ext>/bin/shell/<name>  → ext:<ext>:sh:<name>
  *   extension/<ext>/bin/<name>.sh     → ext:<ext>:<name>
  *
+ * A bin/php script may declare shorthand names with an "@alias <name>" tag in
+ * its docblock (e.g. velocity.php declares "@alias vc", so exp:vc runs it).
+ *
  * Usage:
  *   ./bin/php/console                            Show help
  *   ./bin/php/console --help | -h                Show help
@@ -267,6 +270,43 @@ $extractDescription = function( $filePath, $type )
 };
 
 // ══════════════════════════════════════════════════════════════════════════════
+//  Alias extractor — a script declares its own shorthand names with an
+//  @alias tag in its docblock, so aliases stay as zero-configuration as the
+//  commands themselves:
+//
+//    * @alias vc            → exp:vc   (bare name takes the script's namespace)
+//    * @alias exp:vc        → exp:vc   (a full name is used as written)
+//
+//  Several names may be given, comma or space separated, or on several lines.
+//  An alias never shadows a real command of the same name; the real one wins.
+// ══════════════════════════════════════════════════════════════════════════════
+
+$extractAliases = function( $filePath, $namespace )
+{
+    $handle = @fopen( $filePath, 'r' );
+    if ( $handle === false ) return array();
+
+    $aliases = array(); $n = 0; $inBlock = false;
+    while ( !feof( $handle ) && $n < 100 )
+    {
+        $ln = fgets( $handle );
+        if ( $ln === false ) break;
+        $n++;
+        if ( strpos( $ln, '/**' ) !== false ) { $inBlock = true; continue; }
+        if ( !$inBlock ) continue;
+        if ( strpos( $ln, '*/' ) !== false ) break;
+        if ( !preg_match( '/\*\s*@alias\s+(.+)$/', rtrim( $ln ), $m ) ) continue;
+        foreach ( preg_split( '/[\s,]+/', trim( $m[1] ), -1, PREG_SPLIT_NO_EMPTY ) as $a )
+        {
+            $full = ( strpos( $a, ':' ) === false ) ? $namespace . ':' . $a : $a;
+            if ( !in_array( $full, $aliases, true ) ) $aliases[] = $full;
+        }
+    }
+    fclose( $handle );
+    return $aliases;
+};
+
+// ══════════════════════════════════════════════════════════════════════════════
 //  Command discovery — scans all supported script locations at runtime.
 //
 //  Namespace → path mapping:
@@ -282,7 +322,7 @@ $extractDescription = function( $filePath, $type )
 //    crontab:edit            Open the system crontab in $EDITOR
 // ══════════════════════════════════════════════════════════════════════════════
 
-$discoverCommands = function() use ( $rootDir, $extractDescription )
+$discoverCommands = function() use ( $rootDir, $extractDescription, $extractAliases )
 {
     $commands  = array();
     $shellLibs = array( 'common', 'distcommon', 'packagescommon', 'extensionscommon', 'sqlcommon' );
@@ -300,6 +340,7 @@ $discoverCommands = function() use ( $rootDir, $extractDescription )
             'type'        => 'php',
             'binary'      => PHP_BINARY,
             'description' => $extractDescription( $fp, 'php' ),
+            'aliases'     => $extractAliases( $fp, 'exp' ),
         );
     }
 
@@ -611,6 +652,8 @@ $listCommands = function( $nsFilter = null )
         {
             $padded = str_pad( $c['name'], $maxLen + 2 );
             $desc   = $c['description'] ?: $dim( '(no description)' );
+            if ( !empty( $c['aliases'] ) )
+                $desc .= '  ' . $dim( '(alias: ' . implode( ', ', $c['aliases'] ) . ')' );
             $out( '  ' . $green( $padded ) . '  ' . $desc );
         }
     }
@@ -835,8 +878,20 @@ if ( $commandInput === 'help' )
 // ── Command registry lookup ───────────────────────────────────────────────────
 $allCommands = $discoverCommands();
 
+// Alias map (alias => real command name), from each script's @alias tags.
+// A real command always wins over an alias that happens to share its name.
+$aliasMap = array();
+foreach ( $allCommands as $realName => $cmd )
+    if ( !empty( $cmd['aliases'] ) )
+        foreach ( $cmd['aliases'] as $alias )
+            if ( !isset( $allCommands[ $alias ] ) && !isset( $aliasMap[ $alias ] ) )
+                $aliasMap[ $alias ] = $realName;
+
 if ( isset( $allCommands[ $commandInput ] ) )
     $runCommand( $allCommands[ $commandInput ], $forwardArgs );
+
+if ( isset( $aliasMap[ $commandInput ] ) )
+    $runCommand( $allCommands[ $aliasMap[ $commandInput ] ], $forwardArgs );
 
 // ── Bare-name shortcut — try exp: → shell: → bin: (no colon in input) ─────────
 if ( strpos( $commandInput, ':' ) === false )
@@ -846,6 +901,8 @@ if ( strpos( $commandInput, ':' ) === false )
         $candidate = $prefix . $commandInput;
         if ( isset( $allCommands[ $candidate ] ) )
             $runCommand( $allCommands[ $candidate ], $forwardArgs );
+        if ( isset( $aliasMap[ $candidate ] ) )
+            $runCommand( $allCommands[ $aliasMap[ $candidate ] ], $forwardArgs );
     }
 }
 
@@ -853,7 +910,7 @@ if ( strpos( $commandInput, ':' ) === false )
 //  Unknown command — fuzzy suggestion + error
 // ══════════════════════════════════════════════════════════════════════════════
 
-$suggestion = $findNearest( $commandInput, $allCommands );
+$suggestion = $findNearest( $commandInput, $allCommands + $aliasMap );
 
 $showBanner();
 
