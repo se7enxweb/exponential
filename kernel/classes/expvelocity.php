@@ -44,6 +44,31 @@ class expVelocity
     const POLL_INTERVAL = 0.25;
 
     /**
+     * Globals this kernel needs kept between requests, whatever the site.
+     *
+     * Each is a registry filled by a file the kernel reaches with include_once,
+     * which cannot be refilled once cleared because include_once will not run
+     * that file again: clearing one leaves a worker unable to resolve a
+     * datatype, a workflow event, a notification event or a payment gateway
+     * for the rest of its life. They are facts about the kernel, not choices
+     * of an installation, so they live here rather than in a file under /etc
+     * or a setting someone has to remember. Settings and --keep-global append
+     * to this list; [ApplicationSettings] KeepGlobalsDefaults=disabled drops it.
+     */
+    const DEFAULT_KEEP_GLOBALS = array(
+        'eZDataTypes', 'eZDataTypeObjects', 'eZDataTypeAllowedTypes',
+        'eZWorkflowTypes', 'eZWorkflowTypeObjects', 'eZWorkflowAllowedTypes',
+        'eZNotificationEventTypes', 'eZNotificationEventTypeObjects', 'eZNotificationEventTypeAllowedTypes',
+        'eZPaymentGateways',
+    );
+
+    /** @var array names added for this run, from --keep-global */
+    protected $extraKeepGlobals = array();
+
+    /** Used when the caller's PATH is empty, and searched after it for executables. */
+    const DEFAULT_PATH = '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin';
+
+    /**
      * @var eZINI
      */
     protected $ini;
@@ -52,6 +77,11 @@ class expVelocity
      * @var string Absolute path to the installation root.
      */
     protected $rootDir;
+
+    /**
+     * @var string What the configuration tree said on the last start, for its message.
+     */
+    protected $layoutNote = '';
 
     public function __construct( $iniName = 'velocity.ini' )
     {
@@ -335,8 +365,8 @@ class expVelocity
         if ( $this->httpsEnabled() )
             $arguments[] = '--https-port=' . (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 );
 
-        $keepGlobals = $this->setting( 'ApplicationSettings', 'KeepGlobals', array() );
-        if ( is_array( $keepGlobals ) && $keepGlobals )
+        $keepGlobals = $this->keepGlobals();
+        if ( $keepGlobals )
             $arguments[] = '--keep-globals=' . implode( ',', $keepGlobals );
 
         $extra = $this->setting( 'ControlSettings', 'ExtraOptions', array() );
@@ -548,8 +578,8 @@ class expVelocity
         // bytes as plain gzip against 1,290,140 with the dictionary, 20.7%
         // smaller, every one round-tripping exactly.
         //
-        // Build the dictionary before switching this on, with
-        // ai/bin/one/build_middle_out_dictionary_from_cache.php. Without one,
+        // Build the dictionary from a warm cache before switching this on
+        // (the engine's middle-out tooling). Without one,
         // entries are simply stored the ordinary way; nothing breaks.
         //
         // MEASURED HERE AND LEFT OFF. Switched on against this cache, 271 of
@@ -598,8 +628,7 @@ class expVelocity
             // Under var/, so it is cleared with everything else. Left to
             // itself the server puts it beside the installation, in
             // files/cache/reverse of the directory above the document root.
-            $dir = trim( (string)$this->cacheSetting( 'Dir', null, '' ) );
-            $cache['dir'] = $this->absolute( $dir !== '' ? $dir : 'var/cache/qbix-reverse' );
+            $cache['dir'] = $this->cacheDirectory();
 
             foreach ( array( 'FileMode' => 'fileMode', 'DirMode' => 'dirMode' ) as $variable => $key )
             {
@@ -653,6 +682,64 @@ class expVelocity
         if ( $perConnection > 0 )
             $webserver['keepAlive'] = array( 'max' => $perConnection );
 
+        // Product name shown across the served /Q/ views -- dashboard,
+        // docs, panel, manifest. A parameter with a default so the server
+        // stays upstream ("Qbix Server") unless this installation names
+        // itself. This branch sets it to Exponential Velocity in velocity.ini.
+        $brand = trim( (string)$this->setting( 'ServerSettings', 'Brand', '' ) );
+        if ( $brand !== '' )
+            $webserver['brand'] = $brand;
+
+        // Where the brand name and the maintainer line link. All optional; a
+        // fork fills them, the server links nothing it was not given.
+        $brandUrl = trim( (string)$this->setting( 'ServerSettings', 'BrandUrl', '' ) );
+        if ( $brandUrl !== '' )
+            $webserver['brandUrl'] = $brandUrl;
+        $maintainer = trim( (string)$this->setting( 'ServerSettings', 'Maintainer', '' ) );
+        if ( $maintainer !== '' )
+            $webserver['maintainer'] = $maintainer;
+        $maintainerUrl = trim( (string)$this->setting( 'ServerSettings', 'MaintainerUrl', '' ) );
+        if ( $maintainerUrl !== '' )
+            $webserver['maintainerUrl'] = $maintainerUrl;
+
+        // The icon, colours and link-preview text of the /Q/ views: the
+        // favicon, home-screen icons, web app manifest and the image a shared
+        // link shows. Empty keeps the server's own (the Qbix logo under its
+        // default name, otherwise a mark drawn from the brand's first letter).
+        // Paths resolve against the installation root.
+        foreach ( array( 'BrandMark' => 'brandMark', 'BrandColor' => 'brandColor',
+                         'BrandAccent' => 'brandAccent', 'BrandBackground' => 'brandBackground',
+                         'BrandDescription' => 'brandDescription' ) as $iniName => $key )
+        {
+            $value = trim( (string)$this->setting( 'ServerSettings', $iniName, '' ) );
+            if ( $value !== '' )
+                $webserver[$key] = $value;
+        }
+        foreach ( array( 'BrandIcon' => 'brandIcon', 'BrandOgImage' => 'brandOgImage' ) as $iniName => $key )
+        {
+            $value = trim( (string)$this->setting( 'ServerSettings', $iniName, '' ) );
+            if ( $value !== '' )
+                $webserver[$key] = $this->absolute( $value );
+        }
+
+        // Parent warm-up: load the kernel and render a page in the parent
+        // before it forks, so workers inherit it shared instead of each
+        // building it privately. Off by default; the script closes the DB
+        // before returning so no worker shares the parent's connection.
+        //
+        // It goes to Q.webserver.warmup, never Q.webserver.preload. The server
+        // requires a preload file before its source transform exists, so a
+        // kernel loaded there keeps the real exit and header() in every
+        // worker: eZExecution::cleanExit() then ends the worker rather than
+        // the request, and every ezjscore call (the load-more buttons) answers
+        // 502 "Worker died". The warm-up key is read after the transform.
+        $warmup = trim( (string)$this->setting( 'ServerSettings', 'PreloadWarmup', 'disabled' ) );
+        if ( in_array( strtolower( $warmup ), array( 'enabled', 'true', '1', 'yes' ), true ) )
+        {
+            $warmScript = $this->absolute( 'bin/php/velocity-warmup.php' );
+            if ( is_file( $warmScript ) )
+                $webserver['warmup'] = $warmScript;
+        }
         // One request per worker, then a fresh fork.
         //
         // Persistent workers clear a request's state before the next one, and
@@ -700,12 +787,53 @@ class expVelocity
             $webserver['log'] = $log;
         }
 
-        if ( !$web && !$webserver )
-            return false;
+        // A dynamic worker pool.
+        //
+        // Every worker costs its own memory from the moment it is forked:
+        // measured here as ~10 MB of real RAM each (AnonPages), idle or not,
+        // because that much of the warmed parent is copied at fork. A fixed
+        // pool of 590 therefore held ~6 GB while serving a few dozen requests
+        // at a time. With SpareWorkers set, the server starts that many, forks
+        // more when all of them are busy -- up to Workers -- and retires the
+        // extras after IdleWorkerTimeout seconds without a request. Zero keeps
+        // the fixed pool.
+        $spare = (int)$this->setting( 'ServerSettings', 'SpareWorkers', 0 );
+        if ( $spare > 0 )
+        {
+            $webserver['spareWorkers'] = $spare;
+            $idleTimeout = (int)$this->setting( 'ServerSettings', 'IdleWorkerTimeout', 60 );
+            if ( $idleTimeout > 0 )
+                $webserver['idleWorkerTimeout'] = $idleTimeout;
+        }
 
-        $config = array( 'Q' => array( 'web' => $web ) );
+        // Where the server pre-transforms PHP before forking.
+        //
+        // Its default is the directory above the document root, on the
+        // assumption that the root is a public/ inside the project. Here the
+        // document root is the installation itself, so the directory above it
+        // holds every sibling installation on the host, and the server walked
+        // and cached all of them in memory every worker inherits.
+        $compat = array( 'prewarmDir' => $this->absolute( $this->setting( 'ServerSettings', 'DocumentRoot', '' ) ) );
+
+        // Who may use the server's own admin views (/Q/dashboard, /Q/stats,
+        // /Q/metrics, the full /Q/health, /Q/phpinfo). The server answers
+        // them only from this machine unless a token is given (then the
+        // token is required) or DashboardRemote allows remote access without
+        // one. /Q/phpinfo, which shows the process environment, is never
+        // remote without the token.
+        $dashboard = array();
+        $dashToken = trim( (string)$this->setting( 'DashboardSettings', 'Token', '' ) );
+        if ( $dashToken !== '' )
+            $dashboard['token'] = $dashToken;
+        $dashRemote = strtolower( trim( (string)$this->setting( 'DashboardSettings', 'Remote', 'disabled' ) ) );
+        if ( in_array( $dashRemote, array( 'enabled', 'true', '1', 'yes' ), true ) )
+            $dashboard['remote'] = true;
+
+        $config = array( 'Q' => array( 'web' => $web, 'compat' => $compat ) );
         if ( $webserver )
             $config['Q']['webserver'] = $webserver;
+        if ( $dashboard )
+            $config['Q']['dashboard'] = $dashboard;
 
         $path = $this->absolute( 'var/tmp/velocity-server.json' );
         $directory = dirname( $path );
@@ -734,22 +862,56 @@ class expVelocity
     public function processIDs()
     {
         $script = $this->scriptPath();
-        $output = array();
-        @exec( 'ps -eo pid=,args= 2>/dev/null', $output );
-
         $pids = array();
-        foreach ( $output as $line )
-        {
-            $line = trim( $line );
-            if ( $line === '' || strpos( $line, $script ) === false )
-                continue;
-
-            $parts = preg_split( '/\s+/', $line, 2 );
-            if ( isset( $parts[0] ) && ctype_digit( $parts[0] ) )
-                $pids[] = (int)$parts[0];
-        }
+        foreach ( $this->processTable() as $proc )
+            if ( strpos( $proc['args'], $script ) !== false )
+                $pids[] = $proc['pid'];
 
         return $pids;
+    }
+
+    /**
+     * Every process as array( pid, ppid, args ).
+     *
+     * From /proc where there is one -- Linux, and so every container -- and
+     * from ps elsewhere. This used ps alone, and a container image without
+     * procps has none: start then reported "did not start" although the
+     * server was running, and stop believed it was not running and did
+     * nothing.
+     *
+     * @return array
+     */
+    protected function processTable()
+    {
+        $table = array();
+        if ( is_dir( '/proc/self' ) )
+        {
+            foreach ( glob( '/proc/[0-9]*', GLOB_ONLYDIR ) ?: array() as $dir )
+            {
+                $stat = @file_get_contents( $dir . '/stat' );
+                $cmd  = @file_get_contents( $dir . '/cmdline' );
+                if ( $stat === false || $cmd === false || $cmd === '' )
+                    continue;
+                // "pid (comm) state ppid ..."; comm may contain spaces and parentheses.
+                $rest = explode( ' ', substr( $stat, strrpos( $stat, ')' ) + 2 ) );
+                // A zombie has exited: it is not running anything.
+                if ( ( $rest[0] ?? '' ) === 'Z' )
+                    continue;
+                $table[] = array( 'pid' => (int)basename( $dir ), 'ppid' => (int)( $rest[1] ?? 0 ),
+                                  'args' => trim( str_replace( "\0", ' ', $cmd ) ) );
+            }
+            return $table;
+        }
+
+        $output = array();
+        @exec( 'ps -eo pid=,ppid=,args= 2>/dev/null', $output );
+        foreach ( $output as $line )
+        {
+            $parts = preg_split( '/\s+/', trim( $line ), 3 );
+            if ( count( $parts ) === 3 && ctype_digit( $parts[0] ) && ctype_digit( $parts[1] ) )
+                $table[] = array( 'pid' => (int)$parts[0], 'ppid' => (int)$parts[1], 'args' => $parts[2] );
+        }
+        return $table;
     }
 
     /**
@@ -769,24 +931,10 @@ class expVelocity
             return array();
 
         $script = $this->scriptPath();
-        $output = array();
-        @exec( 'ps -eo pid=,ppid=,args= 2>/dev/null', $output );
-
         $pids = array();
-        foreach ( $output as $line )
-        {
-            $line = trim( $line );
-            if ( $line === '' || strpos( $line, $script ) === false )
-                continue;
-
-            $parts = preg_split( '/\s+/', $line, 3 );
-            if ( !isset( $parts[1] ) || !ctype_digit( $parts[0] )
-                 || !ctype_digit( $parts[1] ) )
-                continue;
-
-            if ( (int)$parts[1] === $parent )
-                $pids[] = (int)$parts[0];
-        }
+        foreach ( $this->processTable() as $proc )
+            if ( $proc['ppid'] === $parent && strpos( $proc['args'], $script ) !== false )
+                $pids[] = $proc['pid'];
 
         sort( $pids );
         return $pids;
@@ -841,17 +989,54 @@ class expVelocity
         if ( $this->httpsEnabled() )
             $wanted[] = (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 );
 
-        $output = array();
-        @exec( 'ss -ltn 2>/dev/null', $output );
+        // Listening sockets from /proc/net where there is one (Linux, every
+        // container), else from ss, else by connecting to the port. This used
+        // ss alone, which a minimal image does not have.
+        $open = array();
+        $procFiles = array_filter( array( '/proc/net/tcp', '/proc/net/tcp6' ), 'is_readable' );
+        if ( $procFiles )
+        {
+            foreach ( $procFiles as $file )
+                foreach ( array_slice( file( $file, FILE_IGNORE_NEW_LINES ) ?: array(), 1 ) as $row )
+                {
+                    $cols = preg_split( '/\s+/', trim( $row ) );
+                    // local_address is HEXIP:HEXPORT; state 0A is LISTEN.
+                    if ( isset( $cols[3] ) && $cols[3] === '0A' && strpos( $cols[1], ':' ) !== false )
+                        $open[hexdec( substr( $cols[1], strrpos( $cols[1], ':' ) + 1 ) )] = true;
+                }
+        }
+        else
+        {
+            $output = array();
+            @exec( 'ss -ltn 2>/dev/null', $output );
+            foreach ( $output as $line )
+                if ( preg_match_all( '/:(\d+)\s/', $line, $m ) )
+                    foreach ( $m[1] as $p )
+                        $open[(int)$p] = true;
+        }
 
         $listening = array();
         foreach ( $wanted as $port )
-            foreach ( $output as $line )
-                if ( preg_match( '/:' . $port . '\s/', $line ) )
+        {
+            if ( isset( $open[$port] ) )
+            {
+                $listening[] = $port;
+                continue;
+            }
+            // Nothing to read the socket table from: ask the port itself.
+            if ( !$procFiles && !$open )
+            {
+                $host = (string)$this->setting( 'ServerSettings', 'Host', '127.0.0.1' );
+                if ( $host === '0.0.0.0' || $host === '' )
+                    $host = '127.0.0.1';
+                $s = @fsockopen( $host, $port, $errno, $errstr, 1 );
+                if ( $s )
                 {
+                    fclose( $s );
                     $listening[] = $port;
-                    break;
                 }
+            }
+        }
 
         return $listening;
     }
@@ -879,8 +1064,29 @@ class expVelocity
 
         $arguments = $this->command();
         $config = $this->writeServerConfig();
+        $this->layoutNote = '';
+        $layoutEnv = array();
         if ( $config !== false )
         {
+            // The Debian Apache-style tree (/etc/vc: vc.conf, ports.conf,
+            // mods-enabled, conf-enabled, sites-enabled/<site>.conf), brought
+            // up to date from the same settings and used only if, merged the
+            // way the engine merges, it is exactly the file just written.
+            // Otherwise that single file is used, as before.
+            $serverArgs = array( '--config=' . $config );
+            $layout = $this->layout();
+            $applied = $layout->apply(
+                (array)json_decode( (string)file_get_contents( $config ), true ),
+                array( 'http' => (int)$this->setting( 'ServerSettings', 'Port', 8088 ),
+                       'https' => $this->httpsEnabled() ? (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 ) : null ) );
+            $this->logLayout( $applied );
+            if ( !empty( $applied['ok'] ) )
+            {
+                $serverArgs = array( '--conf-dir=' . $applied['confDir'], '--config=' . $applied['siteFile'] );
+                $layoutEnv = $layout->envvars( $applied['confDir'] );
+            }
+            $this->layoutNote = $applied['message'];
+
             // Insert immediately after the server script, wherever that is.
             // This used to splice at a fixed index on the assumption that the
             // script was always the second element. Interpreter settings now
@@ -891,7 +1097,7 @@ class expVelocity
             if ( $scriptIndex === false )
                 $scriptIndex = count( $arguments ) - 1;
 
-            array_splice( $arguments, $scriptIndex + 1, 0, array( '--config=' . $config ) );
+            array_splice( $arguments, $scriptIndex + 1, 0, $serverArgs );
         }
 
         // The engine archive, if one was asked for.
@@ -909,12 +1115,36 @@ class expVelocity
                     . ' -- build it first, or set EnginePhar=disabled',
                     $this->status() );
 
+            // An archive older than the kernel on disk runs the old kernel:
+            // every class it carries is taken from it, not from the file you
+            // just changed. That kept a day of kernel fixes off the site while
+            // their CLI tests (which read the disk) passed. A stale archive is
+            // rebuilt before the server can load from it.
+            $ready = $this->ensureEngineArchive();
+            if ( $ready !== true )
+                return $this->result( false, $ready, $this->status() );
+
             $environment = 'EXP_ENGINE_PHAR=' . escapeshellarg( $enginePhar ) . ' ';
         }
 
+        // Started from cron, a systemd unit or a stripped container, PATH can
+        // be empty or minimal. setsid was then not found, nothing started, and
+        // a restart had already stopped the running server. The server gets a
+        // usable PATH too, for whatever it runs in turn (image converters).
+        if ( trim( (string)getenv( 'PATH' ) ) === '' )
+            $environment .= 'PATH=' . escapeshellarg( self::DEFAULT_PATH ) . ' ';
+
+        // envvars from the configuration directory, as Apache's apache2ctl
+        // reads /etc/apache2/envvars: values only, nothing executed.
+        foreach ( $layoutEnv as $name => $value )
+            $environment .= $name . '=' . escapeshellarg( $value ) . ' ';
+
         // setsid detaches the server from this process group, so it is not
-        // taken down with the shell or the script that started it.
-        $command = $environment . 'setsid ' . implode( ' ', array_map( 'escapeshellarg', $arguments ) )
+        // taken down with the shell or the script that started it. Without
+        // one the server still starts, backgrounded and with no terminal.
+        $setsid = $this->findExecutable( 'setsid' );
+        $command = $environment . ( $setsid !== false ? escapeshellarg( $setsid ) . ' ' : '' )
+                 . implode( ' ', array_map( 'escapeshellarg', $arguments ) )
                  . ' > ' . escapeshellarg( $log ) . ' 2>&1 < /dev/null &';
 
         @exec( $command );
@@ -923,7 +1153,9 @@ class expVelocity
         while ( microtime( true ) < $deadline )
         {
             if ( $this->listeningPorts() )
-                return $this->result( true, 'started', $this->status() );
+                return $this->result( true, ( $this->engineRebuilt
+                    ? 'started (engine archive rebuilt first: ' . $this->engineRebuilt . ' kernel file(s) had changed)'
+                    : 'started' ) . ( $this->layoutNote !== '' ? '; ' . $this->layoutNote : '' ), $this->status() );
 
             usleep( (int)( self::POLL_INTERVAL * 1000000 ) );
         }
@@ -1066,8 +1298,52 @@ class expVelocity
      *
      * @return array
      */
+    /**
+     * Rebuild the engine archive if any file it carries is newer on disk.
+     *
+     * Safe to call with the server running: the running processes loaded
+     * their classes long ago, and the new archive is only read at the next
+     * start.
+     *
+     * @return true|string true when the archive is current (or not used),
+     *         otherwise why it could not be made so
+     */
+    protected function ensureEngineArchive()
+    {
+        $enginePhar = $this->enginePhar();
+        if ( $enginePhar === '' || !file_exists( $enginePhar ) )
+            return true;   // start() reports a missing archive itself
+
+        $stale = $this->staleEngineFiles( $enginePhar );
+        if ( !$stale )
+            return true;
+
+        $out = array(); $code = 0;
+        @exec( escapeshellarg( PHP_BINARY ) . ' -d phar.readonly=0 '
+            . escapeshellarg( $this->absolute( 'bin/php/phar.php' ) )
+            . ' build --allow-root-user --output=' . escapeshellarg( $enginePhar ) . ' 2>&1', $out, $code );
+        clearstatcache();
+        $still = $code === 0 ? $this->staleEngineFiles( $enginePhar ) : $stale;
+        if ( $code !== 0 || $still )
+            return 'the engine archive is older than ' . count( $stale ) . ' kernel file(s) (e.g. '
+                . implode( ', ', array_slice( $stale, 0, 3 ) ) . ') and could not be rebuilt: '
+                . trim( implode( ' ', array_slice( $out, -3 ) ) )
+                . ' -- run php bin/php/phar.php build --allow-root-user, or set EnginePhar=disabled';
+
+        $this->engineRebuilt = count( $stale );
+        return true;
+    }
+
     public function restart()
     {
+        // Everything that can refuse a start is checked while the running
+        // server is still up. This stopped first and rebuilt the engine
+        // archive afterwards, so a rebuild that failed left no server at all
+        // (2026-09-24: about a minute of "can't connect" on alpha).
+        $ready = $this->ensureEngineArchive();
+        if ( $ready !== true )
+            return $this->result( false, $ready . ' -- the running server was left as it is', $this->status() );
+
         $stopped = $this->stop();
         if ( !$stopped['ok'] && $this->isRunning() )
             return $this->result( false, 'could not stop: ' . $stopped['message'], $this->status() );
@@ -1104,6 +1380,260 @@ class expVelocity
     }
 
     /**
+     * Add globals to keep for this run (--keep-global), after the defaults and
+     * the settings.
+     *
+     * @param array|string $names names, or a comma-separated list
+     */
+    public function appendKeepGlobals( $names )
+    {
+        foreach ( (array)$names as $list )
+            foreach ( explode( ',', (string)$list ) as $name )
+                if ( ( $name = trim( $name ) ) !== '' )
+                    $this->extraKeepGlobals[] = $name;
+    }
+
+    /**
+     * The globals the server keeps between requests: the kernel's defaults,
+     * then [ApplicationSettings] KeepGlobals[], then --keep-global -- each
+     * appended, never replacing, and each name once, in that order.
+     *
+     * @return array
+     */
+    public function keepGlobals()
+    {
+        $defaults = strtolower( trim( (string)$this->setting( 'ApplicationSettings', 'KeepGlobalsDefaults', 'enabled' ) ) );
+        $list = in_array( $defaults, array( 'disabled', 'false', 'no', '0' ), true ) ? array() : self::DEFAULT_KEEP_GLOBALS;
+        $configured = $this->setting( 'ApplicationSettings', 'KeepGlobals', array() );
+        $list = array_merge( $list, is_array( $configured ) ? $configured : array(), $this->extraKeepGlobals );
+
+        $seen = array();
+        $out = array();
+        foreach ( $list as $name )
+        {
+            $name = trim( (string)$name );
+            // Global names only: the list goes onto a command line and into
+            // the server's snapshot rules.
+            if ( $name === '' || isset( $seen[$name] ) || !preg_match( '/^[A-Za-z_][A-Za-z0-9_]*$/', $name ) )
+                continue;
+            $seen[$name] = true;
+            $out[] = $name;
+        }
+        return $out;
+    }
+
+    /**
+     * A [LayoutSettings] value, for expVelocityConfigLayout.
+     *
+     * @param string $variable
+     * @param mixed $default
+     * @return mixed
+     */
+    public function layoutSetting( $variable, $default = null )
+    {
+        return $this->setting( 'LayoutSettings', $variable, $default );
+    }
+
+    /**
+     * An absolute path, a relative one resolved against the installation root.
+     *
+     * @param string $path
+     * @return string
+     */
+    public function absolutePath( $path )
+    {
+        return $this->absolute( $path );
+    }
+
+    /**
+     * The configuration tree for this installation (Debian Apache style).
+     *
+     * @return expVelocityConfigLayout
+     */
+    public function layout()
+    {
+        if ( !class_exists( 'expVelocityConfigLayout', false ) )
+            require_once __DIR__ . '/expvelocityconfiglayout.php';
+        return new expVelocityConfigLayout( $this );
+    }
+
+    /**
+     * Every file and directory the server uses, in one place: what
+     * `exp:velocity layout` lists and what the site's metadata records.
+     *
+     * @return array name => path (null where not in use)
+     */
+    public function assets()
+    {
+        $layout = $this->layout();
+        $confDir = $layout->confDir();
+        return array(
+            'confDir'        => $confDir,
+            'siteFile'       => $layout->siteFile( true ),
+            'metadata'       => $confDir !== null ? $layout->metadataFile() : null,
+            'legacyConfig'   => $this->absolute( 'var/tmp/velocity-server.json' ),
+            'pidFile'        => $this->pidFile(),
+            'serverLog'      => $this->logFile(),
+            'accessErrorLogs'=> $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/log/qbix' ) ),
+            'responseCache'  => $this->cacheDirectory(),
+            'cacheMarker'    => $this->cacheDirectory() . '/.generation',
+            'precompress'    => $this->absolute( 'var/tmp/precompress' ),
+            'compatPrewarm'  => sys_get_temp_dir() . '/qbixserver-compat',
+            'certificate'    => $this->httpsEnabled() ? $this->absolute( $this->setting( 'HTTPSSettings', 'Certificate', '' ) ) : null,
+            'certificateKey' => $this->httpsEnabled() ? $this->absolute( $this->setting( 'HTTPSSettings', 'Key', '' ) ) : null,
+            'warmup'         => $this->absolute( 'bin/php/velocity-warmup.php' ),
+            'engineScript'   => $this->scriptPath(),
+            'engineArchive'  => $this->enginePhar() !== '' ? $this->enginePhar() : null,
+        );
+    }
+
+    /**
+     * Bring the configuration tree up to date now, without starting anything:
+     * what start() does first, for `exp:velocity layout migrate`.
+     *
+     * @return array result
+     */
+    public function migrateLayout()
+    {
+        $config = $this->writeServerConfig();
+        if ( $config === false )
+            return $this->result( false, 'could not write the server configuration' );
+        $applied = $this->layout()->apply(
+            (array)json_decode( (string)file_get_contents( $config ), true ),
+            array( 'http' => (int)$this->setting( 'ServerSettings', 'Port', 8088 ),
+                   'https' => $this->httpsEnabled() ? (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 ) : null ) );
+        $this->logLayout( $applied );
+        return $this->result( !empty( $applied['ok'] ), $applied['message'], $applied );
+    }
+
+    /**
+     * Append what the configuration tree did to its log. The server's own log
+     * is truncated on every start, so this one is kept apart and appended to:
+     * a migration is exactly what should still be readable later.
+     *
+     * @param array $applied expVelocityConfigLayout::apply()'s result
+     */
+    protected function logLayout( array $applied )
+    {
+        $file = $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/log/qbix' ) ) . '/velocity-layout.log';
+        if ( !is_dir( dirname( $file ) ) )
+            eZDir::mkdir( dirname( $file ), false, true );
+        $lines = array();
+        foreach ( (array)( $applied['actions'] ?? array() ) as $action )
+            $lines[] = date( 'c' ) . '  ' . $action;
+        $lines[] = date( 'c' ) . '  ' . ( !empty( $applied['ok'] ) ? 'using ' : 'not using the tree: ' ) . $applied['message'];
+        @file_put_contents( $file, implode( "\n", $lines ) . "\n", FILE_APPEND );
+    }
+
+    /**
+     * Where the response cache lives. Under var/, so it is cleared with
+     * everything else; left to itself the server puts it beside the
+     * installation, in files/cache/reverse of the directory above the root.
+     *
+     * @return string
+     */
+    public function cacheDirectory()
+    {
+        $dir = trim( (string)$this->cacheSetting( 'Dir', null, '' ) );
+        return $this->absolute( $dir !== '' ? $dir : 'var/cache/qbix-reverse' );
+    }
+
+    /**
+     * Invalidate every page the server has cached, now.
+     *
+     * The response cache revalidates against what the kernel says about a
+     * page, and the kernel judges by content: a template or stylesheet changed
+     * on disk moves nothing it looks at, so pages rendered from the old one
+     * were served until they aged out. This touches the cache's generation
+     * marker, which the server reads at most once a second; every entry
+     * stored before it -- on disk and in the server's APCu -- is a miss from
+     * then on. Nothing is deleted here and the server need not be running;
+     * stale files are removed as they are next looked up.
+     *
+     * @return array result
+     */
+    public function clearCache()
+    {
+        $dir = $this->cacheDirectory();
+        $marker = $dir . '/.generation';
+
+        // The engine does this itself now (Q_WebServer_Ctl::clearCache(), also
+        // `qbixctl`'s cache:clear); asked first, so both stay one behaviour.
+        if ( $this->engineCtl() )
+        {
+            list( $ok, $message ) = Q_WebServer_Ctl::clearCache( $dir );
+            return $this->result( $ok, $ok ? 'response cache cleared (every page stored before now is re-rendered on its next request)' : $message,
+                                  array( 'marker' => $marker ) );
+        }
+
+        if ( !is_dir( $dir ) && !@mkdir( $dir, 0750, true ) )
+            return $this->result( false, 'cache directory does not exist and could not be created: ' . $dir );
+        if ( !@touch( $marker ) )
+            return $this->result( false, 'could not touch ' . $marker );
+
+        return $this->result( true, 'response cache cleared (every page stored before now is re-rendered on its next request)',
+                              array( 'marker' => $marker ) );
+    }
+
+    /**
+     * Load the engine's control class (qbixctl's built-ins) when the engine
+     * in use ships it. False with an older engine: callers keep their own
+     * implementation then.
+     *
+     * @return bool
+     */
+    public function engineCtl()
+    {
+        if ( class_exists( 'Q_WebServer_Ctl', false ) )
+            return true;
+        $src = dirname( $this->scriptPath() ) . '/src';
+        foreach ( array( 'Q/Console.php', 'Q/WebServer/Layout.php', 'Q/WebServer/Ctl.php' ) as $file )
+        {
+            if ( !is_file( "$src/$file" ) )
+                return false;
+        }
+        if ( !class_exists( 'Q_Config', false ) && is_file( "$src/Q.php" ) && !class_exists( 'Q', false ) )
+        {
+            // The engine's Q.php defines Q_Config, which Ctl reads; loaded
+            // only when nothing of the engine is loaded yet.
+            require_once "$src/Q.php";
+        }
+        require_once "$src/Q/Console.php";
+        require_once "$src/Q/WebServer/Layout.php";
+        require_once "$src/Q/WebServer/Ctl.php";
+        Q_WebServer_Ctl::$sourceDir = dirname( $this->scriptPath() );
+        return class_exists( 'Q_WebServer_Ctl', false );
+    }
+
+    /**
+     * Run the engine's qbixctl with this installation's configuration:
+     * `exp:velocity ctl -S`, `ctl status`, `ctl ensite NAME` ...
+     *
+     * @param array $args qbixctl arguments
+     * @return int exit code
+     */
+    public function ctl( array $args )
+    {
+        $ctl = dirname( $this->scriptPath() ) . '/qbixctl.php';
+        if ( !is_file( $ctl ) )
+        {
+            fwrite( STDERR, "this engine has no qbixctl.php ($ctl)\n" );
+            return 1;
+        }
+        $layout = $this->layout();
+        $confDir = $layout->confDir();
+        $fixed = array( '--pid=' . $this->pidFile() );
+        if ( $confDir !== null && is_file( (string)$layout->siteFile( true ) ) )
+        {
+            $fixed[] = '--conf-dir=' . $confDir;
+            $fixed[] = '--config=' . $layout->siteFile( true );
+        }
+        $command = implode( ' ', array_map( 'escapeshellarg', array_merge( array( PHP_BINARY, $ctl ), $args, $fixed ) ) );
+        passthru( $command, $code );
+        return (int)$code;
+    }
+
+    /**
      * What the server is doing.
      *
      * @return array
@@ -1132,6 +1662,26 @@ class expVelocity
     }
 
     // ── Internals ────────────────────────────────────────────────────────
+
+    /**
+     * An executable's absolute path, from PATH and then the usual system
+     * directories, so an empty PATH does not hide it.
+     *
+     * @param string $name
+     * @return string|false
+     */
+    protected function findExecutable( $name )
+    {
+        $dirs = array_merge( explode( PATH_SEPARATOR, (string)getenv( 'PATH' ) ),
+                             explode( PATH_SEPARATOR, self::DEFAULT_PATH ) );
+        foreach ( array_unique( array_filter( $dirs ) ) as $dir )
+        {
+            $candidate = rtrim( $dir, '/' ) . '/' . $name;
+            if ( is_file( $candidate ) && is_executable( $candidate ) )
+                return $candidate;
+        }
+        return false;
+    }
 
     /**
      * Run the server script with one of its own control options.
@@ -1179,6 +1729,32 @@ class expVelocity
      * @param mixed $data
      * @return array
      */
+    /** How many changed kernel files made start() rebuild the archive; 0 if none. */
+    protected $engineRebuilt = 0;
+
+    /**
+     * Files the engine archive packages that have changed on disk since it
+     * was built, as paths relative to the root. Empty when it is current.
+     *
+     * @param string $archive
+     * @return array
+     */
+    public function staleEngineFiles( $archive )
+    {
+        $built = @filemtime( $archive );
+        if ( $built === false || !class_exists( 'expPhar' ) )
+            return array();
+        $root = expPhar::root();
+        $stale = array();
+        foreach ( expPhar::collect() as $rel )
+        {
+            $m = @filemtime( $root . '/' . $rel );
+            if ( $m !== false && $m > $built )
+                $stale[] = $rel;
+        }
+        return $stale;
+    }
+
     protected function result( $ok, $message, $data = null )
     {
         return array( 'ok' => (bool)$ok, 'message' => $message, 'data' => $data );

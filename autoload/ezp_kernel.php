@@ -594,6 +594,7 @@ return array(
       'expTemplateExtensionWizard'                         => 'kernel/setup/exptemplateextensionwizard.php',
       'expVelocity'                                        => 'kernel/classes/expvelocity.php',
       'expVelocityConfig'                                  => 'kernel/classes/expvelocityconfig.php',
+      'expVelocityConfigLayout'                            => 'kernel/classes/expvelocityconfiglayout.php',
       'expWorkflowEventWizard'                             => 'kernel/setup/expworkfloweventwizard.php',
       'ezpAccessDenied'                                    => 'kernel/private/classes/exceptions/kernel/accessdenied.php',
       'ezpAsynchronousPublisherCliOutput'                  => 'kernel/private/classes/asynchronouspublisheroutput/cli.php',

@@ -2,6 +2,7 @@
 /**
  * File containing the velocity control script.
  *
+ * @alias vc
  * @copyright Copyright (C) 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
@@ -21,7 +22,22 @@ $script = eZScript::instance( array( 'description' => (
     "  restart    stop, then start\n" .
     "  kill       stop without asking, for a wedged worker\n" .
     "  command    print the command line it would run, and exit\n" .
-    "  config     read and write the settings it runs on\n\n" .
+    "             (--keep-global=Name[,Name] appends globals to keep between\n" .
+    "              requests, after the built-in defaults; also on start/restart)\n" .
+    "  config     read and write the settings it runs on\n" .
+    "  cache      cache clear: re-render every cached page on its next request\n" .
+    "             (after a template or stylesheet change; no restart needed)\n" .
+    "  layout     the configuration tree and every file the server uses\n" .
+    "  site|conf|mod enable|disable <name>   as a2ensite/a2enconf/a2enmod do\n" .
+    "  ctl        the engine's qbixctl with this installation's tree, site and pid file:\n" .
+    "             ctl status | ctl configtest | ctl layout | ctl ensite NAME ...\n\n" .
+    "Configuration tree (Debian Apache style, /etc/vc or /etc/qbix):\n" .
+    "  layout                               show it: vc.conf, ports.conf, envvars,\n" .
+    "                                       sites/conf/mods-available and -enabled\n" .
+    "  layout migrate                       write it from these settings now\n" .
+    "  site enable|disable <name>           link or unlink sites-enabled/<name>.conf\n" .
+    "  conf enable|disable <name>           link or unlink conf-enabled/<name>.conf\n" .
+    "  mod enable|disable <name>            link or unlink mods-enabled/<name>.conf\n\n" .
     "Configuration:\n" .
     "  config list [Block]                  every setting, and which are overridden\n" .
     "  config get <Block> <Variable>        one value\n" .
@@ -30,7 +46,8 @@ $script = eZScript::instance( array( 'description' => (
     "  config paths                         which file is which\n\n" .
     "Through the console:\n" .
     "  ./bin/php/console exp:velocity status --allow-root-user\n" .
-    "  ./bin/php/console exp:velocity restart --allow-root-user\n\n" .
+    "  ./bin/php/console exp:velocity restart --allow-root-user\n" .
+    "  ./bin/php/console exp:vc status --allow-root-user   (exp:vc is shorthand for exp:velocity)\n\n" .
     "Directly:\n" .
     "  php bin/php/velocity.php start --allow-root-user\n" .
     "  php bin/php/velocity.php status --json --allow-root-user\n\n" .
@@ -42,12 +59,14 @@ $script = eZScript::instance( array( 'description' => (
 
 $script->startup();
 
-$options = $script->getOptions( '[json]', '[command]',
-    array( 'json' => 'Report as JSON, for a caller that is not a person' ) );
+$options = $script->getOptions( '[json][keep-global:]', '[command]',
+    array( 'json' => 'Report as JSON, for a caller that is not a person',
+           'keep-global' => 'More globals to keep between requests (comma-separated), appended to the '
+                          . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command' ) );
 $script->initialize();
 
 $verbs = array( 'start', 'stop', 'graceful', 'restart', 'kill', 'status',
-                'command', 'config' );
+                'command', 'config', 'cache', 'layout', 'site', 'conf', 'mod', 'ctl' );
 $verb = isset( $options['arguments'][0] ) ? strtolower( trim( $options['arguments'][0] ) ) : 'status';
 
 if ( !in_array( $verb, $verbs, true ) )
@@ -58,6 +77,8 @@ if ( !in_array( $verb, $verbs, true ) )
 
 $velocity = new expVelocity();
 $asJson = !empty( $options['json'] );
+if ( !empty( $options['keep-global'] ) )
+    $velocity->appendKeepGlobals( $options['keep-global'] );
 
 /**
  * Render a status array for a person to read.
@@ -188,6 +209,96 @@ switch ( $verb )
         else
             $cli->output( $cli->stylize( 'emphasize', 'velocity: ' . $result['message'] ) );
         $script->shutdown( empty( $result['ok'] ) ? 1 : 0 );
+    }
+    break;
+
+    case 'ctl':
+        // The engine's own control (qbixctl), with this installation's
+        // configuration tree, site file and pid file filled in. Word forms
+        // (configtest, layout) rather than -t / -S: single-dash flags are
+        // this script's own options.
+        $script->shutdown( $velocity->ctl( array_slice( $options['arguments'], 1 ) ) );
+        break;
+
+    case 'cache':
+    {
+        $action = isset( $options['arguments'][1] ) ? strtolower( trim( $options['arguments'][1] ) ) : '';
+        if ( $action !== 'clear' )
+        {
+            $cli->error( "Usage: cache clear" );
+            $script->shutdown( 1 );
+        }
+        $result = $velocity->clearCache();
+        if ( $asJson )
+            $cli->output( json_encode( $result ) );
+        elseif ( $result['ok'] )
+            $cli->output( $cli->stylize( 'emphasize', 'velocity: ' . $result['message'] ) );
+        else
+            $cli->error( 'velocity: ' . $result['message'] );
+        $script->shutdown( $result['ok'] ? 0 : 1 );
+    }
+    break;
+
+    case 'layout':
+    {
+        $action = isset( $options['arguments'][1] ) ? strtolower( trim( $options['arguments'][1] ) ) : 'show';
+        if ( $action === 'migrate' )
+        {
+            $result = $velocity->migrateLayout();
+            if ( $asJson )
+                $cli->output( json_encode( $result ) );
+            else
+            {
+                foreach ( (array)( $result['data']['actions'] ?? array() ) as $line )
+                    $cli->output( '  ' . $line );
+                $result['ok'] ? $cli->output( $cli->stylize( 'emphasize', 'velocity: ' . $result['message'] ) )
+                              : $cli->error( 'velocity: ' . $result['message'] );
+            }
+            $script->shutdown( $result['ok'] ? 0 : 1 );
+        }
+        $info = $velocity->layout()->describe();
+        if ( $asJson )
+        {
+            $cli->output( json_encode( array( 'ok' => true, 'data' => $info ) ) );
+            $script->shutdown( 0 );
+        }
+        $cli->output( '  configuration : ' . ( $info['confDir'] ?? 'disabled (single file)' ) );
+        $cli->output( '  site          : ' . $info['site'] );
+        $cli->output( '  metadata      : ' . $info['stateDir'] );
+        foreach ( $info['pairs'] as $pair => $lists )
+            $cli->output( sprintf( '  %-13s : %s', $pair, $lists['available']
+                ? implode( ', ', array_map( function ( $f ) use ( $lists ) {
+                      return in_array( $f, $lists['enabled'], true ) ? $f . ' (enabled)' : $f; }, $lists['available'] ) )
+                : 'none' ) );
+        $cli->output( '  envvars       : ' . ( $info['envvars'] ? implode( ', ', $info['envvars'] ) : 'none' ) );
+        $cli->output( '  keep globals  : ' . implode( ', ', $velocity->keepGlobals() ) );
+        $cli->output( '' );
+        $cli->output( '  Files the server uses:' );
+        foreach ( $info['assets'] as $name => $path )
+            $cli->output( sprintf( '    %-16s %s', $name, $path === null ? '-' : $path ) );
+        $script->shutdown( 0 );
+    }
+    break;
+
+    case 'site':
+    case 'conf':
+    case 'mod':
+    {
+        $action = isset( $options['arguments'][1] ) ? strtolower( trim( $options['arguments'][1] ) ) : '';
+        $name = isset( $options['arguments'][2] ) ? trim( $options['arguments'][2] ) : '';
+        if ( !in_array( $action, array( 'enable', 'disable' ), true ) || $name === '' )
+        {
+            $cli->error( "Usage: $verb enable|disable <name>" );
+            $script->shutdown( 1 );
+        }
+        $result = $velocity->layout()->toggle( $verb, $name, $action === 'enable' );
+        if ( $asJson )
+            $cli->output( json_encode( $result ) );
+        elseif ( $result['ok'] )
+            $cli->output( $cli->stylize( 'emphasize', 'velocity: ' . $result['message'] ) );
+        else
+            $cli->error( 'velocity: ' . $result['message'] );
+        $script->shutdown( $result['ok'] ? 0 : 1 );
     }
     break;
 
