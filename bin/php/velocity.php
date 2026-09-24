@@ -78,7 +78,7 @@ $options['arguments'] = array_merge( $options['arguments'], $velocityTail );
 $script->initialize();
 
 $verbs = array( 'start', 'stop', 'graceful', 'restart', 'kill', 'status',
-                'command', 'config', 'cache', 'layout', 'site', 'conf', 'mod', 'ctl' );
+                'command', 'config', 'cache', 'layout', 'site', 'conf', 'mod', 'ctl', 'ssl' );
 $verb = isset( $options['arguments'][0] ) ? strtolower( trim( $options['arguments'][0] ) ) : 'status';
 
 if ( !in_array( $verb, $verbs, true ) )
@@ -231,6 +231,24 @@ switch ( $verb )
         // this script's own options.
         $script->shutdown( $velocity->ctl( array_slice( $options['arguments'], 1 ) ) );
         break;
+
+    case 'ssl':
+    {
+        // The engine's ssl:show and ssl:renew, with this installation's tree
+        // filled in. A renewal is picked up by the running server within its
+        // watch interval (a minute), with no restart.
+        $action = isset( $options['arguments'][1] ) ? strtolower( trim( $options['arguments'][1] ) ) : 'show';
+        if ( !in_array( $action, array( 'show', 'renew' ), true ) )
+        {
+            $cli->error( "Usage: ssl show|renew [host...]" );
+            $script->shutdown( 1 );
+        }
+        $args = array_merge( array( 'ssl:' . $action ), array_slice( $options['arguments'], 2 ) );
+        if ( $asJson && $action === 'show' )
+            $args[] = '--json';
+        $script->shutdown( $velocity->ctl( $args ) );
+        break;
+    }
 
     case 'cache':
     {
