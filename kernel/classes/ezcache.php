@@ -387,11 +387,18 @@ class eZCache
 
         // Every cache moved aside before any of them is deleted
         eZCacheTrash::begin();
-        foreach ( $cacheList as $cacheItem )
+        try
         {
-            eZCache::clearItem( $cacheItem );
+            foreach ( $cacheList as $cacheItem )
+            {
+                eZCache::clearItem( $cacheItem );
+            }
         }
-        eZCacheTrash::end();
+        finally
+        {
+            // Always, or the deferred deletes of this process never happen.
+            eZCacheTrash::end();
+        }
         return true;
     }
 
@@ -413,11 +420,18 @@ class eZCache
                 $cacheItems[] = $cacheItem;
         }
         eZCacheTrash::begin();
-        foreach ( $cacheItems as $cacheItem )
+        try
         {
-            eZCache::clearItem( $cacheItem );
+            foreach ( $cacheItems as $cacheItem )
+            {
+                eZCache::clearItem( $cacheItem );
+            }
         }
-        eZCacheTrash::end();
+        finally
+        {
+            // Always, or the deferred deletes of this process never happen.
+            eZCacheTrash::end();
+        }
         return true;
     }
 
@@ -442,11 +456,18 @@ class eZCache
                 $cacheItems[] = $cacheItem;
         }
         eZCacheTrash::begin();
-        foreach ( $cacheItems as $cacheItem )
+        try
         {
-            eZCache::clearItem( $cacheItem );
+            foreach ( $cacheItems as $cacheItem )
+            {
+                eZCache::clearItem( $cacheItem );
+            }
         }
-        eZCacheTrash::end();
+        finally
+        {
+            // Always, or the deferred deletes of this process never happen.
+            eZCacheTrash::end();
+        }
         return true;
     }
 

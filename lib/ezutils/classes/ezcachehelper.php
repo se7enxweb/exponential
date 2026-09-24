@@ -117,22 +117,29 @@ class eZCacheHelper
 
         // Every cache moved aside before any of them is deleted
         eZCacheTrash::begin();
-        $firstItem = true;
-        foreach ( $cacheEntries as $cacheEntry )
+        try
         {
-            if ( $firstItem )
-                $firstItem = false;
-            else
-                $this->cli->output( ', ', false );
+            $firstItem = true;
+            foreach ( $cacheEntries as $cacheEntry )
+            {
+                if ( $firstItem )
+                    $firstItem = false;
+                else
+                    $this->cli->output( ', ', false );
 
-            $this->cli->output( $this->cli->stylize( 'emphasize', $cacheEntry['name'] ), false );
+                $this->cli->output( $this->cli->stylize( 'emphasize', $cacheEntry['name'] ), false );
 
-            if ( $purge )
-                eZCache::clearItem( $cacheEntry, true, array( $this, 'reportProgress'), $purgeSleep, $purgeMax, $purgeExpiry );
-            else
-                eZCache::clearItem( $cacheEntry );
+                if ( $purge )
+                    eZCache::clearItem( $cacheEntry, true, array( $this, 'reportProgress'), $purgeSleep, $purgeMax, $purgeExpiry );
+                else
+                    eZCache::clearItem( $cacheEntry );
+            }
         }
-        eZCacheTrash::end();
+        finally
+        {
+            // Always, or the deferred deletes of this process never happen.
+            eZCacheTrash::end();
+        }
         $this->cli->output();
     }
 

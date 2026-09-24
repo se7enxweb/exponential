@@ -135,47 +135,54 @@ $sweep = function( $dir, $before, &$stats, &$seen ) use ( &$sweep, $sleep )
 // before its new, empty tree is there to be generated into; nothing is deleted
 // before the end()
 eZCacheTrash::begin();
-$toSweep = array();
-foreach ( $areas as $name => $area )
+try
 {
-    list( $dir, $expiry ) = $area;
-    $handled = isset( $state[$name] ) ? (int)$state[$name] : null;
-    $state[$name] = $expiry;
-    if ( !is_dir( $dir ) )
-        continue;
-
-    if ( $renameAfterClear && $handled !== null && $expiry > $handled )
+    $toSweep = array();
+    foreach ( $areas as $name => $area )
     {
-        // As a whole into the cache directory's trash; a link is emptied into
-        // a trash inside it instead
-        $complete = eZCacheTrash::discard( $dir );
-        $cli->output( "$name: cleared at " . date( 'Y-m-d H:i:s', $expiry ) . ", moved aside" );
-        if ( $complete )
+        list( $dir, $expiry ) = $area;
+        $handled = isset( $state[$name] ) ? (int)$state[$name] : null;
+        $state[$name] = $expiry;
+        if ( !is_dir( $dir ) )
             continue;
-        $cli->output( "$name: not everything could be moved aside, removing the rest file by file" );
+
+        if ( $renameAfterClear && $handled !== null && $expiry > $handled )
+        {
+            // As a whole into the cache directory's trash; a link is emptied into
+            // a trash inside it instead
+            $complete = eZCacheTrash::discard( $dir );
+            $cli->output( "$name: cleared at " . date( 'Y-m-d H:i:s', $expiry ) . ", moved aside" );
+            if ( $complete )
+                continue;
+            $cli->output( "$name: not everything could be moved aside, removing the rest file by file" );
+        }
+        $toSweep[$name] = $area;
     }
-    $toSweep[$name] = $area;
-}
 
-// Then the file-by-file sweep of whatever was not moved aside
-foreach ( $toSweep as $name => $area )
+    // Then the file-by-file sweep of whatever was not moved aside
+    foreach ( $toSweep as $name => $area )
+    {
+        list( $dir, $expiry ) = $area;
+        $stats = array( 'scanned' => 0, 'removed' => 0, 'bytes' => 0 );
+        $seen = array();
+        $sweep( $dir, max( $expiry, $ageLimit ), $stats, $seen );
+
+        $cli->output( sprintf( "%s: %d files looked at, %d removed, %.1f KB freed",
+                               $name, $stats['scanned'], $stats['removed'], $stats['bytes'] / 1024 ) );
+    }
+
+    eZFile::create( basename( $stateFile ), dirname( $stateFile ), json_encode( $state ), true );
+
+    // Last the deleting, with every cache already generating into its new tree,
+    // including whatever an interrupted run left behind
+    eZCacheTrash::register( $cacheDir . '/' . eZCacheTrash::TRASH_NAME );
+    $emptied = eZCacheTrash::flush();
+}
+finally
 {
-    list( $dir, $expiry ) = $area;
-    $stats = array( 'scanned' => 0, 'removed' => 0, 'bytes' => 0 );
-    $seen = array();
-    $sweep( $dir, max( $expiry, $ageLimit ), $stats, $seen );
-
-    $cli->output( sprintf( "%s: %d files looked at, %d removed, %.1f KB freed",
-                           $name, $stats['scanned'], $stats['removed'], $stats['bytes'] / 1024 ) );
+    // Always, or the deferred deletes of this process never happen.
+    eZCacheTrash::end();
 }
-
-eZFile::create( basename( $stateFile ), dirname( $stateFile ), json_encode( $state ), true );
-
-// Last the deleting, with every cache already generating into its new tree,
-// including whatever an interrupted run left behind
-eZCacheTrash::register( $cacheDir . '/' . eZCacheTrash::TRASH_NAME );
-$emptied = eZCacheTrash::flush();
-eZCacheTrash::end();
 if ( $emptied > 0 )
 {
     $cli->output( "Deleted $emptied moved-aside " . ( $emptied === 1 ? 'entry' : 'entries' ) );
