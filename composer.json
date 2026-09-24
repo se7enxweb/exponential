@@ -97,7 +97,7 @@
         "se7enxweb/expsite-core": "~1.0.0",
         "se7enxweb/expsite-data-media": "~1.0.4",
         "se7enxweb/expsite-installer": "~1.0.0",
-        "se7enxweb/sevenx-themes-media": "~1.5.13",
+        "se7enxweb/sevenx-themes-media": "~1.5.14",
         "symfony/polyfill-php73":  "^1.9",
         "zetacomponents/archive": "~1.5.1",
         "zetacomponents/authentication": "~1.4.1",
