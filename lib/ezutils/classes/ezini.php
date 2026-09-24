@@ -1277,6 +1277,25 @@ class eZINI
         $data = $this->RoundTripData[$normalizedPath];
         $lines = $data['lines'];
 
+        // The line that closes the PHP wrapper of a *.ini.append.php file (the
+        // comment end followed by the PHP close tag) is set aside while the
+        // settings are edited and put back last. Left in place it counted as
+        // part of the last section, so a new setting was inserted after it and
+        // a new section appended after it -- outside the INI block, ignored by
+        // eZINI and emitted as page output by PHP. Trailing blank lines after
+        // the marker go with it.
+        $trailer = array();
+        for ( $i = count( $lines ) - 1; $i >= 0; --$i )
+        {
+            if ( preg_match( '#^\s*\*/\s*\?>\s*$#', $lines[$i] ) )
+            {
+                $trailer = array_splice( $lines, $i );
+                break;
+            }
+            if ( trim( $lines[$i] ) !== '' )
+                break;
+        }
+
         // Remove deleted sections and settings when full save is requested.
         if ( !$onlyModified )
         {
@@ -1375,10 +1394,22 @@ class eZINI
                 }
                 else
                 {
+                    // After the section's last real line, not after the blank
+                    // lines that separate it from the next one.
                     $insertAt = $parsed['sections'][$blockName]['end'] + 1;
+                    $sectionStart = $parsed['sections'][$blockName]['start'];
+                    while ( $insertAt - 1 > $sectionStart && trim( $lines[$insertAt - 1] ) === '' )
+                        --$insertAt;
                     array_splice( $lines, $insertAt, 0, $newLines );
                 }
             }
+        }
+
+        if ( $trailer )
+        {
+            if ( !empty( $lines ) && end( $lines ) !== '' )
+                $lines[] = '';
+            $lines = array_merge( $lines, $trailer );
         }
 
         return implode( "\n", $lines );
