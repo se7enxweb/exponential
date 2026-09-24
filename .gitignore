@@ -14,6 +14,10 @@
 /bin/win32
 /vendor
 /composer.lock
+# The PHPUnit workflow builds these per run from composer.json and resolves them
+# fresh; a committed copy froze every package and broke CI at each repin.
+/composer.ci-phpunit.json
+/composer.ci-phpunit.lock
 /coverage
 /ai/
 
