@@ -203,6 +203,19 @@ class ezxFormToken
 
         eZDebugSetting::writeDebug( 'ezformtoken', 'Output protected (all forms will be modified)', __METHOD__ );
 
+        // The page is about to carry this session's token, so it belongs to
+        // this session and must not be kept by anything shared -- a response
+        // cache in the web server, a proxy, a CDN. Whether it would be kept
+        // otherwise depends on that cache being told which cookie marks a
+        // session, and a cache told the wrong one stores a signed-in page with
+        // its token and hands both to every anonymous visitor after it. This
+        // makes the page say so itself.
+        //
+        // It replaces the kernel's Cache-Control, which is sent before the
+        // output filters run, and keeps its no-cache, must-revalidate.
+        if ( !headers_sent() )
+            header( 'Cache-Control: private, no-cache, must-revalidate' );
+
         // Inject token for programmatical use (also system default for historical reasons)
         // If document has head tag, insert in a html5 valid and semi standard way
         if ( strpos( $templateResult, '<head>' ) !== false )
