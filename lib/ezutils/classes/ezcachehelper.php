@@ -115,6 +115,8 @@ class eZCacheHelper
             }
         }
 
+        // Every cache moved aside before any of them is deleted
+        eZCacheTrash::begin();
         $firstItem = true;
         foreach ( $cacheEntries as $cacheEntry )
         {
@@ -130,6 +132,7 @@ class eZCacheHelper
             else
                 eZCache::clearItem( $cacheEntry );
         }
+        eZCacheTrash::end();
         $this->cli->output();
     }
 

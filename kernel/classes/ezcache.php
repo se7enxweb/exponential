@@ -385,10 +385,13 @@ class eZCache
         if ( !$cacheList )
             $cacheList = eZCache::fetchList();
 
+        // Every cache moved aside before any of them is deleted
+        eZCacheTrash::begin();
         foreach ( $cacheList as $cacheItem )
         {
             eZCache::clearItem( $cacheItem );
         }
+        eZCacheTrash::end();
         return true;
     }
 
@@ -409,10 +412,12 @@ class eZCache
             if ( in_array( $tagName, $cacheItem['tag'] ) )
                 $cacheItems[] = $cacheItem;
         }
+        eZCacheTrash::begin();
         foreach ( $cacheItems as $cacheItem )
         {
             eZCache::clearItem( $cacheItem );
         }
+        eZCacheTrash::end();
         return true;
     }
 
@@ -436,10 +441,12 @@ class eZCache
             if ( in_array( $cacheItem['id'], $idList ) )
                 $cacheItems[] = $cacheItem;
         }
+        eZCacheTrash::begin();
         foreach ( $cacheItems as $cacheItem )
         {
             eZCache::clearItem( $cacheItem );
         }
+        eZCacheTrash::end();
         return true;
     }
 
@@ -514,6 +521,9 @@ class eZCache
                 $fileHandler = eZClusterFileHandler::instance( $cachePath );
                 if ( $purge )
                     $fileHandler->purge( $reporter, $iterationSleep, $iterationMax, $expiry );
+                // Only a cache on the local file system can be renamed aside
+                else if ( $fileHandler instanceof eZFSFileHandler && is_dir( $cachePath ) )
+                    eZCache::removeDirectory( $cachePath );
                 else
                     $fileHandler->delete();
                 return;
@@ -531,9 +541,26 @@ class eZCache
             }
             else
             {
-                eZDir::recursiveDelete( $cachePath );
+                eZCache::removeDirectory( $cachePath );
             }
         }
+    }
+
+    /**
+     * Removes a cache directory on the local file system: renamed into the
+     * cache directory's .cleanup-trash at once, so that nothing generated
+     * meanwhile is caught by the delete, and deleted after the last cache of the
+     * clear (see eZCacheTrash). Whatever
+     * could not be moved, and everything with site.ini [FileSettings]
+     * RenameBeforeDelete=disabled, is deleted file by file as before.
+     *
+     * @param string $path
+     */
+    static function removeDirectory( $path )
+    {
+        if ( is_dir( $path ) && eZCacheTrash::isEnabled() && eZCacheTrash::discard( $path ) )
+            return;
+        eZDir::recursiveDelete( $path );
     }
 
     /**
@@ -675,7 +702,7 @@ class eZCache
     static function clearTemplateOverrideCache( $cacheItem )
     {
         $cachePath = eZSys::cacheDirectory() . '/' . $cacheItem['path'];
-        eZDir::recursiveDelete( $cachePath );
+        eZCache::removeDirectory( $cachePath );
         eZTemplateDesignResource::clearInMemoryOverrideArray();
     }
 
@@ -731,7 +758,7 @@ class eZCache
      */
     static function clearGlobalINICache( $cacheItem )
     {
-        eZDir::recursiveDelete( $cacheItem['path'] );
+        eZCache::removeDirectory( $cacheItem['path'] );
     }
 
     /**
@@ -739,7 +766,7 @@ class eZCache
      */
     static function clearTemplateCompileCache()
     {
-        eZDir::recursiveDelete( eZTemplateCompiler::compilationDirectory() );
+        eZCache::removeDirectory( eZTemplateCompiler::compilationDirectory() );
     }
 
     /**
