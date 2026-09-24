@@ -39,6 +39,11 @@ $script = eZScript::instance( array( 'description' => (
     "  site enable|disable <name>           link or unlink sites-enabled/<name>.conf\n" .
     "  conf enable|disable <name>           link or unlink conf-enabled/<name>.conf\n" .
     "  mod enable|disable <name>            link or unlink mods-enabled/<name>.conf\n\n" .
+    "PHP extensions (the standard set this server provides):\n" .
+    "  ext check [--variant=standard]        what this PHP is missing, with the fix\n" .
+    "  ext list|plan [--variant --php --platform --format]  what a build carries\n" .
+    "  ext install-hint <ext...>            the install command for this OS\n" .
+    "  ext build --variant --php [--dry-run] build a static binary with spc\n\n" .
     "Configuration:\n" .
     "  config list [Block]                  every setting, and which are overridden\n" .
     "  config get <Block> <Variable>        one value\n" .
@@ -60,11 +65,31 @@ $script = eZScript::instance( array( 'description' => (
 
 $script->startup();
 
+// ext passes its own options (--variant, --php, --platform, --format, ...) to
+// the engine's qbixctl ext:* commands. They are not this script's, and eZCLI
+// would refuse them, so they are set aside before the options are read.
+$velocityExtArgs = array();
+$velocityArgv = array_slice( $_SERVER['argv'], 1 );
+$velocityExtAt = array_search( 'ext', $velocityArgv, true );
+if ( $velocityExtAt !== false )
+{
+    $ownFlags = array( '--allow-root-user', '--json', '--no-colors', '--colors', '--quiet', '--verbose', '--debug', '--help' );
+    $keep = array_slice( $velocityArgv, 0, $velocityExtAt + 1 );
+    foreach ( array_slice( $velocityArgv, $velocityExtAt + 1 ) as $a )
+    {
+        if ( in_array( $a, $ownFlags, true ) || strncmp( $a, '--siteaccess', 12 ) === 0 )
+            $keep[] = $a;
+        else
+            $velocityExtArgs[] = $a;
+    }
+    $velocityArgv = $keep;
+}
+
 // GNU and BSD spellings alike (--name V, -name=V, -name, --no-name, --), as the
 // engine's own console takes them; eZCLI reads only --name=V and --name. Names
 // that take a value: this script's and eZScript's standard ones.
 list( $velocityArgs, $velocityTail ) = expVelocity::normalizeCliArguments(
-    array_slice( $_SERVER['argv'], 1 ),
+    $velocityArgv,
     array( 'keep-global', 'siteaccess', 'login', 'password' ),
     array( 'json', 'help', 'quiet', 'verbose', 'colors', 'no-colors', 'logfiles', 'no-logfiles',
            'allow-root-user', 'debug' ) );
@@ -79,7 +104,7 @@ $options['arguments'] = array_merge( $options['arguments'], $velocityTail );
 $script->initialize();
 
 $verbs = array( 'start', 'stop', 'graceful', 'restart', 'kill', 'status',
-                'command', 'config', 'cache', 'layout', 'site', 'conf', 'mod', 'ctl', 'ssl' );
+                'command', 'config', 'cache', 'layout', 'site', 'conf', 'mod', 'ctl', 'ssl', 'ext' );
 $verb = isset( $options['arguments'][0] ) ? strtolower( trim( $options['arguments'][0] ) ) : 'status';
 
 if ( !in_array( $verb, $verbs, true ) )
@@ -247,6 +272,25 @@ switch ( $verb )
         $args = array_merge( array( 'ssl:' . $action ), array_slice( $options['arguments'], 2 ) );
         if ( $asJson && $action === 'show' )
             $args[] = '--json';
+        $script->shutdown( $velocity->ctl( $args ) );
+        break;
+    }
+
+    case 'ext':
+    {
+        // The engine's PHP extension baseline -- qbixctl ext:list, check,
+        // plan, install-hint and build -- with this installation's tree filled
+        // in. Its options go through unchanged (see above).
+        $actions = array( 'list', 'check', 'plan', 'install-hint', 'build' );
+        $action = $velocityExtArgs ? strtolower( array_shift( $velocityExtArgs ) ) : 'check';
+        if ( !in_array( $action, $actions, true ) )
+        {
+            $cli->error( "Usage: ext list|check|plan|install-hint|build [options]  (qbixctl ext:<action> --help for each)" );
+            $script->shutdown( 1 );
+        }
+        $args = array_merge( array( 'ext:' . $action ), $velocityExtArgs );
+        if ( $asJson && !preg_grep( '/^--format/', $velocityExtArgs ) )
+            $args[] = '--format=json';
         $script->shutdown( $velocity->ctl( $args ) );
         break;
     }
