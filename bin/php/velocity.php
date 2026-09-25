@@ -281,6 +281,21 @@ function velocityPrintOverview( eZCLI $cli, array $engines )
             . $cli->stylize( $status['running'] ? 'success' : 'warning', sprintf( '%-8s', $state ) ) . ' '
             . $cli->stylize( 'link', $url[0][1] ) );
     }
+    $running = array();
+    foreach ( $engines as $engine )
+        if ( $engine[1]['running'] )
+            $running[] = $engine[0]->engineName();
+    if ( $running )
+    {
+        $commands = array();
+        foreach ( $running as $name )
+            $commands[] = 'exp:velocity stop --engine=' . $name;
+        if ( count( $running ) > 1 )
+            $commands[] = 'exp:velocity stop --all';
+        $cli->output( '' );
+        foreach ( $commands as $n => $command )
+            $cli->output( sprintf( '    %-10s %s', $n === 0 ? 'Stop' : '', $command ) );
+    }
 }
 
 /**
@@ -636,12 +651,37 @@ switch ( $verb )
         $status = $velocity->status();
         if ( $asJson )
             $cli->output( json_encode( array( 'ok' => true, 'data' => $status ) ) );
+        elseif ( trim( (string)( $options['engine'] ?? '' ) ) === '' )
+        {
+            // Without --engine: every engine, so that one running beside the
+            // default -- left over from a test -- is seen and can be stopped.
+            // The details of each that runs; the default's when none does.
+            $overview = array();
+            foreach ( expVelocity::engines() as $engineName )
+            {
+                $engine = $engineName === $velocity->engineName() ? $velocity : expVelocity::create( 'velocity.ini', $engineName );
+                $overview[] = array( $engine, $engine === $velocity ? $status : $engine->status() );
+            }
+            velocityPrintOverview( $cli, $overview );
+            $shown = 0;
+            foreach ( $overview as $engine )
+                if ( $engine[1]['running'] )
+                {
+                    velocityPrintStatus( $cli, $engine[1], $engine[0] );
+                    ++$shown;
+                }
+            if ( !$shown )
+                velocityPrintStatus( $cli, $status, $velocity );
+            velocityPrintAdmin( $cli, $overview );
+            $cli->output( '' );
+        }
         else
         {
             velocityPrintStatus( $cli, $status, $velocity );
             velocityPrintAdmin( $cli, array( array( $velocity, $status ) ) );
             $cli->output( '' );
         }
+        // The default engine's state, as before: what monitoring checks.
         $script->shutdown( $status['running'] ? 0 : 1 );
         break;
 

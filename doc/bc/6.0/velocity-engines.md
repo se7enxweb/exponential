@@ -56,9 +56,12 @@ to the installation -- and the settings the engine does not act on, one per
 line. The backend pages (admin login, Setup > System information, Setup >
 Caches) are the application's and the same on every engine, so they follow
 once, as links on a running engine, the default when it runs; they are left
-out when no admin siteaccess is matched by URI. `status --all` begins with one
-line per engine -- role, state, URL -- and then shows the details of those
-running; `start --all` ends with that overview. `--json` is unchanged.
+out when no admin siteaccess is matched by URI. `status` without `--engine` (and
+`status --all`) begins with one line per engine -- role, state, URL -- and the
+command that stops each one running, then shows the details of those running
+(the default's when none is), so an engine left running from a test is seen.
+`status --engine=<name>` shows that one only. `start --all` ends with the
+overview. The exit code and `--json` still describe the default engine.
 
 `[FrankenPHPSettings]` and `[PHPServerSettings]` may set `Port`, `HTTPSPort`,
 `Host`, `Workers`, `SpareWorkers` and `DocumentRoot` for their engine. An empty
