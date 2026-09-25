@@ -64,8 +64,9 @@ none is), so an engine left running from a test is seen. `status --all` shows
 the same overview and then the complete status of every engine, stopped ones
 included with every address they will answer at: everything, and every URL,
 at a glance.
-`status --engine=<name>` shows that one only. `start --all` ends with the
-overview. The exit code and `--json` still describe the default engine.
+`status --engine=<name>` shows that one only. `start --all` (and
+`restart`/`graceful --all`) ends with what `status --all` shows; `start` of one
+engine with the overview and that engine's complete status. The exit code and `--json` still describe the default engine.
 
 `[FrankenPHPSettings]` and `[PHPServerSettings]` may set `Port`, `HTTPSPort`,
 `Host`, `Workers`, `SpareWorkers` and `DocumentRoot` for their engine. An empty

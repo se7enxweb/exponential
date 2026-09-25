@@ -421,14 +421,17 @@ if ( count( $engineList ) > 1 )
     }
     elseif ( in_array( $verb, array( 'start', 'restart', 'graceful' ), true ) )
     {
-        // Where to go now: the address of each engine that runs.
+        // What status --all shows, straight away: the overview and the
+        // complete status of every engine, every address included.
         $overview = array();
-        foreach ( $engineList as $engineName )
+        foreach ( expVelocity::engines() as $engineName )
         {
             $engine = expVelocity::create( 'velocity.ini', $engineName );
             $overview[] = array( $engine, $engine->status() );
         }
         velocityPrintOverview( $cli, $overview );
+        foreach ( $overview as $engine )
+            velocityPrintStatus( $cli, $engine[1], $engine[0], true );
         $cli->output( '' );
     }
     $script->shutdown( $allOk ? 0 : 1 );
@@ -743,6 +746,16 @@ switch ( $verb )
             $cli->error( 'velocity: ' . velocityShortPaths( $result['message'] ) );
 
         $status = $velocity->status();
+        if ( in_array( $verb, array( 'start', 'restart', 'graceful' ), true ) )
+        {
+            // After a start: which engines run now, then all about this one.
+            $overview = array();
+            foreach ( expVelocity::engines() as $engineName )
+                $overview[] = $engineName === $velocity->engineName()
+                            ? array( $velocity, $status )
+                            : array( $engine = expVelocity::create( 'velocity.ini', $engineName ), $engine->status() );
+            velocityPrintOverview( $cli, $overview );
+        }
         velocityPrintStatus( $cli, $status, $velocity );
         $cli->output( '' );
         $script->shutdown( $result['ok'] ? 0 : 1 );
