@@ -170,6 +170,28 @@ raises the ceiling further; it is not what makes the application quick.
 `graceful` re-executes the server without releasing the listening socket, so a
 deploy does not drop requests. `status --json` is there for monitoring.
 
+### Engines: FrankenPHP, PHP's built-in server or Qbix
+
+The same commands drive three servers, chosen with `[ServerSettings] Engine` in
+`velocity.ini`:
+
+- **FrankenPHP**: Caddy with PHP built in, downloaded as one checksum-verified
+  binary. The engine for production.
+- **PHP's built-in server**: nothing to install. For development, and the
+  shipped default because it always works.
+- **Qbix**: the bundled Qbix server. Experimental, for tests.
+
+```bash
+./bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user   # production
+./bin/php/console exp:velocity install --allow-root-user   # fetch and verify the binary
+./bin/php/console exp:velocity start   --allow-root-user
+./bin/php/console exp:velocity start --all --allow-root-user   # all three side by side, for tests
+```
+
+What each engine supports, the ports, the settings they share and who may open
+the views each server answers itself are in
+[doc/bc/6.0/velocity-engines.md](doc/bc/6.0/velocity-engines.md).
+
 Settings live in `settings/override/velocity.ini.append.php`. Every one of them
 has a default that works, so a server that configures nothing still runs.
 

@@ -31,7 +31,11 @@ $ViewList["cache"] = array(
                                     'ClearContentCacheButton' => 'ClearContentCache',
                                     'ClearINICacheButton' => 'ClearINICache',
                                     'ClearTemplateCacheButton' => 'ClearTemplateCache',
-                                    'RegenerateStaticCacheButton' => 'RegenerateStaticCache' ),
+                                    'RegenerateStaticCacheButton' => 'RegenerateStaticCache',
+                                    // PHP's own caches of the server process
+                                    // that answers the request.
+                                    'ResetOPcacheButton' => 'ResetOPcache',
+                                    'ClearAPCuButton' => 'ClearAPCu' ),
     'post_action_parameters' => array( 'ClearCache' => array( 'CacheList' => 'CacheList' ),
                                        // Which site to generate, chosen on the
                                        // page before the button is pressed.

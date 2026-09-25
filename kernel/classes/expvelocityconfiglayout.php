@@ -61,7 +61,7 @@ class expVelocityConfigLayout
     );
 
     /** Keys that belong to the site even inside a module's block: this installation's paths and secrets. */
-    protected static $siteKeys = array( 'dir', 'token', 'cert', 'key', 'prewarmDir', 'warmup' );
+    protected static $siteKeys = array( 'dir', 'token', 'cert', 'key', 'prewarmDir', 'warmup', 'paths' );
 
     /** @var expVelocity */
     protected $velocity;
@@ -81,7 +81,7 @@ class expVelocityConfigLayout
      *
      * [LayoutSettings] ConfDir: auto (default), disabled, or a path. auto is
      * /etc/vc when it exists or can be made, else an existing /etc/qbix, else
-     * var/vc/etc inside the installation -- for an account without root.
+     * var/vc/qbix/etc inside the installation -- for an account without root.
      *
      * @return string|null
      */
@@ -97,12 +97,37 @@ class expVelocityConfigLayout
             return '/etc/vc';
         if ( is_dir( '/etc/qbix' ) )
             return '/etc/qbix';
-        return $this->velocity->absolutePath( 'var/vc/etc' );
+        return $this->inInstallation( 'var/vc/qbix/etc', 'var/vc/etc' );
+    }
+
+    /**
+     * A directory of the tree inside the installation. Everything Velocity
+     * writes for one server is kept together below var/vc/<engine>/; until
+     * 2026-09 the tree was var/vc/etc and var/vc/lib. One left there -- with
+     * whatever was edited in it -- is moved to the new place the first time
+     * it is asked for, when nothing is there yet.
+     *
+     * @param string $path
+     * @param string $before
+     * @return string
+     */
+    protected function inInstallation( $path, $before )
+    {
+        $new = $this->velocity->absolutePath( $path );
+        $old = $this->velocity->absolutePath( $before );
+        if ( !file_exists( $new ) && is_dir( $old ) && !is_link( $old ) )
+        {
+            if ( !is_dir( dirname( $new ) ) )
+                @mkdir( dirname( $new ), 0755, true );
+            if ( @rename( $old, $new ) )
+                $this->actions[] = "moved $before to $path";
+        }
+        return $new;
     }
 
     /**
      * Where extended information about sites is kept: /var/lib/<name>, beside
-     * the configuration directory's name, or var/vc/lib for an account
+     * the configuration directory's name, or var/vc/qbix/lib for an account
      * without root.
      *
      * @return string
@@ -116,7 +141,7 @@ class expVelocityConfigLayout
         $name = $confDir !== null && strpos( $confDir, '/etc/' ) === 0 ? basename( $confDir ) : null;
         if ( $name !== null && ( is_dir( "/var/lib/$name" ) || is_writable( '/var/lib' ) ) )
             return "/var/lib/$name";
-        return $this->velocity->absolutePath( 'var/vc/lib' );
+        return $this->inInstallation( 'var/vc/qbix/lib', 'var/vc/lib' );
     }
 
     /**
