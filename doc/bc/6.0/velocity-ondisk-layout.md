@@ -87,3 +87,14 @@ certificates, dashboard token, warm-up script, engine archive) is resolved in on
 `expVelocity` and listed by `exp:velocity layout`. Their defaults are unchanged. The FHS
 locations above are available via settings, not forced, because moving live caches and logs
 is a separate decision.
+
+## Other engines
+
+The tree belongs to the Qbix engine. With `[ServerSettings] Engine=frankenphp`
+the whole configuration is one generated Caddyfile
+(`var/tmp/velocity-frankenphp.Caddyfile`, own directives through
+`[FrankenPHPSettings] SiteInclude`), the binary lives in `var/velocity/bin/` and
+Caddy's state in `var/velocity/caddy/`; with `Engine=php` there is no
+configuration file, only `bin/php/velocity-router.php`. On both, `layout` lists
+those files instead of the tree, and `layout migrate` and `site|conf|mod`
+refuse. See [velocity-engines.md](velocity-engines.md).

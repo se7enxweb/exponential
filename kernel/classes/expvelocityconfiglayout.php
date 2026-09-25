@@ -61,7 +61,7 @@ class expVelocityConfigLayout
     );
 
     /** Keys that belong to the site even inside a module's block: this installation's paths and secrets. */
-    protected static $siteKeys = array( 'dir', 'token', 'cert', 'key', 'prewarmDir', 'warmup' );
+    protected static $siteKeys = array( 'dir', 'token', 'cert', 'key', 'prewarmDir', 'warmup', 'paths' );
 
     /** @var expVelocity */
     protected $velocity;

@@ -30,7 +30,17 @@ $script = eZScript::instance( array( 'description' => (
     "  layout     the configuration tree and every file the server uses\n" .
     "  site|conf|mod enable|disable <name>   as a2ensite/a2enconf/a2enmod do\n" .
     "  ctl        the engine's qbixctl with this installation's tree, site and pid file:\n" .
-    "             ctl status | ctl configtest | ctl layout | ctl ensite NAME ...\n\n" .
+    "             ctl status | ctl configtest | ctl layout | ctl ensite NAME ...\n" .
+    "             (frankenphp: ctl caddyfile | validate | adapt | version | list-modules)\n" .
+    "  install    put the engine's binary in place (frankenphp: download the pinned\n" .
+    "             release and verify its SHA-256; --force, --from=<file>, --check,\n" .
+    "             --trust-github-digest; qbix: nothing to do)\n\n" .
+    "Engines ([ServerSettings] Engine is the default; --engine=<name>[,<name>] or --all\n" .
+    "for start, stop, restart, graceful, kill and status reach the others):\n" .
+    "  php         PHP's built-in web server: development, always works (shipped default)\n" .
+    "  frankenphp  FrankenPHP (Caddy with PHP built in): production\n" .
+    "  qbix        the bundled Qbix server: experimental, for tests\n" .
+    "  Each has its own port, pid file and logs, so they can run side by side.\n\n" .
     "Configuration tree (Debian Apache style, /etc/vc or /etc/qbix):\n" .
     "  layout                               show it: vc.conf, ports.conf, envvars,\n" .
     "                                       sites/conf/mods-available and -enabled\n" .
@@ -64,21 +74,29 @@ $script->startup();
 // that take a value: this script's and eZScript's standard ones.
 list( $velocityArgs, $velocityTail ) = expVelocity::normalizeCliArguments(
     array_slice( $_SERVER['argv'], 1 ),
-    array( 'keep-global', 'siteaccess', 'login', 'password' ),
+    array( 'keep-global', 'siteaccess', 'login', 'password', 'engine', 'from' ),
     array( 'json', 'help', 'quiet', 'verbose', 'colors', 'no-colors', 'logfiles', 'no-logfiles',
-           'allow-root-user', 'debug' ) );
+           'allow-root-user', 'debug', 'force', 'check', 'trust-github-digest', 'all' ) );
 
-$options = $script->getOptions( '[json][keep-global:]', '[command]',
+$options = $script->getOptions( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all]', '[command]',
     array( 'json' => 'Report as JSON, for a caller that is not a person',
            'keep-global' => 'More globals to keep between requests (comma-separated), appended to the '
-                          . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command' ),
+                          . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command',
+           'engine' => 'php, frankenphp or qbix -- or several, comma-separated -- for this command only, '
+                     . 'instead of [ServerSettings] Engine',
+           'all' => 'start, stop, restart, graceful, kill or status every engine, one after the other',
+           'from' => 'install: take the binary from this file instead of downloading it (still verified)',
+           'force' => 'install: download again even if the binary is already there',
+           'check' => 'install: re-hash the installed binary against its SHA-256',
+           'trust-github-digest' => 'install: with no Sha256 pinned for the version, accept the digest '
+                                  . 'GitHub publishes for the release' ),
     $velocityArgs );
 // After "--": plain arguments, never read as options here.
 $options['arguments'] = array_merge( $options['arguments'], $velocityTail );
 $script->initialize();
 
 $verbs = array( 'start', 'stop', 'graceful', 'restart', 'kill', 'status',
-                'command', 'config', 'cache', 'layout', 'site', 'conf', 'mod', 'ctl', 'ssl' );
+                'command', 'config', 'cache', 'layout', 'site', 'conf', 'mod', 'ctl', 'ssl', 'install' );
 $verb = isset( $options['arguments'][0] ) ? strtolower( trim( $options['arguments'][0] ) ) : 'status';
 
 if ( !in_array( $verb, $verbs, true ) )
@@ -87,7 +105,20 @@ if ( !in_array( $verb, $verbs, true ) )
     $script->shutdown( 1 );
 }
 
-$velocity = new expVelocity();
+// Which engines this command is for: --all, a list in --engine, or one.
+$engineList = !empty( $options['all'] ) ? expVelocity::engines()
+            : array_values( array_filter( array_map( 'trim', explode( ',', (string)( $options['engine'] ?? '' ) ) ) ) );
+try
+{
+    $velocity = expVelocity::create( 'velocity.ini', count( $engineList ) === 1 ? $engineList[0] : null );
+    foreach ( $engineList as $engineName )
+        expVelocity::create( 'velocity.ini', $engineName );
+}
+catch ( InvalidArgumentException $e )
+{
+    $cli->error( 'velocity: ' . $e->getMessage() );
+    $script->shutdown( 1 );
+}
 $asJson = !empty( $options['json'] );
 if ( !empty( $options['keep-global'] ) )
     $velocity->appendKeepGlobals( $options['keep-global'] );
@@ -95,8 +126,11 @@ if ( !empty( $options['keep-global'] ) )
 /**
  * Render a status array for a person to read.
  */
-function velocityPrintStatus( eZCLI $cli, array $status )
+function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
 {
+    if ( $velocity !== null )
+        $cli->output( '  engine     : ' . $velocity->engineName() . ' (' . $velocity->role()
+                      . ( $velocity->isDefault() ? ', default' : '' ) . ')' );
     $cli->output( '  running    : ' . ( $status['running'] ? 'yes' : 'no' ) );
     if ( $status['running'] )
     {
@@ -107,6 +141,19 @@ function velocityPrintStatus( eZCLI $cli, array $status )
     }
     $cli->output( '  https      : ' . ( $status['https'] ? 'enabled' : 'disabled' ) );
     $cli->output( '  log        : ' . $status['log'] );
+    // Only engines other than the Qbix server report these; its output is as it was.
+    if ( isset( $status['server'] ) )
+    {
+        $cli->output( '  version    : ' . ( $status['version'] !== '' ? $status['version'] : 'binary missing' ) );
+        $cli->output( '  binary     : ' . $status['binary'] . ' [' . $status['binarySource'] . ']' );
+        if ( $status['running'] )
+            $cli->output( ( $status['server'] === 'php' ? '  workers    : ' : '  threads    : ' ) . $status['threads']
+                          . ( $status['admin'] !== 'none' ? ', admin ' . $status['admin']
+                              . ( $status['adminReachable'] ? '' : ' (not answering)' ) : '' ) );
+        $cli->output( ( $status['server'] === 'php' ? '  router     : ' : '  config     : ' ) . $status['caddyfile'] );
+        foreach ( $status['notes'] as $note )
+            $cli->output( '  not used   : ' . $note );
+    }
 }
 
 /**
@@ -131,6 +178,52 @@ function velocityPrintConfig( eZCLI $cli, array $rows )
     }
     $cli->output( '' );
     $cli->output( '  * set by this installation; everything else is the packaged default' );
+}
+
+// Several engines: the same verb for each, one after the other. One that
+// fails does not stop the rest; the exit code says whether all succeeded.
+if ( count( $engineList ) > 1 )
+{
+    if ( !in_array( $verb, array( 'start', 'stop', 'restart', 'graceful', 'kill', 'status' ), true ) )
+    {
+        $cli->error( "velocity: --all and several engines work with start, stop, restart, graceful, kill and status, not $verb" );
+        $script->shutdown( 1 );
+    }
+    $allOk = true;
+    $report = array();
+    foreach ( $engineList as $engineName )
+    {
+        $engine = expVelocity::create( 'velocity.ini', $engineName );
+        if ( !empty( $options['keep-global'] ) )
+            $engine->appendKeepGlobals( $options['keep-global'] );
+        if ( $verb === 'status' )
+        {
+            $status = $engine->status();
+            $report[$engineName] = array( 'ok' => true, 'role' => $engine->role(),
+                                          'default' => $engine->isDefault(), 'data' => $status );
+            if ( !$asJson )
+            {
+                $cli->output( '' );
+                velocityPrintStatus( $cli, $status, $engine );
+            }
+            continue;
+        }
+        $result = $engine->$verb();
+        // For every engine at once, one that is already running is where
+        // start was meant to take it, not a failure.
+        if ( $verb === 'start' && !$result['ok'] && $result['message'] === 'already running' )
+            $result['ok'] = true;
+        $allOk = $allOk && $result['ok'];
+        $report[$engineName] = $result + array( 'role' => $engine->role(), 'default' => $engine->isDefault() );
+        if ( !$asJson )
+        {
+            $line = 'velocity ' . $engineName . ': ' . $result['message'];
+            $result['ok'] ? $cli->output( $cli->stylize( 'emphasize', $line ) ) : $cli->error( $line );
+        }
+    }
+    if ( $asJson )
+        $cli->output( json_encode( array( 'ok' => $allOk, 'data' => $report ) ) );
+    $script->shutdown( $allOk ? 0 : 1 );
 }
 
 switch ( $verb )
@@ -234,6 +327,12 @@ switch ( $verb )
 
     case 'ssl':
     {
+        if ( !$velocity->supports( 'ssl' ) )
+        {
+            $cli->error( 'velocity: ssl is for the qbix engine; the ' . $velocity->engineName()
+                . ' engine takes its certificate from [HTTPSSettings] (graceful after replacing it)' );
+            $script->shutdown( 1 );
+        }
         // The engine's ssl:show and ssl:renew, with this installation's tree
         // filled in. A renewal is picked up by the running server within its
         // watch interval (a minute), with no restart.
@@ -272,6 +371,22 @@ switch ( $verb )
     case 'layout':
     {
         $action = isset( $options['arguments'][1] ) ? strtolower( trim( $options['arguments'][1] ) ) : 'show';
+        if ( !$velocity->supports( 'layout' ) && $action !== 'migrate' )
+        {
+            // No configuration tree on this engine: the files it uses instead.
+            $assets = $velocity->assets();
+            if ( $asJson )
+            {
+                $cli->output( json_encode( array( 'ok' => true, 'data' => array( 'confDir' => null, 'assets' => $assets ) ) ) );
+                $script->shutdown( 0 );
+            }
+            $cli->output( '  configuration : not used by the ' . $velocity->engineName() . ' engine (generated Caddyfile)' );
+            $cli->output( '' );
+            $cli->output( '  Files the server uses:' );
+            foreach ( $assets as $name => $path )
+                $cli->output( sprintf( '    %-16s %s', $name, $path === null ? '-' : $path ) );
+            $script->shutdown( 0 );
+        }
         if ( $action === 'migrate' )
         {
             $result = $velocity->migrateLayout();
@@ -321,7 +436,34 @@ switch ( $verb )
             $cli->error( "Usage: $verb enable|disable <name>" );
             $script->shutdown( 1 );
         }
+        if ( !$velocity->supports( 'layout' ) )
+        {
+            $cli->error( "velocity: $verb enable|disable works on the /etc/vc tree of the qbix engine; the "
+                . $velocity->engineName() . ' engine takes own directives from [FrankenPHPSettings] SiteInclude' );
+            $script->shutdown( 1 );
+        }
         $result = $velocity->layout()->toggle( $verb, $name, $action === 'enable' );
+        if ( $asJson )
+            $cli->output( json_encode( $result ) );
+        elseif ( $result['ok'] )
+            $cli->output( $cli->stylize( 'emphasize', 'velocity: ' . $result['message'] ) );
+        else
+            $cli->error( 'velocity: ' . $result['message'] );
+        $script->shutdown( $result['ok'] ? 0 : 1 );
+    }
+    break;
+
+    case 'install':
+    {
+        $installOptions = array(
+            'force' => !empty( $options['force'] ),
+            'from' => !empty( $options['from'] ) ? $options['from'] : null,
+            'check' => !empty( $options['check'] ),
+            'trustGithubDigest' => !empty( $options['trust-github-digest'] ),
+        );
+        if ( !$asJson )
+            $installOptions['progress'] = function ( $line ) use ( $cli ) { $cli->output( '  ' . $line ); };
+        $result = $velocity->install( $installOptions );
         if ( $asJson )
             $cli->output( json_encode( $result ) );
         elseif ( $result['ok'] )
@@ -346,7 +488,7 @@ switch ( $verb )
         if ( $asJson )
             $cli->output( json_encode( array( 'ok' => true, 'data' => $status ) ) );
         else
-            velocityPrintStatus( $cli, $status );
+            velocityPrintStatus( $cli, $status, $velocity );
         $script->shutdown( $status['running'] ? 0 : 1 );
         break;
 
@@ -366,6 +508,6 @@ switch ( $verb )
             $cli->error( 'velocity: ' . $result['message'] );
 
         $status = $velocity->status();
-        velocityPrintStatus( $cli, $status );
+        velocityPrintStatus( $cli, $status, $velocity );
         $script->shutdown( $result['ok'] ? 0 : 1 );
 }
