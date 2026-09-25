@@ -43,6 +43,16 @@ class expVelocityFrankenPHP extends expVelocity
     /** @var array|null `frankenphp version`, per binary, for status */
     protected $versionCache = array();
 
+    /** @var bool TLS for this start only (`start --https`) */
+    protected $httpsForced = false;
+
+    /** Where the self-signed certificate lives, relative to the installation. */
+    const SELF_SIGNED_DIR = 'var/velocity/tls';
+
+    /** Days a self-signed certificate is made for, and renewed before it has fewer left. */
+    const SELF_SIGNED_DAYS = 365;
+    const SELF_SIGNED_RENEW_DAYS = 30;
+
     // ── Settings ─────────────────────────────────────────────────────────
 
     /**
@@ -55,6 +65,160 @@ class expVelocityFrankenPHP extends expVelocity
     public function frankenSetting( $variable, $default = null )
     {
         return parent::setting( 'FrankenPHPSettings', $variable, $default );
+    }
+
+    // ── TLS ──────────────────────────────────────────────────────────────
+
+    /**
+     * Serve HTTPS for this start, whatever [FrankenPHPSettings] HTTPS says.
+     */
+    public function forceHttps()
+    {
+        $this->httpsForced = true;
+    }
+
+    /**
+     * Whether this engine serves HTTPS: `start --https`, [FrankenPHPSettings]
+     * HTTPS=enabled, or [HTTPSSettings] Enabled with a certificate that
+     * exists, as for the other engines. Without a certificate of its own the
+     * engine uses a self-signed one (tlsFiles()).
+     *
+     * @return bool
+     */
+    public function httpsEnabled()
+    {
+        if ( $this->httpsForced )
+            return true;
+        if ( in_array( strtolower( trim( (string)$this->frankenSetting( 'HTTPS', 'disabled' ) ) ), array( 'enabled', 'true' ), true ) )
+            return true;
+        return parent::httpsEnabled();
+    }
+
+    /**
+     * Whether the running server serves TLS -- also when it was started
+     * with --https and the settings do not say so: its Caddyfile does.
+     *
+     * @return bool
+     */
+    public function runningWithTls()
+    {
+        return $this->isRunning() && is_file( $this->caddyfile() )
+            && strpos( (string)@file_get_contents( $this->caddyfile() ), 'https://:' ) !== false;
+    }
+
+    /**
+     * @return int|null the HTTPS port when TLS is on or the running server serves it
+     */
+    public function httpsPort()
+    {
+        return $this->httpsEnabled() || $this->runningWithTls()
+            ? (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 ) : null;
+    }
+
+    /**
+     * The certificate and key TLS uses: [HTTPSSettings] Certificate and Key
+     * when both are set, else a self-signed pair under SELF_SIGNED_DIR --
+     * made when missing, unreadable or close to expiry, when $create.
+     *
+     * @param bool $create make or renew the self-signed pair
+     * @return array|string [certificate, key, selfSigned], or why there is none
+     */
+    public function tlsFiles( $create = false )
+    {
+        $cert = trim( (string)$this->setting( 'HTTPSSettings', 'Certificate', '' ) );
+        $key = trim( (string)$this->setting( 'HTTPSSettings', 'Key', '' ) );
+        if ( $cert !== '' || $key !== '' )
+        {
+            $cert = $this->absolute( $cert );
+            $key = $this->absolute( $key );
+            if ( !is_file( $cert ) || !is_file( $key ) )
+                return '[HTTPSSettings] Certificate and Key must both name files that exist'
+                     . ' (leave both empty for a self-signed certificate)';
+            return array( $cert, $key, false );
+        }
+
+        $dir = $this->absolute( self::SELF_SIGNED_DIR );
+        $cert = $dir . '/selfsigned.crt';
+        $key = $dir . '/selfsigned.key';
+        if ( $create && !$this->selfSignedUsable( $cert, $key ) )
+        {
+            $made = $this->makeSelfSigned( $cert, $key );
+            if ( $made !== true )
+                return $made;
+        }
+        return array( $cert, $key, true );
+    }
+
+    /**
+     * Whether a self-signed pair can be used as it is: both files there, the
+     * certificate readable and with more than SELF_SIGNED_RENEW_DAYS left.
+     */
+    protected function selfSignedUsable( $cert, $key )
+    {
+        if ( !is_file( $cert ) || !is_file( $key ) || !function_exists( 'openssl_x509_parse' ) )
+            return false;
+        $parsed = @openssl_x509_parse( (string)@file_get_contents( $cert ) );
+        return is_array( $parsed ) && isset( $parsed['validTo_time_t'] )
+            && $parsed['validTo_time_t'] > time() + self::SELF_SIGNED_RENEW_DAYS * 86400;
+    }
+
+    /**
+     * Make a self-signed certificate for this machine: localhost, 127.0.0.1,
+     * ::1, the host name and a specific bind address, SHA-256 (the default
+     * digest is refused by current crypto policies), the key readable by the
+     * owner only.
+     *
+     * @return true|string
+     */
+    protected function makeSelfSigned( $cert, $key )
+    {
+        if ( !function_exists( 'openssl_pkey_new' ) )
+            return 'HTTPS without [HTTPSSettings] Certificate and Key needs the openssl extension'
+                 . ' to make a self-signed certificate';
+        $dir = dirname( $cert );
+        if ( !is_dir( $dir ) && !@mkdir( $dir, 0700, true ) )
+            return 'could not create ' . $dir;
+
+        $names = array( 'DNS:localhost', 'IP:127.0.0.1', 'IP:::1' );
+        $hostname = strtolower( (string)gethostname() );
+        if ( $hostname !== '' && $hostname !== 'localhost' && preg_match( '/^[a-z0-9.-]+$/', $hostname ) )
+            $names[] = 'DNS:' . $hostname;
+        $bind = trim( $this->bindHost(), '[]' );
+        if ( filter_var( $bind, FILTER_VALIDATE_IP ) && !in_array( $bind, array( '127.0.0.1', '::1', '0.0.0.0', '::' ), true ) )
+            $names[] = 'IP:' . $bind;
+
+        // openssl_csr_sign() takes extensions only from a configuration file.
+        $config = tempnam( sys_get_temp_dir(), 'vfp-tls' );
+        file_put_contents( $config, "[req]\ndistinguished_name = dn\n[dn]\n[ext]\n"
+            . 'subjectAltName = ' . implode( ',', $names ) . "\n"
+            . "basicConstraints = critical,CA:FALSE\nkeyUsage = critical,digitalSignature,keyEncipherment\n"
+            . "extendedKeyUsage = serverAuth\n" );
+        $options = array( 'config' => $config, 'digest_alg' => 'sha256', 'x509_extensions' => 'ext',
+                          'private_key_bits' => 2048, 'private_key_type' => OPENSSL_KEYTYPE_RSA );
+        // OpenSSL queues errors that did no harm (a missing ~/.rnd); cleared
+        // first, so a failure below reports its own.
+        while ( openssl_error_string() !== false );
+        $pkey = @openssl_pkey_new( $options );
+        $csr = $pkey ? @openssl_csr_new( array( 'commonName' => 'localhost', 'organizationName' => 'Exponential Velocity (self-signed)' ),
+                                          $pkey, $options ) : false;
+        $x509 = $csr ? @openssl_csr_sign( $csr, null, $pkey, self::SELF_SIGNED_DAYS, $options, random_int( 1, PHP_INT_MAX ) ) : false;
+        // The key's export reads the configuration too; removed only after it.
+        $ok = $x509 && openssl_x509_export( $x509, $certPem ) && openssl_pkey_export( $pkey, $keyPem, null, $options );
+        @unlink( $config );
+        if ( !$ok )
+        {
+            $errors = array();
+            while ( ( $error = openssl_error_string() ) !== false )
+                $errors[] = $error;
+            return 'could not make a self-signed certificate' . ( $errors ? ': ' . implode( '; ', $errors ) : '' );
+        }
+
+        $old = umask( 077 );
+        $written = @file_put_contents( $key, $keyPem ) !== false && @file_put_contents( $cert, $certPem ) !== false;
+        umask( $old );
+        @chmod( $key, 0600 );
+        @chmod( $cert, 0644 );
+        return $written ? true : 'could not write the self-signed certificate to ' . $dir;
     }
 
     /**
@@ -399,10 +563,10 @@ class expVelocityFrankenPHP extends expVelocity
 
         $bind = ( $host !== '' ) ? "\tbind " . $host : null;
         $sites = array( array( 'http://:' . $port, null ) );
-        if ( $this->httpsEnabled() )
+        $tls = $this->httpsEnabled() ? $this->tlsFiles() : null;
+        if ( is_array( $tls ) )
             $sites[] = array( 'https://:' . (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 ),
-                              "\ttls " . call_user_func( $q, $this->absolute( $this->setting( 'HTTPSSettings', 'Certificate', '' ) ) )
-                              . ' ' . call_user_func( $q, $this->absolute( $this->setting( 'HTTPSSettings', 'Key', '' ) ) ) );
+                              "\ttls " . call_user_func( $q, $tls[0] ) . ' ' . call_user_func( $q, $tls[1] ) );
         foreach ( $sites as $site )
         {
             $lines[] = $site[0] . ' {';
@@ -742,6 +906,14 @@ class expVelocityFrankenPHP extends expVelocity
         if ( $this->isRunning() )
             return $this->result( false, 'already running', $this->status() );
 
+        // The certificate first: the Caddyfile prepare() writes names it.
+        if ( $this->httpsEnabled() )
+        {
+            $tls = $this->tlsFiles( true );
+            if ( !is_array( $tls ) )
+                return $this->result( false, 'HTTPS: ' . $tls, $this->status() );
+        }
+
         $ready = $this->prepare();
         if ( $ready !== true )
             return $this->result( false, $ready, $this->status() );
@@ -1040,8 +1212,8 @@ class expVelocityFrankenPHP extends expVelocity
             'errorLog'       => $logs['error'],
             'adminSocket'    => $socket,
             'caddyData'      => $this->absolute( 'var/velocity/caddy' ),
-            'certificate'    => $this->httpsEnabled() ? $this->absolute( $this->setting( 'HTTPSSettings', 'Certificate', '' ) ) : null,
-            'certificateKey' => $this->httpsEnabled() ? $this->absolute( $this->setting( 'HTTPSSettings', 'Key', '' ) ) : null,
+            'certificate'    => $this->httpsEnabled() && is_array( $this->tlsFiles() ) ? $this->tlsFiles()[0] : null,
+            'certificateKey' => $this->httpsEnabled() && is_array( $this->tlsFiles() ) ? $this->tlsFiles()[1] : null,
             'engineArchive'  => $this->enginePhar() !== '' ? $this->enginePhar() : null,
         );
     }
@@ -1102,7 +1274,17 @@ class expVelocityFrankenPHP extends expVelocity
             $threads += count( glob( '/proc/' . (int)$pid . '/task/*', GLOB_ONLYDIR ) ?: array() );
 
         $path = trim( (string)$this->frankenSetting( 'BinaryPath', '' ) );
+
+        // A server started with --https serves TLS although the settings do
+        // not say so; its Caddyfile does.
+        $https = $status['https'] || ( $pids && $this->runningWithTls() );
+        $tls = $https ? $this->tlsFiles() : null;
+
         return array_merge( $status, array(
+            'https'          => $https,
+            'httpsPort'      => $https ? (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 ) : null,
+            'certificate'    => is_array( $tls ) ? $tls[0] : null,
+            'selfSigned'     => is_array( $tls ) ? $tls[2] : null,
             'server'         => 'frankenphp',
             'version'        => $this->binaryVersion(),
             'binary'         => $this->binary(),

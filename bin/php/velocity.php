@@ -78,7 +78,7 @@ list( $velocityArgs, $velocityTail ) = expVelocity::normalizeCliArguments(
     array( 'json', 'help', 'quiet', 'verbose', 'colors', 'no-colors', 'logfiles', 'no-logfiles',
            'allow-root-user', 'debug', 'force', 'check', 'trust-github-digest', 'all' ) );
 
-$options = $script->getOptions( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all]', '[command]',
+$options = $script->getOptions( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https]', '[command]',
     array( 'json' => 'Report as JSON, for a caller that is not a person',
            'keep-global' => 'More globals to keep between requests (comma-separated), appended to the '
                           . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command',
@@ -122,6 +122,27 @@ catch ( InvalidArgumentException $e )
 $asJson = !empty( $options['json'] );
 if ( !empty( $options['keep-global'] ) )
     $velocity->appendKeepGlobals( $options['keep-global'] );
+
+// --https: TLS for this start, with a self-signed certificate unless
+// [HTTPSSettings] names one. The frankenphp engine's; with --all it reaches
+// that engine and leaves the others as they are.
+if ( !empty( $options['https'] ) )
+{
+    if ( !in_array( $verb, array( 'start', 'restart', 'graceful' ), true ) )
+    {
+        $cli->error( 'velocity: --https goes with start, restart and graceful' );
+        $script->shutdown( 1 );
+    }
+    if ( count( $engineList ) <= 1 && !method_exists( $velocity, 'forceHttps' ) )
+    {
+        $cli->error( 'velocity: --https is the frankenphp engine\'s (--engine=frankenphp); '
+                     . ( $velocity->engineName() === 'php' ? 'the built-in server has no TLS'
+                         : 'the ' . $velocity->engineName() . ' engine uses [HTTPSSettings] Enabled with Certificate and Key' ) );
+        $script->shutdown( 1 );
+    }
+    if ( method_exists( $velocity, 'forceHttps' ) )
+        $velocity->forceHttps();
+}
 
 /**
  * A message or note with this installation's paths made relative to it.
@@ -195,6 +216,17 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
     }
     if ( $velocity !== null && $velocity->engineName() === 'php' )
         $row( 'HTTPS', 'none: the built-in server speaks plain HTTP only' );
+    elseif ( $velocity !== null && $velocity->engineName() === 'frankenphp' )
+    {
+        if ( $status['https'] )
+            $row( 'HTTPS', 'on, port ' . $velocity->configuredHttpsPort() . ' · '
+                . ( !empty( $status['selfSigned'] )
+                    ? 'self-signed certificate ' . velocityShortPaths( $status['certificate'] ) . ' (a browser warns once)'
+                    : 'certificate ' . velocityShortPaths( (string)$status['certificate'] ) ) );
+        else
+            $row( 'HTTPS', 'off; port ' . $velocity->configuredHttpsPort() . ' with start --https or [FrankenPHPSettings] HTTPS=enabled'
+                . ' (self-signed unless [HTTPSSettings] Certificate and Key)' );
+    }
     elseif ( $velocity !== null )
         $row( 'HTTPS', $status['https'] ? 'on, port ' . $velocity->configuredHttpsPort()
             : 'off; port ' . $velocity->configuredHttpsPort() . ' once [HTTPSSettings] Enabled=true with Certificate and Key' );
@@ -292,6 +324,8 @@ if ( count( $engineList ) > 1 )
         $engine = expVelocity::create( 'velocity.ini', $engineName );
         if ( !empty( $options['keep-global'] ) )
             $engine->appendKeepGlobals( $options['keep-global'] );
+        if ( !empty( $options['https'] ) && method_exists( $engine, 'forceHttps' ) )
+            $engine->forceHttps();
         if ( $verb === 'status' )
         {
             $status = $engine->status();

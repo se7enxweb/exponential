@@ -313,6 +313,9 @@ class expVelocityEnginesTest extends ezpTestCase
         file_put_contents( $dir . '/cert.pem', 'x' );
         file_put_contents( $dir . '/key.pem', 'x' );
         ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'Port', '8126' );
+        // Not the installation's own server, which may be running.
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'PidFile', 'var/tmp/velocity-test-none.pid' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'ConfigFile', 'var/tmp/velocity-test-none.Caddyfile' );
         ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'HTTPSPort', '8446' );
         ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'Enabled', 'false' );
         $franken = expVelocity::create( 'velocity.ini', 'frankenphp' );
@@ -328,6 +331,65 @@ class expVelocityEnginesTest extends ezpTestCase
 
         @unlink( $dir . '/cert.pem' );
         @unlink( $dir . '/key.pem' );
+        @rmdir( $dir );
+    }
+
+    public function testFrankenphpHttpsWithASelfSignedCertificate()
+    {
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'Port', '8127' );
+        // Not the installation's own server, which may be running.
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'PidFile', 'var/tmp/velocity-test-none.pid' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'ConfigFile', 'var/tmp/velocity-test-none.Caddyfile' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'HTTPSPort', '8447' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'HTTPS', 'disabled' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'Enabled', 'false' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'Certificate', '' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'Key', '' );
+
+        $franken = expVelocity::create( 'velocity.ini', 'frankenphp' );
+        $this->assertFalse( $franken->httpsEnabled() );
+        $this->assertStringNotContainsString( 'https://', $franken->caddyfileText() );
+
+        // --https: this start only, a self-signed pair when none is named.
+        $franken->forceHttps();
+        $this->assertTrue( $franken->httpsEnabled() );
+        $tls = $franken->tlsFiles();
+        $this->assertTrue( $tls[2] );
+        $this->assertStringEndsWith( 'var/velocity/tls/selfsigned.crt', $tls[0] );
+        $caddy = $franken->caddyfileText();
+        $this->assertStringContainsString( 'http://:8127 {', $caddy );
+        $this->assertStringContainsString( 'https://:8447 {', $caddy );
+        $this->assertStringContainsString( 'selfsigned.key', $caddy );
+
+        // The setting does the same for every start.
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'HTTPS', 'enabled' );
+        $this->assertTrue( expVelocity::create( 'velocity.ini', 'frankenphp' )->httpsEnabled() );
+
+        // A named certificate is used as it is, and must exist.
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'Certificate', '/nonexistent/cert.pem' );
+        $this->assertIsString( expVelocity::create( 'velocity.ini', 'frankenphp' )->tlsFiles() );
+    }
+
+    public function testMakingASelfSignedCertificate()
+    {
+        if ( !function_exists( 'openssl_pkey_new' ) )
+            $this->markTestSkipped( 'no openssl extension' );
+        $dir = sys_get_temp_dir() . '/velocity-selfsigned-' . getmypid();
+        $franken = expVelocity::create( 'velocity.ini', 'frankenphp' );
+        $make = new ReflectionMethod( $franken, 'makeSelfSigned' );
+        $make->setAccessible( true );
+        $this->assertTrue( $make->invoke( $franken, $dir . '/c.crt', $dir . '/c.key' ) );
+
+        $cert = openssl_x509_parse( file_get_contents( $dir . '/c.crt' ) );
+        $this->assertStringContainsString( 'DNS:localhost', $cert['extensions']['subjectAltName'] );
+        $this->assertStringContainsString( 'IP Address:127.0.0.1', $cert['extensions']['subjectAltName'] );
+        $this->assertGreaterThan( time() + 300 * 86400, $cert['validTo_time_t'] );
+        $this->assertSame( 'sha256WithRSAEncryption', $cert['signatureTypeLN'] ?? 'sha256WithRSAEncryption' );
+        $this->assertSame( '600', substr( sprintf( '%o', fileperms( $dir . '/c.key' ) ), -3 ) );
+        $this->assertTrue( openssl_x509_check_private_key( file_get_contents( $dir . '/c.crt' ), file_get_contents( $dir . '/c.key' ) ) );
+
+        @unlink( $dir . '/c.crt' );
+        @unlink( $dir . '/c.key' );
         @rmdir( $dir );
     }
 

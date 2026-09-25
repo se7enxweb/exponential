@@ -146,6 +146,26 @@ Directives of your own (headers, redirects, extra routes) go in a file named by
 `[FrankenPHPSettings] SiteInclude`, imported into every site block. Do not edit
 the generated file.
 
+### HTTPS
+
+FrankenPHP serves HTTPS on `HTTPSPort` (8444) beside plain HTTP on `Port`:
+
+```bash
+./bin/php/console exp:velocity start --engine=frankenphp --https   # this start only
+```
+
+or for every start `[FrankenPHPSettings] HTTPS=enabled`. It uses
+`[HTTPSSettings] Certificate` and `Key` when both are set (both must exist).
+With both empty it makes a **self-signed certificate** for this machine --
+`localhost`, `127.0.0.1`, `::1` and the host name, SHA-256, valid a year --
+in `var/velocity/tls/` (key 0600) and renews it a month before it runs out.
+A browser warns about it once; it is meant for testing and for a reverse
+proxy in front, not for visitors. `[HTTPSSettings] Enabled=true` with a
+certificate switches it on as before. `status` says which certificate is in
+use and lists the HTTPS address beside the HTTP one, also for a server started
+with `--https`. `--https` is the frankenphp engine's: the built-in server has
+no TLS, and the Qbix server takes `[HTTPSSettings]`.
+
 ### Control
 
 `stop` and `graceful` use Caddy's admin API, by default on a unix socket at
