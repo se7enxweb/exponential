@@ -96,7 +96,7 @@ class expVelocityPHPServer extends expVelocity
      */
     public function pidFile()
     {
-        return $this->absolute( $this->serverSetting( 'PidFile', 'var/tmp/velocity-php.pid' ) );
+        return $this->absolute( $this->serverSetting( 'PidFile', 'var/vc/php/run/server.pid' ) );
     }
 
     /**
@@ -104,9 +104,18 @@ class expVelocityPHPServer extends expVelocity
      *
      * @return string
      */
+    public function requestLogs()
+    {
+        // The console is the request log; logFile() is all there is.
+        return array( 'access' => null, 'error' => null );
+    }
+
+    /**
+     * @return string requests and PHP's errors, as the built-in server prints them
+     */
     public function logFile()
     {
-        return $this->absolute( $this->serverSetting( 'LogFile', 'var/tmp/velocity-php.log' ) );
+        return $this->absolute( $this->serverSetting( 'LogFile', 'var/vc/php/log/server.log' ) );
     }
 
     /**

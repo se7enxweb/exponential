@@ -88,7 +88,7 @@ deploy scripts run `exp:velocity restart` to mean the Qbix server sets
 `install` fetches the release asset for this machine from GitHub, for the
 version pinned in `[FrankenPHPSettings] Version`, and refuses it unless its
 SHA-256 matches the value pinned beside it (`Sha256[<asset>]`). It lands in
-`var/velocity/bin/frankenphp-<version>-<asset>` (git-ignored), next to a
+`var/vc/frankenphp/bin/frankenphp-<version>-<asset>` (git-ignored), next to a
 `.sha256` file. `start` installs it on its own when it is missing
 (`AutoInstall=enabled`).
 
@@ -111,7 +111,7 @@ macOS gets `frankenphp-mac-arm64` or `-x86_64`; Windows is not downloaded.
 
 **A new release** means changing `Version` and every `Sha256[]` line together
 (the digests are on the release's GitHub API page, `ApiUrl`). The old binary
-stays in `var/velocity/bin`, so going back is only the setting.
+stays in `var/vc/frankenphp/bin`, so going back is only the setting.
 
 **An own build** — another PHP version, extra Caddy modules (the response cache
 `cache-handler`, for instance) — is named by `BinaryPath`. Nothing is downloaded
@@ -132,7 +132,7 @@ request time, so edited and regenerated PHP files are picked up.
 
 ### The generated Caddyfile
 
-`var/tmp/velocity-frankenphp.Caddyfile` is written from `velocity.ini` on every
+`var/vc/frankenphp/run/Caddyfile` is written from `velocity.ini` on every
 `start`, `graceful` and `restart`, and checked with `frankenphp validate` before
 it replaces the previous one — a broken configuration never reaches the running
 server. `exp:velocity ctl caddyfile` prints it; `ctl validate`, `ctl adapt`,
@@ -165,7 +165,7 @@ has `https://` from the first start:
 `[HTTPSSettings] Certificate` and `Key` when both are set (both must exist).
 With both empty it makes a **self-signed certificate** for this machine --
 `localhost`, `127.0.0.1`, `::1` and the host name, SHA-256, valid a year --
-in `var/velocity/tls/` (key 0600) and renews it a month before it runs out.
+in `var/vc/frankenphp/tls/` (key 0600) and renews it a month before it runs out.
 A browser warns about it once; it is meant for development and for a reverse
 proxy in front, not for visitors -- a public site names its certificate or
 terminates TLS in front. When the self-signed certificate cannot be made (no
@@ -180,7 +180,7 @@ no TLS, and the Qbix server takes `[HTTPSSettings]`.
 ### Control
 
 `stop` and `graceful` use Caddy's admin API, by default on a unix socket at
-`var/tmp/vfp-admin.sock` (owner only; no port that could clash with another
+`var/vc/frankenphp/run/admin.sock` (owner only; no port that could clash with another
 installation). A path longer than a socket allows falls back to
 `localhost:<Port + 10000>`; `AdminAddress` sets it explicitly. `stop` falls back
 to SIGTERM when the API does not answer; `graceful` falls back to a restart.
@@ -189,16 +189,51 @@ to SIGTERM when the API does not answer; `graceful` falls back to a restart.
 threads restart with the new interpreter settings. Measured: a thread count
 change under a request loop, 66 of 66 requests answered, the process kept.
 
-Caddy keeps its state under `var/velocity/caddy/` (`XDG_DATA_HOME`,
+Caddy keeps its state under `var/vc/frankenphp/caddy/` (`XDG_DATA_HOME`,
 `XDG_CONFIG_HOME`), not in the home directory of the service user.
 
 ### Logs
 
-Caddy writes JSON. So the access and error log are
-`<LogSettings Dir>/frankenphp-access.log` and `frankenphp-error.log` (or
-`AccessLog`/`ErrorLog`), not the Qbix server's file names — switching engines
-never leaves one file in two formats. `LogSettings Enabled` and `FileMode`
-apply; `Format` does not.
+Everything Velocity (`vc`) writes is below `var/vc/`, **one directory per
+server**, so what belongs together is kept together:
+
+```
+var/vc/
+├── qbix/
+│   ├── etc/    the configuration tree            (/etc/vc with root)
+│   ├── lib/    what is known about each site     (/var/lib/vc with root)
+│   ├── log/    site-access.log, site-error.log, velocity-layout.log   [LogSettings] Dir
+│   └── run/    server.pid, console.log
+├── frankenphp/
+│   ├── bin/    the binary (exp:velocity install)
+│   ├── caddy/  Caddy's state
+│   ├── tls/    the self-signed certificate
+│   ├── log/    access.log, error.log              [FrankenPHPSettings] LogDir
+│   └── run/    server.pid, console.log, Caddyfile, admin.sock
+└── php/
+    ├── log/    server.log                         [PHPServerSettings] LogFile
+    └── run/    server.pid
+```
+
+`status` names each file. Caddy writes JSON, so FrankenPHP's `access.log` and
+`error.log` (or `AccessLog`/`ErrorLog`) are its own — switching engines never
+leaves one file in two formats. `LogSettings Enabled` and `FileMode` apply;
+`Format` does not. Caches stay where they were (`[CacheSettings] Dir`,
+`var/tmp/precompress`), and so does `var/tmp/velocity-server.json`, the Qbix
+server's configuration before the vc layout, which older setups read.
+
+**Upgrading:** until 2026-09 the logs were in `var/log/qbix/` (Qbix server,
+and FrankenPHP's `frankenphp-access.log`/`frankenphp-error.log`) and
+`var/tmp/velocity-php.log`, the pid files, console logs, the Caddyfile and the
+admin socket in `var/tmp/`, the Qbix configuration tree in `var/vc/etc` and
+`var/vc/lib`. That tree is moved to `var/vc/qbix/` on the next start, with
+whatever was edited in it, when nothing is there yet; the other old files
+stay where they are. A server started
+before the upgrade is still found and stopped (FrankenPHP by its old
+Caddyfile path, since its admin socket moved). An installation that sets
+`[LogSettings] Dir`, `PidFile` or `LogFile` itself keeps what it set; a
+script that reads `var/tmp/velocity.pid` reads
+`var/vc/qbix/run/server.pid` now.
 
 ## PHP's built-in web server
 
@@ -210,7 +245,8 @@ apply; `Format` does not.
 that runs `exp:velocity` (or `[PHPServerSettings] PHPBinary`), its php.ini and
 `[PHPSettings] IniOptions[]`. Nothing to install. `Workers` becomes
 `PHP_CLI_SERVER_WORKERS` (Linux); the request log is the server's console,
-`var/tmp/velocity-php.log`.
+`var/vc/php/log/server.log` — requests and PHP's errors in one file,
+since `php -S` does not separate them.
 
 It is a development server, as the PHP manual says: plain HTTP, no reload
 (`graceful` restarts), static files without a cache lifetime. Keep `Host` at
@@ -326,7 +362,7 @@ Tokens are never put into links; the page itself is for administrators only.
 | qbix | `/Q/panel` | control panel | this machine only, then the panel password (the first visit sets it) |
 | qbix | `/Q/docs`, `/Q/cluster/status`, `/Q/health` status | documentation, cluster state, "ok" | everyone |
 | frankenphp | `/Q/health` | empty 200 | everyone |
-| frankenphp | admin API | `var/tmp/vfp-admin.sock` | not a web page: the user running the server only |
+| frankenphp | admin API | `var/vc/frankenphp/run/admin.sock` | not a web page: the user running the server only |
 | php | `/Q/health` | empty 200 | everyone |
 
 The Qbix rules are the server's own (`Q_WebServer::adminAllowed()`, v0.0.4.27);

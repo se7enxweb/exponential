@@ -356,7 +356,7 @@ class expVelocityEnginesTest extends ezpTestCase
         $this->assertTrue( $franken->httpsEnabled() );
         $tls = $franken->tlsFiles();
         $this->assertTrue( $tls[2] );
-        $this->assertStringEndsWith( 'var/velocity/tls/selfsigned.crt', $tls[0] );
+        $this->assertStringEndsWith( 'var/vc/frankenphp/tls/selfsigned.crt', $tls[0] );
         $caddy = $franken->caddyfileText();
         $this->assertStringContainsString( 'http://:8127 {', $caddy );
         $this->assertStringContainsString( 'https://:8447 {', $caddy );
@@ -399,6 +399,29 @@ class expVelocityEnginesTest extends ezpTestCase
         @unlink( $dir . '/c.crt' );
         @unlink( $dir . '/c.key' );
         @rmdir( $dir );
+    }
+
+    public function testEverythingAServerWritesIsBelowVarVelocity()
+    {
+        // The shipped settings, not an override on the test machine.
+        $ini = eZINI::fetchFromFile( 'settings/velocity.ini' );
+        $this->assertSame( 'var/vc/qbix/log', $ini->variable( 'LogSettings', 'Dir' ) );
+        $this->assertSame( 'var/vc/qbix/run/server.pid', $ini->variable( 'ServerSettings', 'PidFile' ) );
+        $this->assertSame( 'var/vc/qbix/run/console.log', $ini->variable( 'ServerSettings', 'LogFile' ) );
+        $this->assertSame( 'var/vc/frankenphp/run/Caddyfile', $ini->variable( 'FrankenPHPSettings', 'ConfigFile' ) );
+        $this->assertSame( 'var/vc/frankenphp/run/server.pid', $ini->variable( 'FrankenPHPSettings', 'PidFile' ) );
+        $this->assertSame( 'var/vc/php/run/server.pid', $ini->variable( 'PHPServerSettings', 'PidFile' ) );
+        $this->assertSame( 'var/vc/php/log/server.log', $ini->variable( 'PHPServerSettings', 'LogFile' ) );
+
+        // FrankenPHP's request logs: a directory of its own, not the Qbix server's.
+        ezpINIHelper::setINISetting( 'velocity.ini', 'LogSettings', 'Enabled', 'enabled' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'LogSettings', 'Dir', 'var/log/elsewhere' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'LogDir', '' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'AccessLog', '' );
+        $logs = expVelocity::create( 'velocity.ini', 'frankenphp' )->requestLogs();
+        $this->assertStringEndsWith( 'var/vc/frankenphp/log/access.log', $logs['access'] );
+        $this->assertStringEndsWith( 'var/log/elsewhere/', dirname( expVelocity::create( 'velocity.ini', 'qbix' )->requestLogs()['access'] ) . '/' );
+        $this->assertNull( expVelocity::create( 'velocity.ini', 'php' )->requestLogs()['access'] );
     }
 
     public function testRelativePath()

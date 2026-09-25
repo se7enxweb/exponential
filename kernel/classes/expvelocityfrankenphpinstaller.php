@@ -16,7 +16,7 @@
  * repository or a Composer package -- so it is fetched from the project's
  * GitHub releases for the version velocity.ini pins, and refused unless its
  * SHA-256 matches the value pinned beside it. The file is named after the
- * version (var/velocity/bin/frankenphp-1.12.7-linux-x86_64-gnu), so moving to a new
+ * version (var/vc/frankenphp/bin/frankenphp-1.12.7-linux-x86_64-gnu), so moving to a new
  * release downloads next to the old binary, and going back is a setting.
  *
  * A machine without access to GitHub installs from a file copied there by
@@ -120,7 +120,7 @@ class expVelocityFrankenPHPInstaller
      */
     public function directory()
     {
-        return $this->engine->absolutePath( $this->engine->frankenSetting( 'BinaryDir', 'var/velocity/bin' ) );
+        return $this->engine->absolutePath( $this->engine->frankenSetting( 'BinaryDir', 'var/vc/frankenphp/bin' ) );
     }
 
     /**

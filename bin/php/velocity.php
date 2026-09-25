@@ -247,7 +247,17 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
             : 'off; port ' . $velocity->configuredHttpsPort() . ' once [HTTPSSettings] Enabled=true with Certificate and Key' );
     else
         $row( 'HTTPS', $status['https'] ? 'on' : 'off' );
-    $row( 'Log', $rel( $status['log'] ) );
+    $requestLogs = $velocity !== null ? $velocity->requestLogs() : array( 'access' => null, 'error' => null );
+    if ( $requestLogs['access'] !== null || $requestLogs['error'] !== null )
+    {
+        if ( $requestLogs['access'] !== null )
+            $row( 'Access', $rel( $requestLogs['access'] ) );
+        if ( $requestLogs['error'] !== null )
+            $row( 'Errors', $rel( $requestLogs['error'] ) );
+        $row( 'Console', $rel( $status['log'] ) );
+    }
+    else
+        $row( 'Log', $rel( $status['log'] ) );
 
     $notes = $status['notes'] ?? array();
     foreach ( array_values( $notes ) as $n => $note )

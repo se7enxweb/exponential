@@ -5,7 +5,7 @@
 /var/log/
 /var/*/log/
 /var/storage/
-/var/velocity/
+/var/vc/
 /var/test*
 *.DS_Store
 /.project

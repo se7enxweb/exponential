@@ -420,6 +420,40 @@ class expVelocity
     }
 
     /**
+     * The Qbix server's access and error log file names: [LogSettings]
+     * AccessName and ErrorName, else named after the default siteaccess so
+     * installations sharing a log directory stay apart.
+     *
+     * @return array access, error
+     */
+    protected function requestLogNames()
+    {
+        $site = $this->defaultSiteAccess();
+        $names = array();
+        foreach ( array( 'AccessName' => 'access', 'ErrorName' => 'error' ) as $variable => $kind )
+        {
+            $name = trim( (string)$this->setting( 'LogSettings', $variable, '' ) );
+            $names[$kind] = $name !== '' ? $name : ( $site !== '' ? $site . '-' : '' ) . $kind . '.log';
+        }
+        return $names;
+    }
+
+    /**
+     * The request logs a person reads, apart from the console output in
+     * logFile(): the access and error log, null when the engine keeps none.
+     *
+     * @return array access, error
+     */
+    public function requestLogs()
+    {
+        if ( $this->setting( 'LogSettings', 'Enabled', 'enabled' ) !== 'enabled' )
+            return array( 'access' => null, 'error' => null );
+        $dir = $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/vc/qbix/log' ) );
+        $names = $this->requestLogNames();
+        return array( 'access' => $dir . '/' . $names['access'], 'error' => $dir . '/' . $names['error'] );
+    }
+
+    /**
      * The address this engine binds to.
      *
      * @return string
@@ -502,7 +536,7 @@ class expVelocity
      */
     public function pidFile()
     {
-        return $this->absolute( $this->setting( 'ServerSettings', 'PidFile', 'var/tmp/velocity.pid' ) );
+        return $this->absolute( $this->setting( 'ServerSettings', 'PidFile', 'var/vc/qbix/run/server.pid' ) );
     }
 
     /**
@@ -512,7 +546,7 @@ class expVelocity
      */
     public function logFile()
     {
-        return $this->absolute( $this->setting( 'ServerSettings', 'LogFile', 'var/tmp/velocity.log' ) );
+        return $this->absolute( $this->setting( 'ServerSettings', 'LogFile', 'var/vc/qbix/run/console.log' ) );
     }
 
     /**
@@ -1149,7 +1183,7 @@ class expVelocity
         if ( $this->setting( 'LogSettings', 'Enabled', 'enabled' ) === 'enabled' )
         {
             $log = array(
-                'dir' => $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/log/qbix' ) ),
+                'dir' => $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/vc/qbix/log' ) ),
             );
             foreach ( array( 'Format' => 'format', 'FileMode' => 'fileMode',
                              'DirMode' => 'dirMode' ) as $variable => $key )
@@ -1159,15 +1193,9 @@ class expVelocity
                     $log[$key] = $value;
             }
 
-            $site = $this->defaultSiteAccess();
-            foreach ( array( 'AccessName' => array( 'accessName', 'access' ),
-                             'ErrorName'  => array( 'errorName', 'error' ) ) as $variable => $target )
-            {
-                $name = trim( (string)$this->setting( 'LogSettings', $variable, '' ) );
-                if ( $name === '' )
-                    $name = ( $site !== '' ? $site . '-' : '' ) . $target[1] . '.log';
-                $log[$target[0]] = $name;
-            }
+            $names = $this->requestLogNames();
+            $log['accessName'] = $names['access'];
+            $log['errorName'] = $names['error'];
             $webserver['log'] = $log;
         }
 
@@ -1870,7 +1898,7 @@ class expVelocity
             'legacyConfig'   => $this->absolute( 'var/tmp/velocity-server.json' ),
             'pidFile'        => $this->pidFile(),
             'serverLog'      => $this->logFile(),
-            'accessErrorLogs'=> $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/log/qbix' ) ),
+            'accessErrorLogs'=> $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/vc/qbix/log' ) ),
             'responseCache'  => $this->cacheDirectory(),
             'cacheMarker'    => $this->cacheDirectory() . '/.generation',
             'precompress'    => $this->absolute( 'var/tmp/precompress' ),
@@ -1911,7 +1939,7 @@ class expVelocity
      */
     protected function logLayout( array $applied )
     {
-        $file = $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/log/qbix' ) ) . '/velocity-layout.log';
+        $file = $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/vc/qbix/log' ) ) . '/velocity-layout.log';
         if ( !is_dir( dirname( $file ) ) )
             eZDir::mkdir( dirname( $file ), false, true );
         $lines = array();

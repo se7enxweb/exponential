@@ -50,7 +50,7 @@ class expVelocityFrankenPHP extends expVelocity
     protected $httpsOff = null;
 
     /** Where the self-signed certificate lives, relative to the installation. */
-    const SELF_SIGNED_DIR = 'var/velocity/tls';
+    const SELF_SIGNED_DIR = 'var/vc/frankenphp/tls';
 
     /** Days a self-signed certificate is made for, and renewed before it has fewer left. */
     const SELF_SIGNED_DAYS = 365;
@@ -298,7 +298,7 @@ class expVelocityFrankenPHP extends expVelocity
      */
     public function pidFile()
     {
-        return $this->absolute( $this->frankenSetting( 'PidFile', 'var/tmp/velocity-frankenphp.pid' ) );
+        return $this->absolute( $this->frankenSetting( 'PidFile', 'var/vc/frankenphp/run/server.pid' ) );
     }
 
     /**
@@ -306,7 +306,7 @@ class expVelocityFrankenPHP extends expVelocity
      */
     public function logFile()
     {
-        return $this->absolute( $this->frankenSetting( 'LogFile', 'var/tmp/velocity-frankenphp.log' ) );
+        return $this->absolute( $this->frankenSetting( 'LogFile', 'var/vc/frankenphp/run/console.log' ) );
     }
 
     /**
@@ -316,7 +316,7 @@ class expVelocityFrankenPHP extends expVelocity
      */
     public function caddyfile()
     {
-        return $this->absolute( $this->frankenSetting( 'ConfigFile', 'var/tmp/velocity-frankenphp.Caddyfile' ) );
+        return $this->absolute( $this->frankenSetting( 'ConfigFile', 'var/vc/frankenphp/run/Caddyfile' ) );
     }
 
     /**
@@ -371,7 +371,7 @@ class expVelocityFrankenPHP extends expVelocity
         if ( $address !== '' && $address !== 'auto' )
             return $address;
 
-        $socket = $this->absolute( 'var/tmp/vfp-admin.sock' );
+        $socket = $this->absolute( 'var/vc/frankenphp/run/admin.sock' );
         if ( strlen( $socket ) <= self::MAX_SOCKET_PATH )
             return 'unix/' . $socket;
 
@@ -454,6 +454,14 @@ class expVelocityFrankenPHP extends expVelocity
     }
 
     /**
+     * @return array access, error (null when logging is off)
+     */
+    public function requestLogs()
+    {
+        return $this->logFiles();
+    }
+
+    /**
      * The access and error log files. Named for this engine rather than taken
      * from [LogSettings] AccessName/ErrorName, because Caddy writes JSON and
      * the Qbix server does not: switching engines must not leave one file in
@@ -467,12 +475,15 @@ class expVelocityFrankenPHP extends expVelocity
         if ( $enabled !== 'enabled' && $enabled !== 'true' )
             return array( 'access' => null, 'error' => null );
 
-        $dir = $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/log/qbix' ) );
+        // A directory of its own, var/vc/frankenphp/log/ like the other
+        // engines' -- not LogSettings Dir, which is the Qbix server's.
+        $dir = trim( (string)$this->frankenSetting( 'LogDir', '' ) );
+        $dir = $this->absolute( $dir !== '' ? $dir : 'var/vc/frankenphp/log' );
         $access = trim( (string)$this->frankenSetting( 'AccessLog', '' ) );
         $error  = trim( (string)$this->frankenSetting( 'ErrorLog', '' ) );
         return array(
-            'access' => $access !== '' ? $this->absolute( $access ) : $dir . '/frankenphp-access.log',
-            'error'  => $error  !== '' ? $this->absolute( $error )  : $dir . '/frankenphp-error.log',
+            'access' => $access !== '' ? $this->absolute( $access ) : $dir . '/access.log',
+            'error'  => $error  !== '' ? $this->absolute( $error )  : $dir . '/error.log',
         );
     }
 
@@ -729,11 +740,20 @@ class expVelocityFrankenPHP extends expVelocity
     public function processIDs()
     {
         $binary = $this->binary();
-        $config = '--config ' . $this->caddyfile();
+        // This installation's Caddyfile, and where it was until the runtime
+        // files moved to var/vc/frankenphp/run/ (2026-09), so a server started
+        // before an upgrade can still be found and stopped.
+        $configs = array_unique( array( '--config ' . $this->caddyfile(),
+                                        '--config ' . $this->absolute( 'var/tmp/velocity-frankenphp.Caddyfile' ) ) );
         $pids = array();
         foreach ( $this->processTable() as $proc )
-            if ( strpos( $proc['args'], $binary ) !== false && strpos( $proc['args'], $config ) !== false )
-                $pids[] = $proc['pid'];
+            if ( strpos( $proc['args'], $binary ) !== false )
+                foreach ( $configs as $config )
+                    if ( strpos( $proc['args'], $config . ' ' ) !== false || substr( $proc['args'], -strlen( $config ) ) === $config )
+                    {
+                        $pids[] = $proc['pid'];
+                        break;
+                    }
 
         return $pids;
     }
@@ -846,9 +866,12 @@ class expVelocityFrankenPHP extends expVelocity
     protected function cleanUp()
     {
         @unlink( $this->pidFile() );
-        // The configured socket, and the default one: a server started with
-        // AdminAddress=auto and stopped after it was changed leaves the latter.
-        foreach ( array_unique( array_filter( array( $this->adminSocket(), $this->absolute( 'var/tmp/vfp-admin.sock' ) ) ) ) as $socket )
+        // The configured socket, and the default ones: a server started with
+        // AdminAddress=auto and stopped after it was changed leaves one, and
+        // one started before the runtime files moved to var/vc/frankenphp/run/
+        // (until 2026-09) the old.
+        foreach ( array_unique( array_filter( array( $this->adminSocket(), $this->absolute( 'var/vc/frankenphp/run/admin.sock' ),
+                                                     $this->absolute( 'var/tmp/vfp-admin.sock' ) ) ) ) as $socket )
             if ( file_exists( $socket ) && filetype( $socket ) === 'socket' )
                 @unlink( $socket );
     }
@@ -890,7 +913,7 @@ class expVelocityFrankenPHP extends expVelocity
             return $ready;
 
         foreach ( array( dirname( $this->logFile() ), dirname( $this->pidFile() ),
-                         $this->absolute( 'var/velocity/caddy/config' ), $this->absolute( 'var/velocity/caddy/data' ) )
+                         $this->absolute( 'var/vc/frankenphp/caddy/config' ), $this->absolute( 'var/vc/frankenphp/caddy/data' ) )
                   + array_filter( array_map( function ( $f ) { return $f === null ? null : dirname( $f ); }, $this->logFiles() ) )
                   as $directory )
             if ( !is_dir( $directory ) )
@@ -957,8 +980,8 @@ class expVelocityFrankenPHP extends expVelocity
         // and XDG_CONFIG_HOME, else in the home directory of whoever runs it --
         // which a service user may not have or may not be able to write.
         $environment = array(
-            'XDG_CONFIG_HOME' => $this->absolute( 'var/velocity/caddy/config' ),
-            'XDG_DATA_HOME'   => $this->absolute( 'var/velocity/caddy/data' ),
+            'XDG_CONFIG_HOME' => $this->absolute( 'var/vc/frankenphp/caddy/config' ),
+            'XDG_DATA_HOME'   => $this->absolute( 'var/vc/frankenphp/caddy/data' ),
         );
         if ( trim( (string)getenv( 'PATH' ) ) === '' )
             $environment['PATH'] = self::DEFAULT_PATH;
@@ -1240,7 +1263,7 @@ class expVelocityFrankenPHP extends expVelocity
             'accessLog'      => $logs['access'],
             'errorLog'       => $logs['error'],
             'adminSocket'    => $socket,
-            'caddyData'      => $this->absolute( 'var/velocity/caddy' ),
+            'caddyData'      => $this->absolute( 'var/vc/frankenphp/caddy' ),
             'certificate'    => $this->httpsEnabled() && is_array( $this->tlsFiles() ) ? $this->tlsFiles()[0] : null,
             'certificateKey' => $this->httpsEnabled() && is_array( $this->tlsFiles() ) ? $this->tlsFiles()[1] : null,
             'engineArchive'  => $this->enginePhar() !== '' ? $this->enginePhar() : null,
