@@ -280,6 +280,65 @@ class expVelocityEnginesTest extends ezpTestCase
         return $config['Q']['webserver'] ?? array();
     }
 
+    public function testUrlsArePrintableAddresses()
+    {
+        ezpINIHelper::setINISetting( 'velocity.ini', 'PHPServerSettings', 'Port', '8125' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'PHPServerSettings', 'Host', '0.0.0.0' );
+        ezpINIHelper::setINISetting( 'site.ini', 'SiteAccessSettings', 'MatchOrder', 'uri;host' );
+        ezpINIHelper::setINISetting( 'site.ini', 'SiteAccessSettings', 'AvailableSiteAccessList', array( 'site', 'admin' ) );
+        $php = expVelocity::create( 'velocity.ini', 'php' );
+        $urls = $php->urls();
+        $this->assertSame( array( array( 'Site', 'http://localhost:8125/' ) ), $urls );
+        // The backend pages are the application's, the same on every engine.
+        $this->assertContains( array( 'Info', '/admin/setup/info' ), $php->adminPaths() );
+        $this->assertSame( $php->adminPaths(), expVelocity::create( 'velocity.ini', 'frankenphp' )->adminPaths() );
+
+        // Only the Qbix server has a dashboard.
+        $labels = array_column( expVelocity::create( 'velocity.ini', 'qbix' )->urls(), 0 );
+        $this->assertContains( 'Dashboard', $labels );
+        $this->assertNotContains( 'Dashboard', array_column( $urls, 0 ) );
+
+        // Siteaccesses matched by host only: no admin path to show.
+        ezpINIHelper::setINISetting( 'site.ini', 'SiteAccessSettings', 'MatchOrder', 'host' );
+        $this->assertSame( array(), expVelocity::create( 'velocity.ini', 'php' )->adminPaths() );
+
+        ezpINIHelper::setINISetting( 'velocity.ini', 'PHPServerSettings', 'Host', '192.0.2.7' );
+        $this->assertSame( 'http://192.0.2.7:8125/', expVelocity::create( 'velocity.ini', 'php' )->urls()[0][1] );
+    }
+
+    public function testHttpsIsShownBesidePlainHttp()
+    {
+        $dir = sys_get_temp_dir() . '/velocity-tls-' . getmypid();
+        @mkdir( $dir );
+        file_put_contents( $dir . '/cert.pem', 'x' );
+        file_put_contents( $dir . '/key.pem', 'x' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'Port', '8126' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'HTTPSPort', '8446' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'Enabled', 'false' );
+        $franken = expVelocity::create( 'velocity.ini', 'frankenphp' );
+        $this->assertSame( 8446, $franken->configuredHttpsPort() );
+        $this->assertNotContains( 'HTTPS', array_column( $franken->urls(), 0 ) );
+
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'Enabled', 'true' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'Certificate', $dir . '/cert.pem' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'Key', $dir . '/key.pem' );
+        $urls = expVelocity::create( 'velocity.ini', 'frankenphp' )->urls();
+        $this->assertSame( array( 'Site', 'http://localhost:8126/' ), $urls[0] );
+        $this->assertSame( array( 'HTTPS', 'https://localhost:8446/' ), $urls[1] );
+
+        @unlink( $dir . '/cert.pem' );
+        @unlink( $dir . '/key.pem' );
+        @rmdir( $dir );
+    }
+
+    public function testRelativePath()
+    {
+        $velocity = expVelocity::create( 'velocity.ini', 'php' );
+        $root = rtrim( eZSys::rootDir(), '/' );
+        $this->assertSame( 'var/tmp/x.log', $velocity->relativePath( $root . '/var/tmp/x.log' ) );
+        $this->assertSame( '/usr/bin/php', $velocity->relativePath( '/usr/bin/php' ) );
+    }
+
     public function testIgnoredSettingsAreNamed()
     {
         ezpINIHelper::setINISetting( 'velocity.ini', 'CacheSettings', 'Enabled', 'enabled' );

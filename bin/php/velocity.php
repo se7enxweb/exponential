@@ -124,35 +124,130 @@ if ( !empty( $options['keep-global'] ) )
     $velocity->appendKeepGlobals( $options['keep-global'] );
 
 /**
- * Render a status array for a person to read.
+ * A message or note with this installation's paths made relative to it.
+ */
+function velocityShortPaths( $text )
+{
+    $root = rtrim( eZSys::rootDir(), '/' );
+    return $root !== '' ? str_replace( $root . '/', '', (string)$text ) : (string)$text;
+}
+
+/**
+ * Render a status array for a person to read: a header with the engine and
+ * its state, the addresses to open (full URLs, so a terminal makes them
+ * clickable), then the details, paths relative to the installation.
  */
 function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
 {
+    $rel = function ( $path ) use ( $velocity )
+    {
+        return $velocity !== null ? $velocity->relativePath( $path ) : (string)$path;
+    };
+    $row = function ( $label, $value ) use ( $cli )
+    {
+        $cli->output( sprintf( '    %-10s %s', $label, $value ) );
+    };
+
+    $cli->output( '' );
     if ( $velocity !== null )
-        $cli->output( '  engine     : ' . $velocity->engineName() . ' (' . $velocity->role()
-                      . ( $velocity->isDefault() ? ', default' : '' ) . ')' );
-    $cli->output( '  running    : ' . ( $status['running'] ? 'yes' : 'no' ) );
+    {
+        $name = $velocity->engineName() . '  ' . $velocity->role() . ( $velocity->isDefault() ? ', default' : '' );
+        $state = $status['running'] ? $cli->stylize( 'success', 'running' ) : $cli->stylize( 'warning', 'stopped' );
+        $dot = $status['running'] ? $cli->stylize( 'success', '●' ) : '○';
+        $cli->output( '  ' . $dot . ' ' . $cli->stylize( 'emphasize', $name ) . '   ' . $state );
+    }
+    else
+        $cli->output( '  ' . ( $status['running'] ? 'running' : 'stopped' ) );
+
+    if ( $velocity !== null )
+    {
+        $urls = $velocity->urls();
+        if ( !$status['running'] )
+            $urls = array_slice( $urls, 0, 1 );
+        foreach ( $urls as $url )
+            $row( $url[0], $cli->stylize( 'link', $url[1] ) );
+        if ( !$status['running'] )
+            $row( '', 'start: exp:velocity start --engine=' . $velocity->engineName() );
+    }
+
+    $cli->output( '' );
     if ( $status['running'] )
     {
-        $cli->output( '  processes  : ' . $status['processes']
-                      . ( $status['parent'] ? ' (parent ' . $status['parent'] . ')' : '' ) );
-        $cli->output( '  listening  : ' . ( $status['listening']
-                      ? implode( ', ', $status['listening'] ) : 'nothing yet' ) );
+        $process = $status['processes'] . ' process' . ( $status['processes'] == 1 ? '' : 'es' )
+                 . ( $status['parent'] ? ', parent ' . $status['parent'] : '' )
+                 . ' · port ' . ( $status['listening'] ? implode( ', ', $status['listening'] ) : 'not listening yet' );
+        if ( isset( $status['server'] ) )
+            $process .= ' · ' . $status['threads'] . ( $status['server'] === 'php' ? ' workers' : ' threads' );
+        $row( 'Process', $process );
     }
-    $cli->output( '  https      : ' . ( $status['https'] ? 'enabled' : 'disabled' ) );
-    $cli->output( '  log        : ' . $status['log'] );
-    // Only engines other than the Qbix server report these; its output is as it was.
     if ( isset( $status['server'] ) )
     {
-        $cli->output( '  version    : ' . ( $status['version'] !== '' ? $status['version'] : 'binary missing' ) );
-        $cli->output( '  binary     : ' . $status['binary'] . ' [' . $status['binarySource'] . ']' );
-        if ( $status['running'] )
-            $cli->output( ( $status['server'] === 'php' ? '  workers    : ' : '  threads    : ' ) . $status['threads']
-                          . ( $status['admin'] !== 'none' ? ', admin ' . $status['admin']
-                              . ( $status['adminReachable'] ? '' : ' (not answering)' ) : '' ) );
-        $cli->output( ( $status['server'] === 'php' ? '  router     : ' : '  config     : ' ) . $status['caddyfile'] );
-        foreach ( $status['notes'] as $note )
-            $cli->output( '  not used   : ' . $note );
+        $row( 'Version', ( $status['version'] !== '' ? $status['version'] : 'binary missing' )
+                         . '  (' . $rel( $status['binary'] ) . ', ' . $status['binarySource'] . ')' );
+        if ( $status['running'] && $status['admin'] !== 'none' )
+        {
+            // Caddy writes a socket as unix/<path>; shown as the path it is.
+            $admin = strpos( $status['admin'], 'unix/' ) === 0
+                   ? velocityShortPaths( substr( $status['admin'], 5 ) ) . ' (unix socket)' : $status['admin'];
+            $row( 'Admin API', $admin . ( $status['adminReachable'] ? '' : ' (not answering)' ) );
+        }
+        $row( $status['server'] === 'php' ? 'Router' : 'Config', $rel( $status['caddyfile'] ) );
+    }
+    if ( $velocity !== null && $velocity->engineName() === 'php' )
+        $row( 'HTTPS', 'none: the built-in server speaks plain HTTP only' );
+    elseif ( $velocity !== null )
+        $row( 'HTTPS', $status['https'] ? 'on, port ' . $velocity->configuredHttpsPort()
+            : 'off; port ' . $velocity->configuredHttpsPort() . ' once [HTTPSSettings] Enabled=true with Certificate and Key' );
+    else
+        $row( 'HTTPS', $status['https'] ? 'on' : 'off' );
+    $row( 'Log', $rel( $status['log'] ) );
+
+    $notes = $status['notes'] ?? array();
+    foreach ( array_values( $notes ) as $n => $note )
+        $row( $n === 0 ? 'Not used' : '', '· ' . velocityShortPaths( $note ) );
+}
+
+/**
+ * The application's backend pages, once: they are the same on every engine,
+ * so they are shown as links on one that runs -- the default when it does.
+ *
+ * @param array $engines [expVelocity, status] pairs
+ */
+function velocityPrintAdmin( eZCLI $cli, array $engines )
+{
+    $serving = null;
+    foreach ( $engines as $engine )
+        if ( $engine[1]['running'] && ( $serving === null || $engine[0]->isDefault() ) )
+            $serving = $engine[0];
+    if ( $serving === null || !$serving->adminPaths() )
+        return;
+
+    $base = rtrim( $serving->urls()[0][1], '/' );
+    $cli->output( '' );
+    $cli->output( '  ' . $cli->stylize( 'emphasize', 'Exponential' ) . '   the same on every engine; here on '
+                  . $serving->engineName() );
+    foreach ( $serving->adminPaths() as $page )
+        $cli->output( sprintf( '    %-10s %s', $page[0], $cli->stylize( 'link', $base . $page[1] ) ) );
+}
+
+/**
+ * One line per engine for `status --all`, before the details of those that
+ * run: engine, role, state and the address to open.
+ */
+function velocityPrintOverview( eZCLI $cli, array $engines )
+{
+    $cli->output( '' );
+    $cli->output( sprintf( '    %-11s %-24s %-8s %s', 'Engine', 'Role', 'State', 'URL' ) );
+    foreach ( $engines as $engine )
+    {
+        list( $velocity, $status ) = $engine;
+        $role = $velocity->role() . ( $velocity->isDefault() ? ', default' : '' );
+        $state = $status['running'] ? 'running' : 'stopped';
+        $url = $velocity->urls();
+        $cli->output( '  ' . ( $status['running'] ? $cli->stylize( 'success', '●' ) : '○' ) . ' '
+            . sprintf( '%-11s %-24s ', $velocity->engineName(), $role )
+            . $cli->stylize( $status['running'] ? 'success' : 'warning', sprintf( '%-8s', $state ) ) . ' '
+            . $cli->stylize( 'link', $url[0][1] ) );
     }
 }
 
@@ -191,6 +286,7 @@ if ( count( $engineList ) > 1 )
     }
     $allOk = true;
     $report = array();
+    $overview = array();
     foreach ( $engineList as $engineName )
     {
         $engine = expVelocity::create( 'velocity.ini', $engineName );
@@ -201,11 +297,7 @@ if ( count( $engineList ) > 1 )
             $status = $engine->status();
             $report[$engineName] = array( 'ok' => true, 'role' => $engine->role(),
                                           'default' => $engine->isDefault(), 'data' => $status );
-            if ( !$asJson )
-            {
-                $cli->output( '' );
-                velocityPrintStatus( $cli, $status, $engine );
-            }
+            $overview[] = array( $engine, $status );
             continue;
         }
         $result = $engine->$verb();
@@ -217,12 +309,35 @@ if ( count( $engineList ) > 1 )
         $report[$engineName] = $result + array( 'role' => $engine->role(), 'default' => $engine->isDefault() );
         if ( !$asJson )
         {
-            $line = 'velocity ' . $engineName . ': ' . $result['message'];
+            $line = 'velocity ' . $engineName . ': ' . velocityShortPaths( $result['message'] );
             $result['ok'] ? $cli->output( $cli->stylize( 'emphasize', $line ) ) : $cli->error( $line );
         }
     }
     if ( $asJson )
         $cli->output( json_encode( array( 'ok' => $allOk, 'data' => $report ) ) );
+    elseif ( $overview )
+    {
+        // An overview of all, then the details of those that run.
+        velocityPrintOverview( $cli, $overview );
+        foreach ( $overview as $engine )
+            if ( $engine[1]['running'] )
+                velocityPrintStatus( $cli, $engine[1], $engine[0] );
+        velocityPrintAdmin( $cli, $overview );
+        $cli->output( '' );
+    }
+    elseif ( in_array( $verb, array( 'start', 'restart', 'graceful' ), true ) )
+    {
+        // Where to go now: the address of each engine that runs.
+        $overview = array();
+        foreach ( $engineList as $engineName )
+        {
+            $engine = expVelocity::create( 'velocity.ini', $engineName );
+            $overview[] = array( $engine, $engine->status() );
+        }
+        velocityPrintOverview( $cli, $overview );
+        velocityPrintAdmin( $cli, $overview );
+        $cli->output( '' );
+    }
     $script->shutdown( $allOk ? 0 : 1 );
 }
 
@@ -488,7 +603,11 @@ switch ( $verb )
         if ( $asJson )
             $cli->output( json_encode( array( 'ok' => true, 'data' => $status ) ) );
         else
+        {
             velocityPrintStatus( $cli, $status, $velocity );
+            velocityPrintAdmin( $cli, array( array( $velocity, $status ) ) );
+            $cli->output( '' );
+        }
         $script->shutdown( $status['running'] ? 0 : 1 );
         break;
 
@@ -503,11 +622,13 @@ switch ( $verb )
         }
 
         if ( $result['ok'] )
-            $cli->output( $cli->stylize( 'emphasize', 'velocity: ' . $result['message'] ) );
+            $cli->output( $cli->stylize( 'emphasize', 'velocity: ' . velocityShortPaths( $result['message'] ) ) );
         else
-            $cli->error( 'velocity: ' . $result['message'] );
+            $cli->error( 'velocity: ' . velocityShortPaths( $result['message'] ) );
 
         $status = $velocity->status();
         velocityPrintStatus( $cli, $status, $velocity );
+        velocityPrintAdmin( $cli, array( array( $velocity, $status ) ) );
+        $cli->output( '' );
         $script->shutdown( $result['ok'] ? 0 : 1 );
 }

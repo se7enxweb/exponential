@@ -787,8 +787,9 @@ class expVelocityFrankenPHP extends expVelocity
                  . ' ) > ' . escapeshellarg( $log ) . ' 2>&1 < /dev/null &';
         @exec( $command );
 
-        $notes = $this->ignoredSettings();
-        $suffix = $notes ? '; not used by this engine: ' . implode( '; ', $notes ) : '';
+        // The settings this engine ignores are listed under the status that
+        // follows, one per line, rather than strung onto this message.
+        $suffix = '';
 
         $started = microtime( true );
         $deadline = $started + 20;

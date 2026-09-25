@@ -375,8 +375,9 @@ class expVelocityPHPServer extends expVelocity
         if ( $pid > 0 )
             @file_put_contents( $this->pidFile(), $pid . "\n" );
 
-        $notes = $this->ignoredSettings();
-        $suffix = '; ' . implode( '; ', $notes );
+        // The settings this engine ignores are listed under the status that
+        // follows, one per line, rather than strung onto this message.
+        $suffix = '';
 
         $started = microtime( true );
         $deadline = $started + 20;

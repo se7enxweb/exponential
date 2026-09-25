@@ -325,6 +325,101 @@ class expVelocity
     }
 
     /**
+     * The addresses this server answers itself, as [label, url]: the site,
+     * and for the Qbix server its dashboard. The application's own pages are
+     * the same on every engine; adminPaths() has those.
+     *
+     * A server bound to every address or to the loopback is shown as
+     * localhost, the name a browser on this machine reaches it by.
+     *
+     * @return array
+     */
+    public function urls()
+    {
+        $host = $this->bindHost();
+        if ( in_array( $host, array( '', '0.0.0.0', '127.0.0.1', '::', '[::]', '::1', '[::1]' ), true ) )
+            $host = 'localhost';
+        elseif ( strpos( $host, ':' ) !== false && $host[0] !== '[' )
+            $host = '[' . $host . ']';
+        $base = 'http://' . $host . ( $this->httpPort() === 80 ? '' : ':' . $this->httpPort() );
+        $urls = array( array( 'Site', $base . '/' ) );
+        // Beside plain HTTP, not instead of it: both listen.
+        $https = $this->httpsPort();
+        if ( $https )
+            $urls[] = array( 'HTTPS', 'https://' . $host . ( $https === 443 ? '' : ':' . $https ) . '/' );
+        if ( $this->engineName() === 'qbix' )
+            $urls[] = array( 'Dashboard', $base . '/Q/dashboard' );
+        return $urls;
+    }
+
+    /**
+     * The application's backend pages, as [label, path], whichever engine
+     * serves them: the admin login, Setup > System information (which says
+     * which engine answered) and Setup > Caches. Empty when no admin
+     * siteaccess is reached by a path prefix.
+     *
+     * @return array
+     */
+    public function adminPaths()
+    {
+        $admin = $this->adminSiteAccess();
+        if ( $admin === null )
+            return array();
+        return array(
+            array( 'Admin', '/' . $admin ),
+            array( 'Info', '/' . $admin . '/setup/info' ),
+            array( 'Caches', '/' . $admin . '/setup/cache' ),
+        );
+    }
+
+    /**
+     * The admin siteaccess, when one is reached by a path prefix: the one
+     * named admin, else the first whose name says so. Null when siteaccesses
+     * are matched by host only, where a path would lead nowhere.
+     *
+     * @return string|null
+     */
+    protected function adminSiteAccess()
+    {
+        if ( !class_exists( 'eZINI' ) )
+            return null;
+        $site = eZINI::instance( 'site.ini' );
+        $order = strtolower( (string)$site->variable( 'SiteAccessSettings', 'MatchOrder' ) );
+        if ( strpos( $order, 'uri' ) === false )
+            return null;
+        $list = (array)$site->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' );
+        if ( in_array( 'admin', $list, true ) )
+            return 'admin';
+        foreach ( $list as $access )
+            if ( stripos( $access, 'admin' ) !== false )
+                return $access;
+        return null;
+    }
+
+    /**
+     * A path inside the installation, relative to it; any other as it is.
+     *
+     * @param string $path
+     * @return string
+     */
+    public function relativePath( $path )
+    {
+        $root = rtrim( $this->rootDir, '/' ) . '/';
+        return strpos( (string)$path, $root ) === 0 ? substr( $path, strlen( $root ) ) : (string)$path;
+    }
+
+    /**
+     * The HTTPS port this engine is set up for, whether or not TLS is
+     * switched on -- for saying where it would listen.
+     *
+     * @return int
+     */
+    public function configuredHttpsPort()
+    {
+        return (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 );
+    }
+
+    /**
      * The address this engine binds to.
      *
      * @return string

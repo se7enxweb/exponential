@@ -48,6 +48,18 @@ file, logs and configuration, so nothing collides.
 status. Each engine is reported on its own line; one that fails does not stop
 the others, and the exit code is non-zero if any did.
 
+`status` shows the addresses to open as full URLs, which a terminal makes
+clickable: per engine the site, its HTTPS address when TLS is on, and the Qbix
+server's dashboard. Below them the process, version, configuration, HTTPS
+(the port, and when it is off what switches it on) and log -- paths relative
+to the installation -- and the settings the engine does not act on, one per
+line. The backend pages (admin login, Setup > System information, Setup >
+Caches) are the application's and the same on every engine, so they follow
+once, as links on a running engine, the default when it runs; they are left
+out when no admin siteaccess is matched by URI. `status --all` begins with one
+line per engine -- role, state, URL -- and then shows the details of those
+running; `start --all` ends with that overview. `--json` is unchanged.
+
 `[FrankenPHPSettings]` and `[PHPServerSettings]` may set `Port`, `HTTPSPort`,
 `Host`, `Workers`, `SpareWorkers` and `DocumentRoot` for their engine. An empty
 value falls back to `[ServerSettings]`, which is also the Qbix engine's own.
