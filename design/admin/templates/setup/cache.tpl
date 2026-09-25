@@ -1,4 +1,12 @@
 {* Feedbacks. *}
+{foreach array( 'opcache', 'apcu' ) as $phpCache}
+{if $cache_cleared[$phpCache]}
+    <div class="{if $cache_cleared[$phpCache][0]}message-feedback{else}message-warning{/if}">
+        <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {$cache_cleared[$phpCache][1]|wash}</h2>
+    </div>
+{/if}
+{/foreach}
+
 {if $cache_cleared.content}
     <div class="message-feedback">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Content view cache was cleared'|i18n( 'design/admin/setup/cache' )}</h2>
@@ -347,6 +355,47 @@
 </script>
 
 {/if}
+
+{* DESIGN: Content END *}</div></div></div>
+
+</div>
+
+{* PHP's own caches. Not part of "Clear all caches": they are not files of
+   this installation but memory of the server process answering this page,
+   and emptying them costs every other site that process serves as well. *}
+
+<div class="context-block" id="php-caches" style="scroll-margin-top: calc(var(--header-height, 4rem) + 1rem);">
+
+{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
+
+<h2 class="context-title">{'PHP caches of this server process'|i18n( 'design/admin/setup/cache' )}</h2>
+
+{* DESIGN: Mainline *}<div class="header-mainline"></div>
+
+{* DESIGN: Header END *}</div></div>
+
+{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
+
+<p><small>{'The figures and settings are on'|i18n( 'design/admin/setup/cache' )} <a href="{'/setup/info'|ezurl( 'no' )}#php-caches">{'System information'|i18n( 'design/admin/setup/cache' )}</a>.</small></p>
+
+<table class="list cache" cellspacing="0">
+
+<tr>
+    <th width="61%">{'Categories'|i18n( 'design/admin/setup/cache' )}</th>
+    <th width="39%"></th>
+</tr>
+
+<tr class="bglight">
+<td>{'OPcache (compiled PHP scripts)'|i18n( 'design/admin/setup/cache' )}: <small>{$php_cache_state.opcache.text|wash}</small></td>
+<td><input class="{if $php_cache_state.opcache.available}button{else}button-disabled{/if}" type="submit" name="ResetOPcacheButton" value="{'Reset OPcache'|i18n( 'design/admin/setup/cache' )}"{if $php_cache_state.opcache.available|not} disabled="disabled"{/if} title="{'Empties the opcode cache of the server process answering this page. Every PHP file is compiled again on its next include, so the next requests are slower. Use it when an edited PHP file is not picked up.'|i18n( 'design/admin/setup/cache' )}" /></td>
+</tr>
+<tr class="bgdark">
+<td>{'APCu (data in shared memory)'|i18n( 'design/admin/setup/cache' )}: <small>{$php_cache_state.apcu.text|wash}</small></td>
+<td><input class="{if $php_cache_state.apcu.available}button{else}button-disabled{/if}" type="submit" name="ClearAPCuButton" value="{'Empty APCu'|i18n( 'design/admin/setup/cache' )}"{if $php_cache_state.apcu.available|not} disabled="disabled"{/if} title="{'Empties APCu for the server process answering this page: every entry any application stored there is gone, including the memory tier of a Qbix response cache.'|i18n( 'design/admin/setup/cache' )}" /></td>
+</tr>
+
+
+</table>
 
 {* DESIGN: Content END *}</div></div></div>
 
