@@ -44,7 +44,10 @@ const OFF_LIMITS = [
 	/^\/user(\/|$)/,
 	/^\/explayouts_ui/,
 	/^\/var\/site\/cache\//,
-	/\/api(\/|$)/
+	/\/api(\/|$)/,
+	// The web server's own views and API (dashboard, control panel, shell):
+	// signed-in, live, and never the site's to cache or replay.
+	/^\/Q\//
 ];
 
 // Cookies that mean the response is personal. Kept in step with the server's
