@@ -62,6 +62,39 @@ class expVelocity
         'eZPaymentGateways',
     );
 
+    /**
+     * Paths served as files, straight from exponential's .htaccess_root, for
+     * the engines that route requests themselves (frankenphp, php): the
+     * design and extension assets, stored images, generated public caches,
+     * icons and package previews. Nothing else is ever handed out as a file,
+     * so settings/*.ini, var/storage/*.db and the kernel sources cannot be.
+     */
+    const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|w3c/p3p\.xml$)';
+
+    /**
+     * What is never served as a file even below a STATIC_PATHS directory:
+     * scripts (their source would be sent) and dot paths (.htaccess, .git,
+     * a package's .cache). Case-insensitive, for Caddy's RE2 and preg alike.
+     */
+    const NEVER_STATIC = '(?i)(\\.(php\\d?|phtml|phar)$|/\\.)';
+
+    /**
+     * The scripts a request may name, as .htaccess_root lets through:
+     * index_rest.php has its own rule, everything else goes to index.php.
+     * No other .php file runs because its path was asked for -- not a
+     * library, an installer, a command-line tool or a package's settings.
+     */
+    const ENTRY_SCRIPTS = array( '/index.php', '/index_rest.php' );
+
+    /**
+     * URLs that go to a script other than index.php, in order: the REST API
+     * and the admin tree menu, as .htaccess_root routes them.
+     */
+    const FRONT_CONTROLLERS = array(
+        '^/(api/|index_rest\\.php)' => 'index_rest.php',
+        '^/([^/]+/)?content/treemenu' => 'index_treemenu.php',
+    );
+
     /** @var array names added for this run, from --keep-global */
     protected $extraKeepGlobals = array();
 
@@ -90,6 +123,398 @@ class expVelocity
         if ( $this->rootDir === '' )
             $this->rootDir = rtrim( getcwd(), '/' );
     }
+
+    // ── Engines ──────────────────────────────────────────────────────────
+
+    /**
+     * The launcher for the engine this installation is set to run.
+     *
+     * Velocity drives one of three servers: the bundled Qbix server (this
+     * class, the default), FrankenPHP (expVelocityFrankenPHP) or PHP's own
+     * built-in web server (expVelocityPHPServer), chosen with [ServerSettings]
+     * Engine. All answer the same verbs, so a deploy script or a module view
+     * does not need to know which one is in use.
+     *
+     * @param string $iniName
+     * @param string|null $engine overrides [ServerSettings] Engine (--engine)
+     * @return expVelocity
+     * @throws InvalidArgumentException for an engine that does not exist
+     */
+    public static function create( $iniName = 'velocity.ini', $engine = null )
+    {
+        if ( $engine === null || trim( (string)$engine ) === '' )
+        {
+            $ini = eZINI::instance( $iniName );
+            $engine = $ini->hasVariable( 'ServerSettings', 'Engine' )
+                    ? (string)$ini->variable( 'ServerSettings', 'Engine' ) : '';
+        }
+        $engine = strtolower( trim( (string)$engine ) );
+
+        if ( $engine === '' || $engine === 'qbix' )
+            return new expVelocity( $iniName );
+        if ( $engine === 'frankenphp' )
+            return new expVelocityFrankenPHP( $iniName );
+        if ( $engine === 'php' )
+            return new expVelocityPHPServer( $iniName );
+
+        throw new InvalidArgumentException(
+            "unknown engine '$engine' in [ServerSettings] Engine: use qbix, frankenphp or php" );
+    }
+
+    /**
+     * Which server this launcher drives.
+     *
+     * @return string
+     */
+    public function engineName()
+    {
+        return 'qbix';
+    }
+
+    /**
+     * Whether this engine has a feature the verbs depend on: 'layout' (the
+     * /etc/vc configuration tree) and 'ssl' (the engine's certificate
+     * commands). The Qbix server has every one.
+     *
+     * @param string $feature
+     * @return bool
+     */
+    public function supports( $feature )
+    {
+        return true;
+    }
+
+    /**
+     * Put the engine's binary in place. The Qbix server is a Composer
+     * package, so it arrives with the installation and there is nothing to do.
+     *
+     * @param array $options unused here
+     * @return array result
+     */
+    public function install( array $options = array() )
+    {
+        return $this->result( true, 'the qbix engine ships with the installation '
+            . '(vendor/se7enxweb/qbix-webserver); nothing to install' );
+    }
+
+    /**
+     * Every engine Velocity knows, in the order `--all` takes them.
+     *
+     * @return array
+     */
+    public static function engines()
+    {
+        return array( 'php', 'frankenphp', 'qbix' );
+    }
+
+    /**
+     * The engine start, stop and status use without --engine: [ServerSettings]
+     * Engine. Shipped as php, because the built-in server needs nothing an
+     * installation might lack; an installation sets frankenphp for production.
+     *
+     * @param string $iniName
+     * @return string
+     */
+    public static function defaultEngine( $iniName = 'velocity.ini' )
+    {
+        $ini = eZINI::instance( $iniName );
+        $engine = $ini->hasVariable( 'ServerSettings', 'Engine' )
+                ? strtolower( trim( (string)$ini->variable( 'ServerSettings', 'Engine' ) ) ) : '';
+        return in_array( $engine, self::engines(), true ) ? $engine : 'qbix';
+    }
+
+    /**
+     * What this engine is for: development, production or experimental. Not
+     * the same as being the default -- which one that is, is a setting.
+     *
+     * @return string
+     */
+    public function role()
+    {
+        return 'experimental';
+    }
+
+    /**
+     * Whether this is the engine start and stop use without --engine.
+     *
+     * @return bool
+     */
+    public function isDefault()
+    {
+        return self::defaultEngine() === $this->engineName();
+    }
+
+    /**
+     * The views the server answers itself, for Setup > System information:
+     * path, what it is, and who may open it. For the Qbix server the rules
+     * are its own (Q_WebServer::adminAllowed(), v0.0.4.27): its admin views
+     * answer this machine only, or everyone with the dashboard token once one
+     * is set, or everyone when Remote is enabled; phpinfo, which shows the
+     * process environment, never opens remotely without a token.
+     *
+     * The running server's own configuration, when the caller has it, wins
+     * over velocity.ini: a Qbix server started some other way than by
+     * exp:velocity has its own token and remote setting, and a panel
+     * password only the server knows about (APP_DIR/local/panel.json).
+     *
+     * @param bool|null $token whether a dashboard token is set; null = velocity.ini
+     * @param bool|null $remote whether Remote is enabled; null = velocity.ini
+     * @param bool $panelPassword whether the server's control panel has a password
+     * @return array of array( path, type, access, description )
+     */
+    public function views( $token = null, $remote = null, $panelPassword = false )
+    {
+        if ( $token === null )
+            $token = trim( (string)$this->setting( 'DashboardSettings', 'Token', '' ) ) !== '';
+        if ( $remote === null )
+            $remote = in_array( strtolower( trim( (string)$this->setting( 'DashboardSettings', 'Remote', 'disabled' ) ) ),
+                                array( 'enabled', 'true', '1', 'yes' ), true );
+
+        // Q_WebServer::adminAllowed(): this machine may always open an admin
+        // view, except a secret one once a token or panel password exists;
+        // elsewhere needs that credential, or Remote without one, and never a
+        // secret. The dashboard also sends to the panel login when there is a
+        // panel password.
+        $configured = $token || $panelPassword;
+        $credential = $token && $panelPassword ? 'the token or the panel login'
+                    : ( $token ? 'the token (?token=, Authorization: Bearer)' : 'the panel login' );
+        $elsewhere = $configured ? 'from elsewhere with ' . $credential
+                   : ( $remote ? 'from elsewhere too ([DashboardSettings] Remote=enabled, no token)'
+                               : 'not from elsewhere (set [DashboardSettings] Token to allow that)' );
+        $admin = 'this machine; ' . $elsewhere;
+        // With a panel password the dashboard takes only a panel login (its
+        // session token), not [DashboardSettings] Token -- Dashboard::handle(),
+        // unlike the other admin views.
+        $dashboard = $panelPassword ? 'the panel login, from this machine too ([DashboardSettings] Token does not open it)'
+                   : $admin;
+        $secret = $configured ? $credential . ' required, from this machine too'
+                              : 'this machine only, never from elsewhere without a token';
+        $panel = 'this machine only, then '
+               . ( $panelPassword ? 'the panel password' : 'a panel password the first visit sets' );
+
+        return array(
+            array( '/Q/dashboard', 'HTML', $dashboard, 'live dashboard: requests, workers, cache' ),
+            array( '/Q/stats', 'JSON', $admin, 'the dashboard\'s figures (HTTP/1.1)' ),
+            array( '/Q/metrics', 'Prometheus', $admin, 'metrics for a monitoring system' ),
+            array( '/Q/health', 'JSON', 'public: status only; the full report ' . $admin, 'health check' ),
+            array( '/Q/phpinfo', 'HTML', $secret, 'phpinfo() of the server process, including its environment' ),
+            array( '/Q/panel', 'HTML', $panel, 'control panel' ),
+            array( '/Q/docs', 'HTML', 'public', 'the server\'s documentation' ),
+            array( '/Q/cluster/status', 'JSON', 'public', 'cluster state' ),
+        );
+    }
+
+    /**
+     * The HTTP port this engine is configured for.
+     *
+     * @return int
+     */
+    public function httpPort()
+    {
+        return (int)$this->setting( 'ServerSettings', 'Port', 8088 );
+    }
+
+    /**
+     * The HTTPS port, when TLS is configured.
+     *
+     * @return int|null
+     */
+    public function httpsPort()
+    {
+        return $this->httpsEnabled() ? (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 ) : null;
+    }
+
+    /**
+     * The addresses this server answers itself, as [label, url]: the site,
+     * and for the Qbix server its dashboard. The application's own pages are
+     * the same on every engine; adminPaths() has those.
+     *
+     * A server bound to every address or to the loopback is shown as
+     * localhost, the name a browser on this machine reaches it by.
+     *
+     * @return array
+     */
+    public function urls()
+    {
+        $host = $this->bindHost();
+        if ( in_array( $host, array( '', '0.0.0.0', '127.0.0.1', '::', '[::]', '::1', '[::1]' ), true ) )
+            $host = 'localhost';
+        elseif ( strpos( $host, ':' ) !== false && $host[0] !== '[' )
+            $host = '[' . $host . ']';
+        $base = 'http://' . $host . ( $this->httpPort() === 80 ? '' : ':' . $this->httpPort() );
+        $urls = array( array( 'Site', $base . '/' ) );
+        // Beside plain HTTP, not instead of it: both listen.
+        $https = $this->httpsPort();
+        if ( $https )
+            $urls[] = array( 'HTTPS', 'https://' . $host . ( $https === 443 ? '' : ':' . $https ) . '/' );
+        if ( $this->engineName() === 'qbix' )
+            $urls[] = array( 'Dashboard', $base . '/Q/dashboard' );
+        return $urls;
+    }
+
+    /**
+     * The application's backend pages, as [label, path], whichever engine
+     * serves them: the admin login, Setup > System information (which says
+     * which engine answered) and Setup > Caches. Empty when no admin
+     * siteaccess is reached by a path prefix.
+     *
+     * @return array
+     */
+    public function adminPaths()
+    {
+        $admin = $this->adminSiteAccess();
+        if ( $admin === null )
+            return array();
+        return array(
+            array( 'Admin', '/' . $admin ),
+            array( 'Info', '/' . $admin . '/setup/info' ),
+            array( 'Caches', '/' . $admin . '/setup/cache' ),
+        );
+    }
+
+    /**
+     * The application's sites reachable by a path prefix, as [path, note]:
+     * the default siteaccess at /, then every other one of
+     * AvailableSiteAccessList that is not an admin siteaccess. Empty when
+     * siteaccesses are matched by host only, where a path leads nowhere.
+     *
+     * @return array
+     */
+    public function sitePaths()
+    {
+        if ( !class_exists( 'eZINI' ) )
+            return array();
+        $site = eZINI::instance( 'site.ini' );
+        if ( strpos( strtolower( (string)$site->variable( 'SiteAccessSettings', 'MatchOrder' ) ), 'uri' ) === false )
+            return array();
+        $default = trim( (string)$site->variable( 'SiteSettings', 'DefaultAccess' ) );
+        $admin = $this->adminSiteAccess();
+        $paths = array( array( '/', $default !== '' ? 'default (' . $default . ')' : 'default' ) );
+        foreach ( (array)$site->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) as $access )
+            if ( $access !== $default && $access !== $admin && stripos( $access, 'admin' ) === false )
+                $paths[] = array( '/' . $access, '' );
+        return $paths;
+    }
+
+    /**
+     * The admin siteaccess, when one is reached by a path prefix: the one
+     * named admin, else the first whose name says so. Null when siteaccesses
+     * are matched by host only, where a path would lead nowhere.
+     *
+     * @return string|null
+     */
+    protected function adminSiteAccess()
+    {
+        if ( !class_exists( 'eZINI' ) )
+            return null;
+        $site = eZINI::instance( 'site.ini' );
+        $order = strtolower( (string)$site->variable( 'SiteAccessSettings', 'MatchOrder' ) );
+        if ( strpos( $order, 'uri' ) === false )
+            return null;
+        $list = (array)$site->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' );
+        if ( in_array( 'admin', $list, true ) )
+            return 'admin';
+        foreach ( $list as $access )
+            if ( stripos( $access, 'admin' ) !== false )
+                return $access;
+        return null;
+    }
+
+    /**
+     * A path inside the installation, relative to it; any other as it is.
+     *
+     * @param string $path
+     * @return string
+     */
+    public function relativePath( $path )
+    {
+        $root = rtrim( $this->rootDir, '/' ) . '/';
+        return strpos( (string)$path, $root ) === 0 ? substr( $path, strlen( $root ) ) : (string)$path;
+    }
+
+    /**
+     * The HTTPS port this engine is set up for, whether or not TLS is
+     * switched on -- for saying where it would listen.
+     *
+     * @return int
+     */
+    public function configuredHttpsPort()
+    {
+        return (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 );
+    }
+
+    /**
+     * The Qbix server's access and error log file names: [LogSettings]
+     * AccessName and ErrorName, else named after the default siteaccess so
+     * installations sharing a log directory stay apart.
+     *
+     * @return array access, error
+     */
+    protected function requestLogNames()
+    {
+        $site = $this->defaultSiteAccess();
+        $names = array();
+        foreach ( array( 'AccessName' => 'access', 'ErrorName' => 'error' ) as $variable => $kind )
+        {
+            $name = trim( (string)$this->setting( 'LogSettings', $variable, '' ) );
+            $names[$kind] = $name !== '' ? $name : ( $site !== '' ? $site . '-' : '' ) . $kind . '.log';
+        }
+        return $names;
+    }
+
+    /**
+     * The request logs a person reads, apart from the console output in
+     * logFile(): the access and error log, null when the engine keeps none.
+     *
+     * @return array access, error
+     */
+    public function requestLogs()
+    {
+        if ( $this->setting( 'LogSettings', 'Enabled', 'enabled' ) !== 'enabled' )
+            return array( 'access' => null, 'error' => null );
+        $dir = $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/vc/qbix/log' ) );
+        $names = $this->requestLogNames();
+        return array( 'access' => $dir . '/' . $names['access'], 'error' => $dir . '/' . $names['error'] );
+    }
+
+    /**
+     * The address this engine binds to.
+     *
+     * @return string
+     */
+    public function bindHost()
+    {
+        return trim( (string)$this->setting( 'ServerSettings', 'Host', '127.0.0.1' ) );
+    }
+
+    /**
+     * A ServerSettings value an engine may set for itself in its own block, so
+     * that engines can run side by side: the own block wins when it names a
+     * value, [ServerSettings] is the fallback. Used by the engines that have
+     * a block of their own; the Qbix server reads [ServerSettings] directly.
+     *
+     * @param string $ownBlock
+     * @param string $block
+     * @param string $variable
+     * @param mixed $default
+     * @return mixed
+     */
+    protected function engineSetting( $ownBlock, $block, $variable, $default )
+    {
+        if ( $block === 'ServerSettings' && in_array( $variable, self::ENGINE_SERVER_SETTINGS, true )
+             && $this->ini->hasVariable( $ownBlock, $variable ) )
+        {
+            $own = $this->ini->variable( $ownBlock, $variable );
+            if ( !is_array( $own ) && trim( (string)$own ) !== '' )
+                return $own;
+        }
+        return self::setting( $block, $variable, $default );
+    }
+
+    /**
+     * The [ServerSettings] keys an engine's own block can override.
+     */
+    const ENGINE_SERVER_SETTINGS = array( 'Port', 'HTTPSPort', 'Host', 'Workers', 'SpareWorkers', 'DocumentRoot' );
 
     // ── Settings ─────────────────────────────────────────────────────────
 
@@ -135,7 +560,7 @@ class expVelocity
      */
     public function pidFile()
     {
-        return $this->absolute( $this->setting( 'ServerSettings', 'PidFile', 'var/tmp/velocity.pid' ) );
+        return $this->absolute( $this->setting( 'ServerSettings', 'PidFile', 'var/vc/qbix/run/server.pid' ) );
     }
 
     /**
@@ -145,7 +570,7 @@ class expVelocity
      */
     public function logFile()
     {
-        return $this->absolute( $this->setting( 'ServerSettings', 'LogFile', 'var/tmp/velocity.log' ) );
+        return $this->absolute( $this->setting( 'ServerSettings', 'LogFile', 'var/vc/qbix/run/console.log' ) );
     }
 
     /**
@@ -754,6 +1179,23 @@ class expVelocity
         if ( $fork === 'enabled' || $fork === 'true' )
             $webserver['forkPerRequest'] = true;
 
+        // Files reached through a link that leads out of the document root:
+        // the server refuses them (403) unless told the links are meant.
+        if ( $this->followsSymlinks() )
+            $webserver['followSymlinks'] = true;
+
+        // Assets as files, everything else through a front controller, as
+        // .htaccess_root has it and the other engines route. The server does
+        // not read .htaccess on the pooled path, so without these it ran any
+        // .php file requested by name, sent /api/ to index.php, and handed
+        // out every file with a served extension -- the originals in
+        // var/*/storage/original included, which content/download gives
+        // only to those allowed to read them. Needs a qbix-webserver with
+        // Q.webserver.scripts; an older one ignores all three keys.
+        $webserver['scripts'] = self::ENTRY_SCRIPTS;
+        $webserver['frontControllers'] = self::FRONT_CONTROLLERS;
+        $web['static']['paths'] = array( self::STATIC_PATHS );
+
         // The server's access and error log.
         //
         // The server writes neither unless its configuration has a log
@@ -765,7 +1207,7 @@ class expVelocity
         if ( $this->setting( 'LogSettings', 'Enabled', 'enabled' ) === 'enabled' )
         {
             $log = array(
-                'dir' => $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/log/qbix' ) ),
+                'dir' => $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/vc/qbix/log' ) ),
             );
             foreach ( array( 'Format' => 'format', 'FileMode' => 'fileMode',
                              'DirMode' => 'dirMode' ) as $variable => $key )
@@ -775,15 +1217,9 @@ class expVelocity
                     $log[$key] = $value;
             }
 
-            $site = $this->defaultSiteAccess();
-            foreach ( array( 'AccessName' => array( 'accessName', 'access' ),
-                             'ErrorName'  => array( 'errorName', 'error' ) ) as $variable => $target )
-            {
-                $name = trim( (string)$this->setting( 'LogSettings', $variable, '' ) );
-                if ( $name === '' )
-                    $name = ( $site !== '' ? $site . '-' : '' ) . $target[1] . '.log';
-                $log[$target[0]] = $name;
-            }
+            $names = $this->requestLogNames();
+            $log['accessName'] = $names['access'];
+            $log['errorName'] = $names['error'];
             $webserver['log'] = $log;
         }
 
@@ -1394,6 +1830,18 @@ class expVelocity
     }
 
     /**
+     * Whether files reached through a link that leads out of the document
+     * root are served ([ServerSettings] FollowSymlinks). The qbix and php
+     * engines refuse them otherwise; Caddy always follows.
+     *
+     * @return bool
+     */
+    public function followsSymlinks()
+    {
+        return in_array( $this->setting( 'ServerSettings', 'FollowSymlinks', 'disabled' ), array( 'enabled', 'true' ), true );
+    }
+
+    /**
      * The globals the server keeps between requests: the kernel's defaults,
      * then [ApplicationSettings] KeepGlobals[], then --keep-global -- each
      * appended, never replacing, and each name once, in that order.
@@ -1474,7 +1922,7 @@ class expVelocity
             'legacyConfig'   => $this->absolute( 'var/tmp/velocity-server.json' ),
             'pidFile'        => $this->pidFile(),
             'serverLog'      => $this->logFile(),
-            'accessErrorLogs'=> $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/log/qbix' ) ),
+            'accessErrorLogs'=> $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/vc/qbix/log' ) ),
             'responseCache'  => $this->cacheDirectory(),
             'cacheMarker'    => $this->cacheDirectory() . '/.generation',
             'precompress'    => $this->absolute( 'var/tmp/precompress' ),
@@ -1515,7 +1963,7 @@ class expVelocity
      */
     protected function logLayout( array $applied )
     {
-        $file = $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/log/qbix' ) ) . '/velocity-layout.log';
+        $file = $this->absolute( $this->setting( 'LogSettings', 'Dir', 'var/vc/qbix/log' ) ) . '/velocity-layout.log';
         if ( !is_dir( dirname( $file ) ) )
             eZDir::mkdir( dirname( $file ), false, true );
         $lines = array();

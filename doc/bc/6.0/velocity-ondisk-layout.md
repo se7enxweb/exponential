@@ -72,7 +72,7 @@ engine's console rather than reading it here. eZ's one-letter options (`-s admin
 Runs on `start`/`restart` (and `layout migrate`), idempotent and non-destructive:
 
 1. Resolve the directory: `[LayoutSettings] ConfDir=auto` → `/etc/vc` if it exists or can be
-   created; else `/etc/qbix` if that exists; else `<root>/var/vc/etc` (a user without root).
+   created; else `/etc/qbix` if that exists; else `<root>/var/vc/qbix/etc` (a user without root).
 2. Create the tree if missing; write the generated files; create the enabled symlinks.
 3. Verify that the merged tree equals the single generated config it replaces, key for key,
    before using it. If it does not, keep using the old single file and log why.
@@ -87,3 +87,14 @@ certificates, dashboard token, warm-up script, engine archive) is resolved in on
 `expVelocity` and listed by `exp:velocity layout`. Their defaults are unchanged. The FHS
 locations above are available via settings, not forced, because moving live caches and logs
 is a separate decision.
+
+## Other engines
+
+The tree belongs to the Qbix engine. With `[ServerSettings] Engine=frankenphp`
+the whole configuration is one generated Caddyfile
+(`var/vc/frankenphp/run/Caddyfile`, own directives through
+`[FrankenPHPSettings] SiteInclude`), the binary lives in `var/vc/frankenphp/bin/` and
+Caddy's state in `var/vc/frankenphp/caddy/`; with `Engine=php` there is no
+configuration file, only `bin/php/velocity-router.php`. On both, `layout` lists
+those files instead of the tree, and `layout migrate` and `site|conf|mod`
+refuse. See [velocity-engines.md](velocity-engines.md).

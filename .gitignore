@@ -5,6 +5,7 @@
 /var/log/
 /var/*/log/
 /var/storage/
+/var/vc/
 /var/test*
 *.DS_Store
 /.project
