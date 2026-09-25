@@ -173,7 +173,7 @@ function velocityShortPaths( $text )
  * its state, the addresses to open (full URLs, so a terminal makes them
  * clickable), then the details, paths relative to the installation.
  */
-function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
+function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null, $full = false )
 {
     $rel = function ( $path ) use ( $velocity )
     {
@@ -195,7 +195,7 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
     else
         $cli->output( '  ' . ( $status['running'] ? 'running' : 'stopped' ) );
 
-    if ( $velocity !== null && !$status['running'] )
+    if ( $velocity !== null && !$status['running'] && !$full )
     {
         // A stopped server: where it will answer, and how to start it.
         $row( 'Site', $cli->stylize( 'link', $velocity->urls()[0][1] ) );
@@ -203,6 +203,10 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
     }
     elseif ( $velocity !== null )
     {
+        // $full (status --all): a stopped server with every address it will
+        // answer at, so all of them are seen at once.
+        if ( !$status['running'] )
+            $row( '', 'not running -- start: exp:velocity start --engine=' . $velocity->engineName() );
         // Every address of this server: each site reached by a path, the
         // backend pages, and the server's own pages -- on plain HTTP, with the
         // HTTPS address beside each when it serves TLS.
@@ -263,7 +267,7 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
     elseif ( $velocity !== null && $velocity->engineName() === 'frankenphp' )
     {
         if ( $status['https'] )
-            $row( 'HTTPS', 'on, port ' . $velocity->configuredHttpsPort() . ' · '
+            $row( 'HTTPS', ( $status['running'] ? 'on' : 'on at the next start' ) . ', port ' . $velocity->configuredHttpsPort() . ' · '
                 . ( !empty( $status['selfSigned'] )
                     ? 'self-signed certificate ' . velocityShortPaths( $status['certificate'] ) . ' (a browser warns once)'
                     : 'certificate ' . velocityShortPaths( (string)$status['certificate'] ) ) );
@@ -408,11 +412,11 @@ if ( count( $engineList ) > 1 )
         $cli->output( json_encode( array( 'ok' => $allOk, 'data' => $report ) ) );
     elseif ( $overview )
     {
-        // An overview of all, then the details of those that run.
+        // An overview of all, then the complete status of each -- stopped
+        // ones included, with the addresses they will answer at.
         velocityPrintOverview( $cli, $overview );
         foreach ( $overview as $engine )
-            if ( $engine[1]['running'] )
-                velocityPrintStatus( $cli, $engine[1], $engine[0] );
+            velocityPrintStatus( $cli, $engine[1], $engine[0], true );
         $cli->output( '' );
     }
     elseif ( in_array( $verb, array( 'start', 'restart', 'graceful' ), true ) )

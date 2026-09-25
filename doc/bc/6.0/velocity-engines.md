@@ -57,10 +57,13 @@ serves TLS, and the Qbix server's dashboard. A stopped engine shows where it
 will answer and the command that starts it. Below the addresses the process,
 version, configuration, HTTPS (the port, and when it is off what switches it
 on) and the logs -- paths relative to the installation -- and the settings the
-engine does not act on, one per line. `status` without `--engine` (and
-`status --all`) begins with one line per engine -- role, state, URL -- and the
-command that stops each one running, then shows the details of those running
-(the default's when none is), so an engine left running from a test is seen.
+engine does not act on, one per line. `status` without `--engine` begins
+with one line per engine -- role, state, URL -- and the command that stops
+each one running, then shows the details of those running (the default's when
+none is), so an engine left running from a test is seen. `status --all` shows
+the same overview and then the complete status of every engine, stopped ones
+included with every address they will answer at: everything, and every URL,
+at a glance.
 `status --engine=<name>` shows that one only. `start --all` ends with the
 overview. The exit code and `--json` still describe the default engine.
 
