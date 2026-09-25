@@ -49,17 +49,15 @@ status. Each engine is reported on its own line; one that fails does not stop
 the others, and the exit code is non-zero if any did.
 
 `status` shows the addresses to open as full URLs, which a terminal makes
-clickable: per engine the site, its HTTPS address when TLS is on, and the Qbix
-server's dashboard. Below them the process, version, configuration, HTTPS
-(the port, and when it is off what switches it on) and log -- paths relative
-to the installation -- and the settings the engine does not act on, one per
-line. The application's pages -- every site reached by a path (the default
-siteaccess at `/`, then the others of `AvailableSiteAccessList`), the admin
-login, Setup > System information, Setup > Caches -- are the same on every
-engine, so they follow
-once, as links on a running engine -- the php engine when it runs, else
-the default, else any; they are left
-out when no admin siteaccess is matched by URI. `status` without `--engine` (and
+clickable, for each running engine: every site reached by a path (the default
+siteaccess at `/`, then the others of `AvailableSiteAccessList`; left out when
+siteaccesses are matched by host only), the admin login, Setup > System
+information and Setup > Caches, the HTTPS address beside each when the engine
+serves TLS, and the Qbix server's dashboard. A stopped engine shows where it
+will answer and the command that starts it. Below the addresses the process,
+version, configuration, HTTPS (the port, and when it is off what switches it
+on) and the logs -- paths relative to the installation -- and the settings the
+engine does not act on, one per line. `status` without `--engine` (and
 `status --all`) begins with one line per engine -- role, state, URL -- and the
 command that stops each one running, then shows the details of those running
 (the default's when none is), so an engine left running from a test is seen.

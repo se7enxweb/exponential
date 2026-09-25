@@ -195,15 +195,44 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
     else
         $cli->output( '  ' . ( $status['running'] ? 'running' : 'stopped' ) );
 
-    if ( $velocity !== null )
+    if ( $velocity !== null && !$status['running'] )
     {
-        $urls = $velocity->urls();
-        if ( !$status['running'] )
-            $urls = array_slice( $urls, 0, 1 );
-        foreach ( $urls as $url )
+        // A stopped server: where it will answer, and how to start it.
+        $row( 'Site', $cli->stylize( 'link', $velocity->urls()[0][1] ) );
+        $row( '', 'start: exp:velocity start --engine=' . $velocity->engineName() );
+    }
+    elseif ( $velocity !== null )
+    {
+        // Every address of this server: each site reached by a path, the
+        // backend pages, and the server's own pages -- on plain HTTP, with the
+        // HTTPS address beside each when it serves TLS.
+        $http = $https = null;
+        $own = array();
+        foreach ( $velocity->urls() as $url )
+        {
+            if ( $url[0] === 'Site' )
+                $http = rtrim( $url[1], '/' );
+            elseif ( $url[0] === 'HTTPS' )
+                $https = rtrim( $url[1], '/' );
+            else
+                $own[] = $url;
+        }
+        $pages = array();
+        $sites = $velocity->sitePaths();
+        foreach ( $sites ? $sites : array( array( '/', '' ) ) as $n => $site )
+            $pages[] = array( $n === 0 ? ( $sites ? 'Sites' : 'Site' ) : '', $site[0], $site[1] );
+        foreach ( $velocity->adminPaths() as $page )
+            $pages[] = array( $page[0], $page[1], '' );
+
+        $width = 0;
+        foreach ( $pages as $page )
+            $width = max( $width, strlen( $http . $page[1] ) );
+        foreach ( $pages as $page )
+            $row( $page[0], $cli->stylize( 'link', $https !== null ? str_pad( $http . $page[1], $width ) : $http . $page[1] )
+                  . ( $https !== null ? '  ' . $cli->stylize( 'link', $https . $page[1] ) : '' )
+                  . ( $page[2] !== '' ? '   ' . $page[2] : '' ) );
+        foreach ( $own as $url )
             $row( $url[0], $cli->stylize( 'link', $url[1] ) );
-        if ( !$status['running'] )
-            $row( '', 'start: exp:velocity start --engine=' . $velocity->engineName() );
     }
 
     $cli->output( '' );
@@ -266,43 +295,6 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
     $notes = $status['notes'] ?? array();
     foreach ( array_values( $notes ) as $n => $note )
         $row( $n === 0 ? 'Not used' : '', '· ' . velocityShortPaths( $note ) );
-}
-
-/**
- * The application's backend pages, once: they are the same on every engine,
- * so they are shown as links on one that runs -- the php engine when it does,
- * the development server a developer has at hand; else the default; else
- * any that runs.
- *
- * @param array $engines [expVelocity, status] pairs
- */
-function velocityPrintAdmin( eZCLI $cli, array $engines )
-{
-    $serving = null;
-    $rank = -1;
-    foreach ( $engines as $engine )
-    {
-        if ( !$engine[1]['running'] )
-            continue;
-        $own = $engine[0]->engineName() === 'php' ? 2 : ( $engine[0]->isDefault() ? 1 : 0 );
-        if ( $own > $rank )
-        {
-            $serving = $engine[0];
-            $rank = $own;
-        }
-    }
-    if ( $serving === null || !$serving->adminPaths() )
-        return;
-
-    $base = rtrim( $serving->urls()[0][1], '/' );
-    $cli->output( '' );
-    $cli->output( '  ' . $cli->stylize( 'emphasize', 'Exponential' ) );
-    // Every site reached by a path, the default at /.
-    foreach ( array_values( $serving->sitePaths() ) as $n => $site )
-        $cli->output( sprintf( '    %-10s %s', $n === 0 ? 'Sites' : '', $cli->stylize( 'link', $base . $site[0] ) )
-                      . ( $site[1] !== '' ? '   ' . $site[1] : '' ) );
-    foreach ( $serving->adminPaths() as $page )
-        $cli->output( sprintf( '    %-10s %s', $page[0], $cli->stylize( 'link', $base . $page[1] ) ) );
 }
 
 /**
@@ -421,7 +413,6 @@ if ( count( $engineList ) > 1 )
         foreach ( $overview as $engine )
             if ( $engine[1]['running'] )
                 velocityPrintStatus( $cli, $engine[1], $engine[0] );
-        velocityPrintAdmin( $cli, $overview );
         $cli->output( '' );
     }
     elseif ( in_array( $verb, array( 'start', 'restart', 'graceful' ), true ) )
@@ -434,7 +425,6 @@ if ( count( $engineList ) > 1 )
             $overview[] = array( $engine, $engine->status() );
         }
         velocityPrintOverview( $cli, $overview );
-        velocityPrintAdmin( $cli, $overview );
         $cli->output( '' );
     }
     $script->shutdown( $allOk ? 0 : 1 );
@@ -722,13 +712,11 @@ switch ( $verb )
                 }
             if ( !$shown )
                 velocityPrintStatus( $cli, $status, $velocity );
-            velocityPrintAdmin( $cli, $overview );
             $cli->output( '' );
         }
         else
         {
             velocityPrintStatus( $cli, $status, $velocity );
-            velocityPrintAdmin( $cli, array( array( $velocity, $status ) ) );
             $cli->output( '' );
         }
         // The default engine's state, as before: what monitoring checks.
@@ -752,7 +740,6 @@ switch ( $verb )
 
         $status = $velocity->status();
         velocityPrintStatus( $cli, $status, $velocity );
-        velocityPrintAdmin( $cli, array( array( $velocity, $status ) ) );
         $cli->output( '' );
         $script->shutdown( $result['ok'] ? 0 : 1 );
 }
