@@ -238,6 +238,10 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
                 . ( !empty( $status['selfSigned'] )
                     ? 'self-signed certificate ' . velocityShortPaths( $status['certificate'] ) . ' (a browser warns once)'
                     : 'certificate ' . velocityShortPaths( (string)$status['certificate'] ) ) );
+        elseif ( $status['running'] && $velocity->httpsEnabled() )
+            // The settings have it on; this server was started without.
+            $row( 'HTTPS', 'off for this run (started with --no-https, or no certificate could be made);'
+                . ' the next start serves port ' . $velocity->configuredHttpsPort() );
         else
             $row( 'HTTPS', 'off; port ' . $velocity->configuredHttpsPort() . ' with start --https, or [FrankenPHPSettings] HTTPS=enabled'
                 . ' (the default; self-signed unless [HTTPSSettings] Certificate and Key)' );
@@ -300,11 +304,16 @@ function velocityPrintOverview( eZCLI $cli, array $engines )
         list( $velocity, $status ) = $engine;
         $role = $velocity->role() . ( $velocity->isDefault() ? ', default' : '' );
         $state = $status['running'] ? 'running' : 'stopped';
-        $url = $velocity->urls();
+        // The site's addresses: plain HTTP, and HTTPS beside it when it is on
+        // -- the overview is all start --all prints, so it has to say so.
+        $addresses = array();
+        foreach ( $velocity->urls() as $url )
+            if ( $url[0] === 'Site' || $url[0] === 'HTTPS' )
+                $addresses[] = $cli->stylize( 'link', $url[1] );
         $cli->output( '  ' . ( $status['running'] ? $cli->stylize( 'success', '●' ) : '○' ) . ' '
             . sprintf( '%-11s %-24s ', $velocity->engineName(), $role )
             . $cli->stylize( $status['running'] ? 'success' : 'warning', sprintf( '%-8s', $state ) ) . ' '
-            . $cli->stylize( 'link', $url[0][1] ) );
+            . implode( '  ', $addresses ) );
     }
     $running = array();
     foreach ( $engines as $engine )

@@ -123,12 +123,17 @@ class expVelocityFrankenPHP extends expVelocity
     }
 
     /**
-     * @return int|null the HTTPS port when TLS is on or the running server serves it
+     * The HTTPS port, when TLS is on: for a running server as it was started
+     * (its Caddyfile -- with --https or --no-https the settings do not say),
+     * for a stopped one as the next start would have it.
+     *
+     * @return int|null
      */
     public function httpsPort()
     {
-        return $this->httpsEnabled() || $this->runningWithTls()
-            ? (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 ) : null;
+        $on = $this->isRunning() && !$this->httpsForced && $this->httpsOff === null
+            ? $this->runningWithTls() : $this->httpsEnabled();
+        return $on ? (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 ) : null;
     }
 
     /**
@@ -1329,7 +1334,8 @@ class expVelocityFrankenPHP extends expVelocity
 
         // A server started with --https serves TLS although the settings do
         // not say so; its Caddyfile does.
-        $https = $status['https'] || ( $pids && $this->runningWithTls() );
+        // A running server as it was started, a stopped one as it would start.
+        $https = $pids ? $this->runningWithTls() : $status['https'];
         $tls = $https ? $this->tlsFiles() : null;
 
         return array_merge( $status, array(
