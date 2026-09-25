@@ -151,19 +151,27 @@ the generated file.
 
 ### HTTPS
 
-FrankenPHP serves HTTPS on `HTTPSPort` (8444) beside plain HTTP on `Port`:
+FrankenPHP serves HTTPS on `HTTPSPort` (8444) beside plain HTTP on `Port`,
+**by default** (`[FrankenPHPSettings] HTTPS=enabled`), so a development machine
+has `https://` from the first start:
 
 ```bash
-./bin/php/console exp:velocity start --engine=frankenphp --https   # this start only
+./bin/php/console exp:velocity start --engine=frankenphp              # http :8089 + https :8444
+./bin/php/console exp:velocity start --engine=frankenphp --no-https   # plain HTTP, this start only
+./bin/php/console exp:velocity start --engine=frankenphp --https      # insist on HTTPS, this start only
 ```
 
-or for every start `[FrankenPHPSettings] HTTPS=enabled`. It uses
+`HTTPS=disabled` switches it off for good. It uses
 `[HTTPSSettings] Certificate` and `Key` when both are set (both must exist).
 With both empty it makes a **self-signed certificate** for this machine --
 `localhost`, `127.0.0.1`, `::1` and the host name, SHA-256, valid a year --
 in `var/velocity/tls/` (key 0600) and renews it a month before it runs out.
-A browser warns about it once; it is meant for testing and for a reverse
-proxy in front, not for visitors. `[HTTPSSettings] Enabled=true` with a
+A browser warns about it once; it is meant for development and for a reverse
+proxy in front, not for visitors -- a public site names its certificate or
+terminates TLS in front. When the self-signed certificate cannot be made (no
+openssl extension, an unwritable directory) the server starts with plain HTTP
+and the start message says why; with `--https`, or a named certificate that
+does not exist, the start is refused instead. `[HTTPSSettings] Enabled=true` with a
 certificate switches it on as before. `status` says which certificate is in
 use and lists the HTTPS address beside the HTTP one, also for a server started
 with `--https`. `--https` is the frankenphp engine's: the built-in server has

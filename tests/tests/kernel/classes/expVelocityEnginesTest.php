@@ -317,6 +317,7 @@ class expVelocityEnginesTest extends ezpTestCase
         ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'PidFile', 'var/tmp/velocity-test-none.pid' );
         ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'ConfigFile', 'var/tmp/velocity-test-none.Caddyfile' );
         ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'HTTPSPort', '8446' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'HTTPS', 'disabled' );
         ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'Enabled', 'false' );
         $franken = expVelocity::create( 'velocity.ini', 'frankenphp' );
         $this->assertSame( 8446, $franken->configuredHttpsPort() );
@@ -361,9 +362,16 @@ class expVelocityEnginesTest extends ezpTestCase
         $this->assertStringContainsString( 'https://:8447 {', $caddy );
         $this->assertStringContainsString( 'selfsigned.key', $caddy );
 
-        // The setting does the same for every start.
+        // The setting does the same for every start -- the shipped default.
         ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'HTTPS', 'enabled' );
         $this->assertTrue( expVelocity::create( 'velocity.ini', 'frankenphp' )->httpsEnabled() );
+        $this->assertSame( 'enabled', eZINI::fetchFromFile( 'settings/velocity.ini' )->variable( 'FrankenPHPSettings', 'HTTPS' ) );
+
+        // --no-https: plain HTTP for this start, whatever the settings say.
+        $plain = expVelocity::create( 'velocity.ini', 'frankenphp' );
+        $plain->withoutHttps();
+        $this->assertFalse( $plain->httpsEnabled() );
+        $this->assertStringNotContainsString( 'https://', $plain->caddyfileText() );
 
         // A named certificate is used as it is, and must exist.
         ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'Certificate', '/nonexistent/cert.pem' );

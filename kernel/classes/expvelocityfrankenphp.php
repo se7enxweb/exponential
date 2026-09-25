@@ -46,6 +46,9 @@ class expVelocityFrankenPHP extends expVelocity
     /** @var bool TLS for this start only (`start --https`) */
     protected $httpsForced = false;
 
+    /** @var string|null why this start serves plain HTTP only (`--no-https`, or no certificate could be made) */
+    protected $httpsOff = null;
+
     /** Where the self-signed certificate lives, relative to the installation. */
     const SELF_SIGNED_DIR = 'var/velocity/tls';
 
@@ -75,6 +78,16 @@ class expVelocityFrankenPHP extends expVelocity
     public function forceHttps()
     {
         $this->httpsForced = true;
+        $this->httpsOff = null;
+    }
+
+    /**
+     * Serve plain HTTP only for this start, whatever the settings say.
+     */
+    public function withoutHttps()
+    {
+        $this->httpsForced = false;
+        $this->httpsOff = '--no-https';
     }
 
     /**
@@ -89,7 +102,10 @@ class expVelocityFrankenPHP extends expVelocity
     {
         if ( $this->httpsForced )
             return true;
-        if ( in_array( strtolower( trim( (string)$this->frankenSetting( 'HTTPS', 'disabled' ) ) ), array( 'enabled', 'true' ), true ) )
+        if ( $this->httpsOff !== null )
+            return false;
+        // On unless switched off: a development machine gets HTTPS at once.
+        if ( in_array( strtolower( trim( (string)$this->frankenSetting( 'HTTPS', 'enabled' ) ) ), array( 'enabled', 'true' ), true ) )
             return true;
         return parent::httpsEnabled();
     }
@@ -907,11 +923,21 @@ class expVelocityFrankenPHP extends expVelocity
             return $this->result( false, 'already running', $this->status() );
 
         // The certificate first: the Caddyfile prepare() writes names it.
+        // Asked for with --https, or a certificate named that is not there:
+        // refused. The self-signed one of the default that cannot be made
+        // (no openssl extension): plain HTTP, and the message says why --
+        // the site should start either way.
         if ( $this->httpsEnabled() )
         {
             $tls = $this->tlsFiles( true );
             if ( !is_array( $tls ) )
-                return $this->result( false, 'HTTPS: ' . $tls, $this->status() );
+            {
+                $named = trim( (string)$this->setting( 'HTTPSSettings', 'Certificate', '' ) ) !== ''
+                      || trim( (string)$this->setting( 'HTTPSSettings', 'Key', '' ) ) !== '';
+                if ( $this->httpsForced || $named )
+                    return $this->result( false, 'HTTPS: ' . $tls, $this->status() );
+                $this->httpsOff = $tls;
+            }
         }
 
         $ready = $this->prepare();
@@ -924,7 +950,8 @@ class expVelocityFrankenPHP extends expVelocity
         $taken = $this->listeningPorts();
         if ( $taken )
             return $this->result( false, 'port ' . implode( ', ', $taken ) . ' is already in use by another process'
-                . ' (the qbix engine? exp:velocity stop --engine=qbix)', $this->status() );
+                . ' (another engine of this installation -- exp:velocity status -- or another installation\'s server;'
+                . ' [FrankenPHPSettings] Port and HTTPSPort choose others)', $this->status() );
 
         // Caddy keeps its state (certificates, autosave) under XDG_DATA_HOME
         // and XDG_CONFIG_HOME, else in the home directory of whoever runs it --
@@ -960,8 +987,10 @@ class expVelocityFrankenPHP extends expVelocity
         @exec( $command );
 
         // The settings this engine ignores are listed under the status that
-        // follows, one per line, rather than strung onto this message.
-        $suffix = '';
+        // follows, one per line, rather than strung onto this message. Only
+        // HTTPS left off against the settings is said here.
+        $suffix = $this->httpsOff !== null && $this->httpsOff !== '--no-https'
+                ? '; HTTPS off, plain HTTP only: ' . $this->httpsOff : '';
 
         $started = microtime( true );
         $deadline = $started + 20;
