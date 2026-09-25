@@ -298,9 +298,16 @@ class expVelocityEnginesTest extends ezpTestCase
         $this->assertContains( 'Dashboard', $labels );
         $this->assertNotContains( 'Dashboard', array_column( $urls, 0 ) );
 
+        // Every site by its path, the default at /; the admin one apart.
+        ezpINIHelper::setINISetting( 'site.ini', 'SiteSettings', 'DefaultAccess', 'site' );
+        ezpINIHelper::setINISetting( 'site.ini', 'SiteAccessSettings', 'AvailableSiteAccessList', array( 'site', 'eng', 'admin' ) );
+        $this->assertSame( array( array( '/', 'default (site)' ), array( '/eng', '' ) ),
+                           expVelocity::create( 'velocity.ini', 'php' )->sitePaths() );
+
         // Siteaccesses matched by host only: no admin path to show.
         ezpINIHelper::setINISetting( 'site.ini', 'SiteAccessSettings', 'MatchOrder', 'host' );
         $this->assertSame( array(), expVelocity::create( 'velocity.ini', 'php' )->adminPaths() );
+        $this->assertSame( array(), expVelocity::create( 'velocity.ini', 'php' )->sitePaths() );
 
         ezpINIHelper::setINISetting( 'velocity.ini', 'PHPServerSettings', 'Host', '192.0.2.7' );
         $this->assertSame( 'http://192.0.2.7:8125/', expVelocity::create( 'velocity.ini', 'php' )->urls()[0][1] );

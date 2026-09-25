@@ -373,6 +373,30 @@ class expVelocity
     }
 
     /**
+     * The application's sites reachable by a path prefix, as [path, note]:
+     * the default siteaccess at /, then every other one of
+     * AvailableSiteAccessList that is not an admin siteaccess. Empty when
+     * siteaccesses are matched by host only, where a path leads nowhere.
+     *
+     * @return array
+     */
+    public function sitePaths()
+    {
+        if ( !class_exists( 'eZINI' ) )
+            return array();
+        $site = eZINI::instance( 'site.ini' );
+        if ( strpos( strtolower( (string)$site->variable( 'SiteAccessSettings', 'MatchOrder' ) ), 'uri' ) === false )
+            return array();
+        $default = trim( (string)$site->variable( 'SiteSettings', 'DefaultAccess' ) );
+        $admin = $this->adminSiteAccess();
+        $paths = array( array( '/', $default !== '' ? 'default (' . $default . ')' : 'default' ) );
+        foreach ( (array)$site->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) as $access )
+            if ( $access !== $default && $access !== $admin && stripos( $access, 'admin' ) === false )
+                $paths[] = array( '/' . $access, '' );
+        return $paths;
+    }
+
+    /**
      * The admin siteaccess, when one is reached by a path prefix: the one
      * named admin, else the first whose name says so. Null when siteaccesses
      * are matched by host only, where a path would lead nowhere.

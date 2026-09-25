@@ -53,9 +53,12 @@ clickable: per engine the site, its HTTPS address when TLS is on, and the Qbix
 server's dashboard. Below them the process, version, configuration, HTTPS
 (the port, and when it is off what switches it on) and log -- paths relative
 to the installation -- and the settings the engine does not act on, one per
-line. The backend pages (admin login, Setup > System information, Setup >
-Caches) are the application's and the same on every engine, so they follow
-once, as links on a running engine, the default when it runs; they are left
+line. The application's pages -- every site reached by a path (the default
+siteaccess at `/`, then the others of `AvailableSiteAccessList`), the admin
+login, Setup > System information, Setup > Caches -- are the same on every
+engine, so they follow
+once, as links on a running engine -- the php engine when it runs, else
+the default, else any; they are left
 out when no admin siteaccess is matched by URI. `status` without `--engine` (and
 `status --all`) begins with one line per engine -- role, state, URL -- and the
 command that stops each one running, then shows the details of those running

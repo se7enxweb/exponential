@@ -270,23 +270,37 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null )
 
 /**
  * The application's backend pages, once: they are the same on every engine,
- * so they are shown as links on one that runs -- the default when it does.
+ * so they are shown as links on one that runs -- the php engine when it does,
+ * the development server a developer has at hand; else the default; else
+ * any that runs.
  *
  * @param array $engines [expVelocity, status] pairs
  */
 function velocityPrintAdmin( eZCLI $cli, array $engines )
 {
     $serving = null;
+    $rank = -1;
     foreach ( $engines as $engine )
-        if ( $engine[1]['running'] && ( $serving === null || $engine[0]->isDefault() ) )
+    {
+        if ( !$engine[1]['running'] )
+            continue;
+        $own = $engine[0]->engineName() === 'php' ? 2 : ( $engine[0]->isDefault() ? 1 : 0 );
+        if ( $own > $rank )
+        {
             $serving = $engine[0];
+            $rank = $own;
+        }
+    }
     if ( $serving === null || !$serving->adminPaths() )
         return;
 
     $base = rtrim( $serving->urls()[0][1], '/' );
     $cli->output( '' );
-    $cli->output( '  ' . $cli->stylize( 'emphasize', 'Exponential' ) . '   the same on every engine; here on '
-                  . $serving->engineName() );
+    $cli->output( '  ' . $cli->stylize( 'emphasize', 'Exponential' ) );
+    // Every site reached by a path, the default at /.
+    foreach ( array_values( $serving->sitePaths() ) as $n => $site )
+        $cli->output( sprintf( '    %-10s %s', $n === 0 ? 'Sites' : '', $cli->stylize( 'link', $base . $site[0] ) )
+                      . ( $site[1] !== '' ? '   ' . $site[1] : '' ) );
     foreach ( $serving->adminPaths() as $page )
         $cli->output( sprintf( '    %-10s %s', $page[0], $cli->stylize( 'link', $base . $page[1] ) ) );
 }
