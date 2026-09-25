@@ -594,6 +594,51 @@ class eZCache
     }
 
     /**
+     * Removes the directory of a cache that is cleared by a timestamp. Called
+     * after the timestamp is set, which stays what decides: whatever cannot be
+     * moved aside is left for the cache_cleanup cronjob, never deleted file by
+     * file here. Nothing happens with RenameExpiredCaches or RenameBeforeDelete
+     * disabled, or with a cluster handler other than eZFSFileHandler, whose
+     * files are not in this directory.
+     *
+     * $cleanupArea names the area in cachecleanup-state.json, so that the
+     * cronjob does not move the same clear aside a second time.
+     *
+     * @param string $path
+     * @param string|false $cleanupArea
+     * @param int|false $expiry The timestamp just set
+     */
+    static function removeExpiredDirectory( $path, $cleanupArea = false, $expiry = false )
+    {
+        if ( !eZCacheTrash::removesExpiredCaches()
+             || !( eZClusterFileHandler::instance() instanceof eZFSFileHandler )
+             || !is_dir( $path ) )
+        {
+            return;
+        }
+        if ( eZCacheTrash::discard( $path ) && $cleanupArea !== false && $expiry !== false )
+            eZCache::markCleanupHandled( $cleanupArea, $expiry );
+    }
+
+    /**
+     * Records in cachecleanup-state.json that the clear at $expiry of
+     * $cleanupArea ('view cache', 'cache-block') is handled, as the
+     * cache_cleanup cronjob does after it moved one aside.
+     *
+     * @param string $cleanupArea
+     * @param int $expiry
+     */
+    private static function markCleanupHandled( $cleanupArea, $expiry )
+    {
+        $stateFile = eZSys::cacheDirectory() . '/cachecleanup-state.json';
+        $state = is_file( $stateFile ) ? json_decode( (string)file_get_contents( $stateFile ), true ) : null;
+        if ( !is_array( $state ) )
+            $state = array();
+        $state[$cleanupArea] = (int)$expiry;
+        eZFile::create( basename( $stateFile ), dirname( $stateFile ), json_encode( $state ), true );
+    }
+
+    /**
      * Sets the image alias timestamp to the current timestamp,
      * this causes all image aliases to be recreated on viewing.
      */
@@ -718,9 +763,11 @@ class eZCache
      */
     static function clearTemplateBlockCache( $cacheItem )
     {
+        $now = time();
         $expiryHandler = eZExpiryHandler::instance();
-        $expiryHandler->setTimestamp( 'global-template-block-cache', time() );
+        $expiryHandler->setTimestamp( 'global-template-block-cache', $now );
         $expiryHandler->store();
+        eZCache::removeExpiredDirectory( eZSys::cacheDirectory() . '/' . $cacheItem['path'], 'cache-block', $now );
     }
 
     /**
@@ -769,6 +816,7 @@ class eZCache
         $handler = eZExpiryHandler::instance();
         $handler->setTimestamp( 'user-info-cache', time() );
         $handler->store();
+        eZCache::removeExpiredDirectory( eZSys::cacheDirectory() . '/' . $cacheItem['path'] );
         ezpEvent::getInstance()->notify( 'user/cache/all' );
     }
 
@@ -777,9 +825,11 @@ class eZCache
      */
     static function clearContentCache( $cacheItem )
     {
+        $now = time();
         $handler = eZExpiryHandler::instance();
-        $handler->setTimestamp( 'content-view-cache', time() );
+        $handler->setTimestamp( 'content-view-cache', $now );
         $handler->store();
+        eZCache::removeExpiredDirectory( eZSys::cacheDirectory() . '/' . $cacheItem['path'], 'view cache', $now );
         ezpEvent::getInstance()->notify( 'content/cache/all' );
     }
 
@@ -805,7 +855,11 @@ class eZCache
     static function clearTextToImageCache( $cacheItem )
     {
         $fileHandler = eZClusterFileHandler::instance( $cacheItem['path'] );
-        $fileHandler->delete();
+        // Only a cache on the local file system can be renamed aside
+        if ( $fileHandler instanceof eZFSFileHandler && is_dir( $cacheItem['path'] ) )
+            eZCache::removeDirectory( $cacheItem['path'] );
+        else
+            $fileHandler->delete();
     }
 
     /**
@@ -863,5 +917,13 @@ class eZCache
     public static function clearTSTranslationCache( $cacheItem )
     {
         eZTSTranslator::expireCache();
+        // A SharedTranslationCacheDir is shared with other installations, and
+        // stays theirs to clear
+        $ini = eZINI::instance();
+        if ( !$ini->hasVariable( 'RegionalSettings', 'SharedTranslationCacheDir' )
+             || trim( $ini->variable( 'RegionalSettings', 'SharedTranslationCacheDir' ) ) === '' )
+        {
+            eZCache::removeExpiredDirectory( eZSys::cacheDirectory() . '/' . $cacheItem['path'] );
+        }
     }
 }

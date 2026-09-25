@@ -22,6 +22,9 @@
  * sweep of caches that were not cleared, then the deleting. Entries stored
  * between the clear and this run go with it and are generated again.
  * [CacheCleanupSettings] RenameAfterClear=disabled keeps the file-by-file sweep.
+ * A clear through eZCache (administration interface, bin/php/ezcache.php) does
+ * that rename itself with site.ini [FileSettings] RenameExpiredCaches, and
+ * records the clear in the state file, so it is not moved aside twice.
  * Which clear was last handled is kept in cachecleanup-state.json in the cache
  * directory; on the first run there is none, and the sweep runs.
  *

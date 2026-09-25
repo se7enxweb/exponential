@@ -58,6 +58,23 @@ class eZCacheTrash
     }
 
     /**
+     * Whether a cache cleared by a timestamp -- view cache, cache-block, user
+     * info, translation -- is moved aside and deleted as well.
+     * site.ini [FileSettings] RenameExpiredCaches, and only with
+     * RenameBeforeDelete, since without the rename it would be deleted file by
+     * file in the request.
+     *
+     * @return bool
+     */
+    static function removesExpiredCaches()
+    {
+        $ini = eZINI::instance();
+        return self::isEnabled()
+            && ( !$ini->hasVariable( 'FileSettings', 'RenameExpiredCaches' )
+                 || $ini->variable( 'FileSettings', 'RenameExpiredCaches' ) !== 'disabled' );
+    }
+
+    /**
      * Holds back deleting until the matching end().
      */
     static function begin()

@@ -15,9 +15,20 @@ class ezjscCacheManager
      */
     public static function clearCache( array $cacheItem )
     {
-        eZClusterFileHandler::instance()->fileDeleteByDirList(
-            array( 'javascript', 'stylesheets' ),
-            eZSys::cacheDirectory() . '/' . $cacheItem['path'], ''
-        );
+        $dirList = array( 'javascript', 'stylesheets' );
+        $path = eZSys::cacheDirectory() . '/' . $cacheItem['path'];
+        $fileHandler = eZClusterFileHandler::instance();
+        // On the local file system renamed aside first, like the kernel's caches;
+        // site.ini [FileSettings] RenameBeforeDelete=disabled deletes as before
+        if ( $fileHandler instanceof eZFSFileHandler && eZCacheTrash::isEnabled() )
+        {
+            foreach ( $dirList as $dir )
+            {
+                if ( is_dir( $path . '/' . $dir ) )
+                    eZCache::removeDirectory( $path . '/' . $dir );
+            }
+            return;
+        }
+        $fileHandler->fileDeleteByDirList( $dirList, $path, '' );
     }
 }
