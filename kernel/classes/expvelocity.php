@@ -126,8 +126,74 @@ class expVelocity
      */
     protected $layoutNote = '';
 
+    /**
+     * Make eZINI read an INI file as it is on disk now, if its cached copy is
+     * older than any file it was built from.
+     *
+     * config.php sets EZP_INI_FILEMTIME_CHECK to false, so eZINI never looks
+     * at the files again once var/cache/ini/ holds a copy -- and
+     * `ezcache --clear-id=ini` does not clear that directory (it is the
+     * global_ini entry; --clear-tag=ini or --clear-all reach both). A change to
+     * velocity.ini or its override, or one written by `exp:velocity config`,
+     * could therefore go unapplied through any number of restarts while every
+     * start reported success: StatTtl was added, the server restarted, and the
+     * generated configuration never carried it.
+     *
+     * Each cached copy records the files it was parsed from and when; one that
+     * any of them is newer than -- or that names a file now gone -- is
+     * removed, and the process's instance is dropped so the next
+     * eZINI::instance() parses the files again (and caches that). A copy that
+     * is current costs a stat per source file. Only this controller calls it,
+     * on the command line; web requests keep the cache as configured.
+     *
+     * @param string $iniName
+     * @return int how many stale cached copies were removed
+     */
+    public static function refreshIni( $iniName = 'velocity.ini' )
+    {
+        $root = rtrim( eZSys::rootDir(), '/' );
+        if ( $root === '' )
+            $root = rtrim( getcwd(), '/' );
+        $dir = isset( $GLOBALS['eZINI_CONFIG_CACHE_DIR'] ) ? $GLOBALS['eZINI_CONFIG_CACHE_DIR'] : $root . '/var/cache/ini/';
+        $prefix = strtok( $iniName, '.' );
+        // Read a cache file's $data without letting it touch anything else.
+        $read = function ( $file )
+        {
+            $data = false;
+            include $file;
+            return $data;
+        };
+        $removed = 0;
+        foreach ( glob( rtrim( $dir, '/' ) . '/' . $prefix . '-*.php' ) ?: array() as $cacheFile )
+        {
+            $data = $read( $cacheFile );
+            $stale = !is_array( $data ) || empty( $data['files'] ) || empty( $data['created'] );
+            if ( !$stale )
+            {
+                $created = strtotime( $data['created'] );
+                foreach ( (array)$data['files'] as $source )
+                {
+                    $path = ( $source !== '' && $source[0] === '/' ) ? $source : $root . '/' . $source;
+                    clearstatcache( true, $path );
+                    $mtime = @filemtime( $path );
+                    if ( $mtime === false || $mtime > $created )
+                    {
+                        $stale = true;
+                        break;
+                    }
+                }
+            }
+            if ( $stale && @unlink( $cacheFile ) )
+                ++$removed;
+        }
+        if ( $removed > 0 )
+            eZINI::resetInstance( $iniName );
+        return $removed;
+    }
+
     public function __construct( $iniName = 'velocity.ini' )
     {
+        self::refreshIni( $iniName );
         $this->ini = eZINI::instance( $iniName );
         $this->rootDir = rtrim( eZSys::rootDir(), '/' );
         if ( $this->rootDir === '' )
@@ -154,6 +220,7 @@ class expVelocity
     {
         if ( $engine === null || trim( (string)$engine ) === '' )
         {
+            self::refreshIni( $iniName );
             $ini = eZINI::instance( $iniName );
             $engine = $ini->hasVariable( 'ServerSettings', 'Engine' )
                     ? (string)$ini->variable( 'ServerSettings', 'Engine' ) : '';
@@ -227,6 +294,7 @@ class expVelocity
      */
     public static function defaultEngine( $iniName = 'velocity.ini' )
     {
+        self::refreshIni( $iniName );
         $ini = eZINI::instance( $iniName );
         $engine = $ini->hasVariable( 'ServerSettings', 'Engine' )
                 ? strtolower( trim( (string)$ini->variable( 'ServerSettings', 'Engine' ) ) ) : '';
@@ -1265,6 +1333,18 @@ class expVelocity
                 $webserver['idleWorkerTimeout'] = $idleTimeout;
         }
 
+        // [ServerSettings] Zygote -> Q.webserver.zygote: fork later workers
+        // from a process that never held a client connection, so a worker
+        // forked under load does not keep visitors' TLS connections open.
+        // Written either way when set: the engine turns it on by default, so
+        // "disabled" has to be said out loud or it would do nothing. Empty
+        // leaves the engine's own default.
+        $zygote = strtolower( trim( (string)$this->setting( 'ServerSettings', 'Zygote', '' ) ) );
+        if ( in_array( $zygote, array( 'enabled', 'true', '1', 'yes' ), true ) )
+            $webserver['zygote'] = true;
+        elseif ( in_array( $zygote, array( 'disabled', 'false', '0', 'no' ), true ) )
+            $webserver['zygote'] = false;
+
         // Where the server pre-transforms PHP before forking.
         //
         // Its default is the directory above the document root, on the
@@ -1273,6 +1353,12 @@ class expVelocity
         // holds every sibling installation on the host, and the server walked
         // and cached all of them in memory every worker inherits.
         $compat = array( 'prewarmDir' => $this->absolute( $this->setting( 'ServerSettings', 'DocumentRoot', '' ) ) );
+
+        // [ServerSettings] StatTtl -> Q.compat.statTtl: how long a worker may
+        // keep what it knows about files across requests (0 = not at all).
+        $statTtl = (float)$this->setting( 'ServerSettings', 'StatTtl', 0 );
+        if ( $statTtl > 0 )
+            $compat['statTtl'] = min( 10.0, $statTtl );
 
         // Who may use the server's own admin views (/Q/dashboard, /Q/stats,
         // /Q/metrics, the full /Q/health, /Q/phpinfo). The server answers
