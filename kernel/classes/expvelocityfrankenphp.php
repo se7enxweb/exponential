@@ -493,6 +493,69 @@ class expVelocityFrankenPHP extends expVelocity
     }
 
     /**
+     * PHP threads for FrankenPHP: array(num_threads, extra up to max_threads).
+     *
+     * [FrankenPHPSettings] Workers and SpareWorkers when set; otherwise twice
+     * the machine's CPU cores and none extra -- FrankenPHP's own default --
+     * and never the qbix engine's [ServerSettings] Workers. Those are
+     * processes, most of them idle in a dynamic pool; these are threads that
+     * all run at once. Inheriting 590 of them on twelve cores made heavy load
+     * slower, not faster: measured on alpha (2026-09-26, two passes each), 64
+     * concurrent rendered pages did 16.0 req/s at 12-48 threads and 14.6 at
+     * 96 or 590, and each page cost 233 ms of CPU at 12 threads against 290 at
+     * 590. Twice the cores leaves room for threads waiting on the database.
+     *
+     * @return array
+     */
+    public function threadCounts()
+    {
+        $own = trim( (string)$this->frankenSetting( 'Workers', '' ) );
+        $workers = $own !== '' ? (int)$own : 2 * self::cpuCount();
+        $workers = $workers > 0 ? $workers : 4;
+        $ownSpare = trim( (string)$this->frankenSetting( 'SpareWorkers', '' ) );
+        $spare = $ownSpare !== '' ? max( 0, (int)$ownSpare ) : 0;
+        return array( $workers, $spare );
+    }
+
+    /**
+     * CPU cores this machine offers (at least 1).
+     *
+     * @return int
+     */
+    public static function cpuCount()
+    {
+        $n = 0;
+        if ( is_readable( '/proc/cpuinfo' ) )
+            $n = preg_match_all( '/^processor\s*:/m', (string)@file_get_contents( '/proc/cpuinfo' ) );
+        if ( $n < 1 && function_exists( 'shell_exec' ) )
+            $n = (int)trim( (string)@shell_exec( 'nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null' ) );
+        return max( 1, (int)$n );
+    }
+
+    /**
+     * The encode directive for [FrankenPHPSettings] Compression: the codecs
+     * the binary has (zstd, br, gzip), in the order given, each once; null --
+     * no compression -- for disabled, off, none, an empty value or a list
+     * with no known codec in it.
+     *
+     * @param string|null $value
+     * @return string|null
+     */
+    public static function encodeDirective( $value )
+    {
+        $value = strtolower( trim( (string)$value ) );
+        if ( in_array( $value, array( '', 'disabled', 'off', 'none', 'false', '0' ), true ) )
+            return null;
+        $codecs = array();
+        foreach ( preg_split( '/[\s,]+/', $value, -1, PREG_SPLIT_NO_EMPTY ) as $codec )
+        {
+            if ( in_array( $codec, array( 'zstd', 'br', 'gzip' ), true ) && !in_array( $codec, $codecs, true ) )
+                $codecs[] = $codec;
+        }
+        return $codecs ? 'encode ' . implode( ' ', $codecs ) : null;
+    }
+
+    /**
      * The Caddyfile for this installation, generated from velocity.ini.
      *
      * The routing is exponential's .htaccess_root: the paths in
@@ -509,9 +572,7 @@ class expVelocityFrankenPHP extends expVelocity
         $port    = (int)$this->setting( 'ServerSettings', 'Port', 8088 );
         $host    = trim( (string)$this->setting( 'ServerSettings', 'Host', '127.0.0.1' ) );
         $root    = $this->absolute( $this->setting( 'ServerSettings', 'DocumentRoot', '' ) );
-        $workers = (int)$this->setting( 'ServerSettings', 'Workers', 4 );
-        $workers = $workers > 0 ? $workers : 4;
-        $spare   = max( 0, (int)$this->setting( 'ServerSettings', 'SpareWorkers', 0 ) );
+        list( $workers, $spare ) = $this->threadCounts();
         $timeout = (int)$this->setting( 'ControlSettings', 'StopTimeout', 15 );
         $http2   = $this->setting( 'ServerSettings', 'HTTP2', 'enabled' );
         $maxAge  = (int)$this->setting( 'ServerSettings', 'StaticMaxAge', 0 );
@@ -519,6 +580,7 @@ class expVelocityFrankenPHP extends expVelocity
         $logs    = $this->logFiles();
         $phar    = $this->enginePhar();
         $include = trim( (string)$this->frankenSetting( 'SiteInclude', '' ) );
+        $encode  = self::encodeDirective( $this->frankenSetting( 'Compression', 'zstd br gzip' ) );
 
         $fileOutput = function ( $file ) use ( $q, $mode )
         {
@@ -563,6 +625,12 @@ class expVelocityFrankenPHP extends expVelocity
             $lines[] = "\t\tformat json";
             $lines[] = "\t}";
         }
+        // Caddy compresses nothing unless told to: without this every page
+        // left uncompressed (95.7 KB for the front page here, against about
+        // 10 KB gzipped). encode skips small bodies and types that do not
+        // shrink, and adds Vary: Accept-Encoding.
+        if ( $encode !== null )
+            $lines[] = "\t" . $encode;
         $lines[] = "\troute {";
         $lines[] = "\t\trespond /Q/health 200";
         // Never a script or a dot path, even below a listed directory: the
