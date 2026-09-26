@@ -299,19 +299,14 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             eZExecution::addFatalErrorHandler(
                 function()
                 {
-                    header("HTTP/1.1 500 Internal Server Error");
-                    echo "<b>Fatal error</b>: The web server did not finish its request<br>";
-                    if ( ini_get('display_errors') == 1 )
-                    {
-                        if ( eZDebug::isDebugEnabled() )
-                            echo "<p>The execution of eZ Publish was abruptly ended, the debug output is present below.</p>";
-                        else
-                            echo "<p>Debug information can be found in the log files normally placed in var/log/* or by enabling 'DebugOutput' in site.ini</p>";
-                    }
-                    else
-                    {
-                        echo "<p>Contact website owner with current url and info on what you did, and owner will be able to debug the issue further (by enabling 'display_errors' in php.ini).</p>";
-                    }
+                    // The site's own error page, with a reference that is
+                    // also written to the error log beside the fatal error.
+                    $reference = eZExecution::errorReference();
+                    $last = error_get_last();
+                    eZLog::write( 'Fatal error ' . $reference . ( $last ? ': ' . $last['message'] . ' in ' . $last['file'] . ' on line ' . $last['line'] : '' ), 'error.log' );
+                    eZExecution::renderErrorPage( 500, $reference,
+                        ( eZDebug::isDebugEnabled() && $last ) ? $last['message'] . ' in ' . $last['file'] . ' on line ' . $last['line'] : '' );
+                    // The debug report, where debug output is switched on.
                     eZDisplayResult( null );
                 }
             );

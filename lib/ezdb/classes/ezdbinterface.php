@@ -1069,29 +1069,13 @@ class eZDBInterface
 
                 $ini = eZINI::instance();
                 $adminEmail = $ini->variable( 'MailSettings', 'AdminEmail' );
-                if ( !eZSys::isShellExecution() )
+                // isWebRequest(), not isShellExecution(): a web server running in
+                // the CLI SAPI answers browsers too, and they got an empty page.
+                if ( eZExecution::isWebRequest() )
                 {
-                    if ( !headers_sent() )
-                    {
-                        header("HTTP/1.1 500 Internal Server Error");
-                    }
-                    $site = htmlentities(eZSys::serverVariable( 'HTTP_HOST' ), ENT_QUOTES);
-                    $uri = htmlentities(eZSys::serverVariable( 'REQUEST_URI' ), ENT_QUOTES);
-
-                    print( "<div class=\"fatal-error\" style=\"" );
-                    print( 'margin: 0.5em 0 1em 0; ' .
-                           'padding: 0.25em 1em 0.75em 1em;' .
-                           'border: 4px solid #000000;' .
-                           'background-color: #f8f8f4;' .
-                           'border-color: #f95038;" >' );
-                    print( "<b>Fatal error</b>: A database transaction in eZ Publish failed.<br/>" );
-                    print( "<p>" );
-                    print( "The current execution was stopped to prevent further problems.<br/>\n" .
-                           "You should contact the <a href=\"mailto:$adminEmail?subject=Transaction failed on $site and URI $uri with ID $transID\">System Administrator</a> of this site with the information on this page.<br/>\n" .
-                           "The current transaction ID is <b>$transID</b> and has been logged.<br/>\n" .
-                           "Please include the transaction ID and the current URL when contacting the system administrator.<br/>\n" );
-                    print( "</p>" );
-                    print( "</div>" );
+                    // The site's error page; the transaction ID is the
+                    // reference the visitor can quote, and is in the log.
+                    eZExecution::renderErrorPage( 500, $transID );
 
                     $templateResult = null;
                     if ( function_exists( 'eZDisplayResult' ) )
