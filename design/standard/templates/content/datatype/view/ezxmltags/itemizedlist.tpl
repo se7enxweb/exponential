@@ -1,0 +1,1 @@
+{if is_set($content)}<ul>{$content}</ul>{/if}

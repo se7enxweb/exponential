@@ -1,0 +1,1 @@
+{if is_set($content)}<p{if and(is_set($classification), $classification|ne(""))} class="{$classification|wash}"{/if}>{$content}</p>{else}<p></p>{/if}

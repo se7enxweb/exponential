@@ -1,0 +1,1 @@
+{if is_set($content)}<li>{$content|ristring(array("<p>","</p>"), array("",""))}</li>{/if}

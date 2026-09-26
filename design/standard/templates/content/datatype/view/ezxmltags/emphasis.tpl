@@ -1,0 +1,1 @@
+{if and(is_set($role), $role|eq("strong"))}<strong>{$content}</strong>{else}<em>{$content}</em>{/if}
