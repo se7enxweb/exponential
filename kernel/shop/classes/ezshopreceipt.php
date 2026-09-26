@@ -88,8 +88,10 @@ class eZShopReceipt
 
     /**
      * Whether a user may see an order's receipt: shop administrators any
-     * order; a signed-in customer their own; nobody an anonymous order but an
-     * administrator.
+     * order; a signed-in customer their own. An order placed without an
+     * account only an administrator -- or, when shop.ini [OrderViewSettings]
+     * AnonymousOrderLinkView=orderreceipt, the session that placed it, the
+     * same rule shop/orderview applies to such an order.
      *
      * @param eZOrder $order
      * @param eZUser|null $user the current user when null
@@ -103,9 +105,28 @@ class eZShopReceipt
             return true;
         $anonymousID = (int)eZINI::instance()->variable( 'UserSettings', 'AnonymousUserID' );
         if ( !$user->isRegistered() || (int)$user->id() === $anonymousID )
-            return false;
+        {
+            return self::anonymousLinkView() === 'orderreceipt'
+                && (int)$order->attribute( 'user_id' ) === $anonymousID
+                && (int)$order->attribute( 'id' ) === (int)eZHTTPTool::instance()->sessionVariable( 'UserOrderID' );
+        }
         return (int)$order->attribute( 'user_id' ) === (int)$user->id()
             && (int)$order->attribute( 'user_id' ) !== $anonymousID;
+    }
+
+    /**
+     * Where an order placed without an account is linked: orderview (the
+     * default) or orderreceipt, from shop.ini [OrderViewSettings]
+     * AnonymousOrderLinkView. Only used when OrderLinkView is orderreceipt.
+     *
+     * @return string
+     */
+    public static function anonymousLinkView()
+    {
+        $ini = eZINI::instance( 'shop.ini' );
+        $view = $ini->hasVariable( 'OrderViewSettings', 'AnonymousOrderLinkView' )
+            ? strtolower( trim( $ini->variable( 'OrderViewSettings', 'AnonymousOrderLinkView' ) ) ) : 'orderview';
+        return $view === 'orderreceipt' ? 'orderreceipt' : 'orderview';
     }
 
     /**
@@ -133,7 +154,8 @@ class eZShopReceipt
         // to its receipt (administrators aside), so it keeps the order view,
         // which works for the session that placed it.
         $anonymousID = (int)eZINI::instance()->variable( 'UserSettings', 'AnonymousUserID' );
-        if ( self::linkView() === 'orderreceipt' && (int)$order->attribute( 'user_id' ) !== $anonymousID )
+        $anonymous = (int)$order->attribute( 'user_id' ) === $anonymousID;
+        if ( self::linkView() === 'orderreceipt' && ( !$anonymous || self::anonymousLinkView() === 'orderreceipt' ) )
             return self::receiptURL( $order );
         return '/shop/orderview/' . (int)$order->attribute( 'id' ) . '/';
     }
