@@ -92,6 +92,21 @@ class expVelocityPHPServer extends expVelocity
     }
 
     /**
+     * The built-in PHP web server speaks plain HTTP only; it never binds a TLS
+     * port. Fixed at false regardless of [HTTPSSettings], so the pre-start
+     * port check and the reported URLs only ever concern this engine's own
+     * HTTP Port. Left to the base, a shared [ServerSettings] HTTPSPort that
+     * another engine already serves (e.g. the qbix engine on 8080) would be
+     * counted as this engine's and refuse an otherwise-free start.
+     *
+     * @return bool
+     */
+    public function httpsEnabled()
+    {
+        return false;
+    }
+
+    /**
      * @return string
      */
     public function pidFile()
