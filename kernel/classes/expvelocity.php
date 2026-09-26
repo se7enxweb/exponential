@@ -66,10 +66,13 @@ class expVelocity
      * Paths served as files, straight from exponential's .htaccess_root, for
      * the engines that route requests themselves (frankenphp, php): the
      * design and extension assets, stored images, generated public caches,
-     * icons and package previews. Nothing else is ever handed out as a file,
+     * icons and package previews, the site's service worker (sw.js) and image
+     * originals (SVG images are served from there; other originals, such as
+     * protected uploads, stay behind the download view). Nothing else is ever
+     * handed out as a file,
      * so settings/*.ini, var/storage/*.db and the kernel sources cannot be.
      */
-    const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|w3c/p3p\.xml$)';
+    const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/original/image/|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|sw\.js$|w3c/p3p\.xml$)';
 
     /**
      * What is never served as a file even below a STATIC_PATHS directory:
@@ -84,7 +87,7 @@ class expVelocity
      * No other .php file runs because its path was asked for -- not a
      * library, an installer, a command-line tool or a package's settings.
      */
-    const ENTRY_SCRIPTS = array( '/index.php', '/index_rest.php' );
+    const ENTRY_SCRIPTS = array( '/index.php', '/index_rest.php', '/index_treemenu.php' );
 
     /**
      * URLs that go to a script other than index.php, in order: the REST API

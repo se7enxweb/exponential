@@ -130,12 +130,13 @@ class expVelocityEnginesTest extends ezpTestCase
         foreach ( array( '/design/standard/stylesheets/core.css', '/var/site/storage/images/a/b.jpg',
                          '/extension/ezwebin/design/ezwebin/javascript/x.js', '/share/icons/crystal/a.png',
                          '/extension/sevenx_themes_media/design/media/fonts/inter.woff2',
-                         '/favicon.ico', '/robots.txt' ) as $path )
+                         '/favicon.ico', '/robots.txt', '/sw.js', '/var/site/storage/original/image/logo.svg' ) as $path )
             $this->assertSame( 1, preg_match( $static, $path ), $path );
 
         foreach ( array( '/settings/site.ini', '/settings/override/site.ini.append.php', '/var/storage/sqlite3/sqlite3.db',
                          '/autoload.php', '/kernel/classes/expvelocity.php', '/.git/config', '/composer.json',
-                         '/var/site/cache/ini/x.php', '/bin/php/velocity-router.php', '/index.php' ) as $path )
+                         '/var/site/cache/ini/x.php', '/bin/php/velocity-router.php', '/index.php',
+                         '/var/site/storage/original/application/contract.pdf', '/sw.js.bak' ) as $path )
             $this->assertSame( 0, preg_match( $static, $path ), $path );
 
         // Listed directories, but never served: a script's source, dot paths.
@@ -252,7 +253,7 @@ class expVelocityEnginesTest extends ezpTestCase
     {
         $velocity = expVelocity::create( 'velocity.ini', 'qbix' );
         $webserver = $this->qbixWebserverConfig( $velocity );
-        $this->assertSame( array( '/index.php', '/index_rest.php' ), $webserver['scripts'] ?? null );
+        $this->assertSame( array( '/index.php', '/index_rest.php', '/index_treemenu.php' ), $webserver['scripts'] ?? null );
         $this->assertSame( 'index_rest.php', $webserver['frontControllers']['^/(api/|index_rest\\.php)'] ?? null );
         $this->assertSame( 'index_treemenu.php', $webserver['frontControllers']['^/([^/]+/)?content/treemenu'] ?? null );
 
