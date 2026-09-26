@@ -87,6 +87,13 @@ class expVelocity
      * No other .php file runs because its path was asked for -- not a
      * library, an installer, a command-line tool or a package's settings.
      */
+    /**
+     * Where Composer installs the bundled engine: the package is
+     * se7enxweb/exponential-velocity, formerly se7enxweb/qbix-webserver.
+     */
+    const ENGINE_PACKAGE_DIR = 'vendor/se7enxweb/exponential-velocity';
+    const ENGINE_PACKAGE_DIR_OLD = 'vendor/se7enxweb/qbix-webserver';
+
     const ENTRY_SCRIPTS = array( '/index.php', '/index_rest.php', '/index_treemenu.php' );
 
     /**
@@ -197,7 +204,7 @@ class expVelocity
     public function install( array $options = array() )
     {
         return $this->result( true, 'the qbix engine ships with the installation '
-            . '(vendor/se7enxweb/qbix-webserver); nothing to install' );
+            . '(' . self::ENGINE_PACKAGE_DIR . '); nothing to install' );
     }
 
     /**
@@ -583,8 +590,21 @@ class expVelocity
      */
     public function scriptPath()
     {
-        return $this->absolute( $this->setting( 'ServerSettings', 'ScriptPath',
-            'vendor/se7enxweb/qbix-webserver/qbixserver.php' ) );
+        $path = $this->absolute( $this->setting( 'ServerSettings', 'ScriptPath',
+            self::ENGINE_PACKAGE_DIR . '/qbixserver.php' ) );
+        // The engine's package was renamed from se7enxweb/qbix-webserver to
+        // se7enxweb/exponential-velocity, and Composer installs a package
+        // under its name: whichever of the two directories is there is used.
+        if ( !is_file( $path ) )
+        {
+            foreach ( array( self::ENGINE_PACKAGE_DIR, self::ENGINE_PACKAGE_DIR_OLD ) as $dir )
+            {
+                $other = str_replace( array( self::ENGINE_PACKAGE_DIR_OLD, self::ENGINE_PACKAGE_DIR ), $dir, $path );
+                if ( $other !== $path && is_file( $other ) )
+                    return $other;
+            }
+        }
+        return $path;
     }
 
     /**

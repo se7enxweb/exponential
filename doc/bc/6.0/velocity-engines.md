@@ -21,7 +21,7 @@ an engine is *for* (its role) does not change with that.
 | Role | experimental, for tests | **production** | development (shipped default) |
 | Port (shipped) | 8088 (`[ServerSettings]`) | 8089, HTTPS 8444 | 8087 |
 | What | the bundled Qbix server, a PHP process | FrankenPHP: Caddy with PHP built in, one binary | `php -S`, PHP's own server |
-| Where it comes from | Composer (`se7enxweb/qbix-webserver`) | downloaded by `exp:velocity install`, SHA-256 checked | the PHP that runs `exp:velocity` |
+| Where it comes from | Composer (`se7enxweb/exponential-velocity`, formerly `se7enxweb/qbix-webserver`) | downloaded by `exp:velocity install`, SHA-256 checked | the PHP that runs `exp:velocity` |
 | PHP | the machine's | the binary's own (official 1.12.x: PHP 8.5) | the machine's |
 | Requests | persistent or per-request workers | classic mode: a thread pool, clean state per request | `Workers` processes, clean state per request |
 | Response cache | yes (`[CacheSettings]`) | not yet | no |

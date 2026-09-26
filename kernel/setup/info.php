@@ -577,9 +577,14 @@ if ( $servingEngine !== null && class_exists( 'expVelocity' ) )
     if ( $servingEngine === 'qbix' )
     {
         $ship = defined( 'QBIX_SHIP_VERSION' ) ? (string)QBIX_SHIP_VERSION : '';
-        if ( strncmp( $ship, 'v0.', 3 ) !== 0 && class_exists( '\Composer\InstalledVersions' )
-             && \Composer\InstalledVersions::isInstalled( 'se7enxweb/qbix-webserver' ) )
-            $ship = (string)\Composer\InstalledVersions::getPrettyVersion( 'se7enxweb/qbix-webserver' );
+        // The engine's package, under its current name or the one it had
+        // before (se7enxweb/qbix-webserver).
+        foreach ( array( 'se7enxweb/exponential-velocity', 'se7enxweb/qbix-webserver' ) as $package )
+        {
+            if ( strncmp( $ship, 'v0.', 3 ) !== 0 && class_exists( '\Composer\InstalledVersions' )
+                 && \Composer\InstalledVersions::isInstalled( $package ) )
+                $ship = (string)\Composer\InstalledVersions::getPrettyVersion( $package );
+        }
         $qbixVersion = $ship !== '' ? 'Qbix server ' . $ship : '';
     }
 
