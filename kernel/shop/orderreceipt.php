@@ -2,8 +2,9 @@
 /**
  * An order's permanent receipt: shop/orderreceipt/<token>.
  *
- * The address never expires and can be bookmarked; seeing it takes being
- * signed in as the order's customer, or shop/administrate (see eZShopReceipt).
+ * The address never expires and can be bookmarked. Its signed token is the
+ * key: whoever holds a genuine one sees the receipt, from any browser or
+ * device, no sign-in needed (see eZShopReceipt::canView()).
  * ?download=1 answers the same receipt as a self-contained HTML file.
  *
  * @copyright Copyright (C) 7x. All rights reserved.
@@ -14,11 +15,11 @@
 $module = $Params['Module'];
 $token = isset( $Params['Token'] ) ? (string)$Params['Token'] : '';
 
-// One answer for "no such receipt" and "not yours": whether an order exists is
-// nobody's business but its customer's. Not signed in, the access-denied page
-// offers the login form and comes back here afterwards.
+// One answer for every token that does not open a receipt: whether an order
+// exists is nobody's business but its customer's. An order resolved here came
+// from a verified token, so the caller holds it -- which is what authorises it.
 $order = $token !== '' ? eZShopReceipt::orderFromToken( $token ) : null;
-if ( !$order || !eZShopReceipt::canView( $order ) )
+if ( !$order || !eZShopReceipt::canView( $order, null, true ) )
 {
     return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
 }

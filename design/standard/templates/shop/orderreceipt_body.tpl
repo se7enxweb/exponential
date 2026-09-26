@@ -101,7 +101,7 @@
     {undef $history}
 
     <footer class="order-receipt-foot">
-        {'This receipt stays at this address. Only you, signed in, and the shop can open it.'|i18n( 'design/standard/shop/orderreceipt' )}<br>
+        {'This receipt stays at this address. Anyone with this link can open it, so keep it private.'|i18n( 'design/standard/shop/orderreceipt' )}<br>
         <span class="order-receipt-url">{$receipt_url|ezurl( 'no', 'full' )}</span>
     </footer>
 </article>

@@ -24,9 +24,11 @@
  * nothing needs to be stored. sha256 first keeps the input under bcrypt's
  * 72-byte limit.
  *
- * The token is only the address. Seeing the receipt still takes being signed
- * in as the customer who placed the order, or holding shop/administrate; an
- * order placed without an account can be seen by shop administrators only.
+ * The token is also the key: holding a genuine one opens the receipt it names,
+ * for any order and from any browser or device, which is what lets the
+ * emailed link work. Keep it as private as the receipt. A shop administrator,
+ * and the signed-in customer who owns the order, may open it without the
+ * token (see canView()).
  *
  * @package kernel
  */
@@ -87,46 +89,38 @@ class eZShopReceipt
     }
 
     /**
-     * Whether a user may see an order's receipt: shop administrators any
-     * order; a signed-in customer their own. An order placed without an
-     * account only an administrator -- or, when shop.ini [OrderViewSettings]
-     * AnonymousOrderLinkView=orderreceipt, the session that placed it, the
-     * same rule shop/orderview applies to such an order.
+     * Whether the current request may see an order's receipt.
+     *
+     * A verified receipt token is a bearer capability: it is unguessable,
+     * unforgeable and reaches only the buyer (their confirmation email), so
+     * holding a genuine one ($viaToken) authorises the receipt it names on its
+     * own -- for any order, anonymous or not, from any browser, device or
+     * session. That is what lets the permanent, bookmarkable link open from a
+     * private window, another machine, or days later. Without the token, a shop
+     * administrator may open any receipt and the signed-in customer their own.
      *
      * @param eZOrder $order
-     * @param eZUser|null $user the current user when null
+     * @param eZUser|null $user the current user when null; ignored when $viaToken
+     * @param bool $viaToken the caller holds a verified receipt token for this
+     *        order -- the order was resolved from it with orderFromToken().
+     *        Never pass true off a session or a raw request parameter.
      * @return bool
      */
-    public static function canView( eZOrder $order, $user = null )
+    public static function canView( eZOrder $order, $user = null, $viaToken = false )
     {
+        if ( $viaToken )
+            return true;
         $user = $user instanceof eZUser ? $user : eZUser::currentUser();
         $administrate = $user->hasAccessTo( 'shop', 'administrate' );
         if ( $administrate['accessWord'] != 'no' )
             return true;
+        // No token and not an administrator: only the signed-in customer who
+        // owns the order. The anonymous user is not a customer, and the token
+        // is the only way an order placed without an account is ever seen.
         $anonymousID = (int)eZINI::instance()->variable( 'UserSettings', 'AnonymousUserID' );
-        if ( !$user->isRegistered() || (int)$user->id() === $anonymousID )
-        {
-            return self::anonymousLinkView() === 'orderreceipt'
-                && (int)$order->attribute( 'user_id' ) === $anonymousID
-                && (int)$order->attribute( 'id' ) === (int)eZHTTPTool::instance()->sessionVariable( 'UserOrderID' );
-        }
-        return (int)$order->attribute( 'user_id' ) === (int)$user->id()
-            && (int)$order->attribute( 'user_id' ) !== $anonymousID;
-    }
-
-    /**
-     * Where an order placed without an account is linked: orderview (the
-     * default) or orderreceipt, from shop.ini [OrderViewSettings]
-     * AnonymousOrderLinkView. Only used when OrderLinkView is orderreceipt.
-     *
-     * @return string
-     */
-    public static function anonymousLinkView()
-    {
-        $ini = eZINI::instance( 'shop.ini' );
-        $view = $ini->hasVariable( 'OrderViewSettings', 'AnonymousOrderLinkView' )
-            ? strtolower( trim( $ini->variable( 'OrderViewSettings', 'AnonymousOrderLinkView' ) ) ) : 'orderview';
-        return $view === 'orderreceipt' ? 'orderreceipt' : 'orderview';
+        return $user->isRegistered()
+            && (int)$user->id() !== $anonymousID
+            && (int)$order->attribute( 'user_id' ) === (int)$user->id();
     }
 
     /**
@@ -150,12 +144,9 @@ class eZShopReceipt
      */
     public static function linkURL( eZOrder $order )
     {
-        // An order placed without an account has no customer who could sign in
-        // to its receipt (administrators aside), so it keeps the order view,
-        // which works for the session that placed it.
-        $anonymousID = (int)eZINI::instance()->variable( 'UserSettings', 'AnonymousUserID' );
-        $anonymous = (int)$order->attribute( 'user_id' ) === $anonymousID;
-        if ( self::linkView() === 'orderreceipt' && ( !$anonymous || self::anonymousLinkView() === 'orderreceipt' ) )
+        // The receipt opens for whoever holds its token, so every order --
+        // placed with an account or without one -- can be linked to it.
+        if ( self::linkView() === 'orderreceipt' )
             return self::receiptURL( $order );
         return '/shop/orderview/' . (int)$order->attribute( 'id' ) . '/';
     }
