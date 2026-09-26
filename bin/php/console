@@ -4,7 +4,7 @@
  * File containing the console script.
  *
  * Exponential CMS command console — modeled after Symfony's bin/console,
- * built for eZ Publish 4 / Exponential CMS 6.x.
+ * built for Exponential CMS 6.x.
  *
  * Discovers and dispatches all scripts at runtime — zero configuration.
  *
@@ -43,7 +43,7 @@ define( 'EXP_CONSOLE_VERSION', '1.0.0' );
 define( 'EXP_CONSOLE_NAME',    'Exponential Console' );
 
 // ══════════════════════════════════════════════════════════════════════════════
-//  Bootstrap — resolve project root, change into it, load eZ Publish
+//  Bootstrap — resolve project root, change into it, load Exponential
 // ══════════════════════════════════════════════════════════════════════════════
 
 $rootDir = dirname( dirname( __DIR__ ) );
@@ -150,7 +150,7 @@ $showBanner = function() use ( $out, $hrThick, $boldOrange, $amber, $dim, $bold 
     $out(
         '  ' . $bold( $boldOrange( EXP_CONSOLE_NAME ) )
       . '  ' . $amber( EXP_CONSOLE_VERSION )
-      . '  ' . $dim( '(eZ Publish 4 / Exponential CMS 6.x)' )
+      . '  ' . $dim( '(Exponential CMS 6.x)' )
     );
     $out( '  ' . $dim( 'With great power comes great responsibility.' ) );
     $hrThick();
@@ -627,7 +627,7 @@ $listCommands = function( $nsFilter = null )
         'shell'      => 'shell      — bin/shell/*.sh  (Bash shell scripts)',
         'bin'        => 'bin        — bin/*  (Root bin executables)',
         'cron'       => 'cron       — cronjobs/*.php  (Cronjob parts via runcronjobs.php)',
-        'ezpm'       => 'ezpm       — ezpm.php  (eZ Publish package manager)',
+        'ezpm'       => 'ezpm       — ezpm.php  (Exponential package manager)',
     );
 
     $lastCount = 0;
