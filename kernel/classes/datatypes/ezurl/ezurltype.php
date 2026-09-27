@@ -69,13 +69,30 @@ class eZURLType extends eZDataType
         {
             $url = $http->PostVariable( $base . "_ezurl_url_" . $contentObjectAttribute->attribute( "id" ) );
             $text = $http->PostVariable( $base . "_ezurl_text_" . $contentObjectAttribute->attribute( "id" ) );
+            // Both are text fields: an array can only come from a forged form
+            // and would fail later where the URL is trimmed and stored
+            if ( !is_string( $url ) || !is_string( $text ) )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                     'Input required.' ) );
+                return eZInputValidator::STATE_INVALID;
+            }
             if ( $contentObjectAttribute->validateIsRequired() )
-                if ( $url == "" )
+                if ( trim( $url ) == "" )
                 {
                     $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                          'Input required.' ) );
                     return eZInputValidator::STATE_INVALID;
                 }
+            // The URL becomes the href of a link: a script or data URL would
+            // run in the browser of whoever clicks it
+            $scheme = eZURLType::unsafeURLScheme( $url );
+            if ( $scheme !== false )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                     'Links with the %1 scheme are not allowed.', null, array( $scheme . ':' ) ) );
+                return eZInputValidator::STATE_INVALID;
+            }
             // Remove all url-object links to this attribute.
             eZURLObjectLink::removeURLlinkList( $contentObjectAttribute->attribute( "id" ), $contentObjectAttribute->attribute('version') );
         }
@@ -85,6 +102,67 @@ class eZURLType extends eZDataType
             return eZInputValidator::STATE_INVALID;
         }
         return eZInputValidator::STATE_ACCEPTED;
+    }
+
+    /*!
+     \static
+     \return the scheme of \a $url (lower case, without the colon) if it is one
+     that runs code or carries inline content when the URL is followed, that is
+     javascript:, vbscript:, data: and their old aliases, and false otherwise.
+
+     The scheme is looked for the way a browser finds it: character references
+     are decoded (the URL may be output unwashed somewhere) and control
+     characters and spaces are dropped, since browsers ignore them at the start
+     and tabs and line breaks anywhere in a URL. "Java&#x09;Script:" and
+     " \x01javascript:" are therefore caught as well as the plain form.
+    */
+    static function unsafeURLScheme( $url )
+    {
+        if ( !is_string( $url ) )
+            return false;
+        $probe = $url;
+        for ( $i = 0; $i < 3; ++$i )
+        {
+            // Numeric references are decoded with or without the ";", as
+            // browsers do in attribute values
+            $decoded = preg_replace_callback( '/&#(x[0-9a-f]+|[0-9]+);?/i', function ( $m ) {
+                $code = ( $m[1][0] === 'x' || $m[1][0] === 'X' ) ? hexdec( substr( $m[1], 1 ) ) : (int)$m[1];
+                return ( $code > 0 && $code < 0x110000 ) ? mb_chr( $code, 'UTF-8' ) : '';
+            }, $probe );
+            $decoded = html_entity_decode( (string)$decoded, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+            if ( $decoded === $probe )
+                break;
+            $probe = $decoded;
+        }
+        $probe = preg_replace( '/[\x00-\x20\x7f]+/', '', (string)$probe );
+        if ( preg_match( '/^([a-z][a-z0-9+.\-]*):/i', (string)$probe, $matches ) )
+        {
+            $scheme = strtolower( $matches[1] );
+            if ( in_array( $scheme, array( 'javascript', 'vbscript', 'data', 'livescript', 'mocha' ), true ) )
+                return $scheme;
+        }
+        return false;
+    }
+
+    /*!
+     \static
+     \return true if \a $url may be output as the href of a link.
+    */
+    static function isLinkableURL( $url )
+    {
+        return is_string( $url ) && trim( $url ) !== '' && eZURLType::unsafeURLScheme( $url ) === false;
+    }
+
+    /*!
+     Adds view.url_is_linkable: whether the stored URL may be the href of a
+     link. The view templates check it, because values stored before the URL
+     was validated (or imported from a package) can still hold a script URL.
+    */
+    function objectDisplayInformation( $objectAttribute, $mergeInfo = false )
+    {
+        $info = is_array( $mergeInfo ) ? $mergeInfo : array();
+        $info['view']['url_is_linkable'] = eZURLType::isLinkableURL( $objectAttribute->content() );
+        return eZDataType::objectDisplayInformation( $objectAttribute, $info );
     }
 
     function deleteStoredObjectAttribute( $contentObjectAttribute, $version = null )
@@ -128,6 +206,9 @@ class eZURLType extends eZDataType
         {
             $url = $http->postVariable( $base . '_ezurl_url_' . $contentObjectAttribute->attribute( 'id' ) );
             $text = $http->postVariable( $base . '_ezurl_text_' . $contentObjectAttribute->attribute( 'id' ) );
+            // Validation rejects anything but two strings
+            if ( !is_string( $url ) || !is_string( $text ) )
+                return false;
 
             $contentObjectAttribute->setAttribute( 'data_text', $text );
 
@@ -144,7 +225,9 @@ class eZURLType extends eZDataType
     {
         // Update url-object link
         $urlValue = $objectAttribute->content();
-        if ( trim( $urlValue ) != '' )
+        // content() is false when there is no URL, and null on an attribute
+        // nothing was set on yet (trim( null ) is deprecated)
+        if ( is_string( $urlValue ) && trim( $urlValue ) != '' )
         {
             $urlID = eZURL::registerURL( $urlValue );
             $objectAttributeID = $objectAttribute->attribute( 'id' );
@@ -175,7 +258,9 @@ class eZURLType extends eZDataType
     function storeObjectAttribute( $attribute )
     {
         $urlValue = $attribute->content();
-        if ( trim( $urlValue ) != '' )
+        // content() is false when there is no URL, and null on an attribute
+        // nothing was set on yet (trim( null ) is deprecated)
+        if ( is_string( $urlValue ) && trim( $urlValue ) != '' )
         {
             $oldURLID = $attribute->attribute( 'data_int' );
             $urlID = eZURL::registerURL( $urlValue );
@@ -281,6 +366,10 @@ class eZURLType extends eZDataType
         // Check if supplied data has a separator which separates url from url text
         if( $separatorPos === false )
         {
+            // An import does not pass HTTP validation, so a script URL is
+            // refused here (and not registered in the shared URL table)
+            if ( eZURLType::unsafeURLScheme( $string ) !== false )
+                return false;
             $urlID = eZURL::registerURL( $string );
             $contentObjectAttribute->setAttribute( 'data_int', $urlID );
             return $urlID;
@@ -289,13 +378,16 @@ class eZURLType extends eZDataType
         {
             $url = substr( $string, 0, $separatorPos );
             $text = substr( $string, $separatorPos + 1 );
-            if( $url )
+            if ( eZURLType::unsafeURLScheme( $url ) !== false )
+                return false;
+            if( $url !== '' )
             {
                 $urlID = eZURL::registerURL( $url );
                 $contentObjectAttribute->setAttribute( 'data_int', $urlID );
             }
 
-            if( $text )
+            // A text of "0" is a text too (toString() wrote it)
+            if( $text !== '' )
             {
                 $contentObjectAttribute->setAttribute( 'data_text', $text );
             }
@@ -329,7 +421,8 @@ class eZURLType extends eZDataType
             $node->appendChild( $urlNode );
         }
 
-        if ( $objectAttribute->attribute( 'data_text' ) )
+        // A text of "0" is a text as well and must survive the package
+        if ( (string)$objectAttribute->attribute( 'data_text' ) !== '' )
         {
             $textNode = $dom->createElement( 'text' );
             $textNode->appendChild( $dom->createTextNode( $objectAttribute->attribute( 'data_text' ) ) );
@@ -353,14 +446,20 @@ class eZURLType extends eZDataType
             unset( $url );
             $url = urldecode( $urlNode->textContent );
 
-            $urlID = eZURL::registerURL( $url );
-            if ( $urlID )
+            // A package is not validated like a form: a script URL in it is
+            // left out rather than registered and linked
+            $urlID = ( trim( $url ) !== '' && eZURLType::unsafeURLScheme( $url ) === false ) ? eZURL::registerURL( $url ) : false;
+            $urlObject = $urlID ? eZURL::fetch( $urlID ) : null;
+            if ( $urlObject instanceof eZURL )
             {
-                $urlObject = eZURL::fetch( $urlID );
-
-                $urlObject->setAttribute( 'original_url_md5', $urlNode->getAttribute( 'original-url-md5' ) );
-                $urlObject->setAttribute( 'is_valid', $urlNode->getAttribute( 'is-valid' ) );
-                $urlObject->setAttribute( 'last_checked', $urlNode->getAttribute( 'last-checked' ) );
+                // A package that leaves an attribute out keeps what the URL
+                // has, instead of an empty string in an integer field
+                if ( $urlNode->hasAttribute( 'original-url-md5' ) )
+                    $urlObject->setAttribute( 'original_url_md5', $urlNode->getAttribute( 'original-url-md5' ) );
+                if ( $urlNode->hasAttribute( 'is-valid' ) )
+                    $urlObject->setAttribute( 'is_valid', (int)$urlNode->getAttribute( 'is-valid' ) );
+                if ( $urlNode->hasAttribute( 'last-checked' ) )
+                    $urlObject->setAttribute( 'last_checked', (int)$urlNode->getAttribute( 'last-checked' ) );
                 $urlObject->setAttribute( 'created', time() );
                 $urlObject->setAttribute( 'modified', time() );
                 $urlObject->store();
