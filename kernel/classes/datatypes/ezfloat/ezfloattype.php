@@ -39,6 +39,34 @@ class eZFloatType extends eZDataType
     }
 
     /*!
+     \private
+     \return the posted value of \a $name with the spaces taken out and the locale's
+     number format made internal, or null when it is not a string. A request can post
+     an array under any name (name[]=x), which trim() in eZLocale::internalNumber()
+     and the validator's preg_match() refuse with a TypeError.
+    */
+    static function postedNumber( $http, $name )
+    {
+        $value = $http->postVariable( $name );
+        if ( is_int( $value ) || is_float( $value ) )
+            $value = (string)$value;
+        if ( !is_string( $value ) )
+            return null;
+        $value = str_replace( " ", "", $value );
+        return eZLocale::instance()->internalNumber( $value );
+    }
+
+    /*!
+     \private
+     \return true if \a $value, a string the validator accepted, is a number the
+     double column can hold: 400 digits make INF, which the database refuses.
+    */
+    static function isFinite( $value )
+    {
+        return is_numeric( $value ) && is_finite( (float)$value );
+    }
+
+    /*!
      Sets the default value.
     */
     function initializeObjectAttribute( $contentObjectAttribute, $currentVersion, $originalContentObjectAttribute )
@@ -70,12 +98,19 @@ class eZFloatType extends eZDataType
         if ( $http->hasPostVariable( $base . "_data_float_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
             $data = $http->postVariable( $base . "_data_float_" . $contentObjectAttribute->attribute( "id" ) );
+            // Validation refused anything but a string; never store an array
+            if ( !is_scalar( $data ) )
+                return false;
             $contentObjectAttribute->setHTTPValue( $data );
 
             $locale = eZLocale::instance();
-            $data = $locale->internalNumber( $data );
+            $data = $locale->internalNumber( (string)$data );
 
             $data = str_replace(" ", "", $data);
+
+            // An empty field is no value (NULL): '' was written as 0.000000
+            if ( $data === '' )
+                $data = null;
 
             $contentObjectAttribute->setAttribute( "data_float", $data );
             return true;
@@ -97,9 +132,22 @@ class eZFloatType extends eZDataType
         $min = $classAttribute->attribute( self::MIN_FIELD );
         $max = $classAttribute->attribute( self::MAX_FIELD );
         $inputState = $classAttribute->attribute( self::INPUT_STATE_FIELD );
+        if ( !is_string( $data ) or ( is_numeric( $data ) and !self::isFinite( $data ) ) )
+        {
+            $contentObjectAttribute->setValidationError(
+                ezpI18n::tr(
+                    'kernel/classes/datatypes',
+                    'The given input is not a floating point number.'
+                )
+            );
+            return eZInputValidator::STATE_INVALID;
+        }
         switch( $inputState )
         {
             case self::NO_MIN_MAX_VALUE:
+                // The datatype object is shared by every float attribute of the
+                // request: without this the range of the previous one still applied
+                $this->FloatValidator->setRange( false, false );
                 $state = $this->FloatValidator->validate( $data );
                 if ( $state === eZInputValidator::STATE_ACCEPTED )
                 {
@@ -181,16 +229,18 @@ class eZFloatType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_data_float_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $data = $http->postVariable( $base . "_data_float_" . $contentObjectAttribute->attribute( "id" ) );
-            $data = str_replace(" ", "", $data );
+            $data = self::postedNumber( $http, $base . "_data_float_" . $contentObjectAttribute->attribute( "id" ) );
+            if ( $data === null )
+            {
+                $contentObjectAttribute->setValidationError(
+                    ezpI18n::tr( 'kernel/classes/datatypes', 'The given input is not a floating point number.' ) );
+                return eZInputValidator::STATE_INVALID;
+            }
 
             if ( !$contentObjectAttribute->validateIsRequired() &&  ( $data == "" ) )
             {
                 return eZInputValidator::STATE_ACCEPTED;
             }
-
-            $locale = eZLocale::instance();
-            $data = $locale->internalNumber( $data );
 
             return $this->validateFloatHTTPInput(
                 $data, $contentObjectAttribute,
@@ -220,15 +270,11 @@ class eZFloatType extends eZDataType
         {
             $locale = eZLocale::instance();
 
-            $minValueValue = $http->postVariable( $minValueName );
-            $minValueValue = str_replace(" ", "", $minValueValue );
-            $minValueValue = $locale->internalNumber( $minValueValue );
-            $maxValueValue = $http->postVariable( $maxValueName );
-            $maxValueValue = str_replace(" ", "", $maxValueValue );
-            $maxValueValue = $locale->internalNumber( $maxValueValue );
-            $defaultValueValue = $http->postVariable( $defaultValueName );
-            $defaultValueValue = str_replace(" ", "", $defaultValueValue );
-            $defaultValueValue = $locale->internalNumber( $defaultValueValue );
+            $minValueValue = self::postedNumber( $http, $minValueName );
+            $maxValueValue = self::postedNumber( $http, $maxValueName );
+            $defaultValueValue = self::postedNumber( $http, $defaultValueName );
+            if ( $minValueValue === null or $maxValueValue === null or $defaultValueValue === null )
+                return false;
 
             $classAttribute->setAttribute( self::MIN_FIELD, $minValueValue );
             $classAttribute->setAttribute( self::MAX_FIELD, $maxValueValue );
@@ -270,15 +316,26 @@ class eZFloatType extends eZDataType
         {
             $locale = eZLocale::instance();
 
-            $minValueValue = $http->postVariable( $minValueName );
-            $minValueValue = str_replace(" ", "", $minValueValue );
-            $minValueValue = $locale->internalNumber( $minValueValue );
-            $maxValueValue = $http->postVariable( $maxValueName );
-            $maxValueValue = str_replace(" ", "", $maxValueValue );
-            $maxValueValue = $locale->internalNumber( $maxValueValue );
-            $defaultValueValue = $http->postVariable( $defaultValueName );
-            $defaultValueValue = str_replace(" ", "", $defaultValueValue );
-            $defaultValueValue = $locale->internalNumber( $defaultValueValue );
+            $minValueValue = self::postedNumber( $http, $minValueName );
+            $maxValueValue = self::postedNumber( $http, $maxValueName );
+            $defaultValueValue = self::postedNumber( $http, $defaultValueName );
+            if ( $minValueValue === null or $maxValueValue === null or $defaultValueValue === null )
+                return eZInputValidator::STATE_INVALID;
+
+            // The datatype object is shared by every attribute of the request, so
+            // the validator can still have the range an object attribute set
+            $this->FloatValidator->setRange( false, false );
+
+            // The default was never checked, and none of the three may be a number
+            // the double columns cannot hold (INF)
+            foreach ( array( $minValueValue, $maxValueValue, $defaultValueValue ) as $value )
+            {
+                if ( $value !== '' and is_numeric( $value ) and !self::isFinite( $value ) )
+                    return eZInputValidator::STATE_INVALID;
+            }
+            if ( $defaultValueValue !== '' and
+                 $this->FloatValidator->validate( $defaultValueValue ) !== eZInputValidator::STATE_ACCEPTED )
+                return eZInputValidator::STATE_INVALID;
 
             if ( ( $minValueValue == "" ) && ( $maxValueValue == "") ){
                 return  eZInputValidator::STATE_ACCEPTED;
@@ -328,12 +385,11 @@ class eZFloatType extends eZDataType
         {
             $locale = eZLocale::instance();
 
-            $minValueValue = $http->postVariable( $minValueName );
-            $minValueValue = str_replace(" ", "", $minValueValue );
-            $minValueValue = $locale->internalNumber( $minValueValue );
-            $maxValueValue = $http->postVariable( $maxValueName );
-            $maxValueValue = str_replace(" ", "", $maxValueValue );
-            $maxValueValue = $locale->internalNumber( $maxValueValue );
+            $minValueValue = self::postedNumber( $http, $minValueName );
+            $maxValueValue = self::postedNumber( $http, $maxValueName );
+            // Not a string at all: nothing a fixup can make a number of
+            if ( $minValueValue === null or $maxValueValue === null )
+                return;
 
             if ($minValueValue > $maxValueValue)
             {
@@ -385,6 +441,13 @@ class eZFloatType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
+        // toString() gives the stored number or '' for none; refuse anything else
+        // instead of storing it as 0.000000
+        $string = trim( (string)$string );
+        if ( $string === '' )
+            return $contentObjectAttribute->setAttribute( 'data_float', null );
+        if ( !self::isFinite( $string ) )
+            return false;
         return $contentObjectAttribute->setAttribute( 'data_float', $string );
     }
 
@@ -415,9 +478,14 @@ class eZFloatType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $defaultValue = $attributeParametersNode->getElementsByTagName( 'default-value' )->item( 0 )->textContent;
-        $minValue = $attributeParametersNode->getElementsByTagName( 'min-value' )->item( 0 )->textContent;
-        $maxValue = $attributeParametersNode->getElementsByTagName( 'max-value' )->item( 0 )->textContent;
+        // serializeContentClassAttribute() writes min-value and max-value only when
+        // they are set, so a missing element is the normal case, not an error
+        $defaultValueNode = $attributeParametersNode->getElementsByTagName( 'default-value' )->item( 0 );
+        $minValueNode = $attributeParametersNode->getElementsByTagName( 'min-value' )->item( 0 );
+        $maxValueNode = $attributeParametersNode->getElementsByTagName( 'max-value' )->item( 0 );
+        $defaultValue = $defaultValueNode instanceof DOMNode ? $defaultValueNode->textContent : '';
+        $minValue = $minValueNode instanceof DOMNode ? $minValueNode->textContent : '';
+        $maxValue = $maxValueNode instanceof DOMNode ? $maxValueNode->textContent : '';
 
         if ( strlen( $minValue ) > 0 and strlen( $maxValue ) > 0 )
             $minMaxState = self::HAS_MIN_MAX_VALUE;
