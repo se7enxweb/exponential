@@ -136,7 +136,8 @@ class eZImageGDHandler extends eZImageHandler
         $outputFunction = $this->OutputMap[$destinationMimeType];
         $outputQualityParameter = $this->OutputQualityMap[$destinationMimeType];
         $inputFile = $sourceMimeData['url'];
-        $outputFile = $destinationMimeData['url'];
+        // Written beside the destination and renamed into place, see eZImageHandler::temporaryPath()
+        $outputFile = eZImageHandler::temporaryPath( $destinationMimeData['url'] );
 
         if ( !file_exists( $inputFile ) )
         {
@@ -200,7 +201,7 @@ class eZImageGDHandler extends eZImageHandler
 
         if ( $returnCode )
         {
-            if ( !file_exists( $destinationMimeData['url'] ) )
+            if ( !eZImageHandler::publishTemporary( $outputFile, $destinationMimeData['url'] ) )
             {
                 eZDebug::writeError( "Unknown destination file: " . $destinationMimeData['url'], "eZImageGDHandler(" . $this->HandlerName . ")" );
                 return false;
@@ -210,7 +211,8 @@ class eZImageGDHandler extends eZImageHandler
         }
         else
         {
-            eZDebug::writeWarning( "Failed converting $inputFile ($sourceMimeType) to $outputFile ($destinationMimeType)", __METHOD__ );
+            @unlink( $outputFile );
+            eZDebug::writeWarning( "Failed converting $inputFile ($sourceMimeType) to {$destinationMimeData['url']} ($destinationMimeType)", __METHOD__ );
             return false;
         }
     }

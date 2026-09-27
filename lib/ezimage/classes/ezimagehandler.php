@@ -248,6 +248,38 @@ class eZImageHandler
         return $this->SupportedOutputMIMETypes;
     }
 
+    /**
+     * A temporary name for a conversion's output, beside $path and with its
+     * suffix (ImageMagick takes the output format from it).
+     *
+     * A variation is written under this name and renamed into place by
+     * publishTemporary(): several requests generate the same variation at
+     * once when caches are cold, and one writing straight into the final
+     * name truncated it while another read it with getimagesize() ("The size
+     * of the generated image ... could not be read").
+     */
+    static function temporaryPath( $path )
+    {
+        $dot = strrpos( basename( $path ), '.' );
+        $suffix = $dot === false ? '' : substr( basename( $path ), $dot );
+        $stem = $dot === false ? $path : substr( $path, 0, strlen( $path ) - strlen( $suffix ) );
+        return $stem . '.tmp' . getmypid() . substr( md5( uniqid( '', true ) ), 0, 6 ) . $suffix;
+    }
+
+    /** Move a finished conversion into place: rename() replaces the file atomically. */
+    static function publishTemporary( $temporaryPath, $path )
+    {
+        if ( !file_exists( $temporaryPath ) )
+            return false;
+        // The permissions go on the temporary file, which is this process's
+        // own, before it takes the final name: see changeFilePermissions()
+        self::changeFilePermissions( $temporaryPath );
+        if ( @rename( $temporaryPath, $path ) )
+            return true;
+        @unlink( $temporaryPath );
+        return false;
+    }
+
     /*!
      \static
      Changes the file permissions for image file \a $filepath to the ones
@@ -260,6 +292,16 @@ class eZImageHandler
             return false;
         $ini = eZINI::instance( 'image.ini' );
         $perm = $ini->variable( "FileSettings", "ImagePermissions" );
+        // Nothing to change: no chmod. The file at the final name need not be
+        // this process's: two servers running as different users (Apache as
+        // the site user, Velocity as root) generate the same variation, and
+        // the other's rename can land between this one's rename and its chmod.
+        // chmod on a file someone else owns fails, and error.log said so,
+        // although the file already had the permissions (they were set on the
+        // temporary file before the rename, see publishTemporary()).
+        clearstatcache( true, $filepath );
+        if ( ( @fileperms( $filepath ) & 0777 ) === ( octdec( $perm ) & 0777 ) )
+            return true;
         $success = false;
         $oldmask = umask( 0 );
         if ( !chmod( $filepath, octdec( $perm ) ) )

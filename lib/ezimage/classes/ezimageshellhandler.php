@@ -96,7 +96,9 @@ class eZImageShellHandler extends eZImageHandler
             }
         }
 
-        $destinationURL = $destinationMimeData['url'];
+        // Written beside the destination and renamed into place, see eZImageHandler::temporaryPath()
+        $temporaryURL = eZImageHandler::temporaryPath( $destinationMimeData['url'] );
+        $destinationURL = $temporaryURL;
         if ( $this->UseTypeTag )
             $destinationURL = $this->tagForMIMEType( $destinationMimeData ) . $this->UseTypeTag . $destinationURL;
         $argumentList[] = eZSys::escapeShellArgument( $destinationURL );
@@ -110,7 +112,7 @@ class eZImageShellHandler extends eZImageHandler
 
         if ( $returnCode == 0 )
         {
-            if ( !file_exists( $destinationMimeData['url'] ) )
+            if ( !eZImageHandler::publishTemporary( $temporaryURL, $destinationMimeData['url'] ) )
             {
                 eZDebug::writeError( 'Unknown destination file: ' . $destinationMimeData['url'] . " when executing '$systemString'", 'eZImageShellHandler(' . $this->HandlerName . ')' );
                 return false;
@@ -120,6 +122,7 @@ class eZImageShellHandler extends eZImageHandler
         }
         else
         {
+            @unlink( $temporaryURL );
             eZDebug::writeWarning( "Failed executing: $systemString, Error code: $returnCode", __METHOD__ );
             return false;
         }
