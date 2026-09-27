@@ -111,19 +111,43 @@ class eZEnum
 
     function setValue( $array_enumid, $array_enumelement, $array_enumvalue, $version )
     {
+        // The three lists come from the class edit form. Anything but arrays
+        // made count() throw a TypeError, shorter lists gave undefined offsets,
+        // and an id was fetched by id and version alone, so a posted id of an
+        // element of another class attribute renamed that element. Only the
+        // elements of this attribute are updated now, from the list it already
+        // has (no query per posted id, which a huge form turned into thousands)
+        if ( !is_array( $array_enumid ) or !is_array( $array_enumelement ) or !is_array( $array_enumvalue ) )
+            return;
+        $own = array();
+        foreach ( (array)$this->Enumerations as $enum )
+        {
+            if ( $enum instanceof eZEnumValue and $enum->attribute( 'contentclass_attribute_version' ) == $version )
+                $own[(int)$enum->attribute( 'id' )] = $enum;
+        }
+        $elements = array_values( $array_enumelement );
+        $values = array_values( $array_enumvalue );
         $db = eZDB::instance();
         $db->begin();
 
-        for ($i=0;$i<count( $array_enumid );$i++ )
+        $changed = false;
+        foreach ( array_values( $array_enumid ) as $i => $enumID )
         {
-            $enumvalue = eZEnumValue::fetch( $array_enumid[$i], $version );
-            if ( $enumvalue === null )
+            if ( !is_scalar( $enumID ) or !isset( $own[(int)$enumID] ) )
                 continue;
-            $enumvalue->setAttribute( "enumelement", $array_enumelement[$i] );
-            $enumvalue->setAttribute( "enumvalue", $array_enumvalue[$i] );
+            $element = $elements[$i] ?? null;
+            $value = $values[$i] ?? null;
+            if ( !is_scalar( $element ) or !is_scalar( $value ) )
+                continue;
+            $enumvalue = $own[(int)$enumID];
+            // The form limits both to 255 characters, as wide as the columns
+            $enumvalue->setAttribute( "enumelement", mb_substr( (string)$element, 0, 255 ) );
+            $enumvalue->setAttribute( "enumvalue", mb_substr( (string)$value, 0, 255 ) );
             $enumvalue->store();
-            $this->Enumerations = eZEnumValue::fetchAllElements( $this->ClassAttributeID, $this->ClassAttributeVersion );
+            $changed = true;
         }
+        if ( $changed )
+            $this->Enumerations = eZEnumValue::fetchAllElements( $this->ClassAttributeID, $this->ClassAttributeVersion );
         $db->commit();
     }
 

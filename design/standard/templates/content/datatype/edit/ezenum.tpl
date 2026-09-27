@@ -58,7 +58,7 @@
           {/switch}
 
           {/section}
-            />&nbsp;{$EnumList:item.enumelement}</label></p>
+            />&nbsp;{$EnumList:item.enumelement|wash}</label></p>
           {/section}
         {/case}
         {case match=1}
@@ -72,9 +72,9 @@
           <select id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" name="{$attribute_base}_select_data_enumelement_{$attribute.id}[]">
       {section name=EnumList loop=$attribute.content.enum_list}
          {section name=ObjectList loop=$attribute.content.enumobject_list show=$attribute.content.enumobject_list}
-         <option name="{$attribute_base}_data_enumelement_{$attribute.id}[]" value="{$EnumList:item.enumelement|wash}" {if eq($EnumList:item.enumelement,$EnumList:ObjectList:item.enumelement)}selected="selected"{/if}>{$EnumList:item.enumelement}</option>
+         <option name="{$attribute_base}_data_enumelement_{$attribute.id}[]" value="{$EnumList:item.enumelement|wash}" {if eq($EnumList:item.enumelement,$EnumList:ObjectList:item.enumelement)}selected="selected"{/if}>{$EnumList:item.enumelement|wash}</option>
          {section-else}
-         <option name="{$attribute_base}_data_enumelement_{$attribute.id}[]" value="{$EnumList:item.enumelement|wash}">{$EnumList:item.enumelement}</option>
+         <option name="{$attribute_base}_data_enumelement_{$attribute.id}[]" value="{$EnumList:item.enumelement|wash}">{$EnumList:item.enumelement|wash}</option>
          {/section}
 
       {/section}

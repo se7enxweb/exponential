@@ -151,24 +151,38 @@ class eZEnumType extends eZDataType
             // Remove stored enumerations before we store new enumerations
             eZEnum::removeObjectEnumerations( $contentObjectAttributeID, $contentObjectAttributeVersion );
 
-            if ( is_countable( $array_enumElement ) && is_countable( $array_selectedEnumElement ) )
+            // The element list, its ids and values are hidden fields of the
+            // form, so what was stored used to be whatever was posted: any id,
+            // any text, and a selected element once per time it was posted,
+            // compared in a loop of elements x selections (a huge form kept the
+            // request busy). The selections are now matched against the
+            // elements the class really has, and each is stored with the id,
+            // name and value the class gives it, in the class's order, once.
+            if ( is_array( $array_selectedEnumElement ) )
             {
-                for ( $i=0;$i<count( $array_enumElement );$i++ )
+                $selected = array();
+                foreach ( $array_selectedEnumElement as $selectedElement )
                 {
-                    for ( $j=0;$j<count( $array_selectedEnumElement );$j++ )
-                    {
-                        if ( $array_enumElement[$i] === $array_selectedEnumElement[$j] )
-                        {
-                            $eID = $array_enumID[$i];
-                            $eElement = $array_enumElement[$i];
-                            $eValue = $array_enumValue[$i];
-                            eZEnum::storeObjectEnumeration( $contentObjectAttributeID,
-                                                            $contentObjectAttributeVersion,
-                                                            $eID,
-                                                            $eElement,
-                                                            $eValue );
-                        }
-                    }
+                    if ( is_scalar( $selectedElement ) )
+                        $selected[(string)$selectedElement] = true;
+                }
+                $classAttribute = $contentObjectAttribute->contentClassAttribute();
+                $isMultiple = $classAttribute ? $classAttribute->attribute( self::IS_MULTIPLE_FIELD ) : 1;
+                $classEnum = $classAttribute ? $classAttribute->content() : null;
+                $classElements = $classEnum instanceof eZEnum ? (array)$classEnum->attribute( 'enum_list' ) : array();
+                foreach ( $classElements as $classElement )
+                {
+                    $eElement = (string)$classElement->attribute( 'enumelement' );
+                    if ( !isset( $selected[$eElement] ) )
+                        continue;
+                    eZEnum::storeObjectEnumeration( $contentObjectAttributeID,
+                                                    $contentObjectAttributeVersion,
+                                                    $classElement->attribute( 'id' ),
+                                                    $eElement,
+                                                    $classElement->attribute( 'enumvalue' ) );
+                    // Radio buttons and a single select give one choice
+                    if ( !$isMultiple )
+                        break;
                 }
             }
             $db->commit();
@@ -316,9 +330,19 @@ class eZEnumType extends eZDataType
                 $version = $contentClassAttribute->attribute( 'version' );
                 $postvarname = 'ContentClass' . '_data_enumremove_' . $contentClassAttribute->attribute( 'id' );
                 $array_remove = $http->hasPostVariable( $postvarname ) ? $http->postVariable( $postvarname ) : array();
-                foreach( $array_remove as $enumid )
+                // A string made foreach() warn, and an element is removed by id
+                // and version alone: only the ids of this attribute's own
+                // elements are removed, not those of another class attribute
+                $ownIDs = array();
+                foreach ( (array)$enum->attribute( 'enum_list' ) as $enumValue )
+                    $ownIDs[(int)$enumValue->attribute( 'id' )] = true;
+                foreach( ( is_array( $array_remove ) ? $array_remove : array() ) as $enumid )
                 {
-                    $enum->removeEnumeration( $id, $enumid, $version );
+                    if ( is_scalar( $enumid ) and isset( $ownIDs[(int)$enumid] ) )
+                    {
+                        $enum->removeEnumeration( $id, (int)$enumid, $version );
+                        unset( $ownIDs[(int)$enumid] );
+                    }
                 }
             }break;
             default :
@@ -439,6 +463,10 @@ class eZEnumType extends eZDataType
             $enumNodes = $attributeNode->childNodes;
             foreach ( $enumNodes as $enumNode )
             {
+                // A package formatted with indentation has text nodes between
+                // the elements; DOMText has no getAttribute() (a fatal error)
+                if ( !$enumNode instanceof DOMElement )
+                    continue;
                 $eID      = $enumNode->getAttribute( 'id' );
                 $eValue   = $enumNode->getAttribute( 'value' );
                 $eElement = $enumNode->getAttribute( 'element' );
