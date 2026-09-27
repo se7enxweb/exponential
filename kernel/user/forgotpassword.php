@@ -186,8 +186,20 @@ if ( $module->isCurrentAction( "Generate" ) )
             $tpl->setVariable( 'email', $email );
 
         }
+        else if ( trim( $email ) !== '' && eZMail::validate( trim( $email ) )
+                  && !preg_match( '/[<>"\'&\\\\]/', $email ) )
+        {
+            // No user has this address. Answer exactly as for one that
+            // does, so the form cannot be used to find out which addresses
+            // have an account. The address is echoed by the page, and older
+            // designs print it unescaped, so only a plain address (no quoted
+            // local part, nothing HTML could read as markup) gets this far.
+            $tpl->setVariable( 'link', true );
+            $tpl->setVariable( 'email', $email );
+        }
         else
         {
+            // Not an email address at all: saying so reveals nothing.
             $tpl->setVariable( 'wrong_email', $email );
         }
     }
