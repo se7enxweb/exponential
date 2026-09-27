@@ -1112,6 +1112,13 @@ WHERE user_id = '" . $userID . "' AND
                 }
             }
         }
+        else
+        {
+            // No such login: spend the time a password check would have, so
+            // the response time does not tell an unknown login from a known
+            // one with the wrong password.
+            eZUser::createHash( (string)$login, (string)$password, eZUser::site(), eZUser::hashType() );
+        }
 
         if ( $exists and $isEnabled and $canLogin )
         {
