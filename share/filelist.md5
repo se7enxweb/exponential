@@ -1981,7 +1981,7 @@ e709916cf34c9f054a2c09a23f614ed5  design/standard/templates/url/view/valid.tpl
 6b53b793cebd9bacab5930104b6637f0  design/standard/templates/url/view_url_list.tpl
 6ff3ac4ab54a3f027a688bafaf84c337  design/standard/templates/user/activate.tpl
 540b71561bb2e91ea87b999f188ace28  design/standard/templates/user/edit.tpl
-cc9e744be6f749e46b007346d9cbc1d2  design/standard/templates/user/forgotpassword.tpl
+05c54fc072951df5123bdf0acc95c4d3  design/standard/templates/user/forgotpassword.tpl
 0593c48408782b956ece5a87bb080492  design/standard/templates/user/forgotpasswordmail.tpl
 effa7088aa8aaca0475eecbfe46e32a8  design/standard/templates/user/login.tpl
 91dc25ada51b81237c5afcdcf7a8edee  design/standard/templates/user/password.tpl
@@ -5460,7 +5460,7 @@ a8ea863e220ac49c2e8469247fcebd1b  kernel/classes/datatypes/ezurl/ezurltype.php
 d8430c07a81495e6098222c9b978bab2  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 33d6d68fb17a7ff301c1b4ad4a7d4018  kernel/classes/datatypes/ezuser/ezldapuser.php
 6d64731c218e903d8754663b655718a3  kernel/classes/datatypes/ezuser/eztextfileuser.php
-46e53af056f449451cc9e7d26a597006  kernel/classes/datatypes/ezuser/ezuser.php
+7b48876c731c921fb4bb0ccb9850c5a0  kernel/classes/datatypes/ezuser/ezuser.php
 6c0f1f5b3df5c5fa50d89bed22440eaa  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 88ed9b4b641c0cce011f961df46281d0  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 78f2c8512ec712ac40b59678f06ee8a9  kernel/classes/datatypes/ezuser/ezusersetting.php
@@ -5483,12 +5483,12 @@ d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
 e1393c996c2f162c9c7d2b6e6686e314  kernel/classes/expkickstarter.php
-f356fcde7f2bb1d00f505e2514639808  kernel/classes/expkickstarterini.php
+84b68dd64d97ac90c56ff8c14fe4486f  kernel/classes/expkickstarterini.php
 629c3dd031db0a3d01097bead9dbfdee  kernel/classes/expmaintenance.php
 c96b4b194b2bf5cfc43f558b1fa48471  kernel/classes/expphar.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 98aec968ac5853b5d9315b41abf3ff52  kernel/classes/expsetuplog.php
-bf3391de1540f012edb3ea608ad0c02f  kernel/classes/expvelocity.php
+f1b969b2a08dcf38def5104fc68133d6  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 3e40db0d31c1f4344f04a1252a4671df  kernel/classes/expvelocityconfiglayout.php
 8d76ad8f1b6946c83114d1302ba10b48  kernel/classes/expvelocityfrankenphp.php
@@ -5846,7 +5846,7 @@ de0874d0feda5a3bbd9f00408fe0f975  kernel/private/classes/ezpcontentpublishingque
 86bdb9f30bc9936abd83ceb015a05379  kernel/private/classes/ezpkernelredirect.php
 c209d9d72daf86a9eb0e0de775a49958  kernel/private/classes/ezpkernelresult.php
 66ad5ad85bc9fe76eac9c2dbbdbc8221  kernel/private/classes/ezpkerneltreemenu.php
-5ba07a91f7b42481dbe5e9ea1f93265c  kernel/private/classes/ezpkernelweb.php
+7fa46119f95486f8eb0a6dcc69be450e  kernel/private/classes/ezpkernelweb.php
 6159d249e9b9a74e14a8bf8921c36a41  kernel/private/classes/ezplanguageswitcher.php
 2bfb085e092fb0c741d2ba0fec8996ec  kernel/private/classes/ezpmail.php
 a5c6868c21944f98d32c76a4c8c8b234  kernel/private/classes/ezpmobiledevicedetect.php
@@ -6072,7 +6072,7 @@ b05b68e1a19a0aee8a85ab88af764472  kernel/setup/session.php
 f0bb2d78d2da0a115870dc0708978214  kernel/setup/settingstoolbar.php
 11d6f43693270057c21a4a8d78e96ef3  kernel/setup/setupmenu.php
 000fff131e21d5db77dc022f0d1bba6a  kernel/setup/staticcachestream.php
-1b883462557ce21da0a046004909b6ce  kernel/setup/steps/ezstep_create_sites.php
+0a69c8b712dd9a6cf4b25d7ce60ce573  kernel/setup/steps/ezstep_create_sites.php
 d0a153027eff5f94f37303c0a29abf8b  kernel/setup/steps/ezstep_data.php
 e828cc6fafcf49092e82d4758fc6abbf  kernel/setup/steps/ezstep_database_choice.php
 89ba35222b20e7c13ad292f813b43c9f  kernel/setup/steps/ezstep_database_init.php
@@ -6084,7 +6084,7 @@ fb4b329085dd6a6f55e017cbfb1510ea  kernel/setup/steps/ezstep_package_language_opt
 2ed55dbd7f42a4e13dd0faebd4d270aa  kernel/setup/steps/ezstep_registration.php
 8af957c931ac4a8c25eb63e93d03a905  kernel/setup/steps/ezstep_security.php
 5a8d953b13ac144331981038b0898962  kernel/setup/steps/ezstep_site_access.php
-341efb388c153cb7fbd53cd048c7bde2  kernel/setup/steps/ezstep_site_admin.php
+fd503ff2892a51bf16dd0e4e443e38d0  kernel/setup/steps/ezstep_site_admin.php
 59a5bd573773c743f46cd5fe2aa648e9  kernel/setup/steps/ezstep_site_details.php
 4e541e9ac411dfa1e7a41d81457379d3  kernel/setup/steps/ezstep_site_packages.php
 d806906597fdd91b7910bd2da6f18e92  kernel/setup/steps/ezstep_site_templates.php
@@ -6186,7 +6186,7 @@ fba53a77efd722816aeb1e9b737f4253  kernel/url/module.php
 d53527a4b529aea0cdb06be13e2d3924  kernel/user/edit.php
 606c7a78896a0b4006de042e9566b1d4  kernel/user/ezuserfunctioncollection.php
 d2d1062c6900781e11ba1fef73f1f73e  kernel/user/ezuseroperationcollection.php
-652f6884699c494ab177534261a9499b  kernel/user/forgotpassword.php
+3cbe07b2d8564988b69c92f1af9d3668  kernel/user/forgotpassword.php
 c634357ef4ec68197225aeeed2e139ff  kernel/user/function_definition.php
 1fb50ba0ea64b92f91af7f4c525d8946  kernel/user/login.php
 2cc27c52b367627b07f2ed06641e5c1e  kernel/user/logout.php
@@ -6219,8 +6219,8 @@ d18d48fb5d6da6299784516cbf63016d  kernel/workflow/process.php
 639ca703a53bfae6cb4fda0dc2140fd0  kernel/workflow/run.php
 abb928c7474f1738a4bfb0b4acc6e286  kernel/workflow/view.php
 776a9d36a1ec44718a4a3297d7a2d7d4  kernel/workflow/workflowlist.php
-4c6042b173f00fb2c9a65397f8b8b192  kickstart.ini--example
-b23928a4ff83e7f1b03cda5896131d65  kickstart.ini-dist
+6f375b12d66a92f1603c87b1c1610c8e  kickstart.ini--example
+3a4b360e7e99a30d883fd3c55ed4d5c3  kickstart.ini-dist
 dc0978d9c142fb9bb684d5ed5549c8fd  lib/ezdb/classes/expmongodb.php
 39127b6b97ec8be8ee2d837f2dfda3d3  lib/ezdb/classes/ezdb.php
 e62d587d0cace78f3a25a0c9c6c362a4  lib/ezdb/classes/ezdbinterface.php
@@ -6326,7 +6326,7 @@ c491f066b55329cfac1484004644acf4  lib/ezpdf/classes/fonts/php_ZapfDingbats.font
 a93ad573ecf6ad8da2045a36435b44be  lib/ezsession/classes/ezpsessionhandlerdb.php
 cec98ce5079a01b44da42432cdb3b52d  lib/ezsession/classes/ezpsessionhandlerphp.php
 315fce31fd8d18979b44018c15a903f1  lib/ezsession/classes/ezpsessionhandlersymfony.php
-edb5bd2bd416d9d3294eb518fc6d4b3e  lib/ezsession/classes/ezsession.php
+814e664639e76ddc87ff48cb58331e2c  lib/ezsession/classes/ezsession.php
 e0c30c223e7aeaebb1ca6657d938d1dc  lib/ezsoap/classes/ezsoapbody.php
 a2078557595da55ca72cac8ef95bf5f4  lib/ezsoap/classes/ezsoapclient.php
 87458899488b69823d964c340d8595d8  lib/ezsoap/classes/ezsoapcodec.php
@@ -6483,7 +6483,7 @@ ccf6fc3b0f24bfa396d0633c19454f90  settings/querycache.ini
 241079c46c8f59d2adecefe9bc138813  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-23f7ec36bf25965752f5ae4f7b4c29f1  settings/site.ini
+73270e2f4f2f0ea4f37fccb114d2da81  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
