@@ -260,10 +260,12 @@ class eZImageAliasHandler
                 $language = $contentObjectAttribute['language_code'];
             }
         }
-        $objectName = $contentVersion->versionName( $language );
+        // No version (an attribute of a version not stored, a package import):
+        // the name comes from the alternative text or the default
+        $objectName = $contentVersion instanceof eZContentObjectVersion ? $contentVersion->versionName( $language ) : false;
         if ( !$objectName )
         {
-            $objectName = $contentVersion->name( $language );
+            $objectName = $contentVersion instanceof eZContentObjectVersion ? $contentVersion->name( $language ) : false;
             if ( !$objectName )
             {
                 $objectName = $this->attribute( 'alternative_text' );
@@ -324,11 +326,13 @@ class eZImageAliasHandler
         $useVersion = false;
         if ( $isImageOwner === null )
             $isImageOwner = $this->isImageOwner();
-        if ( $contentVersion->attribute( 'status' ) == eZContentObjectVersion::STATUS_PUBLISHED or
-             !$isImageOwner )
+        // Without a version (or its object) the image goes to the versioned storage
+        if ( $contentVersion instanceof eZContentObjectVersion and
+             ( $contentVersion->attribute( 'status' ) == eZContentObjectVersion::STATUS_PUBLISHED or
+               !$isImageOwner ) )
         {
             $contentObject = $contentVersion->attribute( 'contentobject' );
-            $mainNode = $contentObject->attribute( 'main_node' );
+            $mainNode = $contentObject ? $contentObject->attribute( 'main_node' ) : false;
             if ( !$mainNode )
             {
                 $ini = eZINI::instance( 'image.ini' );

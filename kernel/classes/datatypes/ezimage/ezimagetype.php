@@ -338,7 +338,7 @@ class eZImageType extends eZDataType
     static function imageFileError( $filePath )
     {
         $invalid = ezpI18n::tr( 'kernel/classes/datatypes', 'A valid image file is required.' );
-        if ( !is_string( $filePath ) || $filePath === '' || strpos( $filePath, "\0" ) !== false || !is_file( $filePath ) )
+        if ( !is_string( $filePath ) || $filePath === '' || strpos( $filePath, "\0" ) !== false || !is_file( $filePath ) || !filesize( $filePath ) )
             return $invalid;
 
         $info = @getimagesize( $filePath );
