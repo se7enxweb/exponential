@@ -462,7 +462,8 @@ class eZObjectRelationListType extends eZDataType
                     }
                 }
 
-                foreach( array_unique($existingRelations) as $existingObjectId )
+                // An item without an object id yet (a package installing) is not a relation
+                foreach( array_unique( array_filter( $existingRelations ) ) as $existingObjectId )
                 {
                     $contentObject->addContentObjectRelation( $existingObjectId, $contentObjectVersion, $contentClassAttributeID, eZContentObject::RELATION_ATTRIBUTE );
                 }

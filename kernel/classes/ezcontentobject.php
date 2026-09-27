@@ -7356,7 +7356,10 @@ class eZContentObject extends eZPersistentObject
             $nodeID = (int)$nodeRow['node_id'];
             $actions[] = array( 'eznode', $nodeID );
         }
-        eZURLAliasML::setLangMaskAlwaysAvailable( $languageID, $actions, null );
+        // An object without locations yet (a package installs objects before
+        // it places them) has no URL aliases to update
+        if ( $actions )
+            eZURLAliasML::setLangMaskAlwaysAvailable( $languageID, $actions, null );
 
         $db->commit();
     }

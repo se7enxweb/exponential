@@ -3136,8 +3136,11 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $db->query( "UPDATE eznode_assignment SET is_main=0 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node!=$parentMainNodeID" );
 
         $contentObject = eZContentObject::fetch( $objectID );
-        $parentContentObject = eZContentObject::fetchByNodeID( $parentMainNodeID );
-        if ( $updateSection && $contentObject->attribute( 'section_id' ) != $parentContentObject->attribute( 'section_id' ) )
+        // The parent's object by id: fetchByNodeID() filters by language, and while
+        // an installation runs the base data is not yet in the site's language
+        $parentNode = eZContentObjectTreeNode::fetchStructural( $parentMainNodeID );
+        $parentContentObject = $parentNode ? eZContentObject::fetch( $parentNode->attribute( 'contentobject_id' ) ) : null;
+        if ( $updateSection && $contentObject && $parentContentObject && $contentObject->attribute( 'section_id' ) != $parentContentObject->attribute( 'section_id' ) )
         {
             $newSectionID = $parentContentObject->attribute( 'section_id' );
             eZContentObjectTreeNode::assignSectionToSubTree( $mainNodeID, $newSectionID );
@@ -3617,6 +3620,26 @@ class eZContentObjectTreeNode extends eZPersistentObject
         return $this->fetch( $this->attribute( 'parent_node_id' ) );
     }
 
+    /**
+     * A node by id whatever the prioritized languages, for operations on the
+     * tree itself - placing a node, building its path - rather than on what a
+     * visitor sees. fetch() filters by language, so while an installation runs
+     * (the base data not yet in the site's language) it did not find parents
+     * that were there.
+     *
+     * @param int $nodeID
+     * @return eZContentObjectTreeNode|null
+     */
+    static function fetchStructural( $nodeID )
+    {
+        $node = eZContentObjectTreeNode::fetch( $nodeID );
+        if ( $node instanceof eZContentObjectTreeNode )
+            return $node;
+        $db = eZDB::instance();
+        $rows = $db->arrayQuery( 'SELECT * FROM ezcontentobject_tree WHERE node_id = ' . (int)$nodeID );
+        return $rows ? new eZContentObjectTreeNode( $rows[0] ) : null;
+    }
+
     function pathArray()
     {
         $pathString = $this->attribute( 'path_string' );
@@ -3761,7 +3784,10 @@ class eZContentObjectTreeNode extends eZPersistentObject
     */
     static function addChildTo( $contentobjectID, $nodeID, $asObject = false, $contentObjectVersion = false )
     {
-        $node = eZContentObjectTreeNode::fetch( $nodeID );
+        // The tree, not a translation: the parent whatever the prioritized languages
+        $node = eZContentObjectTreeNode::fetchStructural( $nodeID );
+        if ( !$node )
+            return false;
         $contentObject = eZContentObject::fetch( $contentobjectID );
         if ( !$contentObject )
         {
@@ -4081,7 +4107,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
         if ( $this->attribute( 'parent_node_id' ) != 1 )
         {
             if ( !isset( $parentNode ) )
-                $parentNode = $this->fetchParent();
+                $parentNode = self::fetchStructural( $this->attribute( 'parent_node_id' ) );
             // Avoid crashes due to database inconsistencies
             if ( $parentNode instanceof eZContentObjectTreeNode )
             {
@@ -6278,8 +6304,9 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 $options['suspended-nodes'] = array();
             }
 
-            $options['suspended-nodes'][$parentNodeRemoteID] = array( 'nodeinfo' => $nodeInfo,
-                                                                      'priority' => $contentNodeDOMNode->getAttribute( 'priority' ) );
+            // A list per parent: several children can wait for the same one
+            $options['suspended-nodes'][$parentNodeRemoteID][] = array( 'nodeinfo' => $nodeInfo,
+                                                                        'priority' => $contentNodeDOMNode->getAttribute( 'priority' ) );
             return true;
         }
 

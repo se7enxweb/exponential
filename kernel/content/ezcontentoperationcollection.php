@@ -291,7 +291,8 @@ class eZContentOperationCollection
 
         $nodeID           =  $nodeAssignment->attribute( 'parent_node' );
         $opCode           =  $nodeAssignment->attribute( 'op_code' );
-        $parentNode       = eZContentObjectTreeNode::fetch( $nodeID );
+        // The tree, not a translation: found whatever the prioritized languages
+        $parentNode       = eZContentObjectTreeNode::fetchStructural( $nodeID );
 
         // if parent doesn't exist, return. See issue #18320
         if ( !$parentNode instanceof eZContentObjectTreeNode )
@@ -339,7 +340,7 @@ class eZContentOperationCollection
                 // We resolve this by leaving node-assignment data be.
                 if ( $existingNode == null )
                 {
-                    $parentNode = eZContentObjectTreeNode::fetch( $nodeID );
+                    $parentNode = eZContentObjectTreeNode::fetchStructural( $nodeID );
 
                     $user = eZUser::currentUser();
                     if ( !eZSys::isShellExecution() and !$user->isAnonymous() )

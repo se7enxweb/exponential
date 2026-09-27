@@ -263,6 +263,10 @@ class eZDir
      */
     static function recursiveDelete( $dir, $rootCheck = true )
     {
+        // Nothing there: nothing to delete (a cache not created yet)
+        if ( !file_exists( $dir ) && !is_link( $dir ) )
+            return true;
+
         // RecursiveDelete fails if ...
         // $dir is not a directory
         if ( !is_dir( $dir ) )

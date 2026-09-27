@@ -722,6 +722,12 @@ class eZSiteInstaller
         if( is_object( $contentObject ) )
         {
             $attributes = $contentObject->contentObjectAttributes();
+            // During an installation the current language falls back to
+            // ContentObjectLocale, which need not be the language the object was
+            // created in: its attributes were then not found at all, and the
+            // installer's post-install stopped on this step.
+            if ( !$attributes && $contentObject->initialLanguageCode() )
+                $attributes = $contentObject->contentObjectAttributes( true, false, $contentObject->initialLanguageCode() );
             if( count( $attributes ) > 0 )
             {
                 $objectAttribute = false;

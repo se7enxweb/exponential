@@ -1166,47 +1166,121 @@ class eZContentObjectPackageHandler extends eZPackageHandler
         {
             return;
         }
-        foreach ( $installParameters['suspended-nodes'] as $parentNodeRemoteID => $suspendedNodeInfo )
+        // Nodes already in the tree (own remote id, which 'parent_remote_id' holds):
+        // a package carrying base data again, such as the Media folder
+        foreach ( $installParameters['suspended-nodes'] as $parentNodeRemoteID => $entries )
         {
-            $parentNode = eZContentObjectTreeNode::fetchByRemoteID( $parentNodeRemoteID );
-            if ( $parentNode !== null )
+            $left = array();
+            foreach ( self::suspendedEntries( $entries ) as $suspendedNodeInfo )
             {
-                $nodeInfo = $suspendedNodeInfo['nodeinfo'];
-                $nodeInfo['parent_node'] = $parentNode->attribute( 'node_id' );
-
-                $existNodeAssignment = eZPersistentObject::fetchObject( eZNodeAssignment::definition(),
-                                                           null,
-                                                           $nodeInfo );
-                $nodeInfo['priority'] = $suspendedNodeInfo['priority'];
-                if( !is_object( $existNodeAssignment ) )
-                {
-                    $nodeAssignment = eZNodeAssignment::create( $nodeInfo );
-                    $nodeAssignment->store();
-                }
-
-                $contentObject = eZContentObject::fetch( $nodeInfo['contentobject_id'] );
-                if ( is_object( $contentObject ) && $contentObject->attribute( 'current_version' ) == $nodeInfo['contentobject_version'] )
-                {
-                   eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $nodeInfo['contentobject_id'],
-                                                                              'version' =>  $nodeInfo['contentobject_version'] ) );
-                }
-                if ( isset( $nodeInfo['is_main'] ) && $nodeInfo['is_main'] )
-                {
-                    $existingMainNode = eZContentObjectTreeNode::fetchByRemoteID( $nodeInfo['parent_remote_id'], false );
-                    if ( $existingMainNode )
-                    {
-                        eZContentObjectTreeNode::updateMainNodeID( $existingMainNode['node_id'],
-                                                                   $nodeInfo['contentobject_id'],
-                                                                   $nodeInfo['contentobject_version'],
-                                                                   $nodeInfo['parent_node'] );
-                    }
-                }
+                $ownRemoteID = isset( $suspendedNodeInfo['nodeinfo']['parent_remote_id'] ) ? $suspendedNodeInfo['nodeinfo']['parent_remote_id'] : '';
+                if ( $ownRemoteID === '' || $this->parentNodeIDByRemoteID( $ownRemoteID ) === false )
+                    $left[] = $suspendedNodeInfo;
             }
+            if ( $left )
+                $installParameters['suspended-nodes'][$parentNodeRemoteID] = $left;
             else
+                unset( $installParameters['suspended-nodes'][$parentNodeRemoteID] );
+        }
+
+        // A node waits for a parent that may itself be waiting further down the
+        // list: place what can be placed, again, until a pass places nothing.
+        do
+        {
+            $placed = 0;
+            foreach ( $installParameters['suspended-nodes'] as $parentNodeRemoteID => $entries )
             {
-                eZDebug::writeError( 'Can not find parent node by remote-id ID = ' . $parentNodeRemoteID, __METHOD__ );
+                $parentNodeID = $this->parentNodeIDByRemoteID( $parentNodeRemoteID );
+                // Not there yet, or node 1 - the virtual root, under which nothing is published
+                if ( $parentNodeID === false || $parentNodeID === 1 )
+                    continue;
+                foreach ( self::suspendedEntries( $entries ) as $suspendedNodeInfo )
+                {
+                    // Already in the tree (its own remote id - 'parent_remote_id' holds
+                    // it): a package that carries base data again, the Media folder
+                    $ownRemoteID = isset( $suspendedNodeInfo['nodeinfo']['parent_remote_id'] ) ? $suspendedNodeInfo['nodeinfo']['parent_remote_id'] : '';
+                    if ( $ownRemoteID === '' || $this->parentNodeIDByRemoteID( $ownRemoteID ) === false )
+                        $this->placeSuspendedNode( $parentNodeID, $suspendedNodeInfo );
+                    ++$placed;
+                }
+                unset( $installParameters['suspended-nodes'][$parentNodeRemoteID] );
+            }
+        }
+        while ( $placed > 0 && $installParameters['suspended-nodes'] );
+
+        foreach ( $installParameters['suspended-nodes'] as $parentNodeRemoteID => $entries )
+        {
+            foreach ( self::suspendedEntries( $entries ) as $suspendedNodeInfo )
+            {
+                $objectID = isset( $suspendedNodeInfo['nodeinfo']['contentobject_id'] ) ? $suspendedNodeInfo['nodeinfo']['contentobject_id'] : '?';
+                eZDebug::writeError( "Object $objectID was not placed: its parent node (remote id $parentNodeRemoteID) is " .
+                                     ( $this->parentNodeIDByRemoteID( $parentNodeRemoteID ) === 1 ? 'the tree root, under which nothing can be published'
+                                                                                                : 'neither installed nor in this package' ), __METHOD__ );
             }
             unset( $installParameters['suspended-nodes'][$parentNodeRemoteID] );
+        }
+    }
+
+    /** The waiting nodes of one parent: a list, or one entry as older code stored it. */
+    static function suspendedEntries( $entries )
+    {
+        return isset( $entries['nodeinfo'] ) ? array( $entries ) : (array)$entries;
+    }
+
+    /**
+     * The node id of the node with this remote id, or false. Read straight from
+     * the tree: placing a child needs only the parent's id, and a fetch through
+     * eZContentObjectTreeNode filters by language - it never returns node 1,
+     * which has no object, nor a node whose object is not yet in the site's
+     * language while the package installs.
+     */
+    function parentNodeIDByRemoteID( $remoteID )
+    {
+        $db = eZDB::instance();
+        $rows = $db->arrayQuery( "SELECT node_id FROM ezcontentobject_tree WHERE remote_id = '" . $db->escapeString( $remoteID ) . "'" );
+        return $rows ? (int)$rows[0]['node_id'] : false;
+    }
+
+    /** Assign and publish a suspended node under $parentNodeID. */
+    function placeSuspendedNode( $parentNodeID, $suspendedNodeInfo )
+    {
+        $nodeInfo = $suspendedNodeInfo['nodeinfo'];
+        $nodeInfo['parent_node'] = $parentNodeID;
+
+        $existNodeAssignment = eZPersistentObject::fetchObject( eZNodeAssignment::definition(),
+                                                   null,
+                                                   $nodeInfo );
+        $nodeInfo['priority'] = $suspendedNodeInfo['priority'];
+        if( !is_object( $existNodeAssignment ) )
+        {
+            $nodeAssignment = eZNodeAssignment::create( $nodeInfo );
+            $nodeAssignment->store();
+        }
+
+        $contentObject = eZContentObject::fetch( $nodeInfo['contentobject_id'] );
+        if ( is_object( $contentObject ) && $contentObject->attribute( 'current_version' ) == $nodeInfo['contentobject_version'] )
+        {
+           eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $nodeInfo['contentobject_id'],
+                                                                      'version' =>  $nodeInfo['contentobject_version'] ) );
+        }
+        // The node keeps the package's remote id, so the nodes waiting for it find it
+        if ( !empty( $nodeInfo['parent_remote_id'] ) )
+        {
+            $db = eZDB::instance();
+            $db->query( "UPDATE ezcontentobject_tree SET remote_id = '" . $db->escapeString( $nodeInfo['parent_remote_id'] ) . "'" .
+                        " WHERE contentobject_id = " . (int)$nodeInfo['contentobject_id'] . " AND parent_node_id = " . (int)$parentNodeID .
+                        " AND remote_id <> '" . $db->escapeString( $nodeInfo['parent_remote_id'] ) . "'" );
+        }
+        if ( isset( $nodeInfo['is_main'] ) && $nodeInfo['is_main'] )
+        {
+            $existingMainNodeID = $this->parentNodeIDByRemoteID( $nodeInfo['parent_remote_id'] );
+            if ( $existingMainNodeID )
+            {
+                eZContentObjectTreeNode::updateMainNodeID( $existingMainNodeID,
+                                                           $nodeInfo['contentobject_id'],
+                                                           $nodeInfo['contentobject_version'],
+                                                           $nodeInfo['parent_node'] );
+            }
         }
     }
 

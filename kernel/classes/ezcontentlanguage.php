@@ -293,6 +293,9 @@ class eZContentLanguage extends eZPersistentObject
      */
     static function prioritizedLanguages( $languageList = false )
     {
+        // Rebuilt after expireCache(): the list setPrioritizedLanguages() set, not the INI one
+        if ( !$languageList && !empty( $GLOBALS['eZContentLanguagePrioritizedLanguagesSet'] ) )
+            $languageList = $GLOBALS['eZContentLanguagePrioritizedLanguagesSet'];
         if ( !isset( $GLOBALS['eZContentLanguagePrioritizedLanguages'] ) )
         {
             $GLOBALS['eZContentLanguagePrioritizedLanguages'] = array();
@@ -380,19 +383,34 @@ class eZContentLanguage extends eZPersistentObject
      */
     static function setPrioritizedLanguages( $languages )
     {
+        // Kept, so clearPrioritizedLanguages() can go back to it
+        $GLOBALS['eZContentLanguagePrioritizedLanguagesStack'][] =
+            isset( $GLOBALS['eZContentLanguagePrioritizedLanguagesSet'] ) ? $GLOBALS['eZContentLanguagePrioritizedLanguagesSet'] : false;
+        $GLOBALS['eZContentLanguagePrioritizedLanguagesSet'] = $languages;
         unset( $GLOBALS['eZContentLanguagePrioritizedLanguages'] );
         eZContentLanguage::prioritizedLanguages( $languages );
     }
 
     /**
-     * Clears the prioritized language list set by eZContentLanguage::setPrioritizedLanguages and reloading
-     * the list from INI settings.
+     * Undoes the last eZContentLanguage::setPrioritizedLanguages(): the list
+     * set before it is back, or, when there was none, the list from the INI
+     * settings.
+     *
+     * Code that sets a language for one fetch and clears it afterwards used to
+     * reload the INI list here, dropping any list set before it - during an
+     * installation the site's own languages, after which node fetches filtered
+     * on the INI default and found nothing.
      *
      * \static
      */
     static function clearPrioritizedLanguages()
     {
-        eZContentLanguage::setPrioritizedLanguages( false );
+        $previous = false;
+        if ( !empty( $GLOBALS['eZContentLanguagePrioritizedLanguagesStack'] ) )
+            $previous = array_pop( $GLOBALS['eZContentLanguagePrioritizedLanguagesStack'] );
+        $GLOBALS['eZContentLanguagePrioritizedLanguagesSet'] = $previous;
+        unset( $GLOBALS['eZContentLanguagePrioritizedLanguages'] );
+        eZContentLanguage::prioritizedLanguages( $previous );
     }
 
     /**
