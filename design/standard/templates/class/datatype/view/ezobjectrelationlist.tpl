@@ -34,7 +34,7 @@
     <p>{'Any'|i18n( 'design/standard/class/datatype' )}</p>
     {section-else}
     <ul>
-    {section var=Classes loop=$content.class_constraint_list}<li>{$Classes.item}</li>{/section}
+    {section var=Classes loop=$content.class_constraint_list}<li>{$Classes.item|wash}</li>{/section}
     </ul>
     {/section}
 </div>
@@ -44,7 +44,7 @@
 <label>{'Object class'|i18n( 'design/standard/class/datatype' )}</label><div class="labelbreak"></div>
 {if $content.object_class}
     {let filter_class=fetch( content, class, hash( class_id, $content.object_class ) )}
-    <p>{$filter_class.name}</p>
+    <p>{$filter_class.name|wash}</p>
     {/let}
 {else}
     <p>(none)</p>

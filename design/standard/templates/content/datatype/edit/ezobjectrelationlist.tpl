@@ -172,7 +172,7 @@
             {if ne( count( $class_content.class_constraint_list ), 0 )}
                  <ul>
                  {foreach $class_content.class_constraint_list as $class}
-                       <li>{$class}</li>
+                       <li>{$class|wash}</li>
                  {/foreach}
                  </ul>
             {else}
@@ -226,8 +226,8 @@
                     {if $:item.is_modified}
                         {* Remove. *}
                         <td>
-                          <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$Relation:index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$:item.contentobject_id}" />
-                          <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$:item.contentobject_id}" />
+                          <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$Relation:index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$:item.contentobject_id|wash}" />
+                          <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$:item.contentobject_id|wash}" />
                         </td>
                         <td colspan="4">
 
@@ -240,11 +240,11 @@
                             <div class="block">
                             {if $:item.display_info.edit.grouped_input}
                                 <fieldset>
-                                <legend>{$:item.contentclass_attribute.name}</legend>
+                                <legend>{$:item.contentclass_attribute.name|wash}</legend>
                                 {attribute_edit_gui attribute_base=concat( $attribute_base, '_ezorl_edit_object_', $Relation:item.contentobject_id ) html_class='half' attribute=$:item}
                                 </fieldset>
                             {else}
-                                <label>{$:item.contentclass_attribute.name}:</label>
+                                <label>{$:item.contentclass_attribute.name|wash}:</label>
                                 {attribute_edit_gui attribute_base=concat( $attribute_base, '_ezorl_edit_object_', $Relation:item.contentobject_id ) html_class='half' attribute=$:item}
                             {/if}
                             </div>
@@ -254,23 +254,23 @@
                         </td>
 
                         {* Order. *}
-                        <td><input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_order" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" size="2" type="text" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$:item.priority}" /></td>
+                        <td><input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_order" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" size="2" type="text" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$:item.priority|wash}" /></td>
                     {else}
                         {let object=fetch( content, object, hash( object_id, $:item.contentobject_id, object_version, $:item.contentobject_version ) )}
                         {* Remove. *}
                         <td>
-                          <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$Relation:index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$:item.contentobject_id}" />
-                          <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$:item.contentobject_id}" />
+                          <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$Relation:index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$:item.contentobject_id|wash}" />
+                          <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$:item.contentobject_id|wash}" />
                         </td>
 
-                        {* Name *}
+                        {* Name, type and section, of an object the editor may read *}
+                        {if or( $Relation:object.can_read, $Relation:object.can_view_embed )}
                         <td>{$Relation:object.name|wash()}</td>
-
-                        {* Type *}
                         <td>{$Relation:object.class_name|wash()}</td>
-
-                        {* Section *}
                         <td>{fetch( section, object, hash( section_id, $Relation:object.section_id ) ).name|wash()}</td>
+                        {else}
+                        <td colspan="3"><em>{'You are not allowed to view the related object'|i18n( 'design/standard/content/datatype' )}</em></td>
+                        {/if}
 
                         {* Translation base *}
                         <td>
@@ -291,7 +291,7 @@
                         </td>
 
                         {* Order. *}
-                        <td><input size="2" type="text" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$:item.priority}" /></td>
+                        <td><input size="2" type="text" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$:item.priority|wash}" /></td>
                         {/let}
                     {/if}
                     </tr>
@@ -353,17 +353,17 @@
               {def $object = fetch( content, object, hash( object_id, $item.contentobject_id ) )}
               <tr class="{$style}">
                 {* Remove. *}
-                <td><input type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$item.contentobject_id}" />
-                <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$item.contentobject_id}" /></td>
+                <td><input type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$item.contentobject_id|wash}" />
+                <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$item.contentobject_id|wash}" /></td>
 
-                {* Name *}
+                {* Name, type and section, of an object the editor may read *}
+                {if or( $object.can_read, $object.can_view_embed )}
                 <td>{$object.name|wash()}</td>
-
-                {* Type *}
                 <td>{$object.class_name|wash()}</td>
-
-                {* Section *}
                 <td>{fetch( section, object, hash( section_id, $object.section_id ) ).name|wash()}</td>
+                {else}
+                <td colspan="3"><em>{'You are not allowed to view the related object'|i18n( 'design/standard/content/datatype' )}</em></td>
+                {/if}
 
                 {* Published. *}
                 <td>{if $item.in_trash}
@@ -374,7 +374,7 @@
                 </td>
 
                 {* Order. *}
-                <td><input size="2" type="text" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$item.priority}" /></td>
+                <td><input size="2" type="text" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$item.priority|wash}" /></td>
 
               </tr>
               {undef $object}
@@ -410,7 +410,7 @@
 	        {/if}
 
             {if is_set( $attribute.class_content.class_constraint_list[0] )}
-                <input type="hidden" name="{$attribute_base}_browse_for_object_class_constraint_list[{$attribute.id}]" value="{$attribute.class_content.class_constraint_list|implode(',')}" />
+                <input type="hidden" name="{$attribute_base}_browse_for_object_class_constraint_list[{$attribute.id}]" value="{$attribute.class_content.class_constraint_list|implode(',')|wash}" />
             {/if}
 
 	        <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_browse_objects]" value="{'Add existing objects'|i18n( 'design/standard/content/datatype' )}" title="{'Browse to add existing objects in this relation'|i18n( 'design/standard/content/datatype' )}" />

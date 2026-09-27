@@ -58,6 +58,35 @@ class eZObjectRelationListType extends eZDataType
             return eZInputValidator::STATE_ACCEPTED;
         }
 
+        // The posted ids: a list of object ids, or "no_relation". A bounded
+        // count, and each new one an object that exists and may be read; the
+        // relations already stored are kept as they are
+        if ( $http->hasPostVariable( $postVariableName ) )
+        {
+            $posted = $http->postVariable( $postVariableName );
+            if ( !is_array( $posted ) )
+                $posted = array( $posted );
+            if ( count( $posted ) > self::MAX_RELATIONS )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                     'An object relation list can have at most %1 objects.' ), self::MAX_RELATIONS );
+                return eZInputValidator::STATE_INVALID;
+            }
+            $storedContent = $contentObjectAttribute->content();
+            foreach ( $posted as $objectID )
+            {
+                if ( $objectID === 'no_relation' )
+                    continue;
+                $objectID = self::objectIDValue( $objectID );
+                if ( $objectID === false || !self::isRelatableObject( $objectID, $storedContent ) )
+                {
+                    $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                         'A related object does not exist or you are not allowed to read it.' ) );
+                    return eZInputValidator::STATE_INVALID;
+                }
+            }
+        }
+
         $contentClassAttribute = $contentObjectAttribute->contentClassAttribute();
 
         // Check if selection type is not browse
@@ -87,7 +116,7 @@ class eZObjectRelationListType extends eZDataType
             if (
                 $http->hasPostVariable( $postVariableName )
                 && $http->postVariable( $postVariableName ) != array( "no_relation" )
-                && count( $http->postVariable( $postVariableName ) ) > 0
+                && count( (array)$http->postVariable( $postVariableName ) ) > 0
             )
             {
                 return eZInputValidator::STATE_ACCEPTED;
@@ -116,9 +145,9 @@ class eZObjectRelationListType extends eZDataType
         else
             $parameters['prefix-name'] = array( $contentClassAttribute->attribute( 'name' ) );
 
-        foreach ( $content['relation_list'] as $relationItem )
+        foreach ( self::relationItems( $content ) as $relationItem )
         {
-            if ( !$relationItem['is_modified'] )
+            if ( empty( $relationItem['is_modified'] ) )
             {
                 continue;
             }
@@ -174,10 +203,10 @@ class eZObjectRelationListType extends eZDataType
     function fixupObjectAttributeHTTPInput( $http, $base, $contentObjectAttribute )
     {
         $content = $contentObjectAttribute->content();
-        for ( $i = 0; $i < count( $content['relation_list'] ); ++$i )
+        foreach ( self::relationItems( $content ) as $relationItem )
         {
-            $relationItem = $content['relation_list'][$i];
-            if ( $relationItem['is_modified'] )
+            // Only sub-objects validation looked at have a temp entry
+            if ( !empty( $relationItem['is_modified'] ) && isset( $content['temp'][$relationItem['contentobject_id']] ) )
             {
                 $subObjectID = $relationItem['contentobject_id'];
                 $attributeBase = $base . '_ezorl_edit_object_' . $subObjectID;
@@ -204,7 +233,8 @@ class eZObjectRelationListType extends eZDataType
         if ( $http->hasPostVariable( $newObjectPostVariableName ) )
         {
             $name = $http->postVariable( $newObjectPostVariableName );
-            if ( !empty( $name ) )
+            // The name of the object to create is text (rename() of an array is a TypeError)
+            if ( is_string( $name ) && trim( $name ) !== '' )
             {
                 $content['new_object'] = $name;
             }
@@ -218,6 +248,15 @@ class eZObjectRelationListType extends eZDataType
         $classContent = $contentClassAttribute->content();
 
         $selectedObjectIDArray = $http->hasPostVariable( $postVariableName ) ? $http->postVariable( $postVariableName ) : false;
+        // A single value is a list of one; the list is bounded (validation
+        // refuses a longer one, this keeps the redisplay bounded as well)
+        if ( $selectedObjectIDArray !== false && !is_array( $selectedObjectIDArray ) )
+            $selectedObjectIDArray = array( $selectedObjectIDArray );
+        if ( is_array( $selectedObjectIDArray ) && count( $selectedObjectIDArray ) > self::MAX_RELATIONS )
+            $selectedObjectIDArray = array_slice( $selectedObjectIDArray, 0, self::MAX_RELATIONS, true );
+        if ( !isset( $content['relation_list'] ) || !is_array( $content['relation_list'] ) )
+            $content['relation_list'] = array();
+        $storedContent = $content;
 
         // If we got an empty object id list
         if ( ( $selectedObjectIDArray === false && $classContent['selection_type'] != 0 ) || ( isset( $selectedObjectIDArray[0] ) && $selectedObjectIDArray[0] === 'no_relation' ) )
@@ -237,17 +276,27 @@ class eZObjectRelationListType extends eZDataType
         {
             $priority = 0;
             $content['relation_list'] = array();
+            $added = array();
             foreach ( $selectedObjectIDArray as $objectID )
             {
                 // Check if the given object ID has a numeric value, if not go to the next object.
-                if ( !is_numeric( $objectID ) )
+                $objectID = self::objectIDValue( $objectID );
+                if ( $objectID === false )
                 {
-                    eZDebug::writeError( "Related object ID (objectID): '$objectID', is not a numeric value.", __METHOD__ );
+                    eZDebug::writeError( "A related object ID is not a positive integer, skipped.", __METHOD__ );
 
                     continue;
                 }
+                // Once each, and only objects that exist and may be read (or
+                // were related already)
+                if ( isset( $added[$objectID] ) || !self::isRelatableObject( $objectID, $storedContent ) )
+                    continue;
+                $item = $this->appendObject( $objectID, $priority + 1, $contentObjectAttribute );
+                if ( !$item )
+                    continue;
+                $added[$objectID] = true;
                 ++$priority;
-                $content['relation_list'][] = $this->appendObject( $objectID, $priority, $contentObjectAttribute );
+                $content['relation_list'][] = $item;
             }
 
             $contentObjectAttribute->setContent( $content );
@@ -259,6 +308,13 @@ class eZObjectRelationListType extends eZDataType
         $contentObjectAttributeID = $contentObjectAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $priorityBase ) )
             $priorities = $http->postVariable( $priorityBase );
+        // The order fields of this attribute, one per posted id; a missing or
+        // malformed one is 0, as the undefined offset used to give
+        $attributePriorities = ( is_array( $priorities ) && isset( $priorities[$contentObjectAttributeID] ) && is_array( $priorities[$contentObjectAttributeID] ) ) ?
+                               $priorities[$contentObjectAttributeID] : array();
+        $priorityOf = function ( $key ) use ( $attributePriorities ) {
+            return isset( $attributePriorities[$key] ) && is_scalar( $attributePriorities[$key] ) ? (int)$attributePriorities[$key] : 0;
+        };
 
         // Add new relations
         if ( $selectedObjectIDArray )
@@ -266,20 +322,26 @@ class eZObjectRelationListType extends eZDataType
             foreach ( $selectedObjectIDArray as $x => $objectID )
             {
                 // Check if the given object ID has a numeric value, if not go to the next object.
-                if ( !is_numeric( $objectID ) )
+                $objectID = self::objectIDValue( $objectID );
+                if ( $objectID === false )
                 {
-                    eZDebug::writeError( "Related object ID (objectID): '$objectID', is not a numeric value.", __METHOD__ );
+                    if ( $selectedObjectIDArray[$x] !== 'no_relation' )
+                        eZDebug::writeError( "A related object ID is not a positive integer, skipped.", __METHOD__ );
 
                     continue;
                 }
-                for ( $y = 0, $c = count( $content['relation_list'] ); $y < $c; ++$y )
+                if ( self::hasRelatedObject( $content, $objectID ) )
                 {
-                    if ( $objectID == $content['relation_list'][$y]['contentobject_id'] )
-                    {
-                        continue 2;
-                    }
+                    continue;
                 }
-                $content['relation_list'][] = $this->appendObject( $objectID, $priorities[$contentObjectAttributeID][$x], $contentObjectAttribute );
+                // A new relation only to an object that exists and may be read
+                if ( !self::isRelatableObject( $objectID ) )
+                {
+                    continue;
+                }
+                $item = $this->appendObject( $objectID, $priorityOf( $x ), $contentObjectAttribute );
+                if ( $item )
+                    $content['relation_list'][] = $item;
             }
         }
 
@@ -289,7 +351,10 @@ class eZObjectRelationListType extends eZDataType
         $prioritiesByContentObjectId = array();
         foreach ( $selectedObjectIDArray as $k => $id )
         {
-            $priority = (int)$priorities[$contentObjectAttributeID][$k];
+            $id = self::objectIDValue( $id );
+            if ( $id === false )
+                continue;
+            $priority = $priorityOf( $k );
             while ( isset( $existingPriorities[$priority] ) )
             {
                 $priority++;
@@ -300,7 +365,12 @@ class eZObjectRelationListType extends eZDataType
 
         foreach ( $content['relation_list'] as &$relationItem )
         {
-            if ( $relationItem['is_modified'] )
+            if ( !is_array( $relationItem ) )
+                continue;
+            // A relation that was not posted sorts first, as it did before
+            $relationItemPriority = isset( $prioritiesByContentObjectId[(int)$relationItem['contentobject_id']] ) ?
+                                    $prioritiesByContentObjectId[(int)$relationItem['contentobject_id']] : 0;
+            if ( !empty( $relationItem['is_modified'] ) && isset( $content['temp'][$relationItem['contentobject_id']]['object'] ) )
             {
                 $subObjectID = $relationItem['contentobject_id'];
                 $attributeBase = $base . '_ezorl_edit_object_' . $subObjectID;
@@ -318,14 +388,16 @@ class eZObjectRelationListType extends eZDataType
                     $content['temp'][$subObjectID]['object'] = $object;
                 }
             }
-            $relationItem['priority'] = $prioritiesByContentObjectId[$relationItem['contentobject_id']];
+            $relationItem['priority'] = $relationItemPriority;
         }
+        unset( $relationItem );
+        $content['relation_list'] = array_values( array_filter( $content['relation_list'], 'is_array' ) );
 
         usort(
             $content['relation_list'],
             function ( $a, $b )
             {
-                return $a['priority'] - $b['priority'];
+                return $a['priority'] <=> $b['priority'];
             }
         );
         $p = 1;
@@ -408,7 +480,9 @@ class eZObjectRelationListType extends eZDataType
             {
                 if ( isset( $content['singleselect'] ) )
                     $content['relation_list'] = array();
-                $content['relation_list'][] = $this->appendObject( $newID, 0, $contentObjectAttribute );
+                $item = $this->appendObject( $newID, 0, $contentObjectAttribute );
+                if ( $item )
+                    $content['relation_list'][] = $item;
             }
             unset( $content['new_object'] );
             $contentObjectAttribute->setContent( $content );
@@ -422,7 +496,7 @@ class eZObjectRelationListType extends eZDataType
         /** @var eZContentObject */
         $contentObject = $contentObjectAttribute->object();
 
-        if ( $contentObjectAttribute->ID !== null )
+        if ( $contentObjectAttribute->ID !== null && $contentObject )
         {
             // cleanup previous relations
             $contentObject->removeContentObjectRelation( false, $contentObjectVersion, $contentClassAttributeID, eZContentObject::RELATION_ATTRIBUTE );
@@ -444,7 +518,7 @@ class eZObjectRelationListType extends eZDataType
                             continue;
 
                         $relationList = $attributeTranslation->value();
-                        foreach ($relationList['relation_list'] as $relationItem) {
+                        foreach ( self::relationItems( $relationList ) as $relationItem ) {
                             $existingRelations[] = $relationItem['contentobject_id'];
                         }
                     }
@@ -457,7 +531,7 @@ class eZObjectRelationListType extends eZDataType
                         continue;
 
                     $relationList = $attributeTranslation->value();
-                    foreach ($relationList['relation_list'] as $relationItem) {
+                    foreach ( self::relationItems( $relationList ) as $relationItem ) {
                         $existingRelations[] = $relationItem['contentobject_id'];
                     }
                 }
@@ -470,19 +544,20 @@ class eZObjectRelationListType extends eZDataType
             }
         }
 
-        foreach( $content['relation_list'] as $relationItem )
+        $hostObject = eZContentObject::fetch( $contentObjectID );
+        foreach( self::relationItems( $content ) as $relationItem )
         {
             // Installing content object, postUnserialize is not called yet,
             // so object's ID is unknown.
-            if ( !$relationItem['contentobject_id'] || !isset( $relationItem['contentobject_id'] ) )
+            if ( empty( $relationItem['contentobject_id'] ) || !$hostObject )
                 continue;
 
             $subObjectID = $relationItem['contentobject_id'];
-            $subObjectVersion = $relationItem['contentobject_version'];
+            $subObjectVersion = isset( $relationItem['contentobject_version'] ) ? $relationItem['contentobject_version'] : false;
 
-            eZContentObject::fetch( $contentObjectID )->addContentObjectRelation( $subObjectID, $contentObjectVersion, $contentClassAttributeID, eZContentObject::RELATION_ATTRIBUTE );
+            $hostObject->addContentObjectRelation( $subObjectID, $contentObjectVersion, $contentClassAttributeID, eZContentObject::RELATION_ATTRIBUTE );
 
-            if ( $relationItem['is_modified'] && isset( $content['temp'][$subObjectID]['object' ] ) )
+            if ( !empty( $relationItem['is_modified'] ) && isset( $content['temp'][$subObjectID]['object'], $content['temp'][$subObjectID]['attribute-input-map'] ) )
             {
                 // handling sub-objects
                 $object = $content['temp'][$subObjectID]['object'];
@@ -510,9 +585,9 @@ class eZObjectRelationListType extends eZDataType
     function onPublish( $contentObjectAttribute, $contentObject, $publishedNodes )
     {
         $content = $contentObjectAttribute->content();
-        foreach( $content['relation_list'] as $key => $relationItem )
+        foreach( self::relationItems( $content ) as $key => $relationItem )
         {
-            if ( $relationItem['is_modified'] )
+            if ( !empty( $relationItem['is_modified'] ) )
             {
                 $subObjectID = $relationItem['contentobject_id'];
                 $subObjectVersion = $relationItem['contentobject_version'];
@@ -520,7 +595,10 @@ class eZObjectRelationListType extends eZDataType
 
                 $time = time();
 
-                $version = eZContentObjectVersion::fetchVersion( $subObjectVersion, $subObjectID );
+                // A sub-object or its version removed meanwhile is nothing to publish
+                $version = $object ? eZContentObjectVersion::fetchVersion( $subObjectVersion, $subObjectID ) : null;
+                if ( !$version )
+                    continue;
                 $version->setAttribute( 'modified', $time );
                 $version->store();
 
@@ -547,9 +625,12 @@ class eZObjectRelationListType extends eZDataType
                     // action 2: edit a nodeless object (or creating a new node
                     // Make the previous version archived
                     $currentVersion = $object->currentVersion();
-                    $currentVersion->setAttribute( 'status', eZContentObjectVersion::STATUS_ARCHIVED );
-                    $currentVersion->setAttribute( 'modified', $time );
-                    $currentVersion->store();
+                    if ( $currentVersion )
+                    {
+                        $currentVersion->setAttribute( 'status', eZContentObjectVersion::STATUS_ARCHIVED );
+                        $currentVersion->setAttribute( 'modified', $time );
+                        $currentVersion->store();
+                    }
 
                     $version->setAttribute( 'status', eZContentObjectVersion::STATUS_PUBLISHED );
                     $version->store();
@@ -687,9 +768,9 @@ class eZObjectRelationListType extends eZDataType
         {
             $constrainedList = $http->postVariable( $postVariable );
             $constrainedClassList = array();
-            foreach ( $constrainedList as $constraint )
+            foreach ( (array)$constrainedList as $constraint )
             {
-                if ( trim( $constraint ) != '' )
+                if ( is_string( $constraint ) && trim( $constraint ) != '' )
                     $constrainedClassList[] = $constraint;
             }
             $content['class_constraint_list'] = $constrainedClassList;
@@ -697,19 +778,21 @@ class eZObjectRelationListType extends eZDataType
         $typeVariable = 'ContentClass_ezobjectrelationlist_type_' . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $typeVariable ) )
         {
+            // The numbers the class edit form posts; anything else is 0
             $type = $http->postVariable( $typeVariable );
-            $content['type'] = $type;
+            $content['type'] = is_scalar( $type ) ? (int)$type : 0;
         }
         $selectionTypeVariable = 'ContentClass_ezobjectrelationlist_selection_type_' . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $selectionTypeVariable ) )
         {
             $selectionType = $http->postVariable( $selectionTypeVariable );
-            $content['selection_type'] = $selectionType;
+            $content['selection_type'] = is_scalar( $selectionType ) ? (int)$selectionType : 0;
         }
         $objectClassVariable = 'ContentClass_ezobjectrelation_object_class_' . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $objectClassVariable ) )
         {
-            $content['object_class'] = $http->postVariable( $objectClassVariable );
+            $objectClass = $http->postVariable( $objectClassVariable );
+            $content['object_class'] = ( is_string( $objectClass ) && ctype_digit( $objectClass ) ) ? $objectClass : '';
         }
 
         $classAttribute->setContent( $content );
@@ -795,6 +878,11 @@ class eZObjectRelationListType extends eZDataType
 
     static function createClassDOMDocument( $content )
     {
+        // Content from a package or an extension may miss keys: the defaults fill them
+        $content = array_merge( array( 'object_class' => '', 'selection_type' => 0, 'type' => 0, 'class_constraint_list' => array(), 'default_placement' => false ),
+                                is_array( $content ) ? $content : array() );
+        if ( !is_array( $content['class_constraint_list'] ) )
+            $content['class_constraint_list'] = array();
         $doc = new DOMDocument( '1.0', 'utf-8' );
         $root = $doc->createElement( 'related-objects' );
         $constraints = $doc->createElement( 'constraints' );
@@ -833,7 +921,7 @@ class eZObjectRelationListType extends eZDataType
         $relationList = $doc->createElement( 'relation-list' );
         $attributeDefinitions = self::contentObjectArrayXMLMap();
 
-        foreach ( $content['relation_list'] as $relationItem )
+        foreach ( self::relationItems( $content ) as $relationItem )
         {
             unset( $relationElement );
             $relationElement = $doc->createElement( 'relation-item' );
@@ -918,8 +1006,8 @@ class eZObjectRelationListType extends eZDataType
                 if ( $http->hasPostVariable( $classVariableName ) )
                 {
                     $classVariable = $http->postVariable( $classVariableName );
-                    $classID = $classVariable[$contentObjectAttribute->attribute( 'id' )];
-                    $class = eZContentClass::fetch( $classID );
+                    $classID = is_array( $classVariable ) && isset( $classVariable[$contentObjectAttribute->attribute( 'id' )] ) ? $classVariable[$contentObjectAttribute->attribute( 'id' )] : false;
+                    $class = self::objectIDValue( $classID ) ? eZContentClass::fetch( (int)$classID ) : null;
                 }
                 else
                     return false;
@@ -932,10 +1020,10 @@ class eZObjectRelationListType extends eZDataType
                 $class_content = $classAttribute->content();
                 $content = $contentObjectAttribute->content();
                 $priority = 0;
-                for ( $i = 0; $i < count( $content['relation_list'] ); ++$i )
+                foreach ( self::relationItems( $content ) as $item )
                 {
-                    if ( $content['relation_list'][$i]['priority'] > $priority )
-                        $priority = $content['relation_list'][$i]['priority'];
+                    if ( isset( $item['priority'] ) && $item['priority'] > $priority )
+                        $priority = (int)$item['priority'];
                 }
 
                 $base = $parameters['base_name'];
@@ -944,7 +1032,7 @@ class eZObjectRelationListType extends eZDataType
                 if ( $http->hasPostVariable( $nodePlacementName ) )
                 {
                     $nodePlacementMap = $http->postVariable( $nodePlacementName );
-                    if ( isset( $nodePlacementMap[$contentObjectAttribute->attribute( 'id' )] ) )
+                    if ( is_array( $nodePlacementMap ) && isset( $nodePlacementMap[$contentObjectAttribute->attribute( 'id' )] ) )
                         $nodePlacement = $nodePlacementMap[$contentObjectAttribute->attribute( 'id' )];
                 }
                 $relationItem = $this->createInstance( $class,
@@ -963,7 +1051,7 @@ class eZObjectRelationListType extends eZDataType
                 if ( $http->hasPostVariable( $attributeInputVariable ) )
                 {
                     $attributeInputMap = $http->postVariable( $attributeInputVariable );
-                    if ( isset( $attributeInputMap[$contentObjectAttribute->attribute( 'id' )] ) )
+                    if ( is_array( $attributeInputMap ) && isset( $attributeInputMap[$contentObjectAttribute->attribute( 'id' )] ) )
                         $hasAttributeInput = $attributeInputMap[$contentObjectAttribute->attribute( 'id' )];
                 }
 
@@ -1002,7 +1090,9 @@ class eZObjectRelationListType extends eZDataType
             if ( $http->hasPostVariable( $selectionBase ) )
             {
                 $selectionMap = $http->postVariable( $selectionBase );
-                $selections = $selectionMap[$contentObjectAttribute->attribute( 'id' )];
+                // The ticked rows: a list of object ids (in_array() of null was a TypeError)
+                $selections = is_array( $selectionMap ) && isset( $selectionMap[$contentObjectAttribute->attribute( 'id' )] ) ? $selectionMap[$contentObjectAttribute->attribute( 'id' )] : array();
+                $selections = is_array( $selections ) ? array_filter( $selections, 'is_scalar' ) : array( $selections );
             }
             if ( $contentobjectID !== false )
                 $selections[] = $contentobjectID;
@@ -1016,7 +1106,7 @@ class eZObjectRelationListType extends eZDataType
                          in_array( $relationItem['contentobject_id'], $selections ) )
                     {
                         $object = eZContentObject::fetch( $relationItem['contentobject_id'] );
-                        if ( $object->attribute( 'can_edit' ) )
+                        if ( $object && $object->attribute( 'can_edit' ) )
                         {
                             $content['relation_list'][$key]['is_modified'] = true;
 
@@ -1030,8 +1120,9 @@ class eZObjectRelationListType extends eZDataType
                                 $languageFrom = $http->postVariable( $translationSourceBase );
                             }
 
-                            $version = $object->createNewVersionIn( $contentObjectAttribute->attribute( 'language_code' ), $languageFrom );
-                            $content['relation_list'][$key]['contentobject_version'] = $version->attribute( 'version' );
+                            $version = $object->createNewVersionIn( $contentObjectAttribute->attribute( 'language_code' ), is_string( $languageFrom ) ? $languageFrom : false );
+                            if ( $version )
+                                $content['relation_list'][$key]['contentobject_version'] = $version->attribute( 'version' );
                         }
                     }
                 }
@@ -1067,9 +1158,13 @@ class eZObjectRelationListType extends eZDataType
             $ini = eZINI::instance( 'content.ini' );
             $browseType = 'AddRelatedObjectListToDataType';
             $browseTypeINIVariable = $ini->variable( 'ObjectRelationDataTypeSettings', 'ClassAttributeStartNode' );
-            foreach ( $browseTypeINIVariable as $value )
+            foreach ( (array)$browseTypeINIVariable as $value )
             {
-                list( $classAttributeID, $type ) = explode( ';',$value );
+                // An entry without ";type" is skipped, not an undefined offset
+                $parts = explode( ';', (string)$value, 2 );
+                if ( count( $parts ) < 2 )
+                    continue;
+                list( $classAttributeID, $type ) = $parts;
                 if ( is_numeric( $classAttributeID ) and
                      $classAttributeID == $contentObjectAttribute->attribute( 'contentclassattribute_id' ) and
                      strlen( $type ) > 0 )
@@ -1103,7 +1198,7 @@ class eZObjectRelationListType extends eZDataType
             if ( $http->hasPostVariable( $nodePlacementName ) )
             {
                 $nodePlacement = $http->postVariable( $nodePlacementName );
-                if ( isset( $nodePlacement[$contentObjectAttribute->attribute( 'id' )] ) )
+                if ( is_array( $nodePlacement ) && isset( $nodePlacement[$contentObjectAttribute->attribute( 'id' )] ) && is_scalar( $nodePlacement[$contentObjectAttribute->attribute( 'id' )] ) )
                     $browseParameters['start_node'] = eZContentBrowse::nodeAliasID( $nodePlacement[$contentObjectAttribute->attribute( 'id' )] );
             }
             if ( count($classConstraintList) > 0 )
@@ -1119,41 +1214,48 @@ class eZObjectRelationListType extends eZDataType
                 $selectedObjectIDArray = $http->postVariable( "SelectedObjectIDArray" );
                 $content = $contentObjectAttribute->content();
                 $priority = 0;
-                for ( $i = 0; $i < count( $content['relation_list'] ); ++$i )
+                foreach ( self::relationItems( $content ) as $item )
                 {
-                    if ( $content['relation_list'][$i]['priority'] > $priority )
-                        $priority = $content['relation_list'][$i]['priority'];
+                    if ( isset( $item['priority'] ) && $item['priority'] > $priority )
+                        $priority = (int)$item['priority'];
                 }
                 if( $selectedObjectIDArray !== null )
                 {
+                    // The browse result is form input: a list of ids, bounded
+                    if ( !is_array( $selectedObjectIDArray ) )
+                        $selectedObjectIDArray = array( $selectedObjectIDArray );
+                    if ( count( $selectedObjectIDArray ) > self::MAX_RELATIONS )
+                        $selectedObjectIDArray = array_slice( $selectedObjectIDArray, 0, self::MAX_RELATIONS );
+                    if ( !isset( $content['relation_list'] ) || !is_array( $content['relation_list'] ) )
+                        $content['relation_list'] = array();
+                    $changed = false;
                     foreach ( $selectedObjectIDArray as $objectID )
                     {
                         // Check if the given object ID has a numeric value, if not go to the next object.
-                        if ( !is_numeric( $objectID ) )
+                        $objectID = self::objectIDValue( $objectID );
+                        if ( $objectID === false )
                         {
-                            eZDebug::writeError( "Related object ID (objectID): '$objectID', is not a numeric value.", __METHOD__ );
+                            eZDebug::writeError( "A related object ID is not a positive integer, skipped.", __METHOD__ );
 
                             continue;
                         }
 
-                        /* Here we check if current object is already in the related objects list.
-                         * If so, we don't add it again.
-                         * FIXME: Stupid linear search. Maybe there's some better way?
-                         */
-                        $found = false;
-                        foreach ( $content['relation_list'] as $i )
-                        {
-                            if ( $i['contentobject_id'] == $objectID )
-                            {
-                                $found = true;
-                                break;
-                            }
-                        }
-                        if ( $found )
+                        // Here we check if current object is already in the related objects list.
+                        // If so, we don't add it again. An object that does not exist or
+                        // the editor may not read is not added either.
+                        if ( self::hasRelatedObject( $content, $objectID ) || !self::isRelatableObject( $objectID ) )
                             continue;
 
+                        $item = $this->appendObject( $objectID, $priority + 1, $contentObjectAttribute );
+                        if ( !$item )
+                            continue;
                         ++$priority;
-                        $content['relation_list'][] = $this->appendObject( $objectID, $priority, $contentObjectAttribute );
+                        $content['relation_list'][] = $item;
+                        $changed = true;
+                    }
+                    // Stored once, not once per added object
+                    if ( $changed )
+                    {
                         $contentObjectAttribute->setContent( $content );
                         $contentObjectAttribute->store();
                     }
@@ -1202,7 +1304,7 @@ class eZObjectRelationListType extends eZDataType
     */
     static function isItemPublished( $relationItem )
     {
-        return is_numeric( $relationItem['node_id'] ) and $relationItem['node_id'] > 0;
+        return isset( $relationItem['node_id'] ) and is_numeric( $relationItem['node_id'] ) and $relationItem['node_id'] > 0;
     }
 
     /*!
@@ -1218,6 +1320,8 @@ class eZObjectRelationListType extends eZDataType
         }
 
         $hostObject = $contentObjectAttribute->attribute( 'object' );
+        if ( !$hostObject || !is_array( $deletionItem ) || empty( $deletionItem['contentobject_id'] ) )
+            return;
         $hostObjectID = $hostObject->attribute( 'id' );
 
         // Do not try removing the object if present in trash
@@ -1311,6 +1415,62 @@ class eZObjectRelationListType extends eZDataType
     }
 
     /**
+     * $objectID as an int if it is written like an object id (digits only,
+     * positive), else false. is_numeric() let "1.5", "1e3" and "-4" through,
+     * and an array reached a string interpolation.
+     *
+     * @return int|false
+     */
+    static function objectIDValue( $objectID )
+    {
+        if ( is_int( $objectID ) )
+            $objectID = (string)$objectID;
+        if ( !is_string( $objectID ) || !ctype_digit( $objectID ) || strlen( $objectID ) > 10 || (int)$objectID <= 0 )
+            return false;
+        return (int)$objectID;
+    }
+
+    /**
+     * True if the relation list of $content already has $objectID.
+     */
+    static function hasRelatedObject( $content, $objectID )
+    {
+        foreach ( self::relationItems( $content ) as $item )
+        {
+            if ( isset( $item['contentobject_id'] ) && (string)$item['contentobject_id'] === (string)$objectID )
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * The relation items of $content, a list even when the content is broken.
+     */
+    static function relationItems( $content )
+    {
+        if ( !is_array( $content ) || !isset( $content['relation_list'] ) || !is_array( $content['relation_list'] ) )
+            return array();
+        return array_filter( $content['relation_list'], 'is_array' );
+    }
+
+    /**
+     * True if an object the editor picked may be added to the relation list:
+     * it exists and the current user may read it. A relation already in the
+     * list ($content) is kept as it is, readable or not, so the rest of the
+     * object can still be edited.
+     */
+    static function isRelatableObject( $objectID, $content = null )
+    {
+        if ( $content !== null && self::hasRelatedObject( $content, $objectID ) )
+            return true;
+        $object = eZContentObject::fetch( $objectID );
+        return $object instanceof eZContentObject && $object->canRead();
+    }
+
+    /// The most related objects one attribute takes from one form or browse
+    const MAX_RELATIONS = 1000;
+
+    /**
      * Generate array with object relation info
      *
      * @param integer $objectID The id of the object to add as relation
@@ -1389,9 +1549,9 @@ class eZObjectRelationListType extends eZDataType
     function fixRelationsTrash ( $objectID, $contentObjectAttribute )
     {
         $content = $contentObjectAttribute->attribute( 'content' );
-        foreach ( array_keys( $content['relation_list'] ) as $key )
+        foreach ( array_keys( self::relationItems( $content ) ) as $key )
         {
-            if ( $content['relation_list'][$key]['contentobject_id'] == $objectID )
+            if ( isset( $content['relation_list'][$key]['contentobject_id'] ) && $content['relation_list'][$key]['contentobject_id'] == $objectID )
             {
                 $content['relation_list'][$key]['in_trash'] = true;
                 $content['relation_list'][$key]['node_id'] = null;
@@ -1412,7 +1572,10 @@ class eZObjectRelationListType extends eZDataType
             if ( $content['relation_list'][$key]['contentobject_id'] == $objectID )
             {
                 $priority = $content['relation_list'][$key]['priority'];
-                $content['relation_list'][$key] = $this->appendObject( $objectID, $priority, $contentObjectAttribute);
+                // An object gone meanwhile keeps its item instead of an empty one
+                $item = $this->appendObject( $objectID, $priority, $contentObjectAttribute);
+                if ( $item )
+                    $content['relation_list'][$key] = $item;
             }
         }
         $this->storeObjectAttributeContent( $contentObjectAttribute, $content );
@@ -1428,15 +1591,18 @@ class eZObjectRelationListType extends eZDataType
 
     function fixRelationsSwap ( $objectID, $contentObjectAttribute )
     {
-        $content =& $contentObjectAttribute->content();
+        // content() does not return a reference: =& gave "Only variables should be assigned by reference"
+        $content = $contentObjectAttribute->content();
 
         foreach ( array_keys( $content['relation_list'] ) as $key )
         {
-            $relatedObject =& $content['relation_list'][$key];
-            if ( $relatedObject['contentobject_id'] == $objectID )
+            if ( isset( $content['relation_list'][$key]['contentobject_id'] ) && $content['relation_list'][$key]['contentobject_id'] == $objectID )
             {
                 $priority = $content['relation_list'][$key]['priority'];
-                $content['relation_list'][$key] = $this->appendObject($objectID, $priority, $contentObjectAttribute );
+                // An object gone meanwhile keeps its item instead of an empty one
+                $item = $this->appendObject( $objectID, $priority, $contentObjectAttribute );
+                if ( $item )
+                    $content['relation_list'][$key] = $item;
             }
         }
 
@@ -1452,7 +1618,7 @@ class eZObjectRelationListType extends eZDataType
     function objectAttributeContent( $contentObjectAttribute )
     {
         $xmlText = $contentObjectAttribute->attribute( 'data_text' );
-        if ( trim( $xmlText ) == '' )
+        if ( trim( (string)$xmlText ) == '' )
         {
             $objectAttributeContent = $this->defaultObjectAttributeContent();
             return $objectAttributeContent;
@@ -1476,8 +1642,15 @@ class eZObjectRelationListType extends eZDataType
 
     static function parseXML( $xmlText )
     {
+        // Broken or empty stored XML gives a document without a root, which
+        // the callers read as the default content, and no warnings
         $dom = new DOMDocument( '1.0', 'utf-8' );
+        if ( !is_string( $xmlText ) || trim( $xmlText ) === '' )
+            return $dom;
+        $useErrors = libxml_use_internal_errors( true );
         $dom->loadXML( $xmlText );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useErrors );
         return $dom;
     }
 
@@ -1540,6 +1713,8 @@ class eZObjectRelationListType extends eZDataType
     {
         $content = $this->defaultObjectAttributeContent();
         $root = $doc->documentElement;
+        if ( !$root )
+            return $content;
         $relationList = $root->getElementsByTagName( 'relation-list' )->item( 0 );
         if ( $relationList )
         {
@@ -1617,7 +1792,7 @@ class eZObjectRelationListType extends eZDataType
             if ( !$subObjectID )
                 continue;
 
-            if ( isset( $content['temp'] ) )
+            if ( isset( $content['temp'][$subObjectID]['attributes'] ) )
                 $attributes = $content['temp'][$subObjectID]['attributes'];
             else
             {
@@ -1662,21 +1837,23 @@ class eZObjectRelationListType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
-        $objectIDList = explode( '-', $string );
+        $objectIDList = $string === '' || !is_scalar( $string ) ? array() : explode( '-', (string)$string );
 
         $content = $this->defaultObjectAttributeContent();
         $priority = 0;
         foreach( $objectIDList as $objectID )
         {
-            $object = eZContentObject::fetch( $objectID );
-            if ( $object )
+            // Digits only, each object once (fetch() of "1.5" or "abc" is no relation)
+            $objectID = self::objectIDValue( trim( $objectID ) );
+            $item = $objectID !== false && !self::hasRelatedObject( $content, $objectID ) ? $this->appendObject( $objectID, $priority + 1, $contentObjectAttribute ) : null;
+            if ( $item )
             {
                 ++$priority;
-                $content['relation_list'][] = $this->appendObject( $objectID, $priority, $contentObjectAttribute );
+                $content['relation_list'][] = $item;
             }
-            else
+            else if ( $objectID === false || !self::hasRelatedObject( $content, $objectID ) )
             {
-                eZDebug::writeWarning( $objectID, "Can not create relation because object is missing" );
+                eZDebug::writeWarning( "Can not create relation because object is missing or the id is not valid", __METHOD__ );
             }
         }
         $contentObjectAttribute->setContent( $content );
@@ -1705,7 +1882,10 @@ class eZObjectRelationListType extends eZDataType
         if ( count( $objectAttributeContent['relation_list'] ) > 0 )
         {
             $target = $objectAttributeContent['relation_list'][0];
-            $targetObject = eZContentObject::fetch( $target['contentobject_id'] );
+            // The first related object may have been removed meanwhile
+            $targetObject = !empty( $target['contentobject_id'] ) ? eZContentObject::fetch( $target['contentobject_id'] ) : null;
+            if ( !$targetObject )
+                return false;
             $attributeLanguage = $contentObjectAttribute->attribute( 'language_code' );
             $targetObjectName = $targetObject->name( false, $attributeLanguage );
             return $targetObjectName;
@@ -1767,9 +1947,11 @@ class eZObjectRelationListType extends eZDataType
         {
             $content['default_placement'] = array( 'node_id' => $defaultPlacementNode->getAttribute( 'node-id' ) );
         }
-        $content['type'] = $attributeParametersNode->getElementsByTagName( 'type' )->item( 0 )->textContent;
+        // A package without <type> or <class-constraints> gets the defaults
+        $typeNode = $attributeParametersNode->getElementsByTagName( 'type' )->item( 0 );
+        $content['type'] = $typeNode ? $typeNode->textContent : 0;
         $classConstraintsNode = $attributeParametersNode->getElementsByTagName( 'class-constraints' )->item( 0 );
-        $classConstraintList = $classConstraintsNode->getElementsByTagName( 'class-constraint' );
+        $classConstraintList = $classConstraintsNode ? $classConstraintsNode->getElementsByTagName( 'class-constraint' ) : array();
         $content['class_constraint_list'] = array();
         foreach ( $classConstraintList as $classConstraintNode )
         {
@@ -1810,15 +1992,13 @@ class eZObjectRelationListType extends eZDataType
         $node = $this->createContentObjectAttributeDOMNode( $objectAttribute );
 
         eZDebug::writeDebug( $objectAttribute->attribute( 'data_text' ), 'xml string from data_text field' );
-        if ( $objectAttribute->attribute( 'data_text' ) === null )
+        // Empty (not only null) or broken data_text is exported as an empty list:
+        // loadXML( '' ) throws in PHP 8 and a failed parse has no root to import
+        $dom = $this->parseXML( $objectAttribute->attribute( 'data_text' ) );
+        if ( !$dom->documentElement )
         {
             $content = array( 'relation_list' => array() );
             $dom = $this->createObjectDOMDocument( $content );
-        }
-        else
-        {
-            $dom = new DOMDocument( '1.0', 'utf-8' );
-            $success = $dom->loadXML( $objectAttribute->attribute( 'data_text' ) );
         }
         $rootNode = $dom->documentElement;
         $relationList = $rootNode->getElementsByTagName( 'relation-list' )->item( 0 );
@@ -1877,6 +2057,8 @@ class eZObjectRelationListType extends eZDataType
         $xmlString = $objectAttribute->attribute( 'data_text' );
         $doc = $this->parseXML( $xmlString );
         $rootNode = $doc->documentElement;
+        if ( !$rootNode )
+            return false;
 
         $relationList = $rootNode->getElementsByTagName( 'relation-list' )->item( 0 );
         if ( !$relationList )
@@ -1916,26 +2098,31 @@ class eZObjectRelationListType extends eZDataType
     function removeRelatedObjectItem( $contentObjectAttribute, $objectID )
     {
         $xmlText = $contentObjectAttribute->attribute( 'data_text' );
-        if ( trim( $xmlText ) == '' ) return;
+        if ( trim( (string)$xmlText ) == '' ) return;
 
         $doc = $this->parseXML( $xmlText );
 
         $return = false;
         $root = $doc->documentElement;
+        // Broken stored XML: nothing to remove, and nothing is written back
+        if ( !$root )
+            return false;
         $relationList = $root->getElementsByTagName( 'relation-list' )->item( 0 );
         if ( $relationList )
         {
-            $relationItems = $relationList->getElementsByTagName( 'relation-item' );
-            if ( !empty( $relationItems ) )
+            // Collected first: removing from the live node list while iterating
+            // it skipped the item after a removed one, so a second relation to
+            // the same object stayed
+            $remove = array();
+            foreach( $relationList->getElementsByTagName( 'relation-item' ) as $relationItem )
             {
-                foreach( $relationItems as $relationItem )
-                {
-                    if ( $relationItem->getAttribute( 'contentobject-id' ) == $objectID )
-                    {
-                        $relationList->removeChild( $relationItem );
-                        $return = true;
-                    }
-                }
+                if ( $relationItem->getAttribute( 'contentobject-id' ) == $objectID )
+                    $remove[] = $relationItem;
+            }
+            foreach ( $remove as $relationItem )
+            {
+                $relationItem->parentNode->removeChild( $relationItem );
+                $return = true;
             }
         }
         $this->storeObjectDOMDocument( $doc, $contentObjectAttribute );

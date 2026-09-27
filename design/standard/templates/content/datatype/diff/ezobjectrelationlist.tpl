@@ -22,10 +22,10 @@
             {set $item_object=fetch( content, object, hash( object_id, $item.contentobject_id, object_version, $item.contentobject_version ) )}
                 
                 <tr class="{$seq}">
-                    <td>{$item.priority}</td>
+                    <td>{$item.priority|wash}</td>
                 {if or( $item_object.can_read, $item_object.can_view_embed )}
-                    <td>{$item.contentobject_id}</td>
-                    <td>{$item.contentobject_version}</td>
+                    <td>{$item.contentobject_id|wash}</td>
+                    <td>{$item.contentobject_version|wash}</td>
                     <td>{$item_object.name|wash}</td>
                     <td>{$item_object.class_name|wash}</td>
                     <td>{$item_object.current.creator.name|wash}</td>
