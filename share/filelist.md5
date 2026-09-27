@@ -6230,7 +6230,7 @@ b74500e06f7fd896a5aa19dd67e68b29  lib/ezdb/classes/ezdbquerycache.php
 6809158b8409564f8aa9cb8efa16ba45  lib/ezdb/classes/ezmysqlidb.php
 c2f529de6d1fde400eb9c2dde01ebd1c  lib/ezdb/classes/eznulldb.php
 2efb92eda49115d10069cbe4c9c2a1ce  lib/ezdb/classes/ezpostgresqldb.php
-4ce7320bed04e2cde56aa5377a9be633  lib/ezdb/classes/ezsqlite3db.php
+f1d8fbdcbfc6159373fd98fc1e7cf71e  lib/ezdb/classes/ezsqlite3db.php
 86b2f701aa81e8db34267630e6ce5acf  lib/ezdbschema/classes/expmongoschema.php
 99c29c20ae5ff98ed9d42613bf8ce4cd  lib/ezdbschema/classes/ezdbschema.php
 62508b784418dbab813a3f0f733c1cd8  lib/ezdbschema/classes/ezdbschemachecker.php
@@ -6265,7 +6265,7 @@ f4f13c0464c37104b9fc35cfab079d55  lib/ezfile/classes/ezmd5.php
 d251b5b50cf0b235ff7d606be144088c  lib/ezi18n/classes/ezborktranslator.php
 6040d427a4b5835430ca885e0f47b91c  lib/ezi18n/classes/ezcharsetinfo.php
 3ed97380806446342056f0dcf3200f55  lib/ezi18n/classes/ezchartransform.php
-79ffb3403c8ade1b7d0ce99a27d624a5  lib/ezi18n/classes/ezcodemapper.php
+cfd89c9633d6f5afb75c6bdb15cfcf99  lib/ezi18n/classes/ezcodemapper.php
 6ca8b6046ce785552d2f11a073f6e4f9  lib/ezi18n/classes/ezcodepage.php
 c99b3e42e689a5f91bd7cde40900e2fa  lib/ezi18n/classes/ezcodepagecodec.php
 8629b6cdde904fc1fdf3d38811db32a6  lib/ezi18n/classes/ezcodepagemapper.php

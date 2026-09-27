@@ -602,9 +602,13 @@ class eZSQLite3DB extends eZDBInterface
     */
     function escapeString( $str )
     {
+        // As the MySQL driver does: null is an empty string (PHP 8.1 deprecates
+        // passing null to SQLite3::escapeString)
+        if ( $str === null )
+            return '';
         if ( $this->IsConnected )
         {
-            return $this->DBConnection->escapeString( $str );
+            return $this->DBConnection->escapeString( (string)$str );
         }
         else
         {
