@@ -32,10 +32,10 @@ class eZUserType extends eZDataType
     function deleteStoredObjectAttribute( $contentObjectAttribute, $version = null )
     {
         $db = eZDB::instance();
-        $userID = $contentObjectAttribute->attribute( "contentobject_id" );
+        $userID = (int)$contentObjectAttribute->attribute( "contentobject_id" );
 
         $res = $db->arrayQuery( "SELECT COUNT(*) AS version_count FROM ezcontentobject_version WHERE contentobject_id = $userID" );
-        $versionCount = $res[0]['version_count'];
+        $versionCount = isset( $res[0]['version_count'] ) ? (int)$res[0]['version_count'] : 0;
 
         if ( ( $version == null || $versionCount <= 1 )
                 && eZUser::fetch( $userID ) !== null )
@@ -57,10 +57,12 @@ class eZUserType extends eZDataType
              $http->hasPostVariable( $base . "_data_user_password_confirm_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
             $classAttribute = $contentObjectAttribute->contentClassAttribute();
-            $loginName = strip_tags( $http->postVariable( $base . "_data_user_login_" . $contentObjectAttribute->attribute( "id" ) ) );
-            $email = $http->postVariable( $base . "_data_user_email_" . $contentObjectAttribute->attribute( "id" ) );
-            $password = $http->postVariable( $base . "_data_user_password_" . $contentObjectAttribute->attribute( "id" ) );
-            $passwordConfirm = $http->postVariable( $base . "_data_user_password_confirm_" . $contentObjectAttribute->attribute( "id" ) );
+            // A field posted as an array (name[]=) is taken as empty; strip_tags(),
+            // trim() and strtolower() stopped the request with a TypeError on it
+            $loginName = strip_tags( self::postedString( $http, $base . "_data_user_login_" . $contentObjectAttribute->attribute( "id" ) ) );
+            $email = self::postedString( $http, $base . "_data_user_email_" . $contentObjectAttribute->attribute( "id" ) );
+            $password = self::postedString( $http, $base . "_data_user_password_" . $contentObjectAttribute->attribute( "id" ) );
+            $passwordConfirm = self::postedString( $http, $base . "_data_user_password_confirm_" . $contentObjectAttribute->attribute( "id" ) );
             if ( trim( $loginName ) == '' )
             {
                 if ( $contentObjectAttribute->validateIsRequired() || trim( $email ) != '' )
@@ -83,8 +85,11 @@ class eZUserType extends eZDataType
                         return eZInputValidator::STATE_INVALID;
                     }
                 }
-                // validate user email
-                $isValidate = eZMail::validate( $email );
+                // validate user email. eZMail::validate() anchors with $, which also
+                // matches before a final line break; the address goes into the
+                // headers of the registration and password mails, so no control
+                // character is accepted.
+                $isValidate = !preg_match( '/[\x00-\x1F\x7F]/', $email ) && eZMail::validate( $email );
                 if ( !$isValidate )
                 {
                     $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
@@ -154,7 +159,9 @@ class eZUserType extends eZDataType
                 // validate confirm email
                 if ( $ini->variable( 'UserSettings', 'RequireConfirmEmail' ) == 'true' )
                 {
-                    $emailConfirm = $http->postVariable( $base . "_data_user_email_confirm_" . $contentObjectAttribute->attribute( "id" ) );
+                    // A form without the field compares against '' (a mismatch)
+                    // instead of logging an undefined post variable error
+                    $emailConfirm = self::postedString( $http, $base . "_data_user_email_confirm_" . $contentObjectAttribute->attribute( "id" ) );
                     if ( $email != $emailConfirm )
                     {
                         $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
@@ -180,15 +187,15 @@ class eZUserType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_data_user_login_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $login = strip_tags( $http->postVariable( $base . "_data_user_login_" . $contentObjectAttribute->attribute( "id" ) ) );
-            $email = $http->hasPostVariable( $base . "_data_user_email_" . $contentObjectAttribute->attribute( "id" ) ) ? $http->postVariable( $base . "_data_user_email_" . $contentObjectAttribute->attribute( "id" ) ) : '';
-            $password = $http->hasPostVariable( $base . "_data_user_password_" . $contentObjectAttribute->attribute( "id" ) ) ? $http->postVariable( $base . "_data_user_password_" . $contentObjectAttribute->attribute( "id" ) ) : '';
-            $passwordConfirm = $http->hasPostVariable( $base . "_data_user_password_confirm_" . $contentObjectAttribute->attribute( "id" ) ) ? $http->postVariable( $base . "_data_user_password_confirm_" . $contentObjectAttribute->attribute( "id" ) ) : '';
+            $login = strip_tags( self::postedString( $http, $base . "_data_user_login_" . $contentObjectAttribute->attribute( "id" ) ) );
+            $email = self::postedString( $http, $base . "_data_user_email_" . $contentObjectAttribute->attribute( "id" ) );
+            $password = self::postedString( $http, $base . "_data_user_password_" . $contentObjectAttribute->attribute( "id" ) );
+            $passwordConfirm = self::postedString( $http, $base . "_data_user_password_confirm_" . $contentObjectAttribute->attribute( "id" ) );
 
             $contentObjectID = $contentObjectAttribute->attribute( "contentobject_id" );
 
             $user = $contentObjectAttribute->content();
-            if ( $user === null )
+            if ( !$user instanceof eZUser )
             {
                 $user = eZUser::create( $contentObjectID );
             }
@@ -210,18 +217,20 @@ class eZUserType extends eZDataType
                 }
             }
 
-            eZDebugSetting::writeDebug( 'kernel-user', $password, "password" );
-            eZDebugSetting::writeDebug( 'kernel-user', $passwordConfirm, "passwordConfirm" );
+            // The passwords themselves are never written to the debug output,
+            // which can end up in a log file or the page
+            eZDebugSetting::writeDebug( 'kernel-user', ( $password === null || $password === '' ) ? 'empty' : 'given', "password" );
             eZDebugSetting::writeDebug( 'kernel-user', $login, "login" );
             eZDebugSetting::writeDebug( 'kernel-user', $email, "email" );
             eZDebugSetting::writeDebug( 'kernel-user', $contentObjectID, "contentObjectID" );
+            // Only a generated password is kept in the session (above), for the
+            // registration to tell the user. A password the user typed was put
+            // there in plain text on every save as well, where nothing reads it.
             if ( $password == "_ezpassword" )
             {
                 $password = false;
                 $passwordConfirm = false;
             }
-            else
-                $http->setSessionVariable( "GeneratedPassword", $password );
 
             eZDebugSetting::writeDebug( 'kernel-user', "setInformation run", "ezusertype" );
             $user->setInformation( $contentObjectID, $login, $email, $password, $passwordConfirm );
@@ -259,9 +268,11 @@ class eZUserType extends eZDataType
 
             // saving information in the object attribute data_text field to simulate a draft
             // only if the object version is a draft
+            $objectVersion = $contentObjectAttribute->attribute( 'object_version' );
             if (
                 $user->Login &&
-                $contentObjectAttribute->attribute( 'object_version' )->attribute( 'status' ) == eZContentObjectVersion::STATUS_DRAFT
+                $objectVersion instanceof eZContentObjectVersion &&
+                $objectVersion->attribute( 'status' ) == eZContentObjectVersion::STATUS_DRAFT
             )
             {
                 $contentObjectAttribute->setAttribute( 'data_text', $this->serializeDraft( $user ) );
@@ -285,6 +296,12 @@ class eZUserType extends eZDataType
 
         if ( !empty( $serializedDraft ) )
         {
+            // The draft belongs to an account; without one (content() found no
+            // ezuser row) the typed updateUserDraft() raised a TypeError
+            if ( !$user instanceof eZUser )
+            {
+                $user = eZUser::create( $contentObjectAttribute->attribute( 'contentobject_id' ) );
+            }
             $user = $this->updateUserDraft( $user, $serializedDraft );
             $user->store();
             $contentObjectAttribute->setContent( $user );
@@ -321,7 +338,22 @@ class eZUserType extends eZDataType
      */
     private function unserializeDraft( $serializedDraft )
     {
-        return json_decode( $serializedDraft );
+        // Only what serializeDraft() writes is a draft: a JSON object with the
+        // four fields as strings or numbers. Anything else in data_text (invalid
+        // JSON, a number, a list, an object without the fields) is not applied,
+        // where it raised warnings or a fatal error on the property access.
+        if ( !is_string( $serializedDraft ) || $serializedDraft === '' )
+            return null;
+        $draft = json_decode( $serializedDraft );
+        if ( !$draft instanceof stdClass )
+            return null;
+        foreach ( array( 'login', 'password_hash', 'email', 'password_hash_type' ) as $field )
+        {
+            if ( !property_exists( $draft, $field ) ||
+                 ( $draft->$field !== null && !is_scalar( $draft->$field ) ) )
+                return null;
+        }
+        return $draft;
     }
 
     /**
@@ -352,6 +384,9 @@ class eZUserType extends eZDataType
     function title( $contentObjectAttribute, $name = "login" )
     {
         $user = $this->objectAttributeContent( $contentObjectAttribute );
+        // An object of a user class without an account yet has no title
+        if ( !$user instanceof eZUser )
+            return '';
 
         $value = $user->attribute( $name );
 
@@ -384,7 +419,9 @@ class eZUserType extends eZDataType
         //Looking for a "draft" and loading its content
         $serializedDraft = $contentObjectAttribute->attribute( 'data_text' );
 
-        if ( !empty( $serializedDraft ) )
+        // Without an ezuser row there is no account to apply the draft to;
+        // the typed updateUserDraft() raised a TypeError on null
+        if ( !empty( $serializedDraft ) && $user instanceof eZUser )
         {
             $user = $this->updateUserDraft( $user, $serializedDraft );
         }
@@ -409,12 +446,13 @@ class eZUserType extends eZDataType
                           'list' => array() );
         $currentUser = eZUser::currentUser();
         $userObject  = $currentUser->attribute( 'contentobject' );
+        $currentClassID = $userObject instanceof eZContentObject ? $userObject->attribute( 'contentclass_id' ) : null;
         $ini         = eZINI::instance();
         $anonID      = (int)$ini->variable( 'UserSettings', 'AnonymousUserID' );
         $classID     = (int)$contentClassAttribute->attribute( 'contentclass_id' );
         $db          = eZDB::instance();
 
-        if ( $classID == $userObject->attribute( 'contentclass_id' ) )
+        if ( $currentClassID !== null && $classID == $currentClassID )
         {
             $result['list'][] = array( 'text' => ezpI18n::tr( 'kernel/classes/datatypes',
                                                          "The account owner is currently logged in." ) );
@@ -450,7 +488,7 @@ class eZUserType extends eZDataType
        ezcca.data_type_string = 'ezuser' AND
        ezcc.id = ezcca.contentclass_id ";
         $rows = $db->arrayQuery( $sql );
-        if ( $rows[0]['count'] == 0 )
+        if ( empty( $rows[0]['count'] ) )
         {
             $result['list'][] = array( 'text' => ezpI18n::tr( 'kernel/classes/datatypes',
                                                          "You cannot remove the last class holding user accounts." ) );
@@ -516,6 +554,10 @@ class eZUserType extends eZDataType
             $GLOBALS['eZUserObject_' . $userID] = eZUser::fetch( $userID );
         }
         $user = $GLOBALS['eZUserObject_' . $userID];
+        // An object of a user class without an account exports as empty, which
+        // fromString() takes as "nothing to import"
+        if ( !$user instanceof eZUser )
+            return '';
 
         $userInfo = array(
             $user->attribute( 'login' ),
@@ -548,8 +590,8 @@ class eZUserType extends eZDataType
     {
         if ( $string == '' )
             return true;
-        $userData = explode( '|', $string );
-        if( count( $userData ) < 2 )
+        $userData = self::parseStringRepresentation( $string );
+        if ( $userData === false )
             return false;
         $login = $userData[0];
         $email = $userData[1];
@@ -577,11 +619,9 @@ class eZUserType extends eZDataType
 
         if( isset( $userData[4] ) )
         {
-            $userSetting = eZUserSetting::fetch(
-                $contentObjectAttribute->attribute( 'contentobject_id' )
-            );
-            $userSetting->setAttribute( "is_enabled", (int)(bool)$userData[4] );
-            $userSetting->store();
+            // A user imported for the first time has no setting row yet;
+            // ->setAttribute() on the null from fetch() was a fatal error
+            self::storeIsEnabled( $contentObjectAttribute->attribute( 'contentobject_id' ), (int)(bool)$userData[4] );
         }
 
         $user->store();
@@ -634,7 +674,71 @@ class eZUserType extends eZDataType
             $user->setAttribute( 'password_hash', $userNode->getAttribute( 'password_hash' ) );
             $user->setAttribute( 'password_hash_type', eZUser::passwordHashTypeID( $userNode->getAttribute( 'password_hash_type' ) ) );
             $user->store();
+            // serializeContentObjectAttribute() writes is_enabled; an account
+            // exported disabled was installed enabled because it was not read
+            if ( $userNode->hasAttribute( 'is_enabled' ) )
+            {
+                self::storeIsEnabled( $userID, (int)(bool)$userNode->getAttribute( 'is_enabled' ) );
+            }
         }
+    }
+
+    /*!
+     \private
+     \return the posted value of \a $name as a string: '' when it was not posted
+     or was posted as an array (name[]=).
+    */
+    static function postedString( $http, $name )
+    {
+        if ( !$http->hasPostVariable( $name ) )
+            return '';
+        $value = $http->postVariable( $name );
+        if ( is_array( $value ) || is_object( $value ) )
+            return '';
+        return (string)$value;
+    }
+
+    /*!
+     \private
+     Splits the toString() format login|email|password_hash|hash_type|is_enabled.
+     \return the five fields (the last three only when given), or false when
+     there is no login and email.
+
+     An address may contain a | in its local part (eZMail::REGEXP allows it),
+     and the old explode() then shifted the hash into the email and the hash
+     type into the hash. The last three fields never contain one (a hash, a hash
+     type name, 0/1), so with more than five fields the extra ones are the email's.
+    */
+    static function parseStringRepresentation( $string )
+    {
+        if ( !is_string( $string ) )
+            return false;
+        $userData = explode( '|', $string );
+        if ( count( $userData ) < 2 )
+            return false;
+        if ( count( $userData ) > 5 )
+        {
+            $tail = array_slice( $userData, -3 );
+            $email = implode( '|', array_slice( $userData, 1, count( $userData ) - 4 ) );
+            $userData = array_merge( array( $userData[0], $email ), $tail );
+        }
+        return $userData;
+    }
+
+    /*!
+     \private
+     Stores the is_enabled flag of \a $userID, creating its setting row when
+     there is none.
+    */
+    static function storeIsEnabled( $userID, $isEnabled )
+    {
+        $userSetting = eZUserSetting::fetch( $userID );
+        if ( !$userSetting instanceof eZUserSetting )
+        {
+            $userSetting = eZUserSetting::create( $userID, $isEnabled );
+        }
+        $userSetting->setAttribute( "is_enabled", $isEnabled );
+        $userSetting->store();
     }
 }
 
