@@ -56,6 +56,9 @@ class eZFloatValidator extends eZRegExpValidator
 
     function fixup( $text )
     {
+        // Nothing to fix in a value that is not text (see eZRegExpValidator::validate()).
+        if ( !is_scalar( $text ) )
+            return $text;
         if ( preg_match( $this->RegExpRule["intermediate"], $text, $regs ) )
             $text = $regs[1];
         if ( $this->MinValue !== false and $text < $this->MinValue )

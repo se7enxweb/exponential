@@ -1163,6 +1163,14 @@ class eZLocale
     */
     function internalNumber( $number )
     {
+        // Only text can be converted. trim() raised a TypeError on an array
+        // (posted name[]=...) and a deprecation on null. null is converted as
+        // the empty string it always ended up as; an array or object is
+        // returned untouched so the validator that follows refuses it.
+        if ( $number === null )
+            $number = '';
+        if ( !is_scalar( $number ) )
+            return $number;
         if ( preg_match( '/^(['.$this->PositiveSymbol.']|['.$this->NegativeSymbol.'])?([0-9]*|[0-9]{1,3}(['.$this->ThousandsSeparator.'][0-9]{3,3})*)(['.$this->DecimalSymbol.'][0-9]+)?$/', trim( $number ) ) )
         {
             $number = str_replace( ' ', '', $number );
@@ -1219,6 +1227,11 @@ class eZLocale
     */
     function internalCurrency( $number )
     {
+        // See internalNumber().
+        if ( $number === null )
+            $number = '';
+        if ( !is_scalar( $number ) )
+            return $number;
         if ( preg_match( '/^(['.$this->CurrencyPositiveSymbol.']|['.$this->CurrencyNegativeSymbol.'])?([0-9]*|[0-9]{1,3}(['.$this->ThousandsSeparator.'][0-9]{3,3})*)(['.$this->CurrencyDecimalSymbol.'][0-9]+)?$/', trim( $number ) ) )
         {
             $number = str_replace( ' ', '', $number );

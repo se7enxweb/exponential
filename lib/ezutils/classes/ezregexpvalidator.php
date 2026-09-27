@@ -35,6 +35,14 @@ class eZRegExpValidator extends eZInputValidator
     {
         if ( !is_array( $this->RegExpRule ) )
             return eZInputValidator::STATE_INVALID;
+        // Posted input can be an array (name[]=...) and a missing value null.
+        // preg_match() raised a TypeError on the first and a deprecation on the
+        // second; an array is never valid text, null is validated as ''.
+        if ( $text === null )
+            $text = '';
+        if ( !is_scalar( $text ) )
+            return eZInputValidator::STATE_INVALID;
+        $text = (string)$text;
         $accepted =& $this->RegExpRule["accepted"];
         if ( preg_match( $accepted, $text ) )
             return eZInputValidator::STATE_ACCEPTED;
@@ -46,7 +54,7 @@ class eZRegExpValidator extends eZInputValidator
 
     function fixup( $text )
     {
-        if ( !is_array( $this->RegExpRule ) )
+        if ( !is_array( $this->RegExpRule ) or !is_scalar( $text ) )
             return $text;
         $intermediate =& $this->RegExpRule["intermediate"];
         $fixup =& $this->RegExpRule["fixup"];
