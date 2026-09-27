@@ -94,6 +94,9 @@ class eZBooleanType extends eZDataType
                 return eZInputValidator::STATE_INVALID;
             }
         }
+        // Without this an optional checkbox in a collection form returned null,
+        // which is none of the eZInputValidator states
+        return eZInputValidator::STATE_ACCEPTED;
     }
 
     /*!
@@ -177,7 +180,28 @@ class eZBooleanType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
-        return $contentObjectAttribute->setAttribute( 'data_int', $string );
+        // toString() writes 0 or 1. Anything else an import file holds is
+        // mapped to 0/1 as well instead of putting text into an integer column
+        // ("yes" read back as 0 on MySQL, and stayed "yes" on SQLite).
+        $contentObjectAttribute->setAttribute( 'data_int', self::booleanFromString( $string ) );
+        return true;
+    }
+
+    /*!
+     \private
+     \return 1 for a value that means checked (a non-zero number, true, yes,
+     on), 0 for everything else, including an empty string.
+    */
+    static function booleanFromString( $string )
+    {
+        if ( is_bool( $string ) )
+            return $string ? 1 : 0;
+        if ( !is_scalar( $string ) )
+            return 0;
+        $string = strtolower( trim( (string)$string ) );
+        if ( is_numeric( $string ) )
+            return (float)$string != 0 ? 1 : 0;
+        return in_array( $string, array( 'true', 'yes', 'on' ), true ) ? 1 : 0;
     }
 
     function isIndexable()
@@ -232,8 +256,10 @@ class eZBooleanType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-
-        $defaultValue = strtolower( $attributeParametersNode->getElementsByTagName( 'default-value' )->item( 0 )->getAttribute( 'is-set' ) ) == 'true';
+        // A package without the default-value element means unchecked, not a
+        // fatal error on ->getAttribute() of nothing
+        $defaultValueNode = $attributeParametersNode->getElementsByTagName( 'default-value' )->item( 0 );
+        $defaultValue = $defaultValueNode && strtolower( $defaultValueNode->getAttribute( 'is-set' ) ) == 'true';
         $classAttribute->setAttribute( 'data_int3', $defaultValue );
     }
 
