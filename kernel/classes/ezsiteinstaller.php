@@ -148,14 +148,20 @@ class eZSiteInstaller
     function postInstall()
     {
         $steps = $this->postInstallSteps();
-        $this->executeSteps( $steps );
+        return $this->executeSteps( $steps );
     }
 
     /*!
-     Execute $steps
+     Execute $steps. Returns false when a step aborted the rest, true otherwise.
+
+     An abort is also kept in eZSiteInstaller::abortedStep(): a site package's
+     eZSitePostInstall() does not pass the result on, and the setup has to
+     know - the post-install used to stop half way while the installation
+     still reported itself installed.
     */
     function executeSteps( $steps )
     {
+        self::$AbortedStep = false;
         $stepNum = 1;
         foreach( $steps as $step )
         {
@@ -170,12 +176,34 @@ class eZSiteInstaller
                 if( $res === eZSiteInstaller::ERR_ABORT )
                 {
                     $this->reportError( "Aborting execution on step number $stepNum: '". $step['_function'] ."'", 'eZSiteInstaller::postInstall' );
-                    break;
+                    self::$AbortedStep = array( 'number' => $stepNum,
+                                                'function' => $step['_function'],
+                                                'count' => count( $steps ) );
+                    return false;
                 }
             }
 
             ++$stepNum;
         }
+        return true;
+    }
+
+    /*!
+     The step the last executeSteps() run aborted on, as an array with its
+     'number', 'function' and the 'count' of steps, or false when it ran
+     through (or none ran).
+    */
+    static function abortedStep()
+    {
+        return self::$AbortedStep;
+    }
+
+    /*!
+     Forget an earlier abort, before a new post-install starts.
+    */
+    static function resetAbortedStep()
+    {
+        self::$AbortedStep = false;
     }
 
     /*!
@@ -1764,6 +1792,8 @@ class eZSiteInstaller
     public $Steps;
     // hold an error code of last executed step.
     public $LastErrorCode;
+    // the step the last executeSteps() aborted on, see abortedStep().
+    protected static $AbortedStep = false;
 }
 
 ?>
