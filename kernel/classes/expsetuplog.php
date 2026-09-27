@@ -263,6 +263,16 @@ class expSetupLog
             $c['database'] = $persistenceList['database_info']['type'] . ( isset( $persistenceList['database_info']['database'] ) ? ' ' . $persistenceList['database_info']['database'] : '' );
         if ( isset( $persistenceList['regional_info']['primary_language'] ) )
             $c['primary language'] = $persistenceList['regional_info']['primary_language'];
+        if ( isset( $persistenceList['regional_info']['languages'] ) && is_array( $persistenceList['regional_info']['languages'] ) )
+            $c['site languages'] = implode( ', ', $persistenceList['regional_info']['languages'] );
+        if ( isset( $persistenceList['package_info']['language_map'] ) && is_array( $persistenceList['package_info']['language_map'] ) )
+        {
+            $map = array();
+            foreach ( $persistenceList['package_info']['language_map'] as $from => $to )
+                if ( $from !== $to )
+                    $map[] = $from . ' -> ' . $to;
+            $c['package language map'] = $map ? implode( ', ', $map ) : 'none needed';
+        }
         return $c;
     }
 
