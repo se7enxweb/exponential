@@ -1850,7 +1850,7 @@ bd6e09375a4ba8fb7f56980818d622be  design/standard/templates/setup/persistence.tp
 336e103d6197cd3f8e79b748f7631ebd  design/standard/templates/setup/quick_settings.tpl
 efeb4ba3b956e844fee092f5b6397480  design/standard/templates/setup/rad.tpl
 cea6b6108b8edc1f7845d321c9681675  design/standard/templates/setup/radsurvey.tpl
-0d3f25ede375dc0632be8b80388f7ead  design/standard/templates/setup/registration_email.tpl
+118be36b33fea3d47c3a984a3bb7fa7d  design/standard/templates/setup/registration_email.tpl
 cc7c1852194de98b13c2c3e89aa88e0e  design/standard/templates/setup/session.tpl
 6e514250bd29d924a22c8a7f80e7a6d0  design/standard/templates/setup/session_no_db.tpl
 95a69b67346f0d0737748714436e0f34  design/standard/templates/setup/settingsextension.tpl
@@ -6046,7 +6046,7 @@ acfbe7cb50cb804e8c59c5c86d39b1ea  kernel/setup/exppreloadrunner.php
 c2d9e897e1ae977bf74f3e94626ff6a2  kernel/setup/expworkfloweventwizard.php
 5af2724955f854e9dd7370b06cc97695  kernel/setup/extensions.php
 ab92323e6b5a1ebd4ed1d0546f396729  kernel/setup/ezsetup.php
-f5cefcc8b6b413037b9f2cbf330f1d58  kernel/setup/ezsetup_summary.php
+5ed8a49e3719be60334d52645c11a730  kernel/setup/ezsetup_summary.php
 5b1e95e906bdfd7d429e8efb9ae29879  kernel/setup/ezsetupcommon.php
 b2b886461ecd202ac56cf05c9113fd2c  kernel/setup/ezsetupfunctioncollection.php
 324bc16d51431808de8fb6774edf3649  kernel/setup/ezsetuptests.php
@@ -6067,7 +6067,7 @@ b05b68e1a19a0aee8a85ab88af764472  kernel/setup/session.php
 f0bb2d78d2da0a115870dc0708978214  kernel/setup/settingstoolbar.php
 11d6f43693270057c21a4a8d78e96ef3  kernel/setup/setupmenu.php
 000fff131e21d5db77dc022f0d1bba6a  kernel/setup/staticcachestream.php
-93259e41f4c1f846cb233532dd0ce311  kernel/setup/steps/ezstep_create_sites.php
+1b883462557ce21da0a046004909b6ce  kernel/setup/steps/ezstep_create_sites.php
 d0a153027eff5f94f37303c0a29abf8b  kernel/setup/steps/ezstep_data.php
 e828cc6fafcf49092e82d4758fc6abbf  kernel/setup/steps/ezstep_database_choice.php
 89ba35222b20e7c13ad292f813b43c9f  kernel/setup/steps/ezstep_database_init.php
@@ -6461,7 +6461,7 @@ fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
 10d31178f1c8d1ad9e3a553c0c681890  settings/httpcache.ini
 9ff1cef13a954b0c1608d1afc0e9045b  settings/i18n.ini
 6bdd02dfee6898322c34dd0bbef5b904  settings/icon.ini
-947ab02247a28a851da914558534473e  settings/image.ini
+4f333eab6ffd8e0e63f1f02b60a9b43e  settings/image.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 27207d9d242ebaf416412d9095db7b34  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
