@@ -5,61 +5,23 @@
   <h1>{"Choose database system"|i18n("design/standard/setup/init")}</h1>
 </div>
 
-{if and( is_set( $available_databases['mysql'] ), is_set( $available_databases['postgresql'] ), is_set( $available_databases['sqlite3'] ), is_set( $available_databases['mongodb'] ) )}
+{if gt( $database_list|count, 0 )}
 <p>
- {"MySQL, PostgreSQL, SQLite and MongoDB support was detected on your system. Please choose the database system you would like to use."|i18n("design/standard/setup/init")}
+ {"Support for the following database systems was detected on your system:"|i18n("design/standard/setup/init")}
+ {foreach $database_list as $index => $database}{if gt( $index, 0 )}, {/if}{$database.name|wash}{/foreach}.
+ {"Please choose the database system you would like to use."|i18n("design/standard/setup/init")}
 </p>
-{elseif and( is_set( $available_databases['mysql'] ), is_set( $available_databases['postgresql'] ), is_set( $available_databases['sqlite3'] ) )}
+{/if}
+
+{if $preferred_database_missing}
+<div class="warning">
 <p>
- {"MySQL, PostgreSQL and SQLite support was detected on your system. Please choose the database system you would like to use."|i18n("design/standard/setup/init")}
+ {"%1 is the recommended database system for Exponential, but it cannot be used here: the PHP %2 extension is not loaded. %3 has been selected instead. To use %1, enable the %2 extension in PHP and start the setup wizard again."|i18n( "design/standard/setup/init",, array( $preferred_database.name|wash, $preferred_database.type|wash, cond( is_array( $database_info ), $database_info.name, '-' )|wash ) )}
 </p>
-{elseif and( is_set( $available_databases['mysql'] ), is_set( $available_databases['postgresql'] ), is_set( $available_databases['mongodb'] ) )}
+</div>
+{else}
 <p>
- {"MySQL, PostgreSQL and MongoDB support was detected on your system. Please choose the database system you would like to use."|i18n("design/standard/setup/init")}
-</p>
-{elseif and( is_set( $available_databases['mysql'] ), is_set( $available_databases['sqlite3'] ), is_set( $available_databases['mongodb'] ) )}
-<p>
- {"MySQL, SQLite and MongoDB support was detected on your system. Please choose the database system you would like to use."|i18n("design/standard/setup/init")}
-</p>
-{elseif and( is_set( $available_databases['postgresql'] ), is_set( $available_databases['sqlite3'] ), is_set( $available_databases['mongodb'] ) )}
-<p>
- {"PostgreSQL, SQLite and MongoDB support was detected on your system. Please choose the database system you would like to use."|i18n("design/standard/setup/init")}
-</p>
-{elseif and( is_set( $available_databases['mysql'] ), is_set( $available_databases['mongodb'] ) )}
-<p>
- {"MySQL and MongoDB support was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
-</p>
-{elseif and( is_set( $available_databases['postgresql'] ), is_set( $available_databases['mongodb'] ) )}
-<p>
- {"PostgreSQL and MongoDB support was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
-</p>
-{elseif and( is_set( $available_databases['sqlite3'] ), is_set( $available_databases['mongodb'] ) )}
-<p>
- {"SQLite and MongoDB support was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
-</p>
-{elseif and( is_set( $available_databases['mysql'] ), is_set( $available_databases['sqlite3'] ) )}
-<p>
- {"MySQL and SQLite support was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
-</p>
-{elseif and( is_set( $available_databases['sqlite3'] ), is_set( $available_databases['postgresql'] ) )}
-<p>
- {"SQLite and PostgreSQL support was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
-</p>
-{elseif is_set( $available_databases['mongodb'] )}
-<p>
- {"MongoDB support was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
-</p>
-{elseif is_set( $available_databases['mysql'] )}
-<p>
- {"MySQL was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
-</p>
-{elseif is_set( $available_databases['sqlite3'] )}
-<p>
- {"SQLite support was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
-</p>
-{elseif is_set( $available_databases['postgresql'] )}
-<p>
- {"PostgreSQL support was detected on your system. Please choose the database driver you would like to use."|i18n("design/standard/setup/init")}
+ {"%1 is recommended: it needs no database server, and Exponential keeps the whole database in a single file inside the installation. The other database systems listed below remain available for sites that use a database server."|i18n( "design/standard/setup/init",, array( $preferred_database.name|wash ) )}
 </p>
 {/if}
 
@@ -67,16 +29,16 @@
 <div class="input_highlight">
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-  <th class="label" colspan="2">Database:</th>
+  <th class="label" colspan="2">{"Database:"|i18n("design/standard/setup/init")}</th>
 </tr>
-{section name=DB loop=$database_list}
+{foreach $database_list as $database}
 <tr>
   <td class="normal" rowspan="1" valign="top">
-  <input type="radio" id="eZSetupDatabase{$:item.type}" name="eZSetupDatabaseType" value="{$:item.type}" {if eq( $:item.type, $database_info.type )}checked="checked" {/if}/>
+  <input type="radio" id="eZSetupDatabase{$database.type}" name="eZSetupDatabaseType" value="{$database.type}" {if and( is_array( $database_info ), eq( $database.type, $database_info.type ) )}checked="checked" {/if}/>
   </td>
-  <td class="normal"><label class="radio" for="eZSetupDatabase{$:item.type}">{$:item.name}</label></td>
+  <td class="normal"><label class="radio" for="eZSetupDatabase{$database.type}">{$database.name|wash}{if $database.recommended} ({"recommended"|i18n("design/standard/setup/init")}){/if}</label></td>
 </tr>
-{/section}
+{/foreach}
 </table>
 </div>
 
