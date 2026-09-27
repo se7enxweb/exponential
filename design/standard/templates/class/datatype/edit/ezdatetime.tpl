@@ -28,19 +28,19 @@
     {* Year. *}
     <div class="element">
         <label for="ContentClass_ezdatetime_year_{$class_attribute.id}">{'Year'|i18n( 'design/standard/class/datatype' )}:</label>
-        <input type="text" id="ContentClass_ezdatetime_year_{$class_attribute.id}" name="ContentClass_ezdatetime_year_{$class_attribute.id}" size="5" value="{if $class_attribute.content.year}{$class_attribute.content.year}{/if}" />
+        <input type="text" id="ContentClass_ezdatetime_year_{$class_attribute.id}" name="ContentClass_ezdatetime_year_{$class_attribute.id}" size="5" value="{if $class_attribute.content.year}{$class_attribute.content.year|wash}{/if}" />
     </div>
 
     {* Month. *}
     <div class="element">
         <label for="ContentClass_ezdatetime_month_{$class_attribute.id}">{'Month'|i18n( 'design/standard/class/datatype' )}:</label>
-        <input type="text" id="ContentClass_ezdatetime_month_{$class_attribute.id}" name="ContentClass_ezdatetime_month_{$class_attribute.id}" size="3" value="{if $class_attribute.content.month}{$class_attribute.content.month}{/if}" />
+        <input type="text" id="ContentClass_ezdatetime_month_{$class_attribute.id}" name="ContentClass_ezdatetime_month_{$class_attribute.id}" size="3" value="{if $class_attribute.content.month}{$class_attribute.content.month|wash}{/if}" />
     </div>
 
     {* Day. *}
     <div class="element">
         <label for="ContentClass_ezdatetime_day_{$class_attribute.id}">{'Day'|i18n( 'design/standard/class/datatype' )}:</label>
-        <input type="text" id="ContentClass_ezdatetime_day_{$class_attribute.id}" name="ContentClass_ezdatetime_day_{$class_attribute.id}" size="3" value="{if $class_attribute.content.day}{$class_attribute.content.day}{/if}" />
+        <input type="text" id="ContentClass_ezdatetime_day_{$class_attribute.id}" name="ContentClass_ezdatetime_day_{$class_attribute.id}" size="3" value="{if $class_attribute.content.day}{$class_attribute.content.day|wash}{/if}" />
         &nbsp;
         &nbsp;
         &nbsp;
@@ -49,19 +49,19 @@
     {* Hour. *}
     <div class="element">
         <label for="ContentClass_ezdatetime_hour_{$class_attribute.id}">{'Hour'|i18n( 'design/standard/class/datatype' )}:</label>
-        <input type="text" id="ContentClass_ezdatetime_hour_{$class_attribute.id}" name="ContentClass_ezdatetime_hour_{$class_attribute.id}" size="3" value="{if $class_attribute.content.hour}{$class_attribute.content.hour}{/if}" />
+        <input type="text" id="ContentClass_ezdatetime_hour_{$class_attribute.id}" name="ContentClass_ezdatetime_hour_{$class_attribute.id}" size="3" value="{if $class_attribute.content.hour}{$class_attribute.content.hour|wash}{/if}" />
     </div>
 
     {* Minute. *}
     <div class="element">
         <label for="ContentClass_ezdatetime_minute_{$class_attribute.id}">{'Minute'|i18n( 'design/standard/class/datatype' )}:</label>
-        <input type="text" id="ContentClass_ezdatetime_minute_{$class_attribute.id}" name="ContentClass_ezdatetime_minute_{$class_attribute.id}" size="3" value="{if $class_attribute.content.minute}{$class_attribute.content.minute}{/if}" />
+        <input type="text" id="ContentClass_ezdatetime_minute_{$class_attribute.id}" name="ContentClass_ezdatetime_minute_{$class_attribute.id}" size="3" value="{if $class_attribute.content.minute}{$class_attribute.content.minute|wash}{/if}" />
     </div>
 
     {* Second. *}
     <div class="element">
         <label for="ContentClass_ezdatetime_second_{$class_attribute.id}">{'Second'|i18n( 'design/standard/class/datatype' )}:</label>
-        <input type="text" id="ContentClass_ezdatetime_second_{$class_attribute.id}" name="ContentClass_ezdatetime_second_{$class_attribute.id}" size="3" value="{if $class_attribute.content.second}{$class_attribute.content.second}{/if}" />
+        <input type="text" id="ContentClass_ezdatetime_second_{$class_attribute.id}" name="ContentClass_ezdatetime_second_{$class_attribute.id}" size="3" value="{if $class_attribute.content.second}{$class_attribute.content.second|wash}{/if}" />
     </div>
 
     <div class="break"></div>

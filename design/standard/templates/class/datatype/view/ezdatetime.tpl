@@ -22,27 +22,27 @@
         {'Current datetime'|i18n( 'design/standard/class/datatype' )}
 
         {if $class_attribute.content.year}
-        {if $class_attribute.content.year|gt(0)}+{/if}{$class_attribute.content.year} {'year(s)'|i18n( 'design/standard/class/datatype' )}
+        {if $class_attribute.content.year|gt(0)}+{/if}{$class_attribute.content.year|wash} {'year(s)'|i18n( 'design/standard/class/datatype' )}
         {/if}
 
         {if $class_attribute.content.month}
-        {if $class_attribute.content.month|gt(0)}+{/if}{$class_attribute.content.month} {'month(s)'|i18n( 'design/standard/class/datatype' )}
+        {if $class_attribute.content.month|gt(0)}+{/if}{$class_attribute.content.month|wash} {'month(s)'|i18n( 'design/standard/class/datatype' )}
         {/if}
 
         {if $class_attribute.content.day}
-        {if $class_attribute.content.day|gt(0)}+{/if}{$class_attribute.content.day} {'day(s)'|i18n( 'design/standard/class/datatype' )}
+        {if $class_attribute.content.day|gt(0)}+{/if}{$class_attribute.content.day|wash} {'day(s)'|i18n( 'design/standard/class/datatype' )}
         {/if}
 
         {if $class_attribute.content.hour}
-        {if $class_attribute.content.hour|gt(0)}+{/if}{$class_attribute.content.hour} {'hour(s)'|i18n( 'design/standard/class/datatype' )}
+        {if $class_attribute.content.hour|gt(0)}+{/if}{$class_attribute.content.hour|wash} {'hour(s)'|i18n( 'design/standard/class/datatype' )}
         {/if}
 
         {if $class_attribute.content.minute}
-        {if $class_attribute.content.minute|gt(0)}+{/if}{$class_attribute.content.minute} {'minute(s)'|i18n( 'design/standard/class/datatype' )}
+        {if $class_attribute.content.minute|gt(0)}+{/if}{$class_attribute.content.minute|wash} {'minute(s)'|i18n( 'design/standard/class/datatype' )}
         {/if}
 
         {if and( $class_attribute.data_int2|eq(1), $class_attribute.content.second )}
-        {if $class_attribute.content.second|gt(0)}+{/if}{$class_attribute.content.second} {'second(s)'|i18n( 'design/standard/class/datatype' )}
+        {if $class_attribute.content.second|gt(0)}+{/if}{$class_attribute.content.second|wash} {'second(s)'|i18n( 'design/standard/class/datatype' )}
         {/if}
     {/case}
 

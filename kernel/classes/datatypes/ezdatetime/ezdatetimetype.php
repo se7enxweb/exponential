@@ -42,6 +42,28 @@ class eZDateTimeType extends eZDataType
     */
     function validateDateTimeHTTPInput( $day, $month, $year, $hour, $minute, $second, $contentObjectAttribute )
     {
+        // checkdate()/mktime() take ints and throw a TypeError on PHP 8 for an
+        // array or a string such as "abc" or "12abc", so anything that is not a
+        // plain number is a date the editor has to correct, not a fatal error
+        $day = self::dateTimeInputPart( $day );
+        $month = self::dateTimeInputPart( $month );
+        $year = self::dateTimeInputPart( $year );
+        if ( $day === false or $month === false or $year === false )
+        {
+            $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                 'Date is not valid.' ) );
+            return eZInputValidator::STATE_INVALID;
+        }
+        $hour = self::dateTimeInputPart( $hour );
+        $minute = self::dateTimeInputPart( $minute );
+        $second = self::dateTimeInputPart( $second );
+        if ( $hour === false or $minute === false or $second === false )
+        {
+            $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                 'Time is not valid.' ) );
+            return eZInputValidator::STATE_INVALID;
+        }
+
         $state = eZDateTimeValidator::validateDate( $day, $month, $year );
         if ( $state == eZInputValidator::STATE_INVALID )
         {
@@ -59,6 +81,76 @@ class eZDateTimeType extends eZDataType
             return eZInputValidator::STATE_INVALID;
         }
         return $state;
+    }
+
+    /*!
+     \static
+     \return the int value of one posted date or time field, or false when it
+             is not a plain non-negative number (an array, "abc", "12abc", "-1",
+             or more digits than an int can hold). An empty field is 0, the
+             callers decide about empty fields before they get here.
+    */
+    static function dateTimeInputPart( $value )
+    {
+        if ( is_int( $value ) )
+            return $value >= 0 ? $value : false;
+        if ( !is_string( $value ) )
+            return false;
+        $value = trim( $value );
+        if ( $value === '' )
+            return 0;
+        if ( strlen( $value ) > 9 or !ctype_digit( $value ) )
+            return false;
+        return (int)$value;
+    }
+
+    /*!
+     \return the timestamp for the posted fields, or null when they do not
+             make a valid date (the fetch functions run after validation, but
+             must not fatal when they are called without it)
+    */
+    function dateTimeInputStamp( $year, $month, $day, $hour, $minute, $second, $useSeconds )
+    {
+        if ( !is_scalar( $year ) or !is_scalar( $month ) or !is_scalar( $day ) or
+             !is_scalar( $hour ) or !is_scalar( $minute ) or !is_scalar( $second ) )
+            return null;
+        if ( $year == '' and $month == '' and $day == '' and
+             $hour == '' and $minute == '' and ( !$useSeconds or $second == '' ) )
+            return null;
+        $parts = array();
+        foreach ( array( $year, $month, $day, $hour, $minute, $second ) as $part )
+        {
+            $part = self::dateTimeInputPart( $part );
+            if ( $part === false )
+                return null;
+            $parts[] = $part;
+        }
+        list( $year, $month, $day, $hour, $minute, $second ) = $parts;
+        if ( !checkdate( $month, $day, $year ) )
+            return null;
+        $dateTime = new eZDateTime();
+        $dateTime->setMDYHMS( $month, $day, $year, $hour, $minute, $second );
+        return $dateTime->timeStamp();
+    }
+
+    /*!
+     \return the current time moved by the adjustment stored in the class
+             attribute. The stored values are strings, and one left empty in the
+             class editor is "", which PHP 8 refuses in arithmetic with a
+             TypeError: that made every new object of such a class fail.
+    */
+    function adjustedDefaultTimeStamp( $classAttribute )
+    {
+        $adjustments = $this->classAttributeContent( $classAttribute );
+        $int = function ( $key ) use ( $adjustments )
+        {
+            $v = $adjustments[$key] ?? 0;
+            return is_numeric( $v ) ? (int)$v : 0;
+        };
+        $value = new eZDateTime();
+        $secondAdjustment = $classAttribute->attribute( self::USE_SECONDS_FIELD ) == 1 ? $int( 'second' ) : 0;
+        $value->adjustDateTime( $int( 'hour' ), $int( 'minute' ), $secondAdjustment, $int( 'month' ), $int( 'day' ), $int( 'year' ) );
+        return $value->timeStamp();
     }
 
     /*!
@@ -143,18 +235,7 @@ class eZDateTimeType extends eZDataType
             $minute = $http->postVariable( $base . '_datetime_minute_' . $contentObjectAttribute->attribute( 'id' ) );
             $second = $useSeconds ? $http->postVariable( $base . '_datetime_second_' . $contentObjectAttribute->attribute( 'id' ) ) : 0;
 
-            if ( ( $year == '' and $month == '' and $day == '' and
-                   $hour == '' and $minute == '' and ( !$useSeconds or $second == '' ) ) or
-                 !checkdate( $month, $day, $year ) )
-            {
-                    $stamp = null;
-            }
-            else
-            {
-                $dateTime = new eZDateTime();
-                $dateTime->setMDYHMS( $month, $day, $year, $hour, $minute, $second );
-                $stamp = $dateTime->timeStamp();
-            }
+            $stamp = $this->dateTimeInputStamp( $year, $month, $day, $hour, $minute, $second, $useSeconds );
 
             $contentObjectAttribute->setAttribute( 'data_int', $stamp );
             return true;
@@ -235,19 +316,7 @@ class eZDateTimeType extends eZDataType
             $minute = $http->postVariable( $base . '_datetime_minute_' . $contentObjectAttribute->attribute( 'id' ) );
             $second = $useSeconds ? $http->postVariable( $base . '_datetime_second_' . $contentObjectAttribute->attribute( 'id' ) ) : 0;
 
-            $contentClassAttribute = $contentObjectAttribute->contentClassAttribute();
-            if ( ( $year == '' and $month == ''and $day == '' and
-                   $hour == '' and $minute == '' and ( !$useSeconds or $second == '' ) ) or
-                 !checkdate( $month, $day, $year ) )
-            {
-                    $stamp = null;
-            }
-            else
-            {
-                $dateTime = new eZDateTime();
-                $dateTime->setMDYHMS( $month, $day, $year, $hour, $minute, $second );
-                $stamp = $dateTime->timeStamp();
-            }
+            $stamp = $this->dateTimeInputStamp( $year, $month, $day, $hour, $minute, $second, $useSeconds );
 
             $collectionAttribute->setAttribute( 'data_int', $stamp );
             return true;
@@ -295,9 +364,15 @@ class eZDateTimeType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
-        if ( empty( $string ) )
+        // toString() gives the timestamp, so a number is read back as one; any
+        // other text used to go into the int column as it was
+        if ( empty( $string ) or !is_numeric( $string ) )
         {
             $string = null;
+        }
+        else
+        {
+            $string = (int)$string;
         }
 
         return $contentObjectAttribute->setAttribute( 'data_int', $string );
@@ -316,13 +391,17 @@ class eZDateTimeType extends eZDataType
     function parseXML( $xmlText )
     {
         $dom = new DOMDocument;
+        // Broken stored XML must not print libxml warnings into the page
+        $useErrors = libxml_use_internal_errors( true );
         $success = $dom->loadXML( $xmlText );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useErrors );
         return $dom;
     }
 
     function classAttributeContent( $classAttribute )
     {
-        $xmlText = $classAttribute->attribute( 'data_text5' );
+        $xmlText = (string)$classAttribute->attribute( 'data_text5' );
         if ( trim( $xmlText ) == '' )
         {
             $classAttrContent = eZDateTimeType::defaultClassAttributeContent();
@@ -330,6 +409,14 @@ class eZDateTimeType extends eZDataType
         }
         $doc = eZDateTimeType::parseXML( $xmlText );
         $root = $doc->documentElement;
+        // Unparsable XML has no root element, and XML without some of the
+        // elements used to leave those keys out (and $content undefined when
+        // none was there): start from the defaults so every key exists
+        $content = eZDateTimeType::defaultClassAttributeContent();
+        if ( !$root )
+        {
+            return $content;
+        }
         $type = $root->getElementsByTagName( 'year' )->item( 0 );
         if ( $type )
         {
@@ -393,11 +480,7 @@ class eZDateTimeType extends eZDataType
             }
             else if ( $defaultType == self::DEFAULT_ADJUSTMENT )
             {
-                $adjustments = $this->classAttributeContent( $contentClassAttribute );
-                $value = new eZDateTime();
-                $secondAdjustment = $contentClassAttribute->attribute( self::USE_SECONDS_FIELD ) == 1 ? $adjustments['second'] : 0;
-                $value->adjustDateTime( $adjustments['hour'], $adjustments['minute'], $secondAdjustment, $adjustments['month'], $adjustments['day'], $adjustments['year'] );
-                $contentObjectAttribute->setAttribute( "data_int", $value->timeStamp() );
+                $contentObjectAttribute->setAttribute( "data_int", $this->adjustedDefaultTimeStamp( $contentClassAttribute ) );
             }
             else
                 $contentObjectAttribute->setAttribute( "data_int", null );
@@ -409,7 +492,12 @@ class eZDateTimeType extends eZDataType
         $default = $base . "_ezdatetime_default_" . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $default ) )
         {
+            // The select only offers 0, 1 and 2; anything else (an array, text)
+            // used to be stored as it came
             $defaultValue = $http->postVariable( $default );
+            $defaultValue = is_scalar( $defaultValue ) ? (int)$defaultValue : self::DEFAULT_EMTPY;
+            if ( !in_array( $defaultValue, array( self::DEFAULT_EMTPY, self::DEFAULT_CURRENT_DATE, self::DEFAULT_ADJUSTMENT ), true ) )
+                $defaultValue = self::DEFAULT_EMTPY;
             $classAttribute->setAttribute( self::DEFAULT_FIELD,  $defaultValue );
             if ( $defaultValue == self::DEFAULT_ADJUSTMENT )
             {
@@ -419,6 +507,13 @@ class eZDateTimeType extends eZDataType
                 foreach ( $contentList as $key => $value )
                 {
                     $postValue = $http->postVariable( $base . '_ezdatetime_' . $value . '_' . $classAttribute->attribute( 'id' ) );
+                    // An adjustment is a whole, possibly negative number, or
+                    // empty. A missing field is null and an array a TypeError in
+                    // setAttribute(), and text was stored and later printed into
+                    // the class edit form as it came
+                    $postValue = is_scalar( $postValue ) ? trim( (string)$postValue ) : '';
+                    if ( !preg_match( '/^[-+]?\d{1,9}$/', $postValue ) )
+                        $postValue = '';
                     unset( $elementType );
                     $elementType = $doc->createElement( $key );
                     $elementType->setAttribute( 'value', $postValue );
@@ -489,8 +584,17 @@ class eZDateTimeType extends eZDataType
                 $defaultValueNode->setAttribute( 'type', 'adjustment' );
 
                 $adjustDOMValue = new DOMDocument( '1.0', 'utf-8' );
-                $adjustValue = $classAttribute->attribute( self::ADJUSTMENT_FIELD );
-                $success = $adjustDOMValue->loadXML( $adjustValue );
+                $adjustValue = (string)$classAttribute->attribute( self::ADJUSTMENT_FIELD );
+                // loadXML() throws a ValueError for an empty string on PHP 8, and
+                // broken XML must not print libxml warnings during an export
+                $success = false;
+                if ( trim( $adjustValue ) !== '' )
+                {
+                    $useErrors = libxml_use_internal_errors( true );
+                    $success = $adjustDOMValue->loadXML( $adjustValue );
+                    libxml_clear_errors();
+                    libxml_use_internal_errors( $useErrors );
+                }
 
                 if ( $success )
                 {
@@ -517,7 +621,7 @@ class eZDateTimeType extends eZDataType
 
         $useSeconds = $classAttribute->attribute( self::USE_SECONDS_FIELD );
         $useSecondsNode = $dom->createElement( 'use-seconds' );
-        $useSecondsNode->appendChild( $dom->createTextNode( $useSeconds ) );
+        $useSecondsNode->appendChild( $dom->createTextNode( (string)$useSeconds ) );
         $attributeParametersNode->appendChild( $useSecondsNode );
     }
 
@@ -592,8 +696,10 @@ class eZDateTimeType extends eZDataType
         $dateTimeNode = $attributeNode->getElementsByTagName( 'date_time' )->item( 0 );
         if ( is_object( $dateTimeNode ) )
         {
-            $timestamp = eZDateUtils::textToDate( $dateTimeNode->textContent );
-            $objectAttribute->setAttribute( 'data_int', $timestamp );
+            // strtotime() gives false for a date it cannot read; that went into
+            // the int column as 0 (1 January 1970) instead of "no date"
+            $timestamp = trim( $dateTimeNode->textContent ) === '' ? false : eZDateUtils::textToDate( $dateTimeNode->textContent );
+            $objectAttribute->setAttribute( 'data_int', $timestamp === false ? null : $timestamp );
         }
     }
 
@@ -615,12 +721,7 @@ class eZDateTimeType extends eZDataType
 
             case self::DEFAULT_ADJUSTMENT:
             {
-                $adjustments = $this->classAttributeContent( $classAttribute );
-                $value = new eZDateTime();
-                $secondAdjustment = $classAttribute->attribute( self::USE_SECONDS_FIELD ) == 1 ? $adjustments['second'] : 0;
-                $value->adjustDateTime( $adjustments['hour'], $adjustments['minute'], $secondAdjustment, $adjustments['month'], $adjustments['day'], $adjustments['year'] );
-
-                $default = $value->timeStamp();
+                $default = $this->adjustedDefaultTimeStamp( $classAttribute );
             } break;
 
             default:
