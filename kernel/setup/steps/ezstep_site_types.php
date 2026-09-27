@@ -612,6 +612,20 @@ class eZStepSiteTypes extends eZStepInstaller
         $sitePackages = $this->createSitePackagesList( $remoteSitePackages, $importedSitePackages, $dependenciesStatus );
 
         $chosenSitePackage = $this->chosenSitePackage();
+        if ( !$chosenSitePackage && !$this->Message )
+        {
+            // Nothing chosen yet: preselect the first site package that is
+            // already in the local repository (the bundled default site), so
+            // that pressing Next installs it without a download.
+            foreach ( $sitePackages as $packageInfo )
+            {
+                if ( !isset( $packageInfo['url'] ) )
+                {
+                    $chosenSitePackage = $packageInfo['name'];
+                    break;
+                }
+            }
+        }
 
         $this->Tpl->setVariable( 'site_packages', $sitePackages );
         $this->Tpl->setVariable( 'dependencies_status', $dependenciesStatus );
