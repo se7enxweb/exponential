@@ -299,9 +299,20 @@ class expVelocityFrankenPHP extends expVelocity
     }
 
     /**
+     * One: [ServerSettings] Instances is for the Qbix engine, whose server
+     * answers cached pages in one process; this engine spreads its own work.
+     *
+     * @return int
+     */
+    public function instances()
+    {
+        return 1;
+    }
+
+    /**
      * @return string
      */
-    public function pidFile()
+    public function pidFile( $instance = 0 )
     {
         return $this->absolute( $this->frankenSetting( 'PidFile', 'var/vc/frankenphp/run/server.pid' ) );
     }
@@ -309,7 +320,7 @@ class expVelocityFrankenPHP extends expVelocity
     /**
      * @return string
      */
-    public function logFile()
+    public function logFile( $instance = 0 )
     {
         return $this->absolute( $this->frankenSetting( 'LogFile', 'var/vc/frankenphp/run/console.log' ) );
     }
@@ -404,7 +415,7 @@ class expVelocityFrankenPHP extends expVelocity
      *
      * @return array
      */
-    public function command()
+    public function command( $instance = 0 )
     {
         $arguments = array( $this->binary(), 'run', '--config', $this->caddyfile(),
                             '--adapter', 'caddyfile', '--pidfile', $this->pidFile() );
@@ -763,7 +774,7 @@ class expVelocityFrankenPHP extends expVelocity
      *
      * @param string $option
      */
-    protected function control( $option )
+    protected function control( $option, $instance = 0 )
     {
         throw new LogicException( 'the frankenphp engine is controlled through its admin API' );
     }

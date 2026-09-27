@@ -639,9 +639,50 @@ class expVelocity
      *
      * @return string
      */
-    public function pidFile()
+    public function pidFile( $instance = 0 )
     {
-        return $this->absolute( $this->setting( 'ServerSettings', 'PidFile', 'var/vc/qbix/run/server.pid' ) );
+        return self::instancePath( $this->absolute( $this->setting( 'ServerSettings', 'PidFile', 'var/vc/qbix/run/server.pid' ) ), $instance );
+    }
+
+    /**
+     * How many servers to run on the same port: [ServerSettings] Instances.
+     *
+     * The server answers cached pages in its own process, about 0.3 ms of CPU
+     * a page, so one server is bounded by one core (~3,500 cached pages a
+     * second measured). With more than one, every instance listens on the
+     * same ports with SO_REUSEPORT (Q.webserver.reusePort) and the kernel
+     * spreads connections across them: two measured 6,600-6,900, four
+     * 12,200-13,100. Each instance has its own worker pool, so Workers and
+     * SpareWorkers are per instance.
+     *
+     * @return int 1 to 64
+     */
+    public function instances()
+    {
+        $n = (int)$this->setting( 'ServerSettings', 'Instances', 1 );
+        return max( 1, min( 64, $n ) );
+    }
+
+    /**
+     * An instance's own file beside the first one's: server.pid, server.1.pid,
+     * server.2.pid ... (instance 0 keeps the configured name, so a single
+     * server is unchanged).
+     *
+     * @param string $path
+     * @param int $instance
+     * @return string
+     */
+    public static function instancePath( $path, $instance )
+    {
+        $instance = (int)$instance;
+        if ( $instance <= 0 )
+            return $path;
+        $dot = strrpos( basename( $path ), '.' );
+        if ( $dot === false || $dot === 0 )
+            return $path . '.' . $instance;
+        $dir = dirname( $path );
+        $base = basename( $path );
+        return ( $dir === '.' ? '' : $dir . '/' ) . substr( $base, 0, $dot ) . '.' . $instance . substr( $base, $dot );
     }
 
     /**
@@ -649,9 +690,9 @@ class expVelocity
      *
      * @return string
      */
-    public function logFile()
+    public function logFile( $instance = 0 )
     {
-        return $this->absolute( $this->setting( 'ServerSettings', 'LogFile', 'var/vc/qbix/run/console.log' ) );
+        return self::instancePath( $this->absolute( $this->setting( 'ServerSettings', 'LogFile', 'var/vc/qbix/run/console.log' ) ), $instance );
     }
 
     /**
@@ -822,7 +863,7 @@ class expVelocity
         return $this->absolute( $setting );
     }
 
-    public function command()
+    public function command( $instance = 0 )
     {
         $documentRoot = $this->absolute( $this->setting( 'ServerSettings', 'DocumentRoot', '' ) );
         $host    = $this->setting( 'ServerSettings', 'Host', '127.0.0.1' );
@@ -878,7 +919,7 @@ class expVelocity
             '--host=' . $host,
             '--port=' . $port,
             '--workers=' . ( $workers > 0 ? $workers : 4 ),
-            '--pid=' . $this->pidFile(),
+            '--pid=' . $this->pidFile( $instance ),
         ) );
 
         if ( $this->httpsEnabled() )
@@ -1400,6 +1441,10 @@ class expVelocity
             $dashboard['remote'] = true;
 
         $config = array( 'Q' => array( 'web' => $web, 'compat' => $compat ) );
+        // [ServerSettings] Instances > 1: every instance shares the ports.
+        if ( $this->instances() > 1 )
+            $webserver['reusePort'] = true;
+
         if ( $webserver )
             $config['Q']['webserver'] = $webserver;
         if ( $dashboard )
@@ -1515,9 +1560,9 @@ class expVelocity
      *
      * @return int|false
      */
-    public function parentID()
+    public function parentID( $instance = 0 )
     {
-        $file = $this->pidFile();
+        $file = $this->pidFile( $instance );
         if ( !is_file( $file ) )
             return false;
 
@@ -1526,6 +1571,30 @@ class expVelocity
             return false;
 
         return $this->isAlive( $pid ) ? $pid : false;
+    }
+
+    /**
+     * The running parents, one per instance that is up: instance => pid.
+     *
+     * @return array
+     */
+    public function parentIDs()
+    {
+        $parents = array();
+        for ( $i = 0; $i < $this->instances(); $i++ )
+        {
+            $pid = $this->parentID( $i );
+            if ( $pid )
+                $parents[$i] = $pid;
+        }
+        return $parents;
+    }
+
+    /** Remove every instance's pid file (after a stop or kill). */
+    protected function removePidFiles()
+    {
+        for ( $i = 0; $i < max( $this->instances(), 1 ); $i++ )
+            @unlink( $this->pidFile( $i ) );
     }
 
     /**
@@ -1713,17 +1782,27 @@ class expVelocity
         // taken down with the shell or the script that started it. Without
         // one the server still starts, backgrounded and with no terminal.
         $setsid = $this->findExecutable( 'setsid' );
-        $command = $environment . ( $setsid !== false ? escapeshellarg( $setsid ) . ' ' : '' )
-                 . implode( ' ', array_map( 'escapeshellarg', $arguments ) )
-                 . ' > ' . escapeshellarg( $log ) . ' 2>&1 < /dev/null &';
+        $instances = $this->instances();
+        for ( $i = 0; $i < $instances; $i++ )
+        {
+            // The same command for every instance but its own pid file and log.
+            $own = $arguments;
+            foreach ( $own as $k => $argument )
+                if ( strpos( $argument, '--pid=' ) === 0 )
+                    $own[$k] = '--pid=' . $this->pidFile( $i );
+            $command = $environment . ( $setsid !== false ? escapeshellarg( $setsid ) . ' ' : '' )
+                     . implode( ' ', array_map( 'escapeshellarg', $own ) )
+                     . ' > ' . escapeshellarg( $this->logFile( $i ) ) . ' 2>&1 < /dev/null &';
+            @exec( $command );
+        }
 
-        @exec( $command );
-
-        $deadline = microtime( true ) + 20;
+        // Up when the ports answer and, with several instances, every one of
+        // them has written its pid file.
+        $deadline = microtime( true ) + 20 + 10 * ( $instances - 1 );
         while ( microtime( true ) < $deadline )
         {
-            if ( $this->listeningPorts() )
-                return $this->result( true, ( $this->engineRebuilt
+            if ( $this->listeningPorts() && count( $this->parentIDs() ) >= $instances )
+                return $this->result( true, ( $instances > 1 ? $instances . ' instances ' : '' ) . ( $this->engineRebuilt
                     ? 'started (engine archive rebuilt first: ' . $this->engineRebuilt . ' kernel file(s) had changed)'
                     : 'started' ) . ( $this->layoutNote !== '' ? '; ' . $this->layoutNote : '' ), $this->status() );
 
@@ -1731,7 +1810,9 @@ class expVelocity
         }
 
         if ( $this->isRunning() )
-            return $this->result( true, 'started, but no port is listening yet', $this->status() );
+            return $this->result( true, $instances > 1
+                ? 'started, but only ' . count( $this->parentIDs() ) . ' of ' . $instances . ' instances are up; see ' . $log
+                : 'started, but no port is listening yet', $this->status() );
 
         return $this->result( false, 'did not start; see ' . $log, $this->status() );
     }
@@ -1757,14 +1838,15 @@ class expVelocity
 
         // Ask the server to stop itself first. It knows the order to take its
         // own pool down in; signalling is the fallback for when it cannot.
-        $this->control( '--stop' );
+        for ( $i = 0; $i < $this->instances(); $i++ )
+            $this->control( '--stop', $i );
 
         $settle = microtime( true ) + 3;
         while ( microtime( true ) < $settle )
         {
             if ( !$this->isRunning() )
             {
-                @unlink( $this->pidFile() );
+                $this->removePidFiles();
                 return $this->result( true, 'stopped' );
             }
             usleep( (int)( self::POLL_INTERVAL * 1000000 ) );
@@ -1773,16 +1855,18 @@ class expVelocity
         $pids = $this->processIDs();
         if ( !$pids )
         {
-            @unlink( $this->pidFile() );
+            $this->removePidFiles();
             return $this->result( true, 'stopped' );
         }
 
-        // The parent first, so it can take its own pool down in order.
-        $parent = $this->parentID();
-        if ( $parent && in_array( $parent, $pids, true ) )
+        // The parents first, so each can take its own pool down in order.
+        foreach ( $this->parentIDs() as $parent )
         {
-            $this->signal( $parent, $signal );
-            array_unshift( $pids, $parent );
+            if ( in_array( $parent, $pids, true ) )
+            {
+                $this->signal( $parent, $signal );
+                array_unshift( $pids, $parent );
+            }
         }
 
         foreach ( $pids as $pid )
@@ -1795,7 +1879,7 @@ class expVelocity
         {
             if ( !$this->isRunning() )
             {
-                @unlink( $this->pidFile() );
+                $this->removePidFiles();
                 return $this->result( true, 'stopped' );
             }
             usleep( (int)( self::POLL_INTERVAL * 1000000 ) );
@@ -1815,7 +1899,33 @@ class expVelocity
      */
     public function graceful()
     {
-        $parent = $this->parentID();
+        $instances = $this->instances();
+        if ( $instances > 1 )
+        {
+            // One at a time: the others keep answering on the shared port, so
+            // a rolling reload never leaves the port unanswered.
+            if ( count( $this->parentIDs() ) < $instances )
+                return $this->restart();
+            for ( $i = 0; $i < $instances; $i++ )
+            {
+                $one = $this->gracefulInstance( $i );
+                if ( !$one['ok'] )
+                    return $one;
+            }
+            return $this->result( true, 'reloaded ' . $instances . ' instances, one at a time', $this->status() );
+        }
+        return $this->gracefulInstance( 0 );
+    }
+
+    /**
+     * Reload one instance (see graceful()).
+     *
+     * @param int $instance
+     * @return array
+     */
+    protected function gracefulInstance( $instance )
+    {
+        $parent = $this->parentID( $instance );
         if ( !$parent )
             return $this->restart();
 
@@ -1836,7 +1946,7 @@ class expVelocity
         // children is the one observable fact that means it really happened.
         $before = $this->childIDs( $parent );
 
-        $this->control( '--reload' );
+        $this->control( '--reload', $instance );
 
         $deadline = microtime( true ) + 20;
         while ( microtime( true ) < $deadline )
@@ -1939,7 +2049,7 @@ class expVelocity
             $this->signal( $pid, $signal );
 
         usleep( (int)( self::POLL_INTERVAL * 2 * 1000000 ) );
-        @unlink( $this->pidFile() );
+        $this->removePidFiles();
 
         $left = $this->processIDs();
         if ( $left )
@@ -2237,6 +2347,8 @@ class expVelocity
         return array(
             'running'   => $pids ? true : false,
             'parent'    => $this->parentID(),
+            'instances' => $this->instances(),
+            'parents'   => array_values( $this->parentIDs() ),
             'processes' => count( $pids ),
             'pids'      => $pids,
             'listening' => $ports,
@@ -2286,14 +2398,14 @@ class expVelocity
      * @param string $option --stop or --reload
      * @return bool whether the command could be run at all
      */
-    protected function control( $option )
+    protected function control( $option, $instance = 0 )
     {
         $script = $this->scriptPath();
         if ( !is_file( $script ) )
             return false;
 
         $command = implode( ' ', array_map( 'escapeshellarg', array(
-            PHP_BINARY, $script, $option, '--pid=' . $this->pidFile()
+            PHP_BINARY, $script, $option, '--pid=' . $this->pidFile( $instance )
         ) ) ) . ' > /dev/null 2>&1';
 
         @exec( $command, $output, $status );

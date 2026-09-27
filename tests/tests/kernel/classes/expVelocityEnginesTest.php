@@ -64,6 +64,28 @@ class expVelocityEnginesTest extends ezpTestCase
     }
 
     /**
+     * [ServerSettings] Instances: each instance's own pid file and log beside
+     * the first one's, which keeps the configured names.
+     */
+    public function testInstancePaths()
+    {
+        $this->assertSame( '/run/vc/server.pid', expVelocity::instancePath( '/run/vc/server.pid', 0 ) );
+        $this->assertSame( '/run/vc/server.1.pid', expVelocity::instancePath( '/run/vc/server.pid', 1 ) );
+        $this->assertSame( '/run/vc/server.3.pid', expVelocity::instancePath( '/run/vc/server.pid', 3 ) );
+        $this->assertSame( '/var/log/console.2.log', expVelocity::instancePath( '/var/log/console.log', 2 ) );
+        $this->assertSame( '/run/vc/serverpid.1', expVelocity::instancePath( '/run/vc/serverpid', 1 ) );
+        $this->assertSame( '/run/v.c/server.1.pid', expVelocity::instancePath( '/run/v.c/server.pid', 1 ) );
+    }
+
+    /** Instances applies to the qbix engine only; the others always run one. */
+    public function testOnlyTheQbixEngineRunsSeveralInstances()
+    {
+        $this->assertGreaterThanOrEqual( 1, expVelocity::create( 'velocity.ini', 'qbix' )->instances() );
+        $this->assertSame( 1, expVelocity::create( 'velocity.ini', 'frankenphp' )->instances() );
+        $this->assertSame( 1, expVelocity::create( 'velocity.ini', 'php' )->instances() );
+    }
+
+    /**
      * FrankenPHP parses php_ini lines as ini text: a value with a semicolon
      * (session.save_path "0;0660;/dir") must be quoted or it is cut at the ';'.
      */

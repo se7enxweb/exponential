@@ -107,9 +107,20 @@ class expVelocityPHPServer extends expVelocity
     }
 
     /**
+     * One: [ServerSettings] Instances is for the Qbix engine, whose server
+     * answers cached pages in one process; this engine spreads its own work.
+     *
+     * @return int
+     */
+    public function instances()
+    {
+        return 1;
+    }
+
+    /**
      * @return string
      */
-    public function pidFile()
+    public function pidFile( $instance = 0 )
     {
         return $this->absolute( $this->serverSetting( 'PidFile', 'var/vc/php/run/server.pid' ) );
     }
@@ -128,7 +139,7 @@ class expVelocityPHPServer extends expVelocity
     /**
      * @return string requests and PHP's errors, as the built-in server prints them
      */
-    public function logFile()
+    public function logFile( $instance = 0 )
     {
         return $this->absolute( $this->serverSetting( 'LogFile', 'var/vc/php/log/server.log' ) );
     }
@@ -182,7 +193,7 @@ class expVelocityPHPServer extends expVelocity
      *
      * @return array
      */
-    public function command()
+    public function command( $instance = 0 )
     {
         $arguments = array( $this->binary() );
         foreach ( (array)$this->setting( 'PHPSettings', 'IniOptions', array() ) as $option )
@@ -218,7 +229,7 @@ class expVelocityPHPServer extends expVelocity
     /**
      * @param string $option
      */
-    protected function control( $option )
+    protected function control( $option, $instance = 0 )
     {
         throw new LogicException( 'the php engine is controlled by signals' );
     }
