@@ -121,14 +121,17 @@ class eZBinaryFileType extends eZDataType
         else
             $binaryFiles = array( eZBinaryFile::fetch( $contentObjectAttributeID, $version ) );
 
-        foreach ( $binaryFiles as $binaryFile )
+        foreach ( (array)$binaryFiles as $binaryFile )
         {
             if ( $binaryFile == null )
                 continue;
             $mimeType =  $binaryFile->attribute( "mime_type" );
-            list( $prefix, $suffix ) = explode( '/', $mimeType );
-            $orig_dir = $storage_dir . '/original/' . $prefix;
+            $orig_dir = $storage_dir . '/original/' . eZBinaryFile::mimeGroup( $mimeType );
             $fileName = $binaryFile->attribute( "filename" );
+            // A stored name with a directory part is never moved: it would rename a
+            // file outside the storage directory
+            if ( !eZBinaryFile::isSafeFileName( $fileName ) )
+                continue;
 
             // Check if there are any other records in ezbinaryfile that point to that fileName.
             $binaryObjectsWithSameFileName = eZBinaryFile::fetchByFileName( $fileName );
@@ -136,7 +139,7 @@ class eZBinaryFileType extends eZDataType
             $filePath = $orig_dir . "/" . $fileName;
             $file = eZClusterFileHandler::instance( $filePath );
 
-            if ( $file->exists() and count( $binaryObjectsWithSameFileName ) <= 1 )
+            if ( $file->exists() and count( (array)$binaryObjectsWithSameFileName ) <= 1 )
             {
                 // create dest filename in the same manner as eZHTTPFile::store()
                 // grab file's suffix
@@ -172,12 +175,15 @@ class eZBinaryFileType extends eZDataType
             $binaryFiles = eZBinaryFile::fetch( $contentObjectAttributeID );
             eZBinaryFile::removeByID( $contentObjectAttributeID, null );
 
-            foreach ( $binaryFiles as  $binaryFile )
+            foreach ( (array)$binaryFiles as  $binaryFile )
             {
                 $mimeType =  $binaryFile->attribute( "mime_type" );
-                list( $prefix, $suffix ) = explode('/', $mimeType );
-                $orig_dir = $storage_dir . '/original/' . $prefix;
+                $orig_dir = $storage_dir . '/original/' . eZBinaryFile::mimeGroup( $mimeType );
                 $fileName = $binaryFile->attribute( "filename" );
+                // A stored name with a directory part ("../../settings/x") is never
+                // deleted: it is not a file this datatype stored
+                if ( !eZBinaryFile::isSafeFileName( $fileName ) )
+                    continue;
 
                 // Check if there are any other records in ezbinaryfile that point to that fileName.
                 $binaryObjectsWithSameFileName = eZBinaryFile::fetchByFileName( $fileName );
@@ -185,7 +191,7 @@ class eZBinaryFileType extends eZDataType
                 $filePath = $orig_dir . "/" . $fileName;
                 $file = eZClusterFileHandler::instance( $filePath );
 
-                if ( $file->exists() and count( $binaryObjectsWithSameFileName ) < 1 )
+                if ( $file->exists() and count( (array)$binaryObjectsWithSameFileName ) < 1 )
                     $file->delete();
             }
         }
@@ -196,20 +202,24 @@ class eZBinaryFileType extends eZDataType
             if ( $binaryFile != null )
             {
                 $mimeType =  $binaryFile->attribute( "mime_type" );
-                list( $prefix, $suffix ) = explode('/', $mimeType );
-                $orig_dir = $storage_dir . "/original/" . $prefix;
+                $orig_dir = $storage_dir . "/original/" . eZBinaryFile::mimeGroup( $mimeType );
                 $fileName = $binaryFile->attribute( "filename" );
 
                 eZBinaryFile::removeByID( $contentObjectAttributeID, $version );
 
-                // Check if there are any other records in ezbinaryfile that point to that fileName.
-                $binaryObjectsWithSameFileName = eZBinaryFile::fetchByFileName( $fileName );
+                // The row goes, but a stored name with a directory part is never
+                // deleted: it is not a file this datatype stored
+                if ( eZBinaryFile::isSafeFileName( $fileName ) )
+                {
+                    // Check if there are any other records in ezbinaryfile that point to that fileName.
+                    $binaryObjectsWithSameFileName = eZBinaryFile::fetchByFileName( $fileName );
 
-                $filePath = $orig_dir . "/" . $fileName;
-                $file = eZClusterFileHandler::instance( $filePath );
+                    $filePath = $orig_dir . "/" . $fileName;
+                    $file = eZClusterFileHandler::instance( $filePath );
 
-                if ( $file->exists() and count( $binaryObjectsWithSameFileName ) < 1 )
-                    $file->delete();
+                    if ( $file->exists() and count( (array)$binaryObjectsWithSameFileName ) < 1 )
+                        $file->delete();
+                }
             }
         }
     }
@@ -222,14 +232,19 @@ class eZBinaryFileType extends eZDataType
         $isFileUploadsEnabled = ini_get( 'file_uploads' ) != 0;
         if ( !$isFileUploadsEnabled )
         {
-            $isFileWarningAdded = $GLOBALS['eZBinaryFileTypeWarningAdded'];
-            if ( !isset( $isFileWarningAdded ) or
-                 !$isFileWarningAdded )
+            // The flag is unset until the first warning, reading it raised a warning
+            if ( empty( $GLOBALS['eZBinaryFileTypeWarningAdded'] ) )
             {
-                eZAppendWarningItem( array( 'error' => array( 'type' => 'kernel',
-                                                              'number' => eZError::KERNEL_NOT_AVAILABLE ),
-                                            'text' => ezpI18n::tr( 'kernel/classes/datatypes',
-                                                              'File uploading is not enabled. Please contact the site administrator to enable it.' ) ) );
+                $text = ezpI18n::tr( 'kernel/classes/datatypes',
+                                     'File uploading is not enabled. Please contact the site administrator to enable it.' );
+                // eZAppendWarningItem() is only loaded by the web front controller;
+                // a CLI import reaching this was a fatal "undefined function"
+                if ( function_exists( 'eZAppendWarningItem' ) )
+                    eZAppendWarningItem( array( 'error' => array( 'type' => 'kernel',
+                                                                  'number' => eZError::KERNEL_NOT_AVAILABLE ),
+                                                'text' => $text ) );
+                else
+                    eZDebug::writeWarning( $text, __METHOD__ );
                 $GLOBALS['eZBinaryFileTypeWarningAdded'] = true;
             }
         }
@@ -245,11 +260,24 @@ class eZBinaryFileType extends eZDataType
         $classAttribute = $contentObjectAttribute->contentClassAttribute();
         $mustUpload = false;
         $httpFileName = $base . "_data_binaryfilename_" . $contentObjectAttribute->attribute( "id" );
-        $maxSize = 1024 * 1024 * $classAttribute->attribute( self::MAX_FILESIZE_FIELD );
+        // The limit is a number of megabytes, 0 for none; an empty or broken class
+        // value is no limit instead of a non-numeric warning
+        $maxSize = 1024 * 1024 * max( 0, (int)$classAttribute->attribute( self::MAX_FILESIZE_FIELD ) );
 
         $contentObjectAttributeID = $contentObjectAttribute->attribute( 'id' );
         $version = $contentObjectAttribute->attribute( 'version' );
         $binary = eZBinaryFile::fetch( $contentObjectAttributeID, $version );
+        // A form that posts the file field as an array (name[]) is not an upload
+        // this datatype can take; it must not reach the validators as an array
+        if ( isset( $_FILES[$httpFileName] ) &&
+             ( !is_array( $_FILES[$httpFileName] ) ||
+               !is_string( $_FILES[$httpFileName]['tmp_name'] ?? '' ) || !is_string( $_FILES[$httpFileName]['name'] ?? '' ) ||
+               !is_scalar( $_FILES[$httpFileName]['error'] ?? null ) ) )
+        {
+            $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                 'A valid file is required.' ) );
+            return eZInputValidator::STATE_INVALID;
+        }
         $extensionsBlackList = implode(', ', $this->FileExtensionBlackListValidator->extensionsBlackList() );
         if ( $binary === null )
         {
@@ -269,9 +297,9 @@ class eZBinaryFileType extends eZDataType
             }
         }
 
-        if ( isset( $_FILES[$httpFileName] ) && $_FILES[$httpFileName]['tmp_name'] !== '')
+        if ( isset( $_FILES[$httpFileName] ) && ( $_FILES[$httpFileName]['tmp_name'] ?? '' ) !== '' )
         {
-            $state = $this->FileExtensionBlackListValidator->validate( $_FILES[$httpFileName]['name'] );
+            $state = $this->FileExtensionBlackListValidator->validate( $_FILES[$httpFileName]['name'] ?? '' );
             if ( $state === eZInputValidator::STATE_INVALID || $state === eZInputValidator::STATE_INTERMEDIATE )
             {
                 $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
@@ -281,22 +309,34 @@ class eZBinaryFileType extends eZDataType
         }
 
         $canFetchResult = eZHTTPFile::canFetch( $httpFileName, $maxSize );
-        if ( $mustUpload && $canFetchResult == eZHTTPFile::UPLOADEDFILE_DOES_NOT_EXIST )
+        if ( $mustUpload && $canFetchResult === eZHTTPFile::UPLOADEDFILE_DOES_NOT_EXIST )
         {
             $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                  'A valid file is required.' ) );
             return eZInputValidator::STATE_INVALID;
         }
-        if ( $canFetchResult == eZHTTPFile::UPLOADEDFILE_EXCEEDS_PHP_LIMIT )
+        if ( $canFetchResult === eZHTTPFile::UPLOADEDFILE_EXCEEDS_PHP_LIMIT )
         {
             $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                 'The size of the uploaded file exceeds the limit set by the upload_max_filesize directive in php.ini.' ) );
             return eZInputValidator::STATE_INVALID;
         }
-        if ( $canFetchResult == eZHTTPFile::UPLOADEDFILE_EXCEEDS_MAX_SIZE )
+        if ( $canFetchResult === eZHTTPFile::UPLOADEDFILE_EXCEEDS_MAX_SIZE )
         {
             $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                  'The size of the uploaded file exceeds the maximum upload size: %1 bytes.' ), $maxSize );
+            return eZInputValidator::STATE_INVALID;
+        }
+        // A partial upload, a missing temporary directory, a failed disk write or an
+        // upload stopped by a PHP extension used to be accepted here and then dropped
+        // without a word by fetchObjectAttributeHTTPInput(): the draft was saved
+        // without the file and the editor was not told
+        if ( $canFetchResult === eZHTTPFile::UPLOADEDFILE_MISSING_TMP_DIR ||
+             $canFetchResult === eZHTTPFile::UPLOADEDFILE_CANT_WRITE ||
+             $canFetchResult === eZHTTPFile::UPLOADEDFILE_UNKNOWN_ERROR )
+        {
+            $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                 'The file could not be uploaded. Please try again or contact the site administrator.' ) );
             return eZInputValidator::STATE_INVALID;
         }
         return eZInputValidator::STATE_ACCEPTED;
@@ -491,9 +531,16 @@ class eZBinaryFileType extends eZDataType
             $binary = eZBinaryFile::create( $attributeID, $objectVersion );
 
         $fileName = basename( $filePath );
+        // An import names a file that may not be there (a stale CSV, a typo): that
+        // is a failed import, not a copy() warning and an empty stored file
+        if ( !is_string( $filePath ) || $filePath === '' || !is_file( $filePath ) || !is_readable( $filePath ) )
+        {
+            eZDebug::writeError( "The file '$filePath' does not exist, cannot initialize file attribute with it", __METHOD__ );
+            return false;
+        }
         $mimeData = eZMimeType::findByFileContents( $filePath );
         $storageDir = eZSys::storageDirectory();
-        list( $group, $type ) = explode( '/', $mimeData['name'] );
+        $group = eZBinaryFile::mimeGroup( $mimeData['name'] ?? '' );
         $destination = $storageDir . '/original/' . $group;
 
         if ( !file_exists( $destination ) )
@@ -516,7 +563,11 @@ class eZBinaryFileType extends eZDataType
         $destFileName = md5( $fileBaseName . microtime() . mt_rand() ) . $fileSuffix;
         $destination = $destination . '/' . $destFileName;
 
-        copy( $filePath, $destination );
+        if ( !copy( $filePath, $destination ) )
+        {
+            eZDebug::writeError( "Failed to copy '$filePath' to '$destination'", __METHOD__ );
+            return false;
+        }
 
         $fileHandler = eZClusterFileHandler::instance();
         $fileHandler->fileStore( $destination, 'binaryfile', true, $mimeData['name'] );
@@ -566,8 +617,9 @@ class eZBinaryFileType extends eZDataType
         $binaryFile = eZBinaryFile::fetch( $objectAttribute->attribute( "id" ),
                                             $objectAttribute->attribute( "version" ) );
 
-        $contentObjectAttributeID = $objectAttribute->attribute( 'id' );
-        $version =  $objectAttribute->attribute( "version" );
+        // Both go into SQL unquoted: numbers only
+        $contentObjectAttributeID = (int)$objectAttribute->attribute( 'id' );
+        $version =  (int)$objectAttribute->attribute( "version" );
 
         if ( $binaryFile )
         {
@@ -596,6 +648,10 @@ class eZBinaryFileType extends eZDataType
         if ( $http->hasPostVariable( $filesizeName ) )
         {
             $filesizeValue = $http->postVariable( $filesizeName );
+            // The field is an integer number of megabytes: an array, text or a
+            // negative number from a crafted form is stored as 0 (no limit set)
+            $filesizeValue = is_scalar( $filesizeValue ) && is_numeric( trim( (string)$filesizeValue ) )
+                             ? max( 0, (int)trim( (string)$filesizeValue ) ) : 0;
             $classAttribute->setAttribute( self::MAX_FILESIZE_FIELD, $filesizeValue );
         }
     }
@@ -663,10 +719,13 @@ class eZBinaryFileType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $sizeNode = $attributeParametersNode->getElementsByTagName( 'max-size' )->item( 0 );
-        $maxSize = $sizeNode->textContent;
-        $unitSize = $sizeNode->getAttribute( 'unit-size' );
-        $classAttribute->setAttribute( self::MAX_FILESIZE_FIELD, $maxSize );
+        // A package written without the element (or by hand) has no limit rather
+        // than a fatal error on a null node
+        $sizeNode = $attributeParametersNode ? $attributeParametersNode->getElementsByTagName( 'max-size' )->item( 0 ) : null;
+        if ( !$sizeNode )
+            return;
+        $maxSize = trim( $sizeNode->textContent );
+        $classAttribute->setAttribute( self::MAX_FILESIZE_FIELD, is_numeric( $maxSize ) ? max( 0, (int)$maxSize ) : 0 );
     }
 
     /*!
@@ -692,13 +751,30 @@ class eZBinaryFileType extends eZDataType
         if( !$string )
             return true;
 
+        // toString() writes "filepath|original_filename"; the whole string used to be
+        // taken as the path, so an exported value could never be imported again.
+        // A path without "|" is read as before.
+        $parts = explode( '|', (string)$string, 2 );
+        $filePath = $parts[0];
+        $originalFileName = isset( $parts[1] ) ? $parts[1] : '';
+
         $result = array();
-        return $this->insertRegularFile( $objectAttribute->attribute( 'object' ),
-                                         $objectAttribute->attribute( 'version' ),
-                                         $objectAttribute->attribute( 'language_code' ),
-                                         $objectAttribute,
-                                         $string,
-                                         $result );
+        $stored = $this->insertRegularFile( $objectAttribute->attribute( 'object' ),
+                                            $objectAttribute->attribute( 'version' ),
+                                            $objectAttribute->attribute( 'language_code' ),
+                                            $objectAttribute,
+                                            $filePath,
+                                            $result );
+        if ( $stored && $originalFileName !== '' )
+        {
+            $binary = $objectAttribute->content();
+            if ( $binary instanceof eZBinaryFile )
+            {
+                $binary->setAttribute( 'original_filename', $originalFileName );
+                $binary->store();
+            }
+        }
+        return $stored;
     }
 
     function serializeContentObjectAttribute( $package, $objectAttribute )
@@ -744,7 +820,9 @@ class eZBinaryFileType extends eZDataType
 
         $ini = eZINI::instance();
         $mimeType = $fileNode->getAttribute( 'mime-type' );
-        list( $mimeTypeCategory, $mimeTypeName ) = explode( '/', $mimeType );
+        // The package decides the directory through the mime type: "../x" must not
+        // make the copy land outside var/storage/original
+        $mimeTypeCategory = eZBinaryFile::mimeGroup( $mimeType );
         $destinationPath = eZSys::storageDirectory() . '/original/' . $mimeTypeCategory . '/';
         if ( !file_exists( $destinationPath ) )
         {
@@ -757,10 +835,12 @@ class eZBinaryFileType extends eZDataType
             umask( $oldumask );
         }
 
-        $basename = basename( $fileNode->getAttribute( 'filename' ) );
-        while ( file_exists( $destinationPath . $basename ) )
+        // basename() alone keeps a backslash path or "..": the stored name must be one
+        // that the delete code will later accept
+        $basename = eZBinaryFile::safeFileName( $fileNode->getAttribute( 'filename' ) );
+        while ( $basename === '' || file_exists( $destinationPath . $basename ) )
         {
-            $basename = substr( md5( mt_rand() ), 0, 8 ) . '.' . eZFile::suffix( $fileNode->getAttribute( 'filename' ) );
+            $basename = substr( md5( mt_rand() ), 0, 8 ) . '.' . eZFile::suffix( eZBinaryFile::safeFileName( $fileNode->getAttribute( 'filename' ) ) );
         }
 
         eZFileHandler::copy( $sourcePath, $destinationPath . $basename );

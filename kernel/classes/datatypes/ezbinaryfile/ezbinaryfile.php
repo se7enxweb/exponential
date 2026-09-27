@@ -67,7 +67,8 @@ class eZBinaryFile extends eZPersistentObject
         if ( $file->exists() )
         {
             $stat = $file->stat();
-            return $stat['size'];
+            // stat() gives false when the file vanished between the two calls
+            return is_array( $stat ) && isset( $stat['size'] ) ? $stat['size'] : 0;
         }
 
         return 0;
@@ -87,8 +88,55 @@ class eZBinaryFile extends eZPersistentObject
 
     function mimeTypePart()
     {
-        $types = explode( '/', $this->attribute( 'mime_type' ) );
-        return $types[1];
+        // A mime type without a slash (empty, broken or imported data) has no part
+        $types = explode( '/', (string)$this->attribute( 'mime_type' ) );
+        return $types[1] ?? '';
+    }
+
+    /*!
+     \static
+     \return the group of \a $mimeType ("application" of "application/pdf") as a
+     directory name that stays inside var/storage/original, '' when there is none.
+     The mime type comes from the database or a package and is data, not a path:
+     a group of ".." or with a backslash or control character would otherwise walk
+     the file path of a delete or a download out of the storage directory.
+    */
+    static function mimeGroup( $mimeType )
+    {
+        if ( !is_string( $mimeType ) || $mimeType === '' )
+            return '';
+        $parts = explode( '/', $mimeType, 2 );
+        $group = $parts[0];
+        if ( $group === '.' || $group === '..' || preg_match( '/[\\\\\x00-\x1f]/', $group ) )
+            return '';
+        return $group;
+    }
+
+    /*!
+     \static
+     \return true when \a $fileName is a plain file name that can be joined to a
+     storage directory: not empty, no directory part, not "." or "..", no NUL.
+     Every name this datatype stores is one (md5 + suffix); anything else came from
+     a broken row or a crafted package and must not be used to reach a file.
+    */
+    static function isSafeFileName( $fileName )
+    {
+        return is_string( $fileName ) && $fileName !== '' && $fileName !== '.' && $fileName !== '..'
+            && strpbrk( $fileName, "/\\\0" ) === false;
+    }
+
+    /*!
+     \static
+     \return \a $fileName reduced to its last path part, so that a stored name with
+     a directory part cannot point a download or a package export outside the storage
+     directory. A safe name (all names this datatype writes) is returned unchanged.
+    */
+    static function safeFileName( $fileName )
+    {
+        if ( eZBinaryFile::isSafeFileName( $fileName ) )
+            return $fileName;
+        $name = basename( str_replace( array( '\\', "\0" ), '/', (string)$fileName ) );
+        return ( $name === '.' || $name === '..' ) ? '' : $name;
     }
 
     static function create( $contentObjectAttributeID, $version )
@@ -220,8 +268,9 @@ class eZBinaryFile extends eZPersistentObject
         $mimeType = $this->attribute( 'mime_type' );
         $originalFileName = $this->attribute( 'original_filename' );
         $storageDir = eZSys::storageDirectory();
-        list( $group, $type ) = explode( '/', $mimeType );
-        $filePath = $storageDir . '/original/' . $group . '/' . $fileName;
+        // Neither part of the path is trusted to stay inside the storage directory
+        $group = eZBinaryFile::mimeGroup( $mimeType );
+        $filePath = $storageDir . '/original/' . $group . '/' . eZBinaryFile::safeFileName( $fileName );
         return array( 'filename' => $fileName,
                       'original_filename' => $originalFileName,
                       'filepath' => $filePath,
