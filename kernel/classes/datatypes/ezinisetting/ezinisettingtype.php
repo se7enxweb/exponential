@@ -52,6 +52,18 @@ class eZIniSettingType extends eZDataType
             $iniFile = eZIniSettingType::iniFile( $contentClassAttribute );
             $iniSection = eZIniSettingType::iniSection( $contentClassAttribute );
             $iniParameterName = eZIniSettingType::iniParameterName( $contentClassAttribute );
+            $value = $http->postVariable( $base . '_ini_setting_' . $contentObjectAttribute->attribute( 'id' ) );
+
+            // The class names the file the value is written to on publish. A name
+            // with a directory part would point outside the settings tree.
+            if ( !eZIniSettingType::isValidIniFileName( $iniFile ) ||
+                 !eZIniSettingType::isValidIniName( $iniSection ) ||
+                 !eZIniSettingType::isValidIniName( $iniParameterName ) )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                     'Could not locate the ini file.' ) );
+                return eZInputValidator::STATE_INVALID;
+            }
 
             $config = eZINI::instance( $iniFile );
             if ( $config == null )
@@ -61,19 +73,143 @@ class eZIniSettingType extends eZDataType
                 return eZInputValidator::STATE_INVALID;
             }
 
-            if ( $contentClassAttribute->attribute( self::CLASS_TYPE_FIELD ) == self::CLASS_TYPE_ARRAY )
+            // The value is written verbatim into an INI file: a line break would
+            // start a setting or a section of the editor's choosing, and "*/"
+            // would end the PHP comment that wraps an .ini.append.php file.
+            $type = (int)$contentClassAttribute->attribute( self::CLASS_TYPE_FIELD );
+            if ( $type == self::CLASS_TYPE_ARRAY )
             {
-                $iniArray = array();
-   //             if ( eZIniSettingType::parseArrayInput( $contentObjectAttribute->attribute( 'data_text' ), $iniArray ) === false )
-                if ( eZIniSettingType::parseArrayInput( $http->postVariable( $base . '_ini_setting_' . $contentObjectAttribute->attribute( 'id' ) ), $iniArray ) === false )
+                if ( !eZIniSettingType::isValidIniArrayText( $value ) )
                 {
                     $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes', 'Wrong text field value.' ) );
 
                     return eZInputValidator::STATE_INVALID;
                 }
             }
+            // (trimmed, as fetchObjectAttributeHTTPInput stores it)
+            else if ( !is_string( $value ) ||
+                      !eZIniSettingType::isValidIniValue( trim( $value ) ) ||
+                      !eZIniSettingType::isValidTypedValue( $type, trim( $value ) ) )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes', 'Wrong text field value.' ) );
+
+                return eZInputValidator::STATE_INVALID;
+            }
         }
         return eZInputValidator::STATE_ACCEPTED;
+    }
+
+    /*!
+     \static
+     \return true if \a $fileName is a bare INI file name. It is appended to a
+     settings directory to build the path of the file that is read and written,
+     so a directory part ("../", "/") would reach outside the settings tree.
+    */
+    static function isValidIniFileName( $fileName )
+    {
+        return is_string( $fileName ) &&
+               preg_match( '/^[A-Za-z0-9_][A-Za-z0-9_.-]*$/', $fileName ) &&
+               strpos( $fileName, '..' ) === false;
+    }
+
+    /*!
+     \static
+     \return true if \a $name can be written as an INI section or setting name:
+     no line break (it would start a line of its own), no brackets or "=" (they
+     delimit sections, array keys and values) and no "*" "/" (it would close the
+     PHP comment an .ini.append.php file is wrapped in).
+    */
+    static function isValidIniName( $name )
+    {
+        return is_string( $name ) && trim( $name ) !== '' &&
+               !preg_match( '/[\x00-\x1f\x7f\[\]=]|\*\//', $name );
+    }
+
+    /*!
+     \static
+     \return true if \a $value can be written as the value of an INI setting,
+     that is it stays on one line and cannot close the PHP comment. Tabs are
+     kept, they are ordinary value content.
+    */
+    static function isValidIniValue( $value )
+    {
+        return is_string( $value ) &&
+               !preg_match( '/[\x00-\x08\x0a-\x1f]|\*\//', $value );
+    }
+
+    /*!
+     \static
+     \return true if \a $text, the array form "key=value" per line, parses and
+     every key and value in it can be written to an INI file.
+    */
+    static function isValidIniArrayText( $text )
+    {
+        if ( !is_string( $text ) )
+            return false;
+        $iniArray = array();
+        if ( eZIniSettingType::parseArrayInput( $text, $iniArray ) === false )
+            return false;
+        foreach ( $iniArray as $key => $value )
+        {
+            if ( !is_int( $key ) && !eZIniSettingType::isValidIniName( $key ) )
+                return false;
+            if ( !eZIniSettingType::isValidIniValue( (string)$value ) )
+                return false;
+        }
+        return true;
+    }
+
+    /*!
+     \static
+     \return true if \a $value fits the setting type the class gives: the two
+     boolean types only have the values their select box offers, the numeric
+     types a number. An empty value is allowed, as before.
+    */
+    static function isValidTypedValue( $type, $value )
+    {
+        if ( !is_string( $value ) || $value === '' )
+            return is_string( $value );
+        switch ( (int)$type )
+        {
+            case 2: return $value === 'enabled' || $value === 'disabled';
+            case 3: return $value === 'true' || $value === 'false';
+            case 4: return preg_match( '/^[-+]?\d+$/', $value ) === 1;
+            case 5: return is_numeric( $value );
+        }
+        return true;
+    }
+
+    /*!
+     \static
+     \return the settings directory ini instance \a $iniInstance stands for, or
+     false if it names none. -1 is the base settings directory (only when
+     \a $allowBase is set: it is read, never written), 0 and an empty entry the
+     override directory (PHP 8 no longer takes '' == 0, which used to point the
+     path at settings/siteaccess/ itself), anything else a site access of
+     \a $siteAccessArray by its index.
+    */
+    static function iniInstancePath( $iniInstance, $siteAccessArray, $allowBase = false )
+    {
+        if ( is_int( $iniInstance ) )
+            $index = $iniInstance;
+        else if ( is_string( $iniInstance ) && trim( $iniInstance ) === '' )
+            $index = 0;
+        else if ( is_string( $iniInstance ) && preg_match( '/^-?\d+$/', trim( $iniInstance ) ) )
+            $index = (int)trim( $iniInstance );
+        else
+            return false;
+
+        if ( $index == -1 )
+            return $allowBase ? 'settings' : false;
+        if ( $index == 0 )
+            return 'settings/override';
+        if ( $index < 0 || !isset( $siteAccessArray[$index] ) )
+            return false;
+        $siteAccess = trim( $siteAccessArray[$index] );
+        // The site access name becomes a directory name
+        if ( !eZIniSettingType::isValidIniFileName( $siteAccess ) )
+            return false;
+        return 'settings/siteaccess/' . $siteAccess;
     }
 
     function validateClassAttributeHTTPInput( $http, $base, $classAttribute )
@@ -91,6 +227,35 @@ class eZIniSettingType extends eZDataType
         {
             $iniFile = $http->postVariable( $fileParam );
             $iniSection = $http->postVariable( $sectionParam );
+            $iniParameter = $http->postVariable( $parameterParam );
+            $type = $http->postVariable( $typeParam );
+
+            // These name the file, section and setting every published object
+            // writes to, so they must not reach outside the settings tree or
+            // break out of the line they are written on
+            if ( !eZIniSettingType::isValidIniFileName( $iniFile ) ||
+                 !eZIniSettingType::isValidIniName( $iniSection ) ||
+                 !eZIniSettingType::isValidIniName( $iniParameter ) ||
+                 !is_string( $type ) || !preg_match( '/^[1-6]$/', $type ) )
+            {
+                return eZInputValidator::STATE_INVALID;
+            }
+
+            // Every selected location must be one of the list the edit form
+            // offers (override plus the available site accesses)
+            if ( $http->hasPostVariable( $iniInstanceParam ) )
+            {
+                $iniInstanceArray = $http->postVariable( $iniInstanceParam );
+                if ( !is_array( $iniInstanceArray ) )
+                    $iniInstanceArray = explode( ';', (string)( is_scalar( $iniInstanceArray ) ? $iniInstanceArray : 'x' ) );
+                $siteAccessArray = array_merge( array( 'override' ),
+                                                eZINI::instance( 'site.ini' )->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) );
+                foreach ( $iniInstanceArray as $iniInstance )
+                {
+                    if ( !is_string( $iniInstance ) || eZIniSettingType::iniInstancePath( $iniInstance, $siteAccessArray ) === false )
+                        return eZInputValidator::STATE_INVALID;
+                }
+            }
 
             $config = eZINI::instance( $iniFile );
             if ( $config == null )
@@ -105,12 +270,14 @@ class eZIniSettingType extends eZDataType
             return eZInputValidator::STATE_ACCEPTED;
         }
 
+        // json_encode: a missing variable is null and a posted one may be an
+        // array, neither of which concatenates into a string cleanly
         eZDebug::writeNotice( 'Could not validate parameters: ' . "\n" .
-                              $fileParam . ': ' .  $http->postVariable( $fileParam ) . "\n" .
-                              $sectionParam . ': ' .  $http->postVariable( $sectionParam ) . "\n" .
-                              $parameterParam . ': ' .  $http->postVariable( $parameterParam ) . "\n" .
-                              $typeParam . ': ' .  $http->postVariable( $typeParam ). "\n" .
-                              $iniInstanceParam. ': '. $http->postVariable( $iniInstanceParam ), 'eZIniSettingType::validateClassAttributeHTTPInput',
+                              $fileParam . ': ' .  json_encode( $http->postVariable( $fileParam ) ) . "\n" .
+                              $sectionParam . ': ' .  json_encode( $http->postVariable( $sectionParam ) ) . "\n" .
+                              $parameterParam . ': ' .  json_encode( $http->postVariable( $parameterParam ) ) . "\n" .
+                              $typeParam . ': ' .  json_encode( $http->postVariable( $typeParam ) ). "\n" .
+                              $iniInstanceParam. ': '. json_encode( $http->postVariable( $iniInstanceParam ) ), 'eZIniSettingType::validateClassAttributeHTTPInput',
                               'eZIniSettingType::validateClassAttributeHTTPInput' );
         return eZInputValidator::STATE_INVALID;
     }
@@ -135,7 +302,13 @@ class eZIniSettingType extends eZDataType
             $section = $contentClassAttribute->attribute( self::CLASS_SECTION_FIELD );
             $parameter = $contentClassAttribute->attribute( self::CLASS_PARAMETER_FIELD );
 
-            if ( ! in_array( 0, $iniInstanceArray ) )  /* Makes sure it check 'settings' and 'settings/override' last */
+            // A broken class definition names no file that can be read
+            if ( !eZIniSettingType::isValidIniFileName( $filename ) ||
+                 !eZIniSettingType::isValidIniName( $section ) ||
+                 !eZIniSettingType::isValidIniName( $parameter ) )
+                return;
+
+            if ( ! in_array( 'settings/override', array_map( function ( $i ) use ( $siteAccessArray ) { return eZIniSettingType::iniInstancePath( $i, $siteAccessArray ); }, $iniInstanceArray ), true ) )  /* Makes sure it check 'settings' and 'settings/override' last */
                 array_unshift( $iniInstanceArray,  0 );
             array_unshift( $iniInstanceArray, -1 );
 
@@ -143,12 +316,9 @@ class eZIniSettingType extends eZDataType
 
             foreach ( $iniInstanceArray as $iniInstance )
             {
-                if ( $iniInstance == -1 )
-                    $path = 'settings';
-                else if ( $iniInstance == 0 )
-                    $path = 'settings/override';
-                else
-                    $path = 'settings/siteaccess/' . $siteAccessArray[$iniInstance];
+                $path = eZIniSettingType::iniInstancePath( $iniInstance, $siteAccessArray, true );
+                if ( $path === false )
+                    continue;
 
                 if ( !eZINI::parameterSet( $filename, $path, $section, $parameter ) )
                     continue;
@@ -208,20 +378,26 @@ class eZIniSettingType extends eZDataType
             $parameter = $http->postVariable( $paramParam );
             $type = $http->postVariable( $typeParam );
 
+            // Only plain strings are stored; a nested array or anything else
+            // from a forged form would otherwise fail to convert
+            foreach ( array( 'file', 'section', 'parameter', 'type' ) as $name )
+            {
+                if ( !is_string( $$name ) )
+                    $$name = '';
+            }
+
             $iniInstanceArray = $http->hasPostVariable( $iniInstanceParam ) ? $http->postVariable( $iniInstanceParam ) : [];
             if ( is_array( $iniInstanceArray ) )
             {
-                $iniInstance = '';
-                foreach ( $iniInstanceArray as $idx => $instance )
-                {
-                    if ( $idx > 0 )
-                        $iniInstance .= ';';
-                    $iniInstance .= $instance;
-                }
+                // Locations are indexes into the site access list: anything
+                // else cannot name one and is left out
+                $iniInstance = implode( ';', array_filter( $iniInstanceArray, function ( $instance ) {
+                    return is_string( $instance ) && preg_match( '/^\d+$/', $instance );
+                } ) );
             }
             else
             {
-                $iniInstance = $iniInstanceArray;
+                $iniInstance = is_string( $iniInstanceArray ) ? $iniInstanceArray : '';
             }
 
             eZIniSettingType::setSiteAccessList( $classAttribute );
@@ -241,6 +417,9 @@ class eZIniSettingType extends eZDataType
         if ( $http->hasPostVariable( $base . '_ini_setting_' . $contentObjectAttribute->attribute( "id" ) ) )
         {
             $data = $http->postVariable( $base . '_ini_setting_' . $contentObjectAttribute->attribute( "id" ) );
+            // A forged array cannot be a setting value (validation rejects it)
+            if ( !is_string( $data ) )
+                return false;
             $contentObjectAttribute->setAttribute( 'data_text', trim( $data ) );
             if ( $http->hasPostVariable( $base . '_ini_setting_make_empty_array_' . $contentObjectAttribute->attribute( "id" ) ) )
             {
@@ -267,13 +446,36 @@ class eZIniSettingType extends eZDataType
         $siteAccessArray = explode( ';', $contentClassAttribute->attribute( self::SITE_ACCESS_LIST_FIELD ) );
         $filename = $contentClassAttribute->attribute( self::CLASS_FILE_FIELD );
         $makeEmptyArray = $contentObjectAttribute->attribute( 'data_int' );
+        $isArray = $contentClassAttribute->attribute( self::CLASS_TYPE_FIELD ) == self::CLASS_TYPE_ARRAY;
+        $value = $contentObjectAttribute->attribute( 'data_text' );
 
-        foreach ( $iniInstanceArray as $iniInstance )
+        // This is the one place that writes to disk, so everything that goes
+        // into the file is checked here again: the value may come from a
+        // package or a string import that never passed HTTP validation, and the
+        // class definition from a package or an older installation.
+        if ( !eZIniSettingType::isValidIniFileName( $filename ) ||
+             !eZIniSettingType::isValidIniName( $section ) ||
+             !eZIniSettingType::isValidIniName( $parameter ) )
         {
-            if ( $iniInstance == 0 )
-                $path = 'settings/override';
-            else
-                $path = 'settings/siteaccess/' . $siteAccessArray[$iniInstance];
+            eZDebug::writeError( 'Refusing to write the ini setting of class attribute ' . $contentClassAttribute->attribute( 'id' ) .
+                                 ': the file, section or setting name is not valid', __METHOD__ );
+            return;
+        }
+        if ( $value !== null && $value !== '' &&
+             !( $isArray ? eZIniSettingType::isValidIniArrayText( (string)$value ) : eZIniSettingType::isValidIniValue( (string)$value ) ) )
+        {
+            eZDebug::writeError( "Refusing to write $filename [$section] $parameter: the value holds a line break or a comment end", __METHOD__ );
+            return;
+        }
+
+        foreach ( array_unique( $iniInstanceArray ) as $iniInstance )
+        {
+            $path = eZIniSettingType::iniInstancePath( $iniInstance, $siteAccessArray );
+            if ( $path === false )
+            {
+                eZDebug::writeError( "Skipping ini location '$iniInstance': it names no known site access", __METHOD__ );
+                continue;
+            }
 
             $config = new eZINI( $filename . '.append', $path, null, false, null, true, true );
 
@@ -316,8 +518,14 @@ class eZIniSettingType extends eZDataType
 
      \return true if parsed successfully, false if illegal syntax
     */
-    function parseArrayInput( $inputText, &$outputArray, $makeEmptyArray = false )
+    static function parseArrayInput( $inputText, &$outputArray, $makeEmptyArray = false )
     {
+        // Static: the validation helpers call it without an instance. A stored
+        // value may be null (a new attribute), which is no input at all.
+        if ( $inputText === null )
+            $inputText = '';
+        if ( !is_string( $inputText ) )
+            return false;
         $lineArray = explode( "\n", $inputText );
 
         if( $makeEmptyArray )
@@ -366,12 +574,16 @@ class eZIniSettingType extends eZDataType
         $modified = array();
 
         $contentObject = $contentObjectAttribute->attribute( 'object' );
+        // A broken class definition names no file to compare with
+        if ( !eZIniSettingType::isValidIniFileName( $filename ) ||
+             !eZIniSettingType::isValidIniName( $section ) ||
+             !eZIniSettingType::isValidIniName( $parameter ) )
+            $iniInstanceArray = array();
         foreach ( $iniInstanceArray as $iniInstance )
         {
-            if ( $iniInstance == 0 )
-                $path = 'settings/override';
-            else
-                $path = 'settings/siteaccess/' . $siteAccessArray[$iniInstance];
+            $path = eZIniSettingType::iniInstancePath( $iniInstance, $siteAccessArray );
+            if ( $path === false )
+                continue;
 
             if ( !eZINI::parameterSet( $filename, $path, $section, $parameter ) )
                 continue;
@@ -385,7 +597,8 @@ class eZIniSettingType extends eZDataType
                 $existingIniArray = $config->variable( $section, $parameter );
                 foreach ( array_keys( $existingIniArray ) as $key )
                 {
-                    if ( !is_int( $key ) && $existingIniArray[$key] != $objectIniArray[$key] )
+                    // A key the object value does not have differs from the file too
+                    if ( !is_int( $key ) && $existingIniArray[$key] != ( $objectIniArray[$key] ?? null ) )
                     {
                         $modified[] = array( 'ini_value' => $parameter . '[' . $key . ']=' . $existingIniArray[$key],
                                              'file' => $path . '/' . $filename );
@@ -450,55 +663,56 @@ class eZIniSettingType extends eZDataType
     */
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $file = $attributeParametersNode->getElementsByTagName( 'file' )->item( 0 )->textContent;
-        $section = $attributeParametersNode->getElementsByTagName( 'section' )->item( 0 )->textContent;
-        $parameter = $attributeParametersNode->getElementsByTagName( 'parameter' )->item( 0 )->textContent;
-        $type = $attributeParametersNode->getElementsByTagName( 'type' )->item( 0 )->textContent;
+        // A package from another version may leave any of these out
+        $text = function ( $name ) use ( $attributeParametersNode ) {
+            $node = $attributeParametersNode->getElementsByTagName( $name )->item( 0 );
+            return $node ? $node->textContent : '';
+        };
+        $file = $text( 'file' );
+        $section = $text( 'section' );
+        $parameter = $text( 'parameter' );
+        $type = $text( 'type' );
 
         $classAttribute->setAttribute( self::CLASS_FILE_FIELD, $file );
         $classAttribute->setAttribute( self::CLASS_SECTION_FIELD, $section );
         $classAttribute->setAttribute( self::CLASS_PARAMETER_FIELD, $parameter );
-        $classAttribute->setAttribute( self::CLASS_TYPE_FIELD, $type );
+        $classAttribute->setAttribute( self::CLASS_TYPE_FIELD, (int)$type );
 
 
         /* Get and check if site access settings exist in this setup */
-        $remoteIniInstanceList = $attributeParametersNode->getElementsByTagName( 'ini_instance' )->item( 0 )->textContent;
-        $remoteSiteAccessList = $attributeParametersNode->getElementsByTagName( 'site_access_list' )->item( 0 )->textContent;
+        $remoteIniInstanceList = $text( 'ini_instance' );
+        $remoteSiteAccessList = $text( 'site_access_list' );
         $remoteIniInstanceArray = explode( ';', $remoteIniInstanceList );
         $remoteSiteAccessArray = explode( ';', $remoteSiteAccessList );
 
         $config = eZINI::instance( 'site.ini' );
         $localSiteAccessArray = array_merge( array( 'override' ), $config->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) );
 
+        // Each remote location that is a site access of this installation too
+        // is mapped to that site access' index here. (This used to append the
+        // array of matching keys to the site access list instead, which stored
+        // "Array" as a site access name and never kept a location.)
         $localIniInstanceArray = array();
         foreach ( $remoteIniInstanceArray as $remoteIniInstance )
         {
-            if ( isset( $remoteSiteAccessArray[$remoteIniInstance] ) and in_array( $remoteSiteAccessArray[$remoteIniInstance], $localSiteAccessArray ) )
+            if ( !preg_match( '/^\d+$/', trim( $remoteIniInstance ) ) )
+                continue;
+            $remoteIniInstance = (int)trim( $remoteIniInstance );
+            if ( isset( $remoteSiteAccessArray[$remoteIniInstance] ) )
             {
-                $localSiteAccessArray[] = array_keys( $localSiteAccessArray, $remoteSiteAccessArray[$remoteIniInstance] );
+                $localIndex = array_search( $remoteSiteAccessArray[$remoteIniInstance], $localSiteAccessArray, true );
+                if ( $localIndex !== false && !in_array( $localIndex, $localIniInstanceArray, true ) )
+                    $localIniInstanceArray[] = $localIndex;
             }
         }
 
-        if ( count( $localSiteAccessArray ) == 0 )
+        if ( count( $localIniInstanceArray ) == 0 )
         {
             $localIniInstanceArray = array( 0 );
         }
 
-        $iniInstance = '';
-        foreach( $localIniInstanceArray as $idx => $localIniInstance )
-        {
-            if ( $idx > 0 )
-                $iniInstance .= ';';
-            $iniInstance .= $localIniInstance;
-        }
-
-        $siteAccess = '';
-        foreach( $localSiteAccessArray as $idx => $localSiteAccess )
-        {
-            if ( $idx > 0 )
-                $siteAccess .= ';';
-            $siteAccess .= $localSiteAccess;
-        }
+        $iniInstance = implode( ';', $localIniInstanceArray );
+        $siteAccess = implode( ';', $localSiteAccessArray );
 
         $classAttribute->setAttribute( self::CLASS_INI_INSTANCE_FIELD, $iniInstance );
         $classAttribute->setAttribute( self::SITE_ACCESS_LIST_FIELD, $siteAccess );
@@ -570,11 +784,20 @@ class eZIniSettingType extends eZDataType
     {
         if ( $string == '' )
             return true;
-        $iniData = explode( '|', $string );
-
-        $contentObjectAttribute->setAttribute( 'data_text', $iniData[0] );
-        if ( isset ( $iniData[1] ) )
-            $contentObjectAttribute->setAttribute( 'data_int', $iniData[1] );
+        // toString() writes "value|flag" and a value may hold "|" itself (a
+        // regular expression, a list), so the flag is what follows the LAST
+        // "|", and only when it is a number; otherwise it all is the value.
+        $separatorPos = strrpos( $string, '|' );
+        $flag = $separatorPos === false ? false : substr( $string, $separatorPos + 1 );
+        if ( $flag !== false && ( $flag === '' || ctype_digit( $flag ) ) )
+        {
+            $contentObjectAttribute->setAttribute( 'data_text', substr( $string, 0, $separatorPos ) );
+            $contentObjectAttribute->setAttribute( 'data_int', (int)$flag );
+        }
+        else
+        {
+            $contentObjectAttribute->setAttribute( 'data_text', $string );
+        }
         return true;
     }
 
@@ -587,10 +810,11 @@ class eZIniSettingType extends eZDataType
         $dom = $node->ownerDocument;
 
         $makeEmptyArrayNode = $dom->createElement( 'make_empty_array' );
-        $makeEmptyArrayNode->appendChild( $dom->createTextNode( $makeEmptyArray ) );
+        // (string): a new attribute has null in both fields
+        $makeEmptyArrayNode->appendChild( $dom->createTextNode( (string)$makeEmptyArray ) );
         $node->appendChild( $makeEmptyArrayNode );
         $valueNode = $dom->createElement( 'value' );
-        $valueNode->appendChild( $dom->createTextNode( $value ) );
+        $valueNode->appendChild( $dom->createTextNode( (string)$value ) );
         $node->appendChild( $valueNode );
 
         return $node;
@@ -598,14 +822,11 @@ class eZIniSettingType extends eZDataType
 
     function unserializeContentObjectAttribute( $package, $objectAttribute, $attributeNode )
     {
-        $makeEmptyArray = $attributeNode->getElementsByTagName( 'make_empty_array' )->item( 0 )->textContent;
-        $value = $attributeNode->getElementsByTagName( 'value' )->item( 0 )->textContent;
-
-        if ( $makeEmptyArray === false )
-            $makeEmptyArray = 0;
-
-        if ( $value === false )
-            $value = '';
+        // Either element may be missing: item( 0 ) is then null, not a node
+        $makeEmptyArrayNode = $attributeNode->getElementsByTagName( 'make_empty_array' )->item( 0 );
+        $valueNode = $attributeNode->getElementsByTagName( 'value' )->item( 0 );
+        $makeEmptyArray = $makeEmptyArrayNode ? (int)$makeEmptyArrayNode->textContent : 0;
+        $value = $valueNode ? $valueNode->textContent : '';
 
         $objectAttribute->setAttribute( 'data_int', $makeEmptyArray );
         $objectAttribute->setAttribute( 'data_text', $value );
