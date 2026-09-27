@@ -8,7 +8,7 @@
 /*
  Setup > Maintenance: take the site offline for a maintenance window and back,
  the same as bin/php/maintenance.php on|off. The administration stays reachable
- while it is on (and so does the address it was switched on from), or the page
+ while it is on (and, when ticked, the address it was switched on from), or the page
  that switches it off again could not be reached.
 */
 
@@ -27,7 +27,11 @@ if ( $module->isCurrentAction( 'SwitchOn' ) )
     foreach ( preg_split( '/[\s,]+/', (string)$http->postVariable( 'MaintenanceAllowIPs', '' ) ) as $ip )
         if ( filter_var( $ip, FILTER_VALIDATE_IP ) )
             $ips[] = $ip;
-    $ips[] = eZSys::clientIP();
+    // Only when asked for: switched on here, the public site must show the
+    // maintenance page to the one who switched it on too, or it looks as if
+    // nothing happened. /admin stays reachable either way.
+    if ( $http->hasPostVariable( 'MaintenanceAllowMe' ) )
+        $ips[] = eZSys::clientIP();
     $ok = expMaintenance::enable( $root, array(
         'reason' => 'manual',
         'message' => trim( mb_substr( (string)$http->postVariable( 'MaintenanceMessage', '' ), 0, 500 ) ),

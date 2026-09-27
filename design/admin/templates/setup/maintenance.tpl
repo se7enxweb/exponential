@@ -30,8 +30,10 @@
     <input class="box" type="text" id="MaintenanceMessage" name="MaintenanceMessage" maxlength="500" value="" />
     <label for="MaintenanceMinutes">{'Expected duration in minutes (optional)'|i18n( 'design/admin/setup/maintenance' )}</label>
     <input class="halfbox" type="number" min="0" id="MaintenanceMinutes" name="MaintenanceMinutes" value="" />
-    <label for="MaintenanceAllowIPs">{'Addresses that still see the site (optional, comma separated; yours, %ip, is added)'|i18n( 'design/admin/setup/maintenance',, hash( '%ip', $client_ip|wash ) )}</label>
+    <label for="MaintenanceAllowIPs">{'Addresses that still see the site (optional, comma separated)'|i18n( 'design/admin/setup/maintenance' )}</label>
     <input class="box" type="text" id="MaintenanceAllowIPs" name="MaintenanceAllowIPs" value="" />
+    <label><input type="checkbox" name="MaintenanceAllowMe" value="1" /> {'Let my own address (%ip) still see the site'|i18n( 'design/admin/setup/maintenance',, hash( '%ip', $client_ip|wash ) )}</label>
+    <p>{'The administration stays reachable while the site is offline, so it can be switched off again here.'|i18n( 'design/admin/setup/maintenance' )}</p>
 {/if}
 </div>
 {* DESIGN: Content END *}</div></div></div>
