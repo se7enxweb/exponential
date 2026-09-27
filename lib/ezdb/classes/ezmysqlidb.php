@@ -433,7 +433,13 @@ class eZMySQLiDB extends eZDBInterface
                 }
             }
 
+            $profileStart = eZDBInterface::$SQLProfileOn === false ? 0 : microtime( true );
             $result = mysqli_query( $connection, $sql );
+            if ( eZDBInterface::$SQLProfileOn !== false )
+                eZDBInterface::profileSQL( $sql, microtime( true ) - $profileStart );
+            // A write makes the query cache's results for its tables stale.
+            if ( $result )
+                eZDBQueryCache::noteWrite( $this, $sql );
 
             if ( $this->RecordError and !$result )
                 $this->setError();
@@ -498,6 +504,10 @@ class eZMySQLiDB extends eZDBInterface
     function arrayQuery( $sql, $params = array(), $server = false )
     {
         $retArray = array();
+        // The query cache (settings/querycache.ini): the rows, while current.
+        $cacheTicket = eZDBQueryCache::lookup( $this, $sql, $params, $cached );
+        if ( $cached !== null )
+            return $cached;
         if ( $this->IsConnected )
         {
             $limit = false;
@@ -576,6 +586,7 @@ class eZMySQLiDB extends eZDBInterface
                     eZDebug::accumulatorStop( 'mysqli_loop' );
                 }
             }
+            eZDBQueryCache::store( $cacheTicket, $retArray );
         }
         return $retArray;
     }

@@ -234,6 +234,9 @@ class eZPostgreSQLDB extends eZDBInterface
                 }
                 $this->reportError();
             }
+            // A write makes the query cache's results for its tables stale.
+            if ( $result )
+                eZDBQueryCache::noteWrite( $this, $sql );
         }
         else
             $result = false;
@@ -244,6 +247,10 @@ class eZPostgreSQLDB extends eZDBInterface
     function arrayQuery( $sql, $params = array(), $server = false )
     {
         $retArray = array();
+        // The query cache (settings/querycache.ini): the rows, while current.
+        $cacheTicket = eZDBQueryCache::lookup( $this, $sql, $params, $cached );
+        if ( $cached !== null )
+            return $cached;
         if ( $this->isConnected() )
         {
             $limit = -1;
@@ -313,6 +320,7 @@ class eZPostgreSQLDB extends eZDBInterface
                 eZDebug::accumulatorStart( 'postgresql_loop' );
             }
             pg_free_result( $result );
+            eZDBQueryCache::store( $cacheTicket, $retArray );
         }
         return $retArray;
     }

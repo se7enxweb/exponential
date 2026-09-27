@@ -60,6 +60,15 @@ class eZCache
                                        'path' => false,
                                        'function' => array( 'eZCache', 'clearHttpCache' ),
                                        'purge-function' => array( 'eZCache', 'clearHttpCache' ) ),
+                                // SQL results (settings/querycache.ini). Cleared by making every
+                                // result stale (a new generation), never by deleting files.
+                                array( 'name' => ezpI18n::tr( 'kernel/cache', 'Query cache (SQL results)' ),
+                                       'id' => 'querycache',
+                                       'tag' => array( 'content', 'ini' ),
+                                       'enabled' => class_exists( 'eZDBQueryCache' ) && eZDBQueryCache::enabled(),
+                                       'path' => false,
+                                       'function' => array( 'eZCache', 'clearQueryCache' ),
+                                       'purge-function' => array( 'eZCache', 'clearQueryCache' ) ),
                                 array( 'name' => ezpI18n::tr( 'kernel/cache', 'Global INI cache' ),
                                        'id' => 'global_ini',
                                        'tag' => array( 'ini' ),
@@ -842,6 +851,16 @@ class eZCache
         $handler->store();
         eZCache::removeExpiredDirectory( eZSys::cacheDirectory() . '/' . $cacheItem['path'], 'view cache', $now );
         ezpEvent::getInstance()->notify( 'content/cache/all' );
+    }
+
+    /**
+     * Makes every result in the SQL query cache stale (a new generation), in
+     * every process that shares its state file.
+     */
+    static function clearQueryCache( $cacheItem )
+    {
+        if ( class_exists( 'eZDBQueryCache' ) )
+            eZDBQueryCache::clearAll();
     }
 
     /**

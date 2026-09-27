@@ -110,6 +110,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      */
     public function __construct( array $settings = array() )
     {
+        // A new request: the query cache's memo, settings and state view start
+        // empty, also in a persistent worker that served one before.
+        if ( class_exists( 'eZDBQueryCache' ) )
+            eZDBQueryCache::resetRequest();
+
         if ( isset( $settings['injected-settings'] ) )
         {
             $injectedSettings = array();

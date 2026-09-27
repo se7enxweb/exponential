@@ -285,6 +285,8 @@ class eZSQLite3DB extends eZDBInterface
             }
             else
             {
+                // A write makes the query cache's results for its tables stale.
+                eZDBQueryCache::noteWrite( $this, $sql );
                 return true;
             }
         }
@@ -329,6 +331,10 @@ class eZSQLite3DB extends eZDBInterface
         /  */
 
         $retArray = array();
+        // The query cache (settings/querycache.ini): the rows, while current.
+        $cacheTicket = eZDBQueryCache::lookup( $this, $sql, $params, $cached );
+        if ( $cached !== null )
+            return $cached;
         if ( $this->IsConnected )
         {
             $limit = false;
@@ -413,6 +419,7 @@ class eZSQLite3DB extends eZDBInterface
             }
 
             $results->finalize();
+            eZDBQueryCache::store( $cacheTicket, $retArray );
         }
         return $retArray;
     }

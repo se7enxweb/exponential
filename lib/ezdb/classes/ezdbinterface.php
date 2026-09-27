@@ -18,6 +18,84 @@
  */
 class eZDBInterface
 {
+    /**
+     * SQL statement profile for this request: null until the first statement
+     * looks for var/tmp/sql_profile.on, then true or false. Off it costs one
+     * file_exists() per request. A static property, so a persistent worker
+     * resets it with the request.
+     *
+     * @var bool|null
+     */
+    public static $SQLProfileOn = null;
+    protected static $SQLProfile = array( 'total' => 0, 'select' => 0, 'seconds' => 0.0, 'seen' => array(), 'repeats' => 0, 'repeatSeconds' => 0.0, 'started' => 0.0 );
+
+    /**
+     * Records one statement for the profile (see $SQLProfileOn). What a query
+     * cache would save shows as the repeats: a SELECT whose exact text came
+     * earlier in the same request, and the time those took. One line per
+     * request goes to var/tmp/sql_profile.log.
+     *
+     * @param string $sql
+     * @param float $seconds time the statement took
+     */
+    public static function profileSQL( $sql, $seconds )
+    {
+        if ( self::$SQLProfileOn === null )
+        {
+            self::$SQLProfileOn = file_exists( self::sqlProfilePath( 'sql_profile.on' ) );
+            if ( !self::$SQLProfileOn )
+                return;
+            self::$SQLProfile['started'] = microtime( true );
+            register_shutdown_function( array( 'eZDBInterface', 'writeSQLProfile' ) );
+        }
+        if ( !self::$SQLProfileOn )
+            return;
+        $p =& self::$SQLProfile;
+        $p['total']++;
+        $p['seconds'] += $seconds;
+        if ( strncasecmp( ltrim( $sql ), 'select', 6 ) === 0 )
+        {
+            $p['select']++;
+            $hash = md5( $sql );
+            if ( isset( $p['seen'][$hash] ) )
+            {
+                $p['repeats']++;
+                $p['repeatSeconds'] += $seconds;
+                // The shape, values masked, for the top of the log line.
+                $shape = substr( preg_replace( array( "/'[^']*'/", '/\b\d+\b/' ), array( "'?'", '?' ), preg_replace( '/\s+/', ' ', $sql ) ), 0, 90 );
+                $p['shapes'][$shape] = ( $p['shapes'][$shape] ?? 0 ) + 1;
+            }
+            $p['seen'][$hash] = true;
+        }
+    }
+
+    public static function writeSQLProfile()
+    {
+        $p = self::$SQLProfile;
+        // The request's distinct SELECT texts (as hashes), to compare one
+        // request with the next: what a cache shared across requests answers.
+        if ( file_exists( self::sqlProfilePath( 'sql_profile.hashes' ) ) )
+            @file_put_contents( self::sqlProfilePath( 'sql_profile.hashes.' . sprintf( '%.6f', microtime( true ) ) ), implode( "\n", array_keys( $p['seen'] ) ) );
+        $shapes = $p['shapes'] ?? array();
+        arsort( $shapes );
+        if ( getenv( 'SQL_PROFILE_SHAPES' ) !== false || file_exists( self::sqlProfilePath( 'sql_profile.shapes' ) ) )
+        {
+            foreach ( array_slice( $shapes, 0, 12, true ) as $shape => $n )
+                @file_put_contents( self::sqlProfilePath( 'sql_profile.log' ), sprintf( "      %4dx  %s\n", $n, $shape ), FILE_APPEND );
+        }
+        @file_put_contents( self::sqlProfilePath( 'sql_profile.log' ),
+            sprintf( "%s  %-48s %5d statements %5d selects %5d distinct %5d repeats | db %7.1f ms, repeats %6.1f ms | request %7.1f ms\n",
+                date( 'H:i:s' ), substr( (string)( $_SERVER['REQUEST_URI'] ?? 'cli' ), 0, 48 ),
+                $p['total'], $p['select'], count( $p['seen'] ), $p['repeats'],
+                $p['seconds'] * 1000, $p['repeatSeconds'] * 1000, ( microtime( true ) - $p['started'] ) * 1000 ),
+            FILE_APPEND );
+    }
+
+    private static function sqlProfilePath( $file )
+    {
+        return dirname( __DIR__, 3 ) . '/var/tmp/' . $file;
+    }
+
     const BINDING_NO = 0;
     const BINDING_NAME = 1;
     const BINDING_ORDERED = 2;
@@ -811,6 +889,7 @@ class eZDBInterface
                         $this->RecordError = false;
                         $this->rollbackQuery();
                         $this->RecordError = $oldRecordError;
+                        eZDBQueryCache::afterRollback();
 
                         return false;
                     }
@@ -821,6 +900,8 @@ class eZDBInterface
                         $this->RecordError = false;
                         $this->commitQuery();
                         $this->RecordError = $oldRecordError;
+                        // What the transaction wrote is visible now: stale in the query cache.
+                        eZDBQueryCache::afterCommit();
                     }
                 }
             }
@@ -886,6 +967,7 @@ class eZDBInterface
                 $this->rollbackQuery();
                 $this->RecordError = $oldRecordError;
             }
+            eZDBQueryCache::afterRollback();
         }
         return true;
     }

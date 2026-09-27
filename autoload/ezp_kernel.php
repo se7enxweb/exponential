@@ -122,6 +122,7 @@ return array(
       'eZDBInterface'                                      => 'lib/ezdb/classes/ezdbinterface.php',
       'eZDBNoConnectionException'                          => 'kernel/private/classes/exceptions/database/noconnection.php',
       'eZDBPackageHandler'                                 => 'kernel/classes/packagehandlers/ezdb/ezdbpackagehandler.php',
+      'eZDBQueryCache'                                     => 'lib/ezdb/classes/ezdbquerycache.php',
       'eZDBSchemaInterface'                                => 'lib/ezdbschema/classes/ezdbschemainterface.php',
       'eZDBTool'                                           => 'lib/ezdb/classes/ezdbtool.php',
       'eZDFSFileHandler'                                   => 'kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php',
