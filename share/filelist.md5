@@ -514,7 +514,7 @@ c29e3a846853ed8a4a3d4f91c4874af3  design/admin/templates/setup/extensions.tpl
 9a1144de0b4042a411f4374ddf2d6050  design/admin/templates/setup/handlerextension.tpl
 179e262a6e32788b4cd95afaa0679dc9  design/admin/templates/setup/info.tpl
 9728ae823c710f8bdf558810fe857aa5  design/admin/templates/setup/kerneloverride.tpl
-e58e904925d572f60db08d42a334cc1c  design/admin/templates/setup/maintenance.tpl
+1b0766e4eecfd531b9f0c4506ff26747  design/admin/templates/setup/maintenance.tpl
 7f9d1052a5207dc44c8791f26b779c3c  design/admin/templates/setup/moduleextension.tpl
 377b53b0f333488da73e7236059512a4  design/admin/templates/setup/modulewizard.tpl
 022acacb19a2a8ae7977e07017c790da  design/admin/templates/setup/preload.tpl
@@ -5369,6 +5369,7 @@ a8c00a5a2ceae31b3fbc1d8602346071  extension/ezoe/translations/untranslated/trans
 8d1d60689df854dd7cdff2bb0d921bd5  extension/ezoe/update/database/5.0/dbupdate-5.0.0-to-5.0.1.sql
 255f256fb2d3ba8f3212a8dbb9abc31e  ezpm.php
 a50997c8fe6be64180958d5998efc11c  ezpublish.cron
+91b1aa0e8f21ce629c9cf29eef5a4569  favicon.ico
 0165a932c41a55e8b14fe8d5aec32867  index.php
 608ae755b52334e71108cd9fb097f9a0  index_cluster.php
 18aa9f2d67b54c3693f19779576496df  index_rest.php
@@ -5487,7 +5488,7 @@ f356fcde7f2bb1d00f505e2514639808  kernel/classes/expkickstarterini.php
 c96b4b194b2bf5cfc43f558b1fa48471  kernel/classes/expphar.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 98aec968ac5853b5d9315b41abf3ff52  kernel/classes/expsetuplog.php
-7eae32a444ad1447cb1e617c9068e6f4  kernel/classes/expvelocity.php
+bf3391de1540f012edb3ea608ad0c02f  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 3e40db0d31c1f4344f04a1252a4671df  kernel/classes/expvelocityconfiglayout.php
 8d76ad8f1b6946c83114d1302ba10b48  kernel/classes/expvelocityfrankenphp.php
@@ -6057,7 +6058,7 @@ b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
 004141a5f38e662b67e4b8f8408a9900  kernel/setup/handlerextension.php
 b30401dde083052aa9f3547a9fbfd51c  kernel/setup/info.php
 cb0b8c124634b99b49697c6607147d5f  kernel/setup/kerneloverride.php
-82cdef025f12746a8db6f8d3454ab5ae  kernel/setup/maintenance.php
+4000b1b15c813a43379ae733ded1a1e7  kernel/setup/maintenance.php
 18ecee0d07126e49f164552b002eaf7e  kernel/setup/menuconfig.php
 cc1ef66f1dd03158dde40d3504b33847  kernel/setup/module.php
 814782eb26cbb236f91c42ecbe7ff7b2  kernel/setup/moduleextension.php
@@ -6497,7 +6498,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-256f70b1dfbf56c9d47612f4d1cf7389  settings/velocity.ini
+424a6fc733cd778c17551d24ce865cd1  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
@@ -6893,7 +6894,7 @@ b96a82799251ae806ec17640ca6861d7  share/locale/srp-RS.ini
 85c4117a14cc39644ed6fb553e8f6471  share/locale/swe-SE.ini
 dfaaf628b843ec62da7a7a7d2eba187d  share/locale/tur-TR.ini
 0ba081d069f7dd1e4f8b112f28d63801  share/locale/ukr-UA.ini
-2a1bac3712f843f1cbe6a15020a4c6dc  share/maintenance.html
+fb46297c8027e5df9dc921ffabe17758  share/maintenance.html
 606c99b4a8f119c6777c86276bee38f5  share/transformations/ascii.tr
 bb55605f0c73bddb522d4d64444dc239  share/transformations/basic.tr
 574042f7bbde15c8178a7f2fb9323e8a  share/transformations/cyrillic.tr
