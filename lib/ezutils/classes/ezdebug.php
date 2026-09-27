@@ -82,6 +82,15 @@ class eZDebug
     const MAX_LOGFILE_SIZE = 204800; // 200*1024
     const MAX_LOGROTATE_FILES = 3;
 
+    /// The entry flushLogRepeats() writes; readers of the log files (expSetupLog) match it
+    const REPEAT_MESSAGE = 'The entry above was written %d more %s, the last at %s';
+
+    /// See setLogContext()
+    protected static $LogContext = '';
+    /// Per log file while a context is set: the last entry written and how often it came again
+    protected static $LogRepeat = array();
+    protected static $LogContextShutdown = false;
+
     const XDEBUG_SIGNATURE = '--XDEBUG--';
 
     /*!
@@ -904,6 +913,24 @@ class eZDebug
             if ( eZDebug::rotateLog( $fileName ) )
                 $fileExisted = false;
         }
+        $text = $string;
+        if ( self::$LogContext !== '' )
+        {
+            // While a setup runs, an entry the same as the one before it in this
+            // file is counted instead of written again; the count follows it as
+            // one entry when something else is written or the setup ends.
+            if ( isset( self::$LogRepeat[$fileName] ) && self::$LogRepeat[$fileName]['string'] === $string )
+            {
+                self::$LogRepeat[$fileName]['count']++;
+                self::$LogRepeat[$fileName]['last'] = date( 'H:i:s' );
+                @umask( $oldumask );
+                eZDebug::setHandleType( $oldHandleType );
+                return;
+            }
+            self::flushLogRepeats( $fileName );
+            self::$LogRepeat[$fileName] = array( 'string' => $string, 'count' => 0, 'last' => '' );
+            $text .= "\n    (" . self::$LogContext . ")";
+        }
         $logFile = @fopen( $fileName, "a" );
         if ( $logFile )
         {
@@ -911,7 +938,7 @@ class eZDebug
             $ip = eZSys::clientIP();
             if ( !$ip )
                 $ip = eZSys::serverVariable( 'HOSTNAME', true );
-            $notice = "[ " . $time . " ] [" . $ip . "] " . $string . "\n";
+            $notice = "[ " . $time . " ] [" . $ip . "] " . $text . "\n";
             @fwrite( $logFile, $notice );
             @fclose( $logFile );
             if ( !$fileExisted )
@@ -937,6 +964,57 @@ class eZDebug
             }
         }
         eZDebug::setHandleType( $oldHandleType );
+    }
+
+    /**
+     * What is running, appended to every entry written to a log file until it
+     * is set to '' again: a setup sets its run id and step here, so each entry
+     * it causes in error.log says which run and step it came from. While it is
+     * set, identical entries in a row are written once, with their count.
+     *
+     * @param string $context
+     */
+    static function setLogContext( $context )
+    {
+        self::flushLogRepeats();
+        self::$LogContext = trim( str_replace( array( "\r", "\n" ), ' ', (string)$context ) );
+        if ( self::$LogContext !== '' && !self::$LogContextShutdown )
+        {
+            // A setup that ends in a fatal error still gets its last count written
+            register_shutdown_function( array( 'eZDebug', 'flushLogRepeats' ) );
+            self::$LogContextShutdown = true;
+        }
+    }
+
+    /** @return string the context setLogContext() set, '' when none */
+    static function logContext()
+    {
+        return self::$LogContext;
+    }
+
+    /**
+     * Writes how often the last entry of each log file (or of $fileName only)
+     * was repeated, when it was.
+     *
+     * @param string|null $fileName
+     */
+    static function flushLogRepeats( $fileName = null )
+    {
+        foreach ( self::$LogRepeat as $file => $repeat )
+        {
+            if ( $fileName !== null && $file !== $fileName )
+                continue;
+            unset( self::$LogRepeat[$file] );
+            if ( $repeat['count'] < 1 )
+                continue;
+            $ip = eZSys::clientIP();
+            if ( !$ip )
+                $ip = eZSys::serverVariable( 'HOSTNAME', true );
+            $line = "[ " . date( "M d Y H:i:s" ) . " ] [" . $ip . "] eZDebug:\n" .
+                    sprintf( self::REPEAT_MESSAGE, $repeat['count'], $repeat['count'] === 1 ? 'time' : 'times', $repeat['last'] ) .
+                    ( self::$LogContext !== '' ? "\n    (" . self::$LogContext . ")" : '' ) . "\n";
+            @file_put_contents( $file, $line, FILE_APPEND );
+        }
     }
 
     /*!

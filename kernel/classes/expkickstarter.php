@@ -100,6 +100,9 @@ class expKickstarter
         $current   = 0;
 
         expScriptStatus::instance()->start( 'kickstart', 'Kickstart setup' );
+        expSetupLog::start( !empty( $this->options['dry-run'] ) ? 'kickstarter dry run' : 'kickstarter', array(
+            'steps' => $this->startStep . ' .. ' . $this->stopStep,
+        ) );
 
         foreach ( $this->stepData->StepTable as $index => $step )
         {
@@ -112,9 +115,14 @@ class expKickstarter
             $className = $step['class'];
             expScriptStatus::instance()->update( 'Running: ' . $className, $current, $stepCount );
 
+            expSetupLog::stepBegin( $className );
             $status = $this->executeStep( $step );
+            // What the steps chose from kickstart.ini, recorded once it is known
+            expSetupLog::noteContext( $this->persistenceList );
+            expSetupLog::stepEnd( $status === false ? 'FAILED' : 'ok' );
             if ( $status === false )
             {
+                expSetupLog::finish( 'FAILED at ' . $className );
                 expScriptStatus::instance()->fail();
                 $this->cli->output( '' );
                 $this->cli->output( 'Setup failed on step: ' . $className );
@@ -127,6 +135,12 @@ class expKickstarter
         }
 
         expScriptStatus::instance()->end();
+        if ( !empty( $this->options['dry-run'] ) )
+            expSetupLog::finish( 'dry run complete (stopped before CreateSites)' );
+        elseif ( $createSitesIndex !== false && $startIndex <= $createSitesIndex && $stopIndex >= $createSitesIndex )
+            expSetupLog::finish( 'installed', true );
+        else
+            expSetupLog::finish( 'stopped after ' . $this->stopStep . ' (nothing installed)' );
 
         if ( !empty( $this->options['dry-run'] ) )
         {
@@ -455,7 +469,7 @@ class expKickstarter
                     {
                         $msg .= ' - ' . $resultItem[2]['message'];
                     }
-                    $this->cli->output( '  - ' . $msg );
+                    $this->failLine( $msg );
                 }
             }
             return false;
@@ -468,7 +482,7 @@ class expKickstarter
                 $info = $this->databaseErrorInfo( $stepObject->Error );
                 if ( is_array( $info ) && isset( $info['text'] ) )
                 {
-                    $this->cli->output( '  - ' . $info['text'] );
+                    $this->failLine( $info['text'] );
                 }
                 else
                 {
@@ -483,18 +497,18 @@ class expKickstarter
                     {
                         if ( is_array( $error ) )
                         {
-                            $this->cli->output( '  - ' . ( isset( $error['text'] ) ? $error['text'] : $error['code'] ) );
+                            $this->failLine( ( isset( $error['text'] ) ? $error['text'] : $error['code'] ) );
                         }
                         else
                         {
-                            $this->cli->output( '  - ' . $error );
+                            $this->failLine( $error );
                         }
                     }
                 }
                 elseif ( isset( $stepObject->Error[0]['type'] ) && $stepObject->Error[0]['type'] === 'db' )
                 {
                     $info = $this->databaseErrorInfo( $stepObject->Error[0]['error_code'] );
-                    $this->cli->output( '  - ' . ( is_array( $info ) && isset( $info['text'] ) ? $info['text'] : 'Database error' ) );
+                    $this->failLine( ( is_array( $info ) && isset( $info['text'] ) ? $info['text'] : 'Database error' ) );
                 }
                 elseif ( isset( $stepObject->Error[0] ) )
                 {
@@ -502,7 +516,7 @@ class expKickstarter
                 }
                 else
                 {
-                    $this->cli->output( '  - ' . print_r( $stepObject->Error, true ) );
+                    $this->failLine( print_r( $stepObject->Error, true ) );
                 }
             }
             return false;
@@ -510,11 +524,11 @@ class expKickstarter
 
         if ( isset( $stepObject->ErrorMsg ) && $stepObject->ErrorMsg )
         {
-            $this->cli->output( '  - ' . $stepObject->ErrorMsg );
+            $this->failLine( $stepObject->ErrorMsg );
             return false;
         }
 
-        $this->cli->output( '  - Unknown failure' );
+        $this->failLine( 'Unknown failure' );
         return false;
     }
 
@@ -522,7 +536,15 @@ class expKickstarter
     {
         $this->cli->output( '' );
         $this->cli->output( $this->cli->stylize( 'warning', 'Step ' . $stepName . ' requested redirect to: ' . $redirect ) );
+        expSetupLog::problem( 'ERROR', 'Step ' . $stepName . ' requested redirect to: ' . $redirect );
         return false;
+    }
+
+    /** A failure detail: printed as before, and kept in var/log/setup.log. */
+    private function failLine( $message )
+    {
+        $this->cli->output( '  - ' . $message );
+        expSetupLog::problem( 'ERROR', $message );
     }
 
     private function databaseErrorInfo( $errorCode )

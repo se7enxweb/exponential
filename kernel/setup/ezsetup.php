@@ -59,6 +59,12 @@ if ( $stepData == null )
 }
 
 $persistenceList = eZSetupFetchPersistenceList();
+
+// var/log/setup.log: the first request of the wizard starts a run, the others continue it
+if ( !$http->hasPostVariable( 'eZSetup_current_step' ) )
+    expSetupLog::startWeb();
+elseif ( !expSetupLog::resume() )
+    expSetupLog::start( 'web setup wizard (joined at step ' . $http->postVariable( 'eZSetup_current_step' ) . ')' );
 $result = null;
 
 // process previous step
@@ -110,8 +116,11 @@ else if ( $http->hasPostVariable( 'eZSetup_next_button' ) || $http->hasPostVaria
         $className = 'eZStep'.$currentStep['class'];
         $previousStepClass = new $className( $tpl, $http, $ini, $persistenceList );
 
+        expSetupLog::stepBegin( $currentStep['class'] . ' answers' );
         $processPostDataResult = $previousStepClass->processPostData();
         $persistenceList = $previousStepClass->PersistenceList;
+        expSetupLog::noteContext( $persistenceList );
+        expSetupLog::stepEnd( $processPostDataResult === false ? 'rejected (asked again)' : 'accepted' );
 
         if ( $processPostDataResult === false ) // processing previous input failed, step must be redone
         {
@@ -179,18 +188,26 @@ while( !$done && $step != null )
             $stepInstaller = new $className( $tpl, $http, $ini, $persistenceList );
         }
 
+        expSetupLog::stepBegin( $step['class'] );
         $result = $stepInstaller->init();
+        expSetupLog::noteContext( $stepInstaller->PersistenceList );
 
         if( $result === true )
         {
+            expSetupLog::stepEnd( 'ok' );
             $step = $stepData->nextStep( $step );
         }
         else if( is_int( $result ) || is_string( $result ) )
         {
+            expSetupLog::stepEnd( 'redirected to ' . $result );
             $step = $stepData->step( $result );
         }
         else
         {
+            expSetupLog::stepEnd( 'shown' );
+            // The last page of the wizard: the installation is done
+            if ( $step['class'] === 'Final' )
+                expSetupLog::finish( 'installed', true );
             $tpl->setVariable( 'setup_current_step', $step['class'] ); // set current step
             $result = $stepInstaller->display();
             $result['help'] = $tpl->fetch( 'design:setup/init/'.$step['file'].'_help.tpl' );
@@ -214,6 +231,7 @@ $result['progress'] = $stepData->progress( $step );
 
 // Print debug information and exit.
 eZDebug::addTimingPoint( "End" );
+expSetupLog::suspend();
 
 return $result;
 
