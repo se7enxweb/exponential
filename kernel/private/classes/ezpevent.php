@@ -48,6 +48,17 @@ class ezpEvent
     protected $loadGlobalEvents;
 
     /**
+     * array( name, id ) of every listener registerEventListeners() attached,
+     * so the next call replaces them rather than adding a second set.
+     *
+     * @var array
+     */
+    protected $globalListenerIds = array();
+
+    /** @var bool attach() is being called from registerEventListeners() */
+    protected $recordingGlobal = false;
+
+    /**
      * Constructer
      * In most cases you would want to use {@see getInstance()} instead
      *
@@ -65,6 +76,16 @@ class ezpEvent
     {
         if ( $this->loadGlobalEvents )
         {
+            // Called once per web request. Under a persistent worker the
+            // instance outlives the request (and a warm-up may already have
+            // registered them), so the set attached last time is replaced,
+            // not added to: every listener ran twice under Velocity -- the
+            // form token filter wrote its meta tags into each page twice.
+            foreach ( $this->globalListenerIds as $attached )
+                $this->detach( $attached[0], $attached[1] );
+            $this->globalListenerIds = array();
+            $this->recordingGlobal = true;
+
             $listeners = eZINI::instance()->variable( 'Event', 'Listeners' );
             foreach ( $listeners as $listener )
             {
@@ -78,6 +99,18 @@ class ezpEvent
                 list( $event, $callback ) = explode( '@', $listener );
                 $this->attach( $event, $callback );
             }
+
+            // The role-aware HTTP cache attaches itself only when it is
+            // switched on (httpcache.ini, disabled by default).
+            // Switched off, it still tells the early exit so (contract()).
+            if ( class_exists( 'ezpHttpCacheListener' ) )
+            {
+                if ( eZINI::instance( 'httpcache.ini' )->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled' )
+                    ezpHttpCacheListener::registerListeners( $this );
+                else if ( is_file( eZSys::cacheDirectory() . '/exphttpcache/contract.php' ) )
+                    ezpHttpCacheListener::contract();
+            }
+            $this->recordingGlobal = false;
         }
     }
 
@@ -98,6 +131,8 @@ class ezpEvent
         }
 
         $this->listeners[$name][$id] = $listener;
+        if ( $this->recordingGlobal )
+            $this->globalListenerIds[] = array( $name, $id );
         return $id;
     }
 
@@ -135,6 +170,8 @@ class ezpEvent
 
         foreach ( $this->listeners[$name] as $listener )
         {
+            if ( !self::callable( $name, $listener ) )
+                continue;
             call_user_func_array( $listener, $params );
         }
         return true;
@@ -162,9 +199,27 @@ class ezpEvent
 
         foreach ( $this->listeners[$name] as $listener )
         {
+            if ( !self::callable( $name, $listener ) )
+                continue;
             $params[0] = call_user_func_array( $listener, $params );
         }
         return $params[0];
+    }
+
+    /**
+     * Whether a listener can be called. One that cannot (its class is missing,
+     * or a long-running server's workers predate it) is logged and skipped:
+     * a listener must never take the page down with it.
+     */
+    private static function callable( $name, $listener )
+    {
+        if ( is_callable( $listener ) )
+            return true;
+        $label = is_array( $listener )
+            ? ( is_object( $listener[0] ) ? get_class( $listener[0] ) : (string)$listener[0] ) . '::' . (string)$listener[1]
+            : ( is_string( $listener ) ? $listener : gettype( $listener ) );
+        eZDebug::writeError( "Listener $label for event $name cannot be called; skipped", __METHOD__ );
+        return false;
     }
 
     /**
