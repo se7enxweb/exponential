@@ -7,7 +7,7 @@
 {if $attribute.class_content.is_vat_included}
 {* Entered price already includes VAT. *}
 {else}
-&nbsp;(+ {$attribute.content.selected_vat_type.name}, {$attribute.content.selected_vat_type.percentage}%)
+&nbsp;(+ {$attribute.content.selected_vat_type.name|wash}, {$attribute.content.selected_vat_type.percentage|wash}%)
 {/if}
 </div>
 
