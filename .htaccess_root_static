@@ -26,6 +26,11 @@
 DirectoryIndex index.php
 
 RewriteEngine On
+# No script runs because its path was asked for, except the front
+# controllers at the root: a .php below them (in the package store,
+# an extension, var/) answers 404 instead of being executed.
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^.+/[^/]+\.(php[0-9]?|phtml|phar)$ - [R=404,L]
 
 # The var directory this installation uses, as named by
 # site.ini [FileSettings] VarDir, without the leading "var/". Generated static
@@ -42,7 +47,9 @@ RewriteRule ^share/icons/.* - [L]
 RewriteRule ^extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts)/.* - [L]
 RewriteRule ^packages/styles/.+/(stylesheets|images|javascript)/[^/]+/.* - [L]
 RewriteRule ^packages/styles/.+/thumbnail/.* - [L]
-RewriteRule ^var/storage/packages/.* - [L]
+# Only the preview images of imported packages: their XML, SQL and
+# settings are not for the web.
+RewriteRule ^var/storage/packages/.+\.(png|jpe?g|gif|webp)$ - [L]
 
 # Let a generated static page be served as the file it is. Needed because the
 # rule at the foot of this file sends everything else to index.php, and because

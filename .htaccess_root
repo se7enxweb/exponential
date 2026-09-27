@@ -4,6 +4,11 @@
 DirectoryIndex index.php
 
 RewriteEngine On
+# No script runs because its path was asked for, except the front
+# controllers at the root: a .php below them (in the package store,
+# an extension, var/) answers 404 instead of being executed.
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^.+/[^/]+\.(php[0-9]?|phtml|phar)$ - [R=404,L]
 RewriteRule ^api/ index_rest.php [L]
 RewriteRule ^index_rest\.php - [L]
 RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
@@ -14,7 +19,9 @@ RewriteRule ^share/icons/.* - [L]
 RewriteRule ^extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts)/.* - [L]
 RewriteRule ^packages/styles/.+/(stylesheets|images|javascript)/[^/]+/.* - [L]
 RewriteRule ^packages/styles/.+/thumbnail/.* - [L]
-RewriteRule ^var/storage/packages/.* - [L]
+# Only the preview images of imported packages: their XML, SQL and
+# settings are not for the web.
+RewriteRule ^var/storage/packages/.+\.(png|jpe?g|gif|webp)$ - [L]
 
 #  Makes it possible to placed your favicon at the root of your
 #  Exponential instance. It will then be served directly.
