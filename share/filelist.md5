@@ -3,8 +3,8 @@ d3c3da531de3f903a6857f522f3ba0db  .gitattributes
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 26637bf1b89fe3b8acd7153af8c24798  .github/workflows/phpunit.yml
 9abe6d41ca2969e2817d8aa8962de841  .gitignore
-ff770d51ac29da3f9134109821397b8a  .htaccess_root
-9bf551a55e86991ee5b554bf938750cb  .htaccess_root_static
+fe33aa4f3ee6a4d3091c66619bf0398b  .htaccess_root
+5cf3a311cdabf6022e5efa28f43bcd2e  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 a184ff1f4cd1fd4ec3a82e7744fd7e62  CONTRIBUTING.md
 3e1517b3def43fe5c9aed722d9821e24  COPYRIGHT.md
