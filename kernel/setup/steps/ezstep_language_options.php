@@ -194,16 +194,14 @@ class eZStepLanguageOptions extends eZStepInstaller
 
         // Preselection, first visit: the browser's most preferred language
         // the installation has a locale for as the primary, its other
-        // accepted languages as additional ones, and the language the bundled
-        // content is in. That content exists in that language only; kept as
-        // an additional language, the site shows it whatever the primary is,
-        // instead of depending on a mapping the person never saw.
+        // accepted languages as additional ones. The language the bundled
+        // content is in is not added: the installer keeps that content in
+        // its own language and appends it to SiteLanguageList as a fallback,
+        // and as a chosen language it would get a translation siteaccess of
+        // its own.
         $dataLanguage = eZSetupBundledDataLanguage();
-        $extraLanguages = $defaultExtraLanguages;
-        if ( $defaultLanguage != $dataLanguage && !in_array( $dataLanguage, $extraLanguages ) )
-            $extraLanguages[] = $dataLanguage;
         $regionalInfo = array( 'primary_language' => $defaultLanguage,
-                               'languages' => array_merge( array( $defaultLanguage ), $extraLanguages ) );
+                               'languages' => array_merge( array( $defaultLanguage ), $defaultExtraLanguages ) );
         if ( isset( $this->PersistenceList['regional_info'] ) )
             $regionalInfo = $this->PersistenceList['regional_info'];
         if ( !isset( $regionalInfo['enable_unicode'] ) )

@@ -8,7 +8,7 @@
 {"Use the radio buttons to choose the default language, and the checkboxes to choose additional languages. You will be able to use any of the selected languages for translating your content. The default language will determine the locale settings and will be used as the most prioritized language for your site."|i18n("design/standard/setup/init")}
 </p>
 <p>
-{"The content that comes with the site is written in %1. Keep %1 as the default or as an additional language to have that content shown on the site."|i18n("design/standard/setup/init",,array($data_language_name|wash))}
+{"The content that comes with the site is written in %1. It stays in %1 whatever you choose here, and the site shows it wherever no translation into your languages exists yet."|i18n("design/standard/setup/init",,array($data_language_name|wash))}
 </p>
 {if $language_errors}
 <div class="error">

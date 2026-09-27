@@ -245,12 +245,13 @@ function eZSetupLanguageList( &$languageList, &$defaultLanguage, &$defaultExtraL
 if ( !function_exists( 'eZSetupBundledDataLanguage' ) ) {
 /*!
  The language the bundled base data (share/db_data.dba) and the default site
- packages are written in. Every content object the installer imports exists in
- this language only, so the wizard keeps it among the site languages unless the
- person chooses otherwise.
+ packages are written in: eZStepInstaller::CLEAN_DATA_LANGUAGE where the
+ installer defines it, else eng-US.
 */
 function eZSetupBundledDataLanguage()
 {
+    if ( class_exists( 'eZStepInstaller' ) && defined( 'eZStepInstaller::CLEAN_DATA_LANGUAGE' ) )
+        return constant( 'eZStepInstaller::CLEAN_DATA_LANGUAGE' );
     return 'eng-US';
 }
 }
