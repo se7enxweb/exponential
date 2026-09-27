@@ -91,9 +91,11 @@ class eZStepPackageLanguageOptions extends eZStepInstaller
             $packageLanguageLocaleList = eZPackage::languageInfoFromPackageList( $packageNameList, false );
         }
 
-        // Explicitly add 'eng-GB' cause clean data is in 'eng-GB'.
-        if( !in_array( 'eng-GB', $packageLanguageLocaleList ) )
-            $packageLanguageLocaleList[] = 'eng-GB';
+        // Explicitly add the clean data's language: share/db_data.dba is in
+        // eng-US (it was eng-GB upstream, and this still said so, which asked
+        // every eng-US site to map an eng-GB it does not have)
+        if( !in_array( 'eng-US', $packageLanguageLocaleList ) )
+            $packageLanguageLocaleList[] = 'eng-US';
         //
         // Exclude languages which exist both in packages and site.
         //

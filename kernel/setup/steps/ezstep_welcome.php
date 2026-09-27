@@ -97,7 +97,7 @@ class eZStepWelcome extends eZStepInstaller
                                                          'results' => $this->OptionalResults ) );
         $result['content'] = $this->Tpl->fetch( 'design:setup/init/welcome.tpl' );
         $result['path'] = array( array( 'text' => ezpI18n::tr( 'design/standard/setup/init',
-                                                          'Welcome to eZ Publish' ),
+                                                          'Welcome' ),
                                     'url' => false ) );
 
         return $result;
