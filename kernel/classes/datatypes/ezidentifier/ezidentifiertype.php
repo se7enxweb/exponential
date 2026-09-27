@@ -34,6 +34,13 @@ class eZIdentifierType extends eZDataType
 
     const DATA_TYPE_STRING = "ezidentifier";
 
+    /// data_text1/data_text2 (pre- and post-text) are varchar(50) columns
+    const TEXT_MAX_LENGTH = 50;
+    /// data_int1/data_int3 are signed 32 bit int(11) columns
+    const START_VALUE_MAX = 2147483647;
+    /// More digits than a 32 bit number has, and a bound for str_pad()
+    const DIGITS_MAX = 50;
+
     /**
      * Constructor
      */
@@ -72,7 +79,8 @@ class eZIdentifierType extends eZDataType
     */
     function objectAttributeContent( $contentObjectAttribute )
     {
-        $content = $contentObjectAttribute->attribute( "data_text" );
+        // data_text is NULL until an identifier has been assigned
+        $content = (string)$contentObjectAttribute->attribute( "data_text" );
         if ( trim( $content ) == '' )
         {
             $contentClassAttribute = $contentObjectAttribute->contentClassAttribute();
@@ -96,7 +104,7 @@ class eZIdentifierType extends eZDataType
     }
     function hasObjectAttributeContent( $contentObjectAttribute )
     {
-        $content = $contentObjectAttribute->attribute( "data_text" );
+        $content = (string)$contentObjectAttribute->attribute( "data_text" );
         return ( trim( $content ) != '' );
     }
 
@@ -124,11 +132,33 @@ class eZIdentifierType extends eZDataType
         if ( $http->hasPostVariable( $startValueName ) and
              $http->hasPostVariable( $digitsName ) )
         {
-            $startValueValue = str_replace( " ", "", $http->postVariable( $startValueName ) );
-            $digitsValue = str_replace( " ", "", $http->postVariable( $digitsName ) );
+            $startValueValue = $http->postVariable( $startValueName );
+            $digitsValue = $http->postVariable( $digitsName );
+            // A request can post an array under any name (name[]=x), which the
+            // validator's preg_match() refuses with a TypeError
+            if ( !is_scalar( $startValueValue ) or !is_scalar( $digitsValue ) )
+                return eZInputValidator::STATE_INVALID;
+            $startValueValue = str_replace( " ", "", (string)$startValueValue );
+            $digitsValue = str_replace( " ", "", (string)$digitsValue );
 
+            // The pre- and post-text are stored in varchar(50) columns
+            foreach ( array( self::PRETEXT_VARIABLE, self::POSTTEXT_VARIABLE ) as $variable )
+            {
+                $name = $base . $variable . $classAttribute->attribute( "id" );
+                if ( !$http->hasPostVariable( $name ) )
+                    continue;
+                $text = $http->postVariable( $name );
+                if ( !is_scalar( $text ) or eZTextCodec::instance( false )->strlen( (string)$text ) > self::TEXT_MAX_LENGTH )
+                    return eZInputValidator::STATE_INVALID;
+            }
+
+            $this->IntegerValidator->setRange( 1, self::START_VALUE_MAX );
             $startValueValueState = $this->IntegerValidator->validate( $startValueValue );
+            // str_pad() builds a string of this many characters for every
+            // identifier: an unbounded number of digits was an unbounded allocation
+            $this->IntegerValidator->setRange( 1, self::DIGITS_MAX );
             $digitsValueState = $this->IntegerValidator->validate( $digitsValue );
+            $this->IntegerValidator->setRange( 1, false );
 
             if ( ( $startValueValueState == eZInputValidator::STATE_ACCEPTED ) and
                  ( $digitsValueState == eZInputValidator::STATE_ACCEPTED ) )
@@ -152,21 +182,26 @@ class eZIdentifierType extends eZDataType
              $http->hasPostVariable( $preTextName ) and
              $http->hasPostVariable( $postTextName ) )
         {
-            $startValueValue = str_replace( " ", "", $http->postVariable( $startValueName ) );
+            // Anything but a scalar (an array posted as name[]=x) counts as nothing
+            $scalar = function ( $value ) { return is_scalar( $value ) ? (string)$value : ''; };
+            $startValueValue = str_replace( " ", "", $scalar( $http->postVariable( $startValueName ) ) );
             $startValueValue = ( int ) $startValueValue;
             if ( $startValueValue < 1 )
             {
                 $startValueValue = 1;
             }
-            $digitsValue = str_replace( " ", "", $http->postVariable( $digitsName ) );
+            // Kept within what the int(11) column holds and what str_pad() is asked for
+            $startValueValue = min( $startValueValue, self::START_VALUE_MAX );
+            $digitsValue = str_replace( " ", "", $scalar( $http->postVariable( $digitsName ) ) );
             $digitsValue = ( int ) $digitsValue;
             if ( $digitsValue < 1 )
             {
                 $digitsValue = 1;
             }
+            $digitsValue = min( $digitsValue, self::DIGITS_MAX );
 
-            $preTextValue =  $http->postVariable( $preTextName );
-            $postTextValue = $http->postVariable( $postTextName );
+            $preTextValue =  $scalar( $http->postVariable( $preTextName ) );
+            $postTextValue = $scalar( $http->postVariable( $postTextName ) );
 
             $classAttribute->setAttribute( self::DIGITS_FIELD, $digitsValue );
             $classAttribute->setAttribute( self::PRETEXT_FIELD, $preTextValue );
@@ -261,7 +296,8 @@ class eZIdentifierType extends eZDataType
                                         "       contentclassattribute_id = $classAttributeID AND" .
                                         "       data_type_string = 'ezidentifier' AND" .
                                         "       data_int != 0" );
-        if ( count( $existingIDs ) > 0 )
+        // arrayQuery() gives false on a database error, and count( false ) is a TypeError
+        if ( is_array( $existingIDs ) and count( $existingIDs ) > 0 )
         {
             $identifierValue = $existingIDs[0]['data_int'];
             $ret[] = eZIdentifierType::storeIdentifierValue( $contentClassAttribute, $contentObjectAttribute, $identifierValue );
@@ -273,21 +309,34 @@ class eZIdentifierType extends eZDataType
             // Ensure that we don't get another identifier with the same id, so lock ezcontentclass_attribute
             $db->lock( array( array( 'table' => 'ezcontentclass_attribute' ) ) );
 
-            $selectQuery = "SELECT data_int3 FROM ezcontentclass_attribute WHERE " .
-                 "id=$contentClassAttributeID AND version=0";
-            $result = $db->arrayQuery( $selectQuery );
-            $identifierValue = $result[0]['data_int3'];
-
-            // should only increment when we don't have the first version
+            // Increment first, then read: the UPDATE takes the write lock (row
+            // lock, or the database lock on SQLite) inside the transaction before
+            // the value is read, so two publishes cannot both read the same
+            // counter. Reading first, as before, relied on the table lock alone,
+            // and lock() does nothing on a database without LOCK TABLES.
+            $contentClassAttributeID = (int)$contentClassAttributeID;
             $updateQuery = "UPDATE ezcontentclass_attribute SET data_int3=data_int3 + 1 WHERE " .
                   "id=$contentClassAttributeID AND version=0";
 
             $ret[] = $db->query( $updateQuery );
 
+            $selectQuery = "SELECT data_int3 FROM ezcontentclass_attribute WHERE " .
+                 "id=$contentClassAttributeID AND version=0";
+            $result = $db->arrayQuery( $selectQuery );
+            // No defined class attribute (the class is still a draft): there is no
+            // counter to take a value from, so assign nothing rather than "" / 0
+            if ( isset( $result[0]['data_int3'] ) and is_numeric( $result[0]['data_int3'] ) )
+                $identifierValue = (int)$result[0]['data_int3'] - 1;
+            else
+                $ret[] = false;
+
             $db->unlock();
             // unlock before we start to update the ezcontentobject_attribute table
 
-            $ret[] = eZIdentifierType::storeIdentifierValue( $contentClassAttribute, $contentObjectAttribute, $identifierValue );
+            // Without a counter value (or when the increment failed and is rolled
+            // back) the value read is not this object's to keep
+            if ( !in_array( false, $ret ) )
+                $ret[] = eZIdentifierType::storeIdentifierValue( $contentClassAttribute, $contentObjectAttribute, $identifierValue );
 
             if ( !in_array( false, $ret ) )
             {
@@ -347,8 +396,12 @@ class eZIdentifierType extends eZDataType
         $postText = $contentClassAttribute->attribute( self::POSTTEXT_FIELD );
         $digits = $contentClassAttribute->attribute( self::DIGITS_FIELD );
 
+        // The class attribute is not always from the form (a package, an old
+        // class): keep the padding within what the form accepts, and never pass
+        // str_repeat() a negative count, which is a ValueError
+        $digits = max( 0, min( (int)$digits, self::DIGITS_MAX ) );
         if ( $identifierValue !== false )
-            $midText = str_pad( $identifierValue, $digits, '0', STR_PAD_LEFT );
+            $midText = str_pad( (string)$identifierValue, $digits, '0', STR_PAD_LEFT );
         else
             $midText = str_repeat( 'x', $digits );
 
