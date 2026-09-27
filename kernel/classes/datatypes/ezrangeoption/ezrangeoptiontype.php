@@ -40,6 +40,18 @@ class eZRangeOptionType extends eZDataType
             $stopValue = $http->postVariable( $base . '_data_rangeoption_stop_value_' . $contentObjectAttribute->attribute( 'id' ) );
             $stepValue = $http->postVariable( $base . '_data_rangeoption_step_value_' . $contentObjectAttribute->attribute( 'id' ) );
 
+            // Each field is a single text input: an array (name[]=) is not
+            // input this form produces and would be stored as ''
+            foreach ( array( $name, $startValue, $stopValue, $stepValue ) as $value )
+            {
+                if ( !is_scalar( $value ) )
+                {
+                    $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                     'Missing range option input.' ) );
+                    return eZInputValidator::STATE_INVALID;
+                }
+            }
+
             if ( $name == '' or
                  $startValue == '' or
                  $stopValue == '' or
@@ -55,6 +67,18 @@ class eZRangeOptionType extends eZDataType
                 else
                     return eZInputValidator::STATE_ACCEPTED;
             }
+
+            // A value that is not a number, a step of zero or less or a range of
+            // more than eZRangeOption::MAX_OPTION_COUNT values would be stored
+            // and then give an empty option list on every read
+            if ( eZRangeOption::rangeCount( $startValue, $stopValue, $stepValue ) === false )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                 'The start, stop and step values must be numbers, the step greater than zero, and the range may have at most %1 values.' ),
+                                                 eZRangeOption::MAX_OPTION_COUNT );
+                return eZInputValidator::STATE_INVALID;
+            }
+            return eZInputValidator::STATE_ACCEPTED;
         }
         else if ( !$classAttribute->attribute( 'is_information_collector' ) and $contentObjectAttribute->validateIsRequired() )
         {
@@ -72,14 +96,13 @@ class eZRangeOptionType extends eZDataType
     function fetchObjectAttributeHTTPInput( $http, $base, $contentObjectAttribute )
     {
 
-        $optionName = $http->postVariable( $base . "_data_rangeoption_name_" . $contentObjectAttribute->attribute( "id" ) );
-        if ( $http->hasPostVariable( $base . "_data_rangeoption_id_" . $contentObjectAttribute->attribute( "id" ) ) )
-            $optionIDArray = $http->postVariable( $base . "_data_rangeoption_id_" . $contentObjectAttribute->attribute( "id" ) );
-        else
-            $optionIDArray = array();
-        $optionStartValue = $http->postVariable( $base . "_data_rangeoption_start_value_" . $contentObjectAttribute->attribute( "id" ) );
-        $optionStopValue = $http->postVariable( $base . "_data_rangeoption_stop_value_" . $contentObjectAttribute->attribute( "id" ) );
-        $optionStepValue = $http->postVariable( $base . "_data_rangeoption_step_value_" . $contentObjectAttribute->attribute( "id" ) );
+        // A missing field or an array in place of a text field is read as ''
+        // (the validation has already refused it where the attribute needs input)
+        $id = $contentObjectAttribute->attribute( "id" );
+        $optionName = self::scalarPostVariable( $http, $base . "_data_rangeoption_name_" . $id );
+        $optionStartValue = self::scalarPostVariable( $http, $base . "_data_rangeoption_start_value_" . $id );
+        $optionStopValue = self::scalarPostVariable( $http, $base . "_data_rangeoption_stop_value_" . $id );
+        $optionStepValue = self::scalarPostVariable( $http, $base . "_data_rangeoption_step_value_" . $id );
 
         $option = new eZRangeOption( $optionName );
 
@@ -87,16 +110,21 @@ class eZRangeOptionType extends eZDataType
         $option->setStopValue( $optionStopValue );
         $option->setStepValue( $optionStepValue );
 
-/*        $i = 0;
-        foreach ( $optionIDArray as $id )
-        {
-            $option->addOption( array( 'value' => $optionValueArray[$i],
-                                       'additional_price' => $optionAdditionalPriceArray[$i] ) );
-            $i++;
-        }
-*/
         $contentObjectAttribute->setContent( $option );
         return true;
+    }
+
+    /*!
+     \static
+     \return the post variable \a $name as a string, '' when it is missing or
+     is not a single value.
+    */
+    static function scalarPostVariable( $http, $name )
+    {
+        if ( !$http->hasPostVariable( $name ) )
+            return '';
+        $value = $http->postVariable( $name );
+        return is_scalar( $value ) ? (string)$value : '';
     }
 
     function storeObjectAttribute( $contentObjectAttribute )
@@ -134,6 +162,15 @@ class eZRangeOptionType extends eZDataType
         $optionArray = explode( '|', $string );
 
         $option = new eZRangeOption( '' );
+
+        // toString() writes name|start|stop|step without escaping, so a name
+        // with a | in it comes back as several parts: the last three are the
+        // numbers and everything before them is the name
+        if ( count( $optionArray ) > 4 )
+        {
+            $numbers = array_splice( $optionArray, -3 );
+            $optionArray = array_merge( array( implode( '|', $optionArray ) ), $numbers );
+        }
 
         $option->Name = array_shift( $optionArray );
         $option->StartValue = array_shift( $optionArray );
@@ -212,7 +249,8 @@ class eZRangeOptionType extends eZDataType
         {
             $defaultValueValue = $http->postVariable( $defaultValueName );
 
-            if ($defaultValueValue == ""){
+            // A text field: an array in its place is stored as ''
+            if ( !is_scalar( $defaultValueValue ) || $defaultValueValue == "" ){
                 $defaultValueValue = "";
             }
             $classAttribute->setAttribute( 'data_text1', $defaultValueValue );
@@ -232,7 +270,10 @@ class eZRangeOptionType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $defaultName = $attributeParametersNode->getElementsByTagName( 'default-name' )->item( 0 )->textContent;
+        // A package made without the element imports as an empty default name
+        // instead of a fatal error on null
+        $defaultNameNode = $attributeParametersNode ? $attributeParametersNode->getElementsByTagName( 'default-name' )->item( 0 ) : null;
+        $defaultName = $defaultNameNode ? $defaultNameNode->textContent : '';
         $classAttribute->setAttribute( 'data_text1', $defaultName );
     }
 
@@ -240,11 +281,14 @@ class eZRangeOptionType extends eZDataType
     {
         $node = $this->createContentObjectAttributeDOMNode( $objectAttribute );
 
-        $domDocument = new DOMDocument( '1.0', 'utf-8' );
-        $success = $domDocument->loadXML( $objectAttribute->attribute( 'data_text' ) );
-
-        $importedRoot = $node->ownerDocument->importNode( $domDocument->documentElement, true );
-        $node->appendChild( $importedRoot );
+        // Empty or broken stored XML exports the attribute without content
+        // (loadXML( '' ) throws a ValueError, a broken one has no root to import)
+        $domDocument = eZRangeOption::loadDocument( $objectAttribute->attribute( 'data_text' ) );
+        if ( $domDocument )
+        {
+            $importedRoot = $node->ownerDocument->importNode( $domDocument->documentElement, true );
+            $node->appendChild( $importedRoot );
+        }
 
         return $node;
     }
@@ -264,7 +308,10 @@ class eZRangeOptionType extends eZDataType
     function batchInitializeObjectAttributeData( $classAttribute )
     {
         $option = new eZRangeOption( $classAttribute->attribute( 'data_text1' ) );
-        return array( 'data_text' => "'" . $option->xmlString() . "'");
+        // The value goes into SQL as it is: a default name with a ' in it broke
+        // the statement that initialises the attribute for existing objects
+        $db = eZDB::instance();
+        return array( 'data_text' => "'" . $db->escapeString( $option->xmlString() ) . "'" );
     }
 }
 

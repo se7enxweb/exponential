@@ -104,12 +104,66 @@ class eZRangeOption
         $this->OptionCount += 1;
     }
 
+    /*!
+     \return A DOMDocument for \a $xmlString, or null when it is empty or not
+     well-formed. The parser's complaints are collected instead of raised as
+     warnings: broken stored data must read as an empty range, not as PHP
+     warnings, a ValueError for '' or a fatal error on a missing documentElement.
+    */
+    static function loadDocument( $xmlString )
+    {
+        if ( !is_string( $xmlString ) || trim( $xmlString ) === '' )
+            return null;
+        $dom = new DOMDocument( '1.0', 'utf-8' );
+        $previous = libxml_use_internal_errors( true );
+        $success = $dom->loadXML( $xmlString );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $previous );
+        if ( !$success || !$dom->documentElement )
+            return null;
+        return $dom;
+    }
+
+    /*!
+     \return the number of options the range \a $start .. \a $stop in steps of
+     \a $step generates, or false when it is not a usable range: a value that is
+     not a finite number, a step of zero or less (the loop that builds the list
+     would never end) or more values than MAX_OPTION_COUNT.
+    */
+    static function rangeCount( $start, $stop, $step )
+    {
+        foreach ( array( $start, $stop, $step ) as $value )
+        {
+            if ( !is_scalar( $value ) || !is_numeric( trim( (string)$value ) ) || !is_finite( (float)$value ) )
+                return false;
+        }
+        $start = (float)$start;
+        $stop = (float)$stop;
+        $step = (float)$step;
+        if ( $step <= 0 )
+            return false;
+        if ( $stop < $start )
+            return 0;
+        $count = floor( ( $stop - $start ) / $step ) + 1;
+        if ( $count > self::MAX_OPTION_COUNT )
+            return false;
+        return (int)$count;
+    }
+
+    /*!
+     \return \a $value as a string for the DOM: '' for null and for an array
+     (form and import input can be either).
+    */
+    static function scalarString( $value )
+    {
+        return is_scalar( $value ) ? (string)$value : '';
+    }
+
     function decodeXML( $xmlString )
     {
-        $dom = new DOMDocument( '1.0', 'utf-8' );
-        $success = $dom->loadXML( $xmlString );
+        $dom = self::loadDocument( $xmlString );
 
-        if ( $xmlString != "" )
+        if ( $dom )
         {
             // set the name of the node
             $rangeOptionElement = $dom->documentElement;
@@ -124,12 +178,19 @@ class eZRangeOption
 
 
             $nameNode = $dom->getElementsByTagName( "name" )->item( 0 );
-            $this->setName( $nameNode->textContent );
+            $this->setName( $nameNode ? $nameNode->textContent : '' );
 
-            for ( $i = $startValue; $i <= $stopValue; $i += $stepValue )
+            // A negative step never reaches the stop value, a value that is not
+            // a number throws a TypeError in the loop and a huge range builds
+            // millions of options on every read: all of them leave the option
+            // list empty instead of hanging or killing the request
+            if ( self::rangeCount( $startValue, $stopValue, $stepValue ) !== false )
             {
-                $this->addOption( array( 'value' => $i,
-                                         'additional_price' => 0 ) );
+                for ( $i = $startValue; $i <= $stopValue; $i += $stepValue )
+                {
+                    $this->addOption( array( 'value' => $i,
+                                             'additional_price' => 0 ) );
+                }
             }
         }
         else
@@ -148,12 +209,17 @@ class eZRangeOption
         $doc = new DOMDocument( '1.0', 'utf-8' );
 
         $root = $doc->createElement( "ezrangeoption" );
-        $root->setAttribute( "start_value", $this->StartValue );
-        $root->setAttribute( "stop_value", $this->StopValue );
-        $root->setAttribute( "step_value", $this->StepValue );
+        $root->setAttribute( "start_value", self::scalarString( $this->StartValue ) );
+        $root->setAttribute( "stop_value", self::scalarString( $this->StopValue ) );
+        $root->setAttribute( "step_value", self::scalarString( $this->StepValue ) );
         $doc->appendChild( $root );
 
-        $name = $doc->createElement( "name", $this->Name );
+        // A text node rather than createElement( name, value ): the value
+        // argument is not escaped, so a name with an & was cut off with a warning
+        // (no text node for '' so that an empty name stays <name/>, as before)
+        $name = $doc->createElement( "name" );
+        if ( self::scalarString( $this->Name ) !== '' )
+            $name->appendChild( $doc->createTextNode( self::scalarString( $this->Name ) ) );
         $root->appendChild( $name );
 
         $xml = $doc->saveXML();
@@ -188,6 +254,9 @@ class eZRangeOption
     public $StartValue;
     public $StopValue;
     public $StepValue;
+
+    /// The most options a range may generate; the list is built on every read
+    const MAX_OPTION_COUNT = 10000;
 }
 
 ?>
