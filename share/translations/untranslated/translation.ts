@@ -24,6 +24,13 @@
     </message>
 </context>
 <context>
+    <name>design/adin/content/trash</name>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>design/admin/ajaxupload</name>
     <message>
         <source>&lt;em&gt;%file&lt;/em&gt; has successfully been uploaded.</source>
@@ -1388,6 +1395,10 @@
         <source>To select objects, choose the appropriate radio button or checkbox(es), then click the &quot;Select&quot; button.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Current Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse_bookmark</name>
@@ -2176,6 +2187,14 @@
         <source>Go to the top</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>This action is not available in edit view when content object is published!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No content object state is configured.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/edit_attribute</name>
@@ -2344,6 +2363,26 @@
     </message>
     <message>
         <source>Current drafts (%draft_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translations:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creator:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Created:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2626,6 +2665,173 @@
     </message>
     <message>
         <source>New drafts (%newerDraftCount)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/multiedit</name>
+    <message>
+        <source>Edit several items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not create content of that type here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose how many to create.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose what to create.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>They could not be created here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What would you like to create, and how many? They are made as drafts and nothing is published until you say so.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How many</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At most %max at a time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was selected. Tick some items in a list or a search result and choose &quot;Edit selected&quot; from the More actions menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None of the selected items can be edited.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>you may not edit this item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no longer exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a draft could not be opened, somebody may be editing it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cannot be edited</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>waiting for approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>could not be published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Items waiting for approval have been sent into their workflow and are not published yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left out of this form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>some items have fields that need attention. They are marked below; everything typed has been kept as a draft.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count items, in %language. Each one is published separately when you press Publish.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open every item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close every item. Closed items are still saved and published; nothing is left out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needs attention before this item can be published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving drafts...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drafts saved at %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not save the drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make this many drafts and open them all for editing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publish all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publish every item in this form. Each is published separately.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keep what has been typed without publishing anything.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Throw away the drafts this form opened and go back.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3070,6 +3276,22 @@
         <source>Fewer keywords result in more matches. Try reducing keywords until you get a result.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select every result on this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select this item for editing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit every ticked result in one form.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -3368,6 +3590,10 @@
     </message>
     <message>
         <source>Trash (%list_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date trashed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4208,6 +4434,10 @@
         <source>What&apos;s happening in the Exponential Community</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>What&apos;s happening in the eZ Community</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -4296,6 +4526,10 @@
     <message>
         <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If this platform is critical for your business, we strongly recommend to subscribe to the Enterprise Edition of Exponential. More on &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt;&apos; website.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4586,6 +4820,10 @@
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Could not load LICENSE file! You should have a LICENSE file in your Exponential root directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/infocollector/collectionlist</name>
@@ -4709,6 +4947,10 @@
     </message>
     <message>
         <source>Objects that have collected information (%object_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4922,6 +5164,10 @@
     </message>
     <message>
         <source> - You do not have permission to view this object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This object has been deleted and is no longer available</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5695,6 +5941,38 @@
         <source>You are not allowed to view the related object</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unhide selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create multiple new</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count more in the %role_name role</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -6292,6 +6570,22 @@ Note: The packages will not be uninstalled.</source>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; and others.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -6473,6 +6767,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Search only from the current location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logout: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6835,6 +7133,13 @@ Note: The packages will not be uninstalled.</source>
     </message>
 </context>
 <context>
+    <name>design/admin/parts/sortheader</name>
+    <message>
+        <source>Sort by %column</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>design/admin/parts/user/menu</name>
     <message>
         <source>User accounts</source>
@@ -6917,6 +7222,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Look and feel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template List / Template Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template Editor</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7024,6 +7337,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Required data is either missing or is invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Footer text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown at the foot of every page, beside the page number. Leave the box empty for the default wording, or clear the tick for no text at all.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7696,6 +8017,10 @@ Note: The packages will not be uninstalled.</source>
         <source>Save policy changes to this role</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Policies (%policy_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/list</name>
@@ -7757,6 +8082,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Roles (%role_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8216,6 +8545,382 @@ Note: The packages will not be uninstalled.</source>
         <source>Field data</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Feed format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which format this export is written in. RSS and Atom are feeds of articles; OPML is a list of other feeds. Only RSS 2.0 carries the image selected above.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apple Podcasts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apple reads these from the itunes namespace. A feed missing one it requires is rejected outright, so the required ones are marked. Everything else is optional and left out of the document when empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name shown as the show&apos;s author.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner email</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apple writes to this address to confirm the show is yours. It is not published in the directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Artwork address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A square jpeg or png between 1400 and 3000 pixels, reachable without a login. Apple fetches it; a link it cannot follow is the commonest reason a feed is rejected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subcategory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Episodic - newest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial - oldest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A two letter code such as en, or a regional one such as en-us. Left empty the siteaccess language is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtitle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contains explicit content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The show is finished - no further episodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keep the show out of the Apple Podcasts directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The feed&apos;s new address, if it has moved. Apple follows it and updates every subscriber.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each episode needs a source below whose enclosure is mapped to a media or file attribute. An episode with no enclosure is left out of the feed, because Apple rejects a feed containing one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPML head</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These become the &lt;head&gt; of the document. The title, and the dates, are taken from the export itself. Anything left empty is left out rather than written empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who put this list together. Left empty, the export&apos;s creator is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left empty, the administrator address from site.ini is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An address that identifies the owner, if you publish one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Docs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the format this document follows is written down.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Outliner state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>expansionState</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>vertScrollState</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where an outliner last had this list open on screen. Readers that do not keep window state ignore them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feeds in this document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inside</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select this outline for removal.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lower numbers come first in the document.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The feed this pointed at has been deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point this outline at a content node instead of a feed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What a reader shows on the line. Left empty, the feed&apos;s own name is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Everything else OPML lets this line carry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>xmlUrl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left empty, the address of the feed this points at is worked out when the document is written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>htmlUrl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Used by the link and include types.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>isComment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>isBreakpoint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>include subnodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing is listed yet. Find feeds below and add them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Take the ticked outlines out of the document.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add a folder that other outlines can sit inside. OPML nests outlines, and readers show that nesting as groups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find feeds to add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Looks in the name, the address and the description.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Showing %from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Already in this document.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page %page of %pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add selected feeds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add the ticked feeds to this document.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No feed matches that.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/edit_import</name>
@@ -8438,6 +9143,58 @@ Note: The packages will not be uninstalled.</source>
         <source>RSS imports (%imports_count)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Showing %from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing to show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page %page of %pages</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/search/stats</name>
@@ -8467,6 +9224,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Clear the search log.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8666,6 +9427,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8958,6 +9723,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Values for each location setting are shown. The first values have lowest priority; the values toward the end have higher priority than the first ones.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Most used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All ini files</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup</name>
@@ -9156,6 +9929,349 @@ Note: The packages will not be uninstalled.</source>
         <source>Categories</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Static content cache was regenerated, %count pages written to %dir</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database query results (SQL query cache)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear query cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Makes every stored SQL result stale at once, on every server sharing this installation. Writes already invalidate the tables they touch; use this after changing the database outside Exponential, for example with a SQL client or a restore.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whole pages (HTTP cache)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear HTTP cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drops every cached page for every permission context, including the copies the Velocity response cache holds. Publishing already purges the pages it affects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No site can be cached.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every siteaccess either requires a login or has no SiteSettings/SiteURL, so there is no page to fetch and store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pages are written to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site to generate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All sites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Link depth</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fetches every url of the chosen site that the site itself links to and stores the page, so the web server can answer the next visitor from a file instead of starting the CMS. This can take some time on a large site. If you encounter time-out problems, use the &amp;quot;bin/php/makestaticcache.php&amp;quot; shell script.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stops listening and leaves the pages written so far in place.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated pages will not be refreshed when an editor publishes, because site.ini [ContentSettings] StaticCache is not enabled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP caches of this server process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The figures and settings are on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPcache (compiled PHP scripts)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset OPcache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empties the opcode cache of the server process answering this page. Every PHP file is compiled again on its next include, so the next requests are slower. Use it when an edited PHP file is not picked up.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>APCu (data in shared memory)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty APCu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empties APCu for the server process answering this page: every entry any application stored there is gone, including the memory tier of a Qbix response cache.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Runs a cronjob part now, without waiting for the scheduler. The job is started as a separate process and keeps running after this page is closed, so nothing is lost if the browser goes away.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No php command line binary could be found, so nothing can be launched from here. Set cronjob.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Idle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elapsed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run for site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop running job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show or hide the output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Runs every part, one after another.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob part / script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Crontab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>scripts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A crontab entry for this installation runs this part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>scheduled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing in the crontab runs this part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not scheduled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Blocked by cronjob.ini ForbiddenParts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Blocked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run the whole %part part now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not found in any cronjob directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run %script on its own</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This script cannot be run from here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Available but not activated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These scripts exist but no cronjob part names them, so they never run.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add it to a part in cronjob.ini to run it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent runs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Took</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing has been run from here yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show or hide the crontab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What is scheduled now, and the lines that would schedule the rest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the crontab now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read from crontab -l for the user this site runs as.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The crontab is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suggested entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written by this page from the paths below, for the parts nothing currently runs. Nothing adds them for you.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/datatypecode</name>
@@ -9204,6 +10320,50 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9439,6 +10599,705 @@ Note: The packages will not be uninstalled.</source>
         <source>PHP autoload functions</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Every cached page was purged; each is rendered again on its next request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed %entries dead entries, %bodies orphaned bodies and %records old user records.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The counters were reset.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no lookups yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>files (signed-in visitors cached)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not readable before the kernel (signed-in visitors not served early)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not usable in this PHP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The SQL profile is on: every request now adds a line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The SQL profile is off.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The SQL query cache was cleared.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The query cache counters of this server were reset.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPcache and APCu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>compiled PHP scripts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>data in shared memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These figures belong to the server process that answered this page; a command-line script, another php-fpm pool or another engine has caches of its own.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both can be emptied on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup &amp;gt; Caches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is the default engine ([ServerSettings] Engine), which exp:velocity start uses without --engine.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The default engine is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>this one runs with</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This server was not started by exp:velocity (it answers on another port than velocity.ini gives this engine), so the status below is limited to what the request itself shows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>reachable from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>process(es)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Console log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Views of the server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What it is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who may open it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other engines running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>stop it with</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Started from this installation as well. A site is served by one engine; another one running is usually left from a test or a benchmark.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Phar App Engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loaded from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Individual files on disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the archive below is not being used, because the EXP_ENGINE_PHAR environment variable is not set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Served by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To run from the files on disk again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To run from the archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installation root</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archive on disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archive was built from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archive is current</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To fix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing is running from the archive at the moment, so this is not affecting the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site is running from this archive, so what is on disk is not what is being served.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Phar stream wrapper</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deliberate: with it registered, a file that is both a valid image and a valid archive can be executed through a phar:// path.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Writing archives (phar.readonly)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HTTP cache (role-aware)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whole pages, per permission context</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch it on with Enabled=enabled in settings/httpcache.ini (an override); every page is rendered until then.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>enabled, nothing stored yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The first page requested on a cached siteaccess starts it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No server has counted yet: hit counts need APCu in the PHP that serves the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Why requests were not served from the cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Purge every cached page?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Purge all pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove dead entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset counters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database queries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQL statements per request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MongoDB: not an SQL engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The query cache is for the SQL engines. The MongoDB driver keeps its own statement profile (var/tmp/mongo_profile.on).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>profile on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>profile off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Query cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>settings/querycache.ini</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>results held in APCu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by this server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>APCu is not available to this server: &quot;shared&quot; works as &quot;request&quot; here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>generation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>last cleared</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tables written since</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no state file yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This server since</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>requests</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>misses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hit rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not cacheable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>writes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear the query cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset the counters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Over the last %n profiled requests</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>statements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exact repeats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in the database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a per-request memo would save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a shared query cache about</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Statements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distinct</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Repeats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Memo saves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shared cache saves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On, and nothing profiled yet: open a few pages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch the profile on to see how many statements each request runs, how many are exact repeats, and what a query cache would save.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/bc/6.0/sql-query-cache.md.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch the SQL profile off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch the SQL profile on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Response cache (web server)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pages without a lifetime of their own are kept for %seconds seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>only responses that bring their own max-age are kept; Exponential sends no-cache, so its pages are not</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>every request is rendered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>since the server started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shared memory (APCu)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>configured, but APCu is not enabled for this PHP process (apc.enable_cli) -- entries are kept on disk only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>available, but switched off for the response cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>entries up to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>segment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>free</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the directory does not exist yet or cannot be read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>at least</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>directories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not cached for visitors carrying</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>matched as a prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no cookie -- signed-in visitors would be served from the cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Further settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>stale pages served while one request renders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not-found pages remembered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HTML minified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>expired files swept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>every %seconds s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>nothing older than %seconds s</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/maintenance</name>
+    <message>
+        <source>Maintenance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site is in maintenance mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visitors see the maintenance page (503); the administration stays reachable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An installation is running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintenance window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Since</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expected back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Addresses that see the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site is online.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In maintenance mode every page request is answered with the maintenance page (503, never cached) before the settings or the database are used; images, styles and scripts are still served. Use it while you change the site, or it is switched on by the kickstarter while it installs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message for visitors (optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expected duration in minutes (optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Addresses that still see the site (optional, comma separated)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Let my own address (%ip) still see the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The administration stays reachable while the site is offline, so it can be switched off again here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch maintenance off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch maintenance on</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>
@@ -9460,6 +11319,61 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>\return an array with the template operator name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/preload</name>
+    <message>
+        <source>Preload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot determine the site url.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SiteSettings/SiteURL is not set in site.ini, so there is nothing to warm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requests every page of the site so the caches are warm before a visitor arrives. Start with the section pages, then follow links outwards.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site to warm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Link depth</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start preloading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Idle. Press Start preloading to begin.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9499,6 +11413,269 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, Exponential will generate a PHP framework for a new operator (which will be available for download).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every point this system can be extended at is listed below: what it is for, where the code goes, and what registers it. Where there is a tool it opens from here; where there is not, what is written here is what you would otherwise have to find by reading the kernel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension points written up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with a tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The rest are documented, and each is a tool waiting to be written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Showing %shown of them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension point survey</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The list above is written by hand. This one is read off disk on every request: %settings settings that name a class across %ini ini files, %views module views, %repositories directories searched for handlers, and %contracts interfaces waiting to be implemented.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type to narrow: a name, a setting, a class, a file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing matches that.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tool available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no tool yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registered by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contract</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How things are registered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing here matches that. The survey beside this list is larger and searchable too.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/content</name>
+    <message>
+        <source>Content extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A content class built in the admin exists on the machine it was built on and nowhere else, and the only record of how it was made is whatever somebody wrote down. Written as a script it is reviewable, re-runnable, and the same on every installation it is run on. The same extension can carry custom tags for rich text and a translation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, clear the caches, and run the class script once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What this extension carries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The content class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The identifier cannot be changed once content exists, and neither can an attribute datatype. Getting those right first is worth more than getting them quickly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without a group the class exists and appears nowhere.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line: identifier, datatype, name, then any of required, nosearch, collect, notranslate.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object name pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What every object of this class is called. The name ends up in the url, and changing this later renames nothing that already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>As the script will make them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatypes on this installation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line: a name, a colon, then its attributes. Add the word inline for a tag that sits inside a paragraph rather than replacing one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A template is written for each, and the ini that allows it. Anything not listed as an attribute cannot be set at all, which is the only validation a custom tag has.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Three letters, a dash, two letters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line: the context, a vertical bar, then the English. Every one is written unfinished, so the file changes nothing until it is filled in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What else goes in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Then, once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9566,6 +11743,1550 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Class constant name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatype wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A datatype is a kind of value a content class attribute can hold, with its own editing field, its own validation, its own storage and its own display. eZDataType declares over ninety methods; which of them a datatype needs depends entirely on what it is for. Say what it has to do below and only those are written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, regenerate the extension autoloads, and clear the caches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>methods</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count datatypes are already installed on this site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The datatype</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The identifier goes in the database against every attribute of this type, in every ini that mentions it, and in the name of the file the kernel looks for. It cannot be changed once content exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatype identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lower case letters and digits only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name in the class editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group it is listed under</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What it has to do</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each of these is a group of methods that only make sense together. Turning one on writes all of them, each with a note saying what the kernel calls it for. Leaving one off is the honest state for most of them in most datatypes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the value lives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An attribute is one row in ezcontentobject_attribute. That row has five columns a datatype may use and no others. A datatype needing more keeps a table of its own and puts the key in one of these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings an editor chooses once, when the attribute is added to a content class: a maximum length, a default, a folder to browse from. Name the ones this datatype keeps and they become constants in the class and fields in the settings form. Leave a box empty to leave that column alone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What will be written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every one of these is a method the kernel calls. Each is generated with this note beside it and returns something that leaves the system working; none of them does anything useful until it is written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php. The extension brings its own content.ini naming the datatype and its own design.ini naming the templates - without that second one the datatype works and draws nothing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Then</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/designextension</name>
+    <message>
+        <source>Design extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A design extension holds the templates, stylesheets, images and settings a site is drawn with, kept apart from the kernel so an upgrade cannot walk over them. Describe the one you want below; nothing is written until you ask for it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, then clear the caches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive. That is the usual arrangement on a server worth having.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What it is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name is the directory, the design and the value in design.ini, so it is lower case letters, digits and underscores.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Becomes extension/&lt;name&gt; and design/&lt;name&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What the admin interface calls it. Left empty, it is made from the name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Falls back on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None - just add the design to the chain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Used only when siteaccess settings are ticked below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Everything here is a starting point meant to be edited, not a black box.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What it will write</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>directories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name it, and the file list appears here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php, then clear the caches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click a heading to read one. Nothing here has been written yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/handler</name>
+    <message>
+        <source>Handler wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, clear the caches, and regenerate the extension autoloads.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The class name is what the ini will point at, so it has to be one nothing else on this installation already uses.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The short word the setting names, rather than the class itself.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What it replaces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extends</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What has to be written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every one of these is a method the kernel calls. Each is generated with this note beside it, and returns something that leaves the system working the way it did before.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php. The extension brings its own setting naming the class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/module</name>
+    <message>
+        <source>Module wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A module is how this system serves a page that is not content: a declaration, a script per view, a template per view, and the two ini lines that make the kernel look for any of it. When they disagree the failure is quiet - a view with no script is a blank page, a view naming a policy no module declares can be reached by nobody, and a module the ini does not list is not there at all.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below and clear the caches - the module list is itself cached.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The views</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line: a name, a colon, then what it needs. A word in lower case is a policy; a word starting with a capital is a parameter in the address; a capital word ending in ? is a named parameter that may be left out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What that produces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name a view and its address appears here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no policy check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line: a name, a colon, then any limitations. Every policy a view asks for has to be here, or nobody can be granted it and the view is reachable by nobody.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The first part of every address it answers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where it sits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Part of the admin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which left hand menu the entry goes in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Then</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/moduleextension</name>
+    <message>
+        <source>Module extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A table that eZ did not make has no way into the admin interface and no way into a template. Connect to a database, pick the tables, and this writes the eZPersistentObject classes, a module with list, edit and remove, the templates they draw with, the fetch functions that reach the same rows from a template, and the settings that put it all in the Setup menu. Nothing is written until you ask for it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, clear the caches, and regenerate the extension autoloads.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the tables are</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a file this installation can see...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Typed again each time it is needed; it is never written back into this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A user that may read is enough; nothing here writes to the database it reads.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connect and list tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count tables visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick the collections this extension should cover. A collection has no declared shape, so the fields below were worked out by reading a sample of its documents: a field that only some documents carry may be missing, and one that holds different kinds of value in different documents is treated as text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick the ones this extension should cover. A table with no primary key can still be read, but a single row cannot be addressed, so the first column is used instead.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No tables to show. Connect first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name is the directory; the module name is what appears in an address such as /&lt;module&gt;/list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>myTables + a table name makes the class name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What the Setup menu entry reads as.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php, then clear the caches and regenerate the extension autoloads.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How the columns were read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Taken from the database, not guessed. A key column is marked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>numbered by the database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/override</name>
+    <message>
+        <source>Kernel override wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An override is not a subclass. It replaces the kernel class under the same name, so there is no parent to call, nothing is inherited, and everything the original did has to keep being done by the copy. Every fix the kernel makes to that class afterwards is a fix this site does not get until somebody copies it across. Almost everything here has a lighter way in - a handler named by a setting, an event listener, a filter, a template override - and the RAD tools list them. This is for when none of them reaches the thing that has to change.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on, allow overrides in config.php, and generate the override map with ezpgenerateautoloads.php -o, which is a different run from the ordinary one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count classes in this kernel. Type part of a name or a path; every word has to match.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No class in this kernel matches that.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chosen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>That checksum goes into the copy and into the drift check, so the day the kernel changes this file, the check says so.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Why an override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whoever meets this at the next upgrade will want to know whether it is still needed, and by then nobody will remember. It goes in the file and in the README.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>And config.php, which is not the default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Then</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The -o run is a different one from the ordinary autoload generation, and writes var/autoload/ezp_override.php. Without it nothing here is loaded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After every upgrade</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The check the extension ships. Exit status 1 means the kernel changed the file this was copied from and somebody has to decide which of those changes this override needs. Worth failing a build on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/settings</name>
+    <message>
+        <source>Settings extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A good deal of what this system can be told to do differently is told in settings rather than in code. None of it is hard; all of it is in a shape nobody remembers, spread over half a dozen files, with a rule about where the file has to live for anything to read it at all. Tick what this extension should say and the files are written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below and clear the caches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What this extension says</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each of these is one ini file. Tick one and the questions for it are below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image aliases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line: a name, a colon, then the filters separated by commas. Arguments follow the filter after an = sign.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filters that ship</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View cache clearing rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line: a content class identifier, a colon, then the methods. Any word that is not a method is taken as a class identifier this one depends on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Methods</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information collection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line: a content class identifier, a type, and the word nomail if it should not be emailed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Types</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event listeners</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A method is written for each of these. A filter event uses what the method returns, so one that forgets to return the value destroys it; a notify event ignores it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Trigger operations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which operations a workflow may be bound to in the admin. Separated by commas, spaces or newlines.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listing an operation makes it bindable and binds nothing. The binding is a row in the database, done in the admin, and does not travel with the extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Additional extension roots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line, relative to the installation. extension/ is always first and is not named here; each of these is searched after it, and an extension of the same name in a later root shadows the one before it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The directory has to exist, and the autoloads have to be regenerated after adding one. Moving a package between roots is a copy and nothing else.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A set of icons this extension carries, searched before the ones that ship. Added to the search rather than made the current theme, so everything the site already draws keeps drawing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sizes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line: a name, then the directory it lives in. A size written as width by height gives the img tag its dimensions as well.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings that apply to one siteaccess only and travel with this extension rather than living in settings/.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line, as: file.ini [Section] Setting=value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listener class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What else goes in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Then</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/survey</name>
+    <message>
+        <source>Extension point survey</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The RAD tools page lists the points somebody thought to write down. This one lists what is actually here: read off disk on every request, so an extension installed this morning is in it this afternoon. Nothing below is a list kept by hand, and nothing below can go stale.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension points found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ini files read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>settings naming a class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>module views</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>contracts to implement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>take an alias instead</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>configured and cannot work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>look like a class and are not one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Showing %shown of %total.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Everything</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every class this installation declares has been loaded in a child process. That is the only way to find one php refuses, and a class php refuses ends the request that touches it rather than merely failing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Also load every class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Takes a few seconds. It loads every class this installation declares, in a child process so that one php refuses cannot take this page with it - which is how the last fault of that kind was found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing here matches that.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What is wrong</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How much</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What it means</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Declared in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How to fix it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What the dots mean</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A class of that name is declared, and the file it is in is shown. This is a point you can replace.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The value has a capital in it, so it is shaped like a class name, and nothing declares a class of that name. Either the registration is broken and whatever it was meant to switch on has never run, or it is an alias that happens to be capitalised.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One lower case word, so it is an alias that something else turns into a class - or, in the other lists, nothing is set and nothing implements it yet. An empty repository directory list is normal; an interface nothing implements is a point nobody has taken up.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/template</name>
+    <message>
+        <source>Template extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Four things can be added to the template language from an extension, and they are easy to confuse. An operator takes a value and gives one back. A function writes output where it stands and may have a body. A fetch function reads something, with a policy check first. A fetch alias is a fetch with its arguments already decided. Name any mixture of them below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, regenerate the extension autoloads, and clear the caches - the operator list is itself cached.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What to add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Several names in a box, separated by commas, spaces or newlines. One class is written per kind, answering to all of its names.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>{$value|myoperator} — takes the value on the left and gives one back.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>{myfunction arg=1} — writes output where it stands.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fetch functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>{fetch( module, thing )} — reads something, with a policy check first. Needs a module of its own.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fetch aliases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>{fetch_alias( news_list )} — a fetch with its arguments fixed in an ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One per line: a name, then a type, then the word required if it is. Types: string, integer, float, boolean, array, any.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operators take input</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is a value on the left of the pipe. Off means the operator is written {myoperator()} and produces a value out of its parameters alone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operators produce output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What they leave behind is printed rather than only used. Shown in the examples as a reminder to decide who washes it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Functions have a body</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>{myfunction}...{/myfunction}, with the body handed over unprocessed to draw none, one or many times. This is how section and foreach work.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What the compiler may assume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A template is compiled once and run many times. What is promised here decides how much work happens at compile time and how much on every request, for ever.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module for the fetches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What a template will write</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exactly as it would appear in a template, with the parameters named above already in place.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name an operator, a function, a fetch or an alias and it appears here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php. The extension brings its own site.ini adding itself to ExtensionAutoloadPath, which is the line that is forgotten and the usual reason an operator is reported unknown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Then</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9649,6 +13370,213 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Finish and generate</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/workflowevent</name>
+    <message>
+        <source>Workflow event wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A workflow event is a step a workflow takes when something is published, moved, removed, registered or bought. Four things have to be decided: where it may be attached, what an editor can set on it, what it answers with, and what it does. The first three are made here; the fourth is left as a method with every option written out beside it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, then clear the caches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What it is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The event name becomes the class, the template names and the value stored against every workflow that uses it. It cannot be changed afterwards without breaking those workflows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lower case letters and digits. Becomes %class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What editors see it called</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name in the list when an event is added to a workflow.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When it runs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every operation on this installation that carries a trigger, read from its own definition. Before runs while the operation is still deciding, so rejecting the event stops the operation; after runs once it has happened, so rejecting it then stops the rest of the workflow but not the thing itself.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What an editor can set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An event keeps its settings in four integer columns and five text ones, and the kernel gives those columns no meaning. Name them here and the generated class gets a constant per setting, a field in the edit form, and the code that reads it back.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A line of help shown under the field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n integer columns left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n text columns left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What it can answer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each of these changes what happens next, and several change what the kernel does rather than only what the workflow does. Tick the ones this event will use; each gets a branch in execute() with this explanation beside it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always included: an event with no way to say it is done would hang every workflow it is in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php, then clear the caches. The event then appears when an event is added to a workflow.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>triggers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>statuses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10277,6 +14205,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Use these checkboxes to select items for removal. Click the &quot;Remove selected&quot; button to  remove the selected items.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11043,6 +14975,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Sort products.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12430,6 +16366,26 @@ your account.</source>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Invalid name. You can only use the characters a-z, numbers, _ and / (for subdirectories).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The selected template is not a source template and cannot be used to create an override.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic (class-specific override if available, otherwise source)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic (source template)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/visual/templateedit</name>
@@ -12601,6 +16557,18 @@ your account.</source>
     </message>
     <message>
         <source>Overrides for &lt;%template_name&gt; template in &lt;%current_siteaccess&gt; siteaccess (%override_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No source template resource found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update overrides</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16495,6 +20463,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>You cannot edit the contents of version #%version_number either because it is not a draft or because you do not have permission to edit the object.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Repeat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/newcontent</name>
@@ -17608,6 +21584,10 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Could not load LICENSE file! You should have a LICENSE file in your Exponential root directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/gui</name>
@@ -17746,6 +21726,14 @@ If you do all the children will be removed as well.</source>
         <source>View your pending content</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A fatal error occured while checking the version status, you can try to refresh this page or contact your administrator.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Checking every %ms%ms and checked %times% times so far)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/menuconfig</name>
@@ -17845,6 +21833,10 @@ If you do all the children will be removed as well.</source>
     </message>
     <message>
         <source>If %trashname is checked you will find the removed items in the trash afterward.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to remove these items?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -18539,6 +22531,34 @@ You can also remove the package without uninstalling it from the package list.</
     </message>
     <message>
         <source>Use content object modification and publication dates from the package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invert selection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle all.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -19328,6 +23348,18 @@ menu on the top.</source>
     </message>
     <message>
         <source>New import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source URL</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -20227,6 +24259,302 @@ The default code was made from the basic parameters you chose.</source>
         <comment>Datatype</comment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Content extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A content class written as a script rather than built by clicking, plus custom tags for rich text and a translation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What this extension carries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>As the script will make them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no such datatype here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A datatype is a kind of value a content class attribute can hold, with its own editing field, validation, storage and display. Say what it has to do and only the methods that answer to that are written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The datatype</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatype identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name in the class editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What it has to do</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>methods</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the value lives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What will be written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel override wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An override is not a subclass. It replaces the kernel class under the same name, so nothing is inherited and every fix the kernel makes to that class afterwards is one this site does not get. Almost everything here has a lighter way in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a kernel class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Why an override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A module is a declaration, a script per view, a template per view, and the two ini lines that make the kernel look for any of it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Views</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What that produces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no policy check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>needs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%covered of the %total extension points this system offers have a tool on this page. The rest are listed with what they are, where the file goes and what registers it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Register in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension point survey</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What is actually on this installation, read off disk on every request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension points found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ini files read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Declared in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An extension that is mostly ini files: image aliases, event listeners, view cache rules, information collection, trigger operations and siteaccess settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What this extension says</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image aliases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View cache rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information collection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Trigger operations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Additional extension roots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon theme name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon sizes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event listeners</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An operator takes a value and gives one back. A function writes output where it stands. A fetch function reads something, with a policy check first. A fetch alias is a fetch with its arguments already decided.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What to add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fetch functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fetch aliases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parameters, one per line: name type required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operators take input</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operators produce output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Functions have a body</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module for the fetches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What a template will write</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/datatypecode</name>
@@ -20339,6 +24667,70 @@ The default code was made from the basic parameters you chose.</source>
     </message>
     <message>
         <source>More information on the MySQLi extension can be found at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MongoDB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MongoDB is a source-available, cross-platform, document-oriented NoSQL database program developed by MongoDB, Inc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It stores data in flexible, JSON-like BSON documents, meaning fields can vary from document to document and data structure can be changed over time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive. MongoDB stores data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time. The document model maps to the objects in your application code, making data easy to work with. Ad hoc queries, indexing, and real time aggregation provide powerful ways to access and analyze your data. MongoDB is a distributed database at its core, so high availability, horizontal scaling, and geographic distribution are built in and easy to use.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MongoDB is an excellent choice for high-throughput applications that require flexible schema design, horizontal scalability, and full Unicode support.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential CMS uses the sevenxMongoDB adapter which requires the PHP &apos;mongodb&apos; PECL extension (version 1.5+) and the &apos;mongodb/mongodb&apos; Composer package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To enable MongoDB support, install the PHP mongodb extension via PECL:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Then enable it in your php.ini:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>And install the MongoDB PHP library via Composer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More information on the MongoDB PHP extension can be found at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQLite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQLite is a serverless relational database management system developed by D. Richard Hipp.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQLite SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. SQLite is the most used database engine in the world. SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day. The SQLite file format is stable, cross-platform, and backwards compatible and the developers pledge to keep it that way through the year 2050. SQLite database files are commonly used as containers to transfer rich content between systems and as a long-term archival format for data [4]. There are over 1 trillion (1e12) SQLite databases in active use. SQLite source code is in the public-domain and is free to everyone to use for any purpose.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQLite is a good choice for handling most languages, including Unicode, and does not require configuration to get incredible speed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In order to enable SQLite support,</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More information on the SQLite extension can be found at</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -21720,6 +26112,114 @@ How do you access it?&lt;/p&gt;
         <source>General</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The database file name is not valid. Give a plain file name ending in .db, .db3, .sqlite or .sqlite3, made of letters, digits, dots, dashes and underscores, such as sqlite.db. The file is kept in %directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The directory %directory cannot be written by the web server (user %user). SQLite needs to create the database file there, and the -wal and -shm files it keeps next to it. Give that user write access to the directory (create it first if it does not exist), then try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The database file %file exists but cannot be written by the web server (user %user). Give that user write access to it, or choose another file name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file %file exists and is not a SQLite database. Choose another file name; the setup does not overwrite it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The SQLite database file %file could not be opened. See var/log/setup.log and var/log/error.log for the reason.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The &apos;digest&apos; function is not available in your database, you cannot run eZ Publish without this. See the documentation for more information.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your database version %version does not fit the minimum requirement which is %req_version.
+See the requirements page for more information.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uploaded file is not an eZ Publish package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Support for the following database systems was detected on your system:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please choose the database system you would like to use.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 is the recommended database system for Exponential, but it cannot be used here: the PHP %2 extension is not loaded. %3 has been selected instead. To use %1, enable the %2 extension in PHP and start the setup wizard again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 is recommended: it needs no database server, and Exponential keeps the whole database in a single file inside the installation. The other database systems listed below remain available for sites that use a database server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>recommended</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MySQL, PostgreSQL and MongoDB.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQLite is the recommended choice: it needs no database server and keeps the whole database in one file inside the installation. It requires the PHP sqlite3 extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database file name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQLite keeps the whole database in one file, in the directory %directory of this installation. It needs no server, user or password. The file is created if it does not exist; if it already holds tables, the Site details page asks what to do with them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Share Exponential! Forums</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;If you need to share knowledge, exchange tips with developers or simply find some improvement tricks, the eZ Community is the place to go.&lt;/p&gt;
+&lt;p&gt;How do you access it?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Go on %share_link%share.exponential.earth%a%&lt;/li&gt;
+  &lt;li&gt;Click on Register (top of the page) and create your profile&lt;/li&gt;
+  &lt;li&gt;Here you can check out the %blogs_link%blog posts%a%, %articles_link%articles%a%, %forums_link%forums%a% ...&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;We’re looking forward to seeing what you share with the Community!&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The database file %file already holds %count tables.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A file in %directory, created if it does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database files there now: %files</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -22492,6 +26992,14 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>The xsl extension, required by rich text handling, is not installed or enabled.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Your PHP does not have support for all databases that Exponential supports.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Although Exponential will work without it, you might later want to have support for this database prepared.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/toolbar</name>
@@ -23067,6 +27575,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>Subtotal ex. VAT</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Your receipt (sign in to view it; the address does not expire)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -23208,6 +27720,97 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>U.S.dollar</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/shop/orderreceipt</name>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmark this page to come back to your receipt at any time; you will be asked to sign in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Receipt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Product</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>VAT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Price inc. VAT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discount</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total ex. VAT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total inc. VAT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ex. VAT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inc. VAT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtotal of items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This receipt stays at this address. Anyone with this link can open it, so keep it private.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -23953,6 +28556,14 @@ your account.</source>
         <source>Email</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>If an account is registered with the email address %1, a mail has been sent to it. This email contains a link you need to click so that we can confirm that the correct user is getting the new password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a valid email address.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -24127,6 +28738,26 @@ your account.</source>
         <source>Extension</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Invalid name. You can only use the characters a-z, numbers, _ and / (for subdirectories).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The selected template is not a source template and cannot be used to create an override.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic (class-specific override if available, otherwise source)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic (source template)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/visual/templateedit</name>
@@ -24298,6 +28929,10 @@ your account.</source>
     </message>
     <message>
         <source>The override.ini file could not be modified because of insufficient permission.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No source template resource found.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -25000,6 +29635,14 @@ your account.</source>
         <source>Content Language cache</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>HTTP cache (role-aware pages)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Query cache (SQL results)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -25085,6 +29728,10 @@ your account.</source>
     </message>
     <message>
         <source>Copy of %class_name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please contact your eZ Publish administrator to solve this problem.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -25728,6 +30375,54 @@ your account.</source>
         <comment>eZUserType</comment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The author list can have at most %1 authors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file could not be uploaded. Please try again or contact the site administrator.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The image could not be uploaded. Please try again or contact the site administrator.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The image is too large: %1 x %2 pixels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A keyword can be at most %1 characters long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The related object does not exist or you are not allowed to read it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An object relation list can have at most %1 objects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A related object does not exist or you are not allowed to read it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The start, stop and step values must be numbers, the step greater than zero, and the range may have at most %1 values.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The input is not a valid text line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Links with the %1 scheme are not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/classes/datatypes/ezbinaryfile</name>
@@ -25818,6 +30513,10 @@ your account.</source>
     </message>
     <message>
         <source>%count invalid character(s) have been found and replaced by a space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tags are nested too deeply.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -26034,6 +30733,14 @@ your account.</source>
         <source>Publishing queue</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Copy subtrees</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit several items</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/content/copysubtree</name>
@@ -26095,6 +30802,10 @@ your account.</source>
     </message>
     <message>
         <source>Cannot publish object (Name: %1, ID: %2).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published object (Name: %1, ID: %2).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -26250,6 +30961,11 @@ your account.</source>
     </message>
     <message>
         <source>The class is used by a top-level node and cannot be removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The class is used by a top-level node and cannot be removed.
+You will need to change the class of the node by using the swap functionality.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -26696,6 +31412,38 @@ your account.</source>
         <source>Upload</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>PackageThumbnail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The image file must have non-zero size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A valid image file is required.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PackageImageFile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to install content object &apos;%remote_id&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Package install item is invalid (missing type).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install failed with exception: </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -26790,6 +31538,18 @@ your account.</source>
         <source>Invalid selection for category class %1 does not have attribute &quot;%2&quot;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This RSS export no longer exists. It may have been removed while this page was open.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/search</name>
@@ -26853,6 +31613,62 @@ your account.</source>
     </message>
     <message>
         <source>Template operator wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Design extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Handler wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel override wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintenance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension point survey</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File %1 does not exist. You should copy it from the recent eZ Publish distribution.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template extension wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflow event wizard</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -27068,6 +31884,24 @@ your account.</source>
     </message>
     <message>
         <source>Wishlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&apos;%value&apos; is not a valid custom rate value (positive number expected)</source>
+        <comment>Error message</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&apos;%value&apos; is not a valid rate_factor value (positive number expected)</source>
+        <comment>Error message</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Receipt for order #%order_id</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
