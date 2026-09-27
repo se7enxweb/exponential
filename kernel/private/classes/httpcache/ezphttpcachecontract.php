@@ -449,6 +449,81 @@ class ezpHttpCacheContract
     }
 
     /**
+     * The gzip form of a served page, without compressing the page per request.
+     *
+     * Compressing the whole page on every hit (gzencode) was the largest cost
+     * of a hit: ~0.7 ms for the front page, and on a server that answers hits
+     * in one process (Velocity's Q.web.appCache) a ceiling of ~630 signed-in
+     * pages a second. The parts of the stored body between placeholders are
+     * compressed once, each with a full flush so they stand alone, and kept in
+     * APCu beside the entry; a request compresses only its placeholder values
+     * (a form token: 40 bytes) and joins the pieces into one gzip member.
+     * Without APCu it compresses the page as before.
+     *
+     * @param string $key the entry key
+     * @param array $meta the entry's metadata (etag, placeholders, maxAge, swr)
+     * @param string $body the stored body (placeholders removed)
+     * @param array $values placeholder name => value
+     * @param string $plain the page as served (substitute() of the above)
+     * @return string
+     */
+    private function gzipEntry( $key, array $meta, $body, array $values, $plain )
+    {
+        if ( !$this->apcuUsable() || !function_exists( 'deflate_init' ) )
+            return gzencode( $plain, 1 );
+        $cacheKey = 'exphttpcache:gz:' . $key . ':' . ( $meta['etag'] ?? '' );
+        $parts = @apcu_fetch( $cacheKey );
+        if ( !is_array( $parts ) )
+        {
+            $parts = self::deflateParts( $body, $meta['placeholders'] );
+            @apcu_store( $cacheKey, $parts, (int)( $meta['maxAge'] ?? 0 ) + (int)( $meta['swr'] ?? 0 ) );
+        }
+        return self::assembleGzip( $parts, $meta['placeholders'], $values, $plain );
+    }
+
+    /**
+     * The parts of $body between placeholders, each compressed on its own
+     * (raw deflate, ending in a full flush, so pieces can be joined in order).
+     *
+     * @return string[] one more than there are placeholders
+     */
+    public static function deflateParts( $body, array $placeholders )
+    {
+        $parts = array();
+        $pos = 0;
+        foreach ( $placeholders as $p )
+        {
+            $parts[] = self::rawDeflate( substr( $body, $pos, $p[0] - $pos ), 6 );
+            $pos = $p[0];
+        }
+        $parts[] = self::rawDeflate( (string)substr( $body, $pos ), 6 );
+        return $parts;
+    }
+
+    /**
+     * One gzip member from pre-compressed parts and this request's values.
+     * $plain is the uncompressed page, for the trailer's CRC-32 and length.
+     */
+    public static function assembleGzip( array $parts, array $placeholders, array $values, $plain )
+    {
+        // Header: deflate, no name or time, OS unknown.
+        $gz = "\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff";
+        foreach ( $placeholders as $i => $p )
+            $gz .= $parts[$i] . self::rawDeflate( (string)$values[$p[2]], 1 );
+        $gz .= end( $parts );
+        // An empty final block ends the deflate stream.
+        $gz .= "\x03\x00";
+        return $gz . pack( 'V', crc32( $plain ) & 0xFFFFFFFF ) . pack( 'V', strlen( $plain ) & 0xFFFFFFFF );
+    }
+
+    /** $data as raw deflate that stands alone: its own dictionary, ending in a full flush. */
+    private static function rawDeflate( $data, $level )
+    {
+        $ctx = deflate_init( ZLIB_ENCODING_RAW, array( 'level' => $level ) );
+        return deflate_add( $ctx, $data, ZLIB_FULL_FLUSH );
+    }
+
+    /**
      * Cut the given values out of $html, returning [body, placeholders]:
      * each occurrence of a value becomes a placeholder at its offset in the
      * returned body. Values must be long and unambiguous (a 40-hex token).
@@ -734,7 +809,7 @@ class ezpHttpCacheContract
         if ( strpos( (string)( $request['acceptEncoding'] ?? '' ), 'gzip' ) !== false
             && strlen( $out ) > 1024 && function_exists( 'gzencode' ) )
         {
-            $out = gzencode( $out, 1 );
+            $out = $this->gzipEntry( $key, $meta, $body, $values, $out );
             $headers['Content-Encoding'] = 'gzip';
         }
         $headers['Content-Length'] = (string)strlen( $out );

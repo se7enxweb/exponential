@@ -12,6 +12,7 @@
  *  HC-08 — The early exit finds the user in a files session, and treats an unknown session as anonymous
  *  HC-09 — Garbage collection removes expired, purged and orphaned files and keeps current ones
  *  HC-10 — Metadata always points at its own body
+ *  HC-11 — The gzip joined from pre-compressed parts is exactly the served page
  *
  * No database, no kernel: the contract is pure PHP by design.
  *
@@ -244,5 +245,33 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'second body, longer', $entry[1] );
         $bodies = glob( $this->dir . '/e/' . substr( $key, 0, 2 ) . '/' . $key . '.*.body' );
         $this->assertCount( 1, $bodies, 'the old body is removed' );
+    }
+
+    /** HC-11 */
+    public function testJoinedGzipIsExactlyTheServedPage()
+    {
+        $token = str_repeat( 'a1b2c3d4e5', 4 );
+        $html = '<html><head><title>x</title></head><body>' . str_repeat( '<p class="x">Lorem ipsum dolor sit amet</p>', 400 ) . '</body></html>';
+        $cases = array(
+            'no placeholder'   => $html,
+            'one'              => str_replace( '<body>', '<body><input name="ezxform_token" value="' . $token . '" />', $html ),
+            'several'          => str_replace( '<p class="x">', '<p data-t="' . $token . '">', substr( $html, 0, 3000 ) ) . substr( $html, 3000 ),
+            'at the start'     => $token . $html,
+            'at the end'       => $html . $token,
+            'back to back'     => $token . $token . $html,
+        );
+        foreach ( $cases as $what => $page )
+        {
+            list( $body, $placeholders ) = ezpHttpCacheContract::extractPlaceholders( $page, array( 'form_token' => $token ) );
+            $other = sha1( 'another visitor' );
+            $values = array( 'form_token' => $other );
+            $plain = ezpHttpCacheContract::substitute( $body, $placeholders, $values );
+            $parts = ezpHttpCacheContract::deflateParts( $body, $placeholders );
+            $this->assertCount( count( $placeholders ) + 1, $parts, $what );
+            $gz = ezpHttpCacheContract::assembleGzip( $parts, $placeholders, $values, $plain );
+            $this->assertSame( $plain, gzdecode( $gz ), $what . ': decodes to the page with this visitor\'s value' );
+            $this->assertSame( "\x1f\x8b", substr( $gz, 0, 2 ), $what . ': a gzip member' );
+            $this->assertLessThan( strlen( $plain ) / 3, strlen( $gz ), $what . ': compressed' );
+        }
     }
 }
