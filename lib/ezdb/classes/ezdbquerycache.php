@@ -124,6 +124,27 @@ class eZDBQueryCache
         self::registerFlush();
         if ( ( $db->TransactionCounter ?? 0 ) > 0 )
             return null;
+        // The stored entry first: it carries the tables its statement read, so
+        // a hit needs no parsing. Reading the tables from the text was the
+        // largest single cost of a rendered page (a third of it, ~0.12 ms a
+        // statement for ~545 statements); only a miss parses now.
+        $key = md5( get_class( $db ) . "\0" . ( $db->DB ?? '' ) . "\0" . ( $db->Server ?? '' ) . "\0" . $sql . "\0" . serialize( is_array( $params ) ? $params : array() ) );
+        $entry = self::$memo[$key] ?? null;
+        if ( $entry === null && self::apcuUsable() )
+        {
+            $got = @apcu_fetch( 'ezqc:' . $key );
+            if ( is_array( $got ) )
+                $entry = $got;
+        }
+        // Only statements that were cacheable when stored have entries; one of
+        // their tables excluded since, or temporary, is not answered from it.
+        if ( $entry !== null && self::current( $entry ) && self::answerable( $entry['tables'] ) )
+        {
+            self::$memo[$key] = $entry;
+            self::$stats['hits']++;
+            $hit = $entry['rows'];
+            return null;
+        }
         $tables = self::readTables( $sql );
         if ( $tables === null )
         {
@@ -143,23 +164,20 @@ class eZDBQueryCache
                 return null;
             }
         }
-        $key = md5( get_class( $db ) . "\0" . ( $db->DB ?? '' ) . "\0" . ( $db->Server ?? '' ) . "\0" . $sql . "\0" . serialize( is_array( $params ) ? $params : array() ) );
-        $entry = self::$memo[$key] ?? null;
-        if ( $entry === null && self::apcuUsable() )
-        {
-            $got = @apcu_fetch( 'ezqc:' . $key );
-            if ( is_array( $got ) )
-                $entry = $got;
-        }
-        if ( $entry !== null && self::current( $entry ) )
-        {
-            self::$memo[$key] = $entry;
-            self::$stats['hits']++;
-            $hit = $entry['rows'];
-            return null;
-        }
         self::$stats['misses']++;
         return array( $key, $tables, microtime( true ) );
+    }
+
+    /** Whether a stored entry's tables may still be answered: none excluded, none temporary. */
+    protected static function answerable( array $tables )
+    {
+        $exclude = self::settings()['exclude'];
+        foreach ( $tables as $t )
+        {
+            if ( isset( $exclude[$t] ) || self::isTemporary( $t ) )
+                return false;
+        }
+        return true;
     }
 
     /** After a driver ran the SELECT lookup() handed a key for: keep its rows. */

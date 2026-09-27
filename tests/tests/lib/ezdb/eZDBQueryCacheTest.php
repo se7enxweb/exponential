@@ -14,6 +14,7 @@
  *  QC-10 — A stored result is a copy: changing what a caller got changes nothing
  *  QC-11 — Mode=off stores and invalidates nothing
  *  QC-12 — A write by another process, seen through the state file, makes a result stale
+ *  QC-13 — A stored result is answered without reading its tables again, but not once a table it read is excluded
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -304,5 +305,17 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         usleep( 1100000 );
         $this->assertNotNull( $this->select( $control ), 'a table the other process did not write is still current' );
         $this->assertNull( $this->select( $read ), 'the table it wrote is stale' );
+    }
+
+    /** QC-13 */
+    public function testHitWithoutParsingButNotForAnExcludedTable()
+    {
+        $sql = 'SELECT * FROM ezcontentobject o, ezsection s WHERE o.section_id = s.id';
+        $this->select( $sql );
+        $this->assertNotNull( $this->select( $sql ), 'answered from the entry' );
+        // Excluding a table after the result was stored: the entry must not answer.
+        eZDBQueryCache::setSettings( array( 'mode' => 'request', 'maxAge' => 300, 'maxRows' => 5000, 'exclude' => array( 'ezsection' => true ) ) );
+        $this->assertNull( $this->select( $sql ), 'a table it read is now excluded' );
+        $this->assertNull( $this->select( $sql ), 'and it is not stored again' );
     }
 }
