@@ -1258,9 +1258,27 @@ class eZDataType
         }
         else
         {
-            $objectAttribute->setAttribute( 'data_int', (int)$attributeNode->getElementsByTagName( 'data-int' )->item( 0 )->textContent );
-            $objectAttribute->setAttribute( 'data_float', (float)$attributeNode->getElementsByTagName( 'data-float' )->item( 0 )->textContent );
-            $objectAttribute->setAttribute( 'data_text', $attributeNode->getElementsByTagName( 'data-text' )->item( 0 )->textContent );
+            // A package that leaves one of the three elements out (hand-edited,
+            // produced by another tool, or by an old version) used to end the
+            // whole import with "Attempt to read property textContent on null".
+            // A missing element now leaves that field as it is, and is logged
+            // like a missing element of the object_serialize_map branch above.
+            $fields = array( 'data_int' => 'data-int', 'data_float' => 'data-float', 'data_text' => 'data-text' );
+            foreach ( $fields as $attributeName => $xmlName )
+            {
+                $element = $attributeNode->getElementsByTagName( $xmlName )->item( 0 );
+                if ( $element === null )
+                {
+                    eZDebug::writeError( "The xml element '$xmlName' does not exist for contentobject attribute " . $objectAttribute->attribute( 'id' ), __METHOD__ );
+                    continue;
+                }
+                $value = $element->textContent;
+                if ( $attributeName === 'data_int' )
+                    $value = (int)$value;
+                else if ( $attributeName === 'data_float' )
+                    $value = (float)$value;
+                $objectAttribute->setAttribute( $attributeName, $value );
+            }
         }
     }
 
