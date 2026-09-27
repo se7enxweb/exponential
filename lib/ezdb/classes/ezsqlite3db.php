@@ -22,6 +22,10 @@ class eZSQLite3DB extends eZDBInterface
         if ( $this->DBConnection === false && $this->DB !== null )
         {
             $this->DBConnection = $this->connect( $this->DB );
+            // As the MySQL driver does: the callers (the setup wizard, index.php)
+            // expect this exception for a database that cannot be reached
+            if ( !$this->IsConnected )
+                throw new eZDBNoConnectionException( self::filePath( $this->DB ), $this->ErrorMessage, $this->ErrorNumber );
         }
 
 
@@ -102,6 +106,32 @@ class eZSQLite3DB extends eZDBInterface
         $this->query( 'PRAGMA journal_mode = wal;' );
     }
 
+    /**
+     * The directory a database named without a path lives in, relative to
+     * the installation root. Below var/storage, which the shipped .htaccess
+     * sends to index.php and which Velocity's static allow-list leaves out;
+     * .db is not a served extension of either.
+     */
+    const STORAGE_DIRECTORY = 'var/storage/sqlite3';
+
+    /**
+     * The file a DatabaseSettings Database value names: an absolute path as
+     * it is (a Doctrine/SQLite URL bridged in), ":memory:", or a name in
+     * STORAGE_DIRECTORY.
+     *
+     * @param string $fileName
+     * @return string
+     */
+    public static function filePath( $fileName )
+    {
+        $fileName = (string)$fileName;
+        if ( $fileName === ':memory:' )
+            return $fileName;
+        if ( strlen( $fileName ) > 0 && $fileName[0] === '/' )
+            return $fileName;
+        return eZDir::path( array( self::STORAGE_DIRECTORY, $fileName ) );
+    }
+
     /*!
      \private
      Opens a new connection to a SQLite database and returns the connection
@@ -136,40 +166,39 @@ class eZSQLite3DB extends eZDBInterface
 */
         $connection = false;
         $error = 0;
+        $openError = false;
 
         $maxAttempts = $this->connectRetryCount() + 1;
         $waitTime = $this->connectRetryWaitTime();
         $numAttempts = 1;
+        $fullPath = self::filePath( $fileName );
+        $directoryPath = dirname( $fullPath );
         while ( ( $connection == false || $error !== 0 ) && $numAttempts <= $maxAttempts )
         {
-            $directoryPath = 'var/storage/sqlite3';
-            // Use absolute path directly (e.g. when bridged from Doctrine/SQLite URL);
-            // otherwise prefix with the default storage directory.
-            if ( $fileName === ':memory:' )
-                $fullPath = $fileName;
-            elseif ( strlen( $fileName ) > 0 && $fileName[0] === '/' )
-                $fullPath = $fileName;
-            else
-                $fullPath = eZDir::path( array( $directoryPath, $fileName ) );
-
-            if( !file_exists( $directoryPath ) )
-                mkdir( $directoryPath, 0775, true );
-            // var_dump( $fullPath ); echo '<hr>'; // die();
-            if( !file_exists( $fullPath ) )
-                $fh = fopen($fullPath, 'w') or eZDebug::writeError( "Connection error: Couldn't create database file. Please try again later or inform the system administrator.", "eZSQLite3DB" );
-            $connection = new SQLite3( $fullPath );
-            if ( $this->OutputSQL )
+            // SQLite3 creates the file itself (SQLITE3_OPEN_CREATE); only the
+            // directory has to be there. A directory that cannot be created,
+            // or a file that cannot be opened, is a failed connection, not a
+            // PHP warning followed by an uncaught exception.
+            if ( $fullPath !== ':memory:' && !is_dir( $directoryPath ) )
+                @mkdir( $directoryPath, 0775, true );
+            try
             {
-                eZDebug::writeDebug( "Opened SQLite3 database: $fullPath", __METHOD__ );
-            }
-
-            if ( $connection )
-            {
+                $connection = new SQLite3( $fullPath );
                 $error = $connection->lastErrorCode();
                 if ( $error !== 0 && $this->OutputSQL )
                 {
                     eZDebug::writeDebug( "SQLite3 error code: $error - " . $connection->lastErrorMsg(), __METHOD__ );
                 }
+            }
+            catch ( Exception $e )
+            {
+                $connection = false;
+                $error = -1;
+                $openError = $e->getMessage();
+            }
+            if ( $this->OutputSQL && $connection )
+            {
+                eZDebug::writeDebug( "Opened SQLite3 database: $fullPath", __METHOD__ );
             }
             $numAttempts++;
         }
@@ -177,9 +206,10 @@ class eZSQLite3DB extends eZDBInterface
         if ( $error !== 0 )
         {
             $this->ErrorNumber = $error;
-            $this->ErrorMessage = $connection->lastErrorMsg();
-            eZDebug::writeError( "Connection error: Couldn't connect to database. Please try again later or inform the system administrator.", "eZSQLite3DB" );
+            $this->ErrorMessage = $connection ? $connection->lastErrorMsg() : $openError . " ($fullPath)";
+            eZDebug::writeError( "Connection error: Couldn't connect to database. Please try again later or inform the system administrator. " . $this->ErrorMessage, "eZSQLite3DB" );
             $this->IsConnected = false;
+            $connection = false;
         }
         else
         {
@@ -640,7 +670,7 @@ class eZSQLite3DB extends eZDBInterface
     {
         // A SQLite database is a file, and connect() creates it on demand, so
         // there is nothing to do here beyond making sure the directory exists.
-        $directory = 'var/storage/sqlite3';
+        $directory = self::STORAGE_DIRECTORY;
         if ( !file_exists( $directory ) )
             eZDir::mkdir( $directory, false, true );
     }
@@ -723,23 +753,34 @@ class eZSQLite3DB extends eZDBInterface
     */
     function availableDatabases()
     {
+        return self::availableDatabasesIn( self::STORAGE_DIRECTORY );
+    }
+
+    /**
+     * The database files in a directory, sorted by name.
+     *
+     * Databases only: WAL mode keeps <name>-wal and <name>-shm next to each
+     * one, and a rollback journal is <name>-journal; offered as a database,
+     * any of them could be the setup wizard's first choice.
+     *
+     * @param string $directory
+     * @return string[]
+     */
+    public static function availableDatabasesIn( $directory )
+    {
         $returnFiles = array();
-        if ( $handle = @opendir( 'var/storage/sqlite3' ) )
+        if ( $handle = @opendir( $directory ) )
         {
             while ( ( $file = readdir( $handle ) ) !== false )
             {
-                if ( ( $file == "." ) || ( $file == ".." ) )
-                {
+                if ( $file[0] === '.' || preg_match( '/-(wal|shm|journal)$/', $file ) )
                     continue;
-                }
-
-                if ( is_file( 'var/storage/sqlite3/' . $file ) )
-                {
+                if ( is_file( $directory . '/' . $file ) )
                     $returnFiles[] = $file;
-                }
             }
             @closedir( $handle );
         }
+        sort( $returnFiles );
         return $returnFiles;
     }
 
