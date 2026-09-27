@@ -116,7 +116,9 @@ After changing the file: clear the INI cache (`php bin/php/ezcache.php
 ## How it works
 
 Class `eZDBQueryCache`, `lib/ezdb/classes/ezdbquerycache.php`. Each SQL driver
-calls it in three places:
+calls it in three places (a lookup lands on the stored entry first and uses the
+tables stored with it; the statement's text is parsed only on a miss, since the
+parsing was about a third of a rendered page's CPU):
 
 - `arrayQuery()` asks `lookup()` before running a statement, and gets the rows
   or a ticket;
@@ -304,11 +306,12 @@ so the tests never touch the site's cache.
 | QC-09 | Keys differ by statement, `arrayQuery()` parameters, database and server |
 | QC-10 | A stored result is a copy: changing what a caller got changes nothing |
 | QC-11 | `Mode=off` stores nothing, writes no state and counts nothing |
+| QC-13 | A stored result is answered without parsing the statement again, but not once a table it read has been excluded |
 | QC-12 | A write by another process, seen through the state file, makes a result stale within a second, even one still in the request's memo; other tables stay current |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (12 tests, 92 assertions), about 2 s (QC-08 and QC-12 wait a second each)
+# OK (13 tests, 95 assertions), about 2 s (QC-08 and QC-12 wait a second each)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on alpha

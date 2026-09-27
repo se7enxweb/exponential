@@ -81,6 +81,44 @@ installation that is running in one line, as a test setup.
 deploy scripts run `exp:velocity restart` to mean the Qbix server sets
 `Engine=qbix` in `settings/override/velocity.ini.append.php`.
 
+## Several Qbix servers on one port (`Instances`)
+
+A Qbix server answers cached pages in its own process, before any worker is
+involved: about 0.3 ms of CPU a page, so one server is bounded by one core.
+`[ServerSettings] Instances=N` runs N servers on the same HTTP and HTTPS ports
+instead. The generated configuration sets the engine's `Q.webserver.reusePort`,
+so every instance opens its listeners with `SO_REUSEPORT` and the kernel spreads
+new connections across them.
+
+```ini
+# settings/override/velocity.ini.append.php
+[ServerSettings]
+Instances=4
+Workers=148        # per instance: the old 590 divided by four
+SpareWorkers=12    # per instance: the old 48 divided by four
+```
+
+- Each instance has its own worker pool, pid file and log, beside the first
+  one's: `server.pid`, `server.1.pid`, ... and `console.log`,
+  `console.1.log`, .... Instance 0 keeps the configured names, so
+  `Instances=1` (the default) is exactly the single server as before.
+- `start`, `stop`, `kill` and `status` reach every instance; `status` lists the
+  parents. `graceful` reloads them one at a time, so the port keeps answering.
+- The response cache's disk tier is shared (the same cache directory); each
+  instance's memory and APCu tiers are its own and warm up separately.
+- Only the Qbix engine: FrankenPHP and PHP's server run one process tree each.
+- Linux and the BSDs (`SO_REUSEPORT`).
+
+Measured on alpha (12 cores, 2026-09-27), cached front page over TLS with gzip:
+
+| | one instance | four instances | FrankenPHP |
+|---|---:|---:|---:|
+| anonymous, 64 concurrent | ~2,950/s | **11,985/s**, p95 10 ms | 4,153/s |
+| signed in (the HTTP cache), 8 concurrent | 1,435/s | **3,991/s** | 1,937-3,413/s |
+
+Full renders are not faster with more instances; they are bounded by the
+workers and by Exponential itself.
+
 ## FrankenPHP
 
 ```bash
@@ -135,6 +173,16 @@ php.ini of your own instead (`PHPRC`).
 
 OPcache needs no `opcache.revalidate_freq=0` here: every request has its own
 request time, so edited and regenerated PHP files are picked up.
+
+Each value reaches PHP as ini text, where a `;` starts a comment, so a value
+holding one (`session.save_path=0;0660;<dir>`) is written quoted into the
+Caddyfile. Before that was done, the session path arrived as `0`, no session
+was ever found and nobody could stay signed in on this engine.
+
+`[PHPSettings] IniOptions[]` also sets `apc.shm_size=256M` for both engines:
+the command-line default is 32 MB, in which the response cache and the SQL
+query cache evicted each other (a Velocity render cost 727 ms of CPU, 303 ms
+with 256 MB).
 
 ### The generated Caddyfile
 
