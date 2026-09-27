@@ -31,18 +31,23 @@ class eZStepLanguageOptions extends eZStepInstaller
 
     function processPostData()
     {
-        $primaryLanguage = $this->Http->postVariable( 'eZSetupDefaultLanguage' );
-        $languages       = $this->Http->hasPostVariable( 'eZSetupLanguages' ) ? $this->Http->postVariable( 'eZSetupLanguages' ): array();
+        $primaryLanguage = $this->Http->hasPostVariable( 'eZSetupDefaultLanguage' ) ? $this->Http->postVariable( 'eZSetupDefaultLanguage' ) : '';
+        $languages       = $this->Http->hasPostVariable( 'eZSetupLanguages' ) ? (array)$this->Http->postVariable( 'eZSetupLanguages' ) : array();
 
-        if ( !in_array( $primaryLanguage, $languages ) )
-            $languages[] = $primaryLanguage;
+        // The primary language, then the additional ones: only languages
+        // there is a locale for, none twice, and the primary not also listed
+        // as additional (the page shows both a radio button and a checkbox
+        // per language, and nothing stopped a person ticking both)
+        $choice = eZSetupValidateLanguageChoice( $primaryLanguage, $languages );
+        if ( $choice['errors'] )
+        {
+            $this->LanguageErrors = $choice['errors'];
+            $this->PostedChoice = array( 'primary_language' => is_string( $primaryLanguage ) ? $primaryLanguage : '',
+                                         'extra_languages' => array_values( array_filter( $languages, 'is_string' ) ) );
+            return false;
+        }
 
-        $regionalInfo = array();
-        $regionalInfo['language_type'] = 1 ;
-        $regionalInfo['primary_language'] = $primaryLanguage;
-        $regionalInfo['languages'] = $languages;
-        $regionalInfo['enable_unicode'] = true;
-        $regionalInfo['site_charset'] = 'utf-8';
+        $regionalInfo = eZStepLanguageOptions::regionalInfoFromChoice( $choice );
 
         $this->PersistenceList['regional_info'] = $regionalInfo;
         $charset = false;
@@ -132,19 +137,33 @@ class eZStepLanguageOptions extends eZStepInstaller
         {
             $data = $this->kickstartData();
 
-            $regionalInfo = array();
-            $regionalInfo['primary_language'] = $data['Primary'];
-            if ( !in_array( $data['Primary'], $data['Languages'] ?? [] ) )
-                $data['Languages'][] = $data['Primary'];
-            $regionalInfo['languages'] = $data['Languages'];
-            $regionalInfo['enable_unicode'] = true;
-            // The interactive path a few lines above settles on utf-8 and says
-            // so; the kickstart path left site_charset unset, so CreateSites
-            // fell back to findAppropriateCharset() with use_unicode still at
-            // its default false and picked iso-8859-1. Every unattended
-            // install therefore came out latin-1 while a manual one came out
-            // utf-8, and transliteration turned "Uber uns" into a-ber-uns.
-            $regionalInfo['site_charset'] = 'utf-8';
+            // kickstart.ini lists the primary among Languages[] or not, as it
+            // likes: here only the additional ones count, so it is dropped
+            // from them instead of being refused
+            $primary = isset( $data['Primary'] ) ? $data['Primary'] : '';
+            $extras = isset( $data['Languages'] ) ? (array)$data['Languages'] : array();
+            $extras = array_values( array_diff( $extras, array( $primary ) ) );
+            $choice = eZSetupValidateLanguageChoice( $primary, $extras );
+            if ( $choice['errors'] )
+            {
+                // An unattended install with a language this installation has
+                // no locale for: stop here and show the page with the reason,
+                // instead of installing a site with a broken language setup
+                foreach ( $choice['errors'] as $error )
+                    eZDebug::writeError( 'kickstart.ini [language_options]: ' . $error, __METHOD__ );
+                $this->LanguageErrors = $choice['errors'];
+                $this->PostedChoice = array( 'primary_language' => $primary, 'extra_languages' => $extras );
+                $this->setAllowKickstart( false );
+                return false;
+            }
+
+            // The interactive path settles on utf-8 and says so; the kickstart
+            // path left site_charset unset, so CreateSites fell back to
+            // findAppropriateCharset() with use_unicode still at its default
+            // false and picked iso-8859-1. Every unattended install therefore
+            // came out latin-1 while a manual one came out utf-8, and
+            // transliteration turned "Uber uns" into a-ber-uns.
+            $regionalInfo = eZStepLanguageOptions::regionalInfoFromChoice( $choice );
 
             $this->PersistenceList['regional_info'] = $regionalInfo;
             $this->storePersistenceData();
@@ -173,14 +192,42 @@ class eZStepLanguageOptions extends eZStepInstaller
         }
         $this->Tpl->setVariable( 'show_unicode_error', $showUnicodeError );
 
+        // Preselection, first visit: the browser's most preferred language
+        // the installation has a locale for as the primary, its other
+        // accepted languages as additional ones, and the language the bundled
+        // content is in. That content exists in that language only; kept as
+        // an additional language, the site shows it whatever the primary is,
+        // instead of depending on a mapping the person never saw.
+        $dataLanguage = eZSetupBundledDataLanguage();
+        $extraLanguages = $defaultExtraLanguages;
+        if ( $defaultLanguage != $dataLanguage && !in_array( $dataLanguage, $extraLanguages ) )
+            $extraLanguages[] = $dataLanguage;
         $regionalInfo = array( 'primary_language' => $defaultLanguage,
-                               'languages' => $defaultExtraLanguages );
+                               'languages' => array_merge( array( $defaultLanguage ), $extraLanguages ) );
         if ( isset( $this->PersistenceList['regional_info'] ) )
             $regionalInfo = $this->PersistenceList['regional_info'];
         if ( !isset( $regionalInfo['enable_unicode'] ) )
             $regionalInfo['enable_unicode'] = true;
+        $primaryLanguage = isset( $regionalInfo['primary_language'] ) ? $regionalInfo['primary_language'] : $defaultLanguage;
+        $extraLanguages = array_values( array_diff( isset( $regionalInfo['languages'] ) ? (array)$regionalInfo['languages'] : array(),
+                                                    array( $primaryLanguage ) ) );
+
+        // A refused answer is shown as it was given, so the person sees what
+        // to correct
+        $languageErrors = $this->LanguageErrors ? $this->LanguageErrors : array();
+        if ( $languageErrors && is_array( $this->PostedChoice ) )
+        {
+            $primaryLanguage = $this->PostedChoice['primary_language'];
+            $extraLanguages = $this->PostedChoice['extra_languages'];
+        }
+        $regionalInfo['primary_language'] = $primaryLanguage;
 
         $this->Tpl->setVariable( 'regional_info', $regionalInfo );
+        $this->Tpl->setVariable( 'extra_languages', $extraLanguages );
+        $this->Tpl->setVariable( 'language_errors', $languageErrors );
+        $this->Tpl->setVariable( 'data_language', $dataLanguage );
+        $dataLocale = eZLocale::instance( $dataLanguage );
+        $this->Tpl->setVariable( 'data_language_name', $dataLocale ? $dataLocale->attribute( 'intl_language_name' ) : $dataLanguage );
 
         // The default is to not use unicode if it has not been detected by
         // database driver to be OK.
@@ -203,7 +250,31 @@ class eZStepLanguageOptions extends eZStepInstaller
     }
 
 
+    /*!
+     \static
+     The regional_info the rest of the wizard reads, from a choice checked by
+     eZSetupValidateLanguageChoice():
+
+       primary_language  locale code of the primary language (eng-US)
+       languages         every site language, the primary first, then the
+                         additional ones in the order chosen
+       extra_languages   the additional languages only (languages without
+                         the primary)
+       site_charset      always utf-8
+    */
+    static function regionalInfoFromChoice( $choice )
+    {
+        return array( 'language_type' => 1,
+                      'primary_language' => $choice['primary_language'],
+                      'languages' => $choice['languages'],
+                      'extra_languages' => $choice['extra_languages'],
+                      'enable_unicode' => true,
+                      'site_charset' => 'utf-8' );
+    }
+
     public $Error;
+    public $LanguageErrors = array();
+    public $PostedChoice = null;
 }
 
 ?>

@@ -8,6 +8,19 @@
 {"Use the radio buttons to choose the default language, and the checkboxes to choose additional languages. You will be able to use any of the selected languages for translating your content. The default language will determine the locale settings and will be used as the most prioritized language for your site."|i18n("design/standard/setup/init")}
 </p>
 <p>
+{"The content that comes with the site is written in %1. Keep %1 as the default or as an additional language to have that content shown on the site."|i18n("design/standard/setup/init",,array($data_language_name|wash))}
+</p>
+{if $language_errors}
+<div class="error">
+  <h2>{"The language choice cannot be used"|i18n('design/standard/setup/init')}</h2>
+  <ul>
+  {foreach $language_errors as $language_error}
+    <li>{$language_error|wash}</li>
+  {/foreach}
+  </ul>
+</div>
+{/if}
+<p>
 {if $show_unicode_error}
 <div class="warning">
   <h2>{"No Unicode support"|i18n('design/standard/setup/init')}</h2>
@@ -25,19 +38,47 @@ To fix this problem you must do one of the following:"|i18n('design/standard/set
 <fieldset>
   <legend>{"Default/Additional"|i18n("design/standard/setup/init")}:</legend>
 
-  <table border="0" cellspacing="0" cellpadding="0">
-  {section name=Language loop=$language_list}
+  <table border="0" cellspacing="0" cellpadding="0" id="eZSetupLanguageTable">
+  {foreach $language_list as $language}
     <tr>
       <td class="normal">
-       <input type="radio" id="eZSetupDefaultLanguage_{$:item.locale_code}" name="eZSetupDefaultLanguage" value="{$:item.locale_code}" {if $Language:item.locale_code|eq( $regional_info.primary_language )}checked="checked" {/if}/>
-       <input type="checkbox" name="eZSetupLanguages[]" value="{$:item.locale_code}" {if $regional_info.languages|contains( $Language:item.locale_code )}{if $Language:item.locale_code|ne( $regional_info.primary_language )}checked="checked"{/if}{/if}/>
-       <label for="eZSetupDefaultLanguage_{$:item.locale_code}" class="radio">{$:item.intl_language_name}</label>
+       <input type="radio" id="eZSetupDefaultLanguage_{$language.locale_code}" name="eZSetupDefaultLanguage" value="{$language.locale_code}" {if $language.locale_code|eq( $regional_info.primary_language )}checked="checked" {/if}/>
+       <input type="checkbox" id="eZSetupLanguages_{$language.locale_code}" name="eZSetupLanguages[]" value="{$language.locale_code}" title="{'Additional language'|i18n('design/standard/setup/init')}" {if $extra_languages|contains( $language.locale_code )}checked="checked" {/if}/>
+       <label for="eZSetupDefaultLanguage_{$language.locale_code}" class="radio">{$language.intl_language_name}{if $language.locale_code|eq( $data_language )} &ndash; <em>{"language of the bundled content"|i18n("design/standard/setup/init")}</em>{/if}</label>
       </td>
     </tr>
-  {/section}
+  {/foreach}
   </table>
 
 </fieldset>
+
+{literal}
+<script type="text/javascript">
+// The default language is not also an additional one: choosing a language as
+// the default clears and disables its checkbox (the server checks it as well)
+(function () {
+    var table = document.getElementById( 'eZSetupLanguageTable' );
+    if ( !table || !table.querySelectorAll )
+        return;
+    var radios = table.querySelectorAll( 'input[name="eZSetupDefaultLanguage"]' );
+    function sync() {
+        for ( var i = 0; i < radios.length; i++ ) {
+            var box = document.getElementById( 'eZSetupLanguages_' + radios[i].value );
+            if ( !box )
+                continue;
+            if ( radios[i].checked )
+                box.checked = false;
+            box.disabled = radios[i].checked;
+        }
+    }
+    for ( var i = 0; i < radios.length; i++ )
+        radios[i].onchange = sync;
+    // A refused answer is shown as given, both boxes ticked: leave it visible
+    if ( !document.querySelector( '.error' ) )
+        sync();
+})();
+</script>
+{/literal}
 
 </p>
 
@@ -50,4 +91,3 @@ To fix this problem you must do one of the following:"|i18n('design/standard/set
 
 </form>
 </p>
-
