@@ -100,9 +100,16 @@ class expKickstarter
         $current   = 0;
 
         expScriptStatus::instance()->start( 'kickstart', 'Kickstart setup' );
-        expSetupLog::start( !empty( $this->options['dry-run'] ) ? 'kickstarter dry run' : 'kickstarter', array(
+        $runId = (string)expSetupLog::start( !empty( $this->options['dry-run'] ) ? 'kickstarter dry run' : 'kickstarter', array(
             'steps' => $this->startStep . ' .. ' . $this->stopStep,
         ) );
+        // The site answers with the maintenance page while it is rebuilt: a
+        // request meeting a half-built database logged errors that were not
+        // the installation's, and could leave a broken page in the caches
+        $maintenance = empty( $this->options['dry-run'] )
+            && expMaintenance::enable( getcwd(), array( 'reason' => 'setup', 'run' => $runId ) );
+        if ( $maintenance )
+            $this->cli->output( 'Maintenance mode on: the site shows the maintenance page until the installation is done.' );
 
         foreach ( $this->stepData->StepTable as $index => $step )
         {
@@ -126,6 +133,9 @@ class expKickstarter
                 expScriptStatus::instance()->fail();
                 $this->cli->output( '' );
                 $this->cli->output( 'Setup failed on step: ' . $className );
+                // A half-installed site is not shown: the maintenance page stays
+                if ( $maintenance )
+                    $this->cli->output( 'The site stays in maintenance mode. After fixing the cause: run the kickstarter again, or php bin/php/maintenance.php off' );
                 $this->script->shutdown( 1 );
             }
             if ( $status === 'break' )
@@ -141,6 +151,9 @@ class expKickstarter
             expSetupLog::finish( 'installed', true );
         else
             expSetupLog::finish( 'stopped after ' . $this->stopStep . ' (nothing installed)' );
+        // Installed and checked (or nothing changed): the site answers again
+        if ( $maintenance && expMaintenance::disable( getcwd(), $runId ) )
+            $this->cli->output( 'Maintenance mode off: the site answers again.' );
 
         if ( !empty( $this->options['dry-run'] ) )
         {

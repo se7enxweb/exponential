@@ -592,6 +592,7 @@ return array(
       'expRADSurvey'                                       => 'kernel/setup/expradsurvey.php',
       'expScriptStatus'                                    => 'kernel/classes/expscriptstatus.php',
       'expSettingsExtensionWizard'                         => 'kernel/setup/expsettingsextensionwizard.php',
+      'expMaintenance'                                     => 'kernel/classes/expmaintenance.php',
       'expSetupLog'                                        => 'kernel/classes/expsetuplog.php',
       'expStaticCacheRunner'                               => 'kernel/setup/expstaticcacherunner.php',
       'expTemplateExtensionWizard'                         => 'kernel/setup/exptemplateextensionwizard.php',

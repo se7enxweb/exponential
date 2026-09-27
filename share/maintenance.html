@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>{title}</title>
+<!-- Served while the site is in maintenance (an installation running, or a
+     maintenance window opened with bin/php/maintenance.php on). So it
+     needs nothing from the site but this file: no templates, no database, and
+     only the theme's own font, which is a static file. Placeholders are filled
+     by expMaintenance::page(). The default page of the kernel: a theme
+     overrides it with its own errors/maintenance.html. -->
+
+<style>
+  :root { --yellow: #f0c419; --ink: #111; --muted: #555; --bg: #fff; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #f2f2f2; --muted: #b5b5b5; --bg: #111; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: var(--bg); color: var(--ink);
+         font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { padding: 1.5rem clamp(1rem, 4vw, 3.25rem); }
+  .brand { display: inline-block; font-weight: 800; font-size: 1.6rem; letter-spacing: -.02em; color: #000;
+           background: linear-gradient(transparent 35%, var(--yellow) 35%, var(--yellow) 85%, transparent 85%); text-decoration: none; padding: 0 .2rem; }
+  @media (prefers-color-scheme: dark) { .brand { color: #fff; } }
+  main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem 1rem 4rem; }
+  .code { font-size: clamp(4.5rem, 14vw, 8rem); font-weight: 700; line-height: 1; margin: 0 0 1rem; color: var(--yellow);
+          -webkit-text-stroke: 2px #000; letter-spacing: -.03em; }
+  h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.12; margin: 0 0 1.25rem; letter-spacing: -.02em; max-width: 22ch; }
+  p.message { font-size: 1.2rem; line-height: 1.5; max-width: 36rem; margin: 0 0 2.5rem; }
+  .buttons { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+  .btn { display: inline-block; padding: 1rem 1.75rem; font-weight: 700; font-size: 1rem; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; }
+  .btn-primary { background: var(--yellow); color: #000; }
+  .btn-secondary { background: #000; color: #fff; }
+  @media (prefers-color-scheme: dark) { .btn-secondary { background: #fff; color: #000; } }
+  .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .reference { margin-top: 2.5rem; font-size: .9rem; color: var(--muted); }
+  footer { background: #000; color: #fff; text-align: center; padding: 1.5rem 1rem; font-size: .85rem; }
+  pre { max-width: 60rem; overflow: auto; }
+</style>
+</head>
+<body>
+<header><span class="brand">Exponential</span></header>
+<main>
+  <p class="code" aria-hidden="true">{status}</p>
+  <h1>{title}</h1>
+  <p class="message">{message}</p>
+  <div class="buttons">
+    <button class="btn btn-primary" type="button" onclick="location.reload()">Try again</button>
+
+  </div>
+  <p class="reference">{until}</p>
+
+</main>
+<footer>Powered by Exponential</footer>
+</body>
+</html>

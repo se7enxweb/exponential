@@ -16,6 +16,16 @@ if ( !ini_get( "date.timezone" ) )
 
 ignore_user_abort( true );
 error_reporting ( E_ALL | E_STRICT );
+// Maintenance mode (var/maintenance.json): answered here, before the settings
+// and the database, so a site being installed or taken offline never serves
+// a half-built page. See kernel/classes/expmaintenance.php.
+if ( is_file( __DIR__ . '/var/maintenance.json' ) )
+{
+    require_once __DIR__ . '/kernel/classes/expmaintenance.php';
+    if ( expMaintenance::check( __DIR__ ) )
+        return;
+}
+
 require 'autoload.php';
 
 $kernel = new ezpKernel( new ezpKernelTreeMenu() );
