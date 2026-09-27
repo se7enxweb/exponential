@@ -5483,7 +5483,7 @@ dfa79e007d7d9b2e28978c5230a8e0d5  kernel/classes/expkickstarter.php
 f356fcde7f2bb1d00f505e2514639808  kernel/classes/expkickstarterini.php
 c96b4b194b2bf5cfc43f558b1fa48471  kernel/classes/expphar.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
-483fed06644ecd5af931a90b53ed3bbf  kernel/classes/expsetuplog.php
+98aec968ac5853b5d9315b41abf3ff52  kernel/classes/expsetuplog.php
 13fbe5bc98657f048d022000f72f3863  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 3e40db0d31c1f4344f04a1252a4671df  kernel/classes/expvelocityconfiglayout.php
