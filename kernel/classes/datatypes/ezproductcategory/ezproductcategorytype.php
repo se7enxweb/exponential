@@ -55,7 +55,9 @@ class eZProductCategoryType extends eZDataType
         {
             $data = $http->postVariable( $base . "_category_id_" . $contentObjectAttribute->attribute( "id" ) );
 
-            if ( is_numeric( $data ) )
+            // A category is picked by its id: "1.5", "-2" or "1e3" pass
+            // is_numeric() but name no category
+            if ( self::categoryID( $data ) > 0 )
                 return eZInputValidator::STATE_ACCEPTED;
         }
 
@@ -71,9 +73,7 @@ class eZProductCategoryType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_category_id_" . $contentObjectAttribute->attribute( "id" ) ))
         {
-            $data = $http->postVariable( $base . "_category_id_" . $contentObjectAttribute->attribute( "id" ) );
-            if ( !is_numeric( $data ) )
-                $data = 0;
+            $data = self::categoryID( $http->postVariable( $base . "_category_id_" . $contentObjectAttribute->attribute( "id" ) ) );
         }
         else
         {
@@ -91,9 +91,7 @@ class eZProductCategoryType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_category_id_" . $contentObjectAttribute->attribute( "id" ) ))
         {
-            $data = $http->postVariable( $base . "_category_id_" . $contentObjectAttribute->attribute( "id" ) );
-            if ( !is_numeric( $data ) )
-                $data = 0;
+            $data = self::categoryID( $http->postVariable( $base . "_category_id_" . $contentObjectAttribute->attribute( "id" ) ) );
         }
         else
         {
@@ -159,11 +157,17 @@ class eZProductCategoryType extends eZDataType
     {
         if ( $string == '' )
             return true;
-        $categoryData = explode( '|', $string );
+        // toString() writes name|id. The id is the part after the last |, so a
+        // category name that contains a | itself still comes back whole.
+        $separator = strrpos( $string, '|' );
+        $categoryData = $separator === false
+                        ? array( $string )
+                        : array( substr( $string, 0, $separator ), substr( $string, $separator + 1 ) );
 
-        if ( isset ( $categoryData[1]  ) )
+        // The id is tried first, then the name
+        if ( isset( $categoryData[1] ) && self::categoryID( $categoryData[1] ) > 0 )
         {
-            $category = eZProductCategory::fetch( $categoryData[1] );
+            $category = eZProductCategory::fetch( self::categoryID( $categoryData[1] ) );
             if ( $category )
             {
                 $contentObjectAttribute->setAttribute( 'data_int', $category->attribute( 'id' ) );
@@ -171,7 +175,9 @@ class eZProductCategoryType extends eZDataType
             }
         }
 
-        if ( isset ( $categoryData[1]  ) )
+        // The name alone is enough as well; this checked for an id here, so a
+        // file with only the category name never matched
+        if ( $categoryData[0] !== '' )
         {
             $category = eZProductCategory::fetchByName( $categoryData[0] );
             if ( $category )
@@ -207,6 +213,21 @@ class eZProductCategoryType extends eZDataType
     {
         $default = 0;
         return array( 'data_int' => $default, 'sort_key_int' => $default );
+    }
+
+    /*!
+     \private
+     \return \a $value as a category id (a positive whole number), or 0 for
+     anything else: an array, a fraction, a negative number, text.
+    */
+    static function categoryID( $value )
+    {
+        if ( !is_scalar( $value ) )
+            return 0;
+        $value = trim( (string)$value );
+        if ( !preg_match( '/^[0-9]{1,18}$/', $value ) )
+            return 0;
+        return (int)$value;
     }
 }
 

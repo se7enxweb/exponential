@@ -2,10 +2,10 @@
 {default attribute_base=ContentObjectAttribute}
 
 {def $product_categories = fetch( 'shop', 'product_category_list' )}
-{def $cat_id = cond( is_set( $#collection_attributes[$attribute.id] ), $#collection_attributes[$attribute.id].id, $attribute.content.id )}
+{def $cat_id = cond( is_set( $#collection_attributes[$attribute.id] ), $#collection_attributes[$attribute.id].data_int, $attribute.content.id )}
 <select name="{$attribute_base}_category_id_{$attribute.id}" size="1">
 {foreach $product_categories as $current_cat}
-    <option {if $cat_id|eq( $current_cat.id )}selected="selected"{/if} value="{$current_cat.id}">{$current_cat.name}</option>
+    <option {if $cat_id|eq( $current_cat.id )}selected="selected"{/if} value="{$current_cat.id|wash}">{$current_cat.name|wash}</option>
 {/foreach}
 </select>
 
