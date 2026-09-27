@@ -575,7 +575,9 @@ class eZStepCreateSites extends eZStepInstaller
                                                      'Database' => $dbName,
                                                      'User' => $dbUser,
                                                      'Password' => $dbPwd,
-                                                     'Charset' => false );
+                                                     // Empty meant the database server's default: latin1 on a stock
+                                                     // MySQL, which transliterates what it cannot store, silently
+                                                     'Charset' => ( $dbCharset ? $dbCharset : 'utf-8' ) );
         $siteINIChanges['FileSettings'] = array( 'VarDir' => 'var/' . $siteType['identifier'] );
         if ( trim( $dbSocket ) != '' )
             $siteINIChanges['DatabaseSettings']['Socket'] = $dbSocket;
