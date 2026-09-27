@@ -136,10 +136,22 @@ class expSetupLog
         $step = self::$run['current'];
         // Each distinct entry once, with how often and when it was written
         foreach ( array( 'ERROR' => array( 'error.log', 'error' ), 'WARNING' => array( 'warning.log', 'warning' ) ) as $level => $log )
-            foreach ( self::group( self::since( $log[0], $step[$log[1]] ) ) as $g )
+        {
+            $entries = self::since( $log[0], $step[$log[1]] );
+            $ours = array_filter( $entries, function ( $e ) { return !empty( $e['ours'] ); } );
+            $others = array_filter( $entries, function ( $e ) { return empty( $e['ours'] ); } );
+            foreach ( self::group( $ours ) as $g )
                 self::problem( $level, $g['message'] . ( $g['count'] > 1
                     ? sprintf( ' (x%d, %s .. %s)', $g['count'], $g['first'], $g['last'] )
                     : ( $g['first'] !== '' ? ' (at ' . $g['first'] . ')' : '' ) ), $step['name'], $g['count'] );
+            // Written by other processes meanwhile (requests that reached the
+            // site while it was being installed): listed, not counted
+            foreach ( self::group( $others ) as $g )
+                self::line( sprintf( '   (not this run) %s from another request while installing: %s%s', strtolower( $level ),
+                                     self::shorten( $g['message'], 200 ), $g['count'] > 1 ? ' (x' . $g['count'] . ')' : '' ), $step['name'] );
+            if ( $others )
+                self::$run['others'] = ( isset( self::$run['others'] ) ? self::$run['others'] : 0 ) + count( $others );
+        }
         $mine = array_slice( self::$run['problems'], $step['problems'] );
         $errors = self::occurrences( $mine, 'ERROR' );
         $warnings = self::occurrences( $mine, 'WARNING' );
@@ -351,6 +363,9 @@ class expSetupLog
         self::line( 'RESULT  ' . $result );
         if ( $next !== '' )
             self::line( 'NEXT    ' . $next );
+        if ( !empty( self::$run['others'] ) )
+            self::line( sprintf( 'NOTE    %d %s in error.log came from other requests while the site was being installed (not counted above: marked "(not this run)").',
+                                 self::$run['others'], self::$run['others'] === 1 ? 'entry' : 'entries' ) );
         self::line( str_repeat( '#', 78 ) );
         self::line( 'END setup run ' . self::$run['id'] );
         self::line( '' );
@@ -776,11 +791,24 @@ class expSetupLog
         foreach ( preg_split( '/\n(?=\[ )/', trim( $text ) ) as $entry )
         {
             $time = preg_match( '/^\[ \w+ \d+ \d+ (\d\d:\d\d:\d\d) \]/', trim( $entry ), $m ) ? $m[1] : '';
+            $raw = $entry;
             $entry = preg_replace( '/^(\[[^\]]*\]\s*){1,3}/', '', trim( $entry ) );
             // The run's own BEGIN/END markers are not problems
             if ( strpos( $entry, 'expSetupLog:' ) === 0 )
                 continue;
-            // The "(setup <id>, step N ...)" line eZDebug adds while a run goes on
+            // The "(setup <id>, step N ...)" line eZDebug adds while a run goes on.
+            // An entry without this run's line was written by another process:
+            // a visitor's request that reached the site while it was being
+            // installed. Not the installation's problem, so kept apart.
+            $ours = !self::$run || strpos( $entry, '(setup ' . self::$run['id'] ) !== false;
+            // The script's own fatal-error handler writes without eZDebug, so
+            // without that line, but names the command in its header
+            // ("[ date ][ siteaccess ][ php bin/php/kickstarter.php ... ]")
+            if ( !$ours && PHP_SAPI === 'cli' && !empty( $_SERVER['argv'][0] ) )
+            {
+                $header = strtok( ltrim( $raw ), "\n" );
+                $ours = preg_match( '/^\[[^\]]*\]\s*\[[^\]]*\]\s*\[[^\]]*' . preg_quote( basename( $_SERVER['argv'][0] ), '/' ) . '/', $header ) === 1;
+            }
             $entry = preg_replace( '/\n {4}\(setup [^\n]*\)\s*$/', '', $entry );
             $entry = trim( preg_replace( '/\s+/', ' ', $entry ) );
             if ( $entry === '' )
@@ -790,10 +818,10 @@ class expSetupLog
             {
                 $previous = end( $out );
                 for ( $i = min( (int)$r[1], 100000 ); $i > 0; $i-- )
-                    $out[] = array( 'message' => $previous['message'], 'time' => $time );
+                    $out[] = array( 'message' => $previous['message'], 'time' => $time, 'ours' => $previous['ours'] );
                 continue;
             }
-            $out[] = array( 'message' => $entry, 'time' => $time );
+            $out[] = array( 'message' => $entry, 'time' => $time, 'ours' => $ours );
         }
         return $out;
     }
