@@ -25,10 +25,10 @@ class eZSQLite3DB extends eZDBInterface
         }
 
 
-        // WAL mode has better control over concurrency.
-        // Source: https://www.sqlite.org/wal.html
-        $this->query('PRAGMA journal_mode = wal;');
+        // The connection's settings first: they include the busy timeout, and
+        // until it is set any statement that meets a lock fails at once.
         $this->applyPragmas();
+        $this->useWAL();
 
         // Initialize TempTableList
         $this->TempTableList = array();
@@ -73,13 +73,33 @@ class eZSQLite3DB extends eZDBInterface
                 $pragmas[$name] = $value;
             }
         }
+        // The busy timeout before the rest, so they wait for a lock as well
+        $this->DBConnection->busyTimeout( (int)$pragmas['busy_timeout'] );
+        unset( $pragmas['busy_timeout'] );
         foreach ( $pragmas as $name => $value )
         {
-            if ( $name === 'busy_timeout' )
-                $this->DBConnection->busyTimeout( (int)$value );
-            else
-                @$this->DBConnection->exec( "PRAGMA $name = $value" );
+            @$this->DBConnection->exec( "PRAGMA $name = $value" );
         }
+    }
+
+    /**
+     * WAL mode (https://www.sqlite.org/wal.html): readers and one writer at a
+     * time without blocking each other. The mode is kept in the database file,
+     * so it is switched on once, when the database is not in it yet, instead of
+     * by every connection. Asking for it takes a lock; asked for at every
+     * connection, before the busy timeout was set, it failed at once whenever
+     * another process had the database to itself for a moment (WAL recovery, a
+     * checkpoint), and error.log got "PRAGMA journal_mode = wal; -- database is
+     * locked" for a request that then worked.
+     */
+    protected function useWAL()
+    {
+        if ( !$this->DBConnection )
+            return;
+        $mode = @$this->DBConnection->querySingle( 'PRAGMA journal_mode' );
+        if ( is_string( $mode ) && strtolower( $mode ) === 'wal' )
+            return;
+        $this->query( 'PRAGMA journal_mode = wal;' );
     }
 
     /*!
@@ -311,7 +331,9 @@ class eZSQLite3DB extends eZDBInterface
 
             $sql = $this->rewriteJoinedUpdate( $sql );
 
-            $result = $this->DBConnection->exec( $sql );
+            // A failure is reported below with its reason and the statement; the
+            // warning PHP adds for it said the same a second time
+            $result = @$this->DBConnection->exec( $sql );
             if ( $this->OutputSQL )
             {
                 $this->endTimer();
@@ -327,7 +349,7 @@ class eZSQLite3DB extends eZDBInterface
             {
                 $this->setError();
 
-                eZDebug::writeError( "Error: error when executing query: $sql" . ( $this->DBConnection ? " -- " . $this->DBConnection->lastErrorMsg() : "" ), "eZSQLite3DB" );
+                eZDebug::writeError( self::failedQueryMessage( $this->DBConnection ? $this->DBConnection->lastErrorMsg() : "", $sql ), "eZSQLite3DB" );
                 $this->reportError();
             }
             else
@@ -415,7 +437,7 @@ class eZSQLite3DB extends eZDBInterface
                 $this->startTimer();
             }
 
-            $results = $this->DBConnection->query( $sql );
+            $results = @$this->DBConnection->query( $sql );   // reported below when it fails
 
             if ( $this->OutputSQL )
             {
@@ -431,7 +453,7 @@ class eZSQLite3DB extends eZDBInterface
             if ( $results === false )
             {
                 $this->setError();
-                eZDebug::writeError( "Error: error executing query: $sql" . ( $this->DBConnection ? " -- " . $this->DBConnection->lastErrorMsg() : "" ), "eZSQLite3DB" );
+                eZDebug::writeError( self::failedQueryMessage( $this->DBConnection ? $this->DBConnection->lastErrorMsg() : "", $sql ), "eZSQLite3DB" );
                 $this->reportError();
 
                 return false;

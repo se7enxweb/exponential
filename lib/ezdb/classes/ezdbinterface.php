@@ -1362,6 +1362,26 @@ class eZDBInterface
     }
 
     /**
+     * The text a driver logs for a query that failed: the database's reason
+     * first, then the statement on one line (a CREATE TABLE took a dozen lines
+     * of error.log), shortened past $max characters.
+     *
+     * @param string $reason
+     * @param string $sql
+     * @param int $max
+     * @return string
+     */
+    static function failedQueryMessage( $reason, $sql, $max = 2000 )
+    {
+        $sql = trim( preg_replace( '/\s+/', ' ', (string)$sql ) );
+        $length = strlen( $sql );
+        if ( $length > $max )
+            $sql = substr( $sql, 0, $max ) . " ... ($length characters in all)";
+        $reason = trim( (string)$reason );
+        return 'Query failed: ' . ( $reason !== '' ? $reason : 'no reason given by the database' ) . "\nQuery: " . $sql;
+    }
+
+    /**
      * Will escape a string so it's ready to be inserted in the database.
      *
      * @param string $str

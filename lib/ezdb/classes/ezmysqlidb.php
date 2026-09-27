@@ -468,9 +468,12 @@ class eZMySQLiDB extends eZDBInterface
             else
             {
                 $this->setError();
-                $errorMessage = 'Query error (' . $this->ErrorNumber . '): ' . $this->ErrorMessage . '. Query: ' . $sql;
+                $errorMessage = self::failedQueryMessage( '(' . $this->ErrorNumber . ') ' . $this->ErrorMessage, $sql );
                 eZDebug::writeError( $errorMessage, __CLASS__  );
-                eZLog::write( $errorMessage, 'error.log' );
+                // eZDebug writes errors to error.log itself (site.ini [DebugSettings]
+                // AlwaysLog[]=error); written here as well, each failed query was there twice
+                if ( !eZDebug::alwaysLogMessage( eZDebug::LEVEL_ERROR ) )
+                    eZLog::write( $errorMessage, 'error.log' );
                 $oldRecordError = $this->RecordError;
                 // Turn off error handling while we unlock
                 $this->RecordError = false;

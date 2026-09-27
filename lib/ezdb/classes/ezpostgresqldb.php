@@ -227,7 +227,7 @@ class eZPostgreSQLDB extends eZDBInterface
             if ( !$result )
             {
                 $this->setError();
-                eZDebug::writeError( "Error: error executing query: $sql: {$this->ErrorMessage}", "eZPostgreSQLDB" );
+                eZDebug::writeError( self::failedQueryMessage( $this->ErrorMessage, $sql ), "eZPostgreSQLDB" );
                 if ( $this->errorHandling == eZDB::ERROR_HANDLING_EXCEPTIONS )
                 {
                     throw new eZDBException( $this->ErrorMessage, $this->ErrorNumber );
@@ -586,7 +586,7 @@ class eZPostgreSQLDB extends eZDBInterface
             $result = pg_query( $this->DBConnection, $sql );
             if ( !$result )
             {
-                eZDebug::writeError( "Error: error executing query: $sql " . pg_last_error( $this->DBConnection ), "eZPostgreSQLDB" );
+                eZDebug::writeError( self::failedQueryMessage( pg_last_error( $this->DBConnection ), $sql ), "eZPostgreSQLDB" );
             }
 
             if ( $result )
@@ -660,7 +660,7 @@ class eZPostgreSQLDB extends eZDBInterface
             $result = pg_query( $this->DBConnection, $sql );
             if ( !$result )
             {
-                eZDebug::writeError( "Error: error executing query: $sql " . pg_last_error( $this->DBConnection ), "eZPostgreSQLDB" );
+                eZDebug::writeError( self::failedQueryMessage( pg_last_error( $this->DBConnection ), $sql ), "eZPostgreSQLDB" );
             }
 
             if ( $result )

@@ -424,11 +424,14 @@ class eZDBSchemaInterface
                 }
 
                 $sqlList = $this->generateTableSQLList( $tableName, $table, $params, false );
-                foreach ( $sqlList as $sql )
+                foreach ( array_values( $sqlList ) as $i => $sql )
                 {
                     if ( !$this->DBInstance->query( $sql ) )
                     {
-                        eZDebug::writeError( "Failed inserting the SQL:\n$sql" );
+                        // The statement and the database's reason are the entry
+                        // just before this one (the driver's): not repeated here
+                        eZDebug::writeError( sprintf( "Stopped creating the tables at '%s', statement %d of %d for it (the failed query is logged just before this)",
+                                                      $tableName, $i + 1, count( $sqlList ) ), __METHOD__ );
                         return false;
                     }
                 }
@@ -458,11 +461,12 @@ class eZDBSchemaInterface
                 }
 
                 $sqlList = $this->generateTableInsertSQLList( $tableName, $table, $data[$tableName], $params, false );
-                foreach ( $sqlList as $sql )
+                foreach ( array_values( $sqlList ) as $i => $sql )
                 {
                     if ( !$this->DBInstance->query( $sql ) )
                     {
-                        eZDebug::writeError( "Failed inserting the SQL:\n$sql" );
+                        eZDebug::writeError( sprintf( "Stopped inserting the data at table '%s', statement %d of %d for it; nothing of this data set is kept (the failed query is logged just before this)",
+                                                      $tableName, $i + 1, count( $sqlList ) ), __METHOD__ );
                         $this->DBInstance->rollback();
                         return false;
                     }
@@ -696,9 +700,10 @@ class eZDBSchemaInterface
         $diffFriendly = isset( $params['diff_friendly'] ) ? $params['diff_friendly'] : false;
         $multiInsert = ( isset( $params['allow_multi_insert'] ) and $params['allow_multi_insert'] ) ? $this->isMultiInsertSupported() : false;
 
-        // Make sure we don't generate SQL when there are no rows
+        // Make sure we don't generate SQL when there are no rows: an empty
+        // list, as every caller iterates over the result
         if ( count( $dataEntries['rows'] ) == 0 )
-            return '';
+            return array();
 
         $sqlList = array();
         $sql = '';
