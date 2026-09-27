@@ -111,7 +111,10 @@ default; `tags` is for installations that know their templates.
 ## Seeing what it does
 
 - Every response says `X-Exp-Cache: HIT`, `STALE`, `MISS (reason)` or
-  `BYPASS (reason)`.
+  `BYPASS (reason)`. Under Velocity, a page answered by the server's own
+  response cache (anonymous visitors) also says `X-Cache: HIT`; its
+  `X-Exp-Cache` is the one stored with it, often `MISS` from the render that
+  filled both caches.
 - **Setup > System information** has an "HTTP cache (role-aware)" box: hit rate
   across all servers, why requests missed, entries, disk use, user contexts,
   the last purge, the settings, and buttons to purge everything, remove dead
