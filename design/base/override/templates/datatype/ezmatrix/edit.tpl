@@ -26,7 +26,7 @@
 <tr>
    <th>
    {section name=ColumnNames loop=$matrix.columns.sequential}
-   {$ColumnNames:item.name}
+   {$ColumnNames:item.name|wash}
    {delimiter}
 </th>
 <th>

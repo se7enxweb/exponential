@@ -8,10 +8,10 @@
             {if 0|eq($Rows:Columns:index)}
                {switch match=$attribute.contentclass_attribute_identifier}
                {case match='contact_information'}
-                     <em>{$Rows:Columns:item}:</em>
+                     <em>{$Rows:Columns:item|wash}:</em>
                {/case}
                {case match='company_address'}
-                     <em>{$Rows:Columns:item}:</em>
+                     <em>{$Rows:Columns:item|wash}:</em>
                {/case}
                {case}
                {/case}

@@ -2,7 +2,7 @@
 <tr>
 <th>
 {section name=ColumnNames loop=$matrix.columns.sequential}
-{$ColumnNames:item.name}
+{$ColumnNames:item.name|wash}
 {delimiter}
 </th>
 <th>
@@ -22,12 +22,12 @@
                 <select name="ContentObjectAttribute_ezmatrix_cell_{$attribute.id}[]">
                 {section var=selectbox_element loop=$:selectbox_content}
                     {if and(eq( first_set( $column.item|wash(xhtml),$default_matrix_field ) , $selectbox_element.item), eq($selected_is_set, 0))}
-                        <option selected value="{$selectbox_element.item}">{$selectbox_element.item}</option>
+                        <option selected value="{$selectbox_element.item|wash}">{$selectbox_element.item|wash}</option>
             {set default_matrix_field=$selectbox_element.index|inc}
             {set default_matrix_field=$selectbox_content[mod($default_matrix_field,$selectbox_count)]}
             {set selected_is_set=1}
                     {else}
-                        <option value="{$selectbox_element.item}">{$selectbox_element.item}</option>
+                        <option value="{$selectbox_element.item|wash}">{$selectbox_element.item|wash}</option>
                     {/if}
                 {/section}
                 </select>

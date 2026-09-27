@@ -29,16 +29,27 @@ class eZMatrixDefinition
     function decodeClassAttribute( $xmlString )
     {
         $dom = new DOMDocument( '1.0', 'utf-8' );
-        if ( strlen ( $xmlString ) != 0 )
+        if ( strlen ( (string)$xmlString ) != 0 )
         {
-            $success = $dom->loadXML( $xmlString );
-            $columns = $dom->getElementsByTagName( "column-name" );
+            // Broken XML leaves the class with no columns (and a debug error)
+            // instead of a PHP warning on every page that loads the class.
             $columnList = array();
-            foreach ( $columns as $columnElement )
+            $previous = libxml_use_internal_errors( true );
+            $success = $dom->loadXML( $xmlString );
+            libxml_clear_errors();
+            libxml_use_internal_errors( $previous );
+            if ( $success )
             {
-                $columnList[] = array( 'name' => $columnElement->textContent,
-                                       'identifier' => $columnElement->getAttribute( 'id' ),
-                                       'index' =>  $columnElement->getAttribute( 'idx' ) );
+                foreach ( $dom->getElementsByTagName( "column-name" ) as $columnElement )
+                {
+                    $columnList[] = array( 'name' => $columnElement->textContent,
+                                           'identifier' => $columnElement->getAttribute( 'id' ),
+                                           'index' => (int)$columnElement->getAttribute( 'idx' ) );
+                }
+            }
+            else
+            {
+                eZDebug::writeError( 'The matrix column definition is not valid XML', __METHOD__ );
             }
             $this->ColumnNames = $columnList;
         }
@@ -95,33 +106,49 @@ class eZMatrixDefinition
 
     function addColumn( $name = false , $id = false )
     {
-        if ( $name == false )
+        // Only a missing name gets the default: "0" == false, so a column
+        // called 0 was renamed Col_n
+        if ( $name === false || $name === null || $name === '' )
         {
             $name = 'Col_' . ( count( $this->ColumnNames ) );
         }
 
-        if ( $id == false )
+        if ( $id === false || $id === null || $id === '' )
         {
             // Initialize transformation system
             $trans = eZCharTransform::instance();
             $id = $trans->transformByGroup( $name, 'identifier' );
+
+            // A generated identifier is made unique; one given (from a package
+            // or stored class) is kept, as stored objects match cells to it
+            $taken = array();
+            foreach ( $this->ColumnNames as $column )
+                $taken[$column['identifier']] = true;
+            $id = eZMatrixType::uniqueColumnIdentifier( (string)$id, $taken );
         }
 
-        $this->ColumnNames[] = array( 'name' => $name,
-                                      'identifier' => $id,
+        $this->ColumnNames[] = array( 'name' => (string)$name,
+                                      'identifier' => (string)$id,
                                       'index' => count( $this->ColumnNames ) );
     }
 
+    /**
+     * Removes the column at position $index and renumbers the ones after it,
+     * so positions and 'index' stay 0..n-1. unset() alone left a gap that the
+     * edit form and the stored XML carried until the next full save. Removing
+     * several columns must go from the highest position down.
+     */
     function removeColumn( $index )
     {
-        if ( $index == 0 && count( $this->ColumnNames ) == 1 )
-        {
-            $this->ColumnNames = array();
-        }
-        else
-        {
-            unset( $this->ColumnNames[$index] );
-        }
+        $index = (int)$index;
+        if ( !isset( $this->ColumnNames[$index] ) )
+            return false;
+
+        unset( $this->ColumnNames[$index] );
+        $this->ColumnNames = array_values( $this->ColumnNames );
+        foreach ( $this->ColumnNames as $i => $column )
+            $this->ColumnNames[$i]['index'] = $i;
+        return true;
     }
 
     public $ColumnNames;

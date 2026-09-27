@@ -25,7 +25,10 @@ class eZMatrix
     public function __construct( $name, $numRows = false, $matrixColumnDefinition = false )
     {
         $this->Name = $name;
-        $this->Matrix = array();
+        $this->Matrix = self::emptyMatrix();
+        $this->Cells = array();
+        $this->NumRows = 0;
+        $this->NumColumns = 0;
 
         if ( $numRows !== false &&  $matrixColumnDefinition !== false )
         {
@@ -59,6 +62,31 @@ class eZMatrix
             $xmlString = $this->xmlString();
             $this->decodeXML( $xmlString );
         }
+    }
+
+    /**
+     * The structure of a matrix without rows or columns. attribute( 'rowCount' )
+     * and the rest count its parts, so an empty matrix must still have them:
+     * array() made every count() a TypeError on PHP 8.
+     */
+    static function emptyMatrix()
+    {
+        return array( 'rows' => array( 'sequential' => array() ),
+                      'columns' => array( 'sequential' => array(), 'id' => array() ),
+                      'cells' => array() );
+    }
+
+    /**
+     * Text a cell or column name may hold in XML: characters XML 1.0 cannot
+     * carry (C0 controls other than tab and newlines) and invalid UTF-8 are
+     * removed. DOM wrote them, and the matrix could not be read back.
+     */
+    static function xmlText( $text )
+    {
+        $text = (string)$text;
+        if ( function_exists( 'mb_scrub' ) )
+            $text = mb_scrub( $text, 'UTF-8' );
+        return preg_replace( '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/', '', $text );
     }
 
     /*!
@@ -227,10 +255,18 @@ class eZMatrix
         $rule = array( $pos );
         $startPos = $pos;
 
+        // Duplicate or missing column indexes never lead back to the start: the
+        // rule grew until memory ran out. Stop at a position already in the rule
+        // or one that is not a column.
         $column = $columns[$pos];
         while( $column['index'] != $startPos )
         {
             $pos = $column['index'];
+            if ( !isset( $columns[$pos] ) || in_array( $pos, $rule ) || count( $rule ) > count( $columns ) )
+            {
+                eZDebug::writeWarning( 'Column indexes of the matrix do not form a permutation; columns left in place', __METHOD__ );
+                return array( $startPos );
+            }
             $rule[] = $pos;
             $column = $columns[$pos];
         }
@@ -642,7 +678,10 @@ class eZMatrix
 
     function addRow( $beforeIndex = false, $addCount = 1 )
     {
-        $addCount = min( $addCount, 40 );
+        // Counts and positions come from forms: whole numbers in range
+        $addCount = max( 1, min( (int)$addCount, 40 ) );
+        if ( $beforeIndex !== false )
+            $beforeIndex = max( 0, min( (int)$beforeIndex, $this->attribute( 'rowCount' ) ) );
 
         for ( $r = $addCount; $r > 0; $r-- )
         {
@@ -681,6 +720,12 @@ class eZMatrix
         $numColumns = $this->attribute( 'columnCount' );
         $numRows    = $this->attribute( 'rowCount' );
 
+        // A row that is not there: array_splice() with a negative offset removed
+        // rows from the end
+        if ( !is_numeric( $rowNum ) || (int)$rowNum < 0 || (int)$rowNum >= $numRows )
+            return false;
+        $rowNum = (int)$rowNum;
+
         array_splice( $this->Cells, $rowNum * $numColumns, $numColumns );
         array_splice( $this->Matrix['rows']['sequential'], $rowNum, 1 );
         $this->NumRows--;
@@ -692,18 +737,36 @@ class eZMatrix
     function decodeXML( $xmlString )
     {
         $dom = new DOMDocument( '1.0', 'utf-8' );
-        $success = $dom->loadXML( $xmlString );
-        if ( $xmlString != "" )
+        $success = false;
+        if ( trim( (string)$xmlString ) !== '' )
+        {
+            // An unreadable matrix is read as an empty one (and said so) rather
+            // than ending the request: loadXML('') throws on PHP 8, and a broken
+            // document left every node below null
+            $previous = libxml_use_internal_errors( true );
+            $success = $dom->loadXML( $xmlString );
+            libxml_clear_errors();
+            libxml_use_internal_errors( $previous );
+        }
+        $columnsNode = $success ? $dom->getElementsByTagName( "columns" )->item( 0 ) : null;
+        $rowsNode = $success ? $dom->getElementsByTagName( "rows" )->item( 0 ) : null;
+        if ( $success && ( !$columnsNode || !$rowsNode ) )
+        {
+            eZDebug::writeWarning( 'Matrix XML without columns or rows, read as an empty matrix', __METHOD__ );
+            $success = false;
+        }
+        elseif ( !$success && trim( (string)$xmlString ) !== '' )
+        {
+            eZDebug::writeWarning( 'Matrix XML could not be read, read as an empty matrix', __METHOD__ );
+        }
+        if ( $success )
         {
             // set the name of the node
-            $nameArray = $dom->getElementsByTagName( "name" );
-            $this->setName( $nameArray->item( 0 )->textContent );
+            $nameNode = $dom->getElementsByTagName( "name" )->item( 0 );
+            $this->setName( $nameNode ? $nameNode->textContent : '' );
 
-            $columnsNode = $dom->getElementsByTagName( "columns" )->item( 0 );
-            $numColumns = $columnsNode->getAttribute( 'number');
-
-            $rowsNode = $dom->getElementsByTagName( "rows" )->item( 0 );
-            $numRows = $rowsNode->getAttribute( 'number' );
+            $numColumns = max( 0, (int)$columnsNode->getAttribute( 'number') );
+            $numRows = max( 0, (int)$rowsNode->getAttribute( 'number' ) );
 
             $namedColumns = $dom->getElementsByTagName( "column" );
             $namedColumnList = array();
@@ -713,7 +776,7 @@ class eZMatrix
                 {
                     $columnName = $namedColumn->textContent;
                     $columnID = $namedColumn->getAttribute( 'id' );
-                    $columnNumber = $namedColumn->getAttribute( 'num' );
+                    $columnNumber = (int)$namedColumn->getAttribute( 'num' );
                     $namedColumnList[$columnNumber] = array( 'name' => $columnName,
                                                              'column_number' => $columnNumber,
                                                              'column_id' => $columnID );
@@ -736,12 +799,22 @@ class eZMatrix
                 $rowColumns = array();
                 for ( $j = 1; $j <= $numColumns; $j++ )
                 {
-                    $rowColumns[] = $cellList[ ($i-1) * $numColumns + $j-1];
+                    // A cell the matrix does not store is empty
+                    $rowColumns[] = $cellList[ ($i-1) * $numColumns + $j-1] ?? '';
                 }
                 $row['columns'] = $rowColumns;
                 $sequentialRows[] = $row;
             }
             $rows['sequential'] = $sequentialRows;
+
+            // The cells are exactly rows x columns: missing ones empty, extra ones
+            // dropped, as the rows above were built. Kept short, the next save
+            // stored the wrong count again and column edits spliced at the wrong
+            // places, moving data between columns.
+            $cellList = array();
+            foreach ( $sequentialRows as $sequentialRow )
+                foreach ( $sequentialRow['columns'] as $cell )
+                    $cellList[] = $cell;
 
             $columns = array( 'sequential' => array(),
                               'id' => array() );
@@ -791,7 +864,9 @@ class eZMatrix
         else
         {
             $this->Cells = array();
-            $this->Matrix = array();
+            $this->Matrix = self::emptyMatrix();
+            $this->NumRows = 0;
+            $this->NumColumns = 0;
         }
     }
     /*!
@@ -801,22 +876,8 @@ class eZMatrix
     */
     function domString( $domDocument )
     {
-        $ini = eZINI::instance();
-        $xmlCharset = $ini->variable( 'RegionalSettings', 'ContentXMLCharset' );
-        if ( $xmlCharset == 'enabled' )
-        {
-            $charset = eZTextCodec::internalCharset();
-        }
-        else if ( $xmlCharset == 'disabled' )
-            $charset = true;
-        else
-            $charset = $xmlCharset;
-        if ( $charset !== true )
-        {
-            $charset = eZCharsetInfo::realCharsetCode( $charset );
-        }
-        $domString = $domDocument->saveXML();
-        return $domString;
+        // The document is UTF-8; the ContentXMLCharset lookup that stood here was never used
+        return $domDocument->saveXML();
     }
 
     /*!
@@ -828,12 +889,13 @@ class eZMatrix
         $root = $doc->createElement( "ezmatrix" );
         $doc->appendChild( $root );
 
-        $name = $doc->createElement( "name", $this->Name );
+        $name = $doc->createElement( "name" );
+        $name->appendChild( $doc->createTextNode( self::xmlText( $this->Name ) ) );
         $root->appendChild( $name );
 
         $columnsNode = $doc->createElement( "columns" );
 
-        $sequentalColumns = $this->Matrix['columns']['sequential'];
+        $sequentalColumns = isset( $this->Matrix['columns']['sequential'] ) ? $this->Matrix['columns']['sequential'] : array();
         $columnAmount = $this->NumColumns;
         $columnsNode->setAttribute( 'number', $columnAmount );
         $root->appendChild( $columnsNode );
@@ -842,12 +904,14 @@ class eZMatrix
         {
             for( $i = 0; $i < $columnAmount; $i++ )
             {
-                $column = $sequentalColumns[$i];
-                if ( $column != null && $column['identifier'] != 'col_' . ($i+1) )
+                // Every column is written: one whose identifier happened to be
+                // col_N at position N-1 was skipped, and read back it lost its name
+                $column = isset( $sequentalColumns[$i] ) ? $sequentalColumns[$i] : null;
+                if ( $column != null )
                 {
                     unset( $columnNode );
                     $columnNode = $doc->createElement( 'column' );
-                    $columnNode->appendChild( $doc->createTextNode( $column['name'] ) );
+                    $columnNode->appendChild( $doc->createTextNode( self::xmlText( $column['name'] ) ) );
                     $columnNode->setAttribute( 'num', $i );
                     $columnNode->setAttribute( 'id', $column['identifier'] );
 
@@ -868,7 +932,7 @@ class eZMatrix
         {
             unset( $cellNode );
             $cellNode = $doc->createElement( 'c' );
-            $cellNode->appendChild( $doc->createTextNode( $cell ) );
+            $cellNode->appendChild( $doc->createTextNode( self::xmlText( $cell ) ) );
 
             $root->appendChild( $cellNode );
         }
