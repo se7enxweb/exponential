@@ -47,15 +47,19 @@ class eZStepDatabaseInit extends eZStepInstaller
             $this->PersistenceList['database_info']['socket'] = false;
         if ( !isset( $this->PersistenceList['database_info']['database'] ) )
             $this->PersistenceList['database_info']['database'] = false;
+        // SQLite's form has no server, port, user or password: every later
+        // step reads them, so they are kept as empty values, not left out
+        foreach ( array( 'server', 'port', 'user', 'password', 'dbname' ) as $key )
+        {
+            if ( !isset( $this->PersistenceList['database_info'][$key] ) )
+                $this->PersistenceList['database_info'][$key] = '';
+        }
 
         $this->Error = 0;
         $dbStatus = false;
 
         // Get password
-        if ( isset( $this->PersistenceList['database_info']['password'] ) )
-        {
-            $password = $this->PersistenceList['database_info']['password'];
-        }
+        $password = $this->PersistenceList['database_info']['password'];
 
         if ( $this->Http->hasPostVariable( 'eZSetupDatabasePassword' ) )
         {

@@ -659,7 +659,7 @@ function eZSetupCheckExecutable( $type )
     $filesystemType = eZSys::filesystemType();
     $envSeparator = eZSys::envSeparator();
     $programs = eZSetupConfigVariableArray( $type, $filesystemType . '_Executable' );
-    $systemSearchPaths = explode( $envSeparator, eZSys::path( true ) );
+    $systemSearchPaths = explode( $envSeparator, (string)eZSys::path( true ) ); // no PATH under php -S: no system paths, not a deprecation
     $additionalSearchPaths = eZSetupConfigVariableArray( $type, $filesystemType . '_SearchPaths' );
     $excludePaths = eZSetupConfigVariableArray( $type, $filesystemType . '_ExcludePaths' );
     $imageIniPath = eZSetupImageConfigVariableArray( 'ShellSettings', 'ConvertPath' );
@@ -1040,7 +1040,10 @@ if ( !function_exists( 'eZSetupTestTimeZone' ) ) {
 function eZSetupTestTimeZone( $something )
 {
     $result = true;
-    if ( date_default_timezone_get() == "UTC" )
+    // UTC is only a problem when nobody chose it: index.php falls back to UTC
+    // when php.ini has no date.timezone. A php.ini that sets date.timezone
+    // (UTC included) is a decision, not a missing setting.
+    if ( date_default_timezone_get() == "UTC" && trim( (string)ini_get( 'date.timezone' ) ) === '' )
     {
         $result = false;
     }
