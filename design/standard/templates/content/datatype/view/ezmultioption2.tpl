@@ -10,16 +10,16 @@ var rules{$attribute.id} = new Array(); //all rules [i]
 {section var=Rules loop=$attribute.content.rules}
   tmpArray = new Array();
 
-  tmpArray[0] ='{$Rules.key}';     // array  for all rules for one option  [0] is is option_id [1] is rules [0][1]
+  tmpArray[0] ='{$Rules.key|wash(javascript)|wash}';     // array  for all rules for one option  [0] is is option_id [1] is rules [0][1]
   // tmpArray[1] here will be the rules for this option
 
   tmpArray2 = new Array();     // here we will store rules data for option id [j]
     {section var=RuleForMultioption loop=$Rules.item}
          tmpArray1 = new Array();   // rule [0] moption_id  [1] options for which option is enabled[0][1]
-         tmpArray1[0]='{$RuleForMultioption.key}';
+         tmpArray1[0]='{$RuleForMultioption.key|wash(javascript)|wash}';
          tmpArray1[1] = new Array();             ///////// [k]   [i][1][j][1]
         {section var=Ritems loop=$RuleForMultioption.item}
-            tmpArray1[1][{$Ritems.index}] = '{$Ritems.item}';
+            tmpArray1[1][{$Ritems.index}] = '{$Ritems.item|wash(javascript)|wash}';
         {/section}
          tmpArray2[{$RuleForMultioption.index}] = tmpArray1;
     {/section}

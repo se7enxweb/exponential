@@ -83,7 +83,10 @@ class eZMultiOption2
         {
             $this->initCounters( $group );
         }
-        if ( $multioptionID === false )
+        // A parent multioption key that does not exist (posted by a stale or
+        // hand-made form) would create a multioption without name or options,
+        // an undefined index in xmlString(): the group is kept as a group
+        if ( $multioptionID === false || !is_scalar( $multioptionID ) || !isset( $this->Options[$multioptionID] ) )
         {
             $this->ChildGroupList[] = $group;
         }
@@ -103,9 +106,11 @@ class eZMultiOption2
     */
     function addMultiOption( $name, $multiOptionPriority, $defaultValue, $multiOptionID )
     {
-        if ( strlen( $multiOptionID ) == 0 )
+        // null (a field that was not posted) was a deprecation in strlen(), and
+        // a counter read as '' from an XML attribute a TypeError in ++
+        if ( !is_scalar( $multiOptionID ) || strlen( (string)$multiOptionID ) == 0 )
         {
-            $this->MultiOptionIDCounter++;
+            $this->MultiOptionIDCounter = (int)$this->MultiOptionIDCounter + 1;
             $multiOptionID = $this->MultiOptionIDCounter;
         }
         else
@@ -134,10 +139,16 @@ class eZMultiOption2
     */
     function addOption( $newID, $OptionID, $optionValue, $optionAdditionalPrice, $isSelectable = 1, $objectID = 0 )
     {
+        // A key that names no multioption adds nothing (count( null ) was a
+        // TypeError); it comes from a stale form or a hand-made request
+        if ( !is_scalar( $newID ) || !isset( $this->Options[$newID] ) )
+            return null;
         $key = count( $this->Options[$newID]['optionlist'] ) + 1;
-        if ( strlen( $OptionID ) == 0 )
+        if ( !is_scalar( $OptionID ) || strlen( (string)$OptionID ) == 0 )
         {
-            $this->OptionCounter += 1;
+            // The counter may be the option_counter attribute as read: '' + 1
+            // is a TypeError in PHP 8
+            $this->OptionCounter = (int)$this->OptionCounter + 1;
             $OptionID = $this->OptionCounter;
         }
         else if ( $OptionID > $this->OptionCounter )
@@ -203,10 +214,13 @@ class eZMultiOption2
     function findGroup( $groupID, $depth = 0, $groupStack = array() )
     {
         $groupStack[] = array( $this->attribute( 'group_id' ), $depth );
-        if ( $depth > 15 )
+        // Deeper than any set the edit form builds: the group is not found.
+        // This used to var_dump() the stack and die(), which ended the request
+        // with a debug dump for a set that was only 16 sub levels deep
+        if ( $depth > self::MAX_DEPTH )
         {
-            var_dump( $groupStack );
-            die( "depth=$depth groupID=$groupID" );
+            eZDebug::writeWarning( "Option group nesting deeper than " . self::MAX_DEPTH . " levels, group $groupID not searched further", __METHOD__ );
+            return null;
         }
         foreach ( $this->Options as $key => $option )
         {
@@ -363,8 +377,9 @@ class eZMultiOption2
 
     function removeChildGroup( $groupID, $depth = 0 )
     {
-        if ( $depth > 15 )
-            die( "depth=$depth" );
+        // See findGroup(): too deep is "not found", not the end of the request
+        if ( $depth > self::MAX_DEPTH )
+            return false;
         $removed = false;
         foreach ( $this->Options as $key => $option )
         {
@@ -405,9 +420,13 @@ class eZMultiOption2
     */
     function removeMultiOptions( $array_remove )
     {
+        // Posted checkbox values: one value or a list, only scalar keys
+        if ( !is_array( $array_remove ) )
+            $array_remove = array( $array_remove );
         foreach ( $array_remove as $id )
         {
-            unset( $this->Options[ $id ] );
+            if ( is_scalar( $id ) )
+                unset( $this->Options[ $id ] );
         }
         $this->Options = array_values( $this->Options );
         $this->changeMultiOptionId();
@@ -423,9 +442,18 @@ class eZMultiOption2
     */
     function removeOptions( $arrayRemove, $optionId )
     {
+        // The key and the ids come from the button name and the posted
+        // checkboxes: a key that names no multioption removes nothing (it
+        // was a warning on null), a value that is not a number is skipped
+        // (it was a TypeError in "id - 1")
+        if ( !is_scalar( $optionId ) || !isset( $this->Options[$optionId] ) )
+            return;
+        if ( !is_array( $arrayRemove ) )
+            $arrayRemove = array( $arrayRemove );
         foreach ( $arrayRemove as  $id )
         {
-            unset( $this->Options[$optionId]['optionlist'][$id - 1] );
+            if ( is_scalar( $id ) && is_numeric( $id ) )
+                unset( $this->Options[$optionId]['optionlist'][(int)$id - 1] );
         }
         $this->Options = array_values( $this->Options );
         $i = 1;
@@ -610,10 +638,18 @@ class eZMultiOption2
         $this->Options = array();
         if ( $xmlString != "" )
         {
+            // Broken stored XML reads as an empty set: the parser's complaints
+            // are collected instead of raised as warnings, and a document
+            // without a root is no fatal error on null
             $dom = new DOMDocument( '1.0', 'utf-8' );
-            $success = $dom->loadXML( $xmlString );
+            $previous = libxml_use_internal_errors( true );
+            $success = is_string( $xmlString ) ? $dom->loadXML( $xmlString ) : false;
+            libxml_clear_errors();
+            libxml_use_internal_errors( $previous );
 
-            $root = $dom->documentElement;
+            $root = $success ? $dom->documentElement : null;
+            if ( !$root )
+                return;
 
             if ( $root->localName == 'ezmultioption' )
             {
@@ -681,14 +717,18 @@ class eZMultiOption2
         }
     }
 
-    function initGroupFromDom( $root, $new = false )
+    function initGroupFromDom( $root, $new = false, $depth = 0 )
     {
+        if ( !$root )
+            return;
         $xpath = new DOMXPath( $root->ownerDocument );
 
         if ( $root && $root->getAttribute("option_counter") > 0 )
         {
-            // set the name of the node
-            $this->Name = $xpath->query( 'name', $root )->item( 0 )->textContent;
+            // set the name of the node; a group without <name> has none
+            // (it was a fatal error on null)
+            $nameNode = $xpath->query( 'name', $root )->item( 0 );
+            $this->Name = $nameNode ? $nameNode->textContent : '';
             $this->OptionCounter = $root->getAttribute("option_counter");
             $this->MultiOptionIDCounter = $root->getAttribute("multioption_counter")
                                           ?  $root->getAttribute("multioption_counter")
@@ -719,11 +759,14 @@ class eZMultiOption2
                                       $option->getAttribute( "object" ) );
                 }
                 $groupNode = $xpath->query( "optiongroup", $multioption )->item( 0 );
-                if( $groupNode )
+                // Sub levels deeper than MAX_DEPTH are not read: findGroup()
+                // cannot reach them, and without a limit hand-made XML could
+                // nest deep enough to exhaust the stack
+                if( $groupNode && $depth < self::MAX_DEPTH )
                 {
                     $multiOptionGroup = new eZMultiOption2( '' );
                     $multiOptionGroup->initCounters( $this );
-                    $multiOptionGroup->initGroupFromDom( $groupNode );
+                    $multiOptionGroup->initGroupFromDom( $groupNode, false, $depth + 1 );
                     $this->initCounters( $multiOptionGroup );
                     $this->Options[$newID]['child_group'] = $multiOptionGroup;
                 }
@@ -734,9 +777,11 @@ class eZMultiOption2
             $groupList = $xpath->query( "groups/optiongroup", $root );
             foreach ( $groupList as $group )
             {
+                if ( $depth >= self::MAX_DEPTH )
+                    break;
                 $multiOptionGroup = new eZMultiOption2( '' );
                 $multiOptionGroup->initCounters( $this );
-                $multiOptionGroup->initGroupFromDom( $group );
+                $multiOptionGroup->initGroupFromDom( $group, false, $depth + 1 );
                 $this->initCounters( $multiOptionGroup );
                 $this->ChildGroupList[] = $multiOptionGroup;
             }
@@ -773,16 +818,22 @@ class eZMultiOption2
         {
             unset( $ruleNode );
             $ruleNode = $doc->createElement( "rule" );
-            $ruleNode->setAttribute( "option_id", $ruleFor );
+            $ruleNode->setAttribute( "option_id", self::scalarString( $ruleFor ) );
             foreach ( $rule as $multioptionID => $ruleData )
             {
                 unset( $ruleDataNode );
                 $ruleDataNode = $doc->createElement( "rule_data" );
-                $ruleDataNode->setAttribute( "multioption_id", $multioptionID );
+                $ruleDataNode->setAttribute( "multioption_id", self::scalarString( $multioptionID ) );
+                if ( !is_array( $ruleData ) )
+                    $ruleData = array( $ruleData );
                 foreach ( $ruleData as $optionID )
                 {
                     unset( $includeNode );
-                    $includeNode = $doc->createElement( "option_id", $optionID );
+                    // A text node: createElement( name, value ) does not escape
+                    // the value, and the ids come from the posted rule form
+                    $includeNode = $doc->createElement( "option_id" );
+                    if ( self::scalarString( $optionID ) !== '' )
+                        $includeNode->appendChild( $doc->createTextNode( self::scalarString( $optionID ) ) );
                     $ruleDataNode->appendChild( $includeNode );
                 }
                 $ruleNode->appendChild( $ruleDataNode );
@@ -798,14 +849,19 @@ class eZMultiOption2
     function createDomElementForGroup( $doc, $groupNode, $depth = 0 )
     {
         $root = $groupNode;
-        $root->setAttribute( 'option_counter', $this->OptionCounter );
-        $root->setAttribute( 'multioption_counter', $this->MultiOptionIDCounter );
-        $root->setAttribute( 'group_counter', $this->GroupIDCounter );
+        $root->setAttribute( 'option_counter', self::scalarString( $this->OptionCounter ) );
+        $root->setAttribute( 'multioption_counter', self::scalarString( $this->MultiOptionIDCounter ) );
+        $root->setAttribute( 'group_counter', self::scalarString( $this->GroupIDCounter ) );
 
-        $root->setAttribute( 'group_id', $this->GroupID );
-        $root->setAttribute( 'id', $this->ID );
+        $root->setAttribute( 'group_id', self::scalarString( $this->GroupID ) );
+        $root->setAttribute( 'id', self::scalarString( $this->ID ) );
 
-        $name = $doc->createElement( "name", $this->Name );
+        // A text node rather than createElement( name, value ): the value is
+        // not escaped there, so a group name with an & was cut off with a warning
+        // (no text node for '' so that an empty name stays <name/>, as before)
+        $name = $doc->createElement( "name" );
+        if ( self::scalarString( $this->Name ) !== '' )
+            $name->appendChild( $doc->createTextNode( self::scalarString( $this->Name ) ) );
         $root->appendChild( $name );
 
         $multioptions = $doc->createElement( "multioptions" );
@@ -815,29 +871,29 @@ class eZMultiOption2
         {
             unset( $multioptionNode );
             $multioptionNode = $doc->createElement( "multioption" );
-            $multioptionNode->setAttribute( "id", $multioption['id'] );
-            $multioptionNode->setAttribute( "name", $multioption['name'] );
-            $multioptionNode->setAttribute( "multioption_id", $multioption['multioption_id'] );
-            $multioptionNode->setAttribute( "priority", $multioption['priority'] );
-            $multioptionNode->setAttribute( 'default_option_id', $multioption['default_option_id'] );
+            $multioptionNode->setAttribute( "id", self::scalarString( $multioption['id'] ) );
+            $multioptionNode->setAttribute( "name", self::scalarString( $multioption['name'] ) );
+            $multioptionNode->setAttribute( "multioption_id", self::scalarString( $multioption['multioption_id'] ) );
+            $multioptionNode->setAttribute( "priority", self::scalarString( $multioption['priority'] ) );
+            $multioptionNode->setAttribute( 'default_option_id', self::scalarString( $multioption['default_option_id'] ) );
 
             if ( isset( $multioption['imageoption'] ) && $multioption['imageoption'] )
-                    $multioptionNode->setAttribute( "imageoption", $multioption['imageoption'] );
+                    $multioptionNode->setAttribute( "imageoption", self::scalarString( $multioption['imageoption'] ) );
 
             foreach ( $multioption['optionlist'] as $option )
             {
                 unset( $optionNode );
                 $optionNode = $doc->createElement( "option" );
-                $optionNode->setAttribute( "id", $option['id'] );
-                $optionNode->setAttribute( "option_id", $option['option_id'] );
-                $optionNode->setAttribute( "value", $option['value'] );
+                $optionNode->setAttribute( "id", self::scalarString( $option['id'] ) );
+                $optionNode->setAttribute( "option_id", self::scalarString( $option['option_id'] ) );
+                $optionNode->setAttribute( "value", self::scalarString( $option['value'] ) );
 
                 if ( isset( $option['object'] ) && $option['object']  )
                 {
-                    $optionNode->setAttribute( "object", $option['object'] );
+                    $optionNode->setAttribute( "object", self::scalarString( $option['object'] ) );
                 }
-                $optionNode->setAttribute( 'additional_price', $option['additional_price'] );
-                $optionNode->setAttribute( 'is_selectable', $option['is_selectable'] );
+                $optionNode->setAttribute( 'additional_price', self::scalarString( $option['additional_price'] ) );
+                $optionNode->setAttribute( 'is_selectable', self::scalarString( $option['is_selectable'] ) );
                 $multioptionNode->appendChild( $optionNode );
             }
             if ( array_key_exists( 'child_group', $multioption ) && $multioption['child_group'] )
@@ -845,7 +901,7 @@ class eZMultiOption2
                 $childGroup = $multioption['child_group'];
                 unset( $childGroupNode );
                 $childGroupNode = $doc->createElement( "optiongroup" );
-                $childGroupNode->setAttribute( "id", $childGroup->ID );
+                $childGroupNode->setAttribute( "id", self::scalarString( $childGroup->ID ) );
                 $childGroup->createDomElementForGroup( $doc, $childGroupNode, $depth + 1 );
                 $multioptionNode->appendChild( $childGroupNode );
             }
@@ -858,7 +914,7 @@ class eZMultiOption2
         {
             unset( $childGroupNode );
             $childGroupNode = $doc->createElement( "optiongroup" );
-            $childGroupNode->setAttribute( "id", $childGroup->ID );
+            $childGroupNode->setAttribute( "id", self::scalarString( $childGroup->ID ) );
             $childGroup->createDomElementForGroup( $doc, $childGroupNode, $depth + 1 );
             $groups->appendChild( $childGroupNode );
         }
@@ -880,5 +936,19 @@ class eZMultiOption2
     public $ChildGroupList;
     public $MultioptionIDList = array();
     public $OptionIDList = array();
+
+    /// The deepest nesting of option groups that is read and searched; the
+    /// same limit as eZMultiOption2Type::MAX_CHILD_LEVEL for the edit form
+    const MAX_DEPTH = 50;
+
+    /*!
+     \static
+     \return \a $value as a string for the DOM: '' for null (a form field that
+     was not posted) and for an array (a field posted as name[]).
+    */
+    static function scalarString( $value )
+    {
+        return is_scalar( $value ) ? (string)$value : '';
+    }
 }
 ?>
