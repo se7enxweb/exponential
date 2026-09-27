@@ -1126,6 +1126,15 @@ language_locale='eng-GB'";
                              // which the global site.ini does not know yet
                              'database_settings' => $siteINIChanges['DatabaseSettings'] );
 
+        // The chosen languages by name, so a site package does not have to
+        // rely on the primary being the first of all_language_codes (every
+        // chosen language, the primary first), and the answer of the package
+        // language step (package language => site language, or 'skip'; true
+        // when the step was not needed)
+        $parameters['primary_language'] = $primaryLanguageLocaleCode;
+        $parameters['extra_language_codes'] = array_values( $extraLanguageCodes );
+        $parameters['language_map'] = isset( $languageMap ) ? $languageMap : true;
+
 
         $siteINIStored = false;
         $siteINIAdminStored = false;
