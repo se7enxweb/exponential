@@ -53,7 +53,7 @@ Continue=true
 FirstName=Admin
 LastName=User
 Email=info@se7enx.com
-Password=publishing$
+Password=
 
 [security]
 Continue=true

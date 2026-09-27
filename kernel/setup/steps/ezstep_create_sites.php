@@ -1431,7 +1431,13 @@ language_locale='eng-GB'";
         $dataMap = $newUserObject->attribute( 'data_map' );
         $error = false;
 
-        if ( trim( $admin['email'] ) )
+        // The password is set even when no email was given: skipping the
+        // account then left the site data's own administrator password -
+        // the one printed in every guide - in place.
+        if ( !trim( (string)$admin['email'] ) && is_string( $admin['password'] ) && $admin['password'] !== '' )
+            $admin['email'] = $userAccount->attribute( 'email' );
+
+        if ( trim( (string)$admin['email'] ) )
         {
             if ( !isset( $dataMap['user_account'] ) )
             {

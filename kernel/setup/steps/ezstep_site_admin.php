@@ -37,6 +37,61 @@ class eZStepSiteAdmin extends eZStepInstaller
         parent::__construct( $tpl, $http, $ini, $persistenceList, 'site_admin', 'Site admin' );
     }
 
+    /**
+     * Passwords a kickstart file must not install: none at all, and the ones
+     * printed in every example and tutorial.
+     *
+     * @param mixed $password
+     * @return bool
+     */
+    public static function isWeakDefaultPassword( $password )
+    {
+        if ( !is_string( $password ) || trim( $password ) === '' )
+            return true;
+        return in_array( strtolower( trim( $password ) ),
+                         array( 'publish', 'admin', 'password', 'changeme', 'change-me', 'secret', 'exponential', 'demo', '123456' ),
+                         true );
+    }
+
+    /**
+     * A random administrator password, recorded once for the person running
+     * the installation: printed on the console when there is one, and
+     * written to var/log/initial-admin-password (readable by the owner
+     * only), which they are told to read and delete. setup.log only notes
+     * that it happened.
+     *
+     * @return string
+     */
+    public static function generateAdminPassword()
+    {
+        $alphabet = 'abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        $password = '';
+        for ( $i = 0; $i < 20; $i++ )
+            $password .= $alphabet[random_int( 0, strlen( $alphabet ) - 1 )];
+
+        $file = 'var/log/initial-admin-password';
+        if ( !is_dir( dirname( $file ) ) )
+            @mkdir( dirname( $file ), 0770, true );
+        $old = umask( 0077 );
+        $written = @file_put_contents( $file,
+            "Exponential administrator login: admin\n" .
+            "Password: $password\n" .
+            "Generated " . date( 'c' ) . " because the kickstart file set no password or a well-known one.\n" .
+            "Log in, change it, then delete this file.\n" );
+        umask( $old );
+        if ( $written !== false )
+            @chmod( $file, 0600 );
+
+        if ( class_exists( 'eZCLI', false ) && PHP_SAPI === 'cli' )
+        {
+            eZCLI::instance()->warning( "The administrator password was not set or is a well-known one; generated a random one." );
+            eZCLI::instance()->output( "  admin password: $password" );
+            eZCLI::instance()->output( "  (also written to $file - change the password after the first login and delete that file)" );
+        }
+        eZDebug::writeNotice( "Generated a random administrator password (********), recorded in $file", __METHOD__ );
+        return $password;
+    }
+
     function processPostData()
     {
         $user = array();
@@ -109,6 +164,18 @@ class eZStepSiteAdmin extends eZStepInstaller
                 $adminUser['email'] = $data['Email'];
             if ( isset( $data['Password'] ) )
                 $adminUser['password'] = $data['Password'];
+
+            // No password, or one everybody knows: the new site would open
+            // with a login anyone can guess. Give it a random one instead.
+            // (A step can be initialised again later in the same setup; keep
+            // the one already generated rather than making another.)
+            if ( self::isWeakDefaultPassword( $adminUser['password'] ) )
+            {
+                $previous = $this->PersistenceList['admin']['password'] ?? false;
+                $adminUser['password'] = self::isWeakDefaultPassword( $previous )
+                    ? self::generateAdminPassword()
+                    : $previous;
+            }
 
             $this->PersistenceList['admin'] = $adminUser;
             return $this->kickstartContinueNextStep();

@@ -225,8 +225,11 @@
 ## The email address of the administrator user
 #Email=nospam@ez.no
 ## Password=[string]
-## The password of the administrator user
-#Password=publish
+## The password of the administrator user. Leave it empty (or unset) and
+## setup generates a random one, printed once and written to
+## var/log/initial-admin-password; well-known ones such as "publish" are
+## replaced the same way.
+#Password=
 
 #[security]
 ## Continue=<true|false>

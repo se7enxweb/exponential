@@ -96,7 +96,7 @@ class expKickstarterIni
             'FirstName' => 'Admin',
             'LastName'  => 'User',
             'Email'     => 'admin@example.com',
-            'Password'  => 'publish',
+            'Password'  => '', // empty: setup generates a random one
         ),
         'registration' => array(
             'Comments' => '',
