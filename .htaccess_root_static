@@ -26,6 +26,9 @@
 DirectoryIndex index.php
 
 RewriteEngine On
+# No dot file or dot directory (.git, .env, .htaccess ...) is served or
+# run, whatever folder it lies in; .well-known stays reachable.
+RewriteRule (^|/)\.(?!well-known(/|$)) - [R=404,L]
 # No script runs because its path was asked for, except the front
 # controllers at the root: a .php below them (in the package store,
 # an extension, var/) answers 404 instead of being executed.
@@ -41,10 +44,13 @@ RewriteRule ^api/ index_rest.php [L]
 RewriteRule ^index_rest\.php - [L]
 RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
+# Of the originals only the images (SVG images are shown from there);
+# other uploads stay behind content/download and its permissions.
+RewriteRule ^var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$ - [L]
 RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* - [L]
 RewriteRule ^design/[^/]+/(stylesheets|images|javascript|fonts)/.* - [L]
 RewriteRule ^share/icons/.* - [L]
-RewriteRule ^extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts)/.* - [L]
+RewriteRule ^extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/.* - [L]
 RewriteRule ^packages/styles/.+/(stylesheets|images|javascript)/[^/]+/.* - [L]
 RewriteRule ^packages/styles/.+/thumbnail/.* - [L]
 # Only the preview images of imported packages: their XML, SQL and
@@ -67,6 +73,9 @@ RewriteRule ^design/standard/images/favicon\.ico - [L]
 
 # Give direct access to robots.txt for use by crawlers (Google, Bing, Spammers..)
 RewriteRule ^robots\.txt - [L]
+
+# The site's service worker, which has to be served from the root.
+RewriteRule ^sw\.js$ - [L]
 
 # Uncomment the following lines when using popup style debug.
 # RewriteRule ^var/cache/debug\.html.* - [L]
