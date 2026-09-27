@@ -11766,7 +11766,7 @@ d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 f356fcde7f2bb1d00f505e2514639808  kernel/classes/expkickstarterini.php
 01a1a672a1a6ca02cee4d280786b378d  kernel/classes/expphar.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
-89213e1de293a929fc8be8b6466ffc37  kernel/classes/expvelocity.php
+13fbe5bc98657f048d022000f72f3863  kernel/classes/expvelocity.php
 6688ecc0698f54470a41e08b034c47d3  kernel/classes/ezaudit.php
 efe6419e2d62b3edba81f61e637c8f52  kernel/classes/ezbasket.php
 2b76818f8885051ed72e1527f96206a1  kernel/classes/ezbinaryfilehandler.php
