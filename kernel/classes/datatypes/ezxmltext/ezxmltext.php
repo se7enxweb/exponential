@@ -90,8 +90,13 @@ class eZXMLText
                 {
                     return $isEmpty;
                 }
-                $success = $dom->loadXML( $this->XMLData );
-                if ( $success )
+                // Stored XML that does not parse (a truncated import, an old
+                // hand edit) counts as empty; it must not print libxml warnings
+                $useInternalErrors = libxml_use_internal_errors( true );
+                $success = is_string( $this->XMLData ) && $dom->loadXML( $this->XMLData );
+                libxml_clear_errors();
+                libxml_use_internal_errors( $useInternalErrors );
+                if ( $success && $dom->documentElement )
                 {
                     $sectionNode = $dom->documentElement;
 

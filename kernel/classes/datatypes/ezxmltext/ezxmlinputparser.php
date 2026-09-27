@@ -35,6 +35,14 @@ class eZXMLInputParser
     const ERROR_DATA = 16;
     const ERROR_ALL = 28; // 4+8+16
 
+    /**
+     * Deepest tag nesting the parser accepts. Every open tag is one level of
+     * recursion in parseTag(), and libxml refuses to load documents nested
+     * deeper than 256 levels, so a deeper input could neither be parsed
+     * safely nor be shown again once stored.
+     */
+    const MAX_NESTING_DEPTH = 200;
+
     /* $InputTags array contains properties of elements that come from the input.
 
     Each array element describes a tag that comes from the input. Arrays index is
@@ -494,6 +502,15 @@ class eZXMLInputParser
                 return true;
             }
 
+            // Refuse input nested deeper than can be parsed and stored
+            if ( !$noChildren && count( $this->ParentStack ) >= self::MAX_NESTING_DEPTH )
+            {
+                $this->handleError( self::ERROR_SYNTAX, ezpI18n::tr( 'kernel/classes/datatypes/ezxmltext', 'Tags are nested too deeply.' ) );
+                $this->IsInputValid = false;
+                $this->QuitProcess = true;
+                return false;
+            }
+
             // Append to parent stack
             if ( !$noChildren && $newTagName !== false )
             {
@@ -597,22 +614,27 @@ class eZXMLInputParser
      */
     private function findEndOpeningTagPosition( $data, $tagBeginPos, $offset = 0 )
     {
-        $endPos = strpos( $data, '>', $tagBeginPos + $offset );
-        if ( $endPos === false )
+        // A loop rather than one recursive call per '>' found inside an
+        // attribute: a text with thousands of them must not exhaust the stack
+        while ( true )
         {
-            return false;
+            $endPos = strpos( $data, '>', $tagBeginPos + $offset );
+            if ( $endPos === false )
+            {
+                return false;
+            }
+            $tagCode = substr( $data, $tagBeginPos, $endPos - $tagBeginPos );
+            if ( strpos( $tagCode, '=' ) === false )
+            {
+                // this tag has no attribute, so the next '>' is the right one.
+                return $endPos;
+            }
+            if ( $this->isValidXmlTag( $tagCode ) )
+            {
+                return $endPos;
+            }
+            $offset = $endPos - $tagBeginPos + 1;
         }
-        $tagCode = substr( $data, $tagBeginPos, $endPos - $tagBeginPos );
-        if ( strpos( $tagCode, '=' ) === false )
-        {
-            // this tag has no attribute, so the next '>' is the right one.
-            return $endPos;
-        }
-        if ( $this->isValidXmlTag( $tagCode ) )
-        {
-            return $endPos;
-        }
-        return $this->findEndOpeningTagPosition( $data, $tagBeginPos, $endPos - $tagBeginPos + 1 );
     }
 
     /**

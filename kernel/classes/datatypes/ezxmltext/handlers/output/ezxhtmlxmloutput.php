@@ -168,8 +168,10 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
 
     function initHandlerHeader( $element, &$attributes, &$siblingParams, &$parentParams )
     {
-        $level = $parentParams['section_level'];
-        $this->HeaderCount[$level]++;
+        // A header outside any section (stored XML with another root) has no
+        // level yet: count it as the first level instead of raising warnings
+        $level = $parentParams['section_level'] ?? 0;
+        $this->HeaderCount[$level] = ( $this->HeaderCount[$level] ?? 0 ) + 1;
 
         // headers auto-numbering
         $i = 1;
@@ -179,7 +181,7 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
             if ( $i > 1 )
                 $headerAutoName .= "_";
 
-            $headerAutoName .= $this->HeaderCount[$i];
+            $headerAutoName .= $this->HeaderCount[$i] ?? 0;
             $i++;
         }
         $levelNumber = str_replace( "_", ".", $headerAutoName );
@@ -269,6 +271,15 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
         elseif ( $element->getAttribute( 'href' ) != null )
         {
             $href = $element->getAttribute( 'href' );
+        }
+
+        // The input parser refuses script links, but a URL row or an imported
+        // document can still carry one (also spelled with entities, tabs or
+        // leading spaces, which browsers ignore). Never hand it to the page.
+        if ( is_string( $href ) && eZXMLOutputHandler::isUnsafeURL( $href ) )
+        {
+            eZDebug::writeWarning( "Link with a script URL removed", 'XML output handler: link' );
+            $href = '#';
         }
 
         if ( $element->getAttribute( 'anchor_name' ) != null )
@@ -441,7 +452,7 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
     {
         // Backing up the section_level, headings' level should be restarted inside tables.
         // @see http://issues.ez.no/11536
-        $this->SectionLevelStack[] = $parentParams['section_level'];
+        $this->SectionLevelStack[] = $parentParams['section_level'] ?? 0;
         $parentParams['section_level'] = 0;
 
         // Numbers of rows and cols are lower by 1 for back-compatibility.
@@ -453,7 +464,8 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
            $lastRow = $lastRow->previousSibling;
         }
 
-        $colCount = self::childTagCount( $lastRow );
+        // a table without any row has no columns (childTagCount() requires an element)
+        $colCount = $lastRow ? self::childTagCount( $lastRow ) : 0;
 
         if ( $colCount )
             $colCount--;
@@ -534,7 +546,15 @@ class eZXHTMLXMLOutput extends eZXMLOutputHandler
 
     function initHandlerCustom( $element, &$attributes, &$siblingParams, &$parentParams )
 {
-        $ret = array( 'template_name' => $attributes['name'] );
+        // The custom tag name becomes a template file name: only a plain
+        // name, never a path (../) or nothing at all
+        $name = $attributes['name'] ?? '';
+        if ( !is_string( $name ) || !preg_match( '/^[A-Za-z0-9_-]+$/', $name ) )
+        {
+            eZDebug::writeWarning( "Custom tag without a valid name is not rendered", 'XML output handler: custom' );
+            return array( 'no_render' => true );
+        }
+        $ret = array( 'template_name' => $name );
         return $ret;
     }
 

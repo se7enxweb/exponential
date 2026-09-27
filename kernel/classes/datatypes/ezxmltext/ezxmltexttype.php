@@ -267,12 +267,14 @@ class eZXMLTextType extends eZDataType
         $tagPreset = $base . self::TAG_PRESET_VARIABLE . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $column ) )
         {
+            // The row count is a number and the preset a name; a crafted
+            // form posting arrays must not reach the class attribute columns
             $columnValue = $http->postVariable( $column );
-            $classAttribute->setAttribute( self::COLS_FIELD,  $columnValue );
+            $classAttribute->setAttribute( self::COLS_FIELD, is_scalar( $columnValue ) ? (int)$columnValue : 10 );
             if ( $http->hasPostVariable( $tagPreset ) )
             {
                 $tagPresetValue = $http->postVariable( $tagPreset );
-                $classAttribute->setAttribute( self::TAG_PRESET_FIELD, $tagPresetValue );
+                $classAttribute->setAttribute( self::TAG_PRESET_FIELD, is_scalar( $tagPresetValue ) ? (string)$tagPresetValue : '' );
             }
             return true;
         }
@@ -406,7 +408,7 @@ class eZXMLTextType extends eZDataType
 
         $dom = new DOMDocument( '1.0', 'utf-8' );
         $text = eZXMLTextType::rawXMLText( $contentObjectAttribute );
-        if ( trim( $text ) == '' )
+        if ( !is_string( $text ) || trim( $text ) == '' )
         {
             return $metaData;
         }
@@ -464,6 +466,12 @@ class eZXMLTextType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
+        // The value is the stored XML as toString() gives it, stored as is;
+        // anything that is not a string is refused and the value kept
+        if ( !is_string( $string ) )
+        {
+            return false;
+        }
         return $contentObjectAttribute->setAttribute( 'data_text', $string );
     }
 
@@ -474,9 +482,17 @@ class eZXMLTextType extends eZDataType
     function title( $contentObjectAttribute, $value = null )
     {
         $text = eZXMLTextType::rawXMLText( $contentObjectAttribute );
+        // An empty value has no title; loadXML( '' ) throws a ValueError
+        if ( !is_string( $text ) || trim( $text ) === '' )
+        {
+            return '';
+        }
 
         $dom = new DOMDocument( '1.0', 'utf-8' );
+        $useInternalErrors = libxml_use_internal_errors( true );
         $success = $dom->loadXML( $text );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useInternalErrors );
 
         // Get first text element of xml
         if ( !$success )
@@ -485,7 +501,7 @@ class eZXMLTextType extends eZDataType
         }
 
         $root = $dom->documentElement;
-        $section = $root->firstChild;
+        $section = $root ? $root->firstChild : null;
         $textDom = false;
         if ( $section )
         {
@@ -543,8 +559,12 @@ class eZXMLTextType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $textColumns = $attributeParametersNode->getElementsByTagName( 'text-column-count' )->item( 0 )->textContent;
-        $classAttribute->setAttribute( self::COLS_FIELD, $textColumns );
+        // A package without the element keeps the default row count
+        $textColumnsNode = $attributeParametersNode->getElementsByTagName( 'text-column-count' )->item( 0 );
+        if ( $textColumnsNode )
+        {
+            $classAttribute->setAttribute( self::COLS_FIELD, $textColumnsNode->textContent );
+        }
     }
 
     function customObjectAttributeHTTPAction( $http, $action, $contentObjectAttribute, $parameters )
@@ -565,8 +585,18 @@ class eZXMLTextType extends eZDataType
 
         if ( $xmlString != '' )
         {
+            // A stored value that does not parse is exported without content
+            // rather than stopping the whole package export
             $doc = new DOMDocument( '1.0', 'utf-8' );
+            $useInternalErrors = libxml_use_internal_errors( true );
             $success = $doc->loadXML( $xmlString );
+            libxml_clear_errors();
+            libxml_use_internal_errors( $useInternalErrors );
+            if ( !$success || !$doc->documentElement )
+            {
+                eZDebug::writeWarning( 'Stored XML of attribute #' . $objectAttribute->attribute( 'id' ) . ' does not parse, exported empty', __METHOD__ );
+                return $DOMNode;
+            }
 
             /* For all links found in the XML, do the following:
              * - add "href" attribute fetching it from ezurl table.
@@ -689,8 +719,15 @@ class eZXMLTextType extends eZDataType
     function postUnserializeContentObjectAttribute( $package, $objectAttribute )
     {
         $xmlString = $objectAttribute->attribute( 'data_text' );
+        if ( !is_string( $xmlString ) || trim( $xmlString ) === '' )
+        {
+            return false;
+        }
         $doc = new DOMDocument( '1.0', 'utf-8' );
+        $useInternalErrors = libxml_use_internal_errors( true );
         $success = $doc->loadXML( $xmlString );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useInternalErrors );
 
         if ( !$success )
         {

@@ -75,6 +75,12 @@ class eZSimplifiedXMLEditOutput
         $this->Output = '';
         $sectionLevel = -1;
 
+        // A document without a root element has nothing to edit
+        if ( !$dom->documentElement )
+        {
+            return $this->Output;
+        }
+
         $this->createLinksArray( $dom );
 
         $this->outputTag( $dom->documentElement, $sectionLevel );
@@ -438,7 +444,8 @@ class eZSimplifiedXMLEditOutput
         elseif ( $linkID )
         {
             // Fetch URL from cached array
-            $href = $this->LinkArray[$linkID];
+            // (a URL row that no longer exists leaves the link without a target)
+            $href = $this->LinkArray[$linkID] ?? '';
         }
         else
         {
@@ -495,7 +502,9 @@ class eZSimplifiedXMLEditOutput
             {
                 continue;
             }
-            if ( !in_array( $linkIDValue, $linkIDArray ) )
+            // the ids go into SQL: whole numbers only, whatever an imported document holds
+            $linkIDValue = (int)$linkIDValue;
+            if ( $linkIDValue && !in_array( $linkIDValue, $linkIDArray ) )
             {
                  $linkIDArray[] = $linkIDValue;
              }

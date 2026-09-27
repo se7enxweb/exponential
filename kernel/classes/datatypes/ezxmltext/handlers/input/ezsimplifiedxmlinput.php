@@ -60,6 +60,16 @@ class eZSimplifiedXMLInput extends eZXMLInputHandler
         {
             $data = $http->postVariable( $base . '_data_text_' . $contentObjectAttributeID );
 
+            // The editor posts one text; anything else (an array from a
+            // crafted form) is refused instead of reaching the parser
+            if ( !is_string( $data ) )
+            {
+                $GLOBALS['originalInput_' . $contentObjectAttributeID] = '';
+                $GLOBALS['isInputValid_' . $contentObjectAttributeID] = false;
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes', 'Invalid input.' ) );
+                return eZInputValidator::STATE_INVALID;
+            }
+
             // Set original input to a global variable
             $originalInput = 'originalInput_' . $contentObjectAttributeID;
             $GLOBALS[$originalInput] = $data;
@@ -137,8 +147,18 @@ class eZSimplifiedXMLInput extends eZXMLInputHandler
         }
         else
         {
+            // Stored XML that is empty or does not parse (loadXML( '' )
+            // throws, a broken document has no root) opens the editor with
+            // the text it still contains instead of a fatal error
             $dom = new DOMDocument( '1.0', 'utf-8' );
-            $success = $dom->loadXML( $this->XMLData );
+            $useInternalErrors = libxml_use_internal_errors( true );
+            $success = is_string( $this->XMLData ) && trim( $this->XMLData ) !== '' && $dom->loadXML( $this->XMLData );
+            libxml_clear_errors();
+            libxml_use_internal_errors( $useInternalErrors );
+            if ( !$success || !$dom->documentElement )
+            {
+                return is_string( $this->XMLData ) ? trim( strip_tags( $this->XMLData ) ) : '';
+            }
 
             $editOutput = new eZSimplifiedXMLEditOutput();
             $dom->formatOutput = true;

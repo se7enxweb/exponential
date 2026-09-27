@@ -238,7 +238,8 @@ class eZXMLSchema
         else
             $elementName = $element->nodeName;
 
-        $isInline = $this->Schema[$elementName]['isInline'];
+        // Unknown elements (foreign or imported XML) read as undefined, not as a warning
+        $isInline = $this->Schema[$elementName]['isInline'] ?? null;
 
         // Special workaround for custom tags.
         if ( is_array( $isInline ) && !is_string( $element ) )
@@ -284,7 +285,7 @@ class eZXMLSchema
 
             if ( $isInline === true )
             {
-                $allowed = $this->Schema[$parentName]['inlineChildrenAllowed'];
+                $allowed = $this->Schema[$parentName]['inlineChildrenAllowed'] ?? false;
             }
             elseif ( $isInline === false )
             {
@@ -295,7 +296,7 @@ class eZXMLSchema
                     $allowed = true;
                 }
                 else
-                    $allowed = $this->Schema[$parentName]['blockChildrenAllowed'];
+                    $allowed = $this->Schema[$parentName]['blockChildrenAllowed'] ?? false;
             }
             else
                 return true;
@@ -318,7 +319,7 @@ class eZXMLSchema
         //if ( !isset( $this->Schema[$element->nodeName] ) )
         //    return false;
 
-        return $this->Schema[$element->nodeName]['childrenRequired'];
+        return $this->Schema[$element->nodeName]['childrenRequired'] ?? false;
     }
 
     function hasAttributes( $element )
@@ -326,19 +327,19 @@ class eZXMLSchema
         //if ( !isset( $this->Schema[$element->nodeName] ) )
         //    return false;
 
-        return ( $this->Schema[$element->nodeName]['attributes'] != false );
+        return ( ( $this->Schema[$element->nodeName]['attributes'] ?? false ) != false );
     }
 
     function attributes( $element )
     {
-        return $this->Schema[$element->nodeName]['attributes'];
+        return $this->Schema[$element->nodeName]['attributes'] ?? false;
     }
 
     function customAttributes( $element )
     {
         if ( is_string( $element ) )
         {
-            return $this->Schema[$element]['customAttributes'];
+            return $this->Schema[$element]['customAttributes'] ?? array();
         }
         else
         {
@@ -346,11 +347,11 @@ class eZXMLSchema
             {
                 $name = $element->getAttribute( 'name' );
                 if ( $name )
-                    return $this->Schema['custom']['customAttributes'][$name];
+                    return $this->Schema['custom']['customAttributes'][$name] ?? array();
             }
             else
             {
-                return $this->Schema[$element->nodeName]['customAttributes'];
+                return $this->Schema[$element->nodeName]['customAttributes'] ?? array();
             }
         }
         return array();

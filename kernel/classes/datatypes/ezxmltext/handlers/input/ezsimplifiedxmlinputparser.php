@@ -814,8 +814,10 @@ class eZSimplifiedXMLInputParser extends eZXMLInputParser
 
                 if ( $url )
                 {
-                    // Protection from XSS attack
-                    if ( preg_match( "/^(java|vb)script:.*/i" , $url ) )
+                    // Protection from XSS attack; browsers ignore entities,
+                    // control characters and blanks in the scheme, so compare
+                    // without them, and refuse data: as well
+                    if ( eZXMLOutputHandler::isUnsafeURL( $url ) )
                     {
                         $this->handleError( eZXMLInputParser::ERROR_DATA,
                                             ezpI18n::tr( 'kernel/classes/datatypes/ezxmltext', "Using scripts in links is not allowed, link '%1' has been removed", '', array( $url ) ) );

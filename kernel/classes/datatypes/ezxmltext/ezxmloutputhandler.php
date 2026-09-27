@@ -170,11 +170,21 @@ class eZXMLOutputHandler
             $this->Res->setKeys( array( array( 'attribute_identifier', $this->ContentObjectAttribute->attribute( 'contentclass_attribute_identifier' ) ) ) );
         }
 
+        // Broken stored XML renders as nothing: libxml must not print its
+        // warnings into the page, and the attribute_identifier design key set
+        // above must not leak into the rest of the page when we bail out
         $this->Document = new DOMDocument( '1.0', 'utf-8' );
-        $success = $this->Document->loadXML( $this->XMLData );
+        $useInternalErrors = libxml_use_internal_errors( true );
+        $success = is_string( $this->XMLData ) && $this->Document->loadXML( $this->XMLData );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useInternalErrors );
 
-        if ( !$success )
+        if ( !$success || !$this->Document->documentElement )
         {
+            if ( $this->ContentObjectAttribute )
+            {
+                $this->Res->removeKey( 'attribute_identifier' );
+            }
             $this->Output = '';
             return $this->Output;
         }
@@ -204,6 +214,21 @@ class eZXMLOutputHandler
         return $this->Output;
     }
 
+    /**
+     * Whether a link URL would run script in the browser (javascript:,
+     * vbscript:, livescript:, data:), also when the scheme is disguised with
+     * entities, control characters or white space.
+     *
+     * @param string $url
+     * @return bool
+     */
+    static function isUnsafeURL( $url )
+    {
+        $decoded = html_entity_decode( html_entity_decode( $url, ENT_QUOTES | ENT_HTML5, 'UTF-8' ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+        $decoded = preg_replace( '/[\x00-\x20\x7F]+/', '', $decoded );
+        return preg_match( '/^(?:java|vb|live)script:|^data:/i', $decoded ) === 1;
+    }
+
     // Prefetch objects, nodes and urls for further rendering
     function prefetch()
     {
@@ -211,7 +236,9 @@ class eZXMLOutputHandler
         $nodeIDArray = array();
 
         // Fetch all links and cache urls
-        $linkIDArray = $this->getAttributeValueArray( 'link', 'url_id' );
+        // url_id goes into SQL: only whole numbers, whatever an imported
+        // document carries in the attribute
+        $linkIDArray = array_values( array_unique( array_filter( array_map( 'intval', $this->getAttributeValueArray( 'link', 'url_id' ) ) ) ) );
         if ( count( $linkIDArray ) > 0 )
         {
             $inIDSQL = implode( ', ', $linkIDArray );
@@ -314,6 +341,22 @@ class eZXMLOutputHandler
 
     function outputTag( $element, &$siblingParams, $parentParams = array() )
     {
+        // Comments and processing instructions in stored XML are not
+        // content; a CDATA section is text and is escaped like text. Neither
+        // has a tag template, so rendering them as tags only raised warnings.
+        if ( $element instanceof DOMCdataSection )
+        {
+            // inside literal the template does the escaping, as for its text
+            if ( $element->parentNode && $element->parentNode->nodeName == 'literal' )
+            {
+                return array( true, $element->textContent );
+            }
+            return array( true, htmlspecialchars( $element->textContent ) );
+        }
+        if ( !( $element instanceof DOMElement ) && !( $element instanceof DOMText ) )
+        {
+            return array( true, '' );
+        }
         $tagName = $element->localName;
         if ( $tagName !== null && isset( $this->OutputTags[$tagName] ) )
         {
@@ -551,7 +594,8 @@ class eZXMLOutputHandler
 
     function renderTag( $element, $content, $vars )
     {
-        $currentTag = $this->OutputTags[$element->nodeName];
+        // An element the handler has no rules for (imported or foreign XML) has no entry
+        $currentTag = $this->OutputTags[$element->nodeName] ?? null;
         if ( $currentTag && isset( $currentTag['quickRender'] ) )
         {
             $renderedTag = '';
@@ -612,7 +656,7 @@ class eZXMLOutputHandler
     function callTagInitHandler( $handlerName, $element, &$attributes, &$siblingParams, &$parentParams )
     {
         $result = array();
-        $thisOutputTag = $this->OutputTags[$element->nodeName];
+        $thisOutputTag = $this->OutputTags[$element->nodeName] ?? array();
         if ( isset( $thisOutputTag[$handlerName] ) )
         {
             if ( is_callable( array( $this, $thisOutputTag[$handlerName] ) ) )
@@ -627,7 +671,7 @@ class eZXMLOutputHandler
     function callTagRenderHandler( $handlerName, $element, $childrenOutput, $vars )
     {
         $result = array();
-        $thisOutputTag = $this->OutputTags[$element->nodeName];
+        $thisOutputTag = $this->OutputTags[$element->nodeName] ?? array();
         if ( isset( $thisOutputTag[$handlerName] ) )
         {
             $handlerFunction = $thisOutputTag[$handlerName];
