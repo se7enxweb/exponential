@@ -34,6 +34,9 @@ class eZIntegerType extends eZDataType
     const HAS_MIN_VALUE = 1;
     const HAS_MAX_VALUE = 2;
     const HAS_MIN_MAX_VALUE = 3;
+    /// The range of the signed 32 bit int(11) columns the values are stored in
+    const COLUMN_MIN = -2147483648;
+    const COLUMN_MAX = 2147483647;
 
     public function __construct()
     {
@@ -41,6 +44,35 @@ class eZIntegerType extends eZDataType
                            array( 'serialize_supported' => true,
                                   'object_serialize_map' => array( 'data_int' => 'value' ) ) );
         $this->IntegerValidator = new eZIntegerValidator();
+    }
+
+    /*!
+     \private
+     \return the posted value of \a $name with the spaces taken out, or null when it
+     is not a string. A request can post an array under any name (name[]=x), which
+     the validator's preg_match() and trim() refuse with a TypeError.
+    */
+    static function postedNumber( $http, $name )
+    {
+        $value = $http->postVariable( $name );
+        if ( is_int( $value ) )
+            return (string)$value;
+        if ( !is_string( $value ) )
+            return null;
+        return str_replace( " ", "", $value );
+    }
+
+    /*!
+     \private
+     \return true if \a $value, already accepted as an integer, fits the int(11)
+     columns (data_int, data_int1-4, sort_key_int) it is stored in. A larger number
+     makes a strict database refuse the whole store, and a lenient one clip it
+     silently to a different value than the editor typed.
+    */
+    static function fitsColumn( $value )
+    {
+        return filter_var( $value, FILTER_VALIDATE_INT,
+                           array( 'options' => array( 'min_range' => self::COLUMN_MIN, 'max_range' => self::COLUMN_MAX ) ) ) !== false;
     }
 
     /**
@@ -57,6 +89,17 @@ class eZIntegerType extends eZDataType
         $min = $classAttribute->attribute( self::MIN_VALUE_FIELD );
         $max = $classAttribute->attribute( self::MAX_VALUE_FIELD );
         $input_state = $classAttribute->attribute( self::INPUT_STATE_FIELD );
+
+        // Leading zeros ("007") are an integer the regular expression accepts;
+        // FILTER_VALIDATE_INT does not, so compare the number without them
+        $number = preg_replace( '/^(-?)0+(?=\d)/', '$1', (string)$data );
+        if ( preg_match( '/^-?[0-9]+$/', $number ) && !self::fitsColumn( $number ) )
+        {
+            $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                 'The number is not within the required range %1 - %2' ),
+                                                         self::COLUMN_MIN, self::COLUMN_MAX );
+            return eZInputValidator::STATE_INVALID;
+        }
 
         switch( $input_state )
         {
@@ -119,8 +162,13 @@ class eZIntegerType extends eZDataType
 
         if ( $http->hasPostVariable( $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $data = $http->postVariable( $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) );
-            $data = str_replace(" ", "", $data );
+            $data = self::postedNumber( $http, $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) );
+            if ( $data === null )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                     'The input is not a valid integer.' ) );
+                return eZInputValidator::STATE_INVALID;
+            }
 
             if ( $data == "" )
             {
@@ -183,9 +231,12 @@ class eZIntegerType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $data = $http->postVariable( $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) );
+            $data = self::postedNumber( $http, $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) );
+            // Validation refused anything but a string; an empty field is stored as
+            // no value (NULL) as intended, not as the 0 str_replace() made of null
+            if ( $data === null )
+                return false;
             $data = trim( $data ) != '' ? $data : null;
-            $data = str_replace(" ", "", $data);
             $contentObjectAttribute->setAttribute( "data_int", $data );
             return true;
         }
@@ -196,8 +247,13 @@ class eZIntegerType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $data = $http->postVariable( $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) );
-            $data = str_replace(" ", "", $data );
+            $data = self::postedNumber( $http, $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) );
+            if ( $data === null )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                     'The input is not a valid integer.' ) );
+                return eZInputValidator::STATE_INVALID;
+            }
             $classAttribute = $contentObjectAttribute->contentClassAttribute();
 
             if ( $data == "" )
@@ -227,9 +283,12 @@ class eZIntegerType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $data = $http->postVariable( $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) );
+            $data = self::postedNumber( $http, $base . "_data_integer_" . $contentObjectAttribute->attribute( "id" ) );
+            // Validation refused anything but a string; an empty field is stored as
+            // no value (NULL) as intended, not as the 0 str_replace() made of null
+            if ( $data === null )
+                return false;
             $data = trim( $data ) != '' ? $data : null;
-            $data = str_replace(" ", "", $data);
             $collectionAttribute->setAttribute( "data_int", $data );
             return true;
         }
@@ -257,12 +316,33 @@ class eZIntegerType extends eZDataType
              $http->hasPostVariable( $maxValueName ) and
              $http->hasPostVariable( $defaultValueName ) )
         {
-            $minValueValue = $http->postVariable( $minValueName );
-            $minValueValue = str_replace(" ", "", $minValueValue );
-            $maxValueValue = $http->postVariable( $maxValueName );
-            $maxValueValue = str_replace(" ", "", $maxValueValue );
-            $defaultValueValue = $http->postVariable( $defaultValueName );
-            $defaultValueValue = str_replace(" ", "", $defaultValueValue );
+            $minValueValue = self::postedNumber( $http, $minValueName );
+            $maxValueValue = self::postedNumber( $http, $maxValueName );
+            $defaultValueValue = self::postedNumber( $http, $defaultValueName );
+            if ( $minValueValue === null or $maxValueValue === null or $defaultValueValue === null )
+                return eZInputValidator::STATE_INVALID;
+
+            // Each value is stored in an int(11) column, and the default was never
+            // checked at all: "abc" or 99999999999 went to the database as it was
+            // The datatype object is shared by every attribute of the request, so
+            // the validator still has the range an object attribute or a fixup set
+            $this->IntegerValidator->setRange( false, false );
+
+            // (a min/max like "5x" is still left to the fixup below, as before)
+            foreach ( array( 'min' => $minValueValue, 'max' => $maxValueValue, 'default' => $defaultValueValue ) as $which => $value )
+            {
+                if ( $value === '' )
+                    continue;
+                $number = preg_replace( '/^(-?)0+(?=\d)/', '$1', $value );
+                if ( !preg_match( '/^-?[0-9]+$/', $number ) )
+                {
+                    if ( $which === 'default' )
+                        return eZInputValidator::STATE_INVALID;
+                    continue;
+                }
+                if ( !self::fitsColumn( $number ) )
+                    return eZInputValidator::STATE_INVALID;
+            }
 
             if ( ( $minValueValue == "" ) && ( $maxValueValue == "") ){
                 return  eZInputValidator::STATE_ACCEPTED;
@@ -311,11 +391,14 @@ class eZIntegerType extends eZDataType
         $maxValueName = $base . self::MAX_VALUE_VARIABLE . $classAttribute->attribute( "id" );
         if ( $http->hasPostVariable( $minValueName ) and $http->hasPostVariable( $maxValueName ) )
         {
-            $minValueValue = $http->postVariable( $minValueName );
+            $minValueValue = self::postedNumber( $http, $minValueName );
+            $maxValueValue = self::postedNumber( $http, $maxValueName );
+            // Not a string at all: nothing a fixup can make an integer of
+            if ( $minValueValue === null or $maxValueValue === null )
+                return;
             $minValueValue = $this->IntegerValidator->fixup( $minValueValue );
             $http->setPostVariable( $minValueName, $minValueValue );
 
-            $maxValueValue = $http->postVariable( $maxValueName );
             $maxValueValue = $this->IntegerValidator->fixup( $maxValueValue );
             $http->setPostVariable( $maxValueName, $maxValueValue );
 
@@ -338,12 +421,11 @@ class eZIntegerType extends eZDataType
              $http->hasPostVariable( $maxValueName ) and
              $http->hasPostVariable( $defaultValueName ) )
         {
-            $minValueValue = $http->postVariable( $minValueName );
-            $minValueValue = str_replace(" ", "", $minValueValue );
-            $maxValueValue = $http->postVariable( $maxValueName );
-            $maxValueValue = str_replace(" ", "", $maxValueValue );
-            $defaultValueValue = $http->postVariable( $defaultValueName );
-            $defaultValueValue = str_replace(" ", "", $defaultValueValue );
+            $minValueValue = self::postedNumber( $http, $minValueName );
+            $maxValueValue = self::postedNumber( $http, $maxValueName );
+            $defaultValueValue = self::postedNumber( $http, $defaultValueName );
+            if ( $minValueValue === null or $maxValueValue === null or $defaultValueValue === null )
+                return false;
 
             $classAttribute->setAttribute( self::MIN_VALUE_FIELD, $minValueValue );
             $classAttribute->setAttribute( self::MAX_VALUE_FIELD, $maxValueValue );
@@ -400,6 +482,14 @@ class eZIntegerType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
+        // toString() gives '' for no value; read it back as no value, and refuse
+        // what is not an integer instead of storing it as 0 (or a clipped number)
+        $string = trim( (string)$string );
+        if ( $string === '' )
+            return $contentObjectAttribute->setAttribute( 'data_int', null );
+        $number = preg_replace( '/^(-?)0+(?=\d)/', '$1', $string );
+        if ( !preg_match( '/^-?[0-9]+$/', $number ) or !self::fitsColumn( $number ) )
+            return false;
         return $contentObjectAttribute->setAttribute( 'data_int', $string );
     }
 
