@@ -925,6 +925,20 @@ class expVelocity
         if ( $this->httpsEnabled() )
             $arguments[] = '--https-port=' . (int)$this->setting( 'ServerSettings', 'HTTPSPort', 8080 );
 
+        // Who the workers run as, when the server is started as root: the
+        // server keeps root for the ports and the certificate, the workers
+        // drop to this user and group before running the application. Empty
+        // leaves it to the server: VC_RUN_USER/VC_RUN_GROUP, else the owner
+        // and group of the document root.
+        foreach ( array( 'User' => '--user=', 'Group' => '--group=' ) as $variable => $option )
+        {
+            $value = trim( (string)$this->setting( 'ServerSettings', $variable, '' ) );
+            if ( $value !== '' )
+                $arguments[] = $option . $value;
+        }
+        if ( $this->setting( 'ServerSettings', 'AllowRootWorkers', 'disabled' ) === 'enabled' )
+            $arguments[] = '--allow-root-workers';
+
         $keepGlobals = $this->keepGlobals();
         if ( $keepGlobals )
             $arguments[] = '--keep-globals=' . implode( ',', $keepGlobals );
