@@ -48,6 +48,11 @@
             {"Your database already contain data.
 The setup can continue with the initialization but may damage the present data."|i18n("design/standard/setup/init")}
         </p>
+        {if and( $database_is_file, $database_table_count|gt( 0 ) )}
+        <p>
+            {"The database file %file already holds %count tables."|i18n("design/standard/setup/init",, hash( '%file', concat( $database_directory, '/', $site_type.database )|wash, '%count', $database_table_count ))}
+        </p>
+        {/if}
         <p>
             {"Select what to do from the drop-down box."|i18n("design/standard/setup/init")}
         </p>
@@ -121,6 +126,13 @@ The setup can continue with the initialization but may damage the present data."
     <tr>
         {if or( eq( $db_not_empty, 1 ), eq( $db_charset_differs, 1 ) )}<td class="invalid">* {else}<td>{/if}<label class="textfield">{"Database"|i18n("design/standard/setup/init")}</label>{if eq( $site_type.db_already_chosen, 1 )}<div style="color: #ff7f00;">*</div>{/if}: </td>
         <td>
+        {if $database_is_file}
+            <input type="text" size="30" name="eZSetup_site_templates_database" value="{if $site_type.database}{$site_type.database|wash}{else}{$database_default|wash}{/if}" />
+            <br />{"A file in %directory, created if it does not exist."|i18n("design/standard/setup/init",, hash( '%directory', $database_directory|wash ))}
+            {if $database_files|count|gt( 0 )}
+            <br />{"Database files there now: %files"|i18n("design/standard/setup/init",, hash( '%files', $database_files|implode( ', ' )|wash ))}
+            {/if}
+        {else}
         {section show=$database_available|count|gt( 0 )}
             <select name="eZSetup_site_templates_database">
             {section var=db loop=$database_available}
@@ -130,6 +142,7 @@ The setup can continue with the initialization but may damage the present data."
         {section-else}
             <input type="text" size="30" name="eZSetup_site_templates_database" value="{if count( $site_type.database )}{$site_type.database}{else}{$database_default}{/if}" />
         {/section}
+        {/if}
         </td>
     </tr>
     {if eq( $site_type.db_not_empty, 1 )}

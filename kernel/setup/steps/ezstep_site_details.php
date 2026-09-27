@@ -160,7 +160,8 @@ class eZStepSiteDetails extends eZStepInstaller
         if ( $dbStatus['connected'] && $db instanceof eZDBInterface )
         {
 
-            if ( count( $db->eZTableList() ) != 0 )
+            $this->TableCount = count( $db->eZTableList() );
+            if ( $this->TableCount != 0 )
             {
                 if ( $this->Http->hasPostVariable( 'eZSetup_site_templates_existing_database' ) &&
                      $this->Http->postVariable( 'eZSetup_site_templates_existing_database' ) != eZStepInstaller::DB_DATA_CHOOSE )
@@ -298,6 +299,16 @@ class eZStepSiteDetails extends eZStepInstaller
         $dbServer = $databaseInfo['server'];
         $dbPort = $databaseInfo['port'];
 
+        // SQLite: the database is the file chosen on the Database page, and
+        // nothing has to be opened to know it. The page asks for a file name
+        // (it may be a new one); the files already there are shown beside it.
+        if ( $databaseInfo['info']['type'] == 'sqlite3' )
+        {
+            $this->PersistenceList['database_info']['database'] = $databaseInfo['dbname'];
+            $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );
+            return false; // Always show site details
+        }
+
         // For MySQL/MariaDB, always prefer the explicitly typed database name.
         // Falling back to the 'mysql' system database requires root/DBA privileges
         // and breaks on shared hosting where the application user only has access
@@ -400,8 +411,14 @@ class eZStepSiteDetails extends eZStepInstaller
         $config = eZINI::instance( 'setup.ini' );
         $siteType = $this->chosenSiteType();
 
-        if( $this->PersistenceList['database_info']['type'] == 'sqlite3' )
-            $siteType['database'] = 'sqlite.db';
+        // SQLite: the file named on the Database page, unless this page was
+        // answered with another one already (shown again after an error)
+        $isSQLite = $this->PersistenceList['database_info']['type'] == 'sqlite3';
+        $sqliteFileName = $isSQLite && trim( (string)$this->PersistenceList['database_info']['dbname'] ) !== ''
+                        ? $this->PersistenceList['database_info']['dbname']
+                        : eZStepInstaller::SQLITE_DEFAULT_FILE_NAME;
+        if ( $isSQLite && ( !isset( $siteType['database'] ) || trim( (string)$siteType['database'] ) === '' ) )
+            $siteType['database'] = $sqliteFileName;
 
         $availableDatabaseList = array();
         if ( isset( $this->PersistenceList['database_info_available'] ) && is_array( $this->PersistenceList['database_info_available'] ) )
@@ -510,14 +527,23 @@ class eZStepSiteDetails extends eZStepInstaller
         }
         $this->storeSiteType( $siteType );
 
-        if ( $this->PersistenceList['database_info']['type'] == 'sqlite3' )
+        $sqliteFiles = array();
+        if ( $isSQLite )
         {
-            $this->Tpl->setVariable( 'database_default', 'sqlite.db' );
+            $this->Tpl->setVariable( 'database_default', $sqliteFileName );
+            // A name to type, which may be a new file: no drop-down of the
+            // files there are, which offered only those
+            $availableDatabaseList = array();
+            $sqliteFiles = eZSQLite3DB::availableDatabasesIn( eZSQLite3DB::STORAGE_DIRECTORY );
         }
         else
         {
             $this->Tpl->setVariable( 'database_default', $config->variable( 'DatabaseSettings', 'DefaultName' ) );
         }
+        $this->Tpl->setVariable( 'database_is_file', $isSQLite );
+        $this->Tpl->setVariable( 'database_directory', eZSQLite3DB::STORAGE_DIRECTORY );
+        $this->Tpl->setVariable( 'database_files', $sqliteFiles );
+        $this->Tpl->setVariable( 'database_table_count', $this->TableCount );
 
         $this->Tpl->setVariable( 'database_available', $availableDatabaseList );
         $this->Tpl->setVariable( 'site_type', $siteType );
@@ -533,6 +559,8 @@ class eZStepSiteDetails extends eZStepInstaller
     }
 
     public $Error = array();
+    // Tables in the chosen database, counted when this page was answered
+    public $TableCount = 0;
 }
 
 ?>

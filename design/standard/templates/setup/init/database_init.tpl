@@ -118,8 +118,14 @@
 </tr>
 {else}
 <tr>
-  <td class="normal"><label class="textfield">{"Database File Name: "|i18n("design/standard/setup/init")}:</label></td>
-  <td class="normal"><input type="text" name="eZSetupDatabaseName" size="16" value="{$database_info.dbname|wash}" /></td>
+  <td class="normal"><label class="textfield">{"Database file name"|i18n("design/standard/setup/init")}:</label></td>
+  <td class="normal"><input type="text" name="eZSetupDatabaseName" size="24" value="{$database_info.dbname|wash}" /></td>
+</tr>
+<tr>
+  <td class="normal"></td>
+  <td class="normal">
+  <p>{"SQLite keeps the whole database in one file, in the directory %directory of this installation. It needs no server, user or password. The file is created if it does not exist; if it already holds tables, the Site details page asks what to do with them."|i18n("design/standard/setup/init",, hash( '%directory', $database_directory|wash ))}</p>
+  </td>
 </tr>
 {/if}
 {if or(eq($database_info.info.driver,'ezmysql'), eq($database_info.info.driver,'ezmysqli'))}

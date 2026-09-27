@@ -420,6 +420,17 @@ class eZStepCreateSites extends eZStepInstaller
         $dbDriver = $databaseInfo['info']['driver'];
 
         $dbName = $siteType['database'];
+        if ( $databaseInfo['type'] == 'sqlite3' )
+        {
+            // A file, not a server: the siteaccesses get Server=, Port=, User=,
+            // Password=, Socket=disabled whatever kickstart.ini or an earlier
+            // MySQL choice left in the wizard's answers, and utf-8, the only
+            // encoding SQLite stores text in
+            $dbServer = $dbPort = $dbUser = $dbPwd = $dbSocket = '';
+            $dbCharset = 'utf-8';
+            if ( trim( (string)$dbName ) === '' )
+                $dbName = ( $databaseInfo['dbname'] ?? '' ) !== '' ? $databaseInfo['dbname'] : eZStepInstaller::SQLITE_DEFAULT_FILE_NAME;
+        }
         $dbParameters = array( 'server' => $dbServer,
                                'port' => $dbPort,
                                'user' => $dbUser,

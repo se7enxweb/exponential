@@ -54,6 +54,15 @@ class eZStepDatabaseInit extends eZStepInstaller
             if ( !isset( $this->PersistenceList['database_info'][$key] ) )
                 $this->PersistenceList['database_info'][$key] = '';
         }
+        if ( $this->PersistenceList['database_info']['type'] == 'sqlite3' )
+        {
+            // A file, not a server: nothing of a server's is used or written
+            // to the settings, whatever a form (or an earlier MySQL choice) left
+            $this->resetSQLiteServerFields();
+            $this->PersistenceList['database_info']['dbname'] = trim( $this->PersistenceList['database_info']['dbname'] );
+            if ( $this->PersistenceList['database_info']['dbname'] === '' )
+                $this->PersistenceList['database_info']['dbname'] = eZStepInstaller::SQLITE_DEFAULT_FILE_NAME;
+        }
 
         $this->Error = 0;
         $dbStatus = false;
@@ -99,6 +108,15 @@ class eZStepDatabaseInit extends eZStepInstaller
 
         $db = $result['db_instance'];
         $this->PersistenceList['database_info']['use_unicode'] = $result['use_unicode'];
+
+        // SQLite: the file named here is the site's database. It exists now
+        // (opening it created it), and whether it holds tables already is
+        // asked on the Site details page, with the choices MySQL gets there.
+        if ( $databaseInfo['type'] == 'sqlite3' )
+        {
+            $this->PersistenceList['database_info_available'] = array( $this->PersistenceList['database_info']['dbname'] );
+            return true;
+        }
 
         // For MySQL/MariaDB, if the user explicitly provided a database name, we do
         // not need to enumerate available databases (which requires the global SHOW
@@ -206,8 +224,6 @@ class eZStepDatabaseInit extends eZStepInstaller
         if ( !isset( $this->PersistenceList['database_info']['dbname'] ) or
              !$this->PersistenceList['database_info']['dbname'] )
             $this->PersistenceList['database_info']['dbname'] = $config->variable( 'DatabaseSettings', 'DefaultName' );
-         if ( $this->PersistenceList['database_info']['type'] == 'sqlite3' )
-            $this->PersistenceList['database_info']['dbname'] = 'sqlite.db';
 
         if ( !isset( $this->PersistenceList['database_info']['user'] ) or
              !$this->PersistenceList['database_info']['user'] )
@@ -217,6 +233,17 @@ class eZStepDatabaseInit extends eZStepInstaller
             $this->PersistenceList['database_info']['password'] = $config->variable( 'DatabaseSettings', 'DefaultPassword' );
         if ( !isset( $this->PersistenceList['database_info']['socket'] ) )
             $this->PersistenceList['database_info']['socket'] = '';
+
+        if ( $this->PersistenceList['database_info']['type'] == 'sqlite3' )
+        {
+            // The server defaults above (localhost, root) are not SQLite's; the
+            // file name is kept when one was given (the page shown again after
+            // an error), except the server database's default name
+            $this->resetSQLiteServerFields();
+            $dbName = trim( (string)$this->PersistenceList['database_info']['dbname'] );
+            if ( $dbName === '' or $dbName == $config->variable( 'DatabaseSettings', 'DefaultName' ) )
+                $this->PersistenceList['database_info']['dbname'] = eZStepInstaller::SQLITE_DEFAULT_FILE_NAME;
+        }
 
         if ( $this->Http->postVariable( 'eZSetup_current_step' ) == 'SiteDetails' ) // Failed to connect to tables in database
         {
@@ -254,6 +281,7 @@ class eZStepDatabaseInit extends eZStepInstaller
         $this->Tpl->setVariable( 'database_info', $databaseInfo );
         $this->Tpl->setVariable( 'regional_info', $regionalInfo );
         $this->Tpl->setVariable( 'db_not_empty', $dbNotEmpty );
+        $this->Tpl->setVariable( 'database_directory', eZSQLite3DB::STORAGE_DIRECTORY );
 
         $result = array();
         // Display template

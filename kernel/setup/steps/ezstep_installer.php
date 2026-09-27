@@ -24,6 +24,21 @@ class eZStepInstaller
     const DB_ERROR_VERSION_INVALID = 7;
     const DB_ERROR_CHARSET_DIFFERS = 8;
     const DB_ERROR_ALREADY_CHOSEN = 10;
+    // SQLite: the database is a file, and these are what stands in the way of it
+    const DB_ERROR_SQLITE_FILE_NAME = 21;
+    const DB_ERROR_SQLITE_DIRECTORY_NOT_WRITABLE = 22;
+    const DB_ERROR_SQLITE_FILE_NOT_WRITABLE = 23;
+    const DB_ERROR_SQLITE_NOT_A_DATABASE = 24;
+
+    /**
+     * The name a SQLite database file may have in the wizard: a plain file
+     * name in the driver's storage directory, with one of the extensions
+     * neither the shipped .htaccess nor Velocity serves as a file.
+     */
+    const SQLITE_FILE_NAME_REGEXP = '/^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}\.(db|db3|sqlite|sqlite3)$/';
+
+    /** The database file a kickstarter SQLite install uses (kickstart.ini [database_init] Database) */
+    const SQLITE_DEFAULT_FILE_NAME = 'sqlite.db';
 
     const DB_DATA_APPEND = 1;
     const DB_DATA_REMOVE = 2;
@@ -386,6 +401,22 @@ class eZStepInstaller
         if( $dbParameters['database'] == '' and $this->PersistenceList['database_info']['type'] == 'sqlite3' )
             $dbParameters['database'] = $databaseInfo['dbname'];
 
+        // SQLite: the file is checked before the driver opens it, which would
+        // otherwise create it wherever the name points, and fail on a directory
+        // it cannot write with no more than "unable to open database file"
+        if ( $this->PersistenceList['database_info']['type'] == 'sqlite3' )
+        {
+            $fileCheck = $this->checkSQLiteDatabaseFile( $dbParameters['database'] );
+            $this->PersistenceList['database_info']['sqlite_file'] = $fileCheck['path'];
+            if ( $fileCheck['error_code'] )
+            {
+                $result['error_code'] = $fileCheck['error_code'];
+                $result['connected'] = false;
+                eZLog::write( "eZStepInstaller: SQLite database file '{$fileCheck['path']}' refused (error code {$fileCheck['error_code']})", 'setup.log' );
+                return $result;
+            }
+        }
+
         // PostgreSQL requires us to specify database name.
         // We use template1 here since it exists on all PostgreSQL installations.
         if( $dbParameters['database'] == '' and $this->PersistenceList['database_info']['type'] == 'pgsql' )
@@ -452,6 +483,14 @@ class eZStepInstaller
 
         catch( eZDBNoConnectionException $e )
         {
+            $result['error_code'] = self::DB_ERROR_CONNECTION_FAILED;
+            return $result;
+        }
+        catch ( Exception $e )
+        {
+            // A driver that fails in its own way (SQLite3's "unable to open
+            // database file") is a failed connection too, not a fatal error
+            eZLog::write( "eZStepInstaller: connecting with driver '$dbDriver' failed: " . get_class( $e ) . ' - ' . $e->getMessage(), 'setup.log' );
             $result['error_code'] = self::DB_ERROR_CONNECTION_FAILED;
             return $result;
         }
@@ -584,6 +623,113 @@ class eZStepInstaller
     }
 
     /**
+     * Whether a SQLite database file can be used, before anything opens it.
+     *
+     * The wizard accepts a plain file name in the driver's storage directory
+     * (var/storage/sqlite3); an absolute path only comes from kickstart.ini,
+     * as the command-line kickstarter allows. The directory has to be
+     * writable, not only the file: WAL mode keeps <file>-wal and <file>-shm
+     * next to it. An existing file has to be writable and a SQLite database
+     * (an empty file is one); whether it already holds tables is the Site
+     * details step's question, as for every other database.
+     *
+     * @param string $fileName
+     * @return array 'error_code' (false or a DB_ERROR_SQLITE_* code), 'path'
+     *               (the file, relative to the installation), 'tables' (count)
+     */
+    function checkSQLiteDatabaseFile( $fileName )
+    {
+        $fileName = trim( (string)$fileName );
+        $isAbsolute = strlen( $fileName ) > 0 && $fileName[0] === '/';
+        $check = array( 'error_code' => false,
+                        'path' => eZSQLite3DB::filePath( $fileName ),
+                        'tables' => 0 );
+
+        if ( $isAbsolute ? !$this->hasKickstartData() || strpos( $fileName, '/../' ) !== false
+                         : !preg_match( self::SQLITE_FILE_NAME_REGEXP, $fileName ) )
+        {
+            $check['error_code'] = self::DB_ERROR_SQLITE_FILE_NAME;
+            return $check;
+        }
+
+        $path = $check['path'];
+        $directory = dirname( $path );
+        if ( is_dir( $directory ) )
+        {
+            if ( !is_writable( $directory ) )
+            {
+                $check['error_code'] = self::DB_ERROR_SQLITE_DIRECTORY_NOT_WRITABLE;
+                return $check;
+            }
+        }
+        else
+        {
+            // Created by the driver: the nearest directory that exists has to let it
+            $parent = dirname( $directory );
+            while ( $parent !== '.' && $parent !== '/' && !is_dir( $parent ) )
+                $parent = dirname( $parent );
+            if ( file_exists( $directory ) || !is_writable( $parent ) )
+            {
+                $check['error_code'] = self::DB_ERROR_SQLITE_DIRECTORY_NOT_WRITABLE;
+                return $check;
+            }
+        }
+
+        if ( file_exists( $path ) )
+        {
+            if ( !is_file( $path ) )
+            {
+                $check['error_code'] = self::DB_ERROR_SQLITE_NOT_A_DATABASE;
+                return $check;
+            }
+            if ( !is_writable( $path ) )
+            {
+                $check['error_code'] = self::DB_ERROR_SQLITE_FILE_NOT_WRITABLE;
+                return $check;
+            }
+            if ( filesize( $path ) > 0 )
+            {
+                $header = (string)@file_get_contents( $path, false, null, 0, 16 );
+                if ( $header !== "SQLite format 3\0" )
+                {
+                    $check['error_code'] = self::DB_ERROR_SQLITE_NOT_A_DATABASE;
+                    return $check;
+                }
+            }
+        }
+
+        return $check;
+    }
+
+    /**
+     * Empties what a SQLite database has no use for: the server, port, user,
+     * password and socket are neither asked for nor written to site.ini
+     * (Server=, Port=, User=, Password=, Socket=disabled, as the kickstarter
+     * writes them for SQLite).
+     */
+    function resetSQLiteServerFields()
+    {
+        foreach ( array( 'server', 'port', 'user', 'password', 'socket' ) as $key )
+            $this->PersistenceList['database_info'][$key] = '';
+    }
+
+    /**
+     * The user PHP runs as, the one that has to be able to write a directory.
+     *
+     * @return string
+     */
+    protected static function processUserName()
+    {
+        if ( function_exists( 'posix_geteuid' ) && function_exists( 'posix_getpwuid' ) )
+        {
+            $user = posix_getpwuid( posix_geteuid() );
+            if ( is_array( $user ) && isset( $user['name'] ) )
+                return $user['name'];
+        }
+        return get_current_user();
+    }
+
+    /**
      * @param array $errorInfo
      * @return array|bool
      */
@@ -592,8 +738,48 @@ class eZStepInstaller
         $code = $errorInfo['error_code'];
         $dbError = false;
 
+        $sqliteFile = isset( $errorInfo['database_info']['sqlite_file'] ) ? (string)$errorInfo['database_info']['sqlite_file'] : '';
+        $sqliteArguments = array( '%file' => htmlspecialchars( $sqliteFile ),
+                                  '%directory' => htmlspecialchars( $sqliteFile !== '' ? dirname( $sqliteFile ) : eZSQLite3DB::STORAGE_DIRECTORY ),
+                                  '%user' => htmlspecialchars( self::processUserName() ) );
         switch ( $code )
         {
+            case self::DB_ERROR_SQLITE_FILE_NAME:
+            {
+                $dbError = array( 'text' => ezpI18n::tr( 'design/standard/setup/init',
+                                                    'The database file name is not valid. Give a plain file name ending in .db, .db3, .sqlite or .sqlite3, made of letters, digits, dots, dashes and underscores, such as sqlite.db. The file is kept in %directory.',
+                                                    null, array( '%directory' => eZSQLite3DB::STORAGE_DIRECTORY ) ),
+                                  'url' => false,
+                                  'number' => $code );
+                break;
+            }
+            case self::DB_ERROR_SQLITE_DIRECTORY_NOT_WRITABLE:
+            {
+                $dbError = array( 'text' => ezpI18n::tr( 'design/standard/setup/init',
+                                                    'The directory %directory cannot be written by the web server (user %user). SQLite needs to create the database file there, and the -wal and -shm files it keeps next to it. Give that user write access to the directory (create it first if it does not exist), then try again.',
+                                                    null, $sqliteArguments ),
+                                  'url' => false,
+                                  'number' => $code );
+                break;
+            }
+            case self::DB_ERROR_SQLITE_FILE_NOT_WRITABLE:
+            {
+                $dbError = array( 'text' => ezpI18n::tr( 'design/standard/setup/init',
+                                                    'The database file %file exists but cannot be written by the web server (user %user). Give that user write access to it, or choose another file name.',
+                                                    null, $sqliteArguments ),
+                                  'url' => false,
+                                  'number' => $code );
+                break;
+            }
+            case self::DB_ERROR_SQLITE_NOT_A_DATABASE:
+            {
+                $dbError = array( 'text' => ezpI18n::tr( 'design/standard/setup/init',
+                                                    'The file %file exists and is not a SQLite database. Choose another file name; the setup does not overwrite it.',
+                                                    null, $sqliteArguments ),
+                                  'url' => false,
+                                  'number' => $code );
+                break;
+            }
             case self::DB_ERROR_CONNECTION_FAILED:
             {
                 if ( $errorInfo['database_info']['type'] == 'pgsql' )
@@ -605,6 +791,14 @@ class eZStepInstaller
                                                         .'<br>Note that PostgreSQL 7.2 is not supported.' ),
                                       'url' => array( 'href' => 'http://www.php.net/manual/en/ref.pgsql.php',
                                                       'text' => 'PHP documentation' ),
+                                      'number' => self::DB_ERROR_CONNECTION_FAILED );
+                }
+                else if ( $errorInfo['database_info']['type'] == 'sqlite3' )
+                {
+                    $dbError = array( 'text' => ezpI18n::tr( 'design/standard/setup/init',
+                                                        'The SQLite database file %file could not be opened. See var/log/setup.log and var/log/error.log for the reason.',
+                                                        null, $sqliteArguments ),
+                                      'url' => false,
                                       'number' => self::DB_ERROR_CONNECTION_FAILED );
                 }
                 else
