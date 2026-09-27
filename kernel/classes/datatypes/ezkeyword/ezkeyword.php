@@ -62,19 +62,43 @@ class eZKeyword
     */
     function initializeKeyword( $keywordString )
     {
-        if ( !is_array( $keywordString ) )
-        {
-            $keywordArray = explode( ',', $keywordString );
-            $keywordArray = array_unique ( $keywordArray );
-        }
+        // A list is taken as the keywords themselves (it left $keywordArray
+        // undefined before); anything else that is not a string is no keyword
+        if ( is_array( $keywordString ) )
+            $keywordArray = $keywordString;
+        else
+            $keywordArray = is_scalar( $keywordString ) ? explode( ',', (string)$keywordString ) : array();
+
+        // Duplicates are removed after trimming: "a, a" gave "a" twice, and
+        // store() then inserted the same keyword twice
+        $seen = array();
         foreach ( array_keys( $keywordArray ) as $key )
         {
-            if ( trim( $keywordArray[$key] ) != '' )
+            if ( !is_scalar( $keywordArray[$key] ) )
+                continue;
+            $keyword = self::limitLength( trim( (string)$keywordArray[$key] ) );
+            if ( $keyword != '' && !isset( $seen[$keyword] ) )
             {
-                $this->KeywordArray[$key] = trim( $keywordArray[$key] );
+                $seen[$keyword] = true;
+                $this->KeywordArray[$key] = $keyword;
             }
         }
     }
+
+    /**
+     * $keyword cut to the MAX_LENGTH characters the ezkeyword.keyword column
+     * holds, so a longer one from an import is stored the same on every
+     * database instead of failing or being cut differently.
+     */
+    static function limitLength( $keyword )
+    {
+        if ( mb_strlen( $keyword, 'UTF-8' ) > self::MAX_LENGTH )
+            $keyword = rtrim( mb_substr( $keyword, 0, self::MAX_LENGTH, 'UTF-8' ) );
+        return $keyword;
+    }
+
+    /// The most characters one keyword has (the ezkeyword.keyword column)
+    const MAX_LENGTH = 255;
 
     /*!
      Stores the keyword index to database
@@ -86,6 +110,12 @@ class eZKeyword
         $object = $attribute->attribute( 'object' );
         $classID = (int)$object->attribute( 'contentclass_id' );
         $attributeID = $attribute->attribute( 'id' );
+        if ( $attributeID !== null )
+            $attributeID = (int)$attributeID;
+
+        // A list set with setKeywordArray() may repeat a keyword; stored twice
+        // it became two ezkeyword rows
+        $this->KeywordArray = array_unique( (array)$this->KeywordArray );
 
         if ( $db->databaseName() === 'mongo' )
         {
@@ -110,7 +140,7 @@ class eZKeyword
                 $found = false;
                 foreach ( $existingWords as $ew )
                 {
-                    if ( $ew['keyword'] == $keyword )
+                    if ( (string)$ew['keyword'] === (string)$keyword )
                     {
                         $existingWordArray[] = [ 'keyword' => $keyword, 'id' => (int)$ew['id'] ];
                         $found = true;
@@ -157,7 +187,7 @@ class eZKeyword
                 $alreadyLinked = false;
                 foreach ( $currentWordArray as $cw )
                 {
-                    if ( $existingWord['keyword'] == $cw['keyword'] )
+                    if ( (string)$existingWord['keyword'] === (string)$cw['keyword'] )
                     {
                         $alreadyLinked = true;
                         break;
@@ -174,7 +204,7 @@ class eZKeyword
                 $stillUsed = false;
                 foreach ( $this->KeywordArray as $keyword )
                 {
-                    if ( $keyword == $cw['keyword'] )
+                    if ( (string)$keyword === (string)$cw['keyword'] )
                     {
                         $stillUsed = true;
                         break;
@@ -245,7 +275,8 @@ class eZKeyword
             $wordID = false;
             foreach ( $existingWords as $existingKeyword )
             {
-                if ( $keyword == $existingKeyword['keyword'] )
+                // Compared as strings: "1.0" == "1" is true in PHP and linked the wrong keyword
+                if ( (string)$keyword === (string)$existingKeyword['keyword'] )
                 {
                      $wordExists = true;
                      $wordID = $existingKeyword['id'];
@@ -290,7 +321,7 @@ class eZKeyword
             $newWord = true;
             foreach ( $currentWordArray as $currentWord )
             {
-                if ( $existingWord['keyword']  == $currentWord['keyword'] )
+                if ( (string)$existingWord['keyword'] === (string)$currentWord['keyword'] )
                 {
                     $newWord = false;
                 }
@@ -309,7 +340,7 @@ class eZKeyword
             $stillUsed = false;
             foreach ( $this->KeywordArray as $keyword )
             {
-                if ( $keyword == $currentWord['keyword'] )
+                if ( (string)$keyword === (string)$currentWord['keyword'] )
                     $stillUsed = true;
             }
             if ( !$stillUsed )
@@ -476,7 +507,7 @@ class eZKeyword
                             foreach ( $aNodes as $node )
                             {
                                 $theObject = $node->object();
-                                if ( $theObject->canRead() )
+                                if ( $theObject && $theObject->canRead() )
                                     $return[] = $node;
                             }
                         }
@@ -518,7 +549,7 @@ class eZKeyword
                     foreach ( $aNodes as $key => $node )
                     {
                         $theObject = $node->object();
-                        if ( $theObject->canRead() )
+                        if ( $theObject && $theObject->canRead() )
                         {
                             $return[] = $node;
                         }

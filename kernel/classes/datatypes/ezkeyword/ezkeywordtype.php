@@ -62,6 +62,22 @@ class eZKeywordType extends eZDataType
         {
             $data = $http->postVariable( $base . '_ezkeyword_data_text_' . $contentObjectAttribute->attribute( 'id' ) );
 
+            // The keywords as they will be stored: a value of only commas and
+            // spaces has none, and is empty for the required check
+            $keyword = new eZKeyword();
+            $keyword->initializeKeyword( $data );
+            foreach ( is_array( $data ) ? $data : explode( ',', is_scalar( $data ) ? (string)$data : '' ) as $word )
+            {
+                if ( is_scalar( $word ) && mb_strlen( trim( (string)$word ), 'UTF-8' ) > eZKeyword::MAX_LENGTH )
+                {
+                    $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                         'A keyword can be at most %1 characters long.' ), eZKeyword::MAX_LENGTH );
+                    return eZInputValidator::STATE_INVALID;
+                }
+            }
+            if ( count( $keyword->keywordArray() ) == 0 )
+                $data = "";
+
             if ( $data == "" )
             {
                 if ( !$classAttribute->attribute( 'is_information_collector' ) and $contentObjectAttribute->validateIsRequired() )
@@ -165,7 +181,7 @@ class eZKeywordType extends eZDataType
             return;
         }
 
-        $contentObjectAttributeID = $contentObjectAttribute->attribute( "id" );
+        $contentObjectAttributeID = (int)$contentObjectAttribute->attribute( "id" );
 
         $db = eZDB::instance();
 
@@ -183,7 +199,7 @@ class eZKeywordType extends eZDataType
                                  FROM ezkeyword_attribute_link
                                  WHERE objectattribute_id='$contentObjectAttributeID'" );
         }
-        if ( !count ( $res ) )
+        if ( !is_array( $res ) || !count ( $res ) )
         {
             /* If there are no keywords at all, we abort the function as there
              * is nothing more to do */
@@ -303,7 +319,9 @@ class eZKeywordType extends eZDataType
 
     function unserializeContentObjectAttribute( $package, $objectAttribute, $attributeNode )
     {
-        $keyWordString = $attributeNode->getElementsByTagName( 'keyword-string' )->item( 0 )->textContent;
+        // A package without the element gives no keywords
+        $keywordStringNode = $attributeNode->getElementsByTagName( 'keyword-string' )->item( 0 );
+        $keyWordString = $keywordStringNode ? $keywordStringNode->textContent : '';
         $keyword = new eZKeyword();
         $keyword->initializeKeyword( $keyWordString );
         $objectAttribute->setContent( $keyword );
