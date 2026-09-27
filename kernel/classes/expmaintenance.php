@@ -30,6 +30,10 @@ class expMaintenance
 {
     const MARKER = 'var/maintenance.json';
     const DEFAULT_PAGE = 'share/maintenance.html';
+    /** The cookie that lets the web setup wizard's own browser through */
+    const WIZARD_COOKIE = 'exp_setup_wizard';
+    /** Seconds a web wizard holds maintenance after its last request */
+    const WIZARD_LEASE = 1800;
 
     /**
      * Answers the request with the maintenance page when maintenance is on and
@@ -60,7 +64,66 @@ class expMaintenance
         $state = json_decode( (string)@file_get_contents( $file ), true );
         // A marker that cannot be read still means maintenance: better a
         // maintenance page than a site that is half way through a change
-        return is_array( $state ) ? $state : array( 'reason' => 'unknown' );
+        if ( !is_array( $state ) )
+            return array( 'reason' => 'unknown' );
+        // A web wizard's maintenance ends on its own when the wizard was left:
+        // nobody else could reach the site, or start the wizard again
+        if ( !empty( $state['lease'] ) && (int)$state['lease'] < time() )
+            return false;
+        return $state;
+    }
+
+    /**
+     * The web setup wizard's first request: maintenance on for everyone but
+     * this browser, which gets a cookie the marker knows (as a hash) only.
+     * Every other visitor gets the maintenance page instead of a second
+     * wizard that would abandon this one or install over it.
+     *
+     * @param string $root
+     * @param string $runId the setup log's run
+     * @return bool
+     */
+    static function beginWizard( $root, $runId )
+    {
+        $token = bin2hex( random_bytes( 16 ) );
+        if ( !self::enable( $root, array( 'reason' => 'setup', 'run' => (string)$runId,
+                                          'allow_token' => hash( 'sha256', $token ),
+                                          'lease' => time() + self::WIZARD_LEASE ) ) )
+            return false;
+        self::wizardCookie( $token, time() + self::WIZARD_LEASE );
+        return true;
+    }
+
+    /** Each further wizard request: the wizard is still there, hold maintenance a while longer. */
+    static function renewWizard( $root, $runId )
+    {
+        $state = self::state( $root );
+        if ( $state === false || empty( $state['lease'] ) || ( $state['run'] ?? null ) !== (string)$runId )
+            return false;
+        $state['lease'] = time() + self::WIZARD_LEASE;
+        $file = rtrim( $root, '/' ) . '/' . self::MARKER;
+        $tmp = $file . '.tmp' . getmypid();
+        if ( @file_put_contents( $tmp, json_encode( $state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" ) === false )
+            return false;
+        @chmod( $tmp, 0666 );
+        return @rename( $tmp, $file );
+    }
+
+    /** The wizard's last page: the site is installed, maintenance off. */
+    static function endWizard( $root, $runId )
+    {
+        self::wizardCookie( '', time() - 3600 );
+        return self::disable( $root, (string)$runId );
+    }
+
+    protected static function wizardCookie( $value, $expires )
+    {
+        // Not PHP_SAPI: Velocity's workers answer web requests from the CLI SAPI
+        if ( !isset( $_SERVER['REQUEST_METHOD'] ) || headers_sent() )
+            return;
+        $secure = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== '' && $_SERVER['HTTPS'] !== 'off' );
+        setcookie( self::WIZARD_COOKIE, $value, array( 'expires' => $expires, 'path' => '/',
+                   'secure' => $secure, 'httponly' => true, 'samesite' => 'Lax' ) );
     }
 
     /**
@@ -119,7 +182,11 @@ class expMaintenance
      */
     static function letThrough( array $state )
     {
-        $ip = isset( $_SERVER['REMOTE_ADDR'] ) ? (string)$_SERVER['REMOTE_ADDR'] : '';
+        // The web wizard's own browser
+        if ( !empty( $state['allow_token'] ) && isset( $_COOKIE[self::WIZARD_COOKIE] ) && is_string( $_COOKIE[self::WIZARD_COOKIE] )
+             && hash_equals( (string)$state['allow_token'], hash( 'sha256', $_COOKIE[self::WIZARD_COOKIE] ) ) )
+            return true;
+        $ip =isset( $_SERVER['REMOTE_ADDR'] ) ? (string)$_SERVER['REMOTE_ADDR'] : '';
         if ( $ip !== '' && !empty( $state['allow_ips'] ) && in_array( $ip, (array)$state['allow_ips'], true ) )
             return true;
         $path = isset( $_SERVER['REQUEST_URI'] ) ? (string)parse_url( (string)$_SERVER['REQUEST_URI'], PHP_URL_PATH ) : '';

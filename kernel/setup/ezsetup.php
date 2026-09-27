@@ -61,10 +61,23 @@ if ( $stepData == null )
 $persistenceList = eZSetupFetchPersistenceList();
 
 // var/log/setup.log: the first request of the wizard starts a run, the others continue it
+// Maintenance mode (var/maintenance.json) for the wizard's whole run: this
+// browser passes on a cookie, every other visitor gets the maintenance page
+// rather than a second wizard. It ends with the last page, or by itself when
+// the wizard is left (expMaintenance::WIZARD_LEASE).
 if ( !$http->hasPostVariable( 'eZSetup_current_step' ) )
+{
     expSetupLog::startWeb();
-elseif ( !expSetupLog::resume() )
-    expSetupLog::start( 'web setup wizard (joined at step ' . $http->postVariable( 'eZSetup_current_step' ) . ')' );
+    expMaintenance::beginWizard( eZSys::rootDir(), (string)expSetupLog::runId() );
+}
+else
+{
+    if ( !expSetupLog::resume() )
+        expSetupLog::start( 'web setup wizard (joined at step ' . $http->postVariable( 'eZSetup_current_step' ) . ')' );
+    if ( !expMaintenance::renewWizard( eZSys::rootDir(), (string)expSetupLog::runId() ) )
+        expMaintenance::beginWizard( eZSys::rootDir(), (string)expSetupLog::runId() );
+}
+$setupRunId = (string)expSetupLog::runId();
 $result = null;
 
 // process previous step
@@ -207,7 +220,10 @@ while( !$done && $step != null )
             expSetupLog::stepEnd( 'shown' );
             // The last page of the wizard: the installation is done
             if ( $step['class'] === 'Final' )
+            {
                 expSetupLog::finish( 'installed', true );
+                expMaintenance::endWizard( eZSys::rootDir(), $setupRunId );
+            }
             $tpl->setVariable( 'setup_current_step', $step['class'] ); // set current step
             $result = $stepInstaller->display();
             $result['help'] = $tpl->fetch( 'design:setup/init/'.$step['file'].'_help.tpl' );

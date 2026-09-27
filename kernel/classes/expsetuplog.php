@@ -245,6 +245,12 @@ class expSetupLog
         return self::start( 'web setup wizard', $context );
     }
 
+    /** @return string|null the id of the run in progress (started or resumed) */
+    public static function runId()
+    {
+        return self::$run && !empty( self::$run['id'] ) ? (string)self::$run['id'] : null;
+    }
+
     /** What the setup chose so far, from the wizard's persistence list: never a password. */
     public static function context( $persistenceList )
     {
