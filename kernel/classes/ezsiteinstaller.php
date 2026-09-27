@@ -1458,26 +1458,44 @@ class eZSiteInstaller
     ///////////////////////////////////////////////////////////////////////////
 
     /*!
-     Build array of language names from locale list.
+     Build array of language names from locale list, unique within the list.
      Example: array( 'eng-GB', 'rus-RU' ) => array( 'eng', 'rus' )
+              array( 'eng-US', 'eng-GB' ) => array( 'eng', 'eng_gb' )
     */
     function languageNameListFromLocaleList( $localeList )
     {
         $languageList = array();
         foreach( $localeList as $locale )
-            $languageList[] = $this->languageNameFromLocale( $locale );
+            $languageList[] = $this->languageNameFromLocale( $locale, $localeList );
 
         return $languageList;
     }
 
     /*!
-     Return language name from locale string.
+     Return language name from locale string, the name a siteaccess for that
+     language gets.
      Example: 'rus' from 'rus-RU'
+
+     $localeList, optional: the locales the name has to be unique among. The
+     language part alone is not: eng-US and eng-GB were both 'eng', and a
+     siteaccess made for the second overwrote the first. The first locale of
+     a language in the list keeps the short name; later ones add their
+     country in lower case ('eng_gb').
     */
-    function languageNameFromLocale( $locale )
+    function languageNameFromLocale( $locale, $localeList = array() )
     {
          $pos = strpos( $locale , "-");
+         if ( $pos === false )
+             return $locale;
          $languageName = substr( $locale , 0, $pos );
+
+         foreach ( (array)$localeList as $other )
+         {
+             if ( $other === $locale )
+                 break;
+             if ( strpos( $other, $languageName . '-' ) === 0 )
+                 return $languageName . '_' . strtolower( substr( $locale, $pos + 1 ) );
+         }
          return $languageName;
     }
 
