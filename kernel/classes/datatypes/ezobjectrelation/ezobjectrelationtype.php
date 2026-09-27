@@ -52,12 +52,23 @@ class eZObjectRelationType extends eZDataType
         if ( $http->hasPostVariable( $postVariableName ) )
         {
             $relatedObjectID = $http->postVariable( $postVariableName );
-            $classAttribute = $contentObjectAttribute->contentClassAttribute();
 
-            if ( $contentObjectAttribute->validateIsRequired() and $relatedObjectID == 0 )
+            if ( self::isEmptyObjectID( $relatedObjectID ) )
+            {
+                if ( $contentObjectAttribute->validateIsRequired() )
+                {
+                    $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                         'Missing objectrelation input.' ) );
+                    return eZInputValidator::STATE_INVALID;
+                }
+            }
+            // The form posts an object id; anything else, an object that does not
+            // exist, or one the editor may not read (unless it is the relation
+            // already stored) is not something this attribute may point to
+            else if ( self::relatableObjectID( $relatedObjectID, $contentObjectAttribute->attribute( 'data_int' ) ) === false )
             {
                 $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
-                                                                     'Missing objectrelation input.' ) );
+                                                                     'The related object does not exist or you are not allowed to read it.' ) );
                 return eZInputValidator::STATE_INVALID;
             }
         }
@@ -80,13 +91,21 @@ class eZObjectRelationType extends eZDataType
         if ( $http->hasPostVariable( $postVariableName ) )
         {
             $relatedObjectID = $http->postVariable( $postVariableName );
-            if ( $relatedObjectID == '' )
+            // Only an object the attribute may relate to reaches data_int (an
+            // int column); what validation refused is not kept either
+            if ( self::isEmptyObjectID( $relatedObjectID ) )
                 $relatedObjectID = null;
+            else
+            {
+                $relatedObjectID = self::relatableObjectID( $relatedObjectID, $contentObjectAttribute->attribute( 'data_int' ) );
+                if ( $relatedObjectID === false )
+                    $relatedObjectID = null;
+            }
             $contentObjectAttribute->setAttribute( 'data_int', $relatedObjectID );
             $haveData = true;
         }
         $fuzzyMatchVariableName = $base . "_data_object_relation_fuzzy_match_" . $contentObjectAttribute->attribute( "id" );
-        if ( $http->hasPostVariable( $fuzzyMatchVariableName ) )
+        if ( $http->hasPostVariable( $fuzzyMatchVariableName ) && is_string( $http->postVariable( $fuzzyMatchVariableName ) ) )
         {
             $trans = eZCharTransform::instance();
 
@@ -132,6 +151,38 @@ class eZObjectRelationType extends eZDataType
             }
         }
         return $haveData;
+    }
+
+    /**
+     * True for the values a form posts for "no relation": '', '0', 0 or null.
+     */
+    static function isEmptyObjectID( $objectID )
+    {
+        return $objectID === null || $objectID === '' || $objectID === 0 || $objectID === '0' || $objectID === false;
+    }
+
+    /**
+     * $objectID as an int if it is an object id this attribute may relate to:
+     * a positive integer (as a string of digits or an int), of an object that
+     * exists and that the current user may read. The object already stored in
+     * the attribute ($currentObjectID) is kept even when the editor may not read
+     * it, so editing something else in the object does not fail on it.
+     *
+     * @return int|false
+     */
+    static function relatableObjectID( $objectID, $currentObjectID = null )
+    {
+        if ( is_int( $objectID ) )
+            $objectID = (string)$objectID;
+        if ( !is_string( $objectID ) || !ctype_digit( $objectID ) || strlen( $objectID ) > 10 || (int)$objectID <= 0 )
+            return false;
+        $objectID = (int)$objectID;
+        $object = eZContentObject::fetch( $objectID );
+        if ( !$object instanceof eZContentObject )
+            return false;
+        if ( $currentObjectID !== null && (int)$currentObjectID === $objectID )
+            return $objectID;
+        return $object->canRead() ? $objectID : false;
     }
 
     /*!
@@ -205,7 +256,7 @@ class eZObjectRelationType extends eZDataType
         $doc = new DOMDocument( '1.0', 'utf-8' );
         $root = $doc->createElement( 'related-object' );
         $constraints = $doc->createElement( 'constraints' );
-        foreach ( $content['class_constraint_list'] as $constraintClassIdentifier )
+        foreach ( isset( $content['class_constraint_list'] ) ? (array)$content['class_constraint_list'] : array() as $constraintClassIdentifier )
         {
             unset( $constraintElement );
             $constraintElement = $doc->createElement( 'allowed-class' );
@@ -229,6 +280,8 @@ class eZObjectRelationType extends eZDataType
 
         /** @var eZContentObject */
         $contentObject = $contentObjectAttribute->object();
+        if ( !$contentObject )
+            return;
 
         if ( $contentObjectAttribute->ID !== null )
         {
@@ -288,8 +341,8 @@ class eZObjectRelationType extends eZDataType
         if ( $http->hasPostVariable( $selectionTypeName ) )
         {
             $selectionType = $http->postVariable( $selectionTypeName );
-            if ( $selectionType < 0 and
-                 $selectionType > 2 )
+            // "and" could never be true, so any value was accepted
+            if ( !is_scalar( $selectionType ) || !in_array( (string)$selectionType, array( '0', '1', '2' ), true ) )
             {
                 $state = eZInputValidator::STATE_INVALID;
             }
@@ -305,24 +358,25 @@ class eZObjectRelationType extends eZDataType
     {
         $selectionTypeName = 'ContentClass_ezobjectrelation_selection_type_' . $classAttribute->attribute( 'id' );
         $content = $classAttribute->content();
+        // Set before the constraint list, which it used to reset afterwards
+        $hasData = false;
         $postVariable = 'ContentClass_ezobjectrelation_class_list_' . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $postVariable ) )
         {
             $constrainedList = $http->postVariable( $postVariable );
             $constrainedClassList = array();
-            foreach ( $constrainedList as $constraint )
+            foreach ( (array)$constrainedList as $constraint )
             {
-                if ( trim( $constraint ) != '' )
+                if ( is_string( $constraint ) && trim( $constraint ) != '' )
                     $constrainedClassList[] = $constraint;
             }
             $content['class_constraint_list'] = $constrainedClassList;
             $hasData = true;
         }
-        $hasData = false;
         if ( $http->hasPostVariable( $selectionTypeName ) )
         {
             $selectionType = $http->postVariable( $selectionTypeName );
-            $content['selection_type'] = $selectionType;
+            $content['selection_type'] = is_scalar( $selectionType ) ? (int)$selectionType : 0;
             $hasData = true;
         }
         $helperName = 'ContentClass_ezobjectrelation_selection_fuzzy_match_helper_' . $classAttribute->attribute( 'id' );
@@ -357,9 +411,9 @@ class eZObjectRelationType extends eZDataType
     function preStoreClassAttribute( $classAttribute, $version )
     {
         $content = $classAttribute->content();
-        $classAttribute->setAttribute( 'data_int1', $content['selection_type'] );
-        $classAttribute->setAttribute( 'data_int2', $content['default_selection_node'] );
-        $classAttribute->setAttribute( 'data_int3', $content['fuzzy_match'] );
+        $classAttribute->setAttribute( 'data_int1', isset( $content['selection_type'] ) ? $content['selection_type'] : 0 );
+        $classAttribute->setAttribute( 'data_int2', isset( $content['default_selection_node'] ) ? $content['default_selection_node'] : 0 );
+        $classAttribute->setAttribute( 'data_int3', isset( $content['fuzzy_match'] ) ? $content['fuzzy_match'] : 0 );
 
         $xmlContentArray = array();
         $defaultClassAttributeContent = $this->defaultClassAttributeContent();
@@ -390,7 +444,9 @@ class eZObjectRelationType extends eZDataType
         }
 
         //get eZContentObjectVersion
-        $currVerobj = $obj->currentVersion();
+        $currVerobj = $obj ? $obj->currentVersion() : null;
+        if ( !$currVerobj )
+            return;
         // get array of ezcontentobjecttranslations
         $transList = $currVerobj->translations( false );
         // get count of LanguageCode in transList
@@ -402,7 +458,7 @@ class eZObjectRelationType extends eZDataType
             $contentClassAttributeID = $contentObjectAttribute->ContentClassAttributeID;
             $contentObjectID = $contentObjectAttribute->ContentObjectID;
             $contentObjectVersion = $contentObjectAttribute->Version;
-            eZContentObject::fetch( $contentObjectID )->removeContentObjectRelation( $objectID, $contentObjectVersion, $contentClassAttributeID, eZContentObject::RELATION_ATTRIBUTE );
+            $obj->removeContentObjectRelation( $objectID, $contentObjectVersion, $contentClassAttributeID, eZContentObject::RELATION_ATTRIBUTE );
         }
     }
 
@@ -418,13 +474,21 @@ class eZObjectRelationType extends eZDataType
                 {
                     if ( !$http->hasPostVariable( 'BrowseCancelButton' ) )
                     {
-                        $selectedObjectArray = $http->hasPostVariable( "SelectedObjectIDArray" );
                         $selectedObjectIDArray = $http->postVariable( "SelectedObjectIDArray" );
+
+                        // The browse result is form input as well: only an
+                        // existing object the editor may read is related
+                        $objectID = is_array( $selectedObjectIDArray ) ? reset( $selectedObjectIDArray ) : $selectedObjectIDArray;
+                        $objectID = self::relatableObjectID( $objectID );
+                        if ( $objectID === false )
+                        {
+                            eZDebug::writeError( 'The selected object does not exist or may not be read, the relation is left as it was', __METHOD__ );
+                            break;
+                        }
 
                         // Delete the old version from ezcontentobject_link if count of translations > 1
                         $this->removeContentObjectRelation( $contentObjectAttribute );
 
-                        $objectID = $selectedObjectIDArray[0];
                         $contentObjectAttribute->setAttribute( 'data_int', $objectID );
                         $contentObjectAttribute->store();
                     }
@@ -444,9 +508,13 @@ class eZObjectRelationType extends eZDataType
                                            'persistent_data' => array( 'HasObjectInput' => 0 ),
                                            'from_page' => $redirectionURI );
                 $browseTypeINIVariable = $ini->variable( 'ObjectRelationDataTypeSettings', 'ClassAttributeStartNode' );
-                foreach( $browseTypeINIVariable as $value )
+                foreach( (array)$browseTypeINIVariable as $value )
                 {
-                    list( $classAttributeID, $type ) = explode( ';',$value );
+                    // An entry without ";type" is skipped, not an undefined offset
+                    $parts = explode( ';', (string)$value, 2 );
+                    if ( count( $parts ) < 2 )
+                        continue;
+                    list( $classAttributeID, $type ) = $parts;
                     if ( $classAttributeID == $contentObjectAttribute->attribute( 'contentclassattribute_id' ) && strlen( $type ) > 0 )
                     {
                         $browseParameters['type'] = $type;
@@ -458,7 +526,8 @@ class eZObjectRelationType extends eZDataType
                 if ( $http->hasPostVariable( $nodePlacementName ) )
                 {
                     $nodePlacement = $http->postVariable( $nodePlacementName );
-                    if ( isset( $nodePlacement[$contentObjectAttribute->attribute( 'id' )] ) )
+                    if ( is_array( $nodePlacement ) && isset( $nodePlacement[$contentObjectAttribute->attribute( 'id' )] ) &&
+                         is_scalar( $nodePlacement[$contentObjectAttribute->attribute( 'id' )] ) )
                         $browseParameters['start_node'] = eZContentBrowse::nodeAliasID( $nodePlacement[$contentObjectAttribute->attribute( 'id' )] );
                 }
 
@@ -515,8 +584,14 @@ class eZObjectRelationType extends eZDataType
 
     static function parseXML( $xmlText )
     {
+        // Broken stored XML gives an empty document (the defaults), not warnings
         $dom = new DOMDocument( '1.0', 'utf-8' );
+        if ( !is_string( $xmlText ) || trim( $xmlText ) === '' )
+            return $dom;
+        $useErrors = libxml_use_internal_errors( true );
         $dom->loadXML( $xmlText );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useErrors );
         return $dom;
     }
 
@@ -652,12 +727,14 @@ class eZObjectRelationType extends eZDataType
     function metaData( $contentObjectAttribute )
     {
         $object = $this->objectAttributeContent( $contentObjectAttribute );
-        if ( $object )
+        // An object without a current version (a broken import) has no meta data
+        $current = $object ? $object->attribute( 'current' ) : null;
+        if ( $object && $current )
         {
             // Does the related object exist in the same language as the current content attribute ?
-            if ( in_array( $contentObjectAttribute->attribute( 'language_code' ), $object->attribute( 'current' )->translationList( false, false ) ) )
+            if ( in_array( $contentObjectAttribute->attribute( 'language_code' ), (array)$current->translationList( false, false ) ) )
             {
-                $attributes = $object->attribute( 'current' )->contentObjectAttributes( $contentObjectAttribute->attribute( 'language_code' ) );
+                $attributes = $current->contentObjectAttributes( $contentObjectAttribute->attribute( 'language_code' ) );
             }
             else
             {
@@ -679,10 +756,12 @@ class eZObjectRelationType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
-        if ( !is_numeric( $string ) || !eZContentObject::fetch( $string ) )
+        // An object id is digits only: is_numeric() let "1.5" and "1e3" through
+        $string = is_scalar( $string ) ? trim( (string)$string ) : '';
+        if ( !ctype_digit( $string ) || !eZContentObject::fetch( (int)$string ) )
             return false;
 
-        $contentObjectAttribute->setAttribute( 'data_int', $string );
+        $contentObjectAttribute->setAttribute( 'data_int', (int)$string );
         return true;
     }
 

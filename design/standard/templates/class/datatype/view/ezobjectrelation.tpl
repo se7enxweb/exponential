@@ -14,7 +14,7 @@
     <p>{'Any'|i18n( 'design/standard/class/datatype' )}</p>
     {section-else}
     <ul>
-    {section var=Classes loop=$content.class_constraint_list}<li>{$Classes.item}</li>{/section}
+    {section var=Classes loop=$content.class_constraint_list}<li>{$Classes.item|wash}</li>{/section}
     </ul>
     {/section}
 </div>

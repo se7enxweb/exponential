@@ -19,7 +19,7 @@
 </thead>
 <tbody>
 <tr class="bglight">
-{if $attribute.content}
+{if and( $attribute.content, or( $attribute.content.can_read, $attribute.content.can_view_embed ) )}
 
     {* Name *}
     <td>{$attribute.content.name|wash()}</td>
@@ -37,6 +37,9 @@
             {'Yes'|i18n( 'design/standard/content/datatype' )}
         {/if}
     </td>
+{elseif $attribute.content}
+    {* Related to an object the editor may not read: no name, class or section *}
+    <td colspan="4"><em>{'You are not allowed to view the related object'|i18n( 'design/standard/content/datatype' )}</em></td>
 {else}
     <td>--name--</td>
     <td>--class-name--</td>
@@ -56,7 +59,7 @@
     <input type="hidden" name="{$attribute_base}_browse_for_object_start_node[{$attribute.id}]" value="{$attribute.class_content.default_selection_node|wash}" />
 {/if}
 {if is_set( $class_content.class_constraint_list[0] )}
-    <input type="hidden" name="{$attribute_base}_browse_for_object_class_constraint_list[{$attribute.id}]" value="{$class_content.class_constraint_list|implode(',')}" />
+    <input type="hidden" name="{$attribute_base}_browse_for_object_class_constraint_list[{$attribute.id}]" value="{$class_content.class_constraint_list|implode(',')|wash}" />
 {/if}
 {if $attribute.content}
     <input class="button ezobject-relation-remove-button" type="submit" name="CustomActionButton[{$attribute.id}_remove_object]" value="{'Remove object'|i18n( 'design/standard/content/datatype' )}" />
@@ -66,7 +69,7 @@
 </div>
 <h4>{'Add an object in the relation'|i18n( 'design/standard/content/datatype' )}</h4>
 <div class="left">
-<input type="hidden" name="{$attribute_base}_data_object_relation_id_{$attribute.id}" value="{$attribute.data_int}" />
+<input type="hidden" name="{$attribute_base}_data_object_relation_id_{$attribute.id}" value="{$attribute.data_int|wash}" />
 {if $attribute.content}
     <input class="button-disabled ezobject-relation-add-button" type="submit" name="CustomActionButton[{$attribute.id}_browse_object]" value="{'Add an existing object'|i18n( 'design/standard/content/datatype' )}" title="{'Browse to add an existing object in this relation'|i18n( 'design/standard/content/datatype' )}" disabled="disabled" />
     {include uri='design:content/datatype/edit/ezobjectrelation_ajaxuploader.tpl' enabled=false()}
