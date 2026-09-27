@@ -72,7 +72,7 @@ class expVelocity
      * handed out as a file,
      * so settings/*.ini, var/storage/*.db and the kernel sources cannot be.
      */
-    const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/original/image/|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|sw\.js$|w3c/p3p\.xml$)';
+    const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/original/image/|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|svg|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|sw\.js$|w3c/p3p\.xml$)';
 
     /**
      * What is never served as a file even below a STATIC_PATHS directory:
