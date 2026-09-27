@@ -49,7 +49,8 @@ class eZImageType extends eZDataType
         $originalAlias = $imageHandler->imageAlias( "original" );
 
         // check if there is an actual image, 'is_valid' says if there is an image or not
-        if ( $originalAlias['is_valid'] != '1' && empty( $originalAlias['filename'] ) )
+        // (no original at all: XML without an <ezimage> element)
+        if ( !is_array( $originalAlias ) || ( $originalAlias['is_valid'] != '1' && empty( $originalAlias['filename'] ) ) )
         {
             return;
         }
@@ -120,6 +121,8 @@ class eZImageType extends eZDataType
     {
         $imageHandler = $contentObjectAttribute->attribute( "content" );
         $originalAlias = $imageHandler->imageAlias( "original" );
+        if ( !is_array( $originalAlias ) )
+            return;
         $originalPath = str_replace( "/trashed", "", $originalAlias["dirpath"]);
         $originalName = $imageHandler->imageName( $contentObjectAttribute, $contentObjectAttribute->objectVersion() );
         $imageHandler->updateAliasPath( $originalPath, $originalName );
@@ -230,7 +233,28 @@ class eZImageType extends eZDataType
             return eZInputValidator::STATE_INVALID;
         }
 
+        // A file field posted as name[] (or a forged request) gives arrays in
+        // $_FILES: that is no image upload, and every check below expects strings
+        if ( isset( $_FILES[$httpFileName] ) &&
+             ( !is_array( $_FILES[$httpFileName] ) || !isset( $_FILES[$httpFileName]['tmp_name'], $_FILES[$httpFileName]['name'] ) ||
+               !is_string( $_FILES[$httpFileName]['tmp_name'] ) || !is_string( $_FILES[$httpFileName]['name'] ) ||
+               ( isset( $_FILES[$httpFileName]['error'] ) && !is_scalar( $_FILES[$httpFileName]['error'] ) ) ||
+               ( isset( $_FILES[$httpFileName]['size'] ) && !is_scalar( $_FILES[$httpFileName]['size'] ) ) ) )
+        {
+            $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                'A valid image file is required.' ) );
+            return eZInputValidator::STATE_INVALID;
+        }
+
         $canFetchResult = eZHTTPFile::canFetch( $httpFileName, $maxSize );
+        // A partial upload, a missing temporary directory or a failed write is
+        // an upload that did not work, not "no file"
+        if ( in_array( $canFetchResult, array( eZHTTPFile::UPLOADEDFILE_UNKNOWN_ERROR, eZHTTPFile::UPLOADEDFILE_MISSING_TMP_DIR, eZHTTPFile::UPLOADEDFILE_CANT_WRITE ), true ) )
+        {
+            $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                'The image could not be uploaded. Please try again or contact the site administrator.' ) );
+            return eZInputValidator::STATE_INVALID;
+        }
         if ( isset( $_FILES[$httpFileName] ) and  $_FILES[$httpFileName]["tmp_name"] != "" )
         {
              $imagefile = $_FILES[$httpFileName]['tmp_name'];
@@ -253,6 +277,14 @@ class eZImageType extends eZDataType
              {
                  $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                            'A valid image file is required.' ) );
+                 return eZInputValidator::STATE_INVALID;
+             }
+
+             // The name says image; the content must say so as well
+             $imageError = self::imageFileError( $imagefile );
+             if ( $imageError !== false )
+             {
+                 $contentObjectAttribute->setValidationError( $imageError );
                  return eZInputValidator::STATE_INVALID;
              }
         }
@@ -279,11 +311,91 @@ class eZImageType extends eZDataType
 
     private static function validateImageFileExtension($filename)
     {
+        if ( !is_string( $filename ) || $filename === '' )
+            return false;
         $mimeType = eZMimeType::findByURL( $filename );
-        $nameMimeType = $mimeType['name'];
+        $nameMimeType = isset( $mimeType['name'] ) ? (string)$mimeType['name'] : '';
         $nameMimeTypes = explode('/', $nameMimeType);
 
-        return $nameMimeTypes[0] === 'image';
+        // SVG is an image by name, but a document a browser runs script from,
+        // served from the storage directory under the site's own origin
+        return $nameMimeTypes[0] === 'image' && $nameMimeType !== 'image/svg+xml';
+    }
+
+    /**
+     * Why the file at $filePath is not an image this datatype stores, as a
+     * translated validation message, or false when it is one.
+     *
+     * The content decides, not the name: it must be a raster image PHP can read
+     * the size of (so no SVG, HTML, script or archive named .jpg), must not
+     * start with markup a browser could sniff as HTML, and must not have more
+     * pixels than [ImageSettings] MaxImagePixels in image.ini (default 100
+     * million), which the image converters would need all at once in memory.
+     *
+     * @param string $filePath
+     * @return string|false
+     */
+    static function imageFileError( $filePath )
+    {
+        $invalid = ezpI18n::tr( 'kernel/classes/datatypes', 'A valid image file is required.' );
+        if ( !is_string( $filePath ) || $filePath === '' || strpos( $filePath, "\0" ) !== false || !is_file( $filePath ) )
+            return $invalid;
+
+        $info = @getimagesize( $filePath );
+        if ( !is_array( $info ) || empty( $info[0] ) || empty( $info[1] ) || !isset( $info['mime'] ) ||
+             strpos( $info['mime'], 'image/' ) !== 0 || $info['mime'] === 'image/svg+xml' )
+            return $invalid;
+
+        $head = (string)@file_get_contents( $filePath, false, null, 0, 256 );
+        if ( preg_match( '/<(?:!doctype|html|head|body|script|svg|iframe|\?php)/i', $head ) )
+            return $invalid;
+
+        $maxPixels = 100000000;
+        $ini = eZINI::instance( 'image.ini' );
+        if ( $ini->hasVariable( 'ImageSettings', 'MaxImagePixels' ) && (int)$ini->variable( 'ImageSettings', 'MaxImagePixels' ) > 0 )
+            $maxPixels = (int)$ini->variable( 'ImageSettings', 'MaxImagePixels' );
+        if ( (float)$info[0] * (float)$info[1] > $maxPixels )
+        {
+            return ezpI18n::tr( 'kernel/classes/datatypes', 'The image is too large: %1 x %2 pixels.', null,
+                                array( '%1' => $info[0], '%2' => $info[1] ) );
+        }
+        return false;
+    }
+
+    /**
+     * True if $filePath, a path given to fromString() (package or CSV import),
+     * is a file inside the installation, its var directory or the temporary
+     * directory. A path through "..", an absolute path elsewhere, a URL or a
+     * stream wrapper is not read.
+     */
+    static function isImportablePath( $filePath )
+    {
+        if ( !is_string( $filePath ) || $filePath === '' || strpos( $filePath, "\0" ) !== false || preg_match( '#^[a-z][a-z0-9+.-]*://#i', $filePath ) )
+            return false;
+        $real = realpath( $filePath );
+        if ( $real === false || !is_file( $real ) )
+            return false;
+        foreach ( array( eZSys::rootDir(), eZSys::varDirectory(), sys_get_temp_dir() ) as $dir )
+        {
+            $dir = $dir ? realpath( $dir ) : false;
+            if ( $dir && strpos( $real, rtrim( $dir, '/' ) . '/' ) === 0 )
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * $text as alternative text the XML storage can hold: a string, without
+     * the control characters XML 1.0 does not allow (they were written as
+     * character references, and the stored image XML then no longer parsed).
+     */
+    static function cleanAlternativeText( $text )
+    {
+        if ( $text === false || $text === null )
+            return $text;
+        if ( !is_scalar( $text ) )
+            return '';
+        return preg_replace( '/[\x00-\x08\x0B\x0C\x0E-\x1F]/', '', (string)$text );
     }
 
     /**
@@ -302,7 +414,8 @@ class eZImageType extends eZDataType
         $hasImageAltText = false;
         if ( $http->hasPostVariable( $base . "_data_imagealttext_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $imageAltText = $http->postVariable( $base . "_data_imagealttext_" . $contentObjectAttribute->attribute( "id" ) );
+            // Text only: an array became "Array" or a TypeError in the XML
+            $imageAltText = self::cleanAlternativeText( $http->postVariable( $base . "_data_imagealttext_" . $contentObjectAttribute->attribute( "id" ) ) );
             $hasImageAltText = true;
         }
 
@@ -339,7 +452,10 @@ class eZImageType extends eZDataType
         if ( $imageHandler )
         {
             $httpFile = $imageHandler->httpFile( true );
-            if ( $httpFile && self::validateImageFileExtension( $httpFile->attribute( 'original_filename' ) ) )
+            // Validation checked the upload; checked again here for callers that
+            // store without validating, since this is where the file is kept
+            if ( $httpFile && self::validateImageFileExtension( $httpFile->attribute( 'original_filename' ) ) &&
+                 self::imageFileError( $httpFile->attribute( 'filename' ) ) === false )
             {
                 $imageAltText = $imageHandler->attribute( 'alternative_text' );
 
@@ -386,6 +502,17 @@ class eZImageType extends eZDataType
             return false;
         }
 
+        // The upload module and the WebDAV/REST inserts skip the edit form's
+        // validation: the same content check applies here
+        $imageError = self::validateImageFileExtension( $httpFile->attribute( 'original_filename' ) ) ?
+                      self::imageFileError( $httpFile->attribute( 'filename' ) ) :
+                      ezpI18n::tr( 'kernel/classes/datatypes', 'A valid image file is required.' );
+        if ( $imageError !== false )
+        {
+            $result['errors'][] = array( 'description' => $imageError );
+            return false;
+        }
+
         $status = $handler->initializeFromHTTPFile( $httpFile );
         $result['require_storage'] = $handler->isStorageRequired();
         return $status;
@@ -406,6 +533,13 @@ class eZImageType extends eZDataType
         {
             $result['errors'][] = array( 'description' => ezpI18n::tr( 'kernel/classes/datatypes/ezimage',
                                                                   'Failed to fetch Image Handler. Please contact the site administrator.' ) );
+            return false;
+        }
+
+        $imageError = self::imageFileError( $filePath );
+        if ( $imageError !== false )
+        {
+            $result['errors'][] = array( 'description' => $imageError );
             return false;
         }
 
@@ -486,7 +620,9 @@ class eZImageType extends eZDataType
         $filesizeName = $base . self::FILESIZE_VARIABLE . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $filesizeName ) )
         {
+            // Megabytes, a whole number that is not negative (0 is no limit)
             $filesizeValue = $http->postVariable( $filesizeName );
+            $filesizeValue = is_scalar( $filesizeValue ) && is_numeric( $filesizeValue ) ? max( 0, (int)$filesizeValue ) : 0;
             $classAttribute->setAttribute( self::FILESIZE_FIELD, $filesizeValue );
             return true;
         }
@@ -510,9 +646,12 @@ class eZImageType extends eZDataType
     function title( $contentObjectAttribute, $name = 'original_filename' )
     {
         $content = $contentObjectAttribute->content();
-        $original = $content->attribute( 'original' );
+        // XML without an <ezimage> element has no original alias
+        $original = $content ? $content->attribute( 'original' ) : null;
+        if ( !is_array( $original ) )
+            return '';
         $value = $original['alternative_text'];
-        if ( trim( $value ) == '' )
+        if ( trim( (string)$value ) == '' )
         {
             if ( array_key_exists( $name, $original ) )
                 $value = $original[$name];
@@ -541,8 +680,8 @@ class eZImageType extends eZDataType
     function metaData( $contentObjectAttribute )
     {
         $content = $contentObjectAttribute->content();
-        $original = $content->attribute( 'original' );
-        $value = $original['alternative_text'];
+        $original = $content ? $content->attribute( 'original' ) : null;
+        $value = is_array( $original ) ? $original['alternative_text'] : '';
         return $value;
     }
 
@@ -559,9 +698,9 @@ class eZImageType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
+        // A package without <max-size> gets no limit (0), as a new class attribute has
         $sizeNode = $attributeParametersNode->getElementsByTagName( 'max-size' )->item( 0 );
-        $maxSize = $sizeNode->textContent;
-        $unitSize = $sizeNode->getAttribute( 'unit-size' );
+        $maxSize = $sizeNode ? $sizeNode->textContent : 0;
         $classAttribute->setAttribute( self::FILESIZE_FIELD, $maxSize );
     }
 
@@ -574,7 +713,9 @@ class eZImageType extends eZDataType
         $node = $this->createContentObjectAttributeDOMNode( $objectAttribute );
 
         $content = $objectAttribute->content();
-        $original = $content->attribute( 'original' );
+        $original = $content ? $content->attribute( 'original' ) : null;
+        if ( !is_array( $original ) )
+            $original = array( 'url' => false, 'alternative_text' => '' );
 
         if ( $original['url'] )
         {
@@ -619,25 +760,49 @@ class eZImageType extends eZDataType
     function toString( $objectAttribute )
     {
         $content = $objectAttribute->content();
-        $original = $content->attribute( 'original' );
-        $alternativeText = $content->attribute( 'alternative_text' );
-        return $original['url'] . '|' . $alternativeText;
+        $original = $content ? $content->attribute( 'original' ) : null;
+        $alternativeText = $content ? $content->attribute( 'alternative_text' ) : '';
+        return ( is_array( $original ) ? $original['url'] : '' ) . '|' . $alternativeText;
     }
 
+    /**
+     * "path|alternative text" or just "path", as toString() gives it. The path
+     * must be a file inside the installation, its var directory or the
+     * temporary directory (no "..", other absolute paths, URLs or stream
+     * wrappers) and an image by its content; otherwise nothing changes and
+     * false is returned. An empty path keeps the image and sets the text only.
+     */
     function fromString( $objectAttribute, $string )
     {
+        $string = is_scalar( $string ) ? (string)$string : '';
         $delimiterPos = strpos( $string, '|' );
+        $path = $delimiterPos === false ? $string : substr( $string, 0, $delimiterPos );
+        $alternativeText = $delimiterPos === false ? null : substr( $string, $delimiterPos + 1 );
+
+        if ( $path !== '' )
+        {
+            if ( !self::isImportablePath( $path ) )
+            {
+                eZDebug::writeError( "The image file is not a file inside the installation, its var or temporary directory: $path", __METHOD__ );
+                return false;
+            }
+            $imageError = self::imageFileError( $path );
+            if ( $imageError !== false )
+            {
+                eZDebug::writeError( "The file is not an image that can be stored: $path", __METHOD__ );
+                return false;
+            }
+        }
 
         /** @var eZImageAliasHandler $content */
         $content = $objectAttribute->attribute( 'content' );
-        if ( $delimiterPos === false )
+        if ( $path !== '' )
         {
-               $content->initializeFromFile( $string, '' );
+            $content->initializeFromFile( $path, '' );
         }
-        else
+        if ( $alternativeText !== null )
         {
-            $content->initializeFromFile( substr( $string, 0, $delimiterPos ), '' );
-            $content->setAttribute( 'alternative_text', substr( $string, $delimiterPos + 1 ) );
+            $content->setAttribute( 'alternative_text', $alternativeText );
         }
         $content->store( $objectAttribute );
         return true;
@@ -656,7 +821,15 @@ class eZImageType extends eZDataType
     {
         $objectAttributeId = $objectAttribute->attribute( "id" );
 
-        if ( ( $doc = simplexml_load_string( $objectAttribute->attribute( "data_text" ) ) ) === false )
+        // Empty or broken XML references no files, and is no warning
+        $dataText = $objectAttribute->attribute( "data_text" );
+        if ( !is_string( $dataText ) || trim( $dataText ) === '' )
+            return;
+        $useErrors = libxml_use_internal_errors( true );
+        $doc = simplexml_load_string( $dataText );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useErrors );
+        if ( $doc === false )
             return;
 
         // Creates ezimagefile entries

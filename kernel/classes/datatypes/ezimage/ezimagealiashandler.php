@@ -132,6 +132,9 @@ class eZImageAliasHandler
                        array( 'alternative_text',
                               'original_filename' ) ) )
         {
+            // Plain text the XML can hold: an array was a TypeError in setAttribute()
+            // of the DOM, and a control character made the stored XML unreadable
+            $attributeValue = eZImageType::cleanAlternativeText( $attributeValue );
             $aliasList = $this->aliasList();
             foreach ( array_keys( $aliasList ) as $aliasName )
             {
@@ -429,8 +432,9 @@ class eZImageAliasHandler
         {
             return $aliasList[$aliasName];
         }
-        else
+        else if ( isset( $aliasList['original'] ) )
         {
+            // Without an original (XML without an <ezimage> element) there is nothing to scale
             $original = $aliasList['original'];
             $basename = $original['basename'];
             if ( $imageManager->createImageAlias( $aliasName, $aliasList,
@@ -520,9 +524,13 @@ class eZImageAliasHandler
         $xmlString = $this->ContentObjectAttributeData['data_text'];
 
         $success = false;
-        if ( $xmlString != '' )
+        if ( is_string( $xmlString ) && $xmlString != '' )
         {
+            // Broken stored XML is replaced by the empty image below, without warnings
+            $useErrors = libxml_use_internal_errors( true );
             $success = $domTree->loadXML( $xmlString );
+            libxml_clear_errors();
+            libxml_use_internal_errors( $useErrors );
         }
 
         if ( !$success )
@@ -688,6 +696,8 @@ class eZImageAliasHandler
 
         foreach ( $files as $filepath )
         {
+            if ( !self::isStorageFilePath( $filepath ) )
+                continue;
             $file = eZClusterFileHandler::instance( $filepath );
             if ( $file->exists() )
             {
@@ -710,6 +720,8 @@ class eZImageAliasHandler
     public function purgeAllAliases()
     {
         $aliasList = $this->aliasList( false );
+        if ( !isset( $aliasList['original'] ) )
+            return;
         ezpEvent::getInstance()->notify( 'image/purgeAliases', array( $aliasList['original']['url'] ) );
         unset( $aliasList['original'] ); // keeping original
 
@@ -721,9 +733,11 @@ class eZImageAliasHandler
             // remove entry from DOM model
             $doc = $this->ContentObjectAttributeData['DataTypeCustom']['dom_tree'];
             $domXPath = new DOMXPath( $doc );
-            foreach ( $domXPath->query( "//alias[@name='{$alias['name']}']") as $aliasNode )
+            // Compared in PHP: a quote in an alias name broke the XPath expression
+            foreach ( iterator_to_array( $doc->getElementsByTagName( 'alias' ) ) as $aliasNode )
             {
-                $aliasNode->parentNode->removeChild( $aliasNode );
+                if ( $aliasNode->getAttribute( 'name' ) === (string)$alias['name'] )
+                    $aliasNode->parentNode->removeChild( $aliasNode );
             }
         }
 
@@ -768,6 +782,14 @@ class eZImageAliasHandler
         if ( $aliasFile == '' )
             throw new InvalidArgumentException( "Expecting image file path" );
 
+        // The path comes from the stored XML: only a file in a storage
+        // directory is ever deleted from here
+        if ( !self::isStorageFilePath( $aliasFile ) )
+        {
+            eZDebug::writeError( "Image file {$aliasFile} is not inside a storage directory, it is not removed", __METHOD__ );
+            return;
+        }
+
         // We only delete the eZImageFile if it isn't referenced by attributes of the same id but different version/language
         if ( eZImageFile::isReferencedByOtherAttributes(
             $aliasFile,
@@ -803,6 +825,27 @@ class eZImageAliasHandler
         eZDir::cleanupEmptyDirectories( dirname( $aliasFile ) );
     }
 
+    /**
+     * True if $path, an image path from the stored XML or ezimagefile, is a
+     * relative path inside a storage directory: below eZSys::storageDirectory()
+     * or a var/.../storage/ directory of an earlier var directory setting, with
+     * no ".." segment and no NUL byte. Only such files are deleted or moved.
+     *
+     * @param string $path
+     * @return bool
+     */
+    static function isStorageFilePath( $path )
+    {
+        if ( !is_string( $path ) || $path === '' || strpos( $path, "\0" ) !== false || $path[0] === '/' || strpos( $path, '\\' ) !== false )
+            return false;
+        if ( in_array( '..', explode( '/', $path ), true ) )
+            return false;
+        $storage = trim( eZSys::storageDirectory(), '/' );
+        if ( $storage !== '' && strpos( $path, $storage . '/' ) === 0 )
+            return true;
+        return preg_match( '#^var/(?:[^/]+/)*storage/#', $path ) === 1;
+    }
+
     /*!
      Will update the path for images to point to the new path \a $dirpath and filename \a $name.
 
@@ -832,6 +875,13 @@ class eZImageAliasHandler
                 {
                     if ( $oldURL == '' )
                     {
+                        continue;
+                    }
+                    // A stored path outside the storage directories is not moved
+                    // into it (that would publish any file the web server can read)
+                    if ( !self::isStorageFilePath( $oldURL ) )
+                    {
+                        eZDebug::writeError( "Image file {$oldURL} is not inside a storage directory, it is not moved", __METHOD__ );
                         continue;
                     }
 
@@ -900,21 +950,21 @@ class eZImageAliasHandler
         $this->createOriginalAttributeXMLData( $originalNode, $originalData );
 
         $imageNode->setAttribute( 'serial_number', $this->imageSerialNumber() );
-        $imageNode->setAttribute( 'is_valid', $aliasList[$aliasName]['is_valid'] );
-        $imageNode->setAttribute( 'filename', $aliasList[$aliasName]['filename'] );
-        $imageNode->setAttribute( 'suffix', $aliasList[$aliasName]['suffix'] );
-        $imageNode->setAttribute( 'basename', $aliasList[$aliasName]['basename'] );
-        $imageNode->setAttribute( 'dirpath', $aliasList[$aliasName]['dirpath'] );
-        $imageNode->setAttribute( 'url', $aliasList[$aliasName]['url'] );
-        $imageNode->setAttribute( 'original_filename', $aliasList[$aliasName]['original_filename'] );
-        $imageNode->setAttribute( 'mime_type', $aliasList[$aliasName]['mime_type'] );
-        $imageNode->setAttribute( 'width', $aliasList[$aliasName]['width'] );
-        $imageNode->setAttribute( 'height', $aliasList[$aliasName]['height'] );
-        $imageNode->setAttribute( 'alternative_text', $aliasList[$aliasName]['alternative_text'] );
+        $imageNode->setAttribute( 'is_valid', ( $aliasList[$aliasName]['is_valid'] ?? false ) );
+        $imageNode->setAttribute( 'filename', ( $aliasList[$aliasName]['filename'] ?? false ) );
+        $imageNode->setAttribute( 'suffix', ( $aliasList[$aliasName]['suffix'] ?? false ) );
+        $imageNode->setAttribute( 'basename', ( $aliasList[$aliasName]['basename'] ?? false ) );
+        $imageNode->setAttribute( 'dirpath', ( $aliasList[$aliasName]['dirpath'] ?? false ) );
+        $imageNode->setAttribute( 'url', ( $aliasList[$aliasName]['url'] ?? false ) );
+        $imageNode->setAttribute( 'original_filename', ( $aliasList[$aliasName]['original_filename'] ?? false ) );
+        $imageNode->setAttribute( 'mime_type', ( $aliasList[$aliasName]['mime_type'] ?? false ) );
+        $imageNode->setAttribute( 'width', ( $aliasList[$aliasName]['width'] ?? false ) );
+        $imageNode->setAttribute( 'height', ( $aliasList[$aliasName]['height'] ?? false ) );
+        $imageNode->setAttribute( 'alternative_text', ( $aliasList[$aliasName]['alternative_text'] ?? false ) );
         $imageNode->setAttribute( 'alias_key', $imageManager->createImageAliasKey( $imageManager->alias( $aliasName ) ) );
-        $imageNode->setAttribute( 'timestamp', $aliasList[$aliasName]['timestamp'] );
+        $imageNode->setAttribute( 'timestamp', ( $aliasList[$aliasName]['timestamp'] ?? false ) );
 
-        $filename = $aliasList[$aliasName]['url'];
+        $filename = ( $aliasList[$aliasName]['url'] ?? false );
         if ( $filename )
         {
             $imageFile = eZClusterFileHandler::instance( $filename );
@@ -959,7 +1009,10 @@ class eZImageAliasHandler
 
         $dom = new DOMDocument( '1.0', 'utf-8' );
         $xmlString = $contentObjectAttributeData['data_text'];
-        $success = $xmlString == '' ? false : $dom->loadXML( $xmlString );
+        $useErrors = libxml_use_internal_errors( true );
+        $success = ( !is_string( $xmlString ) || $xmlString == '' ) ? false : $dom->loadXML( $xmlString );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useErrors );
         if ( !$success )
         {
             $this->generateXMLData();
@@ -1031,7 +1084,9 @@ class eZImageAliasHandler
             {
                 $name = $child->getAttribute( 'name' );
                 $data = $child->getAttribute( 'data' );
-                $imageInformation[$name] = unserialize( $data );
+                // Plain values only: stored XML that named a class here would
+                // otherwise instantiate it (and run its __wakeup/__destruct)
+                $imageInformation[$name] = unserialize( $data, array( 'allowed_classes' => false ) );
             }
         }
 
@@ -1203,6 +1258,7 @@ class eZImageAliasHandler
                                                $this->ContentObjectAttributeData['version'],
                                                $this->ContentObjectAttributeData['language_code'] );
 
+        $imageAltText = eZImageType::cleanAlternativeText( $imageAltText );
         $aliasList = array( 'original' => $mimeData );
         $aliasList['original']['alternative_text'] = $imageAltText;
         $aliasList['original']['original_filename'] = $originalFilename;

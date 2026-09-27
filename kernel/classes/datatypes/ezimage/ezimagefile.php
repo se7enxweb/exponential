@@ -118,7 +118,10 @@ class eZImageFile extends eZPersistentObject
                   WHERE  contentobject_id = $contentObjectID AND
                          contentclassattribute_id = $contentClassAttributeID AND
                          data_text LIKE '%url=\"$filepath\"%'";
-        if ( $db->databaseName() == 'oracle' )
+        // MySQL takes the backslash as its LIKE escape by default; Oracle and
+        // SQLite only with ESCAPE (without it SQLite read "\_" literally and
+        // never found a path with an underscore)
+        if ( $db->databaseName() == 'oracle' || $db->databaseName() == 'sqlite' )
         {
             $query .= " ESCAPE '\'";
         }
@@ -344,9 +347,9 @@ class eZImageFile extends eZPersistentObject
                 AND ( ezcontentobject_attribute.version != %d OR ezcontentobject_attribute.language_code != '%s' )
                 ",
                 $filepath, htmlspecialchars($filepath, ENT_XML1 | ENT_COMPAT),
-                $attributeId,
-                $attributeVersion,
-                $languageCode
+                (int)$attributeId,
+                (int)$attributeVersion,
+                $db->escapeString( (string)$languageCode )
             )
         );
 
