@@ -291,10 +291,13 @@ class eZCountryType extends eZDataType
             }
             else
             {
-                $countries = eZCountryType::fetchCountryList();
+                // A single code is taken as validation takes it; otherwise the
+                // single value is a country name, the format of old forms
+                $defaultList = eZCountryType::postedCountries( $data );
+                $countries = $defaultList ? array() : eZCountryType::fetchCountryList();
                 foreach ( $countries as $country )
                 {
-                    if ( $country['Name'] == $data )
+                    if ( is_string( $data ) && $country['Name'] == $data )
                     {
                         $defaultList[$country['Alpha2']] = $country['Name'];
                     }
