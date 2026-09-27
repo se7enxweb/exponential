@@ -71,6 +71,42 @@ else
     $phpAcceleratorInfo = array();
 }
 
+// The web server's name and version when this page is served by Exponential
+// Velocity's own server. The engine inside it is Qbix, and the Qbix names it
+// still reports (SERVER_SOFTWARE "QbixServer/1.5.0", the upstream base it is
+// built on) say nothing about which release is running: that is the fork's
+// release line, v0.0.4.x, plus the build. One place, used by every box below.
+$velocityBrand = false;
+if ( defined( 'QBIX_SERVER_VERSION' ) )
+{
+    $brandVersion = function_exists( 'qbix_version_label' ) ? qbix_version_label()
+                  : ( defined( 'QBIX_SHIP_VERSION' ) ? (string)QBIX_SHIP_VERSION : '' );
+    // Without a release tag to read (a package with no git), the installed
+    // package's version is the release; the upstream base never is.
+    if ( strncmp( $brandVersion, 'v0.', 3 ) !== 0 && class_exists( '\Composer\InstalledVersions' ) )
+    {
+        foreach ( array( 'se7enxweb/exponential-velocity', 'se7enxweb/qbix-webserver' ) as $package )
+        {
+            if ( \Composer\InstalledVersions::isInstalled( $package ) )
+            {
+                $brandVersion = (string)\Composer\InstalledVersions::getPrettyVersion( $package );
+                break;
+            }
+        }
+    }
+    $velocityBrand = array(
+        'name'    => 'Exponential Velocity (vc)',
+        'version' => $brandVersion,
+        'label'   => trim( 'Exponential Velocity ' . $brandVersion ),
+    );
+}
+// What each exp:velocity engine is, in words, for the boxes below.
+$velocityEngineNames = array(
+    'qbix'       => "Velocity's own server",
+    'frankenphp' => 'FrankenPHP',
+    'php'        => "PHP's built-in web server",
+);
+
 $webserverInfo = false;
 if ( function_exists( 'apache_get_version' ) )
 {
@@ -163,6 +199,13 @@ elseif ( isset( $_SERVER['SERVER_SOFTWARE'] ) && trim( (string)$_SERVER['SERVER_
         $runtime[] = 'TLS';
     $webserverInfo['modules'] = $runtime;
 }
+if ( $velocityBrand && $webserverInfo )
+{
+    // SERVER_SOFTWARE names the engine inside (QbixServer/1.5.0), not the
+    // server that is running.
+    $webserverInfo['name'] = $velocityBrand['name'];
+    $webserverInfo['version'] = $velocityBrand['version'];
+}
 
 $tpl->setVariable( 'ezpublish_version', eZPublishSDK::version() . " (" . eZPublishSDK::alias() . ")" );
 $tpl->setVariable( 'ezpublish_extensions', eZExtension::activeExtensions() );
@@ -217,7 +260,7 @@ $velocitySwitch = array(
 );
 if ( defined( 'QBIX_SERVER_VERSION' ) )
 {
-    $engineServer = array( 'server' => 'Qbix server' ) + $velocitySwitch;
+    $engineServer = array( 'server' => $velocityBrand ? $velocityBrand['label'] : 'Exponential Velocity' ) + $velocitySwitch;
     $engineServer['on'] .= ' -- or, when the server is not started by exp:velocity, put EXP_ENGINE_PHAR='
                          . $engineArchivePath . ' in its environment';
 }
@@ -537,9 +580,13 @@ if ( $servingEngine !== null && class_exists( 'expVelocity' ) )
     // The port this request arrived on is the fact; the configured one says
     // whether exp:velocity started this server or something else did (a
     // hand-written php -S, a Qbix server run from its own script).
-    $servedPort = $servingEngine === 'qbix' && class_exists( 'Q_WebServer', false ) && Q_WebServer::$port
-                ? (int)Q_WebServer::$port
-                : (int)( isset( $_SERVER['SERVER_PORT'] ) ? $_SERVER['SERVER_PORT'] : 0 );
+    // SERVER_PORT is the port of this request; Q_WebServer::$port is only the
+    // plain-HTTP one, wrong when the page came in over HTTPS on its own port
+    // (links came out as https://host:<http port>/ and failed).
+    $servedPort = !empty( $_SERVER['SERVER_PORT'] )
+                ? (int)$_SERVER['SERVER_PORT']
+                : ( $servingEngine === 'qbix' && class_exists( 'Q_WebServer', false ) && Q_WebServer::$port
+                    ? (int)Q_WebServer::$port : 0 );
     $configured = in_array( $servedPort, array_filter( array( $velocity->httpPort(), $velocity->httpsPort() ) ), true );
     $status = $configured ? $velocity->status() : array();
 
@@ -570,23 +617,9 @@ if ( $servingEngine !== null && class_exists( 'expVelocity' ) )
         }
     }
 
-    // The Qbix server's own label falls back to the upstream base (1.5.0)
-    // when it runs from a package without git; the package version is the
-    // release that is actually installed.
-    $qbixVersion = '';
-    if ( $servingEngine === 'qbix' )
-    {
-        $ship = defined( 'QBIX_SHIP_VERSION' ) ? (string)QBIX_SHIP_VERSION : '';
-        // The engine's package, under its current name or the one it had
-        // before (se7enxweb/qbix-webserver).
-        foreach ( array( 'se7enxweb/exponential-velocity', 'se7enxweb/qbix-webserver' ) as $package )
-        {
-            if ( strncmp( $ship, 'v0.', 3 ) !== 0 && class_exists( '\Composer\InstalledVersions' )
-                 && \Composer\InstalledVersions::isInstalled( $package ) )
-                $ship = (string)\Composer\InstalledVersions::getPrettyVersion( $package );
-        }
-        $qbixVersion = $ship !== '' ? 'Qbix server ' . $ship : '';
-    }
+    // Velocity's own server names itself with the brand and release worked
+    // out once at the top ($velocityBrand).
+    $ownServerVersion = $servingEngine === 'qbix' && $velocityBrand ? $velocityBrand['label'] : '';
 
     $views = array();
     foreach ( $velocity->views( $token, $remote, $panelPassword ) as $view )
@@ -599,20 +632,34 @@ if ( $servingEngine !== null && class_exists( 'expVelocity' ) )
             'description' => $view[3],
         );
 
+    // Other engines of this installation that are running too, with the
+    // addresses they answer on (HTTPS first). A site serves from one; a second
+    // one is usually left from a test or a benchmark.
     $others = array();
     foreach ( expVelocity::engines() as $other )
     {
         if ( $other === $servingEngine )
             continue;
         $engine = expVelocity::create( 'velocity.ini', $other );
-        if ( $engine->isRunning() )
-            $others[] = $other . ' (' . $engine->role() . ') on :' . $engine->httpPort();
+        if ( !$engine->isRunning() )
+            continue;
+        $urls = array();
+        if ( $engine->httpsPort() )
+            $urls[] = 'https://' . $requestHost . ':' . (int)$engine->httpsPort() . '/';
+        if ( $engine->httpPort() )
+            $urls[] = 'http://' . $requestHost . ':' . (int)$engine->httpPort() . '/';
+        $others[] = array(
+            'name' => isset( $velocityEngineNames[$other] ) ? $velocityEngineNames[$other] : $other,
+            'engine' => $other,
+            'role' => $engine->role(),
+            'urls' => $urls,
+        );
     }
 
     $roleText = array(
-        'production'   => 'production',
-        'development'  => 'development -- for production, run the frankenphp engine',
-        'experimental' => 'experimental, for tests -- for production, run the frankenphp engine',
+        'recommended'  => 'recommended for every stage -- development, alpha, beta, demo, stable and production -- and the fastest of the engines',
+        'production'   => 'production-ready; Velocity\'s own server (qbix) is the recommended engine',
+        'development'  => 'development only -- for any other stage, run Velocity\'s own server (qbix)',
     );
     $velocityInfo = array(
         'engine'     => $servingEngine,
@@ -629,8 +676,10 @@ if ( $servingEngine !== null && class_exists( 'expVelocity' ) )
         'reach'      => !$configured ? 'wherever it was started to listen (not by exp:velocity, so its Host is not known here)'
                         : ( $local ? 'this machine only (Host=' . ( $bind === '' ? '127.0.0.1' : $bind ) . '), or through a proxy or tunnel'
                                    : 'every machine that reaches ' . $bind . ':' . $servedPort ),
-        'version'    => isset( $status['version'] ) && $status['version'] !== '' ? $status['version']
-                        : ( $servingEngine === 'qbix' ? $qbixVersion : '' ),
+        'version'    => $ownServerVersion !== '' ? $ownServerVersion
+                        : ( isset( $status['version'] ) && $status['version'] !== '' ? $status['version'] : '' ),
+        'engine_name' => isset( $velocityEngineNames[$servingEngine] ) ? $velocityEngineNames[$servingEngine] : $servingEngine,
+        'brand'      => $velocityBrand ? $velocityBrand['name'] : 'Exponential Velocity',
         'pid'        => isset( $status['parent'] ) && $status['parent'] ? $status['parent'] : '',
         'processes'  => isset( $status['processes'] ) ? $status['processes'] : 0,
         'config'     => isset( $status['caddyfile'] ) ? $status['caddyfile'] : '',
@@ -784,6 +833,100 @@ if ( defined( 'QBIX_SERVER_VERSION' ) && class_exists( 'Q_WebServer_Cache', fals
 }
 
 $tpl->setVariable( 'response_cache', $responseCache );
+
+// The role-aware HTTP cache (settings/httpcache.ini). Its hits are answered
+// before the kernel boots, so this is the one place that shows them.
+$httpCache = false;
+if ( class_exists( 'ezpHttpCacheContract' ) )
+{
+    $hcIni = eZINI::instance( 'httpcache.ini' );
+    $hcDir = eZSys::cacheDirectory() . '/exphttpcache';
+    $hcContract = ezpHttpCacheContract::fromDir( $hcDir );
+    $hcMessage = '';
+
+    if ( $hcContract && $canFlushCaches && $http->hasPostVariable( 'HttpCacheAction' ) )
+    {
+        switch ( $http->postVariable( 'HttpCacheAction' ) )
+        {
+            case 'purge':
+                $hcContract->bumpGeneration();
+                $hcMessage = ezpI18n::tr( 'design/admin/setup/info', 'Every cached page was purged; each is rendered again on its next request.' );
+                break;
+            case 'gc':
+                $c = $hcContract->gc();
+                $hcMessage = ezpI18n::tr( 'design/admin/setup/info', 'Removed %entries dead entries, %bodies orphaned bodies and %records old user records.', null,
+                    array( '%entries' => $c['entries'], '%bodies' => $c['bodies'], '%records' => $c['records'] ) );
+                break;
+            case 'reset':
+                $hcContract->resetStatistics();
+                $hcMessage = ezpI18n::tr( 'design/admin/setup/info', 'The counters were reset.' );
+                break;
+        }
+    }
+
+    $hcEnabled = $hcIni->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled';
+    $httpCache = array(
+        'enabled'      => $hcEnabled,
+        // Enabled in the settings but no page stored yet: the contract is
+        // written by the first request on a cached siteaccess.
+        'started'      => (bool)$hcContract,
+        'message'      => $hcMessage,
+        'dir'          => $hcDir,
+        'bars'         => array(),
+        'figures'      => array(),
+        'settings'     => array(),
+        'reasons'      => array(),
+        'stats'        => false,
+    );
+    if ( $hcContract )
+    {
+        $inv = $hcContract->inventory();
+        $stats = $hcContract->statistics();
+        $when = function ( $t ) {
+            return $t > 0 ? date( 'Y-m-d H:i:s', (int)$t ) : ezpI18n::tr( 'design/admin/setup/info', 'never' );
+        };
+        if ( $stats !== null )
+        {
+            $lookups = $stats['hits'] + $stats['misses'];
+            $httpCache['stats'] = true;
+            $httpCache['bars'][] = array(
+                'label' => 'Hit rate',
+                'percent' => $lookups > 0 ? round( 100 * $stats['hits'] / $lookups ) : 0,
+                'text' => $lookups > 0
+                    ? number_format( 100 * $stats['hits'] / $lookups, 1 ) . ' % (' . number_format( $stats['hits'] ) . ' hits, ' . number_format( $stats['misses'] ) . ' misses)'
+                    : ezpI18n::tr( 'design/admin/setup/info', 'no lookups yet' ),
+            );
+            $httpCache['figures']['pages stored'] = number_format( $stats['stores'] );
+            $httpCache['figures']['counting since'] = $when( $stats['since'] );
+            $httpCache['figures']['servers counting'] = $stats['servers'];
+            foreach ( array_slice( $stats['reasons'], 0, 8, true ) as $reason => $n )
+                $httpCache['reasons'][] = array( 'reason' => $reason, 'count' => number_format( $n ),
+                    'percent' => $stats['misses'] > 0 ? round( 100 * $n / $stats['misses'] ) : 0 );
+        }
+        $maxBody = (int)$hcContract->config['maxBodySize'];
+        $httpCache['figures'] = array(
+            'entries' => ( $inv['counted_all'] ? '' : '≥ ' ) . number_format( $inv['entries'] ),
+            'on disk' => number_format( $inv['bytes'] / 1048576, 1 ) . ' MB',
+            'user contexts' => number_format( $inv['records'] ),
+            'generation' => $inv['generation'] . ' (' . $when( $inv['generation_time'] ) . ')',
+            'purged tags' => number_format( $inv['purged_tags'] ),
+            'last purge' => $when( $inv['last_purge'] ),
+        ) + $httpCache['figures'];
+        $httpCache['settings'] = array(
+            'CachedSiteAccesses' => implode( ', ', (array)$hcIni->variable( 'HttpCacheSettings', 'CachedSiteAccesses' ) ),
+            'hosts' => implode( ', ', array_keys( (array)$hcContract->config['hosts'] ) ),
+            'MaxAge' => (int)$hcContract->config['maxAge'] . ' s',
+            'ContentChangePurges' => (string)$hcIni->variable( 'HttpCacheSettings', 'ContentChangePurges' ),
+            'sessions' => $hcContract->config['sessionSavePath'] !== ''
+                ? ezpI18n::tr( 'design/admin/setup/info', 'files (signed-in visitors cached)' )
+                : ezpI18n::tr( 'design/admin/setup/info', 'not readable before the kernel (signed-in visitors not served early)' ),
+            'APCu' => ( $hcContract->config['apcu'] ? 'on' : 'off' ) . ( $stats === null ? ' (' . ezpI18n::tr( 'design/admin/setup/info', 'not usable in this PHP' ) . ')' : '' ),
+            'ProxyHeaders' => $hcContract->config['proxyHeaders'] ? 'xkey, Surrogate-Key' : 'off',
+            'MaxBodySize' => number_format( $maxBody / 1048576, 1 ) . ' MB',
+        );
+    }
+}
+$tpl->setVariable( 'http_cache', $httpCache );
 $tpl->setVariable( 'engine_info', $engineInfo );
 $tpl->setVariable( 'webserver_info', $webserverInfo );
 $tpl->setVariable( 'database_info', $db->databaseName() );

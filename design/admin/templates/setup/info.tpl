@@ -230,13 +230,13 @@
 {if $velocity_info}
 <table class="list" cellspacing="0">
 <tr>
-    <th><label>{'Velocity'|i18n( 'design/admin/setup/info' )}: {$velocity_info.engine|wash} ({$velocity_info.role|wash})</label></th>
+    <th><label>{$velocity_info.brand|wash} &mdash; {$velocity_info.engine_name|wash}</label></th>
 </tr>
 <tr>
 <td>
     <div class="block">
         <label>{'Engine'|i18n( 'design/admin/setup/info' )}:</label>
-        {$velocity_info.engine|wash} &mdash; {$velocity_info.role_text|wash}.
+        {$velocity_info.engine_name|wash} (<code>{$velocity_info.engine|wash}</code>) &mdash; {$velocity_info.role_text|wash}.
         {if $velocity_info.is_default}
             {'It is the default engine ([ServerSettings] Engine), which exp:velocity start uses without --engine.'|i18n( 'design/admin/setup/info' )}
         {else}
@@ -301,8 +301,13 @@
 
     {if $velocity_info.others}
     <div class="block">
-        <small>{'Also running from this installation (a test setup; a site runs one engine)'|i18n( 'design/admin/setup/info' )}:
-        {foreach $velocity_info.others as $other}{$other|wash}{delimiter}, {/delimiter}{/foreach}.</small>
+        <label>{'Other engines running'|i18n( 'design/admin/setup/info' )}:</label>
+        {foreach $velocity_info.others as $other}
+            {$other.name|wash} (<code>{$other.engine|wash}</code>, {$other.role|wash})
+            {foreach $other.urls as $url}<a href="{$url|wash}">{$url|wash}</a>{delimiter} {'and'|i18n( 'design/admin/setup/info' )} {/delimiter}{/foreach}
+            &mdash; <small>{'stop it with'|i18n( 'design/admin/setup/info' )} <code>exp:velocity stop --engine={$other.engine|wash}</code></small>{delimiter}<br />{/delimiter}
+        {/foreach}
+        <br /><small>{'Started from this installation as well. A site is served by one engine; another one running is usually left from a test or a benchmark.'|i18n( 'design/admin/setup/info' )}</small>
     </div>
     {/if}
 </td>
@@ -405,6 +410,85 @@
         {$engine_info.phar_readonly|wash}
     </div>
 
+</td>
+</tr>
+</table>
+{/if}
+
+{if $http_cache}
+<table class="list" cellspacing="0" id="http-cache">
+<tr>
+    <th><label>{'HTTP cache (role-aware)'|i18n( 'design/admin/setup/info' )}</label></th>
+</tr>
+<tr>
+<td style="padding: 0.6em 1em;">
+    <div style="margin-bottom: 0.5em;">
+        <strong style="font-size: 1.1em;">{'Whole pages, per permission context'|i18n( 'design/admin/setup/info' )}</strong>
+        &nbsp;
+        {if $http_cache.enabled|not}
+            <span style="padding: 1px 7px; border-radius: 9px; background: #e0e0e0; color: #555; font-size: 0.85em;">{'disabled'|i18n( 'design/admin/setup/info' )}</span>
+            <br /><small>{'Switch it on with Enabled=enabled in settings/httpcache.ini (an override); every page is rendered until then.'|i18n( 'design/admin/setup/info' )}</small>
+        {elseif $http_cache.started|not}
+            <span style="padding: 1px 7px; border-radius: 9px; background: #fbe3c8; color: #8a4b00; font-size: 0.85em;">{'enabled, nothing stored yet'|i18n( 'design/admin/setup/info' )}</span>
+            <br /><small>{'The first page requested on a cached siteaccess starts it.'|i18n( 'design/admin/setup/info' )}</small>
+        {else}
+            <span style="padding: 1px 7px; border-radius: 9px; background: #d8f0d8; color: #1e6b1e; font-size: 0.85em;">{'enabled'|i18n( 'design/admin/setup/info' )}</span>
+        {/if}
+    </div>
+
+    {if $http_cache.message}
+    <div style="margin: 0.4em 0; padding: 0.4em 0.7em; border-radius: 4px; background: #eef6ee; color: #1e6b1e;"><small>{$http_cache.message|wash}</small></div>
+    {/if}
+
+    {if $http_cache.started}
+    {if $http_cache.bars}
+    <table cellspacing="0" style="width: 100%; margin-bottom: 0.4em;">
+    {foreach $http_cache.bars as $bar}
+    <tr>
+        <td style="width: 7.5em; padding: 2px 0; white-space: nowrap;"><small>{$bar.label|i18n( 'design/admin/setup/info' )}</small></td>
+        <td style="padding: 2px 0.6em 2px 0;">
+            {def $level=cond( ge( $bar.percent, 90 ), '#4a9d4a', ge( $bar.percent, 60 ), '#d99a26', '#c9483b' )}
+            <div style="background: #e6e6e6; border-radius: 3px; height: 9px; overflow: hidden;">
+                <div style="width: {$bar.percent}%; background: {$level}; height: 9px;"></div>
+            </div>
+            {undef $level}
+        </td>
+        <td style="width: 45%; padding: 2px 0; white-space: nowrap;"><small>{$bar.text|wash}</small></td>
+    </tr>
+    {/foreach}
+    </table>
+    {elseif $http_cache.stats|not}
+    <div><small>{'No server has counted yet: hit counts need APCu in the PHP that serves the site.'|i18n( 'design/admin/setup/info' )}</small></div>
+    {/if}
+
+    <div><small>{foreach $http_cache.figures as $name => $value}{$name|wash}: <strong>{$value|wash}</strong>{delimiter} &middot; {/delimiter}{/foreach}</small></div>
+
+    {if $http_cache.reasons}
+    <div style="margin-top: 0.5em;"><small>{'Why requests were not served from the cache'|i18n( 'design/admin/setup/info' )}:</small></div>
+    <table cellspacing="0" style="width: 100%; max-width: 40em;">
+    {foreach $http_cache.reasons as $r}
+    <tr>
+        <td style="width: 14em; padding: 1px 0; white-space: nowrap;"><small><code>{$r.reason|wash}</code></small></td>
+        <td style="padding: 1px 0.6em 1px 0;">
+            <div style="background: #e6e6e6; border-radius: 3px; height: 7px; overflow: hidden;"><div style="width: {$r.percent}%; background: #8a9bb0; height: 7px;"></div></div>
+        </td>
+        <td style="width: 6em; padding: 1px 0; text-align: right;"><small>{$r.count|wash}</small></td>
+    </tr>
+    {/foreach}
+    </table>
+    {/if}
+
+    <div style="margin-top: 0.4em; color: #666;"><small>{foreach $http_cache.settings as $name => $value}<code>{$name|wash}</code> {$value|wash}{delimiter} &middot; {/delimiter}{/foreach}</small></div>
+    <div style="color: #666;"><small><code>{$http_cache.dir|wash}</code></small></div>
+
+    {if $can_flush_caches}
+    <form method="post" action={'/setup/info'|ezurl} style="margin-top: 0.7em;">
+        <button type="submit" class="button" name="HttpCacheAction" value="purge" onclick="return confirm( '{'Purge every cached page?'|i18n( 'design/admin/setup/info' )|wash( javascript )}' );">{'Purge all pages'|i18n( 'design/admin/setup/info' )}</button>
+        <button type="submit" class="button" name="HttpCacheAction" value="gc">{'Remove dead entries'|i18n( 'design/admin/setup/info' )}</button>
+        {if $http_cache.stats}<button type="submit" class="button" name="HttpCacheAction" value="reset">{'Reset counters'|i18n( 'design/admin/setup/info' )}</button>{/if}
+    </form>
+    {/if}
+    {/if}
 </td>
 </tr>
 </table>
