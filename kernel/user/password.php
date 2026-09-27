@@ -61,6 +61,10 @@ if ( $http->hasPostVariable( "OKButton" ) )
     {
         $confirmPassword = $http->postVariable( "confirmPassword" );
     }
+    // A form can post any of these as an array; treat that as not given
+    if ( isset( $oldPassword ) && !is_string( $oldPassword ) ) $oldPassword = "";
+    if ( isset( $newPassword ) && !is_string( $newPassword ) ) $newPassword = "";
+    if ( isset( $confirmPassword ) && !is_string( $confirmPassword ) ) $confirmPassword = "";
 
     $login = $user->attribute( "login" );
     $type = $user->attribute( "password_hash_type" );

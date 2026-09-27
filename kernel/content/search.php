@@ -70,6 +70,8 @@ $searchText = '';
 if ( $http->hasVariable( "SearchText" ) )
 {
     $searchText = $http->variable( "SearchText" );
+    // A form or link can pass the text as an array; treat that as no text
+    if ( !is_string( $searchText ) ) $searchText = "";
 }
 
 $searchSectionID = -1;

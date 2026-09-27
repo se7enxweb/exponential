@@ -43,6 +43,10 @@ if ( $Module->isCurrentAction( 'Login' ) and
     $userLogin = $Module->actionParameter( 'UserLogin' );
     $userPassword = $Module->actionParameter( 'UserPassword' );
     $userRedirectURI = $Module->actionParameter( 'UserRedirectURI' );
+    // A form can post any of these as an array; treat that as not given
+    if ( !is_string( $userLogin ) ) $userLogin = '';
+    if ( !is_string( $userPassword ) ) $userPassword = '';
+    if ( !is_string( $userRedirectURI ) ) $userRedirectURI = '';
 
     if ( trim( $userRedirectURI ) == "" )
     {
@@ -50,7 +54,8 @@ if ( $Module->isCurrentAction( 'Login' ) and
         $requireUserLogin = ( $ini->variable( "SiteAccessSettings", "RequireUserLogin" ) == "true" );
         if ( !$requireUserLogin )
         {
-            $userRedirectURI = trim( $http->postVariable( 'RedirectURI', '' ) );
+            $userRedirectURI = $http->postVariable( 'RedirectURI', '' );
+            $userRedirectURI = is_string( $userRedirectURI ) ? trim( $userRedirectURI ) : '';
             if ( empty( $userRedirectURI ) )
             {
                 $userRedirectURI = $http->sessionVariable( 'LastAccessesURI', '/' );

@@ -2246,6 +2246,11 @@ WHERE user_id = '" . $userID . "' AND
      */
     private static function trimAuthString( $string )
     {
+        // A login form can post the name or password as an array
+        if ( !is_string( $string ) )
+        {
+            return is_scalar( $string ) ? (string)$string : '';
+        }
         if ( strlen( $string ) <= self::AUTH_STRING_MAX_LENGTH )
         {
             return $string;

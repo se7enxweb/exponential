@@ -99,6 +99,8 @@ if ( $module->isCurrentAction( "Generate" ) )
     if ( $module->hasActionParameter( "Email" ) )
     {
         $email = $module->actionParameter( "Email" );
+        // A form can post the address as an array; treat that as not given
+        if ( !is_string( $email ) ) $email = "";
         if ( trim( $email ) != "" )
         {
             $users = eZPersistentObject::fetchObjectList( eZUser::definition(),

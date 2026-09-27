@@ -9,15 +9,23 @@
 $Module = $Params['Module'];
 $http = eZHTTPTool::instance();
 
-$hash = trim( $http->hasPostVariable( 'Hash' ) ? $http->postVariable( 'Hash' ) : $Params['Hash'] );
-$mainNodeID = (int) $http->hasPostVariable( 'MainNodeID' ) ? $http->postVariable( 'MainNodeID' ) : $Params['MainNodeID'];
+$hash = $http->hasPostVariable( 'Hash' ) ? $http->postVariable( 'Hash' ) : $Params['Hash'];
+$hash = is_string( $hash ) ? trim( $hash ) : '';
+$mainNodeID = (int) ( $http->hasPostVariable( 'MainNodeID' ) ? $http->postVariable( 'MainNodeID' ) : $Params['MainNodeID'] );
 
 // Prepend or append the hash string with a salt, and md5 the resulting hash
 // Example: use is login name as salt, and a 'secret password' as hash sent to the user
+// A salt posted as an array counts as an empty salt
 if ( $http->hasPostVariable( 'HashSaltPrepend' ) )
-    $hash =  md5( trim( $http->postVariable( 'HashSaltPrepend' ) ) . $hash );
+{
+    $salt = $http->postVariable( 'HashSaltPrepend' );
+    $hash =  md5( ( is_string( $salt ) ? trim( $salt ) : '' ) . $hash );
+}
 else if ( $http->hasPostVariable( 'HashSaltAppend' ) )
-    $hash =  md5( $hash . trim( $http->postVariable( 'HashSaltAppend' ) ) );
+{
+    $salt = $http->postVariable( 'HashSaltAppend' );
+    $hash =  md5( $hash . ( is_string( $salt ) ? trim( $salt ) : '' ) );
+}
 
 
 // Check if key exists
