@@ -514,6 +514,7 @@ c29e3a846853ed8a4a3d4f91c4874af3  design/admin/templates/setup/extensions.tpl
 9a1144de0b4042a411f4374ddf2d6050  design/admin/templates/setup/handlerextension.tpl
 179e262a6e32788b4cd95afaa0679dc9  design/admin/templates/setup/info.tpl
 9728ae823c710f8bdf558810fe857aa5  design/admin/templates/setup/kerneloverride.tpl
+e58e904925d572f60db08d42a334cc1c  design/admin/templates/setup/maintenance.tpl
 7f9d1052a5207dc44c8791f26b779c3c  design/admin/templates/setup/moduleextension.tpl
 377b53b0f333488da73e7236059512a4  design/admin/templates/setup/modulewizard.tpl
 022acacb19a2a8ae7977e07017c790da  design/admin/templates/setup/preload.tpl
@@ -6056,8 +6057,9 @@ b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
 004141a5f38e662b67e4b8f8408a9900  kernel/setup/handlerextension.php
 b30401dde083052aa9f3547a9fbfd51c  kernel/setup/info.php
 cb0b8c124634b99b49697c6607147d5f  kernel/setup/kerneloverride.php
+82cdef025f12746a8db6f8d3454ab5ae  kernel/setup/maintenance.php
 18ecee0d07126e49f164552b002eaf7e  kernel/setup/menuconfig.php
-e137a98c6d30a14075c9e451027421b9  kernel/setup/module.php
+cc1ef66f1dd03158dde40d3504b33847  kernel/setup/module.php
 814782eb26cbb236f91c42ecbe7ff7b2  kernel/setup/moduleextension.php
 24983240c441790c403f6eb4b03822c6  kernel/setup/modulewizard.php
 846edf76592a6173514e0b302ea5274b  kernel/setup/preload.php
@@ -6467,7 +6469,7 @@ fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 27207d9d242ebaf416412d9095db7b34  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
-12a6a4f4e62447ee997c52c331b4c975  settings/menu.ini
+d679ae2bc768e1a2f4da2e2c9a8ff60e  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 a7fb3c12293dec6555c38abfc0c4d356  settings/module.ini
 b3f39c844e6994aafc9f63caabef5779  settings/notification.ini
