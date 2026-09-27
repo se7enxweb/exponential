@@ -31,10 +31,45 @@ class eZDateType extends eZDataType
                            array( 'serialize_supported' => true ) );
     }
 
+    /*!
+     \private
+     \return array( year, month, day ) as posted for the attribute \a $id, each
+     trimmed, or null where the field is not a string: a request can post an array
+     under any name (name[]=x), and checkdate() and mktime() refuse one.
+    */
+    static function postedDate( $http, $base, $id )
+    {
+        $parts = array();
+        foreach ( array( 'year', 'month', 'day' ) as $part )
+        {
+            $value = $http->postVariable( $base . '_date_' . $part . '_' . $id );
+            $parts[] = is_scalar( $value ) ? trim( (string)$value ) : null;
+        }
+        return $parts;
+    }
+
+    /*!
+     \private
+     \return true if \a $day, \a $month and \a $year are a real date written in
+     digits. checkdate() takes int parameters, so "abc" was a TypeError and "12abc"
+     or "1.5" a warning; five digits is already more than checkdate() allows.
+    */
+    static function isValidDate( $day, $month, $year )
+    {
+        foreach ( array( $day, $month, $year ) as $value )
+        {
+            if ( !is_string( $value ) or !preg_match( '/^[0-9]{1,5}$/', $value ) )
+                return false;
+        }
+        return checkdate( (int)$month, (int)$day, (int)$year );
+    }
+
 
     function validateDateTimeHTTPInput( $day, $month, $year, $contentObjectAttribute )
     {
-        $state = eZDateTimeValidator::validateDate( $day, $month, $year );
+        $state = self::isValidDate( $day, $month, $year )
+               ? eZDateTimeValidator::validateDate( (int)$day, (int)$month, (int)$year )
+               : eZInputValidator::STATE_INVALID;
         if ( $state == eZInputValidator::STATE_INVALID )
         {
             $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
@@ -55,9 +90,7 @@ class eZDateType extends eZDataType
              $http->hasPostVariable( $base . '_date_month_' . $contentObjectAttribute->attribute( 'id' ) ) and
              $http->hasPostVariable( $base . '_date_day_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
-            $year  = $http->postVariable( $base . '_date_year_' . $contentObjectAttribute->attribute( 'id' ) );
-            $month = $http->postVariable( $base . '_date_month_' . $contentObjectAttribute->attribute( 'id' ) );
-            $day   = $http->postVariable( $base . '_date_day_' . $contentObjectAttribute->attribute( 'id' ) );
+            list( $year, $month, $day ) = self::postedDate( $http, $base, $contentObjectAttribute->attribute( 'id' ) );
 
             if ( $year == '' or $month == '' or $day == '' )
             {
@@ -96,20 +129,18 @@ class eZDateType extends eZDataType
              $http->hasPostVariable( $base . '_date_day_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
 
-            $year  = $http->postVariable( $base . '_date_year_' . $contentObjectAttribute->attribute( 'id' ) );
-            $month = $http->postVariable( $base . '_date_month_' . $contentObjectAttribute->attribute( 'id' ) );
-            $day   = $http->postVariable( $base . '_date_day_' . $contentObjectAttribute->attribute( 'id' ) );
+            list( $year, $month, $day ) = self::postedDate( $http, $base, $contentObjectAttribute->attribute( 'id' ) );
             $contentClassAttribute = $contentObjectAttribute->contentClassAttribute();
 
             if ( ( $year == '' and $month == '' and $day == '' ) or
-                 !checkdate( $month, $day, $year ) )
+                 !self::isValidDate( $day, $month, $year ) )
             {
                 $stamp = null;
             }
             else
             {
                 $date = new eZDate();
-                $date->setMDY( $month, $day, $year );
+                $date->setMDY( (int)$month, (int)$day, (int)$year );
                 $stamp = eZTimestamp::getUtcTimestampFromLocalTimestamp( $date->timeStamp() );
             }
 
@@ -125,9 +156,7 @@ class eZDateType extends eZDataType
              $http->hasPostVariable( $base . '_date_month_' . $contentObjectAttribute->attribute( 'id' ) ) and
              $http->hasPostVariable( $base . '_date_day_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
-            $year  = $http->postVariable( $base . '_date_year_' . $contentObjectAttribute->attribute( 'id' ) );
-            $month = $http->postVariable( $base . '_date_month_' . $contentObjectAttribute->attribute( 'id' ) );
-            $day   = $http->postVariable( $base . '_date_day_' . $contentObjectAttribute->attribute( 'id' ) );
+            list( $year, $month, $day ) = self::postedDate( $http, $base, $contentObjectAttribute->attribute( 'id' ) );
             $classAttribute = $contentObjectAttribute->contentClassAttribute();
 
             if ( $year == '' or $month == '' or $day == '' )
@@ -161,20 +190,18 @@ class eZDateType extends eZDataType
              $http->hasPostVariable( $base . '_date_day_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
 
-            $year  = $http->postVariable( $base . '_date_year_' . $contentObjectAttribute->attribute( 'id' ) );
-            $month = $http->postVariable( $base . '_date_month_' . $contentObjectAttribute->attribute( 'id' ) );
-            $day   = $http->postVariable( $base . '_date_day_' . $contentObjectAttribute->attribute( 'id' ) );
+            list( $year, $month, $day ) = self::postedDate( $http, $base, $contentObjectAttribute->attribute( 'id' ) );
             $contentClassAttribute = $contentObjectAttribute->contentClassAttribute();
 
             if ( ( $year == '' and $month == '' and $day == '' ) or
-                 !checkdate( $month, $day, $year ) )
+                 !self::isValidDate( $day, $month, $year ) )
             {
                 $stamp = null;
             }
             else
             {
                 $date = new eZDate();
-                $date->setMDY( $month, $day, $year );
+                $date->setMDY( (int)$month, (int)$day, (int)$year );
                 $stamp = eZTimestamp::getUtcTimestampFromLocalTimestamp( $date->timeStamp() );
             }
 
@@ -231,7 +258,9 @@ class eZDateType extends eZDataType
         $default = $base . "_ezdate_default_" . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $default ) )
         {
-            $defaultValue = $http->postVariable( $default );
+            // Only "empty" (0) and "current date" (1) exist; anything else posted
+            // (an array, a word) meant an int(11) column receiving it as it was
+            $defaultValue = $http->postVariable( $default ) == self::DEFAULT_CURRENT_DATE ? self::DEFAULT_CURRENT_DATE : self::DEFAULT_EMTPY;
             $classAttribute->setAttribute( self::DEFAULT_FIELD,  $defaultValue );
         }
         return true;
@@ -270,6 +299,11 @@ class eZDateType extends eZDataType
         if ( empty( $string ) )
         {
             $string = null;
+        }
+        // toString() writes the timestamp; anything else was stored as 0 (1970)
+        else if ( filter_var( trim( (string)$string ), FILTER_VALIDATE_INT ) === false )
+        {
+            return false;
         }
 
         return $contentObjectAttribute->setAttribute( 'data_int', $string );
@@ -322,6 +356,9 @@ class eZDateType extends eZDataType
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
         $defaultNode = $attributeParametersNode->getElementsByTagName( 'default-value' )->item( 0 );
+        // A package without the element keeps the class attribute's default
+        if ( !$defaultNode instanceof DOMElement )
+            return;
         $defaultValue = strtolower( $defaultNode->getAttribute( 'type' ) );
         switch ( $defaultValue )
         {
@@ -363,9 +400,10 @@ class eZDateType extends eZDataType
         $dateNode = $attributeNode->getElementsByTagName( 'date' )->item( 0 );
         if ( is_object( $dateNode ) )
         {
-            $timestamp = eZTimestamp::getUtcTimestampFromLocalTimestamp(
-                eZDateUtils::textToDate( $dateNode->textContent )
-            );
+            // strtotime() gives false for a date it cannot read, which went on to
+            // be stored as 0, 1 January 1970; an unreadable date is no date
+            $localTimestamp = eZDateUtils::textToDate( $dateNode->textContent );
+            $timestamp = $localTimestamp === false ? null : eZTimestamp::getUtcTimestampFromLocalTimestamp( $localTimestamp );
             $objectAttribute->setAttribute( 'data_int', $timestamp );
         }
     }
