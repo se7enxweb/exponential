@@ -335,6 +335,21 @@ class eZSerializedObjectNameList
         if ( is_object( $language ) )
             $languageLocale = $language->attribute( 'locale' );
 
+        // No prioritized language yet: the setup wizard creates classes and
+        // attributes before the site's languages exist, and
+        // prioritizedLanguages() keeps that empty answer for the request. A
+        // false locale stored the name under key 0 with always-available false,
+        // which no language lookup finds, so the admin showed the name blank.
+        // The configured content locale is the language the site will have.
+        if ( !$languageLocale )
+        {
+            $ini = eZINI::instance();
+            if ( $ini->hasVariable( 'RegionalSettings', 'ContentObjectLocale' ) )
+                $languageLocale = (string)$ini->variable( 'RegionalSettings', 'ContentObjectLocale' );
+            if ( !$languageLocale )
+                $languageLocale = 'eng-GB';
+        }
+
         return $languageLocale;
     }
 

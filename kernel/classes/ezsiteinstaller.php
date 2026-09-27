@@ -446,13 +446,17 @@ class eZSiteInstaller
             $isRequired   = isset( $attributeInfo['is_required']   ) ? $attributeInfo['is_required'] : 0;
             $isSearchable = isset( $attributeInfo['is_searchable'] ) ? $attributeInfo['is_searchable'] : 0;
             $attrContent  = isset( $attributeInfo['content'] ) ? $attributeInfo['content'] : false;
+            // The language the name is stored in. Without it the attribute is
+            // named in the default language, which does not exist yet while
+            // the setup wizard runs.
+            $attrLanguage = isset( $attributeInfo['language'] ) ? $attributeInfo['language'] : false;
 
             $attrCreateInfo = array( 'identifier' => $classAttributeIdentifier,
                                      'name' => $classAttributeName,
                                      'can_translate' => $canTranslate,
                                      'is_required' => $isRequired,
                                      'is_searchable' => $isSearchable );
-            $newAttribute = eZContentClassAttribute::create( $classID, $datatype, $attrCreateInfo  );
+            $newAttribute = eZContentClassAttribute::create( $classID, $datatype, $attrCreateInfo, $attrLanguage );
 
             $dataType = $newAttribute->dataType();
             $dataType->initializeClassAttribute( $newAttribute );

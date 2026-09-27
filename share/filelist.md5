@@ -11857,12 +11857,12 @@ b7521661108b60bfe086f1a48414befe  kernel/classes/ezrssexportitem.php
 64e2b659922318d5fe6e6068990811d2  kernel/classes/ezsearch.php
 0ebaac67e1d993cc4328759945bfd1cc  kernel/classes/ezsearchlog.php
 2444f73c4c461d115c916ac2d4501c5b  kernel/classes/ezsection.php
-d6d26c2562e02520eca17733db5b963c  kernel/classes/ezserializedobjectnamelist.php
+cdff85f62216baf577f2f14e1ae2f76a  kernel/classes/ezserializedobjectnamelist.php
 c0013eff31f2c8299cf617f72cdaa7ba  kernel/classes/ezshippingmanager.php
 adec8ad3eceb685bca7ec2d30a461d0c  kernel/classes/ezshopaccounthandler.php
 374f146bc54d91659e649c58b855d598  kernel/classes/ezsiteaccess.php
 0451c91cbb6e4729fd7ff335fccabb3f  kernel/classes/ezsitedata.php
-743b143583cde68f0d60a8dda84705d1  kernel/classes/ezsiteinstaller.php
+28fb5ecfe3307bf37b7a66cb25e0bdb0  kernel/classes/ezsiteinstaller.php
 61311ca5defdfe70b1e0ef2873d3901b  kernel/classes/ezsslzone.php
 f4ff218021bf8c877d07da71966eda91  kernel/classes/ezstaticcache.php
 4d3adbbb193d7493dda515910870c29a  kernel/classes/ezsubtreecache.php
