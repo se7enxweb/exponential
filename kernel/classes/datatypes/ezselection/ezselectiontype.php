@@ -61,11 +61,18 @@ class eZSelectionType extends eZDataType
         if ( $http->hasPostVariable( $base . "_ezselection_option_name_array_" . $classAttributeID ) )
         {
             $nameArray = $http->postVariable( $base . "_ezselection_option_name_array_" . $classAttributeID );
+            if ( !is_array( $nameArray ) )
+                $nameArray = array();
 
-            // Fill in new names for options
+            // Fill in new names for options. An option the form did not post a name
+            // for (a new option added in another window, a hand-made request) keeps
+            // its name, and a name must be text: DOMElement::setAttribute() refuses
+            // an array with a TypeError
             foreach ( array_keys( $currentOptions ) as $key )
             {
-                $currentOptions[$key]['name'] = $nameArray[$currentOptions[$key]['id']];
+                $name = $nameArray[$currentOptions[$key]['id']] ?? null;
+                if ( is_scalar( $name ) )
+                    $currentOptions[$key]['name'] = (string)$name;
             }
             $hasPostData = true;
 
@@ -90,6 +97,9 @@ class eZSelectionType extends eZDataType
             if ( $http->hasPostVariable( $base . "_ezselection_option_remove_array_". $classAttributeID ) )
             {
                 $removeArray = $http->postVariable( $base . "_ezselection_option_remove_array_". $classAttributeID );
+                // A string here would have its characters read as option ids
+                if ( !is_array( $removeArray ) )
+                    $removeArray = array();
 
                 foreach ( array_keys( $currentOptions ) as $key )
                 {
@@ -134,6 +144,36 @@ class eZSelectionType extends eZDataType
         return true;
     }
     /*!
+     \private
+     \return the option ids in \a $posted (the posted _ezselect_selected_array_)
+     that are options of \a $classAttribute, in the posted order, once each, and
+     only the first for a single selection. The ids are stored joined by '-', so
+     a posted "1-2", an id no option has, or a nested array (implode() warned
+     "Array to string conversion" and stored "Array") must not reach data_text.
+    */
+    function selectedOptionIDs( $posted, $classAttribute )
+    {
+        if ( !is_array( $posted ) )
+            return array();
+        $content = $this->classAttributeContent( $classAttribute );
+        $known = array();
+        foreach ( $content['options'] as $option )
+            $known[(string)$option['id']] = true;
+        $ids = array();
+        foreach ( $posted as $id )
+        {
+            if ( !is_scalar( $id ) )
+                continue;
+            $id = (string)$id;
+            if ( isset( $known[$id] ) and !in_array( $id, $ids, true ) )
+                $ids[] = $id;
+        }
+        if ( !$content['is_multiselect'] )
+            $ids = array_slice( $ids, 0, 1 );
+        return $ids;
+    }
+
+    /*!
      Validates input on content object level
      \return eZInputValidator::STATE_ACCEPTED or eZInputValidator::STATE_INVALID if
              the values are accepted or not
@@ -145,6 +185,10 @@ class eZSelectionType extends eZDataType
         if ( $http->hasPostVariable( $base . '_ezselect_selected_array_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
             $data = $http->postVariable( $base . '_ezselect_selected_array_' . $contentObjectAttribute->attribute( 'id' ) );
+            // Only what fetching will store counts: a selection of no existing
+            // option is no selection, and a required one is then missing
+            if ( !$this->selectedOptionIDs( $data, $classAttribute ) )
+                $data = "";
 
             if ( $data == "" )
             {
@@ -174,7 +218,7 @@ class eZSelectionType extends eZDataType
         if ( $http->hasPostVariable( $base . '_ezselect_selected_array_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
             $selectOptions = $http->postVariable( $base . '_ezselect_selected_array_' . $contentObjectAttribute->attribute( 'id' ) );
-            $idString = ( is_array( $selectOptions ) ? implode( '-', $selectOptions ) : "" );
+            $idString = implode( '-', $this->selectedOptionIDs( $selectOptions, $contentObjectAttribute->contentClassAttribute() ) );
             $contentObjectAttribute->setAttribute( 'data_text', $idString );
             return true;
         }
@@ -186,6 +230,8 @@ class eZSelectionType extends eZDataType
         if ( $http->hasPostVariable( $base . '_ezselect_selected_array_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
             $data = $http->postVariable( $base . '_ezselect_selected_array_' . $contentObjectAttribute->attribute( 'id' ) );
+            if ( !$this->selectedOptionIDs( $data, $contentObjectAttribute->contentClassAttribute() ) )
+                $data = "";
 
             if ( $data == "" && $contentObjectAttribute->validateIsRequired() )
             {
@@ -211,7 +257,7 @@ class eZSelectionType extends eZDataType
         if ( $http->hasPostVariable( $base . '_ezselect_selected_array_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
             $selectOptions = $http->postVariable( $base . '_ezselect_selected_array_' . $contentObjectAttribute->attribute( 'id' ) );
-            $idString = ( is_array( $selectOptions ) ? implode( '-', $selectOptions ) : "" );
+            $idString = implode( '-', $this->selectedOptionIDs( $selectOptions, $contentObjectAttribute->contentClassAttribute() ) );
             $collectionAttribute->setAttribute( 'data_text', $idString );
             return true;
         }
@@ -236,7 +282,8 @@ class eZSelectionType extends eZDataType
     */
     function objectAttributeContent( $contentObjectAttribute )
     {
-        $idString = explode( '-', $contentObjectAttribute->attribute( 'data_text' ) );
+        // data_text is NULL for an attribute never stored with a selection
+        $idString = explode( '-', (string)$contentObjectAttribute->attribute( 'data_text' ) );
         return $idString;
     }
 
@@ -250,7 +297,11 @@ class eZSelectionType extends eZDataType
         $optionArray = array();
         if ( $xmlString != '' )
         {
+            // Broken stored XML is no options, not a page of libxml warnings
+            $useInternalErrors = libxml_use_internal_errors( true );
             $success = $dom->loadXML( $xmlString );
+            libxml_clear_errors();
+            libxml_use_internal_errors( $useInternalErrors );
             if ( $success )
             {
                 $options = $dom->getElementsByTagName( 'option' );
@@ -377,7 +428,7 @@ class eZSelectionType extends eZDataType
 
     function sortKey( $contentObjectAttribute )
     {
-        return strtolower( $contentObjectAttribute->attribute( 'data_text' ) );
+        return strtolower( (string)$contentObjectAttribute->attribute( 'data_text' ) );
     }
 
     function sortKeyType()
@@ -404,13 +455,18 @@ class eZSelectionType extends eZDataType
         $xmlString = $classAttribute->attribute( 'data_text5' );
 
         $selectionDom = new DOMDocument( '1.0', 'utf-8' );
-        $success = $selectionDom->loadXML( $xmlString );
-        $domRoot = $selectionDom->documentElement;
-        $options = $domRoot->getElementsByTagName( 'options' )->item( 0 );
+        $useInternalErrors = libxml_use_internal_errors( true );
+        $success = $xmlString != '' && $selectionDom->loadXML( $xmlString );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useInternalErrors );
+        $domRoot = $success ? $selectionDom->documentElement : null;
+        $options = $domRoot ? $domRoot->getElementsByTagName( 'options' )->item( 0 ) : null;
 
         $dom = $attributeParametersNode->ownerDocument;
 
-        $importedOptionsNode = $dom->importNode( $options, true );
+        // A class attribute with no (or broken) option XML exports an empty
+        // <options/>, where it used to stop the export with a fatal error
+        $importedOptionsNode = $options ? $dom->importNode( $options, true ) : $dom->createElement( 'options' );
         $attributeParametersNode->appendChild( $importedOptionsNode );
         $isMultiSelectNode = $dom->createElement( 'is-multiselect' );
         $isMultiSelectNode->appendChild( $dom->createTextNode( $isMultipleSelection ) );
@@ -425,13 +481,15 @@ class eZSelectionType extends eZDataType
         $root = $doc->createElement( 'ezselection' );
         $doc->appendChild( $root );
 
-        $importedOptions = $doc->importNode( $options, true );
+        // A package without <options> imports a selection without options
+        $importedOptions = $options ? $doc->importNode( $options, true ) : $doc->createElement( 'options' );
         $root->appendChild( $importedOptions );
 
         $xml = $doc->saveXML();
         $classAttribute->setAttribute( 'data_text5', $xml );
 
-        if ( $attributeParametersNode->getElementsByTagName( 'is-multiselect' )->item( 0 )->textContent == 0 )
+        $isMultiSelectNode = $attributeParametersNode->getElementsByTagName( 'is-multiselect' )->item( 0 );
+        if ( !$isMultiSelectNode or $isMultiSelectNode->textContent == 0 )
             $classAttribute->setAttribute( 'data_int1', 0 );
         else
             $classAttribute->setAttribute( 'data_int1', 1 );

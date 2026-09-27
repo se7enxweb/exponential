@@ -20,10 +20,10 @@
 {section name=Option loop=$class_attribute.content.options}
 <tr>
     {* Remove. *}
-    <td><input type="checkbox" name="ContentClass_ezselection_option_remove_array_{$class_attribute.id}[{$Option:item.id}]" value="1" title="{'Select option for removal.'|i18n( 'design/standard/class/datatype' )}" /></td>
+    <td><input type="checkbox" name="ContentClass_ezselection_option_remove_array_{$class_attribute.id}[{$Option:item.id|wash}]" value="1" title="{'Select option for removal.'|i18n( 'design/standard/class/datatype' )}" /></td>
 
     {* Option. *}
-    <td><input class="box" type="text" name="ContentClass_ezselection_option_name_array_{$class_attribute.id}[{$Option:item.id}]" value="{$Option:item.name|wash}" /></td>
+    <td><input class="box" type="text" name="ContentClass_ezselection_option_name_array_{$class_attribute.id}[{$Option:item.id|wash}]" value="{$Option:item.name|wash}" /></td>
 </tr>
 {/section}
 </table>
