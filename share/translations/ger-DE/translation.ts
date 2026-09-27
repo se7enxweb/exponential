@@ -22444,6 +22444,37 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
 </context>
 <context>
+    <name>design/standard/error/formtoken</name>
+    <message>
+        <source>This form has expired</source>
+        <translation>Dieses Formular ist abgelaufen</translation>
+    </message>
+    <message>
+        <source>The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.</source>
+        <translation>Die Seite mit diesem Formular war lange geöffnet, oder das Formular wurde von einer anderen Seite aus gesendet. Zum Schutz Ihrer Daten wurde nichts gespeichert.</translation>
+    </message>
+    <message>
+        <source>Reload the form and send it again.</source>
+        <translation>Laden Sie das Formular neu und senden Sie es noch einmal ab.</translation>
+    </message>
+    <message>
+        <source>You may have been signed out in the meantime. If so, please sign in again.</source>
+        <translation>Möglicherweise wurden Sie in der Zwischenzeit abgemeldet. Melden Sie sich in diesem Fall bitte erneut an.</translation>
+    </message>
+    <message>
+        <source>Reload the form</source>
+        <translation>Formular neu laden</translation>
+    </message>
+    <message>
+        <source>Go to the front page</source>
+        <translation>Zur Startseite</translation>
+    </message>
+    <message>
+        <source>Go to the dashboard</source>
+        <translation>Zum Dashboard</translation>
+    </message>
+</context>
+<context>
     <name>design/standard/error/kernel</name>
     <message>
         <source>Access denied</source>

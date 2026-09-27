@@ -21380,6 +21380,37 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
 </context>
 <context>
+    <name>design/standard/error/formtoken</name>
+    <message>
+        <source>This form has expired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload the form and send it again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may have been signed out in the meantime. If so, please sign in again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload the form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Go to the front page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Go to the dashboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>design/standard/error/kernel</name>
     <message>
         <source>Access denied</source>
