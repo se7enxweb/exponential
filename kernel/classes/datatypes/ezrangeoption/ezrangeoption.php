@@ -161,6 +161,13 @@ class eZRangeOption
 
     function decodeXML( $xmlString )
     {
+        // Nothing stored yet reads as what its first save stores (start, stop
+        // and step 0, which the rule below makes a range of one value 0):
+        // read as an empty range instead, a saved empty attribute came back
+        // different from the unsaved one.
+        if ( trim( (string)$xmlString ) === '' )
+            $xmlString = '<?xml version="1.0" encoding="utf-8"?>' . "\n"
+                       . '<ezrangeoption start_value="0" stop_value="0" step_value="0"><name/></ezrangeoption>';
         $dom = self::loadDocument( $xmlString );
 
         if ( $dom )
