@@ -166,18 +166,28 @@ class expVelocityEnginesTest extends ezpTestCase
         foreach ( array( '/design/standard/stylesheets/core.css', '/var/site/storage/images/a/b.jpg',
                          '/extension/ezwebin/design/ezwebin/javascript/x.js', '/share/icons/crystal/a.png',
                          '/extension/sevenx_themes_media/design/media/fonts/inter.woff2',
-                         '/favicon.ico', '/robots.txt', '/sw.js', '/var/site/storage/original/image/logo.svg' ) as $path )
+                         '/favicon.ico', '/robots.txt', '/sw.js', '/var/site/storage/original/image/logo.svg',
+                         '/var/site/cache/public/javascript/x.js', '/var/storage/packages/7x/a/thumbnail.png',
+                         '/extension/explayouts_ui_api/design/standard/vendor/ace-editor/ace.js' ) as $path )
             $this->assertSame( 1, preg_match( $static, $path ), $path );
 
+        // Below var/ only what .htaccess_root serves: never scratch files,
+        // logs, caches, the database, or the package store beyond its previews.
         foreach ( array( '/settings/site.ini', '/settings/override/site.ini.append.php', '/var/storage/sqlite3/sqlite3.db',
                          '/autoload.php', '/kernel/classes/expvelocity.php', '/.git/config', '/composer.json',
                          '/var/site/cache/ini/x.php', '/bin/php/velocity-router.php', '/index.php',
-                         '/var/site/storage/original/application/contract.pdf', '/sw.js.bak' ) as $path )
+                         '/var/site/storage/original/application/contract.pdf', '/sw.js.bak',
+                         '/var/tmp/notes.txt', '/var/tmp/x.css', '/var/tmp/x.png', '/var/log/error.log',
+                         '/var/site/log/storage.log', '/var/cache/x.css', '/var/site/cache/template/compiled/x.php',
+                         '/var/storage/packages/7x/a/package.xml', '/var/storage/packages/7x/a/preview.svg',
+                         '/var/storage/packages/7x/a/design/standard/stylesheets/x.css',
+                         '/var/site/storage/original/image/x.php', '/var/site/storage/original/image/x.html',
+                         '/share/filelist.md5', '/extension/x/settings/x.css' ) as $path )
             $this->assertSame( 0, preg_match( $static, $path ), $path );
 
         // Listed directories, but never served: a script's source, dot paths.
         $never = '~' . expVelocity::NEVER_STATIC . '~';
-        foreach ( array( '/var/storage/packages/7x/a/settings/ini-site.php', '/var/storage/packages/7x/a/.cache/package.xml',
+        foreach ( array( '/var/site/storage/images/a/x.php', '/design/standard/stylesheets/.hidden.css',
                          '/design/standard/images/x.PHP', '/design/standard/images/x.phtml', '/design/standard/images/.htaccess' ) as $path )
         {
             $this->assertSame( 1, preg_match( $static, $path ), $path );

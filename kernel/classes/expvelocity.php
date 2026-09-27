@@ -63,16 +63,21 @@ class expVelocity
     );
 
     /**
-     * Paths served as files, straight from exponential's .htaccess_root, for
-     * the engines that route requests themselves (frankenphp, php): the
-     * design and extension assets, stored images, generated public caches,
-     * icons and package previews, the site's service worker (sw.js) and image
-     * originals (SVG images are served from there; other originals, such as
-     * protected uploads, stay behind the download view). Nothing else is ever
-     * handed out as a file,
-     * so settings/*.ini, var/storage/*.db and the kernel sources cannot be.
+     * Paths served as files, rule for rule the "- [L]" rules of
+     * .htaccess_root, for every engine: the pooled server
+     * (Q.web.static.paths), frankenphp and php. The design and extension
+     * assets, stored image aliases, generated public caches, icons, the
+     * image files among the originals (SVG images are served from there;
+     * other originals, such as protected uploads, stay behind the download
+     * view), the preview images of imported packages, and the service worker
+     * (sw.js). Nothing else is ever handed out as a file -- nothing else below
+     * var/ (var/tmp, var/log, the caches, the SQLite database, the rest of the
+     * package store), settings/*.ini, the kernel sources.
+     *
+     * Change it together with .htaccess_root and .htaccess_root_static, so
+     * that both web servers hand out the same files.
      */
-    const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/original/image/|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|svg|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|sw\.js$|w3c/p3p\.xml$)';
+    const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|sw\.js$|w3c/p3p\.xml$)';
 
     /**
      * What is never served as a file even below a STATIC_PATHS directory:
