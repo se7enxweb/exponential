@@ -50,6 +50,13 @@ class eZPackageType extends eZDataType
         if ( $http->hasPostVariable( $base . '_ezpackage_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
             $data = $http->postVariable( $base . '_ezpackage_data_text_' . $contentObjectAttribute->attribute( 'id' ) );
+            // The name is appended to the package repository path; one that
+            // could leave it (../, a slash, a NUL byte) or is not a string is not
+            // a package the form offered, and is not stored
+            if ( !self::isSafePackageName( $data ) )
+            {
+                return false;
+            }
 
             // Save in ini files if the package type is sitestyle.
             $classAttribute = $contentObjectAttribute->attribute( 'contentclass_attribute' );
@@ -58,6 +65,10 @@ class eZPackageType extends eZDataType
                 $package = eZPackage::fetch( $data );
                 if ( $package )
                 {
+                    // Written as before (an empty setting) when the package has
+                    // no such file, without the undefined variable warning
+                    $siteCSS = null;
+                    $classesCSS = null;
                     $fileList = $package->fileList( 'default' );
                     foreach ( array_keys( $fileList ) as $key )
                     {
@@ -75,6 +86,17 @@ class eZPackageType extends eZDataType
                     $currentSiteAccess = $http->hasPostVariable( 'CurrentSiteAccess' )
                                          ? $http->postVariable( 'CurrentSiteAccess' )
                                          : false;
+                    // The siteaccess becomes a directory under settings/siteaccess/
+                    // that design.ini.append.php is written to. Only one of the
+                    // configured siteaccesses (what the form lists) is taken: a
+                    // posted "../../x" wrote an ini file anywhere the web server
+                    // can write. Anything else is not saved at all.
+                    if ( $currentSiteAccess !== false and $currentSiteAccess !== 'Global' and
+                         !self::isAvailableSiteAccess( $currentSiteAccess ) )
+                    {
+                        eZDebug::writeWarning( 'Ignoring a sitestyle for a siteaccess that is not configured', __METHOD__ );
+                        return false;
+                    }
                     $iniPath = 'settings/override';
                     if ( $currentSiteAccess != 'Global' and $currentSiteAccess !== false )
                     {
@@ -104,8 +126,9 @@ class eZPackageType extends eZDataType
         $siteINI = eZINI::instance();
         if ( $siteINI->hasVariable( 'FileSettings', 'CacheDir' ) )
         {
-            $cacheDir = $siteINI->variable( 'FileSettings', 'CacheDir' );
-            if ( $cacheDir[0] == "/" )
+            $cacheDir = (string)$siteINI->variable( 'FileSettings', 'CacheDir' );
+            // $cacheDir[0] raised a warning on PHP 8 when the setting is empty
+            if ( substr( $cacheDir, 0, 1 ) == "/" )
             {
                 $cacheDir = eZDir::path( array( $cacheDir ) );
             }
@@ -141,13 +164,15 @@ class eZPackageType extends eZDataType
         if ( $http->hasPostVariable( $packageTypeName ) )
         {
             $packageTypeValue = $http->postVariable( $packageTypeName );
-            $classAttribute->setAttribute( self::TYPE_FIELD, $packageTypeValue );
+            if ( is_string( $packageTypeValue ) )
+                $classAttribute->setAttribute( self::TYPE_FIELD, $packageTypeValue );
         }
         $packageViewModeName = $base . self::VIEW_MODE_VARIABLE . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $packageViewModeName ) )
         {
+            // The form offers 0 (combo box) and 1 (icon view)
             $packageViewModeValue = $http->postVariable( $packageViewModeName );
-            $classAttribute->setAttribute( self::VIEW_MODE_FIELD, $packageViewModeValue );
+            $classAttribute->setAttribute( self::VIEW_MODE_FIELD, ( is_string( $packageViewModeValue ) && trim( $packageViewModeValue ) === '1' ) ? 1 : 0 );
         }
         return true;
     }
@@ -158,6 +183,11 @@ class eZPackageType extends eZDataType
     function objectAttributeContent( $contentObjectAttribute )
     {
         $packageName = $contentObjectAttribute->attribute( "data_text" );
+        // eZPackage::fetch() appends the name to the repository path and reads
+        // the package.xml it finds there, so a stored name that leaves the
+        // repository is not looked up; there is no package by that name
+        if ( !self::isSafePackageName( $packageName ) )
+            return false;
         $package = eZPackage::fetch( $packageName );
         return $package;
     }
@@ -180,7 +210,8 @@ class eZPackageType extends eZDataType
 
     function hasObjectAttributeContent( $contentObjectAttribute )
     {
-        return trim( $contentObjectAttribute->attribute( 'data_text' ) ) != '';
+        // data_text is null on an attribute that was never stored
+        return trim( (string)$contentObjectAttribute->attribute( 'data_text' ) ) != '';
     }
 
     function isIndexable()
@@ -188,9 +219,35 @@ class eZPackageType extends eZDataType
         return false;
     }
 
+    /*!
+     \return the stored package name (name or name:siteaccess) for simplified
+     export. The generic toString() returned '', so an export lost the value.
+    */
+    function toString( $contentObjectAttribute )
+    {
+        return (string)$contentObjectAttribute->attribute( 'data_text' );
+    }
+
+    /*!
+     Sets the package name from toString() output. A name that could leave the
+     package repository is refused, as in the edit form.
+    */
+    function fromString( $contentObjectAttribute, $string )
+    {
+        if ( $string === '' || $string === null )
+        {
+            $contentObjectAttribute->setAttribute( 'data_text', '' );
+            return true;
+        }
+        if ( !self::isSafePackageName( $string ) )
+            return false;
+        $contentObjectAttribute->setAttribute( 'data_text', $string );
+        return true;
+    }
+
     function sortKey( $contentObjectAttribute )
     {
-        return strtolower( $contentObjectAttribute->attribute( 'data_text' ) );
+        return strtolower( (string)$contentObjectAttribute->attribute( 'data_text' ) );
     }
 
     function sortKeyType()
@@ -214,9 +271,53 @@ class eZPackageType extends eZDataType
         $classAttribute->setAttribute( self::TYPE_FIELD, $type );
     }
 
+    /*!
+     Reads what eZDataType::serializeContentObjectAttribute() writes for this
+     type (data-int, data-float, data-text). The generic reader called
+     ->textContent on ->item( 0 ) of each element, a fatal error for a package
+     that leaves one out; a missing element now keeps the attribute's value.
+    */
+    function unserializeContentObjectAttribute( $package, $objectAttribute, $attributeNode )
+    {
+        $dataInt = $attributeNode->getElementsByTagName( 'data-int' )->item( 0 );
+        if ( $dataInt )
+            $objectAttribute->setAttribute( 'data_int', (int)$dataInt->textContent );
+        $dataFloat = $attributeNode->getElementsByTagName( 'data-float' )->item( 0 );
+        if ( $dataFloat )
+            $objectAttribute->setAttribute( 'data_float', (float)$dataFloat->textContent );
+        $dataText = $attributeNode->getElementsByTagName( 'data-text' )->item( 0 );
+        if ( $dataText )
+            $objectAttribute->setAttribute( 'data_text', $dataText->textContent );
+    }
+
     function diff( $old, $new, $options = false )
     {
         return null;
+    }
+
+    /*!
+     \private
+     \return true if \a $name can be looked up as a directory inside the package
+     repository: a non-empty string without a path separator or NUL byte that
+     is not . or .. . A sitestyle stored as name:siteaccess still passes.
+    */
+    static function isSafePackageName( $name )
+    {
+        if ( !is_string( $name ) || $name === '' || $name === '.' || $name === '..' )
+            return false;
+        return strpbrk( $name, "/\\\0" ) === false;
+    }
+
+    /*!
+     \private
+     \return true if \a $siteAccess is one of SiteAccessSettings/AvailableSiteAccessList.
+    */
+    static function isAvailableSiteAccess( $siteAccess )
+    {
+        if ( !is_string( $siteAccess ) || $siteAccess === '' )
+            return false;
+        $list = eZINI::instance()->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' );
+        return is_array( $list ) && in_array( $siteAccess, $list, true );
     }
 }
 

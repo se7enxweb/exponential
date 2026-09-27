@@ -8,7 +8,7 @@
 <select id="ezpackage_data_text_{$attribute.id}_siteaccess" name="CurrentSiteAccess">
     <option value="Global">{'Global (override)'|i18n( 'design/standard/edit/' )}</option>
     {section name=SiteAccess loop=ezini('SiteAccessSettings','AvailableSiteAccessList')}
-        <option value="{$SiteAccess:item}"
+        <option value="{$SiteAccess:item|wash}"
         {foreach $package_list as $Package}
         {if eq( concat( $Package.name, ':', $SiteAccess:item ), $attribute.data_text )}
                 selected="selected"
@@ -16,7 +16,7 @@
             {break}
         {/if}
         {/foreach}
-        >{$:item}</option>
+        >{$:item|wash}</option>
     {/section}
 </select>
 </div>
