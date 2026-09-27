@@ -71,7 +71,7 @@ class expKickstarterIni
             'Socket'   => '',
         ),
         'language_options' => array(
-            'Primary'    => 'eng-GB',
+            'Primary'    => 'eng-US', // the language the bundled data is in, as in the web wizard
             'Languages'  => array(),
         ),
         'site_types' => array(
