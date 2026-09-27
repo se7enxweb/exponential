@@ -176,12 +176,12 @@ class eZStepDatabaseInit extends eZStepInstaller
 
             // Fill in database info in persistence list
             // This is needed for db requirement check
-            $this->PersistenceList['database_info']['server'] = $data['Server'];
-            $this->PersistenceList['database_info']['port'] = $data['Port'];
+            $this->PersistenceList['database_info']['server'] = isset( $data['Server'] ) ? $data['Server'] : '';
+            $this->PersistenceList['database_info']['port'] = isset( $data['Port'] ) ? $data['Port'] : '';
             $this->PersistenceList['database_info']['dbname'] = $data['Database'];
-            $this->PersistenceList['database_info']['user'] = $data['User'];
-            $this->PersistenceList['database_info']['password'] = $data['Password'];
-            $this->PersistenceList['database_info']['socket'] = $data['Socket'];
+            $this->PersistenceList['database_info']['user'] = isset( $data['User'] ) ? $data['User'] : '';
+            $this->PersistenceList['database_info']['password'] = isset( $data['Password'] ) ? $data['Password'] : '';
+            $this->PersistenceList['database_info']['socket'] = isset( $data['Socket'] ) ? $data['Socket'] : '';
             $this->PersistenceList['database_info']['database'] = $data['Database'];
 
             $result = $this->checkDatabaseRequirements( false );
