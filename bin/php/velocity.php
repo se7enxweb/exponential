@@ -39,8 +39,8 @@ $script = eZScript::instance( array( 'description' => (
     "Engines ([ServerSettings] Engine is the default; --engine=<name>[,<name>] or --all\n" .
     "for start, stop, restart, graceful, kill and status reach the others):\n" .
     "  php         PHP's built-in web server: development, always works (shipped default)\n" .
-    "  frankenphp  FrankenPHP (Caddy with PHP built in): production\n" .
-    "  qbix        the bundled Qbix server: experimental, for tests\n" .
+    "  qbix        Velocity's own server: recommended for every stage, development to production\n" .
+    "  frankenphp  FrankenPHP (Caddy with PHP built in): production-ready alternative\n" .
     "  Each has its own port, pid file and logs, so they can run side by side.\n\n" .
     "Configuration tree (Debian Apache style, /etc/vc or /etc/qbix):\n" .
     "  layout                               show it: vc.conf, ports.conf, envvars,\n" .

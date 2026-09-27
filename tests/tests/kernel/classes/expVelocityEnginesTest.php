@@ -183,7 +183,7 @@ class expVelocityEnginesTest extends ezpTestCase
     {
         $this->assertSame( 'development', expVelocity::create( 'velocity.ini', 'php' )->role() );
         $this->assertSame( 'production', expVelocity::create( 'velocity.ini', 'frankenphp' )->role() );
-        $this->assertSame( 'experimental', expVelocity::create( 'velocity.ini', 'qbix' )->role() );
+        $this->assertSame( 'recommended', expVelocity::create( 'velocity.ini', 'qbix' )->role() );
     }
 
     public function testEachEngineHasItsOwnPortAndFallsBack()

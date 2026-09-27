@@ -7,18 +7,19 @@ verbs are the same for all of them — `start`, `stop`, `graceful`, `restart`,
 ```ini
 [ServerSettings]
 Engine=php          # shipped default: development, always works
-Engine=frankenphp   # production
-Engine=qbix         # experimental, for tests
+Engine=qbix         # recommended: every stage, development to production
+Engine=frankenphp   # production-ready alternative
 ```
 
 `Engine` is the **default** engine — the one `start`, `stop` and `status` use
 without `--engine`. It ships as `php`, because PHP's built-in server needs
-nothing an installation might lack; a production site sets `frankenphp`. What
+nothing an installation might lack; any site, from development to production,
+sets `qbix` (Velocity's own server), the recommended and fastest engine. What
 an engine is *for* (its role) does not change with that.
 
 | | `qbix` | `frankenphp` | `php` |
 |---|---|---|---|
-| Role | experimental, for tests | **production** | development (shipped default) |
+| Role | **recommended**: every stage, development to production | production-ready alternative | development (shipped default) |
 | Port (shipped) | 8088 (`[ServerSettings]`) | 8089, HTTPS 8444 | 8087 |
 | What | the bundled Qbix server, a PHP process | FrankenPHP: Caddy with PHP built in, one binary | `php -S`, PHP's own server |
 | Where it comes from | Composer (`se7enxweb/exponential-velocity`, formerly `se7enxweb/qbix-webserver`) | downloaded by `exp:velocity install`, SHA-256 checked | the PHP that runs `exp:velocity` |

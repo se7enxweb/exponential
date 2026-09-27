@@ -302,14 +302,17 @@ class expVelocity
     }
 
     /**
-     * What this engine is for: development, production or experimental. Not
+     * What this engine is for: recommended (every stage), production or
+     * development. Not
      * the same as being the default -- which one that is, is a setting.
      *
      * @return string
      */
     public function role()
     {
-        return 'experimental';
+        // Velocity's own server: for every stage, development to production,
+        // and the fastest of the engines (measured in perf.md).
+        return 'recommended';
     }
 
     /**
@@ -847,7 +850,7 @@ class expVelocity
             if ( $iniOption !== '' )
             {
                 $arguments[] = '-d';
-                $arguments[] = $iniOption;
+                $arguments[] = self::iniArgument( $iniOption );
             }
         }
 
@@ -1146,6 +1149,13 @@ class expVelocity
             // files/cache/reverse of the directory above the document root.
             $cache['dir'] = $this->cacheDirectory();
 
+            // With the role-aware HTTP cache on, the server answers anonymous
+            // pages from this cache first, which knows nothing of its purges.
+            // Its state file is rewritten by every purge, so as this cache's
+            // generation marker every purge makes this cache's pages stale too.
+            if ( eZINI::instance( 'httpcache.ini' )->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled' )
+                $cache['generationFile'] = $this->rootDir . '/' . eZSys::cacheDirectory() . '/exphttpcache/state.ser';
+
             foreach ( array( 'FileMode' => 'fileMode', 'DirMode' => 'dirMode' ) as $variable => $key )
             {
                 $value = trim( (string)$this->cacheSetting( $variable, null, '' ) );
@@ -1172,6 +1182,21 @@ class expVelocity
 
         if ( $cache )
             $web['cache'] = $cache;
+
+        // The role-aware HTTP cache (settings/httpcache.ini), asked by the
+        // server before a worker: a hit costs a session file and two reads,
+        // for signed-in visitors too, whom the response cache above skips.
+        // The server loads the kernel's contract class, so both produce the
+        // same keys and bytes. Needs an engine with Q.web.appCache; an older
+        // one ignores the key.
+        if ( eZINI::instance( 'httpcache.ini' )->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled' )
+        {
+            $web['appCache'] = array(
+                'file'  => $this->rootDir . '/kernel/private/classes/httpcache/ezphttpcachecontract.php',
+                'class' => 'ezpHttpCacheContract',
+                'dir'   => $this->rootDir . '/' . eZSys::cacheDirectory() . '/exphttpcache',
+            );
+        }
 
         // How long a connection may sit idle before it is closed, and how many
         // requests one may carry.
@@ -2114,6 +2139,15 @@ class expVelocity
         $dir = $this->cacheDirectory();
         $marker = $dir . '/.generation';
 
+        // With the HTTP cache on, the server's generation marker is the HTTP
+        // cache's state file (see Q.web.cache.generationFile above): a new
+        // generation there clears both.
+        if ( class_exists( 'ezpHttpCacheListener' )
+             && eZINI::instance( 'httpcache.ini' )->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled' )
+        {
+            ezpHttpCacheListener::purgeAll();
+        }
+
         // The engine does this itself now (Q_WebServer_Ctl::clearCache(), also
         // `qbixctl`'s cache:clear); asked first, so both stay one behaviour.
         if ( $this->engineCtl() )
@@ -2310,6 +2344,27 @@ class expVelocity
                 $stale[] = $rel;
         }
         return $stale;
+    }
+
+    /**
+     * An IniOptions line as the value of php -d. -d goes through PHP's INI
+     * parser, where ";" starts a comment: session.save_path=0;0660;/path
+     * arrived as "0" and the sessions went to the temporary directory. A value
+     * holding ";" (or "=" after the first) is quoted, unless it is already.
+     *
+     * @param string $option name=value
+     * @return string
+     */
+    public static function iniArgument( $option )
+    {
+        $eq = strpos( $option, '=' );
+        if ( $eq === false )
+            return $option;
+        $name = rtrim( substr( $option, 0, $eq ) );
+        $value = ltrim( substr( $option, $eq + 1 ) );
+        if ( $value === '' || $value[0] === '"' || strpbrk( $value, ';=' ) === false )
+            return $option;
+        return $name . '="' . str_replace( '"', '\"', $value ) . '"';
     }
 
     /**
