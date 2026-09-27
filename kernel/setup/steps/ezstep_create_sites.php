@@ -35,6 +35,8 @@
 
   EZSW-070: Could not create ezpreference for <user_id>
 
+  EZSW-080: The site package post-install stopped before its last step
+
 */
 
 
@@ -569,6 +571,35 @@ class eZStepCreateSites extends eZStepInstaller
         $primaryLanguageLocaleCode = $primaryLanguage->localeCode();
         $primaryLanguageName = $primaryLanguage->languageName();
         $prioritizedLanguages = array_merge( array( $primaryLanguageLocaleCode ), $extraLanguageCodes );
+        // The clean data stays in its own language (see
+        // eZStepInstaller::CLEAN_DATA_LANGUAGE), so a site in any other
+        // language needs it as the last language it falls back to, or none
+        // of that content can be found. It is a fallback only: it does not
+        // count as a chosen language, so no translation siteaccess is made for it.
+        $cleanDataLanguageCode = eZStepInstaller::CLEAN_DATA_LANGUAGE;
+        $fallbackLanguageCodes = in_array( $cleanDataLanguageCode, $prioritizedLanguages )
+                                 ? array() : array( $cleanDataLanguageCode );
+        $siteLanguageList = array_merge( $prioritizedLanguages, $fallbackLanguageCodes );
+
+        // The clean data's language is the first one the database gets. Its
+        // rows carry language id 2 and masks built on it, and the first
+        // language added is id 2: with eng-GB chosen, the site package's
+        // pre-install named a class attribute in eng-GB, which added eng-GB
+        // first, and every base object whose attributes say eng-US claimed
+        // to be eng-GB.
+        if ( !eZContentLanguage::fetchByLocale( $cleanDataLanguageCode ) )
+        {
+            $cleanDataLocale = eZLocale::create( $cleanDataLanguageCode );
+            eZContentLanguage::addLanguage( $cleanDataLanguageCode,
+                                            $cleanDataLocale ? $cleanDataLocale->internationalLanguageName() : $cleanDataLanguageCode );
+            eZContentLanguage::expireCache();
+        }
+        // ... and the language everything done to that data works in until the
+        // packages are in. The default otherwise is the ContentObjectLocale of
+        // the setup's own settings, eng-GB: the site package's pre-install
+        // added attributes to the base objects in it, which created eng-GB
+        // as a language nobody chose, with rows for objects that do not have it.
+        $GLOBALS['eZContentObjectDefaultLanguage'] = $cleanDataLanguageCode;
 
         $installParameters = array( 'path' => '.' );
         $installParameters['ini'] = array();
@@ -607,7 +638,7 @@ class eZStepCreateSites extends eZStepInstaller
         }
         $siteINIChanges['RegionalSettings'] = array( 'Locale' => $primaryLanguage->localeFullCode(),
                                                      'ContentObjectLocale' => $primaryLanguage->localeCode(),
-                                                     'SiteLanguageList' => $prioritizedLanguages );
+                                                     'SiteLanguageList' => $siteLanguageList );
         if ( $primaryLanguage->localeCode() == 'eng-GB' )
             $siteINIChanges['RegionalSettings']['TextTranslation'] = 'disabled';
         else
@@ -674,9 +705,18 @@ class eZStepCreateSites extends eZStepInstaller
         if ( function_exists( 'eZSitePreInstall' ) )
             eZSitePreInstall( $siteType );
 
-        $engLanguageObj = eZContentLanguage::fetchByLocale( 'eng-GB' );
+        // Make sure objects use the selected main language instead of eng-GB.
+        //
+        // This relabels clean data written in eng-GB, which is what the
+        // upstream data was, as the primary language. The clean data here is
+        // in eng-US and is kept in it (see eZStepInstaller::CLEAN_DATA_LANGUAGE),
+        // so it only runs for eng-GB clean data. Run on any eng-GB row it found,
+        // it turned a language the pre-install had created, or one the user
+        // chose next to the primary one, into a second copy of the primary
+        // language: two eng-US rows, masks that stopped matching, and a
+        // post-install that could no longer find the users node.
+        $engLanguageObj = ( $cleanDataLanguageCode == 'eng-GB' ) ? eZContentLanguage::fetchByLocale( 'eng-GB' ) : false;
 
-        // Make sure objects use the selected main language instead of eng-GB
         if ( $engLanguageObj != false && $primaryLanguageLocaleCode != 'eng-GB' )
         {
             $engLanguageID = (int)$engLanguageObj->attribute( 'id' );
@@ -874,7 +914,7 @@ language_locale='eng-GB'";
         }
         eZContentLanguage::expireCache();
         // Make sure priority list is changed to the new chosen languages
-        eZContentLanguage::setPrioritizedLanguages( $prioritizedLanguages );
+        eZContentLanguage::setPrioritizedLanguages( $siteLanguageList );
 
         if ( $siteType['existing_database'] != eZStepInstaller::DB_DATA_KEEP )
         {
@@ -1077,6 +1117,10 @@ language_locale='eng-GB'";
                              'access_map' => $accessMap,
                              'site_type' => $siteType,
                              'all_language_codes' => $prioritizedLanguages,
+                             // Content languages the site falls back to without
+                             // having chosen them: SiteLanguageList ends with
+                             // them, and no siteaccess is made for them
+                             'fallback_language_codes' => $fallbackLanguageCodes,
                              // What the siteaccesses got: a site package that
                              // writes settings/override needs the chosen driver,
                              // which the global site.ini does not know yet
@@ -1518,8 +1562,30 @@ language_locale='eng-GB'";
         }
 
         // Call user function for additional setup tasks.
+        //
+        // It works on the bundled content, which is in the clean data's
+        // language, so that is the default language while it runs: in the
+        // primary language every dataMap() of an eng-US object came back
+        // empty, and the post-install aborted on the first attribute it set.
         if ( function_exists( 'eZSitePostInstall' ) )
+        {
+            $GLOBALS['eZContentObjectDefaultLanguage'] = $cleanDataLanguageCode;
+            eZSiteInstaller::resetAbortedStep();
             eZSitePostInstall( $parameters );
+            $GLOBALS['eZContentObjectDefaultLanguage'] = $primaryLanguageLocaleCode;
+
+            // A post-install that stopped half way left a site without the
+            // rest of its steps - roles, sections, settings, aliases - and
+            // must not end in an installation reported as installed
+            $abortedStep = eZSiteInstaller::abortedStep();
+            if ( $abortedStep )
+            {
+                $resultArray['errors'][] = array( 'code' => 'EZSW-080',
+                                                  'text' => sprintf( "The post-install of site package '%s' stopped at step %d of %d (%s): the steps after it did not run",
+                                                                     $sitePackageName, $abortedStep['number'], $abortedStep['count'], $abortedStep['function'] ) );
+                return false;
+            }
+        }
 
 
         // get all siteaccesses. do it via 'RelatedSiteAccessesList' settings.
