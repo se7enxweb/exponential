@@ -268,7 +268,14 @@ class ezpHttpCacheListener
         $https = eZSys::isSSLNow();
         $key = $contract->entryKey( $https ? 'https' : 'http', $host, $siteaccess, eZSys::serverVariable( 'REQUEST_URI' ), $context );
         $ttl = (int)( self::$view['result']['cache_ttl'] ?? -1 );
-        $contract->storeEntry( $key, 200, array( 'Content-Type' => 'text/html; charset=utf-8' ), $body, $tags, $offsets, $ttl > 0 ? $ttl : null );
+        // The security headers go with the page: an answer from this cache is
+        // assembled without the kernel (Velocity asks the contract directly),
+        // so a page kept with Content-Type alone was served without them. The
+        // key carries the scheme, so an HTTPS-only header never reaches HTTP.
+        $headers = array( 'Content-Type' => 'text/html; charset=utf-8' );
+        if ( method_exists( 'ezpKernelWeb', 'securityHeaders' ) )
+            $headers += ezpKernelWeb::securityHeaders();
+        $contract->storeEntry( $key, 200, $headers, $body, $tags, $offsets, $ttl > 0 ? $ttl : null );
         if ( $user->isRegistered() )
             $contract->storeRecord( $user->id(), $context );
 
