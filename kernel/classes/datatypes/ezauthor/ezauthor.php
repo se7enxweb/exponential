@@ -58,6 +58,12 @@ class eZAuthor
      */
     function addAuthor( $id, $name, $email )
     {
+        // Form input and imported strings can be anything: an author is plain
+        // text, and a value the XML could not hold would lose the whole list
+        $name = self::cleanText( $name );
+        $email = self::cleanText( $email );
+        if ( !is_scalar( $id ) )
+            $id = -1;
         if ( $id == -1 )
         {
             if ( isset( $this->Authors[$this->AuthorCount - 1] ) )
@@ -81,18 +87,43 @@ class eZAuthor
      */
     function removeAuthors( $removeList )
     {
-        if ( count( $removeList ) > 0 )
-            foreach ( $removeList as $id )
-            {
-                foreach ( $this->Authors as $authorKey => $author )
-                {
-                    if ( $author['id'] == $id )
-                    {
-                        array_splice( $this->Authors, $authorKey, 1 );
-                        $this->AuthorCount --;
-                    }
-                }
-            }
+        if ( !is_array( $removeList ) )
+            $removeList = is_scalar( $removeList ) ? array( $removeList ) : array();
+        $removeIDs = array();
+        foreach ( $removeList as $id )
+        {
+            if ( is_scalar( $id ) )
+                $removeIDs[] = (string)$id;
+        }
+        if ( count( $removeIDs ) == 0 )
+            return;
+
+        // Filtered in one pass: splicing inside a foreach over the same array
+        // shifted the keys under the loop, so the author after a removed one
+        // could be removed instead of (or as well as) the selected one
+        $authors = array();
+        foreach ( $this->Authors as $author )
+        {
+            if ( !in_array( (string)$author['id'], $removeIDs, true ) )
+                $authors[] = $author;
+        }
+        $this->Authors = $authors;
+        $this->AuthorCount = count( $authors );
+    }
+
+    /**
+     * An author name or email as a string the XML storage can hold: arrays and
+     * objects become '', characters XML 1.0 does not allow are dropped (they were
+     * written escaped, and the stored list could then not be read back).
+     *
+     * @param mixed $value
+     * @return string
+     */
+    static function cleanText( $value )
+    {
+        if ( !is_scalar( $value ) )
+            return '';
+        return preg_replace( '/[\x00-\x08\x0B\x0C\x0E-\x1F]/', '', (string)$value );
     }
 
     function attributes()
@@ -161,8 +192,14 @@ class eZAuthor
     */
     function decodeXML( $xmlString )
     {
+        if ( !is_string( $xmlString ) || trim( $xmlString ) === '' )
+            return;
+        // Broken stored XML gives an empty list, not warnings
         $dom = new DOMDocument( '1.0', 'utf-8' );
+        $useErrors = libxml_use_internal_errors( true );
         $success = $dom->loadXML( $xmlString );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useErrors );
 
         if ( $success )
         {
