@@ -650,6 +650,8 @@ return array(
       'ezpEvent'                                           => 'kernel/private/classes/ezpevent.php',
       'ezpExtension'                                       => 'kernel/private/classes/ezpextension.php',
       'ezpExtensionOptions'                                => 'kernel/private/options/ezpextensionoptions.php',
+      'ezpHttpCacheContract'                               => 'kernel/private/classes/httpcache/ezphttpcachecontract.php',
+      'ezpHttpCacheListener'                               => 'kernel/private/classes/httpcache/ezphttpcachelistener.php',
       'ezpHttpResponseCodes'                               => 'kernel/private/rest/classes/http_response_codes.php',
       'ezpI18n'                                            => 'kernel/common/ezpi18n.php',
       'ezpKernel'                                          => 'kernel/private/classes/ezpkernel.php',

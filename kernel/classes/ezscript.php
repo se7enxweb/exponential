@@ -322,6 +322,11 @@ class eZScript
         // all eZINI instances as they may not take into account siteaccess specific settings.
         eZINI::resetAllInstances( false );
 
+        // Scripts publish and clear caches too; the HTTP cache must hear of it
+        // (the INI event listeners are only registered for web requests).
+        if ( class_exists( 'ezpHttpCacheListener' ) )
+            ezpHttpCacheListener::registerPurgeListeners();
+
         // Set the global setting which is read by the session lib
         $GLOBALS['eZSiteBasics']['session-required'] = $this->UseSession;
 

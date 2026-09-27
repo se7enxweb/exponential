@@ -1257,6 +1257,9 @@ WHERE user_id = '" . $userID . "' AND
 
         eZSession::set( 'eZUserLoggedInID', $userID );
         self::cleanup();
+        // A sign-in regenerates the session; a temporary switch (preview caches) does not.
+        if ( !( $flags & self::NO_SESSION_REGENERATE ) && class_exists( 'ezpHttpCacheListener' ) )
+            ezpHttpCacheListener::noteLogin( $user );
     }
 
     /*!
@@ -1563,6 +1566,9 @@ WHERE user_id = '" . $userID . "' AND
             $cacheFilePath = eZUser::getCacheDir( $userId ). "/user-data-{$userId}.cache.php" ;
             eZClusterFileHandler::instance()->fileDelete( $cacheFilePath );
         }
+        // The role-aware HTTP cache keeps the user's permission context too.
+        if ( class_exists( 'ezpHttpCacheListener' ) )
+            ezpHttpCacheListener::forgetUser( $userId );
     }
 
     /**
@@ -3103,6 +3109,9 @@ WHERE user_id = '" . $userID . "' AND
         $handler = eZExpiryHandler::instance();
         $handler->setTimestamp( 'user-info-cache', time() );
         $handler->store();
+        // Every user's permissions may have changed: every cached context goes.
+        if ( class_exists( 'ezpHttpCacheListener' ) )
+            ezpHttpCacheListener::purgeAll();
     }
 
     static function fetchUserClassList( $asObject = false, $fields = false )

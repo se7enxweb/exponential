@@ -49,6 +49,17 @@ class eZCache
                                        'enabled' => $ini->variable( 'ContentSettings', 'ViewCaching' ) == 'enabled',
                                        'path' => $ini->variable( 'ContentSettings', 'CacheDir' ),
                                        'function' => array( 'eZCache', 'clearContentCache' ) ),
+                                // Whole pages per permission context (settings/httpcache.ini).
+                                // Cleared by making every entry stale, never by deleting the
+                                // directory, which holds the key and configuration as well.
+                                // Tagged template too: a template edit changes the pages.
+                                array( 'name' => ezpI18n::tr( 'kernel/cache', 'HTTP cache (role-aware pages)' ),
+                                       'id' => 'exphttpcache',
+                                       'tag' => array( 'content', 'template' ),
+                                       'enabled' => eZINI::instance( 'httpcache.ini' )->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled',
+                                       'path' => false,
+                                       'function' => array( 'eZCache', 'clearHttpCache' ),
+                                       'purge-function' => array( 'eZCache', 'clearHttpCache' ) ),
                                 array( 'name' => ezpI18n::tr( 'kernel/cache', 'Global INI cache' ),
                                        'id' => 'global_ini',
                                        'tag' => array( 'ini' ),
@@ -831,6 +842,16 @@ class eZCache
         $handler->store();
         eZCache::removeExpiredDirectory( eZSys::cacheDirectory() . '/' . $cacheItem['path'], 'view cache', $now );
         ezpEvent::getInstance()->notify( 'content/cache/all' );
+    }
+
+    /**
+     * Makes every page in the role-aware HTTP cache stale (a new generation);
+     * the key, configuration and user records stay.
+     */
+    static function clearHttpCache( $cacheItem )
+    {
+        if ( class_exists( 'ezpHttpCacheListener' ) )
+            ezpHttpCacheListener::purgeAll();
     }
 
     /**

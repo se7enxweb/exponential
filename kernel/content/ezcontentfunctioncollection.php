@@ -89,6 +89,9 @@ class eZContentFunctionCollection
         else
         {
             $retVal = array( 'result' => $contentNode );
+            // The HTTP cache is told the page shows this node (a footer, a header).
+            if ( class_exists( 'ezpHttpCacheListener', false ) && $contentNode instanceof eZContentObjectTreeNode )
+                ezpHttpCacheListener::addTags( array( 'l' . (int)$contentNode->attribute( 'node_id' ) ) );
         }
 
         return $retVal;
@@ -349,6 +352,9 @@ class eZContentFunctionCollection
         {
             $children = eZContentObjectTreeNode::subTreeByNodeID( $treeParameters,
                                                                   $parentNodeID );
+            // The HTTP cache is told what the page now lists (menus, lists).
+            if ( class_exists( 'ezpHttpCacheListener', false ) )
+                ezpHttpCacheListener::noteListing( $parentNodeID, $depth, $depthOperator );
         }
 
         if ( $children === null )
@@ -370,6 +376,8 @@ class eZContentFunctionCollection
 
         if ( is_numeric( $parentNodeID ) or is_array( $parentNodeID ) )
         {
+            if ( class_exists( 'ezpHttpCacheListener', false ) )
+                ezpHttpCacheListener::noteListing( $parentNodeID, $depth, $depthOperator );
             $childrenCount = eZContentObjectTreeNode::subTreeCountByNodeID( array( 'Limitation' => $limitation,
                                                                            'ClassFilterType' => $class_filter_type,
                                                                            'ClassFilterArray' => $class_filter_array,

@@ -125,6 +125,10 @@ the parent process and is a separate feature, off by default.
 It is not the kernel's static cache (`StaticCache` in `site.ini`), which writes
 flat files.
 
+It is not the role-aware HTTP cache, which keeps whole pages for signed-in
+visitors as well and serves them before the kernel starts: see
+[httpcache.md](httpcache.md).
+
 It does not reduce the work of rendering a page. The front page costs about
 529 database queries, and no caching header changes that for the visitor who
 misses the cache.

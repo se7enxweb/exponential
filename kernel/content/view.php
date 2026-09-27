@@ -158,7 +158,7 @@ if ( ( isset( $operationResult['status'] ) && $operationResult['status'] != eZMo
             $Result['content'] = "Content view cancelled<br/>";
         } break;
     }
-    return $Result;
+    return class_exists( 'ezpHttpCacheListener' ) ? ezpHttpCacheListener::noteContentView( $Result, $ViewMode ) : $Result;
 }
 else
 {
@@ -224,11 +224,12 @@ else
             }
         }
 
-        return $result;
+        return class_exists( 'ezpHttpCacheListener' ) ? ezpHttpCacheListener::noteContentView( $result, $ViewMode ) : $result;
     }
 
     $data = eZNodeviewfunctions::contentViewGenerate( false, $args ); // the false parameter will disable generation of the 'binarydata' entry
-    return $data['content']; // Return the $Result array
+    // Return the $Result array, noted for the role-aware HTTP cache.
+    return class_exists( 'ezpHttpCacheListener' ) ? ezpHttpCacheListener::noteContentView( $data['content'], $ViewMode ) : $data['content'];
 }
 
 // Looking for some view-cache code?
