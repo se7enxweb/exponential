@@ -40,6 +40,18 @@ class eZStepInstaller
     /** The database file a kickstarter SQLite install uses (kickstart.ini [database_init] Database) */
     const SQLITE_DEFAULT_FILE_NAME = 'sqlite.db';
 
+    /**
+     * The language the bundled clean data (share/db_data.dba) is written in.
+     *
+     * Its objects, attributes, names, class names and URL aliases all carry
+     * this locale, and the ids and masks in it assume that this language is
+     * the first one the database gets (id 2). Nothing in the setup rewrites
+     * that data into another language, so the installation always keeps it
+     * as a content language - also when another primary language is chosen,
+     * which then becomes the site's language with this one as its fallback.
+     */
+    const CLEAN_DATA_LANGUAGE = 'eng-US';
+
     const DB_DATA_APPEND = 1;
     const DB_DATA_REMOVE = 2;
     const DB_DATA_KEEP = 3;

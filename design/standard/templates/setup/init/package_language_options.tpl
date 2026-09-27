@@ -25,9 +25,9 @@
         <td>
             <select name={concat("eZSetupPackageLanguageMap[", $package_language.locale, "]")}>
                 {foreach $site_language_list as $site_language_key => $site_language}
-                    <option value="{$site_language.locale}"{if $site_language_key|eq(0)} selected="selected"{/if}>{concat('Map to '|i18n( 'design/standard/setup/init' ),$site_language.name)}</option>
+                    <option value="{$site_language.locale}">{concat('Map to '|i18n( 'design/standard/setup/init' ),$site_language.name)}</option>
                 {/foreach}
-                <option value="{$package_language.locale}">{'Create language'|i18n( 'design/standard/setup/init' )}</option>
+                <option value="{$package_language.locale}" selected="selected">{'Create language'|i18n( 'design/standard/setup/init' )}</option>
                 <option value="skip">{'Skip content in this language'|i18n( 'design/standard/setup/init' )}</option>
             </select>
         </td>
@@ -36,7 +36,7 @@
   </table>
 
 <p>
-<em>{"Notice: The out of the box front-end site often relies on data within a package. This is why it is strongly suggested to map the package language to your primary language, otherwise you'll need to adjust the configuration and template files to get it working."|i18n("design/standard/setup/init")}</em>
+<em>{"Notice: Creating the language keeps the package content in the language it was written in, next to the languages you chose. Mapping it relabels that content as another language without translating it."|i18n("design/standard/setup/init")}</em>
 </p>
 
 </fieldset>

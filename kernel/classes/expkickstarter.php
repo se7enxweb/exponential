@@ -382,13 +382,13 @@ class expKickstarter
         $missed = $stepObject->MissedPackageLanguageList;
         if ( is_array( $missed ) && count( $missed ) > 0 )
         {
-            $primary = isset( $this->persistenceList['regional_info']['primary_language'] )
-                ? $this->persistenceList['regional_info']['primary_language']
-                : 'eng-GB';
+            // Each package language is created as itself, the wizard's default
+            // too: mapping it onto the primary language relabelled the content
+            // without translating it, and split the site across languages
             $map = array();
             foreach ( $missed as $language )
             {
-                $map[$language['locale']] = $primary;
+                $map[$language['locale']] = $language['locale'];
             }
             $this->http->setPostVariable( 'eZSetupPackageLanguageMap', $map );
             $stepObject->processPostData();

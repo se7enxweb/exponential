@@ -91,15 +91,23 @@ class eZStepPackageLanguageOptions extends eZStepInstaller
             $packageLanguageLocaleList = eZPackage::languageInfoFromPackageList( $packageNameList, false );
         }
 
-        // Explicitly add the clean data's language: share/db_data.dba is in
-        // eng-US (it was eng-GB upstream, and this still said so, which asked
-        // every eng-US site to map an eng-GB it does not have)
-        if( !in_array( 'eng-US', $packageLanguageLocaleList ) )
-            $packageLanguageLocaleList[] = 'eng-US';
         //
-        // Exclude languages which exist both in packages and site.
+        // Exclude languages which exist both in packages and site, and the
+        // clean data's language, which is never offered for mapping: the base
+        // data (share/db_data.dba) stays in it whatever is chosen here, so
+        // mapping the packages' copy of it onto the primary language split
+        // one site across two languages. With eng-GB chosen, the package
+        // objects came in as eng-GB while the base objects and their ids
+        // stayed eng-US, and the package post-install aborted on an object
+        // without attributes in the language it looked in. It is kept as a
+        // content language and becomes the fallback in SiteLanguageList.
         //
-        $packageLanguageLocaleList = array_diff( $packageLanguageLocaleList, $siteLanguageLocaleList );
+        $packageLanguageLocaleList = array_diff( $packageLanguageLocaleList, $siteLanguageLocaleList,
+                                                 array( eZStepInstaller::CLEAN_DATA_LANGUAGE ) );
+        // A mapping chosen on an earlier visit no longer applies once there
+        // is nothing to map: the packages then install in their own languages
+        if( count( $packageLanguageLocaleList ) == 0 )
+            unset( $this->PersistenceList['package_info']['language_map'] );
 
         if( count( $packageLanguageLocaleList ) > 0 )
         {
