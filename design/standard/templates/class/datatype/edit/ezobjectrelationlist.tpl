@@ -96,7 +96,7 @@
 </table>
 {/let}
 
-<input type="hidden" name="ContentClass_ezobjectrelationlist_placement_{$class_attribute.id}" value="{$default_placement.node_id}" />
+<input type="hidden" name="ContentClass_ezobjectrelationlist_placement_{$class_attribute.id}" value="{$default_placement.node_id|wash}" />
 {section-else}
     {if eq( ezini( 'BackwardCompatibilitySettings', 'AdvancedObjectRelationList' ), 'enabled' )}
 <p>{'New objects will not be placed in the content tree.'|i18n( 'design/standard/class/datatype' )}</p>
