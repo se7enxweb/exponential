@@ -29,8 +29,8 @@
     <th>{'Size'|i18n( 'design/standard/content/datatype' )}</th>
 </tr>
 <tr>
-    <td>{$attribute.content.original_filename}</td>
-    <td>{$attribute.content.mime_type}</td>
+    <td>{$attribute.content.original_filename|wash}</td>
+    <td>{$attribute.content.mime_type|wash}</td>
     <td>{$attribute.content.filesize|si( byte )}</td>
 </tr>
 </table>

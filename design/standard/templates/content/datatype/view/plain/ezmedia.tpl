@@ -2,55 +2,55 @@
 {switch name=mediaType match=$attribute.contentclass_attribute.data_text1}
 {case match=flash}
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
-width="{$attribute.content.width}" height="{$attribute.content.height}">
+width="{$attribute.content.width|wash}" height="{$attribute.content.height|wash}">
 <param name="movie" value={concat("content/download/",$attribute.contentobject_id,"/",$attribute.content.contentobject_attribute_id,"/",$attribute.content.original_filename)|ezurl} />
-<param name="quality" value="{$attribute.content.quality}" />
+<param name="quality" value="{$attribute.content.quality|wash}" />
 <param name="play" value="{if $attribute.content.is_autoplay}true{/if}" />
 <param name="loop" value="{if $attribute.content.is_loop}true{/if}" />
 <embed src={concat("content/download/",$attribute.contentobject_id,"/",$attribute.content.contentobject_attribute_id,"/",$attribute.content.original_filename)|ezurl}
- quality="{$attribute.content.quality}" pluginspage="{$attribute.content.pluginspage}"
- width="{$attribute.content.width}" height="{$attribute.content.height}" play="{if $attribute.content.is_autoplay}true{/if}"
+ quality="{$attribute.content.quality|wash}" pluginspage="{$attribute.content.pluginspage|wash}"
+ width="{$attribute.content.width|wash}" height="{$attribute.content.height|wash}" play="{if $attribute.content.is_autoplay}true{/if}"
  loop="{if $attribute.content.is_loop}true{/if}" >
 </embed> 
 </object>
 {/case}
 {case match=quick_time}
 <object
-width="{$attribute.content.width}" height="{$attribute.content.height}">
+width="{$attribute.content.width|wash}" height="{$attribute.content.height|wash}">
 <param name="movie" value={concat("content/download/",$attribute.contentobject_id,"/",$attribute.content.contentobject_attribute_id,"/",$attribute.content.original_filename)|ezurl} />
 <param name="controller" value="{if $attribute.content.has_controller}true{/if}" />
 <param name="play" value="{if $attribute.content.is_autoplay}true{/if}" />
 <param name="loop" value="{if $attribute.content.is_loop}true{/if}" />
 <embed src={concat("content/download/",$attribute.contentobject_id,"/",$attribute.content.contentobject_attribute_id,"/",$attribute.content.original_filename)|ezurl}
- pluginspage="{$attribute.content.pluginspage}"
- width="{$attribute.content.width}" height="{$attribute.content.height}" play="{if $attribute.content.is_autoplay}true{/if}" 
+ pluginspage="{$attribute.content.pluginspage|wash}"
+ width="{$attribute.content.width|wash}" height="{$attribute.content.height|wash}" play="{if $attribute.content.is_autoplay}true{/if}" 
  loop="{if $attribute.content.is_loop}true{/if}" controller="{if $attribute.content.has_controller}true{/if}" >
 </embed> 
 </object>
 {/case}
 {case match=windows_media_player}
 <object ID="MediaPlayer"  CLASSID="CLSID:6BF52A52-394A-11D3-B153-00C04F79FAA6" STANDBY="Loading Windows Media Player components..." type="application/x-oleobject"
-width="{$attribute.content.width}" height="{$attribute.content.height}">
+width="{$attribute.content.width|wash}" height="{$attribute.content.height|wash}">
 <param name="filename" value={concat("content/download/",$attribute.contentobject_id,"/",$attribute.content.contentobject_attribute_id,"/",$attribute.content.original_filename)|ezurl} />
-<param name="autostart" value="{$attribute.content.is_autoplay}" />
-<param name="showcontrols" value="{$attribute.content.has_controller}" />
+<param name="autostart" value="{$attribute.content.is_autoplay|wash}" />
+<param name="showcontrols" value="{$attribute.content.has_controller|wash}" />
 <embed src={concat("content/download/",$attribute.contentobject_id,"/",$attribute.content.contentobject_attribute_id,"/",$attribute.content.original_filename)|ezurl}
- type="application/x-mplayer2" pluginspage="{$attribute.content.pluginspage}"
- width="{$attribute.content.width}" height="{$attribute.content.height}" autostart="{$attribute.content.is_autoplay}" 
- showcontrols="{$attribute.content.has_controller}" >
+ type="application/x-mplayer2" pluginspage="{$attribute.content.pluginspage|wash}"
+ width="{$attribute.content.width|wash}" height="{$attribute.content.height|wash}" autostart="{$attribute.content.is_autoplay|wash}" 
+ showcontrols="{$attribute.content.has_controller|wash}" >
 </embed> 
 </object>
 {/case}
 {case match=real_player}
 <object classid="clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA" 
-width="{$attribute.content.width}" height="{$attribute.content.height}">
+width="{$attribute.content.width|wash}" height="{$attribute.content.height|wash}">
 <param name="src" value={concat("content/download/",$attribute.contentobject_id,"/",$attribute.content.contentobject_attribute_id,"/",$attribute.content.original_filename)|ezurl} />
-<param name="controls" value="{$attribute.content.controls}" />
+<param name="controls" value="{$attribute.content.controls|wash}" />
 <param name="autostart" value="{if $attribute.content.is_autoplay}true{/if}" />
 <embed src={concat("content/download/",$attribute.contentobject_id,"/",$attribute.content.contentobject_attribute_id,"/",$attribute.content.original_filename)|ezurl}
- pluginspage="{$attribute.content.pluginspage}"
- width="{$attribute.content.width}" height="{$attribute.content.height}" autostart="{if $attribute.content.is_autoplay}true{/if}" 
- controls="{$attribute.content.controls}" >
+ pluginspage="{$attribute.content.pluginspage|wash}"
+ width="{$attribute.content.width|wash}" height="{$attribute.content.height|wash}" autostart="{if $attribute.content.is_autoplay}true{/if}" 
+ controls="{$attribute.content.controls|wash}" >
 </embed> </object>
 {/case}
     {case match=silverlight}
@@ -63,7 +63,7 @@ width="{$attribute.content.width}" height="{$attribute.content.height}">
 
     <div id="silverlightControlHost">
       <!-- Silverlight plug-in control -->
-        <object data="data:application/x-silverlight," type="application/x-silverlight-2-b1" {if $attribute.content.width|gt( 0 )}width="{$attribute.content.width}"{/if} {if $attribute.content.height|gt( 0 )}height="{$attribute.content.height}"{/if}>
+        <object data="data:application/x-silverlight," type="application/x-silverlight-2-b1" {if $attribute.content.width|gt( 0 )}width="{$attribute.content.width|wash}"{/if} {if $attribute.content.height|gt( 0 )}height="{$attribute.content.height|wash}"{/if}>
             <param name="source" value="{concat( "content/download/", $attribute.contentobject_id, "/", $attribute.content.contentobject_attribute_id, "/", $attribute.content.original_filename)|ezurl( 'no' )}" />
             <param name="onError" value="onErrorHandler" />
             <param name="onResize" value="onResizeHandler" />

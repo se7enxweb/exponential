@@ -34,12 +34,12 @@
                 <th>{'Loop'|i18n( 'design/standard/content/datatype' )}</th>
             </tr>
             <tr>
-                <td>{$attr.content.original_filename}</td>
-                <td>{$attr.content.mime_type}</td>
+                <td>{$attr.content.original_filename|wash}</td>
+                <td>{$attr.content.mime_type|wash}</td>
                 <td>{$attr.content.filesize|si( byte )}</td>
-                <td>{if $attr.content.width|gt( 0 )}{$attr.content.width}{/if}</td>
-                <td>{if $attr.content.height|gt( 0 )}{$attr.content.height}{/if}</td>
-                <td>{$attr.content.quality}</td>
+                <td>{if $attr.content.width|gt( 0 )}{$attr.content.width|wash}{/if}</td>
+                <td>{if $attr.content.height|gt( 0 )}{$attr.content.height|wash}{/if}</td>
+                <td>{$attr.content.quality|wash}</td>
                 <td>{if $attr.content.is_autoplay}True{else}False{/if}</td>
                 <td>{if $attr.content.is_loop}True{else}False{/if}</td>
             </tr>
@@ -64,12 +64,12 @@
                 <th>{'Controller'|i18n( 'design/standard/content/datatype' )}</th>
             </tr>
             <tr>
-                <td>{$attr.content.original_filename}</td>
-                <td>{$attr.content.mime_type}</td>
+                <td>{$attr.content.original_filename|wash}</td>
+                <td>{$attr.content.mime_type|wash}</td>
                 <td>{$attr.content.filesize|si( byte )}</td>
-                <td>{if $attr.content.width|gt( 0 )}{$attr.content.width}{/if}</td>
-                <td>{if $attr.content.height|gt( 0 )}{$attr.content.height}{/if}</td>
-                <td>{$attr.content.quality}</td>
+                <td>{if $attr.content.width|gt( 0 )}{$attr.content.width|wash}{/if}</td>
+                <td>{if $attr.content.height|gt( 0 )}{$attr.content.height|wash}{/if}</td>
+                <td>{$attr.content.quality|wash}</td>
                 <td>{if $attr.content.is_autoplay}True{else}False{/if}</td>
                 <td>{if $attr.content.is_loop}True{else}False{/if}</td>
                 <td>{if $attr.content.has_controller}True{else}False{/if}</td>
@@ -94,12 +94,12 @@
                 <th>{'Controller'|i18n( 'design/standard/content/datatype' )}</th>
             </tr>
             <tr>
-                <td>{$attr.content.original_filename}</td>
-                <td>{$attr.content.mime_type}</td>
+                <td>{$attr.content.original_filename|wash}</td>
+                <td>{$attr.content.mime_type|wash}</td>
                 <td>{$attr.content.filesize|si( byte )}</td>
-                <td>{if $attr.content.width|gt( 0 )}{$attr.content.width}{/if}</td>
-                <td>{if $attr.content.height|gt( 0 )}{$attr.content.height}{/if}</td>
-                <td>{$attr.content.quality}</td>
+                <td>{if $attr.content.width|gt( 0 )}{$attr.content.width|wash}{/if}</td>
+                <td>{if $attr.content.height|gt( 0 )}{$attr.content.height|wash}{/if}</td>
+                <td>{$attr.content.quality|wash}</td>
                 <td>{if $attr.content.is_autoplay}True{else}False{/if}</td>
                 <td>{if $attr.content.is_loop}True{else}False{/if}</td>
                 <td>{if $attr.content.has_controller}True{else}False{/if}</td>
@@ -124,15 +124,15 @@
                 <th>{'Controls'|i18n( 'design/standard/content/datatype' )}</th>
             </tr>
             <tr>
-                <td>{$attr.content.original_filename}</td>
-                <td>{$attr.content.mime_type}</td>
+                <td>{$attr.content.original_filename|wash}</td>
+                <td>{$attr.content.mime_type|wash}</td>
                 <td>{$attr.content.filesize|si( byte )}</td>
-                <td>{if $attr.content.width|gt( 0 )}{$attr.content.width}{/if}</td>
-                <td>{if $attr.content.height|gt( 0 )}{$attr.content.height}{/if}</td>
-                <td>{$attr.content.quality}</td>
+                <td>{if $attr.content.width|gt( 0 )}{$attr.content.width|wash}{/if}</td>
+                <td>{if $attr.content.height|gt( 0 )}{$attr.content.height|wash}{/if}</td>
+                <td>{$attr.content.quality|wash}</td>
                 <td>{if $attr.content.is_autoplay}True{else}False{/if}</td>
                 <td>{if $attr.content.is_loop}True{else}False{/if}</td>
-                <td>{$attr.content.controls}</td>
+                <td>{$attr.content.controls|wash}</td>
             </tr>
             </table>
         </div>
@@ -154,15 +154,15 @@
                 <th>{'Controls'|i18n( 'design/standard/content/datatype' )}</th>
             </tr>
             <tr>
-                <td>{$attr.content.original_filename}</td>
-                <td>{$attr.content.mime_type}</td>
+                <td>{$attr.content.original_filename|wash}</td>
+                <td>{$attr.content.mime_type|wash}</td>
                 <td>{$attr.content.filesize|si( byte )}</td>
-                <td>{if $attr.content.width|gt( 0 )}{$attr.content.width}{/if}</td>
-                <td>{if $attr.content.height|gt( 0 )}{$attr.content.height}{/if}</td>
-                <td>{$attr.content.quality}</td>
+                <td>{if $attr.content.width|gt( 0 )}{$attr.content.width|wash}{/if}</td>
+                <td>{if $attr.content.height|gt( 0 )}{$attr.content.height|wash}{/if}</td>
+                <td>{$attr.content.quality|wash}</td>
                 <td>{if $attr.content.is_autoplay}True{else}False{/if}</td>
                 <td>{if $attr.content.is_loop}True{else}False{/if}</td>
-                <td>{$attr.content.controls}</td>
+                <td>{$attr.content.controls|wash}</td>
             </tr>
             </table>
         </div>

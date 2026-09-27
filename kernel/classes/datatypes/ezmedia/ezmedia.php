@@ -116,8 +116,55 @@ class eZMedia extends eZPersistentObject
 
     function mimeTypePart()
     {
-        $types = explode( "/", $this->attribute( "mime_type" ) );
-        return $types[1];
+        // A mime type without a slash (empty, broken or imported data) has no part
+        $types = explode( "/", (string)$this->attribute( "mime_type" ) );
+        return $types[1] ?? '';
+    }
+
+    /*!
+     \static
+     \return the group of \a $mimeType ("video" of "video/mp4") as a directory name
+     that stays inside var/storage/original, '' when there is none. The mime type
+     comes from the database or a package and is data, not a path: a group of ".."
+     or with a backslash or control character would otherwise walk the file path of
+     a delete or a download out of the storage directory.
+    */
+    static function mimeGroup( $mimeType )
+    {
+        if ( !is_string( $mimeType ) || $mimeType === '' )
+            return '';
+        $parts = explode( '/', $mimeType, 2 );
+        $group = $parts[0];
+        if ( $group === '.' || $group === '..' || preg_match( '/[\\\\\x00-\x1f]/', $group ) )
+            return '';
+        return $group;
+    }
+
+    /*!
+     \static
+     \return true when \a $fileName is a plain file name that can be joined to a
+     storage directory: not empty, no directory part, not "." or "..", no NUL.
+     Every name this datatype stores is one (md5 + suffix); anything else came from
+     a broken row or a crafted package and must not be used to reach a file.
+    */
+    static function isSafeFileName( $fileName )
+    {
+        return is_string( $fileName ) && $fileName !== '' && $fileName !== '.' && $fileName !== '..'
+            && strpbrk( $fileName, "/\\\0" ) === false;
+    }
+
+    /*!
+     \static
+     \return \a $fileName reduced to its last path part, so that a stored name with
+     a directory part cannot point a download or a package export outside the storage
+     directory. A safe name (all names this datatype writes) is returned unchanged.
+    */
+    static function safeFileName( $fileName )
+    {
+        if ( eZMedia::isSafeFileName( $fileName ) )
+            return $fileName;
+        $name = basename( str_replace( array( '\\', "\0" ), '/', (string)$fileName ) );
+        return ( $name === '.' || $name === '..' ) ? '' : $name;
     }
 
     static function create( $contentObjectAttributeID, $version )
@@ -211,7 +258,8 @@ class eZMedia extends eZPersistentObject
         foreach ( $ids as $id )
         {
             $mediaFileObjectAttribute = eZMedia::fetch( $id['id'], null, $asObject );
-            $mediaFiles = array_merge( $mediaFiles, $mediaFileObjectAttribute );
+            // A failed fetch gives null, which array_merge() refuses with a TypeError
+            $mediaFiles = array_merge( $mediaFiles, (array)$mediaFileObjectAttribute );
         }
         return $mediaFiles;
     }
@@ -239,12 +287,11 @@ class eZMedia extends eZPersistentObject
 
         $storageDir = eZSys::storageDirectory();
 
-        $group = '';
-        $type = '';
-        if ( $mimeType )
-            list( $group, $type ) = explode( '/', $mimeType );
+        // Neither part of the path is trusted to stay inside the storage directory;
+        // a mime type without a slash used to raise an undefined offset warning
+        $group = eZMedia::mimeGroup( $mimeType );
 
-        $filePath = $storageDir . '/original/' . $group . '/' . $fileName;
+        $filePath = $storageDir . '/original/' . $group . '/' . eZMedia::safeFileName( $fileName );
 
         return array( 'filename' => $fileName,
                       'original_filename' => $originalFileName,
