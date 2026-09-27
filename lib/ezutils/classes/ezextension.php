@@ -437,6 +437,59 @@ class eZExtension
             $ini = eZINI::instance();
         }
 
+        self::prependSiteAccessDirs( $extensionSettingsPath, $extension, $accessName, $ini, $globalDir, $identifier );
+
+        // A siteaccess can take the extension settings of another one as well
+        // (site.ini [SiteAccessSettings] ExtensionSettingsSiteAccess), placed
+        // below its own: prepended afterwards puts them first, and the first
+        // override dir is the one every later dir overrides.
+        $baseAccessName = self::extensionSettingsSiteAccess( $accessName );
+        if ( $baseAccessName !== false && $identifier !== 'siteaccess' )
+        {
+            self::prependSiteAccessDirs( $extensionSettingsPath, $extension, $baseAccessName, $ini, $globalDir,
+                                         is_string( $identifier ) ? $identifier . ':from:' . $baseAccessName : $identifier );
+        }
+    }
+
+    /**
+     * The siteaccess named by site.ini [SiteAccessSettings]
+     * ExtensionSettingsSiteAccess in the siteaccess's own
+     * settings/siteaccess/<name>/site.ini.append.php, or false.
+     *
+     * The merged site.ini cannot be asked: the extension siteaccess settings
+     * are placed before the siteaccess's own settings are loaded.
+     *
+     * @param string $accessName
+     * @return string|false
+     */
+    static function extensionSettingsSiteAccess( $accessName )
+    {
+        if ( !is_string( $accessName ) || $accessName === '' )
+            return false;
+
+        $dir = 'settings/siteaccess/' . $accessName;
+        foreach ( array( 'site.ini.append.php', 'site.ini.append' ) as $file )
+        {
+            if ( !file_exists( $dir . '/' . $file ) )
+                continue;
+
+            $ini = eZINI::instance( $file, $dir, null, false, null, true );
+            if ( !$ini->hasVariable( 'SiteAccessSettings', 'ExtensionSettingsSiteAccess' ) )
+                return false;
+
+            $base = trim( (string)$ini->variable( 'SiteAccessSettings', 'ExtensionSettingsSiteAccess' ) );
+            return ( $base !== '' && $base !== $accessName && preg_match( '/^[A-Za-z0-9_-]+$/', $base ) ) ? $base : false;
+        }
+
+        return false;
+    }
+
+    /**
+     * The part of prependSiteAccess() that places one siteaccess's settings
+     * directories of one extension.
+     */
+    protected static function prependSiteAccessDirs( $extensionSettingsPath, $extension, $accessName, $ini, $globalDir, $identifier )
+    {
         // ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ###
         // we need file_exists because we have several site_extensions with override folders
         // this folder is only active if a siteaccess from extension is loaded
