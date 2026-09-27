@@ -98,6 +98,7 @@ EXCLUDE_EXTRA_NAMES=()
 DRY_RUN=0
 LIST_SKIPPED=0
 DO_EXTENSIONS=0
+WITH_UNTRACKED=0
 
 for arg in "$@"; do
     case "$arg" in
@@ -110,6 +111,9 @@ for arg in "$@"; do
             ;;
         --extensions)
             DO_EXTENSIONS=1
+            ;;
+        --untracked)
+            WITH_UNTRACKED=1
             ;;
         --include=*)
             KEY="${arg#--include=}"
@@ -169,6 +173,8 @@ for arg in "$@"; do
             echo "Options:"
             echo "  --dry-run           Preview the file count without writing anything"
             echo "  --list              List every file the exclusions leave out, then stop"
+            echo "  --untracked         In a git checkout, also hash files git does not"
+            echo "                      track (by default only tracked files are listed)"
             echo "  --extensions        Also rewrite extension/*/share/filelist.md5 for"
             echo "                      extensions that already ship one.  Off by default:"
             echo "                      an extension's manifest is the record of what it"
@@ -275,6 +281,18 @@ mapfile -t FILES < <(
         | sed 's~^\./~~' \
         | sort
 )
+
+# In a git checkout, only what git tracks is part of the installation. The
+# disk also holds private notes, local settings and build output (AGENTS.md,
+# perf.md, config.php, dist/*.phar...): hashing them published their names in
+# the manifest and filled the admin's check with files nobody ships.
+if [[ "$WITH_UNTRACKED" -eq 0 ]] && git rev-parse --is-inside-work-tree >/dev/null 2>&1 \
+   && [[ "$( git rev-parse --show-toplevel )" == "$( pwd -P )" ]]; then
+    mapfile -t FILES < <(
+        comm -12 <( printf '%s\n' "${FILES[@]}" ) <( git ls-files | sort )
+    )
+    echo -n "  (tracked files only)"
+fi
 
 FILE_COUNT="${#FILES[@]}"
 
