@@ -14,7 +14,7 @@
     {def $alpha_2 = ''}
     {foreach $all_country_list as $country}
          {set $alpha_2 = $country.Alpha2}
-         <option value="{$alpha_2|wash}" {if is_set( $country_list.$alpha_2 )}selected="selected"{/if}>{$country.Name}</option>
+         <option value="{$alpha_2|wash}" {if is_set( $country_list.$alpha_2 )}selected="selected"{/if}>{$country.Name|wash}</option>
     {/foreach}
     </select>
     <input type="hidden" name="ContentClass_ezcountry_default_selection_value_{$class_attribute.id}_exists" value="1" />

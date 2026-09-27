@@ -7,7 +7,7 @@
 <div class="block">
     <label>{'Default selection'|i18n( 'design/standard/class/datatype' )}:</label>
     {foreach $class_attribute.content.default_countries as $country}
-         <p>{$country.Name}</p>
+         <p>{$country.Name|wash}</p>
     {/foreach}
 </div>
 

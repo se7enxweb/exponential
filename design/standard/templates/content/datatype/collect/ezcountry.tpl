@@ -14,12 +14,12 @@
     {if $country|ne( '' )}
         {if $country|is_array|not}
             {* Backwards compatability *}
-            <option {if $country|eq( $current_country.name )}selected="selected"{/if} value="{$alpha_2}">{$current_country.Name}</option>
+            <option {if $country|eq( $current_country.Name )}selected="selected"{/if} value="{$alpha_2|wash}">{$current_country.Name|wash}</option>
         {else}
-            <option {if is_set( $country.$alpha_2 )}selected="selected"{/if} value="{$alpha_2}">{$current_country.Name}</option>
+            <option {if is_set( $country.$alpha_2 )}selected="selected"{/if} value="{$alpha_2|wash}">{$current_country.Name|wash}</option>
         {/if}
     {else}
-            <option {if is_set( $class_content.default_countries.$alpha_2 )}selected="selected"{/if} value="{$alpha_2}">{$current_country.Name}</option>
+            <option {if is_set( $class_content.default_countries.$alpha_2 )}selected="selected"{/if} value="{$alpha_2|wash}">{$current_country.Name|wash}</option>
     {/if}
 {/foreach}
 </select>
