@@ -32,6 +32,10 @@ $ViewList["cache"] = array(
                                     'ClearINICacheButton' => 'ClearINICache',
                                     'ClearTemplateCacheButton' => 'ClearTemplateCache',
                                     'RegenerateStaticCacheButton' => 'RegenerateStaticCache',
+                                    // The two caches in front of the database
+                                    // and of the page, cleared on their own.
+                                    'ClearQueryCacheButton' => 'ClearQueryCache',
+                                    'ClearHttpCacheButton' => 'ClearHttpCache',
                                     // PHP's own caches of the server process
                                     // that answers the request.
                                     'ResetOPcacheButton' => 'ResetOPcache',

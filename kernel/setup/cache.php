@@ -23,7 +23,11 @@ $cacheCleared = array( 'all' => false,
                        'static' => false,
                        // array( ok, message ) once OPcache or APCu was emptied
                        'opcache' => false,
-                       'apcu' => false );
+                       'apcu' => false,
+                       // array( ok, message ) once the SQL query cache or the
+                       // HTTP cache was cleared
+                       'querycache' => false,
+                       'httpcache' => false );
 
 $contentCacheEnabled = $ini->variable( 'ContentSettings', 'ViewCaching' ) == 'enabled';
 $iniCacheEnabled = true;
@@ -193,7 +197,36 @@ if ( $module->isCurrentAction( 'RegenerateStaticCache' ) )
     $cacheCleared['static'] = $staticCacheStored;
 }
 
+// A server whose workers started before the class existed (Velocity keeps the
+// autoload array it warmed up with) must still render this page.
+$queryCacheAvailable = class_exists( 'eZDBQueryCache' );
+
+if ( $queryCacheAvailable && $module->isCurrentAction( 'ClearQueryCache' ) )
+{
+    // One generation bump: every stored result is stale at once, on every
+    // server that shares var/, without walking APCu.
+    eZDBQueryCache::clearAll();
+    $cacheCleared['querycache'] = eZDBQueryCache::enabled()
+        ? array( true, 'The SQL query cache was cleared' )
+        : array( true, 'The SQL query cache was cleared (it is switched off in querycache.ini, so nothing was being stored)' );
+    eZDebug::writeNotice( $cacheCleared['querycache'][1], 'setup/cache' );
+}
+
+if ( $module->isCurrentAction( 'ClearHttpCache' ) )
+{
+    $httpCacheEnabled = eZINI::instance( 'httpcache.ini' )->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled';
+    if ( $httpCacheEnabled )
+        ezpHttpCacheListener::purgeAll();
+    $cacheCleared['httpcache'] = $httpCacheEnabled
+        ? array( true, 'The HTTP cache was cleared: every page is rendered again on its next request' )
+        : array( false, 'The HTTP cache is switched off in httpcache.ini, so there was nothing to clear' );
+    eZDebug::writeNotice( $cacheCleared['httpcache'][1], 'setup/cache' );
+}
+
 $tpl->setVariable( "cache_cleared", $cacheCleared );
+$tpl->setVariable( 'query_cache_enabled', $queryCacheAvailable && eZDBQueryCache::enabled() );
+$tpl->setVariable( 'query_cache_mode', $queryCacheAvailable ? ( eZDBQueryCache::settings()['mode'] ?? 'off' ) : 'off' );
+$tpl->setVariable( 'http_cache_enabled', eZINI::instance( 'httpcache.ini' )->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled' );
 $tpl->setVariable( 'static_cache_siteaccess_list', $staticCacheSiteAccessList );
 $tpl->setVariable( 'static_cache_storage_dir', $staticCacheStorageDir );
 $tpl->setVariable( 'static_cache_enabled', $staticCacheEnabled );

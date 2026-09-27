@@ -494,6 +494,137 @@
 </table>
 {/if}
 
+{if $sql_profile}
+<table class="list" cellspacing="0" id="database-queries">
+<tr>
+    <th><label>{'Database queries'|i18n( 'design/admin/setup/info' )}</label></th>
+</tr>
+<tr>
+<td style="padding: 0.6em 1em;">
+    <div style="margin-bottom: 0.5em;">
+        <strong style="font-size: 1.1em;">{'SQL statements per request'|i18n( 'design/admin/setup/info' )}</strong>
+        <small>&nbsp;<code>{$sql_profile.engine|wash}</code></small>
+        &nbsp;
+        {if $sql_profile.mongo}
+            <span style="padding: 1px 7px; border-radius: 9px; background: #e0e0e0; color: #555; font-size: 0.85em;">{'MongoDB: not an SQL engine'|i18n( 'design/admin/setup/info' )}</span>
+            <br /><small>{'The query cache is for the SQL engines. The MongoDB driver keeps its own statement profile (var/tmp/mongo_profile.on).'|i18n( 'design/admin/setup/info' )}</small>
+        {elseif $sql_profile.on}
+            <span style="padding: 1px 7px; border-radius: 9px; background: #d8f0d8; color: #1e6b1e; font-size: 0.85em;">{'profile on'|i18n( 'design/admin/setup/info' )}</span>
+        {else}
+            <span style="padding: 1px 7px; border-radius: 9px; background: #e0e0e0; color: #555; font-size: 0.85em;">{'profile off'|i18n( 'design/admin/setup/info' )}</span>
+        {/if}
+    </div>
+
+    {if $sql_profile.message}
+    <div style="margin: 0.4em 0; padding: 0.4em 0.7em; border-radius: 4px; background: #eef6ee; color: #1e6b1e;"><small>{$sql_profile.message|wash}</small></div>
+    {/if}
+
+    {if and( $sql_profile.mongo|not, $query_cache )}
+    <div style="margin: 0.3em 0 0.8em 0; padding: 0.5em 0.8em; border: 1px solid #e3e3e3; border-radius: 4px;">
+        <strong>{'Query cache'|i18n( 'design/admin/setup/info' )}</strong>
+        &nbsp;
+        {if $query_cache.enabled}
+            <span style="padding: 1px 7px; border-radius: 9px; background: #d8f0d8; color: #1e6b1e; font-size: 0.85em;">{$query_cache.mode|wash}</span>
+        {else}
+            <span style="padding: 1px 7px; border-radius: 9px; background: #e0e0e0; color: #555; font-size: 0.85em;">{'off'|i18n( 'design/admin/setup/info' )}</span>
+        {/if}
+        <small>&nbsp;{'settings/querycache.ini'|i18n( 'design/admin/setup/info' )}: MaxAge={$query_cache.max_age}&nbsp;s, MaxRows={$query_cache.max_rows}{if $query_cache.exclude}, ExcludeTables={$query_cache.exclude|implode( ', ' )|wash}{/if}</small>
+        <div style="margin-top: 0.3em;"><small>
+            {if $query_cache.mode|eq( 'shared' )}
+                {if $query_cache.apcu}
+                    <strong>{$query_cache.entries}</strong> {'results held in APCu'|i18n( 'design/admin/setup/info' )} ({$query_cache.memory_kb}&nbsp;KB) {'by this server'|i18n( 'design/admin/setup/info' )}
+                {else}
+                    <span style="color: #a33;">{'APCu is not available to this server: "shared" works as "request" here.'|i18n( 'design/admin/setup/info' )}</span>
+                {/if}
+                &middot;
+            {/if}
+            {'generation'|i18n( 'design/admin/setup/info' )} <strong>{$query_cache.generation}</strong>{if $query_cache.cleared}, {'last cleared'|i18n( 'design/admin/setup/info' )} {$query_cache.cleared|l10n( shortdatetime )}{/if}
+            &middot; <strong>{$query_cache.tables_tracked}</strong> {'tables written since'|i18n( 'design/admin/setup/info' )}
+            {if $query_cache.state_exists|not}<span style="color: #666;">({'no state file yet'|i18n( 'design/admin/setup/info' )})</span>{/if}
+        </small></div>
+        {if $query_cache.counters}
+        <div style="margin-top: 0.2em;"><small>
+            {'This server since'|i18n( 'design/admin/setup/info' )} {if $query_cache.counters.since}{$query_cache.counters.since|l10n( shortdatetime )}{else}-{/if}:
+            <strong>{$query_cache.counters.requests}</strong> {'requests'|i18n( 'design/admin/setup/info' )},
+            <strong>{$query_cache.counters.hits}</strong> {'hits'|i18n( 'design/admin/setup/info' )},
+            <strong>{$query_cache.counters.misses}</strong> {'misses'|i18n( 'design/admin/setup/info' )}{if $query_cache.counters.hit_rate|ne( '' )} (<strong>{$query_cache.counters.hit_rate}&nbsp;%</strong> {'hit rate'|i18n( 'design/admin/setup/info' )}){/if},
+            {$query_cache.counters.uncacheable} {'not cacheable'|i18n( 'design/admin/setup/info' )},
+            {$query_cache.counters.writes} {'writes'|i18n( 'design/admin/setup/info' )}
+        </small></div>
+        {/if}
+        {if $query_cache.recent_writes}
+        <div style="margin-top: 0.2em; color: #555;"><small>
+            {'Last written'|i18n( 'design/admin/setup/info' )}:
+            {foreach $query_cache.recent_writes as $w}<code>{$w.table|wash}</code> {$w.ago}&nbsp;s{delimiter}, {/delimiter}{/foreach}
+        </small></div>
+        {/if}
+        {if $can_flush_caches}
+        <form method="post" action={'/setup/info'|ezurl} style="margin-top: 0.5em;">
+            <button type="submit" class="button" name="QueryCacheAction" value="clear">{'Clear the query cache'|i18n( 'design/admin/setup/info' )}</button>
+            {if $query_cache.counters}<button type="submit" class="button" name="QueryCacheAction" value="reset">{'Reset the counters'|i18n( 'design/admin/setup/info' )}</button>{/if}
+        </form>
+        {/if}
+    </div>
+    {/if}
+
+    {if $sql_profile.mongo|not}
+    {if $sql_profile.summary}
+    <div><small>
+        {'Over the last %n profiled requests'|i18n( 'design/admin/setup/info', '', hash( '%n', $sql_profile.summary.requests ) )}:
+        <strong>{$sql_profile.summary.statements}</strong> {'statements'|i18n( 'design/admin/setup/info' )},
+        <strong>{$sql_profile.summary.repeats}</strong> {'exact repeats'|i18n( 'design/admin/setup/info' )} ({$sql_profile.summary.repeat_pct}&nbsp;%),
+        <strong>{$sql_profile.summary.db_ms}&nbsp;ms</strong> {'in the database'|i18n( 'design/admin/setup/info' )}
+        &middot; {'a per-request memo would save'|i18n( 'design/admin/setup/info' )} <strong>{$sql_profile.summary.memo_ms}&nbsp;ms</strong>,
+        {'a shared query cache about'|i18n( 'design/admin/setup/info' )} <strong>{$sql_profile.summary.shared_ms}&nbsp;ms</strong>
+    </small></div>
+
+    <table class="list" cellspacing="0" style="margin-top: 0.4em;">
+    <tr>
+        <th><small>{'Time'|i18n( 'design/admin/setup/info' )}</small></th>
+        <th><small>{'Request'|i18n( 'design/admin/setup/info' )}</small></th>
+        <th style="text-align: right;"><small>{'Statements'|i18n( 'design/admin/setup/info' )}</small></th>
+        <th style="text-align: right;"><small>{'Distinct'|i18n( 'design/admin/setup/info' )}</small></th>
+        <th style="text-align: right;"><small>{'Repeats'|i18n( 'design/admin/setup/info' )}</small></th>
+        <th style="text-align: right;"><small>{'In the database'|i18n( 'design/admin/setup/info' )}</small></th>
+        <th style="text-align: right;"><small>{'Memo saves'|i18n( 'design/admin/setup/info' )}</small></th>
+        <th style="text-align: right;"><small>{'Shared cache saves'|i18n( 'design/admin/setup/info' )}</small></th>
+    </tr>
+    {foreach $sql_profile.rows as $row sequence array( 'bglight', 'bgdark' ) as $style}
+    <tr class="{$style}">
+        <td><small>{$row.time|wash}</small></td>
+        <td style="max-width: 22em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><small><code>{$row.uri|wash}</code></small></td>
+        <td style="text-align: right;"><small>{$row.statements}</small></td>
+        <td style="text-align: right;"><small>{$row.distinct}</small></td>
+        <td style="text-align: right;"><small>{$row.repeats}</small></td>
+        <td style="text-align: right;"><small>{$row.db_ms}&nbsp;ms</small></td>
+        <td style="text-align: right;"><small>{$row.memo_ms}&nbsp;ms</small></td>
+        <td style="text-align: right;"><small>{$row.shared_ms}&nbsp;ms</small></td>
+    </tr>
+    {/foreach}
+    </table>
+    {elseif $sql_profile.on}
+    <div><small>{'On, and nothing profiled yet: open a few pages.'|i18n( 'design/admin/setup/info' )}</small></div>
+    {else}
+    <div><small>{'Switch the profile on to see how many statements each request runs, how many are exact repeats, and what a query cache would save.'|i18n( 'design/admin/setup/info' )}</small></div>
+    {/if}
+
+    <div style="margin-top: 0.4em; color: #666;"><small>{'The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. "Memo saves" is what the request mode would save, "shared cache saves" what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/bc/6.0/sql-query-cache.md.'|i18n( 'design/admin/setup/info' )}</small></div>
+
+    {if $can_flush_caches}
+    <form method="post" action={'/setup/info'|ezurl} style="margin-top: 0.7em;">
+        {if $sql_profile.on}
+            <button type="submit" class="button" name="SQLProfileAction" value="off">{'Switch the SQL profile off'|i18n( 'design/admin/setup/info' )}</button>
+        {else}
+            <button type="submit" class="button" name="SQLProfileAction" value="on">{'Switch the SQL profile on'|i18n( 'design/admin/setup/info' )}</button>
+        {/if}
+    </form>
+    {/if}
+    {/if}
+</td>
+</tr>
+</table>
+{/if}
+
 {if $response_cache}
 <table class="list" cellspacing="0">
 <tr>

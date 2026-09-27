@@ -1,5 +1,5 @@
 {* Feedbacks. *}
-{foreach array( 'opcache', 'apcu' ) as $phpCache}
+{foreach array( 'opcache', 'apcu', 'querycache', 'httpcache' ) as $phpCache}
 {if $cache_cleared[$phpCache]}
     <div class="{if $cache_cleared[$phpCache][0]}message-feedback{else}message-warning{/if}">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {$cache_cleared[$phpCache][1]|wash}</h2>
@@ -92,6 +92,18 @@
 <tr class="bglight">
 <td>{'Configuration (ini) caches'|i18n( 'design/admin/setup/cache' )}:</td>
 <td><input class="button" type="submit" name="ClearINICacheButton" value="{'Clear Ini caches'|i18n( 'design/admin/setup/cache' )}" title="{'This operation will clear all the configuration caches. Use it to force the system to re-read the configuration files if you have changed settings.'|i18n( 'design/admin/setup/cache' )}" /></td>
+</tr>
+
+{* SQL query cache. *}
+<tr class="bgdark">
+<td>{'Database query results (SQL query cache)'|i18n( 'design/admin/setup/cache' )}: <span class="small">({if $query_cache_enabled}{$query_cache_mode|wash}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if})</span></td>
+<td><input class="button" type="submit" name="ClearQueryCacheButton" value="{'Clear query cache'|i18n( 'design/admin/setup/cache' )}" title="{'Makes every stored SQL result stale at once, on every server sharing this installation. Writes already invalidate the tables they touch; use this after changing the database outside Exponential, for example with a SQL client or a restore.'|i18n( 'design/admin/setup/cache' )}" /></td>
+</tr>
+
+{* HTTP cache. *}
+<tr class="bglight">
+<td>{'Whole pages (HTTP cache)'|i18n( 'design/admin/setup/cache' )}: <span class="small">({if $http_cache_enabled}{'enabled'|i18n( 'design/admin/setup/cache' )}{else}{'off'|i18n( 'design/admin/setup/cache' )}{/if})</span></td>
+<td><input class="{if $http_cache_enabled}button{else}button-disabled{/if}" type="submit" name="ClearHttpCacheButton" value="{'Clear HTTP cache'|i18n( 'design/admin/setup/cache' )}"{if $http_cache_enabled|not} disabled="disabled"{/if} title="{'Drops every cached page for every permission context, including the copies the Velocity response cache holds. Publishing already purges the pages it affects.'|i18n( 'design/admin/setup/cache' )}" /></td>
 </tr>
 
 {* All caches. *}

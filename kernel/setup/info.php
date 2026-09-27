@@ -927,6 +927,101 @@ if ( class_exists( 'ezpHttpCacheContract' ) )
     }
 }
 $tpl->setVariable( 'http_cache', $httpCache );
+
+// Database queries: the SQL query cache (eZDBQueryCache, settings/querycache.ini)
+// and the SQL profile of recent requests (eZDBInterface::profileSQL(),
+// var/tmp/sql_profile.on). See doc/bc/6.0/sql-query-cache.md.
+// SQL engines only; the MongoDB driver keeps its own profile.
+$sqlProfile = false;
+$dbClass = get_class( $db );
+$isMongo = stripos( $dbClass, 'mongo' ) !== false;
+$varTmp = eZSys::rootDir() . '/var/tmp';
+$sqlSentinel = $varTmp . '/sql_profile.on';
+$sqlMessage = '';
+if ( !$isMongo && $canFlushCaches && $http->hasPostVariable( 'SQLProfileAction' ) )
+{
+    if ( $http->postVariable( 'SQLProfileAction' ) === 'on' )
+    {
+        if ( @touch( $sqlSentinel ) )
+        {
+            // Every server writes the log, whoever it runs as.
+            @chmod( $sqlSentinel, 0666 );
+            $sqlMessage = ezpI18n::tr( 'design/admin/setup/info', 'The SQL profile is on: every request now adds a line.' );
+        }
+    }
+    else if ( $http->postVariable( 'SQLProfileAction' ) === 'off' )
+        $sqlMessage = ( !is_file( $sqlSentinel ) || @unlink( $sqlSentinel ) )
+            ? ezpI18n::tr( 'design/admin/setup/info', 'The SQL profile is off.' ) : '';
+}
+if ( !$isMongo && $canFlushCaches && class_exists( 'eZDBQueryCache' ) && $http->hasPostVariable( 'QueryCacheAction' ) )
+{
+    if ( $http->postVariable( 'QueryCacheAction' ) === 'clear' )
+    {
+        eZDBQueryCache::clearAll();
+        $sqlMessage = ezpI18n::tr( 'design/admin/setup/info', 'The SQL query cache was cleared.' );
+    }
+    else if ( $http->postVariable( 'QueryCacheAction' ) === 'reset' )
+    {
+        eZDBQueryCache::resetStats();
+        $sqlMessage = ezpI18n::tr( 'design/admin/setup/info', 'The query cache counters of this server were reset.' );
+    }
+}
+$queryCache = false;
+if ( !$isMongo && class_exists( 'eZDBQueryCache' ) )
+{
+    // This request's own lookups are not in the totals yet: add them first.
+    eZDBQueryCache::flushStats();
+    $queryCache = eZDBQueryCache::status();
+    $recent = array();
+    foreach ( $queryCache['recent_writes'] as $table => $when )
+        $recent[] = array( 'table' => $table, 'when' => $when, 'ago' => max( 0, time() - (int)$when ) );
+    $queryCache['recent_writes'] = $recent;
+    $queryCache['memory_kb'] = round( $queryCache['memory'] / 1024 );
+}
+$tpl->setVariable( 'query_cache', $queryCache );
+$sqlProfile = array(
+    'engine'  => $dbClass,
+    'mongo'   => $isMongo,
+    'on'      => !$isMongo && is_file( $sqlSentinel ),
+    'message' => $sqlMessage,
+    'rows'    => array(),
+    'summary' => array(),
+);
+if ( !$isMongo && is_readable( $varTmp . '/sql_profile.log' ) )
+{
+    $lines = @file( $varTmp . '/sql_profile.log', FILE_IGNORE_NEW_LINES ) ?: array();
+    $rows = array();
+    foreach ( array_reverse( $lines ) as $line )
+    {
+        if ( !preg_match( '/^(\d\d:\d\d:\d\d)\s+(\S+)\s+(\d+) statements\s+(\d+) selects\s+(\d+) distinct\s+(\d+) repeats \| db\s+([\d.]+) ms, repeats\s+([\d.]+) ms/', $line, $m ) )
+            continue;
+        $statements = (int)$m[3];
+        $db_ms = (float)$m[7];
+        // Design B: a warm shared cache answers each statement in ~15 µs.
+        $shared = max( 0.0, $db_ms - $statements * 0.015 );
+        $rows[] = array( 'time' => $m[1], 'uri' => $m[2], 'statements' => $statements, 'distinct' => (int)$m[5],
+                         'repeats' => (int)$m[6], 'db_ms' => round( $db_ms, 1 ), 'memo_ms' => round( (float)$m[8], 1 ),
+                         'shared_ms' => round( $shared, 1 ) );
+        if ( count( $rows ) >= 12 )
+            break;
+    }
+    $sqlProfile['rows'] = $rows;
+    if ( $rows )
+    {
+        $n = count( $rows );
+        $sum = function ( $k ) use ( $rows ) { return array_sum( array_column( $rows, $k ) ); };
+        $sqlProfile['summary'] = array(
+            'requests'   => $n,
+            'statements' => round( $sum( 'statements' ) / $n ),
+            'repeats'    => round( $sum( 'repeats' ) / $n ),
+            'repeat_pct' => $sum( 'statements' ) ? round( 100 * $sum( 'repeats' ) / $sum( 'statements' ) ) : 0,
+            'db_ms'      => round( $sum( 'db_ms' ) / $n, 1 ),
+            'memo_ms'    => round( $sum( 'memo_ms' ) / $n, 1 ),
+            'shared_ms'  => round( $sum( 'shared_ms' ) / $n, 1 ),
+        );
+    }
+}
+$tpl->setVariable( 'sql_profile', $sqlProfile );
 $tpl->setVariable( 'engine_info', $engineInfo );
 $tpl->setVariable( 'webserver_info', $webserverInfo );
 $tpl->setVariable( 'database_info', $db->databaseName() );
