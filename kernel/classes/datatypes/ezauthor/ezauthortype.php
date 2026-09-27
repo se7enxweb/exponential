@@ -186,7 +186,8 @@ class eZAuthorType extends eZDataType
 
     function fromString( $contentObjectAttribute, $string )
     {
-        $authorList = eZStringUtils::explodeStr( $string, '&' );
+        // Anything but a string is an empty list (explodeStr() of an array is a TypeError)
+        $authorList = is_scalar( $string ) ? eZStringUtils::explodeStr( (string)$string, '&' ) : array();
 
         $author = new eZAuthor( );
 
