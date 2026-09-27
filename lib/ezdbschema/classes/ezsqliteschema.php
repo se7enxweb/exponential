@@ -215,7 +215,7 @@ class eZSQLiteSchema extends eZDBSchemaInterface
 
             $isUnique = ( $idxRow['unique'] == 1 );
             $indexFields = array();
-            $indexInfo = $this->DBInstance->arrayQuery( "PRAGMA index_info($indexName)" );
+            $indexInfo = $this->DBInstance->arrayQuery( "PRAGMA index_info(" . $this->escapeIdentifier( $indexName ) . ")" );
             foreach ( $indexInfo as $colRow )
             {
                 $indexFields[$colRow['seqno']] = $colRow['name'];
@@ -269,12 +269,12 @@ class eZSQLiteSchema extends eZDBSchemaInterface
 
             case 'non-unique':
             {
-                $sql .= "INDEX $index_name";
+                $sql .= "INDEX " . self::physicalIndexName( $table_name, $index_name );
             } break;
 
             case 'unique':
             {
-                $sql .= "UNIQUE INDEX $index_name";
+                $sql .= "UNIQUE INDEX " . self::physicalIndexName( $table_name, $index_name );
             } break;
         }
 
@@ -346,19 +346,112 @@ class eZSQLiteSchema extends eZDBSchemaInterface
             return false;
         }
         
-        // SQLite uses: DROP INDEX [IF EXISTS] index_name
-        return "DROP INDEX IF EXISTS " . $this->escapeIdentifier( $index_name ) . ";\n";
+        // SQLite uses: DROP INDEX [IF EXISTS] index_name. A database made
+        // before index names were qualified shows its plain names qualified
+        // (transformSchema()), so drop the name the database really has.
+        $name = $index_name;
+        $prefix = $table_name . '__';
+        if ( strpos( $index_name, $prefix ) === 0 && $this->DBInstance instanceof eZDBInterface )
+        {
+            $plain = substr( $index_name, strlen( $prefix ) );
+            $rows = $this->DBInstance->arrayQuery( "SELECT name FROM sqlite_master WHERE type = 'index' AND name = '" .
+                                                   $this->DBInstance->escapeString( $plain ) . "' AND tbl_name = '" .
+                                                   $this->DBInstance->escapeString( $table_name ) . "'" );
+            if ( $rows )
+                $name = $plain;
+        }
+        return "DROP INDEX IF EXISTS " . $this->escapeIdentifier( $name ) . ";\n";
+    }
+
+    /**
+     * \reimp As the generic transformation, and in the local form an index
+     * carries the name SQLite creates it under (physicalIndexName()), so a
+     * schema file and a database read back compare name for name. A database
+     * made before index names were qualified is reported with the renames
+     * that make its names unique.
+     */
+    function transformSchema( &$schema, $toLocal )
+    {
+        $ok = parent::transformSchema( $schema, $toLocal );
+        if ( $toLocal )
+        {
+            foreach ( $schema as $table => $def )
+            {
+                if ( $table === '_info' || !is_array( $def ) || !isset( $def['indexes'] ) || !is_array( $def['indexes'] ) )
+                    continue;
+                $renamed = array();
+                foreach ( $def['indexes'] as $name => $index )
+                {
+                    $renamed[( isset( $index['type'] ) && $index['type'] == 'primary' ) ? $name : self::physicalIndexName( $table, $name )] = $index;
+                }
+                ksort( $renamed );
+                $schema[$table]['indexes'] = $renamed;
+            }
+        }
+        return $ok;
+    }
+
+    /**
+     * The name an index is created under. SQLite index names are database-wide,
+     * not per table as in MySQL, so the schema files' names (contentobject_id,
+     * import_id...) collide between tables and creating a schema stopped at the
+     * first repeat. An index is created as "<table>__<name>" unless its name
+     * already starts with "<table>_".
+     */
+    static function physicalIndexName( $table, $index )
+    {
+        if ( strpos( $index, $table . '_' ) === 0 )
+            return $index;
+        return $table . '__' . $index;
+    }
+
+    /**
+     * An identifier (table, index, column) quoted the way SQLite expects:
+     * double quotes, with any double quote inside doubled. The database
+     * consistency check called this and it did not exist.
+     */
+    function escapeIdentifier( $name )
+    {
+        return '"' . str_replace( '"', '""', (string)$name ) . '"';
+    }
+
+    /**
+     * SQLite has no storage engines (MySQL's TYPE=/ENGINE=): nothing to add.
+     */
+    function tableStorageTypeName( $type )
+    {
+        return false;
+    }
+
+    /**
+     * SQLite has none of MySQL's table options (charset, collation, engine):
+     * a table definition that carries them is created without them.
+     */
+    function generateTableOption( $tableName, $tableDef, $optionType, $optionValue, $params )
+    {
+        return false;
     }
 
     /*!
      * \private
      */
-    function generateFieldDef( $field_name, $def, &$skip_primary, $params = null )
+    function generateFieldDef( $field_name, $def, &$skip_primary, $params = null, $inCompositeKey = false )
     {
         $diffFriendly = isset( $params['diff_friendly'] ) ? $params['diff_friendly'] : false;
 
         $sql_def = $field_name . ' ';
         $defaultText = "DEFAULT";
+
+        // SQLite allows AUTOINCREMENT only on a primary key of one column. A
+        // table keyed on (id, version) keeps its whole key and id is a plain
+        // INTEGER; eZSQLite3DB::lastSerialID() numbers a new row (MAX + 1).
+        // Declaring id the key alone made each new version of a class, an
+        // attribute or a workflow replace the previous one (INSERT OR REPLACE).
+        if ( $def['type'] == 'auto_increment' && $inCompositeKey )
+        {
+            $skip_primary = false;
+            return $field_name . ' INTEGER';
+        }
 
         if ( $def['type'] != 'auto_increment' )
         {
@@ -460,9 +553,21 @@ class eZSQLiteSchema extends eZDBSchemaInterface
 
         $fields = $tableDef['fields'];
 
+        $primaryFields = array();
+        foreach ( $tableDef['indexes'] as $index_def )
+        {
+            if ( $index_def['type'] == 'primary' )
+            {
+                foreach ( $index_def['fields'] as $f )
+                    $primaryFields[] = is_array( $f ) ? $f['name'] : $f;
+            }
+        }
+        $compositeKey = count( $primaryFields ) > 1;
+
         foreach ( $fields as $field_name => $field_def )
         {
-            $sql_fields[] = '  ' . self::generateFieldDef( $field_name, $field_def, $skip_pk_flag, $params );
+            $sql_fields[] = '  ' . self::generateFieldDef( $field_name, $field_def, $skip_pk_flag, $params,
+                                                           $compositeKey && in_array( $field_name, $primaryFields ) );
             if ( $skip_pk_flag )
             {
                 $skip_pk = true;
