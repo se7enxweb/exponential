@@ -28,11 +28,58 @@ class eZSQLite3DB extends eZDBInterface
         // WAL mode has better control over concurrency.
         // Source: https://www.sqlite.org/wal.html
         $this->query('PRAGMA journal_mode = wal;');
+        $this->applyPragmas();
 
         // Initialize TempTableList
         $this->TempTableList = array();
 
         eZDebug::createAccumulatorGroup( 'sqlite3_total', 'SQLite3 Total' );
+    }
+
+    /**
+     * The connection's settings, from site.ini [DatabaseSettings]
+     * SQLitePragmas[] ("name=value"), after these defaults. SQLite's own
+     * defaults are made for safety on any hardware, not for a web site:
+     *
+     * - synchronous=NORMAL: with WAL still crash-safe; FULL synced every commit
+     * - cache_size=-65536: 64 MB of page cache (the default was 2 MB)
+     * - mmap_size=268435456: read the file through 256 MB of mapped memory,
+     *   no read() call and copy per page
+     * - temp_store=MEMORY: sorts and temporary tables in memory, not on disk
+     * - busy_timeout=5000: wait up to 5 s for a lock instead of failing at
+     *   once (0 made a request that met another's write fail)
+     *
+     * Applied at every connection: most PRAGMAs belong to the connection.
+     */
+    protected function applyPragmas()
+    {
+        if ( !$this->DBConnection )
+            return;
+        $pragmas = array( 'synchronous' => 'NORMAL', 'cache_size' => '-65536', 'mmap_size' => '268435456',
+                          'temp_store' => 'MEMORY', 'busy_timeout' => '5000' );
+        $ini = eZINI::instance();
+        if ( $ini->hasVariable( 'DatabaseSettings', 'SQLitePragmas' ) )
+        {
+            foreach ( (array)$ini->variable( 'DatabaseSettings', 'SQLitePragmas' ) as $line )
+            {
+                $line = trim( (string)$line );
+                $eq = strpos( $line, '=' );
+                if ( $line === '' || $eq === false || $eq === 0 )
+                    continue;
+                $name = strtolower( trim( substr( $line, 0, $eq ) ) );
+                $value = trim( substr( $line, $eq + 1 ) );
+                if ( !preg_match( '/^[a-z_]+$/', $name ) || !preg_match( '/^[A-Za-z0-9_-]+$/', $value ) )
+                    continue;   // a PRAGMA is not a place for anything else
+                $pragmas[$name] = $value;
+            }
+        }
+        foreach ( $pragmas as $name => $value )
+        {
+            if ( $name === 'busy_timeout' )
+                $this->DBConnection->busyTimeout( (int)$value );
+            else
+                @$this->DBConnection->exec( "PRAGMA $name = $value" );
+        }
     }
 
     /*!
@@ -280,7 +327,7 @@ class eZSQLite3DB extends eZDBInterface
             {
                 $this->setError();
 
-                eZDebug::writeError( "Error: error when executing query: $sql", "eZSQLite3DB" );
+                eZDebug::writeError( "Error: error when executing query: $sql" . ( $this->DBConnection ? " -- " . $this->DBConnection->lastErrorMsg() : "" ), "eZSQLite3DB" );
                 $this->reportError();
             }
             else
@@ -384,7 +431,7 @@ class eZSQLite3DB extends eZDBInterface
             if ( $results === false )
             {
                 $this->setError();
-                eZDebug::writeError( "Error: error executing query: $sql", "eZSQLite3DB" );
+                eZDebug::writeError( "Error: error executing query: $sql" . ( $this->DBConnection ? " -- " . $this->DBConnection->lastErrorMsg() : "" ), "eZSQLite3DB" );
                 $this->reportError();
 
                 return false;
