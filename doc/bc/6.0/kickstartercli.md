@@ -215,12 +215,12 @@ Password=
 ```ini
 [database_choice]
 Continue=true
-Type=mysqli
+Type=sqlite3
 ```
 
 | Field | Description |
 |-------|-------------|
-| `Type` | Database driver: `mysqli`, `pgsql`, `sqlite3`, `mongodb`. |
+| `Type` | Database driver: `sqlite3` (the default, needs no database server), `mysqli`, `pgsql`, `mongodb`. |
 
 **Important:** `Type` chooses the driver the *installer* connects with. It does
 not decide the `DatabaseImplementation` written into

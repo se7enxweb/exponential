@@ -11,7 +11,7 @@ Password=
 
 [database_choice]
 Continue=true
-Type=mysqli
+Type=sqlite3
 
 [database_init]
 Continue=true

@@ -99,10 +99,13 @@
 ## Type=<database-system>
 ## Which database system to use
 ## <database-system>:
-## - mysql - Use mysqli (MySQL Improved)
-## - postgresql - Use postgresql
+## - sqlite3 - Use SQLite (the default and recommended choice: no
+##             database server needed, the database is a single file)
+## - mysqli - Use mysqli (MySQL Improved); mysql is accepted too
+## - pgsql - Use PostgreSQL; postgresql is accepted too
+## - mongodb - Use MongoDB
 ## other values are possible if provided by extension
-#Type=mysqli
+#Type=sqlite3
 
 #[database_init]
 ## Continue=<true|false>

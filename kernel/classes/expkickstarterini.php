@@ -32,9 +32,9 @@ class expKickstarterIni
     private $choiceOptions = array(
         'database_choice' => array(
             'Type' => array(
+                'sqlite3' => 'SQLite 3 (recommended, no database server needed)',
                 'mysqli'  => 'MySQL (mysqli)',
                 'pgsql'   => 'PostgreSQL (pgsql)',
-                'sqlite3' => 'SQLite 3',
                 'mongodb' => 'MongoDB',
             ),
         ),
@@ -61,7 +61,7 @@ class expKickstarterIni
     );
 
     private $fieldDefaults = array(
-        'database_choice' => array( 'Type' => 'mysqli' ),
+        'database_choice' => array( 'Type' => 'sqlite3' ),
         'database_init'   => array(
             'Server'   => 'localhost',
             'Port'     => '',
