@@ -306,8 +306,8 @@ so the tests never touch the site's cache.
 | QC-09 | Keys differ by statement, `arrayQuery()` parameters, database and server |
 | QC-10 | A stored result is a copy: changing what a caller got changes nothing |
 | QC-11 | `Mode=off` stores nothing, writes no state and counts nothing |
-| QC-13 | A stored result is answered without parsing the statement again, but not once a table it read has been excluded |
 | QC-12 | A write by another process, seen through the state file, makes a result stale within a second, even one still in the request's memo; other tables stay current |
+| QC-13 | A stored result is answered without parsing the statement again, but not once a table it read has been excluded |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
