@@ -105,7 +105,7 @@ class eZMySQLiDB extends eZDBInterface
         eZDebug::accumulatorStart( 'mysqli_connection', 'mysqli_total', 'Database connection' );
         try {
             $connection = mysqli_connect( $server, $user, $password, null, (int)$port, $socketPath );
-        } catch( ErrorException $e ) {}
+        } catch( ErrorException | mysqli_sql_exception $e ) { $connection = false; }
         eZDebug::accumulatorStop( 'mysqli_connection' );
         eZDebug::setHandleType( $oldHandling );
 
@@ -120,7 +120,7 @@ class eZMySQLiDB extends eZDBInterface
             eZDebug::accumulatorStart( 'mysqli_connection', 'mysqli_total', 'Database connection' );
             try {
                 $connection = mysqli_connect( $server, $user, $password, null, (int)$port, $socketPath );
-            } catch( ErrorException $e ) {}
+            } catch( ErrorException | mysqli_sql_exception $e ) { $connection = false; }
             eZDebug::accumulatorStop( 'mysqli_connection' );
             eZDebug::setHandleType( $oldHandling );
 
@@ -145,7 +145,7 @@ class eZMySQLiDB extends eZDBInterface
             {
                 $ret = mysqli_select_db( $connection, $db );
             }
-            catch( ErrorException $e )
+            catch( ErrorException | mysqli_sql_exception $e )
             {
                 $ret = false;
             }
@@ -188,7 +188,7 @@ class eZMySQLiDB extends eZDBInterface
             {
                 $status = mysqli_set_charset( $connection, $mappedCharset );
             }
-            catch( ErrorException $e )
+            catch( ErrorException | mysqli_sql_exception $e )
             {
                 $status = false;
             }
