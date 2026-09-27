@@ -154,10 +154,16 @@ class eZMultiOption
     */
     function addOption( $newID, $OptionID, $optionValue, $optionAdditionalPrice )
     {
+        // A key that names no multioption (a stale form, a hand-made request)
+        // adds nothing instead of creating a half multioption without a name
+        if ( !is_scalar( $newID ) || !isset( $this->Options[$newID] ) )
+            return;
         $key = count( $this->Options[$newID]['optionlist'] ) + 1;
-        if ( strlen( $OptionID ) == 0 )
+        if ( !is_scalar( $OptionID ) || strlen( (string)$OptionID ) == 0 )
         {
-            $this->OptionCounter += 1;
+            // The counter is the option_counter attribute as read, a string;
+            // '' (attribute missing) + 1 is a TypeError in PHP 8
+            $this->OptionCounter = (int)$this->OptionCounter + 1;
             $OptionID = $this->OptionCounter;
         }
         $this->Options[$newID]['optionlist'][] = array( "id" => $key,
@@ -225,12 +231,37 @@ class eZMultiOption
     */
     function removeMultiOptions( $array_remove )
     {
+        // The posted values are multioption ids. They are looked up by id and
+        // not used as keys minus one: the keys start at 1 after decodeXML() and
+        // at 0 after sortMultiOptions(), so the old arithmetic removed the
+        // neighbour of the ticked multioption in one of the two cases, and a
+        // value that is not a number was a TypeError
+        if ( !is_array( $array_remove ) )
+            $array_remove = array( $array_remove );
         foreach ( $array_remove as $id )
         {
-            unset( $this->Options[ $id - 1 ] );
+            $key = $this->multiOptionKey( $id );
+            if ( $key !== false )
+                unset( $this->Options[$key] );
         }
         $this->Options = array_values( $this->Options );
         $this->changeMultiOptionId();
+    }
+
+    /*!
+      \return the key in the multioption list of the multioption whose \c id is
+      \a $id, or false when there is none.
+    */
+    function multiOptionKey( $id )
+    {
+        if ( !is_scalar( $id ) || !is_numeric( $id ) )
+            return false;
+        foreach ( $this->Options as $key => $multioption )
+        {
+            if ( isset( $multioption['id'] ) && $multioption['id'] == $id )
+                return $key;
+        }
+        return false;
     }
 
     /*!
@@ -242,17 +273,27 @@ class eZMultiOption
     */
     function removeOptions( $arrayRemove, $optionId )
     {
+        if ( !is_scalar( $optionId ) || !isset( $this->Options[$optionId] ) )
+            return;
+        if ( !is_array( $arrayRemove ) )
+            $arrayRemove = array( $arrayRemove );
         foreach ( $arrayRemove as  $id )
         {
-            unset( $this->Options[$optionId]['optionlist'][$id - 1] );
+            if ( is_scalar( $id ) && is_numeric( $id ) )
+                unset( $this->Options[$optionId]['optionlist'][(int)$id - 1] );
         }
-        $this->Options = array_values( $this->Options );
+        // Renumber the options before the multioption list is reindexed: the
+        // old order renumbered whatever multioption had the key afterwards
+        // (the next one, or a warning after the last one) and left the gaps in
+        // the one the options were removed from
+        $this->Options[$optionId]['optionlist'] = array_values( $this->Options[$optionId]['optionlist'] );
         $i = 1;
         foreach ( $this->Options[$optionId]['optionlist'] as $key => $opt )
         {
             $this->Options[$optionId]['optionlist'][$key]['id'] = $i;
             $i++;
         }
+        $this->Options = array_values( $this->Options );
     }
 
     /*!
@@ -313,14 +354,25 @@ class eZMultiOption
         $this->Options = array();
         if ( $xmlString != "" )
         {
+            // Broken stored XML reads as an empty set: the parser's complaints
+            // are collected instead of raised as warnings, and a document
+            // without root, <name> or <multioptions> is no fatal error on null
             $dom = new DOMDocument( '1.0', 'utf-8' );
-            $success = $dom->loadXML( $xmlString );
+            $previous = libxml_use_internal_errors( true );
+            $success = is_string( $xmlString ) ? $dom->loadXML( $xmlString ) : false;
+            libxml_clear_errors();
+            libxml_use_internal_errors( $previous );
 
-            $root = $dom->documentElement;
+            $root = $success ? $dom->documentElement : null;
+            if ( !$root )
+                return;
             // set the name of the node
-            $this->Name = $root->getElementsByTagName( "name" )->item( 0 )->textContent;
+            $nameNode = $root->getElementsByTagName( "name" )->item( 0 );
+            $this->Name = $nameNode ? $nameNode->textContent : '';
             $this->OptionCounter = $root->getAttribute( "option_counter" );
             $multioptionsNode = $root->getElementsByTagName( "multioptions" )->item( 0 );
+            if ( !$multioptionsNode )
+                return;
             $multioptionsList = $multioptionsNode->getElementsByTagName( "multioption" );
             //Loop for MultiOptions
             foreach ( $multioptionsList as $multioption )
@@ -345,11 +397,11 @@ class eZMultiOption
     {
         $doc = new DOMDocument( '1.0', 'utf-8' );
         $root = $doc->createElement( "ezmultioption" );
-        $root->setAttribute( 'option_counter', $this->OptionCounter );
+        $root->setAttribute( 'option_counter', self::scalarString( $this->OptionCounter ) );
         $doc->appendChild( $root );
 
         $nameNode = $doc->createElement( 'name' );
-        $nameNode->appendChild( $doc->createTextNode( $this->Name ) );
+        $nameNode->appendChild( $doc->createTextNode( self::scalarString( $this->Name ) ) );
         $root->appendChild( $nameNode );
 
         $multiOptionsNode = $doc->createElement( "multioptions" );
@@ -359,24 +411,34 @@ class eZMultiOption
         {
             unset( $multioptionNode );
             $multioptionNode = $doc->createElement( "multioption" );
-            $multioptionNode->setAttribute( "id", $multioption['id'] );
-            $multioptionNode->setAttribute( "name", $multioption['name'] );
-            $multioptionNode->setAttribute( "priority", $multioption['priority'] );
-            $multioptionNode->setAttribute( 'default_option_id', $multioption['default_option_id'] );
+            $multioptionNode->setAttribute( "id", self::scalarString( $multioption['id'] ) );
+            $multioptionNode->setAttribute( "name", self::scalarString( $multioption['name'] ) );
+            $multioptionNode->setAttribute( "priority", self::scalarString( $multioption['priority'] ) );
+            $multioptionNode->setAttribute( 'default_option_id', self::scalarString( $multioption['default_option_id'] ) );
             foreach ( $multioption['optionlist'] as $option )
             {
                 unset( $optionNode );
                 $optionNode = $doc->createElement( "option" );
-                $optionNode->setAttribute( "id", $option['id'] );
-                $optionNode->setAttribute( "option_id", $option['option_id'] );
-                $optionNode->setAttribute( "value", $option['value'] );
-                $optionNode->setAttribute( 'additional_price', $option['additional_price'] );
+                $optionNode->setAttribute( "id", self::scalarString( $option['id'] ) );
+                $optionNode->setAttribute( "option_id", self::scalarString( $option['option_id'] ) );
+                $optionNode->setAttribute( "value", self::scalarString( $option['value'] ) );
+                $optionNode->setAttribute( 'additional_price', self::scalarString( $option['additional_price'] ) );
                 $multioptionNode->appendChild( $optionNode );
             }
             $multiOptionsNode->appendChild( $multioptionNode );
         }
         $xml = $doc->saveXML();
         return $xml;
+    }
+
+    /*!
+     \static
+     \return \a $value as a string for the DOM: '' for null (a form field that
+     was not posted) and for an array (a field posted as name[]).
+    */
+    static function scalarString( $value )
+    {
+        return is_scalar( $value ) ? (string)$value : '';
     }
 
     /// \privatesection

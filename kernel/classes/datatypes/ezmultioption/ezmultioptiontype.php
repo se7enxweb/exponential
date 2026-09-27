@@ -50,26 +50,20 @@ class eZMultiOptionType extends eZDataType
         $classAttribute = $contentObjectAttribute->contentClassAttribute();
         if ( $http->hasPostVariable( $base . "_data_multioption_id_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $classAttribute = $contentObjectAttribute->contentClassAttribute();
-            $multioptionIDArray = $http->postVariable( $base . "_data_multioption_id_" . $contentObjectAttribute->attribute( "id" ) );
+            // Every list is normalised by postedList(): a missing list, a single
+            // value in place of one or a nested array was a TypeError in
+            // foreach/count()/trim() or an undefined offset
+            $multioptionIDArray = self::postedList( $http, $base . "_data_multioption_id_" . $contentObjectAttribute->attribute( "id" ) );
 
             foreach ( $multioptionIDArray as $id )
             {
-                $multioptionName = $http->postVariable( $base . "_data_multioption_name_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
-                $optionIDArray = $http->hasPostVariable( $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                 ? $http->postVariable( $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                 : array();
-                $optionCountArray = $http->hasPostVariable( $base . "_data_option_option_id_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                    ? $http->postVariable( $base . "_data_option_option_id_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                    : array();
-                $optionValueArray = $http->hasPostVariable( $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                    ? $http->postVariable( $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                    : array();
-                $optionAdditionalPriceArray = $http->hasPostVariable( $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                              ? $http->postVariable( $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                              : array();
+                $optionIDArray = self::postedList( $http, $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
+                $optionValueArray = self::postedList( $http, $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
+                $optionAdditionalPriceArray = self::postedList( $http, $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
                 for ( $i = 0; $i < count( $optionIDArray ); $i++ )
                 {
+                    $optionValueArray += array( $i => '' );
+                    $optionAdditionalPriceArray += array( $i => '' );
                     if ( $contentObjectAttribute->validateIsRequired() and !$classAttribute->attribute( 'is_information_collector' ) )
                     {
                         if ( trim( $optionValueArray[$i] ) == "" )
@@ -105,9 +99,7 @@ class eZMultiOptionType extends eZDataType
                 return eZInputValidator::STATE_INVALID;
             }
 
-            $optionSetName = $http->hasPostVariable( $base . "_data_optionset_name_" . $contentObjectAttribute->attribute( "id" ) )
-                             ? $http->postVariable( $base . "_data_optionset_name_" . $contentObjectAttribute->attribute( "id" ) )
-                             : '';
+            $optionSetName = self::postedString( $http, $base . "_data_optionset_name_" . $contentObjectAttribute->attribute( "id" ) );
             if ( trim( $optionSetName ) == '' )
             {
                 $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
@@ -157,38 +149,33 @@ class eZMultiOptionType extends eZDataType
     */
     function fetchObjectAttributeHTTPInput( $http, $base, $contentObjectAttribute )
     {
-        $multioptionIDArray = $http->hasPostVariable( $base . "_data_multioption_id_" . $contentObjectAttribute->attribute( "id" ) )
-                              ? $http->postVariable( $base . "_data_multioption_id_" . $contentObjectAttribute->attribute( "id" ) )
-                              : array();
-        $optionSetName = $http->postVariable( $base . "_data_optionset_name_" . $contentObjectAttribute->attribute( "id" ) );
+        // All input goes through postedList()/postedString(): a missing field,
+        // a single value in place of a list or an array in place of a text
+        // field was a TypeError, an undefined offset or "Array" in the XML
+        $multioptionIDArray = self::postedList( $http, $base . "_data_multioption_id_" . $contentObjectAttribute->attribute( "id" ) );
+        $optionSetName = self::postedString( $http, $base . "_data_optionset_name_" . $contentObjectAttribute->attribute( "id" ) );
         $multioption = new eZMultiOption( $optionSetName );
         foreach ( $multioptionIDArray as $id )
         {
-            $multioptionName = $http->postVariable( $base . "_data_multioption_name_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
-            $optionIDArray = $http->hasPostVariable( $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                             ? $http->postVariable( $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                             : array();
+            $multioptionName = self::postedString( $http, $base . "_data_multioption_name_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
+            $optionIDArray = self::postedList( $http, $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
 
-            $optionPriority = $http->postVariable( $base . "_data_multioption_priority_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
+            // The priority only orders the multioptions: text sorts as 0
+            $optionPriority = self::postedString( $http, $base . "_data_multioption_priority_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
+            $optionPriority = is_numeric( $optionPriority ) ? $optionPriority : 0;
             // check to prevent PHP warning if the default choice is specified (no radio button selected)
-            if ( $http->hasPostVariable( $base . "_data_radio_checked_" . $contentObjectAttribute->attribute("id") . '_' . $id ) )
-                $optionDefaultValue = $http->postVariable( $base . "_data_radio_checked_" . $contentObjectAttribute->attribute("id") . '_' . $id );
-            else
-                $optionDefaultValue = '';
+            $optionDefaultValue = self::postedString( $http, $base . "_data_radio_checked_" . $contentObjectAttribute->attribute("id") . '_' . $id );
             $newID = $multioption->addMultiOption( $multioptionName,$optionPriority, $optionDefaultValue );
 
-            $optionCountArray = $http->hasPostVariable( $base . "_data_option_option_id_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                ? $http->postVariable( $base . "_data_option_option_id_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                : array();
-            $optionValueArray = $http->hasPostVariable( $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                ? $http->postVariable( $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                : array();
-            $optionAdditionalPriceArray = $http->hasPostVariable( $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                          ? $http->postVariable( $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id )
-                                          : array();
+            $optionCountArray = self::postedList( $http, $base . "_data_option_option_id_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
+            $optionValueArray = self::postedList( $http, $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
+            $optionAdditionalPriceArray = self::postedList( $http, $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) . '_' . $id );
 
             for ( $i = 0; $i < count( $optionIDArray ); $i++ )
-                $multioption->addOption( $newID, $optionCountArray[$i], $optionValueArray[$i], $optionAdditionalPriceArray[$i] );
+                $multioption->addOption( $newID,
+                                         isset( $optionCountArray[$i] ) ? $optionCountArray[$i] : '',
+                                         isset( $optionValueArray[$i] ) ? $optionValueArray[$i] : '',
+                                         isset( $optionAdditionalPriceArray[$i] ) ? $optionAdditionalPriceArray[$i] : '' );
         }
 
         $multioption->sortMultiOptions();
@@ -202,8 +189,11 @@ class eZMultiOptionType extends eZDataType
     */
     function fetchCollectionAttributeHTTPInput( $collection, $collectionAttribute, $http, $base, $contentObjectAttribute )
     {
-        $multioptionValue = $http->postVariable( $base . "_data_multioption_value_" . $contentObjectAttribute->attribute( "id" ) );
-        $collectionAttribute->setAttribute( 'data_int', $multioptionValue );
+        // data_int is an integer column: a missing field, an array or text is no choice
+        $multioptionValue = self::postedString( $http, $base . "_data_multioption_value_" . $contentObjectAttribute->attribute( "id" ) );
+        if ( !is_numeric( $multioptionValue ) )
+            return false;
+        $collectionAttribute->setAttribute( 'data_int', (int)$multioptionValue );
         return true;
     }
 
@@ -223,21 +213,32 @@ class eZMultiOptionType extends eZDataType
     */
     function customObjectAttributeHTTPAction( $http, $action, $contentObjectAttribute, $parameters )
     {
-        $actionlist = explode( "_", $action );
+        // The action is "<name>_<multioption id>" from the button name; the id
+        // part may be missing or not a number in a hand-made request, which
+        // was an undefined offset and a TypeError in "id - 1"
+        $actionlist = explode( "_", $action ) + array( '', '' );
         if ( $actionlist[0] == "new-option" )
         {
             $multioption = $contentObjectAttribute->content();
 
-            $multioption->addOption( ( $actionlist[1] - 1 ), "", "", "");
+            // Looked up by the multioption's id, which the button carries; that
+            // is the key id - 1 the old code used after sortMultiOptions()
+            $key = $multioption->multiOptionKey( $actionlist[1] );
+            if ( $key === false )
+                return;
+            $multioption->addOption( $key, "", "", "");
             $contentObjectAttribute->setContent( $multioption );
             $contentObjectAttribute->store();
         }
         else if ( $actionlist[0] == "remove-selected-option" )
         {
             $multioption = $contentObjectAttribute->content();
+            $key = $multioption->multiOptionKey( $actionlist[1] );
+            if ( $key === false )
+                return;
             $postvarname = "ContentObjectAttribute" . "_data_option_remove_" . $contentObjectAttribute->attribute( "id" ) . "_" . $actionlist[1];
             $array_remove = $http->hasPostVariable( $postvarname ) ? $http->postVariable( $postvarname ) : array();
-            $multioption->removeOptions( $array_remove, $actionlist[1] - 1 );
+            $multioption->removeOptions( $array_remove, $key );
             $contentObjectAttribute->setContent( $multioption );
             $contentObjectAttribute->store();
         }
@@ -343,7 +344,8 @@ class eZMultiOptionType extends eZDataType
         {
             $defaultValueValue = $http->postVariable( $defaultValueName );
 
-            if ( $defaultValueValue == "" )
+            // A text field: an array in its place is stored as ''
+            if ( !is_scalar( $defaultValueValue ) || $defaultValueValue == "" )
             {
                 $defaultValueValue = "";
             }
@@ -402,12 +404,15 @@ class eZMultiOptionType extends eZDataType
             $newID = $multioption->addMultiOption( array_shift( $optionArray ),
                                             $priority,
                                             array_shift( $optionArray ) );
-            $optionID = 0;
             $count = count( $optionArray );
             for ( $i = 0; $i < $count; $i +=2 )
             {
-                $multioption->addOption( $newID, $optionID, array_shift( $optionArray ), array_shift( $optionArray ) );
-                $optionID++;
+                // The option ids come from the set's counter, as they do when
+                // the options are entered in the edit form. The old count from
+                // 0 in each multioption gave the options of every multioption
+                // the same ids, so productOptionInformation() (the shop) found
+                // the option of the first multioption for any of them
+                $multioption->addOption( $newID, '', array_shift( $optionArray ), array_shift( $optionArray ) );
             }
             $priority++;
         }
@@ -429,7 +434,10 @@ class eZMultiOptionType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $defaultValue = $attributeParametersNode->getElementsByTagName( 'default-value' )->item( 0 )->textContent;
+        // A package made without the element imports as an empty default
+        // instead of a fatal error on null
+        $defaultValueNode = $attributeParametersNode ? $attributeParametersNode->getElementsByTagName( 'default-value' )->item( 0 ) : null;
+        $defaultValue = $defaultValueNode ? $defaultValueNode->textContent : '';
         $classAttribute->setAttribute( 'data_text1', $defaultValue );
     }
 
@@ -437,11 +445,22 @@ class eZMultiOptionType extends eZDataType
     {
         $node = $this->createContentObjectAttributeDOMNode( $objectAttribute );
 
-        $dom = new DOMDocument( '1.0', 'utf-8' );
-        $success = $dom->loadXML( $objectAttribute->attribute( 'data_text' ) );
-
-        $importedRoot = $node->ownerDocument->importNode( $dom->documentElement, true );
-        $node->appendChild( $importedRoot );
+        // Empty or broken stored XML exports the attribute without content:
+        // loadXML( '' ) is a ValueError and a broken document has no root
+        $xmlString = $objectAttribute->attribute( 'data_text' );
+        if ( is_string( $xmlString ) && trim( $xmlString ) !== '' )
+        {
+            $dom = new DOMDocument( '1.0', 'utf-8' );
+            $previous = libxml_use_internal_errors( true );
+            $success = $dom->loadXML( $xmlString );
+            libxml_clear_errors();
+            libxml_use_internal_errors( $previous );
+            if ( $success && $dom->documentElement )
+            {
+                $importedRoot = $node->ownerDocument->importNode( $dom->documentElement, true );
+                $node->appendChild( $importedRoot );
+            }
+        }
 
         return $node;
     }
@@ -451,6 +470,38 @@ class eZMultiOptionType extends eZDataType
         $rootNode = $attributeNode->getElementsByTagName( 'ezmultioption' )->item( 0 );
         $xmlString = $rootNode ? $rootNode->ownerDocument->saveXML( $rootNode ) : '';
         $objectAttribute->setAttribute( 'data_text', $xmlString );
+    }
+
+    /*!
+     \static
+     \return the post variable \a $name as a list of strings, indexed from 0:
+     an empty list when it is missing, a one-element list for a single value,
+     and '' for an element that is itself an array.
+    */
+    static function postedList( $http, $name )
+    {
+        if ( !$http->hasPostVariable( $name ) )
+            return array();
+        $value = $http->postVariable( $name );
+        if ( !is_array( $value ) )
+            $value = array( $value );
+        $list = array();
+        foreach ( $value as $item )
+            $list[] = is_scalar( $item ) ? (string)$item : '';
+        return $list;
+    }
+
+    /*!
+     \static
+     \return the post variable \a $name as a string, '' when it is missing or
+     is not a single value.
+    */
+    static function postedString( $http, $name )
+    {
+        if ( !$http->hasPostVariable( $name ) )
+            return '';
+        $value = $http->postVariable( $name );
+        return is_scalar( $value ) ? (string)$value : '';
     }
 }
 

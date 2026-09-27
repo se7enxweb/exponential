@@ -11,15 +11,15 @@
     {section var=Option loop=$Multioptions.item.optionlist}
             {if ne( $Option.item.additional_price, '' )}
                 {if eq( sum( $Option.index, 1 ), $Multioptions.item.default_option_id )}
-                    <option value="{$Option.item.option_id}" selected="selected">{$Option.item.value|wash}-{$Option.item.additional_price|l10n( currency )}</option>
+                    <option value="{$Option.item.option_id|wash}" selected="selected">{$Option.item.value|wash}-{$Option.item.additional_price|l10n( currency )}</option>
                 {else}
-                    <option value="{$Option.item.option_id}">{$Option.item.value|wash}-{$Option.item.additional_price|l10n( currency )}</option>
+                    <option value="{$Option.item.option_id|wash}">{$Option.item.value|wash}-{$Option.item.additional_price|l10n( currency )}</option>
                 {/if}
             {else}
                 {if eq(sum($Option.index,1), $Multioptions.item.default_option_id)}
-                    <option value="{$Option.item.option_id}" selected="selected">{$Option.item.value|wash}</option>
+                    <option value="{$Option.item.option_id|wash}" selected="selected">{$Option.item.value|wash}</option>
                 {else}
-                    <option value="{$Option.item.option_id}">{$Option.item.value|wash}</option>
+                    <option value="{$Option.item.option_id|wash}">{$Option.item.value|wash}</option>
                 {/if}
             {/if}
         {/section}

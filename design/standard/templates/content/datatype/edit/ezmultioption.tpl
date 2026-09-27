@@ -58,7 +58,7 @@
 {/if}
 
 <input type="hidden" name="{$attribute_base}_data_option_id_{$attribute.id}_{$MultiOptionList.id}[]" value="{$OptionList.id}" />
-<input type="hidden" name="{$attribute_base}_data_option_option_id_{$attribute.id}_{$MultiOptionList.id}[]" value="{$OptionList.option_id}" />
+<input type="hidden" name="{$attribute_base}_data_option_option_id_{$attribute.id}_{$MultiOptionList.id}[]" value="{$OptionList.option_id|wash}" />
 </td>
 </tr>
 {/section}
