@@ -43,7 +43,11 @@ class eZEmailType extends eZDataType
     */
     function validateEMailHTTPInput( $email, $contentObjectAttribute )
     {
-        if ( !eZMail::validate( $email ) )
+        // eZMail::validate() anchors with $, which also matches before a final
+        // line break, so "a@example.com\n" passed. An address is put into mail
+        // headers (a form's receiver or sender), where a line break starts a new
+        // header, so no control character is accepted at all.
+        if ( !is_string( $email ) || preg_match( '/[\x00-\x1F\x7F]/', $email ) || !eZMail::validate( $email ) )
         {
             $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                  'The email address is not valid.' ) );
@@ -61,7 +65,7 @@ class eZEmailType extends eZDataType
         $classAttribute = $contentObjectAttribute->contentClassAttribute();
         if ( $http->hasPostVariable( $base . '_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
-            $email = $http->postVariable( $base . '_data_text_' . $contentObjectAttribute->attribute( 'id' ) );
+            $email = self::postedText( $http->postVariable( $base . '_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) );
 
             $trimmedEmail = trim( $email );
 
@@ -98,7 +102,9 @@ class eZEmailType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $data = $http->postVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) );
+            // Validation checked the trimmed address, so that is what is stored:
+            // the untrimmed one kept a trailing line break into the mail headers
+            $data = trim( self::postedText( $http->postVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) ) ) );
             $contentObjectAttribute->setAttribute( "data_text", $data );
             return true;
         }
@@ -109,7 +115,7 @@ class eZEmailType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $email = $http->postVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) );
+            $email = self::postedText( $http->postVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) ) );
             $classAttribute = $contentObjectAttribute->contentClassAttribute();
 
             $trimmedEmail = trim( $email );
@@ -143,7 +149,7 @@ class eZEmailType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $dataText = $http->postVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) );
+            $dataText = trim( self::postedText( $http->postVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) ) ) );
             $collectionAttribute->setAttribute( 'data_text', $dataText );
             return true;
         }
@@ -202,7 +208,8 @@ class eZEmailType extends eZDataType
 
     function hasObjectAttributeContent( $contentObjectAttribute )
     {
-        return trim( $contentObjectAttribute->attribute( "data_text" ) ) != '';
+        // data_text is null on an attribute that was never stored
+        return trim( (string)$contentObjectAttribute->attribute( "data_text" ) ) != '';
     }
 
     function isInformationCollector()
@@ -212,7 +219,7 @@ class eZEmailType extends eZDataType
 
     function sortKey( $contentObjectAttribute )
     {
-        return strtolower( $contentObjectAttribute->attribute( 'data_text' ) );
+        return strtolower( (string)$contentObjectAttribute->attribute( 'data_text' ) );
     }
 
     function sortKeyType()
@@ -223,6 +230,19 @@ class eZEmailType extends eZDataType
     function supportsBatchInitializeObjectAttribute()
     {
         return true;
+    }
+
+    /*!
+     \private
+     \return the posted value as a string. A field posted as an array (name[]=)
+     is not an address; it is taken as empty instead of reaching trim() or the
+     database as an array.
+    */
+    static function postedText( $value )
+    {
+        if ( is_array( $value ) || is_object( $value ) )
+            return '';
+        return (string)$value;
     }
 }
 
