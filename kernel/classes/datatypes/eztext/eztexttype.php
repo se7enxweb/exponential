@@ -20,6 +20,10 @@ class eZTextType extends eZDataType
     const DATA_TYPE_STRING = "eztext";
     const COLS_FIELD = 'data_int1';
     const COLS_VARIABLE = '_eztext_cols_';
+    // The preferred number of rows the class edit form offers is 2..25; a
+    // value outside what a textarea can sensibly show is not stored
+    const COLS_DEFAULT = 10;
+    const COLS_MAX = 1000;
 
     public function __construct()
     {
@@ -65,7 +69,7 @@ class eZTextType extends eZDataType
         $classAttribute = $contentObjectAttribute->contentClassAttribute();
         if ( $http->hasPostVariable( $base . '_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
-            $data = $http->postVariable( $base . '_data_text_' . $contentObjectAttribute->attribute( 'id' ) );
+            $data = self::postedText( $http->postVariable( $base . '_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) );
 
             if ( $data == "" )
             {
@@ -91,7 +95,7 @@ class eZTextType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . '_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
-            $data = $http->postVariable( $base . '_data_text_' . $contentObjectAttribute->attribute( 'id' ) );
+            $data = self::postedText( $http->postVariable( $base . '_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) );
             $classAttribute = $contentObjectAttribute->contentClassAttribute();
 
             if ( $data == "" )
@@ -116,7 +120,7 @@ class eZTextType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $data = $http->postVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) );
+            $data = self::postedText( $http->postVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) ) );
             $contentObjectAttribute->setAttribute( "data_text", $data );
             return true;
         }
@@ -130,7 +134,7 @@ class eZTextType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $dataText = $http->postVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) );
+            $dataText = self::postedText( $http->postVariable( $base . "_data_text_" . $contentObjectAttribute->attribute( "id" ) ) );
             $collectionAttribute->setAttribute( 'data_text', $dataText );
             return true;
         }
@@ -179,8 +183,7 @@ class eZTextType extends eZDataType
         $column = $base . self::COLS_VARIABLE . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $column ) )
         {
-            $columnValue = $http->postVariable( $column );
-            $classAttribute->setAttribute( self::COLS_FIELD,  $columnValue );
+            $classAttribute->setAttribute( self::COLS_FIELD, self::columnCount( $http->postVariable( $column ) ) );
             return true;
         }
         return false;
@@ -210,7 +213,8 @@ class eZTextType extends eZDataType
 
     function hasObjectAttributeContent( $contentObjectAttribute )
     {
-        return trim( $contentObjectAttribute->attribute( 'data_text' ) ) != '';
+        // data_text is null on an attribute that was never stored
+        return trim( (string)$contentObjectAttribute->attribute( 'data_text' ) ) != '';
     }
 
     /*!
@@ -243,7 +247,10 @@ class eZTextType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $textColumns = $attributeParametersNode->getElementsByTagName( 'text-column-count' )->item( 0 )->textContent;
+        // A package that leaves the element out gets the default instead of a
+        // fatal error on ->textContent of nothing
+        $textColumnCountNode = $attributeParametersNode->getElementsByTagName( 'text-column-count' )->item( 0 );
+        $textColumns = $textColumnCountNode ? self::columnCount( $textColumnCountNode->textContent ) : self::COLS_DEFAULT;
         $classAttribute->setAttribute( self::COLS_FIELD, $textColumns );
     }
 
@@ -259,6 +266,35 @@ class eZTextType extends eZDataType
     function supportsBatchInitializeObjectAttribute()
     {
         return true;
+    }
+
+    /*!
+     \private
+     \return the posted text as a string. A field posted as an array (name[]=)
+     is not text; it is taken as empty instead of reaching the database or a
+     string function as an array.
+    */
+    static function postedText( $value )
+    {
+        if ( is_array( $value ) || is_object( $value ) )
+            return '';
+        return (string)$value;
+    }
+
+    /*!
+     \private
+     \return the preferred number of rows as an integer in 1..COLS_MAX, or the
+     default when \a $value is not a positive whole number. The value is
+     printed into the rows attribute of the textarea, so it must be a number.
+    */
+    static function columnCount( $value )
+    {
+        if ( is_array( $value ) || is_object( $value ) )
+            return self::COLS_DEFAULT;
+        $value = trim( (string)$value );
+        if ( !preg_match( '/^[0-9]+$/', $value ) || (int)$value < 1 )
+            return self::COLS_DEFAULT;
+        return min( (int)$value, self::COLS_MAX );
     }
 
     public $Attributes;
