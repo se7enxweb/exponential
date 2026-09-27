@@ -590,13 +590,18 @@ class eZTemplateArrayOperator
 
             case $this->UniqueName:
             {
-                if ( eZTemplateNodeTool::isConstantElement( $parameters[0] ) )
+                // Only an array has duplicates to remove. Anything else - an
+                // unset setting read with ezini() is an empty string - is passed
+                // through, as the uncompiled operator does; compiled, it was
+                // handed to array_unique() and the page died with a TypeError.
+                if ( eZTemplateNodeTool::isConstantElement( $parameters[0] ) &&
+                     is_array( eZTemplateNodeTool::elementConstantValue( $parameters[0] ) ) )
                 {
                     return array( eZTemplateNodeTool::createArrayElement( array_unique( eZTemplateNodeTool::elementConstantValue( $parameters[0] ) ) ) );
                 }
 
                 $values = array( $parameters[0] );
-                $code = '%output% = array_unique( %1% );';
+                $code = '%output% = %1%; if ( is_array( %output% ) ) %output% = array_unique( %output% );';
                 return array( eZTemplateNodeTool::createCodePieceElement( $code, $values ) );
             } break;
 
@@ -1888,7 +1893,8 @@ class eZTemplateArrayOperator
                 // Removes duplicate values from array:
                 case $this->UniqueName:
                 {
-                    $operatorValue = array_unique( $operatorValue );
+                    if ( is_array( $operatorValue ) )
+                        $operatorValue = array_unique( $operatorValue );
                 }break;
 
                 // Default case:
