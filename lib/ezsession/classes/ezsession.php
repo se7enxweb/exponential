@@ -346,30 +346,55 @@ class eZSession
         }
         $path   = $ini->hasVariable( 'Session', 'CookiePath' )     ? $ini->variable( 'Session', 'CookiePath' )     : $params['path'];
         $domain = $ini->hasVariable( 'Session', 'CookieDomain' )   ? $ini->variable( 'Session', 'CookieDomain' )   : $params['domain'];
-        if ( $ini->hasVariable( 'Session', 'CookieSecure' ) )
-        {
-            $secure = ( $ini->variable( 'Session', 'CookieSecure' ) == 'true' ) ? true : false ;
-        }
-        else
-        {
-            $secure = $params['secure'];
-        }
-        if ( isset( $params['httponly'] ) ) // only available on PHP 5.2 and up
-        {
-            if ( $ini->hasVariable( 'Session', 'CookieHttponly') )
-            {
-                $httponly = ( $ini->variable( 'Session', 'CookieHttponly' ) == 'true' ) ? true : false ;
-            }
-            else
-            {
-                $httponly = $params['httponly'];
-            }
-            session_set_cookie_params( $lifetime, $path, $domain, $secure, $httponly );
-        }
-        else
-        {
-            session_set_cookie_params( $lifetime, $path, $domain, $secure );
-        }
+        // The session cookie is the login. Unless the site says otherwise it
+        // is never readable from scripts, only sent over TLS when the
+        // request came over TLS, and not sent on cross-site subrequests or
+        // POSTs - php.ini's defaults (all off) left a stolen or replayed
+        // admin session one XSS or one forged form away.
+        $secure = self::cookieFlag( $ini, 'CookieSecure', 'auto' );
+        if ( $secure === 'auto' )
+            $secure = eZSys::isSSLNow() || !empty( $params['secure'] );
+
+        $httponly = self::cookieFlag( $ini, 'CookieHttponly', true );
+
+        $samesite = $ini->hasVariable( 'Session', 'CookieSameSite' )
+            ? trim( (string)$ini->variable( 'Session', 'CookieSameSite' ) )
+            : 'Lax';
+        if ( !in_array( strtolower( $samesite ), array( 'lax', 'strict', 'none', '' ), true ) )
+            $samesite = 'Lax';
+        // Browsers drop a SameSite=None cookie that is not Secure.
+        if ( strtolower( $samesite ) === 'none' && !$secure )
+            $samesite = 'Lax';
+
+        session_set_cookie_params( array(
+            'lifetime' => (int)$lifetime,
+            'path'     => $path,
+            'domain'   => $domain,
+            'secure'   => (bool)$secure,
+            'httponly' => (bool)$httponly,
+            'samesite' => $samesite === '' ? '' : ucfirst( strtolower( $samesite ) ),
+        ) );
+    }
+
+    /**
+     * A true/false cookie setting from [Session], or $default when it is not
+     * set or empty. 'auto' is returned as is.
+     *
+     * @param eZINI $ini
+     * @param string $name
+     * @param bool|string $default
+     * @return bool|string
+     */
+    static protected function cookieFlag( $ini, $name, $default )
+    {
+        if ( !$ini->hasVariable( 'Session', $name ) )
+            return $default;
+        $value = strtolower( trim( (string)$ini->variable( 'Session', $name ) ) );
+        if ( $value === '' )
+            return $default;
+        if ( $value === 'auto' )
+            return 'auto';
+        return in_array( $value, array( 'true', 'enabled', '1', 'yes', 'on' ), true );
     }
 
     /**
