@@ -21,13 +21,24 @@ class eZDBInterface
     /**
      * SQL statement profile for this request: null until the first statement
      * looks for var/tmp/sql_profile.on, then true or false. Off it costs one
-     * file_exists() per request. A static property, so a persistent worker
-     * resets it with the request.
+     * file_exists() per request. ezpKernelWeb resets it at the start of every
+     * request (resetSQLProfile()): a persistent worker would otherwise carry
+     * the counters of the process it was started from -- under Velocity every
+     * line repeated the warm-up's statements and its start time.
      *
      * @var bool|null
      */
     public static $SQLProfileOn = null;
     protected static $SQLProfile = array( 'total' => 0, 'select' => 0, 'seconds' => 0.0, 'seen' => array(), 'repeats' => 0, 'repeatSeconds' => 0.0, 'started' => 0.0 );
+    /** @var bool whether writeSQLProfile() is registered for shutdown in this process */
+    protected static $SQLProfileRegistered = false;
+
+    /** Starts a new request's profile (ezpKernelWeb, once per request). */
+    public static function resetSQLProfile()
+    {
+        self::$SQLProfileOn = null;
+        self::$SQLProfile = array( 'total' => 0, 'select' => 0, 'seconds' => 0.0, 'seen' => array(), 'repeats' => 0, 'repeatSeconds' => 0.0, 'started' => microtime( true ) );
+    }
 
     /**
      * Records one statement for the profile (see $SQLProfileOn). What a query
@@ -45,8 +56,13 @@ class eZDBInterface
             self::$SQLProfileOn = file_exists( self::sqlProfilePath( 'sql_profile.on' ) );
             if ( !self::$SQLProfileOn )
                 return;
-            self::$SQLProfile['started'] = microtime( true );
-            register_shutdown_function( array( 'eZDBInterface', 'writeSQLProfile' ) );
+            if ( !self::$SQLProfile['started'] )
+                self::$SQLProfile['started'] = microtime( true );
+            if ( !self::$SQLProfileRegistered )
+            {
+                self::$SQLProfileRegistered = true;
+                register_shutdown_function( array( 'eZDBInterface', 'writeSQLProfile' ) );
+            }
         }
         if ( !self::$SQLProfileOn )
             return;
@@ -72,6 +88,10 @@ class eZDBInterface
     public static function writeSQLProfile()
     {
         $p = self::$SQLProfile;
+        // A request that sent nothing to the database writes no line, on every
+        // server alike (a persistent worker stays registered between requests).
+        if ( !self::$SQLProfileOn || $p['total'] === 0 )
+            return;
         // The request's distinct SELECT texts (as hashes), to compare one
         // request with the next: what a cache shared across requests answers.
         if ( file_exists( self::sqlProfilePath( 'sql_profile.hashes' ) ) )

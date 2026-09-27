@@ -114,6 +114,8 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         // empty, also in a persistent worker that served one before.
         if ( class_exists( 'eZDBQueryCache' ) )
             eZDBQueryCache::resetRequest();
+        if ( method_exists( 'eZDBInterface', 'resetSQLProfile' ) )
+            eZDBInterface::resetSQLProfile();
 
         if ( isset( $settings['injected-settings'] ) )
         {
