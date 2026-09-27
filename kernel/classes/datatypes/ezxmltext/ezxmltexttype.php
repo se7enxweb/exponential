@@ -369,7 +369,10 @@ class eZXMLTextType extends eZDataType
     {
         $text = $contentObjectAttribute->attribute( 'data_text' );
         $timestamp = $contentObjectAttribute->attribute( 'data_int' );
-        if ( $timestamp < self::VERSION_30_TIMESTAMP )
+        // An attribute that was never stored has no text (NULL) and no
+        // timestamp; there is nothing to convert, and the text codec does not
+        // take null.
+        if ( $timestamp < self::VERSION_30_TIMESTAMP && $text !== null )
         {
             $charset = 'UTF-8';
             $codec = eZTextCodec::instance( false, $charset );

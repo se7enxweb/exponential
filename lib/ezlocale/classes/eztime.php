@@ -237,6 +237,10 @@ class eZTime
         $this->Time = $date[ 'hours' ] * self::SECONDS_AN_HOUR +
                       $date[ 'minutes' ] * self::SECONDS_A_MINUTE +
                       $date[ 'seconds' ];
+        // Every other setter updates IsValid; this one did not, so an eZTime
+        // built from a full timestamp (the constructor does that for any value
+        // above one day) reported is_valid as null.
+        $this->IsValid = $this->Time >= 0;
     }
 
     /*!

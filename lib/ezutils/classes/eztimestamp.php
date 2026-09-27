@@ -15,7 +15,9 @@ class eZTimestamp
     */
     public static function getUtcTimestampFromLocalTimestamp( $localTimestamp ) {
 
-        if ( $localTimestamp === null || $localTimestamp === '' )
+        // setTimestamp() takes an integer: text that is not a number (or an
+        // array) raised a TypeError; it is treated like a missing timestamp.
+        if ( $localTimestamp === null || $localTimestamp === '' || !is_numeric( $localTimestamp ) )
         {
             return null;
         }
@@ -23,8 +25,10 @@ class eZTimestamp
         $utcTimezone = new \DateTimeZone( 'UTC' );
         $localTimezone = new \DateTimeZone( date_default_timezone_get() );
 
-        $localDate = new \DateTime( null, $localTimezone );
-        $localDate->setTimestamp( $localTimestamp );
+        // 'now' rather than null: passing null to DateTime is deprecated. The
+        // value is replaced by setTimestamp() on the next line either way.
+        $localDate = new \DateTime( 'now', $localTimezone );
+        $localDate->setTimestamp( (int)$localTimestamp );
         $utcDate = new \DateTime( $localDate->format( 'Y-m-d H:i:s' ), $utcTimezone );
 
         return $utcDate->getTimestamp();
@@ -35,7 +39,8 @@ class eZTimestamp
     */
     public static function getLocalTimestampFromUtcTimestamp( $utcTimestamp ) {
 
-        if ( $utcTimestamp === null || $utcTimestamp === '' )
+        // See getUtcTimestampFromLocalTimestamp().
+        if ( $utcTimestamp === null || $utcTimestamp === '' || !is_numeric( $utcTimestamp ) )
         {
             return null;
         }
@@ -43,8 +48,8 @@ class eZTimestamp
         $utcTimezone = new \DateTimeZone( 'UTC' );
         $localTimezone = new \DateTimeZone( date_default_timezone_get() );
 
-        $utcDate = new \DateTime( null, $utcTimezone );
-        $utcDate->setTimestamp( $utcTimestamp );
+        $utcDate = new \DateTime( 'now', $utcTimezone );
+        $utcDate->setTimestamp( (int)$utcTimestamp );
         $localDate = new \DateTime( $utcDate->format( 'Y-m-d H:i:s' ), $localTimezone );
 
         return $localDate->getTimestamp();
