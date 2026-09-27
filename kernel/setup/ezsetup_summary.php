@@ -64,13 +64,21 @@ class eZSetupSummary
         }
 
         // Image settings
-        if ( isset( $persistenceList['imagemagick_program'] ) && $persistenceList['imagemagick_program']['result'] )
+        // GD is the first converter in image.ini, ImageMagick the fallback,
+        // so the summary names them in that order.
+        $hasImageGD = isset( $persistenceList['imagegd_extension'] ) && $persistenceList['imagegd_extension']['result'];
+        $hasImageMagick = isset( $persistenceList['imagemagick_program'] ) && $persistenceList['imagemagick_program']['result'];
+        if ( $hasImageGD && $hasImageMagick )
         {
-            $this->Tpl->setVariable( 'image_processor', 'ImageMagick' );
+            $this->Tpl->setVariable( 'image_processor', 'ImageGD, ImageMagick as fallback' );
         }
-        else if ( isset( $persistenceList['imagegd_extension'] ) && $persistenceList['imagegd_extension']['result'] )
+        else if ( $hasImageGD )
         {
             $this->Tpl->setVariable( 'image_processor', 'ImageGD' );
+        }
+        else if ( $hasImageMagick )
+        {
+            $this->Tpl->setVariable( 'image_processor', 'ImageMagick' );
         }
         else
         {

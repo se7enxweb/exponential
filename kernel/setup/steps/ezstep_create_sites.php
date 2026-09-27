@@ -233,6 +233,10 @@ class eZStepCreateSites extends eZStepInstaller
         // Ignore site.ini[eZINISettings].ReadonlySettingList[] settings when saving ini variables.
         $imageINI->setReadOnlySettingsCheck( false );
 
+        // Only the ImageMagick fallback is configured here. The converter
+        // order (GD first, ImageMagick second) comes from settings/image.ini
+        // and is deliberately not written to the override, so a later change
+        // of the default still reaches this installation.
         $imageINI->setVariable( 'ImageMagick', 'IsEnabled', 'false' );
         if ( $this->PersistenceList['imagemagick_program']['result'] )
         {

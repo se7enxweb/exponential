@@ -61,14 +61,14 @@ Email info:
 
 Image conversion:
 
-{if $imagemagick_program.result}
-  ImageMagick was found and used.
-  Path - {$imagemagick_program.path}
-  Executable - {$imagemagick_program.program}
-{/if}
-
 {if $imagegd_extension.result}
   ImageGD extension was found and used.
+{/if}
+
+{if $imagemagick_program.result}
+  ImageMagick was found and used{if $imagegd_extension.result} as the fallback{/if}.
+  Path - {$imagemagick_program.path}
+  Executable - {$imagemagick_program.program}
 {/if}
 
 
