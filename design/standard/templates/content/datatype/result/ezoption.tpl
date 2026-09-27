@@ -5,7 +5,7 @@
 <table width="500" cellspacing="0">
 <tr>
 
-{$:attribute.contentobject_attribute.content.name}
+{$:attribute.contentobject_attribute.content.name|wash}
 
 {section name=Option loop=$:attribute.contentobject_attribute.content.option_list}
 <td>

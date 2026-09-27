@@ -73,22 +73,38 @@ class eZOption
 
     function insertOption( $valueArray, $beforeID )
     {
+        // The position comes from the form: a value that is not a number would
+        // be a TypeError in array_splice(), one past the end appends
+        $beforeID = is_numeric( $beforeID ) ? max( 0, min( (int)$beforeID, count( $this->Options ) ) ) : count( $this->Options );
         array_splice( $this->Options, $beforeID, 0 ,  array( array( "id" => $this->OptionCount,
-                                                                    "value" => $valueArray['value'],
-                                                                    'additional_price' => $valueArray['additional_price'],
+                                                                    "value" => isset( $valueArray['value'] ) ? $valueArray['value'] : '',
+                                                                    'additional_price' => isset( $valueArray['additional_price'] ) ? $valueArray['additional_price'] : '',
                                                                     "is_default" => false ) ) );
         $this->OptionCount += 1;
     }
 
     function removeOptions( $array_remove )
     {
-        $shiftvalue = 0;
-        foreach( $array_remove as $id )
+        // The ids are positions posted by the edit form. Only the ones that
+        // name an option are removed, each once and from the highest down so
+        // that removing one does not move the next; the old loop took them in
+        // posted order, removed the wrong rows for an unsorted list and threw
+        // a TypeError for a value that is not a number
+        if ( !is_array( $array_remove ) )
+            $array_remove = array( $array_remove );
+        $positions = array();
+        foreach ( $array_remove as $id )
         {
-            array_splice( $this->Options, $id - $shiftvalue, 1 );
-            $shiftvalue++;
+            if ( is_scalar( $id ) && is_numeric( $id ) && (int)$id == $id &&
+                 $id >= 0 && $id < count( $this->Options ) )
+                $positions[(int)$id] = (int)$id;
         }
-        $this->OptionCount -= $shiftvalue;
+        krsort( $positions );
+        foreach ( $positions as $position )
+        {
+            array_splice( $this->Options, $position, 1 );
+        }
+        $this->OptionCount -= count( $positions );
     }
 
     function attributes()
@@ -129,12 +145,25 @@ class eZOption
     {
         if ( $xmlString != "" )
         {
+            // Broken stored XML reads as a set without name and options: the
+            // parser's complaints are collected, not raised as warnings, and a
+            // missing <name> no longer is a fatal error on null
             $dom = new DOMDocument( '1.0', 'utf-8' );
-            $success = $dom->loadXML( $xmlString );
+            $previous = libxml_use_internal_errors( true );
+            $success = is_string( $xmlString ) ? $dom->loadXML( $xmlString ) : false;
+            libxml_clear_errors();
+            libxml_use_internal_errors( $previous );
+            if ( !$success )
+            {
+                $this->Name = '';
+                $this->Options = array();
+                $this->OptionCount = 0;
+                return;
+            }
 
             // set the name of the node
             $nameNode = $dom->getElementsByTagName( "name" )->item( 0 );
-            $this->setName( $nameNode->textContent );
+            $this->setName( $nameNode ? $nameNode->textContent : '' );
 
             $optionNodes = $dom->getElementsByTagName( "option" );
             $this->OptionCount = 0;
@@ -163,7 +192,7 @@ class eZOption
         $doc->appendChild( $root );
 
         $name = $doc->createElement( "name" );
-        $name->appendChild( $doc->createCDATASection( $this->Name ) );
+        $name->appendChild( $doc->createCDATASection( self::scalarString( $this->Name ) ) );
         $root->appendChild( $name );
 
         $options = $doc->createElement( "options" );
@@ -172,15 +201,25 @@ class eZOption
         foreach ( $this->Options as $option )
         {
             $optionNode = $doc->createElement( "option" );
-            $optionNode->appendChild( $doc->createCDATASection( $option["value"] ) );
-            $optionNode->setAttribute( "id", $option['id'] );
-            $optionNode->setAttribute( 'additional_price', $option['additional_price'] );
+            $optionNode->appendChild( $doc->createCDATASection( self::scalarString( isset( $option["value"] ) ? $option["value"] : '' ) ) );
+            $optionNode->setAttribute( "id", self::scalarString( isset( $option['id'] ) ? $option['id'] : '' ) );
+            $optionNode->setAttribute( 'additional_price', self::scalarString( isset( $option['additional_price'] ) ? $option['additional_price'] : '' ) );
             $options->appendChild( $optionNode );
         }
 
         $xml = $doc->saveXML();
 
         return $xml;
+    }
+
+    /*!
+     \static
+     \return \a $value as a string for the DOM: '' for null (a form field that
+     was not posted) and for an array (a field posted as name[]).
+    */
+    static function scalarString( $value )
+    {
+        return is_scalar( $value ) ? (string)$value : '';
     }
 
     /// Contains the Option name

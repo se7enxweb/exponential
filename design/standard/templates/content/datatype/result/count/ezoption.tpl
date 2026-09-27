@@ -5,7 +5,7 @@
      item_counts=fetch( content,collected_info_count_list, hash( object_attribute_id, $contentobject_attribute_id  ) )
      poll_width=300}
 
-{$contentobject_attribute.content.name}
+{$contentobject_attribute.content.name|wash}
 
 <div class="content-poll-results">
 <ul>

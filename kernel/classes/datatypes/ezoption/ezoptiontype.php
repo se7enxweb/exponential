@@ -32,9 +32,17 @@ class eZOptionType extends eZDataType
         $classAttribute = $contentObjectAttribute->contentClassAttribute();
         if ( $http->hasPostVariable( $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $value = $http->hasPostVariable( $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) );
+            $value = $http->postVariable( $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) );
 
-            if ( $contentObjectAttribute->validateIsRequired() and !$value )
+            // The choice is stored as the option's id in an integer column: an
+            // array or a value that is not a number is not a choice the form offers
+            if ( !is_scalar( $value ) || ( $value !== '' && !preg_match( '/^[0-9]+$/', (string)$value ) ) )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                     'Input required.' ) );
+                return eZInputValidator::STATE_INVALID;
+            }
+            if ( $contentObjectAttribute->validateIsRequired() and $value === '' )
             {
                 $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                      'Input required.' ) );
@@ -47,6 +55,7 @@ class eZOptionType extends eZDataType
                                                                  'Input required.' ) );
             return eZInputValidator::STATE_INVALID;
         }
+        return eZInputValidator::STATE_ACCEPTED;
     }
 
     /*!
@@ -59,14 +68,13 @@ class eZOptionType extends eZDataType
         $classAttribute = $contentObjectAttribute->contentClassAttribute();
         if ( $http->hasPostVariable( $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $idList = $http->postVariable( $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) );
-            $valueList = $http->postVariable( $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) );
-            $dataName = $http->postVariable( $base . "_data_option_name_" . $contentObjectAttribute->attribute( "id" ) );
-
-            if ( $http->hasPostVariable( $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) ) )
-                $optionAdditionalPriceList = $http->postVariable( $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) );
-            else
-                $optionAdditionalPriceList = array();
+            // The lists are what the edit form posts; each is normalised to a
+            // list of strings so that a missing list, a single value in place
+            // of a list or a nested array is not a TypeError in count()/trim()
+            $idList = self::postedList( $http, $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) );
+            $valueList = self::postedList( $http, $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) );
+            $dataName = self::postedString( $http, $base . "_data_option_name_" . $contentObjectAttribute->attribute( "id" ) );
+            $optionAdditionalPriceList = self::postedList( $http, $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) );
 
             for ( $i = 0; $i < count( $valueList ); ++$i )
                 if ( trim( $valueList[$i] ) <> '' )
@@ -84,7 +92,7 @@ class eZOptionType extends eZDataType
             {
                 for ( $i=0;$i<count( $idList );$i++ )
                 {
-                    $value =  $valueList[$i];
+                    $value = isset( $valueList[$i] ) ? $valueList[$i] : '';
                     if ( trim( $value )== "" )
                     {
                         $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
@@ -149,26 +157,17 @@ class eZOptionType extends eZDataType
     */
     function fetchObjectAttributeHTTPInput( $http, $base, $contentObjectAttribute )
     {
-        $optionName = $http->postVariable( $base . "_data_option_name_" . $contentObjectAttribute->attribute( "id" ) );
-        if ( $http->hasPostVariable( $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) ) )
-            $optionIDArray = $http->postVariable( $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) );
-        else
-            $optionIDArray = array();
-        if ( $http->hasPostVariable( $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) ) )
-            $optionValueArray = $http->postVariable( $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) );
-        else
-            $optionValueArray = array();
-        if ( $http->hasPostVariable( $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) ) )
-            $optionAdditionalPriceArray = $http->postVariable( $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) );
-        else
-            $optionAdditionalPriceArray = array();
+        $optionName = self::postedString( $http, $base . "_data_option_name_" . $contentObjectAttribute->attribute( "id" ) );
+        $optionIDArray = self::postedList( $http, $base . "_data_option_id_" . $contentObjectAttribute->attribute( "id" ) );
+        $optionValueArray = self::postedList( $http, $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) );
+        $optionAdditionalPriceArray = self::postedList( $http, $base . "_data_option_additional_price_" . $contentObjectAttribute->attribute( "id" ) );
 
         $option = new eZOption( $optionName );
 
         $i = 0;
         foreach ( $optionIDArray as $id )
         {
-            $option->addOption( array( 'value' => $optionValueArray[$i],
+            $option->addOption( array( 'value' => isset( $optionValueArray[$i] ) ? $optionValueArray[$i] : '',
                                        'additional_price' => ( isset( $optionAdditionalPriceArray[$i] ) ? $optionAdditionalPriceArray[$i] : 0 ) ) );
             $i++;
         }
@@ -186,8 +185,10 @@ class eZOptionType extends eZDataType
         {
             $optionValue = $http->postVariable( $base . "_data_option_value_" . $contentObjectAttribute->attribute( "id" ) );
 
-            $collectionAttribute->setAttribute( 'data_int', $optionValue );
-            $attr = $contentObjectAttribute->attribute( 'contentclass_attribute' );
+            // data_int is an integer column: an array or text is no choice
+            if ( !is_scalar( $optionValue ) || !is_numeric( $optionValue ) )
+                return false;
+            $collectionAttribute->setAttribute( 'data_int', (int)$optionValue );
 
             return true;
         }
@@ -205,9 +206,12 @@ class eZOptionType extends eZDataType
                 $postvarname = "ContentObjectAttribute" . "_data_option_remove_" . $contentObjectAttribute->attribute( "id" );
                 if ( $http->hasPostVariable( $postvarname ) )
                 {
+                    // One checkbox value or a list of them; array_shift() on a
+                    // string was a TypeError
                     $idArray = $http->postVariable( $postvarname );
+                    $idArray = is_array( $idArray ) ? array_values( $idArray ) : array( $idArray );
                     $beforeID = array_shift( $idArray );
-                    if ( $beforeID >= 0 )
+                    if ( is_scalar( $beforeID ) && is_numeric( $beforeID ) && $beforeID >= 0 )
                     {
                         $option->insertOption( array(), $beforeID );
                         $contentObjectAttribute->setContent( $option );
@@ -226,7 +230,9 @@ class eZOptionType extends eZDataType
             {
                 $option = $contentObjectAttribute->content( );
                 $postvarname = "ContentObjectAttribute" . "_data_option_remove_" . $contentObjectAttribute->attribute( "id" );
-                $array_remove = $http->postVariable( $postvarname );
+                // Nothing ticked posts nothing: remove nothing instead of a
+                // warning on null
+                $array_remove = $http->hasPostVariable( $postvarname ) ? $http->postVariable( $postvarname ) : array();
                 $option->removeOptions( $array_remove );
                 $contentObjectAttribute->setContent( $option );
                 $contentObjectAttribute->store();
@@ -314,7 +320,8 @@ class eZOptionType extends eZDataType
         {
             $defaultValueValue = $http->postVariable( $defaultValueName );
 
-            if ($defaultValueValue == "")
+            // A text field: an array in its place is stored as ''
+            if ( !is_scalar( $defaultValueValue ) || $defaultValueValue == "" )
             {
                 $defaultValueValue = "";
             }
@@ -379,7 +386,10 @@ class eZOptionType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $defaultValue = $attributeParametersNode->getElementsByTagName( 'default-value' )->item( 0 )->textContent;
+        // A package made without the element imports as an empty default
+        // instead of a fatal error on null
+        $defaultValueNode = $attributeParametersNode ? $attributeParametersNode->getElementsByTagName( 'default-value' )->item( 0 ) : null;
+        $defaultValue = $defaultValueNode ? $defaultValueNode->textContent : '';
         $classAttribute->setAttribute( 'data_text1', $defaultValue );
     }
 
@@ -387,11 +397,22 @@ class eZOptionType extends eZDataType
     {
         $node = $this->createContentObjectAttributeDOMNode( $objectAttribute );
 
-        $domDocument = new DOMDocument( '1.0', 'utf-8' );
-        $success = $domDocument->loadXML( $objectAttribute->attribute( 'data_text' ) );
-
-        $importedRoot = $node->ownerDocument->importNode( $domDocument->documentElement, true );
-        $node->appendChild( $importedRoot );
+        // Empty or broken stored XML exports the attribute without content:
+        // loadXML( '' ) is a ValueError and a broken document has no root
+        $xmlString = $objectAttribute->attribute( 'data_text' );
+        if ( is_string( $xmlString ) && trim( $xmlString ) !== '' )
+        {
+            $domDocument = new DOMDocument( '1.0', 'utf-8' );
+            $previous = libxml_use_internal_errors( true );
+            $success = $domDocument->loadXML( $xmlString );
+            libxml_clear_errors();
+            libxml_use_internal_errors( $previous );
+            if ( $success && $domDocument->documentElement )
+            {
+                $importedRoot = $node->ownerDocument->importNode( $domDocument->documentElement, true );
+                $node->appendChild( $importedRoot );
+            }
+        }
 
         return $node;
     }
@@ -416,8 +437,13 @@ class eZOptionType extends eZDataType
             else
             {
                 // dl: unknown case. Probably should be removed at all.
+                // An attribute node without children, or whose first child is
+                // text (whitespace), was a fatal error on getAttribute()
                 $optionNode = $attributeNode->firstChild;
-                $xmlString = $optionNode->getAttribute( 'local_name' ) == 'data-text' ? '' : $optionNode->textContent;
+                if ( $optionNode instanceof DOMElement )
+                    $xmlString = $optionNode->getAttribute( 'local_name' ) == 'data-text' ? '' : $optionNode->textContent;
+                else
+                    $xmlString = $optionNode ? $optionNode->textContent : '';
             }
         }
 
@@ -427,6 +453,38 @@ class eZOptionType extends eZDataType
     function isInformationCollector()
     {
         return true;
+    }
+
+    /*!
+     \static
+     \return the post variable \a $name as a list of strings, indexed from 0:
+     an empty list when it is missing, a one-element list for a single value,
+     and '' for an element that is itself an array.
+    */
+    static function postedList( $http, $name )
+    {
+        if ( !$http->hasPostVariable( $name ) )
+            return array();
+        $value = $http->postVariable( $name );
+        if ( !is_array( $value ) )
+            $value = array( $value );
+        $list = array();
+        foreach ( $value as $item )
+            $list[] = is_scalar( $item ) ? (string)$item : '';
+        return $list;
+    }
+
+    /*!
+     \static
+     \return the post variable \a $name as a string, '' when it is missing or
+     is not a single value.
+    */
+    static function postedString( $http, $name )
+    {
+        if ( !$http->hasPostVariable( $name ) )
+            return '';
+        $value = $http->postVariable( $name );
+        return is_scalar( $value ) ? (string)$value : '';
     }
 
     function supportsBatchInitializeObjectAttribute()
