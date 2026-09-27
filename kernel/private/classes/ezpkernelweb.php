@@ -350,7 +350,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             'Content-Type' => 'text/html; charset=' . $this->httpCharset,
             'Served-by' => isset( $_SERVER["SERVER_NAME"] ) ? $_SERVER['SERVER_NAME'] : null,
             'Content-language' => $this->languageCode
-        );
+        ) + self::securityHeaders();
 
         // Pragma is the HTTP/1.0 spelling of Cache-Control and there is no way
         // to say "cacheable" in it. So when a configured header makes a page
@@ -910,6 +910,39 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         }
 
         return $moduleResult;
+    }
+
+    /**
+     * The security headers every page is sent with, from site.ini
+     * [HTTPHeaderSettings] SecurityHeaders[<name>]=<value>. An empty value
+     * drops that header; Strict-Transport-Security is only sent over HTTPS.
+     * Custom headers ([HTTPHeaderSettings] HeaderList) still override these.
+     *
+     * @return array header name => value
+     */
+    public static function securityHeaders()
+    {
+        $ini = eZINI::instance();
+        $configured = $ini->hasVariable( 'HTTPHeaderSettings', 'SecurityHeaders' )
+            ? $ini->variable( 'HTTPHeaderSettings', 'SecurityHeaders' )
+            : array();
+        if ( !is_array( $configured ) )
+            return array();
+
+        $headers = array();
+        foreach ( $configured as $name => $value )
+        {
+            $name = trim( (string)$name );
+            $value = trim( (string)$value );
+            // A header name is a token; a value is one line. Anything else
+            // would let a setting split the response.
+            if ( $value === '' || !preg_match( '/^[A-Za-z0-9-]+$/D', $name ) || preg_match( '/[\r\n\0]/', $value ) )
+                continue;
+            if ( strcasecmp( $name, 'Strict-Transport-Security' ) === 0 && !eZSys::isSSLNow() )
+                continue;
+            $headers[$name] = $value;
+        }
+        return $headers;
     }
 
     /**
