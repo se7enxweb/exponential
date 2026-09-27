@@ -361,6 +361,7 @@ class eZMail
     */
     function setMIMEVersion( $version )
     {
+        $version = self::cleanHeaderValue( $version );
         $this->Mail->setHeader( 'MIME-Version', $version );
         $this->MIMEVersion = $version;
     }
@@ -406,6 +407,7 @@ class eZMail
     */
     function setUserAgent( $agent )
     {
+        $agent = self::cleanHeaderValue( $agent );
         $this->Mail->setHeader( 'User-Agent', $agent );
         $this->UserAgent = $agent;
     }
@@ -417,6 +419,7 @@ class eZMail
     */
     function setReceiverElements( $toElements )
     {
+        $toElements = array_map( array( 'eZMail', 'cleanAddressElement' ), $toElements );
         $this->Mail->to = array();
         foreach ( $toElements as $address )
         {
@@ -435,6 +438,8 @@ class eZMail
     */
     function setReceiver( $email, $name = false )
     {
+        $email = self::cleanHeaderValue( $email );
+        $name = self::cleanHeaderValue( $name );
         $this->Mail->to = array( new ezcMailAddress( $email, $name, $this->usedCharset() ) );
         $this->ReceiverElements = array( array( 'name' => $name,
                                                 'email' => $email ) );
@@ -449,7 +454,7 @@ class eZMail
     */
     function setReceiverText( $text )
     {
-        $this->extractEmail( $text, $email, $name );
+        $this->extractEmail( self::cleanHeaderValue( $text ), $email, $name );
         $this->Mail->to = array( new ezcMailAddress( $email, $name, $this->usedCharset() ) );
         $this->ReceiverElements = array( array( 'name' => $name,
                                                 'email' => $email ) );
@@ -462,6 +467,8 @@ class eZMail
     */
     function addReceiver( $email, $name = false )
     {
+        $email = self::cleanHeaderValue( $email );
+        $name = self::cleanHeaderValue( $name );
         $this->Mail->addTo( new ezcMailAddress( $email, $name, $this->usedCharset() ) );
         $this->ReceiverElements[] = array( 'name' => $name,
                                            'email' => $email );
@@ -474,6 +481,8 @@ class eZMail
     */
     function setReplyTo( $email, $name = false )
     {
+        $email = self::cleanHeaderValue( $email );
+        $name = self::cleanHeaderValue( $name );
         $this->Mail->setHeader( 'Reply-To', new ezcMailAddress( $email, $name, $this->usedCharset() ) );
         $this->ReplyTo = array( 'name' => $name,
                                 'email' => $email );
@@ -486,6 +495,8 @@ class eZMail
     */
     function setSender( $email, $name = false )
     {
+        $email = self::cleanHeaderValue( $email );
+        $name = self::cleanHeaderValue( $name );
         $this->Mail->from = new ezcMailAddress( $email, $name, $this->usedCharset() );
         $this->From = array( 'name' => $name,
                              'email' => $email );
@@ -498,7 +509,7 @@ class eZMail
     */
     function setSenderText( $text )
     {
-        $this->extractEmail( $text, $email, $name );
+        $this->extractEmail( self::cleanHeaderValue( $text ), $email, $name );
         $this->Mail->from = new ezcMailAddress( $email, $name, $this->usedCharset() );
         $this->From = array( 'name' => $name,
                              'email' => $email );
@@ -511,6 +522,7 @@ class eZMail
      */
     function setCcElements( $newCc )
     {
+        $newCc = array_map( array( 'eZMail', 'cleanAddressElement' ), $newCc );
         $this->Mail->cc = array();
         foreach ( $newCc as $address )
         {
@@ -527,6 +539,8 @@ class eZMail
     */
     function addCc( $email, $name = false )
     {
+        $email = self::cleanHeaderValue( $email );
+        $name = self::cleanHeaderValue( $name );
         $this->Mail->addCc( new ezcMailAddress( $email, $name, $this->usedCharset() ) );
         $this->CcElements[] = array( 'name' => $name,
                                      'email' => $email );
@@ -539,6 +553,7 @@ class eZMail
      */
     function setBccElements( $newBcc )
     {
+        $newBcc = array_map( array( 'eZMail', 'cleanAddressElement' ), $newBcc );
         $this->Mail->bcc = array();
         foreach ( $newBcc as $address )
         {
@@ -555,6 +570,8 @@ class eZMail
     */
     function addBcc( $email, $name = false )
     {
+        $email = self::cleanHeaderValue( $email );
+        $name = self::cleanHeaderValue( $name );
         $this->Mail->addBcc( new ezcMailAddress( $email, $name, $this->usedCharset() ) );
         $this->BccElements[] = array( 'name' => $name,
                                       'email' => $email );
@@ -577,6 +594,8 @@ class eZMail
     */
     function addExtraHeader( $headerName, $headerValue )
     {
+        $headerName = self::cleanHeaderName( $headerName );
+        $headerValue = self::cleanHeaderValue( $headerValue );
         $this->Mail->setHeader( $headerName, $headerValue );
         return $this->ExtraHeaders[] = array( 'name' => $headerName,
                                               'content' => $headerValue );
@@ -589,6 +608,8 @@ class eZMail
     */
     function setExtraHeader( $headerName, $headerValue )
     {
+        $headerName = self::cleanHeaderName( $headerName );
+        $headerValue = self::cleanHeaderValue( $headerValue );
         $this->Mail->setHeader( $headerName, $headerValue );
         for ( $i = 0; $i < count( $this->ExtraHeaders ); ++$i )
         {
@@ -611,6 +632,27 @@ class eZMail
     */
     function setExtraHeaders( $headers )
     {
+        // Both shapes in use are cleaned: the list extraHeaders() returns (items
+        // with 'name' and 'content') and the name => value map ezcMail takes.
+        if ( is_array( $headers ) )
+        {
+            $cleanHeaders = array();
+            foreach ( $headers as $i => $header )
+            {
+                if ( is_array( $header ) && isset( $header['name'] ) )
+                {
+                    $header['name'] = self::cleanHeaderName( $header['name'] );
+                    if ( isset( $header['content'] ) )
+                        $header['content'] = self::cleanHeaderValue( $header['content'] );
+                }
+                else
+                {
+                    $header = self::cleanHeaderValue( $header );
+                }
+                $cleanHeaders[is_string( $i ) ? self::cleanHeaderName( $i ) : $i] = $header;
+            }
+            $headers = $cleanHeaders;
+        }
         $this->Mail->setHeaders( $headers );
         return $this->ExtraHeaders = $headers;
     }
@@ -634,6 +676,7 @@ class eZMail
     */
     function setMessageID( $newMessageID )
     {
+        $newMessageID = self::cleanHeaderValue( $newMessageID );
         $this->Mail->messageId = $newMessageID;
         $this->MessageID = $newMessageID;
     }
@@ -655,6 +698,7 @@ class eZMail
     */
     function setReferences( $newReference )
     {
+        $newReference = self::cleanHeaderValue( $newReference );
         $this->References = $newReference;
     }
 
@@ -678,6 +722,7 @@ class eZMail
     */
     function setSubject( $newSubject )
     {
+        $newSubject = self::cleanHeaderValue( $newSubject );
         $this->Mail->subject = trim( $newSubject );
         $this->Mail->subjectCharset = $this->usedCharset();
         $this->Subject = trim( $newSubject );
@@ -746,7 +791,74 @@ class eZMail
     */
     static function validate( $address )
     {
-        return preg_match( '/^' . eZMail::REGEXP . '$/', $address );
+        // Only a string can be an address; anything else used to raise a
+        // TypeError (array) or a deprecation (null) inside preg_match().
+        // A control character is never part of an address that can be put in a
+        // header, but the quoted local part of REGEXP let most of them through,
+        // and a plain '$' also matched before a trailing newline, so
+        // "user@example.com\n" was accepted and a line break reached the header.
+        if ( !is_string( $address ) || preg_match( '/[\x00-\x1F\x7F]/', $address ) )
+            return 0;
+        return preg_match( '/^' . eZMail::REGEXP . '$/D', $address );
+    }
+
+    /*!
+      \static
+      Returns \a $value made safe to be placed in a mail header: every run of
+      CR/LF becomes a single space and every other control character except TAB
+      is removed. false and null are returned as they are (they mean "not set"),
+      arrays are cleaned element by element (keys too).
+
+      Every setter below that feeds a header goes through this. The values reach
+      two writers: the SMTP transport sends the ezcMail object, which puts names,
+      addresses, the subject and extra headers into the header block as they are,
+      and the sendmail transport passes the subject straight to mail(). A line
+      break in any of them therefore started a header of the caller's choosing
+      (Bcc, a second Content-Type, ...). Replacing the break with a space keeps
+      the text readable and the mail deliverable, which matters because many
+      callers pass form input they have not validated.
+    */
+    static function cleanHeaderValue( $value )
+    {
+        if ( $value === false || $value === null || is_object( $value ) )
+            return $value;
+        if ( is_array( $value ) )
+        {
+            $clean = array();
+            foreach ( $value as $key => $item )
+                $clean[is_string( $key ) ? self::cleanHeaderValue( $key ) : $key] = self::cleanHeaderValue( $item );
+            return $clean;
+        }
+        return preg_replace( array( '/[\r\n]+/', '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/' ),
+                             array( ' ', '' ),
+                             (string)$value );
+    }
+
+    /*!
+      \static
+      Returns \a $name reduced to the characters RFC 5322 allows in a header
+      field name (printable ASCII except the colon), for the same reason as
+      cleanHeaderValue().
+    */
+    static function cleanHeaderName( $name )
+    {
+        return preg_replace( '/[^\x21-\x39\x3B-\x7E]/', '', (string)$name );
+    }
+
+    /*!
+      \private
+      Cleans the email and name of one address element as used by
+      setReceiverElements(), setCcElements() and setBccElements().
+    */
+    static function cleanAddressElement( $address )
+    {
+        if ( !is_array( $address ) )
+            return $address;
+        if ( isset( $address['email'] ) )
+            $address['email'] = self::cleanHeaderValue( $address['email'] );
+        if ( isset( $address['name'] ) )
+            $address['name'] = self::cleanHeaderValue( $address['name'] );
+        return $address;
     }
 
     /*!
@@ -824,7 +936,7 @@ class eZMail
         if ( $key !== false and
              isset( $item[$key] ) )
             return $item[$key];
-        if ( $item['name'] )
+        if ( !empty( $item['name'] ) )
         {
             if ( $convert )
                 $item['name'] = $this->convertHeaderText( $item['name'] );
