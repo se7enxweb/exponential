@@ -43,6 +43,22 @@ class eZStringType extends eZDataType
     }
 
     /*!
+     \private
+     \return the posted value of \a $name as a string, or null when it is not one.
+     A request can post an array under any name (name[]=x), and trim(), strlen()
+     and the database layer refuse one, so only a scalar counts as text here.
+    */
+    static function postedString( $http, $name )
+    {
+        $value = $http->postVariable( $name );
+        if ( is_string( $value ) )
+            return $value;
+        if ( is_int( $value ) || is_float( $value ) )
+            return (string)$value;
+        return null;
+    }
+
+    /*!
      Sets the default value.
     */
     function initializeObjectAttribute( $contentObjectAttribute, $currentVersion, $originalContentObjectAttribute )
@@ -97,7 +113,14 @@ class eZStringType extends eZDataType
 
         if ( $http->hasPostVariable( $base . '_ezstring_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
-            $data = trim( $http->postVariable( $base . '_ezstring_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) );
+            $data = self::postedString( $http, $base . '_ezstring_data_text_' . $contentObjectAttribute->attribute( 'id' ) );
+            if ( $data === null )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                     'The input is not a valid text line.' ) );
+                return eZInputValidator::STATE_INVALID;
+            }
+            $data = trim( $data );
 
             if ( $data == "" )
             {
@@ -126,8 +149,14 @@ class eZStringType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . '_ezstring_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
-            $data = $http->postVariable( $base . '_ezstring_data_text_' . $contentObjectAttribute->attribute( 'id' ) );
+            $data = self::postedString( $http, $base . '_ezstring_data_text_' . $contentObjectAttribute->attribute( 'id' ) );
             $classAttribute = $contentObjectAttribute->contentClassAttribute();
+            if ( $data === null )
+            {
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
+                                                                     'The input is not a valid text line.' ) );
+                return eZInputValidator::STATE_INVALID;
+            }
 
             if ( $data == "" )
             {
@@ -156,7 +185,10 @@ class eZStringType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . '_ezstring_data_text_' . $contentObjectAttribute->attribute( 'id' ) ) )
         {
-            $data = $http->postVariable( $base . '_ezstring_data_text_' . $contentObjectAttribute->attribute( 'id' ) );
+            $data = self::postedString( $http, $base . '_ezstring_data_text_' . $contentObjectAttribute->attribute( 'id' ) );
+            // Validation already refused a value that is not text; never store an array
+            if ( $data === null )
+                return false;
             $contentObjectAttribute->setAttribute( 'data_text', $data );
             return true;
         }
@@ -170,7 +202,9 @@ class eZStringType extends eZDataType
     {
         if ( $http->hasPostVariable( $base . "_ezstring_data_text_" . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $dataText = $http->postVariable( $base . "_ezstring_data_text_" . $contentObjectAttribute->attribute( "id" ) );
+            $dataText = self::postedString( $http, $base . "_ezstring_data_text_" . $contentObjectAttribute->attribute( "id" ) );
+            if ( $dataText === null )
+                return false;
             $collectionAttribute->setAttribute( 'data_text', $dataText );
             return true;
         }
@@ -218,9 +252,20 @@ class eZStringType extends eZDataType
     function validateClassAttributeHTTPInput( $http, $base, $classAttribute )
     {
         $maxLenName = $base . self::MAX_LEN_VARIABLE . $classAttribute->attribute( 'id' );
+        $defaultValueName = $base . self::DEFAULT_STRING_VARIABLE . $classAttribute->attribute( 'id' );
+        if ( $http->hasPostVariable( $defaultValueName ) )
+        {
+            // The default is stored in data_text1, a varchar(50) column: a longer
+            // value is cut off or refused by the database, so refuse it here
+            $defaultValue = self::postedString( $http, $defaultValueName );
+            if ( $defaultValue === null or eZTextCodec::instance( false )->strlen( $defaultValue ) > 50 )
+                return eZInputValidator::STATE_INVALID;
+        }
         if ( $http->hasPostVariable( $maxLenName ) )
         {
-            $maxLenValue = $http->postVariable( $maxLenName );
+            $maxLenValue = self::postedString( $http, $maxLenName );
+            if ( $maxLenValue === null )
+                return eZInputValidator::STATE_INVALID;
             $maxLenValue = str_replace(" ", "", $maxLenValue );
             if( ( $maxLenValue == "" ) ||  ( $maxLenValue == 0 ) )
             {
@@ -242,7 +287,9 @@ class eZStringType extends eZDataType
         $maxLenName = $base . self::MAX_LEN_VARIABLE . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $maxLenName ) )
         {
-            $maxLenValue = $http->postVariable( $maxLenName );
+            $maxLenValue = self::postedString( $http, $maxLenName );
+            if ( $maxLenValue === null )
+                $maxLenValue = '0';
             $this->MaxLenValidator->setRange( 1, false );
             $maxLenValue = $this->MaxLenValidator->fixup( $maxLenValue );
             $http->setPostVariable( $maxLenName, $maxLenValue );
@@ -255,14 +302,16 @@ class eZStringType extends eZDataType
         $defaultValueName = $base . self::DEFAULT_STRING_VARIABLE . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $maxLenName ) )
         {
-            $maxLenValue = $http->postVariable( $maxLenName );
-            $classAttribute->setAttribute( self::MAX_LEN_FIELD, $maxLenValue );
+            $maxLenValue = self::postedString( $http, $maxLenName );
+            if ( $maxLenValue !== null )
+                $classAttribute->setAttribute( self::MAX_LEN_FIELD, $maxLenValue );
         }
         if ( $http->hasPostVariable( $defaultValueName ) )
         {
-            $defaultValueValue = $http->postVariable( $defaultValueName );
+            $defaultValueValue = self::postedString( $http, $defaultValueName );
 
-            $classAttribute->setAttribute( self::DEFAULT_STRING_FIELD, $defaultValueValue );
+            if ( $defaultValueValue !== null )
+                $classAttribute->setAttribute( self::DEFAULT_STRING_FIELD, $defaultValueValue );
         }
         return true;
     }
@@ -307,7 +356,8 @@ class eZStringType extends eZDataType
 
     function hasObjectAttributeContent( $contentObjectAttribute )
     {
-        return trim( $contentObjectAttribute->attribute( 'data_text' ) ) != '';
+        // data_text is NULL for an attribute never stored with a value
+        return trim( (string)$contentObjectAttribute->attribute( 'data_text' ) ) != '';
     }
 
     function isIndexable()
@@ -349,8 +399,11 @@ class eZStringType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
-        $maxLength = $attributeParametersNode->getElementsByTagName( 'max-length' )->item( 0 )->textContent;
-        $defaultString = $attributeParametersNode->getElementsByTagName( 'default-string' )->item( 0 )->textContent;
+        // A package written by hand or by another version can leave either element out
+        $maxLengthNode = $attributeParametersNode->getElementsByTagName( 'max-length' )->item( 0 );
+        $defaultStringNode = $attributeParametersNode->getElementsByTagName( 'default-string' )->item( 0 );
+        $maxLength = $maxLengthNode ? (int)$maxLengthNode->textContent : 0;
+        $defaultString = $defaultStringNode ? $defaultStringNode->textContent : '';
         $classAttribute->setAttribute( self::MAX_LEN_FIELD, $maxLength );
         $classAttribute->setAttribute( self::DEFAULT_STRING_FIELD, $defaultString );
     }
