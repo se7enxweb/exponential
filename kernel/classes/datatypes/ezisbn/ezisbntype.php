@@ -32,15 +32,28 @@ class eZISBNType extends eZDataType
      Validates the input and returns true if the input was
      valid for this datatype.
     */
+    /*!
+     \private
+     \return the posted value \a $name as a string, '' for an array or any
+             other non-text value (string functions throw a TypeError on PHP 8
+             for an array, and concatenating one gives "Array"), or \a $missing
+             when it was not posted.
+    */
+    function postedISBNValue( $http, $name, $missing = null )
+    {
+        if ( !$http->hasPostVariable( $name ) )
+            return $missing;
+        $value = $http->postVariable( $name );
+        return is_scalar( $value ) ? (string)$value : '';
+    }
+
     function validateObjectAttributeHTTPInput( $http, $base, $contentObjectAttribute )
     {
         $classAttribute = $contentObjectAttribute->contentClassAttribute();
         $classContent = $classAttribute->content();
         if ( isset( $classContent['ISBN13'] ) and $classContent['ISBN13'] )
         {
-            $number13 = $http->hasPostVariable( $base . "_isbn_13_" . $contentObjectAttribute->attribute( "id" ) )
-                        ? $http->postVariable( $base . "_isbn_13_" . $contentObjectAttribute->attribute( "id" ) )
-                        : false;
+            $number13 = $this->postedISBNValue( $http, $base . "_isbn_13_" . $contentObjectAttribute->attribute( "id" ), false );
 
             if ( $contentObjectAttribute->validateIsRequired() and ( !$number13 or $number13 == '' ) )
             {
@@ -88,10 +101,10 @@ class eZISBNType extends eZDataType
             return eZInputValidator::STATE_INVALID;
         }
 
-        $field1 = $http->postVariable( $base . "_isbn_field1_" . $contentObjectAttribute->attribute( "id" ) );
-        $field2 = $http->postVariable( $base . "_isbn_field2_" . $contentObjectAttribute->attribute( "id" ) );
-        $field3 = $http->postVariable( $base . "_isbn_field3_" . $contentObjectAttribute->attribute( "id" ) );
-        $field4 = $http->postVariable( $base . "_isbn_field4_" . $contentObjectAttribute->attribute( "id" ) );
+        $field1 = $this->postedISBNValue( $http, $base . "_isbn_field1_" . $contentObjectAttribute->attribute( "id" ), '' );
+        $field2 = $this->postedISBNValue( $http, $base . "_isbn_field2_" . $contentObjectAttribute->attribute( "id" ), '' );
+        $field3 = $this->postedISBNValue( $http, $base . "_isbn_field3_" . $contentObjectAttribute->attribute( "id" ), '' );
+        $field4 = $this->postedISBNValue( $http, $base . "_isbn_field4_" . $contentObjectAttribute->attribute( "id" ), '' );
         $isbn = $field1 . '-' . $field2 . '-' . $field3 . '-' . $field4;
 
         $isbn = strtoupper( $isbn );
@@ -144,6 +157,10 @@ class eZISBNType extends eZDataType
     function validateISBNChecksum ( $isbnNr )
     {
         $result = 0;
+        // The loop reads ten characters: anything else is not an ISBN-10 and
+        // used to raise "Uninitialized string offset" warnings
+        if ( !is_string( $isbnNr ) or strlen( $isbnNr ) != 10 )
+            return false;
         $isbnNr = strtoupper( $isbnNr );
         for ( $i = 10; $i > 0; $i-- )
         {
@@ -216,9 +233,7 @@ class eZISBNType extends eZDataType
         $classContent = $classAttribute->content();
         if ( isset( $classContent['ISBN13'] ) and $classContent['ISBN13'] )
         {
-            $number13 = $http->hasPostVariable( $base . "_isbn_13_" . $contentObjectAttribute->attribute( "id" ) )
-                        ? $http->postVariable( $base . "_isbn_13_" . $contentObjectAttribute->attribute( "id" ) )
-                        : false;
+            $number13 = $this->postedISBNValue( $http, $base . "_isbn_13_" . $contentObjectAttribute->attribute( "id" ), false );
             if ( $number13 === false )
                 return true;
 
@@ -252,10 +267,10 @@ class eZISBNType extends eZDataType
             return true;
         }
 
-        $field1 = $http->postVariable( $base . "_isbn_field1_" . $contentObjectAttribute->attribute( "id" ) );
-        $field2 = $http->postVariable( $base . "_isbn_field2_" . $contentObjectAttribute->attribute( "id" ) );
-        $field3 = $http->postVariable( $base . "_isbn_field3_" . $contentObjectAttribute->attribute( "id" ) );
-        $field4 = $http->postVariable( $base . "_isbn_field4_" . $contentObjectAttribute->attribute( "id" ) );
+        $field1 = $this->postedISBNValue( $http, $base . "_isbn_field1_" . $contentObjectAttribute->attribute( "id" ), '' );
+        $field2 = $this->postedISBNValue( $http, $base . "_isbn_field2_" . $contentObjectAttribute->attribute( "id" ), '' );
+        $field3 = $this->postedISBNValue( $http, $base . "_isbn_field3_" . $contentObjectAttribute->attribute( "id" ), '' );
+        $field4 = $this->postedISBNValue( $http, $base . "_isbn_field4_" . $contentObjectAttribute->attribute( "id" ), '' );
         // If $fields are empty if should not store empty content to db.
         if ( !$field1 and !$field2 and !$field3 and !$field4 )
             return true;
@@ -319,7 +334,9 @@ class eZISBNType extends eZDataType
     */
     function objectAttributeContent( $contentObjectAttribute )
     {
-        $data = $contentObjectAttribute->attribute( self::CONTENT_VALUE );
+        // data_text is NULL for an attribute that was never stored; preg_split()
+        // and str_replace() are deprecated for null on PHP 8
+        $data = (string)$contentObjectAttribute->attribute( self::CONTENT_VALUE );
         $classAttribute = $contentObjectAttribute->contentClassAttribute();
         $classContent = $classAttribute->content();
         if ( isset( $classContent['ISBN13'] ) and $classContent['ISBN13'] )
@@ -411,7 +428,7 @@ class eZISBNType extends eZDataType
     */
     function hasObjectAttributeContent( $contentObjectAttribute )
     {
-        return trim( $contentObjectAttribute->attribute( self::CONTENT_VALUE ) ) != '';
+        return trim( (string)$contentObjectAttribute->attribute( self::CONTENT_VALUE ) ) != '';
     }
 
     /*!
