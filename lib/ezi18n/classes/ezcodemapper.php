@@ -438,7 +438,9 @@ class eZCodeMapper
                                 break;
                             if ( $hasHexValues )
                             {
-                                $asciiValue = hexdec( substr( $line, $hexPos, 4 ) );
+                                // Two hex digits, as checked above: four read the
+                                // next characters too ("41 - 5a" became "41 -")
+                                $asciiValue = hexdec( substr( $line, $hexPos, 2 ) );
 //                                 print( "unicode ASCII '$asciiValue'\n" );
                                 $unicodeData = array( 'value' => $asciiValue,
                                                       'type' => 'ascii' );
