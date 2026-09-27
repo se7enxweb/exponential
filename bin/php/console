@@ -21,7 +21,7 @@
  * Usage:
  *   ./bin/php/console                            Show help
  *   ./bin/php/console --help | -h                Show help
- *   ./bin/php/console --version | -V             Show version
+ *   ./bin/php/console --version | -v | --about  Version, build, copyright and license
  *   ./bin/php/console list [namespace]           List all commands
  *   ./bin/php/console help <command>             Show command help
  *   ./bin/php/console <command> [args...]        Run a command
@@ -612,7 +612,7 @@ $listCommands = function( $nsFilter = null )
             array( 'list [namespace]', 'List all commands, or filter to a namespace' ),
             array( 'help <command>',   'Show help / usage for a specific command'    ),
             array( '--help, -h',       'Show this help screen'                       ),
-            array( '--version, -V',    'Show console version and exit'               ),
+            array( '--version, -v',    'Version, build, copyright and license (also -V, --about, --copyright; before the command)' ),
             array( 'crontab:list',     'Print the current system crontab'            ),
             array( 'crontab:edit',     'Open the system crontab in $EDITOR'          ),
         ) as $row )
@@ -769,10 +769,62 @@ $runCommand = function( array $cmd, array $forwardArgs )
 
 $rawArgs = array_slice( $argv, 1 );
 
-// ── --version / -V ───────────────────────────────────────────────────────────
-if ( in_array( '--version', $rawArgs, true ) || in_array( '-V', $rawArgs, true ) )
+// ── --version, -v, --about, --copyright ... ─────────────────────────────────
+// GNU style, like every Exponential Velocity program. Only before the command
+// name: after it the options are the command's, and -v is eZScript's verbose.
+$aboutFlags = array( '--version', '-version', '-v', '-V', '--about', '-about', '--copyright', '-copyright' );
+$leading = array();
+foreach ( $rawArgs as $arg )
 {
-    $cli->output( EXP_CONSOLE_NAME . ' ' . EXP_CONSOLE_VERSION );
+    if ( $arg === '' || $arg[0] !== '-' || $arg === '--' )
+        break;
+    $leading[] = $arg;
+}
+if ( array_intersect( $aboutFlags, $leading ) )
+{
+    $row = function ( $label, $value ) { return sprintf( "  %-13s %s\n", $label . ':', $value ); };
+    $git = function ( $args ) use ( $rootDir ) {
+        return is_dir( $rootDir . '/.git' ) && function_exists( 'shell_exec' )
+             ? trim( (string)@shell_exec( 'TZ=UTC git -C ' . escapeshellarg( $rootDir ) . ' ' . $args . ' 2>/dev/null' ) ) : '';
+    };
+    $commit = $git( 'rev-parse --short HEAD' );
+    $commitDate = $commit !== '' ? $git( "log -1 --format=%cd --date=format-local:'%Y-%m-%d %H:%M:%S'" ) : '';
+    // The web server that comes with it, when installed with Composer.
+    // The engine answers for itself (Q_WebServer_About, what its --version says).
+    $velocity = 'not installed';
+    $velocityDir = $rootDir . '/vendor/se7enxweb/exponential-velocity';
+    if ( is_file( $velocityDir . '/src/Q/WebServer/About.php' ) )
+    {
+        require_once $velocityDir . '/src/Q/WebServer/About.php';
+        list( $vcVersion, $vcBuild ) = Q_WebServer_About::version( $velocityDir );
+        $velocity = 'Exponential Velocity ' . $vcVersion . ( $vcBuild !== 'source' ? '+' . $vcBuild : '' ) . ' (exp:velocity)';
+    }
+    elseif ( class_exists( '\Composer\InstalledVersions' ) && \Composer\InstalledVersions::isInstalled( 'se7enxweb/exponential-velocity' ) )
+    {
+        $velocity = 'Exponential Velocity ' . \Composer\InstalledVersions::getPrettyVersion( 'se7enxweb/exponential-velocity' ) . ' (exp:velocity)';
+    }
+    $extensions = is_dir( $rootDir . '/extension' ) ? count( glob( $rootDir . '/extension/*', GLOB_ONLYDIR ) ) : 0;
+
+    echo 'console (Exponential) ' . eZPublishSDK::version() . "\n"
+       . wordwrap( 'Exponential is an open source content management system and application platform in PHP. '
+                 . 'The console finds and runs every command of an installation -- its kernel scripts, '
+                 . 'shell scripts and the scripts of its extensions -- as exp:, shell:, bin: and ext: commands.', 78 ) . "\n\n"
+       . $row( 'Program', 'console -- ' . EXP_CONSOLE_NAME . ' ' . EXP_CONSOLE_VERSION . ', the command console of an installation' )
+       . $row( 'Version', 'Exponential ' . eZPublishSDK::version() . ' (' . eZPublishSDK::alias() . ' line)' )
+       . $row( 'Build', $commit !== '' ? $commit . ( $commitDate !== '' ? ', ' . $commitDate . ' UTC (commit)' : '' ) : 'not a git checkout' )
+       . $row( 'Installation', $rootDir . ', ' . $extensions . ' extensions' )
+       . $row( 'Web server', $velocity )
+       . $row( 'PHP', PHP_VERSION . ' (' . PHP_SAPI . ', ' . ( PHP_ZTS ? 'thread-safe' : 'non-thread-safe' ) . ', ' . ( PHP_INT_SIZE * 8 ) . '-bit)' )
+       . $row( 'System', php_uname( 's' ) . ' ' . php_uname( 'r' ) . ' ' . php_uname( 'm' ) )
+       . $row( 'Home page', 'https://github.com/se7enxweb/exponential' )
+       . "\n"
+       . "Copyright (C) 1998-2026 7x / Exponential Foundation.\n"
+       . "Originally developed by eZ Systems AS, 1999-2014 (http://ez.no).\n"
+       . "License GPLv2: GNU GPL version 2 <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>;\n"
+       . "the full text is in the LICENSE file of the installation.\n"
+       . "This is free software: you are free to change and redistribute it.\n"
+       . "There is NO WARRANTY, to the extent permitted by law.\n\n"
+       . "Written by 7x (se7enx.com) and the Exponential contributors.\n";
     exit( 0 );
 }
 
@@ -783,7 +835,6 @@ $filteredArgs = array();
 foreach ( $rawArgs as $arg )
 {
     if ( $arg === '--quiet' || $arg === '-q' ) { $quietMode = true; continue; }
-    if ( $arg === '--version' || $arg === '-V' ) continue;
     $filteredArgs[] = $arg;
 }
 
