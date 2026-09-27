@@ -46,6 +46,16 @@ $ViewList["cache"] = array(
                                        'RegenerateStaticCache' => array( 'StaticCacheSiteAccess' => 'StaticCacheSiteAccess' ) ),
     "params" => array() );
 
+// The site's maintenance mode (expMaintenance), as bin/php/maintenance.php
+$ViewList['maintenance'] = array(
+    'script' => 'maintenance.php',
+    'functions' => array( 'administrate' ),
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'single_post_actions' => array( 'SwitchOnButton' => 'SwitchOn',
+                                    'SwitchOffButton' => 'SwitchOff' ),
+    'params' => array() );
+
 $ViewList['cachetoolbar'] = array(
     'script' => 'cachetoolbar.php',
     'functions' => array( 'managecache' ),
