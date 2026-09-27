@@ -205,14 +205,19 @@ class eZHTTPFile
         if ( !isset( $GLOBALS["eZHTTPFile-$httpName"] ) ||
              !( $GLOBALS["eZHTTPFile-$httpName"] instanceof eZHTTPFile ) )
         {
+            // A field posted as name[] gives arrays for name, error, size...;
+            // there is no single file under $httpName then, which is reported
+            // as "no file" (it used to fall through to UPLOADEDFILE_UNKNOWN_ERROR
+            // here, and fetch() built an eZHTTPFile out of the arrays).
+            $upload = self::singleUpload( $httpName );
             if ( $maxSize === false )
             {
-                return isset( $_FILES[$httpName] ) and $_FILES[$httpName]['name'] != "" and $_FILES[$httpName]['error'] == 0;
+                return $upload !== null and $upload['error'] == 0;
             }
 
-            if ( isset( $_FILES[$httpName] ) and $_FILES[$httpName]['name'] != "" )
+            if ( $upload !== null )
             {
-                switch ( $_FILES[$httpName]['error'] )
+                switch ( (int)$upload['error'] )
                 {
                     case ( UPLOAD_ERR_NO_FILE ):
                     {
@@ -241,7 +246,7 @@ class eZHTTPFile
 
                     case ( 0 ):
                     {
-                        return ( $maxSize == 0 || $_FILES[$httpName]['size'] <= $maxSize )? eZHTTPFile::UPLOADEDFILE_OK:
+                        return ( $maxSize == 0 || $upload['size'] <= $maxSize )? eZHTTPFile::UPLOADEDFILE_OK:
                                                                                              eZHTTPFile::UPLOADEDFILE_EXCEEDS_MAX_SIZE;
                     }break;
 
@@ -256,10 +261,42 @@ class eZHTTPFile
                 return eZHTTPFile::UPLOADEDFILE_DOES_NOT_EXIST;
             }
         }
+        // The file was fetched already. The two results were swapped here:
+        // without $maxSize the caller expects a boolean and got
+        // UPLOADEDFILE_OK (0, which reads as "cannot fetch"), with $maxSize it
+        // expects a status code and got true. Every caller in the kernel either
+        // tests the boolean or compares the status with === against the error
+        // codes (eZContentUpload also accepts true), so both keep working.
         if ( $maxSize === false )
-            return eZHTTPFile::UPLOADEDFILE_OK;
-        else
             return true;
+        else
+            return eZHTTPFile::UPLOADEDFILE_OK;
+    }
+
+    /**
+     * Returns the $_FILES entry of $httpName when it describes exactly one
+     * uploaded file (string name that is not empty, scalar error and size),
+     * or null otherwise.
+     *
+     * @param string $httpName
+     * @return array|null
+     */
+    protected static function singleUpload( $httpName )
+    {
+        if ( !isset( $_FILES[$httpName] ) || !is_array( $_FILES[$httpName] ) )
+            return null;
+        $upload = $_FILES[$httpName];
+        if ( !isset( $upload['name'] ) || !is_string( $upload['name'] ) || $upload['name'] === '' )
+            return null;
+        if ( !isset( $upload['error'] ) || !is_scalar( $upload['error'] ) )
+            return null;
+        if ( isset( $upload['size'] ) && !is_scalar( $upload['size'] ) )
+            return null;
+        if ( isset( $upload['tmp_name'] ) && !is_string( $upload['tmp_name'] ) )
+            return null;
+        if ( !isset( $upload['size'] ) )
+            $upload['size'] = 0;
+        return $upload;
     }
 
     /*!
@@ -273,8 +310,8 @@ class eZHTTPFile
         {
             $GLOBALS["eZHTTPFile-$http_name"] = null;
 
-            if ( isset( $_FILES[$http_name] ) and
-                 $_FILES[$http_name]["name"] != "" )
+            // See canFetch(): only a single-file entry can become an eZHTTPFile.
+            if ( self::singleUpload( $http_name ) !== null )
             {
                 $mimeType = eZMimeType::findByURL( $_FILES[$http_name]['name'] );
                 $_FILES[$http_name]['type'] = $mimeType['name'];
