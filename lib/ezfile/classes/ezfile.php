@@ -243,11 +243,7 @@ class eZFile
         /* Set cache time out to 10 minutes, this should be good enough to work
            around an IE bug */
         header( "Expires: ". gmdate( 'D, d M Y H:i:s', time() + 600 ) . ' GMT' );
-        header(
-            "Content-Disposition: " .
-            ( $isAttachedDownload ? 'attachment' : 'inline' ) .
-            ( $overrideFilename !== false ? "; filename={$overrideFilename}" : '' )
-        );
+        header( self::contentDispositionHeader( $isAttachedDownload ? 'attachment' : 'inline', $overrideFilename ) );
 
         // partial download (HTTP 'Range' header)
         if ( $startOffset !== 0 )
@@ -263,6 +259,44 @@ class eZFile
         }
         header( 'Content-Transfer-Encoding: binary' );
         header( 'Accept-Ranges: bytes' );
+    }
+
+    /**
+     * Builds a Content-Disposition header line that is safe for any file name.
+     *
+     * The file name used to be appended unquoted, so a name containing a
+     * semicolon, a quote or a space changed or broke the header parameters,
+     * and a line break made PHP refuse the header altogether (the download
+     * then went out without one). Now:
+     * - control characters are removed from the name;
+     * - filename= always carries a quoted ASCII fallback in which quotes,
+     *   backslashes, and every byte outside printable ASCII become '_';
+     * - when that fallback differs from the real name (non-ASCII, quotes...),
+     *   filename*= (RFC 5987/6266) carries the exact UTF-8 name, which every
+     *   current browser prefers over filename=.
+     * A plain ASCII name produces just the quoted filename= parameter.
+     *
+     * @param string $type 'attachment' or 'inline' (anything else is sent as 'attachment')
+     * @param string|false|null $fileName Name to offer, false/null/'' for none
+     * @return string The complete header line, ready for header()
+     */
+    public static function contentDispositionHeader( $type, $fileName = false )
+    {
+        $type = ( $type === 'inline' ) ? 'inline' : 'attachment';
+        $header = "Content-Disposition: $type";
+        if ( $fileName === false || $fileName === null || !is_scalar( $fileName ) )
+            return $header;
+
+        $fileName = preg_replace( '/[\x00-\x1F\x7F]/', '', (string)$fileName );
+        if ( $fileName === '' )
+            return $header;
+
+        $isUtf8 = preg_match( '//u', $fileName ) === 1;
+        $fallback = preg_replace( $isUtf8 ? '/[^\x20-\x7E]|["\\\\]/u' : '/[^\x20-\x7E]|["\\\\]/', '_', $fileName );
+        $header .= '; filename="' . $fallback . '"';
+        if ( $fallback !== $fileName && $isUtf8 )
+            $header .= "; filename*=UTF-8''" . rawurlencode( $fileName );
+        return $header;
     }
 
     /**
