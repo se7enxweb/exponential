@@ -32,7 +32,13 @@ class eZSubtreeSubscriptionType extends eZDataType
     function onPublish( $attribute, $contentObject, $publishedNodes )
     {
         $user = eZUser::currentUser();
-        $address = $user->attribute( 'email' );
+        // The anonymous account is shared by every visitor: a subscription made
+        // for it (content published through an anonymous form) would send
+        // notifications to that shared account instead of to a person.
+        if ( !$user instanceof eZUser || $user->isAnonymous() || !is_array( $publishedNodes ) )
+        {
+            return true;
+        }
         $userID = $user->attribute( 'contentobject_id' );
 
         $nodeIDList = eZSubtreeNotificationRule::fetchNodesForUserID( $user->attribute( 'contentobject_id' ), false );
@@ -102,10 +108,13 @@ class eZSubtreeSubscriptionType extends eZDataType
     {
         if ( $string == '' )
             return true;
-        if ( ! is_numeric( $string ) )
+        if ( !is_numeric( $string ) )
             return false;
 
-        $contentObjectAttribute->setAttribute( 'data_int', $string );
+        // The value is a yes/no flag; toString() writes 0 or 1. Another number
+        // ("2", "1e3") is taken as yes, the way the view template shows it,
+        // instead of being stored as it is.
+        $contentObjectAttribute->setAttribute( 'data_int', self::flagValue( $string ) );
         return true;
     }
 
@@ -125,13 +134,25 @@ class eZSubtreeSubscriptionType extends eZDataType
     function unserializeContentObjectAttribute( $package, $objectAttribute, $attributeNode )
     {
         $valueNode = $attributeNode->getElementsByTagName( 'value' )->item( 0 );
-        $value = $valueNode ? $valueNode->textContent : 0;
+        $value = $valueNode ? self::flagValue( $valueNode->textContent ) : 0;
         $objectAttribute->setAttribute( 'data_int', $value );
     }
 
     function diff( $old, $new, $options = false )
     {
         return null;
+    }
+
+    /*!
+     \private
+     \return 1 for a non-zero number, 0 for anything else.
+    */
+    static function flagValue( $value )
+    {
+        if ( !is_scalar( $value ) )
+            return 0;
+        $value = trim( (string)$value );
+        return ( is_numeric( $value ) && (float)$value != 0 ) ? 1 : 0;
     }
 }
 
