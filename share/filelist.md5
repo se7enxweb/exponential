@@ -13,7 +13,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 3b96782129fa8a60261a41688f7c0c3c  autoload.php
-231bff59c0452b1cf15c895d6d20c7ad  autoload/ezp_kernel.php
+3d2c9c08df659dc4e9488b7195c763cd  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
 e987da229be60f6c0644adee57d39fb3  benchmarks/classes/ezbenchmarkclirunner.php
@@ -81,6 +81,7 @@ e9979b600146bdd25d4957742e641512  bin/php/ezwebinupgrade.php
 180df4500551e7902bf45d85c92a3c49  bin/php/flatten.php
 5f7744f40c20ce9864bdf3d91d2a41ed  bin/php/frankenphp.php
 36d8cb716196471d88c5151f63b9dd42  bin/php/kickstarter.php
+f5e6cb3562a1a0c751d91c1516fffddd  bin/php/maintenance.php
 464c842c03c7aee495e3d4ea68542f05  bin/php/makestaticcache.php
 65d97bcbcaa0c2c5d3f8ad971c67366d  bin/php/phar.php
 184abc86baeb156744680e389b660400  bin/php/preload.php
@@ -5367,10 +5368,10 @@ a8c00a5a2ceae31b3fbc1d8602346071  extension/ezoe/translations/untranslated/trans
 8d1d60689df854dd7cdff2bb0d921bd5  extension/ezoe/update/database/5.0/dbupdate-5.0.0-to-5.0.1.sql
 255f256fb2d3ba8f3212a8dbb9abc31e  ezpm.php
 a50997c8fe6be64180958d5998efc11c  ezpublish.cron
-b4922a81e2b754a7bc1f31be45f1b695  index.php
+0165a932c41a55e8b14fe8d5aec32867  index.php
 608ae755b52334e71108cd9fb097f9a0  index_cluster.php
-7dd69d85603b08907dd97e8590082ebb  index_rest.php
-46b01317015c8e2c579c9837836f7153  index_treemenu.php
+18aa9f2d67b54c3693f19779576496df  index_rest.php
+45821e2c825c759084a0c1e1592c15ee  index_treemenu.php
 01f82b2434329c5366934f356acbfad8  kernel/class/classlist.php
 5d5a6670585408575cd82e5cac8c4692  kernel/class/copy.php
 be0281a3526a2ba625be31592e7ff7ae  kernel/class/delete.php
@@ -5479,12 +5480,13 @@ d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 0965c4a51ebfa3353d4a4bcf0ab9adc6  kernel/classes/expcleanuprss.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
-dfa79e007d7d9b2e28978c5230a8e0d5  kernel/classes/expkickstarter.php
+e1393c996c2f162c9c7d2b6e6686e314  kernel/classes/expkickstarter.php
 f356fcde7f2bb1d00f505e2514639808  kernel/classes/expkickstarterini.php
+629c3dd031db0a3d01097bead9dbfdee  kernel/classes/expmaintenance.php
 c96b4b194b2bf5cfc43f558b1fa48471  kernel/classes/expphar.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 98aec968ac5853b5d9315b41abf3ff52  kernel/classes/expsetuplog.php
-13fbe5bc98657f048d022000f72f3863  kernel/classes/expvelocity.php
+7eae32a444ad1447cb1e617c9068e6f4  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 3e40db0d31c1f4344f04a1252a4671df  kernel/classes/expvelocityconfiglayout.php
 8d76ad8f1b6946c83114d1302ba10b48  kernel/classes/expvelocityfrankenphp.php
@@ -6889,6 +6891,7 @@ b96a82799251ae806ec17640ca6861d7  share/locale/srp-RS.ini
 85c4117a14cc39644ed6fb553e8f6471  share/locale/swe-SE.ini
 dfaaf628b843ec62da7a7a7d2eba187d  share/locale/tur-TR.ini
 0ba081d069f7dd1e4f8b112f28d63801  share/locale/ukr-UA.ini
+2a1bac3712f843f1cbe6a15020a4c6dc  share/maintenance.html
 606c99b4a8f119c6777c86276bee38f5  share/transformations/ascii.tr
 bb55605f0c73bddb522d4d64444dc239  share/transformations/basic.tr
 574042f7bbde15c8178a7f2fb9323e8a  share/transformations/cyrillic.tr
