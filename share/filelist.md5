@@ -5488,7 +5488,7 @@ dc760357fdfae2662c3d859fcfc141d0  kernel/classes/expkickstarterini.php
 c96b4b194b2bf5cfc43f558b1fa48471  kernel/classes/expphar.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 b03643b8ceb19c18aa96b9d75a3c8159  kernel/classes/expsetuplog.php
-f1b969b2a08dcf38def5104fc68133d6  kernel/classes/expvelocity.php
+23af7cf3df907e40dc275f7c2564aa7b  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 3e40db0d31c1f4344f04a1252a4671df  kernel/classes/expvelocityconfiglayout.php
 8d76ad8f1b6946c83114d1302ba10b48  kernel/classes/expvelocityfrankenphp.php
@@ -7040,7 +7040,7 @@ ab0245844cc69de1f402e778e551274d  tests/tests/kernel/classes/eZURLAliasMLTest.ph
 d96dae3eb9c6ff8b779ea16752acc51a  tests/tests/kernel/classes/eZURLWildcardTest.php
 3c9950ad76855f923e7403aaa39be120  tests/tests/kernel/classes/eZUserAuthenticationTest.php
 db3283ec1aef44e44620efacfe1e9bac  tests/tests/kernel/classes/eZUserDiscountRuleTest.php
-d6413e382874a05e900247944472b589  tests/tests/kernel/classes/expVelocityEnginesTest.php
+c4060b51b67de01310e14680bc48c861  tests/tests/kernel/classes/expVelocityEnginesTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
 d471fa62de2a662dc597fb5efeadea08  tests/tests/kernel/classes/extensions/ezdepextends/extension.xml
