@@ -1072,6 +1072,26 @@ class eZINI
         }
 
         $originalFileName = $fileName;
+
+        // Every section name, setting name, array key and value is written to
+        // the file as it is. A line break in any of them starts a new line that
+        // eZINI then reads as a setting or a section of its own, a NUL byte cuts
+        // the file short for some readers, and in a *.ini.append.php file, which
+        // is one PHP comment (the open tag and comment start, the settings, then
+        // the comment end and close tag), a comment end in a value closes the
+        // comment early and whatever follows it runs as PHP when the file is
+        // requested or included. Such a value is refused before anything is
+        // written, so the file on disk is left exactly as it was; stripping the
+        // characters instead would store a different setting than the caller
+        // asked for without telling it.
+        $phpWrapped = $encapsulateInPHP || preg_match( '#\.php$#', $originalFileName );
+        $unsafe = $this->findUnsafeSaveContent( $onlyModified, $phpWrapped );
+        if ( $unsafe !== false )
+        {
+            eZDebug::writeError( "Refusing to save '$originalFileName': $unsafe", __METHOD__ );
+            return false;
+        }
+
         $backupFileName = $originalFileName . eZSys::backupFilename();
         $fileName .= '.tmp';
 
@@ -1236,6 +1256,64 @@ class eZINI
         }
 
         return true;
+    }
+
+    /**
+     * Looks for a section name, setting name, array key or value that cannot be
+     * written to an INI file safely (see save()).
+     *
+     * It walks the same settings the plain writer of save() writes, which is a
+     * superset of what the comment-preserving writer touches, so both are
+     * covered by one check.
+     *
+     * @param bool $onlyModified Only the settings save() would write in this mode
+     * @param bool $phpWrapped   The file is wrapped in a PHP comment
+     * @return string|false A description of the first unsafe item, or false
+     */
+    protected function findUnsafeSaveContent( $onlyModified, $phpWrapped )
+    {
+        foreach ( $this->BlockValues as $blockName => $blockVariables )
+        {
+            if ( $onlyModified && !$this->groupHasModifiedValues( $blockName ) )
+                continue;
+            if ( $reason = self::unsafeSaveText( $blockName, $phpWrapped ) )
+                return "section name $reason";
+            if ( !is_array( $blockVariables ) )
+                continue;
+            foreach ( $blockVariables as $varKey => $varValue )
+            {
+                if ( $onlyModified && !$this->isVariableModified( $blockName, $varKey ) )
+                    continue;
+                if ( $reason = self::unsafeSaveText( $varKey, $phpWrapped ) )
+                    return "setting name in [$blockName] $reason";
+                $items = is_array( $varValue ) ? $varValue : array( $varValue );
+                foreach ( $items as $itemKey => $itemValue )
+                {
+                    if ( is_string( $itemKey ) && ( $reason = self::unsafeSaveText( $itemKey, $phpWrapped ) ) )
+                        return "array key of [$blockName] $varKey $reason";
+                    if ( $reason = self::unsafeSaveText( $itemValue, $phpWrapped ) )
+                        return "value of [$blockName] $varKey $reason";
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @param mixed $text
+     * @param bool $phpWrapped
+     * @return string|false Why $text cannot be written to an INI file, or false
+     */
+    protected static function unsafeSaveText( $text, $phpWrapped )
+    {
+        if ( is_array( $text ) || is_object( $text ) )
+            return 'is not a scalar';
+        $text = (string)$text;
+        if ( strpbrk( $text, "\r\n\0" ) !== false )
+            return 'contains a line break or NUL byte';
+        if ( $phpWrapped && strpos( $text, '*/' ) !== false )
+            return 'contains the end of a PHP comment';
+        return false;
     }
 
     /**
