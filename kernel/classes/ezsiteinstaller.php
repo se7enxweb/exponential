@@ -1477,6 +1477,11 @@ class eZSiteInstaller
         'exclude_port_list'       - optional, ports to skip. used if 'access_type' is 'port';
         'host'                    - host name
         'host_prepend_siteaccess' - optional, boolean which instructs to prepend the site access name or not to the value of 'host', by default true
+        'index_file'              - optional, the front controller the urls carry; by default
+                                    eZSys::indexFileName(), which is index.php for every
+                                    request of the web setup wizard (its forms post to it
+                                    by name). A site package that writes ForceVirtualHost=true
+                                    passes '' so its urls match the ones the site generates.
     */
     function createSiteaccessUrls( $params )
     {
@@ -1496,7 +1501,7 @@ class eZSiteInstaller
         if ( !$hostname )
             $hostname = eZSys::hostname();
 
-        $indexFile = eZSys::wwwDir() . eZSys::indexFileName();
+        $indexFile = eZSys::wwwDir() . ( array_key_exists( 'index_file', $params ) ? (string)$params['index_file'] : eZSys::indexFileName() );
 
         switch( $accessType )
         {

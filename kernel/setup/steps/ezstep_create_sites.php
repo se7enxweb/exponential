@@ -1065,7 +1065,11 @@ language_locale='eng-GB'";
                              'siteaccess_urls' => $this->siteaccessURLs(),
                              'access_map' => $accessMap,
                              'site_type' => $siteType,
-                             'all_language_codes' => $prioritizedLanguages );
+                             'all_language_codes' => $prioritizedLanguages,
+                             // What the siteaccesses got: a site package that
+                             // writes settings/override needs the chosen driver,
+                             // which the global site.ini does not know yet
+                             'database_settings' => $siteINIChanges['DatabaseSettings'] );
 
 
         $siteINIStored = false;

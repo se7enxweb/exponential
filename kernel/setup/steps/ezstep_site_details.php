@@ -415,10 +415,11 @@ class eZStepSiteDetails extends eZStepInstaller
             $siteType['title'] = $siteType['name'];
         $siteType['errors'] = array();
 
-        if( $_SERVER['HTTPS'] === 'on' )
-            $siteType['url'] = 'https://' . eZSys::hostName() . eZSys::indexDir( false );
-        else
-            $siteType['url'] = 'http://' . eZSys::hostName() . eZSys::indexDir( false );
+        // The wizard's forms post to index.php by name, so indexDir() named it
+        // too and every site got SiteURL=<host>/index.php (and canonical links
+        // with /index.php/ in them). The site is served with URL rewriting (the
+        // shipped .htaccess, Velocity), as the kickstarter's default assumes.
+        $siteType['url'] = ( eZSys::isSSLNow() ? 'https://' : 'http://' ) . eZSys::hostName() . eZSys::wwwDir();
 
         if ( !isset( $siteType['site_access_illegal'] ) )
             $siteType['site_access_illegal'] = false;
