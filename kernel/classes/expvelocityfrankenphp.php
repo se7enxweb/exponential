@@ -431,6 +431,29 @@ class expVelocityFrankenPHP extends expVelocity
     }
 
     /**
+     * A php_ini value as PHP's ini parser must see it.
+     *
+     * FrankenPHP hands every php_ini line to PHP as "key=value" ini text, so a
+     * semicolon starts a comment there: session.save_path "0;0660;/dir" arrived
+     * as "0", no session file was ever found, and nobody could sign in on this
+     * engine while the same cookie worked under Apache and the Qbix engine.
+     * Such a value is quoted, ini style, as a php.ini file would have to write
+     * it; one already quoted is left alone.
+     *
+     * @param string $value
+     * @return string
+     */
+    public static function iniValue( $value )
+    {
+        $value = (string)$value;
+        if ( $value === '' || ( $value[0] === '"' && substr( $value, -1 ) === '"' ) )
+            return $value;
+        if ( strpbrk( $value, ';#"' ) === false )
+            return $value;
+        return '"' . str_replace( '"', '\\"', $value ) . '"';
+    }
+
+    /**
      * The php_ini lines: [PHPSettings] IniOptions[] (shared with the Qbix
      * server), then [FrankenPHPSettings] IniOptions[]; a later key wins.
      *
@@ -611,7 +634,7 @@ class expVelocityFrankenPHP extends expVelocity
         $lines[] = "\t\tnum_threads $workers";
         $lines[] = "\t\tmax_threads " . ( $workers + $spare );
         foreach ( $this->phpIni() as $key => $value )
-            $lines[] = "\t\tphp_ini " . call_user_func( $q, $key ) . ' ' . call_user_func( $q, $value );
+            $lines[] = "\t\tphp_ini " . call_user_func( $q, $key ) . ' ' . call_user_func( $q, self::iniValue( $value ) );
         $lines[] = "\t}";
         $lines[] = '}';
         $lines[] = '';

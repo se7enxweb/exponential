@@ -63,6 +63,20 @@ class expVelocityEnginesTest extends ezpTestCase
         $this->assertSame( '"a\\\\b"', expVelocityFrankenPHP::caddyQuote( 'a\\b' ) );
     }
 
+    /**
+     * FrankenPHP parses php_ini lines as ini text: a value with a semicolon
+     * (session.save_path "0;0660;/dir") must be quoted or it is cut at the ';'.
+     */
+    public function testIniValueQuotesWhatTheIniParserWouldCut()
+    {
+        $this->assertSame( '256M', expVelocityFrankenPHP::iniValue( '256M' ) );
+        $this->assertSame( '/var/lib/mysql/mysql.sock', expVelocityFrankenPHP::iniValue( '/var/lib/mysql/mysql.sock' ) );
+        $this->assertSame( '"0;0660;/srv/sessions"', expVelocityFrankenPHP::iniValue( '0;0660;/srv/sessions' ) );
+        $this->assertSame( '"a # b"', expVelocityFrankenPHP::iniValue( 'a # b' ) );
+        $this->assertSame( '"already;quoted"', expVelocityFrankenPHP::iniValue( '"already;quoted"' ) );
+        $this->assertSame( '', expVelocityFrankenPHP::iniValue( '' ) );
+    }
+
     public static function assetProvider()
     {
         return array(
