@@ -128,7 +128,7 @@ class eZDBQueryCache
         // a hit needs no parsing. Reading the tables from the text was the
         // largest single cost of a rendered page (a third of it, ~0.12 ms a
         // statement for ~545 statements); only a miss parses now.
-        $key = md5( get_class( $db ) . "\0" . ( $db->DB ?? '' ) . "\0" . ( $db->Server ?? '' ) . "\0" . $sql . "\0" . serialize( is_array( $params ) ? $params : array() ) );
+        $key = self::key( $db, $sql, $params );
         $entry = self::$memo[$key] ?? null;
         if ( $entry === null && self::apcuUsable() )
         {
@@ -157,8 +157,10 @@ class eZDBQueryCache
             if ( isset( $s['exclude'][$t] ) )
                 return null;
             // A temporary table belongs to one connection and its name is
-            // reused: another request's rows must never answer for it.
-            if ( self::isTemporary( $t ) )
+            // reused: another request's rows must never answer for it. A
+            // database's own catalogue changes without any write this cache
+            // sees (ANALYZE, a schema change): never answered either.
+            if ( self::isTemporary( $t ) || self::isSystemTable( $t ) )
             {
                 self::$stats['uncacheable']++;
                 return null;
@@ -168,13 +170,40 @@ class eZDBQueryCache
         return array( $key, $tables, microtime( true ) );
     }
 
-    /** Whether a stored entry's tables may still be answered: none excluded, none temporary. */
+    /**
+     * The key of a statement: the connection, the text and arrayQuery()'s
+     * parameters. xxh128 where PHP has it (8.1+), several times faster than
+     * md5 on a long statement; the parameters (offset, limit, column) joined
+     * instead of serialized.
+     */
+    public static function key( $db, $sql, $params )
+    {
+        $p = '';
+        if ( is_array( $params ) )
+        {
+            foreach ( $params as $name => $value )
+                $p .= $name . '=' . ( is_scalar( $value ) || $value === null ? (string)$value : serialize( $value ) ) . ';';
+        }
+        $raw = get_class( $db ) . "\0" . ( $db->DB ?? '' ) . "\0" . ( $db->Server ?? '' ) . "\0" . $sql . "\0" . $p;
+        static $xxh = null;
+        if ( $xxh === null )
+            $xxh = in_array( 'xxh128', hash_algos(), true );
+        return $xxh ? hash( 'xxh128', $raw ) : md5( $raw );
+    }
+
+    /** A table of the database's own catalogue: sqlite_master, sqlite_stat1, pg_class, information_schema.tables ... */
+    public static function isSystemTable( $table )
+    {
+        return preg_match( '/^(sqlite_|pg_|information_schema)/', (string)$table ) === 1;
+    }
+
+    /** Whether a stored entry's tables may still be answered: none excluded, none temporary, none of the catalogue. */
     protected static function answerable( array $tables )
     {
         $exclude = self::settings()['exclude'];
         foreach ( $tables as $t )
         {
-            if ( isset( $exclude[$t] ) || self::isTemporary( $t ) )
+            if ( isset( $exclude[$t] ) || self::isTemporary( $t ) || self::isSystemTable( $t ) )
                 return false;
         }
         return true;

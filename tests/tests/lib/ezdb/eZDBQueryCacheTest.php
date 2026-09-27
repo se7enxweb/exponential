@@ -15,6 +15,7 @@
  *  QC-11 — Mode=off stores and invalidates nothing
  *  QC-12 — A write by another process, seen through the state file, makes a result stale
  *  QC-13 — A stored result is answered without reading its tables again, but not once a table it read is excluded
+ *  QC-14 — The database's own catalogue (sqlite_master, sqlite_stat1, pg_*, information_schema) is never cached
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -305,6 +306,21 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         usleep( 1100000 );
         $this->assertNotNull( $this->select( $control ), 'a table the other process did not write is still current' );
         $this->assertNull( $this->select( $read ), 'the table it wrote is stale' );
+    }
+
+    /** QC-14 */
+    public function testCatalogueTablesAreNeverCached()
+    {
+        foreach ( array( "SELECT name FROM sqlite_master WHERE type='table'", 'SELECT * FROM sqlite_stat1', 'SELECT relname FROM pg_class' ) as $sql )
+        {
+            $this->select( $sql );
+            $this->assertNull( $this->select( $sql ), 'not cached: ' . $sql );
+        }
+        $this->assertTrue( eZDBQueryCache::isSystemTable( 'information_schema.tables' ) || eZDBQueryCache::isSystemTable( 'information_schema' ) );
+        $this->assertFalse( eZDBQueryCache::isSystemTable( 'ezcontentobject' ) );
+        // Keys differ by parameters and stay stable.
+        $this->assertSame( eZDBQueryCache::key( $this->db, 'SELECT 1 FROM a', array( 'limit' => 5 ) ), eZDBQueryCache::key( $this->db, 'SELECT 1 FROM a', array( 'limit' => 5 ) ) );
+        $this->assertNotSame( eZDBQueryCache::key( $this->db, 'SELECT 1 FROM a', array( 'limit' => 5 ) ), eZDBQueryCache::key( $this->db, 'SELECT 1 FROM a', array( 'limit' => 6 ) ) );
     }
 
     /** QC-13 */
