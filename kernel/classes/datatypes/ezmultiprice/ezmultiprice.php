@@ -334,8 +334,9 @@ class eZMultiPrice extends eZSimplePrice
         if ( $price )
         {
             $price->remove();
-            $priceList = $this->priceList();
-            unset( $priceList[$currencyCode] );
+            // priceList() returns a copy: unsetting in it left the removed
+            // price in the list, so a later store() wrote the row back
+            unset( $this->PriceList[$currencyCode] );
         }
     }
 
@@ -577,7 +578,13 @@ class eZMultiPrice extends eZSimplePrice
 
     function decodeDOMTree( $rootNode )
     {
+        // A package without the <ezmultiprice> or <price-list> element has no
+        // prices; null->getElementsByTagName() was a fatal error
+        if ( !$rootNode instanceof DOMElement )
+            return;
         $priceNode = $rootNode->getElementsByTagName( 'price-list' )->item( 0 );
+        if ( !$priceNode )
+            return;
         $priceNodes = $priceNode->getElementsByTagName( 'price' );
         if ( $priceNodes->length > 0 )
         {

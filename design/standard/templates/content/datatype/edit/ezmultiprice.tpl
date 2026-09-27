@@ -20,10 +20,10 @@
                 <td><input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_remove_price_array_{$attribute.id}[{$price.currency_code}]" title="{'Select price for removal.'|i18n( 'design/standard/content/datatype' )}" disabled="disabled" /></td>
 
                 {* Currency *}
-                <td>{$price.currency_code}</td>
+                <td>{$price.currency_code|wash}</td>
 
                 {* Value *}
-                <td>{$price.value}({'Auto'|i18n( 'design/standard/content/datatype' )})</td>
+                <td>{$price.value|wash}({'Auto'|i18n( 'design/standard/content/datatype' )})</td>
             </tr>
             {/foreach}
             {foreach $custom_price_list as $price}
@@ -32,10 +32,10 @@
                 <td><input type="checkbox" name="{$attribute_base}_remove_price_array_{$attribute.id}[{$price.currency_code}]" title="{'Select price for removal.'|i18n( 'design/standard/content/datatype' )}" /></td>
 
                 {* Currency *}
-                <td>{$price.currency_code}</td>
+                <td>{$price.currency_code|wash}</td>
 
                 {* Value *}
-                <td><input type="text" name="{$attribute_base}_price_array_{$attribute.id}[{$price.currency_code}]" size="12" value="{$price.value}" /></td>
+                <td><input type="text" name="{$attribute_base}_price_array_{$attribute.id}[{$price.currency_code}]" size="12" value="{$price.value|wash}" /></td>
             </tr>
             {/foreach}
         </table>
@@ -52,11 +52,11 @@
         {* Select currency *}
         <select name="{$attribute_base}_selected_currency_{$attribute.id}" title="Select currency">
             {foreach $currency_list as $currency}
-                <option value="{$currency.code}">{$currency.code}</option>
+                <option value="{$currency.code|wash}">{$currency.code|wash}</option>
             {/foreach}
             {*
             {section var=Currency loop=$currency_list}
-                <option value="{$Currency.code}">{$Currency.code}</option>
+                <option value="{$Currency.code|wash}">{$Currency.code|wash}</option>
             {/section}
             *}
         </select>

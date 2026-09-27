@@ -55,11 +55,25 @@ class eZMultiPriceType extends eZDataType
         if ( $http->hasPostVariable( $base . '_price_array_' . $contentObjectAttribute->attribute( "id" ) ) )
         {
             $customPriceList = $http->postVariable( $base . '_price_array_' . $contentObjectAttribute->attribute( "id" ) );
+            // A string made foreach() warn and a nested array made preg_match()
+            // throw a TypeError. A currency the shop does not have is ignored
+            // when the prices are fetched, so its posted code is not checked
+            // (and does not end up in the error message either)
+            if ( !is_array( $customPriceList ) )
+                $customPriceList = array();
+            $currencyList = eZCurrencyData::fetchList();
             foreach ( $customPriceList as $currencyCode => $value )
             {
+                if ( !isset( $currencyList[$currencyCode] ) )
+                    continue;
+                if ( !is_scalar( $value ) )
+                    $value = 'invalid';
                 if( $contentObjectAttribute->validateIsRequired() || ( $value != '' ) )
                 {
-                    if ( !preg_match( "#^[0-9]+(.){0,1}[0-9]{0,2}$#", $value ) )
+                    // The separator was "any one character", so "1x5" passed and
+                    // went to the float column, and $ also matched before a
+                    // trailing newline. Now a point or a comma, to the very end
+                    if ( !preg_match( "#^[0-9]+([.,][0-9]{0,2})?$#D", (string)$value ) )
                     {
                         $contentObjectAttribute->setValidationError( ezpI18n::tr( 'kernel/classes/datatypes',
                                                                              "Invalid price for '%currencyCode' currency ",
@@ -77,6 +91,22 @@ class eZMultiPriceType extends eZDataType
         }
 
         return eZInputValidator::STATE_ACCEPTED;
+    }
+
+    /*!
+     \static
+     \return the posted whole number \a $name as a string (it may be -1, the
+             dynamic VAT type), or '' when it is missing or anything else.
+    */
+    static function postedVatNumber( $http, $name )
+    {
+        if ( !$http->hasPostVariable( $name ) )
+            return '';
+        $value = $http->postVariable( $name );
+        if ( !is_scalar( $value ) )
+            return '';
+        $value = trim( (string)$value );
+        return preg_match( '/^-?[0-9]{1,9}$/D', $value ) ? $value : '';
     }
 
     function storeObjectAttribute( $attribute )
@@ -141,21 +171,26 @@ class eZMultiPriceType extends eZDataType
         $currencyCodeVariable = $base . self::DEFAULT_CURRENCY_CODE_VARIABLE . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $currencyCodeVariable ) )
         {
+            // The three come from select boxes; an array was stored as it came
+            // (and "Array" in the text column), text in the number columns
             $currencyCode = $http->postVariable( $currencyCodeVariable );
-            $classAttribute->setAttribute( self::DEFAULT_CURRENCY_CODE_FIELD, $currencyCode );
+            if ( is_scalar( $currencyCode ) )
+                $classAttribute->setAttribute( self::DEFAULT_CURRENCY_CODE_FIELD, (string)$currencyCode );
         }
 
         $isVatIncludedVariable = $base . self::INCLUDE_VAT_VARIABLE . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $isVatIncludedVariable ) )
         {
             $isVatIncluded = $http->postVariable( $isVatIncludedVariable );
-            $classAttribute->setAttribute( self::INCLUDE_VAT_FIELD, $isVatIncluded );
+            if ( is_scalar( $isVatIncluded ) )
+                $classAttribute->setAttribute( self::INCLUDE_VAT_FIELD, (int)$isVatIncluded == self::EXCLUDED_VAT ? self::EXCLUDED_VAT : self::INCLUDED_VAT );
         }
         $vatIDVariable = $base . self::VAT_ID_VARIABLE . $classAttribute->attribute( 'id' );
         if ( $http->hasPostVariable( $vatIDVariable  ) )
         {
             $vatID = $http->postVariable( $vatIDVariable  );
-            $classAttribute->setAttribute( self::VAT_ID_FIELD, $vatID );
+            if ( is_scalar( $vatID ) and is_numeric( $vatID ) )
+                $classAttribute->setAttribute( self::VAT_ID_FIELD, (int)$vatID );
         }
         return true;
     }
@@ -172,14 +207,23 @@ class eZMultiPriceType extends eZDataType
         {
             $customPriceList = $http->postVariable( $priceArrayName );
 
-            foreach ( $customPriceList as $currencyCode => $value )
-                $multiprice->setCustomPrice( $currencyCode, $value );
+            // Only text reaches the price (a string list made foreach() warn),
+            // and a decimal comma is stored the way the float column reads it
+            foreach ( ( is_array( $customPriceList ) ? $customPriceList : array() ) as $currencyCode => $value )
+            {
+                if ( is_scalar( $value ) )
+                    $multiprice->setCustomPrice( $currencyCode, str_replace( ',', '.', trim( (string)$value ) ) );
+            }
         }
 
         $multiprice->updateAutoPriceList();
 
-        $vatType = $http->postVariable( $base . '_ezmultiprice_vat_id_' . $contentObjectAttribute->attribute( 'id' ) );
-        $vatExInc = $http->postVariable( $base . '_ezmultiprice_inc_ex_vat_' . $contentObjectAttribute->attribute( 'id' ) );
+        // Both are ids from select boxes and are stored as "type,incex" in
+        // data_text: anything but a whole number (an array became "Array",
+        // text with a comma broke the pair) is stored as empty, as a missing
+        // field always was
+        $vatType = self::postedVatNumber( $http, $base . '_ezmultiprice_vat_id_' . $contentObjectAttribute->attribute( 'id' ) );
+        $vatExInc = self::postedVatNumber( $http, $base . '_ezmultiprice_inc_ex_vat_' . $contentObjectAttribute->attribute( 'id' ) );
         $multiprice->setAttribute( 'selected_vat_type', $vatType );
         $multiprice->setAttribute( 'is_vat_included', $vatExInc );
 
@@ -199,7 +243,9 @@ class eZMultiPriceType extends eZDataType
 
         if ( $contentObjectAttribute->attribute( 'data_text' ) != '' )
         {
-            list( $vatType, $vatExInc ) = explode( ',', $contentObjectAttribute->attribute( 'data_text' ), 2 );
+            // A value without the comma (old or imported data) gave an
+            // "Undefined array key 1" warning on every view
+            list( $vatType, $vatExInc ) = array_pad( explode( ',', (string)$contentObjectAttribute->attribute( 'data_text' ), 2 ), 2, '' );
 
             $multiprice->setAttribute( 'selected_vat_type', $vatType );
             $multiprice->setAttribute( 'is_vat_included', $vatExInc );
@@ -230,11 +276,19 @@ class eZMultiPriceType extends eZDataType
                     $selectedCurrency = $http->postVariable( $selectedCurrencyName );
                     $multiprice = $contentObjectAttribute->content();
 
+                    // An array is no currency code (it is used as an array key)
+                    if ( !is_scalar( $selectedCurrency ) )
+                        break;
+                    $selectedCurrency = (string)$selectedCurrency;
+
                     // to keep right order of currency after adding we do 'remove' and 'add'
                     // instead of just '$multiprice->setCustomPrice( $currencyCode, false )'
+                    // A currency without a price yet has no value to take over
+                    // (false->attribute() was a fatal error): it gets the 0.00
+                    // addPrice() gives a new price
                     $price = $multiprice->priceByCurrency( $selectedCurrency );
                     $multiprice->removePriceByCurrency( $selectedCurrency );
-                    $multiprice->setCustomPrice( $selectedCurrency, $price->attribute( 'value' ) );
+                    $multiprice->setCustomPrice( $selectedCurrency, $price ? $price->attribute( 'value' ) : false );
 
                     $multiprice->store();
                 }
@@ -248,6 +302,10 @@ class eZMultiPriceType extends eZDataType
                     $removePriceArray = $http->postVariable( $removePriceArrayName );
                     $multiprice = $contentObjectAttribute->content();
 
+                    // The checkboxes post an array keyed by currency; a string
+                    // made foreach() warn
+                    if ( !is_array( $removePriceArray ) )
+                        $removePriceArray = array();
                     foreach( $removePriceArray as $currencyCode => $value )
                         $multiprice->setAutoPrice( $currencyCode, false );
 
@@ -308,7 +366,10 @@ class eZMultiPriceType extends eZDataType
 
         $priceList = $multiprice->attribute( 'price_list' );
 
-        $priceArray = explode( ',', $contentObjectAttribute->attribute( 'data_text' ) );
+        // Always two leading fields (VAT type, inc/ex), which fromString()
+        // takes off the front: a data_text without the comma gave one field,
+        // and the first currency code was then read as the inc/ex value
+        $priceArray = array_pad( explode( ',', (string)$contentObjectAttribute->attribute( 'data_text' ), 2 ), 2, '' );
         foreach ( $priceList as $priceData )
         {
             $type = $priceData->attribute( 'type' );
@@ -337,12 +398,14 @@ class eZMultiPriceType extends eZDataType
 
         $multipriceData =  eZStringUtils::explodeSTR( $string, '|' );
 
-        $vatType = array_shift( $multipriceData );
-        $vatExInc = array_shift( $multipriceData );
+        $vatType = (string)array_shift( $multipriceData );
+        $vatExInc = (string)array_shift( $multipriceData );
 
         $contentObjectAttribute->setAttribute( 'data_text', $vatType . ',' . $vatExInc );
 
-        while ( $multipriceData )
+        // Prices come in threes (currency, value, type); an incomplete last
+        // one is left out rather than set with a null currency or value
+        while ( count( $multipriceData ) >= 3 )
         {
             $currencyCode = array_shift( $multipriceData );
             $value = array_shift( $multipriceData );
@@ -405,41 +468,53 @@ class eZMultiPriceType extends eZDataType
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
     {
+        // Every element may be missing from a hand-made or old package;
+        // null->getAttribute() was a fatal error for each of them
         $vatNode = $attributeParametersNode->getElementsByTagName( 'vat-included' )->item( 0 );
-        $vatIncluded = strtolower( $vatNode->getAttribute( 'is-set' ) ) == 'true';
+        $vatIncluded = $vatNode ? strtolower( $vatNode->getAttribute( 'is-set' ) ) == 'true' : true;
         if ( $vatIncluded )
             $vatIncluded = self::INCLUDED_VAT;
         else
             $vatIncluded = self::EXCLUDED_VAT;
 
         $classAttribute->setAttribute( self::INCLUDE_VAT_FIELD, $vatIncluded );
+        // serializeContentClassAttribute() leaves <vat-type> out when the class
+        // attribute's VAT type is not in the list, so its own export could not
+        // be imported again. Without it the attribute keeps no VAT type, and no
+        // nameless VAT type is created
         $vatTypeNode = $attributeParametersNode->getElementsByTagName( 'vat-type' )->item( 0 );
-        $vatName = $vatTypeNode->getAttribute( 'name' );
-        $vatPercentage = $vatTypeNode->getAttribute( 'percentage' );
-        $vatID = false;
-        $vatTypes = eZVatType::fetchList();
-        foreach ( $vatTypes as $vatType )
+        if ( $vatTypeNode )
         {
-            if ( $vatType->attribute( 'name' ) == $vatName and
-                 $vatType->attribute( 'percentage' ) == $vatPercentage )
+            $vatName = $vatTypeNode->getAttribute( 'name' );
+            $vatPercentage = $vatTypeNode->getAttribute( 'percentage' );
+            $vatID = false;
+            $vatTypes = eZVatType::fetchList();
+            foreach ( $vatTypes as $vatType )
             {
-                $vatID = $vatType->attribute( 'id' );
-                break;
+                if ( $vatType->attribute( 'name' ) == $vatName and
+                     $vatType->attribute( 'percentage' ) == $vatPercentage )
+                {
+                    $vatID = $vatType->attribute( 'id' );
+                    break;
+                }
             }
+            if ( !$vatID )
+            {
+                $vatType = eZVatType::create();
+                $vatType->setAttribute( 'name', $vatName );
+                $vatType->setAttribute( 'percentage', $vatPercentage );
+                $vatType->store();
+                $vatID = $vatType->attribute( 'id' );
+            }
+            $classAttribute->setAttribute( self::VAT_ID_FIELD, $vatID );
         }
-        if ( !$vatID )
-        {
-            $vatType = eZVatType::create();
-            $vatType->setAttribute( 'name', $vatName );
-            $vatType->setAttribute( 'percentage', $vatPercentage );
-            $vatType->store();
-            $vatID = $vatType->attribute( 'id' );
-        }
-        $classAttribute->setAttribute( self::VAT_ID_FIELD, $vatID );
 
         $defaultCurrency = $attributeParametersNode->getElementsByTagName( 'default-currency' )->item( 0 );
-        $currencyCode = $defaultCurrency->getAttribute( 'code' );
-        $classAttribute->setAttribute( self::DEFAULT_CURRENCY_CODE_FIELD, $currencyCode );
+        if ( $defaultCurrency )
+        {
+            $currencyCode = $defaultCurrency->getAttribute( 'code' );
+            $classAttribute->setAttribute( self::DEFAULT_CURRENCY_CODE_FIELD, $currencyCode );
+        }
     }
 
 
@@ -486,14 +561,14 @@ class eZMultiPriceType extends eZDataType
         if ( isset( $params['contentobject_attr_id'] ) )
         {
             $sql['where'] = "
-                     $multipriceTableAlias.contentobject_attr_id = {$params['contentobject_attr_id']}";
+                     $multipriceTableAlias.contentobject_attr_id = " . (int)$params['contentobject_attr_id'];
             $and = ' AND';
         }
 
         if ( isset( $params['contentobject_attr_version'] ) )
         {
             $sql['where'] .= "
-                    $and $multipriceTableAlias.contentobject_attr_version = {$params['contentobject_attr_version']}";
+                    $and $multipriceTableAlias.contentobject_attr_version = " . (int)$params['contentobject_attr_version'];
             $and = ' AND';
         }
 
@@ -504,8 +579,12 @@ class eZMultiPriceType extends eZDataType
 
         if ( $params['currency_code'] !== false )
         {
+            // The ids and the currency code were put into the SQL as they came
+            // (the code can come from a template's sort_by or the user's
+            // preferred currency): cast and escape them
+            $currencyCode = eZDB::instance()->escapeString( (string)$params['currency_code'] );
             $sql['where'] .= "
-                    $and $multipriceTableAlias.currency_code = '{$params['currency_code']}'";
+                    $and $multipriceTableAlias.currency_code = '$currencyCode'";
             $and = ' AND';
         }
 

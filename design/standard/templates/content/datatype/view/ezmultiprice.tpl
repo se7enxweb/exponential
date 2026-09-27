@@ -19,7 +19,7 @@
                 {set price = $price_list[$pos]
                      currency = $currency_list[$price.currency_code]}
                 <tr>
-                    <td>{$price.currency_code}</td>
+                    <td>{$price.currency_code|wash}</td>
                     <td><strike>{$price.value|l10n( 'currency', $currency.locale, '' )}</strike></td>
                     <td>{$discount_price.value|l10n( 'currency', $currency.locale, '' )}</td>
                     <td>{sub($price.value, $discount_price.value)|l10n( 'currency', $currency.locale, '' )} ( {$multiprice.discount_percent} % )</td>

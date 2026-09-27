@@ -4,7 +4,7 @@
 <label>{'Default currency'|i18n( 'design/standard/class/datatype' )}:</label>
 <select name="ContentClass_ezmultiprice_currency_code_{$class_attribute.id}">
 {section name=CurrencyList loop=$class_attribute.content.currency_list}
-<option value="{$CurrencyList:item.code}" {if eq( $CurrencyList:item.code, $class_attribute.data_text1 )}selected="selected"{/if}>{$CurrencyList:item.code|wash}</option>
+<option value="{$CurrencyList:item.code|wash}"{if eq( $CurrencyList:item.code, $class_attribute.data_text1 )}selected="selected"{/if}>{$CurrencyList:item.code|wash}</option>
 {/section}
 </select>
 </div>
