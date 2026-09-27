@@ -109,9 +109,10 @@ class ezpI18n
     protected static function translateText( $context, $source, $comment = null, $arguments = null )
     {
         $localeCode = eZLocale::instance()->localeFullCode();
-        // eng-GB is the source locale and eng-US has no separate translation file,
-        // so avoid translation lookups (and missing-translation debug noise) for these.
-        if ( $localeCode == 'eng-GB' || $localeCode == 'eng-US' )
+        // eng-GB is the source locale and has no translation file, so its lookups are
+        // skipped (and with them the missing-translation debug noise). eng-US has its
+        // own translation (US spelling and wording) and is looked up like any locale.
+        if ( $localeCode == 'eng-GB' )
         {
             return self::insertArguments( $source, $arguments );
         }
