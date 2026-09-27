@@ -255,5 +255,15 @@
  */
 // define( 'CUSTOM_LOG_ROTATE_FILES', 3 );
 
+/*
+   ROLE-AWARE HTTP CACHE
+   ---------------------
+   Serves cached content views before the autoloader, INI or database load,
+   for signed-in visitors too. Inert until settings/httpcache.ini
+   [HttpCacheSettings] Enabled=enabled has written
+   var/<site>/cache/exphttpcache/contract.php. See doc/bc/6.0/httpcache.md.
+*/
+if ( is_file( __DIR__ . '/kernel/private/classes/httpcache/ezphttpcacheearlyexit.php' ) )
+    require __DIR__ . '/kernel/private/classes/httpcache/ezphttpcacheearlyexit.php';
 
 ?>
