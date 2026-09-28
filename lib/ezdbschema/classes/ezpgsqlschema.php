@@ -481,7 +481,9 @@ class eZPgsqlSchema extends eZDBSchemaInterface
      */
     function physicalIndexName( $table, $index )
     {
-        if ( strpos( $index, $table . '_' ) === 0 || !$this->DBInstance instanceof eZDBInterface )
+        // Only a PostgreSQL connection has these catalogues: a dump for PostgreSQL
+        // made on a site that runs another database asked them of that one.
+        if ( strpos( $index, $table . '_' ) === 0 || !$this->DBInstance instanceof eZPostgreSQLDB || !$this->DBInstance->isConnected() )
             return $index;
 
         $owner = $this->DBInstance->arrayQuery(
