@@ -22735,6 +22735,30 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
         <source>License</source>
         <translation>Lizenz</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>Website</translation>
+    </message>
+    <message>
+        <source>Includes</source>
+        <translation>Enthält</translation>
+    </message>
+    <message>
+        <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
+        <translation>Die folgende Liste enthält die Erweiterungen, die diese Exponential-Installation zur Laufzeit geladen hat.</translation>
+    </message>
+    <message>
+        <source>The following is a list of the third-party software that is distributed with this copy of Exponential. The list of third party software includes the license for the software in question and the directory or files that contain the third-party software.</source>
+        <translation>Die folgende Liste enthält die Software von Drittanbietern, die mit dieser Exponential-Installation ausgeliefert wird. Zu jeder Software sind ihre Lizenz und das Verzeichnis oder die Dateien angegeben, die sie enthalten.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/form</name>

@@ -21623,6 +21623,30 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Could not load LICENSE file! You should have a LICENSE file in your Exponential root directory.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Includes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The following is a list of the third-party software that is distributed with this copy of Exponential. The list of third party software includes the license for the software in question and the directory or files that contain the third-party software.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/gui</name>
