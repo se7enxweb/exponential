@@ -641,6 +641,40 @@ class eZStaticCache implements ezpStaticCache
     }
 
     /**
+     * The url a siteaccess serves an url alias path at, or false when the
+     * alias is not a page of that siteaccess.
+     *
+     * A siteaccess rooted below the content root with PathPrefix serves the
+     * alias "bold-agency/about-us" at /about-us, and does not serve an alias
+     * outside its prefix unless PathPrefixExclude names its first element.
+     * Used to regenerate or remove the stored page of a single node.
+     *
+     * @param string $siteAccess
+     * @param string $aliasPath e.g. /bold-agency/about-us
+     * @return string|false e.g. /about-us
+     */
+    public function siteAccessPath( $siteAccess, $aliasPath )
+    {
+        $url = '/' . trim( (string)$aliasPath, '/' );
+        $dirPart = $this->buildCacheDirPart( '', $siteAccess );
+        $prefix = $dirPart['path_prefix'];
+        if ( $prefix === '' )
+            return $url;
+
+        $first = strtolower( (string)strtok( ltrim( $url, '/' ), '/' ) );
+        foreach ( (array)$dirPart['path_prefix_exclude'] as $exclude )
+        {
+            if ( strtolower( trim( (string)$exclude, '/' ) ) === $first )
+                return $url;
+        }
+
+        $stripped = self::stripPathPrefix( $url, $dirPart );
+        if ( $stripped === '' )
+            return '/';
+        return $stripped === $url ? false : $stripped;
+    }
+
+    /**
      * The directory a siteaccess's pages are stored under, for removing them
      * before a full regeneration.
      *

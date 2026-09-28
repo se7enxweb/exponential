@@ -115,6 +115,10 @@ class expPreloadRunner
             'max_pages'  => 250,
             'max_depth'  => 3,
             'timeout'    => 20,
+            // Paths relative to the site ('/about-us') to start from instead
+            // of the site root and its sections; with max_depth 0 exactly
+            // these pages are fetched.
+            'start_paths' => array(),
         );
     }
 
@@ -234,6 +238,15 @@ class expPreloadRunner
     public function startUrls( $base )
     {
         $base = $base . $this->basePath();
+
+        if ( $this->options['start_paths'] )
+        {
+            $urls = array();
+            foreach ( (array)$this->options['start_paths'] as $path )
+                $urls[] = $this->normalise( $base . '/' . ltrim( (string)$path, '/' ) );
+            return array_values( array_unique( $urls ) );
+        }
+
         $urls = array( $base . '/' );
 
         $ini = eZINI::instance( 'site.ini' );

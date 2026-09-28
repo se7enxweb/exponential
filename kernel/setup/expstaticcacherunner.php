@@ -57,6 +57,13 @@ class expStaticCacheRunner
      */
     private $purge;
 
+    /**
+     * Single pages to generate, empty for the whole site.
+     *
+     * @var array
+     */
+    private $paths = array();
+
     private $stored = 0;
     private $files = 0;
     private $skipped = 0;
@@ -77,6 +84,22 @@ class expStaticCacheRunner
         $this->maxPages = isset( $options['max_pages'] ) ? max( 1, min( 20000, (int)$options['max_pages'] ) ) : 2500;
         $this->maxDepth = isset( $options['max_depth'] ) ? max( 0, min( 30, (int)$options['max_depth'] ) ) : 12;
         $this->purge    = isset( $options['purge'] ) ? (bool)$options['purge'] : true;
+
+        // Only these pages ('/about-us', relative to the site), fetched and
+        // stored as the full run would, and nothing else removed or followed.
+        $this->paths = array();
+        foreach ( isset( $options['paths'] ) ? (array)$options['paths'] : array() as $path )
+        {
+            $path = '/' . trim( (string)$path, '/' );
+            if ( !in_array( $path, $this->paths, true ) )
+                $this->paths[] = $path;
+        }
+        if ( $this->paths )
+        {
+            $this->purge = false;
+            $this->maxDepth = 0;
+            $this->maxPages = count( $this->paths );
+        }
     }
 
     private function say( $type, $message, array $data = array() )
@@ -157,7 +180,10 @@ class expStaticCacheRunner
         $this->say( 'phase', 'Configuration' );
         $this->say( 'phase-item', 'Writing to:  ' . $storageDir );
         $this->say( 'phase-item', 'Sites:       ' . implode( ', ', $targets ) );
-        $this->say( 'phase-item', 'Limits:      ' . $this->maxPages . ' pages, link depth ' . $this->maxDepth );
+        if ( $this->paths )
+            $this->say( 'phase-item', 'Pages:       ' . implode( ', ', $this->paths ) );
+        else
+            $this->say( 'phase-item', 'Limits:      ' . $this->maxPages . ' pages, link depth ' . $this->maxDepth );
 
         // Generating pages is only half of a static cache. Without this the
         // pages are never refreshed when an editor publishes, so the site would
@@ -209,9 +235,10 @@ class expStaticCacheRunner
                 if ( $type === 'warn' || $type === 'error' )
                     $runner->report( $type, $message );
             },
-            array( 'siteaccess' => $siteAccess,
-                   'max_pages'  => $this->maxPages,
-                   'max_depth'  => $this->maxDepth ) );
+            array( 'siteaccess'  => $siteAccess,
+                   'max_pages'   => $this->maxPages,
+                   'max_depth'   => $this->maxDepth,
+                   'start_paths' => $this->paths ) );
 
         $base = $crawler->baseUrl();
         if ( $base === false )
