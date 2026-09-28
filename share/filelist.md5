@@ -5607,7 +5607,7 @@ c0013eff31f2c8299cf617f72cdaa7ba  kernel/classes/ezshippingmanager.php
 adec8ad3eceb685bca7ec2d30a461d0c  kernel/classes/ezshopaccounthandler.php
 374f146bc54d91659e649c58b855d598  kernel/classes/ezsiteaccess.php
 0451c91cbb6e4729fd7ff335fccabb3f  kernel/classes/ezsitedata.php
-253db14a1aba8d9c055f0bafd1576fec  kernel/classes/ezsiteinstaller.php
+cbee9be0691b9ef4c093bd079e043cfd  kernel/classes/ezsiteinstaller.php
 96f1c0fe0f272484265ac8ff94bdfc42  kernel/classes/ezsslzone.php
 1ec3bb218e2d01a8860985095fd180ff  kernel/classes/ezstaticcache.php
 4d3adbbb193d7493dda515910870c29a  kernel/classes/ezsubtreecache.php
@@ -6096,7 +6096,7 @@ b05b68e1a19a0aee8a85ab88af764472  kernel/setup/session.php
 f0bb2d78d2da0a115870dc0708978214  kernel/setup/settingstoolbar.php
 11d6f43693270057c21a4a8d78e96ef3  kernel/setup/setupmenu.php
 000fff131e21d5db77dc022f0d1bba6a  kernel/setup/staticcachestream.php
-e5f85334a128c85f31d77c3ad2e79026  kernel/setup/steps/ezstep_create_sites.php
+745bb98e80d400097056915b627542a1  kernel/setup/steps/ezstep_create_sites.php
 d0a153027eff5f94f37303c0a29abf8b  kernel/setup/steps/ezstep_data.php
 db4fe3f3c55383f4eadcd790fe8f4a42  kernel/setup/steps/ezstep_database_choice.php
 87be323d3e410e40559cede6b609fc49  kernel/setup/steps/ezstep_database_init.php
