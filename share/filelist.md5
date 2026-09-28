@@ -6177,7 +6177,7 @@ fdef7886ec04db7e2b6da23d964e9508  kernel/shop/unarchiveorder.php
 13d2b765ecd87ff6e43e71f502412c44  kernel/shop/vatrules.php
 f381658e7b1fd5cbd576a2ef97a3f9db  kernel/shop/vattype.php
 1a1ad7f71e4de36b5455a54a61814b47  kernel/shop/wishlist.php
-4eb330d090962850d29821e4b3a143cf  kernel/sql/common/cleandata.sql
+76058748e4d56ee38f8127ddf150b7c0  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
@@ -6185,11 +6185,8 @@ f03b122b016ec3e0e64955af4c347279  kernel/sql/mysql/kernel_schema.sql
 f652f8892f3333803ca7514bc5c7f168  kernel/sql/postgresql/kernel_schema.sql
 f5bbea407c70e6be3b3cdfc38dccd09b  kernel/sql/postgresql/sequence.sql.template
 6333cc1f4771ed3b8071be5840b8d69f  kernel/sql/postgresql/setval.sql
-060ff2cba9f0b1bd64fa948cdf3f295d  kernel/sql/sqlite/cleandata.sql
-b28437d8381967c92ec488e53cb60363  kernel/sql/sqlite/schema.sql
-aa3ea00e8bf5d9e58014bab0292cdd6c  kernel/sql/sqlite/workingdata.sql
-9bd420d05437968e1f015ae0dca5e5f0  kernel/sql/sqlite/workingdataandschema.sql
-d0da8d0b9da797044c264ed40c943124  kernel/sql/sqlite/workingexample.db
+d5b0c7f807d0d5713ec957dd24475dbc  kernel/sql/sqlite/cleandata.sql
+415f3abc80cde15d990c1a86bd5f671e  kernel/sql/sqlite/schema.sql
 7dd006807f1659c28ff8b38eae00e6cd  kernel/state/assign.php
 2ac2e45035ef9821b32b41666b301a62  kernel/state/edit.php
 c936d08d4658ea0246b6818588df68e4  kernel/state/group.php
@@ -6576,7 +6573,7 @@ f18e6605875590291f90885a0343ee7e  share/codepages/windows-1255
 eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
-295766263922312eb69063e4445b72c7  share/db_data.dba
+5cfd6750a5df2779d3052d4e65c0a6b9  share/db_data.dba
 3409675652fc00736e91f705b7a3234e  share/db_schema.dba
 27b07790be30d1577541464bc445fff3  share/icons/big-smile.gif
 0e1abb7c8f76d149177749fe2a397ce3  share/icons/blunk.gif
@@ -7411,7 +7408,7 @@ ea78290da17011e1c5e5fa5c26e2f812  tests/tests/kernel/private/webdav/regression/P
 91869308cb09d86c2c3d3647d5c7d239  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 d331b8efd9833b42266f830461ebe009  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
 85da3020efb0594dfa0b7f02d1b8d243  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
-d69e4cdff5ce68da824f2906a927d69c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php
+e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php
 2a9bd4ad45a76fc98b65e1f2424fe16b  tests/tests/lib/ezdb/ezdbinterface_test.php
 8da2480eafa690e58a7d6ed561c1c984  tests/tests/lib/ezdb/ezmysqlcharsettest.php
 2f796345c28b8e83a34bb8d14e332404  tests/tests/lib/ezdb/ezmysqldb_fk_test.php
