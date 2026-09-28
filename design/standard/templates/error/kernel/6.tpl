@@ -7,6 +7,10 @@
      retry_url  where "reload the form" goes: the referrer, else the URL posted to
      is_ajax    the request wanted JSON (it gets JSON, not this page)
 
+   A sign-in form is told apart by the page it came from (user/login): the
+   form token check only applies to signed-in users, so a sign-in form is
+   refused when the visitor signed in meanwhile in another window.
+
    This file only works out the links; the page itself is error/parts/formtoken.tpl,
    which each design (standard, admin, admin3, media) gives its own look. *}
 {def $formtoken_parameters = cond( and( is_set( $parameters ), is_array( $parameters ) ), $parameters, hash() )
@@ -25,5 +29,6 @@
          reason=$formtoken_reason
          reload_url=$formtoken_reload
          home_url=$formtoken_home
-         signed_out=and( is_set( $current_user ), $current_user, eq( $current_user.contentobject_id, $anonymous_user_id ) )}
+         signed_out=and( is_set( $current_user ), $current_user, eq( $current_user.contentobject_id, $anonymous_user_id ) )
+         login_form=$formtoken_reload|contains( 'user/login' )}
 {undef $formtoken_parameters $formtoken_home $formtoken_reload $formtoken_reason}

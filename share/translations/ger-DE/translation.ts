@@ -22462,6 +22462,10 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
         <translation>Möglicherweise wurden Sie in der Zwischenzeit abgemeldet. Melden Sie sich in diesem Fall bitte erneut an.</translation>
     </message>
     <message>
+        <source>If you were signing in, please sign in again.</source>
+        <translation>Wenn Sie sich gerade anmelden wollten, melden Sie sich bitte erneut an.</translation>
+    </message>
+    <message>
         <source>Reload the form</source>
         <translation>Formular neu laden</translation>
     </message>
