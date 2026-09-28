@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the eZPublishSDK class.
+ * File containing the ExponentialSDK class.
  *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -10,9 +10,14 @@
 
 /*!
   \brief contains the Exponential SDK version.
+
+  Until 6.0.15 this class was called eZPublishSDK. That name still works:
+  lib/ezpublishsdk.php declares it as an empty subclass, and this file loads
+  it at the end, so code that includes lib/version.php directly (instead of
+  going through the autoloader) sees both names.
 */
 
-class eZPublishSDK
+class ExponentialSDK
 {
     const VERSION_MAJOR = 6;
     const VERSION_MINOR = 0;
@@ -31,20 +36,20 @@ class eZPublishSDK
     {
         if ( $asAlias )
         {
-            $versionText = eZPublishSDK::alias();
-            if ( $withState && eZPublishSDK::state() )
-                $versionText .= "-" . eZPublishSDK::state();
+            $versionText = self::alias();
+            if ( $withState && self::state() )
+                $versionText .= "-" . self::state();
         }
         else
         {
-            $versionText = eZPublishSDK::majorVersion() . '.' . eZPublishSDK::minorVersion();
-//            $development = eZPublishSDK::developmentVersion();
+            $versionText = self::majorVersion() . '.' . self::minorVersion();
+//            $development = self::developmentVersion();
 //            if ( $development !== false )
 //                $versionText .= '.' . $development;
             if ( $withRelease )
-                $versionText .= "." . eZPublishSDK::release();
+                $versionText .= "." . self::release();
             if ( $withState )
-                $versionText .= eZPublishSDK::state();
+                $versionText .= self::state();
         }
         return $versionText;
     }
@@ -54,7 +59,7 @@ class eZPublishSDK
     */
     static function majorVersion()
     {
-        return eZPublishSDK::VERSION_MAJOR;
+        return self::VERSION_MAJOR;
     }
 
     /*!
@@ -62,7 +67,7 @@ class eZPublishSDK
     */
     static function minorVersion()
     {
-        return eZPublishSDK::VERSION_MINOR;
+        return self::VERSION_MINOR;
     }
 
     /*!
@@ -70,7 +75,7 @@ class eZPublishSDK
     */
     static function state()
     {
-        return eZPublishSDK::VERSION_STATE;
+        return self::VERSION_STATE;
     }
 
     /*!
@@ -78,7 +83,7 @@ class eZPublishSDK
     */
     static function developmentVersion()
     {
-        return eZPublishSDK::VERSION_DEVELOPMENT;
+        return self::VERSION_DEVELOPMENT;
     }
 
     /*!
@@ -86,7 +91,7 @@ class eZPublishSDK
     */
     static function release()
     {
-        return eZPublishSDK::VERSION_RELEASE;
+        return self::VERSION_RELEASE;
     }
 
     /*!
@@ -94,7 +99,7 @@ class eZPublishSDK
     */
     static function alias()
     {
-        return eZPublishSDK::VERSION_ALIAS;
+        return self::VERSION_ALIAS;
     }
 
     /*!
@@ -111,7 +116,7 @@ class eZPublishSDK
             $version = $rows[0]['version'];
             if ( $withRelease )
             {
-                $release = eZPublishSDK::databaseRelease();
+                $release = self::databaseRelease();
                 $version .= '-' . $release;
             }
         }
@@ -133,5 +138,8 @@ class eZPublishSDK
         return $release;
     }
 }
+
+// Former name, kept for compatibility (see lib/ezpublishsdk.php).
+require_once __DIR__ . '/ezpublishsdk.php';
 
 ?>
