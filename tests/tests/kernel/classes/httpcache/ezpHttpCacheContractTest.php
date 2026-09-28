@@ -64,7 +64,7 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
             'enabled' => true, 'secret' => str_repeat( 'k', 64 ), 'dir' => $this->dir,
             'hosts' => array( 'example.org' => 'site' ), 'sessionCookie' => array( 'site' => 'eZSESSID' ),
             'sessionSavePath' => $this->sessions, 'formTokenSecret' => 'secret', 'maxAge' => 3600, 'swr' => 60,
-            'apcu' => false, 'proxyHeaders' => true,
+            'apcu' => false,
         ) );
     }
 
@@ -432,5 +432,46 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
         $this->assertNull( $c->serve( array( 'uri' => '/bold_ger/other' ) + $base + array( 'server' => $lb ) ) );
         $this->assertNull( $c->serve( array( 'uri' => '/eng/kontakt' ) + $base + array( 'server' => $lb ) ) );
         $this->assertSame( 'siteaccess', $c->lastReason );
+    }
+
+    /**
+     * HC-17: the purge tags go out in one header, and only when TagHeader names
+     * one. By default a hit carries none (the tags name internal ids); an old
+     * contract's proxyHeaders sends nothing; ProxyHeaders=enabled still reads
+     * as xkey; an invalid name is none.
+     */
+    public function testPurgeTagsAreOneHeaderAndOnlyWhenAskedFor()
+    {
+        $tags = array( 'ez-all', 'ez-location-2', 'ez-content-57' );
+        $names = function ( array $response ) {
+            return array_values( array_intersect( array_map( 'strtolower', array_keys( $response[1] ) ),
+                                                  array( 'xkey', 'surrogate-key', 'cache-tag' ) ) );
+        };
+
+        $off = $this->contract();
+        $this->storeAnonymous( $off, '/tags', '<p>t</p>', $tags );
+        $hit = $off->serve( $this->request( '/tags' ) );
+        $this->assertNotNull( $hit );
+        $this->assertSame( array(), $names( $hit ), 'no tag header by default' );
+        $this->assertSame( array(), $off->tagHeaders( $tags ) );
+
+        $old = $this->contract( array( 'proxyHeaders' => true ) );
+        $this->assertSame( array(), $names( $old->serve( $this->request( '/tags' ) ) ), 'an old contract sends none' );
+
+        foreach ( array( 'xkey', 'Surrogate-Key', 'Cache-Tag' ) as $header )
+        {
+            $c = $this->contract( array( 'tagHeader' => $header ) );
+            $hit = $c->serve( $this->request( '/tags' ) );
+            $this->assertSame( array( strtolower( $header ) ), $names( $hit ), "exactly one header: $header" );
+            $this->assertSame( implode( ' ', $tags ), $hit[1][$header] );
+            $this->assertSame( array( $header => implode( ' ', $tags ) ), $c->tagHeaders( $tags ), 'MISS uses the same' );
+        }
+
+        $this->assertSame( '', ezpHttpCacheContract::tagHeaderName( 'disabled' ) );
+        $this->assertSame( '', ezpHttpCacheContract::tagHeaderName( '' ) );
+        $this->assertSame( 'xkey', ezpHttpCacheContract::tagHeaderName( 'disabled', 'enabled' ), 'ProxyHeaders=enabled' );
+        $this->assertSame( 'Surrogate-Key', ezpHttpCacheContract::tagHeaderName( 'Surrogate-Key', 'enabled' ) );
+        $this->assertSame( '', ezpHttpCacheContract::tagHeaderName( "x key\r\nX-Evil: 1" ), 'not a header name' );
+        $this->assertSame( '', ezpHttpCacheContract::tagHeaderName( 'Content-Length' ), 'a framing header' );
     }
 }

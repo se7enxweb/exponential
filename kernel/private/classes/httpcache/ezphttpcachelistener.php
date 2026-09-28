@@ -179,7 +179,9 @@ class ezpHttpCacheListener
             'formTokenIntention' => 'legacy',
             'maxAge' => (int)$ini->variable( 'HttpCacheSettings', 'MaxAge' ),
             'swr' => (int)$ini->variable( 'HttpCacheSettings', 'StaleWhileRevalidate' ),
-            'proxyHeaders' => $ini->variable( 'HttpCacheSettings', 'ProxyHeaders' ) === 'enabled',
+            'tagHeader' => ezpHttpCacheContract::tagHeaderName(
+                $ini->hasVariable( 'HttpCacheSettings', 'TagHeader' ) ? $ini->variable( 'HttpCacheSettings', 'TagHeader' ) : '',
+                $ini->hasVariable( 'HttpCacheSettings', 'ProxyHeaders' ) ? $ini->variable( 'HttpCacheSettings', 'ProxyHeaders' ) : '' ),
             'apcu' => $ini->variable( 'HttpCacheSettings', 'APCu' ) === 'enabled',
             'maxBodySize' => (int)$ini->variable( 'HttpCacheSettings', 'MaxBodySize' ),
             'queryParameters' => array_values( array_filter( (array)$ini->variable( 'HttpCacheSettings', 'QueryStringParameters' ), 'strlen' ) ),
@@ -341,11 +343,10 @@ class ezpHttpCacheListener
 
         $lookup = $GLOBALS['EXP_HTTPCACHE_LOOKUP'] ?? '';
         self::header( 'X-Exp-Cache', 'MISS' . ( $lookup !== '' ? ' (' . $lookup . ')' : '' ) );
-        if ( !empty( $contract->config['proxyHeaders'] ) )
-        {
-            self::header( 'xkey', implode( ' ', $tags ) );
-            self::header( 'Surrogate-Key', implode( ' ', $tags ) );
-        }
+        // The purge tags, in one header and only when TagHeader names one: the
+        // same method the answer from the cache (HIT) uses.
+        foreach ( $contract->tagHeaders( $tags ) as $name => $value )
+            self::header( $name, $value );
     }
 
     /** Why this response may not be stored, or null when it may. */

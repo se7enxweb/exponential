@@ -923,7 +923,7 @@ if ( class_exists( 'ezpHttpCacheContract' ) )
                 ? ezpI18n::tr( 'design/admin/setup/info', 'files (signed-in visitors cached)' )
                 : ezpI18n::tr( 'design/admin/setup/info', 'not readable before the kernel (signed-in visitors not served early)' ),
             'APCu' => ( $hcContract->config['apcu'] ? 'on' : 'off' ) . ( $stats === null ? ' (' . ezpI18n::tr( 'design/admin/setup/info', 'not usable in this PHP' ) . ')' : '' ),
-            'ProxyHeaders' => $hcContract->config['proxyHeaders'] ? 'xkey, Surrogate-Key' : 'off',
+            'TagHeader' => ( $hcContract->config['tagHeader'] ?? '' ) !== '' ? $hcContract->config['tagHeader'] : 'disabled',
             'MaxBodySize' => number_format( $maxBody / 1048576, 1 ) . ' MB',
         );
     }

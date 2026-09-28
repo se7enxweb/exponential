@@ -81,7 +81,7 @@ exit reads (`var/<site>/cache/exphttpcache/contract.php`, with a generated key).
 | `StaleWhileRevalidate` | `60` | An expired (not purged) page is served as `STALE` while one request renders it again. |
 | `ContentChangePurges` | `all` | `all`: any content change purges every page. `tags`: only pages showing the changed objects, nodes, parents, and pages with query blocks. |
 | `QueryStringParameters[]` | none | Pages requested with any other query parameter are not cached. |
-| `ProxyHeaders` | `enabled` | `xkey` and `Surrogate-Key` headers for Varnish or Fastly. |
+| `TagHeader` | `disabled` | The purge tags of each page in one header, for a purging proxy in front or while debugging: `xkey` (Varnish xkey vmod), `Surrogate-Key` (Fastly), `Cache-Tag` (Cloudflare). Off by default: the tags name internal ids. `ProxyHeaders=enabled`, the setting before it, still means `xkey`. |
 | `APCu` | `enabled` | Hot entries in APCu in front of the files. |
 | `MaxBodySize` | 2 MB | Larger pages are not stored. |
 

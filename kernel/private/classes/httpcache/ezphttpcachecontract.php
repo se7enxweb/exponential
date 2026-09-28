@@ -47,7 +47,7 @@ class ezpHttpCacheContract
             'enabled' => false, 'secret' => '', 'dir' => '', 'hosts' => array(),
             'sessionCookie' => array(), 'sessionSavePath' => '', 'formTokenSecret' => '',
             'formTokenIntention' => 'legacy', 'maxAge' => 3600, 'swr' => 60,
-            'proxyHeaders' => true, 'apcu' => true, 'maxBodySize' => 2097152,
+            'tagHeader' => '', 'apcu' => true, 'maxBodySize' => 2097152,
             'queryParameters' => array(), 'sslPort' => '', 'sslProxyServerName' => '',
         );
     }
@@ -361,6 +361,50 @@ class ezpHttpCacheContract
     {
         $cached = $this->config['siteaccesses'] ?? array_values( (array)$this->config['hosts'] );
         return is_string( $siteaccess ) && $siteaccess !== '' && in_array( $siteaccess, (array)$cached, true );
+    }
+
+    /**
+     * The purge-tag header of a page, as name => value: one header, named by
+     * httpcache.ini [HttpCacheSettings] TagHeader (xkey for Varnish's xkey
+     * vmod, Surrogate-Key for Fastly, Cache-Tag for Cloudflare), or none when
+     * TagHeader is disabled, the default. The tags name the page's nodes,
+     * objects and layouts, so they are sent only where a purging proxy in front
+     * reads them or while debugging. The same for a page just rendered (MISS)
+     * and one served from here (HIT), in the early exit and in Velocity.
+     *
+     * A contract written before TagHeader existed carries no tagHeader and
+     * gets none, whatever its old proxyHeaders said.
+     *
+     * @param array $tags
+     * @return array
+     */
+    public function tagHeaders( array $tags )
+    {
+        $name = (string)( $this->config['tagHeader'] ?? '' );
+        if ( $name === '' || !$tags )
+            return array();
+        return array( $name => implode( ' ', $tags ) );
+    }
+
+    /**
+     * The header name TagHeader asks for, or '' for none: disabled, empty or
+     * not a valid header name is none. ProxyHeaders=enabled, the setting before
+     * TagHeader, still means xkey when TagHeader says nothing else.
+     *
+     * @param string $tagHeader [HttpCacheSettings] TagHeader
+     * @param string $proxyHeaders [HttpCacheSettings] ProxyHeaders, when set
+     * @return string
+     */
+    public static function tagHeaderName( $tagHeader, $proxyHeaders = '' )
+    {
+        $tagHeader = trim( (string)$tagHeader );
+        if ( $tagHeader === '' || in_array( strtolower( $tagHeader ), array( 'disabled', 'false', 'off', 'none' ), true ) )
+            return strtolower( trim( (string)$proxyHeaders ) ) === 'enabled' ? 'xkey' : '';
+        // An HTTP token, and none of the framing headers.
+        if ( !preg_match( '/^[A-Za-z0-9!#$%&\'*+.^_`|~-]+$/', $tagHeader )
+             || in_array( strtolower( $tagHeader ), array( 'content-length', 'transfer-encoding', 'connection', 'content-type', 'set-cookie' ), true ) )
+            return '';
+        return $tagHeader;
     }
 
     public function entryKey( $scheme, $host, $siteaccess, $uri, $context )
@@ -1022,11 +1066,9 @@ class ezpHttpCacheContract
         $headers['Age'] = (string)max( 0, (int)( microtime( true ) - $meta['created'] ) );
         $headers['X-Exp-Cache'] = empty( $meta['stale'] ) ? 'HIT' : 'STALE';
         $headers['Cache-Control'] = $userID === 0 ? 'public, max-age=300' : 'private, no-cache, must-revalidate';
-        if ( !empty( $this->config['proxyHeaders'] ) )
-        {
-            $headers['xkey'] = implode( ' ', $meta['tags'] );
-            $headers['Surrogate-Key'] = implode( ' ', $meta['tags'] );
-        }
+        // Only the one TagHeader asks for, never one an older entry kept.
+        unset( $headers['xkey'], $headers['Surrogate-Key'], $headers['Cache-Tag'] );
+        $headers = $this->tagHeaders( $meta['tags'] ) + $headers;
         if ( isset( $request['ifNoneMatch'] ) && trim( $request['ifNoneMatch'] ) === $etag )
             return array( 304, $headers, '' );
 
