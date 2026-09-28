@@ -347,6 +347,44 @@ class expVelocityEnginesTest extends ezpTestCase
         $this->assertArrayNotHasKey( 'headersOnScripts', $webserver );
     }
 
+    /**
+     * apc.enable_cli=1 for each cache that uses APCu, not only for the
+     * response cache: the HTTP cache and the SQL query cache need it as much.
+     */
+    public function testApcuIsSwitchedOnForEachCacheThatUsesIt()
+    {
+        $wants = function () {
+            $command = expVelocity::create( 'velocity.ini', 'qbix' )->command();
+            return in_array( 'apc.enable_cli=1', $command, true );
+        };
+        ezpINIHelper::setINISetting( 'velocity.ini', 'PHPSettings', 'IniOptions', array() );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'CacheSettings', 'APCu', 'enabled' );
+        ezpINIHelper::setINISetting( 'httpcache.ini', 'HttpCacheSettings', 'Enabled', 'disabled' );
+        ezpINIHelper::setINISetting( 'httpcache.ini', 'HttpCacheSettings', 'APCu', 'enabled' );
+        ezpINIHelper::setINISetting( 'querycache.ini', 'QueryCacheSettings', 'Mode', 'off' );
+
+        ezpINIHelper::setINISetting( 'velocity.ini', 'CacheSettings', 'Enabled', 'enabled' );
+        $this->assertTrue( $wants(), 'response cache' );
+
+        ezpINIHelper::setINISetting( 'velocity.ini', 'CacheSettings', 'Enabled', 'disabled' );
+        $this->assertFalse( $wants(), 'no cache wants APCu' );
+
+        ezpINIHelper::setINISetting( 'httpcache.ini', 'HttpCacheSettings', 'Enabled', 'enabled' );
+        $this->assertTrue( $wants(), 'HTTP cache' );
+        ezpINIHelper::setINISetting( 'httpcache.ini', 'HttpCacheSettings', 'APCu', 'disabled' );
+        $this->assertFalse( $wants(), 'HTTP cache on files only' );
+        ezpINIHelper::setINISetting( 'httpcache.ini', 'HttpCacheSettings', 'Enabled', 'disabled' );
+
+        ezpINIHelper::setINISetting( 'querycache.ini', 'QueryCacheSettings', 'Mode', 'request' );
+        $this->assertFalse( $wants(), 'query cache per request' );
+        ezpINIHelper::setINISetting( 'querycache.ini', 'QueryCacheSettings', 'Mode', 'shared' );
+        $this->assertTrue( $wants(), 'query cache shared' );
+
+        // IniOptions decides it when it names it.
+        ezpINIHelper::setINISetting( 'velocity.ini', 'PHPSettings', 'IniOptions', array( 'apc.enable_cli=0' ) );
+        $this->assertFalse( $wants(), 'IniOptions wins' );
+    }
+
     public function testAnEmptyHeaderListAndNoMaxAgeWriteNothing()
     {
         ezpINIHelper::setINISetting( 'velocity.ini', 'ServerSettings', 'ResponseHeaders', array() );
