@@ -26285,18 +26285,10 @@ How do you access it?&lt;/p&gt;
         <translation>The SQLite database file %file could not be opened. See var/log/setup.log and var/log/error.log for the reason.</translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; function is not available in your database, you cannot run Exponential without this. See the documentation for more information.</source>
-        <translation>The &apos;digest&apos; function is not available in your database, you cannot run Exponential without this. See the documentation for more information.</translation>
-    </message>
-    <message>
         <source>Your database version %version does not fit the minimum requirement which is %req_version.
 See the requirements page for more information.</source>
         <translation>Your database version %version does not fit the minimum requirement which is %req_version.
 See the requirements page for more information.</translation>
-    </message>
-    <message>
-        <source>Uploaded file is not an Exponential package</source>
-        <translation>Uploaded file is not an Exponential package</translation>
     </message>
     <message>
         <source>Welcome</source>
@@ -29907,10 +29899,6 @@ your account.</translation>
         <source>Copy of %class_name</source>
         <translation>Copy of %class_name</translation>
     </message>
-    <message>
-        <source>Please contact your Exponential administrator to solve this problem.</source>
-        <translation>Please contact your Exponential administrator to solve this problem.</translation>
-    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -31856,10 +31844,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Settings extension wizard</source>
         <translation>Settings extension wizard</translation>
-    </message>
-    <message>
-        <source>File %1 does not exist. You should copy it from the recent Exponential distribution.</source>
-        <translation>File %1 does not exist. You should copy it from the recent Exponential distribution.</translation>
     </message>
     <message>
         <source>Template extension wizard</source>
