@@ -200,33 +200,48 @@ if ( $module->isCurrentAction( 'ActivateExtensions' ) )
         $selectedExtensionArray = array();
     }
 
-    // The file settings/override/site.ini.append.php is updated like this:
-    // - take the existing list of extensions from site.ini.append.php (to preserve their order)
-    // - remove from the list the extensions that the user unchecked in the admin interface
-    // - add to the list the extensions checked by the user in the admin interface, but to the end of the list
-    $intersection = array_intersect( $selectedExtensions, $selectedExtensionArray );
-    $difference = array_diff( $selectedExtensionArray, $selectedExtensions );
-    $toSave = array_merge( $intersection, $difference );
-    $toSave = array_unique( $toSave );
+    // Only the extensions this page showed can be switched off: the list is
+    // paged, and one on another page keeps its state. A form without the list
+    // of shown extensions (an older template) is taken to have shown all.
+    $shownExtensionArray = $http->hasPostVariable( 'ShownExtensionList' )
+        ? (array)$http->postVariable( 'ShownExtensionList' )
+        : $availableExtensionArray;
 
-    // open settings/override/site.ini.append[.php] for writing
-    $writeSiteINI = eZINI::instance( 'site.ini.append', 'settings/override', null, null, false, true );
-    $writeSiteINI->setVariable( "ExtensionSettings", "ActiveExtensions", $toSave );
-    $writeSiteINI->save( 'site.ini.append', '.php', false, false );
-    eZCache::clearByTag( 'ini' );
+    // The list is read from settings/override/site.ini.append.php itself, and
+    // only its ActiveExtensions is written: ezpActiveExtensions reads the file
+    // from disk (not a cached or kept INI instance), keeps a copy, and checks
+    // the file afterwards, putting the copy back if anything else changed.
+    $activeExtensions = new ezpActiveExtensions();
+    $toSave = ezpActiveExtensions::merge(
+        ezpActiveExtensions::current(),
+        $selectedExtensionArray,
+        $shownExtensionArray,
+        $availableExtensionArray,
+        $selectedAccessExtensionArray
+    );
 
-    eZSiteAccess::reInitialise();
-
-    $ini = eZINI::instance( 'module.ini' );
-    $currentModules = $ini->variable( 'ModuleSettings', 'ModuleList' );
-    if ( $currentModules != $oldModules )
+    if ( $activeExtensions->write( $toSave ) )
     {
-        // ensure that evaluated policy wildcards in the user info cache
-        // will be up to date with the currently activated modules
-        eZCache::clearByID( 'user_info_cache' );
-    }
+        eZCache::clearByTag( 'ini' );
+        eZSiteAccess::reInitialise();
 
-    updateAutoload( $tpl );
+        $ini = eZINI::instance( 'module.ini' );
+        $currentModules = $ini->variable( 'ModuleSettings', 'ModuleList' );
+        if ( $currentModules != $oldModules )
+        {
+            // ensure that evaluated policy wildcards in the user info cache
+            // will be up to date with the currently activated modules
+            eZCache::clearByID( 'user_info_cache' );
+        }
+
+        updateAutoload( $tpl );
+        $tpl->setVariable( 'save_message', ezpI18n::tr( 'design/admin/setup/extensions', 'The active extensions were saved; a copy of the previous settings is in %file.',
+                                                        null, array( '%file' => $activeExtensions->backup ) ) );
+    }
+    else
+    {
+        $tpl->setVariable( 'save_error', $activeExtensions->error );
+    }
 }
 
 // open site.ini for reading (need to do it again to take into account the changes made to site.ini after clicking "Apply changes" button above

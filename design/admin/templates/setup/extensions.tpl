@@ -9,6 +9,17 @@
 </div>
 {/if}
 
+{if and( is_set( $save_error ), $save_error )}
+<div class="message-error">
+    <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The extensions were not changed'|i18n( 'design/admin/setup/extensions' )}</h2>
+    <p>{$save_error|wash}</p>
+</div>
+{elseif and( is_set( $save_message ), $save_message )}
+<div class="message-feedback">
+    <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {$save_message|wash}</h2>
+</div>
+{/if}
+
 <form name="extensionform" method="post" action={'/setup/extensions'|ezurl}>
 
 <div class="context-block">
@@ -41,7 +52,9 @@
 {def $ext = $extension_info[$Extensions.item]}
 <tr class="{$Extensions.sequence}">
     {* Status. *}
-    <td><input type="checkbox" name="ActiveExtensionList[]" value="{$Extensions.item}" {if $selected_extension_array|contains($Extensions.item)}checked="checked"{/if} title="{'Activate or deactivate extension. Use the "Update" button to apply the changes.'|i18n( 'design/admin/setup/extensions' )|wash}" /></td>
+    {* ShownExtensionList: the extensions on this page. Only these can be switched
+       off by this form; the ones on other pages keep their state. *}
+    <td><input type="hidden" name="ShownExtensionList[]" value="{$Extensions.item|wash}" /><input type="checkbox" name="ActiveExtensionList[]" value="{$Extensions.item|wash}" {if $selected_extension_array|contains($Extensions.item)}checked="checked"{/if} title="{'Activate or deactivate extension. Use the "Update" button to apply the changes.'|i18n( 'design/admin/setup/extensions' )|wash}" /></td>
     {* Name (folder). *}
     <td><a href="#" class="extension-name-link" data-name="{$Extensions.item|wash}">{$Extensions.item|wash}</a></td>
     {* Full extension name. *}

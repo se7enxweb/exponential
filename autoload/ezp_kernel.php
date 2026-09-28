@@ -606,6 +606,7 @@ return array(
       'expVelocityPHPServer'                               => 'kernel/classes/expvelocityphpserver.php',
       'expWorkflowEventWizard'                             => 'kernel/setup/expworkfloweventwizard.php',
       'ezpAccessDenied'                                    => 'kernel/private/classes/exceptions/kernel/accessdenied.php',
+      'ezpActiveExtensions'                                => 'kernel/private/classes/ezpactiveextensions.php',
       'ezpAsynchronousPublisherCliOutput'                  => 'kernel/private/classes/asynchronouspublisheroutput/cli.php',
       'ezpAsynchronousPublisherLogOutput'                  => 'kernel/private/classes/asynchronouspublisheroutput/log.php',
       'ezpAsynchronousPublisherOutput'                     => 'kernel/private/interfaces/asynchronouspublisheroutput.php',
