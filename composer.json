@@ -61,7 +61,7 @@
         "se7enxweb/ezwt": "~6.0.4",
         "se7enxweb/swark": "~1.0.3",
         "se7enxweb/owsimpleoperator": "~1.2.4",
-        "se7enxweb/bcgooglesitemaps": "~1.1.6",
+        "se7enxweb/bcgooglesitemaps": "~1.1.6.2",
         "se7enxweb/bcwebsitestatistics": "~1.0.7",
         "se7enxweb/bccie": "~1.1.4",
         "se7enxweb/xrowextract": "~2.5.1",
