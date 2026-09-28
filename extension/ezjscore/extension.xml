@@ -4,7 +4,7 @@
         <name>eZ JSCore LS</name>
         <version>//autogentag//</version>
         <copyright>Copyright (C) eZ Systems AS. All rights reserved.</copyright>
-        <license>This software is distributed under same license as eZ Publish</license>
+        <license>GNU General Public License v2.0 (or any later version)</license>
         <info_url>https://github.com/ezsystems/ezjscore</info_url>
 
         <software>
