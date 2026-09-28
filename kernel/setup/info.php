@@ -207,6 +207,39 @@ if ( $velocityBrand && $webserverInfo )
     $webserverInfo['version'] = $velocityBrand['version'];
 }
 
+// The site. [SiteSettings] SiteURL is a setting, written once at installation:
+// an installation made from the command line (the kickstarter) has no host to
+// read, so it could be left at "localhost" for good. What the page shows first
+// is where this siteaccess and the public site actually are, worked out for
+// this request (scheme, host, port, siteaccess path); the setting follows,
+// flagged when it is empty or a loopback name, as mails and feeds use it.
+$currentSiteAccess = eZSiteAccess::current();
+$currentSiteAccessName = isset( $currentSiteAccess['name'] ) ? (string)$currentSiteAccess['name'] : '';
+$configuredSiteURL = trim( (string)eZINI::instance()->variable( 'SiteSettings', 'SiteURL' ) );
+$configuredHost = strtolower( preg_replace( '#^[a-z][a-z0-9+.-]*://#i', '', $configuredSiteURL ) );
+$configuredHost = preg_replace( '#[:/].*$#', '', $configuredHost );
+// This page's own address: scheme, host and port of this request, and the path
+// elements that chose the siteaccess.
+$requestHostPort = (string)eZSys::hostname();
+if ( !preg_match( '/:\d+$/', $requestHostPort ) )
+{
+    $requestPort = (int)eZSys::serverVariable( 'SERVER_PORT', true );
+    $defaultPort = eZSys::isSSLNow() ? 443 : 80;
+    if ( $requestPort > 0 && $requestPort !== $defaultPort )
+        $requestHostPort .= ':' . $requestPort;
+}
+$requestURIPart = isset( $currentSiteAccess['uri_part'] ) ? implode( '/', (array)$currentSiteAccess['uri_part'] ) : '';
+$siteInfo = array(
+    'siteaccess' => $currentSiteAccessName,
+    'url' => ( eZSys::isSSLNow() ? 'https://' : 'http://' ) . $requestHostPort . rtrim( eZSys::wwwDir(), '/' ) . '/'
+             . ( $requestURIPart !== '' ? $requestURIPart . '/' : '' ),
+    'public_siteaccess' => (string)eZINI::instance()->variable( 'SiteSettings', 'DefaultAccess' ),
+    'public_url' => ezpSiteAccessURL::root(),
+    'configured' => $configuredSiteURL,
+    'configured_placeholder' => $configuredHost === '' || in_array( $configuredHost, array( 'localhost', '127.0.0.1', '[::1]', '::1' ), true ),
+);
+$tpl->setVariable( 'site_info', $siteInfo );
+
 $tpl->setVariable( 'ezpublish_version', ExponentialSDK::version() . " (" . ExponentialSDK::alias() . ")" );
 $tpl->setVariable( 'ezpublish_extensions', eZExtension::activeExtensions() );
 $tpl->setVariable( 'php_version', phpversion() );

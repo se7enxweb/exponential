@@ -20,7 +20,24 @@
 <td>
     <div class="block">
         <label>{'Site'|i18n( 'design/admin/setup/info' )}:</label>
-        {ezini('SiteSettings','SiteURL')}
+        {if $site_info.public_url}<a href="{$site_info.public_url|wash}">{$site_info.public_url|wash}</a> ({$site_info.public_siteaccess|wash}){else}&mdash;{/if}
+    </div>
+
+    {if and( $site_info.url, ne( $site_info.siteaccess, $site_info.public_siteaccess ) )}
+    <div class="block">
+        <label>{'This page is served from'|i18n( 'design/admin/setup/info' )}:</label>
+        <a href="{$site_info.url|wash}">{$site_info.url|wash}</a> ({$site_info.siteaccess|wash})
+    </div>
+    {/if}
+
+    <div class="block">
+        <label>{'Site URL setting'|i18n( 'design/admin/setup/info' )}:</label>
+        {if $site_info.configured}<code>{$site_info.configured|wash}</code>{else}<em>{'(empty)'|i18n( 'design/admin/setup/info' )}</em>{/if}
+        <span class="small">site.ini [SiteSettings] SiteURL, {$site_info.siteaccess|wash}</span>
+        {if $site_info.configured_placeholder}
+        <p class="small"><strong>{'This is not an address visitors can reach.'|i18n( 'design/admin/setup/info' )}</strong>
+        {'Mails, feeds and links made outside a request (cronjobs, notifications) use this setting. Set it in settings/siteaccess/%siteaccess/site.ini.append.php.'|i18n( 'design/admin/setup/info',, hash( '%siteaccess', $site_info.siteaccess|wash ) )}</p>
+        {/if}
     </div>
 
     <div class="block">
