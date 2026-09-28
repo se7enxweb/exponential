@@ -1506,7 +1506,8 @@ class eZSiteInstaller
     {
         $hostname = false;
 
-        $parts = parse_url( $uri );
+        // A bare "host:port" is not a URL to parse_url(): read it as one.
+        $parts = parse_url( strpos( (string)$uri, '://' ) === false ? 'http://' . $uri : $uri );
 
         if ( isset( $parts['host'] ) )
             $hostname = $parts['host'];
@@ -1546,6 +1547,17 @@ class eZSiteInstaller
 
         if ( !$hostname )
             $hostname = eZSys::hostname();
+
+        // The port of the given host, kept for access by URL, where the site
+        // lives at host:port/siteaccess. Host and port access build their own
+        // host names and ports.
+        $hostPort = '';
+        if ( isset( $params['host'] ) && $params['host'] !== '' )
+        {
+            $hostParts = parse_url( strpos( $params['host'], '://' ) === false ? 'http://' . $params['host'] : $params['host'] );
+            if ( isset( $hostParts['port'] ) )
+                $hostPort = ':' . (int)$hostParts['port'];
+        }
 
         $indexFile = eZSys::wwwDir() . ( array_key_exists( 'index_file', $params ) ? (string)$params['index_file'] : eZSys::indexFileName() );
 
@@ -1603,7 +1615,7 @@ class eZSiteInstaller
                 {
                     foreach( $siteaccessList as $siteaccess )
                     {
-                        $urlList[$siteaccess]['url'] = $hostname . $indexFile . '/' . $siteaccess;
+                        $urlList[$siteaccess]['url'] = $hostname . $hostPort . $indexFile . '/' . $siteaccess;
                     }
                 }
                 break;
