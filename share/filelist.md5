@@ -13,7 +13,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 3b96782129fa8a60261a41688f7c0c3c  autoload.php
-713f919ff5779ff69f7163a83a1de108  autoload/ezp_kernel.php
+65b3c4f58d251433abbd91fd5392f60e  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
 e987da229be60f6c0644adee57d39fb3  benchmarks/classes/ezbenchmarkclirunner.php
@@ -86,6 +86,7 @@ f5e6cb3562a1a0c751d91c1516fffddd  bin/php/maintenance.php
 464c842c03c7aee495e3d4ea68542f05  bin/php/makestaticcache.php
 65d97bcbcaa0c2c5d3f8ad971c67366d  bin/php/phar.php
 184abc86baeb156744680e389b660400  bin/php/preload.php
+ee8de99ac01c25528b215cedca977452  bin/php/preloadjob.php
 7356cc35b08f5090e2d3553abaa01c2c  bin/php/publish_content.php
 186a38d938065cee40067c4f7a774936  bin/php/resetuserpassword.php
 bdccd33e470de23f86e94e58d2c83044  bin/php/solr.php
@@ -520,7 +521,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 1b0766e4eecfd531b9f0c4506ff26747  design/admin/templates/setup/maintenance.tpl
 83c3fab5d2977ef95c8bbc3893be6cba  design/admin/templates/setup/moduleextension.tpl
 b4b7ee0217f59d2b95c5a63c9c63c492  design/admin/templates/setup/modulewizard.tpl
-f8b8a52a2499eb7fdcf2aa075849fc34  design/admin/templates/setup/preload.tpl
+b0272f4e20c5f622fa5640ff130cfeff  design/admin/templates/setup/preload.tpl
 77d5784c529f92b24eef559b269adaf1  design/admin/templates/setup/quick_settings.tpl
 4fd89592db66b9e0d6fedddc39116d37  design/admin/templates/setup/rad.tpl
 031fff735e44ae74f5330409e08005f8  design/admin/templates/setup/radsurvey.tpl
@@ -5500,6 +5501,7 @@ e155d47ee2599f8deb8070d941364bbc  kernel/classes/expkickstarter.php
 c28f629cd51422403cefc31c0efd09e4  kernel/classes/expkickstarterini.php
 434901ece305d52b3b4397ed3a4d5750  kernel/classes/expmaintenance.php
 1bff945a877b17d5ccfa084020434d99  kernel/classes/expphar.php
+21b59e62f5cad811c8cdc0ace277e6fe  kernel/classes/exppreloadjob.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
 c3af6d8a713c0c51913e206fd75cafb8  kernel/classes/expvelocity.php
@@ -6080,10 +6082,11 @@ cd03cb92754405882ff23f53c81ced0d  kernel/setup/handlerextension.php
 58b336742a91375d4b49f5a44e577b9e  kernel/setup/kerneloverride.php
 4000b1b15c813a43379ae733ded1a1e7  kernel/setup/maintenance.php
 18ecee0d07126e49f164552b002eaf7e  kernel/setup/menuconfig.php
-cc1ef66f1dd03158dde40d3504b33847  kernel/setup/module.php
+6f5d391ae943f436e64977594ceab562  kernel/setup/module.php
 f4917fa237547da658a4ea1ac1eb27d8  kernel/setup/moduleextension.php
 ef242e8cf4a78625fe1f44a98ba365c9  kernel/setup/modulewizard.php
 846edf76592a6173514e0b302ea5274b  kernel/setup/preload.php
+6bd9f071546e7af3b92e41a697698836  kernel/setup/preloadjob.php
 532ddefd251ca7a4047dd13962ed3fc5  kernel/setup/preloadstream.php
 abf5f51b260a722c6259ebea3bc30ef7  kernel/setup/rad.php
 fbe986f0951bba8e4bf84c5c86f0af41  kernel/setup/radsurvey.php
