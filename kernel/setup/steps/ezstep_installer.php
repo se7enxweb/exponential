@@ -527,6 +527,29 @@ class eZStepInstaller
             $sql = "SELECT count(*) AS count FROM pg_proc WHERE proname='digest'";
             $rows = $db->arrayQuery( $sql );
             $count = $rows[0]['count'];
+            // digest() comes from the pgcrypto extension. It is a trusted
+            // extension (PostgreSQL 13 and later), so the owner of the database
+            // may create it; do that when the server ships it, instead of
+            // refusing the installation.
+            if ( $count == 0 )
+            {
+                $available = $db->arrayQuery( "SELECT count(*) AS count FROM pg_available_extensions WHERE name='pgcrypto'" );
+                if ( !empty( $available[0]['count'] ) )
+                {
+                    $db->setErrorHandling( eZDB::ERROR_HANDLING_EXCEPTIONS );
+                    try
+                    {
+                        $db->query( 'CREATE EXTENSION IF NOT EXISTS pgcrypto' );
+                    }
+                    catch ( Exception $e )
+                    {
+                        eZDebug::writeNotice( 'Could not create the pgcrypto extension: ' . $e->getMessage(), __METHOD__ );
+                    }
+                    $db->setErrorHandling( eZDB::ERROR_HANDLING_STANDARD );
+                    $rows = $db->arrayQuery( $sql );
+                    $count = $rows[0]['count'];
+                }
+            }
             // If it is 0 we don't have it
             if ( $count == 0 )
             {
