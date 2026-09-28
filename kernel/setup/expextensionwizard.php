@@ -257,7 +257,8 @@ abstract class expExtensionWizard
 
     protected static function ezinfo( array $settings )
     {
-        $class = ucfirst( str_replace( '_', '', $settings['name'] ) ) . 'Info';
+        // The kernel calls <extension name>Info::info(): the class name must keep the underscores
+        $class = $settings['name'] . 'Info';
 
         return "<?php\n"
              . "/**\n * What the admin interface reads about this extension.\n *\n"
