@@ -13594,6 +13594,102 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
+    <message>
+        <source>The extensions were not changed</source>
+        <translation>Die Extensions wurden nicht geändert</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>active for siteaccesses</source>
+        <translation>für Siteaccesses aktiv</translation>
+    </message>
+    <message>
+        <source>inactive</source>
+        <translation>inaktiv</translation>
+    </message>
+    <message>
+        <source>Loading order</source>
+        <translation>Ladereihenfolge</translation>
+    </message>
+    <message>
+        <source>The order of ActiveExtensions in settings/override/site.ini.append.php, which is the order the system loads the extensions in. Drag an extension to a new place, or use its arrows; every change is saved at once.</source>
+        <translation>Die Reihenfolge von ActiveExtensions in settings/override/site.ini.append.php, in der das System die Extensions lädt. Ziehen Sie eine Extension an eine neue Stelle oder verwenden Sie ihre Pfeile; jede Änderung wird sofort gespeichert.</translation>
+    </message>
+    <message>
+        <source>Saving...</source>
+        <translation>Wird gespeichert ...</translation>
+    </message>
+    <message>
+        <source>The loading order could not be saved.</source>
+        <translation>Die Ladereihenfolge konnte nicht gespeichert werden.</translation>
+    </message>
+    <message>
+        <source>Load earlier</source>
+        <translation>Früher laden</translation>
+    </message>
+    <message>
+        <source>Load %name earlier</source>
+        <translation>%name früher laden</translation>
+    </message>
+    <message>
+        <source>Load later</source>
+        <translation>Später laden</translation>
+    </message>
+    <message>
+        <source>Load %name later</source>
+        <translation>%name später laden</translation>
+    </message>
+    <message>
+        <source>Filter this page</source>
+        <translation>Diese Seite filtern</translation>
+    </message>
+    <message>
+        <source>Name, extension or license</source>
+        <translation>Name, Extension oder Lizenz</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Active for siteaccesses (ActiveAccessExtensions)</source>
+        <translation>Für Siteaccesses aktiv (ActiveAccessExtensions)</translation>
+    </message>
+    <message>
+        <source>SA</source>
+        <translation>SA</translation>
+    </message>
+    <message>
+        <source>The active extensions changed since this page was loaded. Reload the page and try again.</source>
+        <translation>Die aktiven Extensions haben sich geändert, seit diese Seite geladen wurde. Laden Sie die Seite neu und versuchen Sie es noch einmal.</translation>
+    </message>
+    <message>
+        <source>Loading order saved; a copy of the previous settings is in %file.</source>
+        <translation>Ladereihenfolge gespeichert; eine Kopie der vorherigen Einstellungen liegt in %file.</translation>
+    </message>
+    <message>
+        <source>The active extensions were saved; a copy of the previous settings is in %file.</source>
+        <translation>Die aktiven Extensions wurden gespeichert; eine Kopie der vorherigen Einstellungen liegt in %file.</translation>
+    </message>
+    <message>
+        <source>%file cannot be read.</source>
+        <translation>%file kann nicht gelesen werden.</translation>
+    </message>
+    <message>
+        <source>%file holds no settings; nothing was written.</source>
+        <translation>%file enthält keine Einstellungen; es wurde nichts geschrieben.</translation>
+    </message>
+    <message>
+        <source>No copy of %file could be kept; nothing was written.</source>
+        <translation>Es konnte keine Kopie von %file angelegt werden; es wurde nichts geschrieben.</translation>
+    </message>
+    <message>
+        <source>Writing %file did not give the expected settings, so the previous file was put back (a copy is in %backup).</source>
+        <translation>Das Schreiben von %file ergab nicht die erwarteten Einstellungen, daher wurde die vorherige Datei wiederhergestellt (eine Kopie liegt in %backup).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/info</name>
@@ -14539,6 +14635,26 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Interned strings</source>
         <translation>Internierte Zeichenketten</translation>
+    </message>
+    <message>
+        <source>This page is served from</source>
+        <translation>Diese Seite wird ausgeliefert von</translation>
+    </message>
+    <message>
+        <source>Site URL setting</source>
+        <translation>Einstellung Site-URL</translation>
+    </message>
+    <message>
+        <source>(empty)</source>
+        <translation>(leer)</translation>
+    </message>
+    <message>
+        <source>This is not an address visitors can reach.</source>
+        <translation>Dies ist keine Adresse, die Besucher erreichen können.</translation>
+    </message>
+    <message>
+        <source>Mails, feeds and links made outside a request (cronjobs, notifications) use this setting. Set it in settings/siteaccess/%siteaccess/site.ini.append.php.</source>
+        <translation>E-Mails, Feeds und Links, die außerhalb einer Anfrage erzeugt werden (Cronjobs, Benachrichtigungen), verwenden diese Einstellung. Setzen Sie sie in settings/siteaccess/%siteaccess/site.ini.append.php.</translation>
     </message>
 </context>
 <context>
