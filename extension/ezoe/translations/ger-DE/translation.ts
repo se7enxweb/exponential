@@ -1485,15 +1485,15 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     </message>
     <message>
         <source>Search for content already in Exponential.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Inhalten suchen, die bereits in Exponential vorhanden sind.</translation>
     </message>
     <message>
         <source>Browse the content tree in Exponential.</source>
-        <translation type="unfinished"></translation>
+        <translation>Den Inhaltsbaum in Exponential durchsuchen.</translation>
     </message>
     <message>
         <source>Select or browse content among your personal Exponential bookmarks.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhalte aus Ihren persönlichen Exponential-Lesezeichen auswählen oder durchsuchen.</translation>
     </message>
     <message>
         <source>Name for the uploaded object, filename is used if none is specified.</source>
@@ -1505,7 +1505,7 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     </message>
     <message>
         <source>Lets you specify where in Exponential to store the uploaded object.</source>
-        <translation type="unfinished"></translation>
+        <translation>Legt fest, wo in Exponential das hochgeladene Objekt gespeichert wird.</translation>
     </message>
     <message>
         <source>Alternative text for the image, lets internet clients know what kind of image this is without dowloading it or actually seeing it.</source>
@@ -1525,7 +1525,7 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     </message>
     <message>
         <source>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Schränkt die gesuchten Inhaltstypen ein, indem nur die gewählten Exponential-Inhaltsklassen im Suchergebnis erscheinen.</translation>
     </message>
     <message>
         <source>Tags, aka Keywords are a comma separated list of words thats categorizes the content.</source>
