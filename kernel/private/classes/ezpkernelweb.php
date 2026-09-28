@@ -96,6 +96,14 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
     protected $isInitialized = false;
 
     /**
+     * The refusal of this request's POST by the form token check, when it was
+     * refused: answered with a 403 instead of the module view
+     *
+     * @var ezpFormTokenException|null
+     */
+    protected $formTokenRefusal = null;
+
+    /**
      * Hash of settings for the web kernel handler.
      *
      * Keys can be:
@@ -373,6 +381,19 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             header( $key . ': ' . $value );
         }
 
+        // A refused POST from a script (XHR, a JSON body, Accept: JSON) gets
+        // the refusal as JSON, without running a module or the pagelayout
+        if ( $this->formTokenRefusal !== null && ezpFormTokenRefusal::wantsJson() )
+        {
+            ezpFormTokenRefusal::sendHeaders( 'application/json; charset=utf-8' );
+            // Anything printed so far would only break the JSON
+            if ( ob_get_level() > $obLevel )
+                ob_end_clean();
+            $content = ezpFormTokenRefusal::jsonBody( $this->formTokenRefusal );
+            $this->shutdown();
+            return new ezpKernelResult( $content, array( 'form_token_refused' => $this->formTokenRefusal->getReason() ) );
+        }
+
         try
         {
             $moduleResult = $this->dispatchLoop();
@@ -626,6 +647,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         eZDisplayResult( $templateResult );
         $content .= ob_get_clean();
 
+        // Last, after the output filters: the form token filter marks a page
+        // with tokens "private, no-cache", and a refusal is kept by nothing
+        if ( $this->formTokenRefusal !== null )
+            ezpFormTokenRefusal::sendHeaders();
+
         $this->shutdown();
 
         return new ezpKernelResult( $content, array( 'module_result' => $moduleResult ) );
@@ -637,6 +663,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
     protected function dispatchLoop()
     {
         $ini = eZINI::instance();
+
+        if ( $this->formTokenRefusal !== null )
+            return $this->formTokenRefusalResult( $this->formTokenRefusal );
 
         // Start the module loop
         while ( $this->siteBasics['module-run-required'] )
@@ -909,6 +938,44 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             }
         }
 
+        return $moduleResult;
+    }
+
+    /**
+     * The module result of a POST the form token check refused: kernel error
+     * eZError::KERNEL_FORM_TOKEN_REFUSED from the error module, in the
+     * context of the module that was posted to, so the pagelayout looks as it
+     * does for that module. The module view itself never runs.
+     *
+     * @param ezpFormTokenException $e
+     * @return array
+     */
+    protected function formTokenRefusalResult( ezpFormTokenException $e )
+    {
+        $this->actualRequestedURI = $this->uri->uriString();
+        $this->completeRequestedURI = $this->uri->originalURIString();
+        $this->oldURI = $this->uri;
+        $this->siteBasics['module-run-required'] = false;
+
+        $moduleName = (string)$this->uri->element( 0 );
+        $module = $moduleName !== '' && preg_match( '/^[a-z0-9_]+$/i', $moduleName ) ? eZModule::exists( $moduleName ) : null;
+        if ( !$module instanceof eZModule )
+            $module = new eZModule( '', '', $moduleName !== '' ? $moduleName : 'content' );
+        $this->module = $module;
+        $GLOBALS['eZRequestedModule'] = $module;
+
+        $moduleResult = $module->handleError(
+            eZError::KERNEL_FORM_TOKEN_REFUSED,
+            'kernel',
+            ezpFormTokenRefusal::templateParameters( $e )
+        );
+        if ( !is_array( $moduleResult ) || !isset( $moduleResult['content'] ) )
+        {
+            $moduleResult = array(
+                'content' => ezpFormTokenRefusal::fallbackContent( ezpFormTokenRefusal::templateParameters( $e ) ),
+                'path' => array( array( 'text' => ezpI18n::tr( 'kernel/error', 'Error' ), 'url' => false ) ),
+            );
+        }
         return $moduleResult;
     }
 
@@ -1259,7 +1326,19 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             $this->check = eZUserLoginHandler::preCheck( $this->siteBasics, $this->uri );
         }
 
-        ezpEvent::getInstance()->notify( 'request/input', array( $this->uri ) );
+        // A POST the form token check refuses is answered with a 403 in place
+        // of the module view (run(), dispatchLoop()); the rest of the request
+        // set-up still runs, so the refusal page has its locale and design.
+        $this->formTokenRefusal = null;
+        try
+        {
+            ezpEvent::getInstance()->notify( 'request/input', array( $this->uri ) );
+        }
+        catch ( ezpFormTokenException $e )
+        {
+            $this->formTokenRefusal = $e;
+            ezpFormTokenRefusal::log( $e );
+        }
 
         // Initialize with locale settings
         // TODO: Move to constructor? Is it relevant to init the locale/charset for each (sub)requests?

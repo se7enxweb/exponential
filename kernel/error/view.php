@@ -54,6 +54,12 @@ $GLOBALS["eZRequestError"] = true;
     if ( isset( $errorHandlerList[$errorNumber] ) )
         $errorHandlerType = $errorHandlerList[$errorNumber];
 
+    // A refused form token is always answered on the spot: a redirect or a
+    // rerun would drop the refusal and could repeat the POST
+    $isFormTokenRefusal = ( $errorType == 'kernel' && $errorNumber == eZError::KERNEL_FORM_TOKEN_REFUSED );
+    if ( $isFormTokenRefusal )
+        $errorHandlerType = 'displayerror';
+
     if ( $errorHandlerType != 'redirect' )
     {
         // Set apache error headers if error.ini tells us to
@@ -88,7 +94,9 @@ $GLOBALS["eZRequestError"] = true;
         }
     }
 
-    eZDebug::writeError( "Error ocurred using URI: " . $_SERVER['REQUEST_URI'] , "error/view.php" );
+    // A refusal is not a fault; ezpFormTokenRefusal::log() has written its one line
+    if ( !$isFormTokenRefusal )
+        eZDebug::writeError( "Error ocurred using URI: " . $_SERVER['REQUEST_URI'] , "error/view.php" );
 
     if ( $errorHandlerType == 'redirect' )
     {
@@ -180,7 +188,17 @@ $res = eZTemplateDesignResource::instance();
 $res->setKeys( array( array( 'error_type', $errorType ), array( 'error_number', $errorNumber ) ) );
 
 $Result = array();
-$Result['content'] = $tpl->fetch( "design:error/$errorType/$errorNumber.tpl" );
+$triedFiles = array();
+if ( !empty( $isFormTokenRefusal )
+    && !eZTemplateDesignResource::fileMatch( eZTemplateDesignResource::allDesignBases(), 'templates', "error/$errorType/$errorNumber.tpl", $triedFiles ) )
+{
+    // No design has the refusal page (yet): the built-in explanation
+    $Result['content'] = ezpFormTokenRefusal::fallbackContent( $extraErrorParameters );
+}
+else
+{
+    $Result['content'] = $tpl->fetch( "design:error/$errorType/$errorNumber.tpl" );
+}
 $Result['path'] = array( array( 'text' => ezpI18n::tr( 'kernel/error', 'Error' ),
                                 'url' => false ),
                          array( 'text' => "$errorType ($errorNumber)",

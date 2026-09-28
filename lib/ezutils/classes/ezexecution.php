@@ -179,6 +179,16 @@ class eZExecution
      */
     static public function defaultExceptionHandler( $e )
     {
+        // A refused form token is the visitor's 403, not our fault: no
+        // "Unexpected error" in error.log, one warning line instead
+        if ( $e instanceof ezpFormTokenException && self::isWebRequest() )
+        {
+            echo ezpFormTokenRefusal::respond( $e );
+            eZExecution::cleanup();
+            eZExecution::setCleanExit();
+            exit( 1 );
+        }
+
         if( self::isWebRequest() )
         {
             // A database that cannot be reached is temporary and says so;

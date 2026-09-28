@@ -50,7 +50,29 @@ class ezpKernel implements ezpWebBasedKernelHandler
      */
     public function run()
     {
-        return $this->kernelHandler->run();
+        try
+        {
+            return $this->kernelHandler->run();
+        }
+        catch ( ezpFormTokenException $e )
+        {
+            // A form token refusal that got past the handler (the REST and
+            // tree menu kernels, a module that runs the check itself) is still
+            // a 403 and one warning line, never an "Unexpected error"
+            if ( !eZExecution::isWebRequest() )
+                throw $e;
+            $rest = $this->kernelHandler instanceof ezpKernelRest;
+            $body = ezpFormTokenRefusal::respond( $e, $rest );
+            eZExecution::cleanup();
+            eZExecution::setCleanExit();
+            // index_rest.php does not print the result; the REST kernel writes its own
+            if ( $rest )
+            {
+                echo $body;
+                $body = '';
+            }
+            return new ezpKernelResult( $body, array( 'form_token_refused' => $e->getReason() ) );
+        }
     }
 
     /**

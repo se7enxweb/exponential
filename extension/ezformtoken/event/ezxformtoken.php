@@ -154,13 +154,32 @@ class ezxFormToken
         }
         else
         {
-            throw new Exception( 'Missing form token from Request', 404 );
+            throw self::refusal( 'missing' );
         }
 
         if ( $token !== self::getToken() )
-            throw new Exception( 'Wrong form token found in Request!', 404 );
+            throw self::refusal( 'wrong' );
 
         eZDebugSetting::writeDebug( 'ezformtoken', 'Input validated, token verified and was correct', __METHOD__ );
+    }
+
+    /**
+     * The exception a refused POST ends with: ezpFormTokenException, which the
+     * kernel answers with a 403 page (or a JSON body for XHR and JSON requests)
+     * and one warning line. A kernel without it gets the plain Exception this
+     * check always threw.
+     *
+     * @param string $reason 'missing' or 'wrong'
+     * @return Exception
+     */
+    static protected function refusal( $reason )
+    {
+        if ( class_exists( 'ezpFormTokenException' ) )
+            return new ezpFormTokenException( $reason );
+
+        return $reason === 'wrong'
+            ? new Exception( 'Wrong form token found in Request!', 403 )
+            : new Exception( 'Missing form token from Request', 403 );
     }
 
     /**
