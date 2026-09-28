@@ -655,7 +655,19 @@ class eZMysqlSchema extends eZDBSchemaInterface
             return $this->DBInstance->escapeString( $value );
         }
 
-        return mysqli_real_escape_string( $value );
+        // No connection (an SQL dump made from .dba files): escape what
+        // mysqli_real_escape_string() escapes. That function needs a link, and
+        // called without one it was a fatal error on the first value, so no
+        // MySQL dump could be made from files at all.
+        return strtr( (string)$value, array(
+            '\\'   => '\\\\',
+            "\0"   => '\\0',
+            "\n"   => '\\n',
+            "\r"   => '\\r',
+            "'"    => "\\'",
+            '"'    => '\\"',
+            "\x1a" => '\\Z',
+        ) );
     }
 
     function schemaType()

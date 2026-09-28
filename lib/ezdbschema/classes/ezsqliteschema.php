@@ -683,7 +683,11 @@ class eZSQLiteSchema extends eZDBSchemaInterface
             return $this->DBInstance->escapeString( $value );
         }
 
-        return $value;
+        // No connection (an SQL dump made from .dba files): SQLite doubles a
+        // quote and reads backslashes as themselves. The value used to be
+        // returned as it was, so a name like People's ended the literal early
+        // and the dump could not be loaded.
+        return str_replace( "'", "''", (string)$value );
     }
 
     /*!

@@ -642,7 +642,9 @@ class eZSQLite3DB extends eZDBInterface
         }
         else
         {
-            return $str;
+            // SQLite3::escapeString() needs no connection; returning the value
+            // unescaped broke every statement with a quote in it.
+            return SQLite3::escapeString( (string)$str );
         }
     }
 

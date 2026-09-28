@@ -934,7 +934,17 @@ class eZPgsqlSchema extends eZDBSchemaInterface
 
     function escapeSQLString( $value )
     {
-        return pg_escape_string( $value );
+        if ( $this->DBInstance instanceof eZPostgreSQLDB && $this->DBInstance->isConnected() )
+        {
+            return $this->DBInstance->escapeString( $value );
+        }
+
+        // No connection (an SQL dump made from .dba files): standard SQL
+        // doubles a quote, and with standard_conforming_strings (on by default
+        // since PostgreSQL 9.1) a backslash is itself. pg_escape_string()
+        // without a connection is deprecated since PHP 8.1 and fails when no
+        // connection was ever opened. NUL cannot be stored in text.
+        return str_replace( array( "\0", "'" ), array( '', "''" ), (string)$value );
     }
 
     function schemaType()
