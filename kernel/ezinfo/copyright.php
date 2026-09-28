@@ -36,8 +36,14 @@ Further contact information is available at <a href="http://ez.no/About-eZ/Conta
 <p>Contact eZ Systems if any conditions of this licencing isn't clear to you.</p>
 COPYRIGHT;
 
+// The notice is rendered through design:ezinfo/copyright.tpl, so a design can present it;
+// the text itself is a legal notice and stays as it is. Without a result, the plain notice is shown.
+$tpl = eZTemplate::factory();
+$tpl->setVariable( 'copyright_notice', $text );
+$content = $tpl->fetch( 'design:ezinfo/copyright.tpl' );
+
 $Result = array();
-$Result['content'] = $text;
+$Result['content'] = ( is_string( $content ) && trim( $content ) !== '' ) ? $content : $text;
 $Result['path'] = array( array( 'url' => false,
                                 'text' => ezpI18n::tr( 'kernel/ezinfo', 'Info' ) ),
                          array( 'url' => false,
