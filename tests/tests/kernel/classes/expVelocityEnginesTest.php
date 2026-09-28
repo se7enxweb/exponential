@@ -244,8 +244,13 @@ class expVelocityEnginesTest extends ezpTestCase
         $this->assertSame( 9002, expVelocity::create( 'velocity.ini', 'frankenphp' )->httpPort() );
         $this->assertSame( 9003, expVelocity::create( 'velocity.ini', 'php' )->httpPort() );
 
-        // An empty own value falls back to [ServerSettings].
-        $this->assertStringContainsString( 'num_threads 7', expVelocity::create( 'velocity.ini', 'frankenphp' )->caddyfileText() );
+        // Threads are not the qbix engine's worker processes: an empty own value
+        // gives FrankenPHP's default, twice the CPU cores (expVelocityFrankenPHP::threadCounts()).
+        $this->assertStringContainsString( 'num_threads ' . ( 2 * expVelocityFrankenPHP::cpuCount() ) . "\n",
+                                           expVelocity::create( 'velocity.ini', 'frankenphp' )->caddyfileText() );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'Workers', '7' );
+        $this->assertStringContainsString( "num_threads 7\n", expVelocity::create( 'velocity.ini', 'frankenphp' )->caddyfileText() );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'Workers', '' );
 
         ezpINIHelper::setINISetting( 'velocity.ini', 'PHPServerSettings', 'Port', '' );
         $this->assertSame( 9001, expVelocity::create( 'velocity.ini', 'php' )->httpPort() );
@@ -304,7 +309,6 @@ class expVelocityEnginesTest extends ezpTestCase
         $this->assertSame( 'index_treemenu.php', $webserver['frontControllers']['^/([^/]+/)?content/treemenu'] ?? null );
 
         $write = new ReflectionMethod( $velocity, 'writeServerConfig' );
-        $write->setAccessible( true );
         $config = json_decode( file_get_contents( $write->invoke( $velocity ) ), true );
         $this->assertSame( array( expVelocity::STATIC_PATHS ), $config['Q']['web']['static']['paths'] ?? null );
 
@@ -423,7 +427,6 @@ class expVelocityEnginesTest extends ezpTestCase
     protected function qbixWebserverConfig( expVelocity $velocity )
     {
         $write = new ReflectionMethod( $velocity, 'writeServerConfig' );
-        $write->setAccessible( true );
         $path = $write->invoke( $velocity );
         $this->assertIsString( $path );
         $config = json_decode( file_get_contents( $path ), true );
@@ -436,7 +439,6 @@ class expVelocityEnginesTest extends ezpTestCase
     protected function qbixWebCacheConfig( expVelocity $velocity )
     {
         $write = new ReflectionMethod( $velocity, 'writeServerConfig' );
-        $write->setAccessible( true );
         $config = json_decode( file_get_contents( $write->invoke( $velocity ) ), true );
         return $config['Q']['web']['cache'] ?? null;
     }
@@ -498,6 +500,10 @@ class expVelocityEnginesTest extends ezpTestCase
         file_put_contents( $dir . '/cert.pem', 'x' );
         file_put_contents( $dir . '/key.pem', 'x' );
         ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'Port', '8126' );
+        // Bound to every address, whatever the installation's override says, so
+        // the addresses read localhost.
+        ezpINIHelper::setINISetting( 'velocity.ini', 'ServerSettings', 'Host', '' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'Host', '' );
         // Not the installation's own server, which may be running.
         ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'PidFile', 'var/tmp/velocity-test-none.pid' );
         ezpINIHelper::setINISetting( 'velocity.ini', 'FrankenPHPSettings', 'ConfigFile', 'var/tmp/velocity-test-none.Caddyfile' );
@@ -570,7 +576,6 @@ class expVelocityEnginesTest extends ezpTestCase
         $dir = sys_get_temp_dir() . '/velocity-selfsigned-' . getmypid();
         $franken = expVelocity::create( 'velocity.ini', 'frankenphp' );
         $make = new ReflectionMethod( $franken, 'makeSelfSigned' );
-        $make->setAccessible( true );
         $this->assertTrue( $make->invoke( $franken, $dir . '/c.crt', $dir . '/c.key' ) );
 
         $cert = openssl_x509_parse( file_get_contents( $dir . '/c.crt' ) );
