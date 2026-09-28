@@ -13,6 +13,11 @@
  *  HC-09 — Garbage collection removes expired, purged and orphaned files and keeps current ones
  *  HC-10 — Metadata always points at its own body
  *  HC-11 — The gzip joined from pre-compressed parts is exactly the served page
+ *  HC-12 — The siteaccess from the URI (element and map), as eZSiteAccess::match() finds it
+ *  HC-13 — The siteaccess from host and URI together (host_uri, every host match method)
+ *  HC-14 — MatchOrder, StaticMatch, DefaultAccess; what cannot be known before the kernel is null
+ *  HC-15 — Scheme and host as the kernel works them out, behind a load balancer that ends TLS too
+ *  HC-16 — A page of a URI-matched siteaccess stored behind a load balancer is found by the early exit and the web server
  *
  * No database, no kernel: the contract is pure PHP by design.
  *
@@ -273,5 +278,159 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
             $this->assertSame( "\x1f\x8b", substr( $gz, 0, 2 ), $what . ': a gzip member' );
             $this->assertLessThan( strlen( $plain ) / 3, strlen( $gz ), $what . ': compressed' );
         }
+    }
+
+    /** The site.ini rules eZSiteAccess::match() uses, as the listener writes them. */
+    private function matchRules( array $extra = array() )
+    {
+        return $extra + array(
+            'static' => '', 'default' => 'site', 'order' => array( 'uri', 'host' ),
+            'list' => array( 'site', 'eng', 'admin', 'bold', 'bold_ger' ),
+            'uriType' => 'element', 'uriElement' => 1,
+            'uriMap' => array( array( 'admin', 'admin' ), array( 'ADMIN', 'admin' ) ),
+            'hostType' => 'map', 'hostMap' => array( array( 'bold.example.org', 'bold' ) ),
+            'hostUri' => array(), 'hostUriMethod' => 'strict',
+        );
+    }
+
+    /** HC-12 */
+    public function testTheSiteAccessFromTheUri()
+    {
+        $c = $this->contract( array( 'match' => $this->matchRules() ) );
+        $this->assertSame( 'bold_ger', $c->resolveSiteAccess( 'example.org', '/bold_ger' ) );
+        $this->assertSame( 'bold_ger', $c->resolveSiteAccess( 'example.org', '/bold_ger/kontakt?x=1' ) );
+        $this->assertSame( 'bold_ger', $c->resolveSiteAccess( 'example.org:8787', '/bold_ger/' ) );
+        $this->assertSame( 'eng', $c->resolveSiteAccess( 'example.org', '/eng/about' ) );
+        // No siteaccess in the path: the next rule (the host map), then DefaultAccess.
+        $this->assertSame( 'bold', $c->resolveSiteAccess( 'bold.example.org', '/kontakt' ) );
+        $this->assertSame( 'site', $c->resolveSiteAccess( 'example.org', '/kontakt' ) );
+        $this->assertSame( 'site', $c->resolveSiteAccess( 'example.org', '/' ) );
+        // The URI wins over the host, as MatchOrder=uri;host says.
+        $this->assertSame( 'eng', $c->resolveSiteAccess( 'bold.example.org', '/eng' ) );
+        // Decoded as eZURI does.
+        $this->assertSame( 'bold_ger', $c->resolveSiteAccess( 'example.org', '/bold%5Fger/x' ) );
+        // A name the kernel would normalise (and perhaps redirect): not known here.
+        $this->assertNull( $c->resolveSiteAccess( 'example.org', '/bold-ger/x' ) );
+        // More than one element.
+        $c = $this->contract( array( 'match' => $this->matchRules( array( 'uriElement' => 2, 'list' => array( 'site', 'de_shop' ) ) ) ) );
+        $this->assertSame( 'de_shop', $c->resolveSiteAccess( 'example.org', '/de/shop/cart' ) );
+        $this->assertSame( 'site', $c->resolveSiteAccess( 'example.org', '/de/other' ) );
+        // map: the first element against URIMatchMapItems, only for listed siteaccesses.
+        $c = $this->contract( array( 'match' => $this->matchRules( array( 'uriType' => 'map',
+            'uriMap' => array( array( 'de', 'bold_ger' ), array( 'x', 'unlisted' ) ) ) ) ) );
+        $this->assertSame( 'bold_ger', $c->resolveSiteAccess( 'example.org', '/de/kontakt' ) );
+        $this->assertSame( 'site', $c->resolveSiteAccess( 'example.org', '/x/kontakt' ) );
+        $this->assertSame( 'site', $c->resolveSiteAccess( 'example.org', '/bold_ger' ) );
+    }
+
+    /** HC-13 */
+    public function testTheSiteAccessFromHostAndUri()
+    {
+        $c = $this->contract( array( 'match' => $this->matchRules( array(
+            'order' => array( 'host_uri', 'uri' ),
+            'hostUri' => array(
+                array( 'www.example.org', 'shop', 'bold' ),
+                array( 'www.example.org', '', 'eng' ),
+                array( 'de.', '', 'bold_ger', 'start' ),
+                array( '.example.com', 'en', 'eng', 'end' ),
+                array( 'intranet', '', 'admin', 'part' ),
+            ),
+        ) ) ) );
+        $this->assertSame( 'bold', $c->resolveSiteAccess( 'www.example.org', '/shop/cart' ) );
+        $this->assertSame( 'bold', $c->resolveSiteAccess( 'www.example.org', '/shop' ) );
+        // \b as in the kernel: "shopping" is not "shop".
+        $this->assertSame( 'eng', $c->resolveSiteAccess( 'www.example.org', '/shopping' ) );
+        $this->assertSame( 'eng', $c->resolveSiteAccess( 'www.example.org:443', '/' ) );
+        $this->assertSame( 'bold_ger', $c->resolveSiteAccess( 'de.example.net', '/kontakt' ) );
+        $this->assertSame( 'eng', $c->resolveSiteAccess( 'news.example.com', '/en/x' ) );
+        $this->assertSame( 'admin', $c->resolveSiteAccess( 'my.intranet.lan', '/' ) );
+        // strict is exact.
+        $this->assertSame( 'site', $c->resolveSiteAccess( 'www.example.org.evil', '/' ) );
+        // No host_uri match: the next rule, then DefaultAccess.
+        $this->assertSame( 'bold_ger', $c->resolveSiteAccess( 'other.org', '/bold_ger/x' ) );
+        $this->assertSame( 'site', $c->resolveSiteAccess( 'other.org', '/x' ) );
+    }
+
+    /** HC-14 */
+    public function testMatchOrderAndWhatCannotBeKnown()
+    {
+        $rules = $this->matchRules();
+        $this->assertSame( 'eng', $this->contract( array( 'match' => array( 'static' => 'eng' ) + $rules ) )->resolveSiteAccess( 'example.org', '/bold_ger' ) );
+        $this->assertSame( 'site', $this->contract( array( 'match' => array( 'order' => array( 'none' ) ) + $rules ) )->resolveSiteAccess( 'example.org', '/bold_ger' ) );
+        $this->assertSame( 'bold', $this->contract( array( 'match' => array( 'order' => array( 'host', 'uri' ) ) + $rules ) )->resolveSiteAccess( 'bold.example.org', '/eng' ) );
+        // A rule that needs what the early exit does not have, before anything matched.
+        foreach ( array( 'port', 'servervar', 'index' ) as $probe )
+            $this->assertNull( $this->contract( array( 'match' => array( 'order' => array( $probe, 'uri' ) ) + $rules ) )->resolveSiteAccess( 'example.org', '/eng' ), $probe );
+        // ... but after a rule that matched, it is never asked.
+        $this->assertSame( 'eng', $this->contract( array( 'match' => array( 'order' => array( 'uri', 'port' ) ) + $rules ) )->resolveSiteAccess( 'example.org', '/eng' ) );
+        foreach ( array( array( 'uriType' => 'regexp' ), array( 'uriType' => 'text' ),
+                         array( 'order' => array( 'host' ), 'hostType' => 'element' ),
+                         array( 'order' => array( 'host' ), 'hostType' => 'regexp' ) ) as $unsupported )
+            $this->assertNull( $this->contract( array( 'match' => $unsupported + $rules ) )->resolveSiteAccess( 'example.org', '/eng' ), json_encode( $unsupported ) );
+        // The index file in the path: eZSys strips it, not followed here.
+        $this->assertNull( $this->contract( array( 'match' => $rules ) )->resolveSiteAccess( 'example.org', '/index.php/eng' ) );
+        // A contract from before 'match': the host map.
+        $old = $this->contract();
+        $this->assertSame( 'site', $old->resolveSiteAccess( 'EXAMPLE.org:8080', '/eng' ) );
+        $this->assertNull( $old->resolveSiteAccess( 'other.org', '/' ) );
+        // Which siteaccesses are cached.
+        $c = $this->contract( array( 'siteaccesses' => array( 'site', 'bold_ger' ) ) );
+        $this->assertTrue( $c->cachesSiteAccess( 'bold_ger' ) );
+        $this->assertFalse( $c->cachesSiteAccess( 'eng' ) );
+        $this->assertFalse( $c->cachesSiteAccess( null ) );
+        $this->assertTrue( $old->cachesSiteAccess( 'site' ) );
+    }
+
+    /** HC-15 */
+    public function testSchemeAndHostAsTheKernelHasThem()
+    {
+        $c = $this->contract( array( 'sslPort' => '443' ) );
+        $this->assertSame( array( 'http', 'example.org' ), $c->requestOrigin( array( 'HTTP_HOST' => 'example.org', 'SERVER_PORT' => '80' ) ) );
+        $this->assertSame( array( 'https', 'example.org' ), $c->requestOrigin( array( 'HTTP_HOST' => 'example.org', 'HTTPS' => 'on' ) ) );
+        $this->assertSame( array( 'http', 'example.org' ), $c->requestOrigin( array( 'HTTP_HOST' => 'example.org', 'HTTPS' => 'off' ) ) );
+        $this->assertSame( array( 'https', 'example.org' ), $c->requestOrigin( array( 'HTTP_HOST' => 'example.org', 'SERVER_PORT' => '443' ) ) );
+        $this->assertSame( array( 'https', 'example.org:443' ), $c->requestOrigin( array( 'HTTP_HOST' => 'example.org:443', 'SERVER_PORT' => '8080' ) ) );
+        // A load balancer that ends TLS and forwards to exp:8080.
+        $lb = array( 'HTTP_HOST' => 'exp:8080', 'SERVER_PORT' => '8080', 'HTTP_X_FORWARDED_PROTO' => 'https' );
+        $this->assertSame( array( 'https', 'exp:8080' ), $c->requestOrigin( $lb ) );
+        $this->assertSame( array( 'https', 'www.example.org' ), $c->requestOrigin( $lb + array( 'HTTP_X_FORWARDED_HOST' => 'www.example.org, proxy.lan' ) ) );
+        $this->assertSame( array( 'http', 'exp:8080' ), $c->requestOrigin( array( 'HTTP_X_FORWARDED_PROTO' => 'http' ) + $lb ) );
+        $this->assertSame( array( 'https', 'exp:8080' ), $c->requestOrigin( array( 'HTTP_HOST' => 'exp:8080', 'HTTP_X_FORWARDED_PORT' => '443' ) ) );
+        $this->assertSame( array( 'http', 'exp:8080' ), $c->requestOrigin( array( 'HTTP_HOST' => 'exp:8080', 'HTTP_X_FORWARDED_PORT' => '80' ) ) );
+        $this->assertSame( array( 'https', 'exp:8080' ), $this->contract( array( 'sslProxyServerName' => 'lb1' ) )
+            ->requestOrigin( array( 'HTTP_HOST' => 'exp:8080', 'HTTP_X_FORWARDED_SERVER' => 'lb1' ) ) );
+        // SSLPort elsewhere.
+        $this->assertSame( array( 'https', 'example.org:8443' ), $this->contract( array( 'sslPort' => '8443' ) )
+            ->requestOrigin( array( 'HTTP_HOST' => 'example.org:8443' ) ) );
+    }
+
+    /** HC-16 */
+    public function testAUriSiteAccessBehindALoadBalancerIsFound()
+    {
+        $c = $this->contract( array( 'match' => $this->matchRules(), 'siteaccesses' => array( 'site', 'bold_ger' ),
+                                     'sessionCookie' => array( 'site' => 'eZSESSID', 'bold_ger' => 'eZSESSID' ), 'sslPort' => '443' ) );
+        // Stored as the kernel does: scheme, host and siteaccess from its own view of the request.
+        $lb = array( 'HTTP_HOST' => 'exp:8080', 'SERVER_PORT' => '8080', 'HTTP_X_FORWARDED_PROTO' => 'https',
+                     'HTTP_X_FORWARDED_HOST' => 'www.example.org', 'REQUEST_METHOD' => 'GET' );
+        list( $scheme, $host ) = $c->requestOrigin( $lb );
+        $sa = $c->resolveSiteAccess( $host, '/bold_ger/kontakt' );
+        $this->assertSame( 'bold_ger', $sa );
+        $key = $c->entryKey( $scheme, $host, $sa, '/bold_ger/kontakt', $c->anonymousContext( $sa ) );
+        $c->storeEntry( $key, 200, array( 'Content-Type' => 'text/html' ), '<p>kontakt</p>', array( 'ez-all' ), array() );
+
+        $base = array( 'uri' => '/bold_ger/kontakt', 'method' => 'GET', 'cookies' => array(), 'acceptEncoding' => '', 'ifNoneMatch' => null );
+        // The early exit hands over $_SERVER.
+        $hit = $c->serve( $base + array( 'server' => $lb, 'host' => 'exp:8080' ) );
+        $this->assertSame( '<p>kontakt</p>', $hit[2] ?? null );
+        // The web server's process hands over the headers.
+        $hit = $c->serve( $base + array( 'scheme' => 'http', 'host' => 'exp:8080', 'port' => 8080,
+            'headers' => array( 'host' => 'exp:8080', 'x-forwarded-proto' => 'https', 'x-forwarded-host' => 'www.example.org' ) ) );
+        $this->assertSame( '<p>kontakt</p>', $hit[2] ?? null );
+        // One that passes only host and scheme misses; it never gets another page.
+        $this->assertNull( $c->serve( $base + array( 'scheme' => 'http', 'host' => 'exp:8080' ) ) );
+        // Another siteaccess's URL, a siteaccess that is not cached.
+        $this->assertNull( $c->serve( array( 'uri' => '/bold_ger/other' ) + $base + array( 'server' => $lb ) ) );
+        $this->assertNull( $c->serve( array( 'uri' => '/eng/kontakt' ) + $base + array( 'server' => $lb ) ) );
+        $this->assertSame( 'host', $c->lastReason );
     }
 }

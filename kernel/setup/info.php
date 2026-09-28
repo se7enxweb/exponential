@@ -914,6 +914,8 @@ if ( class_exists( 'ezpHttpCacheContract' ) )
         ) + $httpCache['figures'];
         $httpCache['settings'] = array(
             'CachedSiteAccesses' => implode( ', ', (array)$hcIni->variable( 'HttpCacheSettings', 'CachedSiteAccesses' ) ),
+            'MatchOrder' => isset( $hcContract->config['match']['order'] )
+                ? implode( ';', (array)$hcContract->config['match']['order'] ) : 'host',
             'hosts' => implode( ', ', array_keys( (array)$hcContract->config['hosts'] ) ),
             'MaxAge' => (int)$hcContract->config['maxAge'] . ' s',
             'ContentChangePurges' => (string)$hcIni->variable( 'HttpCacheSettings', 'ContentChangePurges' ),

@@ -128,8 +128,12 @@ class ezpHttpCacheListener
             @chmod( $secretFile, 0600 );
         }
         $site = eZINI::instance();
+        // eZSiteAccess::match() decides before any siteaccess is loaded, on
+        // the settings without siteaccess overrides; this one holds those
+        // (as eZSiteAccess::getIni() starts), not the current siteaccess's.
+        $global = new eZINI( 'site.ini', 'settings', null, null, true );
         $hosts = array();
-        $cached = $ini->variable( 'HttpCacheSettings', 'CachedSiteAccesses' );
+        $cached = array_values( array_filter( (array)$ini->variable( 'HttpCacheSettings', 'CachedSiteAccesses' ), 'strlen' ) );
         foreach ( (array)$site->variable( 'SiteAccessSettings', 'HostMatchMapItems' ) as $item )
         {
             $parts = explode( ';', $item );
@@ -137,7 +141,7 @@ class ezpHttpCacheListener
                 $hosts[strtolower( $parts[0] )] = $parts[1];
         }
         $cookies = array();
-        foreach ( $hosts as $sa )
+        foreach ( $cached as $sa )
         {
             // The same rules as eZSession::registerFunctions(), on the merged
             // settings of that siteaccess (getSiteAccessIni() reads one file only).
@@ -163,6 +167,11 @@ class ezpHttpCacheListener
             'secret' => $secret,
             'dir' => $dir,
             'hosts' => $hosts,
+            'siteaccesses' => $cached,
+            'match' => self::matchRules( $global ),
+            'sslPort' => (string)$global->variable( 'SiteSettings', 'SSLPort' ),
+            'sslProxyServerName' => $global->hasVariable( 'SiteSettings', 'SSLProxyServerName' )
+                ? (string)$global->variable( 'SiteSettings', 'SSLProxyServerName' ) : '',
             'sessionCookie' => $cookies,
             // Only a files handler can be read before the kernel boots.
             'sessionSavePath' => ( $handler === 'files' && $path !== '' ) ? rtrim( $path, '/' ) : '',
@@ -214,6 +223,42 @@ class ezpHttpCacheListener
         return $html;
     }
 
+    /**
+     * The site.ini values eZSiteAccess::match() decides with, for
+     * ezpHttpCacheContract::resolveSiteAccess(): the early exit and the web
+     * server's process find the siteaccess from these before the kernel runs.
+     * $site is to hold the settings without siteaccess overrides, as match()
+     * reads them.
+     *
+     * @return array
+     */
+    private static function matchRules( eZINI $site )
+    {
+        $var = function ( $group, $name, $default = '' ) use ( $site ) {
+            return $site->hasVariable( $group, $name ) ? $site->variable( $group, $name ) : $default;
+        };
+        $items = function ( $name ) use ( $site ) {
+            if ( !$site->hasVariable( 'SiteAccessSettings', $name ) )
+                return array();
+            return array_values( array_filter( (array)$site->variableArray( 'SiteAccessSettings', $name ),
+                                               function ( $item ) { return is_array( $item ) && count( $item ) >= 2; } ) );
+        };
+        $order = (string)$var( 'SiteAccessSettings', 'MatchOrder', 'none' );
+        return array(
+            'static' => (string)$var( 'SiteAccessSettings', 'StaticMatch' ),
+            'default' => (string)$var( 'SiteSettings', 'DefaultAccess' ),
+            'order' => $order === 'none' ? array( 'none' ) : (array)$site->variableArray( 'SiteAccessSettings', 'MatchOrder' ),
+            'list' => array_values( (array)$var( 'SiteAccessSettings', 'AvailableSiteAccessList', array() ) ),
+            'uriType' => (string)$var( 'SiteAccessSettings', 'URIMatchType' ),
+            'uriElement' => (int)$var( 'SiteAccessSettings', 'URIMatchElement', 1 ),
+            'uriMap' => $items( 'URIMatchMapItems' ),
+            'hostType' => (string)$var( 'SiteAccessSettings', 'HostMatchType' ),
+            'hostMap' => $items( 'HostMatchMapItems' ),
+            'hostUri' => $items( 'HostUriMatchMapItems' ),
+            'hostUriMethod' => (string)$var( 'SiteAccessSettings', 'HostUriMatchMethodDefault', 'strict' ),
+        );
+    }
+
     private static function storeOrSay( $html )
     {
         $contract = self::contract();
@@ -224,10 +269,26 @@ class ezpHttpCacheListener
             return;
         }
         $siteaccess = $GLOBALS['eZCurrentAccess']['name'] ?? '';
-        $host = strtolower( preg_replace( '/:\d+$/', '', eZSys::hostname() ) );
-        if ( ( $contract->config['hosts'][$host] ?? null ) !== $siteaccess )
+        if ( !$contract->cachesSiteAccess( $siteaccess ) )
         {
-            self::header( 'X-Exp-Cache', 'BYPASS (siteaccess not host-matched)' );
+            self::header( 'X-Exp-Cache', 'BYPASS (siteaccess not cached)' );
+            return;
+        }
+        // The early exit and the web server find a page by the scheme, host
+        // and siteaccess they work out before the kernel starts. Stored only
+        // when those are the ones the kernel used for this page, so a lookup
+        // can never hand out a page rendered for another host, scheme or
+        // siteaccess -- at worst a page is not served early.
+        list( $scheme, $originHost ) = $contract->requestOrigin( $_SERVER );
+        if ( $originHost !== (string)eZSys::hostname() || $scheme !== ( eZSys::isSSLNow() ? 'https' : 'http' ) )
+        {
+            self::header( 'X-Exp-Cache', 'BYPASS (scheme or host not known before the kernel)' );
+            return;
+        }
+        $host = strtolower( preg_replace( '/:\d+$/', '', $originHost ) );
+        if ( $contract->resolveSiteAccess( $originHost, eZSys::serverVariable( 'REQUEST_URI' ) ) !== $siteaccess )
+        {
+            self::header( 'X-Exp-Cache', 'BYPASS (siteaccess not known before the kernel)' );
             return;
         }
         if ( !$contract->queryAllowed( eZSys::serverVariable( 'REQUEST_URI' ) ) )
@@ -265,8 +326,7 @@ class ezpHttpCacheListener
 
         list( $body, $offsets ) = ezpHttpCacheContract::extractPlaceholders( $html, $placeholders );
         $tags = array_values( array_unique( array_merge( self::tags( self::$view['result'] ), self::$extraTags ) ) );
-        $https = eZSys::isSSLNow();
-        $key = $contract->entryKey( $https ? 'https' : 'http', $host, $siteaccess, eZSys::serverVariable( 'REQUEST_URI' ), $context );
+        $key = $contract->entryKey( $scheme, $host, $siteaccess, eZSys::serverVariable( 'REQUEST_URI' ), $context );
         $ttl = (int)( self::$view['result']['cache_ttl'] ?? -1 );
         // The security headers go with the page: an answer from this cache is
         // assembled without the kernel (Velocity asks the contract directly),
@@ -338,7 +398,7 @@ class ezpHttpCacheListener
                 return;
             $contract = self::contract();
             $siteaccess = $GLOBALS['eZCurrentAccess']['name'] ?? '';
-            if ( !$contract || self::$sessionStorageDiffers || !isset( array_flip( $contract->config['hosts'] )[$siteaccess] ) )
+            if ( !$contract || self::$sessionStorageDiffers || !$contract->cachesSiteAccess( $siteaccess ) )
                 return;
             $contract->storeRecord( $user->id(), self::userContext( $contract, $user, $siteaccess ) );
         }
