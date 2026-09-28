@@ -200,13 +200,13 @@
         for ( i = 0; i < broken.length; i++ )
         {ldelim}
             var entry = broken[i];
-            var tr = document.createElement( 'tr' );
-            tr.className = ( i % 2 ) ? 'bgdark' : 'bglight';
+            var row = document.createElement( 'tr' );
+            row.className = ( i % 2 ) ? 'bgdark' : 'bglight';
 
             var td = document.createElement( 'td' );
             td.style.wordBreak = 'break-all';
             td.appendChild( link( entry.url ) );
-            tr.appendChild( td );
+            row.appendChild( td );
 
             textCell( tr, entry.status ? String( entry.status ) : tr( 'noResponse' ), true );
 
@@ -230,8 +230,8 @@
                         tr( 'more', {ldelim} count: entry.more {rdelim} ) ) );
             {rdelim}
 
-            tr.appendChild( from );
-            table.appendChild( tr );
+            row.appendChild( from );
+            table.appendChild( row );
         {rdelim}
 
         brokenEl.appendChild( table );
@@ -305,7 +305,12 @@
                 finish( tr( 'stopped' ) );
                 return;
             {rdelim}
-            for ( var i = 0; i < answer.events.length; i++ ) show( answer.events[i] );
+            // One event the page cannot show must not stop the console.
+            for ( var i = 0; i < answer.events.length; i++ )
+            {ldelim}
+                try {ldelim} show( answer.events[i] ); {rdelim}
+                catch ( e ) {ldelim} write( 'error', String( e ) ); {rdelim}
+            {rdelim}
             offset = answer.offset;
             if ( answer.done )
                 finish( tr( 'finished' ) );
