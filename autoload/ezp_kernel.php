@@ -653,6 +653,8 @@ return array(
       'ezpEvent'                                           => 'kernel/private/classes/ezpevent.php',
       'ezpExtension'                                       => 'kernel/private/classes/ezpextension.php',
       'ezpExtensionOptions'                                => 'kernel/private/options/ezpextensionoptions.php',
+      'ezpFormTokenException'                              => 'kernel/private/classes/exceptions/kernel/formtoken.php',
+      'ezpFormTokenRefusal'                                => 'kernel/private/classes/ezpformtokenrefusal.php',
       'ezpHttpCacheContract'                               => 'kernel/private/classes/httpcache/ezphttpcachecontract.php',
       'ezpHttpCacheListener'                               => 'kernel/private/classes/httpcache/ezphttpcachelistener.php',
       'ezpHttpResponseCodes'                               => 'kernel/private/rest/classes/http_response_codes.php',

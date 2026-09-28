@@ -35,6 +35,11 @@ const KERNEL_MOVED = 4;
  The language is not found.
 */
 const KERNEL_LANGUAGE_NOT_FOUND = 5;
+/*!
+ A POST was refused: its form token (CSRF token) was missing or wrong.
+ See ezpFormTokenException and ezpFormTokenRefusal; sent as HTTP 403.
+*/
+const KERNEL_FORM_TOKEN_REFUSED = 6;
 
 /*!
  The module could not be found.
