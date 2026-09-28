@@ -915,7 +915,16 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 else
                     eZDebug::writeError( "Module '" . $moduleCheck['module'] . "' is disabled", "index" );
                 $GLOBALS['eZRequestedModule'] = $this->module = new eZModule( "", "", $moduleCheck['module'] );
-                $moduleResult = $this->module->handleError( eZError::KERNEL_MODULE_DISABLED, 'kernel', array( 'check' => $moduleCheck ) );
+                // A module this siteaccess switches off answers as one that does
+                // not exist (404), so the page does not tell that it is there.
+                // [SiteAccessRules] DisabledModuleResult=disabled shows the
+                // "disabled" page instead.
+                $ini = eZINI::instance();
+                $disabledResult = $ini->hasVariable( 'SiteAccessRules', 'DisabledModuleResult' ) ? $ini->variable( 'SiteAccessRules', 'DisabledModuleResult' ) : 'notfound';
+                if ( $disabledResult === 'disabled' )
+                    $moduleResult = $this->module->handleError( eZError::KERNEL_MODULE_DISABLED, 'kernel', array( 'check' => $moduleCheck ) );
+                else
+                    $moduleResult = $this->module->handleError( eZError::KERNEL_MODULE_NOT_FOUND, 'kernel', array( 'module' => $moduleCheck['module'] ) );
             }
             $this->siteBasics['module-run-required'] = false;
             if ( isset( $moduleResult['rerun_uri'] ) )
