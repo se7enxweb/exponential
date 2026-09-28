@@ -2488,7 +2488,7 @@ f215c05198661b115822ecf85b049791  doc/specifications/trunk/webdav/design.txt
 d41d8cd98f00b204e9800998ecf8427e  extension/ezformtoken/README
 e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
 8e7bfc9fe2dc0d99c278330d9b1647e7  extension/ezformtoken/event/ezxformtoken.php
-2a414ff80ac41a50866767861053eba0  extension/ezformtoken/extension.xml
+7b67a59d489d3c97b9f171a685523852  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
 26589082cff678ea9d5ace7489d74cb6  extension/ezjscore/CHANGELOG
@@ -4876,7 +4876,7 @@ a7bf61ace40268bc56e89998941eec49  extension/ezjscore/design/standard/templates/e
 a2a8b366e1eca7ce170c33b9eeed6135  extension/ezjscore/design/standard/templates/ezjsctemplate/test.tpl
 4f71f4fd05bd14ecadea3d748f370a5c  extension/ezjscore/doc/FAQ
 1490628c1a4eda500cf469b9a05451a0  extension/ezjscore/doc/INSTALL
-e0428985b097e410cb0cf954ed69b2df  extension/ezjscore/extension.xml
+c51396bdb6821c859c0b44081545ccf5  extension/ezjscore/extension.xml
 1f0ca63458230b7a8023e7437449d8f0  extension/ezjscore/modules/ezjscore/call.php
 d74ebfc49529328d708ae3f1f7d1c918  extension/ezjscore/modules/ezjscore/hello.php
 9e8cde544bb97690275aac1e36370299  extension/ezjscore/modules/ezjscore/module.php
@@ -5329,7 +5329,7 @@ f8aa00a5afba9debd0aa374e2706ea03  extension/ezoe/design/standard/templates/ezoe/
 8607a7e3766c4aba3e75ab44f0b34020  extension/ezoe/doc/oe5_intro.odt
 432508f8b8c2b01e6ced699e524f4abe  extension/ezoe/doc/oe5_intro.pdf
 70322a77a52a65c55b7f33427a6c6eb4  extension/ezoe/doc/path_concept.gif
-40698f81ed3d9b18f2874d15e521d023  extension/ezoe/extension.xml
+b4c1873e7ec1e69929c627453c56d88d  extension/ezoe/extension.xml
 d69b64d96ab10ca04e0075e096a81e50  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
 e3bbe87306fa7c86e6e95d4a7461e55b  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 afa48e049adefeb6b7824aa32c5337f6  extension/ezoe/modules/ezoe/atd_rpc.php

@@ -2,8 +2,9 @@
 <software>
     <metadata>
         <name>eZ Form Token LS</name>
-        <version>//autogentag//</version>
+        <version>6.0.15</version>
         <copyright>Copyright (C) eZ Systems AS. All rights reserved.</copyright>
         <license>GNU General Public License v2.0 (or any later version)</license>
+        <info_url>https://github.com/se7enxweb/ezformtoken</info_url>
     </metadata>
 </software>
