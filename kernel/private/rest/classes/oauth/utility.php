@@ -94,14 +94,21 @@ class ezpOauthUtility extends ezpRestModel
         $authHeader = null;
         if ( function_exists( 'apache_request_headers' ) )
         {
-            $apacheHeaders = apache_request_headers();
-            if ( isset( $apacheHeaders[self::AUTH_HEADER_NAME] ) )
-                $authHeader = $apacheHeaders[self::AUTH_HEADER_NAME];
+            // Header names are case-insensitive; not every server keeps the client's case.
+            foreach ( (array)apache_request_headers() as $name => $value )
+            {
+                if ( strcasecmp( $name, self::AUTH_HEADER_NAME ) === 0 )
+                {
+                    $authHeader = $value;
+                    break;
+                }
+            }
         }
-        else
+        // Also when apache_request_headers() exists but does not carry it, as
+        // under a server that emulates the function for the CLI SAPI.
+        if ( !isset( $authHeader ) && isset( $_SERVER[self::AUTH_CGI_HEADER_NAME] ) )
         {
-            if ( isset( $_SERVER[self::AUTH_CGI_HEADER_NAME] ) )
-                $authHeader = $_SERVER[self::AUTH_CGI_HEADER_NAME];
+            $authHeader = $_SERVER[self::AUTH_CGI_HEADER_NAME];
         }
 
         if ( isset( $authHeader ) )

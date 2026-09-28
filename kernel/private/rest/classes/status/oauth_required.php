@@ -52,7 +52,15 @@ class ezpOauthRequired implements ezcMvcResultStatusObject
     {
         if ( $writer instanceof ezcMvcHttpResponseWriter )
         {
-            $writer->headers['HTTP/1.1 ' . ezpOauthErrorType::httpCodeforError( $this->errorType )] = "";
+            // No error type: the request carried no credentials at all, which
+            // is a 401 challenge (RFC 6750 section 3.1). httpCodeforError()
+            // answers 500 for it; PHP's own header() used to hide that by
+            // turning any response with WWW-Authenticate into a 401, which a
+            // server with its own header() handling does not do.
+            $code = $this->errorType === null
+                ? ezpHttpResponseCodes::UNAUTHORIZED
+                : ezpOauthErrorType::httpCodeforError( $this->errorType );
+            $writer->headers['HTTP/1.1 ' . $code] = "";
             $writer->headers['WWW-Authenticate'] = "OAuth realm='{$this->realm}'{$this->createErrorString()}";
         }
 
