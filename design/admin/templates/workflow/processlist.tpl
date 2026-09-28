@@ -57,22 +57,22 @@
     <td>({$Processes.item.status|wash}) {if is_set( $w_statuses[$Processes.item.status] )}{$w_statuses[$Processes.item.status]}{/if}</td>
     <td>
         {if $Processes.item.last_workflow_event}
-        status : ({$Processes.item.last_event_status}) {if is_set( $w_type_statuses[$Processes.item.last_event_status] )}{$w_type_statuses[$Processes.item.last_event_status]}{/if}<br/>
-        event type : {$Processes.item.last_workflow_event.workflow_type.type|wash}<br/>
+        {'status : (%last_event_status)'|i18n( 'design/admin/workflow/processlist',, hash( '%last_event_status', $Processes.item.last_event_status ) )} {if is_set( $w_type_statuses[$Processes.item.last_event_status] )}{$w_type_statuses[$Processes.item.last_event_status]}{/if}<br/>
+        {'event type :'|i18n( 'design/admin/workflow/processlist' )} {$Processes.item.last_workflow_event.workflow_type.type|wash}<br/>
         {if $Processes.item.last_workflow_event.workflow_type.description}
-        description : {$Processes.item.last_workflow_event.workflow_type.description|wash}<br/>{/if}
+        {'description :'|i18n( 'design/admin/workflow/processlist' )} {$Processes.item.last_workflow_event.workflow_type.description|wash}<br/>{/if}
         {if $Processes.item.workflow_event.workflow_type.information}
-        information : {$Processes.item.last_workflow_event.workflow_type.information|wash}<br/>{/if}
+        {'information :'|i18n( 'design/admin/workflow/processlist' )} {$Processes.item.last_workflow_event.workflow_type.information|wash}<br/>{/if}
         {else}&nbsp;-{/if}
     </td>
     <td>
         {if $Processes.item.workflow_event}
-        status : ({$Processes.item.event_status}) {if is_set( $w_type_statuses[$Processes.item.event_status] )}{$w_type_statuses[$Processes.item.event_status]}{/if}<br/>
-        event type : {$Processes.item.workflow_event.workflow_type.type|wash}<br/>
+        {'status : (%event_status)'|i18n( 'design/admin/workflow/processlist',, hash( '%event_status', $Processes.item.event_status ) )} {if is_set( $w_type_statuses[$Processes.item.event_status] )}{$w_type_statuses[$Processes.item.event_status]}{/if}<br/>
+        {'event type :'|i18n( 'design/admin/workflow/processlist' )} {$Processes.item.workflow_event.workflow_type.type|wash}<br/>
         {if $Processes.item.workflow_event.workflow_type.description}
-        description : {$Processes.item.workflow_event.workflow_type.description|wash}<br/>{/if}
+        {'description :'|i18n( 'design/admin/workflow/processlist' )} {$Processes.item.workflow_event.workflow_type.description|wash}<br/>{/if}
         {if $Processes.item.workflow_event.workflow_type.information}
-        information : {$Processes.item.workflow_event.workflow_type.information|wash}<br/>{/if}
+        {'information :'|i18n( 'design/admin/workflow/processlist' )} {$Processes.item.workflow_event.workflow_type.information|wash}<br/>{/if}
         {else}&nbsp;-{/if}
     </td>
 </tr>

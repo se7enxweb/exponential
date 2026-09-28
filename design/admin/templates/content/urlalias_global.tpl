@@ -156,9 +156,9 @@
         </td>
         <td>
             {if $element.always_available}
-                yes
+                {'yes'|i18n( 'design/admin/content/urlalias_global' )}
             {else}
-                no
+                {'no'|i18n( 'design/admin/content/urlalias_global' )}
             {/if}
         </td>
         <td>

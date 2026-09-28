@@ -3,7 +3,7 @@
   {if $is_read|not}<b>{/if}{"Posted: %1"|i18n('design/admin/collaboration/view/element/ezapprove_comment',,array($item.created|l10n(shortdatetime)))}{if $is_read|not}</b>{/if}
   </td>
   <td>
-  {if $is_read|not}<b>[new]</b>{/if}
+  {if $is_read|not}<b>{'[new]'|i18n( 'design/admin/collaboration/view/element/ezapprove_comment' )}</b>{/if}
   </td>
 
   <td rowspan="2" valign="top">

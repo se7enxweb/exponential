@@ -208,16 +208,16 @@ tr.exp-section-note th {
         <span class="exp-dot"></span>
         <span class="exp-pill-text">
         {if $cronjob_status.running}
-            {'Running'|i18n( 'design/admin/setup/cronjobs' )}: {$cronjob_status.part|wash}
+            {'Running: %part'|i18n( 'design/admin/setup/cronjobs',, hash( '%part', $cronjob_status.part|wash ) )}
         {else}
             {'Idle'|i18n( 'design/admin/setup/cronjobs' )}
         {/if}
         </span>
     </span>
     {if $cronjob_status.running}
-    <span class="exp-meta exp-running-meta">{'Site'|i18n( 'design/admin/setup/cronjobs' )}: {$cronjob_status.siteaccess|wash}</span>
-    <span class="exp-meta exp-running-meta">{'Process'|i18n( 'design/admin/setup/cronjobs' )}: {$cronjob_status.pid}</span>
-    <span class="exp-meta exp-running-meta" id="cronjob-elapsed">{'Elapsed'|i18n( 'design/admin/setup/cronjobs' )}: {$cronjob_status.elapsed}s</span>
+    <span class="exp-meta exp-running-meta">{'Site: %siteaccess'|i18n( 'design/admin/setup/cronjobs',, hash( '%siteaccess', $cronjob_status.siteaccess|wash ) )}</span>
+    <span class="exp-meta exp-running-meta">{'Process: %pid'|i18n( 'design/admin/setup/cronjobs',, hash( '%pid', $cronjob_status.pid ) )}</span>
+    <span class="exp-meta exp-running-meta" id="cronjob-elapsed">{'Elapsed: %elapsed'|i18n( 'design/admin/setup/cronjobs',, hash( '%elapsed', concat( $cronjob_status.elapsed, 's' ) ) )}</span>
     {/if}
     <span class="exp-meta">{'Log'|i18n( 'design/admin/setup/cronjobs' )}: <code>{$cronjob_log_file|wash}</code></span>
     {if $cronjob_php_binary|ne('')}
@@ -292,7 +292,7 @@ tr.exp-section-note th {
          $cronjob_runnable = and( $cronjob_blocked|not, $cronjob_status.running|not )}
 <tr class="{$cronjob_seq} exp-part-row" data-part="{$cronjob_part.name|wash}">
     <td class="exp-part-name">{$cronjob_part.label|wash}</td>
-    <td class="exp-meta">{$cronjob_part.scripts|count} {'scripts'|i18n( 'design/admin/setup/cronjobs' )}</td>
+    <td class="exp-meta">{'%count scripts'|i18n( 'design/admin/setup/cronjobs',, hash( '%count', $cronjob_part.scripts|count ) )}</td>
     {* What the crontab actually says about this part, not what it could say.
        The line to add is listed below the table, where it can be read. *}
     <td class="tight">
@@ -306,7 +306,7 @@ tr.exp-section-note th {
         {if $cronjob_part.forbidden}
             <span class="exp-state is-blocked" title="{'Blocked by cronjob.ini ForbiddenParts'|i18n( 'design/admin/setup/cronjobs' )}">{'Blocked'|i18n( 'design/admin/setup/cronjobs' )}</span>
         {elseif $cronjob_part.missing|gt(0)}
-            <span class="exp-state is-missing">{$cronjob_part.missing} {'missing'|i18n( 'design/admin/setup/cronjobs' )}</span>
+            <span class="exp-state is-missing">{'%count missing'|i18n( 'design/admin/setup/cronjobs',, hash( '%count', $cronjob_part.missing ) )}</span>
         {else}
             <span class="exp-state is-active">{'Activated'|i18n( 'design/admin/setup/cronjobs' )}</span>
         {/if}
@@ -460,6 +460,28 @@ var expCronjobToken      = '{$cronjob_form_token|wash}';
 var expCronjobStreamUrl = {$cronjob_stream_url|ezurl()};
 var expCronjobRunning   = {if $cronjob_status.running}true{else}false{/if};
 var expCronjobOffset    = {$cronjob_log_offset};
+{* What the console writes itself, translated here; %name is replaced in the script. *}
+var expCronjobText = {ldelim}
+    idle: '{'Idle'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    running: '{'Running: %part'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    site: '{'Site: %siteaccess'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    process: '{'Process: %pid'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    elapsed: '{'Elapsed: %elapsed'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    following: '{'following…'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    finished: '{'finished'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    streamClosed: '{'stream closed'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    noConnection: '{'The request did not reach the server. Check the connection and try again.'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    answered: '{'The server answered %status: %text'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    answeredNothing: '{'The server answered %status. It sent nothing that could be read.'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    failed: '{'The request failed before the server could answer.'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    timeout: '{'The server did not answer in time. The job may still have started; reload to see.'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    notSent: '{'The request could not be sent: %error'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    next: '{'Next: %part'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    runsEvery: '{'Runs every part, one after another.'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    runsOne: '{'Runs the %part part.'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    nothingToRun: '{'There is no part that can be run.'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}',
+    runningList: '{'Running %count parts, one after another.'|i18n( 'design/admin/setup/cronjobs' )|wash( javascript )}'
+{rdelim};
 {literal}
 (function () {
     var consoleEl = document.getElementById( 'cronjob-console' );
@@ -483,6 +505,13 @@ var expCronjobOffset    = {$cronjob_log_offset};
     function each( selector, fn ) {
         var nodes = document.querySelectorAll( selector ), i;
         for ( i = 0; i < nodes.length; i++ ) fn( nodes[i] );
+    }
+
+    // A translated console string with its %name placeholders filled in.
+    function tr( name, values ) {
+        var s = expCronjobText[name], key;
+        for ( key in values || {} ) s = s.split( '%' + key ).join( values[key] );
+        return s;
     }
 
     function text( el, value ) {
@@ -523,7 +552,7 @@ var expCronjobOffset    = {$cronjob_log_offset};
     // request that produced the page, so the form post that started a job was
     // offered for resending, and confirming launched it again - and again.
     function markIdle() {
-        pillText( 'Idle', false );
+        pillText( tr( 'idle' ), false );
         each( '.exp-running-meta', function ( el ) { el.parentNode.removeChild( el ); } );
         each( '.exp-note-busy', function ( el ) { el.parentNode.removeChild( el ); } );
         each( '.exp-part-row.is-current', function ( el ) {
@@ -539,14 +568,14 @@ var expCronjobOffset    = {$cronjob_log_offset};
     }
 
     function markRunning( part, siteaccess, pid ) {
-        pillText( 'Running: ' + part, true );
+        pillText( tr( 'running', { part: part } ), true );
 
         var strip = document.getElementById( 'cronjob-status' );
         if ( strip ) {
             each( '.exp-running-meta', function ( el ) { el.parentNode.removeChild( el ); } );
-            var meta = [ [ 'Site: ' + siteaccess, null ],
-                         [ 'Process: ' + pid, null ],
-                         [ 'Elapsed: 0s', 'cronjob-elapsed' ] ];
+            var meta = [ [ tr( 'site', { siteaccess: siteaccess } ), null ],
+                         [ tr( 'process', { pid: pid } ), null ],
+                         [ tr( 'elapsed', { elapsed: '0s' } ), 'cronjob-elapsed' ] ];
             for ( var i = 0; i < meta.length; i++ ) {
                 var span = document.createElement( 'span' );
                 span.className = 'exp-meta exp-running-meta';
@@ -574,13 +603,13 @@ var expCronjobOffset    = {$cronjob_log_offset};
         if ( !el ) return;
         var openedAt = new Date().getTime();
         elapsedTimer = window.setInterval( function () {
-            text( el, 'Elapsed: ' + ( from + Math.round( ( new Date().getTime() - openedAt ) / 1000 ) ) + 's' );
+            text( el, tr( 'elapsed', { elapsed: ( from + Math.round( ( new Date().getTime() - openedAt ) / 1000 ) ) + 's' } ) );
         }, 1000 );
     }
 
     function follow() {
         if ( source ) return;
-        say( 'following…' );
+        say( tr( 'following' ) );
         source = new EventSource( expCronjobStreamUrl + '?Offset=' + offset );
 
         source.onmessage = function ( event ) {
@@ -589,15 +618,15 @@ var expCronjobOffset    = {$cronjob_log_offset};
             catch ( e ) { return; }
             if ( typeof payload.offset === 'number' ) offset = payload.offset;
             write( payload.type, payload.message );
-            if ( payload.type === 'done' ) { close( 'finished' ); afterFinished(); }
+            if ( payload.type === 'done' ) { close( tr( 'finished' ) ); afterFinished(); }
         };
 
-        source.addEventListener( 'end', function () { close( 'finished' ); afterFinished(); } );
+        source.addEventListener( 'end', function () { close( tr( 'finished' ) ); afterFinished(); } );
 
         source.onerror = function () {
             // EventSource reconnects by itself, which would start the tail over
             // from the offset this page was rendered with and reprint it all.
-            close( 'stream closed' );
+            close( tr( 'streamClosed' ) );
         };
     }
 
@@ -642,7 +671,7 @@ var expCronjobOffset    = {$cronjob_log_offset};
 
     function describeFailure( request ) {
         if ( request.status === 0 )
-            return 'The request did not reach the server. Check the connection and try again.';
+            return tr( 'noConnection' );
 
         var text = ( request.responseText || '' )
                        .replace( /<script[\s\S]*?<\/script>/gi, ' ' )
@@ -651,8 +680,8 @@ var expCronjobOffset    = {$cronjob_log_offset};
                        .replace( /\s+/g, ' ' ).trim();
         if ( text.length > 240 ) text = text.substring( 0, 240 ) + '…';
 
-        return 'The server answered ' + request.status +
-               ( text ? ': ' + text : '. It sent nothing that could be read.' );
+        return text ? tr( 'answered', { status: request.status, text: text } )
+                    : tr( 'answeredNothing', { status: request.status } );
     }
 
     // An action asks for its answer rather than a new page. The same view does
@@ -696,17 +725,17 @@ var expCronjobOffset    = {$cronjob_log_offset};
         };
         request.onerror = function () {
             settle( { ok: false, running: false,
-                      message: 'The request failed before the server could answer.' } );
+                      message: tr( 'failed' ) } );
         };
         request.ontimeout = function () {
             settle( { ok: false, running: false,
-                      message: 'The server did not answer in time. The job may still have started; reload to see.' } );
+                      message: tr( 'timeout' ) } );
         };
         request.timeout = 120000;
 
         try { request.send( body ); }
         catch ( e ) {
-            settle( { ok: false, running: false, message: 'The request could not be sent: ' + e.message } );
+            settle( { ok: false, running: false, message: tr( 'notSent', { error: e.message } ) } );
         }
     }
 
@@ -746,7 +775,7 @@ var expCronjobOffset    = {$cronjob_log_offset};
         markIdle();
         if ( !queue.length ) return;
         var next = queue.shift();
-        write( 'phase', 'Next: ' + next );
+        write( 'phase', tr( 'next', { part: next } ) );
         window.setTimeout( function () {
             launch( { LaunchCronjobButton: next }, next );
         }, 400 );
@@ -787,8 +816,8 @@ var expCronjobOffset    = {$cronjob_log_offset};
         } );
         if ( runHintEl )
             text( runHintEl, wanted === ''
-                ? 'Runs every part, one after another.'
-                : 'Runs the ' + ( filterEl.options[filterEl.selectedIndex].text ) + ' part.' );
+                ? tr( 'runsEvery' )
+                : tr( 'runsOne', { part: filterEl.options[filterEl.selectedIndex].text } ) );
     }
 
     if ( filterEl ) {
@@ -816,10 +845,10 @@ var expCronjobOffset    = {$cronjob_log_offset};
                 if ( button && button.getAttribute( 'data-blocked' ) !== '1' )
                     queue.push( row.getAttribute( 'data-part' ) );
             } );
-            if ( !queue.length ) { feedback( false, 'There is no part that can be run.' ); return false; }
+            if ( !queue.length ) { feedback( false, tr( 'nothingToRun' ) ); return false; }
 
             showOutput();
-            write( 'phase', 'Running ' + queue.length + ' parts, one after another.' );
+            write( 'phase', tr( 'runningList', { count: queue.length } ) );
             var first = queue.shift();
             launch( { LaunchCronjobButton: first }, first );
             return false;

@@ -36,8 +36,7 @@
 <ul>
     {section var=UnvalidatedAttributes loop=$validation.attributes}
     {section show=is_set( $UnvalidatedAttributes.item.reason )}
-        <li>attribute '{$UnvalidatedAttributes.item.identifier}': ({$UnvalidatedAttributes.item.id})
-            {$UnvalidatedAttributes.item.reason.text|wash}
+        <li>{'attribute \'%identifier\': (%id) %text'|i18n( 'design/admin/class/edit',, hash( '%identifier', $UnvalidatedAttributes.item.identifier, '%id', $UnvalidatedAttributes.item.id, '%text', $UnvalidatedAttributes.item.reason.text|wash ) )}
         <ul>
         {section var=subitem loop=$UnvalidatedAttributes.item.reason.list}
             <li>{if is_set( $subitem.identifier )}{$subitem.identifier|wash}: {/if}{$subitem.text|wash}</li>
@@ -45,7 +44,7 @@
         </ul>
         </li>
     {section-else}
-        <li>attribute '{$UnvalidatedAttributes.item.identifier}': {$UnvalidatedAttributes.item.name|wash} ({$UnvalidatedAttributes.item.id})</li>
+        <li>{'attribute \'%identifier\': %name (%id)'|i18n( 'design/admin/class/edit',, hash( '%identifier', $UnvalidatedAttributes.item.identifier, '%name', $UnvalidatedAttributes.item.name|wash, '%id', $UnvalidatedAttributes.item.id ) )}</li>
     {/section}
     {/section}
 </ul>

@@ -326,7 +326,7 @@
         startBtn.disabled = true;
         stopBtn.disabled  = false;
         statusEl.innerHTML = '';
-        statusEl.appendChild( document.createTextNode( 'running…' ) );
+        statusEl.appendChild( document.createTextNode( '{'running…'|i18n( 'design/admin/setup/cache' )|wash( javascript )}' ) );
 
         source = new EventSource( url );
 
@@ -337,20 +337,20 @@
             catch ( e ) {ldelim} return; {rdelim}
             write( payload.type, payload.message );
             if ( payload.type === 'done' )
-                finish( 'finished' );
+                finish( '{'finished'|i18n( 'design/admin/setup/cache' )|wash( javascript )}' );
         {rdelim};
 
-        source.addEventListener( 'end', function () {ldelim} finish( 'finished' ); {rdelim} );
+        source.addEventListener( 'end', function () {ldelim} finish( '{'finished'|i18n( 'design/admin/setup/cache' )|wash( javascript )}' ); {rdelim} );
 
         source.onerror = function ()
         {ldelim}
             {* EventSource reconnects on its own, which would start the run
                again from the beginning; closing here keeps one run to a press. *}
             if ( lines === 0 )
-                write( 'error', 'Could not open the stream. Check that you have the setup/managecache policy.' );
+                write( 'error', '{'Could not open the stream. Check that you have the setup/managecache policy.'|i18n( 'design/admin/setup/cache' )|wash( javascript )}' );
             else
-                write( 'warn', 'Stream closed.' );
-            finish( 'stopped' );
+                write( 'warn', '{'Stream closed.'|i18n( 'design/admin/setup/cache' )|wash( javascript )}' );
+            finish( '{'stopped'|i18n( 'design/admin/setup/cache' )|wash( javascript )}' );
         {rdelim};
 
         return false;
@@ -359,8 +359,8 @@
     {* Closing the stream is all the browser can do: the run is already under
        way on the server and the pages it has written stay written. *}
     stopBtn.onclick = function () {ldelim}
-        write( 'warn', 'Stopped by operator. Pages written so far are kept.' );
-        finish( 'stopped' );
+        write( 'warn', '{'Stopped by operator. Pages written so far are kept.'|i18n( 'design/admin/setup/cache' )|wash( javascript )}' );
+        finish( '{'stopped'|i18n( 'design/admin/setup/cache' )|wash( javascript )}' );
         return false;
     {rdelim};
 {rdelim})();

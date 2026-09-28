@@ -173,7 +173,7 @@
     <details class="multiedit-object{if $multiedit_validation[$entry.object_id]} multiedit-invalid{/if}"{if or($multiedit_validation[$entry.object_id],$group.objects|count|le(3))} open="open"{/if}>
         <summary>
             {$entry.object.name|wash}
-            <small>{$entry.language|wash} &middot; {'version'|i18n('design/admin/content/multiedit')} {$entry.version.version}</small>
+            <small>{$entry.language|wash} &middot; {'version %version'|i18n( 'design/admin/content/multiedit',, hash( '%version', $entry.version.version ) )}</small>
         </summary>
         <div class="multiedit-body">
             {* Which fields stopped this one, said here rather than only marked.

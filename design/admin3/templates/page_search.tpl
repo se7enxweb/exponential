@@ -7,7 +7,7 @@
 <div class="searchblock">
 <form action={'/content/search/'|ezurl} method="get">
     {if $ui_context_edit}
-        <input id="searchtext" class="form-control" name="SearchText" class="disabled" type="text" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" disabled="disabled" title="{$search_title|wash}" placeholder="Search..." />
+        <input id="searchtext" class="form-control" name="SearchText" class="disabled" type="text" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" disabled="disabled" title="{$search_title|wash}" placeholder="{'Search...'|i18n( 'design/admin/pagelayout' )}" />
         <input id="searchbutton" class="button-disabled hide" name="SearchButton" type="submit" value="{'Search'|i18n( 'design/admin/pagelayout' )}" disabled="disabled" />
         <p class="advanced hide"><span class="disabled">{'Advanced'|i18n( 'design/admin/pagelayout' )}</span></p>
     {else}
@@ -15,7 +15,7 @@
             {set $search_title = "Search in '%node'"|i18n( 'design/admin/pagelayout',, hash( '%node', fetch( 'content', 'node', hash( 'node_id', $search_node_id ) ).name ) )}
         {/if}
         <div id="searchtextwrapper">
-            <input id="searchtext" class="form-control" name="SearchText" type="text" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" title="{$search_title|wash}" placeholder="Search..." />
+            <input id="searchtext" class="form-control" name="SearchText" type="text" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" title="{$search_title|wash}" placeholder="{'Search...'|i18n( 'design/admin/pagelayout' )}" />
         </div>
         <input id="searchbutton" class="button hide" name="SearchButton" type="submit" value="{'Search'|i18n( 'design/admin/pagelayout' )}" />
         {if eq( $ui_context, 'browse' ) }

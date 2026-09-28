@@ -76,6 +76,34 @@
     var source    = null;
     var lines     = 0;
 
+    // What the console writes itself, translated; %name is replaced by tr().
+    var T = {ldelim}
+        noBroken: '{'No broken links were found.'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        headLinkPage: '{'%links broken link on %pages page'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        headLinkPages: '{'%links broken link on %pages pages'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        headLinksPage: '{'%links broken links on %pages page'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        headLinksPages: '{'%links broken links on %pages pages'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        hint: '{'Open each page in the right hand column, correct the link, then run this again.'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        colLink: '{'Broken link'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        colStatus: '{'Status'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        colFrom: '{'Linked from'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        noResponse: '{'no response'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        startPage: '{'a starting page; nothing on the site links to it'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        more: '{'... and %count more'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        running: '{'running…'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        finished: '{'finished'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        stopped: '{'stopped'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        noStream: '{'Could not open the stream. Check that you have the setup/preload policy.'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        closed: '{'Stream closed.'|i18n( 'design/admin/setup/preload' )|wash( javascript )}',
+        byOperator: '{'Stopped by operator.'|i18n( 'design/admin/setup/preload' )|wash( javascript )}'
+    {rdelim};
+    function tr( name, values )
+    {ldelim}
+        var s = T[name], key;
+        for ( key in values || {ldelim}{rdelim} ) s = s.split( '%' + key ).join( values[key] );
+        return s;
+    {rdelim}
+
     var colours = {ldelim}
         phase:        '#7fd1ff',
         'phase-item': '#ffffff',
@@ -134,8 +162,7 @@
         if ( !broken || !broken.length )
         {ldelim}
             var okEl = document.createElement( 'p' );
-            okEl.appendChild( document.createTextNode(
-                'No broken links were found.' ) );
+            okEl.appendChild( document.createTextNode( tr( 'noBroken' ) ) );
             brokenEl.appendChild( okEl );
             return;
         {rdelim}
@@ -148,13 +175,12 @@
 
         var head = document.createElement( 'h2' );
         head.appendChild( document.createTextNode(
-            broken.length + ( broken.length === 1 ? ' broken link' : ' broken links' )
-            + ' on ' + pageCount + ( pageCount === 1 ? ' page' : ' pages' ) ) );
+            tr( 'head' + ( broken.length === 1 ? 'Link' : 'Links' ) + ( pageCount === 1 ? 'Page' : 'Pages' ),
+                {ldelim} links: broken.length, pages: pageCount {rdelim} ) ) );
         brokenEl.appendChild( head );
 
         var hint = document.createElement( 'p' );
-        hint.appendChild( document.createTextNode(
-            'Open each page in the right hand column, correct the link, then run this again.' ) );
+        hint.appendChild( document.createTextNode( tr( 'hint' ) ) );
         brokenEl.appendChild( hint );
 
         var table = document.createElement( 'table' );
@@ -163,7 +189,7 @@
         table.style.width = '100%';
 
         var hr = document.createElement( 'tr' );
-        [ 'Broken link', 'Status', 'Linked from' ].forEach( function ( label )
+        [ tr( 'colLink' ), tr( 'colStatus' ), tr( 'colFrom' ) ].forEach( function ( label )
         {ldelim}
             var th = document.createElement( 'th' );
             th.appendChild( document.createTextNode( label ) );
@@ -182,7 +208,7 @@
             td.appendChild( link( entry.url ) );
             tr.appendChild( td );
 
-            textCell( tr, entry.status ? String( entry.status ) : 'no response', true );
+            textCell( tr, entry.status ? String( entry.status ) : tr( 'noResponse' ), true );
 
             var from = document.createElement( 'td' );
             from.style.wordBreak = 'break-all';
@@ -190,8 +216,7 @@
 
             if ( !list.length )
             {ldelim}
-                from.appendChild( document.createTextNode(
-                    'a starting page; nothing on the site links to it' ) );
+                from.appendChild( document.createTextNode( tr( 'startPage' ) ) );
             {rdelim}
             else
             {ldelim}
@@ -202,7 +227,7 @@
                 {rdelim}
                 if ( entry.more > 0 )
                     from.appendChild( document.createTextNode(
-                        '... and ' + entry.more + ' more' ) );
+                        tr( 'more', {ldelim} count: entry.more {rdelim} ) ) );
             {rdelim}
 
             tr.appendChild( from );
@@ -242,7 +267,7 @@
         startBtn.disabled = true;
         stopBtn.disabled  = false;
         statusEl.innerHTML = '';
-        statusEl.appendChild( document.createTextNode( 'running…' ) );
+        statusEl.appendChild( document.createTextNode( tr( 'running' ) ) );
 
         source = new EventSource( url );
 
@@ -262,26 +287,26 @@
 
             write( payload.type, payload.message );
             if ( payload.type === 'done' )
-                finish( 'finished' );
+                finish( tr( 'finished' ) );
         {rdelim};
 
-        source.addEventListener( 'end', function () {ldelim} finish( 'finished' ); {rdelim} );
+        source.addEventListener( 'end', function () {ldelim} finish( tr( 'finished' ) ); {rdelim} );
 
         source.onerror = function ()
         {ldelim}
             // EventSource reconnects on its own, which would start the run
             // again from the beginning; closing here keeps one run to a press.
             if ( lines === 0 )
-                write( 'error', 'Could not open the stream. Check that you have the setup/preload policy.' );
+                write( 'error', tr( 'noStream' ) );
             else
-                write( 'warn', 'Stream closed.' );
-            finish( 'stopped' );
+                write( 'warn', tr( 'closed' ) );
+            finish( tr( 'stopped' ) );
         {rdelim};
     {rdelim};
 
     stopBtn.onclick = function () {ldelim}
-        write( 'warn', 'Stopped by operator.' );
-        finish( 'stopped' );
+        write( 'warn', tr( 'byOperator' ) );
+        finish( tr( 'stopped' ) );
     {rdelim};
 {rdelim})();
 </script>

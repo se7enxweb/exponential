@@ -74,8 +74,8 @@
         <td>{$currency.symbol}</td>
         <td>{$currency.locale}</td>
         <td><select name="CurrencyList[{$currency.code}][status]" title="{'Select status'|i18n( 'design/admin/shop/currencylist' )}">
-                <option value="active" {if eq($currency.status, 1)}selected = "selected"{/if} >Active</option>
-                <option value="inactive" {if eq($currency.status, 2)}selected = "selected"{/if}>Inactive</option>
+                <option value="active" {if eq($currency.status, 1)}selected = "selected"{/if} >{'Active'|i18n( 'design/admin/shop/currencylist' )}</option>
+                <option value="inactive" {if eq($currency.status, 2)}selected = "selected"{/if}>{'Inactive'|i18n( 'design/admin/shop/currencylist' )}</option>
             </select>
         </td>
 

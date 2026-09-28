@@ -91,7 +91,7 @@
             <div class="templateview-condition" style="margin-bottom: 2px;">
                 <label style="display:inline-block; min-width: 120px; font-weight: bold;">{$:key}</label>
                 <input type="text" name="MatchArray[{$CustomMatch.item.override_name}][{$:key}]" value="{$:item|wash()}" size="24" />
-                <input type="checkbox" name="RemoveMatchArray[{$CustomMatch.item.override_name}][{$:key}]" value="1" title="Remove this condition" />
+                <input type="checkbox" name="RemoveMatchArray[{$CustomMatch.item.override_name}][{$:key}]" value="1" title="{'Remove this condition'|i18n( 'design/admin/visual/templateview' )}" />
             </div>
             {/section}
         {/section}
@@ -99,21 +99,21 @@
             <select name="NewMatch[{$CustomMatch.item.override_name}][key]" style="min-width: 124px;">
                 <option value="">{'Add condition'|i18n( 'design/admin/visual/templateview' )}</option>
                 <option value="class_identifier">class_identifier</option>
-                <option value="class">class</option>
-                <option value="node">node</option>
-                <option value="object">object</option>
-                <option value="section">section</option>
+                <option value="class">{'class'|i18n( 'design/admin/visual/templateview' )}</option>
+                <option value="node">{'node'|i18n( 'design/admin/visual/templateview' )}</option>
+                <option value="object">{'object'|i18n( 'design/admin/visual/templateview' )}</option>
+                <option value="section">{'section'|i18n( 'design/admin/visual/templateview' )}</option>
                 <option value="section_identifier">section_identifier</option>
                 <option value="remote_id">remote_id</option>
                 <option value="node_remote_id">node_remote_id</option>
                 <option value="parent_node">parent_node</option>
                 <option value="class_group">class_group</option>
-                <option value="depth">depth</option>
+                <option value="depth">{'depth'|i18n( 'design/admin/visual/templateview' )}</option>
                 <option value="url_alias">url_alias</option>
-                <option value="viewmode">viewmode</option>
+                <option value="viewmode">{'viewmode'|i18n( 'design/admin/visual/templateview' )}</option>
                 <option value="navigation_part_identifier">navigation_part_identifier</option>
                 <option value="persistent_variable">persistent_variable</option>
-                <option value="state">state</option>
+                <option value="state">{'state'|i18n( 'design/admin/visual/templateview' )}</option>
                 <option value="state_identifier">state_identifier</option>
             </select>
             <input type="text" name="NewMatch[{$CustomMatch.item.override_name}][value]" value="" size="24" />
@@ -122,7 +122,7 @@
     <td><input type="text" name="PriorityArray[{$CustomMatch.item.override_name}]" size="2" value="{$CustomMatch.number}" /></td>
 
     {if $CustomMatch.item.match_file}
-    <td><a href={concat( '/visual/templateedit/', $CustomMatch.item.match_file)|ezurl} title="{'Edit override template.'|i18n( 'design/admin/visual/templateview' )}"><img src={'edit.gif'|ezimage} width="16" height="16" alt="Edit" /></a></td>
+    <td><a href={concat( '/visual/templateedit/', $CustomMatch.item.match_file)|ezurl} title="{'Edit override template.'|i18n( 'design/admin/visual/templateview' )}"><img src={'edit.gif'|ezimage} width="16" height="16" alt="{'Edit'|i18n( 'design/admin/visual/templateview' )}" /></a></td>
     {else}
     <td><img src={'edit-disabled.gif'|ezimage} alt="" /></td>
     {/if}

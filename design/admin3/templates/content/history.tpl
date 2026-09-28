@@ -73,7 +73,7 @@
                                     <table class="list" cellspacing="0">
                                         <tr>
                                             <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16"
-                                                    height="16" alt="Toggle selection"
+                                                    height="16" alt="{'Toggle selection'|i18n( 'design/admin/content/history' )}"
                                                     onclick="ezjs_toggleCheckboxes( document.versionsform, 'DeleteIDArray[]' ); return false;" />
                                             </th>
                                             <th>{'Version'|i18n( 'design/admin/content/history' )}</th>

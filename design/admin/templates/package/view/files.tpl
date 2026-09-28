@@ -49,7 +49,7 @@
         <p>
             <a href={concat( $package|ezpackage( fileitempath, $file ) )|ezroot}> {if $file.subdirectory}{$file.subdirectory|wash}/{/if}{$file.name|wash}</a>
             {if $file.variable-name}[{$file.variable-name|wash}]{/if}
-            {if $file.md5}MD5: <em>{$file.md5|wash}</em>{/if}
+            {if $file.md5}{'MD5:'|i18n( 'design/admin/package' )} <em>{$file.md5|wash}</em>{/if}
         </p>
         {/section}
         </div>

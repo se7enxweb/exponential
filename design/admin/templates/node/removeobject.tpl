@@ -38,7 +38,7 @@
 
     {if eq( $exceeded_limit, true() )}
         <hr />
-    <h4>Warnings:</h4>
+    <h4>{'Warnings:'|i18n( 'design/admin/node/removeobject' )}</h4>
         <p>{'The lines marked with red contain more than the maximum possible nodes for subtree removal and will not be deleted. You can remove this subtree using the ezsubtreeremove.php script.'|i18n( 'design/admin/node/removeobject' )}</p>
     <hr />
     {/if}

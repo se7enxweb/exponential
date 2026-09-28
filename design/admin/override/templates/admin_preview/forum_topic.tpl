@@ -10,7 +10,7 @@
     </div>
 
     <div class="content-control">
-        <h6>Sticky:</h6>
+        <h6>{'Sticky:'|i18n( 'design/admin/preview/forum_topic' )}</h6>
         {attribute_view_gui attribute=$node.data_map.sticky}
         </div>
     </div>

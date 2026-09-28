@@ -284,7 +284,7 @@
         <p>{"The new alias be placed under %link"|i18n( 'design/admin/content/urlalias', '', hash( '%link', concat( '<em><a href=', $node.parent.url_alias|ezurl, '>', $node.parent.name|wash, '</a></em>' ) ) )}.</p>
     {else}
         <p>{"<em>Un-check</em> to create the new alias under %link. Leave it checked and the new alias will be created on <em><a href='/'>%siteroot</a></em>."|i18n( 'design/admin/content/urlalias', '', hash( '%link', concat( '<em><a href=', $node.parent.url_alias|ezurl, '>', $node.parent.name|wash, '</a></em>' ),
-                                                                                                                                                                                                                '%siteroot', 'the site root' ) )}</p>
+                                                                                                                                                                                                                '%siteroot', 'the site root'|i18n( 'design/admin/content/urlalias' ) ) )}</p>
     {/if}
 
 </div>

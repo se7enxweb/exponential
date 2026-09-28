@@ -240,7 +240,7 @@
         {if $velocity_info.is_default}
             {'It is the default engine ([ServerSettings] Engine), which exp:velocity start uses without --engine.'|i18n( 'design/admin/setup/info' )}
         {else}
-            {'The default engine is'|i18n( 'design/admin/setup/info' )} {$velocity_info.default|wash}; {'this one runs with'|i18n( 'design/admin/setup/info' )} <code>exp:velocity start --engine={$velocity_info.engine|wash}</code>.
+            {'The default engine is %default; this one runs with %command.'|i18n( 'design/admin/setup/info',, hash( '%default', $velocity_info.default|wash, '%command', concat( '<code>exp:velocity start --engine=', $velocity_info.engine|wash, '</code>' ) ) )}
         {/if}
         {if $velocity_info.velocity|not}
             <br /><small>{'This server was not started by exp:velocity (it answers on another port than velocity.ini gives this engine), so the status below is limited to what the request itself shows.'|i18n( 'design/admin/setup/info' )}</small>
@@ -250,7 +250,7 @@
     <div class="block">
         <label>{'Address'|i18n( 'design/admin/setup/info' )}:</label>
         <a href={$velocity_info.url}>{$velocity_info.url|wash}</a>
-        &mdash; {'reachable from'|i18n( 'design/admin/setup/info' )} {$velocity_info.reach|wash}
+        &mdash; {'reachable from %reach'|i18n( 'design/admin/setup/info',, hash( '%reach', $velocity_info.reach|wash ) )}
     </div>
 
     {if $velocity_info.version}
@@ -263,7 +263,7 @@
     {if $velocity_info.pid}
     <div class="block">
         <label>{'Process'|i18n( 'design/admin/setup/info' )}:</label>
-        {'pid'|i18n( 'design/admin/setup/info' )} {$velocity_info.pid|wash}, {$velocity_info.processes|wash} {'process(es)'|i18n( 'design/admin/setup/info' )}
+        {'pid %pid, %processes process(es)'|i18n( 'design/admin/setup/info',, hash( '%pid', $velocity_info.pid|wash, '%processes', $velocity_info.processes|wash ) )}
         {if $velocity_info.log}<br /><small>{'Console log'|i18n( 'design/admin/setup/info' )}: {$velocity_info.log|wash}</small>{/if}
         {if $velocity_info.config}<br /><small>{'Configuration'|i18n( 'design/admin/setup/info' )}: {$velocity_info.config|wash}</small>{/if}
     </div>
@@ -305,7 +305,7 @@
         {foreach $velocity_info.others as $other}
             {$other.name|wash} (<code>{$other.engine|wash}</code>, {$other.role|wash})
             {foreach $other.urls as $url}<a href="{$url|wash}">{$url|wash}</a>{delimiter} {'and'|i18n( 'design/admin/setup/info' )} {/delimiter}{/foreach}
-            &mdash; <small>{'stop it with'|i18n( 'design/admin/setup/info' )} <code>exp:velocity stop --engine={$other.engine|wash}</code></small>{delimiter}<br />{/delimiter}
+            &mdash; <small>{'stop it with %command'|i18n( 'design/admin/setup/info',, hash( '%command', concat( '<code>exp:velocity stop --engine=', $other.engine|wash, '</code>' ) ) )}</small>{delimiter}<br />{/delimiter}
         {/foreach}
         <br /><small>{'Started from this installation as well. A site is served by one engine; another one running is usually left from a test or a benchmark.'|i18n( 'design/admin/setup/info' )}</small>
     </div>
@@ -335,17 +335,15 @@
         {if eq( $engine_info.source, 'archive' )}
             {'The archive'|i18n( 'design/admin/setup/info' )} &mdash; {$engine_info.archive|wash}
         {else}
-            {'Individual files on disk'|i18n( 'design/admin/setup/info' )}
-            &mdash;
-            {'the archive below is not being used, because the EXP_ENGINE_PHAR environment variable is not set'|i18n( 'design/admin/setup/info' )}
+            {'Individual files on disk &mdash; the archive below is not being used, because the EXP_ENGINE_PHAR environment variable is not set'|i18n( 'design/admin/setup/info' )}
         {/if}
         {* Where that variable is set depends on the server running this page,
            so say it for that server rather than in general. *}
-        <br /><small>{'Served by'|i18n( 'design/admin/setup/info' )} {$engine_info.server|wash}.
+        <br /><small>{'Served by %server.'|i18n( 'design/admin/setup/info',, hash( '%server', $engine_info.server|wash ) )}
         {if eq( $engine_info.source, 'archive' )}
-            {'To run from the files on disk again'|i18n( 'design/admin/setup/info' )}: {$engine_info.switch_off|wash}.
+            {'To run from the files on disk again: %command.'|i18n( 'design/admin/setup/info',, hash( '%command', $engine_info.switch_off|wash ) )}
         {else}
-            {'To run from the archive'|i18n( 'design/admin/setup/info' )}: {$engine_info.switch_on|wash}.
+            {'To run from the archive: %command.'|i18n( 'design/admin/setup/info',, hash( '%command', $engine_info.switch_on|wash ) )}
         {/if}
         </small>
     </div>
@@ -358,9 +356,7 @@
     {if eq( $engine_info.source, 'archive' )}
     <div class="block">
         <label>{'Archive'|i18n( 'design/admin/setup/info' )}:</label>
-        {$engine_info.archive_files} {'files'|i18n( 'design/admin/setup/info' )},
-        {$engine_info.archive_bytes} {'bytes'|i18n( 'design/admin/setup/info' )},
-        {'built'|i18n( 'design/admin/setup/info' )} {$engine_info.archive_built|wash}
+        {'%files files, %bytes bytes, built %built'|i18n( 'design/admin/setup/info',, hash( '%files', $engine_info.archive_files, '%bytes', $engine_info.archive_bytes, '%built', $engine_info.archive_built|wash ) )}
     </div>
     {else}
     <div class="block">
@@ -532,24 +528,20 @@
         <div style="margin-top: 0.3em;"><small>
             {if $query_cache.mode|eq( 'shared' )}
                 {if $query_cache.apcu}
-                    <strong>{$query_cache.entries}</strong> {'results held in APCu'|i18n( 'design/admin/setup/info' )} ({$query_cache.memory_kb}&nbsp;KB) {'by this server'|i18n( 'design/admin/setup/info' )}
+                    {'%entries results held in APCu (%size) by this server'|i18n( 'design/admin/setup/info',, hash( '%entries', concat( '<strong>', $query_cache.entries, '</strong>' ), '%size', concat( $query_cache.memory_kb, '&nbsp;KB' ) ) )}
                 {else}
                     <span style="color: #a33;">{'APCu is not available to this server: "shared" works as "request" here.'|i18n( 'design/admin/setup/info' )}</span>
                 {/if}
                 &middot;
             {/if}
-            {'generation'|i18n( 'design/admin/setup/info' )} <strong>{$query_cache.generation}</strong>{if $query_cache.cleared}, {'last cleared'|i18n( 'design/admin/setup/info' )} {$query_cache.cleared|l10n( shortdatetime )}{/if}
-            &middot; <strong>{$query_cache.tables_tracked}</strong> {'tables written since'|i18n( 'design/admin/setup/info' )}
+            {'generation %generation'|i18n( 'design/admin/setup/info',, hash( '%generation', concat( '<strong>', $query_cache.generation, '</strong>' ) ) )}{if $query_cache.cleared}, {'last cleared %date'|i18n( 'design/admin/setup/info',, hash( '%date', $query_cache.cleared|l10n( shortdatetime ) ) )}{/if}
+            &middot; {'%tables tables written since'|i18n( 'design/admin/setup/info',, hash( '%tables', concat( '<strong>', $query_cache.tables_tracked, '</strong>' ) ) )}
             {if $query_cache.state_exists|not}<span style="color: #666;">({'no state file yet'|i18n( 'design/admin/setup/info' )})</span>{/if}
         </small></div>
         {if $query_cache.counters}
         <div style="margin-top: 0.2em;"><small>
-            {'This server since'|i18n( 'design/admin/setup/info' )} {if $query_cache.counters.since}{$query_cache.counters.since|l10n( shortdatetime )}{else}-{/if}:
-            <strong>{$query_cache.counters.requests}</strong> {'requests'|i18n( 'design/admin/setup/info' )},
-            <strong>{$query_cache.counters.hits}</strong> {'hits'|i18n( 'design/admin/setup/info' )},
-            <strong>{$query_cache.counters.misses}</strong> {'misses'|i18n( 'design/admin/setup/info' )}{if $query_cache.counters.hit_rate|ne( '' )} (<strong>{$query_cache.counters.hit_rate}&nbsp;%</strong> {'hit rate'|i18n( 'design/admin/setup/info' )}){/if},
-            {$query_cache.counters.uncacheable} {'not cacheable'|i18n( 'design/admin/setup/info' )},
-            {$query_cache.counters.writes} {'writes'|i18n( 'design/admin/setup/info' )}
+            {'This server since %date: %requests requests, %hits hits, %misses misses'|i18n( 'design/admin/setup/info',, hash( '%date', cond( $query_cache.counters.since, $query_cache.counters.since|l10n( shortdatetime ), '-' ), '%requests', concat( '<strong>', $query_cache.counters.requests, '</strong>' ), '%hits', concat( '<strong>', $query_cache.counters.hits, '</strong>' ), '%misses', concat( '<strong>', $query_cache.counters.misses, '</strong>' ) ) )}{if $query_cache.counters.hit_rate|ne( '' )} ({'%rate hit rate'|i18n( 'design/admin/setup/info',, hash( '%rate', concat( '<strong>', $query_cache.counters.hit_rate, '&nbsp;%</strong>' ) ) )}){/if},
+            {'%uncacheable not cacheable, %writes writes'|i18n( 'design/admin/setup/info',, hash( '%uncacheable', $query_cache.counters.uncacheable, '%writes', $query_cache.counters.writes ) )}
         </small></div>
         {/if}
         {if $query_cache.recent_writes}
@@ -570,12 +562,8 @@
     {if $sql_profile.mongo|not}
     {if $sql_profile.summary}
     <div><small>
-        {'Over the last %n profiled requests'|i18n( 'design/admin/setup/info', '', hash( '%n', $sql_profile.summary.requests ) )}:
-        <strong>{$sql_profile.summary.statements}</strong> {'statements'|i18n( 'design/admin/setup/info' )},
-        <strong>{$sql_profile.summary.repeats}</strong> {'exact repeats'|i18n( 'design/admin/setup/info' )} ({$sql_profile.summary.repeat_pct}&nbsp;%),
-        <strong>{$sql_profile.summary.db_ms}&nbsp;ms</strong> {'in the database'|i18n( 'design/admin/setup/info' )}
-        &middot; {'a per-request memo would save'|i18n( 'design/admin/setup/info' )} <strong>{$sql_profile.summary.memo_ms}&nbsp;ms</strong>,
-        {'a shared query cache about'|i18n( 'design/admin/setup/info' )} <strong>{$sql_profile.summary.shared_ms}&nbsp;ms</strong>
+        {'Over the last %n profiled requests: %statements statements, %repeats exact repeats (%repeat_pct), %db_ms in the database'|i18n( 'design/admin/setup/info',, hash( '%n', $sql_profile.summary.requests, '%statements', concat( '<strong>', $sql_profile.summary.statements, '</strong>' ), '%repeats', concat( '<strong>', $sql_profile.summary.repeats, '</strong>' ), '%repeat_pct', concat( $sql_profile.summary.repeat_pct, '&nbsp;%' ), '%db_ms', concat( '<strong>', $sql_profile.summary.db_ms, '&nbsp;ms</strong>' ) ) )}
+        &middot; {'a per-request memo would save %memo_ms, a shared query cache about %shared_ms'|i18n( 'design/admin/setup/info',, hash( '%memo_ms', concat( '<strong>', $sql_profile.summary.memo_ms, '&nbsp;ms</strong>' ), '%shared_ms', concat( '<strong>', $sql_profile.summary.shared_ms, '&nbsp;ms</strong>' ) ) )}
     </small></div>
 
     <table class="list" cellspacing="0" style="margin-top: 0.4em;">
@@ -642,7 +630,7 @@
                 &mdash; {'only responses that bring their own max-age are kept; Exponential sends no-cache, so its pages are not'|i18n( 'design/admin/setup/info' )}
             {/if}
         {else}
-            {'disabled'|i18n( 'design/admin/setup/info' )} &mdash; {'every request is rendered'|i18n( 'design/admin/setup/info' )}
+            {'disabled &mdash; every request is rendered'|i18n( 'design/admin/setup/info' )}
         {/if}
     </div>
 
@@ -650,9 +638,7 @@
     <div class="block">
         <label>{'Hits'|i18n( 'design/admin/setup/info' )}:</label>
         {if $response_cache.stats_available}
-            {$response_cache.hits} {'hits'|i18n( 'design/admin/setup/info' )},
-            {$response_cache.misses} {'misses'|i18n( 'design/admin/setup/info' )},
-            {$response_cache.hit_rate}&nbsp;% {'since the server started'|i18n( 'design/admin/setup/info' )}
+            {'%hits hits, %misses misses, %rate since the server started'|i18n( 'design/admin/setup/info',, hash( '%hits', $response_cache.hits, '%misses', $response_cache.misses, '%rate', concat( $response_cache.hit_rate, '&nbsp;%' ) ) )}
         {else}
             {'not available'|i18n( 'design/admin/setup/info' )}
         {/if}
@@ -669,11 +655,7 @@
         {elseif $response_cache.apcu_configured|not}
             {'available, but switched off for the response cache'|i18n( 'design/admin/setup/info' )}
         {else}
-            {$response_cache.apcu_entries} {'pages'|i18n( 'design/admin/setup/info' )},
-            {$response_cache.apcu_bytes|si( byte )}
-            ({'entries up to'|i18n( 'design/admin/setup/info' )} {$response_cache.apcu_max_size|si( byte )};
-            {'segment'|i18n( 'design/admin/setup/info' )} {$response_cache.apcu_segment|si( byte )},
-            {$response_cache.apcu_free|si( byte )} {'free'|i18n( 'design/admin/setup/info' )})
+            {'%pages pages, %size (entries up to %max_size; segment %segment, %free free)'|i18n( 'design/admin/setup/info',, hash( '%pages', $response_cache.apcu_entries, '%size', $response_cache.apcu_bytes|si( byte ), '%max_size', $response_cache.apcu_max_size|si( byte ), '%segment', $response_cache.apcu_segment|si( byte ), '%free', $response_cache.apcu_free|si( byte ) ) )}
         {/if}
     </div>
 
@@ -682,10 +664,9 @@
         {if $response_cache.file_readable|not}
             {'the directory does not exist yet or cannot be read'|i18n( 'design/admin/setup/info' )}
         {else}
-            {if $response_cache.file_counted_all|not}{'at least'|i18n( 'design/admin/setup/info' )} {/if}{$response_cache.file_entries} {'files'|i18n( 'design/admin/setup/info' )},
-            {$response_cache.file_bytes|si( byte )}
+            {if $response_cache.file_counted_all|not}{'at least %files files, %size'|i18n( 'design/admin/setup/info',, hash( '%files', $response_cache.file_entries, '%size', $response_cache.file_bytes|si( byte ) ) )}{else}{'%files files, %size'|i18n( 'design/admin/setup/info',, hash( '%files', $response_cache.file_entries, '%size', $response_cache.file_bytes|si( byte ) ) )}{/if}
         {/if}
-        <br /><small><code>{$response_cache.dir|wash}</code>{if $response_cache.dir_mode} &mdash; {'directories'|i18n( 'design/admin/setup/info' )} {$response_cache.dir_mode|wash}{/if}{if $response_cache.file_mode}, {'files'|i18n( 'design/admin/setup/info' )} {$response_cache.file_mode|wash}{/if}</small>
+        <br /><small><code>{$response_cache.dir|wash}</code>{if $response_cache.dir_mode} &mdash; {'directories %mode'|i18n( 'design/admin/setup/info',, hash( '%mode', $response_cache.dir_mode|wash ) )}{/if}{if $response_cache.file_mode}, {'files %mode'|i18n( 'design/admin/setup/info',, hash( '%mode', $response_cache.file_mode|wash ) )}{/if}</small>
     </div>
 
     <div class="block">
@@ -719,7 +700,7 @@
 <td>
     <div class="block">
         <label>{'CPU'|i18n( 'design/admin/setup/info', 'CPU info' )}:</label>
-        {$system_info.cpu_type} {if $system_info.cpu_speed|is_null|not}{$system_info.cpu_speed} MHz{/if}
+        {$system_info.cpu_type} {if $system_info.cpu_speed|is_null|not}{'%speed MHz'|i18n( 'design/admin/setup/info',, hash( '%speed', $system_info.cpu_speed ) )}{/if}
     </div>
 
     <div class="block">
