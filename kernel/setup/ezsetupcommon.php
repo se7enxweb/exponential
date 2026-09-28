@@ -156,7 +156,10 @@ function eZSetupLanguageList( &$languageList, &$defaultLanguage, &$defaultExtraL
     // This alias array must be filled in with known names.
     // The key is the value from the locale INI file (HTTP group)
     // and the value is the HTTP alias.
-    $httpAliases = array( 'no-bokmaal' => 'nb',
+    // The Norwegian locales say nb-NO and nn-NO (BCP 47); a browser asking for
+    // the macrolanguage "no" still means Bokmål.
+    $httpAliases = array( 'nb-no' => 'no',
+                          'no-bokmaal' => 'nb',
                           'no-nynorsk' => 'nn',
                           'ru-ru' => 'ru' );
 
