@@ -1443,7 +1443,7 @@ Do you want more information about this issue?</source>
         <translation>検索する言葉を入力して下さい。例: 探しているコンテンツの名前。</translation>
     </message>
     <message>
-        <source>Lets you limit the content type your searching for, by limiting the eZ Publish content classes that are returned in the search result.</source>
+        <source>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</source>
         <translation>検索対象となるコンテンツタイプを制限します。指定のコンテントクラスのみを検索します。</translation>
     </message>
     <message>
@@ -1451,15 +1451,15 @@ Do you want more information about this issue?</source>
         <translation>ローカルマシンからファイルをアップロードする。</translation>
     </message>
     <message>
-        <source>Search for content already in eZ Publish.</source>
-        <translation>eZ Publish内のコンテンツを検索する。</translation>
+        <source>Search for content already in Exponential.</source>
+        <translation>Exponential内のコンテンツを検索する。</translation>
     </message>
     <message>
-        <source>Browse the content tree in eZ Publish.</source>
-        <translation>eZ Publishのコンテンツツリーをブラウズする。</translation>
+        <source>Browse the content tree in Exponential.</source>
+        <translation>Exponentialのコンテンツツリーをブラウズする。</translation>
     </message>
     <message>
-        <source>Select or browse content among your personal eZ Publish bookmarks.</source>
+        <source>Select or browse content among your personal Exponential bookmarks.</source>
         <translation>ブックマークからコンテンツを選択、ブラウズする。</translation>
     </message>
     <message>
@@ -1471,7 +1471,7 @@ Do you want more information about this issue?</source>
         <translation>ローカルマシンからアップロードするファイルを選択する。</translation>
     </message>
     <message>
-        <source>Lets you specify where in eZ Publish to store the uploaded object.</source>
+        <source>Lets you specify where in Exponential to store the uploaded object.</source>
         <translation>アップロードするオブジェクトをどこに配置するかを指定します。</translation>
     </message>
     <message>

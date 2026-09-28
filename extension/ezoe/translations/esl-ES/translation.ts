@@ -1484,16 +1484,16 @@ Do you want more information about this issue?</source>
         <translation>Enviar archivo desde tu máquina.</translation>
     </message>
     <message>
-        <source>Search for content already in eZ Publish.</source>
-        <translation>Buscar contenido ya presente en eZ Publish.</translation>
+        <source>Search for content already in Exponential.</source>
+        <translation>Buscar contenido ya presente en Exponential.</translation>
     </message>
     <message>
-        <source>Browse the content tree in eZ Publish.</source>
-        <translation>Explorar el árbol de contenido en eZ Publish.</translation>
+        <source>Browse the content tree in Exponential.</source>
+        <translation>Explorar el árbol de contenido en Exponential.</translation>
     </message>
     <message>
-        <source>Select or browse content among your personal eZ Publish bookmarks.</source>
-        <translation>Selecciona o explora el contenido entre tus marcadores eZ Publish personales.</translation>
+        <source>Select or browse content among your personal Exponential bookmarks.</source>
+        <translation>Selecciona o explora el contenido entre tus marcadores Exponential personales.</translation>
     </message>
     <message>
         <source>Name for the uploaded object, filename is used if none is specified.</source>
@@ -1504,8 +1504,8 @@ Do you want more information about this issue?</source>
         <translation>Escoge archivo para enviar desde tu máquina.</translation>
     </message>
     <message>
-        <source>Lets you specify where in eZ Publish to store the uploaded object.</source>
-        <translation>Permite especificar donde se guardará el objeto enviado dentro de la estructura de eZ Publish.</translation>
+        <source>Lets you specify where in Exponential to store the uploaded object.</source>
+        <translation>Permite especificar donde se guardará el objeto enviado dentro de la estructura de Exponential.</translation>
     </message>
     <message>
         <source>Alternative text for the image, lets internet clients know what kind of image this is without dowloading it or actually seeing it.</source>
@@ -1524,8 +1524,8 @@ Do you want more information about this issue?</source>
         <translation>Introduce la palabra por la que quieres buscar, por ejemplo el nombre del contenido que estás buscando.</translation>
     </message>
     <message>
-        <source>Lets you limit the content type your searching for, by limiting the eZ Publish content classes that are returned in the search result.</source>
-        <translation>Permite limitar el tipo de contenido que estás buscando, limitando las clases de contenido eZ Publish que son devueltas en los resultados de búsqueda.</translation>
+        <source>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</source>
+        <translation>Permite limitar el tipo de contenido que estás buscando, limitando las clases de contenido Exponential que son devueltas en los resultados de búsqueda.</translation>
     </message>
     <message>
         <source>Tags, aka Keywords are a comma separated list of words thats categorizes the content.</source>

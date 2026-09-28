@@ -1503,16 +1503,16 @@ Vil du vite mer om dette?</translation>
         <translation>Last opp fil fra din lokale maskin.</translation>
     </message>
     <message>
-        <source>Search for content already in eZ Publish.</source>
-        <translation>Søk etter innhold som allerede ekisterer i eZ Publish.</translation>
+        <source>Search for content already in Exponential.</source>
+        <translation>Søk etter innhold som allerede ekisterer i Exponential.</translation>
     </message>
     <message>
-        <source>Browse the content tree in eZ Publish.</source>
-        <translation>Naviger deg igjennom innholds treet til eZ Publish</translation>
+        <source>Browse the content tree in Exponential.</source>
+        <translation>Naviger deg igjennom innholds treet til Exponential</translation>
     </message>
     <message>
-        <source>Select or browse content among your personal eZ Publish bookmarks.</source>
-        <translation>Velg eller naviger deg igjennom dine personlige eZ Publish bokmerker.</translation>
+        <source>Select or browse content among your personal Exponential bookmarks.</source>
+        <translation>Velg eller naviger deg igjennom dine personlige Exponential bokmerker.</translation>
     </message>
     <message>
         <source>Name for the uploaded object, filename is used if none is specified.</source>
@@ -1523,8 +1523,8 @@ Vil du vite mer om dette?</translation>
         <translation>Velg fil du vil laste opp fra din lokale maskin.</translation>
     </message>
     <message>
-        <source>Lets you specify where in eZ Publish to store the uploaded object.</source>
-        <translation>Lar deg velge hvor i eZ Publish du vil lagre filen du laster opp.</translation>
+        <source>Lets you specify where in Exponential to store the uploaded object.</source>
+        <translation>Lar deg velge hvor i Exponential du vil lagre filen du laster opp.</translation>
     </message>
     <message>
         <source>Alternative text for the image, lets internet clients know what kind of image this is without dowloading it or actually seeing it.</source>
@@ -1543,8 +1543,8 @@ Vil du vite mer om dette?</translation>
         <translation>Skriv inn ordet du ønsker å søke etter her, foreksempel navnet på innholdet du leter etter.</translation>
     </message>
     <message>
-        <source>Lets you limit the content type your searching for, by limiting the eZ Publish content classes that are returned in the search result.</source>
-        <translation>Lar deg begrense innholds typene du søker etter, ved å spesifisere eZ Publish innholds klassene som returneres i søke resultatet.</translation>
+        <source>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</source>
+        <translation>Lar deg begrense innholds typene du søker etter, ved å spesifisere Exponential innholds klassene som returneres i søke resultatet.</translation>
     </message>
     <message>
         <source>Class are often used to give different design or appearance, either by using a different template, style or both.</source>

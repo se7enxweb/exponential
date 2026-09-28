@@ -15587,7 +15587,7 @@ your account.</source>
     </message>
     <message>
         <source>Powered by %linkStartTag Exponential&amp;reg; open source content management system %linkEndTag and development framework.</source>
-        <translation>基于%linkStartTageZ Publish&amp;reg;开源内容管理系统%linkEndTag及开发框架。</translation>
+        <translation>基于%linkStartTagExponential&amp;reg;开源内容管理系统%linkEndTag及开发框架。</translation>
     </message>
     <message>
         <source>Anonymous users are not allowed to vote in this poll. Please log in.</source>

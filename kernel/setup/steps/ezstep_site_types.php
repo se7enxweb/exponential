@@ -345,7 +345,7 @@ class eZStepSiteTypes extends eZStepInstaller
         else
         {
             $this->ErrorMsg = ezpI18n::tr( 'design/standard/setup/init',
-                                  'Uploaded file is not an eZ Publish package' );
+                                  'Uploaded file is not an Exponential package' );
         }
     }
 

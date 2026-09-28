@@ -1481,7 +1481,7 @@ Desno</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Lets you limit the content type your searching for, by limiting the eZ Publish content classes that are returned in the search result.</source>
+        <source>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1493,7 +1493,7 @@ Desno</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Lets you specify where in eZ Publish to store the uploaded object.</source>
+        <source>Lets you specify where in Exponential to store the uploaded object.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1501,15 +1501,15 @@ Desno</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Search for content already in eZ Publish.</source>
+        <source>Search for content already in Exponential.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Browse the content tree in eZ Publish.</source>
+        <source>Browse the content tree in Exponential.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select or browse content among your personal eZ Publish bookmarks.</source>
+        <source>Select or browse content among your personal Exponential bookmarks.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

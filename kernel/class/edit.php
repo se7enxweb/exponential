@@ -667,7 +667,7 @@ if ( $contentClassHasInput )
                                            $attribute->attribute( 'data_type_string' )."\n".
                                            ezpI18n::tr( 'kernel/class', 'Editing this content class may cause data corruption in your system.' ).'<br>'.
                                            ezpI18n::tr( 'kernel/class', 'Press "Cancel" to safely exit this operation.').'<br>'.
-                                           ezpI18n::tr( 'kernel/class', 'Please contact your eZ Publish administrator to solve this problem.').'<br>' ),
+                                           ezpI18n::tr( 'kernel/class', 'Please contact your Exponential administrator to solve this problem.').'<br>' ),
                        'item' => $attribute->attribute( 'data_type_string' ),
                        'identifier' => $attribute->attribute( 'data_type_string' ),
                        'id' => $key );

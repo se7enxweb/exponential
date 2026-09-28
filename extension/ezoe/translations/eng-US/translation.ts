@@ -1456,15 +1456,15 @@ Do you want more information about this issue?</translation>
         <translation>Upload file from your local machine.</translation>
     </message>
     <message>
-        <source>Search for content already in eZ Publish.</source>
+        <source>Search for content already in Exponential.</source>
         <translation>Search for content already in Exponential.</translation>
     </message>
     <message>
-        <source>Browse the content tree in eZ Publish.</source>
+        <source>Browse the content tree in Exponential.</source>
         <translation>Browse the content tree in Exponential.</translation>
     </message>
     <message>
-        <source>Select or browse content among your personal eZ Publish bookmarks.</source>
+        <source>Select or browse content among your personal Exponential bookmarks.</source>
         <translation>Select or browse content among your personal Exponential bookmarks.</translation>
     </message>
     <message>
@@ -1476,7 +1476,7 @@ Do you want more information about this issue?</translation>
         <translation>Choose file to upload from your local machine.</translation>
     </message>
     <message>
-        <source>Lets you specify where in eZ Publish to store the uploaded object.</source>
+        <source>Lets you specify where in Exponential to store the uploaded object.</source>
         <translation>Lets you specify where in Exponential to store the uploaded object.</translation>
     </message>
     <message>
@@ -1496,7 +1496,7 @@ Do you want more information about this issue?</translation>
         <translation>Enter the word you want to search for here, for instance the name of the content you are looking for.</translation>
     </message>
     <message>
-        <source>Lets you limit the content type your searching for, by limiting the eZ Publish content classes that are returned in the search result.</source>
+        <source>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</source>
         <translation>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</translation>
     </message>
     <message>

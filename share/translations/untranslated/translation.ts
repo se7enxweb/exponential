@@ -26168,7 +26168,7 @@ How do you access it?&lt;/p&gt;
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; function is not available in your database, you cannot run eZ Publish without this. See the documentation for more information.</source>
+        <source>The &apos;digest&apos; function is not available in your database, you cannot run Exponential without this. See the documentation for more information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -26177,7 +26177,7 @@ See the requirements page for more information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Uploaded file is not an eZ Publish package</source>
+        <source>Uploaded file is not an Exponential package</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -29766,7 +29766,7 @@ your account.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please contact your eZ Publish administrator to solve this problem.</source>
+        <source>Please contact your Exponential administrator to solve this problem.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -31714,7 +31714,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>File %1 does not exist. You should copy it from the recent eZ Publish distribution.</source>
+        <source>File %1 does not exist. You should copy it from the recent Exponential distribution.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

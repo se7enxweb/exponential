@@ -15,7 +15,7 @@
 <tr id="embedlistsrcrow">
     <td class="column1"><label for="location">{'Location'|i18n('design/standard/ezoe')}</label></td>
     <td colspan="2" id="embedlistsrccontainer">
-      <select name="location" id="location" title="{'Lets you specify where in eZ Publish to store the uploaded object.'|i18n('design/standard/ezoe/wai')}">
+      <select name="location" id="location" title="{'Lets you specify where in Exponential to store the uploaded object.'|i18n('design/standard/ezoe/wai')}">
         <option value="auto">{'Automatic'|i18n('design/standard/ezoe')}</option>
 
         {if $object.published}

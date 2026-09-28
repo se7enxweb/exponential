@@ -21,7 +21,7 @@ if ( $Module->isCurrentAction( 'MD5Check' ) )
         $tpl->setVariable( 'md5_result', 'failed' );
         $tpl->setVariable( 'failure_reason',
                            ezpI18n::tr( 'kernel/setup', 'File %1 does not exist. '.
-                                    'You should copy it from the recent eZ Publish distribution.',
+                                    'You should copy it from the recent Exponential distribution.',
                                     null, array( eZMD5::CHECK_SUM_LIST_FILE ) ) );
     }
     else

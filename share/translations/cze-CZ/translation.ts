@@ -20499,7 +20499,7 @@ Abyste změnili prohlížecí seznam, klikněte na umístění jmen.
     </message>
     <message>
         <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Web server and Exponential configuration.</source>
-        <translation>Použijte toto pole pro vložení základní URL Vaší stránky. Je dále užíváno pro generování URL k ostatním stránkám a cest k objektům. URL stránky závisí na Vašem webserveru a konfiguraci eZ Publisheru.</translation>
+        <translation>Použijte toto pole pro vložení základní URL Vaší stránky. Je dále užíváno pro generování URL k ostatním stránkám a cest k objektům. URL stránky závisí na Vašem webserveru a konfiguraci Exponentialu.</translation>
     </message>
     <message>
         <source>Use this drop-down to select the maximum number of objects included in the RSS feed.</source>
@@ -22784,7 +22784,7 @@ Instaluje se tlačítko Obnovit</translation>
     </message>
     <message>
         <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential</source>
-        <translation>Pokud chcete, můžete nechat Setup přidat nějaká demo data do Vaší databáze. Tato demodata Vám předvedou možnosti eZ Publisheru</translation>
+        <translation>Pokud chcete, můžete nechat Setup přidat nějaká demo data do Vaší databáze. Tato demodata Vám předvedou možnosti Exponentialu</translation>
     </message>
     <message>
         <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
@@ -22800,7 +22800,7 @@ Instaluje se tlačítko Obnovit</translation>
     </message>
     <message>
         <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
-        <translation>PostgreSQL nebo MySQL &gt;= 4.1 jsou požadované pro podporu unicode v eZ Publisheru. </translation>
+        <translation>PostgreSQL nebo MySQL &gt;= 4.1 jsou požadované pro podporu unicode v Exponentialu. </translation>
     </message>
     <message>
         <source>More information about Exponential and unicode support can be found %1.</source>
@@ -23677,7 +23677,7 @@ You should replace these files with appropriate directories and give necessary p
 Without this the setup cannot finish and parts of Exponential will fail.</source>
         <translation>Exponential nemůže zřídit některé důležité adresáře, protože jsou zde umístěny soubory s těmi samými názvy namísto adresářů.
 Musíte nahradit tyto soubory odpovídajícími adresáři a nastavit jim potřebná práva.
-Bez tohoto opatření Setup nemůže dokončit  a částí eZ Publisheru selžou. </translation>
+Bez tohoto opatření Setup nemůže dokončit  a částí Exponentialu selžou. </translation>
     </message>
     <message>
         <source>Missing DOM extension</source>
@@ -23693,7 +23693,7 @@ Bez tohoto opatření Setup nemůže dokončit  a částí eZ Publisheru selžou
     </message>
     <message>
         <source>Insufficient execution time allowed to install Exponential</source>
-        <translation>Nedostatečný čas povolený pro instalaci eZ_publisheru</translation>
+        <translation>Nedostatečný čas povolený pro instalaci Exponentialu</translation>
     </message>
     <message>
         <source>Exponential will not work correctly with a execution time limit of %1.</source>
@@ -23705,7 +23705,7 @@ Bez tohoto opatření Setup nemůže dokončit  a částí eZ Publisheru selžou
     </message>
     <message>
         <source>File uploading is not enabled which means that it&apos;s impossible for Exponential to handle file uploading. All other parts of Exponential will still work fine but it&apos;s recommended to enable file uploads.</source>
-        <translation>Uploadování souborů není zapnuto. To znamená, že Exponential nebude moci pracovat se souborovým uploadem. Všechny ostatní části eZ Publisheru budou pracovat normálně, ale přesto doporučujeme zapnout upload souborů.</translation>
+        <translation>Uploadování souborů není zapnuto. To znamená, že Exponential nebude moci pracovat se souborovým uploadem. Všechny ostatní části Exponentialu budou pracovat normálně, ale přesto doporučujeme zapnout upload souborů.</translation>
     </message>
     <message>
         <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to Exponential.</source>

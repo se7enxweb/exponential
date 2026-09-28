@@ -1480,7 +1480,7 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
         <translation>Entrez le terme à rechercher, par exemple le nom d&apos;un contenu.</translation>
     </message>
     <message>
-        <source>Lets you limit the content type your searching for, by limiting the eZ Publish content classes that are returned in the search result.</source>
+        <source>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</source>
         <translation>Permet de limiter les types de contenus à chercher en limitant les classes de contenus possibles.</translation>
     </message>
     <message>
@@ -1492,24 +1492,24 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
         <translation>Choisissez un fichier à télécharger depuis votre machine.</translation>
     </message>
     <message>
-        <source>Lets you specify where in eZ Publish to store the uploaded object.</source>
-        <translation>Permet d&apos;indiquer où stocker l&apos;objet téléchargé dans eZ Publish.</translation>
+        <source>Lets you specify where in Exponential to store the uploaded object.</source>
+        <translation>Permet d&apos;indiquer où stocker l&apos;objet téléchargé dans Exponential.</translation>
     </message>
     <message>
         <source>Upload file from your local machine.</source>
         <translation>Télécharger un fichier depuis votre machine.</translation>
     </message>
     <message>
-        <source>Search for content already in eZ Publish.</source>
-        <translation>Chercher dans le contenu existant dans eZ Publish.</translation>
+        <source>Search for content already in Exponential.</source>
+        <translation>Chercher dans le contenu existant dans Exponential.</translation>
     </message>
     <message>
-        <source>Browse the content tree in eZ Publish.</source>
-        <translation>Parcourir l&apos;arborescence d&apos;eZ Publish.</translation>
+        <source>Browse the content tree in Exponential.</source>
+        <translation>Parcourir l&apos;arborescence d&apos;Exponential.</translation>
     </message>
     <message>
-        <source>Select or browse content among your personal eZ Publish bookmarks.</source>
-        <translation>Sélectionner ou parcourir les contenus parmis vos signets eZ Publish.</translation>
+        <source>Select or browse content among your personal Exponential bookmarks.</source>
+        <translation>Sélectionner ou parcourir les contenus parmis vos signets Exponential.</translation>
     </message>
     <message>
         <source>Description to the file your uploading, so internet clients can read more about it before they decide to download it.</source>

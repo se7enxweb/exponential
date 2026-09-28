@@ -1480,24 +1480,24 @@ Vols rebre més informació al respecte?</translation>
         <translation>Entra la paraula que vols buscar, per exemple el nom del contingut que estàs cercant.</translation>
     </message>
     <message>
-        <source>Lets you limit the content type your searching for, by limiting the eZ Publish content classes that are returned in the search result.</source>
-        <translation>Permet limitar el tipus de contingut que estàs cercant, limitant les classes de contingut eZ Publish que seràn retornades als resultats.</translation>
+        <source>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</source>
+        <translation>Permet limitar el tipus de contingut que estàs cercant, limitant les classes de contingut Exponential que seràn retornades als resultats.</translation>
     </message>
     <message>
         <source>Upload file from your local machine.</source>
         <translation>Pujar arxiu des de la teva màquina.</translation>
     </message>
     <message>
-        <source>Search for content already in eZ Publish.</source>
-        <translation>Cerca per contingut que ja hi és al eZ Publish.</translation>
+        <source>Search for content already in Exponential.</source>
+        <translation>Cerca per contingut que ja hi és al Exponential.</translation>
     </message>
     <message>
-        <source>Browse the content tree in eZ Publish.</source>
-        <translation>Explorar l&apos;arbre de contingut en eZ Publish.</translation>
+        <source>Browse the content tree in Exponential.</source>
+        <translation>Explorar l&apos;arbre de contingut en Exponential.</translation>
     </message>
     <message>
-        <source>Select or browse content among your personal eZ Publish bookmarks.</source>
-        <translation>Selecciona o explora el contingut entre els teus marcadors personals eZ Publish.</translation>
+        <source>Select or browse content among your personal Exponential bookmarks.</source>
+        <translation>Selecciona o explora el contingut entre els teus marcadors personals Exponential.</translation>
     </message>
     <message>
         <source>Name for the uploaded object, filename is used if none is specified.</source>
@@ -1508,8 +1508,8 @@ Vols rebre més informació al respecte?</translation>
         <translation>Tria arxiu per pujar de la teva màquina local.</translation>
     </message>
     <message>
-        <source>Lets you specify where in eZ Publish to store the uploaded object.</source>
-        <translation>Permet especificar on s&apos;emmagatzemarà l&apos;objecte pujat a l&apos;eZ Publish.</translation>
+        <source>Lets you specify where in Exponential to store the uploaded object.</source>
+        <translation>Permet especificar on s&apos;emmagatzemarà l&apos;objecte pujat a l&apos;Exponential.</translation>
     </message>
     <message>
         <source>Alternative text for the image, lets internet clients know what kind of image this is without dowloading it or actually seeing it.</source>

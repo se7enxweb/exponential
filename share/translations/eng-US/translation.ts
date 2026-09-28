@@ -26285,7 +26285,7 @@ How do you access it?&lt;/p&gt;
         <translation>The SQLite database file %file could not be opened. See var/log/setup.log and var/log/error.log for the reason.</translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; function is not available in your database, you cannot run eZ Publish without this. See the documentation for more information.</source>
+        <source>The &apos;digest&apos; function is not available in your database, you cannot run Exponential without this. See the documentation for more information.</source>
         <translation>The &apos;digest&apos; function is not available in your database, you cannot run Exponential without this. See the documentation for more information.</translation>
     </message>
     <message>
@@ -26295,7 +26295,7 @@ See the requirements page for more information.</source>
 See the requirements page for more information.</translation>
     </message>
     <message>
-        <source>Uploaded file is not an eZ Publish package</source>
+        <source>Uploaded file is not an Exponential package</source>
         <translation>Uploaded file is not an Exponential package</translation>
     </message>
     <message>
@@ -29908,7 +29908,7 @@ your account.</translation>
         <translation>Copy of %class_name</translation>
     </message>
     <message>
-        <source>Please contact your eZ Publish administrator to solve this problem.</source>
+        <source>Please contact your Exponential administrator to solve this problem.</source>
         <translation>Please contact your Exponential administrator to solve this problem.</translation>
     </message>
 </context>
@@ -31858,7 +31858,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Settings extension wizard</translation>
     </message>
     <message>
-        <source>File %1 does not exist. You should copy it from the recent eZ Publish distribution.</source>
+        <source>File %1 does not exist. You should copy it from the recent Exponential distribution.</source>
         <translation>File %1 does not exist. You should copy it from the recent Exponential distribution.</translation>
     </message>
     <message>

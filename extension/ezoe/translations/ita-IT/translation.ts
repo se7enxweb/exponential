@@ -1504,16 +1504,16 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
         <translation>Carica il file dal tuo computer locale.</translation>
     </message>
     <message>
-        <source>Search for content already in eZ Publish.</source>
-        <translation>Cerca contenuti già presenti su eZ Publish.</translation>
+        <source>Search for content already in Exponential.</source>
+        <translation>Cerca contenuti già presenti su Exponential.</translation>
     </message>
     <message>
-        <source>Browse the content tree in eZ Publish.</source>
-        <translation>Naviga l&apos;albero dei contenuti di eZ Publish.</translation>
+        <source>Browse the content tree in Exponential.</source>
+        <translation>Naviga l&apos;albero dei contenuti di Exponential.</translation>
     </message>
     <message>
-        <source>Select or browse content among your personal eZ Publish bookmarks.</source>
-        <translation>Seleziona o naviga in cerca di contenuti tra i tuoi personali preferiti su eZ Publish.</translation>
+        <source>Select or browse content among your personal Exponential bookmarks.</source>
+        <translation>Seleziona o naviga in cerca di contenuti tra i tuoi personali preferiti su Exponential.</translation>
     </message>
     <message>
         <source>Name for the uploaded object, filename is used if none is specified.</source>
@@ -1524,8 +1524,8 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
         <translation>Scegli il file da caricare dal tuo computer locale.</translation>
     </message>
     <message>
-        <source>Lets you specify where in eZ Publish to store the uploaded object.</source>
-        <translation>Ti permette di specificare dove registrare l&apos;oggetto caricato in eZ Publish.</translation>
+        <source>Lets you specify where in Exponential to store the uploaded object.</source>
+        <translation>Ti permette di specificare dove registrare l&apos;oggetto caricato in Exponential.</translation>
     </message>
     <message>
         <source>Alternative text for the image, lets internet clients know what kind of image this is without dowloading it or actually seeing it.</source>
@@ -1544,8 +1544,8 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
         <translation>Inserisci qui la parola che vuoi cercare, per esempio il nome del contenuto che stai cercando.</translation>
     </message>
     <message>
-        <source>Lets you limit the content type your searching for, by limiting the eZ Publish content classes that are returned in the search result.</source>
-        <translation>Ti permette di limitare il tipo di contenuto che stai cercando, limitando le classi contenuto di eZ Publish che vengono restituite dal risultato della ricerca.</translation>
+        <source>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</source>
+        <translation>Ti permette di limitare il tipo di contenuto che stai cercando, limitando le classi contenuto di Exponential che vengono restituite dal risultato della ricerca.</translation>
     </message>
     <message>
         <source>Class are often used to give different design or appearance, either by using a different template, style or both.</source>

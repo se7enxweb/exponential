@@ -8907,7 +8907,7 @@ Rapid Application Development (sovelluksen nopea tuottaminen)</translation>
     </message>
     <message>
         <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your web server and Exponential configuration.</source>
-        <translation>Käytä tätä kenttää sivusi kanta-URL-osoitteen lisäämiseen. Sitä käytetään tuottamaan viennin URL-osoitteet, jotka luo sivun URL (esim. &quot;http://www.example.com/index.php&quot;) ja objektiin johtavan polun (esim.  &quot;/artikkelit/minun_artikkelini&quot;). Sivun URL riippuu web-palvelimestasi ja eZ Publishin asetuksista.</translation>
+        <translation>Käytä tätä kenttää sivusi kanta-URL-osoitteen lisäämiseen. Sitä käytetään tuottamaan viennin URL-osoitteet, jotka luo sivun URL (esim. &quot;http://www.example.com/index.php&quot;) ja objektiin johtavan polun (esim.  &quot;/artikkelit/minun_artikkelini&quot;). Sivun URL riippuu web-palvelimestasi ja Exponentialin asetuksista.</translation>
     </message>
     <message>
         <source>Click this button to select the source node for the RSS export source. Objects of the type selected in the drop-down below published as sub items of the selected node will be included in the RSS export.</source>
@@ -9776,7 +9776,7 @@ Rapid Application Development (sovelluksen nopea tuottaminen)</translation>
     </message>
     <message>
         <source>Before upgrading Exponential to a newer version, it is important to check that the current installation is ready for upgrading.</source>
-        <translation>Ennen eZ Publishin päivittämistä uuteen versioon on tärkeää tarkistaa, että nykyinen asennus on valmis päivitettäväksi.</translation>
+        <translation>Ennen Exponentialin päivittämistä uuteen versioon on tärkeää tarkistaa, että nykyinen asennus on valmis päivitettäväksi.</translation>
     </message>
     <message>
         <source>Remember to make a backup of the Exponential directory and the database before you upgrade.</source>
@@ -10301,7 +10301,7 @@ Tietokannan uudelleenyrityksien määrä</translation>
     </message>
     <message>
         <source>The rapid application development (RAD) tools make the creation of new/extended functionality for Exponential easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
-        <translation>Sovelluksen nopean tuotannon (RAD) työkalut tekevät eZ Publishille tarkoitettujen uusien/laajennettujen toimintojen tekemisen helpommaksi. Tällä hetkellä  saatavilla on kaksi RAD-työkalua: mallioperaattorin apuohjelma ja tietotyypin apuohjelma. Mallioperaattorin apuohjelma luo kehyksen (PHP-koodi) uudelle mallioperaattorille. Tietotyyppiapuohjelma luo kehyksen (PHP-koodi) uudelle tietotyypille.</translation>
+        <translation>Sovelluksen nopean tuotannon (RAD) työkalut tekevät Exponentialille tarkoitettujen uusien/laajennettujen toimintojen tekemisen helpommaksi. Tällä hetkellä  saatavilla on kaksi RAD-työkalua: mallioperaattorin apuohjelma ja tietotyypin apuohjelma. Mallioperaattorin apuohjelma luo kehyksen (PHP-koodi) uudelle mallioperaattorille. Tietotyyppiapuohjelma luo kehyksen (PHP-koodi) uudelle tietotyypille.</translation>
     </message>
     <message>
         <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, Exponential will generate a PHP framework for a new operator (which will be available for download).</source>
@@ -20013,13 +20013,13 @@ Voit myös poistaa paketin ilman asennuksen poistamista pakettilistasta.</transl
         <source>The Reference Documentation for Exponential consists of multiple sections which
 each have a different view on the documentation. The sections can be accessed at
 menu on the top.</source>
-        <translation>eZ Publishin viitedokumentaatio koostuu useista osa-alueista, joista
+        <translation>Exponentialin viitedokumentaatio koostuu useista osa-alueista, joista
 jokaisella on erilainen näkökulma dokumentaatioon. Pääset osa-alueille käyttämällä
 ylävalikkoa.</translation>
     </message>
     <message>
         <source>The documentation will give an overview of the API of Exponential.</source>
-        <translation>Dokumentaatio antaa yleisnäkymän eZ Publishin API:sta.</translation>
+        <translation>Dokumentaatio antaa yleisnäkymän Exponentialin API:sta.</translation>
     </message>
 </context>
 <context>
@@ -20504,7 +20504,7 @@ ylävalikkoa.</translation>
     </message>
     <message>
         <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Web server and Exponential configuration.</source>
-        <translation>Käytä tätä kenttää syöttääksesi sivusi perusURL-osoitteen. Sitä käytetään tuottamaan viennin URL-osoitteita, jotka luo sivun URL (esim. &quot;http://www.example.com/index.php&quot;) ja objektiin johtava polku (esim. &quot;/artikkelit/artikkelini&quot;). Sivun URL-osoite riippuu web-palvelimestasi ja eZ Publishin asetuksista.</translation>
+        <translation>Käytä tätä kenttää syöttääksesi sivusi perusURL-osoitteen. Sitä käytetään tuottamaan viennin URL-osoitteita, jotka luo sivun URL (esim. &quot;http://www.example.com/index.php&quot;) ja objektiin johtava polku (esim. &quot;/artikkelit/artikkelini&quot;). Sivun URL-osoite riippuu web-palvelimestasi ja Exponentialin asetuksista.</translation>
     </message>
     <message>
         <source>Category</source>
@@ -20705,7 +20705,7 @@ ylävalikkoa.</translation>
     </message>
     <message>
         <source>The Exponential Administration Interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
-        <translation>eZ Publishin hallintakäyttöliittymä on jaettu navigointiosiin. Tämä on yksi tapa ryhmittää eri sivuhallinnan alueet. Valitsenavigointi osa, joka tulee olla aktiivinen, kun tätä osaa selataan.</translation>
+        <translation>Exponentialin hallintakäyttöliittymä on jaettu navigointiosiin. Tämä on yksi tapa ryhmittää eri sivuhallinnan alueet. Valitsenavigointi osa, joka tulee olla aktiivinen, kun tätä osaa selataan.</translation>
     </message>
 </context>
 <context>
@@ -21432,7 +21432,7 @@ Käyttämällä %operatorname voit...</translation>
     </message>
     <message>
         <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for Exponential.</source>
-        <translation>Sovelluksen nopean tuotannon (RAD) työkalut auttavat sinun aloittaa helposti uuden toiminnon luomisen eZ Publishia varten.</translation>
+        <translation>Sovelluksen nopean tuotannon (RAD) työkalut auttavat sinun aloittaa helposti uuden toiminnon luomisen Exponentialia varten.</translation>
     </message>
     <message>
         <source>Warning: it is not safe to upgrade without checking the modifications done to the following files </source>
@@ -22731,7 +22731,7 @@ Nämä asetukset on mahdollista vaihtaa myöhemmin.</translation>
     </message>
     <message>
         <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential</source>
-        <translation>Halutessasi voit antaa asennuksen lisätä demotietoja tietokantaasi. Nämä demotiedot havainnollistavat hyvin eZ Publishin mahdollisuuksia</translation>
+        <translation>Halutessasi voit antaa asennuksen lisätä demotietoja tietokantaasi. Nämä demotiedot havainnollistavat hyvin Exponentialin mahdollisuuksia</translation>
     </message>
     <message>
         <source>It can take some time to initialize the database so please be patient and wait until the new page is finished.</source>
@@ -22743,11 +22743,11 @@ Nämä asetukset on mahdollista vaihtaa myöhemmin.</translation>
     </message>
     <message>
         <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
-        <translation>PostgreSQL tai MySQL &gt;= 4.1 vaaditaan eZ Publishin unicode-tukeen.</translation>
+        <translation>PostgreSQL tai MySQL &gt;= 4.1 vaaditaan Exponentialin unicode-tukeen.</translation>
     </message>
     <message>
         <source>More information about Exponential and unicode support can be found %1.</source>
-        <translation>Lisätietoja eZ Publishista ja unicode-tuesta löydät %1.</translation>
+        <translation>Lisätietoja Exponentialista ja unicode-tuesta löydät %1.</translation>
     </message>
     <message>
         <source>The database was successfully initialized. You are now ready for some post configuration of the site.</source>
@@ -22779,15 +22779,15 @@ Nämä asetukset on mahdollista vaihtaa myöhemmin.</translation>
     </message>
     <message>
         <source>Congratulations, Exponential should now run on your system.</source>
-        <translation>Onneksi olkoon, eZ Publishin tulisi nyt toimia koneellasi.</translation>
+        <translation>Onneksi olkoon, Exponentialin tulisi nyt toimia koneellasi.</translation>
     </message>
     <message>
         <source>If you need help with Exponential, you can go to %ezlink and get help in the forums.
   If you find a bug (error), please go to %buglink and report it.
   With your help we can fix the errors Exponential might have and implement new features.</source>
-        <translation>Jos tarvitset apua eZ Publishin kanssa, voit mennä osoitteeseen %ezlink ja saada apua foorumeilta.
+        <translation>Jos tarvitset apua Exponentialin kanssa, voit mennä osoitteeseen %ezlink ja saada apua foorumeilta.
   Jos löydät bugin (virheen) mene osoitteeseen %buglink ja reportoi se.
-  Sinun avullasi voimme korjata eZ Publishin mahdolliset virheet ja luoda uusia ominaisuuksia.</translation>
+  Sinun avullasi voimme korjata Exponentialin mahdolliset virheet ja luoda uusia ominaisuuksia.</translation>
     </message>
     <message>
         <source>Exponential bug reports</source>
@@ -22843,7 +22843,7 @@ Nämä asetukset on mahdollista vaihtaa myöhemmin.</translation>
     </message>
     <message>
         <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run Exponential in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
-        <translation>Sivusi ei toimi virtuaali-isäntätilassa. Tämä ei ole turvallista. eZ Publishin ajaminen virtuaali-isäntätilassa on suositeltua. Jos sinulla ei ole mahdollisuutta käyttää virtuaali-isäntätilaa, tulee sinun seurata allaolevia ohjeit .htaccess-tiedoston asennuksesta. .htaccess-tiedosto määrää web-palvelimen rajoittamaan pääsyn tiettyihin tiedostoihin.</translation>
+        <translation>Sivusi ei toimi virtuaali-isäntätilassa. Tämä ei ole turvallista. Exponentialin ajaminen virtuaali-isäntätilassa on suositeltua. Jos sinulla ei ole mahdollisuutta käyttää virtuaali-isäntätilaa, tulee sinun seurata allaolevia ohjeit .htaccess-tiedoston asennuksesta. .htaccess-tiedosto määrää web-palvelimen rajoittamaan pääsyn tiettyihin tiedostoihin.</translation>
     </message>
     <message>
         <source>If you have shell access, you can run the following commands.</source>
@@ -22978,7 +22978,7 @@ Tämä toiminto on myös käytettävissä myöhemmin Järjestelmänvalvojan käy
     </message>
     <message>
         <source>The &apos;digest&apos; function is not available in your database, you cannot run Exponential without this. See the documentation for more information.</source>
-        <translation type="unfinished">&apos;Kokoelma&apos;-toiminto ei ole käytettävissä tietokannassasi eikä voi suorittaa eZ Publishia ilman tätä. Lisätietoja saat dokumentaatiosta.</translation>
+        <translation type="unfinished">&apos;Kokoelma&apos;-toiminto ei ole käytettävissä tietokannassasi eikä voi suorittaa Exponentialia ilman tätä. Lisätietoja saat dokumentaatiosta.</translation>
     </message>
     <message>
         <source>MySQL support was detected on your system. Please choose the database driver you would like to use.</source>
@@ -23579,7 +23579,7 @@ You should replace these files with appropriate directories and give necessary p
 Without this the setup cannot finish and parts of Exponential will fail.</source>
         <translation>Exponential ei voi luoda joitain tärkeitä hakemistoja, koska näiden hakemistojen sijaan samassa paikassa on tiedostoja samoilla nimillä.
 Sinun tulee korvata nämät tiedostot oikeilla hakemistoilla ja antaa niille tarvittavat oikeudet.
-Ilman tätä asennus ei voi valmistua ja osa eZ Publishista epäonnistuu.</translation>
+Ilman tätä asennus ei voi valmistua ja osa Exponentialista epäonnistuu.</translation>
     </message>
     <message>
         <source>If you&apos;re running apache 1.3, Exponential will not run in CGI mode.</source>
@@ -23599,7 +23599,7 @@ Ilman tätä asennus ei voi valmistua ja osa eZ Publishista epäonnistuu.</trans
     </message>
     <message>
         <source>Exponential cannot write to some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
-        <translation>Exponential ei voi kirjoittaa osaan tärkeitä hakemistoja, ilman tätä asennus ei voi valmistua ja osa eZ Publishista epäonnistuu.</translation>
+        <translation>Exponential ei voi kirjoittaa osaan tärkeitä hakemistoja, ilman tätä asennus ei voi valmistua ja osa Exponentialista epäonnistuu.</translation>
     </message>
     <message>
         <source>These shell commands will give proper permission to the web server.</source>
@@ -23623,11 +23623,11 @@ Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -kom
     </message>
     <message>
         <source>Exponential cannot create some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
-        <translation>Exponential ei voi luoda joitain tärkeitä hakemistoja, ilman tätä asennus ei voi valmistua ja osa eZ Publishista epäonnistuu.</translation>
+        <translation>Exponential ei voi luoda joitain tärkeitä hakemistoja, ilman tätä asennus ei voi valmistua ja osa Exponentialista epäonnistuu.</translation>
     </message>
     <message>
         <source>Insufficient execution time allowed to install Exponential</source>
-        <translation>Riittämätön suorittamisaika eZ Publishin asentamisen sallimiseen</translation>
+        <translation>Riittämätön suorittamisaika Exponentialin asentamisen sallimiseen</translation>
     </message>
     <message>
         <source>Exponential will not work correctly with a execution time limit of %1.</source>
@@ -23635,19 +23635,19 @@ Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -kom
     </message>
     <message>
         <source>If you are running Exponential in a shared host environment, contant your ISP to perform the changes</source>
-        <translation>Jos suunnittelet suorittavasi eZ Publishin jaetussa host-ympäristössä, ota yhteyttä palveluntarjoajaasi suorittaaksesi muutokset</translation>
+        <translation>Jos suunnittelet suorittavasi Exponentialin jaetussa host-ympäristössä, ota yhteyttä palveluntarjoajaasi suorittaaksesi muutokset</translation>
     </message>
     <message>
         <source>File uploading is not enabled which means that it&apos;s impossible for Exponential to handle file uploading. All other parts of Exponential will still work fine but it&apos;s recommended to enable file uploads.</source>
-        <translation>Tiedoston lataaminen ei ole käytössä, joka tarkoittaa sitä että eZ Publishin on mahdotonta käsitellä tiedoston lataamisia. Kaikki muut eZ Publishin osat toimivat silti hyvin. mutta on suositeltua ottaa käyttöön tiedoston lataaminen.</translation>
+        <translation>Tiedoston lataaminen ei ole käytössä, joka tarkoittaa sitä että Exponentialin on mahdotonta käsitellä tiedoston lataamisia. Kaikki muut Exponentialin osat toimivat silti hyvin. mutta on suositeltua ottaa käyttöön tiedoston lataaminen.</translation>
     </message>
     <message>
         <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to Exponential.</source>
-        <translation>PHP-lataamiskansiota %upload_dir ei ole olemassa tai se ei ole saatavilla. Ilman tätä eZ Publishiin ei voi ladata tiedostoja tai kuvia.</translation>
+        <translation>PHP-lataamiskansiota %upload_dir ei ole olemassa tai se ei ole saatavilla. Ilman tätä Exponentialiin ei voi ladata tiedostoja tai kuvia.</translation>
     </message>
     <message>
         <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to Exponential.</source>
-        <translation>PHP-lataamiskansioon %upload_dir ei voi kirjoittaa. Tämä tarkoittaa sitä, että on eZ Publishiin on mahdotonta ladata tiedostoja tai kuvia.</translation>
+        <translation>PHP-lataamiskansioon %upload_dir ei voi kirjoittaa. Tämä tarkoittaa sitä, että on Exponentialiin on mahdotonta ladata tiedostoja tai kuvia.</translation>
     </message>
     <message>
         <source>Exponential could not detect the user and group of the web server.
@@ -23663,27 +23663,27 @@ Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -kom
     </message>
     <message>
         <source>No image conversion capabilities was detected, this means that Exponential cannot scale any images or detect their type. This is vital functionality in Exponential and must be supported.</source>
-        <translation>Kuvakäännösmahdollisuuksia ei havaittu. Tämä tarkoittaa sitä, että Exponential ei voi skaalata yhtään kuvaa tai tunnistaa niiden tyyppiä. Tämä on tärkeä toiminto eZ Publishissa ja sen tulee olla tuettu.</translation>
+        <translation>Kuvakäännösmahdollisuuksia ei havaittu. Tämä tarkoittaa sitä, että Exponential ei voi skaalata yhtään kuvaa tai tunnistaa niiden tyyppiä. Tämä on tärkeä toiminto Exponentialissa ja sen tulee olla tuettu.</translation>
     </message>
     <message>
         <source>The imagegd2 extension is not available to Exponential. Without it Exponential will only be able to do conversion using ImageMagick and the</source>
-        <translation>imagegd2-laajennus ei ole eZ Publishin käytössä. Ilman sitä Exponential pystyy ainoastaan tekemään käännöksiä käyttämällä ImageMagickia ja </translation>
+        <translation>imagegd2-laajennus ei ole Exponentialin käytössä. Ilman sitä Exponential pystyy ainoastaan tekemään käännöksiä käyttämällä ImageMagickia ja </translation>
     </message>
     <message>
         <source>Future releases of Exponential will have more advanced image support by using the imagegd extension.</source>
-        <translation>Tulevaisuuden eZ Publishin julkaisut tulevat sisältämään edistyneempää kuvatukea käyttämällä imagegd-laajennusta.</translation>
+        <translation>Tulevaisuuden Exponentialin julkaisut tulevat sisältämään edistyneempää kuvatukea käyttämällä imagegd-laajennusta.</translation>
     </message>
     <message>
         <source>The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available.</source>
-        <translation> ImageMagick-ohjelma ei ole eZ Publishin käytettävissä. Ilman sitä Exponential ei voi tehdä kuvakäännöksiä ellei imagegd laajennus ole käytettävissä.</translation>
+        <translation> ImageMagick-ohjelma ei ole Exponentialin käytettävissä. Ilman sitä Exponential ei voi tehdä kuvakäännöksiä ellei imagegd laajennus ole käytettävissä.</translation>
     </message>
     <message>
         <source>Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</source>
-        <translation>eZ Publishissa on hyvä lista tuettuista merkkijärjestelmistä oletuksena, tosin ne voivat olla hieman hitaita, koska ne ovat tehty pelkästään PHP-koodilla. Onneksi Exponential tukee mbstring-laajennusta joidenkin merkkijärjestelmien käsittelemiseen.</translation>
+        <translation>Exponentialissa on hyvä lista tuettuista merkkijärjestelmistä oletuksena, tosin ne voivat olla hieman hitaita, koska ne ovat tehty pelkästään PHP-koodilla. Onneksi Exponential tukee mbstring-laajennusta joidenkin merkkijärjestelmien käsittelemiseen.</translation>
     </message>
     <message>
         <source>By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
-        <translation>Ottamalla mbstring-laajennus käyttöön, eZ Publishi saa käyttöönsä enemmän merkkijärjestelmiä ja pystyy myös prosessoimaan niitä nopeammin, kuten Unicodea ja iso-8859-*. Tätä suositellaan monikielisille sivuille ja sivuille, joissa on erikoisia merkkijärjestelmiä.</translation>
+        <translation>Ottamalla mbstring-laajennus käyttöön, Exponential saa käyttöönsä enemmän merkkijärjestelmiä ja pystyy myös prosessoimaan niitä nopeammin, kuten Unicodea ja iso-8859-*. Tätä suositellaan monikielisille sivuille ja sivuille, joissa on erikoisia merkkijärjestelmiä.</translation>
     </message>
     <message>
         <source>Do not enable mbstring function overloading, Exponential will only use the extension whenever it&apos;s needed.</source>
@@ -23691,7 +23691,7 @@ Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -kom
     </message>
     <message>
         <source>Insufficient memory allocated to install Exponential</source>
-        <translation>Muistia ei ole varattu tarpeeksi eZ Publishin asentamiseen</translation>
+        <translation>Muistia ei ole varattu tarpeeksi Exponentialin asentamiseen</translation>
     </message>
     <message>
         <source>Exponential will not work correctly with a memory limit of %1.</source>
@@ -23707,7 +23707,7 @@ Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -kom
     </message>
     <message>
         <source>Alternatively you may create a file called %1 in your Exponential root folder and add the following</source>
-        <translation>Vaihtoehtoisesti voit luoda tiedoston nimeltä %1 eZ Publishin juurikansioon ja lisätä seuraava</translation>
+        <translation>Vaihtoehtoisesti voit luoda tiedoston nimeltä %1 Exponentialin juurikansioon ja lisätä seuraava</translation>
     </message>
     <message>
         <source>Exponential will not work properly with this option on.</source>
@@ -23731,7 +23731,7 @@ Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -kom
     </message>
     <message>
         <source>The zlib extension is not available to Exponential. Without it Exponential will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
-        <translation>Zlib-laajennus ei ole eZ Publishin käytettävissä. Ilman sitä Exponential ei voi asentaa demotietoja, tosin os et halua asentaa demotietoja, voit ohittaa tämän turvallisesti.</translation>
+        <translation>Zlib-laajennus ei ole Exponentialin käytettävissä. Ilman sitä Exponential ei voi asentaa demotietoja, tosin os et halua asentaa demotietoja, voit ohittaa tämän turvallisesti.</translation>
     </message>
     <message>
         <source>directory.</source>
@@ -23743,7 +23743,7 @@ Tehdäksesi tämän, tulee sinun vaihtaa %chown -komennot Alternative shell -kom
     </message>
     <message>
         <source>The DOM extension is not available to Exponential. Without it Exponential will not work.</source>
-        <translation>DOM-laajennus ei ole eZ Publishin käytettävissä. Ilman sitä Exponential ei toimi.</translation>
+        <translation>DOM-laajennus ei ole Exponentialin käytettävissä. Ilman sitä Exponential ei toimi.</translation>
     </message>
     <message>
         <source>In most cases, the DOM extension is enabled by default because it is included in the PHP core. However, some Linux distributions have PHP without compiled-in support for DOM. Instead, they provide DOM as a shared module in a separate RPM package called &quot;php-xml&quot;.</source>

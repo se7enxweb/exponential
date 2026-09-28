@@ -1443,15 +1443,15 @@ Do you want more information about this issue?</source>
         <translation>Загрузить файл с вашего компьютера.</translation>
     </message>
     <message>
-        <source>Search for content already in eZ Publish.</source>
+        <source>Search for content already in Exponential.</source>
         <translation>Поискать имеющийся контент здесь, в системе.</translation>
     </message>
     <message>
-        <source>Browse the content tree in eZ Publish.</source>
+        <source>Browse the content tree in Exponential.</source>
         <translation>Просмотреть структуру дерева, здесь, в системе управления сайтом.</translation>
     </message>
     <message>
-        <source>Select or browse content among your personal eZ Publish bookmarks.</source>
+        <source>Select or browse content among your personal Exponential bookmarks.</source>
         <translation>Выделить или выбрать контент среди ваших персональных закладок, здесь, в системе управления сайтом.</translation>
     </message>
     <message>
@@ -1463,7 +1463,7 @@ Do you want more information about this issue?</source>
         <translation>Укажите файл для загрузки с вашего компьютера.</translation>
     </message>
     <message>
-        <source>Lets you specify where in eZ Publish to store the uploaded object.</source>
+        <source>Lets you specify where in Exponential to store the uploaded object.</source>
         <translation>Позволяет вам указать где система управления сайтом должна сохранять загружаемые объекты.</translation>
     </message>
     <message>
@@ -1483,7 +1483,7 @@ Do you want more information about this issue?</source>
         <translation>Введите слово, которое вы хотите здесь найти, например, имя контента который вы ищете.</translation>
     </message>
     <message>
-        <source>Lets you limit the content type your searching for, by limiting the eZ Publish content classes that are returned in the search result.</source>
+        <source>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</source>
         <translation>Позволяет вам ограничить типы контента который вы ищете, ограничивая контент классы системы управления сайтом которые возвращаются в результатах поиска.</translation>
     </message>
     <message>
