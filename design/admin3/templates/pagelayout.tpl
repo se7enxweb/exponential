@@ -12,11 +12,17 @@
      $left_size_hash       = 0
      $search_hash          = array( cond( ezhttp_hasvariable( 'SectionID', 'get' ), ezhttp( 'SectionID', 'get' ) ) )
      $user_hash = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ) )
+     $uri_cache_key        = $module_result.uri
 }
+    {* Error pages can arrive with the same URI while their title and path name the error: key them
+       by error type and number too (every other page keeps the plain URI key) *}
+    {if is_set( $module_result.errorType )}
+    {set $uri_cache_key = concat( $module_result.uri, '|error|', $module_result.errorType, '|', first_set( $module_result.errorNumber, '' ) )}
+    {/if}
 
     {* Pr uri header cache
  Need navigation part for cases like content/browse where node id is taken from caller params *}
-    {cache-block keys=array( $module_result.uri, $user_hash, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash ) ignore_content_expiry}
+    {cache-block keys=array( $uri_cache_key, $user_hash, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash ) ignore_content_expiry}
 
     {include uri='design:page_head.tpl'}
 
@@ -83,7 +89,7 @@
                 {else}
                     <div id="maincolumn" class="content-wrapper">
                         {* Pr uri Path/Left menu cache (dosn't use ignore_content_expiry because of content structure menu  ) *}
-                        {cache-block keys=array( $module_result.uri, $user_hash, $left_size_hash, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ) )}
+                        {cache-block keys=array( $uri_cache_key, $user_hash, $left_size_hash, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ) )}
                         {/cache-block}{* /Pr uri cache *}
                         {* Main area START *}
                         <div id="maincontent">
