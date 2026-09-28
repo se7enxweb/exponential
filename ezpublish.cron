@@ -1,26 +1,29 @@
 # DEPRECATED: this file has been renamed to exponential.cron.
 #
 # Use exponential.cron for new installations; this copy will be removed in a
-# later release. It is kept, with the same entries, so that instructions and
-# deployment scripts that still install "ezpublish.cron" keep working.
+# later release. It is kept so that instructions and deployment scripts that
+# still install "ezpublish.cron" keep working, which is also why its variable
+# and placeholder below keep their former names (EZPUBLISHROOT,
+# /path/to/the/ez/publish/directory): a script that fills them in by name
+# still finds them.
 #
 # A crontab cannot include another file, so this is a copy rather than a
-# pointer. Keep it identical to exponential.cron apart from this header.
+# pointer. Its entries run the same parts as exponential.cron.
 
 # This must be set to the directory where Exponential is installed.
-EXPONENTIALROOT=/path/to/the/exponential/directory
+EZPUBLISHROOT=/path/to/the/ez/publish/directory
 
 # Location of the PHP Command Line Interface binary.
 PHP=/usr/local/bin/php
 
 # Instruct cron to run the main set of cronjobs
 # at 6:35am every day
-35 6 * * * cd $EXPONENTIALROOT && $PHP runcronjobs.php -q 2>&1
+35 6 * * * cd $EZPUBLISHROOT && $PHP runcronjobs.php -q 2>&1
 
 # Instruct cron to run the "infrequent" set of cronjobs
 # at 5:20am every Monday
-20 5 * * 1 cd $EXPONENTIALROOT && $PHP runcronjobs.php -q infrequent 2>&1
+20 5 * * 1 cd $EZPUBLISHROOT && $PHP runcronjobs.php -q infrequent 2>&1
 
 # Instruct cron to run the "frequent" set of cronjobs
 # every 15 minutes
-0,15,30,45 * * * * cd $EXPONENTIALROOT && $PHP runcronjobs.php -q frequent 2>&1
+0,15,30,45 * * * * cd $EZPUBLISHROOT && $PHP runcronjobs.php -q frequent 2>&1
