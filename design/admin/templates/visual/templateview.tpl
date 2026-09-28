@@ -40,13 +40,13 @@
 </div>
 {/if}
 
-<form method="post" name="templateview" action={concat( '/visual/templateview', $template_settings.template )|ezurl}>
+<form method="post" name="templateview" action={concat( '/visual/templateview', $template_settings.template, $page_offset|gt( 0 )|choose( '', concat( '/(offset)/', $page_offset ) ) )|ezurl}>
 
 <div class="context-block visual-templateview">
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 
-<h1 class="context-title">{'Overrides for <%template_name> template in <%current_siteaccess> siteaccess (%override_count)'|i18n( 'design/admin/visual/templateview',, hash( '%template_name', $template_settings.template, '%current_siteaccess', $current_siteaccess, '%override_count', $template_settings.custom_match|count ) )|wash}</h1>
+<h1 class="context-title">{'Overrides for <%template_name> template in <%current_siteaccess> siteaccess (%override_count)'|i18n( 'design/admin/visual/templateview',, hash( '%template_name', $template_settings.template, '%current_siteaccess', $current_siteaccess, '%override_count', $override_count ) )|wash}</h1>
 
 {* DESIGN: Mainline *}<div class="header-mainline"></div>
 
@@ -70,18 +70,36 @@
     </div>
 </div>
 
+<div class="controlbar templateview-topbar">
+{include uri='design:visual/templateview_buttons.tpl'}
+</div>
+
 {section show=$template_settings.custom_match}
+
+{if $override_count|gt( $page_limit )}
+<div class="context-toolbar templateview-pager">
+{include name=OverrideNavigator
+         uri='design:navigator/google.tpl'
+         page_uri=concat( '/visual/templateview', $template_settings.template )
+         item_count=$override_count
+         view_parameters=$view_parameters
+         item_limit=$page_limit}
+</div>
+{/if}
 
 <p class="templateview-hint">{'The overrides are tried from the top, and the first whose conditions all match is used. Drag an override by its handle to a new place, or use its arrows; every change is saved at once as the Priority of these overrides in settings/siteaccess/%siteaccess/override.ini.append.php.'|i18n( 'design/admin/visual/templateview',, hash( '%siteaccess', $current_siteaccess|wash ) )}</p>
 
 <div class="override-filter">
-    <label for="override-filter-input">{'Filter'|i18n( 'design/admin/visual/templateview' )}</label>
+    <label for="override-filter-input">{'Filter this page'|i18n( 'design/admin/visual/templateview' )}</label>
     <input type="search" id="override-filter-input" class="halfbox" placeholder="{'Name, file or condition'|i18n( 'design/admin/visual/templateview' )|wash}" />
     <span class="override-filter-note" id="override-filter-note" hidden="hidden">{'Clear the filter to move overrides.'|i18n( 'design/admin/visual/templateview' )}</span>
 </div>
 
-<ol class="override-order" id="override-order"
+<ol class="override-order{if $previous_override} has-previous{/if}{if $next_override} has-next{/if}" id="override-order"
     data-url={concat( '/visual/templateview', $template_settings.template )|ezurl}
+    data-start="{$page_offset}"
+    data-previous="{$previous_override|wash}"
+    data-next="{$next_override|wash}"
     data-saving="{'Saving...'|i18n( 'design/admin/visual/templateview' )|wash}"
     data-failed="{'The order could not be saved.'|i18n( 'design/admin/visual/templateview' )|wash}">
 {section var=CustomMatch loop=$template_settings.custom_match}
@@ -91,7 +109,7 @@
     <input type="hidden" name="ShownOverrideList[]" value="{$name|wash}" />
     <div class="override-head">
         <span class="override-grip" title="{'Drag to move'|i18n( 'design/admin/visual/templateview' )|wash}" aria-hidden="true"></span>
-        <span class="override-position">{$CustomMatch.number}</span>
+        <span class="override-position">{sum( $page_offset, $CustomMatch.number )}</span>
         <span class="override-name">{$name|wash}</span>
         {if $own}
             <span class="override-badge override-badge-own" title="{'Defined in settings/siteaccess/%siteaccess/override.ini.append.php'|i18n( 'design/admin/visual/templateview',, hash( '%siteaccess', $current_siteaccess|wash ) )|wash}">{'siteaccess'|i18n( 'design/admin/visual/templateview' )}</span>
@@ -157,6 +175,17 @@
 </ol>
 <p class="override-order-status" id="override-order-status" role="status" aria-live="polite"></p>
 
+{if $override_count|gt( $page_limit )}
+<div class="context-toolbar templateview-pager">
+{include name=OverrideNavigatorBottom
+         uri='design:navigator/google.tpl'
+         page_uri=concat( '/visual/templateview', $template_settings.template )
+         item_count=$override_count
+         view_parameters=$view_parameters
+         item_limit=$page_limit}
+</div>
+{/if}
+
 {section-else}
 <div class="block">
 <p>{'There are no overrides for the <%template_name> template.'|i18n( 'design/admin/visual/templateview',, hash( '%template_name', $template_settings.template ) )|wash}</p>
@@ -167,27 +196,7 @@
 
 <div class="controlbar">
 {* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
-    <div class="block">
-        <div class="button-left">
-        {if $own_overrides}
-        <input class="button" type="submit" name="RemoveOverrideButton" value="{'Remove selected'|i18n( 'design/admin/visual/templateview' )}" title="{'Remove selected template overrides.'|i18n( 'design/admin/visual/templateview' )}" />
-        {else}
-        <input class="button-disabled" type="submit" name="RemoveOverrideButton" value="{'Remove selected'|i18n( 'design/admin/visual/templateview' )}" disabled="disabled"/>
-        {/if}
-
-        {if $new_override_allowed}
-        <input class="button" type="submit" name="NewOverrideButton" value="{'New override'|i18n( 'design/admin/visual/templateview' )}" title="{'Create a new template override.'|i18n( 'design/admin/visual/templateview' )}" />
-        {/if}
-        </div>
-        <div class="button-right">
-            {if $template_settings.custom_match}
-            <input class="button" type="submit" name="UpdateOverrideButton" value="{'Save conditions'|i18n( 'design/admin/visual/templateview' )}" title="{'Save the conditions edited above. The order is saved on its own, as you move the overrides.'|i18n( 'design/admin/visual/templateview' )}" />
-            {else}
-            <input class="button-disabled" type="submit" name="UpdateOverrideButton" value="{'Save conditions'|i18n( 'design/admin/visual/templateview' )}" disabled="disabled"/>
-            {/if}
-        </div>
-        <div class="break"></div>
-    </div>
+{include uri='design:visual/templateview_buttons.tpl'}
 {* DESIGN: Control bar END *}</div></div>
 </div>
 
@@ -213,8 +222,8 @@
         if ( target && ( target.tagName === 'SELECT' || ( target.tagName === 'INPUT' && ( target.type === 'text' || target.type === 'number' ) ) ) )
         {
             e.preventDefault();
-            if ( form.UpdateOverrideButton )
-                form.UpdateOverrideButton.click();
+            var update = form.querySelector( 'input[name="UpdateOverrideButton"]' );
+            if ( update ) update.click();
         }
     } );
 
@@ -247,6 +256,9 @@
     var csrfMeta = document.querySelector( 'meta[name="csrf-token"]' );
     var tokenField = form.querySelector( 'input[name="ezxform_token"]' );
     var dragged = null, before = null, saving = false, pending = false;
+    var start = parseInt( list.getAttribute( 'data-start' ), 10 ) || 0;
+    var previousName = list.getAttribute( 'data-previous' ) || '';
+    var nextName = list.getAttribute( 'data-next' ) || '';
 
     function items() { return Array.prototype.slice.call( list.querySelectorAll( '.override-card' ) ); }
     function order() { return items().map( function( li ) { return li.getAttribute( 'data-name' ); } ); }
@@ -257,7 +269,7 @@
     }
     function renumber()
     {
-        items().forEach( function( li, i ) { li.querySelector( '.override-position' ).textContent = i + 1; } );
+        items().forEach( function( li, i ) { li.querySelector( '.override-position' ).textContent = start + i + 1; } );
     }
     function restore( names )
     {
@@ -267,14 +279,16 @@
         renumber();
     }
 
-    function save()
+    // across: a move over the edge of the page, sent as its own stretch of the
+    // order; the page is loaded again after it, since an override left it.
+    function save( across )
     {
-        if ( saving ) { pending = true; return; }
+        if ( saving ) { if ( !across ) pending = true; return; }
         saving = true; pending = false;
         list.classList.add( 'is-saving' );
         say( list.getAttribute( 'data-saving' ), 'busy' );
-        var body = 'ReorderOverrides=1';
-        order().forEach( function( name ) { body += '&OverrideOrder%5B%5D=' + encodeURIComponent( name ); } );
+        var body = 'ReorderOverrides=1&OverrideStart=' + ( across ? across.start : start );
+        ( across ? across.order : order() ).forEach( function( name ) { body += '&OverrideOrder%5B%5D=' + encodeURIComponent( name ); } );
         if ( tokenField ) body += '&ezxform_token=' + encodeURIComponent( tokenField.value );
         var request = new XMLHttpRequest();
         request.open( 'POST', list.getAttribute( 'data-url' ), true );
@@ -290,6 +304,7 @@
             if ( data && data.ok )
             {
                 say( data.message, 'ok' );
+                if ( across ) { window.location.reload(); return; }
                 if ( pending ) save();
             }
             else
@@ -353,6 +368,17 @@
         var button = e.target.closest ? e.target.closest( 'button' ) : null;
         if ( !button || list.classList.contains( 'is-filtered' ) ) return;
         var card = button.closest( '.override-card' );
+        var name = card.getAttribute( 'data-name' );
+        if ( button.classList.contains( 'override-up' ) && !card.previousElementSibling && previousName )
+        {
+            save( { start: start - 1, order: [ name, previousName ] } );
+            return;
+        }
+        if ( button.classList.contains( 'override-down' ) && !card.nextElementSibling && nextName )
+        {
+            save( { start: start + items().length - 1, order: [ nextName, name ] } );
+            return;
+        }
         if ( button.classList.contains( 'override-up' ) && card.previousElementSibling )
             list.insertBefore( card, card.previousElementSibling );
         else if ( button.classList.contains( 'override-down' ) && card.nextElementSibling )

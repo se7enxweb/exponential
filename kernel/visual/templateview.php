@@ -66,9 +66,15 @@ $overrideNames = function ( $overrideArray ) use ( $template )
 // not hold exactly the overrides shown now is refused.
 if ( $http->hasPostVariable( 'ReorderOverrides' ) )
 {
+    // The list is paged: the page posts the new order of the overrides from
+    // position OverrideStart on (its own, or its own and one neighbour's for a
+    // move across the edge of a page), and that stretch of the full order is
+    // put in its place.
     $order = $http->hasPostVariable( 'OverrideOrder' ) ? (array)$http->postVariable( 'OverrideOrder' ) : array();
+    $start = $http->hasPostVariable( 'OverrideStart' ) ? max( 0, (int)$http->postVariable( 'OverrideStart' ) ) : 0;
     $current = $overrideNames( $overrideArray );
-    $list = ezpTemplateOverrides::reorder( $current, $order );
+    $stretch = ezpTemplateOverrides::reorder( array_slice( $current, $start, count( $order ) ), $order );
+    $list = $stretch === false ? false : array_merge( array_slice( $current, 0, $start ), $stretch, array_slice( $current, $start + count( $stretch ) ) );
     $response = array( 'ok' => false, 'order' => $current );
     if ( $list === false )
     {
@@ -269,6 +275,24 @@ if ( !isset( $templateSettings['base_dir'] ) )
     $templateSettings['base_dir'] = '';
 
 $newOverrideAllowed = ( $templateSettings['base_dir'] !== '' );
+
+// Paged: a template can have dozens of overrides. The page knows the override
+// just before and just after it, so its first and last can be moved across.
+$overrideCount = count( $templateSettings['custom_match'] );
+$pageLimit = expAdminPagination::limit( 'visual/templateview', 20 );
+$pageOffset = expAdminPagination::offset( $Params );
+if ( $pageOffset >= $overrideCount )
+    $pageOffset = $overrideCount > 0 ? (int)( floor( ( $overrideCount - 1 ) / $pageLimit ) * $pageLimit ) : 0;
+$allNames = array();
+foreach ( $templateSettings['custom_match'] as $customMatch )
+    $allNames[] = $customMatch['override_name'];
+$templateSettings['custom_match'] = array_values( expAdminPagination::page( $templateSettings['custom_match'], $pageOffset, $pageLimit ) );
+$tpl->setVariable( 'override_count', $overrideCount );
+$tpl->setVariable( 'page_offset', $pageOffset );
+$tpl->setVariable( 'page_limit', $pageLimit );
+$tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
+$tpl->setVariable( 'previous_override', $pageOffset > 0 ? $allNames[$pageOffset - 1] : '' );
+$tpl->setVariable( 'next_override', isset( $allNames[$pageOffset + $pageLimit] ) ? $allNames[$pageOffset + $pageLimit] : '' );
 
 // Which overrides the siteaccess's own file defines (they can be removed here)
 // and which come from elsewhere (an extension), for the page to say so.

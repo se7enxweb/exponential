@@ -64,8 +64,10 @@
 }
 .override-actions button:hover,
 .override-actions button:focus { border-color: #c5ced8; background: #eef2f6; color: #1d2b3a; }
-.override-card:first-child .override-up,
-.override-card:last-child .override-down { visibility: hidden; }
+/* The first and last of a page move across to the page before or after,
+   when there is one. */
+.override-order:not(.has-previous) .override-card:first-child .override-up,
+.override-order:not(.has-next) .override-card:last-child .override-down { visibility: hidden; }
 .override-remove { font-size: 0.9em; color: #a4262c; white-space: nowrap; }
 
 .override-file { margin: 0.35em 0 0.4em 2.9em; color: #56657a; font-size: 0.9em; word-break: break-all; }
@@ -96,3 +98,7 @@
 .override-order.is-filtered .override-down { visibility: hidden; }
 .override-add { margin: 0.25em 0 0 0; }
 .override-add > summary { cursor: pointer; color: #3a6ea5; font-size: 0.9em; }
+
+/* The buttons above the overrides, and the pager. */
+.templateview-topbar { margin: 0 0 0.8em 0; border-radius: 4px; }
+.templateview-pager { margin: 0 0 0.8em 0; }
