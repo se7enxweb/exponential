@@ -13,7 +13,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 3b96782129fa8a60261a41688f7c0c3c  autoload.php
-65b3c4f58d251433abbd91fd5392f60e  autoload/ezp_kernel.php
+120ea17b5917dd5957a70ef2f3e317f9  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
 e987da229be60f6c0644adee57d39fb3  benchmarks/classes/ezbenchmarkclirunner.php
@@ -281,6 +281,7 @@ c28a2b8fef839e911313919afddcc3eb  design/admin/stylesheets/theme/modalwindow.css
 67022590c3690ce322538f084fc285a7  design/admin/stylesheets/theme/yui_container.css
 18d0fb9e3aa9c0e68999c7f14a3166a7  design/admin/stylesheets/theme/yui_datatable.css
 53e814894ee1c2ee96d711dd8e919aed  design/admin/stylesheets/theme/yui_menu.css
+c599e95b9b5aa6c094ec33ddc81df9d0  design/admin/stylesheets/visual-templateview.css
 51b12c9efcb649950dae2f832c6782e1  design/admin/templates/ajaxuploader/browse.tpl
 2a971a019be83d646f3bd5f5b5f82105  design/admin/templates/ajaxuploader/location.tpl
 f5c677b2579053f3f5a23f2a3dd3b87d  design/admin/templates/ajaxuploader/preview.tpl
@@ -594,7 +595,7 @@ a5ab9adec5c8a4f1b369987bd8ed87e4  design/admin/templates/visual/menuconfig.tpl
 7cf5905f6a1a2059ade8271ee15e747a  design/admin/templates/visual/templateedit.tpl
 c665b114c92eb6b279cddab770a1cd52  design/admin/templates/visual/templateedit_error.tpl
 a50dbbb7f5bd2d774da5916fe5984a6d  design/admin/templates/visual/templatelist.tpl
-b4760ff33ee45f55a27af87887cd90dc  design/admin/templates/visual/templateview.tpl
+39dad8eda63ecc0a608ca0e4fbc7a866  design/admin/templates/visual/templateview.tpl
 99bffc8a164702c52b762b1dd300a15c  design/admin/templates/visual/toolbar.tpl
 e0bcde19ca3e377bb55d86014ee0c876  design/admin/templates/visual/toolbarlist.tpl
 543b75192f6ad0e664301e0cd40f93a2  design/admin/templates/window_controls.tpl
@@ -5880,6 +5881,7 @@ f9b629995df4f51771f6d7c085380bc8  kernel/private/classes/ezpmultivariatetest.php
 2ca1c988887a95061168efdd0e70296b  kernel/private/classes/ezpmultivariatetesthandler.php
 91d78d9a862985288270839cebff4877  kernel/private/classes/ezpmultivariatetesthandlerinterface.php
 920333bb6753d9d6448b28cd11bb64a7  kernel/private/classes/ezpsiteaccessurl.php
+a4426106f9957b221c8245b2bb480881  kernel/private/classes/ezptemplateoverrides.php
 00b8933a2899ff896127075be4267f13  kernel/private/classes/ezptopologicalsort.php
 769dd1a0f42f658bd4e8ec5f9b84cb84  kernel/private/classes/ezptopologicalsortnode.php
 a088f1bce8604bdd3db6787302c86f4f  kernel/private/classes/ezscriptclusterpurge.php
@@ -6225,7 +6227,7 @@ b725d7f6584ee9c7321511d5478729a0  kernel/visual/module.php
 11bb2d11643366e789a2d1bd98e6e399  kernel/visual/templatecreate.php
 ed389f5606292ceb374a0c332654afc8  kernel/visual/templateedit.php
 fdd076c5686e54ba0e5a00ba34eb0c91  kernel/visual/templatelist.php
-2eb2e8996f713aaaed4c559c107ffdf7  kernel/visual/templateview.php
+8a343fd03f8ac8cb05e4cfa40e552d4d  kernel/visual/templateview.php
 e6ba8c32c2189892ecd79506a6f06470  kernel/visual/toolbar.php
 b63f3d8bebb4cc2cb412db3f4ecbc7bc  kernel/visual/toolbarlist.php
 e561a1057a9a679c77818c20f1798287  kernel/workflow/edit.php
@@ -7104,6 +7106,7 @@ a9a752937a67b31ffd87ebbfc1eaee48  tests/tests/kernel/classes/ezextension_with_or
 b4aa00c4f971cb1ed14ca62df3c0d23c  tests/tests/kernel/classes/ezorder_regression.php
 dbcfd409cc6cd6c3d9a9a461369158d7  tests/tests/kernel/classes/ezpActiveExtensionsTest.php
 c758e9c8740a66339dc5d27d746ed630  tests/tests/kernel/classes/ezpRestLazyTest.php
+cde6894a0438daa7404bdddb6b21aabc  tests/tests/kernel/classes/ezpTemplateOverridesTest.php
 ce36d837da9eda070e7664c2c4fc9158  tests/tests/kernel/classes/ezpackage_regression.php
 04478dc238acc2c04f951ff184c2b19f  tests/tests/kernel/classes/ezpackage_regression_testIssue15223.ezpkg
 f2460a36d9c8c2ff9de19f1427118768  tests/tests/kernel/classes/ezpendingactions_test.php
