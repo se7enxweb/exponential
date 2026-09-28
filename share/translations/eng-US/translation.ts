@@ -21441,6 +21441,41 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
 </context>
 <context>
+    <name>design/standard/error/formtoken</name>
+    <message>
+        <source>This form has expired</source>
+        <translation>This form has expired</translation>
+    </message>
+    <message>
+        <source>The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.</source>
+        <translation>The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.</translation>
+    </message>
+    <message>
+        <source>Reload the form and send it again.</source>
+        <translation>Reload the form and send it again.</translation>
+    </message>
+    <message>
+        <source>You may have been signed out in the meantime. If so, please sign in again.</source>
+        <translation>You may have been signed out in the meantime. If so, please sign in again.</translation>
+    </message>
+    <message>
+        <source>If you were signing in, please sign in again.</source>
+        <translation>If you were signing in, please sign in again.</translation>
+    </message>
+    <message>
+        <source>Reload the form</source>
+        <translation>Reload the form</translation>
+    </message>
+    <message>
+        <source>Go to the front page</source>
+        <translation>Go to the front page</translation>
+    </message>
+    <message>
+        <source>Go to the dashboard</source>
+        <translation>Go to the dashboard</translation>
+    </message>
+</context>
+<context>
     <name>design/standard/error/kernel</name>
     <message>
         <source>Access denied</source>
@@ -31141,6 +31176,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Error</source>
         <translation>Error</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/error/formtoken</name>
+    <message>
+        <source>This form has expired</source>
+        <translation>This form has expired</translation>
+    </message>
+    <message>
+        <source>The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.</source>
+        <translation>The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.</translation>
+    </message>
+    <message>
+        <source>Reload the form and send it again.</source>
+        <translation>Reload the form and send it again.</translation>
+    </message>
+    <message>
+        <source>Form expired</source>
+        <translation>Form expired</translation>
     </message>
 </context>
 <context>
