@@ -594,6 +594,7 @@ return array(
       'expScriptStatus'                                    => 'kernel/classes/expscriptstatus.php',
       'expSettingsExtensionWizard'                         => 'kernel/setup/expsettingsextensionwizard.php',
       'expMaintenance'                                     => 'kernel/classes/expmaintenance.php',
+      'expCacheManager'                                    => 'kernel/classes/expcachemanager.php',
       'expSetupLog'                                        => 'kernel/classes/expsetuplog.php',
       'expStaticCacheRunner'                               => 'kernel/setup/expstaticcacherunner.php',
       'expTemplateExtensionWizard'                         => 'kernel/setup/exptemplateextensionwizard.php',

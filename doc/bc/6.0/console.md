@@ -132,6 +132,10 @@ Before the script runs, the console prints a brief dispatch notice to
 # Clear all caches (safe, very common operation)
 php bin/php/console exp:ezcache --clear-all
 
+# Everything Setup > Cache does, with --dry-run and PASS/FAIL (see cache-console.md)
+php bin/php/console exp:cache --help
+php bin/php/console exp:cache clear --tag=ini --dry-run
+
 # Regenerate PHP autoload arrays after adding a new extension or class
 php bin/php/console exp:ezpgenerateautoloads
 

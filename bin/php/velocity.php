@@ -28,7 +28,9 @@ $script = eZScript::instance( array( 'description' => (
     "  config     read and write the settings it runs on\n" .
     "  cache      cache clear: re-render every cached page on its next request\n" .
     "             (after a template or stylesheet change; no restart needed)\n" .
-    "  layout     the configuration tree and every file the server uses\n" .
+    "             cache stats: where it is, how much it holds, when it was cleared\n" .
+    "             (every other cache of the installation: exp:cache --help)\n" .
+    "  layout    the configuration tree and every file the server uses\n" .
     "  site|conf|mod enable|disable <name>   as a2ensite/a2enconf/a2enmod do\n" .
     "  ctl        the engine's qbixctl with this installation's tree, site and pid file:\n" .
     "             ctl status | ctl configtest | ctl layout | ctl ensite NAME ...\n" .
@@ -608,12 +610,19 @@ switch ( $verb )
     case 'cache':
     {
         $action = isset( $options['arguments'][1] ) ? strtolower( trim( $options['arguments'][1] ) ) : '';
-        if ( $action !== 'clear' )
+        if ( $action !== 'clear' && $action !== 'stats' )
         {
-            $cli->error( "Usage: cache clear" );
+            $cli->error( "Usage: cache clear|stats   (every other cache: exp:cache --help)" );
             $script->shutdown( 1 );
         }
-        $result = $velocity->clearCache();
+        // The same function exp:cache velocity status uses.
+        if ( $action === 'stats' )
+        {
+            require_once 'kernel/classes/expcachemanager.php';
+            $result = expCacheManager::velocityCacheStatus();
+        }
+        else
+            $result = $velocity->clearCache();
         if ( $asJson )
             $cli->output( json_encode( $result ) );
         elseif ( $result['ok'] )
