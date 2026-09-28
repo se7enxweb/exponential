@@ -201,8 +201,10 @@ else
 }
 $Result['path'] = array( array( 'text' => ezpI18n::tr( 'kernel/error', 'Error' ),
                                 'url' => false ),
-                         array( 'text' => "$errorType ($errorNumber)",
+                         array( 'text' => !empty( $isFormTokenRefusal ) ? ezpFormTokenRefusal::pathName() : "$errorType ($errorNumber)",
                                 'url' => false ) );
+if ( !empty( $isFormTokenRefusal ) )
+    $Result['title'] = ezpFormTokenRefusal::pathName();
 $Result['errorCode'] = $httpErrorCode;
 $Result['errorMessage'] = $httpErrorName;
 $Result['errorType'] = $errorType;

@@ -973,7 +973,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         {
             $moduleResult = array(
                 'content' => ezpFormTokenRefusal::fallbackContent( ezpFormTokenRefusal::templateParameters( $e ) ),
-                'path' => array( array( 'text' => ezpI18n::tr( 'kernel/error', 'Error' ), 'url' => false ) ),
+                'path' => array(
+                    array( 'text' => ezpI18n::tr( 'kernel/error', 'Error' ), 'url' => false ),
+                    array( 'text' => ezpFormTokenRefusal::pathName(), 'url' => false ),
+                ),
+                'title' => ezpFormTokenRefusal::pathName(),
             );
         }
         return $moduleResult;

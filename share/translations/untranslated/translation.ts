@@ -31030,19 +31030,19 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>kernel/error/formtoken</name>
     <message>
-        <source>The form could not be sent</source>
+        <source>This form has expired</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The form was sent with a security token that does not belong to your current session, usually because it was opened before you logged in or out, or in another window. Nothing was changed.</source>
+        <source>The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The form was sent without its security token, so it could not be accepted. Nothing was changed.</source>
+        <source>Reload the form and send it again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Reload the form and try again</source>
+        <source>Form expired</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -33656,20 +33656,20 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
 <context>
     <name>kernel/error/formtoken</name>
     <message>
-        <source>The form could not be sent</source>
-        <translation>Das Formular konnte nicht gesendet werden</translation>
+        <source>This form has expired</source>
+        <translation>Dieses Formular ist abgelaufen</translation>
     </message>
     <message>
-        <source>The form was sent with a security token that does not belong to your current session, usually because it was opened before you logged in or out, or in another window. Nothing was changed.</source>
-        <translation>Das Formular wurde mit einem Sicherheitsschlüssel gesendet, der nicht zu Ihrer aktuellen Sitzung gehört, meist weil es vor dem An- oder Abmelden oder in einem anderen Fenster geöffnet wurde. Es wurde nichts geändert.</translation>
+        <source>The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.</source>
+        <translation>Die Seite mit diesem Formular war lange geöffnet, oder das Formular wurde von einer anderen Seite aus gesendet. Zum Schutz Ihrer Daten wurde nichts gespeichert.</translation>
     </message>
     <message>
-        <source>The form was sent without its security token, so it could not be accepted. Nothing was changed.</source>
-        <translation>Das Formular wurde ohne seinen Sicherheitsschlüssel gesendet und konnte deshalb nicht angenommen werden. Es wurde nichts geändert.</translation>
+        <source>Reload the form and send it again.</source>
+        <translation>Laden Sie das Formular neu und senden Sie es noch einmal ab.</translation>
     </message>
     <message>
-        <source>Reload the form and try again</source>
-        <translation>Formular neu laden und erneut versuchen</translation>
+        <source>Form expired</source>
+        <translation>Formular abgelaufen</translation>
     </message>
 </context>
 <context>

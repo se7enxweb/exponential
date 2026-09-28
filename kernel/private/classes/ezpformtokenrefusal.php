@@ -133,31 +133,50 @@ class ezpFormTokenRefusal
      * The built-in explanation for the visitor, translated when a translation
      * for self::I18N_CONTEXT exists.
      *
+     * The wording is the one of the refusal page (design:error/kernel/6.tpl),
+     * the same for a missing and a wrong token: to the visitor both mean the
+     * form is no longer valid.
+     *
      * @param string $reason ezpFormTokenException::MISSING or ::WRONG
      * @return array title, message, action (the link text)
      */
     public static function texts( $reason )
     {
-        $texts = array(
-            'title' => 'The form could not be sent',
-            'message' => $reason === ezpFormTokenException::WRONG
-                ? 'The form was sent with a security token that does not belong to your current session, usually because it was opened before you logged in or out, or in another window. Nothing was changed.'
-                : 'The form was sent without its security token, so it could not be accepted. Nothing was changed.',
-            'action' => 'Reload the form and try again',
-        );
-        if ( class_exists( 'ezpI18n' ) )
+        try
         {
-            try
-            {
-                foreach ( $texts as $key => $text )
-                    $texts[$key] = ezpI18n::tr( self::I18N_CONTEXT, $text );
-            }
-            catch ( Throwable $e )
-            {
-                // The English wording is always there
-            }
+            // Literal calls, so the translation tools find the strings
+            return array(
+                'title' => ezpI18n::tr( 'kernel/error/formtoken', 'This form has expired' ),
+                'message' => ezpI18n::tr( 'kernel/error/formtoken', 'The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.' ),
+                'action' => ezpI18n::tr( 'kernel/error/formtoken', 'Reload the form and send it again.' ),
+            );
         }
-        return $texts;
+        catch ( Throwable $e )
+        {
+            // No translation system (yet): the English wording
+            return array(
+                'title' => 'This form has expired',
+                'message' => 'The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.',
+                'action' => 'Reload the form and send it again.',
+            );
+        }
+    }
+
+    /**
+     * The readable name of the refusal, for the path (breadcrumb) and title.
+     *
+     * @return string
+     */
+    public static function pathName()
+    {
+        try
+        {
+            return ezpI18n::tr( 'kernel/error/formtoken', 'Form expired' );
+        }
+        catch ( Throwable $e )
+        {
+            return 'Form expired';
+        }
     }
 
     /**
