@@ -68,17 +68,17 @@ class expCronjobRunner
             $result = call_user_func_array( array( 'expCronjobRunner', $method ), $arguments );
 
             if ( !is_array( $result ) || !isset( $result['ok'] ) )
-                return array( 'ok' => false, 'message' => 'The cronjob console got no answer from ' . $method . '.' );
+                return array( 'ok' => false, 'message' => ezpI18n::tr( 'design/admin/setup/cronjobs', 'The cronjob console got no answer from %method.', null, array( '%method' => $method ) ) );
 
             if ( !isset( $result['message'] ) )
-                $result['message'] = $result['ok'] ? 'Done.' : 'It did not work, and did not say why.';
+                $result['message'] = $result['ok'] ? ezpI18n::tr( 'design/admin/setup/cronjobs', 'Done.' ) : ezpI18n::tr( 'design/admin/setup/cronjobs', 'It did not work, and did not say why.' );
 
             return $result;
         }
         catch ( Exception $e )
         {
             eZDebug::writeError( $e->getMessage(), __METHOD__ );
-            return array( 'ok' => false, 'message' => 'The cronjob console failed: ' . $e->getMessage() );
+            return array( 'ok' => false, 'message' => ezpI18n::tr( 'design/admin/setup/cronjobs', 'The cronjob console failed: %error', null, array( '%error' => $e->getMessage() ) ) );
         }
     }
 
@@ -434,30 +434,30 @@ class expCronjobRunner
         $refuse = function ( $message ) { return array( 'ok' => false, 'message' => $message, 'pid' => 0, 'command' => '' ); };
 
         if ( !self::isLaunchable( $part ) )
-            return $refuse( 'No cronjob part named "' . $part . '" can be launched from here.' );
+            return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'No cronjob part named "%part" can be launched from here.', null, array( '%part' => $part ) ) );
 
         if ( $script !== false && !self::partHasScript( $part, $script ) )
-            return $refuse( 'The "' . $part . '" part has no script called "' . $script . '".' );
+            return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'The "%part" part has no script called "%script".', null, array( '%part' => $part, '%script' => $script ) ) );
 
         if ( !in_array( $siteaccess, self::siteAccessList(), true ) )
-            return $refuse( 'No siteaccess named "' . $siteaccess . '" is served by this installation.' );
+            return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'No siteaccess named "%siteaccess" is served by this installation.', null, array( '%siteaccess' => $siteaccess ) ) );
 
         $status = self::status();
         if ( $status['running'] )
-            return $refuse( 'The "' . $status['part'] . '" part is still running as process ' . $status['pid'] . '. Wait for it, or stop it first.' );
+            return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'The "%part" part is still running as process %pid. Wait for it, or stop it first.', null, array( '%part' => $status['part'], '%pid' => $status['pid'] ) ) );
 
         $php = self::phpBinary();
         if ( $php === false )
-            return $refuse( 'No php command line binary was found. Set cronjob.ini [AdminSettings] PhpCliPath to its full path.' );
+            return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'No php command line binary was found. Set cronjob.ini [AdminSettings] PhpCliPath to its full path.' ) );
 
         if ( !function_exists( 'proc_open' ) )
-            return $refuse( 'proc_open is disabled, so a cronjob cannot be started from the interface. Run it from a shell.' );
+            return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'proc_open is disabled, so a cronjob cannot be started from the interface. Run it from a shell.' ) );
 
         $root = self::installationRoot();
 
         $runner = $root . '/runcronjobs.php';
         if ( !file_exists( $runner ) )
-            return $refuse( 'runcronjobs.php is not where it should be: ' . $runner );
+            return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'runcronjobs.php is not where it should be: %path', null, array( '%path' => $runner ) ) );
 
         // A log of its own, so "what did the sitemap job say last night" is a
         // question with one answer rather than a search through everything that
@@ -512,7 +512,7 @@ class expCronjobRunner
                               2 => array( 'pipe', 'w' ) );
         $process = proc_open( $command, $descriptors, $pipes, $root );
         if ( !is_resource( $process ) )
-            return $refuse( 'The cronjob could not be started.' );
+            return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'The cronjob could not be started.' ) );
 
         fclose( $pipes[0] );
         fclose( $pipes[1] );
@@ -537,7 +537,7 @@ class expCronjobRunner
         }
 
         if ( $pid < 1 )
-            return $refuse( 'The cronjob was started but did not report its process id, so it cannot be followed or stopped from here. Check ' . $error . '.' );
+            return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'The cronjob was started but did not report its process id, so it cannot be followed or stopped from here. Check %file.', null, array( '%file' => $error ) ) );
 
         $started = time();
         file_put_contents( self::stateFile(), json_encode( array(
@@ -557,9 +557,11 @@ class expCronjobRunner
                                   'errors' => 0,
                                   'log' => $log ) );
 
-        $what = $script === false ? 'the "' . $part . '" part' : $script;
+        $args = array( '%part' => $part, '%script' => $script, '%siteaccess' => $siteaccess, '%pid' => $pid );
         return array( 'ok' => true, 'pid' => $pid, 'command' => $command,
-                      'message' => 'Started ' . $what . ' for ' . $siteaccess . ' as process ' . $pid . '.' );
+                      'message' => $script === false
+                          ? ezpI18n::tr( 'design/admin/setup/cronjobs', 'Started the "%part" part for %siteaccess as process %pid.', null, $args )
+                          : ezpI18n::tr( 'design/admin/setup/cronjobs', 'Started %script for %siteaccess as process %pid.', null, $args ) );
     }
 
     /**
@@ -833,7 +835,7 @@ class expCronjobRunner
         // 0 for a crontab that exists, 1 when the user has none.
         if ( !function_exists( 'exec' ) )
             return array( 'available' => false, 'lines' => array(),
-                          'note' => 'exec is disabled, so the crontab cannot be read from here.' );
+                          'note' => ezpI18n::tr( 'design/admin/setup/cronjobs', 'exec is disabled, so the crontab cannot be read from here.' ) );
 
         $raw = array();
         $status = 1;
@@ -841,8 +843,9 @@ class expCronjobRunner
 
         if ( $status !== 0 )
             return array( 'available' => false, 'lines' => array(),
-                          'note' => 'The user this site runs as (' . self::systemUser() . ') has no crontab, '
-                                  . 'or crontab is not on the path. The entries below would be added to it.' );
+                          'note' => ezpI18n::tr( 'design/admin/setup/cronjobs',
+                                                 'The user this site runs as (%user) has no crontab, or crontab is not on the path. The entries below would be added to it.',
+                                                 null, array( '%user' => self::systemUser() ) ) );
 
         $lines = array();
         foreach ( $raw as $line )
@@ -976,15 +979,15 @@ class expCronjobRunner
     {
         $status = self::status();
         if ( !$status['running'] )
-            return array( 'ok' => false, 'message' => 'No cronjob is running.' );
+            return array( 'ok' => false, 'message' => ezpI18n::tr( 'design/admin/setup/cronjobs', 'No cronjob is running.' ) );
 
         if ( !function_exists( 'posix_kill' ) )
-            return array( 'ok' => false, 'message' => 'posix_kill is not available, so the process cannot be signalled from here.' );
+            return array( 'ok' => false, 'message' => ezpI18n::tr( 'design/admin/setup/cronjobs', 'posix_kill is not available, so the process cannot be signalled from here.' ) );
 
         if ( !posix_kill( (int)$status['pid'], 15 ) )
-            return array( 'ok' => false, 'message' => 'Process ' . $status['pid'] . ' could not be signalled. It may belong to another user.' );
+            return array( 'ok' => false, 'message' => ezpI18n::tr( 'design/admin/setup/cronjobs', 'Process %pid could not be signalled. It may belong to another user.', null, array( '%pid' => $status['pid'] ) ) );
 
-        return array( 'ok' => true, 'message' => 'Asked process ' . $status['pid'] . ' to stop.' );
+        return array( 'ok' => true, 'message' => ezpI18n::tr( 'design/admin/setup/cronjobs', 'Asked process %pid to stop.', null, array( '%pid' => $status['pid'] ) ) );
     }
 
     /**
@@ -1000,7 +1003,7 @@ class expCronjobRunner
         if ( file_exists( $state ) && !$status['running'] )
             @unlink( $state );
 
-        return array( 'ok' => true, 'message' => 'Cleared the cronjob output and error logs.' );
+        return array( 'ok' => true, 'message' => ezpI18n::tr( 'design/admin/setup/cronjobs', 'Cleared the cronjob output and error logs.' ) );
     }
 
     /**

@@ -102,9 +102,9 @@ if ( defined( 'QBIX_SERVER_VERSION' ) )
 }
 // What each exp:velocity engine is, in words, for the boxes below.
 $velocityEngineNames = array(
-    'qbix'       => "Velocity's own server",
+    'qbix'       => ezpI18n::tr( 'design/admin/setup/info', 'Velocity\'s own server' ),
     'frankenphp' => 'FrankenPHP',
-    'php'        => "PHP's built-in web server",
+    'php'        => ezpI18n::tr( 'design/admin/setup/info', 'PHP\'s built-in web server' ),
 );
 
 $webserverInfo = false;
@@ -123,14 +123,14 @@ elseif ( PHP_SAPI === 'cli-server' )
     // "cli-server" and nothing else does not make that obvious.
     $workers = (int)getenv( 'PHP_CLI_SERVER_WORKERS' );
     $webserverInfo = array(
-        'name'    => 'PHP built-in web server',
+        'name'    => ezpI18n::tr( 'design/admin/setup/info', 'PHP built-in web server' ),
         'version' => PHP_VERSION,
         'modules' => array( 'SAPI: cli-server',
-                            $workers > 1 ? $workers . ' worker processes' : 'one request at a time',
-                            'a development server, not for production' ),
+                            $workers > 1 ? ezpI18n::tr( 'design/admin/setup/info', '%count worker processes', null, array( '%count' => $workers ) ) : ezpI18n::tr( 'design/admin/setup/info', 'one request at a time' ),
+                            ezpI18n::tr( 'design/admin/setup/info', 'a development server, not for production' ) ),
     );
     if ( getenv( 'EXP_VELOCITY_ENGINE' ) !== false )
-        $webserverInfo['modules'][] = 'started by exp:velocity';
+        $webserverInfo['modules'][] = ezpI18n::tr( 'design/admin/setup/info', 'started by exp:velocity' );
 }
 elseif ( PHP_SAPI === 'frankenphp' )
 {
@@ -266,16 +266,16 @@ if ( defined( 'QBIX_SERVER_VERSION' ) )
 }
 elseif ( PHP_SAPI === 'frankenphp' && $velocityEngine !== '' )
 {
-    $engineServer = array( 'server' => 'FrankenPHP, started by exp:velocity' ) + $velocitySwitch;
+    $engineServer = array( 'server' => ezpI18n::tr( 'design/admin/setup/info', 'FrankenPHP, started by exp:velocity' ) ) + $velocitySwitch;
 }
 elseif ( PHP_SAPI === 'cli-server' && $velocityEngine !== '' )
 {
-    $engineServer = array( 'server' => "PHP's built-in web server, started by exp:velocity" ) + $velocitySwitch;
+    $engineServer = array( 'server' => ezpI18n::tr( 'design/admin/setup/info', 'PHP\'s built-in web server, started by exp:velocity' ) ) + $velocitySwitch;
 }
 elseif ( PHP_SAPI === 'cli-server' )
 {
     $engineServer = array(
-        'server'  => "PHP's built-in web server",
+        'server'  => ezpI18n::tr( 'design/admin/setup/info', 'PHP\'s built-in web server' ),
         'on'      => 'start php -S with EXP_ENGINE_PHAR=' . $engineArchivePath . ' in its environment',
         'off'     => 'start php -S without EXP_ENGINE_PHAR',
         'restart' => 'restart php -S',
@@ -657,9 +657,9 @@ if ( $servingEngine !== null && class_exists( 'expVelocity' ) )
     }
 
     $roleText = array(
-        'recommended'  => 'recommended for every stage -- development, alpha, beta, demo, stable and production -- and the fastest of the engines',
-        'production'   => 'production-ready; Velocity\'s own server (qbix) is the recommended engine',
-        'development'  => 'development only -- for any other stage, run Velocity\'s own server (qbix)',
+        'recommended'  => ezpI18n::tr( 'design/admin/setup/info', 'recommended for every stage -- development, alpha, beta, demo, stable and production -- and the fastest of the engines' ),
+        'production'   => ezpI18n::tr( 'design/admin/setup/info', 'production-ready; Velocity\'s own server (qbix) is the recommended engine' ),
+        'development'  => ezpI18n::tr( 'design/admin/setup/info', 'development only -- for any other stage, run Velocity\'s own server (qbix)' ),
     );
     $velocityInfo = array(
         'engine'     => $servingEngine,
@@ -673,9 +673,9 @@ if ( $servingEngine !== null && class_exists( 'expVelocity' ) )
         'bind'       => $bind === '' ? '127.0.0.1' : $bind,
         // Only known for a server started from velocity.ini; one started by
         // hand binds wherever its command line said.
-        'reach'      => !$configured ? 'wherever it was started to listen (not by exp:velocity, so its Host is not known here)'
-                        : ( $local ? 'this machine only (Host=' . ( $bind === '' ? '127.0.0.1' : $bind ) . '), or through a proxy or tunnel'
-                                   : 'every machine that reaches ' . $bind . ':' . $servedPort ),
+        'reach'      => !$configured ? ezpI18n::tr( 'design/admin/setup/info', 'wherever it was started to listen (not by exp:velocity, so its Host is not known here)' )
+                        : ( $local ? ezpI18n::tr( 'design/admin/setup/info', 'this machine only (Host=%host), or through a proxy or tunnel', null, array( '%host' => ( $bind === '' ? '127.0.0.1' : $bind ) ) )
+                                   : ezpI18n::tr( 'design/admin/setup/info', 'every machine that reaches %address', null, array( '%address' => $bind . ':' . $servedPort ) ) ),
         'version'    => $ownServerVersion !== '' ? $ownServerVersion
                         : ( isset( $status['version'] ) && $status['version'] !== '' ? $status['version'] : '' ),
         'engine_name' => isset( $velocityEngineNames[$servingEngine] ) ? $velocityEngineNames[$servingEngine] : $servingEngine,
