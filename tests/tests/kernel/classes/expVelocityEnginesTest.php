@@ -383,6 +383,34 @@ class expVelocityEnginesTest extends ezpTestCase
         return $config['Q']['webserver'] ?? array();
     }
 
+    /**
+     * Q.web.cache as the qbix engine writes it.
+     */
+    protected function qbixWebCacheConfig( expVelocity $velocity )
+    {
+        $write = new ReflectionMethod( $velocity, 'writeServerConfig' );
+        $write->setAccessible( true );
+        $config = json_decode( file_get_contents( $write->invoke( $velocity ) ), true );
+        return $config['Q']['web']['cache'] ?? null;
+    }
+
+    /**
+     * The server's built-in default has the response cache on, so a
+     * [CacheSettings] Enabled=disabled that is left out of the configuration
+     * kept it caching. It must be written as false.
+     */
+    public function testADisabledResponseCacheIsWrittenAsFalse()
+    {
+        ezpINIHelper::setINISetting( 'velocity.ini', 'CacheSettings', 'Enabled', 'disabled' );
+        $cache = $this->qbixWebCacheConfig( expVelocity::create( 'velocity.ini', 'qbix' ) );
+        $this->assertIsArray( $cache );
+        $this->assertSame( false, $cache['enabled'] ?? null );
+
+        ezpINIHelper::setINISetting( 'velocity.ini', 'CacheSettings', 'Enabled', 'enabled' );
+        $cache = $this->qbixWebCacheConfig( expVelocity::create( 'velocity.ini', 'qbix' ) );
+        $this->assertSame( true, $cache['enabled'] ?? null );
+    }
+
     public function testUrlsArePrintableAddresses()
     {
         ezpINIHelper::setINISetting( 'velocity.ini', 'PHPServerSettings', 'Port', '8125' );

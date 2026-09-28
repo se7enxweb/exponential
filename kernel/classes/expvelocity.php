@@ -1305,6 +1305,12 @@ class expVelocity
                 'maxAge' => (int)$this->cacheSetting( 'SweepMaxAge', null, '86400' ),
             );
         }
+        else
+        {
+            // The server's own default switches the cache on, so leaving the
+            // key out kept it running: say so explicitly.
+            $cache['enabled'] = false;
+        }
 
         if ( $cache )
             $web['cache'] = $cache;
