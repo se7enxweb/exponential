@@ -55,7 +55,7 @@ class eZScriptTrashPurge
      * @param eZScript $script Optional eZScript object used while running.
      * @param string $logFile Log file to use for memory monitoring.
      */
-    public function __construct( eZCLI $cli, $quiet = true, $memoryMonitoring = false, eZScript $script = null, $logFile = "trashpurge.log" )
+    public function __construct( eZCLI $cli, $quiet = true, $memoryMonitoring = false, ?eZScript $script = null, $logFile = "trashpurge.log" )
     {
         $this->cli = $cli;
         $this->quiet = $quiet;

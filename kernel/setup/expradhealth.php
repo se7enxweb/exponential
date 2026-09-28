@@ -61,7 +61,7 @@ class expRADHealth
      * @param array|null $findings
      * @return array
      */
-    public static function counts( array $findings = null )
+    public static function counts( ?array $findings = null )
     {
         if ( $findings === null )
             $findings = self::findings();
