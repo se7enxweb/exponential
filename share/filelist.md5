@@ -95,7 +95,7 @@ e53af0113356a7991f3cfcb5d99fd22e  bin/php/trashpurge.php
 640b457181f94b435659cda8bd0e6217  bin/php/updateniceurls.php
 2b75d418585d3d583adbb28798db5c87  bin/php/updatesearchindex.php
 45816388328705ce2980f450c29a42b4  bin/php/velocity-router.php
-fa03b7a72aab558c45d58052c700f8c2  bin/php/velocity-warmup.php
+6276de4b3bdef07f75e7f6669b4d7bea  bin/php/velocity-warmup.php
 7c863bb4e540e158420cbe608f18afa0  bin/php/velocity.php
 cfcb4022009fc98a7c5aad2789f5080c  bin/php/verify_aliases.php
 85657a43af64db3c68531cef4f5b9246  bin/php/warm.php
@@ -517,7 +517,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 31629a628c03452476a8ae75f083e507  design/admin/templates/setup/designextension.tpl
 ba482a46ea6cadeebb4dc06e3317fb29  design/admin/templates/setup/extensions.tpl
 505534fd34ec67dbefd86e2c7d289b70  design/admin/templates/setup/handlerextension.tpl
-7d019d5389fc7b34e7f718e4638581d7  design/admin/templates/setup/info.tpl
+b040f6983ae847ee50d402ddc0156fc1  design/admin/templates/setup/info.tpl
 5cd58dc1ec14b5402b43a9946e695551  design/admin/templates/setup/kerneloverride.tpl
 1b0766e4eecfd531b9f0c4506ff26747  design/admin/templates/setup/maintenance.tpl
 83c3fab5d2977ef95c8bbc3893be6cba  design/admin/templates/setup/moduleextension.tpl
@@ -6079,7 +6079,7 @@ e6724ebcd818da38e0eb74eb50997739  kernel/setup/ezsetupcommon.php
 9a0d4cb28028a07bdf65121f41064aa9  kernel/setup/ezsetuptests.php
 b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
 cd03cb92754405882ff23f53c81ced0d  kernel/setup/handlerextension.php
-8b73668666c1d54d0c40ceba004dc768  kernel/setup/info.php
+c7fa397fdaf023411548e7f34ae51d91  kernel/setup/info.php
 58b336742a91375d4b49f5a44e577b9e  kernel/setup/kerneloverride.php
 4000b1b15c813a43379ae733ded1a1e7  kernel/setup/maintenance.php
 18ecee0d07126e49f164552b002eaf7e  kernel/setup/menuconfig.php
