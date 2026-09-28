@@ -30012,6 +30012,26 @@ It is possible to change these settings at a later time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>PostgreSQL: the username and password are tested against the database named here, which has to exist already; its owner can install Exponential into it. With no name, the Site details page lists the databases this user may connect to.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not connect to the PostgreSQL database. Please make sure that the server name, port, username and password are correct, that the database named on this page exists and that this user may connect to it. The server has to accept connections from this host (listen_addresses in postgresql.conf, and pg_hba.conf).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PostgreSQL documentation: client authentication</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The 'digest' function is not available in your database, and Exponential cannot run without it. It comes from the PostgreSQL extension pgcrypto, which the setup could not create. Install the server's contrib package if pgcrypto is missing, then have the owner of the database or a superuser run CREATE EXTENSION pgcrypto; in it, and click Next again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PostgreSQL documentation: pgcrypto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Optionally you may disable this manually, edit the &lt;i&gt;settings/site.ini&lt;/i&gt; file and look for a line that says</source>
         <translation type="unfinished"></translation>
     </message>

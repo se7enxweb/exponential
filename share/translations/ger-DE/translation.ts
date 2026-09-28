@@ -35939,6 +35939,26 @@ Es wird möglich sein, diese später zu ändern.</translation>
         <translation>Der angegebene Benutzername und das angegebene Passwort für PostgreSQL werden erst überprüft, wenn die Datenbanken ausgewählt werden.</translation>
     </message>
     <message>
+        <source>PostgreSQL: the username and password are tested against the database named here, which has to exist already; its owner can install Exponential into it. With no name, the Site details page lists the databases this user may connect to.</source>
+        <translation>PostgreSQL: Benutzername und Passwort werden an der hier angegebenen Datenbank geprüft, die bereits bestehen muss; ihr Eigentümer kann Exponential darin installieren. Ohne Namen listet die Seite Site-Details die Datenbanken auf, mit denen sich dieser Benutzer verbinden darf.</translation>
+    </message>
+    <message>
+        <source>Could not connect to the PostgreSQL database. Please make sure that the server name, port, username and password are correct, that the database named on this page exists and that this user may connect to it. The server has to accept connections from this host (listen_addresses in postgresql.conf, and pg_hba.conf).</source>
+        <translation>Die Verbindung zur PostgreSQL-Datenbank ist fehlgeschlagen. Bitte stellen Sie sicher, dass Servername, Port, Benutzername und Passwort richtig sind, dass die auf dieser Seite angegebene Datenbank besteht und dass sich dieser Benutzer mit ihr verbinden darf. Der Server muss Verbindungen von diesem Rechner annehmen (listen_addresses in postgresql.conf und pg_hba.conf).</translation>
+    </message>
+    <message>
+        <source>PostgreSQL documentation: client authentication</source>
+        <translation>PostgreSQL-Dokumentation: Client-Authentifizierung</translation>
+    </message>
+    <message>
+        <source>The 'digest' function is not available in your database, and Exponential cannot run without it. It comes from the PostgreSQL extension pgcrypto, which the setup could not create. Install the server's contrib package if pgcrypto is missing, then have the owner of the database or a superuser run CREATE EXTENSION pgcrypto; in it, and click Next again.</source>
+        <translation>Die Funktion 'digest' ist in Ihrer Datenbank nicht verfügbar, und Exponential kann ohne sie nicht laufen. Sie stammt aus der PostgreSQL-Erweiterung pgcrypto, die das Setup nicht anlegen konnte. Installieren Sie das contrib-Paket des Servers, falls pgcrypto fehlt, lassen Sie dann den Eigentümer der Datenbank oder einen Superuser darin CREATE EXTENSION pgcrypto; ausführen und klicken Sie erneut auf Weiter.</translation>
+    </message>
+    <message>
+        <source>PostgreSQL documentation: pgcrypto</source>
+        <translation>PostgreSQL-Dokumentation: pgcrypto</translation>
+    </message>
+    <message>
         <source>Optionally you may disable this manually, edit the &lt;i&gt;settings/site.ini&lt;/i&gt; file and look for a line that says</source>
         <translation>Optinal wurden Sie das vielleicht manuell deaktivieren. Bearbeiten Sie dazu die Einstellungsdatei &lt;i&gt;settings/site.ini&lt;/i&gt; und suchen Sie nach der Zeile</translation>
     </message>

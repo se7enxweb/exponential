@@ -824,12 +824,9 @@ class eZStepInstaller
                 if ( $errorInfo['database_info']['type'] == 'pgsql' )
                 {
                     $dbError = array( 'text' => ezpI18n::tr( 'design/standard/setup/init',
-                                                        'Please make sure that the username and the password is correct. Verify that your PostgreSQL database is configured correctly.'
-                                                        .'<br>See the PHP documentation for more information about this.'
-                                                        .'<br>Remember to start postmaster with the -i option.'
-                                                        .'<br>Note that PostgreSQL 7.2 is not supported.' ),
-                                      'url' => array( 'href' => 'http://www.php.net/manual/en/ref.pgsql.php',
-                                                      'text' => 'PHP documentation' ),
+                                                        'Could not connect to the PostgreSQL database. Please make sure that the server name, port, username and password are correct, that the database named on this page exists and that this user may connect to it. The server has to accept connections from this host (listen_addresses in postgresql.conf, and pg_hba.conf).' ),
+                                      'url' => array( 'href' => 'https://www.postgresql.org/docs/current/client-authentication.html',
+                                                      'text' => ezpI18n::tr( 'design/standard/setup/init', 'PostgreSQL documentation: client authentication' ) ),
                                       'number' => self::DB_ERROR_CONNECTION_FAILED );
                 }
                 else if ( $errorInfo['database_info']['type'] == 'sqlite3' )
@@ -879,10 +876,10 @@ class eZStepInstaller
             case self::DB_ERROR_NO_DIGEST_PROC:
             {
                 $dbError = array( 'text' => ezpI18n::tr( 'design/standard/setup/init',
-                                                    "The 'digest' function is not available in your database, you cannot run Exponential without this. See the documentation for more information." ),
-                                  'url' => array( 'href' => 'http://ez.no/doc/ez_publish/technical_manual/current/installation/normal_installation/requirements_for_doing_a_normal_installation#digest_function',
-                                                  'text' => 'PostgreSQL digest FAQ' ),
-                                  'number' => self::DB_ERROR_NO_DATABASES );
+                                                    "The 'digest' function is not available in your database, and Exponential cannot run without it. It comes from the PostgreSQL extension pgcrypto, which the setup could not create. Install the server's contrib package if pgcrypto is missing, then have the owner of the database or a superuser run CREATE EXTENSION pgcrypto; in it, and click Next again." ),
+                                  'url' => array( 'href' => 'https://www.postgresql.org/docs/current/pgcrypto.html',
+                                                  'text' => ezpI18n::tr( 'design/standard/setup/init', 'PostgreSQL documentation: pgcrypto' ) ),
+                                  'number' => self::DB_ERROR_NO_DIGEST_PROC );
                 break;
             }
 
