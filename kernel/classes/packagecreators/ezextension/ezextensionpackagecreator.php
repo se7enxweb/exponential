@@ -135,13 +135,13 @@ class eZExtensionPackageCreator extends eZPackageCreationHandler
             $extensionName = $extensionList[0];
             $packageInformation['name'] = $extensionName;
             $packageInformation['summary'] = "$extensionName extension";
-            $packageInformation['description'] = "This package contains the $extensionName eZ Publish extension";
+            $packageInformation['description'] = "This package contains the $extensionName Exponential extension";
         }
         else if ( $extensionCount > 1 )
         {
             $packageInformation['name'] = "$extensionCount Extensions";
             $packageInformation['summary'] = "Export of $extensionCount extensions";
-            $description = "This package contains the following eZ Publish extensions: \n";
+            $description = "This package contains the following Exponential extensions: \n";
             foreach ( $extensionList as $extensionName )
             {
                 $description .= "- $extensionName\n";
