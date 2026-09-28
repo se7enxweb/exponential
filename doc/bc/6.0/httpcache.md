@@ -76,7 +76,7 @@ exit reads (`var/<site>/cache/exphttpcache/contract.php`, with a generated key).
 | Setting | Default | |
 |---|---|---|
 | `Enabled` | `disabled` | Nothing is stored or served while disabled. Switching off takes effect on the next request that reaches the kernel. |
-| `CachedSiteAccesses[]` | `site` | Host-matched siteaccesses only: the early exit knows the host, not the URI rules. |
+| `CachedSiteAccesses[]` | `site` | Siteaccesses matched by host (map), by URI (`element`, `map`) or by `host_uri`; see "Which siteaccess" below. |
 | `MaxAge` | `3600` | Longest life of a page even if nothing purges it. A template's `cache_ttl` shortens it; `cache_ttl=0` keeps the page out, as it does the view cache. |
 | `StaleWhileRevalidate` | `60` | An expired (not purged) page is served as `STALE` while one request renders it again. |
 | `ContentChangePurges` | `all` | `all`: any content change purges every page. `tags`: only pages showing the changed objects, nodes, parents, and pages with query blocks. |
@@ -84,6 +84,37 @@ exit reads (`var/<site>/cache/exphttpcache/contract.php`, with a generated key).
 | `ProxyHeaders` | `enabled` | `xkey` and `Surrogate-Key` headers for Varnish or Fastly. |
 | `APCu` | `enabled` | Hot entries in APCu in front of the files. |
 | `MaxBodySize` | 2 MB | Larger pages are not stored. |
+
+## Which siteaccess, scheme and host
+
+The early exit and Velocity answer before the kernel runs, so they work out
+the siteaccess, scheme and host themselves, from values the kernel writes into
+`contract.php`:
+
+- **Siteaccess** (`ezpHttpCacheContract::resolveSiteAccess()`): the rules of
+  `eZSiteAccess::match()` on the `site.ini` settings without siteaccess
+  overrides -- `StaticMatch`, then `MatchOrder` with `uri` (`URIMatchType`
+  `element` or `map`), `host` (`HostMatchType=map`) and `host_uri`
+  (`HostUriMatchMapItems`, every host match method), then `DefaultAccess`. A
+  request that reaches a rule it cannot follow (`port`, `servervar`, `index`,
+  the `text` and `regexp` types, a name the kernel would normalise) is not
+  served early. `/bold_ger/kontakt` on a `MatchOrder=uri;host` site is
+  `bold_ger`, as the kernel has it.
+- **Scheme and host** (`ezpHttpCacheContract::requestOrigin()`): as
+  `eZSys::hostname()` and `eZSys::isSSLNow()` -- `X-Forwarded-Host`, then
+  `Host`; `HTTPS`, the port against `SSLPort`, `X-Forwarded-Proto`,
+  `X-Forwarded-Port`, `X-Forwarded-Server`. Behind a load balancer that ends
+  TLS and forwards to `exp:8080`, a page is kept for
+  `https://www.example.org/...`, the address the visitor asked for, and found
+  under it again. The early exit reads `$_SERVER`; Velocity's server process
+  needs an engine that hands over the request headers (qbix-webserver after
+  v0.0.4.34) and otherwise misses behind a load balancer.
+
+The kernel stores a page only when these give the siteaccess, scheme and host
+it rendered the page with (`X-Exp-Cache: BYPASS (siteaccess not known before
+the kernel)` or `BYPASS (scheme or host not known before the kernel)`
+otherwise). A rule followed differently here costs a render, never a page of
+another siteaccess, scheme or host.
 
 ## When pages are purged
 
@@ -126,7 +157,8 @@ default; `tags` is for installations that know their templates.
 
 POST and other writes; responses other than 200; responses that set a cookie
 of their own; pages with a disallowed query string; pages whose template sets
-`cache_ttl=0`; siteaccesses not host-matched; anything not a content view.
+`cache_ttl=0`; siteaccesses not in `CachedSiteAccesses`, or found by a rule
+that cannot be known before the kernel; anything not a content view.
 
 ## Security
 
@@ -150,4 +182,4 @@ of their own; pages with a disallowed query string; pages whose template sets
 | `kernel/private/classes/httpcache/ezphttpcachelistener.php` | Store after render, purges, sign-in record |
 | `settings/httpcache.ini` | Settings |
 | `cronjobs/httpcache_cleanup.php` | Removes dead entries |
-| `tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php` | Unit tests (HC-01 … HC-10) |
+| `tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php` | Unit tests (HC-01 … HC-16) |
