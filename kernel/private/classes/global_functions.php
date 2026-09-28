@@ -79,34 +79,10 @@ function eZDisplayResult( $templateResult )
     echo ezpEvent::getInstance()->filter( 'response/output', ob_get_clean() );
 }
 
-/**
- * Reads settings from site.ini and passes them to eZDebug
- *
- * @deprecated Since 5.0
- */
-function eZUpdateDebugSettings()
-{
-    $settings = array();
-    list( $settings['debug-enabled'], $settings['debug-by-ip'], $settings['log-only'], $settings['debug-by-user'], $settings['debug-ip-list'], $logList, $settings['debug-user-list'] ) =
-        eZINI::instance()->variableMulti(
-            'DebugSettings',
-            array( 'DebugOutput', 'DebugByIP', 'DebugLogOnly', 'DebugByUser', 'DebugIPList', 'AlwaysLog', 'DebugUserIDList' ),
-            array( 'enabled', 'enabled', 'disabled', 'enabled' )
-        );
-    $settings['always-log'] = array();
-    foreach (
-        array(
-            'notice' => eZDebug::LEVEL_NOTICE,
-            'warning' => eZDebug::LEVEL_WARNING,
-            'error' => eZDebug::LEVEL_ERROR,
-            'debug' => eZDebug::LEVEL_DEBUG,
-            'strict' => eZDebug::LEVEL_STRICT
-        ) as $name => $level )
-    {
-        $settings['always-log'][$level] = $logList !== null && in_array( $name, $logList );
-    }
-    eZDebug::updateSettings( $settings );
-}
+// eZUpdateDebugSettings() -- reads the settings from site.ini and passes them
+// to eZDebug -- is shared with the other front controllers, so it lives in a
+// file of its own that every one of them includes once.
+require_once __DIR__ . '/debug_settings_functions.php';
 
 /**
  * Appends a new warning item to the warning list.

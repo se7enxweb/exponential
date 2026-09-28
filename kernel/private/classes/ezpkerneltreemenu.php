@@ -73,6 +73,8 @@ class ezpKernelTreeMenu implements ezpKernelHandler
         unset( $settings, $injectedSettings, $file, $section, $setting, $keySetting, $injectedSetting );
 
         require_once __DIR__ . '/treemenu_functions.php';
+        // Set every time: a persistent worker may have run another front controller before.
+        eZDebugSettingsMode( 'none' );
         $this->setUseExceptions( $this->settings['use-exceptions'] );
 
         header( 'X-Powered-By: ' . ExponentialSDK::EDITION . ' (index_treemenu)' );

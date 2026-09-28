@@ -7,9 +7,6 @@
  * @version //autogentag//
  */
 
-if ( !function_exists( 'eZUpdateDebugSettings' ) )
-{
-    function eZUpdateDebugSettings()
-    {
-    }
-}
+// eZUpdateDebugSettings() is shared with the other front controllers; the tree
+// menu kernel selects its variant (leave eZDebug alone) with eZDebugSettingsMode( 'none' ).
+require_once __DIR__ . '/debug_settings_functions.php';

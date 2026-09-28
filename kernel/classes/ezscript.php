@@ -210,6 +210,9 @@ class eZScript
 
         eZDebug::setHandleType( eZDebug::HANDLE_TO_PHP );
 
+        // Scripts manage eZDebug themselves: eZUpdateDebugSettings() leaves it alone.
+        eZDebugSettingsMode( 'none' );
+
         if ( php_sapi_name() != 'cli' )
         {
             $cli = eZCLI::instance();
@@ -1255,14 +1258,10 @@ function eZFatalError()
 }
 
 /*!
-  Dummy function, required by some scripts in eZ Publish.
+  eZUpdateDebugSettings(), required by some scripts; shared with the front
+  controllers. eZScript::startup() makes it leave eZDebug alone.
 */
-if ( !function_exists( 'eZUpdateDebugSettings' ) )
-{
-    function eZUpdateDebugSettings( $useDebug = null )
-    {
-    }
-}
+require_once __DIR__ . '/../private/classes/debug_settings_functions.php';
 
 /*!
   Dummy function, required by some scripts in eZ Publish.

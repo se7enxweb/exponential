@@ -85,8 +85,12 @@ class ezpKernelRest implements ezpKernelHandler
         );
         unset( $settings, $injectedSettings, $file, $section, $setting, $keySetting, $injectedSetting );
 
-        // lazy loaded database driver
-        include __DIR__ . '/lazy.php';
+        // lazy loaded database driver. Once only: the autoload map points at the
+        // same file, and a persistent worker constructs this kernel once per request.
+        if ( !class_exists( 'ezpRestDbConfig', false ) )
+        {
+            require_once __DIR__ . '/lazy.php';
+        }
 
         $this->setUseExceptions( $this->settings['use-exceptions'] );
 
@@ -132,6 +136,8 @@ class ezpKernelRest implements ezpKernelHandler
         eZExtension::activateExtensions( 'default' );
 
         require_once __DIR__ . '/restkernel_functions.php';
+        // Set every time: a persistent worker may have run another front controller before.
+        eZDebugSettingsMode( 'rest' );
 
         // set siteaccess from X-Siteaccess header if given and exists
         if ( isset( $_SERVER['HTTP_X_SITEACCESS'] ) && eZSiteAccess::exists( $_SERVER['HTTP_X_SITEACCESS'] ) )

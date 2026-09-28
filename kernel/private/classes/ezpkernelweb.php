@@ -158,6 +158,8 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         unset( $settings, $injectedSettings, $file, $section, $setting, $keySetting, $injectedSetting );
 
         require_once __DIR__ . '/global_functions.php';
+        // Set every time: a persistent worker may have run another front controller before.
+        eZDebugSettingsMode( 'web' );
         $this->setUseExceptions( $this->settings['use-exceptions'] );
 
         $GLOBALS['eZSiteBasics'] = array(
