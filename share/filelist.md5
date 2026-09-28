@@ -521,7 +521,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 1b0766e4eecfd531b9f0c4506ff26747  design/admin/templates/setup/maintenance.tpl
 83c3fab5d2977ef95c8bbc3893be6cba  design/admin/templates/setup/moduleextension.tpl
 b4b7ee0217f59d2b95c5a63c9c63c492  design/admin/templates/setup/modulewizard.tpl
-b0272f4e20c5f622fa5640ff130cfeff  design/admin/templates/setup/preload.tpl
+6ff757a248e65ebaebc3ed7935f2fc5c  design/admin/templates/setup/preload.tpl
 77d5784c529f92b24eef559b269adaf1  design/admin/templates/setup/quick_settings.tpl
 4fd89592db66b9e0d6fedddc39116d37  design/admin/templates/setup/rad.tpl
 031fff735e44ae74f5330409e08005f8  design/admin/templates/setup/radsurvey.tpl
