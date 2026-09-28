@@ -20,53 +20,53 @@ class eZSetupFunctionCollection
 {
     function fetchFullVersionString()
     {
-        return array( 'result' => eZPublishSDK::version() );
+        return array( 'result' => ExponentialSDK::version() );
     }
 
     function fetchVersionAlias()
     {
-        return array( 'result' => eZPublishSDK::version( false, true ) );
+        return array( 'result' => ExponentialSDK::version( false, true ) );
     }
 
     function fetchMajorVersion()
     {
-        return array( 'result' => eZPublishSDK::majorVersion() );
+        return array( 'result' => ExponentialSDK::majorVersion() );
     }
 
     function fetchMinorVersion()
     {
-        return array( 'result' => eZPublishSDK::minorVersion() );
+        return array( 'result' => ExponentialSDK::minorVersion() );
     }
 
     function fetchRelease()
     {
-        return array( 'result' => eZPublishSDK::release() );
+        return array( 'result' => ExponentialSDK::release() );
 
     }
 
     function fetchState()
     {
-        return array( 'result' => eZPublishSDK::state() );
+        return array( 'result' => ExponentialSDK::state() );
     }
 
     function fetchIsDevelopment()
     {
-        return array( 'result' => eZPublishSDK::developmentVersion() ? true : false );
+        return array( 'result' => ExponentialSDK::developmentVersion() ? true : false );
     }
 
     function fetchDatabaseVersion( $withRelease = true )
     {
-        return array( 'result' => eZPublishSDK::databaseVersion( $withRelease ) );
+        return array( 'result' => ExponentialSDK::databaseVersion( $withRelease ) );
     }
 
     function fetchDatabaseRelease()
     {
-        return array( 'result' => eZPublishSDK::databaseRelease() );
+        return array( 'result' => ExponentialSDK::databaseRelease() );
     }
 
     function fetchEdition()
     {
-        return array( 'result' => eZPublishSDK::EDITION );
+        return array( 'result' => ExponentialSDK::EDITION );
     }
 }
 }

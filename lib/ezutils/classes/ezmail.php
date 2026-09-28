@@ -77,7 +77,7 @@ class eZMail
         $this->MessageID = false;
 
         // Sets some default values
-        $version = eZPublishSDK::version();
+        $version = ExponentialSDK::version();
 
         $this->MIMEVersion = '1.0';
         $this->ContentType = array( 'type' => 'text/plain',

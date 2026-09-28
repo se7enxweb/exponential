@@ -615,7 +615,7 @@ class expSetupLog
     protected static function environment()
     {
         return array(
-            'Exponential' => eZPublishSDK::version(),
+            'Exponential' => ExponentialSDK::version(),
             'PHP' => PHP_VERSION . ' (' . PHP_SAPI . ')',
             'operating system' => php_uname( 's' ) . ' ' . php_uname( 'r' ),
             'user' => self::currentUser(),

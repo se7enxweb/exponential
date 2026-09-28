@@ -49,7 +49,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                 $this->IsStrictHeader = true;
         }
 
-        $this->eZPublishVersion = eZPublishSDK::majorVersion() + eZPublishSDK::minorVersion() * 0.1;
+        $this->eZPublishVersion = ExponentialSDK::majorVersion() + ExponentialSDK::minorVersion() * 0.1;
 
         $ezxmlIni = eZINI::instance( 'ezxml.ini' );
         if ( $ezxmlIni->hasVariable( 'InputSettings', 'AllowMultipleSpaces' ) === true )

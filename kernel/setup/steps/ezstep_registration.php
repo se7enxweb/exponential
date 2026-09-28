@@ -112,10 +112,10 @@ class eZStepRegistration extends eZStepInstaller
         $mailTpl->setVariable( 'system', $systemInfo );
         $mailTpl->setVariable( 'os', array( 'name' => php_uname() ) );
         $mailTpl->setVariable( 'optional_tests', $testResults );
-        $mailTpl->setVariable( "version", array( "text" => eZPublishSDK::version(),
-                                                 "major" => eZPublishSDK::majorVersion(),
-                                                 "minor" => eZPublishSDK::minorVersion(),
-                                                 "release" => eZPublishSDK::release() ) );
+        $mailTpl->setVariable( "version", array( "text" => ExponentialSDK::version(),
+                                                 "major" => ExponentialSDK::majorVersion(),
+                                                 "minor" => ExponentialSDK::minorVersion(),
+                                                 "release" => ExponentialSDK::release() ) );
 
         return $mailTpl->fetch( 'design:setup/registration_email.tpl' );
     }

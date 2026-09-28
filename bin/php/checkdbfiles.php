@@ -310,7 +310,7 @@ if ( !$options['no-verify-branches'] )
 }
 
 // Figure out the current branch, we do not want to export it
-$currentBranch = eZPublishSDK::VERSION_MAJOR . '.' . eZPublishSDK::VERSION_MINOR;
+$currentBranch = ExponentialSDK::VERSION_MAJOR . '.' . ExponentialSDK::VERSION_MINOR;
 
 foreach ( $dbTypes as $dbType )
 {

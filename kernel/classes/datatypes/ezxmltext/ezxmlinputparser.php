@@ -155,7 +155,7 @@ class eZXMLInputParser
 
         $this->XMLSchema = eZXMLSchema::instance();
 
-        $this->eZPublishVersion = eZPublishSDK::majorVersion() + eZPublishSDK::minorVersion() * 0.1;
+        $this->eZPublishVersion = ExponentialSDK::majorVersion() + ExponentialSDK::minorVersion() * 0.1;
 
         $ini = eZINI::instance( 'ezxml.ini' );
         if ( $ini->hasVariable( 'InputSettings', 'TrimSpaces' ) )

@@ -354,7 +354,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             'Last-Modified' => gmdate( 'D, d M Y H:i:s' ) . ' GMT',
             'Cache-Control' => 'no-cache, must-revalidate',
             'Pragma' => 'no-cache',
-            'X-Powered-By' => eZPublishSDK::EDITION,
+            'X-Powered-By' => ExponentialSDK::EDITION,
             'Content-Type' => 'text/html; charset=' . $this->httpCharset,
             'Served-by' => isset( $_SERVER["SERVER_NAME"] ) ? $_SERVER['SERVER_NAME'] : null,
             'Content-language' => $this->languageCode
@@ -537,7 +537,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             $this->site['uri'] = $this->oldURI;
             $this->site['redirect'] = false;
             $this->site['meta'] = $meta;
-            $this->site['version'] = eZPublishSDK::version();
+            $this->site['version'] = ExponentialSDK::version();
             $this->site['page_title'] = $this->module->title();
 
             $tpl->setVariable( "site", $this->site );

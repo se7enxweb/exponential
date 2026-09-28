@@ -174,11 +174,11 @@ while( !$done && $step != null )
         $script = eZSys::indexFile() . "$uriPrefix/setup/$partName";
     $tpl->setVariable( 'script', $script );
 
-    $tpl->setVariable( "version", array( "text" => eZPublishSDK::version(),
-                                         "major" => eZPublishSDK::majorVersion(),
-                                         "minor" => eZPublishSDK::minorVersion(),
-                                         "release" => eZPublishSDK::release(),
-                                         "alias" => eZPublishSDK::alias() ) );
+    $tpl->setVariable( "version", array( "text" => ExponentialSDK::version(),
+                                         "major" => ExponentialSDK::majorVersion(),
+                                         "minor" => ExponentialSDK::minorVersion(),
+                                         "release" => ExponentialSDK::release(),
+                                         "alias" => ExponentialSDK::alias() ) );
 
     if ( $persistenceList === null )
         $persistenceList = eZSetupFetchPersistenceList();

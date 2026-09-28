@@ -39,7 +39,7 @@ class eZStepSiteTypes extends eZStepInstaller
             {
                 $indexURL .= '/';
             }
-            $indexURL .= eZPublishSDK::version( false, false, false ) . '/' . eZPublishSDK::version() . '/';
+            $indexURL .= ExponentialSDK::version( false, false, false ) . '/' . ExponentialSDK::version() . '/';
         }
         $this->IndexURL = $indexURL;
 

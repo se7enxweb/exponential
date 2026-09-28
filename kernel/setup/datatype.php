@@ -61,7 +61,7 @@ if ( $http->hasPostVariable( 'DownloadButton' ) )
         header( 'Content-Type: application/zip' );
         header( 'Content-Disposition: attachment; filename="' . $archive['filename'] . '"' );
         header( 'Content-Length: ' . filesize( $archive['path'] ) );
-        header( 'X-Powered-By: ' . eZPublishSDK::EDITION );
+        header( 'X-Powered-By: ' . ExponentialSDK::EDITION );
 
         readfile( $archive['path'] );
         @unlink( $archive['path'] );

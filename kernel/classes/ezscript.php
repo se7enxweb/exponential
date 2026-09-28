@@ -170,7 +170,7 @@ class eZScript
     function validateVersion()
     {
         $versionValidated = false;
-        $ezversion = eZPublishSDK::version();
+        $ezversion = ExponentialSDK::version();
         if ( $this->MinVersion !== false )
         {
             if ( $this->MaxVersion !== false )

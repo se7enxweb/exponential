@@ -805,12 +805,12 @@ if ( array_intersect( $aboutFlags, $leading ) )
     }
     $extensions = is_dir( $rootDir . '/extension' ) ? count( glob( $rootDir . '/extension/*', GLOB_ONLYDIR ) ) : 0;
 
-    echo 'console (Exponential) ' . eZPublishSDK::version() . "\n"
+    echo 'console (Exponential) ' . ExponentialSDK::version() . "\n"
        . wordwrap( 'Exponential is an open source content management system and application platform in PHP. '
                  . 'The console finds and runs every command of an installation -- its kernel scripts, '
                  . 'shell scripts and the scripts of its extensions -- as exp:, shell:, bin: and ext: commands.', 78 ) . "\n\n"
        . $row( 'Program', 'console -- ' . EXP_CONSOLE_NAME . ' ' . EXP_CONSOLE_VERSION . ', the command console of an installation' )
-       . $row( 'Version', 'Exponential ' . eZPublishSDK::version() . ' (' . eZPublishSDK::alias() . ' line)' )
+       . $row( 'Version', 'Exponential ' . ExponentialSDK::version() . ' (' . ExponentialSDK::alias() . ' line)' )
        . $row( 'Build', $commit !== '' ? $commit . ( $commitDate !== '' ? ', ' . $commitDate . ' UTC (commit)' : '' ) : 'not a git checkout' )
        . $row( 'Installation', $rootDir . ', ' . $extensions . ' extensions' )
        . $row( 'Web server', $velocity )

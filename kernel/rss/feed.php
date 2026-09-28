@@ -74,7 +74,7 @@ else
             {
                 header( 'HTTP/1.1 304 Not Modified' );
                 header( 'Last-Modified: ' . $lastModified );
-                header( 'X-Powered-By: ' . eZPublishSDK::EDITION );
+                header( 'X-Powered-By: ' . ExponentialSDK::EDITION );
                 eZExecution::cleanExit();
            }
         }
@@ -113,7 +113,7 @@ switch ( $RSSExport->attribute( 'rss_version' ) )
 }
 
 header( 'Content-Length: ' . strlen( $rssContent ) );
-header( 'X-Powered-By: ' . eZPublishSDK::EDITION );
+header( 'X-Powered-By: ' . ExponentialSDK::EDITION );
 
 for ( $i = 0, $obLevel = ob_get_level(); $i < $obLevel; ++$i )
 {

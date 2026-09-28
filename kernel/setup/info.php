@@ -207,7 +207,7 @@ if ( $velocityBrand && $webserverInfo )
     $webserverInfo['version'] = $velocityBrand['version'];
 }
 
-$tpl->setVariable( 'ezpublish_version', eZPublishSDK::version() . " (" . eZPublishSDK::alias() . ")" );
+$tpl->setVariable( 'ezpublish_version', ExponentialSDK::version() . " (" . ExponentialSDK::alias() . ")" );
 $tpl->setVariable( 'ezpublish_extensions', eZExtension::activeExtensions() );
 $tpl->setVariable( 'php_version', phpversion() );
 $tpl->setVariable( 'php_accelerator', $phpAcceleratorInfo );

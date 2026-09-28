@@ -367,19 +367,19 @@ class expInfo
     {
         $info = array();
 
-        // --- eZ Publish SDK version (lib/version.php) ----------------------
-        if ( class_exists( 'eZPublishSDK' ) )
+        // --- Exponential SDK version (lib/version.php) ----------------------
+        if ( class_exists( 'ExponentialSDK' ) )
         {
             $info['version'] = array(
-                'major'          => eZPublishSDK::majorVersion(),
-                'minor'          => eZPublishSDK::minorVersion(),
-                'release'        => eZPublishSDK::release(),
-                'state'          => eZPublishSDK::state(),
-                'development'    => eZPublishSDK::developmentVersion(),
-                'alias'          => eZPublishSDK::alias(),
-                'edition'        => eZPublishSDK::EDITION,
-                'full'           => eZPublishSDK::version( true, false, true ),
-                'full_alias'     => eZPublishSDK::version( true, true, true ),
+                'major'          => ExponentialSDK::majorVersion(),
+                'minor'          => ExponentialSDK::minorVersion(),
+                'release'        => ExponentialSDK::release(),
+                'state'          => ExponentialSDK::state(),
+                'development'    => ExponentialSDK::developmentVersion(),
+                'alias'          => ExponentialSDK::alias(),
+                'edition'        => ExponentialSDK::EDITION,
+                'full'           => ExponentialSDK::version( true, false, true ),
+                'full_alias'     => ExponentialSDK::version( true, true, true ),
             );
         }
         else

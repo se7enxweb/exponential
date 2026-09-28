@@ -130,7 +130,7 @@ if ( !defined( 'EZ_ABOUT_THIRDPARTY_SOFTWARE_FILE' ) )
 
 
 
-$ezinfo = eZPublishSDK::version( true );
+$ezinfo = ExponentialSDK::version( true );
 
 $whatIsEzPublish = '<p>Exponential is a professional PHP application framework with advanced
 CMS (content management system) functionality. As a CMS, its most notable

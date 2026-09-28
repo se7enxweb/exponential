@@ -119,8 +119,8 @@ class expPhar
         $dirty = trim( (string)@shell_exec( 'git -C ' . escapeshellarg( $root ) . ' status --porcelain 2>/dev/null' ) );
 
         $base = 'unknown';
-        if ( class_exists( 'eZPublishSDK' ) )
-            $base = eZPublishSDK::version();
+        if ( class_exists( 'ExponentialSDK' ) )
+            $base = ExponentialSDK::version();
 
         $parts = array( $base );
         if ( $sha !== '' ) $parts[] = $sha;

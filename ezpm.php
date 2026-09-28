@@ -793,9 +793,9 @@ if ( $dbUser !== false or $dbHost !== false or $dbSocket !== false or
     if ( count( $rows ) > 0 )
     {
         $version = $rows[0]['value'];
-        if ( version_compare( $version, eZPublishSDK::version() ) != 0 )
+        if ( version_compare( $version, ExponentialSDK::version() ) != 0 )
         {
-            $cli->error( "Version '$version' in database '$dbName' is different from the running version " . eZPublishSDK::version() );
+            $cli->error( "Version '$version' in database '$dbName' is different from the running version " . ExponentialSDK::version() );
             $script->shutdown( 1 );
         }
     }

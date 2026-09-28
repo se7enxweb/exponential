@@ -75,8 +75,8 @@ class eZPackage
         $packaging = array( 'timestamp' => $timestamp,
                             'host' => $host,
                             'packager' => false );
-        $ezpublishVersion = eZPublishSDK::version( true );
-        $ezpublishNamedVersion = eZPublishSDK::version( false, false, true );
+        $ezpublishVersion = ExponentialSDK::version( true );
+        $ezpublishNamedVersion = ExponentialSDK::version( false, false, true );
         $ezpublish = array( 'version' => $ezpublishVersion,
                             'named-version' => $ezpublishNamedVersion );
         $defaults = array( 'name' => false,

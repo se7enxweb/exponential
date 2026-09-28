@@ -792,7 +792,7 @@ class eZRSSExport extends eZPersistentObject
         $channel->appendChild( $self );
 
         self::element( $doc, $channel, 'lastBuildDate', date( DATE_RFC2822 ) );
-        self::element( $doc, $channel, 'generator', eZPublishSDK::EDITION );
+        self::element( $doc, $channel, 'generator', ExponentialSDK::EDITION );
 
         // ── episodes ─────────────────────────────────────────────────────────
         foreach ( $this->podcastItemList( $baseURL ) as $episode )

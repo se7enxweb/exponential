@@ -155,7 +155,7 @@ class eZXMLSchema
         if ( !is_array( $this->Schema['custom']['tagList'] ) )
             $this->Schema['custom']['tagList'] = array();
 
-        $eZPublishVersion = eZPublishSDK::majorVersion() + eZPublishSDK::minorVersion() * 0.1;
+        $eZPublishVersion = ExponentialSDK::majorVersion() + ExponentialSDK::minorVersion() * 0.1;
 
         // Get all tags available classes list
         foreach( array_keys( $this->Schema ) as $tagName )
