@@ -3584,7 +3584,7 @@ keywords=exponential, community, content management, open source, cms, platforms
         2 => '54',
         3 => '0',
         4 => '0',
-        5 => 'nospam@ez.no',
+        5 => 'nospam@exponential.earth',
         6 => 'ezinisetting',
         7 => '175',
         8 => 'eng-US',
@@ -3600,7 +3600,7 @@ keywords=exponential, community, content management, open source, cms, platforms
         2 => '54',
         3 => '0',
         4 => '0',
-        5 => 'ez.no',
+        5 => 'exponential.earth',
         6 => 'ezinisetting',
         7 => '176',
         8 => 'eng-US',
@@ -21545,7 +21545,7 @@ keywords=exponential, community, content management, open source, cms, platforms
       array (
         0 => '927',
         1 => '3',
-        2 => 'ez.no',
+        2 => 'exponential.earth',
       ),
       128 => 
       array (
@@ -22781,7 +22781,7 @@ keywords=exponential, community, content management, open source, cms, platforms
       0 => 
       array (
         0 => '10',
-        1 => 'nospam@ez.no',
+        1 => 'nospam@exponential.earth',
         2 => 'anonymous',
         3 => '$2y$10$ucfC921pDYoruiPZdod7hO2oiGbsHQ/5OmRqRui7v5Txc.Oaq15rW',
         4 => '7',
@@ -22789,7 +22789,7 @@ keywords=exponential, community, content management, open source, cms, platforms
       1 => 
       array (
         0 => '14',
-        1 => 'nospam@ez.no',
+        1 => 'nospam@exponential.earth',
         2 => 'admin',
         3 => '$2y$10$FDn9NPwzhq85cLLxfD5Wu.L3SL3Z/LNCvhkltJUV0wcJj7ciJg2oy',
         4 => '7',
