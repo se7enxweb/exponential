@@ -6094,7 +6094,7 @@ db4fe3f3c55383f4eadcd790fe8f4a42  kernel/setup/steps/ezstep_database_choice.php
 500c84b26ac8db49a5abebbc9f7dc659  kernel/setup/steps/ezstep_database_init.php
 39bb60b1c17b9312032f6331a4c21f6a  kernel/setup/steps/ezstep_email_settings.php
 459d03abe810e0e0b789885522968da4  kernel/setup/steps/ezstep_final.php
-5c82b340b3ac9e538de1f00a6c47498b  kernel/setup/steps/ezstep_installer.php
+a2a1d54ee1931f02cbcecbefd81b7e59  kernel/setup/steps/ezstep_installer.php
 d89262a32691d86c8e13b8b5f4798afb  kernel/setup/steps/ezstep_language_options.php
 bddae3dedc1030d9a755586b1a726ab7  kernel/setup/steps/ezstep_package_language_options.php
 9ad4d90ba4ae03d10c1b80b0678cbced  kernel/setup/steps/ezstep_registration.php
@@ -6253,7 +6253,7 @@ c2f529de6d1fde400eb9c2dde01ebd1c  lib/ezdb/classes/eznulldb.php
 6c8eba83a09181f8ab8f13ee8f57624a  lib/ezdbschema/classes/ezdbschemainterface.php
 3859b2ab08afbbf5203b8e1abad86b5b  lib/ezdbschema/classes/ezlintschema.php
 11450ae47f859777f1888b1324ba95f6  lib/ezdbschema/classes/ezmysqlschema.php
-896a7ee9e7cadc2323e1d4089aed5f7d  lib/ezdbschema/classes/ezpgsqlschema.php
+e06ecb8172696b920757859a8ce74856  lib/ezdbschema/classes/ezpgsqlschema.php
 4e85a2809a0a229615d0d753b47fdd3a  lib/ezdbschema/classes/ezsqliteschema.php
 b9ace4e37d85a4c4912bb6ac73721072  lib/ezdiff/classes/ezdiff.php
 657da6ed67a03c4f2403e4958c315bd8  lib/ezdiff/classes/ezdiffcontainerobject.php
