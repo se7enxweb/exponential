@@ -59,6 +59,20 @@ if (is_string($warmUrls) && $warmUrls !== '') {
     $urls = preg_split('/\s*,\s*/', $warmUrls, -1, PREG_SPLIT_NO_EMPTY);
 }
 
+// A render that throws stops halfway through its request: output buffers
+// open, the route, the visitor and the siteaccess all its own. The clean-up
+// below must run all the same -- the pool snapshots what this script leaves,
+// and every worker restores that snapshot before each request, so a render
+// left standing answered every later request with its page (2026-09-28: an
+// admin asking for the dashboard got the public front page). So the renders
+// run inside a try, the clean-up always runs, and only then is the failure
+// passed on for the pool to log.
+//
+// VELOCITY_WARMUP_TEST_FAILURE=1 makes the last render throw after it has run,
+// with its output buffer still open, to test exactly that path.
+$__warmupFailure = null;
+$__warmupObLevel = ob_get_level();
+try {
 foreach ($urls as $uri) {
     $_SERVER['REQUEST_URI'] = $uri;
     $_SERVER['SCRIPT_FILENAME'] = $root . '/index.php';
@@ -82,6 +96,16 @@ foreach ($urls as $uri) {
     if (method_exists('ezpKernel', 'reset')) {
         @ezpKernel::reset();
     }
+}
+if (getenv('VELOCITY_WARMUP_TEST_FAILURE') === '1') {
+    ob_start();
+    echo 'half a page';
+    throw new RuntimeException('VELOCITY_WARMUP_TEST_FAILURE: a render failed halfway (test)');
+}
+} catch (\Throwable $__e) {
+    $__warmupFailure = $__e;
+}
+while (ob_get_level() > $__warmupObLevel && @ob_end_clean()) {
 }
 
 // ── Undo the render's request footprint, keep everything else ─────────
@@ -260,3 +284,8 @@ if (isset($GLOBALS['eZDBGlobalInstance']) and is_object($GLOBALS['eZDBGlobalInst
     try { $GLOBALS['eZDBGlobalInstance']->close(); } catch (\Throwable $e) {}
 }
 $GLOBALS['eZDBGlobalInstance'] = null;
+
+// Clean-up done; now the pool may hear that the warm-up failed.
+if ($__warmupFailure !== null) {
+    throw $__warmupFailure;
+}
