@@ -100,7 +100,7 @@
 </div>
 
 <div class="objectheader">
-    <h2>PHP Accelerator</h2>
+    <h2>{'PHP Accelerator'|i18n( 'design/standard/setup' )}</h2>
 </div>
 <div class="object">
 {if $php_accelerator}

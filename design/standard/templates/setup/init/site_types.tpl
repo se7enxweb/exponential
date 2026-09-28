@@ -24,7 +24,7 @@
  <blockquote class="error">
    <h2>{"Error"|i18n("design/standard/setup/init")}</h2>
    <p>{$error|wash}</p>
-   <p>Remote repository URL: <a href={$index_url}>{$index_url|wash}</a></p>
+   <p>{'Remote repository URL:'|i18n( 'design/standard/setup/init' )} <a href={$index_url}>{$index_url|wash}</a></p>
  </blockquote>
 
 </div>
@@ -56,7 +56,7 @@
         {/if}
     </td>
     <td>
-        <h2>{$package_info.summary} (ver. {$package_info.version})</h2>
+        <h2>{'%summary (ver. %version)'|i18n( 'design/standard/setup/init',, hash( '%summary', $package_info.summary, '%version', $package_info.version ) )}</h2>
     {$package_info.description}
     </td>
 
@@ -73,7 +73,7 @@
      <td></td>
      <td></td>
      <td>
-     <h3>Dependencies</h3>
+     <h3>{'Dependencies'|i18n( 'design/standard/setup/init' )}</h3>
      </td>
      <td></td>
     </tr>
@@ -83,7 +83,7 @@
         <td></td>
         <td></td>
         <td>
-        {$req_name} (ver.{$req_info.version}):
+        {'%req_name (ver.%version):'|i18n( 'design/standard/setup/init',, hash( '%req_name', $req_name, '%version', $req_info.version ) )}
         </td>
         <td>
         {if $req_info.status}
@@ -111,7 +111,7 @@
 
     {/foreach}
 {else} {* !$remote_site_packages *}
-<tr><td colspan="4">None.</td></tr>
+<tr><td colspan="4">{'None.'|i18n( 'design/standard/setup/init' )}</td></tr>
 {/if}
 </table>
 

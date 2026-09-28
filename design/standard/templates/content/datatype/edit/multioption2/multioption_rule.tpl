@@ -5,7 +5,7 @@
 <table class="multioption" cellspacing="0">
 <tr>
     <th class="tight">#</th>
-    <th>Option</th>
+    <th>{'Option'|i18n( 'design/standard/content/datatype' )}</th>
     {section show=$depth|gt(1)}
         {section var=OptionList loop=$parent_multioption.optionlist}
             <th class="tight">{$depth|sub(1)}.{$OptionList.item.id|wash} -{$OptionList.item.value|wash}</th>

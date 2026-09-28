@@ -10,8 +10,8 @@
 
 <table class="list">
 <tr>
-    <th> Class name </th>
-    <th> ClassAttribute name </th>
+    <th> {'Class name'|i18n( 'design/standard/workflow/eventtype/view' )} </th>
+    <th> {'ClassAttribute name'|i18n( 'design/standard/workflow/eventtype/view' )} </th>
 </tr>
 {section name=Entries loop=$event.content.entry_list sequence=array(bglight,bgdark)}
 <tr>

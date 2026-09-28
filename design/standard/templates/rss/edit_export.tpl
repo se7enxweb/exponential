@@ -106,7 +106,7 @@
 
     {section name=Source loop=$rss_export.item_list}
 
-       <h2>Source {sum($Source:index, 1)}</h2>
+       <h2>{'Source %source'|i18n( 'design/standard/rss/edit',, hash( '%source', sum($Source:index, 1) ) )}</h2>
 
        <input type="hidden" name="Item_ID_{$Source:index}" value="{$Source:item.id}" />
        <label>{"Source path"|i18n("design/standard/rss/edit")}:</label><div class="labelbreak"></div>

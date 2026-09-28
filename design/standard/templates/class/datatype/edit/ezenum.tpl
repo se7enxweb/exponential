@@ -32,7 +32,7 @@
 
     {* Remove. *}
     <td>
-    <input type="checkbox" name="ContentClass_data_enumremove_{$class_attribute.id}[]" value="{$Enums.item.id}" title="{'Select element for removal.'}" />
+    <input type="checkbox" name="ContentClass_data_enumremove_{$class_attribute.id}[]" value="{$Enums.item.id}" title="{'Select element for removal.'|i18n( 'design/standard/class/datatype' )}" />
     </td>
 
     {* Element. *}

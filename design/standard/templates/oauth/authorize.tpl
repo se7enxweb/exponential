@@ -12,8 +12,8 @@
     {/foreach}
 
     <div>
-        <p>{"Click on \"Authorize\" to grant the requested access"}</p>
-        <p>{"Click on \"Deny\" to refuse the requested access"}</p>
+        <p>{'Click on "Authorize" to grant the requested access'|i18n( 'extension/oauth/authorize' )}</p>
+        <p>{'Click on "Deny" to refuse the requested access'|i18n( 'extension/oauth/authorize' )}</p>
     </div>
     <div class="buttonblock">
         <input type="submit" id="AuthorizeButton" class="defaultbutton authorizebutton" name="AuthorizeButton" value="{"Authorize"|i18n( 'extension/oauth/authorize' )}" />

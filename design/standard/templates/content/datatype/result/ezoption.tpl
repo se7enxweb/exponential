@@ -37,6 +37,6 @@
 {/section}
 </tr>
 </table>
-Total: {$total_count}
+{'Total:'|i18n( 'design/standard/content/datatype/result/ezoption' )} {$total_count}
 
 {/let}

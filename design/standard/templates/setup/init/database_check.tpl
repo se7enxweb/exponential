@@ -10,7 +10,7 @@
 {if $database_info.info.has_demo_data}
   {if $demo_data.can_unpack}
 <p>
- {"If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential"|i18n("design/standard/setup/init")} {$#version.major}.{$#version.minor}.
+ {'If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential %version.'|i18n( 'design/standard/setup/init',, hash( '%version', concat( $#version.major, '.', $#version.minor ) ) )}
  {"First time users are advised to install the demo data."|i18n("design/standard/setup/init")}
 </p>
 <div class="input_highlight">
@@ -50,7 +50,7 @@
   <ul>
     <li>{"The database could not be properly initialized."|i18n("design/standard/setup/init")}</li>
     <li>{$database_status.error.text}</li>
-    <li>{$database_info.info.name} Error #{$database_status.error.number}</li>
+    <li>{'%name Error #%number'|i18n( 'design/standard/setup/init',, hash( '%name', $database_info.info.name, '%number', $database_status.error.number ) )}</li>
   </ul>
 {/if}
 </p>

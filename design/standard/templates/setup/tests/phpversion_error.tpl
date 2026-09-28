@@ -5,7 +5,7 @@
 {if $warning_version}
   <h3>{$result_number}. {"Unstable PHP version"|i18n("design/standard/setup/tests")}</h3>
   <p>
-    {"Your PHP version, which is "|i18n("design/standard/setup/tests")}{$current_version}{", is known to be unstable"|i18n("design/standard/setup/tests")}.
+    {'Your PHP version, which is %current, is known to be unstable.'|i18n( 'design/standard/setup/tests',, hash( '%current', $current_version ) )}
   </p>
   <p>
     {"Another version of PHP can be download at"|i18n("design/standard/setup/tests")} <a target="_other" href="http://www.php.net">php.net</a>.
@@ -13,10 +13,10 @@
 {else}
   <h3>{$result_number}. {"Insufficient PHP version"|i18n("design/standard/setup/tests")}</h3>
   <p>
-  {"Your PHP version, which is "|i18n("design/standard/setup/tests")}{$current_version}{", does not meet the minimum requirements of"|i18n("design/standard/setup/tests")} {$required_version}.
+  {'Your PHP version, which is %current, does not meet the minimum requirements of %required.'|i18n( 'design/standard/setup/tests',, hash( '%current', $current_version, '%required', $required_version ) )}
   <p>
    {"A newer version of PHP can be download at"|i18n("design/standard/setup/tests")} <a target="_other" href="http://www.php.net">php.net</a>.
-   {"You must upgrade to at least version "|i18n("design/standard/setup/tests")}{$required_version}{", but the latest released stable PHP version is always recommended."|i18n("design/standard/setup/tests")}
+   {'You must upgrade to at least version %required, but the latest released stable PHP version is always recommended.'|i18n( 'design/standard/setup/tests',, hash( '%required', $required_version ) )}
   </p>
 {/if}
 

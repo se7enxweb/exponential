@@ -2,8 +2,8 @@
 <form action={concat( 'class/edit/', $class.id )|ezurl} method="post" name="ClassEdit">
 
 <h1>{'Class is locked'|i18n('design/standard/class')}</h1>
-<p>The class {$class.name|wash} is currently locked by <a href={$class.modifier.contentobject.main_node.url_alias|ezurl}>{$class.modifier.contentobject.name|wash}</a> and was last modified at {$class.modified|l10n( shortdatetime )}.</p>
-<p>The class will be available for editing once the class is stored by the modifier or when it is automatically unlocked at {sum( $class.modified, $lock_timeout )|l10n( shortdatetime )}</p>
+<p>{'The class %class is currently locked by %modifier and was last modified at %modified.'|i18n( 'design/standard/class',, hash( '%class', $class.name|wash, '%modifier', concat( '<a href=', $class.modifier.contentobject.main_node.url_alias|ezurl, '>', $class.modifier.contentobject.name|wash, '</a>' ), '%modified', $class.modified|l10n( shortdatetime ) ) )}</p>
+<p>{'The class will be available for editing once the class is stored by the modifier or when it is automatically unlocked at %modified'|i18n( 'design/standard/class',, hash( '%modified', sum( $class.modified, $lock_timeout )|l10n( shortdatetime ) ) )}</p>
 
 <div class="buttonblock">
     <input class="defaultbutton" type="submit" name="RetryButton" value="{'Retry'|i18n( 'design/standard/class' )}" />

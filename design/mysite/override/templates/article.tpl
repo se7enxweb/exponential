@@ -27,20 +27,20 @@
 
     {section show=$message_list}
         <br />
-        <h2>Comments</h2>
+        <h2>{'Comments'|i18n( 'design/mysite/article' )}</h2>
         {section name=Comment loop=$message_list}
             {node_view_gui view=line content_node=$:item}
         {/section}
     {/section}
 
     <br />
-    <h2>Comment this article!</h2>
+    <h2>{'Comment this article!'|i18n( 'design/mysite/article' )}</h2>
 
     <div class="buttonblock">
         <form method="post" action={"content/action"|ezurl}>
         <input type="hidden" name="NodeID" value="{$node.main_node_id}" />
         <input type="hidden" name="ClassID" value="13" />
-        <input class="button" type="submit" name="NewButton" value="New comment" />
+        <input class="button" type="submit" name="NewButton" value="{'New comment'|i18n( 'design/mysite/article' )}" />
         </form>
     </div>
 

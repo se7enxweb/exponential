@@ -58,7 +58,7 @@
 	{$Order:item.total_inc_vat|l10n(currency)}
 	</td>
 	<td class="{$Order:sequence}">
-	<a href={$Order:item.link_url|ezurl}>[ view ]</a>
+	<a href={$Order:item.link_url|ezurl}>{'[ view ]'|i18n( 'design/standard/shop' )}</a>
 	</td>
 </tr>
 {/section}

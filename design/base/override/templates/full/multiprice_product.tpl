@@ -1,5 +1,5 @@
 {* Multiprice Product - Full view *}
-<h2>Multiprice Product - Full view</h2>
+<h2>{'Multiprice Product - Full view'|i18n( 'design/base' )}</h2>
 
 <div class="content-view-full">
     <div class="class-product">

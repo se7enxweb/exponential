@@ -5,19 +5,19 @@
  {"Exponential may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are"|i18n("design/standard/setup/tests")}:
 </p>
 <ul>
- <li>Not possible to extend time limits
+ <li>{'Not possible to extend time limits'|i18n( 'design/standard/setup/tests' )}
   <ul>
-   <li>Some parts of Exponential relies on cronjobs to handle workflows etc., and may require a longer time to run than normal page loads. With this on the cronjob scripts will not succeed.</li>
+   <li>{'Some parts of Exponential relies on cronjobs to handle workflows etc., and may require a longer time to run than normal page loads. With this on the cronjob scripts will not succeed.'|i18n( 'design/standard/setup/tests' )}</li>
   </ul>
  </li>
- <li>Wrong permissions
+ <li>{'Wrong permissions'|i18n( 'design/standard/setup/tests' )}
   <ul>
-   <li>If the site is not setup correctly Exponential will not be able to work with files correctly, this could mean file uploads, image handling and cache creation. Safe mode requires that the same owner is set on the index.php script and all other files for the site.</li>
+   <li>{'If the site is not setup correctly Exponential will not be able to work with files correctly, this could mean file uploads, image handling and cache creation. Safe mode requires that the same owner is set on the index.php script and all other files for the site.'|i18n( 'design/standard/setup/tests' )}</li>
   </ul>
  </li>
- <li>File uploading
+ <li>{'File uploading'|i18n( 'design/standard/setup/tests' )}
   <ul>
-   <li>Uploading files trough the web will not possible unless configured correctly. This means that images, files and media will not be possible to use.</li>
+   <li>{'Uploading files trough the web will not possible unless configured correctly. This means that images, files and media will not be possible to use.'|i18n( 'design/standard/setup/tests' )}</li>
   </ul>
  </li>
 </ul>
@@ -29,18 +29,18 @@
 <pre class="example">
 safe_mode = 0
 </pre>
-<p>If you're not able to turn safe mode off you should try to fix the following issues.</p>
-<h3>Permissions</h3>
-<p>To make sure that all files have the correct user and group owner run the following commands.</p>
+<p>{'If you\'re not able to turn safe mode off you should try to fix the following issues.'|i18n( 'design/standard/setup/tests' )}</p>
+<h3>{'Permissions'|i18n( 'design/standard/setup/tests' )}</h3>
+<p>{'To make sure that all files have the correct user and group owner run the following commands.'|i18n( 'design/standard/setup/tests' )}</p>
 <pre class="example">cd {$test_result[2].current_path}
 chown nouser.nouser *.php
 chown -R nouser.nouser cronjobs design doc lib settings update kernel sdk share var</pre>
-<p>Alternatively you may run</p>
+<p>{'Alternatively you may run'|i18n( 'design/standard/setup/tests' )}</p>
 <pre class="example">cd {$test_result[2].current_path}
 chown nouser.nouser -R *</pre>
-<p>If you only have access to the site using ftp you will have to consult your ftp client and server to see if it is possible to run the chown command.</p>
+<p>{'If you only have access to the site using ftp you will have to consult your ftp client and server to see if it is possible to run the chown command.'|i18n( 'design/standard/setup/tests' )}</p>
 <blockquote class="note">
 <p>
- <b>Note:</b> The <tt>nouser.nouser</tt> must be changed to your web server username and groupname.
+ {'<b>Note:</b> The <tt>nouser.nouser</tt> must be changed to your web server username and groupname.'|i18n( 'design/standard/setup/tests' )}
 </p>
 </blockquote>

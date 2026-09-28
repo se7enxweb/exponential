@@ -102,7 +102,7 @@ div#maincontent-design { width: 100%; } /* This is needed to avoid width bug in 
         {if ezini( 'Toolbar_right', 'Tool', 'toolbar.ini' )|count}
             <div id="rightmenu">
                 <div id="rightmenu-design">
-                    <h3 class="hide">Right menu</h3>
+                    <h3 class="hide">{'Right menu'|i18n( 'design/base' )}</h3>
                     <div id="toolbar-right">
                         <div class="toolbar-design">
                             {tool_bar name=right view=full}

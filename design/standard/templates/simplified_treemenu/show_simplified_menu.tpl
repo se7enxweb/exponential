@@ -5,7 +5,7 @@
          haveChildren   = $numChildren|gt(0)
          showToolTips   = ezini( 'TreeMenu', 'ToolTips'         , 'contentstructuremenu.ini' )
          toolTip        = ""
-         visibility     = 'Visible'
+         visibility     = 'Visible'|i18n( 'design/standard/simplified_treemenu' )|i18n( 'design/standard/simplified_treemenu' )
          isRootNode     = false() }
 
         {default last_item      = false() }
@@ -46,10 +46,10 @@
                 {* Tooltip *}
                 {if $:showToolTips|eq('enabled')}
                     {if $:parentNode.node.is_invisible}
-                        {set visibility = 'Hidden by superior'}
+                        {set visibility = 'Hidden by superior'|i18n( 'design/standard/simplified_treemenu' )}
                     {/if}
                     {if $:parentNode.node.is_hidden}
-                        {set visibility = 'Hidden'}
+                        {set visibility = 'Hidden'|i18n( 'design/standard/simplified_treemenu' )}
                     {/if}
                     {set toolTip = 'Node ID: %node_id Visibility: %visibility' |
                                     i18n("simplified_treemenu/show_simplified_menu", , hash( '%node_id'      , $:parentNode.node.node_id,
@@ -60,7 +60,7 @@
 
                 {* Text *}
                 {* Do not indent this line; otherwise links will contain empty space at the end! *}
-                {let defaultItemClickAction = $:parentNode.node.path_identification_string|ezurl(no)}<a class="nodetext" href="{$:defaultItemClickAction}" title="{$:toolTip}">{/let}{if $:parentNode.node.is_hidden}<span class="node-name-hidden">{$:parentNode.object.name|wash}</span>{else}{if $:parentNode.node.is_invisible}<span class="node-name-hiddenbyparent">{$:parentNode.object.name|wash}</span>{else}<span class="node-name-normal">{$:parentNode.object.name|wash}</span>{/if}{/if}{if $:parentNode.node.is_hidden}<span class="node-hidden">(Hidden)</span></a>{else}{if $:parentNode.node.is_invisible}<span class="node-hiddenbyparent">(Hidden by parent)</span></a>{else}</a>{/if}{/if}
+                {let defaultItemClickAction = $:parentNode.node.path_identification_string|ezurl(no)}<a class="nodetext" href="{$:defaultItemClickAction}" title="{$:toolTip}">{/let}{if $:parentNode.node.is_hidden}<span class="node-name-hidden">{$:parentNode.object.name|wash}</span>{else}{if $:parentNode.node.is_invisible}<span class="node-name-hiddenbyparent">{$:parentNode.object.name|wash}</span>{else}<span class="node-name-normal">{$:parentNode.object.name|wash}</span>{/if}{/if}{if $:parentNode.node.is_hidden}<span class="node-hidden">{'(Hidden)'|i18n( 'design/standard/simplified_treemenu' )}</span></a>{else}{if $:parentNode.node.is_invisible}<span class="node-hiddenbyparent">{'(Hidden by parent)'|i18n( 'design/standard/simplified_treemenu' )}</span></a>{else}</a>{/if}{/if}
 
             {/if}
 

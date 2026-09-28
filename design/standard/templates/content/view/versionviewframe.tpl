@@ -62,5 +62,5 @@
 </form>
 
 <iframe src={concat("content/versionview/",$object.id,"/",$version.version,"/",$language, "/site_access/", $siteaccess )|ezurl} width="1200" height="800">
-Your browser does not support iframes. Please see this <a href={concat("content/versionview/",$object.id,"/",$version.version,"/",$language, "/site_access/", $siteaccess)|ezurl}>link</a> instead.
+{'Your browser does not support iframes. Please see this <a href=%url>link</a> instead.'|i18n( 'design/standard/content/view',, hash( '%url', concat("content/versionview/",$object.id,"/",$version.version,"/",$language, "/site_access/", $siteaccess)|ezurl ) )}
 </iframe>

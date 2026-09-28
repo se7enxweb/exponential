@@ -17,7 +17,7 @@
     {else}
         <h2>{'Subtree was not copied.'|i18n( 'kernel/content/copysubtree' )}</h2>
         {if $notification.Errors|count|gt( 0 )}
-            <h4>Errors:</h4>
+            <h4>{'Errors:'|i18n( 'design/standard/content/copy_subtree_notification' )}</h4>
             {foreach $notification.Errors as $item}
                 {$item}<br />
             {/foreach}
@@ -25,14 +25,14 @@
     {/if}
     
     {if $notification.Notifications|count|gt( 0 )}
-    <h4>Information:</h4>
+    <h4>{'Information:'|i18n( 'design/standard/content/copy_subtree_notification' )}</h4>
     {foreach $notification.Notifications as $key => $item }
         {$item}<br />
     {/foreach}
     {/if}
     
     {if $notification.Warnings|count|gt( 0 )}
-    <h4>Warnings:</h4>
+    <h4>{'Warnings:'|i18n( 'design/standard/content/copy_subtree_notification' )}</h4>
     {foreach $notification.Warnings as $key => $item }
         {$item}<br />
     {/foreach}

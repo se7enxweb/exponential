@@ -85,7 +85,7 @@
 {switch match=$Limitations:item.name} 
   {case match="Node"}
    <td class="element">
-    <label>Node</label><div class="labelbreak"></div>
+    <label>{'Node'|i18n( 'design/standard/role' )}</label><div class="labelbreak"></div>
     <table>
      {if $node_list name=NodeList loop=$node_list}
      <tr>
@@ -110,7 +110,7 @@
   {/case}
   {case match="Subtree"}
    <td class="element">
-    <label>Subtree</label><div class="labelbreak"></div>
+    <label>{'Subtree'|i18n( 'design/standard/role' )}</label><div class="labelbreak"></div>
     <table>
      {if $subtree_list name=SubtreeList loop=$subtree_list}
      <tr>

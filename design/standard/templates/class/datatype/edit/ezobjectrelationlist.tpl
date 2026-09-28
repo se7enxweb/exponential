@@ -69,7 +69,7 @@
                {$default_location.class_identifier|class_icon( small, $default_location.class_name )}&nbsp;{$default_location.name|wash}
              {/let}
          {/if}
-	 <i>({'See'|i18n( 'design/standard/class/datatype' )} '{'Default location'|i18n( 'design/standard/class/datatype' )}')</i>
+	 <i>{'(See \'%location\')'|i18n( 'design/standard/class/datatype',, hash( '%location', 'Default location'|i18n( 'design/standard/class/datatype' ) ) )}</i>
      </td>
   </tr>
 </table>

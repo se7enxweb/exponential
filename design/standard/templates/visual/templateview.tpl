@@ -98,7 +98,7 @@
     <td><input type="text" name="PriorityArray[{$CustomMatch.item.override_name}]" size="2" value="{$CustomMatch.number}" /></td>
 
     {if $CustomMatch.item.match_file}
-    <td><a href={concat( '/visual/templateedit/', $CustomMatch.item.match_file)|ezurl} title="{'Edit override template.'|i18n( 'design/standard/visual/templateview' )}"><img src={'edit.gif'|ezimage} alt="Edit" /></a></td>
+    <td><a href={concat( '/visual/templateedit/', $CustomMatch.item.match_file)|ezurl} title="{'Edit override template.'|i18n( 'design/standard/visual/templateview' )}"><img src={'edit.gif'|ezimage} alt="{'Edit'|i18n( 'design/standard/visual/templateview' )}" /></a></td>
     {else}
     <td><img src={'edit-disabled.gif'|ezimage} alt="" /></td>
     {/if}

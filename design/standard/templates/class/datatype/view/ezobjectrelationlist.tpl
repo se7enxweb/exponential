@@ -47,7 +47,7 @@
     <p>{$filter_class.name|wash}</p>
     {/let}
 {else}
-    <p>(none)</p>
+    <p>{'(none)'|i18n( 'design/standard/class/datatype' )}</p>
 {/if}
 
 {* Default location. *}

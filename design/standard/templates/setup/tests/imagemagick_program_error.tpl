@@ -8,7 +8,7 @@
 <p>
  {"If you know where the program is installed (the executable is called"|i18n("design/standard/setup/tests")} <i>convert</i> {"or"|i18n("design/standard/setup/tests")} <i>convertim</i>{")then enter the directory in the input field below and do a recheck (Separate multiple directories with a"|i18n("design/standard/setup/tests")} {if eq($program_info.filesystem_type,'unix')}{"colon"|i18n("design/standard/setup/tests")}{else}{"semicolon"|i18n("design/standard/setup/tests")}{/if} <b>{$program_info.env_separator}</b> ).
  <div class="buttonblock">
-  <label>Path to ImageMagick:</label><br/>
+  <label>{'Path to ImageMagick:'|i18n( 'design/standard/setup/tests' )}</label><br/>
   <input class="box" type="text" size="40" name="imagemagick_program_ExtraPath" value="{section name=Path loop=$program_info.extra_path}{$:item}{delimiter}{$program_info.env_separator}{/delimiter}{/section}" />
  </div>
 </p>

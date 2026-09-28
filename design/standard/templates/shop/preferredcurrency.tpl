@@ -16,7 +16,7 @@
         <form action={'shop/setpreferredcurrency'|ezurl} method="post">
             {default currency_names = hash()}
                 {include uri='design:shop/currencynames.tpl'}
-                <select name="Currency" title="Select currency">
+                <select name="Currency" title="{'Select currency'|i18n( 'design/standard/shop/preferredcurrency' )}">
                     {foreach $currency_list as $Currency}
                         <option value="{$Currency.code}" {if eq( $Currency.code, $preferred_currency_code )}selected="selected"{/if}>{$Currency.code} - {if is_set($currency_names[$Currency.code])}{$currency_names[$Currency.code]}{else}{'Unknown currency name'|i18n( 'design/standard/shop/preferredcurrency' )}{/if}</option>
                     {/foreach}

@@ -21,7 +21,7 @@
 {else}
     {def $modified=$application.created}
 {/if}
-<p class="left modified">{'Last modified'|i18n( 'extension/oauthadmin' )}:&nbsp;{$modified|l10n( shortdatetime )} by {$application.owner.contentobject.name|wash}</p>
+<p class="left modified">{'Last modified: %modified by %owner'|i18n( 'extension/oauthadmin',, hash( '%modified', concat( '&nbsp;', $modified|l10n( shortdatetime ) ), '%owner', $application.owner.contentobject.name|wash ) )}</p>
 {undef $modified}
 <div class="break"></div>
 </div>

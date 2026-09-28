@@ -5,7 +5,7 @@
          haveChildren   = $numChildren|gt(0)
          showToolTips   = ezini( 'TreeMenu', 'ToolTips'         , 'contentstructuremenu.ini' )
          toolTip        = ""
-         visibility     = 'Visible'
+         visibility     = 'Visible'|i18n( 'design/standard/contentstructuremenu' )|i18n( 'design/standard/contentstructuremenu' )
          isRootNode     = false() }
 
         {default classIconsSize = ezini( 'TreeMenu', 'ClassIconsSize', 'contentstructuremenu.ini' )
@@ -39,10 +39,10 @@
                 {* Tooltip *}
                 {if $:showToolTips|eq('enabled')}
                     {if $:parentNode.node.is_invisible}
-                        {set visibility = 'Hidden by superior'}
+                        {set visibility = 'Hidden by superior'|i18n( 'design/standard/contentstructuremenu' )}
                     {/if}
                     {if $:parentNode.node.is_hidden}
-                        {set visibility = 'Hidden'}
+                        {set visibility = 'Hidden'|i18n( 'design/standard/contentstructuremenu' )}
                     {/if}
                     {set toolTip = 'Node ID: %node_id Visibility: %visibility' |
                                     i18n("contentstructuremenu/show_content_structure", , hash( '%node_id'      , $:parentNode.node.node_id,
@@ -55,7 +55,7 @@
                 {if or( eq($ui_context, 'browse')|not(), eq($:parentNode.object.is_container, true()))}
                     {if $:csm_menu_item_click_action|eq('')}
                         {* Do not indent this line; otherwise links will contain empty space at the end! *}
-                        {let defaultItemClickAction = $:parentNode.node.path_identification_string|ezurl(no)}<a class="nodetext" href="{$:defaultItemClickAction}" title="{$:toolTip}">{/let}{else}<a class="nodetext" href="{$:csm_menu_item_click_action}/{$:parentNode.node.node_id}" title="{$:toolTip}">{/if}{if $:parentNode.node.is_hidden}<span class="node-name-hidden">{$:parentNode.object.name|wash}</span>{else}{if $:parentNode.node.is_invisible}<span class="node-name-hiddenbyparent">{$:parentNode.object.name|wash}</span>{else}<span class="node-name-normal">{$:parentNode.object.name|wash}</span>{/if}{/if}{if $:parentNode.node.is_hidden}<span class="node-hidden">(Hidden)</span></a>{else}{if $:parentNode.node.is_invisible}<span class="node-hiddenbyparent">(Hidden by parent)</span></a>{else}</a>{/if}
+                        {let defaultItemClickAction = $:parentNode.node.path_identification_string|ezurl(no)}<a class="nodetext" href="{$:defaultItemClickAction}" title="{$:toolTip}">{/let}{else}<a class="nodetext" href="{$:csm_menu_item_click_action}/{$:parentNode.node.node_id}" title="{$:toolTip}">{/if}{if $:parentNode.node.is_hidden}<span class="node-name-hidden">{$:parentNode.object.name|wash}</span>{else}{if $:parentNode.node.is_invisible}<span class="node-name-hiddenbyparent">{$:parentNode.object.name|wash}</span>{else}<span class="node-name-normal">{$:parentNode.object.name|wash}</span>{/if}{/if}{if $:parentNode.node.is_hidden}<span class="node-hidden">{'(Hidden)'|i18n( 'design/standard/contentstructuremenu' )}</span></a>{else}{if $:parentNode.node.is_invisible}<span class="node-hiddenbyparent">{'(Hidden by parent)'|i18n( 'design/standard/contentstructuremenu' )}</span></a>{else}</a>{/if}
                     {/if}
                 {else}
                     {if $:parentNode.node.is_hidden}
@@ -68,10 +68,10 @@
                         {/if}
                     {/if}
                     {if $:parentNode.node.is_hidden}
-                        <span class="node-hidden">(Hidden)</span>
+                        <span class="node-hidden">{'(Hidden)'|i18n( 'design/standard/contentstructuremenu' )}</span>
                     {else}
                         {if $:parentNode.node.is_invisible}
-                            <span class="node-hiddenbyparent">(Hidden by parent)</span>
+                            <span class="node-hiddenbyparent">{'(Hidden by parent)'|i18n( 'design/standard/contentstructuremenu' )}</span>
                         {/if}
                     {/if}
                 {/if}

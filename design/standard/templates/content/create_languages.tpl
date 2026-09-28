@@ -16,7 +16,7 @@
 
 {if or($class|not,$class.can_instantiate_languages|not)}
     
-    <p>{'You do not have permissions to create an object of the requested class in any language.'}</p>
+    <p>{'You do not have permissions to create an object of the requested class in any language.'|i18n( 'design/standard/content/create_languages' )}</p>
 
 {else}
 

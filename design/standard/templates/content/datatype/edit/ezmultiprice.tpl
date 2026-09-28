@@ -50,7 +50,7 @@
 
     {if count( $currency_list )}
         {* Select currency *}
-        <select name="{$attribute_base}_selected_currency_{$attribute.id}" title="Select currency">
+        <select name="{$attribute_base}_selected_currency_{$attribute.id}" title="{'Select currency'|i18n( 'design/standard/content/datatype' )}">
             {foreach $currency_list as $currency}
                 <option value="{$currency.code|wash}">{$currency.code|wash}</option>
             {/foreach}

@@ -40,8 +40,8 @@
                 <td>{if $attr.content.width|gt( 0 )}{$attr.content.width|wash}{/if}</td>
                 <td>{if $attr.content.height|gt( 0 )}{$attr.content.height|wash}{/if}</td>
                 <td>{$attr.content.quality|wash}</td>
-                <td>{if $attr.content.is_autoplay}True{else}False{/if}</td>
-                <td>{if $attr.content.is_loop}True{else}False{/if}</td>
+                <td>{if $attr.content.is_autoplay}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
+                <td>{if $attr.content.is_loop}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
             </tr>
             </table>
         </div>
@@ -70,9 +70,9 @@
                 <td>{if $attr.content.width|gt( 0 )}{$attr.content.width|wash}{/if}</td>
                 <td>{if $attr.content.height|gt( 0 )}{$attr.content.height|wash}{/if}</td>
                 <td>{$attr.content.quality|wash}</td>
-                <td>{if $attr.content.is_autoplay}True{else}False{/if}</td>
-                <td>{if $attr.content.is_loop}True{else}False{/if}</td>
-                <td>{if $attr.content.has_controller}True{else}False{/if}</td>
+                <td>{if $attr.content.is_autoplay}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
+                <td>{if $attr.content.is_loop}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
+                <td>{if $attr.content.has_controller}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
             </tr>
             </table>
         </div>
@@ -100,9 +100,9 @@
                 <td>{if $attr.content.width|gt( 0 )}{$attr.content.width|wash}{/if}</td>
                 <td>{if $attr.content.height|gt( 0 )}{$attr.content.height|wash}{/if}</td>
                 <td>{$attr.content.quality|wash}</td>
-                <td>{if $attr.content.is_autoplay}True{else}False{/if}</td>
-                <td>{if $attr.content.is_loop}True{else}False{/if}</td>
-                <td>{if $attr.content.has_controller}True{else}False{/if}</td>
+                <td>{if $attr.content.is_autoplay}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
+                <td>{if $attr.content.is_loop}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
+                <td>{if $attr.content.has_controller}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
             </tr>
             </table>
         </div>
@@ -130,8 +130,8 @@
                 <td>{if $attr.content.width|gt( 0 )}{$attr.content.width|wash}{/if}</td>
                 <td>{if $attr.content.height|gt( 0 )}{$attr.content.height|wash}{/if}</td>
                 <td>{$attr.content.quality|wash}</td>
-                <td>{if $attr.content.is_autoplay}True{else}False{/if}</td>
-                <td>{if $attr.content.is_loop}True{else}False{/if}</td>
+                <td>{if $attr.content.is_autoplay}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
+                <td>{if $attr.content.is_loop}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
                 <td>{$attr.content.controls|wash}</td>
             </tr>
             </table>
@@ -160,8 +160,8 @@
                 <td>{if $attr.content.width|gt( 0 )}{$attr.content.width|wash}{/if}</td>
                 <td>{if $attr.content.height|gt( 0 )}{$attr.content.height|wash}{/if}</td>
                 <td>{$attr.content.quality|wash}</td>
-                <td>{if $attr.content.is_autoplay}True{else}False{/if}</td>
-                <td>{if $attr.content.is_loop}True{else}False{/if}</td>
+                <td>{if $attr.content.is_autoplay}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
+                <td>{if $attr.content.is_loop}{'True'|i18n( 'design/standard/content/datatype' )}{else}{'False'|i18n( 'design/standard/content/datatype' )}{/if}</td>
                 <td>{$attr.content.controls|wash}</td>
             </tr>
             </table>

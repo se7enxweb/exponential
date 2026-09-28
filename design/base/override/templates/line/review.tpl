@@ -26,7 +26,7 @@
     {section show=$node.data_map.rating.content.0|ge(0)}
     <div class="content-rating">
         {section loop=5|sub($node.data_map.rating.content.0)}
-           <img src={"rating-icon.gif"|ezimage} width="24" height="24" alt="Star" />
+           <img src={"rating-icon.gif"|ezimage} width="24" height="24" alt="{'Star'|i18n( 'design/base' )}" />
         {/section}
     </div>
     {/section}

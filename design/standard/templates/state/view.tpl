@@ -88,7 +88,7 @@
 <tr class="{$sequence}">
     <td><img src="{$language.locale|flag_icon}" alt="{$language.locale|wash}" />&nbsp;<a href={concat( '/state/view/', $group.identifier,'/',$state.identifier , '/', $language.locale )|ezurl} title="{'View translation.'|i18n( 'design/admin/node/view/full' )}">{$language.name|wash}</td>
     <td>{$language.locale|wash}</td>
-    <td>{if $language.id|eq($state.default_language_id)}Yes{/if}</td>
+    <td>{if $language.id|eq($state.default_language_id)}{'Yes'|i18n( 'design/admin/node/view/full' )}{/if}</td>
 </tr>
 {/foreach}
 

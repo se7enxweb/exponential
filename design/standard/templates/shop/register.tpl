@@ -31,6 +31,6 @@
 </tr>
 </table>
 
-<input type="submit" name="CancelButton" value="Cancel" />
-<input type="submit" name="StoreButton" value="Store" />
+<input type="submit" name="CancelButton" value="{'Cancel'|i18n( 'design/standard/shop' )}" />
+<input type="submit" name="StoreButton" value="{'Store'|i18n( 'design/standard/shop' )}" />
 </form>

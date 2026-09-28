@@ -25,7 +25,7 @@
 
         <div class="content-link">
             <p>
-                <a href={$node.url_alias|ezurl}>Thumbnail view</a>
+                <a href={$node.url_alias|ezurl}>{'Thumbnail view'|i18n( 'design/base/slideshow/gallery' )}</a>
             </p>
         </div>
 

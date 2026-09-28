@@ -6,7 +6,7 @@
 
 <div class="warning">
 {if eq( $exceeded_limit, true() )}
-<h2>Warning:</h2>
+<h2>{'Warning:'|i18n( 'design/standard/node' )}</h2>
 <p>{'The items contain more than the maximum possible nodes for subtree removal and will not be deleted. You can remove this subtree using the ezsubtreeremove.php script.'|i18n( 'design/ezwebin/node/removeobject' )}</p>
 {else}
 <h2>{"Are you sure you want to remove these items?"|i18n("design/standard/node")}</h2>

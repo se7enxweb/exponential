@@ -4,7 +4,7 @@
   <p>{if $is_read|not}<b>{/if}{"Posted: %1"|i18n('design/standard/collaboration',,array($item.created|l10n(shortdatetime)))}{if $is_read|not}</b>{/if}</p>
   </td>
   <td class="{$sequence}">
-  <p>{if $is_read|not}<b>[new]</b>{/if}</p>
+  <p>{if $is_read|not}<b>{'[new]'|i18n( 'design/standard/collaboration' )}</b>{/if}</p>
   </td>
 
   <td class="{$sequence}" rowspan="2" valign="top">

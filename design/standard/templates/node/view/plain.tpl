@@ -6,7 +6,7 @@
          node_name=$node.name|wash}
 
 <div class="objectheader">
-<h2>Default object view. <a class="menuheadlink" href={"/setup/templateview/node/view/plain.tpl"|ezurl}>Click to create a custom template</a></h2>
+<h2>{'Default object view. <a class="menuheadlink" href=%url>Click to create a custom template</a>'|i18n( 'design/standard/node/view',, hash( '%url', "/setup/templateview/node/view/plain.tpl"|ezurl ) )}</h2>
 </div>
 
 <div class="object">

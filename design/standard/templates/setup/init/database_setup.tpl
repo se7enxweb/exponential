@@ -12,10 +12,10 @@
 <div class="input_highlight">
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-  <th class="normal" colspan="3">Database:</th>
+  <th class="normal" colspan="3">{'Database:'|i18n( 'design/standard/setup/init' )}</th>
 </tr>
 <tr>
-  <td class="normal">Type</td>
+  <td class="normal">{'Type'|i18n( 'design/standard/setup/init' )}</td>
   <td rowspan="7" class="normal">&nbsp;&nbsp;</td>
   <td class="normal">
   {section show=$database_list|gt(1)}

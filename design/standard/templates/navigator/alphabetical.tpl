@@ -51,7 +51,7 @@
 	    {/if}
 
 	    {if $:objectname_filter|eq( 'others' )}
-                 <span class="current">others</span>
+                 <span class="current">{'others'|i18n( 'design/standard/navigator/alphabetical' )}</span>
 	    {else}
 	         <span class="other">
 		 {if or( and( ne($children_count_by_letter, false() ), gt( $children_count_by_letter['others'], 0 ) ), eq( $children_count_by_letter, false() ) )}
@@ -59,7 +59,7 @@
                  {else}
 		     <span class="disabled">
 		 {/if}
-		 others
+		 {'others'|i18n( 'design/standard/navigator/alphabetical' )}
 		 {if or( and( ne($children_count_by_letter, false() ), gt( $children_count_by_letter['others'], 0 ) ), eq( $children_count_by_letter, false() ) )}
 		     </a>
                  {else}

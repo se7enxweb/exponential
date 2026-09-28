@@ -11,7 +11,7 @@
 {"This email is to inform you that an updated item has been published at %sitename."|i18n('design/standard/notification','',hash('%sitename',ezini("SiteSettings","SiteURL")))}
 {"The item can be viewed by using the URL below."|i18n('design/standard/notification')}
 
-{$object.name|wash} - {$object.current.creator.name|wash} (Owner: {$object.owner.name|wash})
+{$object.name|wash} - {$object.current.creator.name|wash} {'(Owner: %owner)'|i18n( 'design/standard/notification',, hash( '%owner', $object.owner.name|wash ) )}
 {section-else}
 {set-block scope=root variable=subject}{$object.content_class.name|wash} {'"%name" was published'|i18n('design/standard/notification', '', hash( '%name', $object.name|wash ))} [{ezini("SiteSettings","SiteURL")} - {$object.main_node.parent.name|wash}]{/set-block}
 {set-block scope=root variable=from}{concat($object.owner.name,' <', $sender, '>')}{/set-block}

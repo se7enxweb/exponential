@@ -42,7 +42,7 @@
     </td>
     <td width="1">
         <div class="listbutton">
-            <a href={concat($module.functions.discountruleedit.uri,"/",$discountgroup.id,"/",$Rule:item.id)|ezurl}><img class="button" src={"edit.gif"|ezimage} width="16" height="16" alt="Edit" /></a>
+            <a href={concat($module.functions.discountruleedit.uri,"/",$discountgroup.id,"/",$Rule:item.id)|ezurl}><img class="button" src={"edit.gif"|ezimage} width="16" height="16" alt="{'Edit'|i18n( 'design/standard/shop' )}" /></a>
         </div>
     </td>
     <td width="1">

@@ -24,7 +24,7 @@
 
 <div class="context-attributes">
 
-<p>{'The newly created template file will be placed in'|i18n( 'design/standard/design/templatecreate' )} design/{$site_design}/override/templates/.</p>
+<p>{'The newly created template file will be placed in %path.'|i18n( 'design/standard/design/templatecreate',, hash( '%path', concat( 'design/', $site_design, '/override/templates/' ) ) )}</p>
 
 {def $extension_list=ezini('ExtensionSettings','DesignExtensions','design.ini' )}
 {if ne($extension_list, array())}
@@ -41,9 +41,9 @@
         {/foreach}
 
         {if eq($design_extension,"")}
-            <option value="" selected="selected">No extension</option>
+            <option value="" selected="selected">{'No extension'|i18n( 'design/standard/design/templatecreate' )}</option>
         {else}
-            <option value="">No extension</option>
+            <option value="">{'No extension'|i18n( 'design/standard/design/templatecreate' )}</option>
         {/if}
     </select>
     </div>

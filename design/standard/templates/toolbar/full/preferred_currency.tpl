@@ -9,7 +9,7 @@
         <div class="toolbox-content">
         {if count( $currency_list )}
             <form action={'shop/setpreferredcurrency'|ezurl} method="post">
-                <select name="Currency" title="Select currency">
+                <select name="Currency" title="{'Select currency'|i18n( 'design/standard/toolbar' )}">
                     {foreach $currency_list as $Currency}
                         <option value="{$Currency.code}" {if eq( $Currency.code, $preferred_currency_code )}selected="selected"{/if}>{$Currency.code}</option>
                     {/foreach}

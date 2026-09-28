@@ -41,7 +41,7 @@ div#maincontent-design { width: 100%; } /* This is needed to avoid width bug in 
                 {if $pagedesign.data_map.image.content.is_valid|not()}
                     <h1>{ezini( 'SiteSettings', 'SiteName' )}</h1>
                 {else}
-                    <a href={"/"|ezurl}><img src={$pagedesign.data_map.image.content[logo].full_path|ezroot} alt="Company logo" /></a>
+                    <a href={"/"|ezurl}><img src={$pagedesign.data_map.image.content[logo].full_path|ezroot} alt="{'Company logo'|i18n( 'design/base' )}" /></a>
                 {/if}
             </div>{* id="header-design" *}
         </div>{* id="header" *}
@@ -54,7 +54,7 @@ div#maincontent-design { width: 100%; } /* This is needed to avoid width bug in 
         <div id="topmenu">
             <div id="topmenu-design">
 
-                <h3 class="hide">Top menu</h3>
+                <h3 class="hide">{'Top menu'|i18n( 'design/base' )}</h3>
                 &nbsp;
                 <div class="break"></div>
             </div>{* id="topmenu-design" *}

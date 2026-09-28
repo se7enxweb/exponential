@@ -1,5 +1,5 @@
 {* Multiprice Product - List embed view *}
-<h2>Multiprice Product - List embed view</h2>
+<h2>{'Multiprice Product - List embed view'|i18n( 'design/base' )}</h2>
 
 <div class="content-view-embed">
     <div class="class-product">

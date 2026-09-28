@@ -9,7 +9,7 @@
 <div class="break"></div>
 <div class="community-activity">
     <div class="loading">
-        Loading the latest forum posts...
+        {'Loading the latest forum posts...'|i18n( 'design/admin/dashboard/community' )}
         <img src={'2/loader.gif'|ezimage} />
     </div>
     <div id="feed-elements">

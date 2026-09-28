@@ -166,7 +166,7 @@
 {let test=fetch( class, override_template_list, hash( class_id, $class.id ) )}
 
 {section loop=$test}
-<tr><td>{$:item.siteaccess}</td><td>{$:item.block}</td><td><a href={concat( "/setup/templateview/", $:item.source )|ezurl}>{$:item.source}</td><td>{$:item.target}</td><td><a href={concat("/setup/templateedit/",$:item.target)|ezurl}><img src={"edit.gif"|ezimage} alt="Edit" /></a></td></tr>
+<tr><td>{$:item.siteaccess}</td><td>{$:item.block}</td><td><a href={concat( "/setup/templateview/", $:item.source )|ezurl}>{$:item.source}</td><td>{$:item.target}</td><td><a href={concat("/setup/templateedit/",$:item.target)|ezurl}><img src={"edit.gif"|ezimage} alt="{'Edit'|i18n( 'design/standard/class/view' )}" /></a></td></tr>
 {/section}
 
 {/let}

@@ -191,7 +191,7 @@
                      <p>{'Create new object with name'|i18n( 'design/standard/content/datatype' )}:</p>
                      <input name="attribute_{$attribute.id}_new_object_name" id="attribute_{$attribute.id}_new_object_name"/>
                 </div>
-                <input class="button" type="button" value="Create New" name="CustomActionButton[{$attribute.id}_new_object]"
+                <input class="button" type="button" value="{'Create New'|i18n( 'design/standard/content/datatype' )}" name="CustomActionButton[{$attribute.id}_new_object]"
                        onclick="var divfield=document.getElementById('create_new_object_{$attribute.id}');divfield.style.display='block';
                                 var editfield=document.getElementById('attribute_{$attribute.id}_new_object_name');editfield.focus();this.style.display='none';return false;" />
            {/if}

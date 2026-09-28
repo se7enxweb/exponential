@@ -15,7 +15,7 @@
 {section name=Result loop=$test.results}
 {section-exclude match=true()}
 {section-include match=is_set($Result:item.2.warnings)}
-<h2>Warning</h2>
+<h2>{'Warning'|i18n( 'design/standard/setup/init' )}</h2>
 <ul>
  {section name=Warning loop=$Result:item.2.warnings}
   {section show=is_array($:item.text)}

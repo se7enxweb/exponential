@@ -23,7 +23,7 @@
         <label for="RememberAction"><input class="checkbox" id="RememberAction" type="checkbox" name="RememberAction"/>{'Use this choice for all items'|i18n('design/standard/package')}</label>
         </div>
     {else}
-        <p>Element with ID '{$error.element_id}' will not be uninstalled.</p>
+        <p>{'Element with ID \'%element_id\' will not be uninstalled.'|i18n( 'design/standard/package',, hash( '%element_id', $error.element_id ) )}</p>
     {/if}
 {else}
     <h3>{'Unhandled uninstallation error has occurred.'|i18n('design/standard/package')}</h3>
