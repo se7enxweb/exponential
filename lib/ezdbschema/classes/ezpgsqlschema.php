@@ -314,6 +314,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         switch ( $pgType )
         {
             case 'integer':
+            case 'smallint':
             case 'double precision':
             case 'real':
             case 'bigint':
@@ -332,6 +333,15 @@ class eZPgsqlSchema extends eZDBSchemaInterface
                 return 'character';
 
             case 'int':
+                return 'integer';
+
+            // Not in the standard set, but used by extension schemas (for
+            // flags); MySQL and SQLite take them as they are.
+            case 'tinyint':
+            case 'smallint':
+                return 'smallint';
+
+            case 'mediumint':
                 return 'integer';
 
             case 'bigint':
@@ -359,7 +369,8 @@ class eZPgsqlSchema extends eZDBSchemaInterface
                 return 'numeric';
 
             default:
-                die ( "ERROR UNHANDLED TYPE: $type\n" );
+                eZDebug::writeError( "Unhandled column type: $type", __METHOD__ );
+                throw new RuntimeException( "Unhandled column type: $type" );
         }
     }
 
@@ -387,6 +398,10 @@ class eZPgsqlSchema extends eZDBSchemaInterface
                 $length = 11;
                 return 'int';
 
+            case 'smallint':
+                $length = 6;
+                return 'int';
+
             case 'character varying':
                 return 'varchar';
 
@@ -406,7 +421,8 @@ class eZPgsqlSchema extends eZDBSchemaInterface
                 return 'decimal';
 
             default:
-                die ( "ERROR UNHANDLED TYPE: $type\n" );
+                eZDebug::writeError( "Unhandled column type: $type", __METHOD__ );
+                throw new RuntimeException( "Unhandled column type: $type" );
         }
     }
 
@@ -453,6 +469,31 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         return $default;
     }
 
+    /**
+     * The name an index is created (or dropped) under. PostgreSQL index names
+     * are unique per schema, not per table as in MySQL, so extension schema
+     * files that reuse a name (contentobject_attribute_id, import_id...) in
+     * several tables collided. The schema's own name is kept, so the kernel's
+     * indexes and every upgrade script that names them stay as they were; only
+     * when an index of that name already exists on another table is it
+     * created as "<table>__<name>". Without a connected database (SQL written
+     * to a file) the name is kept as it is.
+     */
+    function physicalIndexName( $table, $index )
+    {
+        if ( strpos( $index, $table . '_' ) === 0 || !$this->DBInstance instanceof eZDBInterface )
+            return $index;
+
+        $owner = $this->DBInstance->arrayQuery(
+            "SELECT t.relname AS table_name FROM pg_class i" .
+            " JOIN pg_index x ON x.indexrelid = i.oid JOIN pg_class t ON t.oid = x.indrelid" .
+            " JOIN pg_namespace n ON n.oid = i.relnamespace" .
+            " WHERE i.relkind = 'i' AND n.nspname = current_schema() AND i.relname = '" . $this->DBInstance->escapeString( $index ) . "'" );
+        if ( empty( $owner ) || $owner[0]['table_name'] === $table )
+            return $index;
+        return $table . '__' . $index;
+    }
+
     /*!
      \private
      \param $table_name The table name
@@ -481,12 +522,12 @@ class eZPgsqlSchema extends eZDBSchemaInterface
 
             case 'non-unique':
             {
-                $sql = "CREATE INDEX $index_name ON $table_name USING btree";
+                $sql = "CREATE INDEX " . $this->physicalIndexName( $table_name, $index_name ) . " ON $table_name USING btree";
             } break;
 
             case 'unique':
             {
-                $sql = "CREATE UNIQUE INDEX $index_name ON $table_name USING btree";
+                $sql = "CREATE UNIQUE INDEX " . $this->physicalIndexName( $table_name, $index_name ) . " ON $table_name USING btree";
             } break;
         }
 
@@ -534,7 +575,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         }
         else
         {
-            $sql = "DROP INDEX $index_name";
+            $sql = "DROP INDEX " . $this->physicalIndexName( $table_name, $index_name );
         }
         return $sql . ( $withClosure ? ";\n" : "" );
     }
