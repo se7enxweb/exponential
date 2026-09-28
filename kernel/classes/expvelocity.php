@@ -820,15 +820,45 @@ class expVelocity
      */
     public function apcuWanted()
     {
+        return count( $this->apcuReasons() ) > 0;
+    }
+
+    /**
+     * The caches that want APCu, by name: 'response cache', 'HTTP cache',
+     * 'query cache'. Empty when none does.
+     *
+     * @return array
+     */
+    public function apcuReasons()
+    {
+        $reasons = array();
         if ( $this->isEnabled( $this->cacheSetting( 'Enabled', null, 'enabled' ) )
              && $this->isEnabled( $this->cacheSetting( 'APCu', null, 'enabled' ) ) )
-            return true;
+            $reasons[] = 'response cache';
         // Exactly "enabled", as the HTTP cache itself reads these.
         $http = eZINI::instance( 'httpcache.ini' );
         if ( $http->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled'
              && $http->variable( 'HttpCacheSettings', 'APCu' ) === 'enabled' )
-            return true;
-        return strtolower( (string)eZINI::instance( 'querycache.ini' )->variable( 'QueryCacheSettings', 'Mode' ) ) === 'shared';
+            $reasons[] = 'HTTP cache';
+        if ( strtolower( (string)eZINI::instance( 'querycache.ini' )->variable( 'QueryCacheSettings', 'Mode' ) ) === 'shared' )
+            $reasons[] = 'query cache';
+        return $reasons;
+    }
+
+    /**
+     * What the server process gets for APCu, in words, for the status output:
+     * set by [PHPSettings] IniOptions, switched on for the caches that want
+     * it, or off because none does.
+     *
+     * @return string
+     */
+    public function apcuSummary()
+    {
+        $own = preg_grep( '/^\s*apc\.enable_cli\s*=/', (array)$this->setting( 'PHPSettings', 'IniOptions', array() ) );
+        if ( $own )
+            return 'as [PHPSettings] IniOptions sets it (' . trim( (string)reset( $own ) ) . ')';
+        $reasons = $this->apcuReasons();
+        return $reasons ? 'on, for the ' . implode( ', ', $reasons ) : 'off, no cache uses it';
     }
 
     /**

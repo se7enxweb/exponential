@@ -380,9 +380,18 @@ class expVelocityEnginesTest extends ezpTestCase
         ezpINIHelper::setINISetting( 'querycache.ini', 'QueryCacheSettings', 'Mode', 'shared' );
         $this->assertTrue( $wants(), 'query cache shared' );
 
+        // The status output names the caches that want it.
+        $velocity = expVelocity::create( 'velocity.ini', 'qbix' );
+        $this->assertSame( array( 'query cache' ), $velocity->apcuReasons() );
+        $this->assertSame( 'on, for the query cache', $velocity->apcuSummary() );
+        ezpINIHelper::setINISetting( 'querycache.ini', 'QueryCacheSettings', 'Mode', 'off' );
+        $this->assertSame( 'off, no cache uses it', expVelocity::create( 'velocity.ini', 'qbix' )->apcuSummary() );
+        ezpINIHelper::setINISetting( 'querycache.ini', 'QueryCacheSettings', 'Mode', 'shared' );
+
         // IniOptions decides it when it names it.
         ezpINIHelper::setINISetting( 'velocity.ini', 'PHPSettings', 'IniOptions', array( 'apc.enable_cli=0' ) );
         $this->assertFalse( $wants(), 'IniOptions wins' );
+        $this->assertStringContainsString( 'IniOptions', expVelocity::create( 'velocity.ini', 'qbix' )->apcuSummary() );
     }
 
     public function testAnEmptyHeaderListAndNoMaxAgeWriteNothing()

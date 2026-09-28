@@ -312,6 +312,11 @@ function velocityPrintStatus( eZCLI $cli, array $status, $velocity = null, $full
             : 'off; port ' . $velocity->configuredHttpsPort() . ' once [HTTPSSettings] Enabled=true with Certificate and Key' );
     else
         $row( 'HTTPS', $status['https'] ? 'on' : 'off' );
+    // Command-line PHP has APCu off unless asked; say what this server gets and
+    // why, rather than letting the HTTP and query caches fall back unseen.
+    // FrankenPHP is not command-line PHP, so its SAPI decides there.
+    if ( $velocity !== null && $velocity->engineName() === 'qbix' && method_exists( $velocity, 'apcuSummary' ) )
+        $row( 'APCu', $velocity->apcuSummary() );
     $requestLogs = $velocity !== null ? $velocity->requestLogs() : array( 'access' => null, 'error' => null );
     if ( $requestLogs['access'] !== null || $requestLogs['error'] !== null )
     {
