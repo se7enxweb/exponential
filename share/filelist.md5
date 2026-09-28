@@ -13,7 +13,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 3b96782129fa8a60261a41688f7c0c3c  autoload.php
-3d2c9c08df659dc4e9488b7195c763cd  autoload/ezp_kernel.php
+d293cdfac62cf1c8cdc98c7da343b333  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
 e987da229be60f6c0644adee57d39fb3  benchmarks/classes/ezbenchmarkclirunner.php
@@ -383,6 +383,8 @@ d852d66cf979bf477e2f42c999dd41ca  design/admin/templates/error/kernel/20.tpl
 c6cf403813ac7e9d164c6024823ffdd0  design/admin/templates/error/kernel/22.tpl
 9484a14722ba747b25eb54e2fd0964e1  design/admin/templates/error/kernel/3.tpl
 8ddefecf6a7018827b07e5655e4ba47b  design/admin/templates/error/kernel/4.tpl
+f329d8c69c3381cf8dce37043ad2604b  design/admin/templates/error/parts/formtoken.tpl
+a395c5339b5d6c8f5b559dda2a6c91c3  design/admin/templates/error/parts/formtoken_style.tpl
 3a2801b8a7018499959e38d0d0866897  design/admin/templates/error/shop/1.tpl
 5d35317c921d3787c8da593f097cc2f4  design/admin/templates/error/shop/2.tpl
 f40a458ba972853fe21fbbda1945fcac  design/admin/templates/error/shop/3.tpl
@@ -684,6 +686,7 @@ b4c4d50b0797a7c50bd26eb6118afcd0  design/admin3/templates/content/edit.tpl
 3e4218bef006d2475b552dca8bfdbe88  design/admin3/templates/content/edit_menu.tpl
 8b7bd93936b18fac506c43c8865c3ea2  design/admin3/templates/content/history.tpl
 04548a4720028952e23195688c585b7d  design/admin3/templates/content/view/versionview.tpl
+177f84a513599a5358aed900c39aa21a  design/admin3/templates/error/parts/formtoken_style.tpl
 ce80eadd36457f38b7b0b36e1ee3e0f6  design/admin3/templates/loginpagelayout.tpl
 128ac846ded479d23689fb2daaba69e2  design/admin3/templates/page_head_script.tpl
 589189065677b138a43af7a1e508ee43  design/admin3/templates/page_head_style.tpl
@@ -1644,6 +1647,8 @@ aa079f01f123b11c633cadebcc09a867  design/standard/templates/error/kernel/22.tpl
 14cca09218e78eee8c62870bd801737f  design/standard/templates/error/kernel/3.tpl
 d53313a5e93b827819f8cfb17eff8230  design/standard/templates/error/kernel/4.tpl
 217be8b0a43945be8d4644805f137699  design/standard/templates/error/kernel/5.tpl
+a70f434850b37120521006f18f313277  design/standard/templates/error/kernel/6.tpl
+8566188c869caf3a21fb08e06ae87a60  design/standard/templates/error/parts/formtoken.tpl
 6bd617892dda009a60d6cf6690df9a25  design/standard/templates/error/shop/1.tpl
 1e5e7ba7ff6630c90a2b80b9d6d2b5b8  design/standard/templates/error/shop/2.tpl
 f0a1be3acdc8ab1e93eca3b1b28b1e35  design/standard/templates/error/shop/3.tpl
@@ -2479,7 +2484,7 @@ f215c05198661b115822ecf85b049791  doc/specifications/trunk/webdav/design.txt
 0636e73ff0215e8d672dc4c32c317bb3  extension/ezformtoken/LICENSE
 d41d8cd98f00b204e9800998ecf8427e  extension/ezformtoken/README
 e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
-1325e432e35e02280aae11270785c95f  extension/ezformtoken/event/ezxformtoken.php
+8e7bfc9fe2dc0d99c278330d9b1647e7  extension/ezformtoken/event/ezxformtoken.php
 e4011eace59d27a9c9d29987f3bc8df8  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
@@ -5548,7 +5553,7 @@ e9b39fe0807d1490e6b477bea7eb5cb6  kernel/classes/ezcontentobjecttranslation.php
 2cf371d96680e1b46affd5979aaebd0b  kernel/classes/ezdiscountrule.php
 2ebfdd271371a6ced7913a72d4390458  kernel/classes/ezdiscountsubrule.php
 75c248459f21001abec3d9afc74174fa  kernel/classes/ezdiscountsubrulevalue.php
-adac32ae98162e0a17db249b0be6797d  kernel/classes/ezerror.php
+ceadc5dacf70114a25d97812c8f8148a  kernel/classes/ezerror.php
 606cc362f6bbaa388ff80770dfff0d3f  kernel/classes/ezhttpheader.php
 dbe1942b799b634837759b1b73997571  kernel/classes/ezinformationcollection.php
 f9366c877f2a329e2ab0437c59721058  kernel/classes/ezinformationcollectionattribute.php
@@ -5748,7 +5753,7 @@ fc410e0120f8ad59f153d70370e746ba  kernel/content/versionview.php
 0294ca31cfa315df0ddc1f5848eeb821  kernel/content/versionviewframe.php
 6fd1276f5652ad7bb60aeec07c494cb5  kernel/content/view.php
 8cb038cd8f485aa66d9c0b9cc1fa7045  kernel/error/module.php
-8f5c38bdbaa27d2bb6275aff45806348  kernel/error/view.php
+7cc416aefe5fcffd3c921803cc27e0e3  kernel/error/view.php
 f8cf22553755e3642891fc2437cb6e50  kernel/ezinfo/about.php
 d9ed9d3bbc230d80ddd28a92ac61b5ff  kernel/ezinfo/copyright.php
 7cb73f7bef2cf4c3427b6eb99fbe1ecd  kernel/ezinfo/isalive.php
@@ -5827,6 +5832,7 @@ e63996926516aea0ddedc42a7b544c2f  kernel/private/classes/exceptions/cluster/noco
 b571ba280c564367f269e06c2d4f28a8  kernel/private/classes/exceptions/database/exception.php
 6492e06ec979851884880497c4bed732  kernel/private/classes/exceptions/database/noconnection.php
 6827d6559e24e71c3dd669e388b94dda  kernel/private/classes/exceptions/kernel/accessdenied.php
+6ee4f4307aaeee74f020edcec9f4974b  kernel/private/classes/exceptions/kernel/formtoken.php
 4d5ff49d1a357b4b302acfca5b51ef82  kernel/private/classes/exceptions/kernel/languagenotfound.php
 878e7dd15c4fe12a688ca042eee98f96  kernel/private/classes/exceptions/kernel/moduledisabled.php
 fc94788f51407f793c5bf69622c66886  kernel/private/classes/exceptions/kernel/modulenotfound.php
@@ -5844,11 +5850,12 @@ de0874d0feda5a3bbd9f00408fe0f975  kernel/private/classes/ezpcontentpublishingque
 662125c605cb76559618de0e11d5ce66  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
 4caf88b0759996112c9edc775b5fe589  kernel/private/classes/ezpevent.php
 91b3d2ea3770ff41bb2c55b0c9f434be  kernel/private/classes/ezpextension.php
-97dbfb988e8181ae02ef07425d9f6169  kernel/private/classes/ezpkernel.php
+2d4e6ed00627f18d0da0d5dc3176d1e5  kernel/private/classes/ezpformtokenrefusal.php
+c08da0450c98be5742f99ea15d6106a3  kernel/private/classes/ezpkernel.php
 86bdb9f30bc9936abd83ceb015a05379  kernel/private/classes/ezpkernelredirect.php
 c209d9d72daf86a9eb0e0de775a49958  kernel/private/classes/ezpkernelresult.php
 66ad5ad85bc9fe76eac9c2dbbdbc8221  kernel/private/classes/ezpkerneltreemenu.php
-7fa46119f95486f8eb0a6dcc69be450e  kernel/private/classes/ezpkernelweb.php
+e109a78850d03a4bf412b1c4fdf4c05a  kernel/private/classes/ezpkernelweb.php
 6159d249e9b9a74e14a8bf8921c36a41  kernel/private/classes/ezplanguageswitcher.php
 2bfb085e092fb0c741d2ba0fec8996ec  kernel/private/classes/ezpmail.php
 a5c6868c21944f98d32c76a4c8c8b234  kernel/private/classes/ezpmobiledevicedetect.php
@@ -6401,7 +6408,7 @@ b97865831b0c15b386446f6828bafd58  lib/ezutils/classes/ezcachehelper.php
 c80badb0b87b5fb55555d244d6ef797e  lib/ezutils/classes/ezdatetimevalidator.php
 0396aa512968a93dbe538a21baed3b89  lib/ezutils/classes/ezdebug.php
 3d9748ba413c5c152a3f73f7ee585e40  lib/ezutils/classes/ezdebugsetting.php
-740329a4263bfdac72daa855ebbbc369  lib/ezutils/classes/ezexecution.php
+1b7ffeaf4d8019335862b54c5ec17664  lib/ezutils/classes/ezexecution.php
 54c1a53c483696cc41a502986862d6eb  lib/ezutils/classes/ezexpiryhandler.php
 e9d6f9231ff404631c0c1854f9001fb5  lib/ezutils/classes/ezextension.php
 10c1762246e846ff94749cad57aa5235  lib/ezutils/classes/ezfileextensionblacklistvalidator.php
@@ -6460,7 +6467,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
 c3eeb7a02dec9653a2a50a0137fd91e9  settings/design.ini
-2b436724fd55e9c7497764f037d08cf2  settings/error.ini
+1a10b7eb8552e480f4b6f46fb7fdc393  settings/error.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 179e641f13c2340ba00500111ea04bb2  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -6485,7 +6492,7 @@ ccf6fc3b0f24bfa396d0633c19454f90  settings/querycache.ini
 1d54e408fae4768ac1e8c18f5bf48fcc  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-f7be990321e4fb8314a9b615af65a59c  settings/site.ini
+e0940da4931fbc89144ce117666ca970  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -6915,14 +6922,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-8268ae49ce8b679c31d69da918a0818f  share/translations/eng-US/translation.ts
+861647544932d18e6ac8c1c4759a4b31  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 779f692f3395610478f6b8465c20cb56  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-7978e128c62b1c76b654073bb8f8430d  share/translations/ger-DE/translation.ts
+9e324edfd891feb27143c2fe6541bc47  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6935,7 +6942,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-8860d39cfd15df4db7a8fddece9cebeb  share/translations/untranslated/translation.ts
+d06bbefc39459a41ce61eda520e29d3c  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 4397f3e1a1c355255c97e191430662d5  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
