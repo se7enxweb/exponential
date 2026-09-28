@@ -240,15 +240,85 @@
     function finish( message )
     {ldelim}
         if ( source ) {ldelim} source.close(); source = null; {rdelim}
+        if ( timer ) {ldelim} window.clearTimeout( timer ); timer = null; {rdelim}
+        jobId = null;
         startBtn.disabled = false;
         stopBtn.disabled  = true;
         statusEl.innerHTML = '';
         statusEl.appendChild( document.createTextNode( message ) );
     {rdelim}
 
+    // The run happens in the background (setup/preloadjob starts it); this
+    // page polls its events once a second, so no request stays open and no
+    // web server or proxy in between can hold the progress back.
+    var jobUrl  = {'setup/preloadjob'|ezurl()};
+    var jobId   = null;
+    var offset  = 0;
+    var timer   = null;
+    var csrfMeta = document.querySelector( 'meta[name="csrf-token"]' );
+
+    function post( data, done )
+    {ldelim}
+        var request = new XMLHttpRequest();
+        request.open( 'POST', jobUrl, true );
+        request.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+        request.setRequestHeader( 'X-Requested-With', 'XMLHttpRequest' );
+        if ( csrfMeta ) request.setRequestHeader( 'X-CSRF-Token', csrfMeta.getAttribute( 'content' ) );
+        request.onload = function ()
+        {ldelim}
+            var answer = null;
+            try {ldelim} answer = JSON.parse( request.responseText ); {rdelim} catch ( e ) {ldelim}{rdelim}
+            done( request.status, answer );
+        {rdelim};
+        request.onerror = function () {ldelim} done( 0, null ); {rdelim};
+        var pairs = [];
+        for ( var key in data ) pairs.push( encodeURIComponent( key ) + '=' + encodeURIComponent( data[key] ) );
+        request.send( pairs.join( '&' ) );
+    {rdelim}
+
+    function show( payload )
+    {ldelim}
+        if ( payload.type === 'report' )
+        {ldelim}
+            renderBroken( payload.broken );
+            // The console keeps the plain text of the report as well, so
+            // that selecting the whole log still carries it.
+            write( 'report', payload.message );
+            return;
+        {rdelim}
+        write( payload.type, payload.message );
+    {rdelim}
+
+    function poll()
+    {ldelim}
+        if ( !jobId ) return;
+        var request = new XMLHttpRequest();
+        request.open( 'GET', jobUrl + '/' + jobId + '/' + offset, true );
+        request.setRequestHeader( 'X-Requested-With', 'XMLHttpRequest' );
+        request.onload = function ()
+        {ldelim}
+            var answer = null;
+            try {ldelim} answer = JSON.parse( request.responseText ); {rdelim} catch ( e ) {ldelim}{rdelim}
+            if ( !answer || !answer.events )
+            {ldelim}
+                write( 'error', tr( 'noStream' ) );
+                finish( tr( 'stopped' ) );
+                return;
+            {rdelim}
+            for ( var i = 0; i < answer.events.length; i++ ) show( answer.events[i] );
+            offset = answer.offset;
+            if ( answer.done )
+                finish( tr( 'finished' ) );
+            else
+                timer = window.setTimeout( poll, 1000 );
+        {rdelim};
+        request.onerror = function () {ldelim} timer = window.setTimeout( poll, 3000 ); {rdelim};
+        request.send();
+    {rdelim}
+
     startBtn.onclick = function ()
     {ldelim}
-        if ( source ) return;
+        if ( jobId ) return;
         consoleEl.innerHTML = '';
         brokenEl.innerHTML = '';
         lines = 0;
@@ -261,52 +331,33 @@
         var saEl = document.getElementById( 'preload-siteaccess' );
         var sa = saEl ? saEl.value : '';
 
-        var url = streamUrl + '?MaxPages=' + pages + '&MaxDepth=' + depth
-                + '&SiteAccess=' + encodeURIComponent( sa );
-
         startBtn.disabled = true;
         stopBtn.disabled  = false;
         statusEl.innerHTML = '';
         statusEl.appendChild( document.createTextNode( tr( 'running' ) ) );
 
-        source = new EventSource( url );
-
-        source.onmessage = function ( event )
+        post( {ldelim} Action: 'start', MaxPages: pages, MaxDepth: depth, SiteAccess: sa {rdelim}, function ( status, answer )
         {ldelim}
-            var payload;
-            try {ldelim} payload = JSON.parse( event.data ); {rdelim}
-            catch ( e ) {ldelim} return; {rdelim}
-            if ( payload.type === 'report' )
+            if ( status !== 200 || !answer || !answer.id )
             {ldelim}
-                renderBroken( payload.broken );
-                // The console keeps the plain text of the report as well, so
-                // that selecting the whole log still carries it.
-                write( 'report', payload.message );
+                write( 'error', ( answer && answer.error ) ? answer.error : tr( 'noStream' ) );
+                finish( tr( 'stopped' ) );
                 return;
             {rdelim}
-
-            write( payload.type, payload.message );
-            if ( payload.type === 'done' )
-                finish( tr( 'finished' ) );
-        {rdelim};
-
-        source.addEventListener( 'end', function () {ldelim} finish( tr( 'finished' ) ); {rdelim} );
-
-        source.onerror = function ()
-        {ldelim}
-            // EventSource reconnects on its own, which would start the run
-            // again from the beginning; closing here keeps one run to a press.
-            if ( lines === 0 )
-                write( 'error', tr( 'noStream' ) );
-            else
-                write( 'warn', tr( 'closed' ) );
-            finish( tr( 'stopped' ) );
-        {rdelim};
+            jobId = answer.id;
+            offset = 0;
+            poll();
+        {rdelim} );
     {rdelim};
 
     stopBtn.onclick = function () {ldelim}
-        write( 'warn', tr( 'byOperator' ) );
-        finish( tr( 'stopped' ) );
+        if ( !jobId ) return;
+        stopBtn.disabled = true;
+        // The run ends after the page it is fetching and says so; polling
+        // carries on until then.
+        post( {ldelim} Action: 'stop', JobID: jobId {rdelim}, function () {ldelim}
+            write( 'warn', tr( 'byOperator' ) );
+        {rdelim} );
     {rdelim};
 {rdelim})();
 </script>

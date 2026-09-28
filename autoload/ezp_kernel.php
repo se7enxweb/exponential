@@ -587,6 +587,7 @@ return array(
       'expMongoDB'                                         => 'lib/ezdb/classes/expmongodb.php',
       'expMongoSchema'                                     => 'lib/ezdbschema/classes/expmongoschema.php',
       'expPhar'                                            => 'kernel/classes/expphar.php',
+      'expPreloadJob'                                      => 'kernel/classes/exppreloadjob.php',
       'expPreloadRunner'                                   => 'kernel/setup/exppreloadrunner.php',
       'expRADCatalogue'                                    => 'kernel/setup/expradcatalogue.php',
       'expRADHealth'                                       => 'kernel/setup/expradhealth.php',

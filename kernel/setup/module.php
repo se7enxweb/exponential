@@ -225,6 +225,16 @@ $ViewList['preload'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'params' => array() );
 
+// The console's back end: starts a preload in the background, stops it, and
+// answers its progress as JSON (expPreloadJob). Unlike the stream it holds no
+// request open, so it works behind any web server and proxy.
+$ViewList['preloadjob'] = array(
+    'functions' => array( 'preload' ),
+    'script' => 'preloadjob.php',
+    'ui_context' => 'ajax',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array( 'JobID', 'Offset' ) );
+
 $ViewList['preloadstream'] = array(
     'functions' => array( 'preload' ),
     'script' => 'preloadstream.php',
