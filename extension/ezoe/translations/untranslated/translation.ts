@@ -1099,6 +1099,62 @@ Do you want more information about this issue?</source>
         <source>Use left and right arrows to navigate.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Go back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dotted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dashed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>solid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>double</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>groove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ridge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>inset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>outset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size inputs for all 4 edges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click to select table size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>
@@ -1116,6 +1172,14 @@ Do you want more information about this issue?</source>
     </message>
     <message>
         <source>Some objects used in embed(-inline) tags have been deleted and are no longer available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid link: &quot;%1&quot;. Target object does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid link: &quot;%1&quot;. Target node does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1509,6 +1573,14 @@ Do you want more information about this issue?</source>
     <name>kernel/classes/datatypes/ezxmltext</name>
     <message>
         <source>Invalid e-mail address: &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class &apos;%1&apos; is not allowed for element &amp;lt;%2&amp;gt; (check content.ini).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Required attribute &apos;%1&apos; is not presented in tag &amp;lt;%2&amp;gt;.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

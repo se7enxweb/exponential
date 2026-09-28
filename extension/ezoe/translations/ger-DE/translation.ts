@@ -5,7 +5,7 @@
     <name>design/admin/content/browse</name>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Lesezeichen</translation>
     </message>
 </context>
 <context>
@@ -16,7 +16,7 @@
     </message>
     <message>
         <source>File type</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateityp</translation>
     </message>
     <message>
         <source>Size</source>
@@ -31,14 +31,14 @@
     <name>design/admin/content/search</name>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchen</translation>
     </message>
 </context>
 <context>
     <name>design/admin/content/upload</name>
     <message>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Hochladen</translation>
     </message>
 </context>
 <context>
@@ -56,15 +56,15 @@
     <name>design/standard/content/edit</name>
     <message>
         <source>Send for publishing</source>
-        <translation type="unfinished"></translation>
+        <translation>Zur Veröffentlichung schicken</translation>
     </message>
     <message>
         <source>Store draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Entwurf speichern</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwerfen</translation>
     </message>
 </context>
 <context>
@@ -78,14 +78,14 @@
     <name>design/standard/content/view</name>
     <message>
         <source>You have no bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben keine Lesezeichen</translation>
     </message>
 </context>
 <context>
     <name>design/standard/error/kernel</name>
     <message>
         <source>Your current user does not have the proper privileges to access this page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihr aktueller Benutzer hat nicht die richtigen Rechte, diese Seite zu betreten.</translation>
     </message>
 </context>
 <context>
@@ -874,7 +874,7 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     </message>
     <message>
         <source>Mail</source>
-        <translation type="unfinished"></translation>
+        <translation>E-Mail</translation>
     </message>
     <message>
         <source>Anchor</source>
@@ -922,11 +922,11 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     </message>
     <message>
         <source>Object</source>
-        <translation type="unfinished"></translation>
+        <translation>Objekt</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Knoten</translation>
     </message>
     <message>
         <source>Relation</source>
@@ -1098,7 +1098,7 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprachen</translation>
     </message>
     <message>
         <source>Please wait...</source>
@@ -1132,6 +1132,62 @@ Benötigen Sie hierzu weitere Informationen?</translation>
         <source>Use left and right arrows to navigate.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Go back</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>keine</translation>
+    </message>
+    <message>
+        <source>hidden</source>
+        <translation>versteckt</translation>
+    </message>
+    <message>
+        <source>dotted</source>
+        <translation>gepunktet</translation>
+    </message>
+    <message>
+        <source>dashed</source>
+        <translation>gestrichelt</translation>
+    </message>
+    <message>
+        <source>solid</source>
+        <translation>durchgezogen</translation>
+    </message>
+    <message>
+        <source>double</source>
+        <translation>doppelt</translation>
+    </message>
+    <message>
+        <source>groove</source>
+        <translation>eingekerbt</translation>
+    </message>
+    <message>
+        <source>ridge</source>
+        <translation>erhaben</translation>
+    </message>
+    <message>
+        <source>inset</source>
+        <translation>eingelassen</translation>
+    </message>
+    <message>
+        <source>outset</source>
+        <translation>hervorstehend</translation>
+    </message>
+    <message>
+        <source>Size inputs for all 4 edges</source>
+        <translation>Größenangaben für alle 4 Seiten</translation>
+    </message>
+    <message>
+        <source>Tel</source>
+        <translation>Tel.</translation>
+    </message>
+    <message>
+        <source>Click to select table size</source>
+        <translation>Klicken, um die Tabellengröße zu wählen</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>
@@ -1154,6 +1210,14 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     <message>
         <source>Some objects used in embed(-inline) tags have been deleted and are no longer available.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid link: &quot;%1&quot;. Target object does not exist.</source>
+        <translation>Ungültiger Link: „%1“. Das Zielobjekt existiert nicht.</translation>
+    </message>
+    <message>
+        <source>Invalid link: &quot;%1&quot;. Target node does not exist.</source>
+        <translation>Ungültiger Link: „%1“. Der Zielknoten existiert nicht.</translation>
     </message>
 </context>
 <context>
@@ -1415,11 +1479,11 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     </message>
     <message>
         <source>Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinauf</translation>
     </message>
     <message>
         <source>Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinunter</translation>
     </message>
     <message>
         <source>Match case</source>
@@ -1543,21 +1607,29 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     <name>kernel/classes/datatypes</name>
     <message>
         <source>Content required</source>
-        <translation type="unfinished"></translation>
+        <translation>Eingabe erforderlich</translation>
     </message>
 </context>
 <context>
     <name>kernel/classes/datatypes/ezxmltext</name>
     <message>
         <source>Invalid e-mail address: &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Email Adresse: &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Class &apos;%1&apos; is not allowed for element &amp;lt;%2&amp;gt; (check content.ini).</source>
+        <translation>Klasse &apos;%1&apos; ist nicht erlaubt für das Element &amp;lt;%2&amp;gt; (überprüfen Sie die content.ini).</translation>
+    </message>
+    <message>
+        <source>Required attribute &apos;%1&apos; is not presented in tag &amp;lt;%2&amp;gt;.</source>
+        <translation>Notwendiges Attribut &apos;%1&apos; ist bei Tag &amp;lt;%2&amp;gt; nicht vorhanden.</translation>
     </message>
 </context>
 <context>
     <name>kernel/content</name>
     <message>
         <source>Top Level Nodes</source>
-        <translation type="unfinished"></translation>
+        <translation>Knoten der obersten Ebene</translation>
     </message>
 </context>
 </TS>

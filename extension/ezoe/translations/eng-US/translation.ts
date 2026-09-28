@@ -1104,6 +1104,58 @@ Do you want more information about this issue?</translation>
         <source>Tel</source>
         <translation>Tel</translation>
     </message>
+    <message>
+        <source>Go back</source>
+        <translation>Go back</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>none</translation>
+    </message>
+    <message>
+        <source>hidden</source>
+        <translation>hidden</translation>
+    </message>
+    <message>
+        <source>dotted</source>
+        <translation>dotted</translation>
+    </message>
+    <message>
+        <source>dashed</source>
+        <translation>dashed</translation>
+    </message>
+    <message>
+        <source>solid</source>
+        <translation>solid</translation>
+    </message>
+    <message>
+        <source>double</source>
+        <translation>double</translation>
+    </message>
+    <message>
+        <source>groove</source>
+        <translation>groove</translation>
+    </message>
+    <message>
+        <source>ridge</source>
+        <translation>ridge</translation>
+    </message>
+    <message>
+        <source>inset</source>
+        <translation>inset</translation>
+    </message>
+    <message>
+        <source>outset</source>
+        <translation>outset</translation>
+    </message>
+    <message>
+        <source>Size inputs for all 4 edges</source>
+        <translation>Size inputs for all 4 edges</translation>
+    </message>
+    <message>
+        <source>Click to select table size</source>
+        <translation>Click to select table size</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

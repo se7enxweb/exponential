@@ -4,6 +4,9 @@
 [TemplateSettings]
 ExtensionAutoloadPath[]=ezjscore
 
+[RegionalSettings]
+TranslationExtensions[]=ezjscore
+
 
 [SSLZoneSettings] 
 ModuleViewAccessMode[ezjscore/*]=keep

@@ -12,7 +12,7 @@
     {def $css_size_types = hash('px', 'px', 'em', 'em', '%', '%')}
 {/if}
 
-<table class="csssize4_input_layout" border="0" cellpadding="0" cellspacing="1" summary="Size inputs for all 4 edges">
+<table class="csssize4_input_layout" border="0" cellpadding="0" cellspacing="1" summary="{'Size inputs for all 4 edges'|i18n( 'design/standard/ezoe' )}">
 <thead>
 <tr>
 	<td align="center"><label for="{$custom_attribute_id}_source">{'Top'|i18n('design/standard/ezoe')}</label></td>

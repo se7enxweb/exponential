@@ -74,5 +74,9 @@
         <source>Unable to retrieve the uploaded file.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The default parent location for uploads cannot be retrieved! Check user permissions and correctness of settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

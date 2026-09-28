@@ -37,16 +37,16 @@
     <option value="{$key}"{if $custom_attribute_default.1|eq($key)} selected="selected"{/if}>{$value}</option>
 {/foreach}
 {else}
-    <option value="none">none</option>
-    <option value="hidden"{if $custom_attribute_default.1|eq('hidden')} selected="selected"{/if}>hidden</option>
-    <option value="dotted"{if $custom_attribute_default.1|eq('dotted')} selected="selected"{/if}>dotted</option>
-    <option value="dashed"{if $custom_attribute_default.1|eq('dashed')} selected="selected"{/if}>dashed</option>
-    <option value="solid"{if $custom_attribute_default.1|eq('solid')} selected="selected"{/if}>solid</option>
-    <option value="double"{if $custom_attribute_default.1|eq('double')} selected="selected"{/if}>double</option>
-    <option value="groove"{if $custom_attribute_default.1|eq('groove')} selected="selected"{/if}>groove</option>
-    <option value="ridge"{if $custom_attribute_default.1|eq('ridge')} selected="selected"{/if}>ridge</option>
-    <option value="inset"{if $custom_attribute_default.1|eq('inset')} selected="selected"{/if}>inset</option>
-    <option value="outset"{if $custom_attribute_default.1|eq('outset')} selected="selected"{/if}>outset</option>
+    <option value="none">{'none'|i18n( 'design/standard/ezoe' )}</option>
+    <option value="hidden"{if $custom_attribute_default.1|eq('hidden')} selected="selected"{/if}>{'hidden'|i18n( 'design/standard/ezoe' )}</option>
+    <option value="dotted"{if $custom_attribute_default.1|eq('dotted')} selected="selected"{/if}>{'dotted'|i18n( 'design/standard/ezoe' )}</option>
+    <option value="dashed"{if $custom_attribute_default.1|eq('dashed')} selected="selected"{/if}>{'dashed'|i18n( 'design/standard/ezoe' )}</option>
+    <option value="solid"{if $custom_attribute_default.1|eq('solid')} selected="selected"{/if}>{'solid'|i18n( 'design/standard/ezoe' )}</option>
+    <option value="double"{if $custom_attribute_default.1|eq('double')} selected="selected"{/if}>{'double'|i18n( 'design/standard/ezoe' )}</option>
+    <option value="groove"{if $custom_attribute_default.1|eq('groove')} selected="selected"{/if}>{'groove'|i18n( 'design/standard/ezoe' )}</option>
+    <option value="ridge"{if $custom_attribute_default.1|eq('ridge')} selected="selected"{/if}>{'ridge'|i18n( 'design/standard/ezoe' )}</option>
+    <option value="inset"{if $custom_attribute_default.1|eq('inset')} selected="selected"{/if}>{'inset'|i18n( 'design/standard/ezoe' )}</option>
+    <option value="outset"{if $custom_attribute_default.1|eq('outset')} selected="selected"{/if}>{'outset'|i18n( 'design/standard/ezoe' )}</option>
 {/if}
 </select>
 </td>

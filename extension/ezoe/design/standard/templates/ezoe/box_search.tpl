@@ -5,7 +5,7 @@
                                                                     'function', 'search' ) )}
     <div class="panel" id="search_box" style="display: none; position: relative;">
     {if $box_embed_mode}
-        <a id="embed_search_go_back_link" title="Go back" href="JavaScript:void(0);" style="position: absolute; top: 0px; right: -5px;"><img width="16" height="16" border="0" src={"tango/emblem-unreadable.png"|ezimage} /></a>
+        <a id="embed_search_go_back_link" title="{'Go back'|i18n( 'design/standard/ezoe' )}" href="JavaScript:void(0);" style="position: absolute; top: 0px; right: -5px;"><img width="16" height="16" border="0" src={"tango/emblem-unreadable.png"|ezimage} /></a>
     {/if}
     {if $box_has_access}
         <div id="search_progress" class="progress-indicator" style="display: none;"></div>
