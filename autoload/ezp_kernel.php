@@ -772,6 +772,7 @@ return array(
       'ezpSessionHandlerPHP'                               => 'lib/ezsession/classes/ezpsessionhandlerphp.php',
       'ezpSessionHandlerSymfony'                           => 'lib/ezsession/classes/ezpsessionhandlersymfony.php',
       'ezpSiteAccessURL'                                   => 'kernel/private/classes/ezpsiteaccessurl.php',
+      'ezpTemplateOverrides'                               => 'kernel/private/classes/ezptemplateoverrides.php',
       'ezpSiteAccessURLOperator'                           => 'kernel/common/ezpsiteaccessurloperator.php',
       'ezpStaticCache'                                     => 'kernel/private/interfaces/ezpstaticcache.php',
       'ezpTopologicalSort'                                 => 'kernel/private/classes/ezptopologicalsort.php',

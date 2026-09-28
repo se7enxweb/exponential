@@ -21,9 +21,13 @@ foreach ( $parameters as $param )
     $template .= "/$param";
 }
 
+// The siteaccesses this page may change: the related ones, which it offers.
+$relatedSiteAccessList = (array)$ini->variable( 'SiteAccessSettings', 'RelatedSiteAccessList' );
+
 if ( $module->isCurrentAction( 'SelectCurrentSiteAccess' ) )
 {
-    if ( $http->hasPostVariable( 'CurrentSiteAccess' ) )
+    if ( $http->hasPostVariable( 'CurrentSiteAccess' ) &&
+         in_array( $http->postVariable( 'CurrentSiteAccess' ), $relatedSiteAccessList, true ) )
     {
         $http->setSessionVariable( 'eZTemplateAdminCurrentSiteAccess', $http->postVariable( 'CurrentSiteAccess' ) );
     }
@@ -31,19 +35,86 @@ if ( $module->isCurrentAction( 'SelectCurrentSiteAccess' ) )
 
 // Fetch siteaccess settings for the selected override
 // Default to first defined siteacces if none are selected
-if ( !$http->hasSessionVariable( 'eZTemplateAdminCurrentSiteAccess' ) )
+if ( !$http->hasSessionVariable( 'eZTemplateAdminCurrentSiteAccess' ) ||
+     !in_array( $http->sessionVariable( 'eZTemplateAdminCurrentSiteAccess' ), $relatedSiteAccessList, true ) )
 {
-    $siteAccessList = $ini->variable( 'SiteAccessSettings', 'RelatedSiteAccessList' );
-    $http->setSessionVariable( 'eZTemplateAdminCurrentSiteAccess', $siteAccessList[0] );
+    $http->setSessionVariable( 'eZTemplateAdminCurrentSiteAccess', $relatedSiteAccessList[0] );
 }
 
 $siteAccess = $http->sessionVariable( 'eZTemplateAdminCurrentSiteAccess' );
 
 $overrideArray = eZTemplateDesignResource::overrideArray( $siteAccess );
 
+/**
+ * The names of the overrides of $template, in the order they are tried.
+ */
+$overrideNames = function ( $overrideArray ) use ( $template )
+{
+    $names = array();
+    if ( isset( $overrideArray[$template]['custom_match'] ) )
+    {
+        foreach ( isset( $overrideArray[$template]['custom_match'] ) ? $overrideArray[$template]['custom_match'] : array() as $customMatch )
+            $names[] = $customMatch['override_name'];
+    }
+    return $names;
+};
+
+// Reordering: posted by the page each time an override is dropped in a new
+// place (or moved with its arrows), answered in JSON. The order becomes the
+// Priority of this template's overrides, 10, 20, 30 ..., in the siteaccess's
+// own override.ini.append.php; nothing else in it changes. A list that does
+// not hold exactly the overrides shown now is refused.
+if ( $http->hasPostVariable( 'ReorderOverrides' ) )
+{
+    $order = $http->hasPostVariable( 'OverrideOrder' ) ? (array)$http->postVariable( 'OverrideOrder' ) : array();
+    $current = $overrideNames( $overrideArray );
+    $list = ezpTemplateOverrides::reorder( $current, $order );
+    $response = array( 'ok' => false, 'order' => $current );
+    if ( $list === false )
+    {
+        $response['error'] = ezpI18n::tr( 'design/admin/visual/templateview', 'The overrides of this template changed since this page was loaded. Reload the page and try again.' );
+    }
+    else if ( $list === $current )
+    {
+        $response = array( 'ok' => true, 'order' => $current, 'message' => '' );
+    }
+    else
+    {
+        $overrides = new ezpTemplateOverrides( $siteAccess );
+        if ( $overrides->update( ezpTemplateOverrides::priorities( $list ) ) )
+        {
+            ezpTemplateOverrides::expireCaches();
+            $now = $overrideNames( eZTemplateDesignResource::overrideArray( $siteAccess ) );
+            if ( $now === $list )
+            {
+                $response = array( 'ok' => true, 'order' => $now,
+                                   'message' => ezpI18n::tr( 'design/admin/visual/templateview', 'Order saved; a copy of the previous settings is in %file.',
+                                                             null, array( '%file' => $overrides->backup !== '' ? $overrides->backup : '-' ) ) );
+            }
+            else
+            {
+                // Written, but another settings file decides the order (an
+                // extension's siteaccess settings loaded after this one).
+                $response = array( 'ok' => false, 'order' => $now,
+                                   'error' => ezpI18n::tr( 'design/admin/visual/templateview', 'The order was written to %file, but other settings still decide it. Check the Priority of these overrides in the extensions\' override.ini files.',
+                                                           null, array( '%file' => 'settings/siteaccess/' . $siteAccess . '/override.ini.append.php' ) ) );
+            }
+        }
+        else
+        {
+            $response['error'] = $overrides->error;
+        }
+    }
+    header( 'Content-Type: application/json; charset=utf-8' );
+    header( 'Cache-Control: no-store' );
+    echo json_encode( $response );
+    eZExecution::cleanExit();
+}
+
 if ( $module->isCurrentAction( 'NewOverride' ) )
 {
-    if ( $http->hasPostVariable( 'CurrentSiteAccess' ) )
+    if ( $http->hasPostVariable( 'CurrentSiteAccess' ) &&
+         in_array( $http->postVariable( 'CurrentSiteAccess' ), $relatedSiteAccessList, true ) )
     {
         $http->setSessionVariable( 'eZTemplateAdminCurrentSiteAccess', $http->postVariable( 'CurrentSiteAccess' ) );
     }
@@ -59,156 +130,123 @@ if ( $module->isCurrentAction( 'NewOverride' ) )
     return eZModule::HOOK_STATUS_CANCEL_RUN;
 }
 
+$saveError = '';
+$saveMessage = '';
+
+// The conditions edited on the page. Only the overrides the page showed, and
+// of those only the ones whose conditions changed, are written, to the
+// siteaccess's own file.
 if ( $module->isCurrentAction( 'UpdateOverride' ) )
 {
-    if ( $http->hasPostVariable( 'PriorityArray' ) )
+    $shown = array_intersect( $http->hasPostVariable( 'ShownOverrideList' ) ? (array)$http->postVariable( 'ShownOverrideList' ) : array(),
+                              $overrideNames( $overrideArray ) );
+    $matchArrayPost = $http->hasPostVariable( 'MatchArray' ) ? $http->postVariable( 'MatchArray' ) : array();
+    $newMatchArray = $http->hasPostVariable( 'NewMatch' ) ? $http->postVariable( 'NewMatch' ) : array();
+    $removeMatchArray = $http->hasPostVariable( 'RemoveMatchArray' ) ? $http->postVariable( 'RemoveMatchArray' ) : array();
+
+    $existing = array();
+    foreach ( isset( $overrideArray[$template]['custom_match'] ) ? $overrideArray[$template]['custom_match'] : array() as $customMatch )
+        $existing[$customMatch['override_name']] = is_array( $customMatch['conditions'] ) ? $customMatch['conditions'] : array();
+
+    $changedMatches = array();
+    foreach ( $shown as $overrideName )
     {
-        $priorityArray = $http->postVariable( 'PriorityArray' );
-        $matchArrayPost = $http->hasPostVariable( 'MatchArray' ) ? $http->postVariable( 'MatchArray' ) : array();
-        $newMatchArray = $http->hasPostVariable( 'NewMatch' ) ? $http->postVariable( 'NewMatch' ) : array();
-        $removeMatchArray = $http->hasPostVariable( 'RemoveMatchArray' ) ? $http->postVariable( 'RemoveMatchArray' ) : array();
+        $matchArray = isset( $matchArrayPost[$overrideName] ) ? (array)$matchArrayPost[$overrideName] : array();
 
-        // Clear stale INI cache before loading override.ini so newly
-        // created or reordered overrides are not lost.
-        eZCache::clearByID( array( 'global_ini', 'template-override' ) );
-
-        // Load override.ini for the current siteaccess
-        $overrideINI = eZINI::instance( 'override.ini', 'settings', null, null, true );
-        $overrideINI->prependOverrideDir( "siteaccess/$siteAccess", false, 'siteaccess' );
-        $overrideINI->loadCache();
-
-        // Store the user-supplied priority values and match conditions in each
-        // override group. Priority controls the override order; Match controls
-        // which rule applies.
-        foreach ( array_keys( $overrideINI->groups() ) as $overrideName )
+        // Remove any condition keys that the user marked for removal.
+        if ( isset( $removeMatchArray[$overrideName] ) )
         {
-            $priority = isset( $priorityArray[$overrideName] ) ? $priorityArray[$overrideName] : 0;
-            $overrideINI->setVariable( $overrideName, 'Priority', $priority );
-
-            // Build the Match array from existing conditions edited in the form
-            // plus any new condition the user added.
-            $matchArray = isset( $matchArrayPost[$overrideName] ) ? $matchArrayPost[$overrideName] : array();
-
-            // Remove any condition keys that the user marked for removal.
-            if ( isset( $removeMatchArray[$overrideName] ) )
-            {
-                foreach ( array_keys( $removeMatchArray[$overrideName] ) as $removeMatchKey )
-                {
-                    unset( $matchArray[$removeMatchKey] );
-                }
-            }
-
-            if ( isset( $newMatchArray[$overrideName] ) )
-            {
-                $newKey = isset( $newMatchArray[$overrideName]['key'] ) ? trim( $newMatchArray[$overrideName]['key'] ) : '';
-                $newValue = isset( $newMatchArray[$overrideName]['value'] ) ? $newMatchArray[$overrideName]['value'] : '';
-                if ( $newKey != '' && trim( $newValue ) != '' )
-                {
-                    $matchArray[$newKey] = $newValue;
-                }
-            }
-
-            foreach ( array_keys( $matchArray ) as $matchKey )
-            {
-                if ( $matchArray[$matchKey] == -1 or trim( $matchArray[$matchKey] ) == "" )
-                    unset( $matchArray[$matchKey] );
-            }
-
-            if ( !empty( $matchArray ) )
-            {
-                $overrideINI->setVariable( $overrideName, 'Match', $matchArray );
-            }
+            foreach ( array_keys( (array)$removeMatchArray[$overrideName] ) as $removeMatchKey )
+                unset( $matchArray[$removeMatchKey] );
         }
 
-        $filePermission = $ini->variable( 'FileSettings', 'StorageFilePermissions' );
+        if ( isset( $newMatchArray[$overrideName] ) )
+        {
+            $newKey = isset( $newMatchArray[$overrideName]['key'] ) ? trim( $newMatchArray[$overrideName]['key'] ) : '';
+            $newValue = isset( $newMatchArray[$overrideName]['value'] ) ? $newMatchArray[$overrideName]['value'] : '';
+            if ( $newKey != '' && preg_match( '/^[a-z_]+$/', $newKey ) && trim( $newValue ) != '' )
+                $matchArray[$newKey] = $newValue;
+        }
 
-        $oldumask = umask( 0 );
-        $overrideINI->save( "siteaccess/$siteAccess/override.ini.append" );
-        chmod( "settings/siteaccess/$siteAccess/override.ini.append", octdec( $filePermission ) );
-        umask( $oldumask );
+        foreach ( array_keys( $matchArray ) as $matchKey )
+        {
+            if ( $matchArray[$matchKey] == -1 or trim( $matchArray[$matchKey] ) == "" )
+                unset( $matchArray[$matchKey] );
+        }
 
-        // Clear global INI cache and template override cache so priority
-        // and match changes are reflected in the override list.
-        eZCache::clearByID( array( 'global_ini', 'template-override' ) );
+        $before = $existing[$overrideName];
+        ksort( $before );
+        $after = $matchArray;
+        ksort( $after );
+        if ( array_map( 'strval', $before ) !== array_map( 'strval', $after ) )
+            $changedMatches[$overrideName] = $matchArray;
+    }
 
-        // Refresh the override array for the template view.
+    if ( $changedMatches )
+    {
+        $overrides = new ezpTemplateOverrides( $siteAccess );
+        if ( $overrides->update( array(), $changedMatches ) )
+        {
+            ezpTemplateOverrides::expireCaches();
+            $saveMessage = ezpI18n::tr( 'design/admin/visual/templateview', 'The conditions of %count overrides were saved.', null, array( '%count' => count( $changedMatches ) ) );
+        }
+        else
+        {
+            $saveError = $overrides->error;
+        }
         $overrideArray = eZTemplateDesignResource::overrideArray( $siteAccess );
+    }
+    else
+    {
+        $saveMessage = ezpI18n::tr( 'design/admin/visual/templateview', 'No condition was changed.' );
     }
 }
 
 $overrideINISaveFailed = false;
 $notRemoved = array();
+$notOwned = array();
 
+// Removing: the overrides defined in the siteaccess's own file, and their
+// template files when those are in the installation's design directory. An
+// override an extension defines is left to the extension, and so is its file.
 if ( $module->isCurrentAction( 'RemoveOverride' ) )
 {
     if ( $http->hasPostVariable( 'RemoveOverrideArray' ) )
     {
-        $removeOverrideArray = $http->postVariable( 'RemoveOverrideArray' );
-        // TODO: read from correct site.ini
-        $siteBase = $siteAccess;
+        $removeOverrideArray = array_intersect( (array)$http->postVariable( 'RemoveOverrideArray' ), $overrideNames( $overrideArray ) );
 
-        // Clear stale INI cache before loading so the group to be removed
-        // is guaranteed to be present in the override.ini object.
-        eZCache::clearByID( array( 'global_ini', 'template-override' ) );
-
-        // Load override.ini for the current siteaccess
-        $overrideINI = eZINI::instance( 'override.ini', 'settings', null, null, true );
-        $overrideINI->prependOverrideDir( "siteaccess/$siteAccess", false, 'siteaccess' );
-        $overrideINI->loadCache();
-
-        $siteINI = eZINI::instance( 'site.ini', 'settings', null, null, true );
-        $siteINI->prependOverrideDir( "siteaccess/$siteAccess", false, 'siteaccess' );
-        $siteINI->loadCache();
-        $siteBase = $siteINI->variable( 'DesignSettings', 'SiteDesign' );
-
-        // Remove settings and file
-        foreach ( $removeOverrideArray as $removeOverride )
+        $overrides = new ezpTemplateOverrides( $siteAccess );
+        $own = $overrides->ownGroups();
+        $files = array();
+        foreach ( isset( $overrideArray[$template]['custom_match'] ) ? $overrideArray[$template]['custom_match'] : array() as $customMatch )
         {
-            $group = $overrideINI->group( $removeOverride );
-
-            // Try to find the actual file path from the override array.
-            $fileName = false;
-            if ( isset( $overrideArray[$template]['custom_match'] ) )
+            if ( in_array( $customMatch['override_name'], $removeOverrideArray, true ) &&
+                 in_array( $customMatch['override_name'], $own, true ) &&
+                 !empty( $customMatch['match_file'] ) )
             {
-                foreach ( $overrideArray[$template]['custom_match'] as $customMatch )
-                {
-                    if ( isset( $customMatch['override_name'] ) &&
-                         $customMatch['override_name'] === $removeOverride &&
-                         !empty( $customMatch['match_file'] ) )
-                    {
-                        $fileName = $customMatch['match_file'];
-                        break;
-                    }
-                }
+                $files[] = $customMatch['match_file'];
             }
-
-            // Fall back to the legacy site-design path if we cannot resolve it.
-            if ( $fileName === false )
-            {
-                $fileName = "design/$siteBase/override/templates/" . $group['MatchFile'];
-            }
-
-            if ( $fileName !== false && file_exists( $fileName ) )
-            {
-                if ( !unlink( $fileName ) )
-                {
-                    $notRemoved[] = array( 'filename' => $fileName );
-                }
-            }
-
-            $overrideINI->removeGroup( $removeOverride );
         }
-        if ( $overrideINI->save( "siteaccess/$siteAccess/override.ini.append" ) == false )
+
+        if ( $overrides->remove( $removeOverrideArray, $notOwned ) )
+        {
+            foreach ( $files as $fileName )
+            {
+                $real = realpath( $fileName );
+                $designRoot = realpath( 'design' );
+                if ( $real !== false && $designRoot !== false && strpos( $real, $designRoot . '/' ) === 0 )
+                {
+                    if ( !unlink( $real ) )
+                        $notRemoved[] = array( 'filename' => $fileName );
+                }
+            }
+            ezpTemplateOverrides::expireCaches();
+        }
+        else
         {
             $overrideINISaveFailed = true;
+            $saveError = $overrides->error;
         }
-
-        // Expire content view cache
-        eZContentCacheManager::clearAllContentCache();
-
-        // Clear global INI cache and template override cache so the removed
-        // override.ini group is no longer shown in the list.
-        eZCache::clearByID( array( 'global_ini', 'template-override' ) );
 
         // Refresh the override array for the template view.
         $overrideArray = eZTemplateDesignResource::overrideArray( $siteAccess );
@@ -232,10 +270,18 @@ if ( !isset( $templateSettings['base_dir'] ) )
 
 $newOverrideAllowed = ( $templateSettings['base_dir'] !== '' );
 
+// Which overrides the siteaccess's own file defines (they can be removed here)
+// and which come from elsewhere (an extension), for the page to say so.
+$ownOverrides = ( new ezpTemplateOverrides( $siteAccess ) )->ownGroups();
+
 $tpl->setVariable( 'template_settings', $templateSettings );
 $tpl->setVariable( 'current_siteaccess', $siteAccess );
 $tpl->setVariable( 'not_removed', $notRemoved );
+$tpl->setVariable( 'not_owned', $notOwned );
 $tpl->setVariable( 'ini_not_saved', $overrideINISaveFailed );
+$tpl->setVariable( 'save_error', $saveError );
+$tpl->setVariable( 'save_message', $saveMessage );
+$tpl->setVariable( 'own_overrides', $ownOverrides );
 $tpl->setVariable( 'new_override_allowed', $newOverrideAllowed );
 
 $siteINI = eZINI::instance( 'site.ini' );
