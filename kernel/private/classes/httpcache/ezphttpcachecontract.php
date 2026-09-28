@@ -275,6 +275,9 @@ class ezpHttpCacheContract
                     $type = $m['uriType'] ?? '';
                     if ( $type === 'map' )
                     {
+                        // Loose == and in_array() on purpose: eZSiteAccess::match()
+                        // compares these the same way, and this has to arrive at
+                        // the siteaccess the kernel does, not a stricter one.
                         foreach ( (array)( $m['uriMap'] ?? array() ) as $item )
                         {
                             if ( isset( $item[0], $item[1] ) && $item[0] == $elements[0] && in_array( $item[1], $list ) )
@@ -787,9 +790,9 @@ class ezpHttpCacheContract
         $response = $this->lookup( $request );
         if ( $response !== null )
             $this->count( 'hits' );
-        else if ( $this->lastReason !== 'host' && $this->lastReason !== 'method' )
+        else if ( $this->lastReason !== 'siteaccess' && $this->lastReason !== 'method' )
         {
-            // Other hosts (the admin host shares this code) and writes are
+            // Siteaccesses that are not cached (the admin shares this code) and writes are
             // not cache traffic. The reason without detail keeps counters few.
             $this->count( 'misses' );
             $this->count( 'r:' . preg_replace( '/\s*\(.*$/', '', $this->lastReason !== '' ? $this->lastReason : 'no entry' ) );
@@ -968,7 +971,7 @@ class ezpHttpCacheContract
         $host = strtolower( preg_replace( '/:\d+$/', '', $originHost ) );
         $siteaccess = $this->resolveSiteAccess( $originHost, $request['uri'] ?? '/' );
         if ( !$this->cachesSiteAccess( $siteaccess ) )
-            return $this->miss( 'host' );
+            return $this->miss( 'siteaccess' );
         if ( !$this->queryAllowed( $request['uri'] ?? '/' ) )
             return $this->miss( 'query string' );
         // Without the right cookie name a signed-in visitor looks anonymous,

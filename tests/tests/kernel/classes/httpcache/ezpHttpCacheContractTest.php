@@ -431,6 +431,6 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
         // Another siteaccess's URL, a siteaccess that is not cached.
         $this->assertNull( $c->serve( array( 'uri' => '/bold_ger/other' ) + $base + array( 'server' => $lb ) ) );
         $this->assertNull( $c->serve( array( 'uri' => '/eng/kontakt' ) + $base + array( 'server' => $lb ) ) );
-        $this->assertSame( 'host', $c->lastReason );
+        $this->assertSame( 'siteaccess', $c->lastReason );
     }
 }

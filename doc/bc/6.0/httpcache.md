@@ -107,8 +107,14 @@ the siteaccess, scheme and host themselves, from values the kernel writes into
   TLS and forwards to `exp:8080`, a page is kept for
   `https://www.example.org/...`, the address the visitor asked for, and found
   under it again. The early exit reads `$_SERVER`; Velocity's server process
-  needs an engine that hands over the request headers (qbix-webserver after
-  v0.0.4.34) and otherwise misses behind a load balancer.
+  needs an engine that hands over the request headers (Exponential Velocity
+  v0.0.4.35 or later) and otherwise misses behind a load balancer.
+- **`RemoveSiteAccessIfDefaultAccess` and `PathPrefix`** need nothing of their
+  own. A page is kept under the full request URI, as the visitor sent it, so
+  `/kontakt` (the default siteaccess, its name left out of links) and
+  `/bold_ger/kontakt` are two entries, each found again by the URI that made
+  it; `PathPrefix` changes which node a URI shows, not which siteaccess or
+  URI the page is kept under.
 
 The kernel stores a page only when these give the siteaccess, scheme and host
 it rendered the page with (`X-Exp-Cache: BYPASS (siteaccess not known before
