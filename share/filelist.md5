@@ -274,7 +274,7 @@ f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.t
 1d5cb3e2aeb6cbf400f0e90225a8a9d7  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 385603746948cfdd8e7540bdf7b5d2b0  design/admin/stylesheets/pagelayout.css
-2da45489156e5392ed4bc9b68dc61cb0  design/admin/stylesheets/setup-extensions.css
+d5a3589152af07aa3d6cb3f0b025bec6  design/admin/stylesheets/setup-extensions.css
 c28a2b8fef839e911313919afddcc3eb  design/admin/stylesheets/theme/modalwindow.css
 7f9cc6a933a0ae537e5b692363292fb1  design/admin/stylesheets/theme/rounded.css
 67022590c3690ce322538f084fc285a7  design/admin/stylesheets/theme/yui_container.css
@@ -515,7 +515,7 @@ f300103eefc3300265c1d611470a68a9  design/admin/templates/setup/cronjobs.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 29d3e871e6de1979d29105f427637288  design/admin/templates/setup/datatype_describe.tpl
 31629a628c03452476a8ae75f083e507  design/admin/templates/setup/designextension.tpl
-ba482a46ea6cadeebb4dc06e3317fb29  design/admin/templates/setup/extensions.tpl
+63e19d11b00e879b0bda4e0bf88983f5  design/admin/templates/setup/extensions.tpl
 505534fd34ec67dbefd86e2c7d289b70  design/admin/templates/setup/handlerextension.tpl
 b040f6983ae847ee50d402ddc0156fc1  design/admin/templates/setup/info.tpl
 5cd58dc1ec14b5402b43a9946e695551  design/admin/templates/setup/kerneloverride.tpl
