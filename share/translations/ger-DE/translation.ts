@@ -13841,7 +13841,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Socket path</source>
         <comment>Database socket path</comment>
-        <translation>Socket Pfad</translation>
+        <translation>Socket-Pfad</translation>
     </message>
     <message>
         <source>Not in use.</source>
@@ -13981,7 +13981,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Exponential was unable to extract information from the web server.</source>
-        <translation>Exponential war nicht ind er Lage Informationen vom Webserver zu extrahieren.</translation>
+        <translation>Exponential war nicht in der Lage, Informationen vom Webserver zu ermitteln.</translation>
     </message>
     <message>
         <source>Web server (hardware)</source>
@@ -13994,7 +13994,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>PHP autoload functions</source>
-        <translation>PHP Autoload Funktionen</translation>
+        <translation>PHP-Autoload-Funktionen</translation>
     </message>
     <message>
         <source>Velocity&apos;s own server</source>
