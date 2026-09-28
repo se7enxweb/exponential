@@ -5591,7 +5591,7 @@ b7521661108b60bfe086f1a48414befe  kernel/classes/ezrssexportitem.php
 723f0081e4efa3775f1592506cbb336f  kernel/classes/ezrssexportopmlitem.php
 276d999cfce042d5ebae48a9580a95f5  kernel/classes/ezrssimport.php
 5df9ccebf237cd440000988d01b49563  kernel/classes/ezruncronjobs.php
-9d5667c3251b8ead10fb00810415b54d  kernel/classes/ezscript.php
+2129e69ceded74bee25bd555dde49917  kernel/classes/ezscript.php
 64e2b659922318d5fe6e6068990811d2  kernel/classes/ezsearch.php
 0ebaac67e1d993cc4328759945bfd1cc  kernel/classes/ezsearchlog.php
 2444f73c4c461d115c916ac2d4501c5b  kernel/classes/ezsection.php
@@ -5827,6 +5827,7 @@ e6cf49eaeeac97c6f6d03d243be7a539  kernel/private/classes/clusterfilehandlers/ezc
 32a673e4a2e60a02f5a481ea1fb120f4  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventlistener.php
 238f3cbf29a8d9d0ee105112f31e292c  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventlogger.php
 109e9902cab86d284175a68d7fdcc36c  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventnotifier.php
+32fee6ae2a3e5cfc3e01397b58518e9f  kernel/private/classes/debug_settings_functions.php
 97e0bf717f2c2920ee7942679b96c561  kernel/private/classes/exceptions/cluster/mount_point_not_found.php
 5700753d39650349c6b1eadd28295c2f  kernel/private/classes/exceptions/cluster/mount_point_not_writeable.php
 e63996926516aea0ddedc42a7b544c2f  kernel/private/classes/exceptions/cluster/noconnection.php
@@ -5857,8 +5858,8 @@ de0874d0feda5a3bbd9f00408fe0f975  kernel/private/classes/ezpcontentpublishingque
 0d418b5527653b5e4cb4868a538ea042  kernel/private/classes/ezpkernel.php
 86bdb9f30bc9936abd83ceb015a05379  kernel/private/classes/ezpkernelredirect.php
 c209d9d72daf86a9eb0e0de775a49958  kernel/private/classes/ezpkernelresult.php
-80290fd64505c29e7f5afa6df01173e4  kernel/private/classes/ezpkerneltreemenu.php
-4b10e117bceb7520d3ca7114a30e655f  kernel/private/classes/ezpkernelweb.php
+f4c6d92b1fcd6d3b847f89ae9ac7b2a4  kernel/private/classes/ezpkerneltreemenu.php
+e3d4efedd60a56520d49f910ab003ad6  kernel/private/classes/ezpkernelweb.php
 6159d249e9b9a74e14a8bf8921c36a41  kernel/private/classes/ezplanguageswitcher.php
 2bfb085e092fb0c741d2ba0fec8996ec  kernel/private/classes/ezpmail.php
 a5c6868c21944f98d32c76a4c8c8b234  kernel/private/classes/ezpmobiledevicedetect.php
@@ -5872,11 +5873,11 @@ f9b629995df4f51771f6d7c085380bc8  kernel/private/classes/ezpmultivariatetest.php
 769dd1a0f42f658bd4e8ec5f9b84cb84  kernel/private/classes/ezptopologicalsortnode.php
 a088f1bce8604bdd3db6787302c86f4f  kernel/private/classes/ezscriptclusterpurge.php
 531cf5a209e71567bf16498b249a3ed2  kernel/private/classes/ezscripttrashpurge.php
-34e278b307900883a13da2fa668bf74b  kernel/private/classes/global_functions.php
+8d5e3bb4c1194f55c3cba4515df9016b  kernel/private/classes/global_functions.php
 c3badc34ed532ab7839f2b65e0b9050b  kernel/private/classes/httpcache/ezphttpcachecontract.php
 cd973e0818ad911cec15dfe3350a4dc5  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
 d175a54b60be75f275a204280b7158e0  kernel/private/classes/httpcache/ezphttpcachelistener.php
-79cdf2d31e547ae1a5ab065b13742dee  kernel/private/classes/treemenu_functions.php
+070a8395d618cad456a4771116b8b7a5  kernel/private/classes/treemenu_functions.php
 e85353ea3cf1dd7abf67994eb6f126a4  kernel/private/classes/urlaliasfilters/ezurlaliasfilterappendnodeid.php
 095e5f36a67489e6c43ffeedb7b927e8  kernel/private/classes/webdav/ezwebdavcontentbackend.php
 06349fadde16da13fa99a9aae2cceccc  kernel/private/classes/webdav/ezwebdavcontentbackendauth.php
@@ -5960,7 +5961,7 @@ afe7e24d782da7ea46e0dcfea6317e4e  kernel/private/rest/classes/exceptions/oauth_t
 fffcc4db65d6710fe1a3e4d91f92347e  kernel/private/rest/classes/exceptions/route_method_not_allowed.php
 9bc57b92ed0961dda49fd2b2f06207ac  kernel/private/rest/classes/exceptions/route_security_filter_not_found.php
 867ad4bda793a2273e10ecd6eaf56b96  kernel/private/rest/classes/exceptions/user_not_found.php
-8f326db021b4a369d5b0ed97661b90e7  kernel/private/rest/classes/ezpkernelrest.php
+0a739487e88211216a647fab91a7d479  kernel/private/rest/classes/ezpkernelrest.php
 a16ad5ecbd605ed6b7d27839c28063ae  kernel/private/rest/classes/http_response_codes.php
 c5d1db67172d581699d70c355ee1418e  kernel/private/rest/classes/interfaces/content_renderer.php
 203e36f96027ac984d9f35ea44277785  kernel/private/rest/classes/interfaces/prerouting_filter.php
@@ -5976,7 +5977,7 @@ b97b433c4b4370faa266bbae6608e50c  kernel/private/rest/classes/interfaces/rest_pr
 688fef620062050613aa5f1b6bf80b3f  kernel/private/rest/classes/models/rest_model.php
 e64aabb194c63629294489618473153d  kernel/private/rest/classes/mvc_configuration.php
 9c1ed7535fca7a302dfb7224eee7066d  kernel/private/rest/classes/oauth/oauth_filter.php
-3e1e074f0607ddda3b0e2956c517b8c9  kernel/private/rest/classes/oauth/utility.php
+ec412dd02aebaf84a946f7dcc30163c9  kernel/private/rest/classes/oauth/utility.php
 402ebf4235d65464314502334c347d9f  kernel/private/rest/classes/oauth_token_endpoint_error.php
 d4c45d750f373859dc73baebcd57546e  kernel/private/rest/classes/outh_error_type.php
 547bcfd3824700184a3f9383f66d87c9  kernel/private/rest/classes/po_maps/ezprestauthcode.php
@@ -5988,14 +5989,14 @@ df14ae5f385859ca037814b2d471a6b2  kernel/private/rest/classes/request/http_parse
 32bebb9bda9236d4390fa2e8425a28f0  kernel/private/rest/classes/response/result.php
 19e0af98e89a9e92cfed3fba82308169  kernel/private/rest/classes/rest_http_response_writer.php
 11137aa008a9577a93135242eb6b42e6  kernel/private/rest/classes/rest_provider.php
-16c4f3287c344c48fc843e2b1b774eb0  kernel/private/rest/classes/restkernel_functions.php
+504675901b71ac3a29f70e7c5bc9307f  kernel/private/rest/classes/restkernel_functions.php
 7fbcd04974add88762a78d68e0ae86da  kernel/private/rest/classes/router.php
 6baa6ae8caf5ca565236cc82057334e4  kernel/private/rest/classes/routes/rails.php
 e63c3f0830c577d5a2d3cc4829217cd2  kernel/private/rest/classes/routes/regexp.php
 1fce0913de9ce6139359e9520ecf0d15  kernel/private/rest/classes/routes/versioned_route.php
 38d4c8ebc2e67e437fcd6e5127d32a0b  kernel/private/rest/classes/status/http_response.php
 9ee4a9f5334934c676681568155c1ba1  kernel/private/rest/classes/status/oauth_error.php
-fe8b91716c51d8eaa80b1a21bb3bf966  kernel/private/rest/classes/status/oauth_required.php
+3997c369eec49d10fe744d9a99066bfa  kernel/private/rest/classes/status/oauth_required.php
 b391497afa3c4d88862a7e3dce19089d  kernel/private/rest/classes/status/response.php
 df080fc568ad46e8ddf1225ac92a35b5  kernel/private/rest/classes/sync/updates.php
 809cc533adfea0c1f63ffcc4b7b7cfb0  kernel/private/rest/classes/views/feed_decorator.php
