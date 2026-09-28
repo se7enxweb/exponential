@@ -884,7 +884,8 @@ class eZPackage
                             $filename = false, $subdirectory = false,
                             $parameters = false )
     {
-        $installEntry = $parameters;
+        // parseInstallTree() passes false for an item without parameters
+        $installEntry = is_array( $parameters ) ? $parameters : array();
         $installEntry['type'] = $type;
         $installEntry['name'] = $name;
         $installEntry['os'] = $os;
