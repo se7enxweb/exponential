@@ -429,10 +429,14 @@ class eZStepInstaller
             }
         }
 
-        // PostgreSQL requires us to specify database name.
-        // We use template1 here since it exists on all PostgreSQL installations.
-        if( $dbParameters['database'] == '' and $this->PersistenceList['database_info']['type'] == 'pgsql' )
-            $dbParameters['database'] = 'template1';
+        // PostgreSQL requires us to specify a database name. The one typed on
+        // the database page is used, as for MySQL: the login is then tested
+        // against the database the site will use (a user who may connect to
+        // nothing else, the owner of one database, gets through), and the
+        // digest() check below runs in it. Without a name, template1, which
+        // exists on all PostgreSQL installations, is used to list the others.
+        if( ( $dbParameters['database'] == '' or $dbParameters['database'] === false ) and $this->PersistenceList['database_info']['type'] == 'pgsql' )
+            $dbParameters['database'] = trim( (string)$databaseInfo['dbname'] ) !== '' ? trim( $databaseInfo['dbname'] ) : 'template1';
 
         // MySQL: if the user provided a database name, connect directly to it.
         // This avoids any attempt to select the system 'mysql' database and

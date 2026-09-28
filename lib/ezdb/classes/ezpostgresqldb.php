@@ -155,22 +155,16 @@ class eZPostgreSQLDB extends eZDBInterface
 
     function availableDatabases()
     {
-        $query = "SELECT datname FROM pg_database";
-        $result = $this->query( $query );
+        // The databases this user may connect to, by name. Templates, and
+        // databases that accept no connections, cannot hold a site. (The loop
+        // this replaces counted down to 1 and so always left out the first row.)
+        $query = "SELECT datname FROM pg_database" .
+                 " WHERE NOT datistemplate AND datallowconn" .
+                 "   AND has_database_privilege( current_user, datname, 'CONNECT' )" .
+                 " ORDER BY datname";
+        $rows = $this->arrayQuery( $query, array( 'column' => 'datname' ) );
 
-        $databases = array();
-        $counter = pg_num_rows( $result ) - 1;
-
-        while ( $counter > 0 )
-        {
-            $row = pg_fetch_result( $result, $counter, "datname" );
-            $databases[] = $row;
-            $counter--;
-        }
-
-        pg_free_result( $result );
-
-        return $databases;
+        return is_array( $rows ) ? array_values( $rows ) : array();
     }
 
     function databaseName()

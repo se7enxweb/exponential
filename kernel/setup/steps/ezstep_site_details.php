@@ -336,10 +336,16 @@ class eZStepSiteDetails extends eZStepInstaller
                                'database' => $dbName,
                                'charset' => $dbCharset );
 
-        // PostgreSQL requires us to specify database name.
-        // We use template1 here since it exists on all PostgreSQL installations.
+        // PostgreSQL requires us to specify a database name: the one typed on
+        // the database page, as for MySQL. Only without one is template1 (it
+        // exists on all PostgreSQL installations) opened to list the databases,
+        // and the list is then offered. Listing them otherwise put the server's
+        // first database in the field, not the one that was typed.
         if( $databaseInfo['info']['type'] == 'pgsql' )
-            $dbParameters['database'] = 'template1';
+        {
+            $explicitName = isset( $databaseInfo['dbname'] ) ? trim( (string)$databaseInfo['dbname'] ) : '';
+            $dbParameters['database'] = $explicitName !== '' ? $explicitName : 'template1';
+        }
 
         if( $dbParameters['database'] != '' && $databaseInfo['info']['type'] == 'sqlite3' )
             $dbParameters['database'] = $dbName;
@@ -370,7 +376,7 @@ class eZStepSiteDetails extends eZStepInstaller
         // For MySQL/MariaDB, use the named database directly and skip the
         // SHOW DATABASES call (which requires global privileges and may access
         // the 'mysql' system database). This makes shared-hosting installs work.
-        if ( in_array( $databaseInfo['info']['type'], array( 'mysql', 'mysqli' ) ) &&
+        if ( in_array( $databaseInfo['info']['type'], array( 'mysql', 'mysqli', 'pgsql' ) ) &&
              isset( $databaseInfo['dbname'] ) && trim( $databaseInfo['dbname'] ) !== '' )
         {
             $this->PersistenceList['database_info_available'] = array( trim( $databaseInfo['dbname'] ) );
@@ -449,8 +455,12 @@ class eZStepSiteDetails extends eZStepInstaller
             if ( is_array( $databaseList ) && count( $databaseList ) > 0 )
             {
                 $matchedDBName = false;
-                // First try database name match
-                foreach ( $databaseList as $databaseName )
+                // First the database typed on the database page, when it is offered
+                $typedName = isset( $this->PersistenceList['database_info']['dbname'] ) ? trim( (string)$this->PersistenceList['database_info']['dbname'] ) : '';
+                if ( $typedName !== '' && in_array( $typedName, $databaseList ) )
+                    $matchedDBName = $typedName;
+                // Then a database named like the site
+                foreach ( $matchedDBName ? array() : $databaseList as $databaseName )
                 {
                     $dbName = trim( strtolower( $databaseName ) );
                     $identifier = trim( strtolower( $siteType['identifier'] ) );

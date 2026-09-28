@@ -122,7 +122,8 @@ class eZStepDatabaseInit extends eZStepInstaller
         // not need to enumerate available databases (which requires the global SHOW
         // DATABASES privilege and may access the 'mysql' system database). We can
         // simply use the named database directly.
-        if ( in_array( $databaseInfo['type'], array( 'mysql', 'mysqli' ) ) &&
+        // PostgreSQL the same: the connection above went to the named database.
+        if ( in_array( $databaseInfo['type'], array( 'mysql', 'mysqli', 'pgsql' ) ) &&
              !empty( $databaseInfo['dbname'] ) )
         {
             $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );
