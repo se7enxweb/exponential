@@ -164,7 +164,7 @@
 <label class="tw-pick">
     <input type="checkbox" name="HasChildren" value="1"{if $wizard_settings.children} checked="checked"{/if} />
     <span><span class="tw-pick-label">{'Functions have a body'|i18n( 'design/admin/setup/rad/template' )}</span>
-    <span class="tw-meta">{'{myfunction}...{/myfunction}, with the body handed over unprocessed to draw none, one or many times. This is how section and foreach work.'|i18n( 'design/admin/setup/rad/template' )}</span></span>
+    <span class="tw-meta">{'%open...%close, with the body handed over unprocessed to draw none, one or many times. This is how section and foreach work.'|i18n( 'design/admin/setup/rad/template',, hash( '%open', '&#123;myfunction&#125;', '%close', '&#123;/myfunction&#125;' ) )}</span></span>
 </label>
 </div>
 
@@ -298,7 +298,7 @@ php bin/php/ezcache.php --clear-all</pre>
     <div class="tw-file-head">
         <span class="tw-file-toggle">+</span>
         <span class="tw-file-path">{$tw_file.path|wash}</span>
-        <span class="tw-meta">{$tw_file.lines|wash} {'lines'|i18n( 'design/admin/setup/rad/template' )}, {$tw_file.bytes|wash} {'bytes'|i18n( 'design/admin/setup/rad/template' )}</span>
+        <span class="tw-meta">{'%lines lines, %bytes bytes'|i18n( 'design/admin/setup/rad/template',, hash( '%lines', $tw_file.lines|wash, '%bytes', $tw_file.bytes|wash ) )}</span>
     </div>
     <pre>{$tw_file.contents|wash}</pre>
 </div>

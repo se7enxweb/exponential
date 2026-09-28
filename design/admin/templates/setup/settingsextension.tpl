@@ -336,7 +336,7 @@
     <div class="se-file-head">
         <span class="se-file-toggle">+</span>
         <span class="se-file-path">{$se_file.path|wash}</span>
-        <span class="se-meta">{$se_file.lines|wash} {'lines'|i18n( 'design/admin/setup/rad/settings' )}, {$se_file.bytes|wash} {'bytes'|i18n( 'design/admin/setup/rad/settings' )}</span>
+        <span class="se-meta">{'%lines lines, %bytes bytes'|i18n( 'design/admin/setup/rad/settings',, hash( '%lines', $se_file.lines|wash, '%bytes', $se_file.bytes|wash ) )}</span>
     </div>
     <pre>{$se_file.contents|wash}</pre>
 </div>

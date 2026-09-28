@@ -158,13 +158,13 @@
     <div class="wfe-field">
         <label for="wfeEvent">{'Event name'|i18n( 'design/admin/setup/rad/workflowevent' )}</label>
         <input type="text" id="wfeEvent" name="event" value="{$wizard_settings.event|wash}" placeholder="requireapproval" autocomplete="off" />
-        <span class="wfe-hint">{'Lower case letters and digits. Becomes %class.'|i18n( 'design/admin/setup/rad/workflowevent',, hash( '%class', $wizard_class ) )}</span>
+        <span class="wfe-hint" data-empty="{'Lower case letters and digits.'|i18n( 'design/admin/setup/rad/workflowevent' )|wash}" data-named="{'Lower case letters and digits. Becomes %class.'|i18n( 'design/admin/setup/rad/workflowevent' )|wash}">{'Lower case letters and digits. Becomes %class.'|i18n( 'design/admin/setup/rad/workflowevent',, hash( '%class', $wizard_class ) )}</span>
     </div>
 </div>
 
 <div class="wfe-field">
     <label for="wfeLabel">{'What editors see it called'|i18n( 'design/admin/setup/rad/workflowevent' )}</label>
-    <input type="text" id="wfeLabel" name="label" value="{$wizard_settings.label|wash}" placeholder="Require approval" />
+    <input type="text" id="wfeLabel" name="label" value="{$wizard_settings.label|wash}" placeholder="{'Require approval'|i18n( 'design/admin/setup/rad/workflowevent' )}" />
     <span class="wfe-hint">{'The name in the list when an event is added to a workflow.'|i18n( 'design/admin/setup/rad/workflowevent' )}</span>
 </div>
 
@@ -374,7 +374,7 @@
     <div class="wfe-file-head">
         <span class="wfe-file-toggle">+</span>
         <span class="wfe-file-path">{$wfe_file.path|wash}</span>
-        <span class="wfe-meta">{$wfe_file.lines|wash} {'lines'|i18n( 'design/admin/setup/rad/workflowevent' )}, {$wfe_file.bytes|wash} {'bytes'|i18n( 'design/admin/setup/rad/workflowevent' )}</span>
+        <span class="wfe-meta">{'%lines lines, %bytes bytes'|i18n( 'design/admin/setup/rad/workflowevent',, hash( '%lines', $wfe_file.lines|wash, '%bytes', $wfe_file.bytes|wash ) )}</span>
     </div>
     <pre>{$wfe_file.contents|wash}</pre>
 </div>
@@ -468,9 +468,9 @@
             var clean = event.value.toLowerCase().replace( /[^a-z0-9]+/g, '' ),
                 hint = event.parentNode.getElementsByTagName( 'span' )[0];
             if ( hint )
-                hint.innerHTML = clean === ''
-                    ? 'Lower case letters and digits.'
-                    : 'Lower case letters and digits. Becomes ' + clean + 'Type.';
+                hint.textContent = clean === ''
+                    ? hint.getAttribute( 'data-empty' )
+                    : hint.getAttribute( 'data-named' ).split( '%class' ).join( clean + 'Type' );
         };
     }
 } )();

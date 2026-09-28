@@ -173,7 +173,7 @@
     <td><code>{$ce_attribute.identifier|wash}</code></td>
     <td><code{if $ce_attribute.known|not} class="is-bad"{/if}>{$ce_attribute.type|wash}</code></td>
     <td>{$ce_attribute.name|wash}</td>
-    <td class="ce-meta">{if $ce_attribute.required}required {/if}{if $ce_attribute.searchable}searchable {/if}{if $ce_attribute.collector}collects {/if}{if $ce_attribute.translatable|not}not translatable{/if}</td>
+    <td class="ce-meta">{if $ce_attribute.required}{'required'|i18n( 'design/admin/setup/rad/content' )} {/if}{if $ce_attribute.searchable}{'searchable'|i18n( 'design/admin/setup/rad/content' )} {/if}{if $ce_attribute.collector}{'collects'|i18n( 'design/admin/setup/rad/content' )} {/if}{if $ce_attribute.translatable|not}{'not translatable'|i18n( 'design/admin/setup/rad/content' )}{/if}</td>
 </tr>
 {/foreach}
 </table>
@@ -300,7 +300,7 @@ php bin/php/ezcache.php --clear-all</pre>
     <div class="ce-file-head">
         <span class="ce-file-toggle">+</span>
         <span class="ce-file-path">{$ce_file.path|wash}</span>
-        <span class="ce-meta">{$ce_file.lines|wash} {'lines'|i18n( 'design/admin/setup/rad/content' )}, {$ce_file.bytes|wash} {'bytes'|i18n( 'design/admin/setup/rad/content' )}</span>
+        <span class="ce-meta">{'%lines lines, %bytes bytes'|i18n( 'design/admin/setup/rad/content',, hash( '%lines', $ce_file.lines|wash, '%bytes', $ce_file.bytes|wash ) )}</span>
     </div>
     <pre>{$ce_file.contents|wash}</pre>
 </div>

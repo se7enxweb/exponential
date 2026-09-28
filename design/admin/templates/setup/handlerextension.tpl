@@ -249,7 +249,7 @@
     <div class="hw-file-head">
         <span class="hw-file-toggle">+</span>
         <span class="hw-file-path">{$hw_file.path|wash}</span>
-        <span class="hw-meta">{$hw_file.lines|wash} {'lines'|i18n( 'design/admin/setup/rad/handler' )}, {$hw_file.bytes|wash} {'bytes'|i18n( 'design/admin/setup/rad/handler' )}</span>
+        <span class="hw-meta">{'%lines lines, %bytes bytes'|i18n( 'design/admin/setup/rad/handler',, hash( '%lines', $hw_file.lines|wash, '%bytes', $hw_file.bytes|wash ) )}</span>
     </div>
     <pre>{$hw_file.contents|wash}</pre>
 </div>

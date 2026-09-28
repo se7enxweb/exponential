@@ -262,7 +262,7 @@
     <div class="mw-file-head">
         <span class="mw-file-toggle">+</span>
         <span class="mw-file-path">{$mw_file.path|wash}</span>
-        <span class="mw-meta">{$mw_file.lines|wash} {'lines'|i18n( 'design/admin/setup/rad/module' )}, {$mw_file.bytes|wash} {'bytes'|i18n( 'design/admin/setup/rad/module' )}</span>
+        <span class="mw-meta">{'%lines lines, %bytes bytes'|i18n( 'design/admin/setup/rad/module',, hash( '%lines', $mw_file.lines|wash, '%bytes', $mw_file.bytes|wash ) )}</span>
     </div>
     <pre>{$mw_file.contents|wash}</pre>
 </div>

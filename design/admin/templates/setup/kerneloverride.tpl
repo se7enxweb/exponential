@@ -88,7 +88,7 @@
 {elseif $wizard_readiness.generated|not}
 <div class="ko-note is-bad"><strong>!</strong><span>{$wizard_readiness.message|wash}</span></div>
 {else}
-<div class="ko-note is-ok"><strong>&#10003;</strong><span>{$wizard_readiness.message|wash}</span></div>
+<div class="ko-note is-ok"><strong>&#10003;</strong><span>{$wizard_readiness.message|i18n( 'design/admin/setup/rad/override' )|wash}</span></div>
 {/if}
 
 {foreach $wizard_feedback as $ko_note}
@@ -117,7 +117,7 @@
 <span class="ko-meta">{'%count classes in this kernel. Type part of a name or a path; every word has to match.'|i18n( 'design/admin/setup/rad/override',, hash( '%count', $wizard_class_count ) )}</span>
 
 <div class="ko-field">
-    <input type="text" name="find" value="{$wizard_settings.find|wash}" placeholder="ezcontentobject, or classes/datatypes" autocomplete="off" />
+    <input type="text" name="find" value="{$wizard_settings.find|wash}" placeholder="{'ezcontentobject, or classes/datatypes'|i18n( 'design/admin/setup/rad/override' )}" autocomplete="off" />
 </div>
 
 {if ne( $wizard_settings.find, '' )}
@@ -129,7 +129,7 @@
     <label class="ko-match{if $ko_match.current} is-current{/if}">
         <input type="radio" name="class" value="{$ko_match.class|wash}"{if $ko_match.current} checked="checked"{/if} />
         <code>{$ko_match.class|wash}</code>
-        <span class="ko-meta">{$ko_match.path|wash} &middot; {$ko_match.lines} {'lines'|i18n( 'design/admin/setup/rad/override' )}</span>
+        <span class="ko-meta">{$ko_match.path|wash} &middot; {'%lines lines'|i18n( 'design/admin/setup/rad/override',, hash( '%lines', $ko_match.lines ) )}</span>
     </label>
     {/foreach}
     {/if}
@@ -138,7 +138,7 @@
 {if ne( $wizard_settings.class, '' )}
 <h3>{'Chosen'|i18n( 'design/admin/setup/rad/override' )}</h3>
 <p><code>{$wizard_settings.class|wash}</code><br />
-<span class="ko-meta">{$wizard_settings.source|wash}<br />md5 {$wizard_checksum|wash}</span></p>
+<span class="ko-meta">{$wizard_settings.source|wash}<br />{'md5 %wizard_checksum'|i18n( 'design/admin/setup/rad/override',, hash( '%wizard_checksum', $wizard_checksum|wash ) )}</span></p>
 <span class="ko-meta">{'That checksum goes into the copy and into the drift check, so the day the kernel changes this file, the check says so.'|i18n( 'design/admin/setup/rad/override' )}</span>
 {/if}
 </div>
@@ -148,7 +148,7 @@
 <span class="ko-meta">{'Whoever meets this at the next upgrade will want to know whether it is still needed, and by then nobody will remember. It goes in the file and in the README.'|i18n( 'design/admin/setup/rad/override' )}</span>
 
 <div class="ko-field">
-    <textarea name="reason" rows="3" placeholder="What has to change, and which lighter mechanism was tried first.">{$wizard_settings.reason|wash}</textarea>
+    <textarea name="reason" rows="3" placeholder="{'What has to change, and which lighter mechanism was tried first.'|i18n( 'design/admin/setup/rad/override' )}">{$wizard_settings.reason|wash}</textarea>
 </div>
 </div>
 
@@ -248,7 +248,7 @@ php bin/php/ezcache.php --clear-all</pre>
     <div class="ko-file-head">
         <span class="ko-file-toggle">+</span>
         <span class="ko-file-path">{$ko_file.path|wash}</span>
-        <span class="ko-meta">{$ko_file.lines|wash} {'lines'|i18n( 'design/admin/setup/rad/override' )}, {$ko_file.bytes|wash} {'bytes'|i18n( 'design/admin/setup/rad/override' )}</span>
+        <span class="ko-meta">{'%lines lines, %bytes bytes'|i18n( 'design/admin/setup/rad/override',, hash( '%lines', $ko_file.lines|wash, '%bytes', $ko_file.bytes|wash ) )}</span>
     </div>
     <pre>{$ko_file.contents|wash}</pre>
 </div>

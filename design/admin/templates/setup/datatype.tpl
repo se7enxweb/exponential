@@ -120,7 +120,7 @@
 {/if}
 
 <div class="dw-summary">
-    <span><b>{$wizard_method_count}</b> {'methods'|i18n( 'design/admin/setup/rad/datatype' )}</span>
+    <span>{'%methods methods'|i18n( 'design/admin/setup/rad/datatype',, hash( '%methods', concat( '<b>', $wizard_method_count, '</b>' ) ) )}</span>
     <span><b>{$wizard_file_count}</b> {'files'|i18n( 'design/admin/setup/rad/datatype' )}</span>
     <span class="dw-meta">{'%count datatypes are already installed on this site.'|i18n( 'design/admin/setup/rad/datatype',, hash( '%count', $wizard_existing|count ) )}</span>
 </div>
@@ -198,7 +198,7 @@
         <input type="checkbox" name="Capabilities[]" value="{$dw_cap.key|wash}"{if $dw_cap.chosen} checked="checked"{/if}{if $dw_cap.locked} disabled="disabled"{/if} />
         {if $dw_cap.locked}<input type="hidden" name="Capabilities[]" value="{$dw_cap.key|wash}" />{/if}
         <span>
-            <span class="dw-pick-label">{$dw_cap.label|i18n( 'design/admin/setup/rad/datatype' )|wash} <span class="dw-count">+{$dw_cap.count} {'methods'|i18n( 'design/admin/setup/rad/datatype' )}</span></span>
+            <span class="dw-pick-label">{$dw_cap.label|i18n( 'design/admin/setup/rad/datatype' )|wash} <span class="dw-count">{'+%count methods'|i18n( 'design/admin/setup/rad/datatype',, hash( '%count', $dw_cap.count ) )}</span></span>
             <span class="dw-meta">{$dw_cap.summary|i18n( 'design/admin/setup/rad/datatype' )|wash} {$dw_cap.what|i18n( 'design/admin/setup/rad/datatype' )|wash}</span>
         </span>
     </label>
@@ -295,7 +295,7 @@ php bin/php/ezcache.php --clear-all</pre>
     <div class="dw-file-head">
         <span class="dw-file-toggle">+</span>
         <span class="dw-file-path">{$dw_file.path|wash}</span>
-        <span class="dw-meta">{$dw_file.lines|wash} {'lines'|i18n( 'design/admin/setup/rad/datatype' )}, {$dw_file.bytes|wash} {'bytes'|i18n( 'design/admin/setup/rad/datatype' )}</span>
+        <span class="dw-meta">{'%lines lines, %bytes bytes'|i18n( 'design/admin/setup/rad/datatype',, hash( '%lines', $dw_file.lines|wash, '%bytes', $dw_file.bytes|wash ) )}</span>
     </div>
     <pre>{$dw_file.contents|wash}</pre>
 </div>

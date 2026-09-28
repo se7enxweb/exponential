@@ -452,7 +452,7 @@
     <div class="mew-file-head">
         <span class="mew-file-toggle">+</span>
         <span class="mew-file-path">{$mew_file.path|wash}</span>
-        <span class="mew-meta">{$mew_file.lines} {'lines'|i18n( 'design/admin/setup/rad/moduleextension' )}, {$mew_file.bytes} {'bytes'|i18n( 'design/admin/setup/rad/moduleextension' )}</span>
+        <span class="mew-meta">{'%lines lines, %bytes bytes'|i18n( 'design/admin/setup/rad/moduleextension',, hash( '%lines', $mew_file.lines, '%bytes', $mew_file.bytes ) )}</span>
     </div>
     <pre>{$mew_file.contents|wash}</pre>
 </div>

@@ -3,21 +3,20 @@
 <p>{'What is actually on this installation, read off disk on every request.'|i18n('design/standard/setup')}</p>
 
 <p>
-    {$survey_counts.total} {'extension points found'|i18n('design/standard/setup')},
-    {$survey_counts.ini} {'ini files read'|i18n('design/standard/setup')}.
+    {'%total extension points found, %ini ini files read.'|i18n( 'design/standard/setup',, hash( '%total', $survey_counts.total, '%ini', $survey_counts.ini ) )}
 </p>
 
 <ul>
 {foreach $survey_tabs as $sv_tab}
     <li>
-        {if $sv_tab.current}<strong>{$sv_tab.title|wash} ({$sv_tab.count})</strong>
-        {else}<a href={$sv_tab.url|ezurl}>{$sv_tab.title|wash} ({$sv_tab.count})</a>{/if}
+        {if $sv_tab.current}<strong>{$sv_tab.title|i18n( 'design/standard/setup' )|wash} ({$sv_tab.count})</strong>
+        {else}<a href={$sv_tab.url|ezurl}>{$sv_tab.title|i18n( 'design/standard/setup' )|wash} ({$sv_tab.count})</a>{/if}
     </li>
 {/foreach}
 </ul>
 
-<h2>{$survey_section.title|wash}</h2>
-<p>{$survey_section.what|wash}</p>
+<h2>{$survey_section.title|i18n( 'design/standard/setup' )|wash}</h2>
+<p>{$survey_section.what|i18n( 'design/standard/setup' )|wash}</p>
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr>

@@ -179,12 +179,12 @@
 <div class="dew-field">
     <label for="dewName">{'Extension name'|i18n( 'design/admin/setup/rad/designextension' )}</label>
     <input type="text" id="dewName" name="name" value="{$wizard_settings.name|wash}" placeholder="my_site_design" autocomplete="off" />
-    <span class="dew-hint">{'Becomes extension/<name> and design/<name>.'|i18n( 'design/admin/setup/rad/designextension' )|wash}</span>
+    <span class="dew-hint" data-named="{'Becomes extension/%name and design/%name.'|i18n( 'design/admin/setup/rad/designextension' )|wash}">{'Becomes extension/<name> and design/<name>.'|i18n( 'design/admin/setup/rad/designextension' )|wash}</span>
 </div>
 
 <div class="dew-field">
     <label for="dewTitle">{'Title'|i18n( 'design/admin/setup/rad/designextension' )}</label>
-    <input type="text" id="dewTitle" name="title" value="{$wizard_settings.title|wash}" placeholder="My Site Design" />
+    <input type="text" id="dewTitle" name="title" value="{$wizard_settings.title|wash}" placeholder="{'My Site Design'|i18n( 'design/admin/setup/rad/designextension' )}" />
     <span class="dew-hint">{'What the admin interface calls it. Left empty, it is made from the name.'|i18n( 'design/admin/setup/rad/designextension' )}</span>
 </div>
 
@@ -281,7 +281,7 @@
 {foreach $wizard_files as $dew_file}
     <li style="padding-left: {mul( $dew_file.depth, 1.1 )}rem;">
         <a href="#dew-{$dew_file.path|wash|simplify_tag_name}">{$dew_file.basename|wash}</a>
-        <span class="dew-size">{$dew_file.lines} {'lines'|i18n( 'design/admin/setup/rad/designextension' )}</span>
+        <span class="dew-size">{'%lines lines'|i18n( 'design/admin/setup/rad/designextension',, hash( '%lines', $dew_file.lines ) )}</span>
         {if $dew_file.depth|gt( 0 )}<span class="dew-dir">&mdash; {$dew_file.path|wash}</span>{/if}
     </li>
 {/foreach}
@@ -316,7 +316,7 @@
     <div class="dew-file-head">
         <span class="dew-file-toggle">+</span>
         <span class="dew-file-path">{$dew_file.path|wash}</span>
-        <span class="dew-meta">{$dew_file.lines} {'lines'|i18n( 'design/admin/setup/rad/designextension' )}, {$dew_file.bytes} {'bytes'|i18n( 'design/admin/setup/rad/designextension' )}</span>
+        <span class="dew-meta">{'%lines lines, %bytes bytes'|i18n( 'design/admin/setup/rad/designextension',, hash( '%lines', $dew_file.lines, '%bytes', $dew_file.bytes ) )}</span>
     </div>
     <pre>{$dew_file.contents|wash}</pre>
 </div>
@@ -425,10 +425,13 @@
         name.onkeyup = function () {
             var clean = name.value.toLowerCase().replace( /[^a-z0-9_]+/g, '_' ).replace( /^_+|_+$/g, '' ),
                 hint = name.parentNode.getElementsByTagName( 'span' )[0];
-            if ( hint )
-                hint.innerHTML = clean === ''
-                    ? 'Becomes extension/&lt;name&gt; and design/&lt;name&gt;.'
-                    : 'Becomes extension/' + clean + ' and design/' + clean + '.';
+            if ( hint ) {
+                if ( !hint.getAttribute( 'data-empty' ) )
+                    hint.setAttribute( 'data-empty', hint.textContent );
+                hint.textContent = clean === ''
+                    ? hint.getAttribute( 'data-empty' )
+                    : hint.getAttribute( 'data-named' ).split( '%name' ).join( clean );
+            }
         };
     }
 } )();
