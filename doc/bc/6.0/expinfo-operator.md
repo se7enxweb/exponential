@@ -37,7 +37,7 @@ This release adds a new read-only utility class and matching template operator f
 
 | Section      | Contents                                                       |
 |--------------|----------------------------------------------------------------|
-| `version`    | eZ Publish SDK version from `lib/version.php`                  |
+| `version`    | ExponentialSDK version from `lib/version.php`                  |
 | `php`        | PHP version, SAPI, loaded extensions, INI limits               |
 | `memory`     | Current and peak memory usage                                  |
 | `server`     | Hostname, kernel/var/cache/www paths, server software          |
