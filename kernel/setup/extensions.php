@@ -92,6 +92,53 @@ if ( $downloadName && $downloadFormat &&
     }
 }
 
+// Reordering the active extensions: posted by the loading order list on the
+// page each time an extension is dropped in a new place, and answered in JSON.
+// Only the order of ActiveExtensions changes; a list that does not hold exactly
+// the extensions active now (the page was loaded before they changed) is
+// refused, so a reorder never switches one on or off.
+if ( $http->hasPostVariable( 'ReorderExtensions' ) )
+{
+    $order = $http->hasPostVariable( 'ExtensionOrder' ) ? (array)$http->postVariable( 'ExtensionOrder' ) : array();
+    $current = ezpActiveExtensions::current();
+    $list = ezpActiveExtensions::reorder( $current, $order );
+    $response = array( 'ok' => false );
+    if ( $list === false )
+    {
+        $response['error'] = ezpI18n::tr( 'design/admin/setup/extensions', 'The active extensions changed since this page was loaded. Reload the page and try again.' );
+        $response['order'] = $current;
+    }
+    else if ( $list === $current )
+    {
+        $response = array( 'ok' => true, 'order' => $current, 'message' => '' );
+    }
+    else
+    {
+        $activeExtensions = new ezpActiveExtensions();
+        if ( $activeExtensions->write( $list ) )
+        {
+            // The order decides which extension's settings, templates and
+            // design files win, so these caches are built on it.
+            eZCache::clearByTag( 'ini' );
+            eZCache::clearByID( array( 'template-override', 'design_base', 'active_extensions' ) );
+            $response = array(
+                'ok' => true,
+                'order' => ezpActiveExtensions::current(),
+                'message' => ezpI18n::tr( 'design/admin/setup/extensions', 'Loading order saved; a copy of the previous settings is in %file.',
+                                          null, array( '%file' => $activeExtensions->backup ) ) );
+        }
+        else
+        {
+            $response['error'] = $activeExtensions->error;
+            $response['order'] = ezpActiveExtensions::current();
+        }
+    }
+    header( 'Content-Type: application/json; charset=utf-8' );
+    header( 'Cache-Control: no-store' );
+    echo json_encode( $response );
+    eZExecution::cleanExit();
+}
+
 $tpl = eZTemplate::factory();
 
 // Sorting. The column travels on the address as a view parameter rather than
@@ -99,7 +146,7 @@ $tpl = eZTemplate::factory();
 // to the page address, and a query string on the end of that address would be
 // left behind - paging would silently reset the order. The old SortBy and
 // SortOrder are still read, so a bookmarked link keeps working.
-$extensionSortColumns = array( 'name', 'info_name', 'license', 'version', 'mtime' );
+$extensionSortColumns = array( 'order', 'name', 'info_name', 'license', 'version', 'mtime' );
 
 $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
 
@@ -115,11 +162,24 @@ $sortOrder = $sortOrder === 'desc' ? 'desc' : 'asc';
 // Use expInfo to collect and normalise all extension metadata
 $extensionInfo = expInfo::availableExtensions();
 
-uasort( $extensionInfo, function( $a, $b ) use ( $sortBy ) {
+// The loading order: the position in ActiveExtensions, as the file on disk has
+// it. Extensions active only for a siteaccess come after them, the inactive
+// ones last.
+$extensionPositions = ezpActiveExtensions::positions( ezpActiveExtensions::current() );
+
+uasort( $extensionInfo, function( $a, $b ) use ( $sortBy, $extensionPositions ) {
     $nameA = (string) $a['extension_name'];
     $nameB = (string) $b['extension_name'];
 
-    if ( $sortBy === 'mtime' )
+    if ( $sortBy === 'order' )
+    {
+        $aVal = isset( $extensionPositions[$nameA] ) ? $extensionPositions[$nameA] : PHP_INT_MAX;
+        $bVal = isset( $extensionPositions[$nameB] ) ? $extensionPositions[$nameB] : PHP_INT_MAX;
+        if ( $aVal !== $bVal )
+            return $aVal < $bVal ? -1 : 1;
+        return strnatcasecmp( $nameA, $nameB );
+    }
+    else if ( $sortBy === 'mtime' )
     {
         $aVal = (int) $a['mtime'];
         $bVal = (int) $b['mtime'];
@@ -274,6 +334,11 @@ $tpl->setVariable( "extension_sort", array( 'field'     => $sortBy,
                                             'direction' => $sortOrder,
                                             'opposite'  => $sortOrder === 'asc' ? 'desc' : 'asc' ) );
 $tpl->setVariable( "selected_extension_array", $selectedExtensions );
+$tpl->setVariable( "access_extension_array", array_values( array_diff( $selectedAccessExtensionArray, $selectedExtensionArray ) ) );
+// Read again: an Update above may have changed the list.
+$activeOrder = ezpActiveExtensions::current();
+$tpl->setVariable( "active_extension_order", $activeOrder );
+$tpl->setVariable( "extension_positions", ezpActiveExtensions::positions( $activeOrder ) );
 $tpl->setVariable( "extension_info", $extensionInfo );
 $tpl->setVariable( "sort_by", $sortBy );
 $tpl->setVariable( "sort_order", $sortOrder );

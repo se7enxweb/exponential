@@ -84,6 +84,41 @@ class ezpActiveExtensions
     }
 
     /**
+     * The new loading order, when $order holds exactly the extensions of
+     * $current, each once, and nothing else; false otherwise. A reorder only
+     * moves extensions: one sent from a page loaded before the list changed
+     * elsewhere (another tab, another administrator) is refused instead of
+     * switching anything on or off.
+     *
+     * @param array $current ActiveExtensions now
+     * @param array $order   the same extensions in the order wanted
+     * @return array|false
+     */
+    public static function reorder( array $current, array $order )
+    {
+        $current = array_values( array_unique( $current ) );
+        $order = array_values( array_map( 'strval', $order ) );
+        if ( count( $order ) !== count( array_unique( $order ) ) )
+            return false;
+        $a = $current;
+        $b = $order;
+        sort( $a );
+        sort( $b );
+        return $a === $b ? $order : false;
+    }
+
+    /**
+     * Position (1 = loaded first) of each extension in $list, by name.
+     */
+    public static function positions( array $list )
+    {
+        $positions = array();
+        foreach ( array_values( array_unique( $list ) ) as $index => $extension )
+            $positions[$extension] = $index + 1;
+        return $positions;
+    }
+
+    /**
      * Writes $list as ActiveExtensions. Returns true, or false with $error set
      * (the file is then as it was).
      */

@@ -1,0 +1,155 @@
+/* Setup > Extensions: the summary, the loading order list and the table.
+   Made for the admin3 design and readable in the admin design. */
+
+.setup-extensions .box-content { padding-bottom: 0.5em; }
+
+.extensions-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 0.2em 0 1em 0;
+    padding: 0;
+    list-style: none;
+}
+.extensions-summary li {
+    margin: 0;
+    padding: 0.35em 0.9em;
+    border-radius: 999px;
+    background: #eef2f6;
+    color: #3a4a5c;
+}
+.extensions-summary strong { font-size: 1.1em; margin-right: 0.2em; }
+.extensions-summary-active { background: #e3f1e6 !important; color: #1f5f2c !important; }
+.extensions-summary-access { background: #e6eefa !important; color: #1f4a7f !important; }
+
+/* The loading order card. */
+.extension-order-card {
+    margin: 0 0 1.2em 0;
+    border: 1px solid #d5dbe3;
+    border-radius: 6px;
+    background: #fbfcfd;
+}
+.extension-order-card > summary {
+    cursor: pointer;
+    padding: 0.7em 1em;
+    list-style-position: inside;
+}
+.extension-order-title { font-weight: bold; font-size: 1.05em; color: #1d2b3a; }
+.extension-order-hint { display: block; margin: 0.25em 0 0 1.2em; color: #6b7785; font-size: 0.9em; }
+
+.extension-order {
+    margin: 0;
+    padding: 0.2em 0.8em 0.6em 0.8em;
+    list-style: none;
+    columns: 2 22em;
+    column-gap: 1.2em;
+}
+.extension-order-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0 0 0.3em 0;
+    padding: 0.3em 0.4em 0.3em 0.3em;
+    border: 1px solid #dfe4ea;
+    border-radius: 4px;
+    background: #fff;
+    cursor: grab;
+    break-inside: avoid;
+    transition: background-color 0.15s, box-shadow 0.15s;
+    user-select: none;
+}
+.extension-order-item:hover { background: #f3f6f9; box-shadow: 0 1px 2px rgba(29, 43, 58, 0.08); }
+.extension-order-item.is-dragging { opacity: 0.45; border-style: dashed; }
+.extension-order-item:active { cursor: grabbing; }
+
+/* Two columns of dots, drawn rather than a character. */
+.extension-order-grip {
+    flex: none;
+    width: 8px;
+    height: 14px;
+    background-image: radial-gradient(circle, #9aa6b3 1.2px, transparent 1.3px);
+    background-size: 4px 4px;
+}
+.extension-order-position {
+    flex: none;
+    min-width: 1.9em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    background: #e3f1e6;
+    color: #1f5f2c;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-align: center;
+}
+.extension-order-name { font-family: monospace; font-size: 0.95em; color: #1d2b3a; }
+.extension-order-label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #6b7785;
+    font-size: 0.85em;
+    min-width: 0;
+}
+.extension-order-moves { margin-left: auto; flex: none; display: flex; gap: 0.15em; }
+.extension-order-moves button {
+    padding: 0 0.35em;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background: transparent;
+    color: #6b7785;
+    font-size: 0.95em;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.extension-order-moves button:hover,
+.extension-order-moves button:focus { border-color: #c5ced8; background: #eef2f6; color: #1d2b3a; }
+.extension-order-item:first-child .extension-order-up,
+.extension-order-item:last-child .extension-order-down { visibility: hidden; }
+
+.extension-order.is-saving .extension-order-item { cursor: progress; }
+
+.extension-order-status { margin: 0; padding: 0 1em 0.7em 1em; min-height: 1.2em; font-size: 0.9em; color: #6b7785; }
+.extension-order-status.is-ok { color: #1f5f2c; }
+.extension-order-status.is-error { color: #a4262c; font-weight: bold; }
+
+/* The table. */
+.extensions-filter { display: flex; align-items: center; gap: 0.6em; margin: 0 0 0.6em 0; }
+.extensions-filter label { font-weight: bold; }
+.extensions-filter input { max-width: 22em; }
+
+.extensions-list tr.is-inactive td { color: #6b7785; }
+.extensions-list tr.is-inactive a.extension-name-link { color: #56657a; }
+.extension-position-cell { text-align: center; }
+
+.extension-badge {
+    display: inline-block;
+    min-width: 1.9em;
+    padding: 0.05em 0.35em;
+    border-radius: 3px;
+    font-size: 0.88em;
+    font-weight: bold;
+    text-align: center;
+}
+.extension-badge-active { background: #e3f1e6; color: #1f5f2c; }
+.extension-badge-access { background: #e6eefa; color: #1f4a7f; }
+.extension-badge-inactive { color: #9aa6b3; font-weight: normal; }
+
+.extension-card {
+    margin: 0.3em 0;
+    padding: 0.8em 1em;
+    border-left: 3px solid #7aa7d6;
+    border-radius: 0 4px 4px 0;
+    background: #f7f9fb;
+}
+.extension-card h3 { margin: 0 0 0.4em 0; }
+.extension-card .extension-folder { color: #6b7785; font-weight: normal; }
+.extension-card dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.2em 1em; margin: 0.5em 0; }
+.extension-card dt { font-weight: bold; }
+.extension-card dd { margin: 0; }
+.extension-downloads { margin: 0.5em 0; }
+.extension-downloads a { margin-left: 0.6em; }
+
+@media (max-width: 700px) {
+    .extension-order { columns: 1; }
+    .extension-order-label { display: none; }
+}

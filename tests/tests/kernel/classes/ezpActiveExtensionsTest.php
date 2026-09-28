@@ -47,4 +47,26 @@ class ezpActiveExtensionsTest extends ezpTestCase
         foreach ( array( array( 'a', 'b' ), array( 'c', 'd' ), array( 'e', 'f' ) ) as $page )
             $this->assertSame( $active, ezpActiveExtensions::merge( $active, $page, $page, $this->available ), implode( ',', $page ) );
     }
+
+    /** A reorder is taken as it is when it holds exactly the active extensions. */
+    public function testReorderAcceptsAPermutation()
+    {
+        $this->assertSame( array( 'c', 'a', 'b' ), ezpActiveExtensions::reorder( array( 'a', 'b', 'c' ), array( 'c', 'a', 'b' ) ) );
+    }
+
+    /** A reorder never switches an extension on or off, nor lists one twice. */
+    public function testReorderRefusesAnythingButAPermutation()
+    {
+        $current = array( 'a', 'b', 'c' );
+        $this->assertFalse( ezpActiveExtensions::reorder( $current, array( 'a', 'b' ) ), 'one missing' );
+        $this->assertFalse( ezpActiveExtensions::reorder( $current, array( 'a', 'b', 'c', 'd' ) ), 'one added' );
+        $this->assertFalse( ezpActiveExtensions::reorder( $current, array( 'a', 'b', 'd' ) ), 'one swapped' );
+        $this->assertFalse( ezpActiveExtensions::reorder( $current, array( 'a', 'a', 'b', 'c' ) ), 'one twice' );
+    }
+
+    /** Positions count from 1, the extension loaded first. */
+    public function testPositions()
+    {
+        $this->assertSame( array( 'c' => 1, 'a' => 2 ), ezpActiveExtensions::positions( array( 'c', 'a' ) ) );
+    }
 }
