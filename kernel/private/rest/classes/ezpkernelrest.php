@@ -91,6 +91,8 @@ class ezpKernelRest implements ezpKernelHandler
         {
             require_once __DIR__ . '/lazy.php';
         }
+        // Every time: such a worker also resets ezcBaseInit's callback map.
+        ezpRestDbConfig::registerCallbacks();
 
         $this->setUseExceptions( $this->settings['use-exceptions'] );
 

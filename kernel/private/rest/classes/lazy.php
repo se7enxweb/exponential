@@ -51,8 +51,35 @@ class ezpRestDbConfig implements ezcBaseConfigurationInitializer
 
         return $dsn;
     }
+
+    /**
+     * Registers the lazy initialisation callbacks of the REST database and
+     * persistent session, unless they are registered already.
+     *
+     * Called every time the REST kernel is built, not only when this file is
+     * loaded: a persistent application server worker loads the file once, but
+     * puts every class's static properties, ezcBaseInit's callback map among
+     * them, back to their initial values between two requests. Without the
+     * callbacks ezcDbInstance::get() has no handler, so the second request in
+     * a worker that had to look up an OAuth token died with a server error.
+     */
+    public static function registerCallbacks()
+    {
+        $callbacks = array( 'ezcInitDatabaseInstance' => 'ezpRestDbConfig',
+                            'ezcInitPersistentSessionInstance' => 'ezpRestPoConfig' );
+        foreach ( $callbacks as $identifier => $className )
+        {
+            try
+            {
+                ezcBaseInit::setCallback( $identifier, $className );
+            }
+            catch ( ezcBaseInitCallbackConfiguredException $e )
+            {
+                // Registered already, by this file or by the application.
+            }
+        }
+    }
 }
-ezcBaseInit::setCallback( 'ezcInitDatabaseInstance', 'ezpRestDbConfig' );
 
 class ezpRestPoConfig implements ezcBaseConfigurationInitializer
 {
@@ -66,6 +93,6 @@ class ezpRestPoConfig implements ezcBaseConfigurationInitializer
         );
     }
 }
-ezcBaseInit::setCallback( 'ezcInitPersistentSessionInstance', 'ezpRestPoConfig' );
+ezpRestDbConfig::registerCallbacks();
 
 ?>

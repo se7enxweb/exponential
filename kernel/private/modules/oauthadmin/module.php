@@ -9,6 +9,8 @@
  */
 
 include_once 'kernel/private/rest/classes/lazy.php';
+// Again for each request of a persistent worker, which resets ezcBaseInit's callbacks.
+ezpRestDbConfig::registerCallbacks();
 
 $Module = array( 'name' => 'Rest client admin',
                  'variable_params' => true );
