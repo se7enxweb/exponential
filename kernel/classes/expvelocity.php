@@ -812,6 +812,26 @@ class expVelocity
     }
 
     /**
+     * Whether any cache the server runs wants APCu: the response cache
+     * (CacheSettings Enabled and APCu), the HTTP cache (httpcache.ini Enabled
+     * and APCu) or the SQL query cache (querycache.ini Mode=shared).
+     *
+     * @return bool
+     */
+    public function apcuWanted()
+    {
+        if ( $this->isEnabled( $this->cacheSetting( 'Enabled', null, 'enabled' ) )
+             && $this->isEnabled( $this->cacheSetting( 'APCu', null, 'enabled' ) ) )
+            return true;
+        // Exactly "enabled", as the HTTP cache itself reads these.
+        $http = eZINI::instance( 'httpcache.ini' );
+        if ( $http->variable( 'HttpCacheSettings', 'Enabled' ) === 'enabled'
+             && $http->variable( 'HttpCacheSettings', 'APCu' ) === 'enabled' )
+            return true;
+        return strtolower( (string)eZINI::instance( 'querycache.ini' )->variable( 'QueryCacheSettings', 'Mode' ) ) === 'shared';
+    }
+
+    /**
      * The cookies that mean a visitor is signed in, as site.ini names them.
      *
      * @return array
@@ -961,17 +981,22 @@ class expVelocity
             }
         }
 
-        // APCu, when the response cache is to use it.
+        // APCu, when a cache is to use it.
         //
         // The extension is off for command-line PHP unless apc.enable_cli
         // says otherwise, and the server is command-line PHP. Without this
         // CacheSettings/APCu=enabled did nothing: every entry went to disk,
         // however small. Asked for per process, like the opcode cache above,
         // and only when IniOptions does not already decide it.
-        $cacheOn = $this->cacheSetting( 'Enabled', null, 'enabled' );
-        $apcuOn = $this->cacheSetting( 'APCu', null, 'enabled' );
-        if ( ( $cacheOn === 'enabled' || $cacheOn === 'true' )
-             && ( $apcuOn === 'enabled' || $apcuOn === 'true' )
+        //
+        // Three caches use it, and each is reason enough on its own: the
+        // server's response cache, the HTTP cache the server asks before a
+        // worker (httpcache.ini APCu=enabled), and the SQL query cache in the
+        // workers (querycache.ini Mode=shared). Asked for the response cache
+        // alone, switching that off took APCu from the other two without a
+        // word: the HTTP cache read every page from its files and Mode=shared
+        // quietly worked as Mode=request.
+        if ( $this->apcuWanted()
              && !preg_grep( '/^\s*apc\.enable_cli\s*=/',
                             (array)$this->setting( 'PHPSettings', 'IniOptions', array() ) ) )
         {
