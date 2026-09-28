@@ -37,6 +37,22 @@ class ezpRestDbConfig implements ezcBaseConfigurationInitializer
                                        )
                                 );
 
+        // SQLite: the file the site's own driver opens (eZSQLite3DB::filePath()),
+        // as an absolute path, which ezcDbHandlerSqlite requires.
+        if ( $dbType === 'sqlite3' || $dbType === 'sqlite' )
+        {
+            $file = eZSQLite3DB::filePath( $dbName );
+            if ( $file === ':memory:' )
+            {
+                return array( 'phptype' => 'sqlite', 'port' => 'memory' );
+            }
+            if ( $file[0] !== '/' )
+            {
+                $file = getcwd() . '/' . $file;
+            }
+            return array( 'phptype' => 'sqlite', 'database' => $file );
+        }
+
         if ( !isset( $dbMapping[$dbType] ) )
         {
             // @TODO: Add a proper exception type here.
