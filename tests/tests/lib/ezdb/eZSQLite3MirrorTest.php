@@ -13,13 +13,18 @@ class eZSQLite3MirrorTest extends PHPUnit\Framework\TestCase
         if ( !class_exists( 'SQLite3' ) )
             self::markTestSkipped( 'SQLite3 extension is not loaded' );
 
-        $schemaFile = realpath( __DIR__ . '/../../../../kernel/sql/sqlite/workingdataandschema.sql' );
-        if ( $schemaFile === false )
-            self::markTestSkipped( 'SQLite test fixture SQL file not found' );
-
-        $sql = file_get_contents( $schemaFile );
-        if ( $sql === false )
-            self::markTestSkipped( 'Could not read SQLite test fixture SQL file' );
+        // The schema and the clean data a new SQLite installation starts from.
+        $sql = '';
+        foreach ( array( 'schema.sql', 'cleandata.sql' ) as $name )
+        {
+            $file = realpath( __DIR__ . '/../../../../kernel/sql/sqlite/' . $name );
+            if ( $file === false )
+                self::markTestSkipped( "SQLite test fixture kernel/sql/sqlite/$name not found" );
+            $part = file_get_contents( $file );
+            if ( $part === false )
+                self::markTestSkipped( "Could not read kernel/sql/sqlite/$name" );
+            $sql .= $part . "\n";
+        }
 
         $path = tempnam( sys_get_temp_dir(), 'ez-sqlite-mirror-' );
         if ( $path === false )

@@ -4896,7 +4896,7 @@ INSERT INTO ezcontentobject_attribute (
   1,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\" xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\" xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\"><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\">eZ Publish is a popular open source content management system and development framework. It allows the development of professional, customized and dynamic web solutions. It can be used to build anything from a personal homepage to a multinational corporate website with role based multiuser access, online shopping, discussion forums and other advanced functionality. In addition, because of its open nature, eZ Publish can easily be plugged into, communicate and coexist with existing IT-solutions.</paragraph><section><header>Documentation and guidance</header><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\">The <link target=\"_blank\" url_id=\"9\">eZ Publish documentation</link> covers common topics related to the setup and daily use of the eZ Publish content management system/framework. In addition, it also covers some advanced topics. People who are unfamiliar with eZ Publish should at least read the \"eZ Publish basics\" chapter.</paragraph><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\">If you\'re unable to find an answer/solution to a specific question/problem within the documentation pages, you should make use of the official <link target=\"_blank\" url_id=\"4\">eZ Publish forum</link>. People who need professional help should purchase <link target=\"_blank\" url_id=\"10\">support</link> or <link target=\"_blank\" url_id=\"11\">consulting</link> services. It is also possible to sign up for various <link target=\"_blank\" url_id=\"12\">training sessions</link>.</paragraph><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\">For more information about eZ Publish and other products/services from eZ Systems, please visit <link target=\"_blank\" url_id=\"8\">ez.no</link>.</paragraph></section><section><header>Tutorials</header><section><header><strong>New users</strong></header><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\"><ul><li><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\"><link target=\"_blank\" xhtml:id=\"internal-source-marker_0.15448186383582652\" url_id=\"13\">eZ Publish Administration Interface</link></paragraph></li><li><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\"><link target=\"_blank\" url_id=\"14\">eZ Publish Online Editor Video</link></paragraph></li><li><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\"><link target=\"_blank\" xhtml:id=\"internal-source-marker_0.15448186383582652\" url_id=\"15\">eZ Flow Video Tutorial</link></paragraph></li></ul></paragraph></section><section><header>Experienced users</header><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\"><ul><li><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\"><link target=\"_blank\" url_id=\"16\">How to develop eZ Publish Extensions</link></paragraph></li><li><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\"><link target=\"_blank\" xhtml:id=\"internal-source-marker_0.15448186383582652\" url_id=\"17\">How to create custom workflow</link></paragraph></li><li><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\"><link target=\"_blank\" url_id=\"18\">How to use REST API interface</link></paragraph></li><li><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\"><link target=\"_blank\" url_id=\"19\">Asynchronous publishing</link></paragraph></li><li><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\"><link target=\"_blank\" xhtml:id=\"internal-source-marker_0.15448186383582652\" url_id=\"20\">Upgrading to 4.5</link></paragraph></li></ul><line>Find more&amp;nbsp;<link target=\"_blank\" url_id=\"21\">tutorials</link>&amp;nbsp;and&amp;nbsp;<link target=\"_blank\" url_id=\"22\">videos</link> online.</line></paragraph></section></section></section>\n',
+  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\" xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\" xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\"><paragraph>Exponential is an open source content management platform and development framework, built on a solid eZ Publish legacy foundation and extended with modern layout, site and content APIs. The Exponential Foundation and Community continue to develop, document and support the platform, making it possible to build everything from a personal site to a multilingual enterprise web application with role based access, rich media, commerce and advanced editorial workflows.</paragraph><section><header>Resources</header><paragraph><ul><li><paragraph>For product and platform information, visit <link target=\"_blank\" href=\"https://exponential.earth\">exponential.earth</link>.</paragraph></li><li><paragraph>Browse community articles, forums, blogs and news on <link target=\"_blank\" href=\"https://share.exponential.earth\">share.exponential.earth</link>.</paragraph></li><li><paragraph>Read the eZ Publish documentation encyclopedia on <link target=\"_blank\" href=\"https://ezpedia.exponential.earth\">eZpedia</link>.</paragraph></li><li><paragraph>Find Exponential software extensions and projects on <link target=\"_blank\" href=\"https://projects.exponential.earth\">projects.exponential.earth</link>.</paragraph></li><li><paragraph>Download software packages and releases from <link target=\"_blank\" href=\"https://software.se7enx.com\">software.se7enx.com</link>.</paragraph></li><li><paragraph>View or report issues on the <link target=\"_blank\" href=\"https://issues.exponential.earth\">Exponential issue tracker</link>.</paragraph></li></ul></paragraph></section></section>',
   'ezxmltext',
   104,
   'eng-GB',
@@ -6114,7 +6114,7 @@ INSERT INTO ezcontentobject_attribute (
   54,
   0,
   0,
-  'nospam@ez.no',
+  'nospam@exponential.earth',
   'ezinisetting',
   175,
   'eng-GB',
@@ -6143,7 +6143,7 @@ INSERT INTO ezcontentobject_attribute (
   54,
   0,
   0,
-  'ez.no',
+  'exponential.earth',
   'ezinisetting',
   176,
   'eng-GB',
@@ -36499,7 +36499,7 @@ INSERT INTO ezsearch_word (
 ) VALUES (
   927,
   3,
-  'ez.no'
+  'exponential.earth'
 );
 INSERT INTO ezsearch_word (
   id,
@@ -38343,7 +38343,7 @@ INSERT INTO ezuser (
   password_hash_type
 ) VALUES (
   10,
-  'nospam@ez.no',
+  'nospam@exponential.earth',
   'anonymous',
   '$2y$10$ucfC921pDYoruiPZdod7hO2oiGbsHQ/5OmRqRui7v5Txc.Oaq15rW',
   7
@@ -38356,7 +38356,7 @@ INSERT INTO ezuser (
   password_hash_type
 ) VALUES (
   14,
-  'nospam@ez.no',
+  'nospam@exponential.earth',
   'admin',
   '$2y$10$FDn9NPwzhq85cLLxfD5Wu.L3SL3Z/LNCvhkltJUV0wcJj7ciJg2oy',
   7

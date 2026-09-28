@@ -3,7 +3,6 @@ CREATE TABLE `ezapprove_items` (
 ,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
 ,  `workflow_process_id` integer NOT NULL DEFAULT '0'
 );
-CREATE TABLE sqlite_sequence(name,seq);
 CREATE TABLE `ezbasket` (
   `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
 ,  `order_id` integer NOT NULL DEFAULT '0'
