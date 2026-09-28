@@ -198,6 +198,9 @@ if ( !empty( $isFormTokenRefusal )
 else
 {
     $Result['content'] = $tpl->fetch( "design:error/$errorType/$errorNumber.tpl" );
+    // A template added since the template caches were built renders nothing until they are cleared
+    if ( !empty( $isFormTokenRefusal ) && trim( (string)$Result['content'] ) === '' )
+        $Result['content'] = ezpFormTokenRefusal::fallbackContent( $extraErrorParameters );
 }
 $Result['path'] = array( array( 'text' => ezpI18n::tr( 'kernel/error', 'Error' ),
                                 'url' => false ),
