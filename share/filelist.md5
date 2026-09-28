@@ -281,7 +281,7 @@ c28a2b8fef839e911313919afddcc3eb  design/admin/stylesheets/theme/modalwindow.css
 67022590c3690ce322538f084fc285a7  design/admin/stylesheets/theme/yui_container.css
 18d0fb9e3aa9c0e68999c7f14a3166a7  design/admin/stylesheets/theme/yui_datatable.css
 53e814894ee1c2ee96d711dd8e919aed  design/admin/stylesheets/theme/yui_menu.css
-c599e95b9b5aa6c094ec33ddc81df9d0  design/admin/stylesheets/visual-templateview.css
+4c5d17d9e5889a0f8907ad075f34c3d9  design/admin/stylesheets/visual-templateview.css
 51b12c9efcb649950dae2f832c6782e1  design/admin/templates/ajaxuploader/browse.tpl
 2a971a019be83d646f3bd5f5b5f82105  design/admin/templates/ajaxuploader/location.tpl
 f5c677b2579053f3f5a23f2a3dd3b87d  design/admin/templates/ajaxuploader/preview.tpl
@@ -595,7 +595,8 @@ a5ab9adec5c8a4f1b369987bd8ed87e4  design/admin/templates/visual/menuconfig.tpl
 7cf5905f6a1a2059ade8271ee15e747a  design/admin/templates/visual/templateedit.tpl
 c665b114c92eb6b279cddab770a1cd52  design/admin/templates/visual/templateedit_error.tpl
 a50dbbb7f5bd2d774da5916fe5984a6d  design/admin/templates/visual/templatelist.tpl
-39dad8eda63ecc0a608ca0e4fbc7a866  design/admin/templates/visual/templateview.tpl
+42653a28301635a4a1fb8d02a51485d0  design/admin/templates/visual/templateview.tpl
+33e4c23d831c66c1744cec343c7052a2  design/admin/templates/visual/templateview_buttons.tpl
 99bffc8a164702c52b762b1dd300a15c  design/admin/templates/visual/toolbar.tpl
 e0bcde19ca3e377bb55d86014ee0c876  design/admin/templates/visual/toolbarlist.tpl
 543b75192f6ad0e664301e0cd40f93a2  design/admin/templates/window_controls.tpl
@@ -6227,7 +6228,7 @@ b725d7f6584ee9c7321511d5478729a0  kernel/visual/module.php
 11bb2d11643366e789a2d1bd98e6e399  kernel/visual/templatecreate.php
 ed389f5606292ceb374a0c332654afc8  kernel/visual/templateedit.php
 fdd076c5686e54ba0e5a00ba34eb0c91  kernel/visual/templatelist.php
-8a343fd03f8ac8cb05e4cfa40e552d4d  kernel/visual/templateview.php
+a33d7642af3f04b5a917785fe57dd365  kernel/visual/templateview.php
 e6ba8c32c2189892ecd79506a6f06470  kernel/visual/toolbar.php
 b63f3d8bebb4cc2cb412db3f4ecbc7bc  kernel/visual/toolbarlist.php
 e561a1057a9a679c77818c20f1798287  kernel/workflow/edit.php
