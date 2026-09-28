@@ -315,6 +315,62 @@ class expVelocityEnginesTest extends ezpTestCase
     }
 
     /**
+     * [ServerSettings] ResponseHeaders[] and ResponseHeadersOnScripts, and
+     * [HTTPSSettings] HSTSMaxAge: by default the four headers the front ends
+     * send and HSTS max-age=300 reach Q.webserver of the site configuration.
+     */
+    public function testTheDefaultResponseHeadersAndHstsReachTheServer()
+    {
+        $webserver = $this->qbixWebserverConfig( expVelocity::create( 'velocity.ini', 'qbix' ) );
+        $this->assertSame( array(
+            'X-Content-Type-Options' => 'nosniff',
+            'X-Frame-Options' => 'SAMEORIGIN',
+            'Referrer-Policy' => 'strict-origin-when-cross-origin',
+            'Permissions-Policy' => 'camera=(), microphone=(), payment=(), usb=()',
+        ), $webserver['headers'] ?? null );
+        $this->assertTrue( $webserver['headersOnScripts'] ?? null );
+        $this->assertSame( array( 'maxAge' => 300 ), $webserver['hsts'] ?? null );
+    }
+
+    public function testResponseHeadersLeaveOutWhatCannotBeAHeader()
+    {
+        ezpINIHelper::setINISetting( 'velocity.ini', 'ServerSettings', 'ResponseHeaders', array(
+            'X-A: one', 'no colon', ': no name', 'X-Empty:', 'Bad Name: x',
+            'x-a: a repeat', 'X-B:  spaced value  ', 'X-C: a: b',
+        ) );
+        $velocity = expVelocity::create( 'velocity.ini', 'qbix' );
+        $this->assertSame( array( 'X-A' => 'one', 'X-B' => 'spaced value', 'X-C' => 'a: b' ), $velocity->responseHeaders() );
+
+        ezpINIHelper::setINISetting( 'velocity.ini', 'ServerSettings', 'ResponseHeadersOnScripts', 'disabled' );
+        $webserver = $this->qbixWebserverConfig( $velocity );
+        $this->assertSame( 'one', $webserver['headers']['X-A'] ?? null );
+        $this->assertArrayNotHasKey( 'headersOnScripts', $webserver );
+    }
+
+    public function testAnEmptyHeaderListAndNoMaxAgeWriteNothing()
+    {
+        ezpINIHelper::setINISetting( 'velocity.ini', 'ServerSettings', 'ResponseHeaders', array() );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'HSTSMaxAge', '0' );
+        $velocity = expVelocity::create( 'velocity.ini', 'qbix' );
+        $this->assertNull( $velocity->hstsSetting() );
+        $webserver = $this->qbixWebserverConfig( $velocity );
+        $this->assertArrayNotHasKey( 'headers', $webserver );
+        $this->assertArrayNotHasKey( 'headersOnScripts', $webserver );
+        $this->assertArrayNotHasKey( 'hsts', $webserver );
+    }
+
+    public function testHstsSubdomainsAndPreload()
+    {
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'HSTSMaxAge', '31536000' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'HSTSIncludeSubDomains', 'enabled' );
+        ezpINIHelper::setINISetting( 'velocity.ini', 'HTTPSSettings', 'HSTSPreload', 'enabled' );
+        $this->assertSame(
+            array( 'maxAge' => 31536000, 'includeSubDomains' => true, 'preload' => true ),
+            expVelocity::create( 'velocity.ini', 'qbix' )->hstsSetting()
+        );
+    }
+
+    /**
      * Q.webserver as the qbix engine writes it to var/tmp/velocity-server.json.
      */
     protected function qbixWebserverConfig( expVelocity $velocity )

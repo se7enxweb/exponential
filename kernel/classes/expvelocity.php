@@ -625,6 +625,67 @@ class expVelocity
     }
 
     /**
+     * Whether a switch setting says on (enabled, true, 1, yes).
+     *
+     * @param mixed $value
+     * @return bool
+     */
+    protected function isEnabled( $value )
+    {
+        return !is_array( $value )
+            && in_array( strtolower( trim( (string)$value ) ), array( 'enabled', 'true', '1', 'yes' ), true );
+    }
+
+    /**
+     * [ServerSettings] ResponseHeaders[] as name => value.
+     *
+     * Each entry is "Name: value". One without a colon, with an empty name or
+     * value, or with a name that is not an HTTP token is left out, as is a
+     * later repeat of a name already given.
+     *
+     * @return array
+     */
+    public function responseHeaders()
+    {
+        $list = $this->setting( 'ServerSettings', 'ResponseHeaders', array() );
+        $headers = array();
+        $seen = array();
+        foreach ( is_array( $list ) ? $list : array() as $entry )
+        {
+            $colon = strpos( (string)$entry, ':' );
+            if ( $colon === false )
+                continue;
+            $name = trim( substr( $entry, 0, $colon ) );
+            $value = trim( substr( $entry, $colon + 1 ) );
+            if ( $value === '' || !preg_match( '/^[!#$%&\'*+.^_`|~0-9A-Za-z-]+$/D', $name )
+                 || preg_match( '/[\r\n\0]/', $value ) || isset( $seen[strtolower( $name )] ) )
+                continue;
+            $seen[strtolower( $name )] = true;
+            $headers[$name] = $value;
+        }
+        return $headers;
+    }
+
+    /**
+     * [HTTPSSettings] HSTSMaxAge, HSTSIncludeSubDomains and HSTSPreload as the
+     * server's Q.webserver.hsts object, or null when HSTSMaxAge is 0 or unset.
+     *
+     * @return array|null
+     */
+    public function hstsSetting()
+    {
+        $maxAge = (int)$this->setting( 'HTTPSSettings', 'HSTSMaxAge', 0 );
+        if ( $maxAge <= 0 )
+            return null;
+        $hsts = array( 'maxAge' => $maxAge );
+        if ( $this->isEnabled( $this->setting( 'HTTPSSettings', 'HSTSIncludeSubDomains', 'disabled' ) ) )
+            $hsts['includeSubDomains'] = true;
+        if ( $this->isEnabled( $this->setting( 'HTTPSSettings', 'HSTSPreload', 'disabled' ) ) )
+            $hsts['preload'] = true;
+        return $hsts;
+    }
+
+    /**
      * Absolute path, resolving a relative setting against the root.
      *
      * @param string $path
@@ -1434,6 +1495,26 @@ class expVelocity
             $webserver['zygote'] = true;
         elseif ( in_array( $zygote, array( 'disabled', 'false', '0', 'no' ), true ) )
             $webserver['zygote'] = false;
+
+        // [ServerSettings] ResponseHeaders[] -> Q.webserver.headers, on every
+        // answer the server builds itself (a static file carried none of the
+        // headers the kernel puts on its pages), and ResponseHeadersOnScripts
+        // -> Q.webserver.headersOnScripts, on the scripts' answers too where
+        // they did not send the header themselves.
+        $headers = $this->responseHeaders();
+        if ( $headers )
+        {
+            $webserver['headers'] = $headers;
+            if ( $this->isEnabled( $this->setting( 'ServerSettings', 'ResponseHeadersOnScripts', 'enabled' ) ) )
+                $webserver['headersOnScripts'] = true;
+        }
+
+        // [HTTPSSettings] HSTSMaxAge -> Q.webserver.hsts: Strict-Transport-Security
+        // on every HTTPS answer, without a domain record in the panel store
+        // (adding one would switch the store's domain gate on for the site).
+        $hsts = $this->hstsSetting();
+        if ( $hsts !== null )
+            $webserver['hsts'] = $hsts;
 
         // Where the server pre-transforms PHP before forking.
         //
