@@ -31028,6 +31028,25 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/error/formtoken</name>
+    <message>
+        <source>The form could not be sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The form was sent with a security token that does not belong to your current session, usually because it was opened before you logged in or out, or in another window. Nothing was changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The form was sent without its security token, so it could not be accepted. Nothing was changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload the form and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>kernel/error</name>
     <message>
         <source>Error</source>
