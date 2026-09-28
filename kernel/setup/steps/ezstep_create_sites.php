@@ -1198,6 +1198,19 @@ language_locale='eng-GB'";
             }
         }
 
+        // The wizard's settings go over the site package's for the user and
+        // admin siteaccesses. Its SiteURL is the host of the request running
+        // the installation -- "localhost" for the kickstarter, which runs on
+        // the command line -- while a site package that sets one knows the
+        // siteaccess's real address, so the package's is kept.
+        $wizardSiteINIChanges = function ( array $packageSettings ) use ( $siteINIChanges )
+        {
+            $changes = $siteINIChanges;
+            if ( isset( $packageSettings['SiteSettings']['SiteURL'] ) && (string)$packageSettings['SiteSettings']['SiteURL'] !== '' )
+                $changes['SiteSettings']['SiteURL'] = (string)$packageSettings['SiteSettings']['SiteURL'];
+            return $changes;
+        };
+
         $settingAdded = false;
         foreach ( $extraCommonSettings as $key => $extraCommonSetting )
         {
@@ -1205,8 +1218,12 @@ language_locale='eng-GB'";
                  isset( $extraCommonSettings[$key]['settings']['ExtensionSettings']['ActiveExtensions'] ) )
             {
                 $settingAdded = true;
+                // Each extension listed once, where it first appears: the site
+                // package's list already names several of the extensions
+                // prepended and enabled here, and a plain merge wrote eight of
+                // them twice into settings/override/site.ini.append.php.
                 $extraCommonSettings[$key]['settings']['ExtensionSettings']['ActiveExtensions'] =
-                    array_merge( $extensionsPrepended, $extraCommonSettings[$key]['settings']['ExtensionSettings']['ActiveExtensions'], $extensionsToEnable );
+                    array_values( array_unique( array_merge( $extensionsPrepended, $extraCommonSettings[$key]['settings']['ExtensionSettings']['ActiveExtensions'], $extensionsToEnable ) ) );
                 break;
             }
         }
@@ -1214,7 +1231,7 @@ language_locale='eng-GB'";
         if ( !$settingAdded )
         {
             $extraCommonSettings[] = array( 'name' => 'site.ini',
-                                            'settings' => array( 'ExtensionSettings' => array( 'ActiveExtensions' => array_merge( $extensionsPrepended, $extensionsToEnable ) ) ) );
+                                            'settings' => array( 'ExtensionSettings' => array( 'ActiveExtensions' => array_values( array_unique( array_merge( $extensionsPrepended, $extensionsToEnable ) ) ) ) ) );
         }
 
         // Enable dynamic tree menu for the admin interface by default
@@ -1263,7 +1280,7 @@ language_locale='eng-GB'";
             if ( $iniName == 'site.ini' )
             {
                 $siteINIStored = true;
-                $tmpINI->setVariables( $siteINIChanges );
+                $tmpINI->setVariables( $wizardSiteINIChanges( $settings ) );
                 $tmpINI->setVariable( 'DesignSettings', 'SiteDesign', $userDesignName );
                 $tmpINI->setVariable( 'DesignSettings', 'AdditionalSiteDesignList', array( 'base' ) );
             }
@@ -1328,7 +1345,7 @@ language_locale='eng-GB'";
             if ( $iniName == 'site.ini' )
             {
                 $siteINIAdminStored = true;
-                $tmpINI->setVariables( $siteINIChanges );
+                $tmpINI->setVariables( $wizardSiteINIChanges( $settings ) );
                 $tmpINI->setVariable( 'SiteAccessSettings', 'RequireUserLogin', 'true' );
                 $tmpINI->setVariable( 'DesignSettings', 'SiteDesign', 'admin2' );
                 $tmpINI->setVariable( 'DesignSettings', 'AdditionalSiteDesignList', array( 'admin' ) );
