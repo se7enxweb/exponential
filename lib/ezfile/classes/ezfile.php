@@ -230,7 +230,7 @@ class eZFile
             $fileSize = filesize( $file );
         }
 
-        header( 'X-Powered-By: eZ Publish' );
+        header( 'X-Powered-By: Exponential' );
         $mimeinfo = eZMimeType::findByURL( $file );
         header( "Content-Type: {$mimeinfo['name']}" );
 

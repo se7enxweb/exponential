@@ -1140,7 +1140,7 @@ class Cpdf
             $this->infoObject = $id;
             $date = 'D:' . date( 'Ymd' );
             $this->objects[$id] = array( 't' => 'info',
-                                         'info' => array( 'Creator' => 'eZ Publish CMS, http://ez.no',
+                                         'info' => array( 'Creator' => 'Exponential CMS',
                                                           'CreationDate' => $date ) );
             break;
         case 'Title':
@@ -2963,7 +2963,7 @@ class Cpdf
         header( 'Cache-Control: ' );
         /* Set cache time out to 10 seconds, this should be good enough to work around an IE bug */
         header( "Expires: ". gmdate( 'D, d M Y H:i:s', time() + 10 ) . ' GMT' );
-        header( 'X-Powered-By: eZ Publish' );
+        header( 'X-Powered-By: Exponential' );
 
         header( 'Content-Length: '.strlen( $tmp ) );
         header( 'Content-Type: application/pdf' );
