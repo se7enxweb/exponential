@@ -85,7 +85,7 @@
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <source>Step 3/3: Preview of &apos;%name&apos; (%class)</source>
@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei</translation>
     </message>
     <message>
         <source>Required</source>
@@ -226,6 +226,14 @@
         <source>List of classes inside %group_name class group (%class_count)</source>
         <translatorcomment>Liste von Klassen in der %group_name Klassengruppe (%class_count)</translatorcomment>
         <translation></translation>
+    </message>
+    <message>
+        <source>copy</source>
+        <translation>kopieren</translation>
+    </message>
+    <message>
+        <source>edit</source>
+        <translation>bearbeiten</translation>
     </message>
 </context>
 <context>
@@ -551,6 +559,14 @@
     <message>
         <source>The draft of the class definition was successfully stored.</source>
         <translation>Der Entwurf der Klassendefinition wurde erfolgreich gespeichert.</translation>
+    </message>
+    <message>
+        <source>attribute &apos;%identifier&apos;: (%id) %text</source>
+        <translation>Attribut „%identifier“: (%id) %text</translation>
+    </message>
+    <message>
+        <source>attribute &apos;%identifier&apos;: %name (%id)</source>
+        <translation>Attribut „%identifier“: %name (%id)</translation>
     </message>
 </context>
 <context>
@@ -1253,6 +1269,10 @@
         <source>Confirm removal</source>
         <translation type="unfinished">Löschen bestätigen</translation>
     </message>
+    <message>
+        <source>%namelist [%object_count objects]</source>
+        <translation>%namelist [%object_count Objekte]</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/collaboration</name>
@@ -1442,6 +1462,10 @@
         <source>Posted: %1</source>
         <translation>Verschickt: %1</translation>
     </message>
+    <message>
+        <source>[new]</source>
+        <translation>[neu]</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/collaboration/view/list</name>
@@ -1617,6 +1641,10 @@
     <message>
         <source>To select objects, choose the appropriate radio button or checkbox(es), then click the &quot;Select&quot; button.</source>
         <translation>Um Objekte auszuwählen, klicken Sie zuerst auf die entsprechenden Kontrollkästchen oder Optionsfelder links neben dem Objekt. Danach klicken Sie auf die &quot;Auswählen&quot; Schaltfläche.</translation>
+    </message>
+    <message>
+        <source>Current Location:</source>
+        <translation>Aktueller Ort:</translation>
     </message>
 </context>
 <context>
@@ -2833,6 +2861,14 @@
         <source>Go to the top</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>This action is not available in edit view when content object is published!</source>
+        <translation>Diese Aktion ist in der Bearbeitungsansicht nicht verfügbar, wenn das Content-Objekt veröffentlicht ist!</translation>
+    </message>
+    <message>
+        <source>No content object state is configured.</source>
+        <translation>Es ist kein Content-Objekt-Status konfiguriert.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/edit_attribute</name>
@@ -3023,6 +3059,26 @@
     <message>
         <source>Current drafts (%draft_count)</source>
         <translation>Aktuelle Entwürfe (%draft_count)</translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation>Version:</translation>
+    </message>
+    <message>
+        <source>Translations:</source>
+        <translation>Übersetzungen:</translation>
+    </message>
+    <message>
+        <source>Creator:</source>
+        <translation>Ersteller:</translation>
+    </message>
+    <message>
+        <source>Created:</source>
+        <translation>Erstellt:</translation>
+    </message>
+    <message>
+        <source>Modified:</source>
+        <translation>Bearbeitet:</translation>
     </message>
 </context>
 <context>
@@ -3380,6 +3436,177 @@
     <message>
         <source>New drafts (%newerDraftCount)</source>
         <translation>Neue Entwürfe (%newerDraftCount)</translation>
+    </message>
+    <message>
+        <source>Toggle selection</source>
+        <translation>Auswahl umkehren</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/multiedit</name>
+    <message>
+        <source>Edit several items</source>
+        <translation>Mehrere Elemente bearbeiten</translation>
+    </message>
+    <message>
+        <source>You may not create content of that type here.</source>
+        <translation>Sie dürfen hier keine Inhalte dieses Typs anlegen.</translation>
+    </message>
+    <message>
+        <source>Choose how many to create.</source>
+        <translation>Wählen Sie, wie viele angelegt werden sollen.</translation>
+    </message>
+    <message>
+        <source>Choose what to create.</source>
+        <translation>Wählen Sie, was angelegt werden soll.</translation>
+    </message>
+    <message>
+        <source>They could not be created here.</source>
+        <translation>Sie konnten hier nicht angelegt werden.</translation>
+    </message>
+    <message>
+        <source>What would you like to create, and how many? They are made as drafts and nothing is published until you say so.</source>
+        <translation>Was möchten Sie anlegen, und wie viele? Sie werden als Entwürfe erstellt, und nichts wird veröffentlicht, bis Sie es veranlassen.</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>How many</source>
+        <translation>Wie viele</translation>
+    </message>
+    <message>
+        <source>At most %max at a time.</source>
+        <translation>Höchstens %max auf einmal.</translation>
+    </message>
+    <message>
+        <source>Nothing was selected. Tick some items in a list or a search result and choose &quot;Edit selected&quot; from the More actions menu.</source>
+        <translation>Es wurde nichts ausgewählt. Markieren Sie Elemente in einer Liste oder einem Suchergebnis, und wählen Sie im Menü „Weitere Aktionen“ den Eintrag „Auswahl bearbeiten“.</translation>
+    </message>
+    <message>
+        <source>None of the selected items can be edited.</source>
+        <translation>Keines der ausgewählten Elemente kann bearbeitet werden.</translation>
+    </message>
+    <message>
+        <source>you may not edit this item</source>
+        <translation>Sie dürfen dieses Element nicht bearbeiten</translation>
+    </message>
+    <message>
+        <source>no longer exists</source>
+        <translation>existiert nicht mehr</translation>
+    </message>
+    <message>
+        <source>a draft could not be opened, somebody may be editing it</source>
+        <translation>ein Entwurf konnte nicht geöffnet werden, möglicherweise bearbeitet ihn gerade jemand</translation>
+    </message>
+    <message>
+        <source>cannot be edited</source>
+        <translation>kann nicht bearbeitet werden</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ergebnis</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>veröffentlicht</translation>
+    </message>
+    <message>
+        <source>waiting for approval</source>
+        <translation>wartet auf Freigabe</translation>
+    </message>
+    <message>
+        <source>could not be published</source>
+        <translation>konnte nicht veröffentlicht werden</translation>
+    </message>
+    <message>
+        <source>Items waiting for approval have been sent into their workflow and are not published yet.</source>
+        <translation>Elemente, die auf Freigabe warten, wurden an ihren Workflow übergeben und sind noch nicht veröffentlicht.</translation>
+    </message>
+    <message>
+        <source>Left out of this form</source>
+        <translation>In diesem Formular ausgelassen</translation>
+    </message>
+    <message>
+        <source>Nothing was published</source>
+        <translation>Es wurde nichts veröffentlicht</translation>
+    </message>
+    <message>
+        <source>some items have fields that need attention. They are marked below; everything typed has been kept as a draft.</source>
+        <translation>Bei einigen Elementen müssen Felder geprüft werden. Sie sind unten markiert; alle Eingaben wurden als Entwurf gespeichert.</translation>
+    </message>
+    <message>
+        <source>%count items, in %language. Each one is published separately when you press Publish.</source>
+        <translation>%count Elemente, in %language. Jedes wird einzeln veröffentlicht, wenn Sie auf Veröffentlichen klicken.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Alle aufklappen</translation>
+    </message>
+    <message>
+        <source>Open every item.</source>
+        <translation>Alle Elemente öffnen.</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Alle zuklappen</translation>
+    </message>
+    <message>
+        <source>Close every item. Closed items are still saved and published; nothing is left out.</source>
+        <translation>Alle Elemente schließen. Geschlossene Elemente werden trotzdem gespeichert und veröffentlicht; nichts wird ausgelassen.</translation>
+    </message>
+    <message>
+        <source>version %version</source>
+        <translation>Version %version</translation>
+    </message>
+    <message>
+        <source>Needs attention before this item can be published</source>
+        <translation>Muss geprüft werden, bevor dieses Element veröffentlicht werden kann</translation>
+    </message>
+    <message>
+        <source>Saving drafts...</source>
+        <translation>Entwürfe werden gespeichert...</translation>
+    </message>
+    <message>
+        <source>Drafts saved at %time</source>
+        <translation>Entwürfe gespeichert um %time</translation>
+    </message>
+    <message>
+        <source>Could not save the drafts</source>
+        <translation>Die Entwürfe konnten nicht gespeichert werden</translation>
+    </message>
+    <message>
+        <source>Create them</source>
+        <translation>Anlegen</translation>
+    </message>
+    <message>
+        <source>Make this many drafts and open them all for editing.</source>
+        <translation>So viele Entwürfe anlegen und alle zum Bearbeiten öffnen.</translation>
+    </message>
+    <message>
+        <source>Publish all</source>
+        <translation>Alle veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Publish every item in this form. Each is published separately.</source>
+        <translation>Jedes Element in diesem Formular veröffentlichen. Jedes wird einzeln veröffentlicht.</translation>
+    </message>
+    <message>
+        <source>Save drafts</source>
+        <translation>Entwürfe speichern</translation>
+    </message>
+    <message>
+        <source>Keep what has been typed without publishing anything.</source>
+        <translation>Die Eingaben behalten, ohne etwas zu veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Verwerfen</translation>
+    </message>
+    <message>
+        <source>Throw away the drafts this form opened and go back.</source>
+        <translation>Die von diesem Formular geöffneten Entwürfe verwerfen und zurückgehen.</translation>
     </message>
 </context>
 <context>
@@ -3862,6 +4089,22 @@
     <message>
         <source>Fewer keywords result in more matches. Try reducing keywords until you get a result.</source>
         <translation>Weniger Suchwörter liefern mehr Ergebnisse. Versuchen Sie, die Anzahl der Suchwörter zu reduzieren.</translation>
+    </message>
+    <message>
+        <source>Select every result on this page.</source>
+        <translation>Alle Ergebnisse auf dieser Seite auswählen.</translation>
+    </message>
+    <message>
+        <source>Select this item for editing.</source>
+        <translation>Dieses Element zum Bearbeiten auswählen.</translation>
+    </message>
+    <message>
+        <source>Edit selected</source>
+        <translation>Ausgewählte bearbeiten</translation>
+    </message>
+    <message>
+        <source>Edit every ticked result in one form.</source>
+        <translation>Alle markierten Ergebnisse in einem Formular bearbeiten.</translation>
     </message>
 </context>
 <context>
@@ -4429,6 +4672,14 @@
         <source>Trash (%list_count)</source>
         <translation>Papierkorb (%list_count)</translation>
     </message>
+    <message>
+        <source>Click to sort %sort_order</source>
+        <translation>Klicken, um %sort_order zu sortieren</translation>
+    </message>
+    <message>
+        <source>Date trashed</source>
+        <translation>Gelöscht am</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/upload</name>
@@ -4798,6 +5049,10 @@
         <source>Generated aliases (%count)</source>
         <translation>Erzeugte Aliase (%count)</translation>
     </message>
+    <message>
+        <source>the site root</source>
+        <translation>die Website-Wurzel</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/urlalias_global</name>
@@ -4992,6 +5247,14 @@
     <message>
         <source>Globally defined URL aliases (%alias_count)</source>
         <translation>Global definierte URL-Aliase (%alias_count)</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nein</translation>
     </message>
 </context>
 <context>
@@ -5657,6 +5920,10 @@
         <source>Back</source>
         <translation>Zurück</translation>
     </message>
+    <message>
+        <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
+        <translation>Ihr Browser unterstützt keine iframes. Bitte verwenden Sie stattdessen diesen &lt;a href=%url&gt;Link&lt;/a&gt;.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/contentstructuremenu</name>
@@ -5720,6 +5987,14 @@
         <source>Dynamic tree menu is disabled for this siteaccess!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>(Hidden)</source>
+        <translation>(Versteckt)</translation>
+    </message>
+    <message>
+        <source>(Hidden by parent)</source>
+        <translation>(Durch übergeordneten Knoten versteckt)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/all_latest_content</name>
@@ -5765,6 +6040,14 @@
     <message>
         <source>What&apos;s happening in the Exponential Community</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What&apos;s happening in the eZ Community</source>
+        <translation>Neuigkeiten aus der eZ Community</translation>
+    </message>
+    <message>
+        <source>Loading the latest forum posts...</source>
+        <translation>Die neuesten Forumsbeiträge werden geladen...</translation>
     </message>
 </context>
 <context>
@@ -5859,6 +6142,10 @@
         <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If this platform is critical for your business, we strongly recommend to subscribe to the Enterprise Edition of Exponential. More on &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt;&apos; website.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;</source>
+        <translation>Sie verwenden %edition, die &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative und zukunftsweisende&lt;/span&gt; Version von Exponential, entwickelt von &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; und der &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -6297,6 +6584,10 @@
         <source>License</source>
         <translation>Lizenz</translation>
     </message>
+    <message>
+        <source>Could not load LICENSE file! You should have a LICENSE file in your Exponential root directory.</source>
+        <translation>Die LICENSE-Datei konnte nicht geladen werden! Im Wurzelverzeichnis von Exponential sollte eine LICENSE-Datei liegen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/infocollector/collectionlist</name>
@@ -6430,6 +6721,10 @@
         <source>Objects that have collected information (%object_count)</source>
         <translation>Objekte mit gesammelten Informationen (%object_count)</translation>
     </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elemente pro Seite anzeigen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/infocollector/view</name>
@@ -6502,6 +6797,13 @@
     <message>
         <source>Next</source>
         <translation>Weiter</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/navigator/alphabetical</name>
+    <message>
+        <source>others</source>
+        <translation>andere</translation>
     </message>
 </context>
 <context>
@@ -6696,6 +6998,10 @@
         <source>Objects containing ezuser attributes can not be sent to trash</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Warnings:</source>
+        <translation>Warnungen:</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view</name>
@@ -6793,6 +7099,10 @@
     <message>
         <source> - You do not have permission to view this object</source>
         <translation> - Sie haben keine Berechtigung dieses Objekt zu betrachten</translation>
+    </message>
+    <message>
+        <source>This object has been deleted and is no longer available</source>
+        <translation>Dieses Objekt wurde gelöscht und ist nicht mehr verfügbar</translation>
     </message>
 </context>
 <context>
@@ -7847,7 +8157,7 @@
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <source>Select</source>
@@ -7916,6 +8226,46 @@
     <message>
         <source>You are not allowed to view the related object</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Individuell</translation>
+    </message>
+    <message>
+        <source>Copy selected</source>
+        <translation>Auswahl kopieren</translation>
+    </message>
+    <message>
+        <source>Hide selected</source>
+        <translation>Auswahl verstecken</translation>
+    </message>
+    <message>
+        <source>Unhide selected</source>
+        <translation>Auswahl einblenden</translation>
+    </message>
+    <message>
+        <source>Create multiple new</source>
+        <translation>Mehrere neu anlegen</translation>
+    </message>
+    <message>
+        <source>Edit selected</source>
+        <translation>Ausgewählte bearbeiten</translation>
+    </message>
+    <message>
+        <source>list</source>
+        <translation>Liste</translation>
+    </message>
+    <message>
+        <source>%count more in the %role_name role</source>
+        <translation>%count weitere in der Rolle %role_name</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elemente pro Seite anzeigen.</translation>
     </message>
 </context>
 <context>
@@ -8505,6 +8855,10 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>Select the file containing the package then click the upload button</source>
         <translation>Wählen Sie die Datei aus die Ihr Paket enthält und klicken Sie auf die Schaltfläche &quot;Hochladen&quot;</translation>
     </message>
+    <message>
+        <source>MD5:</source>
+        <translation>MD5:</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -8630,6 +8984,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
+        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; und andere.</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
+        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Exponential testen (von 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Werden Sie Mitglied der Exponential Community, erhalten Sie Unterstützung und tragen Sie bei&lt;/a&gt;.</translation>
+    </message>
+    <message>
+        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; and others.</source>
+        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; und andere.</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Weitere Informationen finden Sie unter &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -8828,7 +9198,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Setzen</translation>
     </message>
     <message>
         <source>Change name, email, password, etc.</source>
@@ -8860,7 +9230,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <source>Loading...</source>
@@ -8881,6 +9251,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Search only from the current location</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search...</source>
+        <translation>Suchen...</translation>
+    </message>
+    <message>
+        <source>Logout: </source>
+        <translation>Abmelden: </translation>
     </message>
 </context>
 <context>
@@ -9289,6 +9667,13 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/parts/sortheader</name>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Nach %column sortieren</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/parts/user/menu</name>
     <message>
         <source>Roles</source>
@@ -9380,6 +9765,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Look and feel</source>
         <translation>Look And Feel</translation>
+    </message>
+    <message>
+        <source>Template List / Template Editor</source>
+        <translation>Template-Liste / Template-Editor</translation>
+    </message>
+    <message>
+        <source>Template Editor</source>
+        <translation>Template-Editor</translation>
     </message>
 </context>
 <context>
@@ -9487,6 +9880,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Required data is either missing or is invalid</source>
         <translation>Entweder wurden benötigte Felder nicht ausgefüllt oder die Eingaben waren nicht gültig</translation>
+    </message>
+    <message>
+        <source>Footer text</source>
+        <translation>Fußzeilentext</translation>
+    </message>
+    <message>
+        <source>Shown at the foot of every page, beside the page number. Leave the box empty for the default wording, or clear the tick for no text at all.</source>
+        <translation>Wird am Fuß jeder Seite neben der Seitenzahl angezeigt. Lassen Sie das Feld leer für den Standardtext, oder entfernen Sie das Häkchen für gar keinen Text.</translation>
     </message>
 </context>
 <context>
@@ -9800,6 +10201,13 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/preview/forum_topic</name>
+    <message>
+        <source>Sticky:</source>
+        <translation>Angeheftet:</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/preview/person</name>
     <message>
         <source>Contact information</source>
@@ -9826,6 +10234,13 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>People who bought this also bought</source>
         <translation>Kunden, die dies gekauft haben, haben auch das gekauft</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/preview/review</name>
+    <message>
+        <source>Rating:</source>
+        <translation>Bewertung:</translation>
     </message>
 </context>
 <context>
@@ -10258,6 +10673,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Save policy changes to this role</source>
         <translation>Änderungen an den Richtlinien für diese Rolle speichern</translation>
     </message>
+    <message>
+        <source>Policies (%policy_count)</source>
+        <translation>Richtlinien (%policy_count)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/list</name>
@@ -10324,6 +10743,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Roles (%role_count)</source>
         <translation>Rollen (%role_count)</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
     </message>
 </context>
 <context>
@@ -10902,6 +11325,382 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Field data</source>
         <translation>Datenfeld</translation>
     </message>
+    <message>
+        <source>Feed format</source>
+        <translation>Feed-Format</translation>
+    </message>
+    <message>
+        <source>Which format this export is written in. RSS and Atom are feeds of articles; OPML is a list of other feeds. Only RSS 2.0 carries the image selected above.</source>
+        <translation>In welchem Format dieser Export geschrieben wird. RSS und Atom sind Feeds mit Artikeln; OPML ist eine Liste anderer Feeds. Nur RSS 2.0 enthält das oben ausgewählte Bild.</translation>
+    </message>
+    <message>
+        <source>Apple Podcasts</source>
+        <translation>Apple Podcasts</translation>
+    </message>
+    <message>
+        <source>Apple reads these from the itunes namespace. A feed missing one it requires is rejected outright, so the required ones are marked. Everything else is optional and left out of the document when empty.</source>
+        <translation>Apple liest diese Angaben aus dem itunes-Namensraum. Ein Feed, dem eine erforderliche Angabe fehlt, wird sofort abgelehnt, deshalb sind die erforderlichen markiert. Alles andere ist optional und wird im Dokument weggelassen, wenn es leer ist.</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>The name shown as the show&apos;s author.</source>
+        <translation>Der Name, der als Autor der Sendung angezeigt wird.</translation>
+    </message>
+    <message>
+        <source>Owner name</source>
+        <translation>Name des Eigentümers</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>Erforderlich</translation>
+    </message>
+    <message>
+        <source>Owner email</source>
+        <translation>E-Mail des Eigentümers</translation>
+    </message>
+    <message>
+        <source>Apple writes to this address to confirm the show is yours. It is not published in the directory.</source>
+        <translation>Apple schreibt an diese Adresse, um zu bestätigen, dass die Sendung Ihnen gehört. Sie wird im Verzeichnis nicht veröffentlicht.</translation>
+    </message>
+    <message>
+        <source>Artwork address</source>
+        <translation>Adresse des Titelbilds</translation>
+    </message>
+    <message>
+        <source>A square jpeg or png between 1400 and 3000 pixels, reachable without a login. Apple fetches it; a link it cannot follow is the commonest reason a feed is rejected.</source>
+        <translation>Ein quadratisches JPEG oder PNG zwischen 1400 und 3000 Pixeln, ohne Anmeldung erreichbar. Apple lädt es selbst; ein Link, dem Apple nicht folgen kann, ist der häufigste Grund für die Ablehnung eines Feeds.</translation>
+    </message>
+    <message>
+        <source>Choose one</source>
+        <translation>Bitte wählen</translation>
+    </message>
+    <message>
+        <source>Subcategory</source>
+        <translation>Unterkategorie</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>Show type</source>
+        <translation>Art der Sendung</translation>
+    </message>
+    <message>
+        <source>Episodic - newest first</source>
+        <translation>Episodisch - neueste zuerst</translation>
+    </message>
+    <message>
+        <source>Serial - oldest first</source>
+        <translation>Fortlaufend - älteste zuerst</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message>
+        <source>A two letter code such as en, or a regional one such as en-us. Left empty the siteaccess language is used.</source>
+        <translation>Ein Code aus zwei Buchstaben wie en oder ein regionaler wie en-us. Bleibt das Feld leer, wird die Sprache des Seitenzugangs verwendet.</translation>
+    </message>
+    <message>
+        <source>Subtitle</source>
+        <translation>Untertitel</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Contains explicit content</source>
+        <translation>Enthält explizite Inhalte</translation>
+    </message>
+    <message>
+        <source>The show is finished - no further episodes</source>
+        <translation>Die Sendung ist abgeschlossen - keine weiteren Folgen</translation>
+    </message>
+    <message>
+        <source>Keep the show out of the Apple Podcasts directory</source>
+        <translation>Die Sendung aus dem Apple-Podcasts-Verzeichnis heraushalten</translation>
+    </message>
+    <message>
+        <source>Moved to</source>
+        <translation>Umgezogen nach</translation>
+    </message>
+    <message>
+        <source>The feed&apos;s new address, if it has moved. Apple follows it and updates every subscriber.</source>
+        <translation>Die neue Adresse des Feeds, falls er umgezogen ist. Apple folgt ihr und aktualisiert alle Abonnenten.</translation>
+    </message>
+    <message>
+        <source>Each episode needs a source below whose enclosure is mapped to a media or file attribute. An episode with no enclosure is left out of the feed, because Apple rejects a feed containing one.</source>
+        <translation>Jede Folge braucht unten eine Quelle, deren Enclosure einem Medien- oder Dateiattribut zugeordnet ist. Eine Folge ohne Enclosure wird im Feed weggelassen, weil Apple einen Feed mit einer solchen Folge ablehnt.</translation>
+    </message>
+    <message>
+        <source>OPML head</source>
+        <translation>OPML-Kopf</translation>
+    </message>
+    <message>
+        <source>These become the &lt;head&gt; of the document. The title, and the dates, are taken from the export itself. Anything left empty is left out rather than written empty.</source>
+        <translation>Diese Angaben bilden den &lt;head&gt; des Dokuments. Der Titel und die Daten werden aus dem Export selbst übernommen. Leere Felder werden weggelassen statt leer geschrieben.</translation>
+    </message>
+    <message>
+        <source>Who put this list together. Left empty, the export&apos;s creator is used.</source>
+        <translation>Wer diese Liste zusammengestellt hat. Bleibt das Feld leer, wird der Ersteller des Exports verwendet.</translation>
+    </message>
+    <message>
+        <source>Left empty, the administrator address from site.ini is used.</source>
+        <translation>Bleibt das Feld leer, wird die Administratoradresse aus site.ini verwendet.</translation>
+    </message>
+    <message>
+        <source>Owner id</source>
+        <translation>Eigentümer-ID</translation>
+    </message>
+    <message>
+        <source>An address that identifies the owner, if you publish one.</source>
+        <translation>Eine Adresse, die den Eigentümer identifiziert, falls Sie eine veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>Docs</source>
+        <translation>Dokumentation</translation>
+    </message>
+    <message>
+        <source>Where the format this document follows is written down.</source>
+        <translation>Wo das Format beschrieben ist, dem dieses Dokument folgt.</translation>
+    </message>
+    <message>
+        <source>Outliner state</source>
+        <translation>Zustand des Outliners</translation>
+    </message>
+    <message>
+        <source>expansionState</source>
+        <translation>expansionState</translation>
+    </message>
+    <message>
+        <source>vertScrollState</source>
+        <translation>vertScrollState</translation>
+    </message>
+    <message>
+        <source>top</source>
+        <translation>top</translation>
+    </message>
+    <message>
+        <source>left</source>
+        <translation>left</translation>
+    </message>
+    <message>
+        <source>bottom</source>
+        <translation>bottom</translation>
+    </message>
+    <message>
+        <source>right</source>
+        <translation>right</translation>
+    </message>
+    <message>
+        <source>Where an outliner last had this list open on screen. Readers that do not keep window state ignore them.</source>
+        <translation>Wo ein Outliner diese Liste zuletzt auf dem Bildschirm geöffnet hatte. Programme, die keinen Fensterzustand speichern, ignorieren diese Angaben.</translation>
+    </message>
+    <message>
+        <source>Feeds in this document</source>
+        <translation>Feeds in diesem Dokument</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Verweist auf</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Text</translation>
+    </message>
+    <message>
+        <source>Inside</source>
+        <translation>Innerhalb von</translation>
+    </message>
+    <message>
+        <source>Select this outline for removal.</source>
+        <translation>Diesen Eintrag zum Entfernen auswählen.</translation>
+    </message>
+    <message>
+        <source>Lower numbers come first in the document.</source>
+        <translation>Niedrigere Zahlen stehen im Dokument weiter vorne.</translation>
+    </message>
+    <message>
+        <source>The feed this pointed at has been deleted.</source>
+        <translation>Der Feed, auf den dieser Eintrag verwies, wurde gelöscht.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Leeren</translation>
+    </message>
+    <message>
+        <source>Point this outline at a content node instead of a feed.</source>
+        <translation>Diesen Eintrag auf einen Inhaltsknoten statt auf einen Feed verweisen lassen.</translation>
+    </message>
+    <message>
+        <source>Browse content</source>
+        <translation>Inhalte durchsuchen</translation>
+    </message>
+    <message>
+        <source>What a reader shows on the line. Left empty, the feed&apos;s own name is used.</source>
+        <translation>Was ein Feedreader in der Zeile anzeigt. Bleibt das Feld leer, wird der Name des Feeds verwendet.</translation>
+    </message>
+    <message>
+        <source>Top level</source>
+        <translation>Oberste Ebene</translation>
+    </message>
+    <message>
+        <source>Everything else OPML lets this line carry</source>
+        <translation>Alles Weitere, was OPML in dieser Zeile erlaubt</translation>
+    </message>
+    <message>
+        <source>title</source>
+        <translation>title</translation>
+    </message>
+    <message>
+        <source>description</source>
+        <translation>description</translation>
+    </message>
+    <message>
+        <source>language</source>
+        <translation>language</translation>
+    </message>
+    <message>
+        <source>xmlUrl</source>
+        <translation>xmlUrl</translation>
+    </message>
+    <message>
+        <source>Left empty, the address of the feed this points at is worked out when the document is written.</source>
+        <translation>Bleibt das Feld leer, wird die Adresse des Feeds, auf den dieser Eintrag verweist, beim Schreiben des Dokuments ermittelt.</translation>
+    </message>
+    <message>
+        <source>htmlUrl</source>
+        <translation>htmlUrl</translation>
+    </message>
+    <message>
+        <source>url</source>
+        <translation>url</translation>
+    </message>
+    <message>
+        <source>Used by the link and include types.</source>
+        <translation>Wird von den Typen link und include verwendet.</translation>
+    </message>
+    <message>
+        <source>isComment</source>
+        <translation>isComment</translation>
+    </message>
+    <message>
+        <source>isBreakpoint</source>
+        <translation>isBreakpoint</translation>
+    </message>
+    <message>
+        <source>include subnodes</source>
+        <translation>Unterknoten einbeziehen</translation>
+    </message>
+    <message>
+        <source>Nothing is listed yet. Find feeds below and add them.</source>
+        <translation>Noch ist nichts aufgeführt. Suchen Sie unten Feeds und fügen Sie sie hinzu.</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Ausgewähltes entfernen</translation>
+    </message>
+    <message>
+        <source>Take the ticked outlines out of the document.</source>
+        <translation>Die markierten Einträge aus dem Dokument entfernen.</translation>
+    </message>
+    <message>
+        <source>Add group</source>
+        <translation>Gruppe hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add a folder that other outlines can sit inside. OPML nests outlines, and readers show that nesting as groups.</source>
+        <translation>Einen Ordner hinzufügen, in dem andere Einträge liegen können. OPML verschachtelt Einträge, und Feedreader zeigen diese Verschachtelung als Gruppen an.</translation>
+    </message>
+    <message>
+        <source>Find feeds to add</source>
+        <translation>Feeds zum Hinzufügen suchen</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Looks in the name, the address and the description.</source>
+        <translation>Sucht im Namen, in der Adresse und in der Beschreibung.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Anwenden</translation>
+    </message>
+    <message>
+        <source>Showing %from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation>URI</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Already in this document.</source>
+        <translation>Bereits in diesem Dokument.</translation>
+    </message>
+    <message>
+        <source>Inactive</source>
+        <translation>Inaktiv</translation>
+    </message>
+    <message>
+        <source>Page %page of %pages</source>
+        <translation>Seite %page von %pages</translation>
+    </message>
+    <message>
+        <source>Add selected feeds</source>
+        <translation>Ausgewählte Feeds hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add the ticked feeds to this document.</source>
+        <translation>Die markierten Feeds zu diesem Dokument hinzufügen.</translation>
+    </message>
+    <message>
+        <source>No feed matches that.</source>
+        <translation>Kein Feed entspricht dieser Suche.</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Nach %column sortieren</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/edit_import</name>
@@ -11184,6 +11983,58 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>RSS imports (%imports_count)</source>
         <translation>RSS Importe (%imports_count)</translation>
     </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation>URI</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nicht gesetzt</translation>
+    </message>
+    <message>
+        <source>Source URL</source>
+        <translation>Quell-URL</translation>
+    </message>
+    <message>
+        <source>Showing %from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Nothing to show</source>
+        <translation>Nichts anzuzeigen</translation>
+    </message>
+    <message>
+        <source>First page</source>
+        <translation>Erste Seite</translation>
+    </message>
+    <message>
+        <source>Previous page</source>
+        <translation>Vorherige Seite</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>Next page</source>
+        <translation>Nächste Seite</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Weiter</translation>
+    </message>
+    <message>
+        <source>Last page</source>
+        <translation>Letzte Seite</translation>
+    </message>
+    <message>
+        <source>Page %page of %pages</source>
+        <translation>Seite %page von %pages</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/search/stats</name>
@@ -11214,6 +12065,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Clear the search log.</source>
         <translation>Das Suchlog leeren.</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elemente pro Seite anzeigen.</translation>
     </message>
 </context>
 <context>
@@ -11445,6 +12300,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Identifier</source>
         <translation>Bezeichner</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elemente pro Seite anzeigen.</translation>
     </message>
 </context>
 <context>
@@ -11792,6 +12651,74 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Values for each location setting are shown. The first values have lowest priority; the values toward the end have higher priority than the first ones.</source>
         <translation>Es werden Werte von jedem Ort angezeigt. Die oberen Werte haben die niedrigste Priorität; Werte, die zum Ende stehen, haben eine höhere Priorität.</translation>
     </message>
+    <message>
+        <source>Most used</source>
+        <translation>Am häufigsten verwendet</translation>
+    </message>
+    <message>
+        <source>All ini files</source>
+        <translation>Alle INI-Dateien</translation>
+    </message>
+    <message>
+        <source>Edit setting</source>
+        <translation>Einstellung bearbeiten</translation>
+    </message>
+    <message>
+        <source>Setting information</source>
+        <translation>Informationen zur Einstellung</translation>
+    </message>
+    <message>
+        <source>%validation_field is empty</source>
+        <translation>%validation_field ist leer</translation>
+    </message>
+    <message>
+        <source>Variable %setting already exists in section %section</source>
+        <translation>Die Variable %setting existiert bereits im Abschnitt %section</translation>
+    </message>
+    <message>
+        <source>%validation_field is not allowed to contain spaces</source>
+        <translation>%validation_field darf keine Leerzeichen enthalten</translation>
+    </message>
+    <message>
+        <source>Writing setting %setting to %file failed</source>
+        <translation>Das Schreiben der Einstellung %setting in %file ist fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>%validation_field does not contain a valid string.</source>
+        <translation>%validation_field enthält keine gültige Zeichenkette.</translation>
+    </message>
+    <message>
+        <source>If the string is all numbers use the &apos;numeric&apos; type instead.</source>
+        <translation>Wenn die Zeichenkette nur aus Ziffern besteht, verwenden Sie stattdessen den Typ „numeric“.</translation>
+    </message>
+    <message>
+        <source>%validation_field does not contain a valid numeric</source>
+        <translation>%validation_field enthält keinen gültigen Zahlenwert</translation>
+    </message>
+    <message>
+        <source>A valid numeric can only contain 0-9 and one . (dot).</source>
+        <translation>Ein gültiger Zahlenwert darf nur 0-9 und einen . (Punkt) enthalten.</translation>
+    </message>
+    <message>
+        <source>%validation_field does not contain valid array</source>
+        <translation>%validation_field enthält kein gültiges Array</translation>
+    </message>
+    <message>
+        <source>Using siteaccess:</source>
+        <translation>Verwendeter Seitenzugang:</translation>
+    </message>
+    <message>
+        <source>%ini_file consist of %block_count section(s) and %setting_count different setting(s)</source>
+        <translation>%ini_file besteht aus %block_count Abschnitt(en) und %setting_count verschiedenen Einstellung(en)</translation>
+    </message>
+    <message>
+        <source>Please select a ini file from the dropdown below.</source>
+        <translation>Bitte wählen Sie unten eine INI-Datei aus der Liste aus.</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup</name>
@@ -12042,6 +12969,517 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Categories</source>
         <translation>Kategorien</translation>
     </message>
+    <message>
+        <source>Static content cache was regenerated, %count pages written to %dir</source>
+        <translation>Der statische Inhalts-Cache wurde neu erzeugt, %count Seiten wurden nach %dir geschrieben</translation>
+    </message>
+    <message>
+        <source>Database query results (SQL query cache)</source>
+        <translation>Ergebnisse von Datenbankabfragen (SQL-Query-Cache)</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>Clear query cache</source>
+        <translation>Query-Cache leeren</translation>
+    </message>
+    <message>
+        <source>Makes every stored SQL result stale at once, on every server sharing this installation. Writes already invalidate the tables they touch; use this after changing the database outside Exponential, for example with a SQL client or a restore.</source>
+        <translation>Macht alle gespeicherten SQL-Ergebnisse auf einmal ungültig, auf jedem Server, der diese Installation teilt. Schreibvorgänge machen die betroffenen Tabellen bereits ungültig; verwenden Sie dies, nachdem Sie die Datenbank außerhalb von Exponential geändert haben, zum Beispiel mit einem SQL-Client oder durch eine Wiederherstellung.</translation>
+    </message>
+    <message>
+        <source>Whole pages (HTTP cache)</source>
+        <translation>Ganze Seiten (HTTP-Cache)</translation>
+    </message>
+    <message>
+        <source>enabled</source>
+        <translation>aktiviert</translation>
+    </message>
+    <message>
+        <source>Clear HTTP cache</source>
+        <translation>HTTP-Cache leeren</translation>
+    </message>
+    <message>
+        <source>Drops every cached page for every permission context, including the copies the Velocity response cache holds. Publishing already purges the pages it affects.</source>
+        <translation>Verwirft alle zwischengespeicherten Seiten für jeden Berechtigungskontext, einschließlich der Kopien im Velocity-Antwort-Cache. Beim Veröffentlichen werden die betroffenen Seiten bereits gelöscht.</translation>
+    </message>
+    <message>
+        <source>No site can be cached.</source>
+        <translation>Keine Website kann zwischengespeichert werden.</translation>
+    </message>
+    <message>
+        <source>Every siteaccess either requires a login or has no SiteSettings/SiteURL, so there is no page to fetch and store.</source>
+        <translation>Jeder Seitenzugang erfordert entweder eine Anmeldung oder hat keine SiteSettings/SiteURL, daher gibt es keine Seite, die abgerufen und gespeichert werden kann.</translation>
+    </message>
+    <message>
+        <source>Pages are written to</source>
+        <translation>Seiten werden geschrieben nach</translation>
+    </message>
+    <message>
+        <source>Site to generate</source>
+        <translation>Zu erzeugende Website</translation>
+    </message>
+    <message>
+        <source>All sites</source>
+        <translation>Alle Websites</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Grenzen</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Seiten</translation>
+    </message>
+    <message>
+        <source>Link depth</source>
+        <translation>Link-Tiefe</translation>
+    </message>
+    <message>
+        <source>Fetches every url of the chosen site that the site itself links to and stores the page, so the web server can answer the next visitor from a file instead of starting the CMS. This can take some time on a large site. If you encounter time-out problems, use the &amp;quot;bin/php/makestaticcache.php&amp;quot; shell script.</source>
+        <translation>Ruft jede URL der gewählten Website ab, auf die die Website selbst verlinkt, und speichert die Seite, damit der Webserver den nächsten Besucher aus einer Datei bedienen kann, statt das CMS zu starten. Bei einer großen Website kann das einige Zeit dauern. Wenn Zeitüberschreitungen auftreten, verwenden Sie das Shell-Skript &amp;quot;bin/php/makestaticcache.php&amp;quot;.</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation>Anhalten</translation>
+    </message>
+    <message>
+        <source>Stops listening and leaves the pages written so far in place.</source>
+        <translation>Beendet das Mitlesen und lässt die bisher geschriebenen Seiten bestehen.</translation>
+    </message>
+    <message>
+        <source>Generated pages will not be refreshed when an editor publishes, because site.ini [ContentSettings] StaticCache is not enabled.</source>
+        <translation>Erzeugte Seiten werden nicht aktualisiert, wenn ein Redakteur veröffentlicht, weil site.ini [ContentSettings] StaticCache nicht aktiviert ist.</translation>
+    </message>
+    <message>
+        <source>running…</source>
+        <translation>läuft…</translation>
+    </message>
+    <message>
+        <source>finished</source>
+        <translation>fertig</translation>
+    </message>
+    <message>
+        <source>Could not open the stream. Check that you have the setup/managecache policy.</source>
+        <translation>Der Datenstrom konnte nicht geöffnet werden. Prüfen Sie, ob Sie die Richtlinie setup/managecache haben.</translation>
+    </message>
+    <message>
+        <source>Stream closed.</source>
+        <translation>Datenstrom geschlossen.</translation>
+    </message>
+    <message>
+        <source>stopped</source>
+        <translation>angehalten</translation>
+    </message>
+    <message>
+        <source>Stopped by operator. Pages written so far are kept.</source>
+        <translation>Vom Bediener angehalten. Die bisher geschriebenen Seiten bleiben erhalten.</translation>
+    </message>
+    <message>
+        <source>PHP caches of this server process</source>
+        <translation>PHP-Caches dieses Serverprozesses</translation>
+    </message>
+    <message>
+        <source>The figures and settings are on</source>
+        <translation>Die Werte und Einstellungen finden Sie unter</translation>
+    </message>
+    <message>
+        <source>System information</source>
+        <translation>Systeminformationen</translation>
+    </message>
+    <message>
+        <source>OPcache (compiled PHP scripts)</source>
+        <translation>OPcache (kompilierte PHP-Skripte)</translation>
+    </message>
+    <message>
+        <source>Reset OPcache</source>
+        <translation>OPcache zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Empties the opcode cache of the server process answering this page. Every PHP file is compiled again on its next include, so the next requests are slower. Use it when an edited PHP file is not picked up.</source>
+        <translation>Leert den Opcode-Cache des Serverprozesses, der diese Seite beantwortet. Jede PHP-Datei wird beim nächsten Einbinden neu kompiliert, daher sind die nächsten Anfragen langsamer. Verwenden Sie dies, wenn eine bearbeitete PHP-Datei nicht übernommen wird.</translation>
+    </message>
+    <message>
+        <source>APCu (data in shared memory)</source>
+        <translation>APCu (Daten im gemeinsamen Speicher)</translation>
+    </message>
+    <message>
+        <source>Empty APCu</source>
+        <translation>APCu leeren</translation>
+    </message>
+    <message>
+        <source>Empties APCu for the server process answering this page: every entry any application stored there is gone, including the memory tier of a Qbix response cache.</source>
+        <translation>Leert APCu für den Serverprozess, der diese Seite beantwortet: Jeder Eintrag, den eine Anwendung dort gespeichert hat, ist weg, einschließlich der Speicherebene eines Qbix-Antwort-Caches.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/cronjobs</name>
+    <message>
+        <source>The cronjob console got no answer from %method.</source>
+        <translation>Die Cronjob-Konsole hat keine Antwort von %method erhalten.</translation>
+    </message>
+    <message>
+        <source>Done.</source>
+        <translation>Erledigt.</translation>
+    </message>
+    <message>
+        <source>It did not work, and did not say why.</source>
+        <translation>Es hat nicht funktioniert, und es wurde kein Grund genannt.</translation>
+    </message>
+    <message>
+        <source>The cronjob console failed: %error</source>
+        <translation>Die Cronjob-Konsole ist fehlgeschlagen: %error</translation>
+    </message>
+    <message>
+        <source>No cronjob part named &quot;%part&quot; can be launched from here.</source>
+        <translation>Ein Cronjob-Teil namens „%part“ kann von hier aus nicht gestartet werden.</translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part has no script called &quot;%script&quot;.</source>
+        <translation>Der Teil „%part“ hat kein Skript namens „%script“.</translation>
+    </message>
+    <message>
+        <source>No siteaccess named &quot;%siteaccess&quot; is served by this installation.</source>
+        <translation>Diese Installation bedient keinen Seitenzugang namens „%siteaccess“.</translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part is still running as process %pid. Wait for it, or stop it first.</source>
+        <translation>Der Teil „%part“ läuft noch als Prozess %pid. Warten Sie, bis er fertig ist, oder halten Sie ihn zuerst an.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set cronjob.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Es wurde kein PHP-Kommandozeilenprogramm gefunden. Setzen Sie cronjob.ini [AdminSettings] PhpCliPath auf seinen vollständigen Pfad.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a cronjob cannot be started from the interface. Run it from a shell.</source>
+        <translation>proc_open ist deaktiviert, daher kann ein Cronjob nicht über die Oberfläche gestartet werden. Führen Sie ihn in einer Shell aus.</translation>
+    </message>
+    <message>
+        <source>runcronjobs.php is not where it should be: %path</source>
+        <translation>runcronjobs.php liegt nicht dort, wo es sein sollte: %path</translation>
+    </message>
+    <message>
+        <source>The cronjob could not be started.</source>
+        <translation>Der Cronjob konnte nicht gestartet werden.</translation>
+    </message>
+    <message>
+        <source>The cronjob was started but did not report its process id, so it cannot be followed or stopped from here. Check %file.</source>
+        <translation>Der Cronjob wurde gestartet, hat aber keine Prozess-ID gemeldet und kann deshalb von hier aus weder verfolgt noch angehalten werden. Prüfen Sie %file.</translation>
+    </message>
+    <message>
+        <source>Started the &quot;%part&quot; part for %siteaccess as process %pid.</source>
+        <translation>Der Teil „%part“ wurde für %siteaccess als Prozess %pid gestartet.</translation>
+    </message>
+    <message>
+        <source>Started %script for %siteaccess as process %pid.</source>
+        <translation>%script wurde für %siteaccess als Prozess %pid gestartet.</translation>
+    </message>
+    <message>
+        <source>exec is disabled, so the crontab cannot be read from here.</source>
+        <translation>exec ist deaktiviert, daher kann die Crontab von hier aus nicht gelesen werden.</translation>
+    </message>
+    <message>
+        <source>The user this site runs as (%user) has no crontab, or crontab is not on the path. The entries below would be added to it.</source>
+        <translation>Der Benutzer, unter dem diese Website läuft (%user), hat keine Crontab, oder crontab ist nicht im Suchpfad. Die folgenden Einträge würden hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>No cronjob is running.</source>
+        <translation>Es läuft kein Cronjob.</translation>
+    </message>
+    <message>
+        <source>posix_kill is not available, so the process cannot be signalled from here.</source>
+        <translation>posix_kill ist nicht verfügbar, daher kann dem Prozess von hier aus kein Signal gesendet werden.</translation>
+    </message>
+    <message>
+        <source>Process %pid could not be signalled. It may belong to another user.</source>
+        <translation>Dem Prozess %pid konnte kein Signal gesendet werden. Er gehört möglicherweise einem anderen Benutzer.</translation>
+    </message>
+    <message>
+        <source>Asked process %pid to stop.</source>
+        <translation>Prozess %pid wurde aufgefordert anzuhalten.</translation>
+    </message>
+    <message>
+        <source>Cleared the cronjob output and error logs.</source>
+        <translation>Die Ausgabe- und Fehlerprotokolle der Cronjobs wurden geleert.</translation>
+    </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>Runs a cronjob part now, without waiting for the scheduler. The job is started as a separate process and keeps running after this page is closed, so nothing is lost if the browser goes away.</source>
+        <translation>Führt einen Cronjob-Teil sofort aus, ohne auf den Scheduler zu warten. Der Job wird als eigener Prozess gestartet und läuft weiter, nachdem diese Seite geschlossen wurde, sodass nichts verloren geht, wenn der Browser geschlossen wird.</translation>
+    </message>
+    <message>
+        <source>No php command line binary could be found, so nothing can be launched from here. Set cronjob.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Es wurde kein PHP-Kommandozeilenprogramm gefunden, daher kann von hier aus nichts gestartet werden. Setzen Sie cronjob.ini [AdminSettings] PhpCliPath auf seinen vollständigen Pfad.</translation>
+    </message>
+    <message>
+        <source>Running: %part</source>
+        <translation>Läuft: %part</translation>
+    </message>
+    <message>
+        <source>Idle</source>
+        <translation>Untätig</translation>
+    </message>
+    <message>
+        <source>Site: %siteaccess</source>
+        <translation>Website: %siteaccess</translation>
+    </message>
+    <message>
+        <source>Process: %pid</source>
+        <translation>Prozess: %pid</translation>
+    </message>
+    <message>
+        <source>Elapsed: %elapsed</source>
+        <translation>Verstrichen: %elapsed</translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation>Protokoll</translation>
+    </message>
+    <message>
+        <source>Run for site</source>
+        <translation>Für Website ausführen</translation>
+    </message>
+    <message>
+        <source>Stop running job</source>
+        <translation>Laufenden Job anhalten</translation>
+    </message>
+    <message>
+        <source>Clear logs</source>
+        <translation>Protokolle leeren</translation>
+    </message>
+    <message>
+        <source>Show or hide the output</source>
+        <translation>Ausgabe ein- oder ausblenden</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Ausgabe</translation>
+    </message>
+    <message>
+        <source>Cronjob part</source>
+        <translation>Cronjob-Teil</translation>
+    </message>
+    <message>
+        <source>All parts</source>
+        <translation>Alle Teile</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Starten</translation>
+    </message>
+    <message>
+        <source>Runs every part, one after another.</source>
+        <translation>Führt alle Teile nacheinander aus.</translation>
+    </message>
+    <message>
+        <source>Cronjob part / script</source>
+        <translation>Cronjob-Teil / Skript</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Gefunden in</translation>
+    </message>
+    <message>
+        <source>Crontab</source>
+        <translation>Crontab</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>%count scripts</source>
+        <translation>%count Skripte</translation>
+    </message>
+    <message>
+        <source>A crontab entry for this installation runs this part</source>
+        <translation>Ein Crontab-Eintrag dieser Installation führt diesen Teil aus</translation>
+    </message>
+    <message>
+        <source>scheduled</source>
+        <translation>geplant</translation>
+    </message>
+    <message>
+        <source>Nothing in the crontab runs this part</source>
+        <translation>Kein Crontab-Eintrag führt diesen Teil aus</translation>
+    </message>
+    <message>
+        <source>not scheduled</source>
+        <translation>nicht geplant</translation>
+    </message>
+    <message>
+        <source>Blocked by cronjob.ini ForbiddenParts</source>
+        <translation>Durch cronjob.ini ForbiddenParts gesperrt</translation>
+    </message>
+    <message>
+        <source>Blocked</source>
+        <translation>Gesperrt</translation>
+    </message>
+    <message>
+        <source>%count missing</source>
+        <translation>%count fehlen</translation>
+    </message>
+    <message>
+        <source>Activated</source>
+        <translation>Aktiviert</translation>
+    </message>
+    <message>
+        <source>Run the whole %part part now</source>
+        <translation>Den ganzen Teil %part jetzt ausführen</translation>
+    </message>
+    <message>
+        <source>not found in any cronjob directory</source>
+        <translation>in keinem Cronjob-Verzeichnis gefunden</translation>
+    </message>
+    <message>
+        <source>Run %script on its own</source>
+        <translation>%script einzeln ausführen</translation>
+    </message>
+    <message>
+        <source>This script cannot be run from here</source>
+        <translation>Dieses Skript kann nicht von hier aus ausgeführt werden</translation>
+    </message>
+    <message>
+        <source>Available but not activated</source>
+        <translation>Verfügbar, aber nicht aktiviert</translation>
+    </message>
+    <message>
+        <source>These scripts exist but no cronjob part names them, so they never run.</source>
+        <translation>Diese Skripte existieren, aber kein Cronjob-Teil nennt sie, daher laufen sie nie.</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>Skript</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Verfügbar</translation>
+    </message>
+    <message>
+        <source>Add it to a part in cronjob.ini to run it</source>
+        <translation>Fügen Sie es in cronjob.ini einem Teil hinzu, um es auszuführen</translation>
+    </message>
+    <message>
+        <source>Recent runs</source>
+        <translation>Letzte Ausführungen</translation>
+    </message>
+    <message>
+        <source>Cronjob</source>
+        <translation>Cronjob</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Seite</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gestartet</translation>
+    </message>
+    <message>
+        <source>Took</source>
+        <translation>Dauer</translation>
+    </message>
+    <message>
+        <source>Errors</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>läuft</translation>
+    </message>
+    <message>
+        <source>Nothing has been run from here yet.</source>
+        <translation>Von hier aus wurde noch nichts ausgeführt.</translation>
+    </message>
+    <message>
+        <source>Show or hide the crontab</source>
+        <translation>Crontab ein- oder ausblenden</translation>
+    </message>
+    <message>
+        <source>What is scheduled now, and the lines that would schedule the rest</source>
+        <translation>Was jetzt geplant ist, und die Zeilen, mit denen der Rest geplant würde</translation>
+    </message>
+    <message>
+        <source>In the crontab now</source>
+        <translation>Derzeit in der Crontab</translation>
+    </message>
+    <message>
+        <source>Read from crontab -l for the user this site runs as.</source>
+        <translation>Gelesen mit crontab -l für den Benutzer, unter dem diese Website läuft.</translation>
+    </message>
+    <message>
+        <source>The crontab is empty.</source>
+        <translation>Die Crontab ist leer.</translation>
+    </message>
+    <message>
+        <source>Suggested entries</source>
+        <translation>Vorgeschlagene Einträge</translation>
+    </message>
+    <message>
+        <source>Written by this page from the paths below, for the parts nothing currently runs. Nothing adds them for you.</source>
+        <translation>Von dieser Seite aus den Pfaden unten erzeugt, für die Teile, die derzeit nichts ausführt. Sie werden nicht automatisch hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Installation</translation>
+    </message>
+    <message>
+        <source>following…</source>
+        <translation>wird verfolgt…</translation>
+    </message>
+    <message>
+        <source>finished</source>
+        <translation>fertig</translation>
+    </message>
+    <message>
+        <source>stream closed</source>
+        <translation>Datenstrom geschlossen</translation>
+    </message>
+    <message>
+        <source>The request did not reach the server. Check the connection and try again.</source>
+        <translation>Die Anfrage hat den Server nicht erreicht. Prüfen Sie die Verbindung und versuchen Sie es erneut.</translation>
+    </message>
+    <message>
+        <source>The server answered %status: %text</source>
+        <translation>Der Server antwortete mit %status: %text</translation>
+    </message>
+    <message>
+        <source>The server answered %status. It sent nothing that could be read.</source>
+        <translation>Der Server antwortete mit %status. Er hat nichts Lesbares gesendet.</translation>
+    </message>
+    <message>
+        <source>The request failed before the server could answer.</source>
+        <translation>Die Anfrage ist fehlgeschlagen, bevor der Server antworten konnte.</translation>
+    </message>
+    <message>
+        <source>The server did not answer in time. The job may still have started; reload to see.</source>
+        <translation>Der Server hat nicht rechtzeitig geantwortet. Der Job wurde möglicherweise trotzdem gestartet; laden Sie die Seite neu, um es zu sehen.</translation>
+    </message>
+    <message>
+        <source>The request could not be sent: %error</source>
+        <translation>Die Anfrage konnte nicht gesendet werden: %error</translation>
+    </message>
+    <message>
+        <source>Next: %part</source>
+        <translation>Als Nächstes: %part</translation>
+    </message>
+    <message>
+        <source>Runs the %part part.</source>
+        <translation>Führt den Teil %part aus.</translation>
+    </message>
+    <message>
+        <source>There is no part that can be run.</source>
+        <translation>Es gibt keinen Teil, der ausgeführt werden kann.</translation>
+    </message>
+    <message>
+        <source>Running %count parts, one after another.</source>
+        <translation>%count Teile werden nacheinander ausgeführt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/datatypecode</name>
@@ -12111,6 +13549,50 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Update</source>
         <translation>Aktualisieren</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>Info</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Details</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Info URL</source>
+        <translation>Info-URL</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Download</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -12418,6 +13900,725 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>PHP autoload functions</source>
         <translation>PHP Autoload Funktionen</translation>
     </message>
+    <message>
+        <source>Velocity&apos;s own server</source>
+        <translation>Velocitys eigener Server</translation>
+    </message>
+    <message>
+        <source>PHP&apos;s built-in web server</source>
+        <translation>Der eingebaute Webserver von PHP</translation>
+    </message>
+    <message>
+        <source>PHP built-in web server</source>
+        <translation>Eingebauter PHP-Webserver</translation>
+    </message>
+    <message>
+        <source>%count worker processes</source>
+        <translation>%count Worker-Prozesse</translation>
+    </message>
+    <message>
+        <source>one request at a time</source>
+        <translation>eine Anfrage nach der anderen</translation>
+    </message>
+    <message>
+        <source>a development server, not for production</source>
+        <translation>ein Entwicklungsserver, nicht für den Produktivbetrieb</translation>
+    </message>
+    <message>
+        <source>started by exp:velocity</source>
+        <translation>gestartet von exp:velocity</translation>
+    </message>
+    <message>
+        <source>FrankenPHP, started by exp:velocity</source>
+        <translation>FrankenPHP, gestartet von exp:velocity</translation>
+    </message>
+    <message>
+        <source>PHP&apos;s built-in web server, started by exp:velocity</source>
+        <translation>Der eingebaute Webserver von PHP, gestartet von exp:velocity</translation>
+    </message>
+    <message>
+        <source>recommended for every stage -- development, alpha, beta, demo, stable and production -- and the fastest of the engines</source>
+        <translation>empfohlen für jede Stufe -- Entwicklung, Alpha, Beta, Demo, Stable und Produktion -- und die schnellste der Engines</translation>
+    </message>
+    <message>
+        <source>production-ready; Velocity&apos;s own server (qbix) is the recommended engine</source>
+        <translation>produktionsreif; Velocitys eigener Server (qbix) ist die empfohlene Engine</translation>
+    </message>
+    <message>
+        <source>development only -- for any other stage, run Velocity&apos;s own server (qbix)</source>
+        <translation>nur für die Entwicklung -- für jede andere Stufe Velocitys eigenen Server (qbix) verwenden</translation>
+    </message>
+    <message>
+        <source>wherever it was started to listen (not by exp:velocity, so its Host is not known here)</source>
+        <translation>überall dort, wo er beim Start zu lauschen angewiesen wurde (nicht über exp:velocity gestartet, daher ist sein Host hier nicht bekannt)</translation>
+    </message>
+    <message>
+        <source>this machine only (Host=%host), or through a proxy or tunnel</source>
+        <translation>nur dieser Rechner (Host=%host) oder über einen Proxy oder Tunnel</translation>
+    </message>
+    <message>
+        <source>every machine that reaches %address</source>
+        <translation>jeder Rechner, der %address erreicht</translation>
+    </message>
+    <message>
+        <source>Every cached page was purged; each is rendered again on its next request.</source>
+        <translation>Alle zwischengespeicherten Seiten wurden gelöscht; jede wird bei ihrem nächsten Aufruf neu erzeugt.</translation>
+    </message>
+    <message>
+        <source>Removed %entries dead entries, %bodies orphaned bodies and %records old user records.</source>
+        <translation>%entries tote Einträge, %bodies verwaiste Inhalte und %records alte Benutzerdatensätze wurden entfernt.</translation>
+    </message>
+    <message>
+        <source>The counters were reset.</source>
+        <translation>Die Zähler wurden zurückgesetzt.</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>no lookups yet</source>
+        <translation>noch keine Abfragen</translation>
+    </message>
+    <message>
+        <source>files (signed-in visitors cached)</source>
+        <translation>Dateien (angemeldete Besucher werden zwischengespeichert)</translation>
+    </message>
+    <message>
+        <source>not readable before the kernel (signed-in visitors not served early)</source>
+        <translation>vor dem Kernel nicht lesbar (angemeldete Besucher werden nicht vorzeitig bedient)</translation>
+    </message>
+    <message>
+        <source>not usable in this PHP</source>
+        <translation>in dieser PHP-Umgebung nicht verwendbar</translation>
+    </message>
+    <message>
+        <source>The SQL profile is on: every request now adds a line.</source>
+        <translation>Das SQL-Profil ist eingeschaltet: Jede Anfrage fügt jetzt eine Zeile hinzu.</translation>
+    </message>
+    <message>
+        <source>The SQL profile is off.</source>
+        <translation>Das SQL-Profil ist ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>The SQL query cache was cleared.</source>
+        <translation>Der SQL-Query-Cache wurde geleert.</translation>
+    </message>
+    <message>
+        <source>The query cache counters of this server were reset.</source>
+        <translation>Die Query-Cache-Zähler dieses Servers wurden zurückgesetzt.</translation>
+    </message>
+    <message>
+        <source>OPcache and APCu</source>
+        <translation>OPcache und APCu</translation>
+    </message>
+    <message>
+        <source>compiled PHP scripts</source>
+        <translation>kompilierte PHP-Skripte</translation>
+    </message>
+    <message>
+        <source>data in shared memory</source>
+        <translation>Daten im gemeinsamen Speicher</translation>
+    </message>
+    <message>
+        <source>not installed</source>
+        <translation>nicht installiert</translation>
+    </message>
+    <message>
+        <source>enabled</source>
+        <translation>aktiviert</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>These figures belong to the server process that answered this page; a command-line script, another php-fpm pool or another engine has caches of its own.</source>
+        <translation>Diese Werte gehören zu dem Serverprozess, der diese Seite beantwortet hat; ein Kommandozeilenskript, ein anderer php-fpm-Pool oder eine andere Engine hat eigene Caches.</translation>
+    </message>
+    <message>
+        <source>Both can be emptied on</source>
+        <translation>Beide können geleert werden unter</translation>
+    </message>
+    <message>
+        <source>Setup &amp;gt; Caches</source>
+        <translation>Setup &amp;gt; Caches</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Engine</translation>
+    </message>
+    <message>
+        <source>It is the default engine ([ServerSettings] Engine), which exp:velocity start uses without --engine.</source>
+        <translation>Dies ist die Standard-Engine ([ServerSettings] Engine), die exp:velocity start ohne --engine verwendet.</translation>
+    </message>
+    <message>
+        <source>The default engine is %default; this one runs with %command.</source>
+        <translation>Die Standard-Engine ist %default; diese hier läuft mit %command.</translation>
+    </message>
+    <message>
+        <source>This server was not started by exp:velocity (it answers on another port than velocity.ini gives this engine), so the status below is limited to what the request itself shows.</source>
+        <translation>Dieser Server wurde nicht von exp:velocity gestartet (er antwortet auf einem anderen Port, als velocity.ini dieser Engine zuweist), daher beschränkt sich der Status unten auf das, was die Anfrage selbst zeigt.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>reachable from %reach</source>
+        <translation>erreichbar von %reach</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation>Prozess</translation>
+    </message>
+    <message>
+        <source>pid %pid, %processes process(es)</source>
+        <translation>PID %pid, %processes Prozess(e)</translation>
+    </message>
+    <message>
+        <source>Console log</source>
+        <translation>Konsolenprotokoll</translation>
+    </message>
+    <message>
+        <source>Configuration</source>
+        <translation>Konfiguration</translation>
+    </message>
+    <message>
+        <source>Views of the server</source>
+        <translation>Ansichten des Servers</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Ansicht</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>What it is</source>
+        <translation>Was es ist</translation>
+    </message>
+    <message>
+        <source>Who may open it</source>
+        <translation>Wer es öffnen darf</translation>
+    </message>
+    <message>
+        <source>Notes</source>
+        <translation>Hinweise</translation>
+    </message>
+    <message>
+        <source>Other engines running</source>
+        <translation>Weitere laufende Engines</translation>
+    </message>
+    <message>
+        <source>and</source>
+        <translation>und</translation>
+    </message>
+    <message>
+        <source>stop it with %command</source>
+        <translation>anhalten mit %command</translation>
+    </message>
+    <message>
+        <source>Started from this installation as well. A site is served by one engine; another one running is usually left from a test or a benchmark.</source>
+        <translation>Ebenfalls aus dieser Installation gestartet. Eine Website wird von einer Engine bedient; eine weitere laufende ist meist von einem Test oder einem Benchmark übrig geblieben.</translation>
+    </message>
+    <message>
+        <source>Phar App Engine</source>
+        <translation>Phar-App-Engine</translation>
+    </message>
+    <message>
+        <source>Loaded from</source>
+        <translation>Geladen aus</translation>
+    </message>
+    <message>
+        <source>The archive</source>
+        <translation>Das Archiv</translation>
+    </message>
+    <message>
+        <source>Individual files on disk &amp;mdash; the archive below is not being used, because the EXP_ENGINE_PHAR environment variable is not set</source>
+        <translation>Einzelne Dateien auf der Festplatte &amp;mdash; das Archiv unten wird nicht verwendet, weil die Umgebungsvariable EXP_ENGINE_PHAR nicht gesetzt ist</translation>
+    </message>
+    <message>
+        <source>Served by %server.</source>
+        <translation>Ausgeliefert von %server.</translation>
+    </message>
+    <message>
+        <source>To run from the files on disk again: %command.</source>
+        <translation>Um wieder aus den Dateien auf der Festplatte zu laufen: %command.</translation>
+    </message>
+    <message>
+        <source>To run from the archive: %command.</source>
+        <translation>Um aus dem Archiv zu laufen: %command.</translation>
+    </message>
+    <message>
+        <source>Installation root</source>
+        <translation>Wurzelverzeichnis der Installation</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Archiv</translation>
+    </message>
+    <message>
+        <source>%files files, %bytes bytes, built %built</source>
+        <translation>%files Dateien, %bytes Bytes, erstellt %built</translation>
+    </message>
+    <message>
+        <source>Archive on disk</source>
+        <translation>Archiv auf der Festplatte</translation>
+    </message>
+    <message>
+        <source>Archive was built from</source>
+        <translation>Das Archiv wurde erstellt aus</translation>
+    </message>
+    <message>
+        <source>Archive is current</source>
+        <translation>Archiv ist aktuell</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Warum</translation>
+    </message>
+    <message>
+        <source>To fix</source>
+        <translation>Behebung</translation>
+    </message>
+    <message>
+        <source>Nothing is running from the archive at the moment, so this is not affecting the site.</source>
+        <translation>Derzeit läuft nichts aus dem Archiv, daher wirkt sich dies nicht auf die Website aus.</translation>
+    </message>
+    <message>
+        <source>The site is running from this archive, so what is on disk is not what is being served.</source>
+        <translation>Die Website läuft aus diesem Archiv, daher entspricht das, was auf der Festplatte liegt, nicht dem, was ausgeliefert wird.</translation>
+    </message>
+    <message>
+        <source>Phar stream wrapper</source>
+        <translation>Phar-Stream-Wrapper</translation>
+    </message>
+    <message>
+        <source>Deliberate: with it registered, a file that is both a valid image and a valid archive can be executed through a phar:// path.</source>
+        <translation>Absichtlich: Ist er registriert, kann eine Datei, die zugleich ein gültiges Bild und ein gültiges Archiv ist, über einen phar://-Pfad ausgeführt werden.</translation>
+    </message>
+    <message>
+        <source>Writing archives (phar.readonly)</source>
+        <translation>Archive schreiben (phar.readonly)</translation>
+    </message>
+    <message>
+        <source>HTTP cache (role-aware)</source>
+        <translation>HTTP-Cache (rollenabhängig)</translation>
+    </message>
+    <message>
+        <source>Whole pages, per permission context</source>
+        <translation>Ganze Seiten, je Berechtigungskontext</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>deaktiviert</translation>
+    </message>
+    <message>
+        <source>Switch it on with Enabled=enabled in settings/httpcache.ini (an override); every page is rendered until then.</source>
+        <translation>Schalten Sie ihn mit Enabled=enabled in settings/httpcache.ini (einem Override) ein; bis dahin wird jede Seite neu erzeugt.</translation>
+    </message>
+    <message>
+        <source>enabled, nothing stored yet</source>
+        <translation>eingeschaltet, noch nichts gespeichert</translation>
+    </message>
+    <message>
+        <source>The first page requested on a cached siteaccess starts it.</source>
+        <translation>Die erste angeforderte Seite eines zwischengespeicherten Seitenzugangs startet ihn.</translation>
+    </message>
+    <message>
+        <source>No server has counted yet: hit counts need APCu in the PHP that serves the site.</source>
+        <translation>Noch hat kein Server gezählt: Trefferzahlen erfordern APCu in der PHP-Umgebung, die die Website ausliefert.</translation>
+    </message>
+    <message>
+        <source>Why requests were not served from the cache</source>
+        <translation>Warum Anfragen nicht aus dem Cache bedient wurden</translation>
+    </message>
+    <message>
+        <source>Purge every cached page?</source>
+        <translation>Alle zwischengespeicherten Seiten löschen?</translation>
+    </message>
+    <message>
+        <source>Purge all pages</source>
+        <translation>Alle Seiten löschen</translation>
+    </message>
+    <message>
+        <source>Remove dead entries</source>
+        <translation>Tote Einträge entfernen</translation>
+    </message>
+    <message>
+        <source>Reset counters</source>
+        <translation>Zähler zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Database queries</source>
+        <translation>Datenbankabfragen</translation>
+    </message>
+    <message>
+        <source>SQL statements per request</source>
+        <translation>SQL-Anweisungen pro Anfrage</translation>
+    </message>
+    <message>
+        <source>MongoDB: not an SQL engine</source>
+        <translation>MongoDB: keine SQL-Engine</translation>
+    </message>
+    <message>
+        <source>The query cache is for the SQL engines. The MongoDB driver keeps its own statement profile (var/tmp/mongo_profile.on).</source>
+        <translation>Der Query-Cache ist für die SQL-Engines gedacht. Der MongoDB-Treiber führt ein eigenes Anweisungsprofil (var/tmp/mongo_profile.on).</translation>
+    </message>
+    <message>
+        <source>profile on</source>
+        <translation>Profil ein</translation>
+    </message>
+    <message>
+        <source>profile off</source>
+        <translation>Profil aus</translation>
+    </message>
+    <message>
+        <source>Query cache</source>
+        <translation>Query-Cache</translation>
+    </message>
+    <message>
+        <source>settings/querycache.ini</source>
+        <translation>settings/querycache.ini</translation>
+    </message>
+    <message>
+        <source>%entries results held in APCu (%size) by this server</source>
+        <translation>%entries Ergebnisse in APCu (%size) auf diesem Server</translation>
+    </message>
+    <message>
+        <source>APCu is not available to this server: &quot;shared&quot; works as &quot;request&quot; here.</source>
+        <translation>APCu ist für diesen Server nicht verfügbar: &quot;shared&quot; arbeitet hier wie &quot;request&quot;.</translation>
+    </message>
+    <message>
+        <source>generation %generation</source>
+        <translation>Generation %generation</translation>
+    </message>
+    <message>
+        <source>last cleared %date</source>
+        <translation>zuletzt geleert %date</translation>
+    </message>
+    <message>
+        <source>%tables tables written since</source>
+        <translation>%tables Tabellen seitdem beschrieben</translation>
+    </message>
+    <message>
+        <source>no state file yet</source>
+        <translation>noch keine Statusdatei</translation>
+    </message>
+    <message>
+        <source>This server since %date: %requests requests, %hits hits, %misses misses</source>
+        <translation>Dieser Server seit %date: %requests Anfragen, %hits Treffer, %misses Fehlzugriffe</translation>
+    </message>
+    <message>
+        <source>%rate hit rate</source>
+        <translation>%rate Trefferquote</translation>
+    </message>
+    <message>
+        <source>%uncacheable not cacheable, %writes writes</source>
+        <translation>%uncacheable nicht zwischenspeicherbar, %writes Schreibvorgänge</translation>
+    </message>
+    <message>
+        <source>Last written</source>
+        <translation>Zuletzt beschrieben</translation>
+    </message>
+    <message>
+        <source>Clear the query cache</source>
+        <translation>Query-Cache leeren</translation>
+    </message>
+    <message>
+        <source>Reset the counters</source>
+        <translation>Zähler zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Over the last %n profiled requests: %statements statements, %repeats exact repeats (%repeat_pct), %db_ms in the database</source>
+        <translation>Über die letzten %n profilierten Anfragen: %statements Anweisungen, %repeats exakte Wiederholungen (%repeat_pct), %db_ms in der Datenbank</translation>
+    </message>
+    <message>
+        <source>a per-request memo would save %memo_ms, a shared query cache about %shared_ms</source>
+        <translation>ein Memo pro Anfrage würde %memo_ms sparen, ein gemeinsamer Abfrage-Cache etwa %shared_ms</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zeit</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Anfrage</translation>
+    </message>
+    <message>
+        <source>Statements</source>
+        <translation>Anweisungen</translation>
+    </message>
+    <message>
+        <source>Distinct</source>
+        <translation>Verschieden</translation>
+    </message>
+    <message>
+        <source>Repeats</source>
+        <translation>Wiederholungen</translation>
+    </message>
+    <message>
+        <source>In the database</source>
+        <translation>In der Datenbank</translation>
+    </message>
+    <message>
+        <source>Memo saves</source>
+        <translation>Memo spart</translation>
+    </message>
+    <message>
+        <source>Shared cache saves</source>
+        <translation>Gemeinsamer Cache spart</translation>
+    </message>
+    <message>
+        <source>On, and nothing profiled yet: open a few pages.</source>
+        <translation>Eingeschaltet, aber noch nichts protokolliert: Öffnen Sie einige Seiten.</translation>
+    </message>
+    <message>
+        <source>Switch the profile on to see how many statements each request runs, how many are exact repeats, and what a query cache would save.</source>
+        <translation>Schalten Sie das Profil ein, um zu sehen, wie viele Anweisungen jede Anfrage ausführt, wie viele davon exakte Wiederholungen sind und was ein Query-Cache einsparen würde.</translation>
+    </message>
+    <message>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/bc/6.0/sql-query-cache.md.</source>
+        <translation>Das Profil zählt die Anweisungen, die die Datenbank erreicht haben: Bei eingeschaltetem Query-Cache ist eine zwischengespeicherte Antwort nicht darin enthalten. &quot;Memo spart&quot; ist, was der Modus request einsparen würde, &quot;Gemeinsamer Cache spart&quot;, was der Modus shared einsparen würde (etwa 15 µs pro Antwort). Die Zähler gelten je Server, da jeder Server sein eigenes APCu hat. Das Protokoll ist var/tmp/sql_profile.log; siehe doc/bc/6.0/sql-query-cache.md.</translation>
+    </message>
+    <message>
+        <source>Switch the SQL profile off</source>
+        <translation>SQL-Profil ausschalten</translation>
+    </message>
+    <message>
+        <source>Switch the SQL profile on</source>
+        <translation>SQL-Profil einschalten</translation>
+    </message>
+    <message>
+        <source>Response cache (web server)</source>
+        <translation>Antwort-Cache (Webserver)</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>pages without a lifetime of their own are kept for %seconds seconds</source>
+        <translation>Seiten ohne eigene Lebensdauer werden %seconds Sekunden lang aufbewahrt</translation>
+    </message>
+    <message>
+        <source>only responses that bring their own max-age are kept; Exponential sends no-cache, so its pages are not</source>
+        <translation>nur Antworten mit eigenem max-age werden aufbewahrt; Exponential sendet no-cache, daher werden seine Seiten nicht aufbewahrt</translation>
+    </message>
+    <message>
+        <source>disabled &amp;mdash; every request is rendered</source>
+        <translation>deaktiviert &amp;mdash; jede Anfrage wird gerendert</translation>
+    </message>
+    <message>
+        <source>Hits</source>
+        <translation>Treffer</translation>
+    </message>
+    <message>
+        <source>%hits hits, %misses misses, %rate since the server started</source>
+        <translation>%hits Treffer, %misses Fehlzugriffe, %rate seit dem Start des Servers</translation>
+    </message>
+    <message>
+        <source>not available</source>
+        <translation>nicht verfügbar</translation>
+    </message>
+    <message>
+        <source>Shared memory (APCu)</source>
+        <translation>Gemeinsamer Speicher (APCu)</translation>
+    </message>
+    <message>
+        <source>configured, but APCu is not enabled for this PHP process (apc.enable_cli) -- entries are kept on disk only</source>
+        <translation>konfiguriert, aber APCu ist für diesen PHP-Prozess nicht eingeschaltet (apc.enable_cli) -- Einträge werden nur auf der Festplatte gehalten</translation>
+    </message>
+    <message>
+        <source>not used</source>
+        <translation>nicht verwendet</translation>
+    </message>
+    <message>
+        <source>available, but switched off for the response cache</source>
+        <translation>verfügbar, aber für den Antwort-Cache ausgeschaltet</translation>
+    </message>
+    <message>
+        <source>%pages pages, %size (entries up to %max_size; segment %segment, %free free)</source>
+        <translation>%pages Seiten, %size (Einträge bis %max_size; Segment %segment, %free frei)</translation>
+    </message>
+    <message>
+        <source>On disk</source>
+        <translation>Auf der Festplatte</translation>
+    </message>
+    <message>
+        <source>the directory does not exist yet or cannot be read</source>
+        <translation>das Verzeichnis existiert noch nicht oder kann nicht gelesen werden</translation>
+    </message>
+    <message>
+        <source>at least %files files, %size</source>
+        <translation>mindestens %files Dateien, %size</translation>
+    </message>
+    <message>
+        <source>%files files, %size</source>
+        <translation>%files Dateien, %size</translation>
+    </message>
+    <message>
+        <source>directories %mode</source>
+        <translation>Verzeichnisse %mode</translation>
+    </message>
+    <message>
+        <source>files %mode</source>
+        <translation>Dateien %mode</translation>
+    </message>
+    <message>
+        <source>Not cached for visitors carrying</source>
+        <translation>Nicht zwischengespeichert für Besucher mit</translation>
+    </message>
+    <message>
+        <source>matched as a prefix</source>
+        <translation>als Präfix verglichen</translation>
+    </message>
+    <message>
+        <source>no cookie -- signed-in visitors would be served from the cache</source>
+        <translation>kein Cookie -- angemeldete Besucher würden aus dem Cache bedient</translation>
+    </message>
+    <message>
+        <source>Further settings</source>
+        <translation>Weitere Einstellungen</translation>
+    </message>
+    <message>
+        <source>stale pages served while one request renders</source>
+        <translation>veraltete Seiten, die ausgeliefert werden, während eine Anfrage neu erzeugt</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nein</translation>
+    </message>
+    <message>
+        <source>not-found pages remembered</source>
+        <translation>gemerkte Nicht-gefunden-Seiten</translation>
+    </message>
+    <message>
+        <source>HTML minified</source>
+        <translation>HTML minimiert</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>expired files swept</source>
+        <translation>abgelaufene Dateien entfernt</translation>
+    </message>
+    <message>
+        <source>every %seconds s</source>
+        <translation>alle %seconds s</translation>
+    </message>
+    <message>
+        <source>nothing older than %seconds s</source>
+        <translation>nichts älter als %seconds s</translation>
+    </message>
+    <message>
+        <source>%speed MHz</source>
+        <translation>%speed MHz</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>Speicher</translation>
+    </message>
+    <message>
+        <source>Scripts</source>
+        <translation>Skripte</translation>
+    </message>
+    <message>
+        <source>Hit rate</source>
+        <translation>Trefferquote</translation>
+    </message>
+    <message>
+        <source>Interned strings</source>
+        <translation>Internierte Zeichenketten</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/maintenance</name>
+    <message>
+        <source>Maintenance</source>
+        <translation>Wartung</translation>
+    </message>
+    <message>
+        <source>The site is in maintenance mode.</source>
+        <translation>Die Website ist im Wartungsmodus.</translation>
+    </message>
+    <message>
+        <source>Visitors see the maintenance page (503); the administration stays reachable.</source>
+        <translation>Besucher sehen die Wartungsseite (503); die Administration bleibt erreichbar.</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Grund</translation>
+    </message>
+    <message>
+        <source>An installation is running</source>
+        <translation>Eine Installation läuft</translation>
+    </message>
+    <message>
+        <source>Maintenance window</source>
+        <translation>Wartungsfenster</translation>
+    </message>
+    <message>
+        <source>Since</source>
+        <translation>Seit</translation>
+    </message>
+    <message>
+        <source>Expected back</source>
+        <translation>Voraussichtlich zurück</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Nachricht</translation>
+    </message>
+    <message>
+        <source>Addresses that see the site</source>
+        <translation>Adressen, die die Website sehen</translation>
+    </message>
+    <message>
+        <source>The site is online.</source>
+        <translation>Die Website ist online.</translation>
+    </message>
+    <message>
+        <source>In maintenance mode every page request is answered with the maintenance page (503, never cached) before the settings or the database are used; images, styles and scripts are still served. Use it while you change the site, or it is switched on by the kickstarter while it installs.</source>
+        <translation>Im Wartungsmodus wird jede Seitenanfrage mit der Wartungsseite beantwortet (503, nie zwischengespeichert), bevor die Einstellungen oder die Datenbank verwendet werden; Bilder, Stylesheets und Skripte werden weiterhin ausgeliefert. Verwenden Sie ihn, während Sie die Website ändern; der Kickstarter schaltet ihn außerdem während der Installation ein.</translation>
+    </message>
+    <message>
+        <source>Message for visitors (optional)</source>
+        <translation>Nachricht für Besucher (optional)</translation>
+    </message>
+    <message>
+        <source>Expected duration in minutes (optional)</source>
+        <translation>Voraussichtliche Dauer in Minuten (optional)</translation>
+    </message>
+    <message>
+        <source>Addresses that still see the site (optional, comma separated)</source>
+        <translation>Adressen, die die Website weiterhin sehen (optional, durch Kommas getrennt)</translation>
+    </message>
+    <message>
+        <source>Let my own address (%ip) still see the site</source>
+        <translation>Meine eigene Adresse (%ip) sieht die Website weiterhin</translation>
+    </message>
+    <message>
+        <source>The administration stays reachable while the site is offline, so it can be switched off again here.</source>
+        <translation>Die Administration bleibt erreichbar, während die Website offline ist, sodass der Wartungsmodus hier wieder ausgeschaltet werden kann.</translation>
+    </message>
+    <message>
+        <source>Switch maintenance off</source>
+        <translation>Wartungsmodus ausschalten</translation>
+    </message>
+    <message>
+        <source>Switch maintenance on</source>
+        <translation>Wartungsmodus einschalten</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/operatorcode</name>
@@ -12448,6 +14649,129 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>\\return an array with the template operator name.</source>
         <translation>\\gibt ein Array mit dem Namen des Template Operators zurück.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/preload</name>
+    <message>
+        <source>Preload</source>
+        <translation>Vorladen</translation>
+    </message>
+    <message>
+        <source>Cannot determine the site url.</source>
+        <translation>Die URL der Website kann nicht ermittelt werden.</translation>
+    </message>
+    <message>
+        <source>SiteSettings/SiteURL is not set in site.ini, so there is nothing to warm.</source>
+        <translation>SiteSettings/SiteURL ist in site.ini nicht gesetzt, daher gibt es nichts vorzuwärmen.</translation>
+    </message>
+    <message>
+        <source>Requests every page of the site so the caches are warm before a visitor arrives. Start with the section pages, then follow links outwards.</source>
+        <translation>Ruft jede Seite der Website ab, damit die Caches vorgewärmt sind, bevor ein Besucher kommt. Beginnt mit den Bereichsseiten und folgt dann den Links nach außen.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Seite</translation>
+    </message>
+    <message>
+        <source>Starting pages</source>
+        <translation>Startseiten</translation>
+    </message>
+    <message>
+        <source>Site to warm</source>
+        <translation>Vorzuwärmende Website</translation>
+    </message>
+    <message>
+        <source>Page limit</source>
+        <translation>Seitenlimit</translation>
+    </message>
+    <message>
+        <source>Link depth</source>
+        <translation>Link-Tiefe</translation>
+    </message>
+    <message>
+        <source>Start preloading</source>
+        <translation>Vorladen starten</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation>Anhalten</translation>
+    </message>
+    <message>
+        <source>Idle. Press Start preloading to begin.</source>
+        <translation>Untätig. Klicken Sie auf Vorladen starten, um zu beginnen.</translation>
+    </message>
+    <message>
+        <source>No broken links were found.</source>
+        <translation>Es wurden keine defekten Links gefunden.</translation>
+    </message>
+    <message>
+        <source>%links broken link on %pages page</source>
+        <translation>%links defekter Link auf %pages Seite</translation>
+    </message>
+    <message>
+        <source>%links broken link on %pages pages</source>
+        <translation>%links defekter Link auf %pages Seiten</translation>
+    </message>
+    <message>
+        <source>%links broken links on %pages page</source>
+        <translation>%links defekte Links auf %pages Seite</translation>
+    </message>
+    <message>
+        <source>%links broken links on %pages pages</source>
+        <translation>%links defekte Links auf %pages Seiten</translation>
+    </message>
+    <message>
+        <source>Open each page in the right hand column, correct the link, then run this again.</source>
+        <translation>Öffnen Sie jede Seite in der rechten Spalte, korrigieren Sie den Link und führen Sie dies dann erneut aus.</translation>
+    </message>
+    <message>
+        <source>Broken link</source>
+        <translation>Defekter Link</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Linked from</source>
+        <translation>Verlinkt von</translation>
+    </message>
+    <message>
+        <source>no response</source>
+        <translation>keine Antwort</translation>
+    </message>
+    <message>
+        <source>a starting page; nothing on the site links to it</source>
+        <translation>eine Startseite; nichts auf der Website verlinkt darauf</translation>
+    </message>
+    <message>
+        <source>... and %count more</source>
+        <translation>... und %count weitere</translation>
+    </message>
+    <message>
+        <source>running…</source>
+        <translation>läuft…</translation>
+    </message>
+    <message>
+        <source>finished</source>
+        <translation>fertig</translation>
+    </message>
+    <message>
+        <source>stopped</source>
+        <translation>angehalten</translation>
+    </message>
+    <message>
+        <source>Could not open the stream. Check that you have the setup/preload policy.</source>
+        <translation>Der Datenstrom konnte nicht geöffnet werden. Prüfen Sie, ob Sie die Richtlinie setup/preload haben.</translation>
+    </message>
+    <message>
+        <source>Stream closed.</source>
+        <translation>Datenstrom geschlossen.</translation>
+    </message>
+    <message>
+        <source>Stopped by operator.</source>
+        <translation>Vom Bediener angehalten.</translation>
     </message>
 </context>
 <context>
@@ -12499,6 +14823,953 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, Exponential will generate a PHP framework for a new operator (which will be available for download).</source>
         <translation>Willkommen zum Assistent für Template Operatoren. Template Operatoren werden normalerweise benutzt um Templatevariablen zu manipulieren. Sie können aber auch dazu genutzt werden um Daten zu erzeugen oder auszulesen. Dieser Assistent wird Sie durch einige Schritte mit grundsätzlichen Auswahlmöglichkeiten führen. Wenn er beendet ist, wird Exponential eine Umgebung in PHP für einen neuen Operatoren erzeugen (der dann zum Download bereitsteht).</translation>
+    </message>
+    <message>
+        <source>Every point this system can be extended at is listed below: what it is for, where the code goes, and what registers it. Where there is a tool it opens from here; where there is not, what is written here is what you would otherwise have to find by reading the kernel.</source>
+        <translation>Unten ist jeder Punkt aufgeführt, an dem dieses System erweitert werden kann: wofür er gedacht ist, wohin der Code gehört und was ihn registriert. Wo es ein Werkzeug gibt, wird es von hier aus geöffnet; wo nicht, steht hier, was Sie sonst durch Lesen des Kernels herausfinden müssten.</translation>
+    </message>
+    <message>
+        <source>extension points written up</source>
+        <translation>beschriebene Erweiterungspunkte</translation>
+    </message>
+    <message>
+        <source>with a tool</source>
+        <translation>mit einem Werkzeug</translation>
+    </message>
+    <message>
+        <source>The rest are documented, and each is a tool waiting to be written.</source>
+        <translation>Die übrigen sind dokumentiert, und jeder davon ist ein Werkzeug, das noch geschrieben werden will.</translation>
+    </message>
+    <message>
+        <source>Showing %shown of them.</source>
+        <translation>%shown davon werden angezeigt.</translation>
+    </message>
+    <message>
+        <source>Extension point survey</source>
+        <translation>Übersicht der Erweiterungspunkte</translation>
+    </message>
+    <message>
+        <source>The list above is written by hand. This one is read off disk on every request: %settings settings that name a class across %ini ini files, %views module views, %repositories directories searched for handlers, and %contracts interfaces waiting to be implemented.</source>
+        <translation>Die Liste oben ist von Hand geschrieben. Diese hier wird bei jeder Anfrage von der Festplatte gelesen: %settings Einstellungen, die eine Klasse nennen, in %ini INI-Dateien, %views Modul-Views, %repositories Verzeichnisse, in denen nach Handlern gesucht wird, und %contracts Schnittstellen, die auf eine Implementierung warten.</translation>
+    </message>
+    <message>
+        <source>Type to narrow: a name, a setting, a class, a file</source>
+        <translation>Zum Eingrenzen tippen: ein Name, eine Einstellung, eine Klasse, eine Datei</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Leeren</translation>
+    </message>
+    <message>
+        <source>Nothing matches that.</source>
+        <translation>Nichts passt dazu.</translation>
+    </message>
+    <message>
+        <source>tool available</source>
+        <translation>Werkzeug verfügbar</translation>
+    </message>
+    <message>
+        <source>no tool yet</source>
+        <translation>noch kein Werkzeug</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Code</translation>
+    </message>
+    <message>
+        <source>Registered by</source>
+        <translation>Registriert durch</translation>
+    </message>
+    <message>
+        <source>Contract</source>
+        <translation>Vertrag</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>How things are registered</source>
+        <translation>Wie Dinge registriert werden</translation>
+    </message>
+    <message>
+        <source>Nothing here matches that. The survey beside this list is larger and searchable too.</source>
+        <translation>Nichts hier passt dazu. Die Übersicht neben dieser Liste ist größer und ebenfalls durchsuchbar.</translation>
+    </message>
+    <message>
+        <source>Everything</source>
+        <translation>Alles</translation>
+    </message>
+    <message>
+        <source>With a tool</source>
+        <translation>Mit einem Werkzeug</translation>
+    </message>
+    <message>
+        <source>Documentation only</source>
+        <translation>Nur Dokumentation</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Inhalt</translation>
+    </message>
+    <message>
+        <source>Templates and design</source>
+        <translation>Templates und Design</translation>
+    </message>
+    <message>
+        <source>Modules and views</source>
+        <translation>Module und Views</translation>
+    </message>
+    <message>
+        <source>Workflow, events and jobs</source>
+        <translation>Workflow, Ereignisse und Jobs</translation>
+    </message>
+    <message>
+        <source>Storage and infrastructure</source>
+        <translation>Speicherung und Infrastruktur</translation>
+    </message>
+    <message>
+        <source>Packaging and shop</source>
+        <translation>Pakete und Shop</translation>
+    </message>
+    <message>
+        <source>Users, access and language</source>
+        <translation>Benutzer, Zugriff und Sprache</translation>
+    </message>
+    <message>
+        <source>What content is made of, and how it is edited and stored.</source>
+        <translation>Woraus Inhalte bestehen und wie sie bearbeitet und gespeichert werden.</translation>
+    </message>
+    <message>
+        <source>What a template can call, and what a design can replace.</source>
+        <translation>Was ein Template aufrufen kann und was ein Design ersetzen kann.</translation>
+    </message>
+    <message>
+        <source>Addresses the site answers on, and who may reach them.</source>
+        <translation>Die Adressen, unter denen die Website antwortet, und wer sie erreichen darf.</translation>
+    </message>
+    <message>
+        <source>What happens when something is published, and what runs on its own.</source>
+        <translation>Was passiert, wenn etwas veröffentlicht wird, und was von selbst läuft.</translation>
+    </message>
+    <message>
+        <source>Where things are kept, and how they get there.</source>
+        <translation>Wo Dinge aufbewahrt werden und wie sie dorthin gelangen.</translation>
+    </message>
+    <message>
+        <source>Moving things between installations, and selling them.</source>
+        <translation>Dinge zwischen Installationen übertragen und sie verkaufen.</translation>
+    </message>
+    <message>
+        <source>Who gets in, what they may do, and in what language.</source>
+        <translation>Wer hineinkommt, was er darf und in welcher Sprache.</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datentyp</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Inhaltsklasse</translation>
+    </message>
+    <message>
+        <source>XML custom tag</source>
+        <translation>Benutzerdefinierter XML-Tag</translation>
+    </message>
+    <message>
+        <source>XML text input handler</source>
+        <translation>XML-Text-Eingabehandler</translation>
+    </message>
+    <message>
+        <source>XML text output handler</source>
+        <translation>XML-Text-Ausgabehandler</translation>
+    </message>
+    <message>
+        <source>Information collection behaviour</source>
+        <translation>Verhalten der Informationssammlung</translation>
+    </message>
+    <message>
+        <source>View cache clearing rules</source>
+        <translation>Regeln zum Leeren des View-Caches</translation>
+    </message>
+    <message>
+        <source>Asynchronous publishing filter</source>
+        <translation>Filter für asynchrones Veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Template operator</source>
+        <translation>Template-Operator</translation>
+    </message>
+    <message>
+        <source>Template fetch function</source>
+        <translation>Template-Fetch-Funktion</translation>
+    </message>
+    <message>
+        <source>Attribute operator</source>
+        <translation>Attribut-Operator</translation>
+    </message>
+    <message>
+        <source>Template function</source>
+        <translation>Template-Funktion</translation>
+    </message>
+    <message>
+        <source>Fetch alias</source>
+        <translation>Fetch-Alias</translation>
+    </message>
+    <message>
+        <source>Design extension</source>
+        <translation>Design-Extension</translation>
+    </message>
+    <message>
+        <source>Template override set</source>
+        <translation>Satz von Template-Overrides</translation>
+    </message>
+    <message>
+        <source>Icon theme in an extension</source>
+        <translation>Icon-Theme in einer Extension</translation>
+    </message>
+    <message>
+        <source>Module over existing tables</source>
+        <translation>Modul über vorhandenen Tabellen</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>View for an existing module</source>
+        <translation>View für ein vorhandenes Modul</translation>
+    </message>
+    <message>
+        <source>Policy function and limitation</source>
+        <translation>Richtlinienfunktion und Einschränkung</translation>
+    </message>
+    <message>
+        <source>REST provider</source>
+        <translation>REST-Provider</translation>
+    </message>
+    <message>
+        <source>REST route filter</source>
+        <translation>REST-Routenfilter</translation>
+    </message>
+    <message>
+        <source>Server-side ajax function</source>
+        <translation>Serverseitige Ajax-Funktion</translation>
+    </message>
+    <message>
+        <source>Workflow event type</source>
+        <translation>Workflow-Ereignistyp</translation>
+    </message>
+    <message>
+        <source>Trigger</source>
+        <translation>Trigger</translation>
+    </message>
+    <message>
+        <source>Notification event type</source>
+        <translation>Benachrichtigungs-Ereignistyp</translation>
+    </message>
+    <message>
+        <source>Notification handler</source>
+        <translation>Benachrichtigungshandler</translation>
+    </message>
+    <message>
+        <source>Cronjob script and part</source>
+        <translation>Cronjob-Skript und -Teil</translation>
+    </message>
+    <message>
+        <source>Kernel event listener</source>
+        <translation>Kernel-Ereignis-Listener</translation>
+    </message>
+    <message>
+        <source>Database handler</source>
+        <translation>Datenbankhandler</translation>
+    </message>
+    <message>
+        <source>Cluster file handler</source>
+        <translation>Cluster-Dateihandler</translation>
+    </message>
+    <message>
+        <source>DFS backend</source>
+        <translation>DFS-Backend</translation>
+    </message>
+    <message>
+        <source>DFS database backend</source>
+        <translation>DFS-Datenbank-Backend</translation>
+    </message>
+    <message>
+        <source>Binary file handler</source>
+        <translation>Binärdatei-Handler</translation>
+    </message>
+    <message>
+        <source>Search engine</source>
+        <translation>Suchmaschine</translation>
+    </message>
+    <message>
+        <source>Session handler</source>
+        <translation>Session-Handler</translation>
+    </message>
+    <message>
+        <source>Mail transport</source>
+        <translation>Mail-Transport</translation>
+    </message>
+    <message>
+        <source>Static cache handler</source>
+        <translation>Handler für den statischen Cache</translation>
+    </message>
+    <message>
+        <source>Image handler and aliases</source>
+        <translation>Bild-Handler und Aliase</translation>
+    </message>
+    <message>
+        <source>Compiled settings and view cache in Redis</source>
+        <translation>Kompilierte Einstellungen und View-Cache in Redis</translation>
+    </message>
+    <message>
+        <source>Package handler</source>
+        <translation>Paket-Handler</translation>
+    </message>
+    <message>
+        <source>Package creation handler</source>
+        <translation>Handler für die Paketerstellung</translation>
+    </message>
+    <message>
+        <source>Package installation handler</source>
+        <translation>Handler für die Paketinstallation</translation>
+    </message>
+    <message>
+        <source>Payment gateway</source>
+        <translation>Zahlungsgateway</translation>
+    </message>
+    <message>
+        <source>Payment gateway, transparent</source>
+        <translation>Zahlungsgateway, transparent</translation>
+    </message>
+    <message>
+        <source>VAT handler</source>
+        <translation>MwSt-Handler</translation>
+    </message>
+    <message>
+        <source>Shipping handler</source>
+        <translation>Versand-Handler</translation>
+    </message>
+    <message>
+        <source>Basket info handler</source>
+        <translation>Handler für Warenkorbinformationen</translation>
+    </message>
+    <message>
+        <source>Exchange rate handler</source>
+        <translation>Handler für Wechselkurse</translation>
+    </message>
+    <message>
+        <source>URL alias filter</source>
+        <translation>URL-Alias-Filter</translation>
+    </message>
+    <message>
+        <source>Mobile device filter</source>
+        <translation>Filter für Mobilgeräte</translation>
+    </message>
+    <message>
+        <source>REST pre routing filter</source>
+        <translation>REST-Filter vor dem Routing</translation>
+    </message>
+    <message>
+        <source>REST request filter</source>
+        <translation>REST-Anfragefilter</translation>
+    </message>
+    <message>
+        <source>REST result filter</source>
+        <translation>REST-Ergebnisfilter</translation>
+    </message>
+    <message>
+        <source>REST response filter</source>
+        <translation>REST-Antwortfilter</translation>
+    </message>
+    <message>
+        <source>REST prefix filter</source>
+        <translation>REST-Präfixfilter</translation>
+    </message>
+    <message>
+        <source>User login handler</source>
+        <translation>Handler für die Benutzeranmeldung</translation>
+    </message>
+    <message>
+        <source>Additional extension roots</source>
+        <translation>Zusätzliche Extension-Wurzeln</translation>
+    </message>
+    <message>
+        <source>Extension root filter</source>
+        <translation>Filter für Extension-Wurzeln</translation>
+    </message>
+    <message>
+        <source>Site extension</source>
+        <translation>Site-Extension</translation>
+    </message>
+    <message>
+        <source>Writing settings from code</source>
+        <translation>Einstellungen aus Code schreiben</translation>
+    </message>
+    <message>
+        <source>Siteaccess settings extension</source>
+        <translation>Siteaccess-Einstellungs-Extension</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation>Übersetzung</translation>
+    </message>
+    <message>
+        <source>RSS import handler</source>
+        <translation>RSS-Import-Handler</translation>
+    </message>
+    <message>
+        <source>A kind of value a content class attribute can hold, with its own editing, validation, storage and display.</source>
+        <translation>Eine Art von Wert, den ein Attribut einer Inhaltsklasse enthalten kann, mit eigener Bearbeitung, Validierung, Speicherung und Anzeige.</translation>
+    </message>
+    <message>
+        <source>A type of content: its attributes, their datatypes, and how an instance of it is named.</source>
+        <translation>Eine Art von Inhalt: seine Attribute, deren Datentypen und wie eine Instanz davon benannt wird.</translation>
+    </message>
+    <message>
+        <source>A tag authors can use in rich text, with its own attributes and its own template.</source>
+        <translation>Ein Tag, den Autoren in Rich Text verwenden können, mit eigenen Attributen und eigenem Template.</translation>
+    </message>
+    <message>
+        <source>What turns what an author typed into the xml a rich text attribute stores.</source>
+        <translation>Was das, was ein Autor eingegeben hat, in das XML umwandelt, das ein Rich-Text-Attribut speichert.</translation>
+    </message>
+    <message>
+        <source>What turns stored rich text into what a visitor sees.</source>
+        <translation>Was gespeicherten Rich Text in das umwandelt, was ein Besucher sieht.</translation>
+    </message>
+    <message>
+        <source>What happens when a visitor fills in a form built out of content: what the submission is called, whether it is kept, whether it is emailed, and what the visitor is shown afterwards. Matched per content class, so a poll and a contact form built the same way behave differently.</source>
+        <translation>Was passiert, wenn ein Besucher ein aus Inhalten gebautes Formular ausfüllt: wie die Einsendung heißt, ob sie aufbewahrt wird, ob sie per E-Mail verschickt wird und was dem Besucher danach angezeigt wird. Wird je Inhaltsklasse zugeordnet, sodass sich eine Umfrage und ein Kontaktformular, die gleich gebaut sind, unterschiedlich verhalten.</translation>
+    </message>
+    <message>
+        <source>Which other pages have to be rebuilt when one object is published. The default clears the object, its parents and what relates to it; a group named after a content class identifier says what else - a listing that has to change when a comment is posted, an object somewhere else entirely.</source>
+        <translation>Welche anderen Seiten neu erzeugt werden müssen, wenn ein Objekt veröffentlicht wird. Standardmäßig werden das Objekt, seine Eltern und alles, was damit in Beziehung steht, geleert; eine nach dem Bezeichner einer Inhaltsklasse benannte Gruppe sagt, was sonst noch - eine Liste, die sich ändern muss, wenn ein Kommentar gepostet wird, oder ein Objekt an ganz anderer Stelle.</translation>
+    </message>
+    <message>
+        <source>Decides whether a version is published in the request or handed to the queue. Publishing a large object blocks whoever pressed the button; a queue that takes everything makes small edits feel broken. This is where that line is drawn.</source>
+        <translation>Entscheidet, ob eine Version in der Anfrage veröffentlicht oder an die Warteschlange übergeben wird. Das Veröffentlichen eines großen Objekts blockiert denjenigen, der die Schaltfläche gedrückt hat; eine Warteschlange, die alles annimmt, lässt kleine Änderungen kaputt wirken. Hier wird diese Grenze gezogen.</translation>
+    </message>
+    <message>
+        <source>Something a template can pipe a value through: {$value|my_operator()}. One class may answer to many names, and what it promises the compiler decides whether it runs once at compile time or on every request for ever.</source>
+        <translation>Etwas, durch das ein Template einen Wert leiten kann: {$value|my_operator()}. Eine Klasse kann auf viele Namen hören, und was sie dem Compiler zusagt, entscheidet, ob sie einmal zur Kompilierzeit oder für immer bei jeder Anfrage läuft.</translation>
+    </message>
+    <message>
+        <source>Something a template can ask a module for: fetch( &apos;module&apos;, &apos;thing&apos;, hash( ... ) ).</source>
+        <translation>Etwas, das ein Template von einem Modul abfragen kann: fetch( &apos;module&apos;, &apos;thing&apos;, hash( ... ) ).</translation>
+    </message>
+    <message>
+        <source>An operator that applies to a content attribute of a particular datatype.</source>
+        <translation>Ein Operator, der auf ein Inhaltsattribut eines bestimmten Datentyps angewendet wird.</translation>
+    </message>
+    <message>
+        <source>Something a template calls rather than pipes through: {my_function arg=1}, optionally with a body it may draw none, one or many times. How {section} and {foreach} are built.</source>
+        <translation>Etwas, das ein Template aufruft, statt einen Wert hindurchzuleiten: {my_function arg=1}, optional mit einem Rumpf, den es keinmal, einmal oder mehrmals ausgeben darf. So sind {section} und {foreach} gebaut.</translation>
+    </message>
+    <message>
+        <source>A name for a fetch that is written out in full somewhere else, so templates can be short.</source>
+        <translation>Ein Name für ein Fetch, das an anderer Stelle vollständig ausgeschrieben ist, damit Templates kurz bleiben können.</translation>
+    </message>
+    <message>
+        <source>The templates, stylesheets and images a site is drawn with.</source>
+        <translation>Die Templates, Stylesheets und Bilder, mit denen eine Website dargestellt wird.</translation>
+    </message>
+    <message>
+        <source>A template used in place of another, for the content it matches and nothing else.</source>
+        <translation>Ein Template, das anstelle eines anderen verwendet wird, für den Inhalt, auf den es passt, und für nichts sonst.</translation>
+    </message>
+    <message>
+        <source>A set of icons an extension brings with it, searched before the ones that ship. The whole chain falls back: the current theme, then any additional themes, then the standard one; and within each, extension directories before share/icons. A missing icon takes the theme default rather than drawing a broken image.</source>
+        <translation>Ein Satz Icons, den eine Extension mitbringt und der vor den mitgelieferten durchsucht wird. Die ganze Kette fällt zurück: das aktuelle Theme, dann weitere Themes, dann das Standard-Theme; und innerhalb jedes Themes Extension-Verzeichnisse vor share/icons. Ein fehlendes Icon nimmt den Standard des Themes, statt ein kaputtes Bild zu zeigen.</translation>
+    </message>
+    <message>
+        <source>Administration and a template API for tables that already exist, here or on another database.</source>
+        <translation>Verwaltung und eine Template-API für Tabellen, die bereits existieren, hier oder in einer anderen Datenbank.</translation>
+    </message>
+    <message>
+        <source>A new address the site answers on, with its own views and its own policies.</source>
+        <translation>Eine neue Adresse, unter der die Website antwortet, mit eigenen Views und eigenen Richtlinien.</translation>
+    </message>
+    <message>
+        <source>One more thing an existing module can be asked to do.</source>
+        <translation>Eine weitere Aufgabe, die ein vorhandenes Modul übernehmen kann.</translation>
+    </message>
+    <message>
+        <source>A thing a role can be granted, and what it can be narrowed by.</source>
+        <translation>Etwas, das einer Rolle gewährt werden kann, und wodurch es eingeschränkt werden kann.</translation>
+    </message>
+    <message>
+        <source>A set of addresses answering outside the template system, for something else to call.</source>
+        <translation>Eine Gruppe von Adressen, die außerhalb des Template-Systems antworten, damit etwas anderes sie aufrufen kann.</translation>
+    </message>
+    <message>
+        <source>Something that inspects or changes a REST request before it is routed.</source>
+        <translation>Etwas, das eine REST-Anfrage prüft oder ändert, bevor sie geroutet wird.</translation>
+    </message>
+    <message>
+        <source>Something the browser can call and get json back from, without a page.</source>
+        <translation>Etwas, das der Browser aufrufen kann und das JSON zurückgibt, ohne eine Seite.</translation>
+    </message>
+    <message>
+        <source>A step a workflow can take when something is published, moved or removed.</source>
+        <translation>Ein Schritt, den ein Workflow ausführen kann, wenn etwas veröffentlicht, verschoben oder entfernt wird.</translation>
+    </message>
+    <message>
+        <source>The point in an operation where a workflow is given the chance to run.</source>
+        <translation>Die Stelle in einem Vorgang, an der ein Workflow die Gelegenheit bekommt zu laufen.</translation>
+    </message>
+    <message>
+        <source>A kind of thing people can be notified about.</source>
+        <translation>Eine Art von Dingen, über die Personen benachrichtigt werden können.</translation>
+    </message>
+    <message>
+        <source>What decides who is told, and how they are told.</source>
+        <translation>Was entscheidet, wer benachrichtigt wird und wie.</translation>
+    </message>
+    <message>
+        <source>Something that runs on its own, on a schedule, outside any request.</source>
+        <translation>Etwas, das von selbst nach Zeitplan läuft, außerhalb jeder Anfrage.</translation>
+    </message>
+    <message>
+        <source>Something called when the kernel reaches a named point, such as a request arriving.</source>
+        <translation>Etwas, das aufgerufen wird, wenn der Kernel eine benannte Stelle erreicht, etwa wenn eine Anfrage eintrifft.</translation>
+    </message>
+    <message>
+        <source>A kind of database the whole system can run on.</source>
+        <translation>Eine Art von Datenbank, auf der das ganze System laufen kann.</translation>
+    </message>
+    <message>
+        <source>Where files live when more than one server serves the same site. Everything the kernel reads or writes under var/ goes through this, so it is the widest reaching of the storage points and the one most worth extending from eZFSFileHandler rather than from the bare interface.</source>
+        <translation>Wo Dateien liegen, wenn mehr als ein Server dieselbe Website ausliefert. Alles, was der Kernel unter var/ liest oder schreibt, geht hier durch; es ist also der am weitesten reichende der Speicherpunkte und derjenige, den man am ehesten von eZFSFileHandler statt von der bloßen Schnittstelle aus erweitert.</translation>
+    </message>
+    <message>
+        <source>Where the DFS cluster handler puts the bytes: a mounted share, an object store, anywhere reachable. The index of what exists stays in the database; this only moves file contents.</source>
+        <translation>Wohin der DFS-Cluster-Handler die Bytes legt: eine eingehängte Freigabe, ein Objektspeicher, irgendetwas Erreichbares. Das Verzeichnis dessen, was existiert, bleibt in der Datenbank; dies verschiebt nur Dateiinhalte.</translation>
+    </message>
+    <message>
+        <source>The other half of DFS: the index of which files exist, how big they are and which are being generated. It is what stops two servers building the same cache entry at once, so it is the harder half to replace.</source>
+        <translation>Die andere Hälfte von DFS: das Verzeichnis, welche Dateien existieren, wie groß sie sind und welche gerade erzeugt werden. Es verhindert, dass zwei Server gleichzeitig denselben Cache-Eintrag bauen, und ist daher die schwerer zu ersetzende Hälfte.</translation>
+    </message>
+    <message>
+        <source>How an uploaded file is stored and handed back.</source>
+        <translation>Wie eine hochgeladene Datei gespeichert und wieder ausgegeben wird.</translation>
+    </message>
+    <message>
+        <source>What indexes content as it is published, and what answers when somebody searches.</source>
+        <translation>Was Inhalte beim Veröffentlichen indexiert und was antwortet, wenn jemand sucht.</translation>
+    </message>
+    <message>
+        <source>Where sessions are kept and how they are cleaned up.</source>
+        <translation>Wo Sessions aufbewahrt und wie sie bereinigt werden.</translation>
+    </message>
+    <message>
+        <source>How mail leaves the system.</source>
+        <translation>Wie E-Mails das System verlassen.</translation>
+    </message>
+    <message>
+        <source>What writes pages to disk so the web server can serve them without php.</source>
+        <translation>Was Seiten auf die Festplatte schreibt, damit der Webserver sie ohne PHP ausliefern kann.</translation>
+    </message>
+    <message>
+        <source>How an image is scaled and what sizes exist.</source>
+        <translation>Wie ein Bild skaliert wird und welche Größen es gibt.</translation>
+    </message>
+    <message>
+        <source>Two places the kernel will hand its caches to Redis or Valkey if something answers for them: the compiled ini cache, and the content view cache. Neither is an ini setting - the kernel asks whether a class exists and uses it if it does, so an installation without the extension behaves exactly as before.</source>
+        <translation>Zwei Stellen, an denen der Kernel seine Caches an Redis oder Valkey übergibt, wenn etwas für sie antwortet: der kompilierte INI-Cache und der View-Cache für Inhalte. Keines davon ist eine INI-Einstellung - der Kernel fragt, ob eine Klasse existiert, und verwendet sie, wenn ja; eine Installation ohne die Extension verhält sich also genau wie zuvor.</translation>
+    </message>
+    <message>
+        <source>A kind of thing that can be put in a package and taken out again.</source>
+        <translation>Eine Art von Dingen, die in ein Paket gelegt und wieder herausgenommen werden können.</translation>
+    </message>
+    <message>
+        <source>The steps the admin interface walks through when a package is made.</source>
+        <translation>Die Schritte, die die Administrationsoberfläche beim Erstellen eines Pakets durchläuft.</translation>
+    </message>
+    <message>
+        <source>What happens when a package is installed or taken back out.</source>
+        <translation>Was passiert, wenn ein Paket installiert oder wieder entfernt wird.</translation>
+    </message>
+    <message>
+        <source>Takes a basket to somewhere money can be paid and brings the answer back. The shop prices, taxes and delivers a basket and stops at taking money: this is the piece that does not ship. It is called twice for one order - once to send the buyer away, once when they return - and the two visits are joined by the payment row it stores in between.</source>
+        <translation>Bringt einen Warenkorb dorthin, wo Geld bezahlt werden kann, und bringt die Antwort zurück. Der Shop berechnet Preise, Steuern und Lieferung eines Warenkorbs und hört beim Kassieren auf: das ist das Teil, das nicht mitgeliefert wird. Es wird für eine Bestellung zweimal aufgerufen - einmal, um den Käufer wegzuschicken, einmal, wenn er zurückkehrt - und die beiden Besuche werden durch die Zahlungszeile verbunden, die es dazwischen speichert.</translation>
+    </message>
+    <message>
+        <source>Takes the payment without the buyer ever leaving the site: the card is exchanged for a token in the browser, and the charge is made server to server while they wait. The common shape now, and a different job from the redirect kind - one call decides the order, so there is no second visit in which to correct a wrong answer, and a timeout is a genuinely ambiguous state that has to be asked about rather than guessed at.</source>
+        <translation>Nimmt die Zahlung entgegen, ohne dass der Käufer die Website jemals verlässt: die Karte wird im Browser gegen ein Token getauscht, und die Belastung erfolgt von Server zu Server, während er wartet. Heute die übliche Form und eine andere Aufgabe als die mit Weiterleitung - ein einziger Aufruf entscheidet über die Bestellung, es gibt also keinen zweiten Besuch, um eine falsche Antwort zu korrigieren, und eine Zeitüberschreitung ist ein wirklich mehrdeutiger Zustand, der erfragt statt erraten werden muss.</translation>
+    </message>
+    <message>
+        <source>What rate of tax applies to what, for whom.</source>
+        <translation>Welcher Steuersatz für was und für wen gilt.</translation>
+    </message>
+    <message>
+        <source>What delivery costs, and what the options are.</source>
+        <translation>Was die Lieferung kostet und welche Optionen es gibt.</translation>
+    </message>
+    <message>
+        <source>What a basket line says about itself: name, price, and what it is.</source>
+        <translation>Was eine Warenkorbzeile über sich selbst sagt: Name, Preis und was sie ist.</translation>
+    </message>
+    <message>
+        <source>Where the rate between two currencies comes from.</source>
+        <translation>Woher der Kurs zwischen zwei Währungen kommt.</translation>
+    </message>
+    <message>
+        <source>Runs over every url this system generates, before it is stored, and may rewrite it. The nearest thing here to an output filter over addresses: every alias, for every object, in every language, passes through it as it is made.</source>
+        <translation>Läuft über jede URL, die dieses System erzeugt, bevor sie gespeichert wird, und darf sie umschreiben. Das, was hier einem Ausgabefilter für Adressen am nächsten kommt: jeder Alias, für jedes Objekt, in jeder Sprache, läuft beim Entstehen hier durch.</translation>
+    </message>
+    <message>
+        <source>Decides whether a request came from a phone and what to do about it. The one that ships matches user agent strings against patterns, which ages badly; a filter of its own can use a header a proxy sets or a hint the browser gives.</source>
+        <translation>Entscheidet, ob eine Anfrage von einem Telefon kam und was dann zu tun ist. Der mitgelieferte Filter vergleicht User-Agent-Zeichenketten mit Mustern, was schlecht altert; ein eigener Filter kann einen von einem Proxy gesetzten Header oder einen Hinweis des Browsers verwenden.</translation>
+    </message>
+    <message>
+        <source>The earliest place there is to see a REST request. Nothing has been matched and no controller chosen, so a request can be rewritten or turned away before anything has committed to answering it - and before authentication, so about a caller nobody has identified.</source>
+        <translation>Die früheste Stelle, an der eine REST-Anfrage zu sehen ist. Noch ist nichts zugeordnet und kein Controller gewählt, sodass eine Anfrage umgeschrieben oder abgewiesen werden kann, bevor sich irgendetwas zur Antwort verpflichtet hat - und vor der Authentifizierung, also über einen Aufrufer, den noch niemand identifiziert hat.</translation>
+    </message>
+    <message>
+        <source>Runs once the request object is built and the route is known, so it knows which controller is about to answer. Where a header is read, a parameter normalised, or a request refused on grounds that depend on what it asked for.</source>
+        <translation>Läuft, sobald das Anfrageobjekt gebaut und die Route bekannt ist; es weiß also, welcher Controller gleich antwortet. Hier wird ein Header gelesen, ein Parameter normalisiert oder eine Anfrage aus Gründen abgewiesen, die davon abhängen, was sie verlangt hat.</translation>
+    </message>
+    <message>
+        <source>Runs after the controller has worked out its answer and before it becomes json or xml. The result is still ordinary php here, so it can be added to or reshaped once for every format rather than in each renderer.</source>
+        <translation>Läuft, nachdem der Controller seine Antwort ermittelt hat und bevor sie zu JSON oder XML wird. Das Ergebnis ist hier noch gewöhnliches PHP, sodass es einmal für jedes Format ergänzt oder umgeformt werden kann statt in jedem Renderer.</translation>
+    </message>
+    <message>
+        <source>The output filter of the REST layer: the last thing that happens before an answer leaves. A header on every response, a body wrapped, a content type changed, without touching a controller.</source>
+        <translation>Der Ausgabefilter der REST-Schicht: das Letzte, was passiert, bevor eine Antwort hinausgeht. Ein Header in jeder Antwort, ein umhüllter Rumpf, ein geänderter Inhaltstyp, ohne einen Controller anzufassen.</translation>
+    </message>
+    <message>
+        <source>What decides where the api lives and which version of it a request asked for. The one that ships reads a regular expression; replacing it is how the api moves off /api/ or takes its version from somewhere other than the path.</source>
+        <translation>Was entscheidet, wo die API liegt und welche Version davon eine Anfrage verlangt hat. Der mitgelieferte liest einen regulären Ausdruck; ihn zu ersetzen ist der Weg, die API von /api/ wegzuverlegen oder ihre Version von woanders als aus dem Pfad zu nehmen.</translation>
+    </message>
+    <message>
+        <source>Where a user is checked against when they log in - a directory, another system, anything.</source>
+        <translation>Wogegen ein Benutzer bei der Anmeldung geprüft wird - ein Verzeichnisdienst, ein anderes System, irgendetwas.</translation>
+    </message>
+    <message>
+        <source>Where extensions may live, beyond extension/. A second root - extension_src/ is the usual name - separates what a project wrote from what it took from elsewhere, so ownership is readable off the directory layout rather than off a list somebody maintains. An extension of the same name in a later root shadows the one before it, which is how a vendor package is forked without being edited.</source>
+        <translation>Wo Extensions außer in extension/ liegen dürfen. Eine zweite Wurzel - extension_src/ ist der übliche Name - trennt, was ein Projekt selbst geschrieben hat, von dem, was es von anderswo übernommen hat, sodass die Zuständigkeit an der Verzeichnisstruktur ablesbar ist statt an einer Liste, die jemand pflegt. Eine gleichnamige Extension in einer späteren Wurzel verdeckt die frühere; so wird ein Herstellerpaket geforkt, ohne es zu bearbeiten.</translation>
+    </message>
+    <message>
+        <source>The last word on which roots are searched, in code rather than in settings. Redefining it is how a root is worked out at runtime - from an environment variable, from which machine this is, from what a deployment put on disk - rather than written into an ini that has to differ per installation.</source>
+        <translation>Das letzte Wort darüber, welche Wurzeln durchsucht werden, im Code statt in Einstellungen. Es neu zu definieren ist der Weg, eine Wurzel zur Laufzeit zu ermitteln - aus einer Umgebungsvariablen, daraus, welcher Rechner dies ist, aus dem, was ein Deployment auf die Festplatte gelegt hat - statt sie in eine INI zu schreiben, die sich je Installation unterscheiden muss.</translation>
+    </message>
+    <message>
+        <source>One extension carrying a whole site: its design, its siteaccesses, its grouped settings overrides, its modules and its code. What makes this possible rather than merely tidy is that an extension can now hold settings/siteaccess/&lt;name&gt;/ of its own, so the siteaccess travels with the thing that defines it instead of living in settings/ on one machine.</source>
+        <translation>Eine Extension, die eine ganze Website trägt: ihr Design, ihre Siteaccesses, ihre gruppierten Einstellungs-Overrides, ihre Module und ihren Code. Möglich statt nur ordentlich wird das dadurch, dass eine Extension jetzt ein eigenes settings/siteaccess/&lt;name&gt;/ enthalten kann, sodass der Siteaccess mit dem reist, was ihn definiert, statt auf einem Rechner in settings/ zu liegen.</translation>
+    </message>
+    <message>
+        <source>Changing an ini file from php rather than by hand: what the settings editor in the admin does, and what an installer or an upgrade script needs. Since 6.0 a direct access write keeps the comments and the ordering of the file it edits rather than rewriting it as bare key and value, so a generated change can be read afterwards by whoever has to maintain it.</source>
+        <translation>Eine INI-Datei aus PHP ändern statt von Hand: was der Einstellungseditor in der Administration tut und was ein Installer oder ein Upgrade-Skript braucht. Seit 6.0 behält ein direktes Schreiben die Kommentare und die Reihenfolge der bearbeiteten Datei, statt sie als bloße Schlüssel und Werte neu zu schreiben, sodass eine erzeugte Änderung später von dem gelesen werden kann, der sie pflegen muss.</translation>
+    </message>
+    <message>
+        <source>Settings that apply to one siteaccess only, kept with the extension rather than in settings/.</source>
+        <translation>Einstellungen, die nur für einen Siteaccess gelten, bei der Extension statt in settings/ aufbewahrt.</translation>
+    </message>
+    <message>
+        <source>The words the interface uses, in another language.</source>
+        <translation>Die Wörter der Oberfläche in einer anderen Sprache.</translation>
+    </message>
+    <message>
+        <source>What an imported feed item becomes once it has been fetched.</source>
+        <translation>Was aus einem importierten Feed-Eintrag wird, nachdem er abgerufen wurde.</translation>
+    </message>
+    <message>
+        <source>A class in a directory the kernel scans. The directory is named by a RepositoryDirectories setting, and the class is found by its file name.</source>
+        <translation>Eine Klasse in einem Verzeichnis, das der Kernel durchsucht. Das Verzeichnis wird durch eine Einstellung RepositoryDirectories benannt, und die Klasse wird über ihren Dateinamen gefunden.</translation>
+    </message>
+    <message>
+        <source>A class named by an ini setting and loaded through eZExtension::getHandlerClass. The setting gives an alias, the alias gives the class.</source>
+        <translation>Eine Klasse, die durch eine INI-Einstellung benannt und über eZExtension::getHandlerClass geladen wird. Die Einstellung gibt einen Alias an, der Alias die Klasse.</translation>
+    </message>
+    <message>
+        <source>A class reached through the extension autoload path, registered once in an ini and then available everywhere.</source>
+        <translation>Eine Klasse, die über den Autoload-Pfad der Extensions erreicht wird, einmal in einer INI registriert und dann überall verfügbar.</translation>
+    </message>
+    <message>
+        <source>A file in a place the kernel looks by name. Nothing registers it; being there is the registration.</source>
+        <translation>Eine Datei an einer Stelle, an der der Kernel nach Namen sucht. Nichts registriert sie; dort zu liegen ist die Registrierung.</translation>
+    </message>
+    <message>
+        <source>A template in a design, found through the design chain rather than by being named anywhere.</source>
+        <translation>Ein Template in einem Design, das über die Design-Kette gefunden wird statt dadurch, dass es irgendwo benannt ist.</translation>
+    </message>
+    <message>
+        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <translation>Nur Einstellungen. Es wird nichts als INI geschrieben, und das Verhalten ändert sich.</translation>
+    </message>
+    <message>
+        <source>A kernel class replaced by one of your own through the override autoload path. The heaviest of these mechanisms and the last resort: nothing registers the replacement by name, so two extensions replacing the same class is a fight neither of them knows it is in.</source>
+        <translation>Eine Kernel-Klasse, die über den Override-Autoload-Pfad durch eine eigene ersetzt wird. Der schwerste dieser Mechanismen und der letzte Ausweg: nichts registriert den Ersatz beim Namen, sodass zwei Extensions, die dieselbe Klasse ersetzen, in einem Kampf stehen, von dem keine weiß.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/content</name>
+    <message>
+        <source>Content extension wizard</source>
+        <translation>Assistent für Content-Extensions</translation>
+    </message>
+    <message>
+        <source>A content class built in the admin exists on the machine it was built on and nowhere else, and the only record of how it was made is whatever somebody wrote down. Written as a script it is reviewable, re-runnable, and the same on every installation it is run on. The same extension can carry custom tags for rich text and a translation.</source>
+        <translation>Eine im Admin-Bereich angelegte Content-Klasse existiert auf dem Rechner, auf dem sie angelegt wurde, und nirgendwo sonst, und die einzige Aufzeichnung darüber, wie sie entstanden ist, ist das, was jemand notiert hat. Als Skript geschrieben ist sie überprüfbar, erneut ausführbar und auf jeder Installation, auf der sie ausgeführt wird, gleich. Dieselbe Extension kann Custom-Tags für Rich-Text und eine Übersetzung mitbringen.</translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, clear the caches, and run the class script once.</source>
+        <translation>Geschrieben nach %target. Schalten Sie sie mit den Zeilen unten ein, leeren Sie die Caches und führen Sie das Klassenskript einmal aus.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation>Der Webserver kann nicht in extension/ schreiben, daher kann diese Seite Ihnen nur ein Archiv übergeben.</translation>
+    </message>
+    <message>
+        <source>What this extension carries</source>
+        <translation>Was diese Extension enthält</translation>
+    </message>
+    <message>
+        <source>The content class</source>
+        <translation>Die Content-Klasse</translation>
+    </message>
+    <message>
+        <source>The identifier cannot be changed once content exists, and neither can an attribute datatype. Getting those right first is worth more than getting them quickly.</source>
+        <translation>Der Bezeichner kann nicht mehr geändert werden, sobald Inhalte existieren, und ebenso wenig der Datentyp eines Attributs. Diese Angaben zuerst richtig zu machen ist wichtiger, als sie schnell zu machen.</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Bezeichner</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Class group</source>
+        <translation>Klassengruppe</translation>
+    </message>
+    <message>
+        <source>Without a group the class exists and appears nowhere.</source>
+        <translation>Ohne Gruppe existiert die Klasse, erscheint aber nirgends.</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attribute</translation>
+    </message>
+    <message>
+        <source>One per line: identifier, datatype, name, then any of required, nosearch, collect, notranslate.</source>
+        <translation>Eine pro Zeile: Bezeichner, Datentyp, Name, dann beliebige von required, nosearch, collect, notranslate.</translation>
+    </message>
+    <message>
+        <source>Object name pattern</source>
+        <translation>Objekt Namensschema</translation>
+    </message>
+    <message>
+        <source>What every object of this class is called. The name ends up in the url, and changing this later renames nothing that already exists.</source>
+        <translation>Wie jedes Objekt dieser Klasse heißt. Der Name landet in der URL, und eine spätere Änderung benennt nichts um, was bereits existiert.</translation>
+    </message>
+    <message>
+        <source>As the script will make them</source>
+        <translation>So, wie das Skript sie anlegen wird</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datentyp</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Merkmale</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>Erforderlich</translation>
+    </message>
+    <message>
+        <source>searchable</source>
+        <translation>durchsuchbar</translation>
+    </message>
+    <message>
+        <source>collects</source>
+        <translation>sammelt</translation>
+    </message>
+    <message>
+        <source>not translatable</source>
+        <translation>Nicht übersetzbar</translation>
+    </message>
+    <message>
+        <source>Datatypes on this installation</source>
+        <translation>Datentypen auf dieser Installation</translation>
+    </message>
+    <message>
+        <source>Custom tags</source>
+        <translation>Custom-Tags</translation>
+    </message>
+    <message>
+        <source>One per line: a name, a colon, then its attributes. Add the word inline for a tag that sits inside a paragraph rather than replacing one.</source>
+        <translation>Einer pro Zeile: ein Name, ein Doppelpunkt, dann seine Attribute. Fügen Sie das Wort inline hinzu für einen Tag, der innerhalb eines Absatzes steht, statt einen zu ersetzen.</translation>
+    </message>
+    <message>
+        <source>A template is written for each, and the ini that allows it. Anything not listed as an attribute cannot be set at all, which is the only validation a custom tag has.</source>
+        <translation>Für jeden wird ein Template geschrieben sowie die INI-Datei, die ihn erlaubt. Was nicht als Attribut aufgeführt ist, kann überhaupt nicht gesetzt werden; das ist die einzige Validierung, die ein Custom-Tag hat.</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation>Übersetzung</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Örtlichkeit</translation>
+    </message>
+    <message>
+        <source>Three letters, a dash, two letters.</source>
+        <translation>Drei Buchstaben, ein Bindestrich, zwei Buchstaben.</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Texte</translation>
+    </message>
+    <message>
+        <source>One per line: the context, a vertical bar, then the English. Every one is written unfinished, so the file changes nothing until it is filled in.</source>
+        <translation>Einer pro Zeile: der Kontext, ein senkrechter Strich, dann der englische Text. Jeder wird als unfertig geschrieben, daher ändert die Datei nichts, bis sie ausgefüllt ist.</translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation>Die Extension</translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation>Name der Extension</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation>Composer-Vendor</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>What else goes in it</source>
+        <translation>Was sonst noch hineinkommt</translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Then, once</source>
+        <translation>Dann, einmalig</translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation>Jede Datei, bevor sie geschrieben wird</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Alle öffnen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines Zeilen, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation>In extension/ anlegen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Als ZIP herunterladen</translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation>Vorschau aktualisieren</translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation>Zurück zu den RAD-Werkzeugen</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Inhaltsklasse</translation>
+    </message>
+    <message>
+        <source>XML custom tag</source>
+        <translation>Benutzerdefinierter XML-Tag</translation>
+    </message>
+    <message>
+        <source>The shape of a kind of content, written as a script.</source>
+        <translation>Die Form einer Inhaltsart, als Skript geschrieben.</translation>
+    </message>
+    <message>
+        <source>A tag authors can use in rich text.</source>
+        <translation>Ein Tag, den Autoren in Rich Text verwenden können.</translation>
+    </message>
+    <message>
+        <source>The strings of this installation in another language.</source>
+        <translation>Die Zeichenketten dieser Installation in einer anderen Sprache.</translation>
+    </message>
+    <message>
+        <source>A class built in the admin exists on the machine it was built on and nowhere else, and the only record of how it was made is whatever somebody wrote down. As a script it is reviewable, re-runnable, and the same everywhere it is run.</source>
+        <translation>Eine in der Administration gebaute Klasse existiert auf dem Rechner, auf dem sie gebaut wurde, und nirgends sonst, und der einzige Nachweis, wie sie entstanden ist, ist das, was jemand aufgeschrieben hat. Als Skript ist sie prüfbar, wiederholt ausführbar und überall gleich, wo sie ausgeführt wird.</translation>
+    </message>
+    <message>
+        <source>Rich text allows a &lt;custom&gt; tag with a name on it. Each name is a tag of its own with its own attributes and its own template, which is how a warning box, a pull quote or an embedded thing gets into content without a datatype or a module.</source>
+        <translation>Rich Text erlaubt einen &lt;custom&gt;-Tag mit einem Namen. Jeder Name ist ein eigener Tag mit eigenen Attributen und eigenem Template; so gelangen ein Warnkasten, ein Zitat oder etwas Eingebettetes in den Inhalt, ohne Datentyp und ohne Modul.</translation>
+    </message>
+    <message>
+        <source>Every string in a template and in the kernel is wrapped in a translation call with a context and a source. A translation file answers those, and one that answers none of them is still worth shipping: it is the list of what there is to translate.</source>
+        <translation>Jede Zeichenkette in einem Template und im Kernel steht in einem Übersetzungsaufruf mit einem Kontext und einem Quelltext. Eine Übersetzungsdatei beantwortet diese, und eine, die keinen davon beantwortet, lohnt sich trotzdem auszuliefern: sie ist die Liste dessen, was es zu übersetzen gibt.</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registrierung</translation>
+    </message>
+    <message>
+        <source>content.ini for the custom tags, site.ini for the translations, and design.ini so the templates are found. Without the last one a custom tag is allowed and draws nothing.</source>
+        <translation>content.ini für die benutzerdefinierten Tags, site.ini für die Übersetzungen und design.ini, damit die Templates gefunden werden. Ohne das Letzte ist ein benutzerdefinierter Tag erlaubt und zeigt nichts an.</translation>
+    </message>
+    <message>
+        <source>What is in it, how to run the class script, and what to do before it is run on a site with content on it.</source>
+        <translation>Was darin enthalten ist, wie das Klassenskript ausgeführt wird und was zu tun ist, bevor es auf einer Website mit Inhalten ausgeführt wird.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>Die gepackte Beschreibung der Extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>Damit die Extension beim Namen angefordert statt hineinkopiert werden kann.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
 </context>
 <context>
@@ -12578,6 +15849,3978 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Class constant name</source>
         <translation>Klassen Konstantenname</translation>
+    </message>
+    <message>
+        <source>Datatype wizard</source>
+        <translation>Datentyp-Assistent</translation>
+    </message>
+    <message>
+        <source>A datatype is a kind of value a content class attribute can hold, with its own editing field, its own validation, its own storage and its own display. eZDataType declares over ninety methods; which of them a datatype needs depends entirely on what it is for. Say what it has to do below and only those are written.</source>
+        <translation>Ein Datentyp ist eine Art von Wert, den ein Attribut einer Content-Klasse aufnehmen kann, mit eigenem Eingabefeld, eigener Validierung, eigener Speicherung und eigener Darstellung. eZDataType deklariert über neunzig Methoden; welche davon ein Datentyp braucht, hängt ganz davon ab, wofür er gedacht ist. Geben Sie unten an, was er leisten muss, dann werden nur diese geschrieben.</translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, regenerate the extension autoloads, and clear the caches.</source>
+        <translation>Geschrieben nach %target. Schalten Sie sie mit den Zeilen unten ein, erzeugen Sie die Autoloads der Extensions neu und leeren Sie die Caches.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation>Der Webserver kann nicht in extension/ schreiben, daher kann diese Seite Ihnen nur ein Archiv übergeben.</translation>
+    </message>
+    <message>
+        <source>%methods methods</source>
+        <translation>%methods Methoden</translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation>Dateien</translation>
+    </message>
+    <message>
+        <source>%count datatypes are already installed on this site.</source>
+        <translation>Auf dieser Website sind bereits %count Datentypen installiert.</translation>
+    </message>
+    <message>
+        <source>The datatype</source>
+        <translation>Der Datentyp</translation>
+    </message>
+    <message>
+        <source>The identifier goes in the database against every attribute of this type, in every ini that mentions it, and in the name of the file the kernel looks for. It cannot be changed once content exists.</source>
+        <translation>Der Bezeichner wird in der Datenbank bei jedem Attribut dieses Typs gespeichert, in jeder INI-Datei, die ihn nennt, und im Namen der Datei, nach der der Kernel sucht. Er kann nicht mehr geändert werden, sobald Inhalte existieren.</translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation>Name der Extension</translation>
+    </message>
+    <message>
+        <source>Datatype identifier</source>
+        <translation>Bezeichner des Datentyps</translation>
+    </message>
+    <message>
+        <source>Lower case letters and digits only.</source>
+        <translation>Nur Kleinbuchstaben und Ziffern.</translation>
+    </message>
+    <message>
+        <source>Class name</source>
+        <translation>Klassenname</translation>
+    </message>
+    <message>
+        <source>Name in the class editor</source>
+        <translation>Name im Klasseneditor</translation>
+    </message>
+    <message>
+        <source>Group it is listed under</source>
+        <translation>Gruppe, unter der er aufgeführt wird</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation>Composer-Vendor</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>What it has to do</source>
+        <translation>Was er leisten muss</translation>
+    </message>
+    <message>
+        <source>Each of these is a group of methods that only make sense together. Turning one on writes all of them, each with a note saying what the kernel calls it for. Leaving one off is the honest state for most of them in most datatypes.</source>
+        <translation>Jede dieser Optionen ist eine Gruppe von Methoden, die nur zusammen sinnvoll sind. Wird eine eingeschaltet, werden alle geschrieben, jede mit einem Hinweis, wofür der Kernel sie aufruft. Die meisten ausgeschaltet zu lassen, ist bei den meisten Datentypen der ehrliche Zustand.</translation>
+    </message>
+    <message>
+        <source>+%count methods</source>
+        <translation>+%count Methoden</translation>
+    </message>
+    <message>
+        <source>Where the value lives</source>
+        <translation>Wo der Wert gespeichert wird</translation>
+    </message>
+    <message>
+        <source>An attribute is one row in ezcontentobject_attribute. That row has five columns a datatype may use and no others. A datatype needing more keeps a table of its own and puts the key in one of these.</source>
+        <translation>Ein Attribut ist eine Zeile in ezcontentobject_attribute. Diese Zeile hat fünf Spalten, die ein Datentyp verwenden darf, und keine weiteren. Ein Datentyp, der mehr braucht, führt eine eigene Tabelle und legt den Schlüssel in einer dieser Spalten ab.</translation>
+    </message>
+    <message>
+        <source>Class settings</source>
+        <translation>Klasseneinstellungen</translation>
+    </message>
+    <message>
+        <source>Settings an editor chooses once, when the attribute is added to a content class: a maximum length, a default, a folder to browse from. Name the ones this datatype keeps and they become constants in the class and fields in the settings form. Leave a box empty to leave that column alone.</source>
+        <translation>Einstellungen, die ein Redakteur einmal wählt, wenn das Attribut einer Content-Klasse hinzugefügt wird: eine Höchstlänge, ein Standardwert, ein Ordner, ab dem gesucht wird. Nennen Sie die, die dieser Datentyp speichert, dann werden sie zu Konstanten in der Klasse und zu Feldern im Einstellungsformular. Lassen Sie ein Feld leer, um diese Spalte unberührt zu lassen.</translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation>Was hineinkommt</translation>
+    </message>
+    <message>
+        <source>What will be written</source>
+        <translation>Was geschrieben wird</translation>
+    </message>
+    <message>
+        <source>Every one of these is a method the kernel calls. Each is generated with this note beside it and returns something that leaves the system working; none of them does anything useful until it is written.</source>
+        <translation>Jede davon ist eine Methode, die der Kernel aufruft. Jede wird mit diesem Hinweis erzeugt und gibt etwas zurück, das das System funktionsfähig lässt; keine davon tut etwas Nützliches, bevor sie ausgeschrieben ist.</translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php. The extension brings its own content.ini naming the datatype and its own design.ini naming the templates - without that second one the datatype works and draws nothing.</source>
+        <translation>Fügen Sie dies in settings/override/site.ini.append.php ein. Die Extension bringt eine eigene content.ini mit, die den Datentyp nennt, und eine eigene design.ini, die die Templates nennt - ohne die zweite funktioniert der Datentyp, zeigt aber nichts an.</translation>
+    </message>
+    <message>
+        <source>Then</source>
+        <translation>Dann</translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation>Jede Datei, bevor sie geschrieben wird</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Alle öffnen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines Zeilen, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation>In extension/ anlegen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Als ZIP herunterladen</translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation>Vorschau aktualisieren</translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation>Zurück zu den RAD-Werkzeugen</translation>
+    </message>
+    <message>
+        <source>Editing</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Default value</source>
+        <translation>Standardwert</translation>
+    </message>
+    <message>
+        <source>Naming objects</source>
+        <translation>Objekte benennen</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Durchsuchbar</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sortierbar</translation>
+    </message>
+    <message>
+        <source>Text in and out</source>
+        <translation>Text ein und aus</translation>
+    </message>
+    <message>
+        <source>Information collector</source>
+        <translation>Informationssammler</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Dateien</translation>
+    </message>
+    <message>
+        <source>Simple string insertion</source>
+        <translation>Einfaches Einfügen aus Zeichenketten</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakete</translation>
+    </message>
+    <message>
+        <source>Version differences</source>
+        <translation>Unterschiede zwischen Versionen</translation>
+    </message>
+    <message>
+        <source>Buttons of its own</source>
+        <translation>Eigene Schaltflächen</translation>
+    </message>
+    <message>
+        <source>On publish</source>
+        <translation>Beim Veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Cleaning up</source>
+        <translation>Aufräumen</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Übersetzbar</translation>
+    </message>
+    <message>
+        <source>Relates to other objects</source>
+        <translation>Bezieht sich auf andere Objekte</translation>
+    </message>
+    <message>
+        <source>Batch initialisation</source>
+        <translation>Initialisierung in einem Durchgang</translation>
+    </message>
+    <message>
+        <source>Read what an editor typed, check it, and store it.</source>
+        <translation>Lesen, was ein Redakteur eingegeben hat, es prüfen und speichern.</translation>
+    </message>
+    <message>
+        <source>Settings an editor chooses once, when the attribute is added to a content class.</source>
+        <translation>Einstellungen, die ein Redakteur einmal wählt, wenn das Attribut einer Inhaltsklasse hinzugefügt wird.</translation>
+    </message>
+    <message>
+        <source>What a new attribute holds before anybody has typed anything.</source>
+        <translation>Was ein neues Attribut enthält, bevor jemand etwas eingegeben hat.</translation>
+    </message>
+    <message>
+        <source>What an object is called when this attribute is its name.</source>
+        <translation>Wie ein Objekt heißt, wenn dieses Attribut sein Name ist.</translation>
+    </message>
+    <message>
+        <source>Let what is in this attribute be found by a search.</source>
+        <translation>Den Inhalt dieses Attributs über eine Suche auffindbar machen.</translation>
+    </message>
+    <message>
+        <source>Let a listing be sorted by this attribute.</source>
+        <translation>Eine Liste nach diesem Attribut sortieren lassen.</translation>
+    </message>
+    <message>
+        <source>Turn the value into one line of text, and read it back.</source>
+        <translation>Den Wert in eine Textzeile umwandeln und wieder einlesen.</translation>
+    </message>
+    <message>
+        <source>Let a visitor fill this in on a published page, without editing the content.</source>
+        <translation>Einen Besucher dies auf einer veröffentlichten Seite ausfüllen lassen, ohne den Inhalt zu bearbeiten.</translation>
+    </message>
+    <message>
+        <source>Accept an uploaded file, and hand it back on download.</source>
+        <translation>Eine hochgeladene Datei annehmen und beim Download wieder ausgeben.</translation>
+    </message>
+    <message>
+        <source>Let a script set the value from one string, without a form.</source>
+        <translation>Ein Skript den Wert aus einer Zeichenkette setzen lassen, ohne Formular.</translation>
+    </message>
+    <message>
+        <source>Travel between installations inside a package.</source>
+        <translation>Innerhalb eines Pakets zwischen Installationen reisen.</translation>
+    </message>
+    <message>
+        <source>Show what changed between two versions of an attribute.</source>
+        <translation>Zeigen, was sich zwischen zwei Versionen eines Attributs geändert hat.</translation>
+    </message>
+    <message>
+        <source>Add a button inside the editing field that does something without leaving the form.</source>
+        <translation>Eine Schaltfläche im Bearbeitungsfeld hinzufügen, die etwas tut, ohne das Formular zu verlassen.</translation>
+    </message>
+    <message>
+        <source>Do something when the object is published, not when it is saved.</source>
+        <translation>Etwas tun, wenn das Objekt veröffentlicht wird, nicht wenn es gespeichert wird.</translation>
+    </message>
+    <message>
+        <source>Remove whatever the attribute left elsewhere when it goes.</source>
+        <translation>Entfernen, was das Attribut anderswo hinterlassen hat, wenn es verschwindet.</translation>
+    </message>
+    <message>
+        <source>Hold a different value per language.</source>
+        <translation>Je Sprache einen anderen Wert halten.</translation>
+    </message>
+    <message>
+        <source>Say that this attribute points at other content.</source>
+        <translation>Angeben, dass dieses Attribut auf andere Inhalte verweist.</translation>
+    </message>
+    <message>
+        <source>Fill in the new attribute on existing content in one statement.</source>
+        <translation>Das neue Attribut bei vorhandenen Inhalten mit einer Anweisung füllen.</translation>
+    </message>
+    <message>
+        <source>Without this the attribute can be added to a class and will never hold anything. Everything else here is optional; this is not.</source>
+        <translation>Ohne dies kann das Attribut einer Klasse hinzugefügt werden und wird nie etwas enthalten. Alles andere hier ist optional; dies nicht.</translation>
+    </message>
+    <message>
+        <source>A maximum length, a default value, which folder to browse from. Chosen in the class editor and read by every object of that class.</source>
+        <translation>Eine Höchstlänge, ein Standardwert, von welchem Ordner aus gesucht wird. Im Klasseneditor gewählt und von jedem Objekt dieser Klasse gelesen.</translation>
+    </message>
+    <message>
+        <source>Runs when a new version of an object is made. Without it a new attribute starts empty, which is right for some datatypes and wrong for others.</source>
+        <translation>Läuft, wenn eine neue Version eines Objekts erstellt wird. Ohne dies beginnt ein neues Attribut leer, was für manche Datentypen richtig und für andere falsch ist.</translation>
+    </message>
+    <message>
+        <source>Content classes name their objects from a pattern of attributes. This is what this datatype contributes to that name.</source>
+        <translation>Inhaltsklassen benennen ihre Objekte nach einem Muster aus Attributen. Dies ist, was dieser Datentyp zu diesem Namen beiträgt.</translation>
+    </message>
+    <message>
+        <source>The search engine asks every attribute for something to index. An attribute that answers nothing is invisible to search, however visible it is on the page.</source>
+        <translation>Die Suchmaschine fragt jedes Attribut nach etwas zum Indexieren. Ein Attribut, das nichts antwortet, ist für die Suche unsichtbar, wie sichtbar es auf der Seite auch ist.</translation>
+    </message>
+    <message>
+        <source>Sorting happens in the database, over one column, so the value has to be reduced to something a column can order. That reduction is what these two methods are.</source>
+        <translation>Sortiert wird in der Datenbank, über eine Spalte, daher muss der Wert auf etwas reduziert werden, das eine Spalte ordnen kann. Diese Reduktion sind die beiden Methoden.</translation>
+    </message>
+    <message>
+        <source>What the command line import and export use, what a package carries, and what a script setting content in bulk goes through. Cheap to write and the first thing missed.</source>
+        <translation>Was der Import und Export auf der Kommandozeile verwenden, was ein Paket transportiert und was ein Skript durchläuft, das Inhalte in großer Menge setzt. Schnell geschrieben und das Erste, was fehlt.</translation>
+    </message>
+    <message>
+        <source>This is how a poll, a contact form or a booking works: the attribute is part of the content, but what a visitor types is stored against the content rather than in it.</source>
+        <translation>So funktioniert eine Umfrage, ein Kontaktformular oder eine Buchung: das Attribut ist Teil des Inhalts, aber was ein Besucher eingibt, wird zum Inhalt statt in ihm gespeichert.</translation>
+    </message>
+    <message>
+        <source>Uploads arrive through three doors: a form, a path on disk, and a string. A datatype that takes files should answer all three, or it works in the editor and not from a script.</source>
+        <translation>Uploads kommen durch drei Türen: ein Formular, ein Pfad auf der Festplatte und eine Zeichenkette. Ein Datentyp, der Dateien annimmt, sollte alle drei bedienen, sonst funktioniert er im Editor und nicht aus einem Skript.</translation>
+    </message>
+    <message>
+        <source>The cheapest way to make a datatype usable from the command line and from an import.</source>
+        <translation>Der günstigste Weg, einen Datentyp von der Kommandozeile und aus einem Import heraus nutzbar zu machen.</translation>
+    </message>
+    <message>
+        <source>A package carries content classes and objects between installations. Without these, an attribute of this type arrives empty on the other side - and nothing reports it.</source>
+        <translation>Ein Paket transportiert Inhaltsklassen und Objekte zwischen Installationen. Ohne diese kommt ein Attribut dieses Typs auf der anderen Seite leer an - und nichts meldet es.</translation>
+    </message>
+    <message>
+        <source>What the version comparison screen draws. Without it the screen says the attribute changed and not how.</source>
+        <translation>Was die Ansicht für den Versionsvergleich zeichnet. Ohne dies sagt die Ansicht, dass sich das Attribut geändert hat, aber nicht wie.</translation>
+    </message>
+    <message>
+        <source>Adding a row, browsing for an object, clearing a value: anything that changes the attribute while it is being edited and before it is stored.</source>
+        <translation>Eine Zeile hinzufügen, nach einem Objekt suchen, einen Wert leeren: alles, was das Attribut während der Bearbeitung und vor dem Speichern ändert.</translation>
+    </message>
+    <message>
+        <source>A draft is saved many times and published once. Anything that should happen once - sending, indexing elsewhere, telling another system - belongs here and not in storeObjectAttribute().</source>
+        <translation>Ein Entwurf wird oft gespeichert und einmal veröffentlicht. Alles, was einmal geschehen soll - versenden, anderswo indexieren, einem anderen System Bescheid geben - gehört hierher und nicht in storeObjectAttribute().</translation>
+    </message>
+    <message>
+        <source>Only needed by a datatype that keeps something outside its own row: a table, a file, a row somewhere else. Without it, deleting content leaves it behind for ever.</source>
+        <translation>Nur für einen Datentyp nötig, der etwas außerhalb seiner eigenen Zeile hält: eine Tabelle, eine Datei, eine Zeile an anderer Stelle. Ohne dies bleibt es beim Löschen des Inhalts für immer zurück.</translation>
+    </message>
+    <message>
+        <source>Most datatypes should be. A value that must be the same in every language - a price, an id, a date - should not be.</source>
+        <translation>Die meisten Datentypen sollten es sein. Ein Wert, der in jeder Sprache gleich sein muss - ein Preis, eine ID, ein Datum - sollte es nicht sein.</translation>
+    </message>
+    <message>
+        <source>What makes reverse relations, cache clearing on the other object, and &quot;what links here&quot; work. A datatype that holds object ids and does not say so silently breaks all three.</source>
+        <translation>Was umgekehrte Beziehungen, das Leeren des Caches beim anderen Objekt und „Was verweist hierher“ funktionieren lässt. Ein Datentyp, der Objekt-IDs hält und es nicht sagt, macht alle drei stillschweigend kaputt.</translation>
+    </message>
+    <message>
+        <source>Adding an attribute to a class with a hundred thousand objects takes a row each. This does it in one, which is the difference between a class edit that finishes and one that times out.</source>
+        <translation>Ein Attribut zu einer Klasse mit hunderttausend Objekten hinzuzufügen kostet je eine Zeile. Dies erledigt es in einer Anweisung, und das ist der Unterschied zwischen einer Klassenänderung, die fertig wird, und einer, die in eine Zeitüberschreitung läuft.</translation>
+    </message>
+    <message>
+        <source>Text of any length. What most datatypes end up using, including every one that keeps xml or serialised data.</source>
+        <translation>Text beliebiger Länge. Was die meisten Datentypen am Ende verwenden, einschließlich aller, die XML oder serialisierte Daten halten.</translation>
+    </message>
+    <message>
+        <source>One whole number. Also how a boolean, a timestamp and a foreign key are kept.</source>
+        <translation>Eine ganze Zahl. So werden auch ein boolescher Wert, ein Zeitstempel und ein Fremdschlüssel gespeichert.</translation>
+    </message>
+    <message>
+        <source>One number with a fractional part. Not for money: two floats that look equal on screen need not be equal in a comparison.</source>
+        <translation>Eine Zahl mit Nachkommastellen. Nicht für Geld: zwei Gleitkommazahlen, die auf dem Bildschirm gleich aussehen, müssen bei einem Vergleich nicht gleich sein.</translation>
+    </message>
+    <message>
+        <source>What the database sorts on when this attribute is a sort field. Written by sortKey(), never read by anything else.</source>
+        <translation>Wonach die Datenbank sortiert, wenn dieses Attribut ein Sortierfeld ist. Von sortKey() geschrieben und von nichts anderem gelesen.</translation>
+    </message>
+    <message>
+        <source>The same, for text. Cut to 255 characters by the database, so it is a sort key and not a copy of the value.</source>
+        <translation>Dasselbe für Text. Von der Datenbank auf 255 Zeichen gekürzt, also ein Sortierschlüssel und keine Kopie des Werts.</translation>
+    </message>
+    <message>
+        <source>The datatype class</source>
+        <translation>Die Datentyp-Klasse</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registrierung</translation>
+    </message>
+    <message>
+        <source>API examples</source>
+        <translation>API-Beispiele</translation>
+    </message>
+    <message>
+        <source>Notes on storage</source>
+        <translation>Hinweise zur Speicherung</translation>
+    </message>
+    <message>
+        <source>The class itself, with a method for every capability chosen below and a note on each saying what the kernel calls it for.</source>
+        <translation>Die Klasse selbst, mit einer Methode für jede unten gewählte Fähigkeit und einem Hinweis bei jeder, wofür der Kernel sie aufruft.</translation>
+    </message>
+    <message>
+        <source>The editing field, the view, the class settings form and whatever else the chosen capabilities need - each one a working template rather than an empty file.</source>
+        <translation>Das Bearbeitungsfeld, die Ansicht, das Formular für die Klasseneinstellungen und was die gewählten Fähigkeiten sonst brauchen - jedes ein funktionierendes Template statt einer leeren Datei.</translation>
+    </message>
+    <message>
+        <source>content.ini so the kernel finds the datatype, and design.ini so it finds the templates. Without the second the datatype loads and draws nothing.</source>
+        <translation>content.ini, damit der Kernel den Datentyp findet, und design.ini, damit er die Templates findet. Ohne das Zweite lädt der Datentyp und zeigt nichts an.</translation>
+    </message>
+    <message>
+        <source>Setting the value from a script, reading it in a template, adding the attribute to a class, and what each method is called for.</source>
+        <translation>Den Wert aus einem Skript setzen, ihn in einem Template lesen, das Attribut einer Klasse hinzufügen und wofür jede Methode aufgerufen wird.</translation>
+    </message>
+    <message>
+        <source>Which column holds what, and what a table of its own would have to look like if the columns are not enough.</source>
+        <translation>Welche Spalte was enthält und wie eine eigene Tabelle aussehen müsste, wenn die Spalten nicht ausreichen.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>Die gepackte Beschreibung der Extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>Damit die Extension beim Namen angefordert statt hineinkopiert werden kann.</translation>
+    </message>
+    <message>
+        <source>What it is, how to switch it on, and what each chosen capability means.</source>
+        <translation>Was es ist, wie man es einschaltet und was jede gewählte Fähigkeit bedeutet.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
+    </message>
+    <message>
+        <source>Checks what was submitted before anything is stored. Return STATE_INVALID and set a validation error on the attribute to send the editor back to the form; returning ACCEPTED without looking is how bad content gets in.</source>
+        <translation>Prüft, was übermittelt wurde, bevor irgendetwas gespeichert wird. Geben Sie STATE_INVALID zurück und setzen Sie einen Validierungsfehler am Attribut, um den Redakteur zum Formular zurückzuschicken; ACCEPTED ohne Prüfung zurückzugeben ist der Weg, auf dem schlechte Inhalte hineinkommen.</translation>
+    </message>
+    <message>
+        <source>Takes the submitted value off the request and puts it on the attribute. Runs after validation passed, so the value is already known to be sound.</source>
+        <translation>Nimmt den übermittelten Wert aus der Anfrage und legt ihn auf das Attribut. Läuft nach bestandener Validierung, der Wert ist also bereits als einwandfrei bekannt.</translation>
+    </message>
+    <message>
+        <source>The last chance to change what goes in the row, and the only place a datatype with a table of its own writes to it. The attribute row itself is stored by the kernel straight after.</source>
+        <translation>Die letzte Gelegenheit, zu ändern, was in die Zeile kommt, und die einzige Stelle, an der ein Datentyp mit eigener Tabelle in diese schreibt. Die Attributzeile selbst speichert der Kernel direkt danach.</translation>
+    </message>
+    <message>
+        <source>What a template gets when it asks for .content. Anything expensive here is paid for on every page that shows the attribute, so it is worth keeping cheap or keeping cached.</source>
+        <translation>Was ein Template bekommt, wenn es nach .content fragt. Alles Aufwendige hier wird auf jeder Seite bezahlt, die das Attribut zeigt; es lohnt sich also, es günstig oder zwischengespeichert zu halten.</translation>
+    </message>
+    <message>
+        <source>Whether there is anything in it. What &quot;has_content&quot; reads in a template, and what decides whether an empty attribute is drawn at all.</source>
+        <translation>Ob etwas darin ist. Was „has_content“ in einem Template liest und was entscheidet, ob ein leeres Attribut überhaupt angezeigt wird.</translation>
+    </message>
+    <message>
+        <source>Checks the settings before the class is stored. A class is edited rarely and read constantly, so a check here is cheap and a mistake here is expensive.</source>
+        <translation>Prüft die Einstellungen, bevor die Klasse gespeichert wird. Eine Klasse wird selten bearbeitet und ständig gelesen, daher ist eine Prüfung hier günstig und ein Fehler hier teuer.</translation>
+    </message>
+    <message>
+        <source>Takes the settings off the request and puts them on the class attribute.</source>
+        <translation>Nimmt die Einstellungen aus der Anfrage und legt sie auf das Klassenattribut.</translation>
+    </message>
+    <message>
+        <source>Runs before the class attribute row is written. Where a setting is worked out from other settings rather than typed.</source>
+        <translation>Läuft, bevor die Zeile des Klassenattributs geschrieben wird. Hier wird eine Einstellung aus anderen Einstellungen ermittelt statt eingegeben.</translation>
+    </message>
+    <message>
+        <source>Runs after. Where a datatype keeping class settings in a table of its own writes them.</source>
+        <translation>Läuft danach. Hier schreibt ein Datentyp, der Klasseneinstellungen in einer eigenen Tabelle hält, diese.</translation>
+    </message>
+    <message>
+        <source>Sets the defaults the first time the attribute is added to a class, so the class editor opens with something sensible rather than with zeroes.</source>
+        <translation>Setzt die Standardwerte, wenn das Attribut zum ersten Mal einer Klasse hinzugefügt wird, damit der Klasseneditor mit etwas Sinnvollem statt mit Nullen öffnet.</translation>
+    </message>
+    <message>
+        <source>What a template gets from the class attribute. Used by an edit template that has to draw itself differently depending on a setting.</source>
+        <translation>Was ein Template vom Klassenattribut bekommt. Wird von einem Bearbeitungs-Template verwendet, das sich je nach Einstellung anders darstellen muss.</translation>
+    </message>
+    <message>
+        <source>Called when an attribute is first made, and again for each new version. $currentVersion is null the very first time; on a new version, copy from $originalContentObjectAttribute or the value is lost.</source>
+        <translation>Wird aufgerufen, wenn ein Attribut zum ersten Mal erstellt wird, und erneut für jede neue Version. $currentVersion ist beim allerersten Mal null; bei einer neuen Version kopieren Sie aus $originalContentObjectAttribute, sonst geht der Wert verloren.</translation>
+    </message>
+    <message>
+        <source>A short line of plain text. It ends up in page titles, in listings, in the admin and in the url of every object named by it, so it must be text and not markup.</source>
+        <translation>Eine kurze Zeile reinen Texts. Sie landet in Seitentiteln, in Listen, in der Administration und in der URL jedes danach benannten Objekts, muss also Text und kein Markup sein.</translation>
+    </message>
+    <message>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <translation>Ob dieser Datentyp überhaupt indexiert werden sollte. False für alles, dessen Wert als Wörter nichts bedeutet - eine Farbe, eine ID, ein Flag.</translation>
+    </message>
+    <message>
+        <source>The words to index. Plain text, with markup taken out: what is indexed is what somebody would search for, not what is stored.</source>
+        <translation>Die zu indexierenden Wörter. Reiner Text, ohne Markup: indexiert wird, wonach jemand suchen würde, nicht was gespeichert ist.</translation>
+    </message>
+    <message>
+        <source>The whole value as one string. Anything fromString() cannot read back is a value that will not survive an export and import.</source>
+        <translation>Der ganze Wert als eine Zeichenkette. Alles, was fromString() nicht wieder einlesen kann, ist ein Wert, der einen Export und Import nicht übersteht.</translation>
+    </message>
+    <message>
+        <source>The other direction. Has to cope with a string written by an older version of the datatype, or by a person.</source>
+        <translation>Die andere Richtung. Muss mit einer Zeichenkette zurechtkommen, die von einer älteren Version des Datentyps oder von einem Menschen geschrieben wurde.</translation>
+    </message>
+    <message>
+        <source>Whether each language keeps its own value. Turning this off after content exists leaves the translations behind, unreachable.</source>
+        <translation>Ob jede Sprache ihren eigenen Wert behält. Dies auszuschalten, nachdem Inhalte existieren, lässt die Übersetzungen unerreichbar zurück.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/designextension</name>
+    <message>
+        <source>Design extension wizard</source>
+        <translation>Assistent für Design-Extensions</translation>
+    </message>
+    <message>
+        <source>A design extension holds the templates, stylesheets, images and settings a site is drawn with, kept apart from the kernel so an upgrade cannot walk over them. Describe the one you want below; nothing is written until you ask for it.</source>
+        <translation>Eine Design-Extension enthält die Templates, Stylesheets, Bilder und Einstellungen, mit denen eine Website dargestellt wird, getrennt vom Kernel, sodass ein Upgrade sie nicht überschreiben kann. Beschreiben Sie unten die gewünschte Extension; nichts wird geschrieben, bevor Sie es veranlassen.</translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, then clear the caches.</source>
+        <translation>Geschrieben nach %target. Schalten Sie sie mit den Zeilen unten ein und leeren Sie dann die Caches.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive. That is the usual arrangement on a server worth having.</source>
+        <translation>Der Webserver kann nicht in extension/ schreiben, daher kann diese Seite Ihnen nur ein Archiv übergeben. Das ist auf einem vernünftig eingerichteten Server die übliche Anordnung.</translation>
+    </message>
+    <message>
+        <source>What it is</source>
+        <translation>Was sie ist</translation>
+    </message>
+    <message>
+        <source>The name is the directory, the design and the value in design.ini, so it is lower case letters, digits and underscores.</source>
+        <translation>Der Name ist das Verzeichnis, das Design und der Wert in design.ini, er besteht daher aus Kleinbuchstaben, Ziffern und Unterstrichen.</translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation>Name der Extension</translation>
+    </message>
+    <message>
+        <source>Becomes extension/%name and design/%name.</source>
+        <translation>Wird zu extension/%name und design/%name.</translation>
+    </message>
+    <message>
+        <source>Becomes extension/&lt;name&gt; and design/&lt;name&gt;.</source>
+        <translation>Wird zu extension/&lt;name&gt; und design/&lt;name&gt;.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>My Site Design</source>
+        <translation>Mein Website-Design</translation>
+    </message>
+    <message>
+        <source>What the admin interface calls it. Left empty, it is made from the name.</source>
+        <translation>Wie die Administrationsoberfläche sie nennt. Bleibt das Feld leer, wird es aus dem Namen gebildet.</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation>Composer-Vendor</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>Falls back on</source>
+        <translation>Greift zurück auf</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Seitenzugang</translation>
+    </message>
+    <message>
+        <source>None - just add the design to the chain</source>
+        <translation>Keines - das Design nur der Kette hinzufügen</translation>
+    </message>
+    <message>
+        <source>Used only when siteaccess settings are ticked below.</source>
+        <translation>Wird nur verwendet, wenn unten Einstellungen für Seitenzugänge angehakt sind.</translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation>Was hineinkommt</translation>
+    </message>
+    <message>
+        <source>Everything here is a starting point meant to be edited, not a black box.</source>
+        <translation>Alles hier ist ein Ausgangspunkt zum Bearbeiten, keine Blackbox.</translation>
+    </message>
+    <message>
+        <source>Tick all</source>
+        <translation>Alle anhaken</translation>
+    </message>
+    <message>
+        <source>Tick none</source>
+        <translation>Keine anhaken</translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation>Vorschau aktualisieren</translation>
+    </message>
+    <message>
+        <source>What it will write</source>
+        <translation>Was geschrieben wird</translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation>Dateien</translation>
+    </message>
+    <message>
+        <source>directories</source>
+        <translation>Verzeichnisse</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines Zeilen</translation>
+    </message>
+    <message>
+        <source>Name it, and the file list appears here.</source>
+        <translation>Geben Sie einen Namen ein, dann erscheint hier die Dateiliste.</translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php, then clear the caches.</source>
+        <translation>Fügen Sie dies in settings/override/site.ini.append.php ein und leeren Sie dann die Caches.</translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation>Jede Datei, bevor sie geschrieben wird</translation>
+    </message>
+    <message>
+        <source>Click a heading to read one. Nothing here has been written yet.</source>
+        <translation>Klicken Sie auf eine Überschrift, um eine Datei zu lesen. Hier wurde noch nichts geschrieben.</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Alle öffnen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines Zeilen, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation>In extension/ anlegen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Als ZIP herunterladen</translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation>Zurück zu den RAD-Werkzeugen</translation>
+    </message>
+    <message>
+        <source>Page layout</source>
+        <translation>Seitenlayout</translation>
+    </message>
+    <message>
+        <source>Page parts</source>
+        <translation>Seitenteile</translation>
+    </message>
+    <message>
+        <source>Stylesheets</source>
+        <translation>Stylesheets</translation>
+    </message>
+    <message>
+        <source>Print stylesheet</source>
+        <translation>Druck-Stylesheet</translation>
+    </message>
+    <message>
+        <source>JavaScript</source>
+        <translation>JavaScript</translation>
+    </message>
+    <message>
+        <source>Images directory</source>
+        <translation>Bildverzeichnis</translation>
+    </message>
+    <message>
+        <source>Template overrides</source>
+        <translation>Überschreib-Template</translation>
+    </message>
+    <message>
+        <source>Siteaccess settings</source>
+        <translation>Siteaccess-Einstellungen</translation>
+    </message>
+    <message>
+        <source>Template operators</source>
+        <translation>Template-Operatoren</translation>
+    </message>
+    <message>
+        <source>pagelayout.tpl, the frame every page is drawn inside.</source>
+        <translation>pagelayout.tpl, der Rahmen, in dem jede Seite dargestellt wird.</translation>
+    </message>
+    <message>
+        <source>The head, header and footer the page layout includes, so each can be overridden on its own.</source>
+        <translation>Kopfbereich, Kopfzeile und Fußzeile, die das Seitenlayout einbindet, damit jedes für sich überschrieben werden kann.</translation>
+    </message>
+    <message>
+        <source>A site stylesheet, registered in design.ini so it is loaded without touching a template.</source>
+        <translation>Ein Stylesheet der Website, in design.ini registriert, sodass es geladen wird, ohne ein Template anzufassen.</translation>
+    </message>
+    <message>
+        <source>A second stylesheet for print, so a page can be put on paper without the furniture.</source>
+        <translation>Ein zweites Stylesheet für den Druck, damit eine Seite ohne das Drumherum aufs Papier kommt.</translation>
+    </message>
+    <message>
+        <source>A site script, registered in design.ini alongside the stylesheet.</source>
+        <translation>Ein Skript der Website, in design.ini neben dem Stylesheet registriert.</translation>
+    </message>
+    <message>
+        <source>design/&lt;name&gt;/images, where ezimage looks.</source>
+        <translation>design/&lt;name&gt;/images, wo ezimage sucht.</translation>
+    </message>
+    <message>
+        <source>override.ini and an example full view, to show where an override goes and how it is matched.</source>
+        <translation>override.ini und eine Beispiel-Vollansicht, um zu zeigen, wohin ein Override kommt und wie er zugeordnet wird.</translation>
+    </message>
+    <message>
+        <source>A settings/siteaccess/&lt;name&gt; directory, for settings that apply to one site only.</source>
+        <translation>Ein Verzeichnis settings/siteaccess/&lt;name&gt; für Einstellungen, die nur für eine Website gelten.</translation>
+    </message>
+    <message>
+        <source>An autoloads directory with a registered operator, ready to extend.</source>
+        <translation>Ein autoloads-Verzeichnis mit einem registrierten Operator, bereit zum Erweitern.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>Die gepackte Beschreibung der Extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>Damit die Extension beim Namen angefordert statt hineinkopiert werden kann.</translation>
+    </message>
+    <message>
+        <source>What it is, how to switch it on, and what is inside it.</source>
+        <translation>Was es ist, wie man es einschaltet und was darin enthalten ist.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/handler</name>
+    <message>
+        <source>Handler wizard</source>
+        <translation>Handler-Assistent</translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, clear the caches, and regenerate the extension autoloads.</source>
+        <translation>Geschrieben nach %target. Schalten Sie sie mit den Zeilen unten ein, leeren Sie die Caches und erzeugen Sie die Autoloads der Extensions neu.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation>Der Webserver kann nicht in extension/ schreiben, daher kann diese Seite Ihnen nur ein Archiv übergeben.</translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation>Die Extension</translation>
+    </message>
+    <message>
+        <source>The class name is what the ini will point at, so it has to be one nothing else on this installation already uses.</source>
+        <translation>Auf den Klassennamen verweist die INI-Datei, daher muss er einer sein, den auf dieser Installation noch nichts anderes verwendet.</translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation>Name der Extension</translation>
+    </message>
+    <message>
+        <source>Class name</source>
+        <translation>Klassenname</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>The short word the setting names, rather than the class itself.</source>
+        <translation>Das kurze Wort, das die Einstellung nennt, statt der Klasse selbst.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation>Composer-Vendor</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation>Was hineinkommt</translation>
+    </message>
+    <message>
+        <source>What it replaces</source>
+        <translation>Was er ersetzt</translation>
+    </message>
+    <message>
+        <source>Extends</source>
+        <translation>Erweitert</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Einstellung</translation>
+    </message>
+    <message>
+        <source>What has to be written</source>
+        <translation>Was geschrieben werden muss</translation>
+    </message>
+    <message>
+        <source>Every one of these is a method the kernel calls. Each is generated with this note beside it, and returns something that leaves the system working the way it did before.</source>
+        <translation>Jede davon ist eine Methode, die der Kernel aufruft. Jede wird mit diesem Hinweis erzeugt und gibt etwas zurück, das das System so funktionieren lässt wie zuvor.</translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php. The extension brings its own setting naming the class.</source>
+        <translation>Fügen Sie dies in settings/override/site.ini.append.php ein. Die Extension bringt ihre eigene Einstellung mit, die die Klasse nennt.</translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation>Jede Datei, bevor sie geschrieben wird</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Alle öffnen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines Zeilen, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation>In extension/ anlegen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Als ZIP herunterladen</translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation>Vorschau aktualisieren</translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation>Zurück zu den RAD-Werkzeugen</translation>
+    </message>
+    <message>
+        <source>Server side ajax function</source>
+        <translation>Serverseitige Ajax-Funktion</translation>
+    </message>
+    <message>
+        <source>Attribute operator format</source>
+        <translation>Format für den Attribut-Operator</translation>
+    </message>
+    <message>
+        <source>Basket info handler</source>
+        <translation>Handler für Warenkorbinformationen</translation>
+    </message>
+    <message>
+        <source>Binary file handler</source>
+        <translation>Binärdatei-Handler</translation>
+    </message>
+    <message>
+        <source>Cluster file handler</source>
+        <translation>Cluster-Dateihandler</translation>
+    </message>
+    <message>
+        <source>Database handler</source>
+        <translation>Datenbankhandler</translation>
+    </message>
+    <message>
+        <source>DFS backend</source>
+        <translation>DFS-Backend</translation>
+    </message>
+    <message>
+        <source>DFS database backend</source>
+        <translation>DFS-Datenbank-Backend</translation>
+    </message>
+    <message>
+        <source>Exchange rate handler</source>
+        <translation>Handler für Wechselkurse</translation>
+    </message>
+    <message>
+        <source>Compiled settings cache</source>
+        <translation>Cache der kompilierten Einstellungen</translation>
+    </message>
+    <message>
+        <source>User login handler</source>
+        <translation>Handler für die Benutzeranmeldung</translation>
+    </message>
+    <message>
+        <source>Mail transport</source>
+        <translation>Mail-Transport</translation>
+    </message>
+    <message>
+        <source>Mobile device filter</source>
+        <translation>Filter für Mobilgeräte</translation>
+    </message>
+    <message>
+        <source>Notification handler</source>
+        <translation>Benachrichtigungshandler</translation>
+    </message>
+    <message>
+        <source>Notification event type</source>
+        <translation>Benachrichtigungs-Ereignistyp</translation>
+    </message>
+    <message>
+        <source>Package creation handler</source>
+        <translation>Handler für die Paketerstellung</translation>
+    </message>
+    <message>
+        <source>Package handler</source>
+        <translation>Paket-Handler</translation>
+    </message>
+    <message>
+        <source>Package installation handler</source>
+        <translation>Handler für die Paketinstallation</translation>
+    </message>
+    <message>
+        <source>Payment gateway</source>
+        <translation>Zahlungsgateway</translation>
+    </message>
+    <message>
+        <source>Payment gateway, transparent</source>
+        <translation>Zahlungsgateway, transparent</translation>
+    </message>
+    <message>
+        <source>Asynchronous publishing filter</source>
+        <translation>Filter für asynchrones Veröffentlichen</translation>
+    </message>
+    <message>
+        <source>REST prefix filter</source>
+        <translation>REST-Präfixfilter</translation>
+    </message>
+    <message>
+        <source>REST pre routing filter</source>
+        <translation>REST-Filter vor dem Routing</translation>
+    </message>
+    <message>
+        <source>REST provider</source>
+        <translation>REST-Provider</translation>
+    </message>
+    <message>
+        <source>REST request filter</source>
+        <translation>REST-Anfragefilter</translation>
+    </message>
+    <message>
+        <source>REST response filter</source>
+        <translation>REST-Antwortfilter</translation>
+    </message>
+    <message>
+        <source>REST result filter</source>
+        <translation>REST-Ergebnisfilter</translation>
+    </message>
+    <message>
+        <source>REST route filter</source>
+        <translation>REST-Routenfilter</translation>
+    </message>
+    <message>
+        <source>Search engine</source>
+        <translation>Suchmaschine</translation>
+    </message>
+    <message>
+        <source>Session handler</source>
+        <translation>Session-Handler</translation>
+    </message>
+    <message>
+        <source>Shipping handler</source>
+        <translation>Versand-Handler</translation>
+    </message>
+    <message>
+        <source>Static cache handler</source>
+        <translation>Handler für den statischen Cache</translation>
+    </message>
+    <message>
+        <source>URL alias filter</source>
+        <translation>URL-Alias-Filter</translation>
+    </message>
+    <message>
+        <source>VAT handler</source>
+        <translation>MwSt-Handler</translation>
+    </message>
+    <message>
+        <source>XML text input handler</source>
+        <translation>XML-Text-Eingabehandler</translation>
+    </message>
+    <message>
+        <source>XML text output handler</source>
+        <translation>XML-Text-Ausgabehandler</translation>
+    </message>
+    <message>
+        <source>A class of functions a page can call over http and get json back from.</source>
+        <translation>Eine Klasse von Funktionen, die eine Seite über HTTP aufrufen kann und die JSON zurückgeben.</translation>
+    </message>
+    <message>
+        <source>A new format the |attribute template operator can print in.</source>
+        <translation>Ein neues Format, in dem der Template-Operator |attribute ausgeben kann.</translation>
+    </message>
+    <message>
+        <source>What the basket totals come to, once everything else has had its say.</source>
+        <translation>Worauf sich die Warenkorbsummen belaufen, nachdem alles andere mitgeredet hat.</translation>
+    </message>
+    <message>
+        <source>How an uploaded file is stored, and how it is handed back to somebody downloading it.</source>
+        <translation>Wie eine hochgeladene Datei gespeichert wird und wie sie an jemanden ausgegeben wird, der sie herunterlädt.</translation>
+    </message>
+    <message>
+        <source>Where files live when more than one server serves the same site: every image, every binary, and every cache file the kernel writes.</source>
+        <translation>Wo Dateien liegen, wenn mehr als ein Server dieselbe Website ausliefert: jedes Bild, jede Binärdatei und jede Cache-Datei, die der Kernel schreibt.</translation>
+    </message>
+    <message>
+        <source>The layer every query in the system goes through on its way to the server.</source>
+        <translation>Die Schicht, durch die jede Abfrage im System auf dem Weg zum Server geht.</translation>
+    </message>
+    <message>
+        <source>Where the DFS cluster handler puts the bytes, once the database has been told the file exists.</source>
+        <translation>Wohin der DFS-Cluster-Handler die Bytes legt, sobald der Datenbank mitgeteilt wurde, dass die Datei existiert.</translation>
+    </message>
+    <message>
+        <source>The other half of DFS: the index of which files exist, how big they are, and which are being generated right now.</source>
+        <translation>Die andere Hälfte von DFS: das Verzeichnis, welche Dateien existieren, wie groß sie sind und welche gerade erzeugt werden.</translation>
+    </message>
+    <message>
+        <source>Where the rates between the shop currencies come from.</source>
+        <translation>Woher die Kurse zwischen den Shop-Währungen kommen.</translation>
+    </message>
+    <message>
+        <source>Keeps the compiled ini cache somewhere shared, rather than on each machine.</source>
+        <translation>Hält den kompilierten INI-Cache an einem gemeinsamen Ort statt auf jedem Rechner.</translation>
+    </message>
+    <message>
+        <source>Where the system goes to find out whether a password is right.</source>
+        <translation>Wohin das System geht, um herauszufinden, ob ein Passwort richtig ist.</translation>
+    </message>
+    <message>
+        <source>How mail leaves the system.</source>
+        <translation>Wie E-Mails das System verlassen.</translation>
+    </message>
+    <message>
+        <source>Decides whether a request came from a phone, and what to do about it.</source>
+        <translation>Entscheidet, ob eine Anfrage von einem Telefon kam, und was dann zu tun ist.</translation>
+    </message>
+    <message>
+        <source>What decides who gets told about an event, and turns it into something sent.</source>
+        <translation>Was entscheidet, wer über ein Ereignis informiert wird, und daraus etwas Versandfertiges macht.</translation>
+    </message>
+    <message>
+        <source>A new kind of thing the system can notify people about.</source>
+        <translation>Eine neue Art von Dingen, über die das System Personen benachrichtigen kann.</translation>
+    </message>
+    <message>
+        <source>A wizard in the admin that gathers something up into a package.</source>
+        <translation>Ein Assistent in der Administration, der etwas zu einem Paket zusammenstellt.</translation>
+    </message>
+    <message>
+        <source>A new kind of thing a package can carry, install and uninstall.</source>
+        <translation>Eine neue Art von Dingen, die ein Paket transportieren, installieren und deinstallieren kann.</translation>
+    </message>
+    <message>
+        <source>A wizard in the admin that puts a package item in, with the questions that go with it.</source>
+        <translation>Ein Assistent in der Administration, der ein Paketelement einspielt, mit den dazugehörigen Fragen.</translation>
+    </message>
+    <message>
+        <source>Takes a basket to somewhere money can be paid, and takes the answer back.</source>
+        <translation>Bringt einen Warenkorb dorthin, wo Geld bezahlt werden kann, und nimmt die Antwort zurück.</translation>
+    </message>
+    <message>
+        <source>Takes the payment without the buyer ever leaving the site.</source>
+        <translation>Nimmt die Zahlung entgegen, ohne dass der Käufer die Website jemals verlässt.</translation>
+    </message>
+    <message>
+        <source>Decides whether a version is published in the request or handed to the queue.</source>
+        <translation>Entscheidet, ob eine Version in der Anfrage veröffentlicht oder an die Warteschlange übergeben wird.</translation>
+    </message>
+    <message>
+        <source>Decides where the api lives, and which version of it a request asked for.</source>
+        <translation>Entscheidet, wo die API liegt und welche Version davon eine Anfrage verlangt hat.</translation>
+    </message>
+    <message>
+        <source>Runs before the REST routes are even built.</source>
+        <translation>Läuft, bevor die REST-Routen überhaupt gebaut werden.</translation>
+    </message>
+    <message>
+        <source>A set of REST routes and the controller behind them.</source>
+        <translation>Ein Satz REST-Routen und der Controller dahinter.</translation>
+    </message>
+    <message>
+        <source>Runs once the request object is built and the route is known.</source>
+        <translation>Läuft, sobald das Anfrageobjekt gebaut und die Route bekannt ist.</translation>
+    </message>
+    <message>
+        <source>Runs on the finished response, after the view has generated it.</source>
+        <translation>Läuft auf der fertigen Antwort, nachdem der View sie erzeugt hat.</translation>
+    </message>
+    <message>
+        <source>Runs after the controller has worked out its answer, before it is turned into a response.</source>
+        <translation>Läuft, nachdem der Controller seine Antwort ermittelt hat, bevor sie in eine Antwort umgewandelt wird.</translation>
+    </message>
+    <message>
+        <source>What decides whether a REST route needs the caller to have proved who they are.</source>
+        <translation>Was entscheidet, ob eine REST-Route verlangt, dass der Aufrufer nachgewiesen hat, wer er ist.</translation>
+    </message>
+    <message>
+        <source>What indexes content as it is published, and what answers when somebody searches.</source>
+        <translation>Was Inhalte beim Veröffentlichen indexiert und was antwortet, wenn jemand sucht.</translation>
+    </message>
+    <message>
+        <source>Where sessions are kept, how they are cleaned up, and what happens when a user logs in or out.</source>
+        <translation>Wo Sessions aufbewahrt werden, wie sie bereinigt werden und was passiert, wenn sich ein Benutzer an- oder abmeldet.</translation>
+    </message>
+    <message>
+        <source>What a basket costs to deliver.</source>
+        <translation>Was die Lieferung eines Warenkorbs kostet.</translation>
+    </message>
+    <message>
+        <source>What writes pages to disk so the web server can serve them without php.</source>
+        <translation>Was Seiten auf die Festplatte schreibt, damit der Webserver sie ohne PHP ausliefern kann.</translation>
+    </message>
+    <message>
+        <source>Runs over every url this system generates, before it is stored, and may rewrite it.</source>
+        <translation>Läuft über jede URL, die dieses System erzeugt, bevor sie gespeichert wird, und darf sie umschreiben.</translation>
+    </message>
+    <message>
+        <source>What decides which rate of tax a product is sold at.</source>
+        <translation>Was entscheidet, zu welchem Steuersatz ein Produkt verkauft wird.</translation>
+    </message>
+    <message>
+        <source>What turns what an editor typed into the stored XML of an ezxmltext attribute.</source>
+        <translation>Was das, was ein Redakteur eingegeben hat, in das gespeicherte XML eines ezxmltext-Attributs umwandelt.</translation>
+    </message>
+    <message>
+        <source>What turns the stored XML of an ezxmltext attribute into what a visitor sees.</source>
+        <translation>Was das gespeicherte XML eines ezxmltext-Attributs in das umwandelt, was ein Besucher sieht.</translation>
+    </message>
+    <message>
+        <source>A module view is a page: it has a template, a layout and a policy. An ajax function is a method that takes an argument list and returns a value, reached at one address, with the answer encoded for you. It is the right shape for the small things a page asks for while it is open.</source>
+        <translation>Ein Modul-View ist eine Seite: er hat ein Template, ein Layout und eine Richtlinie. Eine Ajax-Funktion ist eine Methode, die eine Argumentliste entgegennimmt und einen Wert zurückgibt, unter einer Adresse erreichbar, mit einer für Sie kodierten Antwort. Sie ist die richtige Form für die kleinen Dinge, die eine Seite abfragt, während sie geöffnet ist.</translation>
+    </message>
+    <message>
+        <source>attribute( show ) is how a template author finds out what is in a variable, and it prints html because that is where it usually goes. A formatter of your own prints the same walk as json for a browser console, as plain text for a log, or as anything else that reads better than a table in a page.</source>
+        <translation>attribute( show ) ist der Weg, auf dem ein Template-Autor herausfindet, was in einer Variablen steckt, und es gibt HTML aus, weil es meist dort landet. Ein eigener Formatierer gibt denselben Durchgang als JSON für eine Browser-Konsole aus, als reinen Text für ein Log oder als alles andere, was sich besser liest als eine Tabelle in einer Seite.</translation>
+    </message>
+    <message>
+        <source>This runs after the prices, the VAT and the shipping are known and may change the totals. It is where a discount code, a member price, a rounding rule or a minimum order charge belongs - in one place, rather than in every template that shows a total.</source>
+        <translation>Dies läuft, nachdem Preise, MwSt und Versand bekannt sind, und darf die Summen ändern. Hierher gehört ein Rabattcode, ein Mitgliederpreis, eine Rundungsregel oder ein Mindermengenzuschlag - an einer Stelle statt in jedem Template, das eine Summe zeigt.</translation>
+    </message>
+    <message>
+        <source>The default stores files under var/ and sends them with php. A handler of your own can put them somewhere else, hand the download to the web server, or check who is asking before it answers.</source>
+        <translation>Standardmäßig werden Dateien unter var/ gespeichert und mit PHP gesendet. Ein eigener Handler kann sie woanders ablegen, den Download dem Webserver übergeben oder prüfen, wer fragt, bevor er antwortet.</translation>
+    </message>
+    <message>
+        <source>With one server, files on disk are fine. With several, each would write its own copy and serve stale ones. A cluster handler puts them somewhere all the servers share.</source>
+        <translation>Mit einem Server sind Dateien auf der Festplatte in Ordnung. Mit mehreren würde jeder seine eigene Kopie schreiben und veraltete ausliefern. Ein Cluster-Handler legt sie an einem Ort ab, den alle Server teilen.</translation>
+    </message>
+    <message>
+        <source>Extending the handler that ships is how a read goes to a replica, a query gets logged or timed, or a table name gets rewritten - without touching a single caller. Writing one from eZDBInterface instead means ninety methods, and is only worth it for a database nothing supports yet.</source>
+        <translation>Den mitgelieferten Handler zu erweitern ist der Weg, einen Lesezugriff an ein Replikat zu leiten, eine Abfrage zu protokollieren oder zu messen oder einen Tabellennamen umzuschreiben - ohne einen einzigen Aufrufer anzufassen. Stattdessen einen von eZDBInterface aus zu schreiben bedeutet neunzig Methoden und lohnt sich nur für eine Datenbank, die noch nichts unterstützt.</translation>
+    </message>
+    <message>
+        <source>The DFS handler keeps an index of files in the database and the files themselves somewhere else. That somewhere else is this: a mounted filesystem by default, but it could be object storage or anything reachable.</source>
+        <translation>Der DFS-Handler hält ein Verzeichnis der Dateien in der Datenbank und die Dateien selbst an anderer Stelle. Diese andere Stelle ist dies: standardmäßig ein eingehängtes Dateisystem, es könnte aber ein Objektspeicher oder irgendetwas Erreichbares sein.</translation>
+    </message>
+    <message>
+        <source>This is what stops two servers building the same cache entry at the same time, and what makes a delete on one server take effect on all of them. Extending the backend that ships means only the parts that need to differ have to be written; every method below already works.</source>
+        <translation>Dies verhindert, dass zwei Server gleichzeitig denselben Cache-Eintrag bauen, und sorgt dafür, dass ein Löschen auf einem Server auf allen wirkt. Das mitgelieferte Backend zu erweitern bedeutet, dass nur die Teile geschrieben werden müssen, die abweichen sollen; jede Methode unten funktioniert bereits.</translation>
+    </message>
+    <message>
+        <source>The handler that ships reads the European Central Bank feed, which covers the currencies it covers and no others. A handler of your own is how rates come from a bank, a provider, or a spreadsheet a person maintains - updated by the same cronjob, stored the same way, shown in the same place.</source>
+        <translation>Der mitgelieferte Handler liest den Feed der Europäischen Zentralbank, der die Währungen abdeckt, die er abdeckt, und keine anderen. Ein eigener Handler ist der Weg, Kurse von einer Bank, einem Anbieter oder aus einer von einer Person gepflegten Tabelle zu beziehen - vom selben Cronjob aktualisiert, genauso gespeichert, an derselben Stelle angezeigt.</translation>
+    </message>
+    <message>
+        <source>Settings are compiled once and read on every request. On one machine a file is the right answer; on several it means every machine compiling the same thing and clearing it separately. Putting it in Redis or Valkey makes it one cache, cleared once.</source>
+        <translation>Einstellungen werden einmal kompiliert und bei jeder Anfrage gelesen. Auf einem Rechner ist eine Datei die richtige Antwort; auf mehreren bedeutet es, dass jeder Rechner dasselbe kompiliert und es getrennt leert. Es in Redis oder Valkey abzulegen macht daraus einen Cache, der einmal geleert wird.</translation>
+    </message>
+    <message>
+        <source>The default checks a hash in ezuser. A handler of your own asks somebody else - a directory, a single sign on service, another application - and makes the user here when the answer comes back yes. It is how a site stops being the place passwords are kept.</source>
+        <translation>Standardmäßig wird ein Hash in ezuser geprüft. Ein eigener Handler fragt jemand anderen - einen Verzeichnisdienst, einen Single-Sign-on-Dienst, eine andere Anwendung - und legt den Benutzer hier an, wenn die Antwort Ja lautet. So hört eine Website auf, der Ort zu sein, an dem Passwörter aufbewahrt werden.</translation>
+    </message>
+    <message>
+        <source>The default hands mail to php, which hands it to the machine. A transport of your own can send it through an api, queue it, or write it to disk on a machine that must not send anything.</source>
+        <translation>Standardmäßig wird E-Mail an PHP übergeben, das sie an den Rechner übergibt. Ein eigener Transport kann sie über eine API versenden, in eine Warteschlange stellen oder auf einem Rechner, der nichts versenden darf, auf die Festplatte schreiben.</translation>
+    </message>
+    <message>
+        <source>The one that ships matches user agents against a list of patterns, which ages badly. A filter of your own can use a header a proxy sets, a hint the browser gives, or anything else that is actually reliable - and decide whether to redirect or simply to say so and let the templates differ.</source>
+        <translation>Der mitgelieferte vergleicht User-Agents mit einer Liste von Mustern, was schlecht altert. Ein eigener Filter kann einen von einem Proxy gesetzten Header, einen Hinweis des Browsers oder alles andere verwenden, was tatsächlich zuverlässig ist - und entscheiden, ob weitergeleitet oder es nur mitgeteilt wird und die Templates sich unterscheiden.</translation>
+    </message>
+    <message>
+        <source>A type says an event happened; a handler says who cares. The three that ship do subtree subscriptions, digests and collaboration. A handler of your own is how a rule of any other shape - everyone in a role, everyone who bought something, everyone on a list held elsewhere - gets its own settings tab in the user profile and its own place in the digest.</source>
+        <translation>Ein Typ sagt, dass ein Ereignis eingetreten ist; ein Handler sagt, wen es interessiert. Die drei mitgelieferten erledigen Teilbaum-Abonnements, Zusammenfassungen und Zusammenarbeit. Ein eigener Handler ist der Weg, auf dem eine Regel jeder anderen Form - alle in einer Rolle, alle, die etwas gekauft haben, alle auf einer anderswo geführten Liste - einen eigenen Einstellungsreiter im Benutzerprofil und einen eigenen Platz in der Zusammenfassung bekommt.</translation>
+    </message>
+    <message>
+        <source>The four that ship cover publishing and collaboration. A type of your own is how anything else - an order placed, a form filled in, a job finished - becomes something a user can subscribe to and be told about, through the machinery that already exists for digests, transports and subscriptions.</source>
+        <translation>Die vier mitgelieferten decken Veröffentlichung und Zusammenarbeit ab. Ein eigener Typ ist der Weg, auf dem alles andere - eine aufgegebene Bestellung, ein ausgefülltes Formular, ein beendeter Job - zu etwas wird, das ein Benutzer abonnieren und worüber er informiert werden kann, über die Mechanik, die es für Zusammenfassungen, Transporte und Abonnements bereits gibt.</translation>
+    </message>
+    <message>
+        <source>The export screens for classes, objects, styles and extensions are each one of these. A handler of your own adds a screen of the same kind for whatever an extension owns, with the steps, the forms and the validation it needs, rather than a document telling somebody what to copy.</source>
+        <translation>Die Export-Ansichten für Klassen, Objekte, Styles und Extensions sind jeweils einer davon. Ein eigener Handler fügt eine Ansicht derselben Art für das hinzu, was einer Extension gehört, mit den Schritten, Formularen und Validierungen, die sie braucht, statt eines Dokuments, das jemandem sagt, was er kopieren soll.</translation>
+    </message>
+    <message>
+        <source>Packages already carry classes, objects, files and ini settings. A handler of your own is how anything else an extension owns - rows in its own tables, a set of roles, a configured workflow - travels between installations in the same package rather than in a document telling somebody what to click.</source>
+        <translation>Pakete transportieren bereits Klassen, Objekte, Dateien und INI-Einstellungen. Ein eigener Handler ist der Weg, auf dem alles andere, was einer Extension gehört - Zeilen in ihren eigenen Tabellen, ein Satz Rollen, ein konfigurierter Workflow -, im selben Paket zwischen Installationen reist statt in einem Dokument, das jemandem sagt, was er anklicken soll.</translation>
+    </message>
+    <message>
+        <source>Installing is rarely one button: something already exists, a name clashes, a choice has to be made. This is where those questions are asked, once, instead of the install half failing and leaving somebody to work out what happened.</source>
+        <translation>Installieren ist selten eine einzige Schaltfläche: etwas existiert bereits, ein Name kollidiert, eine Wahl muss getroffen werden. Hier werden diese Fragen einmal gestellt, statt dass die Installation halb scheitert und jemand herausfinden muss, was passiert ist.</translation>
+    </message>
+    <message>
+        <source>The shop can price a basket, tax it and deliver it, and stops at taking money. A gateway is the piece that does not ship: it sends the buyer to whoever holds the card details, waits, and tells the workflow whether the payment happened.</source>
+        <translation>Der Shop kann einen Warenkorb bepreisen, versteuern und liefern und hört beim Kassieren auf. Ein Gateway ist das Teil, das nicht mitgeliefert wird: es schickt den Käufer zu dem, der die Kartendaten hat, wartet und teilt dem Workflow mit, ob die Zahlung erfolgt ist.</translation>
+    </message>
+    <message>
+        <source>The common shape now, and the one people mean when they say payment gateway. The card details are collected on your own checkout page - or by the gateway&apos;s javascript, which hands back a token instead - and the charge is made server to server while the buyer waits. No redirect, no coming back, no second visit: one call to execute() decides the order.</source>
+        <translation>Heute die übliche Form und die, die gemeint ist, wenn von einem Zahlungsgateway die Rede ist. Die Kartendaten werden auf Ihrer eigenen Kassenseite erfasst - oder vom JavaScript des Gateways, das stattdessen ein Token zurückgibt -, und die Belastung erfolgt von Server zu Server, während der Käufer wartet. Keine Weiterleitung, keine Rückkehr, kein zweiter Besuch: ein Aufruf von execute() entscheidet über die Bestellung.</translation>
+    </message>
+    <message>
+        <source>Publishing a large object blocks whoever pressed the button. Handing it to the queue does not, but a queue that takes everything makes the site feel wrong for small edits. A filter of your own is where that line gets drawn - by size, by class, by who is editing, by time of day.</source>
+        <translation>Das Veröffentlichen eines großen Objekts blockiert denjenigen, der die Schaltfläche gedrückt hat. Die Übergabe an die Warteschlange tut das nicht, aber eine Warteschlange, die alles annimmt, lässt die Website bei kleinen Änderungen falsch wirken. Ein eigener Filter ist der Ort, an dem diese Grenze gezogen wird - nach Größe, nach Klasse, nach Bearbeiter, nach Tageszeit.</translation>
+    </message>
+    <message>
+        <source>The one that ships reads /api/&lt;provider&gt;/v&lt;n&gt;/ out of the path with a regular expression. Replacing it is how the api moves somewhere else, or takes its version from a header or an Accept type instead of from the path - which is what most people mean by versioning an api now.</source>
+        <translation>Der mitgelieferte liest /api/&lt;provider&gt;/v&lt;n&gt;/ mit einem regulären Ausdruck aus dem Pfad. Ihn zu ersetzen ist der Weg, die API woandershin zu verlegen oder ihre Version aus einem Header oder einem Accept-Typ statt aus dem Pfad zu nehmen - was heute meist mit Versionierung einer API gemeint ist.</translation>
+    </message>
+    <message>
+        <source>The earliest place there is to see a REST request. Nothing has been matched and no controller has been chosen, so this is where a request is rewritten, refused, or sent somewhere else entirely before anything has committed to answering it.</source>
+        <translation>Die früheste Stelle, an der eine REST-Anfrage zu sehen ist. Noch ist nichts zugeordnet und kein Controller gewählt; hier wird eine Anfrage also umgeschrieben, abgewiesen oder ganz woandershin geschickt, bevor sich irgendetwas zur Antwort verpflichtet hat.</translation>
+    </message>
+    <message>
+        <source>The REST layer that ships answers about content. A provider of your own puts routes of any shape under the same api, with the same authentication, the same output formats and the same error handling, rather than a module view pretending to be an api.</source>
+        <translation>Die mitgelieferte REST-Schicht antwortet über Inhalte. Ein eigener Provider stellt Routen beliebiger Form unter dieselbe API, mit derselben Authentifizierung, denselben Ausgabeformaten und derselben Fehlerbehandlung, statt eines Modul-Views, der vorgibt, eine API zu sein.</translation>
+    </message>
+    <message>
+        <source>Later than the pre routing filter and better informed: the route has been matched, so this knows which controller is about to answer. Where a header is read, a parameter is normalised, or a request is turned away on grounds that depend on what it asked for.</source>
+        <translation>Später als der Filter vor dem Routing und besser informiert: die Route ist zugeordnet, also weiß er, welcher Controller gleich antwortet. Hier wird ein Header gelesen, ein Parameter normalisiert oder eine Anfrage aus Gründen abgewiesen, die davon abhängen, was sie verlangt hat.</translation>
+    </message>
+    <message>
+        <source>The last thing that happens before a REST answer leaves. This is the output filter of the REST layer: a header added to every answer, a body wrapped, a content type changed, without touching a single controller.</source>
+        <translation>Das Letzte, was passiert, bevor eine REST-Antwort hinausgeht. Dies ist der Ausgabefilter der REST-Schicht: ein Header an jeder Antwort, ein umhüllter Rumpf, ein geänderter Inhaltstyp, ohne einen einzigen Controller anzufassen.</translation>
+    </message>
+    <message>
+        <source>The result is still data at this point rather than json or xml, so this is the place to add to it, take something out of it, or reshape it - once, for every format, rather than in each renderer.</source>
+        <translation>Das Ergebnis sind an dieser Stelle noch Daten statt JSON oder XML; hier ist also der Ort, etwas hinzuzufügen, herauszunehmen oder es umzuformen - einmal, für jedes Format, statt in jedem Renderer.</translation>
+    </message>
+    <message>
+        <source>The filter that ships reads a list of exceptions out of rest.ini. A filter of your own can decide per request - by route, by method, by what is being asked for - which is the difference between one public endpoint and a second copy of the api with the authentication taken out.</source>
+        <translation>Der mitgelieferte Filter liest eine Liste von Ausnahmen aus rest.ini. Ein eigener Filter kann je Anfrage entscheiden - nach Route, nach Methode, nach dem, was verlangt wird -, und das ist der Unterschied zwischen einem öffentlichen Endpunkt und einer zweiten Kopie der API ohne Authentifizierung.</translation>
+    </message>
+    <message>
+        <source>The engine that ships keeps its index in the database, which is fine until the content or the queries outgrow it. An engine of your own can hand indexing and searching to something built for it.</source>
+        <translation>Die mitgelieferte Engine hält ihren Index in der Datenbank, was so lange gut geht, bis die Inhalte oder die Abfragen darüber hinauswachsen. Eine eigene Engine kann Indexieren und Suchen an etwas übergeben, das dafür gebaut ist.</translation>
+    </message>
+    <message>
+        <source>The default lets php keep sessions wherever php.ini says. A handler of your own can put them in a database, in a cache, or anywhere shared between servers.</source>
+        <translation>Standardmäßig bewahrt PHP Sessions dort auf, wo php.ini es sagt. Ein eigener Handler kann sie in eine Datenbank, einen Cache oder an einen beliebigen, von Servern geteilten Ort legen.</translation>
+    </message>
+    <message>
+        <source>Nothing ships as a default, so without a handler of your own the shop has no shipping at all. This is where a weight table, a flat rate, a carrier api or free delivery over a threshold lives.</source>
+        <translation>Standardmäßig wird nichts mitgeliefert; ohne eigenen Handler hat der Shop also überhaupt keinen Versand. Hier leben eine Gewichtstabelle, eine Pauschale, eine Versanddienstleister-API oder kostenlose Lieferung ab einem Schwellenwert.</translation>
+    </message>
+    <message>
+        <source>The handler that ships writes files under a directory. One of your own could write somewhere else, push to a cache in front of the site, or record what it would have done without doing it.</source>
+        <translation>Der mitgelieferte Handler schreibt Dateien unter ein Verzeichnis. Ein eigener könnte woandershin schreiben, in einen Cache vor der Website schieben oder aufzeichnen, was er getan hätte, ohne es zu tun.</translation>
+    </message>
+    <message>
+        <source>This is the nearest thing here to an output filter over addresses: every url alias, for every object, in every language, passes through it as it is made. It is how a prefix is added, a word is stripped, or a house rule about what a url may contain is enforced in one place rather than in every template that links.</source>
+        <translation>Dies ist das, was hier einem Ausgabefilter für Adressen am nächsten kommt: jeder URL-Alias, für jedes Objekt, in jeder Sprache, läuft beim Entstehen hier durch. So wird ein Präfix hinzugefügt, ein Wort entfernt oder eine Hausregel darüber, was eine URL enthalten darf, an einer Stelle durchgesetzt statt in jedem Template, das verlinkt.</translation>
+    </message>
+    <message>
+        <source>The handler that ships reads the rate off the product class and the buyer country. A handler of your own is how any other rule applies - a category held elsewhere, a rate that depends on the buyer rather than the goods, a rate fetched from a service - without a copy of the tax rules in every template.</source>
+        <translation>Der mitgelieferte Handler liest den Satz aus der Produktklasse und dem Land des Käufers. Ein eigener Handler ist der Weg, jede andere Regel anzuwenden - eine anderswo geführte Kategorie, ein Satz, der vom Käufer statt von der Ware abhängt, ein von einem Dienst abgerufener Satz -, ohne eine Kopie der Steuerregeln in jedem Template.</translation>
+    </message>
+    <message>
+        <source>This is the only place the editing format and the stored format meet. A handler of your own is how a different editor, a different markup, or a stricter set of rules about what may be stored gets in - without changing the datatype or anything that reads it.</source>
+        <translation>Dies ist die einzige Stelle, an der das Bearbeitungsformat und das Speicherformat aufeinandertreffen. Ein eigener Handler ist der Weg, einen anderen Editor, ein anderes Markup oder strengere Regeln darüber, was gespeichert werden darf, einzubringen - ohne den Datentyp oder irgendetwas zu ändern, das ihn liest.</translation>
+    </message>
+    <message>
+        <source>The handler that ships renders to XHTML through a template per tag. A handler of your own is how the same stored content is rendered to something else entirely - plain text for a digest, a feed format, a print layout - without a second copy of the content existing anywhere.</source>
+        <translation>Der mitgelieferte Handler gibt über ein Template je Tag XHTML aus. Ein eigener Handler ist der Weg, denselben gespeicherten Inhalt als etwas völlig anderes auszugeben - reinen Text für eine Zusammenfassung, ein Feed-Format, ein Drucklayout -, ohne dass irgendwo eine zweite Kopie des Inhalts existiert.</translation>
+    </message>
+    <message>
+        <source>The handler</source>
+        <translation>Der Handler</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registrierung</translation>
+    </message>
+    <message>
+        <source>API examples</source>
+        <translation>API-Beispiele</translation>
+    </message>
+    <message>
+        <source>The class itself, with a method for every one the contract requires and a note on each saying what it is for and when it is called.</source>
+        <translation>Die Klasse selbst, mit einer Methode für jede, die der Vertrag verlangt, und einem Hinweis bei jeder, wofür sie da ist und wann sie aufgerufen wird.</translation>
+    </message>
+    <message>
+        <source>The ini that names this class in place of the default.</source>
+        <translation>Die INI, die diese Klasse anstelle der Standardklasse benennt.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>Die gepackte Beschreibung der Extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>Damit die Extension beim Namen angefordert statt hineinkopiert werden kann.</translation>
+    </message>
+    <message>
+        <source>A file of worked examples: how the kernel reaches this handler, what it passes, and how to call it yourself from a script or a cronjob.</source>
+        <translation>Eine Datei mit durchgerechneten Beispielen: wie der Kernel diesen Handler erreicht, was er übergibt und wie Sie ihn selbst aus einem Skript oder Cronjob aufrufen.</translation>
+    </message>
+    <message>
+        <source>What it replaces, how to switch it on, and what each method has to do.</source>
+        <translation>Was er ersetzt, wie man ihn einschaltet und was jede Methode tun muss.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
+    </message>
+    <message>
+        <source>The arguments arrive from the browser as strings in an array. Nothing has checked them. Everything this class does with them is as exposed as a module view, and has none of a module view&apos;s policy checking unless it is asked for below.</source>
+        <translation>Die Argumente kommen vom Browser als Zeichenketten in einem Array. Nichts hat sie geprüft. Alles, was diese Klasse mit ihnen tut, ist so offen wie ein Modul-View und hat keine der Richtlinienprüfungen eines Modul-Views, sofern sie unten nicht angefordert werden.</translation>
+    </message>
+    <message>
+        <source>The alias is the third argument to the operator: {$node|attribute( show, 2, myformat )}. It has to be a word a template author will remember, because nothing lists them.</source>
+        <translation>Der Alias ist das dritte Argument des Operators: {$node|attribute( show, 2, myformat )}. Es muss ein Wort sein, das sich ein Template-Autor merkt, denn nichts listet sie auf.</translation>
+    </message>
+    <message>
+        <source>ezdefault is registered out of the box. Registering another replaces it, so whatever the default did has to be done here too, or be deliberately dropped.</source>
+        <translation>ezdefault ist von Haus aus registriert. Einen anderen zu registrieren ersetzt ihn; was auch immer der Standard getan hat, muss also auch hier getan oder bewusst weggelassen werden.</translation>
+    </message>
+    <message>
+        <source>The handler is constructed with an identifier, a name and a handle type; the generated constructor passes them up to the base.</source>
+        <translation>Der Handler wird mit einem Bezeichner, einem Namen und einem Handle-Typ erzeugt; der generierte Konstruktor reicht sie an die Basisklasse weiter.</translation>
+    </message>
+    <message>
+        <source>eZClusterFileHandlerInterface has forty two methods. Extending eZFSFileHandler means only the ones below have to be thought about; the rest keep doing what they do on a filesystem. Every method generated calls up to it, so the site behaves exactly as before until one is changed.</source>
+        <translation>eZClusterFileHandlerInterface hat zweiundvierzig Methoden. eZFSFileHandler zu erweitern bedeutet, dass nur über die unten stehenden nachgedacht werden muss; die übrigen tun weiterhin, was sie auf einem Dateisystem tun. Jede generierte Methode ruft die Basisklasse auf, die Website verhält sich also genau wie zuvor, bis eine geändert wird.</translation>
+    </message>
+    <message>
+        <source>Set Implementation in the same section to the alias as well, or the default handler is still the one that is built.</source>
+        <translation>Setzen Sie Implementation im selben Abschnitt ebenfalls auf den Alias, sonst wird weiterhin der Standard-Handler erzeugt.</translation>
+    </message>
+    <message>
+        <source>This is only reached when FileHandler is eZDFSFileHandler. The database side is separate: DBBackend in the same section.</source>
+        <translation>Dies wird nur erreicht, wenn FileHandler eZDFSFileHandler ist. Die Datenbankseite ist getrennt: DBBackend im selben Abschnitt.</translation>
+    </message>
+    <message>
+        <source>The DFS backend and the database backend are separate settings. Changing this one does not change where the bytes go.</source>
+        <translation>Das DFS-Backend und das Datenbank-Backend sind getrennte Einstellungen. Diese zu ändern ändert nicht, wohin die Bytes gehen.</translation>
+    </message>
+    <message>
+        <source>The alias goes in the directory name, the file name and the class name. All three are lower case, because the kernel lower cases the setting before it looks.</source>
+        <translation>Der Alias steht im Verzeichnisnamen, im Dateinamen und im Klassennamen. Alle drei sind kleingeschrieben, weil der Kernel die Einstellung vor dem Nachschlagen in Kleinbuchstaben umwandelt.</translation>
+    </message>
+    <message>
+        <source>Nothing registers this. The kernel asks class_exists( &apos;sevenxValkeyINICache&apos; ) and uses it if the answer is yes, so the class has to have exactly that name and the extension has to be active - and an installation without it behaves exactly as before. The name is not a choice.</source>
+        <translation>Nichts registriert dies. Der Kernel fragt class_exists( &apos;sevenxValkeyINICache&apos; ) und verwendet die Klasse, wenn die Antwort Ja lautet; die Klasse muss also genau diesen Namen haben und die Extension aktiv sein - und eine Installation ohne sie verhält sich genau wie zuvor. Der Name ist keine Wahl.</translation>
+    </message>
+    <message>
+        <source>The class name and the file name are both worked out from the setting: LoginHandler[]=x means class eZxUser in login_handler/ezxuser.php. All three have to agree or the handler is reported missing and the default answers instead - which means a site that looks like it is using your handler and is not.</source>
+        <translation>Klassenname und Dateiname werden beide aus der Einstellung ermittelt: LoginHandler[]=x bedeutet die Klasse eZxUser in login_handler/ezxuser.php. Alle drei müssen übereinstimmen, sonst wird der Handler als fehlend gemeldet und der Standard antwortet stattdessen - also eine Website, die aussieht, als verwende sie Ihren Handler, und es nicht tut.</translation>
+    </message>
+    <message>
+        <source>Set Transport in the same section to the alias, or the default is still used.</source>
+        <translation>Setzen Sie Transport im selben Abschnitt auf den Alias, sonst wird weiterhin der Standard verwendet.</translation>
+    </message>
+    <message>
+        <source>This runs before the siteaccess is settled and on every request, cached or not. Anything slow here is paid for by every visitor, and anything that varies the answer without varying the cache key serves the wrong page to somebody.</source>
+        <translation>Dies läuft, bevor der Siteaccess feststeht, und bei jeder Anfrage, ob zwischengespeichert oder nicht. Alles Langsame hier bezahlt jeder Besucher, und alles, was die Antwort verändert, ohne den Cache-Schlüssel zu verändern, liefert jemandem die falsche Seite aus.</translation>
+    </message>
+    <message>
+        <source>The variable really is AvailableNotificationEventTypes in this section too, not AvailableNotificationEventHandlers. It is a quirk of the kernel, not a mistake here.</source>
+        <translation>Die Variable heißt auch in diesem Abschnitt wirklich AvailableNotificationEventTypes, nicht AvailableNotificationEventHandlers. Das ist eine Eigenheit des Kernels, kein Fehler hier.</translation>
+    </message>
+    <message>
+        <source>The file is found by its path, not by the autoloader: it must be at exactly the place named above or the type is reported missing.</source>
+        <translation>Die Datei wird über ihren Pfad gefunden, nicht vom Autoloader: sie muss genau an der oben genannten Stelle liegen, sonst wird der Typ als fehlend gemeldet.</translation>
+    </message>
+    <message>
+        <source>A creation handler pairs with a package handler: this gathers the item up, and that one installs it somewhere else. Neither is much use alone.</source>
+        <translation>Ein Erstellungshandler gehört zu einem Pakethandler: dieser sammelt das Element ein, jener installiert es woanders. Keiner ist allein von großem Nutzen.</translation>
+    </message>
+    <message>
+        <source>The alias is what goes in the type attribute of an &lt;install&gt; element inside package.xml, so it is part of the package format and cannot be changed once packages exist.</source>
+        <translation>Der Alias steht im Attribut type eines &lt;install&gt;-Elements in package.xml; er ist also Teil des Paketformats und kann nicht mehr geändert werden, sobald Pakete existieren.</translation>
+    </message>
+    <message>
+        <source>The alias here and the alias of the package handler that carries the item are the same word. If they disagree the item is carried and never offered.</source>
+        <translation>Der Alias hier und der Alias des Pakethandlers, der das Element transportiert, sind dasselbe Wort. Stimmen sie nicht überein, wird das Element transportiert und nie angeboten.</translation>
+    </message>
+    <message>
+        <source>The class registers itself at the foot of its own file, with eZPaymentGatewayType::registerGateway(). Without that line the file is found, loaded, and the gateway never appears in the workflow event - and nothing says why.</source>
+        <translation>Die Klasse registriert sich am Ende ihrer eigenen Datei mit eZPaymentGatewayType::registerGateway(). Ohne diese Zeile wird die Datei gefunden und geladen, und das Gateway erscheint nie im Workflow-Ereignis - und nichts sagt, warum.</translation>
+    </message>
+    <message>
+        <source>Extends eZPaymentGateway rather than eZRedirectGateway, which is the whole difference: no payment object is needed to survive a trip away and back, because there is no trip. It also means the money is taken inside the request the buyer is waiting on, so a slow gateway is a slow checkout and a timeout is a genuinely ambiguous state.</source>
+        <translation>Erweitert eZPaymentGateway statt eZRedirectGateway, und das ist der ganze Unterschied: kein Zahlungsobjekt muss einen Weg hin und zurück überstehen, weil es keinen Weg gibt. Es bedeutet auch, dass das Geld innerhalb der Anfrage abgebucht wird, auf die der Käufer wartet; ein langsames Gateway ist also eine langsame Kasse und eine Zeitüberschreitung ein wirklich mehrdeutiger Zustand.</translation>
+    </message>
+    <message>
+        <source>Every filter has to accept before a version goes to the queue: one refusal is enough to publish it in the request. That way round on purpose - the safe answer is the one that happens now.</source>
+        <translation>Jeder Filter muss zustimmen, bevor eine Version in die Warteschlange geht: eine Ablehnung genügt, um sie in der Anfrage zu veröffentlichen. Absichtlich so herum - die sichere Antwort ist die, die sofort geschieht.</translation>
+    </message>
+    <message>
+        <source>This runs before anything is routed, so it decides which requests are REST requests at all. A filter that claims too much takes over addresses the rest of the site was answering.</source>
+        <translation>Dies läuft, bevor irgendetwas geroutet wird; es entscheidet also, welche Anfragen überhaupt REST-Anfragen sind. Ein Filter, der zu viel beansprucht, übernimmt Adressen, die der Rest der Website beantwortet hat.</translation>
+    </message>
+    <message>
+        <source>Filters run in the order they are listed. This one runs before authentication as well as before routing, so anything it decides is decided about a caller nobody has identified yet.</source>
+        <translation>Filter laufen in der Reihenfolge, in der sie aufgeführt sind. Dieser läuft vor der Authentifizierung wie vor dem Routing; alles, was er entscheidet, wird also über einen Aufrufer entschieden, den noch niemand identifiziert hat.</translation>
+    </message>
+    <message>
+        <source>The alias is the first part of the path: a provider registered as &quot;shop&quot; answers under /api/shop/. Routes are matched in the order the provider returns them, so put the specific ones first.</source>
+        <translation>Der Alias ist der erste Teil des Pfads: ein als „shop“ registrierter Provider antwortet unter /api/shop/. Routen werden in der Reihenfolge zugeordnet, in der der Provider sie zurückgibt; stellen Sie die spezifischen also an den Anfang.</translation>
+    </message>
+    <message>
+        <source>The request object is shared. Changing it here changes what the controller is given, which is the point - and also why two filters that both rewrite the same thing are worth thinking about.</source>
+        <translation>Das Anfrageobjekt wird geteilt. Es hier zu ändern ändert, was der Controller bekommt, und das ist der Sinn - und auch der Grund, warum man über zwei Filter nachdenken sollte, die beide dasselbe umschreiben.</translation>
+    </message>
+    <message>
+        <source>Everything has been decided by the time this runs, including the status. Changing the body without changing the headers that describe it - the length, the type - is how a response becomes one nothing can read.</source>
+        <translation>Wenn dies läuft, ist alles entschieden, auch der Status. Den Rumpf zu ändern, ohne die Header zu ändern, die ihn beschreiben - die Länge, den Typ -, ist der Weg, auf dem eine Antwort zu einer wird, die nichts lesen kann.</translation>
+    </message>
+    <message>
+        <source>Whatever is added here is serialised and sent. Anything that should not leave the building must not be put on the result, however convenient it is to have it there.</source>
+        <translation>Was hier hinzugefügt wird, wird serialisiert und gesendet. Was das Haus nicht verlassen soll, darf nicht in das Ergebnis gelegt werden, wie bequem es dort auch wäre.</translation>
+    </message>
+    <message>
+        <source>This one decides who may reach what. A filter that answers false too easily opens the whole api; the safe default is to let nothing through that is not listed.</source>
+        <translation>Dieser entscheidet, wer was erreichen darf. Ein Filter, der zu leicht false antwortet, öffnet die ganze API; die sichere Voreinstellung ist, nichts durchzulassen, was nicht aufgeführt ist.</translation>
+    </message>
+    <message>
+        <source>After switching engines the index has to be rebuilt: php bin/php/updatesearchindex.php. Until then a search answers from an index the new engine never wrote.</source>
+        <translation>Nach einem Wechsel der Engine muss der Index neu aufgebaut werden: php bin/php/updatesearchindex.php. Bis dahin antwortet eine Suche aus einem Index, den die neue Engine nie geschrieben hat.</translation>
+    </message>
+    <message>
+        <source>Also set ForceStart=enabled in the same section if the handler needs a session on every request.</source>
+        <translation>Setzen Sie im selben Abschnitt auch ForceStart=enabled, wenn der Handler bei jeder Anfrage eine Session braucht.</translation>
+    </message>
+    <message>
+        <source>There is no shipping handler by default, so nothing is being replaced here: until one is registered a basket has no delivery cost at all.</source>
+        <translation>Standardmäßig gibt es keinen Versand-Handler; hier wird also nichts ersetzt: bis einer registriert ist, hat ein Warenkorb überhaupt keine Lieferkosten.</translation>
+    </message>
+    <message>
+        <source>StaticCache=enabled in the same section is what switches static caching on at all; this setting only decides which handler does it.</source>
+        <translation>StaticCache=enabled im selben Abschnitt schaltet den statischen Cache überhaupt erst ein; diese Einstellung entscheidet nur, welcher Handler es übernimmt.</translation>
+    </message>
+    <message>
+        <source>Filters run in the order they are listed, each given what the last returned. The url is stored as the last one leaves it, so changing a filter does not change the urls already made - those need bin/php/updateniceurls.php.</source>
+        <translation>Filter laufen in der Reihenfolge, in der sie aufgeführt sind, und jeder bekommt, was der vorige zurückgegeben hat. Die URL wird so gespeichert, wie der letzte sie verlässt; einen Filter zu ändern ändert also nicht die bereits erzeugten URLs - dafür ist bin/php/updateniceurls.php nötig.</translation>
+    </message>
+    <message>
+        <source>The class name and the file name are both worked out from the setting above, so neither is free to change on its own.</source>
+        <translation>Klassenname und Dateiname werden beide aus der Einstellung oben ermittelt; keiner von beiden kann also für sich geändert werden.</translation>
+    </message>
+    <message>
+        <source>Input and output are separate settings and are free to disagree, but XML written by one handler has to be readable by the other or existing content stops rendering.</source>
+        <translation>Eingabe und Ausgabe sind getrennte Einstellungen und dürfen voneinander abweichen, aber von einem Handler geschriebenes XML muss für den anderen lesbar sein, sonst werden vorhandene Inhalte nicht mehr dargestellt.</translation>
+    </message>
+    <message>
+        <source>Whatever this returns is put on the page. Anything that came from an editor has to leave here escaped, or the stored content becomes a way to run script in a visitor&apos;s browser.</source>
+        <translation>Was dies zurückgibt, kommt auf die Seite. Alles, was von einem Redakteur stammt, muss hier maskiert herauskommen, sonst wird der gespeicherte Inhalt zu einem Weg, Skripte im Browser eines Besuchers auszuführen.</translation>
+    </message>
+    <message>
+        <source>The function itself. $args is what the browser sent, as an array of strings, in the order it sent them - untrusted, unchecked, and every one of them to be looked at before it is used. Whatever is returned is encoded and sent back.</source>
+        <translation>Die Funktion selbst. $args ist, was der Browser gesendet hat, als Array von Zeichenketten in der Reihenfolge, in der er sie gesendet hat - nicht vertrauenswürdig, ungeprüft, und jede davon ist vor der Verwendung anzusehen. Was zurückgegeben wird, wird kodiert und zurückgesendet.</translation>
+    </message>
+    <message>
+        <source>How long an answer may be kept. Return -1 for an answer that must never be cached, which is anything that depends on who is asking.</source>
+        <translation>Wie lange eine Antwort aufbewahrt werden darf. Geben Sie -1 für eine Antwort zurück, die nie zwischengespeichert werden darf, also alles, was davon abhängt, wer fragt.</translation>
+    </message>
+    <message>
+        <source>What comes before the walk: a table head, an opening bracket, a line saying what is being shown. Called once, before any line.</source>
+        <translation>Was vor dem Durchgang kommt: ein Tabellenkopf, eine öffnende Klammer, eine Zeile, die sagt, was gezeigt wird. Wird einmal aufgerufen, vor jeder Zeile.</translation>
+    </message>
+    <message>
+        <source>One key and its value, at a depth. Called once per attribute, depth first. $showValues says whether the value is wanted or only the name, and $level is how deep, which is what indenting reads.</source>
+        <translation>Ein Schlüssel und sein Wert, in einer Tiefe. Wird einmal je Attribut aufgerufen, zuerst in die Tiefe. $showValues sagt, ob der Wert gewünscht ist oder nur der Name, und $level, wie tief, was die Einrückung liest.</translation>
+    </message>
+    <message>
+        <source>One plain value on its way into the output. This is where escaping belongs: what is being printed is content, and it is being printed into a page.</source>
+        <translation>Ein einfacher Wert auf dem Weg in die Ausgabe. Hierher gehört das Maskieren: was ausgegeben wird, ist Inhalt, und es wird in eine Seite ausgegeben.</translation>
+    </message>
+    <message>
+        <source>Changes the totals in place. $basketInfo carries total_ex_vat, total_inc_vat and the per rate lists; whatever is left in it is what the basket and the order show. Called on every basket page, so anything slow here is felt everywhere.</source>
+        <translation>Ändert die Summen an Ort und Stelle. $basketInfo enthält total_ex_vat, total_inc_vat und die Listen je Satz; was darin übrig bleibt, zeigen Warenkorb und Bestellung. Wird auf jeder Warenkorbseite aufgerufen; alles Langsame hier ist also überall zu spüren.</translation>
+    </message>
+    <message>
+        <source>Takes an uploaded file wherever this handler keeps files. Returning false leaves the default storage to deal with it.</source>
+        <translation>Übernimmt eine hochgeladene Datei dorthin, wo dieser Handler Dateien aufbewahrt. Die Rückgabe von false überlässt sie der Standardspeicherung.</translation>
+    </message>
+    <message>
+        <source>Decides what happens when somebody asks for the file. Answer RESULT_UNAVAILABLE to leave it to the default, or send it yourself and answer that it is done.</source>
+        <translation>Entscheidet, was passiert, wenn jemand die Datei anfordert. Antworten Sie RESULT_UNAVAILABLE, um es dem Standard zu überlassen, oder senden Sie sie selbst und antworten Sie, dass es erledigt ist.</translation>
+    </message>
+    <message>
+        <source>The same, once the file has been found and its type worked out. This is where a handler that hands off to the web server does so.</source>
+        <translation>Dasselbe, nachdem die Datei gefunden und ihr Typ ermittelt wurde. Hier übergibt ein Handler, der an den Webserver weitergibt, diesem die Datei.</translation>
+    </message>
+    <message>
+        <source>Takes a file that is already on disk into wherever this handler keeps things. $scope says what it is for - image, binaryfile, viewcache - and is worth keeping, because purging works on it.</source>
+        <translation>Übernimmt eine Datei, die bereits auf der Festplatte liegt, dorthin, wo dieser Handler Dinge aufbewahrt. $scope sagt, wofür sie ist - image, binaryfile, viewcache - und sollte erhalten bleiben, weil das Bereinigen danach arbeitet.</translation>
+    </message>
+    <message>
+        <source>The same, from a string rather than a file. This is what cache writing goes through, so it is called far more often than the one above.</source>
+        <translation>Dasselbe aus einer Zeichenkette statt aus einer Datei. Hier geht das Schreiben des Caches durch, es wird also weit häufiger aufgerufen als das obige.</translation>
+    </message>
+    <message>
+        <source>Brings a file back to local disk so php can read it. Called before anything that needs a real path.</source>
+        <translation>Holt eine Datei auf die lokale Festplatte zurück, damit PHP sie lesen kann. Wird vor allem aufgerufen, was einen echten Pfad braucht.</translation>
+    </message>
+    <message>
+        <source>The contents of this handler&apos;s file, without putting it on disk first. The quick path, and the one caches use.</source>
+        <translation>Der Inhalt der Datei dieses Handlers, ohne sie zuerst auf die Festplatte zu legen. Der schnelle Weg, und der, den Caches nutzen.</translation>
+    </message>
+    <message>
+        <source>Whether a file is there. Called constantly; whatever this does, it has to be cheap.</source>
+        <translation>Ob eine Datei vorhanden ist. Wird ständig aufgerufen; was auch immer dies tut, es muss günstig sein.</translation>
+    </message>
+    <message>
+        <source>Size, modification time and the rest, in the shape php&apos;s own stat() returns. The kernel reads mtime from this to decide what is stale.</source>
+        <translation>Größe, Änderungszeit und der Rest, in der Form, die PHPs eigenes stat() zurückgibt. Der Kernel liest daraus mtime, um zu entscheiden, was veraltet ist.</translation>
+    </message>
+    <message>
+        <source>Removes a file, or everything whose name starts with $fnamePart when it is given.</source>
+        <translation>Entfernt eine Datei oder, wenn angegeben, alles, dessen Name mit $fnamePart beginnt.</translation>
+    </message>
+    <message>
+        <source>Really removes what was only marked as deleted. Called by the cluster purge cronjob rather than during a request.</source>
+        <translation>Entfernt wirklich, was nur als gelöscht markiert war. Wird vom Cronjob zum Bereinigen des Clusters aufgerufen statt während einer Anfrage.</translation>
+    </message>
+    <message>
+        <source>Whether a file written locally has to be handed to this handler afterwards. False on a filesystem; true for anything shared.</source>
+        <translation>Ob eine lokal geschriebene Datei danach an diesen Handler übergeben werden muss. False bei einem Dateisystem; true bei allem Geteilten.</translation>
+    </message>
+    <message>
+        <source>Whether deleting only marks, so that purging is needed later. Say true and the purge cronjob has to be scheduled.</source>
+        <translation>Ob Löschen nur markiert, sodass später bereinigt werden muss. Sagen Sie true, dann muss der Cronjob zum Bereinigen eingeplant werden.</translation>
+    </message>
+    <message>
+        <source>Whether an expired cache file can still be served while a new one is being made. Says whether a slow regeneration blocks visitors or not.</source>
+        <translation>Ob eine abgelaufene Cache-Datei weiterhin ausgeliefert werden kann, während eine neue erzeugt wird. Sagt, ob eine langsame Neuerzeugung Besucher blockiert oder nicht.</translation>
+    </message>
+    <message>
+        <source>Claims the right to build this cache entry, so that ten requests arriving together build it once. Returning something other than true means somebody else is already building it.</source>
+        <translation>Beansprucht das Recht, diesen Cache-Eintrag zu bauen, damit zehn gleichzeitig eintreffende Anfragen ihn einmal bauen. Eine andere Rückgabe als true bedeutet, dass bereits jemand anderes ihn baut.</translation>
+    </message>
+    <message>
+        <source>Puts the finished cache entry in place and gives up the claim.</source>
+        <translation>Stellt den fertigen Cache-Eintrag an seinen Platz und gibt den Anspruch auf.</translation>
+    </message>
+    <message>
+        <source>Gives up the claim without putting anything in place. Called when generating threw, and forgetting it is how a cache entry stays locked for ever.</source>
+        <translation>Gibt den Anspruch auf, ohne etwas an seinen Platz zu stellen. Wird aufgerufen, wenn das Erzeugen eine Ausnahme geworfen hat; es zu vergessen ist der Weg, auf dem ein Cache-Eintrag für immer gesperrt bleibt.</translation>
+    </message>
+    <message>
+        <source>Runs one statement and gives back whatever the driver gives back. Every write in the system arrives here. The server argument is how a caller asks for the replica rather than the master.</source>
+        <translation>Führt eine Anweisung aus und gibt zurück, was der Treiber zurückgibt. Jeder Schreibzugriff im System kommt hier an. Das Server-Argument ist der Weg, auf dem ein Aufrufer das Replikat statt des Masters anfordert.</translation>
+    </message>
+    <message>
+        <source>Runs one statement and gives back rows as arrays. Every read in the system arrives here, so this is where a query log or a slow query timer belongs.</source>
+        <translation>Führt eine Anweisung aus und gibt Zeilen als Arrays zurück. Jeder Lesezugriff im System kommt hier an; hierher gehört also ein Abfrageprotokoll oder eine Messung langsamer Abfragen.</translation>
+    </message>
+    <message>
+        <source>Makes a value safe to put inside a statement. Never weaken this: it is the one thing standing between user input and the database.</source>
+        <translation>Macht einen Wert sicher, um ihn in eine Anweisung einzusetzen. Schwächen Sie dies nie ab: es ist das Einzige zwischen Benutzereingaben und der Datenbank.</translation>
+    </message>
+    <message>
+        <source>Starts a transaction. eZ nests these by counting, so only the outermost one really starts anything.</source>
+        <translation>Startet eine Transaktion. Diese werden durch Zählen verschachtelt, sodass nur die äußerste wirklich etwas startet.</translation>
+    </message>
+    <message>
+        <source>Ends the outermost transaction and keeps the work.</source>
+        <translation>Beendet die äußerste Transaktion und behält die Arbeit.</translation>
+    </message>
+    <message>
+        <source>Ends the outermost transaction and throws the work away.</source>
+        <translation>Beendet die äußerste Transaktion und verwirft die Arbeit.</translation>
+    </message>
+    <message>
+        <source>The id the last insert was given. eZPersistentObject reads this straight after every insert, so getting it wrong breaks everything quietly.</source>
+        <translation>Die ID, die das letzte Einfügen erhalten hat. eZPersistentObject liest sie direkt nach jedem Einfügen; ein Fehler hier macht still alles kaputt.</translation>
+    </message>
+    <message>
+        <source>Lets the connection go, at the end of the request.</source>
+        <translation>Gibt die Verbindung am Ende der Anfrage frei.</translation>
+    </message>
+    <message>
+        <source>Copies one stored file to another name without bringing it back through php. On storage that can copy server-side, this is the one worth doing properly.</source>
+        <translation>Kopiert eine gespeicherte Datei unter einen anderen Namen, ohne sie durch PHP zurückzuholen. Bei einem Speicher, der serverseitig kopieren kann, lohnt es sich, dies richtig umzusetzen.</translation>
+    </message>
+    <message>
+        <source>Brings a stored file down to local disk.</source>
+        <translation>Holt eine gespeicherte Datei auf die lokale Festplatte.</translation>
+    </message>
+    <message>
+        <source>Puts a local file into storage.</source>
+        <translation>Legt eine lokale Datei in den Speicher.</translation>
+    </message>
+    <message>
+        <source>Removes a stored file. May be given one path or a list of them.</source>
+        <translation>Entfernt eine gespeicherte Datei. Kann einen Pfad oder eine Liste davon erhalten.</translation>
+    </message>
+    <message>
+        <source>Sends a stored file straight to the browser, honouring a byte range. This is what makes a large download work without loading it into memory.</source>
+        <translation>Sendet eine gespeicherte Datei direkt an den Browser und beachtet dabei einen Bytebereich. Das lässt einen großen Download funktionieren, ohne ihn in den Speicher zu laden.</translation>
+    </message>
+    <message>
+        <source>The whole file as a string. Fine for a cache entry, wrong for a video.</source>
+        <translation>Die ganze Datei als Zeichenkette. Gut für einen Cache-Eintrag, falsch für ein Video.</translation>
+    </message>
+    <message>
+        <source>Writes a file from a string.</source>
+        <translation>Schreibt eine Datei aus einer Zeichenkette.</translation>
+    </message>
+    <message>
+        <source>Moves a stored file. Wants to be atomic: the cache handler renames a finished entry into place and expects nobody to see it half done.</source>
+        <translation>Verschiebt eine gespeicherte Datei. Soll atomar sein: der Cache-Handler benennt einen fertigen Eintrag an seinen Platz um und erwartet, dass niemand ihn halbfertig sieht.</translation>
+    </message>
+    <message>
+        <source>Whether a file is there.</source>
+        <translation>Ob eine Datei vorhanden ist.</translation>
+    </message>
+    <message>
+        <source>How big it is, without fetching it.</source>
+        <translation>Wie groß sie ist, ohne sie abzurufen.</translation>
+    </message>
+    <message>
+        <source>Everything stored under a path. Used when a whole directory has to go.</source>
+        <translation>Alles, was unter einem Pfad gespeichert ist. Wird verwendet, wenn ein ganzes Verzeichnis entfernt werden muss.</translation>
+    </message>
+    <message>
+        <source>Turns a stored path into an address a browser can be sent to, when the storage can serve directly. Return the path unchanged to keep serving through php.</source>
+        <translation>Wandelt einen gespeicherten Pfad in eine Adresse um, an die ein Browser geschickt werden kann, wenn der Speicher direkt ausliefern kann. Geben Sie den Pfad unverändert zurück, um weiterhin über PHP auszuliefern.</translation>
+    </message>
+    <message>
+        <source>Opens the connection the rest of the methods use. Called once, lazily, on the first thing that needs the index.</source>
+        <translation>Öffnet die Verbindung, die die übrigen Methoden verwenden. Wird einmal und verzögert aufgerufen, beim Ersten, was den Index braucht.</translation>
+    </message>
+    <message>
+        <source>Whether the index knows this file. The expiry argument is what makes a stale entry look absent without being deleted.</source>
+        <translation>Ob der Index diese Datei kennt. Das Ablauf-Argument lässt einen veralteten Eintrag fehlend aussehen, ohne ihn zu löschen.</translation>
+    </message>
+    <message>
+        <source>Marks one file gone. It is a mark, not a removal: the row stays until the purge cronjob takes it, so that every server sees the deletion.</source>
+        <translation>Markiert eine Datei als verschwunden. Es ist eine Markierung, keine Entfernung: die Zeile bleibt, bis der Cronjob zum Bereinigen sie entfernt, damit jeder Server die Löschung sieht.</translation>
+    </message>
+    <message>
+        <source>Marks everything matching a pattern gone. This is what a cache clear turns into, so it is worth it being fast.</source>
+        <translation>Markiert alles, was auf ein Muster passt, als verschwunden. Dazu wird ein Leeren des Caches; es lohnt sich also, dass dies schnell ist.</translation>
+    </message>
+    <message>
+        <source>Really removes what was marked gone, index row and stored bytes together. Run by the clusterpurge cronjob.</source>
+        <translation>Entfernt wirklich, was als verschwunden markiert war, Indexzeile und gespeicherte Bytes zusammen. Wird vom Cronjob clusterpurge ausgeführt.</translation>
+    </message>
+    <message>
+        <source>Claims the right to build one cache entry. Must be atomic across servers: two of them asking at once, only one may be told yes. Everything else here is bookkeeping; this is the part that is hard.</source>
+        <translation>Beansprucht das Recht, einen Cache-Eintrag zu bauen. Muss serverübergreifend atomar sein: fragen zwei gleichzeitig, darf nur einer ein Ja bekommen. Alles andere hier ist Buchführung; dies ist der schwierige Teil.</translation>
+    </message>
+    <message>
+        <source>Puts the finished entry in place and gives up the claim.</source>
+        <translation>Stellt den fertigen Eintrag an seinen Platz und gibt den Anspruch auf.</translation>
+    </message>
+    <message>
+        <source>Gives up the claim without an entry. If this is ever missed, that entry stays claimed and nothing rebuilds it.</source>
+        <translation>Gibt den Anspruch ohne Eintrag auf. Wird dies jemals versäumt, bleibt dieser Eintrag beansprucht, und nichts baut ihn neu.</translation>
+    </message>
+    <message>
+        <source>Brings a file to the local disk so php can read it as a file.</source>
+        <translation>Holt eine Datei auf die lokale Festplatte, damit PHP sie als Datei lesen kann.</translation>
+    </message>
+    <message>
+        <source>Indexes a local file and sends the bytes to the DFS backend.</source>
+        <translation>Indexiert eine lokale Datei und sendet die Bytes an das DFS-Backend.</translation>
+    </message>
+    <message>
+        <source>The same from a string, without a local file in the middle.</source>
+        <translation>Dasselbe aus einer Zeichenkette, ohne lokale Datei dazwischen.</translation>
+    </message>
+    <message>
+        <source>Reads whatever the handler needs to know before it can ask for rates - a url, a key, a list of currencies. Called before requestRates().</source>
+        <translation>Liest, was der Handler wissen muss, bevor er nach Kursen fragen kann - eine URL, einen Schlüssel, eine Liste von Währungen. Wird vor requestRates() aufgerufen.</translation>
+    </message>
+    <message>
+        <source>Fetches the rates and puts them in place with setRateList() and setBaseCurrency(). Return false on a failure rather than storing half a list: a partial update leaves some prices converted at yesterday&apos;s rate and some at the wrong one.</source>
+        <translation>Ruft die Kurse ab und setzt sie mit setRateList() und setBaseCurrency() ein. Geben Sie bei einem Fehler false zurück, statt eine halbe Liste zu speichern: eine teilweise Aktualisierung lässt manche Preise zum gestrigen Kurs und manche zum falschen umgerechnet.</translation>
+    </message>
+    <message>
+        <source>What was fetched, as currency code to rate against the base. Read by the shop after requestRates() has run.</source>
+        <translation>Was abgerufen wurde, als Währungscode mit Kurs gegenüber der Basis. Vom Shop gelesen, nachdem requestRates() gelaufen ist.</translation>
+    </message>
+    <message>
+        <source>Which currency the rates are against. The shop converts through this, so it has to be one it knows.</source>
+        <translation>Gegenüber welcher Währung die Kurse gelten. Der Shop rechnet darüber um, sie muss also eine sein, die er kennt.</translation>
+    </message>
+    <message>
+        <source>The one instance. The kernel asks for it several times a request and never constructs one itself.</source>
+        <translation>Die eine Instanz. Der Kernel fragt mehrmals pro Anfrage danach und erzeugt nie selbst eine.</translation>
+    </message>
+    <message>
+        <source>Whether to use it at all. Asked before every other method, so returning false here is how the whole thing switches off without being uninstalled - and it is what this returns until it is written, so installing it changes nothing.</source>
+        <translation>Ob es überhaupt verwendet werden soll. Wird vor jeder anderen Methode gefragt; false hier ist also der Weg, das Ganze abzuschalten, ohne es zu deinstallieren - und es ist das, was dies zurückgibt, bis es geschrieben ist, sodass die Installation nichts ändert.</translation>
+    </message>
+    <message>
+        <source>The compiled settings for one cache file, or false when they are not there. False is not a failure: it means compile them and save them.</source>
+        <translation>Die kompilierten Einstellungen für eine Cache-Datei oder false, wenn sie nicht da sind. False ist kein Fehler: es bedeutet, sie zu kompilieren und zu speichern.</translation>
+    </message>
+    <message>
+        <source>Keeps them. Return false and the kernel writes its own file instead, so a store that is temporarily unreachable costs speed rather than the site.</source>
+        <translation>Bewahrt sie auf. Geben Sie false zurück, schreibt der Kernel stattdessen seine eigene Datei; ein vorübergehend unerreichbarer Speicher kostet also Geschwindigkeit statt der Website.</translation>
+    </message>
+    <message>
+        <source>Forgets one. Called when the settings caches are cleared, and the one that must not be missed: settings that outlive a clear are the worst kind of stale.</source>
+        <translation>Vergisst eine. Wird aufgerufen, wenn die Einstellungs-Caches geleert werden, und die, die nicht versäumt werden darf: Einstellungen, die ein Leeren überleben, sind die schlimmste Art von veraltet.</translation>
+    </message>
+    <message>
+        <source>The whole job. Given a name and a password, return an eZUser when they are right and false when they are not. Returning anything for a wrong password is the worst bug it is possible to write here, so fail closed: anything unexpected - a service that is down, an answer that does not parse, a user with no name - returns false.</source>
+        <translation>Die ganze Aufgabe. Zu einem Namen und einem Passwort ein eZUser zurückgeben, wenn sie stimmen, und false, wenn nicht. Bei einem falschen Passwort irgendetwas zurückzugeben ist der schlimmste Fehler, den man hier schreiben kann; schlagen Sie also geschlossen fehl: alles Unerwartete - ein ausgefallener Dienst, eine nicht auswertbare Antwort, ein Benutzer ohne Namen - gibt false zurück.</translation>
+    </message>
+    <message>
+        <source>Finds the local user row for a name. A handler authenticating elsewhere still needs a user here to own content and carry roles, and this is where one is found or made.</source>
+        <translation>Findet die lokale Benutzerzeile zu einem Namen. Ein Handler, der anderswo authentifiziert, braucht hier trotzdem einen Benutzer, der Inhalte besitzt und Rollen trägt; hier wird einer gefunden oder angelegt.</translation>
+    </message>
+    <message>
+        <source>Sends one mail and says whether it went. Returning false is how a failure is reported; nothing else is read.</source>
+        <translation>Sendet eine E-Mail und sagt, ob sie hinausging. Die Rückgabe von false meldet einen Fehler; sonst wird nichts gelesen.</translation>
+    </message>
+    <message>
+        <source>Called first. Work out what this is and remember it; the three below are asked afterwards and should not repeat the work.</source>
+        <translation>Wird zuerst aufgerufen. Ermitteln Sie, was dies ist, und merken Sie es sich; die drei unten werden danach gefragt und sollten die Arbeit nicht wiederholen.</translation>
+    </message>
+    <message>
+        <source>Whether this is a phone. False is what a site with no filter answers, so nothing changes until this is written.</source>
+        <translation>Ob dies ein Telefon ist. False ist, was eine Website ohne Filter antwortet; bis dies geschrieben ist, ändert sich also nichts.</translation>
+    </message>
+    <message>
+        <source>A short word for the kind of device, matched against the alias list in the settings. It is part of the cache key, so two devices that should see different pages must not share a word.</source>
+        <translation>Ein kurzes Wort für die Geräteart, abgeglichen mit der Alias-Liste in den Einstellungen. Es ist Teil des Cache-Schlüssels; zwei Geräte, die unterschiedliche Seiten sehen sollen, dürfen sich also kein Wort teilen.</translation>
+    </message>
+    <message>
+        <source>Send the visitor somewhere else, if that is the answer. Doing nothing here keeps them where they are and lets the templates differ instead, which is usually the better of the two.</source>
+        <translation>Den Besucher woandershin schicken, wenn das die Antwort ist. Hier nichts zu tun lässt ihn, wo er ist, und die Templates sich stattdessen unterscheiden, was meist die bessere der beiden Möglichkeiten ist.</translation>
+    </message>
+    <message>
+        <source>Looks at one event and adds whoever should hear about it, with $event-&gt;addCollectionItem(). Called once per event by the notification cronjob. Return STATUS_ACCEPTED when done.</source>
+        <translation>Betrachtet ein Ereignis und fügt mit $event-&gt;addCollectionItem() hinzu, wer davon erfahren soll. Wird vom Benachrichtigungs-Cronjob einmal je Ereignis aufgerufen. Geben Sie STATUS_ACCEPTED zurück, wenn fertig.</translation>
+    </message>
+    <message>
+        <source>Reads this handler&apos;s own part of the notification settings form the user just sent. Only read what belongs to this handler, and prefix the field names, or two handlers will fight over the same field.</source>
+        <translation>Liest den eigenen Teil dieses Handlers aus dem gerade abgeschickten Formular für die Benachrichtigungseinstellungen. Lesen Sie nur, was zu diesem Handler gehört, und versehen Sie die Feldnamen mit einem Präfix, sonst streiten sich zwei Handler um dasselbe Feld.</translation>
+    </message>
+    <message>
+        <source>Saves what fetchHttpInput() read. The two are separate so that a page with several handlers on it validates everything before storing anything.</source>
+        <translation>Speichert, was fetchHttpInput() gelesen hat. Beide sind getrennt, damit eine Seite mit mehreren Handlern alles prüft, bevor irgendetwas gespeichert wird.</translation>
+    </message>
+    <message>
+        <source>Forgets everything this handler holds. Called when notification data is being wiped, so anything stored in a table of your own has to be dealt with here.</source>
+        <translation>Vergisst alles, was dieser Handler hält. Wird aufgerufen, wenn Benachrichtigungsdaten gelöscht werden; alles, was in einer eigenen Tabelle gespeichert ist, muss hier behandelt werden.</translation>
+    </message>
+    <message>
+        <source>One line saying what this type is, shown wherever a user picks what to be notified about.</source>
+        <translation>Eine Zeile, die sagt, was dieser Typ ist, angezeigt überall dort, wo ein Benutzer wählt, worüber er benachrichtigt werden möchte.</translation>
+    </message>
+    <message>
+        <source>Puts what is known at the moment the event is raised onto the event row, with $event-&gt;setAttribute(). Whatever is not stored here is not available later: execute() runs from the cronjob, long after, in another request.</source>
+        <translation>Legt mit $event-&gt;setAttribute() auf die Ereigniszeile, was im Moment des Auslösens bekannt ist. Was hier nicht gespeichert wird, ist später nicht verfügbar: execute() läuft vom Cronjob aus, viel später, in einer anderen Anfrage.</translation>
+    </message>
+    <message>
+        <source>Works out who should be told and adds them to the event with $event-&gt;addCollectionItem(). Return STATUS_ACCEPTED when done, or STATUS_REJECTED to have the event dropped. Runs from the notification cronjob.</source>
+        <translation>Ermittelt, wer informiert werden soll, und fügt diese Personen mit $event-&gt;addCollectionItem() dem Ereignis hinzu. Geben Sie STATUS_ACCEPTED zurück, wenn fertig, oder STATUS_REJECTED, damit das Ereignis verworfen wird. Läuft vom Benachrichtigungs-Cronjob aus.</translation>
+    </message>
+    <message>
+        <source>What the notification template is given. Keys become template variables, so this is where a subject line, a link and a name come from.</source>
+        <translation>Was das Benachrichtigungs-Template bekommt. Schlüssel werden zu Template-Variablen; von hier kommen also Betreffzeile, Link und Name.</translation>
+    </message>
+    <message>
+        <source>Puts what a step needs in front of the person: lists to pick from, defaults, anything fetched. Runs before the form is drawn.</source>
+        <translation>Legt der Person vor, was ein Schritt braucht: Listen zur Auswahl, Standardwerte, alles Abgerufene. Läuft, bevor das Formular angezeigt wird.</translation>
+    </message>
+    <message>
+        <source>Checks what was sent. Add a message to $errorList and return INVALID to keep the person on this step; nothing is stored until every step has passed.</source>
+        <translation>Prüft, was gesendet wurde. Fügen Sie $errorList eine Meldung hinzu und geben Sie INVALID zurück, um die Person bei diesem Schritt zu halten; nichts wird gespeichert, bis jeder Schritt bestanden ist.</translation>
+    </message>
+    <message>
+        <source>Writes this step&apos;s answer into the package being built. By the time this runs the answer has been checked.</source>
+        <translation>Schreibt die Antwort dieses Schritts in das entstehende Paket. Wenn dies läuft, ist die Antwort bereits geprüft.</translation>
+    </message>
+    <message>
+        <source>The last thing, once every step is done: the place to put the files into the package and write the install nodes that the package handler will read back.</source>
+        <translation>Das Letzte, wenn jeder Schritt erledigt ist: die Stelle, an der die Dateien ins Paket gelegt und die Installationsknoten geschrieben werden, die der Pakethandler wieder einliest.</translation>
+    </message>
+    <message>
+        <source>Puts one item into this installation. $content is the DOM element from package.xml; $package-&gt;path() is where the files are. Return false to stop the install and report a failure.</source>
+        <translation>Spielt ein Element in diese Installation ein. $content ist das DOM-Element aus package.xml; $package-&gt;path() ist, wo die Dateien liegen. Geben Sie false zurück, um die Installation abzubrechen und einen Fehler zu melden.</translation>
+    </message>
+    <message>
+        <source>Takes it out again. Has to cope with the item already being gone, or changed since: an uninstall that fails halfway is worse than one that does nothing.</source>
+        <translation>Nimmt es wieder heraus. Muss damit zurechtkommen, dass das Element bereits verschwunden oder seitdem geändert ist: eine Deinstallation, die auf halbem Weg scheitert, ist schlimmer als eine, die nichts tut.</translation>
+    </message>
+    <message>
+        <source>What the admin shows about this item before installing it. Return at least name and description keys, so somebody can see what they are about to accept.</source>
+        <translation>Was die Administration vor der Installation über dieses Element anzeigt. Geben Sie mindestens die Schlüssel name und description zurück, damit jemand sehen kann, was er gleich annimmt.</translation>
+    </message>
+    <message>
+        <source>Puts one item into a package being built. The other direction from install().</source>
+        <translation>Legt ein Element in ein entstehendes Paket. Die andere Richtung von install().</translation>
+    </message>
+    <message>
+        <source>Writes this item into package.xml, as children of $installNode. Whatever is written here is all install() will get back.</source>
+        <translation>Schreibt dieses Element als Kinder von $installNode in package.xml. Was hier geschrieben wird, ist alles, was install() zurückbekommt.</translation>
+    </message>
+    <message>
+        <source>Reads it back out of package.xml. Must survive a file written by a newer version of the handler, or by somebody by hand.</source>
+        <translation>Liest es wieder aus package.xml. Muss eine Datei überstehen, die von einer neueren Version des Handlers oder von jemandem von Hand geschrieben wurde.</translation>
+    </message>
+    <message>
+        <source>Works out what the person has to be asked - what already exists, what would be replaced - and puts it in front of them.</source>
+        <translation>Ermittelt, was die Person gefragt werden muss - was bereits existiert, was ersetzt würde - und legt es ihr vor.</translation>
+    </message>
+    <message>
+        <source>Checks the answer before anything is changed. Nothing has been installed yet at this point, and that is the whole value of the step.</source>
+        <translation>Prüft die Antwort, bevor irgendetwas geändert wird. An dieser Stelle ist noch nichts installiert, und das ist der ganze Wert dieses Schritts.</translation>
+    </message>
+    <message>
+        <source>Remembers the answer for the install itself to read.</source>
+        <translation>Merkt sich die Antwort, damit die Installation selbst sie lesen kann.</translation>
+    </message>
+    <message>
+        <source>Does the install, with every question already answered.</source>
+        <translation>Führt die Installation aus, wobei jede Frage bereits beantwortet ist.</translation>
+    </message>
+    <message>
+        <source>Forgets a half finished run, so that starting again starts clean rather than carrying the last attempt.</source>
+        <translation>Vergisst einen halb fertigen Durchlauf, damit ein Neustart sauber beginnt, statt den letzten Versuch mitzuschleppen.</translation>
+    </message>
+    <message>
+        <source>Called by the workflow when an order is placed, and again when the buyer comes back. Return STATUS_FETCH_TEMPLATE_REPEAT to send them away and wait; STATUS_ACCEPTED when the money is confirmed; STATUS_REJECTED when it is not. Called more than once for one order, so it has to know which visit this is.</source>
+        <translation>Wird vom Workflow aufgerufen, wenn eine Bestellung aufgegeben wird, und erneut, wenn der Käufer zurückkommt. Geben Sie STATUS_FETCH_TEMPLATE_REPEAT zurück, um ihn wegzuschicken und zu warten; STATUS_ACCEPTED, wenn das Geld bestätigt ist; STATUS_REJECTED, wenn nicht. Wird für eine Bestellung mehr als einmal aufgerufen, muss also wissen, welcher Besuch dies ist.</translation>
+    </message>
+    <message>
+        <source>The row that remembers this payment between the two visits. It is the only thing that survives the trip to the gateway and back, so whatever will be needed to check the answer has to be in it.</source>
+        <translation>Die Zeile, die sich diese Zahlung zwischen den beiden Besuchen merkt. Sie ist das Einzige, was den Weg zum Gateway und zurück übersteht; was zum Prüfen der Antwort gebraucht wird, muss also darin stehen.</translation>
+    </message>
+    <message>
+        <source>Whether abandoned payments should be tidied up. True unless nothing is stored, because a buyer who changes their mind at the gateway leaves a row behind for ever otherwise.</source>
+        <translation>Ob abgebrochene Zahlungen aufgeräumt werden sollen. True, sofern nichts gespeichert wird, denn ein Käufer, der es sich beim Gateway anders überlegt, hinterlässt sonst für immer eine Zeile.</translation>
+    </message>
+    <message>
+        <source>Removes what this payment left behind. Called for payments that were started and never finished, so it must cope with a payment that got nowhere.</source>
+        <translation>Entfernt, was diese Zahlung hinterlassen hat. Wird für Zahlungen aufgerufen, die begonnen und nie abgeschlossen wurden; muss also mit einer Zahlung zurechtkommen, die nirgendwo angekommen ist.</translation>
+    </message>
+    <message>
+        <source>What the buyer sees on their statement, cut to whatever length the gateway allows. Some refuse anything longer and some silently truncate, which is worse.</source>
+        <translation>Was der Käufer auf seinem Kontoauszug sieht, auf die Länge gekürzt, die das Gateway erlaubt. Manche lehnen alles Längere ab, manche kürzen stillschweigend, was schlimmer ist.</translation>
+    </message>
+    <message>
+        <source>The whole thing, in one call. Take what the checkout collected, charge it, and answer: STATUS_ACCEPTED when the money is taken, STATUS_REJECTED when it is refused. Unlike a redirect gateway this is called once, so there is no second visit to correct a wrong answer in.</source>
+        <translation>Das Ganze in einem Aufruf. Nehmen Sie, was die Kasse erfasst hat, belasten Sie es und antworten Sie: STATUS_ACCEPTED, wenn das Geld abgebucht ist, STATUS_REJECTED, wenn es abgelehnt wird. Anders als ein Gateway mit Weiterleitung wird dies einmal aufgerufen; es gibt also keinen zweiten Besuch, um eine falsche Antwort zu korrigieren.</translation>
+    </message>
+    <message>
+        <source>False is usually right here. Cleanup exists for payments abandoned between two visits, and this kind has only one - but return true if a record is written before the charge is attempted.</source>
+        <translation>False ist hier meist richtig. Das Aufräumen gibt es für Zahlungen, die zwischen zwei Besuchen abgebrochen wurden, und diese Art hat nur einen - geben Sie aber true zurück, wenn vor dem Belastungsversuch ein Datensatz geschrieben wird.</translation>
+    </message>
+    <message>
+        <source>Only reached when needCleanup() says so. For this shape it means a charge that was started and whose answer never arrived, which is the case worth being careful about rather than tidy about.</source>
+        <translation>Wird nur erreicht, wenn needCleanup() es sagt. Bei dieser Form bedeutet es eine begonnene Belastung, deren Antwort nie ankam; das ist der Fall, bei dem Sorgfalt wichtiger ist als Ordnung.</translation>
+    </message>
+    <message>
+        <source>Whether this version may go to the queue. True is the same answer the system gives with no filter at all, so this changes nothing until it is written. False publishes it here and now, which is slower and always correct.</source>
+        <translation>Ob diese Version in die Warteschlange darf. True ist dieselbe Antwort, die das System ganz ohne Filter gibt; bis dies geschrieben ist, ändert sich also nichts. False veröffentlicht sie hier und jetzt, was langsamer und immer korrekt ist.</translation>
+    </message>
+    <message>
+        <source>Whether this request is for the api, and if it is, taking the prefix off its uri so the routes can match what is left. False means it is not a REST request and the rest of the site should answer it.</source>
+        <translation>Ob diese Anfrage für die API ist und, falls ja, das Präfix von ihrer URI entfernen, damit die Routen auf den Rest passen. False bedeutet, dass es keine REST-Anfrage ist und der Rest der Website sie beantworten soll.</translation>
+    </message>
+    <message>
+        <source>Which version of the api was asked for. Out of the path in the one that ships; a header or an Accept type is the usual alternative, and this is the single place that decision lives.</source>
+        <translation>Welche Version der API verlangt wurde. Beim mitgelieferten aus dem Pfad; ein Header oder ein Accept-Typ ist die übliche Alternative, und dies ist die einzige Stelle, an der diese Entscheidung lebt.</translation>
+    </message>
+    <message>
+        <source>Do whatever is to be done. The request is held on this object and may be changed in place; returning nothing lets it carry on exactly as it was.</source>
+        <translation>Tun, was zu tun ist. Die Anfrage wird in diesem Objekt gehalten und darf an Ort und Stelle geändert werden; nichts zurückzugeben lässt sie genau so weiterlaufen, wie sie war.</translation>
+    </message>
+    <message>
+        <source>The routes this provider answers, as ezpRestVersionedRoute objects wrapping ezcMvcRailsRoute. Each names a path pattern, the controller class, and the method on it. An empty array means the provider answers nothing, which is what it does until this is written.</source>
+        <translation>Die Routen, die dieser Provider beantwortet, als ezpRestVersionedRoute-Objekte, die ezcMvcRailsRoute umhüllen. Jede nennt ein Pfadmuster, die Controller-Klasse und deren Methode. Ein leeres Array bedeutet, dass der Provider nichts beantwortet, und das tut er, bis dies geschrieben ist.</translation>
+    </message>
+    <message>
+        <source>What turns a result into a response body. Returning the default gives json and xml through content negotiation; a controller of your own is how any other format is served.</source>
+        <translation>Was ein Ergebnis in einen Antwortrumpf umwandelt. Die Rückgabe des Standards liefert JSON und XML über Content Negotiation; ein eigener Controller ist der Weg, jedes andere Format auszuliefern.</translation>
+    </message>
+    <message>
+        <source>Change the request, or let it be. Nothing has answered yet.</source>
+        <translation>Die Anfrage ändern oder sie lassen. Noch hat nichts geantwortet.</translation>
+    </message>
+    <message>
+        <source>The last word on what is sent. Change the response in place; nothing looks at what this returns.</source>
+        <translation>Das letzte Wort darüber, was gesendet wird. Ändern Sie die Antwort an Ort und Stelle; niemand beachtet, was dies zurückgibt.</translation>
+    </message>
+    <message>
+        <source>Change the result in place. It has not been serialised yet, so this is the last point at which it is still ordinary php.</source>
+        <translation>Ändern Sie das Ergebnis an Ort und Stelle. Es ist noch nicht serialisiert; dies ist also die letzte Stelle, an der es noch gewöhnliches PHP ist.</translation>
+    </message>
+    <message>
+        <source>Whether this route still has to be authenticated. True means it does, which is the safe answer; false lets the request past without a caller. Returning true when unsure is how a mistake here costs nothing.</source>
+        <translation>Ob diese Route noch authentifiziert werden muss. True bedeutet ja, und das ist die sichere Antwort; false lässt die Anfrage ohne Aufrufer durch. Im Zweifel true zurückzugeben ist der Weg, auf dem ein Fehler hier nichts kostet.</translation>
+    </message>
+    <message>
+        <source>Whether this engine has to be told when a batch of changes is finished. Say false and commit() is never called.</source>
+        <translation>Ob dieser Engine mitgeteilt werden muss, wenn ein Stapel Änderungen fertig ist. Sagen Sie false, dann wird commit() nie aufgerufen.</translation>
+    </message>
+    <message>
+        <source>Whether an object has to be removed from the index before it is added again. Say false only if adding replaces rather than duplicates.</source>
+        <translation>Ob ein Objekt aus dem Index entfernt werden muss, bevor es erneut hinzugefügt wird. Sagen Sie false nur, wenn Hinzufügen ersetzt statt verdoppelt.</translation>
+    </message>
+    <message>
+        <source>Indexes one object, with every attribute of every version that should be searchable. Called on publish, and by the reindex script for everything at once.</source>
+        <translation>Indexiert ein Objekt, mit jedem Attribut jeder Version, das durchsuchbar sein soll. Wird beim Veröffentlichen aufgerufen und vom Skript zur Neuindexierung für alles auf einmal.</translation>
+    </message>
+    <message>
+        <source>Takes one object out of the index. Called when it is removed, and before it is added again when needRemoveWithUpdate says so.</source>
+        <translation>Nimmt ein Objekt aus dem Index. Wird aufgerufen, wenn es entfernt wird, und bevor es erneut hinzugefügt wird, wenn needRemoveWithUpdate es sagt.</translation>
+    </message>
+    <message>
+        <source>The same, by id alone - used when the object itself has already gone and cannot be fetched.</source>
+        <translation>Dasselbe nur über die ID - verwendet, wenn das Objekt selbst bereits verschwunden ist und nicht abgerufen werden kann.</translation>
+    </message>
+    <message>
+        <source>Answers a search. The shape of what comes back is fixed: SearchResult holds the rows, SearchCount the total before paging, StopWordArray the words that were ignored.</source>
+        <translation>Beantwortet eine Suche. Die Form dessen, was zurückkommt, ist festgelegt: SearchResult enthält die Zeilen, SearchCount die Gesamtzahl vor dem Blättern, StopWordArray die ignorierten Wörter.</translation>
+    </message>
+    <message>
+        <source>Which kinds of narrowing this engine can do - by class, by section, by date. The advanced search form is built from this.</source>
+        <translation>Welche Arten der Eingrenzung diese Engine beherrscht - nach Klasse, nach Sektion, nach Datum. Das Formular der erweiterten Suche wird daraus gebaut.</translation>
+    </message>
+    <message>
+        <source>Makes pending changes visible. Only called when needCommit() says it is wanted.</source>
+        <translation>Macht ausstehende Änderungen sichtbar. Wird nur aufgerufen, wenn needCommit() sagt, dass es gewünscht ist.</translation>
+    </message>
+    <message>
+        <source>The session data for this id, or an empty string when there is none. Never null: php reads the return value as the whole session.</source>
+        <translation>Die Session-Daten für diese ID oder eine leere Zeichenkette, wenn es keine gibt. Nie null: PHP liest den Rückgabewert als die ganze Session.</translation>
+    </message>
+    <message>
+        <source>Stores the data against the id. Called at the end of the request, after output has been sent, so it cannot report to the user.</source>
+        <translation>Speichert die Daten zur ID. Wird am Ende der Anfrage aufgerufen, nachdem die Ausgabe gesendet wurde; kann also dem Benutzer nichts melden.</translation>
+    </message>
+    <message>
+        <source>Forgets one session. Called on logout.</source>
+        <translation>Vergisst eine Session. Wird beim Abmelden aufgerufen.</translation>
+    </message>
+    <message>
+        <source>Gives the session a new id, keeping its data. Called on login, so that a session id seen before logging in is not the one that is logged in.</source>
+        <translation>Gibt der Session eine neue ID und behält ihre Daten. Wird beim Anmelden aufgerufen, damit eine vor der Anmeldung gesehene Session-ID nicht die angemeldete ist.</translation>
+    </message>
+    <message>
+        <source>Removes sessions older than the lifetime. Called by php at random, and by the session cronjob.</source>
+        <translation>Entfernt Sessions, die älter als die Lebensdauer sind. Wird von PHP zufällig und vom Session-Cronjob aufgerufen.</translation>
+    </message>
+    <message>
+        <source>Removes every session. Called when the caches are cleared.</source>
+        <translation>Entfernt alle Sessions. Wird aufgerufen, wenn die Caches geleert werden.</translation>
+    </message>
+    <message>
+        <source>Removes the sessions of these users. Called when a user is disabled or removed, and this is the method that makes that take effect immediately.</source>
+        <translation>Entfernt die Sessions dieser Benutzer. Wird aufgerufen, wenn ein Benutzer deaktiviert oder entfernt wird, und diese Methode sorgt dafür, dass das sofort wirkt.</translation>
+    </message>
+    <message>
+        <source>What delivery costs, as array( &apos;description&apos; =&gt; ..., &apos;cost&apos; =&gt; ..., &apos;vat_value&apos; =&gt; ..., &apos;is_vat_inc&apos; =&gt; ... ). A shipping_items key may carry one such array per parcel when the basket is split. Return false for no charge. Read on every basket and checkout page.</source>
+        <translation>Was die Lieferung kostet, als array( &apos;description&apos; =&gt; ..., &apos;cost&apos; =&gt; ..., &apos;vat_value&apos; =&gt; ..., &apos;is_vat_inc&apos; =&gt; ... ). Ein Schlüssel shipping_items kann je Paket ein solches Array enthalten, wenn der Warenkorb aufgeteilt wird. Geben Sie false für keine Kosten zurück. Wird auf jeder Warenkorb- und Kassenseite gelesen.</translation>
+    </message>
+    <message>
+        <source>Works the cost out again because the basket changed. The place to call a carrier, if one is called at all - not getShippingInfo(), which is read far more often.</source>
+        <translation>Berechnet die Kosten neu, weil sich der Warenkorb geändert hat. Die Stelle, an der ein Versanddienstleister aufgerufen wird, wenn überhaupt - nicht getShippingInfo(), das weit häufiger gelesen wird.</translation>
+    </message>
+    <message>
+        <source>Forgets whatever was worked out for this basket. Called when the basket is emptied or the order placed.</source>
+        <translation>Vergisst, was für diesen Warenkorb berechnet wurde. Wird aufgerufen, wenn der Warenkorb geleert oder die Bestellung aufgegeben wird.</translation>
+    </message>
+    <message>
+        <source>Rewrites the pages that are marked as always needing rewriting - the front page and anything else listed in staticcache.ini.</source>
+        <translation>Schreibt die Seiten neu, die als immer neu zu schreiben markiert sind - die Startseite und alles andere, was in staticcache.ini aufgeführt ist.</translation>
+    </message>
+    <message>
+        <source>Rewrites the pages of these nodes. Called when content changes, with the nodes the change affected.</source>
+        <translation>Schreibt die Seiten dieser Knoten neu. Wird aufgerufen, wenn sich Inhalte ändern, mit den Knoten, die die Änderung betraf.</translation>
+    </message>
+    <message>
+        <source>Writes the whole cache. This is what the Create new button on the cache page calls.</source>
+        <translation>Schreibt den ganzen Cache. Das ruft die Schaltfläche zum Neuerstellen auf der Cache-Seite auf.</translation>
+    </message>
+    <message>
+        <source>Writes one address. Everything above ends up here.</source>
+        <translation>Schreibt eine Adresse. Alles oben endet hier.</translation>
+    </message>
+    <message>
+        <source>Forgets one address, so the next visitor gets it from php again.</source>
+        <translation>Vergisst eine Adresse, sodass der nächste Besucher sie wieder von PHP bekommt.</translation>
+    </message>
+    <message>
+        <source>Carries out the writes that were put off while the request was still running. Static: called at the end of the request, and by the cronjob.</source>
+        <translation>Führt die Schreibvorgänge aus, die verschoben wurden, während die Anfrage noch lief. Statisch: wird am Ende der Anfrage und vom Cronjob aufgerufen.</translation>
+    </message>
+    <message>
+        <source>The url as it stands, and the url as it should be stored. Returning $text unchanged is a filter that does nothing, which is what this does until it is written. Returning an empty string is not: an object with no url alias is unreachable by name.</source>
+        <translation>Die URL, wie sie steht, und die URL, wie sie gespeichert werden soll. $text unverändert zurückzugeben ist ein Filter, der nichts tut, und das tut dieser, bis er geschrieben ist. Eine leere Zeichenkette zurückzugeben ist es nicht: ein Objekt ohne URL-Alias ist über seinen Namen nicht erreichbar.</translation>
+    </message>
+    <message>
+        <source>The rate for this product sold into this country, as a number - 25 for twenty five per cent. Return false when there is no answer, and the sale is refused rather than taxed at a guess. Called for every line of every basket, so it wants to be cheap.</source>
+        <translation>Der Satz für dieses Produkt beim Verkauf in dieses Land, als Zahl - 25 für fünfundzwanzig Prozent. Geben Sie false zurück, wenn es keine Antwort gibt; dann wird der Verkauf abgelehnt statt geschätzt versteuert. Wird für jede Zeile jedes Warenkorbs aufgerufen, sollte also günstig sein.</translation>
+    </message>
+    <message>
+        <source>Which category of goods this is, when the rate depends on the category rather than on the product. Return an eZProductCategory, or false.</source>
+        <translation>Zu welcher Warenkategorie dies gehört, wenn der Satz von der Kategorie statt vom Produkt abhängt. Geben Sie ein eZProductCategory oder false zurück.</translation>
+    </message>
+    <message>
+        <source>Which of the configured VAT types applies to a category in a country. This is the rule, in one place; getVatPercent() only reads the number off what this chooses.</source>
+        <translation>Welcher der konfigurierten MwSt-Typen für eine Kategorie in einem Land gilt. Dies ist die Regel, an einer Stelle; getVatPercent() liest nur die Zahl von dem ab, was dies wählt.</translation>
+    </message>
+    <message>
+        <source>Checks what was submitted before anything is stored. Return false and the editor is sent back to the form, so every rule about what may be published belongs here.</source>
+        <translation>Prüft, was übermittelt wurde, bevor irgendetwas gespeichert wird. Geben Sie false zurück, wird der Redakteur zum Formular zurückgeschickt; jede Regel darüber, was veröffentlicht werden darf, gehört also hierher.</translation>
+    </message>
+    <message>
+        <source>Turns the submitted text into stored XML. Whatever this writes is what every renderer will be handed for the life of the content, so it is the decision hardest to undo.</source>
+        <translation>Wandelt den übermittelten Text in gespeichertes XML um. Was dies schreibt, bekommt jeder Renderer für die gesamte Lebensdauer des Inhalts; es ist also die am schwersten rückgängig zu machende Entscheidung.</translation>
+    </message>
+    <message>
+        <source>Which template draws the editing field. Change this and the editor changes; leave it and the field looks as it did.</source>
+        <translation>Welches Template das Bearbeitungsfeld zeichnet. Ändern Sie dies, ändert sich der Editor; lassen Sie es, sieht das Feld aus wie bisher.</translation>
+    </message>
+    <message>
+        <source>Handles a button of your own inside the editing field, without leaving the edit form.</source>
+        <translation>Behandelt eine eigene Schaltfläche im Bearbeitungsfeld, ohne das Bearbeitungsformular zu verlassen.</translation>
+    </message>
+    <message>
+        <source>The whole rendered attribute. Everything below is in service of this one.</source>
+        <translation>Das ganze gerenderte Attribut. Alles unten dient diesem einen.</translation>
+    </message>
+    <message>
+        <source>One tag, with its children already rendered into $content. The place to change how a paragraph, a link or a heading comes out.</source>
+        <translation>Ein Tag, dessen Kinder bereits in $content gerendert sind. Die Stelle, an der man ändert, wie ein Absatz, ein Link oder eine Überschrift herauskommt.</translation>
+    </message>
+    <message>
+        <source>A tag whose children are still separate, for when they have to be joined some way other than end to end - a list, a table, anything numbered.</source>
+        <translation>Ein Tag, dessen Kinder noch getrennt sind, für den Fall, dass sie anders als hintereinander verbunden werden müssen - eine Liste, eine Tabelle, alles Nummerierte.</translation>
+    </message>
+    <message>
+        <source>Which template draws the attribute as a whole.</source>
+        <translation>Welches Template das Attribut als Ganzes zeichnet.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/override</name>
+    <message>
+        <source>Kernel override wizard</source>
+        <translation>Assistent für Kernel-Overrides</translation>
+    </message>
+    <message>
+        <source>An override is not a subclass. It replaces the kernel class under the same name, so there is no parent to call, nothing is inherited, and everything the original did has to keep being done by the copy. Every fix the kernel makes to that class afterwards is a fix this site does not get until somebody copies it across. Almost everything here has a lighter way in - a handler named by a setting, an event listener, a filter, a template override - and the RAD tools list them. This is for when none of them reaches the thing that has to change.</source>
+        <translation>Ein Override ist keine Unterklasse. Es ersetzt die Kernel-Klasse unter demselben Namen, daher gibt es keine Elternklasse zum Aufrufen, nichts wird geerbt, und alles, was das Original getan hat, muss die Kopie weiterhin tun. Jede Korrektur, die der Kernel danach an dieser Klasse vornimmt, erhält diese Website erst, wenn jemand sie überträgt. Für fast alles gibt es einen leichteren Weg - einen per Einstellung benannten Handler, einen Event-Listener, einen Filter, ein Überschreib-Template -, und die RAD-Werkzeuge führen sie auf. Dies ist für den Fall, dass keiner davon die Stelle erreicht, die sich ändern muss.</translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on, allow overrides in config.php, and generate the override map with ezpgenerateautoloads.php -o, which is a different run from the ordinary one.</source>
+        <translation>Geschrieben nach %target. Schalten Sie es ein, erlauben Sie Overrides in config.php und erzeugen Sie die Override-Tabelle mit ezpgenerateautoloads.php -o, was ein anderer Lauf ist als der gewöhnliche.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation>Der Webserver kann nicht in extension/ schreiben, daher kann diese Seite Ihnen nur ein Archiv übergeben.</translation>
+    </message>
+    <message>
+        <source>Which class</source>
+        <translation>Welche Klasse</translation>
+    </message>
+    <message>
+        <source>%count classes in this kernel. Type part of a name or a path; every word has to match.</source>
+        <translation>%count Klassen in diesem Kernel. Geben Sie einen Teil eines Namens oder Pfads ein; jedes Wort muss passen.</translation>
+    </message>
+    <message>
+        <source>ezcontentobject, or classes/datatypes</source>
+        <translation>ezcontentobject oder classes/datatypes</translation>
+    </message>
+    <message>
+        <source>No class in this kernel matches that.</source>
+        <translation>Keine Klasse in diesem Kernel passt dazu.</translation>
+    </message>
+    <message>
+        <source>%count found</source>
+        <translation>%count gefunden</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines Zeilen</translation>
+    </message>
+    <message>
+        <source>Chosen</source>
+        <translation>Ausgewählt</translation>
+    </message>
+    <message>
+        <source>md5 %wizard_checksum</source>
+        <translation>MD5 %wizard_checksum</translation>
+    </message>
+    <message>
+        <source>That checksum goes into the copy and into the drift check, so the day the kernel changes this file, the check says so.</source>
+        <translation>Diese Prüfsumme kommt in die Kopie und in die Abweichungsprüfung, sodass die Prüfung es meldet, sobald der Kernel diese Datei ändert.</translation>
+    </message>
+    <message>
+        <source>Why an override</source>
+        <translation>Warum ein Override</translation>
+    </message>
+    <message>
+        <source>Whoever meets this at the next upgrade will want to know whether it is still needed, and by then nobody will remember. It goes in the file and in the README.</source>
+        <translation>Wer beim nächsten Upgrade darauf stößt, möchte wissen, ob es noch nötig ist, und bis dahin wird sich niemand erinnern. Es kommt in die Datei und in die README.</translation>
+    </message>
+    <message>
+        <source>What has to change, and which lighter mechanism was tried first.</source>
+        <translation>Was geändert werden muss und welcher leichtere Mechanismus zuerst versucht wurde.</translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation>Die Extension</translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation>Name der Extension</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation>Composer-Vendor</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>This carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <translation>Dies enthält Kernel-Code, daher ist die Lizenz keine Nebensache.</translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation>Was hineinkommt</translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>And config.php, which is not the default</source>
+        <translation>Und config.php, was nicht der Standard ist</translation>
+    </message>
+    <message>
+        <source>Then</source>
+        <translation>Dann</translation>
+    </message>
+    <message>
+        <source>The -o run is a different one from the ordinary autoload generation, and writes var/autoload/ezp_override.php. Without it nothing here is loaded.</source>
+        <translation>Der Lauf mit -o ist ein anderer als die gewöhnliche Autoload-Erzeugung und schreibt var/autoload/ezp_override.php. Ohne ihn wird nichts hiervon geladen.</translation>
+    </message>
+    <message>
+        <source>After every upgrade</source>
+        <translation>Nach jedem Upgrade</translation>
+    </message>
+    <message>
+        <source>The check the extension ships. Exit status 1 means the kernel changed the file this was copied from and somebody has to decide which of those changes this override needs. Worth failing a build on.</source>
+        <translation>Die Prüfung, die die Extension mitliefert. Exit-Status 1 bedeutet, dass der Kernel die Datei geändert hat, aus der dies kopiert wurde, und jemand entscheiden muss, welche dieser Änderungen dieses Override braucht. Es lohnt sich, einen Build daran scheitern zu lassen.</translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation>Jede Datei, bevor sie geschrieben wird</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Alle öffnen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines Zeilen, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation>In extension/ anlegen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Als ZIP herunterladen</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>Finden</translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation>Zurück zu den RAD-Werkzeugen</translation>
+    </message>
+    <message>
+        <source>The override</source>
+        <translation>Der Override</translation>
+    </message>
+    <message>
+        <source>Drift check</source>
+        <translation>Abweichungsprüfung</translation>
+    </message>
+    <message>
+        <source>The kernel file copied under your extension, with a header recording exactly which file it came from and what it looked like at the time.</source>
+        <translation>Die unter Ihre Extension kopierte Kernel-Datei, mit einem Kopf, der genau festhält, aus welcher Datei sie stammt und wie diese damals aussah.</translation>
+    </message>
+    <message>
+        <source>A script that compares the copy against the kernel file it came from and says whether the kernel has moved on. The thing that makes an override survivable; without it nobody finds out until something breaks.</source>
+        <translation>Ein Skript, das die Kopie mit der Kernel-Datei vergleicht, aus der sie stammt, und sagt, ob sich der Kernel weiterentwickelt hat. Das, was einen Override überlebensfähig macht; ohne es merkt niemand etwas, bis etwas kaputtgeht.</translation>
+    </message>
+    <message>
+        <source>What was overridden, why an override rather than anything lighter, and what has to be done at every upgrade.</source>
+        <translation>Was überschrieben wurde, warum ein Override statt etwas Leichterem, und was bei jedem Upgrade zu tun ist.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>Die gepackte Beschreibung der Extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>Damit die Extension beim Namen angefordert statt hineinkopiert werden kann.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <translation>Der unten genannte Lizenztext. Ein Override enthält Kernel-Code; unter welcher Lizenz er steht, ist also keine Nebensache.</translation>
+    </message>
+    <message>
+        <source>Overrides are switched on and the map has been generated, so one written here will be loaded.</source>
+        <translation>Overrides sind eingeschaltet und die Map ist erzeugt; ein hier geschriebener Override wird also geladen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/moduleextension</name>
+    <message>
+        <source>Module extension wizard</source>
+        <translation>Assistent für Modul-Extensions</translation>
+    </message>
+    <message>
+        <source>A table that eZ did not make has no way into the admin interface and no way into a template. Connect to a database, pick the tables, and this writes the eZPersistentObject classes, a module with list, edit and remove, the templates they draw with, the fetch functions that reach the same rows from a template, and the settings that put it all in the Setup menu. Nothing is written until you ask for it.</source>
+        <translation>Eine Tabelle, die nicht von eZ angelegt wurde, hat keinen Weg in die Administrationsoberfläche und keinen in ein Template. Verbinden Sie sich mit einer Datenbank, wählen Sie die Tabellen, und dieser Assistent schreibt die eZPersistentObject-Klassen, ein Modul mit Liste, Bearbeiten und Entfernen, die dazugehörigen Templates, die Fetch-Funktionen, die dieselben Zeilen aus einem Template erreichen, und die Einstellungen, die alles ins Setup-Menü bringen. Nichts wird geschrieben, bevor Sie es veranlassen.</translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, clear the caches, and regenerate the extension autoloads.</source>
+        <translation>Geschrieben nach %target. Schalten Sie sie mit den Zeilen unten ein, leeren Sie die Caches und erzeugen Sie die Autoloads der Extensions neu.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation>Der Webserver kann nicht in extension/ schreiben, daher kann diese Seite Ihnen nur ein Archiv übergeben.</translation>
+    </message>
+    <message>
+        <source>Where the tables are</source>
+        <translation>Wo die Tabellen liegen</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Datenbank</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Art</translation>
+    </message>
+    <message>
+        <source>Choose a file this installation can see...</source>
+        <translation>Wählen Sie eine Datei, die diese Installation sehen kann...</translation>
+    </message>
+    <message>
+        <source>Typed again each time it is needed; it is never written back into this page.</source>
+        <translation>Wird jedes Mal neu eingegeben, wenn es gebraucht wird; es wird nie in diese Seite zurückgeschrieben.</translation>
+    </message>
+    <message>
+        <source>A user that may read is enough; nothing here writes to the database it reads.</source>
+        <translation>Ein Benutzer mit Leserechten genügt; nichts hier schreibt in die Datenbank, die gelesen wird.</translation>
+    </message>
+    <message>
+        <source>Connect and list tables</source>
+        <translation>Verbinden und Tabellen auflisten</translation>
+    </message>
+    <message>
+        <source>%count tables visible</source>
+        <translation>%count Tabellen sichtbar</translation>
+    </message>
+    <message>
+        <source>Collections</source>
+        <translation>Sammlungen</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabellen</translation>
+    </message>
+    <message>
+        <source>Tick the collections this extension should cover. A collection has no declared shape, so the fields below were worked out by reading a sample of its documents: a field that only some documents carry may be missing, and one that holds different kinds of value in different documents is treated as text.</source>
+        <translation>Haken Sie die Collections an, die diese Extension abdecken soll. Eine Collection hat keine festgelegte Struktur, daher wurden die Felder unten aus einer Stichprobe ihrer Dokumente ermittelt: Ein Feld, das nur manche Dokumente haben, kann fehlen, und eines, das in verschiedenen Dokumenten verschiedene Arten von Werten enthält, wird als Text behandelt.</translation>
+    </message>
+    <message>
+        <source>Tick the ones this extension should cover. A table with no primary key can still be read, but a single row cannot be addressed, so the first column is used instead.</source>
+        <translation>Haken Sie die an, die diese Extension abdecken soll. Eine Tabelle ohne Primärschlüssel kann trotzdem gelesen werden, aber eine einzelne Zeile lässt sich nicht adressieren, daher wird stattdessen die erste Spalte verwendet.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Tick none</source>
+        <translation>Keine anhaken</translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation>Vorschau aktualisieren</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabelle</translation>
+    </message>
+    <message>
+        <source>Columns</source>
+        <translation>Spalten</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>keiner</translation>
+    </message>
+    <message>
+        <source>No tables to show. Connect first.</source>
+        <translation>Keine Tabellen vorhanden. Verbinden Sie sich zuerst.</translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation>Die Extension</translation>
+    </message>
+    <message>
+        <source>The name is the directory; the module name is what appears in an address such as /&lt;module&gt;/list.</source>
+        <translation>Der Name ist das Verzeichnis; der Modulname erscheint in einer Adresse wie /&lt;module&gt;/list.</translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation>Name der Extension</translation>
+    </message>
+    <message>
+        <source>Module name</source>
+        <translation>Modulname</translation>
+    </message>
+    <message>
+        <source>Class prefix</source>
+        <translation>Klassenpräfix</translation>
+    </message>
+    <message>
+        <source>myTables + a table name makes the class name.</source>
+        <translation>myTables + ein Tabellenname ergibt den Klassennamen.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>What the Setup menu entry reads as.</source>
+        <translation>Wie der Eintrag im Setup-Menü lautet.</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation>Composer-Vendor</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation>Was hineinkommt</translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php, then clear the caches and regenerate the extension autoloads.</source>
+        <translation>Fügen Sie dies in settings/override/site.ini.append.php ein, leeren Sie dann die Caches und erzeugen Sie die Autoloads der Extensions neu.</translation>
+    </message>
+    <message>
+        <source>How the columns were read</source>
+        <translation>Wie die Spalten gelesen wurden</translation>
+    </message>
+    <message>
+        <source>Taken from the database, not guessed. A key column is marked.</source>
+        <translation>Aus der Datenbank übernommen, nicht geraten. Eine Schlüsselspalte ist markiert.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>numbered by the database</source>
+        <translation>von der Datenbank nummeriert</translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation>Jede Datei, bevor sie geschrieben wird</translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation>Dateien</translation>
+    </message>
+    <message>
+        <source>tables</source>
+        <translation>Tabellen</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Alle öffnen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines Zeilen, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation>In extension/ anlegen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Als ZIP herunterladen</translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation>Zurück zu den RAD-Werkzeugen</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>The path to the database file, relative to the installation or absolute.</source>
+        <translation>Der Pfad zur Datenbankdatei, relativ zur Installation oder absolut.</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Database name</source>
+        <translation>Name der Datenbank</translation>
+    </message>
+    <message>
+        <source>Service name or SID</source>
+        <translation>Dienstname oder SID</translation>
+    </message>
+    <message>
+        <source>The data source name as it is configured on this machine, or a full connection string.</source>
+        <translation>Der Name der Datenquelle, wie er auf diesem Rechner konfiguriert ist, oder eine vollständige Verbindungszeichenkette.</translation>
+    </message>
+    <message>
+        <source>What comes after the slash in a connect string, such as ORCLPDB1.</source>
+        <translation>Was in einer Verbindungszeichenkette nach dem Schrägstrich kommt, etwa ORCLPDB1.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>Leave the user and password empty if the server does not ask for them.</source>
+        <translation>Lassen Sie Benutzer und Passwort leer, wenn der Server nicht danach fragt.</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>Documents to sample</source>
+        <translation>Zu untersuchende Dokumente</translation>
+    </message>
+    <message>
+        <source>A collection has no fixed shape, so this many documents are read to work out its fields.</source>
+        <translation>Eine Collection hat keine feste Form; es werden daher so viele Dokumente gelesen, um ihre Felder zu ermitteln.</translation>
+    </message>
+    <message>
+        <source>Persistent object classes</source>
+        <translation>Klassen für persistente Objekte</translation>
+    </message>
+    <message>
+        <source>Admin module</source>
+        <translation>Administrationsmodul</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Administrations-Templates</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Template-Fetch-Funktionen</translation>
+    </message>
+    <message>
+        <source>Admin menu entry</source>
+        <translation>Eintrag im Administrationsmenü</translation>
+    </message>
+    <message>
+        <source>Schema description</source>
+        <translation>Schemabeschreibung</translation>
+    </message>
+    <message>
+        <source>One eZPersistentObject class per table, with its definition built from the columns the database reports.</source>
+        <translation>Eine eZPersistentObject-Klasse je Tabelle, mit einer Definition aus den Spalten, die die Datenbank meldet.</translation>
+    </message>
+    <message>
+        <source>A module with list, edit and remove views, and the policy functions that go with them.</source>
+        <translation>Ein Modul mit Views zum Auflisten, Bearbeiten und Entfernen und den dazugehörigen Richtlinienfunktionen.</translation>
+    </message>
+    <message>
+        <source>The templates those views draw with, in the admin style.</source>
+        <translation>Die Templates, mit denen diese Views zeichnen, im Stil der Administration.</translation>
+    </message>
+    <message>
+        <source>function_definition.php, so the same rows can be reached with fetch() from any template.</source>
+        <translation>function_definition.php, damit dieselben Zeilen aus jedem Template mit fetch() erreichbar sind.</translation>
+    </message>
+    <message>
+        <source>Puts the module in the Setup menu, with a policy so access can be granted to it.</source>
+        <translation>Stellt das Modul ins Setup-Menü, mit einer Richtlinie, damit Zugriff darauf gewährt werden kann.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba describing the tables, so the installer and the consistency check know about them.</source>
+        <translation>share/db_schema.dba, das die Tabellen beschreibt, damit der Installer und die Konsistenzprüfung sie kennen.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>Die gepackte Beschreibung der Extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>Damit die Extension beim Namen angefordert statt hineinkopiert werden kann.</translation>
+    </message>
+    <message>
+        <source>What it covers, how to switch it on, and what each piece is.</source>
+        <translation>Was es abdeckt, wie man es einschaltet und was jedes Teil ist.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/module</name>
+    <message>
+        <source>Module wizard</source>
+        <translation>Modul-Assistent</translation>
+    </message>
+    <message>
+        <source>A module is how this system serves a page that is not content: a declaration, a script per view, a template per view, and the two ini lines that make the kernel look for any of it. When they disagree the failure is quiet - a view with no script is a blank page, a view naming a policy no module declares can be reached by nobody, and a module the ini does not list is not there at all.</source>
+        <translation>Ein Modul ist der Weg, auf dem dieses System eine Seite ausliefert, die kein Inhalt ist: eine Deklaration, ein Skript pro View, ein Template pro View und die zwei INI-Zeilen, die den Kernel danach suchen lassen. Wenn sie nicht zusammenpassen, schlägt es stillschweigend fehl - eine View ohne Skript ist eine leere Seite, eine View, die eine Richtlinie nennt, die kein Modul deklariert, ist für niemanden erreichbar, und ein Modul, das die INI-Datei nicht aufführt, ist gar nicht vorhanden.</translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below and clear the caches - the module list is itself cached.</source>
+        <translation>Geschrieben nach %target. Schalten Sie es mit den Zeilen unten ein und leeren Sie die Caches - die Modulliste wird selbst zwischengespeichert.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation>Der Webserver kann nicht in extension/ schreiben, daher kann diese Seite Ihnen nur ein Archiv übergeben.</translation>
+    </message>
+    <message>
+        <source>The views</source>
+        <translation>Die Views</translation>
+    </message>
+    <message>
+        <source>One per line: a name, a colon, then what it needs. A word in lower case is a policy; a word starting with a capital is a parameter in the address; a capital word ending in ? is a named parameter that may be left out.</source>
+        <translation>Eine pro Zeile: ein Name, ein Doppelpunkt, dann was sie braucht. Ein kleingeschriebenes Wort ist eine Richtlinie; ein Wort mit großem Anfangsbuchstaben ist ein Parameter in der Adresse; ein großgeschriebenes Wort, das auf ? endet, ist ein benannter Parameter, der weggelassen werden darf.</translation>
+    </message>
+    <message>
+        <source>What that produces</source>
+        <translation>Was daraus entsteht</translation>
+    </message>
+    <message>
+        <source>Name a view and its address appears here.</source>
+        <translation>Geben Sie einer View einen Namen, dann erscheint hier ihre Adresse.</translation>
+    </message>
+    <message>
+        <source>no policy check</source>
+        <translation>keine Richtlinienprüfung</translation>
+    </message>
+    <message>
+        <source>The policies</source>
+        <translation>Die Richtlinien</translation>
+    </message>
+    <message>
+        <source>One per line: a name, a colon, then any limitations. Every policy a view asks for has to be here, or nobody can be granted it and the view is reachable by nobody.</source>
+        <translation>Eine pro Zeile: ein Name, ein Doppelpunkt, dann eventuelle Einschränkungen. Jede Richtlinie, die eine View verlangt, muss hier stehen, sonst kann sie niemandem gewährt werden, und die View ist für niemanden erreichbar.</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Einschränkungen</translation>
+    </message>
+    <message>
+        <source>The module</source>
+        <translation>Das Modul</translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation>Name der Extension</translation>
+    </message>
+    <message>
+        <source>Module name</source>
+        <translation>Modulname</translation>
+    </message>
+    <message>
+        <source>The first part of every address it answers.</source>
+        <translation>Der erste Teil jeder Adresse, die es beantwortet.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Where it sits</source>
+        <translation>Wo es sitzt</translation>
+    </message>
+    <message>
+        <source>Part of the admin</source>
+        <translation>Teil der Administration</translation>
+    </message>
+    <message>
+        <source>Which left hand menu the entry goes in.</source>
+        <translation>In welches linke Menü der Eintrag kommt.</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation>Composer-Vendor</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation>Was hineinkommt</translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Then</source>
+        <translation>Dann</translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation>Jede Datei, bevor sie geschrieben wird</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Alle öffnen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines Zeilen, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation>In extension/ anlegen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Als ZIP herunterladen</translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation>Vorschau aktualisieren</translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation>Zurück zu den RAD-Werkzeugen</translation>
+    </message>
+    <message>
+        <source>Which sections of content this applies to. The usual first limitation, and the cheapest to check.</source>
+        <translation>Für welche Inhaltssektionen dies gilt. Die übliche erste Einschränkung und die am günstigsten zu prüfende.</translation>
+    </message>
+    <message>
+        <source>Which content classes. Granting a policy for articles and not for folders.</source>
+        <translation>Welche Inhaltsklassen. Eine Richtlinie für Artikel gewähren und nicht für Ordner.</translation>
+    </message>
+    <message>
+        <source>Whether the user owns the content. Takes no list: the values are fixed at self and anyone.</source>
+        <translation>Ob der Benutzer Eigentümer des Inhalts ist. Nimmt keine Liste: die Werte sind fest auf selbst und jeder.</translation>
+    </message>
+    <message>
+        <source>Which siteaccess the request came through. How a view is opened on the admin and closed on the public site.</source>
+        <translation>Über welchen Siteaccess die Anfrage kam. So wird ein View in der Administration geöffnet und auf der öffentlichen Website geschlossen.</translation>
+    </message>
+    <message>
+        <source>Which translations. Granting an editor one language and not another.</source>
+        <translation>Welche Übersetzungen. Einem Redakteur eine Sprache gewähren und eine andere nicht.</translation>
+    </message>
+    <message>
+        <source>View scripts</source>
+        <translation>View-Skripte</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registrierung</translation>
+    </message>
+    <message>
+        <source>Admin menu entry</source>
+        <translation>Eintrag im Administrationsmenü</translation>
+    </message>
+    <message>
+        <source>API examples</source>
+        <translation>API-Beispiele</translation>
+    </message>
+    <message>
+        <source>The declaration: every view, the policies each needs, the parameters each takes, and the policies the module offers a role.</source>
+        <translation>Die Deklaration: jeder View, die Richtlinien, die jeder braucht, die Parameter, die jeder nimmt, und die Richtlinien, die das Modul einer Rolle anbietet.</translation>
+    </message>
+    <message>
+        <source>One php file per view, each reading its parameters, checking what it was given, and setting $Result the way the kernel expects.</source>
+        <translation>Eine PHP-Datei je View, die ihre Parameter liest, prüft, was sie bekommen hat, und $Result so setzt, wie der Kernel es erwartet.</translation>
+    </message>
+    <message>
+        <source>One template per view, drawing what the script put in front of it. Working templates rather than empty files.</source>
+        <translation>Ein Template je View, das zeichnet, was das Skript ihm vorgelegt hat. Funktionierende Templates statt leerer Dateien.</translation>
+    </message>
+    <message>
+        <source>module.ini so the kernel finds the module, and design.ini so it finds the templates. Without the second the module works and draws nothing.</source>
+        <translation>module.ini, damit der Kernel das Modul findet, und design.ini, damit er die Templates findet. Ohne das Zweite funktioniert das Modul und zeigt nichts an.</translation>
+    </message>
+    <message>
+        <source>menu.ini, so the module appears in the left hand menu of the part it belongs to rather than only at an address somebody has to know.</source>
+        <translation>menu.ini, damit das Modul im linken Menü des Bereichs erscheint, zu dem es gehört, statt nur unter einer Adresse, die jemand kennen muss.</translation>
+    </message>
+    <message>
+        <source>How a view is reached, what is in $Params, what $Result may carry, and how to check a policy from inside one.</source>
+        <translation>Wie ein View erreicht wird, was in $Params steht, was $Result enthalten darf und wie man darin eine Richtlinie prüft.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>Die gepackte Beschreibung der Extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>Damit die Extension beim Namen angefordert statt hineinkopiert werden kann.</translation>
+    </message>
+    <message>
+        <source>Every view, its address, and what reaches it.</source>
+        <translation>Jeder View, seine Adresse und was ihn erreicht.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/survey</name>
+    <message>
+        <source>Extension point survey</source>
+        <translation>Übersicht der Erweiterungspunkte</translation>
+    </message>
+    <message>
+        <source>The RAD tools page lists the points somebody thought to write down. This one lists what is actually here: read off disk on every request, so an extension installed this morning is in it this afternoon. Nothing below is a list kept by hand, and nothing below can go stale.</source>
+        <translation>Die Seite der RAD-Werkzeuge führt die Punkte auf, an die jemand beim Aufschreiben gedacht hat. Diese hier führt auf, was tatsächlich vorhanden ist: bei jeder Anfrage von der Festplatte gelesen, sodass eine heute Morgen installierte Extension heute Nachmittag darin steht. Nichts unten ist eine von Hand gepflegte Liste, und nichts unten kann veralten.</translation>
+    </message>
+    <message>
+        <source>extension points found</source>
+        <translation>gefundene Erweiterungspunkte</translation>
+    </message>
+    <message>
+        <source>ini files read</source>
+        <translation>gelesene INI-Dateien</translation>
+    </message>
+    <message>
+        <source>settings naming a class</source>
+        <translation>Einstellungen, die eine Klasse nennen</translation>
+    </message>
+    <message>
+        <source>module views</source>
+        <translation>Modul-Views</translation>
+    </message>
+    <message>
+        <source>contracts to implement</source>
+        <translation>zu implementierende Verträge</translation>
+    </message>
+    <message>
+        <source>take an alias instead</source>
+        <translation>nehmen stattdessen einen Alias</translation>
+    </message>
+    <message>
+        <source>configured and cannot work</source>
+        <translation>konfiguriert und nicht funktionsfähig</translation>
+    </message>
+    <message>
+        <source>look like a class and are not one</source>
+        <translation>sehen wie eine Klasse aus und sind keine</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Liste eingrenzen</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>Finden</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Leeren</translation>
+    </message>
+    <message>
+        <source>Showing %shown of %total.</source>
+        <translation>%shown von %total werden angezeigt.</translation>
+    </message>
+    <message>
+        <source>Everything</source>
+        <translation>Alles</translation>
+    </message>
+    <message>
+        <source>Every class this installation declares has been loaded in a child process. That is the only way to find one php refuses, and a class php refuses ends the request that touches it rather than merely failing.</source>
+        <translation>Jede Klasse, die diese Installation deklariert, wurde in einem Kindprozess geladen. Nur so lässt sich eine finden, die PHP ablehnt, und eine von PHP abgelehnte Klasse beendet die Anfrage, die sie berührt, statt nur fehlzuschlagen.</translation>
+    </message>
+    <message>
+        <source>Also load every class</source>
+        <translation>Auch jede Klasse laden</translation>
+    </message>
+    <message>
+        <source>Takes a few seconds. It loads every class this installation declares, in a child process so that one php refuses cannot take this page with it - which is how the last fault of that kind was found.</source>
+        <translation>Dauert einige Sekunden. Es lädt jede Klasse, die diese Installation deklariert, in einem Kindprozess, damit eine von PHP abgelehnte Klasse diese Seite nicht mitreißt - so wurde der letzte Fehler dieser Art gefunden.</translation>
+    </message>
+    <message>
+        <source>Nothing here matches that.</source>
+        <translation>Nichts hier passt dazu.</translation>
+    </message>
+    <message>
+        <source>What is wrong</source>
+        <translation>Was falsch ist</translation>
+    </message>
+    <message>
+        <source>How much</source>
+        <translation>Wie viele</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Welcher</translation>
+    </message>
+    <message>
+        <source>What it means</source>
+        <translation>Was es bedeutet</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wo</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektion</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Einstellung</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>Declared in</source>
+        <translation>Deklariert in</translation>
+    </message>
+    <message>
+        <source>How to fix it</source>
+        <translation>Wie es behoben wird</translation>
+    </message>
+    <message>
+        <source>What the dots mean</source>
+        <translation>Was die Punkte bedeuten</translation>
+    </message>
+    <message>
+        <source>A class of that name is declared, and the file it is in is shown. This is a point you can replace.</source>
+        <translation>Eine Klasse dieses Namens ist deklariert, und die Datei, in der sie steht, wird angezeigt. Dies ist ein Punkt, den Sie ersetzen können.</translation>
+    </message>
+    <message>
+        <source>The value has a capital in it, so it is shaped like a class name, and nothing declares a class of that name. Either the registration is broken and whatever it was meant to switch on has never run, or it is an alias that happens to be capitalised.</source>
+        <translation>Der Wert enthält einen Großbuchstaben, hat also die Form eines Klassennamens, und nichts deklariert eine Klasse dieses Namens. Entweder ist die Registrierung defekt, und was sie einschalten sollte, ist nie gelaufen, oder es ist ein Alias, der zufällig großgeschrieben ist.</translation>
+    </message>
+    <message>
+        <source>One lower case word, so it is an alias that something else turns into a class - or, in the other lists, nothing is set and nothing implements it yet. An empty repository directory list is normal; an interface nothing implements is a point nobody has taken up.</source>
+        <translation>Ein kleingeschriebenes Wort, also ein Alias, den etwas anderes in eine Klasse umwandelt - oder, in den anderen Listen, es ist nichts gesetzt und nichts implementiert es bisher. Eine leere Liste von Handler-Verzeichnissen ist normal; eine Schnittstelle, die nichts implementiert, ist ein Punkt, den noch niemand aufgegriffen hat.</translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation>Zurück zu den RAD-Werkzeugen</translation>
+    </message>
+    <message>
+        <source>Settings that name a class</source>
+        <translation>Einstellungen, die eine Klasse benennen</translation>
+    </message>
+    <message>
+        <source>Places the kernel looks</source>
+        <translation>Orte, an denen der Kernel sucht</translation>
+    </message>
+    <message>
+        <source>Interfaces and abstract classes</source>
+        <translation>Schnittstellen und abstrakte Klassen</translation>
+    </message>
+    <message>
+        <source>Modules and their views</source>
+        <translation>Module und ihre Views</translation>
+    </message>
+    <message>
+        <source>What a template can call</source>
+        <translation>Was ein Template aufrufen kann</translation>
+    </message>
+    <message>
+        <source>Events something can listen to</source>
+        <translation>Ereignisse, auf die etwas hören kann</translation>
+    </message>
+    <message>
+        <source>Templates already replaced</source>
+        <translation>Bereits ersetzte Templates</translation>
+    </message>
+    <message>
+        <source>What is configured and cannot work</source>
+        <translation>Was konfiguriert ist und nicht funktionieren kann</translation>
+    </message>
+    <message>
+        <source>Kernel classes replaced outright</source>
+        <translation>Vollständig ersetzte Kernel-Klassen</translation>
+    </message>
+    <message>
+        <source>Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.</source>
+        <translation>Jeder Operator und jede Funktion, die der Engine beigebracht wurde, aus den Autoload-Arrays gelesen, in denen sie wirklich deklariert sind - es gibt keine INI, die sie auflistet. Ein Operator, der nicht als aktiv markiert ist, gehört zu einer Extension, die nicht aktiv ist: der Name ist deklariert, und nichts antwortet darauf.</translation>
+    </message>
+    <message>
+        <source>What the kernel declares for somebody else to implement, with how many methods each asks for and what already implements it. The ones with many methods and one implementation are the deep water.</source>
+        <translation>Was der Kernel deklariert, damit jemand anderes es implementiert, mit der Anzahl der Methoden, die jedes verlangt, und dem, was es bereits implementiert. Die mit vielen Methoden und einer Implementierung sind das tiefe Wasser.</translation>
+    </message>
+    <message>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <translation>Jede Stelle, die der Kernel bei seiner Arbeit ankündigt, aus dem Quelltext zusammengesucht statt aufgelistet. Ein Filter-Ereignis verwendet, was ein Listener zurückgibt, sodass einer, der die Rückgabe des Werts vergisst, ihn vernichtet; ein Notify-Ereignis ignoriert ihn. Der leichteste Weg, Verhalten hinzuzufügen: kein Modul, kein Handler, keine zu ersetzende Klasse.</translation>
+    </message>
+    <message>
+        <source>Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.</source>
+        <translation>Jede Seite, die das System ausliefert. Ein View kann durch eine Extension mit einem gleichnamigen Modul ersetzt werden, und ein eigenes Modul kann Views daneben hinzufügen. Jeder View nennt die Richtlinien, die jemand braucht, um ihn zu erreichen.</translation>
+    </message>
+    <message>
+        <source>Every override registered here. Each is a place a template has already been replaced - which is both something to learn from and something to collide with, since two overrides matching the same thing are decided by load order rather than by intent.</source>
+        <translation>Jeder hier registrierte Override. Jeder ist eine Stelle, an der ein Template bereits ersetzt wurde - woraus man sowohl lernen als auch womit man kollidieren kann, da zwei Overrides, die auf dasselbe passen, nach Ladereihenfolge statt nach Absicht entschieden werden.</translation>
+    </message>
+    <message>
+        <source>The same walk over the same files, asked the other question: not where something could go, but what is here that points at nothing. A module listed and not found answers every address under it with an error; a datatype offered and not found cannot be added and hides the values of the attributes that already use it. Add (check)/classes to the address to load every class as well, which takes a few seconds and is the only way to find one php refuses.</source>
+        <translation>Derselbe Gang über dieselben Dateien, mit der anderen Frage: nicht, wohin etwas kommen könnte, sondern was hier ist und auf nichts zeigt. Ein aufgeführtes, aber nicht gefundenes Modul beantwortet jede Adresse darunter mit einem Fehler; ein angebotener, aber nicht gefundener Datentyp kann nicht hinzugefügt werden und verbirgt die Werte der Attribute, die ihn bereits verwenden. Hängen Sie (check)/classes an die Adresse an, um zusätzlich jede Klasse zu laden; das dauert einige Sekunden und ist der einzige Weg, eine zu finden, die PHP ablehnt.</translation>
+    </message>
+    <message>
+        <source>The heaviest mechanism there is, and the first thing to know before anything else is diagnosed: a replaced kernel class is not the kernel any more, whatever the kernel source says.</source>
+        <translation>Der schwerste Mechanismus, den es gibt, und das Erste, was man wissen muss, bevor irgendetwas anderes diagnostiziert wird: eine ersetzte Kernel-Klasse ist nicht mehr der Kernel, was auch immer der Kernel-Quelltext sagt.</translation>
+    </message>
+    <message>
+        <source>Every setting that names a directory to search or an extension to search in. Add your extension to one of these and your file is found; leave it out and the class is never loaded however correctly it is written. Most of the time something works and should not, or does not work and should, the answer is one of these lines.</source>
+        <translation>Jede Einstellung, die ein zu durchsuchendes Verzeichnis oder eine zu durchsuchende Extension benennt. Tragen Sie Ihre Extension in eine davon ein, und Ihre Datei wird gefunden; lassen Sie sie weg, und die Klasse wird nie geladen, wie korrekt sie auch geschrieben ist. Wenn etwas funktioniert, das nicht sollte, oder nicht funktioniert, das sollte, ist die Antwort meistens eine dieser Zeilen.</translation>
+    </message>
+    <message>
+        <source>Every setting on this installation whose value is a class, or whose name says it takes one. Change one of these and something else answers instead.</source>
+        <translation>Jede Einstellung dieser Installation, deren Wert eine Klasse ist oder deren Name sagt, dass sie eine erwartet. Ändern Sie eine davon, und etwas anderes antwortet stattdessen.</translation>
+    </message>
+    <message>
+        <source>View with no script</source>
+        <translation>View ohne Skript</translation>
+    </message>
+    <message>
+        <source>Design extension with no design</source>
+        <translation>Design-Extension ohne Design</translation>
+    </message>
+    <message>
+        <source>Directory searched and not there</source>
+        <translation>Durchsuchtes Verzeichnis nicht vorhanden</translation>
+    </message>
+    <message>
+        <source>Setting names no class</source>
+        <translation>Einstellung benennt keine Klasse</translation>
+    </message>
+    <message>
+        <source>Nothing implements it</source>
+        <translation>Nichts implementiert es</translation>
+    </message>
+    <message>
+        <source>A view left in the list after its script is gone is worse than one that was never declared: it is reachable, it is in the policy list a role can grant, and it does nothing.</source>
+        <translation>Ein View, der in der Liste bleibt, nachdem sein Skript verschwunden ist, ist schlimmer als einer, der nie deklariert wurde: er ist erreichbar, er steht in der Richtlinienliste, die eine Rolle gewähren kann, und er tut nichts.</translation>
+    </message>
+    <message>
+        <source>Clear the caches: php bin/php/ezcache.php --clear-all</source>
+        <translation>Caches leeren: php bin/php/ezcache.php --clear-all</translation>
+    </message>
+    <message>
+        <source>If it carries no templates, take the line out of design.ini: it costs a directory lookup per design resolution and buys nothing.</source>
+        <translation>Wenn sie keine Templates enthält, nehmen Sie die Zeile aus design.ini heraus: sie kostet eine Verzeichnissuche je Design-Auflösung und bringt nichts.</translation>
+    </message>
+    <message>
+        <source>Clear the template caches after either: php bin/php/ezcache.php --clear-tag=template</source>
+        <translation>Leeren Sie danach in beiden Fällen die Template-Caches: php bin/php/ezcache.php --clear-tag=template</translation>
+    </message>
+    <message>
+        <source>Clear the caches after either: php bin/php/ezcache.php --clear-all</source>
+        <translation>Leeren Sie danach in beiden Fällen die Caches: php bin/php/ezcache.php --clear-all</translation>
+    </message>
+    <message>
+        <source>Check first whether the setting takes an alias. Several do, and an alias that happens to be capitalised is not a fault - eZECB is the alias for eZECBHandler and is perfectly correct.</source>
+        <translation>Prüfen Sie zuerst, ob die Einstellung einen Alias erwartet. Mehrere tun das, und ein Alias, der zufällig großgeschrieben ist, ist kein Fehler - eZECB ist der Alias für eZECBHandler und völlig korrekt.</translation>
+    </message>
+    <message>
+        <source>If it is meant to be a class, find out whether the extension that declares it is installed and in ActiveExtensions[].</source>
+        <translation>Wenn es eine Klasse sein soll, finden Sie heraus, ob die Extension, die sie deklariert, installiert ist und in ActiveExtensions[] steht.</translation>
+    </message>
+    <message>
+        <source>If it is installed, the autoload map may be stale: php bin/php/ezpgenerateautoloads.php</source>
+        <translation>Wenn sie installiert ist, ist die Autoload-Map möglicherweise veraltet: php bin/php/ezpgenerateautoloads.php</translation>
+    </message>
+    <message>
+        <source>If the class was renamed, change the setting to the new name. Nothing else will, and the handler is silently not running in the meantime.</source>
+        <translation>Wenn die Klasse umbenannt wurde, ändern Sie die Einstellung auf den neuen Namen. Nichts anderes tut es, und der Handler läuft in der Zwischenzeit stillschweigend nicht.</translation>
+    </message>
+    <message>
+        <source>Nothing to do. It is listed so that the page is a complete picture rather than only a list of faults.</source>
+        <translation>Nichts zu tun. Es wird aufgeführt, damit die Seite ein vollständiges Bild ergibt statt nur einer Liste von Fehlern.</translation>
+    </message>
+    <message>
+        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <translation>Wenn Sie eine Stelle suchen, um Verhalten zu ändern: dies sind die Stellen, die noch niemand beansprucht hat.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/settings</name>
+    <message>
+        <source>Settings extension wizard</source>
+        <translation>Assistent für Einstellungs-Extensions</translation>
+    </message>
+    <message>
+        <source>A good deal of what this system can be told to do differently is told in settings rather than in code. None of it is hard; all of it is in a shape nobody remembers, spread over half a dozen files, with a rule about where the file has to live for anything to read it at all. Tick what this extension should say and the files are written.</source>
+        <translation>Vieles, was dieses System anders machen soll, wird ihm in Einstellungen statt in Code mitgeteilt. Nichts davon ist schwer; alles davon hat eine Form, die sich niemand merkt, verteilt auf ein halbes Dutzend Dateien, mit einer Regel, wo die Datei liegen muss, damit sie überhaupt gelesen wird. Haken Sie an, was diese Extension festlegen soll, dann werden die Dateien geschrieben.</translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below and clear the caches.</source>
+        <translation>Geschrieben nach %target. Schalten Sie sie mit den Zeilen unten ein und leeren Sie die Caches.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation>Der Webserver kann nicht in extension/ schreiben, daher kann diese Seite Ihnen nur ein Archiv übergeben.</translation>
+    </message>
+    <message>
+        <source>What this extension says</source>
+        <translation>Was diese Extension festlegt</translation>
+    </message>
+    <message>
+        <source>Each of these is one ini file. Tick one and the questions for it are below.</source>
+        <translation>Jede dieser Optionen ist eine INI-Datei. Haken Sie eine an, dann stehen die Fragen dazu unten.</translation>
+    </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Bild-Aliase</translation>
+    </message>
+    <message>
+        <source>One per line: a name, a colon, then the filters separated by commas. Arguments follow the filter after an = sign.</source>
+        <translation>Einer pro Zeile: ein Name, ein Doppelpunkt, dann die Filter durch Kommas getrennt. Argumente folgen dem Filter nach einem Gleichheitszeichen.</translation>
+    </message>
+    <message>
+        <source>Filters that ship</source>
+        <translation>Mitgelieferte Filter</translation>
+    </message>
+    <message>
+        <source>View cache clearing rules</source>
+        <translation>Regeln zum Leeren des View-Caches</translation>
+    </message>
+    <message>
+        <source>One per line: a content class identifier, a colon, then the methods. Any word that is not a method is taken as a class identifier this one depends on.</source>
+        <translation>Eine pro Zeile: ein Bezeichner einer Content-Klasse, ein Doppelpunkt, dann die Methoden. Jedes Wort, das keine Methode ist, wird als Bezeichner einer Klasse verstanden, von der diese abhängt.</translation>
+    </message>
+    <message>
+        <source>Methods</source>
+        <translation>Methoden</translation>
+    </message>
+    <message>
+        <source>Information collection</source>
+        <translation>Informationssammlung</translation>
+    </message>
+    <message>
+        <source>One per line: a content class identifier, a type, and the word nomail if it should not be emailed.</source>
+        <translation>Eine pro Zeile: ein Bezeichner einer Content-Klasse, ein Typ und das Wort nomail, wenn keine E-Mail verschickt werden soll.</translation>
+    </message>
+    <message>
+        <source>Types</source>
+        <translation>Typen</translation>
+    </message>
+    <message>
+        <source>Event listeners</source>
+        <translation>Event-Listener</translation>
+    </message>
+    <message>
+        <source>A method is written for each of these. A filter event uses what the method returns, so one that forgets to return the value destroys it; a notify event ignores it.</source>
+        <translation>Für jeden davon wird eine Methode geschrieben. Ein Filter-Event verwendet, was die Methode zurückgibt, daher zerstört eine Methode, die vergisst, den Wert zurückzugeben, diesen Wert; ein Notify-Event ignoriert ihn.</translation>
+    </message>
+    <message>
+        <source>Trigger operations</source>
+        <translation>Trigger-Operationen</translation>
+    </message>
+    <message>
+        <source>Which operations a workflow may be bound to in the admin. Separated by commas, spaces or newlines.</source>
+        <translation>An welche Operationen ein Workflow in der Administration gebunden werden kann. Getrennt durch Kommas, Leerzeichen oder Zeilenumbrüche.</translation>
+    </message>
+    <message>
+        <source>Listing an operation makes it bindable and binds nothing. The binding is a row in the database, done in the admin, and does not travel with the extension.</source>
+        <translation>Eine aufgeführte Operation wird bindbar, gebunden wird dadurch nichts. Die Bindung ist eine Zeile in der Datenbank, wird in der Administration vorgenommen und wandert nicht mit der Extension.</translation>
+    </message>
+    <message>
+        <source>Additional extension roots</source>
+        <translation>Zusätzliche Extension-Wurzelverzeichnisse</translation>
+    </message>
+    <message>
+        <source>One per line, relative to the installation. extension/ is always first and is not named here; each of these is searched after it, and an extension of the same name in a later root shadows the one before it.</source>
+        <translation>Eines pro Zeile, relativ zur Installation. extension/ kommt immer zuerst und wird hier nicht genannt; jedes davon wird danach durchsucht, und eine gleichnamige Extension in einem späteren Wurzelverzeichnis verdeckt die vorherige.</translation>
+    </message>
+    <message>
+        <source>The directory has to exist, and the autoloads have to be regenerated after adding one. Moving a package between roots is a copy and nothing else.</source>
+        <translation>Das Verzeichnis muss existieren, und nach dem Hinzufügen müssen die Autoloads neu erzeugt werden. Ein Paket zwischen Wurzelverzeichnissen zu verschieben ist eine Kopie und sonst nichts.</translation>
+    </message>
+    <message>
+        <source>Icon theme</source>
+        <translation>Icon-Thema</translation>
+    </message>
+    <message>
+        <source>A set of icons this extension carries, searched before the ones that ship. Added to the search rather than made the current theme, so everything the site already draws keeps drawing.</source>
+        <translation>Ein Satz Icons, den diese Extension mitbringt und der vor den mitgelieferten durchsucht wird. Er wird der Suche hinzugefügt, statt zum aktuellen Thema gemacht zu werden, sodass alles, was die Website bereits anzeigt, weiter angezeigt wird.</translation>
+    </message>
+    <message>
+        <source>Theme name</source>
+        <translation>Name des Themas</translation>
+    </message>
+    <message>
+        <source>Sizes</source>
+        <translation>Größen</translation>
+    </message>
+    <message>
+        <source>One per line: a name, then the directory it lives in. A size written as width by height gives the img tag its dimensions as well.</source>
+        <translation>Eine pro Zeile: ein Name, dann das Verzeichnis, in dem sie liegt. Eine als Breite mal Höhe geschriebene Größe gibt dem img-Tag auch seine Abmessungen.</translation>
+    </message>
+    <message>
+        <source>Siteaccess settings</source>
+        <translation>Einstellungen für Seitenzugänge</translation>
+    </message>
+    <message>
+        <source>Settings that apply to one siteaccess only and travel with this extension rather than living in settings/.</source>
+        <translation>Einstellungen, die nur für einen Seitenzugang gelten und mit dieser Extension wandern, statt in settings/ zu liegen.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Seitenzugang</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>One per line, as: file.ini [Section] Setting=value</source>
+        <translation>Eine pro Zeile, in der Form: file.ini [Section] Setting=value</translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation>Die Extension</translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation>Name der Extension</translation>
+    </message>
+    <message>
+        <source>Listener class</source>
+        <translation>Listener-Klasse</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation>Composer-Vendor</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>What else goes in it</source>
+        <translation>Was sonst noch hineinkommt</translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Then</source>
+        <translation>Dann</translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation>Jede Datei, bevor sie geschrieben wird</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Alle öffnen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines Zeilen, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation>In extension/ anlegen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Als ZIP herunterladen</translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation>Vorschau aktualisieren</translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation>Zurück zu den RAD-Werkzeugen</translation>
+    </message>
+    <message>
+        <source>A named size, with the filters that produce it.</source>
+        <translation>Eine benannte Größe, mit den Filtern, die sie erzeugen.</translation>
+    </message>
+    <message>
+        <source>A callback on something the kernel announces.</source>
+        <translation>Ein Callback auf etwas, das der Kernel ankündigt.</translation>
+    </message>
+    <message>
+        <source>What else has to be rebuilt when one object is published.</source>
+        <translation>Was sonst noch neu erzeugt werden muss, wenn ein Objekt veröffentlicht wird.</translation>
+    </message>
+    <message>
+        <source>What happens when a visitor fills in a form built out of content.</source>
+        <translation>Was passiert, wenn ein Besucher ein aus Inhalten gebautes Formular ausfüllt.</translation>
+    </message>
+    <message>
+        <source>Which operations a workflow may be bound to.</source>
+        <translation>An welche Vorgänge ein Workflow gebunden werden darf.</translation>
+    </message>
+    <message>
+        <source>Settings that apply to one siteaccess only, kept with the extension.</source>
+        <translation>Einstellungen, die nur für einen Siteaccess gelten, bei der Extension aufbewahrt.</translation>
+    </message>
+    <message>
+        <source>Somewhere other than extension/ for extensions to live.</source>
+        <translation>Ein anderer Ort als extension/, an dem Extensions liegen können.</translation>
+    </message>
+    <message>
+        <source>A set of icons an extension brings with it.</source>
+        <translation>Ein Satz Icons, den eine Extension mitbringt.</translation>
+    </message>
+    <message>
+        <source>Every image attribute is stored once and served in as many sizes as there are aliases. A template asks for one by name; the file is made the first time it is asked for and kept. Adding an alias costs nothing until something asks for it, and removing one that content still asks for leaves broken images.</source>
+        <translation>Jedes Bildattribut wird einmal gespeichert und in so vielen Größen ausgeliefert, wie es Aliase gibt. Ein Template fordert eine beim Namen an; die Datei wird beim ersten Anfordern erzeugt und aufbewahrt. Einen Alias hinzuzufügen kostet nichts, bis etwas danach fragt, und einen zu entfernen, nach dem Inhalte noch fragen, hinterlässt kaputte Bilder.</translation>
+    </message>
+    <message>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <translation>Der Kernel kündigt ein paar Dutzend Dinge an, während sie geschehen - ein Cache wird geleert, eine Anfrage trifft ein, eine Antwort wird gleich gesendet -, und alles, was zuhört, wird aufgerufen. Es ist der leichteste Weg, Verhalten hinzuzufügen: kein Modul, kein Handler, keine zu ersetzende Klasse, nur eine statische Methode, die läuft, wenn etwas geschieht.</translation>
+    </message>
+    <message>
+        <source>Publishing clears the cache for the object, its parents and what relates to it. Anything else showing that content - a listing, a count, a menu somewhere else entirely - keeps showing what it showed before. These rules are how the system is told about those.</source>
+        <translation>Veröffentlichen leert den Cache für das Objekt, seine Eltern und alles, was damit in Beziehung steht. Alles andere, was diesen Inhalt zeigt - eine Liste, eine Zählung, ein Menü an ganz anderer Stelle -, zeigt weiterhin, was es vorher zeigte. Mit diesen Regeln wird das System darüber informiert.</translation>
+    </message>
+    <message>
+        <source>A poll, a contact form and a booking are all the same thing: a content class with information collector attributes. What separates them is here - what the submission is called, whether it is kept, whether it is emailed, and what the visitor is shown afterwards. All of it matched per content class.</source>
+        <translation>Eine Umfrage, ein Kontaktformular und eine Buchung sind alle dasselbe: eine Inhaltsklasse mit informationssammelnden Attributen. Was sie unterscheidet, steht hier - wie die Einsendung heißt, ob sie aufbewahrt wird, ob sie per E-Mail verschickt wird und was dem Besucher danach angezeigt wird. Alles je Inhaltsklasse zugeordnet.</translation>
+    </message>
+    <message>
+        <source>A workflow runs at a trigger, and a trigger is an operation plus a moment - before or after. Only the operations listed here can be bound to in the admin; the rest are invisible, however much code is behind them.</source>
+        <translation>Ein Workflow läuft bei einem Auslöser, und ein Auslöser ist ein Vorgang plus ein Zeitpunkt - davor oder danach. Nur die hier aufgeführten Vorgänge können in der Administration gebunden werden; die übrigen sind unsichtbar, wie viel Code auch dahinter steckt.</translation>
+    </message>
+    <message>
+        <source>Settings in settings/siteaccess/ belong to the installation and are awkward to deploy with an extension. The same settings under an extension travel with it, and can be switched on and off with it. It is also what makes a site extension possible: one package carrying a whole site - its design, its siteaccesses, its overrides and its code.</source>
+        <translation>Einstellungen in settings/siteaccess/ gehören zur Installation und sind umständlich mit einer Extension auszurollen. Dieselben Einstellungen unter einer Extension reisen mit ihr und können mit ihr ein- und ausgeschaltet werden. Das macht auch eine Site-Extension möglich: ein Paket, das eine ganze Website trägt - ihr Design, ihre Siteaccesses, ihre Overrides und ihren Code.</translation>
+    </message>
+    <message>
+        <source>A second root - extension_src/ is the usual name - separates what a project wrote from what it took from elsewhere, so who owns a package is readable off the directory layout rather than off a list somebody maintains. Everything in the kernel goes through eZExtension::extensionPath(), so a new root is seen by all of it at once.</source>
+        <translation>Eine zweite Wurzel - extension_src/ ist der übliche Name - trennt, was ein Projekt selbst geschrieben hat, von dem, was es von anderswo übernommen hat, sodass an der Verzeichnisstruktur ablesbar ist, wem ein Paket gehört, statt an einer Liste, die jemand pflegt. Alles im Kernel geht über eZExtension::extensionPath(), eine neue Wurzel wird also von allem auf einmal gesehen.</translation>
+    </message>
+    <message>
+        <source>Icons used to mean patching the kernel or copying files into share/icons. An extension can now carry a theme of its own, searched before the ones that ship, with the whole chain falling back: this theme, then any additional themes, then the standard one, and within each, extensions before share/icons.</source>
+        <translation>Icons bedeuteten früher, den Kernel zu patchen oder Dateien nach share/icons zu kopieren. Eine Extension kann jetzt ein eigenes Theme mitbringen, das vor den mitgelieferten durchsucht wird, wobei die ganze Kette zurückfällt: dieses Theme, dann weitere Themes, dann das Standard-Theme, und innerhalb jedes Themes Extensions vor share/icons.</translation>
+    </message>
+    <message>
+        <source>Fits the image inside a box, keeping its shape. Enlarges a small image to fill it.</source>
+        <translation>Passt das Bild in einen Rahmen ein und behält seine Form. Vergrößert ein kleines Bild, bis es ihn ausfüllt.</translation>
+    </message>
+    <message>
+        <source>The same, but never enlarges. What almost every alias wants: a thumbnail of a small image should stay small rather than go soft.</source>
+        <translation>Dasselbe, vergrößert aber nie. Was fast jeder Alias möchte: ein Vorschaubild eines kleinen Bildes sollte klein bleiben statt unscharf zu werden.</translation>
+    </message>
+    <message>
+        <source>Forces exactly this size, changing the shape of the image to do it.</source>
+        <translation>Erzwingt genau diese Größe und ändert dafür die Form des Bildes.</translation>
+    </message>
+    <message>
+        <source>Sets the width and lets the height follow.</source>
+        <translation>Setzt die Breite und lässt die Höhe folgen.</translation>
+    </message>
+    <message>
+        <source>The same, but never enlarges.</source>
+        <translation>Dasselbe, vergrößert aber nie.</translation>
+    </message>
+    <message>
+        <source>Sets the height and lets the width follow.</source>
+        <translation>Setzt die Höhe und lässt die Breite folgen.</translation>
+    </message>
+    <message>
+        <source>Scales by a percentage rather than to a size.</source>
+        <translation>Skaliert um einen Prozentsatz statt auf eine Größe.</translation>
+    </message>
+    <message>
+        <source>Cuts a rectangle out. Combined with a scale this is how a fixed size thumbnail is made without distortion.</source>
+        <translation>Schneidet ein Rechteck aus. Zusammen mit einer Skalierung entsteht so ein Vorschaubild fester Größe ohne Verzerrung.</translation>
+    </message>
+    <message>
+        <source>Takes the colour out.</source>
+        <translation>Nimmt die Farbe heraus.</translation>
+    </message>
+    <message>
+        <source>Keeps transparency through the conversion. Without it a transparent png can come out with a black background.</source>
+        <translation>Erhält die Transparenz bei der Umwandlung. Ohne dies kann ein transparentes PNG mit schwarzem Hintergrund herauskommen.</translation>
+    </message>
+    <message>
+        <source>Twists the image. Of no use to anybody, and in every example ever written.</source>
+        <translation>Verdreht das Bild. Für niemanden von Nutzen und in jedem je geschriebenen Beispiel.</translation>
+    </message>
+    <message>
+        <source>A border in a named or hex colour.</source>
+        <translation>Ein Rahmen in einer benannten oder hexadezimalen Farbe.</translation>
+    </message>
+    <message>
+        <source>Flattens layers into one. Needed for some source formats before anything else will work.</source>
+        <translation>Fasst Ebenen zu einer zusammen. Bei manchen Quellformaten nötig, bevor irgendetwas anderes funktioniert.</translation>
+    </message>
+    <message>
+        <source>A form. Kept, and the visitor is shown a thank you.</source>
+        <translation>Ein Formular. Wird aufbewahrt, und dem Besucher wird ein Dank angezeigt.</translation>
+    </message>
+    <message>
+        <source>A poll. Kept, and the visitor is shown the result.</source>
+        <translation>Eine Umfrage. Wird aufbewahrt, und dem Besucher wird das Ergebnis angezeigt.</translation>
+    </message>
+    <message>
+        <source>Feedback. Emailed, and not necessarily kept.</source>
+        <translation>Rückmeldung. Wird per E-Mail verschickt und nicht unbedingt aufbewahrt.</translation>
+    </message>
+    <message>
+        <source>View caches are being cleared for a list of nodes.</source>
+        <translation>View-Caches werden für eine Liste von Knoten geleert.</translation>
+    </message>
+    <message>
+        <source>Every view cache is being cleared.</source>
+        <translation>Alle View-Caches werden geleert.</translation>
+    </message>
+    <message>
+        <source>One version of one object had its cache cleared.</source>
+        <translation>Bei einer Version eines Objekts wurde der Cache geleert.</translation>
+    </message>
+    <message>
+        <source>A content class changed and its cache is going.</source>
+        <translation>Eine Inhaltsklasse hat sich geändert, und ihr Cache wird verworfen.</translation>
+    </message>
+    <message>
+        <source>A file attribute is being served. Where a download count belongs.</source>
+        <translation>Ein Dateiattribut wird ausgeliefert. Hierher gehört eine Download-Zählung.</translation>
+    </message>
+    <message>
+        <source>A section changed.</source>
+        <translation>Eine Sektion hat sich geändert.</translation>
+    </message>
+    <message>
+        <source>An object state was assigned to an object.</source>
+        <translation>Einem Objekt wurde ein Objektzustand zugewiesen.</translation>
+    </message>
+    <message>
+        <source>The list of languages changed.</source>
+        <translation>Die Liste der Sprachen hat sich geändert.</translation>
+    </message>
+    <message>
+        <source>A node is about to be viewed; the node id is passed and the one returned is used. How a request for one node is answered with another.</source>
+        <translation>Ein Knoten wird gleich angezeigt; die Knoten-ID wird übergeben, und die zurückgegebene wird verwendet. So wird eine Anfrage nach einem Knoten mit einem anderen beantwortet.</translation>
+    </message>
+    <message>
+        <source>An image alias was generated. Where a copy to somewhere else belongs.</source>
+        <translation>Ein Bild-Alias wurde erzeugt. Hierher gehört eine Kopie an einen anderen Ort.</translation>
+    </message>
+    <message>
+        <source>Generated image files are being removed for good.</source>
+        <translation>Erzeugte Bilddateien werden endgültig entfernt.</translation>
+    </message>
+    <message>
+        <source>Generated image files are being removed.</source>
+        <translation>Erzeugte Bilddateien werden entfernt.</translation>
+    </message>
+    <message>
+        <source>An object with images went to the trash, so its aliases went with it.</source>
+        <translation>Ein Objekt mit Bildern ging in den Papierkorb, und seine Aliase gingen mit.</translation>
+    </message>
+    <message>
+        <source>The request, after the kernel has read it.</source>
+        <translation>Die Anfrage, nachdem der Kernel sie gelesen hat.</translation>
+    </message>
+    <message>
+        <source>The request has arrived and nothing has looked at it yet.</source>
+        <translation>Die Anfrage ist eingetroffen, und noch hat nichts sie angesehen.</translation>
+    </message>
+    <message>
+        <source>The whole page, about to be sent. Whatever is returned is what the browser gets.</source>
+        <translation>Die ganze Seite, kurz vor dem Senden. Was zurückgegeben wird, bekommt der Browser.</translation>
+    </message>
+    <message>
+        <source>The page has been built and is about to be wrapped. The last place to change what a template produced.</source>
+        <translation>Die Seite wurde gebaut und wird gleich eingerahmt. Die letzte Stelle, an der man ändern kann, was ein Template erzeugt hat.</translation>
+    </message>
+    <message>
+        <source>Every session was forgotten.</source>
+        <translation>Alle Sessions wurden vergessen.</translation>
+    </message>
+    <message>
+        <source>A session was forgotten, which happens on logout.</source>
+        <translation>Eine Session wurde vergessen, was beim Abmelden geschieht.</translation>
+    </message>
+    <message>
+        <source>Old sessions were collected.</source>
+        <translation>Alte Sessions wurden eingesammelt.</translation>
+    </message>
+    <message>
+        <source>A session was given a new id, which happens on login.</source>
+        <translation>Eine Session hat eine neue ID bekommen, was beim Anmelden geschieht.</translation>
+    </message>
+    <message>
+        <source>Every user cache is going, which happens when roles change.</source>
+        <translation>Alle Benutzer-Caches werden verworfen, was geschieht, wenn sich Rollen ändern.</translation>
+    </message>
+    <message>
+        <source>API examples</source>
+        <translation>API-Beispiele</translation>
+    </message>
+    <message>
+        <source>The class the event listeners point at, with a method per event and a note saying whether what it returns is used or ignored. Written only when events are chosen.</source>
+        <translation>Die Klasse, auf die die Ereignis-Listener zeigen, mit einer Methode je Ereignis und einem Hinweis, ob ihr Rückgabewert verwendet oder ignoriert wird. Wird nur geschrieben, wenn Ereignisse gewählt sind.</translation>
+    </message>
+    <message>
+        <source>How to read these settings back from code, how to write an ini from a script without losing its comments, and how to find an extension whatever root it lives in.</source>
+        <translation>Wie man diese Einstellungen aus Code wieder liest, wie man aus einem Skript eine INI schreibt, ohne ihre Kommentare zu verlieren, und wie man eine Extension findet, in welcher Wurzel sie auch liegt.</translation>
+    </message>
+    <message>
+        <source>What each setting does, why it is where it is, and what has to be cleared before it takes effect.</source>
+        <translation>Was jede Einstellung tut, warum sie dort steht, wo sie steht, und was geleert werden muss, bevor sie wirkt.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>Die gepackte Beschreibung der Extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>Damit die Extension beim Namen angefordert statt hineinkopiert werden kann.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/template</name>
+    <message>
+        <source>Template extension wizard</source>
+        <translation>Assistent für Template-Extensions</translation>
+    </message>
+    <message>
+        <source>Four things can be added to the template language from an extension, and they are easy to confuse. An operator takes a value and gives one back. A function writes output where it stands and may have a body. A fetch function reads something, with a policy check first. A fetch alias is a fetch with its arguments already decided. Name any mixture of them below.</source>
+        <translation>Vier Dinge können der Template-Sprache aus einer Extension hinzugefügt werden, und sie sind leicht zu verwechseln. Ein Operator nimmt einen Wert und gibt einen zurück. Eine Funktion schreibt ihre Ausgabe dort, wo sie steht, und kann einen Rumpf haben. Eine Fetch-Funktion liest etwas, mit vorheriger Richtlinienprüfung. Ein Fetch-Alias ist ein Fetch mit bereits festgelegten Argumenten. Nennen Sie unten eine beliebige Mischung davon.</translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, regenerate the extension autoloads, and clear the caches - the operator list is itself cached.</source>
+        <translation>Geschrieben nach %target. Schalten Sie sie mit den Zeilen unten ein, erzeugen Sie die Autoloads der Extensions neu und leeren Sie die Caches - die Operatorliste wird selbst zwischengespeichert.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation>Der Webserver kann nicht in extension/ schreiben, daher kann diese Seite Ihnen nur ein Archiv übergeben.</translation>
+    </message>
+    <message>
+        <source>What to add</source>
+        <translation>Was hinzugefügt werden soll</translation>
+    </message>
+    <message>
+        <source>Several names in a box, separated by commas, spaces or newlines. One class is written per kind, answering to all of its names.</source>
+        <translation>Mehrere Namen in einem Feld, getrennt durch Kommas, Leerzeichen oder Zeilenumbrüche. Pro Art wird eine Klasse geschrieben, die auf alle ihre Namen reagiert.</translation>
+    </message>
+    <message>
+        <source>Operators</source>
+        <translation>Operatoren</translation>
+    </message>
+    <message>
+        <source>{$value|myoperator} — takes the value on the left and gives one back.</source>
+        <translation>{$value|myoperator} — nimmt den Wert links und gibt einen zurück.</translation>
+    </message>
+    <message>
+        <source>Functions</source>
+        <translation>Funktionen</translation>
+    </message>
+    <message>
+        <source>{myfunction arg=1} — writes output where it stands.</source>
+        <translation>{myfunction arg=1} — schreibt ihre Ausgabe dort, wo sie steht.</translation>
+    </message>
+    <message>
+        <source>Fetch functions</source>
+        <translation>Fetch-Funktionen</translation>
+    </message>
+    <message>
+        <source>{fetch( module, thing )} — reads something, with a policy check first. Needs a module of its own.</source>
+        <translation>{fetch( module, thing )} — liest etwas, mit vorheriger Richtlinienprüfung. Braucht ein eigenes Modul.</translation>
+    </message>
+    <message>
+        <source>Fetch aliases</source>
+        <translation>Fetch-Aliase</translation>
+    </message>
+    <message>
+        <source>{fetch_alias( news_list )} — a fetch with its arguments fixed in an ini.</source>
+        <translation>{fetch_alias( news_list )} — ein Fetch, dessen Argumente in einer INI-Datei festgelegt sind.</translation>
+    </message>
+    <message>
+        <source>Parameters</source>
+        <translation>Parameter</translation>
+    </message>
+    <message>
+        <source>One per line: a name, then a type, then the word required if it is. Types: string, integer, float, boolean, array, any.</source>
+        <translation>Einer pro Zeile: ein Name, dann ein Typ, dann das Wort required, falls er erforderlich ist. Typen: string, integer, float, boolean, array, any.</translation>
+    </message>
+    <message>
+        <source>Operators take input</source>
+        <translation>Operatoren nehmen eine Eingabe</translation>
+    </message>
+    <message>
+        <source>There is a value on the left of the pipe. Off means the operator is written {myoperator()} and produces a value out of its parameters alone.</source>
+        <translation>Links vom senkrechten Strich steht ein Wert. Ausgeschaltet bedeutet, dass der Operator als {myoperator()} geschrieben wird und einen Wert allein aus seinen Parametern erzeugt.</translation>
+    </message>
+    <message>
+        <source>Operators produce output</source>
+        <translation>Operatoren erzeugen eine Ausgabe</translation>
+    </message>
+    <message>
+        <source>What they leave behind is printed rather than only used. Shown in the examples as a reminder to decide who washes it.</source>
+        <translation>Was sie hinterlassen, wird ausgegeben und nicht nur verwendet. In den Beispielen als Erinnerung angezeigt, zu entscheiden, wer es maskiert.</translation>
+    </message>
+    <message>
+        <source>Functions have a body</source>
+        <translation>Funktionen haben einen Rumpf</translation>
+    </message>
+    <message>
+        <source>%open...%close, with the body handed over unprocessed to draw none, one or many times. This is how section and foreach work.</source>
+        <translation>%open...%close, wobei der Inhalt unverarbeitet übergeben wird, um ihn keinmal, einmal oder mehrmals auszugeben. So arbeiten section und foreach.</translation>
+    </message>
+    <message>
+        <source>What the compiler may assume</source>
+        <translation>Was der Compiler annehmen darf</translation>
+    </message>
+    <message>
+        <source>A template is compiled once and run many times. What is promised here decides how much work happens at compile time and how much on every request, for ever.</source>
+        <translation>Ein Template wird einmal kompiliert und viele Male ausgeführt. Was hier zugesichert wird, entscheidet, wie viel Arbeit beim Kompilieren anfällt und wie viel bei jeder Anfrage, für immer.</translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation>Die Extension</translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation>Name der Extension</translation>
+    </message>
+    <message>
+        <source>Class name</source>
+        <translation>Klassenname</translation>
+    </message>
+    <message>
+        <source>Module for the fetches</source>
+        <translation>Modul für die Fetches</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation>Composer-Vendor</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation>Was hineinkommt</translation>
+    </message>
+    <message>
+        <source>What a template will write</source>
+        <translation>Was ein Template schreiben wird</translation>
+    </message>
+    <message>
+        <source>Exactly as it would appear in a template, with the parameters named above already in place.</source>
+        <translation>Genau so, wie es in einem Template erscheinen würde, mit den oben genannten Parametern bereits eingesetzt.</translation>
+    </message>
+    <message>
+        <source>Name an operator, a function, a fetch or an alias and it appears here.</source>
+        <translation>Nennen Sie einen Operator, eine Funktion, einen Fetch oder einen Alias, dann erscheint er hier.</translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php. The extension brings its own site.ini adding itself to ExtensionAutoloadPath, which is the line that is forgotten and the usual reason an operator is reported unknown.</source>
+        <translation>Fügen Sie dies in settings/override/site.ini.append.php ein. Die Extension bringt ihre eigene site.ini mit, die sie zu ExtensionAutoloadPath hinzufügt; das ist die Zeile, die vergessen wird, und der übliche Grund, warum ein Operator als unbekannt gemeldet wird.</translation>
+    </message>
+    <message>
+        <source>Then</source>
+        <translation>Dann</translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation>Jede Datei, bevor sie geschrieben wird</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Alle öffnen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines Zeilen, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation>In extension/ anlegen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Als ZIP herunterladen</translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation>Vorschau aktualisieren</translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation>Zurück zu den RAD-Werkzeugen</translation>
+    </message>
+    <message>
+        <source>Always the same answer</source>
+        <translation>Immer dieselbe Antwort</translation>
+    </message>
+    <message>
+        <source>Parameters may be worked out first</source>
+        <translation>Parameter dürfen zuerst ausgewertet werden</translation>
+    </message>
+    <message>
+        <source>Input may be passed as a parameter</source>
+        <translation>Eingabe darf als Parameter übergeben werden</translation>
+    </message>
+    <message>
+        <source>Given the same input this always gives the same output, with nothing read from the request, the session, the database or the clock. The compiler may then run it once, at compile time, and put the answer straight in the template. The fastest an operator can be, and a lie here is a value frozen for the life of the cache.</source>
+        <translation>Bei gleicher Eingabe liefert dies immer dieselbe Ausgabe, ohne etwas aus der Anfrage, der Session, der Datenbank oder der Uhr zu lesen. Der Compiler darf es dann einmal zur Kompilierzeit ausführen und die Antwort direkt ins Template setzen. Das Schnellste, was ein Operator sein kann, und eine Lüge hier ist ein Wert, der für die Lebensdauer des Caches eingefroren ist.</translation>
+    </message>
+    <message>
+        <source>The parameters can be evaluated before the operator is reached, rather than handed over as unevaluated element trees. True for almost every operator; false only for one that has to see the expression rather than its value.</source>
+        <translation>Die Parameter können ausgewertet werden, bevor der Operator erreicht wird, statt als unausgewertete Elementbäume übergeben zu werden. True für fast jeden Operator; false nur für einen, der den Ausdruck statt seines Werts sehen muss.</translation>
+    </message>
+    <message>
+        <source>The value on the left of the pipe can be handed over as an ordinary parameter. Lets the compiler rewrite the operator into a plain function call.</source>
+        <translation>Der Wert links vom senkrechten Strich kann als gewöhnlicher Parameter übergeben werden. Lässt den Compiler den Operator in einen einfachen Funktionsaufruf umschreiben.</translation>
+    </message>
+    <message>
+        <source>Operator class</source>
+        <translation>Operator-Klasse</translation>
+    </message>
+    <message>
+        <source>Function class</source>
+        <translation>Funktionsklasse</translation>
+    </message>
+    <message>
+        <source>Autoload registration</source>
+        <translation>Autoload-Registrierung</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registrierung</translation>
+    </message>
+    <message>
+        <source>API examples</source>
+        <translation>API-Beispiele</translation>
+    </message>
+    <message>
+        <source>The class behind the operators named below, with its parameter list, its compile-time hints, and a modify() that dispatches on the operator name.</source>
+        <translation>Die Klasse hinter den unten genannten Operatoren, mit ihrer Parameterliste, ihren Hinweisen für die Kompilierzeit und einem modify(), das nach dem Operatornamen verzweigt.</translation>
+    </message>
+    <message>
+        <source>A template function - {myfunction} rather than |myoperator - with its attribute list and a process() that writes output. Written only when function names are given.</source>
+        <translation>Eine Template-Funktion - {myfunction} statt |myoperator - mit ihrer Attributliste und einem process(), das Ausgabe schreibt. Wird nur geschrieben, wenn Funktionsnamen angegeben sind.</translation>
+    </message>
+    <message>
+        <source>A module directory carrying only a function_definition.php, which is all a fetch function is. Written only when fetch names are given.</source>
+        <translation>Ein Modulverzeichnis, das nur eine function_definition.php enthält, und mehr ist eine Fetch-Funktion nicht. Wird nur geschrieben, wenn Fetch-Namen angegeben sind.</translation>
+    </message>
+    <message>
+        <source>fetchalias.ini, so a long fetch with fixed arguments can be called by one short name from any template.</source>
+        <translation>fetchalias.ini, damit ein langes Fetch mit festen Argumenten aus jedem Template über einen kurzen Namen aufgerufen werden kann.</translation>
+    </message>
+    <message>
+        <source>autoloads/eztemplateautoload.php, which is how operators and functions are really registered. Not an ini: this is the file the engine reads, and without it nothing here is ever loaded.</source>
+        <translation>autoloads/eztemplateautoload.php, über die Operatoren und Funktionen wirklich registriert werden. Keine INI: dies ist die Datei, die die Engine liest, und ohne sie wird nichts hiervon je geladen.</translation>
+    </message>
+    <message>
+        <source>site.ini naming this extension as one to look in for that autoload file, and module.ini if there are fetch functions.</source>
+        <translation>site.ini, die diese Extension als eine nennt, in der nach dieser Autoload-Datei gesucht wird, und module.ini, wenn es Fetch-Funktionen gibt.</translation>
+    </message>
+    <message>
+        <source>What each thing looks like in a template, what it is handed, and how to try it from a script without a page anywhere near it.</source>
+        <translation>Wie jedes Ding in einem Template aussieht, was es übergeben bekommt und wie man es aus einem Skript ausprobiert, ganz ohne Seite.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>Die gepackte Beschreibung der Extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>Damit die Extension beim Namen angefordert statt hineinkopiert werden kann.</translation>
+    </message>
+    <message>
+        <source>What it adds to the template language, how to switch it on, and what each name does.</source>
+        <translation>Was es der Template-Sprache hinzufügt, wie man es einschaltet und was jeder Name tut.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
+    </message>
+    <message>
+        <source>Takes no input; everything it needs is a parameter.</source>
+        <translation>Nimmt keine Eingabe; alles, was es braucht, ist ein Parameter.</translation>
+    </message>
+    <message>
+        <source>Has a body, which it may draw none, one or many times.</source>
+        <translation>Hat einen Rumpf, den es keinmal, einmal oder mehrmals ausgeben darf.</translation>
+    </message>
+    <message>
+        <source>Reads something and gives it back. Runs a policy check first, unlike an operator.</source>
+        <translation>Liest etwas und gibt es zurück. Führt zuerst eine Richtlinienprüfung aus, anders als ein Operator.</translation>
     </message>
 </context>
 <context>
@@ -12661,6 +19904,385 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Finish and generate</source>
         <translation>Abschließen und Erzeugen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/rad/workflowevent</name>
+    <message>
+        <source>Workflow event wizard</source>
+        <translation>Assistent für Workflow-Ereignisse</translation>
+    </message>
+    <message>
+        <source>A workflow event is a step a workflow takes when something is published, moved, removed, registered or bought. Four things have to be decided: where it may be attached, what an editor can set on it, what it answers with, and what it does. The first three are made here; the fourth is left as a method with every option written out beside it.</source>
+        <translation>Ein Workflow-Ereignis ist ein Schritt, den ein Workflow ausführt, wenn etwas veröffentlicht, verschoben, entfernt, registriert oder gekauft wird. Vier Dinge müssen entschieden werden: wo es angehängt werden darf, was ein Redakteur daran einstellen kann, womit es antwortet und was es tut. Die ersten drei werden hier festgelegt; das vierte bleibt eine Methode, neben der jede Möglichkeit ausgeschrieben ist.</translation>
+    </message>
+    <message>
+        <source>Written to %target. Switch it on with the lines below, then clear the caches.</source>
+        <translation>Geschrieben nach %target. Schalten Sie sie mit den Zeilen unten ein und leeren Sie dann die Caches.</translation>
+    </message>
+    <message>
+        <source>The web server cannot write into extension/, so this page can only hand you an archive.</source>
+        <translation>Der Webserver kann nicht in extension/ schreiben, daher kann diese Seite Ihnen nur ein Archiv übergeben.</translation>
+    </message>
+    <message>
+        <source>What it is</source>
+        <translation>Was es ist</translation>
+    </message>
+    <message>
+        <source>The event name becomes the class, the template names and the value stored against every workflow that uses it. It cannot be changed afterwards without breaking those workflows.</source>
+        <translation>Der Ereignisname wird zur Klasse, zu den Template-Namen und zu dem Wert, der bei jedem Workflow gespeichert wird, der es verwendet. Er kann danach nicht mehr geändert werden, ohne diese Workflows zu beschädigen.</translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation>Name der Extension</translation>
+    </message>
+    <message>
+        <source>Event name</source>
+        <translation>Ereignisname</translation>
+    </message>
+    <message>
+        <source>Lower case letters and digits.</source>
+        <translation>Kleinbuchstaben und Ziffern.</translation>
+    </message>
+    <message>
+        <source>Lower case letters and digits. Becomes %class.</source>
+        <translation>Kleinbuchstaben und Ziffern. Wird zu %class.</translation>
+    </message>
+    <message>
+        <source>What editors see it called</source>
+        <translation>Wie es für Redakteure heißt</translation>
+    </message>
+    <message>
+        <source>Require approval</source>
+        <translation>Freigabe verlangen</translation>
+    </message>
+    <message>
+        <source>The name in the list when an event is added to a workflow.</source>
+        <translation>Der Name in der Liste, wenn einem Workflow ein Ereignis hinzugefügt wird.</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Composer vendor</source>
+        <translation>Composer-Vendor</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Licence</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>When it runs</source>
+        <translation>Wann es läuft</translation>
+    </message>
+    <message>
+        <source>Every operation on this installation that carries a trigger, read from its own definition. Before runs while the operation is still deciding, so rejecting the event stops the operation; after runs once it has happened, so rejecting it then stops the rest of the workflow but not the thing itself.</source>
+        <translation>Jede Operation dieser Installation, die einen Trigger hat, aus ihrer eigenen Definition gelesen. Vorher läuft, während die Operation noch entscheidet, sodass ein Ablehnen des Ereignisses die Operation stoppt; nachher läuft, wenn sie stattgefunden hat, sodass ein Ablehnen dann den Rest des Workflows stoppt, nicht aber die Sache selbst.</translation>
+    </message>
+    <message>
+        <source>Tick none</source>
+        <translation>Keine anhaken</translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation>Vorschau aktualisieren</translation>
+    </message>
+    <message>
+        <source>Operation</source>
+        <translation>Operation</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Vorher</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Nachher</translation>
+    </message>
+    <message>
+        <source>What an editor can set</source>
+        <translation>Was ein Redakteur einstellen kann</translation>
+    </message>
+    <message>
+        <source>An event keeps its settings in four integer columns and five text ones, and the kernel gives those columns no meaning. Name them here and the generated class gets a constant per setting, a field in the edit form, and the code that reads it back.</source>
+        <translation>Ein Ereignis speichert seine Einstellungen in vier Ganzzahl- und fünf Textspalten, und der Kernel gibt diesen Spalten keine Bedeutung. Benennen Sie sie hier, dann erhält die erzeugte Klasse eine Konstante pro Einstellung, ein Feld im Bearbeitungsformular und den Code, der sie wieder ausliest.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Beschriftung</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Art</translation>
+    </message>
+    <message>
+        <source>Values</source>
+        <translation>Werte</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Spalte</translation>
+    </message>
+    <message>
+        <source>A line of help shown under the field</source>
+        <translation>Eine Hilfezeile, die unter dem Feld angezeigt wird</translation>
+    </message>
+    <message>
+        <source>%n integer columns left</source>
+        <translation>%n Ganzzahlspalten übrig</translation>
+    </message>
+    <message>
+        <source>%n text columns left</source>
+        <translation>%n Textspalten übrig</translation>
+    </message>
+    <message>
+        <source>What it can answer</source>
+        <translation>Womit es antworten kann</translation>
+    </message>
+    <message>
+        <source>Each of these changes what happens next, and several change what the kernel does rather than only what the workflow does. Tick the ones this event will use; each gets a branch in execute() with this explanation beside it.</source>
+        <translation>Jede dieser Antworten ändert, was als Nächstes geschieht, und mehrere ändern, was der Kernel tut, nicht nur, was der Workflow tut. Haken Sie die an, die dieses Ereignis verwenden wird; jede erhält einen Zweig in execute() mit dieser Erklärung daneben.</translation>
+    </message>
+    <message>
+        <source>Always included: an event with no way to say it is done would hang every workflow it is in.</source>
+        <translation>Immer enthalten: Ein Ereignis, das nicht melden kann, dass es fertig ist, würde jeden Workflow blockieren, in dem es steht.</translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation>Was hineinkommt</translation>
+    </message>
+    <message>
+        <source>Switching it on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Add this to settings/override/site.ini.append.php, then clear the caches. The event then appears when an event is added to a workflow.</source>
+        <translation>Fügen Sie dies in settings/override/site.ini.append.php ein und leeren Sie dann die Caches. Das Ereignis erscheint danach, wenn einem Workflow ein Ereignis hinzugefügt wird.</translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation>Jede Datei, bevor sie geschrieben wird</translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation>Dateien</translation>
+    </message>
+    <message>
+        <source>triggers</source>
+        <translation>Trigger</translation>
+    </message>
+    <message>
+        <source>settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>statuses</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Alle öffnen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines Zeilen, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation>In extension/ anlegen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Als ZIP herunterladen</translation>
+    </message>
+    <message>
+        <source>Back to the RAD tools</source>
+        <translation>Zurück zu den RAD-Werkzeugen</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Zahl</translation>
+    </message>
+    <message>
+        <source>Yes or no</source>
+        <translation>Ja oder Nein</translation>
+    </message>
+    <message>
+        <source>One of a list</source>
+        <translation>Eines aus einer Liste</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Text</translation>
+    </message>
+    <message>
+        <source>List of ids</source>
+        <translation>Liste von IDs</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Klassen Attribute</translation>
+    </message>
+    <message>
+        <source>A whole number, kept in one of the four integer columns.</source>
+        <translation>Eine ganze Zahl, in einer der vier Ganzzahlspalten gespeichert.</translation>
+    </message>
+    <message>
+        <source>A tick box, kept as 0 or 1 in an integer column.</source>
+        <translation>Ein Kontrollkästchen, als 0 oder 1 in einer Ganzzahlspalte gespeichert.</translation>
+    </message>
+    <message>
+        <source>A drop-down of values you name below, kept as text.</source>
+        <translation>Eine Auswahlliste mit unten benannten Werten, als Text gespeichert.</translation>
+    </message>
+    <message>
+        <source>A line of text, kept in one of the five text columns.</source>
+        <translation>Eine Textzeile, in einer der fünf Textspalten gespeichert.</translation>
+    </message>
+    <message>
+        <source>A list of numbers - class ids, section ids, user ids - kept as comma separated text.</source>
+        <translation>Eine Liste von Zahlen - Klassen-IDs, Sektions-IDs, Benutzer-IDs -, als kommagetrennter Text gespeichert.</translation>
+    </message>
+    <message>
+        <source>Attributes picked from a content class, the way the wait-until-date event does. Uses the class list helpers on the base type.</source>
+        <translation>Aus einer Inhaltsklasse ausgewählte Attribute, so wie es das Ereignis „Warten bis Datum“ tut. Verwendet die Hilfsfunktionen für Klassenlisten des Basistyps.</translation>
+    </message>
+    <message>
+        <source>The event is done and the workflow carries on to the next one. Every event needs a way to reach this.</source>
+        <translation>Das Ereignis ist erledigt, und der Workflow geht zum nächsten weiter. Jedes Ereignis braucht einen Weg, dies zu erreichen.</translation>
+    </message>
+    <message>
+        <source>The workflow stops here and the operation it was attached to does not happen. On a before trigger, that means the publish is refused.</source>
+        <translation>Der Workflow hält hier an, und der Vorgang, an den er gebunden war, findet nicht statt. Bei einem Auslöser davor bedeutet das, dass die Veröffentlichung abgelehnt wird.</translation>
+    </message>
+    <message>
+        <source>Nothing more happens now; the workflow waits for the workflow_cron cronjob to come back to it. Used when the answer is not available yet.</source>
+        <translation>Jetzt geschieht nichts mehr; der Workflow wartet, bis der Cronjob workflow_cron zu ihm zurückkehrt. Wird verwendet, wenn die Antwort noch nicht verfügbar ist.</translation>
+    </message>
+    <message>
+        <source>As above, but this event runs again rather than the one after it. Set an activation date with setActivationDate() or it will spin.</source>
+        <translation>Wie oben, aber dieses Ereignis läuft erneut statt des nächsten. Setzen Sie mit setActivationDate() ein Aktivierungsdatum, sonst dreht es sich im Kreis.</translation>
+    </message>
+    <message>
+        <source>The request stops and a template of the event&apos;s choosing is shown instead - a confirmation page, a form, a warning.</source>
+        <translation>Die Anfrage hält an, und stattdessen wird ein Template nach Wahl des Ereignisses angezeigt - eine Bestätigungsseite, ein Formular, eine Warnung.</translation>
+    </message>
+    <message>
+        <source>As above, and this event runs again when the visitor comes back.</source>
+        <translation>Wie oben, und dieses Ereignis läuft erneut, wenn der Besucher zurückkommt.</translation>
+    </message>
+    <message>
+        <source>The visitor is sent somewhere else. Used to hand off to a payment provider and come back.</source>
+        <translation>Der Besucher wird woandershin geschickt. Wird verwendet, um an einen Zahlungsanbieter zu übergeben und zurückzukommen.</translation>
+    </message>
+    <message>
+        <source>As above, and this event runs again on return - which is how a payment result is read.</source>
+        <translation>Wie oben, und dieses Ereignis läuft bei der Rückkehr erneut - so wird ein Zahlungsergebnis gelesen.</translation>
+    </message>
+    <message>
+        <source>The whole workflow is abandoned. Use when the thing it was about is gone - a deleted object, a missing order.</source>
+        <translation>Der ganze Workflow wird aufgegeben. Verwenden Sie dies, wenn das, worum es ging, verschwunden ist - ein gelöschtes Objekt, eine fehlende Bestellung.</translation>
+    </message>
+    <message>
+        <source>The workflow is finished here; events after this one do not run.</source>
+        <translation>Der Workflow ist hier beendet; Ereignisse nach diesem laufen nicht.</translation>
+    </message>
+    <message>
+        <source>The workflow starts again from its first event.</source>
+        <translation>Der Workflow beginnt erneut mit seinem ersten Ereignis.</translation>
+    </message>
+    <message>
+        <source>Hands over to another workflow, the way the multiplexer event does.</source>
+        <translation>Übergibt an einen anderen Workflow, so wie es das Multiplexer-Ereignis tut.</translation>
+    </message>
+    <message>
+        <source>The event type</source>
+        <translation>Der Ereignistyp</translation>
+    </message>
+    <message>
+        <source>Edit template</source>
+        <translation>Bearbeitungs-Template</translation>
+    </message>
+    <message>
+        <source>View template</source>
+        <translation>Anzeige-Template</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registrierung</translation>
+    </message>
+    <message>
+        <source>Design registration</source>
+        <translation>Design-Registrierung</translation>
+    </message>
+    <message>
+        <source>Cronjob note</source>
+        <translation>Cronjob-Hinweis</translation>
+    </message>
+    <message>
+        <source>The class itself: its triggers, its settings, its form handling and its execute().</source>
+        <translation>Die Klasse selbst: ihre Auslöser, ihre Einstellungen, ihre Formularverarbeitung und ihr execute().</translation>
+    </message>
+    <message>
+        <source>What an editor sees when the event is added to a workflow, with a field per setting.</source>
+        <translation>Was ein Redakteur sieht, wenn das Ereignis einem Workflow hinzugefügt wird, mit einem Feld je Einstellung.</translation>
+    </message>
+    <message>
+        <source>What the workflow list shows about the event once it is configured.</source>
+        <translation>Was die Workflow-Liste über das Ereignis zeigt, sobald es konfiguriert ist.</translation>
+    </message>
+    <message>
+        <source>workflow.ini, so the event appears in the list of ones that can be added.</source>
+        <translation>workflow.ini, damit das Ereignis in der Liste der hinzufügbaren erscheint.</translation>
+    </message>
+    <message>
+        <source>design.ini, so the two templates above are found through the design chain.</source>
+        <translation>design.ini, damit die beiden obigen Templates über die Design-Kette gefunden werden.</translation>
+    </message>
+    <message>
+        <source>A note in the readme about workflow_cron, which is what runs an event that deferred itself.</source>
+        <translation>Ein Hinweis in der Readme auf workflow_cron, das ein Ereignis ausführt, das sich selbst zurückgestellt hat.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>Was die Administrationsoberfläche liest, um Name, Version und Lizenz der Extension anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>Die gepackte Beschreibung der Extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>Damit die Extension beim Namen angefordert statt hineinkopiert werden kann.</translation>
+    </message>
+    <message>
+        <source>What the event does, when it runs, what it stores and what it answers.</source>
+        <translation>Was das Ereignis tut, wann es läuft, was es speichert und was es antwortet.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Hält Editor-Überbleibsel und Build-Ausgaben aus dem Repository heraus.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
 </context>
 <context>
@@ -13357,6 +20979,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Use these checkboxes to select items for removal. Click the &quot;Remove selected&quot; button to  remove the selected items.</source>
         <translation>Benutzen Sie die Kontrollkästchen, um Elemente zu markieren, die Sie löschen möchten. Klicken Sie danach auf die Schaltfläche &quot;Ausgewähltes entfernen&quot;.</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elemente pro Seite anzeigen.</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Aktiv</translation>
+    </message>
+    <message>
+        <source>Inactive</source>
+        <translation>Inaktiv</translation>
     </message>
 </context>
 <context>
@@ -14231,6 +21865,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Sort products.</source>
         <translation>Produkte sortieren.</translation>
     </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elemente pro Seite anzeigen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/removeorder</name>
@@ -14857,6 +22495,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Object states in this group (%state_count)</source>
         <translation>Objekt Zustände in dieser Gruppe (%state_count)</translation>
     </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/group_edit</name>
@@ -15345,7 +22987,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Login</source>
-        <translation type="unfinished"></translation>
+        <translation>Login</translation>
     </message>
     <message>
         <source>E-mail</source>
@@ -15801,6 +23443,34 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
+    <message>
+        <source>Invalid name. You can only use the characters a-z, numbers, _ and / (for subdirectories).</source>
+        <translation>Ungültiger Name. Sie dürfen nur die Zeichen a-z, Ziffern, _ und / (für Unterverzeichnisse) verwenden.</translation>
+    </message>
+    <message>
+        <source>The selected template is not a source template and cannot be used to create an override.</source>
+        <translation>Das ausgewählte Template ist kein Quell-Template und kann nicht zum Anlegen eines Overrides verwendet werden.</translation>
+    </message>
+    <message>
+        <source>The newly created template file will be placed in %path.</source>
+        <translation>Die neu erstellte Template-Datei wird in %path abgelegt.</translation>
+    </message>
+    <message>
+        <source>No extension</source>
+        <translation>Keine Extension</translation>
+    </message>
+    <message>
+        <source>Object ID</source>
+        <translation>Objekt ID</translation>
+    </message>
+    <message>
+        <source>Automatic (class-specific override if available, otherwise source)</source>
+        <translation>Automatisch (klassenspezifisches Override, falls vorhanden, sonst Quelle)</translation>
+    </message>
+    <message>
+        <source>Automatic (source template)</source>
+        <translation>Automatisch (Quell-Template)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/visual/templateedit</name>
@@ -15997,6 +23667,54 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>Overrides for &lt;%template_name&gt; template in &lt;%current_siteaccess&gt; siteaccess (%override_count)</source>
         <translation>Überschreibungen für das Template &lt;%template_name&gt; im &lt;%current_siteaccess&gt; Seiten-Zugang (%override_count)</translation>
+    </message>
+    <message>
+        <source>No source template resource found.</source>
+        <translation>Keine Quell-Template-Ressource gefunden.</translation>
+    </message>
+    <message>
+        <source>Remove this condition</source>
+        <translation>Diese Bedingung entfernen</translation>
+    </message>
+    <message>
+        <source>Add condition</source>
+        <translation>Bedingung hinzufügen</translation>
+    </message>
+    <message>
+        <source>class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>node</source>
+        <translation>Knoten</translation>
+    </message>
+    <message>
+        <source>object</source>
+        <translation>Objekt</translation>
+    </message>
+    <message>
+        <source>section</source>
+        <translation>sektion</translation>
+    </message>
+    <message>
+        <source>depth</source>
+        <translation>Tiefe</translation>
+    </message>
+    <message>
+        <source>viewmode</source>
+        <translation>Ansichtsmodus</translation>
+    </message>
+    <message>
+        <source>state</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Update overrides</source>
+        <translation>Overrides aktualisieren</translation>
     </message>
 </context>
 <context>
@@ -16454,6 +24172,26 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>(%process_count)</source>
         <translation>(%trigger_count)</translation>
+    </message>
+    <message>
+        <source>status : (%last_event_status)</source>
+        <translation>Status : (%last_event_status)</translation>
+    </message>
+    <message>
+        <source>event type :</source>
+        <translation>Ereignistyp :</translation>
+    </message>
+    <message>
+        <source>description :</source>
+        <translation>Beschreibung :</translation>
+    </message>
+    <message>
+        <source>information :</source>
+        <translation>Information :</translation>
+    </message>
+    <message>
+        <source>status : (%event_status)</source>
+        <translation>Status : (%event_status)</translation>
     </message>
 </context>
 <context>
@@ -17117,6 +24855,26 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>Anonymous users are not allowed to vote in this poll. Please log in.</source>
         <translation>Anonymen Benutzern ist es nicht gestattet an dieser Umfrage teilzunehmen, Bitte melden Sie ich an.</translation>
     </message>
+    <message>
+        <source>Multiprice Product - List embed view</source>
+        <translation>Mehrpreisprodukt - eingebettete Listenansicht</translation>
+    </message>
+    <message>
+        <source>Multiprice Product - Full view</source>
+        <translation>Mehrpreisprodukt - Vollansicht</translation>
+    </message>
+    <message>
+        <source>Star</source>
+        <translation>Stern</translation>
+    </message>
+    <message>
+        <source>Company logo</source>
+        <translation>Firmenlogo</translation>
+    </message>
+    <message>
+        <source>Right menu</source>
+        <translation>Rechtes Menü</translation>
+    </message>
 </context>
 <context>
     <name>design/base/shop</name>
@@ -17362,6 +25120,13 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
 </context>
 <context>
+    <name>design/base/slideshow/gallery</name>
+    <message>
+        <source>Thumbnail view</source>
+        <translation>Vorschaubildansicht</translation>
+    </message>
+</context>
+<context>
     <name>design/ezdemo/full/article</name>
     <message>
         <source>Location</source>
@@ -17413,6 +25178,28 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
 </context>
 <context>
+    <name>design/mysite/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Kommentare</translation>
+    </message>
+    <message>
+        <source>Comment this article!</source>
+        <translation>Diesen Artikel kommentieren!</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>Neuer Kommentar</translation>
+    </message>
+</context>
+<context>
+    <name>design/mysite/line_article</name>
+    <message>
+        <source>Read more...</source>
+        <translation>Weiter lesen...</translation>
+    </message>
+</context>
+<context>
     <name>design/news/article</name>
     <message>
         <source>Author: </source>
@@ -17439,6 +25226,14 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>Retry</source>
         <translation>Wiederholen</translation>
+    </message>
+    <message>
+        <source>The class %class is currently locked by %modifier and was last modified at %modified.</source>
+        <translation>Die Klasse %class ist derzeit von %modifier gesperrt und wurde zuletzt am %modified geändert.</translation>
+    </message>
+    <message>
+        <source>The class will be available for editing once the class is stored by the modifier or when it is automatically unlocked at %modified</source>
+        <translation>Die Klasse kann bearbeitet werden, sobald sie vom Bearbeiter gespeichert wurde oder wenn sie am %modified automatisch entsperrt wird</translation>
     </message>
 </context>
 <context>
@@ -17498,6 +25293,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>Last modified classes</source>
         <translation>Zuletzt geänderte Klasse</translation>
+    </message>
+    <message>
+        <source>edit</source>
+        <translation>bearbeiten</translation>
     </message>
 </context>
 <context>
@@ -18302,6 +26101,14 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>second(s)</source>
         <translation>Sekunde(n)</translation>
     </message>
+    <message>
+        <source>Select element for removal.</source>
+        <translation>Element zum Entfernen auswählen.</translation>
+    </message>
+    <message>
+        <source>(See &apos;%location&apos;)</source>
+        <translation>(Siehe „%location“)</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/class/datatype </name>
@@ -18674,6 +26481,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
+    <message>
+        <source>edit</source>
+        <translation>bearbeiten</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/class/view</name>
@@ -18896,6 +26707,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>[more]</source>
         <translation>[mehr]</translation>
+    </message>
+    <message>
+        <source>[new]</source>
+        <translation>[neu]</translation>
     </message>
 </context>
 <context>
@@ -19438,6 +27253,18 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
         <source>Copy subtree Notification</source>
         <translation>Benachrichtigungen über Teilbaum kopieren</translation>
     </message>
+    <message>
+        <source>Errors:</source>
+        <translation>Fehler:</translation>
+    </message>
+    <message>
+        <source>Information:</source>
+        <translation>Informationen:</translation>
+    </message>
+    <message>
+        <source>Warnings:</source>
+        <translation>Warnungen:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/create</name>
@@ -19471,6 +27298,10 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     <message>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>You do not have permissions to create an object of the requested class in any language.</source>
+        <translation>Sie haben keine Berechtigung ein Objekt dieser Klasse in einer Sprache zu erstellen.</translation>
     </message>
 </context>
 <context>
@@ -20327,6 +28158,33 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
         <source>You are not allowed to view the related object</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>True</source>
+        <translation>Wahr</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation>Falsch</translation>
+    </message>
+    <message>
+        <source>Select currency</source>
+        <translation>Währung auswählen</translation>
+    </message>
+    <message>
+        <source>Create New</source>
+        <translation>Neu erstellen</translation>
+    </message>
+    <message>
+        <source>ISBN %data_text</source>
+        <translation>ISBN %data_text</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/content/datatype/result/ezoption</name>
+    <message>
+        <source>Total:</source>
+        <translation>Gesamt:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/diff</name>
@@ -20689,6 +28547,18 @@ Sie sollten entweder den Benutzer kontaktieren oder einen neuen Entwurf erstelle
         <source>Class name</source>
         <translation>Klassenname</translation>
     </message>
+    <message>
+        <source>Top node</source>
+        <translation>Hauptknoten</translation>
+    </message>
+    <message>
+        <source>Ascending</source>
+        <translation>Aufsteigend</translation>
+    </message>
+    <message>
+        <source>Descending</source>
+        <translation>Absteigend</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/edit_languages</name>
@@ -21015,6 +28885,18 @@ Sie sollten entweder den Benutzer kontaktieren oder einen neuen Entwurf erstelle
     <message>
         <source>You cannot edit the contents of version #%version_number either because it is not a draft or because you do not have permission to edit the object.</source>
         <translation>Sie können die Inhalte von Version #%version_number nicht bearbeiten, da es kein Entwurf ist oder weil Sie keine Rechte besitzen das Objekt zu bearbeiten.</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Wiederholen</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>In der Warteschlange</translation>
+    </message>
+    <message>
+        <source>Toggle selection</source>
+        <translation>Auswahl umkehren</translation>
     </message>
 </context>
 <context>
@@ -22166,6 +30048,10 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
 </source>
         <translation>Wählen Sie eine Datei auf Ihrem lokalen Rechner aus und klicken Sie danach die &quot;Hochladen&quot; Schaltfläche. Es wird ein Objekt gemäß des Dateityps erstellt und an dem gewählen Ort platziert.</translation>
     </message>
+    <message>
+        <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
+        <translation>Ihr Browser unterstützt keine iframes. Bitte verwenden Sie stattdessen diesen &lt;a href=%url&gt;Link&lt;/a&gt;.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/contentstructuremenu</name>
@@ -22180,6 +30066,26 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     <message>
         <source>[%classname] Click on the icon to display a context-sensitive menu.</source>
         <translation>[%classname] Klicken Sie auf das Icon, um ein kontextabhängiges Menü zu erhalten.</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sichtbar</translation>
+    </message>
+    <message>
+        <source>Hidden by superior</source>
+        <translation>Vom übergeordneten Element versteckt</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Versteckt</translation>
+    </message>
+    <message>
+        <source>(Hidden)</source>
+        <translation>(Versteckt)</translation>
+    </message>
+    <message>
+        <source>(Hidden by parent)</source>
+        <translation>(Durch übergeordneten Knoten versteckt)</translation>
     </message>
 </context>
 <context>
@@ -22279,6 +30185,14 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
+    <message>
+        <source>The newly created template file will be placed in %path.</source>
+        <translation>Die neu erstellte Template-Datei wird in %path abgelegt.</translation>
+    </message>
+    <message>
+        <source>No extension</source>
+        <translation>Keine Extension</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/design/templatelist</name>
@@ -22344,6 +30258,10 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     <message>
         <source>Update priorities</source>
         <translation>Prioritäten speichern</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
     </message>
 </context>
 <context>
@@ -22441,6 +30359,21 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     <message>
         <source>There is no related object, please add object first!</source>
         <translation type="obsolete">Da existiert kein verwandtes Objekt, bitte fügen Sie erst eins hinzu! </translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/error/error500</name>
+    <message>
+        <source>Oops! An Error Occurred</source>
+        <translation>Hoppla! Ein Fehler ist aufgetreten</translation>
+    </message>
+    <message>
+        <source>The server returned a &quot;500 Fatal Error&quot;.</source>
+        <translation>Der Server hat einen „500 Fatal Error“ zurückgegeben.</translation>
+    </message>
+    <message>
+        <source>Something is broken. Please let us know what you were doing when this error occurred. We will fix it as soon as possible. Sorry for any inconvenience caused.</source>
+        <translation>Etwas ist kaputt. Bitte teilen Sie uns mit, was Sie getan haben, als dieser Fehler auftrat. Wir beheben ihn so schnell wie möglich. Entschuldigen Sie die Unannehmlichkeiten.</translation>
     </message>
 </context>
 <context>
@@ -22759,6 +30692,10 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
         <source>The following is a list of the third-party software that is distributed with this copy of Exponential. The list of third party software includes the license for the software in question and the directory or files that contain the third-party software.</source>
         <translation>Die folgende Liste enthält die Software von Drittanbietern, die mit dieser Exponential-Installation ausgeliefert wird. Zu jeder Software sind ihre Lizenz und das Verzeichnis oder die Dateien angegeben, die sie enthalten.</translation>
     </message>
+    <message>
+        <source>Could not load LICENSE file! You should have a LICENSE file in your Exponential root directory.</source>
+        <translation>Die LICENSE-Datei konnte nicht geladen werden! Im Wurzelverzeichnis von Exponential sollte eine LICENSE-Datei liegen.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/form</name>
@@ -22880,6 +30817,14 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
         <source>Exponential redirection - %url</source>
         <translation>Exponential Umleitung - %url</translation>
     </message>
+    <message>
+        <source>REST output</source>
+        <translation>REST-Ausgabe</translation>
+    </message>
+    <message>
+        <source>Please read the REST documentation on the &lt;a href=&quot;%url&quot;&gt;documentation server&lt;/a&gt; on how to configure the necessary OutputFormat templates.</source>
+        <translation>Bitte lesen Sie in der REST-Dokumentation auf dem &lt;a href=&quot;%url&quot;&gt;Dokumentationsserver&lt;/a&gt; nach, wie die nötigen OutputFormat-Templates konfiguriert werden.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/location</name>
@@ -22928,6 +30873,22 @@ Falls Sie das machen, werden die Unterelemente ebenfalls entfernt.</translation>
     <message>
         <source>View your pending content</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A fatal error occured while checking the version status, you can try to refresh this page or contact your administrator.</source>
+        <translation>Beim Prüfen des Versionsstatus ist ein schwerwiegender Fehler aufgetreten. Sie können versuchen, diese Seite neu zu laden, oder sich an Ihren Administrator wenden.</translation>
+    </message>
+    <message>
+        <source>(Checking every %ms%ms and checked %times% times so far)</source>
+        <translation>(Prüfung alle %ms%ms, bisher %times% Mal geprüft)</translation>
+    </message>
+    <message>
+        <source>%count child</source>
+        <translation>%count Unterelement</translation>
+    </message>
+    <message>
+        <source>%count children</source>
+        <translation>%count Unterelemente</translation>
     </message>
 </context>
 <context>
@@ -22978,6 +30939,13 @@ Falls Sie das machen, werden die Unterelemente ebenfalls entfernt.</translation>
     <message>
         <source>Previous</source>
         <translation>Zurück</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/navigator/alphabetical</name>
+    <message>
+        <source>others</source>
+        <translation>andere</translation>
     </message>
 </context>
 <context>
@@ -23057,6 +31025,10 @@ Falls Sie das machen, werden die Unterelemente ebenfalls entfernt.</translation>
     <message>
         <source>If %trashname is checked you will find the removed items in the trash afterward.</source>
         <translation>Wenn %trashname ausgewählt ist, werden Sie den gelöschten Content später im Papierkorb finden.</translation>
+    </message>
+    <message>
+        <source>Warning:</source>
+        <translation>Warnung:</translation>
     </message>
 </context>
 <context>
@@ -23208,6 +31180,10 @@ Falls Sie das machen, werden die Unterelemente ebenfalls entfernt.</translation>
     <message>
         <source>Placed in</source>
         <translation>Platziert in</translation>
+    </message>
+    <message>
+        <source>Default object view. &lt;a class=&quot;menuheadlink&quot; href=%url&gt;Click to create a custom template&lt;/a&gt;</source>
+        <translation>Standard-Objektansicht. &lt;a class=&quot;menuheadlink&quot; href=%url&gt;Klicken Sie hier, um ein eigenes Template zu erstellen&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -23432,6 +31408,10 @@ change your settings at:</source>
 The item be can viewed by using the URL below.</source>
         <translation>Auf %sitename gibt es Objekte, die von Ihnen bearbeitet werden müssen. 
 Das Objekt können Sie bei untenstehendem Link aufrufen.</translation>
+    </message>
+    <message>
+        <source>(Owner: %owner)</source>
+        <translation>(Besitzer: %owner)</translation>
     </message>
 </context>
 <context>
@@ -24005,6 +31985,54 @@ Sie können das Paket auch entfernen ohne es von der Paketliste zu entfernen.</t
         <source>Use content object modification and publication dates from the package.</source>
         <translation>Die Content Objekt Änderungs- und Veröffentlichungsdaten vom Paket verwenden.</translation>
     </message>
+    <message>
+        <source>Installing package &apos;%name&apos;.</source>
+        <translation>Paket „%name“ wird installiert.</translation>
+    </message>
+    <message>
+        <source>Element with ID &apos;%element_id&apos; will not be installed.</source>
+        <translation>Das Element mit der ID „%element_id“ wird nicht installiert.</translation>
+    </message>
+    <message>
+        <source>Uninstalling package &apos;%name&apos;.</source>
+        <translation>Paket „%name“ wird deinstalliert.</translation>
+    </message>
+    <message>
+        <source>Element with ID &apos;%element_id&apos; will not be uninstalled.</source>
+        <translation>Das Element mit der ID „%element_id“ wird nicht deinstalliert.</translation>
+    </message>
+    <message>
+        <source>Invert selection.</source>
+        <translation>Auswahl umkehren.</translation>
+    </message>
+    <message>
+        <source>Toggle all.</source>
+        <translation>Alles umschalten.</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>Info</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Info URL</source>
+        <translation>Info-URL</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <source>MD5:</source>
+        <translation>MD5:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/package/creators/ezcontentobject</name>
@@ -24152,7 +32180,7 @@ Sie können das Paket auch entfernen ohne es von der Paketliste zu entfernen.</t
     </message>
     <message>
         <source>Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Setzen</translation>
     </message>
 </context>
 <context>
@@ -24890,6 +32918,10 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
         <source>Enclosure (media)</source>
         <translation>Anhang (Medien)</translation>
     </message>
+    <message>
+        <source>Source %source</source>
+        <translation>Quelle %source</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/rss/list</name>
@@ -24968,6 +33000,18 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
     <message>
         <source>New import</source>
         <translation>Neuer Import</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation>URI</translation>
+    </message>
+    <message>
+        <source>Source URL</source>
+        <translation>Quell-URL</translation>
     </message>
 </context>
 <context>
@@ -26137,6 +34181,386 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
         <comment>Datatype</comment>
         <translation>Klassen Konstantenname</translation>
     </message>
+    <message>
+        <source>Content extension wizard</source>
+        <translation>Assistent für Content-Extensions</translation>
+    </message>
+    <message>
+        <source>A content class written as a script rather than built by clicking, plus custom tags for rich text and a translation.</source>
+        <translation>Eine Content-Klasse, als Skript geschrieben statt durch Klicken angelegt, dazu Custom-Tags für Rich-Text und eine Übersetzung.</translation>
+    </message>
+    <message>
+        <source>What this extension carries</source>
+        <translation>Was diese Extension enthält</translation>
+    </message>
+    <message>
+        <source>Extension name</source>
+        <translation>Name der Extension</translation>
+    </message>
+    <message>
+        <source>Class identifier</source>
+        <translation>Klassen-Identifikator</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attribute</translation>
+    </message>
+    <message>
+        <source>Custom tags</source>
+        <translation>Custom-Tags</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Örtlichkeit</translation>
+    </message>
+    <message>
+        <source>Strings</source>
+        <translation>Texte</translation>
+    </message>
+    <message>
+        <source>As the script will make them</source>
+        <translation>So, wie das Skript sie anlegen wird</translation>
+    </message>
+    <message>
+        <source>no such datatype here</source>
+        <translation>diesen Datentyp gibt es hier nicht</translation>
+    </message>
+    <message>
+        <source>Every file, before it is written</source>
+        <translation>Jede Datei, bevor sie geschrieben wird</translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>Create in extension/</source>
+        <translation>In extension/ anlegen</translation>
+    </message>
+    <message>
+        <source>Refresh preview</source>
+        <translation>Vorschau aktualisieren</translation>
+    </message>
+    <message>
+        <source>A datatype is a kind of value a content class attribute can hold, with its own editing field, validation, storage and display. Say what it has to do and only the methods that answer to that are written.</source>
+        <translation>Ein Datentyp ist eine Art von Wert, den ein Attribut einer Content-Klasse aufnehmen kann, mit eigenem Eingabefeld, eigener Validierung, Speicherung und Darstellung. Geben Sie an, was er leisten muss, dann werden nur die Methoden geschrieben, die dazu gehören.</translation>
+    </message>
+    <message>
+        <source>The datatype</source>
+        <translation>Der Datentyp</translation>
+    </message>
+    <message>
+        <source>Datatype identifier</source>
+        <translation>Bezeichner des Datentyps</translation>
+    </message>
+    <message>
+        <source>Class name</source>
+        <translation>Klassenname</translation>
+    </message>
+    <message>
+        <source>Name in the class editor</source>
+        <translation>Name im Klasseneditor</translation>
+    </message>
+    <message>
+        <source>What it has to do</source>
+        <translation>Was er leisten muss</translation>
+    </message>
+    <message>
+        <source>methods</source>
+        <translation>Methoden</translation>
+    </message>
+    <message>
+        <source>Where the value lives</source>
+        <translation>Wo der Wert gespeichert wird</translation>
+    </message>
+    <message>
+        <source>What goes in it</source>
+        <translation>Was hineinkommt</translation>
+    </message>
+    <message>
+        <source>What will be written</source>
+        <translation>Was geschrieben wird</translation>
+    </message>
+    <message>
+        <source>Clear cache:</source>
+        <translation>Cache leeren:</translation>
+    </message>
+    <message>
+        <source>Quick settings:</source>
+        <translation>Schnelleinstellungen:</translation>
+    </message>
+    <message>
+        <source>PHP Accelerator</source>
+        <translation>PHP Beschleuniger</translation>
+    </message>
+    <message>
+        <source>Kernel override wizard</source>
+        <translation>Assistent für Kernel-Overrides</translation>
+    </message>
+    <message>
+        <source>An override is not a subclass. It replaces the kernel class under the same name, so nothing is inherited and every fix the kernel makes to that class afterwards is one this site does not get. Almost everything here has a lighter way in.</source>
+        <translation>Ein Override ist keine Unterklasse. Es ersetzt die Kernel-Klasse unter demselben Namen, daher wird nichts geerbt, und jede Korrektur, die der Kernel danach an dieser Klasse vornimmt, erhält diese Website nicht. Für fast alles gibt es einen leichteren Weg.</translation>
+    </message>
+    <message>
+        <source>Find a kernel class</source>
+        <translation>Eine Kernel-Klasse suchen</translation>
+    </message>
+    <message>
+        <source>Why an override</source>
+        <translation>Warum ein Override</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>Finden</translation>
+    </message>
+    <message>
+        <source>Module wizard</source>
+        <translation>Modul-Assistent</translation>
+    </message>
+    <message>
+        <source>A module is a declaration, a script per view, a template per view, and the two ini lines that make the kernel look for any of it.</source>
+        <translation>Ein Modul ist eine Deklaration, ein Skript pro View, ein Template pro View und die zwei INI-Zeilen, die den Kernel danach suchen lassen.</translation>
+    </message>
+    <message>
+        <source>Module name</source>
+        <translation>Modulname</translation>
+    </message>
+    <message>
+        <source>Views</source>
+        <translation>Views</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Richtlinien</translation>
+    </message>
+    <message>
+        <source>What that produces</source>
+        <translation>Was daraus entsteht</translation>
+    </message>
+    <message>
+        <source>no policy check</source>
+        <translation>keine Richtlinienprüfung</translation>
+    </message>
+    <message>
+        <source>needs</source>
+        <translation>benötigt</translation>
+    </message>
+    <message>
+        <source>%covered of the %total extension points this system offers have a tool on this page. The rest are listed with what they are, where the file goes and what registers it.</source>
+        <translation>Für %covered der %total Erweiterungspunkte dieses Systems gibt es auf dieser Seite ein Werkzeug. Die übrigen sind mit ihrem Zweck, dem Ort der Datei und dem, was sie registriert, aufgeführt.</translation>
+    </message>
+    <message>
+        <source>Register in</source>
+        <translation>Registrieren in</translation>
+    </message>
+    <message>
+        <source>Extension point survey</source>
+        <translation>Übersicht der Erweiterungspunkte</translation>
+    </message>
+    <message>
+        <source>What is actually on this installation, read off disk on every request.</source>
+        <translation>Was tatsächlich auf dieser Installation vorhanden ist, bei jeder Anfrage von der Festplatte gelesen.</translation>
+    </message>
+    <message>
+        <source>%total extension points found, %ini ini files read.</source>
+        <translation>%total Erweiterungspunkte gefunden, %ini INI-Dateien gelesen.</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wo</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Einstellung</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>Declared in</source>
+        <translation>Deklariert in</translation>
+    </message>
+    <message>
+        <source>Settings extension wizard</source>
+        <translation>Assistent für Einstellungs-Extensions</translation>
+    </message>
+    <message>
+        <source>An extension that is mostly ini files: image aliases, event listeners, view cache rules, information collection, trigger operations and siteaccess settings.</source>
+        <translation>Eine Extension, die hauptsächlich aus INI-Dateien besteht: Bild-Aliase, Event-Listener, View-Cache-Regeln, Informationssammlung, Trigger-Operationen und Einstellungen für Seitenzugänge.</translation>
+    </message>
+    <message>
+        <source>What this extension says</source>
+        <translation>Was diese Extension festlegt</translation>
+    </message>
+    <message>
+        <source>Image aliases</source>
+        <translation>Bild-Aliase</translation>
+    </message>
+    <message>
+        <source>View cache rules</source>
+        <translation>View-Cache-Regeln</translation>
+    </message>
+    <message>
+        <source>Information collection</source>
+        <translation>Informationssammlung</translation>
+    </message>
+    <message>
+        <source>Trigger operations</source>
+        <translation>Trigger-Operationen</translation>
+    </message>
+    <message>
+        <source>Additional extension roots</source>
+        <translation>Zusätzliche Extension-Wurzelverzeichnisse</translation>
+    </message>
+    <message>
+        <source>Icon theme name</source>
+        <translation>Name des Icon-Themas</translation>
+    </message>
+    <message>
+        <source>Icon sizes</source>
+        <translation>Icon-Größen</translation>
+    </message>
+    <message>
+        <source>Siteaccess settings</source>
+        <translation>Einstellungen für Seitenzugänge</translation>
+    </message>
+    <message>
+        <source>Event listeners</source>
+        <translation>Event-Listener</translation>
+    </message>
+    <message>
+        <source>Template will be placed in %path</source>
+        <translation>Das Template wird in %path abgelegt</translation>
+    </message>
+    <message>
+        <source>Template extension wizard</source>
+        <translation>Assistent für Template-Extensions</translation>
+    </message>
+    <message>
+        <source>An operator takes a value and gives one back. A function writes output where it stands. A fetch function reads something, with a policy check first. A fetch alias is a fetch with its arguments already decided.</source>
+        <translation>Ein Operator nimmt einen Wert und gibt einen zurück. Eine Funktion schreibt ihre Ausgabe dort, wo sie steht. Eine Fetch-Funktion liest etwas, mit vorheriger Richtlinienprüfung. Ein Fetch-Alias ist ein Fetch mit bereits festgelegten Argumenten.</translation>
+    </message>
+    <message>
+        <source>What to add</source>
+        <translation>Was hinzugefügt werden soll</translation>
+    </message>
+    <message>
+        <source>Operators</source>
+        <translation>Operatoren</translation>
+    </message>
+    <message>
+        <source>Functions</source>
+        <translation>Funktionen</translation>
+    </message>
+    <message>
+        <source>Fetch functions</source>
+        <translation>Fetch-Funktionen</translation>
+    </message>
+    <message>
+        <source>Fetch aliases</source>
+        <translation>Fetch-Aliase</translation>
+    </message>
+    <message>
+        <source>Parameters, one per line: name type required</source>
+        <translation>Parameter, einer pro Zeile: name type required</translation>
+    </message>
+    <message>
+        <source>Operators take input</source>
+        <translation>Operatoren nehmen eine Eingabe</translation>
+    </message>
+    <message>
+        <source>Operators produce output</source>
+        <translation>Operatoren erzeugen eine Ausgabe</translation>
+    </message>
+    <message>
+        <source>Functions have a body</source>
+        <translation>Funktionen haben einen Rumpf</translation>
+    </message>
+    <message>
+        <source>The extension</source>
+        <translation>Die Extension</translation>
+    </message>
+    <message>
+        <source>Module for the fetches</source>
+        <translation>Modul für die Fetches</translation>
+    </message>
+    <message>
+        <source>What a template will write</source>
+        <translation>Was ein Template schreiben wird</translation>
+    </message>
+    <message>
+        <source>Settings that name a class</source>
+        <translation>Einstellungen, die eine Klasse benennen</translation>
+    </message>
+    <message>
+        <source>Places the kernel looks</source>
+        <translation>Orte, an denen der Kernel sucht</translation>
+    </message>
+    <message>
+        <source>Interfaces and abstract classes</source>
+        <translation>Schnittstellen und abstrakte Klassen</translation>
+    </message>
+    <message>
+        <source>Modules and their views</source>
+        <translation>Module und ihre Views</translation>
+    </message>
+    <message>
+        <source>What a template can call</source>
+        <translation>Was ein Template aufrufen kann</translation>
+    </message>
+    <message>
+        <source>Events something can listen to</source>
+        <translation>Ereignisse, auf die etwas hören kann</translation>
+    </message>
+    <message>
+        <source>Templates already replaced</source>
+        <translation>Bereits ersetzte Templates</translation>
+    </message>
+    <message>
+        <source>What is configured and cannot work</source>
+        <translation>Was konfiguriert ist und nicht funktionieren kann</translation>
+    </message>
+    <message>
+        <source>Kernel classes replaced outright</source>
+        <translation>Vollständig ersetzte Kernel-Klassen</translation>
+    </message>
+    <message>
+        <source>Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.</source>
+        <translation>Jeder Operator und jede Funktion, die der Engine beigebracht wurde, aus den Autoload-Arrays gelesen, in denen sie wirklich deklariert sind - es gibt keine INI, die sie auflistet. Ein Operator, der nicht als aktiv markiert ist, gehört zu einer Extension, die nicht aktiv ist: der Name ist deklariert, und nichts antwortet darauf.</translation>
+    </message>
+    <message>
+        <source>What the kernel declares for somebody else to implement, with how many methods each asks for and what already implements it. The ones with many methods and one implementation are the deep water.</source>
+        <translation>Was der Kernel deklariert, damit jemand anderes es implementiert, mit der Anzahl der Methoden, die jedes verlangt, und dem, was es bereits implementiert. Die mit vielen Methoden und einer Implementierung sind das tiefe Wasser.</translation>
+    </message>
+    <message>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <translation>Jede Stelle, die der Kernel bei seiner Arbeit ankündigt, aus dem Quelltext zusammengesucht statt aufgelistet. Ein Filter-Ereignis verwendet, was ein Listener zurückgibt, sodass einer, der die Rückgabe des Werts vergisst, ihn vernichtet; ein Notify-Ereignis ignoriert ihn. Der leichteste Weg, Verhalten hinzuzufügen: kein Modul, kein Handler, keine zu ersetzende Klasse.</translation>
+    </message>
+    <message>
+        <source>Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.</source>
+        <translation>Jede Seite, die das System ausliefert. Ein View kann durch eine Extension mit einem gleichnamigen Modul ersetzt werden, und ein eigenes Modul kann Views daneben hinzufügen. Jeder View nennt die Richtlinien, die jemand braucht, um ihn zu erreichen.</translation>
+    </message>
+    <message>
+        <source>Every override registered here. Each is a place a template has already been replaced - which is both something to learn from and something to collide with, since two overrides matching the same thing are decided by load order rather than by intent.</source>
+        <translation>Jeder hier registrierte Override. Jeder ist eine Stelle, an der ein Template bereits ersetzt wurde - woraus man sowohl lernen als auch womit man kollidieren kann, da zwei Overrides, die auf dasselbe passen, nach Ladereihenfolge statt nach Absicht entschieden werden.</translation>
+    </message>
+    <message>
+        <source>The same walk over the same files, asked the other question: not where something could go, but what is here that points at nothing. A module listed and not found answers every address under it with an error; a datatype offered and not found cannot be added and hides the values of the attributes that already use it. Add (check)/classes to the address to load every class as well, which takes a few seconds and is the only way to find one php refuses.</source>
+        <translation>Derselbe Gang über dieselben Dateien, mit der anderen Frage: nicht, wohin etwas kommen könnte, sondern was hier ist und auf nichts zeigt. Ein aufgeführtes, aber nicht gefundenes Modul beantwortet jede Adresse darunter mit einem Fehler; ein angebotener, aber nicht gefundener Datentyp kann nicht hinzugefügt werden und verbirgt die Werte der Attribute, die ihn bereits verwenden. Hängen Sie (check)/classes an die Adresse an, um zusätzlich jede Klasse zu laden; das dauert einige Sekunden und ist der einzige Weg, eine zu finden, die PHP ablehnt.</translation>
+    </message>
+    <message>
+        <source>The heaviest mechanism there is, and the first thing to know before anything else is diagnosed: a replaced kernel class is not the kernel any more, whatever the kernel source says.</source>
+        <translation>Der schwerste Mechanismus, den es gibt, und das Erste, was man wissen muss, bevor irgendetwas anderes diagnostiziert wird: eine ersetzte Kernel-Klasse ist nicht mehr der Kernel, was auch immer der Kernel-Quelltext sagt.</translation>
+    </message>
+    <message>
+        <source>Every setting that names a directory to search or an extension to search in. Add your extension to one of these and your file is found; leave it out and the class is never loaded however correctly it is written. Most of the time something works and should not, or does not work and should, the answer is one of these lines.</source>
+        <translation>Jede Einstellung, die ein zu durchsuchendes Verzeichnis oder eine zu durchsuchende Extension benennt. Tragen Sie Ihre Extension in eine davon ein, und Ihre Datei wird gefunden; lassen Sie sie weg, und die Klasse wird nie geladen, wie korrekt sie auch geschrieben ist. Wenn etwas funktioniert, das nicht sollte, oder nicht funktioniert, das sollte, ist die Antwort meistens eine dieser Zeilen.</translation>
+    </message>
+    <message>
+        <source>Every setting on this installation whose value is a class, or whose name says it takes one. Change one of these and something else answers instead.</source>
+        <translation>Jede Einstellung dieser Installation, deren Wert eine Klasse ist oder deren Name sagt, dass sie eine erwartet. Ändern Sie eine davon, und etwas anderes antwortet stattdessen.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/datatypecode</name>
@@ -26266,6 +34690,74 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     <message>
         <source>More information on the MySQLi extension can be found at</source>
         <translation>Mehr Informationen über die verbesserte MySQLi Extension finden Sie unter</translation>
+    </message>
+    <message>
+        <source>MongoDB</source>
+        <translation>MongoDB</translation>
+    </message>
+    <message>
+        <source>MongoDB is a source-available, cross-platform, document-oriented NoSQL database program developed by MongoDB, Inc.</source>
+        <translation>MongoDB ist ein quelloffen verfügbares, plattformübergreifendes, dokumentenorientiertes NoSQL-Datenbankprogramm, entwickelt von MongoDB, Inc.</translation>
+    </message>
+    <message>
+        <source>It stores data in flexible, JSON-like BSON documents, meaning fields can vary from document to document and data structure can be changed over time.</source>
+        <translation>Es speichert Daten in flexiblen, JSON-ähnlichen BSON-Dokumenten, das heißt, die Felder können von Dokument zu Dokument verschieden sein, und die Datenstruktur kann sich im Lauf der Zeit ändern.</translation>
+    </message>
+    <message>
+        <source>MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive. MongoDB stores data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time. The document model maps to the objects in your application code, making data easy to work with. Ad hoc queries, indexing, and real time aggregation provide powerful ways to access and analyze your data. MongoDB is a distributed database at its core, so high availability, horizontal scaling, and geographic distribution are built in and easy to use.</source>
+        <translation>MongoDB ist eine dokumentbasierte, verteilte Allzweck-Datenbank für moderne Anwendungsentwickler und das Cloud-Zeitalter. Keine Datenbank macht Sie produktiver. MongoDB speichert Daten in flexiblen, JSON-ähnlichen Dokumenten, das heißt, die Felder können von Dokument zu Dokument verschieden sein, und die Datenstruktur kann sich im Lauf der Zeit ändern. Das Dokumentenmodell entspricht den Objekten in Ihrem Anwendungscode, was die Arbeit mit den Daten erleichtert. Ad-hoc-Abfragen, Indizierung und Echtzeit-Aggregation bieten leistungsfähige Möglichkeiten, auf Ihre Daten zuzugreifen und sie zu analysieren. MongoDB ist im Kern eine verteilte Datenbank, daher sind Hochverfügbarkeit, horizontale Skalierung und geografische Verteilung eingebaut und einfach zu nutzen.</translation>
+    </message>
+    <message>
+        <source>MongoDB is an excellent choice for high-throughput applications that require flexible schema design, horizontal scalability, and full Unicode support.</source>
+        <translation>MongoDB ist eine ausgezeichnete Wahl für Anwendungen mit hohem Durchsatz, die ein flexibles Schema, horizontale Skalierbarkeit und volle Unicode-Unterstützung benötigen.</translation>
+    </message>
+    <message>
+        <source>Exponential CMS uses the sevenxMongoDB adapter which requires the PHP &apos;mongodb&apos; PECL extension (version 1.5+) and the &apos;mongodb/mongodb&apos; Composer package.</source>
+        <translation>Exponential CMS verwendet den Adapter sevenxMongoDB, der die PHP-PECL-Extension &apos;mongodb&apos; (Version 1.5+) und das Composer-Paket &apos;mongodb/mongodb&apos; benötigt.</translation>
+    </message>
+    <message>
+        <source>To enable MongoDB support, install the PHP mongodb extension via PECL:</source>
+        <translation>Um die MongoDB-Unterstützung einzuschalten, installieren Sie die PHP-Extension mongodb über PECL:</translation>
+    </message>
+    <message>
+        <source>Then enable it in your php.ini:</source>
+        <translation>Schalten Sie sie dann in Ihrer php.ini ein:</translation>
+    </message>
+    <message>
+        <source>And install the MongoDB PHP library via Composer:</source>
+        <translation>Und installieren Sie die MongoDB-PHP-Bibliothek über Composer:</translation>
+    </message>
+    <message>
+        <source>More information on the MongoDB PHP extension can be found at</source>
+        <translation>Weitere Informationen zur MongoDB-PHP-Extension finden Sie unter</translation>
+    </message>
+    <message>
+        <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
+        <translation>Wenn Sie Probleme haben, sich mit Ihrer Datenbank zu verbinden, sollten Sie sich %title auf %link ansehen.</translation>
+    </message>
+    <message>
+        <source>SQLite</source>
+        <translation>SQLite</translation>
+    </message>
+    <message>
+        <source>SQLite is a serverless relational database management system developed by D. Richard Hipp.</source>
+        <translation>SQLite ist ein serverloses relationales Datenbankverwaltungssystem, entwickelt von D. Richard Hipp.</translation>
+    </message>
+    <message>
+        <source>SQLite SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. SQLite is the most used database engine in the world. SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day. The SQLite file format is stable, cross-platform, and backwards compatible and the developers pledge to keep it that way through the year 2050. SQLite database files are commonly used as containers to transfer rich content between systems and as a long-term archival format for data [4]. There are over 1 trillion (1e12) SQLite databases in active use. SQLite source code is in the public-domain and is free to everyone to use for any purpose.</source>
+        <translation>SQLite ist eine Bibliothek in der Sprache C, die eine kleine, schnelle, eigenständige, hochzuverlässige und voll ausgestattete SQL-Datenbank-Engine implementiert. SQLite ist die meistverwendete Datenbank-Engine der Welt. SQLite ist in alle Mobiltelefone und die meisten Computer eingebaut und wird mit unzähligen anderen Anwendungen ausgeliefert, die Menschen täglich verwenden. Das SQLite-Dateiformat ist stabil, plattformübergreifend und abwärtskompatibel, und die Entwickler verpflichten sich, dies bis zum Jahr 2050 beizubehalten. SQLite-Datenbankdateien werden häufig als Container zum Übertragen reichhaltiger Inhalte zwischen Systemen und als Langzeit-Archivformat für Daten verwendet [4]. Mehr als 1 Billion (1e12) SQLite-Datenbanken sind aktiv in Gebrauch. Der Quellcode von SQLite ist gemeinfrei und darf von jedem für jeden Zweck frei verwendet werden.</translation>
+    </message>
+    <message>
+        <source>SQLite is a good choice for handling most languages, including Unicode, and does not require configuration to get incredible speed.</source>
+        <translation>SQLite ist eine gute Wahl für die meisten Sprachen, einschließlich Unicode, und erreicht ohne Konfiguration eine beeindruckende Geschwindigkeit.</translation>
+    </message>
+    <message>
+        <source>In order to enable SQLite support,</source>
+        <translation>Um die SQLite-Unterstützung einzuschalten,</translation>
+    </message>
+    <message>
+        <source>More information on the SQLite extension can be found at</source>
+        <translation>Weitere Informationen zur SQLite-Extension finden Sie unter</translation>
     </message>
 </context>
 <context>
@@ -28123,6 +36615,190 @@ How do you access it?&lt;/p&gt;
         <source>General</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Choose a primary language.</source>
+        <translation>Wählen Sie eine Hauptsprache.</translation>
+    </message>
+    <message>
+        <source>The primary language %1 is not a language this installation has a locale for (share/locale).</source>
+        <translation>Für die Hauptsprache %1 hat diese Installation kein Locale (share/locale).</translation>
+    </message>
+    <message>
+        <source>The additional language %1 is not a language this installation has a locale for (share/locale).</source>
+        <translation>Für die zusätzliche Sprache %1 hat diese Installation kein Locale (share/locale).</translation>
+    </message>
+    <message>
+        <source>%1 is the primary language and cannot also be an additional language. Uncheck it, or choose another primary language.</source>
+        <translation>%1 ist die Hauptsprache und kann nicht zugleich eine zusätzliche Sprache sein. Entfernen Sie das Häkchen, oder wählen Sie eine andere Hauptsprache.</translation>
+    </message>
+    <message>
+        <source>The database file name is not valid. Give a plain file name ending in .db, .db3, .sqlite or .sqlite3, made of letters, digits, dots, dashes and underscores, such as sqlite.db. The file is kept in %directory.</source>
+        <translation>Der Name der Datenbankdatei ist ungültig. Geben Sie einen einfachen Dateinamen mit der Endung .db, .db3, .sqlite oder .sqlite3 an, der aus Buchstaben, Ziffern, Punkten, Bindestrichen und Unterstrichen besteht, zum Beispiel sqlite.db. Die Datei wird in %directory abgelegt.</translation>
+    </message>
+    <message>
+        <source>The directory %directory cannot be written by the web server (user %user). SQLite needs to create the database file there, and the -wal and -shm files it keeps next to it. Give that user write access to the directory (create it first if it does not exist), then try again.</source>
+        <translation>Das Verzeichnis %directory kann vom Webserver (Benutzer %user) nicht beschrieben werden. SQLite muss dort die Datenbankdatei anlegen sowie die -wal- und -shm-Dateien, die es daneben führt. Geben Sie diesem Benutzer Schreibrechte für das Verzeichnis (legen Sie es zuerst an, falls es nicht existiert), und versuchen Sie es dann erneut.</translation>
+    </message>
+    <message>
+        <source>The database file %file exists but cannot be written by the web server (user %user). Give that user write access to it, or choose another file name.</source>
+        <translation>Die Datenbankdatei %file existiert, kann aber vom Webserver (Benutzer %user) nicht beschrieben werden. Geben Sie diesem Benutzer Schreibrechte dafür, oder wählen Sie einen anderen Dateinamen.</translation>
+    </message>
+    <message>
+        <source>The file %file exists and is not a SQLite database. Choose another file name; the setup does not overwrite it.</source>
+        <translation>Die Datei %file existiert und ist keine SQLite-Datenbank. Wählen Sie einen anderen Dateinamen; die Installation überschreibt sie nicht.</translation>
+    </message>
+    <message>
+        <source>The SQLite database file %file could not be opened. See var/log/setup.log and var/log/error.log for the reason.</source>
+        <translation>Die SQLite-Datenbankdatei %file konnte nicht geöffnet werden. Den Grund finden Sie in var/log/setup.log und var/log/error.log.</translation>
+    </message>
+    <message>
+        <source>Your database version %version does not fit the minimum requirement which is %req_version.
+See the requirements page for more information.</source>
+        <translation>Ihre Datenbankversion %version erfüllt nicht die Mindestanforderung %req_version.
+Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Willkommen</translation>
+    </message>
+    <message>
+        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential %version.</source>
+        <translation>Wenn Sie möchten, kann das Setup Ihrer Datenbank Demodaten hinzufügen; diese Demodaten zeigen anschaulich, was Exponential %version kann.</translation>
+    </message>
+    <message>
+        <source>%name Error #%number</source>
+        <translation>%name Fehler #%number</translation>
+    </message>
+    <message>
+        <source>Support for the following database systems was detected on your system:</source>
+        <translation>Auf Ihrem System wurde Unterstützung für die folgenden Datenbanksysteme erkannt:</translation>
+    </message>
+    <message>
+        <source>Please choose the database system you would like to use.</source>
+        <translation>Bitte wählen Sie das Datenbanksystem, das Sie verwenden möchten.</translation>
+    </message>
+    <message>
+        <source>%1 is the recommended database system for Exponential, but it cannot be used here: the PHP %2 extension is not loaded. %3 has been selected instead. To use %1, enable the %2 extension in PHP and start the setup wizard again.</source>
+        <translation>%1 ist das empfohlene Datenbanksystem für Exponential, kann hier aber nicht verwendet werden: Die PHP-Extension %2 ist nicht geladen. Stattdessen wurde %3 ausgewählt. Um %1 zu verwenden, schalten Sie die Extension %2 in PHP ein und starten Sie den Setup-Assistenten erneut.</translation>
+    </message>
+    <message>
+        <source>%1 is recommended: it needs no database server, and Exponential keeps the whole database in a single file inside the installation. The other database systems listed below remain available for sites that use a database server.</source>
+        <translation>%1 wird empfohlen: Es benötigt keinen Datenbankserver, und Exponential hält die gesamte Datenbank in einer einzigen Datei innerhalb der Installation. Die anderen unten aufgeführten Datenbanksysteme bleiben für Websites verfügbar, die einen Datenbankserver verwenden.</translation>
+    </message>
+    <message>
+        <source>Database:</source>
+        <translation>Datenbank:</translation>
+    </message>
+    <message>
+        <source>recommended</source>
+        <translation>empfohlen</translation>
+    </message>
+    <message>
+        <source>Exponential supports SQLite, MySQL, PostgreSQL and MongoDB.</source>
+        <translation>Exponential unterstützt SQLite, MySQL, PostgreSQL und MongoDB.</translation>
+    </message>
+    <message>
+        <source>SQLite is the recommended choice: it needs no database server and keeps the whole database in one file inside the installation. It requires the PHP sqlite3 extension.</source>
+        <translation>SQLite ist die empfohlene Wahl: Es benötigt keinen Datenbankserver und hält die gesamte Datenbank in einer Datei innerhalb der Installation. Es erfordert die PHP-Extension sqlite3.</translation>
+    </message>
+    <message>
+        <source>Database name</source>
+        <translation>Name der Datenbank</translation>
+    </message>
+    <message>
+        <source>Database file name</source>
+        <translation>Name der Datenbankdatei</translation>
+    </message>
+    <message>
+        <source>SQLite keeps the whole database in one file, in the directory %directory of this installation. It needs no server, user or password. The file is created if it does not exist; if it already holds tables, the Site details page asks what to do with them.</source>
+        <translation>SQLite hält die gesamte Datenbank in einer Datei im Verzeichnis %directory dieser Installation. Es benötigt keinen Server, Benutzer oder Passwort. Die Datei wird angelegt, falls sie nicht existiert; enthält sie bereits Tabellen, fragt die Seite mit den Website-Details, was damit geschehen soll.</translation>
+    </message>
+    <message>
+        <source>The setup could not get write access to the &lt;i&gt;settings&lt;/i&gt; directory. This is required to disable the initialization. Following the instructions found in &lt;i&gt;Issues&lt;/i&gt; to enable write access then click the &lt;i&gt;%button&lt;/i&gt; button.</source>
+        <translation>Das Setup hat keinen Schreibzugriff auf das Verzeichnis &lt;i&gt;settings&lt;/i&gt; erhalten. Dieser ist nötig, um die Initialisierung zu deaktivieren. Folgen Sie den Anweisungen unter &lt;i&gt;Probleme&lt;/i&gt;, um den Schreibzugriff zu ermöglichen, und klicken Sie dann auf die Schaltfläche &lt;i&gt;%button&lt;/i&gt;.</translation>
+    </message>
+    <message>
+        <source>Change the second line from &lt;i&gt;true&lt;/i&gt; to &lt;i&gt;false&lt;/i&gt;.</source>
+        <translation>Ändern Sie die zweite Zeile von &lt;i&gt;true&lt;/i&gt; auf &lt;i&gt;false&lt;/i&gt;.</translation>
+    </message>
+    <message>
+        <source>The setup is now disabled, click &lt;a href=%url&gt;here&lt;/a&gt; to get back to the site.</source>
+        <translation>Das Setup ist jetzt deaktiviert; klicken Sie &lt;a href=%url&gt;hier&lt;/a&gt;, um zur Website zurückzukehren.</translation>
+    </message>
+    <message>
+        <source>Share Exponential! Forums</source>
+        <translation>Share Exponential! Foren</translation>
+    </message>
+    <message>
+        <source>The content that comes with the site is written in %1. It stays in %1 whatever you choose here, and the site shows it wherever no translation into your languages exists yet.</source>
+        <translation>Die mit der Website gelieferten Inhalte sind in %1 geschrieben. Sie bleiben in %1, was immer Sie hier wählen, und die Website zeigt sie überall dort an, wo noch keine Übersetzung in Ihre Sprachen existiert.</translation>
+    </message>
+    <message>
+        <source>The language choice cannot be used</source>
+        <translation>Die Sprachauswahl kann nicht verwendet werden</translation>
+    </message>
+    <message>
+        <source>Additional language</source>
+        <translation>Zusätzliche Sprache</translation>
+    </message>
+    <message>
+        <source>language of the bundled content</source>
+        <translation>Sprache der mitgelieferten Inhalte</translation>
+    </message>
+    <message>
+        <source>Notice: Creating the language keeps the package content in the language it was written in, next to the languages you chose. Mapping it relabels that content as another language without translating it.</source>
+        <translation>Hinweis: Wird die Sprache angelegt, bleiben die Paketinhalte in der Sprache, in der sie geschrieben wurden, neben den von Ihnen gewählten Sprachen. Eine Zuordnung kennzeichnet diese Inhalte als eine andere Sprache um, ohne sie zu übersetzen.</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;If you need to share knowledge, exchange tips with developers or simply find some improvement tricks, the eZ Community is the place to go.&lt;/p&gt;
+&lt;p&gt;How do you access it?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Go on %share_link%share.exponential.earth%a%&lt;/li&gt;
+  &lt;li&gt;Click on Register (top of the page) and create your profile&lt;/li&gt;
+  &lt;li&gt;Here you can check out the %blogs_link%blog posts%a%, %articles_link%articles%a%, %forums_link%forums%a% ...&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;We’re looking forward to seeing what you share with the Community!&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Wenn Sie Wissen teilen, Tipps mit Entwicklern austauschen oder einfach Verbesserungstricks finden möchten, ist die eZ Community der richtige Ort.&lt;/p&gt;
+&lt;p&gt;Wie gelangen Sie dorthin?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Gehen Sie auf %share_link%share.exponential.earth%a%&lt;/li&gt;
+  &lt;li&gt;Klicken Sie auf Register (oben auf der Seite) und legen Sie Ihr Profil an&lt;/li&gt;
+  &lt;li&gt;Dort finden Sie die Bereiche %blogs_link%blog posts%a%, %articles_link%articles%a%, %forums_link%forums%a% ...&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Wir freuen uns darauf zu sehen, was Sie mit der Community teilen!&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>The database file %file already holds %count tables.</source>
+        <translation>Die Datenbankdatei %file enthält bereits %count Tabellen.</translation>
+    </message>
+    <message>
+        <source>A file in %directory, created if it does not exist.</source>
+        <translation>Eine Datei in %directory, die angelegt wird, falls sie nicht existiert.</translation>
+    </message>
+    <message>
+        <source>Database files there now: %files</source>
+        <translation>Derzeit vorhandene Datenbankdateien: %files</translation>
+    </message>
+    <message>
+        <source>Remote repository URL:</source>
+        <translation>URL des entfernten Repositorys:</translation>
+    </message>
+    <message>
+        <source>%summary (ver. %version)</source>
+        <translation>%summary (Vers. %version)</translation>
+    </message>
+    <message>
+        <source>Dependencies</source>
+        <translation>Abhängigkeiten</translation>
+    </message>
+    <message>
+        <source>%req_name (ver.%version):</source>
+        <translation>%req_name (Vers.%version):</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Keine.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -28292,6 +36968,14 @@ How do you access it?&lt;/p&gt;
     <message>
         <source>Your current session handler does not support session administration.</source>
         <translation>Ihr aktueller Session-Handler unterstützt keine Session-Verwaltung.</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation>Alle auswählen</translation>
+    </message>
+    <message>
+        <source>Deselect all</source>
+        <translation>Alle abwählen</translation>
     </message>
 </context>
 <context>
@@ -29142,6 +37826,78 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
         <source>The xsl extension, required by rich text handling, is not installed or enabled.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Your PHP does not have support for all databases that Exponential supports.</source>
+        <translation>Ihre PHP-Installation unterstützt nicht alle Datenbanken, die Exponential unterstützt.</translation>
+    </message>
+    <message>
+        <source>Although Exponential will work without it, you might later want to have support for this database prepared.</source>
+        <translation>Exponential funktioniert zwar auch ohne sie, aber Sie möchten die Unterstützung für diese Datenbank später vielleicht vorbereitet haben.</translation>
+    </message>
+    <message>
+        <source>Path to ImageMagick:</source>
+        <translation>Pfad zu ImageMagick:</translation>
+    </message>
+    <message>
+        <source>Your PHP version, which is %current, is known to be unstable.</source>
+        <translation>Ihre PHP-Version %current ist bekanntermaßen instabil.</translation>
+    </message>
+    <message>
+        <source>Your PHP version, which is %current, does not meet the minimum requirements of %required.</source>
+        <translation>Ihre PHP-Version %current erfüllt nicht die Mindestanforderung %required.</translation>
+    </message>
+    <message>
+        <source>You must upgrade to at least version %required, but the latest released stable PHP version is always recommended.</source>
+        <translation>Sie müssen mindestens auf Version %required aktualisieren; empfohlen wird jedoch immer die neueste stabile PHP-Version.</translation>
+    </message>
+    <message>
+        <source>Not possible to extend time limits</source>
+        <translation>Zeitlimits können nicht verlängert werden</translation>
+    </message>
+    <message>
+        <source>Some parts of Exponential relies on cronjobs to handle workflows etc., and may require a longer time to run than normal page loads. With this on the cronjob scripts will not succeed.</source>
+        <translation>Einige Teile von Exponential verwenden Cronjobs, um Workflows usw. abzuarbeiten, und brauchen dafür möglicherweise länger als ein normaler Seitenaufruf. Ist diese Option aktiv, schlagen die Cronjob-Skripte fehl.</translation>
+    </message>
+    <message>
+        <source>Wrong permissions</source>
+        <translation>Falsche Berechtigungen</translation>
+    </message>
+    <message>
+        <source>If the site is not setup correctly Exponential will not be able to work with files correctly, this could mean file uploads, image handling and cache creation. Safe mode requires that the same owner is set on the index.php script and all other files for the site.</source>
+        <translation>Wenn die Website nicht richtig eingerichtet ist, kann Exponential nicht korrekt mit Dateien arbeiten; das betrifft Datei-Uploads, die Bildverarbeitung und das Erstellen des Caches. Der Safe Mode verlangt, dass das Skript index.php und alle anderen Dateien der Website denselben Besitzer haben.</translation>
+    </message>
+    <message>
+        <source>File uploading</source>
+        <translation>Hochladen von Dateien</translation>
+    </message>
+    <message>
+        <source>Uploading files trough the web will not possible unless configured correctly. This means that images, files and media will not be possible to use.</source>
+        <translation>Das Hochladen von Dateien über das Web ist ohne korrekte Konfiguration nicht möglich. Das bedeutet, dass Bilder, Dateien und Medien nicht verwendet werden können.</translation>
+    </message>
+    <message>
+        <source>If you&apos;re not able to turn safe mode off you should try to fix the following issues.</source>
+        <translation>Wenn Sie den Safe Mode nicht abschalten können, sollten Sie versuchen, die folgenden Probleme zu beheben.</translation>
+    </message>
+    <message>
+        <source>Permissions</source>
+        <translation>Berechtigungen</translation>
+    </message>
+    <message>
+        <source>To make sure that all files have the correct user and group owner run the following commands.</source>
+        <translation>Führen Sie die folgenden Befehle aus, damit alle Dateien den richtigen Besitzer und die richtige Gruppe haben.</translation>
+    </message>
+    <message>
+        <source>Alternatively you may run</source>
+        <translation>Alternativ können Sie Folgendes ausführen</translation>
+    </message>
+    <message>
+        <source>If you only have access to the site using ftp you will have to consult your ftp client and server to see if it is possible to run the chown command.</source>
+        <translation>Wenn Sie nur per FTP auf die Website zugreifen können, prüfen Sie in Ihrem FTP-Programm und beim Server, ob der Befehl chown ausgeführt werden kann.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Note:&lt;/b&gt; The &lt;tt&gt;nouser.nouser&lt;/tt&gt; must be changed to your web server username and groupname.</source>
+        <translation>&lt;b&gt;Hinweis:&lt;/b&gt; &lt;tt&gt;nouser.nouser&lt;/tt&gt; muss durch den Benutzer- und Gruppennamen Ihres Webservers ersetzt werden.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/toolbar</name>
@@ -29825,6 +38581,18 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
         <source>Subtotal ex. VAT</source>
         <translation>Zwischensumme exkl. USt</translation>
     </message>
+    <message>
+        <source>Your receipt (sign in to view it; the address does not expire)</source>
+        <translation>Ihr Beleg (melden Sie sich an, um ihn anzusehen; die Adresse läuft nicht ab)</translation>
+    </message>
+    <message>
+        <source>[ view ]</source>
+        <translation>[ ansehen ]</translation>
+    </message>
+    <message>
+        <source>(Retry: %attempt out of %max).</source>
+        <translation>(Versuch: %attempt von %max).</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -29970,6 +38738,97 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
     </message>
 </context>
 <context>
+    <name>design/standard/shop/orderreceipt</name>
+    <message>
+        <source>Print</source>
+        <translation>Drucken</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Download</translation>
+    </message>
+    <message>
+        <source>Bookmark this page to come back to your receipt at any time; you will be asked to sign in.</source>
+        <translation>Setzen Sie ein Lesezeichen auf diese Seite, um jederzeit zu Ihrem Beleg zurückzukehren; Sie werden aufgefordert, sich anzumelden.</translation>
+    </message>
+    <message>
+        <source>Receipt</source>
+        <translation>Beleg</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Artikel</translation>
+    </message>
+    <message>
+        <source>Product</source>
+        <translation>Produkt</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation>Zählen</translation>
+    </message>
+    <message>
+        <source>VAT</source>
+        <translation>USt</translation>
+    </message>
+    <message>
+        <source>Price inc. VAT</source>
+        <translation>Preis inkl. USt</translation>
+    </message>
+    <message>
+        <source>Discount</source>
+        <translation>Ermäßigung</translation>
+    </message>
+    <message>
+        <source>Total ex. VAT</source>
+        <translation>Gesamtsumme ohne Mehrwertsteuer</translation>
+    </message>
+    <message>
+        <source>Total inc. VAT</source>
+        <translation>Gesamtsumme inkl. Mehrwertsteuer</translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <source>Ex. VAT</source>
+        <translation>Ohne MwSt.</translation>
+    </message>
+    <message>
+        <source>Inc. VAT</source>
+        <translation>Inkl. MwSt.</translation>
+    </message>
+    <message>
+        <source>Subtotal of items</source>
+        <translation>Zwischensumme der Positionen</translation>
+    </message>
+    <message>
+        <source>Order total</source>
+        <translation>Gesamtsumme</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Verlauf</translation>
+    </message>
+    <message>
+        <source>This receipt stays at this address. Anyone with this link can open it, so keep it private.</source>
+        <translation>Dieser Beleg bleibt unter dieser Adresse. Jeder mit diesem Link kann ihn öffnen, bewahren Sie ihn also vertraulich auf.</translation>
+    </message>
+</context>
+<context>
     <name>design/standard/shop/preferredcurrency</name>
     <message>
         <source>Unknown currency name</source>
@@ -29982,6 +38841,10 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
     <message>
         <source>Set the selected currency as preferred.</source>
         <translation>Ausgewählte Währung als bevorzugt einstellen.</translation>
+    </message>
+    <message>
+        <source>Select currency</source>
+        <translation>Währung auswählen</translation>
     </message>
 </context>
 <context>
@@ -30125,6 +38988,26 @@ Wählen Sie Ihre Kunden und klicken Sie die Schaltfläche %buttonname.
     <message>
         <source>Login</source>
         <translation type="obsolete">Login</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sichtbar</translation>
+    </message>
+    <message>
+        <source>Hidden by superior</source>
+        <translation>Vom übergeordneten Element versteckt</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Versteckt</translation>
+    </message>
+    <message>
+        <source>(Hidden)</source>
+        <translation>(Versteckt)</translation>
+    </message>
+    <message>
+        <source>(Hidden by parent)</source>
+        <translation>(Durch übergeordneten Knoten versteckt)</translation>
     </message>
 </context>
 <context>
@@ -30306,6 +39189,10 @@ Wählen Sie Ihre Kunden und klicken Sie die Schaltfläche %buttonname.
     <message>
         <source>My notifications</source>
         <translation>Meine Benachrichtigungen</translation>
+    </message>
+    <message>
+        <source>Select currency</source>
+        <translation>Währung auswählen</translation>
     </message>
 </context>
 <context>
@@ -30856,6 +39743,14 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
         <source>Email</source>
         <translation>E-Mail</translation>
     </message>
+    <message>
+        <source>If an account is registered with the email address %1, a mail has been sent to it. This email contains a link you need to click so that we can confirm that the correct user is getting the new password.</source>
+        <translation>Falls ein Konto mit der E-Mail-Adresse %1 registriert ist, wurde eine E-Mail an diese Adresse gesendet. Diese E-Mail enthält einen Link, den Sie anklicken müssen, damit wir bestätigen können, dass der richtige Benutzer das neue Passwort erhält.</translation>
+    </message>
+    <message>
+        <source>Please enter a valid email address.</source>
+        <translation>Bitte geben Sie eine gültige E-Mail-Adresse ein.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -30940,6 +39835,10 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     <message>
         <source>Click the following URL to login:</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%siteurl registration approved</source>
+        <translation>%siteurl: Registrierung freigegeben</translation>
     </message>
 </context>
 <context>
@@ -31058,6 +39957,34 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     <message>
         <source>Extension</source>
         <translation>Extension</translation>
+    </message>
+    <message>
+        <source>Invalid name. You can only use the characters a-z, numbers, _ and / (for subdirectories).</source>
+        <translation>Ungültiger Name. Sie dürfen nur die Zeichen a-z, Ziffern, _ und / (für Unterverzeichnisse) verwenden.</translation>
+    </message>
+    <message>
+        <source>The selected template is not a source template and cannot be used to create an override.</source>
+        <translation>Das ausgewählte Template ist kein Quell-Template und kann nicht zum Anlegen eines Overrides verwendet werden.</translation>
+    </message>
+    <message>
+        <source>The newly created template file will be placed in %path.</source>
+        <translation>Die neu erstellte Template-Datei wird in %path abgelegt.</translation>
+    </message>
+    <message>
+        <source>No extension</source>
+        <translation>Keine Extension</translation>
+    </message>
+    <message>
+        <source>Object ID</source>
+        <translation>Objekt ID</translation>
+    </message>
+    <message>
+        <source>Automatic (class-specific override if available, otherwise source)</source>
+        <translation>Automatisch (klassenspezifisches Override, falls vorhanden, sonst Quelle)</translation>
+    </message>
+    <message>
+        <source>Automatic (source template)</source>
+        <translation>Automatisch (Quell-Template)</translation>
     </message>
 </context>
 <context>
@@ -31247,6 +40174,14 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     <message>
         <source>The override.ini file could not be modified because of insufficient permission.</source>
         <translation>Die Datei override.ini konnte aufgrund unzureichender Rechte nicht geändert werden.</translation>
+    </message>
+    <message>
+        <source>No source template resource found.</source>
+        <translation>Keine Quell-Template-Ressource gefunden.</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
     </message>
 </context>
 <context>
@@ -31579,6 +40514,14 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
         <source>Input did not validate</source>
         <translation>Eingabe ist ungültig</translation>
     </message>
+    <message>
+        <source>Move down</source>
+        <translation>Nach unten</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Nach oben</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/event</name>
@@ -31717,6 +40660,14 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
         <source>Class attributes</source>
         <translation>Klassen Attribute</translation>
     </message>
+    <message>
+        <source>Class name</source>
+        <translation>Klassenname</translation>
+    </message>
+    <message>
+        <source>ClassAttribute name</source>
+        <translation>Name des Klassenattributs</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/view</name>
@@ -31776,6 +40727,14 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
         <source>Item can not be found</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Class name</source>
+        <translation>Klassenname</translation>
+    </message>
+    <message>
+        <source>ClassAttribute name</source>
+        <translation>Name des Klassenattributs</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -31796,7 +40755,15 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Deny</source>
-        <translation type="unfinished"></translation>
+        <translation>Ablehnen</translation>
+    </message>
+    <message>
+        <source>Click on &quot;Authorize&quot; to grant the requested access</source>
+        <translation>Klicken Sie auf „Autorisieren“, um den angeforderten Zugriff zu gewähren</translation>
+    </message>
+    <message>
+        <source>Click on &quot;Deny&quot; to refuse the requested access</source>
+        <translation>Klicken Sie auf „Ablehnen“, um den angeforderten Zugriff zu verweigern</translation>
     </message>
 </context>
 <context>
@@ -31911,11 +40878,11 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Modifier</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiter</translation>
     </message>
     <message>
         <source>Modified</source>
-        <translation type="unfinished"></translation>
+        <translation>Geändert</translation>
     </message>
     <message>
         <source>Select application for removal.</source>
@@ -31927,7 +40894,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Remove selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewähltes entfernen</translation>
     </message>
     <message>
         <source>Remove the selected applications.</source>
@@ -31944,6 +40911,10 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     <message>
         <source>Back</source>
         <translation type="unfinished">Zurück</translation>
+    </message>
+    <message>
+        <source>Last modified: %modified by %owner</source>
+        <translation>Zuletzt geändert: %modified von %owner</translation>
     </message>
 </context>
 <context>
@@ -32050,6 +41021,14 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     <message>
         <source>Content Language cache</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HTTP cache (role-aware pages)</source>
+        <translation>HTTP-Cache (rollenabhängige Seiten)</translation>
+    </message>
+    <message>
+        <source>Query cache (SQL results)</source>
+        <translation>Query-Cache (SQL-Ergebnisse)</translation>
     </message>
 </context>
 <context>
@@ -33059,6 +42038,54 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <comment>eZUserType</comment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The author list can have at most %1 authors.</source>
+        <translation>Die Autorenliste kann höchstens %1 Autoren enthalten.</translation>
+    </message>
+    <message>
+        <source>The file could not be uploaded. Please try again or contact the site administrator.</source>
+        <translation>Die Datei konnte nicht hochgeladen werden. Bitte versuchen Sie es erneut oder wenden Sie sich an den Administrator der Website.</translation>
+    </message>
+    <message>
+        <source>The image could not be uploaded. Please try again or contact the site administrator.</source>
+        <translation>Das Bild konnte nicht hochgeladen werden. Bitte versuchen Sie es erneut oder wenden Sie sich an den Administrator der Website.</translation>
+    </message>
+    <message>
+        <source>The image is too large: %1 x %2 pixels.</source>
+        <translation>Das Bild ist zu groß: %1 x %2 Pixel.</translation>
+    </message>
+    <message>
+        <source>A keyword can be at most %1 characters long.</source>
+        <translation>Ein Schlüsselwort darf höchstens %1 Zeichen lang sein.</translation>
+    </message>
+    <message>
+        <source>The related object does not exist or you are not allowed to read it.</source>
+        <translation>Das verknüpfte Objekt existiert nicht, oder Sie dürfen es nicht lesen.</translation>
+    </message>
+    <message>
+        <source>An object relation list can have at most %1 objects.</source>
+        <translation>Eine Objektbeziehungsliste kann höchstens %1 Objekte enthalten.</translation>
+    </message>
+    <message>
+        <source>A related object does not exist or you are not allowed to read it.</source>
+        <translation>Ein verknüpftes Objekt existiert nicht, oder Sie dürfen es nicht lesen.</translation>
+    </message>
+    <message>
+        <source>The start, stop and step values must be numbers, the step greater than zero, and the range may have at most %1 values.</source>
+        <translation>Start-, End- und Schrittwert müssen Zahlen sein, der Schritt größer als null, und der Bereich darf höchstens %1 Werte umfassen.</translation>
+    </message>
+    <message>
+        <source>The input is not a valid text line.</source>
+        <translation>Die Eingabe ist keine gültige Textzeile.</translation>
+    </message>
+    <message>
+        <source>Links with the %1 scheme are not allowed.</source>
+        <translation>Links mit dem Schema %1 sind nicht erlaubt.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Ungültige Eingabe.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/classes/datatypes/ezbinaryfile</name>
@@ -33150,6 +42177,10 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     <message>
         <source>%count invalid character(s) have been found and replaced by a space</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tags are nested too deeply.</source>
+        <translation>Die Tags sind zu tief verschachtelt.</translation>
     </message>
 </context>
 <context>
@@ -33397,6 +42428,14 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <source>Publishing queue</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Copy subtrees</source>
+        <translation>Teilbäume kopieren</translation>
+    </message>
+    <message>
+        <source>Edit several items</source>
+        <translation>Mehrere Elemente bearbeiten</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content/copysubtree</name>
@@ -33487,6 +42526,10 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     <message>
         <source>Cannot publish object (Name: %1, ID: %2).</source>
         <translation>Kann Objekt nicht veröffentlichen (Name: %1, ID: %2).</translation>
+    </message>
+    <message>
+        <source>Published object (Name: %1, ID: %2).</source>
+        <translation>Veröffentlichtes Objekt (Name: %1, ID: %2).</translation>
     </message>
 </context>
 <context>
@@ -33652,6 +42695,12 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
 </source>
         <translation type="obsolete">Die Klasse wird von einem Hauptknoten verwendet und kann nicht gelöscht werden.
 </translation>
+    </message>
+    <message>
+        <source>The class is used by a top-level node and cannot be removed.
+You will need to change the class of the node by using the swap functionality.</source>
+        <translation>Die Klasse wird von einem Knoten der obersten Ebene verwendet und kann nicht entfernt werden.
+Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
 </context>
 <context>
@@ -34171,6 +43220,38 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <source>The package name %packagename is invalid, cannot import the package</source>
         <translation>Der Paketname %packagename ist ungültig, konnte das Paket nicht importieren</translation>
     </message>
+    <message>
+        <source>PackageThumbnail</source>
+        <translation>Paket-Vorschaubild</translation>
+    </message>
+    <message>
+        <source>The file does not exist.</source>
+        <translation>Die Datei existiert nicht.</translation>
+    </message>
+    <message>
+        <source>The image file must have non-zero size.</source>
+        <translation>Die Bild Datei muss größer als 0 Byte sein.</translation>
+    </message>
+    <message>
+        <source>A valid image file is required.</source>
+        <translation>Eine gültige Bilddatei wird benötigt.</translation>
+    </message>
+    <message>
+        <source>PackageImageFile</source>
+        <translation>Paket-Bilddatei</translation>
+    </message>
+    <message>
+        <source>Failed to install content object &apos;%remote_id&apos;</source>
+        <translation>Das Content-Objekt &apos;%remote_id&apos; konnte nicht installiert werden</translation>
+    </message>
+    <message>
+        <source>Package install item is invalid (missing type).</source>
+        <translation>Das Installationselement des Pakets ist ungültig (Typ fehlt).</translation>
+    </message>
+    <message>
+        <source>Install failed with exception: </source>
+        <translation>Die Installation ist mit einer Ausnahme fehlgeschlagen: </translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -34276,6 +43357,18 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <source>Invalid selection for category class %1 does not have attribute &quot;%2&quot;</source>
         <translation>Ungültige Auswahl für Kategorie. Klasse %1 hat nicht das Attribut &quot;%2&quot;</translation>
     </message>
+    <message>
+        <source>New group</source>
+        <translation>Neue Gruppe</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
+    </message>
+    <message>
+        <source>This RSS export no longer exists. It may have been removed while this page was open.</source>
+        <translation>Dieser RSS-Export existiert nicht mehr. Er wurde möglicherweise entfernt, während diese Seite geöffnet war.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/search</name>
@@ -34368,6 +43461,58 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     <message>
         <source>Datatype wizard</source>
         <translation>Datentyp-Assistent</translation>
+    </message>
+    <message>
+        <source>Content extension wizard</source>
+        <translation>Assistent für Content-Extensions</translation>
+    </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>Design extension wizard</source>
+        <translation>Assistent für Design-Extensions</translation>
+    </message>
+    <message>
+        <source>Handler wizard</source>
+        <translation>Handler-Assistent</translation>
+    </message>
+    <message>
+        <source>Kernel override wizard</source>
+        <translation>Assistent für Kernel-Overrides</translation>
+    </message>
+    <message>
+        <source>Maintenance</source>
+        <translation>Wartung</translation>
+    </message>
+    <message>
+        <source>Module extension wizard</source>
+        <translation>Assistent für Modul-Extensions</translation>
+    </message>
+    <message>
+        <source>Module wizard</source>
+        <translation>Modul-Assistent</translation>
+    </message>
+    <message>
+        <source>Preload</source>
+        <translation>Vorladen</translation>
+    </message>
+    <message>
+        <source>Extension point survey</source>
+        <translation>Übersicht der Erweiterungspunkte</translation>
+    </message>
+    <message>
+        <source>Settings extension wizard</source>
+        <translation>Assistent für Einstellungs-Extensions</translation>
+    </message>
+    <message>
+        <source>Template extension wizard</source>
+        <translation>Assistent für Template-Extensions</translation>
+    </message>
+    <message>
+        <source>Workflow event wizard</source>
+        <translation>Assistent für Workflow-Ereignisse</translation>
     </message>
 </context>
 <context>
@@ -34599,6 +43744,24 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     <message>
         <source>&apos;%value&apos; is not a valid rate_factor value (positive number expected)</source>
         <translation>&apos;%value&apos; ist kein gültiger rate_factor Wert (positive Zahl erwartet)</translation>
+    </message>
+    <message>
+        <source>Cart</source>
+        <translation>Warenkorb</translation>
+    </message>
+    <message>
+        <source>&apos;%value&apos; is not a valid custom rate value (positive number expected)</source>
+        <comment>Error message</comment>
+        <translation>&apos;%value&apos; ist kein gültiger Umrechnungskurs (positive Zahl erwartet)</translation>
+    </message>
+    <message>
+        <source>&apos;%value&apos; is not a valid rate_factor value (positive number expected)</source>
+        <comment>Error message</comment>
+        <translation>&apos;%value&apos; ist kein gültiger rate_factor Wert (positive Zahl erwartet)</translation>
+    </message>
+    <message>
+        <source>Receipt for order #%order_id</source>
+        <translation>Beleg für Bestellung #%order_id</translation>
     </message>
 </context>
 <context>

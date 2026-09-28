@@ -210,6 +210,14 @@
         <source>List of classes inside %group_name class group (%class_count)</source>
         <translation>List of classes inside %group_name class group (%class_count)</translation>
     </message>
+    <message>
+        <source>copy</source>
+        <translation>copy</translation>
+    </message>
+    <message>
+        <source>edit</source>
+        <translation>edit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/datatype/browse_objectrelation_placement</name>
@@ -470,6 +478,14 @@
     <message>
         <source>Edit &lt;%class_name&gt; (%object_count objects)</source>
         <translation>Edit &lt;%class_name&gt; (%object_count objects)</translation>
+    </message>
+    <message>
+        <source>attribute &apos;%identifier&apos;: (%id) %text</source>
+        <translation>attribute &apos;%identifier&apos;: (%id) %text</translation>
+    </message>
+    <message>
+        <source>attribute &apos;%identifier&apos;: %name (%id)</source>
+        <translation>attribute &apos;%identifier&apos;: %name (%id)</translation>
     </message>
 </context>
 <context>
@@ -1081,6 +1097,10 @@
         <source>Confirm removal</source>
         <translation>Confirm removal</translation>
     </message>
+    <message>
+        <source>%namelist [%object_count objects]</source>
+        <translation>%namelist [%object_count objects]</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/collaboration</name>
@@ -1249,6 +1269,10 @@
     <message>
         <source>Posted: %1</source>
         <translation>Posted: %1</translation>
+    </message>
+    <message>
+        <source>[new]</source>
+        <translation>[new]</translation>
     </message>
 </context>
 <context>
@@ -2667,6 +2691,10 @@
         <source>New drafts (%newerDraftCount)</source>
         <translation>New drafts (%newerDraftCount)</translation>
     </message>
+    <message>
+        <source>Toggle selection</source>
+        <translation>Toggle selection</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/multiedit</name>
@@ -2833,6 +2861,10 @@
     <message>
         <source>Throw away the drafts this form opened and go back.</source>
         <translation>Throw away the drafts this form opened and go back.</translation>
+    </message>
+    <message>
+        <source>version %version</source>
+        <translation>version %version</translation>
     </message>
 </context>
 <context>
@@ -3596,6 +3628,10 @@
         <source>Date trashed</source>
         <translation>Date trashed</translation>
     </message>
+    <message>
+        <source>Click to sort %sort_order</source>
+        <translation>Click to sort %sort_order</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/upload</name>
@@ -3893,6 +3929,10 @@
         <source>Generated aliases (%count)</source>
         <translation>Generated aliases (%count)</translation>
     </message>
+    <message>
+        <source>the site root</source>
+        <translation>the site root</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/urlalias_global</name>
@@ -4071,6 +4111,14 @@
     <message>
         <source>Globally defined URL aliases (%alias_count)</source>
         <translation>Globally defined URL aliases (%alias_count)</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yes</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no</translation>
     </message>
 </context>
 <context>
@@ -4337,6 +4385,10 @@
         <source>Back</source>
         <translation>Back</translation>
     </message>
+    <message>
+        <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
+        <translation>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/contentstructuremenu</name>
@@ -4388,6 +4440,14 @@
         <source>Dynamic tree menu is disabled for this siteaccess!</source>
         <translation>Dynamic tree menu is disabled for this siteaccess!</translation>
     </message>
+    <message>
+        <source>(Hidden)</source>
+        <translation>(Hidden)</translation>
+    </message>
+    <message>
+        <source>(Hidden by parent)</source>
+        <translation>(Hidden by parent)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/all_latest_content</name>
@@ -4437,6 +4497,10 @@
     <message>
         <source>What&apos;s happening in the eZ Community</source>
         <translation>What&apos;s happening in the eZ Community</translation>
+    </message>
+    <message>
+        <source>Loading the latest forum posts...</source>
+        <translation>Loading the latest forum posts...</translation>
     </message>
 </context>
 <context>
@@ -4990,6 +5054,13 @@
     </message>
 </context>
 <context>
+    <name>design/admin/navigator/alphabetical</name>
+    <message>
+        <source>others</source>
+        <translation>others</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/node/class/view</name>
     <message>
         <source>Class groups</source>
@@ -5148,6 +5219,10 @@
     <message>
         <source>Objects containing ezuser attributes can not be sent to trash</source>
         <translation>Objects containing ezuser attributes can not be sent to trash</translation>
+    </message>
+    <message>
+        <source>Warnings:</source>
+        <translation>Warnings:</translation>
     </message>
 </context>
 <context>
@@ -5974,6 +6049,14 @@
         <source>Show %count items per page.</source>
         <translation>Show %count items per page.</translation>
     </message>
+    <message>
+        <source>list</source>
+        <translation>list</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -6463,6 +6546,10 @@ You can also remove the package without uninstalling it from the package list.</
         <source>Select the file containing the package then click the upload button</source>
         <translation>Select the file containing the package then click the upload button</translation>
     </message>
+    <message>
+        <source>MD5:</source>
+        <translation>MD5:</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -6779,6 +6866,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Logout: </source>
         <translation>Logout: </translation>
+    </message>
+    <message>
+        <source>Search...</source>
+        <translation>Search...</translation>
     </message>
 </context>
 <context>
@@ -7622,6 +7713,13 @@ Note: The packages will not be uninstalled.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/preview/forum_topic</name>
+    <message>
+        <source>Sticky:</source>
+        <translation>Sticky:</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/preview/person</name>
     <message>
         <source>Contact information</source>
@@ -7648,6 +7746,13 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>People who bought this also bought</source>
         <translation>People who bought this also bought</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/preview/review</name>
+    <message>
+        <source>Rating:</source>
+        <translation>Rating:</translation>
     </message>
 </context>
 <context>
@@ -9738,6 +9843,78 @@ Note: The packages will not be uninstalled.</translation>
         <source>All ini files</source>
         <translation>All ini files</translation>
     </message>
+    <message>
+        <source>Edit setting</source>
+        <translation>Edit setting</translation>
+    </message>
+    <message>
+        <source>Setting information</source>
+        <translation>Setting information</translation>
+    </message>
+    <message>
+        <source>Setting Name</source>
+        <translation>Setting Name</translation>
+    </message>
+    <message>
+        <source>%validation_field is empty</source>
+        <translation>%validation_field is empty</translation>
+    </message>
+    <message>
+        <source>Variable %setting already exists in section %section</source>
+        <translation>Variable %setting already exists in section %section</translation>
+    </message>
+    <message>
+        <source>Please choose another name that is not already taken</source>
+        <translation>Please choose another name that is not already taken</translation>
+    </message>
+    <message>
+        <source>%validation_field is not allowed to contain spaces</source>
+        <translation>%validation_field is not allowed to contain spaces</translation>
+    </message>
+    <message>
+        <source>Writing setting %setting to %file failed</source>
+        <translation>Writing setting %setting to %file failed</translation>
+    </message>
+    <message>
+        <source>Make sure you have proper permissions to %path and try again.</source>
+        <translation>Make sure you have proper permissions to %path and try again.</translation>
+    </message>
+    <message>
+        <source>%validation_field does not contain a valid string.</source>
+        <translation>%validation_field does not contain a valid string.</translation>
+    </message>
+    <message>
+        <source>If the string is all numbers use the &apos;numeric&apos; type instead.</source>
+        <translation>If the string is all numbers use the &apos;numeric&apos; type instead.</translation>
+    </message>
+    <message>
+        <source>%validation_field does not contain a valid numeric</source>
+        <translation>%validation_field does not contain a valid numeric</translation>
+    </message>
+    <message>
+        <source>A valid numeric can only contain 0-9 and one . (dot).</source>
+        <translation>A valid numeric can only contain 0-9 and one . (dot).</translation>
+    </message>
+    <message>
+        <source>%validation_field does not contain valid array</source>
+        <translation>%validation_field does not contain valid array</translation>
+    </message>
+    <message>
+        <source>Using siteaccess:</source>
+        <translation>Using siteaccess:</translation>
+    </message>
+    <message>
+        <source>%ini_file consist of %block_count section(s) and %setting_count different setting(s)</source>
+        <translation>%ini_file consist of %block_count section(s) and %setting_count different setting(s)</translation>
+    </message>
+    <message>
+        <source>Please select a ini file from the dropdown below.</source>
+        <translation>Please select a ini file from the dropdown below.</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup</name>
@@ -10056,6 +10233,30 @@ Note: The packages will not be uninstalled.</translation>
         <source>Empties APCu for the server process answering this page: every entry any application stored there is gone, including the memory tier of a Qbix response cache.</source>
         <translation>Empties APCu for the server process answering this page: every entry any application stored there is gone, including the memory tier of a Qbix response cache.</translation>
     </message>
+    <message>
+        <source>running…</source>
+        <translation>running…</translation>
+    </message>
+    <message>
+        <source>finished</source>
+        <translation>finished</translation>
+    </message>
+    <message>
+        <source>Could not open the stream. Check that you have the setup/managecache policy.</source>
+        <translation>Could not open the stream. Check that you have the setup/managecache policy.</translation>
+    </message>
+    <message>
+        <source>Stream closed.</source>
+        <translation>Stream closed.</translation>
+    </message>
+    <message>
+        <source>stopped</source>
+        <translation>stopped</translation>
+    </message>
+    <message>
+        <source>Stopped by operator. Pages written so far are kept.</source>
+        <translation>Stopped by operator. Pages written so far are kept.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
@@ -10278,6 +10479,170 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Installation</source>
         <translation>Installation</translation>
+    </message>
+    <message>
+        <source>The cronjob console got no answer from %method.</source>
+        <translation>The cronjob console got no answer from %method.</translation>
+    </message>
+    <message>
+        <source>Done.</source>
+        <translation>Done.</translation>
+    </message>
+    <message>
+        <source>It did not work, and did not say why.</source>
+        <translation>It did not work, and did not say why.</translation>
+    </message>
+    <message>
+        <source>The cronjob console failed: %error</source>
+        <translation>The cronjob console failed: %error</translation>
+    </message>
+    <message>
+        <source>No cronjob part named &quot;%part&quot; can be launched from here.</source>
+        <translation>No cronjob part named &quot;%part&quot; can be launched from here.</translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part has no script called &quot;%script&quot;.</source>
+        <translation>The &quot;%part&quot; part has no script called &quot;%script&quot;.</translation>
+    </message>
+    <message>
+        <source>No siteaccess named &quot;%siteaccess&quot; is served by this installation.</source>
+        <translation>No siteaccess named &quot;%siteaccess&quot; is served by this installation.</translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part is still running as process %pid. Wait for it, or stop it first.</source>
+        <translation>The &quot;%part&quot; part is still running as process %pid. Wait for it, or stop it first.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set cronjob.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>No php command line binary was found. Set cronjob.ini [AdminSettings] PhpCliPath to its full path.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a cronjob cannot be started from the interface. Run it from a shell.</source>
+        <translation>proc_open is disabled, so a cronjob cannot be started from the interface. Run it from a shell.</translation>
+    </message>
+    <message>
+        <source>runcronjobs.php is not where it should be: %path</source>
+        <translation>runcronjobs.php is not where it should be: %path</translation>
+    </message>
+    <message>
+        <source>The cronjob could not be started.</source>
+        <translation>The cronjob could not be started.</translation>
+    </message>
+    <message>
+        <source>The cronjob was started but did not report its process id, so it cannot be followed or stopped from here. Check %file.</source>
+        <translation>The cronjob was started but did not report its process id, so it cannot be followed or stopped from here. Check %file.</translation>
+    </message>
+    <message>
+        <source>Started the &quot;%part&quot; part for %siteaccess as process %pid.</source>
+        <translation>Started the &quot;%part&quot; part for %siteaccess as process %pid.</translation>
+    </message>
+    <message>
+        <source>Started %script for %siteaccess as process %pid.</source>
+        <translation>Started %script for %siteaccess as process %pid.</translation>
+    </message>
+    <message>
+        <source>exec is disabled, so the crontab cannot be read from here.</source>
+        <translation>exec is disabled, so the crontab cannot be read from here.</translation>
+    </message>
+    <message>
+        <source>The user this site runs as (%user) has no crontab, or crontab is not on the path. The entries below would be added to it.</source>
+        <translation>The user this site runs as (%user) has no crontab, or crontab is not on the path. The entries below would be added to it.</translation>
+    </message>
+    <message>
+        <source>No cronjob is running.</source>
+        <translation>No cronjob is running.</translation>
+    </message>
+    <message>
+        <source>posix_kill is not available, so the process cannot be signalled from here.</source>
+        <translation>posix_kill is not available, so the process cannot be signalled from here.</translation>
+    </message>
+    <message>
+        <source>Process %pid could not be signalled. It may belong to another user.</source>
+        <translation>Process %pid could not be signalled. It may belong to another user.</translation>
+    </message>
+    <message>
+        <source>Asked process %pid to stop.</source>
+        <translation>Asked process %pid to stop.</translation>
+    </message>
+    <message>
+        <source>Cleared the cronjob output and error logs.</source>
+        <translation>Cleared the cronjob output and error logs.</translation>
+    </message>
+    <message>
+        <source>Running: %part</source>
+        <translation>Running: %part</translation>
+    </message>
+    <message>
+        <source>Site: %siteaccess</source>
+        <translation>Site: %siteaccess</translation>
+    </message>
+    <message>
+        <source>Process: %pid</source>
+        <translation>Process: %pid</translation>
+    </message>
+    <message>
+        <source>Elapsed: %elapsed</source>
+        <translation>Elapsed: %elapsed</translation>
+    </message>
+    <message>
+        <source>%count scripts</source>
+        <translation>%count scripts</translation>
+    </message>
+    <message>
+        <source>%count missing</source>
+        <translation>%count missing</translation>
+    </message>
+    <message>
+        <source>following…</source>
+        <translation>following…</translation>
+    </message>
+    <message>
+        <source>finished</source>
+        <translation>finished</translation>
+    </message>
+    <message>
+        <source>stream closed</source>
+        <translation>stream closed</translation>
+    </message>
+    <message>
+        <source>The request did not reach the server. Check the connection and try again.</source>
+        <translation>The request did not reach the server. Check the connection and try again.</translation>
+    </message>
+    <message>
+        <source>The server answered %status: %text</source>
+        <translation>The server answered %status: %text</translation>
+    </message>
+    <message>
+        <source>The server answered %status. It sent nothing that could be read.</source>
+        <translation>The server answered %status. It sent nothing that could be read.</translation>
+    </message>
+    <message>
+        <source>The request failed before the server could answer.</source>
+        <translation>The request failed before the server could answer.</translation>
+    </message>
+    <message>
+        <source>The server did not answer in time. The job may still have started; reload to see.</source>
+        <translation>The server did not answer in time. The job may still have started; reload to see.</translation>
+    </message>
+    <message>
+        <source>The request could not be sent: %error</source>
+        <translation>The request could not be sent: %error</translation>
+    </message>
+    <message>
+        <source>Next: %part</source>
+        <translation>Next: %part</translation>
+    </message>
+    <message>
+        <source>Runs the %part part.</source>
+        <translation>Runs the %part part.</translation>
+    </message>
+    <message>
+        <source>There is no part that can be run.</source>
+        <translation>There is no part that can be run.</translation>
+    </message>
+    <message>
+        <source>Running %count parts, one after another.</source>
+        <translation>Running %count parts, one after another.</translation>
     </message>
 </context>
 <context>
@@ -11226,6 +11591,186 @@ Note: The packages will not be uninstalled.</translation>
         <source>nothing older than %seconds s</source>
         <translation>nothing older than %seconds s</translation>
     </message>
+    <message>
+        <source>Velocity&apos;s own server</source>
+        <translation>Velocity&apos;s own server</translation>
+    </message>
+    <message>
+        <source>PHP&apos;s built-in web server</source>
+        <translation>PHP&apos;s built-in web server</translation>
+    </message>
+    <message>
+        <source>PHP built-in web server</source>
+        <translation>PHP built-in web server</translation>
+    </message>
+    <message>
+        <source>%count worker processes</source>
+        <translation>%count worker processes</translation>
+    </message>
+    <message>
+        <source>one request at a time</source>
+        <translation>one request at a time</translation>
+    </message>
+    <message>
+        <source>a development server, not for production</source>
+        <translation>a development server, not for production</translation>
+    </message>
+    <message>
+        <source>started by exp:velocity</source>
+        <translation>started by exp:velocity</translation>
+    </message>
+    <message>
+        <source>FrankenPHP, started by exp:velocity</source>
+        <translation>FrankenPHP, started by exp:velocity</translation>
+    </message>
+    <message>
+        <source>PHP&apos;s built-in web server, started by exp:velocity</source>
+        <translation>PHP&apos;s built-in web server, started by exp:velocity</translation>
+    </message>
+    <message>
+        <source>recommended for every stage -- development, alpha, beta, demo, stable and production -- and the fastest of the engines</source>
+        <translation>recommended for every stage -- development, alpha, beta, demo, stable and production -- and the fastest of the engines</translation>
+    </message>
+    <message>
+        <source>production-ready; Velocity&apos;s own server (qbix) is the recommended engine</source>
+        <translation>production-ready; Velocity&apos;s own server (qbix) is the recommended engine</translation>
+    </message>
+    <message>
+        <source>development only -- for any other stage, run Velocity&apos;s own server (qbix)</source>
+        <translation>development only -- for any other stage, run Velocity&apos;s own server (qbix)</translation>
+    </message>
+    <message>
+        <source>wherever it was started to listen (not by exp:velocity, so its Host is not known here)</source>
+        <translation>wherever it was started to listen (not by exp:velocity, so its Host is not known here)</translation>
+    </message>
+    <message>
+        <source>this machine only (Host=%host), or through a proxy or tunnel</source>
+        <translation>this machine only (Host=%host), or through a proxy or tunnel</translation>
+    </message>
+    <message>
+        <source>every machine that reaches %address</source>
+        <translation>every machine that reaches %address</translation>
+    </message>
+    <message>
+        <source>The default engine is %default; this one runs with %command.</source>
+        <translation>The default engine is %default; this one runs with %command.</translation>
+    </message>
+    <message>
+        <source>reachable from %reach</source>
+        <translation>reachable from %reach</translation>
+    </message>
+    <message>
+        <source>pid %pid, %processes process(es)</source>
+        <translation>pid %pid, %processes process(es)</translation>
+    </message>
+    <message>
+        <source>stop it with %command</source>
+        <translation>stop it with %command</translation>
+    </message>
+    <message>
+        <source>Individual files on disk &amp;mdash; the archive below is not being used, because the EXP_ENGINE_PHAR environment variable is not set</source>
+        <translation>Individual files on disk &amp;mdash; the archive below is not being used, because the EXP_ENGINE_PHAR environment variable is not set</translation>
+    </message>
+    <message>
+        <source>Served by %server.</source>
+        <translation>Served by %server.</translation>
+    </message>
+    <message>
+        <source>To run from the files on disk again: %command.</source>
+        <translation>To run from the files on disk again: %command.</translation>
+    </message>
+    <message>
+        <source>To run from the archive: %command.</source>
+        <translation>To run from the archive: %command.</translation>
+    </message>
+    <message>
+        <source>%files files, %bytes bytes, built %built</source>
+        <translation>%files files, %bytes bytes, built %built</translation>
+    </message>
+    <message>
+        <source>%entries results held in APCu (%size) by this server</source>
+        <translation>%entries results held in APCu (%size) by this server</translation>
+    </message>
+    <message>
+        <source>generation %generation</source>
+        <translation>generation %generation</translation>
+    </message>
+    <message>
+        <source>last cleared %date</source>
+        <translation>last cleared %date</translation>
+    </message>
+    <message>
+        <source>%tables tables written since</source>
+        <translation>%tables tables written since</translation>
+    </message>
+    <message>
+        <source>This server since %date: %requests requests, %hits hits, %misses misses</source>
+        <translation>This server since %date: %requests requests, %hits hits, %misses misses</translation>
+    </message>
+    <message>
+        <source>%rate hit rate</source>
+        <translation>%rate hit rate</translation>
+    </message>
+    <message>
+        <source>%uncacheable not cacheable, %writes writes</source>
+        <translation>%uncacheable not cacheable, %writes writes</translation>
+    </message>
+    <message>
+        <source>Over the last %n profiled requests: %statements statements, %repeats exact repeats (%repeat_pct), %db_ms in the database</source>
+        <translation>Over the last %n profiled requests: %statements statements, %repeats exact repeats (%repeat_pct), %db_ms in the database</translation>
+    </message>
+    <message>
+        <source>a per-request memo would save %memo_ms, a shared query cache about %shared_ms</source>
+        <translation>a per-request memo would save %memo_ms, a shared query cache about %shared_ms</translation>
+    </message>
+    <message>
+        <source>disabled &amp;mdash; every request is rendered</source>
+        <translation>disabled &amp;mdash; every request is rendered</translation>
+    </message>
+    <message>
+        <source>%hits hits, %misses misses, %rate since the server started</source>
+        <translation>%hits hits, %misses misses, %rate since the server started</translation>
+    </message>
+    <message>
+        <source>%pages pages, %size (entries up to %max_size; segment %segment, %free free)</source>
+        <translation>%pages pages, %size (entries up to %max_size; segment %segment, %free free)</translation>
+    </message>
+    <message>
+        <source>at least %files files, %size</source>
+        <translation>at least %files files, %size</translation>
+    </message>
+    <message>
+        <source>%files files, %size</source>
+        <translation>%files files, %size</translation>
+    </message>
+    <message>
+        <source>directories %mode</source>
+        <translation>directories %mode</translation>
+    </message>
+    <message>
+        <source>files %mode</source>
+        <translation>files %mode</translation>
+    </message>
+    <message>
+        <source>%speed MHz</source>
+        <translation>%speed MHz</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>Memory</translation>
+    </message>
+    <message>
+        <source>Scripts</source>
+        <translation>Scripts</translation>
+    </message>
+    <message>
+        <source>Hit rate</source>
+        <translation>Hit rate</translation>
+    </message>
+    <message>
+        <source>Interned strings</source>
+        <translation>Interned strings</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>
@@ -11383,6 +11928,78 @@ Note: The packages will not be uninstalled.</translation>
         <source>Idle. Press Start preloading to begin.</source>
         <translation>Idle. Press Start preloading to begin.</translation>
     </message>
+    <message>
+        <source>No broken links were found.</source>
+        <translation>No broken links were found.</translation>
+    </message>
+    <message>
+        <source>%links broken link on %pages page</source>
+        <translation>%links broken link on %pages page</translation>
+    </message>
+    <message>
+        <source>%links broken link on %pages pages</source>
+        <translation>%links broken link on %pages pages</translation>
+    </message>
+    <message>
+        <source>%links broken links on %pages page</source>
+        <translation>%links broken links on %pages page</translation>
+    </message>
+    <message>
+        <source>%links broken links on %pages pages</source>
+        <translation>%links broken links on %pages pages</translation>
+    </message>
+    <message>
+        <source>Open each page in the right hand column, correct the link, then run this again.</source>
+        <translation>Open each page in the right hand column, correct the link, then run this again.</translation>
+    </message>
+    <message>
+        <source>Broken link</source>
+        <translation>Broken link</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Linked from</source>
+        <translation>Linked from</translation>
+    </message>
+    <message>
+        <source>no response</source>
+        <translation>no response</translation>
+    </message>
+    <message>
+        <source>a starting page; nothing on the site links to it</source>
+        <translation>a starting page; nothing on the site links to it</translation>
+    </message>
+    <message>
+        <source>... and %count more</source>
+        <translation>... and %count more</translation>
+    </message>
+    <message>
+        <source>running…</source>
+        <translation>running…</translation>
+    </message>
+    <message>
+        <source>finished</source>
+        <translation>finished</translation>
+    </message>
+    <message>
+        <source>stopped</source>
+        <translation>stopped</translation>
+    </message>
+    <message>
+        <source>Could not open the stream. Check that you have the setup/preload policy.</source>
+        <translation>Could not open the stream. Check that you have the setup/preload policy.</translation>
+    </message>
+    <message>
+        <source>Stream closed.</source>
+        <translation>Stream closed.</translation>
+    </message>
+    <message>
+        <source>Stopped by operator.</source>
+        <translation>Stopped by operator.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad</name>
@@ -11493,6 +12110,614 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Nothing here matches that. The survey beside this list is larger and searchable too.</source>
         <translation>Nothing here matches that. The survey beside this list is larger and searchable too.</translation>
+    </message>
+    <message>
+        <source>Everything</source>
+        <translation>Everything</translation>
+    </message>
+    <message>
+        <source>With a tool</source>
+        <translation>With a tool</translation>
+    </message>
+    <message>
+        <source>Documentation only</source>
+        <translation>Documentation only</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Content</translation>
+    </message>
+    <message>
+        <source>Templates and design</source>
+        <translation>Templates and design</translation>
+    </message>
+    <message>
+        <source>Modules and views</source>
+        <translation>Modules and views</translation>
+    </message>
+    <message>
+        <source>Workflow, events and jobs</source>
+        <translation>Workflow, events and jobs</translation>
+    </message>
+    <message>
+        <source>Storage and infrastructure</source>
+        <translation>Storage and infrastructure</translation>
+    </message>
+    <message>
+        <source>Packaging and shop</source>
+        <translation>Packaging and shop</translation>
+    </message>
+    <message>
+        <source>Users, access and language</source>
+        <translation>Users, access and language</translation>
+    </message>
+    <message>
+        <source>What content is made of, and how it is edited and stored.</source>
+        <translation>What content is made of, and how it is edited and stored.</translation>
+    </message>
+    <message>
+        <source>What a template can call, and what a design can replace.</source>
+        <translation>What a template can call, and what a design can replace.</translation>
+    </message>
+    <message>
+        <source>Addresses the site answers on, and who may reach them.</source>
+        <translation>Addresses the site answers on, and who may reach them.</translation>
+    </message>
+    <message>
+        <source>What happens when something is published, and what runs on its own.</source>
+        <translation>What happens when something is published, and what runs on its own.</translation>
+    </message>
+    <message>
+        <source>Where things are kept, and how they get there.</source>
+        <translation>Where things are kept, and how they get there.</translation>
+    </message>
+    <message>
+        <source>Moving things between installations, and selling them.</source>
+        <translation>Moving things between installations, and selling them.</translation>
+    </message>
+    <message>
+        <source>Who gets in, what they may do, and in what language.</source>
+        <translation>Who gets in, what they may do, and in what language.</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datatype</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Content class</translation>
+    </message>
+    <message>
+        <source>XML custom tag</source>
+        <translation>XML custom tag</translation>
+    </message>
+    <message>
+        <source>XML text input handler</source>
+        <translation>XML text input handler</translation>
+    </message>
+    <message>
+        <source>XML text output handler</source>
+        <translation>XML text output handler</translation>
+    </message>
+    <message>
+        <source>Information collection behaviour</source>
+        <translation>Information collection behaviour</translation>
+    </message>
+    <message>
+        <source>View cache clearing rules</source>
+        <translation>View cache clearing rules</translation>
+    </message>
+    <message>
+        <source>Asynchronous publishing filter</source>
+        <translation>Asynchronous publishing filter</translation>
+    </message>
+    <message>
+        <source>Template operator</source>
+        <translation>Template operator</translation>
+    </message>
+    <message>
+        <source>Template fetch function</source>
+        <translation>Template fetch function</translation>
+    </message>
+    <message>
+        <source>Attribute operator</source>
+        <translation>Attribute operator</translation>
+    </message>
+    <message>
+        <source>Template function</source>
+        <translation>Template function</translation>
+    </message>
+    <message>
+        <source>Fetch alias</source>
+        <translation>Fetch alias</translation>
+    </message>
+    <message>
+        <source>Design extension</source>
+        <translation>Design extension</translation>
+    </message>
+    <message>
+        <source>Template override set</source>
+        <translation>Template override set</translation>
+    </message>
+    <message>
+        <source>Icon theme in an extension</source>
+        <translation>Icon theme in an extension</translation>
+    </message>
+    <message>
+        <source>Module over existing tables</source>
+        <translation>Module over existing tables</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Module</translation>
+    </message>
+    <message>
+        <source>View for an existing module</source>
+        <translation>View for an existing module</translation>
+    </message>
+    <message>
+        <source>Policy function and limitation</source>
+        <translation>Policy function and limitation</translation>
+    </message>
+    <message>
+        <source>REST provider</source>
+        <translation>REST provider</translation>
+    </message>
+    <message>
+        <source>REST route filter</source>
+        <translation>REST route filter</translation>
+    </message>
+    <message>
+        <source>Server-side ajax function</source>
+        <translation>Server-side ajax function</translation>
+    </message>
+    <message>
+        <source>Workflow event type</source>
+        <translation>Workflow event type</translation>
+    </message>
+    <message>
+        <source>Trigger</source>
+        <translation>Trigger</translation>
+    </message>
+    <message>
+        <source>Notification event type</source>
+        <translation>Notification event type</translation>
+    </message>
+    <message>
+        <source>Notification handler</source>
+        <translation>Notification handler</translation>
+    </message>
+    <message>
+        <source>Cronjob script and part</source>
+        <translation>Cronjob script and part</translation>
+    </message>
+    <message>
+        <source>Kernel event listener</source>
+        <translation>Kernel event listener</translation>
+    </message>
+    <message>
+        <source>Database handler</source>
+        <translation>Database handler</translation>
+    </message>
+    <message>
+        <source>Cluster file handler</source>
+        <translation>Cluster file handler</translation>
+    </message>
+    <message>
+        <source>DFS backend</source>
+        <translation>DFS backend</translation>
+    </message>
+    <message>
+        <source>DFS database backend</source>
+        <translation>DFS database backend</translation>
+    </message>
+    <message>
+        <source>Binary file handler</source>
+        <translation>Binary file handler</translation>
+    </message>
+    <message>
+        <source>Search engine</source>
+        <translation>Search engine</translation>
+    </message>
+    <message>
+        <source>Session handler</source>
+        <translation>Session handler</translation>
+    </message>
+    <message>
+        <source>Mail transport</source>
+        <translation>Mail transport</translation>
+    </message>
+    <message>
+        <source>Static cache handler</source>
+        <translation>Static cache handler</translation>
+    </message>
+    <message>
+        <source>Image handler and aliases</source>
+        <translation>Image handler and aliases</translation>
+    </message>
+    <message>
+        <source>Compiled settings and view cache in Redis</source>
+        <translation>Compiled settings and view cache in Redis</translation>
+    </message>
+    <message>
+        <source>Package handler</source>
+        <translation>Package handler</translation>
+    </message>
+    <message>
+        <source>Package creation handler</source>
+        <translation>Package creation handler</translation>
+    </message>
+    <message>
+        <source>Package installation handler</source>
+        <translation>Package installation handler</translation>
+    </message>
+    <message>
+        <source>Payment gateway</source>
+        <translation>Payment gateway</translation>
+    </message>
+    <message>
+        <source>Payment gateway, transparent</source>
+        <translation>Payment gateway, transparent</translation>
+    </message>
+    <message>
+        <source>VAT handler</source>
+        <translation>VAT handler</translation>
+    </message>
+    <message>
+        <source>Shipping handler</source>
+        <translation>Shipping handler</translation>
+    </message>
+    <message>
+        <source>Basket info handler</source>
+        <translation>Basket info handler</translation>
+    </message>
+    <message>
+        <source>Exchange rate handler</source>
+        <translation>Exchange rate handler</translation>
+    </message>
+    <message>
+        <source>URL alias filter</source>
+        <translation>URL alias filter</translation>
+    </message>
+    <message>
+        <source>Mobile device filter</source>
+        <translation>Mobile device filter</translation>
+    </message>
+    <message>
+        <source>REST pre routing filter</source>
+        <translation>REST pre routing filter</translation>
+    </message>
+    <message>
+        <source>REST request filter</source>
+        <translation>REST request filter</translation>
+    </message>
+    <message>
+        <source>REST result filter</source>
+        <translation>REST result filter</translation>
+    </message>
+    <message>
+        <source>REST response filter</source>
+        <translation>REST response filter</translation>
+    </message>
+    <message>
+        <source>REST prefix filter</source>
+        <translation>REST prefix filter</translation>
+    </message>
+    <message>
+        <source>User login handler</source>
+        <translation>User login handler</translation>
+    </message>
+    <message>
+        <source>Additional extension roots</source>
+        <translation>Additional extension roots</translation>
+    </message>
+    <message>
+        <source>Extension root filter</source>
+        <translation>Extension root filter</translation>
+    </message>
+    <message>
+        <source>Site extension</source>
+        <translation>Site extension</translation>
+    </message>
+    <message>
+        <source>Writing settings from code</source>
+        <translation>Writing settings from code</translation>
+    </message>
+    <message>
+        <source>Siteaccess settings extension</source>
+        <translation>Siteaccess settings extension</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation>Translation</translation>
+    </message>
+    <message>
+        <source>RSS import handler</source>
+        <translation>RSS import handler</translation>
+    </message>
+    <message>
+        <source>A kind of value a content class attribute can hold, with its own editing, validation, storage and display.</source>
+        <translation>A kind of value a content class attribute can hold, with its own editing, validation, storage and display.</translation>
+    </message>
+    <message>
+        <source>A type of content: its attributes, their datatypes, and how an instance of it is named.</source>
+        <translation>A type of content: its attributes, their datatypes, and how an instance of it is named.</translation>
+    </message>
+    <message>
+        <source>A tag authors can use in rich text, with its own attributes and its own template.</source>
+        <translation>A tag authors can use in rich text, with its own attributes and its own template.</translation>
+    </message>
+    <message>
+        <source>What turns what an author typed into the xml a rich text attribute stores.</source>
+        <translation>What turns what an author typed into the xml a rich text attribute stores.</translation>
+    </message>
+    <message>
+        <source>What turns stored rich text into what a visitor sees.</source>
+        <translation>What turns stored rich text into what a visitor sees.</translation>
+    </message>
+    <message>
+        <source>What happens when a visitor fills in a form built out of content: what the submission is called, whether it is kept, whether it is emailed, and what the visitor is shown afterwards. Matched per content class, so a poll and a contact form built the same way behave differently.</source>
+        <translation>What happens when a visitor fills in a form built out of content: what the submission is called, whether it is kept, whether it is emailed, and what the visitor is shown afterwards. Matched per content class, so a poll and a contact form built the same way behave differently.</translation>
+    </message>
+    <message>
+        <source>Which other pages have to be rebuilt when one object is published. The default clears the object, its parents and what relates to it; a group named after a content class identifier says what else - a listing that has to change when a comment is posted, an object somewhere else entirely.</source>
+        <translation>Which other pages have to be rebuilt when one object is published. The default clears the object, its parents and what relates to it; a group named after a content class identifier says what else - a listing that has to change when a comment is posted, an object somewhere else entirely.</translation>
+    </message>
+    <message>
+        <source>Decides whether a version is published in the request or handed to the queue. Publishing a large object blocks whoever pressed the button; a queue that takes everything makes small edits feel broken. This is where that line is drawn.</source>
+        <translation>Decides whether a version is published in the request or handed to the queue. Publishing a large object blocks whoever pressed the button; a queue that takes everything makes small edits feel broken. This is where that line is drawn.</translation>
+    </message>
+    <message>
+        <source>Something a template can pipe a value through: {$value|my_operator()}. One class may answer to many names, and what it promises the compiler decides whether it runs once at compile time or on every request for ever.</source>
+        <translation>Something a template can pipe a value through: {$value|my_operator()}. One class may answer to many names, and what it promises the compiler decides whether it runs once at compile time or on every request for ever.</translation>
+    </message>
+    <message>
+        <source>Something a template can ask a module for: fetch( &apos;module&apos;, &apos;thing&apos;, hash( ... ) ).</source>
+        <translation>Something a template can ask a module for: fetch( &apos;module&apos;, &apos;thing&apos;, hash( ... ) ).</translation>
+    </message>
+    <message>
+        <source>An operator that applies to a content attribute of a particular datatype.</source>
+        <translation>An operator that applies to a content attribute of a particular datatype.</translation>
+    </message>
+    <message>
+        <source>Something a template calls rather than pipes through: {my_function arg=1}, optionally with a body it may draw none, one or many times. How {section} and {foreach} are built.</source>
+        <translation>Something a template calls rather than pipes through: {my_function arg=1}, optionally with a body it may draw none, one or many times. How {section} and {foreach} are built.</translation>
+    </message>
+    <message>
+        <source>A name for a fetch that is written out in full somewhere else, so templates can be short.</source>
+        <translation>A name for a fetch that is written out in full somewhere else, so templates can be short.</translation>
+    </message>
+    <message>
+        <source>The templates, stylesheets and images a site is drawn with.</source>
+        <translation>The templates, stylesheets and images a site is drawn with.</translation>
+    </message>
+    <message>
+        <source>A template used in place of another, for the content it matches and nothing else.</source>
+        <translation>A template used in place of another, for the content it matches and nothing else.</translation>
+    </message>
+    <message>
+        <source>A set of icons an extension brings with it, searched before the ones that ship. The whole chain falls back: the current theme, then any additional themes, then the standard one; and within each, extension directories before share/icons. A missing icon takes the theme default rather than drawing a broken image.</source>
+        <translation>A set of icons an extension brings with it, searched before the ones that ship. The whole chain falls back: the current theme, then any additional themes, then the standard one; and within each, extension directories before share/icons. A missing icon takes the theme default rather than drawing a broken image.</translation>
+    </message>
+    <message>
+        <source>Administration and a template API for tables that already exist, here or on another database.</source>
+        <translation>Administration and a template API for tables that already exist, here or on another database.</translation>
+    </message>
+    <message>
+        <source>A new address the site answers on, with its own views and its own policies.</source>
+        <translation>A new address the site answers on, with its own views and its own policies.</translation>
+    </message>
+    <message>
+        <source>One more thing an existing module can be asked to do.</source>
+        <translation>One more thing an existing module can be asked to do.</translation>
+    </message>
+    <message>
+        <source>A thing a role can be granted, and what it can be narrowed by.</source>
+        <translation>A thing a role can be granted, and what it can be narrowed by.</translation>
+    </message>
+    <message>
+        <source>A set of addresses answering outside the template system, for something else to call.</source>
+        <translation>A set of addresses answering outside the template system, for something else to call.</translation>
+    </message>
+    <message>
+        <source>Something that inspects or changes a REST request before it is routed.</source>
+        <translation>Something that inspects or changes a REST request before it is routed.</translation>
+    </message>
+    <message>
+        <source>Something the browser can call and get json back from, without a page.</source>
+        <translation>Something the browser can call and get json back from, without a page.</translation>
+    </message>
+    <message>
+        <source>A step a workflow can take when something is published, moved or removed.</source>
+        <translation>A step a workflow can take when something is published, moved or removed.</translation>
+    </message>
+    <message>
+        <source>The point in an operation where a workflow is given the chance to run.</source>
+        <translation>The point in an operation where a workflow is given the chance to run.</translation>
+    </message>
+    <message>
+        <source>A kind of thing people can be notified about.</source>
+        <translation>A kind of thing people can be notified about.</translation>
+    </message>
+    <message>
+        <source>What decides who is told, and how they are told.</source>
+        <translation>What decides who is told, and how they are told.</translation>
+    </message>
+    <message>
+        <source>Something that runs on its own, on a schedule, outside any request.</source>
+        <translation>Something that runs on its own, on a schedule, outside any request.</translation>
+    </message>
+    <message>
+        <source>Something called when the kernel reaches a named point, such as a request arriving.</source>
+        <translation>Something called when the kernel reaches a named point, such as a request arriving.</translation>
+    </message>
+    <message>
+        <source>A kind of database the whole system can run on.</source>
+        <translation>A kind of database the whole system can run on.</translation>
+    </message>
+    <message>
+        <source>Where files live when more than one server serves the same site. Everything the kernel reads or writes under var/ goes through this, so it is the widest reaching of the storage points and the one most worth extending from eZFSFileHandler rather than from the bare interface.</source>
+        <translation>Where files live when more than one server serves the same site. Everything the kernel reads or writes under var/ goes through this, so it is the widest reaching of the storage points and the one most worth extending from eZFSFileHandler rather than from the bare interface.</translation>
+    </message>
+    <message>
+        <source>Where the DFS cluster handler puts the bytes: a mounted share, an object store, anywhere reachable. The index of what exists stays in the database; this only moves file contents.</source>
+        <translation>Where the DFS cluster handler puts the bytes: a mounted share, an object store, anywhere reachable. The index of what exists stays in the database; this only moves file contents.</translation>
+    </message>
+    <message>
+        <source>The other half of DFS: the index of which files exist, how big they are and which are being generated. It is what stops two servers building the same cache entry at once, so it is the harder half to replace.</source>
+        <translation>The other half of DFS: the index of which files exist, how big they are and which are being generated. It is what stops two servers building the same cache entry at once, so it is the harder half to replace.</translation>
+    </message>
+    <message>
+        <source>How an uploaded file is stored and handed back.</source>
+        <translation>How an uploaded file is stored and handed back.</translation>
+    </message>
+    <message>
+        <source>What indexes content as it is published, and what answers when somebody searches.</source>
+        <translation>What indexes content as it is published, and what answers when somebody searches.</translation>
+    </message>
+    <message>
+        <source>Where sessions are kept and how they are cleaned up.</source>
+        <translation>Where sessions are kept and how they are cleaned up.</translation>
+    </message>
+    <message>
+        <source>How mail leaves the system.</source>
+        <translation>How mail leaves the system.</translation>
+    </message>
+    <message>
+        <source>What writes pages to disk so the web server can serve them without php.</source>
+        <translation>What writes pages to disk so the web server can serve them without php.</translation>
+    </message>
+    <message>
+        <source>How an image is scaled and what sizes exist.</source>
+        <translation>How an image is scaled and what sizes exist.</translation>
+    </message>
+    <message>
+        <source>Two places the kernel will hand its caches to Redis or Valkey if something answers for them: the compiled ini cache, and the content view cache. Neither is an ini setting - the kernel asks whether a class exists and uses it if it does, so an installation without the extension behaves exactly as before.</source>
+        <translation>Two places the kernel will hand its caches to Redis or Valkey if something answers for them: the compiled ini cache, and the content view cache. Neither is an ini setting - the kernel asks whether a class exists and uses it if it does, so an installation without the extension behaves exactly as before.</translation>
+    </message>
+    <message>
+        <source>A kind of thing that can be put in a package and taken out again.</source>
+        <translation>A kind of thing that can be put in a package and taken out again.</translation>
+    </message>
+    <message>
+        <source>The steps the admin interface walks through when a package is made.</source>
+        <translation>The steps the admin interface walks through when a package is made.</translation>
+    </message>
+    <message>
+        <source>What happens when a package is installed or taken back out.</source>
+        <translation>What happens when a package is installed or taken back out.</translation>
+    </message>
+    <message>
+        <source>Takes a basket to somewhere money can be paid and brings the answer back. The shop prices, taxes and delivers a basket and stops at taking money: this is the piece that does not ship. It is called twice for one order - once to send the buyer away, once when they return - and the two visits are joined by the payment row it stores in between.</source>
+        <translation>Takes a basket to somewhere money can be paid and brings the answer back. The shop prices, taxes and delivers a basket and stops at taking money: this is the piece that does not ship. It is called twice for one order - once to send the buyer away, once when they return - and the two visits are joined by the payment row it stores in between.</translation>
+    </message>
+    <message>
+        <source>Takes the payment without the buyer ever leaving the site: the card is exchanged for a token in the browser, and the charge is made server to server while they wait. The common shape now, and a different job from the redirect kind - one call decides the order, so there is no second visit in which to correct a wrong answer, and a timeout is a genuinely ambiguous state that has to be asked about rather than guessed at.</source>
+        <translation>Takes the payment without the buyer ever leaving the site: the card is exchanged for a token in the browser, and the charge is made server to server while they wait. The common shape now, and a different job from the redirect kind - one call decides the order, so there is no second visit in which to correct a wrong answer, and a timeout is a genuinely ambiguous state that has to be asked about rather than guessed at.</translation>
+    </message>
+    <message>
+        <source>What rate of tax applies to what, for whom.</source>
+        <translation>What rate of tax applies to what, for whom.</translation>
+    </message>
+    <message>
+        <source>What delivery costs, and what the options are.</source>
+        <translation>What delivery costs, and what the options are.</translation>
+    </message>
+    <message>
+        <source>What a basket line says about itself: name, price, and what it is.</source>
+        <translation>What a basket line says about itself: name, price, and what it is.</translation>
+    </message>
+    <message>
+        <source>Where the rate between two currencies comes from.</source>
+        <translation>Where the rate between two currencies comes from.</translation>
+    </message>
+    <message>
+        <source>Runs over every url this system generates, before it is stored, and may rewrite it. The nearest thing here to an output filter over addresses: every alias, for every object, in every language, passes through it as it is made.</source>
+        <translation>Runs over every url this system generates, before it is stored, and may rewrite it. The nearest thing here to an output filter over addresses: every alias, for every object, in every language, passes through it as it is made.</translation>
+    </message>
+    <message>
+        <source>Decides whether a request came from a phone and what to do about it. The one that ships matches user agent strings against patterns, which ages badly; a filter of its own can use a header a proxy sets or a hint the browser gives.</source>
+        <translation>Decides whether a request came from a phone and what to do about it. The one that ships matches user agent strings against patterns, which ages badly; a filter of its own can use a header a proxy sets or a hint the browser gives.</translation>
+    </message>
+    <message>
+        <source>The earliest place there is to see a REST request. Nothing has been matched and no controller chosen, so a request can be rewritten or turned away before anything has committed to answering it - and before authentication, so about a caller nobody has identified.</source>
+        <translation>The earliest place there is to see a REST request. Nothing has been matched and no controller chosen, so a request can be rewritten or turned away before anything has committed to answering it - and before authentication, so about a caller nobody has identified.</translation>
+    </message>
+    <message>
+        <source>Runs once the request object is built and the route is known, so it knows which controller is about to answer. Where a header is read, a parameter normalised, or a request refused on grounds that depend on what it asked for.</source>
+        <translation>Runs once the request object is built and the route is known, so it knows which controller is about to answer. Where a header is read, a parameter normalised, or a request refused on grounds that depend on what it asked for.</translation>
+    </message>
+    <message>
+        <source>Runs after the controller has worked out its answer and before it becomes json or xml. The result is still ordinary php here, so it can be added to or reshaped once for every format rather than in each renderer.</source>
+        <translation>Runs after the controller has worked out its answer and before it becomes json or xml. The result is still ordinary php here, so it can be added to or reshaped once for every format rather than in each renderer.</translation>
+    </message>
+    <message>
+        <source>The output filter of the REST layer: the last thing that happens before an answer leaves. A header on every response, a body wrapped, a content type changed, without touching a controller.</source>
+        <translation>The output filter of the REST layer: the last thing that happens before an answer leaves. A header on every response, a body wrapped, a content type changed, without touching a controller.</translation>
+    </message>
+    <message>
+        <source>What decides where the api lives and which version of it a request asked for. The one that ships reads a regular expression; replacing it is how the api moves off /api/ or takes its version from somewhere other than the path.</source>
+        <translation>What decides where the api lives and which version of it a request asked for. The one that ships reads a regular expression; replacing it is how the api moves off /api/ or takes its version from somewhere other than the path.</translation>
+    </message>
+    <message>
+        <source>Where a user is checked against when they log in - a directory, another system, anything.</source>
+        <translation>Where a user is checked against when they log in - a directory, another system, anything.</translation>
+    </message>
+    <message>
+        <source>Where extensions may live, beyond extension/. A second root - extension_src/ is the usual name - separates what a project wrote from what it took from elsewhere, so ownership is readable off the directory layout rather than off a list somebody maintains. An extension of the same name in a later root shadows the one before it, which is how a vendor package is forked without being edited.</source>
+        <translation>Where extensions may live, beyond extension/. A second root - extension_src/ is the usual name - separates what a project wrote from what it took from elsewhere, so ownership is readable off the directory layout rather than off a list somebody maintains. An extension of the same name in a later root shadows the one before it, which is how a vendor package is forked without being edited.</translation>
+    </message>
+    <message>
+        <source>The last word on which roots are searched, in code rather than in settings. Redefining it is how a root is worked out at runtime - from an environment variable, from which machine this is, from what a deployment put on disk - rather than written into an ini that has to differ per installation.</source>
+        <translation>The last word on which roots are searched, in code rather than in settings. Redefining it is how a root is worked out at runtime - from an environment variable, from which machine this is, from what a deployment put on disk - rather than written into an ini that has to differ per installation.</translation>
+    </message>
+    <message>
+        <source>One extension carrying a whole site: its design, its siteaccesses, its grouped settings overrides, its modules and its code. What makes this possible rather than merely tidy is that an extension can now hold settings/siteaccess/&lt;name&gt;/ of its own, so the siteaccess travels with the thing that defines it instead of living in settings/ on one machine.</source>
+        <translation>One extension carrying a whole site: its design, its siteaccesses, its grouped settings overrides, its modules and its code. What makes this possible rather than merely tidy is that an extension can now hold settings/siteaccess/&lt;name&gt;/ of its own, so the siteaccess travels with the thing that defines it instead of living in settings/ on one machine.</translation>
+    </message>
+    <message>
+        <source>Changing an ini file from php rather than by hand: what the settings editor in the admin does, and what an installer or an upgrade script needs. Since 6.0 a direct access write keeps the comments and the ordering of the file it edits rather than rewriting it as bare key and value, so a generated change can be read afterwards by whoever has to maintain it.</source>
+        <translation>Changing an ini file from php rather than by hand: what the settings editor in the admin does, and what an installer or an upgrade script needs. Since 6.0 a direct access write keeps the comments and the ordering of the file it edits rather than rewriting it as bare key and value, so a generated change can be read afterwards by whoever has to maintain it.</translation>
+    </message>
+    <message>
+        <source>Settings that apply to one siteaccess only, kept with the extension rather than in settings/.</source>
+        <translation>Settings that apply to one siteaccess only, kept with the extension rather than in settings/.</translation>
+    </message>
+    <message>
+        <source>The words the interface uses, in another language.</source>
+        <translation>The words the interface uses, in another language.</translation>
+    </message>
+    <message>
+        <source>What an imported feed item becomes once it has been fetched.</source>
+        <translation>What an imported feed item becomes once it has been fetched.</translation>
+    </message>
+    <message>
+        <source>A class in a directory the kernel scans. The directory is named by a RepositoryDirectories setting, and the class is found by its file name.</source>
+        <translation>A class in a directory the kernel scans. The directory is named by a RepositoryDirectories setting, and the class is found by its file name.</translation>
+    </message>
+    <message>
+        <source>A class named by an ini setting and loaded through eZExtension::getHandlerClass. The setting gives an alias, the alias gives the class.</source>
+        <translation>A class named by an ini setting and loaded through eZExtension::getHandlerClass. The setting gives an alias, the alias gives the class.</translation>
+    </message>
+    <message>
+        <source>A class reached through the extension autoload path, registered once in an ini and then available everywhere.</source>
+        <translation>A class reached through the extension autoload path, registered once in an ini and then available everywhere.</translation>
+    </message>
+    <message>
+        <source>A file in a place the kernel looks by name. Nothing registers it; being there is the registration.</source>
+        <translation>A file in a place the kernel looks by name. Nothing registers it; being there is the registration.</translation>
+    </message>
+    <message>
+        <source>A template in a design, found through the design chain rather than by being named anywhere.</source>
+        <translation>A template in a design, found through the design chain rather than by being named anywhere.</translation>
+    </message>
+    <message>
+        <source>Settings only. Nothing is written but ini, and the behaviour changes.</source>
+        <translation>Settings only. Nothing is written but ini, and the behaviour changes.</translation>
+    </message>
+    <message>
+        <source>A kernel class replaced by one of your own through the override autoload path. The heaviest of these mechanisms and the last resort: nothing registers the replacement by name, so two extensions replacing the same class is a fight neither of them knows it is in.</source>
+        <translation>A kernel class replaced by one of your own through the override autoload path. The heaviest of these mechanisms and the last resort: nothing registers the replacement by name, so two extensions replacing the same class is a fight neither of them knows it is in.</translation>
     </message>
 </context>
 <context>
@@ -11684,6 +12909,90 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Back to the RAD tools</source>
         <translation>Back to the RAD tools</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>required</translation>
+    </message>
+    <message>
+        <source>searchable</source>
+        <translation>searchable</translation>
+    </message>
+    <message>
+        <source>collects</source>
+        <translation>collects</translation>
+    </message>
+    <message>
+        <source>not translatable</source>
+        <translation>not translatable</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines lines, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Content class</translation>
+    </message>
+    <message>
+        <source>XML custom tag</source>
+        <translation>XML custom tag</translation>
+    </message>
+    <message>
+        <source>The shape of a kind of content, written as a script.</source>
+        <translation>The shape of a kind of content, written as a script.</translation>
+    </message>
+    <message>
+        <source>A tag authors can use in rich text.</source>
+        <translation>A tag authors can use in rich text.</translation>
+    </message>
+    <message>
+        <source>The strings of this installation in another language.</source>
+        <translation>The strings of this installation in another language.</translation>
+    </message>
+    <message>
+        <source>A class built in the admin exists on the machine it was built on and nowhere else, and the only record of how it was made is whatever somebody wrote down. As a script it is reviewable, re-runnable, and the same everywhere it is run.</source>
+        <translation>A class built in the admin exists on the machine it was built on and nowhere else, and the only record of how it was made is whatever somebody wrote down. As a script it is reviewable, re-runnable, and the same everywhere it is run.</translation>
+    </message>
+    <message>
+        <source>Rich text allows a &lt;custom&gt; tag with a name on it. Each name is a tag of its own with its own attributes and its own template, which is how a warning box, a pull quote or an embedded thing gets into content without a datatype or a module.</source>
+        <translation>Rich text allows a &lt;custom&gt; tag with a name on it. Each name is a tag of its own with its own attributes and its own template, which is how a warning box, a pull quote or an embedded thing gets into content without a datatype or a module.</translation>
+    </message>
+    <message>
+        <source>Every string in a template and in the kernel is wrapped in a translation call with a context and a source. A translation file answers those, and one that answers none of them is still worth shipping: it is the list of what there is to translate.</source>
+        <translation>Every string in a template and in the kernel is wrapped in a translation call with a context and a source. A translation file answers those, and one that answers none of them is still worth shipping: it is the list of what there is to translate.</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registration</translation>
+    </message>
+    <message>
+        <source>content.ini for the custom tags, site.ini for the translations, and design.ini so the templates are found. Without the last one a custom tag is allowed and draws nothing.</source>
+        <translation>content.ini for the custom tags, site.ini for the translations, and design.ini so the templates are found. Without the last one a custom tag is allowed and draws nothing.</translation>
+    </message>
+    <message>
+        <source>What is in it, how to run the class script, and what to do before it is run on a site with content on it.</source>
+        <translation>What is in it, how to run the class script, and what to do before it is run on a site with content on it.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>What the admin interface reads to show the extension name, version and licence.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>The packaged description of the extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>So the extension can be required by name rather than copied in.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Keeps editor leftovers and build output out of the repository.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
 </context>
 <context>
@@ -11916,6 +13225,386 @@ Note: The packages will not be uninstalled.</translation>
         <source>Back to the RAD tools</source>
         <translation>Back to the RAD tools</translation>
     </message>
+    <message>
+        <source>%methods methods</source>
+        <translation>%methods methods</translation>
+    </message>
+    <message>
+        <source>+%count methods</source>
+        <translation>+%count methods</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines lines, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Editing</source>
+        <translation>Editing</translation>
+    </message>
+    <message>
+        <source>Default value</source>
+        <translation>Default value</translation>
+    </message>
+    <message>
+        <source>Naming objects</source>
+        <translation>Naming objects</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Searchable</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sortable</translation>
+    </message>
+    <message>
+        <source>Text in and out</source>
+        <translation>Text in and out</translation>
+    </message>
+    <message>
+        <source>Information collector</source>
+        <translation>Information collector</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Files</translation>
+    </message>
+    <message>
+        <source>Simple string insertion</source>
+        <translation>Simple string insertion</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Packages</translation>
+    </message>
+    <message>
+        <source>Version differences</source>
+        <translation>Version differences</translation>
+    </message>
+    <message>
+        <source>Buttons of its own</source>
+        <translation>Buttons of its own</translation>
+    </message>
+    <message>
+        <source>On publish</source>
+        <translation>On publish</translation>
+    </message>
+    <message>
+        <source>Cleaning up</source>
+        <translation>Cleaning up</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Translatable</translation>
+    </message>
+    <message>
+        <source>Relates to other objects</source>
+        <translation>Relates to other objects</translation>
+    </message>
+    <message>
+        <source>Batch initialisation</source>
+        <translation>Batch initialisation</translation>
+    </message>
+    <message>
+        <source>Read what an editor typed, check it, and store it.</source>
+        <translation>Read what an editor typed, check it, and store it.</translation>
+    </message>
+    <message>
+        <source>Settings an editor chooses once, when the attribute is added to a content class.</source>
+        <translation>Settings an editor chooses once, when the attribute is added to a content class.</translation>
+    </message>
+    <message>
+        <source>What a new attribute holds before anybody has typed anything.</source>
+        <translation>What a new attribute holds before anybody has typed anything.</translation>
+    </message>
+    <message>
+        <source>What an object is called when this attribute is its name.</source>
+        <translation>What an object is called when this attribute is its name.</translation>
+    </message>
+    <message>
+        <source>Let what is in this attribute be found by a search.</source>
+        <translation>Let what is in this attribute be found by a search.</translation>
+    </message>
+    <message>
+        <source>Let a listing be sorted by this attribute.</source>
+        <translation>Let a listing be sorted by this attribute.</translation>
+    </message>
+    <message>
+        <source>Turn the value into one line of text, and read it back.</source>
+        <translation>Turn the value into one line of text, and read it back.</translation>
+    </message>
+    <message>
+        <source>Let a visitor fill this in on a published page, without editing the content.</source>
+        <translation>Let a visitor fill this in on a published page, without editing the content.</translation>
+    </message>
+    <message>
+        <source>Accept an uploaded file, and hand it back on download.</source>
+        <translation>Accept an uploaded file, and hand it back on download.</translation>
+    </message>
+    <message>
+        <source>Let a script set the value from one string, without a form.</source>
+        <translation>Let a script set the value from one string, without a form.</translation>
+    </message>
+    <message>
+        <source>Travel between installations inside a package.</source>
+        <translation>Travel between installations inside a package.</translation>
+    </message>
+    <message>
+        <source>Show what changed between two versions of an attribute.</source>
+        <translation>Show what changed between two versions of an attribute.</translation>
+    </message>
+    <message>
+        <source>Add a button inside the editing field that does something without leaving the form.</source>
+        <translation>Add a button inside the editing field that does something without leaving the form.</translation>
+    </message>
+    <message>
+        <source>Do something when the object is published, not when it is saved.</source>
+        <translation>Do something when the object is published, not when it is saved.</translation>
+    </message>
+    <message>
+        <source>Remove whatever the attribute left elsewhere when it goes.</source>
+        <translation>Remove whatever the attribute left elsewhere when it goes.</translation>
+    </message>
+    <message>
+        <source>Hold a different value per language.</source>
+        <translation>Hold a different value per language.</translation>
+    </message>
+    <message>
+        <source>Say that this attribute points at other content.</source>
+        <translation>Say that this attribute points at other content.</translation>
+    </message>
+    <message>
+        <source>Fill in the new attribute on existing content in one statement.</source>
+        <translation>Fill in the new attribute on existing content in one statement.</translation>
+    </message>
+    <message>
+        <source>Without this the attribute can be added to a class and will never hold anything. Everything else here is optional; this is not.</source>
+        <translation>Without this the attribute can be added to a class and will never hold anything. Everything else here is optional; this is not.</translation>
+    </message>
+    <message>
+        <source>A maximum length, a default value, which folder to browse from. Chosen in the class editor and read by every object of that class.</source>
+        <translation>A maximum length, a default value, which folder to browse from. Chosen in the class editor and read by every object of that class.</translation>
+    </message>
+    <message>
+        <source>Runs when a new version of an object is made. Without it a new attribute starts empty, which is right for some datatypes and wrong for others.</source>
+        <translation>Runs when a new version of an object is made. Without it a new attribute starts empty, which is right for some datatypes and wrong for others.</translation>
+    </message>
+    <message>
+        <source>Content classes name their objects from a pattern of attributes. This is what this datatype contributes to that name.</source>
+        <translation>Content classes name their objects from a pattern of attributes. This is what this datatype contributes to that name.</translation>
+    </message>
+    <message>
+        <source>The search engine asks every attribute for something to index. An attribute that answers nothing is invisible to search, however visible it is on the page.</source>
+        <translation>The search engine asks every attribute for something to index. An attribute that answers nothing is invisible to search, however visible it is on the page.</translation>
+    </message>
+    <message>
+        <source>Sorting happens in the database, over one column, so the value has to be reduced to something a column can order. That reduction is what these two methods are.</source>
+        <translation>Sorting happens in the database, over one column, so the value has to be reduced to something a column can order. That reduction is what these two methods are.</translation>
+    </message>
+    <message>
+        <source>What the command line import and export use, what a package carries, and what a script setting content in bulk goes through. Cheap to write and the first thing missed.</source>
+        <translation>What the command line import and export use, what a package carries, and what a script setting content in bulk goes through. Cheap to write and the first thing missed.</translation>
+    </message>
+    <message>
+        <source>This is how a poll, a contact form or a booking works: the attribute is part of the content, but what a visitor types is stored against the content rather than in it.</source>
+        <translation>This is how a poll, a contact form or a booking works: the attribute is part of the content, but what a visitor types is stored against the content rather than in it.</translation>
+    </message>
+    <message>
+        <source>Uploads arrive through three doors: a form, a path on disk, and a string. A datatype that takes files should answer all three, or it works in the editor and not from a script.</source>
+        <translation>Uploads arrive through three doors: a form, a path on disk, and a string. A datatype that takes files should answer all three, or it works in the editor and not from a script.</translation>
+    </message>
+    <message>
+        <source>The cheapest way to make a datatype usable from the command line and from an import.</source>
+        <translation>The cheapest way to make a datatype usable from the command line and from an import.</translation>
+    </message>
+    <message>
+        <source>A package carries content classes and objects between installations. Without these, an attribute of this type arrives empty on the other side - and nothing reports it.</source>
+        <translation>A package carries content classes and objects between installations. Without these, an attribute of this type arrives empty on the other side - and nothing reports it.</translation>
+    </message>
+    <message>
+        <source>What the version comparison screen draws. Without it the screen says the attribute changed and not how.</source>
+        <translation>What the version comparison screen draws. Without it the screen says the attribute changed and not how.</translation>
+    </message>
+    <message>
+        <source>Adding a row, browsing for an object, clearing a value: anything that changes the attribute while it is being edited and before it is stored.</source>
+        <translation>Adding a row, browsing for an object, clearing a value: anything that changes the attribute while it is being edited and before it is stored.</translation>
+    </message>
+    <message>
+        <source>A draft is saved many times and published once. Anything that should happen once - sending, indexing elsewhere, telling another system - belongs here and not in storeObjectAttribute().</source>
+        <translation>A draft is saved many times and published once. Anything that should happen once - sending, indexing elsewhere, telling another system - belongs here and not in storeObjectAttribute().</translation>
+    </message>
+    <message>
+        <source>Only needed by a datatype that keeps something outside its own row: a table, a file, a row somewhere else. Without it, deleting content leaves it behind for ever.</source>
+        <translation>Only needed by a datatype that keeps something outside its own row: a table, a file, a row somewhere else. Without it, deleting content leaves it behind for ever.</translation>
+    </message>
+    <message>
+        <source>Most datatypes should be. A value that must be the same in every language - a price, an id, a date - should not be.</source>
+        <translation>Most datatypes should be. A value that must be the same in every language - a price, an id, a date - should not be.</translation>
+    </message>
+    <message>
+        <source>What makes reverse relations, cache clearing on the other object, and &quot;what links here&quot; work. A datatype that holds object ids and does not say so silently breaks all three.</source>
+        <translation>What makes reverse relations, cache clearing on the other object, and &quot;what links here&quot; work. A datatype that holds object ids and does not say so silently breaks all three.</translation>
+    </message>
+    <message>
+        <source>Adding an attribute to a class with a hundred thousand objects takes a row each. This does it in one, which is the difference between a class edit that finishes and one that times out.</source>
+        <translation>Adding an attribute to a class with a hundred thousand objects takes a row each. This does it in one, which is the difference between a class edit that finishes and one that times out.</translation>
+    </message>
+    <message>
+        <source>Text of any length. What most datatypes end up using, including every one that keeps xml or serialised data.</source>
+        <translation>Text of any length. What most datatypes end up using, including every one that keeps xml or serialised data.</translation>
+    </message>
+    <message>
+        <source>One whole number. Also how a boolean, a timestamp and a foreign key are kept.</source>
+        <translation>One whole number. Also how a boolean, a timestamp and a foreign key are kept.</translation>
+    </message>
+    <message>
+        <source>One number with a fractional part. Not for money: two floats that look equal on screen need not be equal in a comparison.</source>
+        <translation>One number with a fractional part. Not for money: two floats that look equal on screen need not be equal in a comparison.</translation>
+    </message>
+    <message>
+        <source>What the database sorts on when this attribute is a sort field. Written by sortKey(), never read by anything else.</source>
+        <translation>What the database sorts on when this attribute is a sort field. Written by sortKey(), never read by anything else.</translation>
+    </message>
+    <message>
+        <source>The same, for text. Cut to 255 characters by the database, so it is a sort key and not a copy of the value.</source>
+        <translation>The same, for text. Cut to 255 characters by the database, so it is a sort key and not a copy of the value.</translation>
+    </message>
+    <message>
+        <source>The datatype class</source>
+        <translation>The datatype class</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registration</translation>
+    </message>
+    <message>
+        <source>API examples</source>
+        <translation>API examples</translation>
+    </message>
+    <message>
+        <source>Notes on storage</source>
+        <translation>Notes on storage</translation>
+    </message>
+    <message>
+        <source>The class itself, with a method for every capability chosen below and a note on each saying what the kernel calls it for.</source>
+        <translation>The class itself, with a method for every capability chosen below and a note on each saying what the kernel calls it for.</translation>
+    </message>
+    <message>
+        <source>The editing field, the view, the class settings form and whatever else the chosen capabilities need - each one a working template rather than an empty file.</source>
+        <translation>The editing field, the view, the class settings form and whatever else the chosen capabilities need - each one a working template rather than an empty file.</translation>
+    </message>
+    <message>
+        <source>content.ini so the kernel finds the datatype, and design.ini so it finds the templates. Without the second the datatype loads and draws nothing.</source>
+        <translation>content.ini so the kernel finds the datatype, and design.ini so it finds the templates. Without the second the datatype loads and draws nothing.</translation>
+    </message>
+    <message>
+        <source>Setting the value from a script, reading it in a template, adding the attribute to a class, and what each method is called for.</source>
+        <translation>Setting the value from a script, reading it in a template, adding the attribute to a class, and what each method is called for.</translation>
+    </message>
+    <message>
+        <source>Which column holds what, and what a table of its own would have to look like if the columns are not enough.</source>
+        <translation>Which column holds what, and what a table of its own would have to look like if the columns are not enough.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>What the admin interface reads to show the extension name, version and licence.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>The packaged description of the extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>So the extension can be required by name rather than copied in.</translation>
+    </message>
+    <message>
+        <source>What it is, how to switch it on, and what each chosen capability means.</source>
+        <translation>What it is, how to switch it on, and what each chosen capability means.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Keeps editor leftovers and build output out of the repository.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
+    </message>
+    <message>
+        <source>Checks what was submitted before anything is stored. Return STATE_INVALID and set a validation error on the attribute to send the editor back to the form; returning ACCEPTED without looking is how bad content gets in.</source>
+        <translation>Checks what was submitted before anything is stored. Return STATE_INVALID and set a validation error on the attribute to send the editor back to the form; returning ACCEPTED without looking is how bad content gets in.</translation>
+    </message>
+    <message>
+        <source>Takes the submitted value off the request and puts it on the attribute. Runs after validation passed, so the value is already known to be sound.</source>
+        <translation>Takes the submitted value off the request and puts it on the attribute. Runs after validation passed, so the value is already known to be sound.</translation>
+    </message>
+    <message>
+        <source>The last chance to change what goes in the row, and the only place a datatype with a table of its own writes to it. The attribute row itself is stored by the kernel straight after.</source>
+        <translation>The last chance to change what goes in the row, and the only place a datatype with a table of its own writes to it. The attribute row itself is stored by the kernel straight after.</translation>
+    </message>
+    <message>
+        <source>What a template gets when it asks for .content. Anything expensive here is paid for on every page that shows the attribute, so it is worth keeping cheap or keeping cached.</source>
+        <translation>What a template gets when it asks for .content. Anything expensive here is paid for on every page that shows the attribute, so it is worth keeping cheap or keeping cached.</translation>
+    </message>
+    <message>
+        <source>Whether there is anything in it. What &quot;has_content&quot; reads in a template, and what decides whether an empty attribute is drawn at all.</source>
+        <translation>Whether there is anything in it. What &quot;has_content&quot; reads in a template, and what decides whether an empty attribute is drawn at all.</translation>
+    </message>
+    <message>
+        <source>Checks the settings before the class is stored. A class is edited rarely and read constantly, so a check here is cheap and a mistake here is expensive.</source>
+        <translation>Checks the settings before the class is stored. A class is edited rarely and read constantly, so a check here is cheap and a mistake here is expensive.</translation>
+    </message>
+    <message>
+        <source>Takes the settings off the request and puts them on the class attribute.</source>
+        <translation>Takes the settings off the request and puts them on the class attribute.</translation>
+    </message>
+    <message>
+        <source>Runs before the class attribute row is written. Where a setting is worked out from other settings rather than typed.</source>
+        <translation>Runs before the class attribute row is written. Where a setting is worked out from other settings rather than typed.</translation>
+    </message>
+    <message>
+        <source>Runs after. Where a datatype keeping class settings in a table of its own writes them.</source>
+        <translation>Runs after. Where a datatype keeping class settings in a table of its own writes them.</translation>
+    </message>
+    <message>
+        <source>Sets the defaults the first time the attribute is added to a class, so the class editor opens with something sensible rather than with zeroes.</source>
+        <translation>Sets the defaults the first time the attribute is added to a class, so the class editor opens with something sensible rather than with zeroes.</translation>
+    </message>
+    <message>
+        <source>What a template gets from the class attribute. Used by an edit template that has to draw itself differently depending on a setting.</source>
+        <translation>What a template gets from the class attribute. Used by an edit template that has to draw itself differently depending on a setting.</translation>
+    </message>
+    <message>
+        <source>Called when an attribute is first made, and again for each new version. $currentVersion is null the very first time; on a new version, copy from $originalContentObjectAttribute or the value is lost.</source>
+        <translation>Called when an attribute is first made, and again for each new version. $currentVersion is null the very first time; on a new version, copy from $originalContentObjectAttribute or the value is lost.</translation>
+    </message>
+    <message>
+        <source>A short line of plain text. It ends up in page titles, in listings, in the admin and in the url of every object named by it, so it must be text and not markup.</source>
+        <translation>A short line of plain text. It ends up in page titles, in listings, in the admin and in the url of every object named by it, so it must be text and not markup.</translation>
+    </message>
+    <message>
+        <source>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</source>
+        <translation>Whether this datatype is worth indexing at all. False for anything whose value means nothing as words - a colour, an id, a flag.</translation>
+    </message>
+    <message>
+        <source>The words to index. Plain text, with markup taken out: what is indexed is what somebody would search for, not what is stored.</source>
+        <translation>The words to index. Plain text, with markup taken out: what is indexed is what somebody would search for, not what is stored.</translation>
+    </message>
+    <message>
+        <source>The whole value as one string. Anything fromString() cannot read back is a value that will not survive an export and import.</source>
+        <translation>The whole value as one string. Anything fromString() cannot read back is a value that will not survive an export and import.</translation>
+    </message>
+    <message>
+        <source>The other direction. Has to cope with a string written by an older version of the datatype, or by a person.</source>
+        <translation>The other direction. Has to cope with a string written by an older version of the datatype, or by a person.</translation>
+    </message>
+    <message>
+        <source>Whether each language keeps its own value. Turning this off after content exists leaves the translations behind, unreachable.</source>
+        <translation>Whether each language keeps its own value. Turning this off after content exists leaves the translations behind, unreachable.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/designextension</name>
@@ -12075,6 +13764,118 @@ Note: The packages will not be uninstalled.</translation>
         <source>Back to the RAD tools</source>
         <translation>Back to the RAD tools</translation>
     </message>
+    <message>
+        <source>Becomes extension/%name and design/%name.</source>
+        <translation>Becomes extension/%name and design/%name.</translation>
+    </message>
+    <message>
+        <source>My Site Design</source>
+        <translation>My Site Design</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines lines</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines lines, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Page layout</source>
+        <translation>Page layout</translation>
+    </message>
+    <message>
+        <source>Page parts</source>
+        <translation>Page parts</translation>
+    </message>
+    <message>
+        <source>Stylesheets</source>
+        <translation>Stylesheets</translation>
+    </message>
+    <message>
+        <source>Print stylesheet</source>
+        <translation>Print stylesheet</translation>
+    </message>
+    <message>
+        <source>JavaScript</source>
+        <translation>JavaScript</translation>
+    </message>
+    <message>
+        <source>Images directory</source>
+        <translation>Images directory</translation>
+    </message>
+    <message>
+        <source>Template overrides</source>
+        <translation>Template overrides</translation>
+    </message>
+    <message>
+        <source>Siteaccess settings</source>
+        <translation>Siteaccess settings</translation>
+    </message>
+    <message>
+        <source>Template operators</source>
+        <translation>Template operators</translation>
+    </message>
+    <message>
+        <source>pagelayout.tpl, the frame every page is drawn inside.</source>
+        <translation>pagelayout.tpl, the frame every page is drawn inside.</translation>
+    </message>
+    <message>
+        <source>The head, header and footer the page layout includes, so each can be overridden on its own.</source>
+        <translation>The head, header and footer the page layout includes, so each can be overridden on its own.</translation>
+    </message>
+    <message>
+        <source>A site stylesheet, registered in design.ini so it is loaded without touching a template.</source>
+        <translation>A site stylesheet, registered in design.ini so it is loaded without touching a template.</translation>
+    </message>
+    <message>
+        <source>A second stylesheet for print, so a page can be put on paper without the furniture.</source>
+        <translation>A second stylesheet for print, so a page can be put on paper without the furniture.</translation>
+    </message>
+    <message>
+        <source>A site script, registered in design.ini alongside the stylesheet.</source>
+        <translation>A site script, registered in design.ini alongside the stylesheet.</translation>
+    </message>
+    <message>
+        <source>design/&lt;name&gt;/images, where ezimage looks.</source>
+        <translation>design/&lt;name&gt;/images, where ezimage looks.</translation>
+    </message>
+    <message>
+        <source>override.ini and an example full view, to show where an override goes and how it is matched.</source>
+        <translation>override.ini and an example full view, to show where an override goes and how it is matched.</translation>
+    </message>
+    <message>
+        <source>A settings/siteaccess/&lt;name&gt; directory, for settings that apply to one site only.</source>
+        <translation>A settings/siteaccess/&lt;name&gt; directory, for settings that apply to one site only.</translation>
+    </message>
+    <message>
+        <source>An autoloads directory with a registered operator, ready to extend.</source>
+        <translation>An autoloads directory with a registered operator, ready to extend.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>What the admin interface reads to show the extension name, version and licence.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>The packaged description of the extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>So the extension can be required by name rather than copied in.</translation>
+    </message>
+    <message>
+        <source>What it is, how to switch it on, and what is inside it.</source>
+        <translation>What it is, how to switch it on, and what is inside it.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Keeps editor leftovers and build output out of the repository.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/handler</name>
@@ -12209,6 +14010,1222 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Back to the RAD tools</source>
         <translation>Back to the RAD tools</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines lines, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Server side ajax function</source>
+        <translation>Server side ajax function</translation>
+    </message>
+    <message>
+        <source>Attribute operator format</source>
+        <translation>Attribute operator format</translation>
+    </message>
+    <message>
+        <source>Basket info handler</source>
+        <translation>Basket info handler</translation>
+    </message>
+    <message>
+        <source>Binary file handler</source>
+        <translation>Binary file handler</translation>
+    </message>
+    <message>
+        <source>Cluster file handler</source>
+        <translation>Cluster file handler</translation>
+    </message>
+    <message>
+        <source>Database handler</source>
+        <translation>Database handler</translation>
+    </message>
+    <message>
+        <source>DFS backend</source>
+        <translation>DFS backend</translation>
+    </message>
+    <message>
+        <source>DFS database backend</source>
+        <translation>DFS database backend</translation>
+    </message>
+    <message>
+        <source>Exchange rate handler</source>
+        <translation>Exchange rate handler</translation>
+    </message>
+    <message>
+        <source>Compiled settings cache</source>
+        <translation>Compiled settings cache</translation>
+    </message>
+    <message>
+        <source>User login handler</source>
+        <translation>User login handler</translation>
+    </message>
+    <message>
+        <source>Mail transport</source>
+        <translation>Mail transport</translation>
+    </message>
+    <message>
+        <source>Mobile device filter</source>
+        <translation>Mobile device filter</translation>
+    </message>
+    <message>
+        <source>Notification handler</source>
+        <translation>Notification handler</translation>
+    </message>
+    <message>
+        <source>Notification event type</source>
+        <translation>Notification event type</translation>
+    </message>
+    <message>
+        <source>Package creation handler</source>
+        <translation>Package creation handler</translation>
+    </message>
+    <message>
+        <source>Package handler</source>
+        <translation>Package handler</translation>
+    </message>
+    <message>
+        <source>Package installation handler</source>
+        <translation>Package installation handler</translation>
+    </message>
+    <message>
+        <source>Payment gateway</source>
+        <translation>Payment gateway</translation>
+    </message>
+    <message>
+        <source>Payment gateway, transparent</source>
+        <translation>Payment gateway, transparent</translation>
+    </message>
+    <message>
+        <source>Asynchronous publishing filter</source>
+        <translation>Asynchronous publishing filter</translation>
+    </message>
+    <message>
+        <source>REST prefix filter</source>
+        <translation>REST prefix filter</translation>
+    </message>
+    <message>
+        <source>REST pre routing filter</source>
+        <translation>REST pre routing filter</translation>
+    </message>
+    <message>
+        <source>REST provider</source>
+        <translation>REST provider</translation>
+    </message>
+    <message>
+        <source>REST request filter</source>
+        <translation>REST request filter</translation>
+    </message>
+    <message>
+        <source>REST response filter</source>
+        <translation>REST response filter</translation>
+    </message>
+    <message>
+        <source>REST result filter</source>
+        <translation>REST result filter</translation>
+    </message>
+    <message>
+        <source>REST route filter</source>
+        <translation>REST route filter</translation>
+    </message>
+    <message>
+        <source>Search engine</source>
+        <translation>Search engine</translation>
+    </message>
+    <message>
+        <source>Session handler</source>
+        <translation>Session handler</translation>
+    </message>
+    <message>
+        <source>Shipping handler</source>
+        <translation>Shipping handler</translation>
+    </message>
+    <message>
+        <source>Static cache handler</source>
+        <translation>Static cache handler</translation>
+    </message>
+    <message>
+        <source>URL alias filter</source>
+        <translation>URL alias filter</translation>
+    </message>
+    <message>
+        <source>VAT handler</source>
+        <translation>VAT handler</translation>
+    </message>
+    <message>
+        <source>XML text input handler</source>
+        <translation>XML text input handler</translation>
+    </message>
+    <message>
+        <source>XML text output handler</source>
+        <translation>XML text output handler</translation>
+    </message>
+    <message>
+        <source>A class of functions a page can call over http and get json back from.</source>
+        <translation>A class of functions a page can call over http and get json back from.</translation>
+    </message>
+    <message>
+        <source>A new format the |attribute template operator can print in.</source>
+        <translation>A new format the |attribute template operator can print in.</translation>
+    </message>
+    <message>
+        <source>What the basket totals come to, once everything else has had its say.</source>
+        <translation>What the basket totals come to, once everything else has had its say.</translation>
+    </message>
+    <message>
+        <source>How an uploaded file is stored, and how it is handed back to somebody downloading it.</source>
+        <translation>How an uploaded file is stored, and how it is handed back to somebody downloading it.</translation>
+    </message>
+    <message>
+        <source>Where files live when more than one server serves the same site: every image, every binary, and every cache file the kernel writes.</source>
+        <translation>Where files live when more than one server serves the same site: every image, every binary, and every cache file the kernel writes.</translation>
+    </message>
+    <message>
+        <source>The layer every query in the system goes through on its way to the server.</source>
+        <translation>The layer every query in the system goes through on its way to the server.</translation>
+    </message>
+    <message>
+        <source>Where the DFS cluster handler puts the bytes, once the database has been told the file exists.</source>
+        <translation>Where the DFS cluster handler puts the bytes, once the database has been told the file exists.</translation>
+    </message>
+    <message>
+        <source>The other half of DFS: the index of which files exist, how big they are, and which are being generated right now.</source>
+        <translation>The other half of DFS: the index of which files exist, how big they are, and which are being generated right now.</translation>
+    </message>
+    <message>
+        <source>Where the rates between the shop currencies come from.</source>
+        <translation>Where the rates between the shop currencies come from.</translation>
+    </message>
+    <message>
+        <source>Keeps the compiled ini cache somewhere shared, rather than on each machine.</source>
+        <translation>Keeps the compiled ini cache somewhere shared, rather than on each machine.</translation>
+    </message>
+    <message>
+        <source>Where the system goes to find out whether a password is right.</source>
+        <translation>Where the system goes to find out whether a password is right.</translation>
+    </message>
+    <message>
+        <source>How mail leaves the system.</source>
+        <translation>How mail leaves the system.</translation>
+    </message>
+    <message>
+        <source>Decides whether a request came from a phone, and what to do about it.</source>
+        <translation>Decides whether a request came from a phone, and what to do about it.</translation>
+    </message>
+    <message>
+        <source>What decides who gets told about an event, and turns it into something sent.</source>
+        <translation>What decides who gets told about an event, and turns it into something sent.</translation>
+    </message>
+    <message>
+        <source>A new kind of thing the system can notify people about.</source>
+        <translation>A new kind of thing the system can notify people about.</translation>
+    </message>
+    <message>
+        <source>A wizard in the admin that gathers something up into a package.</source>
+        <translation>A wizard in the admin that gathers something up into a package.</translation>
+    </message>
+    <message>
+        <source>A new kind of thing a package can carry, install and uninstall.</source>
+        <translation>A new kind of thing a package can carry, install and uninstall.</translation>
+    </message>
+    <message>
+        <source>A wizard in the admin that puts a package item in, with the questions that go with it.</source>
+        <translation>A wizard in the admin that puts a package item in, with the questions that go with it.</translation>
+    </message>
+    <message>
+        <source>Takes a basket to somewhere money can be paid, and takes the answer back.</source>
+        <translation>Takes a basket to somewhere money can be paid, and takes the answer back.</translation>
+    </message>
+    <message>
+        <source>Takes the payment without the buyer ever leaving the site.</source>
+        <translation>Takes the payment without the buyer ever leaving the site.</translation>
+    </message>
+    <message>
+        <source>Decides whether a version is published in the request or handed to the queue.</source>
+        <translation>Decides whether a version is published in the request or handed to the queue.</translation>
+    </message>
+    <message>
+        <source>Decides where the api lives, and which version of it a request asked for.</source>
+        <translation>Decides where the api lives, and which version of it a request asked for.</translation>
+    </message>
+    <message>
+        <source>Runs before the REST routes are even built.</source>
+        <translation>Runs before the REST routes are even built.</translation>
+    </message>
+    <message>
+        <source>A set of REST routes and the controller behind them.</source>
+        <translation>A set of REST routes and the controller behind them.</translation>
+    </message>
+    <message>
+        <source>Runs once the request object is built and the route is known.</source>
+        <translation>Runs once the request object is built and the route is known.</translation>
+    </message>
+    <message>
+        <source>Runs on the finished response, after the view has generated it.</source>
+        <translation>Runs on the finished response, after the view has generated it.</translation>
+    </message>
+    <message>
+        <source>Runs after the controller has worked out its answer, before it is turned into a response.</source>
+        <translation>Runs after the controller has worked out its answer, before it is turned into a response.</translation>
+    </message>
+    <message>
+        <source>What decides whether a REST route needs the caller to have proved who they are.</source>
+        <translation>What decides whether a REST route needs the caller to have proved who they are.</translation>
+    </message>
+    <message>
+        <source>What indexes content as it is published, and what answers when somebody searches.</source>
+        <translation>What indexes content as it is published, and what answers when somebody searches.</translation>
+    </message>
+    <message>
+        <source>Where sessions are kept, how they are cleaned up, and what happens when a user logs in or out.</source>
+        <translation>Where sessions are kept, how they are cleaned up, and what happens when a user logs in or out.</translation>
+    </message>
+    <message>
+        <source>What a basket costs to deliver.</source>
+        <translation>What a basket costs to deliver.</translation>
+    </message>
+    <message>
+        <source>What writes pages to disk so the web server can serve them without php.</source>
+        <translation>What writes pages to disk so the web server can serve them without php.</translation>
+    </message>
+    <message>
+        <source>Runs over every url this system generates, before it is stored, and may rewrite it.</source>
+        <translation>Runs over every url this system generates, before it is stored, and may rewrite it.</translation>
+    </message>
+    <message>
+        <source>What decides which rate of tax a product is sold at.</source>
+        <translation>What decides which rate of tax a product is sold at.</translation>
+    </message>
+    <message>
+        <source>What turns what an editor typed into the stored XML of an ezxmltext attribute.</source>
+        <translation>What turns what an editor typed into the stored XML of an ezxmltext attribute.</translation>
+    </message>
+    <message>
+        <source>What turns the stored XML of an ezxmltext attribute into what a visitor sees.</source>
+        <translation>What turns the stored XML of an ezxmltext attribute into what a visitor sees.</translation>
+    </message>
+    <message>
+        <source>A module view is a page: it has a template, a layout and a policy. An ajax function is a method that takes an argument list and returns a value, reached at one address, with the answer encoded for you. It is the right shape for the small things a page asks for while it is open.</source>
+        <translation>A module view is a page: it has a template, a layout and a policy. An ajax function is a method that takes an argument list and returns a value, reached at one address, with the answer encoded for you. It is the right shape for the small things a page asks for while it is open.</translation>
+    </message>
+    <message>
+        <source>attribute( show ) is how a template author finds out what is in a variable, and it prints html because that is where it usually goes. A formatter of your own prints the same walk as json for a browser console, as plain text for a log, or as anything else that reads better than a table in a page.</source>
+        <translation>attribute( show ) is how a template author finds out what is in a variable, and it prints html because that is where it usually goes. A formatter of your own prints the same walk as json for a browser console, as plain text for a log, or as anything else that reads better than a table in a page.</translation>
+    </message>
+    <message>
+        <source>This runs after the prices, the VAT and the shipping are known and may change the totals. It is where a discount code, a member price, a rounding rule or a minimum order charge belongs - in one place, rather than in every template that shows a total.</source>
+        <translation>This runs after the prices, the VAT and the shipping are known and may change the totals. It is where a discount code, a member price, a rounding rule or a minimum order charge belongs - in one place, rather than in every template that shows a total.</translation>
+    </message>
+    <message>
+        <source>The default stores files under var/ and sends them with php. A handler of your own can put them somewhere else, hand the download to the web server, or check who is asking before it answers.</source>
+        <translation>The default stores files under var/ and sends them with php. A handler of your own can put them somewhere else, hand the download to the web server, or check who is asking before it answers.</translation>
+    </message>
+    <message>
+        <source>With one server, files on disk are fine. With several, each would write its own copy and serve stale ones. A cluster handler puts them somewhere all the servers share.</source>
+        <translation>With one server, files on disk are fine. With several, each would write its own copy and serve stale ones. A cluster handler puts them somewhere all the servers share.</translation>
+    </message>
+    <message>
+        <source>Extending the handler that ships is how a read goes to a replica, a query gets logged or timed, or a table name gets rewritten - without touching a single caller. Writing one from eZDBInterface instead means ninety methods, and is only worth it for a database nothing supports yet.</source>
+        <translation>Extending the handler that ships is how a read goes to a replica, a query gets logged or timed, or a table name gets rewritten - without touching a single caller. Writing one from eZDBInterface instead means ninety methods, and is only worth it for a database nothing supports yet.</translation>
+    </message>
+    <message>
+        <source>The DFS handler keeps an index of files in the database and the files themselves somewhere else. That somewhere else is this: a mounted filesystem by default, but it could be object storage or anything reachable.</source>
+        <translation>The DFS handler keeps an index of files in the database and the files themselves somewhere else. That somewhere else is this: a mounted filesystem by default, but it could be object storage or anything reachable.</translation>
+    </message>
+    <message>
+        <source>This is what stops two servers building the same cache entry at the same time, and what makes a delete on one server take effect on all of them. Extending the backend that ships means only the parts that need to differ have to be written; every method below already works.</source>
+        <translation>This is what stops two servers building the same cache entry at the same time, and what makes a delete on one server take effect on all of them. Extending the backend that ships means only the parts that need to differ have to be written; every method below already works.</translation>
+    </message>
+    <message>
+        <source>The handler that ships reads the European Central Bank feed, which covers the currencies it covers and no others. A handler of your own is how rates come from a bank, a provider, or a spreadsheet a person maintains - updated by the same cronjob, stored the same way, shown in the same place.</source>
+        <translation>The handler that ships reads the European Central Bank feed, which covers the currencies it covers and no others. A handler of your own is how rates come from a bank, a provider, or a spreadsheet a person maintains - updated by the same cronjob, stored the same way, shown in the same place.</translation>
+    </message>
+    <message>
+        <source>Settings are compiled once and read on every request. On one machine a file is the right answer; on several it means every machine compiling the same thing and clearing it separately. Putting it in Redis or Valkey makes it one cache, cleared once.</source>
+        <translation>Settings are compiled once and read on every request. On one machine a file is the right answer; on several it means every machine compiling the same thing and clearing it separately. Putting it in Redis or Valkey makes it one cache, cleared once.</translation>
+    </message>
+    <message>
+        <source>The default checks a hash in ezuser. A handler of your own asks somebody else - a directory, a single sign on service, another application - and makes the user here when the answer comes back yes. It is how a site stops being the place passwords are kept.</source>
+        <translation>The default checks a hash in ezuser. A handler of your own asks somebody else - a directory, a single sign on service, another application - and makes the user here when the answer comes back yes. It is how a site stops being the place passwords are kept.</translation>
+    </message>
+    <message>
+        <source>The default hands mail to php, which hands it to the machine. A transport of your own can send it through an api, queue it, or write it to disk on a machine that must not send anything.</source>
+        <translation>The default hands mail to php, which hands it to the machine. A transport of your own can send it through an api, queue it, or write it to disk on a machine that must not send anything.</translation>
+    </message>
+    <message>
+        <source>The one that ships matches user agents against a list of patterns, which ages badly. A filter of your own can use a header a proxy sets, a hint the browser gives, or anything else that is actually reliable - and decide whether to redirect or simply to say so and let the templates differ.</source>
+        <translation>The one that ships matches user agents against a list of patterns, which ages badly. A filter of your own can use a header a proxy sets, a hint the browser gives, or anything else that is actually reliable - and decide whether to redirect or simply to say so and let the templates differ.</translation>
+    </message>
+    <message>
+        <source>A type says an event happened; a handler says who cares. The three that ship do subtree subscriptions, digests and collaboration. A handler of your own is how a rule of any other shape - everyone in a role, everyone who bought something, everyone on a list held elsewhere - gets its own settings tab in the user profile and its own place in the digest.</source>
+        <translation>A type says an event happened; a handler says who cares. The three that ship do subtree subscriptions, digests and collaboration. A handler of your own is how a rule of any other shape - everyone in a role, everyone who bought something, everyone on a list held elsewhere - gets its own settings tab in the user profile and its own place in the digest.</translation>
+    </message>
+    <message>
+        <source>The four that ship cover publishing and collaboration. A type of your own is how anything else - an order placed, a form filled in, a job finished - becomes something a user can subscribe to and be told about, through the machinery that already exists for digests, transports and subscriptions.</source>
+        <translation>The four that ship cover publishing and collaboration. A type of your own is how anything else - an order placed, a form filled in, a job finished - becomes something a user can subscribe to and be told about, through the machinery that already exists for digests, transports and subscriptions.</translation>
+    </message>
+    <message>
+        <source>The export screens for classes, objects, styles and extensions are each one of these. A handler of your own adds a screen of the same kind for whatever an extension owns, with the steps, the forms and the validation it needs, rather than a document telling somebody what to copy.</source>
+        <translation>The export screens for classes, objects, styles and extensions are each one of these. A handler of your own adds a screen of the same kind for whatever an extension owns, with the steps, the forms and the validation it needs, rather than a document telling somebody what to copy.</translation>
+    </message>
+    <message>
+        <source>Packages already carry classes, objects, files and ini settings. A handler of your own is how anything else an extension owns - rows in its own tables, a set of roles, a configured workflow - travels between installations in the same package rather than in a document telling somebody what to click.</source>
+        <translation>Packages already carry classes, objects, files and ini settings. A handler of your own is how anything else an extension owns - rows in its own tables, a set of roles, a configured workflow - travels between installations in the same package rather than in a document telling somebody what to click.</translation>
+    </message>
+    <message>
+        <source>Installing is rarely one button: something already exists, a name clashes, a choice has to be made. This is where those questions are asked, once, instead of the install half failing and leaving somebody to work out what happened.</source>
+        <translation>Installing is rarely one button: something already exists, a name clashes, a choice has to be made. This is where those questions are asked, once, instead of the install half failing and leaving somebody to work out what happened.</translation>
+    </message>
+    <message>
+        <source>The shop can price a basket, tax it and deliver it, and stops at taking money. A gateway is the piece that does not ship: it sends the buyer to whoever holds the card details, waits, and tells the workflow whether the payment happened.</source>
+        <translation>The shop can price a basket, tax it and deliver it, and stops at taking money. A gateway is the piece that does not ship: it sends the buyer to whoever holds the card details, waits, and tells the workflow whether the payment happened.</translation>
+    </message>
+    <message>
+        <source>The common shape now, and the one people mean when they say payment gateway. The card details are collected on your own checkout page - or by the gateway&apos;s javascript, which hands back a token instead - and the charge is made server to server while the buyer waits. No redirect, no coming back, no second visit: one call to execute() decides the order.</source>
+        <translation>The common shape now, and the one people mean when they say payment gateway. The card details are collected on your own checkout page - or by the gateway&apos;s javascript, which hands back a token instead - and the charge is made server to server while the buyer waits. No redirect, no coming back, no second visit: one call to execute() decides the order.</translation>
+    </message>
+    <message>
+        <source>Publishing a large object blocks whoever pressed the button. Handing it to the queue does not, but a queue that takes everything makes the site feel wrong for small edits. A filter of your own is where that line gets drawn - by size, by class, by who is editing, by time of day.</source>
+        <translation>Publishing a large object blocks whoever pressed the button. Handing it to the queue does not, but a queue that takes everything makes the site feel wrong for small edits. A filter of your own is where that line gets drawn - by size, by class, by who is editing, by time of day.</translation>
+    </message>
+    <message>
+        <source>The one that ships reads /api/&lt;provider&gt;/v&lt;n&gt;/ out of the path with a regular expression. Replacing it is how the api moves somewhere else, or takes its version from a header or an Accept type instead of from the path - which is what most people mean by versioning an api now.</source>
+        <translation>The one that ships reads /api/&lt;provider&gt;/v&lt;n&gt;/ out of the path with a regular expression. Replacing it is how the api moves somewhere else, or takes its version from a header or an Accept type instead of from the path - which is what most people mean by versioning an api now.</translation>
+    </message>
+    <message>
+        <source>The earliest place there is to see a REST request. Nothing has been matched and no controller has been chosen, so this is where a request is rewritten, refused, or sent somewhere else entirely before anything has committed to answering it.</source>
+        <translation>The earliest place there is to see a REST request. Nothing has been matched and no controller has been chosen, so this is where a request is rewritten, refused, or sent somewhere else entirely before anything has committed to answering it.</translation>
+    </message>
+    <message>
+        <source>The REST layer that ships answers about content. A provider of your own puts routes of any shape under the same api, with the same authentication, the same output formats and the same error handling, rather than a module view pretending to be an api.</source>
+        <translation>The REST layer that ships answers about content. A provider of your own puts routes of any shape under the same api, with the same authentication, the same output formats and the same error handling, rather than a module view pretending to be an api.</translation>
+    </message>
+    <message>
+        <source>Later than the pre routing filter and better informed: the route has been matched, so this knows which controller is about to answer. Where a header is read, a parameter is normalised, or a request is turned away on grounds that depend on what it asked for.</source>
+        <translation>Later than the pre routing filter and better informed: the route has been matched, so this knows which controller is about to answer. Where a header is read, a parameter is normalised, or a request is turned away on grounds that depend on what it asked for.</translation>
+    </message>
+    <message>
+        <source>The last thing that happens before a REST answer leaves. This is the output filter of the REST layer: a header added to every answer, a body wrapped, a content type changed, without touching a single controller.</source>
+        <translation>The last thing that happens before a REST answer leaves. This is the output filter of the REST layer: a header added to every answer, a body wrapped, a content type changed, without touching a single controller.</translation>
+    </message>
+    <message>
+        <source>The result is still data at this point rather than json or xml, so this is the place to add to it, take something out of it, or reshape it - once, for every format, rather than in each renderer.</source>
+        <translation>The result is still data at this point rather than json or xml, so this is the place to add to it, take something out of it, or reshape it - once, for every format, rather than in each renderer.</translation>
+    </message>
+    <message>
+        <source>The filter that ships reads a list of exceptions out of rest.ini. A filter of your own can decide per request - by route, by method, by what is being asked for - which is the difference between one public endpoint and a second copy of the api with the authentication taken out.</source>
+        <translation>The filter that ships reads a list of exceptions out of rest.ini. A filter of your own can decide per request - by route, by method, by what is being asked for - which is the difference between one public endpoint and a second copy of the api with the authentication taken out.</translation>
+    </message>
+    <message>
+        <source>The engine that ships keeps its index in the database, which is fine until the content or the queries outgrow it. An engine of your own can hand indexing and searching to something built for it.</source>
+        <translation>The engine that ships keeps its index in the database, which is fine until the content or the queries outgrow it. An engine of your own can hand indexing and searching to something built for it.</translation>
+    </message>
+    <message>
+        <source>The default lets php keep sessions wherever php.ini says. A handler of your own can put them in a database, in a cache, or anywhere shared between servers.</source>
+        <translation>The default lets php keep sessions wherever php.ini says. A handler of your own can put them in a database, in a cache, or anywhere shared between servers.</translation>
+    </message>
+    <message>
+        <source>Nothing ships as a default, so without a handler of your own the shop has no shipping at all. This is where a weight table, a flat rate, a carrier api or free delivery over a threshold lives.</source>
+        <translation>Nothing ships as a default, so without a handler of your own the shop has no shipping at all. This is where a weight table, a flat rate, a carrier api or free delivery over a threshold lives.</translation>
+    </message>
+    <message>
+        <source>The handler that ships writes files under a directory. One of your own could write somewhere else, push to a cache in front of the site, or record what it would have done without doing it.</source>
+        <translation>The handler that ships writes files under a directory. One of your own could write somewhere else, push to a cache in front of the site, or record what it would have done without doing it.</translation>
+    </message>
+    <message>
+        <source>This is the nearest thing here to an output filter over addresses: every url alias, for every object, in every language, passes through it as it is made. It is how a prefix is added, a word is stripped, or a house rule about what a url may contain is enforced in one place rather than in every template that links.</source>
+        <translation>This is the nearest thing here to an output filter over addresses: every url alias, for every object, in every language, passes through it as it is made. It is how a prefix is added, a word is stripped, or a house rule about what a url may contain is enforced in one place rather than in every template that links.</translation>
+    </message>
+    <message>
+        <source>The handler that ships reads the rate off the product class and the buyer country. A handler of your own is how any other rule applies - a category held elsewhere, a rate that depends on the buyer rather than the goods, a rate fetched from a service - without a copy of the tax rules in every template.</source>
+        <translation>The handler that ships reads the rate off the product class and the buyer country. A handler of your own is how any other rule applies - a category held elsewhere, a rate that depends on the buyer rather than the goods, a rate fetched from a service - without a copy of the tax rules in every template.</translation>
+    </message>
+    <message>
+        <source>This is the only place the editing format and the stored format meet. A handler of your own is how a different editor, a different markup, or a stricter set of rules about what may be stored gets in - without changing the datatype or anything that reads it.</source>
+        <translation>This is the only place the editing format and the stored format meet. A handler of your own is how a different editor, a different markup, or a stricter set of rules about what may be stored gets in - without changing the datatype or anything that reads it.</translation>
+    </message>
+    <message>
+        <source>The handler that ships renders to XHTML through a template per tag. A handler of your own is how the same stored content is rendered to something else entirely - plain text for a digest, a feed format, a print layout - without a second copy of the content existing anywhere.</source>
+        <translation>The handler that ships renders to XHTML through a template per tag. A handler of your own is how the same stored content is rendered to something else entirely - plain text for a digest, a feed format, a print layout - without a second copy of the content existing anywhere.</translation>
+    </message>
+    <message>
+        <source>The handler</source>
+        <translation>The handler</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registration</translation>
+    </message>
+    <message>
+        <source>API examples</source>
+        <translation>API examples</translation>
+    </message>
+    <message>
+        <source>The class itself, with a method for every one the contract requires and a note on each saying what it is for and when it is called.</source>
+        <translation>The class itself, with a method for every one the contract requires and a note on each saying what it is for and when it is called.</translation>
+    </message>
+    <message>
+        <source>The ini that names this class in place of the default.</source>
+        <translation>The ini that names this class in place of the default.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>What the admin interface reads to show the extension name, version and licence.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>The packaged description of the extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>So the extension can be required by name rather than copied in.</translation>
+    </message>
+    <message>
+        <source>A file of worked examples: how the kernel reaches this handler, what it passes, and how to call it yourself from a script or a cronjob.</source>
+        <translation>A file of worked examples: how the kernel reaches this handler, what it passes, and how to call it yourself from a script or a cronjob.</translation>
+    </message>
+    <message>
+        <source>What it replaces, how to switch it on, and what each method has to do.</source>
+        <translation>What it replaces, how to switch it on, and what each method has to do.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Keeps editor leftovers and build output out of the repository.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
+    </message>
+    <message>
+        <source>The arguments arrive from the browser as strings in an array. Nothing has checked them. Everything this class does with them is as exposed as a module view, and has none of a module view&apos;s policy checking unless it is asked for below.</source>
+        <translation>The arguments arrive from the browser as strings in an array. Nothing has checked them. Everything this class does with them is as exposed as a module view, and has none of a module view&apos;s policy checking unless it is asked for below.</translation>
+    </message>
+    <message>
+        <source>The alias is the third argument to the operator: {$node|attribute( show, 2, myformat )}. It has to be a word a template author will remember, because nothing lists them.</source>
+        <translation>The alias is the third argument to the operator: {$node|attribute( show, 2, myformat )}. It has to be a word a template author will remember, because nothing lists them.</translation>
+    </message>
+    <message>
+        <source>ezdefault is registered out of the box. Registering another replaces it, so whatever the default did has to be done here too, or be deliberately dropped.</source>
+        <translation>ezdefault is registered out of the box. Registering another replaces it, so whatever the default did has to be done here too, or be deliberately dropped.</translation>
+    </message>
+    <message>
+        <source>The handler is constructed with an identifier, a name and a handle type; the generated constructor passes them up to the base.</source>
+        <translation>The handler is constructed with an identifier, a name and a handle type; the generated constructor passes them up to the base.</translation>
+    </message>
+    <message>
+        <source>eZClusterFileHandlerInterface has forty two methods. Extending eZFSFileHandler means only the ones below have to be thought about; the rest keep doing what they do on a filesystem. Every method generated calls up to it, so the site behaves exactly as before until one is changed.</source>
+        <translation>eZClusterFileHandlerInterface has forty two methods. Extending eZFSFileHandler means only the ones below have to be thought about; the rest keep doing what they do on a filesystem. Every method generated calls up to it, so the site behaves exactly as before until one is changed.</translation>
+    </message>
+    <message>
+        <source>Set Implementation in the same section to the alias as well, or the default handler is still the one that is built.</source>
+        <translation>Set Implementation in the same section to the alias as well, or the default handler is still the one that is built.</translation>
+    </message>
+    <message>
+        <source>This is only reached when FileHandler is eZDFSFileHandler. The database side is separate: DBBackend in the same section.</source>
+        <translation>This is only reached when FileHandler is eZDFSFileHandler. The database side is separate: DBBackend in the same section.</translation>
+    </message>
+    <message>
+        <source>The DFS backend and the database backend are separate settings. Changing this one does not change where the bytes go.</source>
+        <translation>The DFS backend and the database backend are separate settings. Changing this one does not change where the bytes go.</translation>
+    </message>
+    <message>
+        <source>The alias goes in the directory name, the file name and the class name. All three are lower case, because the kernel lower cases the setting before it looks.</source>
+        <translation>The alias goes in the directory name, the file name and the class name. All three are lower case, because the kernel lower cases the setting before it looks.</translation>
+    </message>
+    <message>
+        <source>Nothing registers this. The kernel asks class_exists( &apos;sevenxValkeyINICache&apos; ) and uses it if the answer is yes, so the class has to have exactly that name and the extension has to be active - and an installation without it behaves exactly as before. The name is not a choice.</source>
+        <translation>Nothing registers this. The kernel asks class_exists( &apos;sevenxValkeyINICache&apos; ) and uses it if the answer is yes, so the class has to have exactly that name and the extension has to be active - and an installation without it behaves exactly as before. The name is not a choice.</translation>
+    </message>
+    <message>
+        <source>The class name and the file name are both worked out from the setting: LoginHandler[]=x means class eZxUser in login_handler/ezxuser.php. All three have to agree or the handler is reported missing and the default answers instead - which means a site that looks like it is using your handler and is not.</source>
+        <translation>The class name and the file name are both worked out from the setting: LoginHandler[]=x means class eZxUser in login_handler/ezxuser.php. All three have to agree or the handler is reported missing and the default answers instead - which means a site that looks like it is using your handler and is not.</translation>
+    </message>
+    <message>
+        <source>Set Transport in the same section to the alias, or the default is still used.</source>
+        <translation>Set Transport in the same section to the alias, or the default is still used.</translation>
+    </message>
+    <message>
+        <source>This runs before the siteaccess is settled and on every request, cached or not. Anything slow here is paid for by every visitor, and anything that varies the answer without varying the cache key serves the wrong page to somebody.</source>
+        <translation>This runs before the siteaccess is settled and on every request, cached or not. Anything slow here is paid for by every visitor, and anything that varies the answer without varying the cache key serves the wrong page to somebody.</translation>
+    </message>
+    <message>
+        <source>The variable really is AvailableNotificationEventTypes in this section too, not AvailableNotificationEventHandlers. It is a quirk of the kernel, not a mistake here.</source>
+        <translation>The variable really is AvailableNotificationEventTypes in this section too, not AvailableNotificationEventHandlers. It is a quirk of the kernel, not a mistake here.</translation>
+    </message>
+    <message>
+        <source>The file is found by its path, not by the autoloader: it must be at exactly the place named above or the type is reported missing.</source>
+        <translation>The file is found by its path, not by the autoloader: it must be at exactly the place named above or the type is reported missing.</translation>
+    </message>
+    <message>
+        <source>A creation handler pairs with a package handler: this gathers the item up, and that one installs it somewhere else. Neither is much use alone.</source>
+        <translation>A creation handler pairs with a package handler: this gathers the item up, and that one installs it somewhere else. Neither is much use alone.</translation>
+    </message>
+    <message>
+        <source>The alias is what goes in the type attribute of an &lt;install&gt; element inside package.xml, so it is part of the package format and cannot be changed once packages exist.</source>
+        <translation>The alias is what goes in the type attribute of an &lt;install&gt; element inside package.xml, so it is part of the package format and cannot be changed once packages exist.</translation>
+    </message>
+    <message>
+        <source>The alias here and the alias of the package handler that carries the item are the same word. If they disagree the item is carried and never offered.</source>
+        <translation>The alias here and the alias of the package handler that carries the item are the same word. If they disagree the item is carried and never offered.</translation>
+    </message>
+    <message>
+        <source>The class registers itself at the foot of its own file, with eZPaymentGatewayType::registerGateway(). Without that line the file is found, loaded, and the gateway never appears in the workflow event - and nothing says why.</source>
+        <translation>The class registers itself at the foot of its own file, with eZPaymentGatewayType::registerGateway(). Without that line the file is found, loaded, and the gateway never appears in the workflow event - and nothing says why.</translation>
+    </message>
+    <message>
+        <source>Extends eZPaymentGateway rather than eZRedirectGateway, which is the whole difference: no payment object is needed to survive a trip away and back, because there is no trip. It also means the money is taken inside the request the buyer is waiting on, so a slow gateway is a slow checkout and a timeout is a genuinely ambiguous state.</source>
+        <translation>Extends eZPaymentGateway rather than eZRedirectGateway, which is the whole difference: no payment object is needed to survive a trip away and back, because there is no trip. It also means the money is taken inside the request the buyer is waiting on, so a slow gateway is a slow checkout and a timeout is a genuinely ambiguous state.</translation>
+    </message>
+    <message>
+        <source>Every filter has to accept before a version goes to the queue: one refusal is enough to publish it in the request. That way round on purpose - the safe answer is the one that happens now.</source>
+        <translation>Every filter has to accept before a version goes to the queue: one refusal is enough to publish it in the request. That way round on purpose - the safe answer is the one that happens now.</translation>
+    </message>
+    <message>
+        <source>This runs before anything is routed, so it decides which requests are REST requests at all. A filter that claims too much takes over addresses the rest of the site was answering.</source>
+        <translation>This runs before anything is routed, so it decides which requests are REST requests at all. A filter that claims too much takes over addresses the rest of the site was answering.</translation>
+    </message>
+    <message>
+        <source>Filters run in the order they are listed. This one runs before authentication as well as before routing, so anything it decides is decided about a caller nobody has identified yet.</source>
+        <translation>Filters run in the order they are listed. This one runs before authentication as well as before routing, so anything it decides is decided about a caller nobody has identified yet.</translation>
+    </message>
+    <message>
+        <source>The alias is the first part of the path: a provider registered as &quot;shop&quot; answers under /api/shop/. Routes are matched in the order the provider returns them, so put the specific ones first.</source>
+        <translation>The alias is the first part of the path: a provider registered as &quot;shop&quot; answers under /api/shop/. Routes are matched in the order the provider returns them, so put the specific ones first.</translation>
+    </message>
+    <message>
+        <source>The request object is shared. Changing it here changes what the controller is given, which is the point - and also why two filters that both rewrite the same thing are worth thinking about.</source>
+        <translation>The request object is shared. Changing it here changes what the controller is given, which is the point - and also why two filters that both rewrite the same thing are worth thinking about.</translation>
+    </message>
+    <message>
+        <source>Everything has been decided by the time this runs, including the status. Changing the body without changing the headers that describe it - the length, the type - is how a response becomes one nothing can read.</source>
+        <translation>Everything has been decided by the time this runs, including the status. Changing the body without changing the headers that describe it - the length, the type - is how a response becomes one nothing can read.</translation>
+    </message>
+    <message>
+        <source>Whatever is added here is serialised and sent. Anything that should not leave the building must not be put on the result, however convenient it is to have it there.</source>
+        <translation>Whatever is added here is serialised and sent. Anything that should not leave the building must not be put on the result, however convenient it is to have it there.</translation>
+    </message>
+    <message>
+        <source>This one decides who may reach what. A filter that answers false too easily opens the whole api; the safe default is to let nothing through that is not listed.</source>
+        <translation>This one decides who may reach what. A filter that answers false too easily opens the whole api; the safe default is to let nothing through that is not listed.</translation>
+    </message>
+    <message>
+        <source>After switching engines the index has to be rebuilt: php bin/php/updatesearchindex.php. Until then a search answers from an index the new engine never wrote.</source>
+        <translation>After switching engines the index has to be rebuilt: php bin/php/updatesearchindex.php. Until then a search answers from an index the new engine never wrote.</translation>
+    </message>
+    <message>
+        <source>Also set ForceStart=enabled in the same section if the handler needs a session on every request.</source>
+        <translation>Also set ForceStart=enabled in the same section if the handler needs a session on every request.</translation>
+    </message>
+    <message>
+        <source>There is no shipping handler by default, so nothing is being replaced here: until one is registered a basket has no delivery cost at all.</source>
+        <translation>There is no shipping handler by default, so nothing is being replaced here: until one is registered a basket has no delivery cost at all.</translation>
+    </message>
+    <message>
+        <source>StaticCache=enabled in the same section is what switches static caching on at all; this setting only decides which handler does it.</source>
+        <translation>StaticCache=enabled in the same section is what switches static caching on at all; this setting only decides which handler does it.</translation>
+    </message>
+    <message>
+        <source>Filters run in the order they are listed, each given what the last returned. The url is stored as the last one leaves it, so changing a filter does not change the urls already made - those need bin/php/updateniceurls.php.</source>
+        <translation>Filters run in the order they are listed, each given what the last returned. The url is stored as the last one leaves it, so changing a filter does not change the urls already made - those need bin/php/updateniceurls.php.</translation>
+    </message>
+    <message>
+        <source>The class name and the file name are both worked out from the setting above, so neither is free to change on its own.</source>
+        <translation>The class name and the file name are both worked out from the setting above, so neither is free to change on its own.</translation>
+    </message>
+    <message>
+        <source>Input and output are separate settings and are free to disagree, but XML written by one handler has to be readable by the other or existing content stops rendering.</source>
+        <translation>Input and output are separate settings and are free to disagree, but XML written by one handler has to be readable by the other or existing content stops rendering.</translation>
+    </message>
+    <message>
+        <source>Whatever this returns is put on the page. Anything that came from an editor has to leave here escaped, or the stored content becomes a way to run script in a visitor&apos;s browser.</source>
+        <translation>Whatever this returns is put on the page. Anything that came from an editor has to leave here escaped, or the stored content becomes a way to run script in a visitor&apos;s browser.</translation>
+    </message>
+    <message>
+        <source>The function itself. $args is what the browser sent, as an array of strings, in the order it sent them - untrusted, unchecked, and every one of them to be looked at before it is used. Whatever is returned is encoded and sent back.</source>
+        <translation>The function itself. $args is what the browser sent, as an array of strings, in the order it sent them - untrusted, unchecked, and every one of them to be looked at before it is used. Whatever is returned is encoded and sent back.</translation>
+    </message>
+    <message>
+        <source>How long an answer may be kept. Return -1 for an answer that must never be cached, which is anything that depends on who is asking.</source>
+        <translation>How long an answer may be kept. Return -1 for an answer that must never be cached, which is anything that depends on who is asking.</translation>
+    </message>
+    <message>
+        <source>What comes before the walk: a table head, an opening bracket, a line saying what is being shown. Called once, before any line.</source>
+        <translation>What comes before the walk: a table head, an opening bracket, a line saying what is being shown. Called once, before any line.</translation>
+    </message>
+    <message>
+        <source>One key and its value, at a depth. Called once per attribute, depth first. $showValues says whether the value is wanted or only the name, and $level is how deep, which is what indenting reads.</source>
+        <translation>One key and its value, at a depth. Called once per attribute, depth first. $showValues says whether the value is wanted or only the name, and $level is how deep, which is what indenting reads.</translation>
+    </message>
+    <message>
+        <source>One plain value on its way into the output. This is where escaping belongs: what is being printed is content, and it is being printed into a page.</source>
+        <translation>One plain value on its way into the output. This is where escaping belongs: what is being printed is content, and it is being printed into a page.</translation>
+    </message>
+    <message>
+        <source>Changes the totals in place. $basketInfo carries total_ex_vat, total_inc_vat and the per rate lists; whatever is left in it is what the basket and the order show. Called on every basket page, so anything slow here is felt everywhere.</source>
+        <translation>Changes the totals in place. $basketInfo carries total_ex_vat, total_inc_vat and the per rate lists; whatever is left in it is what the basket and the order show. Called on every basket page, so anything slow here is felt everywhere.</translation>
+    </message>
+    <message>
+        <source>Takes an uploaded file wherever this handler keeps files. Returning false leaves the default storage to deal with it.</source>
+        <translation>Takes an uploaded file wherever this handler keeps files. Returning false leaves the default storage to deal with it.</translation>
+    </message>
+    <message>
+        <source>Decides what happens when somebody asks for the file. Answer RESULT_UNAVAILABLE to leave it to the default, or send it yourself and answer that it is done.</source>
+        <translation>Decides what happens when somebody asks for the file. Answer RESULT_UNAVAILABLE to leave it to the default, or send it yourself and answer that it is done.</translation>
+    </message>
+    <message>
+        <source>The same, once the file has been found and its type worked out. This is where a handler that hands off to the web server does so.</source>
+        <translation>The same, once the file has been found and its type worked out. This is where a handler that hands off to the web server does so.</translation>
+    </message>
+    <message>
+        <source>Takes a file that is already on disk into wherever this handler keeps things. $scope says what it is for - image, binaryfile, viewcache - and is worth keeping, because purging works on it.</source>
+        <translation>Takes a file that is already on disk into wherever this handler keeps things. $scope says what it is for - image, binaryfile, viewcache - and is worth keeping, because purging works on it.</translation>
+    </message>
+    <message>
+        <source>The same, from a string rather than a file. This is what cache writing goes through, so it is called far more often than the one above.</source>
+        <translation>The same, from a string rather than a file. This is what cache writing goes through, so it is called far more often than the one above.</translation>
+    </message>
+    <message>
+        <source>Brings a file back to local disk so php can read it. Called before anything that needs a real path.</source>
+        <translation>Brings a file back to local disk so php can read it. Called before anything that needs a real path.</translation>
+    </message>
+    <message>
+        <source>The contents of this handler&apos;s file, without putting it on disk first. The quick path, and the one caches use.</source>
+        <translation>The contents of this handler&apos;s file, without putting it on disk first. The quick path, and the one caches use.</translation>
+    </message>
+    <message>
+        <source>Whether a file is there. Called constantly; whatever this does, it has to be cheap.</source>
+        <translation>Whether a file is there. Called constantly; whatever this does, it has to be cheap.</translation>
+    </message>
+    <message>
+        <source>Size, modification time and the rest, in the shape php&apos;s own stat() returns. The kernel reads mtime from this to decide what is stale.</source>
+        <translation>Size, modification time and the rest, in the shape php&apos;s own stat() returns. The kernel reads mtime from this to decide what is stale.</translation>
+    </message>
+    <message>
+        <source>Removes a file, or everything whose name starts with $fnamePart when it is given.</source>
+        <translation>Removes a file, or everything whose name starts with $fnamePart when it is given.</translation>
+    </message>
+    <message>
+        <source>Really removes what was only marked as deleted. Called by the cluster purge cronjob rather than during a request.</source>
+        <translation>Really removes what was only marked as deleted. Called by the cluster purge cronjob rather than during a request.</translation>
+    </message>
+    <message>
+        <source>Whether a file written locally has to be handed to this handler afterwards. False on a filesystem; true for anything shared.</source>
+        <translation>Whether a file written locally has to be handed to this handler afterwards. False on a filesystem; true for anything shared.</translation>
+    </message>
+    <message>
+        <source>Whether deleting only marks, so that purging is needed later. Say true and the purge cronjob has to be scheduled.</source>
+        <translation>Whether deleting only marks, so that purging is needed later. Say true and the purge cronjob has to be scheduled.</translation>
+    </message>
+    <message>
+        <source>Whether an expired cache file can still be served while a new one is being made. Says whether a slow regeneration blocks visitors or not.</source>
+        <translation>Whether an expired cache file can still be served while a new one is being made. Says whether a slow regeneration blocks visitors or not.</translation>
+    </message>
+    <message>
+        <source>Claims the right to build this cache entry, so that ten requests arriving together build it once. Returning something other than true means somebody else is already building it.</source>
+        <translation>Claims the right to build this cache entry, so that ten requests arriving together build it once. Returning something other than true means somebody else is already building it.</translation>
+    </message>
+    <message>
+        <source>Puts the finished cache entry in place and gives up the claim.</source>
+        <translation>Puts the finished cache entry in place and gives up the claim.</translation>
+    </message>
+    <message>
+        <source>Gives up the claim without putting anything in place. Called when generating threw, and forgetting it is how a cache entry stays locked for ever.</source>
+        <translation>Gives up the claim without putting anything in place. Called when generating threw, and forgetting it is how a cache entry stays locked for ever.</translation>
+    </message>
+    <message>
+        <source>Runs one statement and gives back whatever the driver gives back. Every write in the system arrives here. The server argument is how a caller asks for the replica rather than the master.</source>
+        <translation>Runs one statement and gives back whatever the driver gives back. Every write in the system arrives here. The server argument is how a caller asks for the replica rather than the master.</translation>
+    </message>
+    <message>
+        <source>Runs one statement and gives back rows as arrays. Every read in the system arrives here, so this is where a query log or a slow query timer belongs.</source>
+        <translation>Runs one statement and gives back rows as arrays. Every read in the system arrives here, so this is where a query log or a slow query timer belongs.</translation>
+    </message>
+    <message>
+        <source>Makes a value safe to put inside a statement. Never weaken this: it is the one thing standing between user input and the database.</source>
+        <translation>Makes a value safe to put inside a statement. Never weaken this: it is the one thing standing between user input and the database.</translation>
+    </message>
+    <message>
+        <source>Starts a transaction. eZ nests these by counting, so only the outermost one really starts anything.</source>
+        <translation>Starts a transaction. eZ nests these by counting, so only the outermost one really starts anything.</translation>
+    </message>
+    <message>
+        <source>Ends the outermost transaction and keeps the work.</source>
+        <translation>Ends the outermost transaction and keeps the work.</translation>
+    </message>
+    <message>
+        <source>Ends the outermost transaction and throws the work away.</source>
+        <translation>Ends the outermost transaction and throws the work away.</translation>
+    </message>
+    <message>
+        <source>The id the last insert was given. eZPersistentObject reads this straight after every insert, so getting it wrong breaks everything quietly.</source>
+        <translation>The id the last insert was given. eZPersistentObject reads this straight after every insert, so getting it wrong breaks everything quietly.</translation>
+    </message>
+    <message>
+        <source>Lets the connection go, at the end of the request.</source>
+        <translation>Lets the connection go, at the end of the request.</translation>
+    </message>
+    <message>
+        <source>Copies one stored file to another name without bringing it back through php. On storage that can copy server-side, this is the one worth doing properly.</source>
+        <translation>Copies one stored file to another name without bringing it back through php. On storage that can copy server-side, this is the one worth doing properly.</translation>
+    </message>
+    <message>
+        <source>Brings a stored file down to local disk.</source>
+        <translation>Brings a stored file down to local disk.</translation>
+    </message>
+    <message>
+        <source>Puts a local file into storage.</source>
+        <translation>Puts a local file into storage.</translation>
+    </message>
+    <message>
+        <source>Removes a stored file. May be given one path or a list of them.</source>
+        <translation>Removes a stored file. May be given one path or a list of them.</translation>
+    </message>
+    <message>
+        <source>Sends a stored file straight to the browser, honouring a byte range. This is what makes a large download work without loading it into memory.</source>
+        <translation>Sends a stored file straight to the browser, honouring a byte range. This is what makes a large download work without loading it into memory.</translation>
+    </message>
+    <message>
+        <source>The whole file as a string. Fine for a cache entry, wrong for a video.</source>
+        <translation>The whole file as a string. Fine for a cache entry, wrong for a video.</translation>
+    </message>
+    <message>
+        <source>Writes a file from a string.</source>
+        <translation>Writes a file from a string.</translation>
+    </message>
+    <message>
+        <source>Moves a stored file. Wants to be atomic: the cache handler renames a finished entry into place and expects nobody to see it half done.</source>
+        <translation>Moves a stored file. Wants to be atomic: the cache handler renames a finished entry into place and expects nobody to see it half done.</translation>
+    </message>
+    <message>
+        <source>Whether a file is there.</source>
+        <translation>Whether a file is there.</translation>
+    </message>
+    <message>
+        <source>How big it is, without fetching it.</source>
+        <translation>How big it is, without fetching it.</translation>
+    </message>
+    <message>
+        <source>Everything stored under a path. Used when a whole directory has to go.</source>
+        <translation>Everything stored under a path. Used when a whole directory has to go.</translation>
+    </message>
+    <message>
+        <source>Turns a stored path into an address a browser can be sent to, when the storage can serve directly. Return the path unchanged to keep serving through php.</source>
+        <translation>Turns a stored path into an address a browser can be sent to, when the storage can serve directly. Return the path unchanged to keep serving through php.</translation>
+    </message>
+    <message>
+        <source>Opens the connection the rest of the methods use. Called once, lazily, on the first thing that needs the index.</source>
+        <translation>Opens the connection the rest of the methods use. Called once, lazily, on the first thing that needs the index.</translation>
+    </message>
+    <message>
+        <source>Whether the index knows this file. The expiry argument is what makes a stale entry look absent without being deleted.</source>
+        <translation>Whether the index knows this file. The expiry argument is what makes a stale entry look absent without being deleted.</translation>
+    </message>
+    <message>
+        <source>Marks one file gone. It is a mark, not a removal: the row stays until the purge cronjob takes it, so that every server sees the deletion.</source>
+        <translation>Marks one file gone. It is a mark, not a removal: the row stays until the purge cronjob takes it, so that every server sees the deletion.</translation>
+    </message>
+    <message>
+        <source>Marks everything matching a pattern gone. This is what a cache clear turns into, so it is worth it being fast.</source>
+        <translation>Marks everything matching a pattern gone. This is what a cache clear turns into, so it is worth it being fast.</translation>
+    </message>
+    <message>
+        <source>Really removes what was marked gone, index row and stored bytes together. Run by the clusterpurge cronjob.</source>
+        <translation>Really removes what was marked gone, index row and stored bytes together. Run by the clusterpurge cronjob.</translation>
+    </message>
+    <message>
+        <source>Claims the right to build one cache entry. Must be atomic across servers: two of them asking at once, only one may be told yes. Everything else here is bookkeeping; this is the part that is hard.</source>
+        <translation>Claims the right to build one cache entry. Must be atomic across servers: two of them asking at once, only one may be told yes. Everything else here is bookkeeping; this is the part that is hard.</translation>
+    </message>
+    <message>
+        <source>Puts the finished entry in place and gives up the claim.</source>
+        <translation>Puts the finished entry in place and gives up the claim.</translation>
+    </message>
+    <message>
+        <source>Gives up the claim without an entry. If this is ever missed, that entry stays claimed and nothing rebuilds it.</source>
+        <translation>Gives up the claim without an entry. If this is ever missed, that entry stays claimed and nothing rebuilds it.</translation>
+    </message>
+    <message>
+        <source>Brings a file to the local disk so php can read it as a file.</source>
+        <translation>Brings a file to the local disk so php can read it as a file.</translation>
+    </message>
+    <message>
+        <source>Indexes a local file and sends the bytes to the DFS backend.</source>
+        <translation>Indexes a local file and sends the bytes to the DFS backend.</translation>
+    </message>
+    <message>
+        <source>The same from a string, without a local file in the middle.</source>
+        <translation>The same from a string, without a local file in the middle.</translation>
+    </message>
+    <message>
+        <source>Reads whatever the handler needs to know before it can ask for rates - a url, a key, a list of currencies. Called before requestRates().</source>
+        <translation>Reads whatever the handler needs to know before it can ask for rates - a url, a key, a list of currencies. Called before requestRates().</translation>
+    </message>
+    <message>
+        <source>Fetches the rates and puts them in place with setRateList() and setBaseCurrency(). Return false on a failure rather than storing half a list: a partial update leaves some prices converted at yesterday&apos;s rate and some at the wrong one.</source>
+        <translation>Fetches the rates and puts them in place with setRateList() and setBaseCurrency(). Return false on a failure rather than storing half a list: a partial update leaves some prices converted at yesterday&apos;s rate and some at the wrong one.</translation>
+    </message>
+    <message>
+        <source>What was fetched, as currency code to rate against the base. Read by the shop after requestRates() has run.</source>
+        <translation>What was fetched, as currency code to rate against the base. Read by the shop after requestRates() has run.</translation>
+    </message>
+    <message>
+        <source>Which currency the rates are against. The shop converts through this, so it has to be one it knows.</source>
+        <translation>Which currency the rates are against. The shop converts through this, so it has to be one it knows.</translation>
+    </message>
+    <message>
+        <source>The one instance. The kernel asks for it several times a request and never constructs one itself.</source>
+        <translation>The one instance. The kernel asks for it several times a request and never constructs one itself.</translation>
+    </message>
+    <message>
+        <source>Whether to use it at all. Asked before every other method, so returning false here is how the whole thing switches off without being uninstalled - and it is what this returns until it is written, so installing it changes nothing.</source>
+        <translation>Whether to use it at all. Asked before every other method, so returning false here is how the whole thing switches off without being uninstalled - and it is what this returns until it is written, so installing it changes nothing.</translation>
+    </message>
+    <message>
+        <source>The compiled settings for one cache file, or false when they are not there. False is not a failure: it means compile them and save them.</source>
+        <translation>The compiled settings for one cache file, or false when they are not there. False is not a failure: it means compile them and save them.</translation>
+    </message>
+    <message>
+        <source>Keeps them. Return false and the kernel writes its own file instead, so a store that is temporarily unreachable costs speed rather than the site.</source>
+        <translation>Keeps them. Return false and the kernel writes its own file instead, so a store that is temporarily unreachable costs speed rather than the site.</translation>
+    </message>
+    <message>
+        <source>Forgets one. Called when the settings caches are cleared, and the one that must not be missed: settings that outlive a clear are the worst kind of stale.</source>
+        <translation>Forgets one. Called when the settings caches are cleared, and the one that must not be missed: settings that outlive a clear are the worst kind of stale.</translation>
+    </message>
+    <message>
+        <source>The whole job. Given a name and a password, return an eZUser when they are right and false when they are not. Returning anything for a wrong password is the worst bug it is possible to write here, so fail closed: anything unexpected - a service that is down, an answer that does not parse, a user with no name - returns false.</source>
+        <translation>The whole job. Given a name and a password, return an eZUser when they are right and false when they are not. Returning anything for a wrong password is the worst bug it is possible to write here, so fail closed: anything unexpected - a service that is down, an answer that does not parse, a user with no name - returns false.</translation>
+    </message>
+    <message>
+        <source>Finds the local user row for a name. A handler authenticating elsewhere still needs a user here to own content and carry roles, and this is where one is found or made.</source>
+        <translation>Finds the local user row for a name. A handler authenticating elsewhere still needs a user here to own content and carry roles, and this is where one is found or made.</translation>
+    </message>
+    <message>
+        <source>Sends one mail and says whether it went. Returning false is how a failure is reported; nothing else is read.</source>
+        <translation>Sends one mail and says whether it went. Returning false is how a failure is reported; nothing else is read.</translation>
+    </message>
+    <message>
+        <source>Called first. Work out what this is and remember it; the three below are asked afterwards and should not repeat the work.</source>
+        <translation>Called first. Work out what this is and remember it; the three below are asked afterwards and should not repeat the work.</translation>
+    </message>
+    <message>
+        <source>Whether this is a phone. False is what a site with no filter answers, so nothing changes until this is written.</source>
+        <translation>Whether this is a phone. False is what a site with no filter answers, so nothing changes until this is written.</translation>
+    </message>
+    <message>
+        <source>A short word for the kind of device, matched against the alias list in the settings. It is part of the cache key, so two devices that should see different pages must not share a word.</source>
+        <translation>A short word for the kind of device, matched against the alias list in the settings. It is part of the cache key, so two devices that should see different pages must not share a word.</translation>
+    </message>
+    <message>
+        <source>Send the visitor somewhere else, if that is the answer. Doing nothing here keeps them where they are and lets the templates differ instead, which is usually the better of the two.</source>
+        <translation>Send the visitor somewhere else, if that is the answer. Doing nothing here keeps them where they are and lets the templates differ instead, which is usually the better of the two.</translation>
+    </message>
+    <message>
+        <source>Looks at one event and adds whoever should hear about it, with $event-&gt;addCollectionItem(). Called once per event by the notification cronjob. Return STATUS_ACCEPTED when done.</source>
+        <translation>Looks at one event and adds whoever should hear about it, with $event-&gt;addCollectionItem(). Called once per event by the notification cronjob. Return STATUS_ACCEPTED when done.</translation>
+    </message>
+    <message>
+        <source>Reads this handler&apos;s own part of the notification settings form the user just sent. Only read what belongs to this handler, and prefix the field names, or two handlers will fight over the same field.</source>
+        <translation>Reads this handler&apos;s own part of the notification settings form the user just sent. Only read what belongs to this handler, and prefix the field names, or two handlers will fight over the same field.</translation>
+    </message>
+    <message>
+        <source>Saves what fetchHttpInput() read. The two are separate so that a page with several handlers on it validates everything before storing anything.</source>
+        <translation>Saves what fetchHttpInput() read. The two are separate so that a page with several handlers on it validates everything before storing anything.</translation>
+    </message>
+    <message>
+        <source>Forgets everything this handler holds. Called when notification data is being wiped, so anything stored in a table of your own has to be dealt with here.</source>
+        <translation>Forgets everything this handler holds. Called when notification data is being wiped, so anything stored in a table of your own has to be dealt with here.</translation>
+    </message>
+    <message>
+        <source>One line saying what this type is, shown wherever a user picks what to be notified about.</source>
+        <translation>One line saying what this type is, shown wherever a user picks what to be notified about.</translation>
+    </message>
+    <message>
+        <source>Puts what is known at the moment the event is raised onto the event row, with $event-&gt;setAttribute(). Whatever is not stored here is not available later: execute() runs from the cronjob, long after, in another request.</source>
+        <translation>Puts what is known at the moment the event is raised onto the event row, with $event-&gt;setAttribute(). Whatever is not stored here is not available later: execute() runs from the cronjob, long after, in another request.</translation>
+    </message>
+    <message>
+        <source>Works out who should be told and adds them to the event with $event-&gt;addCollectionItem(). Return STATUS_ACCEPTED when done, or STATUS_REJECTED to have the event dropped. Runs from the notification cronjob.</source>
+        <translation>Works out who should be told and adds them to the event with $event-&gt;addCollectionItem(). Return STATUS_ACCEPTED when done, or STATUS_REJECTED to have the event dropped. Runs from the notification cronjob.</translation>
+    </message>
+    <message>
+        <source>What the notification template is given. Keys become template variables, so this is where a subject line, a link and a name come from.</source>
+        <translation>What the notification template is given. Keys become template variables, so this is where a subject line, a link and a name come from.</translation>
+    </message>
+    <message>
+        <source>Puts what a step needs in front of the person: lists to pick from, defaults, anything fetched. Runs before the form is drawn.</source>
+        <translation>Puts what a step needs in front of the person: lists to pick from, defaults, anything fetched. Runs before the form is drawn.</translation>
+    </message>
+    <message>
+        <source>Checks what was sent. Add a message to $errorList and return INVALID to keep the person on this step; nothing is stored until every step has passed.</source>
+        <translation>Checks what was sent. Add a message to $errorList and return INVALID to keep the person on this step; nothing is stored until every step has passed.</translation>
+    </message>
+    <message>
+        <source>Writes this step&apos;s answer into the package being built. By the time this runs the answer has been checked.</source>
+        <translation>Writes this step&apos;s answer into the package being built. By the time this runs the answer has been checked.</translation>
+    </message>
+    <message>
+        <source>The last thing, once every step is done: the place to put the files into the package and write the install nodes that the package handler will read back.</source>
+        <translation>The last thing, once every step is done: the place to put the files into the package and write the install nodes that the package handler will read back.</translation>
+    </message>
+    <message>
+        <source>Puts one item into this installation. $content is the DOM element from package.xml; $package-&gt;path() is where the files are. Return false to stop the install and report a failure.</source>
+        <translation>Puts one item into this installation. $content is the DOM element from package.xml; $package-&gt;path() is where the files are. Return false to stop the install and report a failure.</translation>
+    </message>
+    <message>
+        <source>Takes it out again. Has to cope with the item already being gone, or changed since: an uninstall that fails halfway is worse than one that does nothing.</source>
+        <translation>Takes it out again. Has to cope with the item already being gone, or changed since: an uninstall that fails halfway is worse than one that does nothing.</translation>
+    </message>
+    <message>
+        <source>What the admin shows about this item before installing it. Return at least name and description keys, so somebody can see what they are about to accept.</source>
+        <translation>What the admin shows about this item before installing it. Return at least name and description keys, so somebody can see what they are about to accept.</translation>
+    </message>
+    <message>
+        <source>Puts one item into a package being built. The other direction from install().</source>
+        <translation>Puts one item into a package being built. The other direction from install().</translation>
+    </message>
+    <message>
+        <source>Writes this item into package.xml, as children of $installNode. Whatever is written here is all install() will get back.</source>
+        <translation>Writes this item into package.xml, as children of $installNode. Whatever is written here is all install() will get back.</translation>
+    </message>
+    <message>
+        <source>Reads it back out of package.xml. Must survive a file written by a newer version of the handler, or by somebody by hand.</source>
+        <translation>Reads it back out of package.xml. Must survive a file written by a newer version of the handler, or by somebody by hand.</translation>
+    </message>
+    <message>
+        <source>Works out what the person has to be asked - what already exists, what would be replaced - and puts it in front of them.</source>
+        <translation>Works out what the person has to be asked - what already exists, what would be replaced - and puts it in front of them.</translation>
+    </message>
+    <message>
+        <source>Checks the answer before anything is changed. Nothing has been installed yet at this point, and that is the whole value of the step.</source>
+        <translation>Checks the answer before anything is changed. Nothing has been installed yet at this point, and that is the whole value of the step.</translation>
+    </message>
+    <message>
+        <source>Remembers the answer for the install itself to read.</source>
+        <translation>Remembers the answer for the install itself to read.</translation>
+    </message>
+    <message>
+        <source>Does the install, with every question already answered.</source>
+        <translation>Does the install, with every question already answered.</translation>
+    </message>
+    <message>
+        <source>Forgets a half finished run, so that starting again starts clean rather than carrying the last attempt.</source>
+        <translation>Forgets a half finished run, so that starting again starts clean rather than carrying the last attempt.</translation>
+    </message>
+    <message>
+        <source>Called by the workflow when an order is placed, and again when the buyer comes back. Return STATUS_FETCH_TEMPLATE_REPEAT to send them away and wait; STATUS_ACCEPTED when the money is confirmed; STATUS_REJECTED when it is not. Called more than once for one order, so it has to know which visit this is.</source>
+        <translation>Called by the workflow when an order is placed, and again when the buyer comes back. Return STATUS_FETCH_TEMPLATE_REPEAT to send them away and wait; STATUS_ACCEPTED when the money is confirmed; STATUS_REJECTED when it is not. Called more than once for one order, so it has to know which visit this is.</translation>
+    </message>
+    <message>
+        <source>The row that remembers this payment between the two visits. It is the only thing that survives the trip to the gateway and back, so whatever will be needed to check the answer has to be in it.</source>
+        <translation>The row that remembers this payment between the two visits. It is the only thing that survives the trip to the gateway and back, so whatever will be needed to check the answer has to be in it.</translation>
+    </message>
+    <message>
+        <source>Whether abandoned payments should be tidied up. True unless nothing is stored, because a buyer who changes their mind at the gateway leaves a row behind for ever otherwise.</source>
+        <translation>Whether abandoned payments should be tidied up. True unless nothing is stored, because a buyer who changes their mind at the gateway leaves a row behind for ever otherwise.</translation>
+    </message>
+    <message>
+        <source>Removes what this payment left behind. Called for payments that were started and never finished, so it must cope with a payment that got nowhere.</source>
+        <translation>Removes what this payment left behind. Called for payments that were started and never finished, so it must cope with a payment that got nowhere.</translation>
+    </message>
+    <message>
+        <source>What the buyer sees on their statement, cut to whatever length the gateway allows. Some refuse anything longer and some silently truncate, which is worse.</source>
+        <translation>What the buyer sees on their statement, cut to whatever length the gateway allows. Some refuse anything longer and some silently truncate, which is worse.</translation>
+    </message>
+    <message>
+        <source>The whole thing, in one call. Take what the checkout collected, charge it, and answer: STATUS_ACCEPTED when the money is taken, STATUS_REJECTED when it is refused. Unlike a redirect gateway this is called once, so there is no second visit to correct a wrong answer in.</source>
+        <translation>The whole thing, in one call. Take what the checkout collected, charge it, and answer: STATUS_ACCEPTED when the money is taken, STATUS_REJECTED when it is refused. Unlike a redirect gateway this is called once, so there is no second visit to correct a wrong answer in.</translation>
+    </message>
+    <message>
+        <source>False is usually right here. Cleanup exists for payments abandoned between two visits, and this kind has only one - but return true if a record is written before the charge is attempted.</source>
+        <translation>False is usually right here. Cleanup exists for payments abandoned between two visits, and this kind has only one - but return true if a record is written before the charge is attempted.</translation>
+    </message>
+    <message>
+        <source>Only reached when needCleanup() says so. For this shape it means a charge that was started and whose answer never arrived, which is the case worth being careful about rather than tidy about.</source>
+        <translation>Only reached when needCleanup() says so. For this shape it means a charge that was started and whose answer never arrived, which is the case worth being careful about rather than tidy about.</translation>
+    </message>
+    <message>
+        <source>Whether this version may go to the queue. True is the same answer the system gives with no filter at all, so this changes nothing until it is written. False publishes it here and now, which is slower and always correct.</source>
+        <translation>Whether this version may go to the queue. True is the same answer the system gives with no filter at all, so this changes nothing until it is written. False publishes it here and now, which is slower and always correct.</translation>
+    </message>
+    <message>
+        <source>Whether this request is for the api, and if it is, taking the prefix off its uri so the routes can match what is left. False means it is not a REST request and the rest of the site should answer it.</source>
+        <translation>Whether this request is for the api, and if it is, taking the prefix off its uri so the routes can match what is left. False means it is not a REST request and the rest of the site should answer it.</translation>
+    </message>
+    <message>
+        <source>Which version of the api was asked for. Out of the path in the one that ships; a header or an Accept type is the usual alternative, and this is the single place that decision lives.</source>
+        <translation>Which version of the api was asked for. Out of the path in the one that ships; a header or an Accept type is the usual alternative, and this is the single place that decision lives.</translation>
+    </message>
+    <message>
+        <source>Do whatever is to be done. The request is held on this object and may be changed in place; returning nothing lets it carry on exactly as it was.</source>
+        <translation>Do whatever is to be done. The request is held on this object and may be changed in place; returning nothing lets it carry on exactly as it was.</translation>
+    </message>
+    <message>
+        <source>The routes this provider answers, as ezpRestVersionedRoute objects wrapping ezcMvcRailsRoute. Each names a path pattern, the controller class, and the method on it. An empty array means the provider answers nothing, which is what it does until this is written.</source>
+        <translation>The routes this provider answers, as ezpRestVersionedRoute objects wrapping ezcMvcRailsRoute. Each names a path pattern, the controller class, and the method on it. An empty array means the provider answers nothing, which is what it does until this is written.</translation>
+    </message>
+    <message>
+        <source>What turns a result into a response body. Returning the default gives json and xml through content negotiation; a controller of your own is how any other format is served.</source>
+        <translation>What turns a result into a response body. Returning the default gives json and xml through content negotiation; a controller of your own is how any other format is served.</translation>
+    </message>
+    <message>
+        <source>Change the request, or let it be. Nothing has answered yet.</source>
+        <translation>Change the request, or let it be. Nothing has answered yet.</translation>
+    </message>
+    <message>
+        <source>The last word on what is sent. Change the response in place; nothing looks at what this returns.</source>
+        <translation>The last word on what is sent. Change the response in place; nothing looks at what this returns.</translation>
+    </message>
+    <message>
+        <source>Change the result in place. It has not been serialised yet, so this is the last point at which it is still ordinary php.</source>
+        <translation>Change the result in place. It has not been serialised yet, so this is the last point at which it is still ordinary php.</translation>
+    </message>
+    <message>
+        <source>Whether this route still has to be authenticated. True means it does, which is the safe answer; false lets the request past without a caller. Returning true when unsure is how a mistake here costs nothing.</source>
+        <translation>Whether this route still has to be authenticated. True means it does, which is the safe answer; false lets the request past without a caller. Returning true when unsure is how a mistake here costs nothing.</translation>
+    </message>
+    <message>
+        <source>Whether this engine has to be told when a batch of changes is finished. Say false and commit() is never called.</source>
+        <translation>Whether this engine has to be told when a batch of changes is finished. Say false and commit() is never called.</translation>
+    </message>
+    <message>
+        <source>Whether an object has to be removed from the index before it is added again. Say false only if adding replaces rather than duplicates.</source>
+        <translation>Whether an object has to be removed from the index before it is added again. Say false only if adding replaces rather than duplicates.</translation>
+    </message>
+    <message>
+        <source>Indexes one object, with every attribute of every version that should be searchable. Called on publish, and by the reindex script for everything at once.</source>
+        <translation>Indexes one object, with every attribute of every version that should be searchable. Called on publish, and by the reindex script for everything at once.</translation>
+    </message>
+    <message>
+        <source>Takes one object out of the index. Called when it is removed, and before it is added again when needRemoveWithUpdate says so.</source>
+        <translation>Takes one object out of the index. Called when it is removed, and before it is added again when needRemoveWithUpdate says so.</translation>
+    </message>
+    <message>
+        <source>The same, by id alone - used when the object itself has already gone and cannot be fetched.</source>
+        <translation>The same, by id alone - used when the object itself has already gone and cannot be fetched.</translation>
+    </message>
+    <message>
+        <source>Answers a search. The shape of what comes back is fixed: SearchResult holds the rows, SearchCount the total before paging, StopWordArray the words that were ignored.</source>
+        <translation>Answers a search. The shape of what comes back is fixed: SearchResult holds the rows, SearchCount the total before paging, StopWordArray the words that were ignored.</translation>
+    </message>
+    <message>
+        <source>Which kinds of narrowing this engine can do - by class, by section, by date. The advanced search form is built from this.</source>
+        <translation>Which kinds of narrowing this engine can do - by class, by section, by date. The advanced search form is built from this.</translation>
+    </message>
+    <message>
+        <source>Makes pending changes visible. Only called when needCommit() says it is wanted.</source>
+        <translation>Makes pending changes visible. Only called when needCommit() says it is wanted.</translation>
+    </message>
+    <message>
+        <source>The session data for this id, or an empty string when there is none. Never null: php reads the return value as the whole session.</source>
+        <translation>The session data for this id, or an empty string when there is none. Never null: php reads the return value as the whole session.</translation>
+    </message>
+    <message>
+        <source>Stores the data against the id. Called at the end of the request, after output has been sent, so it cannot report to the user.</source>
+        <translation>Stores the data against the id. Called at the end of the request, after output has been sent, so it cannot report to the user.</translation>
+    </message>
+    <message>
+        <source>Forgets one session. Called on logout.</source>
+        <translation>Forgets one session. Called on logout.</translation>
+    </message>
+    <message>
+        <source>Gives the session a new id, keeping its data. Called on login, so that a session id seen before logging in is not the one that is logged in.</source>
+        <translation>Gives the session a new id, keeping its data. Called on login, so that a session id seen before logging in is not the one that is logged in.</translation>
+    </message>
+    <message>
+        <source>Removes sessions older than the lifetime. Called by php at random, and by the session cronjob.</source>
+        <translation>Removes sessions older than the lifetime. Called by php at random, and by the session cronjob.</translation>
+    </message>
+    <message>
+        <source>Removes every session. Called when the caches are cleared.</source>
+        <translation>Removes every session. Called when the caches are cleared.</translation>
+    </message>
+    <message>
+        <source>Removes the sessions of these users. Called when a user is disabled or removed, and this is the method that makes that take effect immediately.</source>
+        <translation>Removes the sessions of these users. Called when a user is disabled or removed, and this is the method that makes that take effect immediately.</translation>
+    </message>
+    <message>
+        <source>What delivery costs, as array( &apos;description&apos; =&gt; ..., &apos;cost&apos; =&gt; ..., &apos;vat_value&apos; =&gt; ..., &apos;is_vat_inc&apos; =&gt; ... ). A shipping_items key may carry one such array per parcel when the basket is split. Return false for no charge. Read on every basket and checkout page.</source>
+        <translation>What delivery costs, as array( &apos;description&apos; =&gt; ..., &apos;cost&apos; =&gt; ..., &apos;vat_value&apos; =&gt; ..., &apos;is_vat_inc&apos; =&gt; ... ). A shipping_items key may carry one such array per parcel when the basket is split. Return false for no charge. Read on every basket and checkout page.</translation>
+    </message>
+    <message>
+        <source>Works the cost out again because the basket changed. The place to call a carrier, if one is called at all - not getShippingInfo(), which is read far more often.</source>
+        <translation>Works the cost out again because the basket changed. The place to call a carrier, if one is called at all - not getShippingInfo(), which is read far more often.</translation>
+    </message>
+    <message>
+        <source>Forgets whatever was worked out for this basket. Called when the basket is emptied or the order placed.</source>
+        <translation>Forgets whatever was worked out for this basket. Called when the basket is emptied or the order placed.</translation>
+    </message>
+    <message>
+        <source>Rewrites the pages that are marked as always needing rewriting - the front page and anything else listed in staticcache.ini.</source>
+        <translation>Rewrites the pages that are marked as always needing rewriting - the front page and anything else listed in staticcache.ini.</translation>
+    </message>
+    <message>
+        <source>Rewrites the pages of these nodes. Called when content changes, with the nodes the change affected.</source>
+        <translation>Rewrites the pages of these nodes. Called when content changes, with the nodes the change affected.</translation>
+    </message>
+    <message>
+        <source>Writes the whole cache. This is what the Create new button on the cache page calls.</source>
+        <translation>Writes the whole cache. This is what the Create new button on the cache page calls.</translation>
+    </message>
+    <message>
+        <source>Writes one address. Everything above ends up here.</source>
+        <translation>Writes one address. Everything above ends up here.</translation>
+    </message>
+    <message>
+        <source>Forgets one address, so the next visitor gets it from php again.</source>
+        <translation>Forgets one address, so the next visitor gets it from php again.</translation>
+    </message>
+    <message>
+        <source>Carries out the writes that were put off while the request was still running. Static: called at the end of the request, and by the cronjob.</source>
+        <translation>Carries out the writes that were put off while the request was still running. Static: called at the end of the request, and by the cronjob.</translation>
+    </message>
+    <message>
+        <source>The url as it stands, and the url as it should be stored. Returning $text unchanged is a filter that does nothing, which is what this does until it is written. Returning an empty string is not: an object with no url alias is unreachable by name.</source>
+        <translation>The url as it stands, and the url as it should be stored. Returning $text unchanged is a filter that does nothing, which is what this does until it is written. Returning an empty string is not: an object with no url alias is unreachable by name.</translation>
+    </message>
+    <message>
+        <source>The rate for this product sold into this country, as a number - 25 for twenty five per cent. Return false when there is no answer, and the sale is refused rather than taxed at a guess. Called for every line of every basket, so it wants to be cheap.</source>
+        <translation>The rate for this product sold into this country, as a number - 25 for twenty five per cent. Return false when there is no answer, and the sale is refused rather than taxed at a guess. Called for every line of every basket, so it wants to be cheap.</translation>
+    </message>
+    <message>
+        <source>Which category of goods this is, when the rate depends on the category rather than on the product. Return an eZProductCategory, or false.</source>
+        <translation>Which category of goods this is, when the rate depends on the category rather than on the product. Return an eZProductCategory, or false.</translation>
+    </message>
+    <message>
+        <source>Which of the configured VAT types applies to a category in a country. This is the rule, in one place; getVatPercent() only reads the number off what this chooses.</source>
+        <translation>Which of the configured VAT types applies to a category in a country. This is the rule, in one place; getVatPercent() only reads the number off what this chooses.</translation>
+    </message>
+    <message>
+        <source>Checks what was submitted before anything is stored. Return false and the editor is sent back to the form, so every rule about what may be published belongs here.</source>
+        <translation>Checks what was submitted before anything is stored. Return false and the editor is sent back to the form, so every rule about what may be published belongs here.</translation>
+    </message>
+    <message>
+        <source>Turns the submitted text into stored XML. Whatever this writes is what every renderer will be handed for the life of the content, so it is the decision hardest to undo.</source>
+        <translation>Turns the submitted text into stored XML. Whatever this writes is what every renderer will be handed for the life of the content, so it is the decision hardest to undo.</translation>
+    </message>
+    <message>
+        <source>Which template draws the editing field. Change this and the editor changes; leave it and the field looks as it did.</source>
+        <translation>Which template draws the editing field. Change this and the editor changes; leave it and the field looks as it did.</translation>
+    </message>
+    <message>
+        <source>Handles a button of your own inside the editing field, without leaving the edit form.</source>
+        <translation>Handles a button of your own inside the editing field, without leaving the edit form.</translation>
+    </message>
+    <message>
+        <source>The whole rendered attribute. Everything below is in service of this one.</source>
+        <translation>The whole rendered attribute. Everything below is in service of this one.</translation>
+    </message>
+    <message>
+        <source>One tag, with its children already rendered into $content. The place to change how a paragraph, a link or a heading comes out.</source>
+        <translation>One tag, with its children already rendered into $content. The place to change how a paragraph, a link or a heading comes out.</translation>
+    </message>
+    <message>
+        <source>A tag whose children are still separate, for when they have to be joined some way other than end to end - a list, a table, anything numbered.</source>
+        <translation>A tag whose children are still separate, for when they have to be joined some way other than end to end - a list, a table, anything numbered.</translation>
+    </message>
+    <message>
+        <source>Which template draws the attribute as a whole.</source>
+        <translation>Which template draws the attribute as a whole.</translation>
     </message>
 </context>
 <context>
@@ -12360,6 +15377,98 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Back to the RAD tools</source>
         <translation>Back to the RAD tools</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines lines, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Which sections of content this applies to. The usual first limitation, and the cheapest to check.</source>
+        <translation>Which sections of content this applies to. The usual first limitation, and the cheapest to check.</translation>
+    </message>
+    <message>
+        <source>Which content classes. Granting a policy for articles and not for folders.</source>
+        <translation>Which content classes. Granting a policy for articles and not for folders.</translation>
+    </message>
+    <message>
+        <source>Whether the user owns the content. Takes no list: the values are fixed at self and anyone.</source>
+        <translation>Whether the user owns the content. Takes no list: the values are fixed at self and anyone.</translation>
+    </message>
+    <message>
+        <source>Which siteaccess the request came through. How a view is opened on the admin and closed on the public site.</source>
+        <translation>Which siteaccess the request came through. How a view is opened on the admin and closed on the public site.</translation>
+    </message>
+    <message>
+        <source>Which translations. Granting an editor one language and not another.</source>
+        <translation>Which translations. Granting an editor one language and not another.</translation>
+    </message>
+    <message>
+        <source>View scripts</source>
+        <translation>View scripts</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registration</translation>
+    </message>
+    <message>
+        <source>Admin menu entry</source>
+        <translation>Admin menu entry</translation>
+    </message>
+    <message>
+        <source>API examples</source>
+        <translation>API examples</translation>
+    </message>
+    <message>
+        <source>The declaration: every view, the policies each needs, the parameters each takes, and the policies the module offers a role.</source>
+        <translation>The declaration: every view, the policies each needs, the parameters each takes, and the policies the module offers a role.</translation>
+    </message>
+    <message>
+        <source>One php file per view, each reading its parameters, checking what it was given, and setting $Result the way the kernel expects.</source>
+        <translation>One php file per view, each reading its parameters, checking what it was given, and setting $Result the way the kernel expects.</translation>
+    </message>
+    <message>
+        <source>One template per view, drawing what the script put in front of it. Working templates rather than empty files.</source>
+        <translation>One template per view, drawing what the script put in front of it. Working templates rather than empty files.</translation>
+    </message>
+    <message>
+        <source>module.ini so the kernel finds the module, and design.ini so it finds the templates. Without the second the module works and draws nothing.</source>
+        <translation>module.ini so the kernel finds the module, and design.ini so it finds the templates. Without the second the module works and draws nothing.</translation>
+    </message>
+    <message>
+        <source>menu.ini, so the module appears in the left hand menu of the part it belongs to rather than only at an address somebody has to know.</source>
+        <translation>menu.ini, so the module appears in the left hand menu of the part it belongs to rather than only at an address somebody has to know.</translation>
+    </message>
+    <message>
+        <source>How a view is reached, what is in $Params, what $Result may carry, and how to check a policy from inside one.</source>
+        <translation>How a view is reached, what is in $Params, what $Result may carry, and how to check a policy from inside one.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>What the admin interface reads to show the extension name, version and licence.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>The packaged description of the extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>So the extension can be required by name rather than copied in.</translation>
+    </message>
+    <message>
+        <source>Every view, its address, and what reaches it.</source>
+        <translation>Every view, its address, and what reaches it.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Keeps editor leftovers and build output out of the repository.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
 </context>
 <context>
@@ -12584,6 +15693,134 @@ Note: The packages will not be uninstalled.</translation>
         <source>Back to the RAD tools</source>
         <translation>Back to the RAD tools</translation>
     </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines lines, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>The path to the database file, relative to the installation or absolute.</source>
+        <translation>The path to the database file, relative to the installation or absolute.</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Database name</source>
+        <translation>Database name</translation>
+    </message>
+    <message>
+        <source>Service name or SID</source>
+        <translation>Service name or SID</translation>
+    </message>
+    <message>
+        <source>The data source name as it is configured on this machine, or a full connection string.</source>
+        <translation>The data source name as it is configured on this machine, or a full connection string.</translation>
+    </message>
+    <message>
+        <source>What comes after the slash in a connect string, such as ORCLPDB1.</source>
+        <translation>What comes after the slash in a connect string, such as ORCLPDB1.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>User</translation>
+    </message>
+    <message>
+        <source>Leave the user and password empty if the server does not ask for them.</source>
+        <translation>Leave the user and password empty if the server does not ask for them.</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Documents to sample</source>
+        <translation>Documents to sample</translation>
+    </message>
+    <message>
+        <source>A collection has no fixed shape, so this many documents are read to work out its fields.</source>
+        <translation>A collection has no fixed shape, so this many documents are read to work out its fields.</translation>
+    </message>
+    <message>
+        <source>Persistent object classes</source>
+        <translation>Persistent object classes</translation>
+    </message>
+    <message>
+        <source>Admin module</source>
+        <translation>Admin module</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Admin templates</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Template fetch functions</translation>
+    </message>
+    <message>
+        <source>Admin menu entry</source>
+        <translation>Admin menu entry</translation>
+    </message>
+    <message>
+        <source>Schema description</source>
+        <translation>Schema description</translation>
+    </message>
+    <message>
+        <source>One eZPersistentObject class per table, with its definition built from the columns the database reports.</source>
+        <translation>One eZPersistentObject class per table, with its definition built from the columns the database reports.</translation>
+    </message>
+    <message>
+        <source>A module with list, edit and remove views, and the policy functions that go with them.</source>
+        <translation>A module with list, edit and remove views, and the policy functions that go with them.</translation>
+    </message>
+    <message>
+        <source>The templates those views draw with, in the admin style.</source>
+        <translation>The templates those views draw with, in the admin style.</translation>
+    </message>
+    <message>
+        <source>function_definition.php, so the same rows can be reached with fetch() from any template.</source>
+        <translation>function_definition.php, so the same rows can be reached with fetch() from any template.</translation>
+    </message>
+    <message>
+        <source>Puts the module in the Setup menu, with a policy so access can be granted to it.</source>
+        <translation>Puts the module in the Setup menu, with a policy so access can be granted to it.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba describing the tables, so the installer and the consistency check know about them.</source>
+        <translation>share/db_schema.dba describing the tables, so the installer and the consistency check know about them.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>What the admin interface reads to show the extension name, version and licence.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>The packaged description of the extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>So the extension can be required by name rather than copied in.</translation>
+    </message>
+    <message>
+        <source>What it covers, how to switch it on, and what each piece is.</source>
+        <translation>What it covers, how to switch it on, and what each piece is.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Keeps editor leftovers and build output out of the repository.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/override</name>
@@ -12734,6 +15971,70 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Back to the RAD tools</source>
         <translation>Back to the RAD tools</translation>
+    </message>
+    <message>
+        <source>ezcontentobject, or classes/datatypes</source>
+        <translation>ezcontentobject, or classes/datatypes</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines lines</translation>
+    </message>
+    <message>
+        <source>md5 %wizard_checksum</source>
+        <translation>md5 %wizard_checksum</translation>
+    </message>
+    <message>
+        <source>What has to change, and which lighter mechanism was tried first.</source>
+        <translation>What has to change, and which lighter mechanism was tried first.</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines lines, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>The override</source>
+        <translation>The override</translation>
+    </message>
+    <message>
+        <source>Drift check</source>
+        <translation>Drift check</translation>
+    </message>
+    <message>
+        <source>The kernel file copied under your extension, with a header recording exactly which file it came from and what it looked like at the time.</source>
+        <translation>The kernel file copied under your extension, with a header recording exactly which file it came from and what it looked like at the time.</translation>
+    </message>
+    <message>
+        <source>A script that compares the copy against the kernel file it came from and says whether the kernel has moved on. The thing that makes an override survivable; without it nobody finds out until something breaks.</source>
+        <translation>A script that compares the copy against the kernel file it came from and says whether the kernel has moved on. The thing that makes an override survivable; without it nobody finds out until something breaks.</translation>
+    </message>
+    <message>
+        <source>What was overridden, why an override rather than anything lighter, and what has to be done at every upgrade.</source>
+        <translation>What was overridden, why an override rather than anything lighter, and what has to be done at every upgrade.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>What the admin interface reads to show the extension name, version and licence.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>The packaged description of the extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>So the extension can be required by name rather than copied in.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Keeps editor leftovers and build output out of the repository.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</source>
+        <translation>The licence text named below. An override carries kernel code, so what it is licensed under is not an afterthought.</translation>
+    </message>
+    <message>
+        <source>Overrides are switched on and the map has been generated, so one written here will be loaded.</source>
+        <translation>Overrides are switched on and the map has been generated, so one written here will be loaded.</translation>
     </message>
 </context>
 <context>
@@ -12954,6 +16255,262 @@ Note: The packages will not be uninstalled.</translation>
         <source>Back to the RAD tools</source>
         <translation>Back to the RAD tools</translation>
     </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines lines, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>A named size, with the filters that produce it.</source>
+        <translation>A named size, with the filters that produce it.</translation>
+    </message>
+    <message>
+        <source>A callback on something the kernel announces.</source>
+        <translation>A callback on something the kernel announces.</translation>
+    </message>
+    <message>
+        <source>What else has to be rebuilt when one object is published.</source>
+        <translation>What else has to be rebuilt when one object is published.</translation>
+    </message>
+    <message>
+        <source>What happens when a visitor fills in a form built out of content.</source>
+        <translation>What happens when a visitor fills in a form built out of content.</translation>
+    </message>
+    <message>
+        <source>Which operations a workflow may be bound to.</source>
+        <translation>Which operations a workflow may be bound to.</translation>
+    </message>
+    <message>
+        <source>Settings that apply to one siteaccess only, kept with the extension.</source>
+        <translation>Settings that apply to one siteaccess only, kept with the extension.</translation>
+    </message>
+    <message>
+        <source>Somewhere other than extension/ for extensions to live.</source>
+        <translation>Somewhere other than extension/ for extensions to live.</translation>
+    </message>
+    <message>
+        <source>A set of icons an extension brings with it.</source>
+        <translation>A set of icons an extension brings with it.</translation>
+    </message>
+    <message>
+        <source>Every image attribute is stored once and served in as many sizes as there are aliases. A template asks for one by name; the file is made the first time it is asked for and kept. Adding an alias costs nothing until something asks for it, and removing one that content still asks for leaves broken images.</source>
+        <translation>Every image attribute is stored once and served in as many sizes as there are aliases. A template asks for one by name; the file is made the first time it is asked for and kept. Adding an alias costs nothing until something asks for it, and removing one that content still asks for leaves broken images.</translation>
+    </message>
+    <message>
+        <source>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</source>
+        <translation>The kernel announces a few dozen things as they happen - a cache being cleared, a request arriving, a response about to be sent - and anything listening is called. It is the lightest way to add behaviour: no module, no handler, no class to replace, just a static method that runs when something happens.</translation>
+    </message>
+    <message>
+        <source>Publishing clears the cache for the object, its parents and what relates to it. Anything else showing that content - a listing, a count, a menu somewhere else entirely - keeps showing what it showed before. These rules are how the system is told about those.</source>
+        <translation>Publishing clears the cache for the object, its parents and what relates to it. Anything else showing that content - a listing, a count, a menu somewhere else entirely - keeps showing what it showed before. These rules are how the system is told about those.</translation>
+    </message>
+    <message>
+        <source>A poll, a contact form and a booking are all the same thing: a content class with information collector attributes. What separates them is here - what the submission is called, whether it is kept, whether it is emailed, and what the visitor is shown afterwards. All of it matched per content class.</source>
+        <translation>A poll, a contact form and a booking are all the same thing: a content class with information collector attributes. What separates them is here - what the submission is called, whether it is kept, whether it is emailed, and what the visitor is shown afterwards. All of it matched per content class.</translation>
+    </message>
+    <message>
+        <source>A workflow runs at a trigger, and a trigger is an operation plus a moment - before or after. Only the operations listed here can be bound to in the admin; the rest are invisible, however much code is behind them.</source>
+        <translation>A workflow runs at a trigger, and a trigger is an operation plus a moment - before or after. Only the operations listed here can be bound to in the admin; the rest are invisible, however much code is behind them.</translation>
+    </message>
+    <message>
+        <source>Settings in settings/siteaccess/ belong to the installation and are awkward to deploy with an extension. The same settings under an extension travel with it, and can be switched on and off with it. It is also what makes a site extension possible: one package carrying a whole site - its design, its siteaccesses, its overrides and its code.</source>
+        <translation>Settings in settings/siteaccess/ belong to the installation and are awkward to deploy with an extension. The same settings under an extension travel with it, and can be switched on and off with it. It is also what makes a site extension possible: one package carrying a whole site - its design, its siteaccesses, its overrides and its code.</translation>
+    </message>
+    <message>
+        <source>A second root - extension_src/ is the usual name - separates what a project wrote from what it took from elsewhere, so who owns a package is readable off the directory layout rather than off a list somebody maintains. Everything in the kernel goes through eZExtension::extensionPath(), so a new root is seen by all of it at once.</source>
+        <translation>A second root - extension_src/ is the usual name - separates what a project wrote from what it took from elsewhere, so who owns a package is readable off the directory layout rather than off a list somebody maintains. Everything in the kernel goes through eZExtension::extensionPath(), so a new root is seen by all of it at once.</translation>
+    </message>
+    <message>
+        <source>Icons used to mean patching the kernel or copying files into share/icons. An extension can now carry a theme of its own, searched before the ones that ship, with the whole chain falling back: this theme, then any additional themes, then the standard one, and within each, extensions before share/icons.</source>
+        <translation>Icons used to mean patching the kernel or copying files into share/icons. An extension can now carry a theme of its own, searched before the ones that ship, with the whole chain falling back: this theme, then any additional themes, then the standard one, and within each, extensions before share/icons.</translation>
+    </message>
+    <message>
+        <source>Fits the image inside a box, keeping its shape. Enlarges a small image to fill it.</source>
+        <translation>Fits the image inside a box, keeping its shape. Enlarges a small image to fill it.</translation>
+    </message>
+    <message>
+        <source>The same, but never enlarges. What almost every alias wants: a thumbnail of a small image should stay small rather than go soft.</source>
+        <translation>The same, but never enlarges. What almost every alias wants: a thumbnail of a small image should stay small rather than go soft.</translation>
+    </message>
+    <message>
+        <source>Forces exactly this size, changing the shape of the image to do it.</source>
+        <translation>Forces exactly this size, changing the shape of the image to do it.</translation>
+    </message>
+    <message>
+        <source>Sets the width and lets the height follow.</source>
+        <translation>Sets the width and lets the height follow.</translation>
+    </message>
+    <message>
+        <source>The same, but never enlarges.</source>
+        <translation>The same, but never enlarges.</translation>
+    </message>
+    <message>
+        <source>Sets the height and lets the width follow.</source>
+        <translation>Sets the height and lets the width follow.</translation>
+    </message>
+    <message>
+        <source>Scales by a percentage rather than to a size.</source>
+        <translation>Scales by a percentage rather than to a size.</translation>
+    </message>
+    <message>
+        <source>Cuts a rectangle out. Combined with a scale this is how a fixed size thumbnail is made without distortion.</source>
+        <translation>Cuts a rectangle out. Combined with a scale this is how a fixed size thumbnail is made without distortion.</translation>
+    </message>
+    <message>
+        <source>Takes the colour out.</source>
+        <translation>Takes the colour out.</translation>
+    </message>
+    <message>
+        <source>Keeps transparency through the conversion. Without it a transparent png can come out with a black background.</source>
+        <translation>Keeps transparency through the conversion. Without it a transparent png can come out with a black background.</translation>
+    </message>
+    <message>
+        <source>Twists the image. Of no use to anybody, and in every example ever written.</source>
+        <translation>Twists the image. Of no use to anybody, and in every example ever written.</translation>
+    </message>
+    <message>
+        <source>A border in a named or hex colour.</source>
+        <translation>A border in a named or hex colour.</translation>
+    </message>
+    <message>
+        <source>Flattens layers into one. Needed for some source formats before anything else will work.</source>
+        <translation>Flattens layers into one. Needed for some source formats before anything else will work.</translation>
+    </message>
+    <message>
+        <source>A form. Kept, and the visitor is shown a thank you.</source>
+        <translation>A form. Kept, and the visitor is shown a thank you.</translation>
+    </message>
+    <message>
+        <source>A poll. Kept, and the visitor is shown the result.</source>
+        <translation>A poll. Kept, and the visitor is shown the result.</translation>
+    </message>
+    <message>
+        <source>Feedback. Emailed, and not necessarily kept.</source>
+        <translation>Feedback. Emailed, and not necessarily kept.</translation>
+    </message>
+    <message>
+        <source>View caches are being cleared for a list of nodes.</source>
+        <translation>View caches are being cleared for a list of nodes.</translation>
+    </message>
+    <message>
+        <source>Every view cache is being cleared.</source>
+        <translation>Every view cache is being cleared.</translation>
+    </message>
+    <message>
+        <source>One version of one object had its cache cleared.</source>
+        <translation>One version of one object had its cache cleared.</translation>
+    </message>
+    <message>
+        <source>A content class changed and its cache is going.</source>
+        <translation>A content class changed and its cache is going.</translation>
+    </message>
+    <message>
+        <source>A file attribute is being served. Where a download count belongs.</source>
+        <translation>A file attribute is being served. Where a download count belongs.</translation>
+    </message>
+    <message>
+        <source>A section changed.</source>
+        <translation>A section changed.</translation>
+    </message>
+    <message>
+        <source>An object state was assigned to an object.</source>
+        <translation>An object state was assigned to an object.</translation>
+    </message>
+    <message>
+        <source>The list of languages changed.</source>
+        <translation>The list of languages changed.</translation>
+    </message>
+    <message>
+        <source>A node is about to be viewed; the node id is passed and the one returned is used. How a request for one node is answered with another.</source>
+        <translation>A node is about to be viewed; the node id is passed and the one returned is used. How a request for one node is answered with another.</translation>
+    </message>
+    <message>
+        <source>An image alias was generated. Where a copy to somewhere else belongs.</source>
+        <translation>An image alias was generated. Where a copy to somewhere else belongs.</translation>
+    </message>
+    <message>
+        <source>Generated image files are being removed for good.</source>
+        <translation>Generated image files are being removed for good.</translation>
+    </message>
+    <message>
+        <source>Generated image files are being removed.</source>
+        <translation>Generated image files are being removed.</translation>
+    </message>
+    <message>
+        <source>An object with images went to the trash, so its aliases went with it.</source>
+        <translation>An object with images went to the trash, so its aliases went with it.</translation>
+    </message>
+    <message>
+        <source>The request, after the kernel has read it.</source>
+        <translation>The request, after the kernel has read it.</translation>
+    </message>
+    <message>
+        <source>The request has arrived and nothing has looked at it yet.</source>
+        <translation>The request has arrived and nothing has looked at it yet.</translation>
+    </message>
+    <message>
+        <source>The whole page, about to be sent. Whatever is returned is what the browser gets.</source>
+        <translation>The whole page, about to be sent. Whatever is returned is what the browser gets.</translation>
+    </message>
+    <message>
+        <source>The page has been built and is about to be wrapped. The last place to change what a template produced.</source>
+        <translation>The page has been built and is about to be wrapped. The last place to change what a template produced.</translation>
+    </message>
+    <message>
+        <source>Every session was forgotten.</source>
+        <translation>Every session was forgotten.</translation>
+    </message>
+    <message>
+        <source>A session was forgotten, which happens on logout.</source>
+        <translation>A session was forgotten, which happens on logout.</translation>
+    </message>
+    <message>
+        <source>Old sessions were collected.</source>
+        <translation>Old sessions were collected.</translation>
+    </message>
+    <message>
+        <source>A session was given a new id, which happens on login.</source>
+        <translation>A session was given a new id, which happens on login.</translation>
+    </message>
+    <message>
+        <source>Every user cache is going, which happens when roles change.</source>
+        <translation>Every user cache is going, which happens when roles change.</translation>
+    </message>
+    <message>
+        <source>API examples</source>
+        <translation>API examples</translation>
+    </message>
+    <message>
+        <source>The class the event listeners point at, with a method per event and a note saying whether what it returns is used or ignored. Written only when events are chosen.</source>
+        <translation>The class the event listeners point at, with a method per event and a note saying whether what it returns is used or ignored. Written only when events are chosen.</translation>
+    </message>
+    <message>
+        <source>How to read these settings back from code, how to write an ini from a script without losing its comments, and how to find an extension whatever root it lives in.</source>
+        <translation>How to read these settings back from code, how to write an ini from a script without losing its comments, and how to find an extension whatever root it lives in.</translation>
+    </message>
+    <message>
+        <source>What each setting does, why it is where it is, and what has to be cleared before it takes effect.</source>
+        <translation>What each setting does, why it is where it is, and what has to be cleared before it takes effect.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>What the admin interface reads to show the extension name, version and licence.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>The packaged description of the extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>So the extension can be required by name rather than copied in.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Keeps editor leftovers and build output out of the repository.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/survey</name>
@@ -13092,6 +16649,142 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Back to the RAD tools</source>
         <translation>Back to the RAD tools</translation>
+    </message>
+    <message>
+        <source>Settings that name a class</source>
+        <translation>Settings that name a class</translation>
+    </message>
+    <message>
+        <source>Places the kernel looks</source>
+        <translation>Places the kernel looks</translation>
+    </message>
+    <message>
+        <source>Interfaces and abstract classes</source>
+        <translation>Interfaces and abstract classes</translation>
+    </message>
+    <message>
+        <source>Modules and their views</source>
+        <translation>Modules and their views</translation>
+    </message>
+    <message>
+        <source>What a template can call</source>
+        <translation>What a template can call</translation>
+    </message>
+    <message>
+        <source>Events something can listen to</source>
+        <translation>Events something can listen to</translation>
+    </message>
+    <message>
+        <source>Templates already replaced</source>
+        <translation>Templates already replaced</translation>
+    </message>
+    <message>
+        <source>What is configured and cannot work</source>
+        <translation>What is configured and cannot work</translation>
+    </message>
+    <message>
+        <source>Kernel classes replaced outright</source>
+        <translation>Kernel classes replaced outright</translation>
+    </message>
+    <message>
+        <source>Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.</source>
+        <translation>Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.</translation>
+    </message>
+    <message>
+        <source>What the kernel declares for somebody else to implement, with how many methods each asks for and what already implements it. The ones with many methods and one implementation are the deep water.</source>
+        <translation>What the kernel declares for somebody else to implement, with how many methods each asks for and what already implements it. The ones with many methods and one implementation are the deep water.</translation>
+    </message>
+    <message>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <translation>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</translation>
+    </message>
+    <message>
+        <source>Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.</source>
+        <translation>Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.</translation>
+    </message>
+    <message>
+        <source>Every override registered here. Each is a place a template has already been replaced - which is both something to learn from and something to collide with, since two overrides matching the same thing are decided by load order rather than by intent.</source>
+        <translation>Every override registered here. Each is a place a template has already been replaced - which is both something to learn from and something to collide with, since two overrides matching the same thing are decided by load order rather than by intent.</translation>
+    </message>
+    <message>
+        <source>The same walk over the same files, asked the other question: not where something could go, but what is here that points at nothing. A module listed and not found answers every address under it with an error; a datatype offered and not found cannot be added and hides the values of the attributes that already use it. Add (check)/classes to the address to load every class as well, which takes a few seconds and is the only way to find one php refuses.</source>
+        <translation>The same walk over the same files, asked the other question: not where something could go, but what is here that points at nothing. A module listed and not found answers every address under it with an error; a datatype offered and not found cannot be added and hides the values of the attributes that already use it. Add (check)/classes to the address to load every class as well, which takes a few seconds and is the only way to find one php refuses.</translation>
+    </message>
+    <message>
+        <source>The heaviest mechanism there is, and the first thing to know before anything else is diagnosed: a replaced kernel class is not the kernel any more, whatever the kernel source says.</source>
+        <translation>The heaviest mechanism there is, and the first thing to know before anything else is diagnosed: a replaced kernel class is not the kernel any more, whatever the kernel source says.</translation>
+    </message>
+    <message>
+        <source>Every setting that names a directory to search or an extension to search in. Add your extension to one of these and your file is found; leave it out and the class is never loaded however correctly it is written. Most of the time something works and should not, or does not work and should, the answer is one of these lines.</source>
+        <translation>Every setting that names a directory to search or an extension to search in. Add your extension to one of these and your file is found; leave it out and the class is never loaded however correctly it is written. Most of the time something works and should not, or does not work and should, the answer is one of these lines.</translation>
+    </message>
+    <message>
+        <source>Every setting on this installation whose value is a class, or whose name says it takes one. Change one of these and something else answers instead.</source>
+        <translation>Every setting on this installation whose value is a class, or whose name says it takes one. Change one of these and something else answers instead.</translation>
+    </message>
+    <message>
+        <source>View with no script</source>
+        <translation>View with no script</translation>
+    </message>
+    <message>
+        <source>Design extension with no design</source>
+        <translation>Design extension with no design</translation>
+    </message>
+    <message>
+        <source>Directory searched and not there</source>
+        <translation>Directory searched and not there</translation>
+    </message>
+    <message>
+        <source>Setting names no class</source>
+        <translation>Setting names no class</translation>
+    </message>
+    <message>
+        <source>Nothing implements it</source>
+        <translation>Nothing implements it</translation>
+    </message>
+    <message>
+        <source>A view left in the list after its script is gone is worse than one that was never declared: it is reachable, it is in the policy list a role can grant, and it does nothing.</source>
+        <translation>A view left in the list after its script is gone is worse than one that was never declared: it is reachable, it is in the policy list a role can grant, and it does nothing.</translation>
+    </message>
+    <message>
+        <source>Clear the caches: php bin/php/ezcache.php --clear-all</source>
+        <translation>Clear the caches: php bin/php/ezcache.php --clear-all</translation>
+    </message>
+    <message>
+        <source>If it carries no templates, take the line out of design.ini: it costs a directory lookup per design resolution and buys nothing.</source>
+        <translation>If it carries no templates, take the line out of design.ini: it costs a directory lookup per design resolution and buys nothing.</translation>
+    </message>
+    <message>
+        <source>Clear the template caches after either: php bin/php/ezcache.php --clear-tag=template</source>
+        <translation>Clear the template caches after either: php bin/php/ezcache.php --clear-tag=template</translation>
+    </message>
+    <message>
+        <source>Clear the caches after either: php bin/php/ezcache.php --clear-all</source>
+        <translation>Clear the caches after either: php bin/php/ezcache.php --clear-all</translation>
+    </message>
+    <message>
+        <source>Check first whether the setting takes an alias. Several do, and an alias that happens to be capitalised is not a fault - eZECB is the alias for eZECBHandler and is perfectly correct.</source>
+        <translation>Check first whether the setting takes an alias. Several do, and an alias that happens to be capitalised is not a fault - eZECB is the alias for eZECBHandler and is perfectly correct.</translation>
+    </message>
+    <message>
+        <source>If it is meant to be a class, find out whether the extension that declares it is installed and in ActiveExtensions[].</source>
+        <translation>If it is meant to be a class, find out whether the extension that declares it is installed and in ActiveExtensions[].</translation>
+    </message>
+    <message>
+        <source>If it is installed, the autoload map may be stale: php bin/php/ezpgenerateautoloads.php</source>
+        <translation>If it is installed, the autoload map may be stale: php bin/php/ezpgenerateautoloads.php</translation>
+    </message>
+    <message>
+        <source>If the class was renamed, change the setting to the new name. Nothing else will, and the handler is silently not running in the meantime.</source>
+        <translation>If the class was renamed, change the setting to the new name. Nothing else will, and the handler is silently not running in the meantime.</translation>
+    </message>
+    <message>
+        <source>Nothing to do. It is listed so that the page is a complete picture rather than only a list of faults.</source>
+        <translation>Nothing to do. It is listed so that the page is a complete picture rather than only a list of faults.</translation>
+    </message>
+    <message>
+        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <translation>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</translation>
     </message>
 </context>
 <context>
@@ -13295,6 +16988,122 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Back to the RAD tools</source>
         <translation>Back to the RAD tools</translation>
+    </message>
+    <message>
+        <source>%open...%close, with the body handed over unprocessed to draw none, one or many times. This is how section and foreach work.</source>
+        <translation>%open...%close, with the body handed over unprocessed to draw none, one or many times. This is how section and foreach work.</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines lines, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Always the same answer</source>
+        <translation>Always the same answer</translation>
+    </message>
+    <message>
+        <source>Parameters may be worked out first</source>
+        <translation>Parameters may be worked out first</translation>
+    </message>
+    <message>
+        <source>Input may be passed as a parameter</source>
+        <translation>Input may be passed as a parameter</translation>
+    </message>
+    <message>
+        <source>Given the same input this always gives the same output, with nothing read from the request, the session, the database or the clock. The compiler may then run it once, at compile time, and put the answer straight in the template. The fastest an operator can be, and a lie here is a value frozen for the life of the cache.</source>
+        <translation>Given the same input this always gives the same output, with nothing read from the request, the session, the database or the clock. The compiler may then run it once, at compile time, and put the answer straight in the template. The fastest an operator can be, and a lie here is a value frozen for the life of the cache.</translation>
+    </message>
+    <message>
+        <source>The parameters can be evaluated before the operator is reached, rather than handed over as unevaluated element trees. True for almost every operator; false only for one that has to see the expression rather than its value.</source>
+        <translation>The parameters can be evaluated before the operator is reached, rather than handed over as unevaluated element trees. True for almost every operator; false only for one that has to see the expression rather than its value.</translation>
+    </message>
+    <message>
+        <source>The value on the left of the pipe can be handed over as an ordinary parameter. Lets the compiler rewrite the operator into a plain function call.</source>
+        <translation>The value on the left of the pipe can be handed over as an ordinary parameter. Lets the compiler rewrite the operator into a plain function call.</translation>
+    </message>
+    <message>
+        <source>Operator class</source>
+        <translation>Operator class</translation>
+    </message>
+    <message>
+        <source>Function class</source>
+        <translation>Function class</translation>
+    </message>
+    <message>
+        <source>Autoload registration</source>
+        <translation>Autoload registration</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registration</translation>
+    </message>
+    <message>
+        <source>API examples</source>
+        <translation>API examples</translation>
+    </message>
+    <message>
+        <source>The class behind the operators named below, with its parameter list, its compile-time hints, and a modify() that dispatches on the operator name.</source>
+        <translation>The class behind the operators named below, with its parameter list, its compile-time hints, and a modify() that dispatches on the operator name.</translation>
+    </message>
+    <message>
+        <source>A template function - {myfunction} rather than |myoperator - with its attribute list and a process() that writes output. Written only when function names are given.</source>
+        <translation>A template function - {myfunction} rather than |myoperator - with its attribute list and a process() that writes output. Written only when function names are given.</translation>
+    </message>
+    <message>
+        <source>A module directory carrying only a function_definition.php, which is all a fetch function is. Written only when fetch names are given.</source>
+        <translation>A module directory carrying only a function_definition.php, which is all a fetch function is. Written only when fetch names are given.</translation>
+    </message>
+    <message>
+        <source>fetchalias.ini, so a long fetch with fixed arguments can be called by one short name from any template.</source>
+        <translation>fetchalias.ini, so a long fetch with fixed arguments can be called by one short name from any template.</translation>
+    </message>
+    <message>
+        <source>autoloads/eztemplateautoload.php, which is how operators and functions are really registered. Not an ini: this is the file the engine reads, and without it nothing here is ever loaded.</source>
+        <translation>autoloads/eztemplateautoload.php, which is how operators and functions are really registered. Not an ini: this is the file the engine reads, and without it nothing here is ever loaded.</translation>
+    </message>
+    <message>
+        <source>site.ini naming this extension as one to look in for that autoload file, and module.ini if there are fetch functions.</source>
+        <translation>site.ini naming this extension as one to look in for that autoload file, and module.ini if there are fetch functions.</translation>
+    </message>
+    <message>
+        <source>What each thing looks like in a template, what it is handed, and how to try it from a script without a page anywhere near it.</source>
+        <translation>What each thing looks like in a template, what it is handed, and how to try it from a script without a page anywhere near it.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>What the admin interface reads to show the extension name, version and licence.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>The packaged description of the extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>So the extension can be required by name rather than copied in.</translation>
+    </message>
+    <message>
+        <source>What it adds to the template language, how to switch it on, and what each name does.</source>
+        <translation>What it adds to the template language, how to switch it on, and what each name does.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Keeps editor leftovers and build output out of the repository.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
+    </message>
+    <message>
+        <source>Takes no input; everything it needs is a parameter.</source>
+        <translation>Takes no input; everything it needs is a parameter.</translation>
+    </message>
+    <message>
+        <source>Has a body, which it may draw none, one or many times.</source>
+        <translation>Has a body, which it may draw none, one or many times.</translation>
+    </message>
+    <message>
+        <source>Reads something and gives it back. Runs a policy check first, unlike an operator.</source>
+        <translation>Reads something and gives it back. Runs a policy check first, unlike an operator.</translation>
     </message>
 </context>
 <context>
@@ -13585,6 +17394,186 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Back to the RAD tools</source>
         <translation>Back to the RAD tools</translation>
+    </message>
+    <message>
+        <source>Lower case letters and digits.</source>
+        <translation>Lower case letters and digits.</translation>
+    </message>
+    <message>
+        <source>Require approval</source>
+        <translation>Require approval</translation>
+    </message>
+    <message>
+        <source>%lines lines, %bytes bytes</source>
+        <translation>%lines lines, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Number</translation>
+    </message>
+    <message>
+        <source>Yes or no</source>
+        <translation>Yes or no</translation>
+    </message>
+    <message>
+        <source>One of a list</source>
+        <translation>One of a list</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Text</translation>
+    </message>
+    <message>
+        <source>List of ids</source>
+        <translation>List of ids</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Class attributes</translation>
+    </message>
+    <message>
+        <source>A whole number, kept in one of the four integer columns.</source>
+        <translation>A whole number, kept in one of the four integer columns.</translation>
+    </message>
+    <message>
+        <source>A tick box, kept as 0 or 1 in an integer column.</source>
+        <translation>A tick box, kept as 0 or 1 in an integer column.</translation>
+    </message>
+    <message>
+        <source>A drop-down of values you name below, kept as text.</source>
+        <translation>A drop-down of values you name below, kept as text.</translation>
+    </message>
+    <message>
+        <source>A line of text, kept in one of the five text columns.</source>
+        <translation>A line of text, kept in one of the five text columns.</translation>
+    </message>
+    <message>
+        <source>A list of numbers - class ids, section ids, user ids - kept as comma separated text.</source>
+        <translation>A list of numbers - class ids, section ids, user ids - kept as comma separated text.</translation>
+    </message>
+    <message>
+        <source>Attributes picked from a content class, the way the wait-until-date event does. Uses the class list helpers on the base type.</source>
+        <translation>Attributes picked from a content class, the way the wait-until-date event does. Uses the class list helpers on the base type.</translation>
+    </message>
+    <message>
+        <source>The event is done and the workflow carries on to the next one. Every event needs a way to reach this.</source>
+        <translation>The event is done and the workflow carries on to the next one. Every event needs a way to reach this.</translation>
+    </message>
+    <message>
+        <source>The workflow stops here and the operation it was attached to does not happen. On a before trigger, that means the publish is refused.</source>
+        <translation>The workflow stops here and the operation it was attached to does not happen. On a before trigger, that means the publish is refused.</translation>
+    </message>
+    <message>
+        <source>Nothing more happens now; the workflow waits for the workflow_cron cronjob to come back to it. Used when the answer is not available yet.</source>
+        <translation>Nothing more happens now; the workflow waits for the workflow_cron cronjob to come back to it. Used when the answer is not available yet.</translation>
+    </message>
+    <message>
+        <source>As above, but this event runs again rather than the one after it. Set an activation date with setActivationDate() or it will spin.</source>
+        <translation>As above, but this event runs again rather than the one after it. Set an activation date with setActivationDate() or it will spin.</translation>
+    </message>
+    <message>
+        <source>The request stops and a template of the event&apos;s choosing is shown instead - a confirmation page, a form, a warning.</source>
+        <translation>The request stops and a template of the event&apos;s choosing is shown instead - a confirmation page, a form, a warning.</translation>
+    </message>
+    <message>
+        <source>As above, and this event runs again when the visitor comes back.</source>
+        <translation>As above, and this event runs again when the visitor comes back.</translation>
+    </message>
+    <message>
+        <source>The visitor is sent somewhere else. Used to hand off to a payment provider and come back.</source>
+        <translation>The visitor is sent somewhere else. Used to hand off to a payment provider and come back.</translation>
+    </message>
+    <message>
+        <source>As above, and this event runs again on return - which is how a payment result is read.</source>
+        <translation>As above, and this event runs again on return - which is how a payment result is read.</translation>
+    </message>
+    <message>
+        <source>The whole workflow is abandoned. Use when the thing it was about is gone - a deleted object, a missing order.</source>
+        <translation>The whole workflow is abandoned. Use when the thing it was about is gone - a deleted object, a missing order.</translation>
+    </message>
+    <message>
+        <source>The workflow is finished here; events after this one do not run.</source>
+        <translation>The workflow is finished here; events after this one do not run.</translation>
+    </message>
+    <message>
+        <source>The workflow starts again from its first event.</source>
+        <translation>The workflow starts again from its first event.</translation>
+    </message>
+    <message>
+        <source>Hands over to another workflow, the way the multiplexer event does.</source>
+        <translation>Hands over to another workflow, the way the multiplexer event does.</translation>
+    </message>
+    <message>
+        <source>The event type</source>
+        <translation>The event type</translation>
+    </message>
+    <message>
+        <source>Edit template</source>
+        <translation>Edit template</translation>
+    </message>
+    <message>
+        <source>View template</source>
+        <translation>View template</translation>
+    </message>
+    <message>
+        <source>Registration</source>
+        <translation>Registration</translation>
+    </message>
+    <message>
+        <source>Design registration</source>
+        <translation>Design registration</translation>
+    </message>
+    <message>
+        <source>Cronjob note</source>
+        <translation>Cronjob note</translation>
+    </message>
+    <message>
+        <source>The class itself: its triggers, its settings, its form handling and its execute().</source>
+        <translation>The class itself: its triggers, its settings, its form handling and its execute().</translation>
+    </message>
+    <message>
+        <source>What an editor sees when the event is added to a workflow, with a field per setting.</source>
+        <translation>What an editor sees when the event is added to a workflow, with a field per setting.</translation>
+    </message>
+    <message>
+        <source>What the workflow list shows about the event once it is configured.</source>
+        <translation>What the workflow list shows about the event once it is configured.</translation>
+    </message>
+    <message>
+        <source>workflow.ini, so the event appears in the list of ones that can be added.</source>
+        <translation>workflow.ini, so the event appears in the list of ones that can be added.</translation>
+    </message>
+    <message>
+        <source>design.ini, so the two templates above are found through the design chain.</source>
+        <translation>design.ini, so the two templates above are found through the design chain.</translation>
+    </message>
+    <message>
+        <source>A note in the readme about workflow_cron, which is what runs an event that deferred itself.</source>
+        <translation>A note in the readme about workflow_cron, which is what runs an event that deferred itself.</translation>
+    </message>
+    <message>
+        <source>What the admin interface reads to show the extension name, version and licence.</source>
+        <translation>What the admin interface reads to show the extension name, version and licence.</translation>
+    </message>
+    <message>
+        <source>The packaged description of the extension.</source>
+        <translation>The packaged description of the extension.</translation>
+    </message>
+    <message>
+        <source>So the extension can be required by name rather than copied in.</source>
+        <translation>So the extension can be required by name rather than copied in.</translation>
+    </message>
+    <message>
+        <source>What the event does, when it runs, what it stores and what it answers.</source>
+        <translation>What the event does, when it runs, what it stores and what it answers.</translation>
+    </message>
+    <message>
+        <source>Keeps editor leftovers and build output out of the repository.</source>
+        <translation>Keeps editor leftovers and build output out of the repository.</translation>
+    </message>
+    <message>
+        <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
 </context>
 <context>
@@ -14217,6 +18206,14 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Show %count items per page.</source>
         <translation>Show %count items per page.</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Active</translation>
+    </message>
+    <message>
+        <source>Inactive</source>
+        <translation>Inactive</translation>
     </message>
 </context>
 <context>
@@ -15566,6 +19563,10 @@ Note: The packages will not be uninstalled.</translation>
         <source>Object states in this group (%state_count)</source>
         <translation>Object states in this group (%state_count)</translation>
     </message>
+    <message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/group_edit</name>
@@ -16395,6 +20396,14 @@ your account.</translation>
         <source>Automatic (source template)</source>
         <translation>Automatic (source template)</translation>
     </message>
+    <message>
+        <source>The newly created template file will be placed in %path.</source>
+        <translation>The newly created template file will be placed in %path.</translation>
+    </message>
+    <message>
+        <source>No extension</source>
+        <translation>No extension</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/visual/templateedit</name>
@@ -16579,6 +20588,42 @@ your account.</translation>
     <message>
         <source>Update overrides</source>
         <translation>Update overrides</translation>
+    </message>
+    <message>
+        <source>Remove this condition</source>
+        <translation>Remove this condition</translation>
+    </message>
+    <message>
+        <source>class</source>
+        <translation>class</translation>
+    </message>
+    <message>
+        <source>node</source>
+        <translation>node</translation>
+    </message>
+    <message>
+        <source>object</source>
+        <translation>object</translation>
+    </message>
+    <message>
+        <source>section</source>
+        <translation>section</translation>
+    </message>
+    <message>
+        <source>depth</source>
+        <translation>depth</translation>
+    </message>
+    <message>
+        <source>viewmode</source>
+        <translation>viewmode</translation>
+    </message>
+    <message>
+        <source>state</source>
+        <translation>state</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
     </message>
 </context>
 <context>
@@ -16980,6 +21025,26 @@ your account.</translation>
     <message>
         <source>(%process_count)</source>
         <translation>(%process_count)</translation>
+    </message>
+    <message>
+        <source>status : (%last_event_status)</source>
+        <translation>status : (%last_event_status)</translation>
+    </message>
+    <message>
+        <source>event type :</source>
+        <translation>event type :</translation>
+    </message>
+    <message>
+        <source>description :</source>
+        <translation>description :</translation>
+    </message>
+    <message>
+        <source>information :</source>
+        <translation>information :</translation>
+    </message>
+    <message>
+        <source>status : (%event_status)</source>
+        <translation>status : (%event_status)</translation>
     </message>
 </context>
 <context>
@@ -17563,6 +21628,26 @@ your account.</translation>
         <source>Anonymous users are not allowed to vote in this poll. Please log in.</source>
         <translation>Anonymous users are not allowed to vote in this poll. Please log in.</translation>
     </message>
+    <message>
+        <source>Multiprice Product - List embed view</source>
+        <translation>Multiprice Product - List embed view</translation>
+    </message>
+    <message>
+        <source>Multiprice Product - Full view</source>
+        <translation>Multiprice Product - Full view</translation>
+    </message>
+    <message>
+        <source>Star</source>
+        <translation>Star</translation>
+    </message>
+    <message>
+        <source>Company logo</source>
+        <translation>Company logo</translation>
+    </message>
+    <message>
+        <source>Right menu</source>
+        <translation>Right menu</translation>
+    </message>
 </context>
 <context>
     <name>design/base/shop</name>
@@ -17704,6 +21789,13 @@ your account.</translation>
     </message>
 </context>
 <context>
+    <name>design/base/slideshow/gallery</name>
+    <message>
+        <source>Thumbnail view</source>
+        <translation>Thumbnail view</translation>
+    </message>
+</context>
+<context>
     <name>design/ezwebin/link</name>
     <message>
         <source>Printable version</source>
@@ -17715,6 +21807,28 @@ your account.</translation>
     <message>
         <source>The items contain more than the maximum possible nodes for subtree removal and will not be deleted. You can remove this subtree using the ezsubtreeremove.php script.</source>
         <translation>The items contain more than the maximum possible nodes for subtree removal and will not be deleted. You can remove this subtree using the ezsubtreeremove.php script.</translation>
+    </message>
+</context>
+<context>
+    <name>design/mysite/article</name>
+    <message>
+        <source>Comments</source>
+        <translation>Comments</translation>
+    </message>
+    <message>
+        <source>Comment this article!</source>
+        <translation>Comment this article!</translation>
+    </message>
+    <message>
+        <source>New comment</source>
+        <translation>New comment</translation>
+    </message>
+</context>
+<context>
+    <name>design/mysite/line_article</name>
+    <message>
+        <source>Read more...</source>
+        <translation>Read more...</translation>
     </message>
 </context>
 <context>
@@ -17737,6 +21851,14 @@ your account.</translation>
     <message>
         <source>Retry</source>
         <translation>Retry</translation>
+    </message>
+    <message>
+        <source>The class %class is currently locked by %modifier and was last modified at %modified.</source>
+        <translation>The class %class is currently locked by %modifier and was last modified at %modified.</translation>
+    </message>
+    <message>
+        <source>The class will be available for editing once the class is stored by the modifier or when it is automatically unlocked at %modified</source>
+        <translation>The class will be available for editing once the class is stored by the modifier or when it is automatically unlocked at %modified</translation>
     </message>
 </context>
 <context>
@@ -17796,6 +21918,10 @@ your account.</translation>
     <message>
         <source>Last modified classes</source>
         <translation>Last modified classes</translation>
+    </message>
+    <message>
+        <source>edit</source>
+        <translation>edit</translation>
     </message>
 </context>
 <context>
@@ -18412,6 +22538,14 @@ your account.</translation>
         <source>second(s)</source>
         <translation>second(s)</translation>
     </message>
+    <message>
+        <source>Select element for removal.</source>
+        <translation>Select element for removal.</translation>
+    </message>
+    <message>
+        <source>(See &apos;%location&apos;)</source>
+        <translation>(See &apos;%location&apos;)</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/class/datatype </name>
@@ -18692,6 +22826,10 @@ your account.</translation>
         <source>Copy</source>
         <translation>Copy</translation>
     </message>
+    <message>
+        <source>edit</source>
+        <translation>edit</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/class/view</name>
@@ -18857,6 +22995,10 @@ your account.</translation>
     <message>
         <source>[more]</source>
         <translation>[more]</translation>
+    </message>
+    <message>
+        <source>[new]</source>
+        <translation>[new]</translation>
     </message>
 </context>
 <context>
@@ -19229,6 +23371,18 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Copy subtree Notification</source>
         <translation>Copy subtree Notification</translation>
     </message>
+    <message>
+        <source>Errors:</source>
+        <translation>Errors:</translation>
+    </message>
+    <message>
+        <source>Information:</source>
+        <translation>Information:</translation>
+    </message>
+    <message>
+        <source>Warnings:</source>
+        <translation>Warnings:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/create</name>
@@ -19262,6 +23416,10 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Cancel</source>
         <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>You do not have permissions to create an object of the requested class in any language.</source>
+        <translation>You do not have permissions to create an object of the requested class in any language.</translation>
     </message>
 </context>
 <context>
@@ -19966,6 +24124,33 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>You are not allowed to view the related object</source>
         <translation>You are not allowed to view the related object</translation>
     </message>
+    <message>
+        <source>True</source>
+        <translation>True</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation>False</translation>
+    </message>
+    <message>
+        <source>Select currency</source>
+        <translation>Select currency</translation>
+    </message>
+    <message>
+        <source>Create New</source>
+        <translation>Create New</translation>
+    </message>
+    <message>
+        <source>ISBN %data_text</source>
+        <translation>ISBN %data_text</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/content/datatype/result/ezoption</name>
+    <message>
+        <source>Total:</source>
+        <translation>Total:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/edit</name>
@@ -20206,6 +24391,18 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Class name</source>
         <translation>Class name</translation>
+    </message>
+    <message>
+        <source>Top node</source>
+        <translation>Top node</translation>
+    </message>
+    <message>
+        <source>Ascending</source>
+        <translation>Ascending</translation>
+    </message>
+    <message>
+        <source>Descending</source>
+        <translation>Descending</translation>
     </message>
 </context>
 <context>
@@ -20485,6 +24682,10 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Queued</source>
         <translation>Queued</translation>
+    </message>
+    <message>
+        <source>Toggle selection</source>
+        <translation>Toggle selection</translation>
     </message>
 </context>
 <context>
@@ -21178,6 +25379,10 @@ If you want to send comments to the approver or view the status use the URL belo
         <translation>Choose a file from your locale machine then click the &quot;Upload&quot; button. An object will be created according to file type and placed in your chosen location.
 </translation>
     </message>
+    <message>
+        <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
+        <translation>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/contentstructuremenu</name>
@@ -21188,6 +25393,26 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>[%classname] Click on the icon to display a context-sensitive menu.</source>
         <translation>[%classname] Click on the icon to display a context-sensitive menu.</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Hidden by superior</source>
+        <translation>Hidden by superior</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Hidden</translation>
+    </message>
+    <message>
+        <source>(Hidden)</source>
+        <translation>(Hidden)</translation>
+    </message>
+    <message>
+        <source>(Hidden by parent)</source>
+        <translation>(Hidden by parent)</translation>
     </message>
 </context>
 <context>
@@ -21287,6 +25512,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
+    <message>
+        <source>The newly created template file will be placed in %path.</source>
+        <translation>The newly created template file will be placed in %path.</translation>
+    </message>
+    <message>
+        <source>No extension</source>
+        <translation>No extension</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/design/templatelist</name>
@@ -21352,6 +25585,10 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Update priorities</source>
         <translation>Update priorities</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
     </message>
 </context>
 <context>
@@ -21438,6 +25675,21 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Global (override)</source>
         <translation>Global (override)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/error/error500</name>
+    <message>
+        <source>Oops! An Error Occurred</source>
+        <translation>Oops! An Error Occurred</translation>
+    </message>
+    <message>
+        <source>The server returned a &quot;500 Fatal Error&quot;.</source>
+        <translation>The server returned a &quot;500 Fatal Error&quot;.</translation>
+    </message>
+    <message>
+        <source>Something is broken. Please let us know what you were doing when this error occurred. We will fix it as soon as possible. Sorry for any inconvenience caused.</source>
+        <translation>Something is broken. Please let us know what you were doing when this error occurred. We will fix it as soon as possible. Sorry for any inconvenience caused.</translation>
     </message>
 </context>
 <context>
@@ -21798,6 +26050,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Exponential redirection - %url</source>
         <translation>Exponential redirection - %url</translation>
     </message>
+    <message>
+        <source>REST output</source>
+        <translation>REST output</translation>
+    </message>
+    <message>
+        <source>Please read the REST documentation on the &lt;a href=&quot;%url&quot;&gt;documentation server&lt;/a&gt; on how to configure the necessary OutputFormat templates.</source>
+        <translation>Please read the REST documentation on the &lt;a href=&quot;%url&quot;&gt;documentation server&lt;/a&gt; on how to configure the necessary OutputFormat templates.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/location</name>
@@ -21855,6 +26115,14 @@ If you do all the children will be removed as well.</translation>
         <source>(Checking every %ms%ms and checked %times% times so far)</source>
         <translation>(Checking every %ms%ms and checked %times% times so far)</translation>
     </message>
+    <message>
+        <source>%count child</source>
+        <translation>%count child</translation>
+    </message>
+    <message>
+        <source>%count children</source>
+        <translation>%count children</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/menuconfig</name>
@@ -21900,6 +26168,13 @@ If you do all the children will be removed as well.</translation>
     <message>
         <source>Next</source>
         <translation>Next</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/navigator/alphabetical</name>
+    <message>
+        <source>others</source>
+        <translation>others</translation>
     </message>
 </context>
 <context>
@@ -21959,6 +26234,10 @@ If you do all the children will be removed as well.</translation>
     <message>
         <source>Are you sure you want to remove these items?</source>
         <translation>Are you sure you want to remove these items?</translation>
+    </message>
+    <message>
+        <source>Warning:</source>
+        <translation>Warning:</translation>
     </message>
 </context>
 <context>
@@ -22058,6 +26337,10 @@ If you do all the children will be removed as well.</translation>
     <message>
         <source>Placed in</source>
         <translation>Placed in</translation>
+    </message>
+    <message>
+        <source>Default object view. &lt;a class=&quot;menuheadlink&quot; href=%url&gt;Click to create a custom template&lt;/a&gt;</source>
+        <translation>Default object view. &lt;a class=&quot;menuheadlink&quot; href=%url&gt;Click to create a custom template&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -22219,6 +26502,10 @@ change your settings at:</translation>
 The item be can viewed by using the URL below.</source>
         <translation>This email is to inform you that a new collaboration item is awaiting your attention at %sitename.
 The item be can viewed by using the URL below.</translation>
+    </message>
+    <message>
+        <source>(Owner: %owner)</source>
+        <translation>(Owner: %owner)</translation>
     </message>
 </context>
 <context>
@@ -22694,6 +26981,26 @@ You can also remove the package without uninstalling it from the package list.</
     <message>
         <source>Close</source>
         <translation>Close</translation>
+    </message>
+    <message>
+        <source>Installing package &apos;%name&apos;.</source>
+        <translation>Installing package &apos;%name&apos;.</translation>
+    </message>
+    <message>
+        <source>Element with ID &apos;%element_id&apos; will not be installed.</source>
+        <translation>Element with ID &apos;%element_id&apos; will not be installed.</translation>
+    </message>
+    <message>
+        <source>Uninstalling package &apos;%name&apos;.</source>
+        <translation>Uninstalling package &apos;%name&apos;.</translation>
+    </message>
+    <message>
+        <source>Element with ID &apos;%element_id&apos; will not be uninstalled.</source>
+        <translation>Element with ID &apos;%element_id&apos; will not be uninstalled.</translation>
+    </message>
+    <message>
+        <source>MD5:</source>
+        <translation>MD5:</translation>
     </message>
 </context>
 <context>
@@ -23442,6 +27749,10 @@ menu on the top.</translation>
     <message>
         <source>Enclosure (media)</source>
         <translation>Enclosure (media)</translation>
+    </message>
+    <message>
+        <source>Source %source</source>
+        <translation>Source %source</translation>
     </message>
 </context>
 <context>
@@ -24714,6 +29025,98 @@ The default code was made from the basic parameters you chose.</translation>
         <source>What a template will write</source>
         <translation>What a template will write</translation>
     </message>
+    <message>
+        <source>Clear cache:</source>
+        <translation>Clear cache:</translation>
+    </message>
+    <message>
+        <source>Quick settings:</source>
+        <translation>Quick settings:</translation>
+    </message>
+    <message>
+        <source>PHP Accelerator</source>
+        <translation>PHP Accelerator</translation>
+    </message>
+    <message>
+        <source>%total extension points found, %ini ini files read.</source>
+        <translation>%total extension points found, %ini ini files read.</translation>
+    </message>
+    <message>
+        <source>Template will be placed in %path</source>
+        <translation>Template will be placed in %path</translation>
+    </message>
+    <message>
+        <source>Settings that name a class</source>
+        <translation>Settings that name a class</translation>
+    </message>
+    <message>
+        <source>Places the kernel looks</source>
+        <translation>Places the kernel looks</translation>
+    </message>
+    <message>
+        <source>Interfaces and abstract classes</source>
+        <translation>Interfaces and abstract classes</translation>
+    </message>
+    <message>
+        <source>Modules and their views</source>
+        <translation>Modules and their views</translation>
+    </message>
+    <message>
+        <source>What a template can call</source>
+        <translation>What a template can call</translation>
+    </message>
+    <message>
+        <source>Events something can listen to</source>
+        <translation>Events something can listen to</translation>
+    </message>
+    <message>
+        <source>Templates already replaced</source>
+        <translation>Templates already replaced</translation>
+    </message>
+    <message>
+        <source>What is configured and cannot work</source>
+        <translation>What is configured and cannot work</translation>
+    </message>
+    <message>
+        <source>Kernel classes replaced outright</source>
+        <translation>Kernel classes replaced outright</translation>
+    </message>
+    <message>
+        <source>Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.</source>
+        <translation>Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.</translation>
+    </message>
+    <message>
+        <source>What the kernel declares for somebody else to implement, with how many methods each asks for and what already implements it. The ones with many methods and one implementation are the deep water.</source>
+        <translation>What the kernel declares for somebody else to implement, with how many methods each asks for and what already implements it. The ones with many methods and one implementation are the deep water.</translation>
+    </message>
+    <message>
+        <source>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</source>
+        <translation>Every point the kernel announces as it works, swept out of the source rather than listed. A filter event uses what a listener returns, so one that forgets to return the value destroys it; a notify event ignores it. The lightest way there is to add behaviour: no module, no handler, no class to replace.</translation>
+    </message>
+    <message>
+        <source>Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.</source>
+        <translation>Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.</translation>
+    </message>
+    <message>
+        <source>Every override registered here. Each is a place a template has already been replaced - which is both something to learn from and something to collide with, since two overrides matching the same thing are decided by load order rather than by intent.</source>
+        <translation>Every override registered here. Each is a place a template has already been replaced - which is both something to learn from and something to collide with, since two overrides matching the same thing are decided by load order rather than by intent.</translation>
+    </message>
+    <message>
+        <source>The same walk over the same files, asked the other question: not where something could go, but what is here that points at nothing. A module listed and not found answers every address under it with an error; a datatype offered and not found cannot be added and hides the values of the attributes that already use it. Add (check)/classes to the address to load every class as well, which takes a few seconds and is the only way to find one php refuses.</source>
+        <translation>The same walk over the same files, asked the other question: not where something could go, but what is here that points at nothing. A module listed and not found answers every address under it with an error; a datatype offered and not found cannot be added and hides the values of the attributes that already use it. Add (check)/classes to the address to load every class as well, which takes a few seconds and is the only way to find one php refuses.</translation>
+    </message>
+    <message>
+        <source>The heaviest mechanism there is, and the first thing to know before anything else is diagnosed: a replaced kernel class is not the kernel any more, whatever the kernel source says.</source>
+        <translation>The heaviest mechanism there is, and the first thing to know before anything else is diagnosed: a replaced kernel class is not the kernel any more, whatever the kernel source says.</translation>
+    </message>
+    <message>
+        <source>Every setting that names a directory to search or an extension to search in. Add your extension to one of these and your file is found; leave it out and the class is never loaded however correctly it is written. Most of the time something works and should not, or does not work and should, the answer is one of these lines.</source>
+        <translation>Every setting that names a directory to search or an extension to search in. Add your extension to one of these and your file is found; leave it out and the class is never loaded however correctly it is written. Most of the time something works and should not, or does not work and should, the answer is one of these lines.</translation>
+    </message>
+    <message>
+        <source>Every setting on this installation whose value is a class, or whose name says it takes one. Change one of these and something else answers instead.</source>
+        <translation>Every setting on this installation whose value is a class, or whose name says it takes one. Change one of these and something else answers instead.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/datatypecode</name>
@@ -24891,6 +29294,10 @@ The default code was made from the basic parameters you chose.</translation>
     <message>
         <source>More information on the SQLite extension can be found at</source>
         <translation>More information on the SQLite extension can be found at</translation>
+    </message>
+    <message>
+        <source>If you are having problems connecting to your database you should take a look at %title at %link.</source>
+        <translation>If you are having problems connecting to your database you should take a look at %title at %link.</translation>
     </message>
 </context>
 <context>
@@ -26396,6 +30803,82 @@ See the requirements page for more information.</translation>
         <source>Database files there now: %files</source>
         <translation>Database files there now: %files</translation>
     </message>
+    <message>
+        <source>Choose a primary language.</source>
+        <translation>Choose a primary language.</translation>
+    </message>
+    <message>
+        <source>The primary language %1 is not a language this installation has a locale for (share/locale).</source>
+        <translation>The primary language %1 is not a language this installation has a locale for (share/locale).</translation>
+    </message>
+    <message>
+        <source>The additional language %1 is not a language this installation has a locale for (share/locale).</source>
+        <translation>The additional language %1 is not a language this installation has a locale for (share/locale).</translation>
+    </message>
+    <message>
+        <source>%1 is the primary language and cannot also be an additional language. Uncheck it, or choose another primary language.</source>
+        <translation>%1 is the primary language and cannot also be an additional language. Uncheck it, or choose another primary language.</translation>
+    </message>
+    <message>
+        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential %version.</source>
+        <translation>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential %version.</translation>
+    </message>
+    <message>
+        <source>%name Error #%number</source>
+        <translation>%name Error #%number</translation>
+    </message>
+    <message>
+        <source>The setup could not get write access to the &lt;i&gt;settings&lt;/i&gt; directory. This is required to disable the initialization. Following the instructions found in &lt;i&gt;Issues&lt;/i&gt; to enable write access then click the &lt;i&gt;%button&lt;/i&gt; button.</source>
+        <translation>The setup could not get write access to the &lt;i&gt;settings&lt;/i&gt; directory. This is required to disable the initialization. Following the instructions found in &lt;i&gt;Issues&lt;/i&gt; to enable write access then click the &lt;i&gt;%button&lt;/i&gt; button.</translation>
+    </message>
+    <message>
+        <source>Change the second line from &lt;i&gt;true&lt;/i&gt; to &lt;i&gt;false&lt;/i&gt;.</source>
+        <translation>Change the second line from &lt;i&gt;true&lt;/i&gt; to &lt;i&gt;false&lt;/i&gt;.</translation>
+    </message>
+    <message>
+        <source>The setup is now disabled, click &lt;a href=%url&gt;here&lt;/a&gt; to get back to the site.</source>
+        <translation>The setup is now disabled, click &lt;a href=%url&gt;here&lt;/a&gt; to get back to the site.</translation>
+    </message>
+    <message>
+        <source>The content that comes with the site is written in %1. It stays in %1 whatever you choose here, and the site shows it wherever no translation into your languages exists yet.</source>
+        <translation>The content that comes with the site is written in %1. It stays in %1 whatever you choose here, and the site shows it wherever no translation into your languages exists yet.</translation>
+    </message>
+    <message>
+        <source>The language choice cannot be used</source>
+        <translation>The language choice cannot be used</translation>
+    </message>
+    <message>
+        <source>Additional language</source>
+        <translation>Additional language</translation>
+    </message>
+    <message>
+        <source>language of the bundled content</source>
+        <translation>language of the bundled content</translation>
+    </message>
+    <message>
+        <source>Notice: Creating the language keeps the package content in the language it was written in, next to the languages you chose. Mapping it relabels that content as another language without translating it.</source>
+        <translation>Notice: Creating the language keeps the package content in the language it was written in, next to the languages you chose. Mapping it relabels that content as another language without translating it.</translation>
+    </message>
+    <message>
+        <source>Remote repository URL:</source>
+        <translation>Remote repository URL:</translation>
+    </message>
+    <message>
+        <source>%summary (ver. %version)</source>
+        <translation>%summary (ver. %version)</translation>
+    </message>
+    <message>
+        <source>Dependencies</source>
+        <translation>Dependencies</translation>
+    </message>
+    <message>
+        <source>%req_name (ver.%version):</source>
+        <translation>%req_name (ver.%version):</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>None.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -26549,6 +31032,14 @@ See the requirements page for more information.</translation>
     <message>
         <source>Your current session handler does not support session administration.</source>
         <translation>Your current session handler does not support session administration.</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation>Select all</translation>
+    </message>
+    <message>
+        <source>Deselect all</source>
+        <translation>Deselect all</translation>
     </message>
 </context>
 <context>
@@ -27183,6 +31674,70 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>Although Exponential will work without it, you might later want to have support for this database prepared.</source>
         <translation>Although Exponential will work without it, you might later want to have support for this database prepared.</translation>
     </message>
+    <message>
+        <source>Path to ImageMagick:</source>
+        <translation>Path to ImageMagick:</translation>
+    </message>
+    <message>
+        <source>Your PHP version, which is %current, is known to be unstable.</source>
+        <translation>Your PHP version, which is %current, is known to be unstable.</translation>
+    </message>
+    <message>
+        <source>Your PHP version, which is %current, does not meet the minimum requirements of %required.</source>
+        <translation>Your PHP version, which is %current, does not meet the minimum requirements of %required.</translation>
+    </message>
+    <message>
+        <source>You must upgrade to at least version %required, but the latest released stable PHP version is always recommended.</source>
+        <translation>You must upgrade to at least version %required, but the latest released stable PHP version is always recommended.</translation>
+    </message>
+    <message>
+        <source>Not possible to extend time limits</source>
+        <translation>Not possible to extend time limits</translation>
+    </message>
+    <message>
+        <source>Some parts of Exponential relies on cronjobs to handle workflows etc., and may require a longer time to run than normal page loads. With this on the cronjob scripts will not succeed.</source>
+        <translation>Some parts of Exponential relies on cronjobs to handle workflows etc., and may require a longer time to run than normal page loads. With this on the cronjob scripts will not succeed.</translation>
+    </message>
+    <message>
+        <source>Wrong permissions</source>
+        <translation>Wrong permissions</translation>
+    </message>
+    <message>
+        <source>If the site is not setup correctly Exponential will not be able to work with files correctly, this could mean file uploads, image handling and cache creation. Safe mode requires that the same owner is set on the index.php script and all other files for the site.</source>
+        <translation>If the site is not setup correctly Exponential will not be able to work with files correctly, this could mean file uploads, image handling and cache creation. Safe mode requires that the same owner is set on the index.php script and all other files for the site.</translation>
+    </message>
+    <message>
+        <source>File uploading</source>
+        <translation>File uploading</translation>
+    </message>
+    <message>
+        <source>Uploading files trough the web will not possible unless configured correctly. This means that images, files and media will not be possible to use.</source>
+        <translation>Uploading files trough the web will not possible unless configured correctly. This means that images, files and media will not be possible to use.</translation>
+    </message>
+    <message>
+        <source>If you&apos;re not able to turn safe mode off you should try to fix the following issues.</source>
+        <translation>If you&apos;re not able to turn safe mode off you should try to fix the following issues.</translation>
+    </message>
+    <message>
+        <source>Permissions</source>
+        <translation>Permissions</translation>
+    </message>
+    <message>
+        <source>To make sure that all files have the correct user and group owner run the following commands.</source>
+        <translation>To make sure that all files have the correct user and group owner run the following commands.</translation>
+    </message>
+    <message>
+        <source>Alternatively you may run</source>
+        <translation>Alternatively you may run</translation>
+    </message>
+    <message>
+        <source>If you only have access to the site using ftp you will have to consult your ftp client and server to see if it is possible to run the chown command.</source>
+        <translation>If you only have access to the site using ftp you will have to consult your ftp client and server to see if it is possible to run the chown command.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Note:&lt;/b&gt; The &lt;tt&gt;nouser.nouser&lt;/tt&gt; must be changed to your web server username and groupname.</source>
+        <translation>&lt;b&gt;Note:&lt;/b&gt; The &lt;tt&gt;nouser.nouser&lt;/tt&gt; must be changed to your web server username and groupname.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/toolbar</name>
@@ -27762,6 +32317,14 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>Your receipt (sign in to view it; the address does not expire)</source>
         <translation>Your receipt (sign in to view it; the address does not expire)</translation>
     </message>
+    <message>
+        <source>[ view ]</source>
+        <translation>[ view ]</translation>
+    </message>
+    <message>
+        <source>(Retry: %attempt out of %max).</source>
+        <translation>(Retry: %attempt out of %max).</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -28011,6 +32574,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>Set the selected currency as preferred.</source>
         <translation>Set the selected currency as preferred.</translation>
     </message>
+    <message>
+        <source>Select currency</source>
+        <translation>Select currency</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/productsoverview</name>
@@ -28123,6 +32690,26 @@ To do this you need to change the %chown commands under Alternative shell comman
     <message>
         <source>Fold/Unfold</source>
         <translation>Fold/Unfold</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Hidden by superior</source>
+        <translation>Hidden by superior</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Hidden</translation>
+    </message>
+    <message>
+        <source>(Hidden)</source>
+        <translation>(Hidden)</translation>
+    </message>
+    <message>
+        <source>(Hidden by parent)</source>
+        <translation>(Hidden by parent)</translation>
     </message>
 </context>
 <context>
@@ -28300,6 +32887,10 @@ To do this you need to change the %chown commands under Alternative shell comman
     <message>
         <source>Toolbar management</source>
         <translation>Toolbar management</translation>
+    </message>
+    <message>
+        <source>Select currency</source>
+        <translation>Select currency</translation>
     </message>
 </context>
 <context>
@@ -28817,6 +33408,10 @@ your account.</translation>
         <source>Click the following URL to login:</source>
         <translation>Click the following URL to login:</translation>
     </message>
+    <message>
+        <source>%siteurl registration approved</source>
+        <translation>%siteurl registration approved</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/visual/menuconfig</name>
@@ -28950,6 +33545,14 @@ your account.</translation>
     <message>
         <source>Automatic (source template)</source>
         <translation>Automatic (source template)</translation>
+    </message>
+    <message>
+        <source>The newly created template file will be placed in %path.</source>
+        <translation>The newly created template file will be placed in %path.</translation>
+    </message>
+    <message>
+        <source>No extension</source>
+        <translation>No extension</translation>
     </message>
 </context>
 <context>
@@ -29127,6 +33730,10 @@ your account.</translation>
     <message>
         <source>No source template resource found.</source>
         <translation>No source template resource found.</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
     </message>
 </context>
 <context>
@@ -29443,6 +34050,14 @@ your account.</translation>
         <source>Input did not validate</source>
         <translation>Input did not validate</translation>
     </message>
+    <message>
+        <source>Move down</source>
+        <translation>Move down</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Move up</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/edit</name>
@@ -29502,6 +34117,14 @@ your account.</translation>
         <source>Class attributes</source>
         <translation>Class attributes</translation>
     </message>
+    <message>
+        <source>Class name</source>
+        <translation>Class name</translation>
+    </message>
+    <message>
+        <source>ClassAttribute name</source>
+        <translation>ClassAttribute name</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/view</name>
@@ -29557,6 +34180,14 @@ your account.</translation>
         <source>Item can not be found</source>
         <translation>Item can not be found</translation>
     </message>
+    <message>
+        <source>Class name</source>
+        <translation>Class name</translation>
+    </message>
+    <message>
+        <source>ClassAttribute name</source>
+        <translation>ClassAttribute name</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -29578,6 +34209,14 @@ your account.</translation>
     <message>
         <source>Deny</source>
         <translation>Deny</translation>
+    </message>
+    <message>
+        <source>Click on &quot;Authorize&quot; to grant the requested access</source>
+        <translation>Click on &quot;Authorize&quot; to grant the requested access</translation>
+    </message>
+    <message>
+        <source>Click on &quot;Deny&quot; to refuse the requested access</source>
+        <translation>Click on &quot;Deny&quot; to refuse the requested access</translation>
     </message>
 </context>
 <context>
@@ -29725,6 +34364,10 @@ your account.</translation>
     <message>
         <source>Back</source>
         <translation>Back</translation>
+    </message>
+    <message>
+        <source>Last modified: %modified by %owner</source>
+        <translation>Last modified: %modified by %owner</translation>
     </message>
 </context>
 <context>
