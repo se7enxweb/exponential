@@ -5501,7 +5501,7 @@ c28f629cd51422403cefc31c0efd09e4  kernel/classes/expkickstarterini.php
 1bff945a877b17d5ccfa084020434d99  kernel/classes/expphar.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
-23af7cf3df907e40dc275f7c2564aa7b  kernel/classes/expvelocity.php
+9e92f8238ee7c5d5f022207a79a4ccd6  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 3e40db0d31c1f4344f04a1252a4671df  kernel/classes/expvelocityconfiglayout.php
 8d76ad8f1b6946c83114d1302ba10b48  kernel/classes/expvelocityfrankenphp.php
@@ -5903,11 +5903,11 @@ ac06dad0ea3a0c2f5b07eca2df84922a  kernel/private/interfaces/ezplanguageswitcherc
 d76b25f3e7cf9556a4c2969d57dec245  kernel/private/interfaces/ezpstaticcache.php
 29dd960b2604cfaa4f58432f480aa0fa  kernel/private/interfaces/ezpwebbasedkernelhandler.php
 a90628d4c0d13b188db2590e2e4d565a  kernel/private/modules/oauth/authorize.php
-0940778cd23af7fdcf86c8664d5e38e5  kernel/private/modules/oauth/module.php
+bdd0f35557936e762a4f0a5f6fa24729  kernel/private/modules/oauth/module.php
 2874155725093458103ba52a05d0de6a  kernel/private/modules/oauthadmin/action.php
 d364635df390b7d30cdec70fb9a2bb15  kernel/private/modules/oauthadmin/edit.php
 6e86c5c6ed4c4592a1bdf35155f283d1  kernel/private/modules/oauthadmin/list.php
-f334e5683b71eca74916ca5612675fad  kernel/private/modules/oauthadmin/module.php
+d442ba201f771f44c56da6c6320b46d1  kernel/private/modules/oauthadmin/module.php
 3c0dabf8265b79dffe1da6287d3724f5  kernel/private/modules/oauthadmin/view.php
 12e4c2dbe86f8f54ea8e878e11691e0d  kernel/private/modules/switchlanguage/ezpLanguageSwitcherFunctionCollection.php
 6a5c16d995cce00d06d4f052dba0416f  kernel/private/modules/switchlanguage/function_definition.php
@@ -5964,7 +5964,7 @@ afe7e24d782da7ea46e0dcfea6317e4e  kernel/private/rest/classes/exceptions/oauth_t
 fffcc4db65d6710fe1a3e4d91f92347e  kernel/private/rest/classes/exceptions/route_method_not_allowed.php
 9bc57b92ed0961dda49fd2b2f06207ac  kernel/private/rest/classes/exceptions/route_security_filter_not_found.php
 867ad4bda793a2273e10ecd6eaf56b96  kernel/private/rest/classes/exceptions/user_not_found.php
-0a739487e88211216a647fab91a7d479  kernel/private/rest/classes/ezpkernelrest.php
+2c8fff053be6d0cc6d632c9d8cf5cba0  kernel/private/rest/classes/ezpkernelrest.php
 a16ad5ecbd605ed6b7d27839c28063ae  kernel/private/rest/classes/http_response_codes.php
 c5d1db67172d581699d70c355ee1418e  kernel/private/rest/classes/interfaces/content_renderer.php
 203e36f96027ac984d9f35ea44277785  kernel/private/rest/classes/interfaces/prerouting_filter.php
@@ -5974,7 +5974,7 @@ b97b433c4b4370faa266bbae6608e50c  kernel/private/rest/classes/interfaces/rest_pr
 59079b3999fe48337f12c63974579fb1  kernel/private/rest/classes/interfaces/result_filter.php
 5890fa5c06ec79d962df93f1dbc238d0  kernel/private/rest/classes/interfaces/route_filter.php
 8550efa31184204943c20aa95efc8ae0  kernel/private/rest/classes/interfaces/view_controller.php
-1b38ddd06001309fe75163dfc1796e22  kernel/private/rest/classes/lazy.php
+328704da246058c5a0f0459f8f6b903a  kernel/private/rest/classes/lazy.php
 7e436886c6caa53232abf63d9def7178  kernel/private/rest/classes/models/ezprest_authcode.php
 7f649ee6a87a366a60ecf781dd97656b  kernel/private/rest/classes/models/ezprest_token.php
 688fef620062050613aa5f1b6bf80b3f  kernel/private/rest/classes/models/rest_model.php
@@ -6515,7 +6515,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-424a6fc733cd778c17551d24ce865cd1  settings/velocity.ini
+e3bf8e0d4312d8972f97cfa752d9a0a0  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
@@ -7059,7 +7059,7 @@ d96dae3eb9c6ff8b779ea16752acc51a  tests/tests/kernel/classes/eZURLWildcardTest.p
 3c9950ad76855f923e7403aaa39be120  tests/tests/kernel/classes/eZUserAuthenticationTest.php
 db3283ec1aef44e44620efacfe1e9bac  tests/tests/kernel/classes/eZUserDiscountRuleTest.php
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
-c4060b51b67de01310e14680bc48c861  tests/tests/kernel/classes/expVelocityEnginesTest.php
+8e0435633b3e1b395de73711121a0b71  tests/tests/kernel/classes/expVelocityEnginesTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
 d471fa62de2a662dc597fb5efeadea08  tests/tests/kernel/classes/extensions/ezdepextends/extension.xml
@@ -7096,6 +7096,7 @@ a9a752937a67b31ffd87ebbfc1eaee48  tests/tests/kernel/classes/ezextension_with_or
 6abcd17185079f50a6653ed8aafbe39e  tests/tests/kernel/classes/eznamepatternresolver_regression.php
 0f3c27db8af1899961f18a4742fe244e  tests/tests/kernel/classes/eznodeassignment_test.php
 b4aa00c4f971cb1ed14ca62df3c0d23c  tests/tests/kernel/classes/ezorder_regression.php
+c758e9c8740a66339dc5d27d746ed630  tests/tests/kernel/classes/ezpRestLazyTest.php
 ce36d837da9eda070e7664c2c4fc9158  tests/tests/kernel/classes/ezpackage_regression.php
 04478dc238acc2c04f951ff184c2b19f  tests/tests/kernel/classes/ezpackage_regression_testIssue15223.ezpkg
 f2460a36d9c8c2ff9de19f1427118768  tests/tests/kernel/classes/ezpendingactions_test.php
