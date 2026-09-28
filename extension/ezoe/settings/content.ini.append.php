@@ -1,5 +1,5 @@
 <?php /* #?ini charset="utf-8"?
-# eZ publish configuration file for content and ez xml tags
+# Exponential configuration file for content and ez xml tags
 #
 
 # Some custom tags add special features to the editor if enabled:
@@ -50,7 +50,7 @@ AvailableViewModes[]=embed-inline
 # Extra ezoe settings for embed and embed-inline.
 # If you want to limit the amount of AvailableClasses and/or CustomAttributes
 # on relations per class identifier or content type* you can do the following:
-# NB: These settings also needs to be defined in [embed] or [embed-inline] for eZ Publish.
+# NB: These settings also needs to be defined in [embed] or [embed-inline] for Exponential.
 #
 # Pattern for content type:
 #[<tag>-type_<content-type>]

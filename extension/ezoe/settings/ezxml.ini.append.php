@@ -1,5 +1,5 @@
 <?php /* #?ini charset="utf-8"?
-# eZ Publish configuration file for ezxml
+# Exponential configuration file for ezxml
 
 [HandlerSettings]
 ExtensionRepositories[]=ezoe

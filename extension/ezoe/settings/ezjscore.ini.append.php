@@ -1,5 +1,5 @@
 <?php /* #?ini charset="utf-8"?
-# eZ publish configuration file for images
+# Exponential configuration file for images
 
 
 [ezjscServer_ezoe]

@@ -1,5 +1,5 @@
 <?php /* #?ini charset="utf-8"?
-# eZ publish configuration file for design
+# Exponential configuration file for design
 
 [ExtensionSettings]
 DesignExtensions[]=ezoe
@@ -15,7 +15,7 @@ EditorCSSFileList[]=skins/<skin>/content.css
 
 ## Here is an example for appending your own css to the editor
 ## content you need to place it in the stylesheets folder in
-## one of your active eZ Publish designs.
+## one of your active Exponential designs.
 #[StylesheetSettings]
 #EditorCSSFileList[]=my_custom_editor_styles.css
 
