@@ -153,3 +153,6 @@
     .extension-order { columns: 1; }
     .extension-order-label { display: none; }
 }
+
+/* The count in the heading, so a closed card still says how many there are. */
+.extension-order-count { color: #6b7785; font-weight: normal; }

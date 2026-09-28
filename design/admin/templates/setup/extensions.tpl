@@ -43,8 +43,11 @@
    dragged into any place; each drop is saved straight away. Outside the form
    below, so the Update button never posts it. *}
 {if $active_extension_order}
-<details class="extension-order-card" id="extension-order-card" open="open">
-    <summary><span class="extension-order-title">{'Loading order'|i18n( 'design/admin/setup/extensions' )}</span>
+{* Closed unless this user opened it: it is not needed often. Opening or
+   closing it is kept as the user preference admin_extensions_loading_order. *}
+<details class="extension-order-card" id="extension-order-card"{if eq( ezpreference( 'admin_extensions_loading_order' ), '1' )} open="open"{/if}
+         data-preference-url={'/user/preferences/set_and_exit/admin_extensions_loading_order'|ezurl}>
+    <summary><span class="extension-order-title">{'Loading order'|i18n( 'design/admin/setup/extensions' )} <span class="extension-order-count">({$active_extension_order|count})</span></span>
         <span class="extension-order-hint">{'The order of ActiveExtensions in settings/override/site.ini.append.php, which is the order the system loads the extensions in. Drag an extension to a new place, or use its arrows; every change is saved at once.'|i18n( 'design/admin/setup/extensions' )}</span></summary>
     <ol class="extension-order" id="extension-order"
         data-url={'/setup/extensions'|ezurl}
@@ -233,6 +236,22 @@ $(document).ready(function() {
     });
 
     // The loading order: drag and drop (or the arrows), saved on every change.
+    // Shown or hidden: remembered as a user preference, so the card opens
+    // the way it was left, on any browser.
+    var card = document.getElementById( 'extension-order-card' );
+    if ( card && card.getAttribute( 'data-preference-url' ) ) {
+        card.addEventListener( 'toggle', function() {
+            var meta = document.querySelector( 'meta[name="csrf-token"]' );
+            var field = document.querySelector( 'input[name="ezxform_token"]' );
+            var request = new XMLHttpRequest();
+            request.open( 'POST', card.getAttribute( 'data-preference-url' ) + '/' + ( card.open ? '1' : '0' ), true );
+            request.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8' );
+            request.setRequestHeader( 'X-Requested-With', 'XMLHttpRequest' );
+            if ( meta ) request.setRequestHeader( 'X-CSRF-Token', meta.getAttribute( 'content' ) );
+            request.send( field ? 'ezxform_token=' + encodeURIComponent( field.value ) : '' );
+        });
+    }
+
     var list = document.getElementById( 'extension-order' );
     if ( !list ) return;
     var status = document.getElementById( 'extension-order-status' );
