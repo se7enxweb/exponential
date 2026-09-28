@@ -4664,7 +4664,7 @@ keywords=exponential, community, content management, open source, cms, platforms
       ),
       23 => 
       array (
-        0 => 'China, Peoples Republic',
+        0 => 'China, People\'s Republic',
         1 => '7',
         2 => '24',
       ),
@@ -5030,7 +5030,7 @@ keywords=exponential, community, content management, open source, cms, platforms
       ),
       84 => 
       array (
-        0 => 'Lao Peoples Democratic Republic',
+        0 => 'Lao People\'s Democratic Republic',
         1 => '9932',
         2 => '85',
       ),
