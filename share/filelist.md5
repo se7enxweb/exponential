@@ -274,6 +274,7 @@ f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.t
 1d5cb3e2aeb6cbf400f0e90225a8a9d7  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 385603746948cfdd8e7540bdf7b5d2b0  design/admin/stylesheets/pagelayout.css
+2da45489156e5392ed4bc9b68dc61cb0  design/admin/stylesheets/setup-extensions.css
 c28a2b8fef839e911313919afddcc3eb  design/admin/stylesheets/theme/modalwindow.css
 7f9cc6a933a0ae537e5b692363292fb1  design/admin/stylesheets/theme/rounded.css
 67022590c3690ce322538f084fc285a7  design/admin/stylesheets/theme/yui_container.css
@@ -514,7 +515,7 @@ f300103eefc3300265c1d611470a68a9  design/admin/templates/setup/cronjobs.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 29d3e871e6de1979d29105f427637288  design/admin/templates/setup/datatype_describe.tpl
 31629a628c03452476a8ae75f083e507  design/admin/templates/setup/designextension.tpl
-9845b0f46908cd7aafa5805700511860  design/admin/templates/setup/extensions.tpl
+ba482a46ea6cadeebb4dc06e3317fb29  design/admin/templates/setup/extensions.tpl
 505534fd34ec67dbefd86e2c7d289b70  design/admin/templates/setup/handlerextension.tpl
 7d019d5389fc7b34e7f718e4638581d7  design/admin/templates/setup/info.tpl
 5cd58dc1ec14b5402b43a9946e695551  design/admin/templates/setup/kerneloverride.tpl
@@ -5854,7 +5855,7 @@ fc94788f51407f793c5bf69622c66886  kernel/private/classes/exceptions/kernel/modul
 abf6ce4a52db8f9539462eb0ca637b86  kernel/private/classes/ezcontentobjectstategroup.php
 c0dd2ab11fc1fdf552d243c915d5a4a1  kernel/private/classes/ezcontentobjectstategrouplanguage.php
 56ca2be92c3107e9dee0008e489f1957  kernel/private/classes/ezcontentobjectstatelanguage.php
-3e81266ba742076a491e48fc4ded3e17  kernel/private/classes/ezpactiveextensions.php
+fa688db0657a65850710dec915dd6df6  kernel/private/classes/ezpactiveextensions.php
 4c96a643fe5f93a0705452525362ad43  kernel/private/classes/ezpasynchronouspublishingfilter.php
 687f4cc1ec88af3032c334073d48700e  kernel/private/classes/ezpautoloadclioutput.php
 71a278a38173e19f9d0b703ea1273001  kernel/private/classes/ezpcontentpublishingprocess.php
@@ -6070,7 +6071,7 @@ ccfd1ff988dbd99ed58c22064272e673  kernel/setup/expmoduleextensionwizard.php
 1f83c0a2d52102dcc25243247dca9d32  kernel/setup/expstaticcacherunner.php
 34e7c7581e0e9902291f9d85834ed0df  kernel/setup/exptemplateextensionwizard.php
 c2d9e897e1ae977bf74f3e94626ff6a2  kernel/setup/expworkfloweventwizard.php
-e997bd9db76f77c4a8f999d31c1f8315  kernel/setup/extensions.php
+6f3c2a4ad179471165127f8c18d84e6a  kernel/setup/extensions.php
 ae05348cf4aa92b78c678dfc932a62b8  kernel/setup/ezsetup.php
 5ed8a49e3719be60334d52645c11a730  kernel/setup/ezsetup_summary.php
 e6724ebcd818da38e0eb74eb50997739  kernel/setup/ezsetupcommon.php
@@ -7100,7 +7101,7 @@ a9a752937a67b31ffd87ebbfc1eaee48  tests/tests/kernel/classes/ezextension_with_or
 6abcd17185079f50a6653ed8aafbe39e  tests/tests/kernel/classes/eznamepatternresolver_regression.php
 0f3c27db8af1899961f18a4742fe244e  tests/tests/kernel/classes/eznodeassignment_test.php
 b4aa00c4f971cb1ed14ca62df3c0d23c  tests/tests/kernel/classes/ezorder_regression.php
-ecfeb458df825ce3998f24375cf6f9d3  tests/tests/kernel/classes/ezpActiveExtensionsTest.php
+dbcfd409cc6cd6c3d9a9a461369158d7  tests/tests/kernel/classes/ezpActiveExtensionsTest.php
 c758e9c8740a66339dc5d27d746ed630  tests/tests/kernel/classes/ezpRestLazyTest.php
 ce36d837da9eda070e7664c2c4fc9158  tests/tests/kernel/classes/ezpackage_regression.php
 04478dc238acc2c04f951ff184c2b19f  tests/tests/kernel/classes/ezpackage_regression_testIssue15223.ezpkg
