@@ -48,7 +48,7 @@ class ezpHttpCacheContract
             'sessionCookie' => array(), 'sessionSavePath' => '', 'formTokenSecret' => '',
             'formTokenIntention' => 'legacy', 'maxAge' => 3600, 'swr' => 60,
             'proxyHeaders' => true, 'apcu' => true, 'maxBodySize' => 2097152,
-            'queryParameters' => array(),
+            'queryParameters' => array(), 'sslPort' => '', 'sslProxyServerName' => '',
         );
     }
 
@@ -136,6 +136,228 @@ class ezpHttpCacheContract
                 return false;
         }
         return true;
+    }
+
+    // ── Origin: the scheme and host the kernel sees ─────────────────────
+
+    /**
+     * The scheme and host of a request as the kernel works them out, from
+     * $_SERVER-style variables: eZSys::hostname() (X-Forwarded-Host first,
+     * then Host) and eZSys::isSSLNow() (HTTPS, the port against SSLPort, then
+     * X-Forwarded-Proto, X-Forwarded-Port, X-Forwarded-Server), with the
+     * site.ini values the kernel wrote into the contract.
+     *
+     * The key of a stored page is made of these, so the lookup has to arrive
+     * at the same ones. Behind a load balancer that ends TLS and forwards to
+     * host:port, only the forwarded headers say that the visitor asked for
+     * https://www.example.com and not http://exp:8080 -- the kernel renders
+     * and stores the page for the former, and a lookup taking the latter
+     * never found it.
+     *
+     * @param array $server $_SERVER, or HTTP_* variables built from headers
+     * @return array ( 'https'|'http', host as the kernel has it, port included if sent )
+     */
+    public function requestOrigin( array $server )
+    {
+        $host = '';
+        $forwarded = (string)( $server['HTTP_X_FORWARDED_HOST'] ?? '' );
+        if ( $forwarded !== '' )
+            $host = trim( explode( ',', $forwarded )[0] );
+        if ( $host === '' )
+            $host = (string)( $server['HTTP_HOST'] ?? '' );
+
+        $https = (string)( $server['HTTPS'] ?? '' );
+        if ( $https !== '' && strtolower( $https ) !== 'off' )
+            return array( 'https', $host );
+
+        $sslPort = (string)( $this->config['sslPort'] ?? '' );
+        $port = preg_match( '/.*:([0-9]+)/', $host, $regs ) ? (int)$regs[1] : (int)( $server['SERVER_PORT'] ?? 0 );
+        if ( !$port )
+            $port = 80;
+        $ssl = ( $port == ( $sslPort !== '' && $sslPort !== '0' ? $sslPort : 443 ) );
+        if ( !$ssl )
+        {
+            if ( isset( $server['HTTP_X_FORWARDED_PROTO'] ) )
+                $ssl = ( $server['HTTP_X_FORWARDED_PROTO'] == 'https' );
+            else if ( isset( $server['HTTP_X_FORWARDED_PORT'] ) )
+                $ssl = ( $server['HTTP_X_FORWARDED_PORT'] == $sslPort );
+            else if ( isset( $server['HTTP_X_FORWARDED_SERVER'] ) )
+                $ssl = ( (string)( $this->config['sslProxyServerName'] ?? '' ) == $server['HTTP_X_FORWARDED_SERVER'] );
+        }
+        return array( $ssl ? 'https' : 'http', $host );
+    }
+
+    /**
+     * $_SERVER-style variables for a request handed to serve(): its own
+     * 'server' when the caller has one (the early exit), else built from its
+     * 'headers' (the web server's process), else just its host and scheme
+     * (a web server that passes nothing else).
+     */
+    private static function serverVariables( array $request )
+    {
+        if ( isset( $request['server'] ) && is_array( $request['server'] ) )
+            return $request['server'];
+        $server = array();
+        foreach ( (array)( $request['headers'] ?? array() ) as $name => $value )
+        {
+            if ( is_string( $value ) )
+                $server['HTTP_' . strtoupper( str_replace( '-', '_', (string)$name ) )] = $value;
+        }
+        if ( !isset( $server['HTTP_HOST'] ) )
+            $server['HTTP_HOST'] = (string)( $request['host'] ?? '' );
+        if ( ( $request['scheme'] ?? '' ) === 'https' )
+            $server['HTTPS'] = 'on';
+        if ( isset( $request['port'] ) )
+            $server['SERVER_PORT'] = (string)$request['port'];
+        return $server;
+    }
+
+    // ── Siteaccess ───────────────────────────────────────────────────────
+
+    /**
+     * The siteaccess the kernel will match for $host and $uri, or null when
+     * that cannot be known before the kernel starts.
+     *
+     * The same rules as eZSiteAccess::match(), on the site.ini values the
+     * kernel wrote into the contract ('match'): StaticMatch, MatchOrder with
+     * uri (URIMatchType element or map), host (HostMatchType map) and host_uri
+     * (HostUriMatchMapItems, every host match method), then DefaultAccess.
+     * Anything else -- port, servervar, index, the text and regexp types, a
+     * name the kernel would normalise -- is null, and the page is not served
+     * early. The kernel stores a page only when this gives the siteaccess it
+     * matched itself, so a rule answered wrongly here costs a render, never a
+     * page of another siteaccess.
+     *
+     * A contract written before 'match' existed answers from its host map.
+     *
+     * @param string $host the Host header; a port is ignored, as the kernel ignores it
+     * @param string $uri the request URI, path and query
+     * @return string|null
+     */
+    public function resolveSiteAccess( $host, $uri )
+    {
+        $host = preg_replace( '/:\d+$/', '', (string)$host );
+        $m = $this->config['match'] ?? null;
+        if ( !is_array( $m ) )
+            return $this->config['hosts'][strtolower( $host )] ?? null;
+
+        if ( (string)( $m['static'] ?? '' ) !== '' )
+            return (string)$m['static'];
+        $default = (string)( $m['default'] ?? '' );
+        $order = (array)( $m['order'] ?? array() );
+        if ( $order === array( 'none' ) )
+            return $default;
+        $list = (array)( $m['list'] ?? array() );
+
+        // eZURI: the path without its leading slash, decoded, split at "/".
+        $path = (string)$uri;
+        foreach ( array( '#', '?' ) as $cut )
+        {
+            $at = strpos( $path, $cut );
+            if ( $at !== false )
+                $path = substr( $path, 0, $at );
+        }
+        if ( $path === '' || $path[0] !== '/' )
+            $path = '/' . $path;
+        // eZSys strips the index file from the request URI; not worth
+        // following here, the kernel has not seen such a URL cached anyway.
+        if ( preg_match( '#^/index[^/]*\.php(/|$)#', $path ) )
+            return null;
+        $path = urldecode( substr( $path, 1 ) );
+        $elements = explode( '/', $path );
+
+        foreach ( $order as $probe )
+        {
+            $name = '';
+            switch ( $probe )
+            {
+                case 'uri':
+                    $type = $m['uriType'] ?? '';
+                    if ( $type === 'map' )
+                    {
+                        foreach ( (array)( $m['uriMap'] ?? array() ) as $item )
+                        {
+                            if ( isset( $item[0], $item[1] ) && $item[0] == $elements[0] && in_array( $item[1], $list ) )
+                                return (string)$item[1];
+                        }
+                    }
+                    else if ( $type === 'element' )
+                    {
+                        $name = implode( '_', array_slice( $elements, 0, (int)( $m['uriElement'] ?? 1 ) ) );
+                    }
+                    else if ( $type === 'text' || $type === 'regexp' )
+                    {
+                        return null;
+                    }
+                    break;
+
+                case 'host':
+                    $type = $m['hostType'] ?? '';
+                    if ( $type === 'map' )
+                    {
+                        foreach ( (array)( $m['hostMap'] ?? array() ) as $item )
+                        {
+                            if ( isset( $item[0], $item[1] ) && $item[0] == $host )
+                                return (string)$item[1];
+                        }
+                    }
+                    else if ( $type === 'element' || $type === 'text' || $type === 'regexp' )
+                    {
+                        return null;
+                    }
+                    break;
+
+                case 'host_uri':
+                    $uriString = implode( '/', $elements );
+                    foreach ( (array)( $m['hostUri'] ?? array() ) as $item )
+                    {
+                        if ( !isset( $item[0], $item[1], $item[2] ) )
+                            continue;
+                        list( $matchHost, $matchURI, $matchAccess ) = $item;
+                        $method = $item[3] ?? ( $m['hostUriMethod'] ?? 'strict' );
+                        if ( $matchURI !== '' && !@preg_match( "@^$matchURI\b@u", $uriString ) )
+                            continue;
+                        switch ( $method )
+                        {
+                            case 'strict': $hit = ( $matchHost === $host ); break;
+                            case 'start':  $hit = ( strpos( $host, $matchHost ) === 0 ); break;
+                            case 'end':    $hit = ( strstr( $host, $matchHost ) === $matchHost ); break;
+                            case 'part':   $hit = ( strpos( $host, $matchHost ) !== false ); break;
+                            default:       $hit = false;
+                        }
+                        if ( $hit )
+                            return (string)$matchAccess;
+                    }
+                    break;
+
+                case 'port':
+                case 'servervar':
+                case 'index':
+                    // Depend on what the early exit does not have (the port
+                    // settings, the server variable, the index file).
+                    return null;
+            }
+
+            if ( $name != '' )
+            {
+                $clean = preg_replace( array( '/[^a-zA-Z0-9]+/', '/_+/', '/^_/', '/_$/' ), array( '_', '_', '', '' ), $name );
+                if ( in_array( $clean, $list ) )
+                {
+                    // The kernel would normalise the name (and may redirect).
+                    return $clean === $name ? $name : null;
+                }
+            }
+        }
+        return $default;
+    }
+
+    /**
+     * Whether pages of $siteaccess are cached (httpcache.ini CachedSiteAccesses).
+     */
+    public function cachesSiteAccess( $siteaccess )
+    {
+        $cached = $this->config['siteaccesses'] ?? array_values( (array)$this->config['hosts'] );
+        return is_string( $siteaccess ) && $siteaccess !== '' && in_array( $siteaccess, (array)$cached, true );
     }
 
     public function entryKey( $scheme, $host, $siteaccess, $uri, $context )
@@ -742,12 +964,13 @@ class ezpHttpCacheContract
         $this->lastReason = '';
         if ( !in_array( $request['method'] ?? 'GET', array( 'GET', 'HEAD' ), true ) )
             return $this->miss( 'method' );
-        $host = strtolower( preg_replace( '/:\d+$/', '', (string)( $request['host'] ?? '' ) ) );
-        if ( !isset( $this->config['hosts'][$host] ) )
+        list( $scheme, $originHost ) = $this->requestOrigin( self::serverVariables( $request ) );
+        $host = strtolower( preg_replace( '/:\d+$/', '', $originHost ) );
+        $siteaccess = $this->resolveSiteAccess( $originHost, $request['uri'] ?? '/' );
+        if ( !$this->cachesSiteAccess( $siteaccess ) )
             return $this->miss( 'host' );
         if ( !$this->queryAllowed( $request['uri'] ?? '/' ) )
             return $this->miss( 'query string' );
-        $siteaccess = $this->config['hosts'][$host];
         // Without the right cookie name a signed-in visitor looks anonymous,
         // so an unknown name is a miss, never a guess.
         $cookieName = $this->config['sessionCookie'][$siteaccess] ?? null;
@@ -780,7 +1003,7 @@ class ezpHttpCacheContract
             $context = $record['ctx'];
         }
 
-        $key = $this->entryKey( $request['scheme'] ?? 'https', $host, $siteaccess, $request['uri'] ?? '/', $context );
+        $key = $this->entryKey( $scheme, $host, $siteaccess, $request['uri'] ?? '/', $context );
         $entry = $this->loadEntry( $key );
         if ( !$entry )
             return null;

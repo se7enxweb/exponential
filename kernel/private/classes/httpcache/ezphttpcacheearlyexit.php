@@ -33,10 +33,11 @@ if ( PHP_SAPI !== 'cli' && !defined( 'EXP_HTTPCACHE_EARLY_EXIT_DONE' ) )
         $contract = ezpHttpCacheContract::fromDir( $dir );
         if ( !$contract )
             return;
-        $https = ( !empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off' )
-            || ( $_SERVER['SERVER_PORT'] ?? '' ) === '443';
+        // Scheme and host are worked out from $_SERVER as the kernel does
+        // (forwarded headers included), so a page stored behind a load
+        // balancer that ends TLS is found again.
         $response = $contract->serve( array(
-            'scheme' => $https ? 'https' : 'http',
+            'server' => $_SERVER,
             'host' => $_SERVER['HTTP_HOST'] ?? '',
             'uri' => $_SERVER['REQUEST_URI'] ?? '/',
             'method' => $method,
