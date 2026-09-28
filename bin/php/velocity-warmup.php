@@ -184,7 +184,6 @@ foreach (array('ezjscPackerTemplateFunctions', 'ezjscPacker') as $__pk) {
     foreach (array('loaded' => array(), 'persistentVariable' => null) as $__pn => $__pv) {
         try {
             $__rp = new ReflectionProperty($__pk, $__pn);
-            $__rp->setAccessible(true);
             $__rp->setValue(null, $__pv);
         } catch (\Throwable $e) {}
     }
@@ -198,7 +197,6 @@ if (class_exists('eZSys') && method_exists('eZSys', 'setInstance')) {
 if (class_exists('ezpKernel')) {
     try {
         $__k = new ReflectionProperty('ezpKernel', 'instance');
-        $__k->setAccessible(true);
         $__k->setValue(null, null);
     } catch (\Throwable $e) {}
 }
@@ -215,7 +213,6 @@ if (class_exists('eZSession', false)) {
                    'callbackFunctions' => array(), 'handlerInstance' => null, 'namespace' => null) as $__sn => $__sv) {
         try {
             $__sp = new ReflectionProperty('eZSession', $__sn);
-            $__sp->setAccessible(true);
             $__sp->setValue(null, $__sv);
         } catch (\Throwable $e) {}
     }
@@ -251,7 +248,6 @@ foreach (array('eZTemplate', 'eZTemplateDesignResource') as $__cls) {
         foreach ($__rc->getProperties(ReflectionProperty::IS_STATIC) as $__prop) {
             if (!$__prop->hasDefaultValue()) continue;
             if ($__prop->getDeclaringClass()->getName() !== $__cls) continue;
-            $__prop->setAccessible(true);
             $__prop->setValue(null, $__prop->getDefaultValue());
         }
     } catch (\Throwable $e) {}
