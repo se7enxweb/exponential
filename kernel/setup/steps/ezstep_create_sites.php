@@ -567,6 +567,16 @@ class eZStepCreateSites extends eZStepInstaller
 
         // Database initialization done
 
+        // The content languages are cached in a file (ezcontentlanguage_cache.php)
+        // that outlives the database it was read from. A reinstall over an
+        // existing site (DatabaseAction=remove) left the previous database's
+        // languages in it: fetchByLocale() below found them, addLanguage() was
+        // skipped, the new database kept an empty ezcontentlanguage table, and
+        // every URL alias lookup then failed ("no row was chosen for action
+        // eznode:2", "The node 'users/partners' doesn't exist"). The languages
+        // are read from the new database from here on.
+        eZContentLanguage::expireCache();
+
         // Prepare languages
         $primaryLanguageLocaleCode = $primaryLanguage->localeCode();
         $primaryLanguageName = $primaryLanguage->languageName();
