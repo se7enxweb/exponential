@@ -299,7 +299,7 @@ class eZDir
             if ( !$canDelete )
             {
                 eZDebug::writeError(
-                    "Recursive delete denied for '$dir' as its realpath '$dirRealPath' is outside eZ Publish root and not registered in AllowedDeletionDirs."
+                    "Recursive delete denied for '$dir' as its realpath '$dirRealPath' is outside the Exponential root and not registered in AllowedDeletionDirs."
                 );
                 return false;
             }

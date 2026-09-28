@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# export_mysql.sh — dump all eZ Publish tables from MySQL to NDJSON via mysql2ndjson.py
+# export_mysql.sh — dump all Exponential tables from MySQL to NDJSON via mysql2ndjson.py
 #
 # Usage:
 #   bash export_mysql.sh [outdir]

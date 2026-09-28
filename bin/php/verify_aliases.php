@@ -11,7 +11,7 @@ require_once 'autoload.php';
 $cli = eZCLI::instance();
 $script = eZScript::instance(
     array(
-        'description' => "eZ Publish URL Alias Integrity Checker\n\n" .
+        'description' => "Exponential URL Alias Integrity Checker\n\n" .
                          "Checks ezurlalias_ml consistency and optional safe auto-fixes.\n" .
                          "\n" .
                          "verify_aliases.php",

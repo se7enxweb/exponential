@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-mysql2ndjson.py — export all eZ Publish tables from MySQL/MariaDB to NDJSON files.
+mysql2ndjson.py — export all Exponential tables from MySQL/MariaDB to NDJSON files.
 
 Usage:
     python3 mysql2ndjson.py --host localhost --user root --password X --db exp --outdir ./json_export
@@ -49,7 +49,7 @@ def export_table(cur, table, pk_field, outdir):
     print(f"  {table}: {count} rows → {path}")
 
 def main():
-    ap = argparse.ArgumentParser(description='Export MySQL/MariaDB eZ Publish tables to NDJSON')
+    ap = argparse.ArgumentParser(description='Export MySQL/MariaDB Exponential tables to NDJSON')
     ap.add_argument('--host', default='localhost')
     ap.add_argument('--user', required=True)
     ap.add_argument('--password', required=True)

@@ -73,7 +73,7 @@ class eZCacheHelper
         if ( !empty( $warnPaths ) )
         {
             $this->cli->warning(
-                'The following cache paths are outside of the eZ Publish root directory, and have less than 2 path elements. ' .
+                'The following cache paths are outside of the Exponential root directory, and have less than 2 path elements. ' .
                 'Are you sure you want to ' . ( $purge ? 'purge' : 'clear' ) . ' them?'
             );
 

@@ -79,8 +79,8 @@ function eZFatalError()
 {
     eZDebug::setHandleType( eZDebug::HANDLE_NONE );
     eZWebDAVContentBackend::appendLogEntry( "****************************************" );
-    eZWebDAVContentBackend::appendLogEntry( "Fatal error: eZ Publish did not finish its request" );
-    eZWebDAVContentBackend::appendLogEntry( "The execution of eZ Publish was abruptly ended, the debug output is present below." );
+    eZWebDAVContentBackend::appendLogEntry( "Fatal error: Exponential did not finish its request" );
+    eZWebDAVContentBackend::appendLogEntry( "The execution of Exponential was abruptly ended, the debug output is present below." );
     eZWebDAVContentBackend::appendLogEntry( "****************************************" );
     // $templateResult = null;
     // eZDisplayResult( $templateResult );

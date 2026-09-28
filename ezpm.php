@@ -28,7 +28,7 @@ function help()
     $argv = $_SERVER['argv'];
     $cli = eZCLI::instance();
     $cli->output( "Usage: " . $argv[0] . " [OPTION]... COMMAND [COMMAND OPTION]... [-- COMMAND [COMMAND OPTION]...]...\n" .
-                  "eZ Publish package manager.\n" .
+                  "Exponential package manager.\n" .
                   "\n" .
                   "Type " . $argv[0] . " help for command overview\n" .
                   "\n" .
@@ -86,7 +86,7 @@ function helpExport()
 function helpInstall()
 {
     $cli = eZCLI::instance();
-    $cli->output( "install: Install an eZ Publish package.\n" .
+    $cli->output( "install: Install an Exponential package.\n" .
                   "usage: install PACKAGE [-d NODE_ID | --destination-node-id NODE_ID]\n" .
                   "\n" .
                   "PACKAGE is the name of the of package\n" .
@@ -100,7 +100,7 @@ function helpInstall()
 function helpImport()
 {
     $cli = eZCLI::instance();
-    $cli->output( "import: Import an eZ Publish package.\n" .
+    $cli->output( "import: Import an Exponential package.\n" .
                   "usage: import PACKAGE_FILE\n" .
                   "\n" .
                   "PACKAGE_FILE is the path to the .ezpkg package file\n"
@@ -128,7 +128,7 @@ function helpInfo()
 function helpAdd()
 {
     $cli = eZCLI::instance();
-    $cli->output( "add: Adds an eZ Publish item to the package.\n" .
+    $cli->output( "add: Adds an Exponential item to the package.\n" .
                   "usage: add PACKAGE ITEM [ITEMPARAMETERS]...\n" .
                   "\n" .
                   "Items:\n" .
@@ -188,7 +188,7 @@ function helpSet()
 function helpDelete()
 {
     $cli = eZCLI::instance();
-    $cli->output( "delete (del, remove, rm): Removes an eZ Publish item from the package.\n" .
+    $cli->output( "delete (del, remove, rm): Removes an Exponential item from the package.\n" .
                   "usage: delete PACKAGE ITEM [ITEMPARAMETERS]...\n" .
                   "\n" .
                   "Note: Will open up a new release if no open releases exists yet.\n"
@@ -899,7 +899,7 @@ foreach ( $commandList as $commandItem )
                 $cli->output( "Version     : " . $package->attribute( 'version-number' ) . str_repeat( ' ', 30 - strlen( $package->attribute( 'version-number' ) ) ) . "Source  : " . $package->attribute( 'source' ) );
                 $cli->output( "Release     : " . $package->attribute( 'release-number' ) . str_repeat( ' ', 30 - strlen( $package->attribute( 'release-number' ) ) ) . "Licence : " . $package->attribute( 'licence' ) );
                 $cli->output( "Summary     : " . $package->attribute( 'summary' ) . str_repeat( ' ', 30 - strlen( $package->attribute( 'summary' ) ) ) . "State   : " . $package->attribute( 'state' ) );
-                $cli->output( "eZ Publish  : " . $package->attribute( 'ezpublish-named-version' ) .
+                $cli->output( "Exponential : " . $package->attribute( 'ezpublish-named-version' ) .
                               " (" . $package->attribute( 'ezpublish-version' ) . ")" );
                 $cli->output( "Description : " . $package->attribute( 'description' ) );
             }

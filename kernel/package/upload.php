@@ -47,7 +47,7 @@ if ( $module->isCurrentAction( 'UploadPackage' ) )
             }
             else
             {
-                eZDebug::writeError( "Uploaded file is not an eZ Publish package" );
+                eZDebug::writeError( "Uploaded file is not an Exponential package" );
             }
         }
         else

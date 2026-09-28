@@ -1187,7 +1187,7 @@ class eZDBInterface
                 }
                 else
                 {
-                    fputs( STDERR,"Fatal error: A database transaction in eZ Publish failed.\n" );
+                    fputs( STDERR,"Fatal error: A database transaction in Exponential failed.\n" );
                     fputs( STDERR, "\n" );
                     fputs( STDERR, "The current execution was stopped to prevent further problems.\n" .
                            "You should contact the System Administrator ($adminEmail) of this site.\n" .

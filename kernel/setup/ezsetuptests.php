@@ -923,8 +923,8 @@ function eZSetupTestOpenBasedir( $type )
     {
         $returnData['result'] = false;
         $returnData['warnings'] = array( array( 'name' => 'open_basedir',
-                                                'text' => array( 'open_basedir is in use and can give problems running eZ Publish due to bugs in some PHP versions.',
-                                                                 'It\'s recommended that it is turned off if you experience problems running eZ Publish.' ) ) );
+                                                'text' => array( 'open_basedir is in use and can give problems running Exponential due to bugs in some PHP versions.',
+                                                                 'It\'s recommended that it is turned off if you experience problems running Exponential.' ) ) );
     }
     return $returnData;
 }

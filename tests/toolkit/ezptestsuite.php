@@ -25,7 +25,7 @@ class ezpTestSuite extends PHPUnit_Framework_TestSuite
         {
             self::$script = eZScript::instance(
                 array(
-                    'description' => "eZ Publish Test Runner\n\nsets up an eZ Publish testing environment\n",
+                    'description' => "Exponential Test Runner\n\nsets up an Exponential testing environment\n",
                     'use-session' => false,
                     'use-modules' => true,
                     'use-extensions' => true

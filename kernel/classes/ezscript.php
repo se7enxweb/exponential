@@ -84,7 +84,7 @@ class eZScript
             'use-extensions' => true,
             'use-modules' => false,
             'user' => false,
-            'description' => 'eZ Publish script',
+            'description' => 'Exponential script',
             'site-access' => false,
             'min_version' => false,
             'max_version' => false
@@ -1249,8 +1249,8 @@ function eZFatalError()
     eZDebug::setHandleType( eZDebug::HANDLE_NONE );
     if ( !$webOutput )
         fputs( STDERR, $endl );
-    fputs( STDERR, $bold . "Fatal error" . $unbold . ": eZ Publish did not finish its request$endl" );
-    fputs( STDERR, $par . "The execution of eZ Publish was abruptly ended, the debug output is present below." . $unpar . $endl );
+    fputs( STDERR, $bold . "Fatal error" . $unbold . ": Exponential did not finish its request$endl" );
+    fputs( STDERR, $par . "The execution of Exponential was abruptly ended, the debug output is present below." . $unpar . $endl );
     fputs( STDERR, eZDebug::printReport( false, $webOutput, true ) );
 }
 

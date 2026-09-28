@@ -42,7 +42,7 @@ function help()
     $argv = $_SERVER['argv'];
     $cli = eZCLI::instance();
     $cli->output( "Usage: " . $argv[0] . " [OPTION]... [PART]\n" .
-                  "Executes eZ Publish cronjobs.\n" .
+                  "Executes Exponential cronjobs.\n" .
                   "\n" .
                   "General options:\n" .
                   "  -h,--help          display this help and exit \n" .
