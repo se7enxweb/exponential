@@ -148,10 +148,10 @@ ed5fc255e0af673a7e4c24f8de51cb30  cronjobs/cleanuprss.php
 31bb2af099e1b4e93d9d262d83122f79  cronjobs/httpcache_cleanup.php
 de10cc9abc7f109dae0b5d6323f8a3e3  cronjobs/indexcontent.php
 38af0dfc9c58221c09e9f63d4f29b516  cronjobs/internal_drafts_cleanup.php
-68811ffc917c61cff79a39121eef081c  cronjobs/linkcheck.php
+3f1853d43265b566b640e4e8a191ef67  cronjobs/linkcheck.php
 b321183f339f40d4c53daa6bbe40a663  cronjobs/notification.php
 c311ef6a44f96740c83ee98c767726e8  cronjobs/old_drafts_cleanup.php
-8d8dbbeacda99a6cd5571572af0ba6c9  cronjobs/rssimport.php
+049438aecbaf0cc44313e4c61e20f4e2  cronjobs/rssimport.php
 1cdcc364c4d1df79b30aa9f50c8028d6  cronjobs/session_gc.php
 6efe0be8dfd794e5991a1bd5a04705de  cronjobs/staticcache_cleanup.php
 8ef8d48f8a2ee87a5a4159b09347ca5d  cronjobs/subtreeexpirycleanup.php
@@ -2399,7 +2399,7 @@ a44033ad6ce503a1826b45e95b442cab  doc/features/3.9/xml_embed_eznode.txt
 8b9753ed7ed7fd13b718d09fea74dc68  doc/features/4.0/autoload.txt
 b778dc6e7bd586fed8b007e3061cb1d2  doc/features/4.0/contentdisposition.txt
 bf3dd8680aac75ed3f8fb9d23e51cf9f  doc/features/4.0/dbcharserconversion.txt
-4ee54dde12d191b5d4114ded894ac2d7  doc/features/4.0/static_cache_user_agent.txt
+8e381b31fd21569c66873f4cb347606a  doc/features/4.0/static_cache_user_agent.txt
 757882d67a859381eb03288e149ab217  doc/features/4.1/autoload_refinement.txt
 6cb64101aee3b60ea2decbd0642f22bd  doc/features/4.1/bc_changes_list.txt
 aa2bc08602b5843ccde68ba753318579  doc/features/4.1/cache_improvements.txt
@@ -5601,7 +5601,7 @@ adec8ad3eceb685bca7ec2d30a461d0c  kernel/classes/ezshopaccounthandler.php
 0451c91cbb6e4729fd7ff335fccabb3f  kernel/classes/ezsitedata.php
 253db14a1aba8d9c055f0bafd1576fec  kernel/classes/ezsiteinstaller.php
 96f1c0fe0f272484265ac8ff94bdfc42  kernel/classes/ezsslzone.php
-f4ff218021bf8c877d07da71966eda91  kernel/classes/ezstaticcache.php
+a3c42f13eebde24cdfea83dcc61f4a41  kernel/classes/ezstaticcache.php
 4d3adbbb193d7493dda515910870c29a  kernel/classes/ezsubtreecache.php
 e69a010270cb32c088630d9400fb6964  kernel/classes/eztextinputparser.php
 b51122bceda1287ed07c73a38c6df712  kernel/classes/eztipafriendcounter.php
@@ -5932,8 +5932,8 @@ bc4f0847b413e852744f8e61eacb3361  kernel/private/rest/classes/cache/exceptions/c
 ffac7cd9ec6bbaa0b2c05e6b4ca17e98  kernel/private/rest/classes/cache/options/storage_cluster.php
 407a4c87ad9c4f715fbe1a69b5d2bce4  kernel/private/rest/classes/cache/storage.php
 f935064bb800ee6748ca51450743ca07  kernel/private/rest/classes/content_renderer.php
-bb40cb3f83e23bc90fe53b7894f82d7d  kernel/private/rest/classes/controllers/auth.php
-e88b921a3644ad2e59d563f5599cf8b6  kernel/private/rest/classes/controllers/error.php
+114e5db9ca4f076a457c2d3f41f832d0  kernel/private/rest/classes/controllers/auth.php
+08b917416d919bb407ed11fea47d3932  kernel/private/rest/classes/controllers/error.php
 270751fdfe3c263d3fa23f226bef9bb0  kernel/private/rest/classes/controllers/oauth_token.php
 5baa9b8440996f7566090ad083d5d8b3  kernel/private/rest/classes/controllers/rest_controller.php
 809080ed940757408c07431ccff1c228  kernel/private/rest/classes/debug/debug.php
@@ -5973,7 +5973,7 @@ b97b433c4b4370faa266bbae6608e50c  kernel/private/rest/classes/interfaces/rest_pr
 7e436886c6caa53232abf63d9def7178  kernel/private/rest/classes/models/ezprest_authcode.php
 7f649ee6a87a366a60ecf781dd97656b  kernel/private/rest/classes/models/ezprest_token.php
 688fef620062050613aa5f1b6bf80b3f  kernel/private/rest/classes/models/rest_model.php
-aee5a355c2c534c27fcdd4d5e84ab7bf  kernel/private/rest/classes/mvc_configuration.php
+e64aabb194c63629294489618473153d  kernel/private/rest/classes/mvc_configuration.php
 9c1ed7535fca7a302dfb7224eee7066d  kernel/private/rest/classes/oauth/oauth_filter.php
 3e1e074f0607ddda3b0e2956c517b8c9  kernel/private/rest/classes/oauth/utility.php
 402ebf4235d65464314502334c347d9f  kernel/private/rest/classes/oauth_token_endpoint_error.php
@@ -5994,7 +5994,7 @@ e63c3f0830c577d5a2d3cc4829217cd2  kernel/private/rest/classes/routes/regexp.php
 1fce0913de9ce6139359e9520ecf0d15  kernel/private/rest/classes/routes/versioned_route.php
 38d4c8ebc2e67e437fcd6e5127d32a0b  kernel/private/rest/classes/status/http_response.php
 9ee4a9f5334934c676681568155c1ba1  kernel/private/rest/classes/status/oauth_error.php
-d50e0c36227344af6492800faa56951a  kernel/private/rest/classes/status/oauth_required.php
+fe8b91716c51d8eaa80b1a21bb3bf966  kernel/private/rest/classes/status/oauth_required.php
 b391497afa3c4d88862a7e3dce19089d  kernel/private/rest/classes/status/response.php
 df080fc568ad46e8ddf1225ac92a35b5  kernel/private/rest/classes/sync/updates.php
 809cc533adfea0c1f63ffcc4b7b7cfb0  kernel/private/rest/classes/views/feed_decorator.php
@@ -6099,7 +6099,7 @@ fd503ff2892a51bf16dd0e4e443e38d0  kernel/setup/steps/ezstep_site_admin.php
 6703505f60f0a8087cbe2d7cb744fbd7  kernel/setup/steps/ezstep_site_details.php
 4e541e9ac411dfa1e7a41d81457379d3  kernel/setup/steps/ezstep_site_packages.php
 d806906597fdd91b7910bd2da6f18e92  kernel/setup/steps/ezstep_site_templates.php
-4cab775be1fe705b26a7c773a18b0ce1  kernel/setup/steps/ezstep_site_types.php
+9c28e9580c7b046cc37b9d9950b0e1c3  kernel/setup/steps/ezstep_site_types.php
 584280de6f7f59bf7b220128d409e971  kernel/setup/steps/ezstep_system_check.php
 a8297688a648130346fdc163b5126242  kernel/setup/steps/ezstep_system_finetune.php
 bcb087031bb601a1d16c7dbfa76b2897  kernel/setup/steps/ezstep_welcome.php
@@ -6117,7 +6117,7 @@ aa87cc49df0134366cadf789631b18c5  kernel/setup/workflowevent.php
 62bd9fc531ff8eb1a03860af242ec06e  kernel/shop/archiveorder.php
 e9bd3a5bc6126cbb1543341c3f8e94ac  kernel/shop/basket.php
 6993aa093e8abab028b15952764f5d10  kernel/shop/checkout.php
-25d6130650b5145b0168fa79a2c0076a  kernel/shop/classes/exchangeratehandlers/ezecb/ezecbhandler.php
+bb8aa135d6aaef59ba0b0a928d6689b2  kernel/shop/classes/exchangeratehandlers/ezecb/ezecbhandler.php
 d986defde894f0dac827860c13961a80  kernel/shop/classes/exchangeratehandlers/ezexchangeratesupdatehandler.php
 7ebc7fb1f0c87a524c70069c9d3d57b7  kernel/shop/classes/ezcurrencyconverter.php
 e553ec2f554e694810adcd024d7522b3  kernel/shop/classes/ezcurrencydata.php
@@ -6420,11 +6420,11 @@ d69d47d699e1df518aefc36a4b31d521  lib/ezutils/classes/ezfloatvalidator.php
 069dd3ab31f004f291a357db79ae074f  lib/ezutils/classes/ezfunctionhandler.php
 42f44f98fb286edaba24421ec2712650  lib/ezutils/classes/ezhttpfile.php
 1967495ec268059798b1c656577c09d0  lib/ezutils/classes/ezhttppersistence.php
-ce1da2761bd79e81221750f76f70222c  lib/ezutils/classes/ezhttptool.php
+5c23ae878a10497990c23c6e40af05d7  lib/ezutils/classes/ezhttptool.php
 56f9cbd47ec282e5482808f6ba7c4481  lib/ezutils/classes/ezini.php
 b2781bccfa90dafac49bdf11dcfaf1a0  lib/ezutils/classes/ezinputvalidator.php
 0e3e0a0b45d95677979b31e0b799c79f  lib/ezutils/classes/ezintegervalidator.php
-9835036267e915d9f1b571a4f29fc2c1  lib/ezutils/classes/ezmail.php
+8d7bde4c5212a1b04c46e75cb89ed63b  lib/ezutils/classes/ezmail.php
 12225dfd1a12e49abf8f304cfb10e952  lib/ezutils/classes/ezmailtransport.php
 5c74385ff4bd0ae2cdf72238cfcdd0b4  lib/ezutils/classes/ezmath.php
 20dfbbe72d4a679862fdab24c674bf64  lib/ezutils/classes/ezmimetype.php

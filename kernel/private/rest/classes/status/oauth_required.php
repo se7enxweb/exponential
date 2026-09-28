@@ -13,7 +13,7 @@
  */
 class ezpOauthRequired implements ezcMvcResultStatusObject
 {
-    const DEFAULT_REALM = 'eZ Publish REST';
+    const DEFAULT_REALM = 'Exponential REST';
 
     /**
      * The realm is the unique ID to identify a login area

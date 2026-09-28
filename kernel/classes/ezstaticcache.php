@@ -32,7 +32,7 @@ class eZStaticCache implements ezpStaticCache
     /**
      * User-Agent string
      */
-    const USER_AGENT = 'eZ Publish static cache generator';
+    const USER_AGENT = 'Exponential static cache generator';
 
     private static $actionList = array();
 

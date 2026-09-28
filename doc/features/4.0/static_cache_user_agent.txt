@@ -13,8 +13,13 @@ web server, based on the user agent string. In Apache, use something like
 this, followed by rewrite rules for the static cache:
 
 # If the user agent is not "Exponential static cache generator"
-RewriteCond %{HTTP_USER_AGENT} !^eZ\ Publish\ static\ cache\ generator$
+RewriteCond %{HTTP_USER_AGENT} !^Exponential\ static\ cache\ generator$
 # then rewrite to static cache
+
+A site that matches the former user agent string ("eZ Publish static cache
+generator") in its web server rules must change that condition to the string
+above, or let both through:
+RewriteCond %{HTTP_USER_AGENT} !^(Exponential|eZ\ Publish)\ static\ cache\ generator$
 
 NOTE:
 The traditional solution is still valid, i.e. to have different host names for

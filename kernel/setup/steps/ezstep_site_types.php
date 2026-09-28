@@ -124,7 +124,7 @@ class eZStepSiteTypes extends eZStepInstaller
             // Note: Could be blocked by not allowing remote calls.
             if ( !copy( $url, $fileName ) )
             {
-                $buf = eZHTTPTool::sendHTTPRequest( $url, 80, false, 'eZ Publish', false );
+                $buf = eZHTTPTool::sendHTTPRequest( $url, 80, false, 'Exponential', false );
 
                 $header = false;
                 $body = false;

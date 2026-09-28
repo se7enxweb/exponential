@@ -116,7 +116,7 @@ class ezpMvcConfiguration implements ezcMvcDispatcherConfiguration
 
     public function runResponseFilters( ezcMvcRoutingInformation $routeInfo, ezcMvcRequest $request, ezcMvcResult $result, ezcMvcResponse $response )
     {
-        $response->generator = "eZ Publish";
+        $response->generator = "Exponential";
         $params = array( 'routeInfo' => $routeInfo, 'request' => $request,
                          'result' => $result, 'response' => $response );
         try

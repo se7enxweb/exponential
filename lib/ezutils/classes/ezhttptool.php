@@ -211,7 +211,7 @@ class eZHTTPTool
      * @return string|false String if http request, or false if an error occurs.
      *         If $passthrough = true, program will end here and send result directly to client.
     */
-    static function sendHTTPRequest( $uri, $port = false, $postParameters = false, $userAgent = 'eZ Publish', $passthrough = true, array $cookies = array() )
+    static function sendHTTPRequest( $uri, $port = false, $postParameters = false, $userAgent = 'Exponential', $passthrough = true, array $cookies = array() )
     {
         preg_match( "/^((http[s]?:\/\/)([a-zA-Z0-9_.-]+)(\:(d+))?)?([\/]?[~]?(\.?[^.]+[~]?)*)/i", $uri, $matches );
         $protocol = $matches[2];

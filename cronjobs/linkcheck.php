@@ -53,7 +53,7 @@ foreach ( $linkList as $link )
                   preg_match("/^(file:)/i", $url ) or
                   preg_match("/^(ftp:)/i", $url ) )
         {
-            if ( !eZHTTPTool::getDataByURL( $url, true, 'eZ Publish Link Validator' ) )
+            if ( !eZHTTPTool::getDataByURL( $url, true, 'Exponential Link Validator' ) )
             {
                 if ( $isValid )
                     eZURL::setIsValid( $linkID, false );

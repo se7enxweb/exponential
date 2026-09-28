@@ -24,7 +24,7 @@ foreach ( $rssImportArray as $rssImport )
 
     $cli->output( 'RSSImport '.$rssImport->attribute( 'name' ).': Starting.' );
 
-    $xmlData = eZHTTPTool::getDataByURL( $rssSource, false, 'eZ Publish RSS Import' );
+    $xmlData = eZHTTPTool::getDataByURL( $rssSource, false, 'Exponential RSS Import' );
     if ( $xmlData === false )
     {
         $cli->output( 'RSSImport '.$rssImport->attribute( 'name' ).': Failed to open RSS feed file: '.$rssSource );

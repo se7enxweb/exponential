@@ -16,7 +16,7 @@ class ezpRestAuthController extends ezcMvcController
     public function doBasicAuth()
     {
         $res = new ezcMvcResult();
-        $res->status = new ezcMvcResultUnauthorized( "eZ Publish REST" );
+        $res->status = new ezcMvcResultUnauthorized( "Exponential REST" );
         return $res;
     }
 

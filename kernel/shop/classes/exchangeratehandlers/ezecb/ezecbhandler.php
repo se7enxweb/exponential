@@ -68,7 +68,7 @@ class eZECBHandler extends eZExchangeRatesUpdateHandler
 
         $ratesList = array();
 
-        $buf = eZHTTPTool::sendHTTPRequest( "{$serverName}/{$ratesURI}", $serverPort,  false, 'eZ Publish', false );
+        $buf = eZHTTPTool::sendHTTPRequest( "{$serverName}/{$ratesURI}", $serverPort,  false, 'Exponential', false );
         if ( $buf )
         {
             $header = false;
