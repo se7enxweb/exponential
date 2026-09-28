@@ -13,7 +13,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 3b96782129fa8a60261a41688f7c0c3c  autoload.php
-6290a3dd6cd8361cc7c1ab07074febc6  autoload/ezp_kernel.php
+3f93884c27e795e021b09d012df039d1  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
 e987da229be60f6c0644adee57d39fb3  benchmarks/classes/ezbenchmarkclirunner.php
@@ -37,6 +37,7 @@ f916c8a57dd6118120e22bd349dddb1c  bin/mongodb/import_all.sh
 97b3bd6db790ba2f8193ed70104eb119  bin/mongodb/mysql2ndjson.py
 1374ed9d080d58b9372d49d958ba0ed1  bin/mongodb/validate_ndjson.sh
 0c4049ee1633558fecfc2c084ca952b9  bin/php/adddefaultstates.php
+1bc39b270381410e0575089fb07848c9  bin/php/cache.php
 044dfa9132400e0f262ca44a06b80710  bin/php/changelog2xmltext.php
 21776e40dfdeaa027e104b17041a9bd5  bin/php/checkclasses.php
 9ca253f7820f48df4cbf9d77fa45d372  bin/php/checkdbfiles.php
@@ -94,7 +95,7 @@ e53af0113356a7991f3cfcb5d99fd22e  bin/php/trashpurge.php
 2b75d418585d3d583adbb28798db5c87  bin/php/updatesearchindex.php
 45816388328705ce2980f450c29a42b4  bin/php/velocity-router.php
 fa03b7a72aab558c45d58052c700f8c2  bin/php/velocity-warmup.php
-69d700f792c3ac2dcbf406074036028a  bin/php/velocity.php
+95148601533b629db3f2b7b615ccf3db  bin/php/velocity.php
 cfcb4022009fc98a7c5aad2789f5080c  bin/php/verify_aliases.php
 85657a43af64db3c68531cef4f5b9246  bin/php/warm.php
 4bdde98e9e5f746a1e136defd693ec42  bin/php/webserver.php
@@ -2050,8 +2051,9 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 01dc09c23102e93516b4e36461c5a0c0  doc/bc/6.0/LAYOUTS.md
 9f891edb37a5b3eeb1b61fce30ce4961  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 56ac2c20e1a810bc21c837969e061826  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
+b217c76157d7b9c401a1bd7cd0e85268  doc/bc/6.0/cache-console.md
 52f44a66f9f78c5a65043521fdd6a504  doc/bc/6.0/cleanuprss.md
-b9af9e03efe35ee629e493d0d9c6437e  doc/bc/6.0/console.md
+b9ba0367f6383af0e9e93f6ed2472d02  doc/bc/6.0/console.md
 d235809fe8490e97218403d3cfe12404  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 d3dcdf8f27297bce32536f2675eb9ad1  doc/bc/6.0/expinfo-operator.md
 59ef385943d961c53bf28af528173582  doc/bc/6.0/exponentialsdk-and-exponential-cron.md
@@ -5488,6 +5490,7 @@ ca9828ddb2efe7a4d1fd263e15b26168  kernel/classes/datatypes/ezxmltext/handlers/in
 3f481aa0c6ec73f490d65b94efd5e25f  kernel/classes/datatypes/ezxmltext/handlers/output/ezplainxmloutput.php
 af1f588333cc79b884aea42a30394cc6  kernel/classes/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput.php
 d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
+dbb3856cc411fb1697eeda7944d0e280  kernel/classes/expcachemanager.php
 84a3447a01864a5da11162284520abca  kernel/classes/expcachewarm.php
 0965c4a51ebfa3353d4a4bcf0ab9adc6  kernel/classes/expcleanuprss.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
@@ -5602,7 +5605,7 @@ adec8ad3eceb685bca7ec2d30a461d0c  kernel/classes/ezshopaccounthandler.php
 0451c91cbb6e4729fd7ff335fccabb3f  kernel/classes/ezsitedata.php
 253db14a1aba8d9c055f0bafd1576fec  kernel/classes/ezsiteinstaller.php
 96f1c0fe0f272484265ac8ff94bdfc42  kernel/classes/ezsslzone.php
-a3c42f13eebde24cdfea83dcc61f4a41  kernel/classes/ezstaticcache.php
+1ec3bb218e2d01a8860985095fd180ff  kernel/classes/ezstaticcache.php
 4d3adbbb193d7493dda515910870c29a  kernel/classes/ezsubtreecache.php
 e69a010270cb32c088630d9400fb6964  kernel/classes/eztextinputparser.php
 b51122bceda1287ed07c73a38c6df712  kernel/classes/eztipafriendcounter.php
@@ -6036,7 +6039,7 @@ b9ada7b18e5a4b18d3d071da919f7efa  kernel/section/list.php
 f3e4dee583d7c3aa50448d0d843da34c  kernel/settings/module.php
 0dad256343980933432792565516cceb  kernel/settings/validation.php
 8ba7e606993212748f7a599b02b4afb2  kernel/settings/view.php
-a673cf2474f7211b067a89ae3b827264  kernel/setup/cache.php
+c668d33c69d3a3e82c1a51a67c10404e  kernel/setup/cache.php
 8a64692e3af63962b8364c2064eb0d26  kernel/setup/cachetoolbar.php
 c7e0e86a68f77ad836c7b325ad0ceb30  kernel/setup/contentextension.php
 50d92b7586ffb1782ddbe7783b145822  kernel/setup/cronjobs.php
@@ -6053,12 +6056,12 @@ fd8e55c7a18b5f8bd0ea9b8a9587d0a6  kernel/setup/expdatatypewizard.php
 141fd91fb8bd202b73cd7c93c11e002e  kernel/setup/expkerneloverridewizard.php
 ccfd1ff988dbd99ed58c22064272e673  kernel/setup/expmoduleextensionwizard.php
 57d1bbf9e1a17a7e2183a1ac832144cd  kernel/setup/expmodulewizard.php
-acfbe7cb50cb804e8c59c5c86d39b1ea  kernel/setup/exppreloadrunner.php
+9808445e4255432558d040cd8ee0548f  kernel/setup/exppreloadrunner.php
 0a2aff4277e3dc5c338b23d435320f90  kernel/setup/expradcatalogue.php
 6c86c996ee1ee84a47b7678813bfc003  kernel/setup/expradhealth.php
 0ecd06490870c1e828b0afae49111c79  kernel/setup/expradsurvey.php
 82e4a9eb7df38208b238284e593c327c  kernel/setup/expsettingsextensionwizard.php
-66a113dd851d2361816887e648eb7fa2  kernel/setup/expstaticcacherunner.php
+1f83c0a2d52102dcc25243247dca9d32  kernel/setup/expstaticcacherunner.php
 34e7c7581e0e9902291f9d85834ed0df  kernel/setup/exptemplateextensionwizard.php
 c2d9e897e1ae977bf74f3e94626ff6a2  kernel/setup/expworkfloweventwizard.php
 5af2724955f854e9dd7370b06cc97695  kernel/setup/extensions.php
@@ -7055,6 +7058,7 @@ ab0245844cc69de1f402e778e551274d  tests/tests/kernel/classes/eZURLAliasMLTest.ph
 d96dae3eb9c6ff8b779ea16752acc51a  tests/tests/kernel/classes/eZURLWildcardTest.php
 3c9950ad76855f923e7403aaa39be120  tests/tests/kernel/classes/eZUserAuthenticationTest.php
 db3283ec1aef44e44620efacfe1e9bac  tests/tests/kernel/classes/eZUserDiscountRuleTest.php
+152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
 c4060b51b67de01310e14680bc48c861  tests/tests/kernel/classes/expVelocityEnginesTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
