@@ -1812,10 +1812,10 @@ a02008c87dd24fbfbfb101bbeb1399aa  design/standard/templates/setup/init/email_set
 db0dff4296affaadbe1cad5e4e02d3e8  design/standard/templates/setup/init/final.tpl
 89bde8e0db964e67339e6056094fa5e3  design/standard/templates/setup/init/final_help.tpl
 371b031f800c532659953c4a587eb0c0  design/standard/templates/setup/init/finished.tpl
-bd1cbc55c87c8f1c47a1704bb71544bc  design/standard/templates/setup/init/language_options.tpl
+a504b38db038dba58ec36a1e2b9cc3c9  design/standard/templates/setup/init/language_options.tpl
 0ba26e00bd66e5dd5de92bc75b8b0ab7  design/standard/templates/setup/init/language_options_help.tpl
 d3261404c421eb4f2458eca7c614914f  design/standard/templates/setup/init/navigation.tpl
-3db56ac4a9726a84c1f5e1aee6d7c1c2  design/standard/templates/setup/init/package_language_options.tpl
+0ee936f7e999b0de71fd7f6f06510cca  design/standard/templates/setup/init/package_language_options.tpl
 caf408f50ed466569989daebae1f4f7e  design/standard/templates/setup/init/package_language_options_help.tpl
 606d4b2fe94162a5b96b776ea2688052  design/standard/templates/setup/init/regional_options.tpl
 d74373f353a46259eead7e623a9d4ea8  design/standard/templates/setup/init/regional_options_variations.tpl
@@ -4877,6 +4877,7 @@ cd79b07cce2bbd4e295736ff7c4d9bea  extension/ezjscore/settings/design.ini.append.
 ea122a99c9045da539702bc058e7df80  extension/ezjscore/settings/ezjscore.ini
 a13eb1cb59361c9f259aa92f7a3b995b  extension/ezjscore/settings/module.ini.append.php
 3ea2d0a96e8ee46b2196a54ecc4b3c86  extension/ezjscore/settings/site.ini.append.php
+3c3e354bd4825cf29dc62b588fd1687f  extension/ezjscore/translations/eng-US/translation.ts
 bfcbb56e6bf327386b91e12569b2a42e  extension/ezjscore/translations/untranslated/translation.ts
 7bdcec3991d143379ebea0e485a3616f  extension/ezoe/FAQ
 6f0bbae759c31c5def19f3a5c19ed3fd  extension/ezoe/INSTALL
@@ -5353,6 +5354,7 @@ a0184f97172311ec75f901cfbccfe020  extension/ezoe/tests/suite.php
 be93b5d5133b6353452b69e2f4fbe33c  extension/ezoe/translations/cze-CZ/translation.ts
 a1cbabf4e8d12011ef60ae80a4ba181f  extension/ezoe/translations/dan-DK/translation.ts
 0a1c820f05046a8fdc00faee176d2891  extension/ezoe/translations/dut-NL/translation.ts
+3a62b910cbbfb2c2ff7b3cd64d8f047a  extension/ezoe/translations/eng-US/translation.ts
 2b2d5ef05a61d482b5143dbcba316d67  extension/ezoe/translations/esl-ES/translation.ts
 cdd6109627fed0c0ea66ecb7d02f2b45  extension/ezoe/translations/fin-FI/translation.ts
 7b6e7fd187a6d4661d5bd2b0912dfd8f  extension/ezoe/translations/fre-FR/translation.ts
@@ -5482,12 +5484,12 @@ d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 0965c4a51ebfa3353d4a4bcf0ab9adc6  kernel/classes/expcleanuprss.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
-e1393c996c2f162c9c7d2b6e6686e314  kernel/classes/expkickstarter.php
-dc760357fdfae2662c3d859fcfc141d0  kernel/classes/expkickstarterini.php
+e155d47ee2599f8deb8070d941364bbc  kernel/classes/expkickstarter.php
+c28f629cd51422403cefc31c0efd09e4  kernel/classes/expkickstarterini.php
 434901ece305d52b3b4397ed3a4d5750  kernel/classes/expmaintenance.php
 c96b4b194b2bf5cfc43f558b1fa48471  kernel/classes/expphar.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
-b03643b8ceb19c18aa96b9d75a3c8159  kernel/classes/expsetuplog.php
+493b2fcc8a7661e2dc48e5898388bfc3  kernel/classes/expsetuplog.php
 23af7cf3df907e40dc275f7c2564aa7b  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 3e40db0d31c1f4344f04a1252a4671df  kernel/classes/expvelocityconfiglayout.php
@@ -5590,7 +5592,7 @@ c0013eff31f2c8299cf617f72cdaa7ba  kernel/classes/ezshippingmanager.php
 adec8ad3eceb685bca7ec2d30a461d0c  kernel/classes/ezshopaccounthandler.php
 374f146bc54d91659e649c58b855d598  kernel/classes/ezsiteaccess.php
 0451c91cbb6e4729fd7ff335fccabb3f  kernel/classes/ezsitedata.php
-1ec9944680672630b6ea39654fe64733  kernel/classes/ezsiteinstaller.php
+253db14a1aba8d9c055f0bafd1576fec  kernel/classes/ezsiteinstaller.php
 96f1c0fe0f272484265ac8ff94bdfc42  kernel/classes/ezsslzone.php
 f4ff218021bf8c877d07da71966eda91  kernel/classes/ezstaticcache.php
 4d3adbbb193d7493dda515910870c29a  kernel/classes/ezsubtreecache.php
@@ -5680,7 +5682,7 @@ eb3281bfac49c0865c01d31feb267a72  kernel/common/ezdateoperatorcollection.php
 4c606cfc8bfb7f64ccc0e08aa1e1065a  kernel/common/ezmoduleparamsoperator.php
 c2bea42147be0e5581793355cbf25d67  kernel/common/ezobjectforwarder.php
 1482567e265d3243eb06e421de207154  kernel/common/ezpackageoperator.php
-4bb75e012a07c5174f8a0f919518838c  kernel/common/ezpi18n.php
+5eafe78ddc63669045495e7a94c30d60  kernel/common/ezpi18n.php
 d63974139e74f22c1ac0897718fcb121  kernel/common/ezsimpletagsoperator.php
 e8443226ca4ff14d3ffcee2e02aa8a70  kernel/common/eztemplateautoload.php
 c7cd1eba4d90c1172a93a1a57b2acf72  kernel/common/eztemplatedesignresource.php
@@ -6051,7 +6053,7 @@ c2d9e897e1ae977bf74f3e94626ff6a2  kernel/setup/expworkfloweventwizard.php
 5af2724955f854e9dd7370b06cc97695  kernel/setup/extensions.php
 ff6839ba4df450f4480eb3b684606280  kernel/setup/ezsetup.php
 5ed8a49e3719be60334d52645c11a730  kernel/setup/ezsetup_summary.php
-e209026b702f38c1d087e739f7c144d3  kernel/setup/ezsetupcommon.php
+c4d3b8c5cd5e957bd3cb9ed2462685e2  kernel/setup/ezsetupcommon.php
 b2b886461ecd202ac56cf05c9113fd2c  kernel/setup/ezsetupfunctioncollection.php
 263f0b2b7ab7a10f93a4b0b01de8b0c7  kernel/setup/ezsetuptests.php
 b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
@@ -6072,15 +6074,15 @@ b05b68e1a19a0aee8a85ab88af764472  kernel/setup/session.php
 f0bb2d78d2da0a115870dc0708978214  kernel/setup/settingstoolbar.php
 11d6f43693270057c21a4a8d78e96ef3  kernel/setup/setupmenu.php
 000fff131e21d5db77dc022f0d1bba6a  kernel/setup/staticcachestream.php
-60ec64e80d473e04e70232447502d899  kernel/setup/steps/ezstep_create_sites.php
+7a61d107098d3dd60ee3b029ed60dea8  kernel/setup/steps/ezstep_create_sites.php
 d0a153027eff5f94f37303c0a29abf8b  kernel/setup/steps/ezstep_data.php
 db4fe3f3c55383f4eadcd790fe8f4a42  kernel/setup/steps/ezstep_database_choice.php
-906fcaa84a992aa273b03de322c0da75  kernel/setup/steps/ezstep_database_init.php
+500c84b26ac8db49a5abebbc9f7dc659  kernel/setup/steps/ezstep_database_init.php
 39bb60b1c17b9312032f6331a4c21f6a  kernel/setup/steps/ezstep_email_settings.php
 459d03abe810e0e0b789885522968da4  kernel/setup/steps/ezstep_final.php
-18b13663ff55b43e4789bb1aa2c85864  kernel/setup/steps/ezstep_installer.php
-f5758775db16bd073d4ffb38e59f230f  kernel/setup/steps/ezstep_language_options.php
-ec28f11300f66872e995249e98a29f6b  kernel/setup/steps/ezstep_package_language_options.php
+2298043a557abd28d09130773d09ecfe  kernel/setup/steps/ezstep_installer.php
+d89262a32691d86c8e13b8b5f4798afb  kernel/setup/steps/ezstep_language_options.php
+bddae3dedc1030d9a755586b1a726ab7  kernel/setup/steps/ezstep_package_language_options.php
 2ed55dbd7f42a4e13dd0faebd4d270aa  kernel/setup/steps/ezstep_registration.php
 8af957c931ac4a8c25eb63e93d03a905  kernel/setup/steps/ezstep_security.php
 5a8d953b13ac144331981038b0898962  kernel/setup/steps/ezstep_site_access.php
@@ -6340,7 +6342,7 @@ ca26437f3787fd2d1f2eaf3c87b78f38  lib/ezsoap/classes/ezsoapserver.php
 be6de39f32f7e7aa494274af052f7aaf  lib/eztemplate/classes/exceptions/failedexecutingcompiledtemplate.php
 86af0a3f17c8dd19f102dc6837c5a773  lib/eztemplate/classes/eztemplate.php
 0974734a4a37eacf5a38e289ad27d5df  lib/eztemplate/classes/eztemplatearithmeticoperator.php
-9955d27e9582ebe6349ac80ed9e0e47e  lib/eztemplate/classes/eztemplatearrayoperator.php
+2881ed82a2fcedf124d5dc03e473a450  lib/eztemplate/classes/eztemplatearrayoperator.php
 dedfa0ad0a901e8d5fcfa23bb1d8d025  lib/eztemplate/classes/eztemplateattributeoperator.php
 8c9edd49fac7c84ea5bb9764b553ba66  lib/eztemplate/classes/eztemplateautoload.php
 417d0fd45de22165e7f53579bfdca945  lib/eztemplate/classes/eztemplateblockfunction.php
@@ -6401,7 +6403,7 @@ c80badb0b87b5fb55555d244d6ef797e  lib/ezutils/classes/ezdatetimevalidator.php
 3d9748ba413c5c152a3f73f7ee585e40  lib/ezutils/classes/ezdebugsetting.php
 740329a4263bfdac72daa855ebbbc369  lib/ezutils/classes/ezexecution.php
 54c1a53c483696cc41a502986862d6eb  lib/ezutils/classes/ezexpiryhandler.php
-b5436709831be8c670f955414936e0a8  lib/ezutils/classes/ezextension.php
+e9d6f9231ff404631c0c1854f9001fb5  lib/ezutils/classes/ezextension.php
 10c1762246e846ff94749cad57aa5235  lib/ezutils/classes/ezfileextensionblacklistvalidator.php
 88e3e69d2b510bdf2f177d7b094caa30  lib/ezutils/classes/ezfiletransport.php
 d69d47d699e1df518aefc36a4b31d521  lib/ezutils/classes/ezfloatvalidator.php
@@ -6483,7 +6485,7 @@ ccf6fc3b0f24bfa396d0633c19454f90  settings/querycache.ini
 1d54e408fae4768ac1e8c18f5bf48fcc  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-73270e2f4f2f0ea4f37fccb114d2da81  settings/site.ini
+f7be990321e4fb8314a9b615af65a59c  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -6913,6 +6915,7 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
+8268ae49ce8b679c31d69da918a0818f  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 779f692f3395610478f6b8465c20cb56  share/translations/fin-FI/translation.ts
@@ -6932,7 +6935,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-ed60cfa89fac1b9a005124c22b02d689  share/translations/untranslated/translation.ts
+8860d39cfd15df4db7a8fddece9cebeb  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 4397f3e1a1c355255c97e191430662d5  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
