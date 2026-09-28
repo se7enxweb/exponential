@@ -216,22 +216,19 @@ class eZStepDatabaseInit extends eZStepInstaller
         }*/
 
         $config = eZINI::instance( 'setup.ini' );
-        if ( !isset( $this->PersistenceList['database_info']['server'] ) or
-             !$this->PersistenceList['database_info']['server'] )
-            $this->PersistenceList['database_info']['server'] = $config->variable( 'DatabaseSettings', 'DefaultServer' );
-        if ( !isset( $this->PersistenceList['database_info']['port'] ) or
-             !$this->PersistenceList['database_info']['port'] )
-            $this->PersistenceList['database_info']['port'] = $config->variable( 'DatabaseSettings', 'DefaultPort' );
-        if ( !isset( $this->PersistenceList['database_info']['dbname'] ) or
-             !$this->PersistenceList['database_info']['dbname'] )
-            $this->PersistenceList['database_info']['dbname'] = $config->variable( 'DatabaseSettings', 'DefaultName' );
-
-        if ( !isset( $this->PersistenceList['database_info']['user'] ) or
-             !$this->PersistenceList['database_info']['user'] )
-            $this->PersistenceList['database_info']['user'] = $config->variable( 'DatabaseSettings', 'DefaultUser' );
-        if ( !isset( $this->PersistenceList['database_info']['password'] ) or
-             !$this->PersistenceList['database_info']['password'] )
-            $this->PersistenceList['database_info']['password'] = $config->variable( 'DatabaseSettings', 'DefaultPassword' );
+        // setup.ini [DatabaseSettings] Default<Setting>, or Default<Setting>_<type>
+        // for the chosen system (PostgreSQL: user postgres, port 5432, not root)
+        $type = isset( $this->PersistenceList['database_info']['type'] ) ? $this->PersistenceList['database_info']['type'] : '';
+        foreach ( array( 'server' => 'DefaultServer', 'port' => 'DefaultPort', 'dbname' => 'DefaultName',
+                         'user' => 'DefaultUser', 'password' => 'DefaultPassword' ) as $key => $setting )
+        {
+            if ( isset( $this->PersistenceList['database_info'][$key] ) and
+                 $this->PersistenceList['database_info'][$key] )
+                continue;
+            $this->PersistenceList['database_info'][$key] = $config->hasVariable( 'DatabaseSettings', $setting . '_' . $type )
+                ? $config->variable( 'DatabaseSettings', $setting . '_' . $type )
+                : $config->variable( 'DatabaseSettings', $setting );
+        }
         if ( !isset( $this->PersistenceList['database_info']['socket'] ) )
             $this->PersistenceList['database_info']['socket'] = '';
 
