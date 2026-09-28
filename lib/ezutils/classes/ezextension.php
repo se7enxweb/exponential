@@ -754,6 +754,19 @@ class eZExtension
         if ( $mtime == 0 )
             $mtime = @filemtime( $path );
 
+        // Safety net: an extension that still declares no name is listed under its directory name
+        $hasName = false;
+        foreach ( $info as $key => $value )
+        {
+            if ( is_string( $key ) && strtolower( $key ) === 'name' && is_string( $value ) && trim( $value ) !== '' )
+            {
+                $hasName = true;
+                break;
+            }
+        }
+        if ( !$hasName )
+            $info = array( 'name' => $extension ) + $info;
+
         $info['version'] = $version;
         $info['mtime'] = $mtime;
         $info['mtime_formatted'] = ( $mtime > 0 ) ? date( 'Y-m-d H:i', $mtime ) : false;

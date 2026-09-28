@@ -86,8 +86,13 @@ function getExtensionsInfo()
     foreach ( $selectedExtensions as $extension )
     {
         $extensionInfo = eZExtension::extensionInfo( $extension );
-        if ( $extensionInfo )
-            $result[$extension] = $extensionInfo;
+        if ( !$extensionInfo )
+            continue;
+
+        // An ezinfo.php says 'Version'; extensionInfo() adds the same value as 'version': list it once
+        if ( isset( $extensionInfo['Version'], $extensionInfo['version'] ) && $extensionInfo['Version'] === $extensionInfo['version'] )
+            unset( $extensionInfo['version'] );
+        $result[$extension] = $extensionInfo;
     }
     return $result;
 }
