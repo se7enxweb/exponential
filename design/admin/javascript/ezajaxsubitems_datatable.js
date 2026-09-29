@@ -450,6 +450,19 @@ var sortableSubitems = function () {
         // menu: the type and the how-many are asked for together on the next
         // page, where there is room to say what is about to happen, and this
         // list already has one menu of classes on it.
+        // Where Edit selected and Create multiple new send the list form: the
+        // URL the template gives, else the form's own action with its last
+        // part changed. The form's action already carries this siteaccess and
+        // port; a bare '/content/multiedit' went to the public siteaccess.
+        function multiEditURLFor( form ) {
+            if ( typeof window.eZExpMultiEditURL === 'string' && window.eZExpMultiEditURL )
+                return window.eZExpMultiEditURL;
+            var action = form.attr('action') || '';
+            return /content\/action(\?.*)?$/.test( action )
+                ? action.replace( /content\/action(\?.*)?$/, 'content/multiedit' )
+                : '/content/multiedit';
+        }
+
         var createMultiBtn = new YAHOO.widget.Button({
             type: "push",
             id: "ezbtn-new-multi",
@@ -457,8 +470,7 @@ var sortableSubitems = function () {
             name: "create-multiple-button",
             container: "action-controls",
             onclick: { fn: function () {
-                var multiEditURL = ( typeof eZExpMultiEditURL !== 'undefined' && eZExpMultiEditURL )
-                                   ? eZExpMultiEditURL : '/content/multiedit';
+                var multiEditURL = multiEditURLFor( $('form[name=children]').first() );
 
                 // The parent is this list's own node; the sub items form
                 // already carries it as ContentNodeID.
@@ -513,8 +525,7 @@ var sortableSubitems = function () {
                 // that draws this list, and a template that does not set it
                 // would otherwise throw a ReferenceError here and the menu
                 // item would do nothing at all.
-                var multiEditURL = ( typeof eZExpMultiEditURL !== 'undefined' && eZExpMultiEditURL )
-                                   ? eZExpMultiEditURL : '/content/multiedit';
+                var multiEditURL = multiEditURLFor( $('form[name=children]').first() );
 
                 form.attr('action', multiEditURL)
                     .append($('<input type="hidden" name="MultiEditReturnURI" />')

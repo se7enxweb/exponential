@@ -64,7 +64,10 @@ var confObj = {ldelim}
 {* Where "Edit selected" sends the selection. Built with ezurl so it carries
    the siteaccess and index file this installation actually uses, rather than
    a path hardcoded in the javascript. *}
-var eZExpMultiEditURL = "{'content/multiedit'|ezurl('no')}";
+{* On window: this script runs inside a function, and a plain var here was
+   that function's own, so the datatable script never saw it and sent the
+   selection to a bare /content/multiedit - the public siteaccess. *}
+window.eZExpMultiEditURL = "{'content/multiedit'|ezurl('no')}";
 var labelsObj = {ldelim}
 
 
