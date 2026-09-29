@@ -2421,6 +2421,11 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
             if ( !eZContentObjectTreeNode::createPathConditionAndNotEqParentSQLStrings( $pathStringCond, $notEqParentString, $nodeID, $depth, $depthOperator ) )
             {
+                // Undo the language set above, or it stays for every fetch after this one
+                if ( $language )
+                {
+                    eZContentLanguage::clearPrioritizedLanguages();
+                }
                 $retValue = null;
                 return $retValue;
             }
@@ -2599,6 +2604,11 @@ class eZContentObjectTreeNode extends eZPersistentObject
         // If the node(s) doesn't exist we return null.
         if ( !eZContentObjectTreeNode::createPathConditionAndNotEqParentSQLStrings( $pathStringCond, $notEqParentString, $nodeID, $depth, $depthOperator ) )
         {
+            // Undo the language set above, or it stays for every fetch after this one
+            if ( $language )
+            {
+                eZContentLanguage::clearPrioritizedLanguages();
+            }
             return null;
         }
 
