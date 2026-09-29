@@ -568,6 +568,26 @@
         <source>attribute &apos;%identifier&apos;: %name (%id)</source>
         <translation>Attribut „%identifier“: %name (%id)</translation>
     </message>
+    <message>
+        <source>Top</source>
+        <translation>Nach oben</translation>
+    </message>
+    <message>
+        <source>Bottom</source>
+        <translation>Nach unten</translation>
+    </message>
+    <message>
+        <source>Move this attribute to the top.</source>
+        <translation>Dieses Attribut an die erste Stelle verschieben.</translation>
+    </message>
+    <message>
+        <source>Move this attribute to the bottom.</source>
+        <translation>Dieses Attribut an die letzte Stelle verschieben.</translation>
+    </message>
+    <message>
+        <source>The attribute could not be moved; the order is as it was.</source>
+        <translation>Das Attribut konnte nicht verschoben werden; die Reihenfolge ist unverändert.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/edit_denied</name>
