@@ -150,13 +150,15 @@ $extensionSortColumns = array( 'order', 'name', 'info_name', 'license', 'version
 
 $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
 
+// Sorted by the loading order by default: the order the system loads the
+// extensions in, active ones first, then the others by name.
 $sortBy = isset( $userParameters['sort'] ) ? (string)$userParameters['sort']
-        : ( $http->hasGetVariable( 'SortBy' ) ? strtolower( $http->getVariable( 'SortBy' ) ) : 'name' );
+        : ( $http->hasGetVariable( 'SortBy' ) ? strtolower( $http->getVariable( 'SortBy' ) ) : 'order' );
 
 $sortOrder = isset( $userParameters['dir'] ) ? (string)$userParameters['dir']
            : ( $http->hasGetVariable( 'SortOrder' ) ? strtolower( $http->getVariable( 'SortOrder' ) ) : 'asc' );
 
-$sortBy    = in_array( $sortBy, $extensionSortColumns, true ) ? $sortBy : 'name';
+$sortBy    = in_array( $sortBy, $extensionSortColumns, true ) ? $sortBy : 'order';
 $sortOrder = $sortOrder === 'desc' ? 'desc' : 'asc';
 
 // Use expInfo to collect and normalise all extension metadata
