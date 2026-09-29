@@ -5478,7 +5478,7 @@ a8ea863e220ac49c2e8469247fcebd1b  kernel/classes/datatypes/ezurl/ezurltype.php
 d8430c07a81495e6098222c9b978bab2  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 33d6d68fb17a7ff301c1b4ad4a7d4018  kernel/classes/datatypes/ezuser/ezldapuser.php
 6d64731c218e903d8754663b655718a3  kernel/classes/datatypes/ezuser/eztextfileuser.php
-42d10f0c9920aaee534b9ea72978567d  kernel/classes/datatypes/ezuser/ezuser.php
+d95c4f71a0ad3efb4b38ee170a60735c  kernel/classes/datatypes/ezuser/ezuser.php
 6c0f1f5b3df5c5fa50d89bed22440eaa  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 88ed9b4b641c0cce011f961df46281d0  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 78f2c8512ec712ac40b59678f06ee8a9  kernel/classes/datatypes/ezuser/ezusersetting.php
@@ -6310,7 +6310,7 @@ beb78263bcf98615272ae874e976841e  lib/ezimage/classes/ezimageanalyzer.php
 ea3a80b733230da2b952206f069fdd66  lib/ezimage/classes/ezimagefactory.php
 ec29cb2a6690dc068aaae0c83dc1a7ef  lib/ezimage/classes/ezimagefont.php
 3ff4ed18b4ed6c0f0ce16d21989bbed2  lib/ezimage/classes/ezimagegdfactory.php
-bb29d2df2ab1d1084546cfced6a65a71  lib/ezimage/classes/ezimagegdhandler.php
+8b38f5fb12ef1971ccda426571fc5bca  lib/ezimage/classes/ezimagegdhandler.php
 b9174ce1a32103902991aa5c5fb0fc00  lib/ezimage/classes/ezimagehandler.php
 8b784352b7e6c46b92018e8ff04bc7a0  lib/ezimage/classes/ezimageinterface.php
 0b8defceb5e13774cd8315ae133cb4ed  lib/ezimage/classes/ezimagelayer.php
@@ -7426,8 +7426,8 @@ fb53daa907db9aed6712d715150412e5  tests/tests/lib/ezdb/mongodb/sevenxMongoDBInte
 d69d80eb919a41cca021cb8e9172bd2f  tests/tests/lib/ezdb/mongodb/stubs.php
 a087fb119223c24c3ec211e301498435  tests/tests/lib/ezdb/suite.php
 d7164fa46b1305da59937e31451a1888  tests/tests/lib/ezfile/data/file.txt
-f97e06c5920d008cdd622ea3269c8598  tests/tests/lib/ezfile/eZDirTestInsideRootTest.php
-729513e6d9d5054d8db18bff94da486c  tests/tests/lib/ezfile/eZDirTestOutsideRootTest.php
+55e7ba7e0ea51a6487cfb31a7e7da5f5  tests/tests/lib/ezfile/eZDirTestInsideRootTest.php
+f45104799eb52c9f2a62c88d2713945b  tests/tests/lib/ezfile/eZDirTestOutsideRootTest.php
 fe79ded3dbe8bb9283209230b19af4fd  tests/tests/lib/ezfile/eZFileDownloadTest.php
 0f0e96ad66588091de6b023f9485c82e  tests/tests/lib/ezfile/eZFileRenameTest.php
 c928d95f44043ac9230c2a26c8c24f7d  tests/tests/lib/ezfile/ezdirinsideroot_test.php
