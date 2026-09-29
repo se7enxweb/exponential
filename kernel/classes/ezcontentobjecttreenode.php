@@ -2402,15 +2402,6 @@ class eZContentObjectTreeNode extends eZPersistentObject
             $sortingInfo             = eZContentObjectTreeNode::createSortingSQLStrings( $sortBy );
             $attributeFilter         = eZContentObjectTreeNode::createAttributeFilterSQLStrings( $nodeParams['AttributeFilter'], $sortingInfo, $language );
 
-            if ( $language )
-            {
-                if ( !is_array( $language ) )
-                {
-                    $language = array( $language );
-                }
-                eZContentLanguage::setPrioritizedLanguages( $language );
-            }
-
             $classCondition          = eZContentObjectTreeNode::createClassFilteringSQLString( $nodeParams['ClassFilterType'], $nodeParams['ClassFilterArray'] );
             $extendedAttributeFilter = eZContentObjectTreeNode::createExtendedAttributeFilterSQLStrings( $nodeParams['ExtendedAttributeFilter'] );
             $mainNodeOnlyCond        = eZContentObjectTreeNode::createMainNodeConditionSQLString( $mainNodeOnly );
@@ -2421,13 +2412,18 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
             if ( !eZContentObjectTreeNode::createPathConditionAndNotEqParentSQLStrings( $pathStringCond, $notEqParentString, $nodeID, $depth, $depthOperator ) )
             {
-                // Undo the language set above, or it stays for every fetch after this one
-                if ( $language )
-                {
-                    eZContentLanguage::clearPrioritizedLanguages();
-                }
                 $retValue = null;
                 return $retValue;
+            }
+
+            // Only now, as in subTreeByNodeID(): the start nodes are looked up in the site's languages
+            if ( $language )
+            {
+                if ( !is_array( $language ) )
+                {
+                    $language = array( $language );
+                }
+                eZContentLanguage::setPrioritizedLanguages( $language );
             }
 
 
@@ -2587,15 +2583,6 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $language = ( isset( $params['Language'] ) ) ? $params['Language'] : false;
 
-        if ( $language )
-        {
-            if ( !is_array( $language ) )
-            {
-                $language = array( $language );
-            }
-            eZContentLanguage::setPrioritizedLanguages( $language );
-        }
-
         $depth         = isset( $params['Depth'] ) && is_numeric( $params['Depth'] ) ? $params['Depth']              : false;
         $depthOperator = isset( $params['DepthOperator'] )                           ? $params['DepthOperator']      : false;
 
@@ -2604,12 +2591,18 @@ class eZContentObjectTreeNode extends eZPersistentObject
         // If the node(s) doesn't exist we return null.
         if ( !eZContentObjectTreeNode::createPathConditionAndNotEqParentSQLStrings( $pathStringCond, $notEqParentString, $nodeID, $depth, $depthOperator ) )
         {
-            // Undo the language set above, or it stays for every fetch after this one
-            if ( $language )
-            {
-                eZContentLanguage::clearPrioritizedLanguages();
-            }
             return null;
+        }
+
+        // Only now, as in subTreeByNodeID(): the start node is looked up in the site's languages, not in
+        // the one counted (a site root without that translation would not be found)
+        if ( $language )
+        {
+            if ( !is_array( $language ) )
+            {
+                $language = array( $language );
+            }
+            eZContentLanguage::setPrioritizedLanguages( $language );
         }
 
         $db = eZDB::instance();
