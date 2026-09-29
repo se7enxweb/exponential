@@ -82,12 +82,18 @@ class eZDirTestOutsideRootTest extends ezpTestCase
 
     public function testRemoveWithoutCheckNotExisting()
     {
-        $this->assertFalse( eZDir::recursiveDelete( $this->rootDir . 'doesNotExist', false ) );
+        // Nothing there is nothing to delete, and not a failure (like rm -rf):
+        // a cache that was never created must not stop what clears it.
+        $this->assertTrue( eZDir::recursiveDelete( $this->rootDir . 'doesNotExist', false ) );
+        $this->assertFalse( file_exists( $this->rootDir . 'doesNotExist' ) );
     }
 
     public function testRemoveWithCheckNotExisting()
     {
-        $this->assertFalse( eZDir::recursiveDelete( $this->rootDir . 'doesNotExist', true ) );
+        // Nothing there is nothing to delete, and not a failure (like rm -rf):
+        // a cache that was never created must not stop what clears it.
+        $this->assertTrue( eZDir::recursiveDelete( $this->rootDir . 'doesNotExist', true ) );
+        $this->assertFalse( file_exists( $this->rootDir . 'doesNotExist' ) );
     }
 }
 
