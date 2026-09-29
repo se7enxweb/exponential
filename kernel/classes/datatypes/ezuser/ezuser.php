@@ -2065,12 +2065,19 @@ WHERE user_id = '" . $userID . "' AND
     */
     static function authenticateHash( $user, $password, $site, $type, $hash )
     {
+        // Strings only. A form can post an array and a caller can pass true;
+        // cast, true became '1' on both sides and the plaintext "hash" of the
+        // password true matched the stored hash true.
+        if ( !is_string( $user ) || !is_string( $password ) || !is_string( $hash ) )
+        {
+            return false;
+        }
         if ( $user == '' || $password == '' || $type == self::PASSWORD_HASH_EMPTY )
         {
             return false;
         }
 
-        return eZUser::createHash( $user, $password, $site, $type, $hash ) === (string) $hash;
+        return eZUser::createHash( $user, $password, $site, $type, $hash ) === $hash;
     }
 
     /*!
