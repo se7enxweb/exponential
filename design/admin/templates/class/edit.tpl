@@ -164,7 +164,7 @@
      $attribute_default_category = ezini( 'ClassAttributeSettings', 'DefaultCategory', 'content.ini' )
      $priority_value = 0}
 
-<table id="ezcca-edit-list" class="special" cellspacing="0" summary="{'List of class attributes'|i18n( 'design/admin/class/edit' )}">
+<table id="ezcca-edit-list" data-move-failed="{'The attribute could not be moved; the order is as it was.'|i18n( 'design/admin/class/edit' )|wash}" class="special" cellspacing="0" summary="{'List of class attributes'|i18n( 'design/admin/class/edit' )}">
 <tbody>
 {section var=Attributes loop=$attributes sequence=array( bglight, bgdark )}
 
@@ -340,56 +340,87 @@
 <script type="text/javascript">
 jQuery(function( $ )//called on document.ready
 {
+    // .length, not .size(): jQuery 3 removed .size(), and the call threw
+    // before the move buttons below were set up, so every click posted the
+    // whole form and reloaded the page (with an older jQuery it worked).
     var el = $('#LastChangedID input[name^=ContentAttribute_name]');
-    if ( el.size() ) {
+    if ( el.length ) {
         window.scrollTo(0, Math.max( el.offset().top - 180, 0 ));
         el.focus();
     }
 
-    // Axaify all move up/down buttons
-    var moveButtons = $('#ezcca-edit-list div.listbutton input[name^=Move]');
-    moveButtons.click(function( e )
+    var list = $('#ezcca-edit-list');
+    var status = $('<p class="ezcca-move-status" role="status" aria-live="polite"></p>').insertBefore( list ).data( 'failed', list.attr( 'data-move-failed' ) );
+
+    // The numbers in front of the names and the row colours follow the rows.
+    function renumberAttributes()
     {
-        // Prevent form from being sent and make sure user is not able to duble click on button and causing issues
+        list.children('tbody').children('tr.ezcca-edit-list-item').each( function( i )
+        {
+            var th = $(this).find('> td > table > tbody > tr > th.wide, > td > table > tr > th.wide').first();
+            th.html( th.html().replace( /^\s*\d+\./, ( i + 1 ) + '.' ) );
+            $(this).removeClass( 'bglight bgdark' ).addClass( i % 2 ? 'bgdark' : 'bglight' );
+        });
+    }
+
+    function buttons( on )
+    {
+        list.find('div.listbutton input[name^=Move]').prop( 'disabled', !on ).toggleClass( 'disabled', !on );
+    }
+
+    // Move up/down in place; the server stores it, and a move it did not
+    // store is put back, so the page never shows an order that is not saved.
+    list.find('div.listbutton input[name^=Move]').click(function( e )
+    {
         e.preventDefault();
-        $('#ezcca-edit-list div.listbutton input[name^=Move]').attr( "disabled", true ).addClass('disabled');
+        buttons( false );
         var tr = $(this).closest('tr.ezcca-edit-list-item'), param = this.name.split('_'), up = param[0] === 'MoveUp';
-
-        // swap items in dom, or skip if number is to high / low
-        if ( up )
+        var swap = up ? tr.prev('tr.ezcca-edit-list-item') : tr.next('tr.ezcca-edit-list-item');
+        if ( !swap.length )
         {
-            var swap = tr.prev();
-            if ( !swap.size() )
-                return onDone();
-            swap.before( tr );
+            buttons( true );
+            return false;
         }
-        else
+        var move = function()
         {
-            var swap = tr.next();
-            if ( !swap.size() )
-                return onDone();
-            swap.after( tr );
-        }
+            if ( up ) swap.before( tr ); else swap.after( tr );
+            var inp = tr.find('input[name^=ContentAttribute_priority]'), inp2 = swap.find('input[name^=ContentAttribute_priority]'), inpv = inp.val();
+            inp.val( inp2.val() );
+            inp2.val( inpv );
+            renumberAttributes();
+        };
+        var back = function()
+        {
+            if ( up ) swap.after( tr ); else swap.before( tr );
+            var inp = tr.find('input[name^=ContentAttribute_priority]'), inp2 = swap.find('input[name^=ContentAttribute_priority]'), inpv = inp.val();
+            inp.val( inp2.val() );
+            inp2.val( inpv );
+            renumberAttributes();
+        };
+        move();
 
-        // swap priority number
-        var inp = tr.find('input[name^=ContentAttribute_priority]'), inp2 = swap.find('input[name^=ContentAttribute_priority]'), inpv = inp.val();
-        inp.val( inp2.val() );
-        inp2.val( inpv );
-
-        // store with ajax request
         var postVar = { 'ContentClassHasInput': 0 }, _tokenNode = document.getElementById('ezxform_token_js');
+        var meta = document.querySelector('meta[name="csrf-token"]');
         postVar[ param[0] ] = param[1];
         if ( _tokenNode ) postVar['ezxform_token'] = _tokenNode.getAttribute('title');
-        $.post( $('#ClassEdit').attr('action'), postVar, onDone );
+        $.ajax({
+            type: 'POST',
+            url: $('#ClassEdit').attr('action'),
+            data: postVar,
+            headers: meta ? { 'X-CSRF-Token': meta.getAttribute('content') } : {}
+        }).done( function()
+        {
+            status.text( '' ).removeClass( 'is-error' );
+        }).fail( function( xhr )
+        {
+            back();
+            status.text( status.data( 'failed' ) + ' (HTTP ' + xhr.status + ')' ).addClass( 'is-error' );
+        }).always( function()
+        {
+            buttons( true );
+        });
         return false;
     });
-
-    function onDone()
-    {
-        // Re-enable buttons now that ajax request has returned or it was skipped
-        $('#ezcca-edit-list div.listbutton input[name^=Move]').attr( "disabled", false ).removeClass('disabled');
-        return false;
-    }
 
     // Disable bottom datatype dropp down when using new button in top
     jQuery('#NewButtonTop').click(function()

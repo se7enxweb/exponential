@@ -178,7 +178,7 @@
         });
 
         // disable source translations if existing translation is selected
-        if ( jQuery( '#ezcoeditlanguages-existingts input[checked=checked]' ).size() > 0 )
+        if ( jQuery( '#ezcoeditlanguages-existingts input[checked=checked]' ).length > 0 )
         {
             jQuery( '#ezcoeditlanguages-sourcets input[type=radio]' ).attr( 'disabled', true );
         }

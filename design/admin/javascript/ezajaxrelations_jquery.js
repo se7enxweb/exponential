@@ -20,8 +20,8 @@ jQuery(function( $ )
         {
             var params = { 'CallbackID': box.attr('id'), 'EncodingFetchSection': 1 };
             var node = box.find("*[name*='_for_object_start_node']"), classes = box.find("input[name*='_for_object_class_constraint_list']");
-            if ( node.size() ) params['SearchSubTreeArray'] = node.val();
-            if ( classes.size() ) params['SearchContentClassIdentifier'] = classes.val();
+            if ( node.length ) params['SearchSubTreeArray'] = node.val();
+            if ( classes.length ) params['SearchContentClassIdentifier'] = classes.val();
             $.ez( 'ezjsc::search::' + text.val(), params, _searchCallBack );
         }
         return false;
@@ -73,7 +73,7 @@ jQuery(function( $ )
     {
         link.onclick = function(){return false;};
         link.className = 'disabled';
-        var tr = $( boxID + ' table tbody tr:last-child' ), tds = tr.find('td'), listMode = tds.size() > 4;
+        var tr = $( boxID + ' table tbody tr:last-child' ), tds = tr.find('td'), listMode = tds.length > 4;
         if ( listMode )
         {
             if ( tds[1].innerHTML !== '--name--' )
