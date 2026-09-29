@@ -5555,7 +5555,7 @@ e5bf6ca9701d625229b46da3d921bcab  kernel/classes/ezcontentlanguage.php
 f0265d3cbff5fdc547a45fc1260697a8  kernel/classes/ezcontentobjectoperations.php
 e9b39fe0807d1490e6b477bea7eb5cb6  kernel/classes/ezcontentobjecttranslation.php
 2ca1d2659a34cdd6478e42c6c67d48f1  kernel/classes/ezcontentobjecttrashnode.php
-0666d5427e4cd60794651d4998853f2e  kernel/classes/ezcontentobjecttreenode.php
+4c5f74bf2f160abdf3c95e25cc3c8870  kernel/classes/ezcontentobjecttreenode.php
 0b7f57fc7042f7660a780cc554457ad3  kernel/classes/ezcontentobjecttreenodeoperations.php
 40a3ca6e6f8b20c7c58b58f7618c02f9  kernel/classes/ezcontentobjectversion.php
 5ef70a792b3654ce283da080b70e3420  kernel/classes/ezcontentupload.php
