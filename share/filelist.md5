@@ -291,7 +291,7 @@ e002d70967d5f151cca6861170e9584f  design/admin/templates/ajaxuploader/upload.tpl
 5e147a98475f03f02966b41f9734cb75  design/admin/templates/class/classlist.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
 90b2f4b8116b9ef3e04ceb886a6fd516  design/admin/templates/class/datatype/browse_objectrelationlist_placement.tpl
-720300427cdb0ed8743ceb14309fb64b  design/admin/templates/class/edit.tpl
+f7ade1b575a4b9ef2440c08a104d715b  design/admin/templates/class/edit.tpl
 58814db4ebbc569d5cc69a2813c6380a  design/admin/templates/class/edit_denied.tpl
 a09bdb4297116e4ca1de234d2604ab78  design/admin/templates/class/groupedit.tpl
 155486956c2342c262740882b803ad02  design/admin/templates/class/grouplist.tpl
@@ -5395,7 +5395,7 @@ f6e4e31c3cdeea1c4868678b690d8a55  index_cluster.php
 01f82b2434329c5366934f356acbfad8  kernel/class/classlist.php
 5d5a6670585408575cd82e5cac8c4692  kernel/class/copy.php
 be0281a3526a2ba625be31592e7ff7ae  kernel/class/delete.php
-26d7c63a2e4829597c679fabea3c0b08  kernel/class/edit.php
+a9c4af95e120595ebccf7b4064ec469f  kernel/class/edit.php
 5a1a6d6c50e592f4cd51635c891e4847  kernel/class/ezclassfunctioncollection.php
 85a52e5e08e2b592ae518a418377bda7  kernel/class/ezclassfunctions.php
 cfb6ad501b154d82da5f312bde0d88e9  kernel/class/function_definition.php
@@ -5539,7 +5539,7 @@ e1a50ec1bbc0febd40898a1bd70ef7c0  kernel/classes/ezcontentbrowsebookmark.php
 9ab968f9d08db31531492f8c9ecb69b9  kernel/classes/ezcontentcache.php
 f877e8a77e829d9b46d7a0d8bbbd3630  kernel/classes/ezcontentcachemanager.php
 a7adc29e0c277e82e7078aefc65c8ed6  kernel/classes/ezcontentclass.php
-4842384f26e28586a9e37ccf9bd19dc5  kernel/classes/ezcontentclassattribute.php
+41699b7b9e9e2697dd43bd00b59b2c47  kernel/classes/ezcontentclassattribute.php
 5ad6c287ed15969de73740a3cf8b3e4c  kernel/classes/ezcontentclassclassgroup.php
 7e0ef5dd0edf56bbe489748fa3342f00  kernel/classes/ezcontentclassedithandler.php
 e2e4b158a097dd941e193bdee0724e28  kernel/classes/ezcontentclassgroup.php
@@ -6946,7 +6946,7 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-38471a09c3af5cea6a5220a8736f5c75  share/translations/ger-DE/translation.ts
+abec4b27efcb786cada94729ae6e535c  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
