@@ -171,7 +171,10 @@ class eZImageGDHandler extends eZImageHandler
                     {
                         if ( $filteredImage != $currentImage )
                         {
-                            ImageDestroy( $currentImage );
+                            // Dropping the last reference frees a GdImage;
+                            // imagedestroy() has done nothing since PHP 8.0
+                            // and is deprecated since 8.5.
+                            unset( $currentImage );
                         }
                         $currentImage = $filteredImage;
                     }
