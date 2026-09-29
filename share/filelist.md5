@@ -6075,7 +6075,7 @@ a2db75e2dc9363b66b9e8d11647fe657  kernel/setup/expradhealth.php
 1f83c0a2d52102dcc25243247dca9d32  kernel/setup/expstaticcacherunner.php
 34e7c7581e0e9902291f9d85834ed0df  kernel/setup/exptemplateextensionwizard.php
 c2d9e897e1ae977bf74f3e94626ff6a2  kernel/setup/expworkfloweventwizard.php
-6f3c2a4ad179471165127f8c18d84e6a  kernel/setup/extensions.php
+a8765f61fb356e26f6848845381029b3  kernel/setup/extensions.php
 ae05348cf4aa92b78c678dfc932a62b8  kernel/setup/ezsetup.php
 5ed8a49e3719be60334d52645c11a730  kernel/setup/ezsetup_summary.php
 e6724ebcd818da38e0eb74eb50997739  kernel/setup/ezsetupcommon.php
