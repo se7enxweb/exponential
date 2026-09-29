@@ -81,7 +81,7 @@ b7bfdac58b195f24d9367f6f4f3bdc13  bin/php/ezwebininstall.php
 e9979b600146bdd25d4957742e641512  bin/php/ezwebinupgrade.php
 180df4500551e7902bf45d85c92a3c49  bin/php/flatten.php
 5f7744f40c20ce9864bdf3d91d2a41ed  bin/php/frankenphp.php
-2e52e96671f2be4f9d3e001a295a36ba  bin/php/install.php
+5afa44a4d3da509512e5efce499eb1e5  bin/php/install.php
 36d8cb716196471d88c5151f63b9dd42  bin/php/kickstarter.php
 f5e6cb3562a1a0c751d91c1516fffddd  bin/php/maintenance.php
 464c842c03c7aee495e3d4ea68542f05  bin/php/makestaticcache.php
@@ -5502,7 +5502,7 @@ dbb3856cc411fb1697eeda7944d0e280  kernel/classes/expcachemanager.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
 e155d47ee2599f8deb8070d941364bbc  kernel/classes/expkickstarter.php
-c28f629cd51422403cefc31c0efd09e4  kernel/classes/expkickstarterini.php
+5d101780a5be9a462d6b4d3cee69e882  kernel/classes/expkickstarterini.php
 434901ece305d52b3b4397ed3a4d5750  kernel/classes/expmaintenance.php
 1bff945a877b17d5ccfa084020434d99  kernel/classes/expphar.php
 21b59e62f5cad811c8cdc0ace277e6fe  kernel/classes/exppreloadjob.php
@@ -6078,7 +6078,7 @@ c2d9e897e1ae977bf74f3e94626ff6a2  kernel/setup/expworkfloweventwizard.php
 a8765f61fb356e26f6848845381029b3  kernel/setup/extensions.php
 ae05348cf4aa92b78c678dfc932a62b8  kernel/setup/ezsetup.php
 5ed8a49e3719be60334d52645c11a730  kernel/setup/ezsetup_summary.php
-e6724ebcd818da38e0eb74eb50997739  kernel/setup/ezsetupcommon.php
+cc17a6c6a241ef5a12b5f53139a54871  kernel/setup/ezsetupcommon.php
 1c5a13fec308e249347033efd23f5c4a  kernel/setup/ezsetupfunctioncollection.php
 9a0d4cb28028a07bdf65121f41064aa9  kernel/setup/ezsetuptests.php
 b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
@@ -6100,13 +6100,13 @@ b05b68e1a19a0aee8a85ab88af764472  kernel/setup/session.php
 f0bb2d78d2da0a115870dc0708978214  kernel/setup/settingstoolbar.php
 11d6f43693270057c21a4a8d78e96ef3  kernel/setup/setupmenu.php
 000fff131e21d5db77dc022f0d1bba6a  kernel/setup/staticcachestream.php
-745bb98e80d400097056915b627542a1  kernel/setup/steps/ezstep_create_sites.php
+452eaa2ecd0898e0f7bb7e17b12eea03  kernel/setup/steps/ezstep_create_sites.php
 d0a153027eff5f94f37303c0a29abf8b  kernel/setup/steps/ezstep_data.php
-db4fe3f3c55383f4eadcd790fe8f4a42  kernel/setup/steps/ezstep_database_choice.php
-87be323d3e410e40559cede6b609fc49  kernel/setup/steps/ezstep_database_init.php
+1c3f3f5bcb1f95b658f02b9f08208833  kernel/setup/steps/ezstep_database_choice.php
+4c09d0135398d63dc0874794723fc474  kernel/setup/steps/ezstep_database_init.php
 39bb60b1c17b9312032f6331a4c21f6a  kernel/setup/steps/ezstep_email_settings.php
 459d03abe810e0e0b789885522968da4  kernel/setup/steps/ezstep_final.php
-6d40c45e9c29ac7ba65dfabfdb4f44f2  kernel/setup/steps/ezstep_installer.php
+9afc1a76fe74ea6b929c140cf16beab8  kernel/setup/steps/ezstep_installer.php
 d89262a32691d86c8e13b8b5f4798afb  kernel/setup/steps/ezstep_language_options.php
 bddae3dedc1030d9a755586b1a726ab7  kernel/setup/steps/ezstep_package_language_options.php
 9ad4d90ba4ae03d10c1b80b0678cbced  kernel/setup/steps/ezstep_registration.php
@@ -6245,7 +6245,7 @@ d18d48fb5d6da6299784516cbf63016d  kernel/workflow/process.php
 abb928c7474f1738a4bfb0b4acc6e286  kernel/workflow/view.php
 776a9d36a1ec44718a4a3297d7a2d7d4  kernel/workflow/workflowlist.php
 bdda00e7a54a120e5d7384a2e19639bc  kickstart.ini--example
-1ddbb99c7b2418687ba0899bba8516c8  kickstart.ini-dist
+89f5e2744530313de62b66f71486c8ad  kickstart.ini-dist
 dc0978d9c142fb9bb684d5ed5549c8fd  lib/ezdb/classes/expmongodb.php
 39127b6b97ec8be8ee2d837f2dfda3d3  lib/ezdb/classes/ezdb.php
 8ef2502778404acc1f0ff3353e5e71c7  lib/ezdb/classes/ezdbinterface.php
@@ -6506,7 +6506,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 3a13a85a0747ba7150891dfbb20b25db  settings/pdf.ini
 ccf6fc3b0f24bfa396d0633c19454f90  settings/querycache.ini
 5e1cd5e77b6a5d415a62c097b34e9fb4  settings/rest.ini
-b9825cf5ffd0dbad9564a389d6bbf886  settings/setup.ini
+80e160621a67179c48c9251c75541cdb  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
 eab0f130ba7e98832f9db2f88f255ab0  settings/site.ini
