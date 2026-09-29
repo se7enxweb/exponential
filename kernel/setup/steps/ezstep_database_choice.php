@@ -120,7 +120,9 @@ class eZStepDatabaseChoice extends eZStepInstaller
             $extension = isset( $data['Type'] ) ? $data['Type'] : self::preferredDatabaseType();
             $map = array( 'postgresql' => 'pgsql',
                           'mysql' => 'mysqli',
-                          'sqlite' => 'sqlite3' );
+                          'sqlite' => 'sqlite3',
+                          'oracle' => 'oci8',
+                          'ezoracle' => 'oci8' );
             if ( isset( $map[$extension] ) )
                 $extension = $map[$extension];
 

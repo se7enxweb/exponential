@@ -397,9 +397,13 @@ class eZStepInstaller
         $databaseInfo['info'] = $databaseMap[$databaseInfo['type']];
 
         $dbDriver = $databaseInfo['info']['driver'];
+        // a driver kept in an extension (Oracle: ezoracle) needs its settings loaded first
+        eZSetupActivateDatabaseExtension( $databaseInfo['info'] );
 
+        // Oracle converts to and from the charset asked for: the check
+        // connections talk UTF-8, like the site that is installed
         if ( $dbCharset === false )
-            $dbCharset = 'iso-8859-1';
+            $dbCharset = $databaseInfo['type'] == 'oci8' ? 'utf-8' : 'iso-8859-1';
         $dbParameters = array( 'server' => $databaseInfo['server'],
                                'port' => $databaseInfo['port'],
                                'user' => $databaseInfo['user'],

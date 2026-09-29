@@ -420,6 +420,9 @@ class eZStepCreateSites extends eZStepInstaller
         $dbPwd = $databaseInfo['password'];
         $dbCharset = $charset;
         $dbDriver = $databaseInfo['info']['driver'];
+        // a driver kept in an extension (Oracle: ezoracle): its settings (schema
+        // handler, column translations) are needed from the first CREATE TABLE
+        eZSetupActivateDatabaseExtension( $databaseInfo['info'] );
 
         $dbName = $siteType['database'];
         if ( $databaseInfo['type'] == 'sqlite3' )
@@ -1196,6 +1199,14 @@ language_locale='eng-GB'";
             {
                 $extensionsToEnable[] = $extension;
             }
+        }
+        // the extension that carries the database driver (Oracle: ezoracle):
+        // without it the site cannot even connect
+        $databaseMapForSite = eZSetupDatabaseMap();
+        $databaseTypeForSite = $this->PersistenceList['database_info']['type'] ?? '';
+        if ( !empty( $databaseMapForSite[$databaseTypeForSite]['extension'] ) )
+        {
+            array_unshift( $extensionsPrepended, $databaseMapForSite[$databaseTypeForSite]['extension'] );
         }
 
         // The wizard's settings go over the site package's for the user and

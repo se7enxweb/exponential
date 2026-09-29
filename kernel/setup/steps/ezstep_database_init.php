@@ -123,7 +123,8 @@ class eZStepDatabaseInit extends eZStepInstaller
         // DATABASES privilege and may access the 'mysql' system database). We can
         // simply use the named database directly.
         // PostgreSQL the same: the connection above went to the named database.
-        if ( in_array( $databaseInfo['type'], array( 'mysql', 'mysqli', 'pgsql' ) ) &&
+        // Oracle the same: Database is the connect string of the schema to use
+        if ( in_array( $databaseInfo['type'], array( 'mysql', 'mysqli', 'pgsql', 'oci8' ) ) &&
              !empty( $databaseInfo['dbname'] ) )
         {
             $this->PersistenceList['database_info_available'] = array( $databaseInfo['dbname'] );

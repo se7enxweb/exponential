@@ -27,9 +27,12 @@ $databaseTypes = array(
     'mysql'   => array( 'type' => 'mysqli',  'port' => '3306',  'name' => 'exponential',    'user' => 'root' ),
     'pgsql'   => array( 'type' => 'pgsql',   'port' => '5432',  'name' => 'exponential',    'user' => 'postgres' ),
     'mongodb' => array( 'type' => 'mongodb', 'port' => '27017', 'name' => 'exponential',    'user' => '' ),
+    // the name is the service; the connect string becomes host:port/service
+    'oracle'  => array( 'type' => 'oci8',    'port' => '1521',  'name' => 'FREEPDB1',       'user' => '' ),
 );
 $databaseAliases = array( 'sqlite3' => 'sqlite', 'mysqli' => 'mysql', 'mariadb' => 'mysql',
-                          'postgresql' => 'pgsql', 'postgres' => 'pgsql', 'mongo' => 'mongodb' );
+                          'postgresql' => 'pgsql', 'postgres' => 'pgsql', 'mongo' => 'mongodb',
+                          'oci8' => 'oracle', 'ezoracle' => 'oracle' );
 
 $options = array(
     'db'             => 'sqlite',
@@ -70,10 +73,15 @@ Everything has a default, so "./console exp:install" alone installs the
 multisite package on SQLite with the administrator admin / publish.
 
 Database (default: SQLite, no server needed)
-  --db=<type>            sqlite (default), mysql, pgsql or mongodb
+  --db=<type>            sqlite (default), mysql, pgsql, mongodb or oracle
+                         (oracle: needs oci8 and extension/ezoracle)
   --db-host=<host>       default localhost
-  --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb)
-  --db-name=<name>       default exponential (exponential.db for sqlite)
+  --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
+                         1521 (oracle)
+  --db-name=<name>       default exponential (exponential.db for sqlite);
+                         oracle: the service name, default FREEPDB1, used as
+                         host:port/service; a full connect string (with / or
+                         a descriptor) or @alias (a TNS alias) is used as it is
   --db-user=<user>       default root (mysql), postgres (pgsql), none otherwise
   --db-password=<pass>   default none; or set EXP_INSTALL_DB_PASSWORD, which
                          keeps it out of the process list and shell history
@@ -153,13 +161,23 @@ if ( isset( $databaseAliases[$db] ) )
     $db = $databaseAliases[$db];
 if ( !isset( $databaseTypes[$db] ) )
 {
-    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql or mongodb\n" );
+    fwrite( STDERR, "Unknown database type '{$options['db']}': use sqlite, mysql, pgsql, mongodb or oracle\n" );
     exit( 1 );
 }
 $dbDefaults = $databaseTypes[$db];
 $dbPort = $options['db-port'] !== null ? $options['db-port'] : $dbDefaults['port'];
 $dbName = $options['db-name'] !== null ? $options['db-name'] : $dbDefaults['name'];
 $dbUser = $options['db-user'] !== null ? $options['db-user'] : $dbDefaults['user'];
+// Oracle: the driver takes one connect string. A service name becomes the Easy
+// Connect host:port/service; a connect string of its own (with / or a
+// descriptor) stays as it is, and @alias names a TNS alias
+if ( $db === 'oracle' )
+{
+    if ( strpos( $dbName, '@' ) === 0 )
+        $dbName = substr( $dbName, 1 );
+    else if ( strpos( $dbName, '/' ) === false && strpos( $dbName, '(' ) === false )
+        $dbName = $options['db-host'] . ':' . $dbPort . '/' . $dbName;
+}
 if ( $options['db-password'] === '' && getenv( 'EXP_INSTALL_DB_PASSWORD' ) !== false )
     $options['db-password'] = (string)getenv( 'EXP_INSTALL_DB_PASSWORD' );
 if ( !in_array( $options['db-action'], array( 'remove', 'ignore', 'skip' ), true ) )

@@ -104,6 +104,11 @@
 ## - mysqli - Use mysqli (MySQL Improved); mysql is accepted too
 ## - pgsql - Use PostgreSQL; postgresql is accepted too
 ## - mongodb - Use MongoDB
+## - oci8 - Use Oracle (19c or later) through the ezoracle extension, which
+##          must be in extension/ (it is activated for the new site); oracle
+##          is accepted too. In [database_init] and [site_details] Database is
+##          the Oracle connect string, e.g. 127.0.0.1:1521/FREEPDB1 (Easy
+##          Connect) or a TNS alias; Server and Port are not used
 ## other values are possible if provided by extension
 #Type=sqlite3
 

@@ -58,8 +58,62 @@ function eZSetupDatabaseMap()
                                       'name' => 'MongoDB',
                                       'required_version' => '4.0',
                                       'has_demo_data' => false,
-                                      'supports_unicode' => true )
+                                      'supports_unicode' => true ),
+                  // the driver lives in an extension, activated for the
+                  // installation by eZSetupActivateDatabaseExtension()
+                  'oci8' => array( 'type' => 'oci8',
+                                   'driver' => 'ezoracle',
+                                   'extension' => 'ezoracle',
+                                   'name' => 'Oracle',
+                                   'required_version' => '19.0',
+                                   'has_demo_data' => false,
+                                   'supports_unicode' => true )
                    );
+}
+}
+
+if ( !function_exists( 'eZSetupActivateDatabaseExtension' ) ) {
+/**
+ * Loads the settings of the extension that carries the database driver of
+ * $databaseInfo (an entry of eZSetupDatabaseMap() with an 'extension' key,
+ * Oracle's ezoracle), so the wizard and the kickstarter can connect and
+ * create the schema before the extension is active in settings/override.
+ * CreateSites then writes it into ActiveExtensions of the new site.
+ *
+ * @param array $databaseInfo
+ * @return bool false when the extension is not installed
+ */
+function eZSetupActivateDatabaseExtension( $databaseInfo )
+{
+    if ( !is_array( $databaseInfo ) || empty( $databaseInfo['extension'] ) )
+        return true;
+
+    static $activated = array();
+    $extension = $databaseInfo['extension'];
+    if ( isset( $activated[$extension] ) )
+        return true;
+
+    $settingsDir = eZExtension::baseDirectory() . '/' . $extension . '/settings';
+    if ( !is_dir( $settingsDir ) )
+    {
+        eZDebug::writeError( "The $extension extension, which the database driver " . $databaseInfo['driver'] . " needs, is not installed", __FUNCTION__ );
+        return false;
+    }
+
+    $ini = eZINI::instance();
+    if ( !in_array( $extension, $ini->variable( 'ExtensionSettings', 'ActiveExtensions' ) ) )
+    {
+        // global: INI files read from now on (dbschema.ini ...) see the settings too
+        $ini->prependOverrideDir( $settingsDir, true, 'extension:' . $extension, 'extension' );
+        $ini->load();
+        foreach ( array( 'dbschema.ini', 'file.ini' ) as $iniFile )
+        {
+            if ( eZINI::isLoaded( $iniFile ) )
+                eZINI::resetInstance( $iniFile );
+        }
+    }
+    $activated[$extension] = true;
+    return true;
 }
 }
 

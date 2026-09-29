@@ -36,6 +36,7 @@ class expKickstarterIni
                 'mysqli'  => 'MySQL (mysqli)',
                 'pgsql'   => 'PostgreSQL (pgsql)',
                 'mongodb' => 'MongoDB',
+                'oci8'    => 'Oracle (oci8, needs the ezoracle extension)',
             ),
         ),
         'email_settings' => array(
