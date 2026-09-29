@@ -233,7 +233,7 @@ bb57d7d50de510183570d8844efbd49f  design/admin/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 8f3d8b30beb9fe9584bb1c01abf22c50  design/admin/javascript/contentstructuremenu_dynamic.js
-9690d214e4203282f2c66f283c71fbc9  design/admin/javascript/ezajaxrelations_jquery.js
+27780710dbc013f8c40cbeae3b1b687e  design/admin/javascript/ezajaxrelations_jquery.js
 7b4ee90fda143d03aa5fb7e40834df4a  design/admin/javascript/ezajaxsubitems_datatable.js
 11e7c851dcd3b8e50b56554dc08ea31c  design/admin/javascript/ezajaxuploader.js
 d38fb0a9120b6a83182f000df6a7806f  design/admin/javascript/ezcollapsiblemenu.js
@@ -291,7 +291,7 @@ e002d70967d5f151cca6861170e9584f  design/admin/templates/ajaxuploader/upload.tpl
 5e147a98475f03f02966b41f9734cb75  design/admin/templates/class/classlist.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
 90b2f4b8116b9ef3e04ceb886a6fd516  design/admin/templates/class/datatype/browse_objectrelationlist_placement.tpl
-b259de3ef7ab74987f3308d0e30b28b9  design/admin/templates/class/edit.tpl
+720300427cdb0ed8743ceb14309fb64b  design/admin/templates/class/edit.tpl
 58814db4ebbc569d5cc69a2813c6380a  design/admin/templates/class/edit_denied.tpl
 a09bdb4297116e4ca1de234d2604ab78  design/admin/templates/class/groupedit.tpl
 155486956c2342c262740882b803ad02  design/admin/templates/class/grouplist.tpl
@@ -346,7 +346,7 @@ db0fe350fb1676d291aea8449a24f045  design/admin/templates/content/datatype/edit/e
 2fe8d839eb4968e8e4e53862f1179d5e  design/admin/templates/content/edit_attribute.tpl
 a35481074f9bd223054c6c13f783b5c7  design/admin/templates/content/edit_conflict.tpl
 a038803bfb7afe020d14c41475a8859b  design/admin/templates/content/edit_draft.tpl
-29cf3c8355146681acb4320431e8a5fc  design/admin/templates/content/edit_languages.tpl
+4b199c403e3769e2f4084eef9c34f2cf  design/admin/templates/content/edit_languages.tpl
 143c6f02b16e30519fa4ba79242ef957  design/admin/templates/content/edit_locations.tpl
 1d5f22905034a53be470c9c47f79dc34  design/admin/templates/content/edit_menu.tpl
 1f0c31bc65fc2ffc21fa856529fe4d96  design/admin/templates/content/edit_relations.tpl
@@ -5395,7 +5395,7 @@ f6e4e31c3cdeea1c4868678b690d8a55  index_cluster.php
 01f82b2434329c5366934f356acbfad8  kernel/class/classlist.php
 5d5a6670585408575cd82e5cac8c4692  kernel/class/copy.php
 be0281a3526a2ba625be31592e7ff7ae  kernel/class/delete.php
-8ea41c7da1d7a895a422c74a4af3d943  kernel/class/edit.php
+26d7c63a2e4829597c679fabea3c0b08  kernel/class/edit.php
 5a1a6d6c50e592f4cd51635c891e4847  kernel/class/ezclassfunctioncollection.php
 85a52e5e08e2b592ae518a418377bda7  kernel/class/ezclassfunctions.php
 cfb6ad501b154d82da5f312bde0d88e9  kernel/class/function_definition.php
@@ -5539,7 +5539,7 @@ e1a50ec1bbc0febd40898a1bd70ef7c0  kernel/classes/ezcontentbrowsebookmark.php
 9ab968f9d08db31531492f8c9ecb69b9  kernel/classes/ezcontentcache.php
 f877e8a77e829d9b46d7a0d8bbbd3630  kernel/classes/ezcontentcachemanager.php
 a7adc29e0c277e82e7078aefc65c8ed6  kernel/classes/ezcontentclass.php
-9c728bd95e291d44ccdcf7c64144adf1  kernel/classes/ezcontentclassattribute.php
+4842384f26e28586a9e37ccf9bd19dc5  kernel/classes/ezcontentclassattribute.php
 5ad6c287ed15969de73740a3cf8b3e4c  kernel/classes/ezcontentclassclassgroup.php
 7e0ef5dd0edf56bbe489748fa3342f00  kernel/classes/ezcontentclassedithandler.php
 e2e4b158a097dd941e193bdee0724e28  kernel/classes/ezcontentclassgroup.php
