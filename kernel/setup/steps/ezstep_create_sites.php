@@ -751,30 +751,23 @@ id=$engLanguageID";
 
             $primaryLanguageID = (int)$primaryLanguageObj->attribute( 'id' );
 
-            // Find objects which are always available
-            if ( $db->databaseName() == 'oracle' )
-            {
-                $sql = "SELECT id
+            // Find objects which are always available. eZDB::bitAnd() writes the
+            // bit test in each database's dialect (BITAND on Oracle, & elsewhere).
+            $sql = "SELECT id
 FROM
 ezcontentobject
 WHERE
-bitand( language_mask, 1 ) = 1";
-            }
-            else
-            {
-                $sql = "SELECT id
-FROM
-ezcontentobject
-WHERE
-language_mask & 1 = 1";
-            }
+" . $db->bitAnd( 'language_mask', 1 ) . " = 1";
             $objectList = array();
             $list = $db->arrayQuery( $sql );
-            foreach ( $list as $row )
+            foreach ( (array)$list as $row )
             {
                 $objectList[] = (int)$row['id'];
             }
-            $inSql = 'IN ( ' . implode( ', ', $objectList ) . ')';
+            // this runs on the base data only (a few dozen objects), far below
+            // Oracle's 1000 items per IN list; IN ( 0 ) when there is none, as
+            // "IN ( )" is not SQL
+            $inSql = 'IN ( ' . ( $objectList ? implode( ', ', $objectList ) : '0' ) . ' )';
 
             // Updates databases that have eng-GB data to the new locale.
             $updateSql = "UPDATE ezcontentobject_name
