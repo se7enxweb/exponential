@@ -531,6 +531,35 @@ class eZContentClassAttribute extends eZPersistentObject
     }
 
     /**
+     * Moves the attribute to the first ($top) or the last place of its class
+     * version; the others keep their order and are renumbered 1..n.
+     */
+    function moveToEdge( $top )
+    {
+        $db = eZDB::instance();
+        $cid = (int)$this->ContentClassID;
+        $version = (int)$this->Version;
+        $ids = array();
+        foreach ( $db->arrayQuery( 'SELECT id FROM ezcontentclass_attribute WHERE contentclass_id = ' . $cid .
+                                   ' AND version = ' . $version . ' ORDER BY placement, id' ) as $row )
+        {
+            if ( (int)$row['id'] !== (int)$this->ID )
+                $ids[] = (int)$row['id'];
+        }
+        if ( $top )
+            array_unshift( $ids, (int)$this->ID );
+        else
+            $ids[] = (int)$this->ID;
+        $db->begin();
+        foreach ( $ids as $index => $id )
+        {
+            $db->query( 'UPDATE ezcontentclass_attribute SET placement = ' . ( $index + 1 ) . ' WHERE id = ' . $id .
+                        ' AND contentclass_id = ' . $cid . ' AND version = ' . $version );
+        }
+        $db->commit();
+    }
+
+    /**
      * Renumbers the placements of a class version 1..n, ordered by placement
      * and then id, when they are not that already.
      *

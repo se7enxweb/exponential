@@ -221,7 +221,10 @@ if ( $contentClassHasInput == 0 && $http->hasPostVariable( 'MoveUp' ) )
     $attribute = eZContentClassAttribute::fetch( $http->postVariable( 'MoveUp' ), true, eZContentClass::VERSION_STATUS_TEMPORARY,
                                                   array( 'id', 'contentclass_id', 'version', 'placement' ) );
     if ( $attribute instanceof eZContentClassAttribute )
+    {
         $attribute->move( false );
+        header( 'X-Class-Attribute-Moved: 1' );
+    }
     else
         header( $_SERVER['SERVER_PROTOCOL'] . ' 400 Bad Request' );
     eZDB::checkTransactionCounter();
@@ -232,7 +235,26 @@ else if ( $contentClassHasInput == 0 && $http->hasPostVariable( 'MoveDown' ) )
     $attribute = eZContentClassAttribute::fetch( $http->postVariable( 'MoveDown' ), true, eZContentClass::VERSION_STATUS_TEMPORARY,
                                                   array( 'id', 'contentclass_id', 'version', 'placement' ) );
     if ( $attribute instanceof eZContentClassAttribute )
+    {
         $attribute->move( true );
+        header( 'X-Class-Attribute-Moved: 1' );
+    }
+    else
+        header( $_SERVER['SERVER_PROTOCOL'] . ' 400 Bad Request' );
+    eZDB::checkTransactionCounter();
+    eZExecution::cleanExit();
+}
+else if ( $contentClassHasInput == 0 && ( $http->hasPostVariable( 'MoveTop' ) || $http->hasPostVariable( 'MoveBottom' ) ) )
+{
+    // To the first or the last place.
+    $top = $http->hasPostVariable( 'MoveTop' );
+    $attribute = eZContentClassAttribute::fetch( $http->postVariable( $top ? 'MoveTop' : 'MoveBottom' ), true, eZContentClass::VERSION_STATUS_TEMPORARY,
+                                                  array( 'id', 'contentclass_id', 'version', 'placement' ) );
+    if ( $attribute instanceof eZContentClassAttribute )
+    {
+        $attribute->moveToEdge( $top );
+        header( 'X-Class-Attribute-Moved: 1' );
+    }
     else
         header( $_SERVER['SERVER_PROTOCOL'] . ' 400 Bad Request' );
     eZDB::checkTransactionCounter();
@@ -344,6 +366,8 @@ if ( $http->hasPostVariable( 'CustomActionButton' ) )
 // Validate input
 $storeActions = array( 'MoveUp',
                        'MoveDown',
+                       'MoveTop',
+                       'MoveBottom',
                        'StoreButton',
                        'ApplyButton',
                        'NewButton',
@@ -780,6 +804,16 @@ else if ( $http->hasPostVariable( 'MoveDown' ) )
     $attribute = eZContentClassAttribute::fetch( $http->postVariable( 'MoveDown' ), true, eZContentClass::VERSION_STATUS_TEMPORARY,
                                                   array( 'id', 'contentclass_id', 'version', 'placement' ) );
     $attribute->move( true );
+    $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $ClassID . '/(language)/' . $EditLanguage );
+    return;
+}
+else if ( $http->hasPostVariable( 'MoveTop' ) || $http->hasPostVariable( 'MoveBottom' ) )
+{
+    $top = $http->hasPostVariable( 'MoveTop' );
+    $attribute = eZContentClassAttribute::fetch( $http->postVariable( $top ? 'MoveTop' : 'MoveBottom' ), true, eZContentClass::VERSION_STATUS_TEMPORARY,
+                                                  array( 'id', 'contentclass_id', 'version', 'placement' ) );
+    if ( $attribute instanceof eZContentClassAttribute )
+        $attribute->moveToEdge( $top );
     $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $ClassID . '/(language)/' . $EditLanguage );
     return;
 }

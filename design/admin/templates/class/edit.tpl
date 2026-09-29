@@ -178,8 +178,10 @@
     <th class="wide">{$Attributes.number}. {$Attributes.item.name|wash} [{$Attributes.item.data_type.information.name|wash}] (id:{$Attributes.item.id})</th>
     <th class="tight">
       <div class="listbutton">
+          <input type="image" class="ezcca-move-edge" width="16" height="16" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect x='0.5' y='0.5' width='15' height='15' rx='2' fill='%23dce8f4' stroke='%236f93b9'/%3E%3Cpath d='M4 3.5h8v1.6H4z' fill='%232f5f8f'/%3E%3Cpath d='M8 6l4 4.2H9.2V13H6.8v-2.8H4z' fill='%232f5f8f'/%3E%3C/svg%3E" alt="{'Top'|i18n( 'design/admin/class/edit' )}" name="MoveTop_{$Attributes.item.id}" title="{'Move this attribute to the top.'|i18n( 'design/admin/class/edit' )|wash}" />&nbsp;
+          <input type="image" src={'button-move_up.gif'|ezimage} alt="{'Up'|i18n( 'design/admin/class/edit' )}" name="MoveUp_{$Attributes.item.id}" title="{'Use the order buttons to set the order of the class attributes. The up arrow moves the attribute one place up. The down arrow moves the attribute one place down.'|i18n( 'design/admin/class/edit' )|wash}" />&nbsp;
           <input type="image" src={'button-move_down.gif'|ezimage} alt="{'Down'|i18n( 'design/admin/class/edit' )}" name="MoveDown_{$Attributes.item.id}" title="{'Use the order buttons to set the order of the class attributes. The up arrow moves the attribute one place up. The down arrow moves the attribute one place down.'|i18n( 'design/admin/class/edit' )|wash}" />&nbsp;
-          <input type="image" src={'button-move_up.gif'|ezimage} alt="{'Up'|i18n( 'design/admin/class/edit' )}" name="MoveUp_{$Attributes.item.id}" title="{'Use the order buttons to set the order of the class attributes. The up arrow moves the attribute one place up. The down arrow moves the attribute one place down.'|i18n( 'design/admin/class/edit' )|wash}" />
+          <input type="image" class="ezcca-move-edge" width="16" height="16" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect x='0.5' y='0.5' width='15' height='15' rx='2' fill='%23dce8f4' stroke='%236f93b9'/%3E%3Cpath d='M4 10.9h8v1.6H4z' fill='%232f5f8f'/%3E%3Cpath d='M8 10L4 5.8h2.8V3h2.4v2.8H12z' fill='%232f5f8f'/%3E%3C/svg%3E" alt="{'Bottom'|i18n( 'design/admin/class/edit' )}" name="MoveBottom_{$Attributes.item.id}" title="{'Move this attribute to the bottom.'|i18n( 'design/admin/class/edit' )|wash}" />
           <input size="2" maxlength="4" type="text" name="ContentAttribute_priority[{$Attributes.item.id}]" value="{$priority_value}" />
       </div>
     </th>
@@ -368,52 +370,59 @@ jQuery(function( $ )//called on document.ready
         list.find('div.listbutton input[name^=Move]').prop( 'disabled', !on ).toggleClass( 'disabled', !on );
     }
 
-    // Move up/down in place; the server stores it, and a move it did not
-    // store is put back, so the page never shows an order that is not saved.
+    // Move up, down, to the top or to the bottom, in place; the server
+    // stores it, and a move it did not store is put back, so the page never
+    // shows an order that is not saved. The priority fields follow the rows,
+    // so Apply and OK store the order shown.
+    function rows()
+    {
+        return list.children('tbody').children('tr.ezcca-edit-list-item');
+    }
+    function priorities()
+    {
+        rows().each( function( i ) { $(this).find('input[name^=ContentAttribute_priority]').val( ( i + 1 ) * 10 ); } );
+    }
     list.find('div.listbutton input[name^=Move]').click(function( e )
     {
         e.preventDefault();
-        buttons( false );
-        var tr = $(this).closest('tr.ezcca-edit-list-item'), param = this.name.split('_'), up = param[0] === 'MoveUp';
-        var swap = up ? tr.prev('tr.ezcca-edit-list-item') : tr.next('tr.ezcca-edit-list-item');
-        if ( !swap.length )
-        {
-            buttons( true );
+        var tr = $(this).closest('tr.ezcca-edit-list-item'), param = this.name.split('_'), action = param[0];
+        var all = rows(), from = all.index( tr ), last = all.length - 1;
+        var to = { MoveUp: from - 1, MoveDown: from + 1, MoveTop: 0, MoveBottom: last }[ action ];
+        if ( to === undefined || to < 0 || to > last || to === from )
             return false;
-        }
-        var move = function()
+        buttons( false );
+        var place = function( index )
         {
-            if ( up ) swap.before( tr ); else swap.after( tr );
-            var inp = tr.find('input[name^=ContentAttribute_priority]'), inp2 = swap.find('input[name^=ContentAttribute_priority]'), inpv = inp.val();
-            inp.val( inp2.val() );
-            inp2.val( inpv );
+            var others = rows().not( tr );
+            if ( index >= others.length ) others.last().after( tr ); else others.eq( index ).before( tr );
             renumberAttributes();
+            priorities();
         };
-        var back = function()
-        {
-            if ( up ) swap.after( tr ); else swap.before( tr );
-            var inp = tr.find('input[name^=ContentAttribute_priority]'), inp2 = swap.find('input[name^=ContentAttribute_priority]'), inpv = inp.val();
-            inp.val( inp2.val() );
-            inp2.val( inpv );
-            renumberAttributes();
-        };
-        move();
+        place( to );
 
         var postVar = { 'ContentClassHasInput': 0 }, _tokenNode = document.getElementById('ezxform_token_js');
         var meta = document.querySelector('meta[name="csrf-token"]');
-        postVar[ param[0] ] = param[1];
+        postVar[ action ] = param[1];
         if ( _tokenNode ) postVar['ezxform_token'] = _tokenNode.getAttribute('title');
         $.ajax({
             type: 'POST',
             url: $('#ClassEdit').attr('action'),
             data: postVar,
             headers: meta ? { 'X-CSRF-Token': meta.getAttribute('content') } : {}
-        }).done( function()
+        }).done( function( data, text, xhr )
         {
+            // Only a server that stored the move says so; anything else (an
+            // ordinary page) means it did not.
+            if ( xhr.getResponseHeader( 'X-Class-Attribute-Moved' ) !== '1' )
+            {
+                place( from );
+                status.text( status.data( 'failed' ) ).addClass( 'is-error' );
+                return;
+            }
             status.text( '' ).removeClass( 'is-error' );
         }).fail( function( xhr )
         {
-            back();
+            place( from );
             status.text( status.data( 'failed' ) + ' (HTTP ' + xhr.status + ')' ).addClass( 'is-error' );
         }).always( function()
         {
