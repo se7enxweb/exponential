@@ -219,7 +219,7 @@ if ( $http->hasPostVariable( 'RemoveGroupButton' ) && $http->hasPostVariable( 'g
 if ( $contentClassHasInput == 0 && $http->hasPostVariable( 'MoveUp' ) )
 {
     $attribute = eZContentClassAttribute::fetch( $http->postVariable( 'MoveUp' ), true, eZContentClass::VERSION_STATUS_TEMPORARY,
-                                                  array( 'contentclass_id', 'version', 'placement' ) );
+                                                  array( 'id', 'contentclass_id', 'version', 'placement' ) );
     if ( $attribute instanceof eZContentClassAttribute )
         $attribute->move( false );
     else
@@ -230,7 +230,7 @@ if ( $contentClassHasInput == 0 && $http->hasPostVariable( 'MoveUp' ) )
 else if ( $contentClassHasInput == 0 && $http->hasPostVariable( 'MoveDown' ) )
 {
     $attribute = eZContentClassAttribute::fetch( $http->postVariable( 'MoveDown' ), true, eZContentClass::VERSION_STATUS_TEMPORARY,
-                                                  array( 'contentclass_id', 'version', 'placement' ) );
+                                                  array( 'id', 'contentclass_id', 'version', 'placement' ) );
     if ( $attribute instanceof eZContentClassAttribute )
         $attribute->move( true );
     else
@@ -770,7 +770,7 @@ if ( $http->hasPostVariable( 'NewButton' ) )
 else if ( $http->hasPostVariable( 'MoveUp' ) )
 {
     $attribute = eZContentClassAttribute::fetch( $http->postVariable( 'MoveUp' ), true, eZContentClass::VERSION_STATUS_TEMPORARY,
-                                                  array( 'contentclass_id', 'version', 'placement' ) );
+                                                  array( 'id', 'contentclass_id', 'version', 'placement' ) );
     $attribute->move( false );
     $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $ClassID . '/(language)/' . $EditLanguage );
     return;
@@ -778,7 +778,7 @@ else if ( $http->hasPostVariable( 'MoveUp' ) )
 else if ( $http->hasPostVariable( 'MoveDown' ) )
 {
     $attribute = eZContentClassAttribute::fetch( $http->postVariable( 'MoveDown' ), true, eZContentClass::VERSION_STATUS_TEMPORARY,
-                                                  array( 'contentclass_id', 'version', 'placement' ) );
+                                                  array( 'id', 'contentclass_id', 'version', 'placement' ) );
     $attribute->move( true );
     $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $ClassID . '/(language)/' . $EditLanguage );
     return;

@@ -516,11 +516,49 @@ class eZContentClassAttribute extends eZPersistentObject
             $cid = $this->ContentClassID;
             $version = $this->Version;
         }
+        // The swap takes the next attribute by placement, with nothing to tell
+        // two of the same placement apart: with duplicates or gaps (imported
+        // or old classes) it swapped nothing, or two other attributes, while
+        // the page had already moved the row. A clean 1..n first.
+        $renumbered = self::normalisePlacements( $cid, $version );
+        if ( $renumbered !== false && isset( $this->ID ) && isset( $renumbered[$this->ID] ) )
+            $pos = $renumbered[$this->ID];
         eZPersistentObject::reorderObject( eZContentClassAttribute::definition(),
                                            array( 'placement' => $pos ),
                                            array( 'contentclass_id' => $cid,
                                                   'version' => $version ),
                                            $down );
+    }
+
+    /**
+     * Renumbers the placements of a class version 1..n, ordered by placement
+     * and then id, when they are not that already.
+     *
+     * @return array|false id => new placement when anything was renumbered
+     */
+    static function normalisePlacements( $classID, $version )
+    {
+        $db = eZDB::instance();
+        $rows = $db->arrayQuery( 'SELECT id, placement FROM ezcontentclass_attribute WHERE contentclass_id = ' . (int)$classID .
+                                 ' AND version = ' . (int)$version . ' ORDER BY placement, id' );
+        $placements = array();
+        $clean = true;
+        foreach ( $rows as $index => $row )
+        {
+            $placements[(int)$row['id']] = $index + 1;
+            if ( (int)$row['placement'] !== $index + 1 )
+                $clean = false;
+        }
+        if ( $clean )
+            return false;
+        $db->begin();
+        foreach ( $placements as $id => $placement )
+        {
+            $db->query( 'UPDATE ezcontentclass_attribute SET placement = ' . (int)$placement . ' WHERE id = ' . (int)$id .
+                        ' AND contentclass_id = ' . (int)$classID . ' AND version = ' . (int)$version );
+        }
+        $db->commit();
+        return $placements;
     }
 
     /**
