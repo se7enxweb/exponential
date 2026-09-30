@@ -35,7 +35,7 @@
 class eZPackageComparison
 {
     /** Raised whenever the cached index changes form, so an old cache file is never read. */
-    const CACHE_VERSION = 3;
+    const CACHE_VERSION = 4;
 
     /** Objects read, fetched and compared together while the index is built. */
     const BATCH_SIZE = 200;
@@ -213,6 +213,10 @@ class eZPackageComparison
                 'placement' => false,
                 'class_changed' => false,
                 'attributes' => $result['attributes'],
+                'addable' => $result['addable'],
+                'unaddable' => $result['unaddable'],
+                'missing_attributes' => array(),
+                'missing_fields' => 0,
             );
         }
 
@@ -268,6 +272,10 @@ class eZPackageComparison
                     'placement' => $result['placement'],
                     'class_changed' => $result['class_changed'],
                     'attributes' => null,
+                    'addable' => array(),
+                    'unaddable' => array(),
+                    'missing_attributes' => $result['missing_attributes'],
+                    'missing_fields' => $result['missing_fields'],
                 );
             }
             unset( $packageObjects, $siteObjects );
@@ -295,6 +303,10 @@ class eZPackageComparison
                 'placement' => false,
                 'class_changed' => false,
                 'attributes' => null,
+                'addable' => array(),
+                'unaddable' => array(),
+                'missing_attributes' => array(),
+                'missing_fields' => 0,
             );
         }
 
@@ -1237,7 +1249,8 @@ class eZPackageComparison
     static function compareObjectData( $package, $site, $withDetail )
     {
         $result = array( 'status' => 'identical', 'fields' => 0, 'lang_package' => 0, 'lang_site' => 0,
-                         'placement' => false, 'class_changed' => false, 'languages' => array(), 'placement_rows' => array() );
+                         'placement' => false, 'class_changed' => false, 'languages' => array(), 'placement_rows' => array(),
+                         'missing_attributes' => array(), 'missing_fields' => 0 );
         if ( $package === null && $site === null )
             return $result;
         if ( $site === null )
@@ -1247,6 +1260,24 @@ class eZPackageComparison
 
         $packageLanguages = $package ? $package['languages'] : array();
         $siteLanguages = $site ? $site['languages'] : array();
+        // Attributes the package has values for and the site's object has in none of its languages:
+        // the site's class lacks them, and only importing the class first lets those values in
+        $missing = array();
+        if ( $package && $site )
+        {
+            $siteIdentifiers = array();
+            foreach ( $siteLanguages as $values )
+                $siteIdentifiers += $values;
+            foreach ( $packageLanguages as $values )
+            {
+                foreach ( array_keys( $values ) as $identifier )
+                {
+                    if ( !isset( $siteIdentifiers[$identifier] ) )
+                        $missing[$identifier] = true;
+                }
+            }
+            $result['missing_attributes'] = array_keys( $missing );
+        }
         $languages = array_unique( array_merge( array_keys( $packageLanguages ), array_keys( $siteLanguages ) ) );
         foreach ( $languages as $language )
         {
@@ -1272,7 +1303,11 @@ class eZPackageComparison
                     $state = $packageValue !== null ? 'package_only' : 'site_only';
                 // Values of a translation only one side has are counted as that translation, not one by one
                 if ( $state !== 'identical' && $package && $site && $inPackage && $inSite )
+                {
                     ++$result['fields'];
+                    if ( isset( $missing[$identifier] ) )
+                        ++$result['missing_fields'];
+                }
                 if ( $withDetail )
                 {
                     $name = $package && isset( $package['names'][$identifier] ) && $package['names'][$identifier] !== '' ? $package['names'][$identifier]
@@ -1467,7 +1502,10 @@ class eZPackageComparison
     {
         $result = array( 'status' => $site ? 'identical' : 'new', 'fields' => 0,
                          'attributes' => array( 'added' => 0, 'site_only' => 0, 'datatype' => 0, 'names' => 0, 'other' => 0 ),
-                         'property_rows' => array(), 'attribute_rows' => array() );
+                         'property_rows' => array(), 'attribute_rows' => array(),
+                         // Attributes an import of this class adds to the site's class, and those it
+                         // cannot add (a datatype the site does not have)
+                         'addable' => array(), 'unaddable' => array() );
         $labels = self::classPropertyLabels();
         foreach ( $package['properties'] as $property => $packageValue )
         {
@@ -1497,6 +1535,13 @@ class eZPackageComparison
             }
             else
                 $state = $packageAttribute ? 'package_only' : 'site_only';
+            if ( $state === 'package_only' )
+            {
+                if ( $packageAttribute['datatype'] !== '' && eZDataType::create( $packageAttribute['datatype'] ) )
+                    $result['addable'][] = $identifier;
+                else
+                    $result['unaddable'][] = $identifier;
+            }
 
             if ( $site )
             {
@@ -1729,6 +1774,8 @@ class eZPackageComparison
                 $index['items'][$i]['status'] = $result['status'];
                 $index['items'][$i]['fields'] = $result['fields'];
                 $index['items'][$i]['attributes'] = $result['attributes'];
+                $index['items'][$i]['addable'] = $result['addable'];
+                $index['items'][$i]['unaddable'] = $result['unaddable'];
                 $index['items'][$i]['site_id'] = $siteClass ? $siteClass['id'] : null;
             }
             elseif ( $item['file'] !== null )
@@ -1754,7 +1801,7 @@ class eZPackageComparison
             $result = self::compareObjectData( $data, $site, false );
             if ( $site === null && !self::siteHasClass( $classes, $data['class_identifier'], $data['class_remote_id'] ) )
                 $result['status'] = 'class_missing';
-            foreach ( array( 'status', 'fields', 'lang_package', 'lang_site', 'placement', 'class_changed' ) as $key )
+            foreach ( array( 'status', 'fields', 'lang_package', 'lang_site', 'placement', 'class_changed', 'missing_attributes', 'missing_fields' ) as $key )
                 $index['items'][$i][$key] = $result[$key];
             $index['items'][$i]['site_id'] = $site ? $site['id'] : null;
         }
