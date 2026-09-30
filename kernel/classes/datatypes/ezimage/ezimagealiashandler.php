@@ -530,7 +530,7 @@ class eZImageAliasHandler
         $success = false;
         if ( is_string( $xmlString ) && $xmlString != '' )
         {
-            // Broken stored XML is replaced by the empty image below, without warnings
+            // Broken stored XML is read as the empty image below (generateXMLDataForUnparsedText())
             $useErrors = libxml_use_internal_errors( true );
             $success = $domTree->loadXML( $xmlString );
             libxml_clear_errors();
@@ -539,7 +539,7 @@ class eZImageAliasHandler
 
         if ( !$success )
         {
-            $this->generateXMLData();
+            $this->generateXMLDataForUnparsedText( $xmlString );
             $xmlString = $this->ContentObjectAttributeData['data_text'];
             $success = $domTree->loadXML( $xmlString );
         }
@@ -1019,7 +1019,7 @@ class eZImageAliasHandler
         libxml_use_internal_errors( $useErrors );
         if ( !$success )
         {
-            $this->generateXMLData();
+            $this->generateXMLDataForUnparsedText( $xmlString );
             $xmlString = $this->ContentObjectAttributeData['data_text'];
             $success = $dom->loadXML( $xmlString );
         }
@@ -1685,10 +1685,13 @@ class eZImageAliasHandler
             0;
     }
 
-    /*!
-     Creates default information.
-    */
-    function generateXMLData()
+    /**
+     * Creates the XML of an attribute without an image.
+     *
+     * @param bool $storeAttribute also write it to the attribute's row; false keeps
+     *                             it in this handler only
+     */
+    function generateXMLData( $storeAttribute = true )
     {
         $doc = new DOMDocument( '1.0', 'utf-8' );
         $imageNode = $doc->createElement( "ezimage" );
@@ -1718,7 +1721,28 @@ class eZImageAliasHandler
 
         $this->createImageInformationNode( $imageNode, $mimeData );
 
-        $this->storeDOMTree( $doc, true, false );
+        $this->storeDOMTree( $doc, $storeAttribute, false );
+    }
+
+    /**
+     * The XML to use when the stored text of the attribute is not XML that parses:
+     * the XML of no image. It is only written to the attribute when nothing was
+     * stored. Stored text that does not parse is left in the database: it may have
+     * been read incomplete (a database driver that returned a long text cut short),
+     * and overwriting it would lose an image that is still stored intact.
+     *
+     * @param mixed $xmlString the stored text that did not parse
+     */
+    private function generateXMLDataForUnparsedText( $xmlString )
+    {
+        $stored = is_string( $xmlString ) && $xmlString !== '';
+        if ( $stored )
+        {
+            eZDebug::writeWarning( 'The image XML of attribute ' . $this->ContentObjectAttributeData['id'] . ' version ' .
+                                   $this->ContentObjectAttributeData['version'] . ' (' . strlen( $xmlString ) .
+                                   ' bytes) does not parse; it is read as no image and left as it is stored', __METHOD__ );
+        }
+        $this->generateXMLData( !$stored );
     }
 
     /// \privatesection
