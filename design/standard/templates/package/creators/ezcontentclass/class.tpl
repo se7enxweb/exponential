@@ -15,7 +15,7 @@
         <label>{'Class list'|i18n('design/standard/package')}</label>
         <select class="listbox" name="ClassList[]" multiple="multiple">
         {section var=class loop=$class_list}
-            <option value="{$class.id}">{$class.item.name|wash}</option>
+            <option value="{$class.id}"{if and( is_set( $persistent_data.classlist ), $persistent_data.classlist|contains( $class.id ) )} selected="selected"{/if}>{$class.item.name|wash}</option>
         {/section}
         </select>
     </div>

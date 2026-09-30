@@ -20,7 +20,7 @@
 {foreach $extension_list as $extension}
 {def $ext = $extension_info[$extension]}
 <tr>
-    <td><input name="PackageExtensionNames[]" type="checkbox" value="{$extension|wash}" /></td>
+    <td><input name="PackageExtensionNames[]" type="checkbox" value="{$extension|wash}"{if and( is_set( $persistent_data.extensionlist ), $persistent_data.extensionlist|contains( $extension ) )} checked="checked"{/if} /></td>
     <td><a href="#" class="extension-name-link" data-name="{$extension|wash}">{$extension|wash}</a></td>
     <td>{if $ext.version}{$ext.version|wash}{else}—{/if}</td>
     <td>{if $ext.mtime_formatted}{$ext.mtime_formatted|wash}{else}—{/if}</td>
