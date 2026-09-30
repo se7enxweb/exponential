@@ -112,4 +112,5 @@ $Result['path'] = array( array( 'url' => 'setup/rad',
                          array( 'url' => false,
                                 'text' => $recipe === false
                                           ? ezpI18n::tr( 'kernel/setup', 'Handler wizard' )
-                                          : $recipe['title'] ) );
+                                          // The same title the page heading translates.
+                                          : ezpI18n::tr( 'design/admin/setup/rad/handler', $recipe['title'] ) ) );

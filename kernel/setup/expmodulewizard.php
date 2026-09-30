@@ -407,26 +407,28 @@ class expModuleWizard extends expExtensionWizard
         $problems = array();
 
         if ( $settings['name'] === '' )
-            $problems[] = 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.' );
 
+        // Every "already exists" problem is filed under a key starting with
+        // "exists": archive() leaves those out, in whatever language they read.
         if ( $settings['name'] !== '' && is_dir( self::extensionPath( $settings['name'] ) ) )
-            $problems[] = 'extension/' . $settings['name'] . ' already exists. Choose another name, or remove it first.';
+            $problems['exists'] = ezpI18n::tr( 'kernel/setup/rad', 'extension/%name already exists. Choose another name, or remove it first.', null, array( '%name' => $settings['name'] ) );
 
         if ( $settings['module'] === '' )
-            $problems[] = 'The module needs a name: lower case letters, digits and underscores, starting with a letter. It is the first part of every address this module answers.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The module needs a name: lower case letters, digits and underscores, starting with a letter. It is the first part of every address this module answers.' );
 
         if ( $settings['module'] !== '' && eZModule::exists( $settings['module'] ) !== null )
-            $problems[] = 'A module called ' . $settings['module'] . ' already exists on this installation. Two modules of the same name cannot both answer; choose another.';
+            $problems['exists_module'] = ezpI18n::tr( 'kernel/setup/rad', 'A module called %module already exists on this installation. Two modules of the same name cannot both answer; choose another.', null, array( '%module' => $settings['module'] ) );
 
         if ( count( $settings['views'] ) === 0 )
-            $problems[] = 'A module with no views answers nothing. Name at least one.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'A module with no views answers nothing. Name at least one.' );
 
         // A view asking for a policy the module does not declare cannot be
         // granted to anybody: the role editor has nothing to tick.
         foreach ( $settings['views'] as $view )
             foreach ( $view['undeclared'] as $policy )
-                $problems[] = 'The view ' . $view['name'] . ' needs the policy ' . $policy
-                            . ', and the module does not declare it. Nobody could be granted it, so nobody could reach the view. Add ' . $policy . ' to the policies below.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The view %view needs the policy %policy, and the module does not declare it. Nobody could be granted it, so nobody could reach the view. Add %policy to the policies below.', null,
+                                           array( '%view' => $view['name'], '%policy' => $policy ) );
 
         return $problems;
     }

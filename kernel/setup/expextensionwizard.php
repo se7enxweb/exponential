@@ -62,7 +62,7 @@ abstract class expExtensionWizard
     {
         return array( 'GPL-2.0-or-later' => 'GNU General Public License v2.0 or later (GPLv2+)',
                       'MIT'              => 'MIT',
-                      'proprietary'      => 'Proprietary - all rights reserved' );
+                      'proprietary'      => ezpI18n::tr( 'kernel/setup/rad', 'Proprietary - all rights reserved' ) );
     }
 
     /**
@@ -427,13 +427,13 @@ abstract class expExtensionWizard
         // Belt and braces: the name has been through safeName, and the result
         // still has to sit inside the extension directory.
         if ( strpos( $target, $root ) !== 0 )
-            return array( 'ok' => false, 'message' => 'That would write outside extension/.', 'written' => array() );
+            return array( 'ok' => false, 'message' => ezpI18n::tr( 'kernel/setup/rad', 'That would write outside extension/.' ), 'written' => array() );
 
         $files = static::files( $settings );
 
         if ( !@mkdir( $target, 0775, true ) && !is_dir( $target ) )
             return array( 'ok' => false,
-                          'message' => 'extension/ could not be written to. Check that the web server owns it, or take the archive instead.',
+                          'message' => ezpI18n::tr( 'kernel/setup/rad', 'extension/ could not be written to. Check that the web server owns it, or take the archive instead.' ),
                           'written' => array() );
 
         $written = array();
@@ -444,12 +444,14 @@ abstract class expExtensionWizard
 
             if ( !is_dir( $directory ) && !@mkdir( $directory, 0775, true ) && !is_dir( $directory ) )
                 return array( 'ok' => false,
-                              'message' => 'Could not create ' . $path . '. ' . count( $written ) . ' file(s) were written before that.',
+                              'message' => ezpI18n::tr( 'kernel/setup/rad', 'Could not create %path. %count file(s) were written before that.', null,
+                                                        array( '%path' => $path, '%count' => count( $written ) ) ),
                               'written' => $written );
 
             if ( @file_put_contents( $full, $contents ) === false )
                 return array( 'ok' => false,
-                              'message' => 'Could not write ' . $path . '. ' . count( $written ) . ' file(s) were written before that.',
+                              'message' => ezpI18n::tr( 'kernel/setup/rad', 'Could not write %path. %count file(s) were written before that.', null,
+                                                        array( '%path' => $path, '%count' => count( $written ) ) ),
                               'written' => $written );
 
             // Readable by the web server, writable by its owner, and nothing
@@ -460,7 +462,8 @@ abstract class expExtensionWizard
         }
 
         return array( 'ok' => true,
-                      'message' => count( $written ) . ' files written to extension/' . $settings['name'] . '.',
+                      'message' => ezpI18n::tr( 'kernel/setup/rad', '%count files written to extension/%name.', null,
+                                                array( '%count' => count( $written ), '%name' => $settings['name'] ) ),
                       'written' => $written );
     }
 
@@ -474,15 +477,17 @@ abstract class expExtensionWizard
     public static function archive( array $settings )
     {
         if ( !class_exists( 'ZipArchive' ) )
-            return array( 'ok' => false, 'message' => 'This installation has no zip support, so an archive cannot be built.' );
+            return array( 'ok' => false, 'message' => ezpI18n::tr( 'kernel/setup/rad', 'This installation has no zip support, so an archive cannot be built.' ) );
 
         $problems = static::problems( $settings );
 
         // An extension that already exists is a reason not to write over it, but
-        // no reason not to hand somebody a copy to look at.
-        $problems = array_values( array_filter( $problems, function ( $problem ) {
-            return strpos( $problem, 'already exists' ) === false;
-        } ) );
+        // no reason not to hand somebody a copy to look at. problems() files
+        // every "already exists" problem under a key starting with "exists",
+        // so this holds in every language the messages are translated into.
+        $problems = array_values( array_filter( $problems, function ( $key ) {
+            return !is_string( $key ) || strpos( $key, 'exists' ) !== 0;
+        }, ARRAY_FILTER_USE_KEY ) );
 
         if ( count( $problems ) )
             return array( 'ok' => false, 'message' => implode( ' ', $problems ) );
@@ -495,7 +500,7 @@ abstract class expExtensionWizard
 
         $zip = new ZipArchive();
         if ( $zip->open( $file, ZipArchive::CREATE | ZipArchive::OVERWRITE ) !== true )
-            return array( 'ok' => false, 'message' => 'The archive could not be opened for writing.' );
+            return array( 'ok' => false, 'message' => ezpI18n::tr( 'kernel/setup/rad', 'The archive could not be opened for writing.' ) );
 
         foreach ( static::files( $settings ) as $relative => $contents )
             $zip->addFromString( $settings['name'] . '/' . $relative, $contents );
@@ -503,7 +508,7 @@ abstract class expExtensionWizard
         $zip->close();
 
         return array( 'ok' => true,
-                      'message' => 'Archive built.',
+                      'message' => ezpI18n::tr( 'kernel/setup/rad', 'Archive built.' ),
                       'path' => $file,
                       'filename' => $settings['name'] . '.zip' );
     }

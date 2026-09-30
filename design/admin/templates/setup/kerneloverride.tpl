@@ -88,7 +88,7 @@
 {elseif $wizard_readiness.generated|not}
 <div class="ko-note is-bad"><strong>!</strong><span>{$wizard_readiness.message|wash}</span></div>
 {else}
-<div class="ko-note is-ok"><strong>&#10003;</strong><span>{$wizard_readiness.message|i18n( 'design/admin/setup/rad/override' )|wash}</span></div>
+<div class="ko-note is-ok"><strong>&#10003;</strong><span>{$wizard_readiness.message|wash}</span></div>
 {/if}
 
 {foreach $wizard_feedback as $ko_note}

@@ -1406,32 +1406,37 @@ class expHandlerWizard extends expExtensionWizard
         $recipe   = self::kind( $settings['kind'] );
 
         if ( $recipe === false )
-            $problems[] = 'That is not a kind of handler this page knows.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'That is not a kind of handler this page knows.' );
 
         if ( $settings['name'] === '' )
-            $problems[] = 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.' );
 
         if ( $settings['name'] !== '' && is_dir( self::extensionPath( $settings['name'] ) ) )
-            $problems[] = 'extension/' . $settings['name'] . ' already exists. Choose another name, or remove it first.';
+            $problems['exists'] = ezpI18n::tr( 'kernel/setup/rad', 'extension/%name already exists. Choose another name, or remove it first.', null, array( '%name' => $settings['name'] ) );
 
         if ( $settings['class'] === '' )
-            $problems[] = 'The class needs a name: letters and digits, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The class needs a name: letters and digits, starting with a letter.' );
 
         if ( $recipe !== false
              && ( $recipe['aliased']
                   || ( !empty( $recipe['appended'] ) && empty( $recipe['appendClass'] ) )
                   || !empty( $recipe['namesAlias'] ) )
              && $settings['alias'] === '' )
-            $problems[] = 'This kind of handler is named by an alias, and the alias is empty.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'This kind of handler is named by an alias, and the alias is empty.' );
 
         // A class that already exists would be loaded instead of, or as well as,
         // the one being written.
         // A fixed name is allowed to exist already only in the sense that this
         // would replace it, which is worth saying rather than refusing.
+        // The second one is keyed "exists_class": archive() leaves it out, as
+        // it leaves out every problem keyed "exists...".
         if ( $settings['class'] !== '' && class_exists( $settings['class'] ) )
-            $problems[] = $recipe !== false && !empty( $recipe['classFixed'] )
-                ? 'Something on this installation already declares ' . $settings['class'] . ', and the kernel uses whichever it finds. Two of these cannot both be in place.'
-                : 'A class called ' . $settings['class'] . ' already exists on this installation. Choose another name.';
+        {
+            if ( $recipe !== false && !empty( $recipe['classFixed'] ) )
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Something on this installation already declares %class, and the kernel uses whichever it finds. Two of these cannot both be in place.', null, array( '%class' => $settings['class'] ) );
+            else
+                $problems['exists_class'] = ezpI18n::tr( 'kernel/setup/rad', 'A class called %class already exists on this installation. Choose another name.', null, array( '%class' => $settings['class'] ) );
+        }
 
         return $problems;
     }

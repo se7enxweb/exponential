@@ -124,15 +124,15 @@ class expKernelOverrideWizard extends expExtensionWizard
 
         if ( $allowed && $generated )
             return array( 'allowed' => true, 'generated' => true,
-                          'message' => 'Overrides are switched on and the map has been generated, so one written here will be loaded.' );
+                          'message' => ezpI18n::tr( 'kernel/setup/rad', 'Overrides are switched on and the map has been generated, so one written here will be loaded.' ) );
 
         $missing = array();
 
         if ( !$allowed )
-            $missing[] = "config.php has to define EZP_AUTOLOAD_ALLOW_KERNEL_OVERRIDE as true. It ships commented out and set to false, and without it the map below is never even read.";
+            $missing[] = ezpI18n::tr( 'kernel/setup/rad', 'config.php has to define EZP_AUTOLOAD_ALLOW_KERNEL_OVERRIDE as true. It ships commented out and set to false, and without it the map below is never even read.' );
 
         if ( !$generated )
-            $missing[] = "var/autoload/ezp_override.php has to exist. It is written by bin/php/ezpgenerateautoloads.php -o, which is a different run from the ordinary one.";
+            $missing[] = ezpI18n::tr( 'kernel/setup/rad', 'var/autoload/ezp_override.php has to exist. It is written by bin/php/ezpgenerateautoloads.php -o, which is a different run from the ordinary one.' );
 
         return array( 'allowed' => $allowed, 'generated' => $generated,
                       'message' => implode( ' ', $missing ) );
@@ -243,25 +243,29 @@ class expKernelOverrideWizard extends expExtensionWizard
         $problems = array();
 
         if ( $settings['name'] === '' )
-            $problems[] = 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.' );
 
+        // An "already exists" problem is filed under a key starting with
+        // "exists": archive() leaves those out, in whatever language they read.
         if ( $settings['name'] !== '' && is_dir( self::extensionPath( $settings['name'] ) ) )
-            $problems[] = 'extension/' . $settings['name'] . ' already exists. Choose another name, or remove it first.';
+            $problems['exists'] = ezpI18n::tr( 'kernel/setup/rad', 'extension/%name already exists. Choose another name, or remove it first.', null, array( '%name' => $settings['name'] ) );
 
         if ( $settings['class'] === '' )
-            $problems[] = 'Choose a kernel class to override. It has to be one this kernel really has: an override of a name nothing uses is a file nothing loads.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Choose a kernel class to override. It has to be one this kernel really has: an override of a name nothing uses is a file nothing loads.' );
 
         if ( $settings['class'] !== '' && !is_file( $settings['source'] ) )
-            $problems[] = 'The autoload map says ' . $settings['class'] . ' is in ' . $settings['source'] . ' and that file is not there. Regenerate the autoloads before overriding anything.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The autoload map says %class is in %file and that file is not there. Regenerate the autoloads before overriding anything.', null,
+                                       array( '%class' => $settings['class'], '%file' => $settings['source'] ) );
 
         if ( $settings['reason'] === '' )
-            $problems[] = 'Say why this has to be an override. Whoever meets it at the next upgrade will want to know whether it is still needed, and by then nobody will remember.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Say why this has to be an override. Whoever meets it at the next upgrade will want to know whether it is still needed, and by then nobody will remember.' );
 
         // Somebody else overriding the same class is the one failure mode this
         // mechanism has no defence against: two files, one name, and whichever
         // the generator found last wins.
         foreach ( self::alreadyOverridden( $settings ) as $where )
-            $problems[] = $settings['class'] . ' is already overridden by ' . $where . '. Two overrides of one class do not combine - whichever the autoload generator finds last wins, and nothing reports the other. Change that one instead.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', '%class is already overridden by %where. Two overrides of one class do not combine - whichever the autoload generator finds last wins, and nothing reports the other. Change that one instead.', null,
+                                       array( '%class' => $settings['class'], '%where' => $where ) );
 
         return $problems;
     }

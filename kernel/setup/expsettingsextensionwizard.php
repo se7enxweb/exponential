@@ -168,7 +168,11 @@ class expSettingsExtensionWizard extends expExtensionWizard
                 'what' => isset( $described[$name] )
                           ? $described[$name]
                           : 'Announced in ' . implode( ', ', array_slice( $event['where'], 0, 2 ) )
-                            . '. Read the call to see what it is handed.' );
+                            . '. Read the call to see what it is handed.',
+                // 'what' is also written into the generated files, so it stays
+                // English; the page shows an undescribed event through these.
+                'described' => isset( $described[$name] ),
+                'announced' => implode( ', ', array_slice( $event['where'], 0, 2 ) ) );
 
         return $events;
     }
@@ -709,71 +713,74 @@ class expSettingsExtensionWizard extends expExtensionWizard
     {
         $problems = array();
 
+        // A problem about something that already exists is keyed 'exists...':
+        // archive() leaves those out, because they are a reason not to write
+        // over what is there, not a reason to refuse a copy to look at.
         if ( $settings['name'] === '' )
-            $problems[] = 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.' );
 
         if ( $settings['name'] !== '' && is_dir( self::extensionPath( $settings['name'] ) ) )
-            $problems[] = 'extension/' . $settings['name'] . ' already exists. Choose another name, or remove it first.';
+            $problems['exists'] = ezpI18n::tr( 'kernel/setup/rad', 'extension/%name already exists. Choose another name, or remove it first.', null, array( '%name' => $settings['name'] ) );
 
         if ( count( self::chosenTopics( $settings ) ) === 0 )
-            $problems[] = 'Choose at least one thing for this extension to say, or there is nothing to write.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Choose at least one thing for this extension to say, or there is nothing to write.' );
 
         if ( $settings['parts']['image'] && count( $settings['aliases'] ) === 0 )
-            $problems[] = 'Image aliases were chosen and none were named.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Image aliases were chosen and none were named.' );
 
         if ( $settings['parts']['event'] )
         {
             if ( count( $settings['events'] ) === 0 )
-                $problems[] = 'Event listeners were chosen and no events were picked.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Event listeners were chosen and no events were picked.' );
 
             if ( $settings['class'] === '' )
-                $problems[] = 'The listener class needs a name: letters and digits, starting with a letter.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The listener class needs a name: letters and digits, starting with a letter.' );
 
             if ( $settings['class'] !== '' && class_exists( $settings['class'] ) )
-                $problems[] = 'A class called ' . $settings['class'] . ' already exists on this installation. Choose another name.';
+                $problems['exists_class'] = ezpI18n::tr( 'kernel/setup/rad', 'A class called %class already exists on this installation. Choose another name.', null, array( '%class' => $settings['class'] ) );
         }
 
         if ( $settings['parts']['viewcache'] && count( $settings['rules'] ) === 0 )
-            $problems[] = 'View cache rules were chosen and none were written.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'View cache rules were chosen and none were written.' );
 
         if ( $settings['parts']['collect'] && count( $settings['forms'] ) === 0 )
-            $problems[] = 'Information collection was chosen and no content class was named.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Information collection was chosen and no content class was named.' );
 
         if ( $settings['parts']['trigger'] && count( $settings['operations'] ) === 0 )
-            $problems[] = 'Trigger operations were chosen and none were named.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Trigger operations were chosen and none were named.' );
 
         if ( $settings['parts']['roots'] && count( $settings['roots'] ) === 0 )
-            $problems[] = 'Additional extension roots were chosen and none were named. One per line, relative to the installation: extension_src';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Additional extension roots were chosen and none were named. One per line, relative to the installation: %example', null, array( '%example' => 'extension_src' ) );
 
         foreach ( $settings['roots'] as $root )
             if ( $root === 'extension' )
-                $problems[] = 'extension is already the first root and does not need naming again. Naming it twice changes nothing, but it reads as though it does.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', '%root is already the first root and does not need naming again. Naming it twice changes nothing, but it reads as though it does.', null, array( '%root' => 'extension' ) );
 
         if ( $settings['parts']['icons'] )
         {
             if ( $settings['theme'] === '' )
-                $problems[] = 'An icon theme needs a name: lower case letters, digits and underscores.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'An icon theme needs a name: lower case letters, digits and underscores.' );
 
             if ( count( $settings['sizes'] ) === 0 )
-                $problems[] = 'An icon theme needs at least one size. One per line, as: normal 32x32';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'An icon theme needs at least one size. One per line, as: %example', null, array( '%example' => 'normal 32x32' ) );
 
             foreach ( self::takenThemes( $settings ) as $theme )
-                $problems[] = 'An icon theme called ' . $theme . ' is already searched on this installation. Two themes of the same name shadow each other by root order rather than merging; choose another name.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'An icon theme called %theme is already searched on this installation. Two themes of the same name shadow each other by root order rather than merging; choose another name.', null, array( '%theme' => $theme ) );
         }
 
         if ( $settings['parts']['siteaccess'] )
         {
             if ( $settings['siteaccess'] === '' )
-                $problems[] = 'Siteaccess settings were chosen and no siteaccess was named.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Siteaccess settings were chosen and no siteaccess was named.' );
 
             if ( count( $settings['overrides'] ) === 0 )
-                $problems[] = 'Siteaccess settings were chosen and none were written. One per line, as: site.ini [SiteSettings] DefaultPage=content/view/full/2';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Siteaccess settings were chosen and none were written. One per line, as: %example', null, array( '%example' => 'site.ini [SiteSettings] DefaultPage=content/view/full/2' ) );
         }
 
         // An alias that already exists would be redefined rather than added,
         // and every image on the site would quietly change size.
         foreach ( self::takenAliases( $settings ) as $alias )
-            $problems[] = 'An image alias called ' . $alias . ' already exists on this installation. Writing it again redefines it, and every image served through it changes. Choose another name, or say so deliberately by removing this check.';
+            $problems['exists_alias_' . $alias] = ezpI18n::tr( 'kernel/setup/rad', 'An image alias called %alias already exists on this installation. Writing it again redefines it, and every image served through it changes. Choose another name, or say so deliberately by removing this check.', null, array( '%alias' => $alias ) );
 
         return $problems;
     }

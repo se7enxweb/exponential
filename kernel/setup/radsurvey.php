@@ -87,10 +87,10 @@ switch ( $show )
             $rows[] = array(
                 'one'   => $entry['name'],
                 'two'   => $entry['kind'],
-                'three' => $entry['methods'] . ' methods',
+                'three' => ezpI18n::tr( 'kernel/setup/rad', '%count methods', null, array( '%count' => $entry['methods'] ) ),
                 'four'  => count( $entry['implementations'] )
                            ? implode( ', ', array_slice( $entry['implementations'], 0, 5 ) )
-                           : 'nothing implements it yet',
+                           : ezpI18n::tr( 'kernel/setup/rad', 'nothing implements it yet' ),
                 'note'  => $entry['source'],
                 'state' => count( $entry['implementations'] ) ? 'ok' : 'empty' );
         break;
@@ -119,7 +119,7 @@ switch ( $show )
 
         foreach ( $findings as $finding )
             $rows[] = array(
-                'one'   => $finding['check'],
+                'one'   => $finding['label'],
                 'two'   => $finding['severity'],
                 'three' => $finding['what'],
                 'four'  => $finding['means'],
@@ -138,7 +138,7 @@ switch ( $show )
             $rows[] = array(
                 'one'   => $entry['name'],
                 'two'   => $entry['kind'],
-                'three' => $live ? 'live' : 'declared, not active',
+                'three' => $live ? ezpI18n::tr( 'kernel/setup/rad', 'live' ) : ezpI18n::tr( 'kernel/setup/rad', 'declared, not active' ),
                 'four'  => $entry['class'],
                 'note'  => $entry['script'] !== '' ? $entry['script'] : $entry['from'],
                 'state' => $live ? 'ok' : 'empty' );
@@ -150,8 +150,10 @@ switch ( $show )
             $rows[] = array(
                 'one'   => $entry['event'],
                 'two'   => $entry['kind'],
-                'three' => $entry['kind'] === 'filter' ? 'return the value' : 'return value ignored',
-                'four'  => count( $entry['where'] ) . ' place' . ( count( $entry['where'] ) === 1 ? '' : 's' ),
+                'three' => $entry['kind'] === 'filter' ? ezpI18n::tr( 'kernel/setup/rad', 'return the value' ) : ezpI18n::tr( 'kernel/setup/rad', 'return value ignored' ),
+                'four'  => count( $entry['where'] ) === 1
+                           ? ezpI18n::tr( 'kernel/setup/rad', '1 place' )
+                           : ezpI18n::tr( 'kernel/setup/rad', '%count places', null, array( '%count' => count( $entry['where'] ) ) ),
                 'note'  => implode( ', ', array_slice( $entry['where'], 0, 3 ) ),
                 'state' => $entry['kind'] === 'filter' ? 'ok' : 'empty' );
         break;
@@ -171,8 +173,8 @@ switch ( $show )
         foreach ( $survey['replaced'] as $entry )
             $rows[] = array(
                 'one'   => $entry['class'],
-                'two'   => 'kernel override',
-                'three' => $entry['kernel'] !== '' ? 'replaces a kernel class' : 'replaces nothing in the kernel',
+                'two'   => ezpI18n::tr( 'kernel/setup/rad', 'kernel override' ),
+                'three' => $entry['kernel'] !== '' ? ezpI18n::tr( 'kernel/setup/rad', 'replaces a kernel class' ) : ezpI18n::tr( 'kernel/setup/rad', 'replaces nothing in the kernel' ),
                 'four'  => $entry['path'],
                 'note'  => $entry['kernel'],
                 'state' => $entry['kernel'] !== '' ? 'ok' : 'bad' );
@@ -185,18 +187,19 @@ switch ( $show )
                 $rows[] = array(
                     'one'   => $module['name'] . '/' . $view['name'],
                     'two'   => $module['origin'],
-                    'three' => $view['parameters'] . ' params'
-                               . ( $view['unordered'] ? ', ' . $view['unordered'] . ' named' : '' ),
+                    'three' => $view['unordered']
+                               ? ezpI18n::tr( 'kernel/setup/rad', '%count params, %named named', null, array( '%count' => $view['parameters'], '%named' => $view['unordered'] ) )
+                               : ezpI18n::tr( 'kernel/setup/rad', '%count params', null, array( '%count' => $view['parameters'] ) ),
                     'four'  => count( $view['functions'] )
-                               ? 'needs ' . implode( ', ', $view['functions'] )
-                               : 'no policy check',
+                               ? ezpI18n::tr( 'kernel/setup/rad', 'needs %policies', null, array( '%policies' => implode( ', ', $view['functions'] ) ) )
+                               : ezpI18n::tr( 'kernel/setup/rad', 'no policy check' ),
                     'note'  => $module['path'] . '/' . $view['script'],
                     'state' => count( $view['functions'] ) ? 'ok' : 'empty' );
 
             foreach ( $module['fetches'] as $fetch )
                 $rows[] = array(
                     'one'   => $module['name'] . ' :: ' . $fetch,
-                    'two'   => 'fetch function',
+                    'two'   => ezpI18n::tr( 'kernel/setup/rad', 'fetch function' ),
                     'three' => '',
                     'four'  => 'fetch( ' . $module['name'] . ', ' . $fetch . ' )',
                     'note'  => $module['path'] . '/function_definition.php',
@@ -211,9 +214,9 @@ switch ( $show )
                 'two'   => '[' . $entry['section'] . ']',
                 'three' => $entry['variable'],
                 'four'  => $entry['value'],
-                'note'  => $entry['shape'] === 'class'   ? $entry['source']
-                         : ( $entry['shape'] === 'unknown' ? 'looks like a class, and nothing declares one'
-                                                           : 'an alias, resolved somewhere else' ),
+                'note'  => $entry['shape'] === 'class'   ? expRADSurvey::sourceLabel( $entry['source'] )
+                         : ( $entry['shape'] === 'unknown' ? ezpI18n::tr( 'kernel/setup/rad', 'looks like a class, and nothing declares one' )
+                                                           : ezpI18n::tr( 'kernel/setup/rad', 'an alias, resolved somewhere else' ) ),
                 'state' => $entry['shape'] === 'class'   ? 'ok'
                          : ( $entry['shape'] === 'unknown' ? 'bad' : 'empty' ) );
 }
@@ -287,7 +290,7 @@ foreach ( expRADHealth::kinds() as $key => $kind )
 usort( $healthKinds, function ( $a, $b ) {
     $order = array( expRADHealth::BROKEN => 0, expRADHealth::ODD => 1, expRADHealth::NOTE => 2 );
     return $order[$a['severity']] === $order[$b['severity']]
-           ? strcmp( $a['check'], $b['check'] )
+           ? strcmp( $a['label'], $b['label'] )
            : ( $order[$a['severity']] < $order[$b['severity']] ? -1 : 1 );
 } );
 

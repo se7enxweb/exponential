@@ -503,21 +503,24 @@ class expWorkflowEventWizard extends expExtensionWizard
     {
         $problems = array();
 
+        // A problem about something that already exists is keyed 'exists...':
+        // archive() leaves those out, because they are a reason not to write
+        // over what is there, not a reason to refuse a copy to look at.
         if ( $settings['name'] === '' )
-            $problems[] = 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.' );
 
         if ( $settings['name'] !== '' && is_dir( self::extensionPath( $settings['name'] ) ) )
-            $problems[] = 'extension/' . $settings['name'] . ' already exists. Choose another name, or remove it first.';
+            $problems['exists'] = ezpI18n::tr( 'kernel/setup/rad', 'extension/%name already exists. Choose another name, or remove it first.', null, array( '%name' => $settings['name'] ) );
 
         if ( $settings['event'] === '' )
-            $problems[] = 'The event needs a name of its own: lower case letters and digits, three or more, starting with a letter. It becomes the class name and the template name.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The event needs a name of its own: lower case letters and digits, three or more, starting with a letter. It becomes the class name and the template name.' );
 
         if ( !count( $settings['triggers'] ) )
-            $problems[] = 'Choose at least one trigger. An event that can be attached to nothing can never run.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Choose at least one trigger. An event that can be attached to nothing can never run.' );
 
         foreach ( $settings['attributes'] as $attribute )
             if ( $attribute['type'] === 'select' && !count( $attribute['choices'] ) )
-                $problems[] = 'The setting "' . $attribute['label'] . '" is a list, but no values were given for it.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The setting "%setting" is a list, but no values were given for it.', null, array( '%setting' => $attribute['label'] ) );
 
         return $problems;
     }

@@ -339,36 +339,39 @@ class expTemplateExtensionWizard extends expExtensionWizard
     {
         $problems = array();
 
+        // A problem about something that already exists is keyed 'exists...':
+        // archive() leaves those out, because they are a reason not to write
+        // over what is there, not a reason to refuse a copy to look at.
         if ( $settings['name'] === '' )
-            $problems[] = 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.' );
 
         if ( $settings['name'] !== '' && is_dir( self::extensionPath( $settings['name'] ) ) )
-            $problems[] = 'extension/' . $settings['name'] . ' already exists. Choose another name, or remove it first.';
+            $problems['exists'] = ezpI18n::tr( 'kernel/setup/rad', 'extension/%name already exists. Choose another name, or remove it first.', null, array( '%name' => $settings['name'] ) );
 
         if ( $settings['class'] === '' )
-            $problems[] = 'The class needs a name: letters and digits, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The class needs a name: letters and digits, starting with a letter.' );
 
         if ( $settings['class'] !== '' && class_exists( $settings['class'] ) )
-            $problems[] = 'A class called ' . $settings['class'] . ' already exists on this installation. Choose another name.';
+            $problems['exists_class'] = ezpI18n::tr( 'kernel/setup/rad', 'A class called %class already exists on this installation. Choose another name.', null, array( '%class' => $settings['class'] ) );
 
         if ( count( $settings['operators'] ) === 0
              && count( $settings['functions'] ) === 0
              && count( $settings['fetches'] ) === 0
              && count( $settings['aliases'] ) === 0 )
-            $problems[] = 'Name at least one operator, function, fetch function or fetch alias, or there is nothing for this extension to add.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Name at least one operator, function, fetch function or fetch alias, or there is nothing for this extension to add.' );
 
         // A name the engine already answers to would either be shadowed or
         // shadow something, depending on load order - which is not a thing to
         // leave to chance.
         foreach ( self::taken( $settings['operators'] ) as $name )
-            $problems[] = 'A template operator called ' . $name . ' already exists. Two operators of the same name cannot both work; choose another.';
+            $problems['exists_operator_' . $name] = ezpI18n::tr( 'kernel/setup/rad', 'A template operator called %operator already exists. Two operators of the same name cannot both work; choose another.', null, array( '%operator' => $name ) );
 
         if ( count( $settings['fetches'] ) && $settings['module'] === '' )
-            $problems[] = 'Fetch functions live in a module, and the module has no name.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Fetch functions live in a module, and the module has no name.' );
 
         if ( count( $settings['fetches'] ) && $settings['module'] !== ''
              && eZModule::exists( $settings['module'] ) !== null )
-            $problems[] = 'A module called ' . $settings['module'] . ' already exists. Fetch functions would be added to it rather than to this extension; choose another name.';
+            $problems['exists_module'] = ezpI18n::tr( 'kernel/setup/rad', 'A module called %module already exists. Fetch functions would be added to it rather than to this extension; choose another name.', null, array( '%module' => $settings['module'] ) );
 
         return $problems;
     }

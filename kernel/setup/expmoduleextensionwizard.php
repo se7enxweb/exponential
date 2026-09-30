@@ -111,8 +111,8 @@ class expModuleExtensionWizard extends expExtensionWizard
      */
     public static function sources()
     {
-        return array( 'current'  => 'This installation\'s own database',
-                      'external' => 'Another database - given below' );
+        return array( 'current'  => ezpI18n::tr( 'kernel/setup/rad', 'This installation\'s own database' ),
+                      'external' => ezpI18n::tr( 'kernel/setup/rad', 'Another database - given below' ) );
     }
 
     /**
@@ -161,7 +161,7 @@ class expModuleExtensionWizard extends expExtensionWizard
                 'ext'     => 'sqlite3',
                 'kind'    => 'relational',
                 'port'    => 0,
-                'notes'   => 'The database name is the path to the file.' ),
+                'notes'   => ezpI18n::tr( 'kernel/setup/rad', 'The database name is the path to the file.' ) ),
 
             'mongodb' => array(
                 'label'   => 'MongoDB',
@@ -170,7 +170,7 @@ class expModuleExtensionWizard extends expExtensionWizard
                 'ext'     => 'mongodb',
                 'kind'    => 'document',
                 'port'    => 27017,
-                'notes'   => 'Collections have no fixed shape, so the fields are worked out by reading a sample of documents.' ),
+                'notes'   => ezpI18n::tr( 'kernel/setup/rad', 'Collections have no fixed shape, so the fields are worked out by reading a sample of documents.' ) ),
 
             'oracle' => array(
                 'label'   => 'Oracle',
@@ -179,7 +179,7 @@ class expModuleExtensionWizard extends expExtensionWizard
                 'ext'     => 'pdo_oci',
                 'kind'    => 'relational',
                 'port'    => 1521,
-                'notes'   => 'eZ has no handler for Oracle, so the generated classes carry their own connection rather than going through eZPersistentObject.' ),
+                'notes'   => ezpI18n::tr( 'kernel/setup/rad', 'eZ has no handler for Oracle, so the generated classes carry their own connection rather than going through eZPersistentObject.' ) ),
 
             'odbc' => array(
                 'label'   => 'ODBC',
@@ -188,7 +188,7 @@ class expModuleExtensionWizard extends expExtensionWizard
                 'ext'     => 'pdo_odbc',
                 'kind'    => 'relational',
                 'port'    => 0,
-                'notes'   => 'The database name is the DSN. eZ has no handler for ODBC, so the generated classes carry their own connection.' ),
+                'notes'   => ezpI18n::tr( 'kernel/setup/rad', 'The database name is the DSN. eZ has no handler for ODBC, so the generated classes carry their own connection.' ) ),
         );
     }
 
@@ -214,8 +214,8 @@ class expModuleExtensionWizard extends expExtensionWizard
             if ( !$viaEZ && !$viaPDO )
             {
                 $why = $type['ez'] !== false && !isset( $aliases[$type['ez']] )
-                       ? 'No handler is registered for it, and PDO has no ' . $type['pdo'] . ' driver on this machine.'
-                       : 'This machine has no ' . $type['ext'] . ' driver.';
+                       ? ezpI18n::tr( 'kernel/setup/rad', 'No handler is registered for it, and PDO has no %driver driver on this machine.', null, array( '%driver' => $type['pdo'] ) )
+                       : ezpI18n::tr( 'kernel/setup/rad', 'This machine has no %driver driver.', null, array( '%driver' => $type['ext'] ) );
             }
 
             $types[$key] = array_merge( $type, array(
@@ -238,10 +238,12 @@ class expModuleExtensionWizard extends expExtensionWizard
         $labels = array();
         foreach ( self::databaseCapabilities() as $key => $type )
         {
-            $labels[$key] = $type['label']
-                            . ( $type['available']
-                                ? ( $type['via'] === 'ez' ? '' : ' (read only, through PDO)' )
-                                : ' - not available here' );
+            if ( !$type['available'] )
+                $labels[$key] = ezpI18n::tr( 'kernel/setup/rad', '%database - not available here', null, array( '%database' => $type['label'] ) );
+            else if ( $type['via'] === 'ez' )
+                $labels[$key] = $type['label'];
+            else
+                $labels[$key] = ezpI18n::tr( 'kernel/setup/rad', '%database (read only, through PDO)', null, array( '%database' => $type['label'] ) );
         }
 
         return $labels;
@@ -368,16 +370,18 @@ class expModuleExtensionWizard extends expExtensionWizard
         $problems = array();
 
         if ( $settings['name'] === '' )
-            $problems[] = 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.' );
 
+        // Keyed: archive() leaves out every problem whose key starts with
+        // "exists", since an existing extension is no reason not to hand out a copy.
         if ( $settings['name'] !== '' && is_dir( self::extensionPath( $settings['name'] ) ) )
-            $problems[] = 'extension/' . $settings['name'] . ' already exists. Choose another name, or remove it first.';
+            $problems['exists'] = ezpI18n::tr( 'kernel/setup/rad', 'extension/%name already exists. Choose another name, or remove it first.', null, array( '%name' => $settings['name'] ) );
 
         if ( $settings['prefix'] === '' )
-            $problems[] = 'The class name prefix has to start with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The class name prefix has to start with a letter.' );
 
         if ( !count( $settings['tables'] ) )
-            $problems[] = 'Choose at least one table.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Choose at least one table.' );
 
         if ( $settings['source'] === 'external' )
         {
@@ -385,12 +389,13 @@ class expModuleExtensionWizard extends expExtensionWizard
 
             if ( !isset( $types[$settings['db_type']] ) )
             {
-                $problems[] = 'That kind of database is not one this page knows.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'That kind of database is not one this page knows.' );
             }
             else if ( !$types[$settings['db_type']]['available'] )
             {
-                $problems[] = $types[$settings['db_type']]['label'] . ' cannot be read here. '
-                              . $types[$settings['db_type']]['why'];
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', '%database cannot be read here. %reason', null,
+                                           array( '%database' => $types[$settings['db_type']]['label'],
+                                                  '%reason'   => $types[$settings['db_type']]['why'] ) );
             }
 
             // Each kind is asked for what it actually needs. A database that is
@@ -400,19 +405,19 @@ class expModuleExtensionWizard extends expExtensionWizard
             {
                 case 'sqlite':
                     if ( $settings['db_file'] === '' )
-                        $problems[] = 'Choose the database file, or give a path to one inside the installation.';
+                        $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Choose the database file, or give a path to one inside the installation.' );
                     break;
 
                 case 'odbc':
                     if ( $settings['db_name'] === '' )
-                        $problems[] = 'An ODBC connection needs a data source name.';
+                        $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'An ODBC connection needs a data source name.' );
                     break;
 
                 default:
                     if ( $settings['db_name'] === '' )
-                        $problems[] = 'An external database needs a database name.';
+                        $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'An external database needs a database name.' );
                     if ( $settings['db_server'] === '' )
-                        $problems[] = 'An external database needs a server.';
+                        $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'An external database needs a server.' );
             }
         }
 
@@ -539,7 +544,7 @@ class expModuleExtensionWizard extends expExtensionWizard
         if ( $bytes >= 1024 )
             return round( $bytes / 1024 ) . ' KB';
 
-        return $bytes . ' bytes';
+        return ezpI18n::tr( 'kernel/setup/rad', '%count bytes', null, array( '%count' => $bytes ) );
     }
 
     // ── Reading the database ─────────────────────────────────────────────────
@@ -599,20 +604,21 @@ class expModuleExtensionWizard extends expExtensionWizard
             return $db instanceof eZDBInterface && $db->isConnected()
                    ? array( 'ok' => true, 'via' => 'ez', 'db' => $db,
                             'type' => self::currentType(),
-                            'message' => 'Using this installation\'s own database.' )
+                            'message' => ezpI18n::tr( 'kernel/setup/rad', 'Using this installation\'s own database.' ) )
                    : array( 'ok' => false, 'via' => false,
-                            'message' => 'This installation\'s own database is not connected.' );
+                            'message' => ezpI18n::tr( 'kernel/setup/rad', 'This installation\'s own database is not connected.' ) );
         }
 
         $types = self::databaseCapabilities();
         $type  = $settings['db_type'];
 
         if ( !isset( $types[$type] ) )
-            return array( 'ok' => false, 'via' => false, 'message' => 'That kind of database is not one this page knows.' );
+            return array( 'ok' => false, 'via' => false, 'message' => ezpI18n::tr( 'kernel/setup/rad', 'That kind of database is not one this page knows.' ) );
 
         if ( !$types[$type]['available'] )
             return array( 'ok' => false, 'via' => false,
-                          'message' => $types[$type]['label'] . ' cannot be read here. ' . $types[$type]['why'] );
+                          'message' => ezpI18n::tr( 'kernel/setup/rad', '%database cannot be read here. %reason', null,
+                                                    array( '%database' => $types[$type]['label'], '%reason' => $types[$type]['why'] ) ) );
 
         return $types[$type]['via'] === 'ez'
                ? self::connectThroughEZ( $settings, $types[$type] )
@@ -653,7 +659,7 @@ class expModuleExtensionWizard extends expExtensionWizard
         {
             if ( $settings['db_file'] === '' )
                 return array( 'ok' => false, 'via' => false,
-                              'message' => 'Choose a database file.' );
+                              'message' => ezpI18n::tr( 'kernel/setup/rad', 'Choose a database file.' ) );
 
             $parameters['database'] = self::installationRoot() . '/' . $settings['db_file'];
             $parameters['server']   = '';
@@ -669,20 +675,21 @@ class expModuleExtensionWizard extends expExtensionWizard
         }
         catch ( Exception $e )
         {
-            return array( 'ok' => false, 'via' => false, 'message' => 'Could not connect: ' . $e->getMessage() );
+            return array( 'ok' => false, 'via' => false, 'message' => ezpI18n::tr( 'kernel/setup/rad', 'Could not connect: %error', null, array( '%error' => $e->getMessage() ) ) );
         }
         catch ( Throwable $e )
         {
-            return array( 'ok' => false, 'via' => false, 'message' => 'Could not connect: ' . $e->getMessage() );
+            return array( 'ok' => false, 'via' => false, 'message' => ezpI18n::tr( 'kernel/setup/rad', 'Could not connect: %error', null, array( '%error' => $e->getMessage() ) ) );
         }
 
         if ( !$db instanceof eZDBInterface || !$db->isConnected() )
             return array( 'ok' => false, 'via' => false,
-                          'message' => 'Could not connect to ' . self::describeTarget( $settings )
-                                       . '. Check the details, and that the user may read it.' );
+                          'message' => ezpI18n::tr( 'kernel/setup/rad', 'Could not connect to %target. Check the details, and that the user may read it.', null,
+                                                    array( '%target' => self::describeTarget( $settings ) ) ) );
 
         return array( 'ok' => true, 'via' => 'ez', 'db' => $db, 'type' => $settings['db_type'],
-                      'message' => 'Connected to ' . self::describeTarget( $settings ) . '.' );
+                      'message' => ezpI18n::tr( 'kernel/setup/rad', 'Connected to %target.', null,
+                                                array( '%target' => self::describeTarget( $settings ) ) ) );
     }
 
     /**
@@ -699,7 +706,7 @@ class expModuleExtensionWizard extends expExtensionWizard
     {
         $dsn = self::dsn( $settings, $type );
         if ( $dsn === false )
-            return array( 'ok' => false, 'via' => false, 'message' => 'Not enough to build a connection string with.' );
+            return array( 'ok' => false, 'via' => false, 'message' => ezpI18n::tr( 'kernel/setup/rad', 'Not enough to build a connection string with.' ) );
 
         try
         {
@@ -709,16 +716,16 @@ class expModuleExtensionWizard extends expExtensionWizard
         }
         catch ( Exception $e )
         {
-            return array( 'ok' => false, 'via' => false, 'message' => 'Could not connect: ' . $e->getMessage() );
+            return array( 'ok' => false, 'via' => false, 'message' => ezpI18n::tr( 'kernel/setup/rad', 'Could not connect: %error', null, array( '%error' => $e->getMessage() ) ) );
         }
         catch ( Throwable $e )
         {
-            return array( 'ok' => false, 'via' => false, 'message' => 'Could not connect: ' . $e->getMessage() );
+            return array( 'ok' => false, 'via' => false, 'message' => ezpI18n::tr( 'kernel/setup/rad', 'Could not connect: %error', null, array( '%error' => $e->getMessage() ) ) );
         }
 
         return array( 'ok' => true, 'via' => 'pdo', 'pdo' => $pdo, 'type' => $settings['db_type'],
-                      'message' => 'Connected to ' . self::describeTarget( $settings )
-                                   . ' through PDO. eZ has no handler for it, so the generated classes will carry their own connection.' );
+                      'message' => ezpI18n::tr( 'kernel/setup/rad', 'Connected to %target through PDO. eZ has no handler for it, so the generated classes will carry their own connection.', null,
+                                                array( '%target' => self::describeTarget( $settings ) ) ) );
     }
 
     /**
@@ -777,15 +784,19 @@ class expModuleExtensionWizard extends expExtensionWizard
         switch ( $settings['db_type'] )
         {
             case 'sqlite':
-                return $settings['db_file'] !== '' ? $settings['db_file'] : 'a file';
+                return $settings['db_file'] !== '' ? $settings['db_file'] : ezpI18n::tr( 'kernel/setup/rad', 'a file' );
 
             case 'odbc':
-                return 'the data source ' . ( $settings['db_name'] !== '' ? $settings['db_name'] : '(unnamed)' );
+                return $settings['db_name'] !== ''
+                       ? ezpI18n::tr( 'kernel/setup/rad', 'the data source %name', null, array( '%name' => $settings['db_name'] ) )
+                       : ezpI18n::tr( 'kernel/setup/rad', 'the data source (unnamed)' );
         }
 
-        $where = $settings['db_server'] !== '' ? ' on ' . $settings['db_server'] : '';
+        $database = $settings['db_name'] !== '' ? $settings['db_name'] : ezpI18n::tr( 'kernel/setup/rad', 'the database' );
 
-        return ( $settings['db_name'] !== '' ? $settings['db_name'] : 'the database' ) . $where;
+        return $settings['db_server'] !== ''
+               ? ezpI18n::tr( 'kernel/setup/rad', '%database on %server', null, array( '%database' => $database, '%server' => $settings['db_server'] ) )
+               : $database;
     }
 
     /**

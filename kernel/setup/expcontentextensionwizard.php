@@ -429,49 +429,52 @@ class expContentExtensionWizard extends expExtensionWizard
         $problems = array();
 
         if ( $settings['name'] === '' )
-            $problems[] = 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.' );
 
+        // Every "already exists" problem is filed under a key starting with
+        // "exists": archive() leaves those out, in whatever language they read.
         if ( $settings['name'] !== '' && is_dir( self::extensionPath( $settings['name'] ) ) )
-            $problems[] = 'extension/' . $settings['name'] . ' already exists. Choose another name, or remove it first.';
+            $problems['exists'] = ezpI18n::tr( 'kernel/setup/rad', 'extension/%name already exists. Choose another name, or remove it first.', null, array( '%name' => $settings['name'] ) );
 
         if ( count( self::chosenTopics( $settings ) ) === 0 )
-            $problems[] = 'Choose at least one thing for this extension to carry, or there is nothing to write.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Choose at least one thing for this extension to carry, or there is nothing to write.' );
 
         if ( $settings['parts']['class'] )
         {
             if ( $settings['class'] === '' )
-                $problems[] = 'The content class needs an identifier: lower case letters, digits and underscores, starting with a letter. It cannot be changed once content exists.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The content class needs an identifier: lower case letters, digits and underscores, starting with a letter. It cannot be changed once content exists.' );
 
             if ( count( $settings['attributes'] ) === 0 )
-                $problems[] = 'A content class with no attributes holds nothing. Name at least one.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'A content class with no attributes holds nothing. Name at least one.' );
 
             // fetchByIdentifier() answers null rather than false when there is
             // no such class, so anything comparing against false finds every
             // identifier taken.
             if ( $settings['class'] !== '' && is_object( eZContentClass::fetchByIdentifier( $settings['class'] ) ) )
-                $problems[] = 'A content class called ' . $settings['class'] . ' already exists on this installation. The script this writes refuses to run against it rather than change it; choose another identifier, or expect to run this somewhere else.';
+                $problems['exists_class'] = ezpI18n::tr( 'kernel/setup/rad', 'A content class called %class already exists on this installation. The script this writes refuses to run against it rather than change it; choose another identifier, or expect to run this somewhere else.', null, array( '%class' => $settings['class'] ) );
 
             foreach ( $settings['attributes'] as $attribute )
                 if ( !$attribute['known'] )
-                    $problems[] = 'There is no datatype called ' . $attribute['type'] . ' on this installation, so the attribute ' . $attribute['identifier'] . ' cannot be made. It may exist where the script is run; if it does not, the script stops there.';
+                    $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'There is no datatype called %datatype on this installation, so the attribute %attribute cannot be made. It may exist where the script is run; if it does not, the script stops there.', null,
+                                               array( '%datatype' => $attribute['type'], '%attribute' => $attribute['identifier'] ) );
         }
 
         if ( $settings['parts']['customtag'] )
         {
             if ( count( $settings['tags'] ) === 0 )
-                $problems[] = 'Custom tags were chosen and none were named.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Custom tags were chosen and none were named.' );
 
             foreach ( self::takenTags( $settings ) as $tag )
-                $problems[] = 'A custom tag called ' . $tag . ' already exists on this installation. Naming it again redefines its attributes rather than adding a tag; choose another name.';
+                $problems['exists_tag_' . $tag] = ezpI18n::tr( 'kernel/setup/rad', 'A custom tag called %tag already exists on this installation. Naming it again redefines its attributes rather than adding a tag; choose another name.', null, array( '%tag' => $tag ) );
         }
 
         if ( $settings['parts']['translation'] )
         {
             if ( $settings['locale'] === '' )
-                $problems[] = 'A translation needs a locale, in the shape eng-GB: three letters, a dash, two letters.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'A translation needs a locale, in the shape eng-GB: three letters, a dash, two letters.' );
 
             if ( count( $settings['strings'] ) === 0 )
-                $problems[] = 'A translation was chosen and no strings were given. One per line, as: context|the English text';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'A translation was chosen and no strings were given. One per line, as: context|the English text' );
         }
 
         return $problems;

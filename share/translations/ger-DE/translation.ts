@@ -15656,6 +15656,402 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>A kernel class replaced by one of your own through the override autoload path. The heaviest of these mechanisms and the last resort: nothing registers the replacement by name, so two extensions replacing the same class is a fight neither of them knows it is in.</source>
         <translation>Eine Kernel-Klasse, die über den Override-Autoload-Pfad durch eine eigene ersetzt wird. Der schwerste dieser Mechanismen und der letzte Ausweg: nichts registriert den Ersatz beim Namen, sodass zwei Extensions, die dieselbe Klasse ersetzen, in einem Kampf stehen, von dem keine weiß.</translation>
     </message>
+    <message>
+        <source>settings/override/collect.ini.append.php, and templates under content/collectedinfo/</source>
+        <translation>settings/override/collect.ini.append.php und Templates unter content/collectedinfo/</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/modules/&lt;module&gt;/ and classes/</source>
+        <translation>extension/&lt;name&gt;/modules/&lt;module&gt;/ und classes/</translation>
+    </message>
+    <message>
+        <source>settings/override/site.ini.append.php, and the root directory itself</source>
+        <translation>settings/override/site.ini.append.php und das Wurzelverzeichnis selbst</translation>
+    </message>
+    <message>
+        <source>A kernel override of lib/ezutils/classes/ezextension.php</source>
+        <translation>Ein Kernel-Override von lib/ezutils/classes/ezextension.php</translation>
+    </message>
+    <message>
+        <source>A class named sevenxValkeyINICache or sevenxValkeyCacheBlock, anywhere the autoloader can see it</source>
+        <translation>Eine Klasse namens sevenxValkeyINICache oder sevenxValkeyCacheBlock, an einer beliebigen Stelle, die der Autoloader sieht</translation>
+    </message>
+    <message>
+        <source>Any script or module view</source>
+        <translation>Ein beliebiges Skript oder eine beliebige Modul-View</translation>
+    </message>
+    <message>
+        <source>content.ini [DataTypeSettings] ExtensionDirectories[] and AvailableDataTypes[], plus design.ini [ExtensionSettings] DesignExtensions[] or it draws nothing</source>
+        <translation>content.ini [DataTypeSettings] ExtensionDirectories[] und AvailableDataTypes[], dazu design.ini [ExtensionSettings] DesignExtensions[], sonst stellt er nichts dar</translation>
+    </message>
+    <message>
+        <source>extends eZDataType</source>
+        <translation>erweitert eZDataType</translation>
+    </message>
+    <message>
+        <source>Installed as a package, or created in the admin interface and exported.</source>
+        <translation>Als Paket installiert, oder in der Administrationsoberfläche angelegt und exportiert.</translation>
+    </message>
+    <message>
+        <source>eZContentClass definition, as a class package</source>
+        <translation>eZContentClass-Definition, als Klassenpaket</translation>
+    </message>
+    <message>
+        <source>content.ini [CustomTagSettings] AvailableCustomTags[] and a [&lt;tag&gt;] section</source>
+        <translation>content.ini [CustomTagSettings] AvailableCustomTags[] und ein Abschnitt [&lt;tag&gt;]</translation>
+    </message>
+    <message>
+        <source>A template, plus ini describing the attributes</source>
+        <translation>Ein Template, dazu INI-Einstellungen, die die Attribute beschreiben</translation>
+    </message>
+    <message>
+        <source>extends eZXMLInputHandler</source>
+        <translation>erweitert eZXMLInputHandler</translation>
+    </message>
+    <message>
+        <source>extends eZXMLOutputHandler</source>
+        <translation>erweitert eZXMLOutputHandler</translation>
+    </message>
+    <message>
+        <source>No class to write: a setting per content class, and a template per type</source>
+        <translation>Keine Klasse zu schreiben: eine Einstellung pro Inhaltsklasse und ein Template pro Typ</translation>
+    </message>
+    <message>
+        <source>viewcache.ini [ViewCacheSettings] SmartCacheClear=enabled, then a [&lt;class_identifier&gt;] group with ClearCacheMethod[], DependentClassIdentifier[] and AdditionalObjectIDs[]</source>
+        <translation>viewcache.ini [ViewCacheSettings] SmartCacheClear=enabled, dann eine Gruppe [&lt;class_identifier&gt;] mit ClearCacheMethod[], DependentClassIdentifier[] und AdditionalObjectIDs[]</translation>
+    </message>
+    <message>
+        <source>No class to write: a group per content class identifier</source>
+        <translation>Keine Klasse zu schreiben: eine Gruppe pro Bezeichner einer Inhaltsklasse</translation>
+    </message>
+    <message>
+        <source>site.ini [TemplateSettings] ExtensionAutoloadPath[], through $eZTemplateOperatorArray in autoloads/eztemplateautoload.php - not an ini naming the class</source>
+        <translation>site.ini [TemplateSettings] ExtensionAutoloadPath[], über $eZTemplateOperatorArray in autoloads/eztemplateautoload.php - nicht über eine INI-Einstellung, die die Klasse nennt</translation>
+    </message>
+    <message>
+        <source>operatorList(), namedParameterList(), operatorTemplateHints() and modify()</source>
+        <translation>operatorList(), namedParameterList(), operatorTemplateHints() und modify()</translation>
+    </message>
+    <message>
+        <source>Being in the module directory is the registration.</source>
+        <translation>Im Modulverzeichnis zu liegen ist die Registrierung.</translation>
+    </message>
+    <message>
+        <source>A $FunctionList naming a class and method per function</source>
+        <translation>Eine $FunctionList, die pro Funktion eine Klasse und eine Methode nennt</translation>
+    </message>
+    <message>
+        <source>Implements ezpAttributeOperatorFormatterInterface</source>
+        <translation>Implementiert ezpAttributeOperatorFormatterInterface</translation>
+    </message>
+    <message>
+        <source>site.ini [TemplateSettings] ExtensionAutoloadPath[], through $eZTemplateFunctionArray in autoloads/eztemplateautoload.php</source>
+        <translation>site.ini [TemplateSettings] ExtensionAutoloadPath[], über $eZTemplateFunctionArray in autoloads/eztemplateautoload.php</translation>
+    </message>
+    <message>
+        <source>functionList(), attributeList(), hasChildren() and process()</source>
+        <translation>functionList(), attributeList(), hasChildren() und process()</translation>
+    </message>
+    <message>
+        <source>fetchalias.ini, one section per alias</source>
+        <translation>fetchalias.ini, ein Abschnitt pro Alias</translation>
+    </message>
+    <message>
+        <source>Settings only</source>
+        <translation>Nur Einstellungen</translation>
+    </message>
+    <message>
+        <source>Templates, found through the design chain</source>
+        <translation>Templates, gefunden über die Design-Kette</translation>
+    </message>
+    <message>
+        <source>override.ini, one section per override</source>
+        <translation>override.ini, ein Abschnitt pro Override</translation>
+    </message>
+    <message>
+        <source>Source, MatchFile, Subdir and Match lines</source>
+        <translation>Zeilen für Source, MatchFile, Subdir und Match</translation>
+    </message>
+    <message>
+        <source>module.ini [ModuleSettings] ExtensionRepositories[] and ModuleList[]</source>
+        <translation>module.ini [ModuleSettings] ExtensionRepositories[] und ModuleList[]</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, or a class with the same methods</source>
+        <translation>eZPersistentObject oder eine Klasse mit denselben Methoden</translation>
+    </message>
+    <message>
+        <source>$Module, $ViewList and $FunctionList</source>
+        <translation>$Module, $ViewList und $FunctionList</translation>
+    </message>
+    <message>
+        <source>The module's own module.php, extended by the extension</source>
+        <translation>Die eigene module.php des Moduls, von der Extension ergänzt</translation>
+    </message>
+    <message>
+        <source>A script setting $Result</source>
+        <translation>Ein Skript, das $Result setzt</translation>
+    </message>
+    <message>
+        <source>The $FunctionList of the module</source>
+        <translation>Die $FunctionList des Moduls</translation>
+    </message>
+    <message>
+        <source>Names, and a limitation description per function</source>
+        <translation>Namen und eine Beschreibung der Einschränkungen pro Funktion</translation>
+    </message>
+    <message>
+        <source>rest.ini, through the rest provider registry</source>
+        <translation>rest.ini, über die Registrierung der REST-Provider</translation>
+    </message>
+    <message>
+        <source>Implements ezpRestProviderInterface</source>
+        <translation>Implementiert ezpRestProviderInterface</translation>
+    </message>
+    <message>
+        <source>extends eZURLAliasFilter, and implements process( $text, &amp;$languageObject, &amp;$caller )</source>
+        <translation>erweitert eZURLAliasFilter und implementiert process( $text, &amp;$languageObject, &amp;$caller )</translation>
+    </message>
+    <message>
+        <source>Implements ezpAsynchronousPublishingFilterInterface: one accept() method</source>
+        <translation>Implementiert ezpAsynchronousPublishingFilterInterface: eine Methode accept()</translation>
+    </message>
+    <message>
+        <source>Implements ezpMobileDeviceDetectFilterInterface: process, isMobileDevice, getUserAgentAlias, redirect</source>
+        <translation>Implementiert ezpMobileDeviceDetectFilterInterface: process, isMobileDevice, getUserAgentAlias, redirect</translation>
+    </message>
+    <message>
+        <source>Implements ezpRestPreRoutingFilterInterface</source>
+        <translation>Implementiert ezpRestPreRoutingFilterInterface</translation>
+    </message>
+    <message>
+        <source>Implements ezpRestRequestFilterInterface</source>
+        <translation>Implementiert ezpRestRequestFilterInterface</translation>
+    </message>
+    <message>
+        <source>Implements ezpRestResultFilterInterface</source>
+        <translation>Implementiert ezpRestResultFilterInterface</translation>
+    </message>
+    <message>
+        <source>Implements ezpRestResponseFilterInterface</source>
+        <translation>Implementiert ezpRestResponseFilterInterface</translation>
+    </message>
+    <message>
+        <source>Extends ezpRestPrefixFilterInterface: parseVersionValue() and filter()</source>
+        <translation>Erweitert ezpRestPrefixFilterInterface: parseVersionValue() und filter()</translation>
+    </message>
+    <message>
+        <source>Extends ezpRestRouteFilterInterface</source>
+        <translation>Erweitert ezpRestRouteFilterInterface</translation>
+    </message>
+    <message>
+        <source>Static methods taking an argument list</source>
+        <translation>Statische Methoden, die eine Argumentliste erhalten</translation>
+    </message>
+    <message>
+        <source>workflow.ini [EventSettings] ExtensionDirectories[] and AvailableEventTypes[]</source>
+        <translation>workflow.ini [EventSettings] ExtensionDirectories[] und AvailableEventTypes[]</translation>
+    </message>
+    <message>
+        <source>extends eZWorkflowEventType</source>
+        <translation>erweitert eZWorkflowEventType</translation>
+    </message>
+    <message>
+        <source>workflow.ini, and the operation definition that declares the trigger</source>
+        <translation>workflow.ini und die Definition der Operation, die den Trigger deklariert</translation>
+    </message>
+    <message>
+        <source>Settings, and an operation body with a trigger in it</source>
+        <translation>Einstellungen und ein Operationsrumpf mit einem Trigger darin</translation>
+    </message>
+    <message>
+        <source>notification.ini [NotificationEventTypeSettings] RepositoryDirectories[] and AvailableNotificationEventTypes[]</source>
+        <translation>notification.ini [NotificationEventTypeSettings] RepositoryDirectories[] und AvailableNotificationEventTypes[]</translation>
+    </message>
+    <message>
+        <source>extends eZNotificationEventType</source>
+        <translation>erweitert eZNotificationEventType</translation>
+    </message>
+    <message>
+        <source>notification.ini [NotificationEventHandlerSettings] ExtensionDirectories[] and AvailableNotificationEventTypes[] (the kernel reads the Types variable in the Handler section too)</source>
+        <translation>notification.ini [NotificationEventHandlerSettings] ExtensionDirectories[] und AvailableNotificationEventTypes[] (der Kernel liest die Variable Types auch im Abschnitt Handler)</translation>
+    </message>
+    <message>
+        <source>extends eZNotificationEventHandler</source>
+        <translation>erweitert eZNotificationEventHandler</translation>
+    </message>
+    <message>
+        <source>cronjob.ini [CronjobSettings] ExtensionDirectories[] and Scripts[], or a part of its own</source>
+        <translation>cronjob.ini [CronjobSettings] ExtensionDirectories[] und Scripts[], oder ein eigener Teil</translation>
+    </message>
+    <message>
+        <source>A script run by runcronjobs.php, with $cli and $sys available</source>
+        <translation>Ein Skript, das von runcronjobs.php ausgeführt wird, mit $cli und $sys</translation>
+    </message>
+    <message>
+        <source>A callable taking whatever the event passes</source>
+        <translation>Ein Callable, das erhält, was das Event übergibt</translation>
+    </message>
+    <message>
+        <source>extends eZDBInterface</source>
+        <translation>erweitert eZDBInterface</translation>
+    </message>
+    <message>
+        <source>Implements eZClusterFileHandlerInterface, or extends eZFSFileHandler which already does</source>
+        <translation>Implementiert eZClusterFileHandlerInterface, oder erweitert eZFSFileHandler, das dies bereits tut</translation>
+    </message>
+    <message>
+        <source>Implements eZDFSFileHandlerDFSBackendInterface</source>
+        <translation>Implementiert eZDFSFileHandlerDFSBackendInterface</translation>
+    </message>
+    <message>
+        <source>Follows the shape of eZDFSFileHandlerMySQLiBackend</source>
+        <translation>Folgt dem Aufbau von eZDFSFileHandlerMySQLiBackend</translation>
+    </message>
+    <message>
+        <source>Implements the binary file handler interface</source>
+        <translation>Implementiert die Schnittstelle für Binärdatei-Handler</translation>
+    </message>
+    <message>
+        <source>implements ezpSearchEngine</source>
+        <translation>implementiert ezpSearchEngine</translation>
+    </message>
+    <message>
+        <source>extends ezpSessionHandler</source>
+        <translation>erweitert ezpSessionHandler</translation>
+    </message>
+    <message>
+        <source>extends eZMailTransport</source>
+        <translation>erweitert eZMailTransport</translation>
+    </message>
+    <message>
+        <source>Implements ezpStaticCache</source>
+        <translation>Implementiert ezpStaticCache</translation>
+    </message>
+    <message>
+        <source>image.ini [AliasSettings] AliasList[] and a section per alias</source>
+        <translation>image.ini [AliasSettings] AliasList[] und ein Abschnitt pro Alias</translation>
+    </message>
+    <message>
+        <source>Settings, and optionally an eZImageHandler class</source>
+        <translation>Einstellungen und optional eine eZImageHandler-Klasse</translation>
+    </message>
+    <message>
+        <source>extends eZPackageHandler</source>
+        <translation>erweitert eZPackageHandler</translation>
+    </message>
+    <message>
+        <source>extends eZPackageCreationHandler</source>
+        <translation>erweitert eZPackageCreationHandler</translation>
+    </message>
+    <message>
+        <source>extends eZPackageInstallationHandler</source>
+        <translation>erweitert eZPackageInstallationHandler</translation>
+    </message>
+    <message>
+        <source>paymentgateways.ini [GatewaysSettings] AvailableGateways[] and GatewaysDirectories[], plus eZPaymentGatewayType::registerGateway() at the foot of the class file, plus a workflow with a Payment Gateway event bound to shop_confirmorder</source>
+        <translation>paymentgateways.ini [GatewaysSettings] AvailableGateways[] und GatewaysDirectories[], dazu eZPaymentGatewayType::registerGateway() am Ende der Klassendatei, dazu ein Workflow mit einem Payment-Gateway-Event, das an shop_confirmorder gebunden ist</translation>
+    </message>
+    <message>
+        <source>extends eZRedirectGateway, or eZPaymentGateway for one that takes payment without leaving the site</source>
+        <translation>erweitert eZRedirectGateway, oder eZPaymentGateway für ein Gateway, das die Zahlung annimmt, ohne dass die Website verlassen wird</translation>
+    </message>
+    <message>
+        <source>extends eZPaymentGateway</source>
+        <translation>erweitert eZPaymentGateway</translation>
+    </message>
+    <message>
+        <source>shop.ini [VATSettings] Handler and RepositoryDirectories[]</source>
+        <translation>shop.ini [VATSettings] Handler und RepositoryDirectories[]</translation>
+    </message>
+    <message>
+        <source>Implements the VAT handler interface</source>
+        <translation>Implementiert die Schnittstelle für MwSt.-Handler</translation>
+    </message>
+    <message>
+        <source>shop.ini [ShippingSettings] Handler and RepositoryDirectories[]</source>
+        <translation>shop.ini [ShippingSettings] Handler und RepositoryDirectories[]</translation>
+    </message>
+    <message>
+        <source>Implements the shipping handler interface</source>
+        <translation>Implementiert die Schnittstelle für Versand-Handler</translation>
+    </message>
+    <message>
+        <source>shop.ini [BasketInfoSettings] Handler and RepositoryDirectories[]</source>
+        <translation>shop.ini [BasketInfoSettings] Handler und RepositoryDirectories[]</translation>
+    </message>
+    <message>
+        <source>Implements the basket info handler interface</source>
+        <translation>Implementiert die Schnittstelle für Warenkorbinfo-Handler</translation>
+    </message>
+    <message>
+        <source>shop.ini [ExchangeRatesSettings] Handler and RepositoryDirectories[]</source>
+        <translation>shop.ini [ExchangeRatesSettings] Handler und RepositoryDirectories[]</translation>
+    </message>
+    <message>
+        <source>Implements the exchange rate handler interface</source>
+        <translation>Implementiert die Schnittstelle für Wechselkurs-Handler</translation>
+    </message>
+    <message>
+        <source>site.ini [UserSettings] LoginHandler[] and ExtensionDirectory[]</source>
+        <translation>site.ini [UserSettings] LoginHandler[] und ExtensionDirectory[]</translation>
+    </message>
+    <message>
+        <source>extends eZUser and implements loginUser()</source>
+        <translation>erweitert eZUser und implementiert loginUser()</translation>
+    </message>
+    <message>
+        <source>Settings only. Every consumer goes through eZExtension::extensionPath() and expandedPathList(), so nothing needs changing to see a new root</source>
+        <translation>Nur Einstellungen. Jeder Verwender geht über eZExtension::extensionPath() und expandedPathList(), daher muss nichts geändert werden, damit ein neues Wurzelverzeichnis gefunden wird</translation>
+    </message>
+    <message>
+        <source>Nothing registers it: the kernel calls eZExtension::filterExtensionRootDirectories() and uses what comes back</source>
+        <translation>Nichts registriert es: Der Kernel ruft eZExtension::filterExtensionRootDirectories() auf und verwendet, was zurückkommt</translation>
+    </message>
+    <message>
+        <source>site.ini [ExtensionSettings] ActiveExtensions[] and ActiveAccessExtensions[], plus AdditionalExtensionDirectories[] when it lives outside extension/</source>
+        <translation>site.ini [ExtensionSettings] ActiveExtensions[] und ActiveAccessExtensions[], dazu AdditionalExtensionDirectories[], wenn sie außerhalb von extension/ liegt</translation>
+    </message>
+    <message>
+        <source>No class: a directory laid out the way the kernel looks</source>
+        <translation>Keine Klasse: ein Verzeichnis, so aufgebaut, wie der Kernel sucht</translation>
+    </message>
+    <message>
+        <source>icon.ini [ExtensionSettings] IconExtensions[], and [IconSettings] Theme or AdditionalThemeList[]</source>
+        <translation>icon.ini [ExtensionSettings] IconExtensions[] und [IconSettings] Theme oder AdditionalThemeList[]</translation>
+    </message>
+    <message>
+        <source>Image files named after what they illustrate. Served as static files, so no php runs per image</source>
+        <translation>Bilddateien, benannt nach dem, was sie darstellen. Als statische Dateien ausgeliefert, daher läuft pro Bild kein PHP</translation>
+    </message>
+    <message>
+        <source>Nothing registers them: class_exists() decides</source>
+        <translation>Nichts registriert sie: class_exists() entscheidet</translation>
+    </message>
+    <message>
+        <source>instance(), then get() and put() for the block cache; instance() and the compiled file interface for the ini cache</source>
+        <translation>instance(), dann get() und put() für den Block-Cache; instance() und die Schnittstelle für kompilierte Dateien für den INI-Cache</translation>
+    </message>
+    <message>
+        <source>Nothing to register: eZINI with directAccess true, then setVariable() and save()</source>
+        <translation>Nichts zu registrieren: eZINI mit directAccess true, dann setVariable() und save()</translation>
+    </message>
+    <message>
+        <source>setVariable( $section, $name, $value ) then save(); the file keeps its comments</source>
+        <translation>setVariable( $section, $name, $value ), dann save(); die Datei behält ihre Kommentare</translation>
+    </message>
+    <message>
+        <source>i18n.ini, and the locale being available</source>
+        <translation>i18n.ini und eine verfügbare Locale</translation>
+    </message>
+    <message>
+        <source>A ts file of contexts and messages</source>
+        <translation>Eine ts-Datei mit Kontexten und Meldungen</translation>
+    </message>
+    <message>
+        <source>Implements the RSS import handler interface</source>
+        <translation>Implementiert die Schnittstelle für RSS-Import-Handler</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -19667,6 +20063,38 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
+    <message>
+        <source>The object itself, and nothing else.</source>
+        <translation>Das Objekt selbst und sonst nichts.</translation>
+    </message>
+    <message>
+        <source>Its parents, up to MaxParents.</source>
+        <translation>Seine Eltern, bis zu MaxParents.</translation>
+    </message>
+    <message>
+        <source>Everything that relates to it. The expensive one, and usually the one that was wanted.</source>
+        <translation>Alles, was damit in Beziehung steht. Die teure Methode, und meist die gewünschte.</translation>
+    </message>
+    <message>
+        <source>Everything sharing a keyword with it.</source>
+        <translation>Alles, was ein Schlüsselwort mit ihm teilt.</translation>
+    </message>
+    <message>
+        <source>Everything beside it under the same parent. What a listing of a folder needs.</source>
+        <translation>Alles neben ihm unter demselben Elternknoten. Das, was die Auflistung eines Ordners braucht.</translation>
+    </message>
+    <message>
+        <source>Everything under it.</source>
+        <translation>Alles unter ihm.</translation>
+    </message>
+    <message>
+        <source>The whole view cache. Correct, ruinous, and occasionally the only thing that works.</source>
+        <translation>Der gesamte View-Cache. Korrekt, ruinös und gelegentlich das Einzige, was funktioniert.</translation>
+    </message>
+    <message>
+        <source>Nothing at all. For content that is never shown anywhere but on its own page.</source>
+        <translation>Gar nichts. Für Inhalte, die nirgends außer auf ihrer eigenen Seite angezeigt werden.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/template</name>
@@ -19973,6 +20401,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Reads something and gives it back. Runs a policy check first, unlike an operator.</source>
         <translation>Liest etwas und gibt es zurück. Führt zuerst eine Richtlinienprüfung aus, anders als ein Operator.</translation>
+    </message>
+    <message>
+        <source>Takes the value on the left and gives one back.</source>
+        <translation>Nimmt den Wert auf der linken Seite und gibt einen zurück.</translation>
+    </message>
+    <message>
+        <source>Writes output where it stands.</source>
+        <translation>Schreibt eine Ausgabe dort, wo sie steht.</translation>
+    </message>
+    <message>
+        <source>A fetch with its arguments already decided, called by one short name.</source>
+        <translation>Ein Fetch mit bereits festgelegten Argumenten, aufgerufen über einen kurzen Namen.</translation>
     </message>
 </context>
 <context>
@@ -44427,6 +44867,849 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Node ID: %node_id Visibility: %visibility</source>
         <translation>Knoten ID: %node_id Sichtbar: %visibility</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/setup/rad</name>
+    <message>
+        <source>Proprietary - all rights reserved</source>
+        <translation>Proprietär - alle Rechte vorbehalten</translation>
+    </message>
+    <message>
+        <source>That would write outside extension/.</source>
+        <translation>Das würde außerhalb von extension/ schreiben.</translation>
+    </message>
+    <message>
+        <source>extension/ could not be written to. Check that the web server owns it, or take the archive instead.</source>
+        <translation>In extension/ konnte nicht geschrieben werden. Prüfen Sie, ob das Verzeichnis dem Webserver gehört, oder nehmen Sie stattdessen das Archiv.</translation>
+    </message>
+    <message>
+        <source>Could not create %path. %count file(s) were written before that.</source>
+        <translation>%path konnte nicht angelegt werden. Davor wurden %count Datei(en) geschrieben.</translation>
+    </message>
+    <message>
+        <source>Could not write %path. %count file(s) were written before that.</source>
+        <translation>%path konnte nicht geschrieben werden. Davor wurden %count Datei(en) geschrieben.</translation>
+    </message>
+    <message>
+        <source>%count files written to extension/%name.</source>
+        <translation>%count Dateien nach extension/%name geschrieben.</translation>
+    </message>
+    <message>
+        <source>This installation has no zip support, so an archive cannot be built.</source>
+        <translation>Diese Installation hat keine Zip-Unterstützung, daher kann kein Archiv erstellt werden.</translation>
+    </message>
+    <message>
+        <source>The archive could not be opened for writing.</source>
+        <translation>Das Archiv konnte nicht zum Schreiben geöffnet werden.</translation>
+    </message>
+    <message>
+        <source>Archive built.</source>
+        <translation>Archiv erstellt.</translation>
+    </message>
+    <message>
+        <source>The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.</source>
+        <translation>Die Erweiterung braucht einen Namen: Kleinbuchstaben, Ziffern und Unterstriche, drei bis einundvierzig Zeichen, beginnend mit einem Buchstaben.</translation>
+    </message>
+    <message>
+        <source>extension/%name already exists. Choose another name, or remove it first.</source>
+        <translation>extension/%name existiert bereits. Wählen Sie einen anderen Namen oder entfernen Sie das Verzeichnis zuerst.</translation>
+    </message>
+    <message>
+        <source>The module needs a name: lower case letters, digits and underscores, starting with a letter. It is the first part of every address this module answers.</source>
+        <translation>Das Modul braucht einen Namen: Kleinbuchstaben, Ziffern und Unterstriche, beginnend mit einem Buchstaben. Er ist der erste Teil jeder Adresse, auf die dieses Modul antwortet.</translation>
+    </message>
+    <message>
+        <source>A module called %module already exists on this installation. Two modules of the same name cannot both answer; choose another.</source>
+        <translation>Ein Modul namens %module gibt es auf dieser Installation bereits. Zwei Module gleichen Namens können nicht beide antworten; wählen Sie einen anderen Namen.</translation>
+    </message>
+    <message>
+        <source>A module with no views answers nothing. Name at least one.</source>
+        <translation>Ein Modul ohne Views beantwortet nichts. Nennen Sie mindestens eine.</translation>
+    </message>
+    <message>
+        <source>The view %view needs the policy %policy, and the module does not declare it. Nobody could be granted it, so nobody could reach the view. Add %policy to the policies below.</source>
+        <translation>Die View %view braucht die Richtlinie %policy, und das Modul deklariert sie nicht. Niemandem könnte sie erteilt werden, also könnte niemand die View erreichen. Fügen Sie %policy unten zu den Richtlinien hinzu.</translation>
+    </message>
+    <message>
+        <source>Choose at least one thing for this extension to carry, or there is nothing to write.</source>
+        <translation>Wählen Sie mindestens etwas, das diese Erweiterung enthalten soll, sonst gibt es nichts zu schreiben.</translation>
+    </message>
+    <message>
+        <source>The content class needs an identifier: lower case letters, digits and underscores, starting with a letter. It cannot be changed once content exists.</source>
+        <translation>Die Inhaltsklasse braucht einen Bezeichner: Kleinbuchstaben, Ziffern und Unterstriche, beginnend mit einem Buchstaben. Er lässt sich nicht mehr ändern, sobald es Inhalte gibt.</translation>
+    </message>
+    <message>
+        <source>A content class with no attributes holds nothing. Name at least one.</source>
+        <translation>Eine Inhaltsklasse ohne Attribute enthält nichts. Nennen Sie mindestens eines.</translation>
+    </message>
+    <message>
+        <source>A content class called %class already exists on this installation. The script this writes refuses to run against it rather than change it; choose another identifier, or expect to run this somewhere else.</source>
+        <translation>Eine Inhaltsklasse namens %class gibt es auf dieser Installation bereits. Das hier geschriebene Skript verweigert die Ausführung gegen sie, statt sie zu ändern; wählen Sie einen anderen Bezeichner oder führen Sie es anderswo aus.</translation>
+    </message>
+    <message>
+        <source>There is no datatype called %datatype on this installation, so the attribute %attribute cannot be made. It may exist where the script is run; if it does not, the script stops there.</source>
+        <translation>Auf dieser Installation gibt es keinen Datentyp namens %datatype, daher kann das Attribut %attribute nicht angelegt werden. Dort, wo das Skript ausgeführt wird, gibt es ihn vielleicht; wenn nicht, bricht das Skript dort ab.</translation>
+    </message>
+    <message>
+        <source>Custom tags were chosen and none were named.</source>
+        <translation>Benutzerdefinierte Tags wurden gewählt, aber keine benannt.</translation>
+    </message>
+    <message>
+        <source>A custom tag called %tag already exists on this installation. Naming it again redefines its attributes rather than adding a tag; choose another name.</source>
+        <translation>Ein benutzerdefiniertes Tag namens %tag gibt es auf dieser Installation bereits. Es erneut zu benennen definiert seine Attribute neu, statt ein Tag hinzuzufügen; wählen Sie einen anderen Namen.</translation>
+    </message>
+    <message>
+        <source>A translation needs a locale, in the shape eng-GB: three letters, a dash, two letters.</source>
+        <translation>Eine Übersetzung braucht ein Gebietsschema in der Form eng-GB: drei Buchstaben, ein Bindestrich, zwei Buchstaben.</translation>
+    </message>
+    <message>
+        <source>A translation was chosen and no strings were given. One per line, as: context|the English text</source>
+        <translation>Eine Übersetzung wurde gewählt, aber es wurden keine Texte angegeben. Einer pro Zeile, als: context|the English text</translation>
+    </message>
+    <message>
+        <source>Siteaccess settings were asked for, but no siteaccess was named.</source>
+        <translation>Siteaccess-Einstellungen wurden gewünscht, aber kein Siteaccess wurde genannt.</translation>
+    </message>
+    <message>
+        <source>standard - the kernel templates, and nothing else</source>
+        <translation>standard - die Kernel-Templates und sonst nichts</translation>
+    </message>
+    <message>
+        <source>%design - fall back on this design first</source>
+        <translation>%design - zuerst auf dieses Design zurückgreifen</translation>
+    </message>
+    <message>
+        <source>Overrides are switched on and the map has been generated, so one written here will be loaded.</source>
+        <translation>Overrides sind eingeschaltet und die Map ist erzeugt; ein hier geschriebener Override wird also geladen.</translation>
+    </message>
+    <message>
+        <source>config.php has to define EZP_AUTOLOAD_ALLOW_KERNEL_OVERRIDE as true. It ships commented out and set to false, and without it the map below is never even read.</source>
+        <translation>config.php muss EZP_AUTOLOAD_ALLOW_KERNEL_OVERRIDE als true definieren. Die Einstellung wird auskommentiert und auf false gesetzt ausgeliefert, und ohne sie wird die Map unten nicht einmal gelesen.</translation>
+    </message>
+    <message>
+        <source>var/autoload/ezp_override.php has to exist. It is written by bin/php/ezpgenerateautoloads.php -o, which is a different run from the ordinary one.</source>
+        <translation>var/autoload/ezp_override.php muss vorhanden sein. Die Datei wird von bin/php/ezpgenerateautoloads.php -o geschrieben, einem anderen Lauf als dem gewöhnlichen.</translation>
+    </message>
+    <message>
+        <source>Choose a kernel class to override. It has to be one this kernel really has: an override of a name nothing uses is a file nothing loads.</source>
+        <translation>Wählen Sie eine Kernel-Klasse zum Überschreiben. Es muss eine sein, die dieser Kernel wirklich hat: ein Override eines Namens, den nichts verwendet, ist eine Datei, die nichts lädt.</translation>
+    </message>
+    <message>
+        <source>The autoload map says %class is in %file and that file is not there. Regenerate the autoloads before overriding anything.</source>
+        <translation>Laut Autoload-Map liegt %class in %file, und diese Datei ist nicht vorhanden. Erzeugen Sie die Autoloads neu, bevor Sie etwas überschreiben.</translation>
+    </message>
+    <message>
+        <source>Say why this has to be an override. Whoever meets it at the next upgrade will want to know whether it is still needed, and by then nobody will remember.</source>
+        <translation>Geben Sie an, warum dies ein Override sein muss. Wer beim nächsten Upgrade darauf stößt, will wissen, ob er noch gebraucht wird, und bis dahin erinnert sich niemand mehr.</translation>
+    </message>
+    <message>
+        <source>%class is already overridden by %where. Two overrides of one class do not combine - whichever the autoload generator finds last wins, and nothing reports the other. Change that one instead.</source>
+        <translation>%class wird bereits von %where überschrieben. Zwei Overrides einer Klasse lassen sich nicht kombinieren - es gewinnt der, den der Autoload-Generator zuletzt findet, und nichts meldet den anderen. Ändern Sie stattdessen jenen.</translation>
+    </message>
+    <message>
+        <source>Setting names no class</source>
+        <translation>Einstellung benennt keine Klasse</translation>
+    </message>
+    <message>
+        <source>Extension switched on and not there</source>
+        <translation>Extension eingeschaltet und nicht vorhanden</translation>
+    </message>
+    <message>
+        <source>Design extension with no design</source>
+        <translation>Design-Extension ohne Design</translation>
+    </message>
+    <message>
+        <source>Translation extension with no translations</source>
+        <translation>Übersetzungs-Extension ohne Übersetzungen</translation>
+    </message>
+    <message>
+        <source>Module listed and not found</source>
+        <translation>Modul aufgeführt und nicht gefunden</translation>
+    </message>
+    <message>
+        <source>View with no script</source>
+        <translation>View ohne Skript</translation>
+    </message>
+    <message>
+        <source>Datatype offered and not found</source>
+        <translation>Datentyp angeboten und nicht gefunden</translation>
+    </message>
+    <message>
+        <source>Directory searched and not there</source>
+        <translation>Durchsuchtes Verzeichnis nicht vorhanden</translation>
+    </message>
+    <message>
+        <source>Icon theme not found</source>
+        <translation>Icon-Theme nicht gefunden</translation>
+    </message>
+    <message>
+        <source>Override with no template</source>
+        <translation>Override ohne Template</translation>
+    </message>
+    <message>
+        <source>Kernel override of nothing</source>
+        <translation>Kernel-Override von nichts</translation>
+    </message>
+    <message>
+        <source>Nothing implements it</source>
+        <translation>Nichts implementiert es</translation>
+    </message>
+    <message>
+        <source>Class php refuses to load</source>
+        <translation>Klasse, die PHP nicht lädt</translation>
+    </message>
+    <message>
+        <source>Incompatible declaration: this class has to be changed.</source>
+        <translation>Inkompatible Deklaration: diese Klasse muss geändert werden.</translation>
+    </message>
+    <message>
+        <source>A parent or interface is missing: usually an extension that needs another one.</source>
+        <translation>Eine Elternklasse oder Schnittstelle fehlt: meistens eine Extension, die eine andere benötigt.</translation>
+    </message>
+    <message>
+        <source>Called statically at load time and not declared static: a php 8 incompatibility.</source>
+        <translation>Beim Laden statisch aufgerufen und nicht static deklariert: eine Inkompatibilität mit PHP 8.</translation>
+    </message>
+    <message>
+        <source>Declared twice: two files claim the same name, or one is included by hand as well as autoloaded.</source>
+        <translation>Doppelt deklariert: zwei Dateien beanspruchen denselben Namen, oder eine wird von Hand eingebunden und zusätzlich per Autoload geladen.</translation>
+    </message>
+    <message>
+        <source>php refused it and said nothing this script could read.</source>
+        <translation>PHP hat sie abgelehnt und nichts gemeldet, was dieses Skript lesen konnte.</translation>
+    </message>
+    <message>
+        <source>php refused it.</source>
+        <translation>PHP hat sie abgelehnt.</translation>
+    </message>
+    <message>
+        <source>Nothing on this installation declares a class of that name, and the value has a capital in it so it is shaped like one rather than like an alias.</source>
+        <translation>Nichts auf dieser Installation deklariert eine Klasse dieses Namens, und der Wert enthält einen Großbuchstaben, hat also die Form einer Klasse und nicht die eines Alias.</translation>
+    </message>
+    <message>
+        <source>Check first whether the setting takes an alias. Several do, and an alias that happens to be capitalised is not a fault - eZECB is the alias for eZECBHandler and is perfectly correct.</source>
+        <translation>Prüfen Sie zuerst, ob die Einstellung einen Alias erwartet. Mehrere tun das, und ein Alias, der zufällig großgeschrieben ist, ist kein Fehler - eZECB ist der Alias für eZECBHandler und völlig korrekt.</translation>
+    </message>
+    <message>
+        <source>If it is meant to be a class, find out whether the extension that declares it is installed and in ActiveExtensions[].</source>
+        <translation>Wenn es eine Klasse sein soll, finden Sie heraus, ob die Extension, die sie deklariert, installiert ist und in ActiveExtensions[] steht.</translation>
+    </message>
+    <message>
+        <source>If it is installed, the autoload map may be stale: php bin/php/ezpgenerateautoloads.php</source>
+        <translation>Wenn sie installiert ist, ist die Autoload-Map möglicherweise veraltet: php bin/php/ezpgenerateautoloads.php</translation>
+    </message>
+    <message>
+        <source>If the class was renamed, change the setting to the new name. Nothing else will, and the handler is silently not running in the meantime.</source>
+        <translation>Wenn die Klasse umbenannt wurde, ändern Sie die Einstellung auf den neuen Namen. Nichts anderes tut es, und der Handler läuft in der Zwischenzeit stillschweigend nicht.</translation>
+    </message>
+    <message>
+        <source>Nothing in it can load, and the kernel reports it on every single request.</source>
+        <translation>Nichts darin kann geladen werden, und der Kernel meldet es bei jeder einzelnen Anfrage.</translation>
+    </message>
+    <message>
+        <source>If it should be there: composer require it, or put the directory in extension/ - and remember an extension can live in any root named by AdditionalExtensionDirectories[].</source>
+        <translation>Wenn sie vorhanden sein soll: installieren Sie sie mit composer require, oder legen Sie das Verzeichnis in extension/ ab - und denken Sie daran, dass eine Extension in jedem Wurzelverzeichnis liegen kann, das AdditionalExtensionDirectories[] nennt.</translation>
+    </message>
+    <message>
+        <source>Then regenerate the autoloads: php bin/php/ezpgenerateautoloads.php</source>
+        <translation>Erzeugen Sie danach die Autoloads neu: php bin/php/ezpgenerateautoloads.php</translation>
+    </message>
+    <message>
+        <source>If it should not be there: take the line out of site.ini. A name left behind after an extension is removed costs a failed lookup on every request for ever.</source>
+        <translation>Wenn sie nicht vorhanden sein soll: nehmen Sie die Zeile aus site.ini heraus. Ein Name, der nach dem Entfernen einer Extension zurückbleibt, kostet für immer bei jeder Anfrage eine fehlgeschlagene Suche.</translation>
+    </message>
+    <message>
+        <source>Clear the caches either way: php bin/php/ezcache.php --clear-all</source>
+        <translation>Leeren Sie in jedem Fall die Caches: php bin/php/ezcache.php --clear-all</translation>
+    </message>
+    <message>
+        <source>The extension is not on disk at all, so nothing it might have contained is in the design chain.</source>
+        <translation>Die Extension ist überhaupt nicht auf der Festplatte, also ist nichts, was sie enthalten haben könnte, in der Design-Kette.</translation>
+    </message>
+    <message>
+        <source>There is no %name/design directory, so listing it adds nothing to the design chain and a template somebody expects to be found is not.</source>
+        <translation>Es gibt kein Verzeichnis %name/design, also fügt ihre Nennung der Design-Kette nichts hinzu, und ein Template, dessen Fund jemand erwartet, wird nicht gefunden.</translation>
+    </message>
+    <message>
+        <source>Install the extension, or take the line out of design.ini.</source>
+        <translation>Installieren Sie die Extension, oder nehmen Sie die Zeile aus design.ini heraus.</translation>
+    </message>
+    <message>
+        <source>If the extension is supposed to carry templates, the directory has to be extension/%name/design/&lt;designname&gt;/templates/ - the design name in the middle is the part that is usually missed.</source>
+        <translation>Wenn die Extension Templates enthalten soll, muss das Verzeichnis extension/%name/design/&lt;designname&gt;/templates/ sein - der Design-Name in der Mitte ist der Teil, der meistens fehlt.</translation>
+    </message>
+    <message>
+        <source>If it carries no templates, take the line out of design.ini: it costs a directory lookup per design resolution and buys nothing.</source>
+        <translation>Wenn sie keine Templates enthält, nehmen Sie die Zeile aus design.ini heraus: sie kostet eine Verzeichnissuche je Design-Auflösung und bringt nichts.</translation>
+    </message>
+    <message>
+        <source>Clear the template caches after either: php bin/php/ezcache.php --clear-tag=template</source>
+        <translation>Leeren Sie danach in beiden Fällen die Template-Caches: php bin/php/ezcache.php --clear-tag=template</translation>
+    </message>
+    <message>
+        <source>There is no translations directory in it, so every string falls back to the source language and nothing says why.</source>
+        <translation>Sie enthält kein Verzeichnis translations, also fällt jeder Text auf die Ausgangssprache zurück, und nichts sagt, warum.</translation>
+    </message>
+    <message>
+        <source>The layout has to be extension/%name/translations/&lt;locale&gt;/translation.ts, with the locale in the shape eng-GB.</source>
+        <translation>Der Aufbau muss extension/%name/translations/&lt;locale&gt;/translation.ts sein, mit dem Gebietsschema in der Form eng-GB.</translation>
+    </message>
+    <message>
+        <source>A locale nothing is set to is read by nobody: check site.ini [RegionalSettings] Locale on the siteaccess that should use it.</source>
+        <translation>Ein Gebietsschema, auf das nichts eingestellt ist, liest niemand: prüfen Sie site.ini [RegionalSettings] Locale im Siteaccess, der es verwenden soll.</translation>
+    </message>
+    <message>
+        <source>Clear the caches: php bin/php/ezcache.php --clear-all</source>
+        <translation>Caches leeren: php bin/php/ezcache.php --clear-all</translation>
+    </message>
+    <message>
+        <source>Every address beginning /%name/ answers with a module not found error.</source>
+        <translation>Jede Adresse, die mit /%name/ beginnt, antwortet mit dem Fehler, dass das Modul nicht gefunden wurde.</translation>
+    </message>
+    <message>
+        <source>Both lines are needed. ExtensionRepositories[] says which extension to look in and ModuleList[] says what to look for; with only the second the kernel looks in the kernel and reports it missing, which is this.</source>
+        <translation>Beide Zeilen werden benötigt. ExtensionRepositories[] sagt, in welcher Extension gesucht wird, und ModuleList[], wonach gesucht wird; mit nur der zweiten sucht der Kernel im Kernel und meldet es als fehlend - genau das hier.</translation>
+    </message>
+    <message>
+        <source>Check the module directory really is extension/&lt;name&gt;/modules/%name/module.php - the modules/ in the middle is not optional.</source>
+        <translation>Prüfen Sie, dass das Modulverzeichnis wirklich extension/&lt;name&gt;/modules/%name/module.php ist - das modules/ in der Mitte ist nicht optional.</translation>
+    </message>
+    <message>
+        <source>If the module was removed, take it out of ModuleList[] as well.</source>
+        <translation>Wenn das Modul entfernt wurde, nehmen Sie es auch aus ModuleList[] heraus.</translation>
+    </message>
+    <message>
+        <source>The module declares the view and the file it names is not there, so the address exists and answers with a blank page rather than a not found.</source>
+        <translation>Das Modul deklariert den View, und die Datei, die er nennt, ist nicht vorhanden, also existiert die Adresse und antwortet mit einer leeren Seite statt mit einem Nicht-gefunden.</translation>
+    </message>
+    <message>
+        <source>Either write the script at that exact path, or take the view out of $ViewList in %path/module.php.</source>
+        <translation>Schreiben Sie entweder das Skript genau unter diesem Pfad, oder nehmen Sie den View aus $ViewList in %path/module.php heraus.</translation>
+    </message>
+    <message>
+        <source>A view left in the list after its script is gone is worse than one that was never declared: it is reachable, it is in the policy list a role can grant, and it does nothing.</source>
+        <translation>Ein View, der in der Liste bleibt, nachdem sein Skript verschwunden ist, ist schlimmer als einer, der nie deklariert wurde: er ist erreichbar, er steht in der Richtlinienliste, die eine Rolle gewähren kann, und er tut nichts.</translation>
+    </message>
+    <message>
+        <source>It is offered in the class editor and there is no %type/%typetype.php in any directory searched. An attribute of this type cannot be added, and any existing attribute of it holds a value nothing can read.</source>
+        <translation>Er wird im Klasseneditor angeboten, und in keinem durchsuchten Verzeichnis gibt es %type/%typetype.php. Ein Attribut dieses Typs kann nicht hinzugefügt werden, und jedes vorhandene Attribut davon enthält einen Wert, den nichts lesen kann.</translation>
+    </message>
+    <message>
+        <source>Check the extension carrying it is installed and named in content.ini [DataTypeSettings] ExtensionDirectories[] - the datatype is looked for at &lt;extension&gt;/datatypes/%type/%typetype.php and nowhere else.</source>
+        <translation>Prüfen Sie, dass die Extension, die ihn enthält, installiert und in content.ini [DataTypeSettings] ExtensionDirectories[] genannt ist - der Datentyp wird unter &lt;extension&gt;/datatypes/%type/%typetype.php gesucht und nirgends sonst.</translation>
+    </message>
+    <message>
+        <source>The three names have to agree exactly: the value here, the directory, and the file inside it.</source>
+        <translation>Die drei Namen müssen genau übereinstimmen: der Wert hier, das Verzeichnis und die Datei darin.</translation>
+    </message>
+    <message>
+        <source>Before removing it from AvailableDataTypes[], check whether any content class still uses it. Content with an attribute of a datatype that is gone cannot be edited, and the values are unreadable rather than merely hidden.</source>
+        <translation>Bevor Sie ihn aus AvailableDataTypes[] entfernen, prüfen Sie, ob eine Inhaltsklasse ihn noch verwendet. Inhalte mit einem Attribut eines verschwundenen Datentyps können nicht bearbeitet werden, und die Werte sind unlesbar statt nur verborgen.</translation>
+    </message>
+    <message>
+        <source>Searching it costs a directory lookup and finds nothing. Usually left over from a version that had it.</source>
+        <translation>Es zu durchsuchen kostet eine Verzeichnissuche und findet nichts. Meistens ein Überbleibsel einer Version, die es hatte.</translation>
+    </message>
+    <message>
+        <source>The path is read relative to the installation root, so it wants to be %path from %root - not from wherever the setting file is.</source>
+        <translation>Der Pfad wird relativ zum Wurzelverzeichnis der Installation gelesen, muss also %path von %root aus sein - nicht von dort, wo die Einstellungsdatei liegt.</translation>
+    </message>
+    <message>
+        <source>If the directory should exist, create it, or correct the value of %variable in %ini [%section].</source>
+        <translation>Wenn das Verzeichnis existieren soll, legen Sie es an, oder korrigieren Sie den Wert von %variable in %ini [%section].</translation>
+    </message>
+    <message>
+        <source>If it should not, take that line out of %ini. This is the least urgent finding here: nothing is broken, there is simply a lookup on every resolution that can never succeed.</source>
+        <translation>Wenn nicht, nehmen Sie diese Zeile aus %ini heraus. Dies ist der am wenigsten dringende Befund hier: nichts ist defekt, es gibt lediglich bei jeder Auflösung eine Suche, die nie gelingen kann.</translation>
+    </message>
+    <message>
+        <source>Clear the caches after either: php bin/php/ezcache.php --clear-all</source>
+        <translation>Leeren Sie danach in beiden Fällen die Caches: php bin/php/ezcache.php --clear-all</translation>
+    </message>
+    <message>
+        <source>Not in share/icons and not in any extension listed in IconExtensions[], so every icon asked of this theme falls through to the standard one or draws the default.</source>
+        <translation>Weder in share/icons noch in einer in IconExtensions[] aufgeführten Extension, also fällt jedes Icon, das von diesem Theme verlangt wird, auf das Standard-Theme zurück oder zeigt das Standard-Icon.</translation>
+    </message>
+    <message>
+        <source>A theme in an extension needs both halves: the directory at extension/&lt;name&gt;/icons/%theme/, and the extension named in icon.ini [ExtensionSettings] IconExtensions[].</source>
+        <translation>Ein Theme in einer Extension braucht beide Hälften: das Verzeichnis extension/&lt;name&gt;/icons/%theme/ und die in icon.ini [ExtensionSettings] IconExtensions[] genannte Extension.</translation>
+    </message>
+    <message>
+        <source>The directory is only a theme if it has an icon.ini of its own naming its sizes. Without that the sizes are never looked in.</source>
+        <translation>Das Verzeichnis ist nur dann ein Theme, wenn es eine eigene icon.ini hat, die seine Größen nennt. Ohne sie wird nie in den Größen gesucht.</translation>
+    </message>
+    <message>
+        <source>If the theme has gone, take it out of Theme, StandardTheme or AdditionalThemeList[] rather than leaving it to fall through.</source>
+        <translation>Wenn das Theme verschwunden ist, nehmen Sie es aus Theme, StandardTheme oder AdditionalThemeList[] heraus, statt es durchfallen zu lassen.</translation>
+    </message>
+    <message>
+        <source>The override matches and then finds nothing to draw with, so whatever it was meant to replace is drawn by the default instead and nothing reports it.</source>
+        <translation>Der Override greift und findet dann nichts, womit er darstellen kann, also wird das, was er ersetzen sollte, stattdessen vom Standard dargestellt, und nichts meldet es.</translation>
+    </message>
+    <message>
+        <source>The template goes under the design, at &lt;design&gt;/override/templates/%match - the override/templates/ in the middle is what is usually missed.</source>
+        <translation>Das Template gehört unter das Design, nach &lt;design&gt;/override/templates/%match - das override/templates/ in der Mitte ist das, was meistens fehlt.</translation>
+    </message>
+    <message>
+        <source>The design carrying it has to be in the design chain: design.ini [ExtensionSettings] DesignExtensions[] for an extension, or SiteDesign for the siteaccess.</source>
+        <translation>Das Design, das es enthält, muss in der Design-Kette sein: design.ini [ExtensionSettings] DesignExtensions[] für eine Extension oder SiteDesign für den Siteaccess.</translation>
+    </message>
+    <message>
+        <source>If the override is no longer wanted, remove its whole block from %file rather than only the MatchFile line.</source>
+        <translation>Wenn der Override nicht mehr gewünscht ist, entfernen Sie seinen ganzen Block aus %file statt nur der Zeile MatchFile.</translation>
+    </message>
+    <message>
+        <source>Clear the template caches: php bin/php/ezcache.php --clear-tag=template</source>
+        <translation>Template-Caches leeren: php bin/php/ezcache.php --clear-tag=template</translation>
+    </message>
+    <message>
+        <source>It is in the override autoload map and the kernel has no class of that name, so it overrides nothing and is simply an ordinary class loaded by an unusual route.</source>
+        <translation>Sie steht in der Override-Autoload-Map, und der Kernel hat keine Klasse dieses Namens, also überschreibt sie nichts und ist einfach eine gewöhnliche Klasse, die auf ungewöhnlichem Weg geladen wird.</translation>
+    </message>
+    <message>
+        <source>If the kernel class was renamed, this override is now doing nothing and whatever it was working around is back. Find the new name and decide whether the override is still needed.</source>
+        <translation>Wenn die Kernel-Klasse umbenannt wurde, tut dieser Override jetzt nichts, und das, was er umgehen sollte, ist zurück. Finden Sie den neuen Namen und entscheiden Sie, ob der Override noch gebraucht wird.</translation>
+    </message>
+    <message>
+        <source>If it was never meant to override anything, move it to the extension's ordinary classes/ directory and regenerate: php bin/php/ezpgenerateautoloads.php</source>
+        <translation>Wenn sie nie etwas überschreiben sollte, verschieben Sie sie in das gewöhnliche Verzeichnis classes/ der Extension und erzeugen Sie neu: php bin/php/ezpgenerateautoloads.php</translation>
+    </message>
+    <message>
+        <source>Setup, RAD tools, Kernel override wizard writes these with a drift check that would have caught this at the upgrade that caused it.</source>
+        <translation>Setup, RAD-Werkzeuge, Kernel-Override-Assistent schreibt diese mit einer Abweichungsprüfung, die das beim Upgrade, das es verursacht hat, bemerkt hätte.</translation>
+    </message>
+    <message>
+        <source>%name (%count methods)</source>
+        <translation>%name (%count Methoden)</translation>
+    </message>
+    <message>
+        <source>An extension point nobody here has taken up. Nothing is wrong with it; it is simply unused.</source>
+        <translation>Ein Erweiterungspunkt, den hier niemand aufgegriffen hat. Daran ist nichts falsch; er wird einfach nicht verwendet.</translation>
+    </message>
+    <message>
+        <source>Nothing to do. It is listed so that the page is a complete picture rather than only a list of faults.</source>
+        <translation>Nichts zu tun. Es wird aufgeführt, damit die Seite ein vollständiges Bild ergibt statt nur einer Liste von Fehlern.</translation>
+    </message>
+    <message>
+        <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <translation>Wenn Sie eine Stelle suchen, um Verhalten zu ändern: dies sind die Stellen, die noch niemand beansprucht hat.</translation>
+    </message>
+    <message>
+        <source>The class loader check is not installed.</source>
+        <translation>Die Prüfung des Klassenladers ist nicht installiert.</translation>
+    </message>
+    <message>
+        <source>%command is not there, and it is both the command and the child process.</source>
+        <translation>%command ist nicht vorhanden, und es ist sowohl der Befehl als auch der Kindprozess.</translation>
+    </message>
+    <message>
+        <source>The class declares a method whose signature does not match the one it inherits, and php 8 refuses the whole class for it. This is a fault in the class, not in the configuration.</source>
+        <translation>Die Klasse deklariert eine Methode, deren Signatur nicht zu der geerbten passt, und PHP 8 lehnt deshalb die ganze Klasse ab. Das ist ein Fehler in der Klasse, nicht in der Konfiguration.</translation>
+    </message>
+    <message>
+        <source>php names both signatures in the message above. Usually the difference is an argument that gained a default, a type, or an &amp; - and the fix is to make the child match the parent exactly.</source>
+        <translation>PHP nennt beide Signaturen in der Meldung oben. Meistens ist der Unterschied ein Argument, das einen Standardwert, einen Typ oder ein &amp; bekommen hat - und die Behebung besteht darin, das Kind genau an die Elternklasse anzupassen.</translation>
+    </message>
+    <message>
+        <source>Check the parent is the one intended before changing signatures. A class extending the wrong base is the commoner cause, and matching signatures to a base it should not have had makes it harder to see.</source>
+        <translation>Prüfen Sie, ob die Elternklasse die beabsichtigte ist, bevor Sie Signaturen ändern. Eine Klasse, die die falsche Basis erweitert, ist die häufigere Ursache, und Signaturen an eine Basis anzupassen, die sie nicht hätte haben sollen, macht es schwerer zu erkennen.</translation>
+    </message>
+    <message>
+        <source>The class is in an extension, so the fix belongs upstream: patch it there, release it, and move the constraint in composer.json rather than editing vendor code in place.</source>
+        <translation>Die Klasse liegt in einer Extension, also gehört die Behebung dorthin: korrigieren Sie sie dort, veröffentlichen Sie sie und passen Sie die Versionsangabe in composer.json an, statt Code in vendor direkt zu bearbeiten.</translation>
+    </message>
+    <message>
+        <source>It extends or implements %class, and nothing on this installation declares that.</source>
+        <translation>Sie erweitert oder implementiert %class, und nichts auf dieser Installation deklariert das.</translation>
+    </message>
+    <message>
+        <source>Usually an extension that needs another one. Find what provides %class and install it, or switch this extension off if it is not wanted.</source>
+        <translation>Meistens eine Extension, die eine andere benötigt. Finden Sie heraus, was %class bereitstellt, und installieren Sie es, oder schalten Sie diese Extension aus, wenn sie nicht gewünscht ist.</translation>
+    </message>
+    <message>
+        <source>If it is installed, the autoload map is stale: php bin/php/ezpgenerateautoloads.php</source>
+        <translation>Wenn es installiert ist, ist die Autoload-Map veraltet: php bin/php/ezpgenerateautoloads.php</translation>
+    </message>
+    <message>
+        <source>Until then every request that touches this class ends - not a wrong page, no page.</source>
+        <translation>Bis dahin endet jede Anfrage, die diese Klasse berührt - keine falsche Seite, gar keine Seite.</translation>
+    </message>
+    <message>
+        <source>Something is called statically at load time and is not declared static. php 7 allowed this and php 8 does not.</source>
+        <translation>Etwas wird beim Laden statisch aufgerufen und ist nicht static deklariert. PHP 7 hat das erlaubt, PHP 8 erlaubt es nicht.</translation>
+    </message>
+    <message>
+        <source>Declare the method static where it is defined, if every caller is static - that is almost always the case for a method called from the foot of a file at include time.</source>
+        <translation>Deklarieren Sie die Methode dort, wo sie definiert ist, als static, wenn jeder Aufrufer statisch ist - das ist fast immer der Fall bei einer Methode, die beim Einbinden am Ende einer Datei aufgerufen wird.</translation>
+    </message>
+    <message>
+        <source>This is the fault that stopped every payment gateway on this installation loading, and the fix was one keyword in the kernel.</source>
+        <translation>Das ist der Fehler, der das Laden jedes Payment-Gateways auf dieser Installation verhindert hat, und die Behebung war ein einziges Schlüsselwort im Kernel.</translation>
+    </message>
+    <message>
+        <source>If some callers use an instance, the method has to stay as it is and the static calls have to change instead.</source>
+        <translation>Wenn einige Aufrufer eine Instanz verwenden, muss die Methode bleiben, wie sie ist, und stattdessen müssen sich die statischen Aufrufe ändern.</translation>
+    </message>
+    <message>
+        <source>Two files declare the same name, and both are reached.</source>
+        <translation>Zwei Dateien deklarieren denselben Namen, und beide werden erreicht.</translation>
+    </message>
+    <message>
+        <source>Usually a file that is include_once-d by hand as well as being in the autoload map. Take the manual include out and let the autoloader do it.</source>
+        <translation>Meistens eine Datei, die von Hand mit include_once eingebunden wird und zusätzlich in der Autoload-Map steht. Entfernen Sie das manuelle Einbinden und überlassen Sie es dem Autoloader.</translation>
+    </message>
+    <message>
+        <source>It can also be two extensions shipping the same class name, in which case one of them has to be renamed - there is no way for both to work.</source>
+        <translation>Es können auch zwei Extensions sein, die denselben Klassennamen mitbringen; dann muss eine von ihnen umbenannt werden - es gibt keinen Weg, dass beide funktionieren.</translation>
+    </message>
+    <message>
+        <source>php refused the class and the message above is what it said.</source>
+        <translation>PHP hat die Klasse abgelehnt, und die Meldung oben ist das, was es gesagt hat.</translation>
+    </message>
+    <message>
+        <source>Run it on its own to see the whole thing: php bin/php/checkclasses.php</source>
+        <translation>Führen Sie es einzeln aus, um alles zu sehen: php bin/php/checkclasses.php</translation>
+    </message>
+    <message>
+        <source>Whatever it is, the class ends any request that touches it, so it is worth chasing even if nothing appears to use it.</source>
+        <translation>Was auch immer es ist, die Klasse beendet jede Anfrage, die sie berührt, also lohnt es sich, dem nachzugehen, auch wenn nichts sie zu verwenden scheint.</translation>
+    </message>
+    <message>
+        <source>(nothing declares it)</source>
+        <translation>(nichts deklariert sie)</translation>
+    </message>
+    <message>
+        <source>(declared at runtime)</source>
+        <translation>(zur Laufzeit deklariert)</translation>
+    </message>
+    <message>
+        <source>%count methods</source>
+        <translation>%count Methoden</translation>
+    </message>
+    <message>
+        <source>nothing implements it yet</source>
+        <translation>bisher implementiert es nichts</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>declared, not active</source>
+        <translation>deklariert, nicht aktiv</translation>
+    </message>
+    <message>
+        <source>return the value</source>
+        <translation>den Wert zurückgeben</translation>
+    </message>
+    <message>
+        <source>return value ignored</source>
+        <translation>Rückgabewert wird ignoriert</translation>
+    </message>
+    <message>
+        <source>1 place</source>
+        <translation>1 Stelle</translation>
+    </message>
+    <message>
+        <source>%count places</source>
+        <translation>%count Stellen</translation>
+    </message>
+    <message>
+        <source>kernel override</source>
+        <translation>Kernel-Override</translation>
+    </message>
+    <message>
+        <source>replaces a kernel class</source>
+        <translation>ersetzt eine Kernel-Klasse</translation>
+    </message>
+    <message>
+        <source>replaces nothing in the kernel</source>
+        <translation>ersetzt nichts im Kernel</translation>
+    </message>
+    <message>
+        <source>%count params, %named named</source>
+        <translation>%count Parameter, %named benannt</translation>
+    </message>
+    <message>
+        <source>%count params</source>
+        <translation>%count Parameter</translation>
+    </message>
+    <message>
+        <source>needs %policies</source>
+        <translation>benötigt %policies</translation>
+    </message>
+    <message>
+        <source>no policy check</source>
+        <translation>keine Richtlinienprüfung</translation>
+    </message>
+    <message>
+        <source>fetch function</source>
+        <translation>Fetch-Funktion</translation>
+    </message>
+    <message>
+        <source>looks like a class, and nothing declares one</source>
+        <translation>sieht wie eine Klasse aus, und nichts deklariert eine</translation>
+    </message>
+    <message>
+        <source>an alias, resolved somewhere else</source>
+        <translation>ein Alias, der anderswo aufgelöst wird</translation>
+    </message>
+    <message>
+        <source>This installation's own database</source>
+        <translation>Die eigene Datenbank dieser Installation</translation>
+    </message>
+    <message>
+        <source>Another database - given below</source>
+        <translation>Eine andere Datenbank - unten angegeben</translation>
+    </message>
+    <message>
+        <source>The database name is the path to the file.</source>
+        <translation>Der Datenbankname ist der Pfad zur Datei.</translation>
+    </message>
+    <message>
+        <source>Collections have no fixed shape, so the fields are worked out by reading a sample of documents.</source>
+        <translation>Collections haben keine feste Struktur, daher werden die Felder anhand einer Stichprobe von Dokumenten ermittelt.</translation>
+    </message>
+    <message>
+        <source>eZ has no handler for Oracle, so the generated classes carry their own connection rather than going through eZPersistentObject.</source>
+        <translation>eZ hat keinen Handler für Oracle, daher bringen die erzeugten Klassen ihre eigene Verbindung mit, statt eZPersistentObject zu verwenden.</translation>
+    </message>
+    <message>
+        <source>The database name is the DSN. eZ has no handler for ODBC, so the generated classes carry their own connection.</source>
+        <translation>Der Datenbankname ist der DSN. eZ hat keinen Handler für ODBC, daher bringen die erzeugten Klassen ihre eigene Verbindung mit.</translation>
+    </message>
+    <message>
+        <source>No handler is registered for it, and PDO has no %driver driver on this machine.</source>
+        <translation>Dafür ist kein Handler registriert, und PDO hat auf diesem Rechner keinen %driver-Treiber.</translation>
+    </message>
+    <message>
+        <source>This machine has no %driver driver.</source>
+        <translation>Dieser Rechner hat keinen %driver-Treiber.</translation>
+    </message>
+    <message>
+        <source>%database - not available here</source>
+        <translation>%database - hier nicht verfügbar</translation>
+    </message>
+    <message>
+        <source>%database (read only, through PDO)</source>
+        <translation>%database (nur lesend, über PDO)</translation>
+    </message>
+    <message>
+        <source>The class name prefix has to start with a letter.</source>
+        <translation>Das Präfix der Klassennamen muss mit einem Buchstaben beginnen.</translation>
+    </message>
+    <message>
+        <source>Choose at least one table.</source>
+        <translation>Wählen Sie mindestens eine Tabelle.</translation>
+    </message>
+    <message>
+        <source>That kind of database is not one this page knows.</source>
+        <translation>Diese Art von Datenbank kennt diese Seite nicht.</translation>
+    </message>
+    <message>
+        <source>%database cannot be read here. %reason</source>
+        <translation>%database kann hier nicht gelesen werden. %reason</translation>
+    </message>
+    <message>
+        <source>Choose the database file, or give a path to one inside the installation.</source>
+        <translation>Wählen Sie die Datenbankdatei oder geben Sie einen Pfad zu einer Datei innerhalb der Installation an.</translation>
+    </message>
+    <message>
+        <source>An ODBC connection needs a data source name.</source>
+        <translation>Eine ODBC-Verbindung braucht einen Datenquellennamen.</translation>
+    </message>
+    <message>
+        <source>An external database needs a database name.</source>
+        <translation>Eine externe Datenbank braucht einen Datenbanknamen.</translation>
+    </message>
+    <message>
+        <source>An external database needs a server.</source>
+        <translation>Eine externe Datenbank braucht einen Server.</translation>
+    </message>
+    <message>
+        <source>%count bytes</source>
+        <translation>%count Bytes</translation>
+    </message>
+    <message>
+        <source>Using this installation's own database.</source>
+        <translation>Die eigene Datenbank dieser Installation wird verwendet.</translation>
+    </message>
+    <message>
+        <source>This installation's own database is not connected.</source>
+        <translation>Die eigene Datenbank dieser Installation ist nicht verbunden.</translation>
+    </message>
+    <message>
+        <source>Choose a database file.</source>
+        <translation>Wählen Sie eine Datenbankdatei.</translation>
+    </message>
+    <message>
+        <source>Could not connect: %error</source>
+        <translation>Verbindung fehlgeschlagen: %error</translation>
+    </message>
+    <message>
+        <source>Could not connect to %target. Check the details, and that the user may read it.</source>
+        <translation>Verbindung zu %target fehlgeschlagen. Prüfen Sie die Angaben und ob der Benutzer lesen darf.</translation>
+    </message>
+    <message>
+        <source>Connected to %target.</source>
+        <translation>Verbunden mit %target.</translation>
+    </message>
+    <message>
+        <source>Not enough to build a connection string with.</source>
+        <translation>Die Angaben reichen nicht, um eine Verbindungszeichenkette zu bilden.</translation>
+    </message>
+    <message>
+        <source>Connected to %target through PDO. eZ has no handler for it, so the generated classes will carry their own connection.</source>
+        <translation>Über PDO mit %target verbunden. eZ hat dafür keinen Handler, daher bringen die erzeugten Klassen ihre eigene Verbindung mit.</translation>
+    </message>
+    <message>
+        <source>a file</source>
+        <translation>eine Datei</translation>
+    </message>
+    <message>
+        <source>the data source %name</source>
+        <translation>die Datenquelle %name</translation>
+    </message>
+    <message>
+        <source>the data source (unnamed)</source>
+        <translation>die Datenquelle (ohne Namen)</translation>
+    </message>
+    <message>
+        <source>the database</source>
+        <translation>die Datenbank</translation>
+    </message>
+    <message>
+        <source>%database on %server</source>
+        <translation>%database auf %server</translation>
+    </message>
+    <message>
+        <source>The datatype needs an identifier: lower case letters and digits, three to forty one characters, starting with a letter. This is what goes in the database against every attribute of this type and cannot be changed afterwards.</source>
+        <translation>Der Datentyp braucht einen Bezeichner: Kleinbuchstaben und Ziffern, drei bis einundvierzig Zeichen, beginnend mit einem Buchstaben. Er wird bei jedem Attribut dieses Typs in der Datenbank gespeichert und kann danach nicht mehr geändert werden.</translation>
+    </message>
+    <message>
+        <source>The class needs a name: letters and digits, starting with a letter.</source>
+        <translation>Die Klasse braucht einen Namen: Buchstaben und Ziffern, beginnend mit einem Buchstaben.</translation>
+    </message>
+    <message>
+        <source>A class called %class already exists on this installation. Choose another name.</source>
+        <translation>Eine Klasse namens %class existiert in dieser Installation bereits. Wählen Sie einen anderen Namen.</translation>
+    </message>
+    <message>
+        <source>A datatype called %type is already installed. Two datatypes with the same identifier cannot both work; choose another.</source>
+        <translation>Ein Datentyp namens %type ist bereits installiert. Zwei Datentypen mit demselben Bezeichner können nicht beide funktionieren; wählen Sie einen anderen.</translation>
+    </message>
+    <message>
+        <source>Choose at least one column for the value to live in, or the attribute has nowhere to store anything.</source>
+        <translation>Wählen Sie mindestens eine Spalte für den Wert, sonst kann das Attribut nichts speichern.</translation>
+    </message>
+    <message>
+        <source>Sorting needs sort_key_string or sort_key_int as well: the sort key is written to one of those columns and nowhere else.</source>
+        <translation>Sortieren braucht zusätzlich sort_key_string oder sort_key_int: Der Sortierschlüssel wird in eine dieser Spalten geschrieben und nirgendwo sonst.</translation>
+    </message>
+    <message>
+        <source>That is not a kind of handler this page knows.</source>
+        <translation>Diese Art von Handler kennt diese Seite nicht.</translation>
+    </message>
+    <message>
+        <source>This kind of handler is named by an alias, and the alias is empty.</source>
+        <translation>Diese Art von Handler wird über einen Alias benannt, und der Alias ist leer.</translation>
+    </message>
+    <message>
+        <source>Something on this installation already declares %class, and the kernel uses whichever it finds. Two of these cannot both be in place.</source>
+        <translation>In dieser Installation deklariert bereits etwas %class, und der Kernel verwendet die Klasse, die er zuerst findet. Zwei davon können nicht gleichzeitig vorhanden sein.</translation>
+    </message>
+    <message>
+        <source>Choose at least one thing for this extension to say, or there is nothing to write.</source>
+        <translation>Wählen Sie mindestens eine Sache, die diese Extension festlegen soll, sonst gibt es nichts zu schreiben.</translation>
+    </message>
+    <message>
+        <source>Image aliases were chosen and none were named.</source>
+        <translation>Bild-Aliase wurden ausgewählt, aber keiner wurde benannt.</translation>
+    </message>
+    <message>
+        <source>Event listeners were chosen and no events were picked.</source>
+        <translation>Event-Listener wurden ausgewählt, aber keine Events.</translation>
+    </message>
+    <message>
+        <source>The listener class needs a name: letters and digits, starting with a letter.</source>
+        <translation>Die Listener-Klasse braucht einen Namen: Buchstaben und Ziffern, beginnend mit einem Buchstaben.</translation>
+    </message>
+    <message>
+        <source>View cache rules were chosen and none were written.</source>
+        <translation>Regeln für den View-Cache wurden ausgewählt, aber keine wurde geschrieben.</translation>
+    </message>
+    <message>
+        <source>Information collection was chosen and no content class was named.</source>
+        <translation>Informationssammlung wurde ausgewählt, aber keine Inhaltsklasse wurde genannt.</translation>
+    </message>
+    <message>
+        <source>Trigger operations were chosen and none were named.</source>
+        <translation>Trigger-Operationen wurden ausgewählt, aber keine wurde genannt.</translation>
+    </message>
+    <message>
+        <source>Additional extension roots were chosen and none were named. One per line, relative to the installation: %example</source>
+        <translation>Zusätzliche Extension-Wurzelverzeichnisse wurden ausgewählt, aber keines wurde genannt. Eines pro Zeile, relativ zur Installation: %example</translation>
+    </message>
+    <message>
+        <source>%root is already the first root and does not need naming again. Naming it twice changes nothing, but it reads as though it does.</source>
+        <translation>%root ist bereits das erste Wurzelverzeichnis und muss nicht noch einmal genannt werden. Es zweimal zu nennen ändert nichts, liest sich aber so, als ob es etwas ändern würde.</translation>
+    </message>
+    <message>
+        <source>An icon theme needs a name: lower case letters, digits and underscores.</source>
+        <translation>Ein Icon-Theme braucht einen Namen: Kleinbuchstaben, Ziffern und Unterstriche.</translation>
+    </message>
+    <message>
+        <source>An icon theme needs at least one size. One per line, as: %example</source>
+        <translation>Ein Icon-Theme braucht mindestens eine Größe. Eine pro Zeile, als: %example</translation>
+    </message>
+    <message>
+        <source>An icon theme called %theme is already searched on this installation. Two themes of the same name shadow each other by root order rather than merging; choose another name.</source>
+        <translation>Ein Icon-Theme namens %theme wird in dieser Installation bereits durchsucht. Zwei gleichnamige Themes verdecken einander nach der Reihenfolge der Wurzelverzeichnisse, statt zusammengeführt zu werden; wählen Sie einen anderen Namen.</translation>
+    </message>
+    <message>
+        <source>Siteaccess settings were chosen and no siteaccess was named.</source>
+        <translation>Siteaccess-Einstellungen wurden ausgewählt, aber kein Siteaccess wurde genannt.</translation>
+    </message>
+    <message>
+        <source>Siteaccess settings were chosen and none were written. One per line, as: %example</source>
+        <translation>Siteaccess-Einstellungen wurden ausgewählt, aber keine wurde geschrieben. Eine pro Zeile, als: %example</translation>
+    </message>
+    <message>
+        <source>An image alias called %alias already exists on this installation. Writing it again redefines it, and every image served through it changes. Choose another name, or say so deliberately by removing this check.</source>
+        <translation>Ein Bild-Alias namens %alias existiert in dieser Installation bereits. Ihn erneut zu schreiben definiert ihn neu, und jedes Bild, das über ihn ausgeliefert wird, ändert sich. Wählen Sie einen anderen Namen, oder tun Sie es bewusst, indem Sie diese Prüfung entfernen.</translation>
+    </message>
+    <message>
+        <source>Announced in %where. Read the call to see what it is handed.</source>
+        <translation>Ausgelöst in %where. Lesen Sie den Aufruf, um zu sehen, was übergeben wird.</translation>
+    </message>
+    <message>
+        <source>Name at least one operator, function, fetch function or fetch alias, or there is nothing for this extension to add.</source>
+        <translation>Nennen Sie mindestens einen Operator, eine Funktion, eine Fetch-Funktion oder einen Fetch-Alias, sonst hat diese Extension nichts hinzuzufügen.</translation>
+    </message>
+    <message>
+        <source>A template operator called %operator already exists. Two operators of the same name cannot both work; choose another.</source>
+        <translation>Ein Template-Operator namens %operator existiert bereits. Zwei gleichnamige Operatoren können nicht beide funktionieren; wählen Sie einen anderen Namen.</translation>
+    </message>
+    <message>
+        <source>Fetch functions live in a module, and the module has no name.</source>
+        <translation>Fetch-Funktionen gehören zu einem Modul, und das Modul hat keinen Namen.</translation>
+    </message>
+    <message>
+        <source>A module called %module already exists. Fetch functions would be added to it rather than to this extension; choose another name.</source>
+        <translation>Ein Modul namens %module existiert bereits. Die Fetch-Funktionen würden diesem Modul hinzugefügt statt dieser Extension; wählen Sie einen anderen Namen.</translation>
+    </message>
+    <message>
+        <source>The event needs a name of its own: lower case letters and digits, three or more, starting with a letter. It becomes the class name and the template name.</source>
+        <translation>Das Event braucht einen eigenen Namen: Kleinbuchstaben und Ziffern, mindestens drei, beginnend mit einem Buchstaben. Daraus werden der Klassenname und der Template-Name.</translation>
+    </message>
+    <message>
+        <source>Choose at least one trigger. An event that can be attached to nothing can never run.</source>
+        <translation>Wählen Sie mindestens einen Trigger. Ein Event, das an nichts gebunden werden kann, kann nie laufen.</translation>
+    </message>
+    <message>
+        <source>The setting "%setting" is a list, but no values were given for it.</source>
+        <translation>Die Einstellung "%setting" ist eine Liste, aber es wurden keine Werte dafür angegeben.</translation>
     </message>
 </context>
 </TS>

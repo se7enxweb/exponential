@@ -109,12 +109,12 @@ class expDesignExtensionWizard extends expExtensionWizard
      */
     public static function baseDesigns()
     {
-        $bases = array( 'standard' => 'standard - the kernel templates, and nothing else' );
+        $bases = array( 'standard' => ezpI18n::tr( 'kernel/setup/rad', 'standard - the kernel templates, and nothing else' ) );
 
         foreach ( array( 'admin3', 'admin2', 'admin', 'base', 'ezwebin' ) as $design )
         {
             if ( is_dir( 'design/' . $design ) )
-                $bases[$design] = $design . ' - fall back on this design first';
+                $bases[$design] = ezpI18n::tr( 'kernel/setup/rad', '%design - fall back on this design first', null, array( '%design' => $design ) );
         }
 
         return $bases;
@@ -183,13 +183,15 @@ class expDesignExtensionWizard extends expExtensionWizard
         $problems = array();
 
         if ( $settings['name'] === '' )
-            $problems[] = 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.' );
 
+        // An "already exists" problem is filed under a key starting with
+        // "exists": archive() leaves those out, in whatever language they read.
         if ( $settings['name'] !== '' && is_dir( self::extensionPath( $settings['name'] ) ) )
-            $problems[] = 'extension/' . $settings['name'] . ' already exists. Choose another name, or remove it first.';
+            $problems['exists'] = ezpI18n::tr( 'kernel/setup/rad', 'extension/%name already exists. Choose another name, or remove it first.', null, array( '%name' => $settings['name'] ) );
 
         if ( $settings['parts']['siteaccess'] && $settings['siteaccess'] === '' )
-            $problems[] = 'Siteaccess settings were asked for, but no siteaccess was named.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Siteaccess settings were asked for, but no siteaccess was named.' );
 
         return $problems;
     }

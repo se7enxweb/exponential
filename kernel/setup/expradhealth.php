@@ -103,7 +103,11 @@ class expRADHealth
      */
     protected static function finding( $severity, $check, $what, $where, $means, $fix = array() )
     {
+        // 'check' stays the English name: the key of a kind of finding is made
+        // from it, and a link to one kind must not change with the language.
+        // 'label' is what the page shows.
         return array( 'severity' => $severity, 'check' => $check,
+                      'label' => self::checkLabel( $check ),
                       'what' => $what, 'where' => $where,
                       'means' => $means,
                       // What to actually do, as steps. Reporting a fault and
@@ -125,6 +129,63 @@ class expRADHealth
     }
 
     /**
+     * The name of a kind of finding in the current language.
+     *
+     * Built on every call rather than kept in a static, so a process that
+     * serves requests in several languages gives each its own.
+     *
+     * @param string $check the English name finding() is given
+     * @return string
+     */
+    public static function checkLabel( $check )
+    {
+        $labels = array(
+            'Setting names no class'                     => ezpI18n::tr( 'kernel/setup/rad', 'Setting names no class' ),
+            'Extension switched on and not there'        => ezpI18n::tr( 'kernel/setup/rad', 'Extension switched on and not there' ),
+            'Design extension with no design'            => ezpI18n::tr( 'kernel/setup/rad', 'Design extension with no design' ),
+            'Translation extension with no translations' => ezpI18n::tr( 'kernel/setup/rad', 'Translation extension with no translations' ),
+            'Module listed and not found'                => ezpI18n::tr( 'kernel/setup/rad', 'Module listed and not found' ),
+            'View with no script'                        => ezpI18n::tr( 'kernel/setup/rad', 'View with no script' ),
+            'Datatype offered and not found'             => ezpI18n::tr( 'kernel/setup/rad', 'Datatype offered and not found' ),
+            'Directory searched and not there'           => ezpI18n::tr( 'kernel/setup/rad', 'Directory searched and not there' ),
+            'Icon theme not found'                       => ezpI18n::tr( 'kernel/setup/rad', 'Icon theme not found' ),
+            'Override with no template'                  => ezpI18n::tr( 'kernel/setup/rad', 'Override with no template' ),
+            'Kernel override of nothing'                 => ezpI18n::tr( 'kernel/setup/rad', 'Kernel override of nothing' ),
+            'Nothing implements it'                      => ezpI18n::tr( 'kernel/setup/rad', 'Nothing implements it' ),
+            'Class php refuses to load'                  => ezpI18n::tr( 'kernel/setup/rad', 'Class php refuses to load' ) );
+
+        return isset( $labels[$check] ) ? $labels[$check] : $check;
+    }
+
+    /**
+     * The kind of a class loader fault in the current language.
+     *
+     * The class loader check is shared with the command line and says what
+     * kind of fault it found in English; this is where the page translates it.
+     *
+     * @param string $kind as eZCheckClasses::kindOf gives it
+     * @return string
+     */
+    public static function loaderKindLabel( $kind )
+    {
+        $labels = array(
+            'Incompatible declaration: this class has to be changed.'
+                => ezpI18n::tr( 'kernel/setup/rad', 'Incompatible declaration: this class has to be changed.' ),
+            'A parent or interface is missing: usually an extension that needs another one.'
+                => ezpI18n::tr( 'kernel/setup/rad', 'A parent or interface is missing: usually an extension that needs another one.' ),
+            'Called statically at load time and not declared static: a php 8 incompatibility.'
+                => ezpI18n::tr( 'kernel/setup/rad', 'Called statically at load time and not declared static: a php 8 incompatibility.' ),
+            'Declared twice: two files claim the same name, or one is included by hand as well as autoloaded.'
+                => ezpI18n::tr( 'kernel/setup/rad', 'Declared twice: two files claim the same name, or one is included by hand as well as autoloaded.' ),
+            'php refused it and said nothing this script could read.'
+                => ezpI18n::tr( 'kernel/setup/rad', 'php refused it and said nothing this script could read.' ),
+            'php refused it.'
+                => ezpI18n::tr( 'kernel/setup/rad', 'php refused it.' ) );
+
+        return isset( $labels[$kind] ) ? $labels[$kind] : $kind;
+    }
+
+    /**
      * Every kind of finding there is, whether or not any were found.
      *
      * The page links to these by key, so it needs to know the kinds without
@@ -140,6 +201,7 @@ class expRADHealth
             if ( !isset( $kinds[$finding['key']] ) )
                 $kinds[$finding['key']] = array( 'key' => $finding['key'],
                                                  'check' => $finding['check'],
+                                                 'label' => $finding['label'],
                                                  'severity' => $finding['severity'],
                                                  'count' => 0 );
 
@@ -168,11 +230,11 @@ class expRADHealth
             $findings[] = self::finding( self::ODD, 'Setting names no class',
                 $setting['value'],
                 $setting['ini'] . ' [' . $setting['section'] . '] ' . $setting['variable'],
-                'Nothing on this installation declares a class of that name, and the value has a capital in it so it is shaped like one rather than like an alias.',
-                array( 'Check first whether the setting takes an alias. Several do, and an alias that happens to be capitalised is not a fault - eZECB is the alias for eZECBHandler and is perfectly correct.',
-                       'If it is meant to be a class, find out whether the extension that declares it is installed and in ActiveExtensions[].',
-                       'If it is installed, the autoload map may be stale: php bin/php/ezpgenerateautoloads.php',
-                       'If the class was renamed, change the setting to the new name. Nothing else will, and the handler is silently not running in the meantime.' ) );
+                ezpI18n::tr( 'kernel/setup/rad', 'Nothing on this installation declares a class of that name, and the value has a capital in it so it is shaped like one rather than like an alias.' ),
+                array( ezpI18n::tr( 'kernel/setup/rad', 'Check first whether the setting takes an alias. Several do, and an alias that happens to be capitalised is not a fault - eZECB is the alias for eZECBHandler and is perfectly correct.' ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'If it is meant to be a class, find out whether the extension that declares it is installed and in ActiveExtensions[].' ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'If it is installed, the autoload map may be stale: php bin/php/ezpgenerateautoloads.php' ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'If the class was renamed, change the setting to the new name. Nothing else will, and the handler is silently not running in the meantime.' ) ) );
         }
 
         return $findings;
@@ -194,11 +256,11 @@ class expRADHealth
                     $findings[] = self::finding( self::BROKEN, 'Extension switched on and not there',
                         $name,
                         'site.ini [ExtensionSettings] ' . $variable . '[]',
-                        'Nothing in it can load, and the kernel reports it on every single request.',
-                        array( 'If it should be there: composer require it, or put the directory in extension/ - and remember an extension can live in any root named by AdditionalExtensionDirectories[].',
-                               'Then regenerate the autoloads: php bin/php/ezpgenerateautoloads.php',
-                               'If it should not be there: take the line out of site.ini. A name left behind after an extension is removed costs a failed lookup on every request for ever.',
-                               'Clear the caches either way: php bin/php/ezcache.php --clear-all' ) );
+                        ezpI18n::tr( 'kernel/setup/rad', 'Nothing in it can load, and the kernel reports it on every single request.' ),
+                        array( ezpI18n::tr( 'kernel/setup/rad', 'If it should be there: composer require it, or put the directory in extension/ - and remember an extension can live in any root named by AdditionalExtensionDirectories[].' ),
+                               ezpI18n::tr( 'kernel/setup/rad', 'Then regenerate the autoloads: php bin/php/ezpgenerateautoloads.php' ),
+                               ezpI18n::tr( 'kernel/setup/rad', 'If it should not be there: take the line out of site.ini. A name left behind after an extension is removed costs a failed lookup on every request for ever.' ),
+                               ezpI18n::tr( 'kernel/setup/rad', 'Clear the caches either way: php bin/php/ezcache.php --clear-all' ) ) );
 
         return $findings;
     }
@@ -223,13 +285,13 @@ class expRADHealth
                 $name,
                 'design.ini [ExtensionSettings] DesignExtensions[]',
                 $path === false
-                ? 'The extension is not on disk at all, so nothing it might have contained is in the design chain.'
-                : 'There is no ' . $name . '/design directory, so listing it adds nothing to the design chain and a template somebody expects to be found is not.',
+                ? ezpI18n::tr( 'kernel/setup/rad', 'The extension is not on disk at all, so nothing it might have contained is in the design chain.' )
+                : ezpI18n::tr( 'kernel/setup/rad', 'There is no %name/design directory, so listing it adds nothing to the design chain and a template somebody expects to be found is not.', null, array( '%name' => $name ) ),
                 $path === false
-                ? array( 'Install the extension, or take the line out of design.ini.' )
-                : array( 'If the extension is supposed to carry templates, the directory has to be extension/' . $name . '/design/<designname>/templates/ - the design name in the middle is the part that is usually missed.',
-                         'If it carries no templates, take the line out of design.ini: it costs a directory lookup per design resolution and buys nothing.',
-                         'Clear the template caches after either: php bin/php/ezcache.php --clear-tag=template' ) );
+                ? array( ezpI18n::tr( 'kernel/setup/rad', 'Install the extension, or take the line out of design.ini.' ) )
+                : array( ezpI18n::tr( 'kernel/setup/rad', 'If the extension is supposed to carry templates, the directory has to be extension/%name/design/<designname>/templates/ - the design name in the middle is the part that is usually missed.', null, array( '%name' => $name ) ),
+                         ezpI18n::tr( 'kernel/setup/rad', 'If it carries no templates, take the line out of design.ini: it costs a directory lookup per design resolution and buys nothing.' ),
+                         ezpI18n::tr( 'kernel/setup/rad', 'Clear the template caches after either: php bin/php/ezcache.php --clear-tag=template' ) ) );
         }
 
         return $findings;
@@ -254,10 +316,10 @@ class expRADHealth
             $findings[] = self::finding( self::ODD, 'Translation extension with no translations',
                 $name,
                 'site.ini [RegionalSettings] TranslationExtensions[]',
-                'There is no translations directory in it, so every string falls back to the source language and nothing says why.',
-                array( 'The layout has to be extension/' . $name . '/translations/<locale>/translation.ts, with the locale in the shape eng-GB.',
-                       'A locale nothing is set to is read by nobody: check site.ini [RegionalSettings] Locale on the siteaccess that should use it.',
-                       'Clear the caches: php bin/php/ezcache.php --clear-all' ) );
+                ezpI18n::tr( 'kernel/setup/rad', 'There is no translations directory in it, so every string falls back to the source language and nothing says why.' ),
+                array( ezpI18n::tr( 'kernel/setup/rad', 'The layout has to be extension/%name/translations/<locale>/translation.ts, with the locale in the shape eng-GB.', null, array( '%name' => $name ) ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'A locale nothing is set to is read by nobody: check site.ini [RegionalSettings] Locale on the siteaccess that should use it.' ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'Clear the caches: php bin/php/ezcache.php --clear-all' ) ) );
         }
 
         return $findings;
@@ -282,11 +344,11 @@ class expRADHealth
                 $findings[] = self::finding( self::BROKEN, 'Module listed and not found',
                     $name,
                     'module.ini [ModuleSettings] ModuleList[]',
-                    'Every address beginning /' . $name . '/ answers with a module not found error.',
-                    array( 'Both lines are needed. ExtensionRepositories[] says which extension to look in and ModuleList[] says what to look for; with only the second the kernel looks in the kernel and reports it missing, which is this.',
-                           'Check the module directory really is extension/<name>/modules/' . $name . '/module.php - the modules/ in the middle is not optional.',
-                           'If the module was removed, take it out of ModuleList[] as well.',
-                           'Clear the caches: php bin/php/ezcache.php --clear-all' ) );
+                    ezpI18n::tr( 'kernel/setup/rad', 'Every address beginning /%name/ answers with a module not found error.', null, array( '%name' => $name ) ),
+                    array( ezpI18n::tr( 'kernel/setup/rad', 'Both lines are needed. ExtensionRepositories[] says which extension to look in and ModuleList[] says what to look for; with only the second the kernel looks in the kernel and reports it missing, which is this.' ),
+                           ezpI18n::tr( 'kernel/setup/rad', 'Check the module directory really is extension/<name>/modules/%name/module.php - the modules/ in the middle is not optional.', null, array( '%name' => $name ) ),
+                           ezpI18n::tr( 'kernel/setup/rad', 'If the module was removed, take it out of ModuleList[] as well.' ),
+                           ezpI18n::tr( 'kernel/setup/rad', 'Clear the caches: php bin/php/ezcache.php --clear-all' ) ) );
 
         return $findings;
     }
@@ -309,10 +371,10 @@ class expRADHealth
                 $findings[] = self::finding( self::BROKEN, 'View with no script',
                     $module['name'] . '/' . $view['name'],
                     $module['path'] . '/' . $view['script'],
-                    'The module declares the view and the file it names is not there, so the address exists and answers with a blank page rather than a not found.',
-                    array( 'Either write the script at that exact path, or take the view out of $ViewList in ' . $module['path'] . '/module.php.',
-                           'A view left in the list after its script is gone is worse than one that was never declared: it is reachable, it is in the policy list a role can grant, and it does nothing.',
-                           'Clear the caches: php bin/php/ezcache.php --clear-all' ) );
+                    ezpI18n::tr( 'kernel/setup/rad', 'The module declares the view and the file it names is not there, so the address exists and answers with a blank page rather than a not found.' ),
+                    array( ezpI18n::tr( 'kernel/setup/rad', 'Either write the script at that exact path, or take the view out of $ViewList in %path/module.php.', null, array( '%path' => $module['path'] ) ),
+                           ezpI18n::tr( 'kernel/setup/rad', 'A view left in the list after its script is gone is worse than one that was never declared: it is reachable, it is in the policy list a role can grant, and it does nothing.' ),
+                           ezpI18n::tr( 'kernel/setup/rad', 'Clear the caches: php bin/php/ezcache.php --clear-all' ) ) );
             }
 
         return $findings;
@@ -347,11 +409,11 @@ class expRADHealth
             $findings[] = self::finding( self::BROKEN, 'Datatype offered and not found',
                 $type,
                 'content.ini [DataTypeSettings] AvailableDataTypes[]',
-                'It is offered in the class editor and there is no ' . $type . '/' . $type . 'type.php in any directory searched. An attribute of this type cannot be added, and any existing attribute of it holds a value nothing can read.',
-                array( 'Check the extension carrying it is installed and named in content.ini [DataTypeSettings] ExtensionDirectories[] - the datatype is looked for at <extension>/datatypes/' . $type . '/' . $type . 'type.php and nowhere else.',
-                       'The three names have to agree exactly: the value here, the directory, and the file inside it.',
-                       'Before removing it from AvailableDataTypes[], check whether any content class still uses it. Content with an attribute of a datatype that is gone cannot be edited, and the values are unreadable rather than merely hidden.',
-                       'Clear the caches: php bin/php/ezcache.php --clear-all' ) );
+                ezpI18n::tr( 'kernel/setup/rad', 'It is offered in the class editor and there is no %type/%typetype.php in any directory searched. An attribute of this type cannot be added, and any existing attribute of it holds a value nothing can read.', null, array( '%type' => $type ) ),
+                array( ezpI18n::tr( 'kernel/setup/rad', 'Check the extension carrying it is installed and named in content.ini [DataTypeSettings] ExtensionDirectories[] - the datatype is looked for at <extension>/datatypes/%type/%typetype.php and nowhere else.', null, array( '%type' => $type ) ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'The three names have to agree exactly: the value here, the directory, and the file inside it.' ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'Before removing it from AvailableDataTypes[], check whether any content class still uses it. Content with an attribute of a datatype that is gone cannot be edited, and the values are unreadable rather than merely hidden.' ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'Clear the caches: php bin/php/ezcache.php --clear-all' ) ) );
         }
 
         return $findings;
@@ -381,11 +443,11 @@ class expRADHealth
                 $findings[] = self::finding( self::ODD, 'Directory searched and not there',
                     $value,
                     $entry['ini'] . ' [' . $entry['section'] . '] ' . $entry['variable'],
-                    'Searching it costs a directory lookup and finds nothing. Usually left over from a version that had it.',
-                    array( 'The path is read relative to the installation root, so it wants to be ' . $value . ' from ' . getcwd() . ' - not from wherever the setting file is.',
-                           'If the directory should exist, create it, or correct the value of ' . $entry['variable'] . ' in ' . $entry['ini'] . ' [' . $entry['section'] . '].',
-                           'If it should not, take that line out of ' . $entry['ini'] . '. This is the least urgent finding here: nothing is broken, there is simply a lookup on every resolution that can never succeed.',
-                           'Clear the caches after either: php bin/php/ezcache.php --clear-all' ) );
+                    ezpI18n::tr( 'kernel/setup/rad', 'Searching it costs a directory lookup and finds nothing. Usually left over from a version that had it.' ),
+                    array( ezpI18n::tr( 'kernel/setup/rad', 'The path is read relative to the installation root, so it wants to be %path from %root - not from wherever the setting file is.', null, array( '%path' => $value, '%root' => getcwd() ) ),
+                           ezpI18n::tr( 'kernel/setup/rad', 'If the directory should exist, create it, or correct the value of %variable in %ini [%section].', null, array( '%variable' => $entry['variable'], '%ini' => $entry['ini'], '%section' => $entry['section'] ) ),
+                           ezpI18n::tr( 'kernel/setup/rad', 'If it should not, take that line out of %ini. This is the least urgent finding here: nothing is broken, there is simply a lookup on every resolution that can never succeed.', null, array( '%ini' => $entry['ini'] ) ),
+                           ezpI18n::tr( 'kernel/setup/rad', 'Clear the caches after either: php bin/php/ezcache.php --clear-all' ) ) );
             }
         }
 
@@ -430,10 +492,10 @@ class expRADHealth
             $findings[] = self::finding( self::ODD, 'Icon theme not found',
                 $theme,
                 'icon.ini [IconSettings]',
-                'Not in share/icons and not in any extension listed in IconExtensions[], so every icon asked of this theme falls through to the standard one or draws the default.',
-                array( 'A theme in an extension needs both halves: the directory at extension/<name>/icons/' . $theme . '/, and the extension named in icon.ini [ExtensionSettings] IconExtensions[].',
-                       'The directory is only a theme if it has an icon.ini of its own naming its sizes. Without that the sizes are never looked in.',
-                       'If the theme has gone, take it out of Theme, StandardTheme or AdditionalThemeList[] rather than leaving it to fall through.' ) );
+                ezpI18n::tr( 'kernel/setup/rad', 'Not in share/icons and not in any extension listed in IconExtensions[], so every icon asked of this theme falls through to the standard one or draws the default.' ),
+                array( ezpI18n::tr( 'kernel/setup/rad', 'A theme in an extension needs both halves: the directory at extension/<name>/icons/%theme/, and the extension named in icon.ini [ExtensionSettings] IconExtensions[].', null, array( '%theme' => $theme ) ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'The directory is only a theme if it has an icon.ini of its own naming its sizes. Without that the sizes are never looked in.' ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'If the theme has gone, take it out of Theme, StandardTheme or AdditionalThemeList[] rather than leaving it to fall through.' ) ) );
         }
 
         return $findings;
@@ -460,13 +522,15 @@ class expRADHealth
                     continue 2;
 
             $findings[] = self::finding( self::BROKEN, 'Override with no template',
-                $override['name'] . ' \xe2\x86\x92 ' . $override['match'],
+                // A real arrow: in single quotes the escape was printed as
+                // the eight characters \xe2\x86\x92.
+                $override['name'] . " \xe2\x86\x92 " . $override['match'],
                 $override['from'],
-                'The override matches and then finds nothing to draw with, so whatever it was meant to replace is drawn by the default instead and nothing reports it.',
-                array( 'The template goes under the design, at <design>/override/templates/' . $override['match'] . ' - the override/templates/ in the middle is what is usually missed.',
-                       'The design carrying it has to be in the design chain: design.ini [ExtensionSettings] DesignExtensions[] for an extension, or SiteDesign for the siteaccess.',
-                       'If the override is no longer wanted, remove its whole block from ' . $override['from'] . ' rather than only the MatchFile line.',
-                       'Clear the template caches: php bin/php/ezcache.php --clear-tag=template' ) );
+                ezpI18n::tr( 'kernel/setup/rad', 'The override matches and then finds nothing to draw with, so whatever it was meant to replace is drawn by the default instead and nothing reports it.' ),
+                array( ezpI18n::tr( 'kernel/setup/rad', 'The template goes under the design, at <design>/override/templates/%match - the override/templates/ in the middle is what is usually missed.', null, array( '%match' => $override['match'] ) ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'The design carrying it has to be in the design chain: design.ini [ExtensionSettings] DesignExtensions[] for an extension, or SiteDesign for the siteaccess.' ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'If the override is no longer wanted, remove its whole block from %file rather than only the MatchFile line.', null, array( '%file' => $override['from'] ) ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'Clear the template caches: php bin/php/ezcache.php --clear-tag=template' ) ) );
         }
 
         return $findings;
@@ -489,10 +553,10 @@ class expRADHealth
             $findings[] = self::finding( self::ODD, 'Kernel override of nothing',
                 $entry['class'],
                 $entry['path'],
-                'It is in the override autoload map and the kernel has no class of that name, so it overrides nothing and is simply an ordinary class loaded by an unusual route.',
-                array( 'If the kernel class was renamed, this override is now doing nothing and whatever it was working around is back. Find the new name and decide whether the override is still needed.',
-                       'If it was never meant to override anything, move it to the extension\'s ordinary classes/ directory and regenerate: php bin/php/ezpgenerateautoloads.php',
-                       'Setup, RAD tools, Kernel override wizard writes these with a drift check that would have caught this at the upgrade that caused it.' ) );
+                ezpI18n::tr( 'kernel/setup/rad', 'It is in the override autoload map and the kernel has no class of that name, so it overrides nothing and is simply an ordinary class loaded by an unusual route.' ),
+                array( ezpI18n::tr( 'kernel/setup/rad', 'If the kernel class was renamed, this override is now doing nothing and whatever it was working around is back. Find the new name and decide whether the override is still needed.' ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'If it was never meant to override anything, move it to the extension\'s ordinary classes/ directory and regenerate: php bin/php/ezpgenerateautoloads.php' ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'Setup, RAD tools, Kernel override wizard writes these with a drift check that would have caught this at the upgrade that caused it.' ) ) );
         }
 
         return $findings;
@@ -516,11 +580,11 @@ class expRADHealth
                 continue;
 
             $findings[] = self::finding( self::NOTE, 'Nothing implements it',
-                $contract['name'] . ' (' . $contract['methods'] . ' methods)',
+                ezpI18n::tr( 'kernel/setup/rad', '%name (%count methods)', null, array( '%name' => $contract['name'], '%count' => $contract['methods'] ) ),
                 $contract['source'],
-                'An extension point nobody here has taken up. Nothing is wrong with it; it is simply unused.',
-                array( 'Nothing to do. It is listed so that the page is a complete picture rather than only a list of faults.',
-                       'If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.' ) );
+                ezpI18n::tr( 'kernel/setup/rad', 'An extension point nobody here has taken up. Nothing is wrong with it; it is simply unused.' ),
+                array( ezpI18n::tr( 'kernel/setup/rad', 'Nothing to do. It is listed so that the page is a complete picture rather than only a list of faults.' ),
+                       ezpI18n::tr( 'kernel/setup/rad', 'If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.' ) ) );
         }
 
         return $findings;
@@ -550,13 +614,13 @@ class expRADHealth
 
         if ( !is_file( $library ) )
             return array( 'ran' => false, 'checked' => 0, 'findings' => array(),
-                          'message' => 'The class loader check is not installed.' );
+                          'message' => ezpI18n::tr( 'kernel/setup/rad', 'The class loader check is not installed.' ) );
 
         require_once $library;
 
         if ( !is_file( eZCheckClasses::COMMAND ) )
             return array( 'ran' => false, 'checked' => 0, 'findings' => array(),
-                          'message' => eZCheckClasses::COMMAND . ' is not there, and it is both the command and the child process.' );
+                          'message' => ezpI18n::tr( 'kernel/setup/rad', '%command is not there, and it is both the command and the child process.', null, array( '%command' => eZCheckClasses::COMMAND ) ) );
 
         $classes = eZCheckClasses::classNames( false, $withTests );
         $found   = eZCheckClasses::check( $classes );
@@ -569,7 +633,8 @@ class expRADHealth
 
             $findings[] = self::finding( self::BROKEN, 'Class php refuses to load',
                 $class, self::fileOf( $class ),
-                $reason['kind'] . ' ' . $reason['message'],
+                // php's own message stays as php wrote it.
+                self::loaderKindLabel( $reason['kind'] ) . ' ' . $reason['message'],
                 self::howToFix( $reason ) );
         }
 
@@ -593,35 +658,35 @@ class expRADHealth
 
         if ( strpos( $message, 'must be compatible with' ) !== false )
             return array(
-                'The class declares a method whose signature does not match the one it inherits, and php 8 refuses the whole class for it. This is a fault in the class, not in the configuration.',
-                'php names both signatures in the message above. Usually the difference is an argument that gained a default, a type, or an & - and the fix is to make the child match the parent exactly.',
-                'Check the parent is the one intended before changing signatures. A class extending the wrong base is the commoner cause, and matching signatures to a base it should not have had makes it harder to see.',
-                'The class is in an extension, so the fix belongs upstream: patch it there, release it, and move the constraint in composer.json rather than editing vendor code in place.' );
+                ezpI18n::tr( 'kernel/setup/rad', 'The class declares a method whose signature does not match the one it inherits, and php 8 refuses the whole class for it. This is a fault in the class, not in the configuration.' ),
+                ezpI18n::tr( 'kernel/setup/rad', 'php names both signatures in the message above. Usually the difference is an argument that gained a default, a type, or an & - and the fix is to make the child match the parent exactly.' ),
+                ezpI18n::tr( 'kernel/setup/rad', 'Check the parent is the one intended before changing signatures. A class extending the wrong base is the commoner cause, and matching signatures to a base it should not have had makes it harder to see.' ),
+                ezpI18n::tr( 'kernel/setup/rad', 'The class is in an extension, so the fix belongs upstream: patch it there, release it, and move the constraint in composer.json rather than editing vendor code in place.' ) );
 
         if ( preg_match( '/Class ["\']?([^"\' ]+)["\']? not found/', $message, $found ) )
             return array(
-                'It extends or implements ' . $found[1] . ', and nothing on this installation declares that.',
-                'Usually an extension that needs another one. Find what provides ' . $found[1] . ' and install it, or switch this extension off if it is not wanted.',
-                'If it is installed, the autoload map is stale: php bin/php/ezpgenerateautoloads.php',
-                'Until then every request that touches this class ends - not a wrong page, no page.' );
+                ezpI18n::tr( 'kernel/setup/rad', 'It extends or implements %class, and nothing on this installation declares that.', null, array( '%class' => $found[1] ) ),
+                ezpI18n::tr( 'kernel/setup/rad', 'Usually an extension that needs another one. Find what provides %class and install it, or switch this extension off if it is not wanted.', null, array( '%class' => $found[1] ) ),
+                ezpI18n::tr( 'kernel/setup/rad', 'If it is installed, the autoload map is stale: php bin/php/ezpgenerateautoloads.php' ),
+                ezpI18n::tr( 'kernel/setup/rad', 'Until then every request that touches this class ends - not a wrong page, no page.' ) );
 
         if ( strpos( $message, 'cannot be called statically' ) !== false )
             return array(
-                'Something is called statically at load time and is not declared static. php 7 allowed this and php 8 does not.',
-                'Declare the method static where it is defined, if every caller is static - that is almost always the case for a method called from the foot of a file at include time.',
-                'This is the fault that stopped every payment gateway on this installation loading, and the fix was one keyword in the kernel.',
-                'If some callers use an instance, the method has to stay as it is and the static calls have to change instead.' );
+                ezpI18n::tr( 'kernel/setup/rad', 'Something is called statically at load time and is not declared static. php 7 allowed this and php 8 does not.' ),
+                ezpI18n::tr( 'kernel/setup/rad', 'Declare the method static where it is defined, if every caller is static - that is almost always the case for a method called from the foot of a file at include time.' ),
+                ezpI18n::tr( 'kernel/setup/rad', 'This is the fault that stopped every payment gateway on this installation loading, and the fix was one keyword in the kernel.' ),
+                ezpI18n::tr( 'kernel/setup/rad', 'If some callers use an instance, the method has to stay as it is and the static calls have to change instead.' ) );
 
         if ( strpos( $message, 'Cannot redeclare' ) !== false )
             return array(
-                'Two files declare the same name, and both are reached.',
-                'Usually a file that is include_once-d by hand as well as being in the autoload map. Take the manual include out and let the autoloader do it.',
-                'It can also be two extensions shipping the same class name, in which case one of them has to be renamed - there is no way for both to work.' );
+                ezpI18n::tr( 'kernel/setup/rad', 'Two files declare the same name, and both are reached.' ),
+                ezpI18n::tr( 'kernel/setup/rad', 'Usually a file that is include_once-d by hand as well as being in the autoload map. Take the manual include out and let the autoloader do it.' ),
+                ezpI18n::tr( 'kernel/setup/rad', 'It can also be two extensions shipping the same class name, in which case one of them has to be renamed - there is no way for both to work.' ) );
 
         return array(
-            'php refused the class and the message above is what it said.',
-            'Run it on its own to see the whole thing: php bin/php/checkclasses.php',
-            'Whatever it is, the class ends any request that touches it, so it is worth chasing even if nothing appears to use it.' );
+            ezpI18n::tr( 'kernel/setup/rad', 'php refused the class and the message above is what it said.' ),
+            ezpI18n::tr( 'kernel/setup/rad', 'Run it on its own to see the whole thing: php bin/php/checkclasses.php' ),
+            ezpI18n::tr( 'kernel/setup/rad', 'Whatever it is, the class ends any request that touches it, so it is worth chasing even if nothing appears to use it.' ) );
     }
 
     // ── Odds and ends ────────────────────────────────────────────────────────
@@ -677,7 +742,7 @@ class expRADHealth
     {
         $path = expRADSurvey::fileOf( $class );
 
-        return $path !== '' ? $path : '(nothing declares it)';
+        return $path !== '' ? expRADSurvey::sourceLabel( $path ) : ezpI18n::tr( 'kernel/setup/rad', '(nothing declares it)' );
     }
 }
 }

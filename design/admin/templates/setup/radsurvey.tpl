@@ -140,7 +140,7 @@
     </a>
 {foreach $survey_health_kinds as $sv_kind}
     <a class="sv-kind is-{$sv_kind.severity|wash}{if eq( $survey_kind, $sv_kind.key )} is-current{/if}" href={$sv_kind.url|ezurl}>
-        <b>{$sv_kind.count}</b> <span>{$sv_kind.check|i18n( 'design/admin/setup/rad/survey' )|wash}</span>
+        <b>{$sv_kind.count}</b> <span>{$sv_kind.label|wash}</span>
     </a>
 {/foreach}
 </div>
@@ -190,7 +190,7 @@
         <div class="sv-fix">
             <span class="sv-fix-head">{'How to fix it'|i18n( 'design/admin/setup/rad/survey' )}</span>
             <ol>
-            {foreach $sv_row.fix as $sv_step}<li>{$sv_step|i18n( 'design/admin/setup/rad/survey' )|wash}</li>{/foreach}
+            {foreach $sv_row.fix as $sv_step}<li>{$sv_step|wash}</li>{/foreach}
             </ol>
         </div>
     {/if}

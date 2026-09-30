@@ -664,33 +664,33 @@ class expDatatypeWizard extends expExtensionWizard
         $problems = array();
 
         if ( $settings['name'] === '' )
-            $problems[] = 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.' );
 
         if ( $settings['name'] !== '' && is_dir( self::extensionPath( $settings['name'] ) ) )
-            $problems[] = 'extension/' . $settings['name'] . ' already exists. Choose another name, or remove it first.';
+            $problems['exists'] = ezpI18n::tr( 'kernel/setup/rad', 'extension/%name already exists. Choose another name, or remove it first.', null, array( '%name' => $settings['name'] ) );
 
         if ( $settings['type'] === '' )
-            $problems[] = 'The datatype needs an identifier: lower case letters and digits, three to forty one characters, starting with a letter. This is what goes in the database against every attribute of this type and cannot be changed afterwards.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The datatype needs an identifier: lower case letters and digits, three to forty one characters, starting with a letter. This is what goes in the database against every attribute of this type and cannot be changed afterwards.' );
 
         if ( $settings['class'] === '' )
-            $problems[] = 'The class needs a name: letters and digits, starting with a letter.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The class needs a name: letters and digits, starting with a letter.' );
 
         if ( $settings['class'] !== '' && class_exists( $settings['class'] ) )
-            $problems[] = 'A class called ' . $settings['class'] . ' already exists on this installation. Choose another name.';
+            $problems['exists_class'] = ezpI18n::tr( 'kernel/setup/rad', 'A class called %class already exists on this installation. Choose another name.', null, array( '%class' => $settings['class'] ) );
 
         // A datatype string that is already taken would be shadowed by whichever
         // of the two the kernel happened to load first.
         if ( $settings['type'] !== '' && in_array( $settings['type'], self::existingTypes(), true ) )
-            $problems[] = 'A datatype called ' . $settings['type'] . ' is already installed. Two datatypes with the same identifier cannot both work; choose another.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'A datatype called %type is already installed. Two datatypes with the same identifier cannot both work; choose another.', null, array( '%type' => $settings['type'] ) );
 
         if ( !in_array( true, $settings['storage'], true ) )
-            $problems[] = 'Choose at least one column for the value to live in, or the attribute has nowhere to store anything.';
+            $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Choose at least one column for the value to live in, or the attribute has nowhere to store anything.' );
 
         if ( $settings['capabilities']['sorting'] )
         {
             $needed = $settings['storage']['sort_key_string'] || $settings['storage']['sort_key_int'];
             if ( !$needed )
-                $problems[] = 'Sorting needs sort_key_string or sort_key_int as well: the sort key is written to one of those columns and nowhere else.';
+                $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Sorting needs sort_key_string or sort_key_int as well: the sort key is written to one of those columns and nowhere else.' );
         }
 
         return $problems;

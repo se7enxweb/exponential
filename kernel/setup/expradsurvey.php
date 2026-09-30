@@ -403,6 +403,24 @@ class expRADSurvey
     protected static $Classes = null;
 
     /**
+     * A source as fileOf() gives it, ready to show.
+     *
+     * fileOf() answers in English because its answer is kept in the survey,
+     * which lives as long as the process does and may serve several
+     * languages; the one marker that is words rather than a path is
+     * translated here, when it is shown.
+     *
+     * @param string $source
+     * @return string
+     */
+    public static function sourceLabel( $source )
+    {
+        return $source === '(declared at runtime)'
+               ? ezpI18n::tr( 'kernel/setup/rad', '(declared at runtime)' )
+               : (string) $source;
+    }
+
+    /**
      * Where a class is declared, relative to the installation.
      *
      * Read out of the autoload maps rather than by asking php. class_exists()

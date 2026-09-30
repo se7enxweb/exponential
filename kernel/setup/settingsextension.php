@@ -97,6 +97,12 @@ foreach ( expSettingsExtensionWizard::events() as $event => $about )
 {
     $group = strtok( $event, '/' );
 
+    // An event nobody has described says where it is announced; 'what' stays
+    // English for the generated files, the page gets it translated.
+    if ( !$about['described'] )
+        $about['what'] = ezpI18n::tr( 'kernel/setup/rad', 'Announced in %where. Read the call to see what it is handed.', null,
+                                      array( '%where' => $about['announced'] ) );
+
     $events[$group][] = array_merge( $about, array(
         'event'  => $event,
         'method' => expSettingsExtensionWizard::methodFor( $event ),
