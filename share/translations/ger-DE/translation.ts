@@ -9811,6 +9811,90 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>stored as %licence</source>
         <translation>gespeichert als %licence</translation>
     </message>
+    <message>
+        <source>%count item(s) left out by you.</source>
+        <translation>%count Eintrag/Einträge von Ihnen ausgelassen.</translation>
+    </message>
+    <message>
+        <source>Import %name</source>
+        <translation>%name importieren</translation>
+    </message>
+    <message>
+        <source>Import the ticked items</source>
+        <translation>Die angehakten Einträge importieren</translation>
+    </message>
+    <message>
+        <source>New translation</source>
+        <translation>Neue Übersetzung</translation>
+    </message>
+    <message>
+        <source>The installer wrote some values twice; nothing was imported.</source>
+        <translation>Die Installation hat einige Werte doppelt geschrieben; es wurde nichts importiert.</translation>
+    </message>
+    <message>
+        <source>The language %language is added to the site's languages.</source>
+        <translation>Die Sprache %language wird zu den Sprachen der Site hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>The main language stays %site, as on the site (the package's is %package).</source>
+        <translation>Die Hauptsprache bleibt %site, wie auf der Site (die des Pakets ist %package).</translation>
+    </message>
+    <message>
+        <source>The object has no values on the site to build a new version from.</source>
+        <translation>Das Objekt hat auf der Site keine Werte, aus denen eine neue Version entstehen kann.</translation>
+    </message>
+    <message>
+        <source>The object is gone after the import.</source>
+        <translation>Das Objekt ist nach dem Import nicht mehr vorhanden.</translation>
+    </message>
+    <message>
+        <source>The object is no longer on the site; compare again.</source>
+        <translation>Das Objekt ist nicht mehr auf der Site; vergleichen Sie erneut.</translation>
+    </message>
+    <message>
+        <source>The object is not published on the site (it is in the trash or a draft); restore it first.</source>
+        <translation>Das Objekt ist auf der Site nicht veröffentlicht (es liegt im Papierkorb oder ist ein Entwurf); stellen Sie es zuerst wieder her.</translation>
+    </message>
+    <message>
+        <source>The object stays always available, as on the site (the package has it otherwise).</source>
+        <translation>Das Objekt bleibt immer verfügbar, wie auf der Site (im Paket ist es anders).</translation>
+    </message>
+    <message>
+        <source>The object stays not always available, as on the site (the package has it otherwise).</source>
+        <translation>Das Objekt bleibt nicht immer verfügbar, wie auf der Site (im Paket ist es anders).</translation>
+    </message>
+    <message>
+        <source>The object's language list lacks %languages, although it has values in it; the import corrects the list, so those values are kept.</source>
+        <translation>In der Sprachliste des Objekts fehlt %languages, obwohl es Werte darin hat; der Import berichtigt die Liste, damit diese Werte erhalten bleiben.</translation>
+    </message>
+    <message>
+        <source>The site has this object as a %site object, the package as a %package object; an import would change its class.</source>
+        <translation>Die Site führt dieses Objekt als %site-Objekt, das Paket als %package-Objekt; ein Import würde seine Klasse ändern.</translation>
+    </message>
+    <message>
+        <source>The translations %languages could not be kept; nothing was imported.</source>
+        <translation>Die Übersetzungen %languages konnten nicht erhalten werden; es wurde nichts importiert.</translation>
+    </message>
+    <message>
+        <source>Untick an item to leave it out, or open its values to keep single ones as the site has them.</source>
+        <translation>Wählen Sie einen Eintrag ab, um ihn auszulassen, oder öffnen Sie seine Werte, um einzelne so zu behalten, wie die Site sie hat.</translation>
+    </message>
+    <message>
+        <source>Untick to leave this item out</source>
+        <translation>Abwählen, um diesen Eintrag auszulassen</translation>
+    </message>
+    <message>
+        <source>Values (%count): choose which to import</source>
+        <translation>Werte (%count): wählen Sie, welche importiert werden</translation>
+    </message>
+    <message>
+        <source>Values: %set from the package, %kept kept as on the site</source>
+        <translation>Werte: %set aus dem Paket, %kept wie auf der Site behalten</translation>
+    </message>
+    <message>
+        <source>kept as on the site</source>
+        <translation>wie auf der Site behalten</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>

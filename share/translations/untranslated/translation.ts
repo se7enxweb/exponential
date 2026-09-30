@@ -7485,6 +7485,90 @@ You can also remove the package without uninstalling it from the package list.</
         <source>stored as %licence</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%count item(s) left out by you.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import the ticked items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New translation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The installer wrote some values twice; nothing was imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The language %language is added to the site's languages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The main language stays %site, as on the site (the package's is %package).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object has no values on the site to build a new version from.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object is gone after the import.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object is no longer on the site; compare again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object is not published on the site (it is in the trash or a draft); restore it first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object stays always available, as on the site (the package has it otherwise).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object stays not always available, as on the site (the package has it otherwise).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object's language list lacks %languages, although it has values in it; the import corrects the list, so those values are kept.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site has this object as a %site object, the package as a %package object; an import would change its class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The translations %languages could not be kept; nothing was imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Untick an item to leave it out, or open its values to keep single ones as the site has them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Untick to leave this item out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Values (%count): choose which to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Values: %set from the package, %kept kept as on the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>kept as on the site</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
