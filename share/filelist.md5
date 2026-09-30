@@ -232,7 +232,7 @@ a54e5021b1c597539a60da86ef766f0c  design/admin/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
-8f3d8b30beb9fe9584bb1c01abf22c50  design/admin/javascript/contentstructuremenu_dynamic.js
+c026c4c30fa5e95415c1f6611bcce9ea  design/admin/javascript/contentstructuremenu_dynamic.js
 27780710dbc013f8c40cbeae3b1b687e  design/admin/javascript/ezajaxrelations_jquery.js
 7b4ee90fda143d03aa5fb7e40834df4a  design/admin/javascript/ezajaxsubitems_datatable.js
 11e7c851dcd3b8e50b56554dc08ea31c  design/admin/javascript/ezajaxuploader.js
@@ -379,7 +379,7 @@ a1f9f35ddf7628f6d51fb625e579dc78  design/admin/templates/content/upload.tpl
 a1e3428fbe578d55c00fb4a1ecfc1c08  design/admin/templates/content/urlalias_global.tpl
 6a59f1b5daacac4cdae276911ab17ce7  design/admin/templates/content/urlalias_wildcard.tpl
 5014195fe59507e2957067c8d7a22c19  design/admin/templates/content/view/versionview.tpl
-f5522bd9ecce061b7144e5cfa2eb4307  design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl
+da095e1b8d447ef96beca6068f2110ba  design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl
 d04d82dd75e144017a4e56fa6875c770  design/admin/templates/contentstructuremenu/show_content_structure.tpl
 ff0b1a2bfe7ddc2f479128e4e841ce2b  design/admin/templates/dashboard/maintenance.tpl
 f703d565df2e48a0f814592e40c8628e  design/admin/templates/details.tpl
@@ -5776,7 +5776,7 @@ a31248509bf41f4d1ee3a5c2cdc9e9f0  kernel/content/state_edit.php
 339432e6501dd35d8eb0cd07894f18cf  kernel/content/translation.php
 8bef70cc9348aca95937981b88c728c1  kernel/content/translations.php
 c4a2b34121b70a965a0f41829e74cf20  kernel/content/trash.php
-fcdaad7a9504eab6a65f129e7e81b2c5  kernel/content/treemenu.php
+0c312c88d1c0635d939fe7ced8ce7fb8  kernel/content/treemenu.php
 1c8120bf767adbf5d70b6651be54856d  kernel/content/upload.php
 fc32a148f0e4e009cea6fe3040bdc09c  kernel/content/urlalias.php
 bbab9512d398932fd31e81ee3082621d  kernel/content/urlalias_global.php
@@ -6495,7 +6495,7 @@ a1be7ab463d96b8940b0b6ad2148a34e  settings/audit.ini
 de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 182107cb19ce2f10279176af2ccb2819  settings/collect.ini
 a73debcaedb35ef5b522552ec2506542  settings/content.ini
-eff59488a83d12bd2f5688e65015eace  settings/contentstructuremenu.ini
+1dbcfc8da1b2cb204ea10c28c2caec6b  settings/contentstructuremenu.ini
 bbef6be3b98786e0ac5391c2f9993b6f  settings/country.ini
 bc9db28991c4808b5f16d01bd7c62f63  settings/cronjob.ini
 3d404c392cd00c7c1332ea337359c8b7  settings/dashboard.ini
