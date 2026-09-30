@@ -6853,6 +6853,394 @@ You can also remove the package without uninstalling it from the package list.</
         <source>This package has no files.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Compare the package's content with the site's content tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The package's classes and objects next to the site's own. Nothing is installed or changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count attribute name(s) changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count attribute(s) only in the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count attribute(s) only on the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count attribute(s) with other changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count class setting(s) changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count datatype(s) changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count identical value(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count items compared (%classes classes, %objects objects) on %date in %seconds s.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count translation(s) only in the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count translation(s) only on the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count value(s) differ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%differ differ, %same identical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alternative text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Build the comparison anew; takes a few seconds for a large package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class not on the site: installing creates it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare %name with the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compared by the serialized XML of the value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Container</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatype in the package: %package, on the site: %site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatype parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default sorting of children</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter by status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the package, not on the site: installing creates it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information collector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Items %from–%to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left: the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MIME type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified %date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No item matches these filters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node %node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not in the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not on the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not on the site, and the site has no class for it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not on the site: installing creates it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object %id, modified %date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object name pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On both, the same</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On both, with differences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On the site under the package's top node, not in the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only in the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only on the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open on the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Package file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Placement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read from the cache; the site and the package are unchanged since.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right: the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search name/remote ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The datatype is not available on the site; its stored value is shown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file itself is not at hand; compared by name and size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object is in the trash on the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The package has this object as a %package object, the site as a %site object.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The shown values are the same; the stored values differ.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site has no class "%class"</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site has no class "%class"; installing the package needs it (the package may bring it).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site value could not be serialized by its datatype.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The text is the same; its markup differs (see the XML).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This item is no longer in the package or on the site. Compare again to bring the list up to date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This package has no classes or objects to compare.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translation only in the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translation only on the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL alias name pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XML in the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XML on the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>class differs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>placement differs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>text only the site has</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>text the package brings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>top node, placed where the installer is told</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>under node %parent</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>

@@ -9179,6 +9179,394 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>This package has no files.</source>
         <translation>Dieses Paket enthält keine Dateien.</translation>
     </message>
+    <message>
+        <source>Compare the package's content with the site's content tree</source>
+        <translation>Den Inhalt des Pakets mit dem Inhaltsbaum der Site vergleichen</translation>
+    </message>
+    <message>
+        <source>The package's classes and objects next to the site's own. Nothing is installed or changed.</source>
+        <translation>Die Klassen und Objekte des Pakets neben denen der Site. Es wird nichts installiert oder geändert.</translation>
+    </message>
+    <message>
+        <source>%count attribute name(s) changed</source>
+        <translation>%count Attributname(n) geändert</translation>
+    </message>
+    <message>
+        <source>%count attribute(s) only in the package</source>
+        <translation>%count Attribut(e) nur im Paket</translation>
+    </message>
+    <message>
+        <source>%count attribute(s) only on the site</source>
+        <translation>%count Attribut(e) nur auf der Site</translation>
+    </message>
+    <message>
+        <source>%count attribute(s) with other changes</source>
+        <translation>%count Attribut(e) mit anderen Änderungen</translation>
+    </message>
+    <message>
+        <source>%count class setting(s) changed</source>
+        <translation>%count Klasseneinstellung(en) geändert</translation>
+    </message>
+    <message>
+        <source>%count datatype(s) changed</source>
+        <translation>%count Datentyp(en) geändert</translation>
+    </message>
+    <message>
+        <source>%count identical value(s)</source>
+        <translation>%count gleiche(r) Wert(e)</translation>
+    </message>
+    <message>
+        <source>%count items compared (%classes classes, %objects objects) on %date in %seconds s.</source>
+        <translation>%count Einträge verglichen (%classes Klassen, %objects Objekte) am %date in %seconds s.</translation>
+    </message>
+    <message>
+        <source>%count translation(s) only in the package</source>
+        <translation>%count Übersetzung(en) nur im Paket</translation>
+    </message>
+    <message>
+        <source>%count translation(s) only on the site</source>
+        <translation>%count Übersetzung(en) nur auf der Site</translation>
+    </message>
+    <message>
+        <source>%count value(s) differ</source>
+        <translation>%count Wert(e) verschieden</translation>
+    </message>
+    <message>
+        <source>%differ differ, %same identical</source>
+        <translation>%differ verschieden, %same gleich</translation>
+    </message>
+    <message>
+        <source>Alternative text</source>
+        <translation>Alternativtext</translation>
+    </message>
+    <message>
+        <source>Always available</source>
+        <translation>Immer verfügbar</translation>
+    </message>
+    <message>
+        <source>Any class</source>
+        <translation>Alle Klassen</translation>
+    </message>
+    <message>
+        <source>Any status</source>
+        <translation>Alle Status</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attribute</translation>
+    </message>
+    <message>
+        <source>Back to the package</source>
+        <translation>Zurück zum Paket</translation>
+    </message>
+    <message>
+        <source>Build the comparison anew; takes a few seconds for a large package</source>
+        <translation>Den Vergleich neu erstellen; dauert bei einem großen Paket einige Sekunden</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategorie</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Class missing</source>
+        <translation>Klasse fehlt</translation>
+    </message>
+    <message>
+        <source>Class not on the site: installing creates it</source>
+        <translation>Klasse nicht auf der Site: die Installation legt sie an</translation>
+    </message>
+    <message>
+        <source>Compare %name with the site</source>
+        <translation>%name mit der Site vergleichen</translation>
+    </message>
+    <message>
+        <source>Compare again</source>
+        <translation>Erneut vergleichen</translation>
+    </message>
+    <message>
+        <source>Compare</source>
+        <translation>Vergleichen</translation>
+    </message>
+    <message>
+        <source>Compared by the serialized XML of the value.</source>
+        <translation>Verglichen anhand des serialisierten XML des Werts.</translation>
+    </message>
+    <message>
+        <source>Container</source>
+        <translation>Container</translation>
+    </message>
+    <message>
+        <source>Datatype in the package: %package, on the site: %site.</source>
+        <translation>Datentyp im Paket: %package, auf der Site: %site.</translation>
+    </message>
+    <message>
+        <source>Datatype parameters</source>
+        <translation>Datentyp-Parameter</translation>
+    </message>
+    <message>
+        <source>Default sorting of children</source>
+        <translation>Standardsortierung der Unterelemente</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Unterschiede</translation>
+    </message>
+    <message>
+        <source>Empty</source>
+        <translation>Leer</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Aktiviert</translation>
+    </message>
+    <message>
+        <source>Filter by status</source>
+        <translation>Nach Status filtern</translation>
+    </message>
+    <message>
+        <source>Identical</source>
+        <translation>Gleich</translation>
+    </message>
+    <message>
+        <source>In the package</source>
+        <translation>Im Paket</translation>
+    </message>
+    <message>
+        <source>In the package, not on the site: installing creates it</source>
+        <translation>Im Paket, nicht auf der Site: die Installation legt es an</translation>
+    </message>
+    <message>
+        <source>Information collector</source>
+        <translation>Informationssammler</translation>
+    </message>
+    <message>
+        <source>Items %from–%to of %count</source>
+        <translation>Einträge %from–%to von %count</translation>
+    </message>
+    <message>
+        <source>Left: the site</source>
+        <translation>Links: die Site</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Benutzername</translation>
+    </message>
+    <message>
+        <source>MIME type</source>
+        <translation>MIME-Typ</translation>
+    </message>
+    <message>
+        <source>Modified %date</source>
+        <translation>Geändert %date</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Neu</translation>
+    </message>
+    <message>
+        <source>No item matches these filters.</source>
+        <translation>Kein Eintrag entspricht diesen Filtern.</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nein</translation>
+    </message>
+    <message>
+        <source>Node %node</source>
+        <translation>Knoten %node</translation>
+    </message>
+    <message>
+        <source>Not in the package</source>
+        <translation>Nicht im Paket</translation>
+    </message>
+    <message>
+        <source>Not on the site</source>
+        <translation>Nicht auf der Site</translation>
+    </message>
+    <message>
+        <source>Not on the site, and the site has no class for it</source>
+        <translation>Nicht auf der Site, und die Site hat keine Klasse dafür</translation>
+    </message>
+    <message>
+        <source>Not on the site: installing creates it</source>
+        <translation>Nicht auf der Site: die Installation legt es an</translation>
+    </message>
+    <message>
+        <source>Object %id, modified %date</source>
+        <translation>Objekt %id, geändert %date</translation>
+    </message>
+    <message>
+        <source>Object name pattern</source>
+        <translation>Muster für Objektnamen</translation>
+    </message>
+    <message>
+        <source>On both, the same</source>
+        <translation>Auf beiden Seiten gleich</translation>
+    </message>
+    <message>
+        <source>On both, with differences</source>
+        <translation>Auf beiden Seiten, mit Unterschieden</translation>
+    </message>
+    <message>
+        <source>On the site under the package's top node, not in the package</source>
+        <translation>Auf der Site unter dem obersten Knoten des Pakets, nicht im Paket</translation>
+    </message>
+    <message>
+        <source>On the site</source>
+        <translation>Auf der Site</translation>
+    </message>
+    <message>
+        <source>Only in the package</source>
+        <translation>Nur im Paket</translation>
+    </message>
+    <message>
+        <source>Only on the site</source>
+        <translation>Nur auf der Site</translation>
+    </message>
+    <message>
+        <source>Open on the site</source>
+        <translation>Auf der Site öffnen</translation>
+    </message>
+    <message>
+        <source>Package file</source>
+        <translation>Paketdatei</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>Placement</source>
+        <translation>Platzierung</translation>
+    </message>
+    <message>
+        <source>Read from the cache; the site and the package are unchanged since.</source>
+        <translation>Aus dem Cache gelesen; Site und Paket sind seitdem unverändert.</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Pflichtfeld</translation>
+    </message>
+    <message>
+        <source>Right: the package</source>
+        <translation>Rechts: das Paket</translation>
+    </message>
+    <message>
+        <source>Search name/remote ID</source>
+        <translation>Name/Remote-ID suchen</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Durchsuchbar</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>The datatype is not available on the site; its stored value is shown.</source>
+        <translation>Der Datentyp ist auf der Site nicht verfügbar; der gespeicherte Wert wird angezeigt.</translation>
+    </message>
+    <message>
+        <source>The file itself is not at hand; compared by name and size.</source>
+        <translation>Die Datei selbst liegt nicht vor; verglichen anhand von Name und Größe.</translation>
+    </message>
+    <message>
+        <source>The object is in the trash on the site.</source>
+        <translation>Das Objekt liegt auf der Site im Papierkorb.</translation>
+    </message>
+    <message>
+        <source>The package has this object as a %package object, the site as a %site object.</source>
+        <translation>Das Paket führt dieses Objekt als %package-Objekt, die Site als %site-Objekt.</translation>
+    </message>
+    <message>
+        <source>The shown values are the same; the stored values differ.</source>
+        <translation>Die angezeigten Werte sind gleich; die gespeicherten Werte unterscheiden sich.</translation>
+    </message>
+    <message>
+        <source>The site has no class "%class"</source>
+        <translation>Die Site hat keine Klasse „%class“</translation>
+    </message>
+    <message>
+        <source>The site has no class "%class"; installing the package needs it (the package may bring it).</source>
+        <translation>Die Site hat keine Klasse „%class“; die Installation des Pakets braucht sie (das Paket bringt sie womöglich mit).</translation>
+    </message>
+    <message>
+        <source>The site value could not be serialized by its datatype.</source>
+        <translation>Der Wert der Site konnte von seinem Datentyp nicht serialisiert werden.</translation>
+    </message>
+    <message>
+        <source>The text is the same; its markup differs (see the XML).</source>
+        <translation>Der Text ist gleich; sein Markup unterscheidet sich (siehe XML).</translation>
+    </message>
+    <message>
+        <source>This item is no longer in the package or on the site. Compare again to bring the list up to date.</source>
+        <translation>Dieser Eintrag ist nicht mehr im Paket oder auf der Site. Erneut vergleichen, um die Liste zu aktualisieren.</translation>
+    </message>
+    <message>
+        <source>This package has no classes or objects to compare.</source>
+        <translation>Dieses Paket hat keine Klassen oder Objekte zum Vergleichen.</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Übersetzbar</translation>
+    </message>
+    <message>
+        <source>Translation only in the package</source>
+        <translation>Übersetzung nur im Paket</translation>
+    </message>
+    <message>
+        <source>Translation only on the site</source>
+        <translation>Übersetzung nur auf der Site</translation>
+    </message>
+    <message>
+        <source>URL alias name pattern</source>
+        <translation>Muster für URL-Aliasnamen</translation>
+    </message>
+    <message>
+        <source>XML in the package</source>
+        <translation>XML im Paket</translation>
+    </message>
+    <message>
+        <source>XML on the site</source>
+        <translation>XML auf der Site</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>class differs</source>
+        <translation>Klasse verschieden</translation>
+    </message>
+    <message>
+        <source>main</source>
+        <translation>Hauptknoten</translation>
+    </message>
+    <message>
+        <source>placement differs</source>
+        <translation>Platzierung verschieden</translation>
+    </message>
+    <message>
+        <source>text only the site has</source>
+        <translation>Text nur auf der Site</translation>
+    </message>
+    <message>
+        <source>text the package brings</source>
+        <translation>Text aus dem Paket</translation>
+    </message>
+    <message>
+        <source>top node, placed where the installer is told</source>
+        <translation>oberster Knoten, platziert, wo die Installation es angibt</translation>
+    </message>
+    <message>
+        <source>under node %parent</source>
+        <translation>unter Knoten %parent</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
