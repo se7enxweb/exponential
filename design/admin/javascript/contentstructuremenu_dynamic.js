@@ -1,7 +1,17 @@
 function ContentStructureMenu( params, i18n )
 {
     this.parameterName = "contentStructureMenu";
-    this.autoOpenPath = params.path;
+    // [TreeMenu] AutoopenCurrentNode: open the path down to the current node.
+    // The path is copied: opening it removes entries one by one, and
+    // params.path must keep the current node for the highlighting.
+    this.autoOpen = !!params.autoOpen;
+    this.autoOpenPath = params.path ? params.path.slice( 0 ) : [];
+
+    // [TreeMenu] MaxDepth: levels shown below the root node, 0 = unlimited.
+    // levels[nodeID] is the level of a node already in the menu, the root
+    // node being level 0.
+    this.maxDepth = parseInt( params.maxDepth, 10 ) || 0;
+    this.levels = {};
 
     // hashes in ez template doesn't handle numeric keys correctly
     // an underscore has been prepended in keys and is removed here
@@ -89,9 +99,12 @@ function ContentStructureMenu( params, i18n )
         };
     }
 
-    this.generateEntry = function( item, lastli, rootNode )
+    this.generateEntry = function( item, lastli, rootNode, level )
     {
         var liclass = '';
+        level = level || 0;
+        this.levels[item.node_id] = level;
+        var canOpen = item.has_children && ( this.maxDepth === 0 || level < this.maxDepth );
         if ( lastli )
         {
             liclass += ' lastli';
@@ -104,7 +117,7 @@ function ContentStructureMenu( params, i18n )
             + ( ( liclass )? ' class="' + liclass + '"':
                              '' )
             + '>';
-        if ( item.has_children && !rootNode )
+        if ( canOpen && !rootNode )
         {
             html += '<a class="openclose-open" id="a'
                 + item.node_id
@@ -316,10 +329,11 @@ function ContentStructureMenu( params, i18n )
                         items.push( data.children[i] );
                     }
                 }
-                // Generate html content
+                // Generate html content, one level below the opened node
+                var childLevel = ( thisThis.levels[nodeID] || 0 ) + 1;
                 for ( var i = 0, l = items.length; i < l; i++ )
                 {
-                    html += thisThis.generateEntry( items[i], i == l - 1, false );
+                    html += thisThis.generateEntry( items[i], i == l - 1, false, childLevel );
                 }
                 html += '<\/ul>';
 
