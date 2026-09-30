@@ -7638,6 +7638,18 @@ You can also remove the package without uninstalling it from the package list.</
         <source>This value comes with the import of the class</source>
         <translation>This value comes with the import of the class</translation>
     </message>
+    <message>
+        <source>There is nothing to install here: this package has the install type &quot;%type&quot;. A site package is imported by the setup wizard together with the packages it requires, and is not installed on its own.</source>
+        <translation>There is nothing to install here: this package has the install type &quot;%type&quot;. A site package is imported by the setup wizard together with the packages it requires, and is not installed on its own.</translation>
+    </message>
+    <message>
+        <source>There is nothing to install here: this package has no install items.</source>
+        <translation>There is nothing to install here: this package has no install items.</translation>
+    </message>
+    <message>
+        <source>You are not allowed to install packages (package/install), so the Install button is not shown.</source>
+        <translation>You are not allowed to install packages (package/install), so the Install button is not shown.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -39668,6 +39680,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The setting "%setting" is a list, but no values were given for it.</source>
         <translation>The setting "%setting" is a list, but no values were given for it.</translation>
+    </message>
+    <message>
+        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <translation>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</translation>
+    </message>
+    <message>
+        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <translation>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</translation>
     </message>
 </context>
 </TS>

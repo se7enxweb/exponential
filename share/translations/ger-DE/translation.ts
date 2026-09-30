@@ -9963,6 +9963,18 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>This value comes with the import of the class</source>
         <translation>Dieser Wert kommt mit dem Import der Klasse</translation>
     </message>
+    <message>
+        <source>There is nothing to install here: this package has the install type &quot;%type&quot;. A site package is imported by the setup wizard together with the packages it requires, and is not installed on its own.</source>
+        <translation>Hier gibt es nichts zu installieren: Dieses Paket hat den Installationstyp „%type“. Ein Site-Paket wird vom Setup-Assistenten zusammen mit den Paketen importiert, die es benötigt, und nicht einzeln installiert.</translation>
+    </message>
+    <message>
+        <source>There is nothing to install here: this package has no install items.</source>
+        <translation>Hier gibt es nichts zu installieren: Dieses Paket enthält keine Installationselemente.</translation>
+    </message>
+    <message>
+        <source>You are not allowed to install packages (package/install), so the Install button is not shown.</source>
+        <translation>Sie dürfen keine Pakete installieren (package/install), daher wird die Schaltfläche „Installieren“ nicht angezeigt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -46862,6 +46874,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>The setting "%setting" is a list, but no values were given for it.</source>
         <translation>Die Einstellung "%setting" ist eine Liste, aber es wurden keine Werte dafür angegeben.</translation>
+    </message>
+    <message>
+        <source>No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.</source>
+        <translation>Es ist keine Lizenz zur Auswahl konfiguriert. Tragen Sie eine in package.ini [LicenseSettings] LicenseList ein.</translation>
+    </message>
+    <message>
+        <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <translation>Die Lizenz „%licence“ ist keine der in package.ini [LicenseSettings] konfigurierten Lizenzen. Wählen Sie eine aus der Liste.</translation>
     </message>
 </context>
 </TS>
