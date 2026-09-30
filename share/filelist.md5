@@ -2096,7 +2096,7 @@ e1736c2b2599b91bb982b5ffd42bd4ce  doc/bc/6.0/rad-extension-points.md
 17c36c78d2049406ad83f0cc175b50df  doc/bc/6.0/role-policy-paging.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
 39e889588d8bfcecd5cbb4d8d43c2903  doc/bc/6.0/sql-query-cache.md
-adfc52c27fa7ce5c0b9ce29791546606  doc/bc/6.0/velocity-engines.md
+8ce11bb61ec2cfc3129508e6f3ab7885  doc/bc/6.0/velocity-engines.md
 b1146f7626848f499ad0fff06e01fd98  doc/bc/6.0/velocity-ondisk-layout.md
 adac5192811bf518d52266dd4a6b0e72  doc/branch-overview
 0959bdd0da20ca86c663052e954574b8  doc/changelogs/2.9/CHANGELOG-2.9-1
@@ -5518,7 +5518,7 @@ b8ca72676a5a9dfafef6ddb0b6e9ee7a  kernel/classes/expphar.php
 21b59e62f5cad811c8cdc0ace277e6fe  kernel/classes/exppreloadjob.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
-da95180628e6285a6c175434b8a41a65  kernel/classes/expvelocity.php
+b096e164326253c8701b281d49c778e3  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 0860cea831380715b1b76f76bfc68e3b  kernel/classes/expvelocityconfiglayout.php
 24c28d534ef40cf5fdd4fe07d40b54ea  kernel/classes/expvelocitydeploy.php
@@ -6544,7 +6544,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-ff92ece59380903870c5348253c675f6  settings/velocity.ini
+23cc2a6888898d510f4db903ebfb4284  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
