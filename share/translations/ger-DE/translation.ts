@@ -9895,6 +9895,70 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>kept as on the site</source>
         <translation>wie auf der Site behalten</translation>
     </message>
+    <message>
+        <source>Added by the class import</source>
+        <translation>Kommt mit dem Klassenimport</translation>
+    </message>
+    <message>
+        <source>Comes with the import of the class listed above; untick the class to leave it out</source>
+        <translation>Kommt mit dem Import der oben aufgeführten Klasse; wählen Sie die Klasse ab, um ihn auszulassen</translation>
+    </message>
+    <message>
+        <source>Every value is unticked; nothing is left to import.</source>
+        <translation>Alle Werte sind abgewählt; es bleibt nichts zu importieren.</translation>
+    </message>
+    <message>
+        <source>Its differing values are for attributes the site's class "%class" lacks and an import of the package's class cannot add: %attributes.</source>
+        <translation>Seine abweichenden Werte gehören zu Attributen, die der Klasse „%class“ der Site fehlen und die ein Import der Paketklasse nicht hinzufügen kann: %attributes.</translation>
+    </message>
+    <message>
+        <source>Needed by %objects: their values are for attributes this import adds.</source>
+        <translation>Benötigt von %objects: ihre Werte gehören zu Attributen, die dieser Import hinzufügt.</translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first, and it is not part of this import.</source>
+        <translation>Braucht zuerst den Import der Klasse %class, und die ist nicht Teil dieses Imports.</translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first; Import includes it.</source>
+        <translation>Braucht zuerst den Import der Klasse %class; Importieren schließt sie ein.</translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first; Import this item includes it, before the object.</source>
+        <translation>Braucht zuerst den Import der Klasse %class; „Diesen Eintrag importieren“ schließt sie ein, vor dem Objekt.</translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first; it is imported before this object, in the same step.</source>
+        <translation>Braucht zuerst den Import der Klasse %class; sie wird vor diesem Objekt importiert, im selben Schritt.</translation>
+    </message>
+    <message>
+        <source>Not added, the site has no datatype for them: %attributes</source>
+        <translation>Nicht hinzugefügt, die Site hat keinen Datentyp dafür: %attributes</translation>
+    </message>
+    <message>
+        <source>Not importable: values for %attributes (the class cannot add them).</source>
+        <translation>Nicht importierbar: Werte für %attributes (die Klasse kann sie nicht hinzufügen).</translation>
+    </message>
+    <message>
+        <source>Not imported, it needs the class %class, which is left out of this import: %attribute</source>
+        <translation>Nicht importiert, es braucht die Klasse %class, die in diesem Import ausgelassen ist: %attribute</translation>
+    </message>
+    <message>
+        <source>Not imported, the class %class on the site lacks the attribute and the package's class cannot add it: %attribute</source>
+        <translation>Nicht importiert, der Klasse %class auf der Site fehlt das Attribut und die Paketklasse kann es nicht hinzufügen: %attribute</translation>
+    </message>
+    <message>
+        <source>Not imported: the class it needs was not imported (%reason).</source>
+        <translation>Nicht importiert: die benötigte Klasse wurde nicht importiert (%reason).</translation>
+    </message>
+    <message>
+        <source>The site has no class "%class" and the package does not bring it.</source>
+        <translation>Die Site hat keine Klasse „%class“, und das Paket bringt sie nicht mit.</translation>
+    </message>
+    <message>
+        <source>This value comes with the import of the class</source>
+        <translation>Dieser Wert kommt mit dem Import der Klasse</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>

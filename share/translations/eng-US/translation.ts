@@ -7574,6 +7574,70 @@ You can also remove the package without uninstalling it from the package list.</
         <source>kept as on the site</source>
         <translation>kept as on the site</translation>
     </message>
+    <message>
+        <source>Added by the class import</source>
+        <translation>Added by the class import</translation>
+    </message>
+    <message>
+        <source>Comes with the import of the class listed above; untick the class to leave it out</source>
+        <translation>Comes with the import of the class listed above; untick the class to leave it out</translation>
+    </message>
+    <message>
+        <source>Every value is unticked; nothing is left to import.</source>
+        <translation>Every value is unticked; nothing is left to import.</translation>
+    </message>
+    <message>
+        <source>Its differing values are for attributes the site's class "%class" lacks and an import of the package's class cannot add: %attributes.</source>
+        <translation>Its differing values are for attributes the site's class "%class" lacks and an import of the package's class cannot add: %attributes.</translation>
+    </message>
+    <message>
+        <source>Needed by %objects: their values are for attributes this import adds.</source>
+        <translation>Needed by %objects: their values are for attributes this import adds.</translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first, and it is not part of this import.</source>
+        <translation>Needs the class %class to be imported first, and it is not part of this import.</translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first; Import includes it.</source>
+        <translation>Needs the class %class to be imported first; Import includes it.</translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first; Import this item includes it, before the object.</source>
+        <translation>Needs the class %class to be imported first; Import this item includes it, before the object.</translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first; it is imported before this object, in the same step.</source>
+        <translation>Needs the class %class to be imported first; it is imported before this object, in the same step.</translation>
+    </message>
+    <message>
+        <source>Not added, the site has no datatype for them: %attributes</source>
+        <translation>Not added, the site has no datatype for them: %attributes</translation>
+    </message>
+    <message>
+        <source>Not importable: values for %attributes (the class cannot add them).</source>
+        <translation>Not importable: values for %attributes (the class cannot add them).</translation>
+    </message>
+    <message>
+        <source>Not imported, it needs the class %class, which is left out of this import: %attribute</source>
+        <translation>Not imported, it needs the class %class, which is left out of this import: %attribute</translation>
+    </message>
+    <message>
+        <source>Not imported, the class %class on the site lacks the attribute and the package's class cannot add it: %attribute</source>
+        <translation>Not imported, the class %class on the site lacks the attribute and the package's class cannot add it: %attribute</translation>
+    </message>
+    <message>
+        <source>Not imported: the class it needs was not imported (%reason).</source>
+        <translation>Not imported: the class it needs was not imported (%reason).</translation>
+    </message>
+    <message>
+        <source>The site has no class "%class" and the package does not bring it.</source>
+        <translation>The site has no class "%class" and the package does not bring it.</translation>
+    </message>
+    <message>
+        <source>This value comes with the import of the class</source>
+        <translation>This value comes with the import of the class</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>

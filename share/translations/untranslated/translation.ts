@@ -7569,6 +7569,70 @@ You can also remove the package without uninstalling it from the package list.</
         <source>kept as on the site</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Added by the class import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comes with the import of the class listed above; untick the class to leave it out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every value is unticked; nothing is left to import.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its differing values are for attributes the site's class "%class" lacks and an import of the package's class cannot add: %attributes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needed by %objects: their values are for attributes this import adds.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first, and it is not part of this import.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first; Import includes it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first; Import this item includes it, before the object.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needs the class %class to be imported first; it is imported before this object, in the same step.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not added, the site has no datatype for them: %attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not importable: values for %attributes (the class cannot add them).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not imported, it needs the class %class, which is left out of this import: %attribute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not imported, the class %class on the site lacks the attribute and the package's class cannot add it: %attribute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not imported: the class it needs was not imported (%reason).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site has no class "%class" and the package does not bring it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This value comes with the import of the class</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
