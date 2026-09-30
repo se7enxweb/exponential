@@ -5443,7 +5443,7 @@ efde5ae3df076da38393988b1d2300c6  kernel/classes/datatypes/ezenum/ezenumtype.php
 dc14863a4ee9725a94d0dcaef0fead61  kernel/classes/datatypes/ezenum/ezenumvalue.php
 0739d184787dd1cf4546946c58e91372  kernel/classes/datatypes/ezfloat/ezfloattype.php
 5c29bb2049a6d3ca9c18613f277b22d3  kernel/classes/datatypes/ezidentifier/ezidentifiertype.php
-6c87b5f4fca926d5c0ca84fb76b02cff  kernel/classes/datatypes/ezimage/ezimagealiashandler.php
+98d9823e215a4cc5be580714a1e27d77  kernel/classes/datatypes/ezimage/ezimagealiashandler.php
 f4963dd9f5292697c4b311b2415c2e70  kernel/classes/datatypes/ezimage/ezimagefile.php
 090e0961a6f3776a4cc9f9925f36a945  kernel/classes/datatypes/ezimage/ezimagetype.php
 ce625c477faffd8b2d47c250c7f4f668  kernel/classes/datatypes/ezinisetting/ezinisettingtype.php
