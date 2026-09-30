@@ -50,18 +50,8 @@ class eZLog
             $time = date( "M d Y H:i:s", strtotime( "now" ) );
 
             $logMessage = "[ " . $time . " ]";
-            $logMessage .= "[ {$GLOBALS['eZCurrentAccess']['name']} ]";
-            if (php_sapi_name() === 'cli') {
-                $pid = getmypid();
-                $command = exec("ps -p $pid -o args=");
-                $logMessage .= '[ ' . $command . ' ]';
-            } else {
-                $scheme = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
-                $host = $_SERVER['HTTP_HOST'];
-                $uri = $_SERVER['REQUEST_URI'];
-                $url = "$scheme://$host$uri";
-                $logMessage .= '[ ' . $url . ' ]';
-            }
+            $logMessage .= "[ " . ( isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : '' ) . " ]";
+            $logMessage .= '[ ' . self::requestContext() . ' ]';
             $logMessage .= " $message\n";
             @fwrite( $logFile, $logMessage );
             @fclose( $logFile );
@@ -76,6 +66,45 @@ class eZLog
         {
             eZDebug::writeError( 'Couldn\'t create the log file "' . $fileName . '"', __METHOD__ );
         }
+    }
+
+    /**
+     * What a log line says the message came from: the request's full address for a web request
+     * (scheme, host with its port when the client used one, path and query), e.g.
+     * https://alpha.se7enx.com:8080/admin/package/compare/slash_quotes, or the command line of a
+     * command line script.
+     *
+     * A web request is recognised by its REQUEST_URI, not by the PHP SAPI: Velocity's workers are
+     * command line processes serving web requests, and a SAPI test logged every one of them as the
+     * server's own command line. Nothing here reads the configuration or runs a program (the former
+     * "ps -p" per line), so it is safe from any error path, and control characters are removed so a
+     * crafted address cannot start a line of its own.
+     *
+     * @return string
+     */
+    public static function requestContext()
+    {
+        $clean = function ( $value ) { return preg_replace( '/[\x00-\x1F\x7F]+/', '', (string)$value ); };
+        if ( !empty( $_SERVER['REQUEST_URI'] ) && ( PHP_SAPI !== 'cli' || !empty( $_SERVER['HTTP_HOST'] ) || !empty( $_SERVER['SERVER_NAME'] ) ) )
+        {
+            $https = ( !empty( $_SERVER['HTTPS'] ) && strtolower( $_SERVER['HTTPS'] ) !== 'off' )
+                  || ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && strtolower( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) === 'https' );
+            if ( !empty( $_SERVER['HTTP_HOST'] ) )
+            {
+                // As the client asked for it, so a non-default port (:8080) is part of it
+                $host = $_SERVER['HTTP_HOST'];
+            }
+            else
+            {
+                $host = isset( $_SERVER['SERVER_NAME'] ) ? $_SERVER['SERVER_NAME'] : 'localhost';
+                $port = isset( $_SERVER['SERVER_PORT'] ) ? (int)$_SERVER['SERVER_PORT'] : 0;
+                if ( $port && $port !== ( $https ? 443 : 80 ) )
+                    $host .= ':' . $port;
+            }
+            return ( $https ? 'https' : 'http' ) . '://' . $clean( $host ) . $clean( $_SERVER['REQUEST_URI'] );
+        }
+        $argv = isset( $_SERVER['argv'] ) && is_array( $_SERVER['argv'] ) ? $_SERVER['argv'] : array();
+        return $argv ? $clean( implode( ' ', $argv ) ) : $clean( PHP_SAPI );
     }
 
     /*!

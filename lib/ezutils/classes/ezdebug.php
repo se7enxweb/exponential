@@ -938,7 +938,9 @@ class eZDebug
             $ip = eZSys::clientIP();
             if ( !$ip )
                 $ip = eZSys::serverVariable( 'HOSTNAME', true );
-            $notice = "[ " . $time . " ] [" . $ip . "] " . $text . "\n";
+            // The request's full address (or a script's command line) after the client IP, so a logged
+            // problem can be repeated: eZLog::requestContext()
+            $notice = "[ " . $time . " ] [" . $ip . "] [" . ( class_exists( "eZLog" ) ? eZLog::requestContext() : "" ) . "] " . $text . "\n";
             @fwrite( $logFile, $notice );
             @fclose( $logFile );
             if ( !$fileExisted )
@@ -1010,7 +1012,7 @@ class eZDebug
             $ip = eZSys::clientIP();
             if ( !$ip )
                 $ip = eZSys::serverVariable( 'HOSTNAME', true );
-            $line = "[ " . date( "M d Y H:i:s" ) . " ] [" . $ip . "] eZDebug:\n" .
+            $line = "[ " . date( "M d Y H:i:s" ) . " ] [" . $ip . "] [" . ( class_exists( "eZLog" ) ? eZLog::requestContext() : "" ) . "] eZDebug:\n" .
                     sprintf( self::REPEAT_MESSAGE, $repeat['count'], $repeat['count'] === 1 ? 'time' : 'times', $repeat['last'] ) .
                     ( self::$LogContext !== '' ? "\n    (" . self::$LogContext . ")" : '' ) . "\n";
             @file_put_contents( $file, $line, FILE_APPEND );
