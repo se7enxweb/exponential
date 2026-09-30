@@ -692,7 +692,9 @@ e3bfb91bebf01770b13c4a9ffe2a8f95  design/admin3/javascript/ezadmin_menubar.js
 9a58feaca2a26193e21a38586c954a12  design/admin3/stylesheets/pagelayout.css
 5d3b68fdb809c73a6d8dc464e33c61ec  design/admin3/stylesheets/responsive.css
 797584f1b8dbf151af0fa6ad40a03a62  design/admin3/stylesheets/theme/rounded.css
-2b8b9fd91368916a60d6f761224cc8f5  design/admin3/templates/content/browse_mode_list.tpl
+c7ddd314fedef247c31ae61c9a38e4fe  design/admin3/templates/content/browse_current_node.tpl
+bc7937dac73f716b532f14b62505ed0d  design/admin3/templates/content/browse_mode_list.tpl
+861bd3ca689c1348cbf47d40c4d980ef  design/admin3/templates/content/browse_mode_thumbnail.tpl
 b4c4d50b0797a7c50bd26eb6118afcd0  design/admin3/templates/content/edit.tpl
 35c95ad3e52bd6cf74d907b804ea2625  design/admin3/templates/content/edit_draft.tpl
 3e4218bef006d2475b552dca8bfdbe88  design/admin3/templates/content/edit_menu.tpl
