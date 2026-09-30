@@ -5799,7 +5799,7 @@ af9eb38cb18dd0037c206570ec618457  kernel/package/module.php
 8d6dcf8df0633d2ba6a46de6c1cedacd  kernel/package/uninstall.php
 b65bd533a77eeecbbdfc044a762d5bdd  kernel/package/upload.php
 6bb6b9752ad7bbc5e8c6c193a5c2bd61  kernel/package/view.php
-c69443f23f35511d0c5cd0524e871278  kernel/package/viewfile.php
+1bed52bbae065d9b9d343ba3808d7f26  kernel/package/viewfile.php
 4b48b0b265db3fa5097580f70a626741  kernel/pdf/edit.php
 43896c4b930ee2b5c745a1b9ab51e308  kernel/pdf/list.php
 c898a6567ae8e7409319d0be069ff845  kernel/pdf/module.php
