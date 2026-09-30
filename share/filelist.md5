@@ -3,8 +3,8 @@ d3c3da531de3f903a6857f522f3ba0db  .gitattributes
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 26637bf1b89fe3b8acd7153af8c24798  .github/workflows/phpunit.yml
 9abe6d41ca2969e2817d8aa8962de841  .gitignore
-fe33aa4f3ee6a4d3091c66619bf0398b  .htaccess_root
-5cf3a311cdabf6022e5efa28f43bcd2e  .htaccess_root_static
+ccc8e89e611f0b022b2399eb9b74c1a8  .htaccess_root
+0f412f7d6d70465f93b7c8a6058a39db  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 a184ff1f4cd1fd4ec3a82e7744fd7e62  CONTRIBUTING.md
 3e1517b3def43fe5c9aed722d9821e24  COPYRIGHT.md
@@ -2066,7 +2066,7 @@ d235809fe8490e97218403d3cfe12404  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 d3dcdf8f27297bce32536f2675eb9ad1  doc/bc/6.0/expinfo-operator.md
 59ef385943d961c53bf28af528173582  doc/bc/6.0/exponentialsdk-and-exponential-cron.md
 1bc5d7888e4c8a699b48624c73cbbf35  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
-98af30590c466ef37d4af746e81e459d  doc/bc/6.0/frankenphp.md
+9c260509bdc5c628f542eeb9e55474b9  doc/bc/6.0/frankenphp.md
 dd8f6ec3976bdee1a688a25ee3761ee9  doc/bc/6.0/hardening.md
 2bf2eb0ef6906d5b3d5133d50392c0d1  doc/bc/6.0/http-caching.md
 e0cc1e74e597b7344ff592fbb75237bf  doc/bc/6.0/http2-and-cache-warming.md
@@ -2086,7 +2086,7 @@ a1af75a37c1ce56738bec292d024352e  doc/bc/6.0/preload.md
 e1736c2b2599b91bb982b5ffd42bd4ce  doc/bc/6.0/rad-extension-points.md
 7044272d1b88c3645967fea9afdf1901  doc/bc/6.0/rad-extension-surface.md
 02cab810b7ee149bb10c8ebb1d63d266  doc/bc/6.0/rad-security.md
-52a4701846439feeb8b13964783d9b0f  doc/bc/6.0/response-cache-and-navigation.md
+609bd03cc335a638b277d945fb0b1636  doc/bc/6.0/response-cache-and-navigation.md
 17c36c78d2049406ad83f0cc175b50df  doc/bc/6.0/role-policy-paging.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
 39e889588d8bfcecd5cbb4d8d43c2903  doc/bc/6.0/sql-query-cache.md
@@ -5391,6 +5391,7 @@ eec45b2adf10df254f61640cf79d23f7  extension/ezoe/translations/nor-NO/translation
 d3312b3659c05a6bd3440152a726c406  ezpm.php
 855e225a60e154204dde78feafe5d1b5  ezpublish.cron
 91b1aa0e8f21ce629c9cf29eef5a4569  favicon.ico
+88bf754ccbf9caa11d0edf3d4a24ee19  index.js
 0165a932c41a55e8b14fe8d5aec32867  index.php
 f6e4e31c3cdeea1c4868678b690d8a55  index_cluster.php
 18aa9f2d67b54c3693f19779576496df  index_rest.php
@@ -5511,7 +5512,7 @@ e155d47ee2599f8deb8070d941364bbc  kernel/classes/expkickstarter.php
 21b59e62f5cad811c8cdc0ace277e6fe  kernel/classes/exppreloadjob.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
-c3af6d8a713c0c51913e206fd75cafb8  kernel/classes/expvelocity.php
+b93545a45eb44559fe860431b719ea74  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 0860cea831380715b1b76f76bfc68e3b  kernel/classes/expvelocityconfiglayout.php
 8d76ad8f1b6946c83114d1302ba10b48  kernel/classes/expvelocityfrankenphp.php
@@ -7005,7 +7006,7 @@ bbf7725461035c86849d38862a196496  support/ezlupdate-qt4.5/shared/translatortools
 29fbe29891b317a5e4c192d2759960d4  support/ezlupdate-qt4.5/shared/ts.dtd
 170293340b33ba77e4af142122bbe16a  support/ezlupdate-qt4.5/shared/ui.cpp
 9c207840404b174293f1845568e88b5b  support/ezlupdate-qt4.5/shared/xliff.cpp
-76c029bc0c8efda2fa56cee3ede7476d  sw.js
+19153bd5a6ddfda719b168850835c20c  sw.js
 036c73d2f6f1eba67ead2d00390aa531  templates/classcreatelist.ctpl
 100b0d65f9bfd7230c8bcf94db8cb4fa  templates/classlistfrompolicy.ctpl
 a08f3fc912ea0e876de1c21aabc43b5f  tests/bin/ezp_lint_patched.php
@@ -7073,7 +7074,7 @@ d96dae3eb9c6ff8b779ea16752acc51a  tests/tests/kernel/classes/eZURLWildcardTest.p
 3c9950ad76855f923e7403aaa39be120  tests/tests/kernel/classes/eZUserAuthenticationTest.php
 db3283ec1aef44e44620efacfe1e9bac  tests/tests/kernel/classes/eZUserDiscountRuleTest.php
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
-08fed7350a58641b7fe5fadeefa01f76  tests/tests/kernel/classes/expVelocityEnginesTest.php
+5571584f622d8c32b884f5d306511331  tests/tests/kernel/classes/expVelocityEnginesTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
 d471fa62de2a662dc597fb5efeadea08  tests/tests/kernel/classes/extensions/ezdepextends/extension.xml
