@@ -6565,14 +6565,6 @@
 <context>
     <name>design/admin/ezinfo/about</name>
     <message>
-        <source>Exponential information: %version</source>
-        <translation type="obsolete">Exponential Informationen: %version</translation>
-    </message>
-    <message>
-        <source>What is Exponential?</source>
-        <translation type="obsolete">Was ist Exponential?</translation>
-    </message>
-    <message>
         <source>Licence</source>
         <translation type="obsolete">Lizenz</translation>
     </message>
@@ -6582,19 +6574,19 @@
     </message>
     <message>
         <source>Copyright Notice</source>
-        <translation>Urheber Hinweis</translation>
+        <translation>Urheberrechtshinweis</translation>
     </message>
     <message>
         <source>Third-Party Software</source>
-        <translation>Third-Party Software</translation>
+        <translation>Software von Drittanbietern</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <translation>Extensions</translation>
+        <translation>Erweiterungen</translation>
     </message>
     <message>
         <source>Exponential information: %version</source>
-        <translation>Exponential Informationen: %version</translation>
+        <translation>Exponential-Informationen: %version</translation>
     </message>
     <message>
         <source>What is Exponential?</source>
@@ -6607,6 +6599,154 @@
     <message>
         <source>Could not load LICENSE file! You should have a LICENSE file in your Exponential root directory.</source>
         <translation>Die LICENSE-Datei konnte nicht geladen werden! Im Wurzelverzeichnis von Exponential sollte eine LICENSE-Datei liegen.</translation>
+    </message>
+    <message>
+        <source>About Exponential</source>
+        <translation>Über Exponential</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Contributors and third-party software</source>
+        <translation>Mitwirkende und Software von Drittanbietern</translation>
+    </message>
+    <message>
+        <source>Copyright (C) %years %holder. All rights reserved.</source>
+        <translation>Copyright (C) %years %holder. Alle Rechte vorbehalten.</translation>
+    </message>
+    <message>
+        <source>Copyright for Exponential is included in the license shown above. Portions are copyright by other parties. A complete list of all contributors and third-party software follows.</source>
+        <translation>Das Urheberrecht an Exponential ist in der oben gezeigten Lizenz enthalten. Teile unterliegen dem Urheberrecht anderer. Eine vollständige Liste aller Mitwirkenden und der Software von Drittanbietern folgt.</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Urheberrecht</translation>
+    </message>
+    <message>
+        <source>Exponential is a professional PHP application framework with advanced CMS (content management system) functionality. As a CMS, its most notable feature is its fully customizable and extendable content model. This is also what makes Exponential suitable as a platform for general PHP development, allowing you to rapidly create professional web-based applications.</source>
+        <translation>Exponential ist ein professionelles PHP-Anwendungsframework mit umfangreichen CMS-Funktionen (Content-Management-System). Als CMS zeichnet es sich vor allem durch sein vollständig anpassbares und erweiterbares Inhaltsmodell aus. Das macht Exponential auch zu einer Plattform für die allgemeine PHP-Entwicklung, mit der sich professionelle Webanwendungen schnell erstellen lassen.</translation>
+    </message>
+    <message>
+        <source>Exponential is free software, licensed under the GNU General Public License version 2. The license text distributed with this copy follows.</source>
+        <translation>Exponential ist freie Software unter der GNU General Public License Version 2. Es folgt der Lizenztext, der mit dieser Installation ausgeliefert wird.</translation>
+    </message>
+    <message>
+        <source>Exponential is free software: you may redistribute it and/or modify it under the terms of the "%license" version %license_version as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this software.</source>
+        <translation>Exponential ist freie Software: Sie dürfen sie unter den Bedingungen der "%license" Version %license_version, wie von der Free Software Foundation veröffentlicht und in der Datei LICENSE im Lieferumfang dieser Software enthalten, weitergeben und/oder verändern.</translation>
+    </message>
+    <message>
+        <source>Exponential is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
+        <translation>Exponential wird OHNE MÄNGELGEWÄHR und OHNE JEGLICHE GEWÄHRLEISTUNG bereitgestellt, EINSCHLIESSLICH DER GEWÄHRLEISTUNG FÜR GESTALTUNG, MARKTGÄNGIGKEIT UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.</translation>
+    </message>
+    <message>
+        <source>Exponential was originally developed by %holder: Copyright (C) %years %holder. All rights reserved.</source>
+        <translation>Exponential wurde ursprünglich von %holder entwickelt: Copyright (C) %years %holder. Alle Rechte vorbehalten.</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Kennung</translation>
+    </message>
+    <message>
+        <source>Included by</source>
+        <translation>Enthalten in</translation>
+    </message>
+    <message>
+        <source>Includes</source>
+        <translation>Enthält</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>No third-party software is listed for this installation.</source>
+        <translation>Für diese Installation ist keine Software von Drittanbietern aufgeführt.</translation>
+    </message>
+    <message>
+        <source>No warranty</source>
+        <translation>Keine Gewährleistung</translation>
+    </message>
+    <message>
+        <source>Not stated</source>
+        <translation>Nicht angegeben</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>Auf dieser Seite</translation>
+    </message>
+    <message>
+        <source>Order is the loading order: an extension earlier in the list overrides the settings and templates of the ones after it.</source>
+        <translation>Die Reihenfolge ist die Ladereihenfolge: Eine Erweiterung weiter oben in der Liste überschreibt die Einstellungen und Templates der nachfolgenden.</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Original authors and third-party software</source>
+        <translation>Ursprüngliche Autoren und Software von Drittanbietern</translation>
+    </message>
+    <message>
+        <source>Read the full copyright notice</source>
+        <translation>Den vollständigen Urheberrechtshinweis lesen</translation>
+    </message>
+    <message>
+        <source>Read the license text</source>
+        <translation>Den Lizenztext lesen</translation>
+    </message>
+    <message>
+        <source>Software</source>
+        <translation>Software</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortieren nach</translation>
+    </message>
+    <message>
+        <source>Standard CMS functionality, such as news publishing, e-commerce and forums, is already implemented and ready to use. Standalone libraries can be used for cross-platform, database-independent and browser-neutral PHP projects. Because Exponential is a web-based application, it can be used from anywhere with an internet connection.</source>
+        <translation>Übliche CMS-Funktionen wie Nachrichtenveröffentlichung, E-Commerce und Foren sind bereits umgesetzt und sofort nutzbar. Eigenständige Bibliotheken lassen sich für plattformübergreifende, datenbankunabhängige und browserneutrale PHP-Projekte verwenden. Da Exponential eine webbasierte Anwendung ist, kann es überall genutzt werden, wo eine Internetverbindung besteht.</translation>
+    </message>
+    <message>
+        <source>The "%license" (GPL) is available at %link and in the file LICENSE included in the packaging of this software.</source>
+        <translation>Die "%license" (GPL) ist unter %link und in der Datei LICENSE im Lieferumfang dieser Software verfügbar.</translation>
+    </message>
+    <message>
+        <source>The copyright notices of the original authors and of the third-party software included with Exponential are kept in the source files and in the LICENSE file, as the license requires.</source>
+        <translation>Die Urheberrechtshinweise der ursprünglichen Autoren und der mit Exponential ausgelieferten Software von Drittanbietern bleiben, wie es die Lizenz verlangt, in den Quelldateien und in der Datei LICENSE erhalten.</translation>
+    </message>
+    <message>
+        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
+        <translation>Die folgende Liste nennt die Mitwirkenden an Exponential, die ihre Arbeit 7x zu den Bedingungen des eZ Systems Contributor Licensing Agreement zur Verfügung gestellt haben. Wie diese Vereinbarung es erlaubt, gibt 7x jeden Beitrag unter derselben Lizenz weiter wie die Datei, in der er enthalten ist. Die Liste nennt jeden Mitwirkenden, optional Kontaktangaben und die Dateien, zu denen er beigetragen hat.</translation>
+    </message>
+    <message>
+        <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
+        <translation>Die folgende Liste enthält die Erweiterungen, die diese Exponential-Installation zur Laufzeit geladen hat.</translation>
+    </message>
+    <message>
+        <source>The following is a list of the third-party software that is distributed with this copy of Exponential. The list of third party software includes the license for the software in question and the directory or files that contain the third-party software.</source>
+        <translation>Die folgende Liste enthält die Software von Drittanbietern, die mit dieser Exponential-Installation ausgeliefert wird. Zu jeder Software sind ihre Lizenz und das Verzeichnis oder die Dateien angegeben, die sie enthalten.</translation>
+    </message>
+    <message>
+        <source>The notice in English, as it is distributed</source>
+        <translation>Der Hinweis auf Englisch, wie er ausgeliefert wird</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>Website</translation>
+    </message>
+    <message>
+        <source>extensions loaded</source>
+        <translation>Erweiterungen geladen</translation>
+    </message>
+    <message>
+        <source>third-party components</source>
+        <translation>Komponenten von Drittanbietern</translation>
     </message>
 </context>
 <context>
@@ -31250,7 +31390,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>Exponential information: %version</source>
-        <translation>Exponential Informationen: %version</translation>
+        <translation>Exponential-Informationen: %version</translation>
     </message>
     <message>
         <source>What is Exponential?</source>

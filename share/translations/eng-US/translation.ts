@@ -4889,6 +4889,154 @@
         <source>Could not load LICENSE file! You should have a LICENSE file in your Exponential root directory.</source>
         <translation>Could not load LICENSE file! You should have a LICENSE file in your Exponential root directory.</translation>
     </message>
+    <message>
+        <source>About Exponential</source>
+        <translation>About Exponential</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Author</translation>
+    </message>
+    <message>
+        <source>Contributors and third-party software</source>
+        <translation>Contributors and third-party software</translation>
+    </message>
+    <message>
+        <source>Copyright (C) %years %holder. All rights reserved.</source>
+        <translation>Copyright (C) %years %holder. All rights reserved.</translation>
+    </message>
+    <message>
+        <source>Copyright for Exponential is included in the license shown above. Portions are copyright by other parties. A complete list of all contributors and third-party software follows.</source>
+        <translation>Copyright for Exponential is included in the license shown above. Portions are copyright by other parties. A complete list of all contributors and third-party software follows.</translation>
+    </message>
+    <message>
+        <source>Copyright</source>
+        <translation>Copyright</translation>
+    </message>
+    <message>
+        <source>Exponential is a professional PHP application framework with advanced CMS (content management system) functionality. As a CMS, its most notable feature is its fully customizable and extendable content model. This is also what makes Exponential suitable as a platform for general PHP development, allowing you to rapidly create professional web-based applications.</source>
+        <translation>Exponential is a professional PHP application framework with advanced CMS (content management system) functionality. As a CMS, its most notable feature is its fully customizable and extendable content model. This is also what makes Exponential suitable as a platform for general PHP development, allowing you to rapidly create professional web-based applications.</translation>
+    </message>
+    <message>
+        <source>Exponential is free software, licensed under the GNU General Public License version 2. The license text distributed with this copy follows.</source>
+        <translation>Exponential is free software, licensed under the GNU General Public License version 2. The license text distributed with this copy follows.</translation>
+    </message>
+    <message>
+        <source>Exponential is free software: you may redistribute it and/or modify it under the terms of the "%license" version %license_version as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this software.</source>
+        <translation>Exponential is free software: you may redistribute it and/or modify it under the terms of the "%license" version %license_version as published by the Free Software Foundation and appearing in the file LICENSE included in the packaging of this software.</translation>
+    </message>
+    <message>
+        <source>Exponential is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
+        <translation>Exponential is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</translation>
+    </message>
+    <message>
+        <source>Exponential was originally developed by %holder: Copyright (C) %years %holder. All rights reserved.</source>
+        <translation>Exponential was originally developed by %holder: Copyright (C) %years %holder. All rights reserved.</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifier</translation>
+    </message>
+    <message>
+        <source>Included by</source>
+        <translation>Included by</translation>
+    </message>
+    <message>
+        <source>Includes</source>
+        <translation>Includes</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>No third-party software is listed for this installation.</source>
+        <translation>No third-party software is listed for this installation.</translation>
+    </message>
+    <message>
+        <source>No warranty</source>
+        <translation>No warranty</translation>
+    </message>
+    <message>
+        <source>Not stated</source>
+        <translation>Not stated</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>On this page</translation>
+    </message>
+    <message>
+        <source>Order is the loading order: an extension earlier in the list overrides the settings and templates of the ones after it.</source>
+        <translation>Order is the loading order: an extension earlier in the list overrides the settings and templates of the ones after it.</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Order</translation>
+    </message>
+    <message>
+        <source>Original authors and third-party software</source>
+        <translation>Original authors and third-party software</translation>
+    </message>
+    <message>
+        <source>Read the full copyright notice</source>
+        <translation>Read the full copyright notice</translation>
+    </message>
+    <message>
+        <source>Read the license text</source>
+        <translation>Read the license text</translation>
+    </message>
+    <message>
+        <source>Software</source>
+        <translation>Software</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sort by</translation>
+    </message>
+    <message>
+        <source>Standard CMS functionality, such as news publishing, e-commerce and forums, is already implemented and ready to use. Standalone libraries can be used for cross-platform, database-independent and browser-neutral PHP projects. Because Exponential is a web-based application, it can be used from anywhere with an internet connection.</source>
+        <translation>Standard CMS functionality, such as news publishing, e-commerce and forums, is already implemented and ready to use. Standalone libraries can be used for cross-platform, database-independent and browser-neutral PHP projects. Because Exponential is a web-based application, it can be used from anywhere with an internet connection.</translation>
+    </message>
+    <message>
+        <source>The "%license" (GPL) is available at %link and in the file LICENSE included in the packaging of this software.</source>
+        <translation>The "%license" (GPL) is available at %link and in the file LICENSE included in the packaging of this software.</translation>
+    </message>
+    <message>
+        <source>The copyright notices of the original authors and of the third-party software included with Exponential are kept in the source files and in the LICENSE file, as the license requires.</source>
+        <translation>The copyright notices of the original authors and of the third-party software included with Exponential are kept in the source files and in the LICENSE file, as the license requires.</translation>
+    </message>
+    <message>
+        <source>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</source>
+        <translation>The following is a list of Exponential contributors who have licensed their work for use by 7x under the terms and conditions of the eZ Systems Contributor Licensing Agreement. As permitted by this agreement, 7x redistributes each contribution under the same license as the file that the contribution is included in. The list names each contributor, optional contact info and the files they have contributed or contributed work to.</translation>
+    </message>
+    <message>
+        <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
+        <translation>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</translation>
+    </message>
+    <message>
+        <source>The following is a list of the third-party software that is distributed with this copy of Exponential. The list of third party software includes the license for the software in question and the directory or files that contain the third-party software.</source>
+        <translation>The following is a list of the third-party software that is distributed with this copy of Exponential. The list of third party software includes the license for the software in question and the directory or files that contain the third-party software.</translation>
+    </message>
+    <message>
+        <source>The notice in English, as it is distributed</source>
+        <translation>The notice in English, as it is distributed</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>Website</translation>
+    </message>
+    <message>
+        <source>extensions loaded</source>
+        <translation>extensions loaded</translation>
+    </message>
+    <message>
+        <source>third-party components</source>
+        <translation>third-party components</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/infocollector/collectionlist</name>
