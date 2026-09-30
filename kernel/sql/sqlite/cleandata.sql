@@ -7476,7 +7476,7 @@ INSERT INTO ezcontentobject_tree (
   1184592117,
   48,
   1,
-  'setup2',
+  'x_setup',
   '/1/48/',
   0,
   '182ce1b5af0c09fa378557c462ba2617',
@@ -7616,7 +7616,7 @@ INSERT INTO ezcontentobject_tree (
   1184592117,
   54,
   48,
-  'setup2/common_ini_settings',
+  'x_setup/common_ini_settings',
   '/1/48/54/',
   0,
   'fa9f3cff9cf90ecfae335718dcbddfe2',
@@ -7756,7 +7756,7 @@ INSERT INTO ezcontentobject_tree (
   1790769600,
   4,
   1,
-  'archives',
+  'x_archives',
   '/1/4/',
   0,
   '5e4c9534fa4151b543e967b8ac75a190',
@@ -38009,8 +38009,8 @@ INSERT INTO ezurlalias (
   1,
   1,
   0,
-  '1a557283e5542468721ccbc770c8b13f',
-  'archives'
+  '1e516185879a45416fd1b57f1c3dc793',
+  'x_archives'
 );
 
 INSERT INTO ezurlalias_ml (
@@ -38085,8 +38085,8 @@ INSERT INTO ezurlalias_ml (
   3,
   13,
   0,
-  'Setup2',
-  '475e97c0146bfb1c490339546d9e72ee'
+  'x-setup',
+  '803638d3f66e0be1d1599a5440168c5f'
 );
 INSERT INTO ezurlalias_ml (
   action,
@@ -38935,8 +38935,8 @@ INSERT INTO ezurlalias_ml (
   3,
   36,
   0,
-  'Archives',
-  '1a557283e5542468721ccbc770c8b13f'
+  'x-archives',
+  'a198b3d51a1c81e120700ed4ba4b246a'
 );
 
 INSERT INTO ezurlalias_ml_incr (
