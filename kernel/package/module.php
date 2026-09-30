@@ -72,6 +72,18 @@ $ViewList['viewfile'] = array(
     'script' => 'viewfile.php',
     'params' => array( 'PackageName', 'FileIndex' ) );
 
+// package/compare/<PackageName>: the package's content compared with the site's content tree and
+// classes (eZPackageComparison), read-only; its state in view parameters, (filter)/(class)/
+// (search)/(limit)/(offset)/(item). Same policy as 'view': it shows what the package carries next
+// to what the site already shows its readers. "Compare again" (a POST) only rebuilds the
+// comparison's own cache.
+$ViewList['compare'] = array(
+    'functions' => array( 'read' ),
+    'script' => 'compare.php',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'single_post_actions' => array( 'CompareRefreshButton' => 'Refresh' ),
+    'params' => array( 'PackageName' ) );
+
 $ViewList['install'] = array(
     'functions' => array( 'install' ),
     'script' => 'install.php',

@@ -1,0 +1,138 @@
+/* The package comparison, package/compare/<name> (templates/package/compare.tpl, loaded there with
+   ezcss_require). Scoped to .package-compare; the page also carries .package-view-full, so the
+   package view's own badges, filter form, link buttons and pager (content.css) apply unchanged.
+   Status colours: new green, changed amber, only on the site red, identical grey, class missing
+   purple - each also has its own glyph and label, so none depends on colour alone. Removed text
+   is struck through, added text underlined, for the same reason. */
+
+.package-compare .pcmp-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5em 1em; margin: 0 0 0.75em; }
+.package-compare .pcmp-built { margin: 0; color: #44484d; flex: 1 1 24em; min-width: 0; }
+.package-compare .pcmp-cached { display: block; color: #6a6a72; font-size: 0.9em; }
+.package-compare .pcmp-toolbar-actions { display: flex; flex-wrap: wrap; gap: 0.4em; align-items: center; margin: 0; }
+.package-compare .pcmp-toolbar-actions input { margin: 0; }
+
+/* Status chips: the summary bar (links that filter) and the badges in the list and viewer */
+.package-compare .pcmp-summary { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0 0 0.75em; }
+.package-compare a.pcmp-chip { display: inline-flex; align-items: center; gap: 0.4em; padding: 0.25em 0.65em; border: 1px solid #cfd1d3; border-radius: 999px; background: #fff; color: #44484d; text-decoration: none; line-height: 1.4; }
+.package-compare a.pcmp-chip:hover,
+.package-compare a.pcmp-chip:focus { filter: brightness(0.95); }
+.package-compare a.pcmp-chip:focus-visible { outline: 2px solid #e27f15; outline-offset: 1px; }
+.package-compare .pcmp-chip-count { font-weight: bold; font-variant-numeric: tabular-nums; }
+.package-compare a.pcmp-chip-zero { opacity: 0.6; }
+.package-compare a.pcmp-chip-active { box-shadow: inset 0 0 0 2px currentColor; font-weight: bold; }
+.package-compare a.pcmp-chip-all.pcmp-chip-active { background: #567975; border-color: #567975; color: #f5f3dd; }
+
+.package-compare .pcmp-glyph { display: inline-block; min-width: 1.1em; text-align: center; font-weight: bold; font-family: Verdana, Arial, sans-serif; }
+.package-compare .pcmp-status { display: inline-flex; align-items: center; gap: 0.2em; padding: 0 0.5em; border: 1px solid; border-radius: 3px; font-size: 0.9em; line-height: 1.6; white-space: nowrap; }
+
+.package-compare .pcmp-status-new { background: #e3f1e1; border-color: #9ccc98; color: #22582a; }
+.package-compare .pcmp-status-changed { background: #fcf0d4; border-color: #e3bd62; color: #6e4700; }
+.package-compare .pcmp-status-removed { background: #fbe4e0; border-color: #e3a79c; color: #9a2c1b; }
+.package-compare .pcmp-status-identical { background: #f0f0f0; border-color: #cfd1d3; color: #55585c; }
+.package-compare .pcmp-status-class_missing { background: #f0e7f7; border-color: #c3a6de; color: #5a3183; }
+
+/* The item list */
+.package-compare table.pcmp-items { border-collapse: collapse; }
+.package-compare table.pcmp-items td { vertical-align: middle; }
+.package-compare table.pcmp-items .pcmp-col-status,
+.package-compare table.pcmp-items .pcmp-col-class,
+.package-compare table.pcmp-items .pcmp-col-actions { width: 1%; white-space: nowrap; }
+.package-compare table.pcmp-items .pcmp-col-actions { text-align: right; }
+.package-compare .pcmp-item-name { display: block; overflow-wrap: anywhere; white-space: pre-line; }
+.package-compare .pcmp-item-remote { display: block; color: #6a6a72; font-size: 0.8em; overflow-wrap: anywhere; }
+.package-compare .pcmp-col-summary { color: #44484d; min-width: 10em; }
+
+/* The item opened */
+.package-compare .pcmp-viewer { margin: 0 0 1em; border: 1px solid #cfd1d3; border-radius: 3px; overflow: hidden; }
+.package-compare .pcmp-viewer-head { display: flex; flex-wrap: wrap; gap: 0.5em 1em; align-items: flex-start; justify-content: space-between; padding: 0.6em 0.75em; background: #f5f5f5; border-bottom: 1px solid #cfd1d3; }
+.package-compare .pcmp-viewer-title { flex: 1 1 20em; min-width: 0; }
+.package-compare .pcmp-viewer-title h2 { font-size: 1.1em; margin: 0.35em 0 0.2em; white-space: pre-line; overflow-wrap: anywhere; }
+.package-compare .pcmp-viewer-ids { display: flex; flex-wrap: wrap; gap: 0.2em 1em; margin: 0; color: #55585c; font-size: 0.9em; }
+.package-compare .pcmp-viewer-ids code { overflow-wrap: anywhere; }
+.package-compare .pcmp-viewer-body { padding: 0.75em; }
+.package-compare .pcmp-note { margin: 0 0 0.6em; padding: 0.4em 0.6em; background: #f0e7f7; border-left: 3px solid #8d5cba; }
+.package-compare dl.pcmp-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.2em 1em; margin: 0 0 0.6em; }
+.package-compare dl.pcmp-facts dt { font-weight: bold; color: #44484d; margin: 0; }
+.package-compare dl.pcmp-facts dd { margin: 0; overflow-wrap: anywhere; }
+.package-compare .pcmp-legend { display: flex; flex-wrap: wrap; gap: 0.25em 1.5em; margin: 0 0 0.75em; font-size: 0.9em; color: #55585c; }
+
+.package-compare .pcmp-section { margin: 0 0 1em; }
+.package-compare h3.pcmp-section-title { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3em 0.75em; font-size: 1em; margin: 0.5em 0; padding-bottom: 0.25em; border-bottom: 1px solid #e0e0e0; }
+.package-compare .pcmp-section-count { color: #6a6a72; font-weight: normal; font-size: 0.9em; margin-left: auto; }
+
+.package-compare .pcmp-row { margin: 0 0 0.75em; padding: 0.5em; border: 1px solid #e0e0e0; border-left-width: 4px; border-radius: 3px; background: #fcfcfc; }
+.package-compare .pcmp-row-changed { border-left-color: #e3bd62; }
+.package-compare .pcmp-row-package_only { border-left-color: #6fae69; }
+.package-compare .pcmp-row-site_only { border-left-color: #d7806f; }
+.package-compare .pcmp-row-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2em 0.75em; margin: 0 0 0.4em; }
+.package-compare .pcmp-row-identifier,
+.package-compare .pcmp-row-datatype { color: #6a6a72; font-size: 0.85em; }
+.package-compare .pcmp-state { display: inline-block; padding: 0 0.45em; border-radius: 3px; font-size: 0.8em; font-weight: normal; line-height: 1.6; }
+.package-compare .pcmp-state-changed { background: #fcf0d4; color: #6e4700; }
+.package-compare .pcmp-state-package_only { background: #e3f1e1; color: #22582a; }
+.package-compare .pcmp-state-site_only { background: #fbe4e0; color: #9a2c1b; }
+.package-compare .pcmp-state-identical { background: #f0f0f0; color: #55585c; }
+.package-compare .pcmp-row-note { margin: 0.35em 0 0; color: #55585c; font-size: 0.9em; }
+
+/* Side by side on a wide screen, one above the other on a narrow one */
+.package-compare .pcmp-sides { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.6em; }
+.package-compare .pcmp-side { min-width: 0; }
+.package-compare .pcmp-side-label { font-size: 0.8em; font-weight: bold; color: #6a6a72; text-transform: uppercase; letter-spacing: 0.03em; margin: 0 0 0.2em; }
+.package-compare .pcmp-text { display: block; margin: 0; padding: 0.45em 0.6em; max-height: 22em; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font-family: inherit; font-size: 0.95em; line-height: 1.5; background: #fff; border: 1px solid #dcdcdc; border-radius: 3px; }
+.package-compare .pcmp-text-missing { color: #6a6a72; font-style: italic; background: repeating-linear-gradient(135deg, #fafafa, #fafafa 6px, #f0f0f0 6px, #f0f0f0 12px); }
+.package-compare .pcmp-text-same { max-height: 10em; border: 0; background: none; padding: 0; }
+.package-compare .pcmp-empty { color: #8a8a90; font-style: italic; }
+.package-compare del { background: #fbd3cc; color: #7a1d0e; text-decoration: line-through; text-decoration-color: rgba(122, 29, 14, 0.55); border-radius: 2px; }
+.package-compare ins { background: #cdeccb; color: #1b4d1f; text-decoration: underline; text-decoration-color: rgba(27, 77, 31, 0.55); border-radius: 2px; }
+.package-compare .pcmp-legend del,
+.package-compare .pcmp-legend ins { padding: 0 0.25em; }
+.package-compare .pcmp-text-removed del,
+.package-compare .pcmp-text-added ins { background: none; }
+.package-compare .pcmp-text-removed { background: #fdf0ee; }
+.package-compare .pcmp-text-added { background: #f0f9ef; }
+
+.package-compare details.pcmp-raw { margin: 0.3em 0 0; }
+.package-compare details.pcmp-raw summary { cursor: pointer; font-size: 0.85em; color: #094564; }
+.package-compare details.pcmp-raw pre { margin: 0.3em 0 0; padding: 0.5em; max-height: 18em; overflow: auto; white-space: pre; font-size: 0.8em; background: #f5f5f5; border: 1px solid #e0e0e0; }
+
+.package-compare details.pcmp-same { margin: 0.25em 0 0; }
+.package-compare details.pcmp-same > summary { cursor: pointer; color: #094564; padding: 0.2em 0; }
+.package-compare table.pcmp-same-list { border-collapse: collapse; margin-top: 0.3em; }
+.package-compare table.pcmp-same-list th { width: 30%; text-align: left; font-weight: normal; vertical-align: top; background: none; color: #44484d; border-left: 0; font-size: 1em; }
+.package-compare table.pcmp-same-list th code { display: block; color: #6a6a72; font-size: 0.85em; }
+.package-compare table.pcmp-same-list td { vertical-align: top; }
+
+.package-compare ul.pcmp-places { margin: 0; padding: 0.45em 0.6em 0.45em 1.6em; background: #fff; border: 1px solid #dcdcdc; border-radius: 3px; }
+.package-compare ul.pcmp-places li { overflow-wrap: anywhere; margin: 0.1em 0; }
+
+.package-compare summary:focus-visible { outline: 2px solid #e27f15; outline-offset: 1px; }
+
+@media (max-width: 720px) {
+    .package-compare .pcmp-sides { grid-template-columns: minmax(0, 1fr); }
+    .package-compare .pcmp-section-count { margin-left: 0; }
+}
+
+/* A phone: the list's rows become cards, the name on its own full width */
+@media (max-width: 640px) {
+    .package-compare table.pcmp-items thead { display: none; }
+    .package-compare table.pcmp-items,
+    .package-compare table.pcmp-items tbody { display: block; }
+    .package-compare table.pcmp-items tr { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3em 0.75em; padding: 0.5em 0.4em; border-bottom: 1px solid #e0e0e0; }
+    .package-compare table.pcmp-items td,
+    .package-compare table.pcmp-items td.pcmp-col-status,
+    .package-compare table.pcmp-items td.pcmp-col-class,
+    .package-compare table.pcmp-items td.pcmp-col-actions { display: block; padding: 0; width: auto; border: 0; }
+    .package-compare table.pcmp-items td.pcmp-col-name { flex: 1 1 100%; order: -1; }
+    .package-compare table.pcmp-items td.pcmp-col-summary { flex: 1 1 100%; min-width: 0; font-size: 0.9em; }
+    .package-compare table.pcmp-items td.pcmp-col-summary:empty { display: none; }
+    .package-compare table.pcmp-items td.pcmp-col-actions { margin-left: auto; }
+    .package-compare .pcmp-viewer-body { padding: 0.5em; }
+    .package-compare table.pcmp-same-list,
+    .package-compare table.pcmp-same-list tbody,
+    .package-compare table.pcmp-same-list tr,
+    .package-compare table.pcmp-same-list th,
+    .package-compare table.pcmp-same-list td { display: block; width: auto; }
+    .package-compare table.pcmp-same-list th { padding-bottom: 0; }
+    .package-compare dl.pcmp-facts { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .package-compare dl.pcmp-facts dd { margin-bottom: 0.4em; }
+}
