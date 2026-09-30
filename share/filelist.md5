@@ -442,7 +442,7 @@ f31c0955bafa5d8f6a2145e0e0aac8e4  design/admin/templates/package/list.tpl
 a552e51ddb4d343aaa6ac37eba7a5c14  design/admin/templates/package/uninstall_error.tpl
 85f22f387a2856b185952adcd44bb9ef  design/admin/templates/package/upload.tpl
 af46a950a91555aad32cb5f618995f19  design/admin/templates/package/view/files.tpl
-5d1c0d4fc0e3704417b7965fe57f9317  design/admin/templates/package/view/full.tpl
+6fc3267a44cb5243560ccf9fc0e96e19  design/admin/templates/package/view/full.tpl
 f8ca49e9ca11f9c274e375cd0ea3aad4  design/admin/templates/page_copyright.tpl
 128ac846ded479d23689fb2daaba69e2  design/admin/templates/page_head_script.tpl
 90f8a93adc5708017f6c3c0928ca1388  design/admin/templates/page_head_style.tpl
@@ -5798,7 +5798,7 @@ cc8dc9129859f2c0a9e600e304c9cc79  kernel/package/list.php
 af9eb38cb18dd0037c206570ec618457  kernel/package/module.php
 8d6dcf8df0633d2ba6a46de6c1cedacd  kernel/package/uninstall.php
 b65bd533a77eeecbbdfc044a762d5bdd  kernel/package/upload.php
-6bb6b9752ad7bbc5e8c6c193a5c2bd61  kernel/package/view.php
+2951a88f020077e0c6300efd6cd26fc0  kernel/package/view.php
 1bed52bbae065d9b9d343ba3808d7f26  kernel/package/viewfile.php
 4b48b0b265db3fa5097580f70a626741  kernel/pdf/edit.php
 43896c4b930ee2b5c745a1b9ab51e308  kernel/pdf/list.php
