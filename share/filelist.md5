@@ -6203,7 +6203,7 @@ fdef7886ec04db7e2b6da23d964e9508  kernel/shop/unarchiveorder.php
 13d2b765ecd87ff6e43e71f502412c44  kernel/shop/vatrules.php
 f381658e7b1fd5cbd576a2ef97a3f9db  kernel/shop/vattype.php
 1a1ad7f71e4de36b5455a54a61814b47  kernel/shop/wishlist.php
-00cf6e84002ed7550958edebab70789a  kernel/sql/common/cleandata.sql
+8468b269579736aacfc9f15fa4453523  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
