@@ -227,8 +227,9 @@
         {undef $viewed}
         {/if}
 
-        {include uri='design:package/view/contents_pager.tpl' browser=$ContentsBrowser position='top'}
+        {if $ContentsBrowser.pages|gt(1)}{include uri='design:package/view/contents_pager.tpl' browser=$ContentsBrowser position='top'}{/if}
 
+        {if $ContentsBrowser.files|count|gt(0)}
         <div class="pvf-scroll">
         <table class="list pvf-files">
             <thead><tr>
@@ -253,18 +254,21 @@
                     <a class="pvf-link-button" href={$file.url_view|ezurl}>{'View'|i18n('design/admin/package')}</a>
                     {/if}
                     {/if}
-                    <a class="pvf-link-button" href={concat( 'package/viewfile/', $package.name, '/', $file.index )|ezurl} target="_blank" rel="noopener" title="{'Download'|i18n('design/admin/package')}">{'Download'|i18n('design/admin/package')}</a>
+                    <a class="pvf-link-button" href={concat( 'package/viewfile/', $package.name, '/', $file.index )|ezurl} target="_blank" rel="noopener">{'Download'|i18n('design/admin/package')}</a>
                 </td>
             </tr>
             {/foreach}
-            {if $ContentsBrowser.files|count|eq(0)}
-            <tr class="bglight"><td colspan="4" class="pvf-empty">{'No file matches these filters.'|i18n('design/admin/package')}</td></tr>
-            {/if}
             </tbody>
         </table>
         </div>
 
         {include uri='design:package/view/contents_pager.tpl' browser=$ContentsBrowser position='bottom'}
+        {else}
+        <div class="pvf-empty-state">
+            <p>{if $ContentsBrowser.total_all|eq(0)}{'This package has no files.'|i18n('design/admin/package')}{else}{'No file matches these filters.'|i18n('design/admin/package')}{/if}</p>
+            {if or( $ContentsBrowser.type_filter, $ContentsBrowser.search )}<p><a class="pvf-link-button" href={$browseBaseURL}>{'Clear filters'|i18n('design/admin/package')}</a></p>{/if}
+        </div>
+        {/if}
     </div>
     {undef $browseBaseURL $viewedIndex}
     {/if}

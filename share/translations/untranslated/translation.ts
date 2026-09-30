@@ -6849,6 +6849,10 @@ You can also remove the package without uninstalling it from the package list.</
         <source>Files %from–%to of %count</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>This package has no files.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>

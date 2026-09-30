@@ -340,7 +340,6 @@ table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }
 .package-view-full table.pvf-files .pvf-col-actions { width: 1%; }
 .package-view-full table.list tr.pvf-current,
 .package-view-full table.list tr.pvf-current:hover { background: #ffe9bd; box-shadow: inset 3px 0 0 #e27f15; }
-.package-view-full td.pvf-empty { text-align: center; color: #6a6a72; padding: 1.5em; }
 .package-view-full .pvf-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
 .package-view-full .pvf-kind { display: inline-block; padding: 0 0.45em; border-radius: 3px; font-size: 0.85em; line-height: 1.6; background: #eee; color: #44484d; }
@@ -363,7 +362,10 @@ table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }
 .package-view-full .pvf-viewer-actions { display: flex; gap: 0.4em; }
 .package-view-full .pvf-viewer-body { padding: 0.75em; }
 .package-view-full pre.pvf-code { margin: 0; padding: 0.75em; max-height: 32em; overflow: auto; white-space: pre; font-size: 0.9em; line-height: 1.45; background: #f8f8f8; }
-.package-view-full table.pvf-object th { width: 9em; background: #f5f5f5; color: #44484d; border-left: 0; font-weight: bold; }
+.package-view-full table.pvf-object { border-collapse: collapse; }
+.package-view-full table.pvf-object th { width: 9em; background: #f5f5f5; color: #44484d; border-left: 0; font-weight: bold; font-size: 1em; }
+.package-view-full table.pvf-object th,
+.package-view-full table.pvf-object td { padding: 0.4em 0.6em; line-height: 1.4; border-bottom: 1px solid #e0e0e0; }
 .package-view-full h3.pvf-language { font-size: 1em; margin: 1em 0 0.35em; }
 .package-view-full td.pvf-value { overflow-wrap: anywhere; min-width: 12em; }
 .package-view-full .pvf-image { text-align: center; background: #f5f5f5; padding: 0.75em; }
@@ -409,7 +411,6 @@ table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }
     .package-view-full table.pvf-files td { display: block; padding: 0; width: auto; }
     .package-view-full table.pvf-files td.pvf-col-path { flex: 1 1 100%; }
     .package-view-full table.pvf-files td.pvf-col-actions { margin-left: auto; }
-    .package-view-full table.pvf-files td.pvf-empty { flex: 1 1 100%; }
     .package-view-full .pvf-pager-top .pvf-pager-label { display: none; }
     .package-view-full .pvf-viewer-body { padding: 0.5em; }
     .package-view-full table.pvf-files td.pvf-col-type,
@@ -431,4 +432,20 @@ table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }
     .package-view-full table.pvf-attributes td { display: block; padding: 0; }
     .package-view-full table.pvf-attributes td:nth-child(2) { color: #6a6a72; }
     .package-view-full table.pvf-attributes td.pvf-value { flex: 1 1 100%; min-width: 0; }
+}
+
+/* No file on this page: a plain message in place of an empty table. */
+.package-view-full .pvf-empty-state { margin: 0.25em 0 0.5em; padding: 1.5em 1em; text-align: center; color: #6a6a72; background: #f5f5f5; border: 1px dashed #cfd1d3; border-radius: 3px; }
+.package-view-full .pvf-empty-state p { margin: 0.25em 0; }
+
+/* Keyboard focus on the page's own link buttons and fields, in the admin's highlight colour. */
+.package-view-full a.pvf-link-button:focus-visible,
+.package-view-full .pvf-filter select:focus-visible,
+.package-view-full .pvf-filter input:focus-visible,
+.package-view-full .pvf-actions input:focus-visible { outline: 2px solid #e27f15; outline-offset: 1px; }
+
+@media (max-width: 640px) {
+    .package-view-full table.pvf-object th { background: none; color: #6a6a72; font-size: 0.9em; border: 0; }
+    .package-view-full pre.pvf-code { font-size: 0.8em; padding: 0.5em; }
+    .package-view-full table.pvf-object td { border-bottom: 1px solid #e0e0e0; }
 }

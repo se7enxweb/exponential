@@ -9175,6 +9175,10 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>Files %from–%to of %count</source>
         <translation>Dateien %from–%to von %count</translation>
     </message>
+    <message>
+        <source>This package has no files.</source>
+        <translation>Dieses Paket enthält keine Dateien.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
