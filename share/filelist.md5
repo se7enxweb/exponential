@@ -82,7 +82,7 @@ e9979b600146bdd25d4957742e641512  bin/php/ezwebinupgrade.php
 180df4500551e7902bf45d85c92a3c49  bin/php/flatten.php
 5f7744f40c20ce9864bdf3d91d2a41ed  bin/php/frankenphp.php
 5afa44a4d3da509512e5efce499eb1e5  bin/php/install.php
-36d8cb716196471d88c5151f63b9dd42  bin/php/kickstarter.php
+0e568e028ef11cb360ae7a52bb8b6cec  bin/php/kickstarter.php
 f5e6cb3562a1a0c751d91c1516fffddd  bin/php/maintenance.php
 464c842c03c7aee495e3d4ea68542f05  bin/php/makestaticcache.php
 00658ace10b63e058e42483b55c597de  bin/php/phar.php
