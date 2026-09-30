@@ -1615,6 +1615,13 @@ class eZContentObjectVersion extends eZPersistentObject
             }
         }
 
+        // The version's language mask names every translation it now has values in. A new version of
+        // an existing object is created in one language and the others are added above; unless the
+        // mask says so, publishing copies the published version's own values of those languages in
+        // again (eZContentOperationCollection::copyTranslations() goes by this mask), and the version
+        // ends up with every such value twice.
+        $contentObjectVersion->updateLanguageMask();
+
         $objectRelationList = $domNode->getElementsByTagName( 'object-relation-list' )->item( 0 );
         if ( $objectRelationList )
         {
