@@ -9567,6 +9567,238 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>under node %parent</source>
         <translation>unter Knoten %parent</translation>
     </message>
+    <message>
+        <source>%count of %total chosen item(s) can be imported. The site gets what the package brings for them; nothing is removed.</source>
+        <translation>%count von %total gewählten Einträgen können importiert werden. Die Site erhält, was das Paket für sie mitbringt; nichts wird entfernt.</translation>
+    </message>
+    <message>
+        <source>%done imported, %failed failed. The comparison below is up to date for them.</source>
+        <translation>%done importiert, %failed fehlgeschlagen. Der Vergleich unten ist für sie aktuell.</translation>
+    </message>
+    <message>
+        <source>A confirmation lists what will change. At most %max items are imported per step; nothing only on the site is removed.</source>
+        <translation>Eine Bestätigung listet auf, was sich ändert. Höchstens %max Einträge werden pro Schritt importiert; nichts, was nur auf der Site ist, wird entfernt.</translation>
+    </message>
+    <message>
+        <source>A top node of the package is placed by the install wizard, which asks where to put it.</source>
+        <translation>Einen obersten Knoten des Pakets platziert der Installationsassistent, der fragt, wohin er soll.</translation>
+    </message>
+    <message>
+        <source>All changes of this filter: %count item(s) in all, taken %max at a time.</source>
+        <translation>Alle Änderungen dieses Filters: insgesamt %count Einträge, jeweils %max auf einmal.</translation>
+    </message>
+    <message>
+        <source>An import does not move existing locations; move the node in the content structure if its place should change.</source>
+        <translation>Ein Import verschiebt keine bestehenden Platzierungen; verschieben Sie den Knoten in der Inhaltsstruktur, wenn sich sein Platz ändern soll.</translation>
+    </message>
+    <message>
+        <source>At most %max are imported in this step; the rest stays for the next one.</source>
+        <translation>In diesem Schritt werden höchstens %max importiert; der Rest bleibt für den nächsten.</translation>
+    </message>
+    <message>
+        <source>Attribute added: %attribute</source>
+        <translation>Attribut hinzugefügt: %attribute</translation>
+    </message>
+    <message>
+        <source>Attribute updated: %attribute</source>
+        <translation>Attribut aktualisiert: %attribute</translation>
+    </message>
+    <message>
+        <source>Cannot be imported</source>
+        <translation>Kann nicht importiert werden</translation>
+    </message>
+    <message>
+        <source>Class setting: %name</source>
+        <translation>Klasseneinstellung: %name</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Identical: there is nothing to import.</source>
+        <translation>Gleich: es gibt nichts zu importieren.</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importieren</translation>
+    </message>
+    <message>
+        <source>Import %count item(s)</source>
+        <translation>%count Eintrag/Einträge importieren</translation>
+    </message>
+    <message>
+        <source>Import all changes of this filter (%count)</source>
+        <translation>Alle Änderungen dieses Filters importieren (%count)</translation>
+    </message>
+    <message>
+        <source>Import from the package: confirm</source>
+        <translation>Aus dem Paket importieren: bestätigen</translation>
+    </message>
+    <message>
+        <source>Import from the package: result</source>
+        <translation>Aus dem Paket importieren: Ergebnis</translation>
+    </message>
+    <message>
+        <source>Import selected</source>
+        <translation>Ausgewählte importieren</translation>
+    </message>
+    <message>
+        <source>Import the next ones (%count left in this filter)</source>
+        <translation>Die nächsten importieren (%count übrig in diesem Filter)</translation>
+    </message>
+    <message>
+        <source>Import this item</source>
+        <translation>Diesen Eintrag importieren</translation>
+    </message>
+    <message>
+        <source>Import what the package brings for this item; a confirmation follows</source>
+        <translation>Importieren, was das Paket für diesen Eintrag mitbringt; eine Bestätigung folgt</translation>
+    </message>
+    <message>
+        <source>Imported.</source>
+        <translation>Importiert.</translation>
+    </message>
+    <message>
+        <source>Its node remote ID %remote is already used on the site by another object.</source>
+        <translation>Seine Knoten-Remote-ID %remote wird auf der Site bereits von einem anderen Objekt verwendet.</translation>
+    </message>
+    <message>
+        <source>Its parent node %remote is neither on the site nor imported before it; import the parent first.</source>
+        <translation>Sein übergeordneter Knoten %remote ist weder auf der Site noch wird er vorher importiert; importieren Sie zuerst das übergeordnete Objekt.</translation>
+    </message>
+    <message>
+        <source>Kept as the site has it (unticked): %attribute</source>
+        <translation>Bleibt wie auf der Site (abgewählt): %attribute</translation>
+    </message>
+    <message>
+        <source>Kept, only on the site: %attribute</source>
+        <translation>Bleibt, nur auf der Site: %attribute</translation>
+    </message>
+    <message>
+        <source>Names in languages only the site has are kept.</source>
+        <translation>Namen in Sprachen, die nur die Site hat, bleiben erhalten.</translation>
+    </message>
+    <message>
+        <source>New translation: %attribute</source>
+        <translation>Neue Übersetzung: %attribute</translation>
+    </message>
+    <message>
+        <source>No value is left to import (everything is unticked or differs only in what an import keeps).</source>
+        <translation>Es bleibt kein Wert zu importieren (alles ist abgewählt oder unterscheidet sich nur in dem, was ein Import beibehält).</translation>
+    </message>
+    <message>
+        <source>Not changed, its datatype differs: %attribute</source>
+        <translation>Nicht geändert, sein Datentyp unterscheidet sich: %attribute</translation>
+    </message>
+    <message>
+        <source>Not changed, the datatype differs: %list</source>
+        <translation>Nicht geändert, der Datentyp unterscheidet sich: %list</translation>
+    </message>
+    <message>
+        <source>Not imported</source>
+        <translation>Nicht importiert</translation>
+    </message>
+    <message>
+        <source>Not imported in this step: at most %count items are imported at a time.</source>
+        <translation>In diesem Schritt nicht importiert: höchstens %count Einträge werden auf einmal importiert.</translation>
+    </message>
+    <message>
+        <source>Not imported, the class on the site has no such attribute (import the class first): %attribute</source>
+        <translation>Nicht importiert, die Klasse auf der Site hat kein solches Attribut (importieren Sie zuerst die Klasse): %attribute</translation>
+    </message>
+    <message>
+        <source>Only its placement or a translation only on the site differ, and an import changes neither.</source>
+        <translation>Nur die Platzierung oder eine Übersetzung, die nur die Site hat, unterscheiden sich, und ein Import ändert keins von beiden.</translation>
+    </message>
+    <message>
+        <source>Only on the site: an import never removes anything.</source>
+        <translation>Nur auf der Site: ein Import entfernt nie etwas.</translation>
+    </message>
+    <message>
+        <source>Placement: existing locations are not moved; a location the package has and the site has not is added.</source>
+        <translation>Platzierung: bestehende Platzierungen werden nicht verschoben; eine, die das Paket hat und die Site nicht, wird hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswählen</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name auswählen</translation>
+    </message>
+    <message>
+        <source>The class is created, with %count attribute(s).</source>
+        <translation>Die Klasse wird angelegt, mit %count Attribut(en).</translation>
+    </message>
+    <message>
+        <source>The class is no longer in the package.</source>
+        <translation>Die Klasse ist nicht mehr im Paket.</translation>
+    </message>
+    <message>
+        <source>The installer could not import the class.</source>
+        <translation>Die Installation konnte die Klasse nicht importieren.</translation>
+    </message>
+    <message>
+        <source>The installer could not import the object.</source>
+        <translation>Die Installation konnte das Objekt nicht importieren.</translation>
+    </message>
+    <message>
+        <source>The item is no longer in the package or on the site; compare again.</source>
+        <translation>Der Eintrag ist nicht mehr im Paket oder auf der Site; vergleichen Sie erneut.</translation>
+    </message>
+    <message>
+        <source>The object could not be placed: its parent node is not on the site.</source>
+        <translation>Das Objekt konnte nicht platziert werden: sein übergeordneter Knoten ist nicht auf der Site.</translation>
+    </message>
+    <message>
+        <source>The object is created under "%parent".</source>
+        <translation>Das Objekt wird unter „%parent“ angelegt.</translation>
+    </message>
+    <message>
+        <source>The object is created under the object imported before it (node %remote).</source>
+        <translation>Das Objekt wird unter dem vorher importierten Objekt angelegt (Knoten %remote).</translation>
+    </message>
+    <message>
+        <source>The object is no longer in the package.</source>
+        <translation>Das Objekt ist nicht mehr im Paket.</translation>
+    </message>
+    <message>
+        <source>The object is no longer in the package; compare again.</source>
+        <translation>Das Objekt ist nicht mehr im Paket; vergleichen Sie erneut.</translation>
+    </message>
+    <message>
+        <source>The package gives the object no location.</source>
+        <translation>Das Paket gibt dem Objekt keine Platzierung.</translation>
+    </message>
+    <message>
+        <source>The package's classes and objects next to the site's own. Nothing on the site changes unless you import an item and confirm it.</source>
+        <translation>Die Klassen und Objekte des Pakets neben denen der Site. Auf der Site ändert sich nichts, außer Sie importieren einen Eintrag und bestätigen es.</translation>
+    </message>
+    <message>
+        <source>The site has no class for it: import the class first, then compare again.</source>
+        <translation>Die Site hat keine Klasse dafür: importieren Sie zuerst die Klasse und vergleichen Sie dann erneut.</translation>
+    </message>
+    <message>
+        <source>This value can only be imported together with the item</source>
+        <translation>Dieser Wert kann nur zusammen mit dem Eintrag importiert werden</translation>
+    </message>
+    <message>
+        <source>Translation %language with %count value(s)</source>
+        <translation>Übersetzung %language mit %count Wert(en)</translation>
+    </message>
+    <message>
+        <source>Translation %language, only on the site, is kept.</source>
+        <translation>Die Übersetzung %language, nur auf der Site, bleibt erhalten.</translation>
+    </message>
+    <message>
+        <source>Untick a value to keep what the site has when importing this item. Values only the site has are always kept.</source>
+        <translation>Wählen Sie einen Wert ab, um beim Import dieses Eintrags den Wert der Site zu behalten. Werte, die nur die Site hat, bleiben immer erhalten.</translation>
+    </message>
+    <message>
+        <source>Value from the package: %attribute</source>
+        <translation>Wert aus dem Paket: %attribute</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -44551,6 +44783,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Install failed with exception: </source>
         <translation>Die Installation ist mit einer Ausnahme fehlgeschlagen: </translation>
+    </message>
+    <message>
+        <source>Update existing class (attributes are added and updated, none removed)</source>
+        <translation>Bestehende Klasse aktualisieren (Attribute werden hinzugefügt und aktualisiert, keine entfernt)</translation>
     </message>
 </context>
 <context>
