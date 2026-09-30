@@ -15,3 +15,9 @@
 vendor
 ai
 var
+#
+# .claude/worktrees holds whole working copies of this installation. Walked,
+# every kernel class was found twice and the array pointed at the copies:
+# a -k run here wrote 1029 entries, every one of them inside .claude/worktrees.
+# The entry is a pattern matched from the root, so the dot is escaped.
+\.claude
