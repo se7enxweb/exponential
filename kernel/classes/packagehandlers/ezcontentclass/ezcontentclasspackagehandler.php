@@ -24,6 +24,8 @@ class eZContentClassPackageHandler extends eZPackageHandler
     const ACTION_SKIP = 2;
     const ACTION_NEW = 3;
     const ACTION_DELETE = 4;
+    /** Keep the existing class and bring it up to the package's definition: see updateExistingClass(). */
+    const ACTION_UPDATE = 5;
 
     public function __construct()
     {
@@ -198,6 +200,14 @@ class eZContentClassPackageHandler extends eZPackageHandler
 
         $class = eZContentClass::fetchByRemoteID( $classRemoteID );
 
+        // Updating an existing class matches it by identifier as well: the same class installed
+        // on another site may carry a remote id of its own, and creating "<identifier>_1" beside it
+        // is not an update
+        $wantsUpdate = isset( $installParameters['error_default_actions'][$this->HandlerType][self::ERROR_EXISTS] ) &&
+                       $installParameters['error_default_actions'][$this->HandlerType][self::ERROR_EXISTS] == self::ACTION_UPDATE;
+        if ( !$class && $wantsUpdate )
+            $class = eZContentClass::fetchByIdentifier( $classIdentifier );
+
         if ( $class )
         {
             $className = $class->name();
@@ -214,6 +224,9 @@ class eZContentClassPackageHandler extends eZPackageHandler
                 eZDebug::writeNotice( "Class '$className' already exists, skipping in non-interactive mode.", 'eZContentClassPackageHandler' );
             case self::ACTION_SKIP:
                 return true;
+
+            case self::ACTION_UPDATE:
+                return $this->updateExistingClass( $class, $content, $classNameList, $classDescriptionList, $installParameters, $installData );
 
             case self::ACTION_REPLACE:
                 if ( eZContentClassOperations::remove( $class->attribute( 'id' ) ) == false )
@@ -243,6 +256,7 @@ class eZContentClassPackageHandler extends eZPackageHandler
                         $errorMsg .= ' ' . ezpI18n::tr( 'kernel/package', "(Warning! $objectsCount content object(s) and their sub-items will be removed)" );
                     $installParameters['error']['actions'][self::ACTION_REPLACE] = $errorMsg;
                 }
+                $installParameters['error']['actions'][self::ACTION_UPDATE] = ezpI18n::tr( 'kernel/package', 'Update existing class (attributes are added and updated, none removed)' );
                 $installParameters['error']['actions'][self::ACTION_SKIP] = ezpI18n::tr( 'kernel/package', 'Skip installing this class' );
                 $installParameters['error']['actions'][self::ACTION_NEW] = ezpI18n::tr( 'kernel/package', 'Keep existing and create a new one' );
                 return false;
@@ -404,6 +418,156 @@ class eZContentClassPackageHandler extends eZPackageHandler
             }
             $classGroup->appendClass( $class );
         }
+        return true;
+    }
+
+    /**
+     * ACTION_UPDATE: brings an existing class up to the package's definition without removing
+     * anything. The class's names and descriptions (per language; a language only the site has
+     * keeps its text), its name and URL alias patterns, container, availability and sorting come
+     * from the package. Every attribute the package defines is updated - names, descriptions,
+     * flags, category, placement and datatype parameters - or, when the class has no attribute of
+     * that identifier, added and initialised in the class's existing objects. An attribute only the
+     * site has is kept, and one whose datatype differs is left as it is: changing a datatype is not
+     * an update of the definition but a conversion of the data.
+     *
+     * What was done is noted in $installData['class_update'][<identifier>] as
+     * array( 'added', 'updated', 'kept', 'datatype_differs' ) lists of attribute identifiers.
+     *
+     * Transaction unsafe: eZPackage::installItem() runs it inside one.
+     */
+    function updateExistingClass( eZContentClass $class, DOMElement $content, $classNameList, $classDescriptionList, &$installParameters, &$installData )
+    {
+        $report = array( 'added' => array(), 'updated' => array(), 'kept' => array(), 'datatype_differs' => array() );
+        $userID = isset( $installParameters['user_id'] ) ? $installParameters['user_id'] : eZUser::currentUserID();
+        $text = function ( DOMElement $parent, $name )
+        {
+            $node = $parent->getElementsByTagName( $name )->item( 0 );
+            return $node ? $node->textContent : null;
+        };
+        $knownLanguage = function ( $locale ) { return is_string( $locale ) && $locale !== '' && eZContentLanguage::fetchByLocale( $locale ); };
+
+        foreach ( $classNameList->cleanNameList() as $locale => $name )
+        {
+            if ( $knownLanguage( $locale ) && is_string( $name ) )
+                $class->setName( $name, $locale );
+        }
+        foreach ( $classDescriptionList->cleanNameList() as $locale => $description )
+        {
+            if ( $knownLanguage( $locale ) && is_string( $description ) )
+                $class->setDescription( $description, $locale );
+        }
+        if ( ( $pattern = $text( $content, 'object-name-pattern' ) ) !== null )
+            $class->setAttribute( 'contentobject_name', $pattern );
+        if ( ( $pattern = $text( $content, 'url-alias-pattern' ) ) !== null )
+            $class->setAttribute( 'url_alias_name', $pattern );
+        if ( $content->hasAttribute( 'is-container' ) )
+            $class->setAttribute( 'is_container', $content->getAttribute( 'is-container' ) == 'true' ? 1 : 0 );
+        if ( $content->hasAttribute( 'always-available' ) )
+            $class->setAttribute( 'always_available', $content->getAttribute( 'always-available' ) === 'true' ? 1 : 0 );
+        if ( $content->hasAttribute( 'sort-field' ) )
+            $class->setAttribute( 'sort_field', eZContentObjectTreeNode::sortFieldID( $content->getAttribute( 'sort-field' ) ) );
+        if ( $content->hasAttribute( 'sort-order' ) )
+            $class->setAttribute( 'sort_order', $content->getAttribute( 'sort-order' ) );
+        $class->setAttribute( 'modified', time() );
+        if ( $userID )
+            $class->setAttribute( 'modifier_id', $userID );
+        $class->NameList->setHasDirtyData( true );
+        $class->store();
+
+        $packageIdentifiers = array();
+        $newAttributes = array();
+        $classAttributesNode = $content->getElementsByTagName( 'attributes' )->item( 0 );
+        $classAttributeList = $classAttributesNode ? $classAttributesNode->getElementsByTagName( 'attribute' ) : array();
+        foreach ( $classAttributeList as $classAttributeNode )
+        {
+            if ( strtolower( $classAttributeNode->getAttribute( 'unsupported' ) ) == 'true' )
+                continue;
+            $identifier = $text( $classAttributeNode, 'identifier' );
+            if ( $identifier === null || $identifier === '' )
+                continue;
+            $packageIdentifiers[$identifier] = true;
+            $datatype = $classAttributeNode->getAttribute( 'datatype' );
+            $nameList = new eZSerializedObjectNameList( (string)$text( $classAttributeNode, 'serialized-name-list' ) );
+            $descriptionList = new eZSerializedObjectNameList( (string)$text( $classAttributeNode, 'serialized-description-list' ) );
+            $parametersNode = $classAttributeNode->getElementsByTagName( 'datatype-parameters' )->item( 0 );
+            $values = array(
+                'is_required' => strtolower( $classAttributeNode->getAttribute( 'required' ) ) == 'true' ? 1 : 0,
+                'is_searchable' => strtolower( $classAttributeNode->getAttribute( 'searchable' ) ) == 'true' ? 1 : 0,
+                'is_information_collector' => strtolower( $classAttributeNode->getAttribute( 'information-collector' ) ) == 'true' ? 1 : 0,
+                'can_translate' => strtolower( $classAttributeNode->getAttribute( 'translatable' ) ) == 'true' ? 1 : 0,
+                'category' => (string)$text( $classAttributeNode, 'category' ),
+                'placement' => (int)$text( $classAttributeNode, 'placement' ),
+            );
+
+            $classAttribute = $class->fetchAttributeByIdentifier( $identifier );
+            if ( $classAttribute && $classAttribute->attribute( 'data_type_string' ) !== $datatype )
+            {
+                $report['datatype_differs'][] = $identifier;
+                continue;
+            }
+            if ( !$classAttribute )
+            {
+                $nameList->validate();
+                $classAttribute = eZContentClassAttribute::create( $class->attribute( 'id' ), $datatype,
+                                                                   $values + array( 'version' => eZContentClass::VERSION_STATUS_DEFINED,
+                                                                                    'identifier' => $identifier,
+                                                                                    'serialized_name_list' => $nameList->serializeNames(),
+                                                                                    'serialized_description_list' => $descriptionList->serializeNames() ) );
+                if ( !$classAttribute->dataType() )
+                {
+                    $report['datatype_differs'][] = $identifier;
+                    continue;
+                }
+                $classAttribute->store();
+                $classAttribute->dataType()->unserializeContentClassAttribute( $classAttribute, $classAttributeNode, $parametersNode );
+                $classAttribute->store();
+                $newAttributes[] = $classAttribute;
+                $report['added'][] = $identifier;
+                continue;
+            }
+            foreach ( $values as $name => $value )
+                $classAttribute->setAttribute( $name, $value );
+            foreach ( $nameList->cleanNameList() as $locale => $name )
+            {
+                if ( $knownLanguage( $locale ) && is_string( $name ) )
+                    $classAttribute->setName( $name, $locale );
+            }
+            foreach ( $descriptionList->cleanNameList() as $locale => $description )
+            {
+                if ( $knownLanguage( $locale ) && is_string( $description ) )
+                    $classAttribute->setDescription( $description, $locale );
+            }
+            if ( $parametersNode && $classAttribute->dataType() )
+                $classAttribute->dataType()->unserializeContentClassAttribute( $classAttribute, $classAttributeNode, $parametersNode );
+            $classAttribute->store();
+            $report['updated'][] = $identifier;
+        }
+        foreach ( $class->fetchAttributes() as $classAttribute )
+        {
+            if ( !isset( $packageIdentifiers[$classAttribute->attribute( 'identifier' )] ) )
+                $report['kept'][] = $classAttribute->attribute( 'identifier' );
+        }
+
+        // An added attribute gets its value row in every existing object, as the class editor does
+        foreach ( $newAttributes as $classAttribute )
+            $classAttribute->initializeObjectAttributes();
+
+        // What eZContentClass::storeVersioned() tells the caches after a class edit
+        eZContentClass::expireCache();
+        $handler = eZExpiryHandler::instance();
+        $time = time();
+        $handler->setTimestamp( 'user-class-cache', $time );
+        $handler->setTimestamp( 'class-identifier-cache', $time );
+        $handler->setTimestamp( 'sort-key-cache', $time );
+        $handler->store();
+        eZContentCacheManager::clearAllContentCache();
+
+        if ( !isset( $installData['class_update'] ) )
+            $installData['class_update'] = array();
+        // Not in 'classid_list': that list is what uninstalling the package removes, and an updated
+        // class belongs to the site, not to the package
+        $installData['class_update'][$class->attribute( 'identifier' )] = $report;
         return true;
     }
 
