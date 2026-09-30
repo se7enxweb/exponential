@@ -42,13 +42,36 @@ class eZPackageComparisonImport
      * 'class_identifier', 'importable' (bool), 'reason' (why not), 'changes' (lines: what is set),
      * 'kept' (lines: what stays as the site has it) ).
      */
-    static function plan( eZPackage $package, array $index, array $indices, array $excluded = array() )
+    static function plan( eZPackage $package, array $index, array $indices, array $excluded = array(), $addNeededClasses = true )
     {
         $plan = array();
         $indices = array_values( array_unique( array_map( 'intval', $indices ) ) );
+        // A class an object's values need (see dependency()) is part of the plan, chosen or not; the
+        // confirmation lists it with the objects that need it. $addNeededClasses false: exactly the
+        // items given (the confirmed ones - a needed class the user left out stays out)
+        $neededBy = array();
+        foreach ( $indices as $i )
+        {
+            if ( !isset( $index['items'][$i] ) || $index['items'][$i]['kind'] !== 'object' )
+                continue;
+            $dependency = self::dependency( $index['items'][$i], $index );
+            if ( $dependency && $dependency['class_index'] !== null && $dependency['addable'] )
+                $neededBy[$dependency['class_index']][] = $index['items'][$i]['name'];
+        }
+        if ( $addNeededClasses )
+        {
+            foreach ( array_keys( $neededBy ) as $classIndex )
+            {
+                if ( !in_array( $classIndex, $indices, true ) )
+                    $indices[] = $classIndex;
+            }
+        }
+        // Classes come first in the index, so the package's order imports a class before the objects that need it
         sort( $indices );
-        // Parents that the objects imported before in the same run create
+        $chosen = array_flip( $indices );
+        // Parents that the objects imported before in the same run create, and the classes it imports
         $comingNodes = array();
+        $comingClasses = array();
         foreach ( $indices as $i )
         {
             if ( !isset( $index['items'][$i] ) )
@@ -58,11 +81,12 @@ class eZPackageComparisonImport
                 'index' => $i, 'kind' => $item['kind'], 'status' => $item['status'], 'name' => $item['name'],
                 'remote_id' => $item['remote_id'], 'class_identifier' => $item['class_identifier'],
                 'importable' => false, 'reason' => '', 'changes' => array(), 'kept' => array(), 'values' => array(), 'excluded' => array(),
+                'needed_by' => isset( $neededBy[$i] ) ? $neededBy[$i] : array(), 'needs_class' => null,
             );
-            $reason = self::statusReason( $item );
-            if ( $reason !== '' )
+            $offer = self::offerState( $item, $index );
+            if ( !$offer['offered'] )
             {
-                $entry['reason'] = $reason;
+                $entry['reason'] = $offer['reason'];
                 $plan[] = $entry;
                 continue;
             }
@@ -74,15 +98,19 @@ class eZPackageComparisonImport
                 continue;
             }
             if ( $item['kind'] === 'class' )
-                self::planClass( $entry, $detail );
+            {
+                self::planClass( $entry, $detail, $item );
+                if ( $entry['importable'] )
+                    $comingClasses[$item['class_identifier']] = array( 'index' => $i, 'name' => $item['name'], 'addable' => $item['addable'] );
+            }
             else
-                self::planObject( $package, $entry, $item, $detail, isset( $excluded[$i] ) ? $excluded[$i] : array(), $comingNodes );
+                self::planObject( $package, $entry, $item, $detail, isset( $excluded[$i] ) ? $excluded[$i] : array(), $comingNodes, $index, $comingClasses );
             $plan[] = $entry;
         }
         return $plan;
     }
 
-    /** Why an item of this status is not imported at all, or ''. */
+    /** Why an item of this status is not imported at all, or '' (its values may still hold no importable one, see offerState()). */
     static function statusReason( array $item )
     {
         switch ( $item['status'] )
@@ -91,27 +119,138 @@ class eZPackageComparisonImport
                 return ezpI18n::tr( 'design/admin/package', 'Identical: there is nothing to import.' );
             case 'removed':
                 return ezpI18n::tr( 'design/admin/package', 'Only on the site: an import never removes anything.' );
-            case 'class_missing':
-                return ezpI18n::tr( 'design/admin/package', 'The site has no class for it: import the class first, then compare again.' );
         }
-        if ( $item['kind'] === 'object' && $item['status'] === 'changed' && (int)$item['fields'] === 0 && (int)$item['lang_package'] === 0 )
-            return ezpI18n::tr( 'design/admin/package', 'Only its placement or a translation only on the site differ, and an import changes neither.' );
         return '';
     }
 
-    /** Whether an item of the index can be offered for import at all (its status allows it). */
-    static function isOffered( array $item )
+    /**
+     * What an object item's values need that the site's class does not have: null when nothing,
+     * else array( 'class_index' (the package's class item that adds them, or null), 'class_name',
+     * 'addable' (attribute identifiers that importing that class adds), 'blocked' (those it cannot:
+     * not in the package's class, or of a datatype the site does not have) ).
+     * An object whose class the site lacks altogether needs its whole class the same way.
+     */
+    static function dependency( array $item, array $index )
     {
-        return self::statusReason( $item ) === '';
+        if ( $item['kind'] !== 'object' )
+            return null;
+        $missing = isset( $item['missing_attributes'] ) ? (array)$item['missing_attributes'] : array();
+        $wholeClass = $item['status'] === 'class_missing';
+        if ( !$missing && !$wholeClass )
+            return null;
+        $classes = self::classItems( $index );
+        $class = isset( $classes[$item['class_identifier']] ) ? $classes[$item['class_identifier']] : null;
+        $importable = $class && in_array( $class['status'], array( 'new', 'changed' ), true );
+        $addable = $importable && isset( $class['addable'] ) ? (array)$class['addable'] : array();
+        $out = array( 'class_index' => $importable ? (int)$class['index'] : null,
+                      'class_name' => $class ? $class['name'] : $item['class_identifier'],
+                      'addable' => array(), 'blocked' => array(), 'whole_class' => $wholeClass );
+        if ( $wholeClass )
+        {
+            // A new class brings every attribute it can create
+            $out['addable'] = $importable && $class['status'] === 'new' ? array( '*' ) : array();
+            return $out;
+        }
+        foreach ( $missing as $identifier )
+        {
+            if ( in_array( $identifier, $addable, true ) )
+                $out['addable'][] = $identifier;
+            else
+                $out['blocked'][] = $identifier;
+        }
+        return $out;
     }
 
-    protected static function planClass( array &$entry, array $detail )
+    /** The class items of an index by identifier, worked out once per index (the classes come first in it). */
+    protected static function classItems( array $index )
+    {
+        static $cache = array();
+        $key = ( isset( $index['stamp'] ) ? $index['stamp'] : '' ) . ':' . ( isset( $index['built'] ) ? $index['built'] : '' ) . ':' . count( $index['items'] );
+        if ( !isset( $cache[$key] ) )
+        {
+            $cache = array( $key => array() );
+            foreach ( $index['items'] as $candidate )
+            {
+                if ( $candidate['kind'] !== 'class' )
+                    break;
+                $cache[$key][$candidate['class_identifier']] = $candidate;
+            }
+        }
+        return $cache[$key];
+    }
+
+    /**
+     * Whether an item is offered for import at all, and if not why: array( 'offered', 'reason',
+     * 'needs_class' (the class item it needs imported first, or null), 'class_name', 'blocked' ).
+     * An object is offered when it has a value an import can set - its own, or one for an attribute
+     * the package's class adds (then the class is imported with it); never when every difference
+     * is one an import cannot bring. plan() gives such an item a value to import every time.
+     */
+    static function offerState( array $item, array $index )
+    {
+        $state = array( 'offered' => false, 'reason' => self::statusReason( $item ), 'needs_class' => null, 'class_name' => '', 'blocked' => array() );
+        if ( $state['reason'] !== '' )
+            return $state;
+        if ( $item['kind'] === 'class' )
+        {
+            $state['offered'] = true;
+            return $state;
+        }
+        $dependency = self::dependency( $item, $index );
+        if ( $dependency )
+        {
+            $state['class_name'] = $dependency['class_name'];
+            $state['blocked'] = $dependency['blocked'];
+            if ( $dependency['addable'] )
+                $state['needs_class'] = $dependency['class_index'];
+        }
+        if ( $item['status'] === 'class_missing' )
+        {
+            $state['offered'] = $state['needs_class'] !== null;
+            if ( !$state['offered'] )
+                $state['reason'] = ezpI18n::tr( 'design/admin/package', 'The site has no class "%class" and the package does not bring it.', null, array( '%class' => $item['class_identifier'] ) );
+            return $state;
+        }
+        if ( $item['status'] === 'new' )
+        {
+            $state['offered'] = true;
+            return $state;
+        }
+        // A changed object: its own differences, those the needed class lets in, or nothing
+        $own = (int)$item['fields'] - ( isset( $item['missing_fields'] ) ? (int)$item['missing_fields'] : 0 ) + (int)$item['lang_package'];
+        if ( $own > 0 || $state['needs_class'] !== null )
+        {
+            $state['offered'] = true;
+            return $state;
+        }
+        if ( $state['blocked'] )
+            $state['reason'] = ezpI18n::tr( 'design/admin/package', 'Its differing values are for attributes the site\'s class "%class" lacks and an import of the package\'s class cannot add: %attributes.', null,
+                                            array( '%class' => $state['class_name'], '%attributes' => implode( ', ', $state['blocked'] ) ) );
+        else
+            $state['reason'] = ezpI18n::tr( 'design/admin/package', 'Only its placement or a translation only on the site differ, and an import changes neither.' );
+        return $state;
+    }
+
+    /** Whether an item of the index is offered for import (see offerState()). */
+    static function isOffered( array $item, array $index )
+    {
+        $state = self::offerState( $item, $index );
+        return $state['offered'];
+    }
+
+    protected static function planClass( array &$entry, array $detail, array $item )
     {
         $entry['importable'] = true;
+        if ( $entry['needed_by'] )
+            $entry['changes'][] = ezpI18n::tr( 'design/admin/package', 'Needed by %objects: their values are for attributes this import adds.', null,
+                                               array( '%objects' => implode( '; ', array_map( function ( $name ) { return mb_strlen( $name ) > 50 ? mb_substr( $name, 0, 50 ) . '…' : $name; }, $entry['needed_by'] ) ) ) );
+        $unaddable = isset( $item['unaddable'] ) ? (array)$item['unaddable'] : array();
+        if ( $unaddable )
+            $entry['kept'][] = ezpI18n::tr( 'design/admin/package', 'Not added, the site has no datatype for them: %attributes', null, array( '%attributes' => implode( ', ', $unaddable ) ) );
         // Sections of a class detail: 0 the class's settings, 1 its attributes
         if ( $detail['status'] === 'new' )
         {
-            $count = isset( $detail['sections'][1] ) ? count( $detail['sections'][1]['rows'] ) : 0;
+            $count = isset( $detail['sections'][1] ) ? count( $detail['sections'][1]['rows'] ) - count( $unaddable ) : 0;
             $entry['changes'][] = ezpI18n::tr( 'design/admin/package', 'The class is created, with %count attribute(s).', null, array( '%count' => $count ) );
             return;
         }
@@ -129,7 +268,8 @@ class eZPackageComparisonImport
                 switch ( $row['state'] )
                 {
                     case 'package_only':
-                        $entry['changes'][] = ezpI18n::tr( 'design/admin/package', 'Attribute added: %attribute', null, array( '%attribute' => $label ) );
+                        if ( !in_array( $row['identifier'], $unaddable, true ) )
+                            $entry['changes'][] = ezpI18n::tr( 'design/admin/package', 'Attribute added: %attribute', null, array( '%attribute' => $label ) );
                         break;
                     case 'changed':
                         if ( in_array( 'datatype', $row['aspects'], true ) )
@@ -146,7 +286,7 @@ class eZPackageComparisonImport
         $entry['kept'][] = ezpI18n::tr( 'design/admin/package', 'Names in languages only the site has are kept.' );
     }
 
-    protected static function planObject( eZPackage $package, array &$entry, array $item, array $detail, array $excluded, array &$comingNodes )
+    protected static function planObject( eZPackage $package, array &$entry, array $item, array $detail, array $excluded, array &$comingNodes, array $index = array(), array $comingClasses = array() )
     {
         $packageData = self::packageObjectData( $package, $item );
         if ( !$packageData )
@@ -154,7 +294,20 @@ class eZPackageComparisonImport
             $entry['reason'] = ezpI18n::tr( 'design/admin/package', 'The object is no longer in the package; compare again.' );
             return;
         }
-        if ( $item['status'] === 'new' )
+        // The class the object's values need: coming in this run (imported first), or not
+        $dependency = $index ? self::dependency( $item, $index ) : null;
+        $coming = $dependency && isset( $comingClasses[$item['class_identifier']] ) ? $comingClasses[$item['class_identifier']] : null;
+        if ( $dependency && $coming )
+        {
+            $entry['needs_class'] = $coming['index'];
+            $entry['changes'][] = ezpI18n::tr( 'design/admin/package', 'Needs the class %class to be imported first; it is imported before this object, in the same step.', null, array( '%class' => $coming['name'] ) );
+        }
+        if ( $item['status'] === 'class_missing' && !$coming )
+        {
+            $entry['reason'] = ezpI18n::tr( 'design/admin/package', 'Needs the class %class to be imported first, and it is not part of this import.', null, array( '%class' => $dependency ? $dependency['class_name'] : $item['class_identifier'] ) );
+            return;
+        }
+        if ( $item['status'] === 'new' || $item['status'] === 'class_missing' )
         {
             $main = null;
             foreach ( $packageData['placement'] as $place )
@@ -223,6 +376,8 @@ class eZPackageComparisonImport
         $entry['importable'] = true;
         $any = false;
         $excludable = self::untickable( $package, $item );
+        $missing = isset( $item['missing_attributes'] ) ? (array)$item['missing_attributes'] : array();
+        $classLabel = $dependency ? $dependency['class_name'] : $item['class_identifier'];
         foreach ( $detail['sections'] as $section )
         {
             if ( $section['state'] === 'site' )
@@ -243,11 +398,14 @@ class eZPackageComparisonImport
                 }
                 if ( $row['state'] === 'identical' && $section['state'] === 'both' )
                     continue;
-                // A value in a translation both have that the site's object has no attribute for:
-                // its class lacks the attribute, and the installer sets only the class's attributes
-                if ( $row['state'] === 'package_only' && $section['state'] === 'both' )
+                // A value for an attribute the site's class lacks: the installer sets only the
+                // class's attributes, so it comes in only with the class import before it
+                $needsClass = in_array( $row['identifier'], $missing, true );
+                if ( $needsClass && !( $coming && in_array( $row['identifier'], $coming['addable'], true ) ) )
                 {
-                    $entry['kept'][] = ezpI18n::tr( 'design/admin/package', 'Not imported, the class on the site has no such attribute (import the class first): %attribute', null, array( '%attribute' => $label ) );
+                    $entry['kept'][] = !$coming && ( $dependency && $dependency['class_index'] !== null && in_array( $row['identifier'], $dependency['addable'], true ) )
+                        ? ezpI18n::tr( 'design/admin/package', 'Not imported, it needs the class %class, which is left out of this import: %attribute', null, array( '%class' => $classLabel, '%attribute' => $label ) )
+                        : ezpI18n::tr( 'design/admin/package', 'Not imported, the class %class on the site lacks the attribute and the package\'s class cannot add it: %attribute', null, array( '%class' => $classLabel, '%attribute' => $label ) );
                     continue;
                 }
                 // Each value the import sets is one tick of the confirmation; one that can only go
@@ -259,6 +417,8 @@ class eZPackageComparisonImport
                 $entry['values'][] = array(
                     'key' => $key, 'label' => $label, 'language' => $section['language'], 'name' => $row['name'], 'identifier' => $row['identifier'],
                     'new_translation' => $section['state'] === 'package', 'ticked' => $ticked, 'untickable' => !empty( $excludable[$key] ),
+                    // Comes with the class import listed before it; unticked only by leaving that class out
+                    'needs_class' => $needsClass ? $coming['index'] : null,
                 );
                 // Listed in 'values' only (the confirmation shows them as ticks, the result as set or kept)
                 if ( $ticked )
@@ -296,7 +456,10 @@ class eZPackageComparisonImport
         if ( !$any )
         {
             $entry['importable'] = false;
-            $entry['reason'] = ezpI18n::tr( 'design/admin/package', 'No value is left to import (everything is unticked or differs only in what an import keeps).' );
+            if ( $missing && !$coming )
+                $entry['reason'] = ezpI18n::tr( 'design/admin/package', 'Needs the class %class to be imported first, and it is not part of this import.', null, array( '%class' => $classLabel ) );
+            else
+                $entry['reason'] = ezpI18n::tr( 'design/admin/package', 'Every value is unticked; nothing is left to import.' );
         }
     }
 
@@ -307,9 +470,11 @@ class eZPackageComparisonImport
      * cache: the imported objects are compared again; after a class import the whole comparison is
      * built again on the next page (a class change touches every object of the class).
      */
-    static function run( eZPackage $package, array $index, array $indices, array $excluded = array() )
+    static function run( eZPackage $package, array $index, array $indices, array $excluded = array(), $addNeededClasses = true )
     {
-        $plan = self::plan( $package, $index, $indices, $excluded );
+        $plan = self::plan( $package, $index, $indices, $excluded, $addNeededClasses );
+        // Classes that did not import in this run: an object that needs one is not imported
+        $failedClasses = array();
         $done = 0;
         $touched = array();
         $classImported = false;
@@ -319,12 +484,22 @@ class eZPackageComparisonImport
             {
                 $entry['result'] = 'skipped';
                 $entry['message'] = $entry['reason'];
+                if ( $entry['kind'] === 'class' )
+                    $failedClasses[$entry['index']] = $entry['reason'];
+                continue;
+            }
+            if ( $entry['needs_class'] !== null && isset( $failedClasses[$entry['needs_class']] ) )
+            {
+                $entry['result'] = 'skipped';
+                $entry['message'] = ezpI18n::tr( 'design/admin/package', 'Not imported: the class it needs was not imported (%reason).', null, array( '%reason' => $failedClasses[$entry['needs_class']] ) );
                 continue;
             }
             if ( $done >= self::MAX_ITEMS )
             {
                 $entry['result'] = 'skipped';
                 $entry['message'] = ezpI18n::tr( 'design/admin/package', 'Not imported in this step: at most %count items are imported at a time.', null, array( '%count' => self::MAX_ITEMS ) );
+                if ( $entry['kind'] === 'class' )
+                    $failedClasses[$entry['index']] = $entry['message'];
                 continue;
             }
             $item = $index['items'][$entry['index']];
@@ -334,6 +509,8 @@ class eZPackageComparisonImport
                 : self::importObject( $package, $item, $entry['excluded'], $error );
             $entry['result'] = $ok ? 'done' : 'failed';
             $entry['message'] = $ok ? ezpI18n::tr( 'design/admin/package', 'Imported.' ) : $error;
+            if ( !$ok && $item['kind'] === 'class' )
+                $failedClasses[$entry['index']] = $error;
             if ( $ok )
             {
                 ++$done;
