@@ -119,6 +119,8 @@
                     {if $viewed.remote_id}<span>{'Remote ID'|i18n('design/admin/package')}: <code>{$viewed.remote_id|wash}</code></span>{/if}
                     {if $viewed.summary}<span>{$viewed.summary|wash}</span>{/if}
                 </p>
+                {if $viewed.needs_class_name}<p class="pcmp-needs-class">{'Needs the class %class to be imported first; Import this item includes it, before the object.'|i18n('design/admin/package',,hash('%class', $viewed.needs_class_name))|wash}</p>{/if}
+                {if and( $Compare.can_import, $viewed.offered|not, $viewed.offer_reason, $viewed.status|ne('identical'), $viewed.status|ne('removed') )}<p class="pcmp-offer-reason">{$viewed.offer_reason|wash}</p>{/if}
             </div>
             <div class="pvf-viewer-actions">
                 {if and( $viewed.offered, $detail )}
@@ -171,7 +173,7 @@
                         {if $row.datatype}<span class="pcmp-row-datatype">{$row.datatype|wash}</span>{/if}
                         <span class="pcmp-state pcmp-state-{$row.state|wash}">{$stateLabels[$row.state]|wash}</span>
                         {if $row.import_key}
-                        <label class="pcmp-import-tick"{if $row.untickable|not} title="{'This value can only be imported together with the item'|i18n('design/admin/package')}"{/if}><input type="checkbox" name="ImportAttribute[]" value="{$row.import_key|wash}" checked="checked"{if $row.untickable|not} disabled="disabled"{/if} /> {'Import'|i18n('design/admin/package')}</label>
+                        <label class="pcmp-import-tick"{if $row.via_class} title="{'This value comes with the import of the class'|i18n('design/admin/package')}"{elseif $row.untickable|not} title="{'This value can only be imported together with the item'|i18n('design/admin/package')}"{/if}><input type="checkbox" name="ImportAttribute[]" value="{$row.import_key|wash}" checked="checked"{if $row.untickable|not} disabled="disabled"{/if} /> {'Import'|i18n('design/admin/package')}</label>
                         {if $row.untickable}<input type="hidden" name="ImportAttributeShown[]" value="{$row.import_key|wash}" />{/if}
                         {/if}
                     </div>
@@ -285,7 +287,10 @@
                 <code class="pcmp-item-remote">{$item.remote_id|wash}</code>
             </td>
             <td class="pcmp-col-class"><code>{$item.class_identifier|wash}</code></td>
-            <td class="pcmp-col-summary">{$item.summary|wash}</td>
+            <td class="pcmp-col-summary">{$item.summary|wash}
+                {if $item.needs_class_name}<span class="pcmp-needs-class">{'Needs the class %class to be imported first; Import includes it.'|i18n('design/admin/package',,hash('%class', $item.needs_class_name))|wash}</span>{/if}
+                {if and( $item.offered, $item.blocked|count|gt(0) )}<span class="pcmp-offer-reason">{'Not importable: values for %attributes (the class cannot add them).'|i18n('design/admin/package',,hash('%attributes', $item.blocked|implode( ', ' )))|wash}</span>{/if}
+                {if and( $Compare.can_import, $item.offered|not, $item.offer_reason, $item.status|ne('identical'), $item.status|ne('removed') )}<span class="pcmp-offer-reason">{$item.offer_reason|wash}</span>{/if}</td>
             <td class="pcmp-col-actions">
                 {if $item.offered}<button class="pvf-link-button pcmp-import-button" type="submit" name="ImportItemButton" value="{$item.index|wash}" title="{'Import what the package brings for this item; a confirmation follows'|i18n('design/admin/package')}">{'Import'|i18n('design/admin/package')}</button>{/if}
                 {if $isViewed}

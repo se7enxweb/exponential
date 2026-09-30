@@ -33,12 +33,12 @@
     <form method="post" action={$compare.url_post|ezurl}>
     <ol class="pcmp-import-list">
     {foreach $import.entries as $entry}
-        {def $setCount = 0 $keptCount = 0}
-        {foreach $entry.values as $value}{if $value.ticked}{set $setCount = inc( $setCount )}{else}{set $keptCount = inc( $keptCount )}{/if}{/foreach}
+        {def $setCount = 0 $keptCount = 0 $choosable = 0}
+        {foreach $entry.values as $value}{if $value.untickable}{set $choosable = inc( $choosable )}{/if}{if $value.ticked}{set $setCount = inc( $setCount )}{else}{set $keptCount = inc( $keptCount )}{/if}{/foreach}
         <li class="pcmp-import-entry{if is_set( $entry.result )} pcmp-result-{$entry.result|wash}{elseif $entry.importable|not} pcmp-result-skipped{/if}">
             <div class="pcmp-import-entry-head">
                 {if and( $confirm, $entry.importable )}
-                <label class="pcmp-import-include" title="{'Untick to leave this item out'|i18n('design/admin/package')}"><input type="checkbox" name="ImportInclude[]" value="{$entry.index|wash}" checked="checked" /><span class="pvf-hidden">{'Import %name'|i18n('design/admin/package',,hash('%name', $entry.name))|wash}</span></label>
+                <label class="pcmp-import-include" title="{'Untick to leave this item out'|i18n('design/admin/package')}"><input type="checkbox" name="ImportInclude[]" value="{$entry.index|wash}" checked="checked"{if $entry.kind|eq('class')} data-pcmp-class="{$entry.index|wash}"{/if} /><span class="pvf-hidden">{'Import %name'|i18n('design/admin/package',,hash('%name', $entry.name))|wash}</span></label>
                 <input type="hidden" name="ImportRemoteID[{$entry.index|wash}]" value="{$entry.remote_id|wash}" />
                 {/if}
                 <span class="pcmp-status pcmp-status-{$entry.status|wash}"><span class="pcmp-glyph" aria-hidden="true">{$glyphs[$entry.status]}</span> {$compare.status_labels[$entry.status]|wash}</span>
@@ -62,10 +62,10 @@
             {if $entry.values|count|gt(0)}
             <details class="pcmp-values">
                 <summary>{if $confirm}{'Values (%count): choose which to import'|i18n('design/admin/package',,hash('%count', $entry.values|count))|wash}{else}{'Values: %set from the package, %kept kept as on the site'|i18n('design/admin/package',,hash('%set', $setCount, '%kept', $keptCount))|wash}{/if}</summary>
-                {if $confirm}<p class="pcmp-values-all" hidden><button type="button" class="pvf-link-button" data-pcmp-values="all">{'All'|i18n('design/admin/package')}</button> <button type="button" class="pvf-link-button" data-pcmp-values="none">{'None'|i18n('design/admin/package')}</button></p>{/if}
+                {if and( $confirm, $choosable|gt(1) )}<p class="pcmp-values-all" hidden><button type="button" class="pvf-link-button" data-pcmp-values="all">{'All'|i18n('design/admin/package')}</button> <button type="button" class="pvf-link-button" data-pcmp-values="none">{'None'|i18n('design/admin/package')}</button></p>{/if}
                 <ul class="pcmp-values-list">
                 {foreach $entry.values as $value}
-                    <li>{if $confirm}<label{if $value.untickable|not} title="{'This value can only be imported together with the item'|i18n('design/admin/package')}"{/if}><input type="checkbox" name="ImportValue[]" value="{concat( $entry.index, '|', $value.key )|wash}"{if $value.ticked} checked="checked"{/if}{if $value.untickable|not} disabled="disabled"{/if} /> {$value.label|wash}{if $value.new_translation} <span class="pcmp-state pcmp-state-package_only">{'New translation'|i18n('design/admin/package')}</span>{/if}</label>
+                    <li>{if $confirm}<label{if is_null( $value.needs_class )|not} title="{'Comes with the import of the class listed above; untick the class to leave it out'|i18n('design/admin/package')}"{elseif $value.untickable|not} title="{'This value can only be imported together with the item'|i18n('design/admin/package')}"{/if}><input type="checkbox" name="ImportValue[]" value="{concat( $entry.index, '|', $value.key )|wash}"{if $value.ticked} checked="checked"{/if}{if $value.untickable|not} disabled="disabled"{/if}{if is_null( $value.needs_class )|not} data-needs-class="{$value.needs_class|wash}"{/if} /> {$value.label|wash}{if $value.new_translation} <span class="pcmp-state pcmp-state-package_only">{'New translation'|i18n('design/admin/package')}</span>{/if}{if is_null( $value.needs_class )|not} <span class="pcmp-state pcmp-state-changed">{'Added by the class import'|i18n('design/admin/package')}</span>{/if}</label>
                         {if $value.untickable}<input type="hidden" name="ImportValueShown[]" value="{concat( $entry.index, '|', $value.key )|wash}" />{/if}
                     {else}<span class="pcmp-glyph" aria-hidden="true">{if $value.ticked}+{else}={/if}</span> {$value.label|wash}{if $value.ticked|not} <span class="pcmp-values-kept">({'kept as on the site'|i18n('design/admin/package')})</span>{/if}{/if}</li>
                 {/foreach}
@@ -79,7 +79,7 @@
             {/if}
             {/if}
         </li>
-        {undef $setCount $keptCount}
+        {undef $setCount $keptCount $choosable}
     {/foreach}
     </ol>
     {if $confirm}
@@ -111,6 +111,16 @@
             if ( !mode ) return;
             var boxes = this.parentNode.querySelectorAll( 'input[name="ImportValue[]"]:not([disabled])' );
             for ( var j = 0; j < boxes.length; j++ ) boxes[j].checked = mode === 'all';
+        {rdelim} );
+    {rdelim}
+    // A class left out takes the values that need it along (the import leaves them out either way)
+    var classes = document.querySelectorAll( '.pcmp-import input[data-pcmp-class]' );
+    for ( var k = 0; k < classes.length; k++ )
+    {ldelim}
+        classes[k].addEventListener( 'change', function ()
+        {ldelim}
+            var needing = document.querySelectorAll( '.pcmp-import input[data-needs-class="' + this.getAttribute( 'data-pcmp-class' ) + '"]' );
+            for ( var m = 0; m < needing.length; m++ ) needing[m].checked = this.checked;
         {rdelim} );
     {rdelim}
 {rdelim})();

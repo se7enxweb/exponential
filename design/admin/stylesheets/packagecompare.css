@@ -199,7 +199,17 @@
 .package-compare .pcmp-values-all { margin: 0.35em 0 0.2em; display: flex; gap: 0.4em; }
 .package-compare ul.pcmp-values-list { margin: 0.3em 0 0; padding: 0; list-style: none; columns: 2 22em; column-gap: 1.5em; font-size: 0.95em; }
 .package-compare ul.pcmp-values-list li { break-inside: avoid; margin: 0 0 0.2em; overflow-wrap: anywhere; }
-.package-compare ul.pcmp-values-list label { display: inline-flex; align-items: flex-start; gap: 0.35em; cursor: pointer; }
+.package-compare ul.pcmp-values-list label { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.2em 0.35em; cursor: pointer; min-width: 0; }
+.package-compare ul.pcmp-values-list label .pcmp-state { white-space: normal; }
 .package-compare ul.pcmp-values-list input { margin: 0.2em 0 0; flex: none; }
 .package-compare .pcmp-values-kept { color: #6a6a72; }
 .package-compare li.pcmp-import-entry:has( label.pcmp-import-include input:not(:checked) ) { opacity: 0.55; }
+
+/* What an item needs, or why it is not offered, under its differences in the list and in its panel */
+.package-compare .pcmp-needs-class,
+.package-compare .pcmp-offer-reason { display: block; margin: 0.2em 0 0; font-size: 0.9em; }
+.package-compare .pcmp-needs-class { color: #5a3183; }
+.package-compare .pcmp-needs-class::before { content: "\2192\00a0"; }
+.package-compare .pcmp-offer-reason { color: #6a6a72; font-style: italic; }
+.package-compare p.pcmp-needs-class,
+.package-compare p.pcmp-offer-reason { margin: 0.3em 0 0; }

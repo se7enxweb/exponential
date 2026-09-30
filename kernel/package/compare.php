@@ -122,7 +122,7 @@ $offeredInFilter = function ( array $index, array $page )
     $out = array();
     foreach ( $page['filtered_indices'] as $i )
     {
-        if ( eZPackageComparisonImport::isOffered( $index['items'][$i] ) )
+        if ( eZPackageComparisonImport::isOffered( $index['items'][$i], $index ) )
             $out[] = $i;
     }
     sort( $out );
@@ -212,7 +212,8 @@ if ( $importAction !== false )
 
     if ( $importAction === 'ConfirmImport' )
     {
-        $result = $selected ? eZPackageComparisonImport::run( $package, $index, $selected, $excluded ) : array();
+        // Exactly the confirmed items: a class the confirmation added and the user left out stays out
+        $result = $selected ? eZPackageComparisonImport::run( $package, $index, $selected, $excluded, false ) : array();
         // The comparison as it is now (the imported items compared again)
         $index = eZPackageComparison::cachedIndex( $package );
         $page = eZPackageComparison::filteredPage( $index, $pageOptions );
@@ -302,7 +303,12 @@ foreach ( $page['items'] as $item )
 {
     $item['summary'] = $summaryOf( $item );
     $item['url_view'] = $compareURL( array( 'item' => (int)$item['index'] ) + $here );
-    $item['offered'] = $canImport && eZPackageComparisonImport::isOffered( $item );
+    // Whether it is offered, why not, and the class it needs imported first
+    $offer = eZPackageComparisonImport::offerState( $item, $index );
+    $item['offered'] = $canImport && $offer['offered'];
+    $item['offer_reason'] = $offer['offered'] ? '' : $offer['reason'];
+    $item['needs_class_name'] = $offer['needs_class'] !== null ? $offer['class_name'] : '';
+    $item['blocked'] = $offer['blocked'];
     $item['difference_count'] = eZPackageComparison::differenceCount( $item );
     $items[] = $item;
 }
@@ -325,7 +331,11 @@ if ( $Import === false && $state['item'] >= 0 && isset( $index['items'][$state['
 {
     $viewed = $index['items'][$state['item']];
     $viewed['summary'] = $summaryOf( $viewed );
-    $viewed['offered'] = $canImport && eZPackageComparisonImport::isOffered( $viewed );
+    $offer = eZPackageComparisonImport::offerState( $viewed, $index );
+    $viewed['offered'] = $canImport && $offer['offered'];
+    $viewed['offer_reason'] = $offer['offered'] ? '' : $offer['reason'];
+    $viewed['needs_class_name'] = $offer['needs_class'] !== null ? $offer['class_name'] : '';
+    $viewed['blocked'] = $offer['blocked'];
     $viewedDetail = eZPackageComparison::itemDetail( $package, $viewed );
     // The item's own file in the contents browser on package/view/full
     $viewed['url_file'] = false;
@@ -362,8 +372,12 @@ if ( $Import === false && $state['item'] >= 0 && isset( $index['items'][$state['
             {
                 $key = $section['language'] . '/' . $row['identifier'];
                 // An object's value the import sets (a class is imported as a whole)
+                // A value for an attribute the site's class lacks comes only with the class import (fixed tick)
+                $viaClass = $row['state'] === 'package_only' && $section['state'] === 'both' && $viewed['needs_class_name'] !== ''
+                          && in_array( $row['identifier'], (array)$viewed['missing_attributes'], true ) && !in_array( $row['identifier'], $viewed['blocked'], true );
+                $row['via_class'] = $viaClass;
                 $row['import_key'] = $viewed['offered'] && $viewed['kind'] === 'object' && $viewed['status'] === 'changed'
-                                     && ( $row['state'] === 'changed' || ( $row['state'] === 'package_only' && $section['state'] === 'package' ) ) ? $key : '';
+                                     && ( $row['state'] === 'changed' || ( $row['state'] === 'package_only' && $section['state'] === 'package' ) || $viaClass ) ? $key : '';
                 $row['untickable'] = $row['import_key'] !== '' && !empty( $untickable[$key] );
                 if ( $row['state'] === 'identical' )
                     $section['same'][] = $row;
