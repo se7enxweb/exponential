@@ -60,7 +60,11 @@
             <dd>{$package.state|wash}</dd>
 
             <dt>{'License'|i18n('design/admin/package')}</dt>
-            <dd>{$package.licence|wash}</dd>
+            {* A configured license (package.ini [LicenseSettings]) shows its name, a link and its
+               identifier; an older or unknown stored value is shown as it is. *}
+            {def $licenceInfo=$package.licence-info}
+            <dd>{if $licenceInfo}{if $licenceInfo.url}<a href="{$licenceInfo.url|wash}" target="_blank" rel="noopener noreferrer">{$licenceInfo.name|wash}</a>{else}{$licenceInfo.name|wash}{/if}{if $licenceInfo.known} <span class="pvf-licence-id">{$licenceInfo.identifier|wash}</span>{if $licenceInfo.stored|ne( $licenceInfo.identifier )} <span class="pvf-licence-id">({'stored as %licence'|i18n('design/admin/package',,hash( '%licence', $licenceInfo.stored ))|wash})</span>{/if}{/if}{/if}</dd>
+            {undef $licenceInfo}
 
             <dt>{'Maintainers'|i18n('design/admin/package')}</dt>
             <dd>

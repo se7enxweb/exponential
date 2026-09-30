@@ -7473,6 +7473,18 @@ You can also remove the package without uninstalling it from the package list.</
         <source>Value from the package: %attribute</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>License text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>stored as %licence</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -28311,6 +28323,14 @@ You can also remove the package without uninstalling it from the package list.</
         <source>MD5:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>License text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/package/creators/ezcontentobject</name>
@@ -37559,6 +37579,54 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Update existing class (attributes are added and updated, none removed)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The license %licence is not one of the licenses packages can be given here, choose one from the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>License is missing, choose one from the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Software licenses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documentation licenses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creative Commons 4.0 International</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creative Commons 3.0 Unported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creative Commons 2.5 Generic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creative Commons 2.0 Generic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creative Commons 1.0 Generic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public domain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other licenses</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

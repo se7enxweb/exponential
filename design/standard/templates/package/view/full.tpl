@@ -40,7 +40,9 @@
 
         <div class="licence">
             <label>{'License'|i18n('design/standard/package')}</label>
-            <p>{$package.licence|wash}</p>
+            {def $licenceInfo=$package.licence-info}
+            <p>{if $licenceInfo}{if $licenceInfo.url}<a href="{$licenceInfo.url|wash}" target="_blank" rel="noopener noreferrer">{$licenceInfo.name|wash}</a>{else}{$licenceInfo.name|wash}{/if}{if $licenceInfo.known} ({$licenceInfo.identifier|wash}){/if}{/if}</p>
+            {undef $licenceInfo}
         </div>
 
         <div class="maintainers">

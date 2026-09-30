@@ -35,9 +35,24 @@
         </div>
 
         <div class="licence">
-            <label>{'License'|i18n('design/standard/package')}</label>
-            <input type="hidden" name="PackageLicence" value="{$persistent_data.licence|wash}" />
-            <p>{$persistent_data.licence|wash}</p>
+            <label for="PackageLicence">{'License'|i18n('design/standard/package')}</label>
+            {* A strict choice from package.ini [LicenseSettings]; the server refuses any other value *}
+            {if $licence_groups|count|gt( 0 )}
+            <select id="PackageLicence" name="PackageLicence" style="max-width: 100%;">
+            {foreach $licence_groups as $group}
+                <optgroup label="{$group.name|wash}">
+                {foreach $group.licenses as $license}
+                    <option value="{$license.identifier|wash}"{if $license.identifier|eq( $licence_selected.identifier )} selected="selected"{/if}>{$license.name|wash} ({$license.identifier|wash})</option>
+                {/foreach}
+                </optgroup>
+            {/foreach}
+            </select>
+            {if $licence_selected.url}
+            <p>{'License text:'|i18n('design/standard/package')} <a href="{$licence_selected.url|wash}" target="_blank" rel="noopener noreferrer">{$licence_selected.name|wash}</a></p>
+            {/if}
+            {else}
+            <p>{'No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.'|i18n('design/standard/package')}</p>
+            {/if}
         </div>
     </td>
 

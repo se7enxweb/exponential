@@ -29,10 +29,56 @@
             <input id="PackageVersion" class="box" type="text" name="PackageVersion" value="{$persistent_data.version|wash}" />
     </div>
 
-    <div class="block">
-            <label>{'License'|i18n('design/admin/package')}</label>
-            <input type="hidden" name="PackageLicence" value="{$persistent_data.licence|wash}" />
-            <p>{$persistent_data.licence|wash}</p>
+    {* The license is a strict choice from package.ini [LicenseSettings]; the server refuses
+       any other value. The link and description below follow the chosen option. *}
+    <div class="block package-licence">
+            <label for="PackageLicence">{'License'|i18n('design/admin/package')}</label>
+            {if $licence_groups|count|gt( 0 )}
+            <select id="PackageLicence" class="box" name="PackageLicence" aria-describedby="PackageLicenceInfo" style="width: 100%; max-width: 100%; box-sizing: border-box;">
+            {foreach $licence_groups as $group}
+                <optgroup label="{$group.name|wash}">
+                {foreach $group.licenses as $license}
+                    <option value="{$license.identifier|wash}" data-name="{$license.name|wash}" data-url="{$license.url|wash}" data-description="{$license.description|wash}"{if $license.identifier|eq( $licence_selected.identifier )} selected="selected"{/if}>{$license.name|wash} ({$license.identifier|wash})</option>
+                {/foreach}
+                </optgroup>
+            {/foreach}
+            </select>
+            <p id="PackageLicenceInfo" class="package-licence-info" style="margin: 0.4em 0 0; overflow-wrap: anywhere;">
+                <span id="PackageLicenceDescription"{if $licence_selected.description|not} style="display: none;"{/if}>{$licence_selected.description|wash}<br /></span>
+                <span id="PackageLicenceLinkLine"{if $licence_selected.url|not} style="display: none;"{/if}>{'License text:'|i18n('design/admin/package')} <a id="PackageLicenceLink" href="{$licence_selected.url|wash}" target="_blank" rel="noopener noreferrer">{$licence_selected.name|wash}</a></span>
+            </p>
+            {literal}
+            <script type="text/javascript">
+            (function()
+            {
+                var select = document.getElementById( 'PackageLicence' ),
+                    link = document.getElementById( 'PackageLicenceLink' ),
+                    linkLine = document.getElementById( 'PackageLicenceLinkLine' ),
+                    description = document.getElementById( 'PackageLicenceDescription' );
+                if ( !select || !link )
+                    return;
+                function update()
+                {
+                    var option = select.options[select.selectedIndex];
+                    if ( !option )
+                        return;
+                    var url = option.getAttribute( 'data-url' ) || '',
+                        text = option.getAttribute( 'data-description' ) || '';
+                    link.href = url || '#';
+                    link.textContent = option.getAttribute( 'data-name' ) || option.value;
+                    linkLine.style.display = url ? '' : 'none';
+                    description.firstChild.nodeValue = text;
+                    description.style.display = text ? '' : 'none';
+                }
+                if ( !description.firstChild || description.firstChild.nodeType !== 3 )
+                    description.insertBefore( document.createTextNode( '' ), description.firstChild );
+                select.onchange = update;
+            })();
+            </script>
+            {/literal}
+            {else}
+            <p class="package-licence-none">{'No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.'|i18n('design/admin/package')}</p>
+            {/if}
     </div>
 
     <div class="block">

@@ -321,6 +321,7 @@ return array(
       'eZPackageFunctionCollection'                        => 'kernel/package/ezpackagefunctioncollection.php',
       'eZPackageHandler'                                   => 'kernel/classes/ezpackagehandler.php',
       'eZPackageInstallationHandler'                       => 'kernel/classes/ezpackageinstallationhandler.php',
+      'eZPackageLicense'                                   => 'kernel/classes/ezpackagelicense.php',
       'eZPackageOperator'                                  => 'kernel/common/ezpackageoperator.php',
       'eZPackageType'                                      => 'kernel/classes/datatypes/ezpackage/ezpackagetype.php',
       'eZPathElement'                                      => 'kernel/classes/ezpathelement.php',

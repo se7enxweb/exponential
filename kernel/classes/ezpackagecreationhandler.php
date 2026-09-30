@@ -380,6 +380,7 @@ class eZPackageCreationHandler
         return array( 'id' => 'packageinfo',
                       'name' => ezpI18n::tr( 'kernel/package', 'Package information' ),
                       'methods' => array( 'initialize' => 'initializePackageInformation',
+                                          'load' => 'loadPackageInformation',
                                           'validate' => 'validatePackageInformation',
                                           'commit' => 'commitPackageInformation' ),
                       'use_standard_template' => true,
@@ -532,9 +533,9 @@ class eZPackageCreationHandler
             $package->appendChange( $changelogPerson, $changelogEmail, $changelogEntries );
         }
 
-        if ( $persistentData['licence'] == 'GPL' )
+        if ( $persistentData['licence'] )
         {
-            eZPackageCreationHandler::appendLicence( $package );
+            eZPackageCreationHandler::appendLicence( $package, $persistentData['licence'] );
         }
 
 
@@ -613,7 +614,8 @@ class eZPackageCreationHandler
         $persistentData['name'] = false;
         $persistentData['summary'] = false;
         $persistentData['description'] = false;
-        $persistentData['licence'] = 'GPL';
+        // The license is a choice from package.ini [LicenseSettings], see eZPackageLicense
+        $persistentData['licence'] = eZPackageLicense::defaultIdentifier();
         $persistentData['version'] = '1.0';
         if ( isset( $_SERVER['HOSTNAME'] ) )
             $host = $_SERVER['HOSTNAME'];
@@ -631,6 +633,24 @@ class eZPackageCreationHandler
         // Make sure the package name contains only valid characters
         $trans = eZCharTransform::instance();
         $persistentData['name'] = $trans->transformByGroup( $persistentData['name'], 'identifier' );
+
+        // A creator may have preset a license; keep it only when it is a configured one
+        $licence = eZPackageLicense::normalize( $persistentData['licence'] );
+        $persistentData['licence'] = $licence !== false ? $licence : eZPackageLicense::defaultIdentifier();
+    }
+
+    /*!
+     Gives the package information step the licenses to choose from: \c licence_groups
+     (see eZPackageLicense::groupedList()) and \c licence_selected, the entry of the license
+     the drop-down preselects.
+    */
+    function loadPackageInformation( $package, $http, $step, &$persistentData, $tpl, &$module )
+    {
+        $selected = eZPackageLicense::fetch( $persistentData['licence'] );
+        if ( !$selected )
+            $selected = eZPackageLicense::fetch( eZPackageLicense::defaultIdentifier() );
+        $tpl->setVariable( 'licence_groups', eZPackageLicense::groupedList() );
+        $tpl->setVariable( 'licence_selected', $selected );
     }
 
     /*!
@@ -644,7 +664,7 @@ class eZPackageCreationHandler
         $packageSummary = false;
         $packageVersion = false;
         $packageDescription = false;
-        $packageLicence = 'GPL';
+        $packageLicence = false;
         $packageHost = false;
         $packagePackager = false;
         if ( $http->hasPostVariable( 'PackageName' ) )
@@ -668,11 +688,30 @@ class eZPackageCreationHandler
         $persistentData['summary'] = $packageSummary;
         $persistentData['description'] = $packageDescription;
         $persistentData['version'] = $packageVersion;
-        $persistentData['licence'] = $packageLicence;
         $persistentData['host'] = $packageHost;
         $persistentData['packager'] = $packagePackager;
 
         $result = true;
+
+        // The license must be one of package.ini [LicenseSettings] LicenseList (or an alias of
+        // one, stored as the license it stands for). Anything else is refused, whatever the
+        // form sent, and the previous choice is kept.
+        $validLicence = eZPackageLicense::normalize( $packageLicence );
+        if ( $validLicence !== false )
+        {
+            $persistentData['licence'] = $validLicence;
+        }
+        else
+        {
+            if ( is_string( $packageLicence ) and trim( $packageLicence ) !== '' )
+                $description = ezpI18n::tr( 'kernel/package', 'The license %licence is not one of the licenses packages can be given here, choose one from the list', false, array( '%licence' => $packageLicence ) );
+            else
+                $description = ezpI18n::tr( 'kernel/package', 'License is missing, choose one from the list' );
+            $errorList[] = array( 'field' => ezpI18n::tr( 'kernel/package', 'License' ),
+                                  'description' => $description );
+            $result = false;
+        }
+
         if ( $packageName == '' )
         {
             $errorList[] = array( 'field' => ezpI18n::tr( 'kernel/package', 'Package name' ),
@@ -995,10 +1034,26 @@ class eZPackageCreationHandler
 
     /*!
      \static
-     Appends the GPL licence file to the package object \a $package.
+     Appends the LICENCE document to the package object \a $package, for the license
+     \a $licence (a package.ini [LicenseSettings] identifier or alias). The GNU GPL v2.0 or
+     later, the default, gets its usual notice; any other configured license a notice with its
+     name, identifier and URL. Nothing is appended for a license that is not configured.
     */
-    static function appendLicence( $package )
+    static function appendLicence( $package, $licence = 'GPL-2.0-or-later' )
     {
+        $license = eZPackageLicense::fetch( $licence );
+        if ( !$license )
+            return;
+        if ( $license['identifier'] != 'GPL-2.0-or-later' )
+        {
+            $package->appendDocument( 'LICENCE', false, false, false, true,
+                                      "This file is part of the package " . $package->attribute( 'name' ) . ".\n" .
+                                      "\n" .
+                                      "This package is licensed under the " . $license['name'] . ".\n" .
+                                      "SPDX-License-Identifier: " . $license['identifier'] . "\n" .
+                                      ( $license['url'] ? "\nThe license text: " . $license['url'] . "\n" : '' ) );
+            return;
+        }
         $package->appendDocument( 'LICENCE', false, false, false, true,
                                   "This file is part of the package " . $package->attribute( 'name' ) . ".\n" .
                                   "\n" .

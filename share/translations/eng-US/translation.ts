@@ -7478,6 +7478,18 @@ You can also remove the package without uninstalling it from the package list.</
         <source>Value from the package: %attribute</source>
         <translation>Value from the package: %attribute</translation>
     </message>
+    <message>
+        <source>License text:</source>
+        <translation>License text:</translation>
+    </message>
+    <message>
+        <source>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</source>
+        <translation>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</translation>
+    </message>
+    <message>
+        <source>stored as %licence</source>
+        <translation>stored as %licence</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -28386,6 +28398,14 @@ You can also remove the package without uninstalling it from the package list.</
         <source>MD5:</source>
         <translation>MD5:</translation>
     </message>
+    <message>
+        <source>License text:</source>
+        <translation>License text:</translation>
+    </message>
+    <message>
+        <source>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</source>
+        <translation>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/package/creators/ezcontentobject</name>
@@ -37704,6 +37724,54 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Update existing class (attributes are added and updated, none removed)</source>
         <translation>Update existing class (attributes are added and updated, none removed)</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>License</translation>
+    </message>
+    <message>
+        <source>The license %licence is not one of the licenses packages can be given here, choose one from the list</source>
+        <translation>The license %licence is not one of the licenses packages can be given here, choose one from the list</translation>
+    </message>
+    <message>
+        <source>License is missing, choose one from the list</source>
+        <translation>License is missing, choose one from the list</translation>
+    </message>
+    <message>
+        <source>Software licenses</source>
+        <translation>Software licenses</translation>
+    </message>
+    <message>
+        <source>Documentation licenses</source>
+        <translation>Documentation licenses</translation>
+    </message>
+    <message>
+        <source>Creative Commons 4.0 International</source>
+        <translation>Creative Commons 4.0 International</translation>
+    </message>
+    <message>
+        <source>Creative Commons 3.0 Unported</source>
+        <translation>Creative Commons 3.0 Unported</translation>
+    </message>
+    <message>
+        <source>Creative Commons 2.5 Generic</source>
+        <translation>Creative Commons 2.5 Generic</translation>
+    </message>
+    <message>
+        <source>Creative Commons 2.0 Generic</source>
+        <translation>Creative Commons 2.0 Generic</translation>
+    </message>
+    <message>
+        <source>Creative Commons 1.0 Generic</source>
+        <translation>Creative Commons 1.0 Generic</translation>
+    </message>
+    <message>
+        <source>Public domain</source>
+        <translation>Public domain</translation>
+    </message>
+    <message>
+        <source>Other licenses</source>
+        <translation>Other licenses</translation>
     </message>
 </context>
 <context>

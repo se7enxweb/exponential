@@ -302,6 +302,7 @@ table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }
 .package-view-full dl.pvf-meta dt { margin: 0; font-weight: bold; color: #44484d; }
 .package-view-full dl.pvf-meta dd { margin: 0; overflow-wrap: anywhere; }
 .package-view-full .pvf-filelist-link { margin-left: 0.75em; }
+.package-view-full .pvf-licence-id { color: #6a6a72; white-space: nowrap; }
 .package-view-full .pvf-thumbnail { flex: 0 0 auto; max-width: 30%; }
 .package-view-full .pvf-thumbnail img { max-width: 100%; height: auto; border: 1px solid #ddd; }
 

@@ -196,7 +196,7 @@ class eZPackage
                       'install_type',
                       'thumbnail-list',
                       'install', 'uninstall',
-                      'licence', 'state',
+                      'licence', 'licence-info', 'state',
                       'ezpublish-version', 'ezpublish-named-version', 'packaging-timestamp',
                       'packaging-host', 'packaging-packager' );
     }
@@ -251,6 +251,8 @@ class eZPackage
             return $this->Parameters[$attributeName];
         else if ( $attributeName == 'is_installed' )
             return $this->isInstalled;
+        else if ( $attributeName == 'licence-info' )
+            return eZPackageLicense::describe( $this->Parameters['licence'] );
         else if ( $attributeName == 'ezpublish-version' )
             return $this->Parameters['ezpublish']['version'];
         else if ( $attributeName == 'ezpublish-named-version' )
@@ -940,7 +942,7 @@ class eZPackage
      \param $version The version number, eg. 1.0, 2.3.5
      \param $release The release number, usually starts at 1 and increments for updates on the same version
      \param $timestamp The timestamp of the release
-     \param $licence The licence of the package, eg. GPL, LGPL etc.
+     \param $licence The licence of the package, the identifier of a package.ini [LicenseSettings] license, eg. GPL-2.0-or-later, CC-BY-SA-4.0
      \param $state The sate of the release, e.g alpha, beta, stable etc.
     */
     function setRelease( $version = false, $release = false, $timestamp = false,

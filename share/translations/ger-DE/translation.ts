@@ -9799,6 +9799,18 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>Value from the package: %attribute</source>
         <translation>Wert aus dem Paket: %attribute</translation>
     </message>
+    <message>
+        <source>License text:</source>
+        <translation>Lizenztext:</translation>
+    </message>
+    <message>
+        <source>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</source>
+        <translation>Für Pakete sind keine Lizenzen eingerichtet. Tragen Sie sie in package.ini [LicenseSettings] LicenseList ein.</translation>
+    </message>
+    <message>
+        <source>stored as %licence</source>
+        <translation>gespeichert als %licence</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -33545,6 +33557,14 @@ Sie können das Paket auch entfernen ohne es von der Paketliste zu entfernen.</t
         <source>MD5:</source>
         <translation>MD5:</translation>
     </message>
+    <message>
+        <source>License text:</source>
+        <translation>Lizenztext:</translation>
+    </message>
+    <message>
+        <source>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</source>
+        <translation>Für Pakete sind keine Lizenzen eingerichtet. Tragen Sie sie in package.ini [LicenseSettings] LicenseList ein.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/package/creators/ezcontentobject</name>
@@ -44787,6 +44807,54 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Update existing class (attributes are added and updated, none removed)</source>
         <translation>Bestehende Klasse aktualisieren (Attribute werden hinzugefügt und aktualisiert, keine entfernt)</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>The license %licence is not one of the licenses packages can be given here, choose one from the list</source>
+        <translation>Die Lizenz %licence gehört nicht zu den Lizenzen, die Paketen hier gegeben werden können, wählen Sie eine aus der Liste</translation>
+    </message>
+    <message>
+        <source>License is missing, choose one from the list</source>
+        <translation>Die Lizenz fehlt, wählen Sie eine aus der Liste</translation>
+    </message>
+    <message>
+        <source>Software licenses</source>
+        <translation>Softwarelizenzen</translation>
+    </message>
+    <message>
+        <source>Documentation licenses</source>
+        <translation>Dokumentationslizenzen</translation>
+    </message>
+    <message>
+        <source>Creative Commons 4.0 International</source>
+        <translation>Creative Commons 4.0 International</translation>
+    </message>
+    <message>
+        <source>Creative Commons 3.0 Unported</source>
+        <translation>Creative Commons 3.0 Unported</translation>
+    </message>
+    <message>
+        <source>Creative Commons 2.5 Generic</source>
+        <translation>Creative Commons 2.5 Generic</translation>
+    </message>
+    <message>
+        <source>Creative Commons 2.0 Generic</source>
+        <translation>Creative Commons 2.0 Generic</translation>
+    </message>
+    <message>
+        <source>Creative Commons 1.0 Generic</source>
+        <translation>Creative Commons 1.0 Generic</translation>
+    </message>
+    <message>
+        <source>Public domain</source>
+        <translation>Gemeinfrei (Public Domain)</translation>
+    </message>
+    <message>
+        <source>Other licenses</source>
+        <translation>Weitere Lizenzen</translation>
     </message>
 </context>
 <context>
