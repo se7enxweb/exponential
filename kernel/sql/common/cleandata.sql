@@ -250,7 +250,7 @@ INSERT INTO ezcontentclass (
   14,
   'a3d405b81be900468eb153d774f4f0d2',
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:6:\"Folder\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:6:"Folder";s:16:"always-available";s:6:"eng-GB";}',
   1,
   1,
   NULL,
@@ -289,7 +289,7 @@ INSERT INTO ezcontentclass (
   14,
   'c15b600eb9198b1924063b5a68758232',
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:7:\"Article\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:7:"Article";s:16:"always-available";s:6:"eng-GB";}',
   1,
   1,
   NULL,
@@ -328,7 +328,7 @@ INSERT INTO ezcontentclass (
   14,
   '25b4268cdcd01921b808a0d854b877ef',
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:10:\"User group\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:10:"User group";s:16:"always-available";s:6:"eng-GB";}',
   1,
   1,
   NULL,
@@ -367,7 +367,7 @@ INSERT INTO ezcontentclass (
   14,
   '40faa822edc579b02c25f6bb7beec3ad',
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:4:\"User\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:4:"User";s:16:"always-available";s:6:"eng-GB";}',
   1,
   1,
   NULL,
@@ -406,7 +406,7 @@ INSERT INTO ezcontentclass (
   14,
   'f6df12aa74e36230eb675f364fccd25a',
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:5:\"Image\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:5:"Image";s:16:"always-available";s:6:"eng-GB";}',
   1,
   1,
   NULL,
@@ -445,7 +445,7 @@ INSERT INTO ezcontentclass (
   14,
   '74ec6507063150bc813549b22534ad48',
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:4:\"Link\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:4:"Link";s:16:"always-available";s:6:"eng-GB";}',
   1,
   1,
   NULL,
@@ -484,7 +484,7 @@ INSERT INTO ezcontentclass (
   14,
   '637d58bfddf164627bdfd265733280a0',
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:4:\"File\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:4:"File";s:16:"always-available";s:6:"eng-GB";}',
   1,
   1,
   NULL,
@@ -523,7 +523,7 @@ INSERT INTO ezcontentclass (
   14,
   '000c14f4f475e9f2955dedab72799941',
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:7:\"Comment\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:7:"Comment";s:16:"always-available";s:6:"eng-GB";}',
   1,
   1,
   NULL,
@@ -562,7 +562,7 @@ INSERT INTO ezcontentclass (
   14,
   'ffedf2e73b1ea0c3e630e42e2db9c900',
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:19:\"Common ini settings\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:19:"Common ini settings";s:16:"always-available";s:6:"eng-GB";}',
   1,
   1,
   NULL,
@@ -601,7 +601,7 @@ INSERT INTO ezcontentclass (
   14,
   '59b43cd9feaaf0e45ac974fb4bbd3f92',
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:13:\"Template look\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:13:"Template look";s:16:"always-available";s:6:"eng-GB";}',
   1,
   1,
   NULL,
@@ -662,7 +662,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:5:\"Title\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:5:"Title";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -719,7 +719,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:4:\"Name\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -776,7 +776,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:4:\"Name\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -833,7 +833,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:11:\"Description\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:11:"Description";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -890,7 +890,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:10:\"First name\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:10:"First name";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -947,7 +947,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:9:\"Last name\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:9:"Last name";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1004,7 +1004,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:12:\"User account\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:12:"User account";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1061,7 +1061,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:4:\"Name\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1118,7 +1118,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:7:\"Caption\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:7:"Caption";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1175,7 +1175,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:5:\"Image\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:5:"Image";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1232,7 +1232,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:17:\"Short description\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:17:"Short description";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1289,7 +1289,7 @@ INSERT INTO ezcontentclass_attribute (
   4,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:5:\"Intro\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:5:"Intro";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1346,7 +1346,7 @@ INSERT INTO ezcontentclass_attribute (
   5,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:4:\"Body\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:4:"Body";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1403,7 +1403,7 @@ INSERT INTO ezcontentclass_attribute (
   6,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:15:\"Enable comments\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:15:"Enable comments";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1460,7 +1460,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:4:\"Name\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1517,7 +1517,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:11:\"Description\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:11:"Description";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1574,7 +1574,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:8:\"Location\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:8:"Location";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1631,7 +1631,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:4:\"Name\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1688,7 +1688,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:11:\"Description\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:11:"Description";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1745,7 +1745,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:4:\"File\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:4:"File";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1802,7 +1802,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:7:\"Subject\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:7:"Subject";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1859,7 +1859,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:6:\"Author\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:6:"Author";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1916,7 +1916,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:7:\"Message\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:7:"Message";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -1973,7 +1973,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:11:\"Short title\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:11:"Short title";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2030,7 +2030,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:6:\"Author\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:6:"Author";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2087,7 +2087,7 @@ INSERT INTO ezcontentclass_attribute (
   7,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:5:\"Image\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:5:"Image";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2144,7 +2144,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:10:\"Short name\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:10:"Short name";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2201,7 +2201,7 @@ INSERT INTO ezcontentclass_attribute (
   4,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:11:\"Description\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:11:"Description";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2258,7 +2258,7 @@ INSERT INTO ezcontentclass_attribute (
   5,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:13:\"Show children\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:13:"Show children";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2315,7 +2315,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:4:\"Name\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:4:"Name";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2372,7 +2372,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:10:\"Index Page\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:10:"Index Page";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2429,7 +2429,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:12:\"Default Page\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:12:"Default Page";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2486,7 +2486,7 @@ INSERT INTO ezcontentclass_attribute (
   4,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:12:\"Debug Output\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:12:"Debug Output";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2543,7 +2543,7 @@ INSERT INTO ezcontentclass_attribute (
   5,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:11:\"Debug By IP\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:11:"Debug By IP";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2600,7 +2600,7 @@ INSERT INTO ezcontentclass_attribute (
   6,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:13:\"Debug IP List\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:13:"Debug IP List";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2657,7 +2657,7 @@ INSERT INTO ezcontentclass_attribute (
   7,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:17:\"Debug Redirection\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:17:"Debug Redirection";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2714,7 +2714,7 @@ INSERT INTO ezcontentclass_attribute (
   8,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:12:\"View Caching\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:12:"View Caching";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2771,7 +2771,7 @@ INSERT INTO ezcontentclass_attribute (
   9,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:14:\"Template Cache\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:14:"Template Cache";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2828,7 +2828,7 @@ INSERT INTO ezcontentclass_attribute (
   10,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:16:\"Template Compile\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:16:"Template Compile";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2885,7 +2885,7 @@ INSERT INTO ezcontentclass_attribute (
   11,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:16:\"Image Small Size\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:16:"Image Small Size";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2942,7 +2942,7 @@ INSERT INTO ezcontentclass_attribute (
   12,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:17:\"Image Medium Size\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:17:"Image Medium Size";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -2999,7 +2999,7 @@ INSERT INTO ezcontentclass_attribute (
   13,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:16:\"Image Large Size\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:16:"Image Large Size";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3056,7 +3056,7 @@ INSERT INTO ezcontentclass_attribute (
   1,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:5:\"Title\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:5:"Title";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3113,7 +3113,7 @@ INSERT INTO ezcontentclass_attribute (
   2,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:9:\"Meta data\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:9:"Meta data";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3170,7 +3170,7 @@ INSERT INTO ezcontentclass_attribute (
   3,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:5:\"Image\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:5:"Image";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3227,7 +3227,7 @@ INSERT INTO ezcontentclass_attribute (
   4,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:9:\"Sitestyle\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:9:"Sitestyle";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3284,7 +3284,7 @@ INSERT INTO ezcontentclass_attribute (
   5,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:2:\"id\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:2:"id";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3341,7 +3341,7 @@ INSERT INTO ezcontentclass_attribute (
   6,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:5:\"Email\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:5:"Email";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3398,7 +3398,7 @@ INSERT INTO ezcontentclass_attribute (
   7,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:8:\"Site URL\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:8:"Site URL";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3455,7 +3455,7 @@ INSERT INTO ezcontentclass_attribute (
   4,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:9:\"Signature\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:9:"Signature";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 INSERT INTO ezcontentclass_attribute (
@@ -3512,7 +3512,7 @@ INSERT INTO ezcontentclass_attribute (
   5,
   NULL,
   NULL,
-  'a:2:{s:6:\"eng-GB\";s:5:\"Image\";s:16:\"always-available\";s:6:\"eng-GB\";}',
+  'a:2:{s:6:"eng-GB";s:5:"Image";s:16:"always-available";s:6:"eng-GB";}',
   0
 );
 
@@ -4355,7 +4355,7 @@ INSERT INTO ezcontentobject_attribute (
   1,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\" xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\" xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\"><paragraph xmlns:tmp=\"http://ez.no/namespaces/ezpublish3/temporary/\">This is eZ plain site package with a limited setup of the eZ Publish functionality. For a full blown eZ Publish please chose the Website Interface or the eZ Flow site package at the installation.</paragraph></section>\n',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/" xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/" xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/"><paragraph xmlns:tmp="http://ez.no/namespaces/ezpublish3/temporary/">This is eZ plain site package with a limited setup of the eZ Publish functionality. For a full blown eZ Publish please chose the Website Interface or the eZ Flow site package at the installation.</paragraph></section>\n',
   'ezxmltext',
   2,
   'eng-GB',
@@ -4819,7 +4819,7 @@ INSERT INTO ezcontentobject_attribute (
   41,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   99,
   'eng-GB',
@@ -4964,7 +4964,7 @@ INSERT INTO ezcontentobject_attribute (
   1,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\" xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\" xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\"><paragraph>Exponential is an open source content management platform and development framework, built on a solid eZ Publish legacy foundation and extended with modern layout, site and content APIs. The Exponential Foundation and Community continue to develop, document and support the platform, making it possible to build everything from a personal site to a multilingual enterprise web application with role based access, rich media, commerce and advanced editorial workflows.</paragraph><section><header>Resources</header><paragraph><ul><li><paragraph>For product and platform information, visit <link target=\"_blank\" href=\"https://exponential.earth\">exponential.earth</link>.</paragraph></li><li><paragraph>Browse community articles, forums, blogs and news on <link target=\"_blank\" href=\"https://share.exponential.earth\">share.exponential.earth</link>.</paragraph></li><li><paragraph>Read the eZ Publish documentation encyclopedia on <link target=\"_blank\" href=\"https://ezpedia.exponential.earth\">eZpedia</link>.</paragraph></li><li><paragraph>Find Exponential software extensions and projects on <link target=\"_blank\" href=\"https://projects.exponential.earth\">projects.exponential.earth</link>.</paragraph></li><li><paragraph>Download software packages and releases from <link target=\"_blank\" href=\"https://software.se7enx.com\">software.se7enx.com</link>.</paragraph></li><li><paragraph>View or report issues on the <link target=\"_blank\" href=\"https://issues.exponential.earth\">Exponential issue tracker</link>.</paragraph></li></ul></paragraph></section></section>',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/" xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/" xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/"><paragraph>Exponential is an open source content management platform and development framework, built on a solid eZ Publish legacy foundation and extended with modern layout, site and content APIs. The Exponential Foundation and Community continue to develop, document and support the platform, making it possible to build everything from a personal site to a multilingual enterprise web application with role based access, rich media, commerce and advanced editorial workflows.</paragraph><section><header>Resources</header><paragraph><ul><li><paragraph>For product and platform information, visit <link target="_blank" href="https://exponential.earth">exponential.earth</link>.</paragraph></li><li><paragraph>Browse community articles, forums, blogs and news on <link target="_blank" href="https://share.exponential.earth">share.exponential.earth</link>.</paragraph></li><li><paragraph>Read the eZ Publish documentation encyclopedia on <link target="_blank" href="https://ezpedia.exponential.earth">eZpedia</link>.</paragraph></li><li><paragraph>Find Exponential software extensions and projects on <link target="_blank" href="https://projects.exponential.earth">projects.exponential.earth</link>.</paragraph></li><li><paragraph>Download software packages and releases from <link target="_blank" href="https://software.se7enx.com">software.se7enx.com</link>.</paragraph></li><li><paragraph>View or report issues on the <link target="_blank" href="https://issues.exponential.earth">Exponential issue tracker</link>.</paragraph></li></ul></paragraph></section></section>',
   'ezxmltext',
   104,
   'eng-GB',
@@ -5138,7 +5138,7 @@ INSERT INTO ezcontentobject_attribute (
   45,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   125,
   'eng-GB',
@@ -5167,7 +5167,7 @@ INSERT INTO ezcontentobject_attribute (
   45,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   126,
   'eng-GB',
@@ -5283,7 +5283,7 @@ INSERT INTO ezcontentobject_attribute (
   49,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   144,
   'eng-GB',
@@ -5312,7 +5312,7 @@ INSERT INTO ezcontentobject_attribute (
   49,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   145,
   'eng-GB',
@@ -5428,7 +5428,7 @@ INSERT INTO ezcontentobject_attribute (
   50,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   149,
   'eng-GB',
@@ -5457,7 +5457,7 @@ INSERT INTO ezcontentobject_attribute (
   50,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   150,
   'eng-GB',
@@ -5573,7 +5573,7 @@ INSERT INTO ezcontentobject_attribute (
   51,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   154,
   'eng-GB',
@@ -5602,7 +5602,7 @@ INSERT INTO ezcontentobject_attribute (
   51,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   155,
   'eng-GB',
@@ -6095,7 +6095,7 @@ INSERT INTO ezcontentobject_attribute (
   54,
   0,
   0,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ezimage serial_number=\"1\" is_valid=\"\" filename=\"\" suffix=\"\" basename=\"\" dirpath=\"\" url=\"\" original_filename=\"\" mime_type=\"\" width=\"\" height=\"\" alternative_text=\"\" alias_key=\"1293033771\" timestamp=\"1082016632\"><original attribute_id=\"172\" attribute_version=\"2\" attribute_language=\"eng-GB\"/></ezimage>\n',
+  '<?xml version="1.0" encoding="utf-8"?>\n<ezimage serial_number="1" is_valid="" filename="" suffix="" basename="" dirpath="" url="" original_filename="" mime_type="" width="" height="" alternative_text="" alias_key="1293033771" timestamp="1082016632"><original attribute_id="172" attribute_version="2" attribute_language="eng-GB"/></ezimage>\n',
   'ezimage',
   172,
   'eng-GB',
@@ -6327,7 +6327,7 @@ INSERT INTO ezcontentobject_attribute (
   14,
   0,
   0,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ezimage serial_number=\"1\" is_valid=\"\" filename=\"\" suffix=\"\" basename=\"\" dirpath=\"\" url=\"\" original_filename=\"\" mime_type=\"\" width=\"\" height=\"\" alternative_text=\"\" alias_key=\"1293033771\" timestamp=\"1301057722\"><original attribute_id=\"180\" attribute_version=\"3\" attribute_language=\"eng-GB\"/></ezimage>\n',
+  '<?xml version="1.0" encoding="utf-8"?>\n<ezimage serial_number="1" is_valid="" filename="" suffix="" basename="" dirpath="" url="" original_filename="" mime_type="" width="" height="" alternative_text="" alias_key="1293033771" timestamp="1301057722"><original attribute_id="180" attribute_version="3" attribute_language="eng-GB"/></ezimage>\n',
   'ezimage',
   180,
   'eng-GB',
@@ -6414,7 +6414,7 @@ INSERT INTO ezcontentobject_attribute (
   56,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   183,
   'eng-GB',
@@ -6443,7 +6443,7 @@ INSERT INTO ezcontentobject_attribute (
   56,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   184,
   'eng-GB',
@@ -6559,7 +6559,7 @@ INSERT INTO ezcontentobject_attribute (
   2,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   5,
   'eng-GB',
@@ -6588,7 +6588,7 @@ INSERT INTO ezcontentobject_attribute (
   2,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   6,
   'eng-GB',
@@ -6704,7 +6704,7 @@ INSERT INTO ezcontentobject_attribute (
   3,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   12,
   'eng-GB',
@@ -6733,7 +6733,7 @@ INSERT INTO ezcontentobject_attribute (
   3,
   0,
   1045487555,
-  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  '<?xml version="1.0" encoding="utf-8"?>\n<section xmlns:image="http://ez.no/namespaces/ezpublish3/image/"\n         xmlns:xhtml="http://ez.no/namespaces/ezpublish3/xhtml/"\n         xmlns:custom="http://ez.no/namespaces/ezpublish3/custom/" />',
   'ezxmltext',
   13,
   'eng-GB',
@@ -8372,7 +8372,7 @@ INSERT INTO ezisbn_group (
   group_number,
   id
 ) VALUES (
-  'China, People\'s Republic',
+  'China, People''s Republic',
   7,
   24
 );
@@ -8921,7 +8921,7 @@ INSERT INTO ezisbn_group (
   group_number,
   id
 ) VALUES (
-  'Lao People\'s Democratic Republic',
+  'Lao People''s Democratic Republic',
   9932,
   85
 );
