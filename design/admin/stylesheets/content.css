@@ -314,6 +314,7 @@ table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }
 
 .package-view-full .pvf-actions { display: flex; flex-wrap: wrap; gap: 0.5em; padding: 0.5em 0; margin: 0.5em 0 1em; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
 .package-view-full .pvf-actions input { margin: 0; }
+.package-view-full .pvf-noinstall { margin: 0.5em 0 1em; padding: 0.5em 0.75em; border-left: 3px solid #9aa4ad; background: #f4f6f8; color: #333; overflow-wrap: anywhere; }
 /* Compare: a link (package/compare only reads), drawn like the admin's input.button beside it */
 .package-view-full a.pvf-button-link { display: inline-block; padding: 3px 6px; border: 1px solid #cfd1d3; border-radius: 3px; background: #fff; color: #44484d; font-size: 1em; line-height: normal; text-decoration: none; font-family: Verdana, Arial, Helvetica, sans-serif; vertical-align: middle; transition: all 300ms ease; }
 .package-view-full a.pvf-button-link:hover,

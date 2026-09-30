@@ -117,24 +117,41 @@
     </div>
     {/if}
 
-    {if $package.can_export}
+    {* Each button needs its own policy: Install, Reinstall and Uninstall package/install (the
+       views they open check exactly that), Export to file package/export. Only a package with
+       install type "install" and at least one install item can be installed; for any other the
+       page says why there is nothing to install instead of showing no button at all. *}
+    {def $pvf_installable=and( $package.install_type|eq( 'install' ), $package.install|count|gt( 0 ) )
+         $pvf_can_install=$package.can_install
+         $pvf_can_export=$package.can_export}
+    {if or( $pvf_can_install, $pvf_can_export )}
     <div class="pvf-actions">
         {if $package.install_type|eq( 'install' )}
             {* Compare (package/compare): a plain link, it only reads; styled like the buttons beside it *}
             <a class="pvf-button-link" href={concat( 'package/compare/', $package.name )|ezurl} title="{"Compare the package's content with the site's content tree"|i18n( 'design/admin/package' )}">{'Compare'|i18n( 'design/admin/package' )}</a>
+        {/if}
+        {if and( $pvf_installable, $pvf_can_install )}
             {if $package.is_installed}
                 <input class="button" type="submit" name="InstallButton" value="{'Reinstall'|i18n( 'design/admin/package')}" />
-                <input class="defaultbutton" type="submit" name="ExportButton" value="{'Export to file'|i18n( 'design/admin/package')}" />
+                {if $pvf_can_export}<input class="defaultbutton" type="submit" name="ExportButton" value="{'Export to file'|i18n( 'design/admin/package')}" />{/if}
                 <input class="button pvf-button-danger" type="submit" name="UninstallButton" value="{'Uninstall'|i18n( 'design/admin/package')}" />
             {else}
                 <input class="defaultbutton" type="submit" name="InstallButton" value="{'Install'|i18n( 'design/admin/package')}" />
-                <input class="button" type="submit" name="ExportButton" value="{'Export to file'|i18n( 'design/admin/package')}" />
+                {if $pvf_can_export}<input class="button" type="submit" name="ExportButton" value="{'Export to file'|i18n( 'design/admin/package')}" />{/if}
             {/if}
-        {else}
+        {elseif $pvf_can_export}
             <input class="defaultbutton" type="submit" name="ExportButton" value="{'Export to file'|i18n( 'design/admin/package')}" />
         {/if}
     </div>
     {/if}
+    {if $package.install_type|ne( 'install' )}
+        <p class="pvf-noinstall">{'There is nothing to install here: this package has the install type "%type". A site package is imported by the setup wizard together with the packages it requires, and is not installed on its own.'|i18n( 'design/admin/package',, hash( '%type', $package.install_type|wash ) )}</p>
+    {elseif $package.install|count|eq( 0 )}
+        <p class="pvf-noinstall">{'There is nothing to install here: this package has no install items.'|i18n( 'design/admin/package' )}</p>
+    {elseif $pvf_can_install|not}
+        <p class="pvf-noinstall">{'You are not allowed to install packages (package/install), so the Install button is not shown.'|i18n( 'design/admin/package' )}</p>
+    {/if}
+    {undef $pvf_installable $pvf_can_install $pvf_can_export}
 
     </form>
 
