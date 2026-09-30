@@ -99,7 +99,11 @@ if ( !$node )
     header( $_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found' );
     $Result['content'] = '';
 }
-else if ( !$node->canRead() )
+// The virtual top node (1) has no object of its own and nothing to protect:
+// every child listed below is filtered by the user's read access in subTree().
+// Checking it like a content node would refuse editors whose read access is
+// limited to a subtree, and with [TreeMenu] RootNodeID=1 their whole tree.
+else if ( (int)$node->attribute( 'contentobject_id' ) !== 0 && !$node->canRead() )
 {
     $jsonText= json_encode(
         array(
