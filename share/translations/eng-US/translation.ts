@@ -7174,6 +7174,22 @@ Note: The packages will not be uninstalled.</translation>
         <source>States</source>
         <translation>States</translation>
     </message>
+    <message>
+        <source>Maintenance</source>
+        <translation>Maintenance</translation>
+    </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>Preload Sites</source>
+        <translation>Preload Sites</translation>
+    </message>
+    <message>
+        <source>oAuth admin</source>
+        <translation>oAuth admin</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>

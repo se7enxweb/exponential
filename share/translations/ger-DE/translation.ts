@@ -9630,6 +9630,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>States</source>
         <translation>Zustände</translation>
     </message>
+    <message>
+        <source>Maintenance</source>
+        <translation>Wartung</translation>
+    </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>Preload Sites</source>
+        <translation>Seiten vorladen</translation>
+    </message>
+    <message>
+        <source>oAuth admin</source>
+        <translation>oAuth-Verwaltung</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -42942,7 +42958,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Content structure</source>
         <comment>Navigation part</comment>
-        <translation>Navigationsteil</translation>
+        <translation>Inhalts-Struktur</translation>
     </message>
     <message>
         <source>Media library</source>
@@ -42977,7 +42993,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Update</source>
         <comment>Navigation part</comment>
-        <translation type="unfinished">Update</translation>
+        <translation>Aktualisierung</translation>
     </message>
 </context>
 <context>
