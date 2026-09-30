@@ -163,12 +163,50 @@ class eZDataType
             if ( !isset( $GLOBALS["eZDataTypeObjects"][$dataTypeString] ) ||
                  get_class( $GLOBALS["eZDataTypeObjects"][$dataTypeString] ) != $className )
             {
-                $GLOBALS["eZDataTypeObjects"][$dataTypeString] = new $className();
+                $GLOBALS["eZDataTypeObjects"][$dataTypeString] = self::instantiate( $className );
             }
             return $GLOBALS["eZDataTypeObjects"][$dataTypeString];
         }
 
         return null;
+    }
+
+    /**
+     * Creates the datatype object of class \a $className.
+     *
+     * A datatype written for PHP 4 and 5 has its constructor as a method named after its class
+     * (function MyDatatypeType() { $this->eZDataType( ... ); }). PHP 8 no longer calls such a
+     * method as the constructor, so "new" would run eZDataType::__construct() without arguments
+     * and fail. Such a class is created without a constructor and its old style constructor is
+     * called instead, which is exactly what PHP 5 did. Every other class is created with "new".
+     *
+     * @param string $className
+     * @return eZDataType
+     */
+    protected static function instantiate( $className )
+    {
+        $class = new ReflectionClass( $className );
+        $constructor = $class->getConstructor();
+        if ( $constructor && $constructor->getDeclaringClass()->getName() === 'eZDataType' )
+        {
+            // Look for an old style constructor from the class itself up to (not including) eZDataType
+            for ( $current = $class; $current && $current->getName() !== 'eZDataType'; $current = $current->getParentClass() )
+            {
+                $name = $current->getShortName();
+                if ( $current->hasMethod( $name ) )
+                {
+                    $method = $current->getMethod( $name );
+                    if ( !$method->isStatic() && $method->getNumberOfRequiredParameters() == 0 &&
+                         strcasecmp( $method->getDeclaringClass()->getName(), $current->getName() ) == 0 )
+                    {
+                        $object = $class->newInstanceWithoutConstructor();
+                        $method->invoke( $object );
+                        return $object;
+                    }
+                }
+            }
+        }
+        return new $className();
     }
 
     /*!

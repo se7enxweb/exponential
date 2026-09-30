@@ -74,7 +74,9 @@ class eZSerializedObjectNameList
 
     function isEmpty()
     {
-        return ( count( $this->NameList ) == 0 );
+        // A list made without a serialized string (an old class definition, <= 3.8, has only <name>)
+        // has no NameList yet: it is empty, not an error
+        return ( !is_array( $this->NameList ) || count( $this->NameList ) == 0 );
     }
 
     function unserializeNames( $serializedNamesString )
