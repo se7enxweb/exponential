@@ -210,18 +210,39 @@ class expPhar
             return self::fail( 'nothing to package: no engine directories found' );
 
         // Parse first, write second.
-        $bad = array();
-        foreach ( $files as $rel )
+        //
+        // In batches, many files to one "php -n -l" (PHP 8.3 and later check every file given), not one
+        // process per file: starting PHP with this server's extensions takes about half a second, and
+        // 1049 files made every build, and so every Velocity restart after a kernel change, take nine
+        // minutes. Parsing needs no extension, so -n starts it in milliseconds; the whole set takes
+        // about two seconds. A batch that fails, or a PHP that checks only one file per call, is
+        // checked again file by file, so a broken file is always named.
+        //
+        // The PHP running this, not whatever "php" the PATH finds: with no php on the PATH (a minimal
+        // container, a service manager's environment) every file "failed to parse", and the build refused.
+        $php = escapeshellarg( PHP_BINARY ) . ' -n -d display_errors=stderr -l ';
+        $lintOne = function ( $rel ) use ( $php, $root )
         {
-            if ( substr( $rel, -4 ) !== '.php' )
-                continue;
             $out = array(); $code = 0;
-            // The PHP running this, not whatever "php" the PATH finds: with no
-            // php on the PATH (a minimal container, a service manager's
-            // environment) every file "failed to parse", and the build refused.
-            @exec( escapeshellarg( PHP_BINARY ) . ' -l ' . escapeshellarg( $root . '/' . $rel ) . ' 2>&1', $out, $code );
-            if ( $code !== 0 )
-                $bad[] = $rel;
+            @exec( $php . escapeshellarg( $root . '/' . $rel ) . ' 2>&1', $out, $code );
+            return $code === 0;
+        };
+        $phpFiles = array_values( array_filter( $files, function ( $rel ) { return substr( $rel, -4 ) === '.php'; } ) );
+        $bad = array();
+        foreach ( array_chunk( $phpFiles, 200 ) as $batch )
+        {
+            $args = implode( ' ', array_map( function ( $rel ) use ( $root ) { return escapeshellarg( $root . '/' . $rel ); }, $batch ) );
+            $out = array(); $code = 0;
+            @exec( $php . $args . ' 2>/dev/null', $out, $code );
+            $passed = 0;
+            foreach ( $out as $line )
+                if ( strpos( $line, 'No syntax errors detected in ' ) === 0 )
+                    $passed++;
+            if ( $code === 0 && $passed === count( $batch ) )
+                continue;
+            foreach ( $batch as $rel )
+                if ( !$lintOne( $rel ) )
+                    $bad[] = $rel;
         }
         if ( $bad )
         {
