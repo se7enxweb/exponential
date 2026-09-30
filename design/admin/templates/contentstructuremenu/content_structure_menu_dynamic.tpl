@@ -49,9 +49,8 @@ var treeMenu;
 
 {cache-block keys=array( $root_node_id, $access_type ) expiry=0}
     {def $root_node_url = $root_node.url $class_list = array()}
-    {if $root_node_id|eq( 1 )}
-        {set $root_node_url = 'content/dashboard'}
-    {elseif $root_node_url|eq('')}
+    {* The top node (1) has no URL alias of its own: it opens its full view, which lists the top-level nodes. *}
+    {if $root_node_url|eq('')}
         {set $root_node_url = concat( 'content/view/full/', $root_node_id )}
     {/if}
     {foreach fetch( 'content', 'can_instantiate_class_list', hash( 'parent_node', $root_node, 'filter_type', $filter_type, 'group_id', $filter_groups ) ) as $class}
