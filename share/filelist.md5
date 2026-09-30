@@ -96,7 +96,7 @@ e53af0113356a7991f3cfcb5d99fd22e  bin/php/trashpurge.php
 640b457181f94b435659cda8bd0e6217  bin/php/updateniceurls.php
 2b75d418585d3d583adbb28798db5c87  bin/php/updatesearchindex.php
 45816388328705ce2980f450c29a42b4  bin/php/velocity-router.php
-cfb9a00b9afb6aea53a160824f7354dc  bin/php/velocity-warmup.php
+ad183958103af50aff8a4e9aad192bc6  bin/php/velocity-warmup.php
 7c863bb4e540e158420cbe608f18afa0  bin/php/velocity.php
 cfcb4022009fc98a7c5aad2789f5080c  bin/php/verify_aliases.php
 85657a43af64db3c68531cef4f5b9246  bin/php/warm.php
@@ -5513,7 +5513,7 @@ e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
 c3af6d8a713c0c51913e206fd75cafb8  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
-3e40db0d31c1f4344f04a1252a4671df  kernel/classes/expvelocityconfiglayout.php
+0860cea831380715b1b76f76bfc68e3b  kernel/classes/expvelocityconfiglayout.php
 8d76ad8f1b6946c83114d1302ba10b48  kernel/classes/expvelocityfrankenphp.php
 13a0bb95af7b52a10396eb5d6912f0f4  kernel/classes/expvelocityfrankenphpinstaller.php
 2de9e75d5e65b35f50a202ba34c78b86  kernel/classes/expvelocityphpserver.php
