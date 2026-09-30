@@ -29,6 +29,13 @@
 class eZStaticCache implements ezpStaticCache
 {
     public $staticStorageDir;
+
+    /**
+     * site.ini of each siteaccess whose cache directories were built in this request: array( 'request' => the
+     * request's start time, 'ini' => eZINI by siteaccess name ); see buildCacheDirPart()
+     * @var array
+     */
+    private static $siteAccessIniCache = array( 'request' => null, 'ini' => array() );
     /**
      * User-Agent string
      */
@@ -774,9 +781,23 @@ class eZStaticCache implements ezpStaticCache
      */
     private function buildCacheDirPart( $dir, $siteAccess, $host = false, $urlPrefix = '' )
     {
-        $siteURL = eZSiteAccess::getIni( $siteAccess, 'site.ini' )->variable( 'SiteSettings', 'SiteURL' );
-
-        $siteAccessINI = eZSiteAccess::getIni( $siteAccess, 'site.ini' );
+        // Loading another siteaccess's site.ini switches the siteaccess context and reads the siteaccess settings of
+        // every active extension from disk, and a publish builds the cache directories of every cached siteaccess for
+        // every url it stores: 112 loads and 6 000 INI files in one publish. The settings are kept per siteaccess by
+        // the class for the rest of the request (a publish makes more than one instance), so a siteaccess is loaded
+        // once per request. The cache is keyed by the request's start time: a long-running worker (Velocity) serves
+        // many requests, and one request's settings must not reach the next.
+        $request = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT'] : '';
+        if ( self::$siteAccessIniCache['request'] !== $request )
+        {
+            self::$siteAccessIniCache = array( 'request' => $request, 'ini' => array() );
+        }
+        if ( !isset( self::$siteAccessIniCache['ini'][$siteAccess] ) )
+        {
+            self::$siteAccessIniCache['ini'][$siteAccess] = eZSiteAccess::getIni( $siteAccess, 'site.ini' );
+        }
+        $siteAccessINI = self::$siteAccessIniCache['ini'][$siteAccess];
+        $siteURL = $siteAccessINI->variable( 'SiteSettings', 'SiteURL' );
 
         return array( 'dir' => $dir,
                       'access_name' => $siteAccess,
