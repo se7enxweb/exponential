@@ -166,6 +166,19 @@ $clearPrefixes = array(
     // too -- so admin broke on both servers (2026-09-24). Rebuilt per request,
     // from that request's siteaccess, as a fresh Apache request does.
     'eZTemplateDesignResource', 'eZDesignKeys', 'eZDesignOverrides',
+    // The rendered siteaccess's language, and everything built from it: the
+    // locale eZLocale::instance() hands out when asked for none
+    // (eZLocaleStringDefault, eng-US here), the translator manager with that
+    // locale's translation file registered as its first handler, the loaded
+    // translation tables and contexts, and the content languages in the
+    // siteaccess's order. Kept, a request under a translated siteaccess
+    // (bold_ger, ger-DE) registered its own translation behind the warm-up's
+    // and the manager asked the English one first: html lang="de-DE" with
+    // every interface string in English, "We couldn't find that page" where
+    // Apache said "Diese Seite haben wir nicht gefunden" (2026-09-29). Each
+    // request builds them for its own siteaccess, as a fresh process does.
+    'eZLocale', 'eZTSTranslationTables', 'eZTranslatorManagerInstance',
+    'eZTranslationCache', 'eZContentLanguage',
 );
 foreach (array_keys($GLOBALS) as $__g) {
     foreach ($clearPrefixes as $__p) {
@@ -191,6 +204,12 @@ foreach (array('ezjscPackerTemplateFunctions', 'ezjscPacker') as $__pk) {
 
 // Singletons kept outside $GLOBALS: the request parser and the kernel. Drop
 // them so the next real request parses itself from scratch.
+// Whether text is translated at all is the siteaccess's TextTranslation, read
+// once and kept in a static; the pool restores statics to what they are here,
+// so the warm-up's answer would hold for every siteaccess. Forget it.
+if (class_exists('ezpI18n', false) && method_exists('ezpI18n', 'reset')) {
+    ezpI18n::reset();
+}
 if (class_exists('eZSys') && method_exists('eZSys', 'setInstance')) {
     @eZSys::setInstance(null);
 }
