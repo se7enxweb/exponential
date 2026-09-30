@@ -24,77 +24,7 @@
     </th>
 </tr>
 
-{let current_node=fetch( content, node, hash( node_id, $browse.start_node ) )}
-{* Note: The tpl code for $ignore_nodes_merge with the eq, unique and count
-             is just a replacement for a missing template operator.
-             If there are common elements the unique array will have less elements
-             than the merged one
-             In the future this should be replaced with a  new template operator that checks
-             one array against another and returns true if elements in the first
-             exists in the other *}
-     {let ignore_nodes_merge=merge( $browse.ignore_nodes_select_subtree, $current_node.path_array )
-          browse_permission = true()}
-     {if $browse.permission}
-        {if $browse.permission.contentclass_id}
-            {if is_array( $browse.permission.contentclass_id )}
-                {foreach $browse.permission.contentclass_id as $contentclass_id}
-                    {set $browse_permission = fetch( 'content', 'access', hash( 'access', $browse.permission.access,
-                                                                       'contentobject',   $current_node.object,
-                                                                       'contentclass_id', $contentclass_id ) )}
-                    {if $browse_permission|not}{break}{/if}
-                {/foreach}
-            {else}
-                {set $browse_permission = fetch( 'content', 'access', hash( 'access', $browse.permission.access,
-                                                                   'contentobject',   $current_node.object,
-                                                                   'contentclass_id', $browse.permission.contentclass_id ) )}
-            {/if}
-        {else}
-            {set $browse_permission = fetch( 'content', 'access', hash( 'access', $browse.permission.access,
-                                                               'contentobject',   $current_node.object ) )}
-        {/if}
-     {/if}
-     {if and( $browse_permission,
-                           $browse.ignore_nodes_select|contains( $Nodes.item.node_id )|not,
-                           eq( $ignore_nodes_merge|count,
-                               $ignore_nodes_merge|unique|count ) )}
-        {if is_array( $browse.class_array )}
-            {if $browse.class_array|contains( $current_node.object.content_class.identifier )}
-                <input type="{$select_type}" name="{$select_name}[]" value="{$current_node.node_id}" />
-            {else}
-                <input type="{$select_type}" name="_Disabled" value="" disabled="disabled" />
-            {/if}
-        {else}
-            {*
-              Do not allow node selection if
-              - Action is move, copy or add node, and item is not a container
-              - Action is swap node, and node to swap has children and item is not a container, and vice versa
-            *}
-            {if and( or( eq( $browse.action_name, 'MoveNode' ), eq( $browse.action_name, 'CopyNode' ), eq( $browse.action_name, 'AddNodeAssignment' ) ), $current_node.object.content_class.is_container|not )}
-                <input type="{$select_type}" name="{$select_name}[]" value="{$current_node.node_id}" disabled="disabled" />
-            {elseif and( eq( $browse.action_name, 'SwapNode' ),
-                         eq( $swap_node_class, 'ezcontentobjecttreenode' ),
-                         or( and( $swap_node.children_count|gt(0), $current_node.object.content_class.is_container|not ),
-                             and( $swap_node.is_container|not, $current_node.children_count|gt(0) ) ) )}
-                <input type="{$select_type}" name="{$select_name}[]" value="{$current_node.node_id}" disabled="disabled" />
-            {else}
-	        <tr class="bglight">
-	            <td class="tight">
-                        <input type="{$select_type}" name="{$select_name}[]" value="{$current_node.node_id}" checked />
-	            </td>
-           	    <td class="wide">
-	                <b>{'Current Location:'|i18n( 'design/admin/content/browse' )} {$current_node.name|wash}</b>
-    	            </td>
-		    <td class="tight">
-           	    	{$current_node.object.class_name}
-		    </td>
-		</tr>
-            {/if}
-        {/if}
-    {else}
-        <input type="{$select_type}" name="_Disabled" value="" disabled="disabled" />
-    {/if}
-    {/let}
-{/let}
+{include uri='design:content/browse_current_node.tpl' mode='list'}
 
 {section var=Nodes loop=$node_array sequence=array( bglight, bgdark )}
   <tr class="{$Nodes.sequence}">
