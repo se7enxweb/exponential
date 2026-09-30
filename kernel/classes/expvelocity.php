@@ -1974,8 +1974,8 @@ class expVelocity
         while ( microtime( true ) < $deadline )
         {
             if ( $this->listeningPorts() && count( $this->parentIDs() ) >= $instances )
-                return $this->result( true, ( $instances > 1 ? $instances . ' instances ' : '' ) . ( $this->engineRebuilt
-                    ? 'started (engine archive rebuilt first: ' . $this->engineRebuilt . ' kernel file(s) had changed)'
+                return $this->result( true, ( $instances > 1 ? $instances . ' instances ' : '' ) . ( $this->engineNote !== ''
+                    ? 'started (' . $this->engineNote . ')'
                     : 'started' ) . ( $this->layoutNote !== '' ? '; ' . $this->layoutNote : '' ), $this->status() );
 
             usleep( (int)( self::POLL_INTERVAL * 1000000 ) );
@@ -2071,6 +2071,16 @@ class expVelocity
      */
     public function graceful()
     {
+        // A re-exec opens the archive again, so it is brought up to date first,
+        // as for a restart: a reload after a kernel change otherwise reloaded
+        // into the same old archive. Checked while nothing has been touched.
+        if ( $this->isRunning() )
+        {
+            $ready = $this->ensureEngineArchive();
+            if ( $ready !== true )
+                return $this->result( false, $ready . ' -- the running server was left as it is', $this->status() );
+        }
+
         $instances = $this->instances();
         if ( $instances > 1 )
         {
@@ -2133,7 +2143,7 @@ class expVelocity
             if ( $after && !array_intersect( $before, $after )
                  && $this->listeningPorts() )
             {
-                return $this->result( true, 'reloaded', $this->status() );
+                return $this->result( true, 'reloaded' . ( $this->engineNote !== '' ? ' (' . $this->engineNote . ')' : '' ), $this->status() );
             }
         }
 
@@ -2151,7 +2161,8 @@ class expVelocity
      * @return array
      */
     /**
-     * Rebuild the engine archive if any file it carries is newer on disk.
+     * Rebuild the engine archive unless it carries exactly the engine files on
+     * disk (expPhar::check()), or always after forceEngineRebuild().
      *
      * Safe to call with the server running: the running processes loaded
      * their classes long ago, and the new archive is only read at the next
@@ -2163,28 +2174,68 @@ class expVelocity
     protected function ensureEngineArchive()
     {
         $enginePhar = $this->enginePhar();
-        if ( $enginePhar === '' || !file_exists( $enginePhar ) )
+        if ( $enginePhar === '' || !file_exists( $enginePhar ) || !class_exists( 'expPhar' ) )
             return true;   // start() reports a missing archive itself
 
-        $stale = $this->staleEngineFiles( $enginePhar );
-        if ( !$stale )
+        // Decided by what the archive carries -- the set of files, and each
+        // one's size, time and (when the time moved) contents, recorded beside
+        // it when it was built -- not by whether anything on disk is newer than
+        // the archive. That missed a file removed, and a file put in place with
+        // an older time (rsync -a, cp -p, an unpacked release), and rebuilt for
+        // a checkout that only rewrote the same bytes.
+        $check = expPhar::check( $enginePhar );
+        if ( $check['current'] && !$this->forceEngineRebuild )
+        {
+            if ( $this->engineNote === '' )
+                $this->engineNote = 'engine.phar is current, not rebuilt';
             return true;
+        }
+        $why = $this->forceEngineRebuild ? 'asked to rebuild' : $check['reason'];
 
         $out = array(); $code = 0;
         @exec( escapeshellarg( PHP_BINARY ) . ' -d phar.readonly=0 '
             . escapeshellarg( $this->absolute( 'bin/php/phar.php' ) )
-            . ' build --allow-root-user --output=' . escapeshellarg( $enginePhar ) . ' 2>&1', $out, $code );
+            . ' build --force --json --allow-root-user --output=' . escapeshellarg( $enginePhar ) . ' 2>&1', $out, $code );
+        $built = null;
+        foreach ( array_reverse( $out ) as $line )
+            if ( ( $line = trim( $line ) ) !== '' && $line[0] === '{' && is_array( $built = json_decode( $line, true ) ) )
+                break;
         clearstatcache();
-        $still = $code === 0 ? $this->staleEngineFiles( $enginePhar ) : $stale;
-        if ( $code !== 0 || $still )
-            return 'the engine archive is older than ' . count( $stale ) . ' kernel file(s) (e.g. '
-                . implode( ', ', array_slice( $stale, 0, 3 ) ) . ') and could not be rebuilt: '
-                . trim( implode( ' ', array_slice( $out, -3 ) ) )
-                . ' -- run php bin/php/phar.php build --allow-root-user, or set EnginePhar=disabled';
+        if ( $code !== 0 || !is_array( $built ) || empty( $built['ok'] ) || !expPhar::check( $enginePhar )['current'] )
+        {
+            if ( !empty( $built['data']['unparsable'] ) )
+                $detail = count( $built['data']['unparsable'] ) . ' file(s) do not parse: '
+                        . implode( ', ', $built['data']['unparsable'] ) . ' (php -l names the line)';
+            else
+                $detail = is_array( $built ) && isset( $built['message'] ) ? $built['message']
+                        : trim( implode( ' ', array_slice( $out, -3 ) ) );
+            return 'the engine archive needs rebuilding (' . $why . ') and could not be rebuilt: ' . $detail
+                . '. Nothing was written and the archive already there was kept;'
+                . ' fix that and restart again, or set EnginePhar=disabled';
+        }
 
-        $this->engineRebuilt = count( $stale );
+        $this->forceEngineRebuild = false;
+        $this->engineRebuilt = max( 1, count( $check['changed'] ) + count( $check['added'] ) + count( $check['removed'] ) );
+        $this->engineNote = 'engine.phar rebuilt: ' . $why;
         return true;
     }
+
+    /**
+     * Rebuild the engine archive at the next start, restart or graceful
+     * reload even when it is current (exp:velocity restart --rebuild-phar).
+     *
+     * @return void
+     */
+    public function forceEngineRebuild()
+    {
+        $this->forceEngineRebuild = true;
+    }
+
+    /** Whether the next start rebuilds the engine archive whatever it carries. */
+    protected $forceEngineRebuild = false;
+
+    /** What the last start did about the engine archive, for its result line. */
+    protected $engineNote = '';
 
     public function restart()
     {
@@ -2616,18 +2667,13 @@ class expVelocity
      */
     public function staleEngineFiles( $archive )
     {
-        $built = @filemtime( $archive );
-        if ( $built === false || !class_exists( 'expPhar' ) )
+        if ( !is_file( $archive ) || !class_exists( 'expPhar' ) )
             return array();
-        $root = expPhar::root();
-        $stale = array();
-        foreach ( expPhar::collect() as $rel )
-        {
-            $m = @filemtime( $root . '/' . $rel );
-            if ( $m !== false && $m > $built )
-                $stale[] = $rel;
-        }
-        return $stale;
+        $check = expPhar::check( $archive, false );
+        if ( $check['current'] )
+            return array();
+        $files = array_merge( $check['changed'], $check['added'], $check['removed'] );
+        return $files ? $files : array( '(' . $check['reason'] . ')' );
     }
 
     /**

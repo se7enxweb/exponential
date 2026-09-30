@@ -6,6 +6,8 @@
  * Discovered by the console as exp:phar.
  *
  *   php -d phar.readonly=0 bin/php/console exp:phar build
+ *   bin/php/console exp:phar build --force   (rebuild even when current)
+ *   bin/php/console exp:phar check
  *   bin/php/console exp:phar info
  *   bin/php/console exp:phar clean
  *
@@ -35,12 +37,15 @@ $script = eZScript::instance( array(
 $script->startup();
 
 $options = $script->getOptions(
-    '[json][output:]',
+    '[json][output:][force]',
     '[verb]',
     array(
         'json'   => 'Print the result as JSON.',
         'output' => 'Write the archive somewhere other than dist/engine.phar.',
-        'verb'   => 'build, info or clean (default: info)',
+        'force'  => 'build: rebuild even when the archive already carries exactly the files on disk.',
+        'verb'   => "build, check, info or clean (default: info)\n"
+                  . "build  write the archive, unless it is current (--force: anyway)\n"
+                  . "check  whether it is current, and if not which files differ; exit 1 when not",
     ) );
 $script->initialize();
 
@@ -48,17 +53,29 @@ require_once 'kernel/classes/expphar.php';
 
 $verb = isset( $options['arguments'][0] ) ? $options['arguments'][0] : 'info';
 $json = !empty( $options['json'] );
+$force = !empty( $options['force'] );
+$outputPath = isset( $options['output'] ) ? (string)$options['output'] : '';
 
 // Building needs phar.readonly off, and the console dispatches each command to
 // a fresh PHP, so an ini flag typed on the console line never reaches here.
 // Re-exec once with the setting rather than telling the caller to work that
 // out. The guard variable stops a loop if the setting somehow does not take.
-if ( $verb === 'build' && ini_get( 'phar.readonly' ) && getenv( 'EXP_PHAR_REEXEC' ) !== '1' )
+// An archive that is current needs no writing, so that is found out first.
+$current = null;
+if ( $verb === 'build' && !$force && ini_get( 'phar.readonly' ) )
+{
+    $current = expPhar::build( array( 'output' => $outputPath ) );
+    if ( !$current['ok'] || !empty( $current['data']['rebuilt'] ) || !empty( $current['data']['unparsable'] ) )
+        $current = null;
+}
+if ( $verb === 'build' && $current === null && ini_get( 'phar.readonly' ) && getenv( 'EXP_PHAR_REEXEC' ) !== '1' )
 {
     $command = escapeshellarg( PHP_BINARY ) . ' -d phar.readonly=0 '
              . escapeshellarg( __FILE__ ) . ' build --allow-root-user';
-    if ( isset( $options['output'] ) && $options['output'] !== '' )
-        $command .= ' --output=' . escapeshellarg( $options['output'] );
+    if ( $outputPath !== '' )
+        $command .= ' --output=' . escapeshellarg( $outputPath );
+    if ( $force )
+        $command .= ' --force';
     if ( $json )
         $command .= ' --json';
 
@@ -71,7 +88,16 @@ if ( $verb === 'build' && ini_get( 'phar.readonly' ) && getenv( 'EXP_PHAR_REEXEC
 switch ( $verb )
 {
     case 'build':
-        $result = expPhar::build( array( 'output' => isset( $options['output'] ) ? $options['output'] : '' ) );
+        $result = $current !== null ? $current
+                : expPhar::build( array( 'output' => $outputPath, 'force' => $force ) );
+        break;
+    case 'check':
+        $check = expPhar::check( $outputPath !== '' ? $outputPath : null );
+        $result = array( 'ok' => $check['current'],
+                         'message' => ( $check['current'] ? 'engine.phar is current: ' : 'engine.phar is not current: ' ) . $check['reason'],
+                         'data' => array( 'files' => $check['files'], 'touched' => $check['touched'] )
+                                 + array_filter( array_map( function ( $list ) { return array_slice( $list, 0, 20 ); },
+                                       array_intersect_key( $check, array_flip( array( 'changed', 'added', 'removed' ) ) ) ) ) );
         break;
     case 'clean':
         $result = expPhar::clean();
@@ -80,7 +106,7 @@ switch ( $verb )
         $result = expPhar::info();
         break;
     default:
-        $result = array( 'ok' => false, 'message' => "unknown verb '$verb'; use build, info or clean", 'data' => array() );
+        $result = array( 'ok' => false, 'message' => "unknown verb '$verb'; use build, check, info or clean", 'data' => array() );
 }
 
 if ( $json )

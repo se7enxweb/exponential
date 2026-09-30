@@ -68,7 +68,58 @@ Options:
 | Option | Meaning |
 |---|---|
 | `--output=PATH` | write the archive somewhere other than `dist/engine.phar` |
+| `--force` | rebuild even when the archive is current |
 | `--json` | print the result as JSON, for scripting |
+
+### Rebuilt only when something changed
+
+Beside the archive the build writes `dist/engine.phar.index.json`: every file
+it packaged, with its size, modification time and SHA-1, the PHP release it
+was checked under, and the archive's own size and time. A build, and every
+`exp:velocity start`, `restart` and `graceful`, compares that with the disk
+first and rebuilds only when
+
+- a file in `kernel/`, `lib/` or `autoload/` was **added, removed or changed**
+  (a file whose time moved is hashed, so a checkout or a regenerated autoload
+  array that wrote the same bytes again is not a change; its new time is
+  recorded, and it is not hashed again);
+- the index is missing, belongs to another archive (the archive was replaced
+  after it was written) or was written by an older builder;
+- PHP's major or minor version is not the one the files were checked under.
+
+```bash
+bin/php/console exp:phar build          # engine.phar is current, not rebuilt   (0.3s)
+bin/php/console exp:phar build --force  # built engine.phar                     (about 28s)
+bin/php/console exp:phar check          # current or not, and which files differ; exit 1 when not
+./bin/php/console exp:velocity restart --rebuild-phar --allow-root-user   # rebuild at this restart anyway
+```
+
+A restart says which it was: `started (engine.phar is current, not rebuilt)`
+or `started (engine.phar rebuilt: 1 changed (kernel/classes/expvelocity.php))`.
+Measured on a test instance: 3.2 seconds for a restart with nothing changed,
+33 seconds with one kernel file changed.
+
+This replaced a rule that rebuilt when any file on disk was newer than the
+archive. That rule missed a file removed and a file put in place with an older
+time (`rsync -a`, `cp -p`, an unpacked release), and rebuilt for a checkout
+that only rewrote the same bytes.
+
+**A file that does not parse keeps the old archive.** Every PHP file is parsed
+before anything is written; one that fails is named, nothing is written, and
+the archive already there stays. A restart then refuses before stopping the
+server, which keeps running on the old archive:
+
+```
+velocity: the engine archive needs rebuilding (1 added (kernel/classes/example.php)) and could
+not be rebuilt: 1 file(s) do not parse: kernel/classes/example.php (php -l names the line).
+Nothing was written and the archive already there was kept; fix that and restart again, or set
+EnginePhar=disabled -- the running server was left as it is
+```
+
+The version stamp (commit and `-dirty`, see *Versioning*) is not a reason to
+rebuild: it moves with every commit, whether or not a file in the archive did.
+**Setup → System information** therefore reports the archive as matching when
+its files are the files on disk, and names the two commits beside it.
 
 ### Inspect
 
@@ -342,3 +393,4 @@ Deliberately left undone:
 | `kernel/setup/info.php` | gathers the Engine block |
 | `design/admin/templates/setup/info.tpl` | renders it |
 | `dist/engine.phar` | the artifact (gitignored) |
+| `dist/engine.phar.index.json` | what the artifact carries, for deciding whether to rebuild (gitignored) |

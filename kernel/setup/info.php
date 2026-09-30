@@ -436,8 +436,26 @@ if ( class_exists( 'expPhar' ) || file_exists( 'kernel/classes/expphar.php' ) )
         $engineInfo['stale_reason'] = '';
         $engineInfo['stale_fix'] = '';
 
-        if ( $engineInfo['version'] !== '' && $engineInfo['version'] !== $repoVersion )
+        // The version names the commit the archive was built at, so it moves
+        // with every commit and with every uncommitted file anywhere in the
+        // tree. What decides whether the archive runs the code on disk is the
+        // files in it, which is what a restart rebuilds by: when those are all
+        // as packaged, the archive is current whatever the two strings say.
+        $filesCurrent = null;
+        $checkedArchive = defined( 'EXP_ENGINE_PHAR' ) ? EXP_ENGINE_PHAR : expPhar::enginePath();
+        if ( $engineInfo['version'] !== '' && $engineInfo['version'] !== $repoVersion && is_file( $checkedArchive ) )
         {
+            $filesCurrent = expPhar::check( $checkedArchive, false );
+            if ( $filesCurrent['current'] )
+                $engineInfo['matches_repo'] = 'yes, the same files (' . $filesCurrent['reason']
+                    . '; built at ' . $engineInfo['version'] . ', the tree is now at ' . $repoVersion . ')';
+        }
+
+        if ( $engineInfo['version'] !== '' && $engineInfo['version'] !== $repoVersion
+             && !( $filesCurrent && $filesCurrent['current'] ) )
+        {
+            if ( $filesCurrent )
+                $engineInfo['matches_repo'] = 'no, ' . $filesCurrent['reason'];
             // The two strings are "<base>-<short sha>[-dirty]", so the parts
             // that differ say which kind of staleness this is.
             $archiveParts = explode( '-', $engineInfo['version'] );
@@ -463,10 +481,14 @@ if ( class_exists( 'expPhar' ) || file_exists( 'kernel/classes/expphar.php' ) )
                            . ' will capture whatever is on disk right now';
 
             $engineInfo['stale_reason'] = implode( '; ', $reasons );
-            $engineInfo['stale_fix'] = 'php bin/php/phar.php build --allow-root-user'
-                . ( $engineInfo['source'] === 'archive'
-                    ? ', then ' . $engineServer['restart'] . ' so the server opens the new archive'
-                    : '' );
+            if ( $engineInfo['source'] !== 'archive' )
+                $engineInfo['stale_fix'] = 'php bin/php/phar.php build --allow-root-user';
+            elseif ( strpos( $engineServer['restart'], 'exp:velocity' ) === 0 )
+                $engineInfo['stale_fix'] = $engineServer['restart'] . ' (it rebuilds the archive first when a file in it'
+                                         . ' changed), or exp:velocity deploy after a code change';
+            else
+                $engineInfo['stale_fix'] = 'php bin/php/phar.php build --allow-root-user, then ' . $engineServer['restart']
+                                         . ' so the server opens the new archive';
         }
     }
 }
