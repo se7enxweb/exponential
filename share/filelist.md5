@@ -379,7 +379,7 @@ a1f9f35ddf7628f6d51fb625e579dc78  design/admin/templates/content/upload.tpl
 a1e3428fbe578d55c00fb4a1ecfc1c08  design/admin/templates/content/urlalias_global.tpl
 6a59f1b5daacac4cdae276911ab17ce7  design/admin/templates/content/urlalias_wildcard.tpl
 5014195fe59507e2957067c8d7a22c19  design/admin/templates/content/view/versionview.tpl
-da095e1b8d447ef96beca6068f2110ba  design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl
+ba8c648fc4f2027dc40190499da291b9  design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl
 d04d82dd75e144017a4e56fa6875c770  design/admin/templates/contentstructuremenu/show_content_structure.tpl
 ff0b1a2bfe7ddc2f479128e4e841ce2b  design/admin/templates/dashboard/maintenance.tpl
 f703d565df2e48a0f814592e40c8628e  design/admin/templates/details.tpl
