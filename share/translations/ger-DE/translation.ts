@@ -45021,6 +45021,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Gemeinfrei (Public Domain)</translation>
     </message>
     <message>
+        <source>Proprietary licenses</source>
+        <translation>Proprietäre Lizenzen</translation>
+    </message>
+    <message>
         <source>Other licenses</source>
         <translation>Weitere Lizenzen</translation>
     </message>
