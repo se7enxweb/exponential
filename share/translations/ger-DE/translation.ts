@@ -9019,6 +9019,150 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>MD5:</source>
         <translation>MD5:</translation>
     </message>
+    <message>
+        <source>%shown of %total files</source>
+        <translation>%shown von %total Dateien</translation>
+    </message>
+    <message>
+        <source>+ %count more object(s) in the same file</source>
+        <translation>+ %count weitere(s) Objekt(e) in derselben Datei</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Any type</source>
+        <translation>Alle Typen</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Anwenden</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attribut</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Filter zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Inhaltsklasse</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Inhaltsobjekt</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datentyp</translation>
+    </message>
+    <message>
+        <source>Document</source>
+        <translation>Dokument</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Herunterladen</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>First</source>
+        <translation>Erste</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Bild</translation>
+    </message>
+    <message>
+        <source>Last</source>
+        <translation>Letzte</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Nächste</translation>
+    </message>
+    <message>
+        <source>No file matches these filters.</source>
+        <translation>Keine Datei entspricht diesen Filtern.</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Sonstige</translation>
+    </message>
+    <message>
+        <source>Package contents</source>
+        <translation>Paketinhalt</translation>
+    </message>
+    <message>
+        <source>Package definition</source>
+        <translation>Paketdefinition</translation>
+    </message>
+    <message>
+        <source>Page %page of %pages</source>
+        <translation>Seite %page von %pages</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Pfad</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Vorherige</translation>
+    </message>
+    <message>
+        <source>Reinstall</source>
+        <translation>Neu installieren</translation>
+    </message>
+    <message>
+        <source>Released %date</source>
+        <translation>Veröffentlicht am %date</translation>
+    </message>
+    <message>
+        <source>Remote ID</source>
+        <translation>Remote-ID</translation>
+    </message>
+    <message>
+        <source>Search path/name</source>
+        <translation>Pfad/Name suchen</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Anzeigen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>

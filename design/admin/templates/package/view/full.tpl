@@ -2,26 +2,37 @@
 {let package=fetch( package,item,
                     hash( package_name, $package_name,
                           repository_id, $repository_id ) )}
+{* The labels of the kinds eZPackageFileBrowser tells files apart by, shared by the filter, the
+   file list's type badges and the viewed file's header. *}
+{def $kindLabels = hash( 'class', 'Content class'|i18n('design/admin/package'),
+                         'object', 'Content object'|i18n('design/admin/package'),
+                         'image', 'Image'|i18n('design/admin/package'),
+                         'simplefile', 'File'|i18n('design/admin/package'),
+                         'document', 'Document'|i18n('design/admin/package'),
+                         'package', 'Package definition'|i18n('design/admin/package'),
+                         'other', 'Other'|i18n('design/admin/package') )}
 
-<div class="context-block">
+<div class="context-block package-view-full">
 
 <div id="package" class="viewfull">
     <div id="pn-{$package.name|wash}" class="pt-{$package.type|wash}">
 
-
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-<h1 class="context-title">
-        {$package.name|wash}-{$package.version-number}-{$package.release-number}{if $package.release-timestamp}({$package.release-timestamp|l10n( shortdatetime )}){/if}{if $package.type|wash} [{$package.type}]{/if}
-        - {if $package.install_type|eq( 'install' )}
-            {if $package.is_installed}
-                {'Installed'|i18n('design/admin/package')}
-            {else}
-                {'Not installed'|i18n('design/admin/package')}
-            {/if}
+<h1 class="context-title">{$package.name|wash}</h1>
+<p class="pvf-badges">
+    <span class="pvf-badge pvf-badge-version" title="{'Version'|i18n('design/admin/package')}">{$package.version-number|wash}-{$package.release-number|wash}</span>
+    {if $package.type}<span class="pvf-badge" title="{'Type'|i18n('design/admin/package')}">{$package.type|wash}</span>{/if}
+    {if $package.install_type|eq( 'install' )}
+        {if $package.is_installed}
+            <span class="pvf-badge pvf-badge-ok">{'Installed'|i18n('design/admin/package')}</span>
         {else}
-            {'Imported'|i18n('design/admin/package')}
+            <span class="pvf-badge pvf-badge-muted">{'Not installed'|i18n('design/admin/package')}</span>
         {/if}
-</h1>
+    {else}
+        <span class="pvf-badge pvf-badge-info">{'Imported'|i18n('design/admin/package')}</span>
+    {/if}
+    {if $package.release-timestamp}<span class="pvf-date">{'Released %date'|i18n('design/admin/package',,hash( '%date', $package.release-timestamp|l10n( shortdatetime ) ))}</span>{/if}
+</p>
 
 {* DESIGN: Mainline *}<div class="header-mainline"></div>
 
@@ -33,112 +44,81 @@
 
     <form method="post" action={concat( 'package/view/full/', $package.name )|ezurl}>
 
-    <div class="object">
+    <div class="pvf-overview">
+        <dl class="pvf-meta">
+            <dt>{'Summary'|i18n('design/admin/package')}</dt>
+            <dd>{$package.summary|wash}</dd>
 
-        <table>
-        <tr>
-        <td>
+            <dt>{'State'|i18n('design/admin/package')}</dt>
+            <dd>{$package.state|wash}</dd>
 
-        <div class="summary">
-            <label>{'Summary'|i18n('design/admin/package')}</label>
-            <p>{$package.summary|wash}</p>
-        </div>
+            <dt>{'License'|i18n('design/admin/package')}</dt>
+            <dd>{$package.licence|wash}</dd>
 
-        <div class="state">
-            <label>{'State'|i18n('design/admin/package')}</label>
-            <p>{$package.state|wash}</p>
-        </div>
-
-        <div class="licence">
-            <label>{'License'|i18n('design/admin/package')}</label>
-            <p>{$package.licence|wash}</p>
-        </div>
-
-        <div class="maintainers">
-            <label>{'Maintainers'|i18n('design/admin/package')}</label>
-            <p>
+            <dt>{'Maintainers'|i18n('design/admin/package')}</dt>
+            <dd>
                 {section var=maintainer loop=$package.maintainers}
-                    <a href="mailto:{$maintainer.item.email}" subject="{"Regarding Exponential package '%packagename'"|i18n('design/admin/package',,hash( '%packagename', $package.name ) )}" title="{'Send email to the maintainer'|i18n('design/admin/package')}">{$maintainer.item.name|wash}</a> ({$maintainer.item.role|wash})
+                    <a href="mailto:{$maintainer.item.email|wash}" title="{'Send email to the maintainer'|i18n('design/admin/package')}">{$maintainer.item.name|wash}</a> ({$maintainer.item.role|wash})
                 {delimiter}, {/delimiter}
                 {/section}
-            </p>
-        </div>
+            </dd>
 
-        <div class="description">
-            <label>{'Description'|i18n('design/admin/package')}</label>
-            <p>{$package.description}</p>
-        </div>
-
-        <div class="documents">
-            <label>{'Documents'|i18n('design/admin/package')}</label>
-            <p>
+            <dt>{'Documents'|i18n('design/admin/package')}</dt>
+            <dd>
                 {section var=document loop=$package.documents}
                 {let document_path=$package|ezpackage( documentpath, $document.name )}
                     {if $document_path}<a href={$document_path|ezroot}>{/if}{$document.name|wash}{if $document_path}</a>{/if}
                 {/let}
                 {delimiter}, {/delimiter}
                 {/section}
-            </p>
+                {if $package.file-count|gt( 0 )}
+                    <a class="pvf-filelist-link" href={concat( "package/view/files/", $package.name )|ezurl}>{'File list'|i18n('design/admin/package')}</a>
+                {/if}
+            </dd>
+
+            <dt>{'Description'|i18n('design/admin/package')}</dt>
+            <dd>{$package.description}</dd>
+        </dl>
+
+        {let thumbnail_list=$package.thumbnail-list}
+        {if $thumbnail_list}
+        <div class="pvf-thumbnail">
+            <img src={concat( $package|ezpackage( fileitempath, $thumbnail_list[0] ) )|ezroot} alt="{$thumbnail_list[0].name|wash}" />
         </div>
-
-        <div class="changelog">
-            <label>{'Changelog'|i18n('design/admin/package')}</label>
-            <p>
-                {section var=log loop=$package.changelog}
-                    <h3><p class="byline"><em class="date">({$log.item.timestamp|l10n( shortdatetime )})</em> <a href="mailto:{$log.item.email}" subject="{"Regarding Exponential package '%packagename'"|i18n('design/admin/package',,hash( '%packagename', $package.name ) )}" title="{'Send email to the maintainer'|i18n('design/admin/package')}">{$log.item.person|wash}</a></p></h3>
-                    <ul>
-                    {section var=change loop=$log.item.changes}
-                    <li>
-                        {$change.item|wash}
-                    </li>
-                    {/section}
-                    </ul>
-                {delimiter}<hr/> {/delimiter}
-                {/section}
-            </p>
-        </div>
-
-        </td>
-
-        <td valign="top">
-            {let thumbnail_list=$package.thumbnail-list}
-            {if $thumbnail_list}
-            <div class="thumbnail">
-                <img src={concat( $package|ezpackage( fileitempath, $thumbnail_list[0] ) )|ezroot} alt="{$thumbnail_list[0].name|wash}" />
-            </div>
-            {/if}
-            {/let}
-        </td>
-
-        </tr>
-        </table>
-
-    </div>
-
-    <div class="links">
-        {if $package.file-count|gt( 0 )}
-        <p>[ <a href={concat( "package/view/files/", $package.name )|ezurl}>{'File list'|i18n('design/admin/package')}</a> ]</p>
         {/if}
+        {/let}
     </div>
 
+    {if $package.changelog}
+    <div class="pvf-changelog">
+        <h2>{'Changelog'|i18n('design/admin/package')}</h2>
+        {section var=log loop=$package.changelog}
+        <div class="pvf-changelog-entry">
+            <p class="pvf-changelog-byline"><span class="pvf-date">{$log.item.timestamp|l10n( shortdatetime )}</span> <a href="mailto:{$log.item.email|wash}" title="{'Send email to the maintainer'|i18n('design/admin/package')}">{$log.item.person|wash}</a></p>
+            <ul>
+            {section var=change loop=$log.item.changes}
+                <li>{$change.item|wash}</li>
+            {/section}
+            </ul>
+        </div>
+        {/section}
     </div>
-    {* DESIGN: Content END *}</div></div></div>
-
-    <div class="controlbar">
-    {* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
-
+    {/if}
 
     {if $package.can_export}
-    <div class="block">
+    <div class="pvf-actions">
         {if $package.install_type|eq( 'install' )}
             {if $package.is_installed}
-                <input class="button" type="submit" name="UninstallButton" value="{'Uninstall'|i18n( 'design/admin/package')}" />
                 <input class="button" type="submit" name="InstallButton" value="{'Reinstall'|i18n( 'design/admin/package')}" />
+                <input class="defaultbutton" type="submit" name="ExportButton" value="{'Export to file'|i18n( 'design/admin/package')}" />
+                <input class="button pvf-button-danger" type="submit" name="UninstallButton" value="{'Uninstall'|i18n( 'design/admin/package')}" />
             {else}
-                <input class="button" type="submit" name="InstallButton" value="{'Install'|i18n( 'design/admin/package')}" />
+                <input class="defaultbutton" type="submit" name="InstallButton" value="{'Install'|i18n( 'design/admin/package')}" />
+                <input class="button" type="submit" name="ExportButton" value="{'Export to file'|i18n( 'design/admin/package')}" />
             {/if}
+        {else}
+            <input class="defaultbutton" type="submit" name="ExportButton" value="{'Export to file'|i18n( 'design/admin/package')}" />
         {/if}
-        <input class="button" type="submit" name="ExportButton" value="{'Export to file'|i18n( 'design/admin/package')}" />
     </div>
     {/if}
 
@@ -152,121 +132,154 @@
        (type)/(search)/(limit)/(offset)/(file), each path built by kernel/package/view.php
        (url_first/url_prev/... , and url_view per file). The form still submits GET fields; the
        view answers them with one redirect to the view-parameter address. Nothing here writes. *}
-    {def $browseBaseURL = concat( 'package/view/full/', $package.name )|ezurl}
-    <div class="contents-browser">
-        <h2>{'Package contents'|i18n('design/admin/package')}</h2>
-        <p>{'%shown of %total files'|i18n('design/admin/package',,hash('%shown', $ContentsBrowser.total_filtered, '%total', $ContentsBrowser.total_all))}</p>
+    {def $browseBaseURL = concat( 'package/view/full/', $package.name )|ezurl
+         $viewedIndex = -1}
+    {if $ContentsBrowser.viewed_file}{set $viewedIndex = $ContentsBrowser.viewed_file.index}{/if}
+    <div class="pvf-browser">
+        <div class="pvf-browser-head">
+            <h2>{'Package contents'|i18n('design/admin/package')}</h2>
+            <span class="pvf-count">{'%shown of %total files'|i18n('design/admin/package',,hash('%shown', $ContentsBrowser.total_filtered, '%total', $ContentsBrowser.total_all))}</span>
+        </div>
 
-        <form method="get" action={$browseBaseURL}>
-        <table class="filter">
-            <tr>
-                <td>
-                    <label for="browse-type">{'Type'|i18n('design/admin/package')}</label>
-                    <select id="browse-type" name="BrowseType">
-                        <option value="">{'Any type'|i18n('design/admin/package')}</option>
-                        <option value="class"{if $ContentsBrowser.type_filter|eq('class')} selected{/if}>{'Content class'|i18n('design/admin/package')}</option>
-                        <option value="object"{if $ContentsBrowser.type_filter|eq('object')} selected{/if}>{'Content object'|i18n('design/admin/package')}</option>
-                        <option value="image"{if $ContentsBrowser.type_filter|eq('image')} selected{/if}>{'Image'|i18n('design/admin/package')}</option>
-                        <option value="simplefile"{if $ContentsBrowser.type_filter|eq('simplefile')} selected{/if}>{'File'|i18n('design/admin/package')}</option>
-                        <option value="document"{if $ContentsBrowser.type_filter|eq('document')} selected{/if}>{'Document'|i18n('design/admin/package')}</option>
-                        <option value="package"{if $ContentsBrowser.type_filter|eq('package')} selected{/if}>{'Package definition'|i18n('design/admin/package')}</option>
-                        <option value="other"{if $ContentsBrowser.type_filter|eq('other')} selected{/if}>{'Other'|i18n('design/admin/package')}</option>
-                    </select>
-                </td>
-                <td>
-                    <label for="browse-search">{'Search path/name'|i18n('design/admin/package')}</label>
-                    <input id="browse-search" type="text" name="BrowseSearch" value="{$ContentsBrowser.search|wash}" />
-                </td>
-                <td>
-                    <label for="browse-limit">{'Per page'|i18n('design/admin/package')}</label>
-                    <select id="browse-limit" name="BrowseLimit">
-                        {foreach array( '25', '50', '100', '250', '1000', 'all' ) as $limitChoice}
-                        <option value="{$limitChoice|wash}"{if $limitChoice|eq( $ContentsBrowser.limit )} selected{/if}>{cond( $limitChoice|eq('all'), 'All'|i18n('design/admin/package'), $limitChoice|wash )}</option>
-                        {/foreach}
-                    </select>
-                </td>
-                <td><input class="button" type="submit" name="BrowseApply" value="{'Apply'|i18n('design/admin/package')}" /></td>
-            </tr>
-        </table>
+        <form class="pvf-filter" method="get" action={$browseBaseURL}>
+            <div class="pvf-field">
+                <label for="browse-type">{'Type'|i18n('design/admin/package')}</label>
+                <select id="browse-type" name="BrowseType">
+                    <option value="">{'Any type'|i18n('design/admin/package')}</option>
+                    {foreach $kindLabels as $kind => $kindLabel}
+                    <option value="{$kind|wash}"{if $ContentsBrowser.type_filter|eq( $kind )} selected{/if}>{$kindLabel|wash}</option>
+                    {/foreach}
+                </select>
+            </div>
+            <div class="pvf-field pvf-field-search">
+                <label for="browse-search">{'Search path/name'|i18n('design/admin/package')}</label>
+                <input id="browse-search" type="search" name="BrowseSearch" value="{$ContentsBrowser.search|wash}" />
+            </div>
+            <div class="pvf-field">
+                <label for="browse-limit">{'Per page'|i18n('design/admin/package')}</label>
+                <select id="browse-limit" name="BrowseLimit">
+                    {foreach array( '25', '50', '100', '250', '1000', 'all' ) as $limitChoice}
+                    <option value="{$limitChoice|wash}"{if $limitChoice|eq( $ContentsBrowser.limit )} selected{/if}>{cond( $limitChoice|eq('all'), 'All'|i18n('design/admin/package'), $limitChoice|wash )}</option>
+                    {/foreach}
+                </select>
+            </div>
+            <div class="pvf-field pvf-field-submit">
+                <input class="defaultbutton" type="submit" name="BrowseApply" value="{'Apply'|i18n('design/admin/package')}" />
+                {if or( $ContentsBrowser.type_filter, $ContentsBrowser.search )}
+                <a class="pvf-reset" href={$browseBaseURL}>{'Clear filters'|i18n('design/admin/package')}</a>
+                {/if}
+            </div>
         </form>
 
         {if $ContentsBrowser.viewed_file}
-        <div class="contents-browser-viewer">
-            <h3><code>{$ContentsBrowser.viewed_file.path|wash}</code></h3>
-            <p>{$ContentsBrowser.viewed_file.kind|wash} &middot; {$ContentsBrowser.viewed_file.size} B</p>
+        {def $viewed = $ContentsBrowser.viewed_file}
+        <div class="pvf-viewer">
+            <div class="pvf-viewer-head">
+                <div class="pvf-viewer-title">
+                    <code class="pvf-path">{$viewed.path|wash}</code>
+                    <span class="pvf-viewer-meta">
+                        <span class="pvf-kind pvf-kind-{$viewed.kind|wash}">{cond( is_set( $kindLabels[$viewed.kind] ), $kindLabels[$viewed.kind], $viewed.kind )|wash}</span>
+                        <span class="pvf-size" title="{$viewed.size|wash} B">{$viewed.size|si( byte )}</span>
+                    </span>
+                </div>
+                <div class="pvf-viewer-actions">
+                    <a class="pvf-link-button" href={concat( 'package/viewfile/', $package.name, '/', $viewed.index )|ezurl} target="_blank" rel="noopener">{'Download'|i18n('design/admin/package')}</a>
+                    <a class="pvf-link-button" href={$ContentsBrowser.url_close|ezurl}>{'Close'|i18n('design/admin/package')}</a>
+                </div>
+            </div>
+            <div class="pvf-viewer-body">
             {if $ContentsBrowser.viewed_object}
-            <table>
-                <tr><th>{'Name'|i18n('design/admin/package')}</th><td>{$ContentsBrowser.viewed_object.name|wash}</td></tr>
-                <tr><th>{'Class'|i18n('design/admin/package')}</th><td><code>{$ContentsBrowser.viewed_object.class_identifier|wash}</code></td></tr>
-                <tr><th>{'Remote ID'|i18n('design/admin/package')}</th><td>{$ContentsBrowser.viewed_object.remote_id|wash}</td></tr>
-            </table>
-            {foreach $ContentsBrowser.viewed_object.translations as $language => $attributes}
-            <h4>{$language|wash}</h4>
-            <table>
-                <thead><tr><th>{'Attribute'|i18n('design/admin/package')}</th><th>{'Datatype'|i18n('design/admin/package')}</th><th>{'Value'|i18n('design/admin/package')}</th></tr></thead>
-                <tbody>
-                {foreach $attributes as $identifier => $attribute}
-                <tr><td><code>{$identifier|wash}</code></td><td>{$attribute.type|wash}</td><td>{$attribute.text|wash}</td></tr>
+                <table class="list pvf-object">
+                    <tr><th scope="row">{'Name'|i18n('design/admin/package')}</th><td>{$ContentsBrowser.viewed_object.name|wash}</td></tr>
+                    <tr><th scope="row">{'Class'|i18n('design/admin/package')}</th><td><code>{$ContentsBrowser.viewed_object.class_identifier|wash}</code></td></tr>
+                    <tr><th scope="row">{'Remote ID'|i18n('design/admin/package')}</th><td><code>{$ContentsBrowser.viewed_object.remote_id|wash}</code></td></tr>
+                </table>
+                {foreach $ContentsBrowser.viewed_object.translations as $language => $attributes}
+                <h3 class="pvf-language">{$language|wash}</h3>
+                <div class="pvf-scroll">
+                <table class="list pvf-attributes">
+                    <thead><tr><th>{'Attribute'|i18n('design/admin/package')}</th><th>{'Datatype'|i18n('design/admin/package')}</th><th>{'Value'|i18n('design/admin/package')}</th></tr></thead>
+                    <tbody>
+                    {foreach $attributes as $identifier => $attribute sequence array( 'bglight', 'bgdark' ) as $rowStyle}
+                    <tr class="{$rowStyle}"><td><code>{$identifier|wash}</code></td><td>{$attribute.type|wash}</td><td class="pvf-value">{$attribute.text|wash}</td></tr>
+                    {/foreach}
+                    </tbody>
+                </table>
+                </div>
                 {/foreach}
-                </tbody>
-            </table>
-            {/foreach}
-            {if $ContentsBrowser.viewed_object.more_objects|gt(0)}
-            <p>{'+ %count more object(s) in the same file'|i18n('design/admin/package',,hash('%count', $ContentsBrowser.viewed_object.more_objects))}</p>
-            {/if}
-            {elseif $ContentsBrowser.viewed_file.kind|eq('image')}
-            <p><img src={concat( 'package/viewfile/', $package.name, '/', $ContentsBrowser.viewed_file.index )|ezurl} alt="{$ContentsBrowser.viewed_file.path|wash}" /></p>
+                {if $ContentsBrowser.viewed_object.more_objects|gt(0)}
+                <p class="pvf-note">{'+ %count more object(s) in the same file'|i18n('design/admin/package',,hash('%count', $ContentsBrowser.viewed_object.more_objects))}</p>
+                {/if}
+            {elseif $viewed.kind|eq('image')}
+                <div class="pvf-image"><img src={concat( 'package/viewfile/', $package.name, '/', $viewed.index )|ezurl} alt="{$viewed.path|wash}" /></div>
             {else}
-            <pre>{$ContentsBrowser.viewed_content|wash}</pre>
+                <pre class="pvf-code">{$ContentsBrowser.viewed_content|wash}</pre>
             {/if}
-            <p><a class="button" href={$ContentsBrowser.url_close|ezurl}>{'Close'|i18n('design/admin/package')}</a></p>
+            </div>
         </div>
+        {undef $viewed}
         {/if}
 
-        <table>
-            <thead><tr><th>{'Path'|i18n('design/admin/package')}</th><th>{'Type'|i18n('design/admin/package')}</th><th>{'Size'|i18n('design/admin/package')}</th><th></th></tr></thead>
+        <div class="pvf-scroll">
+        <table class="list pvf-files">
+            <thead><tr>
+                <th class="pvf-col-path">{'Path'|i18n('design/admin/package')}</th>
+                <th class="pvf-col-type">{'Type'|i18n('design/admin/package')}</th>
+                <th class="pvf-col-size">{'Size'|i18n('design/admin/package')}</th>
+                <th class="pvf-col-actions"><span class="pvf-hidden">{'Actions'|i18n('design/admin/package')}</span></th>
+            </tr></thead>
             <tbody>
-            {foreach $ContentsBrowser.files as $file}
-            <tr>
-                <td><code>{$file.path|wash}</code></td>
-                <td>{$file.kind|wash}</td>
-                <td>{$file.size} B</td>
-                <td>
+            {foreach $ContentsBrowser.files as $file sequence array( 'bglight', 'bgdark' ) as $rowStyle}
+            <tr class="{$rowStyle}{if $file.index|eq( $viewedIndex )} pvf-current{/if}">
+                <td class="pvf-col-path"><code>{$file.path|wash}</code></td>
+                <td class="pvf-col-type"><span class="pvf-kind pvf-kind-{$file.kind|wash}">{cond( is_set( $kindLabels[$file.kind] ), $kindLabels[$file.kind], $file.kind )|wash}</span></td>
+                <td class="pvf-col-size" title="{$file.size|wash} B">{$file.size|si( byte )}</td>
+                <td class="pvf-col-actions">
                     {if $file.kind|ne('other')}
-                    <a class="button" href={$file.url_view|ezurl}>{'View'|i18n('design/admin/package')}</a>
+                    <a class="pvf-link-button" href={$file.url_view|ezurl}>{'View'|i18n('design/admin/package')}</a>
                     {/if}
-                    <a href={concat( 'package/viewfile/', $package.name, '/', $file.index )|ezurl} target="_blank" rel="noopener">{'Download'|i18n('design/admin/package')}</a>
+                    <a class="pvf-link-button" href={concat( 'package/viewfile/', $package.name, '/', $file.index )|ezurl} target="_blank" rel="noopener">{'Download'|i18n('design/admin/package')}</a>
                 </td>
             </tr>
             {/foreach}
             {if $ContentsBrowser.files|count|eq(0)}
-            <tr><td colspan="4">{'No file matches these filters.'|i18n('design/admin/package')}</td></tr>
+            <tr class="bglight"><td colspan="4" class="pvf-empty">{'No file matches these filters.'|i18n('design/admin/package')}</td></tr>
             {/if}
             </tbody>
         </table>
+        </div>
 
-        <p>
-            {'Page %page of %pages'|i18n('design/admin/package',,hash('%page', $ContentsBrowser.page, '%pages', $ContentsBrowser.pages))}
+        <div class="pvf-pager">
+            <span class="pvf-pager-status">{'Page %page of %pages'|i18n('design/admin/package',,hash('%page', $ContentsBrowser.page, '%pages', $ContentsBrowser.pages))}</span>
+            <span class="pvf-pager-links">
             {if $ContentsBrowser.page|gt(1)}
-            <a class="button" href={$ContentsBrowser.url_first|ezurl}>{'First'|i18n('design/admin/package')}</a>
-            <a class="button" href={$ContentsBrowser.url_prev|ezurl}>{'Previous'|i18n('design/admin/package')}</a>
+                <a class="pvf-link-button" href={$ContentsBrowser.url_first|ezurl}>{'First'|i18n('design/admin/package')}</a>
+                <a class="pvf-link-button" href={$ContentsBrowser.url_prev|ezurl}>{'Previous'|i18n('design/admin/package')}</a>
+            {else}
+                <span class="pvf-link-button pvf-disabled">{'First'|i18n('design/admin/package')}</span>
+                <span class="pvf-link-button pvf-disabled">{'Previous'|i18n('design/admin/package')}</span>
             {/if}
             {if $ContentsBrowser.page|lt( $ContentsBrowser.pages )}
-            <a class="button" href={$ContentsBrowser.url_next|ezurl}>{'Next'|i18n('design/admin/package')}</a>
-            <a class="button" href={$ContentsBrowser.url_last|ezurl}>{'Last'|i18n('design/admin/package')}</a>
+                <a class="pvf-link-button" href={$ContentsBrowser.url_next|ezurl}>{'Next'|i18n('design/admin/package')}</a>
+                <a class="pvf-link-button" href={$ContentsBrowser.url_last|ezurl}>{'Last'|i18n('design/admin/package')}</a>
+            {else}
+                <span class="pvf-link-button pvf-disabled">{'Next'|i18n('design/admin/package')}</span>
+                <span class="pvf-link-button pvf-disabled">{'Last'|i18n('design/admin/package')}</span>
             {/if}
-        </p>
+            </span>
+        </div>
     </div>
-    {undef $browseBaseURL}
+    {undef $browseBaseURL $viewedIndex}
     {/if}
 
-    </div>
-    {* DESIGN: Control bar END *}</div></div>
+</div>
 
+{* DESIGN: Content END *}</div></div></div>
 
     </div>
 </div>
 
 </div>
+{undef $kindLabels}
 
 {/let}

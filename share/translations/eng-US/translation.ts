@@ -6698,6 +6698,150 @@ You can also remove the package without uninstalling it from the package list.</
         <source>MD5:</source>
         <translation>MD5:</translation>
     </message>
+    <message>
+        <source>%shown of %total files</source>
+        <translation>%shown of %total files</translation>
+    </message>
+    <message>
+        <source>+ %count more object(s) in the same file</source>
+        <translation>+ %count more object(s) in the same file</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Any type</source>
+        <translation>Any type</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Apply</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attribute</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Class</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Clear filters</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Close</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Content class</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Content object</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datatype</translation>
+    </message>
+    <message>
+        <source>Document</source>
+        <translation>Document</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Download</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>First</source>
+        <translation>First</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Image</translation>
+    </message>
+    <message>
+        <source>Last</source>
+        <translation>Last</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Next</translation>
+    </message>
+    <message>
+        <source>No file matches these filters.</source>
+        <translation>No file matches these filters.</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Other</translation>
+    </message>
+    <message>
+        <source>Package contents</source>
+        <translation>Package contents</translation>
+    </message>
+    <message>
+        <source>Package definition</source>
+        <translation>Package definition</translation>
+    </message>
+    <message>
+        <source>Page %page of %pages</source>
+        <translation>Page %page of %pages</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Path</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per page</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Previous</translation>
+    </message>
+    <message>
+        <source>Reinstall</source>
+        <translation>Reinstall</translation>
+    </message>
+    <message>
+        <source>Released %date</source>
+        <translation>Released %date</translation>
+    </message>
+    <message>
+        <source>Remote ID</source>
+        <translation>Remote ID</translation>
+    </message>
+    <message>
+        <source>Search path/name</source>
+        <translation>Search path/name</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Size</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Value</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>View</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
