@@ -70,14 +70,14 @@ class expVelocity
      * image files among the originals (SVG images are served from there;
      * other originals, such as protected uploads, stay behind the download
      * view), the preview images of imported packages, and the service worker
-     * (sw.js). Nothing else is ever handed out as a file -- nothing else below
+     * (index.js, the Exponential Service Workers Index, and sw.js, its old name). Nothing else is ever handed out as a file -- nothing else below
      * var/ (var/tmp, var/log, the caches, the SQLite database, the rest of the
      * package store), settings/*.ini, the kernel sources.
      *
      * Change it together with .htaccess_root and .htaccess_root_static, so
      * that both web servers hand out the same files.
      */
-    const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|sw\.js$|w3c/p3p\.xml$)';
+    const STATIC_PATHS = '^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|(index|sw)\.js$|w3c/p3p\.xml$)';
 
     /**
      * What is never served as a file even below a STATIC_PATHS directory:
@@ -1498,6 +1498,12 @@ class expVelocity
         $webserver['scripts'] = self::ENTRY_SCRIPTS;
         $webserver['frontControllers'] = self::FRONT_CONTROLLERS;
         $web['static']['paths'] = array( self::STATIC_PATHS );
+        // Always revalidated, whatever the static lifetime: the service worker decides how every later
+        // navigation is answered, so a fixed copy has to reach browsers at once. The server's own list
+        // knows sw.js and service-worker.js; the Exponential Service Workers Index is index.js in the
+        // document root, named by its full path so no other index.js below it matches.
+        $web['static']['revalidate'] = array( eZSys::rootDir() . '/index.js', 'sw.js', 'service-worker.js',
+                                              '*.webmanifest', 'manifest.json' );
 
         // The server's access and error log.
         //

@@ -154,10 +154,16 @@ mostly idle.
 A service worker installs into a browser and then decides what every later
 navigation is answered with. Served with the year-long static lifetime, a bug in
 one cannot be withdrawn: the fix sits on the server while browsers keep running
-the old copy. `sw.js`, `service-worker.js`, `*.webmanifest` and `manifest.json`
+the old copy. `index.js` (the root one), `sw.js`, `service-worker.js`, `*.webmanifest` and `manifest.json`
 are now always revalidated.
 
-## Added: a navigation cache in the browser (`sw.js`)
+## Added: a navigation cache in the browser (`index.js`, the Exponential Service Workers Index)
+
+The worker is `/index.js`, the Exponential Service Workers Index, registered with
+scope `/`. It was `/sw.js` until 2026-09-30; `/sw.js` stays as a one-line script
+that loads `/index.js`, so a browser registered under the old name runs the same
+code until the site registers `/index.js` over it. Keep it until no browser can
+still hold the old registration.
 
 The last thing between a visitor and the page is a network round trip, and a
 round trip cannot be shortened, only skipped.
@@ -173,8 +179,8 @@ session cookie; never a non-200; never `/admin`, `/user`, `/explayouts_ui` or
 `/api`. If a session cookie appears the page-side script unregisters the worker
 and clears its cache rather than leaving it to serve one visitor another's page.
 
-Kill switch: serve `sw.js` as `self.registration.unregister()`. Every browser
-drops it on its next update check, at most 24 hours, because `sw.js` is
+Kill switch: serve `index.js` as `self.registration.unregister()`. Every browser
+drops it on its next update check, at most 24 hours, because `index.js` is
 `no-cache`.
 
 The worker serves the stored copy first and refreshes behind it, so a published

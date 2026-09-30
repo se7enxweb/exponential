@@ -74,7 +74,9 @@ RewriteRule ^design/standard/images/favicon\.ico - [L]
 # Give direct access to robots.txt for use by crawlers (Google, Bing, Spammers..)
 RewriteRule ^robots\.txt - [L]
 
-# The site's service worker, which has to be served from the root.
+# The site's service workers, which have to be served from the root: index.js, the
+# Exponential Service Workers Index, and sw.js, its old name, kept for browsers registered before.
+RewriteRule ^index\.js$ - [L]
 RewriteRule ^sw\.js$ - [L]
 
 # Uncomment the following lines when using popup style debug.

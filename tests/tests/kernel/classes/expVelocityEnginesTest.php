@@ -166,7 +166,7 @@ class expVelocityEnginesTest extends ezpTestCase
         foreach ( array( '/design/standard/stylesheets/core.css', '/var/site/storage/images/a/b.jpg',
                          '/extension/ezwebin/design/ezwebin/javascript/x.js', '/share/icons/crystal/a.png',
                          '/extension/sevenx_themes_media/design/media/fonts/inter.woff2',
-                         '/favicon.ico', '/robots.txt', '/sw.js', '/var/site/storage/original/image/logo.svg',
+                         '/favicon.ico', '/robots.txt', '/index.js', '/sw.js', '/var/site/storage/original/image/logo.svg',
                          '/var/site/cache/public/javascript/x.js', '/var/storage/packages/7x/a/thumbnail.png',
                          '/extension/explayouts_ui_api/design/standard/vendor/ace-editor/ace.js' ) as $path )
             $this->assertSame( 1, preg_match( $static, $path ), $path );
@@ -176,7 +176,7 @@ class expVelocityEnginesTest extends ezpTestCase
         foreach ( array( '/settings/site.ini', '/settings/override/site.ini.append.php', '/var/storage/sqlite3/sqlite3.db',
                          '/autoload.php', '/kernel/classes/expvelocity.php', '/.git/config', '/composer.json',
                          '/var/site/cache/ini/x.php', '/bin/php/velocity-router.php', '/index.php',
-                         '/var/site/storage/original/application/contract.pdf', '/sw.js.bak',
+                         '/var/site/storage/original/application/contract.pdf', '/sw.js.bak', '/index.js.bak', '/design/x/index.js',
                          '/var/tmp/notes.txt', '/var/tmp/x.css', '/var/tmp/x.png', '/var/log/error.log',
                          '/var/site/log/storage.log', '/var/cache/x.css', '/var/site/cache/template/compiled/x.php',
                          '/var/storage/packages/7x/a/package.xml', '/var/storage/packages/7x/a/preview.svg',

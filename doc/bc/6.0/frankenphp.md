@@ -464,7 +464,7 @@ graceful and restart."*
 `STATIC_PATHS` (the exact regexp) matches design/extension
 stylesheets/images/javascript/fonts, `share/icons/`, `var/*/storage/images`,
 storage originals for images, public/texttoimage caches, package styles,
-`var/storage/packages/`, `favicon.ico`, `robots.txt`, `sw.js`, `w3c/p3p.xml`.
+`var/storage/packages/`, `favicon.ico`, `robots.txt`, `index.js`, `sw.js`, `w3c/p3p.xml`.
 `NEVER_STATIC` = `(?i)(\.(php\d?|phtml|phar)$|/\.)` — no PHP source and no
 dotfile is ever served as a file, even below an asset directory; both fall
 through to `index.php`. This is why the engine does **not** use Caddy's
