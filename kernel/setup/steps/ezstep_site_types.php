@@ -253,7 +253,7 @@ class eZStepSiteTypes extends eZStepInstaller
                     // if existing package's version is less than required one
                     // we remove the package and download newer one.
 
-                    if ( version_compare( $currentPackageVersion, $requiredPackageVersion ) < 0 )
+                    if ( eZPackageVersion::compareFull( $currentPackageVersion, $requiredPackageVersion ) < 0 )
                     {
                         $downloadNewPackage   = true;
                         $removeCurrentPackage = true;
@@ -434,7 +434,7 @@ class eZStepSiteTypes extends eZStepInstaller
                     if ( is_object( $package ) )
                     {
                         $currentPackageVersion = $package->getVersion();
-                        if ( version_compare( $currentPackageVersion, $requiredPackageVersion ) >= 0 )
+                        if ( eZPackageVersion::compareFull( $currentPackageVersion, $requiredPackageVersion ) >= 0 )
                             $packageOK = true;
                     }
 
@@ -538,7 +538,7 @@ class eZStepSiteTypes extends eZStepInstaller
                 $remoteVersion = $sitePackages[$packageName]['version'];
                 $localVersion = $packageVersion;
 
-                if ( version_compare( $remoteVersion, $localVersion ) > 0 )
+                if ( eZPackageVersion::compareFull( $remoteVersion, $localVersion ) > 0 )
                     continue;
             }
 
@@ -600,7 +600,7 @@ class eZStepSiteTypes extends eZStepInstaller
                 if ( is_object( $package ) )
                 {
                     $currentPackageVersion = $package->getVersion();
-                    if ( version_compare( $currentPackageVersion, $requiredPackageVersion ) >= 0 )
+                    if ( eZPackageVersion::compareFull( $currentPackageVersion, $requiredPackageVersion ) >= 0 )
                         $packageOK = true;
                 }
 

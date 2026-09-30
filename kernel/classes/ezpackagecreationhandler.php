@@ -616,7 +616,8 @@ class eZPackageCreationHandler
         $persistentData['description'] = false;
         // The license is a choice from package.ini [LicenseSettings], see eZPackageLicense
         $persistentData['licence'] = eZPackageLicense::defaultIdentifier();
-        $persistentData['version'] = '1.0';
+        // Three parts, Semantic Versioning 2.0.0, see eZPackageVersion
+        $persistentData['version'] = eZPackageVersion::DEFAULT_NEW_VERSION;
         if ( isset( $_SERVER['HOSTNAME'] ) )
             $host = $_SERVER['HOSTNAME'];
         else
@@ -746,10 +747,11 @@ class eZPackageCreationHandler
                                   'description' => ezpI18n::tr( 'kernel/package', 'Summary is missing' ) );
             $result = false;
         }
-        if ( !preg_match( "#^[0-9](\.[0-9]([a-zA-Z]+[0-9]*)?)*$#", $packageVersion ) )
+        // A new package gets a Semantic Versioning 2.0.0 version; older packages keep whatever they have
+        if ( !eZPackageVersion::isValidNew( $packageVersion ) )
         {
             $errorList[] = array( 'field' => ezpI18n::tr( 'kernel/package', 'Version' ),
-                                  'description' => ezpI18n::tr( 'kernel/package', 'The version must only contain numbers (optionally followed by text) and must be delimited by dots (.), e.g. 1.0, 3.4.0beta1' ) );
+                                  'description' => ezpI18n::tr( 'kernel/package', 'The version must follow Semantic Versioning 2.0.0: three numbers delimited by dots (MAJOR.MINOR.PATCH), optionally followed by -prerelease and +build, at most %max characters, e.g. 1.0.0, 1.2.3, 3.4.0-beta.1', false, array( '%max' => eZPackageVersion::MAX_NEW_LENGTH ) ) );
             $result = false;
         }
         return $result;

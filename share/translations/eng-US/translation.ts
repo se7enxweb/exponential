@@ -37773,6 +37773,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Other licenses</source>
         <translation>Other licenses</translation>
     </message>
+    <message>
+        <source>The version must follow Semantic Versioning 2.0.0: three numbers delimited by dots (MAJOR.MINOR.PATCH), optionally followed by -prerelease and +build, at most %max characters, e.g. 1.0.0, 1.2.3, 3.4.0-beta.1</source>
+        <translation>The version must follow Semantic Versioning 2.0.0: three numbers delimited by dots (MAJOR.MINOR.PATCH), optionally followed by -prerelease and +build, at most %max characters, e.g. 1.0.0, 1.2.3, 3.4.0-beta.1</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>

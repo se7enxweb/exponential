@@ -324,6 +324,7 @@ return array(
       'eZPackageLicense'                                   => 'kernel/classes/ezpackagelicense.php',
       'eZPackageOperator'                                  => 'kernel/common/ezpackageoperator.php',
       'eZPackageType'                                      => 'kernel/classes/datatypes/ezpackage/ezpackagetype.php',
+      'eZPackageVersion'                                   => 'kernel/classes/ezpackageversion.php',
       'eZPathElement'                                      => 'kernel/classes/ezpathelement.php',
       'eZPaymentCallbackChecker'                           => 'kernel/shop/classes/ezpaymentcallbackchecker.php',
       'eZPaymentGateway'                                   => 'kernel/shop/classes/ezpaymentgateway.php',
