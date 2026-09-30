@@ -171,6 +171,39 @@ installation that is running in one line, as a test setup.
 deploy scripts run `exp:velocity restart` to mean the Qbix server sets
 `Engine=qbix` in `settings/override/velocity.ini.append.php`.
 
+## The Qbix engine's programs: `sbin/` and `bin/`
+
+From Exponential Velocity 0.0.4.41 the engine package keeps its programs the way
+UNIX systems do: the server and its administration commands in `sbin/`, the
+shell in `bin/` (the engine's `docs/layout.md`, "Programs"). Every former path
+still runs the same program in the same process, so nothing in an installation
+has to change, and `exp:velocity` works with the engine before and after that
+release, deciding by which files are there:
+
+| | Engine 0.0.4.40 and earlier | Engine 0.0.4.41 and later |
+|---|---|---|
+| the server | `qbixserver.php` | `sbin/qbixserver.php`; `qbixserver.php` forwards to it |
+| control | `qbixctl.php` | `sbin/qbixctl.php`; `qbixctl.php` forwards to it |
+| console | `qbixconsole.php` | `sbin/qbixconsole.php`; `qbixconsole.php` forwards to it |
+| shell | `qshell.php` | `bin/qshell.php`; `qshell.php` forwards to it |
+| archive | `bin/qbixserver.phar` | `sbin/qbixserver.phar`; `bin/qbixserver.phar` is the same file |
+
+- `[ServerSettings] ScriptPath` keeps its shipped value,
+  `vendor/se7enxweb/exponential-velocity/qbixserver.php`: with the new engine it
+  is the forwarder, and a server started by it shows the same command line as
+  before, so `ps`, `pkill -f` patterns and monitoring that look for it keep
+  matching. Setting it to `.../sbin/qbixserver.php` works too; if the file it
+  names is not there (the vendor copy is still the older engine), the other
+  path is used.
+- `start`, `stop`, `graceful`, `restart` and `status` count a server of this
+  installation whichever of the two paths it runs from: one started by
+  `exp:velocity start` runs `ScriptPath`, one started by the engine's own
+  `qbixctl start` runs `sbin/qbixserver.php` (`expVelocity::scriptPaths()`).
+- `exp:velocity ctl`, `ssl` and `ext` run the engine's `sbin/qbixctl.php`, or
+  `qbixctl.php` with an older engine (`expVelocity::engineFile()`), and
+  `cache clear` loads the engine's control class from its `src/`, which did not
+  move (`expVelocity::engineDir()`).
+
 ## Several Qbix servers on one port (`Instances`)
 
 A Qbix server answers cached pages in its own process, before any worker is
