@@ -410,10 +410,11 @@ e6a3c2f8012b44d7d40ee02614debd4b  design/admin/templates/navigator/alphabetical.
 622ea78dea6f57e64f57fd40613e10e4  design/admin/templates/no_children.tpl
 43081b08baebac3fc125b6b899ce31cd  design/admin/templates/node/removenode.tpl
 759b0fcc80fad2ae2c1e6630c9ed3521  design/admin/templates/node/removeobject.tpl
+05da260b91f2f49d37a5a39b3afd0e7b  design/admin/templates/node/top_node_full.tpl
 ea465bb76b53128ff5a195583ce942a2  design/admin/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin/templates/node/view/ajaxuploader_preview.tpl
 b9a3fa9fe69402b67871fc1aac68fcad  design/admin/templates/node/view/browse_thumbnail.tpl
-0540ff4a2d59c7d10b61edbdc09e62f8  design/admin/templates/node/view/full.tpl
+a48f23d7fd535fb9789c93b5469c586f  design/admin/templates/node/view/full.tpl
 d54e0d928a26c050d67ff9055add32b4  design/admin/templates/node/view/line.tpl
 fc189d030b4c7e2d923cd6754e470609  design/admin/templates/node/view/search.tpl
 e6fc245971c17e1c0b36427ceeb0770b  design/admin/templates/node/view/sitemap.tpl
@@ -6966,7 +6967,7 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-bde5fe93aba9cdb2f268934c9a323284  share/translations/ger-DE/translation.ts
+a9f69759c4f6a730ab2b8144fa51942d  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
