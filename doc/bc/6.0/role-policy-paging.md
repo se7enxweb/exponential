@@ -290,6 +290,11 @@ ascending, the default. Under any other sort they are greyed out, and their
 title says to sort by ID. There is no up button on the first policy and no down
 button on the last one. On a paged list they work across the page boundary.
 
+`role/view` has the same **ID** column and the same four sortable headings,
+with the same `(policy_sort)` / `(policy_dir)` parameters. Its pager keeps the
+sort. It has no order buttons, because it only reads. Its other sections, such as
+the users and groups the role is assigned to, are unchanged.
+
 Pressing Enter in the name field used to press the form's first submit button.
 With the new buttons, that would have moved a policy. A hidden `ChangeRoleName`
 button now comes first in the form, so Enter only keeps the name.

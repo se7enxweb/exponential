@@ -113,8 +113,20 @@ $policyOffset = isset( $userParameters['policy_offset'] ) ? (int)$userParameters
 if ( $policyOffset < 0 )
     $policyOffset = 0;
 
+// Sorted by the database, as in role/edit and for the same reason: the list is
+// paged. (policy_sort)/(policy_dir) sit next to (policy_offset); the default,
+// id ascending, is the role's own order.
+$policySort = isset( $userParameters['policy_sort'] ) ? (string)$userParameters['policy_sort'] : 'id';
+if ( !isset( eZRole::sortColumnsForPolicyList()[$policySort] ) )
+    $policySort = 'id';
+$policyDir = ( isset( $userParameters['policy_dir'] ) && strtolower( $userParameters['policy_dir'] ) === 'desc' ) ? 'desc' : 'asc';
+
 $policyCount = $role->policyCount();
-$policies    = $role->policyPage( $policyOffset, $policyLimit );
+$policies    = $role->policyPage( $policyOffset, $policyLimit, $policySort, $policyDir );
+
+$tpl->setVariable( 'policy_sort', array( 'field'     => $policySort,
+                                         'direction' => $policyDir,
+                                         'opposite'  => $policyDir === 'asc' ? 'desc' : 'asc' ) );
 
 $tpl->setVariable( 'policy_count', $policyCount );
 // Editing a role works on a temporary version, which is a row of its own with
@@ -123,8 +135,10 @@ $tpl->setVariable( 'policy_count', $policyCount );
 // directly, so Apply would then write back to the wrong row.
 $tpl->setVariable( 'policy_page_uri', '/role/view/' . (int)$roleID );
 $tpl->setVariable( 'policy_limit', $policyLimit );
-$tpl->setVariable( 'view_parameters', array_merge( array( 'policy_offset' => $policyOffset ),
-                                                   $userParameters ) );
+$tpl->setVariable( 'view_parameters', array_merge( $userParameters,
+                                                   array( 'policy_offset' => $policyOffset,
+                                                          'policy_sort'   => $policySort,
+                                                          'policy_dir'    => $policyDir ) ) );
 $tpl->setVariable( 'policies', $policies );
 $tpl->setVariable( 'module', $Module );
 $tpl->setVariable( 'role', $role );

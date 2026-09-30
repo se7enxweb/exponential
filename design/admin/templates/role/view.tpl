@@ -25,12 +25,18 @@
 {section show=$policies}
 <table class="list" cellspacing="0">
 <tr>
-    <th>{'Module'|i18n( 'design/admin/role/view' )}</th>
-    <th>{'Function'|i18n( 'design/admin/role/view' )}</th>
-    <th>{'Limitation'|i18n( 'design/admin/role/view' )}</th>
+    {* Sorted by the database, because the list is shown a page at a time; the
+       headings are the role editor's. ID ascending is the role's own order. *}
+    {include uri='design:parts/sortheader.tpl' key='id'         label='ID'|i18n( 'design/admin/role/view' )         sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir' cell_class='tight'}
+    {include uri='design:parts/sortheader.tpl' key='module'     label='Module'|i18n( 'design/admin/role/view' )     sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir'}
+    {include uri='design:parts/sortheader.tpl' key='function'   label='Function'|i18n( 'design/admin/role/view' )   sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir'}
+    {include uri='design:parts/sortheader.tpl' key='limitation' label='Limitation'|i18n( 'design/admin/role/view' ) sort=$policy_sort page_uri=$policy_page_uri sort_name='policy_sort' dir_name='policy_dir'}
 </tr>
 {section var=Policies loop=$policies sequence=array( bglight, bgdark )}
 <tr class="{$Policies.sequence}">
+
+    {* ID. *}
+    <td class="number" align="right">{$Policies.item.id}</td>
 
     {* Module. *}
     <td>

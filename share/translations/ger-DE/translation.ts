@@ -12142,6 +12142,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Users and groups using the &lt;%role_name&gt; role (%users_count)</source>
         <translation>Benutzer und Gruppen, die die Rolle &lt;%role_name&gt; benutzen (%users_count)</translation>
     </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/rss/browse_destination</name>
