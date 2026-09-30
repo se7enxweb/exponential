@@ -10388,6 +10388,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Logout: </source>
         <translation>Abmelden: </translation>
     </message>
+    <message>
+        <source>Media</source>
+        <translation>Medien</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Benutzer</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
