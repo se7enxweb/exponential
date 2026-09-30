@@ -754,24 +754,188 @@ class eZExtension
         if ( $mtime == 0 )
             $mtime = @filemtime( $path );
 
-        // Safety net: an extension that still declares no name is listed under its directory name
-        $hasName = false;
+        // Fields neither the <metadata> of extension.xml nor ezinfo.php gave: an extension.xml
+        // without <metadata> keeps them at its top level, and composer.json has most of them
+        $info = self::completeInfoFromPackageFiles( $extension, $path, $info );
+        if ( $version === false && isset( $info['version'] ) && is_string( $info['version'] ) && $info['version'] !== '' )
+            $version = $info['version'];
+
+        // An extension that declares no name, or only its directory name, is listed under the
+        // name its description starts with ("Exponential Layouts - ..."), else its directory name
+        $declaredName = '';
         foreach ( $info as $key => $value )
         {
             if ( is_string( $key ) && strtolower( $key ) === 'name' && is_string( $value ) && trim( $value ) !== '' )
             {
-                $hasName = true;
+                $declaredName = trim( strip_tags( $value ) );
                 break;
             }
         }
-        if ( !$hasName )
-            $info = array( 'name' => $extension ) + $info;
+        if ( $declaredName === '' || $declaredName === $extension )
+        {
+            $leadName = isset( $info['description'] ) ? self::nameFromDescription( $info['description'] ) : false;
+            if ( $leadName !== false )
+            {
+                foreach ( array_keys( $info ) as $key )
+                {
+                    if ( is_string( $key ) && strtolower( $key ) === 'name' )
+                        unset( $info[$key] );
+                }
+                $info = array( 'name' => $leadName ) + $info;
+            }
+            else if ( $declaredName === '' )
+            {
+                $info = array( 'name' => $extension ) + $info;
+            }
+        }
 
         $info['version'] = $version;
         $info['mtime'] = $mtime;
         $info['mtime_formatted'] = ( $mtime > 0 ) ? date( 'Y-m-d H:i', $mtime ) : false;
 
         return $info;
+    }
+
+    /**
+     * Adds the description, license, copyright, author, version and website an extension's
+     * info does not have yet (in any spelling of the key), from the top level of its
+     * extension.xml, then its composer.json, then the address of its git origin.
+     *
+     * @param string $extension the extension's directory name
+     * @param string $path the extension's directory
+     * @param array $info what extension.xml <metadata> or ezinfo.php gave
+     * @return array
+     */
+    protected static function completeInfoFromPackageFiles( $extension, $path, array $info )
+    {
+        $has = array();
+        foreach ( $info as $key => $value )
+        {
+            if ( is_string( $key ) && ( ( is_string( $value ) && trim( $value ) !== '' && strpos( trim( $value ), '//' ) !== 0 ) || is_array( $value ) ) )
+                $has[strtolower( $key )] = true;
+        }
+        $found = array();
+
+        if ( is_readable( $path . '/extension.xml' ) )
+        {
+            $useErrors = libxml_use_internal_errors( true );
+            $xml = simplexml_load_file( $path . '/extension.xml' );
+            // Mode and error list are process-wide: restore them, or a persistent worker keeps collecting errors
+            libxml_clear_errors();
+            libxml_use_internal_errors( $useErrors );
+            if ( $xml !== false )
+            {
+                foreach ( array( 'description' => array( 'description', 'summary' ), 'license' => array( 'license' ),
+                                 'copyright' => array( 'copyright' ), 'author' => array( 'author' ),
+                                 'version' => array( 'version' ), 'info_url' => array( 'info_url' ) ) as $field => $nodes )
+                {
+                    foreach ( $nodes as $node )
+                    {
+                        $value = isset( $xml->$node ) ? trim( (string)$xml->$node ) : '';
+                        if ( $value !== '' && strpos( $value, '//' ) !== 0 && !isset( $found[$field] ) )
+                            $found[$field] = $value;
+                    }
+                }
+            }
+        }
+
+        if ( is_readable( $path . '/composer.json' ) )
+        {
+            $composer = json_decode( file_get_contents( $path . '/composer.json' ), true );
+            if ( is_array( $composer ) )
+            {
+                if ( !isset( $found['description'] ) && isset( $composer['description'] ) && is_string( $composer['description'] ) && trim( $composer['description'] ) !== '' )
+                    $found['description'] = trim( $composer['description'] );
+                if ( !isset( $found['license'] ) && isset( $composer['license'] ) )
+                {
+                    $licenses = array_filter( (array)$composer['license'], 'is_string' );
+                    if ( $licenses )
+                        $found['license'] = implode( ' or ', $licenses );
+                }
+                if ( !isset( $found['version'] ) && isset( $composer['version'] ) && is_string( $composer['version'] ) && $composer['version'] !== '' )
+                    $found['version'] = $composer['version'];
+                if ( !isset( $found['info_url'] ) )
+                {
+                    if ( isset( $composer['support']['source'] ) && is_string( $composer['support']['source'] ) )
+                        $found['info_url'] = $composer['support']['source'];
+                    else if ( isset( $composer['homepage'] ) && is_string( $composer['homepage'] ) )
+                        $found['info_url'] = $composer['homepage'];
+                }
+                if ( !isset( $found['author'] ) && isset( $composer['authors'] ) && is_array( $composer['authors'] ) )
+                {
+                    $authors = array();
+                    foreach ( $composer['authors'] as $author )
+                    {
+                        if ( is_array( $author ) && isset( $author['name'] ) && is_string( $author['name'] ) )
+                            $authors[] = $author['name'];
+                    }
+                    if ( $authors )
+                        $found['author'] = implode( ', ', $authors );
+                }
+            }
+        }
+
+        if ( !isset( $found['info_url'] ) && !isset( $has['info_url'] ) )
+        {
+            $url = self::repositoryUrl( $path );
+            if ( $url !== false )
+                $found['info_url'] = $url;
+        }
+
+        foreach ( $found as $field => $value )
+        {
+            if ( !isset( $has[$field] ) )
+                $info[$field] = $value;
+        }
+        return $info;
+    }
+
+    /**
+     * The public web address of the git repository an extension is a clone of, from the
+     * origin remote in its .git/config: an https address as it is, a GitHub, GitLab or
+     * Bitbucket ssh address (also through a host alias such as github-as-name) turned into
+     * its https address. Nothing is run; only the file is read.
+     *
+     * @param string $path the extension's directory
+     * @return string|false
+     */
+    protected static function repositoryUrl( $path )
+    {
+        $config = $path . '/.git/config';
+        if ( !is_readable( $config ) )
+            return false;
+        if ( !preg_match( '/\[remote "origin"\][^\[]*?\burl\s*=\s*(\S+)/', (string)file_get_contents( $config ), $match ) )
+            return false;
+
+        $url = $match[1];
+        if ( preg_match( '#^https?://(?:[^@/]+@)?([^/]+)/(.+?)(?:\.git)?/?$#', $url, $m ) )
+            return 'https://' . $m[1] . '/' . $m[2];
+        if ( preg_match( '#^(?:ssh://)?(?:[^@]+@)?(github|gitlab|bitbucket)[^:/]*[:/](.+?)(?:\.git)?/?$#i', $url, $m ) )
+        {
+            $hosts = array( 'github' => 'github.com', 'gitlab' => 'gitlab.com', 'bitbucket' => 'bitbucket.org' );
+            return 'https://' . $hosts[strtolower( $m[1] )] . '/' . $m[2];
+        }
+        return false;
+    }
+
+    /**
+     * The name a description starts with, as in "Exponential Layouts - a page builder": the
+     * words before the first " - ", when they are short and read as a name.
+     *
+     * @param mixed $description
+     * @return string|false
+     */
+    protected static function nameFromDescription( $description )
+    {
+        if ( !is_string( $description ) )
+            return false;
+        $parts = explode( ' - ', trim( strip_tags( $description ) ), 2 );
+        if ( count( $parts ) < 2 )
+            return false;
+        $lead = trim( $parts[0] );
+        if ( $lead === '' || strlen( $lead ) > 48 || str_word_count( $lead ) > 6 || preg_match( '/[.,;:!?]$/', $lead ) )
+            return false;
+        return $lead;
     }
 
     /*!
