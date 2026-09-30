@@ -175,6 +175,28 @@ else if ( $http->hasPostVariable( 'SetSorting' ) &&
     $node = eZContentObjectTreeNode::fetch( $nodeID );
     $contentObject = eZContentObject::fetch( $contentObjectID );
 
+    // The sorting of a node is part of editing it: the Ordering tab offers Set only when the node can be edited,
+    // and the same is required here, so a posted form cannot change the sorting of a node the user may not edit.
+    if ( !$node instanceof eZContentObjectTreeNode )
+    {
+        return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+    }
+    if ( !$node->canEdit() )
+    {
+        return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+    }
+    // Only a known sort field and an ascending (1) or descending (0) order are stored.
+    if ( !is_scalar( $sortingField ) || !ctype_digit( (string)$sortingField ) ||
+         (int)$sortingField < eZContentObjectTreeNode::SORT_FIELD_PATH ||
+         (int)$sortingField > eZContentObjectTreeNode::SORT_FIELD_VISIBILITY ||
+         !is_scalar( $sortingOrder ) || !in_array( (string)$sortingOrder, array( '0', '1' ), true ) )
+    {
+        return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+    }
+    $nodeID       = (int)$node->attribute( 'node_id' );
+    $sortingField = (int)$sortingField;
+    $sortingOrder = (int)$sortingOrder;
+
     if ( eZOperationHandler::operationIsAvailable( 'content_sort' ) )
     {
         $operationResult = eZOperationHandler::execute( 'content', 'sort',
