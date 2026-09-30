@@ -764,25 +764,122 @@ class expVelocity
     /**
      * The server script this installation drives.
      *
+     * [ServerSettings] ScriptPath, by default the engine's qbixserver.php.
+     * From Exponential Velocity 0.0.4.41 the engine keeps its server in
+     * sbin/qbixserver.php and the file at the former path is a forwarder that
+     * runs it in the same process, so the default works with the engine
+     * before and after that release, and so does a ScriptPath naming either
+     * file: the one named is used when it is there, the other one when not.
+     *
      * @return string
      */
     public function scriptPath()
     {
         $path = $this->absolute( $this->setting( 'ServerSettings', 'ScriptPath',
             self::ENGINE_PACKAGE_DIR . '/qbixserver.php' ) );
+        if ( is_file( $path ) )
+            return $path;
         // The engine's package was renamed from se7enxweb/qbix-webserver to
         // se7enxweb/exponential-velocity, and Composer installs a package
         // under its name: whichever of the two directories is there is used.
-        if ( !is_file( $path ) )
+        // In each, the server's script at either of its two paths.
+        foreach ( array( self::ENGINE_PACKAGE_DIR, self::ENGINE_PACKAGE_DIR_OLD ) as $dir )
         {
-            foreach ( array( self::ENGINE_PACKAGE_DIR, self::ENGINE_PACKAGE_DIR_OLD ) as $dir )
+            $other = str_replace( array( self::ENGINE_PACKAGE_DIR_OLD, self::ENGINE_PACKAGE_DIR ), $dir, $path );
+            foreach ( array( $other, self::otherServerScript( $other ) ) as $candidate )
             {
-                $other = str_replace( array( self::ENGINE_PACKAGE_DIR_OLD, self::ENGINE_PACKAGE_DIR ), $dir, $path );
-                if ( $other !== $path && is_file( $other ) )
-                    return $other;
+                if ( $candidate !== null && $candidate !== $path && is_file( $candidate ) )
+                    return $candidate;
             }
         }
         return $path;
+    }
+
+    /**
+     * The server script's other path in the engine's tree: sbin/qbixserver.php
+     * for qbixserver.php and the other way round; null for any other file.
+     *
+     * @param string $path
+     * @return string|null
+     */
+    protected static function otherServerScript( $path )
+    {
+        if ( basename( $path ) !== 'qbixserver.php' )
+            return null;
+        $dir = dirname( $path );
+        if ( basename( $dir ) === 'sbin' )
+            return dirname( $dir ) . '/qbixserver.php';
+        return $dir . '/sbin/qbixserver.php';
+    }
+
+    /**
+     * The engine's directory: the one its server script is in, or the one
+     * above it when that is the engine's sbin/ (Exponential Velocity 0.0.4.41
+     * and later; docs/layout.md "Programs" in the engine).
+     *
+     * @return string
+     */
+    public function engineDir()
+    {
+        $dir = dirname( $this->scriptPath() );
+        if ( basename( $dir ) === 'sbin' && is_file( dirname( $dir ) . '/src/Q.php' ) )
+            return dirname( $dir );
+        return $dir;
+    }
+
+    /**
+     * One of the engine's programs: where this layout has it, else where the
+     * engine had it before (e.g. sbin/qbixctl.php, else qbixctl.php). Decided
+     * by which file is there, so an installation still on an engine from
+     * before sbin/ and bin/ keeps working unchanged.
+     *
+     * @param string $file its path in the engine's tree now
+     * @param string $former its path before
+     * @return string
+     */
+    public function engineFile( $file, $former )
+    {
+        $dir = $this->engineDir();
+        return is_file( $dir . '/' . $file ) ? $dir . '/' . $file : $dir . '/' . $former;
+    }
+
+    /**
+     * Every script a server of this engine can be running from: the one
+     * ScriptPath names, and the server's other path in the engine's tree
+     * (sbin/qbixserver.php, or the forwarder at the former qbixserver.php).
+     * A server started by the engine's own qbixctl runs sbin/qbixserver.php;
+     * one started here runs ScriptPath. Both are this installation's.
+     *
+     * @return array
+     */
+    public function scriptPaths()
+    {
+        $script = $this->scriptPath();
+        $paths = array( $script );
+        $dir = $this->engineDir();
+        foreach ( array( $dir . '/qbixserver.php', $dir . '/sbin/qbixserver.php' ) as $candidate )
+        {
+            if ( $candidate !== $script && is_file( $candidate ) )
+                $paths[] = $candidate;
+        }
+        return $paths;
+    }
+
+    /**
+     * Whether a process's command line runs one of the given scripts.
+     *
+     * @param string $args
+     * @param array $scripts scriptPaths()
+     * @return bool
+     */
+    protected static function runsServerScript( $args, array $scripts )
+    {
+        foreach ( $scripts as $script )
+        {
+            if ( strpos( $args, $script ) !== false )
+                return true;
+        }
+        return false;
     }
 
     /**
@@ -1648,10 +1745,12 @@ class expVelocity
      */
     public function processIDs()
     {
-        $script = $this->scriptPath();
+        // The script ScriptPath names and the server's other path in the
+        // engine's tree: a server qbixctl started runs sbin/qbixserver.php.
+        $scripts = $this->scriptPaths();
         $pids = array();
         foreach ( $this->processTable() as $proc )
-            if ( strpos( $proc['args'], $script ) !== false )
+            if ( self::runsServerScript( $proc['args'], $scripts ) )
                 $pids[] = $proc['pid'];
 
         return $pids;
@@ -1717,10 +1816,10 @@ class expVelocity
         if ( $parent <= 0 )
             return array();
 
-        $script = $this->scriptPath();
+        $scripts = $this->scriptPaths();
         $pids = array();
         foreach ( $this->processTable() as $proc )
-            if ( $proc['ppid'] === $parent && strpos( $proc['args'], $script ) !== false )
+            if ( $proc['ppid'] === $parent && self::runsServerScript( $proc['args'], $scripts ) )
                 $pids[] = $proc['pid'];
 
         sort( $pids );
@@ -2510,7 +2609,7 @@ class expVelocity
     {
         if ( class_exists( 'Q_WebServer_Ctl', false ) )
             return true;
-        $src = dirname( $this->scriptPath() ) . '/src';
+        $src = $this->engineDir() . '/src';
         foreach ( array( 'Q/Console.php', 'Q/WebServer/Layout.php', 'Q/WebServer/Ctl.php' ) as $file )
         {
             if ( !is_file( "$src/$file" ) )
@@ -2525,7 +2624,7 @@ class expVelocity
         require_once "$src/Q/Console.php";
         require_once "$src/Q/WebServer/Layout.php";
         require_once "$src/Q/WebServer/Ctl.php";
-        Q_WebServer_Ctl::$sourceDir = dirname( $this->scriptPath() );
+        Q_WebServer_Ctl::$sourceDir = $this->engineDir();
         return class_exists( 'Q_WebServer_Ctl', false );
     }
 
@@ -2538,7 +2637,8 @@ class expVelocity
      */
     public function ctl( array $args )
     {
-        $ctl = dirname( $this->scriptPath() ) . '/qbixctl.php';
+        // sbin/qbixctl.php from Exponential Velocity 0.0.4.41, qbixctl.php before.
+        $ctl = $this->engineFile( 'sbin/qbixctl.php', 'qbixctl.php' );
         if ( !is_file( $ctl ) )
         {
             fwrite( STDERR, "this engine has no qbixctl.php ($ctl)\n" );
