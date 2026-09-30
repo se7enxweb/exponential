@@ -116,6 +116,8 @@
     {if $package.can_export}
     <div class="pvf-actions">
         {if $package.install_type|eq( 'install' )}
+            {* Compare (package/compare): a plain link, it only reads; styled like the buttons beside it *}
+            <a class="pvf-button-link" href={concat( 'package/compare/', $package.name )|ezurl} title="{"Compare the package's content with the site's content tree"|i18n( 'design/admin/package' )}">{'Compare'|i18n( 'design/admin/package' )}</a>
             {if $package.is_installed}
                 <input class="button" type="submit" name="InstallButton" value="{'Reinstall'|i18n( 'design/admin/package')}" />
                 <input class="defaultbutton" type="submit" name="ExportButton" value="{'Export to file'|i18n( 'design/admin/package')}" />
