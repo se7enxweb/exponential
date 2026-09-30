@@ -607,6 +607,7 @@ return array(
       'expVelocity'                                        => 'kernel/classes/expvelocity.php',
       'expVelocityConfig'                                  => 'kernel/classes/expvelocityconfig.php',
       'expVelocityConfigLayout'                            => 'kernel/classes/expvelocityconfiglayout.php',
+      'expVelocityDeploy'                                  => 'kernel/classes/expvelocitydeploy.php',
       'expVelocityFrankenPHP'                              => 'kernel/classes/expvelocityfrankenphp.php',
       'expVelocityFrankenPHPInstaller'                     => 'kernel/classes/expvelocityfrankenphpinstaller.php',
       'expVelocityPHPServer'                               => 'kernel/classes/expvelocityphpserver.php',

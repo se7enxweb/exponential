@@ -2,7 +2,7 @@
 
 Exponential Velocity (`exp:velocity`, `vc`) drives one of three web servers. The
 verbs are the same for all of them — `start`, `stop`, `graceful`, `restart`,
-`kill`, `status`, `command`, `config`, `install` — and so is `velocity.ini`.
+`kill`, `status`, `deploy`, `command`, `config`, `install` — and so is `velocity.ini`.
 
 ```ini
 [ServerSettings]
@@ -32,6 +32,96 @@ an engine is *for* (its role) does not change with that.
 
 Switch one command to another engine with `--engine`, several with
 `--engine=php,qbix`, all with `--all`.
+
+## Deploying a PHP change (`exp:velocity deploy`)
+
+One command does everything a changed PHP class, operator or INI file needs
+before it is live, in the one order that works, and says PASS, FAIL or SKIP
+for each step with its time:
+
+```bash
+./bin/php/console exp:velocity deploy --allow-root-user            # the usual case
+./bin/php/console exp:velocity deploy --kernel --allow-root-user   # a kernel class was added or renamed
+./bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it would do, and nothing else
+```
+
+| # | Step | By hand |
+|---|---|---|
+| 1 | extension autoloads | `php bin/php/ezpgenerateautoloads.php -e` |
+| 2 | kernel autoloads, only with `--kernel` | `php bin/php/ezpgenerateautoloads.php -k`, restricted to `kernel/` and `lib/` |
+| 3 | INI caches | `php bin/php/ezcache.php --clear-tag=ini` |
+| 4 | template, template-override and translation caches | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, one id per call |
+| 5 | engine archive, when Velocity runs from one | `php bin/php/phar.php build`: rebuilt only when a file in `kernel/`, `lib/` or `autoload/` changed, every file parsed first |
+| 6 | reload PHP-FPM | `systemctl reload <[DeploySettings] PhpFpmService>` |
+| 7 | restart Velocity, when it is running | `exp:velocity restart` |
+| 8 | content, exphttpcache and template-block caches | `--clear-id=content`, `--clear-id=exphttpcache`, `--clear-id=template-block` |
+| 9 | Velocity's response cache | `exp:velocity cache clear` |
+
+**The order is the point.** The caches that hold rendered output (8 and 9)
+are cleared only after PHP-FPM and Velocity run the new code. Cleared before,
+every page requested in between is rendered by the old code and cached again,
+and the change looks as if it had not worked.
+
+**The first step that fails stops the run.** A kernel file that does not parse
+fails step 5, before PHP-FPM or Velocity has been touched; a restart that does
+not come up leaves every cache as it was. The exit status is 1, and the steps
+not run are listed as `NOT RUN`.
+
+Options: `--kernel`, `--no-autoload`, `--no-fpm`, `--no-velocity`,
+`--rebuild-phar` (rebuild the engine archive even when it is current),
+`--engine=<name>` (the engine to restart), `--dry-run`, `--json`.
+
+```
+velocity deploy: /var/www/vhosts/example.com/doc/example.com
+  [ 1/12] PASS      1.0s  extension autoloads: var/autoload/ezp_extension.php written
+  [ 2/12] PASS      0.7s  INI caches: Clearing ini: Query cache (SQL results), Global INI cache, INI cache, ...
+  [ 3/12] PASS      0.3s  template cache: Clearing template: Template cache
+  [ 4/12] PASS      0.3s  template-override cache: Clearing template-override: Template override cache
+  [ 5/12] PASS      0.3s  translation cache: Clearing translation: TS Translation cache
+  [ 6/12] PASS     29.9s  engine archive: engine.phar rebuilt: 1 changed (kernel/classes/expvelocity.php)
+  [ 7/12] PASS      0.1s  reload PHP-FPM: reloaded plesk-php85-fpm (auto: pool /opt/plesk/php/8.5/etc/php-fpm.d/example.com.conf)
+  [ 8/12] PASS      3.2s  restart Velocity: started (engine.phar is current, not rebuilt)
+  [ 9/12] PASS      0.3s  content cache: Clearing content: Content view cache
+  [10/12] PASS      0.3s  exphttpcache cache: Clearing exphttpcache: HTTP cache (role-aware pages)
+  [11/12] PASS      0.3s  template-block cache: Clearing template-block: Template block cache
+  [12/12] PASS      0.0s  Velocity response cache: response cache cleared (...)
+velocity deploy: PASS, 12 steps in 36.3s
+```
+
+With no file in the engine archive changed, step 6 says `engine.phar is
+current, not rebuilt` and the whole run takes about 7 seconds.
+
+### Which PHP-FPM
+
+```ini
+[DeploySettings]
+PhpFpmService=auto        # the default
+PhpFpmService=disabled    # served by Velocity alone
+PhpFpmService=plesk-php85-fpm
+```
+
+`auto` finds the pool configuration named after the installation's hosting
+domain (`/var/www/vhosts/<domain>/...`, as Plesk names pools) or one that names
+the installation's directory, in `/opt/plesk/php/*/etc/php-fpm.d` (service
+`plesk-php<XY>-fpm`), `/etc/php-fpm.d` (`php-fpm`), `/etc/php/*/fpm/pool.d`
+(`php<X.Y>-fpm`) and `/etc/opt/remi/php*/php-fpm.d` (`php<XY>-php-fpm`). The
+service is the pool's master, not the machine's `php-fpm` if that is another
+one: on a Plesk server `systemctl restart php-fpm` restarts a PHP no site of
+that kind runs on. `--dry-run` shows what was found and why.
+
+The step is a reload, so no request is dropped. It needs root; run as anyone
+else, or with no pool found, it is skipped with a note naming what to do.
+
+### Kernel autoloads
+
+`ezpgenerateautoloads.php -k` walks the whole installation. Where there are
+working copies of it inside (`.claude/worktrees`), every kernel class is found
+twice and the array can end up pointing into the copy: a plain `-k` run on
+one installation wrote 1029 entries, every one of them inside `.claude/worktrees`,
+and took 17.6 seconds.
+`deploy --kernel` excludes every top-level directory but `kernel/` and `lib/`,
+which is where the kernel's classes are, and takes under a second for the
+same array. `.autoloadignore` excludes `.claude` too, for a run by hand.
 
 ## Running them side by side
 

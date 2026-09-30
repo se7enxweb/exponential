@@ -21,6 +21,15 @@ $script = eZScript::instance( array( 'description' => (
     "  stop       ask it to stop, and wait\n" .
     "  graceful   re-exec without dropping the listening socket\n" .
     "  restart    stop, then start\n" .
+    "             (the engine archive is rebuilt first only when a file in kernel/,\n" .
+    "              lib/ or autoload/ was added, removed or changed; --rebuild-phar: always)\n" .
+    "  deploy     everything a PHP code change needs, in order, PASS/FAIL per step:\n" .
+    "             extension autoloads, INI + template + template-override + translation\n" .
+    "             caches, reload PHP-FPM ([DeploySettings] PhpFpmService), restart\n" .
+    "             Velocity, and only then the content, exphttpcache, template-block\n" .
+    "             and response caches. Stops at the first step that fails.\n" .
+    "             --kernel (kernel autoloads too)  --no-autoload  --no-fpm  --no-velocity\n" .
+    "             --rebuild-phar  --dry-run (print the steps, do nothing)  --json\n" .
     "  kill       stop without asking, for a wedged worker\n" .
     "  command    print the command line it would run, and exit\n" .
     "             (--keep-global=Name[,Name] appends globals to keep between\n" .
@@ -65,6 +74,8 @@ $script = eZScript::instance( array( 'description' => (
     "Through the console:\n" .
     "  ./bin/php/console exp:velocity status --allow-root-user\n" .
     "  ./bin/php/console exp:velocity restart --allow-root-user\n" .
+    "  ./bin/php/console exp:velocity deploy --allow-root-user   (after a PHP change)\n" .
+    "  ./bin/php/console exp:velocity deploy --dry-run --allow-root-user\n" .
     "  ./bin/php/console exp:vc status --allow-root-user   (exp:vc is shorthand for exp:velocity)\n\n" .
     "Directly:\n" .
     "  php bin/php/velocity.php start --allow-root-user\n" .
@@ -104,9 +115,10 @@ list( $velocityArgs, $velocityTail ) = expVelocity::normalizeCliArguments(
     $velocityArgv,
     array( 'keep-global', 'siteaccess', 'login', 'password', 'engine', 'from' ),
     array( 'json', 'help', 'quiet', 'verbose', 'colors', 'no-colors', 'logfiles', 'no-logfiles',
-           'allow-root-user', 'debug', 'force', 'check', 'trust-github-digest', 'all' ) );
+           'allow-root-user', 'debug', 'force', 'check', 'trust-github-digest', 'all',
+           'rebuild-phar', 'kernel', 'dry-run', 'no-fpm', 'no-velocity', 'no-autoload' ) );
 
-$options = $script->getOptions( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https]', '[command]',
+$options = $script->getOptions( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https][rebuild-phar][kernel][dry-run][no-fpm][no-velocity][no-autoload]', '[command]',
     array( 'json' => 'Report as JSON, for a caller that is not a person',
            'keep-global' => 'More globals to keep between requests (comma-separated), appended to the '
                           . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command',
@@ -117,13 +129,19 @@ $options = $script->getOptions( '[json][keep-global:][engine:][from:][force][che
            'force' => 'install: download again even if the binary is already there',
            'check' => 'install: re-hash the installed binary against its SHA-256',
            'trust-github-digest' => 'install: with no Sha256 pinned for the version, accept the digest '
-                                  . 'GitHub publishes for the release' ),
+                                  . 'GitHub publishes for the release',
+           'rebuild-phar' => 'start, restart, graceful, deploy: rebuild the engine archive even when it is current',
+           'kernel' => 'deploy: regenerate the kernel autoload array too (kernel/ and lib/ only)',
+           'dry-run' => 'deploy: print the steps and what each would do, and do nothing',
+           'no-fpm' => 'deploy: do not reload PHP-FPM',
+           'no-velocity' => 'deploy: do not restart Velocity',
+           'no-autoload' => 'deploy: do not regenerate autoload arrays' ),
     $velocityArgs );
 // After "--": plain arguments, never read as options here.
 $options['arguments'] = array_merge( $options['arguments'], $velocityTail );
 $script->initialize();
 
-$verbs = array( 'start', 'stop', 'graceful', 'restart', 'kill', 'status',
+$verbs = array( 'start', 'stop', 'graceful', 'restart', 'kill', 'status', 'deploy',
                 'command', 'config', 'cache', 'layout', 'site', 'conf', 'mod', 'ctl', 'ssl', 'ext', 'install' );
 $verb = isset( $options['arguments'][0] ) ? strtolower( trim( $options['arguments'][0] ) ) : 'status';
 
@@ -399,6 +417,26 @@ function velocityPrintConfig( eZCLI $cli, array $rows )
     $cli->output( '  * set by this installation; everything else is the packaged default' );
 }
 
+// --rebuild-phar: the engine archive is rebuilt at this start even when it
+// already carries exactly the files on disk.
+if ( !empty( $options['rebuild-phar'] ) )
+{
+    if ( !in_array( $verb, array( 'start', 'restart', 'graceful', 'deploy' ), true ) )
+    {
+        $cli->error( 'velocity: --rebuild-phar goes with start, restart, graceful and deploy' );
+        $script->shutdown( 1 );
+    }
+    $velocity->forceEngineRebuild();
+}
+foreach ( array( 'kernel', 'dry-run', 'no-fpm', 'no-velocity', 'no-autoload' ) as $deployOnly )
+{
+    if ( !empty( $options[$deployOnly] ) && $verb !== 'deploy' )
+    {
+        $cli->error( 'velocity: --' . $deployOnly . ' goes with deploy' );
+        $script->shutdown( 1 );
+    }
+}
+
 // Several engines: the same verb for each, one after the other. One that
 // fails does not stop the rest; the exit code says whether all succeeded.
 if ( count( $engineList ) > 1 )
@@ -418,6 +456,8 @@ if ( count( $engineList ) > 1 )
             $engine->appendKeepGlobals( $options['keep-global'] );
         if ( !empty( $options['https'] ) && method_exists( $engine, 'forceHttps' ) )
             $engine->forceHttps();
+        if ( !empty( $options['rebuild-phar'] ) )
+            $engine->forceEngineRebuild();
         if ( !empty( $options['no-https'] ) && method_exists( $engine, 'withoutHttps' ) )
             $engine->withoutHttps();
         if ( $verb === 'status' )
@@ -740,6 +780,46 @@ switch ( $verb )
             $cli->output( $cli->stylize( 'emphasize', 'velocity: ' . $result['message'] ) );
         else
             $cli->error( 'velocity: ' . $result['message'] );
+        $script->shutdown( $result['ok'] ? 0 : 1 );
+    }
+    break;
+
+    case 'deploy':
+    {
+        // Every step prints as it finishes, so a long restart is seen to be
+        // the restart and not a hang.
+        $printer = $asJson ? null : function ( array $step, $number, $count ) use ( $cli )
+        {
+            $status = str_pad( $step['status'], 7 );
+            $time = $step['status'] === 'PASS' || $step['status'] === 'FAIL'
+                  ? sprintf( '%5.1fs', $step['seconds'] ) : '      ';
+            $line = sprintf( '  [%2d/%d] %s %s  %s', $number, $count, $status, $time, $step['label'] );
+            $detail = $step['status'] === 'DRY' ? $step['command'] . ( $step['message'] !== '' ? '  -- ' . $step['message'] : '' )
+                    : $step['message'];
+            if ( $detail !== '' )
+                $line .= ': ' . velocityShortPaths( $detail );
+            $step['status'] === 'FAIL' ? $cli->error( $line ) : $cli->output( $line );
+        };
+        $deploy = new expVelocityDeploy( $velocity, array(
+            'kernel'       => !empty( $options['kernel'] ),
+            'autoload'     => empty( $options['no-autoload'] ),
+            'fpm'          => empty( $options['no-fpm'] ),
+            'velocity'     => empty( $options['no-velocity'] ),
+            'dry-run'      => !empty( $options['dry-run'] ),
+            'rebuild-phar' => !empty( $options['rebuild-phar'] ),
+            'engine'       => count( $engineList ) === 1 ? $engineList[0] : '',
+        ), $printer );
+        if ( !$asJson )
+            $cli->output( 'velocity deploy' . ( !empty( $options['dry-run'] ) ? ' --dry-run (nothing is done)' : '' )
+                          . ': ' . eZSys::rootDir() );
+        $result = $deploy->run();
+        if ( $asJson )
+            $cli->output( json_encode( $result ) );
+        elseif ( $result['ok'] )
+            $cli->output( $cli->stylize( 'emphasize', 'velocity deploy: ' . ( $result['dry-run'] ? 'DRY RUN' : 'PASS' )
+                                                        . ', ' . count( $result['steps'] ) . ' steps in ' . $result['seconds'] . 's' ) );
+        else
+            $cli->error( 'velocity deploy: FAIL after ' . $result['seconds'] . 's; the steps after the failed one were not run' );
         $script->shutdown( $result['ok'] ? 0 : 1 );
     }
     break;
