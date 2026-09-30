@@ -5732,7 +5732,7 @@ a8aac72dff1bbaa3cd8bdcfb0241d348  kernel/common/eztreemenuoperator.php
 47f85d3c744cd977dfa6a1d0e6e49ee7  kernel/common/ezwordtoimageoperator.php
 a45211252cdf04afafdc39ffaaed238a  kernel/common/i18n.php
 e4dabc1ac345b8ba00846f6cb08c0f41  kernel/common/template.php
-a7ef1a86e72d6c9ac580dde2396d8f6a  kernel/content/action.php
+6c5ca15530dae0b597f48918b1e80aa2  kernel/content/action.php
 8114ba872cd28e56d0c789eb40eaa016  kernel/content/advancedsearch.php
 e15934e8589b1bc0f4de27cbbff1a77a  kernel/content/attribute_edit.php
 9506e1f0ee627484f64dc36fbe13aa53  kernel/content/bookmark.php
