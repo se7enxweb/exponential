@@ -10396,6 +10396,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Users</source>
         <translation>Benutzer</translation>
     </message>
+    <message>
+        <source>Store</source>
+        <translation>Shop</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
