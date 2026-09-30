@@ -466,11 +466,11 @@ class expInfo
                 $installRelease = false;
                 try
                 {
-                    $rows = $db->arrayQuery( "SELECT `value` AS v FROM ezsite_data WHERE name='ezpublish-version'" );
+                    $rows = $db->arrayQuery( "SELECT value AS v FROM ezsite_data WHERE name='ezpublish-version'" );
                     if ( is_array( $rows ) && isset( $rows[0]['v'] ) )
                         $installVersion = $rows[0]['v'];
 
-                    $rows = $db->arrayQuery( "SELECT `value` AS v FROM ezsite_data WHERE name='ezpublish-release'" );
+                    $rows = $db->arrayQuery( "SELECT value AS v FROM ezsite_data WHERE name='ezpublish-release'" );
                     if ( is_array( $rows ) && isset( $rows[0]['v'] ) )
                         $installRelease = $rows[0]['v'];
                 }
