@@ -165,9 +165,19 @@ class eZTopMenuOperator
                     $menuItem['enabled'] = false;
             }
 
+            // A Name or Tooltip set in menu.ini is English text like any other
+            // interface string: it is looked up in the translation context the
+            // tab names (TranslationContext, design/admin/pagelayout unless the
+            // tab sets another one), and shown as it is when there is none.
+            $translationContext = 'design/admin/pagelayout';
+            if ( $ini->hasVariable( 'Topmenu_' . $tabID , 'TranslationContext' ) && $ini->variable( 'Topmenu_' . $tabID , 'TranslationContext' ) != '' )
+            {
+                $translationContext = $ini->variable( 'Topmenu_' . $tabID , 'TranslationContext' );
+            }
+
             if ( $ini->hasVariable( 'Topmenu_' . $tabID , 'Name' ) &&  $ini->variable( 'Topmenu_' . $tabID , 'Name' ) != '' )
             {
-                $menuItem['name'] = $ini->variable( 'Topmenu_' . $tabID , 'Name' );
+                $menuItem['name'] = ezpI18n::tr( $translationContext, $ini->variable( 'Topmenu_' . $tabID , 'Name' ) );
             }
             else
             {
@@ -176,7 +186,7 @@ class eZTopMenuOperator
 
             if ( $ini->hasVariable( 'Topmenu_' . $tabID , 'Tooltip' ) &&  $ini->variable( 'Topmenu_' . $tabID , 'Tooltip' ) != '' )
             {
-                $menuItem['tooltip'] =  $ini->variable( 'Topmenu_' . $tabID , 'Tooltip' );
+                $menuItem['tooltip'] = ezpI18n::tr( $translationContext, $ini->variable( 'Topmenu_' . $tabID , 'Tooltip' ) );
             }
             else
             {
