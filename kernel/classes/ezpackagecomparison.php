@@ -184,6 +184,9 @@ class eZPackageComparison
         $db->begin();
         $withText = self::$WithText;
         self::$WithText = false;
+        // Classes read afresh: a long-running process (and an import just before) may hold old ones
+        self::siteClasses( true );
+        self::siteClassAttributes( true );
 
         $items = array();
         $sources = self::packageSources( $package );
@@ -516,10 +519,10 @@ class eZPackageComparison
     // ------------------------------------------------------------------ site side
 
     /** The site's classes (defined version): array( 'by_id' => id => row, 'by_identifier' => identifier => row, 'by_remote_id' => ... ). */
-    static function siteClasses()
+    static function siteClasses( $reset = false )
     {
         static $cache = null;
-        if ( $cache !== null )
+        if ( $cache !== null && !$reset )
             return $cache;
         $cache = array( 'by_id' => array(), 'by_identifier' => array(), 'by_remote_id' => array() );
         $rows = eZDB::instance()->arrayQuery( 'SELECT id, identifier, remote_id FROM ezcontentclass WHERE version = ' . (int)eZContentClass::VERSION_STATUS_DEFINED );
@@ -541,10 +544,10 @@ class eZPackageComparison
     }
 
     /** The site's class attributes (defined version): id => array( 'identifier', 'name', 'datatype', 'class_id' ). */
-    static function siteClassAttributes()
+    static function siteClassAttributes( $reset = false )
     {
         static $cache = null;
-        if ( $cache !== null )
+        if ( $cache !== null && !$reset )
             return $cache;
         $cache = array();
         $rows = eZDB::instance()->arrayQuery( 'SELECT id, contentclass_id, identifier, serialized_name_list, data_type_string FROM ezcontentclass_attribute WHERE version = ' . (int)eZContentClass::VERSION_STATUS_DEFINED );
@@ -1607,6 +1610,33 @@ class eZPackageComparison
             $filtered[] = $item;
         }
         ksort( $classes );
+        $sort = isset( $options['sort'] ) && in_array( $options['sort'], self::sortFields(), true ) ? $options['sort'] : '';
+        if ( $sort !== '' )
+        {
+            $descending = isset( $options['dir'] ) && $options['dir'] === 'desc';
+            $statusOrder = array_flip( self::statuses() );
+            // Stable: equal keys keep the package's own order (the item's index), in both directions
+            usort( $filtered, function ( $a, $b ) use ( $sort, $descending, $statusOrder )
+            {
+                switch ( $sort )
+                {
+                    case 'status':
+                        $cmp = $statusOrder[$a['status']] - $statusOrder[$b['status']];
+                        break;
+                    case 'name':
+                        $cmp = strcasecmp( $a['name'], $b['name'] );
+                        break;
+                    case 'class':
+                        $cmp = strcmp( $a['class_identifier'], $b['class_identifier'] );
+                        break;
+                    default:
+                        $cmp = eZPackageComparison::differenceCount( $a ) - eZPackageComparison::differenceCount( $b );
+                }
+                if ( $descending )
+                    $cmp = -$cmp;
+                return $cmp !== 0 ? $cmp : $a['index'] - $b['index'];
+            } );
+        }
         $total = count( $filtered );
         if ( $offsetOption === 'last' )
             $offset = $total > 0 ? (int)( floor( ( $total - 1 ) / $limit ) * $limit ) : 0;
@@ -1626,7 +1656,117 @@ class eZPackageComparison
             'pages' => $total > 0 ? (int)ceil( $total / $limit ) : 1,
             'counts' => $counts,
             'classes' => $classes,
+            'filtered_indices' => array_map( function ( $item ) { return $item['index']; }, $filtered ),
         );
+    }
+
+    /** The columns filteredPage() sorts by. */
+    static function sortFields()
+    {
+        return array( 'status', 'name', 'class', 'differences' );
+    }
+
+    /**
+     * How many differences an item has, for sorting: values, translations only on one side,
+     * placement and class for an object; changed settings and attributes for a class. An item that
+     * is new, only on the site or without its class counts none (it has nothing to compare with).
+     */
+    static function differenceCount( array $item )
+    {
+        if ( $item['status'] !== 'changed' )
+            return 0;
+        return (int)$item['fields'] + (int)$item['lang_package'] + (int)$item['lang_site'] + ( $item['placement'] ? 1 : 0 ) + ( $item['class_changed'] ? 1 : 0 );
+    }
+
+    /**
+     * The index of $package as last cached, whatever the stamp it was cached under (after an import
+     * the site's stamp has moved on, and refreshItems() brings the index up to date), or null.
+     */
+    static function latestCachedIndex( eZPackage $package )
+    {
+        $newest = null;
+        foreach ( (array)glob( self::cacheDirectory() . '/' . self::safeName( $package->attribute( 'name' ) ) . '-*.cache' ) as $file )
+        {
+            if ( is_file( $file ) && ( $newest === null || filemtime( $file ) > filemtime( $newest ) ) )
+                $newest = $file;
+        }
+        if ( $newest === null )
+            return null;
+        $data = @unserialize( (string)@file_get_contents( $newest ), array( 'allowed_classes' => false ) );
+        return is_array( $data ) && isset( $data['cache_version'] ) && $data['cache_version'] === self::CACHE_VERSION ? $data : null;
+    }
+
+    /**
+     * Compares the items $indices of the cached index again - after an import changed exactly those
+     * on the site - and caches the index under the site's new stamp, so the next page is not a
+     * full rebuild. Every other item keeps what it had. With no cached index nothing is done (the
+     * next page builds one). Returns the refreshed index or null.
+     */
+    static function refreshItems( eZPackage $package, array $indices )
+    {
+        $index = self::latestCachedIndex( $package );
+        if ( $index === null )
+            return null;
+        $db = eZDB::instance();
+        $db->begin();
+        $sources = self::packageSources( $package );
+        // The import may have added classes and class attributes in this very request
+        $classes = self::siteClasses( true );
+        self::siteClassAttributes( true );
+        $objects = array();
+        foreach ( array_unique( array_map( 'intval', $indices ) ) as $i )
+        {
+            if ( !isset( $index['items'][$i] ) )
+                continue;
+            $item = $index['items'][$i];
+            if ( $item['kind'] === 'class' )
+            {
+                $packageClass = self::readPackageClass( $package, $item['file'] );
+                if ( $packageClass === null )
+                    continue;
+                $siteClass = self::siteClassData( $packageClass['identifier'] );
+                $result = self::compareClassData( $packageClass, $siteClass, false );
+                $index['items'][$i]['status'] = $result['status'];
+                $index['items'][$i]['fields'] = $result['fields'];
+                $index['items'][$i]['attributes'] = $result['attributes'];
+                $index['items'][$i]['site_id'] = $siteClass ? $siteClass['id'] : null;
+            }
+            elseif ( $item['file'] !== null )
+                $objects[$i] = $item;
+        }
+        $documents = array();
+        $packageData = array();
+        foreach ( $objects as $i => $item )
+        {
+            $node = self::packageObjectNode( $package, array( 'file' => $item['file'], 'position' => $item['position'] ), $documents );
+            if ( $node )
+                $packageData[$i] = self::packageObjectData( $package, $node, $sources['top_nodes'] );
+        }
+        $remoteIDs = array();
+        foreach ( $packageData as $data )
+            $remoteIDs[] = $data['remote_id'];
+        $siteObjects = array();
+        foreach ( array_chunk( $remoteIDs, self::BATCH_SIZE ) as $chunk )
+            $siteObjects += self::siteObjectsData( $chunk, 'remote_id' );
+        foreach ( $packageData as $i => $data )
+        {
+            $site = isset( $siteObjects[$data['remote_id']] ) ? $siteObjects[$data['remote_id']] : null;
+            $result = self::compareObjectData( $data, $site, false );
+            if ( $site === null && !self::siteHasClass( $classes, $data['class_identifier'], $data['class_remote_id'] ) )
+                $result['status'] = 'class_missing';
+            foreach ( array( 'status', 'fields', 'lang_package', 'lang_site', 'placement', 'class_changed' ) as $key )
+                $index['items'][$i][$key] = $result[$key];
+            $index['items'][$i]['site_id'] = $site ? $site['id'] : null;
+        }
+        $db->rollback();
+
+        $index['stamp'] = self::stamp( $package );
+        $index['built'] = time();
+        self::forget( $package->attribute( 'name' ) );
+        $file = self::cacheFilePath( $package->attribute( 'name' ), $index['stamp'] );
+        eZFile::create( basename( $file ), dirname( $file ), serialize( $index ), true );
+        $index['from_cache'] = false;
+        return $index;
     }
 
     /**
@@ -1636,6 +1776,8 @@ class eZPackageComparison
      */
     static function itemDetail( eZPackage $package, array $item )
     {
+        self::siteClasses( true );
+        self::siteClassAttributes( true );
         if ( $item['kind'] === 'class' )
         {
             $packageClass = self::readPackageClass( $package, $item['file'] );
@@ -1783,6 +1925,7 @@ class eZPackageComparison
                 'state' => $row['state'],
                 'datatype' => $packageValue && $packageValue['datatype'] !== '' ? $packageValue['datatype'] : ( $siteValue ? $siteValue['datatype'] : '' ),
                 'site_datatype' => $siteValue ? $siteValue['datatype'] : '',
+                'aspects' => isset( $row['aspects'] ) ? $row['aspects'] : array(),
                 'package_text' => $packageText,
                 'site_text' => $siteText,
                 'package_raw' => $packageValue ? $packageValue['raw'] : null,

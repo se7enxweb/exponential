@@ -315,6 +315,7 @@ return array(
       'eZPackageComparison'                                => 'kernel/classes/ezpackagecomparison.php',
       'eZPackageComparisonDiff'                            => 'kernel/classes/ezpackagecomparisondiff.php',
       'eZPackageComparisonFileCollector'                   => 'kernel/classes/ezpackagecomparisonfilecollector.php',
+      'eZPackageComparisonImport'                          => 'kernel/classes/ezpackagecomparisonimport.php',
       'eZPackageCreationHandler'                           => 'kernel/classes/ezpackagecreationhandler.php',
       'eZPackageFileBrowser'                               => 'kernel/classes/ezpackagefilebrowser.php',
       'eZPackageFunctionCollection'                        => 'kernel/package/ezpackagefunctioncollection.php',
