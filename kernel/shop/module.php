@@ -92,6 +92,14 @@ $ViewList["wishlist"] = array(
     'unordered_params' => array( 'offset' => 'Offset' ),
     "params" => array(  ) );
 
+// The store owner's overview: activity, open orders, configuration and next steps.
+// Same policy as the order list and the statistics it summarises.
+$ViewList["dashboard"] = array(
+    "functions" => array( 'administrate' ),
+    "script" => "dashboard.php",
+    "default_navigation_part" => 'ezshopnavigationpart',
+    "params" => array(  ) );
+
 $ViewList["orderlist"] = array(
     "functions" => array( 'administrate' ),
     "script" => "orderlist.php",
