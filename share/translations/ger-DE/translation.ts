@@ -8829,6 +8829,10 @@ Falls Sie das Paket im Moment nicht installieren möchten, können Sie das auch 
         <translation>Asistent zum Installieren von Paketen: %wizardname</translation>
     </message>
     <message>
+        <source>%arrowleft Back</source>
+        <translation>%arrowleft Zurück</translation>
+    </message>
+    <message>
         <source>Next %arrowright</source>
         <translation>Nächster %arrowright</translation>
     </message>
@@ -33314,6 +33318,10 @@ Die Pakete werden dauerhaft gelöscht.</translation>
     <message>
         <source>Import package</source>
         <translation>Importiere Paket</translation>
+    </message>
+    <message>
+        <source>%arrowleft Back</source>
+        <translation>%arrowleft Zurück</translation>
     </message>
     <message>
         <source>Next %arrowright</source>
