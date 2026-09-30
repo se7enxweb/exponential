@@ -84,7 +84,8 @@
             </dd>
 
             <dt>{'Description'|i18n('design/admin/package')}</dt>
-            <dd>{$package.description}</dd>
+            {* Escaped: the description comes from the package's own package.xml, and packages can be uploaded *}
+            <dd>{$package.description|wash|nl2br}</dd>
         </dl>
 
         {let thumbnail_list=$package.thumbnail-list}
