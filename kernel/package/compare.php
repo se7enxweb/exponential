@@ -8,14 +8,20 @@
 
 /**
  * package/compare/<PackageName>: what the package carries compared with the site's content tree and
- * classes, paginated and filtered, with a side by side word level difference of the item opened.
- * Read-only (eZPackageComparison): nothing is installed or stored; "Compare again" only rebuilds
- * the comparison's own cache. The state is in view parameters, like the contents browser on
+ * classes, paginated, filtered and sorted, with a side by side word level difference of the item
+ * opened (eZPackageComparison). The state is in view parameters, like the contents browser on
  * package/view/full:
- *   package/compare/<name>/(filter)/changed/(class)/slash_quote/(search)/abc/(limit)/100/(offset)/200/(item)/17
- * each left out at its default (every status, every class, no search, 50 per page, offset 0,
- * nothing opened). The search is written encoded twice, as on package/view/full, because the kernel
- * URL-decodes the whole path before it splits it.
+ *   package/compare/<name>/(filter)/changed/(class)/slash_quote/(search)/abc/(sort)/name/(dir)/desc/(limit)/100/(offset)/200/(item)/17
+ * each left out at its default (every status, every class, no search, the package's own order, 50
+ * per page, offset 0, nothing opened). The search is written encoded twice, as on package/view/full,
+ * because the kernel URL-decodes the whole path before it splits it.
+ *
+ * Reading needs the package read policy. Importing what the package brings for chosen items
+ * (eZPackageComparisonImport) needs package install on top of it and always goes through a
+ * confirmation that lists what will change: Import on a row, Import selected, Import all changes of
+ * this filter, or Import on the opened item (with its values that may be unticked) lead to it;
+ * Confirm imports, at most eZPackageComparisonImport::MAX_ITEMS items a request, and shows the
+ * result. "Compare again" only rebuilds the comparison's own cache.
  */
 
 $module = $Params['Module'];
@@ -26,21 +32,29 @@ if ( !is_object( $package ) )
     return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
 if ( !$package->attribute( 'can_read' ) )
     return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+$canImport = (bool)$package->attribute( 'can_install' );
 
 $http = eZHTTPTool::instance();
 $userParameters = isset( $Params['UserParameters'] ) && is_array( $Params['UserParameters'] ) ? $Params['UserParameters'] : array();
 $statuses = eZPackageComparison::statuses();
+$sortFields = eZPackageComparison::sortFields();
 $limitChoices = array( '25', '50', '100', '250' );
 
-$normalise = function ( $filter, $class, $search, $limit, $offset, $item ) use ( $statuses, $limitChoices )
+$normalise = function ( array $raw ) use ( $statuses, $sortFields, $limitChoices )
 {
+    $value = function ( $key, $fallback ) use ( $raw ) { return isset( $raw[$key] ) ? (string)$raw[$key] : $fallback; };
+    $sort = $value( 'sort', '' );
+    $offset = $value( 'offset', '0' );
+    $item = $value( 'item', '-1' );
     return array(
-        'filter' => in_array( (string)$filter, $statuses, true ) ? (string)$filter : '',
-        'class' => preg_match( '/^[A-Za-z0-9_]+$/', (string)$class ) ? (string)$class : '',
-        'search' => trim( (string)$search ),
-        'limit' => in_array( (string)$limit, $limitChoices, true ) ? (string)$limit : '50',
-        'offset' => (string)$offset === 'last' ? 'last' : ( ctype_digit( (string)$offset ) ? (int)$offset : 0 ),
-        'item' => ctype_digit( (string)$item ) ? (int)$item : -1,
+        'filter' => in_array( $value( 'filter', '' ), $statuses, true ) ? $value( 'filter', '' ) : '',
+        'class' => preg_match( '/^[A-Za-z0-9_]+$/', $value( 'class', '' ) ) ? $value( 'class', '' ) : '',
+        'search' => trim( $value( 'search', '' ) ),
+        'sort' => in_array( $sort, $sortFields, true ) ? $sort : '',
+        'dir' => in_array( $sort, $sortFields, true ) && $value( 'dir', 'asc' ) === 'desc' ? 'desc' : 'asc',
+        'limit' => in_array( $value( 'limit', '50' ), $limitChoices, true ) ? $value( 'limit', '50' ) : '50',
+        'offset' => $offset === 'last' ? 'last' : ( ctype_digit( $offset ) ? (int)$offset : 0 ),
+        'item' => ctype_digit( $item ) ? (int)$item : -1,
     );
 };
 // The view's path for a state; only what differs from the defaults is written
@@ -53,6 +67,8 @@ $compareURL = function ( array $state ) use ( $packageName )
         $url .= '/(class)/' . $state['class'];
     if ( $state['search'] !== '' )
         $url .= '/(search)/' . rawurlencode( rawurlencode( $state['search'] ) );
+    if ( $state['sort'] !== '' )
+        $url .= '/(sort)/' . $state['sort'] . '/(dir)/' . $state['dir'];
     if ( $state['limit'] !== '50' )
         $url .= '/(limit)/' . $state['limit'];
     if ( $state['offset'] === 'last' || $state['offset'] > 0 )
@@ -70,22 +86,20 @@ $redirect = function ( $target )
     eZExecution::cleanExit();
 };
 
-$state = $normalise(
-    isset( $userParameters['filter'] ) ? $userParameters['filter'] : '',
-    isset( $userParameters['class'] ) ? $userParameters['class'] : '',
-    isset( $userParameters['search'] ) ? rawurldecode( $userParameters['search'] ) : '',
-    isset( $userParameters['limit'] ) ? $userParameters['limit'] : '50',
-    isset( $userParameters['offset'] ) ? $userParameters['offset'] : 0,
-    isset( $userParameters['item'] ) ? $userParameters['item'] : -1
-);
+$rawState = $userParameters;
+if ( isset( $rawState['search'] ) )
+    $rawState['search'] = rawurldecode( $rawState['search'] );
+$state = $normalise( $rawState );
 
 // The filter form submits GET fields; they are answered with one redirect to the same state as view
-// parameters, a changed filter starting on the first page with nothing opened
+// parameters, a changed filter starting on the first page with nothing opened (the sorting is kept)
 if ( $http->hasGetVariable( 'CompareApply' ) )
 {
     $get = function ( $name, $fallback ) use ( $http ) { return $http->hasGetVariable( $name ) ? $http->getVariable( $name ) : $fallback; };
-    $redirect( $compareURL( $normalise( $get( 'CompareFilter', $state['filter'] ), $get( 'CompareClass', '' ), $get( 'CompareSearch', '' ),
-                                        $get( 'CompareLimit', '50' ), 0, -1 ) ) );
+    $redirect( $compareURL( $normalise( array(
+        'filter' => $get( 'CompareFilter', $state['filter'] ), 'class' => $get( 'CompareClass', '' ), 'search' => $get( 'CompareSearch', '' ),
+        'limit' => $get( 'CompareLimit', '50' ), 'sort' => $state['sort'], 'dir' => $state['dir'],
+    ) ) ) );
 }
 
 // "Compare again": the comparison built anew, then the same page without the item opened
@@ -96,10 +110,117 @@ if ( $module->isCurrentAction( 'Refresh' ) )
 }
 
 $index = eZPackageComparison::cachedIndex( $package );
-$page = eZPackageComparison::filteredPage( $index, array(
+$pageOptions = array(
     'status' => $state['filter'], 'class' => $state['class'], 'search' => $state['search'],
-    'offset' => $state['offset'], 'limit' => (int)$state['limit'],
-) );
+    'sort' => $state['sort'], 'dir' => $state['dir'], 'offset' => $state['offset'], 'limit' => (int)$state['limit'],
+);
+$page = eZPackageComparison::filteredPage( $index, $pageOptions );
+
+// Every item of the current filter that an import is offered for, in the package's order
+$offeredInFilter = function ( array $index, array $page )
+{
+    $out = array();
+    foreach ( $page['filtered_indices'] as $i )
+    {
+        if ( eZPackageComparisonImport::isOffered( $index['items'][$i] ) )
+            $out[] = $i;
+    }
+    sort( $out );
+    return $out;
+};
+
+// ------------------------------------------------------------------ importing
+// The import actions are POSTs (the admin's form token guards them), each checked against the
+// install policy here, whatever the page showed
+$importActions = array( 'ImportItem', 'ImportSelected', 'ImportFilter', 'ImportViewed', 'ConfirmImport', 'CancelImport' );
+$Import = false;
+$importAction = false;
+foreach ( $importActions as $action )
+{
+    if ( $module->isCurrentAction( $action ) )
+        $importAction = $action;
+}
+if ( $importAction !== false && !$canImport )
+    return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+
+if ( $importAction === 'CancelImport' )
+    $redirect( $compareURL( $state ) );
+
+if ( $importAction !== false )
+{
+    $selected = array();
+    $excluded = array();
+    $mode = 'items';
+    if ( $importAction === 'ImportItem' )
+        $selected = array( (int)$http->postVariable( 'ImportItemButton' ) );
+    elseif ( $importAction === 'ImportSelected' )
+        $selected = array_map( 'intval', (array)( $http->hasPostVariable( 'SelectedItems' ) ? $http->postVariable( 'SelectedItems' ) : array() ) );
+    elseif ( $importAction === 'ImportFilter' )
+    {
+        $mode = 'filter';
+        $selected = array_slice( $offeredInFilter( $index, $page ), 0, eZPackageComparisonImport::MAX_ITEMS );
+    }
+    elseif ( $importAction === 'ImportViewed' )
+    {
+        // The opened item, less the values the user unticked (every value offered was listed in
+        // ImportAttributeShown, the ticked ones come back in ImportAttribute)
+        $viewedIndex = (int)$http->postVariable( 'ImportViewedIndex' );
+        $selected = array( $viewedIndex );
+        $shown = (array)( $http->hasPostVariable( 'ImportAttributeShown' ) ? $http->postVariable( 'ImportAttributeShown' ) : array() );
+        $ticked = (array)( $http->hasPostVariable( 'ImportAttribute' ) ? $http->postVariable( 'ImportAttribute' ) : array() );
+        foreach ( array_diff( $shown, $ticked ) as $key )
+        {
+            if ( preg_match( '#^[A-Za-z0-9_@-]+/[A-Za-z0-9_]+$#', (string)$key ) )
+                $excluded[$viewedIndex][(string)$key] = true;
+        }
+    }
+    elseif ( $importAction === 'ConfirmImport' )
+    {
+        // What the confirmation listed: item indexes with the remote id each stood for then, and the
+        // unticked values; an item that is no longer the same one is left out
+        $mode = $http->hasPostVariable( 'ImportMode' ) && $http->postVariable( 'ImportMode' ) === 'filter' ? 'filter' : 'items';
+        $remoteIDs = (array)( $http->hasPostVariable( 'ImportRemoteID' ) ? $http->postVariable( 'ImportRemoteID' ) : array() );
+        foreach ( $remoteIDs as $i => $remoteID )
+        {
+            if ( isset( $index['items'][(int)$i] ) && $index['items'][(int)$i]['remote_id'] === (string)$remoteID )
+                $selected[] = (int)$i;
+        }
+        foreach ( (array)( $http->hasPostVariable( 'ImportExcluded' ) ? $http->postVariable( 'ImportExcluded' ) : array() ) as $value )
+        {
+            if ( preg_match( '#^(\d+)\|([A-Za-z0-9_@-]+/[A-Za-z0-9_]+)$#', (string)$value, $matches ) )
+                $excluded[(int)$matches[1]][$matches[2]] = true;
+        }
+    }
+    $selected = array_values( array_unique( array_filter( $selected, function ( $i ) use ( $index ) { return isset( $index['items'][$i] ); } ) ) );
+    sort( $selected );
+
+    $excludedList = array();
+    foreach ( $excluded as $i => $keys )
+    {
+        foreach ( array_keys( $keys ) as $key )
+            $excludedList[] = $i . '|' . $key;
+    }
+
+    if ( $importAction === 'ConfirmImport' )
+    {
+        $result = $selected ? eZPackageComparisonImport::run( $package, $index, $selected, $excluded ) : array();
+        // The comparison as it is now (the imported items compared again)
+        $index = eZPackageComparison::cachedIndex( $package );
+        $page = eZPackageComparison::filteredPage( $index, $pageOptions );
+        $remaining = $mode === 'filter' ? count( $offeredInFilter( $index, $page ) ) : 0;
+        $Import = array( 'step' => 'result', 'mode' => $mode, 'entries' => $result, 'remaining' => $remaining,
+                         'done' => count( array_filter( $result, function ( $e ) { return $e['result'] === 'done'; } ) ),
+                         'failed' => count( array_filter( $result, function ( $e ) { return $e['result'] === 'failed'; } ) ) );
+    }
+    else
+    {
+        $plan = eZPackageComparisonImport::plan( $package, $index, $selected, $excluded );
+        $Import = array( 'step' => 'confirm', 'mode' => $mode, 'entries' => $plan, 'excluded' => $excludedList,
+                         'importable' => count( array_filter( $plan, function ( $e ) { return $e['importable']; } ) ),
+                         'filter_total' => $mode === 'filter' ? count( $offeredInFilter( $index, $page ) ) : 0 );
+    }
+    $Import['max'] = eZPackageComparisonImport::MAX_ITEMS;
+}
 
 $statusLabels = array(
     'new' => ezpI18n::tr( 'design/admin/package', 'New' ),
@@ -165,14 +286,15 @@ $summaryOf = function ( array $item ) use ( $statusLabels )
 };
 
 $limitInt = (int)$page['limit'];
-$here = array( 'filter' => $state['filter'], 'class' => $state['class'], 'search' => $state['search'],
-               'limit' => $state['limit'], 'offset' => (int)$page['offset'], 'item' => -1 );
+$here = array( 'offset' => (int)$page['offset'], 'item' => -1 ) + $state;
 
 $items = array();
 foreach ( $page['items'] as $item )
 {
     $item['summary'] = $summaryOf( $item );
     $item['url_view'] = $compareURL( array( 'item' => (int)$item['index'] ) + $here );
+    $item['offered'] = $canImport && eZPackageComparisonImport::isOffered( $item );
+    $item['difference_count'] = eZPackageComparison::differenceCount( $item );
     $items[] = $item;
 }
 
@@ -190,10 +312,11 @@ foreach ( $statuses as $status )
 // The item opened: compared again in full, now
 $viewed = null;
 $viewedDetail = null;
-if ( $state['item'] >= 0 && isset( $index['items'][$state['item']] ) )
+if ( $Import === false && $state['item'] >= 0 && isset( $index['items'][$state['item']] ) )
 {
     $viewed = $index['items'][$state['item']];
     $viewed['summary'] = $summaryOf( $viewed );
+    $viewed['offered'] = $canImport && eZPackageComparisonImport::isOffered( $viewed );
     $viewedDetail = eZPackageComparison::itemDetail( $package, $viewed );
     // The item's own file in the contents browser on package/view/full
     $viewed['url_file'] = false;
@@ -218,6 +341,9 @@ if ( $state['item'] >= 0 && isset( $index['items'][$state['item']] ) )
     }
     if ( $viewedDetail )
     {
+        // Which values of an object may be unticked before importing it (see eZPackageComparisonImport::untickable())
+        $untickable = $viewed['offered'] && $viewed['kind'] === 'object' && $viewed['status'] === 'changed'
+                    ? eZPackageComparisonImport::untickable( $package, $viewed ) : array();
         // Per section: the values that differ, and how many are the same (shown folded)
         foreach ( $viewedDetail['sections'] as &$section )
         {
@@ -225,6 +351,11 @@ if ( $state['item'] >= 0 && isset( $index['items'][$state['item']] ) )
             $section['same'] = array();
             foreach ( $section['rows'] as $row )
             {
+                $key = $section['language'] . '/' . $row['identifier'];
+                // An object's value the import sets (a class is imported as a whole)
+                $row['import_key'] = $viewed['offered'] && $viewed['kind'] === 'object' && $viewed['status'] === 'changed'
+                                     && ( $row['state'] === 'changed' || ( $row['state'] === 'package_only' && $section['state'] === 'package' ) ) ? $key : '';
+                $row['untickable'] = $row['import_key'] !== '' && !empty( $untickable[$key] );
                 if ( $row['state'] === 'identical' )
                     $section['same'][] = $row;
                 else
@@ -235,6 +366,7 @@ if ( $state['item'] >= 0 && isset( $index['items'][$state['item']] ) )
     }
 }
 
+$offered = $canImport ? $offeredInFilter( $index, $page ) : array();
 $Compare = array(
     'items' => $items,
     'total_all' => $page['total_all'],
@@ -250,15 +382,27 @@ $Compare = array(
     'filter' => $state['filter'],
     'class' => $state['class'],
     'search' => $state['search'],
+    'sort' => array( 'field' => $state['sort'], 'direction' => $state['dir'], 'opposite' => $state['dir'] === 'asc' ? 'desc' : 'asc' ),
+    // parts/sortheader.tpl appends (sort)/<column>/(dir)/<direction> to this: the state without the
+    // sorting and on the first page
+    'sort_uri' => $compareURL( array( 'sort' => '', 'offset' => 0 ) + $here ),
     'built' => $index['built'],
     'build_seconds' => $index['build_seconds'],
     'from_cache' => $index['from_cache'],
     'object_count' => $index['object_count'],
     'class_count' => $index['class_count'],
+    'can_import' => $canImport,
+    'offered_in_filter' => count( $offered ),
+    'import_max' => eZPackageComparisonImport::MAX_ITEMS,
+    'import' => $Import,
+    // The confirmation stands alone; the result is shown above the list as it is now
+    'show_list' => $Import === false || $Import['step'] === 'result',
+    // The filter form and "Clear filters" keep the sorting
+    'url_filter' => $compareURL( array( 'filter' => '', 'class' => '', 'search' => '', 'limit' => '50', 'offset' => 0, 'item' => -1 ) + $state ),
     'viewed' => $viewed,
     'viewed_index' => $viewed ? (int)$viewed['index'] : -1,
     'detail' => $viewedDetail,
-    'url_here' => $compareURL( $here + array() ),
+    'url_here' => $compareURL( $here ),
     'url_base' => '/package/compare/' . $packageName,
     'url_close' => $compareURL( $here ),
     'url_first' => $compareURL( array( 'offset' => 0 ) + $here ),
@@ -266,6 +410,8 @@ $Compare = array(
     'url_next' => $compareURL( array( 'offset' => $page['offset'] + $limitInt ) + $here ),
     'url_last' => $compareURL( array( 'offset' => 'last' ) + $here ),
     'url_refresh' => $compareURL( array( 'item' => $state['item'] ) + $here ),
+    // The import forms post to the page they are on; the opened item stays open when its own is used
+    'url_post' => $compareURL( array( 'item' => $viewed ? (int)$viewed['index'] : -1 ) + $here ),
 );
 
 $tpl = eZTemplate::factory();

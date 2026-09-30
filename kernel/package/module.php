@@ -74,14 +74,21 @@ $ViewList['viewfile'] = array(
 
 // package/compare/<PackageName>: the package's content compared with the site's content tree and
 // classes (eZPackageComparison), read-only; its state in view parameters, (filter)/(class)/
-// (search)/(limit)/(offset)/(item). Same policy as 'view': it shows what the package carries next
-// to what the site already shows its readers. "Compare again" (a POST) only rebuilds the
-// comparison's own cache.
+// (search)/(sort)/(dir)/(limit)/(offset)/(item). Same policy as 'view': it shows what the package
+// carries next to what the site already shows its readers. "Compare again" (a POST) only rebuilds
+// the comparison's own cache. The import actions (POSTs, always through a confirmation) need the
+// package install policy on top; compare.php checks it for each of them.
 $ViewList['compare'] = array(
     'functions' => array( 'read' ),
     'script' => 'compare.php',
     'default_navigation_part' => 'ezsetupnavigationpart',
-    'single_post_actions' => array( 'CompareRefreshButton' => 'Refresh' ),
+    'single_post_actions' => array( 'CompareRefreshButton' => 'Refresh',
+                                    'ImportItemButton' => 'ImportItem',
+                                    'ImportSelectedButton' => 'ImportSelected',
+                                    'ImportFilterButton' => 'ImportFilter',
+                                    'ImportViewedButton' => 'ImportViewed',
+                                    'ConfirmImportButton' => 'ConfirmImport',
+                                    'CancelImportButton' => 'CancelImport' ),
     'params' => array( 'PackageName' ) );
 
 $ViewList['install'] = array(

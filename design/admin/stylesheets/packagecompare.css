@@ -40,7 +40,7 @@
 .package-compare table.pcmp-items .pcmp-col-actions { text-align: right; }
 .package-compare .pcmp-item-name { display: block; overflow-wrap: anywhere; white-space: pre-line; }
 .package-compare .pcmp-item-remote { display: block; color: #6a6a72; font-size: 0.8em; overflow-wrap: anywhere; }
-.package-compare .pcmp-col-summary { color: #44484d; min-width: 10em; }
+.package-compare td.pcmp-col-summary { color: #44484d; min-width: 10em; }
 
 /* The item opened */
 .package-compare .pcmp-viewer { margin: 0 0 1em; border: 1px solid #cfd1d3; border-radius: 3px; overflow: hidden; }
@@ -135,4 +135,58 @@
     .package-compare table.pcmp-same-list th { padding-bottom: 0; }
     .package-compare dl.pcmp-facts { grid-template-columns: minmax(0, 1fr); gap: 0; }
     .package-compare dl.pcmp-facts dd { margin-bottom: 0.4em; }
+}
+
+/* Sortable column headings (parts/sortheader.tpl) on the list's dark heading row */
+.package-compare table.pcmp-items th.sortable a.sort-link { color: inherit; }
+.package-compare table.pcmp-items th.sortable .sort-arrow { color: inherit; opacity: 0.85; }
+.package-compare table.pcmp-items th.sortable a.sort-link:focus-visible { outline: 2px solid #e27f15; outline-offset: 1px; }
+
+/* Importing: the bulk bar, the row selection and buttons, the value ticks of the opened item */
+.package-compare .pcmp-bulk { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4em 0.6em; margin: 0 0 0.5em; padding: 0.45em 0.6em; background: #f5f5f5; border: 1px solid #e0e0e0; border-radius: 3px; }
+.package-compare .pcmp-bulk input { margin: 0; }
+.package-compare .pcmp-bulk-note { color: #6a6a72; font-size: 0.9em; flex: 1 1 16em; }
+.package-compare table.pcmp-items .pcmp-col-select { width: 1%; text-align: center; }
+.package-compare table.pcmp-items .pcmp-col-select input { margin: 0; }
+.package-compare button.pvf-link-button { display: inline-block; padding: 0.1em 0.55em; border: 1px solid #cfd1d3; border-radius: 3px; background: #fff; color: #44484d; font: inherit; line-height: inherit; cursor: pointer; }
+.package-compare button.pvf-link-button:hover,
+.package-compare button.pvf-link-button:focus { background: rgba(0, 0, 0, 0.1); }
+.package-compare button.pvf-link-button:focus-visible { outline: 2px solid #e27f15; outline-offset: 1px; }
+.package-compare button.pcmp-import-button { border-color: #9ccc98; color: #22582a; background: #f0f9ef; }
+.package-compare .pcmp-viewer-actions input,
+.package-compare .pvf-viewer-actions input { margin: 0; }
+.package-compare .pcmp-import-hint { margin: 0 0 0.6em; color: #55585c; font-size: 0.9em; }
+.package-compare label.pcmp-import-tick { margin-left: auto; display: inline-flex; align-items: center; gap: 0.3em; font-size: 0.9em; font-weight: normal; cursor: pointer; }
+.package-compare label.pcmp-import-tick input { margin: 0; }
+
+/* The confirmation and the result */
+.package-compare .pcmp-import { margin: 0 0 1em; padding: 0.75em; border: 2px solid #567975; border-radius: 3px; background: #fbfcfb; }
+.package-compare .pcmp-import-result { border-color: #9ccc98; }
+.package-compare .pcmp-import h2 { font-size: 1.15em; margin: 0 0 0.4em; }
+.package-compare .pcmp-import-lead { margin: 0 0 0.6em; }
+.package-compare .pcmp-import-lead strong { display: block; }
+.package-compare ol.pcmp-import-list { margin: 0 0 0.75em; padding: 0; list-style: none; }
+.package-compare li.pcmp-import-entry { margin: 0 0 0.5em; padding: 0.5em 0.6em; background: #fff; border: 1px solid #e0e0e0; border-left: 4px solid #9ccc98; border-radius: 3px; }
+.package-compare li.pcmp-result-skipped { border-left-color: #cfd1d3; background: #fafafa; }
+.package-compare li.pcmp-result-failed { border-left-color: #d7806f; }
+.package-compare .pcmp-import-entry-head { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3em 0.6em; }
+.package-compare .pcmp-import-name { overflow-wrap: anywhere; white-space: pre-line; min-width: 0; }
+.package-compare .pcmp-result { display: inline-block; padding: 0 0.5em; border-radius: 3px; font-size: 0.9em; line-height: 1.6; margin-left: auto; }
+.package-compare .pcmp-result-badge-done { background: #e3f1e1; color: #22582a; }
+.package-compare .pcmp-result-badge-failed { background: #fbe4e0; color: #9a2c1b; }
+.package-compare .pcmp-result-badge-skipped { background: #f0f0f0; color: #55585c; }
+.package-compare .pcmp-import-reason { margin: 0.35em 0 0; color: #55585c; }
+.package-compare ul.pcmp-import-changes,
+.package-compare ul.pcmp-import-kept { margin: 0.35em 0 0; padding: 0; list-style: none; font-size: 0.95em; }
+.package-compare ul.pcmp-import-changes li,
+.package-compare ul.pcmp-import-kept li { margin: 0.1em 0; overflow-wrap: anywhere; }
+.package-compare ul.pcmp-import-changes .pcmp-glyph { color: #22582a; }
+.package-compare ul.pcmp-import-kept { color: #55585c; }
+.package-compare .pcmp-import-actions { display: flex; flex-wrap: wrap; gap: 0.5em; }
+.package-compare .pcmp-import-actions input { margin: 0; }
+
+@media (max-width: 640px) {
+    .package-compare table.pcmp-items td.pcmp-col-select { order: -2; }
+    .package-compare label.pcmp-import-tick { margin-left: 0; }
+    .package-compare .pcmp-result { margin-left: 0; }
 }
