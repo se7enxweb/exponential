@@ -1,4 +1,4 @@
-cfae8c7db032f3406baf36eff749cee8  .autoloadignore
+d2b5e30a47622d50895c8df1e65cadd7  .autoloadignore
 d3c3da531de3f903a6857f522f3ba0db  .gitattributes
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 26637bf1b89fe3b8acd7153af8c24798  .github/workflows/phpunit.yml
@@ -13,7 +13,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 3b96782129fa8a60261a41688f7c0c3c  autoload.php
-3822e456a80ade8d8a9189f056ee86ca  autoload/ezp_kernel.php
+96424b835802280719c9a54a7a6d6c7d  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
 e987da229be60f6c0644adee57d39fb3  benchmarks/classes/ezbenchmarkclirunner.php
@@ -85,7 +85,7 @@ e9979b600146bdd25d4957742e641512  bin/php/ezwebinupgrade.php
 36d8cb716196471d88c5151f63b9dd42  bin/php/kickstarter.php
 f5e6cb3562a1a0c751d91c1516fffddd  bin/php/maintenance.php
 464c842c03c7aee495e3d4ea68542f05  bin/php/makestaticcache.php
-65d97bcbcaa0c2c5d3f8ad971c67366d  bin/php/phar.php
+00658ace10b63e058e42483b55c597de  bin/php/phar.php
 184abc86baeb156744680e389b660400  bin/php/preload.php
 ee8de99ac01c25528b215cedca977452  bin/php/preloadjob.php
 7356cc35b08f5090e2d3553abaa01c2c  bin/php/publish_content.php
@@ -97,7 +97,7 @@ e53af0113356a7991f3cfcb5d99fd22e  bin/php/trashpurge.php
 2b75d418585d3d583adbb28798db5c87  bin/php/updatesearchindex.php
 45816388328705ce2980f450c29a42b4  bin/php/velocity-router.php
 ad183958103af50aff8a4e9aad192bc6  bin/php/velocity-warmup.php
-7c863bb4e540e158420cbe608f18afa0  bin/php/velocity.php
+09d7999abc6c5e5dfa958ed8654590bb  bin/php/velocity.php
 cfcb4022009fc98a7c5aad2789f5080c  bin/php/verify_aliases.php
 85657a43af64db3c68531cef4f5b9246  bin/php/warm.php
 4bdde98e9e5f746a1e136defd693ec42  bin/php/webserver.php
@@ -2080,7 +2080,7 @@ d38adb86f617cc5640df0ecdd6711a60  doc/bc/6.0/middle-out-compression.md
 8aae77691af6b35a093d9229b3757ed3  doc/bc/6.0/multi-node-edit.md
 885a488ce80a5e6d147ea79d6ed9f42b  doc/bc/6.0/opml.md
 991162afe545cb6f8dc7f292e9763ecb  doc/bc/6.0/pagination-settings.md
-0953f54152a455d33e45e5d5a083de5b  doc/bc/6.0/phar.md
+46a87322e5ddc203768bc5b08de444d3  doc/bc/6.0/phar.md
 2fc39d399e6978352dd88a9182bca8b0  doc/bc/6.0/php8.md
 8827542a19048d2c80e65ab2efd0b6af  doc/bc/6.0/phpunitv10.md
 82e9ad363eeb8a1d0090ed20cf756a7e  doc/bc/6.0/phpunitv13.md
@@ -2093,7 +2093,7 @@ e1736c2b2599b91bb982b5ffd42bd4ce  doc/bc/6.0/rad-extension-points.md
 17c36c78d2049406ad83f0cc175b50df  doc/bc/6.0/role-policy-paging.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
 39e889588d8bfcecd5cbb4d8d43c2903  doc/bc/6.0/sql-query-cache.md
-72bd4853db0fa7df97c9a3d1df6b4799  doc/bc/6.0/velocity-engines.md
+adfc52c27fa7ce5c0b9ce29791546606  doc/bc/6.0/velocity-engines.md
 b1146f7626848f499ad0fff06e01fd98  doc/bc/6.0/velocity-ondisk-layout.md
 adac5192811bf518d52266dd4a6b0e72  doc/branch-overview
 0959bdd0da20ca86c663052e954574b8  doc/changelogs/2.9/CHANGELOG-2.9-1
@@ -5511,13 +5511,14 @@ dbb3856cc411fb1697eeda7944d0e280  kernel/classes/expcachemanager.php
 e155d47ee2599f8deb8070d941364bbc  kernel/classes/expkickstarter.php
 5d101780a5be9a462d6b4d3cee69e882  kernel/classes/expkickstarterini.php
 434901ece305d52b3b4397ed3a4d5750  kernel/classes/expmaintenance.php
-e94b8839760a189a564f57a5bf9a67fa  kernel/classes/expphar.php
+b8ca72676a5a9dfafef6ddb0b6e9ee7a  kernel/classes/expphar.php
 21b59e62f5cad811c8cdc0ace277e6fe  kernel/classes/exppreloadjob.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
-b93545a45eb44559fe860431b719ea74  kernel/classes/expvelocity.php
+da95180628e6285a6c175434b8a41a65  kernel/classes/expvelocity.php
 4019dbdd52ec7d8c6450058c39db1c8d  kernel/classes/expvelocityconfig.php
 0860cea831380715b1b76f76bfc68e3b  kernel/classes/expvelocityconfiglayout.php
+24c28d534ef40cf5fdd4fe07d40b54ea  kernel/classes/expvelocitydeploy.php
 8d76ad8f1b6946c83114d1302ba10b48  kernel/classes/expvelocityfrankenphp.php
 13a0bb95af7b52a10396eb5d6912f0f4  kernel/classes/expvelocityfrankenphpinstaller.php
 2de9e75d5e65b35f50a202ba34c78b86  kernel/classes/expvelocityphpserver.php
@@ -6097,7 +6098,7 @@ cc17a6c6a241ef5a12b5f53139a54871  kernel/setup/ezsetupcommon.php
 9a0d4cb28028a07bdf65121f41064aa9  kernel/setup/ezsetuptests.php
 b264d05d7d2686cec136774b758d9fcb  kernel/setup/function_definition.php
 b2a3c45ab57f843fac3d1d053e38bbab  kernel/setup/handlerextension.php
-c7fa397fdaf023411548e7f34ae51d91  kernel/setup/info.php
+f81da634a8c1d844832f2979b9605c91  kernel/setup/info.php
 58b336742a91375d4b49f5a44e577b9e  kernel/setup/kerneloverride.php
 4000b1b15c813a43379ae733ded1a1e7  kernel/setup/maintenance.php
 18ecee0d07126e49f164552b002eaf7e  kernel/setup/menuconfig.php
@@ -6538,7 +6539,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-e3bf8e0d4312d8972f97cfa752d9a0a0  settings/velocity.ini
+ff92ece59380903870c5348253c675f6  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
