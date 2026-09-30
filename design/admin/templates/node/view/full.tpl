@@ -1,3 +1,7 @@
+{* The top node (node 1) has no content object: it gets a view of its own, see node/top_node_full.tpl. *}
+{if eq( $node.contentobject_id, 0 )}
+{include uri='design:node/top_node_full.tpl'}
+{else}
 <div class="content-view-full">
 {if ne( $node.contentobject_id, 0 )}
  <div class="class-{$node.class_identifier}">
@@ -155,3 +159,4 @@
 
  </div>
 </div>
+{/if}
