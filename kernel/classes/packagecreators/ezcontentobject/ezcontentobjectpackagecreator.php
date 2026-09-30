@@ -156,7 +156,7 @@ class eZContentObjectPackageCreator extends eZPackageCreationHandler
     function initializeObjectLimits( $package, $http, $step, &$persistentData, $tpl )
     {
         $persistentData['object_options'] = array( 'include_classes' => 1,
-                                                   'include_templates' => 1,
+                                                   'include_templates' => 0, // templates are opted into: they are site design, not content
                                                    'site_access_array' => array(),
                                                    'versions' => 'current',
                                                    'language_array' => array(),
