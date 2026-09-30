@@ -5631,7 +5631,7 @@ adec8ad3eceb685bca7ec2d30a461d0c  kernel/classes/ezshopaccounthandler.php
 0451c91cbb6e4729fd7ff335fccabb3f  kernel/classes/ezsitedata.php
 cbee9be0691b9ef4c093bd079e043cfd  kernel/classes/ezsiteinstaller.php
 96f1c0fe0f272484265ac8ff94bdfc42  kernel/classes/ezsslzone.php
-1ec3bb218e2d01a8860985095fd180ff  kernel/classes/ezstaticcache.php
+bb5e773e6449eb9525350ea57007858e  kernel/classes/ezstaticcache.php
 4d3adbbb193d7493dda515910870c29a  kernel/classes/ezsubtreecache.php
 e69a010270cb32c088630d9400fb6964  kernel/classes/eztextinputparser.php
 b51122bceda1287ed07c73a38c6df712  kernel/classes/eztipafriendcounter.php
