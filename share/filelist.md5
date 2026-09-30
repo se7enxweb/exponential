@@ -496,7 +496,7 @@ d80e987997dc3d881970e77257a1a579  design/admin/templates/role/createpolicystep3.
 b590ccbb84b2e9752340cca64edd400b  design/admin/templates/role/edit.tpl
 a8254ea66cdbf065e79bedc53ee9d3c5  design/admin/templates/role/list.tpl
 ba29de815cbbffc23c6b2affdd51c7e6  design/admin/templates/role/policyedit.tpl
-1561bf19e1baaa7540ecf7b43cb14408  design/admin/templates/role/view.tpl
+305abe210493d600a853f14ea6024456  design/admin/templates/role/view.tpl
 25eaf3569b53b03b8751d9feed2e6b95  design/admin/templates/roles.tpl
 47230f94fd06f5c248de1f5091b09dfb  design/admin/templates/rss/browse_destination.tpl
 c5ab629376b20828ede5bb3c38fb5e8c  design/admin/templates/rss/browse_image.tpl
@@ -2094,7 +2094,7 @@ e1736c2b2599b91bb982b5ffd42bd4ce  doc/bc/6.0/rad-extension-points.md
 7044272d1b88c3645967fea9afdf1901  doc/bc/6.0/rad-extension-surface.md
 02cab810b7ee149bb10c8ebb1d63d266  doc/bc/6.0/rad-security.md
 609bd03cc335a638b277d945fb0b1636  doc/bc/6.0/response-cache-and-navigation.md
-a3f4a7f9f2e5f903b0f4170f47e34530  doc/bc/6.0/role-policy-paging.md
+ebb0156423f5ee0db9b6063bb7869984  doc/bc/6.0/role-policy-paging.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
 39e889588d8bfcecd5cbb4d8d43c2903  doc/bc/6.0/sql-query-cache.md
 8ce11bb61ec2cfc3129508e6f3ab7885  doc/bc/6.0/velocity-engines.md
@@ -6045,7 +6045,7 @@ cd029849a45369cc74865c96b6791c92  kernel/role/function_definition.php
 0ee47f8657dd7f02ffc276a4531febac  kernel/role/list.php
 746ee50d9a9e330e6b7b9161150af45d  kernel/role/module.php
 c2369b8d9d72618a8cb628fc8963203b  kernel/role/policyedit.php
-00b2a1442840dc7b8f143d926739dcb7  kernel/role/view.php
+be145e68434417279cbd89977b8e2f38  kernel/role/view.php
 7d507cf27f5124bc7ebf6b12ee9618d6  kernel/rss/edit_export.php
 96bbb8f7654f4c4e25312a253ed99e1b  kernel/rss/edit_functions.php
 47211127c886256889d1548d9e684b56  kernel/rss/edit_import.php
@@ -6967,7 +6967,7 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-2149c3dd4556249e80ca1957c366e52f  share/translations/ger-DE/translation.ts
+f741d640288faa31e75bd22149cbc8b9  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
