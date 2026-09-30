@@ -3839,7 +3839,7 @@ INSERT INTO ezcontentobject (
   2,
   3,
   1301073466,
-  'eZ Publish',
+  'Websites',
   14,
   1033917596,
   '9459d3c29e15006e45197295722c7ade',
@@ -4326,13 +4326,13 @@ INSERT INTO ezcontentobject_attribute (
   1,
   0,
   0,
-  'Welcome to eZ Publish',
+  'Welcome to Exponential',
   'ezstring',
   1,
   'eng-GB',
   3,
   0,
-  'welcome to ez publish',
+  'welcome to exponential',
   6
 );
 INSERT INTO ezcontentobject_attribute (
@@ -4911,13 +4911,13 @@ INSERT INTO ezcontentobject_attribute (
   1,
   0,
   0,
-  'eZ Publish',
+  'Websites',
   'ezstring',
   102,
   'eng-GB',
   3,
   0,
-  'ez publish',
+  'websites',
   6
 );
 INSERT INTO ezcontentobject_attribute (
@@ -6839,7 +6839,7 @@ INSERT INTO ezcontentobject_name (
   6,
   1,
   3,
-  'eZ Publish',
+  'Websites',
   'eng-GB'
 );
 INSERT INTO ezcontentobject_name (
