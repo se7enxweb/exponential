@@ -5726,7 +5726,7 @@ d63974139e74f22c1ac0897718fcb121  kernel/common/ezsimpletagsoperator.php
 b06eed991494facaeeec0ef06d095838  kernel/common/eztemplatedesignresource.php
 81f66b6a462ac38b8651597c7f7f672d  kernel/common/eztemplatesstatisticsreporter.php
 054ec52a7b13a184ffff6a7f8f11cc31  kernel/common/eztocoperator.php
-ebf93427cd23684debb85279d078c8e9  kernel/common/eztopmenuoperator.php
+c1929cb5fd246e61affc9baf0da009d8  kernel/common/eztopmenuoperator.php
 a8aac72dff1bbaa3cd8bdcfb0241d348  kernel/common/eztreemenuoperator.php
 47f6bb81f7f9da15cde0feb7b2e51cb8  kernel/common/ezurloperator.php
 47f85d3c744cd977dfa6a1d0e6e49ee7  kernel/common/ezwordtoimageoperator.php
