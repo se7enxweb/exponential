@@ -91,7 +91,10 @@ class eZTopMenuOperator
 
         $menu = array();
         $context = $namedParameters['context'];
-        $tabIDs = $ini->variable( 'TopAdminMenu', 'Tabs' );
+        // A tab is shown once, at its first place in the list. Extensions append their own tab to Tabs[], and their
+        // settings are read after a siteaccess's, so a siteaccess that restates the whole list to order the tabs gets
+        // the extension tabs appended a second time.
+        $tabIDs = array_values( array_unique( (array)$ini->variable( 'TopAdminMenu', 'Tabs' ) ) );
         foreach ( $tabIDs as $tabID )
         {
             $shownList = $ini->variable( 'Topmenu_' . $tabID , 'Shown' );
