@@ -63,6 +63,15 @@ $ViewList['view'] = array(
                                     'ExportButton' => 'Export' ),
     'params' => array( 'ViewMode', 'PackageName', 'RepositoryID' ) );
 
+// package/viewfile/<PackageName>/<FileIndex>: one raw file out of a package's own directory (the
+// contents browser on package/view/full, see view.php/eZPackageFileBrowser) - an image shown
+// inline, anything else offered as a download. Same policy as 'view': reading a package's own
+// files is exactly what reading its metadata already allows.
+$ViewList['viewfile'] = array(
+    'functions' => array( 'read' ),
+    'script' => 'viewfile.php',
+    'params' => array( 'PackageName', 'FileIndex' ) );
+
 $ViewList['install'] = array(
     'functions' => array( 'install' ),
     'script' => 'install.php',

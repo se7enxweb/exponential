@@ -16,6 +16,11 @@
 
 <div class="context-attributes">
 
+    <p class="install-wizard-links">
+        <a href={concat( 'package/view/full/', $package.name )|ezurl}>{'Back to the package'|i18n('design/admin/package')}</a>
+        &middot; <a href={'package/list'|ezurl}>{'Package list'|i18n('design/admin/package')}</a>
+    </p>
+
             {let thumbnail_list=$package.thumbnail-list}
             {if $thumbnail_list}
             <div class="thumbnail">

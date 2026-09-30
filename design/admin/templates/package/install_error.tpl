@@ -11,6 +11,11 @@
 
 <div class="context-attributes">
 
+<p class="install-wizard-links">
+    <a href={concat( 'package/view/full/', $package.name )|ezurl}>{'Back to the package'|i18n('design/standard/package')}</a>
+    &middot; <a href={'package/list'|ezurl}>{'Package list'|i18n('design/standard/package')}</a>
+</p>
+
 {def $path=concat( 'package/install/', $package.name )}
 <form method="post" action={$path|ezurl}>
 {if is_set($error.description)}

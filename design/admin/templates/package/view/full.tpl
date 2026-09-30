@@ -133,6 +133,7 @@
         {if $package.install_type|eq( 'install' )}
             {if $package.is_installed}
                 <input class="button" type="submit" name="UninstallButton" value="{'Uninstall'|i18n( 'design/admin/package')}" />
+                <input class="button" type="submit" name="InstallButton" value="{'Reinstall'|i18n( 'design/admin/package')}" />
             {else}
                 <input class="button" type="submit" name="InstallButton" value="{'Install'|i18n( 'design/admin/package')}" />
             {/if}
@@ -142,6 +143,121 @@
     {/if}
 
     </form>
+
+    {if $ContentsBrowser}
+    {* The package contents browser: every file the package carries, paginated and filtered
+       (kernel/package/view.php, eZPackageFileBrowser - no dependency on any extension). Its own
+       form for the type/search/per-page filter (independent of the export/install one above);
+       pagination and "View" are plain links, each carrying the exact query string
+       kernel/package/view.php already built for it (query_first/query_prev/... , and query_view
+       per file) - a GET read of the same page, nothing this view writes. *}
+    {def $browseBaseURL = concat( 'package/view/full/', $package.name )|ezurl}
+    <div class="contents-browser">
+        <h2>{'Package contents'|i18n('design/admin/package')}</h2>
+        <p>{'%shown of %total files'|i18n('design/admin/package',,hash('%shown', $ContentsBrowser.total_filtered, '%total', $ContentsBrowser.total_all))}</p>
+
+        <form method="get" action={$browseBaseURL}>
+        <table class="filter">
+            <tr>
+                <td>
+                    <label for="browse-type">{'Type'|i18n('design/admin/package')}</label>
+                    <select id="browse-type" name="BrowseType">
+                        <option value="">{'Any type'|i18n('design/admin/package')}</option>
+                        <option value="class"{if $ContentsBrowser.type_filter|eq('class')} selected{/if}>{'Content class'|i18n('design/admin/package')}</option>
+                        <option value="object"{if $ContentsBrowser.type_filter|eq('object')} selected{/if}>{'Content object'|i18n('design/admin/package')}</option>
+                        <option value="image"{if $ContentsBrowser.type_filter|eq('image')} selected{/if}>{'Image'|i18n('design/admin/package')}</option>
+                        <option value="simplefile"{if $ContentsBrowser.type_filter|eq('simplefile')} selected{/if}>{'File'|i18n('design/admin/package')}</option>
+                        <option value="document"{if $ContentsBrowser.type_filter|eq('document')} selected{/if}>{'Document'|i18n('design/admin/package')}</option>
+                        <option value="package"{if $ContentsBrowser.type_filter|eq('package')} selected{/if}>{'Package definition'|i18n('design/admin/package')}</option>
+                        <option value="other"{if $ContentsBrowser.type_filter|eq('other')} selected{/if}>{'Other'|i18n('design/admin/package')}</option>
+                    </select>
+                </td>
+                <td>
+                    <label for="browse-search">{'Search path/name'|i18n('design/admin/package')}</label>
+                    <input id="browse-search" type="text" name="BrowseSearch" value="{$ContentsBrowser.search|wash}" />
+                </td>
+                <td>
+                    <label for="browse-limit">{'Per page'|i18n('design/admin/package')}</label>
+                    <select id="browse-limit" name="BrowseLimit">
+                        {foreach array( '25', '50', '100', '250', '1000', 'all' ) as $limitChoice}
+                        <option value="{$limitChoice|wash}"{if $limitChoice|eq( $ContentsBrowser.limit )} selected{/if}>{cond( $limitChoice|eq('all'), 'All'|i18n('design/admin/package'), $limitChoice|wash )}</option>
+                        {/foreach}
+                    </select>
+                </td>
+                <td><input class="button" type="submit" name="BrowseApply" value="{'Apply'|i18n('design/admin/package')}" /></td>
+            </tr>
+        </table>
+        </form>
+
+        {if $ContentsBrowser.viewed_file}
+        <div class="contents-browser-viewer">
+            <h3><code>{$ContentsBrowser.viewed_file.path|wash}</code></h3>
+            <p>{$ContentsBrowser.viewed_file.kind|wash} &middot; {$ContentsBrowser.viewed_file.size} B</p>
+            {if $ContentsBrowser.viewed_object}
+            <table>
+                <tr><th>{'Name'|i18n('design/admin/package')}</th><td>{$ContentsBrowser.viewed_object.name|wash}</td></tr>
+                <tr><th>{'Class'|i18n('design/admin/package')}</th><td><code>{$ContentsBrowser.viewed_object.class_identifier|wash}</code></td></tr>
+                <tr><th>{'Remote ID'|i18n('design/admin/package')}</th><td>{$ContentsBrowser.viewed_object.remote_id|wash}</td></tr>
+            </table>
+            {foreach $ContentsBrowser.viewed_object.translations as $language => $attributes}
+            <h4>{$language|wash}</h4>
+            <table>
+                <thead><tr><th>{'Attribute'|i18n('design/admin/package')}</th><th>{'Datatype'|i18n('design/admin/package')}</th><th>{'Value'|i18n('design/admin/package')}</th></tr></thead>
+                <tbody>
+                {foreach $attributes as $identifier => $attribute}
+                <tr><td><code>{$identifier|wash}</code></td><td>{$attribute.type|wash}</td><td>{$attribute.text|wash}</td></tr>
+                {/foreach}
+                </tbody>
+            </table>
+            {/foreach}
+            {if $ContentsBrowser.viewed_object.more_objects|gt(0)}
+            <p>{'+ %count more object(s) in the same file'|i18n('design/admin/package',,hash('%count', $ContentsBrowser.viewed_object.more_objects))}</p>
+            {/if}
+            {elseif $ContentsBrowser.viewed_file.kind|eq('image')}
+            <p><img src={concat( 'package/viewfile/', $package.name, '/', $ContentsBrowser.viewed_file.index )|ezurl} alt="{$ContentsBrowser.viewed_file.path|wash}" /></p>
+            {else}
+            <pre>{$ContentsBrowser.viewed_content|wash}</pre>
+            {/if}
+            <p><a class="button" href="?{$ContentsBrowser.query_close|wash}">{'Close'|i18n('design/admin/package')}</a></p>
+        </div>
+        {/if}
+
+        <table>
+            <thead><tr><th>{'Path'|i18n('design/admin/package')}</th><th>{'Type'|i18n('design/admin/package')}</th><th>{'Size'|i18n('design/admin/package')}</th><th></th></tr></thead>
+            <tbody>
+            {foreach $ContentsBrowser.files as $file}
+            <tr>
+                <td><code>{$file.path|wash}</code></td>
+                <td>{$file.kind|wash}</td>
+                <td>{$file.size} B</td>
+                <td>
+                    {if $file.kind|ne('other')}
+                    <a class="button" href="?{$file.query_view|wash}">{'View'|i18n('design/admin/package')}</a>
+                    {/if}
+                    <a href={concat( 'package/viewfile/', $package.name, '/', $file.index )|ezurl} target="_blank" rel="noopener">{'Download'|i18n('design/admin/package')}</a>
+                </td>
+            </tr>
+            {/foreach}
+            {if $ContentsBrowser.files|count|eq(0)}
+            <tr><td colspan="4">{'No file matches these filters.'|i18n('design/admin/package')}</td></tr>
+            {/if}
+            </tbody>
+        </table>
+
+        <p>
+            {'Page %page of %pages'|i18n('design/admin/package',,hash('%page', $ContentsBrowser.page, '%pages', $ContentsBrowser.pages))}
+            {if $ContentsBrowser.page|gt(1)}
+            <a class="button" href="?{$ContentsBrowser.query_first|wash}">{'First'|i18n('design/admin/package')}</a>
+            <a class="button" href="?{$ContentsBrowser.query_prev|wash}">{'Previous'|i18n('design/admin/package')}</a>
+            {/if}
+            {if $ContentsBrowser.page|lt( $ContentsBrowser.pages )}
+            <a class="button" href="?{$ContentsBrowser.query_next|wash}">{'Next'|i18n('design/admin/package')}</a>
+            <a class="button" href="?{$ContentsBrowser.query_last|wash}">{'Last'|i18n('design/admin/package')}</a>
+            {/if}
+        </p>
+    </div>
+    {undef $browseBaseURL}
+    {/if}
 
     </div>
     {* DESIGN: Control bar END *}</div></div>

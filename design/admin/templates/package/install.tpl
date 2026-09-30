@@ -13,6 +13,11 @@
 
 <div class="context-attributes">
 
+    <p class="install-wizard-links">
+        <a href={concat( 'package/view/full/', $package.name )|ezurl}>{'Back to the package'|i18n('design/admin/package')}</a>
+        &middot; <a href={'package/list'|ezurl}>{'Package list'|i18n('design/admin/package')}</a>
+    </p>
+
     <p>{'The package can be installed on your system. Installing the package will copy files, create content classes etc., depending on the package.
 If you do not want to install the package at this time, you can do so later on the view page for the package.'|i18n('design/admin/package')|break}</p>
 
