@@ -11833,6 +11833,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Policies (%policy_count)</source>
         <translation>Richtlinien (%policy_count)</translation>
     </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Nach oben</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Nach unten</translation>
+    </message>
+    <message>
+        <source>Use the order buttons to set the order of the policies. The up arrow moves the policy one place up. The down arrow moves the policy one place down.</source>
+        <translation>Mit den Sortierungs-Schaltflächen können Sie die Reihenfolge der Richtlinien verändern. Der Aufwärtspfeil schiebt die Richtlinie um einen Platz nach oben, der Abwärtspfeil um einen Platz nach unten.</translation>
+    </message>
+    <message>
+        <source>Sort the list by ID, ascending, to change the order of the policies.</source>
+        <translation>Sortieren Sie die Liste aufsteigend nach ID, um die Reihenfolge der Richtlinien zu ändern.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/list</name>

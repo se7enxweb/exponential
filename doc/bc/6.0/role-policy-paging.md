@@ -226,6 +226,76 @@ everything runs as while it is happening.
 
 ---
 
+## The policy order, an ID column and sortable headings in `role/edit`
+
+The policy list of the role editor shows each policy's **ID**, sorts by the
+**ID**, **Module**, **Function** and **Limitations** headings, and has **up and
+down buttons** that change the order of the policies.
+
+### Where the order is kept: the ids, with no new column
+
+A role's policies are in the order of their ids. `ezpolicy` did not change:
+there is no order column, and no upgrade script is needed.
+
+That works because of how the editor already works. `role/edit` edits a
+temporary version of the role, whose policies are fresh copies made in the
+order `policyList()` returns; Save moves those rows onto the role, and Cancel
+deletes them. So the ids are the order, and the editor rewrites them anyway.
+
+`eZRole::movePolicy( $policyID, 'up'|'down' )` swaps the **contents** of a policy
+and its neighbour: module, function, limitations
+(`ezpolicy_limitation.policy_id`), and any temporary copy the policy editor has
+of either (`original_id`). Both ids stay where they are. The move goes into the
+temporary version, so Save keeps it and Cancel drops it, like every other change
+in the editor. A policy id that is not this role's is refused.
+
+**What callers see change:** `policyList()` and `policyPage()` now return the
+policies in id order, not by module and function. If they did not, the next
+temporary copy would put the list back in alphabetical order and lose the order
+set in the editor. `role/view` shows the same order.
+
+The IDs shown in the editor belong to the temporary version: they are the ids
+the policies will have after Save. That has always been true. Every save of a
+role has given its policies new ids.
+
+### The permission system does not read the order
+
+`eZRole::accessArray()` merges the policies into
+`module => function => p_<id> => limitations`. Each policy grants access by
+itself, and a check succeeds when any of them matches, so the order and the ids
+change nothing about who may do what. Checked on a sandbox copy: the role's
+access array, with the policy ids taken out, has the same fingerprint before and
+after a reorder and Save.
+
+### Sorting
+
+The sorting is done by the database, as on `role/list`, because the list is
+shown a page at a time. It is carried as `(policy_sort)` / `(policy_dir)`, next
+to `(policy_offset)`:
+
+```
+/role/edit/1/(policy_sort)/module/(policy_dir)/desc
+```
+
+The form's address carries the offset and the sort, so a button pressed on
+page 3 of a sorted list comes back to page 3, still sorted. The pager keeps the
+sort too. `eZRole::sortColumnsForPolicyList()` is the whitelist: `id`,
+`module`, `function`, `limitation`. `limitation` sorts by the policy's first
+limitation identifier, then by how many limitations it has. Policies without a
+limitation come first. SQL engines do this with one `LEFT JOIN … GROUP BY`
+query. MongoDB, which has no join here, sorts in php.
+
+The up and down buttons are offered only in the role's own order, which is ID
+ascending, the default. Under any other sort they are greyed out, and their
+title says to sort by ID. There is no up button on the first policy and no down
+button on the last one. On a paged list they work across the page boundary.
+
+Pressing Enter in the name field used to press the form's first submit button.
+With the new buttons, that would have moved a policy. A hidden `ChangeRoleName`
+button now comes first in the form, so Enter only keeps the name.
+
+---
+
 ## Two copies of the policy window, and only one of them renders
 
 `design/admin/templates/policies.tpl` and `roles.tpl` are included only by

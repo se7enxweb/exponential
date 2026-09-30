@@ -241,6 +241,24 @@ if ( $http->hasPostVariable( 'RemovePolicies' ) and
     $http->setSessionVariable( 'RoleWasChanged', true );
 }
 
+// The up and down buttons of the policy list. They are image buttons named
+// MovePolicyUp_<id> and MovePolicyDown_<id>, which eZHTTPTool turns into
+// MovePolicyUp=<id>. The move is made in the temporary version this page
+// edits, so Save keeps it and Cancel drops it; movePolicy() refuses a policy
+// that is not this role's.
+foreach ( array( 'MovePolicyUp' => 'up', 'MovePolicyDown' => 'down' ) as $movePostName => $moveDirection )
+{
+    if ( $http->hasPostVariable( $movePostName ) )
+    {
+        if ( $role->movePolicy( (int)$http->postVariable( $movePostName ), $moveDirection ) )
+        {
+            // Set flag for audit. If true audit will be processed
+            $http->setSessionVariable( 'RoleWasChanged', true );
+        }
+        break;
+    }
+}
+
 
 if ( $http->hasPostVariable( 'CustomFunction' ) )
 {
@@ -733,8 +751,23 @@ $policyOffset = isset( $userParameters['policy_offset'] ) ? (int)$userParameters
 if ( $policyOffset < 0 )
     $policyOffset = 0;
 
+// Sorted by the database, not in the browser, for the reason role/list is: the
+// list is shown a page at a time. (policy_sort)/(policy_dir), like the offset,
+// carry the name of the list. The default, id ascending, is the role's own
+// order, the one the up and down buttons change; they are offered only then.
+$policySort = isset( $userParameters['policy_sort'] ) ? (string)$userParameters['policy_sort'] : 'id';
+if ( !isset( eZRole::sortColumnsForPolicyList()[$policySort] ) )
+    $policySort = 'id';
+$policyDir = ( isset( $userParameters['policy_dir'] ) && strtolower( $userParameters['policy_dir'] ) === 'desc' ) ? 'desc' : 'asc';
+
 $policyCount = $role->policyCount();
-$policies    = $role->policyPage( $policyOffset, $policyLimit );
+$policies    = $role->policyPage( $policyOffset, $policyLimit, $policySort, $policyDir );
+
+$tpl->setVariable( 'policy_sort', array( 'field'     => $policySort,
+                                         'direction' => $policyDir,
+                                         'opposite'  => $policyDir === 'asc' ? 'desc' : 'asc' ) );
+$tpl->setVariable( 'policy_order_editable', $policySort === 'id' && $policyDir === 'asc' );
+$tpl->setVariable( 'policy_offset', $policyOffset );
 
 $tpl->setVariable( 'policy_count', $policyCount );
 // Editing a role works on a temporary version, which is a row of its own with
@@ -743,8 +776,10 @@ $tpl->setVariable( 'policy_count', $policyCount );
 // directly, so Apply would then write back to the wrong row.
 $tpl->setVariable( 'policy_page_uri', '/role/edit/' . (int)$roleID );
 $tpl->setVariable( 'policy_limit', $policyLimit );
-$tpl->setVariable( 'view_parameters', array_merge( array( 'policy_offset' => $policyOffset ),
-                                                   $userParameters ) );
+$tpl->setVariable( 'view_parameters', array_merge( $userParameters,
+                                                   array( 'policy_offset' => $policyOffset,
+                                                          'policy_sort'   => $policySort,
+                                                          'policy_dir'    => $policyDir ) ) );
 $tpl->setVariable( 'no_functions', $noFunctions );
 $tpl->setVariable( 'no_limitations', $noLimitations );
 

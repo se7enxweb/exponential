@@ -822,23 +822,52 @@ class eZRole extends eZPersistentObject
      * the whole list as far as everything else is concerned, and a page left
      * there would be silently wrong for every caller that expects all of them.
      *
+     * The policies of a role are kept in the order of their ids, which is the
+     * order they were created in and the order the role editor's up and down
+     * buttons change (see movePolicy()). That is the default here; the other
+     * columns of sortColumnsForPolicyList() sort a page for reading only, with
+     * the id as the tie break so paging never drops or repeats a row.
+     *
      * @param int $offset
      * @param int|false $limit false for all of them, which is policyList()
+     * @param string $sortField one of sortColumnsForPolicyList(); anything else is 'id'
+     * @param string $sortOrder 'asc' or 'desc'
      * @return eZPolicy[]
      */
-    function policyPage( $offset = 0, $limit = false )
+    function policyPage( $offset = 0, $limit = false, $sortField = 'id', $sortOrder = 'asc' )
     {
         $limits = null;
         if ( $limit !== false && (int)$limit > 0 )
             $limits = array( 'offset' => (int)$offset, 'length' => (int)$limit );
 
-        $policies = eZPersistentObject::fetchObjectList(
-            eZPolicy::definition(),
-            null,
-            array( 'role_id'     => (int)$this->attribute( 'id' ),
-                   'original_id' => 0 ),
-            array( 'module_name' => 'asc', 'function_name' => 'asc', 'id' => 'asc' ),
-            $limits, true );
+        $columns = self::sortColumnsForPolicyList();
+        if ( !is_string( $sortField ) || !isset( $columns[$sortField] ) )
+            $sortField = 'id';
+        // Lower case: fetchObjectList() takes anything but "desc" as ascending.
+        $order = ( strtolower( (string)$sortOrder ) === 'desc' ) ? 'desc' : 'asc';
+
+        if ( $sortField === 'limitation' )
+        {
+            $policies = $this->policyPageByLimitation( $limits, $order );
+        }
+        else
+        {
+            $sorting = array( $columns[$sortField] => $order );
+            if ( $sortField === 'module' )
+                $sorting['function_name'] = $order;
+            else if ( $sortField === 'function' )
+                $sorting['module_name'] = 'asc';
+            if ( $sortField !== 'id' )
+                $sorting['id'] = 'asc';
+
+            $policies = eZPersistentObject::fetchObjectList(
+                eZPolicy::definition(),
+                null,
+                array( 'role_id'     => (int)$this->attribute( 'id' ),
+                       'original_id' => 0 ),
+                $sorting,
+                $limits, true );
+        }
 
         if ( !is_array( $policies ) )
             return array();
@@ -858,15 +887,209 @@ class eZRole extends eZPersistentObject
         return $policies;
     }
 
+    /**
+     * The columns a role's policy list can be sorted by: the name the address
+     * carries => the column of ezpolicy. 'limitation' is not a column of that
+     * table; policyPage() sorts it by the policy's first limitation identifier
+     * and the number of limitations, a policy without any first.
+     *
+     * @return array
+     */
+    static function sortColumnsForPolicyList()
+    {
+        return array( 'id'         => 'id',
+                      'module'     => 'module_name',
+                      'function'   => 'function_name',
+                      'limitation' => 'limitation' );
+    }
+
+    /**
+     * One page of this role's policies sorted by their limitations.
+     *
+     * The limitations live in a table of their own, so the database sorts the
+     * policy ids by a join and the page is then fetched by those ids. MongoDB
+     * has no join here: the ids and identifiers of the role are read and sorted
+     * in php instead, which is fine for any role a person edits by hand.
+     *
+     * @param array|null $limits offset and length, or null for all
+     * @param string $order 'asc' or 'desc'
+     * @return eZPolicy[]
+     */
+    private function policyPageByLimitation( $limits, $order )
+    {
+        $db = eZDB::instance();
+        $roleID = (int)$this->attribute( 'id' );
+        $dir = $order === 'desc' ? 'DESC' : 'ASC';
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $rows = eZPersistentObject::fetchObjectList( eZPolicy::definition(), array( 'id' ),
+                                                         array( 'role_id' => $roleID, 'original_id' => 0 ),
+                                                         array( 'id' => 'asc' ), null, false );
+            $keys = array();
+            foreach ( (array)$rows as $row )
+                $keys[(int)$row['id']] = array( '', 0 );
+            if ( $keys )
+            {
+                $limitations = eZPersistentObject::fetchObjectList( eZPolicyLimitation::definition(),
+                                                                    array( 'policy_id', 'identifier' ),
+                                                                    array( 'policy_id' => array( array_keys( $keys ) ) ),
+                                                                    null, null, false );
+                foreach ( (array)$limitations as $limitation )
+                {
+                    $policyID = (int)$limitation['policy_id'];
+                    if ( !isset( $keys[$policyID] ) )
+                        continue;
+                    if ( $keys[$policyID][1] === 0 || strcmp( $limitation['identifier'], $keys[$policyID][0] ) < 0 )
+                        $keys[$policyID][0] = (string)$limitation['identifier'];
+                    $keys[$policyID][1]++;
+                }
+            }
+            uksort( $keys, function( $a, $b ) use ( $keys, $order )
+            {
+                $c = strcmp( $keys[$a][0], $keys[$b][0] );
+                if ( $c === 0 )
+                    $c = $keys[$a][1] - $keys[$b][1];
+                if ( $order === 'desc' )
+                    $c = -$c;
+                return $c !== 0 ? $c : $a - $b;
+            } );
+            $ids = array_keys( $keys );
+            if ( $limits )
+                $ids = array_slice( $ids, $limits['offset'], $limits['length'] );
+        }
+        else
+        {
+            $sql = "SELECT p.id AS id
+                    FROM ezpolicy p
+                    LEFT JOIN ezpolicy_limitation l ON l.policy_id = p.id
+                    WHERE p.role_id = $roleID AND p.original_id = 0
+                    GROUP BY p.id
+                    ORDER BY COALESCE( MIN( l.identifier ), '' ) $dir, COUNT( l.id ) $dir, p.id ASC";
+            $params = $limits ? array( 'offset' => $limits['offset'], 'limit' => $limits['length'] ) : array();
+            $ids = array();
+            foreach ( (array)$db->arrayQuery( $sql, $params ) as $row )
+                $ids[] = (int)$row['id'];
+        }
+
+        if ( !$ids )
+            return array();
+
+        $byID = array();
+        $fetched = eZPersistentObject::fetchObjectList( eZPolicy::definition(), null,
+                                                        array( 'id' => array( $ids ) ), null, null, true );
+        foreach ( (array)$fetched as $policy )
+            $byID[(int)$policy->attribute( 'id' )] = $policy;
+
+        $policies = array();
+        foreach ( $ids as $id )
+        {
+            if ( isset( $byID[$id] ) )
+                $policies[] = $byID[$id];
+        }
+        return $policies;
+    }
+
+    /**
+     * Moves a policy of this role one place up or down in the role's order.
+     *
+     * The order of a role's policies is the order of their ids: there is no
+     * column for it, and none is needed, because the role editor works on a
+     * temporary copy of the role whose policies are created afresh, in that
+     * order, every time a role is opened for editing, and Save keeps those
+     * rows. A move therefore exchanges the contents of the policy and its
+     * neighbour - module, function, limitations, and any temporary copy the
+     * policy editor holds of either - and leaves both ids in place. Nothing
+     * the permission system reads depends on the order: each policy grants
+     * access on its own.
+     *
+     * Only ever called on the temporary version of a role, so the change is
+     * kept by Save and dropped by Cancel like every other change in the editor.
+     *
+     * @param int $policyID a policy of this role
+     * @param string $direction 'up' or 'down'
+     * @return bool true when the policy moved, false at either end of the list
+     *         or for a policy that is not this role's
+     */
+    function movePolicy( $policyID, $direction )
+    {
+        $roleID = (int)$this->attribute( 'id' );
+        $policy = eZPolicy::fetch( (int)$policyID );
+        if ( !$policy instanceof eZPolicy ||
+             (int)$policy->attribute( 'role_id' ) !== $roleID ||
+             (int)$policy->attribute( 'original_id' ) !== 0 )
+            return false;
+
+        $up = ( $direction === 'up' );
+        $neighbours = eZPersistentObject::fetchObjectList(
+            eZPolicy::definition(), null,
+            array( 'role_id'     => $roleID,
+                   'original_id' => 0,
+                   'id'          => array( $up ? '<' : '>', (int)$policy->attribute( 'id' ) ) ),
+            array( 'id' => $up ? 'desc' : 'asc' ),
+            array( 'offset' => 0, 'length' => 1 ), true );
+        if ( !is_array( $neighbours ) || !$neighbours )
+            return false;
+        $other = $neighbours[0];
+
+        $a = (int)$policy->attribute( 'id' );
+        $b = (int)$other->attribute( 'id' );
+
+        $db = eZDB::instance();
+        $db->begin();
+
+        $module   = $policy->attribute( 'module_name' );
+        $function = $policy->attribute( 'function_name' );
+        $policy->setAttribute( 'module_name', $other->attribute( 'module_name' ) );
+        $policy->setAttribute( 'function_name', $other->attribute( 'function_name' ) );
+        $other->setAttribute( 'module_name', $module );
+        $other->setAttribute( 'function_name', $function );
+        $policy->store();
+        $other->store();
+
+        // Both lists are read before either is written, so no row is moved twice.
+        $limitationsOfA = eZPolicyLimitation::fetchByPolicyID( $a );
+        $limitationsOfB = eZPolicyLimitation::fetchByPolicyID( $b );
+        foreach ( (array)$limitationsOfA as $limitation )
+        {
+            $limitation->setAttribute( 'policy_id', $b );
+            $limitation->store();
+        }
+        foreach ( (array)$limitationsOfB as $limitation )
+        {
+            $limitation->setAttribute( 'policy_id', $a );
+            $limitation->store();
+        }
+
+        $copiesOfA = eZPersistentObject::fetchObjectList( eZPolicy::definition(), null, array( 'original_id' => $a ), null, null, true );
+        $copiesOfB = eZPersistentObject::fetchObjectList( eZPolicy::definition(), null, array( 'original_id' => $b ), null, null, true );
+        foreach ( (array)$copiesOfA as $copy )
+        {
+            $copy->setAttribute( 'original_id', $b );
+            $copy->store();
+        }
+        foreach ( (array)$copiesOfB as $copy )
+        {
+            $copy->setAttribute( 'original_id', $a );
+            $copy->store();
+        }
+
+        $db->commit();
+
+        unset( $this->Policies );
+        return true;
+    }
+
     function policyList()
     {
         if ( !isset( $this->Policies ) )
         {
-            // id is the tie break. Without it two policies of the same module and
-            // function are ordered by whatever the database returns, which is
-            // free to differ between queries - and a paged view of that drops
-            // and repeats rows as you page through it.
-            $sorting = array( 'module_name' => 'asc', 'function_name' => 'asc', 'id' => 'asc' );
+            // The order of the ids is the role's order of its policies: the
+            // editor's temporary copy of a role copies them in this order, so
+            // any other order here would undo the order set in the editor the
+            // next time the role is opened. It is also a stable order, which a
+            // database left to itself is free not to return.
+            $sorting = array( 'id' => 'asc' );
             $policies = eZPersistentObject::fetchObjectList(
                 eZPolicy::definition(),
                 null,
