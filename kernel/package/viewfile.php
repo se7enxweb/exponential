@@ -55,10 +55,13 @@ $type = ( $kind === 'image' && isset( $mimeMap[$ext] ) ) ? $mimeMap[$ext] : 'app
 header( 'Cache-Control: private, no-store, max-age=0' );
 header( 'Pragma: no-cache' );
 header( 'X-Content-Type-Options: nosniff' );
+// A package is uploaded content: an SVG in it may carry script. Inside the browser's <img> it never
+// runs, but opened directly under the admin's own origin it would; the sandbox stops that.
+header( "Content-Security-Policy: default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; sandbox" );
 header( 'Content-Type: ' . $type );
 header( 'Content-Length: ' . filesize( $realPath ) );
 if ( $kind !== 'image' )
-    header( 'Content-Disposition: attachment; filename="' . basename( $fileRow['path'] ) . '"' );
+    header( 'Content-Disposition: attachment; filename="' . str_replace( array( '"', '\\' ), '_', basename( $fileRow['path'] ) ) . '"' );
 
 while ( @ob_end_clean() );
 
