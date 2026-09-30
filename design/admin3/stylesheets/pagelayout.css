@@ -288,6 +288,24 @@ div.tabs-content.disabled div.tab-content {
     min-height: 22em;
 }
 
+/* The toggler left of the tabs switches them off (tabs-content.disabled): the rules above give #window-controls a
+   fixed height and its tab content display: block, which outweigh the general "disabled" rule, so the off state is
+   repeated here at their weight and the box shrinks to the tab bar. */
+#window-controls .tabs-content.disabled .tab-content {
+    display: none;
+}
+
+#window-controls:has(.tabs-content.disabled),
+#window-controls.layouts-active:has(.tabs-content.disabled) {
+    height: auto;
+    min-height: 0;
+    resize: none;
+}
+
+#window-controls .tabs-content.disabled {
+    height: auto;
+}
+
 /* PATH */
 #path {
     padding: 0;
