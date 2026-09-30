@@ -7666,7 +7666,7 @@ INSERT INTO ezcontentobject_tree (
   1790769600,
   3,
   1,
-  'configuration',
+  'x_configuration',
   '/1/3/',
   0,
   '4d947768ea1cdd0d11927c595a2b2cce',
@@ -37935,8 +37935,8 @@ INSERT INTO ezurlalias (
   1,
   1,
   0,
-  'ccd1066343c95877b75b79d47c36bebe',
-  'configuration'
+  'c5a41d003e42c71b4d64d5d30cc501bc',
+  'x_configuration'
 );
 INSERT INTO ezurlalias (
   destination_url,
@@ -38855,8 +38855,8 @@ INSERT INTO ezurlalias_ml (
   3,
   23,
   0,
-  'Configuration',
-  'ccd1066343c95877b75b79d47c36bebe'
+  'x-configuration',
+  '1323d2d3025dd0b145124d36d0c1d00a'
 );
 INSERT INTO ezurlalias_ml (
   action,
