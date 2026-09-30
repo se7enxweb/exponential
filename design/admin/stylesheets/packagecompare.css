@@ -190,3 +190,16 @@
     .package-compare label.pcmp-import-tick { margin-left: 0; }
     .package-compare .pcmp-result { margin-left: 0; }
 }
+
+/* The confirmation's own choices: a tick per item, and its values folded, a tick each */
+.package-compare label.pcmp-import-include { display: inline-flex; align-items: center; cursor: pointer; }
+.package-compare label.pcmp-import-include input { margin: 0; width: 1.1em; height: 1.1em; }
+.package-compare details.pcmp-values { margin: 0.35em 0 0; }
+.package-compare details.pcmp-values > summary { cursor: pointer; color: #094564; font-size: 0.95em; }
+.package-compare .pcmp-values-all { margin: 0.35em 0 0.2em; display: flex; gap: 0.4em; }
+.package-compare ul.pcmp-values-list { margin: 0.3em 0 0; padding: 0; list-style: none; columns: 2 22em; column-gap: 1.5em; font-size: 0.95em; }
+.package-compare ul.pcmp-values-list li { break-inside: avoid; margin: 0 0 0.2em; overflow-wrap: anywhere; }
+.package-compare ul.pcmp-values-list label { display: inline-flex; align-items: flex-start; gap: 0.35em; cursor: pointer; }
+.package-compare ul.pcmp-values-list input { margin: 0.2em 0 0; flex: none; }
+.package-compare .pcmp-values-kept { color: #6a6a72; }
+.package-compare li.pcmp-import-entry:has( label.pcmp-import-include input:not(:checked) ) { opacity: 0.55; }

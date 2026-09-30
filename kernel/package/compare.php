@@ -176,30 +176,39 @@ if ( $importAction !== false )
     }
     elseif ( $importAction === 'ConfirmImport' )
     {
-        // What the confirmation listed: item indexes with the remote id each stood for then, and the
-        // unticked values; an item that is no longer the same one is left out
+        // What the confirmation listed: item indexes with the remote id each stood for then (an item
+        // that is no longer the same one is left out), the items the user kept ticked
+        // (ImportInclude), and per item the values offered (ImportValueShown, "<index>|<language>/<identifier>")
+        // and those left ticked (ImportValue): every one shown and not ticked is kept as the site has it
         $mode = $http->hasPostVariable( 'ImportMode' ) && $http->postVariable( 'ImportMode' ) === 'filter' ? 'filter' : 'items';
         $remoteIDs = (array)( $http->hasPostVariable( 'ImportRemoteID' ) ? $http->postVariable( 'ImportRemoteID' ) : array() );
+        $included = array_map( 'intval', (array)( $http->hasPostVariable( 'ImportInclude' ) ? $http->postVariable( 'ImportInclude' ) : array() ) );
         foreach ( $remoteIDs as $i => $remoteID )
         {
-            if ( isset( $index['items'][(int)$i] ) && $index['items'][(int)$i]['remote_id'] === (string)$remoteID )
+            if ( in_array( (int)$i, $included, true ) && isset( $index['items'][(int)$i] ) && $index['items'][(int)$i]['remote_id'] === (string)$remoteID )
                 $selected[] = (int)$i;
         }
-        foreach ( (array)( $http->hasPostVariable( 'ImportExcluded' ) ? $http->postVariable( 'ImportExcluded' ) : array() ) as $value )
+        $valueKeys = function ( $name ) use ( $http )
         {
-            if ( preg_match( '#^(\d+)\|([A-Za-z0-9_@-]+/[A-Za-z0-9_]+)$#', (string)$value, $matches ) )
-                $excluded[(int)$matches[1]][$matches[2]] = true;
+            $out = array();
+            foreach ( (array)( $http->hasPostVariable( $name ) ? $http->postVariable( $name ) : array() ) as $value )
+            {
+                if ( preg_match( '#^(\d+)\|([A-Za-z0-9_@-]+/[A-Za-z0-9_]+)$#', (string)$value, $matches ) )
+                    $out[(int)$matches[1] . '|' . $matches[2]] = array( (int)$matches[1], $matches[2] );
+            }
+            return $out;
+        };
+        $ticked = $valueKeys( 'ImportValue' );
+        foreach ( $valueKeys( 'ImportValueShown' ) as $combined => $pair )
+        {
+            if ( !isset( $ticked[$combined] ) )
+                $excluded[$pair[0]][$pair[1]] = true;
         }
+        $leftOut = count( $remoteIDs ) - count( $selected );
     }
     $selected = array_values( array_unique( array_filter( $selected, function ( $i ) use ( $index ) { return isset( $index['items'][$i] ); } ) ) );
     sort( $selected );
 
-    $excludedList = array();
-    foreach ( $excluded as $i => $keys )
-    {
-        foreach ( array_keys( $keys ) as $key )
-            $excludedList[] = $i . '|' . $key;
-    }
 
     if ( $importAction === 'ConfirmImport' )
     {
@@ -208,14 +217,14 @@ if ( $importAction !== false )
         $index = eZPackageComparison::cachedIndex( $package );
         $page = eZPackageComparison::filteredPage( $index, $pageOptions );
         $remaining = $mode === 'filter' ? count( $offeredInFilter( $index, $page ) ) : 0;
-        $Import = array( 'step' => 'result', 'mode' => $mode, 'entries' => $result, 'remaining' => $remaining,
+        $Import = array( 'step' => 'result', 'mode' => $mode, 'entries' => $result, 'remaining' => $remaining, 'left_out' => $leftOut,
                          'done' => count( array_filter( $result, function ( $e ) { return $e['result'] === 'done'; } ) ),
                          'failed' => count( array_filter( $result, function ( $e ) { return $e['result'] === 'failed'; } ) ) );
     }
     else
     {
         $plan = eZPackageComparisonImport::plan( $package, $index, $selected, $excluded );
-        $Import = array( 'step' => 'confirm', 'mode' => $mode, 'entries' => $plan, 'excluded' => $excludedList,
+        $Import = array( 'step' => 'confirm', 'mode' => $mode, 'entries' => $plan,
                          'importable' => count( array_filter( $plan, function ( $e ) { return $e['importable']; } ) ),
                          'filter_total' => $mode === 'filter' ? count( $offeredInFilter( $index, $page ) ) : 0 );
     }
