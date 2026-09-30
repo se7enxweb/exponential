@@ -26,6 +26,12 @@
  *   visitor is shown another's page.
  * - It never caches anything but a 200. An error answered from cache for the
  *   next hour is worse than an error.
+ * - It never keeps a copy the server no longer gives out. When the background
+ *   refresh gets a 3xx or 4xx (the page was removed, moved or closed to the
+ *   public, like ezinfo/about since it answers 404), or a 200 marked private or
+ *   no-store, the stored copy is deleted. Before v4 it stood, and the old page
+ *   was replayed on every normal navigation while only a hard reload, which
+ *   skips the worker, showed the real answer.
  * - It stays out of the admin entirely.
  *
  * Turning it off
@@ -35,7 +41,9 @@
  * browser that has it will drop it on its next update check.
  */
 
-const VERSION = 'exp-nav-v3';
+// v4: drops every page stored by v3, which never let go of a page that later
+// answered 404 (ezinfo/about kept showing to anyone who had seen it before).
+const VERSION = 'exp-nav-v4';
 const CACHE = VERSION;
 
 // Paths this must never touch.
@@ -114,9 +122,17 @@ const cacheHandle = caches.open(CACHE);
 async function refresh(cache, request) {
 	try {
 		const response = await fetch(request);
-		if (mayStore(response)) await cache.put(request, response.clone());
+		if (mayStore(response)) {
+			await cache.put(request, response.clone());
+		} else if (response && response.status < 500) {
+			// The page is gone, moved, closed or now personal (a 3xx or 4xx, or a
+			// 200 marked private/no-store): the stored copy must go with it, or
+			// it is replayed on every normal navigation for good. Only this once
+			// more was it shown. A server fault (5xx) keeps the copy.
+			await cache.delete(request);
+		}
 	} catch (e) {
-		// Offline, or the server said no. The stored copy stands.
+		// Offline: the stored copy stands.
 	}
 }
 
