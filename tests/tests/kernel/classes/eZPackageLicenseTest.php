@@ -20,7 +20,8 @@ class eZPackageLicenseTest extends ezpTestCase
         $list = eZPackageLicense::licenseList();
         foreach ( array( 'GPL-2.0-or-later', 'GPL-2.0-only', 'GPL-3.0-or-later', 'GPL-3.0-only', 'LGPL-2.1-or-later',
                          'LGPL-2.1-only', 'LGPL-3.0-or-later', 'LGPL-3.0-only', 'GFDL-1.3-or-later', 'GFDL-1.3-only',
-                         'CC0-1.0', 'LicenseRef-PDM-1.0' ) as $identifier )
+                         'AGPL-3.0-or-later', 'AGPL-3.0-only', 'MIT', 'CC0-1.0', 'LicenseRef-PDM-1.0',
+                         'LicenseRef-Proprietary' ) as $identifier )
             $this->assertArrayHasKey( $identifier, $list );
         foreach ( array( '1.0', '2.0', '2.5', '3.0', '4.0' ) as $version )
             foreach ( array( 'BY', 'BY-SA', 'BY-ND', 'BY-NC', 'BY-NC-SA', 'BY-NC-ND' ) as $kind )
@@ -28,7 +29,11 @@ class eZPackageLicenseTest extends ezpTestCase
         foreach ( $list as $identifier => $license )
         {
             $this->assertNotEmpty( $license['name'], $identifier );
-            $this->assertStringStartsWith( 'https://', $license['url'], $identifier );
+            // all rights reserved: there is no license text to link to
+            if ( $identifier === 'LicenseRef-Proprietary' )
+                $this->assertEmpty( $license['url'], $identifier );
+            else
+                $this->assertStringStartsWith( 'https://', $license['url'], $identifier );
         }
         $this->assertSame( 'Creative Commons Attribution-ShareAlike 4.0 International', $list['CC-BY-SA-4.0']['name'] );
         $this->assertSame( 'https://creativecommons.org/licenses/by-nd-nc/1.0/', $list['CC-BY-NC-ND-1.0']['url'] );
@@ -41,7 +46,7 @@ class eZPackageLicenseTest extends ezpTestCase
             $identifiers[] = $group['identifier'];
             $count += count( $group['licenses'] );
         }
-        $this->assertSame( array( 'software', 'documentation', 'cc-4.0', 'cc-3.0', 'cc-2.5', 'cc-2.0', 'cc-1.0', 'public-domain' ), $identifiers );
+        $this->assertSame( array( 'software', 'documentation', 'cc-4.0', 'cc-3.0', 'cc-2.5', 'cc-2.0', 'cc-1.0', 'public-domain', 'proprietary' ), $identifiers );
         $this->assertSame( count( $list ), $count );
     }
 
@@ -50,11 +55,13 @@ class eZPackageLicenseTest extends ezpTestCase
         $this->assertSame( 'GPL-2.0-or-later', eZPackageLicense::defaultIdentifier() );
         $this->assertSame( 'GPL-2.0-or-later', eZPackageLicense::normalize( 'GPL' ) );
         $this->assertSame( 'CC-BY-4.0', eZPackageLicense::normalize( 'CC-BY-4.0' ) );
+        $this->assertTrue( eZPackageLicense::isAllowed( 'MIT' ) );
+        $this->assertTrue( eZPackageLicense::isAllowed( 'LicenseRef-Proprietary' ) );
     }
 
     public function testAnythingNotListedIsRefused()
     {
-        foreach ( array( 'Beerware', 'gpl-2.0-or-later', '', ' ', 'GPL-2.0-or-later<script>', 'CC-BY-5.0', 'MIT' ) as $value )
+        foreach ( array( 'Beerware', 'gpl-2.0-or-later', '', ' ', 'GPL-2.0-or-later<script>', 'CC-BY-5.0', 'mit', 'MIT-0' ) as $value )
             $this->assertFalse( eZPackageLicense::isAllowed( $value ), var_export( $value, true ) );
         $this->assertFalse( eZPackageLicense::isAllowed( array( 'GPL-2.0-or-later' ) ) );
         $this->assertFalse( eZPackageLicense::isAllowed( null ) );
