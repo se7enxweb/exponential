@@ -522,6 +522,10 @@ class expWorkflowEventWizard extends expExtensionWizard
             if ( $attribute['type'] === 'select' && !count( $attribute['choices'] ) )
                 $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The setting "%setting" is a list, but no values were given for it.', null, array( '%setting' => $attribute['label'] ) );
 
+        // The licence is a strict choice from package.ini [LicenseSettings], checked here as well
+        // as in the form, so a posted value that is not configured is never written
+        $problems += self::licenceProblems( $settings );
+
         return $problems;
     }
 

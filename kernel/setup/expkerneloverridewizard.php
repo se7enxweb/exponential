@@ -267,6 +267,10 @@ class expKernelOverrideWizard extends expExtensionWizard
             $problems[] = ezpI18n::tr( 'kernel/setup/rad', '%class is already overridden by %where. Two overrides of one class do not combine - whichever the autoload generator finds last wins, and nothing reports the other. Change that one instead.', null,
                                        array( '%class' => $settings['class'], '%where' => $where ) );
 
+        // The licence is a strict choice from package.ini [LicenseSettings], checked here as well
+        // as in the form, so a posted value that is not configured is never written
+        $problems += self::licenceProblems( $settings );
+
         return $problems;
     }
 

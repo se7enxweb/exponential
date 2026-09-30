@@ -290,11 +290,7 @@
 
 <div class="se-field">
     <label for="seLicence">{'Licence'|i18n( 'design/admin/setup/rad/settings' )}</label>
-    <select id="seLicence" name="licence">
-    {foreach $wizard_licences as $se_key => $se_label}
-        <option value="{$se_key|wash}"{if eq( $wizard_settings.licence, $se_key )} selected="selected"{/if}>{$se_label|wash}</option>
-    {/foreach}
-    </select>
+    {include uri='design:setup/rad_licence_select.tpl' select_id='seLicence' selected=$wizard_settings.licence groups=$wizard_licences}
 </div>
 
 <h3>{'What else goes in it'|i18n( 'design/admin/setup/rad/settings' )}</h3>

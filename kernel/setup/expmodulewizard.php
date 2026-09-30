@@ -430,6 +430,10 @@ class expModuleWizard extends expExtensionWizard
                 $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'The view %view needs the policy %policy, and the module does not declare it. Nobody could be granted it, so nobody could reach the view. Add %policy to the policies below.', null,
                                            array( '%view' => $view['name'], '%policy' => $policy ) );
 
+        // The licence is a strict choice from package.ini [LicenseSettings], checked here as well
+        // as in the form, so a posted value that is not configured is never written
+        $problems += self::licenceProblems( $settings );
+
         return $problems;
     }
 

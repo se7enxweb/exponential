@@ -373,6 +373,10 @@ class expTemplateExtensionWizard extends expExtensionWizard
              && eZModule::exists( $settings['module'] ) !== null )
             $problems['exists_module'] = ezpI18n::tr( 'kernel/setup/rad', 'A module called %module already exists. Fetch functions would be added to it rather than to this extension; choose another name.', null, array( '%module' => $settings['module'] ) );
 
+        // The licence is a strict choice from package.ini [LicenseSettings], checked here as well
+        // as in the form, so a posted value that is not configured is never written
+        $problems += self::licenceProblems( $settings );
+
         return $problems;
     }
 

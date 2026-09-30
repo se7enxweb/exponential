@@ -211,11 +211,7 @@
 <div class="dew-row">
 <div class="dew-field">
     <label for="dewLicence">{'Licence'|i18n( 'design/admin/setup/rad/designextension' )}</label>
-    <select id="dewLicence" name="licence">
-    {foreach $wizard_licences as $dew_key => $dew_label}
-        <option value="{$dew_key|wash}"{if eq( $wizard_settings.licence, $dew_key )} selected="selected"{/if}>{$dew_label|wash}</option>
-    {/foreach}
-    </select>
+    {include uri='design:setup/rad_licence_select.tpl' select_id='dewLicence' selected=$wizard_settings.licence groups=$wizard_licences}
 </div>
 <div class="dew-field">
     <label for="dewBase">{'Falls back on'|i18n( 'design/admin/setup/rad/designextension' )}</label>

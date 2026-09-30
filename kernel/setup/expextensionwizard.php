@@ -54,49 +54,119 @@ abstract class expExtensionWizard
     abstract public static function files( array $settings );
 
     /**
-     * The licences the wizard can write.
+     * The licences the wizard can write: the same strict choice as the package
+     * creation wizards, package.ini [LicenseSettings] read through
+     * eZPackageLicense, grouped for the drop-down.
      *
-     * @return array key => label
+     * @return array a list of groups, each with identifier, name and licenses
+     *               (each license with identifier, name, url, description, group).
      */
     public static function licences()
     {
-        return array( 'GPL-2.0-or-later' => 'GNU General Public License v2.0 or later (GPLv2+)',
-                      'MIT'              => 'MIT',
-                      'proprietary'      => ezpI18n::tr( 'kernel/setup/rad', 'Proprietary - all rights reserved' ) );
+        return eZPackageLicense::groupedList();
     }
 
     /**
-     * The identifier an offered licence is stored and written under.
+     * The identifier a posted licence is stored and written under.
      *
-     * SPDX renamed the plain GPL identifiers when it made the distinction
-     * between a version and that version or later explicit, and composer
-     * validates against the current list. An extension generated before the
-     * rename still says GPL-2.0, so that is read as what it always meant here -
-     * version 2 or later - rather than being dropped for the default.
+     * A configured identifier, or an alias from package.ini AliasList, is that
+     * licence. Nothing posted (the first visit) is the configured default. The
+     * short names this wizard used to write are read as what they meant here:
+     * SPDX renamed the plain GPL identifiers when it made "only" and "or later"
+     * explicit, and an extension generated before the rename says GPL-2.0 for
+     * version 2 or later; "proprietary" is LicenseRef-Proprietary. Each of these
+     * counts only when the licence it stands for is configured.
+     *
+     * Anything else is returned as it was posted (trimmed, at most 64
+     * characters), so that problems() refuses it instead of quietly writing a
+     * different licence than the one asked for: see licenceProblems().
      *
      * @param string $licence what was asked for.
-     * @return string one of licences().
+     * @return string a configured identifier, or the refused text.
      */
     public static function licence_id( $licence )
     {
-        $offered = self::licences();
+        $licence = is_scalar( $licence ) ? trim( (string) $licence ) : '';
 
-        if ( is_string( $licence ) && isset( $offered[$licence] ) )
-            return $licence;
+        if ( $licence === '' )
+        {
+            $default = eZPackageLicense::defaultIdentifier();
+            return $default === false ? '' : $default;
+        }
 
-        $renamed = array( 'GPL-2.0'       => 'GPL-2.0-or-later',
-                          'GPL-2.0+'      => 'GPL-2.0-or-later',
-                          'GPL2'          => 'GPL-2.0-or-later',
-                          'GPLv2'         => 'GPL-2.0-or-later',
-                          'GPL-3.0'       => 'GPL-2.0-or-later',
-                          'GPL-2.0-only'  => 'GPL-2.0-or-later' );
+        $identifier = eZPackageLicense::normalize( $licence );
+        if ( $identifier !== false )
+            return $identifier;
 
-        if ( is_string( $licence ) && isset( $renamed[$licence] ) )
-            return $renamed[$licence];
+        $renamed = array( 'GPL-2.0'     => 'GPL-2.0-or-later',
+                          'GPL-2.0+'    => 'GPL-2.0-or-later',
+                          'GPL2'        => 'GPL-2.0-or-later',
+                          'GPLv2'       => 'GPL-2.0-or-later',
+                          'GPL-3.0'     => 'GPL-3.0-only',
+                          'GPL-3.0+'    => 'GPL-3.0-or-later',
+                          'proprietary' => 'LicenseRef-Proprietary' );
 
-        $keys = array_keys( $offered );
+        if ( isset( $renamed[$licence] ) && eZPackageLicense::isAllowed( $renamed[$licence] ) )
+            return eZPackageLicense::normalize( $renamed[$licence] );
 
-        return $keys[0];
+        return function_exists( 'mb_substr' ) ? mb_substr( $licence, 0, 64 ) : substr( $licence, 0, 64 );
+    }
+
+    /**
+     * What is wrong with the licence of a set of settings: every wizard's
+     * problems() adds this, so a licence that is not configured in package.ini
+     * [LicenseSettings] is refused for writing and for the archive alike.
+     *
+     * @param array $settings
+     * @return array 'licence' => message, or empty.
+     */
+    public static function licenceProblems( array $settings )
+    {
+        $licence = isset( $settings['licence'] ) ? $settings['licence'] : '';
+
+        if ( $licence === '' )
+            return array( 'licence' => ezpI18n::tr( 'kernel/setup/rad', 'No licence is configured to choose from. Add one to package.ini [LicenseSettings] LicenseList.' ) );
+
+        if ( !eZPackageLicense::isAllowed( $licence ) )
+            return array( 'licence' => ezpI18n::tr( 'kernel/setup/rad', 'The licence "%licence" is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.', null, array( '%licence' => $licence ) ) );
+
+        return array();
+    }
+
+    /**
+     * The configured entry of the settings' licence (name, url, ...), or false.
+     *
+     * @param array $settings
+     * @return array|false
+     */
+    protected static function licenceEntry( array $settings )
+    {
+        return eZPackageLicense::fetch( isset( $settings['licence'] ) ? $settings['licence'] : '' );
+    }
+
+    /**
+     * For a GNU licence identifier (GPL, LGPL, AGPL, GFDL with a version and
+     * "only" or "or-later"): its full name, version and whether later versions
+     * are allowed, for the notice the Free Software Foundation recommends.
+     *
+     * @param string $identifier
+     * @return array|false name, short, version, later
+     */
+    protected static function gnuLicence( $identifier )
+    {
+        if ( !is_string( $identifier ) || !preg_match( '/^(A?GPL|LGPL|GFDL)-(\d+(?:\.\d+)?)-(only|or-later)$/', $identifier, $m ) )
+            return false;
+
+        $names = array( 'GPL'  => 'GNU General Public License',
+                        'LGPL' => 'GNU Lesser General Public License',
+                        'AGPL' => 'GNU Affero General Public License',
+                        'GFDL' => 'GNU Free Documentation License' );
+
+        return array( 'name'    => $names[$m[1]],
+                      'short'   => $m[1],
+                      // "3.0" is "version 3" in the FSF's own wording; "2.1" and "1.3" stay as they are
+                      'version' => preg_replace( '/\.0$/', '', $m[2] ),
+                      'later'   => $m[3] === 'or-later' );
     }
 
     /**
@@ -242,17 +312,38 @@ abstract class expExtensionWizard
                 return " * Copyright (c) " . $year . " " . $holder . ". Released under the MIT licence;\n"
                      . " * see LICENSE for the terms.\n";
 
-            case 'proprietary':
+            case 'LicenseRef-Proprietary':
                 return " * Copyright (c) " . $year . " " . $holder . ". All rights reserved.\n"
                      . " * Not to be copied, distributed or used without written permission.\n";
+
+            case 'GPL-2.0-or-later':
+                return " * Copyright (c) " . $year . " " . $holder . ".\n"
+                     . " *\n"
+                     . " * This program is free software; you can redistribute it and/or modify it under\n"
+                     . " * the terms of the GNU General Public License as published by the Free Software\n"
+                     . " * Foundation; either version 2 of the License, or (at your option) any later\n"
+                     . " * version. See LICENSE for the full terms.\n";
         }
+
+        $gnu = self::gnuLicence( $settings['licence'] );
+        if ( $gnu )
+            return " * Copyright (c) " . $year . " " . $holder . ".\n"
+                 . " *\n"
+                 . " * This program is free software; you can redistribute it and/or modify it under\n"
+                 . " * the terms of the " . $gnu['name'] . " as published by the Free\n"
+                 . " * Software Foundation; " . ( $gnu['later']
+                     ? "either version " . $gnu['version'] . " of the License, or (at your option) any\n * later version."
+                     : "version " . $gnu['version'] . " of the License only." )
+                 . " See LICENSE for the full terms.\n";
+
+        $entry = self::licenceEntry( $settings );
+        $name  = $entry ? $entry['name'] : $settings['licence'];
 
         return " * Copyright (c) " . $year . " " . $holder . ".\n"
              . " *\n"
-             . " * This program is free software; you can redistribute it and/or modify it under\n"
-             . " * the terms of the GNU General Public License as published by the Free Software\n"
-             . " * Foundation; either version 2 of the License, or (at your option) any later\n"
-             . " * version. See LICENSE for the full terms.\n";
+             . " * Licensed under the " . $name . "\n"
+             . " * (SPDX-License-Identifier: " . $settings['licence'] . ")." . ( $entry && $entry['url'] ? "\n * " . $entry['url'] : '' ) . "\n"
+             . " * See LICENSE for the terms.\n";
     }
 
     protected static function ezinfo( array $settings )
@@ -322,12 +413,23 @@ abstract class expExtensionWizard
             case 'MIT':
                 return "MIT. See [LICENSE](LICENSE).";
 
-            case 'proprietary':
+            case 'LicenseRef-Proprietary':
                 return "Proprietary - all rights reserved. See [LICENSE](LICENSE).";
+
+            case 'GPL-2.0-or-later':
+                return "GNU General Public License, version 2 or, at your option, any later version\n"
+                     . "(`GPL-2.0-or-later`). See [LICENSE](LICENSE).";
         }
 
-        return "GNU General Public License, version 2 or, at your option, any later version\n"
-             . "(`GPL-2.0-or-later`). See [LICENSE](LICENSE).";
+        $gnu = self::gnuLicence( $settings['licence'] );
+        if ( $gnu )
+            return $gnu['name'] . ", version " . $gnu['version'] . ( $gnu['later'] ? " or, at your option, any later version" : " only" ) . "\n"
+                 . "(`" . $settings['licence'] . "`). See [LICENSE](LICENSE).";
+
+        $entry = self::licenceEntry( $settings );
+
+        return ( $entry ? $entry['name'] : $settings['licence'] ) . " (`" . $settings['licence'] . "`)."
+             . ( $entry && $entry['url'] ? " " . $entry['url'] : '' ) . " See [LICENSE](LICENSE).";
     }
 
     protected static function gitignore( array $settings )
@@ -361,11 +463,42 @@ abstract class expExtensionWizard
                      . "LIABILITY, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
                      . "OR OTHER DEALINGS IN THE SOFTWARE.\n";
 
-            case 'proprietary':
+            case 'LicenseRef-Proprietary':
                 return "Copyright (c) " . $year . " " . $holder . "\n\nAll rights reserved.\n\n"
                      . "This software and its source may not be copied, distributed or used in any\n"
                      . "form without the written permission of the copyright holder.\n";
         }
+
+        $entry = self::licenceEntry( $settings );
+        $gnu   = self::gnuLicence( $settings['licence'] );
+
+        if ( $gnu && $settings['licence'] !== 'GPL-2.0-or-later' )
+        {
+            if ( $gnu['short'] === 'GFDL' )
+                return "Copyright (c) " . $year . " " . $holder . "\n\n"
+                     . "Permission is granted to copy, distribute and/or modify this document under\n"
+                     . "the terms of the GNU Free Documentation License, Version " . $gnu['version'] . ( $gnu['later'] ? "\nor any later version" : " only" ) . ",\n"
+                     . "published by the Free Software Foundation; with no Invariant Sections, no\n"
+                     . "Front-Cover Texts, and no Back-Cover Texts.\n\n"
+                     . "The full text: " . ( $entry && $entry['url'] ? $entry['url'] : 'https://www.gnu.org/licenses/' ) . "\n";
+
+            return "Copyright (c) " . $year . " " . $holder . "\n\n"
+                 . "This program is free software; you can redistribute it and/or modify it under\n"
+                 . "the terms of the " . $gnu['name'] . " as published by the Free\n"
+                 . "Software Foundation; " . ( $gnu['later']
+                     ? "either version " . $gnu['version'] . " of the License, or (at your option) any\nlater version."
+                     : "version " . $gnu['version'] . " of the License only." ) . "\n\n"
+                 . "This program is distributed in the hope that it will be useful, but WITHOUT ANY\n"
+                 . "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A\n"
+                 . "PARTICULAR PURPOSE. See the " . $gnu['name'] . " for more details.\n\n"
+                 . "The full text: " . ( $entry && $entry['url'] ? $entry['url'] : 'https://www.gnu.org/licenses/' ) . "\n";
+        }
+
+        if ( $settings['licence'] !== 'GPL-2.0-or-later' )
+            return "Copyright (c) " . $year . " " . $holder . "\n\n"
+                 . "Licensed under the " . ( $entry ? $entry['name'] : $settings['licence'] ) . "\n"
+                 . "(SPDX-License-Identifier: " . $settings['licence'] . ").\n"
+                 . ( $entry && $entry['url'] ? "\nThe full terms: " . $entry['url'] . "\n" : '' );
 
         // GPL-2.0-or-later. The "or (at your option) any later version" clause
         // is what makes it that rather than version 2 on its own, so it is in

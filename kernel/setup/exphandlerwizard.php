@@ -1438,6 +1438,10 @@ class expHandlerWizard extends expExtensionWizard
                 $problems['exists_class'] = ezpI18n::tr( 'kernel/setup/rad', 'A class called %class already exists on this installation. Choose another name.', null, array( '%class' => $settings['class'] ) );
         }
 
+        // The licence is a strict choice from package.ini [LicenseSettings], checked here as well
+        // as in the form, so a posted value that is not configured is never written
+        $problems += self::licenceProblems( $settings );
+
         return $problems;
     }
 

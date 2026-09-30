@@ -251,11 +251,7 @@
 
 <div class="ce-field">
     <label for="ceLicence">{'Licence'|i18n( 'design/admin/setup/rad/content' )}</label>
-    <select id="ceLicence" name="licence">
-    {foreach $wizard_licences as $ce_key => $ce_label}
-        <option value="{$ce_key|wash}"{if eq( $wizard_settings.licence, $ce_key )} selected="selected"{/if}>{$ce_label|wash}</option>
-    {/foreach}
-    </select>
+    {include uri='design:setup/rad_licence_select.tpl' select_id='ceLicence' selected=$wizard_settings.licence groups=$wizard_licences}
 </div>
 
 <h3>{'What else goes in it'|i18n( 'design/admin/setup/rad/content' )}</h3>

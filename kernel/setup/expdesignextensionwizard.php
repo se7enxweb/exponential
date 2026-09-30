@@ -193,6 +193,10 @@ class expDesignExtensionWizard extends expExtensionWizard
         if ( $settings['parts']['siteaccess'] && $settings['siteaccess'] === '' )
             $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Siteaccess settings were asked for, but no siteaccess was named.' );
 
+        // The licence is a strict choice from package.ini [LicenseSettings], checked here as well
+        // as in the form, so a posted value that is not configured is never written
+        $problems += self::licenceProblems( $settings );
+
         return $problems;
     }
 

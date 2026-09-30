@@ -190,11 +190,7 @@
 
 <div class="wfe-field">
     <label for="wfeLicence">{'Licence'|i18n( 'design/admin/setup/rad/workflowevent' )}</label>
-    <select id="wfeLicence" name="licence">
-    {foreach $wizard_licences as $wfe_key => $wfe_label}
-        <option value="{$wfe_key|wash}"{if eq( $wizard_settings.licence, $wfe_key )} selected="selected"{/if}>{$wfe_label|wash}</option>
-    {/foreach}
-    </select>
+    {include uri='design:setup/rad_licence_select.tpl' select_id='wfeLicence' selected=$wizard_settings.licence groups=$wizard_licences}
 </div>
 </div>
 

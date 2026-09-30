@@ -216,11 +216,7 @@
 
 <div class="mw-field">
     <label for="mwLicence">{'Licence'|i18n( 'design/admin/setup/rad/module' )}</label>
-    <select id="mwLicence" name="licence">
-    {foreach $wizard_licences as $mw_key => $mw_label}
-        <option value="{$mw_key|wash}"{if eq( $wizard_settings.licence, $mw_key )} selected="selected"{/if}>{$mw_label|wash}</option>
-    {/foreach}
-    </select>
+    {include uri='design:setup/rad_licence_select.tpl' select_id='mwLicence' selected=$wizard_settings.licence groups=$wizard_licences}
 </div>
 </div>
 

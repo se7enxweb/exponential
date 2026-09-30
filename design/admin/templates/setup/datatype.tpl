@@ -181,11 +181,7 @@
 
 <div class="dw-field">
     <label for="dwLicence">{'Licence'|i18n( 'design/admin/setup/rad/datatype' )}</label>
-    <select id="dwLicence" name="licence">
-    {foreach $wizard_licences as $dw_key => $dw_label}
-        <option value="{$dw_key|wash}"{if eq( $wizard_settings.licence, $dw_key )} selected="selected"{/if}>{$dw_label|wash}</option>
-    {/foreach}
-    </select>
+    {include uri='design:setup/rad_licence_select.tpl' select_id='dwLicence' selected=$wizard_settings.licence groups=$wizard_licences}
 </div>
 </div>
 

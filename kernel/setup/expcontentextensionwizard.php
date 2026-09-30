@@ -477,6 +477,10 @@ class expContentExtensionWizard extends expExtensionWizard
                 $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'A translation was chosen and no strings were given. One per line, as: context|the English text' );
         }
 
+        // The licence is a strict choice from package.ini [LicenseSettings], checked here as well
+        // as in the form, so a posted value that is not configured is never written
+        $problems += self::licenceProblems( $settings );
+
         return $problems;
     }
 

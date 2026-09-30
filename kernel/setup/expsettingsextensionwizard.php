@@ -782,6 +782,10 @@ class expSettingsExtensionWizard extends expExtensionWizard
         foreach ( self::takenAliases( $settings ) as $alias )
             $problems['exists_alias_' . $alias] = ezpI18n::tr( 'kernel/setup/rad', 'An image alias called %alias already exists on this installation. Writing it again redefines it, and every image served through it changes. Choose another name, or say so deliberately by removing this check.', null, array( '%alias' => $alias ) );
 
+        // The licence is a strict choice from package.ini [LicenseSettings], checked here as well
+        // as in the form, so a posted value that is not configured is never written
+        $problems += self::licenceProblems( $settings );
+
         return $problems;
     }
 

@@ -174,11 +174,7 @@
 
 <div class="hw-field">
     <label for="hwLicence">{'Licence'|i18n( 'design/admin/setup/rad/handler' )}</label>
-    <select id="hwLicence" name="licence">
-    {foreach $wizard_licences as $hw_key => $hw_label}
-        <option value="{$hw_key|wash}"{if eq( $wizard_settings.licence, $hw_key )} selected="selected"{/if}>{$hw_label|wash}</option>
-    {/foreach}
-    </select>
+    {include uri='design:setup/rad_licence_select.tpl' select_id='hwLicence' selected=$wizard_settings.licence groups=$wizard_licences}
 </div>
 </div>
 

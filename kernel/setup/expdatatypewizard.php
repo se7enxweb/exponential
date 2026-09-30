@@ -693,6 +693,10 @@ class expDatatypeWizard extends expExtensionWizard
                 $problems[] = ezpI18n::tr( 'kernel/setup/rad', 'Sorting needs sort_key_string or sort_key_int as well: the sort key is written to one of those columns and nowhere else.' );
         }
 
+        // The licence is a strict choice from package.ini [LicenseSettings], checked here as well
+        // as in the form, so a posted value that is not configured is never written
+        $problems += self::licenceProblems( $settings );
+
         return $problems;
     }
 

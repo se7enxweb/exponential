@@ -191,11 +191,7 @@
 
 <div class="ko-field">
     <label for="koLicence">{'Licence'|i18n( 'design/admin/setup/rad/override' )}</label>
-    <select id="koLicence" name="licence">
-    {foreach $wizard_licences as $ko_key => $ko_label}
-        <option value="{$ko_key|wash}"{if eq( $wizard_settings.licence, $ko_key )} selected="selected"{/if}>{$ko_label|wash}</option>
-    {/foreach}
-    </select>
+    {include uri='design:setup/rad_licence_select.tpl' select_id='koLicence' selected=$wizard_settings.licence groups=$wizard_licences}
     <span class="ko-hint">{'This carries kernel code, so what it is licensed under is not an afterthought.'|i18n( 'design/admin/setup/rad/override' )}</span>
 </div>
 
