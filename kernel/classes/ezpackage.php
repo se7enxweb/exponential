@@ -336,6 +336,8 @@ class eZPackage
             $accessResult = $currentUser->hasAccessTo( 'package', $functionName );
             $limitationList = array();
             $canUse = false;
+            // No access at all ("no") is a plain false, not a missing cache entry
+            $this->PolicyCache[$functionName] = false;
             if ( $accessResult['accessWord'] == 'yes' )
             {
                 $this->PolicyCache[$functionName] = true;
@@ -1163,7 +1165,12 @@ class eZPackage
             // The previous value for the second parameter was null which meant the type was guessed from the
             // archive, but on Windows it was detected as TAR_USTAR and this lead to filenames being limited
             // to 100 characters
-            $archive = ezcArchive::open( "compress.zlib://$archiveName", ezcArchive::TAR_GNU, $archiveOptions );
+            // An archive in the old V7 tar format (no "ustar" magic, regular files typed "\0", as the
+            // packages of the 3.x releases were written) is read as V7: the GNU
+            // reader never gets past the first "\0" typed file of such an archive and reads the same
+            // block for ever.
+            $archiveType = self::archiveTarType( $archiveName );
+            $archive = ezcArchive::open( "compress.zlib://$archiveName", $archiveType, $archiveOptions );
 
             $fileList = array();
             $fileList[] = eZPackage::definitionFilename();
@@ -1233,6 +1240,26 @@ class eZPackage
 
             return $package;
         }
+    }
+
+    /**
+     * The tar format the package archive \a $archiveName is read with: ezcArchive::TAR_GNU for
+     * every archive with the "ustar" magic (POSIX ustar and GNU, see issue #15891 above), and
+     * ezcArchive::TAR_V7 for an archive without it, the format old packages were written in.
+     *
+     * @param string $archiveName path of a gzip compressed (or plain) tar archive
+     * @return int ezcArchive::TAR_GNU or ezcArchive::TAR_V7
+     */
+    static function archiveTarType( $archiveName )
+    {
+        $handle = @fopen( "compress.zlib://$archiveName", 'rb' );
+        if ( !$handle )
+            return ezcArchive::TAR_GNU;
+        $header = fread( $handle, 512 );
+        fclose( $handle );
+        if ( !is_string( $header ) || strlen( $header ) < 512 || substr( $header, 257, 5 ) === 'ustar' )
+            return ezcArchive::TAR_GNU;
+        return ezcArchive::TAR_V7;
     }
 
     /*!
@@ -1650,7 +1677,9 @@ class eZPackage
                                                  'name' => ezpI18n::tr( 'kernel/package', 'Local' ),
                                                  'type' => 'local' ) );
 
-            $subdirs = eZDir::findSubitems( $repositoryPath, 'd' );
+            // A repository directory that does not exist yet (a new installation, before the first
+            // import) has no further repositories; opendir() on it would raise a warning
+            $subdirs = is_dir( $repositoryPath ) ? eZDir::findSubitems( $repositoryPath, 'd' ) : array();
             foreach( $subdirs as $dir )
             {
                 if ( $dir == 'local' )
@@ -2916,12 +2945,14 @@ class eZPackage
         {
             unset( $dependencyNode );
             $dependencyNode = $dom->createElement( $dependencyType );
-            $dependencyNode->setAttribute( 'type', $dependencyItem['type'] );
-            $dependencyNode->setAttribute( 'name', $dependencyItem['name'] );
-            if ( $dependencyItem['value'] )
+            // A dependency read from an older package may lack any of these (a <require> of a site
+            // package often has no value): it is written back as it was read
+            $dependencyNode->setAttribute( 'type', isset( $dependencyItem['type'] ) ? (string)$dependencyItem['type'] : '' );
+            $dependencyNode->setAttribute( 'name', isset( $dependencyItem['name'] ) ? (string)$dependencyItem['name'] : '' );
+            if ( !empty( $dependencyItem['value'] ) )
                 $dependencyNode->setAttribute( 'value', $dependencyItem['value'] );
             $dependenciesNode->appendChild( $dependencyNode );
-            $handler = $this->packageHandler( $dependencyItem['name'] );
+            $handler = isset( $dependencyItem['name'] ) ? $this->packageHandler( $dependencyItem['name'] ) : false;
             if ( $handler )
             {
                 $handler->createDependencyNode( $this, $dependencyNode, $dependencyItem, $dependencyType );
