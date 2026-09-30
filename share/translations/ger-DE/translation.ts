@@ -8427,6 +8427,18 @@
         <source>Show %count items per page.</source>
         <translation>%count Elemente pro Seite anzeigen.</translation>
     </message>
+    <message>
+        <source>Top node</source>
+        <translation>Hauptknoten</translation>
+    </message>
+    <message>
+        <source>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.</source>
+        <translation>Dies ist der Hauptknoten der Inhaltsstruktur. Er ist kein Inhaltsobjekt: Er hat keine Klasse, keine Attribute, keine Übersetzungen, keine Versionen und keine weiteren Platzierungen und kann weder bearbeitet noch verschoben oder entfernt werden. Die Knoten der obersten Ebene, die er enthält, sind unter Unterelemente aufgeführt.</translation>
+    </message>
+    <message>
+        <source>Details of the top node: its node ID, depth and path, the number of sub items and the time of the latest change below it.</source>
+        <translation>Details des Hauptknotens: Knoten-ID, Tiefe und Pfad, Anzahl der Unterelemente und Zeitpunkt der letzten Änderung darunter.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
