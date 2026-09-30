@@ -6517,7 +6517,7 @@ d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
-bc80e52d45ea602cb37990b5bf3ff48c  settings/menu.ini
+663df254c130fa6979d8d7b4c9776579  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 a7fb3c12293dec6555c38abfc0c4d356  settings/module.ini
 b3f39c844e6994aafc9f63caabef5779  settings/notification.ini
@@ -6967,7 +6967,7 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-8858431edcefa8e17a0185bbe4f6abbc  share/translations/ger-DE/translation.ts
+635ed8f3d8b7784089af95baecedb02d  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
