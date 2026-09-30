@@ -3818,6 +3818,21 @@ INSERT INTO ezcontentclassgroup (
   14,
   'Setup'
 );
+INSERT INTO ezcontentclassgroup (
+  created,
+  creator_id,
+  id,
+  modified,
+  modifier_id,
+  name
+) VALUES (
+  1790769600,
+  14,
+  5,
+  1790769600,
+  14,
+  'Configuration'
+);
 
 INSERT INTO ezcontentobject (
   contentclass_id,
