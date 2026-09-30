@@ -352,37 +352,34 @@ class eZURL extends eZPersistentObject
             }
             if ( $asCount )
             {
-                $urls = $db->arrayQuery( "SELECT count( DISTINCT ezurl.id ) AS count
-                                            FROM
-                                                 ezurl,
-                                                 ezurl_object_link,
-                                                 ezcontentobject_attribute,
-                                                 ezcontentobject_version
-                                            WHERE
-                                                 ezurl.id                                     = ezurl_object_link.url_id
-                                             AND ezurl_object_link.contentobject_attribute_id = ezcontentobject_attribute.id
-                                             AND ezurl_object_link.$cObjAttrVersionColumn     = ezcontentobject_attribute.version
-                                             AND ezcontentobject_attribute.contentobject_id   = ezcontentobject_version.contentobject_id
-                                             AND ezcontentobject_attribute.version            = ezcontentobject_version.version
-                                             AND ezcontentobject_version.status               = " . eZContentObjectVersion::STATUS_PUBLISHED . "
+                // A URL is listed when a published version links to it. The test is an EXISTS subquery driven from ezurl: the
+                // same rows as a join of the four tables with DISTINCT, which some databases (SQLite) plan so badly that
+                // counting 4 600 URLs took over two minutes.
+                $urls = $db->arrayQuery( "SELECT count(*) AS count
+                                            FROM ezurl
+                                           WHERE EXISTS ( SELECT 1
+                                                        FROM ezurl_object_link, ezcontentobject_attribute, ezcontentobject_version
+                                                       WHERE ezurl_object_link.url_id                 = ezurl.id
+                                                         AND ezcontentobject_attribute.id             = ezurl_object_link.contentobject_attribute_id
+                                                         AND ezcontentobject_attribute.version        = ezurl_object_link.$cObjAttrVersionColumn
+                                                         AND ezcontentobject_version.contentobject_id = ezcontentobject_attribute.contentobject_id
+                                                         AND ezcontentobject_version.version          = ezcontentobject_attribute.version
+                                                         AND ezcontentobject_version.status           = " . eZContentObjectVersion::STATUS_PUBLISHED . " )
                                                  $conditionQuery" );
                 return $urls[0]['count'];
             }
             else
             {
-                $query = "SELECT DISTINCT ezurl.*
-                            FROM
-                                  ezurl,
-                                  ezurl_object_link,
-                                  ezcontentobject_attribute,
-                                  ezcontentobject_version
-                            WHERE
-                                  ezurl.id                                     = ezurl_object_link.url_id
-                              AND ezurl_object_link.contentobject_attribute_id = ezcontentobject_attribute.id
-                              AND ezurl_object_link.$cObjAttrVersionColumn     = ezcontentobject_attribute.version
-                              AND ezcontentobject_attribute.contentobject_id   = ezcontentobject_version.contentobject_id
-                              AND ezcontentobject_attribute.version            = ezcontentobject_version.version
-                              AND ezcontentobject_version.status               = " . eZContentObjectVersion::STATUS_PUBLISHED . "
+                $query = "SELECT ezurl.*
+                            FROM ezurl
+                           WHERE EXISTS ( SELECT 1
+                                                        FROM ezurl_object_link, ezcontentobject_attribute, ezcontentobject_version
+                                                       WHERE ezurl_object_link.url_id                 = ezurl.id
+                                                         AND ezcontentobject_attribute.id             = ezurl_object_link.contentobject_attribute_id
+                                                         AND ezcontentobject_attribute.version        = ezurl_object_link.$cObjAttrVersionColumn
+                                                         AND ezcontentobject_version.contentobject_id = ezcontentobject_attribute.contentobject_id
+                                                         AND ezcontentobject_version.version          = ezcontentobject_attribute.version
+                                                         AND ezcontentobject_version.status           = " . eZContentObjectVersion::STATUS_PUBLISHED . " )
                              $conditionQuery";
 
                 if ( !$offset && !$limit )
