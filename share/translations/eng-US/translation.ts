@@ -8345,6 +8345,10 @@ Note: The packages will not be uninstalled.</translation>
         <source>Products overview</source>
         <translation>Products overview</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/sortheader</name>
@@ -38393,6 +38397,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Receipt for order #%order_id</source>
         <translation>Receipt for order #%order_id</translation>
     </message>
+    <message>
+        <source>Store dashboard</source>
+        <translation>Store dashboard</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop/classes/ezcurrencydata</name>
@@ -39688,6 +39696,777 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/shop/dashboard</name>
+    <message>
+        <source>Store dashboard</source>
+        <translation>Store dashboard</translation>
+    </message>
+    <message>
+        <source>As of %time. Amounts include VAT. Periods count from midnight.</source>
+        <translation>As of %time. Amounts include VAT. Periods count from midnight.</translation>
+    </message>
+    <message>
+        <source>%count need action now</source>
+        <translation>%count need action now</translation>
+    </message>
+    <message>
+        <source>%count to check</source>
+        <translation>%count to check</translation>
+    </message>
+    <message>
+        <source>%count tips</source>
+        <translation>%count tips</translation>
+    </message>
+    <message>
+        <source>Nothing to do</source>
+        <translation>Nothing to do</translation>
+    </message>
+    <message>
+        <source>At a glance</source>
+        <translation>At a glance</translation>
+    </message>
+    <message>
+        <source>Orders</source>
+        <translation>Orders</translation>
+    </message>
+    <message>
+        <source>Products and baskets</source>
+        <translation>Products and baskets</translation>
+    </message>
+    <message>
+        <source>How your shop works</source>
+        <translation>How your shop works</translation>
+    </message>
+    <message>
+        <source>Next steps</source>
+        <translation>Next steps</translation>
+    </message>
+    <message>
+        <source>Orders today</source>
+        <translation>Orders today</translation>
+    </message>
+    <message>
+        <source>no revenue yet</source>
+        <translation>no revenue yet</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Last 7 days</translation>
+    </message>
+    <message>
+        <source>%count items sold</source>
+        <translation>%count items sold</translation>
+    </message>
+    <message>
+        <source>Last 30 days</source>
+        <translation>Last 30 days</translation>
+    </message>
+    <message>
+        <source>new</source>
+        <translation>new</translation>
+    </message>
+    <message>
+        <source>vs. %count in the 30 days before</source>
+        <translation>vs. %count in the 30 days before</translation>
+    </message>
+    <message>
+        <source>Revenue, 30 days</source>
+        <translation>Revenue, 30 days</translation>
+    </message>
+    <message>
+        <source>%currency vs. the 30 days before</source>
+        <translation>%currency vs. the 30 days before</translation>
+    </message>
+    <message>
+        <source>Average order, 30 days</source>
+        <translation>Average order, 30 days</translation>
+    </message>
+    <message>
+        <source>%items items per order</source>
+        <translation>%items items per order</translation>
+    </message>
+    <message>
+        <source>Customers, 30 days</source>
+        <translation>Customers, 30 days</translation>
+    </message>
+    <message>
+        <source>%new new, %repeat buy again, %all in total</source>
+        <translation>%new new, %repeat buy again, %all in total</translation>
+    </message>
+    <message>
+        <source>Open orders</source>
+        <translation>Open orders</translation>
+    </message>
+    <message>
+        <source>not yet delivered; %late waiting too long</source>
+        <translation>not yet delivered; %late waiting too long</translation>
+    </message>
+    <message>
+        <source>Baskets</source>
+        <translation>Baskets</translation>
+    </message>
+    <message>
+        <source>in progress / abandoned (idle over %hours h)</source>
+        <translation>in progress / abandoned (idle over %hours h)</translation>
+    </message>
+    <message>
+        <source>Products</source>
+        <translation>Products</translation>
+    </message>
+    <message>
+        <source>%count without a price</source>
+        <translation>%count without a price</translation>
+    </message>
+    <message>
+        <source>Revenue per day, last 30 days (%currency)</source>
+        <translation>Revenue per day, last 30 days (%currency)</translation>
+    </message>
+    <message>
+        <source>%count orders</source>
+        <translation>%count orders</translation>
+    </message>
+    <message>
+        <source>Bar height is the revenue of the day, the number above it the orders. The dark bar is today. Highest day: %max.</source>
+        <translation>Bar height is the revenue of the day, the number above it the orders. The dark bar is today. Highest day: %max.</translation>
+    </message>
+    <message>
+        <source>No orders in the last 30 days.</source>
+        <translation>No orders in the last 30 days.</translation>
+    </message>
+    <message>
+        <source>Order status</source>
+        <translation>Order status</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Archived</source>
+        <translation>Archived</translation>
+    </message>
+    <message>
+        <source>Longest in status</source>
+        <translation>Longest in status</translation>
+    </message>
+    <message>
+        <source>inactive</source>
+        <translation>inactive</translation>
+    </message>
+    <message>
+        <source>since %date</source>
+        <translation>since %date</translation>
+    </message>
+    <message>
+        <source>All orders</source>
+        <translation>All orders</translation>
+    </message>
+    <message>
+        <source>first order %date</source>
+        <translation>first order %date</translation>
+    </message>
+    <message>
+        <source>No orders yet.</source>
+        <translation>No orders yet.</translation>
+    </message>
+    <message>
+        <source>Top products, last 30 days</source>
+        <translation>Top products, last 30 days</translation>
+    </message>
+    <message>
+        <source>Product</source>
+        <translation>Product</translation>
+    </message>
+    <message>
+        <source>Sold</source>
+        <translation>Sold</translation>
+    </message>
+    <message>
+        <source>Revenue</source>
+        <translation>Revenue</translation>
+    </message>
+    <message>
+        <source>removed</source>
+        <translation>removed</translation>
+    </message>
+    <message>
+        <source>Product statistics per month and year</source>
+        <translation>Product statistics per month and year</translation>
+    </message>
+    <message>
+        <source>Nothing sold in the last 30 days.</source>
+        <translation>Nothing sold in the last 30 days.</translation>
+    </message>
+    <message>
+        <source>Waiting for you</source>
+        <translation>Waiting for you</translation>
+    </message>
+    <message>
+        <source>Every order that is not delivered and not archived, the one waiting longest first. Highlighted: Pending for more than %pending days, or any other open status for more than %processing days.</source>
+        <translation>Every order that is not delivered and not archived, the one waiting longest first. Highlighted: Pending for more than %pending days, or any other open status for more than %processing days.</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Order</translation>
+    </message>
+    <message>
+        <source>Customer</source>
+        <translation>Customer</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Waiting</translation>
+    </message>
+    <message>
+        <source>Total</source>
+        <translation>Total</translation>
+    </message>
+    <message>
+        <source>%count days</source>
+        <translation>%count days</translation>
+    </message>
+    <message>
+        <source>%count hours</source>
+        <translation>%count hours</translation>
+    </message>
+    <message>
+        <source>too long</source>
+        <translation>too long</translation>
+    </message>
+    <message>
+        <source>%shown of %count open orders shown.</source>
+        <translation>%shown of %count open orders shown.</translation>
+    </message>
+    <message>
+        <source>No open orders: everything is delivered or archived.</source>
+        <translation>No open orders: everything is delivered or archived.</translation>
+    </message>
+    <message>
+        <source>Latest orders</source>
+        <translation>Latest orders</translation>
+    </message>
+    <message>
+        <source>Placed</source>
+        <translation>Placed</translation>
+    </message>
+    <message>
+        <source>archived</source>
+        <translation>archived</translation>
+    </message>
+    <message>
+        <source>Order list</source>
+        <translation>Order list</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Archive</translation>
+    </message>
+    <message>
+        <source>Customers</source>
+        <translation>Customers</translation>
+    </message>
+    <message>
+        <source>Baskets and unfinished checkouts</source>
+        <translation>Baskets and unfinished checkouts</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation>Count</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Items</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Value</translation>
+    </message>
+    <message>
+        <source>In progress (active in the last %hours hours)</source>
+        <translation>In progress (active in the last %hours hours)</translation>
+    </message>
+    <message>
+        <source>Abandoned (idle longer)</source>
+        <translation>Abandoned (idle longer)</translation>
+    </message>
+    <message>
+        <source>Empty baskets</source>
+        <translation>Empty baskets</translation>
+    </message>
+    <message>
+        <source>Checkouts not confirmed, 30 days</source>
+        <translation>Checkouts not confirmed, 30 days</translation>
+    </message>
+    <message>
+        <source>A basket belongs to a visitor session and holds products at list price before VAT rules and discounts. An unconfirmed checkout is an order the customer saw on the confirmation page and left without confirming; it stays temporary, has no order number and is not counted anywhere else on this page.</source>
+        <translation>A basket belongs to a visitor session and holds products at list price before VAT rules and discounts. An unconfirmed checkout is an order the customer saw on the confirmation page and left without confirming; it stays temporary, has no order number and is not counted anywhere else on this page.</translation>
+    </message>
+    <message>
+        <source>Oldest basket: %date.</source>
+        <translation>Oldest basket: %date.</translation>
+    </message>
+    <message>
+        <source>Product class</source>
+        <translation>Product class</translation>
+    </message>
+    <message>
+        <source>Price attribute</source>
+        <translation>Price attribute</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Published</translation>
+    </message>
+    <message>
+        <source>No price</source>
+        <translation>No price</translation>
+    </message>
+    <message>
+        <source>A class is a product class when it has a price attribute (%types). Only its published objects can be added to the basket.</source>
+        <translation>A class is a product class when it has a price attribute (%types). Only its published objects can be added to the basket.</translation>
+    </message>
+    <message>
+        <source>No class has a price attribute, so nothing can be sold yet.</source>
+        <translation>No class has a price attribute, so nothing can be sold yet.</translation>
+    </message>
+    <message>
+        <source>Products without a price</source>
+        <translation>Products without a price</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <source>Products overview with prices</source>
+        <translation>Products overview with prices</translation>
+    </message>
+    <message>
+        <source>What a customer goes through, and where each step is set up on this installation. Settings in italics are INI files, the links open the admin page that changes them.</source>
+        <translation>What a customer goes through, and where each step is set up on this installation. Settings in italics are INI files, the links open the admin page that changes them.</translation>
+    </message>
+    <message>
+        <source>The checkout, step by step</source>
+        <translation>The checkout, step by step</translation>
+    </message>
+    <message>
+        <source>The customer adds a product to the basket</source>
+        <translation>The customer adds a product to the basket</translation>
+    </message>
+    <message>
+        <source>Any published object of a product class has a "Buy" button (shop/add). The price is taken from its price attribute at that moment, with the VAT type the price uses.</source>
+        <translation>Any published object of a product class has a "Buy" button (shop/add). The price is taken from its price attribute at that moment, with the VAT type the price uses.</translation>
+    </message>
+    <message>
+        <source>After adding, the visitor goes to: %target</source>
+        <translation>After adding, the visitor goes to: %target</translation>
+    </message>
+    <message>
+        <source>The basket</source>
+        <translation>The basket</translation>
+    </message>
+    <message>
+        <source>The basket is kept per session at %url. Quantities can be changed there; discounts for the signed-in user are shown.</source>
+        <translation>The basket is kept per session at %url. Quantities can be changed there; discounts for the signed-in user are shown.</translation>
+    </message>
+    <message>
+        <source>sessions</source>
+        <translation>sessions</translation>
+    </message>
+    <message>
+        <source>Customer details</source>
+        <translation>Customer details</translation>
+    </message>
+    <message>
+        <source>Shop account handler "ezuser": the customer fills in name, e-mail and address on shop/userregister (prefilled for signed-in users). Guests can buy.</source>
+        <translation>Shop account handler "ezuser": the customer fills in name, e-mail and address on shop/userregister (prefilled for signed-in users). Guests can buy.</translation>
+    </message>
+    <message>
+        <source>Shop account handler "ezsimple": a short form (name, e-mail, address) on shop/register.</source>
+        <translation>Shop account handler "ezsimple": a short form (name, e-mail, address) on shop/register.</translation>
+    </message>
+    <message>
+        <source>Shop account handler "ezdefault": the customer must be signed in; name and e-mail come from the user account, no address is asked.</source>
+        <translation>Shop account handler "ezdefault": the customer must be signed in; name and e-mail come from the user account, no address is asked.</translation>
+    </message>
+    <message>
+        <source>Shop account handler "%handler" (custom): it decides which details are asked for.</source>
+        <translation>Shop account handler "%handler" (custom): it decides which details are asked for.</translation>
+    </message>
+    <message>
+        <source>Confirmation page</source>
+        <translation>Confirmation page</translation>
+    </message>
+    <message>
+        <source>shop/confirmorder shows the order with VAT and any extra lines. Here the order exists for the first time, still temporary.</source>
+        <translation>shop/confirmorder shows the order with VAT and any extra lines. Here the order exists for the first time, still temporary.</translation>
+    </message>
+    <message>
+        <source>Shipping cost comes from the shipping handler "%handler".</source>
+        <translation>Shipping cost comes from the shipping handler "%handler".</translation>
+    </message>
+    <message>
+        <source>No shipping handler is set, so no shipping cost is added.</source>
+        <translation>No shipping handler is set, so no shipping cost is added.</translation>
+    </message>
+    <message>
+        <source>VAT is chosen per country and product category by the VAT rules.</source>
+        <translation>VAT is chosen per country and product category by the VAT rules.</translation>
+    </message>
+    <message>
+        <source>VAT is the fixed VAT type stored in each product price; VAT rules are not used.</source>
+        <translation>VAT is the fixed VAT type stored in each product price; VAT rules are not used.</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>not set</translation>
+    </message>
+    <message>
+        <source>Payment</source>
+        <translation>Payment</translation>
+    </message>
+    <message>
+        <source>shop/checkout runs a workflow with a payment gateway event before the order is final.</source>
+        <translation>shop/checkout runs a workflow with a payment gateway event before the order is final.</translation>
+    </message>
+    <message>
+        <source>Not set up: nothing runs before shop/checkout, so the order is accepted without payment. Payment is a workflow with a "Payment Gateway" event, connected to the trigger shop / checkout / before.</source>
+        <translation>Not set up: nothing runs before shop/checkout, so the order is accepted without payment. Payment is a workflow with a "Payment Gateway" event, connected to the trigger shop / checkout / before.</translation>
+    </message>
+    <message>
+        <source>Gateways available</source>
+        <translation>Gateways available</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>none</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>set</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>empty</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Triggers</translation>
+    </message>
+    <message>
+        <source>Workflows</source>
+        <translation>Workflows</translation>
+    </message>
+    <message>
+        <source>The order is placed</source>
+        <translation>The order is placed</translation>
+    </message>
+    <message>
+        <source>It gets its order number and the status Pending, the basket is emptied and the confirm order handler runs.</source>
+        <translation>It gets its order number and the status Pending, the basket is emptied and the confirm order handler runs.</translation>
+    </message>
+    <message>
+        <source>It sends the order e-mail to the customer and a copy to the site administrator address.</source>
+        <translation>It sends the order e-mail to the customer and a copy to the site administrator address.</translation>
+    </message>
+    <message>
+        <source>Order e-mails are switched off.</source>
+        <translation>Order e-mails are switched off.</translation>
+    </message>
+    <message>
+        <source>The customer is shown the receipt (shop/%view).</source>
+        <translation>The customer is shown the receipt (shop/%view).</translation>
+    </message>
+    <message>
+        <source>You process the order</source>
+        <translation>You process the order</translation>
+    </message>
+    <message>
+        <source>In the order list you move each order through its statuses (below), and archive it when it is done. Archived orders keep counting in revenue and statistics, they just leave the order list.</source>
+        <translation>In the order list you move each order through its statuses (below), and archive it when it is done. Archived orders keep counting in revenue and statistics, they just leave the order list.</translation>
+    </message>
+    <message>
+        <source>Workflows connected to the shop</source>
+        <translation>Workflows connected to the shop</translation>
+    </message>
+    <message>
+        <source>Trigger</source>
+        <translation>Trigger</translation>
+    </message>
+    <message>
+        <source>Workflow</source>
+        <translation>Workflow</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Events</translation>
+    </message>
+    <message>
+        <source>Order statuses and what they mean</source>
+        <translation>Order statuses and what they mean</translation>
+    </message>
+    <message>
+        <source>Meaning</source>
+        <translation>Meaning</translation>
+    </message>
+    <message>
+        <source>Every new order starts here. Check that it is paid, then move it on.</source>
+        <translation>Every new order starts here. Check that it is paid, then move it on.</translation>
+    </message>
+    <message>
+        <source>You have accepted the order and are packing or shipping it.</source>
+        <translation>You have accepted the order and are packing or shipping it.</translation>
+    </message>
+    <message>
+        <source>Shipped and finished. Delivered orders no longer count as open.</source>
+        <translation>Shipped and finished. Delivered orders no longer count as open.</translation>
+    </message>
+    <message>
+        <source>A status added for this shop (numbers from 1000 on), for example by a payment extension. Counts as open until the order is Delivered.</source>
+        <translation>A status added for this shop (numbers from 1000 on), for example by a payment extension. Counts as open until the order is Delivered.</translation>
+    </message>
+    <message>
+        <source>Inactive: cannot be chosen.</source>
+        <translation>Inactive: cannot be chosen.</translation>
+    </message>
+    <message>
+        <source>Who may change a status, and from which status to which, is set with the policy shop/setstatus in the roles.</source>
+        <translation>Who may change a status, and from which status to which, is set with the policy shop/setstatus in the roles.</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roles and policies</translation>
+    </message>
+    <message>
+        <source>VAT</source>
+        <translation>VAT</translation>
+    </message>
+    <message>
+        <source>Dynamic VAT is on: products whose price uses "%dynamic" get the VAT rule for the customer country and product category.</source>
+        <translation>Dynamic VAT is on: products whose price uses "%dynamic" get the VAT rule for the customer country and product category.</translation>
+    </message>
+    <message>
+        <source>Dynamic VAT is off (shop.ini [VATSettings] Handler is not set): every product price carries its own VAT type, and VAT rules are not applied.</source>
+        <translation>Dynamic VAT is off (shop.ini [VATSettings] Handler is not set): every product price carries its own VAT type, and VAT rules are not applied.</translation>
+    </message>
+    <message>
+        <source>VAT type</source>
+        <translation>VAT type</translation>
+    </message>
+    <message>
+        <source>VAT rules: %count.</source>
+        <translation>VAT rules: %count.</translation>
+    </message>
+    <message>
+        <source>Product categories: %count.</source>
+        <translation>Product categories: %count.</translation>
+    </message>
+    <message>
+        <source>Orders of the last 60 days came from</source>
+        <translation>Orders of the last 60 days came from</translation>
+    </message>
+    <message>
+        <source>no rule</source>
+        <translation>no rule</translation>
+    </message>
+    <message>
+        <source>VAT types</source>
+        <translation>VAT types</translation>
+    </message>
+    <message>
+        <source>VAT rules</source>
+        <translation>VAT rules</translation>
+    </message>
+    <message>
+        <source>Product categories</source>
+        <translation>Product categories</translation>
+    </message>
+    <message>
+        <source>Currencies</source>
+        <translation>Currencies</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Code</translation>
+    </message>
+    <message>
+        <source>Symbol</source>
+        <translation>Symbol</translation>
+    </message>
+    <message>
+        <source>Rate</source>
+        <translation>Rate</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>active</translation>
+    </message>
+    <message>
+        <source>No currencies are defined. That is fine for a shop in one currency with simple prices (ezprice): prices are shown in the currency of the site locale, %code. Currencies are needed for multi-currency prices (ezmultiprice).</source>
+        <translation>No currencies are defined. That is fine for a shop in one currency with simple prices (ezprice): prices are shown in the currency of the site locale, %code. Currencies are needed for multi-currency prices (ezmultiprice).</translation>
+    </message>
+    <message>
+        <source>Site locale currency</source>
+        <translation>Site locale currency</translation>
+    </message>
+    <message>
+        <source>Exchange rates</source>
+        <translation>Exchange rates</translation>
+    </message>
+    <message>
+        <source>base</source>
+        <translation>base</translation>
+    </message>
+    <message>
+        <source>Preferred currency</source>
+        <translation>Preferred currency</translation>
+    </message>
+    <message>
+        <source>Discounts</source>
+        <translation>Discounts</translation>
+    </message>
+    <message>
+        <source>Discount group</source>
+        <translation>Discount group</translation>
+    </message>
+    <message>
+        <source>Rules</source>
+        <translation>Rules</translation>
+    </message>
+    <message>
+        <source>Up to</source>
+        <translation>Up to</translation>
+    </message>
+    <message>
+        <source>No discount groups. A discount group gives users or user groups a percentage off chosen products, classes or sections; the discount appears in the basket once they sign in.</source>
+        <translation>No discount groups. A discount group gives users or user groups a percentage off chosen products, classes or sections; the discount appears in the basket once they sign in.</translation>
+    </message>
+    <message>
+        <source>Worked out from the orders, products and settings above, most urgent first.</source>
+        <translation>Worked out from the orders, products and settings above, most urgent first.</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Action</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Check</translation>
+    </message>
+    <message>
+        <source>Tip</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>Nothing to do: orders are moving and the shop is fully set up.</source>
+        <translation>Nothing to do: orders are moving and the shop is fully set up.</translation>
+    </message>
+    <message>
+        <source>Figures computed in %ms ms.</source>
+        <translation>Figures computed in %ms ms.</translation>
+    </message>
+    <message>
+        <source>Unknown status %id</source>
+        <translation>Unknown status %id</translation>
+    </message>
+    <message>
+        <source>Any country</source>
+        <translation>Any country</translation>
+    </message>
+    <message>
+        <source>%count orders have been waiting in status Pending for more than %days days. Check the payment and move them on to Processing, or contact the customer.</source>
+        <translation>%count orders have been waiting in status Pending for more than %days days. Check the payment and move them on to Processing, or contact the customer.</translation>
+    </message>
+    <message>
+        <source>%count orders have not changed status for more than %days days (Processing or a custom status). Ship them and set them to Delivered.</source>
+        <translation>%count orders have not changed status for more than %days days (Processing or a custom status). Ship them and set them to Delivered.</translation>
+    </message>
+    <message>
+        <source>No payment step: no workflow with a payment gateway event is attached to shop/checkout. Orders are confirmed without being paid. Create a workflow with a "Payment Gateway" event and connect it to shop checkout (before) under Triggers.</source>
+        <translation>No payment step: no workflow with a payment gateway event is attached to shop/checkout. Orders are confirmed without being paid. Create a workflow with a "Payment Gateway" event and connect it to shop checkout (before) under Triggers.</translation>
+    </message>
+    <message>
+        <source>The PayPal extension is active but paypal.ini [PaypalSettings] Business (the PayPal account that receives the money) is empty.</source>
+        <translation>The PayPal extension is active but paypal.ini [PaypalSettings] Business (the PayPal account that receives the money) is empty.</translation>
+    </message>
+    <message>
+        <source>%count products have no price and cannot be sold.</source>
+        <translation>%count products have no price and cannot be sold.</translation>
+    </message>
+    <message>
+        <source>Products overview</source>
+        <translation>Products overview</translation>
+    </message>
+    <message>
+        <source>There are no products: create objects of a class with a price attribute.</source>
+        <translation>There are no products: create objects of a class with a price attribute.</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classes</translation>
+    </message>
+    <message>
+        <source>VAT type "%name" is 0 %, and %count products use it: they are sold without VAT. Check that this is intended.</source>
+        <translation>VAT type "%name" is 0 %, and %count products use it: they are sold without VAT. Check that this is intended.</translation>
+    </message>
+    <message>
+        <source>No VAT rule for %country, where %count recent orders came from.</source>
+        <translation>No VAT rule for %country, where %count recent orders came from.</translation>
+    </message>
+    <message>
+        <source>Dynamic VAT is switched on but there is not a single VAT rule, so products using it get no VAT.</source>
+        <translation>Dynamic VAT is switched on but there is not a single VAT rule, so products using it get no VAT.</translation>
+    </message>
+    <message>
+        <source>VAT rules exist but have no effect: shop.ini [VATSettings] Handler is not set, so each product uses the fixed VAT type of its price.</source>
+        <translation>VAT rules exist but have no effect: shop.ini [VATSettings] Handler is not set, so each product uses the fixed VAT type of its price.</translation>
+    </message>
+    <message>
+        <source>Products use multi-currency prices but no currency is defined.</source>
+        <translation>Products use multi-currency prices but no currency is defined.</translation>
+    </message>
+    <message>
+        <source>The preferred currency %code (shop.ini [CurrencySettings] PreferredCurrency) is not in the currency list.</source>
+        <translation>The preferred currency %code (shop.ini [CurrencySettings] PreferredCurrency) is not in the currency list.</translation>
+    </message>
+    <message>
+        <source>%count baskets have not been touched for more than %hours hours. Customers who are signed in can be reminded; guests cannot be reached.</source>
+        <translation>%count baskets have not been touched for more than %hours hours. Customers who are signed in can be reminded; guests cannot be reached.</translation>
+    </message>
+    <message>
+        <source>%count checkouts reached the confirmation step in the last 30 days and were never confirmed.</source>
+        <translation>%count checkouts reached the confirmation step in the last 30 days and were never confirmed.</translation>
+    </message>
+    <message>
+        <source>Sessions are stored by PHP (site.ini [Session] Handler is "%handler"), but basket cleanup runs as a cronjob that removes every basket without a row in the ezsession table: when the infrequent cronjob runs, all current baskets are deleted.</source>
+        <translation>Sessions are stored by PHP (site.ini [Session] Handler is "%handler"), but basket cleanup runs as a cronjob that removes every basket without a row in the ezsession table: when the infrequent cronjob runs, all current baskets are deleted.</translation>
+    </message>
+    <message>
+        <source>Order confirmation e-mails are off (site.ini [ShopSettings] SendOrderEmail).</source>
+        <translation>Order confirmation e-mails are off (site.ini [ShopSettings] SendOrderEmail).</translation>
+    </message>
+    <message>
+        <source>site.ini [MailSettings] AdminEmail is empty, so the shop owner gets no copy of new orders.</source>
+        <translation>site.ini [MailSettings] AdminEmail is empty, so the shop owner gets no copy of new orders.</translation>
+    </message>
+    <message>
+        <source>No discount rules yet. Discounts are given to users or groups for chosen products or classes.</source>
+        <translation>No discount rules yet. Discounts are given to users or groups for chosen products or classes.</translation>
+    </message>
+    <message>
+        <source>No product categories: VAT rules can only be set per country.</source>
+        <translation>No product categories: VAT rules can only be set per country.</translation>
+    </message>
+    <message>
+        <source>%count products have no product category.</source>
+        <translation>%count products have no product category.</translation>
+    </message>
+    <message>
+        <source>No orders yet. Place a test order on the site to see the whole checkout once.</source>
+        <translation>No orders yet. Place a test order on the site to see the whole checkout once.</translation>
     </message>
 </context>
 </TS>
