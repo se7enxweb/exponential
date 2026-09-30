@@ -43,6 +43,12 @@ $_SERVER['REQUEST_METHOD'] = 'GET';
 $_SERVER['HTTP_HOST'] = $_SERVER['SERVER_NAME'] = 'localhost';
 unset($_SERVER['HTTP_COOKIE'], $_SERVER['HTTP_AUTHORIZATION']);
 
+// The globals that exist before Exponential is loaded: the server's own. What
+// the kernel and the render add after this is removed again at the end (see
+// "Every other global the render left" below), except what the server keeps
+// across requests anyway.
+$__warmupGlobalsBefore = array_flip(array_keys($GLOBALS));
+
 require $root . '/autoload.php';
 
 // eZ would otherwise end the process itself at the close of a request.
@@ -260,8 +266,30 @@ if (class_exists('eZContentObject') && method_exists('eZContentObject', 'clearCa
 // page_header.tpl, and every signed-in admin page answered 500 with
 // array_unique() on an empty ezini() value (2026-09-24). The globals above were
 // cleared; the static was not.
-foreach (array('eZTemplate', 'eZTemplateDesignResource') as $__cls) {
-    if (!class_exists($__cls)) continue;
+//
+// The rest hold the rendered siteaccess's settings, the anonymous visitor's
+// view of things, or data read from the database, each cached in a static the
+// pool puts back before every request (2026-09-30):
+//   eZContentObjectTreeNode  ShowHiddenNodes: false for the public site, so
+//                            admin (true) answered "access denied" for a
+//                            hidden node and counted one sub item fewer --
+//                            and the view cache kept that page for Apache too
+//   eZURLAliasML             the node paths the front page looked up, in the
+//                            public site's languages; a renamed node kept its
+//                            old URL in every worker until a restart
+//   ezjscPacker              the public site's index dir (/site/) and cache
+//                            dirs, used in packed file names and generated code
+//   ezjscServerFunctionsJs   the same for the ezjscore JavaScript helpers
+//   eZImageManager           image.ini of the public site: aliases, handlers
+//   eZContentObjectStateGroup  the anonymous visitor's state limitations
+//   eZContentClass           the class identifier map as the warm-up read it
+//   eZUser                   the anonymous user id of the public site
+// Each is reset to its declared default, as a fresh process has it.
+foreach (array('eZTemplate', 'eZTemplateDesignResource', 'eZContentObjectTreeNode',
+               'eZURLAliasML', 'ezjscPacker', 'ezjscServerFunctionsJs', 'eZImageManager',
+               'eZContentObjectStateGroup', 'eZContentClass',
+               'eZUser') as $__cls) {
+    if (!class_exists($__cls, false)) continue;
     try {
         $__rc = new ReflectionClass($__cls);
         foreach ($__rc->getProperties(ReflectionProperty::IS_STATIC) as $__prop) {
@@ -299,6 +327,36 @@ if (isset($GLOBALS['eZDBGlobalInstance']) and is_object($GLOBALS['eZDBGlobalInst
     try { $GLOBALS['eZDBGlobalInstance']->close(); } catch (\Throwable $e) {}
 }
 $GLOBALS['eZDBGlobalInstance'] = null;
+
+// Every other global the render left. A pool worker removes the globals a
+// request added before its next request, keeping only the server's own and
+// the ones named in Q.webserver.keepGlobals (the datatype and workflow
+// registries). A worker forked for each request never gets there: it starts
+// from the parent as this script leaves it, so every global the render set was
+// every request's -- the custom HTTP header switch worked out for an anonymous
+// visitor (eZHTTPHeaderCustom), the SSL zone switch, the current module view,
+// the module repositories, the navigation parts, the XML schema and image
+// analyzer of the public siteaccess, the class attribute cache as the
+// database had it at start, the warm-up's debug messages. The first request of
+// a pool worker saw them too. Removed here, both kinds of worker start the way
+// a pool worker's second request does. The named list above stays: it is what
+// makes the intent reviewable, and it runs before the connection is closed.
+$__warmupKeep = array_flip(array('GLOBALS', '_GET', '_POST', '_COOKIE', '_SERVER', '_REQUEST',
+    '_FILES', '_ENV', '_SESSION', 'argv', 'argc', '_Q_RAW_INPUT'));
+if (class_exists('Q_Config', false)) {
+    $__warmupExtra = Q_Config::get('Q', 'webserver', 'keepGlobals', array());
+    if (is_string($__warmupExtra)) {
+        $__warmupExtra = preg_split('/\s*,\s*/', $__warmupExtra, -1, PREG_SPLIT_NO_EMPTY);
+    }
+    foreach ((array)$__warmupExtra as $__g) {
+        $__warmupKeep[(string)$__g] = true;
+    }
+}
+foreach (array_keys($GLOBALS) as $__g) {
+    if (!isset($__warmupGlobalsBefore[$__g]) && !isset($__warmupKeep[$__g])) {
+        unset($GLOBALS[$__g]);
+    }
+}
 
 // Clean-up done; now the pool may hear that the warm-up failed.
 if ($__warmupFailure !== null) {
