@@ -7002,7 +7002,7 @@ bbf7725461035c86849d38862a196496  support/ezlupdate-qt4.5/shared/translatortools
 29fbe29891b317a5e4c192d2759960d4  support/ezlupdate-qt4.5/shared/ts.dtd
 170293340b33ba77e4af142122bbe16a  support/ezlupdate-qt4.5/shared/ui.cpp
 9c207840404b174293f1845568e88b5b  support/ezlupdate-qt4.5/shared/xliff.cpp
-573b44897d8b0c5e211c7984ddaa5a98  sw.js
+76c029bc0c8efda2fa56cee3ede7476d  sw.js
 036c73d2f6f1eba67ead2d00390aa531  templates/classcreatelist.ctpl
 100b0d65f9bfd7230c8bcf94db8cb4fa  templates/classlistfrompolicy.ctpl
 a08f3fc912ea0e876de1c21aabc43b5f  tests/bin/ezp_lint_patched.php
