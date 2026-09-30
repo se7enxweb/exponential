@@ -96,7 +96,7 @@ e53af0113356a7991f3cfcb5d99fd22e  bin/php/trashpurge.php
 640b457181f94b435659cda8bd0e6217  bin/php/updateniceurls.php
 2b75d418585d3d583adbb28798db5c87  bin/php/updatesearchindex.php
 45816388328705ce2980f450c29a42b4  bin/php/velocity-router.php
-a5cfa22e54a480e79bf7a0d6721ac8f2  bin/php/velocity-warmup.php
+cfb9a00b9afb6aea53a160824f7354dc  bin/php/velocity-warmup.php
 7c863bb4e540e158420cbe608f18afa0  bin/php/velocity.php
 cfcb4022009fc98a7c5aad2789f5080c  bin/php/verify_aliases.php
 85657a43af64db3c68531cef4f5b9246  bin/php/warm.php
