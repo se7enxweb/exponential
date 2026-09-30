@@ -59,7 +59,30 @@ if ( $creator )
     $hasAdvanced = false;
 
     $lastStepID = $currentStepID;
-    if ( $module->hasActionParameter( 'NextStep' ) )
+    if ( $module->hasActionParameter( 'PreviousStep' ) )
+    {
+        // Back: what was entered on this step is kept when it is valid, as Next would keep it, but an error
+        // never holds the visitor here. The step returned to is not initialized again: its initializer resets
+        // its fields, and they hold what was entered there before.
+        $backErrorList = array();
+        if ( $creator->validateStep( $package, $http, $currentStepID, $steps, $persistentData, $backErrorList ) != $currentStepID )
+        {
+            $creator->commitStep( $package, $http, $steps['map'][$currentStepID], $persistentData, $tpl );
+        }
+        $previousStepID = $steps['map'][$currentStepID]['previous_step'];
+        if ( $previousStepID && isset( $steps['map'][$previousStepID] ) )
+        {
+            $currentStepID = $previousStepID;
+            $initializeStep = false;
+        }
+        else
+        {
+            // Back from the first step is the choice of wizard.
+            $http->removeSessionVariable( 'eZPackageCreatorData' . $creatorID );
+            return $module->redirectToView( 'create' );
+        }
+    }
+    else if ( $module->hasActionParameter( 'NextStep' ) )
     {
         $hasAdvanced = true;
         $currentStepID = $creator->validateStep( $package, $http, $currentStepID, $steps, $persistentData, $errorList );
@@ -79,8 +102,13 @@ if ( $creator )
         $stepTemplateName = $stepTemplate['name'];
         $stepTemplateDir = $stepTemplate['dir'];
 
-        if ( $initializeStep )
+        // A step is initialized the first time it is entered only: its initializer fills in defaults, and on a return
+        // to it (Back, then Next again) it would overwrite what was entered there.
+        if ( $initializeStep && empty( $persistentData['entered_steps'][$currentStepID] ) )
+        {
             $creator->initializeStep( $package, $http, $currentStep, $persistentData, $tpl );
+            $persistentData['entered_steps'][$currentStepID] = true;
+        }
 
         $creator->loadStep( $package, $http, $currentStepID, $persistentData, $tpl, $module );
         if ( $package )

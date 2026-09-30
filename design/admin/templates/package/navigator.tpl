@@ -6,15 +6,21 @@
 {* DESIGN: Control bar START *}
 
 
-{if $current_step.next_step}
-    <div class="block">
-        <input class="button" type="submit" name="NextStepButton" value="{'Next %arrowright'|i18n( 'design/admin/package',, hash( '%arrowright', '&raquo;' ) )}" />
-    </div>
-{else}
-    <div class="block">
-        <input class="button" type="submit" name="NextStepButton" value="{'Continue'|i18n( 'design/admin/package' )}" />
-    </div>
+{* Back posts to the previous step, as Next posts to the following one; what was entered on this step is kept when
+   it is valid. On the first step of a creation wizard it returns to the choice of wizard; the first step of an
+   install has nothing before it, so it has no Back. *}
+<div class="block">
+{if or( $current_step.previous_step, is_set( $creator ) )}
+    {* Enter submits a form with its first button, which must stay Next: this copy comes first and is never seen. *}
+    <input type="submit" name="NextStepButton" value="" tabindex="-1" aria-hidden="true" style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;" />
+    <input class="button" type="submit" name="PreviousStepButton" value="{'%arrowleft Back'|i18n( 'design/admin/package',, hash( '%arrowleft', '&laquo;' ) )}" />
 {/if}
+{if $current_step.next_step}
+    <input class="button" type="submit" name="NextStepButton" value="{'Next %arrowright'|i18n( 'design/admin/package',, hash( '%arrowright', '&raquo;' ) )}" />
+{else}
+    <input class="button" type="submit" name="NextStepButton" value="{'Continue'|i18n( 'design/admin/package' )}" />
+{/if}
+</div>
 
 
 {* DESIGN: Control bar END *}

@@ -228,7 +228,24 @@ if ( $displayStep )
     $hasAdvanced = false;
 
     $lastStepID = $currentStepID;
-    if ( $module->hasActionParameter( 'NextStep' ) )
+    $initializeStep = true;
+    if ( $module->hasActionParameter( 'PreviousStep' ) )
+    {
+        // Back: keeps this step's choices when they are valid, and returns to the previous step without
+        // initializing it again, so its own choices are still there.
+        $backErrorList = array();
+        if ( $installer->validateStep( $package, $http, $currentStepID, $steps, $persistentData, $backErrorList ) != $currentStepID )
+        {
+            $installer->commitStep( $package, $http, $steps['map'][$currentStepID], $persistentData, $tpl );
+        }
+        $previousStepID = $steps['map'][$currentStepID]['previous_step'];
+        if ( $previousStepID && isset( $steps['map'][$previousStepID] ) )
+        {
+            $currentStepID = $previousStepID;
+            $initializeStep = false;
+        }
+    }
+    else if ( $module->hasActionParameter( 'NextStep' ) )
     {
         $hasAdvanced = true;
         $currentStepID = $installer->validateStep( $package, $http, $currentStepID, $steps, $persistentData, $errorList );
@@ -247,7 +264,8 @@ if ( $displayStep )
         $stepTemplateName = $stepTemplate['name'];
         $stepTemplatePath = $stepTemplate['path'];
 
-        $installer->initializeStep( $package, $http, $currentStep, $persistentData, $tpl, $module );
+        if ( $initializeStep )
+            $installer->initializeStep( $package, $http, $currentStep, $persistentData, $tpl, $module );
 
         //if ( $package )
         //    $persistentData['package_name'] = $package->attribute( 'name' );

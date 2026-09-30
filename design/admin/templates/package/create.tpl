@@ -33,6 +33,10 @@
 
 
     <div class="block">
+        {* Back to the package list, which this page is reached from. Enter submits a form with its first button,
+           which must stay Create package: this copy comes first and is never seen. *}
+        <input type="submit" name="CreatePackageButton" value="" tabindex="-1" aria-hidden="true" style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;" />
+        <input class="button" type="submit" formaction={'package/list'|ezurl} formmethod="get" value="{'%arrowleft Back'|i18n( 'design/admin/package',, hash( '%arrowleft', '&laquo;' ) )}" />
         <input class="button" type="submit" name="CreatePackageButton" value="{'Create package'|i18n('design/admin/package')}" />
     </div>
 
