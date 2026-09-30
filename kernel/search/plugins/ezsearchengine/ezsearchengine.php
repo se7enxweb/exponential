@@ -1389,7 +1389,7 @@ class eZSearchEngine implements ezpSearchEngine
                             }
 
                             $sortingFields .= "a$attributeJoinCount.$sortKey";
-                            $attributeFromSQL .= " INNER JOIN ezcontentobject_attribute as a$attributeJoinCount ON (a$attributeJoinCount.contentobject_id = ezcontentobject.id AND a$attributeJoinCount.version = ezcontentobject_name.content_version)";
+                            $attributeFromSQL .= " INNER JOIN ezcontentobject_attribute a$attributeJoinCount ON (a$attributeJoinCount.contentobject_id = ezcontentobject.id AND a$attributeJoinCount.version = ezcontentobject_name.content_version)";
                             $attributeWereSQL .= " AND a$attributeJoinCount.contentclassattribute_id = $sortClassID";
                             $selectSQL .= ", a$attributeJoinCount.$sortKey";
 

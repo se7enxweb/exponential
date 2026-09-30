@@ -4780,7 +4780,7 @@ class eZContentObject extends eZPersistentObject
         // part of drawing this list and there is no reason to run it twice.
         $extraColumnsSQL = '';
         if ( $sortField === 'children' )
-            $extraColumnsSQL = ", ( SELECT COUNT(*) FROM ezcontentobject_tree AS ezchild "
+            $extraColumnsSQL = ", ( SELECT COUNT(*) FROM ezcontentobject_tree ezchild "
                              . "WHERE ezchild.parent_node_id = ezcontentobject_tree.node_id ) AS sort_children_count ";
         else if ( $sortField === 'main' )
             $extraColumnsSQL = ", CASE WHEN ezcontentobject_tree.node_id = ezcontentobject_tree.main_node_id "
