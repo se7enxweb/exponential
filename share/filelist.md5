@@ -6295,7 +6295,7 @@ a8de41a9c29b88b9429763941151512c  lib/ezfile/classes/ezforwardcompressionhandler
 0e439703893b70f4d83abf99229e410b  lib/ezfile/classes/ezgzipcompressionhandler.php
 c2b6f59e88836811b09a873194b38b67  lib/ezfile/classes/ezgzipshellcompressionhandler.php
 cc445291a10d334a666cf1817998e87d  lib/ezfile/classes/ezgzipzlibcompressionhandler.php
-233ff5972d392eefa980c74045a7ed93  lib/ezfile/classes/ezlog.php
+97ddff8cab6d0f03475f22700b3433e5  lib/ezfile/classes/ezlog.php
 f4f13c0464c37104b9fc35cfab079d55  lib/ezfile/classes/ezmd5.php
 03438425557fc64c710afca34dca07f9  lib/ezfile/classes/eznocompressionhandler.php
 9b7ac23573cd5610decd1b4daf6ee84e  lib/ezi18n/classes/ez1337translator.php
@@ -6435,7 +6435,7 @@ fba3d491d837749791fb421dbe3675de  lib/eztemplate/classes/eztemplatewhilefunction
 9df9c53702d94da366c212c23df7976b  lib/ezutils/classes/ezcachehelper.php
 88a2ea8922c433b9e0eb20900e7a3f88  lib/ezutils/classes/ezcli.php
 c80badb0b87b5fb55555d244d6ef797e  lib/ezutils/classes/ezdatetimevalidator.php
-0396aa512968a93dbe538a21baed3b89  lib/ezutils/classes/ezdebug.php
+54dad6b176c85798ed9752f8e6dcc604  lib/ezutils/classes/ezdebug.php
 3d9748ba413c5c152a3f73f7ee585e40  lib/ezutils/classes/ezdebugsetting.php
 1b7ffeaf4d8019335862b54c5ec17664  lib/ezutils/classes/ezexecution.php
 54c1a53c483696cc41a502986862d6eb  lib/ezutils/classes/ezexpiryhandler.php
