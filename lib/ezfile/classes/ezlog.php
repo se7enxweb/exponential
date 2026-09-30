@@ -50,7 +50,7 @@ class eZLog
             $time = date( "M d Y H:i:s", strtotime( "now" ) );
 
             $logMessage = "[ " . $time . " ]";
-            $logMessage .= "[ " . ( isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : '' ) . " ]";
+            $logMessage .= "[ " . self::siteAccessName() . " ]";
             $logMessage .= '[ ' . self::requestContext() . ' ]';
             $logMessage .= " $message\n";
             @fwrite( $logFile, $logMessage );
@@ -66,6 +66,20 @@ class eZLog
         {
             eZDebug::writeError( 'Couldn\'t create the log file "' . $fileName . '"', __METHOD__ );
         }
+    }
+
+    /**
+     * The siteaccess the request runs in, for a log line: the name the request was matched to
+     * (site, admin, bold_ger ...), or '-' before one is chosen (early errors, command line scripts that
+     * never load one). Reads only the global the siteaccess code sets, so it is safe on any error path.
+     *
+     * @return string
+     */
+    public static function siteAccessName()
+    {
+        $name = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? (string)$GLOBALS['eZCurrentAccess']['name'] : '';
+        $name = preg_replace( '/[\x00-\x1F\x7F]+/', '', $name );
+        return $name !== '' ? $name : '-';
     }
 
     /**
