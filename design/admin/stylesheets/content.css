@@ -329,12 +329,15 @@ table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }
 
 .package-view-full .pvf-scroll { max-width: 100%; overflow-x: auto; }
 .package-view-full table.pvf-files { border-collapse: collapse; }
-.package-view-full table.pvf-files code,
-.package-view-full .pvf-path { overflow-wrap: anywhere; word-break: break-all; }
+.package-view-full table.pvf-files .pvf-name { overflow-wrap: anywhere; }
+.package-view-full .pvf-path { overflow-wrap: anywhere; }
 .package-view-full table.pvf-files .pvf-col-size { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .package-view-full table.pvf-files .pvf-col-type,
 .package-view-full table.pvf-files .pvf-col-actions { white-space: nowrap; }
 .package-view-full table.pvf-files .pvf-col-actions { text-align: right; }
+.package-view-full table.pvf-files .pvf-col-type,
+.package-view-full table.pvf-files .pvf-col-size,
+.package-view-full table.pvf-files .pvf-col-actions { width: 1%; }
 .package-view-full table.list tr.pvf-current,
 .package-view-full table.list tr.pvf-current:hover { background: #ffe9bd; box-shadow: inset 3px 0 0 #e27f15; }
 .package-view-full td.pvf-empty { text-align: center; color: #6a6a72; padding: 1.5em; }
@@ -367,12 +370,26 @@ table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }
 .package-view-full .pvf-image img { max-width: 100%; max-height: 32em; height: auto; }
 .package-view-full .pvf-note { color: #6a6a72; margin: 0.5em 0 0; }
 
-.package-view-full .pvf-pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5em; margin: 0.75em 0 0.25em; }
-.package-view-full .pvf-pager-status { font-weight: bold; }
-.package-view-full .pvf-pager-links { display: flex; flex-wrap: wrap; gap: 0.35em; }
 .package-view-full table.pvf-attributes td,
 .package-view-full table.pvf-object td,
 .package-view-full table.pvf-object th { vertical-align: top; }
+
+/* The file list's path: the directory small and grey on a line of its own, above the file name,
+   which is only broken inside when it does not fit on one line. */
+.package-view-full table.pvf-files td { vertical-align: middle; }
+.package-view-full table.pvf-files code { font-size: 0.95em; }
+.package-view-full .pvf-dir { display: block; color: #6a6a72; font-size: 0.85em; line-height: 1.3; overflow-wrap: anywhere; }
+.package-view-full .pvf-name { color: #222; }
+.package-view-full a.pvf-link-button.pvf-active { background: #567975; border-color: #567975; color: #f5f3dd; }
+.package-view-full a.pvf-link-button.pvf-active:hover { background: #425c59; color: #ffe9bd; }
+
+/* The pager, above the list (compact) and below it. */
+.package-view-full .pvf-pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4em 1em; }
+.package-view-full .pvf-pager-top { margin: 0 0 0.4em; }
+.package-view-full .pvf-pager-bottom { margin: 0.6em 0 0.25em; padding-top: 0.6em; border-top: 1px solid #e0e0e0; }
+.package-view-full .pvf-pager-status { display: flex; flex-wrap: wrap; gap: 0.2em 0.75em; align-items: baseline; }
+.package-view-full .pvf-pager-range { color: #6a6a72; }
+.package-view-full .pvf-pager-links { display: flex; flex-wrap: wrap; gap: 0.35em; }
 
 /* A phone: the file list's rows become two lines, the path on its own full width and the type,
    size and actions below it, so the path is never squeezed into a sliver. */
@@ -389,10 +406,29 @@ table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }
     .package-view-full table.pvf-files,
     .package-view-full table.pvf-files tbody { display: block; }
     .package-view-full table.pvf-files tr { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35em 0.75em; padding: 0.5em 0.4em; border-bottom: 1px solid #e0e0e0; }
-    .package-view-full table.pvf-files td { display: block; padding: 0; }
+    .package-view-full table.pvf-files td { display: block; padding: 0; width: auto; }
     .package-view-full table.pvf-files td.pvf-col-path { flex: 1 1 100%; }
     .package-view-full table.pvf-files td.pvf-col-actions { margin-left: auto; }
     .package-view-full table.pvf-files td.pvf-empty { flex: 1 1 100%; }
+    .package-view-full .pvf-pager-top .pvf-pager-label { display: none; }
     .package-view-full .pvf-viewer-body { padding: 0.5em; }
-    .package-view-full table.pvf-object th { width: auto; }
+    .package-view-full table.pvf-files td.pvf-col-type,
+    .package-view-full table.pvf-files td.pvf-col-size,
+    .package-view-full table.pvf-files td.pvf-col-actions { width: auto; }
+    /* The object summary and its attributes: each row a label line over its value. */
+    .package-view-full table.pvf-object,
+    .package-view-full table.pvf-object tbody,
+    .package-view-full table.pvf-object tr,
+    .package-view-full table.pvf-object th,
+    .package-view-full table.pvf-object td,
+    .package-view-full table.pvf-attributes,
+    .package-view-full table.pvf-attributes tbody,
+    .package-view-full table.pvf-attributes tr { display: block; width: auto; }
+    .package-view-full table.pvf-object th { padding-bottom: 0.1em; }
+    .package-view-full table.pvf-object td { padding-top: 0; overflow-wrap: anywhere; }
+    .package-view-full table.pvf-attributes thead { display: none; }
+    .package-view-full table.pvf-attributes tr { display: flex; flex-wrap: wrap; gap: 0 0.75em; padding: 0.35em 0.4em; }
+    .package-view-full table.pvf-attributes td { display: block; padding: 0; }
+    .package-view-full table.pvf-attributes td:nth-child(2) { color: #6a6a72; }
+    .package-view-full table.pvf-attributes td.pvf-value { flex: 1 1 100%; min-width: 0; }
 }

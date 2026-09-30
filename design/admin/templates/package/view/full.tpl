@@ -10,7 +10,14 @@
                          'simplefile', 'File'|i18n('design/admin/package'),
                          'document', 'Document'|i18n('design/admin/package'),
                          'package', 'Package definition'|i18n('design/admin/package'),
-                         'other', 'Other'|i18n('design/admin/package') )}
+                         'other', 'Other'|i18n('design/admin/package') )
+     $kindShortLabels = hash( 'class', 'Class'|i18n('design/admin/package'),
+                              'object', 'Object'|i18n('design/admin/package'),
+                              'image', 'Image'|i18n('design/admin/package'),
+                              'simplefile', 'File'|i18n('design/admin/package'),
+                              'document', 'Document'|i18n('design/admin/package'),
+                              'package', 'Package'|i18n('design/admin/package'),
+                              'other', 'Other'|i18n('design/admin/package') )}
 
 <div class="context-block package-view-full">
 
@@ -220,6 +227,8 @@
         {undef $viewed}
         {/if}
 
+        {include uri='design:package/view/contents_pager.tpl' browser=$ContentsBrowser position='top'}
+
         <div class="pvf-scroll">
         <table class="list pvf-files">
             <thead><tr>
@@ -231,14 +240,20 @@
             <tbody>
             {foreach $ContentsBrowser.files as $file sequence array( 'bglight', 'bgdark' ) as $rowStyle}
             <tr class="{$rowStyle}{if $file.index|eq( $viewedIndex )} pvf-current{/if}">
-                <td class="pvf-col-path"><code>{$file.path|wash}</code></td>
-                <td class="pvf-col-type"><span class="pvf-kind pvf-kind-{$file.kind|wash}">{cond( is_set( $kindLabels[$file.kind] ), $kindLabels[$file.kind], $file.kind )|wash}</span></td>
+                {def $pathParts = $file.path|explode( '/' )}
+                <td class="pvf-col-path"><code>{if $pathParts|count|gt(1)}<span class="pvf-dir">{$pathParts|extract_left( $pathParts|count|dec )|implode( '/' )|wash}/</span>{/if}<span class="pvf-name">{$pathParts|extract_right( 1 )|implode( '' )|wash}</span></code></td>
+                {undef $pathParts}
+                <td class="pvf-col-type"><span class="pvf-kind pvf-kind-{$file.kind|wash}" title="{cond( is_set( $kindLabels[$file.kind] ), $kindLabels[$file.kind], $file.kind )|wash}">{cond( is_set( $kindShortLabels[$file.kind] ), $kindShortLabels[$file.kind], $file.kind )|wash}</span></td>
                 <td class="pvf-col-size" title="{$file.size|wash} B">{$file.size|si( byte )}</td>
                 <td class="pvf-col-actions">
                     {if $file.kind|ne('other')}
+                    {if $file.index|eq( $viewedIndex )}
+                    <a class="pvf-link-button pvf-active" href={$ContentsBrowser.url_close|ezurl} aria-current="true">{'Close'|i18n('design/admin/package')}</a>
+                    {else}
                     <a class="pvf-link-button" href={$file.url_view|ezurl}>{'View'|i18n('design/admin/package')}</a>
                     {/if}
-                    <a class="pvf-link-button" href={concat( 'package/viewfile/', $package.name, '/', $file.index )|ezurl} target="_blank" rel="noopener">{'Download'|i18n('design/admin/package')}</a>
+                    {/if}
+                    <a class="pvf-link-button" href={concat( 'package/viewfile/', $package.name, '/', $file.index )|ezurl} target="_blank" rel="noopener" title="{'Download'|i18n('design/admin/package')}">{'Download'|i18n('design/admin/package')}</a>
                 </td>
             </tr>
             {/foreach}
@@ -249,25 +264,7 @@
         </table>
         </div>
 
-        <div class="pvf-pager">
-            <span class="pvf-pager-status">{'Page %page of %pages'|i18n('design/admin/package',,hash('%page', $ContentsBrowser.page, '%pages', $ContentsBrowser.pages))}</span>
-            <span class="pvf-pager-links">
-            {if $ContentsBrowser.page|gt(1)}
-                <a class="pvf-link-button" href={$ContentsBrowser.url_first|ezurl}>{'First'|i18n('design/admin/package')}</a>
-                <a class="pvf-link-button" href={$ContentsBrowser.url_prev|ezurl}>{'Previous'|i18n('design/admin/package')}</a>
-            {else}
-                <span class="pvf-link-button pvf-disabled">{'First'|i18n('design/admin/package')}</span>
-                <span class="pvf-link-button pvf-disabled">{'Previous'|i18n('design/admin/package')}</span>
-            {/if}
-            {if $ContentsBrowser.page|lt( $ContentsBrowser.pages )}
-                <a class="pvf-link-button" href={$ContentsBrowser.url_next|ezurl}>{'Next'|i18n('design/admin/package')}</a>
-                <a class="pvf-link-button" href={$ContentsBrowser.url_last|ezurl}>{'Last'|i18n('design/admin/package')}</a>
-            {else}
-                <span class="pvf-link-button pvf-disabled">{'Next'|i18n('design/admin/package')}</span>
-                <span class="pvf-link-button pvf-disabled">{'Last'|i18n('design/admin/package')}</span>
-            {/if}
-            </span>
-        </div>
+        {include uri='design:package/view/contents_pager.tpl' browser=$ContentsBrowser position='bottom'}
     </div>
     {undef $browseBaseURL $viewedIndex}
     {/if}
@@ -280,6 +277,6 @@
 </div>
 
 </div>
-{undef $kindLabels}
+{undef $kindLabels $kindShortLabels}
 
 {/let}

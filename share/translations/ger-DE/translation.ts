@@ -9163,6 +9163,18 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
         <source>View</source>
         <translation>Anzeigen</translation>
     </message>
+    <message>
+        <source>Object</source>
+        <translation>Objekt</translation>
+    </message>
+    <message>
+        <source>Package</source>
+        <translation>Paket</translation>
+    </message>
+    <message>
+        <source>Files %from–%to of %count</source>
+        <translation>Dateien %from–%to von %count</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>

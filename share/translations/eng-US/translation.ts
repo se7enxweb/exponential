@@ -6842,6 +6842,18 @@ You can also remove the package without uninstalling it from the package list.</
         <source>View</source>
         <translation>View</translation>
     </message>
+    <message>
+        <source>Object</source>
+        <translation>Object</translation>
+    </message>
+    <message>
+        <source>Package</source>
+        <translation>Package</translation>
+    </message>
+    <message>
+        <source>Files %from–%to of %count</source>
+        <translation>Files %from–%to of %count</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
