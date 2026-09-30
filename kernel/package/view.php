@@ -48,28 +48,86 @@ $tpl->setVariable( 'repository_id', $repositoryID );
 $ContentsBrowser = false;
 if ( $viewMode === 'full' )
 {
-    // Pagination (First/Previous/Next/Last) and "View" are plain GET links, each carrying the
-    // exact BrowseOffset (or BrowseView) it targets - built once below, in $ContentsBrowser's own
-    // query_* fields, from this same $page result, rather than reached by a submit button this
-    // script would then have to turn back into an offset. The filter form (BrowseApply) is the one
-    // real POST/GET distinction here: changing type/search/limit always goes back to offset 0, an
-    // old offset meaning nothing against a newly filtered list.
+    // The browser's state is in view parameters, like every other paged kernel view:
+    //   package/view/full/<name>/(type)/object/(search)/abc/(limit)/100/(offset)/4300/(file)/4342
+    // Each is left out at its default (no type, no search, 50 per page, offset 0, no file open).
+    // The kernel URL-decodes the whole path before splitting it, so the search, the one free text,
+    // is written encoded twice (see $browseURL) and decoded once more here; the rest are keywords
+    // and numbers. The filter form submits the old GET fields (BrowseType, BrowseSearch,
+    // BrowseLimit, BrowseApply), and links made before may carry BrowseOffset/BrowseView: both are
+    // answered with one redirect to the same state as view parameters, so the address bar only
+    // ever shows the clean form and old links keep working.
     $http = eZHTTPTool::instance();
-    $offsetParam = $http->hasVariable( 'BrowseOffset' ) ? $http->variable( 'BrowseOffset' ) : 0;
-    $limitParam = $http->hasVariable( 'BrowseLimit' ) ? $http->variable( 'BrowseLimit' ) : 50;
-    $typeFilter = $http->hasVariable( 'BrowseType' ) ? (string)$http->variable( 'BrowseType' ) : '';
-    $search = $http->hasVariable( 'BrowseSearch' ) ? (string)$http->variable( 'BrowseSearch' ) : '';
-    if ( $http->hasVariable( 'BrowseApply' ) )
-        $offsetParam = 0;
+    $userParameters = isset( $Params['UserParameters'] ) && is_array( $Params['UserParameters'] ) ? $Params['UserParameters'] : array();
+    $limitChoices = array( '25', '50', '100', '250', '1000', 'all' );
+    $typeChoices = array( 'class', 'object', 'image', 'simplefile', 'document', 'package', 'other' );
+    $normalise = function ( $type, $search, $limit, $offset, $file ) use ( $limitChoices, $typeChoices )
+    {
+        return array(
+            'type' => in_array( (string)$type, $typeChoices, true ) ? (string)$type : '',
+            'search' => trim( (string)$search ),
+            'limit' => in_array( (string)$limit, $limitChoices, true ) ? (string)$limit : '50',
+            'offset' => (string)$offset === 'last' ? 'last' : ( ctype_digit( (string)$offset ) ? (int)$offset : 0 ),
+            'file' => ctype_digit( (string)$file ) ? (int)$file : -1,
+        );
+    };
+    // The path suffix for a state; only what differs from the defaults is written.
+    $browseURL = function ( array $state ) use ( $packageName )
+    {
+        $url = '/package/view/full/' . $packageName;
+        if ( $state['type'] !== '' )
+            $url .= '/(type)/' . $state['type'];
+        if ( $state['search'] !== '' )
+            $url .= '/(search)/' . rawurlencode( rawurlencode( $state['search'] ) );
+        if ( $state['limit'] !== '50' )
+            $url .= '/(limit)/' . $state['limit'];
+        if ( $state['offset'] === 'last' || $state['offset'] > 0 )
+            $url .= '/(offset)/' . $state['offset'];
+        if ( $state['file'] >= 0 )
+            $url .= '/(file)/' . $state['file'];
+        return $url;
+    };
+
+    $legacyFields = array( 'BrowseApply', 'BrowseType', 'BrowseSearch', 'BrowseLimit', 'BrowseOffset', 'BrowseView' );
+    $hasLegacy = false;
+    foreach ( $legacyFields as $field )
+        $hasLegacy = $hasLegacy || $http->hasGetVariable( $field );
+    if ( $hasLegacy )
+    {
+        $get = function ( $name, $fallback ) use ( $http ) { return $http->hasGetVariable( $name ) ? $http->getVariable( $name ) : $fallback; };
+        // A changed filter always starts on the first page: an old offset means nothing against a
+        // newly filtered list
+        $applied = $http->hasGetVariable( 'BrowseApply' );
+        $state = $normalise( $get( 'BrowseType', '' ), $get( 'BrowseSearch', '' ), $get( 'BrowseLimit', '50' ),
+                             $applied ? 0 : $get( 'BrowseOffset', 0 ), $applied ? -1 : $get( 'BrowseView', -1 ) );
+        // Not $module->redirectTo(): the kernel adds the request's query string to every module
+        // redirect, and these very fields would then send the next request back here, for ever.
+        // The path is complete and encoded already (the search twice, on purpose), so it goes out as
+        // it is, with only the siteaccess prefix added.
+        $target = $browseURL( $state );
+        eZURI::transformURI( $target, false, 'full' );
+        eZHTTPTool::redirect( $target, array(), '302 Found', false );
+        eZExecution::cleanExit();
+    }
+
+    $state = $normalise(
+        isset( $userParameters['type'] ) ? $userParameters['type'] : '',
+        isset( $userParameters['search'] ) ? rawurldecode( $userParameters['search'] ) : '',
+        isset( $userParameters['limit'] ) ? $userParameters['limit'] : '50',
+        isset( $userParameters['offset'] ) ? $userParameters['offset'] : 0,
+        isset( $userParameters['file'] ) ? $userParameters['file'] : -1
+    );
+    $typeFilter = $state['type'];
+    $search = $state['search'];
 
     $page = eZPackageFileBrowser::filteredPage( $package, array(
-        'offset' => $offsetParam, 'limit' => $limitParam, 'type' => $typeFilter, 'search' => $search,
+        'offset' => $state['offset'], 'limit' => $state['limit'], 'type' => $typeFilter, 'search' => $search,
     ) );
 
     $viewedFile = null;
     $viewedContent = null;
     $viewedObject = null;
-    $viewIndex = $http->hasVariable( 'BrowseView' ) && ctype_digit( (string)$http->variable( 'BrowseView' ) ) ? (int)$http->variable( 'BrowseView' ) : -1;
+    $viewIndex = $state['file'];
     if ( $viewIndex >= 0 )
     {
         $allFiles = eZPackageFileBrowser::allFiles( $package );
@@ -93,13 +151,12 @@ if ( $viewMode === 'full' )
         }
     }
 
-    // Every link the template needs is built here, in full (base query string plus one changed
-    // parameter), rather than asking the template to do arithmetic or query-string assembly it has
-    // no operators for - eZ TPL's |ezurl only ever resolves a plain path, so each one below is that
-    // path (added by the template, the one place a package's own name is escaped for a URL)
-    // concatenated with a plain "?..." this script already built.
-    $baseQuery = 'BrowseType=' . rawurlencode( $typeFilter ) . '&BrowseSearch=' . rawurlencode( $search ) . '&BrowseLimit=' . rawurlencode( (string)$page['limit'] );
+    // Every link the template needs is built here in full, as the view's path with its view
+    // parameters (the template passes each through |ezurl), rather than asking the template to do
+    // arithmetic it has no operators for. The current page's own offset is the one from $page
+    // (already clamped, 'last' resolved), so Close and View stay on the page being looked at.
     $limitInt = $page['limit'] === 'all' ? max( 1, $page['total_filtered'] ) : max( 1, (int)$page['limit'] );
+    $here = array( 'type' => $typeFilter, 'search' => $search, 'limit' => (string)$state['limit'], 'offset' => (int)$page['offset'], 'file' => -1 );
 
     $ContentsBrowser = array(
         'files' => $page['files'],
@@ -114,14 +171,14 @@ if ( $viewMode === 'full' )
         'viewed_file' => $viewedFile,
         'viewed_content' => $viewedContent,
         'viewed_object' => $viewedObject,
-        'query_first' => $baseQuery . '&BrowseOffset=0',
-        'query_prev' => $baseQuery . '&BrowseOffset=' . max( 0, $page['offset'] - $limitInt ),
-        'query_next' => $baseQuery . '&BrowseOffset=' . ( $page['offset'] + $limitInt ),
-        'query_last' => $baseQuery . '&BrowseOffset=last',
-        'query_close' => $baseQuery . '&BrowseOffset=' . $page['offset'],
+        'url_first' => $browseURL( array( 'offset' => 0 ) + $here ),
+        'url_prev' => $browseURL( array( 'offset' => max( 0, $page['offset'] - $limitInt ) ) + $here ),
+        'url_next' => $browseURL( array( 'offset' => $page['offset'] + $limitInt ) + $here ),
+        'url_last' => $browseURL( array( 'offset' => 'last' ) + $here ),
+        'url_close' => $browseURL( $here ),
     );
     foreach ( $ContentsBrowser['files'] as &$fileRow )
-        $fileRow['query_view'] = $baseQuery . '&BrowseOffset=' . $page['offset'] . '&BrowseView=' . $fileRow['index'];
+        $fileRow['url_view'] = $browseURL( array( 'file' => (int)$fileRow['index'] ) + $here );
     unset( $fileRow );
 }
 $tpl->setVariable( 'ContentsBrowser', $ContentsBrowser );

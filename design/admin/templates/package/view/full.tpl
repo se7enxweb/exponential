@@ -148,9 +148,10 @@
     {* The package contents browser: every file the package carries, paginated and filtered
        (kernel/package/view.php, eZPackageFileBrowser - no dependency on any extension). Its own
        form for the type/search/per-page filter (independent of the export/install one above);
-       pagination and "View" are plain links, each carrying the exact query string
-       kernel/package/view.php already built for it (query_first/query_prev/... , and query_view
-       per file) - a GET read of the same page, nothing this view writes. *}
+       pagination and "View" are plain links to the same view with its state in view parameters,
+       (type)/(search)/(limit)/(offset)/(file), each path built by kernel/package/view.php
+       (url_first/url_prev/... , and url_view per file). The form still submits GET fields; the
+       view answers them with one redirect to the view-parameter address. Nothing here writes. *}
     {def $browseBaseURL = concat( 'package/view/full/', $package.name )|ezurl}
     <div class="contents-browser">
         <h2>{'Package contents'|i18n('design/admin/package')}</h2>
@@ -218,7 +219,7 @@
             {else}
             <pre>{$ContentsBrowser.viewed_content|wash}</pre>
             {/if}
-            <p><a class="button" href="?{$ContentsBrowser.query_close|wash}">{'Close'|i18n('design/admin/package')}</a></p>
+            <p><a class="button" href={$ContentsBrowser.url_close|ezurl}>{'Close'|i18n('design/admin/package')}</a></p>
         </div>
         {/if}
 
@@ -232,7 +233,7 @@
                 <td>{$file.size} B</td>
                 <td>
                     {if $file.kind|ne('other')}
-                    <a class="button" href="?{$file.query_view|wash}">{'View'|i18n('design/admin/package')}</a>
+                    <a class="button" href={$file.url_view|ezurl}>{'View'|i18n('design/admin/package')}</a>
                     {/if}
                     <a href={concat( 'package/viewfile/', $package.name, '/', $file.index )|ezurl} target="_blank" rel="noopener">{'Download'|i18n('design/admin/package')}</a>
                 </td>
@@ -247,12 +248,12 @@
         <p>
             {'Page %page of %pages'|i18n('design/admin/package',,hash('%page', $ContentsBrowser.page, '%pages', $ContentsBrowser.pages))}
             {if $ContentsBrowser.page|gt(1)}
-            <a class="button" href="?{$ContentsBrowser.query_first|wash}">{'First'|i18n('design/admin/package')}</a>
-            <a class="button" href="?{$ContentsBrowser.query_prev|wash}">{'Previous'|i18n('design/admin/package')}</a>
+            <a class="button" href={$ContentsBrowser.url_first|ezurl}>{'First'|i18n('design/admin/package')}</a>
+            <a class="button" href={$ContentsBrowser.url_prev|ezurl}>{'Previous'|i18n('design/admin/package')}</a>
             {/if}
             {if $ContentsBrowser.page|lt( $ContentsBrowser.pages )}
-            <a class="button" href="?{$ContentsBrowser.query_next|wash}">{'Next'|i18n('design/admin/package')}</a>
-            <a class="button" href="?{$ContentsBrowser.query_last|wash}">{'Last'|i18n('design/admin/package')}</a>
+            <a class="button" href={$ContentsBrowser.url_next|ezurl}>{'Next'|i18n('design/admin/package')}</a>
+            <a class="button" href={$ContentsBrowser.url_last|ezurl}>{'Last'|i18n('design/admin/package')}</a>
             {/if}
         </p>
     </div>
