@@ -190,6 +190,20 @@ INSERT INTO ezcobj_state_link (
   56,
   1
 );
+INSERT INTO ezcobj_state_link (
+  contentobject_id,
+  contentobject_state_id
+) VALUES (
+  2,
+  1
+);
+INSERT INTO ezcobj_state_link (
+  contentobject_id,
+  contentobject_state_id
+) VALUES (
+  3,
+  1
+);
 
 INSERT INTO ezcontent_language (
   disabled,
@@ -4237,6 +4251,60 @@ INSERT INTO ezcontentobject (
   5,
   1
 );
+INSERT INTO ezcontentobject (
+  contentclass_id,
+  current_version,
+  id,
+  initial_language_id,
+  language_mask,
+  modified,
+  name,
+  owner_id,
+  published,
+  remote_id,
+  section_id,
+  status
+) VALUES (
+  1,
+  1,
+  2,
+  2,
+  3,
+  1790769600,
+  'Configuration',
+  14,
+  1790769600,
+  '7a4af67f9a03910f1a42760d642277ad',
+  4,
+  1
+);
+INSERT INTO ezcontentobject (
+  contentclass_id,
+  current_version,
+  id,
+  initial_language_id,
+  language_mask,
+  modified,
+  name,
+  owner_id,
+  published,
+  remote_id,
+  section_id,
+  status
+) VALUES (
+  1,
+  1,
+  3,
+  2,
+  3,
+  1790769600,
+  'Archives',
+  14,
+  1790769600,
+  'dd9e9c9adcc21ad2b151f8910e8feb5d',
+  1,
+  1
+);
 
 INSERT INTO ezcontentobject_attribute (
   attribute_original_id,
@@ -6413,6 +6481,296 @@ INSERT INTO ezcontentobject_attribute (
   '',
   1
 );
+INSERT INTO ezcontentobject_attribute (
+  attribute_original_id,
+  contentclassattribute_id,
+  contentobject_id,
+  data_float,
+  data_int,
+  data_text,
+  data_type_string,
+  id,
+  language_code,
+  language_id,
+  sort_key_int,
+  sort_key_string,
+  version
+) VALUES (
+  0,
+  4,
+  2,
+  0,
+  0,
+  'Configuration',
+  'ezstring',
+  3,
+  'eng-GB',
+  3,
+  0,
+  'configuration',
+  1
+);
+INSERT INTO ezcontentobject_attribute (
+  attribute_original_id,
+  contentclassattribute_id,
+  contentobject_id,
+  data_float,
+  data_int,
+  data_text,
+  data_type_string,
+  id,
+  language_code,
+  language_id,
+  sort_key_int,
+  sort_key_string,
+  version
+) VALUES (
+  0,
+  155,
+  2,
+  0,
+  0,
+  '',
+  'ezstring',
+  4,
+  'eng-GB',
+  3,
+  0,
+  '',
+  1
+);
+INSERT INTO ezcontentobject_attribute (
+  attribute_original_id,
+  contentclassattribute_id,
+  contentobject_id,
+  data_float,
+  data_int,
+  data_text,
+  data_type_string,
+  id,
+  language_code,
+  language_id,
+  sort_key_int,
+  sort_key_string,
+  version
+) VALUES (
+  0,
+  119,
+  2,
+  0,
+  1045487555,
+  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  'ezxmltext',
+  5,
+  'eng-GB',
+  3,
+  0,
+  '',
+  1
+);
+INSERT INTO ezcontentobject_attribute (
+  attribute_original_id,
+  contentclassattribute_id,
+  contentobject_id,
+  data_float,
+  data_int,
+  data_text,
+  data_type_string,
+  id,
+  language_code,
+  language_id,
+  sort_key_int,
+  sort_key_string,
+  version
+) VALUES (
+  0,
+  156,
+  2,
+  0,
+  1045487555,
+  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  'ezxmltext',
+  6,
+  'eng-GB',
+  3,
+  0,
+  '',
+  1
+);
+INSERT INTO ezcontentobject_attribute (
+  attribute_original_id,
+  contentclassattribute_id,
+  contentobject_id,
+  data_float,
+  data_int,
+  data_text,
+  data_type_string,
+  id,
+  language_code,
+  language_id,
+  sort_key_int,
+  sort_key_string,
+  version
+) VALUES (
+  0,
+  158,
+  2,
+  0,
+  1,
+  '',
+  'ezboolean',
+  9,
+  'eng-GB',
+  3,
+  1,
+  '',
+  1
+);
+INSERT INTO ezcontentobject_attribute (
+  attribute_original_id,
+  contentclassattribute_id,
+  contentobject_id,
+  data_float,
+  data_int,
+  data_text,
+  data_type_string,
+  id,
+  language_code,
+  language_id,
+  sort_key_int,
+  sort_key_string,
+  version
+) VALUES (
+  0,
+  4,
+  3,
+  0,
+  0,
+  'Archives',
+  'ezstring',
+  10,
+  'eng-GB',
+  3,
+  0,
+  'archives',
+  1
+);
+INSERT INTO ezcontentobject_attribute (
+  attribute_original_id,
+  contentclassattribute_id,
+  contentobject_id,
+  data_float,
+  data_int,
+  data_text,
+  data_type_string,
+  id,
+  language_code,
+  language_id,
+  sort_key_int,
+  sort_key_string,
+  version
+) VALUES (
+  0,
+  155,
+  3,
+  0,
+  0,
+  '',
+  'ezstring',
+  11,
+  'eng-GB',
+  3,
+  0,
+  '',
+  1
+);
+INSERT INTO ezcontentobject_attribute (
+  attribute_original_id,
+  contentclassattribute_id,
+  contentobject_id,
+  data_float,
+  data_int,
+  data_text,
+  data_type_string,
+  id,
+  language_code,
+  language_id,
+  sort_key_int,
+  sort_key_string,
+  version
+) VALUES (
+  0,
+  119,
+  3,
+  0,
+  1045487555,
+  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  'ezxmltext',
+  12,
+  'eng-GB',
+  3,
+  0,
+  '',
+  1
+);
+INSERT INTO ezcontentobject_attribute (
+  attribute_original_id,
+  contentclassattribute_id,
+  contentobject_id,
+  data_float,
+  data_int,
+  data_text,
+  data_type_string,
+  id,
+  language_code,
+  language_id,
+  sort_key_int,
+  sort_key_string,
+  version
+) VALUES (
+  0,
+  156,
+  3,
+  0,
+  1045487555,
+  '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<section xmlns:image=\"http://ez.no/namespaces/ezpublish3/image/\"\n         xmlns:xhtml=\"http://ez.no/namespaces/ezpublish3/xhtml/\"\n         xmlns:custom=\"http://ez.no/namespaces/ezpublish3/custom/\" />',
+  'ezxmltext',
+  13,
+  'eng-GB',
+  3,
+  0,
+  '',
+  1
+);
+INSERT INTO ezcontentobject_attribute (
+  attribute_original_id,
+  contentclassattribute_id,
+  contentobject_id,
+  data_float,
+  data_int,
+  data_text,
+  data_type_string,
+  id,
+  language_code,
+  language_id,
+  sort_key_int,
+  sort_key_string,
+  version
+) VALUES (
+  0,
+  158,
+  3,
+  0,
+  1,
+  '',
+  'ezboolean',
+  14,
+  'eng-GB',
+  3,
+  1,
+  '',
+  1
+);
 
 INSERT INTO ezcontentobject_name (
   content_translation,
@@ -6654,6 +7012,36 @@ INSERT INTO ezcontentobject_name (
   'Design',
   'eng-GB'
 );
+INSERT INTO ezcontentobject_name (
+  content_translation,
+  content_version,
+  contentobject_id,
+  language_id,
+  name,
+  real_translation
+) VALUES (
+  'eng-GB',
+  1,
+  2,
+  3,
+  'Configuration',
+  'eng-GB'
+);
+INSERT INTO ezcontentobject_name (
+  content_translation,
+  content_version,
+  contentobject_id,
+  language_id,
+  name,
+  real_translation
+) VALUES (
+  'eng-GB',
+  1,
+  3,
+  3,
+  'Archives',
+  'eng-GB'
+);
 
 INSERT INTO ezcontentobject_tree (
   contentobject_id,
@@ -6680,7 +7068,7 @@ INSERT INTO ezcontentobject_tree (
   0,
   0,
   1,
-  1301073466,
+  1790769600,
   1,
   1,
   '',
@@ -7250,6 +7638,76 @@ INSERT INTO ezcontentobject_tree (
   2,
   0
 );
+INSERT INTO ezcontentobject_tree (
+  contentobject_id,
+  contentobject_is_published,
+  contentobject_version,
+  depth,
+  is_hidden,
+  is_invisible,
+  main_node_id,
+  modified_subnode,
+  node_id,
+  parent_node_id,
+  path_identification_string,
+  path_string,
+  priority,
+  remote_id,
+  sort_field,
+  sort_order
+) VALUES (
+  2,
+  1,
+  1,
+  1,
+  0,
+  0,
+  3,
+  1790769600,
+  3,
+  1,
+  'configuration',
+  '/1/3/',
+  0,
+  '4d947768ea1cdd0d11927c595a2b2cce',
+  9,
+  1
+);
+INSERT INTO ezcontentobject_tree (
+  contentobject_id,
+  contentobject_is_published,
+  contentobject_version,
+  depth,
+  is_hidden,
+  is_invisible,
+  main_node_id,
+  modified_subnode,
+  node_id,
+  parent_node_id,
+  path_identification_string,
+  path_string,
+  priority,
+  remote_id,
+  sort_field,
+  sort_order
+) VALUES (
+  3,
+  1,
+  1,
+  1,
+  0,
+  0,
+  4,
+  1790769600,
+  4,
+  1,
+  'archives',
+  '/1/4/',
+  0,
+  '5e4c9534fa4151b543e967b8ac75a190',
+  2,
+  0
+);
 
 INSERT INTO ezcontentobject_version (
   contentobject_id,
@@ -7265,12 +7723,12 @@ INSERT INTO ezcontentobject_version (
   workflow_event_pos
 ) VALUES (
   4,
-  0,
+  1033917596,
   14,
   4,
   2,
   3,
-  0,
+  1033917596,
   1,
   0,
   1,
@@ -7650,6 +8108,56 @@ INSERT INTO ezcontentobject_version (
   0,
   6,
   1
+);
+INSERT INTO ezcontentobject_version (
+  contentobject_id,
+  created,
+  creator_id,
+  id,
+  initial_language_id,
+  language_mask,
+  modified,
+  status,
+  user_id,
+  version,
+  workflow_event_pos
+) VALUES (
+  2,
+  1790769600,
+  14,
+  1,
+  2,
+  3,
+  1790769600,
+  1,
+  0,
+  1,
+  0
+);
+INSERT INTO ezcontentobject_version (
+  contentobject_id,
+  created,
+  creator_id,
+  id,
+  initial_language_id,
+  language_mask,
+  modified,
+  status,
+  user_id,
+  version,
+  workflow_event_pos
+) VALUES (
+  3,
+  1790769600,
+  14,
+  2,
+  2,
+  3,
+  1790769600,
+  1,
+  0,
+  1,
+  0
 );
 
 INSERT INTO ezisbn_group (
@@ -25891,6 +26399,64 @@ INSERT INTO eznode_assignment (
   0,
   0
 );
+INSERT INTO eznode_assignment (
+  contentobject_id,
+  contentobject_version,
+  from_node_id,
+  id,
+  is_main,
+  op_code,
+  parent_node,
+  parent_remote_id,
+  remote_id,
+  sort_field,
+  sort_order,
+  priority,
+  is_hidden
+) VALUES (
+  2,
+  1,
+  0,
+  1,
+  1,
+  2,
+  1,
+  '',
+  0,
+  9,
+  1,
+  0,
+  0
+);
+INSERT INTO eznode_assignment (
+  contentobject_id,
+  contentobject_version,
+  from_node_id,
+  id,
+  is_main,
+  op_code,
+  parent_node,
+  parent_remote_id,
+  remote_id,
+  sort_field,
+  sort_order,
+  priority,
+  is_hidden
+) VALUES (
+  3,
+  1,
+  0,
+  2,
+  1,
+  2,
+  1,
+  '',
+  0,
+  2,
+  0,
+  0,
+  0
+);
 
 INSERT INTO ezorder_status (
   id,
@@ -35348,6 +35914,64 @@ INSERT INTO ezsearch_object_word_link (
   5,
   968
 );
+INSERT INTO ezsearch_object_word_link (
+  contentclass_attribute_id,
+  contentclass_id,
+  contentobject_id,
+  frequency,
+  id,
+  identifier,
+  integer_value,
+  next_word_id,
+  placement,
+  prev_word_id,
+  published,
+  section_id,
+  word_id
+) VALUES (
+  4,
+  1,
+  2,
+  0,
+  1,
+  'name',
+  0,
+  0,
+  0,
+  0,
+  1790769600,
+  4,
+  1
+);
+INSERT INTO ezsearch_object_word_link (
+  contentclass_attribute_id,
+  contentclass_id,
+  contentobject_id,
+  frequency,
+  id,
+  identifier,
+  integer_value,
+  next_word_id,
+  placement,
+  prev_word_id,
+  published,
+  section_id,
+  word_id
+) VALUES (
+  4,
+  1,
+  3,
+  0,
+  2,
+  'name',
+  0,
+  0,
+  0,
+  0,
+  1790769600,
+  1,
+  2
+);
 
 INSERT INTO ezsearch_word (
   id,
@@ -36870,6 +37494,24 @@ INSERT INTO ezsearch_word (
   1,
   'design'
 );
+INSERT INTO ezsearch_word (
+  id,
+  object_count,
+  word
+) VALUES (
+  1,
+  1,
+  'configuration'
+);
+INSERT INTO ezsearch_word (
+  id,
+  object_count,
+  word
+) VALUES (
+  2,
+  1,
+  'archives'
+);
 
 INSERT INTO ezsection (
   id,
@@ -37276,6 +37918,44 @@ INSERT INTO ezurlalias (
   0,
   '31c13f47ad87dd7baa2d558a91e0fbb9',
   'design'
+);
+INSERT INTO ezurlalias (
+  destination_url,
+  forward_to_id,
+  id,
+  is_imported,
+  is_internal,
+  is_wildcard,
+  source_md5,
+  source_url
+) VALUES (
+  'content/view/full/3',
+  0,
+  1,
+  1,
+  1,
+  0,
+  'ccd1066343c95877b75b79d47c36bebe',
+  'configuration'
+);
+INSERT INTO ezurlalias (
+  destination_url,
+  forward_to_id,
+  id,
+  is_imported,
+  is_internal,
+  is_wildcard,
+  source_md5,
+  source_url
+) VALUES (
+  'content/view/full/4',
+  0,
+  2,
+  1,
+  1,
+  0,
+  '1a557283e5542468721ccbc770c8b13f',
+  'archives'
 );
 
 INSERT INTO ezurlalias_ml (
@@ -38153,6 +38833,56 @@ INSERT INTO ezurlalias_ml (
   'Plain-site',
   '49a39d99a955d95aa5d636275656a07a'
 );
+INSERT INTO ezurlalias_ml (
+  action,
+  action_type,
+  alias_redirects,
+  id,
+  is_alias,
+  is_original,
+  lang_mask,
+  link,
+  parent,
+  text,
+  text_md5
+) VALUES (
+  'eznode:3',
+  'eznode',
+  1,
+  23,
+  0,
+  1,
+  3,
+  23,
+  0,
+  'Configuration',
+  'ccd1066343c95877b75b79d47c36bebe'
+);
+INSERT INTO ezurlalias_ml (
+  action,
+  action_type,
+  alias_redirects,
+  id,
+  is_alias,
+  is_original,
+  lang_mask,
+  link,
+  parent,
+  text,
+  text_md5
+) VALUES (
+  'eznode:4',
+  'eznode',
+  1,
+  36,
+  0,
+  1,
+  3,
+  36,
+  0,
+  'Archives',
+  '1a557283e5542468721ccbc770c8b13f'
+);
 
 INSERT INTO ezurlalias_ml_incr (
   id
@@ -38333,6 +39063,11 @@ INSERT INTO ezurlalias_ml_incr (
   id
 ) VALUES (
   37
+);
+INSERT INTO ezurlalias_ml_incr (
+  id
+) VALUES (
+  23
 );
 
 INSERT INTO ezuser (
