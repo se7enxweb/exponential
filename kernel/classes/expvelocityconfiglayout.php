@@ -63,6 +63,21 @@ class expVelocityConfigLayout
     /** Keys that belong to the site even inside a module's block: this installation's paths and secrets. */
     protected static $siteKeys = array( 'dir', 'token', 'cert', 'key', 'prewarmDir', 'warmup', 'paths' );
 
+    /**
+     * Modules that switch a feature on, and the setting that switches it.
+     *
+     * The engine's own default for these is on. With the module disabled its
+     * file is not loaded, so the setting fell back to that default: after
+     * `exp:velocity mod disable cache` the response cache kept running --
+     * and, when nothing else named its directory, stored pages in
+     * files/cache/reverse beside the installation. A disabled module means
+     * the feature is off, as a disabled module does in /etc/apache2, so the
+     * site file then says so explicitly.
+     */
+    protected static $switches = array(
+        'cache' => 'Q.web.cache.enabled',
+    );
+
     /** @var expVelocity */
     protected $velocity;
 
@@ -336,6 +351,18 @@ class expVelocityConfigLayout
         foreach ( $parts['mods'] as $mod => $settings )
             $this->writeGenerated( "$dir/mods-available/$mod.conf", $settings, 0644, "$dir/mods-enabled/$mod.conf" );
 
+        // A switching module the administrator disabled: its feature is off,
+        // stated in the site file (loaded last), not left to the engine's
+        // default. $expected is what the engine should end up with; the
+        // lossless check below compares the pieces against it.
+        $expected = $config;
+        $switchedOff = $this->disabledSwitches( $dir, $parts['mods'] );
+        foreach ( $switchedOff as $path )
+        {
+            self::setPath( $parts['site'], $path, false );
+            self::setPath( $expected, $path, false );
+        }
+
         $site = $this->siteName();
         // The site holds certificates' paths and the dashboard token: owner only.
         $this->writeGenerated( "$dir/sites-available/$site.conf", $parts['site'], 0600, "$dir/sites-enabled/$site.conf" );
@@ -352,7 +379,7 @@ class expVelocityConfigLayout
         foreach ( $parts['mods'] as $settings )
             $pieces = self::merge( $pieces, $settings );
         $pieces = self::merge( $pieces, $parts['site'] );
-        if ( !self::same( $pieces, self::merge( $config, $parts['ports'] ) ) )
+        if ( !self::same( $pieces, self::merge( $expected, $parts['ports'] ) ) )
             return array( 'ok' => false, 'message' => 'the split of the generated configuration is not lossless (a bug in expVelocityConfigLayout); using the single file',
                           'confDir' => $dir, 'actions' => $this->actions );
 
@@ -384,6 +411,42 @@ class expVelocityConfigLayout
         return array( 'ok' => true,
                       'message' => 'configuration from ' . $dir . ( $notes ? ' (differs from velocity.ini: ' . implode( ', ', $notes ) . ')' : '' ),
                       'confDir' => $dir, 'siteFile' => $enabledSite, 'actions' => $this->actions );
+    }
+
+    /**
+     * The settings of switching modules (self::$switches) whose module exists
+     * in mods-available but is not enabled. A module seen for the first time
+     * is enabled when it is written, so it is not counted.
+     *
+     * @param string $dir the configuration directory
+     * @param array $mods the generated module blocks
+     * @return array dotted setting paths, e.g. Q.web.cache.enabled
+     */
+    public function disabledSwitches( $dir, array $mods )
+    {
+        $off = array();
+        foreach ( self::$switches as $mod => $path )
+        {
+            if ( !isset( $mods[$mod] ) || !is_file( "$dir/mods-available/$mod.conf" ) )
+                continue;
+            $link = "$dir/mods-enabled/$mod.conf";
+            if ( !is_link( $link ) && !file_exists( $link ) )
+                $off[$mod] = $path;
+        }
+        return $off;
+    }
+
+    /** Set a dotted path in a nested array. */
+    protected static function setPath( array &$array, $path, $value )
+    {
+        $ref =& $array;
+        foreach ( explode( '.', $path ) as $k )
+        {
+            if ( !isset( $ref[$k] ) || !is_array( $ref[$k] ) )
+                $ref[$k] = array();
+            $ref =& $ref[$k];
+        }
+        $ref = $value;
     }
 
     /** The files the engine loads before the site, in its order (see Q_WebServer_Layout::files). */
