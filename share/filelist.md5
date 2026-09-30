@@ -275,7 +275,7 @@ f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.t
 b56611131759a7d619bae0f87f297daf  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
-d71f40ced6d4042d44d3b170ad8fb8bc  design/admin/stylesheets/packagecompare.css
+60cffe8e9a33079501f4ae219e59419e  design/admin/stylesheets/packagecompare.css
 385603746948cfdd8e7540bdf7b5d2b0  design/admin/stylesheets/pagelayout.css
 d5a3589152af07aa3d6cb3f0b025bec6  design/admin/stylesheets/setup-extensions.css
 c28a2b8fef839e911313919afddcc3eb  design/admin/stylesheets/theme/modalwindow.css
@@ -426,7 +426,7 @@ bad8545e8a97034967109a6e5b74543e  design/admin/templates/notification/runfilter.
 48d8ce0aa26feca6fec2f9ef52e6e306  design/admin/templates/notification/settings.tpl
 4580323213e04fda829be875d6d9f4f7  design/admin/templates/ordering.tpl
 655028efb8e591c0fbe491bfbb758160  design/admin/templates/package/compare.tpl
-b7fc839231c582009d6c03b2d81b2a0b  design/admin/templates/package/compare_import.tpl
+6e61f8601eda36c79958f102f549aeab  design/admin/templates/package/compare_import.tpl
 2bdad4abf5b50ffea99d3df6e5fbf152  design/admin/templates/package/create.tpl
 0495056af7f6fa7fd61d58dec8b2d88b  design/admin/templates/package/create/changelog.tpl
 958ab1913e334946ef953f0aae8a7f1f  design/admin/templates/package/create/error.tpl
@@ -5565,7 +5565,7 @@ e9b39fe0807d1490e6b477bea7eb5cb6  kernel/classes/ezcontentobjecttranslation.php
 2ca1d2659a34cdd6478e42c6c67d48f1  kernel/classes/ezcontentobjecttrashnode.php
 7437b7557d0ba5fb94a98184bd99f5cb  kernel/classes/ezcontentobjecttreenode.php
 0b7f57fc7042f7660a780cc554457ad3  kernel/classes/ezcontentobjecttreenodeoperations.php
-40a3ca6e6f8b20c7c58b58f7618c02f9  kernel/classes/ezcontentobjectversion.php
+34116bf422afc5b601934be412a2e067  kernel/classes/ezcontentobjectversion.php
 5ef70a792b3654ce283da080b70e3420  kernel/classes/ezcontentupload.php
 5f4673e8956bf6a51a7253ea7fb74862  kernel/classes/ezcontentuploadhandler.php
 68440b915e33894df832ae5c2bf2c4d7  kernel/classes/ezdatatype.php
@@ -5590,7 +5590,7 @@ db75a99513addf60914280b282e6e19c  kernel/classes/ezpackage.php
 f0919dfd1b3c1f1476448dbd333815eb  kernel/classes/ezpackagecomparison.php
 21d82e5231e7193e3d94536e7e75d2a9  kernel/classes/ezpackagecomparisondiff.php
 e027cc7aff0adcbac4f598e25c4c3fc6  kernel/classes/ezpackagecomparisonfilecollector.php
-498c64c58689b60c2363e7184a617f6e  kernel/classes/ezpackagecomparisonimport.php
+74c613218de49a3c9639b3d572c0ddf2  kernel/classes/ezpackagecomparisonimport.php
 255c4b4eb00fb84852f25e0f03e30c60  kernel/classes/ezpackagecreationhandler.php
 c8313001b3ccfe7d39680952f7c4b3a5  kernel/classes/ezpackagefilebrowser.php
 458344557e912550db4562597f9c41f1  kernel/classes/ezpackagehandler.php
@@ -5803,7 +5803,7 @@ c78493491c795c8671c544a9715bfadd  kernel/layout/function_definition.php
 e225f0729bd4fdbac58bdcbd09c36d9e  kernel/notification/module.php
 3d3620782193ce520d06dd2d1122f161  kernel/notification/runfilter.php
 8feb99938a1a25b67ea35905a0ec9183  kernel/notification/settings.php
-6b6da850a9bb11d979ea00f1b720f66d  kernel/package/compare.php
+2b50be2cada51f443f5b01b84ff3b12b  kernel/package/compare.php
 62d3ddcc9f58080d9534232d7d15d231  kernel/package/create.php
 a7d9064049494119a6215254d1e5cebf  kernel/package/export.php
 9e41272b2ead9c6dcf66f746c78813a7  kernel/package/ezpackagefunctioncollection.php
@@ -6956,14 +6956,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-7ab8754c431d38364ccb059af4ef249b  share/translations/eng-US/translation.ts
+06bb4843c39ac94872da9c86812d1f4d  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-3999aa5beeda2a9682f824e67b4719ec  share/translations/ger-DE/translation.ts
+f254440fda8a3c9fbd43d736e143b245  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6976,7 +6976,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-eabb46725b4cc37f005bd8c384cbd058  share/translations/untranslated/translation.ts
+c0a7a5505fe458a40108137f28383d47  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 4397f3e1a1c355255c97e191430662d5  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
