@@ -5510,7 +5510,7 @@ dbb3856cc411fb1697eeda7944d0e280  kernel/classes/expcachemanager.php
 e155d47ee2599f8deb8070d941364bbc  kernel/classes/expkickstarter.php
 5d101780a5be9a462d6b4d3cee69e882  kernel/classes/expkickstarterini.php
 434901ece305d52b3b4397ed3a4d5750  kernel/classes/expmaintenance.php
-1bff945a877b17d5ccfa084020434d99  kernel/classes/expphar.php
+e94b8839760a189a564f57a5bf9a67fa  kernel/classes/expphar.php
 21b59e62f5cad811c8cdc0ace277e6fe  kernel/classes/exppreloadjob.php
 e708b388915a5dd3ac6c20fd7643ee8f  kernel/classes/expscriptstatus.php
 a6ed2ae384481746bc8d40a424ab42c3  kernel/classes/expsetuplog.php
