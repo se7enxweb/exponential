@@ -331,7 +331,8 @@ class eZContentLanguage extends eZPersistentObject
                 {
                     $GLOBALS['eZContentLanguagePrioritizedLanguages'][] = $language;
                 }
-                else
+                // the setup wizard runs before the site's languages exist: nothing to warn about there
+                else if ( !( class_exists( 'eZSiteAccess', false ) && ( eZSiteAccess::current()['name'] ?? '' ) === 'setup' ) )
                 {
                     eZDebug::writeWarning( "Language '$localeCode' does not exist or is not used!", __METHOD__ );
                 }
