@@ -80,6 +80,8 @@ const CACHE = VERSION;
 // Paths this must never touch.
 const OFF_LIMITS = [
 	/^\/admin(\/|$)/,
+	// the editor siteaccess: the admin for content editing
+	/^\/editor(\/|$)/,
 	/^\/user(\/|$)/,
 	/^\/explayouts_ui/,
 	/^\/var\/site\/cache\//,
