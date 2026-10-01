@@ -5447,7 +5447,7 @@ dc14863a4ee9725a94d0dcaef0fead61  kernel/classes/datatypes/ezenum/ezenumvalue.ph
 c88378074d66fcf21e8d854348f93f1f  kernel/classes/datatypes/ezimage/ezimagealiashandler.php
 f4963dd9f5292697c4b311b2415c2e70  kernel/classes/datatypes/ezimage/ezimagefile.php
 090e0961a6f3776a4cc9f9925f36a945  kernel/classes/datatypes/ezimage/ezimagetype.php
-ce625c477faffd8b2d47c250c7f4f668  kernel/classes/datatypes/ezinisetting/ezinisettingtype.php
+6277defff039459aef610b9dfaf5bda4  kernel/classes/datatypes/ezinisetting/ezinisettingtype.php
 0736bfb606d8e02f5fcb504533b6783e  kernel/classes/datatypes/ezinteger/ezintegertype.php
 83c5fe146888f886c062155923a4cb2f  kernel/classes/datatypes/ezisbn/ezisbn10to13converter.php
 a551f915854d6e6ca5e3f79777175012  kernel/classes/datatypes/ezisbn/ezisbn13.php
@@ -5887,7 +5887,7 @@ fa688db0657a65850710dec915dd6df6  kernel/private/classes/ezpactiveextensions.php
 de0874d0feda5a3bbd9f00408fe0f975  kernel/private/classes/ezpcontentpublishingqueue.php
 662125c605cb76559618de0e11d5ce66  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
 4caf88b0759996112c9edc775b5fe589  kernel/private/classes/ezpevent.php
-8e94fac4eda5276e50827017ef500c3c  kernel/private/classes/ezpextension.php
+af83028c1031c2bf806f14db06616659  kernel/private/classes/ezpextension.php
 1cab90fbf1daca018c7fd0f2e9d3f9a0  kernel/private/classes/ezpformtokenrefusal.php
 0d418b5527653b5e4cb4868a538ea042  kernel/private/classes/ezpkernel.php
 86bdb9f30bc9936abd83ceb015a05379  kernel/private/classes/ezpkernelredirect.php
@@ -6396,7 +6396,7 @@ dedfa0ad0a901e8d5fcfa23bb1d8d025  lib/eztemplate/classes/eztemplateattributeoper
 f84c4303ed78ccf9c2fb44e9a2291034  lib/eztemplate/classes/eztemplatecacheblock.php
 27513d3ea1185fe3dfc767e8b8d1220d  lib/eztemplate/classes/eztemplatecachefunction.php
 cabe656e48f01ad7355bc67b949a3758  lib/eztemplate/classes/eztemplatecompiledloop.php
-cacdb33c170d9bff70eae781367e66dd  lib/eztemplate/classes/eztemplatecompiler.php
+46294b4a04cd01d0b2de55f8edb78b92  lib/eztemplate/classes/eztemplatecompiler.php
 ec9acc3b8225c72056ab17792d5a408e  lib/eztemplate/classes/eztemplatecontroloperator.php
 58daa44073c166249065d6805bc9d1fb  lib/eztemplate/classes/eztemplatedebugfunction.php
 9b28d0e1f4d9b6951be812b9dac2ec4d  lib/eztemplate/classes/eztemplatedeffunction.php
@@ -6410,7 +6410,7 @@ acf684e74d770c654dfa49e895cd494b  lib/eztemplate/classes/eztemplateexpinfooperat
 a0be6da9ccce0105f1662ae0fdb9ba4f  lib/eztemplate/classes/eztemplateforeachfunction.php
 80cf7358d828b17250fd954bdbe5ef3c  lib/eztemplate/classes/eztemplateforfunction.php
 bf431a60cdb53f7c567e1f5f78b33287  lib/eztemplate/classes/eztemplatefunctionelement.php
-d1d6874b540867f57d37c4ace600b850  lib/eztemplate/classes/eztemplateiffunction.php
+75a5902de54728fd0e7be1c8e1fed836  lib/eztemplate/classes/eztemplateiffunction.php
 9aa668f70c4806af1551d27d629b1f50  lib/eztemplate/classes/eztemplateimageoperator.php
 3ef2bcbe5834ac1aaaeee1c63a6d96ae  lib/eztemplate/classes/eztemplateincludefunction.php
 a263764366d8776371347d5cbde01578  lib/eztemplate/classes/eztemplatelocaleoperator.php
@@ -6432,7 +6432,7 @@ eea9e5f0e7f8bdbf248337c729c7a9af  lib/eztemplate/classes/eztemplateroleoperator.
 7da652cd357b141263bbaf0a467cef7c  lib/eztemplate/classes/eztemplatesequencefunction.php
 c30fe5cc5ee69c488d5c126588822ffa  lib/eztemplate/classes/eztemplatesetfunction.php
 749b774dd028c6fb98cffa258697e256  lib/eztemplate/classes/eztemplatestringoperator.php
-4737c88b3e9ec0cd59ffde2c6f8e7dd7  lib/eztemplate/classes/eztemplatestringsoperator.php
+44fdc66bce4d217996a457dbdc024e5c  lib/eztemplate/classes/eztemplatestringsoperator.php
 32412b71b6a73ac7de7accb01902e588  lib/eztemplate/classes/eztemplateswitchfunction.php
 13ed3db2181b2a95a1d5f19d68cddecc  lib/eztemplate/classes/eztemplatetextelement.php
 e75310ef7fd6c70243afb0b647902ff4  lib/eztemplate/classes/eztemplatetextoperator.php
@@ -6457,7 +6457,7 @@ d69d47d699e1df518aefc36a4b31d521  lib/ezutils/classes/ezfloatvalidator.php
 069dd3ab31f004f291a357db79ae074f  lib/ezutils/classes/ezfunctionhandler.php
 42f44f98fb286edaba24421ec2712650  lib/ezutils/classes/ezhttpfile.php
 1967495ec268059798b1c656577c09d0  lib/ezutils/classes/ezhttppersistence.php
-5c23ae878a10497990c23c6e40af05d7  lib/ezutils/classes/ezhttptool.php
+40ac18d43c21d2ce35eadbcf2615747b  lib/ezutils/classes/ezhttptool.php
 56f9cbd47ec282e5482808f6ba7c4481  lib/ezutils/classes/ezini.php
 b2781bccfa90dafac49bdf11dcfaf1a0  lib/ezutils/classes/ezinputvalidator.php
 0e3e0a0b45d95677979b31e0b799c79f  lib/ezutils/classes/ezintegervalidator.php
@@ -6962,7 +6962,7 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-d0ed61f8d3837c1a302bde78584336d4  share/translations/eng-US/translation.ts
+6b28d306737fc6aa7b8b1d9edca33cb3  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
@@ -6982,7 +6982,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-7e508951c4b1c9d72ab7640e6d80a9a8  share/translations/untranslated/translation.ts
+5930a925c8ec524d36ce90ee1fd5f594  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 4397f3e1a1c355255c97e191430662d5  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
