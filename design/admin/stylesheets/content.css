@@ -278,7 +278,9 @@ table.list th.sortable { cursor: pointer; white-space: nowrap; }
 table.list th.sortable a.sort-link { display: block; text-decoration: none; color: inherit; }
 table.list th.sortable:hover a.sort-link { text-decoration: underline; }
 table.list th.sorted a.sort-link { font-weight: 700; }
-.sort-arrow { display: inline-block; width: 1em; font-size: .8em; color: #6a6a72; }
+/* The arrow is the heading's own colour, a little dimmed: a fixed grey could not
+   be seen on the dark heading bar of the admin3 design. */
+.sort-arrow { display: inline-block; width: 1em; font-size: .8em; color: inherit; opacity: .85; }
 
 /* The role list's id column: a number, read against the name beside it. */
 table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }
