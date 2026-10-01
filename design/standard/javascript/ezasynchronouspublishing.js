@@ -158,6 +158,10 @@ var eZAsynchronousPublishingApp = (function() {
      * @method init
      */
     ret.init = function() {
+        // With Exponential UI (exp::io) on the page, the same checks run on it, without YUI
+        if ( window.Exp && window.Exp.io && window.Exp.$ ) {
+            return initExp(window.Exp);
+        }
         YUI(YUI3_config).use('node', 'io-ez', 'json-parse', function (yui) {
             Y = yui;
             ret.cfg = Y.merge(DEFAULT_CONF, ret.cfg);
@@ -171,6 +175,89 @@ var eZAsynchronousPublishingApp = (function() {
             });
         });
     };
+
+    /**
+     * The same component on Exponential UI (jQuery 4 and Exp.io): the same configuration, the same server call
+     * (ezpublishingqueue::status, GET), the same placeholders, messages, failure count and timing as the YUI version
+     * above.
+     *
+     * @method initExp
+     * @private
+     * @param {Object} Exp the Exponential UI namespace
+     */
+    function initExp(Exp) {
+        var $ = Exp.$;
+        ret.cfg = $.extend({}, DEFAULT_CONF, ret.cfg);
+        var fn = 'ezpublishingqueue::status', args = [ret.cfg.contentobject_id, ret.cfg.version];
+        var $error, $publishing, $finished, $deferred;
+
+        function display($element, message) {
+            $('.ezap-placeholder').css('display', 'none');
+            $element.css('display', 'block');
+            if ( typeof message === 'function' ) {
+                message($element);
+            } else {
+                $element.html(message);
+            }
+        }
+        function lastCheck($element) {
+            var $last = $element.find('.last-check');
+            if ( !$last.length ) {
+                $last = $('<span class="last-check"></span>').appendTo($element);
+            }
+            $last.html(ret.cfg.last_checked_message.replace('%times%', checkedCount).replace('%ms%', ret.cfg.wait_time));
+        }
+        function retry() {
+            window.setTimeout(update, ret.cfg.wait_time);
+        }
+        function failed(message) {
+            failureCount++;
+            if ( failureCount > ret.cfg.max_allowed_failures ) {
+                display($error, message);
+            } else {
+                if ( checkedCount ) {
+                    display($publishing, lastCheck);
+                }
+                checkedCount++;
+                retry();
+            }
+        }
+        function update() {
+            Exp.io.call(fn, args, { method: 'GET' }).then(function (content) {
+                if ( content && content.status == 'finished' ) {
+                    if ( ret.cfg.redirect_uri !== false ) {
+                        window.location = ret.cfg.redirect_uri;
+                    } else {
+                        display($finished, function ($element) {
+                            $element.find('#ezap-contentview-uri').attr('href', content.node_uri);
+                        });
+                    }
+                } else if ( content && content.status == 'deferred' ) {
+                    display($deferred, function ($element) {
+                        $element.find('#ezap-versionview-uri').attr('href', content.versionview_uri);
+                    });
+                } else {
+                    if ( checkedCount ) {
+                        display($publishing, lastCheck);
+                    }
+                    checkedCount++;
+                    retry();
+                }
+            }, function (error) {
+                // the server function's own error text, as YUI showed it; any other failure: the configured message
+                var r = error && error.response;
+                failed(r && typeof r === 'object' && r.error_text ? String(r.error_text) : ret.cfg.failure_message);
+            });
+        }
+
+        $(function () {
+            $error = $('#ezap-error');
+            $publishing = $('#ezap-message-publishing');
+            $finished = $('#ezap-message-finished');
+            $deferred = $('#ezap-message-deferred');
+            update();
+        });
+    }
 
     return ret;
 })();

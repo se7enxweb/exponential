@@ -29,7 +29,13 @@
  *        The content/versionview URI will be assigned to this item's href
  *}
 
+{* With Exponential UI the status is checked on it (jQuery 4, Exp.io), without YUI *}
+{if ezini( 'ExtensionSettings', 'ActiveExtensions' )|contains( 'expui' )}
+{exp_config()}
+{ezscript_require( array( 'ezjsc::jquery', 'exp::core::shared', 'exp::io', 'ezasynchronouspublishing.js' ) )}
+{else}
 {ezscript_require( array( 'ezjsc::yui3', 'ezjsc::yui3io', 'ezasynchronouspublishing.js' ) )}
+{/if}
 
 <script type="text/javascript">
 eZAsynchronousPublishingApp.cfg = {ldelim}
