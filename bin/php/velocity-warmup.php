@@ -78,6 +78,17 @@ if (is_string($warmUrls) && $warmUrls !== '') {
 // with its output buffer still open, to test exactly that path.
 $__warmupFailure = null;
 $__warmupObLevel = ob_get_level();
+// Maintenance (var/maintenance.json, as index.php checks it): nothing to warm. A
+// render would be the setup wizard's first page, which takes the wizard's lease
+// from the browser that is on it. $GLOBALS['expVelocityWarmup'] tells the
+// wizard a render is the warm-up (it starts no run and no lease then).
+if (is_file($root . '/var/maintenance.json')) {
+    require_once $root . '/kernel/classes/expmaintenance.php';
+    if (expMaintenance::state($root) !== false) {
+        $urls = array();
+    }
+}
+$GLOBALS['expVelocityWarmup'] = true;
 try {
 foreach ($urls as $uri) {
     $_SERVER['REQUEST_URI'] = $uri;
@@ -113,6 +124,7 @@ if (getenv('VELOCITY_WARMUP_TEST_FAILURE') === '1') {
 }
 while (ob_get_level() > $__warmupObLevel && @ob_end_clean()) {
 }
+unset($GLOBALS['expVelocityWarmup']);
 
 // ── Undo the render's request footprint, keep everything else ─────────
 //

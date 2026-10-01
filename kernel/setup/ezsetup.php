@@ -65,7 +65,12 @@ $persistenceList = eZSetupFetchPersistenceList();
 // browser passes on a cookie, every other visitor gets the maintenance page
 // rather than a second wizard. It ends with the last page, or by itself when
 // the wizard is left (expMaintenance::WIZARD_LEASE).
-if ( !$http->hasPostVariable( 'eZSetup_current_step' ) )
+if ( !empty( $GLOBALS['expVelocityWarmup'] ) )
+{
+    // Velocity's warm-up render: not a visitor, so no run and no lease (a lease
+    // would lock the browser on the wizard out with a cookie nobody holds)
+}
+else if ( !$http->hasPostVariable( 'eZSetup_current_step' ) )
 {
     expSetupLog::startWeb();
     expMaintenance::beginWizard( eZSys::rootDir(), (string)expSetupLog::runId() );
