@@ -8,6 +8,6 @@
 
 <script type="text/javascript">
 {literal}
-jQuery( '#header-topmenu ul li' ).click(function(){ jQuery(this).addClass('active'); });
+jQuery( '#header-topmenu ul li' ).on('click', function(){ jQuery(this).addClass('active'); });
 {/literal}
 </script>

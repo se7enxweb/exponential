@@ -348,7 +348,7 @@ jQuery(function( $ )//called on document.ready
     var el = $('#LastChangedID input[name^=ContentAttribute_name]');
     if ( el.length ) {
         window.scrollTo(0, Math.max( el.offset().top - 180, 0 ));
-        el.focus();
+        el.trigger( 'focus' );
     }
 
     var list = $('#ezcca-edit-list');
@@ -382,7 +382,7 @@ jQuery(function( $ )//called on document.ready
     {
         rows().each( function( i ) { $(this).find('input[name^=ContentAttribute_priority]').val( ( i + 1 ) * 10 ); } );
     }
-    list.find('div.listbutton input[name^=Move]').click(function( e )
+    list.find('div.listbutton input[name^=Move]').on('click', function( e )
     {
         e.preventDefault();
         var tr = $(this).closest('tr.ezcca-edit-list-item'), param = this.name.split('_'), action = param[0];
@@ -432,9 +432,9 @@ jQuery(function( $ )//called on document.ready
     });
 
     // Disable bottom datatype dropp down when using new button in top
-    jQuery('#NewButtonTop').click(function()
+    jQuery('#NewButtonTop').on('click', function()
     {
-        jQuery('#DataTypeString').attr('disabled', true);
+        jQuery('#DataTypeString').prop('disabled', true);
     });
 });
 </script>

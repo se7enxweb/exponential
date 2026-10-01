@@ -1,10 +1,10 @@
 jQuery(function( $ )
 {
     // Attache click event to search button and show input fields
-    $('input.ezobject-relation-search-btn').click( _search ).removeClass('hide');
+    $('input.ezobject-relation-search-btn').on( 'click', _search ).removeClass('hide');
 
     // Attache key press event to catch enter and show input fields
-    $('input.ezobject-relation-search-text').keypress( function( e ){
+    $('input.ezobject-relation-search-text').on( 'keypress', function( e ){
         if ( e.which == 13 )
         {
             return _search.call( this, e );
@@ -40,7 +40,7 @@ jQuery(function( $ )
                 for ( var i = 0, l = arr.length; i < l; i++ )
                 {
                     var aElem = $( '<a></a>' );
-                    aElem.bind( 'click', { boxID: boxID,
+                    aElem.on( 'click', { boxID: boxID,
                                            id: arr[i].id,
                                            name: arr[i].name,
                                            className: arr[i].class_name,
@@ -99,7 +99,7 @@ jQuery(function( $ )
         tds.eq( 2 ).html( sectionName );
         tds.eq( 3 ).html( publishedTxt );
         $( boxID + ' table' ).removeClass('hide');
-        $(boxID + ' .ezobject-relation-remove-button').removeClass('button-disabled').addClass('button').attr('disabled', false);
+        $(boxID + ' .ezobject-relation-remove-button').removeClass('button-disabled').addClass('button').prop('disabled', false);
         $(boxID + ' .ezobject-relation-no-relation').addClass('hide');
     }
 

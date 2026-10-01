@@ -87,17 +87,17 @@
 (function($){
     if ( !document.getElementById('searchbuttonfield') )return;
 
-    $('#searchbuttonfield').click(function(){
+    $('#searchbuttonfield').on('click', function(){
         if ( $('#searchtext').val() === $('#searchtext').attr('title') )return;
-          $('#searchbutton').click();
+          $('#searchbutton').trigger('click');
     });
-    $('#searchscope').click(function(){
+    $('#searchscope').on('click', function(){
         $('#searchscope-pane').addClass('active');
     });
-    $('#searchscope-pane-close').click(function(){
+    $('#searchscope-pane-close').on('click', function(){
         $('#searchscope-pane').removeClass('active');
     });
-    $('input:radio[name=SubTreeArray]').change( function() {
+    $('input:radio[name=SubTreeArray]').on( 'change', function() {
         $('#searchtext').attr('value', $(this).attr('title'));
         $('#searchtext').attr('title', $(this).attr('title'));
     } );

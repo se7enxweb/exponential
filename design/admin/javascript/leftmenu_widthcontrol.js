@@ -59,9 +59,9 @@ jQuery(function( $ )
     {
         wl.addClass( 'hide' );
         wh.removeClass( 'hide' ) ;
-        wh.bind( 'mousedown', leftMenuDrag.down );
-        $( document ).bind('mouseup click', leftMenuDrag.up );
-        $( document ).bind('mousemove', leftMenuDrag.on );
+        wh.on( 'mousedown', leftMenuDrag.down );
+        $( document ).on('mouseup click', leftMenuDrag.up );
+        $( document ).on('mousemove', leftMenuDrag.on );
         $leftmenu.addClass( 'widthcontroled' );
     }
 

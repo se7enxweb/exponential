@@ -109,7 +109,7 @@
 {literal}
 (function( $ )
 {
-    $('#tab-details-states-list select').change(function()
+    $('#tab-details-states-list select').on('change', function()
     {
         var btn = $('#tab-details-set-states');
         if ( !btn.attr('disabled') )
@@ -117,7 +117,7 @@
             btn.removeClass('button').addClass('defaultbutton');
         }
     });
-    $('#selected-section-id').change(function()
+    $('#selected-section-id').on('change', function()
     {
         var btn = $('#tab-details-set-section');
         if ( !btn.attr('disabled') )

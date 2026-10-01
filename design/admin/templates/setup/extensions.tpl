@@ -203,7 +203,7 @@ $(document).ready(function() {
 
     jQuery(extensionChecks).each( function(){
         initialExtensionSettings[this.value] = this.checked;
-    }).change(function(){styleUpdateButton();});
+    }).on('change', function(){styleUpdateButton();});
 
     // Extension info card popin
     function toggleExtensionCard( name ) {
@@ -227,7 +227,7 @@ $(document).ready(function() {
 
     // Filter the rows of this page as you type.
     jQuery( '#extensions-filter-input' ).on( 'input', function() {
-        var q = jQuery.trim( this.value ).toLowerCase();
+        var q = String( ( this.value ) ?? '' ).trim().toLowerCase();
         jQuery( '.extensions-list tr.extension-row' ).each( function() {
             var match = q === '' || jQuery( this ).text().toLowerCase().indexOf( q ) !== -1;
             jQuery( this ).toggle( match );

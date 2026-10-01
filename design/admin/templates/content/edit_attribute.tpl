@@ -85,7 +85,7 @@
 
 jQuery(function( $ )
 {
-    $('fieldset.ezcca-collapsible legend a').click( function()
+    $('fieldset.ezcca-collapsible legend a').on( 'click', function()
     {
         var container = $( this.parentNode.parentNode ), inner = container.find('div.ezcca-collapsible-fieldset-content');
         if ( container.hasClass('ezcca-collapsed') )

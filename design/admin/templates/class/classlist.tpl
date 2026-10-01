@@ -168,9 +168,9 @@
 jQuery(function( $ )//called on document.ready
 {
     // Disable bottom datatype dropp down when using new button in top
-    jQuery('#NewButtonTop').click(function()
+    jQuery('#NewButtonTop').on('click', function()
     {
-        jQuery('#ClassLanguageCodeBottom').attr('disabled', true);
+        jQuery('#ClassLanguageCodeBottom').prop('disabled', true);
     });
 });
 </script>

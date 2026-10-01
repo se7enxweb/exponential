@@ -114,9 +114,9 @@ jQuery(function( $ )
         }
     };
 
-    $('div.tab-block ul.tabs li a').click( NodeTab.click );
+    $('div.tab-block ul.tabs li a').on( 'click', NodeTab.click );
 
-    $('#maincontent-hide').click( NodeTab.toggleClick );
+    $('#maincontent-hide').on( 'click', NodeTab.toggleClick );
 
     var openTab = NodeTab.getCookie( 'adminNavigationTab' );
     if ( openTab && $('div.tab-block ul.tabs.tabs-by-cookie #node-tab-' + openTab).length )

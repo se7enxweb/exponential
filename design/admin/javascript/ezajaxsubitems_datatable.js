@@ -423,7 +423,7 @@ var sortableSubitems = function () {
 
         var createNewBtnAction = function( type, args ) {
             var event = args[0], item = args[1];
-            $('form[name=children]').append($('<input type="hidden" name="ClassID" value="' + item.value + '" />')).append($('<input type="hidden" name="NewButton" />')).submit();
+            $('form[name=children]').append($('<input type="hidden" name="ClassID" value="' + item.value + '" />')).append($('<input type="hidden" name="NewButton" />')).trigger('submit');
         }
 
         var createNewBtn = new YAHOO.widget.Button({type: "menu",
@@ -481,7 +481,7 @@ var sortableSubitems = function () {
                     .append($('<input type="hidden" name="MultiEditCreateParent" />').val(parent))
                     .append($('<input type="hidden" name="MultiEditReturnURI" />')
                                 .val(window.location.pathname))
-                    .submit();
+                    .trigger('submit');
             } }
         });
 
@@ -508,13 +508,13 @@ var sortableSubitems = function () {
             var form = $('form[name=children]').first();
 
             if (selectedValue == 0) {
-                form.append($('<input type="hidden" name="RemoveButton" value="1" />')).submit();
+                form.append($('<input type="hidden" name="RemoveButton" value="1" />')).trigger('submit');
             } else if (selectedValue == 2) {
-                form.append($('<input type="hidden" name="CopyButton" value="1" />')).submit();
+                form.append($('<input type="hidden" name="CopyButton" value="1" />')).trigger('submit');
             } else if (selectedValue == 3) {
-                form.append($('<input type="hidden" name="HideButton" value="1" />')).submit();
+                form.append($('<input type="hidden" name="HideButton" value="1" />')).trigger('submit');
             } else if (selectedValue == 4) {
-                form.append($('<input type="hidden" name="UnhideButton" value="1" />')).submit();
+                form.append($('<input type="hidden" name="UnhideButton" value="1" />')).trigger('submit');
             } else if (selectedValue == 5) {
                 // Edit the selection in one form. The checkboxes are named
                 // DeleteIDArray - a name this list reuses for every bulk
@@ -530,9 +530,9 @@ var sortableSubitems = function () {
                 form.attr('action', multiEditURL)
                     .append($('<input type="hidden" name="MultiEditReturnURI" />')
                                 .val(window.location.pathname))
-                    .submit();
+                    .trigger('submit');
             } else {
-                form.append($('<input type="hidden" name="MoveButton" value="1" />')).submit();
+                form.append($('<input type="hidden" name="MoveButton" value="1" />')).trigger('submit');
             }
         }
 

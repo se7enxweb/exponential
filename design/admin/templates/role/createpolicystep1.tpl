@@ -90,19 +90,19 @@ jQuery(function( $ )
         moduleList['{$module.name}'] = [{foreach $module.available_functions as $fn => $lim}'{$fn}'{delimiter}, {/delimiter}{/foreach}];
     {/foreach}
 {literal}
-    $('#ezrole-createpolizy-module').change(function(e)
+    $('#ezrole-createpolizy-module').on('change', function(e)
     {
         if ( moduleList[ this.value ] && moduleList[ this.value ].length )
         {
         	setFunctionOptions( moduleList[ this.value ] );
-        	$('#createpolicyform input.button-module').removeClass('button').addClass('button-disabled').attr('disabled', true);
-        	$('#createpolicyform input.button-function').removeClass('button-disabled').addClass('button').attr('disabled', false);
+        	$('#createpolicyform input.button-module').removeClass('button').addClass('button-disabled').prop('disabled', true);
+        	$('#createpolicyform input.button-function').removeClass('button-disabled').addClass('button').prop('disabled', false);
         }
         else
         {
         	setFunctionOptions( [everyFunction], true );
-        	$('#createpolicyform input.button-function').removeClass('button').addClass('button-disabled').attr('disabled', true);
-        	$('#createpolicyform input.button-module').removeClass('button-disabled').addClass('button').attr('disabled', false)
+        	$('#createpolicyform input.button-function').removeClass('button').addClass('button-disabled').prop('disabled', true);
+        	$('#createpolicyform input.button-module').removeClass('button-disabled').addClass('button').prop('disabled', false)
         }
     });
     function setFunctionOptions( list, disable )
@@ -110,7 +110,7 @@ jQuery(function( $ )
         $('#ezrole-createpolizy-function').empty().append( jQuery.map( list, function( item, i )
         {
             return '<option value="' + item + '">' + item + '</option>';
-        } ).join() ).attr( 'disabled', disable === true ).val( disable === true ? '*' : list[0] );
+        } ).join() ).prop( 'disabled', disable === true ).val( disable === true ? '*' : list[0] );
     			    	
     }
 });

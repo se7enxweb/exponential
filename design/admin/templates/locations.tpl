@@ -196,7 +196,7 @@
     {literal}
     (function( $ )
     {
-        $('#tab-locations-list input.main-locations-radio').change(function()
+        $('#tab-locations-list input.main-locations-radio').on('change', function()
         {
             if ( this.className === 'main-locations-radio' )
                 $('#tab-locations-list-set-main').removeClass('button').addClass('defaultbutton');

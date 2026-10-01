@@ -47,7 +47,7 @@
 <script type="text/javascript">
 jQuery('#ezasi-sort-field, #ezasi-sort-order').each( function(){
     jQuery( this ).attr( 'initial', this.value );
-} ).change(function(){
+} ).on('change', function(){
     var t = $(this), o = $(this.id === 'ezasi-sort-field' ? '#ezasi-sort-order' : '#ezasi-sort-field'), s = $('#ezasi-sort-set');
     // signal in gui if user needs to save this or not
     if ( t.val() === t.attr('initial') && o.val() === o.attr('initial') )
