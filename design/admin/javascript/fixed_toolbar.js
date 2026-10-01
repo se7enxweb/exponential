@@ -1,6 +1,10 @@
 YUI(YUI3_config).use('event', 'node-screen', 'node-style', 'selector-css3', 'transition', function (Y) {
 
     Y.on('domready', function() {
+        // Exponential UI's exp::sticky does the same without YUI: when it is loaded, it runs instead of this
+        if ( window.Exp && window.Exp.sticky ) {
+            return;
+        }
         var toolbar, formY, form, fixed = true, firstInput, columns,
             toolbarHeight, toTop = Y.one('.scroll-to-top');
 

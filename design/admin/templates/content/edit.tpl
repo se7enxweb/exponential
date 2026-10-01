@@ -18,10 +18,11 @@
 <script type="text/javascript">
 {literal}
 
-YUI(YUI3_config).use('ezcollapsiblemenu', 'event', 'io-ez', function (Y) {
-
-    Y.on('domready', function () {
-        var leftmenu = new Y.eZ.CollapsibleMenu({
+// Collapses the object information menu (Exponential UI's exp::collapse) and remembers it per user.
+if ( window.Exp && window.Exp.collapse ) {
+    Exp.ready(function ($) {
+        var leftmenu = $('#leftmenu')[0], design = $('#leftmenu-design');
+        Exp.collapse({
             link: '#objectinfo-showhide',
             content: false,
 {/literal}
@@ -35,23 +36,18 @@ YUI(YUI3_config).use('ezcollapsiblemenu', 'event', 'io-ez', function (Y) {
             },{
                 selector: '#left-panels-separator',
                 duration: 0.4,
-                fullStyle: {left: (Y.one('#leftmenu').get('clientWidth') - parseInt(Y.one('#leftmenu-design').getStyle('marginRight'))) + 'px'},
+                fullStyle: {left: ((leftmenu ? leftmenu.clientWidth : 0) - (parseInt(design.css('marginRight'), 10) || 0)) + 'px'},
                 collapsedStyle: {left: 0}
             },{
                 selector: '#maincontent',
                 duration: 0.4,
-                // workaround to http://yuilibrary.com/projects/yui3/ticket/2531641
-                // for IE, margin has to be set in px
-                fullStyle: {marginLeft: (Y.one('#leftmenu').get('offsetWidth') + 10) + 'px'},
+                fullStyle: {marginLeft: ((leftmenu ? leftmenu.offsetWidth : 0) + 10) + 'px'},
                 collapsedStyle: {marginLeft: '30px'}
             }],
-            callback: function () {
-                Y.io.ez.setPreference('admin_edit_menu_collapsed', this.conf.collapsed);
-            }
+            pref: { name: 'admin_edit_menu_collapsed', values: [0, 1] }
         });
     });
-
-});
+}
 
 {/literal}
 </script>

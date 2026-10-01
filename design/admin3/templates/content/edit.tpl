@@ -196,14 +196,15 @@
         }
     </script>
 {/literal}
-{*
+{* The object information menu does not collapse in admin3 (switched off on purpose). To switch it on, remove this
+   comment around the script: it uses Exponential UI's exp::collapse, as the admin design's edit page does.
     <script type="text/javascript">
 {literal}
 
-    YUI(YUI3_config).use('ezcollapsiblemenu', 'event', 'io-ez', function (Y) {
-
-        Y.on('domready', function () {
-            var leftmenu = new Y.eZ.CollapsibleMenu({
+    if ( window.Exp && window.Exp.collapse ) {
+        Exp.ready(function ($) {
+            var leftmenu = $('#leftmenu')[0], design = $('#leftmenu-design');
+            Exp.collapse({
                 link: '#objectinfo-showhide',
                 content: false,
 {/literal}
@@ -212,33 +213,28 @@ collapsed: "{$edit_menu_collapsed}",
                 elements:[{
                     selector: '#leftmenu',
                     duration: 0.4,
-fullStyle: {marginLeft: '0'},
-collapsedStyle: {marginLeft: '-16.5em'}
+                    fullStyle: {marginLeft: '0'},
+                    collapsedStyle: {marginLeft: '-16.5em'}
                 },{
                     selector: '#objectinfo-showhide',
                     duration: 0.4,
-fullStyle: {backgroundPositionX: '-20px', backgroundPositionY: '-461px', backgroundRepeat: 'no-repeat', top: '105px', marginTop: 'unset', right: '10px'},
-collapsedStyle: {backgroundPositionX: '-20px', backgroundPositionY: '-461px', backgroundRepeat: 'no-repeat', top: '105px', marginTop: 'unset', right: '10px'}
+                    fullStyle: {backgroundPositionX: '-20px', backgroundPositionY: '-461px', backgroundRepeat: 'no-repeat', top: '105px', marginTop: 'unset', right: '10px'},
+                    collapsedStyle: {backgroundPositionX: '-20px', backgroundPositionY: '-461px', backgroundRepeat: 'no-repeat', top: '105px', marginTop: 'unset', right: '10px'}
                 },{
                     selector: '#left-panels-separator',
                     duration: 0.4,
-fullStyle: {left: (Y.one('#leftmenu').get('clientWidth') - parseInt(Y.one('#leftmenu-design').getStyle('marginRight'))) + 'px'},
-collapsedStyle: {left: 0}
+                    fullStyle: {left: ((leftmenu ? leftmenu.clientWidth : 0) - (parseInt(design.css('marginRight'), 10) || 0)) + 'px'},
+                    collapsedStyle: {left: 0}
                 },{
                     selector: '#maincontent',
                     duration: 0.4,
-                    // workaround to http://yuilibrary.com/projects/yui3/ticket/2531641
-                    // for IE, margin has to be set in px
-fullStyle: {marginLeft: '-30px'},
+                    fullStyle: {marginLeft: '-30px'},
                     collapsedStyle: {}
                 }],
-                callback: function () {
-                    Y.io.ez.setPreference('admin_edit_menu_collapsed', this.conf.collapsed);
-                }
+                pref: { name: 'admin_edit_menu_collapsed', values: [0, 1] }
             });
         });
-
-    });
+    }
 
 {/literal}
     </script>

@@ -4,6 +4,8 @@
  {def $load_javascript_list = true()}
 {/if}
 
+{include uri='design:page_head_exp.tpl'}
+
 {if $load_javascript_list}
  {ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|prepend( 'ezjsc::jquery', 'ezjsc::jqueryio' ) )}
 {else}

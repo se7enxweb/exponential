@@ -112,10 +112,11 @@ div#maincolumn {ldelim} padding-right: 20px; padding-left: 50px; {rdelim}
     <script type="text/javascript">
     {literal}
 
-    YUI(YUI3_config).use('ezcollapsiblemenu', 'event', 'io-ez', 'node', function (Y) {
-
-        Y.on('domready', function () {
-            var rightmenu = new Y.eZ.CollapsibleMenu({
+    // Collapses the right menu in place (Exponential UI's exp::collapse) and remembers it per user; without it
+    // the link's own address does the same with a page reload.
+    if ( window.Exp && window.Exp.collapse ) {
+        Exp.ready(function () {
+            Exp.collapse({
                 link: '#rightmenu-showhide',
                 content: ['', ''],
                 collapsed: 0,
@@ -135,15 +136,11 @@ div#maincolumn {ldelim} padding-right: 20px; padding-left: 50px; {rdelim}
                     fullStyle: {right:'181px'},
                     collapsedStyle: {right: '-2px'}
                 }],
-                callback: function () {
-                    var p = 1;
-                    if ( this.conf.collapsed )
-                        p = 0;
-                    Y.io.ez.setPreference('admin_right_menu_show', p);
-                }
+                // the preference says whether the menu is shown: 1 when expanded, 0 when collapsed
+                pref: { name: 'admin_right_menu_show', values: [1, 0] }
             });
         });
-    });
+    }
 
     {/literal}
     </script>
@@ -225,12 +222,12 @@ document.getElementById('right-panels-separator').style.right = (parseInt(docume
 
     jQuery( searchtext ).val( searchtext.title
     ).addClass('passive'
-    ).focus(function(){
+    ).on('focus', function(){
         if ( this.value === this.title )
         {
             jQuery( this ).removeClass('passive').val('');
         }
-    }).blur(function(){
+    }).on('blur', function(){
         if ( this.value === '' )
         {
             jQuery( this ).addClass('passive').val( this.title );
