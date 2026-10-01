@@ -23,10 +23,10 @@ tinyMCEPopup.onInit.add( eZOEPopupUtils.BIND( eZOEPopupUtils.init, window, {
         var td = jQuery('#table_cell_size_grid td div'), table = jQuery('#table_cell_size_grid');
         td.each( function(i, el){
             var o = jQuery( el );
-            o.mouseover( eZOEPopupUtils.BIND( tableSizeGridMouse, td, o, i, false ) );
+            o.on( 'mouseover', eZOEPopupUtils.BIND( tableSizeGridMouse, td, o, i, false ) );
             o.on( 'click', eZOEPopupUtils.BIND( tableSizeGridMouse, td, o, i, true ) );
         });
-        table.mouseout( eZOEPopupUtils.BIND( tableSizeGridMouse, td, 0, -1, false ) );
+        table.on( 'mouseout', eZOEPopupUtils.BIND( tableSizeGridMouse, td, 0, -1, false ) );
         jQuery('#table_cell_size').show();
         tableSizeGrid['cols'] = jQuery('#table_cell_size_grid_cols');
         tableSizeGrid['rows'] = jQuery('#table_cell_size_grid_rows');
