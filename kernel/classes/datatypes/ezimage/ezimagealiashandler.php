@@ -758,10 +758,40 @@ class eZImageAliasHandler
     function removeAliases()
     {
         $aliasList = $this->aliasList();
+        $removed = array();
         foreach ( $aliasList as $alias )
         {
             if ( $alias['is_valid'] && !empty( $alias['url'] ) )
+            {
                 $this->removeAliasFile( $alias['url'] );
+                $removed[$alias['url']] = true;
+            }
+        }
+
+        // An alias generated for a draft is recorded in ezimagefile, but the
+        // draft's XML does not always name it any more by the time the draft
+        // goes (the image was replaced, or its XML written again from the
+        // original only), so it was never removed: the original went and the
+        // _medium, _reference ... files and their rows stayed behind. Every
+        // file ezimagefile records for this attribute in this version's own
+        // directory goes too. Files of a published version live in a directory
+        // all its versions share and are left to the list above;
+        // removeAliasFile() keeps a file another version still names.
+        $attributeID = (int)$this->ContentObjectAttributeData['id'];
+        $version = (int)$this->ContentObjectAttributeData['version'];
+        $language = (string)$this->ContentObjectAttributeData['language_code'];
+        if ( $attributeID > 0 && $language !== '' )
+        {
+            $versionedImages = eZINI::instance( 'image.ini' )->variable( 'FileSettings', 'VersionedImages' );
+            $versionDirectory = eZSys::storageDirectory() . '/' . $versionedImages . '/' . $attributeID . '/' . $version . '-' . $language;
+            foreach ( eZImageFile::fetchForContentObjectAttribute( $attributeID ) as $filePath )
+            {
+                if ( !isset( $removed[$filePath] ) && dirname( $filePath ) === $versionDirectory )
+                {
+                    $this->removeAliasFile( $filePath );
+                    $removed[$filePath] = true;
+                }
+            }
         }
 
         if ( !empty( $aliasList['original']['url'] ) )
