@@ -7971,6 +7971,18 @@ Note: The packages will not be uninstalled.</translation>
         <source>Search...</source>
         <translation>Search...</translation>
     </message>
+    <message>
+        <source>Media</source>
+        <translation>Media</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Users</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Store</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -9505,6 +9517,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Users and groups using the &lt;%role_name&gt; role (%users_count)</source>
         <translation>Users and groups using the &lt;%role_name&gt; role (%users_count)</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
     </message>
 </context>
 <context>
@@ -11858,6 +11874,66 @@ Note: The packages will not be uninstalled.</translation>
         <source>Close</source>
         <translation>Close</translation>
     </message>
+    <message>
+        <source>The extensions were not changed</source>
+        <translation>The extensions were not changed</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>active</translation>
+    </message>
+    <message>
+        <source>active for siteaccesses</source>
+        <translation>active for siteaccesses</translation>
+    </message>
+    <message>
+        <source>inactive</source>
+        <translation>inactive</translation>
+    </message>
+    <message>
+        <source>Loading order</source>
+        <translation>Loading order</translation>
+    </message>
+    <message>
+        <source>The order of ActiveExtensions in settings/override/site.ini.append.php, which is the order the system loads the extensions in. Drag an extension to a new place, or use its arrows; every change is saved at once.</source>
+        <translation>The order of ActiveExtensions in settings/override/site.ini.append.php, which is the order the system loads the extensions in. Drag an extension to a new place, or use its arrows; every change is saved at once.</translation>
+    </message>
+    <message>
+        <source>Saving...</source>
+        <translation>Saving...</translation>
+    </message>
+    <message>
+        <source>The loading order could not be saved.</source>
+        <translation>The loading order could not be saved.</translation>
+    </message>
+    <message>
+        <source>Load earlier</source>
+        <translation>Load earlier</translation>
+    </message>
+    <message>
+        <source>Load later</source>
+        <translation>Load later</translation>
+    </message>
+    <message>
+        <source>Filter this page</source>
+        <translation>Filter this page</translation>
+    </message>
+    <message>
+        <source>Name, extension or license</source>
+        <translation>Name, extension or license</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Order</translation>
+    </message>
+    <message>
+        <source>Active for siteaccesses (ActiveAccessExtensions)</source>
+        <translation>Active for siteaccesses (ActiveAccessExtensions)</translation>
+    </message>
+    <message>
+        <source>SA</source>
+        <translation>SA</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/info</name>
@@ -12890,6 +12966,22 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Interned strings</source>
         <translation>Interned strings</translation>
+    </message>
+    <message>
+        <source>This page is served from</source>
+        <translation>This page is served from</translation>
+    </message>
+    <message>
+        <source>Site URL setting</source>
+        <translation>Site URL setting</translation>
+    </message>
+    <message>
+        <source>(empty)</source>
+        <translation>(empty)</translation>
+    </message>
+    <message>
+        <source>This is not an address visitors can reach.</source>
+        <translation>This is not an address visitors can reach.</translation>
     </message>
 </context>
 <context>

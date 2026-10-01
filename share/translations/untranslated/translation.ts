@@ -7964,6 +7964,18 @@ Note: The packages will not be uninstalled.</source>
         <source>Search...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -9497,6 +9509,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Users and groups using the &lt;%role_name&gt; role (%users_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11851,6 +11867,66 @@ Note: The packages will not be uninstalled.</source>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The extensions were not changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>active for siteaccesses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>inactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The order of ActiveExtensions in settings/override/site.ini.append.php, which is the order the system loads the extensions in. Drag an extension to a new place, or use its arrows; every change is saved at once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The loading order could not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load earlier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load later</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name, extension or license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active for siteaccesses (ActiveAccessExtensions)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SA</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/info</name>
@@ -12882,6 +12958,22 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Interned strings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page is served from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site URL setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(empty)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is not an address visitors can reach.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
