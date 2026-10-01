@@ -837,134 +837,223 @@ input.button:hover {
     border: 1px solid #999;
 }
 
-/* SEARCH */
+/* SEARCH: design:page_search.tpl, in the header and in the narrow screen menu (classes, not ids: two copies) */
 .searchblock {
     position: relative;
     float: left;
 }
 
-#searchtextwrapper {
-    float: left;
+.searchblock form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
+.searchtextwrapper {
+    position: relative;
     border: 4px solid rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }
 
-#searchtext {
+.searchblock input.searchtext {
     height: 35px;
-    padding: 0 5px 0 25px;
+    width: 230px;
+    padding: 0 8px 0 30px;
     border: none;
     border-radius: 5px;
     line-height: 18px !important;
-    font-size: 1.2em;
-    font-weight: bold;
-    font-style: italic;
+    font-size: 1.1em;
     box-shadow: -1px -1px 1px #464a4b;
     background: #abadac;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
-#searchtext:focus {
+.searchblock input.searchtext::placeholder {
+    color: #3d4142;
+    font-style: italic;
+}
+
+.searchblock input.searchtext:focus {
+    outline: 2px solid #f26a21;
+    outline-offset: 1px;
     background-color: #f5f3dd;
 }
 
-.searchbuttonfield {
-    height: 35px;
-    float: left;
-    width: 35px;
-    margin-left: 5px;
+.searchblock .searchbuttonfield {
+    height: 43px;
+    width: 43px;
+    padding: 0;
     border: 4px solid rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     background: transparent url(../images/3/sprite.png) no-repeat 9px -578px;
-
+    cursor: pointer;
 }
 
-.searchbuttonfield:hover {
-    cursor: pointer;
+.searchblock .searchbuttonfield:hover,
+.searchblock .searchbuttonfield:focus-visible {
     border-color: #567975;
     background-color: rgba(0, 0, 0, 0.2);
+    outline: none;
 }
 
-.searchscope {
-    width: 14px;
-    height: 14px;
+.searchblock .searchscope {
     position: absolute;
-    top: 15px;
-    left: 10px;
-    background: transparent url(../images/3/sprite.png) no-repeat 0 -868px;
-}
-
-.searchscope-body label {
-    font-size: 1em;
-}
-
-.searchscope:hover {
+    top: 50%;
+    left: 6px;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    background: transparent url(../images/3/sprite.png) no-repeat 3px -865px;
     cursor: pointer;
+    z-index: 1;
 }
 
-.searchscope-menu-container .searchscope-pane {
-    display: none;
+.searchblock .searchscope:hover,
+.searchblock .searchscope[aria-expanded="true"],
+.searchblock .searchscope:focus-visible {
+    background-color: rgba(0, 0, 0, 0.12);
+    outline: none;
 }
 
 .searchscope-pane {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #C1C1C1;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 0 0 13px rgba(0, 0, 0, 0.31);
-    margin-top: 6px;
     position: absolute;
-    left: -80px;
-    width: 250px;
-    z-index: 21;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 300px;
+    z-index: 60;
     text-align: left;
+    color: #222;
+    background: #fff;
+    border: 1px solid #c1c1c1;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
-.searchscope-pane.active,
-.searchscope-menu-container.active .searchscope-pane {
-    display: block;
+.searchscope-pane[hidden] {
+    display: none;
 }
 
-.searchscope-pane,
-.searchscope-pane>.searchscope-body {
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-
-.searchscope-pane>.searchscope-body {
-    border-top: 1px solid #DDDDDD;
-    display: block;
-    padding: 8px 10px;
-    position: relative;
-}
-
-.searchscope-pane>.searchscope-title {
+.searchscope-pane > .searchscope-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 10px 8px 12px;
     font-weight: bold;
-    font-size: 12px;
-    color: #111111;
-    text-shadow: 1px 1px 0 white;
-    padding: 8px 10px 5px 10px;
+    font-size: 13px;
+    color: #111;
     background: #f5f5f5;
-    background: -moz-linear-gradient(#f4f4f4, #f5f5f5);
-    background: -webkit-linear-gradient(#f4f4f4, #f5f5f5);
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#f5f5f5')";
-    border-bottom: 1px solid #f0f3f3;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px
+    border-bottom: 1px solid #e3e3e3;
+    border-radius: 6px 6px 0 0;
 }
 
 .searchscope-pane .close {
-    display: block;
-    float: right;
-    margin-right: 8px;
-    margin-top: 7px;
-    width: 16px;
-    height: 16px;
-    background: transparent url(../images/3/sprite.png) no-repeat -28px -868px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    background: transparent url(../images/3/sprite.png) no-repeat -26px -866px;
+    cursor: pointer;
 }
 
-.searchscope-pane .close .mini-icon-remove-close {
-    line-height: 16px;
-    height: 16px;
-    color: #CCC;
+.searchscope-pane .close:hover,
+.searchscope-pane .close:focus-visible {
+    background-color: rgba(0, 0, 0, 0.08);
+    outline: none;
+}
+
+.searchscope-pane > .searchscope-body {
+    padding: 10px 12px 12px;
+}
+
+.searchscope-body label {
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.35;
+}
+
+.searchscope-body .searchscope-section {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.searchscope-body .searchscope-section select {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 4px;
+    font-weight: normal;
+}
+
+.searchscope-body fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+}
+
+.searchscope-body legend {
+    margin-bottom: 4px;
+    padding: 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.searchscope-body fieldset label {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 4px 0;
+    cursor: pointer;
+}
+
+.searchscope-body fieldset label input {
+    margin: 2px 0 0;
+    accent-color: #f26a21;
+}
+
+.searchscope-body label.disabled {
+    color: #999;
+    cursor: default;
+}
+
+.searchscope-advanced {
+    margin: 10px 0 0;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+    font-size: 13px;
+}
+
+/* The narrow screen menu: the field full width, the popup under it in the flow */
+.header-search-mobile .searchblock {
+    float: none;
+    width: 100%;
+}
+
+.header-search-mobile .searchtextwrapper {
+    flex: 1;
+}
+
+.header-search-mobile .searchblock input.searchtext {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-search-mobile .searchblock form {
+    flex-wrap: wrap;
+}
+
+.header-search-mobile .searchscope-pane {
+    position: static;
+    flex-basis: 100%;
+    width: auto;
+    margin-top: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
 }
 
 .login-inputs {

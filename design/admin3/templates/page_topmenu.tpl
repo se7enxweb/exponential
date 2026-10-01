@@ -55,7 +55,7 @@
                 {/if}
             </li>
             <li class="header-search-mobile">
-                {include uri='design:page_search.tpl'}
+                {include uri='design:page_search.tpl' search_box='-mobile'}
             </li>
         </ul>
     </div>
