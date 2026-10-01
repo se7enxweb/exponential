@@ -467,6 +467,30 @@ class eZExtension
         if ( !is_string( $accessName ) || $accessName === '' )
             return false;
 
+        // prependSiteAccess() asks once per active extension, so loading one
+        // siteaccess read the same file some 70 times, with the INI cache off
+        // (216 parses and a third of a second when a publish loads three
+        // siteaccesses for the static cache). The answer is kept for the rest
+        // of the request: keyed by its start time, so a long-running worker
+        // (Velocity) reads the file again for the next request.
+        $request = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT'] : '';
+        if ( self::$extensionSettingsSiteAccessCache['request'] !== $request )
+            self::$extensionSettingsSiteAccessCache = array( 'request' => $request, 'access' => array() );
+        if ( !array_key_exists( $accessName, self::$extensionSettingsSiteAccessCache['access'] ) )
+            self::$extensionSettingsSiteAccessCache['access'][$accessName] = self::readExtensionSettingsSiteAccess( $accessName );
+        return self::$extensionSettingsSiteAccessCache['access'][$accessName];
+    }
+
+    /**
+     * The answers of extensionSettingsSiteAccess() for one request.
+     */
+    private static $extensionSettingsSiteAccessCache = array( 'request' => null, 'access' => array() );
+
+    /**
+     * Reads ExtensionSettingsSiteAccess from the siteaccess's own site.ini.append(.php).
+     */
+    private static function readExtensionSettingsSiteAccess( $accessName )
+    {
         $dir = 'settings/siteaccess/' . $accessName;
         foreach ( array( 'site.ini.append.php', 'site.ini.append' ) as $file )
         {
