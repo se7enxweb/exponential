@@ -13,25 +13,28 @@ $tpl = eZTemplate::factory();
 $offset = $Params['Offset'];
 $limit = expAdminPagination::limit( 'shop/orderlist' );
 
-
-if( eZPreferences::value( 'admin_orderlist_sortfield' ) )
+// The list is sorted by the column whose heading was clicked, carried in the
+// address as /(sort)/<column>/(dir)/<asc|desc> like the other admin lists, so
+// paging, reloading and a link all show the same order. Without them the
+// stored preferences (Time or Customer, ascending or descending) decide, as
+// they always have. The column is checked against eZOrder::sortColumnsForList().
+$userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+$columns = eZOrder::sortColumnsForList();
+if ( isset( $userParameters['sort'] ) && isset( $columns[(string)$userParameters['sort']] ) )
 {
-    $sortField = eZPreferences::value( 'admin_orderlist_sortfield' );
+    $sortField = (string)$userParameters['sort'];
 }
-
-if ( !isset( $sortField ) || ( ( $sortField != 'created' ) && ( $sortField!= 'user_name' ) ) )
+else
 {
-    $sortField = 'created';
+    $sortField = eZPreferences::value( 'admin_orderlist_sortfield' ) === 'user_name' ? 'customer' : 'created';
 }
-
-if( eZPreferences::value( 'admin_orderlist_sortorder' ) )
+if ( isset( $userParameters['dir'] ) )
 {
-    $sortOrder = eZPreferences::value( 'admin_orderlist_sortorder' );
+    $sortOrder = strtolower( (string)$userParameters['dir'] ) === 'desc' ? 'desc' : 'asc';
 }
-
-if ( !isset( $sortOrder ) || ( ( $sortOrder != 'asc' ) && ( $sortOrder!= 'desc' ) ) )
+else
 {
-    $sortOrder = 'asc';
+    $sortOrder = eZPreferences::value( 'admin_orderlist_sortorder' ) === 'desc' ? 'desc' : 'asc';
 }
 
 $http = eZHTTPTool::instance();
@@ -85,17 +88,25 @@ if ( $http->hasPostVariable( 'SaveOrderStatusButton' ) )
     }
 }
 
-$orderArray = eZOrder::active( true, $offset, $limit, $sortField, $sortOrder );
+$orderArray = eZOrder::activeSorted( $offset, $limit, $sortField, $sortOrder );
 $orderCount = eZOrder::activeCount();
 
 $tpl->setVariable( 'order_list', $orderArray );
 $tpl->setVariable( 'order_list_count', $orderCount );
 $tpl->setVariable( 'limit', $limit );
 
-$viewParameters = array( 'offset' => $offset );
+$viewParameters = array( 'offset' => $offset,
+                         'sort'   => $sortField,
+                         'dir'    => $sortOrder );
 $tpl->setVariable( 'view_parameters', $viewParameters );
-$tpl->setVariable( 'sort_field', $sortField );
+// sort_field keeps the names it always had (created, user_name, order_nr) for
+// site designs that show their own sort selector.
+$legacyFields = array( 'customer' => 'user_name', 'id' => 'order_nr' );
+$tpl->setVariable( 'sort_field', isset( $legacyFields[$sortField] ) ? $legacyFields[$sortField] : $sortField );
 $tpl->setVariable( 'sort_order', $sortOrder );
+$tpl->setVariable( 'order_sort', array( 'field'     => $sortField,
+                                        'direction' => $sortOrder,
+                                        'opposite'  => $sortOrder === 'asc' ? 'desc' : 'asc' ) );
 
 $Result = array();
 $Result['path'] = array( array( 'text' => ezpI18n::tr( 'kernel/shop', 'Order list' ),

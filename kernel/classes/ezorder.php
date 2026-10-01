@@ -298,6 +298,86 @@ class eZOrder extends eZPersistentObject
         }
     }
 
+    /**
+     * The columns the order lists can be sorted by, as the address names them
+     * ((sort)/<key>), and what each sorts on.
+     *
+     * @return array key => description
+     */
+    static function sortColumnsForList()
+    {
+        return array( 'id'            => 'order number',
+                      'customer'      => 'customer name',
+                      'total_ex_vat'  => 'total excluding VAT',
+                      'total_inc_vat' => 'total including VAT',
+                      'created'       => 'time the order was placed',
+                      'status'        => 'status name' );
+    }
+
+    /**
+     * Orders of a list page sorted by one of sortColumnsForList(), by the
+     * database, so the order holds across every page and not only within the
+     * one shown. Ties are broken by the order id, so paging never shows an
+     * order twice or skips one.
+     *
+     * The totals are worked out in the query with the arithmetic of
+     * eZOrder::productItems() and eZOrderItem: an item's price with or without
+     * its VAT (none when the order ignores VAT), times its count, less its
+     * discount, plus the order's extra lines (shipping and the like).
+     *
+     * @param int $offset
+     * @param int $limit
+     * @param string $sortField a key of sortColumnsForList(); anything else sorts by time
+     * @param string $sortOrder 'asc' or 'desc'
+     * @param int $show eZOrder::SHOW_NORMAL, SHOW_ARCHIVED or SHOW_ALL
+     * @return eZOrder[]
+     */
+    static function activeSorted( $offset = 0, $limit = 100000, $sortField = 'created', $sortOrder = 'asc', $show = eZOrder::SHOW_NORMAL )
+    {
+        $direction = strtolower( (string)$sortOrder ) === 'desc' ? 'DESC' : 'ASC';
+        $columns = eZOrder::sortColumnsForList();
+        if ( !isset( $columns[$sortField] ) )
+            $sortField = 'created';
+
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // The document store has no joins for the computed columns: time and
+            // customer as before, everything else by time.
+            return eZOrder::active( true, $offset, $limit,
+                                    $sortField === 'customer' ? 'user_name' : ( $sortField === 'id' ? 'order_nr' : 'created' ),
+                                    strtolower( $direction ), $show );
+        }
+
+        $vat = "CASE WHEN o.ignore_vat = 1 THEN 0 ELSE i.vat_value END";
+        $itemEx = "i.item_count * ( CASE WHEN i.is_vat_inc = 1 THEN i.price * 100 / ( 100 + $vat ) ELSE i.price END ) * ( 100 - i.discount ) / 100";
+        $itemInc = "i.item_count * ( CASE WHEN i.is_vat_inc = 1 THEN i.price ELSE i.price * ( 100 + $vat ) / 100 END ) * ( 100 - i.discount ) / 100";
+        $extraEx = "CASE WHEN oi.is_vat_inc = 1 THEN oi.price * 100 / ( 100 + oi.vat_value ) ELSE oi.price END";
+        $extraInc = "CASE WHEN oi.is_vat_inc = 1 THEN oi.price ELSE oi.price * ( 100 + oi.vat_value ) / 100 END";
+        $total = function( $item, $extra )
+        {
+            return "( COALESCE( ( SELECT SUM( $item ) FROM ezproductcollection_item i WHERE i.productcollection_id = o.productcollection_id ), 0 )" .
+                   " + COALESCE( ( SELECT SUM( $extra ) FROM ezorder_item oi WHERE oi.order_id = o.id ), 0 ) )";
+        };
+        $expressions = array( 'id'            => 'o.order_nr',
+                              'customer'      => '( SELECT c.name FROM ezcontentobject c WHERE c.id = o.user_id )',
+                              'total_ex_vat'  => $total( $itemEx, $extraEx ),
+                              'total_inc_vat' => $total( $itemInc, $extraInc ),
+                              'created'       => 'o.created',
+                              'status'        => '( SELECT s.name FROM ezorder_status s WHERE s.status_id = o.status_id )' );
+
+        $where = 'o.is_temporary = 0';
+        if ( $show != eZOrder::SHOW_ALL )
+            $where .= ' AND o.is_archived = ' . (int)$show;
+        $rows = $db->arrayQuery( "SELECT o.* FROM ezorder o WHERE $where" .
+                                 " ORDER BY " . $expressions[$sortField] . " $direction, o.id $direction",
+                                 array( 'offset' => (int)$offset, 'limit' => (int)$limit ) );
+        $orders = array();
+        foreach ( (array)$rows as $row )
+            $orders[] = new eZOrder( $row );
+        return $orders;
+    }
+
     /*!
      \return the number of active orders
     */

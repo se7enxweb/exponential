@@ -1,5 +1,5 @@
 {let can_apply=false()}
-<form name="orderlist" method="post" action={concat( '/shop/orderlist', $view_parameters.offset|gt(0)|choose( '', concat( '/(offset)/', $view_parameters.offset ) ) )|ezurl}>
+<form name="orderlist" method="post" action={concat( '/shop/orderlist', $view_parameters.offset|gt(0)|choose( '', concat( '/(offset)/', $view_parameters.offset ) ), '/(sort)/', $order_sort.field, '/(dir)/', $order_sort.direction )|ezurl}>
 
 <div class="context-block">
 
@@ -14,46 +14,22 @@
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
 {section show=$order_list}
-<div class="context-toolbar">
-<div class="button-left">
-<p class="table-preferences">
-{if eq( ezpreference( 'admin_orderlist_sortfield' ), 'user_name' )}
-    <a href={'/user/preferences/set/admin_orderlist_sortfield/time/shop/orderlist/'|ezurl}>{'Time'|i18n( 'design/admin/shop/orderlist' )}</a>
-    <span class="current">{'Customer'|i18n( 'design/admin/shop/orderlist' )}</span>
-{else}
-    <span class="current">{'Time'|i18n( 'design/admin/shop/orderlist' )}</span>
-    <a href={'/user/preferences/set/admin_orderlist_sortfield/user_name/shop/orderlist/'|ezurl}>{'Customer'|i18n( 'design/admin/shop/orderlist' )}</a>
-{/if}
-</p>
-</div>
-<div class="button-right">
-<p class="table-preferences">
-{if eq( ezpreference( 'admin_orderlist_sortorder' ), 'desc' )}
-    <a href={'/user/preferences/set/admin_orderlist_sortorder/asc/shop/orderlist/'|ezurl}>{'Ascending'|i18n( 'design/admin/shop/orderlist' )}</a>
-    <span class="current">{'Descending'|i18n( 'design/admin/shop/orderlist' )}</span>
-{else}
-    <span class="current">{'Ascending'|i18n( 'design/admin/shop/orderlist' )}</span>
-    <a href={'/user/preferences/set/admin_orderlist_sortorder/desc/shop/orderlist/'|ezurl}>{'Descending'|i18n( 'design/admin/shop/orderlist' )}</a>
-{/if}
-</p>
-</div>
-
-<div class="float-break"></div>
-</div>
-
 {def $currency = false()
      $locale = false()
      $symbol = false()}
 
+{* Every heading sorts the whole list, by the database (eZOrder::activeSorted()),
+   with the shared parts/sortheader.tpl, as the other admin lists do; the
+   column and direction are view parameters, so paging keeps them. *}
 <table class="list" cellspacing="0">
 <tr>
     <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )}" onclick="ezjs_toggleCheckboxes( document.orderlist, 'OrderIDArray[]' ); return false;" /></th>
-    <th class="tight">{'ID'|i18n( 'design/admin/shop/orderlist' )}</th>
-    <th class="wide">{'Customer'|i18n( 'design/admin/shop/orderlist' )}</th>
-    <th class="tight">{'Total (ex. VAT)'|i18n( 'design/admin/shop/orderlist' )}</th>
-    <th class="tight">{'Total (inc. VAT)'|i18n( 'design/admin/shop/orderlist' )}</th>
-    <th class="wide">{'Time'|i18n( 'design/admin/shop/orderlist' )}</th>
-    <th class="wide">{'Status'|i18n( 'design/admin/shop/orderlist' )}</th>
+    {include uri='design:parts/sortheader.tpl' key='id' label='ID'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='tight'}
+    {include uri='design:parts/sortheader.tpl' key='customer' label='Customer'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='wide'}
+    {include uri='design:parts/sortheader.tpl' key='total_ex_vat' label='Total (ex. VAT)'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='tight'}
+    {include uri='design:parts/sortheader.tpl' key='total_inc_vat' label='Total (inc. VAT)'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='tight'}
+    {include uri='design:parts/sortheader.tpl' key='created' label='Time'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='wide'}
+    {include uri='design:parts/sortheader.tpl' key='status' label='Status'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='wide'}
 </tr>
 {section var=Orders loop=$order_list sequence=array( bglight, bgdark )}
 
