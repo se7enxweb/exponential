@@ -5553,7 +5553,7 @@ e1a50ec1bbc0febd40898a1bd70ef7c0  kernel/classes/ezcontentbrowsebookmark.php
 f877e8a77e829d9b46d7a0d8bbbd3630  kernel/classes/ezcontentcachemanager.php
 a7adc29e0c277e82e7078aefc65c8ed6  kernel/classes/ezcontentclass.php
 41699b7b9e9e2697dd43bd00b59b2c47  kernel/classes/ezcontentclassattribute.php
-5ad6c287ed15969de73740a3cf8b3e4c  kernel/classes/ezcontentclassclassgroup.php
+c81e5505f138eccf990ec5e2242c7ae4  kernel/classes/ezcontentclassclassgroup.php
 7e0ef5dd0edf56bbe489748fa3342f00  kernel/classes/ezcontentclassedithandler.php
 e2e4b158a097dd941e193bdee0724e28  kernel/classes/ezcontentclassgroup.php
 0b6a80a002e8ec4b8d7386ea581bd3c7  kernel/classes/ezcontentclassname.php
@@ -6450,7 +6450,7 @@ c80badb0b87b5fb55555d244d6ef797e  lib/ezutils/classes/ezdatetimevalidator.php
 3d9748ba413c5c152a3f73f7ee585e40  lib/ezutils/classes/ezdebugsetting.php
 1b7ffeaf4d8019335862b54c5ec17664  lib/ezutils/classes/ezexecution.php
 54c1a53c483696cc41a502986862d6eb  lib/ezutils/classes/ezexpiryhandler.php
-62face5c0eca620c7154a1b159e42aaa  lib/ezutils/classes/ezextension.php
+c1827d9526dc313b9d71e8bc57934076  lib/ezutils/classes/ezextension.php
 10c1762246e846ff94749cad57aa5235  lib/ezutils/classes/ezfileextensionblacklistvalidator.php
 88e3e69d2b510bdf2f177d7b094caa30  lib/ezutils/classes/ezfiletransport.php
 d69d47d699e1df518aefc36a4b31d521  lib/ezutils/classes/ezfloatvalidator.php
