@@ -52,7 +52,7 @@ eZOEPopupUtils.settings.onInitDoneArray.push( function( editorElement )
     });
 
     // add event to lookup changes to source type
-    drop.change(function( e )
+    drop.on('change', function( e )
     {
         var lid = ezoeLinkAttribute.lid( this.id, tagName[this.id] ), input = document.getElementById( lid+'_source' );
         if ( this.value === 'ezobject://' )
@@ -73,7 +73,7 @@ eZOEPopupUtils.settings.onInitDoneArray.push( function( editorElement )
     });
 
     // add event to href input to lookup name on object or nodes
-    inp.keyup( function( e )
+    inp.on( 'keyup', function( e )
     {
         e = e || window.event;
         var c = e.keyCode || e.which, lid = $(this).closest('.custom_attribute_type_link, .attribute_type_link').attr('id'), dropdown = jQuery( '#'+lid + '_source_types' );
@@ -93,17 +93,17 @@ eZOEPopupUtils.settings.onInitDoneArray.push( function( editorElement )
         ezoeLinkAttribute.timeOut = setTimeout( eZOEPopupUtils.BIND( ezoeLinkAttribute.ajaxCheck, this, url[0] + '_' + id, lid ), 320 );
         return true;
     });
-    inp.keyup();
+    inp.trigger( 'keyup' );
 
     // setup navigation on bookmark / browse / search links to their 'boxes' (panels)
-    jQuery( 'a.atr_link_search_link, a.atr_link_browse_link, a.atr_link_bookmark_link' ).click( function(){
+    jQuery( 'a.atr_link_search_link, a.atr_link_browse_link, a.atr_link_bookmark_link' ).on( 'click', function(){
         var tagNameKey = $(this).closest('.custom_attribute_type_link, .attribute_type_link').find('select.atr_link_source_types').attr('id');
         ezoeLinkAttribute.id = ezoeLinkAttribute.lid( this.id, tagName[tagNameKey] );
         jQuery('div.panel, div.link-dialog').hide();
         jQuery('#' + ezoeLinkAttribute.box( this.id, tagName[tagNameKey] ) ).show();
-        jQuery('#' + ezoeLinkAttribute.box( this.id, tagName[tagNameKey] ) + ' input[type=text]:first').focus();
+        jQuery('#' + ezoeLinkAttribute.box( this.id, tagName[tagNameKey] ) + ' input[type=text]:first').trigger('focus');
     });
-    jQuery( '#embed_search_go_back_link, #embed_browse_go_back_link, #embed_bookmark_go_back_link' ).click( ezoeLinkAttribute.toggleBack );
+    jQuery( '#embed_search_go_back_link, #embed_browse_go_back_link, #embed_bookmark_go_back_link' ).on( 'click', ezoeLinkAttribute.toggleBack );
 });
 
 
@@ -210,7 +210,7 @@ var ezoeLinkAttribute = {
         ezoeLinkAttribute.id = null;
         jQuery('div.panel').hide();
         jQuery('div.link-dialog').show();
-        jQuery('div.link-dialog input[type=text]:first').focus();
+        jQuery('div.link-dialog input[type=text]:first').trigger('focus');
         jQuery('div.panel.current').show();
     }
 };

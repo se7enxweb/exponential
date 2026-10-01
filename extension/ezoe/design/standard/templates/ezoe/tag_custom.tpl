@@ -137,14 +137,14 @@ tinyMCEPopup.onInit.add( eZOEPopupUtils.BIND( eZOEPopupUtils.init, window, {
         {
             // remove p tag if inline tag
             var childs = jQuery('> *', el);
-            if ( childs.size() === 1 && childs[0].nodeName === 'P' )
+            if ( childs.length === 1 && childs[0].nodeName === 'P' )
                 el.innerHTML = childs[0].innerHTML;
         }
         else if ( el.nodeName === 'DIV' && origin !== 'DIV' )
         {
             // add p tag if block tag and no child tags
             var childs = jQuery('> *', el);
-            if ( childs.size() === 0 || childs[0].nodeName !== 'P' )
+            if ( childs.length === 0 || childs[0].nodeName !== 'P' )
                 el.innerHTML = '<p>' + el.innerHTML + '<\/p>';
         }
         ed.dom.setAttrib( el, 'type', 'custom' );

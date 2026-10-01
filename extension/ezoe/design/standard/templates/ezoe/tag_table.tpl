@@ -24,14 +24,14 @@ tinyMCEPopup.onInit.add( eZOEPopupUtils.BIND( eZOEPopupUtils.init, window, {
         td.each( function(i, el){
             var o = jQuery( el );
             o.mouseover( eZOEPopupUtils.BIND( tableSizeGridMouse, td, o, i, false ) );
-            o.click( eZOEPopupUtils.BIND( tableSizeGridMouse, td, o, i, true ) );
+            o.on( 'click', eZOEPopupUtils.BIND( tableSizeGridMouse, td, o, i, true ) );
         });
         table.mouseout( eZOEPopupUtils.BIND( tableSizeGridMouse, td, 0, -1, false ) );
         jQuery('#table_cell_size').show();
         tableSizeGrid['cols'] = jQuery('#table_cell_size_grid_cols');
         tableSizeGrid['rows'] = jQuery('#table_cell_size_grid_rows');
-        tableSizeGrid['cols'].keyup( eZOEPopupUtils.BIND( tableSizeGridInput, td, true ) );
-        tableSizeGrid['rows'].keyup( eZOEPopupUtils.BIND( tableSizeGridInput, td, true ) );
+        tableSizeGrid['cols'].on( 'keyup', eZOEPopupUtils.BIND( tableSizeGridInput, td, true ) );
+        tableSizeGrid['rows'].on( 'keyup', eZOEPopupUtils.BIND( tableSizeGridInput, td, true ) );
         tableSizeGridInput.call( td, true );
     },
     tagGenerator: function( tag, customTag )
@@ -58,7 +58,7 @@ tinyMCEPopup.onInit.add( eZOEPopupUtils.BIND( eZOEPopupUtils.init, window, {
     },
     tagAttributeEditor: function( ed, el, args )
     {
-        args['class'] = jQuery.trim( args['class'] + ( args['border'] == 0 ? ' mceItemTable' : ''))
+        args['class'] = String( ( args['class'] + ( args['border'] == 0 ? ' mceItemTable' : '') ) ?? '' ).trim()
         ed.dom.setAttribs( el, args );
         return el;
     }

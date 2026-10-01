@@ -92,7 +92,7 @@ tinyMCEPopup.onInit.add( eZOEPopupUtils.BIND( eZOEPopupUtils.init, window, {
         }
 
         // Apply changes to selected node(s)
-        if ( !nodes || !nodes.size() )
+        if ( !nodes || !nodes.length )
         {
             el = eZOEPopupUtils.switchTagTypeIfNeeded( el, target );
             ed.dom.setAttribs( el, args );

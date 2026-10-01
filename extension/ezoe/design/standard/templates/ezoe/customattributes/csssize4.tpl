@@ -90,7 +90,7 @@
 <script type="text/javascript">
 eZOEPopupUtils.settings.customAttributeInitHandler['{$custom_attribute_id}_source'] = {literal} function( el, value )
 {
-    if ( jQuery.trim( value ) === '' ) return;
+    if ( String( ( value ) ?? '' ).trim() === '' ) return;
     var valArr = (value +'').split(/\s/g), base_id = el.id.replace('_source', ''), inp, sel, tid, size;
     for(var i = 0, l = eZOEPopupUtils.min( valArr.length, 4 ); i < l; i++)
     {

@@ -80,10 +80,10 @@ var eZOEPopupUtils = {
         if ( !s.selectedTag ) s.selectedTag = s.tagName;
 
         if ( s.form && (s.form = jQuery( '#' + s.form )) )
-            s.form.submit( eZOEPopupUtils.save );
+            s.form.on( 'submit', eZOEPopupUtils.save );
 
         if ( s.cancelButton && (s.cancelButton = jQuery( '#' + s.cancelButton )) )
-            s.cancelButton.click( eZOEPopupUtils.cancel );
+            s.cancelButton.on( 'click', eZOEPopupUtils.cancel );
 
         if ( el && el.nodeName )
         {
@@ -96,7 +96,7 @@ var eZOEPopupUtils = {
                 {
                     // set title on inline popup if inlinepopup tinyMCE plugin is used
                     var tinyInlinePopupsTitle = window.parent.jQuery('div.clearlooks2');
-                    if ( tinyInlinePopupsTitle && tinyInlinePopupsTitle.size() ) 
+                    if ( tinyInlinePopupsTitle && tinyInlinePopupsTitle.length ) 
                         window.parent.document.getElementById( tinyInlinePopupsTitle[0].id + '_title').innerHTML = s.tagEditTitleText;
                 }
             }
@@ -104,11 +104,11 @@ var eZOEPopupUtils = {
         else
         {
             var selectedHtml = ed.selection.getContent( {format:'text'} );
-            if ( !/\n/.test( selectedHtml ) && jQuery.trim( selectedHtml ) !== '' )
+            if ( !/\n/.test( selectedHtml ) && String( ( selectedHtml ) ?? '' ).trim() !== '' )
                 s.editorSelectedText = selectedHtml;
 
             selectedHtml = ed.selection.getContent( {format:'html'} );
-            if ( jQuery.trim( selectedHtml ) !== '' )
+            if ( String( ( selectedHtml ) ?? '' ).trim() !== '' )
                 s.editorSelectedHtml = selectedHtml;
         }
         s.editorSelectedNode = ed.selection.getNode();
@@ -116,7 +116,7 @@ var eZOEPopupUtils = {
         if ( s.onInit && s.onInit.call )
             s.onInit.call( eZOEPopupUtils, s.editorElement, s.tagName, ed );
 
-        if ( s.tagSelector && ( s.tagSelector = jQuery( '#' + s.tagSelector ) ) && s.tagSelector.size() && s.tagSelector[0].value
+        if ( s.tagSelector && ( s.tagSelector = jQuery( '#' + s.tagSelector ) ) && s.tagSelector.length && s.tagSelector[0].value
         && ( s.tagSelector[0].checked === undefined || s.tagSelector[0].checked === true ) )
             s.selectedTag = s.tagSelector[0].value;
 
@@ -126,7 +126,7 @@ var eZOEPopupUtils = {
             eZOEPopupUtils.initCustomAttributeValue( s.selectedTag + '_customattributes', s.editorElement.getAttribute('customattributes'))
         }
         
-        if ( s.tagSelector && s.tagSelector.size() )
+        if ( s.tagSelector && s.tagSelector.length )
         {
             // toggle custom attributes based on selected custom tag
             if ( s.tagSelectorCallBack && s.tagSelectorCallBack.call )
@@ -135,13 +135,13 @@ var eZOEPopupUtils = {
                 // 'this' is jQuery object of selector
                 // first param is event/false and second is element of selector
                 s.tagSelectorCallBack.call( s.tagSelector, false, s.tagSelector[0]  );
-                s.tagSelector.change( s.tagSelectorCallBack );
+                s.tagSelector.on( 'change', s.tagSelectorCallBack );
             }
             else
             {
                 // by default tag selector refreshes custom attribute values
                 eZOEPopupUtils.toggleCustomAttributes.call( s.tagSelector );
-                s.tagSelector.change( eZOEPopupUtils.toggleCustomAttributes );
+                s.tagSelector.on( 'change', eZOEPopupUtils.toggleCustomAttributes );
             }
         }
         if ( s.onInitDone && s.onInitDone.call )
@@ -164,7 +164,7 @@ var eZOEPopupUtils = {
     {
         var ed = tinyMCEPopup.editor, s = eZOEPopupUtils.settings, n, arr, tmp, f = document.forms[0];
 
-        if ( s.tagSelector && s.tagSelector.size() && s.tagSelector[0].value )
+        if ( s.tagSelector && s.tagSelector.length && s.tagSelector[0].value )
         {
             if ( s.tagSelector[0].checked === undefined || s.tagSelector[0].checked === true )
                 s.selectedTag = s.tagSelector[0].value;
@@ -611,7 +611,7 @@ var eZOEPopupUtils = {
             var o = jQuery( el ), name = el.name, v;
             if ( o.hasClass('mceItemSkip') ) return;
             if ( name === 'class' )
-                v = jQuery.trim( cssReplace( editorElement.className ) );
+                v = String( ( cssReplace( editorElement.className ) ) ?? '' ).trim();
             else {
                 v = tinyMCEPopup.editor.dom.getAttrib( editorElement, name );
                 if ( !v && tinymce.DOM.getAttrib(editorElement, 'style') && editorElement.style[name.toLowerCase()]  ) {
@@ -731,7 +731,7 @@ var eZOEPopupUtils = {
     search: function( offset )
     {
         // serach for nodes with input and select form elements inside a 'search_box' container element
-        if ( jQuery.trim( jQuery('#SearchText').val() ) )
+        if ( String( ( jQuery('#SearchText').val() ) ?? '' ).trim() )
         {
             var postData = eZOEPopupUtils.jqSafeSerilizer('search_box'), o = offset ? offset : 0;
             jQuery.ez('ezjsc::search::x::' + o, postData, eZOEPopupUtils.searchCallBack );

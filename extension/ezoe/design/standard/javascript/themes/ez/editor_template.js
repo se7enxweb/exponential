@@ -1632,7 +1632,7 @@
                     // eZ: Support custom className var and remove internal ezoeItem/ezoeAlign prefixes
                     if (v = className ?  className : n.className)
                     {
-                        v = jQuery.trim( v.replace(/\b\s*(webkit|mce|Apple-|ezoeItem|ezoeAlign)\w+\s*\b/g, '') );
+                        v = String( ( v.replace(/\b\s*(webkit|mce|Apple-|ezoeItem|ezoeAlign)\w+\s*\b/g, '') ) ?? '' ).trim();
 
                         if (v) {
                             ti = ti + 'class: ' + v + ' ';
@@ -1876,7 +1876,7 @@
                 if ( p )
                 {
                     // resetting CSS class for alignment before putting the new right value if needed
-                    ed.dom.setAttrib(node, 'class', jQuery.trim(ed.dom.getAttrib(node, 'class').replace(/ezoeAlign\w+/, '')));
+                    ed.dom.setAttrib(node, 'class', String( ( ed.dom.getAttrib(node, 'class').replace(/ezoeAlign\w+/, '') ) ?? '' ).trim());
                     if ( node.align === align )
                     {
                         ed.dom.setAttrib(node, 'align', '');

@@ -111,7 +111,7 @@ function inlineSelectorChange( e, el )
     if ( editorEl )
     {
         var viewValue = editorEl.getAttribute('view');
-        var classValue = jQuery.trim( editorEl.className.replace(/(webkit-[\w\-]+|Apple-[\w\-]+|mceItem\w+|ezoeItem\w+|mceVisualAid)/g, '') );
+        var classValue = String( ( editorEl.className.replace(/(webkit-[\w\-]+|Apple-[\w\-]+|mceItem\w+|ezoeItem\w+|mceVisualAid)/g, '') ) ?? '' ).trim();
     }
 
     if ( inline )
