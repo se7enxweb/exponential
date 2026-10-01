@@ -156,7 +156,7 @@ b321183f339f40d4c53daa6bbe40a663  cronjobs/notification.php
 c311ef6a44f96740c83ee98c767726e8  cronjobs/old_drafts_cleanup.php
 049438aecbaf0cc44313e4c61e20f4e2  cronjobs/rssimport.php
 1cdcc364c4d1df79b30aa9f50c8028d6  cronjobs/session_gc.php
-6efe0be8dfd794e5991a1bd5a04705de  cronjobs/staticcache_cleanup.php
+f254ba1e07ef34fe761642f7b6dca83f  cronjobs/staticcache_cleanup.php
 8ef8d48f8a2ee87a5a4159b09347ca5d  cronjobs/subtreeexpirycleanup.php
 f468bb35abc4be478f86110d4d41a314  cronjobs/trashpurge.php
 86a5219b608767f3431cf303eed1edb7  cronjobs/unlock.php
@@ -2083,7 +2083,7 @@ dd8f6ec3976bdee1a688a25ee3761ee9  doc/bc/6.0/hardening.md
 2bf2eb0ef6906d5b3d5133d50392c0d1  doc/bc/6.0/http-caching.md
 e0cc1e74e597b7344ff592fbb75237bf  doc/bc/6.0/http2-and-cache-warming.md
 e6d0c8c428c5175d65bf5f187409a7b8  doc/bc/6.0/httpcache.md
-35bdad98b6cfd07a4e78b9cc81fcceda  doc/bc/6.0/kickstartercli.md
+0f6a482bb0f751759d0721f7d3955d60  doc/bc/6.0/kickstartercli.md
 5f063b419152d919981820ae436cf799  doc/bc/6.0/locations-tab-paging-and-sorting.md
 d38adb86f617cc5640df0ecdd6711a60  doc/bc/6.0/middle-out-compression.md
 8aae77691af6b35a093d9229b3757ed3  doc/bc/6.0/multi-node-edit.md
@@ -5518,7 +5518,7 @@ dbb3856cc411fb1697eeda7944d0e280  kernel/classes/expcachemanager.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
 e155d47ee2599f8deb8070d941364bbc  kernel/classes/expkickstarter.php
-5d101780a5be9a462d6b4d3cee69e882  kernel/classes/expkickstarterini.php
+342e118abe04b2b9e9ebc46328e5dfd8  kernel/classes/expkickstarterini.php
 434901ece305d52b3b4397ed3a4d5750  kernel/classes/expmaintenance.php
 b8ca72676a5a9dfafef6ddb0b6e9ee7a  kernel/classes/expphar.php
 21b59e62f5cad811c8cdc0ace277e6fe  kernel/classes/exppreloadjob.php
@@ -5636,7 +5636,7 @@ adec8ad3eceb685bca7ec2d30a461d0c  kernel/classes/ezshopaccounthandler.php
 0451c91cbb6e4729fd7ff335fccabb3f  kernel/classes/ezsitedata.php
 cbee9be0691b9ef4c093bd079e043cfd  kernel/classes/ezsiteinstaller.php
 96f1c0fe0f272484265ac8ff94bdfc42  kernel/classes/ezsslzone.php
-bb5e773e6449eb9525350ea57007858e  kernel/classes/ezstaticcache.php
+8eb177855da5c0c868ef6bb4ff005855  kernel/classes/ezstaticcache.php
 4d3adbbb193d7493dda515910870c29a  kernel/classes/ezsubtreecache.php
 e69a010270cb32c088630d9400fb6964  kernel/classes/eztextinputparser.php
 b51122bceda1287ed07c73a38c6df712  kernel/classes/eztipafriendcounter.php
@@ -6271,8 +6271,8 @@ d18d48fb5d6da6299784516cbf63016d  kernel/workflow/process.php
 639ca703a53bfae6cb4fda0dc2140fd0  kernel/workflow/run.php
 abb928c7474f1738a4bfb0b4acc6e286  kernel/workflow/view.php
 776a9d36a1ec44718a4a3297d7a2d7d4  kernel/workflow/workflowlist.php
-bdda00e7a54a120e5d7384a2e19639bc  kickstart.ini--example
-89f5e2744530313de62b66f71486c8ad  kickstart.ini-dist
+9d7f22e7b97306e73e3db65cf6cd16a5  kickstart.ini--example
+156171fd81c5eef00cff01f997dabd51  kickstart.ini-dist
 dc0978d9c142fb9bb684d5ed5549c8fd  lib/ezdb/classes/expmongodb.php
 39127b6b97ec8be8ee2d837f2dfda3d3  lib/ezdb/classes/ezdb.php
 8ef2502778404acc1f0ff3353e5e71c7  lib/ezdb/classes/ezdbinterface.php
