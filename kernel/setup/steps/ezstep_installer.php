@@ -895,8 +895,8 @@ See the requirements page for more information.",
                                                     null,
                                                     array( '%version' => $errorInfo['database_info']['version'],
                                                            '%req_version' => $errorInfo['database_info']['required_version'] ) ),
-                                  'url' => array( 'href' => 'http://ez.no/ez_publish/documentation/general_information/what_is_ez_publish/ez_publish_requirements',
-                                                  'text' => 'eZ Publish requirements' ),
+                                  'url' => array( 'href' => 'https://exponential.earth',
+                                                  'text' => 'Exponential requirements' ),
                                   'number' => self::DB_ERROR_NO_DATABASES );
                 break;
             }
