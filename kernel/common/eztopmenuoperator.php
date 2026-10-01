@@ -95,6 +95,11 @@ class eZTopMenuOperator
         // settings are read after a siteaccess's, so a siteaccess that restates the whole list to order the tabs gets
         // the extension tabs appended a second time.
         $tabIDs = array_values( array_unique( (array)$ini->variable( 'TopAdminMenu', 'Tabs' ) ) );
+        // HiddenTabs[] leaves tabs out however the list came about: a siteaccess
+        // cannot take an extension's tab out of Tabs[], which the extension's
+        // settings, read after the siteaccess's, append again.
+        if ( $ini->hasVariable( 'TopAdminMenu', 'HiddenTabs' ) )
+            $tabIDs = array_values( array_diff( $tabIDs, (array)$ini->variable( 'TopAdminMenu', 'HiddenTabs' ) ) );
         foreach ( $tabIDs as $tabID )
         {
             $shownList = $ini->variable( 'Topmenu_' . $tabID , 'Shown' );

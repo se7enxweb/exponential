@@ -38,7 +38,12 @@
 {/foreach}
 {/if}
 
-{foreach ezini( 'WindowControlsSettings', 'AdditionalTabs', 'admininterface.ini' ) as $tab}
+{* Each tab once (extensions append to AdditionalTabs[] after a siteaccess's settings are
+   read), and none of HiddenTabs[]: a siteaccess cannot take an extension's tab out of the list. *}
+{def $hidden_tabs = cond( ezini_hasvariable( 'WindowControlsSettings', 'HiddenTabs', 'admininterface.ini' ),
+                          ezini( 'WindowControlsSettings', 'HiddenTabs', 'admininterface.ini' ), array() )}
+{foreach ezini( 'WindowControlsSettings', 'AdditionalTabs', 'admininterface.ini' )|unique as $tab}
+    {if $hidden_tabs|contains( $tab )}{continue}{/if}
     {def $tab_navigation_part = ezini( concat( 'AdditionalTab_', $tab ), 'NavigationPartName', 'admininterface.ini' )}
     {if eq( $tab_navigation_part, $navigation_part_name )}
         {set $additional_tabs = $additional_tabs|append( $tab )}
