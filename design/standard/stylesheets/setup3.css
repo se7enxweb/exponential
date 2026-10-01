@@ -1,0 +1,345 @@
+/*
+ * The setup wizard, 2026: one card on a calm dark page.
+ *
+ * Loaded after setup.css and setup2.css and only overrides them; no step
+ * template changes. The page is a slate background with a soft glow of the
+ * brand orange; the wizard is a white card with the logo, the progress (moved up
+ * from the bottom, so it is seen first), the step on the left and Help and
+ * Summary in a light side panel on the right, which goes under the step on
+ * narrow screens.
+ */
+
+:root {
+  --wz-orange: #f26a21;
+  --wz-orange-dark: #d9561a;
+  --wz-ink: #1f2430;
+  --wz-muted: #5d6573;
+  --wz-line: #e3e6eb;
+  --wz-soft: #f6f7f9;
+  --wz-page: #161b25;
+  --wz-radius: 14px;
+}
+
+html {
+  background: var(--wz-page);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 32px 16px;
+  box-sizing: border-box;
+  text-align: left;
+  color: var(--wz-ink);
+  font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background:
+    radial-gradient(900px 520px at 85% -10%, rgba(242, 106, 33, 0.28), transparent 60%),
+    radial-gradient(700px 480px at -10% 110%, rgba(64, 120, 192, 0.22), transparent 60%),
+    linear-gradient(160deg, #1d2431 0%, #141922 100%) fixed;
+}
+
+/* The card */
+section#page {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  max-width: 1180px;
+  margin: 0 auto;
+  font-family: inherit;
+  background: #fff;
+  border-radius: var(--wz-radius);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+header {
+  order: 1;
+  height: 76px;
+  margin: 0;
+  background: #fff url('../images/setup/2/Exponential-logo-title.png') no-repeat 32px center;
+  background-size: auto 44px;
+  border-bottom: 1px solid var(--wz-line);
+}
+
+/* The progress, right under the header */
+aside.progressbar {
+  order: 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  padding: 14px 32px;
+  background: var(--wz-soft);
+  border-bottom: 1px solid var(--wz-line);
+}
+aside.progressbar div {
+  order: 1;
+  flex: 1;
+  height: 8px;
+  margin: 0;
+  border: 0;
+  border-radius: 99px;
+  background: #e2e5ea;
+  box-shadow: none;
+  overflow: hidden;
+}
+aside.progressbar div span {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--wz-orange), #ff9a4d);
+  transition: width .4s ease;
+}
+aside.progressbar p {
+  order: 2;
+  margin: 0;
+  float: none;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--wz-muted);
+}
+
+/* Step and side panel */
+section#content {
+  order: 3;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+section#content article {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto;
+  float: none;
+  padding: 32px 36px 36px;
+  overflow-x: auto;
+}
+aside.helptext {
+  flex: 0 0 300px;
+  width: auto;
+  float: none;
+  height: auto;
+  margin: 0;
+  padding: 28px 28px 32px;
+  color: var(--wz-ink);
+  background: var(--wz-soft);
+  border-left: 1px solid var(--wz-line);
+  border-radius: 0;
+}
+aside.helptext h1.setup_help_summary {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--wz-muted);
+}
+div.setup_help, div.setup_summary {
+  color: var(--wz-ink);
+  font-size: 14px;
+}
+div.setup_summary {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--wz-line);
+}
+div.setup_summary_empty, div.setup_summary table td {
+  color: var(--wz-muted);
+}
+div.setup_help a, div.setup_help a:visited {
+  color: var(--wz-orange-dark);
+}
+
+/* Type */
+article h1 {
+  margin: 0 0 14px;
+  font-size: 26px;
+  font-weight: 650;
+  line-height: 1.25;
+  text-align: left;
+  color: var(--wz-ink);
+}
+article h2, article h3 {
+  font-weight: 650;
+  color: var(--wz-ink);
+}
+a, a:visited, a:visited.setup_final {
+  color: var(--wz-orange-dark);
+}
+a:hover {
+  color: var(--wz-orange);
+}
+
+/* Forms */
+fieldset {
+  margin: 18px 0;
+  padding: 16px 18px 18px;
+  border: 1px solid var(--wz-line);
+  border-radius: 10px;
+  background: #fff;
+}
+legend {
+  padding: 0 6px;
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--wz-ink);
+}
+input[type=text], input[type=password], input[type=email], input[type=number], select, textarea {
+  font: inherit;
+  max-width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #c9ced6;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--wz-ink);
+}
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--wz-orange);
+  box-shadow: 0 0 0 3px rgba(242, 106, 33, 0.22);
+}
+div.information, div.message-warning, div.message-error, div.message-feedback {
+  border-radius: 10px;
+}
+
+/* Buttons: the step's main action in orange, the others outlined */
+div.buttonblock, div.navigation-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--wz-line);
+}
+input.button, button, input.defaultbutton, input.button-disabled {
+  margin: 0;
+  padding: 9px 18px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  border-radius: 8px;
+  cursor: pointer;
+  background-image: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+input.button, button {
+  color: var(--wz-ink);
+  background: #fff;
+  border: 1px solid #c9ced6;
+}
+input.button:hover, button:hover {
+  border-color: #9aa1ad;
+  background: var(--wz-soft);
+}
+input.defaultbutton {
+  order: 9;
+  color: #fff;
+  background: var(--wz-orange);
+  border: 1px solid var(--wz-orange);
+}
+input.defaultbutton:hover {
+  background: var(--wz-orange-dark);
+  border-color: var(--wz-orange-dark);
+}
+input.defaultbutton:focus-visible, input.button:focus-visible {
+  outline: 3px solid rgba(242, 106, 33, 0.35);
+  outline-offset: 2px;
+}
+input.button-disabled, input.button[disabled="disabled"] {
+  color: #9aa1ad;
+  background: var(--wz-soft);
+  border: 1px solid var(--wz-line);
+  cursor: default;
+}
+/* the hidden copy of Next that makes Enter go forward keeps no room */
+div.navigation-block input.defaultbutton[style*="hidden"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+/* Summary values, choice boxes, messages */
+div.setup_summary table { width: 100%; border-collapse: collapse; }
+div.setup_summary table td { padding: 3px 6px 3px 0; vertical-align: top; font-size: 13px; }
+div.setup_summary_ok { color: var(--wz-ink); font-size: 13px; font-weight: 600; }
+div.setup_summary_empty { color: #a3a9b4; font-size: 13px; }
+
+div.input_highlight {
+  margin: 18px 0;
+  padding: 16px 18px;
+  border: 1px solid var(--wz-line);
+  border-radius: 10px;
+  background: var(--wz-soft);
+}
+div.input_highlight table { border-collapse: collapse; }
+div.input_highlight th.label {
+  padding: 0 0 8px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 650;
+}
+div.input_highlight td.normal { padding: 4px 6px 4px 0; }
+article td.normal, article th.normal { padding: 4px 10px 4px 0; vertical-align: top; }
+label.radio, label.checkbox { cursor: pointer; }
+input[type=radio], input[type=checkbox] { accent-color: var(--wz-orange); width: 16px; height: 16px; vertical-align: -2px; }
+
+div.warning, div.error, div.note, div.message {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid;
+}
+div.warning { background: #fff7e8; border-color: #f5d49a; color: #6b4a0f; }
+div.error { background: #fdeeee; border-color: #f1b9b9; color: #7a1f1f; }
+div.note, div.message { background: #eef4fc; border-color: #c7d9f2; color: #1f3d66; }
+div.warning h2, div.error h2, div.note h2 { margin-top: 0; font-size: 15px; }
+span.invalid, td.invalid, .invalid { color: #b42318; }
+
+/* Tables of the system check and the summary */
+article table.list, article table.settings {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+footer {
+  order: 4;
+  margin: 0;
+  padding: 14px 32px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--wz-muted);
+  background: #fff;
+  border-top: 1px solid var(--wz-line);
+}
+footer a, footer a:visited {
+  color: var(--wz-muted);
+  text-decoration: underline;
+}
+
+/* Narrow screens: the side panel goes under the step */
+@media (max-width: 900px) {
+  body { padding: 16px; }
+  header { background-position: 20px center; background-size: auto 36px; height: 64px; }
+  aside.progressbar { padding: 12px 20px; }
+  section#content { flex-direction: column; }
+  section#content article { padding: 24px 20px; }
+  aside.helptext { flex: none; border-left: 0; border-top: 1px solid var(--wz-line); padding: 22px 20px 26px; }
+  article h1 { font-size: 22px; }
+}
+
+/* the hint under a field */
+p.setup_field_note { margin: 6px 0 0; font-size: 13px; color: var(--wz-muted); max-width: 46em; }
+
+/* form rows: the label level with the top of its field, the hint under the field */
+fieldset td { vertical-align: top; padding: 3px 12px 3px 0; }
+fieldset td > label.textfield { display: inline-block; padding-top: 8px; }

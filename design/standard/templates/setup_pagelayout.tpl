@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href={"stylesheets/debug.css"|ezdesign} />
     <link rel="stylesheet" type="text/css" href={"stylesheets/setup.css"|ezdesign} />
     <link rel="stylesheet" type="text/css" href={"stylesheets/setup2.css"|ezdesign} />
+    <link rel="stylesheet" type="text/css" href={"stylesheets/setup3.css"|ezdesign} />
 
     {include uri="design:page_head.tpl" enable_link=false()}
 
