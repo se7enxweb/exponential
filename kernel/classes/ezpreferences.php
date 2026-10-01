@@ -37,6 +37,14 @@ class eZPreferences
     */
     static function setValue( $name, $value, $storeUserID = false )
     {
+        // A preference is found by its name: one without a name can never be
+        // read and, on Oracle, comes back with NULL for a name. user/preferences/set
+        // without a key used to store one.
+        if ( $name === null || trim( (string)$name ) === '' )
+        {
+            eZDebug::writeWarning( 'A preference needs a name, nothing was stored', __METHOD__ );
+            return false;
+        }
         $db = eZDB::instance();
         $name = $db->escapeString( $name );
         $rawValue = $value;
@@ -212,6 +220,9 @@ class eZPreferences
             }
             foreach ( $values as $item )
             {
+                // a row stored without a name (see setValue()) is no preference
+                if ( !isset( $item['name'] ) || (string)$item['name'] === '' )
+                    continue;
                 if ( $useCache )
                     eZPreferences::storeInSession( $item['name'], $item['value'] );
                 $returnArray[$item['name']] = $item['value'];
@@ -242,6 +253,8 @@ class eZPreferences
     */
     static function storeInSession( $name, $value )
     {
+        if ( $name === null || (string)$name === '' )
+            return;
         $http = eZHTTPTool::instance();
         $preferencesInSession = array();
         if ( $http->hasSessionVariable( eZPreferences::SESSION_NAME ) )
