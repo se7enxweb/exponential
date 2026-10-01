@@ -53,6 +53,23 @@ class eZOrderStatus extends eZPersistentObject
     const PENDING = 1;
     const PROCESSING = 2;
     const DELIVERED = 3;
+    // The rest of an order's lifecycle: payment, fulfilment, the end of an
+    // order and what can follow it. Shipped with every installation, so a
+    // shop has a status for each step without creating its own.
+    const AWAITING_PAYMENT = 4;
+    const PAID = 5;
+    const PAYMENT_FAILED = 6;
+    const ON_HOLD = 7;
+    const BACKORDERED = 8;
+    const PACKED = 9;
+    const SHIPPED = 10;
+    const READY_FOR_PICKUP = 11;
+    const COMPLETED = 12;
+    const CANCELLED = 13;
+    const RETURN_REQUESTED = 14;
+    const RETURNED = 15;
+    const PARTIALLY_REFUNDED = 16;
+    const REFUNDED = 17;
 
     // All custom order statuses have this value or higher
     const CUSTOM = 1000;
@@ -91,6 +108,39 @@ class eZOrderStatus extends eZPersistentObject
     function isInternal()
     {
         return $this->StatusID < eZOrderStatus::CUSTOM;
+    }
+
+    /*!
+     \static
+     \return the status IDs of an order that is finished: nothing is left to do
+             for the shop, so it no longer counts as open. Every other status,
+             custom ones included, is open.
+    */
+    static function finishedStatusIDs()
+    {
+        return array( eZOrderStatus::DELIVERED, eZOrderStatus::COMPLETED, eZOrderStatus::CANCELLED,
+                      eZOrderStatus::PARTIALLY_REFUNDED, eZOrderStatus::REFUNDED );
+    }
+
+    /*!
+     \static
+     \return the status IDs of an order that brought in no money: the payment
+             failed, the order was cancelled, or the whole amount was paid back.
+    */
+    static function noRevenueStatusIDs()
+    {
+        return array( eZOrderStatus::PAYMENT_FAILED, eZOrderStatus::CANCELLED, eZOrderStatus::REFUNDED );
+    }
+
+    /*!
+     \static
+     \return the status IDs in which an order waits for the customer (to pay or
+             to collect it), so the shorter "waiting too long" limit applies.
+    */
+    static function waitingForCustomerStatusIDs()
+    {
+        return array( eZOrderStatus::PENDING, eZOrderStatus::AWAITING_PAYMENT, eZOrderStatus::PAYMENT_FAILED,
+                      eZOrderStatus::READY_FOR_PICKUP );
     }
 
     /*!

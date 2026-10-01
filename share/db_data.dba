@@ -15806,6 +15806,104 @@ keywords=exponential, community, content management, open source, cms, platforms
         2 => 'Delivered',
         3 => '3',
       ),
+      3 => 
+      array (
+        0 => '4',
+        1 => '1',
+        2 => 'Awaiting payment',
+        3 => '4',
+      ),
+      4 => 
+      array (
+        0 => '5',
+        1 => '1',
+        2 => 'Paid',
+        3 => '5',
+      ),
+      5 => 
+      array (
+        0 => '6',
+        1 => '1',
+        2 => 'Payment failed',
+        3 => '6',
+      ),
+      6 => 
+      array (
+        0 => '7',
+        1 => '1',
+        2 => 'On hold',
+        3 => '7',
+      ),
+      7 => 
+      array (
+        0 => '8',
+        1 => '1',
+        2 => 'Backordered',
+        3 => '8',
+      ),
+      8 => 
+      array (
+        0 => '9',
+        1 => '1',
+        2 => 'Packed',
+        3 => '9',
+      ),
+      9 => 
+      array (
+        0 => '10',
+        1 => '1',
+        2 => 'Shipped',
+        3 => '10',
+      ),
+      10 => 
+      array (
+        0 => '11',
+        1 => '1',
+        2 => 'Ready for pickup',
+        3 => '11',
+      ),
+      11 => 
+      array (
+        0 => '12',
+        1 => '1',
+        2 => 'Completed',
+        3 => '12',
+      ),
+      12 => 
+      array (
+        0 => '13',
+        1 => '1',
+        2 => 'Cancelled',
+        3 => '13',
+      ),
+      13 => 
+      array (
+        0 => '14',
+        1 => '1',
+        2 => 'Return requested',
+        3 => '14',
+      ),
+      14 => 
+      array (
+        0 => '15',
+        1 => '1',
+        2 => 'Returned',
+        3 => '15',
+      ),
+      15 => 
+      array (
+        0 => '16',
+        1 => '1',
+        2 => 'Partially refunded',
+        3 => '16',
+      ),
+      16 => 
+      array (
+        0 => '17',
+        1 => '1',
+        2 => 'Refunded',
+        3 => '17',
+      ),
     ),
   ),
   'ezpackage' => 

@@ -74,3 +74,49 @@ ALTER TABLE ONLY ezrss_export_opml_item
 CREATE INDEX ezrss_export_opml_rsseid ON ezrss_export_opml_item USING btree (rssexport_id);
 
 ALTER TABLE ezrss_export ADD COLUMN podcast_head text;
+
+--
+-- The order statuses of a whole order lifecycle.
+--
+-- An installation shipped with three statuses, Pending, Processing and
+-- Delivered, so a shop that takes payment, ships parcels or handles returns
+-- had to create its own before it could say where an order stood. These are
+-- the steps most shops need, as internal statuses (below 1000) that cannot be
+-- removed by mistake: payment (Awaiting payment, Paid, Payment failed),
+-- fulfilment (On hold, Backordered, Packed, Shipped, Ready for pickup), the
+-- end of an order (Completed, Cancelled) and what can follow it (Return
+-- requested, Returned, Partially refunded, Refunded).
+--
+-- A status is only added when no row has its status_id yet, and its id is left
+-- to the database, so a custom status that already uses one of those ids keeps
+-- it.
+--
+
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Awaiting payment', 4 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 4);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Paid', 5 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 5);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Payment failed', 6 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 6);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'On hold', 7 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 7);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Backordered', 8 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 8);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Packed', 9 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 9);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Shipped', 10 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 10);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Ready for pickup', 11 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 11);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Completed', 12 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 12);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Cancelled', 13 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 13);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Return requested', 14 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 14);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Returned', 15 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 15);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Partially refunded', 16 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 16);
+INSERT INTO ezorder_status (is_active, name, status_id)
+  SELECT 1, 'Refunded', 17 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 17);

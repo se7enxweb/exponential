@@ -26561,6 +26561,160 @@ INSERT INTO ezorder_status (
   'Delivered',
   3
 );
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  4,
+  1,
+  'Awaiting payment',
+  4
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  5,
+  1,
+  'Paid',
+  5
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  6,
+  1,
+  'Payment failed',
+  6
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  7,
+  1,
+  'On hold',
+  7
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  8,
+  1,
+  'Backordered',
+  8
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  9,
+  1,
+  'Packed',
+  9
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  10,
+  1,
+  'Shipped',
+  10
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  11,
+  1,
+  'Ready for pickup',
+  11
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  12,
+  1,
+  'Completed',
+  12
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  13,
+  1,
+  'Cancelled',
+  13
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  14,
+  1,
+  'Return requested',
+  14
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  15,
+  1,
+  'Returned',
+  15
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  16,
+  1,
+  'Partially refunded',
+  16
+);
+INSERT INTO ezorder_status (
+  id,
+  is_active,
+  name,
+  status_id
+) VALUES (
+  17,
+  1,
+  'Refunded',
+  17
+);
 
 INSERT INTO ezpackage (
   id,
