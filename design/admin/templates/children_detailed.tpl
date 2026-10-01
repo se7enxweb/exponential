@@ -101,7 +101,9 @@ var labelsObj = {ldelim}
                         header_noipp: "{'Number of items per page:'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         header_vtc: "{'Visible table columns:'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         button_close: "{'Close'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        custom_label: "{'Custom'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
+                        custom_label: "{'Custom'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        custom_placeholder: "{'Enter number'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        custom_invalid: "{'Please enter a valid number between 1 and 10000'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
                    {rdelim},
 
     ACTION_BUTTONS: {ldelim}
@@ -182,12 +184,19 @@ var labelsObj = {ldelim}
 {/if}
 
 {literal}
-YUILoader.require(['datatable', 'button', 'container', 'cookie', 'element']);
-YUILoader.onSuccess = function() {
-    sortableSubitems.init(confObj, labelsObj, createGroups, createOptions);
-};
-var options = [];
-YUILoader.insert(options, 'js');
+// Exponential UI's table (exp::datatable, ezajaxsubitems_expdatatable.js) when it is there; else the YUI 2 one
+if ( window.Exp && Exp.$ && Exp.$.fn.expDataTable && window.eZAjaxSubitemsExpDataTable ) {
+    Exp.ready( function() {
+        eZAjaxSubitemsExpDataTable.init(confObj, labelsObj, createGroups, createOptions);
+    } );
+} else {
+    YUILoader.require(['datatable', 'button', 'container', 'cookie', 'element']);
+    YUILoader.onSuccess = function() {
+        sortableSubitems.init(confObj, labelsObj, createGroups, createOptions);
+    };
+    var options = [];
+    YUILoader.insert(options, 'js');
+}
 
 })();
 {/literal}
@@ -202,3 +211,10 @@ YUILoader.insert(options, 'js');
 <div id="bpg"></div>
 
 <div id="to-dialog-container"></div>
+
+{if ezini( 'ExtensionSettings', 'ActiveExtensions' )|contains( 'expui' )}
+    {* the texts Exponential UI's table shows itself (page links, sorting, editing), translated *}
+    {exp_config( hash( 'strings', array( 'Loading...', 'No records found.', 'Data error.', 'Click to sort ascending', 'Click to sort descending',
+                                         'Pages', 'Page %page', 'Page %page of %pages', 'First page', 'Previous page', 'Next page', 'Last page',
+                                         'Table actions', 'Select %name', 'Press Enter to edit', 'Sorted by %column, ascending', 'Sorted by %column, descending' ) ) )}
+{/if}
