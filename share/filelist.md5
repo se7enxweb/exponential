@@ -553,7 +553,7 @@ ad53f8cf3902a9a4c1aa08ea3176471c  design/admin/templates/setup/templateoperator_
 07c42c2970e42820e2bc6c9370b50628  design/admin/templates/shop/currencylist.tpl
 f3ff4a52597dcac54938b64e62c12c4f  design/admin/templates/shop/customerlist.tpl
 3d9ffc461b4a76d4b0b90c8c57fc5a49  design/admin/templates/shop/customerorderview.tpl
-bb67cdf317af73461bbb0aefdc2dda4a  design/admin/templates/shop/dashboard.tpl
+a9cc7526014309b300c1db914b500664  design/admin/templates/shop/dashboard.tpl
 3cf3ef352b01ede7510bf19fe4265645  design/admin/templates/shop/discountgroup.tpl
 d430e8f6f216235d6f8fd86f3b3c7ff6  design/admin/templates/shop/discountgroupedit.tpl
 02302701fa0c5c7af6a67c2d9d7367f5  design/admin/templates/shop/discountgroupmembershipview.tpl
@@ -5589,7 +5589,7 @@ f6b5b9bb81fa1d5a52d7bb8f7e6cb016  kernel/classes/eznavigationpart.php
 e01273f82fec5a88456083d87fa3fbb6  kernel/classes/eznodeviewfunctions.php
 57c816ea6baab165a9f74daf6712a7bf  kernel/classes/ezorder.php
 f58e852ff75be573691a8ee421bc9734  kernel/classes/ezorderitem.php
-97ff8aaf475446689c7e99b435111bae  kernel/classes/ezorderstatus.php
+f92fd973318f63a300f1c2a68eccdaf8  kernel/classes/ezorderstatus.php
 c09212590926c2185e10269c32e582b9  kernel/classes/ezorderstatushistory.php
 693302ff0c256a1d3ba5df261e75fe0e  kernel/classes/ezpackage.php
 ec98350951e6d1d63c5846182ee8a8a7  kernel/classes/ezpackagecomparison.php
@@ -6172,7 +6172,7 @@ a52dd7fa73d4e72a3f23b6cc99e51daa  kernel/shop/confirmorder.php
 defbf5935ae791487e2c0dcc98d8d4d3  kernel/shop/currencylist.php
 44365ddc8cea909674e61da8100d75c9  kernel/shop/customerlist.php
 4ab0498c224b0e5009c96e304d6b67fb  kernel/shop/customerorderview.php
-1ec8c8889356f08777a0a9a1eef10fe6  kernel/shop/dashboard.php
+c11d1f31c5b98fbd49bfe16fd6573b31  kernel/shop/dashboard.php
 6a442bf496f23caa89396dd66ae039ab  kernel/shop/discountgroup.php
 11d16fb43a940b70f521a819f959282e  kernel/shop/discountgroupedit.php
 0ef45c79ea8bc7b5207df71f71f9de8f  kernel/shop/discountgroupmembershipview.php
@@ -6205,7 +6205,7 @@ fdef7886ec04db7e2b6da23d964e9508  kernel/shop/unarchiveorder.php
 13d2b765ecd87ff6e43e71f502412c44  kernel/shop/vatrules.php
 f381658e7b1fd5cbd576a2ef97a3f9db  kernel/shop/vattype.php
 1a1ad7f71e4de36b5455a54a61814b47  kernel/shop/wishlist.php
-5d686556c10a5abd60a022d98d1f3d98  kernel/sql/common/cleandata.sql
+d7f2259db0e6ac97f366997c409cad04  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
@@ -6213,7 +6213,7 @@ f03b122b016ec3e0e64955af4c347279  kernel/sql/mysql/kernel_schema.sql
 f652f8892f3333803ca7514bc5c7f168  kernel/sql/postgresql/kernel_schema.sql
 f5bbea407c70e6be3b3cdfc38dccd09b  kernel/sql/postgresql/sequence.sql.template
 6333cc1f4771ed3b8071be5840b8d69f  kernel/sql/postgresql/setval.sql
-3e0704545be425eb735ddfa7ff9b0dd3  kernel/sql/sqlite/cleandata.sql
+ed661b7dd657484a3763e6fd5438e802  kernel/sql/sqlite/cleandata.sql
 415f3abc80cde15d990c1a86bd5f671e  kernel/sql/sqlite/schema.sql
 7dd006807f1659c28ff8b38eae00e6cd  kernel/state/assign.php
 2ac2e45035ef9821b32b41666b301a62  kernel/state/edit.php
@@ -6601,7 +6601,7 @@ f18e6605875590291f90885a0343ee7e  share/codepages/windows-1255
 eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
-03af117b419f813f1837bbd1b2e5ae83  share/db_data.dba
+a63ff6444dbbf40c9bd57aee41040c9f  share/db_data.dba
 3409675652fc00736e91f705b7a3234e  share/db_schema.dba
 27b07790be30d1577541464bc445fff3  share/icons/big-smile.gif
 0e1abb7c8f76d149177749fe2a397ce3  share/icons/blunk.gif
@@ -6962,14 +6962,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-702519d3a4e58d6c95a197ca16760b7d  share/translations/eng-US/translation.ts
+d0ed61f8d3837c1a302bde78584336d4  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-f7fd21dd4839a457c1d12887e0cfebad  share/translations/ger-DE/translation.ts
+d4fa3fe9a67b77ed6bd147c8fea18547  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6982,7 +6982,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-65d37c5c9be737a0125e4d3c39449082  share/translations/untranslated/translation.ts
+7e508951c4b1c9d72ab7640e6d80a9a8  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 4397f3e1a1c355255c97e191430662d5  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7665,7 +7665,7 @@ f1be004d3fb8ebe25875c61f8c806124  update/database/mysql/5.3/dbupdate-5.2.0-to-5.
 2b9c0caf517c1341ddeacf7cff31499f  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 a91338add508be6880cb90a71bebb8ba  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-c66125ef24e773df5d00af3d3efe96ee  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+841ee9b31698efa9d4ec562d31b03c2d  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 c4603bf5e933f8b7c5b25a65e65db838  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 da45195ad368ec2caae3a0ed0da3168d  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -7724,9 +7724,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7faa49b8e30895eb9a1a3f482c0b4baf  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-e16818d9bc3b43dcf81edf1a0dad5a25  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+a5c5d9afb8480d5566282c099e0bf52d  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-11f3728944b145864846f22598de65ff  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+16386acf2cbbc618e6afc33a96083cfe  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 78c4fcb7f000005f9b6ca86d57dce085  webdav.php
