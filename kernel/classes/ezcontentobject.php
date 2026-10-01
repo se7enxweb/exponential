@@ -658,9 +658,11 @@ class eZContentObject extends eZPersistentObject
         foreach( $contentObjectAttributes as $attribute )
         {
             $classAttribute      = $attribute->contentClassAttribute();
-            $attributeCategory   = $classAttribute->attribute('category');
+            // No category is '' -- or NULL where the database stores '' as NULL
+            // (Oracle): looked up as an array key, NULL is deprecated.
+            $attributeCategory   = (string)$classAttribute->attribute('category');
             $attributeIdentifier = $classAttribute->attribute( 'identifier' );
-            if ( !isset( $categorys[ $attributeCategory ] ) || !$attributeCategory )
+            if ( $attributeCategory === '' || !isset( $categorys[ $attributeCategory ] ) )
                 $attributeCategory = $defaultCategory;
 
             if ( !isset( $groupedDataMap[ $attributeCategory ] ) )
@@ -6188,6 +6190,9 @@ class eZContentObject extends eZPersistentObject
         // Fetch content actions if not already fetched
         if ( $this->ContentActionList === false )
         {
+            // An empty list once built, not false: appending to false is
+            // deprecated, and false would rebuild it on every call.
+            $this->ContentActionList = array();
             foreach ( $attributeList as $attribute )
             {
                 $contentActionList = $attribute->contentActionList();
