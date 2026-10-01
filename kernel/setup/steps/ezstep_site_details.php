@@ -115,6 +115,27 @@ class eZStepSiteDetails extends eZStepInstaller
 
         $siteAccessValues[$siteType['admin_access_type_value']] = 1;
 
+        // Editor siteaccess: required, like the admin one
+        $editorPath = $this->Http->hasPostVariable( 'eZSetup_site_templates_editor_value' )
+                    ? trim( (string)$this->Http->postVariable( 'eZSetup_site_templates_editor_value' ) ) : '';
+        if ( isset( $siteAccessValues[$editorPath] ) or !preg_match( $regexp, $editorPath ) ) // check for equal site access values
+        {
+            $this->Error[0] = self::SITE_ACCESS_ILLEGAL;
+            /* Check for valid host name */
+            $editorPath = ( ( $siteType['access_type'] == 'hostname' ) and ( strpos( $editorPath, '_' ) !== false ) ) ? strtr( $editorPath, '_', '-' ) : $editorPath;
+            $error = true;
+        }
+
+        $siteType['editor_access_type_value'] = $editorPath;
+        if ( $siteType['editor_access_type_value'] == '' )
+        {
+            $this->Error[0] = self::SITE_ACCESS_ILLEGAL;
+            $this->storeSiteType( $siteType );
+            return false;
+        }
+
+        $siteAccessValues[$siteType['editor_access_type_value']] = 1;
+
         $siteType['database'] = $this->Http->postVariable( 'eZSetup_site_templates_database' );
 
         if ( isset( $chosenDatabases[$siteType['database']] ) )
@@ -219,6 +240,8 @@ class eZStepSiteDetails extends eZStepInstaller
                         $siteType['admin_access_type_value'] = $data['AdminAccessPort'];
                     else
                         $siteType['admin_access_type_value'] = $portCounter++;
+
+                    $siteType['editor_access_type_value'] = isset( $data['EditorAccessPort'] ) ? $data['EditorAccessPort'] : $portCounter++;
                 }
                 break;
 
@@ -233,6 +256,8 @@ class eZStepSiteDetails extends eZStepInstaller
                         $siteType['admin_access_type_value'] = $data['AdminAccessHostname'];
                     else
                         $siteType['admin_access_type_value'] = $siteType['identifier'] . '-admin.' . eZSys::hostName();
+
+                    $siteType['editor_access_type_value'] = isset( $data['EditorAccessHostname'] ) ? $data['EditorAccessHostname'] : eZStepSiteAccess::defaultEditorAccessValue( 'hostname' );
                 }
                 break;
 
@@ -249,6 +274,8 @@ class eZStepSiteDetails extends eZStepInstaller
                         $siteType['admin_access_type_value'] = $data['AdminAccess'];
                     else
                         $siteType['admin_access_type_value'] = $siteType['identifier'] . '_admin';
+
+                    $siteType['editor_access_type_value'] = isset( $data['EditorAccess'] ) ? $data['EditorAccess'] : eZStepSiteAccess::defaultEditorAccessValue( 'url' );
                 }
                 break;
             }
@@ -436,6 +463,9 @@ class eZStepSiteDetails extends eZStepInstaller
 
         if ( !isset( $siteType['title'] ) )
             $siteType['title'] = $siteType['name'];
+        // a wizard started before the editor siteaccess existed has no value yet
+        if ( !isset( $siteType['editor_access_type_value'] ) || trim( (string)$siteType['editor_access_type_value'] ) === '' )
+            $siteType['editor_access_type_value'] = eZStepSiteAccess::defaultEditorAccessValue( isset( $siteType['access_type'] ) ? $siteType['access_type'] : 'url' );
         $siteType['errors'] = array();
 
         // The wizard's forms post to index.php by name, so indexDir() named it

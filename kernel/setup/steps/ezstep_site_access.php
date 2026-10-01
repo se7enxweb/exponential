@@ -77,6 +77,7 @@ class eZStepSiteAccess extends eZStepInstaller
             $siteType['access_type'] = 'url';
             $siteType['access_type_value'] = $siteType['identifier'];
             $siteType['admin_access_type_value'] = $siteType['identifier'] . '_admin';
+            $siteType['editor_access_type_value'] = self::defaultEditorAccessValue( 'url' );
 
             $this->storeSiteType( $siteType );
 
@@ -129,6 +130,25 @@ class eZStepSiteAccess extends eZStepInstaller
             $siteType['access_type_value'] = $accessType;
             $siteType['admin_access_type_value'] = $accessType . '_admin';
         }
+        $siteType['editor_access_type_value'] = self::defaultEditorAccessValue( $accessType );
+    }
+
+    /**
+     * The editor siteaccess's default match value: the admin for content
+     * editing only, on edit.<host> for hostname matching (edit.yourdomain.com).
+     *
+     * @param string $accessType url, port or hostname
+     * @return string|int
+     */
+    static function defaultEditorAccessValue( $accessType )
+    {
+        if ( $accessType == 'port' )
+            return 8082;
+        if ( $accessType == 'hostname' )
+            return 'edit.' . eZSys::hostName();
+        if ( $accessType == 'url' )
+            return 'editor';
+        return $accessType . '_editor';
     }
 }
 

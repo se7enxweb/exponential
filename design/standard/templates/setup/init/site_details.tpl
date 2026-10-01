@@ -122,6 +122,11 @@ The setup can continue with the initialization but may damage the present data."
         {/switch}
         <td><input type="text" size="30" name="eZSetup_site_templates_admin_value" value="{$site_type.admin_access_type_value|wash}" /></td>
     </tr>
+    <tr>
+        {if or( eq( $site_access_illegal, 1 ), eq( $site_access_illegal_name, 1) )}<td class="invalid">* {else}<td>{/if}<label class="textfield">{switch match=$site_type.access_type}{case match='port'}{"Editor port"|i18n("design/standard/setup/init")}{/case}{case match='hostname'}{"Editor hostname"|i18n("design/standard/setup/init")}{/case}{case}{"Editor path"|i18n("design/standard/setup/init")}{/case}{/switch}:</label>&nbsp;</td>
+        <td><input type="text" size="30" name="eZSetup_site_templates_editor_value" value="{$site_type.editor_access_type_value|wash}" />
+            <p class="setup_field_note">{"The editor siteaccess: the administration interface for content editing only, without setup, design and developer tools. Editors sign in here to write, edit and publish content and to manage media, users, orders, tags and newsletters. Layouts, Setup, Design, the Git, Export and CIE tools and the developer toolbar stay in the admin siteaccess, so editors cannot change how the site is built."|i18n("design/standard/setup/init")}</p></td>
+    </tr>
 
     <tr>
         {if or( eq( $db_not_empty, 1 ), eq( $db_charset_differs, 1 ) )}<td class="invalid">* {else}<td>{/if}<label class="textfield">{"Database"|i18n("design/standard/setup/init")}</label>{if eq( $site_type.db_already_chosen, 1 )}<div style="color: #ff7f00;">*</div>{/if}: </td>
@@ -133,15 +138,15 @@ The setup can continue with the initialization but may damage the present data."
             {foreach $database_files as $database_file}<option value="{$database_file|wash}"></option>{/foreach}
             </datalist>
             {/if}
+            <p class="setup_field_note">{"A file in %directory, created if it does not exist."|i18n("design/standard/setup/init",, hash( '%directory', $database_directory|wash ))}
+            {if $database_files|count|gt( 0 )}
+            {"%count database files are there already; pick one from the field's list or type a new name."|i18n("design/standard/setup/init",, hash( '%count', $database_files|count ))}
+            {/if}</p>
         {else}
         {section show=$database_available|count|gt( 0 )}
             <select name="eZSetup_site_templates_database">
             {section var=db loop=$database_available}
                 <option value="{$db.item}" {if $db.item|eq( $site_type.database )}selected="selected"{/if}>{$db.item|wash}</option>
-            <p class="setup_field_note">{"A file in %directory, created if it does not exist."|i18n("design/standard/setup/init",, hash( '%directory', $database_directory|wash ))}
-            {if $database_files|count|gt( 0 )}
-            {"%count database files are there already; pick one from the field's list or type a new name."|i18n("design/standard/setup/init",, hash( '%count', $database_files|count ))}
-            {/if}</p>
             {/section}
             </select>
         {section-else}

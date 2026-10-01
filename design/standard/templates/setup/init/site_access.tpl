@@ -12,6 +12,13 @@
   </p>
 
   <p>
+    {"Every installation gets three siteaccesses: the site itself, the admin siteaccess (the full administration interface) and the editor siteaccess (the administration interface for content editing only, without setup, design and developer tools). The next step lets you name the path, port or host name of each."|i18n("design/standard/setup/init")}
+  </p>
+  <p>
+    {"With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing."|i18n("design/standard/setup/init",, hash( '%site', '<nobr><b>yourdomain.com</b></nobr>', '%admin', '<nobr><b>admin.yourdomain.com</b></nobr>', '%editor', '<nobr><b>edit.yourdomain.com</b></nobr>' ))}
+  </p>
+
+  <p>
   <fieldset>
   <legend>{'Access method'|i18n( 'design/standard/setup/init' )}:</legend>
     <table border="0" cellspacing="0" cellpadding="0">

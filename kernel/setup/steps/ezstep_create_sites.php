@@ -363,6 +363,58 @@ class eZStepCreateSites extends eZStepInstaller
         return $result;
     }
 
+    /**
+     * settings/siteaccess/<editor> from the installed admin siteaccess: the
+     * admin for content editing only. Its own design (editor, falling back to
+     * admin3, admin2, admin), the extensions' admin settings, no Layouts,
+     * Setup, Design, Git, Export or CIE tab and the modules behind them off.
+     *
+     * @return bool
+     */
+    function createEditorSiteAccess( $adminSiteaccessName, $editorSiteaccessName )
+    {
+        $adminDir = "settings/siteaccess/$adminSiteaccessName";
+        $editorDir = "settings/siteaccess/$editorSiteaccessName";
+        $files = glob( $adminDir . '/*.ini.append.php' );
+        if ( !$files || !eZDir::mkdir( $editorDir, false, true ) && !is_dir( $editorDir ) )
+            return false;
+        foreach ( $files as $file )
+        {
+            if ( !copy( $file, $editorDir . '/' . basename( $file ) ) )
+                return false;
+        }
+
+        $site = new eZINI( 'site.ini.append.php', $editorDir, null, null, null, true, true );
+        $site->setReadOnlySettingsCheck( false );
+        $site->setVariable( 'DesignSettings', 'SiteDesign', 'editor' );
+        $site->setVariable( 'DesignSettings', 'AdditionalSiteDesignList', array( 'admin3', 'admin2', 'admin' ) );
+        $site->setVariable( 'SiteAccessSettings', 'ExtensionSettingsSiteAccess', $adminSiteaccessName );
+        $site->setVariable( 'SiteSettings', 'SiteName', 'Editor' );
+        // its own address, not the admin's (SiteURL is written without the scheme)
+        $urls = $this->siteaccessURLs();
+        $editorURL = preg_replace( '#^[a-zA-Z0-9]+://#', '', rtrim( (string)$urls['editor_url'], '/' ) );
+        if ( $editorURL !== '' )
+            $site->setVariable( 'SiteSettings', 'SiteURL', $editorURL );
+        $rules = array( 'access;enable', 'moduleall', 'access;disable' );
+        foreach ( array( 'setup', 'visual', 'explayouts_ui', 'explayouts_ui_api', 'git_manager', 'xrowextract', 'bccie' ) as $module )
+            $rules[] = 'module;' . $module;
+        $site->setVariable( 'SiteAccessRules', 'Rules', $rules );
+        if ( !$site->save( false, false, false, false, true, true ) )
+            return false;
+
+        $menu = new eZINI( 'menu.ini.append.php', $editorDir, null, null, null, true, true );
+        $menu->setVariable( 'TopAdminMenu', 'Tabs', array( 'dashboard', 'content', 'media', 'users', 'shop', 'eztags', 'newsletter' ) );
+        $menu->setVariable( 'TopAdminMenu', 'HiddenTabs', array( 'explayouts_ui_dashboard', 'setup', 'design', 'gitmanager', 'xrowextract', 'bccie_overview' ) );
+        $toolbar = new eZINI( 'toolbar.ini.append.php', $editorDir, null, null, null, true, true );
+        $toolbar->setVariable( 'Toolbar_admin_developer', 'Tool', array() );
+        $interface = new eZINI( 'admininterface.ini.append.php', $editorDir, null, null, null, true, true );
+        $interface->setVariable( 'WindowControlsSettings', 'AdditionalTabs', array( 'roles', 'policies', 'eztags', 'authors' ) );
+        $interface->setVariable( 'WindowControlsSettings', 'HiddenTabs', array( 'layouts' ) );
+        return $menu->save( false, false, false, false, true, true )
+            && $toolbar->save( false, false, false, false, true, true )
+            && $interface->save( false, false, false, false, true, true );
+    }
+
     function initializePackage( // $package,
                                 $siteType,
                                 &$accessMap, $charset,
@@ -402,6 +454,14 @@ class eZStepCreateSites extends eZStepInstaller
         }
         $accessMap['accesses'][] = $userSiteaccessName;
         $accessMap['accesses'][] = $adminSiteaccessName;
+        // the editor siteaccess (the admin for content editing only): always there, like the admin one
+        $editorSiteaccessName = 'editor';
+        $editorAccessValue = trim( (string)( isset( $siteType['editor_access_type_value'] ) ? $siteType['editor_access_type_value'] : '' ) );
+        if ( $editorAccessValue === '' ) // kickstart data or a wizard session from before the editor siteaccess
+            $editorAccessValue = (string)eZStepSiteAccess::defaultEditorAccessValue( $siteType['access_type'] );
+        $editorMap = in_array( $siteType['access_type'], array( 'port', 'hostname' ) ) ? $siteType['access_type'] : 'url';
+        $accessMap[$editorMap][$editorAccessValue] = $editorSiteaccessName;
+        $accessMap['accesses'][] = $editorSiteaccessName;
         $accessMap['sites'][] = $userSiteaccessName;
         $userDesignName = $siteType['identifier'];
 
@@ -1627,6 +1687,12 @@ language_locale='eng-GB'";
             }
         }
 
+
+        if ( !$this->createEditorSiteAccess( $adminSiteaccessName, $editorSiteaccessName ) )
+        {
+            $resultArray['errors'][] = array( 'code' => 'EZSW-081',
+                                              'text' => "The editor siteaccess could not be made from settings/siteaccess/$adminSiteaccessName" );
+        }
 
         // get all siteaccesses. do it via 'RelatedSiteAccessesList' settings.
         $adminSiteINI = eZINI::instance( 'site.ini' . '.append.php', "settings/siteaccess/$adminSiteaccessName" );

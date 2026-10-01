@@ -985,6 +985,9 @@ See the requirements page for more information.",
         }
         $currentURL = $url;
         $adminURL = $url;
+        $editorURL = $url;
+        $editorValue = isset( $siteType['editor_access_type_value'] ) && trim( (string)$siteType['editor_access_type_value'] ) !== ''
+                     ? $siteType['editor_access_type_value'] : eZStepSiteAccess::defaultEditorAccessValue( $siteType['access_type'] );
 
         if ( $siteType['access_type'] == 'url' )
         {
@@ -996,6 +999,7 @@ See the requirements page for more information.",
 
             $url .= '/' . $siteType['access_type_value'];
             $adminURL .= '/' . $siteType['admin_access_type_value'];
+            $editorURL .= '/' . $editorValue;
         }
         else if ( $siteType['access_type'] == 'hostname' )
         {
@@ -1009,17 +1013,25 @@ See the requirements page for more information.",
             {
                 $adminURL = 'http://' . $adminURL;
             }
+            $editorURL = $editorValue;
+            if ( !preg_match( "#^[a-zA-Z0-9]+://(.*)$#", $editorURL ) )
+            {
+                $editorURL = 'http://' . $editorURL;
+            }
             $url .= eZSys::indexDir( false );
             $adminURL .= eZSys::indexDir( false );
+            $editorURL .= eZSys::indexDir( false );
         }
         else if ( $siteType['access_type'] == 'port' )
         {
             $url = eZHTTPTool::createRedirectURL( $currentURL, array( 'override_port' => $siteType['access_type_value'] ) );
             $adminURL = eZHTTPTool::createRedirectURL( $currentURL, array( 'override_port' => $siteType['admin_access_type_value'] ) );
+            $editorURL = eZHTTPTool::createRedirectURL( $currentURL, array( 'override_port' => $editorValue ) );
         }
 
         $siteaccessURL = array( 'url' => $url,
-                                'admin_url' => $adminURL );
+                                'admin_url' => $adminURL,
+                                'editor_url' => $editorURL );
 
         return $siteaccessURL;
     }

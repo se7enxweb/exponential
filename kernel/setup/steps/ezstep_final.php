@@ -48,6 +48,7 @@ class eZStepFinal extends eZStepInstaller
 
         $siteType['url'] = $siteaccessURLs['url'];
         $siteType['admin_url'] = $siteaccessURLs['admin_url'];
+        $siteType['editor_url'] = $siteaccessURLs['editor_url'];
 
         $customText = isset( $this->PersistenceList['final_text'] ) ? $this->PersistenceList['final_text'] : '';
 

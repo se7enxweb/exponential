@@ -39,8 +39,16 @@
           <td>{$site_type.title|wash}</td>
         </tr>
         <tr>
-          <td>{"URL"|i18n("design/standard/setup/init")}:&nbsp;</td>
-          <td><a href="{$site_type.url|wash}" target="_blank" class="setup_final">{"User site"|i18n('design/standard/setup/init')}</a>, <a href="{$site_type.admin_url|wash}" target="_blank" class="setup_final">{"Admin site"|i18n('design/standard/setup/init')}</a></td>
+          <td>{"User site"|i18n('design/standard/setup/init')}:&nbsp;</td>
+          <td><a href="{$site_type.url|wash}" target="_blank" class="setup_final">{$site_type.url|wash}</a></td>
+        </tr>
+        <tr>
+          <td>{"Admin site"|i18n('design/standard/setup/init')}:&nbsp;</td>
+          <td><a href="{$site_type.admin_url|wash}" target="_blank" class="setup_final">{$site_type.admin_url|wash}</a></td>
+        </tr>
+        <tr>
+          <td>{"Editor site"|i18n('design/standard/setup/init')}:&nbsp;</td>
+          <td><a href="{$site_type.editor_url|wash}" target="_blank" class="setup_final">{$site_type.editor_url|wash}</a></td>
         </tr>
         <tr>
           <td>{"Username"|i18n("design/standard/setup/init")}:&nbsp;</td>
