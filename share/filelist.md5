@@ -608,7 +608,7 @@ a50dbbb7f5bd2d774da5916fe5984a6d  design/admin/templates/visual/templatelist.tpl
 33e4c23d831c66c1744cec343c7052a2  design/admin/templates/visual/templateview_buttons.tpl
 99bffc8a164702c52b762b1dd300a15c  design/admin/templates/visual/toolbar.tpl
 e0bcde19ca3e377bb55d86014ee0c876  design/admin/templates/visual/toolbarlist.tpl
-543b75192f6ad0e664301e0cd40f93a2  design/admin/templates/window_controls.tpl
+598e6b110327d37243b0de1d5184770b  design/admin/templates/window_controls.tpl
 aba9d45cd7a9ac859372e310bb43be04  design/admin/templates/window_controls_extratabs.tpl
 b4481aa8c6dd7b66accd2fea3c4480ba  design/admin/templates/windows.tpl
 6de7723b1c0bc39a3383cffd028dfd0e  design/admin/templates/windows_extratabs.tpl
@@ -714,7 +714,7 @@ e44f438c4a773fab5341b0fd5afd3b81  design/admin3/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin3/templates/page_topmenuitem.tpl
 632956aa364e0828acfda4c7352827b2  design/admin3/templates/pagelayout.tpl
 ecccfb3c9a7a11cd47d3fa6582918529  design/admin3/templates/parts/user/menu.tpl
-9c8a63f22fbf1ac6100d944d68fd114a  design/admin3/templates/window_controls.tpl
+03bf0a50004b366a1cbe7f46bb57d6ce  design/admin3/templates/window_controls.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -960,6 +960,9 @@ bbd300cf889157d5f91c39d466641221  design/base/templates/parts/path.tpl
 007b018551470dad65aae8c0134c65c8  design/base/templates/shop/confirmorder.tpl
 8cf55549d6903c37a18f1d89ce69aace  design/base/templates/shop/orderemail.tpl
 5e0c951795622e9a40a0e49b86e8e673  design/base/templates/shop/orderview.tpl
+d51573aa2dee2fb27ead02d8b6e04501  design/editor/README.txt
+d41d8cd98f00b204e9800998ecf8427e  design/editor/override/templates/.keep
+d41d8cd98f00b204e9800998ecf8427e  design/editor/templates/.keep
 b7e6fd6bed08386f53b8992d46f47290  design/mysite/images/mysite-illustration-frontpage.jpg
 1c7b8688b0fb88d173012f70b286d171  design/mysite/images/mysite-illustration.jpg
 3e249cde7c60ecef38a5c7b4d393e133  design/mysite/images/mysite-top_left-frontpage.gif
@@ -5399,7 +5402,7 @@ eec45b2adf10df254f61640cf79d23f7  extension/ezoe/translations/nor-NO/translation
 d3312b3659c05a6bd3440152a726c406  ezpm.php
 855e225a60e154204dde78feafe5d1b5  ezpublish.cron
 91b1aa0e8f21ce629c9cf29eef5a4569  favicon.ico
-88bf754ccbf9caa11d0edf3d4a24ee19  index.js
+787e52386898c555df83f32e70f5612a  index.js
 0165a932c41a55e8b14fe8d5aec32867  index.php
 f6e4e31c3cdeea1c4868678b690d8a55  index_cluster.php
 18aa9f2d67b54c3693f19779576496df  index_rest.php
@@ -5727,7 +5730,7 @@ d63974139e74f22c1ac0897718fcb121  kernel/common/ezsimpletagsoperator.php
 b06eed991494facaeeec0ef06d095838  kernel/common/eztemplatedesignresource.php
 81f66b6a462ac38b8651597c7f7f672d  kernel/common/eztemplatesstatisticsreporter.php
 054ec52a7b13a184ffff6a7f8f11cc31  kernel/common/eztocoperator.php
-c1929cb5fd246e61affc9baf0da009d8  kernel/common/eztopmenuoperator.php
+ce2d634cd737154f7765bbf2ecd01905  kernel/common/eztopmenuoperator.php
 a8aac72dff1bbaa3cd8bdcfb0241d348  kernel/common/eztreemenuoperator.php
 47f6bb81f7f9da15cde0feb7b2e51cb8  kernel/common/ezurloperator.php
 47f85d3c744cd977dfa6a1d0e6e49ee7  kernel/common/ezwordtoimageoperator.php
@@ -6490,7 +6493,7 @@ d90eed52b67807cce37b25e753c1bcd9  lib/ezutils/classes/ezuri.php
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 d3c6197c45fba66664c53257ab2c0856  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
-e1e4d72b8b2e4001f8fb8005edf520b8  settings/admininterface.ini
+04623f18dbb09c65b65b5a12ad30b4b5  settings/admininterface.ini
 a1be7ab463d96b8940b0b6ad2148a34e  settings/audit.ini
 1b4240b9c4d8b7cfa57f7c76b8e2d1a7  settings/binaryfile.ini
 95c129ae817de28cfc4ff616555fad21  settings/browse.ini
@@ -6519,7 +6522,7 @@ d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
-c850968110e12680e7eb5b83dbd42359  settings/menu.ini
+68613fdf7f95abe492a7320b39e88f7e  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 a7fb3c12293dec6555c38abfc0c4d356  settings/module.ini
 b3f39c844e6994aafc9f63caabef5779  settings/notification.ini
