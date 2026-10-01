@@ -219,6 +219,13 @@ class ezpContentPublishingQueueProcessor
      */
     public function childSignalHandler( $signo, $pid = null, $status = null )
     {
+        // As a signal handler, PHP 7.1 and later pass the signal's information array as the second argument: that is
+        // not a pid, so the child that ended is found below, as when the system sends the signal without one
+        if ( !is_int( $pid ) )
+        {
+            $pid = null;
+        }
+
         // If no pid is provided, that means we're getting the signal from the system.  Let's figure out
         // which child process ended
         if( $pid === null )
