@@ -22,13 +22,16 @@
  *   1  extension autoloads             bin/php/ezpgenerateautoloads.php -e
  *   2  kernel autoloads (--kernel)     bin/php/ezpgenerateautoloads.php -k, kernel/ and lib/ only
  *   3  INI caches                      bin/php/ezcache.php --clear-tag=ini
- *   4  template, template-override and translation caches, one id per call
+ *   4  template, template-override, translation and design_base caches,
+ *      one id per call
  *   5  engine archive                  bin/php/phar.php build: rebuilt only when a file
  *                                      in kernel/, lib/ or autoload/ changed, and
  *                                      every file parsed first
  *   6  reload PHP-FPM                  systemctl reload <[DeploySettings] PhpFpmService>
  *   7  restart Velocity                bin/php/velocity.php restart
- *   8  content, exphttpcache and template-block caches, one id per call
+ *   8  content, exphttpcache, ezjscore-packer (--packer) and template-block
+ *      caches, one id per call; the packer only ever right before
+ *      template-block
  *   9  Velocity's response cache
  *
  * The first step that fails stops the run, and nothing after it is done: a
@@ -54,7 +57,7 @@ class expVelocityDeploy
     /**
      * @param expVelocity $velocity the engine to restart
      * @param array $options kernel, autoload, fpm, velocity (bool, default:
-     *        kernel false, the others true), dry-run, rebuild-phar (bool),
+     *        kernel false, the others true), dry-run, rebuild-phar, packer (bool),
      *        engine (string, passed on to the restart)
      * @param callable|null $printer function( array $step, int $number, int $count )
      */
@@ -63,7 +66,7 @@ class expVelocityDeploy
         $this->velocity = $velocity;
         $this->options = $options + array(
             'kernel' => false, 'autoload' => true, 'fpm' => true, 'velocity' => true,
-            'dry-run' => false, 'rebuild-phar' => false, 'engine' => '',
+            'dry-run' => false, 'rebuild-phar' => false, 'packer' => false, 'engine' => '',
         );
         $this->printer = $printer;
         $this->root = rtrim( eZSys::rootDir(), '/' );
@@ -93,14 +96,25 @@ class expVelocityDeploy
 
         $steps[] = $this->commandStep( 'ini', 'INI caches',
             array( 'bin/php/ezcache.php', '--clear-tag=ini', '--allow-root-user' ) );
-        foreach ( array( 'template', 'template-override', 'translation' ) as $id )
+        // design_base: the list of design directories, which keeps the
+        // extensions active when it was written; without it a newly activated
+        // extension's templates are not found.
+        foreach ( array( 'template', 'template-override', 'translation', 'design_base' ) as $id )
             $steps[] = $this->cacheStep( $id );
 
         $steps[] = $this->archiveStep();
         $steps[] = $this->fpmStep();
         $steps[] = $this->velocityStep();
 
-        foreach ( array( 'content', 'exphttpcache', 'template-block' ) as $id )
+        // --packer: the packed scripts and styles, always right before
+        // template-block. Cached page heads name the packed files; with the
+        // packer cleared alone they point to files that are gone, and the
+        // admin loses its scripts and styles until template-block is cleared.
+        $ids = array( 'content', 'exphttpcache' );
+        if ( !empty( $this->options['packer'] ) )
+            $ids[] = 'ezjscore-packer';
+        $ids[] = 'template-block';
+        foreach ( $ids as $id )
             $steps[] = $this->cacheStep( $id );
 
         $velocity = $this->velocity;

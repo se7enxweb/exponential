@@ -25,11 +25,12 @@ $script = eZScript::instance( array( 'description' => (
     "              lib/ or autoload/ was added, removed or changed; --rebuild-phar: always)\n" .
     "  deploy     everything a PHP code change needs, in order, PASS/FAIL per step:\n" .
     "             extension autoloads, INI + template + template-override + translation\n" .
-    "             caches, reload PHP-FPM ([DeploySettings] PhpFpmService), restart\n" .
-    "             Velocity, and only then the content, exphttpcache, template-block\n" .
+    "             + design_base caches, reload PHP-FPM ([DeploySettings] PhpFpmService),\n" .
+    "             restart Velocity, and only then the content, exphttpcache, template-block\n" .
     "             and response caches. Stops at the first step that fails.\n" .
     "             --kernel (kernel autoloads too)  --no-autoload  --no-fpm  --no-velocity\n" .
-    "             --rebuild-phar  --dry-run (print the steps, do nothing)  --json\n" .
+    "             --rebuild-phar  --packer (packed scripts + styles, with template-block)\n" .
+    "             --dry-run (print the steps, do nothing)  --json\n" .
     "  kill       stop without asking, for a wedged worker\n" .
     "  command    print the command line it would run, and exit\n" .
     "             (--keep-global=Name[,Name] appends globals to keep between\n" .
@@ -116,9 +117,9 @@ list( $velocityArgs, $velocityTail ) = expVelocity::normalizeCliArguments(
     array( 'keep-global', 'siteaccess', 'login', 'password', 'engine', 'from' ),
     array( 'json', 'help', 'quiet', 'verbose', 'colors', 'no-colors', 'logfiles', 'no-logfiles',
            'allow-root-user', 'debug', 'force', 'check', 'trust-github-digest', 'all',
-           'rebuild-phar', 'kernel', 'dry-run', 'no-fpm', 'no-velocity', 'no-autoload' ) );
+           'rebuild-phar', 'kernel', 'dry-run', 'no-fpm', 'no-velocity', 'no-autoload', 'packer' ) );
 
-$options = $script->getOptions( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https][rebuild-phar][kernel][dry-run][no-fpm][no-velocity][no-autoload]', '[command]',
+$options = $script->getOptions( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https][rebuild-phar][kernel][dry-run][no-fpm][no-velocity][no-autoload][packer]', '[command]',
     array( 'json' => 'Report as JSON, for a caller that is not a person',
            'keep-global' => 'More globals to keep between requests (comma-separated), appended to the '
                           . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command',
@@ -135,7 +136,8 @@ $options = $script->getOptions( '[json][keep-global:][engine:][from:][force][che
            'dry-run' => 'deploy: print the steps and what each would do, and do nothing',
            'no-fpm' => 'deploy: do not reload PHP-FPM',
            'no-velocity' => 'deploy: do not restart Velocity',
-           'no-autoload' => 'deploy: do not regenerate autoload arrays' ),
+           'no-autoload' => 'deploy: do not regenerate autoload arrays',
+           'packer' => 'deploy: clear the packed scripts and styles too (ezjscore-packer, right before template-block)' ),
     $velocityArgs );
 // After "--": plain arguments, never read as options here.
 $options['arguments'] = array_merge( $options['arguments'], $velocityTail );
@@ -807,6 +809,7 @@ switch ( $verb )
             'velocity'     => empty( $options['no-velocity'] ),
             'dry-run'      => !empty( $options['dry-run'] ),
             'rebuild-phar' => !empty( $options['rebuild-phar'] ),
+            'packer'       => !empty( $options['packer'] ),
             'engine'       => count( $engineList ) === 1 ? $engineList[0] : '',
         ), $printer );
         if ( !$asJson )

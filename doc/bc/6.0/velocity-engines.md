@@ -50,11 +50,11 @@ for each step with its time:
 | 1 | extension autoloads | `php bin/php/ezpgenerateautoloads.php -e` |
 | 2 | kernel autoloads, only with `--kernel` | `php bin/php/ezpgenerateautoloads.php -k`, restricted to `kernel/` and `lib/` |
 | 3 | INI caches | `php bin/php/ezcache.php --clear-tag=ini` |
-| 4 | template, template-override and translation caches | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, one id per call |
+| 4 | template, template-override, translation and design_base caches | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, `--clear-id=design_base`, one id per call |
 | 5 | engine archive, when Velocity runs from one | `php bin/php/phar.php build`: rebuilt only when a file in `kernel/`, `lib/` or `autoload/` changed, every file parsed first |
 | 6 | reload PHP-FPM | `systemctl reload <[DeploySettings] PhpFpmService>` |
 | 7 | restart Velocity, when it is running | `exp:velocity restart` |
-| 8 | content, exphttpcache and template-block caches | `--clear-id=content`, `--clear-id=exphttpcache`, `--clear-id=template-block` |
+| 8 | content, exphttpcache, ezjscore-packer (only with `--packer`) and template-block caches | `--clear-id=content`, `--clear-id=exphttpcache`, `--clear-id=ezjscore-packer`, `--clear-id=template-block` |
 | 9 | Velocity's response cache | `exp:velocity cache clear` |
 
 **The order is the point.** The caches that hold rendered output (8 and 9)
@@ -67,26 +67,46 @@ fails step 5, before PHP-FPM or Velocity has been touched; a restart that does
 not come up leaves every cache as it was. The exit status is 1, and the steps
 not run are listed as `NOT RUN`.
 
+**design_base is always cleared.** It holds the list of design directories as
+it was when the extensions were last read, so after an extension is activated
+its templates are not found until it is cleared: the page answers 200 with an
+empty content area.
+
+**The packed scripts and styles go with the template blocks.** The admin's page
+head is kept in a template block, and names the packed files. Clear
+`ezjscore-packer` on its own and those heads point to files that no longer
+exist: the admin loses its scripts and styles until `template-block` is cleared
+as well. `--packer` therefore clears it in step 8, immediately before
+`template-block`, and never anywhere else. It is needed only when what a packer
+server function returns has changed (an `ezjscServer_*` class, or the settings
+it reads); an edited `.js` or `.css` file gets a new packed file by itself,
+since the packed file's name carries the source files' time.
+
 Options: `--kernel`, `--no-autoload`, `--no-fpm`, `--no-velocity`,
 `--rebuild-phar` (rebuild the engine archive even when it is current),
-`--engine=<name>` (the engine to restart), `--dry-run`, `--json`.
+`--packer` (clear the packed scripts and styles, together with the template
+blocks), `--engine=<name>` (the engine to restart), `--dry-run`, `--json`.
 
 ```
 velocity deploy: /var/www/vhosts/example.com/doc/example.com
-  [ 1/12] PASS      1.0s  extension autoloads: var/autoload/ezp_extension.php written
-  [ 2/12] PASS      0.7s  INI caches: Clearing ini: Query cache (SQL results), Global INI cache, INI cache, ...
-  [ 3/12] PASS      0.3s  template cache: Clearing template: Template cache
-  [ 4/12] PASS      0.3s  template-override cache: Clearing template-override: Template override cache
-  [ 5/12] PASS      0.3s  translation cache: Clearing translation: TS Translation cache
-  [ 6/12] PASS     29.9s  engine archive: engine.phar rebuilt: 1 changed (kernel/classes/expvelocity.php)
-  [ 7/12] PASS      0.1s  reload PHP-FPM: reloaded plesk-php85-fpm (auto: pool /opt/plesk/php/8.5/etc/php-fpm.d/example.com.conf)
-  [ 8/12] PASS      3.2s  restart Velocity: started (engine.phar is current, not rebuilt)
-  [ 9/12] PASS      0.3s  content cache: Clearing content: Content view cache
-  [10/12] PASS      0.3s  exphttpcache cache: Clearing exphttpcache: HTTP cache (role-aware pages)
-  [11/12] PASS      0.3s  template-block cache: Clearing template-block: Template block cache
-  [12/12] PASS      0.0s  Velocity response cache: response cache cleared (...)
-velocity deploy: PASS, 12 steps in 36.3s
+  [ 1/14] PASS      1.4s  extension autoloads: var/autoload/ezp_extension.php written
+  [ 2/14] PASS      0.3s  INI caches: Clearing ini: Query cache (SQL results), Global INI cache, INI cache, ...
+  [ 3/14] PASS      0.4s  template cache: Clearing template: Template cache
+  [ 4/14] PASS      0.3s  template-override cache: Clearing template-override: Template override cache
+  [ 5/14] PASS      0.6s  translation cache: Clearing translation: TS Translation cache
+  [ 6/14] PASS      1.3s  design_base cache: Clearing design_base: Design base cache
+  [ 7/14] PASS     31.7s  engine archive: engine.phar rebuilt: 1 changed (kernel/classes/expvelocitydeploy.php)
+  [ 8/14] PASS      0.2s  reload PHP-FPM: reloaded plesk-php85-fpm (auto: pool /opt/plesk/php/8.5/etc/php-fpm.d/example.com.conf)
+  [ 9/14] PASS      7.5s  restart Velocity: 4 instances started (engine.phar is current, not rebuilt)
+  [10/14] PASS      0.3s  content cache: Clearing content: Content view cache
+  [11/14] PASS      0.4s  exphttpcache cache: Clearing exphttpcache: HTTP cache (role-aware pages)
+  [12/14] PASS      0.4s  ezjscore-packer cache: Clearing ezjscore-packer: eZJSCore Public Packer cache
+  [13/14] PASS      0.4s  template-block cache: Clearing template-block: Template block cache
+  [14/14] PASS      0.0s  Velocity response cache: response cache cleared (...)
+velocity deploy: PASS, 14 steps in 45.2s
 ```
+
+This run had `--packer` (step 12); without it there are 13 steps.
 
 With no file in the engine archive changed, step 6 says `engine.phar is
 current, not rebuilt` and the whole run takes about 7 seconds.
