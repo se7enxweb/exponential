@@ -2,8 +2,17 @@
 
 The rows a `SELECT` returned, answered again without asking the database until
 a write to one of the tables it read makes them stale. For the SQL engines:
-MySQL/MariaDB (`eZMySQLiDB`), PostgreSQL (`eZPostgreSQLDB`) and SQLite
-(`eZSQLite3DB`). The MongoDB driver does not use it and is not affected.
+MySQL/MariaDB (`eZMySQLiDB`), PostgreSQL (`eZPostgreSQLDB`), SQLite
+(`eZSQLite3DB`) and Oracle (`eZOracleDB` of the ezoracle extension, from its
+query cache hooks on). The MongoDB driver does not use it and is not affected.
+
+On Oracle, besides what is never cached anywhere, a statement that reads a
+sequence (`<sequence>.NEXTVAL`, `.CURRVAL`: the driver reads every new row's id
+that way), the clock (`SYSDATE`, `SYSTIMESTAMP`), the SCN, `SYS_GUID`,
+`SYS_CONTEXT`/`USERENV` or `DBMS_RANDOM`, and anything that reads the catalogue
+(`USER_*`, `ALL_*`, `DBA_*`, `V$*`), is always run. An anonymous PL/SQL block
+(`DECLARE ...`, `BEGIN ... END;`) counts as a write whose tables cannot be read:
+it makes every result stale.
 
 Off by default: `settings/querycache.ini`, `Mode=off`.
 

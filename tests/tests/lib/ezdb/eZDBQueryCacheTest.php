@@ -334,4 +334,33 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         $this->assertNull( $this->select( $sql ), 'a table it read is now excluded' );
         $this->assertNull( $this->select( $sql ), 'and it is not stored again' );
     }
+
+    /** QC-15 */
+    public function testOracleFormsAreNeverCachedAndPlsqlBlocksWrite()
+    {
+        // The Oracle driver reads every new row's id with "SELECT <sequence>.currval FROM DUAL":
+        // an answer from the cache would hand out an id twice.
+        foreach ( array( 'SELECT s_contentobject.currval from DUAL', 'SELECT S_NODE.NEXTVAL FROM dual',
+                         'SELECT SYSDATE FROM dual', 'SELECT id FROM ezorder WHERE created > SYSTIMESTAMP',
+                         'SELECT SYS_GUID() FROM dual', "SELECT SYS_CONTEXT( 'USERENV', 'SID' ) FROM dual",
+                         'SELECT DBMS_RANDOM.VALUE FROM dual', 'SELECT table_name FROM user_tables',
+                         'SELECT column_name FROM ALL_TAB_COLUMNS WHERE table_name = 1', 'SELECT sid FROM v$session' ) as $sql )
+        {
+            $this->select( $sql );
+            $this->assertNull( $this->select( $sql ), 'not cached: ' . $sql );
+        }
+        $this->assertTrue( eZDBQueryCache::isSystemTable( 'user_sequences' ) );
+        $this->assertTrue( eZDBQueryCache::isSystemTable( 'gv$instance' ) );
+        $this->assertFalse( eZDBQueryCache::isSystemTable( 'ezuser' ) );
+
+        $sql = 'SELECT * FROM ezcontentobject';
+        $this->select( $sql );
+        $this->write( 'BEGIN' );
+        $this->assertNotNull( $this->select( $sql ), 'a bare BEGIN (a transaction) writes nothing' );
+        $this->write( 'BEGIN UPDATE ezcontentobject SET status = 1; END;' );
+        $this->assertNull( $this->select( $sql ), 'a PL/SQL block makes everything stale' );
+        $this->select( 'SELECT * FROM ezsection' );
+        $this->write( 'DECLARE n NUMBER; BEGIN n := 1; END;' );
+        $this->assertNull( $this->select( 'SELECT * FROM ezsection' ), 'so does a DECLARE block' );
+    }
 }

@@ -62,6 +62,14 @@ class eZDBQueryCache
     public static $stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0 );
 
     /** Words that make a statement's result depend on more than its tables. */
+    /**
+     * Oracle's forms of the same, without parentheses: a sequence's NEXTVAL and
+     * CURRVAL (the Oracle driver reads every new row's id with
+     * "SELECT <sequence>.currval FROM DUAL"), the clock, the SCN, generated
+     * ids and the session context.
+     */
+    const ORACLE_VOLATILE = '/\.\s*(?:NEXTVAL|CURRVAL)\b|\b(?:SYSDATE|SYSTIMESTAMP|CURRENT_SCN|ORA_ROWSCN|SYS_GUID|SYS_CONTEXT|USERENV|DBMS_RANDOM|DBMS_LOCK)\b/i';
+
     const VOLATILE = '/\bUNIX_TIMESTAMP\s*\(\s*\)|\b(?:CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|CURRENT_USER)\b|\b(NOW|SYSDATE|CURDATE|CURTIME|CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|LOCALTIME|LOCALTIMESTAMP|UTC_DATE|UTC_TIME|UTC_TIMESTAMP|RAND|RANDOM|UUID|UUID_SHORT|LAST_INSERT_ID|LASTVAL|CURRVAL|NEXTVAL|FOUND_ROWS|ROW_COUNT|CONNECTION_ID|GET_LOCK|RELEASE_LOCK|IS_FREE_LOCK|SLEEP|BENCHMARK|DATABASE|USER|CURRENT_USER|SESSION_USER|SYSTEM_USER|VERSION)\s*\(|\bFOR\s+UPDATE\b|\bLOCK\s+IN\s+SHARE\s+MODE\b|\bFOR\s+SHARE\b|\bSQL_CALC_FOUND_ROWS\b|\bSQL_NO_CACHE\b|@@?\w|\bINTO\s+(OUTFILE|DUMPFILE|@)/i';
 
     // ── Settings ─────────────────────────────────────────────────────────
@@ -194,7 +202,9 @@ class eZDBQueryCache
     /** A table of the database's own catalogue: sqlite_master, sqlite_stat1, pg_class, information_schema.tables ... */
     public static function isSystemTable( $table )
     {
-        return preg_match( '/^(sqlite_|pg_|information_schema)/', (string)$table ) === 1;
+        // ... and Oracle's: USER_TABLES, ALL_TAB_COLUMNS, DBA_SEQUENCES, V$SESSION ...
+        return preg_match( '/^(sqlite_|pg_|information_schema)/', (string)$table ) === 1
+            || preg_match( '/^(?:(?:user|all|dba|cdb)_[a-z0-9_$#]+|g?v\$[a-z0-9_$#]*)$/i', (string)$table ) === 1;
     }
 
     /** Whether a stored entry's tables may still be answered: none excluded, none temporary, none of the catalogue. */
@@ -256,6 +266,18 @@ class eZDBQueryCache
     {
         if ( !self::enabled() )
             return;
+        // An anonymous PL/SQL block (Oracle) can write anything: DECLARE ..., or
+        // BEGIN ... END; -- unlike the bare BEGIN that starts a transaction in
+        // MySQL. Its tables cannot be read, so it makes everything stale.
+        if ( preg_match( '/^\s*DECLARE\b/i', $sql ) || preg_match( '/^\s*BEGIN\b.*\bEND\b\s*;?\s*$/is', $sql ) )
+        {
+            self::$stats['writes']++;
+            if ( ( $db->TransactionCounter ?? 0 ) > 0 )
+                self::$pending['*'] = true;
+            else
+                self::bump( null );
+            return;
+        }
         $verb = strtoupper( (string)strtok( ltrim( $sql ), " \t\r\n(" ) );
         if ( in_array( $verb, array( 'SELECT', 'SHOW', 'DESCRIBE', 'DESC', 'EXPLAIN', 'SET', 'BEGIN', 'START', 'COMMIT', 'ROLLBACK', 'SAVEPOINT', 'RELEASE', 'PRAGMA', 'USE', 'LOCK', 'UNLOCK', 'ANALYZE', 'CHECK', 'CHECKSUM', 'FLUSH', 'KILL', 'OPTIMIZE', 'VACUUM' ), true ) )
             return;
@@ -537,7 +559,7 @@ class eZDBQueryCache
         $sql = (string)$sql;
         if ( strncasecmp( ltrim( $sql ), 'select', 6 ) !== 0 )
             return null;
-        if ( preg_match( self::VOLATILE, $sql ) )
+        if ( preg_match( self::VOLATILE, $sql ) || preg_match( self::ORACLE_VOLATILE, $sql ) )
             return null;
         $text = self::withoutStrings( $sql );
         $tables = array();
