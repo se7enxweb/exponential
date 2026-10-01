@@ -529,6 +529,12 @@ class eZStaticCache implements ezpStaticCache
                 // The url this siteaccess actually serves the page at.
                 $url = self::stripPathPrefix( $siteAccessURL, $dirPart );
 
+                // Not a page of this siteaccess: outside its PathPrefix and not
+                // excluded from it, so fetching it is a 404 (a Fit & Healthy
+                // page asked for under Bold Agency on every publish)
+                if ( !self::servesURL( $siteAccessURL, $dirPart ) )
+                    continue;
+
                 $cacheFiles = array();
 
                 $cacheFiles[] = $this->buildCacheFilename( $staticStorageDir, $dir . $url );
@@ -591,6 +597,32 @@ class eZStaticCache implements ezpStaticCache
                 }
             }
         }
+    }
+
+    /**
+     * Whether a siteaccess serves an url alias path: always without a
+     * PathPrefix; with one, its front page, the paths under the prefix and the
+     * paths whose first element PathPrefixExclude names.
+     *
+     * @param string $url e.g. /bold-agency/about-us
+     * @param array $dirPart A dir part from buildCacheDirPart().
+     * @return bool
+     */
+    private static function servesURL( $url, array $dirPart )
+    {
+        $prefix = isset( $dirPart['path_prefix'] ) ? trim( (string)$dirPart['path_prefix'], '/' ) : '';
+        $path = trim( (string)$url, '/' );
+        if ( $prefix === '' || $path === '' )
+            return true;
+        if ( strcasecmp( $path, $prefix ) === 0 || strncasecmp( $path, $prefix . '/', strlen( $prefix ) + 1 ) === 0 )
+            return true;
+        $first = strtolower( (string)strtok( $path, '/' ) );
+        foreach ( (array)( isset( $dirPart['path_prefix_exclude'] ) ? $dirPart['path_prefix_exclude'] : array() ) as $exclude )
+        {
+            if ( strtolower( trim( (string)$exclude, '/' ) ) === $first )
+                return true;
+        }
+        return false;
     }
 
     /**
@@ -826,6 +858,102 @@ class eZStaticCache implements ezpStaticCache
      * @param string $file
      * @param string $content
      */
+    /**
+     * Fetches pages for the static cache over HTTP: each page once, several at
+     * a time. Only a 2xx answer (after redirects) counts, so an error page is
+     * never stored as a page.
+     *
+     * It replaces a HEAD and then a GET of every page, one page after the
+     * other. The site renders a page in full for a HEAD as well, so that was
+     * two renders per page, and a publish waited for all of them: 48 renders
+     * and five seconds for one product on three siteaccesses.
+     *
+     * @param array $urls
+     * @param int|null $concurrency [CacheSettings] FetchConcurrency, default 8
+     * @return array url => content, or false when the page could not be fetched
+     */
+    public static function fetchPages( array $urls, $concurrency = null )
+    {
+        $urls = array_values( array_unique( array_map( 'strval', $urls ) ) );
+        $result = array();
+        if ( empty( $urls ) )
+            return $result;
+
+        if ( !function_exists( 'curl_multi_init' ) )
+        {
+            foreach ( $urls as $url )
+            {
+                $result[$url] = eZHTTPTool::getDataByURL( $url, true, self::USER_AGENT )
+                              ? eZHTTPTool::getDataByURL( $url, false, self::USER_AGENT ) : false;
+            }
+            return $result;
+        }
+
+        if ( $concurrency === null )
+        {
+            $ini = eZINI::instance( 'staticcache.ini' );
+            $concurrency = $ini->hasVariable( 'CacheSettings', 'FetchConcurrency' ) ? (int)$ini->variable( 'CacheSettings', 'FetchConcurrency' ) : 8;
+        }
+        $concurrency = max( 1, (int)$concurrency );
+
+        $siteINI = eZINI::instance();
+        $connectTimeout = $siteINI->hasVariable( 'LinkCheck', 'ConnectTimeout' ) ? (int)$siteINI->variable( 'LinkCheck', 'ConnectTimeout' ) : 3;
+        $proxy = $siteINI->hasVariable( 'ProxySettings', 'ProxyServer' ) ? $siteINI->variable( 'ProxySettings', 'ProxyServer' ) : false;
+        $proxyUser = $proxy && $siteINI->hasVariable( 'ProxySettings', 'User' ) ? $siteINI->variable( 'ProxySettings', 'User' ) : false;
+        $proxyPassword = $proxy && $siteINI->hasVariable( 'ProxySettings', 'Password' ) ? $siteINI->variable( 'ProxySettings', 'Password' ) : false;
+
+        $multi = curl_multi_init();
+        $handles = array();
+        $queue = $urls;
+        $add = function() use ( &$queue, &$handles, $multi, $connectTimeout, $proxy, $proxyUser, $proxyPassword )
+        {
+            $url = array_shift( $queue );
+            $ch = curl_init( $url );
+            curl_setopt_array( $ch, array( CURLOPT_RETURNTRANSFER => true,
+                                           CURLOPT_FOLLOWLOCATION => true,
+                                           CURLOPT_FAILONERROR => true,
+                                           CURLOPT_CONNECTTIMEOUT => $connectTimeout,
+                                           CURLOPT_TIMEOUT => 60,
+                                           CURLOPT_USERAGENT => self::USER_AGENT ) );
+            if ( $proxy )
+            {
+                curl_setopt( $ch, CURLOPT_PROXY, $proxy );
+                if ( $proxyUser )
+                    curl_setopt( $ch, CURLOPT_PROXYUSERPWD, "$proxyUser:$proxyPassword" );
+            }
+            curl_multi_add_handle( $multi, $ch );
+            $handles[(int)$ch] = array( $ch, $url );
+        };
+        while ( $queue && count( $handles ) < $concurrency )
+            $add();
+
+        do
+        {
+            $status = curl_multi_exec( $multi, $running );
+            while ( $info = curl_multi_info_read( $multi ) )
+            {
+                $ch = $info['handle'];
+                list( , $url ) = $handles[(int)$ch];
+                $code = (int)curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+                $result[$url] = ( $info['result'] === CURLE_OK && $code >= 200 && $code < 300 ) ? curl_multi_getcontent( $ch ) : false;
+                curl_multi_remove_handle( $multi, $ch );
+                unset( $handles[(int)$ch] );
+                if ( $queue )
+                    $add();
+            }
+            if ( $running || $handles )
+                curl_multi_select( $multi, 1.0 );
+        } while ( ( $running || $handles ) && $status === CURLM_OK );
+
+        foreach ( $handles as $handle )
+        {
+            $result[$handle[1]] = false;
+            curl_multi_remove_handle( $multi, $handle[0] );
+        }
+        curl_multi_close( $multi );
+        return $result;
+    }
+
     static function storeCachedFile( $file, $content )
     {
         $dir = dirname( $file );
@@ -909,6 +1037,17 @@ class eZStaticCache implements ezpStaticCache
         if ( $clearByCronjob )
         {
             $db = eZDB::instance();
+        }
+        else
+        {
+            // every page this request stores, fetched once and in parallel
+            $sources = array();
+            foreach ( self::$actionList as $action )
+            {
+                if ( $action[0] === 'store' )
+                    $sources[] = $action[1][1];
+            }
+            $fileContentCache = self::fetchPages( $sources );
         }
 
         foreach ( self::$actionList as $action )

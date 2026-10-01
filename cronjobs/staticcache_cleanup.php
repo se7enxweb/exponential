@@ -29,6 +29,20 @@ do
     if ( !$rows || ( empty( $rows ) ) )
         break;
 
+    // the batch's pages, each once and several at a time
+    $sources = array();
+    foreach ( $rows as $row )
+    {
+        $paramList = explode( ',', $row['param'] );
+        if ( isset( $paramList[1] ) && !isset( $fileContentCache[$paramList[1]] ) )
+            $sources[] = $paramList[1];
+    }
+    if ( $sources )
+    {
+        $cli->output( 'Fetching ' . count( array_unique( $sources ) ) . ' URLs' );
+        $fileContentCache = eZStaticCache::fetchPages( $sources ) + $fileContentCache;
+    }
+
     foreach ( $rows as $row )
     {
         $param = $row['param'];
