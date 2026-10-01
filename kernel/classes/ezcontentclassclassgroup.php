@@ -16,6 +16,31 @@
 
 class eZContentClassClassGroup extends eZPersistentObject
 {
+    /**
+     * The rows fetchGroupList() read, per "<class id>-<version>", for one request:
+     * 'request' is the REQUEST_TIME_FLOAT they belong to, so a long-running worker
+     * never answers from an earlier request. Emptied by every write to the table.
+     */
+    private static $groupListCache = array( 'request' => null, 'rows' => array() );
+
+    /** Empties the cache of fetchGroupList(); called by every method that writes the table. */
+    static function clearGroupListCache()
+    {
+        self::$groupListCache = array( 'request' => null, 'rows' => array() );
+    }
+
+    public function store( $fieldFilters = null )
+    {
+        self::clearGroupListCache();
+        return parent::store( $fieldFilters );
+    }
+
+    public function remove( $conditions = null, $extraConditions = null )
+    {
+        self::clearGroupListCache();
+        return parent::remove( $conditions, $extraConditions );
+    }
+
     static function definition()
     {
         return array( "fields" => array( "contentclass_id" => array( 'name' => "ContentClassID",
@@ -69,6 +94,7 @@ class eZContentClassClassGroup extends eZPersistentObject
                           'group_id' => $group_id );
         }
 
+        self::clearGroupListCache();
         eZPersistentObject::updateObjectList( array( 'definition' => eZContentClassClassGroup::definition(),
                                                      'update_fields' => array( 'group_name' => $group_name ),
                                                      'conditions' => $row ) );
@@ -80,6 +106,7 @@ class eZContentClassClassGroup extends eZPersistentObject
      */
     static function removeGroup( $contentclass_id, $contentclass_version, $group_id )
     {
+        self::clearGroupListCache();
         if ( $contentclass_version == null )
         {
             eZPersistentObject::removeObject( eZContentClassClassGroup::definition(),
@@ -101,6 +128,7 @@ class eZContentClassClassGroup extends eZPersistentObject
      */
     static function removeGroupMembers( $group_id )
     {
+        self::clearGroupListCache();
         eZPersistentObject::removeObject( eZContentClassClassGroup::definition(),
                                           array( "group_id" => $group_id ) );
     }
@@ -111,6 +139,7 @@ class eZContentClassClassGroup extends eZPersistentObject
      */
     static function removeClassMembers( $contentclass_id, $contentclass_version )
     {
+        self::clearGroupListCache();
         eZPersistentObject::removeObject( eZContentClassClassGroup::definition(),
                                           array( "contentclass_id" =>$contentclass_id,
                                                  "contentclass_version" =>$contentclass_version ) );
@@ -226,13 +255,27 @@ class eZContentClassClassGroup extends eZPersistentObject
 
     static function fetchGroupList( $contentclass_id, $contentclass_version, $asObject = true )
     {
-        return eZPersistentObject::fetchObjectList( eZContentClassClassGroup::definition(),
-                                                    null,
-                                                    array( "contentclass_id" => $contentclass_id,
-                                                           "contentclass_version" => $contentclass_version ),
-                                                    null,
-                                                    null,
-                                                    $asObject );
+        $request = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? $_SERVER['REQUEST_TIME_FLOAT'] : null;
+        if ( self::$groupListCache['request'] !== $request )
+            self::$groupListCache = array( 'request' => $request, 'rows' => array() );
+        $key = (int)$contentclass_id . '-' . (int)$contentclass_version;
+        if ( !isset( self::$groupListCache['rows'][$key] ) )
+        {
+            self::$groupListCache['rows'][$key] = eZPersistentObject::fetchObjectList( eZContentClassClassGroup::definition(),
+                                                                                    null,
+                                                                                    array( "contentclass_id" => $contentclass_id,
+                                                                                           "contentclass_version" => $contentclass_version ),
+                                                                                    null,
+                                                                                    null,
+                                                                                    false );
+        }
+        $rows = self::$groupListCache['rows'][$key];
+        if ( !$asObject )
+            return $rows;
+        $objects = array();
+        foreach ( $rows as $row )
+            $objects[] = new eZContentClassClassGroup( $row );
+        return $objects;
     }
 
     static function classInGroup( $contentclassID, $contentclassVersion, $groupID )
