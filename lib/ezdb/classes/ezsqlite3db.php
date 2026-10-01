@@ -777,8 +777,13 @@ class eZSQLite3DB extends eZDBInterface
             {
                 if ( $file[0] === '.' || preg_match( '/-(wal|shm|journal)$/', $file ) )
                     continue;
-                if ( is_file( $directory . '/' . $file ) )
-                    $returnFiles[] = $file;
+                if ( !is_file( $directory . '/' . $file ) )
+                    continue;
+                // only SQLite databases (or empty files, which SQLite opens as new ones): no SQL dumps or other files
+                $size = @filesize( $directory . '/' . $file );
+                if ( $size !== 0 && @file_get_contents( $directory . '/' . $file, false, null, 0, 16 ) !== "SQLite format 3\0" )
+                    continue;
+                $returnFiles[] = $file;
             }
             @closedir( $handle );
         }

@@ -127,16 +127,21 @@ The setup can continue with the initialization but may damage the present data."
         {if or( eq( $db_not_empty, 1 ), eq( $db_charset_differs, 1 ) )}<td class="invalid">* {else}<td>{/if}<label class="textfield">{"Database"|i18n("design/standard/setup/init")}</label>{if eq( $site_type.db_already_chosen, 1 )}<div style="color: #ff7f00;">*</div>{/if}: </td>
         <td>
         {if $database_is_file}
-            <input type="text" size="30" name="eZSetup_site_templates_database" value="{if $site_type.database}{$site_type.database|wash}{else}{$database_default|wash}{/if}" />
-            <br />{"A file in %directory, created if it does not exist."|i18n("design/standard/setup/init",, hash( '%directory', $database_directory|wash ))}
+            <input type="text" size="30" name="eZSetup_site_templates_database" list="eZSetupSQLiteFiles" autocomplete="off" value="{if $site_type.database}{$site_type.database|wash}{else}{$database_default|wash}{/if}" />
             {if $database_files|count|gt( 0 )}
-            <br />{"Database files there now: %files"|i18n("design/standard/setup/init",, hash( '%files', $database_files|implode( ', ' )|wash ))}
+            <datalist id="eZSetupSQLiteFiles">
+            {foreach $database_files as $database_file}<option value="{$database_file|wash}"></option>{/foreach}
+            </datalist>
             {/if}
         {else}
         {section show=$database_available|count|gt( 0 )}
             <select name="eZSetup_site_templates_database">
             {section var=db loop=$database_available}
                 <option value="{$db.item}" {if $db.item|eq( $site_type.database )}selected="selected"{/if}>{$db.item|wash}</option>
+            <p class="setup_field_note">{"A file in %directory, created if it does not exist."|i18n("design/standard/setup/init",, hash( '%directory', $database_directory|wash ))}
+            {if $database_files|count|gt( 0 )}
+            {"%count database files are there already; pick one from the field's list or type a new name."|i18n("design/standard/setup/init",, hash( '%count', $database_files|count ))}
+            {/if}</p>
             {/section}
             </select>
         {section-else}
