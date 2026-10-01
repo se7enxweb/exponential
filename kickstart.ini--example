@@ -41,10 +41,13 @@ Title=My Exponential Site
 URL=
 Access=sevenx_site_user
 AdminAccess=sevenx_site_admin
+EditorAccess=editor
 AccessPort=8080
 AdminAccessPort=8081
+EditorAccessPort=8082
 AccessHostname=alpha.se7enx.com
-AdminAccessHostname=edit.alpha.se7enx.com
+AdminAccessHostname=admin.alpha.se7enx.com
+EditorAccessHostname=edit.alpha.se7enx.com
 Database=xa_alpha
 DatabaseAction=remove
 

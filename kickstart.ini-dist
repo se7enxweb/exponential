@@ -188,6 +188,12 @@
 ## if not supplied it will use site identifier + _admin
 #AdminAccess=news_admin
 
+## EditorAccess=<string>
+## The access name to use for the editor site: the administration interface
+## for content editing only, without setup, design and developer tools.
+## Every installation has one. If not supplied it will use editor
+#EditorAccess=editor
+
 ## AccessPort=<number>
 ## The access port to use for user page
 #AccessPort=8080
@@ -196,6 +202,10 @@
 ## The access port to use for admin page
 #AdminAccessPort=8081
 
+## EditorAccessPort=<number>
+## The access port to use for the editor site
+#EditorAccessPort=8082
+
 ## AccessHostname=<url>
 ## The access hostname to use for user page
 #AccessHostname=news.test.com
@@ -203,6 +213,11 @@
 ## AdminAccessHostname=<url>
 ## The access hostname to use for admin page
 #AdminAccessHostname=news-admin.test.com
+
+## EditorAccessHostname=<url>
+## The access hostname to use for the editor site; by convention
+## edit.<the site's domain>. If not supplied it will use edit.<this host>
+#EditorAccessHostname=edit.news.test.com
 
 ## Database=<databasename>
 ## The database name to use for site

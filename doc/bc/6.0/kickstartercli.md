@@ -331,6 +331,9 @@ AccessPort=8080
 AdminAccessPort=8081
 AccessHostname=sevenx-site.test.com
 AdminAccessHostname=sevenx-site-admin.test.com
+EditorAccess=editor
+EditorAccessPort=8082
+EditorAccessHostname=edit.sevenx-site.test.com
 Database=ezp
 DatabaseAction=skip
 ```
@@ -345,6 +348,9 @@ DatabaseAction=skip
 | `AdminAccessPort` | Port for admin access when `Access=port`. |
 | `AccessHostname` | Hostname for user access when `Access=hostname`. |
 | `AdminAccessHostname` | Hostname for admin access when `Access=hostname`. |
+| `EditorAccess` | Editor siteaccess name (default `editor`): the administration interface for content editing only, without setup, design and developer tools. Every installation has one. |
+| `EditorAccessPort` | Port for editor access when `Access=port` (default 8082). |
+| `EditorAccessHostname` | Hostname for editor access when `Access=hostname`; by convention `edit.<the site's domain>`. |
 | `Database` | Database name for this site. |
 | `DatabaseAction` | What to do when the database already contains data. See below. |
 

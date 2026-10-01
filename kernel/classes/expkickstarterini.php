@@ -90,6 +90,10 @@ class expKickstarterIni
             'AdminAccessPort'     => '8081',
             'AccessHostname'      => 'sevenx-site.test.com',
             'AdminAccessHostname' => 'sevenx-site-admin.test.com',
+            // the editor siteaccess, the administration for content editing only, is always installed
+            'EditorAccess'         => 'editor',
+            'EditorAccessPort'     => '8082',
+            'EditorAccessHostname' => 'edit.sevenx-site.test.com',
             'Database'            => 'ezp',
             'DatabaseAction'      => 'skip',
         ),
@@ -403,7 +407,7 @@ class expKickstarterIni
             return 'choice';
         if ( $base === 'DatabaseAction' && $section === 'site_details' )
             return 'choice';
-        if ( in_array( $base, array( 'Port', 'AccessPort', 'AdminAccessPort' ) ) )
+        if ( in_array( $base, array( 'Port', 'AccessPort', 'AdminAccessPort', 'EditorAccessPort' ) ) )
             return 'int';
         if ( $base === 'Password' )
             return 'hidden';
