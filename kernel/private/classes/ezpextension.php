@@ -163,6 +163,10 @@ class ezpExtension
             return null;
         }
         $return = array();
+        // An extension.xml may have no <metadata>, or metadata without <software>:
+        // reading a child of a missing element is reading a property of null.
+        if ( !isset( $xml->metadata ) )
+            return $return;
         $metadataNode = $xml->metadata;
 
         // standard extension metadata
@@ -173,7 +177,7 @@ class ezpExtension
         }
 
         // 3rd party software
-        if ( !$metadataNode->software->uses )
+        if ( !isset( $metadataNode->software ) || !isset( $metadataNode->software->uses ) )
             return $return;
 
         $index = 1;

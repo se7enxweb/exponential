@@ -1124,7 +1124,8 @@ class eZTemplateStringsOperator
                 // Supports scalar and array search/replace patterns.
                 if ( $paramCount >= 2 )
                 {
-                    $operatorValue = str_replace( $params[0], $params[1], $operatorValue );
+                    // a null value (an unset attribute) is replaced in as ''
+                    $operatorValue = str_replace( $params[0], $params[1], $operatorValue ?? '' );
                 }
                 else
                 {

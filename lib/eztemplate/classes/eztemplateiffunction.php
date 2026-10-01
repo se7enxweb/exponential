@@ -82,7 +82,8 @@ class eZTemplateIfFunction
         $nodesToPrepend = array();
         $nodesToAppend  = array();
         $nodePlacement  = eZTemplateNodeTool::extractFunctionNodePlacement( $node );
-        $uniqid        =  md5( $nodePlacement[2] ) . "_" . $tpl->ElseifCounter;
+        // a node from a string template has no file placement; the counter keeps the id unique
+        $uniqid        =  md5( isset( $nodePlacement[2] ) ? (string)$nodePlacement[2] : '' ) . "_" . $tpl->ElseifCounter;
         $children       = eZTemplateNodeTool::extractFunctionNodeChildren( $node );
 
 

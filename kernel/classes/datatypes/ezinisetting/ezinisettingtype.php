@@ -296,8 +296,8 @@ class eZIniSettingType extends eZDataType
         else
         {
             $contentClassAttribute = $objectAttribute->attribute( 'contentclass_attribute' );
-            $iniInstanceArray = explode( ';', $contentClassAttribute->attribute( self::CLASS_INI_INSTANCE_FIELD ) );
-            $siteAccessArray = explode( ';', $contentClassAttribute->attribute( self::SITE_ACCESS_LIST_FIELD ) );
+            $iniInstanceArray = explode( ';', (string)$contentClassAttribute->attribute( self::CLASS_INI_INSTANCE_FIELD ) );
+            $siteAccessArray = explode( ';', (string)$contentClassAttribute->attribute( self::SITE_ACCESS_LIST_FIELD ) );
             $filename = $contentClassAttribute->attribute( self::CLASS_FILE_FIELD );
             $section = $contentClassAttribute->attribute( self::CLASS_SECTION_FIELD );
             $parameter = $contentClassAttribute->attribute( self::CLASS_PARAMETER_FIELD );
@@ -442,8 +442,8 @@ class eZIniSettingType extends eZDataType
         $contentClassAttribute = $contentObjectAttribute->attribute( 'contentclass_attribute' );
         $section = $contentClassAttribute->attribute( self::CLASS_SECTION_FIELD );
         $parameter = $contentClassAttribute->attribute( self::CLASS_PARAMETER_FIELD );
-        $iniInstanceArray = explode( ';', $contentClassAttribute->attribute( self::CLASS_INI_INSTANCE_FIELD ) );
-        $siteAccessArray = explode( ';', $contentClassAttribute->attribute( self::SITE_ACCESS_LIST_FIELD ) );
+        $iniInstanceArray = explode( ';', (string)$contentClassAttribute->attribute( self::CLASS_INI_INSTANCE_FIELD ) );
+        $siteAccessArray = explode( ';', (string)$contentClassAttribute->attribute( self::SITE_ACCESS_LIST_FIELD ) );
         $filename = $contentClassAttribute->attribute( self::CLASS_FILE_FIELD );
         $makeEmptyArray = $contentObjectAttribute->attribute( 'data_int' );
         $isArray = $contentClassAttribute->attribute( self::CLASS_TYPE_FIELD ) == self::CLASS_TYPE_ARRAY;
@@ -567,8 +567,8 @@ class eZIniSettingType extends eZDataType
         $section = $contentClassAttribute->attribute( self::CLASS_SECTION_FIELD );
         $parameter = $contentClassAttribute->attribute( self::CLASS_PARAMETER_FIELD );
 
-        $iniInstanceArray = explode( ';', $contentClassAttribute->attribute( self::CLASS_INI_INSTANCE_FIELD ) );
-        $siteAccessArray = explode( ';', $contentClassAttribute->attribute( self::SITE_ACCESS_LIST_FIELD ) );
+        $iniInstanceArray = explode( ';', (string)$contentClassAttribute->attribute( self::CLASS_INI_INSTANCE_FIELD ) );
+        $siteAccessArray = explode( ';', (string)$contentClassAttribute->attribute( self::SITE_ACCESS_LIST_FIELD ) );
         $filename = $contentClassAttribute->attribute( self::CLASS_FILE_FIELD );
 
         $modified = array();

@@ -1747,7 +1747,9 @@ $lbracket
         $rbracket
         else if ( is_array( \$value ) )
         $lbracket
-            if ( isset( \$value[\$attributeValue] ) )
+            // a null key (an unset variable, or '' that Oracle returned as NULL)
+            // names no entry; as an array key it is deprecated
+            if ( \$attributeValue !== null and isset( \$value[\$attributeValue] ) )
             $lbracket
                 return \$value[\$attributeValue];
             $rbracket
