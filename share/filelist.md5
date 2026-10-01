@@ -2097,7 +2097,7 @@ e1736c2b2599b91bb982b5ffd42bd4ce  doc/bc/6.0/rad-extension-points.md
 609bd03cc335a638b277d945fb0b1636  doc/bc/6.0/response-cache-and-navigation.md
 ebb0156423f5ee0db9b6063bb7869984  doc/bc/6.0/role-policy-paging.md
 07682814a70c5f2c7b344cf2d755812b  doc/bc/6.0/shop-basket-view-name.md
-39e889588d8bfcecd5cbb4d8d43c2903  doc/bc/6.0/sql-query-cache.md
+dae84ba61ac5e4c4a01376384118a8c0  doc/bc/6.0/sql-query-cache.md
 8ce11bb61ec2cfc3129508e6f3ab7885  doc/bc/6.0/velocity-engines.md
 b1146f7626848f499ad0fff06e01fd98  doc/bc/6.0/velocity-ondisk-layout.md
 adac5192811bf518d52266dd4a6b0e72  doc/branch-overview
@@ -6272,7 +6272,7 @@ bdda00e7a54a120e5d7384a2e19639bc  kickstart.ini--example
 dc0978d9c142fb9bb684d5ed5549c8fd  lib/ezdb/classes/expmongodb.php
 39127b6b97ec8be8ee2d837f2dfda3d3  lib/ezdb/classes/ezdb.php
 8ef2502778404acc1f0ff3353e5e71c7  lib/ezdb/classes/ezdbinterface.php
-b74500e06f7fd896a5aa19dd67e68b29  lib/ezdb/classes/ezdbquerycache.php
+1eed3401d987c5963eb35f03fca8d2d0  lib/ezdb/classes/ezdbquerycache.php
 9d0d10fbdb8d705ba82b4aaefd6e37b1  lib/ezdb/classes/ezdbtool.php
 631572110521ddef25431bcf9cc6d156  lib/ezdb/classes/ezmysqlcharset.php
 6cbad87ccfb6d783e0c22d81ab8baac4  lib/ezdb/classes/ezmysqlidb.php
@@ -6527,7 +6527,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 0e75b2f44f003343b80b22279ab2c401  settings/package.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
 3a13a85a0747ba7150891dfbb20b25db  settings/pdf.ini
-ccf6fc3b0f24bfa396d0633c19454f90  settings/querycache.ini
+9bc9f7cc6a5478119f3a150b1ce7d177  settings/querycache.ini
 5e1cd5e77b6a5d415a62c097b34e9fb4  settings/rest.ini
 80e160621a67179c48c9251c75541cdb  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
@@ -7436,7 +7436,7 @@ ea78290da17011e1c5e5fa5c26e2f812  tests/tests/kernel/private/webdav/regression/P
 977da099dc02aa6cecc77dac19b3633d  tests/tests/kernel/search/ezsearchengine_regression.php
 64bcbebae39f5d638768416f704ca7de  tests/tests/kernel/suite.php
 2b8c8270368a34f65597285341d51dcd  tests/tests/lib/ezdb/eZDBInterfaceTest.php
-91869308cb09d86c2c3d3647d5c7d239  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
+26547ca2016f597eb9d4165358c37787  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 d331b8efd9833b42266f830461ebe009  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
 85da3020efb0594dfa0b7f02d1b8d243  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
 e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php
