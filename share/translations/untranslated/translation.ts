@@ -40324,5 +40324,81 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No orders yet. Place a test order on the site to see the whole checkout once.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>not yet finished; %late waiting too long</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every order that is not finished and not archived, the one waiting longest first. Highlighted: an order waiting for the customer (Pending, Awaiting payment, Payment failed, Ready for pickup) for more than %pending days, or in any other open status for more than %processing days.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No open orders: everything is finished or archived.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The order is placed but not paid yet, for example a bank transfer or an invoice.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The payment has arrived. The order can be packed and shipped.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The payment was refused or cancelled. Ask the customer to pay again, or cancel the order.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stopped for now, for example while you check a payment, an address or the stock.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for products that are out of stock.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Packed and ready to hand to the carrier.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Handed to the carrier and on its way to the customer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ready and waiting for the customer to collect it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delivered and nothing is left to do. No longer counts as open.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancelled before it was shipped. No longer counts as open, and not as revenue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The customer wants to send something back. Agree the return and wait for the parcel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The goods are back. Refund the customer, then set Refunded or Partially refunded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Part of the amount was paid back. No longer counts as open.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The whole amount was paid back. No longer counts as open, and not as revenue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A status added for this shop (numbers from 1000 on), for example by a payment extension. Counts as open until the order reaches a finished status.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A status number below 1000 that this version does not know. Counts as open.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

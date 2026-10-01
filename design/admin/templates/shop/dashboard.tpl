@@ -11,6 +11,7 @@
 .shop-dash { --sd-accent: #ff5500; --sd-ink: #3a3d41; --sd-muted: #6f6e6b; --sd-line: #e4e3e4; --sd-soft: #f5f5f5;
              --sd-link: #005b7f; --sd-crit: #c0392b; --sd-warn: #c77700; --sd-info: #005b7f; --sd-ok: #2e7d32;
              --sd-pending: #e67e22; --sd-processing: #2471a3; --sd-delivered: #2e7d32; --sd-custom: #7d3c98; --sd-archived: #9a9a9a;
+             --sd-customer: #c9a100; --sd-stopped: #c0392b;
              color: var(--sd-ink); }
 .shop-dash * { box-sizing: border-box; }
 .shop-dash h2 { font-size: 1.35em; margin: 1.6em 0 .5em; padding-bottom: .25em; border-bottom: 2px solid var(--sd-accent); }
@@ -48,6 +49,9 @@
 .shop-dash .sd-dot { display: inline-block; width: .75em; height: .75em; border-radius: 50%; margin-right: .35em; vertical-align: middle; }
 .shop-dash .s1 { background: var(--sd-pending); } .shop-dash .s2 { background: var(--sd-processing); }
 .shop-dash .s3 { background: var(--sd-delivered); } .shop-dash .sc { background: var(--sd-custom); } .shop-dash .sa { background: var(--sd-archived); }
+.shop-dash .g-new { background: var(--sd-pending); } .shop-dash .g-customer { background: var(--sd-customer); }
+.shop-dash .g-work { background: var(--sd-processing); } .shop-dash .g-done { background: var(--sd-delivered); }
+.shop-dash .g-stopped { background: var(--sd-stopped); } .shop-dash .g-custom { background: var(--sd-custom); }
 .shop-dash .sd-scroll { overflow-x: auto; margin: 0 0 .8em; }
 .shop-dash table.sd-table { width: 100%; border-collapse: collapse; font-size: .95em; }
 .shop-dash table.sd-table th { background: var(--sd-muted); color: #fff; text-align: left; padding: .35em .5em; font-weight: bold; }
@@ -169,7 +173,7 @@
     <div class="sd-tile{if or( $d.overdue.pending, $d.overdue.processing, $d.overdue.other )} alert{/if}">
         <div class="sd-label">{'Open orders'|i18n( $ctx )}</div>
         <div class="sd-value">{$d.all_time.open}</div>
-        <div class="sd-sub">{'not yet delivered; %late waiting too long'|i18n( $ctx, , hash( '%late', sum( $d.overdue.pending, $d.overdue.processing, $d.overdue.other ) ) )}</div>
+        <div class="sd-sub">{'not yet finished; %late waiting too long'|i18n( $ctx, , hash( '%late', sum( $d.overdue.pending, $d.overdue.processing, $d.overdue.other ) ) )}</div>
     </div>
     <div class="sd-tile">
         <div class="sd-label">{'Baskets'|i18n( $ctx )}</div>
@@ -205,13 +209,13 @@
     <h3>{'Order status'|i18n( $ctx )}</h3>
     {if $d.all_time.orders}
     <div class="sd-stack">
-        {foreach $d.statuses as $s}{if $s.open}<span class="{if $s.status_id|eq( 1 )}s1{elseif $s.status_id|eq( 2 )}s2{elseif $s.status_id|eq( 3 )}s3{else}sc{/if}" style="width: {$s.percent}%" title="{$s.name|wash}: {$s.open}"></span>{/if}{/foreach}
+        {foreach $d.statuses as $s}{if $s.open}<span class="g-{$s.group}" style="width: {$s.percent}%" title="{$s.name|wash}: {$s.open}"></span>{/if}{/foreach}
     </div>
     <div class="sd-scroll"><table class="sd-table">
     <tr><th>{'Status'|i18n( $ctx )}</th><th class="num">{'Orders'|i18n( $ctx )}</th><th class="num">{'Archived'|i18n( $ctx )}</th><th>{'Longest in status'|i18n( $ctx )}</th></tr>
     {foreach $d.statuses as $s}
     <tr>
-        <td class="nw"><span class="sd-dot {if $s.status_id|eq( 1 )}s1{elseif $s.status_id|eq( 2 )}s2{elseif $s.status_id|eq( 3 )}s3{else}sc{/if}"></span>{$s.name|wash}{if $s.is_active|not} <span class="sd-tag">{'inactive'|i18n( $ctx )}</span>{/if}</td>
+        <td class="nw"><span class="sd-dot g-{$s.group}"></span>{$s.name|wash}{if $s.is_active|not} <span class="sd-tag">{'inactive'|i18n( $ctx )}</span>{/if}</td>
         <td class="num">{$s.open}</td>
         <td class="num">{$s.archived}</td>
         <td>{if and( $s.oldest, $s.open, $s.status_id|ne( 3 ) )}{'since %date'|i18n( $ctx, , hash( '%date', $s.oldest|l10n( 'shortdate' ) ) )}{else}&ndash;{/if}</td>
@@ -250,7 +254,7 @@
 <h2 id="sd-orders">{'Orders'|i18n( $ctx )}</h2>
 
 <h3>{'Waiting for you'|i18n( $ctx )}</h3>
-<p class="sd-lead">{'Every order that is not delivered and not archived, the one waiting longest first. Highlighted: Pending for more than %pending days, or any other open status for more than %processing days.'|i18n( $ctx, , hash( '%pending', $d.limits.pending_days, '%processing', $d.limits.processing_days ) )}</p>
+<p class="sd-lead">{'Every order that is not finished and not archived, the one waiting longest first. Highlighted: an order waiting for the customer (Pending, Awaiting payment, Payment failed, Ready for pickup) for more than %pending days, or in any other open status for more than %processing days.'|i18n( $ctx, , hash( '%pending', $d.limits.pending_days, '%processing', $d.limits.processing_days ) )}</p>
 {if $d.waiting|count}
 <div class="sd-scroll"><table class="sd-table">
 <tr><th>{'Order'|i18n( $ctx )}</th><th>{'Customer'|i18n( $ctx )}</th><th>{'Status'|i18n( $ctx )}</th><th>{'Waiting'|i18n( $ctx )}</th><th class="num">{'Total'|i18n( $ctx )}</th></tr>
@@ -258,7 +262,7 @@
 <tr{if $o.overdue} class="overdue"{/if}>
     <td><a href={concat( '/shop/orderview/', $o.id, '/' )|ezurl}>#{$o.order_nr}</a><div class="sd-note">{$o.created|l10n( 'shortdatetime' )}</div></td>
     <td><a href={concat( '/shop/customerorderview/', $o.user_id, '/', $o.email )|ezurl}>{$o.customer|wash}</a></td>
-    <td class="nw"><span class="sd-dot {if $o.status_id|eq( 1 )}s1{elseif $o.status_id|eq( 2 )}s2{else}sc{/if}"></span>{$o.status_name|wash}</td>
+    <td class="nw"><span class="sd-dot g-{$o.status_group}"></span>{$o.status_name|wash}</td>
     <td>{if $o.wait_days|gt( 0 )}{'%count days'|i18n( $ctx, , hash( '%count', $o.wait_days ) )}{else}{'%count hours'|i18n( $ctx, , hash( '%count', $o.wait_hours ) )}{/if}{if $o.overdue} <span class="sd-tag bad">{'too long'|i18n( $ctx )}</span>{/if}</td>
     <td class="num">{$o.total|l10n( 'currency', $d.format[$o.currency].locale, $d.format[$o.currency].symbol )}</td>
 </tr>
@@ -266,7 +270,7 @@
 </table></div>
 {if $d.all_time.open|gt( $d.waiting|count )}<p class="sd-note">{'%shown of %count open orders shown.'|i18n( $ctx, , hash( '%shown', $d.waiting|count, '%count', $d.all_time.open ) )} <a href={'/shop/orderlist'|ezurl}>{'All orders'|i18n( $ctx )}</a></p>{/if}
 {else}
-<p class="sd-empty">{'No open orders: everything is delivered or archived.'|i18n( $ctx )}</p>
+<p class="sd-empty">{'No open orders: everything is finished or archived.'|i18n( $ctx )}</p>
 {/if}
 
 <h3>{'Latest orders'|i18n( $ctx )}</h3>
@@ -278,7 +282,7 @@
     <td><a href={concat( '/shop/orderview/', $o.id, '/' )|ezurl}>#{$o.order_nr}</a></td>
     <td>{$o.created|l10n( 'shortdatetime' )}</td>
     <td><a href={concat( '/shop/customerorderview/', $o.user_id, '/', $o.email )|ezurl}>{$o.customer|wash}</a></td>
-    <td><span class="sd-dot {if $o.is_archived}sa{elseif $o.status_id|eq( 1 )}s1{elseif $o.status_id|eq( 2 )}s2{elseif $o.status_id|eq( 3 )}s3{else}sc{/if}"></span>{$o.status_name|wash}{if $o.is_archived} <span class="sd-tag">{'archived'|i18n( $ctx )}</span>{/if}</td>
+    <td><span class="sd-dot {if $o.is_archived}sa{else}g-{$o.status_group}{/if}"></span>{$o.status_name|wash}{if $o.is_archived} <span class="sd-tag">{'archived'|i18n( $ctx )}</span>{/if}</td>
     <td class="num">{$o.total|l10n( 'currency', $d.format[$o.currency].locale, $d.format[$o.currency].symbol )}</td>
 </tr>
 {/foreach}
@@ -411,11 +415,8 @@
     <div class="sd-scroll"><table class="sd-table">
     <tr><th>{'Status'|i18n( $ctx )}</th><th>{'Meaning'|i18n( $ctx )}</th></tr>
     {foreach $d.statuses as $s}
-    <tr><td class="nw"><span class="sd-dot {if $s.status_id|eq( 1 )}s1{elseif $s.status_id|eq( 2 )}s2{elseif $s.status_id|eq( 3 )}s3{else}sc{/if}"></span>{$s.name|wash} <span class="sd-note">({$s.status_id})</span></td>
-        <td>{if $s.status_id|eq( 1 )}{'Every new order starts here. Check that it is paid, then move it on.'|i18n( $ctx )}
-            {elseif $s.status_id|eq( 2 )}{'You have accepted the order and are packing or shipping it.'|i18n( $ctx )}
-            {elseif $s.status_id|eq( 3 )}{'Shipped and finished. Delivered orders no longer count as open.'|i18n( $ctx )}
-            {else}{'A status added for this shop (numbers from 1000 on), for example by a payment extension. Counts as open until the order is Delivered.'|i18n( $ctx )}{/if}
+    <tr><td class="nw"><span class="sd-dot g-{$s.group}"></span>{$s.name|wash} <span class="sd-note">({$s.status_id})</span></td>
+        <td>{$s.meaning|wash}
             {if $s.is_active|not} {'Inactive: cannot be chosen.'|i18n( $ctx )}{/if}</td></tr>
     {/foreach}
     </table></div>

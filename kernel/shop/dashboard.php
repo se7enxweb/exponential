@@ -28,6 +28,12 @@ $since7 = $midnight - 6 * 86400;
 $since30 = $midnight - 29 * 86400;
 $since60 = $midnight - 59 * 86400;
 
+// Which statuses are finished (no longer open), bring in no revenue (failed,
+// cancelled, refunded), or wait for the customer (the shorter limit below).
+$finishedStatusIDs = eZOrderStatus::finishedStatusIDs();
+$noRevenueStatusIDs = eZOrderStatus::noRevenueStatusIDs();
+$customerStatusIDs = eZOrderStatus::waitingForCustomerStatusIDs();
+
 // Thresholds for "waiting too long", in days.
 $pendingLimitDays = 2;
 $processingLimitDays = 5;
@@ -131,7 +137,7 @@ foreach ( $itemRows as $row )
     $orders[$orderID]['total_inc_vat'] += $inc;
     $orders[$orderID]['item_count'] += (int)$row['item_count'];
 
-    if ( $orders[$orderID]['created'] >= $since30 )
+    if ( $orders[$orderID]['created'] >= $since30 && !in_array( $orders[$orderID]['status_id'], $noRevenueStatusIDs ) )
     {
         $objectID = (int)$row['contentobject_id'];
         $cur = $orders[$orderID]['currency'];
@@ -174,6 +180,9 @@ foreach ( $periodDefinitions as $key => $range )
         $period['orders']++;
         $period['items'] += $order['item_count'];
         $period['customers'][strtolower( $order['email'] )] = true;
+        // A failed, cancelled or refunded order counts as an order, not as revenue.
+        if ( in_array( $order['status_id'], $noRevenueStatusIDs ) )
+            continue;
         if ( !isset( $period['revenue'][$cur] ) )
         {
             $period['revenue'][$cur] = 0.0;
@@ -233,7 +242,7 @@ foreach ( $orders as $order )
     if ( !isset( $daily[$day] ) )
         continue;
     $daily[$day]['orders']++;
-    if ( $order['currency'] === $mainCurrency )
+    if ( $order['currency'] === $mainCurrency && !in_array( $order['status_id'], $noRevenueStatusIDs ) )
         $daily[$day]['revenue'] += $order['total_inc_vat'];
 }
 $maxDailyRevenue = 0.0;
@@ -271,6 +280,51 @@ foreach ( $customerRows as $row )
         $allTime['first_order'] = (int)$row['first_order'];
 }
 
+// What each status of the order lifecycle means, and the colour group it is
+// drawn in: new (waits for the shop), customer (waits for the customer), work
+// (the shop is on it), done (finished well), stopped (finished without a sale,
+// or a problem) and custom.
+$statusMeanings = array(
+    eZOrderStatus::PENDING => array( 'new', ezpI18n::tr( $context, 'Every new order starts here. Check that it is paid, then move it on.' ) ),
+    eZOrderStatus::AWAITING_PAYMENT => array( 'customer', ezpI18n::tr( $context, 'The order is placed but not paid yet, for example a bank transfer or an invoice.' ) ),
+    eZOrderStatus::PAID => array( 'work', ezpI18n::tr( $context, 'The payment has arrived. The order can be packed and shipped.' ) ),
+    eZOrderStatus::PAYMENT_FAILED => array( 'stopped', ezpI18n::tr( $context, 'The payment was refused or cancelled. Ask the customer to pay again, or cancel the order.' ) ),
+    eZOrderStatus::PROCESSING => array( 'work', ezpI18n::tr( $context, 'You have accepted the order and are packing or shipping it.' ) ),
+    eZOrderStatus::ON_HOLD => array( 'stopped', ezpI18n::tr( $context, 'Stopped for now, for example while you check a payment, an address or the stock.' ) ),
+    eZOrderStatus::BACKORDERED => array( 'work', ezpI18n::tr( $context, 'Waiting for products that are out of stock.' ) ),
+    eZOrderStatus::PACKED => array( 'work', ezpI18n::tr( $context, 'Packed and ready to hand to the carrier.' ) ),
+    eZOrderStatus::SHIPPED => array( 'work', ezpI18n::tr( $context, 'Handed to the carrier and on its way to the customer.' ) ),
+    eZOrderStatus::READY_FOR_PICKUP => array( 'customer', ezpI18n::tr( $context, 'Ready and waiting for the customer to collect it.' ) ),
+    eZOrderStatus::DELIVERED => array( 'done', ezpI18n::tr( $context, 'Shipped and finished. Delivered orders no longer count as open.' ) ),
+    eZOrderStatus::COMPLETED => array( 'done', ezpI18n::tr( $context, 'Delivered and nothing is left to do. No longer counts as open.' ) ),
+    eZOrderStatus::CANCELLED => array( 'stopped', ezpI18n::tr( $context, 'Cancelled before it was shipped. No longer counts as open, and not as revenue.' ) ),
+    eZOrderStatus::RETURN_REQUESTED => array( 'customer', ezpI18n::tr( $context, 'The customer wants to send something back. Agree the return and wait for the parcel.' ) ),
+    eZOrderStatus::RETURNED => array( 'work', ezpI18n::tr( $context, 'The goods are back. Refund the customer, then set Refunded or Partially refunded.' ) ),
+    eZOrderStatus::PARTIALLY_REFUNDED => array( 'done', ezpI18n::tr( $context, 'Part of the amount was paid back. No longer counts as open.' ) ),
+    eZOrderStatus::REFUNDED => array( 'stopped', ezpI18n::tr( $context, 'The whole amount was paid back. No longer counts as open, and not as revenue.' ) ),
+);
+$customMeaning = ezpI18n::tr( $context, 'A status added for this shop (numbers from 1000 on), for example by a payment extension. Counts as open until the order reaches a finished status.' );
+$unknownMeaning = ezpI18n::tr( $context, 'A status number below 1000 that this version does not know. Counts as open.' );
+$statusEntry = function( $sid, $name, $isActive ) use ( $statusMeanings, $customMeaning, $unknownMeaning, $finishedStatusIDs, $noRevenueStatusIDs )
+{
+    if ( isset( $statusMeanings[$sid] ) )
+        list( $group, $meaning ) = $statusMeanings[$sid];
+    else
+    {
+        $group = 'custom';
+        $meaning = $sid < eZOrderStatus::CUSTOM ? $unknownMeaning : $customMeaning;
+    }
+    return array( 'status_id' => $sid,
+                  'name' => $name,
+                  'is_active' => $isActive,
+                  'is_internal' => $sid < eZOrderStatus::CUSTOM,
+                  'is_finished' => in_array( $sid, $finishedStatusIDs ),
+                  'no_revenue' => in_array( $sid, $noRevenueStatusIDs ),
+                  'group' => $group,
+                  'meaning' => $meaning,
+                  'open' => 0, 'archived' => 0, 'oldest' => false, 'percent' => 0 );
+};
+
 $statusObjects = eZOrderStatus::fetchList( true, true );
 $statusNames = array();
 $statuses = array();
@@ -278,18 +332,13 @@ foreach ( $statusObjects as $status )
 {
     $sid = (int)$status->attribute( 'status_id' );
     $statusNames[$sid] = $status->attribute( 'name' );
-    $statuses[$sid] = array( 'status_id' => $sid,
-                             'name' => $status->attribute( 'name' ),
-                             'is_active' => (bool)$status->attribute( 'is_active' ),
-                             'is_internal' => $sid < eZOrderStatus::CUSTOM,
-                             'open' => 0, 'archived' => 0, 'oldest' => false, 'percent' => 0 );
+    $statuses[$sid] = $statusEntry( $sid, $status->attribute( 'name' ), (bool)$status->attribute( 'is_active' ) );
 }
 foreach ( $statusRows as $row )
 {
     $sid = (int)$row['status_id'];
     if ( !isset( $statuses[$sid] ) )
-        $statuses[$sid] = array( 'status_id' => $sid, 'name' => ezpI18n::tr( $context, 'Unknown status %id', null, array( '%id' => $sid ) ),
-                                 'is_active' => false, 'is_internal' => false, 'open' => 0, 'archived' => 0, 'oldest' => false, 'percent' => 0 );
+        $statuses[$sid] = $statusEntry( $sid, ezpI18n::tr( $context, 'Unknown status %id', null, array( '%id' => $sid ) ), false );
     $count = (int)$row['order_count'];
     $allTime['orders'] += $count;
     if ( (int)$row['is_archived'] )
@@ -302,25 +351,35 @@ foreach ( $statusRows as $row )
         $statuses[$sid]['open'] += $count;
         if ( $statuses[$sid]['oldest'] === false || (int)$row['oldest'] < $statuses[$sid]['oldest'] )
             $statuses[$sid]['oldest'] = (int)$row['oldest'];
-        if ( $sid != eZOrderStatus::DELIVERED )
+        if ( !in_array( $sid, $finishedStatusIDs ) )
             $allTime['open'] += $count;
     }
 }
 $nonArchived = $allTime['orders'] - $allTime['archived'];
 foreach ( $statuses as $sid => $status )
     $statuses[$sid]['percent'] = $nonArchived > 0 ? (int)round( $status['open'] / $nonArchived * 100 ) : 0;
-ksort( $statuses );
+// In the order of the lifecycle (the order of $statusMeanings), custom and
+// unknown statuses after it by number.
+$lifecycleOrder = array_flip( array_keys( $statusMeanings ) );
+uksort( $statuses, function( $a, $b ) use ( $lifecycleOrder )
+{
+    $pa = isset( $lifecycleOrder[$a] ) ? $lifecycleOrder[$a] : count( $lifecycleOrder ) + $a;
+    $pb = isset( $lifecycleOrder[$b] ) ? $lifecycleOrder[$b] : count( $lifecycleOrder ) + $b;
+    return $pa <=> $pb;
+} );
 $statuses = array_values( $statuses );
 
 /*
- * 3. Orders waiting for the shop: every order that is not delivered and not archived,
+ * 3. Orders waiting for the shop: every order that is not finished and not archived,
  *    longest waiting first, and the latest orders.
  */
+$finishedList = implode( ', ', array_map( 'intval', $finishedStatusIDs ) );
+$customerList = implode( ', ', array_map( 'intval', $customerStatusIDs ) );
 $waitingOrders = eZPersistentObject::fetchObjectList( eZOrder::definition(), null,
-                                                      array( 'is_temporary' => 0, 'is_archived' => 0,
-                                                             'status_id' => array( '!=', eZOrderStatus::DELIVERED ) ),
+                                                      array( 'is_temporary' => 0, 'is_archived' => 0 ),
                                                       array( 'status_modified' => 'asc' ),
-                                                      array( 'offset' => 0, 'length' => 10 ), true );
+                                                      array( 'offset' => 0, 'length' => 10 ), true,
+                                                      false, null, null, " AND status_id NOT IN ( $finishedList )" );
 $latestOrders = eZPersistentObject::fetchObjectList( eZOrder::definition(), null,
                                                      array( 'is_temporary' => 0 ),
                                                      array( 'created' => 'desc' ),
@@ -329,8 +388,8 @@ $overdueCount = array( 'pending' => 0, 'processing' => 0, 'other' => 0 );
 $overdueRows = $db->arrayQuery( "SELECT status_id, COUNT(*) AS order_count
                                  FROM ezorder
                                  WHERE is_temporary = 0 AND is_archived = 0
-                                   AND ( ( status_id = " . eZOrderStatus::PENDING . " AND status_modified < " . ( $now - $pendingLimitDays * 86400 ) . " )
-                                      OR ( status_id <> " . eZOrderStatus::PENDING . " AND status_id <> " . eZOrderStatus::DELIVERED . "
+                                   AND ( ( status_id IN ( $customerList ) AND status_modified < " . ( $now - $pendingLimitDays * 86400 ) . " )
+                                      OR ( status_id NOT IN ( $customerList ) AND status_id NOT IN ( $finishedList )
                                            AND status_modified < " . ( $now - $processingLimitDays * 86400 ) . " ) )
                                  GROUP BY status_id" );
 foreach ( $overdueRows as $row )
@@ -343,7 +402,8 @@ foreach ( $overdueRows as $row )
         $overdueCount['other'] += (int)$row['order_count'];
 }
 
-$orderSummary = function( eZOrder $order ) use ( $orders, $statusNames, $now, $pendingLimitDays, $processingLimitDays, $currencyCode )
+$orderSummary = function( eZOrder $order ) use ( $orders, $statusNames, $now, $pendingLimitDays, $processingLimitDays, $currencyCode,
+                                                 $finishedStatusIDs, $customerStatusIDs, $statusMeanings )
 {
     $id = (int)$order->attribute( 'id' );
     $sid = (int)$order->attribute( 'status_id' );
@@ -359,16 +419,17 @@ $orderSummary = function( eZOrder $order ) use ( $orders, $statusNames, $now, $p
         $currency = $order->currencyCode();
     }
     $waitDays = ( $now - (int)$order->attribute( 'status_modified' ) ) / 86400;
-    $limit = $sid == eZOrderStatus::PENDING ? $pendingLimitDays : $processingLimitDays;
+    $limit = in_array( $sid, $customerStatusIDs ) ? $pendingLimitDays : $processingLimitDays;
     return array( 'id' => $id,
                   'order_nr' => (int)$order->attribute( 'order_nr' ),
                   'created' => (int)$order->attribute( 'created' ),
                   'status_id' => $sid,
                   'status_name' => isset( $statusNames[$sid] ) ? $statusNames[$sid] : $sid,
+                  'status_group' => isset( $statusMeanings[$sid] ) ? $statusMeanings[$sid][0] : 'custom',
                   'status_modified' => (int)$order->attribute( 'status_modified' ),
                   'wait_days' => (int)floor( $waitDays ),
                   'wait_hours' => (int)floor( $waitDays * 24 ),
-                  'overdue' => $sid != eZOrderStatus::DELIVERED && $waitDays > $limit,
+                  'overdue' => !in_array( $sid, $finishedStatusIDs ) && $waitDays > $limit,
                   'is_archived' => (int)$order->attribute( 'is_archived' ),
                   'customer' => $order->accountName(),
                   'email' => $order->attribute( 'email' ),

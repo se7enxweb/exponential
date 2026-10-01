@@ -47718,5 +47718,81 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>No orders yet. Place a test order on the site to see the whole checkout once.</source>
         <translation>Noch keine Bestellungen. Geben Sie auf der Site eine Testbestellung auf, um den ganzen Bestellvorgang einmal zu sehen.</translation>
     </message>
+    <message>
+        <source>not yet finished; %late waiting too long</source>
+        <translation>noch nicht abgeschlossen; %late warten zu lange</translation>
+    </message>
+    <message>
+        <source>Every order that is not finished and not archived, the one waiting longest first. Highlighted: an order waiting for the customer (Pending, Awaiting payment, Payment failed, Ready for pickup) for more than %pending days, or in any other open status for more than %processing days.</source>
+        <translation>Jede Bestellung, die nicht abgeschlossen und nicht archiviert ist, die am längsten wartende zuerst. Hervorgehoben: eine Bestellung, die auf den Kunden wartet (Ausstehend, Zahlung ausstehend, Zahlung fehlgeschlagen, Abholbereit), seit mehr als %pending Tagen, oder in einem anderen offenen Status seit mehr als %processing Tagen.</translation>
+    </message>
+    <message>
+        <source>No open orders: everything is finished or archived.</source>
+        <translation>Keine offenen Bestellungen: alles ist abgeschlossen oder archiviert.</translation>
+    </message>
+    <message>
+        <source>The order is placed but not paid yet, for example a bank transfer or an invoice.</source>
+        <translation>Die Bestellung ist aufgegeben, aber noch nicht bezahlt, zum Beispiel bei Überweisung oder Rechnung.</translation>
+    </message>
+    <message>
+        <source>The payment has arrived. The order can be packed and shipped.</source>
+        <translation>Die Zahlung ist eingegangen. Die Bestellung kann verpackt und versandt werden.</translation>
+    </message>
+    <message>
+        <source>The payment was refused or cancelled. Ask the customer to pay again, or cancel the order.</source>
+        <translation>Die Zahlung wurde abgelehnt oder abgebrochen. Bitten Sie den Kunden, erneut zu zahlen, oder stornieren Sie die Bestellung.</translation>
+    </message>
+    <message>
+        <source>Stopped for now, for example while you check a payment, an address or the stock.</source>
+        <translation>Vorerst angehalten, zum Beispiel während Sie eine Zahlung, eine Adresse oder den Lagerbestand prüfen.</translation>
+    </message>
+    <message>
+        <source>Waiting for products that are out of stock.</source>
+        <translation>Wartet auf Produkte, die nicht vorrätig sind.</translation>
+    </message>
+    <message>
+        <source>Packed and ready to hand to the carrier.</source>
+        <translation>Verpackt und bereit zur Übergabe an den Versanddienstleister.</translation>
+    </message>
+    <message>
+        <source>Handed to the carrier and on its way to the customer.</source>
+        <translation>An den Versanddienstleister übergeben und auf dem Weg zum Kunden.</translation>
+    </message>
+    <message>
+        <source>Ready and waiting for the customer to collect it.</source>
+        <translation>Bereit und wartet darauf, vom Kunden abgeholt zu werden.</translation>
+    </message>
+    <message>
+        <source>Delivered and nothing is left to do. No longer counts as open.</source>
+        <translation>Geliefert, und es ist nichts mehr zu tun. Zählt nicht mehr als offen.</translation>
+    </message>
+    <message>
+        <source>Cancelled before it was shipped. No longer counts as open, and not as revenue.</source>
+        <translation>Vor dem Versand storniert. Zählt nicht mehr als offen und nicht als Umsatz.</translation>
+    </message>
+    <message>
+        <source>The customer wants to send something back. Agree the return and wait for the parcel.</source>
+        <translation>Der Kunde möchte etwas zurücksenden. Vereinbaren Sie die Rücksendung und warten Sie auf das Paket.</translation>
+    </message>
+    <message>
+        <source>The goods are back. Refund the customer, then set Refunded or Partially refunded.</source>
+        <translation>Die Ware ist zurück. Erstatten Sie dem Kunden den Betrag und setzen Sie dann Erstattet oder Teilweise erstattet.</translation>
+    </message>
+    <message>
+        <source>Part of the amount was paid back. No longer counts as open.</source>
+        <translation>Ein Teil des Betrags wurde zurückgezahlt. Zählt nicht mehr als offen.</translation>
+    </message>
+    <message>
+        <source>The whole amount was paid back. No longer counts as open, and not as revenue.</source>
+        <translation>Der gesamte Betrag wurde zurückgezahlt. Zählt nicht mehr als offen und nicht als Umsatz.</translation>
+    </message>
+    <message>
+        <source>A status added for this shop (numbers from 1000 on), for example by a payment extension. Counts as open until the order reaches a finished status.</source>
+        <translation>Ein für diesen Shop angelegter Status (Nummern ab 1000), zum Beispiel von einer Zahlungserweiterung. Zählt als offen, bis die Bestellung einen abgeschlossenen Status erreicht.</translation>
+    </message>
+    <message>
+        <source>A status number below 1000 that this version does not know. Counts as open.</source>
+        <translation>Eine Statusnummer unter 1000, die diese Version nicht kennt. Zählt als offen.</translation>
+    </message>
 </context>
 </TS>
