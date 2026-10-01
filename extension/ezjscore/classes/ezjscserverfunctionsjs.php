@@ -271,16 +271,14 @@ YUI( YUI3_config ).add('io-ez', function( Y )
     public static function jquery( $args, &$packerFiles )
     {
         $ezjscoreIni = eZINI::instance( 'ezjscore.ini' );
-        if ( $ezjscoreIni->variable( 'eZJSCore', 'LoadFromCDN' ) === 'enabled' )
+        $scriptFiles = $ezjscoreIni->variable( 'eZJSCore', $ezjscoreIni->variable( 'eZJSCore', 'LoadFromCDN' ) === 'enabled' ? 'ExternalScripts' : 'LocalScripts' );
+        $files = array( $scriptFiles['jquery'] );
+        // jQuery Migrate right after jQuery, when one is named (expui names jQuery 4's while code moves to it)
+        if ( !empty( $scriptFiles['jqueryMigrate'] ) )
         {
-            $scriptFiles = $ezjscoreIni->variable( 'eZJSCore', 'ExternalScripts' );
-            $packerFiles = array_merge( array( $scriptFiles['jquery'] ), $packerFiles );
+            $files[] = $scriptFiles['jqueryMigrate'];
         }
-        else
-        {
-            $scriptFiles = $ezjscoreIni->variable( 'eZJSCore', 'LocalScripts' );
-            $packerFiles = array_merge( array( $scriptFiles['jquery'] ), $packerFiles );
-        }
+        $packerFiles = array_merge( $files, $packerFiles );
         return '';
     }
 

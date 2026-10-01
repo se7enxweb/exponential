@@ -2,7 +2,7 @@
 <software>
     <metadata>
         <name>eZ JSCore LS</name>
-        <version>6.0.15</version>
+        <version>1.4.0</version>
         <copyright>Copyright (C) eZ Systems AS. All rights reserved.</copyright>
         <license>GNU General Public License v2.0 (or any later version)</license>
         <info_url>https://github.com/se7enxweb/ezjscore</info_url>
@@ -25,16 +25,23 @@
             <uses>
                 <name>jQuery</name>
                 <license>Licensed under MIT license</license>
-                <copyright>Copyright (c) 2013 John Resig</copyright>
-                <info_url>http://jquery.com/</info_url>
-                <version>1.10.2</version>
+                <copyright>Copyright OpenJS Foundation and other contributors</copyright>
+                <info_url>https://jquery.com/</info_url>
+                <version>4.0.0</version>
+            </uses>
+            <uses>
+                <name>jQuery Migrate</name>
+                <license>Licensed under MIT license</license>
+                <copyright>Copyright OpenJS Foundation and other contributors</copyright>
+                <info_url>https://github.com/jquery/jquery-migrate</info_url>
+                <version>4.0.2</version>
             </uses>
             <uses>
                 <name>jQuery UI</name>
-                <license>Dual licensed under MIT and GPL licenses</license>
-                <copyright>Copyright (c) 2013 jQuery project / jQuery UI team</copyright>
-                <info_url>http://jqueryui.com/about</info_url>
-                <version>1.10.3</version>
+                <license>Licensed under MIT license</license>
+                <copyright>Copyright OpenJS Foundation and other contributors</copyright>
+                <info_url>https://jqueryui.com/</info_url>
+                <version>1.14.2</version>
             </uses>
         </software>
 
