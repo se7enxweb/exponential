@@ -5561,7 +5561,7 @@ e2e4b158a097dd941e193bdee0724e28  kernel/classes/ezcontentclassgroup.php
 a9a62a76ca7ba98ebf0f0ff5123bcd06  kernel/classes/ezcontentclassoperations.php
 150589c4dcd2efe8063746afadb32bc7  kernel/classes/ezcontentfunctions.php
 e5bf6ca9701d625229b46da3d921bcab  kernel/classes/ezcontentlanguage.php
-e5a75eb53ce672e875f381d7d5ff895c  kernel/classes/ezcontentobject.php
+8d031fb7b82f6991a8a38a12ab95c710  kernel/classes/ezcontentobject.php
 420b7cc1fda5980d220f67c288672938  kernel/classes/ezcontentobjectassignmenthandler.php
 63ff5a51782c090e5651811bff59d39e  kernel/classes/ezcontentobjectattribute.php
 1a05d919cdc7c4f0e939e4458e1621b5  kernel/classes/ezcontentobjectedithandler.php
@@ -5609,7 +5609,7 @@ bbf9081b52040109a3c26c7b4df1f960  kernel/classes/ezpersistentobject.php
 89389eb81e1ed804ce14e6f01dfedbfc  kernel/classes/ezpolicy.php
 ccc47e919d48d8acc10a078f568c12cd  kernel/classes/ezpolicylimitation.php
 60f93827ab739be43377c622139c9b76  kernel/classes/ezpolicylimitationvalue.php
-b4a2f2d61c157aa9a24f2fc8f40265b2  kernel/classes/ezpreferences.php
+a3324d21c5dd0acf92c48460da5ced68  kernel/classes/ezpreferences.php
 bc9ea8d15ef038f0306166517e5f69ee  kernel/classes/ezproductcategory.php
 5afd96a283a75ca97757c848da360c8a  kernel/classes/ezproductcollection.php
 73245e0e4ca9610a848c0dc706ac1401  kernel/classes/ezproductcollectionitem.php
