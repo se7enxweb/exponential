@@ -5,6 +5,8 @@
 
 <script type="text/javascript">
 (function() {ldelim}
+    // Exponential UI's calendar (exp::datepicker) is on the page: YUI's is not loaded
+    if ( window.Exp && window.Exp.datepicker ) {ldelim} return; {rdelim}
     var loader = new YAHOO.util.YUILoader(YUI2_config);
 
     loader.addModule({ldelim}
