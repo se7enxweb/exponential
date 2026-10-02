@@ -94,3 +94,31 @@
     content: '\00a0\00bb\00a0';
     font-size: 9pt;
 }
+
+/* Heading of the tag dialogs like "Edit <embed> tag" in the TinyMCE 3 ezoe dialogs */
+.tox h2.ezoe-tag-title {
+    margin: 0 0 8px;
+    padding: 0;
+    font: bold 18px Arial, Helvetica, sans-serif;
+    color: #2B6FB6;
+}
+.tox .ezoe-embed-preview-label {
+    margin: 8px 0 2px;
+    font-weight: bold;
+}
+.tox .ezoe-embed-preview {
+    min-height: 24px;
+    max-height: 220px;
+    overflow: auto;
+    padding: 4px 6px;
+    border: 1px solid #CCC;
+    background: #FFF;
+}
+.tox .ezoe-embed-preview img {
+    max-width: 100%;
+    height: auto;
+}
+.tox .ezoe-upload-file {
+    margin: 0 0 4px;
+    font-weight: bold;
+}

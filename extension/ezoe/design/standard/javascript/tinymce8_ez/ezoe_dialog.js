@@ -294,6 +294,19 @@ window.eZOe8Dialog = (function () {
         return html + '</select>';
     };
 
+    // After a rebuild of the dialog the list starts at the top again, scroll to the first selected class
+    // so a selection further down does not look lost
+    var revealClassFilter = function () {
+        var select = document.querySelector( '.tox-dialog select.ezoe-class-filter' ), index;
+        if ( !select )
+            return;
+        index = Array.prototype.findIndex.call( select.options, function ( o ) {
+            return o.selected;
+        } );
+        if ( index > 0 )
+            select.scrollTop = Math.max( 0, index * ( select.scrollHeight / select.options.length ) - select.clientHeight / 3 );
+    };
+
     // Selected class ids of the open dialog, empty for all
     var readClassFilter = function () {
         var select = document.querySelector( '.tox-dialog select.ezoe-class-filter' );
@@ -407,6 +420,7 @@ window.eZOe8Dialog = (function () {
         validateAttribute: validateAttribute,
         renderClassFilter: renderClassFilter,
         readClassFilter: readClassFilter,
+        revealClassFilter: revealClassFilter,
         previewUrl: previewUrl,
         bindList: bindList
     };

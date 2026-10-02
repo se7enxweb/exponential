@@ -97,7 +97,8 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'custom_tag_definitions',
                       'engine_switch_enabled',
                       'tinymce8_cache_key',
-                      'literal_definition' ),
+                      'literal_definition',
+                      'embed_definitions' ),
                       parent::attributes() );
     }
 
@@ -135,6 +136,17 @@ class eZOEXMLInput extends eZXMLInputHandler
             $attr = self::getTinyMCE8CacheKey();
         else if ( $name === 'literal_definition' )
             $attr = self::getTagDefinition( 'literal' );
+        else if ( $name === 'embed_definitions' )
+        {
+            $attr = array();
+            $contentIni = eZINI::instance( 'content.ini' );
+            foreach ( array( 'embed', 'embed-inline' ) as $tagName )
+            {
+                $attr[$tagName] = self::getTagDefinition( $tagName );
+                $attr[$tagName]['views'] = $contentIni->hasVariable( $tagName, 'AvailableViewModes' )
+                                         ? array_values( array_filter( $contentIni->variable( $tagName, 'AvailableViewModes' ) ) ) : array();
+            }
+        }
         else
             $attr = parent::attribute( $name );
         return $attr;

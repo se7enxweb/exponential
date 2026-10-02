@@ -272,11 +272,12 @@
             var redial = function ( dialogApi, changes ) {
                 var tab = state.tab;
                 rememberClassFilter();
-                data = Object.assign( dialogApi.getData(), changes || {} );
+                data = Object.assign( {}, data, dialogApi.getData(), changes || {} );
                 dialogApi.unblock();
                 dialogApi.redial( spec() );
                 state.tab = tab;
                 dialogApi.showTab( tab );
+                D.revealClassFilter();
             };
 
             var startNode = function () {

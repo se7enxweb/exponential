@@ -122,6 +122,8 @@ var eZOe8GlobalSettings = {ldelim}
         root_node: {ezini( 'NodeSettings', 'RootNode', 'content.ini' )|int},
         contentobject_id: {$attribute.contentobject_id},
         contentobject_version: {$attribute.version},
+        embed_definitions: {json_encode( $input_handler.embed_definitions )},
+        content_edit_url: {'/content/edit'|ezurl},
         browse_image_alias: {json_encode( ezini( 'EditorSettings', 'BrowseImageAlias', 'ezoe.ini',,true() ) )},
         search_classes: {json_encode( $search_classes )},
         upload_file_extensions: {json_encode( ezini( 'EditorSettings', 'UploadFileExtensions', 'ezoe.ini',,true() ) )},
