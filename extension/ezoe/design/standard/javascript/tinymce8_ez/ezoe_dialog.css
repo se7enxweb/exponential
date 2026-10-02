@@ -1,0 +1,51 @@
+/*
+ * eZ Online Editor - TinyMCE 8 prototype: content list of the ezoe dialogs (ezoe_dialog.js),
+ * laid out like the result tables of the TinyMCE 3 ezoe dialogs
+ */
+.tox .ezoe-list-path {
+    margin: 0 0 6px;
+}
+.tox .ezoe-list-path a,
+.tox .ezoe-list-paging a,
+.tox .ezoe-list-name a {
+    color: #0645AD;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.tox table.ezoe-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+.tox table.ezoe-list tr {
+    cursor: pointer;
+}
+.tox table.ezoe-list tr:hover {
+    background: #EEF3FB;
+}
+.tox table.ezoe-list tr.ezoe-list-selected {
+    background: #D7E4F7;
+}
+.tox table.ezoe-list td {
+    padding: 2px 4px;
+    vertical-align: middle;
+}
+.tox table.ezoe-list td.ezoe-list-radio {
+    width: 20px;
+}
+.tox table.ezoe-list td.ezoe-list-radio input {
+    margin: 0;
+    pointer-events: none;
+}
+.tox table.ezoe-list td.ezoe-list-class {
+    width: 30%;
+    white-space: nowrap;
+}
+.tox .ezoe-list-paging {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+}
+.tox .ezoe-list-empty,
+.tox .ezoe-selected {
+    margin: 0 0 6px;
+}

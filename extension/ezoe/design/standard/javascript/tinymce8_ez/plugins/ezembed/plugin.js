@@ -8,10 +8,9 @@
  *   others:  <div|span id="eZObject_12" class="ezoeItemNonEditable ezoeItemContentTypeObjects"
  *                 alt="<size>" view="embed" inline="false">rendered embed template</div|span>
  *
- * Server endpoints used (all existing ezoe / ezjscore views):
- *   ezoe/load/<EmbedID>/0/<size>    JSON data of the object (class, image aliases)
- *   ezoe/embed_view/<EmbedID>       rendered embed template for the editor preview
- *   ezjscore/call (ezjsc::search)   search for objects
+ * The dialog works like the TinyMCE 3 ezoe object dialog: Search, Browse and Bookmarks tabs
+ * list the content as table, choosing an entry continues on the Properties tab.
+ * Server calls and the list come from ezoe_dialog.js (eZOe8Dialog).
  *
  * Licensed under the GNU General Public License v2.0, like the rest of ezoe.
  */
@@ -19,17 +18,19 @@
     'use strict';
 
     var EMBED_ID_REGEX = /^eZ(Object|Node)_(\d+)$/;
+    var D = window.eZOe8Dialog;
 
     tinymce.addI18n( 'de', {
         'Embed object': 'Objekt einbetten',
         'Edit embedded object': 'Eingebettetes Objekt bearbeiten',
         'Remove embedded object': 'Eingebettetes Objekt entfernen',
         'Search': 'Suchen',
+        'Browse': 'Durchsuchen',
+        'Bookmarks': 'Lesezeichen',
+        'Properties': 'Eigenschaften',
         'Name of the object': 'Name des Objekts',
-        'Search result': 'Suchergebnis',
-        'Search first or enter an ID below': 'Erst suchen oder unten eine ID eingeben',
-        'No results': 'Keine Treffer',
-        'Object': 'Objekt',
+        'Selected': 'Ausgewählt',
+        'Nothing selected yet, choose an object in Search, Browse or Bookmarks.': 'Noch nichts ausgewählt, bitte ein Objekt unter Suchen, Durchsuchen oder Lesezeichen wählen.',
         'Object ID (12, eZObject_12 or eZNode_34)': 'Objekt-ID (12, eZObject_12 oder eZNode_34)',
         'Inline (embed-inline)': 'Im Fließtext (embed-inline)',
         'Image size': 'Bildgröße',
@@ -38,6 +39,7 @@
         'Class': 'Klasse',
         'Default': 'Standard',
         'Please choose an object.': 'Bitte ein Objekt auswählen.',
+        'Loading…': 'Wird geladen …',
         'Loading preview…': 'Vorschau wird geladen …',
         'Searching…': 'Suche läuft …',
         'Object not found or access denied': 'Objekt nicht gefunden oder kein Zugriff'
@@ -49,11 +51,6 @@
 
         var settings = function () {
             return editor.options.get( 'ez_settings' );
-        };
-
-        // ezurl() strips the trailing slash
-        var serverUrl = function ( name ) {
-            return String( settings()[name] || '' ).replace( /\/?$/, '/' );
         };
 
         var t = function ( text ) {
@@ -95,57 +92,14 @@
             return ( settings().root_url || '/' ) + url;
         };
 
-        var escapeAttr = function ( value ) {
-            return String( value ).replace( /&/g, '&amp;' ).replace( /"/g, '&quot;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
-        };
-
         var buildTag = function ( name, attrs, inner ) {
             var html = '<' + name, key;
             for ( key in attrs )
             {
                 if ( attrs.hasOwnProperty( key ) && attrs[key] !== '' && attrs[key] !== null && attrs[key] !== undefined )
-                    html += ' ' + key + '="' + escapeAttr( attrs[key] ) + '"';
+                    html += ' ' + key + '="' + D.escapeHtml( attrs[key] ) + '"';
             }
             return inner === null ? html + ' />' : html + '>' + inner + '</' + name + '>';
-        };
-
-        var request = function ( url, options ) {
-            // ezjscore picks the response format from the Accept header
-            options = Object.assign( {
-                credentials: 'same-origin',
-                headers: { 'Accept': 'application/json, text/html;q=0.9', 'X-Requested-With': 'XMLHttpRequest' }
-            }, options || {} );
-            return fetch( url, options ).then( function ( response ) {
-                if ( !response.ok )
-                    throw new Error( 'HTTP ' + response.status + ' – ' + url );
-                return response;
-            } );
-        };
-
-        var loadObject = function ( embedId, size ) {
-            return request( serverUrl( 'extension_url' ) + 'load/' + embedId + '/0/' + encodeURIComponent( size ) )
-                .then( function ( r ) { return r.json(); } );
-        };
-
-        var loadEmbedView = function ( embedId, params ) {
-            var query = new URLSearchParams( params ).toString();
-            return request( serverUrl( 'extension_url' ) + 'embed_view/' + embedId + '?' + query )
-                .then( function ( r ) { return r.text(); } );
-        };
-
-        var search = function ( text ) {
-            var body = new URLSearchParams();
-            body.append( 'ezjscServer_function_arguments', 'ezjsc::search' );
-            body.append( 'ezxform_token', settings().form_token || '' );
-            body.append( 'SearchStr', text );
-            body.append( 'SearchLimit', '15' );
-            return request( serverUrl( 'ezjscore_url' ) + 'call', { method: 'POST', body: body } )
-                .then( function ( r ) { return r.json(); } )
-                .then( function ( data ) {
-                    if ( data.error_text )
-                        throw new Error( data.error_text );
-                    return ( data.content && data.content.SearchResult ) || [];
-                } );
         };
 
         var imageAlias = function ( object, size ) {
@@ -164,7 +118,7 @@
                 size = data.size || settings().default_size || 'medium',
                 view = data.view || ( inline ? 'embed-inline' : 'embed' );
 
-            return loadObject( embedId, size ).then( function ( object ) {
+            return D.loadObject( settings(), embedId, size ).then( function ( object ) {
                 if ( !object )
                     throw new Error( t( 'Object not found or access denied' ) + ': ' + embedId );
 
@@ -172,7 +126,7 @@
                     classes = ( data.cssClass || '' ).trim(),
                     attrs = {
                         id: embedId,
-                        title: object.name,
+                        title: D.decodeHtml( object.name ),
                         alt: size,
                         view: view,
                         inline: inline ? 'true' : 'false'
@@ -199,14 +153,14 @@
                 attrs['class'] = ( 'ezoeItemNonEditable ' + classes + ' ezoeItemContentType' +
                                    type.charAt( 0 ).toUpperCase() + type.slice( 1 ) ).replace( /\s+/g, ' ' );
 
-                return loadEmbedView( embedId, {
+                return D.loadEmbedView( settings(), embedId, {
                     inline: inline ? 'true' : 'false',
                     size: size,
                     view: view,
                     align: data.align || 'none',
                     'class': data.cssClass || ''
                 } ).then( function ( inner ) {
-                    return buildTag( inline ? 'span' : 'div', attrs, inner || object.name );
+                    return buildTag( inline ? 'span' : 'div', attrs, inner || D.escapeHtml( attrs.title ) );
                 } );
             } );
         };
@@ -219,7 +173,6 @@
                     .replace( /\b(ezoeItem\w+|ezoeAlign\w+|mceItem\w+)\b/g, '' ).replace( /\s+/g, ' ' ).trim();
             return {
                 query: '',
-                result: '',
                 embedId: el.id,
                 inline: dom.getAttrib( el, 'inline' ) === 'true',
                 size: dom.getAttrib( el, 'alt' ) || settings().default_size || 'medium',
@@ -238,29 +191,71 @@
         };
 
         var openDialog = function ( target ) {
-            var results = [ { text: t( 'Search first or enter an ID below' ), value: '' } ];
+            var data = target ? readEmbed( target ) : {
+                    query: '', embedId: '', inline: false, size: settings().default_size || 'medium', align: '', view: '', cssClass: ''
+                },
+                state = {
+                    tab: target ? 'properties' : 'search',
+                    search: null, searchText: '',
+                    browse: null,
+                    bookmarks: null,
+                    selectedName: target ? target.getAttribute( 'title' ) : ''
+                },
+                unbind, api;
 
-            var spec = function ( initialData ) {
+            var rowValue = function ( item ) {
+                return 'eZObject_' + item.contentobject_id;
+            };
+
+            var listHtml = function ( list, browse ) {
+                if ( !list )
+                    return '<p class="ezoe-list-empty">' + D.escapeHtml( t( 'Loading…' ) ) + '</p>';
+                return D.renderList( list, { t: t, value: rowValue, selected: data.embedId, browse: browse } );
+            };
+
+            var selectedHtml = function () {
+                return '<p class="ezoe-selected">' + ( data.embedId
+                    ? D.escapeHtml( t( 'Selected' ) ) + ': <strong>' + D.escapeHtml( state.selectedName || data.embedId ) + '</strong> (' + D.escapeHtml( data.embedId ) + ')'
+                    : D.escapeHtml( t( 'Nothing selected yet, choose an object in Search, Browse or Bookmarks.' ) ) ) + '</p>';
+            };
+
+            var spec = function () {
                 return {
                     title: target ? t( 'Edit embedded object' ) : t( 'Embed object' ),
                     size: 'medium',
                     body: {
-                        type: 'panel',
-                        items: [
+                        type: 'tabpanel',
+                        tabs: [
                             {
-                                type: 'bar',
+                                name: 'search',
+                                title: t( 'Search' ),
                                 items: [
-                                    { type: 'input', name: 'query', label: t( 'Search' ), placeholder: t( 'Name of the object' ) },
-                                    { type: 'button', name: 'search', text: t( 'Search' ), buttonType: 'secondary' }
+                                    {
+                                        type: 'bar', items: [
+                                            { type: 'input', name: 'query', label: t( 'Search' ), placeholder: t( 'Name of the object' ) },
+                                            { type: 'button', name: 'searchRun', text: t( 'Search' ), buttonType: 'secondary' }
+                                        ]
+                                    },
+                                    { type: 'htmlpanel', html: state.search ? listHtml( state.search ) : '' }
                                 ]
                             },
-                            { type: 'listbox', name: 'result', label: t( 'Search result' ), items: results },
-                            { type: 'input', name: 'embedId', label: t( 'Object ID (12, eZObject_12 or eZNode_34)' ) },
-                            { type: 'checkbox', name: 'inline', label: t( 'Inline (embed-inline)' ) },
                             {
-                                type: 'grid',
-                                columns: 2,
+                                name: 'browse',
+                                title: t( 'Browse' ),
+                                items: [ { type: 'htmlpanel', html: listHtml( state.browse, true ) } ]
+                            },
+                            {
+                                name: 'bookmarks',
+                                title: t( 'Bookmarks' ),
+                                items: [ { type: 'htmlpanel', html: listHtml( state.bookmarks ) } ]
+                            },
+                            {
+                                name: 'properties',
+                                title: t( 'Properties' ),
                                 items: [
+                                    { type: 'htmlpanel', html: selectedHtml() },
+                                    { type: 'input', name: 'embedId', label: t( 'Object ID (12, eZObject_12 or eZNode_34)' ) },
+                                    { type: 'checkbox', name: 'inline', label: t( 'Inline (embed-inline)' ) },
                                     { type: 'listbox', name: 'size', label: t( 'Image size' ), items: listItems( settings().image_sizes ) },
                                     {
                                         type: 'listbox', name: 'align', label: t( 'Alignment' ), items: [
@@ -276,25 +271,28 @@
                             }
                         ]
                     },
-                    initialData: initialData,
+                    initialData: data,
                     buttons: [
                         { type: 'cancel', text: t( 'Cancel' ) },
                         { type: 'submit', text: 'OK', primary: true }
                     ],
-                    onChange: function ( api, details ) {
-                        if ( details.name === 'result' && api.getData().result )
-                            api.setData( { embedId: api.getData().result } );
+                    onTabChange: function ( dialogApi, details ) {
+                        state.tab = details.newTabName;
+                        if ( state.tab === 'browse' && !state.browse )
+                            load( dialogApi, 'browse', D.browse( settings(), settings().root_node || 2, 0 ) );
+                        else if ( state.tab === 'bookmarks' && !state.bookmarks )
+                            load( dialogApi, 'bookmarks', D.bookmarks( settings(), 0 ) );
                     },
-                    onAction: function ( api, details ) {
-                        if ( details.name === 'search' )
-                            runSearch( api );
+                    onAction: function ( dialogApi, details ) {
+                        if ( details.name === 'searchRun' )
+                            runSearch( dialogApi, 0 );
                     },
-                    onSubmit: function ( api ) {
-                        var data = api.getData(), embedId = parseEmbedId( data.embedId );
+                    onSubmit: function ( dialogApi ) {
+                        var d = dialogApi.getData(), embedId = parseEmbedId( d.embedId );
 
                         // Enter in the search field submits the dialog, treat it as search
-                        if ( !embedId && String( data.query ).trim() )
-                            return runSearch( api );
+                        if ( state.tab === 'search' && String( d.query ).trim() )
+                            return runSearch( dialogApi, 0 );
 
                         if ( !embedId )
                         {
@@ -302,55 +300,98 @@
                             return;
                         }
 
-                        api.block( t( 'Loading preview…' ) );
-                        buildEmbedHtml( embedId, data ).then( function ( html ) {
-                            api.close();
+                        dialogApi.block( t( 'Loading preview…' ) );
+                        buildEmbedHtml( embedId, d ).then( function ( html ) {
+                            dialogApi.unblock();
+                            dialogApi.close();
                             if ( target )
                                 editor.selection.select( target );
                             editor.insertContent( html );
                         } ).catch( function ( e ) {
-                            api.unblock();
-                            editor.notificationManager.open( { text: e.message, type: 'error' } );
+                            fail( dialogApi, e );
                         } );
+                    },
+                    onClose: function () {
+                        if ( unbind )
+                            unbind();
                     }
                 };
             };
 
-            var runSearch = function ( api ) {
-                var data = api.getData(), text = String( data.query ).trim();
-                if ( !text )
-                    return;
-                api.block( t( 'Searching…' ) );
-                search( text ).then( function ( list ) {
-                    results = list.length
-                        ? list.map( function ( n ) {
-                            return {
-                                text: n.name + ' (' + n.class_name + ', ' + t( 'Object' ) + ' ' + n.contentobject_id + ')',
-                                value: 'eZObject_' + n.contentobject_id
-                            };
-                        } )
-                        : [ { text: t( 'No results' ), value: '' } ];
-                    data.result = results[0].value;
-                    if ( results[0].value )
-                        data.embedId = results[0].value;
-                    api.redial( spec( data ) );
-                    api.focus( 'result' );
+            var fail = function ( dialogApi, e ) {
+                dialogApi.unblock();
+                editor.notificationManager.open( { text: e.message, type: 'error' } );
+            };
+
+            // Rebuilds the dialog with the current data and state; redial() shows the first tab
+            // and fires onTabChange, so the tab is remembered before and the block is lifted first
+            var redial = function ( dialogApi, changes ) {
+                var tab = state.tab;
+                data = Object.assign( dialogApi.getData(), changes || {} );
+                dialogApi.unblock();
+                dialogApi.redial( spec() );
+                state.tab = tab;
+                dialogApi.showTab( tab );
+            };
+
+            var load = function ( dialogApi, key, promise ) {
+                dialogApi.block( t( 'Loading…' ) );
+                promise.then( function ( list ) {
+                    state[key] = list;
+                    redial( dialogApi );
                 } ).catch( function ( e ) {
-                    api.unblock();
-                    editor.notificationManager.open( { text: e.message, type: 'error' } );
+                    fail( dialogApi, e );
                 } );
             };
 
-            editor.windowManager.open( spec( target ? readEmbed( target ) : {
-                query: '',
-                result: '',
-                embedId: '',
-                inline: false,
-                size: settings().default_size || 'medium',
-                align: '',
-                view: '',
-                cssClass: ''
-            } ) );
+            var runSearch = function ( dialogApi, offset ) {
+                var text = String( dialogApi.getData().query || state.searchText ).trim();
+                if ( !text )
+                    return;
+                state.searchText = text;
+                dialogApi.block( t( 'Searching…' ) );
+                D.search( settings(), text, offset ).then( function ( list ) {
+                    state.search = list;
+                    // the query stays in the field, but Enter should not search again after a selection
+                    redial( dialogApi );
+                } ).catch( function ( e ) {
+                    fail( dialogApi, e );
+                } );
+            };
+
+            var findItem = function ( value ) {
+                return [ state.search, state.browse, state.bookmarks ].reduce( function ( found, list ) {
+                    return found || ( list && list.items.filter( function ( i ) {
+                        return rowValue( i ) === value;
+                    } )[0] );
+                }, null );
+            };
+
+            unbind = D.bindList( function ( action, value ) {
+                if ( action === 'select' )
+                {
+                    var item = findItem( value );
+                    state.selectedName = item ? D.decodeHtml( item.name ) : '';
+                    state.tab = 'properties';
+                    redial( api, { embedId: value, query: '' } );
+                }
+                else if ( action === 'open' )
+                {
+                    load( api, 'browse', D.browse( settings(), value, 0 ) );
+                }
+                else if ( action === 'page' )
+                {
+                    if ( state.tab === 'search' )
+                        runSearch( api, parseInt( value, 10 ) );
+                    else if ( state.tab === 'browse' )
+                        load( api, 'browse', D.browse( settings(), state.browse.node.node_id, parseInt( value, 10 ) ) );
+                    else
+                        load( api, 'bookmarks', D.bookmarks( settings(), parseInt( value, 10 ) ) );
+                }
+            } );
+
+            api = editor.windowManager.open( spec() );
+            api.showTab( state.tab );
         };
 
         var openForSelection = function () {
@@ -363,9 +404,9 @@
             icon: 'embed',
             tooltip: t( 'Embed object' ),
             onAction: openForSelection,
-            onSetup: function ( api ) {
+            onSetup: function ( buttonApi ) {
                 var handler = function ( e ) {
-                    api.setActive( !!getEmbed( e.element ) );
+                    buttonApi.setActive( !!getEmbed( e.element ) );
                 };
                 editor.on( 'NodeChange', handler );
                 return function () {

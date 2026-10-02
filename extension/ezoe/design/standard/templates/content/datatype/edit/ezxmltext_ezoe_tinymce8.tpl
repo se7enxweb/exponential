@@ -51,6 +51,8 @@
 {/if}
 
 <script src={'javascript/tinymce8/tinymce.min.js'|ezdesign} charset="utf-8"></script>
+<script src={'javascript/tinymce8_ez/ezoe_dialog.js'|ezdesign} charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href={'javascript/tinymce8_ez/ezoe_dialog.css'|ezdesign} />
 {if $skin|eq( 'o2k7' )}
 <link rel="stylesheet" type="text/css" href={'javascript/tinymce8_ez/skins/o2k7/skin.css'|ezdesign} />
 {/if}
@@ -101,10 +103,10 @@ var eZOe8GlobalSettings = {ldelim}
     ez_custom_tags: {json_encode( $input_handler.custom_tag_definitions )},
     ez_link_classes: {json_encode( $link_classes )},
     ez_link_view_modes: {json_encode( ezini( 'link', 'AvailableViewModes', 'content.ini' ) )},
-    ez_link_root_node: {ezini( 'NodeSettings', 'RootNode', 'content.ini' )|int},
     ez_custom_attribute_style_map: {json_encode( ezini( 'EditorSettings', 'CustomAttributeStyleMap', 'ezoe.ini',,true() ) )},
     ez_settings: {ldelim}
         root_url: {'/'|ezroot},
+        root_node: {ezini( 'NodeSettings', 'RootNode', 'content.ini' )|int},
         extension_url: {'/ezoe/'|ezurl},
         ezjscore_url: {'/ezjscore/'|ezurl},
         form_token: "@$ezxFormToken@",

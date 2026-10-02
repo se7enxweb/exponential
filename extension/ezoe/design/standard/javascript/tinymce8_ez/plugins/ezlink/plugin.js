@@ -7,18 +7,16 @@
  *   eznode://<node id>[#anchor]    ezobject://<object id>[#anchor]
  *   http(s)://...  mailto:...      #anchor
  *
- * plus title, target, class, view and id. Server endpoints (existing):
- *   ezjscore/call ezoe::browse::<node>::<offset>::<limit>   content tree
- *   ezjscore/call ezjsc::search                             search
- *   ezoe/load/<eZNode_x|eZObject_x>                         name of a linked node / object
+ * plus title, target, class, view and id. Browse and Search list the content like the
+ * TinyMCE 3 ezoe dialogs (ezoe_dialog.js), choosing an entry takes it over into the Link tab.
  *
  * Licensed under the GNU General Public License v2.0, like the rest of ezoe.
  */
 (function () {
     'use strict';
 
-    var BROWSE_LIMIT = 50;
     var INTERNAL_HREF_REGEX = /^(eznode|ezobject):\/\/(\d+)\/?(#.*)?$/i;
+    var D = window.eZOe8Dialog;
 
     tinymce.addI18n( 'de', {
         'Insert link': 'Link einfügen',
@@ -41,29 +39,20 @@
         'None': 'Keine',
         'Default': 'Standard',
         'Link target': 'Linkziel',
-        'Content': 'Inhalt',
-        'Open': 'Öffnen',
-        'Link to node': 'Als Knoten verlinken',
-        'Link to object': 'Als Objekt verlinken',
-        'Up': 'Eine Ebene höher',
+        'Link to the object instead of the node (ezobject://)': 'Objekt statt Knoten verlinken (ezobject://)',
         'Loading…': 'Wird geladen …',
         'Searching…': 'Suche läuft …',
-        'No results': 'Keine Treffer',
         'Name of the content': 'Name des Inhalts',
-        'Search result': 'Suchergebnis',
         'Please enter a URL.': 'Bitte eine URL eingeben.',
-        'Please choose an entry first.': 'Bitte zuerst einen Eintrag auswählen.',
         'Node': 'Knoten',
         'Object': 'Objekt',
-        'not found or no access': 'nicht gefunden oder kein Zugriff',
-        'more entries, refine with the search': 'weitere Einträge, bitte über die Suche eingrenzen'
+        'not found or no access': 'nicht gefunden oder kein Zugriff'
     } );
 
     tinymce.PluginManager.add( 'ezlink', function ( editor ) {
 
         editor.options.register( 'ez_link_classes', { processor: 'object', default: {} } );
         editor.options.register( 'ez_link_view_modes', { processor: 'array', default: [] } );
-        editor.options.register( 'ez_link_root_node', { processor: 'number', default: 2 } );
 
         var t = function ( text ) {
             return editor.translate( text );
@@ -73,62 +62,18 @@
             return editor.options.get( 'ez_settings' ) || {};
         };
 
-        // ezurl() strips the trailing slash
-        var serverUrl = function ( name ) {
-            return String( settings()[name] || '' ).replace( /\/?$/, '/' );
-        };
-
-        var escapeHtml = function ( value ) {
-            return String( value ).replace( /&/g, '&amp;' ).replace( /"/g, '&quot;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
-        };
-
-        var request = function ( url, options ) {
-            // ezjscore picks the response format from the Accept header
-            options = Object.assign( {
-                credentials: 'same-origin',
-                headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
-            }, options || {} );
-            return fetch( url, options ).then( function ( response ) {
-                if ( !response.ok )
-                    throw new Error( 'HTTP ' + response.status + ' – ' + url );
-                return response.json();
-            } );
-        };
-
-        var ezjscoreCall = function ( functionArguments, params ) {
-            var body = new URLSearchParams( params || {} );
-            body.append( 'ezjscServer_function_arguments', functionArguments );
-            body.append( 'ezxform_token', settings().form_token || '' );
-            return request( serverUrl( 'ezjscore_url' ) + 'call', { method: 'POST', body: body } ).then( function ( data ) {
-                if ( data.error_text )
-                    throw new Error( data.error_text );
-                return data.content;
-            } );
-        };
-
-        var browse = function ( nodeId ) {
-            return ezjscoreCall( 'ezoe::browse::' + nodeId + '::0::' + BROWSE_LIMIT );
-        };
-
-        var search = function ( text ) {
-            return ezjscoreCall( 'ezjsc::search', { SearchStr: text, SearchLimit: '20' } ).then( function ( content ) {
-                return ( content && content.SearchResult ) || [];
-            } );
-        };
-
         // Name of the node / object an internal href points to, null if not internal
         var describeHref = function ( href ) {
             var m = String( href || '' ).match( INTERNAL_HREF_REGEX );
             if ( !m )
                 return null;
             var isNode = m[1].toLowerCase() === 'eznode';
-            return request( serverUrl( 'extension_url' ) + 'load/' + ( isNode ? 'eZNode_' : 'eZObject_' ) + m[2] )
-                .then( function ( object ) {
-                    var kind = isNode ? t( 'Node' ) : t( 'Object' );
-                    return object
-                        ? kind + ' ' + m[2] + ': ' + object.name + ' (' + object.class_name + ')'
-                        : kind + ' ' + m[2] + ' ' + t( 'not found or no access' );
-                } );
+            return D.loadObject( settings(), ( isNode ? 'eZNode_' : 'eZObject_' ) + m[2] ).then( function ( object ) {
+                var kind = isNode ? t( 'Node' ) : t( 'Object' );
+                return object
+                    ? kind + ' ' + m[2] + ': ' + D.decodeHtml( object.name ) + ' (' + D.decodeHtml( object.class_name ) + ')'
+                    : kind + ' ' + m[2] + ' ' + t( 'not found or no access' );
+            } );
         };
 
         var getLink = function ( node ) {
@@ -163,14 +108,8 @@
             var link = getLink( editor.selection.getNode() ),
                 dom = editor.dom,
                 selectionText = editor.selection.isCollapsed() ? '' : editor.selection.getContent( { format: 'text' } ),
-                state = {
-                    browseNode: null,
-                    browseItems: [],
-                    browsePath: '',
-                    searchItems: [ { text: t( 'Search result' ), value: '' } ],
-                    targetInfo: '',
-                    activeTab: 'link'
-                };
+                state = { tab: 'link', browse: null, search: null, searchText: '', targetInfo: '' },
+                unbind, api;
 
             var data = link ? {
                 href: dom.getAttrib( link, 'data-mce-href' ) || dom.getAttrib( link, 'href' ),
@@ -180,62 +119,60 @@
                 cssClass: dom.getAttrib( link, 'class' ).replace( /\b(mceItem\w+|ezoe\w+)\b/g, '' ).trim(),
                 view: dom.getAttrib( link, 'view' ),
                 htmlId: dom.getAttrib( link, 'id' ),
-                anchor: '',
-                browseItem: '',
-                query: '',
-                searchItem: ''
+                anchor: '', query: '', browseAsObject: false, searchAsObject: false
             } : {
                 href: '', text: selectionText, title: '', target: '', cssClass: '', view: '', htmlId: '',
-                anchor: '', browseItem: '', query: '', searchItem: ''
+                anchor: '', query: '', browseAsObject: false, searchAsObject: false
             };
 
-            var browseListItems = function () {
-                if ( !state.browseNode )
-                    return [ { text: t( 'Loading…' ), value: '' } ];
-                var items = [];
-                if ( state.browseNode.parent_node_id && state.browseNode.node_id !== 1 )
-                    items.push( { text: '⬑ ' + t( 'Up' ), value: 'up' } );
-                state.browseItems.forEach( function ( n ) {
-                    items.push( {
-                        text: ( n.children_count ? '▸ ' : '   ' ) + n.name + ' (' + n.class_name + ')',
-                        value: String( n.node_id )
-                    } );
-                } );
-                if ( state.browseTotal > state.browseItems.length )
-                    items.push( { text: '… ' + ( state.browseTotal - state.browseItems.length ) + ' ' + t( 'more entries, refine with the search' ), value: '' } );
-                return items.length ? items : [ { text: t( 'No results' ), value: '' } ];
+            // list rows carry node and object id, the link type is chosen with the asObject checkbox
+            var rowValue = function ( item ) {
+                return item.node_id + ':' + item.contentobject_id;
+            };
+
+            var selectedRow = function () {
+                var m = String( data.href || '' ).match( INTERNAL_HREF_REGEX ), list = [ state.browse, state.search ];
+                if ( !m )
+                    return '';
+                for ( var i = 0; i < list.length; i++ )
+                {
+                    var hit = list[i] && list[i].items.filter( function ( item ) {
+                        return m[1].toLowerCase() === 'eznode' ? String( item.node_id ) === m[2] : String( item.contentobject_id ) === m[2];
+                    } )[0];
+                    if ( hit )
+                        return rowValue( hit );
+                }
+                return '';
+            };
+
+            var listHtml = function ( list, browse ) {
+                if ( !list )
+                    return '<p class="ezoe-list-empty">' + D.escapeHtml( t( 'Loading…' ) ) + '</p>';
+                return D.renderList( list, { t: t, value: rowValue, selected: selectedRow(), browse: browse } );
             };
 
             var spec = function () {
-                var linkTab = {
-                    name: 'link',
-                    title: t( 'Link' ),
-                    items: [
-                        { type: 'input', name: 'href', label: t( 'URL' ), placeholder: 'https://…, eznode://12, ezobject://34, mailto:…, #anker' },
-                        { type: 'htmlpanel', html: state.targetInfo ? '<p style="margin:0 0 6px;color:#555">' + t( 'Link target' ) + ': ' + escapeHtml( state.targetInfo ) + '</p>' : '' }
-                    ]
-                };
+                var linkItems = [
+                    { type: 'input', name: 'href', label: t( 'URL' ), placeholder: 'https://…, eznode://12, ezobject://34, mailto:…, #anker' },
+                    { type: 'htmlpanel', html: state.targetInfo ? '<p class="ezoe-selected">' + D.escapeHtml( t( 'Link target' ) ) + ': ' + D.escapeHtml( state.targetInfo ) + '</p>' : '' }
+                ];
                 // the link text is only asked for when nothing is selected, a selection becomes the link
                 if ( !link && !selectionText )
-                    linkTab.items.push( { type: 'input', name: 'text', label: t( 'Text to display' ) } );
-                linkTab.items.push(
+                    linkItems.push( { type: 'input', name: 'text', label: t( 'Text to display' ) } );
+                linkItems.push(
                     { type: 'listbox', name: 'anchor', label: t( 'Anchor in this text' ), items: anchorItems() },
                     { type: 'input', name: 'title', label: t( 'Title' ) },
                     {
-                        type: 'grid', columns: 2, items: [
-                            {
-                                type: 'listbox', name: 'target', label: t( 'Open link in' ), items: [
-                                    { text: t( 'Current window' ), value: '' },
-                                    { text: t( 'New window' ), value: '_blank' },
-                                    { text: t( 'Parent frame' ), value: '_parent' },
-                                    { text: t( 'Top frame' ), value: '_top' }
-                                ]
-                            },
-                            { type: 'listbox', name: 'cssClass', label: t( 'Class' ), items: classItems() },
-                            { type: 'listbox', name: 'view', label: t( 'View' ), items: viewItems() },
-                            { type: 'input', name: 'htmlId', label: t( 'ID' ) }
+                        type: 'listbox', name: 'target', label: t( 'Open link in' ), items: [
+                            { text: t( 'Current window' ), value: '' },
+                            { text: t( 'New window' ), value: '_blank' },
+                            { text: t( 'Parent frame' ), value: '_parent' },
+                            { text: t( 'Top frame' ), value: '_top' }
                         ]
-                    }
+                    },
+                    { type: 'listbox', name: 'cssClass', label: t( 'Class' ), items: classItems() },
+                    { type: 'listbox', name: 'view', label: t( 'View' ), items: viewItems() },
+                    { type: 'input', name: 'htmlId', label: t( 'ID' ) }
                 );
 
                 return {
@@ -244,20 +181,13 @@
                     body: {
                         type: 'tabpanel',
                         tabs: [
-                            linkTab,
+                            { name: 'link', title: t( 'Link' ), items: linkItems },
                             {
                                 name: 'browse',
                                 title: t( 'Browse' ),
                                 items: [
-                                    { type: 'htmlpanel', html: '<p style="margin:0 0 6px"><strong>' + escapeHtml( state.browsePath || '' ) + '</strong></p>' },
-                                    { type: 'listbox', name: 'browseItem', label: t( 'Content' ), items: browseListItems() },
-                                    {
-                                        type: 'bar', items: [
-                                            { type: 'button', name: 'browseOpen', text: t( 'Open' ), buttonType: 'secondary' },
-                                            { type: 'button', name: 'browseNode', text: t( 'Link to node' ), buttonType: 'secondary' },
-                                            { type: 'button', name: 'browseObject', text: t( 'Link to object' ), buttonType: 'secondary' }
-                                        ]
-                                    }
+                                    { type: 'checkbox', name: 'browseAsObject', label: t( 'Link to the object instead of the node (ezobject://)' ) },
+                                    { type: 'htmlpanel', html: listHtml( state.browse, true ) }
                                 ]
                             },
                             {
@@ -270,13 +200,8 @@
                                             { type: 'button', name: 'searchRun', text: t( 'Search' ), buttonType: 'secondary' }
                                         ]
                                     },
-                                    { type: 'listbox', name: 'searchItem', label: t( 'Search result' ), items: state.searchItems },
-                                    {
-                                        type: 'bar', items: [
-                                            { type: 'button', name: 'searchNode', text: t( 'Link to node' ), buttonType: 'secondary' },
-                                            { type: 'button', name: 'searchObject', text: t( 'Link to object' ), buttonType: 'secondary' }
-                                        ]
-                                    }
+                                    { type: 'checkbox', name: 'searchAsObject', label: t( 'Link to the object instead of the node (ezobject://)' ) },
+                                    { type: 'htmlpanel', html: state.search ? listHtml( state.search ) : '' }
                                 ]
                             }
                         ]
@@ -286,147 +211,120 @@
                         { type: 'cancel', text: t( 'Cancel' ) },
                         { type: 'submit', text: 'OK', primary: true }
                     ],
-                    onTabChange: function ( api, details ) {
-                        state.activeTab = details.newTabName;
-                        if ( details.newTabName === 'browse' && !state.browseNode )
-                            loadBrowse( api, startNode() );
+                    onTabChange: function ( dialogApi, details ) {
+                        state.tab = details.newTabName;
+                        if ( state.tab === 'browse' && !state.browse )
+                            loadBrowse( dialogApi, startNode(), 0 );
                     },
-                    onChange: function ( api, details ) {
-                        if ( details.name === 'anchor' && api.getData().anchor )
+                    onChange: function ( dialogApi, details ) {
+                        if ( details.name === 'anchor' && dialogApi.getData().anchor )
                         {
-                            var href = api.getData().href.replace( /#.*$/, '' );
-                            api.setData( { href: href + api.getData().anchor } );
+                            var href = dialogApi.getData().href.replace( /#.*$/, '' );
+                            dialogApi.setData( { href: href + dialogApi.getData().anchor } );
                         }
                     },
-                    onAction: function ( api, details ) {
-                        var d = api.getData();
-                        switch ( details.name )
-                        {
-                            case 'browseOpen':
-                                if ( d.browseItem === 'up' )
-                                    loadBrowse( api, state.browseNode.parent_node_id );
-                                else if ( d.browseItem )
-                                    loadBrowse( api, d.browseItem );
-                                else
-                                    notify( t( 'Please choose an entry first.' ) );
-                                break;
-                            case 'browseNode':
-                            case 'browseObject':
-                                var node = state.browseItems.filter( function ( n ) {
-                                    return String( n.node_id ) === d.browseItem;
-                                } )[0];
-                                if ( !node )
-                                    return notify( t( 'Please choose an entry first.' ) );
-                                setTarget( api, details.name === 'browseNode' ? 'eznode://' + node.node_id : 'ezobject://' + node.contentobject_id, node.name );
-                                break;
-                            case 'searchRun':
-                                runSearch( api );
-                                break;
-                            case 'searchNode':
-                            case 'searchObject':
-                                if ( !d.searchItem )
-                                    return notify( t( 'Please choose an entry first.' ) );
-                                var ids = d.searchItem.split( ':' ), hit = state.searchHits[ d.searchItem ];
-                                setTarget( api, details.name === 'searchNode' ? 'eznode://' + ids[0] : 'ezobject://' + ids[1], hit ? hit.name : '' );
-                                break;
-                        }
+                    onAction: function ( dialogApi, details ) {
+                        if ( details.name === 'searchRun' )
+                            runSearch( dialogApi, 0 );
                     },
-                    onSubmit: function ( api ) {
-                        var d = api.getData();
+                    onSubmit: function ( dialogApi ) {
+                        var d = dialogApi.getData();
                         // Enter in the search field submits the dialog, treat it as search
-                        if ( state.activeTab === 'search' && String( d.query ).trim() && !d.searchItem )
-                            return runSearch( api );
+                        if ( state.tab === 'search' && String( d.query ).trim() )
+                            return runSearch( dialogApi, 0 );
                         if ( !String( d.href ).trim() )
-                            return notify( t( 'Please enter a URL.' ) );
-                        api.close();
+                        {
+                            editor.notificationManager.open( { text: t( 'Please enter a URL.' ), type: 'warning', timeout: 4000 } );
+                            return;
+                        }
+                        dialogApi.close();
                         applyLink( d );
+                    },
+                    onClose: function () {
+                        if ( unbind )
+                            unbind();
                     }
                 };
             };
 
-            var notify = function ( text ) {
-                editor.notificationManager.open( { text: text, type: 'warning', timeout: 4000 } );
-            };
-
-            var fail = function ( api, e ) {
-                api.unblock();
+            var fail = function ( dialogApi, e ) {
+                dialogApi.unblock();
                 editor.notificationManager.open( { text: e.message, type: 'error' } );
             };
 
-            // Rebuilds the dialog with the current data and state, keeping the active tab
-            var redial = function ( api, changes ) {
-                // redial() shows the first tab and fires onTabChange, so remember the tab before
-                var tab = state.activeTab;
-                data = Object.assign( api.getData(), changes || {} );
-                api.redial( spec() );
-                state.activeTab = tab;
-                api.showTab( tab );
+            // Rebuilds the dialog with the current data and state; redial() shows the first tab
+            // and fires onTabChange, so the tab is remembered before and the block is lifted first
+            var redial = function ( dialogApi, changes ) {
+                var tab = state.tab;
+                data = Object.assign( dialogApi.getData(), changes || {} );
+                dialogApi.unblock();
+                dialogApi.redial( spec() );
+                state.tab = tab;
+                dialogApi.showTab( tab );
             };
 
             var startNode = function () {
                 var m = String( data.href || '' ).match( /^eznode:\/\/(\d+)/i );
-                return m ? m[1] : editor.options.get( 'ez_link_root_node' );
+                return m ? m[1] : ( settings().root_node || 2 );
             };
 
-            var loadBrowse = function ( api, nodeId ) {
-                api.block( t( 'Loading…' ) );
-                browse( nodeId ).then( function ( content ) {
-                    var node = content.node || {};
-                    // a node without children: show its parent so the node itself can be selected
-                    if ( !content.total_count && node.parent_node_id && String( nodeId ) === String( startNode() ) && node.node_id !== 1 )
-                        return loadBrowse( api, node.parent_node_id );
-                    state.browseNode = node;
-                    state.browseItems = content.list || [];
-                    state.browseTotal = content.total_count || 0;
-                    state.browsePath = ( node.path || [] ).concat( [ node ] ).map( function ( n ) {
-                        return n.name;
-                    } ).join( ' / ' );
-                    api.unblock();
-                    redial( api, { browseItem: '' } );
+            var loadBrowse = function ( dialogApi, nodeId, offset ) {
+                dialogApi.block( t( 'Loading…' ) );
+                D.browse( settings(), nodeId, offset ).then( function ( list ) {
+                    // a linked node without children: show its parent so the node itself is listed
+                    if ( !list.total && list.node && list.node.parent_node_id && list.node.node_id !== 1 && !state.browse )
+                        return loadBrowse( dialogApi, list.node.parent_node_id, 0 );
+                    state.browse = list;
+                    redial( dialogApi );
                 } ).catch( function ( e ) {
-                    fail( api, e );
+                    fail( dialogApi, e );
                 } );
             };
 
-            var runSearch = function ( api ) {
-                var text = String( api.getData().query ).trim();
+            var runSearch = function ( dialogApi, offset ) {
+                var text = String( dialogApi.getData().query || state.searchText ).trim();
                 if ( !text )
                     return;
-                api.block( t( 'Searching…' ) );
-                search( text ).then( function ( list ) {
-                    state.searchHits = {};
-                    state.searchItems = list.length ? list.map( function ( n ) {
-                        var key = n.node_id + ':' + n.contentobject_id;
-                        state.searchHits[key] = n;
-                        return { text: n.name + ' (' + n.class_name + ')', value: key };
-                    } ) : [ { text: t( 'No results' ), value: '' } ];
-                    api.unblock();
-                    redial( api, { searchItem: state.searchItems[0].value } );
+                state.searchText = text;
+                dialogApi.block( t( 'Searching…' ) );
+                D.search( settings(), text, offset ).then( function ( list ) {
+                    state.search = list;
+                    redial( dialogApi, { query: '' } );
                 } ).catch( function ( e ) {
-                    fail( api, e );
+                    fail( dialogApi, e );
                 } );
             };
 
-            // Takes over an internal target into the link tab, keeping an anchor already set
-            var setTarget = function ( api, href, name ) {
-                var anchor = ( api.getData().href.match( /#.*$/ ) || [ '' ] )[0];
-                var changes = { href: href + anchor };
-                if ( !link && !selectionText && !String( api.getData().text || '' ).trim() && name )
-                    changes.text = name;
-                state.activeTab = 'link';
-                state.targetInfo = '';
-                redial( api, changes );
-                showTargetInfo( api, href );
+            var findItem = function ( value ) {
+                return [ state.browse, state.search ].reduce( function ( found, list ) {
+                    return found || ( list && list.items.filter( function ( i ) {
+                        return rowValue( i ) === value;
+                    } )[0] );
+                }, null );
             };
 
-            var showTargetInfo = function ( api, href ) {
+            // Takes over a chosen entry into the link tab, keeping an anchor already set
+            var choose = function ( dialogApi, value ) {
+                var d = dialogApi.getData(), ids = value.split( ':' ), item = findItem( value ),
+                    href = ( state.tab === 'search' ? d.searchAsObject : d.browseAsObject ) ? 'ezobject://' + ids[1] : 'eznode://' + ids[0],
+                    anchor = ( String( d.href ).match( /#.*$/ ) || [ '' ] )[0],
+                    changes = { href: href + anchor };
+                if ( !link && !selectionText && !String( d.text || '' ).trim() && item )
+                    changes.text = D.decodeHtml( item.name );
+                state.tab = 'link';
+                state.targetInfo = '';
+                redial( dialogApi, changes );
+                showTargetInfo( dialogApi, href );
+            };
+
+            var showTargetInfo = function ( dialogApi, href ) {
                 var description = describeHref( href );
                 if ( !description )
                     return;
                 description.then( function ( info ) {
                     state.targetInfo = info;
-                    if ( state.activeTab === 'link' )
-                        redial( api );
+                    if ( state.tab === 'link' )
+                        redial( dialogApi );
                 } ).catch( function () {} );
             };
 
@@ -451,9 +349,9 @@
                         var html = '<a';
                         Object.keys( attrs ).forEach( function ( key ) {
                             if ( attrs[key] !== null && key !== 'data-mce-href' )
-                                html += ' ' + key + '="' + escapeHtml( attrs[key] ) + '"';
+                                html += ' ' + key + '="' + D.escapeHtml( attrs[key] ) + '"';
                         } );
-                        editor.insertContent( html + '>' + escapeHtml( d.text || d.href ) + '</a>' );
+                        editor.insertContent( html + '>' + D.escapeHtml( d.text || d.href ) + '</a>' );
                     }
                     else
                     {
@@ -468,7 +366,21 @@
                 editor.nodeChanged();
             };
 
-            var api = editor.windowManager.open( spec() );
+            unbind = D.bindList( function ( action, value ) {
+                if ( action === 'select' )
+                    choose( api, value );
+                else if ( action === 'open' )
+                    loadBrowse( api, value, 0 );
+                else if ( action === 'page' )
+                {
+                    if ( state.tab === 'search' )
+                        runSearch( api, parseInt( value, 10 ) );
+                    else
+                        loadBrowse( api, state.browse.node.node_id, parseInt( value, 10 ) );
+                }
+            } );
+
+            api = editor.windowManager.open( spec() );
             if ( link )
                 showTargetInfo( api, data.href );
         };
@@ -479,9 +391,9 @@
             icon: 'link',
             tooltip: t( 'Insert link' ),
             onAction: openDialog,
-            onSetup: function ( api ) {
+            onSetup: function ( buttonApi ) {
                 var handler = function ( e ) {
-                    api.setActive( !!getLink( e.element ) );
+                    buttonApi.setActive( !!getLink( e.element ) );
                 };
                 editor.on( 'NodeChange', handler );
                 return function () {
