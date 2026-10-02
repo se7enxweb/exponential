@@ -2071,6 +2071,28 @@ body.exp-debug-bar { padding-bottom: 46px; }
         $ipAddressIPV6Pattern = "/^((([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){5}:([0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){4}:([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){3}:([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){2}:([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([0-9A-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([0-9A-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([0-9A-Fa-f]{1,4}::([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})|(::([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){1,7}:))(\/([0-9]+)$|$)$/";
 
         $ipAddress = eZSys::clientIP();
+        $allowedIpList = is_array( $allowedIpList ) ? $allowedIpList : array();
+
+        // The list engine of the debug bar (kernel/classes/debugbar/expdebugbariplist.php): IPv4 and IPv6 CIDR,
+        // entries with a label and an expiry ("203.0.113.7/32 ; Laptop ; expires=2026-10-02T15:00"). The entry
+        // that matched is kept for the debug bar.
+        if ( class_exists( 'expDebugBarIPList' ) )
+        {
+            $match = expDebugBarIPList::match( $ipAddress ? $ipAddress : null, $allowedIpList, null, eZSys::isShellExecution() );
+            $GLOBALS['eZDebugIPMatch'] = $match;
+            return $match !== null;
+        }
+
+        // Without it: the address part of each line, an expired entry left out
+        $plainList = array();
+        foreach ( $allowedIpList as $itemToMatch )
+        {
+            $itemToMatch = self::ipListEntryAddress( $itemToMatch );
+            if ( $itemToMatch !== '' )
+                $plainList[] = $itemToMatch;
+        }
+        $allowedIpList = $plainList;
+
         if ( $ipAddress )
         {
             foreach( $allowedIpList as $itemToMatch )
@@ -2126,6 +2148,33 @@ body.exp-debug-bar { padding-bottom: 46px; }
         {
             return eZSys::isShellExecution() && in_array( 'commandline', $allowedIpList );
         }
+    }
+
+    /**
+     * The address part of a DebugIPList[] line ("203.0.113.7/32 ; label ; expires=2026-10-02T15:00" gives
+     * "203.0.113.7/32"); '' when the entry has expired or its expiry cannot be read. A plain line is returned as it is.
+     *
+     * @param string $line
+     * @return string
+     */
+    private static function ipListEntryAddress( $line )
+    {
+        if ( !is_scalar( $line ) )
+            return '';
+        $line = trim( (string)$line );
+        if ( strpos( $line, ';' ) === false )
+            return $line;
+        $parts = array_map( 'trim', explode( ';', $line ) );
+        foreach ( array_slice( $parts, 1 ) as $part )
+        {
+            if ( preg_match( '/^expires\s*=\s*(.*)$/i', $part, $m ) )
+            {
+                $expires = strtotime( $m[1] );
+                if ( $expires === false || $expires <= time() )
+                    return '';
+            }
+        }
+        return $parts[0];
     }
 
     /**
