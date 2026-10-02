@@ -40,10 +40,8 @@ class SessionGc extends \Exponential\Runnable\CronjobPart
                 ${$__name} = &$scope[$__name];
         unset( $__name );
 
-        // Fill in hooks
-        \eZSession::addCallback( 'gc_pre', 'eZSessionBasketGarbageCollector');
-
-        \eZSession::garbageCollector();
+        // expired sessions and the baskets they leave
+        \Exponential\Service\SessionGarbageCollector::collect();
     }
 }
 

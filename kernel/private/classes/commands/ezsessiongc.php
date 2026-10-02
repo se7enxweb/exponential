@@ -59,10 +59,8 @@ class Ezsessiongc extends \Exponential\Runnable\Command
 
         $cli->output( "Cleaning up expired sessions." );
 
-        // Fill in hooks
-        \eZSession::addCallback( 'gc_pre', 'eZSessionBasketGarbageCollector');
-
-        \eZSession::garbageCollector();
+        // expired sessions and the baskets they leave
+        \Exponential\Service\SessionGarbageCollector::collect();
 
         $script->shutdown();
     }

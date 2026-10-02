@@ -60,10 +60,9 @@ class Trashpurge extends \Exponential\Runnable\Command
 
         $script->setIterationData( '.', '~' );
 
-        $purgeHandler = new \eZScriptTrashPurge( \eZCLI::instance(), false, (bool)$options['memory-monitoring'], $script );
-
         if (
-            $purgeHandler->run(
+            \Exponential\Service\Trash::purge(
+                $this->cli(), false, (bool)$options['memory-monitoring'], $script,
                 $options['iteration-limit'] ? (int)$options['iteration-limit'] : null,
                 $options['iteration-sleep'] ? (int)$options['iteration-sleep'] : null,
                 $options['trashed-days']    ? (int)$options['trashed-days'] : null

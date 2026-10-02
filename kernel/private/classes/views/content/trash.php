@@ -43,6 +43,10 @@ class Trash extends \Exponential\Runnable\ModuleView
 
         $http = \eZHTTPTool::instance();
 
+        // The trash service is shared with bin/php/trashpurge.php and cronjobs/trashpurge.php. Loaded by path:
+        // a server whose workers kept an autoload array from before the class existed (Velocity) still renders.
+        require_once 'kernel/private/classes/services/trash.php';
+
         $user = \eZUser::currentUser();
         $userID = $user->id();
 
@@ -50,25 +54,9 @@ class Trash extends \Exponential\Runnable\ModuleView
         {
             if ( $http->hasPostVariable( 'DeleteIDArray' ) )
             {
-                $access = $user->hasAccessTo( 'content', 'cleantrash' );
-                if ( $access['accessWord'] == 'yes' || $access['accessWord'] == 'limited' )
+                if ( \Exponential\Service\Trash::canEmpty( $user ) )
                 {
-                    $deleteIDArray = $http->postVariable( 'DeleteIDArray' );
-
-                    foreach ( $deleteIDArray as $deleteID )
-                    {
-
-                        $objectList = \eZPersistentObject::fetchObjectList( \eZContentObject::definition(),
-                                                                           null,
-                                                                           array( 'id' => $deleteID ),
-                                                                           null,
-                                                                           null,
-                                                                           true );
-                        foreach ( $objectList as $object )
-                        {
-                            $object->purge();
-                        }
-                    }
+                    \Exponential\Service\Trash::purgeObjects( $http->postVariable( 'DeleteIDArray' ) );
                 }
                 else
                 {
@@ -78,26 +66,10 @@ class Trash extends \Exponential\Runnable\ModuleView
         }
         else if ( $http->hasPostVariable( 'EmptyButton' )  )
         {
-            $access = $user->hasAccessTo( 'content', 'cleantrash' );
-            if ( $access['accessWord'] == 'yes' || $access['accessWord'] == 'limited' )
+            if ( \Exponential\Service\Trash::canEmpty( $user ) )
             {
-                while ( true )
-                {
-                    // Fetch 100 objects at a time, to limit transaction size
-                    $objectList = \eZPersistentObject::fetchObjectList( \eZContentObject::definition(),
-                                                                       null,
-                                                                       array( 'status' => \eZContentObject::STATUS_ARCHIVED ),
-                                                                       null,
-                                                                       100,
-                                                                       true );
-                    if ( count( $objectList ) < 1 )
-                        break;
-
-                    foreach ( $objectList as $object )
-                    {
-                        $object->purge();
-                    }
-                }
+                // 100 objects at a time, to limit transaction size
+                \Exponential\Service\Trash::emptyArchived( 100 );
             }
             else
             {

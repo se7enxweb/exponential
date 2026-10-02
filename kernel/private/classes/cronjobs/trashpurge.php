@@ -32,8 +32,7 @@ class Trashpurge extends \Exponential\Runnable\CronjobPart
                 ${$__name} = &$scope[$__name];
         unset( $__name );
 
-        $purgeHandler = new \eZScriptTrashPurge( \eZCLI::instance() );
-        $purgeHandler->run();
+        \Exponential\Service\Trash::purge( \eZCLI::instance() );
     }
 }
 

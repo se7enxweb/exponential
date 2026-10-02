@@ -106,6 +106,8 @@ return array(
       'Exponential\\Runnable\\CronjobPart'                           => 'kernel/private/classes/runnable/cronjobpart.php',
       'Exponential\\Runnable\\ModuleView'                            => 'kernel/private/classes/runnable/moduleview.php',
       'Exponential\\Runnable\\Runnable'                              => 'kernel/private/classes/runnable/runnable.php',
+      'Exponential\\Service\\SessionGarbageCollector'                => 'kernel/private/classes/services/sessiongarbagecollector.php',
+      'Exponential\\Service\\Trash'                                  => 'kernel/private/classes/services/trash.php',
       'Exponential\\View\\Kernel\\Class\\Classlist'                  => 'kernel/private/classes/views/class/classlist.php',
       'Exponential\\View\\Kernel\\Class\\Copy'                       => 'kernel/private/classes/views/class/copy.php',
       'Exponential\\View\\Kernel\\Class\\Edit'                       => 'kernel/private/classes/views/class/edit.php',
