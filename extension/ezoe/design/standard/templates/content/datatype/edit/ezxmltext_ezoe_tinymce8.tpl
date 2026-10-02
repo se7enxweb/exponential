@@ -168,7 +168,11 @@ function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
             // skin class for skins/<skin>/skin.css on the editor container
             editor.on( 'PostRender', function() {
                 if ( editor.options.get( 'ez_skin_class' ) )
+                {
                     editor.getContainer().classList.add( editor.options.get( 'ez_skin_class' ) );
+                    // dialogs and menus are rendered outside the editor container
+                    document.body.classList.add( editor.options.get( 'ez_skin_class' ) );
+                }
             });
 
             // toolbar counterpart of the "Disable editor" form button (ezoe.ini [EditorLayout] button "disable")

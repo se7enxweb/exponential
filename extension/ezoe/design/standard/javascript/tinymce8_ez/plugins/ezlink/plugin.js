@@ -284,7 +284,7 @@
                     initialData: data,
                     buttons: [
                         { type: 'cancel', text: t( 'Cancel' ) },
-                        { type: 'submit', text: t( 'Save' ), primary: true }
+                        { type: 'submit', text: 'OK', primary: true }
                     ],
                     onTabChange: function ( api, details ) {
                         state.activeTab = details.newTabName;

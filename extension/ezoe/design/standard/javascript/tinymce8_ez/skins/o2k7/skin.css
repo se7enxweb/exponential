@@ -246,3 +246,246 @@
 .tox.ezoe-skin-o2k7 .tox-statusbar__resize-handle svg {
     fill: #7A93B5;
 }
+
+/*
+ * Dialogs like the TinyMCE 3 inlinepopups (clearlooks2) windows of the ezoe dialogs:
+ * title bar, tabs on top, label left of the field, small Tahoma, OK / Cancel bottom left.
+ * Dialogs are rendered outside the editor container, so they are scoped by the body class.
+ */
+body.ezoe-skin-o2k7 .tox .tox-dialog {
+    border: 1px solid #5A6B7F;
+    border-radius: 0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.45);
+    background: #F0F0EE;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    max-width: 560px;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog--width-md {
+    max-width: 620px;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog-wrap__backdrop {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Title bar */
+body.ezoe-skin-o2k7 .tox .tox-dialog__header {
+    height: 22px;
+    padding: 0 3px 0 8px;
+    background: linear-gradient(#B9C8DA, #8597AE 50%, #7A8DA5 51%, #8FA2B9);
+    border-bottom: 1px solid #5A6B7F;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__title {
+    flex: 1;
+    text-align: center;
+    font: bold 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #FFF;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__header .tox-button--icon {
+    width: 28px;
+    height: 16px;
+    min-height: 0;
+    padding: 0;
+    border: 1px solid #FFF;
+    border-radius: 2px;
+    background: linear-gradient(#A7B6C9, #6C7F98);
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__header .tox-button--icon svg {
+    fill: #FFF;
+    transform: scale(0.65);
+}
+
+/* Body with tabs on top, panel with a border like the ezoe dialog tabs */
+body.ezoe-skin-o2k7 .tox .tox-dialog__content-js {
+    padding: 8px 10px 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body {
+    flex-direction: column;
+    padding: 0;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-nav {
+    flex-direction: row;
+    flex: none;
+    padding: 0;
+    margin: 0 0 -1px 2px;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-nav-item {
+    margin: 0 2px 0 0;
+    padding: 2px 9px;
+    border: 1px solid #919B9C;
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+    background: linear-gradient(#FFF, #ECEBE6);
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+    text-decoration: none;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-nav-item--active {
+    position: relative;
+    padding-top: 3px;
+    margin-top: -1px;
+    background: #FFF;
+    border-top: 2px solid #FFC83C;
+    z-index: 1;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-content {
+    padding: 10px;
+    background: #FFF;
+    border: 1px solid #919B9C;
+    max-height: none;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-content > * {
+    margin-bottom: 4px;
+}
+
+/* Rows: label left, field right */
+body.ezoe-skin-o2k7 .tox .tox-form__group {
+    margin-bottom: 4px;
+}
+body.ezoe-skin-o2k7 .tox .tox-form__group:has(> .tox-label) {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+body.ezoe-skin-o2k7 .tox .tox-form__group:has(> .tox-label) > :not(.tox-label) {
+    flex: 1;
+    min-width: 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-label {
+    flex: none;
+    width: 125px;
+    padding: 0 8px 0 0;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+    white-space: normal;
+}
+body.ezoe-skin-o2k7 .tox .tox-form__grid--2col {
+    display: block;
+}
+body.ezoe-skin-o2k7 .tox .tox-form__grid--2col > .tox-form__group {
+    width: auto;
+}
+body.ezoe-skin-o2k7 .tox .tox-bar {
+    align-items: center;
+    gap: 4px;
+}
+body.ezoe-skin-o2k7 .tox .tox-bar > .tox-form__group {
+    margin: 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-content p {
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* Fields: small like the TinyMCE 3 dialog inputs */
+body.ezoe-skin-o2k7 .tox .tox-textfield,
+body.ezoe-skin-o2k7 .tox .tox-textarea,
+body.ezoe-skin-o2k7 .tox .tox-listbox--select,
+body.ezoe-skin-o2k7 .tox .tox-selectfield select {
+    min-height: 0;
+    height: 19px;
+    padding: 1px 3px;
+    border: 1px solid #7F9DB9;
+    border-radius: 0;
+    background: #FFF;
+    box-shadow: none;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+}
+body.ezoe-skin-o2k7 .tox .tox-textarea {
+    height: auto;
+    min-height: 50px;
+}
+body.ezoe-skin-o2k7 .tox .tox-textfield:focus,
+body.ezoe-skin-o2k7 .tox .tox-listbox--select:focus,
+body.ezoe-skin-o2k7 .tox .tox-textarea:focus {
+    border-color: #316AC5;
+    box-shadow: none;
+}
+body.ezoe-skin-o2k7 .tox .tox-listbox--select {
+    display: flex;
+    align-items: center;
+}
+body.ezoe-skin-o2k7 .tox .tox-listbox__select-label {
+    margin: 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-listbox__select-chevron svg {
+    transform: scale(0.7);
+}
+body.ezoe-skin-o2k7 .tox .tox-checkbox {
+    height: auto;
+    min-width: 0;
+    padding: 0;
+    margin: 2px 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-checkbox__label {
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    margin-left: 4px;
+}
+body.ezoe-skin-o2k7 .tox .tox-checkbox__icons {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Buttons: classic small buttons, OK / Cancel bottom left */
+body.ezoe-skin-o2k7 .tox .tox-dialog__footer {
+    justify-content: flex-start;
+    padding: 8px 10px;
+    border-top: 0;
+    background: #F0F0EE;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__footer-end {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__footer .tox-button,
+body.ezoe-skin-o2k7 .tox .tox-dialog__body .tox-button:not(.tox-button--icon):not(.tox-browse-url) {
+    min-height: 0;
+    margin: 0;
+    padding: 1px 10px;
+    border: 1px solid #003C74;
+    border-radius: 3px;
+    background: linear-gradient(#FFF, #ECEBE6 85%, #D6D0C5);
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+    line-height: 16px;
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__footer .tox-button:hover,
+body.ezoe-skin-o2k7 .tox .tox-dialog__body .tox-button:not(.tox-button--icon):hover {
+    border-color: #E5A01A;
+    background: linear-gradient(#FFF, #F5F4EF);
+}
+body.ezoe-skin-o2k7 .tox .tox-dialog__footer .tox-button:focus,
+body.ezoe-skin-o2k7 .tox .tox-dialog__body .tox-button:not(.tox-button--icon):focus {
+    box-shadow: inset 0 0 0 1px #7DA2CE;
+}
+
+/* Menus of list boxes in dialogs and toolbars */
+body.ezoe-skin-o2k7 .tox .tox-menu {
+    border: 1px solid #7F9DB9;
+    border-radius: 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+body.ezoe-skin-o2k7 .tox .tox-collection--list .tox-collection__item {
+    padding: 2px 6px;
+    border-radius: 0;
+}
+body.ezoe-skin-o2k7 .tox .tox-collection__item-label,
+body.ezoe-skin-o2k7 .tox .tox-collection__item-label p {
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+body.ezoe-skin-o2k7 .tox .tox-collection--list .tox-collection__item--active {
+    background: #316AC5;
+    color: #FFF;
+}
+body.ezoe-skin-o2k7 .tox .tox-collection--list .tox-collection__item--active .tox-collection__item-label {
+    color: #FFF;
+}
+/* checkboxes have no label column, align them with the fields */
+body.ezoe-skin-o2k7 .tox .tox-dialog__body-content .tox-checkbox {
+    margin-left: 125px;
+}

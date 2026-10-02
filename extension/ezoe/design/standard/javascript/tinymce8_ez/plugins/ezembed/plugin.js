@@ -279,7 +279,7 @@
                     initialData: initialData,
                     buttons: [
                         { type: 'cancel', text: t( 'Cancel' ) },
-                        { type: 'submit', text: t( 'Save' ), primary: true }
+                        { type: 'submit', text: 'OK', primary: true }
                     ],
                     onChange: function ( api, details ) {
                         if ( details.name === 'result' && api.getData().result )
