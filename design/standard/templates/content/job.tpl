@@ -121,6 +121,8 @@
 {/foreach}
 </div>
 <p class="cj-jobid">{'Job'|i18n( 'design/admin/content/job' )} <code>{$job.id|wash}</code></p>
+{* the module name in a variable: a server process started before the audit classes existed (Velocity) then gets no audit link instead of an error *}
+{def $cj_audit_module = 'audit'}{if fetch( $cj_audit_module, 'can_read', hash( 'channel', 'content' ) )}<p class="cj-audit"><a href={concat( 'audit/console/(job)/', $job.id )|ezurl}>{'Audit trail of this job'|i18n( 'design/admin/content/job' )}</a></p>{/if}{undef $cj_audit_module}
 
 <h2>{'Log'|i18n( 'design/admin/content/job' )} <a class="cj-download" href={concat( 'content/job/', $job.id, '?log=1' )|ezurl}>{'Download the whole log'|i18n( 'design/admin/content/job' )}</a></h2>
 <pre class="cj-log" aria-live="off">{$job.log|wash}</pre>

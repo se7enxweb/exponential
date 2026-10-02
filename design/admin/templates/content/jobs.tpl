@@ -95,6 +95,9 @@
     <th>{'Server'|i18n( 'design/admin/content/job' )}</th>
     <th>{'Actions'|i18n( 'design/admin/content/job' )}</th>
 </tr>
+{* the module name in a variable: a server process started before the audit classes existed (Velocity) then gets no audit links instead of an error *}
+{def $cj_audit_module = 'audit'}
+{def $cj_can_audit = fetch( $cj_audit_module, 'can_read', hash( 'channel', 'content' ) )}
 {foreach $jobs as $job sequence array( 'bglight', 'bgdark' ) as $style}
 <tr class="{$style} cj-row" data-job-id="{$job.id|wash}" data-state="{$job.state|wash}">
     {if $show_all}<td class="cj-user" title="{$job.user_name|wash}">{$job.user_login|wash}</td>{/if}
@@ -106,6 +109,7 @@
     <td><code>{$job.server|wash}</code></td>
     <td class="cj-actions">
         <a href={concat( 'content/job/', $job.id )|ezurl}>{'Open'|i18n( 'design/admin/content/job' )}</a>
+        {if $cj_can_audit}<a href={concat( 'audit/console/(job)/', $job.id )|ezurl} title="{'Audit trail of this job'|i18n( 'design/admin/content/job' )|wash}">{'Audit trail'|i18n( 'design/admin/content/job' )}</a>{/if}
         {if $job.can_cancel}<button class="button" type="submit" name="CancelJobButton" value="{$job.id|wash}">{'Cancel'|i18n( 'design/admin/content/job' )}</button>{/if}
         {if $job.can_resume}<button class="button" type="submit" name="ResumeJobButton" value="{$job.id|wash}">{'Resume'|i18n( 'design/admin/content/job' )}</button>{/if}
     </td>

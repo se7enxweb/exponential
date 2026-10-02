@@ -8,6 +8,7 @@
 
 {include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_setup' i18n_hash=hash(
     'setup',              'Setup'|i18n( 'design/admin/parts/setup/menu' ),
+    'audit',              'Audit'|i18n( 'design/admin/parts/setup/menu' ),
     'cache',              'Cache management'|i18n( 'design/admin/parts/setup/menu' ),
     'classes',            'Classes'|i18n( 'design/admin/parts/setup/menu' ),
     'collected',          'Collected information'|i18n( 'design/admin/parts/setup/menu' ),
