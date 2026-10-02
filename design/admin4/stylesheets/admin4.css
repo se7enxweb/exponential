@@ -389,6 +389,17 @@ table.list th, table.special th {
 table.list th a, table.special th a {
   color: var(--a4-ink);
 }
+/* The sorted column of a list table (trash: "Date trashed" ...): the datatable theme paints it black with
+   !important, under the dark header text above. A soft orange keeps it marked and readable. Scoped to
+   table.list so the dark datatable headers (.admin-dt, light text) keep theirs. A list table inside an
+   .admin-dt wrapper (trash) also got the datatable's grey bar on its sortable headers: the light header too. */
+.admin-dt table.list th.admin-dt-sortable {
+  background-color: var(--a4-soft);
+}
+table.list th.admin-dt-asc, table.list th.admin-dt-desc {
+  background-color: var(--a4-orange-soft) !important;
+  color: var(--a4-ink);
+}
 table.list tr.bglight, table.list tr.bglight td { background-color: #fff; }
 table.list tr.bgdark, table.list tr.bgdark td { background-color: #fafbfc; }
 table.list td { border-color: var(--a4-line); }
