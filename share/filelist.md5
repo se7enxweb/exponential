@@ -6378,7 +6378,7 @@ af83028c1031c2bf806f14db06616659  kernel/private/classes/ezpextension.php
 86bdb9f30bc9936abd83ceb015a05379  kernel/private/classes/ezpkernelredirect.php
 c209d9d72daf86a9eb0e0de775a49958  kernel/private/classes/ezpkernelresult.php
 f4c6d92b1fcd6d3b847f89ae9ac7b2a4  kernel/private/classes/ezpkerneltreemenu.php
-2c62fb2e433fcbd060aa3a3d05a814ae  kernel/private/classes/ezpkernelweb.php
+b349cf4eeb6dbcf2cbd279eb36c400f7  kernel/private/classes/ezpkernelweb.php
 6159d249e9b9a74e14a8bf8921c36a41  kernel/private/classes/ezplanguageswitcher.php
 2bfb085e092fb0c741d2ba0fec8996ec  kernel/private/classes/ezpmail.php
 a5c6868c21944f98d32c76a4c8c8b234  kernel/private/classes/ezpmobiledevicedetect.php
@@ -7032,7 +7032,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-7f62bef7992ee4f2dff3a13314f6459d  settings/velocity.ini
+3925ff101758658314c4de72cadce0ef  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
