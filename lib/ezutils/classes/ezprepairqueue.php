@@ -178,6 +178,20 @@ class ezpRepairQueue
         return true;
     }
 
+    /**
+     * index.php, before the kernel: the status and update requests of a run, whatever state the
+     * libraries are in (the run itself brings them back halfway through). Starting a repair is not
+     * answered here: that is only offered while the libraries are missing.
+     * @return bool true when answered
+     */
+    public static function handleRunRequest()
+    {
+        $action = isset( $_REQUEST['exp_repair'] ) ? (string) $_REQUEST['exp_repair'] : '';
+        if ( $action !== 'status' && $action !== 'update' )
+            return false;
+        return self::handleWebRequest();
+    }
+
     protected static function start( $key )
     {
         if ( $_SERVER['REQUEST_METHOD'] !== 'POST' )
@@ -409,7 +423,7 @@ Updating it resolves the versions composer.json asks for and writes a new compos
   var err = document.getElementById('exp-repair-error'), url = location.pathname;
   function poll() {
     fetch(url + '?exp_repair=status&token=' + encodeURIComponent(token), {cache: 'no-store'}).then(function (r) { return r.json(); }).then(function (s) {
-      if (!s.ok) { err.textContent = 'The repair status is not available.'; return; }
+      err.textContent = ''; if (!s.ok) { err.textContent = 'The repair status is not available.'; return; }
       var ids = Object.keys(s.steps || {}), done = 0;
       ids.forEach(function (id) {
         var st = box.querySelector('[data-step="' + id + '"] .st'); st.textContent = s.steps[id]; st.className = 'st ' + s.steps[id];
@@ -430,7 +444,7 @@ Updating it resolves the versions composer.json asks for and writes a new compos
         return;
       }
       setTimeout(poll, 2000);
-    }).catch(function () { setTimeout(poll, 3000); });
+    }).catch(function () { err.textContent = 'Waiting for the status...'; setTimeout(poll, 3000); });
   }
   form.addEventListener('submit', function (e) {
     e.preventDefault(); err.textContent = '';

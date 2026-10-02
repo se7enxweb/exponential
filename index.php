@@ -27,6 +27,17 @@ if ( is_file( __DIR__ . '/var/maintenance.json' ) )
         return;
 }
 
+// The status of a repair started from the missing-libraries page (and its
+// follow-up "update the lock file" run): answered here, before the kernel, so
+// the page keeps showing the steps and the log after the libraries are back.
+// Only requests carrying that run's token are answered; anything else goes on.
+if ( isset( $_REQUEST['exp_repair'] ) && is_file( __DIR__ . '/var/repair/status.json' ) )
+{
+    require_once __DIR__ . '/lib/ezutils/classes/ezprepairqueue.php';
+    if ( ezpRepairQueue::handleRunRequest() )
+        return;
+}
+
 require 'autoload.php';
 
 $kernel = new ezpKernel( new ezpKernelWeb() );
