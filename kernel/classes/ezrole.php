@@ -124,6 +124,15 @@ class eZRole extends eZPersistentObject
                                                 array( '%rolename' => $this->attribute( 'name' ) ) ) );
         $newRole->store();
         $db->commit();
+        // Audit (doc/bc/6.0/audit.md, access.role.copy)
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $role = $this;
+            expAuditHook::emit( 'access.role.copy', function () use ( $role, $newRole ) {
+                return array( 'object' => expAuditHook::role( $role ), 'target' => expAuditHook::role( $newRole ),
+                              'after' => array( 'name' => (string)$newRole->attribute( 'name' ) ) );
+            } );
+        }
         return $newRole;
     }
 
@@ -236,6 +245,16 @@ class eZRole extends eZPersistentObject
         {
             $this->Policies[] = $policy;
         }
+        // Audit (doc/bc/6.0/audit.md, access.policy.add): a policy added to a role in use (not to the temporary
+        // version role/edit works on: that edit is recorded as access.role.change)
+        if ( class_exists( 'expAuditHook' ) && (int)$this->attribute( 'version' ) === 0 )
+        {
+            $role = $this;
+            expAuditHook::emit( 'access.policy.add', function () use ( $role, $policy ) {
+                return array( 'object' => array( 'type' => 'policy', 'id' => (int)$policy->attribute( 'id' ) ),
+                              'target' => expAuditHook::role( $role ), 'after' => expAuditHook::policy( $policy ) );
+            } );
+        }
         return $policy;
     }
 
@@ -298,7 +317,12 @@ class eZRole extends eZPersistentObject
         $temporaryVersion = eZRole::fetch( 0, $this->attribute( 'id' ) );
         if ( $temporaryVersion === null )
             return 0;
-        $this->removePolicies();
+        // the policies replaced by the edited ones: role/edit records the change as a whole (access.role.change)
+        $role = $this;
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::muted( 'access.policy.remove', function () use ( $role ) { $role->removePolicies(); } );
+        else
+            $this->removePolicies();
         $this->setAttribute( 'name', $temporaryVersion->attribute( 'name') );
         $this->setAttribute( 'is_new', 0 );
 
@@ -371,12 +395,31 @@ class eZRole extends eZPersistentObject
     */
     function removeThis()
     {
+        // Audit (doc/bc/6.0/audit.md, access.role.remove): a role in use (not a temporary editing version), with
+        // its policies and assignments; its policies are part of it, not removals of their own
+        $auditData = null;
+        if ( class_exists( 'expAuditHook' ) && (int)$this->attribute( 'version' ) === 0 && expAuditHook::on( 'access.role.remove' ) )
+        {
+            $assignments = array();
+            foreach ( $this->auditAssignmentRows() as $row )
+                $assignments[] = array( 'user' => (int)$row['user_id'], 'limitation' => $row['limit_identifier'] !== '' ? $row['limit_identifier'] . ':' . $row['limit_value'] : null );
+            $auditData = array( 'object' => expAuditHook::role( $this ),
+                                'before' => array( 'name' => (string)$this->attribute( 'name' ), 'policies' => expAuditHook::policies( $this ),
+                                                   'assignments' => $assignments ) );
+        }
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $this->attribute( 'policies' ) as $policy )
-        {
-            $policy->removeThis();
-        }
+        $policies = $this->attribute( 'policies' );
+        $removePolicies = function () use ( $policies ) {
+            foreach ( $policies as $policy )
+            {
+                $policy->removeThis();
+            }
+        };
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::muted( 'access.policy.remove', $removePolicies );
+        else
+            $removePolicies();
         if ( $db->databaseName() === 'mongo' )
         {
             $db->deleteWhere( 'ezrole',      [ 'id'      => (int)$this->attribute( 'id' ) ] );
@@ -388,6 +431,8 @@ class eZRole extends eZPersistentObject
             $db->query( "DELETE FROM ezuser_role WHERE role_id = '" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
         }
         $db->commit();
+        if ( $auditData !== null )
+            expAuditHook::emit( 'access.role.remove', $auditData );
     }
 
     /*!
@@ -1184,14 +1229,8 @@ class eZRole extends eZPersistentObject
         $limitValue = $db->escapeString( $limitValue );
         $userID =(int) $userID;
 
-        // Who assign which role to whom should be logged.
-        $object = eZContentObject::fetch( $userID );
-        $objectName = $object ? $object->attribute( 'name' ) : 'null';
-
-        eZAudit::writeAudit( 'role-assign', array( 'Role ID' => $this->ID, 'Role name' => $this->attribute( 'name' ),
-                                                   'Assign to content object ID' => $userID,
-                                                   'Content object name' => $objectName,
-                                                   'Comment' => 'Assigned the current role to user or user group identified by the id: eZRole::assignToUser()' ) );
+        // Who assigns which role to whom (doc/bc/6.0/audit.md, access.role.assign): recorded when the assignment is new
+        $auditLimit = array( 'identifier' => $limitIdent, 'value' => $limitValue );
 
         switch( $limitIdent )
         {
@@ -1240,6 +1279,7 @@ class eZRole extends eZPersistentObject
                 'limit_identifier' => $limitIdent,
                 'limit_value'      => $limitValue,
             ] );
+            $this->auditAssignment( 'access.role.assign', $userID, $limitIdent, $limitValue, $auditLimit );
             return true;
         }
 
@@ -1253,7 +1293,39 @@ class eZRole extends eZPersistentObject
         $db->query( $query );
 
         $db->commit();
+        $this->auditAssignment( 'access.role.assign', $userID, $limitIdent, $limitValue, $auditLimit );
         return true;
+    }
+
+    /**
+     * Records an assignment of this role made or removed (doc/bc/6.0/audit.md, access.role.assign /
+     * access.role.unassign).
+     *
+     * @param string $name
+     * @param int $userID the user or group
+     * @param string $limitIdent Subtree, Section or ''
+     * @param string $limitValue
+     * @param array|null $given the limitation as the caller gave it (subtree: the node id)
+     */
+    protected function auditAssignment( $name, $userID, $limitIdent, $limitValue, $given = null )
+    {
+        if ( !class_exists( 'expAuditHook' ) )
+            return;
+        $role = $this;
+        expAuditHook::emit( $name, function () use ( $role, $userID, $limitIdent, $limitValue, $given, $name ) {
+            $limitation = $limitIdent !== '' ? array( 'identifier' => (string)$limitIdent, 'value' => (string)$limitValue ) : null;
+            if ( $limitation && $given && strtolower( (string)$given['identifier'] ) === 'subtree' )
+                $limitation['node'] = (int)$given['value'];
+            $data = array( 'object' => expAuditHook::role( $role ), 'target' => expAuditHook::userOrGroup( $userID ) );
+            $policies = array();
+            foreach ( (array)$role->policyList() as $p )
+                $policies[] = $p->attribute( 'module_name' ) . '/' . $p->attribute( 'function_name' );
+            if ( $name === 'access.role.assign' )
+                $data['after'] = array( 'limitation' => $limitation, 'policies' => array_values( array_unique( $policies ) ) );
+            else
+                $data['before'] = array( 'limitation' => $limitation );
+            return $data;
+        } );
     }
 
     /*!
@@ -1286,6 +1358,13 @@ class eZRole extends eZPersistentObject
     {
         $db = eZDB::instance();
         $userID =(int) $userID;
+        $auditRows = array();
+        if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'access.role.unassign' ) )
+        {
+            foreach ( $this->auditAssignmentRows() as $row )
+                if ( (int)$row['user_id'] === $userID )
+                    $auditRows[] = $row;
+        }
         $query = "DELETE FROM ezuser_role WHERE role_id='$this->ID' AND contentobject_id='$userID'";
 
         if ( $db->databaseName() === 'mongo' )
@@ -1299,6 +1378,8 @@ class eZRole extends eZPersistentObject
         {
             $db->query( $query );
         }
+        foreach ( $auditRows as $row )
+            $this->auditAssignment( 'access.role.unassign', $userID, (string)$row['limit_identifier'], (string)$row['limit_value'] );
     }
 
     /*!
@@ -1315,6 +1396,15 @@ class eZRole extends eZPersistentObject
         $db = eZDB::instance();
         $id =(int) $id;
         $query = "DELETE FROM ezuser_role WHERE id='$id'";
+        $auditRow = null;
+        if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'access.role.unassign' ) )
+        {
+            foreach ( $this->auditAssignmentRows() as $row )
+            {
+                if ( (int)$row['id'] === $id )
+                    $auditRow = $row;
+            }
+        }
 
         if ( $db->databaseName() === 'mongo' )
         {
@@ -1324,6 +1414,25 @@ class eZRole extends eZPersistentObject
         {
             $db->query( $query );
         }
+        if ( $auditRow )
+            $this->auditAssignment( 'access.role.unassign', (int)$auditRow['user_id'], (string)$auditRow['limit_identifier'], (string)$auditRow['limit_value'] );
+    }
+
+    /**
+     * The assignments of this role for the audit: user_id, id, limit_identifier, limit_value.
+     *
+     * @return array
+     */
+    protected function auditAssignmentRows()
+    {
+        $rows = array();
+        foreach ( (array)$this->fetchUserByRole() as $r )
+        {
+            $rows[] = array( 'user_id' => $r['user_object'] instanceof eZContentObject ? (int)$r['user_object']->attribute( 'id' ) : 0,
+                             'id' => (int)$r['user_role_id'], 'limit_identifier' => (string)$r['limit_ident'],
+                             'limit_value' => (string)$r['limit_value'] );
+        }
+        return $rows;
     }
 
     /*!

@@ -57,17 +57,23 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                 $db = \eZDB::instance();
                 $db->begin();
 
-                // Change user password
-                if ( \eZOperationHandler::operationIsAvailable( 'user_password' ) )
-                {
-                    $operationResult = \eZOperationHandler::execute( 'user',
-                                                                    'password', array( 'user_id'    => $userID,
-                                                                                       'new_password'  => $newPassword ) );
-                }
+                // Change user password; the audit records it as the reset below, not as a password change of its own
+                $changePassword = function () use ( $userID, $newPassword ) {
+                    if ( \eZOperationHandler::operationIsAvailable( 'user_password' ) )
+                    {
+                        \eZOperationHandler::execute( 'user',
+                                                      'password', array( 'user_id'    => $userID,
+                                                                         'new_password'  => $newPassword ) );
+                    }
+                    else
+                    {
+                        \eZUserOperationCollection::password( $userID, $newPassword );
+                    }
+                };
+                if ( class_exists( 'expAuditHook' ) )
+                    \expAuditHook::muted( 'access.user.password.change', $changePassword );
                 else
-                {
-                    \eZUserOperationCollection::password( $userID, $newPassword );
-                }
+                    $changePassword();
 
                 $receiver = $email;
                 $mail = new \eZMail();
@@ -98,15 +104,25 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                 $tpl->setVariable( 'email', $email );
                 $forgotPasswdObj->remove();
                 $db->commit();
+                // Audit (doc/bc/6.0/audit.md, access.user.password.reset): never the hash key, never the password
+                if ( class_exists( 'expAuditHook' ) )
+                    \expAuditHook::emit( 'access.user.password.reset', array( 'object' => \expAuditHook::user( $user ),
+                        'after' => array( 'mail_sent' => (bool)$mailResult ) ) );
             }
             else
             {
                 $tpl->setVariable( 'wrong_key', true );
+                if ( class_exists( 'expAuditHook' ) )
+                    \expAuditHook::emit( 'access.user.password.reset.failed', array( 'object' => array( 'type' => 'user' ),
+                        'result' => 'refused', 'reason' => 'unknown_key' ) );
             }
         }
         else if ( strlen( $hashKey ) > 4 )
         {
             $tpl->setVariable( 'wrong_key', true );
+            if ( class_exists( 'expAuditHook' ) )
+                \expAuditHook::emit( 'access.user.password.reset.failed', array( 'object' => array( 'type' => 'user' ),
+                    'result' => 'refused', 'reason' => 'unknown_key' ) );
         }
 
         if ( $module->isCurrentAction( "Generate" ) )
@@ -208,6 +224,10 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                     $mail->setBody( $templateResult );
                     $mailResult = \eZMailTransport::send( $mail );
                     $tpl->setVariable( 'email', $email );
+                    // Audit (doc/bc/6.0/audit.md, access.user.password.reset.request): never the hash key
+                    if ( class_exists( 'expAuditHook' ) )
+                        \expAuditHook::emit( 'access.user.password.reset.request', array( 'object' => \expAuditHook::user( $user ),
+                            'after' => array( 'mail_sent' => (bool)$mailResult ) ) );
 
                 }
                 else if ( trim( $email ) !== '' && \eZMail::validate( trim( $email ) )
@@ -220,11 +240,18 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                     // local part, nothing HTML could read as markup) gets this far.
                     $tpl->setVariable( 'link', true );
                     $tpl->setVariable( 'email', $email );
+                    // Audit: the address that has no account, only ever hashed (the privacy rule of email)
+                    if ( class_exists( 'expAuditHook' ) )
+                        \expAuditHook::emit( 'access.user.password.reset.failed', array( 'object' => array( 'type' => 'user', 'email' => trim( $email ) ),
+                            'result' => 'refused', 'reason' => 'unknown_email' ) );
                 }
                 else
                 {
                     // Not an email address at all: saying so reveals nothing.
                     $tpl->setVariable( 'wrong_email', $email );
+                    if ( class_exists( 'expAuditHook' ) )
+                        \expAuditHook::emit( 'access.user.password.reset.failed', array( 'object' => array( 'type' => 'user' ),
+                            'result' => 'refused', 'reason' => 'validation' ) );
                 }
             }
         }

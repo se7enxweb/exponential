@@ -138,6 +138,13 @@ class Password extends \Exponential\Runnable\ModuleView
             }
         }
 
+        // Audit (doc/bc/6.0/audit.md, access.user.password.change.failed): a refused change, never a password; a
+        // change that succeeds is recorded by eZUser::store() (access.user.password.change)
+        if ( ( $oldPasswordNotValid || $newPasswordNotMatch || $newPasswordTooShort ) && class_exists( 'expAuditHook' ) )
+            \expAuditHook::emit( 'access.user.password.change.failed', array( 'object' => \expAuditHook::user( (int)$UserID ),
+                'result' => 'refused', 'reason' => $oldPasswordNotValid ? 'credentials' : 'validation',
+                'after' => array( 'rule' => $oldPasswordNotValid ? 'old_password' : ( $newPasswordNotMatch ? 'confirmation' : 'length' ) ) ) );
+
         if ( $http->hasPostVariable( "CancelButton" ) )
         {
             if ( $http->hasPostVariable( "RedirectOnCancel" ) )

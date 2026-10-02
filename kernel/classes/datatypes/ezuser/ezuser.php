@@ -266,8 +266,75 @@ class eZUser extends eZPersistentObject
 
         if ( $this->Login )
         {
+            $auditBefore = $this->auditStoredRow();
             parent::store( $fieldFilters );
+            if ( $auditBefore !== null )
+                $this->auditStore( $auditBefore );
         }
+    }
+
+    /**
+     * The stored row of this user before a store, for the audit (false: none yet), or null when no access.user.*
+     * event of store() is recorded.
+     *
+     * @return array|false|null
+     */
+    protected function auditStoredRow()
+    {
+        if ( !class_exists( 'expAuditHook' ) )
+            return null;
+        if ( !expAuditHook::on( 'access.user.create' ) && !expAuditHook::on( 'access.user.email.change' )
+             && !expAuditHook::on( 'access.user.login.change' ) && !expAuditHook::on( 'access.user.password.change' ) )
+            return null;
+        $row = expAuditHook::safe( function () {
+            return eZPersistentObject::fetchObject( eZUser::definition(), null,
+                                                    array( 'contentobject_id' => (int)$this->attribute( 'contentobject_id' ) ), false );
+        } );
+        return is_array( $row ) ? $row : false;
+    }
+
+    /**
+     * Records what a store changed (doc/bc/6.0/audit.md): access.user.create for a new account,
+     * access.user.email.change and access.user.login.change, access.user.password.change (never the password, the
+     * hash or its type).
+     *
+     * @param array|false $before
+     */
+    protected function auditStore( $before )
+    {
+        $user = $this;
+        $id = (int)$this->attribute( 'contentobject_id' );
+        if ( $before === false )
+        {
+            expAuditHook::emit( 'access.user.create', function () use ( $user, $id ) {
+                $groups = array();
+                $object = eZContentObject::fetch( $id );
+                if ( $object )
+                {
+                    foreach ( (array)$object->attribute( 'parent_nodes' ) as $parentNodeID )
+                    {
+                        $parent = eZContentObjectTreeNode::fetch( is_object( $parentNodeID ) ? $parentNodeID->attribute( 'node_id' ) : $parentNodeID );
+                        if ( $parent )
+                            $groups[] = (int)$parent->attribute( 'contentobject_id' );
+                    }
+                }
+                return array( 'object' => expAuditHook::user( $user, true ),
+                              'after' => array( 'login' => (string)$user->attribute( 'login' ), 'email' => (string)$user->attribute( 'email' ),
+                                                'groups' => $groups ) );
+            } );
+            return;
+        }
+        if ( (string)$before['email'] !== (string)$this->attribute( 'email' ) )
+            expAuditHook::emit( 'access.user.email.change', array( 'object' => expAuditHook::user( $user ),
+                'before' => array( 'email' => (string)$before['email'] ), 'after' => array( 'email' => (string)$this->attribute( 'email' ) ) ) );
+        if ( (string)$before['login'] !== (string)$this->attribute( 'login' ) )
+            expAuditHook::emit( 'access.user.login.change', array( 'object' => expAuditHook::user( $user ),
+                'before' => array( 'login' => (string)$before['login'] ), 'after' => array( 'login' => (string)$this->attribute( 'login' ) ) ) );
+        if ( (string)$before['password_hash'] !== (string)$this->attribute( 'password_hash' ) )
+            expAuditHook::emit( 'access.user.password.change', function () use ( $user, $id ) {
+                return array( 'object' => expAuditHook::user( $user ),
+                              'after' => array( 'self' => (int)eZUser::currentUserID() === $id ) );
+            } );
     }
 
     function originalPassword()
@@ -746,6 +813,11 @@ WHERE user_id = '" . $userID . "' AND
             return false;
         }
 
+        // Audit (doc/bc/6.0/audit.md, access.user.remove): the e-mail address under the privacy rule of email
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'access.user.remove', array( 'object' => expAuditHook::user( $user ),
+                'before' => array( 'login' => (string)$user->attribute( 'login' ), 'email' => (string)$user->attribute( 'email' ) ) ) );
+
         eZUser::removeSessionData( $userID );
 
         eZSubtreeNotificationRule::removeByUserID( $userID );
@@ -917,11 +989,21 @@ WHERE user_id = '" . $userID . "' AND
     {
         $userID = $user->attribute( 'contentobject_id' );
 
-        // if audit is enabled logins should be logged
-        eZAudit::writeAudit( 'user-login', array( 'User id' => $userID, 'User login' => $user->attribute( 'login' ) ) );
-
         eZUser::updateLastVisit( $userID, true );
         eZUser::setCurrentlyLoggedInUser( $user, $userID );
+
+        // Who logs in (doc/bc/6.0/audit.md, access.session.login): the user logging in is the actor, with the new
+        // session (hashed); every login handler reaches this through eZUser::loginUser()
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $handler = static::class;
+            expAuditHook::emit( 'access.session.login', function () use ( $user, $userID, $handler ) {
+                return array( 'object' => expAuditHook::user( $user ),
+                              'actor' => array( 'user_id' => (int)$userID, 'login' => (string)$user->attribute( 'login' ),
+                                                'roles' => array_values( array_map( 'intval', (array)$user->roleIDList() ) ) ),
+                              'after' => array( 'handler' => $handler === 'eZUser' ? 'standard' : $handler ) );
+            } );
+        }
 
         // Reset number of failed login attempts
         eZUser::setFailedLoginAttempts( $userID, 0 );
@@ -935,15 +1017,21 @@ WHERE user_id = '" . $userID . "' AND
      */
      protected static function loginFailed( $userID, $login )
     {
-        $loginEscaped = eZDB::instance()->escapeString( $login );
-
-        // Failed login attempts should be logged
-        eZAudit::writeAudit( 'user-failed-login', array( 'User login' => $loginEscaped,
-                                                         'Comment' => 'Failed login attempt: eZUser::loginUser()' ) );
-
         // Increase number of failed login attempts.
         if ( $userID )
             eZUser::setFailedLoginAttempts( $userID );
+
+        // A failed login (doc/bc/6.0/audit.md, access.session.login.failed): never the password; a login typed for
+        // no account is often a password in the wrong field, so it is only ever recorded hashed (attempted_login)
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'access.session.login.failed', function () use ( $userID, $login ) {
+                $known = $userID ? eZUser::fetch( (int)$userID ) : null;
+                if ( $known instanceof eZUser )
+                    return array( 'object' => expAuditHook::user( $known ), 'result' => 'failed', 'reason' => 'credentials',
+                                  'after' => array( 'attempts' => (int)$known->failedLoginAttempts() ) );
+                return array( 'object' => array( 'type' => 'user', 'attempted_login' => (string)$login ),
+                              'result' => 'failed', 'reason' => 'not_found' );
+            } );
     }
 
     /**
@@ -1961,6 +2049,19 @@ WHERE user_id = '" . $userID . "' AND
             }
         }
         $db->commit();
+
+        // Audit (doc/bc/6.0/audit.md): the account locked by failed logins (access.user.lock, once, when the
+        // count reaches [UserSettings] MaxNumberOfFailedLogin), unlocked by an administrator (access.user.unlock)
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            if ( $value === false && (int)$maxNumberOfFailedLogin > 0 && $failedLoginAttempts == (int)$maxNumberOfFailedLogin )
+                expAuditHook::emit( 'access.user.lock', array( 'object' => expAuditHook::user( $userObject ),
+                    'before' => array( 'attempts' => $failedLoginAttempts - 1 ),
+                    'after' => array( 'attempts' => $failedLoginAttempts, 'max' => (int)$maxNumberOfFailedLogin, 'enabled' => (bool)$isEnabled ) ) );
+            elseif ( $setByForce && $value !== false && (int)$value === 0 )
+                expAuditHook::emit( 'access.user.unlock', array( 'object' => expAuditHook::user( $userObject ),
+                    'after' => array( 'attempts' => 0 ) ) );
+        }
 
         eZContentCacheManager::clearContentCacheIfNeeded( $userID );
         eZContentCacheManager::generateObjectViewCache( $userID );

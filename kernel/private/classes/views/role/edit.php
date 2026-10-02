@@ -259,6 +259,47 @@ class Edit extends \Exponential\Runnable\ModuleView
     }
 
     /**
+     * Records a role stored by Apply (doc/bc/6.0/audit.md): access.role.create or access.role.change, the parent
+     * of one access.policy.add / access.policy.remove per policy that differs (compared by module, function and
+     * limitations).
+     *
+     * @param int $roleID
+     * @param array $before name, policies
+     * @param bool $isNew
+     */
+    protected function auditRoleStored( $roleID, array $before, $isNew )
+    {
+        $role = \eZRole::fetch( $roleID );
+        if ( !$role )
+            return;
+        $after = array( 'name' => (string)$role->attribute( 'name' ), 'policies' => \expAuditHook::policies( $role ) );
+        $sig = function ( array $p ) {
+            unset( $p['id'] );
+            return json_encode( $p );
+        };
+        $old = array();
+        foreach ( $before['policies'] as $p )
+            $old[$sig( $p )] = $p;
+        $new = array();
+        foreach ( $after['policies'] as $p )
+            $new[$sig( $p )] = $p;
+        $added = array_diff_key( $new, $old );
+        $removed = array_diff_key( $old, $new );
+        if ( !$isNew && !$added && !$removed && $before['name'] === $after['name'] )
+            return;
+        $name = $isNew ? 'access.role.create' : 'access.role.change';
+        $parent = \expAuditHook::begin( $name, array( 'object' => \expAuditHook::role( $role ),
+                                                      'before' => $isNew ? null : $before, 'after' => $after ) );
+        foreach ( $added as $p )
+            \expAuditHook::emit( 'access.policy.add', array( 'parent' => $parent, 'object' => array( 'type' => 'policy', 'id' => $p['id'] ),
+                                                             'target' => \expAuditHook::role( $role ), 'after' => $p ) );
+        foreach ( $removed as $p )
+            \expAuditHook::emit( 'access.policy.remove', array( 'parent' => $parent, 'object' => array( 'type' => 'policy', 'id' => $p['id'] ),
+                                                                'target' => \expAuditHook::role( $role ), 'before' => $p ) );
+        \expAuditHook::end( $parent, array( 'after' => array( 'policies_added' => count( $added ), 'policies_removed' => count( $removed ) ) ) );
+    }
+
+    /**
      * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
      */
     protected function applyRole( &$http, &$originalRole, &$role, &$Module )
@@ -269,16 +310,19 @@ class Edit extends \Exponential\Runnable\ModuleView
             $originalRoleName = $originalRole->attribute( 'name' );
             $originalRoleID = $originalRole->attribute( 'id' );
 
-            // Who changes which role(s) should be logged.
-            if ( $http->hasSessionVariable( 'RoleWasChanged' ) and
-                 $http->sessionVariable( 'RoleWasChanged' ) === true )
-            {
-                \eZAudit::writeAudit( 'role-change', array( 'Role ID' => $originalRoleID, 'Role name' => $originalRoleName,
-                                                           'Comment' => 'Changed the current role: kernel/role/edit.php' ) );
-                $http->removeSessionVariable( 'RoleWasChanged' );
-            }
+            // Who changes which role (doc/bc/6.0/audit.md): access.role.create for a new role, else access.role.change
+            // with its name and policies before and after, and a child access.policy.add / access.policy.remove per
+            // policy that differs
+            $http->removeSessionVariable( 'RoleWasChanged' );
+            $auditBefore = null;
+            $auditNew = (bool)$originalRole->attribute( 'is_new' );
+            if ( class_exists( 'expAuditHook' ) && ( \expAuditHook::on( $auditNew ? 'access.role.create' : 'access.role.change' ) ) )
+                $auditBefore = array( 'name' => (string)$originalRoleName, 'policies' => \expAuditHook::policies( $originalRole ) );
 
             $originalRole->revertFromTemporaryVersion();
+
+            if ( $auditBefore !== null )
+                $this->auditRoleStored( $originalRoleID, $auditBefore, $auditNew );
             \eZContentCacheManager::clearAllContentCache();
 
             $Module->redirectTo( $Module->functionURI( 'view' ) . '/' . $originalRoleID . '/');

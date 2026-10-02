@@ -898,6 +898,13 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                             $defaultNavigationPart = $availableViewsInModule[$functionName][ 'default_navigation_part' ];
                         }
 
+                        // The view refused is the one requested (the view does not run): what the audit's
+                        // access.permission.refused and the request's module/view say, also in a persistent worker
+                        // whose previous request left another module's parameters here
+                        $GLOBALS['eZRequestedModuleParams'] = array( 'module_name' => $this->module->attribute( 'name' ),
+                                                                     'function_name' => $functionName,
+                                                                     'parameters' => array() );
+
                         if ( isset( $accessList ) )
                             $moduleResult = $this->module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel', array( 'AccessList' => $accessList ) );
                         else
@@ -918,6 +925,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
 
                         // Check if we should switch access mode (http/https) for this module view.
                         eZSSLZone::checkModuleView( $this->module->attribute( 'name' ), $functionName );
+
+                        // A view of a sensitive admin module opened by a signed-in user (doc/bc/6.0/audit.md,
+                        // access.view.sensitive, Z6 "always"; [AuditReadSettings] AlwaysModules[]); never a POST body
+                        if ( class_exists( 'expAuditHook' ) )
+                            self::auditSensitiveView( $this->module->attribute( 'name' ), $functionName );
 
                         // The request rules (requestrules.ini) decide after the
                         // policies allowed the view and before it runs
@@ -995,6 +1007,35 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
     }
 
     /**
+     * Records access.view.sensitive (doc/bc/6.0/audit.md, Z6): a view of a module in [AuditReadSettings]
+     * AlwaysModules[] (setup, role, user, audit, settings) opened by a signed-in user. Anonymous visitors (the
+     * public login, register and password pages) are not recorded here: their actions have events of their own.
+     *
+     * @param string $moduleName
+     * @param string $functionName
+     */
+    protected static function auditSensitiveView( $moduleName, $functionName )
+    {
+        try
+        {
+            if ( !expAuditHook::on( 'access.view.sensitive' ) )
+                return;
+            $ini = eZINI::instance( 'audit.ini' );
+            $modules = $ini->hasVariable( 'AuditReadSettings', 'AlwaysModules' ) ? (array)$ini->variable( 'AuditReadSettings', 'AlwaysModules' ) : array();
+            if ( !in_array( (string)$moduleName, $modules, true ) )
+                return;
+            $user = eZUser::currentUser();
+            if ( !$user instanceof eZUser || $user->isAnonymous() )
+                return;
+            expAuditHook::emit( 'access.view.sensitive', array( 'object' => array( 'type' => 'view', 'id' => $moduleName . '/' . $functionName ),
+                                                                'verb' => 'read' ) );
+        }
+        catch ( Throwable $e )
+        {
+        }
+    }
+
+    /**
      * The module result of a POST the form token check refused: kernel error
      * eZError::KERNEL_FORM_TOKEN_REFUSED from the error module, in the
      * context of the module that was posted to, so the pagelayout looks as it
@@ -1005,6 +1046,19 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      */
     protected function formTokenRefusalResult( ezpFormTokenException $e )
     {
+        // A POST refused for a missing or wrong form token (doc/bc/6.0/audit.md, access.token.refused): never the
+        // token
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $uri = $this->uri;
+            expAuditHook::emit( 'access.token.refused', function () use ( $e, $uri ) {
+                $view = trim( (string)$uri->element( 0 ) . '/' . (string)$uri->element( 1 ), '/' );
+                return array( 'object' => array( 'type' => 'view', 'id' => preg_match( '#^[A-Za-z0-9_]+(/[A-Za-z0-9_]+)?$#', $view ) ? $view : 'unknown' ),
+                              'verb' => 'post', 'result' => 'refused', 'reason' => 'token',
+                              'after' => array( 'refusal' => (string)$e->getReason() ) );
+            } );
+        }
+
         $this->actualRequestedURI = $this->uri->uriString();
         $this->completeRequestedURI = $this->uri->originalURIString();
         $this->oldURI = $this->uri;

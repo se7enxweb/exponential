@@ -34,6 +34,7 @@ class eZUserOperationCollection
 
         if ( $userSetting )
         {
+            $auditBefore = array( 'enabled' => (bool)$userSetting->attribute( 'is_enabled' ), 'max_login' => (int)$userSetting->attribute( 'max_login' ) );
             $userSetting->setAttribute( 'max_login', $maxLogin );
             $isUserEnabled = $isEnabled != 0;
 
@@ -54,6 +55,11 @@ class eZUserOperationCollection
             {
                 eZUserAccountKey::removeByUserID( $userID );
             }
+            // Audit (doc/bc/6.0/audit.md, access.user.enable / access.user.disable)
+            if ( class_exists( 'expAuditHook' ) && ( $auditBefore['enabled'] !== $isUserEnabled || $auditBefore['max_login'] !== (int)$maxLogin ) )
+                expAuditHook::emit( $isUserEnabled ? 'access.user.enable' : 'access.user.disable', array(
+                    'object' => expAuditHook::user( (int)$userID ), 'before' => $auditBefore,
+                    'after' => array( 'enabled' => $isUserEnabled, 'max_login' => (int)$maxLogin ) ) );
             return array( 'status' => true );
         }
         else
@@ -292,6 +298,10 @@ class eZUserOperationCollection
                 }
                 eZContentCacheManager::clearContentCacheIfNeeded( $userID );
             }
+            // Audit (doc/bc/6.0/audit.md, access.user.activate): never the activation hash
+            if ( $enableUser && $userChange && class_exists( 'expAuditHook' ) )
+                expAuditHook::emit( 'access.user.activate', array( 'object' => expAuditHook::user( $user ),
+                    'before' => array( 'enabled' => false ), 'after' => array( 'enabled' => true ) ) );
             return array( 'status' => true );
         }
         else

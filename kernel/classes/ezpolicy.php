@@ -236,6 +236,16 @@ class eZPolicy extends eZPersistentObject
      */
     function removeThis( $id = false )
     {
+        // Audit (doc/bc/6.0/audit.md, access.policy.remove): a policy of a role in use (not of the temporary
+        // version role/edit works on), described before it goes
+        $auditData = null;
+        if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'access.policy.remove' ) )
+        {
+            $role = eZRole::fetch( (int)$this->attribute( 'role_id' ) );
+            if ( $role && (int)$role->attribute( 'version' ) === 0 && !$role->attribute( 'is_new' ) )
+                $auditData = array( 'object' => array( 'type' => 'policy', 'id' => (int)$this->attribute( 'id' ) ),
+                                    'target' => expAuditHook::role( $role ), 'before' => expAuditHook::policy( $this ) );
+        }
         $db = eZDB::instance();
         $db->begin();
         foreach ( $this->attribute( 'limitations' ) as $limitation )
@@ -252,6 +262,8 @@ class eZPolicy extends eZPersistentObject
                          WHERE id='" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
         }
         $db->commit();
+        if ( $auditData !== null )
+            expAuditHook::emit( 'access.policy.remove', $auditData );
     }
 
     /*!

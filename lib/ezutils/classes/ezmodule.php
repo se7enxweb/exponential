@@ -593,6 +593,40 @@ class eZModule
      */
     function handleError( $errorCode, $errorType = false, $parameters = array(), $userParameters = false )
     {
+        // A module view refused by policy, by the dispatcher or inside the view (doc/bc/6.0/audit.md,
+        // access.permission.refused): the module/view, the node or object when known, the policy that was asked
+        if ( $errorCode == eZError::KERNEL_ACCESS_DENIED && ( $errorType === 'kernel' || $errorType === false ) && class_exists( 'expAuditHook' ) )
+        {
+            $module = $this;
+            expAuditHook::emit( 'access.permission.refused', function () use ( $module, $parameters ) {
+                $view = isset( $GLOBALS['eZRequestedModuleParams']['function_name'] ) && $GLOBALS['eZRequestedModuleParams']['module_name'] === $module->attribute( 'name' )
+                      ? (string)$GLOBALS['eZRequestedModuleParams']['function_name'] : (string)$module->currentView();
+                $after = array();
+                if ( isset( $parameters['AccessList'] ) && is_array( $parameters['AccessList'] ) )
+                {
+                    $list = $parameters['AccessList'];
+                    if ( isset( $list['FunctionRequired'] ) && is_array( $list['FunctionRequired'] ) )
+                        $after['policy'] = ( isset( $list['FunctionRequired']['Module'] ) ? $list['FunctionRequired']['Module'] : $module->attribute( 'name' ) )
+                                           . '/' . ( isset( $list['FunctionRequired']['Function'] ) ? $list['FunctionRequired']['Function'] : '' );
+                    if ( isset( $list['PolicyList'] ) && is_array( $list['PolicyList'] ) )
+                        $after['limitations'] = count( $list['PolicyList'] );
+                }
+                $target = null;
+                if ( isset( $GLOBALS['eZRequestedModuleParams']['parameters'] ) && is_array( $GLOBALS['eZRequestedModuleParams']['parameters'] ) )
+                {
+                    $p = $GLOBALS['eZRequestedModuleParams']['parameters'];
+                    if ( isset( $p['NodeID'] ) && is_numeric( $p['NodeID'] ) )
+                        $target = array( 'type' => 'node', 'id' => (int)$p['NodeID'] );
+                    elseif ( isset( $p['ObjectID'] ) && is_numeric( $p['ObjectID'] ) )
+                        $target = array( 'type' => 'object', 'id' => (int)$p['ObjectID'] );
+                }
+                return array( 'object' => array( 'type' => 'view', 'id' => $module->attribute( 'name' ) . '/' . $view ),
+                              'target' => $target, 'verb' => 'access', 'result' => 'refused',
+                              'reason' => isset( $after['limitations'] ) && $after['limitations'] > 0 ? 'limitation' : 'policy',
+                              'after' => $after ?: null );
+            } );
+        }
+
         if ( self::$useExceptions && $errorType === "kernel" )
         {
             switch ( $errorCode )
