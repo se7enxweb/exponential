@@ -140,7 +140,7 @@ c40280fbab600f4839e4a97c88116118  bin/startup/debian/ezasynchronouspublisher
 da8a97ec6120651324eac6025344e771  bin/startup/debian/ezasynchronouspublisher.defaults
 bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
-a0b3082b584633b0613e58993b1511c0  composer.json
+091a9c8a7701bec8cf0d1ad5bb964035  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 fc1728636781a401032ccd6494974299  config.php-RECOMMENDED
 2b17a4a2a7e33ac8de3c9ba9f86001b2  cronjobs/basket_cleanup.php
