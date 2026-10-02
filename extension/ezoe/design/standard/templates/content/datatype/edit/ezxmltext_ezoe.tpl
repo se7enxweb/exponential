@@ -240,6 +240,9 @@
         {if $input_handler.can_disable}
             <input class="button{if $layout_settings['buttons']|contains('disable')} hide{/if}" type="submit" name="CustomActionButton[{$attribute.id}_disable_editor]" value="{'Disable editor'|i18n('design/standard/content/datatype')}" />
         {/if}
+        {if $input_handler.engine_switch_enabled}
+            <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_switch_engine_tinymce8]" value="{'Switch to the new editor (TinyMCE 8)'|i18n('design/standard/ezoe')}" title="{'The text is kept, the choice is saved for your user.'|i18n('design/standard/ezoe')}" />
+        {/if}
         <script type="text/javascript">
         eZOeAttributeSettings = eZOeGlobalSettings;
         eZOeAttributeSettings['ez_attribute_id'] = {$attribute.id};

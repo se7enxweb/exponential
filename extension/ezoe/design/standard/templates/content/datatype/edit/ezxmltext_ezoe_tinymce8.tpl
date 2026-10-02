@@ -203,6 +203,9 @@ function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
     {if $input_handler.can_disable}
         <input class="button{if $layout_settings['buttons']|contains('disable')} hide{/if}" type="submit" name="CustomActionButton[{$attribute.id}_disable_editor]" value="{'Disable editor'|i18n('design/standard/content/datatype')}" />
     {/if}
+    {if $input_handler.engine_switch_enabled}
+        <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_switch_engine_tinymce3]" value="{'Switch to the previous editor (TinyMCE 3)'|i18n('design/standard/ezoe')}" title="{'The text is kept, the choice is saved for your user.'|i18n('design/standard/ezoe')}" />
+    {/if}
     <script type="text/javascript">
     eZOe8Init( '{$attribute_base}_data_text_{$attribute.id}', {$attribute.id}, {json_encode( $layout_settings['buttons'] )}, '{$layout_settings['path_location']}', {$editorRow} );
     </script>

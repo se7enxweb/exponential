@@ -91,6 +91,18 @@
 <context>
     <name>design/standard/ezoe</name>
     <message>
+        <source>Switch to the new editor (TinyMCE 8)</source>
+        <translation>Zum neuen Editor wechseln (TinyMCE 8)</translation>
+    </message>
+    <message>
+        <source>Switch to the previous editor (TinyMCE 3)</source>
+        <translation>Zum bisherigen Editor wechseln (TinyMCE 3)</translation>
+    </message>
+    <message>
+        <source>The text is kept, the choice is saved for your user.</source>
+        <translation>Der Text bleibt erhalten, die Auswahl wird für Ihren Benutzer gespeichert.</translation>
+    </message>
+    <message>
         <source>Do you want to use the WYSIWYG mode for this textarea?</source>
         <translation type="unfinished">Wollen Sie den WSIWYG-Modus für diesen Textbereich nutzen?</translation>
     </message>

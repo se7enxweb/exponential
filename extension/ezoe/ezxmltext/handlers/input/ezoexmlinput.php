@@ -94,7 +94,8 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'ezpublish_version',
                       'xml_tag_alias',
                       'json_xml_tag_alias',
-                      'custom_tag_definitions' ),
+                      'custom_tag_definitions',
+                      'engine_switch_enabled' ),
                       parent::attributes() );
     }
 
@@ -126,6 +127,8 @@ class eZOEXMLInput extends eZXMLInputHandler
             $attr =  json_encode( self::getXmlTagAliasList() );
         else if ( $name === 'custom_tag_definitions' )
             $attr = self::getCustomTagDefinitions();
+        else if ( $name === 'engine_switch_enabled' )
+            $attr = self::engineSwitchEnabled();
         else
             $attr = parent::attribute( $name );
         return $attr;
@@ -361,11 +364,34 @@ class eZOEXMLInput extends eZXMLInputHandler
                 else
                     eZDebug::writeError( 'Current user does not have access to disable editor, but trying anyway!', __METHOD__ );
             } break;
+            case 'switch_engine_tinymce3':
+            case 'switch_engine_tinymce8':
+            {
+                // ezoe.ini [EditorSettings] EngineSwitch lets editors choose the editor engine themselves
+                if ( self::engineSwitchEnabled() )
+                    eZPreferences::setValue( 'ezoe_engine', substr( $action, strlen( 'switch_engine_' ) ) );
+                else
+                    eZDebug::writeError( 'Switching the editor engine is disabled in ezoe.ini [EditorSettings] EngineSwitch', __METHOD__ );
+            } break;
             default :
             {
                 eZDebug::writeError( 'Unknown custom HTTP action: ' . $action, __METHOD__ );
             } break;
         }
+    }
+
+     /**
+     * engineSwitchEnabled
+     * If editors may switch between the TinyMCE 3 and TinyMCE 8 editor themselves.
+     *
+     * @static
+     * @return bool
+     */
+    public static function engineSwitchEnabled()
+    {
+        $ezoeIni = eZINI::instance( 'ezoe.ini' );
+        return $ezoeIni->hasVariable( 'EditorSettings', 'EngineSwitch' )
+            && $ezoeIni->variable( 'EditorSettings', 'EngineSwitch' ) === 'enabled';
     }
 
      /**
