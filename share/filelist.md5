@@ -787,7 +787,7 @@ a54e5021b1c597539a60da86ef766f0c  design/admin4/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin4/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
-f9b0e3d72a432957b57609e4595c74b0  design/admin4/javascript/admin4.js
+ec3df63d8b4a72ec65b2b33aff5b4fe3  design/admin4/javascript/admin4.js
 c026c4c30fa5e95415c1f6611bcce9ea  design/admin4/javascript/contentstructuremenu_dynamic.js
 3cb3cb0538b25da8b7c54c08c643c4c2  design/admin4/javascript/expajaxuploader.js
 e3bfb91bebf01770b13c4a9ffe2a8f95  design/admin4/javascript/ezadmin_menubar.js
@@ -825,13 +825,14 @@ b2c3da31e2cc928df771601c6d761587  design/admin4/override/templates/admin_preview
 68fe19d4f0a0a40231b98b37317410f3  design/admin4/override/templates/admin_preview/windows_media.tpl
 d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_image.tpl
 52e3042374cf244a81327966045e06e0  design/admin4/override/templates/embed_image.tpl
+2ac139cd76339fd86055b76a0b8944cc  design/admin4/override/templates/node/view/full_caching_disabled.tpl
 191d18b2654a0646af309d02091f7650  design/admin4/override/templates/template_look_edit.tpl
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-ca903cb659c33c86b67b6284f889badb  design/admin4/stylesheets/admin4.css
+bf82c7e145b7e4436821988010bfb7fe  design/admin4/stylesheets/admin4.css
 3eb649ac99a5d1e9852d112ad9fcaf9a  design/admin4/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin4/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin4/stylesheets/ezinfo.css
@@ -970,10 +971,11 @@ e6a3c2f8012b44d7d40ee02614debd4b  design/admin4/templates/navigator/alphabetical
 43081b08baebac3fc125b6b899ce31cd  design/admin4/templates/node/removenode.tpl
 759b0fcc80fad2ae2c1e6630c9ed3521  design/admin4/templates/node/removeobject.tpl
 05da260b91f2f49d37a5a39b3afd0e7b  design/admin4/templates/node/top_node_full.tpl
+15dd39ea4f5bb13433b75793ffe3f149  design/admin4/templates/node/view/a4_full_body.tpl
 ea465bb76b53128ff5a195583ce942a2  design/admin4/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin4/templates/node/view/ajaxuploader_preview.tpl
 b9a3fa9fe69402b67871fc1aac68fcad  design/admin4/templates/node/view/browse_thumbnail.tpl
-a48f23d7fd535fb9789c93b5469c586f  design/admin4/templates/node/view/full.tpl
+79a51a206a2e100e10a0258b0c5a8f76  design/admin4/templates/node/view/full.tpl
 d54e0d928a26c050d67ff9055add32b4  design/admin4/templates/node/view/line.tpl
 fc189d030b4c7e2d923cd6754e470609  design/admin4/templates/node/view/search.tpl
 e6fc245971c17e1c0b36427ceeb0770b  design/admin4/templates/node/view/sitemap.tpl
