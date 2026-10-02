@@ -265,11 +265,15 @@ class ezpRepairQueue
         return array( 'ok' => true, 'token' => $token );
     }
 
-    /** Starts bin/php/exprepair.php --run in the background, detached from the web request. */
+    /**
+     * Starts bin/php/exprepair.php --run in the background, detached from the web request.
+     * The redirections apply to the whole ( ... ) list: with "cd && setsid ... >> log &" the backgrounded list
+     * kept exec()'s output pipe open, so exec() and the request waited until the worker had finished.
+     */
     protected static function spawnWorker()
     {
         $php = is_file( PHP_BINDIR . '/php' ) ? PHP_BINDIR . '/php' : 'php';
-        $cmd = sprintf( 'cd %s && setsid %s bin/php/exprepair.php --run >> %s 2>&1 < /dev/null &',
+        $cmd = sprintf( '( cd %s && exec setsid %s bin/php/exprepair.php --run ) >> %s 2>&1 < /dev/null &',
             escapeshellarg( self::root() ), escapeshellarg( $php ), escapeshellarg( self::dir() . '/worker.out' ) );
         exec( $cmd );
     }
