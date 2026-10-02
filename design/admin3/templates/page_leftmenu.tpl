@@ -20,6 +20,8 @@
             {def $extract_length = sub( count_chars( $navigation_part_name ), '14' ) 
                     $part_name = $navigation_part_name|extract( '2', $extract_length )}
 
+            {* a kernel navigation part with the exp prefix: exp<name>navigationpart => parts/<name>/menu.tpl *}
+            {if $navigation_part_name|begins_with( 'exp' )}{set $part_name = $navigation_part_name|explode( 'navigationpart' )[0]|extract( 3 )}{/if}
             {include uri=concat( 'design:parts/', $part_name, '/menu.tpl' )}
 
             {undef $extract_length $part_name $navigation_part_name}

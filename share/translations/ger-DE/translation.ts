@@ -10641,6 +10641,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Disable &amp;quot;Tabs&amp;quot; by default while browsing content.</source>
         <translation>Beim Browsen der Inhalte &amp;quot;Reiter&amp;quot; als Standard deaktivieren.</translation>
     </message>
+    <message>
+        <source>Audit trail</source>
+        <translation>Audit-Protokoll</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -10765,6 +10769,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>oAuth admin</source>
         <translation>oAuth-Verwaltung</translation>
+    </message>
+    <message>
+        <source>Audit</source>
+        <translation>Audit</translation>
     </message>
 </context>
 <context>
@@ -48548,6 +48556,964 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Keep open on reload</source>
         <translation>Beim Neuladen offen lassen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/audit</name>
+    <message>
+        <source>%count alerts in the last 24 hours</source>
+        <translation>%count Alarme in den letzten 24 Stunden</translation>
+    </message>
+    <message>
+        <source>%live days live, %archive days archived</source>
+        <translation>%live Tage live, %archive Tage archiviert</translation>
+    </message>
+    <message>
+        <source>%n breaks, first: %first</source>
+        <translation>%n Brüche, der erste: %first</translation>
+    </message>
+    <message>
+        <source>%n days</source>
+        <translation>%n Tage</translation>
+    </message>
+    <message>
+        <source>%n events of this job</source>
+        <translation>%n Ereignisse dieses Auftrags</translation>
+    </message>
+    <message>
+        <source>%n not indexed yet, read from the files</source>
+        <translation>%n noch nicht indiziert, aus den Dateien gelesen</translation>
+    </message>
+    <message>
+        <source>%n records</source>
+        <translation>%n Einträge</translation>
+    </message>
+    <message>
+        <source>%n repaired</source>
+        <translation>%n repariert</translation>
+    </message>
+    <message>
+        <source>%total events</source>
+        <translation>%total Ereignisse</translation>
+    </message>
+    <message>
+        <source>%total events since %from</source>
+        <translation>%total Ereignisse seit %from</translation>
+    </message>
+    <message>
+        <source>%total events, newest first.</source>
+        <translation>%total Ereignisse, die neuesten zuerst.</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktive Filter</translation>
+    </message>
+    <message>
+        <source>Actor</source>
+        <translation>Akteur</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Nachher</translation>
+    </message>
+    <message>
+        <source>Alert rules are switched off ([AuditAlertSettings] Alerts=disabled).</source>
+        <translation>Die Alarmregeln sind ausgeschaltet ([AuditAlertSettings] Alerts=disabled).</translation>
+    </message>
+    <message>
+        <source>Alerts</source>
+        <translation>Alarme</translation>
+    </message>
+    <message>
+        <source>Alerts are records of the system channel, which your access does not include.</source>
+        <translation>Alarme sind Einträge des Kanals system, auf den Ihr Zugriff nicht reicht.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>All audit events</source>
+        <translation>Alle Audit-Ereignisse</translation>
+    </message>
+    <message>
+        <source>All channels</source>
+        <translation>Alle Kanäle</translation>
+    </message>
+    <message>
+        <source>An export is recorded (system.audit.export) with the filter, the format, the count and the sha256 of the file.</source>
+        <translation>Ein Export wird aufgezeichnet (system.audit.export), mit Filter, Format, Anzahl und dem sha256 der Datei.</translation>
+    </message>
+    <message>
+        <source>Archive formats</source>
+        <translation>Archivformate</translation>
+    </message>
+    <message>
+        <source>Archives</source>
+        <translation>Archive</translation>
+    </message>
+    <message>
+        <source>Audit</source>
+        <translation>Audit</translation>
+    </message>
+    <message>
+        <source>Audit alerts</source>
+        <translation>Audit-Alarme</translation>
+    </message>
+    <message>
+        <source>Audit archives</source>
+        <translation>Audit-Archive</translation>
+    </message>
+    <message>
+        <source>Audit charts</source>
+        <translation>Audit-Diagramme</translation>
+    </message>
+    <message>
+        <source>Audit console</source>
+        <translation>Audit-Konsole</translation>
+    </message>
+    <message>
+        <source>Audit is %state. Live files: %dir.</source>
+        <translation>Audit ist %state. Live-Dateien: %dir.</translation>
+    </message>
+    <message>
+        <source>Audit is switched off ([AuditSettings] Audit=disabled): nothing new is recorded.</source>
+        <translation>Audit ist ausgeschaltet ([AuditSettings] Audit=disabled): nichts Neues wird aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>Audit is switched off: nothing new is recorded.</source>
+        <translation>Audit ist ausgeschaltet: nichts Neues wird aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>Audit settings</source>
+        <translation>Audit-Einstellungen</translation>
+    </message>
+    <message>
+        <source>Audit: recent events</source>
+        <translation>Audit: letzte Ereignisse</translation>
+    </message>
+    <message>
+        <source>Audit: security events</source>
+        <translation>Audit: Sicherheitsereignisse</translation>
+    </message>
+    <message>
+        <source>Back to the console</source>
+        <translation>Zurück zur Konsole</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Vorher</translation>
+    </message>
+    <message>
+        <source>Before and after</source>
+        <translation>Vorher und nachher</translation>
+    </message>
+    <message>
+        <source>Behind the files</source>
+        <translation>Rückstand zu den Dateien</translation>
+    </message>
+    <message>
+        <source>CSV</source>
+        <translation>CSV</translation>
+    </message>
+    <message>
+        <source>Chain</source>
+        <translation>Kette</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Channel %channel</source>
+        <translation>Kanal %channel</translation>
+    </message>
+    <message>
+        <source>Charts</source>
+        <translation>Diagramme</translation>
+    </message>
+    <message>
+        <source>Charts need the audit index (audit.ini [AuditIndexSettings] Index=enabled and its tables). The console still reads the files.</source>
+        <translation>Diagramme brauchen den Audit-Index (audit.ini [AuditIndexSettings] Index=enabled und seine Tabellen). Die Konsole liest weiterhin die Dateien.</translation>
+    </message>
+    <message>
+        <source>Charts of this filter</source>
+        <translation>Diagramme zu diesem Filter</translation>
+    </message>
+    <message>
+        <source>Children</source>
+        <translation>Untergeordnete Ereignisse</translation>
+    </message>
+    <message>
+        <source>Console</source>
+        <translation>Konsole</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation>Anzahl</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Tag</translation>
+    </message>
+    <message>
+        <source>Download the record (JSON)</source>
+        <translation>Den Eintrag herunterladen (JSON)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation>Ereignis</translation>
+    </message>
+    <message>
+        <source>Event name</source>
+        <translation>Ereignisname</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ereignisse</translation>
+    </message>
+    <message>
+        <source>Events per day and channel</source>
+        <translation>Ereignisse pro Tag und Kanal</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Export</translation>
+    </message>
+    <message>
+        <source>Export audit events</source>
+        <translation>Audit-Ereignisse exportieren</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Feld</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtern</translation>
+    </message>
+    <message>
+        <source>Filter the audit events</source>
+        <translation>Die Audit-Ereignisse filtern</translation>
+    </message>
+    <message>
+        <source>Filter the charts</source>
+        <translation>Die Diagramme filtern</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Fingerabdruck</translation>
+    </message>
+    <message>
+        <source>Fired alerts</source>
+        <translation>Ausgelöste Alarme</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Von</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
+    </message>
+    <message>
+        <source>Hash chain broken</source>
+        <translation>Hash-Kette gebrochen</translation>
+    </message>
+    <message>
+        <source>Hash chain per channel</source>
+        <translation>Hash-Kette pro Kanal</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>Index</translation>
+    </message>
+    <message>
+        <source>Installation %id</source>
+        <translation>Installation %id</translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation>JSON</translation>
+    </message>
+    <message>
+        <source>JSON lines</source>
+        <translation>JSON Lines</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Auftrag</translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation>Aufbewahrt</translation>
+    </message>
+    <message>
+        <source>Kept in the index</source>
+        <translation>Im Index aufbewahrt</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Art</translation>
+    </message>
+    <message>
+        <source>Last indexed</source>
+        <translation>Zuletzt indiziert</translation>
+    </message>
+    <message>
+        <source>Latest manifests</source>
+        <translation>Neueste Manifeste</translation>
+    </message>
+    <message>
+        <source>Live files</source>
+        <translation>Live-Dateien</translation>
+    </message>
+    <message>
+        <source>Live files in %log; archives in %archive. Archiving, verifying and restoring are done by the audit cronjob part and by exp:audit (verify, archive, restore).</source>
+        <translation>Live-Dateien in %log; Archive in %archive. Archivieren, Prüfen und Wiederherstellen erledigen der Audit-Cronjob und exp:audit (verify, archive, restore).</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>Logins and failed logins per day</source>
+        <translation>Anmeldungen und fehlgeschlagene Anmeldungen pro Tag</translation>
+    </message>
+    <message>
+        <source>Most active actors</source>
+        <translation>Aktivste Akteure</translation>
+    </message>
+    <message>
+        <source>Most frequent events</source>
+        <translation>Häufigste Ereignisse</translation>
+    </message>
+    <message>
+        <source>Newer</source>
+        <translation>Neuere</translation>
+    </message>
+    <message>
+        <source>No alert has fired.</source>
+        <translation>Es wurde kein Alarm ausgelöst.</translation>
+    </message>
+    <message>
+        <source>No audit events match this filter.</source>
+        <translation>Kein Audit-Ereignis passt zu diesem Filter.</translation>
+    </message>
+    <message>
+        <source>No audit events yet.</source>
+        <translation>Noch keine Audit-Ereignisse.</translation>
+    </message>
+    <message>
+        <source>No audit files yet.</source>
+        <translation>Noch keine Audit-Dateien.</translation>
+    </message>
+    <message>
+        <source>No events.</source>
+        <translation>Keine Ereignisse.</translation>
+    </message>
+    <message>
+        <source>No filter: every audit event you may read.</source>
+        <translation>Kein Filter: jedes Audit-Ereignis, das Sie lesen dürfen.</translation>
+    </message>
+    <message>
+        <source>No format handlers are registered here.</source>
+        <translation>Hier sind keine Format-Handler registriert.</translation>
+    </message>
+    <message>
+        <source>No keys yet: they are made with the first event.</source>
+        <translation>Noch keine Schlüssel: Sie entstehen mit dem ersten Ereignis.</translation>
+    </message>
+    <message>
+        <source>No security events of notice severity or worse.</source>
+        <translation>Keine Sicherheitsereignisse mit dem Schweregrad notice oder höher.</translation>
+    </message>
+    <message>
+        <source>No sinks are registered here.</source>
+        <translation>Hier sind keine Sinks registriert.</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Objekt</translation>
+    </message>
+    <message>
+        <source>Older</source>
+        <translation>Ältere</translation>
+    </message>
+    <message>
+        <source>Oldest archive</source>
+        <translation>Ältestes Archiv</translation>
+    </message>
+    <message>
+        <source>Oldest live</source>
+        <translation>Älteste Live-Datei</translation>
+    </message>
+    <message>
+        <source>Only the newest %max are exported here; exp:audit export has no limit.</source>
+        <translation>Hier werden nur die neuesten %max exportiert; exp:audit export hat keine Grenze.</translation>
+    </message>
+    <message>
+        <source>Other events of this request</source>
+        <translation>Weitere Ereignisse dieser Anfrage</translation>
+    </message>
+    <message>
+        <source>Page %page of %pages</source>
+        <translation>Seite %page von %pages</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Seiten</translation>
+    </message>
+    <message>
+        <source>Parent</source>
+        <translation>Übergeordnetes Ereignis</translation>
+    </message>
+    <message>
+        <source>Pseudonymised after</source>
+        <translation>Pseudonymisiert nach</translation>
+    </message>
+    <message>
+        <source>Recent events</source>
+        <translation>Letzte Ereignisse</translation>
+    </message>
+    <message>
+        <source>Records</source>
+        <translation>Einträge</translation>
+    </message>
+    <message>
+        <source>Refusals and failures per day</source>
+        <translation>Verweigerungen und Fehlschläge pro Tag</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Diesen Filter entfernen</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Anfrage</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ergebnis</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regel</translation>
+    </message>
+    <message>
+        <source>Rules</source>
+        <translation>Regeln</translation>
+    </message>
+    <message>
+        <source>Rules are set in audit.ini ([AuditAlertSettings] Rules[] and the [AlertRule_*] blocks); write them with exp:ini.</source>
+        <translation>Regeln stehen in audit.ini ([AuditAlertSettings] Rules[] und die Blöcke [AlertRule_*]); schreiben Sie sie mit exp:ini.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suche</translation>
+    </message>
+    <message>
+        <source>Search: %kind. Opening this page is itself recorded (system.audit.read).</source>
+        <translation>Suche: %kind. Das Öffnen dieser Seite wird selbst aufgezeichnet (system.audit.read).</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>Severity</source>
+        <translation>Schweregrad</translation>
+    </message>
+    <message>
+        <source>Severity at least</source>
+        <translation>Schweregrad mindestens</translation>
+    </message>
+    <message>
+        <source>Signing key %id, fingerprint %fp</source>
+        <translation>Signaturschlüssel %id, Fingerabdruck %fp</translation>
+    </message>
+    <message>
+        <source>Sinks</source>
+        <translation>Sinks</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zustand</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ziel</translation>
+    </message>
+    <message>
+        <source>The filter:</source>
+        <translation>Der Filter:</translation>
+    </message>
+    <message>
+        <source>The latest %limit events of the audit channels in %dir, newest first. Times are local; each record is written in UTC.</source>
+        <translation>Die letzten %limit Ereignisse der Audit-Kanäle in %dir, die neuesten zuerst. Zeiten sind lokal; jeder Eintrag wird in UTC geschrieben.</translation>
+    </message>
+    <message>
+        <source>The live files are large: the chain state above covers the files of today. Run exp:audit verify for all of them.</source>
+        <translation>Die Live-Dateien sind groß: der Zustand der Kette oben gilt für die Dateien von heute. Prüfen Sie alle mit exp:audit verify.</translation>
+    </message>
+    <message>
+        <source>The numbers</source>
+        <translation>Die Zahlen</translation>
+    </message>
+    <message>
+        <source>The record as written</source>
+        <translation>Der Eintrag, wie er geschrieben wurde</translation>
+    </message>
+    <message>
+        <source>These events in the console</source>
+        <translation>Diese Ereignisse in der Konsole</translation>
+    </message>
+    <message>
+        <source>This page is request %id; opening it is itself recorded (system.audit.read). On the command line: exp:audit tail, exp:audit show &lt;id&gt;, exp:audit verify.</source>
+        <translation>Diese Seite ist die Anfrage %id; ihr Öffnen wird selbst aufgezeichnet (system.audit.read). Auf der Kommandozeile: exp:audit tail, exp:audit show &lt;id&gt;, exp:audit verify.</translation>
+    </message>
+    <message>
+        <source>This page only shows the settings. Write them with exp:ini, for example: ./console exp:ini set audit.ini/AuditConsoleSettings/PageSize 100 override. Every write to audit.ini is recorded (system.audit.setting.write).</source>
+        <translation>Diese Seite zeigt die Einstellungen nur an. Schreiben Sie sie mit exp:ini, zum Beispiel: ./console exp:ini set audit.ini/AuditConsoleSettings/PageSize 100 override. Jedes Schreiben in audit.ini wird aufgezeichnet (system.audit.setting.write).</translation>
+    </message>
+    <message>
+        <source>Threshold</source>
+        <translation>Schwelle</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zeit</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bis</translation>
+    </message>
+    <message>
+        <source>Total</source>
+        <translation>Gesamt</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Benutzer-ID</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>Variable</source>
+        <translation>Variable</translation>
+    </message>
+    <message>
+        <source>Verified</source>
+        <translation>Geprüft</translation>
+    </message>
+    <message>
+        <source>What happened in the system: the audit timeline, events, charts, alerts and exports.</source>
+        <translation>Was im System geschah: die Audit-Zeitleiste, Ereignisse, Diagramme, Alarme und Exporte.</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wann</translation>
+    </message>
+    <message>
+        <source>Who</source>
+        <translation>Wer</translation>
+    </message>
+    <message>
+        <source>Your access is limited to the channels: %channels.</source>
+        <translation>Ihr Zugriff ist auf diese Kanäle beschränkt: %channels.</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>available</source>
+        <translation>verfügbar</translation>
+    </message>
+    <message>
+        <source>cronjob run</source>
+        <translation>Cronjob-Lauf</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>ausgeschaltet</translation>
+    </message>
+    <message>
+        <source>enabled</source>
+        <translation>eingeschaltet</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>failed logins</source>
+        <translation>fehlgeschlagene Anmeldungen</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>first</source>
+        <translation>erstes</translation>
+    </message>
+    <message>
+        <source>first break at record %line</source>
+        <translation>erster Bruch bei Eintrag %line</translation>
+    </message>
+    <message>
+        <source>hash matches the record</source>
+        <translation>Hash passt zum Eintrag</translation>
+    </message>
+    <message>
+        <source>imported</source>
+        <translation>importiert</translation>
+    </message>
+    <message>
+        <source>in</source>
+        <translation>in</translation>
+    </message>
+    <message>
+        <source>in use</source>
+        <translation>in Gebrauch</translation>
+    </message>
+    <message>
+        <source>last</source>
+        <translation>letztes</translation>
+    </message>
+    <message>
+        <source>logins</source>
+        <translation>Anmeldungen</translation>
+    </message>
+    <message>
+        <source>not working</source>
+        <translation>funktioniert nicht</translation>
+    </message>
+    <message>
+        <source>one row per event, for a spreadsheet</source>
+        <translation>eine Zeile pro Ereignis, für eine Tabellenkalkulation</translation>
+    </message>
+    <message>
+        <source>per</source>
+        <translation>pro</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>Problem</translation>
+    </message>
+    <message>
+        <source>pseudonymised</source>
+        <translation>pseudonymisiert</translation>
+    </message>
+    <message>
+        <source>pseudonymised in the index; the file holds the original</source>
+        <translation>im Index pseudonymisiert; die Datei enthält das Original</translation>
+    </message>
+    <message>
+        <source>read from the files (no index)</source>
+        <translation>aus den Dateien gelesen (kein Index)</translation>
+    </message>
+    <message>
+        <source>ready</source>
+        <translation>bereit</translation>
+    </message>
+    <message>
+        <source>reason</source>
+        <translation>Grund</translation>
+    </message>
+    <message>
+        <source>record %seq in %file</source>
+        <translation>Eintrag %seq in %file</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>verweigert</translation>
+    </message>
+    <message>
+        <source>roles</source>
+        <translation>Rollen</translation>
+    </message>
+    <message>
+        <source>severity %s</source>
+        <translation>Schweregrad %s</translation>
+    </message>
+    <message>
+        <source>success</source>
+        <translation>erfolgreich</translation>
+    </message>
+    <message>
+        <source>tables installed</source>
+        <translation>Tabellen installiert</translation>
+    </message>
+    <message>
+        <source>tables missing</source>
+        <translation>Tabellen fehlen</translation>
+    </message>
+    <message>
+        <source>the records as one array</source>
+        <translation>die Einträge als ein Array</translation>
+    </message>
+    <message>
+        <source>the records as written, one per line; their hashes can be checked</source>
+        <translation>die Einträge, wie sie geschrieben wurden, einer pro Zeile; ihre Hashes lassen sich prüfen</translation>
+    </message>
+    <message>
+        <source>unavailable</source>
+        <translation>nicht verfügbar</translation>
+    </message>
+    <message>
+        <source>(today only)</source>
+        <translation>(nur heute)</translation>
+    </message>
+    <message>
+        <source>The chain status is the result of the last verification (daily maintenance, exp:audit verify or this button).</source>
+        <translation>Der Zustand der Kette ist das Ergebnis der letzten Prüfung (tägliche Wartung, exp:audit verify oder diese Schaltfläche).</translation>
+    </message>
+    <message>
+        <source>Verify now</source>
+        <translation>Jetzt prüfen</translation>
+    </message>
+    <message>
+        <source>not verified yet</source>
+        <translation>noch nicht geprüft</translation>
+    </message>
+    <message>
+        <source>verified %time</source>
+        <translation>geprüft %time</translation>
+    </message>
+    <message>
+        <source>All audit events of this node</source>
+        <translation>Alle Audit-Ereignisse dieses Knotens</translation>
+    </message>
+    <message>
+        <source>No audit events about this node.</source>
+        <translation>Keine Audit-Ereignisse zu diesem Knoten.</translation>
+    </message>
+    <message>
+        <source>The audit trail of this node</source>
+        <translation>Das Audit-Protokoll dieses Knotens</translation>
+    </message>
+    <message>
+        <source>%n addresses</source>
+        <translation>%n Adressen</translation>
+    </message>
+    <message>
+        <source>%n days old</source>
+        <translation>%n Tage alt</translation>
+    </message>
+    <message>
+        <source>%n problems</source>
+        <translation>%n Probleme</translation>
+    </message>
+    <message>
+        <source>%n spooled</source>
+        <translation>%n zwischengespeichert</translation>
+    </message>
+    <message>
+        <source>Activity</source>
+        <translation>Aktivität</translation>
+    </message>
+    <message>
+        <source>Alert mail recipients</source>
+        <translation>Empfänger der Alarm-E-Mails</translation>
+    </message>
+    <message>
+        <source>Audit dashboard</source>
+        <translation>Audit-Übersicht</translation>
+    </message>
+    <message>
+        <source>Built in %ms ms from the index and the stored chain verification; opening this page is recorded (system.audit.read).</source>
+        <translation>In %ms ms aus dem Index und der gespeicherten Kettenprüfung erstellt; das Öffnen dieser Seite wird aufgezeichnet (system.audit.read).</translation>
+    </message>
+    <message>
+        <source>Cronjob part (audit)</source>
+        <translation>Cronjob-Teil (audit)</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Events per day, last 7 days</source>
+        <translation>Ereignisse pro Tag, letzte 7 Tage</translation>
+    </message>
+    <message>
+        <source>Failed logins</source>
+        <translation>Fehlgeschlagene Anmeldungen</translation>
+    </message>
+    <message>
+        <source>Failed logins by address</source>
+        <translation>Fehlgeschlagene Anmeldungen nach Adresse</translation>
+    </message>
+    <message>
+        <source>Failed logins by login (hashed for unknown accounts)</source>
+        <translation>Fehlgeschlagene Anmeldungen nach Login (bei unbekannten Konten gehasht)</translation>
+    </message>
+    <message>
+        <source>Hash chains</source>
+        <translation>Hash-Ketten</translation>
+    </message>
+    <message>
+        <source>Health</source>
+        <translation>Zustand</translation>
+    </message>
+    <message>
+        <source>Last reindex</source>
+        <translation>Letzte Neuindizierung</translation>
+    </message>
+    <message>
+        <source>Last run %time; daily tasks done for %day.</source>
+        <translation>Letzter Lauf %time; tägliche Aufgaben erledigt für %day.</translation>
+    </message>
+    <message>
+        <source>Latest role grants</source>
+        <translation>Letzte Rollenzuweisungen</translation>
+    </message>
+    <message>
+        <source>Latest warnings and worse</source>
+        <translation>Letzte Warnungen und Schlimmeres</translation>
+    </message>
+    <message>
+        <source>On the command line</source>
+        <translation>Auf der Kommandozeile</translation>
+    </message>
+    <message>
+        <source>Operations</source>
+        <translation>Betrieb</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Schnellzugriff</translation>
+    </message>
+    <message>
+        <source>Refused views</source>
+        <translation>Verweigerte Ansichten</translation>
+    </message>
+    <message>
+        <source>Security</source>
+        <translation>Sicherheit</translation>
+    </message>
+    <message>
+        <source>The audit cronjob part has not run for over an hour (last: %time). Rotation, archives, sinks and the index wait for it.</source>
+        <translation>Der Audit-Cronjob ist seit über einer Stunde nicht gelaufen (zuletzt: %time). Rotation, Archive, Sinks und der Index warten darauf.</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate.</source>
+        <translation>Der Signaturschlüssel ist über ein Jahr alt: wechseln Sie ihn mit exp:audit key rotate.</translation>
+    </message>
+    <message>
+        <source>Today / 7 days. Families:</source>
+        <translation>Heute / 7 Tage. Familien:</translation>
+    </message>
+    <message>
+        <source>Today and 7 days</source>
+        <translation>Heute und 7 Tage</translation>
+    </message>
+    <message>
+        <source>Top actors today</source>
+        <translation>Aktivste Akteure heute</translation>
+    </message>
+    <message>
+        <source>Top objects today</source>
+        <translation>Häufigste Objekte heute</translation>
+    </message>
+    <message>
+        <source>Warnings</source>
+        <translation>Warnungen</translation>
+    </message>
+    <message>
+        <source>alerts, 24 h</source>
+        <translation>Alarme, 24 h</translation>
+    </message>
+    <message>
+        <source>archive due</source>
+        <translation>Archivierung fällig</translation>
+    </message>
+    <message>
+        <source>error</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>events today</source>
+        <translation>Ereignisse heute</translation>
+    </message>
+    <message>
+        <source>failed logins, 24 h</source>
+        <translation>fehlgeschlagene Anmeldungen, 24 h</translation>
+    </message>
+    <message>
+        <source>in 7 days</source>
+        <translation>in 7 Tagen</translation>
+    </message>
+    <message>
+        <source>last %time</source>
+        <translation>zuletzt %time</translation>
+    </message>
+    <message>
+        <source>oldest live %live, last archive %archive</source>
+        <translation>älteste Live-Datei %live, letztes Archiv %archive</translation>
+    </message>
+    <message>
+        <source>permission refusals, 24 h</source>
+        <translation>Zugriffsverweigerungen, 24 h</translation>
+    </message>
+    <message>
+        <source>role grants, 7 days</source>
+        <translation>Rollenzuweisungen, 7 Tage</translation>
+    </message>
+    <message>
+        <source>rules</source>
+        <translation>Regeln</translation>
+    </message>
+    <message>
+        <source>rules with a problem</source>
+        <translation>Regeln mit Problem</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/job</name>
+    <message>
+        <source>Audit trail</source>
+        <translation>Audit-Protokoll</translation>
+    </message>
+    <message>
+        <source>Audit trail of this job</source>
+        <translation>Audit-Protokoll dieses Auftrags</translation>
     </message>
 </context>
 </TS>
