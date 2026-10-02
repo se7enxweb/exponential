@@ -110,6 +110,8 @@ return array(
       'Exponential\\Service\\DraftsCleanup'                          => 'kernel/private/classes/services/draftscleanup.php',
       'Exponential\\Service\\SessionGarbageCollector'                => 'kernel/private/classes/services/sessiongarbagecollector.php',
       'Exponential\\Service\\Trash'                                  => 'kernel/private/classes/services/trash.php',
+      'Exponential\\Service\\TrashList'                              => 'kernel/private/classes/services/trashlist.php',
+      'Exponential\\Service\\TrashRecord'                            => 'kernel/private/classes/services/trashrecord.php',
       'Exponential\\View\\Kernel\\Class\\Classlist'                  => 'kernel/private/classes/views/class/classlist.php',
       'Exponential\\View\\Kernel\\Class\\Copy'                       => 'kernel/private/classes/views/class/copy.php',
       'Exponential\\View\\Kernel\\Class\\Edit'                       => 'kernel/private/classes/views/class/edit.php',
