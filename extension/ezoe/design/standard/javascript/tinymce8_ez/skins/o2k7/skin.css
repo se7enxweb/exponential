@@ -138,6 +138,9 @@
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezliteral"] .tox-icon,
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="charmap"] .tox-icon,
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="table"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablerow"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablecell"] .tox-icon,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztable"] .tox-icon,
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledelete"] .tox-icon,
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeletecol"] .tox-icon,
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeleterow"] .tox-icon,
@@ -179,6 +182,9 @@
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezliteral"] .tox-icon svg,
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="charmap"] .tox-icon svg,
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="table"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablerow"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablecell"] .tox-icon svg,
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztable"] .tox-icon svg,
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledelete"] .tox-icon svg,
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeletecol"] .tox-icon svg,
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeleterow"] .tox-icon svg,
@@ -217,6 +223,9 @@
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="ezliteral"] .tox-icon { background-position: -420px -40px; }
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="charmap"] .tox-icon { background-position: -240px 0; }
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="table"] .tox-icon { background-position: -580px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablerow"] .tox-icon { background-position: -780px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztablecell"] .tox-icon { background-position: -600px -20px; }
+.tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="eztable"] .tox-icon { background-position: -580px -20px; }
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledelete"] .tox-icon { background-position: -620px -20px; }
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeletecol"] .tox-icon { background-position: -640px -20px; }
 .tox.ezoe-skin-o2k7 .tox-toolbar [data-mce-name="tabledeleterow"] .tox-icon { background-position: -660px -20px; }

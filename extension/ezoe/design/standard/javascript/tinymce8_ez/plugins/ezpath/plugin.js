@@ -123,12 +123,12 @@
                 case 'anchor':
                     return 'mceAnchor';
                 case 'table':
-                    return 'mceTableProps';
+                    return 'ezTable';
                 case 'tr':
-                    return 'mceTableRowProps';
+                    return 'ezTableRow';
                 case 'td':
                 case 'th':
-                    return 'mceTableCellProps';
+                    return 'ezTableCell';
             }
             return null;
         };
@@ -152,9 +152,6 @@
                     var node = selectedElement(), command = node && dialogCommand( node );
                     if ( !command )
                         return;
-                    // the table row dialog works on the cell the cursor is in
-                    if ( command === 'mceTableRowProps' && node.cells && node.cells[0] )
-                        editor.selection.setCursorLocation( node.cells[0], 0 );
                     // the ez dialogs take the element, the TinyMCE ones use the selection
                     editor.execCommand( command, false, /^ez/.test( command ) ? node : undefined );
                 }, 0 );

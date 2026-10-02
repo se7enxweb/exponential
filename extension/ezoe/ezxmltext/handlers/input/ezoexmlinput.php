@@ -98,7 +98,8 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'engine_switch_enabled',
                       'tinymce8_cache_key',
                       'literal_definition',
-                      'embed_definitions' ),
+                      'embed_definitions',
+                      'table_definitions' ),
                       parent::attributes() );
     }
 
@@ -136,6 +137,17 @@ class eZOEXMLInput extends eZXMLInputHandler
             $attr = self::getTinyMCE8CacheKey();
         else if ( $name === 'literal_definition' )
             $attr = self::getTagDefinition( 'literal' );
+        else if ( $name === 'table_definitions' )
+        {
+            // classes and custom attributes of table, tr, td and th plus content.ini [table] Defaults
+            $attr = array();
+            foreach ( array( 'table', 'tr', 'td', 'th' ) as $tagName )
+            {
+                $attr[$tagName] = self::getTagDefinition( $tagName );
+            }
+            $contentIni = eZINI::instance( 'content.ini' );
+            $attr['table']['defaults'] = (object) ( $contentIni->hasVariable( 'table', 'Defaults' ) ? $contentIni->variable( 'table', 'Defaults' ) : array() );
+        }
         else if ( $name === 'embed_definitions' )
         {
             $attr = array();

@@ -185,8 +185,9 @@ window.eZOe8Dialog = (function () {
         {
             case 'select':
                 field.type = 'listbox';
+                // the key -0- stands for an empty value, like customattributes/select.tpl
                 field.items = Object.keys( attribute.selection || {} ).map( function ( key ) {
-                    return { text: attribute.selection[key], value: key };
+                    return { text: attribute.selection[key], value: key === '-0-' ? '' : key };
                 } );
                 if ( !field.items.length )
                     field.items = [ { text: '', value: '' } ];
@@ -216,7 +217,9 @@ window.eZOe8Dialog = (function () {
             return value !== undefined && value !== '' && value !== 'false';
         if ( attribute.type === 'select' && value === undefined )
         {
-            var keys = Object.keys( attribute.selection || {} );
+            var keys = Object.keys( attribute.selection || {} ).map( function ( key ) {
+                return key === '-0-' ? '' : key;
+            } );
             return keys.indexOf( attribute['default'] ) !== -1 ? attribute['default'] : ( keys[0] || '' );
         }
         return value === undefined ? ( attribute['default'] || '' ) : value;
@@ -235,7 +238,7 @@ window.eZOe8Dialog = (function () {
         var tr = function ( text ) {
             return t( text ).replace( '%s', attribute.name );
         };
-        if ( attribute.required && ( value === null || ( attribute.type === 'select' && value === Object.keys( attribute.selection || {} )[0] ) ) )
+        if ( attribute.required && ( value === null || ( attribute.type === 'select' && value === ( Object.keys( attribute.selection || {} )[0] || '' ).replace( /^-0-$/, '' ) ) ) )
             return tr( 'Please fill in: %s' );
         if ( value === null )
             return ( attribute.type === 'int' || attribute.type === 'number' ) && !attribute.allowEmpty ? tr( 'Please fill in: %s' ) : null;
