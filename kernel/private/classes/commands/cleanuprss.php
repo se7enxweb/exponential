@@ -1,0 +1,70 @@
+<?php
+/**
+ * The code of bin/php/cleanuprss.php, moved into a class (#207 stage 1). The file bin/php/cleanuprss.php is one call to it.
+ * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ */
+
+namespace Exponential\Command\Kernel
+{
+
+class Cleanuprss extends \Exponential\Runnable\Command
+{
+    public function run()
+    {
+        // the script's variables were globals; functions of the script read them with "global"
+        foreach ( array( 'cleanup', 'cli', 'counts', 'options', 'script' ) as $__name )
+            ${$__name} = &$GLOBALS[$__name];
+        unset( $__name );
+
+        $cli    = \eZCLI::instance();
+        $script = \eZScript::instance(
+            array(
+                'description' => "Exponential RSS Import Cleanup\n" .
+                                 "Keeps the newest items of each active RSS import and removes the rest.\n" .
+                                 "\n" .
+                                 "Configured in content.ini [RSSImportCleanupSettings]; it removes nothing\n" .
+                                 "until that names the classes it is allowed to remove.\n" .
+                                 "\n" .
+                                 "./bin/php/cleanuprss.php --dry-run",
+                'use-session'    => false,
+                'use-modules'    => true,
+                'use-extensions' => true
+            )
+        );
+
+        $script->startup();
+
+        $options = $script->getOptions(
+            "[dry-run][keep:]",
+            "",
+            array( 'dry-run' => 'List what would be removed, and remove nothing',
+                   'keep'    => 'Keep this many items per feed instead of the configured number' ) );
+
+        $script->initialize();
+
+        $cleanup = new \expCleanupRSS(
+            array( 'dry-run' => (bool)$options['dry-run'],
+                   'keep'    => $options['keep'] !== null ? (int)$options['keep'] : null ) );
+
+        if ( !$cleanup->isEnabled() )
+        {
+            // Not an error: an installation that has not asked for this is the normal
+            // case, and the run says which setting is holding it rather than going
+            // quiet and leaving the operator to guess.
+            $cli->warning( 'Nothing was removed: ' . $cleanup->reason() );
+            $script->shutdown( 0 );
+        }
+
+        $cleanup->cleanup();
+
+        $counts = $cleanup->counts();
+
+        $cli->output();
+        $cli->output( sprintf( '%d feed(s), %d item(s) above the limit, %d removed.',
+                               $counts['feeds'], $counts['examined'], $counts['removed'] ) );
+
+        $script->shutdown( 0 );
+    }
+}
+
+}

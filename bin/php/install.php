@@ -63,72 +63,6 @@ $options = array(
 $flags = array( 'force' => false, 'dry-run' => false, 'print' => false, 'help' => false, 'allow-root-user' => false,
                 'random-password' => false );
 
-function installUsage()
-{
-    echo <<<TXT
-Usage: ./console exp:install [options]
-
-Installs Exponential in one command: no kickstart.ini to write first.
-Everything has a default, so "./console exp:install" alone installs the
-multisite package on SQLite with the administrator admin / publish.
-
-Database (default: SQLite, no server needed)
-  --db=<type>            sqlite (default), mysql, pgsql, mongodb or oracle
-                         (oracle: needs oci8 and extension/ezoracle)
-  --db-host=<host>       default localhost
-  --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
-                         1521 (oracle)
-  --db-name=<name>       default exponential (exponential.db for sqlite);
-                         oracle: the service name, default FREEPDB1, used as
-                         host:port/service; a full connect string (with / or
-                         a descriptor) or @alias (a TNS alias) is used as it is
-  --db-user=<user>       default root (mysql), postgres (pgsql), none otherwise
-  --db-password=<pass>   default none; or set EXP_INSTALL_DB_PASSWORD, which
-                         keeps it out of the process list and shell history
-  --db-socket=<path>     MySQL socket, instead of host and port
-  --db-action=<action>   remove (default: empty the database first), ignore, skip
-
-Site
-  --package=<name>       site package, default sevenx_multisite
-  --language=<locale>    primary language, default eng-US
-  --languages=<a,b>      more languages, e.g. ger-DE,fre-FR
-  --title=<text>         site name, default Exponential
-  --url=<url>            where the site is, e.g. https://www.example.com
-                         (default: http://localhost)
-  --access=<type>        how siteaccesses are told apart: url (default,
-                         /site and /admin), host or port
-  --site-access=<name>   public siteaccess, default site
-  --admin-access=<name>  admin siteaccess, default admin
-  --host=<host>          public host (implies --access=host)
-  --admin-host=<host>    admin host (implies --access=host)
-  --port=<port>          public port, default 8080 (with --access=port)
-  --admin-port=<port>    admin port, default 8081 (with --access=port)
-
-Administrator (login: admin)
-  --email=<address>      default nospam@exponential.earth
-  --password=<pass>      default publish
-  --random-password      generate a strong one instead (24 characters of the
-                         bcrypt alphabet ./A-Za-z0-9), shown once at the end
-  --first-name=<name>    default Administrator
-  --last-name=<name>     default User
-
-Run
-  --force                install over an existing installation (replaces its
-                         database and settings)
-  --dry-run              check the configuration and the packages, install nothing
-  --print                show the configuration that would be used and stop
-  --help                 this help
-
-Examples
-  ./console exp:install
-  ./console exp:install --db=mysql --db-name=site --db-user=site --db-password=secret
-  ./console exp:install --db=pgsql --db-host=db.local --db-user=exp --db-password=secret
-  ./console exp:install --db=mongodb --db-name=exponential --url=https://www.example.com
-  ./console exp:install --access=host --host=www.example.com --admin-host=admin.example.com
-
-TXT;
-}
-
 foreach ( $argvIn as $arg )
 {
     if ( !preg_match( '/^--([a-z][a-z-]*)(?:=(.*))?$/s', $arg, $m ) )
@@ -288,35 +222,6 @@ $sections = array(
     'registration'     => array( 'Send' => 'false' ),
 );
 
-function installIniText( array $sections, $mask )
-{
-    $lines = array( '; Written by exp:install for one installation run; see kickstart.ini-dist.', '' );
-    foreach ( $sections as $section => $values )
-    {
-        $lines[] = "[$section]";
-        $lines[] = 'Continue=true';
-        foreach ( $values as $key => $value )
-        {
-            if ( is_array( $value ) )
-            {
-                foreach ( $value as $item )
-                    $lines[] = $key . '[]=' . $item;
-                continue;
-            }
-            if ( $mask && $key === 'Password' && $value !== '' )
-                $value = '***';
-            if ( preg_match( '/[\r\n]/', (string)$value ) )
-            {
-                fwrite( STDERR, "A value for $section/$key contains a line break\n" );
-                exit( 1 );
-            }
-            $lines[] = $key . '=' . $value;
-        }
-        $lines[] = '';
-    }
-    return implode( "\n", $lines );
-}
-
 if ( $flags['print'] )
 {
     echo installIniText( $sections, true );
@@ -416,13 +321,100 @@ echo "exp:install: {$options['package']} on $db"
 
 require_once 'autoload.php';
 
-$forward = array( '--force' );
-if ( $flags['dry-run'] )
-    $forward = array( '--dry-run' );
-if ( $flags['allow-root-user'] )
-    $forward[] = '--allow-root-user';
+function installUsage()
+{
+    echo <<<TXT
+Usage: ./console exp:install [options]
 
-$runner = new expKickstarter( $rootDir, $forward );
-$exitCode = $runner->run();
+Installs Exponential in one command: no kickstart.ini to write first.
+Everything has a default, so "./console exp:install" alone installs the
+multisite package on SQLite with the administrator admin / publish.
 
-exit( $exitCode );
+Database (default: SQLite, no server needed)
+  --db=<type>            sqlite (default), mysql, pgsql, mongodb or oracle
+                         (oracle: needs oci8 and extension/ezoracle)
+  --db-host=<host>       default localhost
+  --db-port=<port>       default 3306 (mysql), 5432 (pgsql), 27017 (mongodb),
+                         1521 (oracle)
+  --db-name=<name>       default exponential (exponential.db for sqlite);
+                         oracle: the service name, default FREEPDB1, used as
+                         host:port/service; a full connect string (with / or
+                         a descriptor) or @alias (a TNS alias) is used as it is
+  --db-user=<user>       default root (mysql), postgres (pgsql), none otherwise
+  --db-password=<pass>   default none; or set EXP_INSTALL_DB_PASSWORD, which
+                         keeps it out of the process list and shell history
+  --db-socket=<path>     MySQL socket, instead of host and port
+  --db-action=<action>   remove (default: empty the database first), ignore, skip
+
+Site
+  --package=<name>       site package, default sevenx_multisite
+  --language=<locale>    primary language, default eng-US
+  --languages=<a,b>      more languages, e.g. ger-DE,fre-FR
+  --title=<text>         site name, default Exponential
+  --url=<url>            where the site is, e.g. https://www.example.com
+                         (default: http://localhost)
+  --access=<type>        how siteaccesses are told apart: url (default,
+                         /site and /admin), host or port
+  --site-access=<name>   public siteaccess, default site
+  --admin-access=<name>  admin siteaccess, default admin
+  --host=<host>          public host (implies --access=host)
+  --admin-host=<host>    admin host (implies --access=host)
+  --port=<port>          public port, default 8080 (with --access=port)
+  --admin-port=<port>    admin port, default 8081 (with --access=port)
+
+Administrator (login: admin)
+  --email=<address>      default nospam@exponential.earth
+  --password=<pass>      default publish
+  --random-password      generate a strong one instead (24 characters of the
+                         bcrypt alphabet ./A-Za-z0-9), shown once at the end
+  --first-name=<name>    default Administrator
+  --last-name=<name>     default User
+
+Run
+  --force                install over an existing installation (replaces its
+                         database and settings)
+  --dry-run              check the configuration and the packages, install nothing
+  --print                show the configuration that would be used and stop
+  --help                 this help
+
+Examples
+  ./console exp:install
+  ./console exp:install --db=mysql --db-name=site --db-user=site --db-password=secret
+  ./console exp:install --db=pgsql --db-host=db.local --db-user=exp --db-password=secret
+  ./console exp:install --db=mongodb --db-name=exponential --url=https://www.example.com
+  ./console exp:install --access=host --host=www.example.com --admin-host=admin.example.com
+
+TXT;
+}
+
+function installIniText( array $sections, $mask )
+{
+    $lines = array( '; Written by exp:install for one installation run; see kickstart.ini-dist.', '' );
+    foreach ( $sections as $section => $values )
+    {
+        $lines[] = "[$section]";
+        $lines[] = 'Continue=true';
+        foreach ( $values as $key => $value )
+        {
+            if ( is_array( $value ) )
+            {
+                foreach ( $value as $item )
+                    $lines[] = $key . '[]=' . $item;
+                continue;
+            }
+            if ( $mask && $key === 'Password' && $value !== '' )
+                $value = '***';
+            if ( preg_match( '/[\r\n]/', (string)$value ) )
+            {
+                fwrite( STDERR, "A value for $section/$key contains a line break\n" );
+                exit( 1 );
+            }
+            $lines[] = $key . '=' . $value;
+        }
+        $lines[] = '';
+    }
+    return implode( "\n", $lines );
+}
+
+// The code is in kernel/private/classes/commands/install.php (#207); this file is the entry point.
+\Exponential\Command\Kernel\Install::main( __FILE__ );

@@ -1,0 +1,85 @@
+<?php
+/**
+ * The code of bin/php/clusterpurge.php, moved into a class (#207 stage 1). The file bin/php/clusterpurge.php is one call to it.
+ * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ */
+
+namespace Exponential\Command\Kernel
+{
+
+class Clusterpurge extends \Exponential\Runnable\Command
+{
+    public function run()
+    {
+        // the script's variables were globals; functions of the script read them with "global"
+        foreach ( array( 'cli', 'options', 'purgeHandler', 'script', 'sys' ) as $__name )
+            ${$__name} = &$GLOBALS[$__name];
+        unset( $__name );
+
+        $cli = \eZCLI::instance();
+        $script = \eZScript::instance( array( 'description' => ( "Exponential cluster files purge\n" .
+                                                                "Physically purges files\n" .
+                                                                "\n" .
+                                                                "./bin/php/clusterpurge.php --scopes=scope1,scope2" ),
+                                             'use-session' => false,
+                                             'use-modules' => false,
+                                             'use-extensions' => true ) );
+
+        $script->startup();
+
+        $options = $script->getOptions( "[dry-run][iteration-sleep:][iteration-limit:][memory-monitoring][scopes:][expiry:]",
+        "",
+        array( 'dry-run' => 'Test mode, output the list of affected files without removing them',
+               'iteration-sleep' => 'Amount of seconds to sleep between each iteration when performing a purge operation, can be a float. Default is one second.',
+               'iteration-limit' => 'Amount of items to remove in each iteration when performing a purge operation. Default is 100.',
+               'memory-monitoring' => 'Generates memory monitoring output. If set, memory usage will be logged in var/log/clusterpurge.log.',
+               'scopes' => 'Comma separated list of file types to purge. Possible values are: classattridentifiers, classidentifiers, content, expirycache, statelimitations, user-info-cache, viewcache, wildcard-cache-index, image, binaryfile, media.',
+               'expiry' => 'Number of days since the file was expired. Only files older than this will be purged. Default is 30, minimum is 1.' ) );
+        $sys = \eZSys::instance();
+
+        $script->initialize();
+
+        if ( !\eZScriptClusterPurge::isRequired() )
+        {
+            $cli->error( "Your current cluster handler does not require files purge" );
+            $script->shutdown( 1 );
+        }
+
+        $purgeHandler = new \eZScriptClusterPurge();
+        if ( $options['dry-run'] )
+        {
+            $purgeHandler->optDryRun = true;
+        }
+
+        if ( $options['iteration-sleep'] )
+        {
+            $purgeHandler->optIterationSleep = (int)( $options['iteration-sleep'] * 1000000 );
+        }
+
+        if ( $options['iteration-limit'] )
+        {
+            $purgeHandler->optIterationLimit = (int)$options['iteration-limit'];
+        }
+
+        if ( $options['memory-monitoring'] )
+        {
+            $purgeHandler->optMemoryMonitoring = true;
+        }
+
+        if ( $options['scopes'] )
+        {
+            $purgeHandler->optScopes = explode( ',', $options['scopes'] );
+        }
+
+        if ( $options['expiry'] )
+        {
+            $purgeHandler->optExpiry = (int)$options['expiry'] * 86400; // 60*60*24
+        }
+
+        $purgeHandler->run();
+
+        $script->shutdown();
+    }
+}
+
+}
