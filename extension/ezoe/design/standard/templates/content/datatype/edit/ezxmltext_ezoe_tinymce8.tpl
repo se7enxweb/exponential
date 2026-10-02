@@ -43,7 +43,8 @@ var eZOe8GlobalSettings = {ldelim}
     {/if}
     directionality: '{$directionality}',
     external_plugins: {ldelim}
-        ezembed: {'javascript/tinymce8_ez/plugins/ezembed/plugin.js'|ezdesign}
+        ezembed: {'javascript/tinymce8_ez/plugins/ezembed/plugin.js'|ezdesign},
+        ezcustomtag: {'javascript/tinymce8_ez/plugins/ezcustomtag/plugin.js'|ezdesign}
     {rdelim},
     plugins: 'lists advlist autolink link anchor table charmap pagebreak fullscreen code help',
     menubar: false,
@@ -70,7 +71,9 @@ var eZOe8GlobalSettings = {ldelim}
     table_default_attributes: {ldelim} border: '0' {rdelim},
     noneditable_class: 'ezoeItemNonEditable',
     browser_spellcheck: true,
-    contextmenu: 'link ezembed table',
+    contextmenu: 'link ezembed ezcustomtag table',
+    ez_custom_tags: {json_encode( $input_handler.custom_tag_definitions )},
+    ez_custom_attribute_style_map: {json_encode( ezini( 'EditorSettings', 'CustomAttributeStyleMap', 'ezoe.ini',,true() ) )},
     ez_settings: {ldelim}
         root_url: {'/'|ezroot},
         extension_url: {'/ezoe/'|ezurl},
@@ -88,7 +91,7 @@ var eZOe8GlobalSettings = {ldelim}
 
 {literal}
 // Maps the button names of ezoe.ini [EditorLayout] Buttons[] (TinyMCE 3 ez theme) to TinyMCE 8 toolbar items.
-// Buttons without a counterpart in the prototype (custom, literal, ...) are dropped.
+// Buttons without a counterpart in the prototype (literal, ...) are dropped.
 var eZOe8ButtonMap = {
     formatselect: 'blocks', bold: 'bold', italic: 'italic', underline: 'underline',
     sub: 'subscript', sup: 'superscript',
@@ -97,6 +100,7 @@ var eZOe8ButtonMap = {
     undo: 'undo', redo: 'redo',
     link: 'link', unlink: 'unlink', anchor: 'anchor',
     image: 'ezembed', object: 'ezembed', file: 'ezembed',
+    custom: 'ezcustomtag',
     charmap: 'charmap', pagebreak: 'pagebreak',
     table: 'table',
     fullscreen: 'fullscreen', help: 'help',

@@ -93,7 +93,8 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'version',
                       'ezpublish_version',
                       'xml_tag_alias',
-                      'json_xml_tag_alias' ),
+                      'json_xml_tag_alias',
+                      'custom_tag_definitions' ),
                       parent::attributes() );
     }
 
@@ -123,6 +124,8 @@ class eZOEXMLInput extends eZXMLInputHandler
             $attr =  self::getXmlTagAliasList();
         else if ( $name === 'json_xml_tag_alias' )
             $attr =  json_encode( self::getXmlTagAliasList() );
+        else if ( $name === 'custom_tag_definitions' )
+            $attr = self::getCustomTagDefinitions();
         else
             $attr = parent::attribute( $name );
         return $attr;
@@ -210,6 +213,80 @@ class eZOEXMLInput extends eZXMLInputHandler
             self::$xmlTagAliasList = $ezoeIni->variable( 'EditorSettings', 'XmlTagNameAlias' );
         }
         return self::$xmlTagAliasList;
+    }
+
+     /**
+     * getCustomTagDefinitions
+     * Custom tags with their custom attribute settings, resolved like design:ezoe/customattributes.tpl
+     * does for the TinyMCE 3 dialogs, for use by the TinyMCE 8 ezcustomtag plugin.
+     *
+     * @static
+     * @return array List of hashes with name, title, inline (true|false|'image'), icon and attributes
+     */
+    public static function getCustomTagDefinitions()
+    {
+        $contentIni    = eZINI::instance( 'content.ini' );
+        $attributesIni = eZINI::instance( 'ezoe_attributes.ini' );
+        $descriptions  = $contentIni->hasVariable( 'CustomTagSettings', 'CustomTagsDescription' )
+                       ? $contentIni->variable( 'CustomTagSettings', 'CustomTagsDescription' ) : array();
+        $labels        = array(
+            'align'  => ezpI18n::tr( 'design/standard/ezoe', 'Align' ),
+            'author' => ezpI18n::tr( 'design/standard/ezoe', 'Author' ),
+            'title'  => ezpI18n::tr( 'design/standard/ezoe', 'Title' ),
+            'name'   => ezpI18n::tr( 'design/standard/ezoe', 'Name' ),
+            'size'   => ezpI18n::tr( 'design/standard/ezoe', 'Size' ),
+            'class'  => ezpI18n::tr( 'design/standard/ezoe', 'Class' ),
+            'id'     => ezpI18n::tr( 'design/standard/ezoe', 'ID' ),
+        );
+        $definitions = array();
+
+        foreach ( array_unique( $contentIni->variable( 'CustomTagSettings', 'AvailableCustomTags' ) ) as $tagName )
+        {
+            $inline = self::customTagIsInline( $tagName );
+            $definition = array(
+                'name'       => $tagName,
+                'title'      => isset( $descriptions[$tagName] ) ? $descriptions[$tagName] : $tagName,
+                'inline'     => is_string( $inline ) ? 'image' : $inline,
+                'icon'       => is_string( $inline ) ? self::getDesignFile( $inline ) : '',
+                'attributes' => array(),
+            );
+
+            $attributeNames = $contentIni->hasVariable( $tagName, 'CustomAttributes' )
+                            ? array_unique( $contentIni->variable( $tagName, 'CustomAttributes' ) ) : array();
+            $defaults       = $contentIni->hasVariable( $tagName, 'CustomAttributesDefaults' )
+                            ? $contentIni->variable( $tagName, 'CustomAttributesDefaults' ) : array();
+
+            foreach ( $attributeNames as $attributeName )
+            {
+                if ( $attributeName === '' )
+                    continue;
+
+                $section = $attributesIni->hasSection( 'CustomAttribute_' . $tagName . '_' . $attributeName )
+                         ? 'CustomAttribute_' . $tagName . '_' . $attributeName
+                         : 'CustomAttribute_' . $attributeName;
+                $setting = function ( $name, $default = '' ) use ( $attributesIni, $section )
+                {
+                    return $attributesIni->hasVariable( $section, $name ) ? $attributesIni->variable( $section, $name ) : $default;
+                };
+
+                $definition['attributes'][] = array(
+                    'id'         => $attributeName,
+                    'name'       => $setting( 'Name', isset( $labels[$attributeName] ) ? $labels[$attributeName] : ucfirst( $attributeName ) ),
+                    'title'      => $setting( 'Title' ),
+                    'type'       => $setting( 'Type', 'text' ),
+                    'default'    => $setting( 'Default', isset( $defaults[$attributeName] ) ? $defaults[$attributeName] : '' ),
+                    'required'   => $setting( 'Required' ) === 'true',
+                    'allowEmpty' => $setting( 'AllowEmpty' ) === 'true',
+                    'disabled'   => $setting( 'Disabled' ) === 'true',
+                    'selection'  => (object) $setting( 'Selection', array() ),
+                    'minimum'    => $setting( 'Minimum', null ),
+                    'maximum'    => $setting( 'Maximum', null ),
+                    'rows'       => (int) $setting( 'Rows', 0 ),
+                );
+            }
+            $definitions[] = $definition;
+        }
+        return $definitions;
     }
 
      /**
