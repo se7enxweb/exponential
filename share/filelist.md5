@@ -13,7 +13,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 9a1f9e2c04ec0b9d6622e9e035c1f28d  README.md
 22f59f1e69f96646a1d133d0bd3dd982  SECURITY.md
 3b96782129fa8a60261a41688f7c0c3c  autoload.php
-503c2092e1d115d6d820d5e41279ca06  autoload/ezp_kernel.php
+cfe4d98c92fb75d62bd970d5303b90b6  autoload/ezp_kernel.php
 27edf0b9e8d71e7ce054d8d8153e138f  benchmarks/classes/ezbenchmark.php
 054faa44d26c4a8e24bf7c63d7fd7ab2  benchmarks/classes/ezbenchmarkcase.php
 e987da229be60f6c0644adee57d39fb3  benchmarks/classes/ezbenchmarkclirunner.php
@@ -67,6 +67,7 @@ e7c1207a587636111f1baa28bfd7e764  bin/php/ezflowupgrade.php
 a411a0fc493ef3040aad529e0c7e89f8  bin/php/ezimportdbafile.php
 5d369bd557b6dd70f6a4a7a951db6cba  bin/php/ezpgenerateautoloads.php
 648ed547cfc00225d559d9353e2d2afc  bin/php/ezpublishingbenchmark.php
+1dd4f3cd0d0e52a009359c3f7ccb51c4  bin/php/ezrequestrules.php
 04bc607f2702bb1bf216a6cf4143f57c  bin/php/ezsessiongc.php
 cfad7d02509be81928adf6bc341a079c  bin/php/ezsqldiff.php
 82ba5658d5db0ff35981a4a8765dbcf9  bin/php/ezsqldumpisbndata.php
@@ -2575,6 +2576,7 @@ ebb0156423f5ee0db9b6063bb7869984  doc/bc/6.0/role-policy-paging.md
 dae84ba61ac5e4c4a01376384118a8c0  doc/bc/6.0/sql-query-cache.md
 d50a589023f74958dcea0f22c716acec  doc/bc/6.0/velocity-engines.md
 b1146f7626848f499ad0fff06e01fd98  doc/bc/6.0/velocity-ondisk-layout.md
+8393213247effdeecaf5c25efbdcdf9d  doc/bc/6.0/view_full_security.md
 adac5192811bf518d52266dd4a6b0e72  doc/branch-overview
 0959bdd0da20ca86c663052e954574b8  doc/changelogs/2.9/CHANGELOG-2.9-1
 a33feab70666fd6404e65c9acee9b2f4  doc/changelogs/2.9/CHANGELOG-2.9-2
@@ -6239,7 +6241,7 @@ fd368b0c360c11a20e7e55a3728244e2  kernel/content/ezcontentoperationcollection.ph
 0b5b06f5595808b6009f68cbab78a0be  kernel/content/hide.php
 d3820997a7fcb367456b16fd83ff83bf  kernel/content/history.php
 df10a9af5cccf2f3e71c90f946730687  kernel/content/keyword.php
-6e801e54fda9e3f7f68fa0a552db46cf  kernel/content/module.php
+1f4bcd9ade43e634520422e87d2e8e7c  kernel/content/module.php
 117902af77d6b17adaf8655dff7df82a  kernel/content/move.php
 059029dd7c2b5776b648e4535c057490  kernel/content/multiedit.php
 1edb857ecfb33c6f7ecc9da9e3710d0b  kernel/content/multiedit_functions.php
@@ -6378,7 +6380,7 @@ af83028c1031c2bf806f14db06616659  kernel/private/classes/ezpextension.php
 86bdb9f30bc9936abd83ceb015a05379  kernel/private/classes/ezpkernelredirect.php
 c209d9d72daf86a9eb0e0de775a49958  kernel/private/classes/ezpkernelresult.php
 f4c6d92b1fcd6d3b847f89ae9ac7b2a4  kernel/private/classes/ezpkerneltreemenu.php
-b349cf4eeb6dbcf2cbd279eb36c400f7  kernel/private/classes/ezpkernelweb.php
+ba0c599a71af454e54ae5b1cfce3ef02  kernel/private/classes/ezpkernelweb.php
 6159d249e9b9a74e14a8bf8921c36a41  kernel/private/classes/ezplanguageswitcher.php
 2bfb085e092fb0c741d2ba0fec8996ec  kernel/private/classes/ezpmail.php
 a5c6868c21944f98d32c76a4c8c8b234  kernel/private/classes/ezpmobiledevicedetect.php
@@ -6397,7 +6399,15 @@ a088f1bce8604bdd3db6787302c86f4f  kernel/private/classes/ezscriptclusterpurge.ph
 8d5e3bb4c1194f55c3cba4515df9016b  kernel/private/classes/global_functions.php
 26ad83f48c462dafccc69dff396b63e4  kernel/private/classes/httpcache/ezphttpcachecontract.php
 efce851fd45df8e8213d371b6d7b6708  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
-6a27ae4e50f4ec88b214ea42993a21fd  kernel/private/classes/httpcache/ezphttpcachelistener.php
+837e1ce0c2ab01f52e9713aa14648d06  kernel/private/classes/httpcache/ezphttpcachelistener.php
+d31c1335c40060e29fd17d14eeff3e94  kernel/private/classes/requestrules/ezprequestcontext.php
+61dc81b6e01136bd7e9ce0ef279e6094  kernel/private/classes/requestrules/ezprequestrule.php
+29b4c67819c42d499210386b9e70d88d  kernel/private/classes/requestrules/ezprequestruleactions.php
+cd0e0e5bc95e99588ed20bb57fe80687  kernel/private/classes/requestrules/ezprequestruleconditions.php
+4a8d48c4c3281ab103afe5113fe791f1  kernel/private/classes/requestrules/ezprequestruleengine.php
+bdb0ad9204cf376e3e303b8ae2796e88  kernel/private/classes/requestrules/ezprequestruleinterfaces.php
+790190388e653e6f49075e4e0f8d1dfb  kernel/private/classes/requestrules/ezprequestrulekernel.php
+8d2e3bc0f0f90ea7dd1930014d51441b  kernel/private/classes/requestrules/ezprequestruleresult.php
 070a8395d618cad456a4771116b8b7a5  kernel/private/classes/treemenu_functions.php
 e85353ea3cf1dd7abf67994eb6f126a4  kernel/private/classes/urlaliasfilters/ezurlaliasfilterappendnodeid.php
 095e5f36a67489e6c43ffeedb7b927e8  kernel/private/classes/webdav/ezwebdavcontentbackend.php
@@ -7013,6 +7023,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
 3a13a85a0747ba7150891dfbb20b25db  settings/pdf.ini
 9bc9f7cc6a5478119f3a150b1ce7d177  settings/querycache.ini
+744f63beb0a42c8ec1f29c355e81fd5c  settings/requestrules.ini
 5e1cd5e77b6a5d415a62c097b34e9fb4  settings/rest.ini
 80e160621a67179c48c9251c75541cdb  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
@@ -7648,6 +7659,7 @@ c945371fc75a2eb8b8866f31bf84fe0e  tests/tests/kernel/classes/ezurlwildcard_regre
 dbb6140b26270b36dfb4c401ab04e47d  tests/tests/kernel/classes/ezworkflowevent_regression.php
 83fef56548bc81897515d47d4cc08688  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 40138e335320014eda7236ecc9ebb8a1  tests/tests/kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule_regression.php
+2f3f75663733de9be01ae8f72d3bcbd0  tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php
 822ca872c02124807db0d09eb77e51da  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
 3b012276860b70c1bf74047f97abfcfb  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
 6d0e3d67c9814153021ee091579c7c24  tests/tests/kernel/classes/security/stubs.php
