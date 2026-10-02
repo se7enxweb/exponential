@@ -311,8 +311,9 @@
             editor.windowManager.open( spec( current, initialData( current ) ) );
         };
 
-        var openForSelection = function () {
-            openDialog( getCustomTag( editor.selection.getNode() ) );
+        var openForSelection = function ( ui, element ) {
+            // the command takes an optional element, e.g. from a click on the status bar path
+            openDialog( getCustomTag( element && element.nodeType === 1 ? element : editor.selection.getNode() ) );
         };
 
         var removeCustomTag = function () {

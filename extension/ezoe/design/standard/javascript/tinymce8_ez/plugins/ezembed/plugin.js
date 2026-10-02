@@ -36,6 +36,7 @@
         'Upload local file': 'Datei hochladen',
         'Uploading…': 'Wird hochgeladen …',
         'Please choose a file.': 'Bitte eine Datei auswählen.',
+        'Uploaded, press OK to embed it:': 'Hochgeladen, mit OK einbetten:',
         'Drop a file here': 'Datei hierher ziehen',
         'Browse for a file': 'Datei auswählen',
         'This file type can not be uploaded, allowed are:': 'Dieser Dateityp kann nicht hochgeladen werden, erlaubt sind:',
@@ -334,9 +335,9 @@
                         // Enter in the search field submits the dialog, treat it as search
                         if ( state.tab === 'search' && String( d.query ).trim() )
                             return runSearch( dialogApi, 0 );
-                        // OK on the upload tab with a chosen file uploads it first
+                        // OK on the upload tab with a chosen file uploads it and embeds it right away
                         if ( state.tab === 'upload' && d.uploadFile && d.uploadFile.length )
-                            return runUpload( dialogApi );
+                            return runUpload( dialogApi, true );
 
                         if ( !embedId )
                         {
@@ -344,16 +345,7 @@
                             return;
                         }
 
-                        dialogApi.block( t( 'Loading preview…' ) );
-                        buildEmbedHtml( embedId, d ).then( function ( html ) {
-                            dialogApi.unblock();
-                            dialogApi.close();
-                            if ( target )
-                                editor.selection.select( target );
-                            editor.insertContent( html );
-                        } ).catch( function ( e ) {
-                            fail( dialogApi, e );
-                        } );
+                        insertEmbed( dialogApi, embedId, d );
                     },
                     onClose: function () {
                         if ( unbind )
@@ -412,7 +404,21 @@
                 } );
             };
 
-            var runUpload = function ( dialogApi ) {
+            var insertEmbed = function ( dialogApi, embedId, d ) {
+                dialogApi.block( t( 'Loading preview…' ) );
+                buildEmbedHtml( embedId, d ).then( function ( html ) {
+                    dialogApi.unblock();
+                    dialogApi.close();
+                    if ( target )
+                        editor.selection.select( target );
+                    editor.insertContent( html );
+                } ).catch( function ( e ) {
+                    fail( dialogApi, e );
+                } );
+            };
+
+            // insertAfter: embed the new object directly (OK pressed), otherwise continue on Properties
+            var runUpload = function ( dialogApi, insertAfter ) {
                 var d = dialogApi.getData(), file = d.uploadFile && d.uploadFile[0];
                 if ( !file )
                 {
@@ -426,12 +432,18 @@
                     alternativeText: d.uploadAlt,
                     description: d.uploadDescription
                 } ).then( function ( result ) {
+                    var embedId = 'eZObject_' + result.objectId;
+                    if ( insertAfter )
+                        return insertEmbed( dialogApi, embedId, Object.assign( dialogApi.getData(), { embedId: embedId } ) );
                     // like eZOEPopupUtils.selectByEmbedId(): select the new object and continue on Properties
                     state.selectedName = result.name;
                     state.tab = 'properties';
                     redial( dialogApi, {
-                        embedId: 'eZObject_' + result.objectId,
+                        embedId: embedId,
                         uploadName: '', uploadFile: [], uploadAlt: '', uploadDescription: ''
+                    } );
+                    editor.notificationManager.open( {
+                        text: t( 'Uploaded, press OK to embed it:' ) + ' ' + result.name, type: 'success', timeout: 5000
                     } );
                 } ).catch( function ( e ) {
                     fail( dialogApi, e );
@@ -494,7 +506,10 @@
             openDialog( getEmbed( editor.selection.getNode() ) );
         };
 
-        editor.addCommand( 'ezEmbed', openForSelection );
+        // the command takes an optional element, e.g. from a click on the status bar path
+        editor.addCommand( 'ezEmbed', function ( ui, element ) {
+            openDialog( getEmbed( element && element.nodeType === 1 ? element : editor.selection.getNode() ) );
+        } );
 
         editor.ui.registry.addToggleButton( 'ezembed', {
             icon: 'embed',

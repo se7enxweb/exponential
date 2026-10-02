@@ -55,15 +55,18 @@
     {set $tiny_language = ''}
 {/if}
 
-<script src={'javascript/tinymce8/tinymce.min.js'|ezdesign} charset="utf-8"></script>
-<script src={'javascript/tinymce8_ez/ezoe_dialog.js'|ezdesign} charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href={'javascript/tinymce8_ez/ezoe_dialog.css'|ezdesign} />
+{def $cache_query = concat( '?v=', $input_handler.tinymce8_cache_key )}
+<script src="{'javascript/tinymce8/tinymce.min.js'|ezdesign( 'no' )}{$cache_query}" charset="utf-8"></script>
+<script src="{'javascript/tinymce8_ez/ezoe_dialog.js'|ezdesign( 'no' )}{$cache_query}" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="{'javascript/tinymce8_ez/ezoe_dialog.css'|ezdesign( 'no' )}{$cache_query}" />
 {if $skin|eq( 'o2k7' )}
-<link rel="stylesheet" type="text/css" href={'javascript/tinymce8_ez/skins/o2k7/skin.css'|ezdesign} />
+<link rel="stylesheet" type="text/css" href="{'javascript/tinymce8_ez/skins/o2k7/skin.css'|ezdesign( 'no' )}{$cache_query}" />
 {/if}
 <script type="text/javascript">
 var eZOe8GlobalSettings = {ldelim}
     license_key: 'gpl',
+    // TinyMCE loads plugins, skins and language packs itself, the suffix makes browsers reload changed files
+    cache_suffix: '{$cache_query}',
     {if $tiny_language}
     language: '{$tiny_language}',
     language_url: {concat( 'javascript/tinymce8/langs/', $tiny_language, '.js' )|ezdesign},
@@ -107,6 +110,7 @@ var eZOe8GlobalSettings = {ldelim}
     ez_skin_class: 'ezoe-skin-{$skin|wash}',
     ez_disable_editor_text: {json_encode( 'Disable editor'|i18n('design/standard/content/datatype') )},
     ez_xml_tag_alias: {$input_handler.json_xml_tag_alias},
+    ez_path_open_dialog: {cond( ezini( 'EditorSettings', 'TagPathOpenDialog', 'ezoe.ini',,true() )|eq( 'enabled' ), 'true', 'false' )},
     ez_custom_tags: {json_encode( $input_handler.custom_tag_definitions )},
     ez_link_classes: {json_encode( $link_classes )},
     ez_link_view_modes: {json_encode( ezini( 'link', 'AvailableViewModes', 'content.ini' ) )},

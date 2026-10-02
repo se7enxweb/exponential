@@ -95,7 +95,8 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'xml_tag_alias',
                       'json_xml_tag_alias',
                       'custom_tag_definitions',
-                      'engine_switch_enabled' ),
+                      'engine_switch_enabled',
+                      'tinymce8_cache_key' ),
                       parent::attributes() );
     }
 
@@ -129,6 +130,8 @@ class eZOEXMLInput extends eZXMLInputHandler
             $attr = self::getCustomTagDefinitions();
         else if ( $name === 'engine_switch_enabled' )
             $attr = self::engineSwitchEnabled();
+        else if ( $name === 'tinymce8_cache_key' )
+            $attr = self::getTinyMCE8CacheKey();
         else
             $attr = parent::attribute( $name );
         return $attr;
@@ -378,6 +381,40 @@ class eZOEXMLInput extends eZXMLInputHandler
                 eZDebug::writeError( 'Unknown custom HTTP action: ' . $action, __METHOD__ );
             } break;
         }
+    }
+
+     /**
+     * getTinyMCE8CacheKey
+     * Cache key for the files of the TinyMCE 8 editor, TinyMCE loads plugins, skins and language
+     * packs itself so browsers would keep old versions without it. Changes with every file change.
+     *
+     * @static
+     * @return string
+     */
+    public static function getTinyMCE8CacheKey()
+    {
+        static $key = null;
+        if ( $key === null )
+        {
+            $dir   = __DIR__ . '/../../../design/standard/javascript';
+            $times = array();
+            foreach ( array( $dir . '/tinymce8_ez', $dir . '/tinymce8/tinymce.min.js' ) as $path )
+            {
+                if ( is_file( $path ) )
+                {
+                    $times[] = filemtime( $path );
+                    continue;
+                }
+                if ( !is_dir( $path ) )
+                    continue;
+                foreach ( new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $path, FilesystemIterator::SKIP_DOTS ) ) as $file )
+                {
+                    $times[] = $file->getMTime();
+                }
+            }
+            $key = substr( md5( implode( ',', $times ) ), 0, 10 );
+        }
+        return $key;
     }
 
      /**

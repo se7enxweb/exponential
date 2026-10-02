@@ -51,7 +51,13 @@
 
     tinymce.PluginManager.add( 'ezlink', function ( editor ) {
 
-        editor.options.register( 'ez_link_classes', { processor: 'object', default: {} } );
+        // json_encode() of an empty hash in the template is [], accept both
+        editor.options.register( 'ez_link_classes', {
+            processor: function ( value ) {
+                return { valid: !!value && typeof value === 'object', value: Array.isArray( value ) ? {} : value };
+            },
+            default: {}
+        } );
         editor.options.register( 'ez_link_view_modes', { processor: 'array', default: [] } );
 
         var t = function ( text ) {
@@ -104,8 +110,9 @@
             } ) );
         };
 
-        var openDialog = function () {
-            var link = getLink( editor.selection.getNode() ),
+        // element: optional, e.g. from a click on the status bar path
+        var openDialog = function ( ui, element ) {
+            var link = getLink( element && element.nodeType === 1 ? element : editor.selection.getNode() ),
                 dom = editor.dom,
                 selectionText = editor.selection.isCollapsed() ? '' : editor.selection.getContent( { format: 'text' } ),
                 state = { tab: 'link', browse: null, search: null, searchText: '', targetInfo: '' },

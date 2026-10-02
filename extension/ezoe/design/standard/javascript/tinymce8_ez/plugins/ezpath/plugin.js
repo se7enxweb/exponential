@@ -4,6 +4,8 @@
  * Like the TinyMCE 3 ez theme (_updatePath / __tagsToXml): the path shows the ezxml tags instead
  * of the html elements, e.g. "paragraph » embed.right" or "table » table row » table cell",
  * using the friendly names of ezoe.ini [EditorSettings] XmlTagNameAlias and ".class" suffixes.
+ * With ezoe.ini [EditorSettings] TagPathOpenDialog=enabled a click on a path item opens the dialog
+ * of the tag like before (embed, custom tag, link, anchor, table, table row, table cell).
  *
  * Licensed under the GNU General Public License v2.0, like the rest of ezoe.
  */
@@ -27,6 +29,7 @@
     tinymce.PluginManager.add( 'ezpath', function ( editor ) {
 
         editor.options.register( 'ez_xml_tag_alias', { processor: 'object', default: {} } );
+        editor.options.register( 'ez_path_open_dialog', { processor: 'boolean', default: false } );
 
         var isEmbed = function ( n ) {
             return ( n.getAttribute( 'class' ) || '' ).indexOf( 'ezoeItemNonEditable' ) !== -1;
@@ -95,11 +98,65 @@
             e.name = label;
         } );
 
-        // "Path:" in front of the element path like the old status bar
+        // Element selected by a click on the path: for a whole selected element getNode() returns its parent
+        var selectedElement = function () {
+            var rng = editor.selection.getRng(), container = rng.startContainer;
+            if ( !rng.collapsed && container === rng.endContainer && container.nodeType === 1 && rng.endOffset - rng.startOffset === 1 )
+                return container.childNodes[ rng.startOffset ];
+            return editor.selection.getNode();
+        };
+
+        // Editor command for the dialog of an element, see __getTagCommand() of the TinyMCE 3 ez theme
+        var dialogCommand = function ( n ) {
+            switch ( xmlTagName( n ) )
+            {
+                case 'embed':
+                case 'embed-inline':
+                    return 'ezEmbed';
+                case 'custom':
+                    // custom tags with a native element (underline, sub, sup) have no attributes to edit
+                    return n.getAttribute( 'type' ) === 'custom' ? 'ezCustomTag' : null;
+                case 'link':
+                    return 'ezLink';
+                case 'anchor':
+                    return 'mceAnchor';
+                case 'table':
+                    return 'mceTableProps';
+                case 'tr':
+                    return 'mceTableRowProps';
+                case 'td':
+                case 'th':
+                    return 'mceTableCellProps';
+            }
+            return null;
+        };
+
         editor.on( 'init', function () {
             var statusbar = editor.getContainer().querySelector( '.tox-statusbar' );
-            if ( statusbar )
-                statusbar.style.setProperty( '--ezoe-path-label', JSON.stringify( editor.translate( 'Path' ) + ': ' ) );
+            if ( !statusbar )
+                return;
+
+            // "Path:" in front of the element path like the old status bar
+            statusbar.style.setProperty( '--ezoe-path-label', JSON.stringify( editor.translate( 'Path' ) + ': ' ) );
+
+            if ( !editor.options.get( 'ez_path_open_dialog' ) )
+                return;
+
+            // TinyMCE selects the element of a clicked path item, the dialog is opened afterwards
+            statusbar.addEventListener( 'click', function ( e ) {
+                if ( !e.target.closest( '.tox-statusbar__path-item' ) )
+                    return;
+                setTimeout( function () {
+                    var node = selectedElement(), command = node && dialogCommand( node );
+                    if ( !command )
+                        return;
+                    // the table row dialog works on the cell the cursor is in
+                    if ( command === 'mceTableRowProps' && node.cells && node.cells[0] )
+                        editor.selection.setCursorLocation( node.cells[0], 0 );
+                    // the ez dialogs take the element, the TinyMCE ones use the selection
+                    editor.execCommand( command, false, /^ez/.test( command ) ? node : undefined );
+                }, 0 );
+            } );
         } );
     } );
 }());
