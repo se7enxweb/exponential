@@ -30,10 +30,11 @@
     if (!e.target || e.target.name !== 'ContentJobMode' || !prefs) return;
     fetch(prefs + '/admin_content_job_mode_' + op + '/' + e.target.value, {credentials: 'same-origin', cache: 'no-store'}).catch(function () {});
   });
-  if (formName && document.forms[formName]) {
-    document.forms[formName].addEventListener('submit', function () {
-      var c = set.querySelector('input[name="ContentJobMode"]:checked'), f = document.forms[formName];
-      if (!c) return;
+  // the browse page renders this above its form: listen on the document, the form need not exist yet
+  if (formName) {
+    document.addEventListener('submit', function (e) {
+      var f = e.target, c = set.querySelector('input[name="ContentJobMode"]:checked');
+      if (!f || f.getAttribute('name') !== formName || !c) return;
       var h = f.querySelector('input[type="hidden"][name="ContentJobMode"]');
       if (!h) { h = document.createElement('input'); h.type = 'hidden'; h.name = 'ContentJobMode'; f.appendChild(h); }
       h.value = c.value;
