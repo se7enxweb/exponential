@@ -3,6 +3,20 @@
  * The code of cronjobs/rssimport.php, moved into a class (#207 stage 1). The file cronjobs/rssimport.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of cronjobs/rssimport.php:
+ *
+ *
+ * @description Fetch and import configured RSS feeds into the content tree
+ *
+ * File containing the rssimport.php cronjob
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ *
+ */
 
 namespace
 {

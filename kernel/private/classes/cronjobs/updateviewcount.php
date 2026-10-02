@@ -3,6 +3,20 @@
  * The code of cronjobs/updateviewcount.php, moved into a class (#207 stage 1). The file cronjobs/updateviewcount.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of cronjobs/updateviewcount.php:
+ *
+ *
+ * @description Flush the in-memory view count buffer to the database
+ *
+ * File containing the updateviewcount.php cronjob
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ *
+ */
 
 namespace Exponential\Cronjob\Kernel
 {

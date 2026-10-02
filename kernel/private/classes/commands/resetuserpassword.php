@@ -3,6 +3,23 @@
  * The code of bin/php/resetuserpassword.php, moved into a class (#207 stage 1). The file bin/php/resetuserpassword.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/resetuserpassword.php:
+ *
+ *
+ * @description Reset a user password with admin authentication or root bypass.
+ *
+ * Process:
+ * 1. Parse CLI options.
+ * 2. If --allow-root-user is used, require the OS root user and skip admin auth.
+ * 3. Otherwise authenticate an admin user with -a / -ap and verify the
+ *    Administrator role.
+ * 4. Resolve the target user (-u, default admin) and the new password (-p),
+ *    or generate a random one.
+ * 5. Validate and set the new bcrypt password.
+ * 6. Persist and report the result.
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

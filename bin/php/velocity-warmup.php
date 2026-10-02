@@ -23,6 +23,10 @@
  *      the old way. The warm-up is an optimisation, never a dependency.
  *
  * It prints nothing on the happy path; the pool reports how much it warmed.
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
  */
 
 // The parent's working directory is the document root (--root). autoload.php,

@@ -3,6 +3,34 @@
  * The code of bin/php/phar.php, moved into a class (#207 stage 1). The file bin/php/phar.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/phar.php:
+ *
+ *
+ * File containing the engine phar command.
+ *
+ * Discovered by the console as exp:phar.
+ *
+ *   php -d phar.readonly=0 bin/php/console exp:phar build
+ *   bin/php/console exp:phar build --force   (rebuild even when current)
+ *   bin/php/console exp:phar check
+ *   bin/php/console exp:phar info
+ *   bin/php/console exp:phar clean
+ *
+ * Building needs phar.readonly off, which is an ini setting and not something
+ * this script can change for itself; the build verb says so rather than
+ * failing obscurely.
+ *
+ * To run the installation from the archive, set EXP_ENGINE_PHAR in the
+ * environment of whatever serves it. The autoloader reads kernel and library
+ * classes from the archive when it is set and from disk when it is not, and
+ * nothing else about the installation changes either way.
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @license   For full copyright and license information view LICENSE file.
+ * @package   kernel
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

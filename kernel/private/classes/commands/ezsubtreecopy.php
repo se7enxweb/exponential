@@ -3,6 +3,20 @@
  * The code of bin/php/ezsubtreecopy.php, moved into a class (#207 stage 1). The file bin/php/ezsubtreecopy.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/ezsubtreecopy.php:
+ *
+ *
+ * File containing the ezsubtreecopy.php script.
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ * @description Copy a content object subtree to a new location in the content tree
+ * @long-description Recursively copies a subtree of content objects from a source node to a destination node. Object relations and URL aliases are updated. Supports --dry-run to preview the operation before committing.
+ *
+ */
 
 namespace
 {

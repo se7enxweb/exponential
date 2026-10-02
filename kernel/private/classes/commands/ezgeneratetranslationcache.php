@@ -3,6 +3,20 @@
  * The code of bin/php/ezgeneratetranslationcache.php, moved into a class (#207 stage 1). The file bin/php/ezgeneratetranslationcache.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/ezgeneratetranslationcache.php:
+ *
+ *
+ * File containing the ezgeneratetranslationcache.php script.
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ * @description Generate translation cache files for all configured locales
+ * @long-description Pre-generates cached translation files for configured locales and siteaccesses to speed up the first page load after a cache clear. Usage: ./bin/php/ezgeneratetranslationcache.php -s <siteaccess>
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

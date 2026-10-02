@@ -3,6 +3,20 @@
  * The code of bin/php/cleanuppolicies.php, moved into a class (#207 stage 1). The file bin/php/cleanuppolicies.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/cleanuppolicies.php:
+ *
+ *
+ * File containing the script to cleanup from database policies defined on module which do not exist in a modules folder
+ * according to settings from module.ini/[ModuleSettings]/ExtensionRepositories
+ *
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

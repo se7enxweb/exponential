@@ -15,7 +15,7 @@
  * Usage (started by setup/preloadjob, not meant to be typed):
  *   php bin/php/preloadjob.php --id=<hex> [--target=<siteaccess>] [--max-pages=<n>] [--max-depth=<n>]
  *
- * @copyright Copyright (C) 1998 - 2026 7x and others. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

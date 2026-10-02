@@ -3,6 +3,20 @@
  * The code of bin/php/ezwebininstall.php, moved into a class (#207 stage 1). The file bin/php/ezwebininstall.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/ezwebininstall.php:
+ *
+ *
+ * File containing the ezwebininstall.php script.
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ * @description Install the eZWebin site package and configure the site
+ * @long-description Installs the eZWebin package into a freshly configured Exponential site. Sets up required content classes, siteaccesses, and design settings. Typically run once during the initial site setup wizard.
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

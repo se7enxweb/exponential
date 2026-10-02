@@ -3,6 +3,19 @@
  * The code of bin/php/publish_content.php, moved into a class (#207 stage 1). The file bin/php/publish_content.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/publish_content.php:
+ *
+ *
+ * File containing the publish_content.php bin script
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ * @subpackage content
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

@@ -3,6 +3,20 @@
  * The code of bin/php/ezconvertdbcharset.php, moved into a class (#207 stage 1). The file bin/php/ezconvertdbcharset.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/ezconvertdbcharset.php:
+ *
+ *
+ * File containing the ezconvertdbcharset.php script.
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ * @description Convert all Exponential database tables to use UTF-8 character set
+ * @long-description Connects to the configured database and alters all tables to UTF8 charset and utf8_general_ci collation. Run after migrating to a new server or when setting up a legacy-charset site.
+ *
+ */
 
 namespace
 {

@@ -3,6 +3,24 @@
  * The code of bin/php/preload.php, moved into a class (#207 stage 1). The file bin/php/preload.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/preload.php:
+ *
+ *
+ * File containing the preload.php script to preload your website cache files to speed up page loading of your website by siteaccess name parameter.
+ *
+ * Warms the main section pages (derived from site.ini [SiteSettings] SiteURL /
+ * URLTranslationKeyword) then spiders the entire site via wget (recursive,
+ * level 3) to warm all page caches.  Produces rich, colourised terminal output.
+ *
+ * Usage:
+ *   ./bin/php/preload.php [--siteaccess <name>]
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @package kernel
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

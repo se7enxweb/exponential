@@ -3,6 +3,35 @@
  * The code of bin/php/velocity-warmup.php, moved into a class (#207 stage 1). The file bin/php/velocity-warmup.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/velocity-warmup.php:
+ *
+ *
+ * Exponential Velocity parent warm-up.
+ *
+ * Run once, in the pool's parent process, before it forks its workers
+ * (wired through Q.webserver.warmup). It loads the Exponential kernel and
+ * renders a few representative pages, so the class tables, parsed
+ * configuration, compiled templates and the arena they live in are built HERE,
+ * in the parent -- and then handed to every worker copy-on-write by fork().
+ *
+ * Without this each worker builds that state privately on its first request:
+ * measured at ~39 MB for a cold front-page render, held per worker. With it a
+ * worker inherits the warmed arena shared and its first render was measured at
+ * ~5 MB private. Across hundreds of workers that is the difference between
+ * tens of gigabytes and a few.
+ *
+ * Two rules make it safe to run before a fork:
+ *   1. It opens no resource a child must not share. The kernel connects to the
+ *      database during a render, so the connection is closed and the global
+ *      instance nulled before returning; each worker reconnects with its own.
+ *   2. It renders only anonymous, side-effect-light GETs, and never exits: a
+ *      throw here is caught by the pool, which then lets workers warm lazily
+ *      the old way. The warm-up is an optimisation, never a dependency.
+ *
+ * It prints nothing on the happy path; the pool reports how much it warmed.
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

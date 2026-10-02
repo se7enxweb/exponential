@@ -3,6 +3,15 @@
  * The code of bin/php/verify_aliases.php, moved into a class (#207 stage 1). The file bin/php/verify_aliases.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/verify_aliases.php:
+ *
+ *
+ * URL Alias Integrity Verification Script
+ *
+ * Detects and reports potential corruption issues in ezurlalias_ml table.
+ *
+ */
 
 namespace
 {

@@ -3,6 +3,29 @@
  * The code of bin/php/preloadjob.php, moved into a class (#207 stage 1). The file bin/php/preloadjob.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/preloadjob.php:
+ *
+ *
+ * File containing the preloadjob.php script.
+ *
+ * Runs one preload for Setup > Preload in the background: the page starts it
+ * (setup/preloadjob) and follows its progress from the events this script
+ * writes, one JSON line each, to var/<var dir>/preload/<id>.jsonl. No web
+ * request stays open while the site is crawled, so neither a web server's
+ * request time limit nor a proxy that buffers streamed answers can stop it.
+ *
+ * A file <id>.stop next to the events asks the run to end; it is looked at
+ * between two events.
+ *
+ * Usage (started by setup/preloadjob, not meant to be typed):
+ *   php bin/php/preloadjob.php --id=<hex> [--target=<siteaccess>] [--max-pages=<n>] [--max-depth=<n>]
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and others. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

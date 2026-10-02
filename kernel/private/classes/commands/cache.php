@@ -3,6 +3,19 @@
  * The code of bin/php/cache.php, moved into a class (#207 stage 1). The file bin/php/cache.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/cache.php:
+ *
+ *
+ * File containing the cache.php script.
+ *
+ * @description Every Setup > Cache action from the command line: caches by tag and id, static, HTTP, Velocity, precompressed files, OPcache, APCu
+ * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

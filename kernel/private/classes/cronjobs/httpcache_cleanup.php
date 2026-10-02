@@ -3,6 +3,19 @@
  * The code of cronjobs/httpcache_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/httpcache_cleanup.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of cronjobs/httpcache_cleanup.php:
+ *
+ *
+ * @description Remove expired, purged and orphaned entries from the role-aware HTTP cache
+ *
+ * File containing the httpcache_cleanup.php cronjob
+ *
+ * @copyright Copyright (C) 7x. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @package kernel
+ *
+ */
 
 namespace Exponential\Cronjob\Kernel
 {

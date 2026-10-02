@@ -4,11 +4,9 @@
  * File containing the script to cleanup from database policies defined on module which do not exist in a modules folder
  * according to settings from module.ini/[ModuleSettings]/ExtensionRepositories
  *
- *
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
- * @package
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
  */
 
 require_once 'autoload.php';

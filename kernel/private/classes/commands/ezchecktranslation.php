@@ -3,6 +3,18 @@
  * The code of bin/php/ezchecktranslation.php, moved into a class (#207 stage 1). The file bin/php/ezchecktranslation.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/ezchecktranslation.php:
+ *
+ *
+ * File containing the ezchecktranslation.php script.
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ *
+ */
 
 namespace
 {

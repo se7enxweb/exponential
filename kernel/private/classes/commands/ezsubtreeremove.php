@@ -3,6 +3,20 @@
  * The code of bin/php/ezsubtreeremove.php, moved into a class (#207 stage 1). The file bin/php/ezsubtreeremove.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/ezsubtreeremove.php:
+ *
+ *
+ * File containing the ezsubtreeremove.php script.
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ * @description Remove one or more content object subtrees from the content tree
+ * @long-description Permanently removes all content objects under the specified subtree nodes. This operation is irreversible. Use --dry-run first to preview what will be deleted.
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

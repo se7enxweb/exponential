@@ -3,6 +3,20 @@
  * The code of bin/php/convertprice2multiprice.php, moved into a class (#207 stage 1). The file bin/php/convertprice2multiprice.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/convertprice2multiprice.php:
+ *
+ *
+ * File containing the convertprice2multiprice.php script.
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ * @description Convert content objects with 'price' datatype attributes to 'multiprice'
+ * @long-description Iterates over all content objects using the deprecated 'price' datatype and converts their attributes to the newer 'multiprice' datatype, preserving all existing pricing data.
+ *
+ */
 
 namespace
 {

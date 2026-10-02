@@ -3,6 +3,20 @@
  * The code of bin/php/clusterize.php, moved into a class (#207 stage 1). The file bin/php/clusterize.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/clusterize.php:
+ *
+ *
+ * File containing the clusterize.php script.
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ * @description Migrate binary files and images from local filesystem into database cluster storage
+ * @long-description Reads existing binary and image files from the local filesystem and inserts them into the database cluster backend. Run once when enabling clustering on a site that previously used local file storage.
+ *
+ */
 
 namespace
 {

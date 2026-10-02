@@ -3,6 +3,16 @@
  * The code of bin/php/kickstarter.php, moved into a class (#207 stage 1). The file bin/php/kickstarter.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/kickstarter.php:
+ *
+ *
+ * @description Kickstarter runner. Supports "ini" generation and full "run" setup subcommands.
+ * @package   kernel
+ * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @license   For full copyright and license information view LICENSE file.
+ *
+ */
 
 namespace
 {

@@ -2,18 +2,10 @@
 <?php
 /**
  * @description One-command installation: builds the kickstart configuration from options (SQLite by default, admin password "publish") and installs, no kickstart.ini needed.
- * @package   kernel
- * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
- * @license   GNU General Public License v2.0 (or any later version)
  *
- * ./console exp:install [options]
- *
- * The kickstarter installs from a kickstart.ini that has to be written first,
- * by hand or with "exp:kickstarter ini". This command builds that
- * configuration from its options, with a default for every one of them, and
- * runs the same installation steps in the same process. Any kickstart.ini
- * already there is put back afterwards, untouched; the configuration that was
- * used is kept in var/log with its passwords masked.
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
  */
 
 $rootDir = dirname( dirname( __DIR__ ) );

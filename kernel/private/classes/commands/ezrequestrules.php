@@ -3,6 +3,21 @@
  * The code of bin/php/ezrequestrules.php, moved into a class (#207 stage 1). The file bin/php/ezrequestrules.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/ezrequestrules.php:
+ *
+ *
+ * File containing the ezrequestrules.php script.
+ *
+ * Shows and checks the request rules of a siteaccess (requestrules.ini), and
+ * explains what they decide for an address and a user, without sending a
+ * request. Guide: doc/bc/6.0/view_full_security.md
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @license http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License v2 (or later)
+ * @package kernel
+ *
+ */
 
 namespace Exponential\Command\Kernel
 {

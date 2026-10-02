@@ -3,6 +3,20 @@
  * The code of bin/php/ezwebinupgrade.php, moved into a class (#207 stage 1). The file bin/php/ezwebinupgrade.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
+/*
+ * The original header of bin/php/ezwebinupgrade.php:
+ *
+ *
+ * File containing the ezwebinupgrade.php script.
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ * @description Upgrade an existing eZWebin installation to the current package version
+ * @long-description Applies incremental upgrades to an eZWebin-based site, updating content class attributes, settings, and data structures to match the current eZWebin package version.
+ *
+ */
 
 namespace
 {
