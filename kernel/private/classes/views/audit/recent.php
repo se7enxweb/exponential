@@ -38,16 +38,29 @@ class Recent extends \Exponential\Runnable\ModuleView
         foreach ( $channels as $info )
             $bytes += $info['bytes'];
 
-        $verifier = new \expAuditVerifier( $config['logDir'], new \expAuditKeys( $config ), $config['algorithm'] );
-        $options = $bytes > self::FULL_VERIFY_BYTES ? array( 'date' => gmdate( 'Y-m-d' ) ) : array();
+        // The chain status comes from the last verification (the daily maintenance, `exp:audit verify`, or the
+        // "Verify now" button below), not from walking every file on each view: a day's file can be megabytes.
+        $verifyNow = \eZHTTPTool::instance()->hasPostVariable( 'AuditVerifyNowButton' );
+        $options = array();
+        if ( $verifyNow )
+        {
+            $verifier = new \expAuditVerifier( $config['logDir'], new \expAuditKeys( $config ), $config['algorithm'] );
+            foreach ( array_keys( $channels ) as $c )
+                $verifier->verifyChannel( $c, $options );
+            \expAudit::event( 'system.audit.verify', array( 'object' => array( 'type' => 'view', 'id' => 'audit/recent' ),
+                                                            'after' => array( 'channels' => array_keys( $channels ) ) ) );
+        }
+        $state = \expAuditVerifier::loadState( $config['logDir'] );
         $chains = array();
         foreach ( array_keys( $channels ) as $c )
         {
-            $v = $verifier->verifyChannel( $c, $options );
-            $first = $v['breaks'] ? $v['breaks'][0] : null;
-            $chains[] = array( 'channel' => $c, 'result' => $v['result'], 'records' => $v['records'], 'files' => $v['files'],
-                               'repairs' => count( $v['repairs'] ), 'breaks' => count( $v['breaks'] ),
-                               'first_break' => $first ? $first['file'] . ' line ' . $first['line'] . ': ' . $first['kind'] : '' );
+            $v = isset( $state[$c] ) ? $state[$c] : null;
+            $chains[] = array( 'channel' => $c, 'result' => $v ? $v['result'] : 'unverified',
+                               'records' => $v ? $v['records'] : 0, 'files' => $v ? $v['files'] : 0,
+                               'repairs' => $v ? $v['repairs'] : 0, 'breaks' => $v ? $v['breaks'] : 0,
+                               'first_break' => $v ? $v['first_break'] : '',
+                               'verified_at' => $v && !empty( $v['verified_at'] ) ? date( 'Y-m-d H:i:s', $v['verified_at'] ) : '',
+                               'partial' => $v ? !empty( $v['partial'] ) : false );
         }
 
         $events = array();

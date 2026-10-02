@@ -321,7 +321,59 @@ class expAuditVerifier
         $result['last_seq'] = $lastSeq;
         $result['last_hash'] = $expectedPrev;
         $result['result'] = $result['breaks'] ? 'broken' : ( $result['repairs'] ? 'repaired' : ( $result['records'] ? 'intact' : 'empty' ) );
+        self::storeState( $this->dir, $channel, $result, $partial || !empty( $options['date'] ) || !empty( $options['from'] ) || isset( $options['files'] ) );
         return $result;
+    }
+
+    /**
+     * The last verification of each channel, so pages can show the chain status without walking the files on
+     * every request (a day's file can be many megabytes). Every verifyChannel() call records its result here:
+     * the daily maintenance, `exp:audit verify` and the console's "Verify now".
+     *
+     * @param string $dir the audit log directory
+     * @return array channel => array( result, records, files, breaks, repairs, first_break, partial, verified_at )
+     */
+    public static function loadState( $dir )
+    {
+        $data = @json_decode( (string)@file_get_contents( $dir . '/.verify-state.json' ), true );
+        return is_array( $data ) ? $data : array();
+    }
+
+    /**
+     * Records one channel's verification result (see loadState()). Never throws: a state that cannot be written
+     * only means the next page shows an older result.
+     */
+    protected static function storeState( $dir, $channel, array $result, $partial )
+    {
+        try
+        {
+            $path = $dir . '/.verify-state.json';
+            $fh = @fopen( $path, 'c+' );
+            if ( !$fh )
+                return;
+            if ( flock( $fh, LOCK_EX ) )
+            {
+                $data = json_decode( (string)stream_get_contents( $fh ), true );
+                $data = is_array( $data ) ? $data : array();
+                $first = $result['breaks'] ? $result['breaks'][0] : null;
+                $data[$channel] = array(
+                    'result' => $result['result'], 'records' => $result['records'], 'files' => $result['files'],
+                    'breaks' => count( $result['breaks'] ), 'repairs' => count( $result['repairs'] ),
+                    'first_break' => $first ? $first['file'] . ' line ' . $first['line'] . ': ' . $first['kind'] : '',
+                    'partial' => (bool)$partial, 'verified_at' => time() );
+                ftruncate( $fh, 0 );
+                rewind( $fh );
+                fwrite( $fh, json_encode( $data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
+                fflush( $fh );
+                flock( $fh, LOCK_UN );
+            }
+            fclose( $fh );
+            if ( class_exists( 'expAuditWriter' ) && method_exists( 'expAuditWriter', 'ownLikeParent' ) )
+                expAuditWriter::ownLikeParent( $path, 0640 );
+        }
+        catch ( \Throwable $e )
+        {
+        }
     }
 
     /**

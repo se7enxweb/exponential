@@ -41,11 +41,14 @@
 
 <ul class="au-chains" aria-label="{'Hash chain per channel'|i18n( 'design/admin/audit' )|wash}">
 {foreach $chains as $c}
-    <li><span class="au-chain {$c.result|wash}" title="{if $c.first_break}{$c.first_break|wash}{/if}">{$c.channel|wash}: {$c.result|wash} ({'%n records'|i18n( 'design/admin/audit',, hash( '%n', $c.records ) )}{if $c.breaks}, {'%n breaks, first: %first'|i18n( 'design/admin/audit',, hash( '%n', $c.breaks, '%first', $c.first_break ) )|wash}{/if}{if $c.repairs}, {'%n repaired'|i18n( 'design/admin/audit',, hash( '%n', $c.repairs ) )}{/if})</span></li>
+    <li><span class="au-chain {$c.result|wash}" title="{if $c.first_break}{$c.first_break|wash}{/if}">{$c.channel|wash}: {if $c.result|eq( 'unverified' )}{'not verified yet'|i18n( 'design/admin/audit' )}{else}{$c.result|wash}{/if} ({if $c.verified_at}{'verified %time'|i18n( 'design/admin/audit',, hash( '%time', $c.verified_at ) )}{if $c.partial} {'(today only)'|i18n( 'design/admin/audit' )}{/if}, {/if}{'%n records'|i18n( 'design/admin/audit',, hash( '%n', $c.records ) )}{if $c.breaks}, {'%n breaks, first: %first'|i18n( 'design/admin/audit',, hash( '%n', $c.breaks, '%first', $c.first_break ) )|wash}{/if}{if $c.repairs}, {'%n repaired'|i18n( 'design/admin/audit',, hash( '%n', $c.repairs ) )}{/if})</span></li>
 {/foreach}
 {if $chains|count|not}<li class="au-note">{'No audit files yet.'|i18n( 'design/admin/audit' )}</li>{/if}
 </ul>
-{if $verified_today_only}<p class="au-note">{'The live files are large: the chain state above covers the files of today. Run exp:audit verify for all of them.'|i18n( 'design/admin/audit' )}</p>{/if}
+<form method="post" action={concat( 'audit/recent', $channel|ne( '' )|choose( '', concat( '/', $channel ) ) )|ezurl} class="au-verify">
+    <p class="au-note">{'The chain status is the result of the last verification (daily maintenance, exp:audit verify or this button).'|i18n( 'design/admin/audit' )}
+    <input type="submit" class="button" name="AuditVerifyNowButton" value="{'Verify now'|i18n( 'design/admin/audit' )}" /></p>
+</form>
 
 {if $channel_names|count}
 <p class="au-scope">
