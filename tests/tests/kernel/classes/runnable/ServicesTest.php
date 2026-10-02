@@ -13,6 +13,10 @@
  *          cleared and a pause between batches; emptyTrash() uses the command's 100 and 1 s and then sweeps what is left
  *  SV-07 — collect() (the sessions view, the command, the cronjob part) removes the expired baskets too: one garbage
  *          collection by the session handler, with the basket hook attached
+ *  SV-08 — DraftsCleanup::duration() adds up days, hours, minutes and seconds, false when no numeric part is set
+ *  SV-09 — DraftsCleanup kinds: the user drafts and the internal drafts, their status, settings and default lifetime
+ *  SV-10 — The two drafts cronjob parts call DraftsCleanup::cleanup() and no longer carry the settings code; the
+ *          cache toolbar (setup/cachetoolbar) clears through expCacheManager as setup/cache and exp:cache do
  *
  * No database.
  *
@@ -24,6 +28,7 @@
 
 require_once __DIR__ . '/../../../../../kernel/private/classes/services/trash.php';
 require_once __DIR__ . '/../../../../../kernel/private/classes/services/sessiongarbagecollector.php';
+require_once __DIR__ . '/../../../../../kernel/private/classes/services/draftscleanup.php';
 
 class ezpTestTrashUser
 {
@@ -174,5 +179,66 @@ class ServicesTest extends PHPUnit\Framework\TestCase
         $names = array_map( function ( $p ) { return $p->getName(); }, $m->getParameters() );
         $this->assertSame( array( 'cli', 'quiet', 'memoryMonitoring', 'script', 'iterationLimit', 'sleep', 'trashedDays' ), $names );
         $this->assertTrue( $m->getParameters()[1]->getDefaultValue(), 'quiet by default, as eZScriptTrashPurge' );
+    }
+
+    /** SV-08 */
+    public function testDraftsLifetime()
+    {
+        $d = function ( $setting ) { return \Exponential\Service\DraftsCleanup::duration( $setting ); };
+        $this->assertSame( 90 * 86400, $d( array( 'days' => 90 ) ) );
+        $this->assertSame( 24 * 3600, $d( array( 'hours' => 24 ) ) );
+        $this->assertSame( 86400 + 2 * 3600 + 3 * 60 + 4, $d( array( 'days' => 1, 'hours' => 2, 'minutes' => 3, 'seconds' => 4 ) ) );
+        $this->assertSame( 0, $d( array( 'days' => 0 ) ), 'zero is a lifetime: every draft is old enough' );
+        $this->assertSame( 1800, $d( array( 'minutes' => '30' ) ), 'ini values are strings' );
+        $this->assertFalse( $d( array() ) );
+        $this->assertFalse( $d( array( 'weeks' => 2 ) ), 'an unknown unit sets nothing' );
+        $this->assertFalse( $d( array( 'days' => 'many' ) ) );
+        $this->assertFalse( $d( '90' ), 'not an array' );
+    }
+
+    /** SV-09 */
+    public function testDraftsKinds()
+    {
+        if ( !class_exists( 'eZContentObjectVersion' ) )
+            $this->markTestSkipped( 'eZContentObjectVersion is not autoloadable here' );
+        $kinds = \Exponential\Service\DraftsCleanup::kinds();
+        $this->assertSame( array( 'drafts', 'internal' ), array_keys( $kinds ) );
+        $user = $kinds[\Exponential\Service\DraftsCleanup::USER_DRAFTS];
+        $this->assertSame( \eZContentObjectVersion::STATUS_DRAFT, $user['status'] );
+        $this->assertSame( array( 'DraftsCleanUpLimit', 'DraftsDuration', array( 'days' => 90 ) ),
+                           array( $user['limit'], $user['duration'], $user['default'] ) );
+        $internal = $kinds[\Exponential\Service\DraftsCleanup::INTERNAL_DRAFTS];
+        $this->assertSame( \eZContentObjectVersion::STATUS_INTERNAL_DRAFT, $internal['status'] );
+        $this->assertSame( array( 'InternalDraftsCleanUpLimit', 'InternalDraftsDuration', array( 'hours' => 24 ) ),
+                           array( $internal['limit'], $internal['duration'], $internal['default'] ) );
+        try
+        {
+            \Exponential\Service\DraftsCleanup::cleanup( 'archived' );
+            $this->fail( 'an unknown kind is refused' );
+        }
+        catch ( InvalidArgumentException $e )
+        {
+            $this->assertStringContainsString( 'archived', $e->getMessage() );
+        }
+    }
+
+    /** SV-10 */
+    public function testDraftPartsAndCacheToolbarUseTheSharedCode()
+    {
+        $base = self::root() . '/kernel/private/classes/';
+        foreach ( array( 'cronjobs/old_drafts_cleanup.php' => 'USER_DRAFTS', 'cronjobs/internal_drafts_cleanup.php' => 'INTERNAL_DRAFTS' ) as $file => $kind )
+        {
+            $code = (string) file_get_contents( $base . $file );
+            $this->assertStringContainsString( "DraftsCleanup::cleanup( \\Exponential\\Service\\DraftsCleanup::$kind )", $code, $file );
+            $this->assertStringNotContainsString( 'removeVersions(', $code, "$file leaves the removal to the service" );
+            $this->assertStringNotContainsString( "'VersionManagement'", $code, "$file leaves the settings to the service" );
+            $this->assertStringContainsString( 'if ( $processedCount !== null )', $code, "$file: null is 'no lifetime set'" );
+        }
+        $toolbar = (string) file_get_contents( $base . 'views/setup/cachetoolbar.php' );
+        $this->assertStringContainsString( "\$cacheManager->clear( 'all' )", $toolbar );
+        $this->assertStringContainsString( "\$cacheManager->clear( 'tag', \$tags )", $toolbar );
+        $this->assertStringNotContainsString( '\\eZCache::clearAll(', $toolbar );
+        $this->assertStringNotContainsString( '\\eZCache::clearByTag(', $toolbar );
+        $this->assertStringContainsString( "'TemplateContent' => array( 'template', 'content' )", $toolbar, 'template first, then content, as before' );
     }
 }

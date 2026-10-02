@@ -44,26 +44,28 @@ class Cachetoolbar extends \Exponential\Runnable\ModuleView
         if ( $module->hasActionParameter ( 'ObjectID' ) )
             $objectID = $module->actionParameter( 'ObjectID' );
 
+        // The clears are expCacheManager's, as on Setup > Cache (setup/cache) and for exp:cache
+        // (bin/php/cache.php): eZCache::clearAll() and eZCache::clearByTag() of the cache list, one tag
+        // after the other. Loaded by path when a server's workers kept an autoload array from before it.
+        $tagsByType = array( 'Template' => array( 'template' ),
+                             'Content' => array( 'content' ),
+                             'TemplateContent' => array( 'template', 'content' ),
+                             'Ini' => array( 'ini' ) );
+        $tags = is_string( $cacheType ) && isset( $tagsByType[$cacheType] ) ? $tagsByType[$cacheType] : null;
+        if ( $cacheType == 'All' || $tags !== null )
+        {
+            if ( !class_exists( 'expCacheManager' ) )
+                require_once 'kernel/classes/expcachemanager.php';
+            $cacheManager = new \expCacheManager();
+        }
+
         if ( $cacheType == 'All' )
         {
-            \eZCache::clearAll();
+            $cacheManager->clear( 'all' );
         }
-        elseif ( $cacheType == 'Template' )
+        elseif ( $tags !== null )
         {
-            \eZCache::clearByTag( 'template' );
-        }
-        elseif ( $cacheType == 'Content' )
-        {
-            \eZCache::clearByTag( 'content' );
-        }
-        elseif ( $cacheType == 'TemplateContent' )
-        {
-            \eZCache::clearByTag( 'template' );
-            \eZCache::clearByTag( 'content' );
-        }
-        elseif ( $cacheType == 'Ini' )
-        {
-            \eZCache::clearByTag( 'ini' );
+            $cacheManager->clear( 'tag', $tags );
         }
         elseif ( $cacheType == 'Static' )
         {
