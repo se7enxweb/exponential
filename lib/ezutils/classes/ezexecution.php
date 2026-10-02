@@ -411,6 +411,14 @@ class eZExecution
         );
         if ( !isset( $cases[$case] ) )
             return self::renderErrorPage( 500, $reference, $detail );
+
+        // the page's repair queue answers its own requests (start, status) here
+        if ( $case === 'dependencies' )
+        {
+            require_once __DIR__ . '/ezprepairqueue.php';
+            if ( ezpRepairQueue::handleWebRequest() )
+                return;
+        }
         list( $title, $message, $steps ) = $cases[$case];
 
         if ( !headers_sent() )
@@ -448,8 +456,14 @@ class eZExecution
             $template = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
                 . '<title>{title}</title><style>body{font-family:system-ui,sans-serif;max-width:44rem;margin:10vh auto;padding:0 1rem;color:#111}'
                 . 'h1{font-size:1.8rem}ol{text-align:left;line-height:1.5}code{background:#f2f2f2;padding:.1rem .3rem}'
-                . 'small{display:block;margin-top:2rem;color:#666}</style></head><body><p style="font-size:3rem;font-weight:700;margin:0">{status}</p>'
-                . '<h1>{title}</h1><p>{message}</p><p><strong>For the administrator:</strong></p>{steps}<small>{reference}</small>{detail}</body></html>';
+                . 'small{display:block;margin-top:2rem;color:#666}.logo{margin:0 0 1.5rem}'
+                . 'footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid #eee;color:#666;font-size:.85rem;text-align:center}footer a{color:#0b4e7a}'
+                . '</style></head><body>'
+                . '<p class="logo"><img src="/design/admin4/images/admin4/logo-light.png" alt="Exponential" width="200" height="50"></p>'
+                . '<p style="font-size:3rem;font-weight:700;margin:0">{status}</p>'
+                . '<h1>{title}</h1><p>{message}</p><p><strong>For the administrator:</strong></p>{steps}{repair}<small>{reference}</small>{detail}'
+                . '<footer>Powered by <strong>Exponential</strong>. Copyright &copy; 1998-' . date( 'Y' ) . ' <a href="https://se7enx.com">7x</a> and others.</footer>'
+                . '</body></html>';
         }
 
         $esc = function ( $v ) { return htmlspecialchars( (string) $v, ENT_QUOTES, 'UTF-8' ); };
@@ -462,6 +476,7 @@ class eZExecution
             '{title}' => $esc( $title ),
             '{message}' => $esc( $message ),
             '{steps}' => $list,
+            '{repair}' => $case === 'dependencies' ? ezpRepairQueue::panelHtml() : '',
             '{reference}' => $reference !== '' ? $esc( 'Reference: ' . $reference ) : '',
             '{home}' => '/',
             '{detail}' => $detail !== '' ? '<pre style="white-space:pre-wrap">' . $esc( $detail ) . '</pre>' : '',
