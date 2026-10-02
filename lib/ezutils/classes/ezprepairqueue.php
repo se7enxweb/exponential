@@ -187,6 +187,15 @@ class ezpRepairQueue
     public static function handleRunRequest()
     {
         $action = isset( $_REQUEST['exp_repair'] ) ? (string) $_REQUEST['exp_repair'] : '';
+        if ( $action === 'start' )
+        {
+            // only while the libraries are missing, and answered before the kernel tries to start
+            // (and fails, printing its error ahead of the answer)
+            $root = self::root();
+            if ( class_exists( 'Composer\Autoload\ClassLoader', false ) || is_file( "$root/vendor/autoload.php" ) )
+                return false;
+            return self::handleWebRequest();
+        }
         if ( $action !== 'status' && $action !== 'update' )
             return false;
         return self::handleWebRequest();
