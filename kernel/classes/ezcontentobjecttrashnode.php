@@ -152,6 +152,7 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
     function storeToTrash()
     {
         $this->store();
+        self::callTrashRecord( 'record', $this );
 
         $db = eZDB::instance();
         $db->begin();
@@ -199,6 +200,33 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
         $db->begin();
         $db->query( "DELETE FROM ezcontentobject_trash WHERE contentobject_id='$contentObjectID'" );
         $db->commit();
+        self::callTrashRecord( 'forget', (int)$contentObjectID );
+    }
+
+    /**
+     * Who moved what to the trash (Exponential\Service\TrashRecord, doc/bc/6.0/trash.md). Loaded by path when
+     * the autoload array of a long-running worker predates the class; a failure never stops the trash move.
+     *
+     * @param string $method record|forget
+     * @param mixed $argument
+     */
+    protected static function callTrashRecord( $method, $argument )
+    {
+        try
+        {
+            if ( !class_exists( 'Exponential\\Service\\TrashRecord' ) )
+            {
+                $file = __DIR__ . '/../private/classes/services/trashrecord.php';
+                if ( !is_file( $file ) )
+                    return;
+                require_once $file;
+            }
+            call_user_func( array( 'Exponential\\Service\\TrashRecord', $method ), $argument );
+        }
+        catch ( \Throwable $e )
+        {
+            eZDebug::writeError( $e->getMessage(), __METHOD__ );
+        }
     }
 
     /**
@@ -228,6 +256,7 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
         $objectNameFilter = ( isset( $params['ObjectNameFilter']  ) )                         ? $params['ObjectNameFilter']   : false;
         $sortBy           = ( isset( $params['SortBy']  ) && is_array( $params['SortBy']  ) ) ? $params['SortBy']              : array( array( 'name' ) );
         $trashed          = ( isset( $params['Trashed']  ) && is_int( $params['Trashed'] )  ) ? " AND trashed <= {$params['Trashed']}"   : '';
+        $trashed         .= self::trashListFilterSQL( $params );
 
         if ( $asCount )
         {
@@ -316,6 +345,36 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
         {
             return $trashRowsArray;
         }
+    }
+
+    /**
+     * The filters of the trash view, as SQL appended to trashList()'s WHERE:
+     *   ClassIDList                 content class ids
+     *   TrashedFrom, TrashedTo      timestamps, both inclusive
+     *   ContentObjectIDList         only these objects (an empty array matches nothing)
+     *   ExcludeContentObjectIDList  not these objects
+     *
+     * @param array $params
+     * @return string
+     */
+    protected static function trashListFilterSQL( $params )
+    {
+        $db = eZDB::instance();
+        $sql = '';
+        if ( isset( $params['ClassIDList'] ) && is_array( $params['ClassIDList'] ) && $params['ClassIDList'] )
+            $sql .= ' AND ' . $db->generateSQLINStatement( array_map( 'intval', $params['ClassIDList'] ), 'ezcontentobject.contentclass_id', false, true, 'int' );
+        if ( isset( $params['TrashedFrom'] ) && is_int( $params['TrashedFrom'] ) )
+            $sql .= " AND ezcot.trashed >= {$params['TrashedFrom']}";
+        if ( isset( $params['TrashedTo'] ) && is_int( $params['TrashedTo'] ) )
+            $sql .= " AND ezcot.trashed <= {$params['TrashedTo']}";
+        if ( isset( $params['ContentObjectIDList'] ) && is_array( $params['ContentObjectIDList'] ) )
+        {
+            $ids = $params['ContentObjectIDList'] ? array_map( 'intval', $params['ContentObjectIDList'] ) : array( 0 );
+            $sql .= ' AND ' . $db->generateSQLINStatement( $ids, 'ezcot.contentobject_id', false, true, 'int' );
+        }
+        if ( isset( $params['ExcludeContentObjectIDList'] ) && is_array( $params['ExcludeContentObjectIDList'] ) && $params['ExcludeContentObjectIDList'] )
+            $sql .= ' AND ' . $db->generateSQLINStatement( array_map( 'intval', $params['ExcludeContentObjectIDList'] ), 'ezcot.contentobject_id', true, true, 'int' );
+        return $sql;
     }
 
     /**
