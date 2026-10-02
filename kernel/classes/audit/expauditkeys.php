@@ -342,6 +342,93 @@ class expAuditKeys
         }
     }
 
+    /**
+     * Checks an HMAC made by sign(). A key id this process does not know yet is looked up in the key file too
+     * (a key rotated by another process while this one's INI cache still has the old list).
+     *
+     * @param mixed $data
+     * @param string $hmac
+     * @param string $keyId
+     * @return string 'ok', 'unknown_key' or 'invalid'
+     */
+    public function verify( $data, $hmac, $keyId )
+    {
+        $key = $this->signingKey( $keyId );
+        if ( $key === null )
+        {
+            $fromFile = $this->readFile();
+            if ( isset( $fromFile['signing'][$keyId] ) )
+            {
+                $key = $fromFile['signing'][$keyId];
+                if ( self::$known !== null )
+                    self::$known['signing'][$keyId] = $key;
+            }
+        }
+        if ( $key === null )
+            return 'unknown_key';
+        $expected = 'hmac-sha256:' . hash_hmac( 'sha256', expAuditJson::encode( $data ), $key );
+        return hash_equals( $expected, (string)$hmac ) ? 'ok' : 'invalid';
+    }
+
+    /**
+     * Key rotation (doc/bc/6.0/audit.md, "Keys (Z7)"): adds SigningKey[k<n+1>-...] and makes it the active key.
+     * Old keys stay: archives and checkpoints signed by them still verify. The caller records
+     * system.audit.key.rotate (exp:audit key rotate does).
+     *
+     * @return array old (key id), new (key id), fingerprint, file; error on failure
+     */
+    public function rotate()
+    {
+        $keys = $this->keys();
+        $old = $keys['active'];
+        $n = 1;
+        foreach ( array_keys( $keys['signing'] ) as $id )
+            if ( preg_match( '/^k(\d+)-/', $id, $m ) )
+                $n = max( $n, (int)$m[1] + 1 );
+        $raw = random_bytes( 32 );
+        $id = self::keyId( $n, $raw );
+        if ( !$this->writeFile( array( 'ActiveSigningKey' => $id, 'SigningKey' => array( $id => base64_encode( $raw ) ) ) ) )
+            return array( 'error' => 'The key file ' . $this->keyFile() . ' could not be written', 'old' => $old, 'new' => null );
+        $keys['signing'][$id] = $raw;
+        $keys['active'] = $id;
+        self::$known = $keys;
+        self::$knownDir = $this->config['keyDir'];
+        return array( 'old' => $old, 'new' => $id, 'fingerprint' => self::fingerprint( $raw ), 'file' => $this->relative( $this->keyFile() ) );
+    }
+
+    /**
+     * Replaces the pseudonym key (exp:audit key rotate --pseudonym). Pseudonyms made before no longer match new
+     * ones: the index has to be pseudonymised again (stage 4's indexer, when present).
+     *
+     * @return array old, new (fingerprints), file; error on failure
+     */
+    public function rotatePseudonym()
+    {
+        $keys = $this->keys();
+        $raw = random_bytes( 32 );
+        if ( !$this->writeFile( array( 'PseudonymKey' => base64_encode( $raw ) ) ) )
+            return array( 'error' => 'The key file ' . $this->keyFile() . ' could not be written' );
+        $old = $keys['pseudonym'] !== '' ? self::fingerprint( $keys['pseudonym'] ) : null;
+        $keys['pseudonym'] = $raw;
+        self::$known = $keys;
+        self::$knownDir = $this->config['keyDir'];
+        return array( 'old' => $old, 'new' => self::fingerprint( $raw ), 'file' => $this->relative( $this->keyFile() ) );
+    }
+
+    /**
+     * Every signing key: id, fingerprint, active.
+     *
+     * @return array[]
+     */
+    public function listKeys()
+    {
+        $keys = $this->keys( false );
+        $out = array();
+        foreach ( $keys['signing'] as $id => $raw )
+            $out[] = array( 'id' => $id, 'fingerprint' => self::fingerprint( $raw ), 'active' => $id === $keys['active'] );
+        return $out;
+    }
+
     /** @return string k<n>-<YYYYMMDD>-<first 8 hex of SHA-256(key)> */
     public static function keyId( $n, $raw )
     {

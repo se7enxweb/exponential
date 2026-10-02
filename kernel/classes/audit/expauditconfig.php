@@ -116,6 +116,18 @@ class expAuditConfig
         return self::$override !== null;
     }
 
+    /**
+     * Whether records may leave the process through the sinks. Always with the real settings; under setOverride()
+     * only when the test asks for it with 'sinks' => true, so test events never reach the system's log, a webhook
+     * or a mailbox by way of the shipped Sinks[].
+     *
+     * @return bool
+     */
+    public static function sinksAllowed()
+    {
+        return self::$override === null || !empty( self::$override['sinks'] );
+    }
+
     /** Forgets the snapshot (the next get() reads the settings again). */
     public static function reset()
     {
@@ -288,6 +300,153 @@ class expAuditConfig
         );
         $snapshot['hash'] = md5( serialize( $snapshot ) );
         return $snapshot;
+    }
+
+    // ------------------------------------------------------------------ whole blocks (sinks, alerts, archives)
+
+    /** @var array|null The shipped settings/audit.ini, block => variable => value (for overridden settings) */
+    protected static $shipped = null;
+
+    /**
+     * Every variable of a block, variable => value: audit.ini as eZINI merges it; with setOverride() the shipped
+     * settings/audit.ini (unless the override sets 'shipped' => false) with the override's 'Block/Variable'
+     * entries on top, so tests see the shipped rules and sinks without the site's overrides.
+     *
+     * @param string $block
+     * @return array
+     */
+    public static function block( $block )
+    {
+        $values = array();
+        if ( self::$override !== null )
+        {
+            if ( !isset( self::$override['shipped'] ) || self::$override['shipped'] )
+            {
+                $shipped = self::shipped();
+                if ( isset( $shipped[$block] ) && is_array( $shipped[$block] ) )
+                    $values = $shipped[$block];
+            }
+            $prefix = $block . '/';
+            foreach ( self::$override as $k => $v )
+                if ( is_string( $k ) && strncmp( $k, $prefix, strlen( $prefix ) ) === 0 )
+                    $values[substr( $k, strlen( $prefix ) )] = $v;
+            return $values;
+        }
+        if ( !class_exists( 'eZINI' ) )
+            return $values;
+        try
+        {
+            $ini = eZINI::instance( 'audit.ini' );
+            if ( $ini->hasGroup( $block ) )
+                $values = (array)$ini->group( $block );
+        }
+        catch ( Throwable $e )
+        {
+        }
+        return $values;
+    }
+
+    /** @return bool The block exists (in audit.ini, or in the override / shipped file under setOverride()) */
+    public static function hasBlock( $block )
+    {
+        if ( self::$override !== null )
+            return (bool)self::block( $block );
+        try
+        {
+            return class_exists( 'eZINI' ) && eZINI::instance( 'audit.ini' )->hasGroup( $block );
+        }
+        catch ( Throwable $e )
+        {
+            return false;
+        }
+    }
+
+    /**
+     * One variable of a block.
+     *
+     * @param string $block
+     * @param string $var
+     * @param mixed $default
+     * @return mixed
+     */
+    public static function value( $block, $var, $default = null )
+    {
+        $b = self::block( $block );
+        return array_key_exists( $var, $b ) && $b[$var] !== null ? $b[$var] : $default;
+    }
+
+    /** @return string[] A list variable, trimmed, empty entries dropped */
+    public static function lists( $block, $var, array $default = array() )
+    {
+        $v = self::value( $block, $var, null );
+        if ( $v === null )
+            return $default;
+        return array_values( array_filter( array_map( 'trim', array_map( 'strval', (array)$v ) ), 'strlen' ) );
+    }
+
+    /** @return array A hash variable (string keys only), values trimmed */
+    public static function hash( $block, $var, array $default = array() )
+    {
+        $v = self::value( $block, $var, null );
+        if ( $v === null )
+            return $default;
+        $out = array();
+        foreach ( (array)$v as $k => $val )
+            if ( is_string( $k ) && trim( $k ) !== '' && trim( (string)$val ) !== '' )
+                $out[trim( $k )] = trim( (string)$val );
+        return $out;
+    }
+
+    /**
+     * A directory setting as an absolute path: absolute stays, relative is under the site's var directory (as
+     * LogDir). Under setOverride() a relative path is under the override's logDir parent.
+     *
+     * @param string $value
+     * @return string without a trailing slash
+     */
+    public static function path( $value )
+    {
+        $value = trim( (string)$value );
+        if ( $value !== '' && $value[0] === '/' )
+            return rtrim( $value, '/' );
+        $config = self::get();
+        if ( self::$override !== null )
+        {
+            // tests: LogDir is <test>/log; a relative path like log/audit/spool lands in <test>/log/spool
+            $rel = preg_replace( '#^log/audit/?#', '', $value );
+            return rtrim( $config['logDir'] . ( $rel !== '' ? '/' . $rel : '' ), '/' );
+        }
+        $varDir = 'var';
+        try
+        {
+            if ( class_exists( 'eZINI' ) )
+                $varDir = trim( (string)eZINI::instance()->variable( 'FileSettings', 'VarDir' ), '/ ' ) ?: 'var';
+        }
+        catch ( Throwable $e )
+        {
+        }
+        return rtrim( self::root() . $varDir . '/' . ( $value !== '' ? $value : 'log/audit' ), '/' );
+    }
+
+    /** @return array The shipped settings/audit.ini as block => variable => value */
+    protected static function shipped()
+    {
+        if ( self::$shipped === null )
+        {
+            self::$shipped = array();
+            $file = self::root() . 'settings/audit.ini';
+            if ( !is_file( $file ) )
+                $file = dirname( __DIR__, 3 ) . '/settings/audit.ini';
+            try
+            {
+                if ( class_exists( 'expIniWriter' ) && is_file( $file ) )
+                    self::$shipped = expIniWriter::fromFile( $file )->values();
+            }
+            catch ( Throwable $e )
+            {
+            }
+        }
+        return self::$shipped;
     }
 
     /**

@@ -174,7 +174,13 @@ class expAuditWriter
         if ( $head === null )
         {
             if ( $previous === null )
+            {
                 $previous = $this->previousFile( $channel, basename( $path ) );
+                // the first write of a new day closes the day before (rotation by day), so its file ends with
+                // system.audit.file.close like a file closed by size
+                if ( $previous !== null && $previous['name'] !== self::FILE_CLOSE && strcmp( $previous['date'], $date ) < 0 )
+                    $previous = $this->closeFile( $channel, $dir . '/' . $previous['file'] );
+            }
             $data = array( 'object' => array( 'type' => 'file', 'id' => basename( $path ) ) );
             if ( $previous !== null )
                 $data['after'] = array( 'previous_file' => $previous['file'], 'previous_seq' => $previous['seq'], 'previous_hash' => $previous['hash'] );
@@ -418,7 +424,78 @@ class expAuditWriter
         $head = $this->tail( $this->dir() . '/' . $prev );
         if ( $head === null )
             return null;
-        return array( 'file' => $prev, 'seq' => $head['seq'], 'hash' => $head['hash'] );
+        return array( 'file' => $prev, 'seq' => $head['seq'], 'hash' => $head['hash'], 'name' => $head['name'],
+                      'date' => self::parseFileName( $prev )['date'] );
+    }
+
+    /**
+     * Appends system.audit.file.close to a file (under the channel's lock), repairing a torn tail first.
+     *
+     * @param string $channel
+     * @param string $path
+     * @return array|null file, seq, hash, name, date of the closed file; null when it is empty
+     */
+    protected function closeFile( $channel, $path )
+    {
+        clearstatcache( true, $path );
+        $size = (int)@filesize( $path );
+        $head = $size > 0 ? $this->tail( $path, $size ) : null;
+        if ( $head === null )
+            return null;
+        $repair = $this->repairLine( $channel, $head, $size );
+        $seq = $repair ? $repair['record']['seq'] : $head['seq'];
+        $hash = $repair ? $repair['record']['hash'] : $head['hash'];
+        $close = $this->build( self::FILE_CLOSE, array(
+            'object' => array( 'type' => 'file', 'id' => basename( $path ) ),
+            'after' => array( 'records' => $seq + 1 ) ), $channel );
+        list( $closeLine, $closeRecord ) = $this->chain( $close, $seq, $hash );
+        $this->write( $path, ( $repair ? $repair['prefix'] . $repair['line'] : '' ) . $closeLine, false );
+        return array( 'file' => basename( $path ), 'seq' => $closeRecord['seq'], 'hash' => $closeRecord['hash'],
+                      'name' => self::FILE_CLOSE, 'date' => self::parseFileName( basename( $path ) )['date'] );
+    }
+
+    /**
+     * Rotation by day for a channel nobody has written to today (the audit cronjob part, exp:audit rotate): when
+     * the channel's newest file is of an earlier day and not closed yet, system.audit.file.close is appended to it,
+     * so the file is complete before it is archived. The next write opens today's file linked to it.
+     *
+     * @param string $channel
+     * @param bool $dryRun only say what would be closed
+     * @return array|null file, seq, hash of the closed file; null when nothing was due
+     */
+    public function rotate( $channel, $dryRun = false )
+    {
+        if ( !preg_match( '/^[a-z][a-z0-9_]{0,31}$/', $channel ) )
+            throw new RuntimeException( "Malformed audit channel name '$channel'" );
+        $dir = $this->dir();
+        $files = self::channelFiles( $dir, $channel );
+        if ( !$files )
+            return null;
+        $today = $this->clock ? call_user_func( $this->clock ) : gmdate( 'Y-m-d' );
+        $lockFile = $dir . '/.' . $channel . '.lock';
+        $lock = @fopen( $lockFile, 'c' );
+        if ( !$lock )
+            throw new RuntimeException( "The audit lock $lockFile cannot be opened" );
+        try
+        {
+            flock( $lock, LOCK_EX );
+            $files = self::channelFiles( $dir, $channel );
+            $newest = end( $files );
+            $p = self::parseFileName( $newest );
+            if ( strcmp( $p['date'], $today ) >= 0 )
+                return null;
+            $head = $this->tail( $dir . '/' . $newest );
+            if ( $head === null || $head['name'] === self::FILE_CLOSE )
+                return null;
+            if ( $dryRun )
+                return array( 'file' => $newest, 'seq' => $head['seq'], 'hash' => $head['hash'], 'dry_run' => true );
+            return $this->closeFile( $channel, $dir . '/' . $newest );
+        }
+        finally
+        {
+            flock( $lock, LOCK_UN );
+            fclose( $lock );
+        }
     }
 
     /**

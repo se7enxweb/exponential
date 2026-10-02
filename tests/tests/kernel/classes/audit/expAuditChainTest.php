@@ -128,9 +128,13 @@ class expAuditChainTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'previous_file' => $files[0], 'previous_hash' => $last['hash'], 'previous_seq' => $last['seq'] ),
                            array( 'previous_file' => $open['after']['previous_file'], 'previous_hash' => $open['after']['previous_hash'],
                                   'previous_seq' => $open['after']['previous_seq'] ) );
+        // rotation by day: the first write of the next day closed the day before
+        $this->assertSame( 'system.audit.file.close', $last['name'] );
+        $this->assertSame( 7, $last['after']['records'] );
         $r = expAuditTestFixtures::verifier( $this->dir )->verifyChannel( 'content' );
         $this->assertSame( 'intact', $r['result'] );
-        $this->assertSame( 12, $r['records'] );
+        $this->assertSame( 13, $r['records'], 'two opens, ten events and the close of the first day' );
+        $this->assertSame( array(), $r['notices'] );
     }
 
     /** CH-03 */
@@ -207,7 +211,7 @@ class expAuditChainTest extends PHPUnit\Framework\TestCase
         // T0
         $r = $this->verifyCopy( $this->copyLog( 't0' ) );
         $this->assertSame( 'intact', $r['result'] );
-        $this->assertSame( 1003, $r['records'], '1 000 events and three file open records' );
+        $this->assertSame( 1005, $r['records'], '1 000 events, three file open records and the closes of the first two days' );
         // the span runs from the first file's open record (written at the first flush) to the last event
         $this->assertStringStartsWith( '2026-10-02T00:00:00.', $r['first_time'] );
         $this->assertStringStartsWith( '2026-10-04T', $r['last_time'] );

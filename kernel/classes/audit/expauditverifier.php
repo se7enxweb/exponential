@@ -42,6 +42,47 @@ class expAuditVerifier
         $this->algorithm = $algorithm;
     }
 
+    /** @var callable|null fn( $channel ): array file => array( seq, hash ), the files already archived */
+    protected $origins = null;
+
+    /**
+     * Where the archived files' heads come from (expAuditArchiver::archivedHeads()): the first live file of a
+     * channel may start from a file that has been archived, which is then no break (doc/bc/6.0/audit.md,
+     * "Verification", step 4). Without it, the live directory's own archive (when it is the configured one) is
+     * asked.
+     *
+     * @param callable|null $origins
+     */
+    public function setOrigins( $origins )
+    {
+        $this->origins = $origins;
+    }
+
+    /**
+     * The archived head of a file, when the file is in the archive.
+     *
+     * @param string $channel
+     * @param string $file
+     * @return array|null seq, hash
+     */
+    protected function archivedHead( $channel, $file )
+    {
+        $origins = $this->origins;
+        if ( $origins === null && class_exists( 'expAuditArchiver' ) && class_exists( 'expAuditConfig' ) )
+        {
+            $config = expAuditConfig::get();
+            if ( rtrim( $config['logDir'], '/' ) === $this->dir )
+            {
+                $archiver = new expAuditArchiver( $config, $this->keys );
+                $origins = array( $archiver, 'archivedHeads' );
+            }
+        }
+        if ( $origins === null )
+            return null;
+        $heads = call_user_func( $origins, $channel );
+        return isset( $heads[$file] ) ? $heads[$file] : null;
+    }
+
     /**
      * The channels that have files.
      *
@@ -195,7 +236,13 @@ class expAuditVerifier
                         {
                             if ( $named !== null && !in_array( $named, $all, true ) )
                             {
-                                $kinds['no_origin'] = "the chain starts from $named, which is not here";
+                                // archived: the archive manifest names that file's last seq and hash
+                                $head = $this->archivedHead( $channel, $named );
+                                if ( $head === null )
+                                    $kinds['no_origin'] = "the chain starts from $named, which is not here";
+                                elseif ( !isset( $rec->after->previous_hash ) || (string)$rec->after->previous_hash !== $head['hash']
+                                         || (int)$rec->after->previous_seq !== (int)$head['seq'] || (string)$rec->prev !== $head['hash'] )
+                                    $kinds['truncated'] = "the archived file $named does not end with the record this file names";
                                 $boundaryReported = true;
                             }
                             elseif ( $named === null && $this->keys && (string)$rec->prev !== $this->genesis( $channel ) )
