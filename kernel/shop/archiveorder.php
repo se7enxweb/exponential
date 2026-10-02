@@ -1,21 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/shop/archiveorder.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$Module = $Params['Module'];
-$http = eZHTTPTool::instance();
-$archiveIDArray = $http->sessionVariable( "OrderIDArray" );
-
-$db = eZDB::instance();
-$db->begin();
-foreach ( $archiveIDArray as $archiveID )
-{
-    eZOrder::archiveOrder( $archiveID );
-}
-$db->commit();
-$Module->redirectTo( '/shop/orderlist/' );
-?>
+// The code is in kernel/private/classes/views/shop/archiveorder.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Shop\Archiveorder::main( __FILE__, get_defined_vars() );

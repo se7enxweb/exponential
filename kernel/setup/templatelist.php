@@ -1,18 +1,13 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/setup/templatelist.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
 // Redirect to visual module which is the correct place for this functionality
-$module = $Params['Module'];
 
-$visualModule = eZModule::exists( 'visual' );
-if( $visualModule )
-{
-    return $module->forward( $visualModule, 'templatelist' );
-}
-
-?>
+// The code is in kernel/private/classes/views/setup/templatelist.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Setup\Templatelist::main( __FILE__, get_defined_vars() );

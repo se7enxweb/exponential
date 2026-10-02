@@ -1,19 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/ezinfo/isalive.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-header( "Content-Type: text/plain;" );
-
-$db = eZDB::instance();
-
-if ( $db->isConnected() === true )
-    print( "eZ Publish is alive" );
-else
-    print( "No connection" );
-
-eZExecution::cleanExit();
-?>
+// The code is in kernel/private/classes/views/ezinfo/isalive.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Ezinfo\Isalive::main( __FILE__, get_defined_vars() );

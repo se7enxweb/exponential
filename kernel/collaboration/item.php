@@ -1,47 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/collaboration/item.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$Module = $Params['Module'];
-$ViewMode = $Params['ViewMode'];
-$ItemID = $Params['ItemID'];
-
-$Offset = $Params['Offset'];
-if ( !is_numeric( $Offset ) )
-    $Offset = 0;
-
-/** @var eZCollaborationItem $collabItem */
-$collabItem = eZCollaborationItem::fetch( $ItemID );
-
-if ( !$collabItem->userIsParticipant( eZUser::currentUser() ) )
-{
-    return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel', array() );
-}
-
-$collabHandler = $collabItem->handler();
-$collabItem->handleView( $ViewMode );
-$template = $collabHandler->template( $ViewMode );
-$collabTitle = $collabItem->title();
-
-$viewParameters = array( 'offset' => $Offset );
-
-$tpl = eZTemplate::factory();
-
-$tpl->setVariable( 'view_parameters', $viewParameters );
-$tpl->setVariable( 'collab_item', $collabItem );
-
-$Result = array();
-$Result['content'] = $tpl->fetch( $template );
-
-$collabHandler->readItem( $collabItem );
-
-$Result['path'] = array( array( 'url' => 'collaboration/view/summary',
-                                'text' => ezpI18n::tr( 'kernel/collaboration', 'Collaboration' ) ),
-                         array( 'url' => false,
-                                'text' => $collabTitle ) );
-
-?>
+// The code is in kernel/private/classes/views/collaboration/item.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Collaboration\Item::main( __FILE__, get_defined_vars() );

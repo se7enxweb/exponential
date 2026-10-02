@@ -1,62 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/shop/orderstatistics.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$module = $Params['Module'];
-$year = $Params['Year'];
-$month = $Params['Month'];
-
-$http = eZHTTPTool::instance();
-if ( $http->hasPostVariable( "Year" ) )
-{
-    $year = $http->postVariable( "Year" );
-}
-
-if ( $http->hasPostVariable( "Month" ) )
-{
-    $month = $http->postVariable( "Month" );
-}
-
-if ( $http->hasPostVariable( "View" ) )
-{
-    $module->redirectTo( "/shop/statistics/" . $year . '/' . $month );
-}
-
-$statisticArray = eZOrder::orderStatistics( $year, $month );
-$yearList = array();
-$currentDate = new eZDate();
-$currentYear = $currentDate->attribute( 'year' );
-for ( $index = 0; $index < 10; $index++ )
-{
-    $yearList[] = $currentYear - $index;
-}
-
-$locale = eZLocale::instance();
-$monthList = array();
-for ( $monthIndex = 1; $monthIndex <= 12; $monthIndex++ )
-{
-    $monthList[] = array( 'value' => $monthIndex, 'name' => $locale->longMonthName( $monthIndex ) );
-}
-
-$tpl = eZTemplate::factory();
-$tpl->setVariable( "year", $year );
-$tpl->setVariable( "month", $month );
-$tpl->setVariable( "year_list", $yearList );
-$tpl->setVariable( "month_list", $monthList );
-$tpl->setVariable( "statistic_result", $statisticArray );
-
-$path = array();
-$path[] = array( 'text' => ezpI18n::tr( 'kernel/shop', 'Statistics' ),
-                 'url' => false );
-
-$Result = array();
-$Result['path'] = array( array( 'text' => ezpI18n::tr( 'kernel/shop', 'Statistics' ),
-                                'url' => false ) );
-
-$Result['content'] = $tpl->fetch( "design:shop/orderstatistics.tpl" );
-
-?>
+// The code is in kernel/private/classes/views/shop/orderstatistics.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Shop\Orderstatistics::main( __FILE__, get_defined_vars() );

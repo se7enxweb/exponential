@@ -1,46 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/collaboration/group.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$Module = $Params['Module'];
-$ViewMode = $Params['ViewMode'];
-$GroupID = $Params['GroupID'];
-
-$Offset = $Params['Offset'];
-if ( !is_numeric( $Offset ) )
-    $Offset = 0;
-
-$collabGroup = eZCollaborationGroup::fetch( $GroupID );
-if ( $collabGroup === null )
-    return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-
-if ( !eZCollaborationViewHandler::groupExists( $ViewMode ) )
-    return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-
-$view = eZCollaborationViewHandler::instance( $ViewMode, eZCollaborationViewHandler::TYPE_GROUP );
-
-$template = $view->template();
-
-$collabGroupTitle = $collabGroup->attribute( 'title' );
-
-$viewParameters = array( 'offset' => $Offset );
-
-$tpl = eZTemplate::factory();
-
-$tpl->setVariable( 'view_parameters', $viewParameters );
-$tpl->setVariable( 'collab_group', $collabGroup );
-
-$Result = array();
-$Result['content'] = $tpl->fetch( $template );
-$Result['path'] = array( array( 'url' => 'collaboration/view/summary',
-                                'text' => ezpI18n::tr( 'kernel/collaboration', 'Collaboration' ) ),
-                         array( 'url' => false,
-                                'text' => 'Group' ),
-                         array( 'url' => false,
-                                'text' => $collabGroupTitle ) );
-
-?>
+// The code is in kernel/private/classes/views/collaboration/group.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Collaboration\Group::main( __FILE__, get_defined_vars() );

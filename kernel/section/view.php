@@ -1,34 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/section/view.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$http = eZHTTPTool::instance();
-$SectionID = $Params["SectionID"];
-$Module = $Params['Module'];
-$Offset = $Params['Offset'];
-$viewParameters = array( 'offset' => $Offset );
-
-$section = eZSection::fetch( $SectionID );
-
-if ( !$section )
-{
-    return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-}
-
-$tpl = eZTemplate::factory();
-
-$tpl->setVariable( "view_parameters", $viewParameters );
-$tpl->setVariable( "section", $section );
-
-$Result = array();
-$Result['content'] = $tpl->fetch( "design:section/view.tpl" );
-$Result['path'] = array( array( 'url' => 'section/list',
-                                'text' => ezpI18n::tr( 'kernel/section', 'Sections' ) ),
-                         array( 'url' => false,
-                                'text' => $section->attribute('name') ) );
-
-?>
+// The code is in kernel/private/classes/views/section/view.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Section\View::main( __FILE__, get_defined_vars() );

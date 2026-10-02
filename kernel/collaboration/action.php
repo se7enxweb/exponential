@@ -1,27 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/collaboration/action.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$Module = $Params['Module'];
-
-$http = eZHTTPTool::instance();
-
-if ( $Module->isCurrentAction( 'Custom' ) )
-{
-    $typeIdentifier = $Module->actionParameter( 'TypeIdentifer' );
-    $itemID = $Module->actionParameter( 'ItemID' );
-    $collaborationItem = eZCollaborationItem::fetch( $itemID );
-    $handler = eZCollaborationItemHandler::instantiate( $typeIdentifier );
-    return $handler->handleCustomAction( $Module, $collaborationItem );
-}
-
-$Result = array();
-$Result['content'] = false;
-$Result['path'] = array( array( 'url' => false,
-                                ezpI18n::tr( 'kernel/collaboration', 'Collaboration custom action' ) ) );
-
-?>
+// The code is in kernel/private/classes/views/collaboration/action.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Collaboration\Action::main( __FILE__, get_defined_vars() );

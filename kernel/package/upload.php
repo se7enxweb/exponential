@@ -1,81 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/package/upload.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$module = $Params['Module'];
-
-if ( !eZPackage::canUsePolicyFunction( 'import' ) )
-    return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
-
-$package = false;
-$installElements = false;
-$errorList = array();
-
-if ( $module->isCurrentAction( 'UploadPackage' ) )
-{
-    if ( eZHTTPFile::canFetch( 'PackageBinaryFile' ) )
-    {
-        $file = eZHTTPFile::fetch( 'PackageBinaryFile' );
-        if ( $file )
-        {
-            $packageFilename = $file->attribute( 'filename' );
-
-            $package = eZPackage::import( $packageFilename, $packageName );
-            if ( $package instanceof eZPackage )
-            {
-                if ( $package->attribute( 'install_type' ) != 'install' or
-                     !$package->attribute( 'can_install' ) )
-                {
-                    return $module->redirectToView( 'view', array( 'full', $package->attribute( 'name' ) ) );
-                }
-                else if ( $package->attribute( 'install_type' ) == 'install' )
-                {
-                    return $module->redirectToView( 'install', array( $package->attribute( 'name' ) ) );
-                }
-            }
-            else if ( $package == eZPackage::STATUS_ALREADY_EXISTS )
-            {
-                $errorList[] = array( 'description' => ezpI18n::tr( 'kernel/package', 'Package %packagename already exists, cannot import the package', false, array( '%packagename' => $packageName ) ) );
-            }
-            else if ( $package == eZPackage::STATUS_INVALID_NAME )
-            {
-                $errorList[] = array( 'description' => ezpI18n::tr( 'kernel/package', 'The package name %packagename is invalid, cannot import the package', false, array( '%packagename' => $packageName ) ) );
-            }
-            else
-            {
-                eZDebug::writeError( "Uploaded file is not an Exponential package" );
-            }
-        }
-        else
-        {
-            eZDebug::writeError( "Failed fetching upload package file" );
-        }
-    }
-    else
-    {
-        eZDebug::writeError( "No uploaded package file was found" );
-    }
-}
-else if ( $module->isCurrentAction( 'UploadCancel' ) )
-{
-    $module->redirectToView( 'list' );
-    return;
-}
-
-$tpl = eZTemplate::factory();
-
-$tpl->setVariable( 'package', $package );
-$tpl->setVariable( 'error_list', $errorList );
-
-$Result = array();
-$Result['content'] = $tpl->fetch( "design:package/upload.tpl" );
-$Result['path'] = array( array( 'url' => 'package/list',
-                                'text' => ezpI18n::tr( 'kernel/package', 'Packages' ) ),
-                         array( 'url' => false,
-                                'text' => ezpI18n::tr( 'kernel/package', 'Upload' ) ) );
-
-?>
+// The code is in kernel/private/classes/views/package/upload.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Package\Upload::main( __FILE__, get_defined_vars() );

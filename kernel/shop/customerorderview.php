@@ -1,35 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/shop/customerorderview.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$CustomerID = $Params['CustomerID'];
-$Email = $Params['Email'];
-$module = $Params['Module'];
-
-
-$http = eZHTTPTool::instance();
-
-$tpl = eZTemplate::factory();
-
-$Email = urldecode( $Email );
-$productList = eZOrder::productList( $CustomerID, $Email );
-$orderList = eZOrder::orderList( $CustomerID, $Email );
-
-$tpl->setVariable( "product_list", $productList );
-
-$tpl->setVariable( "order_list", $orderList );
-
-$Result = array();
-$Result['content'] = $tpl->fetch( "design:shop/customerorderview.tpl" );
-$path = array();
-$path[] = array( 'url' => '/shop/orderlist',
-                 'text' => ezpI18n::tr( 'kernel/shop', 'Order list' ) );
-$path[] = array( 'url' => false,
-                 'text' => ezpI18n::tr( 'kernel/shop', 'Customer order view' ) );
-$Result['path'] = $path;
-
-?>
+// The code is in kernel/private/classes/views/shop/customerorderview.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Shop\Customerorderview::main( __FILE__, get_defined_vars() );

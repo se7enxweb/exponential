@@ -1,89 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/class/grouplist.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$Module = $Params['Module'];
-
-$http = eZHTTPTool::instance();
-if ( $http->hasPostVariable( "RemoveGroupButton" ) )
-{
-    if ( $http->hasPostVariable( 'DeleteIDArray' ) )
-    {
-        $deleteIDArray = $http->postVariable( 'DeleteIDArray' );
-        if ( $deleteIDArray !== null )
-        {
-            $http->setSessionVariable( 'DeleteGroupIDArray', $deleteIDArray );
-            $Module->redirectTo( $Module->functionURI( 'removegroup' ) . '/' );
-        }
-    }
-}
-
-if ( $http->hasPostVariable( "EditGroupButton" ) && $http->hasPostVariable( "EditGroupID" ) )
-{
-    $Module->redirectTo( $Module->functionURI( "groupedit" ) . "/" . $http->postVariable( "EditGroupID" ) );
-    return;
-}
-
-if ( $http->hasPostVariable( "NewGroupButton" ) )
-{
-    $params = array();
-    $Module->run( "groupedit", $params );
-    return;
-}
-
-if ( $http->hasPostVariable( "NewClassButton" ) )
-{
-    if ( $http->hasPostVariable( "SelectedGroupID" ) )
-    {
-        $groupID = $http->postVariable( "SelectedGroupID" );
-        $group = eZContentClassGroup::fetch( $groupID );
-        $groupName = $group->attribute( 'name' );
-
-        $params = array( null, $groupID, $groupName );
-        return $Module->run( "edit", $params );
-    }
-}
-
-if ( !isset( $TemplateData ) or !is_array( $TemplateData ) )
-{
-    $TemplateData = array( array( "name" => "groups",
-                                  "http_base" => "ContentClass",
-                                  "data" => array( "command" => "group_list",
-                                                   "type" => "class" ) ) );
-}
-
-$Module->setTitle( ezpI18n::tr( 'kernel/class', 'Class group list' ) );
-$tpl = eZTemplate::factory();
-
-$user = eZUser::currentUser();
-foreach( $TemplateData as $tpldata )
-{
-    $tplname = $tpldata["name"];
-    $data = $tpldata["data"];
-    $asObject = isset( $data["as_object"] ) ? $data["as_object"] : true;
-    $base = $tpldata["http_base"];
-    unset( $list );
-    $list = eZContentClassGroup::fetchList( false, $asObject );
-
-    $groupCount  = count( $list );
-    $groupLimit  = expAdminPagination::limit( 'class/grouplist' );
-    $groupOffset = expAdminPagination::offset( $Params );
-
-    $tpl->setVariable( $tplname, expAdminPagination::page( $list, $groupOffset, $groupLimit ) );
-    $tpl->setVariable( "group_count", $groupCount );
-    $tpl->setVariable( "limit", $groupLimit );
-    $tpl->setVariable( "view_parameters", array( 'offset' => $groupOffset ) );
-}
-
-$tpl->setVariable( "module", $Module );
-
-$Result = array();
-$Result['content'] = $tpl->fetch( "design:class/grouplist.tpl" );
-$Result['path'] = array( array( 'url' => false,
-                                'text' => ezpI18n::tr( 'kernel/class', 'Class groups' ) ) );
-
-?>
+// The code is in kernel/private/classes/views/class/grouplist.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Class\Grouplist::main( __FILE__, get_defined_vars() );

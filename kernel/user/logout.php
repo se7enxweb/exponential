@@ -1,32 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/user/logout.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$http = eZHTTPTool::instance();
-
-$user = eZUser::instance();
-
-// Remove all temporary drafts
-eZContentObject::cleanupAllInternalDrafts( $user->attribute( 'contentobject_id' ) );
-
-$user->logoutCurrent();
-
-$http->setSessionVariable( 'force_logout', 1 );
-
-$ini = eZINI::instance();
-if ( $ini->variable( 'UserSettings', 'RedirectOnLogoutWithLastAccessURI' ) == 'enabled' && $http->hasSessionVariable( 'LastAccessesURI' ))
-{
-    $redirectURL = $http->sessionVariable( "LastAccessesURI" );
-}
-else
-{
-    $redirectURL = $http->postVariable( 'RedirectURI', $ini->variable( 'UserSettings', 'LogoutRedirect' ) );
-}
-
-return $Module->redirectTo( $redirectURL );
-
-?>
+// The code is in kernel/private/classes/views/user/logout.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\User\Logout::main( __FILE__, get_defined_vars() );

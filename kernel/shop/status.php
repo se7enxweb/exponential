@@ -1,100 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/shop/status.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$module = $Params['Module'];
-$http = eZHTTPTool::instance();
-$messages = array();
-
-if ( $http->hasPostVariable( "SaveOrderStatusButton" ) or
-     $http->hasPostVariable( "AddOrderStatusButton" ) or
-     $http->hasPostVariable( "RemoveOrderStatusButton" ) )
-{
-    $orderStatusArray = eZOrderStatus::fetchList( true, true );
-    foreach ( $orderStatusArray as $orderStatus )
-    {
-        $id = $orderStatus->attribute( 'id' );
-        if ( $http->hasPostVariable( "orderstatus_name_" . $id ) )
-        {
-            $orderStatus->setAttribute( 'name', $http->postVariable( "orderstatus_name_" . $id ) );
-        }
-        // Only check the checkbox value if the has_input variable is set
-        if ( $http->hasPostVariable( "orderstatus_active_has_input_" . $id ) )
-        {
-            $orderStatus->setAttribute( 'is_active', $http->hasPostVariable( "orderstatus_active_" . $id ) ? 1: 0 );
-        }
-        $orderStatus->sync();
-    }
-
-    eZOrderStatus::flush();
-}
-
-if ( $http->hasPostVariable( "AddOrderStatusButton" ) )
-{
-    $orderStatus = eZOrderStatus::create();
-    $orderStatus->storeCustom();
-    $messages[] = array( 'description' => ezpI18n::tr( 'kernel/shop', 'New order status was successfully added.' ) );
-}
-
-if ( $http->hasPostVariable( "SaveOrderStatusButton" ) )
-{
-    $messages[] = array( 'description' => ezpI18n::tr( 'kernel/shop', 'Changes to order status were successfully stored.' ) );
-}
-
-if ( $http->hasPostVariable( "RemoveOrderStatusButton" ) )
-{
-    $orderStatusIDList = array();
-    if ( $http->hasPostVariable( 'orderStatusIDList' ) )
-        $orderStatusIDList = $http->postVariable( "orderStatusIDList" );
-
-    $hasRemoved = false;
-    $triedRemoveInternal = false;
-    foreach ( $orderStatusIDList as $orderStatusID )
-    {
-        $status = eZOrderStatus::fetch( $orderStatusID );
-        // Internal status items must not be removed
-        if ( $status->isInternal() )
-        {
-            $triedRemoveInternal = true;
-            continue;
-        }
-        $status->removeThis();
-        $hasRemoved = true;
-    }
-    if ( $hasRemoved )
-        $messages[] = array( 'description' => ezpI18n::tr( 'kernel/shop', 'Selected order statuses were successfully removed.' ) );
-    if ( $triedRemoveInternal )
-        $messages[] = array( 'description' => ezpI18n::tr( 'kernel/shop', 'Internal orders cannot be removed.' ) );
-}
-
-$orderStatusArray = eZOrderStatus::fetchList( true, true );
-
-// Paged. The whole list was read and every row of it drawn.
-$pageCount  = count( $orderStatusArray );
-$pageLimit  = expAdminPagination::limit( 'shop/status' );
-$pageOffset = expAdminPagination::offset( $Params );
-$orderStatusArray = expAdminPagination::page( $orderStatusArray, $pageOffset, $pageLimit );
-
-$tpl = eZTemplate::factory();
-$tpl->setVariable( "orderstatus_array", $orderStatusArray );
-$tpl->setVariable( "module", $module );
-$tpl->setVariable( "messages", $messages );
-$tpl->setVariable( 'orderstatus_count', $pageCount );
-$tpl->setVariable( 'limit', $pageLimit );
-$tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
-
-$path = array();
-$path[] = array( 'text' => ezpI18n::tr( 'kernel/shop', 'Order list' ),
-                 'url' => 'shop/orderlist' );
-$path[] = array( 'text' => ezpI18n::tr( 'kernel/shop', 'Status' ),
-                 'url' => false );
-
-$Result = array();
-$Result['path'] = $path;
-$Result['content'] = $tpl->fetch( "design:shop/status.tpl" );
-
-?>
+// The code is in kernel/private/classes/views/shop/status.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Shop\Status::main( __FILE__, get_defined_vars() );

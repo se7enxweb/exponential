@@ -1,28 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/user/success.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$Module = $Params['Module'];
-$Module->setTitle( "Successful registration" );
-// Template handling
-
-$tpl = eZTemplate::factory();
-$tpl->setVariable( "module", $Module );
-$ini = eZINI::instance();
-
-$tpl->setVariable( "verify_user_email", $ini->variable( 'UserSettings', 'VerifyUserType' ) === "email" );
-
-$Result = array();
-$Result['content'] = $tpl->fetch( "design:user/success.tpl" );
-$Result['path'] = array( array( 'text' => ezpI18n::tr( 'kernel/user', 'User' ),
-                                'url' => false ),
-                         array( 'text' => ezpI18n::tr( 'kernel/user', 'Success' ),
-                                'url' => false ) );
-if ( $ini->variable( 'SiteSettings', 'LoginPage' ) == 'custom' )
-    $Result['pagelayout'] = 'loginpagelayout.tpl';
-
-?>
+// The code is in kernel/private/classes/views/user/success.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\User\Success::main( __FILE__, get_defined_vars() );

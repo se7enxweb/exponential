@@ -1,39 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/shop/customerlist.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$module = $Params["Module"];
-
-$offset = $Params['Offset'];
-$limit = expAdminPagination::limit( 'shop/customerlist' );
-
-$tpl = eZTemplate::factory();
-
-$http = eZHTTPTool::instance();
-
-$customerArray = eZOrder::customerList( $offset, $limit );
-
-$customerCount = eZOrder::customerCount();
-
-$tpl->setVariable( "customer_list", $customerArray );
-$tpl->setVariable( "customer_list_count", $customerCount );
-$tpl->setVariable( "limit", $limit );
-
-$viewParameters = array( 'offset' => $offset );
-$tpl->setVariable( "module", $module );
-$tpl->setVariable( 'view_parameters', $viewParameters );
-
-$path = array();
-$path[] = array( 'text' => ezpI18n::tr( 'kernel/shop', 'Customer list' ),
-                 'url' => false );
-
-$Result = array();
-$Result['path'] = $path;
-
-$Result['content'] = $tpl->fetch( "design:shop/customerlist.tpl" );
-
-?>
+// The code is in kernel/private/classes/views/shop/customerlist.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Shop\Customerlist::main( __FILE__, get_defined_vars() );

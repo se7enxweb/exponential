@@ -3,15 +3,10 @@
  * shop/orderreciept/<token>: the common misspelling of shop/orderreceipt,
  * answered with a permanent redirect so either address keeps working.
  *
- * @copyright Copyright (C) 7x. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$module = $Params['Module'];
-$token = isset( $Params['Token'] ) ? (string)$Params['Token'] : '';
-// redirectTo() carries the query string (?download=1) across by itself.
-$module->redirectTo( '/shop/orderreceipt/' . rawurlencode( $token ) );
-$module->setRedirectStatus( '301 Moved Permanently' );
-return;
-?>
+// The code is in kernel/private/classes/views/shop/orderreciept.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Shop\Orderreciept::main( __FILE__, get_defined_vars() );

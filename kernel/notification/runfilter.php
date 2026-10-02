@@ -1,36 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/notification/runfilter.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$http = eZHTTPTool::instance();
-$Module = $Params['Module'];
-
-$tpl = eZTemplate::factory();
-
-$tpl->setVariable( 'filter_proccessed', false );
-$tpl->setVariable( 'time_event_created', false );
-
-if ( $http->hasPostVariable( 'RunFilterButton' ) )
-{
-    eZNotificationEventFilter::process();
-    $tpl->setVariable( 'filter_proccessed', true );
-
-}
-else if ( $http->hasPostVariable( 'SpawnTimeEventButton' ) )
-{
-    $event = eZNotificationEvent::create( 'ezcurrenttime', array() );
-    $event->store();
-    $tpl->setVariable( 'time_event_created', true );
-
-}
-
-$Result = array();
-$Result['content'] = $tpl->fetch( 'design:notification/runfilter.tpl' );
-$Result['path'] = array( array( 'url' => false,
-                                'text' => ezpI18n::tr( 'kernel/notification', 'Notification settings' ) ) );
-
-?>
+// The code is in kernel/private/classes/views/notification/runfilter.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Notification\Runfilter::main( __FILE__, get_defined_vars() );

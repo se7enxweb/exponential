@@ -1,75 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/package/export.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$module = $Params['Module'];
-
-$packageName = $Params['PackageName'];
-
-$package = eZPackage::fetch( $packageName );
-if ( !$package )
-    return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-
-if ( !$package->attribute( 'can_export' ) )
-    return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
-
-
-$exportDirectory = eZPackage::temporaryExportPath();
-$exportName = $package->exportName();
-$exportPath = $exportDirectory . '/' . $exportName;
-$exportPath = $package->exportToArchive( $exportPath );
-
-//return $module->redirectToView( 'view', array( 'full', $package->attribute( 'name' ) ) );
-
-$fileName = $exportPath;
-if ( $fileName != "" and file_exists( $fileName ) )
-{
-    clearstatcache();
-    $fileSize = filesize( $fileName );
-    $mimeType =  'application/octet-stream';
-    $originalFileName = $exportName;
-    $contentLength = $fileSize;
-    $fileOffset = false;
-    $fileLength = false;
-    if ( isset( $_SERVER['HTTP_RANGE'] ) )
-    {
-        $httpRange = trim( $_SERVER['HTTP_RANGE'] );
-        if ( preg_match( "/^bytes=([0-9]+)-$/", $httpRange, $matches ) )
-        {
-            $fileOffset = $matches[1];
-            header( "Content-Range: bytes $fileOffset-" . $fileSize - 1 . "/$fileSize" );
-            header( "HTTP/1.1 206 Partial Content" );
-            $contentLength -= $fileOffset;
-        }
-    }
-
-    header( "Pragma: " );
-    header( "Cache-Control: " );
-    header( "Content-Length: $contentLength" );
-    header( "Content-Type: $mimeType" );
-    header( "X-Powered-By: " . ExponentialSDK::EDITION );
-    header( "Content-disposition: attachment; filename=$originalFileName" );
-    header( "Content-Transfer-Encoding: binary" );
-    header( "Accept-Ranges: bytes" );
-
-    $fh = fopen( $fileName, "rb" );
-    if ( $fileOffset )
-    {
-        eZDebug::writeDebug( $fileOffset, "seeking to fileoffset" );
-        fseek( $fh, $fileOffset );
-    }
-
-    ob_end_clean();
-    fpassthru( $fh );
-    fflush( $fh );
-    fclose( $fh );
-    unlink( $fileName );
-    eZExecution::cleanExit();
-}
-
-
-?>
+// The code is in kernel/private/classes/views/package/export.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Package\Export::main( __FILE__, get_defined_vars() );

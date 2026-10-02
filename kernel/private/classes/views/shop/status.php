@@ -1,0 +1,125 @@
+<?php
+/**
+ * The code of kernel/shop/status.php, moved into a class (#207 stage 1). The file kernel/shop/status.php is one call to it.
+ * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ */
+/*
+ * The original header of kernel/shop/status.php:
+ *
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ *
+ */
+
+namespace Exponential\View\Kernel\Shop
+{
+
+class Status extends \Exponential\Runnable\ModuleView
+{
+    public function run( array $scope )
+    {
+        // the including function's variables ($Params, $Module, $cli, ...)
+        foreach ( array_keys( $scope ) as $__name )
+            if ( $__name !== 'this' && $__name !== 'scope' )
+                ${$__name} = &$scope[$__name];
+        unset( $__name );
+
+        $module = $Params['Module'];
+        $http = \eZHTTPTool::instance();
+        $messages = array();
+
+        if ( $http->hasPostVariable( "SaveOrderStatusButton" ) or
+             $http->hasPostVariable( "AddOrderStatusButton" ) or
+             $http->hasPostVariable( "RemoveOrderStatusButton" ) )
+        {
+            $orderStatusArray = \eZOrderStatus::fetchList( true, true );
+            foreach ( $orderStatusArray as $orderStatus )
+            {
+                $id = $orderStatus->attribute( 'id' );
+                if ( $http->hasPostVariable( "orderstatus_name_" . $id ) )
+                {
+                    $orderStatus->setAttribute( 'name', $http->postVariable( "orderstatus_name_" . $id ) );
+                }
+                // Only check the checkbox value if the has_input variable is set
+                if ( $http->hasPostVariable( "orderstatus_active_has_input_" . $id ) )
+                {
+                    $orderStatus->setAttribute( 'is_active', $http->hasPostVariable( "orderstatus_active_" . $id ) ? 1: 0 );
+                }
+                $orderStatus->sync();
+            }
+
+            \eZOrderStatus::flush();
+        }
+
+        if ( $http->hasPostVariable( "AddOrderStatusButton" ) )
+        {
+            $orderStatus = \eZOrderStatus::create();
+            $orderStatus->storeCustom();
+            $messages[] = array( 'description' => \ezpI18n::tr( 'kernel/shop', 'New order status was successfully added.' ) );
+        }
+
+        if ( $http->hasPostVariable( "SaveOrderStatusButton" ) )
+        {
+            $messages[] = array( 'description' => \ezpI18n::tr( 'kernel/shop', 'Changes to order status were successfully stored.' ) );
+        }
+
+        if ( $http->hasPostVariable( "RemoveOrderStatusButton" ) )
+        {
+            $orderStatusIDList = array();
+            if ( $http->hasPostVariable( 'orderStatusIDList' ) )
+                $orderStatusIDList = $http->postVariable( "orderStatusIDList" );
+
+            $hasRemoved = false;
+            $triedRemoveInternal = false;
+            foreach ( $orderStatusIDList as $orderStatusID )
+            {
+                $status = \eZOrderStatus::fetch( $orderStatusID );
+                // Internal status items must not be removed
+                if ( $status->isInternal() )
+                {
+                    $triedRemoveInternal = true;
+                    continue;
+                }
+                $status->removeThis();
+                $hasRemoved = true;
+            }
+            if ( $hasRemoved )
+                $messages[] = array( 'description' => \ezpI18n::tr( 'kernel/shop', 'Selected order statuses were successfully removed.' ) );
+            if ( $triedRemoveInternal )
+                $messages[] = array( 'description' => \ezpI18n::tr( 'kernel/shop', 'Internal orders cannot be removed.' ) );
+        }
+
+        $orderStatusArray = \eZOrderStatus::fetchList( true, true );
+
+        // Paged. The whole list was read and every row of it drawn.
+        $pageCount  = count( $orderStatusArray );
+        $pageLimit  = \expAdminPagination::limit( 'shop/status' );
+        $pageOffset = \expAdminPagination::offset( $Params );
+        $orderStatusArray = \expAdminPagination::page( $orderStatusArray, $pageOffset, $pageLimit );
+
+        $tpl = \eZTemplate::factory();
+        $tpl->setVariable( "orderstatus_array", $orderStatusArray );
+        $tpl->setVariable( "module", $module );
+        $tpl->setVariable( "messages", $messages );
+        $tpl->setVariable( 'orderstatus_count', $pageCount );
+        $tpl->setVariable( 'limit', $pageLimit );
+        $tpl->setVariable( 'view_parameters', array( 'offset' => $pageOffset ) );
+
+        $path = array();
+        $path[] = array( 'text' => \ezpI18n::tr( 'kernel/shop', 'Order list' ),
+                         'url' => 'shop/orderlist' );
+        $path[] = array( 'text' => \ezpI18n::tr( 'kernel/shop', 'Status' ),
+                         'url' => false );
+
+        $Result = array();
+        $Result['path'] = $path;
+        $Result['content'] = $tpl->fetch( "design:shop/status.tpl" );
+
+        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+}
+
+}

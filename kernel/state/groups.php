@@ -1,69 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/state/groups.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$Module = $Params['Module'];
-$offset = $Params['Offset'];
-
-$listLimitPreferenceName = 'admin_state_group_list_limit';
-$listLimitPreferenceValue = eZPreferences::value( $listLimitPreferenceName );
-
-// The sizes on offer are configured, not written here; the preference holds
-// the position in that list, which is what it has always held.
-list( $limit, $limitChoice, $limitChoices ) =
-    expAdminPagination::chosen( 'state/groups', $listLimitPreferenceName );
-
-$languages = eZContentLanguage::fetchList();
-
-
-
-$tpl = eZTemplate::factory();
-
-eZDebug::writeDebug( $Module->currentAction() );
-if ( $Module->isCurrentAction( 'Remove' ) && $Module->hasActionParameter( 'RemoveIDList' ) )
-{
-    $removeIDList = $Module->actionParameter( 'RemoveIDList' );
-
-    foreach ( $removeIDList as $removeID )
-    {
-        $group = eZContentObjectStateGroup::fetchById( $removeID );
-        if ( $group && !$group->isInternal() )
-        {
-            eZContentObjectStateGroup::removeByID( $removeID );
-            ezpEvent::getInstance()->notify( 'content/state/group/cache', array( $removeID ) );
-        }
-    }
-}
-else if ( $Module->isCurrentAction( 'Create' ) )
-{
-    return $Module->redirectTo( 'state/group_edit' );
-}
-
-$groups = eZContentObjectStateGroup::fetchByOffset( $limit, $offset );
-$groupCount = eZPersistentObject::count( eZContentObjectStateGroup::definition() );
-
-$viewParameters = array( 'offset' => $offset );
-
-$tpl->setVariable( 'limit', $limit );
-$tpl->setVariable( 'limit_choices', $limitChoices );
-$tpl->setVariable( 'limit_choice', $limitChoice );
-$tpl->setVariable( 'list_limit_preference_name', $listLimitPreferenceName );
-$tpl->setVariable( 'list_limit_preference_value', $listLimitPreferenceValue );
-$tpl->setVariable( 'groups', $groups );
-$tpl->setVariable( 'group_count', $groupCount );
-$tpl->setVariable( 'view_parameters', $viewParameters );
-$tpl->setVariable( 'languages', $languages );
-
-$Result = array(
-    'content' => $tpl->fetch( 'design:state/groups.tpl' ),
-    'path'    => array(
-        array( 'url' => false, 'text' => ezpI18n::tr( 'kernel/state', 'State' ) ),
-        array( 'url' => false, 'text' => ezpI18n::tr( 'kernel/state', 'Groups' ) )
-    )
-);
-
-?>
+// The code is in kernel/private/classes/views/state/groups.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\State\Groups::main( __FILE__, get_defined_vars() );

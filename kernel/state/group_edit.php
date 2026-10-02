@@ -1,82 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/state/group_edit.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$GroupIdentifier = $Params['GroupIdentifier'];
-$Module = $Params['Module'];
-
-$group = $GroupIdentifier === null ? new eZContentObjectStateGroup() : eZContentObjectStateGroup::fetchByIdentifier( $GroupIdentifier );
-
-if ( !is_object( $group ) )
-{
-    return $Module->handleError( eZError::KERNEL_NOT_FOUND, 'kernel' );
-}
-
-if ( $group->isInternal() )
-{
-    return $Module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
-}
-
-
-
-$tpl = eZTemplate::factory();
-
-$currentAction = $Module->currentAction();
-
-if ( $currentAction == 'Cancel' )
-{
-    return $Module->redirectTo( 'state/groups' );
-}
-else if ( $currentAction == 'Store' )
-{
-    $group->fetchHTTPPersistentVariables();
-
-    $messages = array();
-    $isValid = $group->isValid( $messages );
-
-    if ( $isValid )
-    {
-        $group->store();
-        ezpEvent::getInstance()->notify( 'content/state/group/cache', array( $group->attribute( 'id' ) ) );
-        if ( $GroupIdentifier === null )
-        {
-            return $Module->redirectTo( 'state/group/' . $group->attribute( 'identifier' ) );
-        }
-        else
-        {
-            return $Module->redirectTo( 'state/groups' );
-        }
-    }
-
-    $tpl->setVariable( 'is_valid', $isValid );
-    $tpl->setVariable( 'validation_messages', $messages );
-}
-
-$tpl->setVariable( 'group', $group );
-
-if ( $GroupIdentifier === null )
-{
-    $path = array(
-        array( 'url' => false, 'text' => ezpI18n::tr( 'kernel/state', 'State' ) ),
-        array( 'url' => false, 'text' => ezpI18n::tr( 'kernel/state', 'New group' ) )
-    );
-}
-else
-{
-    $path = array(
-        array( 'url' => false, 'text' => ezpI18n::tr( 'kernel/state', 'State' ) ),
-        array( 'url' => false, 'text' => ezpI18n::tr( 'kernel/state', 'Group edit' ) ),
-        array( 'url' => false, 'text' => $group->attribute( 'identifier' ) )
-    );
-}
-
-$Result = array(
-    'content' => $tpl->fetch( 'design:state/group_edit.tpl' ),
-    'path'    => $path
-);
-
-?>
+// The code is in kernel/private/classes/views/state/group_edit.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\State\GroupEdit::main( __FILE__, get_defined_vars() );

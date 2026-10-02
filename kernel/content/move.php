@@ -1,8 +1,9 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/content/move.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
@@ -11,12 +12,5 @@
   and has been created for moving operation to be simply invoked using URI like /content/move/NODE_ID.
 */
 
-
-$Module = $Params['Module'];
-$NodeID = $Params['NodeID'];
-
-$Module->setCurrentAction( 'MoveNodeRequest', 'action' );
-$Module->setActionParameter( 'NodeID', $NodeID, 'action' );
-return $Module->run( 'action', array( $NodeID ) );
-
-?>
+// The code is in kernel/private/classes/views/content/move.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Content\Move::main( __FILE__, get_defined_vars() );

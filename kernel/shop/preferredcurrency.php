@@ -1,17 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/shop/preferredcurrency.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$tpl = eZTemplate::factory();
-
-$Result = array();
-$Result['path'] = array( array( 'text' => ezpI18n::tr( 'kernel/shop', 'Preferred currency' ),
-                                'url' => false ) );
-$Result['content'] = $tpl->fetch( "design:shop/preferredcurrency.tpl" );
-
-
-?>
+// The code is in kernel/private/classes/views/shop/preferredcurrency.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Shop\Preferredcurrency::main( __FILE__, get_defined_vars() );

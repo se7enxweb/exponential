@@ -1,36 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/shop/setusercountry.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$module = $Params['Module'];
-
-if ( $module->isCurrentAction( 'Set' ) && $module->hasActionParameter( 'Country' ) )
-{
-    $country = $module->actionParameter( 'Country' );
-}
-elseif ( isset( $Params['Country'] ) )
-{
-    $country = $Params['Country'];
-}
-else
-{
-    $country = null;
-}
-
-if ( $country !== null )
-{
-    eZShopFunctions::setPreferredUserCountry( $country );
-    eZDebug::writeNotice( "Set user country to <$country>" );
-}
-else
-{
-    eZDebug::writeWarning( "No country chosen to set." );
-}
-
-eZRedirectManager::redirectTo( $module, false );
-
-?>
+// The code is in kernel/private/classes/views/shop/setusercountry.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Shop\Setusercountry::main( __FILE__, get_defined_vars() );

@@ -1,59 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/url/edit.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
-$Module = $Params['Module'];
-$urlID = null;
-if ( isset( $Params["ID"] ) )
-    $urlID = $Params["ID"];
 
-if ( is_numeric( $urlID ) )
-{
-    $url = eZURL::fetch( $urlID );
-    if ( !$url )
-    {
-        return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-    }
-}
-else
-{
-    return $Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-}
-
-$http = eZHTTPTool::instance();
-if ( $Module->isCurrentAction( 'Cancel' ) )
-{
-    $Module->redirectToView( 'list' );
-    return;
-}
-
-if ( $Module->isCurrentAction( 'Store' ) )
-{
-    if ( $http->hasPostVariable( 'link' ) )
-    {
-        $link = $http->postVariable( 'link' );
-        $url->setAttribute( 'url', $link );
-        $url->store();
-        eZURLObjectLink::clearCacheForObjectLink( $urlID );
-    }
-    $Module->redirectToView( 'list' );
-    return;
-}
-
-$Module->setTitle( "Edit link " . $url->attribute( "id" ) );
-
-// Template handling
-
-$tpl = eZTemplate::factory();
-
-$tpl->setVariable( "Module", $Module );
-$tpl->setVariable( "url", $url );
-
-$Result = array();
-$Result['content'] = $tpl->fetch( "design:url/edit.tpl" );
-$Result['path'] = array( array( 'url' => '/url/edit/',
-                                'text' => ezpI18n::tr( 'kernel/url', 'URL edit' ) ) );
-?>
+// The code is in kernel/private/classes/views/url/edit.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Url\Edit::main( __FILE__, get_defined_vars() );

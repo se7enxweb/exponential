@@ -1,0 +1,152 @@
+<?php
+/**
+ * The code of kernel/rss/feed.php, moved into a class (#207 stage 1). The file kernel/rss/feed.php is one call to it.
+ * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ */
+/*
+ * The original header of kernel/rss/feed.php:
+ *
+ *
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ * @version //autogentag//
+ * @package kernel
+ *
+ */
+
+namespace Exponential\View\Kernel\Rss
+{
+
+class Feed extends \Exponential\Runnable\ModuleView
+{
+    public function run( array $scope )
+    {
+        // the including function's variables ($Params, $Module, $cli, ...)
+        foreach ( array_keys( $scope ) as $__name )
+            if ( $__name !== 'this' && $__name !== 'scope' )
+                ${$__name} = &$scope[$__name];
+        unset( $__name );
+
+        $Module = $Params['Module'];
+
+        if ( !isset ( $Params['RSSFeed'] ) )
+        {
+            \eZDebug::writeError( 'No RSS feed specified' );
+            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+        }
+
+        $feedName = $Params['RSSFeed'];
+        $RSSExport = \eZRSSExport::fetchByName( $feedName );
+
+        // Get and check if RSS Feed exists
+        if ( !$RSSExport )
+        {
+            \eZDebug::writeError( 'Could not find RSSExport : ' . $Params['RSSFeed'] );
+            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+        }
+
+        $config = \eZINI::instance( 'site.ini' );
+        $cacheTime = intval( $config->variable( 'RSSSettings', 'CacheTime' ) );
+
+        $lastModified = gmdate( 'D, d M Y H:i:s', time() ) . ' GMT';
+
+        \eZURI::setTransformURIMode( 'full' );
+
+        if ( $cacheTime <= 0 )
+        {
+            $xmlDoc = $RSSExport->attribute( 'rss-xml-content' );
+            $rssContent = $xmlDoc;
+        }
+        else
+        {
+            $cacheDir = \eZSys::cacheDirectory();
+            $currentSiteAccessName = $GLOBALS['eZCurrentAccess']['name'];
+            $cacheFilePath = $cacheDir . '/rss/' . md5( $currentSiteAccessName . $feedName ) . '.xml';
+
+            if ( !is_dir( dirname( $cacheFilePath ) ) )
+            {
+                \eZDir::mkdir( dirname( $cacheFilePath ), false, true );
+            }
+
+            $cacheFile = \eZClusterFileHandler::instance( $cacheFilePath );
+
+            if ( !$cacheFile->exists() or ( time() - $cacheFile->mtime() > $cacheTime ) )
+            {
+                $xmlDoc = $RSSExport->attribute( 'rss-xml-content' );
+                // Get current charset
+                $charset = \eZTextCodec::internalCharset();
+                $rssContent = trim( $xmlDoc );
+                $cacheFile->storeContents( $rssContent, 'rsscache', 'xml' );
+            }
+            else
+            {
+                $lastModified = gmdate( 'D, d M Y H:i:s', $cacheFile->mtime() ) . ' GMT';
+
+                if( isset( $_SERVER['HTTP_IF_MODIFIED_SINCE'] ) )
+                {
+                    $ifModifiedSince = $_SERVER['HTTP_IF_MODIFIED_SINCE'];
+
+                    // Internet Explorer specific
+                    $pos = strpos($ifModifiedSince,';');
+                    if ( $pos !== false )
+                        $ifModifiedSince = substr( $ifModifiedSince, 0, $pos );
+
+                    if( strcmp( $lastModified, $ifModifiedSince ) == 0 )
+                    {
+                        header( 'HTTP/1.1 304 Not Modified' );
+                        header( 'Last-Modified: ' . $lastModified );
+                        header( 'X-Powered-By: ' . \ExponentialSDK::EDITION );
+                        \eZExecution::cleanExit();
+                   }
+                }
+                $rssContent = $cacheFile->fetchContents();
+            }
+        }
+
+        // A version nobody writes, or a document that could not be produced, leaves
+        // nothing to send. Answering with a successful but empty body tells a reader
+        // the feed is fine and empty, which is worse than telling it plainly.
+        if ( !is_string( $rssContent ) || trim( $rssContent ) === '' )
+        {
+            \eZDebug::writeError( 'Nothing to serve for RSS feed ' . $feedName
+                                 . ' (version ' . $RSSExport->attribute( 'rss_version' ) . ')', $this->scriptFile() );
+            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+        }
+
+        // Set header settings
+        $httpCharset = \eZTextCodec::httpCharset();
+        header( 'Last-Modified: ' . $lastModified );
+
+        switch ( $RSSExport->attribute( 'rss_version' ) )
+        {
+            // An OPML document is a list of feeds, not a feed, and readers look for
+            // this type when deciding whether they can subscribe to the lot.
+            case 'OPML':
+                header( 'Content-Type: text/x-opml; charset=' . $httpCharset );
+                break;
+
+            case 'ATOM':
+                header( 'Content-Type: application/xml; charset=' . $httpCharset );
+                break;
+
+            default:
+                header( 'Content-Type: application/rss+xml; charset=' . $httpCharset );
+        }
+
+        header( 'Content-Length: ' . strlen( $rssContent ) );
+        header( 'X-Powered-By: ' . \ExponentialSDK::EDITION );
+
+        for ( $i = 0, $obLevel = ob_get_level(); $i < $obLevel; ++$i )
+        {
+            ob_end_clean();
+        }
+
+        echo $rssContent;
+
+        \eZExecution::cleanExit();
+
+        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+}
+
+}

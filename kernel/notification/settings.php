@@ -1,47 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/notification/settings.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$http = eZHTTPTool::instance();
-
-$Module = $Params['Module'];
-
-$user = eZUser::currentUser();
-
-$availableHandlers = eZNotificationEventFilter::availableHandlers();
-
-
-$db = eZDB::instance();
-$db->begin();
-if ( $http->hasPostVariable( 'Store' ) )
-{
-    foreach ( $availableHandlers as $handler )
-    {
-        $handler->storeSettings( $http, $Module );
-    }
-
-}
-
-foreach ( $availableHandlers as $handler )
-{
-    $handler->fetchHttpInput( $http, $Module );
-}
-$db->commit();
-
-$viewParameters = array( 'offset' => $Params['Offset'] );
-
-$tpl = eZTemplate::factory();
-$tpl->setVariable( 'user', $user );
-$tpl->setVariable( 'view_parameters', $viewParameters );
-
-$Result = array();
-$Result['content'] = $tpl->fetch( 'design:notification/settings.tpl' );
-$Result['path'] = array( array( 'url' => false,
-                                'text' => ezpI18n::tr( 'kernel/notification', 'Notification settings' ) ) );
-
-
-?>
+// The code is in kernel/private/classes/views/notification/settings.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Notification\Settings::main( __FILE__, get_defined_vars() );

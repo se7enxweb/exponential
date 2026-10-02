@@ -1,55 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/shop/updatebasket.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$http = eZHTTPTool::instance();
-$basket = eZBasket::currentBasket();
-$module = $Params['Module'];
-
-$itemCountList = $http->sessionVariable( 'ProductItemCountList' );
-$itemIDList = $http->sessionVariable( 'ProductItemIDList' );
-
-$operationResult = eZOperationHandler::execute( 'shop', 'updatebasket', array( 'item_count_list' => $itemCountList,
-                                                                               'item_id_list' => $itemIDList ) );
-
-switch( $operationResult['status'] )
-{
-    case eZModuleOperationInfo::STATUS_HALTED:
-    {
-        if ( isset( $operationResult['redirect_url'] ) )
-        {
-            $module->redirectTo( $operationResult['redirect_url'] );
-            return;
-        }
-        else if ( isset( $operationResult['result'] ) )
-        {
-            $result = $operationResult['result'];
-            $resultContent = false;
-            if ( is_array( $result ) )
-            {
-                if ( isset( $result['content'] ) )
-                {
-                    $resultContent = $result['content'];
-                }
-                if ( isset( $result['path'] ) )
-                {
-                    $Result['path'] = $result['path'];
-                }
-            }
-            else
-            {
-                $resultContent = $result;
-            }
-            $Result['content'] = $resultContent;
-            return $Result;
-       }
-    }break;
-}
-
-$module->redirectTo( '/shop/' . eZBasket::viewName() . '/' );
-
-?>
+// The code is in kernel/private/classes/views/shop/updatebasket.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Shop\Updatebasket::main( __FILE__, get_defined_vars() );

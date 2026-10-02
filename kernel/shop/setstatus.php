@@ -1,50 +1,11 @@
 <?php
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * Entry point of kernel/shop/setstatus.php
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
-$module = $Params['Module'];
-$http = eZHTTPTool::instance();
-$user = eZUser::currentUser();
-
-$order = eZOrder::fetch( $OrderID );
-if ( !$order )
-{
-    return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-}
-
-if ( $http->hasPostVariable( "OrderID" ) && $http->hasPostVariable( "StatusID" ) && $http->hasPostVariable( "SetOrderStatusButton" ) )
-{
-    $access = $order->canModifyStatus( $StatusID );
-
-    if ( $access )
-    {
-        if ( $order->attribute( 'status_id' ) != $StatusID )
-        {
-            $order->modifyStatus( $StatusID );
-        }
-
-        if ( $http->hasPostVariable( 'RedirectURI' ) )
-        {
-            $uri = $http->postVariable( 'RedirectURI' );
-            $module->redirectTo( $uri );
-            return;
-        }
-        else
-        {
-            $module->redirectTo( '/shop/orderview/' . $orderID );
-            return;
-        }
-    }
-    else
-    {
-        return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
-    }
-}
-
-return $module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-
-?>
+// The code is in kernel/private/classes/views/shop/setstatus.php (#207); this file is the entry point.
+return \Exponential\View\Kernel\Shop\Setstatus::main( __FILE__, get_defined_vars() );
