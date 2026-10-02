@@ -366,7 +366,7 @@ class eZStepCreateSites extends eZStepInstaller
     /**
      * settings/siteaccess/<editor> from the installed admin siteaccess: the
      * admin for content editing only. Its own design (editor, falling back to
-     * admin3, admin2, admin), the extensions' admin settings, no Layouts,
+     * admin4, admin3, admin2, admin), the extensions' admin settings, no Layouts,
      * Setup, Design, Git, Export or CIE tab and the modules behind them off.
      *
      * @return bool
@@ -387,7 +387,7 @@ class eZStepCreateSites extends eZStepInstaller
         $site = new eZINI( 'site.ini.append.php', $editorDir, null, null, null, true, true );
         $site->setReadOnlySettingsCheck( false );
         $site->setVariable( 'DesignSettings', 'SiteDesign', 'editor' );
-        $site->setVariable( 'DesignSettings', 'AdditionalSiteDesignList', array( 'admin3', 'admin2', 'admin' ) );
+        $site->setVariable( 'DesignSettings', 'AdditionalSiteDesignList', array( 'admin4', 'admin3', 'admin2', 'admin' ) );
         $site->setVariable( 'SiteAccessSettings', 'ExtensionSettingsSiteAccess', $adminSiteaccessName );
         $site->setVariable( 'SiteSettings', 'SiteName', 'Editor' );
         // its own address, not the admin's (SiteURL is written without the scheme)
