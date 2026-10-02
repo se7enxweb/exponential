@@ -221,3 +221,29 @@ html[data-a4-theme="dark"] #debug {
 #debug tr.strict  td.debugheader span, #debug tr.strict  td.debugheader b { color: var(--xd-lv-strict); }
 #debug span.debuginfo:after { color: var(--xd-accent); border-color: var(--xd-accent); opacity: 1; }
 #debug .exp-debug-panel h3, #debug .exp-debug-panel legend, #debug .exp-debug-classic > summary { color: var(--xd-fg); }
+
+/* ---- The symbol and the minimised bar ------------------------------------------------------------------------
+   The Exponential symbol (the two squares of the logo) at the left of the bar minimises it; minimised, only a
+   small tab with the symbol stays in the bottom right corner, with the error or warning count as a badge. */
+#debug .exp-debug-symbol { display: block; width: 20px; height: 20px; color: var(--xd-fg); }
+#debug .exp-debug-symbol-front { stroke: #1d1f23; }
+#debug > h2 > button.exp-debug-logo {
+  flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
+  margin: 0 0 0 6px; padding: 0; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--xd-fg); cursor: pointer;
+}
+#debug > h2 > button.exp-debug-logo:hover { background: var(--xd-bg-soft); border-color: var(--xd-line); }
+#debug.exp-debug-min > h2, #debug.exp-debug-min > #debug-details, #debug.exp-debug-min > #debug-details.active { display: none; }
+#debug > button.exp-debug-restore {
+  position: fixed; right: 8px; bottom: 8px; z-index: 2147483000; box-sizing: border-box; width: 40px; height: 40px; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--xd-line-strong); border-radius: 8px;
+  background: var(--xd-bg-bar); color: var(--xd-fg); box-shadow: 0 2px 8px rgba(0, 0, 0, .25); cursor: pointer;
+}
+#debug > button.exp-debug-restore[hidden] { display: none; }
+#debug > button.exp-debug-restore:hover { background: var(--xd-bg-soft); }
+#debug .exp-debug-restore-badge {
+  position: absolute; top: -6px; right: -6px; min-width: 16px; height: 16px; padding: 0 4px; box-sizing: border-box; border-radius: 8px;
+  font: 700 10px/16px system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; text-align: center;
+  background: #b01717; color: #ffffff;
+}
+#debug .exp-debug-restore-badge[data-level="warn"] { background: #ffc94d; color: #1d1f23; }
+#debug.exp-debug-min { border: 0; padding: 0; overflow: visible; }

@@ -771,6 +771,46 @@
     cacheBox.setAttribute('data-state', 'restricted');
   } else if (cacheBox) { loaders.cache = loadCache; loaders.velocity = () => { if (!loaded.cache) { loaded.cache = true; loadCache(); } }; }
 
+  /* ---------------------------------------------------------------- minimise */
+  // The Exponential symbol at the left of the bar minimises the whole bar to a small tab in the bottom right
+  // corner (like Symfony's toolbar); the tab restores it as it was, open or closed. Remembered in
+  // localStorage (exp-debug-min); the page keeps its bottom padding only while the bar is shown.
+  const bar = root.querySelector(':scope > h2');
+  if (bar) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const symbol = () => {
+      const svg = document.createElementNS(NS, 'svg');
+      svg.setAttribute('viewBox', '0 0 24 24'); svg.setAttribute('aria-hidden', 'true'); svg.setAttribute('focusable', 'false');
+      svg.setAttribute('class', 'exp-debug-symbol');
+      [['2', '2', 'none', 'exp-debug-symbol-back'], ['8.5', '8.5', '#f05a22', 'exp-debug-symbol-front']].forEach(([x, y, fill, cls]) => {
+        const r = document.createElementNS(NS, 'rect');
+        r.setAttribute('x', x); r.setAttribute('y', y); r.setAttribute('width', '13.5'); r.setAttribute('height', '13.5');
+        r.setAttribute('fill', fill); r.setAttribute('stroke', 'currentColor'); r.setAttribute('stroke-width', '2'); r.setAttribute('class', cls);
+        svg.appendChild(r);
+      });
+      return svg;
+    };
+    const count = (key) => { const c = bar.querySelector('.exp-debug-chip[data-key="' + key + '"]'); return c ? parseInt(c.textContent, 10) || 0 : 0; };
+    const errors = count('errors'), warnings = count('warnings');
+    const level = errors > 0 ? 'high' : (warnings > 0 ? 'warn' : '');
+    const badgeLabel = errors > 0 ? t('%count errors', { '%count': errors }) : (warnings > 0 ? t('%count warnings', { '%count': warnings }) : '');
+    const minButton = el('button', { type: 'button', class: 'exp-debug-logo', 'aria-label': t('Minimise debug bar'), title: t('Minimise debug bar') }, symbol());
+    const restore = el('button', { type: 'button', class: 'exp-debug-restore', hidden: true,
+      'aria-label': t('Show debug bar') + (badgeLabel ? ' (' + badgeLabel + ')' : ''), title: t('Show debug bar') + (badgeLabel ? ' (' + badgeLabel + ')' : '') },
+      symbol(), level ? el('span', { class: 'exp-debug-restore-badge', 'data-level': level, 'aria-hidden': 'true' }, String(errors > 0 ? errors : warnings)) : null);
+    bar.insertBefore(minButton, bar.firstChild);
+    root.appendChild(restore);
+    const setMin = (min, focus) => {
+      root.classList.toggle('exp-debug-min', min);
+      restore.hidden = !min;
+      document.body.classList.toggle('exp-debug-bar', !min);
+      if (focus) (min ? restore : minButton).focus();
+    };
+    minButton.addEventListener('click', () => { write('exp-debug-min', '1'); setMin(true, true); });
+    restore.addEventListener('click', () => { write('exp-debug-min', '0'); setMin(false, true); });
+    if (read('exp-debug-min') === '1') setMin(true, false);
+  }
+
   /* ---------------------------------------------------------------- start */
   select(read('exp-debug-tab') || 'messages');
   document.addEventListener('exp-debug-toggle', (e) => { if (e.detail && e.detail.open) { const cur = tabs.find((tb) => tb.getAttribute('aria-selected') === 'true'); if (cur) select(cur.getAttribute('data-tab')); } });

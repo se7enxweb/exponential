@@ -113,6 +113,7 @@ class expDebugBarReport
             'You may not clear caches (setup/managecache).',
             'Response cache', 'Engine', 'Not running on Velocity.',
             'Close', 'Open the debug report',
+            'Minimise debug bar', 'Show debug bar', '%count errors', '%count warnings',
         );
     }
 

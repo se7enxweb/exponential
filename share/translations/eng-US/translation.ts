@@ -40764,6 +40764,14 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Sign in with a user who may change settings (setup/setup) to change them here.</translation>
     </message>
     <message>
+        <source>Sign in with setup access to change debug settings</source>
+        <translation>Sign in with setup access to change debug settings</translation>
+    </message>
+    <message>
+        <source>Sign in with cache access to manage caches</source>
+        <translation>Sign in with cache access to manage caches</translation>
+    </message>
+    <message>
         <source>The settings service is not available yet. The classic controls below still work.</source>
         <translation>The settings service is not available yet. The classic controls below still work.</translation>
     </message>
@@ -41130,6 +41138,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the debug report</source>
         <translation>Open the debug report</translation>
+    </message>
+    <message>
+        <source>Minimise debug bar</source>
+        <translation>Minimise debug bar</translation>
+    </message>
+    <message>
+        <source>Show debug bar</source>
+        <translation>Show debug bar</translation>
+    </message>
+    <message>
+        <source>%count errors</source>
+        <translation>%count errors</translation>
+    </message>
+    <message>
+        <source>%count warnings</source>
+        <translation>%count warnings</translation>
     </message>
     <message>
         <source>(By User)</source>

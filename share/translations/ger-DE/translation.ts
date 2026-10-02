@@ -47922,6 +47922,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Melden Sie sich mit einem Benutzer an, der Einstellungen ändern darf (setup/setup), um sie hier zu ändern.</translation>
     </message>
     <message>
+        <source>Sign in with setup access to change debug settings</source>
+        <translation>Melden Sie sich mit Setup-Zugriff an, um die Debug-Einstellungen zu ändern</translation>
+    </message>
+    <message>
+        <source>Sign in with cache access to manage caches</source>
+        <translation>Melden Sie sich mit Cache-Zugriff an, um die Caches zu verwalten</translation>
+    </message>
+    <message>
         <source>The settings service is not available yet. The classic controls below still work.</source>
         <translation>Der Einstellungsdienst ist noch nicht verfügbar. Die klassischen Bedienelemente unten funktionieren weiterhin.</translation>
     </message>
@@ -48288,6 +48296,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Open the debug report</source>
         <translation>Debug-Bericht öffnen</translation>
+    </message>
+    <message>
+        <source>Minimise debug bar</source>
+        <translation>Debug-Leiste minimieren</translation>
+    </message>
+    <message>
+        <source>Show debug bar</source>
+        <translation>Debug-Leiste anzeigen</translation>
+    </message>
+    <message>
+        <source>%count errors</source>
+        <translation>%count Fehler</translation>
+    </message>
+    <message>
+        <source>%count warnings</source>
+        <translation>%count Warnungen</translation>
     </message>
     <message>
         <source>(By User)</source>
