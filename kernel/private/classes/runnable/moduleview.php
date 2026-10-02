@@ -29,7 +29,10 @@ abstract class ModuleView extends Runnable
      */
     public static function main( $scriptFile, array $scope )
     {
-        return static::create( $scriptFile )->run( $scope );
+        $view = static::create( $scriptFile );
+        return static::runWithEvents( $view, 'view', $scope, function () use ( $view, $scope ) {
+            return $view->run( $scope );
+        } );
     }
 
     /**

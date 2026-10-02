@@ -53,7 +53,10 @@ abstract class Command extends Runnable
      */
     public static function main( $scriptFile = '' )
     {
-        return static::create( $scriptFile )->run();
+        $command = static::create( $scriptFile );
+        return static::runWithEvents( $command, 'command', array(), function () use ( $command ) {
+            return $command->run();
+        } );
     }
 
     /**

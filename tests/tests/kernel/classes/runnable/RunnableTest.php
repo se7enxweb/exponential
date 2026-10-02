@@ -9,7 +9,7 @@
  *  RN-04 — create() remembers the stub's __FILE__; scriptFile() and scriptDir() give __FILE__ and __DIR__
  *  RN-05 — create() without a file gives an empty script file
  *  RN-06 — ModuleView::viewResult(): a non-empty $Result wins, else what the view returned (as eZProcess::runFile)
- *  RN-07 — implementation() is the class itself when no settings are available
+ *  RN-07 — implementation() is the class itself when the settings name no re-implementation for it
  *  RN-08 — implementation() can be re-implemented (override), and create()/main() then run the subclass
  *  RN-09 — The three kinds are Runnables and cannot be instantiated as abstract classes
  *  RN-10 — The ModuleView rule is the one lib/ezutils/classes/ezprocess.php runFile applies
@@ -135,8 +135,6 @@ class RunnableTest extends PHPUnit\Framework\TestCase
     /** RN-07 */
     public function testImplementationIsTheClassItselfWithoutSettings()
     {
-        if ( class_exists( 'eZINI', false ) )
-            $this->markTestSkipped( 'eZINI is loaded in this process: the settings decide' );
         $this->assertSame( 'ezpTestRunnableCommand', ezpTestRunnableCommand::implementation() );
         $this->assertSame( 'ezpTestRunnableView', ezpTestRunnableView::implementation() );
         $this->assertSame( 'ezpTestRunnableCronjobPart', ezpTestRunnableCronjobPart::implementation() );

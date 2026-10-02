@@ -27,7 +27,10 @@ abstract class CronjobPart extends Runnable
      */
     public static function main( $scriptFile, array $scope )
     {
-        return static::create( $scriptFile )->run( $scope );
+        $part = static::create( $scriptFile );
+        return static::runWithEvents( $part, 'cronjob', $scope, function () use ( $part, $scope ) {
+            return $part->run( $scope );
+        } );
     }
 
     /**
