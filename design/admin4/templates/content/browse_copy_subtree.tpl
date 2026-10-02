@@ -17,6 +17,15 @@
 <p>{'Navigate using the available tabs (above), the tree menu (left) and the content list (middle).'|i18n( 'design/admin/content/browse_copy_node' )}</p>
 </div>
 
+{* content jobs: what the copy touches and the now-or-background choice, sent with the browse form *}
+{if and( $browse.content_job_summary, is_array( $browse.content_job_summary ) )}
+{include uri='design:content/job_summary.tpl' job_summary=$browse.content_job_summary operation='copy'}
+{/if}
+{if and( $browse.content_job_mode, is_array( $browse.content_job_mode ) )}
+<p class="cj-copy-help">{'The copy gets the current version of each object unless all versions are chosen, and you as its creator unless the creator is kept (content.ini [CopySettings]).'|i18n( 'design/admin/content/job' )}</p>
+{include uri='design:content/job_mode_choice.tpl' job_mode=$browse.content_job_mode form_name='browse'}
+{/if}
+
 {* DESIGN: Content END *}</div></div></div>
 
 </div>

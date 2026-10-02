@@ -21,6 +21,14 @@
 <p>{'Navigate using the available tabs (above), the tree menu (left) and the content list (middle).'|i18n( 'design/admin/content/browse_move_node' )}</p>
 </div>
 
+{* content jobs: what the move touches and the now-or-background choice, sent with the browse form *}
+{if and( is_set( $browse.content_job_summary ), is_array( $browse.content_job_summary ) )}
+{include uri='design:content/job_summary.tpl' job_summary=$browse.content_job_summary operation='move'}
+{/if}
+{if and( is_set( $browse.content_job_mode ), is_array( $browse.content_job_mode ) )}
+{include uri='design:content/job_mode_choice.tpl' job_mode=$browse.content_job_mode form_name='browse'}
+{/if}
+
 {* DESIGN: Content END *}</div></div></div>
 
 </div>

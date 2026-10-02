@@ -45,6 +45,7 @@
 
 
 <div class="buttonblock">
+{if and( is_set( $content_job_mode ), $content_job_mode )}<input type="hidden" name="ContentJobMode" value="{$content_job_mode|wash}" />{/if}
 <input class="defaultbutton" type="submit" name="CopyButton" value="{'Copy'|i18n('design/standard/content/copy_subtree')}" />
 <input class="button" type="submit" name="CancelButton" value="{'Cancel'|i18n('design/standard/content/copy_subtree')}" />
 </div>
