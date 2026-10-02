@@ -96,7 +96,8 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'json_xml_tag_alias',
                       'custom_tag_definitions',
                       'engine_switch_enabled',
-                      'tinymce8_cache_key' ),
+                      'tinymce8_cache_key',
+                      'literal_definition' ),
                       parent::attributes() );
     }
 
@@ -132,6 +133,8 @@ class eZOEXMLInput extends eZXMLInputHandler
             $attr = self::engineSwitchEnabled();
         else if ( $name === 'tinymce8_cache_key' )
             $attr = self::getTinyMCE8CacheKey();
+        else if ( $name === 'literal_definition' )
+            $attr = self::getTagDefinition( 'literal' );
         else
             $attr = parent::attribute( $name );
         return $attr;
@@ -232,18 +235,8 @@ class eZOEXMLInput extends eZXMLInputHandler
     public static function getCustomTagDefinitions()
     {
         $contentIni    = eZINI::instance( 'content.ini' );
-        $attributesIni = eZINI::instance( 'ezoe_attributes.ini' );
         $descriptions  = $contentIni->hasVariable( 'CustomTagSettings', 'CustomTagsDescription' )
                        ? $contentIni->variable( 'CustomTagSettings', 'CustomTagsDescription' ) : array();
-        $labels        = array(
-            'align'  => ezpI18n::tr( 'design/standard/ezoe', 'Align' ),
-            'author' => ezpI18n::tr( 'design/standard/ezoe', 'Author' ),
-            'title'  => ezpI18n::tr( 'design/standard/ezoe', 'Title' ),
-            'name'   => ezpI18n::tr( 'design/standard/ezoe', 'Name' ),
-            'size'   => ezpI18n::tr( 'design/standard/ezoe', 'Size' ),
-            'class'  => ezpI18n::tr( 'design/standard/ezoe', 'Class' ),
-            'id'     => ezpI18n::tr( 'design/standard/ezoe', 'ID' ),
-        );
         $definitions = array();
 
         foreach ( array_unique( $contentIni->variable( 'CustomTagSettings', 'AvailableCustomTags' ) ) as $tagName )
@@ -254,42 +247,8 @@ class eZOEXMLInput extends eZXMLInputHandler
                 'title'      => isset( $descriptions[$tagName] ) ? $descriptions[$tagName] : $tagName,
                 'inline'     => is_string( $inline ) ? 'image' : $inline,
                 'icon'       => is_string( $inline ) ? self::getDesignFile( $inline ) : '',
-                'attributes' => array(),
+                'attributes' => self::getCustomAttributeDefinitions( $tagName ),
             );
-
-            $attributeNames = $contentIni->hasVariable( $tagName, 'CustomAttributes' )
-                            ? array_unique( $contentIni->variable( $tagName, 'CustomAttributes' ) ) : array();
-            $defaults       = $contentIni->hasVariable( $tagName, 'CustomAttributesDefaults' )
-                            ? $contentIni->variable( $tagName, 'CustomAttributesDefaults' ) : array();
-
-            foreach ( $attributeNames as $attributeName )
-            {
-                if ( $attributeName === '' )
-                    continue;
-
-                $section = $attributesIni->hasSection( 'CustomAttribute_' . $tagName . '_' . $attributeName )
-                         ? 'CustomAttribute_' . $tagName . '_' . $attributeName
-                         : 'CustomAttribute_' . $attributeName;
-                $setting = function ( $name, $default = '' ) use ( $attributesIni, $section )
-                {
-                    return $attributesIni->hasVariable( $section, $name ) ? $attributesIni->variable( $section, $name ) : $default;
-                };
-
-                $definition['attributes'][] = array(
-                    'id'         => $attributeName,
-                    'name'       => $setting( 'Name', isset( $labels[$attributeName] ) ? $labels[$attributeName] : ucfirst( $attributeName ) ),
-                    'title'      => $setting( 'Title' ),
-                    'type'       => $setting( 'Type', 'text' ),
-                    'default'    => $setting( 'Default', isset( $defaults[$attributeName] ) ? $defaults[$attributeName] : '' ),
-                    'required'   => $setting( 'Required' ) === 'true',
-                    'allowEmpty' => $setting( 'AllowEmpty' ) === 'true',
-                    'disabled'   => $setting( 'Disabled' ) === 'true',
-                    'selection'  => (object) $setting( 'Selection', array() ),
-                    'minimum'    => $setting( 'Minimum', null ),
-                    'maximum'    => $setting( 'Maximum', null ),
-                    'rows'       => (int) $setting( 'Rows', 0 ),
-                );
-            }
             $definitions[] = $definition;
         }
         return $definitions;
@@ -381,6 +340,94 @@ class eZOEXMLInput extends eZXMLInputHandler
                 eZDebug::writeError( 'Unknown custom HTTP action: ' . $action, __METHOD__ );
             } break;
         }
+    }
+
+     /**
+     * getCustomAttributeDefinitions
+     * Custom attributes of a tag (content.ini [<tag>] CustomAttributes) with their settings from
+     * ezoe_attributes.ini, resolved like design:ezoe/customattributes.tpl.
+     *
+     * @static
+     * @param string $tagName
+     * @return array
+     */
+    public static function getCustomAttributeDefinitions( $tagName )
+    {
+        $contentIni    = eZINI::instance( 'content.ini' );
+        $attributesIni = eZINI::instance( 'ezoe_attributes.ini' );
+        $labels        = array(
+            'align'  => ezpI18n::tr( 'design/standard/ezoe', 'Align' ),
+            'author' => ezpI18n::tr( 'design/standard/ezoe', 'Author' ),
+            'title'  => ezpI18n::tr( 'design/standard/ezoe', 'Title' ),
+            'name'   => ezpI18n::tr( 'design/standard/ezoe', 'Name' ),
+            'size'   => ezpI18n::tr( 'design/standard/ezoe', 'Size' ),
+            'class'  => ezpI18n::tr( 'design/standard/ezoe', 'Class' ),
+            'id'     => ezpI18n::tr( 'design/standard/ezoe', 'ID' ),
+        );
+        $attributeNames = $contentIni->hasVariable( $tagName, 'CustomAttributes' )
+                        ? array_unique( $contentIni->variable( $tagName, 'CustomAttributes' ) ) : array();
+        $defaults       = $contentIni->hasVariable( $tagName, 'CustomAttributesDefaults' )
+                        ? $contentIni->variable( $tagName, 'CustomAttributesDefaults' ) : array();
+        $attributes     = array();
+
+        foreach ( $attributeNames as $attributeName )
+        {
+            if ( $attributeName === '' )
+                continue;
+
+            $section = $attributesIni->hasSection( 'CustomAttribute_' . $tagName . '_' . $attributeName )
+                     ? 'CustomAttribute_' . $tagName . '_' . $attributeName
+                     : 'CustomAttribute_' . $attributeName;
+            $setting = function ( $name, $default = '' ) use ( $attributesIni, $section )
+            {
+                return $attributesIni->hasVariable( $section, $name ) ? $attributesIni->variable( $section, $name ) : $default;
+            };
+
+            $attributes[] = array(
+                'id'         => $attributeName,
+                'name'       => $setting( 'Name', isset( $labels[$attributeName] ) ? $labels[$attributeName] : ucfirst( $attributeName ) ),
+                'title'      => $setting( 'Title' ),
+                'type'       => $setting( 'Type', 'text' ),
+                'default'    => $setting( 'Default', isset( $defaults[$attributeName] ) ? $defaults[$attributeName] : '' ),
+                'required'   => $setting( 'Required' ) === 'true',
+                'allowEmpty' => $setting( 'AllowEmpty' ) === 'true',
+                'disabled'   => $setting( 'Disabled' ) === 'true',
+                'selection'  => (object) $setting( 'Selection', array() ),
+                'minimum'    => $setting( 'Minimum', null ),
+                'maximum'    => $setting( 'Maximum', null ),
+                'rows'       => (int) $setting( 'Rows', 0 ),
+            );
+        }
+        return $attributes;
+    }
+
+     /**
+     * getTagDefinition
+     * Classes (content.ini [<tag>] AvailableClasses with ClassDescription) and custom attributes of
+     * a tag, for the general tag dialogs of the TinyMCE 8 editor (literal).
+     *
+     * @static
+     * @param string $tagName
+     * @return array hash with name, classes (class => description) and attributes
+     */
+    public static function getTagDefinition( $tagName )
+    {
+        $contentIni   = eZINI::instance( 'content.ini' );
+        $descriptions = $contentIni->hasVariable( $tagName, 'ClassDescription' ) ? $contentIni->variable( $tagName, 'ClassDescription' ) : array();
+        $classes      = array();
+        if ( $contentIni->hasVariable( $tagName, 'AvailableClasses' ) )
+        {
+            foreach ( $contentIni->variable( $tagName, 'AvailableClasses' ) as $class )
+            {
+                if ( $class !== '' )
+                    $classes[$class] = isset( $descriptions[$class] ) ? $descriptions[$class] : $class;
+            }
+        }
+        return array(
+            'name'       => $tagName,
+            'classes'    => (object) $classes,
+            'attributes' => self::getCustomAttributeDefinitions( $tagName ),
+        );
     }
 
      /**

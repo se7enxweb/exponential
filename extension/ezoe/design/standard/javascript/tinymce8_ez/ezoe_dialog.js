@@ -23,7 +23,13 @@ window.eZOe8Dialog = (function () {
         'Preview': 'Vorschau',
         'All': 'Alle',
         'Content classes': 'Inhaltsklassen',
-        '%1 to %2 of %3': '%1 bis %2 von %3'
+        '%1 to %2 of %3': '%1 bis %2 von %3',
+        'Please fill in: %s': 'Bitte ausfüllen: %s',
+        'Please enter a whole number: %s': 'Bitte eine ganze Zahl eingeben: %s',
+        'Please enter a number: %s': 'Bitte eine Zahl eingeben: %s',
+        'Please enter an e-mail address: %s': 'Bitte eine E-Mail-Adresse eingeben: %s',
+        'Value too small: %s': 'Wert zu klein: %s',
+        'Value too large: %s': 'Wert zu groß: %s'
     } );
 
     // ezurl() strips the trailing slash
@@ -143,6 +149,111 @@ window.eZOe8Dialog = (function () {
                     errors = Array.prototype.map.call( doc.querySelectorAll( 'p' ), function ( p ) { return p.textContent.trim(); } ).filter( Boolean );
                 throw new Error( errors.join( ' ' ) || doc.body.textContent.trim().slice( 0, 300 ) || 'Upload failed' );
             } );
+    };
+
+    // ---- custom attributes (customattributes="name|valueattribute_separationname2|value2")
+
+    var ATTRIBUTE_SEPARATOR = 'attribute_separation';
+    var FIELD_PREFIX = 'attr_';
+
+    var parseCustomAttributes = function ( value ) {
+        var result = {};
+        ( value || '' ).split( ATTRIBUTE_SEPARATOR ).forEach( function ( part ) {
+            var pos = part.indexOf( '|' );
+            if ( pos > 0 )
+                result[ part.slice( 0, pos ) ] = part.slice( pos + 1 );
+        } );
+        return result;
+    };
+
+    var serializeCustomAttributes = function ( values ) {
+        return Object.keys( values ).map( function ( key ) {
+            return key + '|' + values[key];
+        } ).join( ATTRIBUTE_SEPARATOR );
+    };
+
+    var attributeFieldName = function ( attribute ) {
+        return FIELD_PREFIX + attribute.id;
+    };
+
+    // Dialog component for a custom attribute definition of eZOEXMLInput::getCustomAttributeDefinitions()
+    var attributeField = function ( attribute ) {
+        var label = attribute.name + ( attribute.required ? ' *' : '' ),
+            field = { name: attributeFieldName( attribute ), label: label, enabled: !attribute.disabled };
+
+        switch ( attribute.type )
+        {
+            case 'select':
+                field.type = 'listbox';
+                field.items = Object.keys( attribute.selection || {} ).map( function ( key ) {
+                    return { text: attribute.selection[key], value: key };
+                } );
+                if ( !field.items.length )
+                    field.items = [ { text: '', value: '' } ];
+                break;
+            case 'checkbox':
+                field.type = 'checkbox';
+                break;
+            case 'textarea':
+                field.type = 'textarea';
+                field.maximized = false;
+                break;
+            case 'color':
+                field.type = 'colorinput';
+                break;
+            default:
+                // text, int, number, email, link and the css/html size types
+                field.type = 'input';
+                if ( attribute.title )
+                    field.placeholder = attribute.title;
+        }
+        return field;
+    };
+
+    // Dialog value of an attribute from the stored string value
+    var toAttributeFieldValue = function ( attribute, value ) {
+        if ( attribute.type === 'checkbox' )
+            return value !== undefined && value !== '' && value !== 'false';
+        if ( attribute.type === 'select' && value === undefined )
+        {
+            var keys = Object.keys( attribute.selection || {} );
+            return keys.indexOf( attribute['default'] ) !== -1 ? attribute['default'] : ( keys[0] || '' );
+        }
+        return value === undefined ? ( attribute['default'] || '' ) : value;
+    };
+
+    // Stored string value of an attribute from the dialog value, null means not set
+    var fromAttributeFieldValue = function ( attribute, value ) {
+        if ( attribute.type === 'checkbox' )
+            return value ? ( String( attribute['default'] || '' ).trim() || '1' ) : null;
+        value = String( value === undefined || value === null ? '' : value ).trim();
+        return value === '' ? null : value;
+    };
+
+    // Validation like popup_validate.js of the TinyMCE 3 dialogs, returns the message or null
+    var validateAttribute = function ( attribute, value, t ) {
+        var tr = function ( text ) {
+            return t( text ).replace( '%s', attribute.name );
+        };
+        if ( attribute.required && ( value === null || ( attribute.type === 'select' && value === Object.keys( attribute.selection || {} )[0] ) ) )
+            return tr( 'Please fill in: %s' );
+        if ( value === null )
+            return ( attribute.type === 'int' || attribute.type === 'number' ) && !attribute.allowEmpty ? tr( 'Please fill in: %s' ) : null;
+        if ( attribute.type === 'int' && !/^-?\d+$/.test( value ) )
+            return tr( 'Please enter a whole number: %s' );
+        if ( attribute.type === 'number' && !/^-?\d+([.,]\d+)?$/.test( value ) )
+            return tr( 'Please enter a number: %s' );
+        if ( attribute.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test( value ) )
+            return tr( 'Please enter an e-mail address: %s' );
+        if ( attribute.type === 'int' || attribute.type === 'number' )
+        {
+            var number = parseFloat( value.replace( ',', '.' ) );
+            if ( attribute.minimum !== null && number < parseFloat( attribute.minimum ) )
+                return tr( 'Value too small: %s' );
+            if ( attribute.maximum !== null && number > parseFloat( attribute.maximum ) )
+                return tr( 'Value too large: %s' );
+        }
+        return null;
     };
 
     var escapeHtml = function ( value ) {
@@ -287,6 +398,13 @@ window.eZOe8Dialog = (function () {
         escapeHtml: escapeHtml,
         decodeHtml: decodeHtml,
         renderList: renderList,
+        parseCustomAttributes: parseCustomAttributes,
+        serializeCustomAttributes: serializeCustomAttributes,
+        attributeFieldName: attributeFieldName,
+        attributeField: attributeField,
+        toAttributeFieldValue: toAttributeFieldValue,
+        fromAttributeFieldValue: fromAttributeFieldValue,
+        validateAttribute: validateAttribute,
         renderClassFilter: renderClassFilter,
         readClassFilter: readClassFilter,
         previewUrl: previewUrl,
