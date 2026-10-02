@@ -1510,6 +1510,17 @@ class eZDebug
     function printReportInternal( $as_html = true, $returnReport = true, $allowedDebugLevels = false,
                                   $useAccumulators = true, $useTiming = true, $useIncludedFiles = false )
     {
+        // The HTML report is the "Exp Debug" bar (lib/ezutils/classes/expdebugbarreport.php): a pinned bar
+        // with a summary and a tabbed panel over the same sections. Loaded by path, so a server whose
+        // workers kept an older autoload array still finds it; without the file the classic report below.
+        if ( $as_html )
+        {
+            if ( !class_exists( 'expDebugBarReport', false ) && is_file( __DIR__ . '/expdebugbarreport.php' ) )
+                require_once __DIR__ . '/expdebugbarreport.php';
+            if ( class_exists( 'expDebugBarReport', false ) )
+                return expDebugBarReport::render( $this, $returnReport, $allowedDebugLevels, $useAccumulators, $useTiming, $useIncludedFiles );
+        }
+
         $reportStart = microtime( true );
 
         if ( isset( $GLOBALS['eZDebugStyles'] ) )

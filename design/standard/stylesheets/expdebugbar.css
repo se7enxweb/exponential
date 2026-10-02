@@ -1,0 +1,180 @@
+/* The "Exp Debug" bar: summary chips in the pinned bar, the tabbed panel above it and its controls.
+   Linked by the debug report itself (lib/ezutils/classes/expdebugbarreport.php), so every design gets it,
+   admin and public. Everything is scoped to #debug; light and dark follow prefers-color-scheme. */
+
+#debug {
+  --xd-bg: #ffffff;
+  --xd-bg-soft: #f4f5f7;
+  --xd-bg-bar: #f2f2f2;
+  --xd-fg: #1d1f23;
+  --xd-fg-soft: #555b66;
+  --xd-line: #c9ccd2;
+  --xd-accent: #0b5cad;
+  --xd-accent-fg: #ffffff;
+  --xd-ok: #1d6b35;
+  --xd-ok-bg: #e3f3e7;
+  --xd-warn: #7a4a00;
+  --xd-warn-bg: #fff0c9;
+  --xd-high: #a01818;
+  --xd-high-bg: #fde3e3;
+  --xd-focus: #1a73e8;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--xd-fg);
+}
+@media (prefers-color-scheme: dark) {
+  #debug {
+    --xd-bg: #1c1e22;
+    --xd-bg-soft: #26292e;
+    --xd-bg-bar: #2a2a2a;
+    --xd-fg: #e8eaed;
+    --xd-fg-soft: #a9afb8;
+    --xd-line: #454a52;
+    --xd-accent: #6aa9f0;
+    --xd-accent-fg: #0d1117;
+    --xd-ok: #8fd6a3;
+    --xd-ok-bg: #173323;
+    --xd-warn: #ffd27a;
+    --xd-warn-bg: #3a2c0c;
+    --xd-high: #ff9d9d;
+    --xd-high-bg: #4a1a1a;
+    --xd-focus: #8ab4f8;
+  }
+  #debug-details.active { background: var(--xd-bg); color: var(--xd-fg); }
+  #debug table tr.data td, #debug table tr.data:nth-child(odd) td, #debug td.debugheader { background-color: var(--xd-bg-soft); color: var(--xd-fg); }
+  #debug pre.debugtransaction { background-color: #3a3820; }
+}
+
+#debug { box-sizing: border-box; max-width: 100%; }
+#debug * { word-break: normal; overflow-wrap: anywhere; }
+#debug :focus-visible { outline: 2px solid var(--xd-focus); outline-offset: 1px; }
+#debug .exp-debug-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* --- the pinned bar */
+#debug > h2 > a { font-weight: 600; }
+#debug > h2 > a::after { margin-left: .5em; }
+#debug .exp-debug-summary { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; padding: 4px 0; }
+#debug .exp-debug-chip {
+  font: 12px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; padding: 3px 7px; border-radius: 10px;
+  border: 1px solid var(--xd-line); background: var(--xd-ok-bg); color: var(--xd-ok); cursor: pointer; white-space: nowrap;
+}
+#debug .exp-debug-chip[data-level="warn"] { background: var(--xd-warn-bg); color: var(--xd-warn); border-color: currentColor; }
+#debug .exp-debug-chip[data-level="high"] { background: var(--xd-high-bg); color: var(--xd-high); border-color: currentColor; font-weight: 700; }
+#debug .exp-debug-chip:hover { filter: brightness(.95); }
+
+/* --- the panel */
+#debug-details.active { padding: 0 12px 12px; color: var(--xd-fg); background: var(--xd-bg); }
+#debug .exp-debug-toolbar {
+  position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center;
+  padding: 8px 0; background: var(--xd-bg); border-bottom: 1px solid var(--xd-line);
+}
+#debug .exp-debug-tabs { display: flex; flex-wrap: wrap; gap: 2px; flex: 1 1 auto; }
+#debug .exp-debug-tab {
+  font: inherit; font-size: 13px; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px 4px 0 0;
+  background: transparent; color: var(--xd-fg-soft); cursor: pointer;
+}
+#debug .exp-debug-tab:hover { color: var(--xd-fg); background: var(--xd-bg-soft); }
+#debug .exp-debug-tab[aria-selected="true"] { color: var(--xd-fg); border-color: var(--xd-line); border-bottom-color: var(--xd-bg); background: var(--xd-bg); font-weight: 600; box-shadow: inset 0 2px 0 var(--xd-accent); }
+#debug .exp-debug-tab[data-matches="0"] { opacity: .45; }
+#debug .exp-debug-badge { display: inline-block; min-width: 1.4em; padding: 0 4px; margin-left: 2px; border-radius: 8px; background: var(--xd-bg-soft); font-size: 11px; text-align: center; }
+#debug .exp-debug-search input { font: inherit; font-size: 13px; padding: 4px 8px; width: 16em; max-width: 100%; border: 1px solid var(--xd-line); border-radius: 4px; background: var(--xd-bg); color: var(--xd-fg); }
+#debug .exp-debug-panel { padding-top: 10px; }
+#debug.exp-debug-js .exp-debug-panel-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+#debug .exp-debug-panel h3 { font-size: 14px; margin: 14px 0 6px; }
+#debug .exp-debug-panel table { max-width: 100%; }
+#debug .exp-debug-hint { color: var(--xd-fg-soft); font-size: 13px; margin: 6px 0; }
+#debug .exp-debug-hint.exp-debug-warn { color: var(--xd-warn); background: var(--xd-warn-bg); padding: 4px 8px; border-radius: 4px; }
+#debug .exp-debug-hint.exp-debug-high { color: var(--xd-high); background: var(--xd-high-bg); padding: 4px 8px; border-radius: 4px; }
+#debug .exp-debug-hint.exp-debug-ok { color: var(--xd-ok); background: var(--xd-ok-bg); padding: 4px 8px; border-radius: 4px; }
+#debug .exp-debug-report-time { font-size: 12px; color: var(--xd-fg-soft); margin-top: 12px; }
+#debug table.exp-debug-facts { border-collapse: collapse; font-size: 13px; margin: 4px 0 8px; }
+#debug table.exp-debug-facts th, #debug table.exp-debug-facts td { text-align: left; padding: 3px 12px 3px 0; border-bottom: 1px solid var(--xd-line); vertical-align: top; font-weight: normal; }
+#debug table.exp-debug-facts th { color: var(--xd-fg-soft); }
+#debug .exp-debug-filter-hidden { display: none !important; }
+#debug .exp-debug-empty { color: var(--xd-fg-soft); font-style: italic; }
+
+/* --- buttons and inputs */
+#debug .exp-debug-button, #debug .exp-debug-panel button.exp-debug-button {
+  font: inherit; font-size: 13px; padding: 4px 10px; margin: 2px 4px 2px 0; border: 1px solid var(--xd-line); border-radius: 4px;
+  background: var(--xd-bg-soft); color: var(--xd-fg); cursor: pointer;
+}
+#debug .exp-debug-button.exp-debug-primary { background: var(--xd-accent); color: var(--xd-accent-fg); border-color: var(--xd-accent); }
+#debug .exp-debug-button[aria-pressed="true"] { background: var(--xd-accent); color: var(--xd-accent-fg); border-color: var(--xd-accent); }
+#debug .exp-debug-button:disabled { opacity: .5; cursor: default; }
+#debug .exp-debug-panel input[type="text"], #debug .exp-debug-panel input[type="search"], #debug .exp-debug-panel select, #debug .exp-debug-panel textarea {
+  font: inherit; font-size: 13px; padding: 3px 6px; border: 1px solid var(--xd-line); border-radius: 4px; background: var(--xd-bg); color: var(--xd-fg); max-width: 100%; box-sizing: border-box;
+}
+#debug .exp-debug-panel input[aria-invalid="true"] { border-color: var(--xd-high); box-shadow: 0 0 0 1px var(--xd-high); }
+#debug .exp-debug-panel fieldset { border: 1px solid var(--xd-line); border-radius: 6px; padding: 6px 10px 10px; margin: 8px 0; }
+#debug .exp-debug-panel legend { font-weight: 600; padding: 0 4px; font-size: 13px; }
+#debug .exp-debug-levels { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+
+/* --- settings */
+#debug .exp-debug-presets { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 6px 0 10px; }
+#debug .exp-debug-group > h3 { border-bottom: 1px solid var(--xd-line); padding-bottom: 3px; }
+#debug .exp-debug-setting {
+  display: grid; grid-template-columns: minmax(12em, 1.3fr) minmax(10em, 1.2fr) minmax(9em, 1fr) auto; gap: 4px 10px;
+  align-items: start; padding: 6px 0; border-bottom: 1px dashed var(--xd-line); font-size: 13px;
+}
+#debug .exp-debug-setting-name { font-weight: 600; }
+#debug .exp-debug-setting-key { display: block; font: 11px ui-monospace, Menlo, Consolas, monospace; color: var(--xd-fg-soft); font-weight: normal; }
+#debug .exp-debug-setting-help { display: block; color: var(--xd-fg-soft); font-weight: normal; font-size: 12px; }
+#debug .exp-debug-origin { display: inline-block; font-size: 11px; padding: 0 6px; border-radius: 8px; background: var(--xd-bg-soft); border: 1px solid var(--xd-line); color: var(--xd-fg-soft); }
+#debug .exp-debug-origin[data-origin="default"] { opacity: .8; }
+#debug .exp-debug-setting-status { font-size: 12px; min-height: 1em; grid-column: 1 / -1; }
+#debug .exp-debug-setting textarea { width: 100%; min-height: 4em; }
+#debug .exp-debug-scope label { display: block; font-size: 11px; color: var(--xd-fg-soft); }
+@media (max-width: 760px) {
+  #debug .exp-debug-setting { grid-template-columns: 1fr 1fr; }
+}
+
+/* --- IP and user lists */
+#debug .exp-debug-iplist { grid-column: 1 / -1; }
+#debug .exp-debug-iplist table { border-collapse: collapse; width: 100%; font-size: 13px; }
+#debug .exp-debug-iplist th, #debug .exp-debug-iplist td { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--xd-line); }
+#debug .exp-debug-iplist tr.exp-debug-matched td { background: var(--xd-ok-bg); color: var(--xd-ok); }
+#debug .exp-debug-iplist tr.exp-debug-expired td { opacity: .55; text-decoration: line-through; }
+#debug .exp-debug-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 6px 0; }
+#debug .exp-debug-row label { font-size: 12px; }
+#debug .exp-debug-field-error { color: var(--xd-high); font-size: 12px; }
+#debug .exp-debug-mono { font-family: ui-monospace, Menlo, Consolas, monospace; }
+
+/* --- change log */
+#debug .exp-debug-log { font-size: 13px; padding-left: 1.2em; }
+#debug .exp-debug-log li { margin: 3px 0; }
+
+/* --- messages and SQL */
+#debug #main-debug-table, #debug #exp-debug-sql-table { width: 100%; }
+#debug #main-debug-table pre, #debug #exp-debug-sql-table pre { white-space: pre-wrap; margin: 2px 0 6px; font-size: 12px; }
+#debug .exp-debug-classic { margin-top: 14px; }
+#debug .exp-debug-classic > summary { cursor: pointer; font-weight: 600; font-size: 13px; }
+#debug .exp-debug-level-hidden { display: none !important; }
+#debug > h2 > a { background: transparent; border-bottom: 0; }
+#debug, #debug-details { background-color: var(--xd-bg); }
+#debug pre { color: var(--xd-fg); background: transparent; }
+#debug .exp-debug-search input { width: 20em; }
+#debug tr.notice  td.debugheader span { color: var(--xd-ok); }
+#debug tr.warning td.debugheader span { color: var(--xd-warn); }
+#debug tr.error   td.debugheader span { color: var(--xd-high); }
+@media (prefers-color-scheme: dark) {
+  #debug tr.debug  td.debugheader span { color: #e0a96d; }
+  #debug tr.timing td.debugheader span { color: #8ab4f8; }
+  #debug tr.strict td.debugheader span { color: #d7aefb; }
+  #debug td.debugheader { border-color: var(--xd-line); }
+  #debug table tr.data td { border-color: var(--xd-line); }
+  #debug #timingpoints, #debug #timeaccumulators, #debug #debug_resources, #debug #debug_includes, #debug table.debug_resource_usage { border-color: var(--xd-line); }
+  #debug a { color: var(--xd-accent); }
+}
+#debug .exp-debug-setting { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.1fr); }
+#debug .exp-debug-scope select, #debug .exp-debug-setting select, #debug .exp-debug-setting input[type="text"] { width: 100%; }
+#debug .exp-debug-presets select { width: auto; max-width: 22em; }
+#debug .exp-debug-panel button.exp-debug-button.exp-debug-primary { background: var(--xd-accent); color: var(--xd-accent-fg); border-color: var(--xd-accent); }
+#debug .exp-debug-iplist .exp-debug-row input[type="text"], #debug .exp-debug-iplist .exp-debug-row select { width: auto; }
+#debug .exp-debug-scope select { max-width: 100%; }
+@media (max-width: 760px) {
+  #debug .exp-debug-setting { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+#debug .exp-debug-cache-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 10px; align-items: center; padding: 4px 0; border-bottom: 1px dashed var(--xd-line); font-size: 13px; }
+#debug .exp-debug-cache-row > strong { grid-column: 1; }
+#debug .exp-debug-cache-row > .exp-debug-setting-help { grid-column: 1; }
+#debug .exp-debug-cache-row > .exp-debug-row { grid-column: 2; grid-row: 1 / span 2; margin: 0; justify-content: flex-end; }
+#debug .exp-debug-cache-row:last-child { border-bottom: 0; }
