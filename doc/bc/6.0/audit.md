@@ -2123,6 +2123,7 @@ and retention" is built as written, with the deviations listed at the end.
 ```bash
 ./console exp:audit sinks list --allow-root-user         # syslog ready (access, system), webhook needs a URL, mail
 ./console exp:audit alerts list --allow-root-user        # the seven built-in rules, their class, threshold and sinks
+./console exp:audit alerts recipients --allow-root-user  # who would get alert mail, per rule
 journalctl -t exponential -f                             # log in to the admin: the record appears (RFC 5424 line)
 ./console exp:audit verify --archives --allow-root-user  # live chains linked to the archives, manifests, HMACs
 ./console exp:audit archive --dry-run --allow-root-user  # what is older than LiveDays
@@ -2140,7 +2141,7 @@ journalctl -t exponential -f                             # log in to the admin: 
 | Sink registry, dispatch after the write (the record is in the file first), spools with `flock()`, retries with a doubling backoff, `system.audit.sink.failed` once per sink and hour, after-response delivery of critical records (PHP-FPM, commands) | kernel/classes/audit/sinks/expauditsinkregistry.php, expauditspool.php, expauditsinkbase.php |
 | syslog/journald: RFC 5424 (`exp@32473`, MSGID = channel, escaped values); `Transport=local` uses journald's native socket where journald runs (identifier = `AppName`, fields `EXP_AUDIT_ID/NAME/CHANNEL/SEQ/HASH/RESULT/SEVERITY/REQUEST`), else `/dev/log`; `devlog`, `udp` (no body), `tcp`/`tls` (octet counting) | expauditsyslogsink.php |
 | Webhook: batches of `BatchSize` or `BatchSeconds`, `X-Exponential-Timestamp`, `-Batch`, `-Signature: sha256=HMAC(secret, ts.body)`, the receiver's check `expAuditWebhookSink::verify()` (300 s) | expauditwebhooksink.php |
-| Mail: through `eZMailTransport::send()` (site.ini mail settings, DebugSending) or `[AuditSink_mail] Transport=<class>`; from the cronjob part only; one mail per rule and group (or name) per `Throttle` | expauditmailsink.php |
+| Mail: through `eZMailTransport::send()` (site.ini mail settings, DebugSending) or `[AuditSink_mail] Transport=<class>`; from the cronjob part only; one mail per recipient, at most one per rule (or event name) and recipient per `Throttle`; recipients resolved by `expAuditMailRecipients` (see "Alert mail recipients" below) | expauditmailsink.php, expauditmailrecipients.php |
 | Alert evaluator: at flush (only rules whose `Event` matches a written record read their state) and in the cronjob part (records since a cursor, the `.state` check for Audit=disabled, closed windows); `system.audit.alert` with the rule's severity, sent to its `Sinks[]` | kernel/classes/audit/alerts/expauditalertevaluator.php |
 | Rule classes `threshold`, `match` (with `Policies[]`), `schedule` (`BusinessDays`, `BusinessHours`, the site's time zone); window state per rule `<LogDir>/alerts/<rule>.json` under `flock()`, keyed by event id | expauditthresholdrule.php, expauditmatchrule.php, expauditschedulerule.php, expauditalertrulebase.php, expauditalertstate.php |
 | Format handlers gzip (zlib), bzip2 (ext-bz2), xz (binary), zstd (ext-zstd, else binary), zip (ext-zip, one file per archive); fallback to gzip | kernel/classes/audit/format/ |
@@ -2159,17 +2160,40 @@ On alpha the cronjob part runs every minute in the `publishing` group (`settings
 written with exp:ini, not committed): the first run did the daily tasks (both channels verified INTACT, recorded as
 `system.audit.verify` with `via: cronjob`).
 
+### Alert mail recipients (owner decision, 2026-10-02)
+
+Mail alerts stay on on alpha. Who gets them is configured in audit.ini, never taken from the event:
+
+| Recipient | Means |
+|---|---|
+| `admin` | site.ini `[MailSettings] AdminEmail` |
+| `address:ops@example.com` (or a bare address) | that address |
+| `group:security` | the named list `[AlertRecipients_security]`: `Addresses[]` and `Recipients[]` (any kind, other groups too; loops cut) |
+| `user:14`, `login:editor1` | that user, with the e-mail address it has when the mail is sent |
+| `usergroup:12`, `usergroup:<remote id>` | every enabled user below that user group (node id, or the node's or object's remote id), sub-groups included |
+| `role:Administrator`, `role:<id>` | every enabled user the role is assigned to, directly or through a user group |
+
+Which list: the rule's `[AlertRule_<rule>] Recipients[]`, else `[AuditAlertSettings] Recipients[]`, else
+`[AuditSink_mail] Receivers[]` (the older name, same syntax), else `admin`; on alpha nothing is configured, so
+alerts go to AdminEmail as before. Addresses are deduplicated case-insensitively, disabled users and invalid or
+multi-line addresses are left out, and each recipient gets its own mail, at most one per rule (or event name) and
+recipient within `Throttle`. `./console exp:audit alerts recipients [--rule=<rule>]` shows, per rule, the list in
+effect, where it comes from, every address with the entries that produced it, and problems (an unknown group, a
+disabled user, a missing role).
+
 ### Tests and proof
 
-`php vendor/bin/phpunit tests/tests/kernel/classes/audit/`: 63 tests, about 5 350 assertions, no database, everything
+`php vendor/bin/phpunit tests/tests/kernel/classes/audit/`: the stage 5 tests below (all audit tests: 81, about 5 550 assertions); only
+the recipients test uses the database; everything is
 in `var/tmp/audit-tests/`.
 
 | Test | Proves |
 |---|---|
-| `expAuditSinksTest` (E1) | the RFC 5424 line and the journald datagram; two test records under a test identifier found by `journalctl -t`; a webhook receiver on 127.0.0.1 (`ai/bin/one/audit_stage5_webhook_test_receiver.php`, started and stopped by the test) verifying every signature, 7 records in batches of 3+3+1, every id once and in order; a forced outage: the batch stays spooled, backoff 30 s then 60 s, `system.audit.sink.failed` after `Retries`, everything delivered when the receiver is back; a wrong secret and an old timestamp refused; mail through a test transport writing into the test directory (no real mail), 5 alerts spooled, 2 mailed (one per rule and group within `Throttle`) |
+| `expAuditSinksTest` (E1) | the RFC 5424 line and the journald datagram; two test records under a test identifier found by `journalctl -t`; a webhook receiver on 127.0.0.1 (`ai/bin/one/audit_stage5_webhook_test_receiver.php`, started and stopped by the test) verifying every signature, 7 records in batches of 3+3+1, every id once and in order; a forced outage: the batch stays spooled, backoff 30 s then 60 s, `system.audit.sink.failed` after `Retries`, everything delivered when the receiver is back; a wrong secret and an old timestamp refused; mail through a test transport writing into the test directory (no real mail), 5 alerts spooled, 2 mailed (one per rule and recipient within `Throttle`) |
 | `expAuditAlertsTest` (E2) | brute_force: 19 nothing, the 20th once, the 40th again, another network not counted, a new window again; brute_force_user 9/10; admin_role_granted for `*/*` and `setup/*`, not for content/read; settings_out_of_hours: 10:00 Friday nothing, ten writes at 23:00 one alert, Saturday another; mass_delete 499/500 with `children_omitted` counted; audit_disabled found by the cronjob pass and written although audit is off; chain_broken from a tampered file; an INI rule; a broken INI rule reported; the cronjob pass after a flush fires nothing more; replay records nothing |
 | `expAuditArchiveTest` (E3, T9–T12) | rotation by day; each of gzip, bzip2, xz, zstd, zip (all available on this server): 3 days archived, live files removed, archives intact, the live chain intact from the archived file, a restored day byte-identical; T0 intact, T9 `archive_sha256`, T10 `hmac_invalid`, T11 `unknown_key`, T12 `previous_manifest`; retention dry run and real run, ledger, still intact; key rotation (k2 active, old manifests verify); the daily run |
 | `expAuditImportTest` (E4) | both header forms, rotated copies first, imported/source/no chain, the address truncated, an unknown typed login hashed, HashKey never kept, a secret path cut; dry run; re-import skipped; a grown file continued; the legacy manifest's HMAC; originals kept or removed |
+| `expAuditMailRecipientsTest` | live database: the test creates two nested user groups, three users (one disabled) and a role assigned to a user and to a group, and removes them afterwards (no existing user or role is changed). address, a bare address, admin; a line break or a list refused; named groups nested with a loop cut; user and login with the current address, a disabled user left out; usergroup by node id, object remote id and node remote id with sub-groups; role by name and id, directly and through the group; deduplication with every source kept; which list applies, and that an unknown rule name or addresses inside the event count for nothing; mail through a test transport: one mail per rule and recipient |
 
 On alpha: `var/site/log/audit/login.log` (written once by Velocity's old code) was imported first into a test
 directory (`ai/bin/one/audit_stage5_import_alpha_legacy_logs_into_test_dir.php`: 1 entry = 1 record, marked imported,
@@ -2182,7 +2206,9 @@ due (the oldest file is today's). The front page answers 200 on Apache and Veloc
 - `Transport=local` writes journald's native protocol where journald runs: journald 252 does not parse an RFC 5424
   header on `/dev/log` (the identifier is lost and `journalctl -t` finds nothing). The message is still the RFC 5424
   line; `Transport=devlog` sends it to `/dev/log` as is.
-- `[AuditSink_mail] Transport=` (new): a mail transport class, empty for the kernel's.
+- `[AuditSink_mail] Transport=` (new): a mail transport class, empty for the kernel's. Recipients: `[AuditAlertSettings]
+  Recipients[]`, `[AlertRule_*] Recipients[]` and `[AlertRecipients_<name>]` (new, owner decision); mail is throttled per
+  rule and recipient, not per rule and group.
 - Under test settings (`expAuditConfig::setOverride()`) no sink is used unless the override says `'sinks' => true`.
   One run of the stage 2 tests before that guard existed put 1346 test records (documentation addresses
   203.0.113.0/24, the test installation id, `_CMDLINE` phpunit) into the journal under `exponential`.
