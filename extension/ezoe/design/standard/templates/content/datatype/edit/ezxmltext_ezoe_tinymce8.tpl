@@ -20,7 +20,12 @@
      $table_defaults   = hash()
      $link_classes     = hash()
      $link_class_names = hash()
+     $search_classes   = array()
 }
+{* content classes for the class filter of the dialog search, like design:ezoe/box_search.tpl *}
+{foreach fetch( 'class', 'list', hash( 'sort_by', array( 'name', true() ) ) ) as $search_class}
+    {set $search_classes = $search_classes|append( hash( 'id', $search_class.id, 'name', $search_class.name ) )}
+{/foreach}
 {if ezini_hasvariable( 'link', 'ClassDescription', 'content.ini' )}
     {set $link_class_names = ezini( 'link', 'ClassDescription', 'content.ini' )}
 {/if}
@@ -109,6 +114,8 @@ var eZOe8GlobalSettings = {ldelim}
         root_node: {ezini( 'NodeSettings', 'RootNode', 'content.ini' )|int},
         contentobject_id: {$attribute.contentobject_id},
         contentobject_version: {$attribute.version},
+        browse_image_alias: {json_encode( ezini( 'EditorSettings', 'BrowseImageAlias', 'ezoe.ini',,true() ) )},
+        search_classes: {json_encode( $search_classes )},
         upload_file_extensions: {json_encode( ezini( 'EditorSettings', 'UploadFileExtensions', 'ezoe.ini',,true() ) )},
         extension_url: {'/ezoe/'|ezurl},
         ezjscore_url: {'/ezjscore/'|ezurl},

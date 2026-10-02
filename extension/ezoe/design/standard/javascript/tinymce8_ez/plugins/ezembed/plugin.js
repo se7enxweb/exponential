@@ -223,7 +223,7 @@
             var listHtml = function ( list, browse ) {
                 if ( !list )
                     return '<p class="ezoe-list-empty">' + D.escapeHtml( t( 'Loading…' ) ) + '</p>';
-                return D.renderList( list, { t: t, value: rowValue, selected: data.embedId, browse: browse } );
+                return D.renderList( list, { t: t, value: rowValue, previewAlias: settings().browse_image_alias, rootUrl: settings().root_url, selected: data.embedId, browse: browse } );
             };
 
             var selectedHtml = function () {
@@ -274,6 +274,7 @@
                                             { type: 'button', name: 'searchRun', text: t( 'Search' ), buttonType: 'secondary' }
                                         ]
                                     },
+                                    { type: 'htmlpanel', html: D.renderClassFilter( settings().search_classes, state.searchClasses, t ) },
                                     { type: 'htmlpanel', html: state.search ? listHtml( state.search ) : '' }
                                 ]
                             },
@@ -368,8 +369,16 @@
 
             // Rebuilds the dialog with the current data and state; redial() shows the first tab
             // and fires onTabChange, so the tab is remembered before and the block is lifted first
+            // the class filter is plain html, keep its selection over a rebuild of the dialog
+            var rememberClassFilter = function () {
+                var classes = D.readClassFilter();
+                if ( classes !== null )
+                    state.searchClasses = classes;
+            };
+
             var redial = function ( dialogApi, changes ) {
                 var tab = state.tab;
+                rememberClassFilter();
                 data = Object.assign( dialogApi.getData(), changes || {} );
                 dialogApi.unblock();
                 dialogApi.redial( spec() );
@@ -392,8 +401,9 @@
                 if ( !text )
                     return;
                 state.searchText = text;
+                rememberClassFilter();
                 dialogApi.block( t( 'Searching…' ) );
-                D.search( settings(), text, offset ).then( function ( list ) {
+                D.search( settings(), text, offset, state.searchClasses ).then( function ( list ) {
                     state.search = list;
                     // the query stays in the field, but Enter should not search again after a selection
                     redial( dialogApi );

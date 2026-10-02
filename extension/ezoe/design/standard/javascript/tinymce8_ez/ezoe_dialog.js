@@ -20,6 +20,9 @@ window.eZOe8Dialog = (function () {
         'No results': 'Keine Treffer',
         'Name': 'Name',
         'Type': 'Typ',
+        'Preview': 'Vorschau',
+        'All': 'Alle',
+        'Content classes': 'Inhaltsklassen',
         '%1 to %2 of %3': '%1 bis %2 von %3'
     } );
 
@@ -42,7 +45,7 @@ window.eZOe8Dialog = (function () {
     };
 
     var ezjscoreCall = function ( settings, functionArguments, params ) {
-        var body = new URLSearchParams( params || {} );
+        var body = params instanceof URLSearchParams ? params : new URLSearchParams( params || {} );
         body.append( 'ezjscServer_function_arguments', functionArguments );
         body.append( 'ezxform_token', settings.form_token || '' );
         return request( serverUrl( settings, 'ezjscore_url' ) + 'call', { method: 'POST', body: body } )
@@ -55,10 +58,16 @@ window.eZOe8Dialog = (function () {
     };
 
     // All list functions resolve to { items, total, offset, node (browse only) }
-    var search = function ( settings, text, offset ) {
-        return ezjscoreCall( settings, 'ezjsc::search', {
-            SearchStr: text, SearchOffset: String( offset || 0 ), SearchLimit: String( PAGE_SIZE )
-        } ).then( function ( c ) {
+    // classIds: content class ids to limit the search to, empty for all (SearchContentClassID[] of the old dialog)
+    var search = function ( settings, text, offset, classIds ) {
+        var params = new URLSearchParams( {
+            SearchStr: text, SearchOffset: String( offset || 0 ), SearchLimit: String( PAGE_SIZE ), EncodingLoadImages: '1'
+        } );
+        ( classIds || [] ).forEach( function ( id ) {
+            if ( id )
+                params.append( 'SearchContentClassID[]', id );
+        } );
+        return ezjscoreCall( settings, 'ezjsc::search', params ).then( function ( c ) {
             return { items: c.SearchResult || [], total: c.SearchCount || 0, offset: c.SearchOffset || 0 };
         } );
     };
@@ -148,12 +157,51 @@ window.eZOe8Dialog = (function () {
         return el.value;
     };
 
+    // Url of the preview image of a list entry in the given alias, see eZOEPopupUtils.indexOfImage()
+    var previewUrl = function ( item, alias, rootUrl ) {
+        var attributes = item.image_attributes || [], i, content;
+        for ( i = 0; i < attributes.length; i++ )
+        {
+            content = item.data_map && item.data_map[ attributes[i] ] && item.data_map[ attributes[i] ].content;
+            if ( content && content[alias] && content[alias].url )
+                return /^(https?:)?\//.test( content[alias].url ) ? content[alias].url : ( rootUrl || '/' ) + content[alias].url;
+        }
+        return null;
+    };
+
+    /**
+     * Class filter of the search like the TinyMCE 3 dialog: a multiple select with "All" and the content classes.
+     * TinyMCE dialogs have no multiple select component, so it is plain html read with readClassFilter().
+     */
+    var renderClassFilter = function ( classes, selected, t ) {
+        selected = selected || [];
+        var html = '<select class="ezoe-class-filter" multiple size="4" title="' + escapeHtml( t( 'Content classes' ) ) + '">' +
+                   '<option value=""' + ( selected.length ? '' : ' selected' ) + '>' + escapeHtml( t( 'All' ) ) + '</option>';
+        ( classes || [] ).forEach( function ( c ) {
+            html += '<option value="' + escapeHtml( c.id ) + '"' + ( selected.indexOf( String( c.id ) ) !== -1 ? ' selected' : '' ) + '>' + escapeHtml( decodeHtml( c.name ) ) + '</option>';
+        } );
+        return html + '</select>';
+    };
+
+    // Selected class ids of the open dialog, empty for all
+    var readClassFilter = function () {
+        var select = document.querySelector( '.tox-dialog select.ezoe-class-filter' );
+        if ( !select )
+            return null;
+        return Array.prototype.filter.call( select.options, function ( o ) {
+            return o.selected && o.value;
+        } ).map( function ( o ) {
+            return o.value;
+        } );
+    };
+
     /**
      * Html of a content list like the TinyMCE 3 ezoe dialogs.
      *
      * @param {Object} list   result of search() / browse() / bookmarks()
      * @param {Object} options selected: value of the checked row, value: function( item ) -> row value,
-     *                          browse: true to open containers on a click on the name, t: translate function
+     *                          browse: true to open containers on a click on the name, t: translate function,
+     *                          previewAlias / rootUrl: image alias and root url for the preview column
      */
     var renderList = function ( list, options ) {
         var t = options.t, html = '';
@@ -172,6 +220,12 @@ window.eZOe8Dialog = (function () {
         if ( !list.items.length )
             return html + '<p class="ezoe-list-empty">' + escapeHtml( t( 'No results' ) ) + '</p>';
 
+        // like the old dialog: a preview link that shows the image on hover
+        var previewHtml = function ( item ) {
+            var url = options.previewAlias ? previewUrl( item, options.previewAlias, options.rootUrl ) : null;
+            return url ? '<span class="ezoe-list-preview-link">' + escapeHtml( t( 'Preview' ) ) + '<img src="' + escapeHtml( encodeURI( url ) ) + '" alt="" /></span>' : '';
+        };
+
         html += '<table class="ezoe-list"><tbody>';
         list.items.forEach( function ( item ) {
             var value = options.value( item ), name = escapeHtml( decodeHtml( item.name ) );
@@ -181,7 +235,8 @@ window.eZOe8Dialog = (function () {
                     ( options.browse && item.children_count
                         ? '<a href="#" data-ezoe-action="open" data-ezoe-value="' + item.node_id + '" title="' + escapeHtml( item.children_count ) + '">' + name + '</a>'
                         : name ) +
-                    '</td><td class="ezoe-list-class">' + escapeHtml( decodeHtml( item.class_name ) ) + '</td></tr>';
+                    '</td><td class="ezoe-list-class">' + escapeHtml( decodeHtml( item.class_name ) ) + '</td>' +
+                    '<td class="ezoe-list-preview">' + previewHtml( item ) + '</td></tr>';
         } );
         html += '</tbody></table>';
 
@@ -232,6 +287,9 @@ window.eZOe8Dialog = (function () {
         escapeHtml: escapeHtml,
         decodeHtml: decodeHtml,
         renderList: renderList,
+        renderClassFilter: renderClassFilter,
+        readClassFilter: readClassFilter,
+        previewUrl: previewUrl,
         bindList: bindList
     };
 }());

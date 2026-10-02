@@ -49,3 +49,34 @@
 .tox .ezoe-selected {
     margin: 0 0 6px;
 }
+
+.tox table.ezoe-list td.ezoe-list-preview {
+    width: 60px;
+    text-align: right;
+    white-space: nowrap;
+}
+/* preview link, the image shows on hover like table.node_datalist span.image_preview of the old dialog */
+.tox .ezoe-list-preview-link {
+    position: relative;
+    color: #0645AD;
+    text-decoration: underline;
+}
+.tox .ezoe-list-preview-link img {
+    display: none;
+    position: absolute;
+    z-index: 200;
+    top: -2px;
+    right: 60px;
+    max-width: 240px;
+    border: 2px solid #DDD;
+    background: #FFF;
+}
+.tox .ezoe-list-preview-link:hover img {
+    display: block;
+}
+.tox select.ezoe-class-filter {
+    width: 100%;
+    margin: 0 0 6px;
+    font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    border: 1px solid #7F9DB9;
+}
