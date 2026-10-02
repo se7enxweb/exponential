@@ -502,6 +502,13 @@ $ViewList['treemenu'] = array(
     'default_navigation_part' => 'ezmynavigationpart',
     'params' => array( 'NodeID', 'Modified', 'Expiry', 'Perm' ) );
 
+// CSV of the admin subitems list: content/subitemsexport/<NodeID>?columns=a,b&sort=<key>&order=0|1
+$ViewList['subitemsexport'] = array(
+    'functions' => array( 'read' ),
+    'script' => 'subitemsexport.php',
+    'default_navigation_part' => 'ezcontentnavigationpart',
+    'params' => array( 'NodeID' ) );
+
 $ViewList['dashboard'] = array(
     'functions' => array( 'dashboard' ),
     'script' => 'dashboard.php',
