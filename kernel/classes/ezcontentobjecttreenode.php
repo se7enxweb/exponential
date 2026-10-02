@@ -4127,9 +4127,17 @@ class eZContentObjectTreeNode extends eZPersistentObject
             $pathIdentificationString .= '/' . $pathIdentificationName;
         else
             $pathIdentificationString = $pathIdentificationName;
+        // The subtree below is rewritten by cutting the old string's length off the front of each
+        // descendant's string, so that length has to be the one stored now. A node object can be older
+        // than its row (built from a row read before an ancestor was renamed, as the package installer's
+        // alias regeneration does); its own copy then has the wrong length and every path below came out
+        // shifted ('fit_healthyhy/...').
+        $db = eZDB::instance();
+        $storedRows = $db->arrayQuery( "SELECT path_identification_string FROM ezcontentobject_tree WHERE node_id = " . (int)$this->attribute( 'node_id' ) );
+        if ( $storedRows )
+            $this->setAttribute( 'path_identification_string', (string)$storedRows[0]['path_identification_string'] );
         if ( $this->attribute( 'path_identification_string' ) != $pathIdentificationString )
         {
-            $db = eZDB::instance();
             $db->query(
                 "UPDATE ezcontentobject_tree " .
                 "SET path_identification_string = " .
