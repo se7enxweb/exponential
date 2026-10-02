@@ -528,7 +528,10 @@ class eZSQLite3DB extends eZDBInterface
     {
         if ( $len == null )
         {
-            return " substr( $string, $from, length( $string ) - $from ) ";
+            // The rest of the string from $from, as SUBSTRING( s FROM n ) gives it on the other engines.
+            // SQLite counts from 1, so substr( s, n, length( s ) - n ) stopped one character short; that
+            // dropped the last character of every path below a moved node (eZContentObjectTreeNode::move()).
+            return " substr( $string, $from ) ";
         }
         else
         {
