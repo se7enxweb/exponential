@@ -284,7 +284,9 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline; }
 :where(#maincontent, #leftmenu, #rightmenu) a:hover {
   color: var(--a4-orange);
 }
-:where(#maincontent) :where(h1, h2, h3),
+/* Note for every rule here: ezjscore's packer drops the space in ") :", which turned ":where(#a) :where(b)" into
+   ":where(#a):where(b)" (one element that is both, i.e. nothing). A descendant goes INSIDE one :where(). */
+:where(#maincontent h1, #maincontent h2, #maincontent h3),
 :where(#leftmenu, #rightmenu) h4 {
   color: var(--a4-ink);
   font-family: var(--a4-font);
@@ -294,8 +296,8 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline; }
 :where(#path, #path-design) {
   color: var(--a4-muted);
 }
-/* the dashed rules between blocks: one quiet hairline, less of a box */
-:where(#maincontent, #leftmenu, #rightmenu) :where(.box-header) {
+/* the dashed rules between blocks: one quiet hairline, less of a box (the base rule's own selector) */
+.box-header {
   border-top: 1px solid var(--a4-line);
 }
 :focus-visible {
@@ -361,14 +363,14 @@ input.button-disabled, input.button[disabled] {
 }
 
 /* Fields: rounded, the orange focus ring */
-:where(#maincontent, #leftmenu, #rightmenu) :where(input[type=text], input[type=password], input[type=email],
-                                                   input[type=number], input[type=search], select, textarea) {
+:where(#page input[type=text], #page input[type=password], #page input[type=email], #page input[type=number],
+       #page input[type=search], #page select, #page textarea) {
   border: 1px solid #c9ced6;
   border-radius: var(--a4-radius-s);
   font-family: var(--a4-font);
 }
-:where(#maincontent, #leftmenu, #rightmenu) :where(input[type=text], input[type=password], input[type=email],
-                                                   input[type=number], input[type=search], select, textarea):focus {
+:where(#page input[type=text], #page input[type=password], #page input[type=email], #page input[type=number],
+       #page input[type=search], #page select, #page textarea):focus {
   border-color: var(--a4-orange);
   box-shadow: 0 0 0 3px rgba(242, 106, 33, 0.22);
   outline: none;
@@ -511,3 +513,172 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 .a4-dash-steps p { margin: 0 0 8px; color: var(--a4-muted); line-height: 1.5; }
 :where(.a4-dash-steps) .a4-dash-step-link { font-weight: 650; text-decoration: none; }
 .a4-dash-step-note { font-style: italic; }
+
+/* ---- The main body chrome, every admin page (node views, Design, extensions' module pages) ------------------
+   The kernel's page parts: div.context-block (a page section), its .box-header with h1/h2.context-title (the
+   title bar), .context-information (the line under it), .controlbar (the row of buttons under a form or list)
+   and #controlbar-top. Each restyled by its base selector, so extension rules that beat the base still win. */
+
+h1.context-title {
+  margin: 0 0 4px;
+  font-size: 1.35em;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.25;
+  color: var(--a4-ink);
+}
+h2.context-title {
+  font-size: 1.2em;
+  font-weight: 650;
+  color: var(--a4-ink);
+}
+div.context-block h1.context-title img,
+div.context-block h2.context-title img {
+  vertical-align: -4px;
+}
+div.context-information,
+span.classattribute-description {
+  color: var(--a4-muted);
+}
+/* the control bar under a list or form: a soft rounded toolbar */
+.controlbar form .button-left {
+  margin-top: 0;
+}
+.controlbar form .button-left .block select {
+  height: auto;
+}
+.controlbar form .button-left .block input.button,
+.controlbar form .button-left .block input.button-disabled {
+  margin-top: 0;
+}
+#controlbar-top .box-bc {
+  border: 0;
+  background-color: var(--a4-soft);
+  background-image: none;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+}
+:where(#maincontent .controlbar) {
+  margin: 14px 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background-color: var(--a4-soft);
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+}
+
+/* ---- The node view (node/view/a4_full_body.tpl): compact, the content near the top ------------------------- */
+
+.a4-node-card { margin-bottom: 14px; }
+.a4-node-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  padding: 2px 0 8px;
+}
+.a4-node-icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(242, 106, 33, 0.14), rgba(64, 120, 192, 0.10));
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+}
+.a4-node-icon:hover { box-shadow: inset 0 0 0 1px var(--a4-orange); }
+.a4-node-heading {
+  flex: 1 1 260px;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+}
+.a4-node-head h1.context-title {
+  margin: 0;
+  font-size: 1.45em;
+  overflow-wrap: anywhere;
+}
+.a4-node-badges { display: inline-flex; flex-wrap: wrap; gap: 5px; }
+.a4-badge {
+  display: inline-flex; align-items: center; padding: 1px 8px; border-radius: 99px;
+  font-size: 11.5px; font-weight: 600; line-height: 1.6; color: var(--a4-muted);
+  background: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line);
+}
+.a4-badge-class { color: var(--a4-orange-dark); background: var(--a4-orange-soft); box-shadow: none; }
+.a4-badge-warn { color: #9a5b00; background: rgba(230, 160, 20, 0.16); box-shadow: none; }
+
+/* the actions, on the title's row (wrapping under it on narrow windows) */
+.controlbar.a4-node-actions {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.controlbar.a4-node-actions form { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.controlbar.a4-node-actions .button-left,
+.controlbar.a4-node-actions .button-right { float: none; margin: 0; }
+.controlbar.a4-node-actions .block { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; }
+.controlbar.a4-node-actions .block select,
+.controlbar.a4-node-actions .block input.button,
+.controlbar.a4-node-actions .block input.defaultbutton,
+.controlbar.a4-node-actions .block input.button-disabled {
+  height: 32px;
+  margin: 0;
+  padding: 0 12px;
+  font-size: 13px;
+}
+.controlbar.a4-node-actions .block select { padding: 0 8px; }
+input.button.a4-danger:hover { border-color: #c2410c; color: #c2410c; background-color: #fff5f0; }
+.a4-node-links { display: flex; align-items: center; gap: 4px; }
+.a4-node-links .versions { display: inline-flex; margin: 0; }
+:where(.a4-node-links) .a4-icon-button {
+  display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
+  border-radius: var(--a4-radius-s); color: var(--a4-muted); background: #fff; background-image: none;
+  box-shadow: inset 0 0 0 1px #c9ced6; padding: 0;
+}
+:where(.a4-node-links) .a4-icon-button:hover { color: var(--a4-orange-dark); box-shadow: inset 0 0 0 1px var(--a4-orange); }
+
+/* one quiet meta line */
+p.context-information.a4-node-meta,
+div.context-information.a4-node-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 2px 0;
+  margin: 0 0 10px; padding: 0; font-size: 12.5px; color: var(--a4-muted);
+}
+.a4-node-meta > * + *::before { content: "\00b7"; margin: 0 8px; color: #b6bcc6; }
+.a4-node-meta button.a4-copy {
+  margin: 0; padding: 0; border: 0; background: none; font: inherit; color: inherit; cursor: copy;
+  border-bottom: 1px dashed #b6bcc6;
+}
+.a4-node-meta button.a4-copy:hover { color: var(--a4-ink); border-bottom-color: var(--a4-orange); }
+.a4-node-meta button.a4-copied { color: #1e7a4f; border-bottom-color: #228b5e; }
+.a4-node-meta button.a4-copied::after { content: " \2713"; }
+.a4-node-langs { display: inline-flex; gap: 4px; }
+:where(.a4-node-langs) .a4-node-lang { display: inline-flex; padding: 2px; border-radius: 4px; opacity: .55; }
+:where(.a4-node-langs) .a4-node-lang.a4-current,
+:where(.a4-node-langs) .a4-node-lang:hover { opacity: 1; box-shadow: 0 0 0 1px var(--a4-orange); }
+
+/* the tabs as a quiet segmented row, the open panel as a soft card under it */
+.a4-node-tabs ul.tabs { display: flex; flex-wrap: wrap; gap: 2px; margin: 0 0 8px; padding: 3px; border-radius: 10px; background: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line); }
+.a4-node-tabs ul.tabs li { float: none; margin: 0; }
+.a4-node-tabs ul.tabs li a,
+.a4-node-tabs ul.tabs li span.disabled { display: inline-block; padding: 4px 10px; font-size: 13px; }
+.a4-node-tabs ul.tabs li.selected a,
+.a4-node-tabs ul.tabs li.selected span.disabled { background-color: #fff; box-shadow: 0 1px 2px rgba(16, 24, 40, 0.08), inset 0 0 0 1px var(--a4-line); color: var(--a4-orange-dark); }
+.a4-node-tabs .tabs-content { border-radius: 12px; }
+.a4-node-children { margin-top: 4px; }
+/* the node view needs no rules between its parts: spacing separates them (the base drew a dashed line above the
+   tabs, a line under the closed tab panel, and a dashed line above the sub items) */
+.a4-node-tabs.tab-block { border-top: 0; padding-top: 0; }
+.a4-node-tabs .tabs-content.disabled { border-top: 0; }
+.a4-node-children .box-header { border-top: 0; }
+/* explayouts_ui's stylesheet also loads on node views (for the Layouts tab) and paints the left column white
+   on sections 1 and 7 (".ezcontentnavigationpart.section_id_1 .dashboard-flex #leftmenu.sidebar.left.show"), the
+   admin3 look; in admin4 the column around the card stays clear, as everywhere else. */
+html .ezcontentnavigationpart.section_id_1 .dashboard-flex #leftmenu.sidebar.left.show,
+html .ezcontentnavigationpart.section_id_7 .dashboard-flex #leftmenu.sidebar.left.show {
+  background-color: transparent;
+}
