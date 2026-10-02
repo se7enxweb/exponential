@@ -1918,17 +1918,47 @@ class eZDebug
             echo "</div>";
             echo "<a id=\"debug-end\"></a>";
 
+            // The debug details open and close with a click on the header. "Keep open on reload" remembers
+            // the state in the browser's localStorage (exp-debug-keep, exp-debug-open); unticked, the details
+            // start closed on every page. Storage that throws (private windows, blocked site data) is ignored.
             echo "<script>
+(function () {
   const header = document.querySelector('#debug h2 a');
   const content = document.querySelector('#debug-details');
   const anchor = document.querySelector('#debug-end');
+  if (!header || !content) return;
+  const read = (key) => { try { return window.localStorage.getItem(key); } catch (e) { return null; } };
+  const write = (key, value) => { try { window.localStorage.setItem(key, value); } catch (e) {} };
+  const setOpen = (open) => {
+    header.classList.toggle('active', open);
+    content.classList.toggle('active', open);
+  };
+
+  const keepLabel = document.createElement('label');
+  keepLabel.className = 'debug-keep-open';
+  keepLabel.style.cssText = 'margin-left:1em;font-size:12px;font-weight:normal;cursor:pointer;white-space:nowrap';
+  const keep = document.createElement('input');
+  keep.type = 'checkbox';
+  keep.checked = read('exp-debug-keep') === '1';
+  keepLabel.appendChild(keep);
+  keepLabel.appendChild(document.createTextNode(' Keep open on reload'));
+  header.parentNode.appendChild(keepLabel);
+
+  if (keep.checked && read('exp-debug-open') === '1') setOpen(true);
+
+  keep.addEventListener('change', () => {
+    write('exp-debug-keep', keep.checked ? '1' : '0');
+    write('exp-debug-open', keep.checked && content.classList.contains('active') ? '1' : '0');
+  });
   header.addEventListener('click', () => {
-    header.classList.toggle('active');
-    content.classList.toggle('active');
-    if (content.classList.contains('active') && anchor) {
+    setOpen(!content.classList.contains('active'));
+    const open = content.classList.contains('active');
+    if (keep.checked) write('exp-debug-open', open ? '1' : '0');
+    if (open && anchor) {
         anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
+})();
 </script>";
 
         }
