@@ -556,31 +556,139 @@ table.list th, table.special th
 }
 
 
-/* YUI 2 calendar (uses #page to force override) */
-#page .yui-calendar
+/* CALENDAR of the date and date/time fields (Exponential UI's exp::datepicker), in the grey design's look: a light
+   panel, a bordered header row with blue arrows and the month, a grid of bordered day cells with blue numbers,
+   days of other months grey, today framed black, the chosen day yellow, the day under the pointer orange.
+   :is(#page, body) outweighs exp's own rules, wherever the calendar is placed. */
+:is(#page, body) .exp-datepicker
 {
-font-size:0.9em;
+    margin: 0;
+    padding: 19.2px 5px 5px;
+    min-width: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12.8px;
+    line-height: normal;
+    color: #000;
+    background: #f7f9fb;
+    border: 1px solid #ccccc3;
+    border-radius: 0;
+    box-shadow: none;
 }
 
-#page .yui-calendar .calweekdaycell
+:is(#page, body) .exp-datepicker .exp-datepicker-head
 {
-    padding: 0.15em;
+    display: block;
+    margin: 0;
+    height: 15px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    text-align: center;
 }
 
-#page .yui-calcontainer
+:is(#page, body) .exp-datepicker .exp-datepicker-title
 {
-    border-color: #CCCCC3;
+    display: inline;
+    font-family: sans-serif;
+    font-size: 12.672px;
+    font-weight: bold;
+    line-height: 15px;
 }
+
+:is(#page, body) .exp-datepicker .exp-datepicker-head button
+{
+    position: absolute;
+    width: 9px;
+    height: 12px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 0;
+    color: transparent;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+:is(#page, body) .exp-datepicker .exp-datepicker-head button:hover:not(:disabled) { background-color: transparent; }
+
+:is(#page, body) .exp-datepicker .exp-datepicker-head button.exp-datepicker-prev
+{
+    left: 8px;
+    top: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='12'%3E%3Cpath d='M8.5 .5 L.8 6 L8.5 11.5 Z' fill='%236699cc' stroke='%23003366'/%3E%3C/svg%3E");
+}
+
+:is(#page, body) .exp-datepicker .exp-datepicker-head button.exp-datepicker-next
+{
+    right: 8px;
+    top: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='12'%3E%3Cpath d='M.5 .5 L8.2 6 L.5 11.5 Z' fill='%236699cc' stroke='%23003366'/%3E%3C/svg%3E");
+}
+
+:is(#page, body) .exp-datepicker .exp-datepicker-head button.exp-datepicker-close
+{
+    right: 3px;
+    top: 3px;
+    width: 17px;
+    height: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='13'%3E%3Crect x='.5' y='.5' width='16' height='12' fill='%23d1d1d1' stroke='%23d1d1d1'/%3E%3Cpath d='M5.5 3.5 L11.5 9.5 M11.5 3.5 L5.5 9.5' stroke='%23878787' stroke-width='1.6'/%3E%3C/svg%3E");
+}
+
+:is(#page, body) .exp-datepicker .exp-datepicker-grid
+{
+    width: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: sans-serif;
+    font-size: 11.52px;
+}
+
+:is(#page, body) .exp-datepicker .exp-datepicker-grid th
+{
+    padding: 1.9px;
+    font-size: 12.672px;
+    font-weight: normal;
+    color: #666;
+    background: #fff;
+}
+
+:is(#page, body) .exp-datepicker .exp-datepicker-grid td
+{
+    padding: 0.1em 0.2em;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    text-align: center;
+}
+
+:is(#page, body) .exp-datepicker .exp-datepicker-day
+{
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    height: 14px;
+    line-height: 14px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    font: inherit;
+    line-height: 14px;
+    color: #003db8;
+    background: transparent;
+    transition: none;
+}
+
+:is(#page, body) .exp-datepicker .exp-datepicker-grid td:has(.is-other-month) { background: #eee; }
+:is(#page, body) .exp-datepicker .exp-datepicker-day.is-other-month { color: #999; cursor: default; }
+:is(#page, body) .exp-datepicker .exp-datepicker-grid td:has(.is-today) { border-color: #000; }
+:is(#page, body) .exp-datepicker .exp-datepicker-grid td:has(.is-selected) { background: #fff19f; border-color: #f90; }
+:is(#page, body) .exp-datepicker .exp-datepicker-day.is-selected { color: #003db8; background: transparent; }
+:is(#page, body) .exp-datepicker .exp-datepicker-grid td:has(.exp-datepicker-day:not(.is-other-month):hover) { background: #f90; border-color: #f90; }
+:is(#page, body) .exp-datepicker .exp-datepicker-day:not(.is-other-month):hover:not(:disabled) { color: #fff; background: transparent; }
 
 #page .datepicker-icon
 {
     margin-bottom: -2px;
     padding-top: 9px;
-}
-
-#page .yui-calcontainer .title
-{
-position:absolute;
 }
 
 /* asynchronous publishing queued page */

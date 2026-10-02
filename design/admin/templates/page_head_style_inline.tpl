@@ -28,7 +28,7 @@ padding-bottom:8px;
 <![endif]-->
 <!--[if IE 6]>
 <style>
-.yui3-js-enabled .scroll-to-top {display: none;}
+.exp-js .scroll-to-top {display: none;}
 input.box, textarea.box {width: 99%}
 </style>
 <![endif]-->

@@ -1,12 +1,12 @@
 /**
- * The admin's sub-items table on Exponential UI's $.fn.expDataTable (exp::datatable), without YUI.
+ * The admin's sub-items table on Exponential UI's $.fn.expDataTable (exp::datatable).
  *
  * Started by children_detailed.tpl when Exponential UI is there (window.Exp && Exp.$.fn.expDataTable), with the
- * same four objects the YUI version (ezajaxsubitems_datatable.js, kept as the fallback) is given:
+ * four objects:
  *
  *   eZAjaxSubitemsExpDataTable.init(confObj, labelsObj, createGroups, createOptions)
  *
- * It keeps everything the YUI table did, the same way: the ezjscnode::subtree request (GET, same arguments), the
+ * It does: the ezjscnode::subtree request (GET, same arguments), the
  * cache of 20 pages, sorting, the pagers in #bpg and #tpg, rows per page saved as admin_list_limit (and a custom
  * number that is not saved), the shown columns in the eZSubitemColumns cookie (one sub-value per navigation part),
  * inline priority editing through ezjscnode::updatepriority, the Select, Create new, Create multiple new, More
@@ -67,7 +67,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
         var form = function () { return $('form[name=children]').first(); };
         var selectedCount = function () { return $('form[name=children] input.ezsubitems_delete_checkbox:checked').length; };
 
-        // ---- cell formatters (the YUI version's, same HTML) ----------------------------------------------------
+        // ---- cell formatters ----------------------------------------------------
         var formatName = function (row) {
             return '<a href="' + row.url + '" title="' + row.name + '">' + row.class_icon + '</a>' + '&nbsp;' +
                    '<a href="' + row.url + '" title="' + row.name + '">' + row.name + '</a>';
@@ -139,7 +139,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
             columns.forEach(function (c) { if (shownColumns.indexOf(c.key) === -1 && c.label !== '') { c.hidden = true; } });
         }
 
-        // the server's rows, as the YUI DataSource's responseSchema parsed them
+        // the server's rows
         var parseRow = function (r) {
             var row = $.extend({}, r);
             row.creator = r.creator && r.creator.name ? r.creator.name : '?';

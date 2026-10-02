@@ -555,31 +555,11 @@ table.list th, table.special th
 }
 
 
-/* YUI 2 calendar (uses #page to force override) */
-#page .yui-calendar
-{
-font-size:0.9em;
-}
-
-#page .yui-calendar .calweekdaycell
-{
-    padding: 0.15em;
-}
-
-#page .yui-calcontainer
-{
-    border-color: #CCCCC3;
-}
-
+/* The calendar icon of the date and date/time fields (the calendar itself is Exponential UI's exp::datepicker) */
 #page .datepicker-icon
 {
     margin-bottom: -2px;
     padding-top: 9px;
-}
-
-#page .yui-calcontainer .title
-{
-position:absolute;
 }
 
 /* asynchronous publishing queued page */

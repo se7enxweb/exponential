@@ -1254,7 +1254,7 @@ input:-moz-placeholder {
 }
 
 /* FIXED CONTROLBAR DEPENDING ON SCROLL */
-.yui3-js-enabled .controlbar-fixed
+.exp-js .controlbar-fixed
 {
     z-index:200;
     position:fixed;
@@ -1278,7 +1278,7 @@ input:-moz-placeholder {
     display:none;
     z-index: 100;
 }
-.yui3-js-enabled .scroll-to-top
+.exp-js .scroll-to-top
 {
     display:block;
 }
@@ -1291,7 +1291,9 @@ color:#fff;
 {
     float:left;
     width:151px;
-    background: url(../images/3/logo_separator_sprite.png) no-repeat -239px 0;
+    /* the sprite's large Exponential logo (x 240-500), scaled to fit the box */
+    background: url(../images/3/logo_separator_sprite.png) no-repeat -139px 6px;
+    background-size: 290px auto;
     height:72px;
     margin-top:20px;
     margin-left:20px;

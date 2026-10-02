@@ -26,9 +26,7 @@
                         'pagelayout.css',
                         'content.css',
                         $admin_theme_css,
-                        'theme/yui_datatable.css',
-                        'theme/yui_menu.css',
-                        'theme/yui_container.css',
+                        'theme/admin_datatable.css',
                         'theme/modalwindow.css',
                         ezini( 'StylesheetSettings', 'BackendCSSFileList', 'design.ini' ) ) )}
   {else}
@@ -37,9 +35,7 @@
                         'pagelayout.css',
                         'content.css',
                         $admin_theme_css,
-                        'theme/yui_datatable.css',
-                        'theme/yui_menu.css',
-                        'theme/yui_container.css' ) )}
+                        'theme/admin_datatable.css' ) )}
   {/if}
 
   {include uri='design:page_head_style_inline.tpl'}

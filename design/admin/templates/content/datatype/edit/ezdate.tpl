@@ -1,29 +1,5 @@
-{def $base = ezini('eZJSCore', 'LocalScriptBasePath', 'ezjscore.ini')}
-
-{ezscript_require( 'ezjsc::yui2' )}
-{ezcss_require( concat( '/', $base.yui2, 'calendar/assets/calendar.css' ) )}
-
-<script type="text/javascript">
-(function() {ldelim}
-    // Exponential UI's calendar (exp::datepicker) is on the page: YUI's is not loaded
-    if ( window.Exp && window.Exp.datepicker ) {ldelim} return; {rdelim}
-    var loader = new YAHOO.util.YUILoader(YUI2_config);
-
-    loader.addModule({ldelim}
-        name: 'datepicker',
-        type: 'js',
-        fullpath: '{"javascript/ezdatepicker.js"|ezdesign( 'no' )}',
-        requires: ["calendar"],
-        after: ["calendar"],
-        skinnable: false
-    {rdelim});
-
-    loader.require(["datepicker"]);
-    loader.insert();
-
-{rdelim})();
-</script>
-
+{* The calendar of the icon below is Exponential UI's exp::datepicker (loaded on every admin page by
+   design.ini [JavaScriptSettings] BackendJavaScriptList[]=exp::datepicker), which defines showDatePicker(). *}
 {default attribute_base=ContentObjectAttribute}
 <div class="block">
 <div class="date">

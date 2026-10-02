@@ -184,18 +184,11 @@ var labelsObj = {ldelim}
 {/if}
 
 {literal}
-// Exponential UI's table (exp::datatable, ezajaxsubitems_expdatatable.js) when it is there; else the YUI 2 one
+// The sub-items table: Exponential UI's exp::datatable (ezajaxsubitems_expdatatable.js)
 if ( window.Exp && Exp.$ && Exp.$.fn.expDataTable && window.eZAjaxSubitemsExpDataTable ) {
     Exp.ready( function() {
         eZAjaxSubitemsExpDataTable.init(confObj, labelsObj, createGroups, createOptions);
     } );
-} else {
-    YUILoader.require(['datatable', 'button', 'container', 'cookie', 'element']);
-    YUILoader.onSuccess = function() {
-        sortableSubitems.init(confObj, labelsObj, createGroups, createOptions);
-    };
-    var options = [];
-    YUILoader.insert(options, 'js');
 }
 
 })();

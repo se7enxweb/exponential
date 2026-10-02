@@ -62,7 +62,7 @@ div.box-content .modal-window div.message-error
     width:13px;
     height:13px;
     margin-top:-1px;
-    background:url(../../images/2/yui_sprite.png) no-repeat -6px -301px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13'%3E%3Cpath d='M3.5 3.5l6 6M9.5 3.5l-6 6' stroke='%236d6d6d' stroke-width='2.2' stroke-linecap='square'/%3E%3C/svg%3E") no-repeat 0 0;
     text-indent:-1000em;
     border:1px solid #aaa;
     font-size:1px;

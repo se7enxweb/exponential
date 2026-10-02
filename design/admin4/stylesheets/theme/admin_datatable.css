@@ -1,0 +1,837 @@
+/* The tables of the grey admin designs that are not Exponential UI tables (the trash list): the look the
+   classic admin had, under the admin-dt class names. */
+/* DATA TABLE */
+.admin-dt-data td
+{
+font-size:1.05em;
+}
+
+.admin-dt-col-checkbox {
+    width: 40px;
+}
+
+.admin-dt-col-crank {
+    width: 35px;
+}
+
+.admin-dt-col-thumbnail {
+    width: 35px;
+}
+
+.admin-dt-col-thumbnail .admin-dt-label{
+    display: none;
+}
+
+.admin-dt-mask {
+    position: absolute;
+    z-index: 9500;
+}
+
+.admin-dt-tmp {
+    position: absolute;
+    left: -9000px;
+}
+
+.admin-dt-scrollable .admin-dt-bd {
+    overflow: auto;
+}
+
+.admin-dt-scrollable .admin-dt-hd {
+    overflow: hidden;
+    position: relative;
+}
+
+.admin-dt-scrollable .admin-dt-bd thead tr,.admin-dt-scrollable .admin-dt-bd thead th
+    {
+    position: absolute;
+    left: -1500px;
+}
+
+.admin-dt-scrollable tbody {
+    -moz-outline: none;
+}
+
+thead .admin-dt-sortable {
+    cursor: pointer;
+}
+
+thead .admin-dt-draggable {
+    cursor: move;
+}
+
+.admin-dt-coltarget {
+    position: absolute;
+    z-index: 999;
+}
+
+.admin-dt-hd {
+    zoom: 1;
+}
+
+th.admin-dt-resizeable .admin-dt-resizerliner {
+    position: relative;
+}
+
+.admin-dt-resizer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    cursor: e-resize;
+    cursor: col-resize;
+    background-color: #CCC;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+}
+
+.admin-dt-resizerproxy {
+    visibility: hidden;
+    position: absolute;
+    z-index: 9000;
+    background-color: #CCC;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+}
+
+th.admin-dt-hidden .admin-dt-liner,td.admin-dt-hidden .admin-dt-liner,th.admin-dt-hidden .admin-dt-resizer
+{
+    display: none;
+}
+
+/* http://normankosmal.com/wordpress/?p=45 */
+th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt-hidden {
+    display:none;
+}
+.admin-dt-editor {
+    position: absolute;
+    z-index: 9000;
+}
+
+.admin-dt table {
+    padding: 0;
+    font-size: inherit;
+    border-collapse: separate; *
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    clear: both;
+}
+
+.admin-dt thead {
+    border-spacing: 0;
+}
+
+.admin-dt caption {
+    color: #000;
+    font-size: 85%;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 1;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.admin-dt th,.admin-dt th a {
+    text-decoration: none;
+    text-align: left;
+    vertical-align: bottom;
+    color:#eee;
+}
+
+.admin-dt th {
+    background-color: #6f6e6b;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-left: 1px solid #a9a9a9;
+}
+
+.admin-dt th.admin-dt-sortable
+{
+    background: #44484d;
+}
+
+.admin-dt tr.admin-dt-first td {
+    border-top: 1px solid #CCCCCC;
+}
+
+.admin-dt th .admin-dt-liner {
+    white-space: nowrap;
+}
+
+.admin-dt-liner {
+    margin: 0;
+    padding: 0;
+    padding: 4px 10px 4px 10px;
+}
+
+.admin-dt-coltarget {
+    width: 5px;
+    background-color: red;
+}
+
+.admin-dt td {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: left;
+    vertical-align:middle;
+}
+
+.admin-dt img {
+    vertical-align: middle;
+}
+
+.admin-dt-last td {
+    border: none;
+}
+
+/*
+.admin-dt-list td {
+    border-right: none;
+}
+*/
+.admin-dt-resizer {
+    width: 6px;
+}
+
+.admin-dt-mask {
+    background-color: #000;
+    opacity: .25;
+    filter: alpha(opacity = 25);
+}
+
+.admin-dt-message {
+    background-color: #FFF;
+}
+
+.admin-dt-scrollable table {
+    border: none;
+}
+
+.admin-dt-scrollable .admin-dt-hd {
+    border-left: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+.admin-dt-scrollable .admin-dt-bd {
+    border-left: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    background-color: #FFF;
+}
+
+.admin-dt-scrollable .admin-dt-data tr.admin-dt-last td {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+th.admin-dt-asc,th.admin-dt-desc {
+    background-color: #6f6e6b;
+}
+
+th.admin-dt-sortable .admin-dt-label {
+    margin-right: 10px;
+}
+
+th.admin-dt-desc .admin-dt-liner {
+   background:url(../../images/3/sprite.png) no-repeat right -170px;
+}
+
+th.admin-dt-asc .admin-dt-liner {
+    background:url(../../images/3/sprite.png) no-repeat right -224px;
+}
+
+th.admin-dt-asc, th.admin-dt-desc
+{
+    background: black !important;
+}
+
+tbody .admin-dt-editable {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0B4E7A;
+}
+
+.admin-dt-editor {
+    text-align: left;
+    background-color: #F2F2F2;
+    border: 1px solid #808080;
+    padding: 6px;
+}
+
+.admin-dt-editor label {
+    padding-left: 4px;
+    padding-right: 6px;
+}
+
+.admin-dt-editor .admin-dt-button {
+    padding-top: 6px;
+    text-align: right;
+}tr.admin-dt-even {
+    background-color: #FFF;
+}
+
+tr.admin-dt-odd {
+    background-color: #f3f3f3;
+}
+
+.admin-dt tbody tr:hover {
+    background-color:#D1DFE9;
+/*    cursor: pointer;*/
+}
+
+.admin-dt tbody tr .admin-dt-liner .admin-dt-button{
+    background-color: transparent;
+    border: 0 none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    vertical-align:middle;
+    width:16px;
+    height: 16px;
+}
+
+.admin-dt-list tr.admin-dt-even {
+    background-color: #FFF;
+}
+
+.admin-dt-list tr.admin-dt-odd {
+    background-color: #FFF;
+}
+
+/*
+tr.admin-dt-even td.admin-dt-asc,tr.admin-dt-even td.admin-dt-desc
+    {
+    background-color: #F8F8F8;
+}
+
+tr.admin-dt-odd td.admin-dt-asc,tr.admin-dt-odd td.admin-dt-desc
+    {
+    background-color: #EEEEEE;
+}
+
+.admin-dt-list tr.admin-dt-even td.admin-dt-asc,.admin-dt-list tr.admin-dt-even td.admin-dt-desc
+    {
+    background-color: #F5F5F5;
+}
+
+.admin-dt-list tr.admin-dt-odd td.admin-dt-asc,.admin-dt-list tr.admin-dt-odd td.admin-dt-desc
+    {
+    background-color: #F5F5F5;
+}
+*/
+th.admin-dt-highlighted,th.admin-dt-highlighted a
+{
+    background-color: #D1DFE9;
+}
+
+tr.admin-dt-highlighted,tr.admin-dt-highlighted td.admin-dt-asc,tr.admin-dt-highlighted td.admin-dt-desc,tr.admin-dt-even td.admin-dt-highlighted,tr.admin-dt-odd td.admin-dt-highlighted
+{
+    cursor: pointer;
+    background-color: #D1DFE9;
+}
+
+
+.admin-dt-list th.admin-dt-highlighted,.admin-dt-list th.admin-dt-highlighted a {
+    background-color: #D1DFE9;
+}
+
+.admin-dt-list tr.admin-dt-highlighted,.admin-dt-list tr.admin-dt-highlighted td.admin-dt-asc,.admin-dt-list tr.admin-dt-highlighted td.admin-dt-desc,.admin-dt-list tr.admin-dt-even td.admin-dt-highlighted,.admin-dt-list tr.admin-dt-odd td.admin-dt-highlighted
+{
+    cursor: pointer;
+    background-color: #D1DFE9;
+}
+
+th.admin-dt-selected,th.admin-dt-selected a {
+    background-color: #D1DFE9;
+}
+
+tr.admin-dt-selected td,tr.admin-dt-selected td.admin-dt-asc,tr.admin-dt-selected td.admin-dt-desc {
+    background-color: #D1DFE9;
+}
+
+tr.admin-dt-even td.admin-dt-selected,tr.admin-dt-odd td.admin-dt-selected {
+    background-color: #D1DFE9;
+}
+
+.admin-dt-list th.admin-dt-selected,.admin-dt-list th.admin-dt-selected a {
+    background-color: #D1DFE9;
+}
+
+.admin-dt-list tr.admin-dt-selected td,.admin-dt-list tr.admin-dt-selected td.admin-dt-asc,.admin-dt-list tr.admin-dt-selected td.admin-dt-desc {
+    background-color: #D1DFE9;
+}
+
+.admin-dt-list tr.admin-dt-even td.admin-dt-selected,.admin-dt-list tr.admin-dt-odd td.admin-dt-selected {
+    background-color: #D1DFE9;
+}
+
+.admin-dt-paginator {
+    display: block;
+    margin: 6px 0;
+    white-space: nowrap;
+}
+
+.admin-dt-paginator .admin-dt-first,.admin-dt-paginator .admin-dt-last,.admin-dt-paginator .admin-dt-selected
+    {
+    padding: 2px 6px;
+}
+
+.admin-dt-paginator a.admin-dt-first,.admin-dt-paginator a.admin-dt-last
+    {
+    text-decoration: none;
+}
+
+.admin-dt-paginator .admin-dt-previous,.admin-dt-paginator .admin-dt-next
+    {
+    display: none;
+}
+
+a.admin-dt-page {
+    border: 1px solid #CBCBCB;
+    padding: 2px 6px;
+    text-decoration: none;
+    background-color: #fff;
+}
+
+.admin-dt-selected {
+    border: 1px solid #fff;
+    background-color: #fff;
+}
+
+/* PAGINATOR */
+
+.admin-pg-container {
+    display: block;
+    text-align: center;
+    margin-top: 10px
+}
+
+.admin-pg-first,.admin-pg-previous,.admin-pg-next,.admin-pg-last,.admin-pg-current,.admin-pg-pages,.admin-pg-page {
+    display: inline-block;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 1em;
+    zoom: 1;
+}
+
+.admin-pg-first,.admin-pg-previous,.admin-pg-next,.admin-pg-last {
+    color: black;
+    background: #fff;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#eee));
+    background-image: -moz-linear-gradient(top,  #fff,  #eee);
+    background-image: -ms-linear-gradient(top,  #fff,  #eee);
+    background-image: -o-linear-gradient(top,  #fff,  #eee);
+    background-image: linear-gradient(top,  #fff,  #eee);
+    border: 1px solid #cfd1d3;
+    border-radius: 3px;
+    width: 31px;
+    height:25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2em;
+    line-height: 24px;
+    margin-left:5px;
+}
+
+span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
+{
+    color: #A6A6A6;
+    background-image: url('../../images/3/diagonal_pattern.png');
+}
+
+a.admin-pg-first:hover,a.admin-pg-previous:hover,a.admin-pg-next:hover,a.admin-pg-last:hover,a.admin-pg-page:hover{
+    border: 1px solid #999;
+}
+
+.admin-pg-previous span
+{
+    margin: 0 5px 0 2px;
+}
+
+.admin-pg-next span
+{
+    margin: 0 5px 0 4px;
+}
+
+.admin-pg-pages {
+    padding: 0;
+}
+
+
+.admin-pg-current {
+    padding: 3px 0;
+}
+
+
+span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
+    {
+    color: #a6a6a6;
+}
+
+.admin-pg-page {
+    background-color: #fff;
+    border: 1px solid #CBCBCB;
+    border-radius: 2px;
+    padding: 0.3em 0.5em;
+    text-decoration: none;
+}
+
+.admin-pg-current-page {
+    font-weight: bold;
+}
+
+.admin-pg-page {
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.admin-pg-current,.admin-pg-rpp-options {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+/* Column icons */
+
+.crankfield, .crankfield-disabled {
+    height: 16px;
+    width: 16px;
+}
+
+.crankfield {
+    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -192px;
+}
+
+.crankfield-disabled {
+    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -208px;
+}
+
+.thumbfield {
+    height: 16px;
+    width: 16px;
+}
+
+.thumbview{
+    position: relative;
+    z-index: 0;
+    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -224px;
+}
+
+.thumbview:hover{
+    background-color: transparent;
+    z-index: 50;
+}
+
+.thumbview span {
+    position: absolute;
+    background-color: white;
+    padding: 5px;
+    left: -1000px;
+    border: 1px solid #999;
+    visibility: hidden;
+    color: black;
+    text-decoration: none;
+}
+
+.thumbview:hover span {
+    visibility: visible;
+    top: 0;
+    left: 25px;
+}
+
+
+
+/* ---- the sub-items toolbar: its buttons and menus (#action-controls, #ezbtn-*, #ezopt-menu-*) ---- */
+.hide-scrollbars * {
+    overflow: hidden;
+}
+
+.hide-scrollbars select {
+    display: none;
+}
+
+#action-controls {
+    display: block;
+    float: left;
+    margin: 10px 0px;
+}
+
+#tpg {
+    display: block;
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#ezbtn-more button {
+    background: transparent url(../../images/3/sprite.png) no-repeat right -811px;
+    padding-right: 1.7em;
+}
+
+#ezbtn-items-button {
+    background: url('../../images/3/sprite.png') no-repeat 5px -650px;
+    padding-left: 2em;
+}
+
+#ezbtn-new-button {
+    background: url('../../images/3/sprite.png') no-repeat 5px 4px;
+    padding-left: 2em;
+}
+
+#ezbtn-options-button {
+    background: url('../../images/3/sprite.png') no-repeat 5px -713px;
+    padding-left: 2em;
+}
+
+#ezopt-menu-remove {
+    background-image: url('../../images/trash-icon-16x16.gif');
+}
+
+#ezopt-menu-move {
+    background-image: url(../../images/icons-sprite.png);
+    background-position: 5% -157px;
+}
+
+#ezopt-menu-hide {
+    background-image: none;
+    position: relative;
+}
+
+#ezopt-menu-unhide {
+    background-image: none;
+    position: relative;
+}
+
+#ezopt-menu-hide:before,
+#ezopt-menu-unhide:before {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 11px;
+    height: 11px;
+    margin-top: -6px;
+    border: 1px solid;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    box-sizing: border-box;
+}
+
+#ezopt-menu-hide:before {
+    border-color: #6a6a6a;
+    background: linear-gradient(to bottom, #d7d7d7 0%, #a9a9a9 100%);
+}
+
+#ezopt-menu-unhide:before {
+    border-color: #268f26;
+    background: linear-gradient(to bottom, #60db60 0%, #20b920 100%);
+}
+
+#ezopt-menu-hide:after,
+#ezopt-menu-unhide:after {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 11px;
+    height: 11px;
+    margin-top: -6px;
+    pointer-events: none;
+}
+
+#ezopt-menu-hide:after {
+    background: linear-gradient(#3f3f3f, #3f3f3f) center/7px 2px no-repeat;
+}
+
+#ezopt-menu-unhide:after {
+    background:
+        linear-gradient(#f8fff8, #f8fff8) center/7px 2px no-repeat,
+        linear-gradient(#f8fff8, #f8fff8) center/2px 7px no-repeat;
+}
+
+#ezopt-menu-edit {
+    background-image: url('../../images/2/icon-edit-16x16.png');
+}
+
+#ezopt-menu-preview {
+    background-image: url('../../images/2/icon-preview-16x16.png');
+}
+
+#ezopt-menu-check {
+    background-image: url(../../images/icons-sprite.png);
+    background-position: 5% -61px;
+}
+
+#ezopt-menu-uncheck {
+    background-image: url(../../images/icons-sprite.png);
+    background-position: 5% -29px;
+}
+
+#ezopt-menu-toggle {
+    background-image: url('../../images/2/toggle-button-16x16.png');
+}
+
+#ezopt-menu-view {
+    background-image: url('../../images/2/icon-open-16x16.png');
+}
+
+#ezopt-menu-copy,
+#ezopt-menu-copy-subtree {
+    background-image: url('../../images/2/icon-copy-16x16.png');
+}
+
+#ezopt-menu-multiupload {
+    background-image: url('../../images/2/icon-up-16x16.png');
+}
+
+#ezopt-menu-list {
+    background-image: url('../../images/2/icon-sitemap-16x16.png');
+}
+
+#ezopt-menu-multiedit {
+    background-image: url('../../images/2/icon-edit-16x16.png');
+}
+
+#ezopt-menu-remove,
+#ezopt-menu-edit,
+#ezopt-menu-preview,
+#ezopt-menu-toggle,
+#ezopt-menu-view,
+#ezopt-menu-copy,
+#ezopt-menu-copy-subtree,
+#ezopt-menu-multiupload,
+#ezopt-menu-multiedit,
+#ezopt-menu-list {
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    padding-left: 1em;
+}
+
+#ezopt-menu-move,
+#ezopt-menu-hide,
+#ezopt-menu-unhide,
+#ezopt-menu-check,
+#ezopt-menu-uncheck {
+    background-repeat: no-repeat;
+    padding-left: 1em;
+}
+
+
+/* ---- masks and the table options dialog ---- */
+.mask {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.mask.block-scrollbars {
+    overflow: auto;
+}
+
+.masked select,
+.drag select,
+.hide-select select {
+    _visibility: hidden;
+}
+
+.hide-scrollbars,
+.hide-scrollbars * {
+    overflow: hidden;
+}
+
+.hide-scrollbars select {
+    display: none;
+}
+
+.show-scrollbars {
+    overflow: auto;
+}
+
+.mask {
+    background-color: #000;
+    opacity: .25;
+    filter: alpha(opacity = 25);
+}
+
+.table-options-row {
+    clear: both;
+}
+
+.table-options-key {
+    float: left;
+}
+
+.table-options-value {
+    float: right;
+}
+
+.table-options-custom-value {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.table-options-custom-input {
+    width: 100px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+#table-option-custom-radio {
+    vertical-align: middle;
+}
+
+
+/* ---- the crank and thumbnail fields of the tables ---- */
+.crankfield,
+.crankfield-disabled {
+    height: 16px;
+    width: 16px;
+}
+
+.crankfield {
+    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -192px;
+}
+
+.crankfield-disabled {
+    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -208px;
+}
+
+.thumbfield {
+    height: 16px;
+    width: 16px;
+}
+
+.thumbview {
+    position: relative;
+    z-index: 0;
+    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -224px;
+}
+
+.thumbview:hover {
+    background-color: transparent;
+    z-index: 50;
+}
+
+.thumbview span {
+    position: absolute;
+    background-color: white;
+    padding: 5px;
+    left: -1000px;
+    border: 1px solid #999;
+    visibility: hidden;
+    color: black;
+    text-decoration: none;
+}
+
+.thumbview:hover span {
+    visibility: visible;
+    top: 0;
+    left: 25px;
+}

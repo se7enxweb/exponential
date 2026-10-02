@@ -69,7 +69,7 @@ table.list td.width-280 { max-width: 280px; }
 <div class="float-break"></div>
 </div>
 
-<div class="content-navigation-childlist yui-dt">
+<div class="content-navigation-childlist admin-dt">
     <table class="list" cellspacing="0">
     <tr>
         <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/content/trash' )}" onclick="ezjs_toggleCheckboxes( document.trashform, 'DeleteIDArray[]' ); return false;" title="{'Invert selection.'|i18n( 'design/admin/content/trash' )}" /></th>
@@ -80,18 +80,18 @@ table.list td.width-280 { max-width: 280px; }
         }
         {if eq( 'name', $trash_sort_field )}
             {if eq($trash_sort_order, '0')}
-                {set $col_class = ' yui-dt-desc'}
+                {set $col_class = ' admin-dt-desc'}
             {elseif eq($trash_sort_order, '1')}
                 {set
-                    $col_class  = ' yui-dt-asc'
+                    $col_class  = ' admin-dt-asc'
                     $link_order = 0
                 }
             {/if}
         {/if}
-        <th class="yui-dt-col-name yui-dt-sortable{$col_class}">
-            <div id="yui-dt0-th-class_name-liner" class="yui-dt-liner">
-                <span class="yui-dt-label">
-                    <a href="{concat( 'content/trash/(sort_field)/name/(sort_order)/', $link_order )|ezurl( 'no' )}" title="{'Click to sort %sort_order'|i18n( 'design/admin/content/trash',, hash( '%sort_order', $sort_order ) )}" class="yui-dt-sortable">{'Name'|i18n( 'design/admin/content/trash')}</a>
+        <th class="admin-dt-col-name admin-dt-sortable{$col_class}">
+            <div id="admin-dt0-th-class_name-liner" class="admin-dt-liner">
+                <span class="admin-dt-label">
+                    <a href="{concat( 'content/trash/(sort_field)/name/(sort_order)/', $link_order )|ezurl( 'no' )}" title="{'Click to sort %sort_order'|i18n( 'design/admin/content/trash',, hash( '%sort_order', $sort_order ) )}" class="admin-dt-sortable">{'Name'|i18n( 'design/admin/content/trash')}</a>
                 </span>
             </div>
         </th>
@@ -102,18 +102,18 @@ table.list td.width-280 { max-width: 280px; }
         }
         {if eq( 'class_name', $trash_sort_field )}
             {if eq($trash_sort_order, '0')}
-                {set $col_class = ' yui-dt-desc'}
+                {set $col_class = ' admin-dt-desc'}
             {elseif eq($trash_sort_order, '1')}
                 {set
-                    $col_class  = ' yui-dt-asc'
+                    $col_class  = ' admin-dt-asc'
                     $link_order = 0
                 }
             {/if}
         {/if}
-        <th class="yui-dt-col-name yui-dt-sortable{$col_class}">
-            <div id="yui-dt0-th-class_name-liner" class="yui-dt-liner">
-                <span class="yui-dt-label">
-                    <a href="{concat( 'content/trash/(sort_field)/class_name/(sort_order)/', $link_order )|ezurl( 'no' )}" title="{'Click to sort %sort_order'|i18n( 'design/admin/content/trash',, hash( '%sort_order', $sort_order ) )}" class="yui-dt-sortable">{'Type'|i18n( 'design/admin/content/trash')}</a>
+        <th class="admin-dt-col-name admin-dt-sortable{$col_class}">
+            <div id="admin-dt0-th-class_name-liner" class="admin-dt-liner">
+                <span class="admin-dt-label">
+                    <a href="{concat( 'content/trash/(sort_field)/class_name/(sort_order)/', $link_order )|ezurl( 'no' )}" title="{'Click to sort %sort_order'|i18n( 'design/admin/content/trash',, hash( '%sort_order', $sort_order ) )}" class="admin-dt-sortable">{'Type'|i18n( 'design/admin/content/trash')}</a>
                 </span>
             </div>
         </th>
@@ -124,22 +124,22 @@ table.list td.width-280 { max-width: 280px; }
         }
         {if eq( 'section', $trash_sort_field )}
             {if eq($trash_sort_order, '0')}
-                {set $col_class = ' yui-dt-desc'}
+                {set $col_class = ' admin-dt-desc'}
             {elseif eq($trash_sort_order, '1')}
                 {set
-                    $col_class  = ' yui-dt-asc'
+                    $col_class  = ' admin-dt-asc'
                     $link_order = 0
                 }
             {/if}
         {/if}
-        <th class="yui-dt-col-name yui-dt-sortable{$col_class}">
-            <div id="yui-dt0-th-class_name-liner" class="yui-dt-liner">
-                <span class="yui-dt-label">
-                    <a href="{concat( 'content/trash/(sort_field)/section/(sort_order)/', $link_order )|ezurl( 'no' )}" title="{'Click to sort %sort_order'|i18n( 'design/admin/content/trash',, hash( '%sort_order', $sort_order ) )}" class="yui-dt-sortable">{'Section'|i18n( 'design/admin/content/trash')}</a>
+        <th class="admin-dt-col-name admin-dt-sortable{$col_class}">
+            <div id="admin-dt0-th-class_name-liner" class="admin-dt-liner">
+                <span class="admin-dt-label">
+                    <a href="{concat( 'content/trash/(sort_field)/section/(sort_order)/', $link_order )|ezurl( 'no' )}" title="{'Click to sort %sort_order'|i18n( 'design/admin/content/trash',, hash( '%sort_order', $sort_order ) )}" class="admin-dt-sortable">{'Section'|i18n( 'design/admin/content/trash')}</a>
                 </span>
             </div>
         </th>
-        <th class="yui-dt-col-name yui-dt-sortable">{'Original Placement'|i18n( 'design/admin/content/trash')}</th>
+        <th class="admin-dt-col-name admin-dt-sortable">{'Original Placement'|i18n( 'design/admin/content/trash')}</th>
         {* set Trashed column link & asc/desc icon *}
         {set
             $col_class  = ''
@@ -147,22 +147,22 @@ table.list td.width-280 { max-width: 280px; }
         }
         {if eq( 'trashed', $trash_sort_field )}
             {if eq($trash_sort_order, '0')}
-                {set $col_class = ' yui-dt-desc'}
+                {set $col_class = ' admin-dt-desc'}
             {elseif eq($trash_sort_order, '1')}
                 {set
-                    $col_class  = ' yui-dt-asc'
+                    $col_class  = ' admin-dt-asc'
                     $link_order = 0
                 }
             {/if}
         {/if}
-        <th class="yui-dt-col-name yui-dt-sortable{$col_class}">
-            <div id="yui-dt0-th-class_name-liner" class="yui-dt-liner">
-                <span class="yui-dt-label">
-                    <a href="{concat( 'content/trash/(sort_field)/trashed/(sort_order)/', $link_order )|ezurl( 'no' )}" title="{'Click to sort %sort_order'|i18n( 'design/admin/content/trash',, hash( '%sort_order', $sort_order ) )}" class="yui-dt-sortable">{'Date trashed'|i18n( 'design/admin/content/trash')}</a>
+        <th class="admin-dt-col-name admin-dt-sortable{$col_class}">
+            <div id="admin-dt0-th-class_name-liner" class="admin-dt-liner">
+                <span class="admin-dt-label">
+                    <a href="{concat( 'content/trash/(sort_field)/trashed/(sort_order)/', $link_order )|ezurl( 'no' )}" title="{'Click to sort %sort_order'|i18n( 'design/admin/content/trash',, hash( '%sort_order', $sort_order ) )}" class="admin-dt-sortable">{'Date trashed'|i18n( 'design/admin/content/trash')}</a>
                 </span>
             </div>
         </th>
-        <th class="tight yui-dt-col-name yui-dt-sortable">&nbsp;</th>
+        <th class="tight admin-dt-col-name admin-dt-sortable">&nbsp;</th>
     </tr>
 
     {section var=tObjects loop=fetch( 'content', 'trash_object_list', hash( 'limit',  $number_of_items,

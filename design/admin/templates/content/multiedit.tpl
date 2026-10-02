@@ -6,6 +6,9 @@
    one panel per object, and a report of what happened to each when publishing
    several of them did not all go the same way. *}
 {literal}<style>
+/* No object information column: the box starts where a collapsed left menu leaves it */
+#page #maincontent.multiedit-main { margin-left: 32px; }
+#columns:has(.multiedit-main) #left-panels-separator { left: 0; }
 .multiedit-note { color: #555; margin: 0 0 1rem; }
 .multiedit-group { margin-bottom: 1.5rem; }
 .multiedit-group > h2 { font-size: 1.1em; margin: 0 0 .5rem; }
@@ -40,6 +43,10 @@
 </style>{/literal}
 
 <form method="post" action={"content/multiedit"|ezurl} enctype="multipart/form-data" name="multiedit">
+
+{* The grey design's content box, as the single object editor has it; no object information column here *}
+<div id="maincontent" class="multiedit-main"><div id="maincontent-design" class="float-break"><div id="fix">
+<div class="context-block">
 
 <div class="box-header">
 <h1 class="context-title">{'Edit several items'|i18n('design/admin/content/multiedit')}</h1>
@@ -382,5 +389,8 @@ var MULTIEDIT_AUTOSAVE_TEXTS = {ldelim}
     <input class="button" type="submit" name="MultiDiscardButton" value="{'Discard'|i18n('design/admin/content/multiedit')}" title="{'Throw away the drafts this form opened and go back.'|i18n('design/admin/content/multiedit')|wash}" />
 </div>
 </div>
+
+</div>
+</div></div></div>
 
 </form>

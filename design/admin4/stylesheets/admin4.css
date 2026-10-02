@@ -1,7 +1,7 @@
 /*
  * admin4: the admin3 frame in the look of the 2026 setup wizard, in a light mode (the default) and a dark mode.
  *
- * Loaded after admin4's base stylesheets (core, pagelayout, content, the theme, the YUI and modal window
+ * Loaded after admin4's base stylesheets (core, pagelayout, content, the theme, the table and modal window
  * styles) and before the extensions' BackendCSSFileList, so an extension keeps the last word on its own markup.
  * The mode is html[data-a4-theme="light"|"dark"], set before the page is drawn by the script at the top of
  * page_head_style.tpl from this browser's choice (localStorage "exp-admin4-theme"); the header's toggle switches it.
@@ -795,8 +795,8 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
 }
 
 /* The edit form's buttons (Send for publishing / Store draft / Store draft and exit / Discard draft) stay in view
-   under the header while the form scrolls. admin3 did this with fixed_toolbar.js, a YUI script that stopped
-   working when YUI went; this is CSS only: sticky, just under the header (--header-height, kept current by
+   under the header while the form scrolls. This is CSS only: sticky, just under the header (--header-height,
+   kept current by
    admin4.js). #page clipped with overflow: hidden, which made it the scroll box sticky works against (one that
    never scrolls); overflow: clip clips the same and is no scroll box. */
 #page {

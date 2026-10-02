@@ -1,8 +1,8 @@
 /*!
  * The admin's "Upload a file" into an object relation, on Exponential UI (jQuery 4): Exp.dialog for the modal window,
- * $.fn.expUpload for the file, Exp.io for the other calls. It does what ezajaxuploader.js (YUI 3, with
- * ezmodalwindow.js) does, step by step and with the same server calls, the same POSTed fields in the same order and
- * the same configuration, so the templates keep their settings:
+ * $.fn.expUpload for the file, Exp.io for the other calls: step by step, with the server calls, the POSTed fields
+ * in their order and the configuration the templates give,
+ * as follows:
  *
  *   $('.simple-relation-upload-new').expAjaxUploader({
  *       open:     { action: 'ezajaxuploader::uploadform::ezobjectrelation' },
@@ -58,7 +58,7 @@
         this.dialog = null;
         this.upload = null;
         var self = this;
-        // what the YUI version offered its callbacks as this.modalWindow
+        // what the callbacks get as this.modalWindow
         this.modalWindow = {
             close: function () { self.close(); },
             setContent: function (html) { self.setContent(html); },
@@ -74,7 +74,7 @@
         this.bindUpload();
     };
 
-    /** The error, in the error template, as the whole content (as the YUI version did). */
+    /** The error, in the error template, as the whole content (as before). */
     AjaxUploader.prototype.displayError = function (text) {
         var $e = $(this.conf.errorTemplate);
         $e.html($e.html().replace('%message', $('<div></div>').text(String(text)).html()));
@@ -120,19 +120,19 @@
         var $file = $form.find('input[type="file"]').first();
         if (!$file.length) { return; }
         var current = function () { return self.dialog === dialog && dialog && dialog.isOpen; };
-        // not dimmed while the file is sent (the YUI version dimmed the whole step): its progress and Cancel stay usable
+        // not dimmed while the file is sent (not the whole step): its progress and Cancel stay usable
         $file.expUpload({
             url: Exp.config.call + this.conf.upload.action,
             name: $file.attr('name'),
             form: $form[0],
             auto: false,
             multiple: false,
-            token: false,               // the form carries it, as with the YUI version
+            token: false,               // the form carries it
             responseType: 'text',
             onDone: function (text) {
                 if (!current()) { return; }
                 var json;
-                // ContentType=html: the call view sends the JSON as HTML text (quotes as &quot;); the YUI version read
+                // ContentType=html: the call view sends the JSON as HTML text (quotes as &quot;); it is read
                 // it from an iframe, where the browser had decoded it. The same here, with an inert parser.
                 try { json = JSON.parse(new window.DOMParser().parseFromString(String(text), 'text/html').body.textContent); } catch (e) {
                     self.displayError(self.conf.parseJSONErrorText);
@@ -157,7 +157,7 @@
         this.upload = $file.data('expUpload');
     };
 
-    /** The handlers of the YUI version, in the same order, delegated on the dialog's content. */
+    /** The handlers of the steps, delegated on the dialog's content. */
     AjaxUploader.prototype.delegateWindowEvents = function () {
         var self = this, conf = this.conf, $c = this.content(), defaultValues = {};
 
