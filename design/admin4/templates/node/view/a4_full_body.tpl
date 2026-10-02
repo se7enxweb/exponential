@@ -26,7 +26,7 @@
      $object = $node.object
      $section = fetch( 'section', 'object', hash( 'section_id', $object.section_id ) )
      $locations = $object.assigned_nodes|count
-     $translations = $object.languages
+     $a4_translations = $object.languages
      $site_url = concat( siteaccess_url()|trim( '/' ), '/', $node.url_alias )}
 {if $has_content_class}
     {if eq( 0, count( $object.content_class.can_create_languages ) )}
@@ -125,7 +125,7 @@
     <button type="button" class="a4-copy" data-a4-copy="{$object.remote_id|wash}" title="{'Click to copy the remote ID'|i18n( 'design/admin/node/view/full' )|wash}">{'Remote ID'|i18n( 'design/admin/node/view/full' )}</button>
     {if gt( $locations, 1 )}<span>{$locations} {'locations'|i18n( 'design/admin/node/view/full' )}</span>{/if}
     <span class="a4-node-langs">
-    {foreach $translations as $language}
+    {foreach $a4_translations as $language}
         <a class="a4-node-lang{if eq( $language.locale, $object.current_language )} a4-current{/if}" href={concat( 'content/view/full/', $node.node_id, '/(language)/', $language.locale )|ezurl} title="{$language.name|wash}"><img src="{$language.locale|flag_icon}" width="18" height="12" alt="{$language.locale|wash}" /></a>
     {/foreach}
     </span>
@@ -138,7 +138,7 @@
 </div>
 
 {undef $js_class_languages $disable_another_language $disabled_sub_menu $has_content_class $object $section
-       $locations $translations $site_url}
+       $locations $a4_translations $site_url}
 </div>
 
 {* ---- Children ---- *}
