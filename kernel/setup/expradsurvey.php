@@ -466,6 +466,28 @@ class expRADSurvey
                 'ini'       => 'debugbar.ini',
                 'section'   => '/^Preset_(.+)$/',
                 'variables' => array( 'Name' => 'debugbar-preset' ) ),
+            // The audit's registries (settings/audit.ini, doc/bc/6.0/audit.md "Extension interfaces and their
+            // registries"): taxonomy branches of extensions, sinks, alert rule classes, archive formats.
+            'auditbranches'   => array(
+                'title'     => 'Audit taxonomy branches',
+                'ini'       => 'audit.ini',
+                'section'   => 'AuditEventSettings',
+                'variables' => array( 'Branches' => 'expAuditTaxonomyBranch' ) ),
+            'auditsinks'      => array(
+                'title'     => 'Audit sinks',
+                'ini'       => 'audit.ini',
+                'section'   => 'AuditSinkSettings',
+                'variables' => array( 'SinkClasses' => 'expAuditSink' ) ),
+            'auditalertrules' => array(
+                'title'     => 'Audit alert rule classes',
+                'ini'       => 'audit.ini',
+                'section'   => 'AuditAlertSettings',
+                'variables' => array( 'RuleClasses' => 'expAuditAlertRule' ) ),
+            'auditformats'    => array(
+                'title'     => 'Audit archive formats',
+                'ini'       => 'audit.ini',
+                'section'   => 'AuditArchiveSettings',
+                'variables' => array( 'FormatHandlers' => 'expAuditFormatHandler' ) ),
         );
     }
 

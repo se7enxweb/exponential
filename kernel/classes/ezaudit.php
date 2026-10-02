@@ -2,6 +2,14 @@
 /**
  * File containing the eZAudit class.
  *
+ * The 4.x audit API, kept so every existing call keeps working: eZAudit::writeAudit( $name, $attributes ) is
+ * recorded by expAudit (kernel/classes/audit/) as the new taxonomy name ([AuditCompatSettings] Map[] of
+ * audit.ini, or system.legacy.<name>), in the hash-chained JSON lines channels. Guide: doc/bc/6.0/audit.md
+ * ("The eZAudit::writeAudit() compatibility path").
+ *
+ * The results are no longer cached in $GLOBALS: a persistent Velocity worker kept them across requests, so a
+ * changed audit.ini was not seen until the worker restarted.
+ *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -15,7 +23,8 @@ class eZAudit
 
     /**
      * Returns an associative array of all names of audit and the log files used by this class,
-     * Will be fetched from ini settings.
+     * Will be fetched from ini settings. The old file names are aliases of the new names (filters by
+     * old file name resolve through the mapping).
      *
      * @return array
      */
@@ -42,21 +51,31 @@ class eZAudit
     }
 
     /**
-     * Writes $auditName with $auditAttributes as content
-     * to file name that will be fetched from ini settings by auditNameSettings() for logging.
+     * Records $auditName with $auditAttributes: the 4.x name is mapped to its taxonomy name and written by
+     * expAudit. Attributes on the deny list (HashKey, Password, ...) and secrets are never recorded.
+     *
+     * @param string $auditName
+     * @param array $auditAttributes
+     * @return bool true when recorded
+     */
+    static function writeAudit( $auditName, $auditAttributes = array() )
+    {
+        if ( !class_exists( 'expAudit' ) )
+            return false;
+        return expAudit::legacy( $auditName, $auditAttributes ) !== null;
+    }
+
+    /**
+     * Writes the old text file of a 4.x name (when [AuditCompatSettings] LegacyFiles=enabled), in the old format
+     * and with the old rotation, outside the hash chain. Attributes on the deny list are left out here too.
      *
      * @param string $auditName
      * @param array $auditAttributes
      * @return bool
      */
-    static function writeAudit( $auditName, $auditAttributes = array() )
+    static function writeLegacyFile( $auditName, $auditAttributes = array() )
     {
-        $enabled = eZAudit::isAuditEnabled();
-        if ( !$enabled )
-            return false;
-
         $auditNameSettings = eZAudit::auditNameSettings();
-
         if ( !isset( $auditNameSettings[$auditName] ) )
             return false;
 
@@ -70,33 +89,31 @@ class eZAudit
 
         $message = "[$ip] [$userLogin:$userID]\n";
 
-        foreach ( array_keys( $auditAttributes ) as $attributeKey )
+        $never = eZINI::instance( 'audit.ini' )->hasVariable( 'AuditPrivacySettings', 'NeverRecord' )
+                 ? (array)eZINI::instance( 'audit.ini' )->variable( 'AuditPrivacySettings', 'NeverRecord' ) : array();
+        foreach ( (array)$auditAttributes as $attributeKey => $attributeValue )
         {
-            $attributeValue = $auditAttributes[$attributeKey];
+            if ( class_exists( 'expAuditPrivacy' ) && ( expAuditPrivacy::isNeverRecorded( (string)$attributeKey, $never ) || expAuditPrivacy::isSecretName( (string)$attributeKey ) ) )
+                continue;
+            if ( is_array( $attributeValue ) )
+                $attributeValue = implode( ',', $attributeValue );
             $message .= "$attributeKey: $attributeValue\n";
         }
 
-        $logName = $auditNameSettings[$auditName]['file_name'];
-        $dir = $auditNameSettings[$auditName]['dir'];
-        eZLog::write( $message, $logName, $dir );
-
+        eZLog::write( $message, $auditNameSettings[$auditName]['file_name'], $auditNameSettings[$auditName]['dir'] );
         return true;
     }
 
     /**
-     * Returns true if audit should be enabled.
+     * Returns true if audit should be enabled ([AuditSettings] Audit=enabled, the shipped default).
      *
      * @return boolean
      */
     static function isAuditEnabled()
     {
-        if ( isset( $GLOBALS['eZAuditEnabled'] ) )
-        {
-            return $GLOBALS['eZAuditEnabled'];
-        }
-        $enabled = eZAudit::fetchAuditEnabled();
-        $GLOBALS['eZAuditEnabled'] = $enabled;
-        return $enabled;
+        if ( class_exists( 'expAudit' ) )
+            return expAudit::isEnabled();
+        return eZAudit::fetchAuditEnabled();
     }
 
     /**
@@ -122,13 +139,7 @@ class eZAudit
      */
     static function auditNameSettings()
     {
-        if ( isset( $GLOBALS['eZAuditNameSettings'] ) )
-        {
-            return $GLOBALS['eZAuditNameSettings'];
-        }
-        $nameSettings = eZAudit::fetchAuditNameSettings();
-        $GLOBALS['eZAuditNameSettings'] = $nameSettings;
-        return $nameSettings;
+        return eZAudit::fetchAuditNameSettings();
     }
 }
 ?>
