@@ -284,8 +284,8 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline; }
 :where(#maincontent, #leftmenu, #rightmenu) a:hover {
   color: var(--a4-orange);
 }
-/* Note for every rule here: ezjscore's packer drops the space in ") :", which turned ":where(#a) :where(b)" into
-   ":where(#a):where(b)" (one element that is both, i.e. nothing). A descendant goes INSIDE one :where(). */
+/* Note for every rule here: ezjscore's packer used to drop the space in ") :" (fixed in the kernel copy, 2026-10-02), turning ":where(#a) :where(b)" into
+   ":where(#a):where(b)" (nothing). A descendant goes INSIDE one :where(), so admin4 also works with an older packer. */
 :where(#maincontent h1, #maincontent h2, #maincontent h3),
 :where(#leftmenu, #rightmenu) h4 {
   color: var(--a4-ink);
@@ -681,4 +681,108 @@ div.context-information.a4-node-meta {
 html .ezcontentnavigationpart.section_id_1 .dashboard-flex #leftmenu.sidebar.left.show,
 html .ezcontentnavigationpart.section_id_7 .dashboard-flex #leftmenu.sidebar.left.show {
   background-color: transparent;
+}
+
+/* ---- The sign-in page (loginpagelayout.tpl + user/login.tpl) --------------------------------------------------
+   One calm form. Wide windows: the form on the left, a brand panel on the right. Phones and narrow windows: the
+   form alone, full width, 48px fields and button, 16px text (no zoom on focus in mobile Safari). */
+
+body.a4-login-page {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--a4-login-bg, #fff);
+  color: var(--a4-ink);
+  font: 15px/1.5 var(--a4-font);
+  text-shadow: none;
+}
+html[data-a4-theme="dark"] body.a4-login-page { --a4-login-bg: #141922; --a4-ink: #e8ebf0; --a4-muted: #9aa3b2; --a4-line: #2b3240; }
+html:has(body.a4-login-page) { background: var(--a4-login-bg, #fff); }
+.a4-login { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100vh; min-height: 100dvh; }
+.a4-login-side { display: flex; flex-direction: column; padding: 24px 32px; }
+.a4-login-top { flex: 0 0 auto; }
+.a4-login-logo {
+  display: block; width: 168px; height: 40px;
+  background: url('../images/admin4/logo-light.png') no-repeat 0 50% / auto 36px;
+}
+html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/logo_separator_sprite.png'); background-position: -124px 50%; background-size: auto; }
+.a4-login-box { flex: 1 0 auto; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 380px; margin: 0 auto; padding: 32px 0; }
+.a4-login-legal { flex: 0 0 auto; text-align: center; font-size: 12.5px; color: var(--a4-muted); }
+.a4-login-legal p { margin: 4px 0; }
+.a4-login-legal a { color: var(--a4-muted); text-decoration: underline; text-underline-offset: 2px; }
+
+.a4-login-title { margin: 0 0 6px; font-size: 26px; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; text-align: center; color: var(--a4-ink); }
+.a4-login-sub { margin: 0 0 26px; text-align: center; color: var(--a4-muted); font-size: 14px; }
+
+.a4-login-alert.message-warning {
+  margin: 0 0 18px; padding: 12px 14px; border: 1px solid rgba(194, 65, 12, 0.35); border-radius: 10px;
+  background: #fff5f0; color: #7c2d12; font-size: 14px;
+}
+html[data-a4-theme="dark"] .a4-login-alert.message-warning { background: rgba(194, 65, 12, 0.14); color: #fdba74; }
+.a4-login-alert p { margin: 0; }
+.a4-login-alert p + p { margin-top: 4px; }
+.a4-login-alert-title { font-weight: 700; }
+
+.a4-login-form { display: flex; flex-direction: column; }
+.a4-field-label { display: block; margin: 0 0 6px; font-size: 14px; font-weight: 600; color: var(--a4-ink); }
+.a4-field-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-top: 16px; }
+.a4-field-head .a4-field-label { margin-bottom: 6px; }
+.a4-login-forgot { font-size: 13px; color: var(--a4-orange-dark); text-decoration: none; }
+.a4-login-forgot:hover { text-decoration: underline; }
+.a4-login-form #logintext, .a4-login-form #passwordtext {   /* by id: the old login stylesheet styles them by id */
+  box-shadow: none; outline: none;
+  box-sizing: border-box; width: 100%; height: 46px; margin: 0; padding: 0 14px;
+  border: 1px solid #c9ced6; border-radius: 10px; background: #fff; color: #1f2430;
+  font: 16px/1.2 var(--a4-font); transition: border-color .15s ease, box-shadow .15s ease;
+}
+html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"] .a4-login-form #passwordtext { background: #1c2230; color: #e8ebf0; border-color: #364055; }
+.a4-login-form #logintext:focus, .a4-login-form #passwordtext:focus { outline: none; border-color: var(--a4-orange); box-shadow: 0 0 0 3px rgba(242, 106, 33, 0.22); }
+.a4-field-wrap { position: relative; }
+.a4-field-wrap #passwordtext { padding-right: 48px; }
+.a4-reveal {
+  position: absolute; top: 3px; right: 3px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+  margin: 0; padding: 0; border: 0; border-radius: 8px; background: transparent; color: var(--a4-muted); cursor: pointer;
+}
+.a4-reveal:hover { color: var(--a4-ink); background: rgba(16, 24, 40, 0.05); }
+.a4-reveal:focus-visible { outline: 3px solid rgba(242, 106, 33, 0.35); outline-offset: 0; }
+.a4-reveal .a4-eye-off { display: none; }
+.a4-reveal[aria-pressed="true"] .a4-eye { display: none; }
+.a4-reveal[aria-pressed="true"] .a4-eye-off { display: inline; }
+.a4-check { display: flex; align-items: center; gap: 10px; margin: 16px 0 0; font-size: 14px; font-weight: 500; color: var(--a4-ink); cursor: pointer; }
+.a4-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-orange); }
+.a4-login-note { margin: 14px 0 0; font-size: 13px; color: var(--a4-muted); }
+.a4-login-form #loginbutton {
+  box-sizing: border-box; width: 100%; height: 48px; margin: 22px 0 0; padding: 0 16px;
+  border: 0; border-radius: 10px; background: var(--a4-orange); color: #fff;
+  font: 600 16px/1 var(--a4-font); cursor: pointer; box-shadow: 0 6px 16px rgba(242, 106, 33, 0.26);
+  transition: background-color .15s ease, box-shadow .15s ease;
+}
+.a4-login-form #loginbutton:hover { background: var(--a4-orange-dark); }
+.a4-login-form #loginbutton:focus-visible { outline: 3px solid rgba(242, 106, 33, 0.4); outline-offset: 2px; }
+.a4-login-form #loginbutton.a4-busy { opacity: .75; cursor: progress; pointer-events: none; }
+.a4-login-alt { margin: 18px 0 0; text-align: center; font-size: 14px; color: var(--a4-muted); }
+.a4-login-alt a { color: var(--a4-orange-dark); font-weight: 600; text-decoration: none; }
+
+/* the brand panel: the wizard's orange, a quiet pattern, one line of text */
+.a4-login-brand {
+  position: relative; overflow: hidden; display: flex; align-items: center; padding: 48px 64px;
+  color: #fff;
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0 2px, transparent 2px 9px),
+    radial-gradient(900px 600px at 80% 20%, #ff8a3d 0%, transparent 60%),
+    linear-gradient(160deg, #f26a21 0%, #d9561a 100%);
+}
+.a4-login-brand-inner { max-width: 440px; }
+.a4-login-brand-kicker { margin: 0 0 12px; font: 600 13px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .04em; opacity: .9; }
+.a4-login-brand-title { margin: 0 0 12px; font-size: 32px; line-height: 1.15; font-weight: 700; letter-spacing: -.01em; }
+.a4-login-brand-sub { margin: 0; font-size: 15px; opacity: .9; }
+
+/* phones and narrow windows: the form alone */
+@media (max-width: 899px) {
+  .a4-login { grid-template-columns: minmax(0, 1fr); }
+  .a4-login-brand { display: none; }
+  .a4-login-side { padding: 18px 20px calc(18px + env(safe-area-inset-bottom)); }
+  .a4-login-box { justify-content: flex-start; padding: 28px 0 24px; max-width: 420px; }
+  .a4-login-title { font-size: 24px; }
+  .a4-login-form #logintext, .a4-login-form #passwordtext { height: 48px; }
 }

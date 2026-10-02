@@ -1,71 +1,48 @@
 <!DOCTYPE html>
+{* admin4 sign-in page: one calm form, nothing else to read. On wide windows the form on the left and a brand panel
+   on the right; on phones and narrow windows only the form, full width, large fields, no brand panel.
+   Its own markup (body.a4-login-page, no #page/#header/#columns), so none of the old admin login styles reach it.
+   The form itself is the module result (user/login.tpl), shown through page_mainarea.tpl as before. *}
 <html lang="{$site.http_equiv.Content-language|wash}">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <meta name="robots" content="noindex, nofollow">
     {def $admin_theme = ezpreference( 'admin_theme' )}
-
-    {cache-block keys=array( $navigation_part.identifier, $ui_context, $ui_component, $admin_theme, $access_type )}{* Pr tab cache *}
-
+    {cache-block keys=array( $navigation_part.identifier, $ui_context, $ui_component, $admin_theme, $access_type )}
     {include uri='design:page_head.tpl'}
-
-
     {include uri='design:page_head_style.tpl'}
     {include uri='design:page_head_script.tpl'}
-
+    {/cache-block}
 </head>
+<body class="a4-login-page">
 
-<body class="loginpage">
+<main class="a4-login">
+    <section class="a4-login-side">
+        <header class="a4-login-top">
+            <a class="a4-login-logo" href={'/'|ezurl} aria-label="Exponential"></a>
+        </header>
 
-    <div id="page" class="{$navigation_part.identifier} section_id_{first_set( $module_result.section_id, 0 )}">
-        <div id="header">
-            <div id="header-design" class="float-break">
-            </div>
+        <div class="a4-login-box">
+            {include uri="design:page_mainarea.tpl"}
         </div>
 
-        {/cache-block}
-        <hr class="hide" />
+        <footer class="a4-login-legal">
+            {include uri="design:page_login_copyright.tpl"}
+        </footer>
+    </section>
 
-        <div id="columns">
-            <div class="dashboard-flex">
-                <div id="maincolumn">
-
-                    <div id="maincontent">
-                        <div id="maincontent-design" class="float-break" style="overflow: unset;">
-                            <div id="fix">
-
-                                {* Main area START *}
-
-                                {include uri="design:page_mainarea.tpl"}
-
-                                {* Main area END *}
-
-                            </div>
-                            <div class="break"></div>
-                        </div>
-                    </div>
-
-                    <div class="break"></div>
-                </div>
-            </div>
+    <aside class="a4-login-brand" aria-hidden="true">
+        <div class="a4-login-brand-inner">
+            <p class="a4-login-brand-kicker">Exponential {fetch( 'setup', 'version' )|explode( '.' )|extract_left( 2 )|implode( '.' )}</p>
+            <p class="a4-login-brand-title">{'Content, sites and layouts, managed in one place.'|i18n( 'design/admin/user/login' )}</p>
+            <p class="a4-login-brand-sub">{ezini( 'SiteSettings', 'SiteName' )|wash}</p>
         </div>
+    </aside>
+</main>
 
-        <hr class="hide" />
-
-        <div id="footer">
-            <div id="footer-design">
-
-                {include uri="design:page_login_copyright.tpl"}
-
-                <div class="break"></div>
-            </div>
-        </div>
-
-        {* This comment will be replaced with actual debug report (if debug is on). *}
-        <!--DEBUG_REPORT-->
-    </div><!-- div id="page" -->
-
+{* This comment will be replaced with actual debug report (if debug is on). *}
+<!--DEBUG_REPORT-->
 </body>
-
 </html>

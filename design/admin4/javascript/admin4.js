@@ -64,3 +64,46 @@
         }, function () {});
     });
 })();
+
+/*
+ * admin4 sign-in page (user/login.tpl):
+ *  - the eye button shows and hides the password;
+ *  - the form is sent once: a second press (or Enter) while it is on its way does nothing. The button is NOT
+ *    disabled -- a disabled button is left out of the form, and the kernel signs in only when LoginButton is
+ *    posted; it is marked busy instead, with its "Signing in" label.
+ */
+(function () {
+    'use strict';
+    function init() {
+        var form = document.querySelector('form.a4-login-form');
+        if (!form) return;
+        var reveal = form.querySelector('.a4-reveal'), pw = document.getElementById('passwordtext');
+        if (reveal && pw) {
+            reveal.addEventListener('click', function () {
+                var show = pw.type === 'password';
+                pw.type = show ? 'text' : 'password';
+                reveal.setAttribute('aria-pressed', show ? 'true' : 'false');
+                var label = reveal.getAttribute(show ? 'data-label-hide' : 'data-label-show') || '';
+                reveal.setAttribute('aria-label', label); reveal.title = label;
+                pw.focus();
+            });
+        }
+        var sent = false, button = form.querySelector('.a4-login-submit');
+        form.addEventListener('submit', function (e) {
+            if (sent) { e.preventDefault(); return; }
+            sent = true;
+            if (pw && pw.type === 'text') pw.type = 'password';
+            if (button) {
+                button.classList.add('a4-busy');
+                button.setAttribute('aria-busy', 'true');
+                if (button.getAttribute('data-label-busy')) button.textContent = button.getAttribute('data-label-busy');
+            }
+        });
+        // back/forward cache: a page shown again is ready to send again
+        window.addEventListener('pageshow', function (e) {
+            if (e.persisted && button) { sent = false; button.classList.remove('a4-busy'); button.removeAttribute('aria-busy'); }
+        });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+})();
