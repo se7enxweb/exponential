@@ -8,6 +8,7 @@
  *  LOC-03 — an array's effective value is eZINI's merge (a reset in a later file wins)
  *  LOC-04 — every file found is mapped to its scope; the placement is eZINI's findSettingPlacement()
  *  LOC-05 — an unknown siteaccess is refused; a variable set nowhere is reported as not found
+ *  LOC-06 — the files of an extension the siteaccess does not load are listed as not loaded (Var and Var[] alike)
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -101,5 +102,58 @@ class expIniLocatorTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $w['found'] );
         $this->assertNull( $w['effective'] );
         $this->assertSame( array(), $w['files'] );
+        $this->assertSame( array(), $w['notLoaded'] );
+    }
+
+    /**
+     * LOC-06: a file of an extension the siteaccess does not load is listed as not loaded, never as "nobody sets
+     * it"; Var and Var[] name the same array; a loaded file and other siteaccesses' directories are not listed.
+     */
+    public function testNotLoadedExtensionFiles()
+    {
+        $root = expIniEngineTestFixtures::makeRoot( 'not-loaded' );
+        $cronjob = "<?php /* #?ini charset=\"utf-8\"?\n\n[CronjobPart-publishing]\n# a comment\nScripts[]\n"
+                 . "Scripts[]=staticcache_cleanup.php\nScripts[]=indexcontent.php\n*/ ?>\n";
+        mkdir( $root . 'extension/extb/settings/siteaccess/eng', 0755, true );
+        mkdir( $root . 'extension/extb/settings/siteaccess/admin', 0755, true );
+        file_put_contents( $root . 'extension/extb/settings/cronjob.ini.append.php', $cronjob );
+        file_put_contents( $root . 'extension/extb/settings/siteaccess/eng/cronjob.ini', $cronjob );
+        file_put_contents( $root . 'extension/extb/settings/siteaccess/admin/cronjob.ini.append.php', $cronjob );
+        file_put_contents( $root . 'extension/exta/settings/cronjob.ini.append.php', $cronjob );
+        expIniEditor::resetScopes();
+        try
+        {
+            $loaded = array( 'settings/cronjob.ini', 'extension/exta/settings/cronjob.ini.append.php' );
+            foreach ( array( 'Scripts', 'Scripts[]' ) as $name )
+            {
+                $rows = expIniLocator::notLoadedFiles( 'cronjob', 'CronjobPart-publishing', $name, $loaded, 'eng' );
+                $this->assertSame( array( 'extension/extb/settings/cronjob.ini.append.php',
+                                          'extension/extb/settings/siteaccess/eng/cronjob.ini' ),
+                                   array_column( $rows, 'path' ), "$name: the inactive extension's files only" );
+                $this->assertSame( 'extension:extb', $rows[0]['scope'] );
+                $this->assertSame( 'extension not active for this siteaccess', $rows[0]['reason'] );
+                $this->assertSame( array( 'staticcache_cleanup.php', 'indexcontent.php' ), $rows[0]['value'] );
+            }
+            $this->assertSame( array(), expIniLocator::notLoadedFiles( 'cronjob', 'CronjobPart-publishing', 'Other', $loaded, 'eng' ) );
+            $this->assertSame( 'Scripts', expIniLocator::variableName( 'Scripts[]' ) );
+            $this->assertSame( 'Scripts', expIniLocator::variableName( 'Scripts' ) );
+        }
+        finally
+        {
+            expIniEditor::setRoot( null );
+        }
+    }
+
+    /** LOC-06 on this installation: an extension that is present but not active (alpha's own settings extension) */
+    public function testNotLoadedOnThisInstallation()
+    {
+        $file = expIniEngineTestFixtures::realRoot() . 'extension/sevenx_alpha_settings/settings/cronjob.ini.append.php';
+        if ( !is_file( $file ) )
+            $this->markTestSkipped( 'no sevenx_alpha_settings here' );
+        $w = expIniLocator::where( 'cronjob', 'CronjobPart-publishing', 'Scripts[]', 'site' );
+        $paths = array_merge( array_column( $w['files'], 'path' ), array_column( $w['notLoaded'], 'path' ) );
+        $this->assertContains( 'extension/sevenx_alpha_settings/settings/cronjob.ini.append.php', $paths,
+                               'listed, as loaded when the extension is active or as not loaded when it is not' );
+        $this->assertSame( 'Scripts', $w['variable'] );
     }
 }

@@ -317,6 +317,20 @@ class IniCommandTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( ' 1. settings/site.ini', $r[1] );
         $this->assertStringContainsString( 'In effect:', $r[1] );
         $this->assertExit( 2, $this->ini( array( 'where', 'site.ini/SiteSettings/NoSuchVariableIC09', 'site' ), false ) );
+        $this->assertSame( array(), $data['data']['notLoaded'] );
+
+        // a file of an extension this siteaccess does not load is listed, not reported as set nowhere
+        if ( is_file( expIniEditor::realRoot() . 'extension/sevenx_alpha_settings/settings/cronjob.ini.append.php' ) )
+        {
+            foreach ( array( 'Scripts', 'Scripts[]' ) as $name )
+            {
+                list( $code, $out ) = $this->ini( array( 'where', 'cronjob.ini/CronjobPart-publishing/' . $name, 'site' ), false );
+                $this->assertStringContainsString( 'extension/sevenx_alpha_settings/settings/cronjob.ini.append.php', $out, $name );
+                $this->assertStringNotContainsString( 'no file sets', $out, $name );
+                if ( $code === 2 )
+                    $this->assertStringContainsString( '(extension not active for this siteaccess)', $out, $name );
+            }
+        }
         $this->assertExit( 3, $this->ini( array( 'where', 'site.ini/SiteSettings/SiteName', 'nosuchsiteaccess' ), false ) );
         $this->assertExit( 1, $this->ini( array( 'where', 'site.ini/SiteSettings/SiteName' ) ), 'not with --root' );
     }

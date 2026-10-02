@@ -182,6 +182,24 @@ In effect:
       SiteName=Fit & Healthy
 ```
 
+An extension that is in `extension/` but not active for the siteaccess is not part of the load order, so
+nothing reads its settings. `where` still lists its files after the load order, so that a value written
+there is not taken for one that nobody sets. `Scripts` and `Scripts[]` name the same array. If only such files
+set the variable, `where` exits with 2, because nothing is in effect:
+
+```
+$ exp:ini where cronjob.ini/CronjobPart-publishing/Scripts[]
+cronjob.ini/CronjobPart-publishing/Scripts (load order of siteaccess site)
+Not loaded for this siteaccess:
+ 1. extension/sevenx_alpha_settings/settings/cronjob.ini.append.php scope extension:sevenx_alpha_settings (extension not active for this siteaccess)
+      Scripts[]=staticcache_cleanup.php
+      Scripts[]=indexcontent.php
+      Scripts[]=contentjobs.php
+Not in effect: only files this siteaccess does not load set cronjob.ini/CronjobPart-publishing/Scripts
+```
+
+The JSON output lists these files under `notLoaded` (path, scope, reason, value).
+
 The siteaccess is the current one, or the one given with `-s` or as the second argument
 (`where <setting> admin`). `where` reads the load order through eZINI, so it describes the installation the
 command runs in, and it refuses `--root`. `list` without a scope shows the settings in effect, and with a
@@ -224,7 +242,7 @@ always agree.
 |---|---|
 | 0 | done, or nothing to change (the output says which) |
 | 1 | usage error: unknown action (the registered ones are listed), missing or extra argument, malformed setting |
-| 2 | not found: `rem` of a variable the scope's file does not set, a missing file with `--no-create`, `get` of an unset variable |
+| 2 | not found: `rem` of a variable the scope's file does not set, a missing file with `--no-create`, `get` of an unset variable, `where` of a variable no loaded file sets |
 | 3 | refused: the default scope, an unknown siteaccess, a value `toggle` cannot flip, a move that would change a value in effect |
 | 4 | write failed (the file changed on disk since it was read, or could not be written) |
 
