@@ -145,6 +145,7 @@ var labelsObj = {ldelim}
                         more_actions_us: "{'Unhide selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         create_multiple: "{'Create multiple new'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         more_actions_me: "{'Edit selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        more_actions_al: "{'Add a location for selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         more_actions_no: "{'Use the checkboxes to select one or more items.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         table_options: "{'Table options'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         first_page: "&laquo;&nbsp;{'first'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",

@@ -443,7 +443,8 @@ var eZAjaxSubitemsExpDataTable = (function () {
                           { id: 'ezopt-menu-copy', label: A.more_actions_cp, value: 2 },
                           { id: 'ezopt-menu-hide', label: A.more_actions_hs, value: 3 },
                           { id: 'ezopt-menu-unhide', label: A.more_actions_us, value: 4 },
-                          { id: 'ezopt-menu-multiedit', label: A.more_actions_me, value: 5 }
+                          { id: 'ezopt-menu-multiedit', label: A.more_actions_me, value: 5 },
+                          { id: 'ezopt-menu-addlocation', label: A.more_actions_al || 'Add a location for selected', value: 6 }
                       ];
                   },
                   onSelect: function (item) {
@@ -453,6 +454,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                       else if (v === 2) { f.append($('<input type="hidden" name="CopyButton" value="1" />')).trigger('submit'); }
                       else if (v === 3) { f.append($('<input type="hidden" name="HideButton" value="1" />')).trigger('submit'); }
                       else if (v === 4) { f.append($('<input type="hidden" name="UnhideButton" value="1" />')).trigger('submit'); }
+                      else if (v === 6) { f.append($('<input type="hidden" name="AddLocationsButton" value="1" />')).trigger('submit'); }
                       else if (v === 5) {
                           // Edit the selection in one form: the DeleteIDArray checkboxes carry node ids, which
                           // content/multiedit resolves; the return uri brings the reader back to this list

@@ -44,6 +44,144 @@ class Action extends \Exponential\Runnable\ModuleView
             return $default;
         }
     }
+    /**
+     * "Add a location for selected" (the sub items list, SelectedIDArray / DeleteIDArray): AddLocationsButton
+     * opens the browse page for the new parent, with what the operation touches and the now-or-background choice;
+     * AddLocationsAction (the browse page's answer) gives each selected item's object a location under that node:
+     * now through the kernel's addlocation operation per object, as content/action AddAssignment does it, or as an
+     * addlocation content job. Objects already placed there, and items that would be placed under themselves,
+     * are left out.
+     *
+     * @param \eZModule $module
+     * @param \eZHTTPTool $http
+     * @param string $viewMode
+     * @param string|false $languageCode
+     * @return mixed the view's result
+     */
+    protected function addLocations( $module, $http, $viewMode, $languageCode )
+    {
+        $user = \eZUser::currentUser();
+        $viewMode = (string) $http->postVariable( 'ViewMode', $viewMode );
+        if ( $http->hasPostVariable( 'AddLocationsAction' ) )
+        {
+            $nodeIDs = array_values( array_unique( array_filter( array_map( 'intval', explode( ',', (string) $http->postVariable( 'ContentNodeID', '' ) ) ) ) ) );
+            $selected = \eZContentBrowse::result( 'MoveNode' );
+            $targetID = is_array( $selected ) && $selected ? (int) reset( $selected ) : 0;
+        }
+        else
+        {
+            $parentNodeID = (int) $http->postVariable( 'ContentNodeID', 2 );
+            $list = $http->hasPostVariable( 'SelectedIDArray' ) ? $http->postVariable( 'SelectedIDArray' ) : $http->postVariable( 'DeleteIDArray', array() );
+            $nodeIDs = array_values( array_unique( array_filter( array_map( 'intval', is_array( $list ) ? $list : array() ) ) ) );
+            if ( !$nodeIDs )
+                return $module->redirectToView( 'view', array( $viewMode, $parentNodeID ) );
+        }
+
+        // the same check as AddAssignment, for every selected item
+        $nodes = array();
+        foreach ( $nodeIDs as $id )
+        {
+            $node = \eZContentObjectTreeNode::fetch( $id );
+            if ( !$node || !$node->object() )
+                return $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+            if ( !$node->object()->checkAccess( 'edit' ) && !$user->hasManageLocations() )
+                return $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+            $nodes[$id] = $node;
+        }
+
+        if ( $http->hasPostVariable( 'AddLocationsButton' ) )
+        {
+            $ignoreSelect = array();
+            $ignoreSubtree = array();
+            $classIDs = array();
+            $classIdentifiers = array();
+            $classGroups = array();
+            $sections = array();
+            $names = array();
+            foreach ( $nodes as $node )
+            {
+                $object = $node->object();
+                $class = $object->contentClass();
+                $classIDs[] = $class->attribute( 'id' );
+                $classIdentifiers[] = $class->attribute( 'identifier' );
+                $classGroups = array_merge( $classGroups, $class->attribute( 'ingroup_id_list' ) );
+                $sections[] = $object->attribute( 'section_id' );
+                $names[] = $object->attribute( 'name' );
+                // not under itself, and not where the object is already
+                foreach ( $object->assignedNodes( false ) as $element )
+                {
+                    $ignoreSubtree[] = $element['node_id'];
+                    $ignoreSelect[] = $element['node_id'];
+                }
+            }
+            $jobParams = array( 'node_ids' => $nodeIDs );
+            \eZContentBrowse::browse( array( 'action_name' => 'AddLocationsSelected',
+                                            'type' => 'MoveNode',
+                                            'description_template' => 'design:content/browse_add_locations.tpl',
+                                            'keys' => array( 'class' => array_unique( $classIDs ),
+                                                             'class_id' => array_unique( $classIdentifiers ),
+                                                             'classgroup' => array_unique( $classGroups ),
+                                                             'section' => array_unique( $sections ) ),
+                                            'ignore_nodes_select' => array_values( array_unique( $ignoreSelect ) ),
+                                            'ignore_nodes_select_subtree' => array_values( array_unique( $ignoreSubtree ) ),
+                                            'persistent_data' => array( 'ContentNodeID' => implode( ',', $nodeIDs ),
+                                                                        'ViewMode' => $viewMode,
+                                                                        'ContentObjectLanguageCode' => $languageCode,
+                                                                        'AddLocationsAction' => '1' ),
+                                            'permission' => array( 'access' => 'create', 'contentclass_id' => array_unique( $classIDs ) ),
+                                            'content' => array( 'name_list' => $names, 'node_id_list' => $nodeIDs ),
+                                            'start_node' => $parentNodeID,
+                                            'cancel_page' => $module->redirectionURIForModule( $module, 'view', array( $viewMode, $parentNodeID, $languageCode ) ),
+                                            'from_page' => '/content/action',
+                                            // content jobs: the now-or-background choice and what the operation touches
+                                            'content_job_mode' => self::contentJob( 'modeChoice', 'addlocation', 'addlocation', $jobParams ),
+                                            'content_job_summary' => class_exists( 'Exponential\\Service\\ContentJobDetails' )
+                                                                     ? \Exponential\Service\ContentJobDetails::subtreeSummary( $nodeIDs, false ) : null ),
+                                     $module );
+            return null;
+        }
+
+        $target = $targetID ? \eZContentObjectTreeNode::fetch( $targetID ) : null;
+        if ( !$target )
+            return $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+        $backURL = '/content/view/full/' . $targetID;
+
+        // a background job working on the target or on a selected item refuses this, also now
+        $jobRefused = self::contentJob( 'lockRefusal', array_merge( $nodeIDs, array( $targetID ) ), $backURL );
+        if ( $jobRefused )
+            return $jobRefused;
+
+        $jobParams = array( 'node_ids' => $nodeIDs, 'target_node_id' => $targetID );
+        if ( self::contentJob( 'chosenAsJob', 'addlocation', 'addlocation', $jobParams ) )
+        {
+            $jobResult = self::contentJob( 'startJob', $module, 'addlocation', $jobParams, $backURL, $targetID );
+            if ( $jobResult )
+                return $jobResult;
+        }
+
+        // now: per object, as AddAssignment does it (the operation checks the right to create under the target)
+        $targetPath = $target->attribute( 'path_string' );
+        $done = array();
+        foreach ( $nodes as $id => $node )
+        {
+            $objectID = (int) $node->attribute( 'contentobject_id' );
+            if ( isset( $done[$objectID] ) || strpos( $targetPath, $node->attribute( 'path_string' ) ) === 0 )
+                continue;
+            $done[$objectID] = true;
+            $placed = false;
+            foreach ( $node->object()->assignedNodes( false ) as $element )
+                $placed = $placed || (int) $element['parent_node_id'] === $targetID;
+            if ( $placed )
+                continue;
+            if ( \eZOperationHandler::operationIsAvailable( 'content_addlocation' ) )
+                \eZOperationHandler::execute( 'content', 'addlocation', array( 'node_id' => $id, 'object_id' => $objectID,
+                                                                               'select_node_id_array' => array( $targetID ) ), null, true );
+            else
+                \eZContentOperationCollection::addAssignment( $id, $objectID, array( $targetID ) );
+        }
+        return $module->redirectToView( 'view', array( $viewMode, $targetID ) );
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -1016,6 +1154,29 @@ class Action extends \Exponential\Runnable\ModuleView
             }
             else
             {
+                // Content jobs (doc/bc/6.0/content-jobs.md): locations a background job is working on are refused;
+                // many (or the user's last choice "background") get a confirmation with the now-or-background
+                // choice and become a removelocation job; a few are removed at once, as before
+                $jobRemoveIDs = array_values( array_map( 'intval', array_keys( $removeList ) ) );
+                $jobRefused = self::contentJob( 'lockRefusal', $jobRemoveIDs, '/content/view/full/' . (int) $nodeID );
+                if ( $jobRefused )
+                    return $jobRefused;
+                if ( $jobRemoveIDs )
+                {
+                    $jobHidden = array( 'ContentNodeID' => (int) $nodeID, 'ContentObjectID' => (int) $objectID, 'ViewMode' => $viewMode,
+                                        'RemoveAssignmentButton' => 1, 'LocationIDSelection[]' => $jobRemoveIDs );
+                    if ( $languageCode !== false )
+                        $jobHidden['ContentObjectLanguageCode'] = $languageCode;
+                    $jobResult = self::contentJob( 'interstitial', $module, 'removelocation', 'removelocation', array( 'node_ids' => $jobRemoveIDs ),
+                                                   '/content/action', '/content/view/full/' . (int) $nodeID,
+                                                   \ezpI18n::tr( 'design/admin/content/job', 'Remove %count locations of %name', null,
+                                                                 array( '%count' => count( $jobRemoveIDs ), '%name' => $object->attribute( 'name' ) ) ),
+                                                   \ezpI18n::tr( 'design/admin/content/job', 'Only the selected locations are removed; the object keeps its other locations.' ),
+                                                   $jobHidden, (int) $redirectNodeID );
+                    if ( $jobResult )
+                        return $jobResult;
+                }
+
                 if ( \eZOperationHandler::operationIsAvailable( 'content_removelocation' ) )
                 {
                     $operationResult = \eZOperationHandler::execute( 'content',
@@ -1091,6 +1252,13 @@ class Action extends \Exponential\Runnable\ModuleView
                 $module->setCurrentAction( 'Publish', 'edit' );
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $module->run( 'edit', $parameters ) );
             }
+        }
+        else if ( $http->hasPostVariable( 'AddLocationsButton' ) || $http->hasPostVariable( 'AddLocationsAction' ) )
+        {
+            // "Add a location for selected" in the sub items list: one new location for each selected item's
+            // object under a node chosen in the browse page; many (or the "background" choice) as an addlocation
+            // content job (doc/bc/6.0/content-jobs.md)
+            return $this->viewResult( isset( $Result ) ? $Result : null, $this->addLocations( $module, $http, $viewMode, $languageCode ) );
         }
         else if ( $http->hasPostVariable( 'RemoveButton' ) )
         {
