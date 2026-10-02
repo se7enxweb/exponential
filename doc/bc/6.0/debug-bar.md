@@ -272,5 +272,99 @@ test (and puts them back if they differ). Its log is a file of its own under `va
 
 ## The bar
 
-(The front end: the pinned bar, the tabs, the settings UI with scope pickers, presets, the IP list controls, the
-cache tab and the search. Described by the part that builds it.)
+| Part | Where |
+|---|---|
+| Report markup, summary, data block | `expDebugBarReport` (`lib/ezutils/classes/expdebugbarreport.php`), called by `eZDebug::printReportInternal()` for HTML reports |
+| Tabs, filter, settings, IP list, presets, cache, change log | `design/standard/javascript/expdebugbar.js` |
+| Styles (light and dark) | `design/standard/stylesheets/expdebugbar.css` |
+| Words | context `design/standard/debugbar` in `share/translations/*/translation.ts` (eng-US, ger-DE) |
+
+The report links the script and the stylesheet itself, so every design gets the bar: admin, admin2, admin3, admin4
+and the public designs, with or without `debug.css`. The pinned bar and its open and close are inline in the
+report and work even when the two files cannot be loaded. Text reports (`Debug=inline` on the command line) and the
+popup window are unchanged. Without `expdebugbarreport.php` (an older engine archive) `eZDebug` prints the
+classic report.
+
+### The pinned bar
+
+The bar stays at the bottom of the window wherever the page is scrolled; a click on "Exp Debug" opens the panel
+above it, which scrolls on its own. No page ever has to be scrolled to use it. "Keep open on reload" remembers the
+open panel in the browser (`localStorage` keys `exp-debug-keep`, `exp-debug-open`), and the last tab
+(`exp-debug-tab`). Escape closes the panel.
+
+The summary in the bar shows the request at a glance; each value opens its tab:
+
+| Value | Tab | Amber / red from |
+|---|---|---|
+| page time | Timing | `[DebugBarSettings] Thresholds[time_ms]` (default 1 s / 3 s without the server side) |
+| SQL count / time | SQL | `Thresholds[sql_count]`, `Thresholds[sql_ms]` |
+| peak memory | Memory | `Thresholds[memory_mb]` (else 50 % / 80 % of `memory_limit`) |
+| templates used (only with `ShowUsedTemplates`) | Templates | `Thresholds[templates]` |
+| warnings, errors | Messages (filtered to that level) | any warning is amber, any error red |
+
+The levels come from `expDebugBarSummary` when it is loaded, so the thresholds in `debugbar.ini` apply; otherwise
+the report's own defaults.
+
+### The tabs
+
+| Tab | Shows |
+|---|---|
+| Messages | the notices, warnings, errors, debug and timing messages, with buttons per level; the SQL statements are moved to the SQL tab |
+| Settings | the settings UI below, and under "Classic controls" the classic toolbar (`design:setup/debug_toolbar.tpl`, or a site's override of it, rendered as before) |
+| Cache | the cache controls below; without the server functions a form that clears this page, content, template, INI or all caches through `setup/cachetoolbar` |
+| Timing | the timing points and the time accumulators, as before (`#timingpoints`, `#timeaccumulators`) |
+| SQL | number of queries, time, share of the page, average, the database's accumulators, and the statements (`SQLOutput`) with "Slowest first" |
+| Templates | the templates used (`ShowUsedTemplates`) and the CSS/JS packer report, or how to turn them on |
+| Included files | the included PHP files (`DisplayIncludedFiles`), or their number and how to list them |
+| Memory | the classic "Main resources" table, memory now, peak, limit and share, and the five steps that took the most |
+| Velocity | the engine serving the page (Velocity and its version, or Apache / PHP-FPM), PHP, process, host, OPcache status, and Velocity's response cache |
+| Other | reports appended by extensions with `eZDebug::appendBottomReport()` that belong to no tab (only when there are any) |
+
+Every section keeps its id, so scripts and stylesheets written for the classic report still find it.
+
+The filter box above the tabs filters the rows of every tab at once (messages, timing rows, accumulators,
+statements, files, settings, caches); a tab with no match is dimmed and says so. Escape in the box clears it.
+
+### Settings
+
+Drawn from `expdebugbar::settings` when the tab is first opened. Per group (Debug output, Who gets debug,
+Templates, Database, ... and the extension switches), each setting shows its name, file, block and variable, its
+help, a control for its type (switch, list of values, text, one entry per line), the value in effect and where it
+comes from (default, global override, siteaccess, extension; the file is in the tooltip), and a "Write to" picker
+with every writable scope and the value that scope's file gives. Apply writes the value to the chosen scope,
+Reset removes the variable from that scope. A write that would lock you out or open debug to everyone asks first.
+
+"siteaccess" at the top changes whose values in effect are shown. Presets (Template work, SQL tuning, Everything,
+Off, and the user's own) are applied to the scope picked next to them and can be reverted at once; "Save current
+as preset" stores the values in effect under a name.
+
+The change log lists the last writes (who, which setting, old and new value, scope) with Undo; an undo that finds
+the file changed since asks before forcing it. Without setup/setup the tab shows the values read-only.
+
+### Who gets debug: the IP list and the user list
+
+The IP list (`DebugIPList[]`) shows the address the server sees for this request (and REMOTE_ADDR when the site
+trusts a proxy header), the entry this request matched, and each entry with its label, expiry and whether it
+matched. "Add my IPv4 address" / "Add my IPv6 address" and "Add my /24" / "Add my /64" add the request's own
+address or network; the CIDR field takes IPv4 and IPv6 addresses and ranges and says at once what is wrong
+(prefix over 32 or 128, malformed address, already listed); each entry gets a label and an expiry (1 hour, today,
+until removed). "Test an address" asks the server whether an address would match. Warnings say when the list
+would lock you out, is empty while "Debug by IP" is on, or opens debug to every address.
+
+The user list (`DebugUserIDList[]`) takes one user ID per line, "Add me" adds the signed-in user.
+
+### Cache
+
+Drawn from `expdebugbar::cache`: "This page only" (the view cache of the node the page shows), Velocity's
+response cache, OPcache of the serving process, every cache tag and every cache ID with its description and when
+it was last cleared, and all caches. Each clear says what it did.
+
+### Tests
+
+The bar is tested in a browser at 960 px wide and device scale factor 2, on admin (admin4), admintest_admin, admintest_admin2, admintest_admin4
+and the public site, light and dark: the pinned bar and panel, keep open on reload, the tabs by mouse and keyboard,
+the summary against the report, the filter, the IP validation, no page errors. On the admin page also a setting
+written to the global override and undone, a preset applied and reverted (each settings file compared byte for
+byte; on a failure the test writes the files back), the IP list controls, and "This page only". Screenshots go to
+`var/tmp/debug-bar-<engine>-<page>-<tab>.png`. A check of the words makes sure every
+string of the bar is translated.
