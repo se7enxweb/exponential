@@ -22,7 +22,7 @@ if ( is_file( __DIR__ . '/var/maintenance.json' ) )
 require __DIR__ . '/autoload.php';
 
 ignore_user_abort( true );
-error_reporting ( E_ALL | E_STRICT & E_DEPRECATED);
+error_reporting( E_ALL ); // was E_ALL | E_STRICT & E_DEPRECATED, which evaluates to E_ALL; E_STRICT is deprecated in 8.4
 require 'autoload.php';
 
 $kernel = new ezpKernel( new ezpKernelRest() );

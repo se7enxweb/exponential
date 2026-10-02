@@ -16,7 +16,7 @@ if ( !ini_get( "date.timezone" ) )
 }
 
 ignore_user_abort( true );
-error_reporting ( E_ALL | E_STRICT );
+error_reporting( E_ALL ); // E_STRICT is part of E_ALL since PHP 5.4 and deprecated in 8.4
 // Maintenance mode (var/maintenance.json): answered here, before the settings
 // and the database, so a site being installed or taken offline never serves
 // a half-built page. See kernel/classes/expmaintenance.php.

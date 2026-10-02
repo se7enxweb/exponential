@@ -81,7 +81,11 @@ class ezpKernelTreeMenu implements ezpKernelHandler
         header( 'X-Powered-By: ' . ExponentialSDK::EDITION . ' (index_treemenu)' );
         if ( $this->settings['use-cache-headers'] === true )
         {
-            define( 'MAX_AGE', $this->settings['max-age'] );
+            // Persistent workers run this for every tree menu request: define once.
+            if ( !defined( 'MAX_AGE' ) )
+            {
+                define( 'MAX_AGE', $this->settings['max-age'] );
+            }
             if ( isset( $_SERVER['HTTP_IF_MODIFIED_SINCE'] ) )
             {
                 header( $_SERVER['SERVER_PROTOCOL'] . ' 304 Not Modified' );
