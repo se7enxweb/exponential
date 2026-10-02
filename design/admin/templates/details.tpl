@@ -62,6 +62,7 @@
 <form name="statesform" method="post" action={'state/assign'|ezurl}>
 <input type="hidden" name="ObjectID" value="{$node.object.id}" />
 <input type="hidden" name="RedirectRelativeURI" value="{$node.url_alias|wash}" />
+<input type="hidden" name="NodeID" value="{$node.node_id}" />
 
 <table id="tab-details-states-list" class="list" cellspacing="0" summary="{'States and their states groups for current object.'|i18n( 'design/admin/node/view/full' )}">
 {if $states_count}
@@ -92,6 +93,14 @@
 {/if}
 </table>
 
+{* content jobs: the states for the whole subtree, now or as a background job (doc/bc/6.0/content-jobs.md) *}
+{if and( $states_count, $node.children_count|gt( 0 ) )}
+<div class="block">
+    <label><input type="checkbox" name="StateApplyToSubtree" id="tab-details-states-subtree" value="1" />
+        {'Also for everything below this node'|i18n( 'design/admin/content/job' )}</label>
+</div>
+{/if}
+
 <div class="block">
 <div class="button-left">
     {if $states_count}
@@ -109,7 +118,7 @@
 {literal}
 (function( $ )
 {
-    $('#tab-details-states-list select').on('change', function()
+    $('#tab-details-states-list select, #tab-details-states-subtree').on('change', function()
     {
         var btn = $('#tab-details-set-states');
         if ( !btn.attr('disabled') )
