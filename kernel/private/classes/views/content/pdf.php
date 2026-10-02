@@ -127,7 +127,7 @@ function contentPDFGenerate( $cacheFile,
     $tpl->setVariable( 'pdf_definition', $pdf_definition );
 
     $uri = 'design:node/view/execute_pdf.tpl';
-    $textElements = '';
+    $textElements = array();
     eZTemplateIncludeFunction::handleInclude( $textElements, $uri, $tpl, '', '' );
 }
 }
@@ -219,7 +219,7 @@ class Pdf extends \Exponential\Runnable\ModuleView
         if ( $viewCacheEnabled && ( $useTriggers == false ) )
         {
             // Note: this code is duplicate, see about 100 lines down
-            $cacheInfo = \eZContentObject::cacheInfo( $Params );
+            $cacheInfo = ( new \eZContentObject( array() ) )->cacheInfo( $Params );
             $language = $cacheInfo['language'];
             $roleList = $cacheInfo['role_list'];
             $discountList = $cacheInfo['discount_list'];
@@ -257,7 +257,7 @@ class Pdf extends \Exponential\Runnable\ModuleView
                     if ( $viewCacheEnabled )
                     {
                         // Note: this code is duplicate, see about 100 lines up
-                        $cacheInfo = \eZContentObject::cacheInfo( $Params );
+                        $cacheInfo = ( new \eZContentObject( array() ) )->cacheInfo( $Params );
                         $language = $cacheInfo['language'];
                         $roleList = $cacheInfo['role_list'];
                         $discountList = $cacheInfo['discount_list'];

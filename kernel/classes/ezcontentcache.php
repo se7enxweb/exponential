@@ -26,13 +26,13 @@ class eZContentCache
     {
         $md5Input = array( $nodeID, $viewMode, $language );
         $md5Input[] = $offset;
-        $md5Input = array_merge( $md5Input, $layout );
-        sort( $roleList );
+        $md5Input = array_merge( $md5Input, (array)$layout );
+        $roleList = (array)$roleList; sort( $roleList );
         $md5Input = array_merge( $md5Input, $roleList );
-        sort( $discountList );
+        $discountList = (array)$discountList; sort( $discountList );
         $md5Input = array_merge( $md5Input, $discountList );
         if ( $cacheTTL == true )
-            $md5Input = array_merge( $md5Input, "cache_ttl" );
+            $md5Input = array_merge( $md5Input, array( "cache_ttl" ) );
         if ( isset( $parameters['view_parameters'] ) )
         {
             $viewParameters = $parameters['view_parameters'];
@@ -41,7 +41,7 @@ class eZContentCache
             {
                 if ( !$viewParameter )
                     continue;
-                $md5Input = array_merge( $md5Input, 'vp:' . $viewParameterName . '=' . $viewParameter );
+                $md5Input = array_merge( $md5Input, array( 'vp:' . $viewParameterName . '=' . $viewParameter ) );
             }
         }
         $md5Text = md5( implode( '-', $md5Input ) );
