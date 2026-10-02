@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/checkdbfiles.php, moved into a class (#207 stage 1). The file bin/php/checkdbfiles.php is one call to it.
+ * @description Verify the database update files against the upgrade path; reports missing or stray files
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

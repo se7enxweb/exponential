@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/ezcsvimport.php, moved into a class (#207 stage 1). The file bin/php/ezcsvimport.php is one call to it.
+ * @description Import content objects of a class below a node from a CSV file (--class, --creator)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
@@ -29,7 +30,7 @@ class Ezcsvimport extends \Exponential\Runnable\Command
         unset( $__name );
 
         $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential CSV import script\n\n" .
+        $script = \eZScript::instance( array( 'description' => ( "Import content objects of a class below a node from a CSV file\n\nExample: ezcsvimport.php --class=article 2 articles.csv\n" .
                                                                 "\n" .
                                                                 "\n" .
                                                                 "\n" .

@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/ezcache.php, moved into a class (#207 stage 1). The file bin/php/ezcache.php is one call to it.
+ * @description Clear Exponential caches by tag or id (--clear-tag, --clear-id, --clear-all, --list-tags)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

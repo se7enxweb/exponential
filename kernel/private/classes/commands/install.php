@@ -7,7 +7,7 @@
  * The original header of bin/php/install.php:
  *
  *
- * @description One-command installation: builds the kickstart configuration from options (SQLite by default, admin password "publish") and installs, no kickstart.ini needed.
+ * @description One-command installation, SQLite by default, no kickstart.ini needed
  * @package   kernel
  * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
  * @license   GNU General Public License v2.0 (or any later version)

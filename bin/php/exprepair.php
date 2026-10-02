@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 /**
+ * @description Repair queue of the missing-libraries error page: --create-key, --disable, --status, --run
+ *
  * The repair queue of the missing-libraries error page (lib/ezutils/classes/ezprepairqueue.php).
  * Plain PHP: works while the Composer libraries are missing. Run it as the web server user.
  *

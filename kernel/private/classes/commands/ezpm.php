@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of ezpm.php, moved into a class (#207 stage 1). The file ezpm.php is one call to it.
+ * @description Create, import, install, list and delete Exponential packages
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

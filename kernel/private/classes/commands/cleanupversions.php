@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/cleanupversions.php, moved into a class (#207 stage 1). The file bin/php/cleanupversions.php is one call to it.
+ * @description Remove archived content versions beyond the VersionManagement limits (-n: do not wait)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
@@ -34,8 +35,8 @@ class Cleanupversions extends \Exponential\Runnable\Command
         $script = \eZScript::instance(
             array(
                 'description' => "Remove archived content object versions according to "
-                    . "[VersionManagement/DefaultVersionHistoryLimit and "
-                    . "[VersionManagement]/VersionHistoryClass settings",
+                    . "[VersionManagement]/DefaultVersionHistoryLimit and "
+                    . "[VersionManagement]/VersionHistoryClass settings\n\nExample: ./bin/php/cleanupversions.php -n",
                 'use-session' => false,
                 'use-modules' => true,
                 'use-extensions' => true

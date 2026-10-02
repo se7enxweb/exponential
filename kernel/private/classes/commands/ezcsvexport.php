@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/ezcsvexport.php, moved into a class (#207 stage 1). The file bin/php/ezcsvexport.php is one call to it.
+ * @description Export the subtree below a node to one CSV file per content class (--storage-dir)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
@@ -29,7 +30,7 @@ class Ezcsvexport extends \Exponential\Runnable\Command
         unset( $__name );
 
         $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential CSV export script\n" .
+        $script = \eZScript::instance( array( 'description' => ( "Export the subtree below a node to one CSV file per content class\n" .
                                                                 "\n" .
                                                                 "ezcsvexport.php --storage-dir=export 2" ),
                                              'use-session' => false,

@@ -13,7 +13,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
- * @description Upgrade eZ Flow block and zone structures to the current version
+ * @description Upgrade the installed ezflow packages (--to-version, --package, --url)
  * @long-description Migrates eZ Flow block, zone, and page content from a legacy data format to the current model. Run once after upgrading Exponential CMS on sites that use the eZ Flow extension.
  *
  */
@@ -209,7 +209,7 @@ class Ezflowupgrade extends \Exponential\Runnable\Command
         // script initializing
         $cli = \eZCLI::instance();
         $script = \eZScript::instance( array( 'description' => ( "\n" .
-                                                                "This script will upgrade eZ Flow." ),
+                                                                "This script will upgrade eZ Flow.\n\nExample: ./bin/php/ezflowupgrade.php --to-version=1.1-0" ),
                                              'use-session' => false,
                                              'use-modules' => true,
                                              'use-extensions' => true,

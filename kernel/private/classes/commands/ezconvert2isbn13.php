@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/ezconvert2isbn13.php, moved into a class (#207 stage 1). The file bin/php/ezconvert2isbn13.php is one call to it.
+ * @description Convert ISBN-10 numbers to ISBN-13
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

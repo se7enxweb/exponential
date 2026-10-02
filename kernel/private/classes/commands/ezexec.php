@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/ezexec.php, moved into a class (#207 stage 1). The file bin/php/ezexec.php is one call to it.
+ * @description Run a PHP script with the Exponential bootstrap done: ezexec.php myscript.php
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

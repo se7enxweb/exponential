@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/ezimportdbafile.php, moved into a class (#207 stage 1). The file bin/php/ezimportdbafile.php is one call to it.
+ * @description Import the dba data of a datatype into the database (--datatype=ezisbn)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

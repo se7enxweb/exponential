@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/cleanuppolicies.php, moved into a class (#207 stage 1). The file bin/php/cleanuppolicies.php is one call to it.
+ * @description Remove policies of modules that no longer exist (--dry-run lists them first)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
@@ -34,8 +35,8 @@ class Cleanuppolicies extends \Exponential\Runnable\Command
 
         $script = \eZScript::instance(
             array(
-                'description' => "Remove from database policies defined on module which do not exist in a modules folder"
-                    . "according to settings from module.ini/[ModuleSettings]/ExtensionRepositories",
+                'description' => "Remove from database policies defined on module which do not exist in a modules folder\n"
+                    . "according to settings from module.ini/[ModuleSettings]/ExtensionRepositories\n\nExample: ./bin/php/cleanuppolicies.php --dry-run",
                 'use-session' => false,
                 'use-modules' => true,
                 'use-extensions' => true

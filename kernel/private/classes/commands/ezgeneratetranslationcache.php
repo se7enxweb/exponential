@@ -13,7 +13,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
- * @description Generate translation cache files for all configured locales
+ * @description Generate translation cache files (--ts-list limits it to the given translations)
  * @long-description Pre-generates cached translation files for configured locales and siteaccesses to speed up the first page load after a cache clear. Usage: ./bin/php/ezgeneratetranslationcache.php -s <siteaccess>
  *
  */

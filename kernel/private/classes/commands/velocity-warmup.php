@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/velocity-warmup.php, moved into a class (#207 stage 1). The file bin/php/velocity-warmup.php is one call to it.
+ * @description Warm the Velocity parent process once, before it forks its workers
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

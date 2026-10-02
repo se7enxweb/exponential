@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/preload.php, moved into a class (#207 stage 1). The file bin/php/preload.php is one call to it.
+ * @description Warm the section pages, then spider the whole site with wget to fill the caches
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

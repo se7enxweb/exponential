@@ -9,7 +9,7 @@
  *
  * File containing the cache.php script.
  *
- * @description Every Setup > Cache action from the command line: caches by tag and id, static, HTTP, Velocity, precompressed files, OPcache, APCu
+ * @description Clear and inspect caches by tag, id or all: content, static, HTTP, Velocity, OPcache, APCu
  * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//

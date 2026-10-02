@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/changelog2xmltext.php, moved into a class (#207 stage 1). The file bin/php/changelog2xmltext.php is one call to it.
+ * @description Convert a Changelog file to XML text format and print it to standard output
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
@@ -181,7 +182,7 @@ class Changelog2xmltext extends \Exponential\Runnable\Command
         $cli = \eZCLI::instance();
         $script = \eZScript::instance( array( 'description' => ( "Exponential Changelog converter\n\n" .
                                                                 "Converts a Changelog into XML text format usable in Exponential\n" .
-                                                                "The result is printed to the standard output" ),
+                                                                "The result is printed to the standard output\n\nExample: ./bin/php/changelog2xmltext.php Changelog" ),
                                              'use-session' => false,
                                              'use-modules' => true,
                                              'use-extensions' => true ) );

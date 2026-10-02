@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/eztc.php, moved into a class (#207 stage 1). The file bin/php/eztc.php is one call to it.
+ * @description Compile the templates of a siteaccess into the template cache (--force recompiles all)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

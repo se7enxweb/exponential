@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/updatesearchindex.php, moved into a class (#207 stage 1). The file bin/php/updatesearchindex.php is one call to it.
+ * @description Reindex all content objects in the search engine
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

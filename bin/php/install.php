@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 /**
- * @description One-command installation: builds the kickstart configuration from options (SQLite by default, admin password "publish") and installs, no kickstart.ini needed.
+ * @description One-command installation, SQLite by default, no kickstart.ini needed
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

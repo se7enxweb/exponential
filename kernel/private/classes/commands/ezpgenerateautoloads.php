@@ -13,7 +13,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
- * @description Generate PHP class autoload arrays for kernel classes and enabled extensions
+ * @description Generate the class autoload arrays: kernel (-k), kernel overrides (-o), extensions (-e)
  * @long-description Scans the kernel and all active extensions to build PHP autoload array files under var/autoload/. Required after adding new classes or enabling new extensions. Run from the Exponential root directory.
  *
  */

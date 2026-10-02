@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/eztemplatecheck.php, moved into a class (#207 stage 1). The file bin/php/eztemplatecheck.php is one call to it.
+ * @description Check the syntax of the templates of a siteaccess or of a design directory
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

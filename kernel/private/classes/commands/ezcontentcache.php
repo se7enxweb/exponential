@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/ezcontentcache.php, moved into a class (#207 stage 1). The file bin/php/ezcontentcache.php is one call to it.
+ * @description Clear content caches of given nodes or subtrees (--clear-node, --clear-subtree)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

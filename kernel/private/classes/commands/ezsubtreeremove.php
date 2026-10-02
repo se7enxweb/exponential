@@ -13,7 +13,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
- * @description Remove one or more content object subtrees from the content tree
+ * @description Remove content subtrees by node ID, to the trash unless --ignore-trash is given
  * @long-description Permanently removes all content objects under the specified subtree nodes. This operation is irreversible. Use --dry-run first to preview what will be deleted.
  *
  */
@@ -32,7 +32,7 @@ class Ezsubtreeremove extends \Exponential\Runnable\Command
 
         $cli = \eZCLI::instance();
         $script = \eZScript::instance( array( 'description' => ( "\n" .
-                                                                 "This script will make a remove of a content object subtrees.\n" ),
+                                                                 "This script will make a remove of a content object subtrees.\n\nExample: ./bin/php/ezsubtreeremove.php --nodes-id=70,71 --ignore-trash\n" ),
                                               'use-session' => false,
                                               'use-modules' => true,
                                               'use-extensions' => true ) );

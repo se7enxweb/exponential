@@ -13,7 +13,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
- * @description Copy a content object subtree to a new location in the content tree
+ * @description Copy a content subtree to a new location (--src-node-id, --dst-node-id)
  * @long-description Recursively copies a subtree of content objects from a source node to a destination node. Object relations and URL aliases are updated. Supports --dry-run to preview the operation before committing.
  *
  */
@@ -279,7 +279,7 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
         $cli = \eZCLI::instance();
         $script = \eZScript::instance( array( 'description' => ( "\n" .
                                                                  "This script will make a copy of a content object subtree and place it in a specified\n" .
-                                                                 "location.\n" ),
+                                                                 "location.\n\nExample: ./bin/php/ezsubtreecopy.php --src-node-id=2 --dst-node-id=5\n" ),
                                               'use-session' => false,
                                               'use-modules' => true,
                                               'use-extensions' => true,

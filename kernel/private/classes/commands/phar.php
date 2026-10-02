@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/phar.php, moved into a class (#207 stage 1). The file bin/php/phar.php is one call to it.
+ * @description Build and inspect the engine archive dist/engine.phar (verbs build, check, clean, info)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

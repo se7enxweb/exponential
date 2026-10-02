@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/ezsqldumpisbndata.php, moved into a class (#207 stage 1). The file bin/php/ezsqldumpisbndata.php is one call to it.
+ * @description Dump the ISBN group and range tables as SQL to a file or standard output
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

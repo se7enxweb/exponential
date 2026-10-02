@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/ezpublishingbenchmark.php, moved into a class (#207 stage 1). The file bin/php/ezpublishingbenchmark.php is one call to it.
+ * @description Benchmark parallel publishing in concurrent batches (--batches-count, -l level)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
@@ -29,7 +30,7 @@ class Ezpublishingbenchmark extends \Exponential\Runnable\Command
         unset( $__name );
 
         $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => "Exponential Parallel publishing benchmark",
+        $script = \eZScript::instance( array( 'description' => "Parallel publishing benchmark\n\nRuns concurrent batches of content publishing to measure how the installation copes with it.\n\nExample: ./bin/php/ezpublishingbenchmark.php --concurrency-level=20 --batches-count=1",
                                              'use-session' => false,
                                              'use-modules' => true,
                                              'use-extensions' => true ) );

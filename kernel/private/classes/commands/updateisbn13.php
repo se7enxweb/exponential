@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/updateisbn13.php, moved into a class (#207 stage 1). The file bin/php/updateisbn13.php is one call to it.
+ * @description Update the ISBN range data in the database from an XML file (--url is required)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
@@ -32,7 +33,7 @@ class Updateisbn13 extends \Exponential\Runnable\Command
 
         $cli = \eZCLI::instance();
         $script = \eZScript::instance( array( 'description' => "Exponential ISBN-13 update\n\n" .
-                                                              "Update the database with new updated ISBN data to the database.",
+                                                              "Update the database with new updated ISBN data to the database.\n\nExample: ./bin/php/updateisbn13.php --url=<url of the xml file with the ranges>",
                                              'use-session' => false,
                                              'use-modules' => true,
                                              'use-extensions' => true ) );

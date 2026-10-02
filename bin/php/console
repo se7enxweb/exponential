@@ -172,13 +172,13 @@ $showBanner = function() use ( $out, $hrThick, $boldOrange, $amber, $dim, $bold 
 //    1. First # comment that looks like prose (skips shebang, code lines)
 // ══════════════════════════════════════════════════════════════════════════════
 
-$extractDescription = function( $filePath, $type )
+$extractDescription = function( $filePath, $type, $followed = false ) use ( &$extractDescription )
 {
     $handle = @fopen( $filePath, 'r' );
     if ( $handle === false ) return '';
 
     $lines = array(); $n = 0;
-    while ( !feof( $handle ) && $n < 100 )
+    while ( !feof( $handle ) && $n < ( $followed ? 400 : 100 ) )
     {
         $raw = fgets( $handle );
         if ( $raw !== false ) { $lines[] = rtrim( $raw ); $n++; }
@@ -200,11 +200,44 @@ $extractDescription = function( $filePath, $type )
             }
         }
 
+        // ── Strategy 0d: command class, @description tag anywhere in its header ──
+        if ( $followed )
+        {
+            foreach ( $lines as $ln )
+            {
+                if ( preg_match( '/^\s*\*\s*@description\s+(.+)$/', $ln, $m ) )
+                    return trim( $m[1] );
+                if ( strpos( $ln, 'namespace' ) === 0 ) break;
+            }
+        }
         // ── Strategy 0b: standalone // @description comment ──────────────────
         foreach ( $lines as $ln )
         {
             if ( preg_match( '/^\/\/\s*@description\s+(.+)$/', $ln, $m ) )
                 return trim( $m[1] );
+        }
+
+        // ── Strategy 0c2: entry point whose comment names the file holding the code ──
+        //   "// The code is in extension/<ext>/classes/runnable/commands/php_<name>.php (#207); ..."
+        if ( !$followed
+             && preg_match( '/The code is in (\S+\.php) \(#207\)/', implode( "\n", $lines ), $m )
+             && is_file( dirname( dirname( __DIR__ ) ) . '/' . $m[1] ) )
+        {
+            $d = $extractDescription( dirname( dirname( __DIR__ ) ) . '/' . $m[1], 'php', true );
+            if ( $d !== '' ) return $d;
+        }
+        // ── Strategy 0c: entry point of a command class (#207) ───────────────
+        //   bin/php/<name>.php is only \Exponential\Command\Kernel\<Name>::main( __FILE__ );
+        //   the eZScript description lives in kernel/private/classes/commands/<name>.php.
+        if ( !$followed
+             && preg_match( '/\\\\Exponential\\\\Command\\\\Kernel\\\\(\w+)::main\(\s*__FILE__/', implode( "\n", $lines ), $m ) )
+        {
+            $classFile = dirname( dirname( __DIR__ ) ) . '/kernel/private/classes/commands/' . basename( $filePath );
+            if ( is_file( $classFile ) )
+            {
+                $d = $extractDescription( $classFile, 'php', true );
+                if ( $d !== '' ) return $d;
+            }
         }
 
         // ── Strategy 1: eZScript/array 'description' key ─────────────────────
@@ -546,15 +579,25 @@ $discoverCommands = function() use ( $rootDir, $extractDescription, $extractAlia
             ? implode( '; ', $descParts )
             : 'Scripts: ' . implode( ', ', $scripts );
 
+        // One line in the listing; the full text (every bound script) is shown by help.
+        $short = $desc;
+        if ( count( $descParts ) > 1 || strlen( $desc ) > 100 )
+        {
+            $short = $descParts ? $descParts[0] : $desc;
+            if ( strlen( $short ) > 80 ) $short = rtrim( substr( $short, 0, 77 ) ) . '...';
+            if ( count( $descParts ) > 1 ) $short .= ' (+' . ( count( $descParts ) - 1 ) . ' more)';
+        }
+
         $key = 'cron:' . $partName;
         $commands[ $key ] = array(
-            'name'        => $key,
-            'namespace'   => 'cron',
-            'path'        => 'runcronjobs.php',
-            'part'        => $partName,
-            'type'        => 'cron',
-            'binary'      => PHP_BINARY,
-            'description' => $desc,
+            'name'             => $key,
+            'namespace'        => 'cron',
+            'path'             => 'runcronjobs.php',
+            'part'             => $partName,
+            'type'             => 'cron',
+            'binary'           => PHP_BINARY,
+            'description'      => $short,
+            'description_full' => str_replace( '; ', "\n    ", $desc ),
         );
     }
 
@@ -732,6 +775,14 @@ $runCommand = function( array $cmd, array $forwardArgs )
 
         foreach ( $forwardArgs as $arg )
             $parts[] = escapeshellarg( $arg );
+    }
+
+    // help <command>: say what the command is before its own help text follows
+    if ( $forwardArgs === array( '--help' ) )
+    {
+        $full = isset( $cmd['description_full'] ) ? $cmd['description_full'] : ( isset( $cmd['description'] ) ? $cmd['description'] : '' );
+        if ( $full !== '' )
+            fwrite( STDERR, "\n  " . $cmd['name'] . ': ' . $full . "\n" );
     }
 
     // Dispatch notice to stderr — never corrupts piped stdout

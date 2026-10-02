@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/dfscleanup.php, moved into a class (#207 stage 1). The file bin/php/dfscleanup.php is one call to it.
+ * @description Check database and DFS files against each other (-S, -B) and delete nonexistent ones (-D)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

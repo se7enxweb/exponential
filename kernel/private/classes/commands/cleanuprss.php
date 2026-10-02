@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/cleanuprss.php, moved into a class (#207 stage 1). The file bin/php/cleanuprss.php is one call to it.
+ * @description Trim RSS-imported content, keeping the newest items of each active import
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

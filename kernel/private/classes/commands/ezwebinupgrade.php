@@ -13,7 +13,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
- * @description Upgrade an existing eZWebin installation to the current package version
+ * @description Upgrade an existing ezwebin installation to the current package version (--to-version)
  * @long-description Applies incremental upgrades to an eZWebin-based site, updating content class attributes, settings, and data structures to match the current eZWebin package version.
  *
  */

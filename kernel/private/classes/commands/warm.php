@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/warm.php, moved into a class (#207 stage 1). The file bin/php/warm.php is one call to it.
+ * @description Request every published page so no visitor pays for a render (--limit, --concurrency)
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*

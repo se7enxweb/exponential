@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/ezrequestrules.php, moved into a class (#207 stage 1). The file bin/php/ezrequestrules.php is one call to it.
+ * @description List and check the request rules of a siteaccess and explain their decision for an address
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
