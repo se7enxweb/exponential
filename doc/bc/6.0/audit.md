@@ -1493,6 +1493,7 @@ for the password (`access.session.reauth`).
 
 | View | URL | Shows | Policy |
 |---|---|---|---|
+| dashboard | `audit/dashboard` | the summary and the tab's start page (owner, 2026-10-02): health (audit on/off, each channel's chain as last verified, Verify now for audit/manage, the signing key's age), today and 7 days per channel and family, security (failed logins by address and login, role grants, permission refusals), alerts (recent firings, mail recipients), activity (top actors and objects, latest warnings), operations (archives, sinks, index, the cronjob part's last run) and quick links; never walks the files | audit/read; manage actions audit/manage |
 | console | `audit/console` | the timeline: newest first, filters, search, page by page; chain state per channel at the top | audit/read |
 | event | `audit/event/<id>` | one record in full: fields, before/after side by side, parent and children, the other events of the same request, job and run; links to the node, object, user, role, job; the chain position (prev, hash, intact or not) | audit/read |
 | charts | `audit/charts` | events per day per channel, refusals and failures per day, top actors, top names, logins vs failed logins; the filter of the console applies | audit/read |
@@ -2111,6 +2112,79 @@ request that writes one channel.
   attempted login hashed.
 - The view `audit/recent` uses the `ezsetupnavigationpart`. It has no menu entry yet; the top tab and the
   navigation part are stage 4.
+
+## Stage 4 results (2026-10-02)
+
+The index and the console. Everything below was run on alpha (SQLite) on Apache (PHP-FPM, `/admin` = admin4 and
+`/admintest_admin` = admin), and on Velocity (port 8080) after its redeploy.
+
+### Try it
+
+```bash
+php update/common/scripts/6.0/createaudittables.php        # an installation made before 6.0.15: tables + first index run
+./console exp:audit reindex                               # rebuild (stage 5's command calls expAuditIndexer)
+```
+
+Then open the **Audit** tab (`audit/dashboard`): the dashboard, and in the left menu Dashboard, Console, Recent
+events, Charts, Alerts, Export, Archives and Settings (the last two with audit/manage only).
+
+### What exists
+
+- **Schema** (`kernel/classes/audit/index/expauditindexschema.php`): `expaudit_event`, `expaudit_cursor`,
+  `expaudit_file` as in "Tables", in `share/db_schema.dba` (generic) and generated with each engine's own handler into
+  `kernel/sql/mysql/kernel_schema.sql` (InnoDB), `kernel/sql/postgresql/kernel_schema.sql`, `kernel/sql/sqlite/schema.sql`
+  and the upgrade files `update/database/{mysql,postgresql,sqlite}/6.0/dbupdate-6.0.0-6.0.15.sql`. Oracle (ezoracle's
+  `eZOracleSchema`) and MongoDB (`expMongoSchema::insertSchema()`) get them from the same definition through
+  `update/common/scripts/6.0/createaudittables.php`, which works on every engine and skips tables that exist.
+  Full text: MySQL `FULLTEXT`, PostgreSQL a generated `tsvector` with GIN, SQLite FTS5, Oracle Text `CONTEXT`
+  (when available), else `LIKE`.
+- **Indexer** (`expAuditIndexer`): incremental from each file's cursor, rows and cursor in one transaction per batch,
+  the `prev` link checked against the cursor (a mismatch marks the file broken and records
+  `system.audit.chain.broken` once), records of `<LogDir>/imported/` without a chain check; `rebuild()`,
+  `pseudonymise()`, `purgeOld()` (KeepDays), `lag()`, `unindexedRows()` (merged into the console's first page).
+  Run by stage 5's cronjob part (`expAuditMaintenance`), `exp:audit reindex`, the upgrade script, and briefly when a
+  view opens. No index writes at request time otherwise.
+- **Search** (`expAuditQuery`): the console's URL parameters as one portable WHERE clause, counts, pages, group
+  counts and per-day series (per-engine day expression, a PHP fallback for the MongoDB emulation).
+- **Module audit**: views dashboard, console, event, charts, alerts, export (CSV, JSON lines, JSON; at most
+  MaxExportRecords, recorded as `system.audit.export` with the sha256), archives and settings (read-only), recent
+  (stage 2); policies `audit/read` (limitation Channel) and `audit/manage`; navigation part `expauditnavigationpart`
+  (the admin, admin3 and admin4 `page_leftmenu.tpl` map `exp<name>navigationpart` to `parts/<name>/menu.tpl`);
+  fetch functions `events`, `event`, `count`, `chain_status`, `can_read` (`expAuditFunctionCollection`) and the
+  operator `audit_label`. Chain states are the stored ones (`expAuditVerifier::loadState()` plus breaks the indexer
+  found); "Verify now" (audit/manage) verifies on request.
+- **Placement**: top tab Audit (`[Topmenu_audit]`, PolicyList audit/read, default URL `audit/dashboard`; on alpha
+  after Design), dashboard sidebar link "Audit trail" and block "Audit: security events" (`dashboard.ini`, ViewList
+  `audit/console`), Setup menu entry "Audit" (audit/manage), "Audit trail" links on content/job and content/jobs (for
+  readers of the content channel), and the node view tab "Audit" (`admininterface.ini [AdditionalTab_audit]`).
+- **Templates** in `design/admin/templates/audit/` (shared by every admin design), with `audit/style.tpl` per design
+  (admin4's uses its light/dark tokens); translations `design/admin/audit` in eng-US and ger-DE (240 messages).
+
+### Proof
+
+| Check | Result |
+|---|---|
+| Schema on SQLite (alpha): created by the upgrade script, 11 indexes, FTS5 | PASS; `schema.sql` and the upgrade block also load into empty SQLite files (21 checks) |
+| Generated SQL for MySQL, PostgreSQL, Oracle; MongoDB through insertSchema | PASS (15 checks: types, keys, InnoDB, names ≤ 30, no Oracle reserved words) |
+| Index of today's real events | 13 097 records from 6 files, 6.0 s for a rebuild; rows = records per file |
+| Search: FTS5 against LIKE on the live index | same ids for every query |
+| Unit tests `tests/tests/kernel/classes/audit/expAuditIndexTest.php` (live database, test channels t4*) | 10 tests, 170 assertions, OK |
+| Permission matrix A2/A3 (admin, Editor, Auditor, Shop auditor commerce-only, Audit manager, Administrator) on admin4 and admin | PASS 6 users: tab, sidebar link, block, job links, every view open or refused as specified; refusals recorded as `access.permission.refused` |
+| Playwright 960 px, scale 2, light and dark, admin4 and admin: every view with its left menu, filter form, search, paging, event detail (hash recomputed: matches), CSV export, dashboard block | PASS |
+| Dashboard build time | about 160 ms |
+
+### Deviations from the text above
+
+- The audit tables' names start with `exp`, and the drivers' `relationList()` lists only tables starting with `ez`:
+  `expAuditIndexSchema::missingTables()` asks each engine directly.
+- SQLite's FTS5 table uses the `trigram` tokenizer, so a search finds a part of a word as `LIKE` does (D2); terms
+  under three characters use `LIKE`.
+- `TINYINT`/`SMALLINT` columns are `int(4)` (the generic schema has no tiny integer), `MEDIUMTEXT` is `longtext`.
+- Templates that fetch from the audit module name it through a variable, so the fetch is not compiled into a direct
+  class call: a server process started before the audit classes existed shows nothing instead of an error.
+- The filter forms post (the kernel carries a GET query string over every redirect); the view redirects to the
+  bookmarkable `(name)/value` URL.
+- Charts are drawn in HTML and CSS (no chart library), each with its numbers in a table.
 
 ## Stage 5 results (2026-10-02)
 
