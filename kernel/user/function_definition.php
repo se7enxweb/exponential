@@ -101,4 +101,17 @@ $FunctionList['has_access_to'] = array( 'name' => 'has_access_to',
                                                                       'type' => 'integer',
                                                                       'required' => false ) ) );
 
+// Whether the current user can open an address of this siteaccess ("setup/cache", "content/view/full/5",
+// a URL alias), decided the way the kernel decides the request: the view's policy functions with their
+// limitations, the siteaccess rules, the user/login SiteAccess limitation, and the node or object of a
+// content view. fetch( 'user', 'can_open', hash( 'uri', 'setup/cache' ) ). See expViewAccess.
+$FunctionList['can_open'] = array( 'name' => 'can_open',
+                                   'operation_types' => array(),
+                                   'call_method' => array( 'class' => 'eZUserFunctionCollection',
+                                                           'method' => 'canOpen' ),
+                                   'parameter_type' => 'standard',
+                                   'parameters' => array( array( 'name' => 'uri',
+                                                                 'type' => 'string',
+                                                                 'required' => true ) ) );
+
 ?>

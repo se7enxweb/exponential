@@ -24,7 +24,9 @@
     {else}
         <span class="disabled">{'Change user info'|i18n( 'design/admin/pagelayout' )}</span>
     {/if}</div></li>
+    {if fetch( 'user', 'can_open', hash( 'uri', 'user/password' ) )}
     <li><div><a href={'/user/password/'|ezurl} title="{'Change password for <%username>.'|i18n( 'design/admin/pagelayout',, hash( '%username', $current_user.contentobject.name ) )|wash}">{'Change password'|i18n( 'design/admin/pagelayout' )}</a></div></li>
+    {/if}
     </ul>
 {else}
     <p><img src={'current-user-disabled.gif'|ezimage} height="22" width="22" alt="" style="text-align: left; vertical-align: middle;" /> {$current_user.contentobject.name|wash}</p>

@@ -136,7 +136,8 @@
             <div class="break"></div>
         </div>
 
-        {cache-block keys=array( $access_type ) ignore_content_expiry}
+        {* keyed by the user's roles too: the context menu below shows entries by policy *}
+        {cache-block keys=array( $access_type, $user_hash ) ignore_content_expiry}
         <div id="footer" class="float-break">
             <div id="footer-design">
                 {include uri='design:page_copyright.tpl'}

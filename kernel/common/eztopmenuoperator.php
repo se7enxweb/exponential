@@ -143,11 +143,6 @@ class eZTopMenuOperator
                 }
             }
 
-            if ( $namedParameters['filter_on_access'] && !$menuItem['access'] )
-            {
-                continue;
-            }
-
             $urlList = $ini->variable( 'Topmenu_' . $tabID , 'URL' );
             if ( isset( $urlList[$context] ) )
             {
@@ -156,6 +151,18 @@ class eZTopMenuOperator
             else
             {
                 $menuItem['url'] = $urlList['default'];
+            }
+
+            // menu.ini [MenuAccessSettings] CheckViewAccess: the tab's address must open for the user,
+            // checked as the kernel checks the request (the view's policies, siteaccess, node)
+            if ( $menuItem['access'] && $this->checkViewAccess( $ini ) && !expViewAccess::canOpen( $menuItem['url'] ) )
+            {
+                $menuItem['access'] = false;
+            }
+
+            if ( $namedParameters['filter_on_access'] && !$menuItem['access'] )
+            {
+                continue;
             }
 
             $enabledList = $ini->variable( 'Topmenu_' . $tabID , 'Enabled' );
@@ -211,6 +218,15 @@ class eZTopMenuOperator
         $menu[count($menu) - 1]['position'] = 'last';
 
         $operatorValue = $menu;
+    }
+
+    /**
+     * menu.ini [MenuAccessSettings] CheckViewAccess (enabled when not set).
+     */
+    protected function checkViewAccess( eZINI $ini )
+    {
+        return !$ini->hasVariable( 'MenuAccessSettings', 'CheckViewAccess' )
+            || $ini->variable( 'MenuAccessSettings', 'CheckViewAccess' ) !== 'disabled';
     }
 
     /// \privatesection

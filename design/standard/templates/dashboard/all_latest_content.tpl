@@ -34,9 +34,14 @@
                 {$latest_node.object.published|l10n('shortdate')}
             </td>
             <td>
+                {* the author's user node is linked only for a user who may read it *}
+                {if fetch( 'user', 'can_open', hash( 'uri', concat( 'content/view/full/', $latest_node.object.owner.main_node_id ) ) )}
                 <a href="{$latest_node.object.owner.main_node.url_alias|ezurl('no')}" title="{$latest_node.object.owner.name|wash()}">
                     {$latest_node.object.owner.name|shorten('13')|wash()}
                 </a>
+                {else}
+                <span title="{$latest_node.object.owner.name|wash()}">{$latest_node.object.owner.name|shorten('13')|wash()}</span>
+                {/if}
             </td>
             <td>
             {if $latest_node.can_edit}

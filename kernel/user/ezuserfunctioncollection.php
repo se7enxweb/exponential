@@ -188,6 +188,17 @@ class eZUserFunctionCollection
             return array( 'result' => false );
         }
     }
+
+    /**
+     * Whether the current user can open the address (fetch 'user', 'can_open'). See expViewAccess.
+     *
+     * @param string $uri
+     * @return array
+     */
+    function canOpen( $uri )
+    {
+        return array( 'result' => expViewAccess::canOpen( $uri ) );
+    }
 }
 }
 

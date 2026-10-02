@@ -15,6 +15,24 @@
 {if and( ge( $hour, 5 ), lt( $hour, 12 ) )}{set $greeting = 'Good morning'|i18n( 'design/admin/dashboard' )}
 {elseif and( ge( $hour, 12 ), lt( $hour, 18 ) )}{set $greeting = 'Good afternoon'|i18n( 'design/admin/dashboard' )}{/if}
 
+{* What the user can open: every link below is shown only to a user who can follow it, checked the way
+   the kernel checks the request (fetch user/can_open: the view's policies with their limitations, the
+   siteaccess, the node). No role names. *}
+{def $can = hash(
+        'content',  fetch( 'user', 'can_open', hash( 'uri', concat( 'content/view/full/', $root_node ) ) ),
+        'media',    fetch( 'user', 'can_open', hash( 'uri', concat( 'content/view/full/', $media_node ) ) ),
+        'users',    fetch( 'user', 'can_open', hash( 'uri', concat( 'content/view/full/', $users_node ) ) ),
+        'upload',   and( $extensions|contains( 'ezmultiupload' ), fetch( 'user', 'can_open', hash( 'uri', concat( 'ezmultiupload/upload/', $media_node ) ) ) ),
+        'tags',     and( $extensions|contains( 'eztags' ), fetch( 'user', 'can_open', hash( 'uri', 'tags/dashboard' ) ) ),
+        'layouts',  and( $extensions|contains( 'explayouts_ui' ), fetch( 'user', 'can_open', hash( 'uri', 'explayouts_ui/dashboard' ) ) ),
+        'cache',    fetch( 'user', 'can_open', hash( 'uri', 'setup/cache' ) ),
+        'info',     fetch( 'user', 'can_open', hash( 'uri', 'setup/info' ) ),
+        'upgrade',  fetch( 'user', 'can_open', hash( 'uri', 'setup/systemupgrade' ) ),
+        'sessions', fetch( 'user', 'can_open', hash( 'uri', 'setup/session' ) ),
+        'drafts',   fetch( 'user', 'can_open', hash( 'uri', 'content/draft' ) ),
+        'pending',  fetch( 'user', 'can_open', hash( 'uri', 'content/pendinglist' ) ),
+        'trash',    fetch( 'user', 'can_open', hash( 'uri', 'content/trash' ) ) )}
+
 {* Key figures *}
 {def $count_content   = fetch( 'content', 'tree_count', hash( 'parent_node_id', $root_node ) )
      $count_week      = fetch( 'content', 'tree_count', hash( 'parent_node_id', 1, 'attribute_filter', array( array( 'published', '>=', sub( $day_start, mul( 6, 86400 ) ) ) ) ) )
@@ -44,19 +62,25 @@
             <p class="a4-dash-sub">{'Here is what is happening on %site.'|i18n( 'design/admin/dashboard', , hash( '%site', ezini( 'SiteSettings', 'SiteName' )|wash ) )}</p>
         </div>
         <nav class="a4-dash-actions" aria-label="{'Quick actions'|i18n( 'design/admin/dashboard' )|wash}">
+            {if $can.content}
             <a class="a4-dash-action a4-primary" href={concat( 'content/view/full/', $root_node )|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#9776;</span>{'Content structure'|i18n( 'design/admin/dashboard' )}</a>
+            {/if}
+            {if $can.media}
             <a class="a4-dash-action" href={concat( 'content/view/full/', $media_node )|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#9635;</span>{'Media library'|i18n( 'design/admin/dashboard' )}</a>
-            {if $extensions|contains( 'ezmultiupload' )}
+            {/if}
+            {if $can.upload}
             <a class="a4-dash-action" href={concat( 'ezmultiupload/upload/', $media_node )|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#8679;</span>{'Upload files'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
+            {if $can.users}
             <a class="a4-dash-action" href={concat( 'content/view/full/', $users_node )|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#9787;</span>{'Users'|i18n( 'design/admin/dashboard' )}</a>
-            {if $extensions|contains( 'eztags' )}
+            {/if}
+            {if $can.tags}
             <a class="a4-dash-action" href={'tags/dashboard'|ezurl}><span class="a4-dash-ico" aria-hidden="true">#</span>{'Tags'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
-            {if $extensions|contains( 'explayouts_ui' )}
+            {if $can.layouts}
             <a class="a4-dash-action" href={'explayouts_ui/dashboard'|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#9638;</span>{'Layouts'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
-            {if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'administrate' ) )}
+            {if $can.cache}
             <a class="a4-dash-action" href={'setup/cache'|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#8635;</span>{'Caches'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
         </nav>
@@ -64,14 +88,15 @@
 
     {* ---- Key figures ---- *}
     <section class="a4-dash-figures" aria-label="{'Key figures'|i18n( 'design/admin/dashboard' )|wash}">
-        <a class="a4-dash-figure" href={concat( 'content/view/full/', $root_node )|ezurl}><strong>{$count_content}</strong><span>{'Content items'|i18n( 'design/admin/dashboard' )}</span></a>
+        {if $can.content}<a class="a4-dash-figure" href={concat( 'content/view/full/', $root_node )|ezurl}><strong>{$count_content}</strong><span>{'Content items'|i18n( 'design/admin/dashboard' )}</span></a>{/if}
         <div class="a4-dash-figure a4-accent"><strong>{$count_week}</strong><span>{'Published in the last 7 days'|i18n( 'design/admin/dashboard' )}</span></div>
-        <a class="a4-dash-figure" href={'content/draft'|ezurl}><strong>{$count_drafts}</strong><span>{'My drafts'|i18n( 'design/admin/dashboard' )}</span></a>
-        <a class="a4-dash-figure" href={'content/pendinglist'|ezurl}><strong>{$count_pending}</strong><span>{'My pending items'|i18n( 'design/admin/dashboard' )}</span></a>
-        <a class="a4-dash-figure" href={concat( 'content/view/full/', $users_node )|ezurl}><strong>{$count_users}</strong><span>{'Users'|i18n( 'design/admin/dashboard' )}</span></a>
-        <div class="a4-dash-figure"><strong>{$count_online}</strong><span>{'Signed in now'|i18n( 'design/admin/dashboard' )}</span></div>
-        <a class="a4-dash-figure" href={concat( 'content/view/full/', $media_node )|ezurl}><strong>{$count_media}</strong><span>{'Media items'|i18n( 'design/admin/dashboard' )}</span></a>
-        <a class="a4-dash-figure" href={'content/trash'|ezurl}><strong>{$count_trash}</strong><span>{'In the trash'|i18n( 'design/admin/dashboard' )}</span></a>
+        {if $can.drafts}<a class="a4-dash-figure" href={'content/draft'|ezurl}><strong>{$count_drafts}</strong><span>{'My drafts'|i18n( 'design/admin/dashboard' )}</span></a>{/if}
+        {if $can.pending}<a class="a4-dash-figure" href={'content/pendinglist'|ezurl}><strong>{$count_pending}</strong><span>{'My pending items'|i18n( 'design/admin/dashboard' )}</span></a>{/if}
+        {if $can.users}<a class="a4-dash-figure" href={concat( 'content/view/full/', $users_node )|ezurl}><strong>{$count_users}</strong><span>{'Users'|i18n( 'design/admin/dashboard' )}</span></a>{/if}
+        {* who is signed in belongs to the session list (setup/session) *}
+        {if $can.sessions}<div class="a4-dash-figure"><strong>{$count_online}</strong><span>{'Signed in now'|i18n( 'design/admin/dashboard' )}</span></div>{/if}
+        {if $can.media}<a class="a4-dash-figure" href={concat( 'content/view/full/', $media_node )|ezurl}><strong>{$count_media}</strong><span>{'Media items'|i18n( 'design/admin/dashboard' )}</span></a>{/if}
+        {if $can.trash}<a class="a4-dash-figure" href={'content/trash'|ezurl}><strong>{$count_trash}</strong><span>{'In the trash'|i18n( 'design/admin/dashboard' )}</span></a>{/if}
     </section>
 
     <div class="a4-dash-row">
@@ -95,22 +120,27 @@
             {include uri='design:dashboard/maintenance.tpl'}
             <dl class="a4-dash-facts">
                 <dt>{'Version'|i18n( 'design/admin/dashboard' )}</dt><dd>{fetch( 'setup', 'version' )}</dd>
+                {* the database and the extensions are system information (setup/info) *}
+                {if $can.info}
                 <dt>{'Database'|i18n( 'design/admin/dashboard' )}</dt><dd>{ezini( 'DatabaseSettings', 'DatabaseImplementation' )|wash}</dd>
                 <dt>{'Extensions'|i18n( 'design/admin/dashboard' )}</dt><dd>{$extensions|count}</dd>
+                {/if}
             </dl>
-            {if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'administrate' ) )}
+            {if or( $can.info, $can.cache, $can.upgrade )}
             <p class="a4-dash-links">
-                <a href={'setup/info'|ezurl}>{'System information'|i18n( 'design/admin/dashboard' )}</a>
-                <a href={'setup/cache'|ezurl}>{'Caches'|i18n( 'design/admin/dashboard' )}</a>
-                <a href={'setup/systemupgrade'|ezurl}>{'Upgrade check'|i18n( 'design/admin/dashboard' )}</a>
+                {if $can.info}<a href={'setup/info'|ezurl}>{'System information'|i18n( 'design/admin/dashboard' )}</a>{/if}
+                {if $can.cache}<a href={'setup/cache'|ezurl}>{'Caches'|i18n( 'design/admin/dashboard' )}</a>{/if}
+                {if $can.upgrade}<a href={'setup/systemupgrade'|ezurl}>{'Upgrade check'|i18n( 'design/admin/dashboard' )}</a>{/if}
             </p>
             {/if}
         </section>
     </div>
 
     {* ---- Stay secure: the two updates that keep an installation safe ---- *}
-    {def $can_git    = and( $extensions|contains( 'git_manager' ), fetch( 'user', 'has_access_to', hash( 'module', 'git_manager', 'function', 'git_manager' ) ) )
-         $can_update = and( $extensions|contains( 'ezupdate' ), fetch( 'user', 'has_access_to', hash( 'module', 'update', 'function', 'ezupdate' ) ) )}
+    {* Shown only to a user who can run one of the two updates; the rest have nothing to do here. *}
+    {def $can_git    = and( $extensions|contains( 'git_manager' ), fetch( 'user', 'can_open', hash( 'uri', 'git_manager/dashboard' ) ) )
+         $can_update = and( $extensions|contains( 'ezupdate' ), fetch( 'user', 'can_open', hash( 'uri', 'update/dashboard' ) ) )}
+    {if or( $can_git, $can_update )}
     <section class="a4-dash-card a4-dash-secure" aria-labelledby="a4-dash-secure-title">
         <header>
             <h2 id="a4-dash-secure-title"><svg class="a4-dash-secure-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" fill="#228b5e"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{'Stay secure: keep Exponential up to date'|i18n( 'design/admin/dashboard' )}</h2>
@@ -143,6 +173,7 @@
             </li>
         </ol>
     </section>
+    {/if}
 
     {* ---- The configured blocks (dashboard.ini), each in a card ---- *}
     <div class="a4-dash-blocks">

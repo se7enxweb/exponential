@@ -991,6 +991,7 @@ return array(
       'expVelocityFrankenPHP'                                        => 'kernel/classes/expvelocityfrankenphp.php',
       'expVelocityFrankenPHPInstaller'                               => 'kernel/classes/expvelocityfrankenphpinstaller.php',
       'expVelocityPHPServer'                                         => 'kernel/classes/expvelocityphpserver.php',
+      'expViewAccess'                                                => 'kernel/classes/expviewaccess.php',
       'expWorkflowEventWizard'                                       => 'kernel/setup/expworkfloweventwizard.php',
       'ezpAccessDenied'                                              => 'kernel/private/classes/exceptions/kernel/accessdenied.php',
       'ezpActiveExtensions'                                          => 'kernel/private/classes/ezpactiveextensions.php',

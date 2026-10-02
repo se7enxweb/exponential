@@ -31,6 +31,41 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $ini = \eZINI::instance( 'dashboard.ini' );
         $currentUser = \eZUser::currentUser();
 
+        $orderedBlocks = self::visibleBlocks( $ini, $currentUser );
+
+        $contentInfoArray = array();
+
+        $tpl = \eZTemplate::factory();
+
+        $tpl->setVariable( 'blocks', $orderedBlocks );
+        $tpl->setVariable( 'user', $currentUser );
+        $tpl->setVariable( 'persistent_variable', false );
+
+        $Result = array();
+        $Result['content'] = $tpl->fetch( 'design:content/dashboard.tpl' );
+        $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/content', 'Dashboard' ),
+                                        'url' => false ) );
+
+        $contentInfoArray['persistent_variable'] = false;
+        if ( $tpl->variable( 'persistent_variable' ) !== false )
+            $contentInfoArray['persistent_variable'] = $tpl->variable( 'persistent_variable' );
+
+        $Result['content_info'] = $contentInfoArray;
+
+        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+    /**
+     * The blocks of dashboard.ini [DashboardSettings] DashboardBlocks[] the user may see, in priority order:
+     * a block is left out unless the user has every policy of its PolicyList[] ("<module>/<function>", or a
+     * node id to be readable) and can open every address of its ViewList[] (expViewAccess, checked the way
+     * the kernel checks the request).
+     *
+     * @param \eZINI $ini dashboard.ini
+     * @param \eZUser $currentUser
+     * @return array priority => array( 'identifier', 'template', 'number_of_items' )
+     */
+    public static function visibleBlocks( \eZINI $ini, \eZUser $currentUser )
+    {
         $orderedBlocks = array();
 
         $dashboardBlocks = $ini->variable( 'DashboardSettings', 'DashboardBlocks' );
@@ -71,6 +106,20 @@ class Dashboard extends \Exponential\Runnable\ModuleView
                 }
             }
 
+            // ViewList[]: the addresses the block links to must open for the user, checked the way the
+            // kernel checks the request (the view's policies with their limitations, the siteaccess)
+            if ( $hasAccess && $ini->hasVariable( $blockGroupName, 'ViewList' ) )
+            {
+                foreach( (array)$ini->variable( $blockGroupName, 'ViewList' ) as $viewURI )
+                {
+                    if ( $viewURI !== '' && !\expViewAccess::canOpen( $viewURI, $currentUser ) )
+                    {
+                        $hasAccess = false;
+                        break;
+                    }
+                }
+            }
+
             if ( $hasAccess === false )
                 continue;
 
@@ -97,26 +146,7 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         // Sort $orderedBlocks by key, starting from the lowest priority
         ksort( $orderedBlocks );
 
-        $contentInfoArray = array();
-
-        $tpl = \eZTemplate::factory();
-
-        $tpl->setVariable( 'blocks', $orderedBlocks );
-        $tpl->setVariable( 'user', $currentUser );
-        $tpl->setVariable( 'persistent_variable', false );
-
-        $Result = array();
-        $Result['content'] = $tpl->fetch( 'design:content/dashboard.tpl' );
-        $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/content', 'Dashboard' ),
-                                        'url' => false ) );
-
-        $contentInfoArray['persistent_variable'] = false;
-        if ( $tpl->variable( 'persistent_variable' ) !== false )
-            $contentInfoArray['persistent_variable'] = $tpl->variable( 'persistent_variable' );
-
-        $Result['content_info'] = $contentInfoArray;
-
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        return $orderedBlocks;
     }
 }
 
