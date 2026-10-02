@@ -7,6 +7,22 @@
 {/if}
 
 {if $input_handler.is_editor_enabled}
+{* Editor engine: tinymce3 (default) or tinymce8 (prototype), can be overridden per user with
+   the preference ezoe_engine, e.g. /user/preferences/set/ezoe_engine/tinymce8 *}
+{def $ezoe_engine = 'tinymce3'}
+{if ezini_hasvariable( 'EditorSettings', 'EditorEngine', 'ezoe.ini',,true() )}
+    {set $ezoe_engine = ezini( 'EditorSettings', 'EditorEngine', 'ezoe.ini',,true() )}
+{/if}
+{if array( 'tinymce3', 'tinymce8' )|contains( ezpreference( 'ezoe_engine' ) )}
+    {set $ezoe_engine = ezpreference( 'ezoe_engine' )}
+{/if}
+{if $ezoe_engine|eq( 'tinymce8' )}
+    {include uri='design:content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl'
+             attribute=$attribute
+             input_handler=$input_handler
+             attribute_base=$attribute_base
+             editorRow=$editorRow}
+{else}
 <!-- Start editor -->
 
     {def $layout_settings = $input_handler.editor_layout_settings}
@@ -235,6 +251,8 @@
         </script>
     </div>
 <!-- End editor -->
+{/if}
+{undef $ezoe_engine}
 {else}
     {* Require jQuery even when disabled to make sure user don't get cache issues when they enable editor *}
     {ezscript_require( 'ezjsc::jquery' )}
