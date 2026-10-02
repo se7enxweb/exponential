@@ -197,7 +197,7 @@ e49abe28fd9ec94201eefc0c25b26342  design/admin/images/3/ez_logo_small_community.
 10b13068b1645b0df83d2b9e0b55d698  design/admin/images/3/ez_logo_white.png
 9211513927325761ad5bbb76af37c72d  design/admin/images/3/ez_logo_white_full.png
 8f965ce3722cf34966a249ab70fce00a  design/admin/images/3/ez_logo_white_long.png
-842cfabf1c733cb3270aaae16bb36075  design/admin/images/3/logo_separator_sprite.png
+0b05c3e202483939c9bb48b5074456d2  design/admin/images/3/logo_separator_sprite.png
 7b958330a134353893482a1ea5f0a44a  design/admin/images/3/panels_separator.png
 2c4e81a1b29c2bca11ad59c990606d32  design/admin/images/3/panels_separator_bottom.png
 cf6f3d41b6b814d1678e8d733c3fca30  design/admin/images/3/panels_separator_top.png
@@ -279,7 +279,7 @@ f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.t
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
-385603746948cfdd8e7540bdf7b5d2b0  design/admin/stylesheets/pagelayout.css
+d1b753c05f746a12a5f98681cf3a80ab  design/admin/stylesheets/pagelayout.css
 d5a3589152af07aa3d6cb3f0b025bec6  design/admin/stylesheets/setup-extensions.css
 c28a2b8fef839e911313919afddcc3eb  design/admin/stylesheets/theme/modalwindow.css
 7f9cc6a933a0ae537e5b692363292fb1  design/admin/stylesheets/theme/rounded.css
@@ -458,7 +458,7 @@ f8ca49e9ca11f9c274e375cd0ea3aad4  design/admin/templates/page_copyright.tpl
 90f8a93adc5708017f6c3c0928ca1388  design/admin/templates/page_head_style.tpl
 37933ff0f7394086e6953a2830d19bd2  design/admin/templates/page_head_style_inline.tpl
 f0474d761bfda4475aafd6de5d1c6922  design/admin/templates/page_header.tpl
-0cd221d6a00b4ca8ef8b96e3dc4e1e4d  design/admin/templates/page_leftmenu.tpl
+87e83e6b418e79121987cb2c91bcfc03  design/admin/templates/page_leftmenu.tpl
 169f988a44a2a3bfa2f9dfc53663645c  design/admin/templates/page_login_copyright.tpl
 1bf2256ccd6061ee7f354a26834937c1  design/admin/templates/page_menuheadenabled.tpl
 9f4f8bdbbdfbfd8c6d873c03eded7ef6  design/admin/templates/page_menuheadgray.tpl
@@ -467,7 +467,7 @@ f0474d761bfda4475aafd6de5d1c6922  design/admin/templates/page_header.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 904563d0775993b51872b7af411dd5b3  design/admin/templates/page_toppath.tpl
-9dcc66880d4a9adc299708741551ea67  design/admin/templates/pagelayout.tpl
+d6e7a398de98570cc5f2650e4ee00a0a  design/admin/templates/pagelayout.tpl
 f277c77968c48645a68dd60c7073b1f9  design/admin/templates/parts/content/menu.tpl
 4991be3f4628cd305ab416618c614fcd  design/admin/templates/parts/ini_menu.tpl
 29b9aac282e8e53f74896ae53ef83e66  design/admin/templates/parts/media/menu.tpl
