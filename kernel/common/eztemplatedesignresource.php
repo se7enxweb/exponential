@@ -1007,6 +1007,12 @@ class eZTemplateDesignResource extends eZTemplateFileResource
         {
             self::$overrideArrayCache = $matchFileArray;
         }
+        else
+        {
+            // Another siteaccess's list (the Design pages read it): the current request keeps its own
+            // source-by-match-file map, which the template path comments of every later template use
+            return $matchFileArray;
+        }
 
         self::$sourceByMatchFileCache = array();
         foreach ( $matchFileArray as $source => $matchInfo )
@@ -1044,6 +1050,7 @@ class eZTemplateDesignResource extends eZTemplateFileResource
     static public function clearInMemoryOverrideArray( )
     {
         self::$overrideArrayCache = null;
+        self::$sourceByMatchFileCache = null;
         unset( $GLOBALS['eZOverrideTemplateCacheMap'] );
     }
 
