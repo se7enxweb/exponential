@@ -78,7 +78,8 @@ var eZOe8GlobalSettings = {ldelim}
         ezlink: {'javascript/tinymce8_ez/plugins/ezlink/plugin.js'|ezdesign},
         ezpath: {'javascript/tinymce8_ez/plugins/ezpath/plugin.js'|ezdesign},
         ezliteral: {'javascript/tinymce8_ez/plugins/ezliteral/plugin.js'|ezdesign},
-        eztable: {'javascript/tinymce8_ez/plugins/eztable/plugin.js'|ezdesign}
+        eztable: {'javascript/tinymce8_ez/plugins/eztable/plugin.js'|ezdesign},
+        ezgeneral: {'javascript/tinymce8_ez/plugins/ezgeneral/plugin.js'|ezdesign}
     {rdelim},
     // no advlist (split list buttons) and no pagebreak (ezoe pagebreak is a custom tag, not an html comment)
     plugins: 'lists autolink link anchor table charmap fullscreen code help',
@@ -108,7 +109,7 @@ var eZOe8GlobalSettings = {ldelim}
     visual_table_class: 'mceItemTable',
     noneditable_class: 'ezoeItemNonEditable',
     browser_spellcheck: true,
-    contextmenu: 'ezlink ezembed ezcustomtag ezliteral eztable',
+    contextmenu: 'ezlink ezembed ezcustomtag ezliteral eztable ezgeneral',
     // toolbar above a table with the ez dialogs, like the table buttons of the TinyMCE 3 editor
     table_toolbar: 'eztable eztablecell eztablerow | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol | tabledelete',
     ez_skin_class: 'ezoe-skin-{$skin|wash}',
@@ -117,6 +118,7 @@ var eZOe8GlobalSettings = {ldelim}
     ez_path_open_dialog: {cond( ezini( 'EditorSettings', 'TagPathOpenDialog', 'ezoe.ini',,true() )|eq( 'enabled' ), 'true', 'false' )},
     ez_literal: {json_encode( $input_handler.literal_definition )},
     ez_table_definitions: {json_encode( $input_handler.table_definitions )},
+    ez_general_definitions: {json_encode( $input_handler.general_definitions )},
     ez_custom_tags: {json_encode( $input_handler.custom_tag_definitions )},
     ez_link_classes: {json_encode( $link_classes )},
     ez_link_view_modes: {json_encode( ezini( 'link', 'AvailableViewModes', 'content.ini' ) )},

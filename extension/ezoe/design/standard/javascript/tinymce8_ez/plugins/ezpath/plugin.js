@@ -5,7 +5,7 @@
  * of the html elements, e.g. "paragraph » embed.right" or "table » table row » table cell",
  * using the friendly names of ezoe.ini [EditorSettings] XmlTagNameAlias and ".class" suffixes.
  * With ezoe.ini [EditorSettings] TagPathOpenDialog=enabled a click on a path item opens the dialog
- * of the tag like before (embed, custom tag, link, literal, anchor, table, table row, table cell).
+ * of the tag like before (embed, custom tag, link, literal, anchor, tables, paragraph, header, lists, strong, emphasize).
  *
  * Licensed under the GNU General Public License v2.0, like the rest of ezoe.
  */
@@ -120,6 +120,14 @@
                     return 'ezLink';
                 case 'literal':
                     return 'ezLiteral';
+                case 'paragraph':
+                case 'header':
+                case 'ul':
+                case 'ol':
+                case 'li':
+                case 'strong':
+                case 'emphasize':
+                    return 'ezGeneral';
                 case 'anchor':
                     return 'mceAnchor';
                 case 'table':

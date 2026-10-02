@@ -99,7 +99,8 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'tinymce8_cache_key',
                       'literal_definition',
                       'embed_definitions',
-                      'table_definitions' ),
+                      'table_definitions',
+                      'general_definitions' ),
                       parent::attributes() );
     }
 
@@ -137,6 +138,15 @@ class eZOEXMLInput extends eZXMLInputHandler
             $attr = self::getTinyMCE8CacheKey();
         else if ( $name === 'literal_definition' )
             $attr = self::getTagDefinition( 'literal' );
+        else if ( $name === 'general_definitions' )
+        {
+            // classes and custom attributes of the tags of the general tag dialog (tag_general.tpl, tag_header.tpl)
+            $attr = array();
+            foreach ( array( 'paragraph', 'header', 'ul', 'ol', 'li', 'strong', 'emphasize' ) as $tagName )
+            {
+                $attr[$tagName] = self::getTagDefinition( $tagName );
+            }
+        }
         else if ( $name === 'table_definitions' )
         {
             // classes and custom attributes of table, tr, td and th plus content.ini [table] Defaults
