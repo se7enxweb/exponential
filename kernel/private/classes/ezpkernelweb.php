@@ -790,7 +790,10 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                     && !isset( $this->module->Module['function']['script'] )
                 )
                 {
-                    $moduleResult = $this->module->handleError( eZError::KERNEL_MODULE_VIEW_NOT_FOUND, 'kernel', array( "check" => $moduleCheck ) );
+                    // module and view name the missing page on the error page (error/kernel/21); check is what
+                    // the exception path of eZModule::handleError() reads
+                    $moduleResult = $this->module->handleError( eZError::KERNEL_MODULE_VIEW_NOT_FOUND, 'kernel',
+                                                                array( "check" => $moduleCheck, 'module' => $moduleName, 'view' => $functionName ) );
                     $runModuleView = false;
                     $this->siteBasics['policy-check-required'] = false;
                     $omitPolicyCheck = true;
