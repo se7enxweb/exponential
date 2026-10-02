@@ -563,10 +563,22 @@ class eZSQLite3DB extends eZDBInterface
     /*!
      \reimp
      The query to start the transaction.
+
+     BEGIN IMMEDIATE, not a plain (deferred) BEGIN: a deferred transaction
+     reads from a snapshot first and asks for the write lock only at its first
+     write. When another connection has committed in between, that snapshot
+     is stale and SQLite answers SQLITE_BUSY at once, without calling the busy
+     handler, because waiting cannot make it current: the write failed with
+     "database is locked" however long busy_timeout was, and publishing
+     (above all the asynchronous publisher next to web requests) lost its
+     transaction. IMMEDIATE takes the write lock at the start, where the busy
+     timeout applies, so a transaction waits for another writer and then sees
+     its commit. SQLite allows one writer at a time anyway; readers outside a
+     transaction are not affected (WAL).
     */
     function beginQuery()
     {
-        return $this->query( "BEGIN" );
+        return $this->query( "BEGIN IMMEDIATE" );
     }
 
     /*!
