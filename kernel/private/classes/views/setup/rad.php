@@ -10,6 +10,7 @@
  * The RAD tools page: every point this system can be extended at, and the tool
  * for it where there is one.
  *
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package kernel

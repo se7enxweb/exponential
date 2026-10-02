@@ -6,7 +6,8 @@ This file is part of Exponential.
 
 ## Creator Copyright 
 
-Copyright (C) 1999-2014 eZ Systems AS. All rights reserved.
+Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+Copyright (C) 1999 - 2014 eZ Systems AS. All rights reserved.
 
 # Copyright License Terms
 

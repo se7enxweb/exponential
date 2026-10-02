@@ -5,6 +5,7 @@
  * Assumes the username entries are 'uid'.
  * Note that all tests will crash horribly if any new trilogy characters are introduced here ;)
  *
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//

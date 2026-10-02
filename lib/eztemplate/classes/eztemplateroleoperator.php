@@ -2,6 +2,7 @@
 /**
  * File containing the eZTemplateRoleOperator class
  *
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) 1999 - 2026 7x / Brookins Consulting / eZ Systems AS. All rights reserved.
  * @license http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License v2 (or any later version)
  * @version 1.0.2

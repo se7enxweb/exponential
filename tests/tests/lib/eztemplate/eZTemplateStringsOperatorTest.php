@@ -11,6 +11,7 @@
  *
  * Does NOT require a database connection; uses ezpTestCase (no DB bootstrap).
  *
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS / Exponential CMS contributors.
  * @license   For full copyright and license information view LICENSE file.
  * @version   //autogentag//

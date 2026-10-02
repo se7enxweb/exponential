@@ -5,6 +5,7 @@
 //
 // SOFTWARE NAME: eZ Publish
 // SOFTWARE RELEASE: 4.2
+// COPYRIGHT NOTICE: Copyright (C) 1998 - 2026 7x & Exponential Foundation
 // COPYRIGHT NOTICE: Copyright (C) 1999-2014 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >

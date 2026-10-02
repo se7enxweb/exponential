@@ -163,6 +163,7 @@ class ezpTestCase extends PHPUnit_Framework_TestCase   // <-- BROKEN
 /**
  * File containing the ezpTestCase class
  *
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
@@ -337,6 +338,7 @@ Replace the class body entirely with a static-method wrapper that delegates dire
  * This shim preserves the static accessor API used by ezpDatabaseTestCase
  * and delegates test execution to PHPUnit\TextUI\Application directly.
  *
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
@@ -474,6 +476,7 @@ if ( version_compare( $version, '3.7.0' ) == -1 && $version !== '@package_versio
 /**
  * File containing the runtests CLI script — PHPUnit 10 compatible.
  *
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
