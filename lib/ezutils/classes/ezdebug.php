@@ -1353,7 +1353,7 @@ class eZDebug
 // -->
 </script>
 " );
-            $header = "<!DOCTYPE html><html><head><title>eZ debug</title></head><body>";
+            $header = "<!DOCTYPE html><html><head><title>Exp Debug</title></head><body>";
             $footer = "</body></html>";
             $fullPage = ezpEvent::getInstance()->filter( 'response/output', $header . $report . $footer );
             file_put_contents( $debugFilePath, $fullPage );
@@ -1579,7 +1579,7 @@ class eZDebug
 	        $byIP = false;
 	    }
 
-            echo "<div id=\"debug\"><h2><a href=\"#debug-end\">eZ debug " . $byUser . $byIP . "</a></h2>";
+            echo "<div id=\"debug\"><h2><a href=\"#debug-end\">Exp Debug " . $byUser . $byIP . "</a></h2>";
             echo "<div id=\"debug-details\">";
 
             if ( !$this->UseCSS )
