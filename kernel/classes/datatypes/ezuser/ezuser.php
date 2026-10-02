@@ -1310,9 +1310,14 @@ WHERE user_id = '" . $userID . "' AND
     static function logoutCurrent()
     {
         $http = eZHTTPTool::instance();
+        $contentObjectID = $http->sessionVariable( 'eZUserLoggedInID' );
+
+        // Recorded while the user is still the current one, with the session that ends
+        if ( class_exists( 'expAudit' ) && $contentObjectID && $contentObjectID != self::anonymousId() )
+            expAudit::event( 'access.session.logout', array( 'object' => array( 'type' => 'user', 'id' => (int)$contentObjectID ) ) );
+
         $id = false;
         $GLOBALS["eZUserGlobalInstance_$id"] = false;
-        $contentObjectID = $http->sessionVariable( 'eZUserLoggedInID' );
 
         // reset session data
         $newUserID = self::anonymousId();

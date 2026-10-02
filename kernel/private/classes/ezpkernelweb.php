@@ -125,6 +125,10 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             eZDBQueryCache::resetRequest();
         if ( method_exists( 'eZDBInterface', 'resetSQLProfile' ) )
             eZDBInterface::resetSQLProfile();
+        // The audit too: what a previous request left is flushed, then its buffer, request id, open parent
+        // events and cached actors are cleared (doc/bc/6.0/audit.md, "Buffering and flushing")
+        if ( class_exists( 'expAudit' ) )
+            expAudit::resetRequest();
 
         if ( isset( $settings['injected-settings'] ) )
         {
@@ -378,6 +382,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         {
             unset( $headerDefaults['Pragma'] );
         }
+
+        // The audit's request id (audit.ini [AuditRecordSettings] RequestIdHeader), the same id the request's
+        // audit records carry
+        if ( class_exists( 'expAudit' ) && ( $auditHeader = expAudit::responseHeader() ) !== null )
+            $headerDefaults[$auditHeader[0]] = $auditHeader[1];
 
         foreach ( $headerOverrides + $headerDefaults as $key => $value )
         {

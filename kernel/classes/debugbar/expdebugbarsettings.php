@@ -766,6 +766,14 @@ class expDebugBarSettings
                        'byte_identical' => $answer['byte_identical'], 'forced' => (bool)$force,
                        'group' => isset( $options['group'] ) ? $options['group'] : null, 'undoes' => $entry['id'] );
         $answer['entry'] = $this->log->append( $undo );
+        // the write itself is system.setting.write (expIniEditor::save()); this says which log entry it undid
+        if ( class_exists( 'expAudit' ) && $editor->hasChanges() === false && isset( $result ) )
+            expAudit::event( 'system.setting.undo', array(
+                'object' => array( 'type' => 'setting', 'id' => "{$entry['file']}/$b/$v", 'file' => $entry['file'], 'block' => $b,
+                                   'variable' => $v, 'scope' => $entry['scope'], 'path' => $entry['path'] ),
+                'target' => array( 'type' => 'debugbar_log', 'id' => (string)$entry['id'] ),
+                'after' => array( 'undo_entry' => isset( $answer['entry']['id'] ) ? $answer['entry']['id'] : null, 'forced' => (bool)$force,
+                                  'group' => isset( $options['group'] ) ? $options['group'] : null ) ) );
         try
         {
             $answer['setting'] = $this->describe( $entry['setting'] );

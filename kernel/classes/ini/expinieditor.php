@@ -929,6 +929,10 @@ class expIniEditor
         if ( @file_get_contents( $this->path ) !== $new )
             throw expIniException::writeFailed( "{$this->relativePath()} does not read back as written" );
         $data['written'] = true;
+        // system.setting.write per changed variable (exp:ini, the debug bar, everything else writing through this
+        // editor); secrets are recorded as [secret]. Never throws.
+        if ( class_exists( 'expAudit' ) )
+            expAudit::settingWrite( $this->file . '.ini', $this->scope->name(), $this->relativePath(), $this->original, $new, $data['diff'] );
         $this->original = $new;
         $this->existed = true;
         $this->writer = new expIniWriter( $new );
