@@ -106,7 +106,7 @@ class RadSurveyRegistriesTest extends PHPUnit\Framework\TestCase
                 if ( !$inSettings )
                     $added++;
                 // a class entry is always a setting already
-                if ( $entry['what'] !== 'template' && $entry['what'] !== 'callable' )
+                if ( $entry['what'] !== 'template' && $entry['what'] !== 'callable' && strpos( $entry['what'], 'debugbar-' ) !== 0 )
                     $this->assertTrue( $entry['counted'], $entry['value'] . ' names a class and is a setting' );
             }
         $this->assertSame( $added, $c['registries_added'] );

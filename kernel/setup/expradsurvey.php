@@ -307,6 +307,17 @@ class expRADSurvey
         self::$Survey['counts']['registries_added']  = $added;
         self::$Survey['counts']['registries_broken'] = $broken;
 
+        // The debug bar's own figures: what it shows (registered, discovered), its presets, the extensions that
+        // register settings. They say what is inside the two registries above and are not added again.
+        $debugBar = self::debugBar();
+        self::$Survey['debug_bar'] = $debugBar;
+        self::$Survey['counts']['debugbar_settings']             = $debugBar['settings'];
+        self::$Survey['counts']['debugbar_registered']           = $debugBar['registered'];
+        self::$Survey['counts']['debugbar_extension_registered'] = $debugBar['extension_registered'];
+        self::$Survey['counts']['debugbar_discovered']           = $debugBar['discovered_blocks'] + $debugBar['discovered_extensions'];
+        self::$Survey['counts']['debugbar_presets']              = $debugBar['presets'];
+        self::$Survey['counts']['debugbar_problems']             = count( $debugBar['problems'] );
+
         $total = 0;
         foreach ( array_keys( self::totalGroups() ) as $group )
             $total += self::$Survey['counts'][$group];
@@ -443,9 +454,18 @@ class expRADSurvey
                 'ini'       => 'ezjscore.ini',
                 'section'   => '/^ezjscServer_(.+)$/',
                 'variables' => array( 'Class' => '' ) ),
-            // The debug bar's panels, once settings/debugbar.ini is there, are one more entry here, e.g.
-            // 'debugbar' => array( 'title' => 'Debug bar panels', 'ini' => 'debugbar.ini',
-            //                      'section' => '<its section>', 'variables' => array( '<its variable>' => '<its interface>' ) ),
+            // The Exp Debug bar's settings and presets (settings/debugbar.ini and every extension's
+            // debugbar.ini.append.php). Their entries name no class, so they are added to the total once.
+            'debugbar'        => array(
+                'title'     => 'Debug bar settings',
+                'ini'       => 'debugbar.ini',
+                'section'   => '/^Setting_(.+)$/',
+                'variables' => array( 'Type' => 'debugbar-type' ) ),
+            'debugbarpresets' => array(
+                'title'     => 'Debug bar presets',
+                'ini'       => 'debugbar.ini',
+                'section'   => '/^Preset_(.+)$/',
+                'variables' => array( 'Name' => 'debugbar-preset' ) ),
         );
     }
 
@@ -537,6 +557,30 @@ class expRADSurvey
     }
 
     /**
+     * The Exp Debug bar's registry as expDebugBarRegistry::survey() reads it (settings registered by the kernel and
+     * by extensions, discovered debug switches, presets, problems), zeros when the class is not there.
+     *
+     * @return array settings, registered, kernel, extension_registered, discovered_blocks, discovered_extensions,
+     *               presets, extensions, problems
+     */
+    public static function debugBar()
+    {
+        $empty = array( 'settings' => 0, 'registered' => 0, 'kernel' => 0, 'extension_registered' => 0,
+                        'discovered_blocks' => 0, 'discovered_extensions' => 0, 'presets' => 0,
+                        'extensions' => array(), 'problems' => array() );
+        if ( !class_exists( 'expDebugBarRegistry' ) )
+            return $empty;
+        try
+        {
+            return ( new expDebugBarRegistry() )->survey() + $empty;
+        }
+        catch ( Exception $e )
+        {
+            return $empty;
+        }
+    }
+
+    /**
      * Why a registry entry cannot work, or '' when it can.
      *
      * Existence is read out of the autoload maps (fileOf()), as everywhere in this survey; only a class that
@@ -548,6 +592,12 @@ class expRADSurvey
      */
     public static function registryProblem( $value, $what )
     {
+        if ( $what === 'debugbar-type' )
+            return in_array( strtolower( trim( $value ) ), array( 'bool', 'enum', 'list', 'text', 'iplist', 'userlist' ), true )
+                   ? '' : 'Type is not one of bool, enum, list, text, iplist, userlist';
+        if ( $what === 'debugbar-preset' )
+            return trim( $value ) === '' ? 'a preset needs a name' : '';
+
         if ( $what === 'template' )
         {
             $path = preg_replace( '/^design:/', '', $value );
