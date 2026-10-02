@@ -1952,3 +1952,64 @@ Each refusal must produce `access.permission.refused`; each allowed console use 
 The admin dashboard shows setup features (and other module views editors may not use) to every user who can open
 the dashboard. It must show each block and link only when the current user has access to the module/view behind it,
 checked the way the kernel checks it (`eZUser::hasAccessTo()` with limitations), not by role name. Fixed in stage 1.
+
+### Stage 1 results (2026-10-02)
+
+**Inventory.** 99 configured targets reach the admin dashboard page: 13 top tabs (`menu.ini [TopAdminMenu]`), 65
+left menu links (`[Leftmenu_*]`, all drawn by `parts/ini_menu.tpl`; the dashboard's own is `Leftmenu_my`, 8 links),
+4 dashboard blocks (`dashboard.ini`) and 17 fixed links of the admin4 dashboard template; besides them the right
+menu tools (current user, clear cache, bookmarks, quick settings), the node context menus and the debug bar. As the
+administrator sees it, the page carries 61 distinct links and form targets.
+
+**What was shown to whom.** Measured before the fix with a pure Editor and a subtree-limited Editor (the Editors
+group's role set): the top tabs Design, Newsletter and Export; the dashboard's quick actions Users, Upload files,
+Tags and Layouts; the key figures Users and In the trash; the author links of "All latest content" (user nodes the
+editor may not read); "Change password" in the right menu (the Editor role alone has no `user/password`); the context
+menu's "Change content class"; the "Stay secure" card with its two Setup-only steps for everyone. The dashboard's
+Setup links were checked with `setup/administrate` while their views need `setup/system_info`, `setup/setup` and
+`setup/managecache`: a role with only `setup/administrate` saw links it could not open. Anonymous, Member and Partner
+cannot sign in to the admin siteaccess at all (their `user/login` has no admin SiteAccess) and got the sign-in page.
+
+**The fix.** `expViewAccess` (kernel/classes/expviewaccess.php) answers whether the current user can open an
+address, decided the way `ezpKernelWeb` decides the request: URL alias and wildcard translation (a moved alias is
+followed), module and view, `[SiteAccessRules]`, `RequireUserLogin` with `AnonymousAccessList`, `PolicyOmitList`,
+the `user/login` SiteAccess limitation, `eZUser::hasAccessToView()` with the view's functions and limitations (a
+view without functions needs its module), and the node or object of `content/view`, `content/edit` and `user/edit`.
+Templates ask `fetch( 'user', 'can_open', hash( 'uri', 'setup/cache' ) )`. Used by:
+
+- the top tabs (`eZTopMenuOperator`): a tab's URL must open, on top of its `PolicyList`;
+- every left menu (`parts/ini_menu.tpl`, admin and admin4): a link the user cannot open is left out
+  (`NoAccessLinks=disabled` keeps the 4.x greyed-out name), a menu with no link left is left out;
+- the dashboard blocks: `ViewList[]` per block in `dashboard.ini`, checked with `PolicyList[]` in
+  `Dashboard::visibleBlocks()` before a block renders;
+- the admin4 dashboard: each quick action, key figure, system link and the "Stay secure" card; the author link of
+  "All latest content"; "Change password" of the current user tool; the change-class context menu entries
+  (`changeclass/convert`, in the expchangeclass extension).
+
+New settings, documented in the files: `menu.ini [MenuAccessSettings] CheckViewAccess` (enabled) and `NoAccessLinks`
+(hidden); `dashboard.ini [DashboardBlock_*] ViewList[]`. Corrected entries: `Topmenu_design` reads the design root
+node, `Topmenu_dashboard` and the `Leftmenu_my` dashboard link need `content/dashboard`, `edit_profile` lost its
+`user/selfedit` PolicyList (the profile is edited through `content/edit`; the object's own `canEdit()` decides). The
+cache-block around the footer and context menu of the admin, admin3 and admin4 pagelayouts is keyed by the user's
+roles too, since the context menu now differs by policy.
+
+**Permission matrix (A1), Apache, `/admin` and `/admintest_admin4`, 960 px at scale 2.** Test users in a temporary
+group, one per role set: Anonymous; Member (+Anonymous, as the Members group); Partner (+Member, +Anonymous, as the
+Partners group); Editor; Editor limited to the subtrees of the Editors group (+Member); Administrator; and the
+installation's own admin. Every visible link and form target was requested with the user's session (must open:
+200, no access-denied page, no sign-in form); every link the test administrator sees that the user does not was
+requested directly (must be refused). Both siteaccesses gave the same result:
+
+| User | Dashboard | Visible | open | Hidden (administrator sees) | refused |
+|---|---|---|---|---|---|
+| Anonymous | sign-in page | – | – | 44 | 44 |
+| Member | sign-in page | – | – | 44 | 44 |
+| Partner | sign-in page | – | – | 44 | 44 |
+| Editor | opens | 26 | 26 | 21 | 21 |
+| Editor, subtree-limited | opens | 27 | 27 | 20 | 20 |
+| Administrator (test) | opens | 48 | 48 | 0 | 0 |
+| admin | opens | 61 | 61 | 0 | 0 |
+
+0 failures (336 checks per siteaccess); before the fix both editors were shown the links listed above. Unit
+tests: `tests/tests/kernel/classes/expViewAccessTest.php` (live database, 14 tests). The test users and their group
+were removed afterwards. Velocity (port 8080) is checked after its restart with the same matrix.
