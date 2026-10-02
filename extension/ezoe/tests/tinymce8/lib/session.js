@@ -22,7 +22,11 @@ class Session
         page.on( 'dialog', d => d.accept() );
         // the current test step, set by run.js, so browser errors can be attributed
         this.currentStep = '';
-        page.on( 'pageerror', e => this.logs.push( 'pageerror' + ( this.currentStep ? ' [' + this.currentStep + ']' : '' ) + ': ' + ( e.message || e ) ) );
+        page.on( 'pageerror', e => {
+            // the first frames of the stack show whether an error comes from the page or from the tests
+            const where = String( e.stack || '' ).split( '\n' ).map( l => l.trim() ).filter( Boolean ).slice( 0, 2 ).join( ' < ' );
+            this.logs.push( 'pageerror' + ( this.currentStep ? ' [' + this.currentStep + ']' : '' ) + ': ' + ( e.message || e ) + ( where ? ' @ ' + where : '' ) );
+        } );
         page.on( 'console', m => {
             if ( /warn|error/.test( m.type() ) && !/JQMIGRATE|TagsStructureMenu|Base'|lacks a "sizes"|Failed to load resource/.test( m.text() ) )
                 this.logs.push( 'console.' + m.type() + ( this.currentStep ? ' [' + this.currentStep + ']' : '' ) + ': ' + m.text() );

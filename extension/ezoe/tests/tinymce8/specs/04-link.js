@@ -104,9 +104,10 @@ module.exports = {
             await s.type( 'Text to display|Linktext', 'Startseite' );
             await s.ok();
             await s.dialogClosed();
-            t.check( !!( await link( 'Startseite' ) ), 'link with own text inserted' );
+            t.check( !!( await link( 'Startseite' ) ), 'link with own text inserted', await s.evalEditor( e => e.getBody().querySelectorAll( 'p' )[2].innerHTML ) );
 
-            await s.typeAndSelect( 'p', 2, 'Mail' );
+            // not right after the "Startseite" link: Chrome keeps the cursor inside a link at its end
+            await s.typeAndSelect( 'p', 0, 'Mail' );
             await s.clickToolbar( 'ezlink' );
             await s.dialogOpen();
             await s.type( 'URL', 'mailto:info@example.org' );
@@ -127,7 +128,7 @@ module.exports = {
             t.check( /<link target="_blank"[^>]*xhtml:title="Beispiel &amp; Titel"[^>]*node_id="\d+"/.test( xml ), 'node link with target and title', ( xml.match( /<link[^>]*>/g ) || [] ) );
             t.check( /<link object_id="\d+">Objektlink/.test( xml ), 'object link stored' );
             t.check( /<anchor name="sprungmarke"\/>/.test( xml ) && /<link anchor_name="sprungmarke">/.test( xml ), 'anchor and anchor link stored' );
-            t.check( /<link node_id="2">Startseite/.test( xml ), 'link with own text stored' );
+            t.check( /<link node_id="2">Startseite/.test( xml ), 'link with own text stored', ( xml.match( /.{0,60}Startseite.{0,30}/ ) || [ 'no "Startseite" in the ezxml' ] )[0] );
             await s.store();
             const again = s.storedXml();
             t.check( normalizeXml( again ) === normalizeXml( xml ), 'storing again changes nothing (besides xmlns:tmp of the parser)', firstDifference( normalizeXml( xml ), normalizeXml( again ) ) );
