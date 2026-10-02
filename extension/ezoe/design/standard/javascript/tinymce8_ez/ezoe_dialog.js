@@ -300,6 +300,11 @@ window.eZOe8Dialog = (function () {
         var select = document.querySelector( '.tox-dialog select.ezoe-class-filter' ), index;
         if ( !select )
             return;
+        if ( classFilterScroll !== null )
+        {
+            select.scrollTop = classFilterScroll;
+            return;
+        }
         index = Array.prototype.findIndex.call( select.options, function ( o ) {
             return o.selected;
         } );
@@ -307,11 +312,15 @@ window.eZOe8Dialog = (function () {
             select.scrollTop = Math.max( 0, index * ( select.scrollHeight / select.options.length ) - select.clientHeight / 3 );
     };
 
+    // scroll position of the class filter, kept over a rebuild of the dialog by revealClassFilter()
+    var classFilterScroll = null;
+
     // Selected class ids of the open dialog, empty for all
     var readClassFilter = function () {
         var select = document.querySelector( '.tox-dialog select.ezoe-class-filter' );
         if ( !select )
             return null;
+        classFilterScroll = select.scrollTop;
         return Array.prototype.filter.call( select.options, function ( o ) {
             return o.selected && o.value;
         } ).map( function ( o ) {

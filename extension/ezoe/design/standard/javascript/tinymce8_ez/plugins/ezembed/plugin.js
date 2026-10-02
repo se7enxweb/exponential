@@ -405,7 +405,14 @@
                     ],
                     onTabChange: function ( dialogApi, details ) {
                         state.tab = details.newTabName;
-                        if ( state.tab === 'browse' && !state.browse )
+                        if ( state.tab === 'upload' && state.locationsPending && !state.redialing )
+                        {
+                            state.locationsPending = false;
+                            var d = dialogApi.getData();
+                            if ( !d.uploadFile || !d.uploadFile.length )
+                                redial( dialogApi );
+                        }
+                        else if ( state.tab === 'browse' && !state.browse )
                             load( dialogApi, 'browse', D.browse( settings(), settings().root_node || 2, 0 ) );
                         else if ( state.tab === 'bookmarks' && !state.bookmarks )
                             load( dialogApi, 'bookmarks', D.bookmarks( settings(), 0 ) );
@@ -528,9 +535,11 @@
                 // fields that are not in the dialog right now (e.g. the size before an image is chosen) keep their value
                 data = Object.assign( {}, data, dialogApi.getData(), changes || {} );
                 dialogApi.unblock();
+                state.redialing = true;
                 dialogApi.redial( spec() );
                 state.tab = tab;
                 dialogApi.showTab( tab );
+                state.redialing = false;
                 D.revealClassFilter();
                 loadObjectInfo( dialogApi );
             };
@@ -695,10 +704,14 @@
                 locationsPromise = locationsPromise || D.uploadLocations( settings() );
                 locationsPromise.then( function ( list ) {
                     locations = list;
-                    // only rebuild while nothing is chosen in the dropzone, files can not be put back into it
+                    // the dialog is only rebuilt for the locations while the upload tab is shown and nothing is
+                    // chosen in the dropzone (files can not be put back into it); a rebuild on another tab
+                    // would take the focus away, e.g. from the class filter of the search
                     var d = api.getData();
-                    if ( state.choosing && ( !d.uploadFile || !d.uploadFile.length ) )
+                    if ( state.choosing && state.tab === 'upload' && ( !d.uploadFile || !d.uploadFile.length ) )
                         redial( api );
+                    else
+                        state.locationsPending = true;
                 } ).catch( function () {
                     locations = [ { text: 'auto', value: 'auto' } ];
                 } );
@@ -784,8 +797,9 @@
         // Like the TinyMCE 3 ez theme: only the textarea content is cleaned up, not the editor.
         // The preview markup inside embed tags is replaced by 'ezembed' (see issue 18264) and
         // ezoeAlign* helper classes are removed (see EZP-22487).
-        editor.on( 'SaveContent', function ( e ) {
-            if ( !e.content )
+        // GetContent with e.save: changes in SaveContent do not reach the textarea in TinyMCE 8
+        editor.on( 'GetContent', function ( e ) {
+            if ( !e.save || typeof e.content !== 'string' || !e.content )
                 return;
 
             var doc = new DOMParser().parseFromString( '<!DOCTYPE html><html><body>' + e.content + '</body></html>', 'text/html' );

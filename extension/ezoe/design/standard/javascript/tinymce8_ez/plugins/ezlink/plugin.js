@@ -435,6 +435,24 @@
             scope: 'node'
         } );
 
+        // TinyMCE 8 writes anchors as <a id="name"></a>, eZOEInputParser::tagNameLink() only knows
+        // <a name="name"> (eZOEXMLInput writes <a name="name" class="mceItemAnchor"></a>), so anchors
+        // are saved in that form, otherwise they would be lost.
+        // GetContent with e.save: changes in SaveContent do not reach the textarea in TinyMCE 8
+        editor.on( 'GetContent', function ( e ) {
+            if ( !e.save || typeof e.content !== 'string' || e.content.indexOf( '<a' ) === -1 )
+                return;
+            var doc = new DOMParser().parseFromString( '<!DOCTYPE html><html><body>' + e.content + '</body></html>', 'text/html' ), changed = false;
+            doc.body.querySelectorAll( 'a[id]:not([href]):not([name])' ).forEach( function ( a ) {
+                a.setAttribute( 'name', a.getAttribute( 'id' ) );
+                a.removeAttribute( 'id' );
+                a.classList.add( 'mceItemAnchor' );
+                changed = true;
+            } );
+            if ( changed )
+                e.content = doc.body.innerHTML;
+        } );
+
         // Ctrl+K opens this dialog instead of the one of the TinyMCE link plugin
         editor.on( 'init', function () {
             editor.addShortcut( 'meta+k', '', 'ezLink' );
