@@ -55,7 +55,7 @@ day, which is stage 1.
 | Z2 | Placement | **A new `audit` module with its own top tab** (console, event, archives, settings), **dashboard sidebar link + block** (recent security events, alerts), **links from content/job and content/jobs** (the job's audit trail), **the Setup menu** |
 | Z3 | API | **`expAudit::event()`** (the old `eZAudit::writeAudit()` keeps working and maps to it), **template operator/fetch** (policy checked), **ezpEvent bridge** (audit existing kernel events by INI mapping), **command `exp:audit`** (tail, search, verify, rotate, archive, reindex, export, import) |
 | Z4 | Old logs | **Imported** into the new format (marked imported, outside the chain); originals archived |
-| Z5 | Default | **On** for access, security, system/config and destructive content actions; read tracking off |
+| Z5 | Default | **On by default in every installation** (owner, 2026-10-02: "enabled in a default installation by default conventions, vs ezp4 where it was off"): the shipped `settings/audit.ini` has `Audit=enabled` with access, security, system/config and destructive content actions on; read tracking off. See "Default installation" |
 | Z6 | Reads | **Optional, sampled**: node views and searches per section/class with a sample rate; views of sensitive admin modules (setup, role, user, audit) always |
 | Z7 | Key | **Generated on first use, stored in settings/override** (never committed), shown as a fingerprint; key rotation with key ids in archives |
 | Z8 | Delivery | **Stages with sign-off** (below) |
@@ -96,6 +96,26 @@ consumers unchanged.
  "result":"success","reason":null,"parent":null,"job":null,
  "prev":"sha256:9b1c…","hash":"sha256:41aa…"}
 ```
+
+## Default installation
+
+Audit is a convention of the product, not an option one remembers to switch on. Unlike the 4.x releases, where
+`audit.ini` shipped with `Audit=disabled`:
+
+- `settings/audit.ini` ships with `Audit=enabled`; the families access, security, system/config and the
+  destructive content actions (remove, trash, move, hide, section, state, role and policy changes, content jobs)
+  are on; read tracking (node views, searches) is off; the channels, rotation, 90 days live / 2 years archived,
+  privacy defaults (truncated IPs, user agent on, no passwords or tokens) and the hash chain are on.
+- Every way an installation is made gets it with no extra step: the setup wizard, `exp:install`, kickstarter, the
+  multisite package installer and an upgrade of an existing installation (whose `settings/override` may still say
+  `Audit=disabled` from the 4.x releases: the upgrade reports that override and asks before keeping it).
+- The archive signing key is generated on the first event, so a fresh installation never runs unsigned.
+- The log directory is created with the site user's ownership, also when the first event comes from a command run
+  as root.
+- Turning it off is an explicit, audited decision: `Audit=disabled` written anywhere is itself recorded as
+  `system.audit.disable` before it takes effect, and the dashboard shows an "audit is off" warning to users with
+  audit/manage.
+- The performance budget (stage 6) is measured with these defaults on, since that is what every site runs.
 
 ## Delivery (Z8) — each stage committed and shown before the next
 
