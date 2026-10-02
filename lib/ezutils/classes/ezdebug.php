@@ -1921,12 +1921,34 @@ class eZDebug
             // The debug details open and close with a click on the header. "Keep open on reload" remembers
             // the state in the browser's localStorage (exp-debug-keep, exp-debug-open); unticked, the details
             // start closed on every page. Storage that throws (private windows, blocked site data) is ignored.
+            // The bar stays at the bottom of the window wherever the page is scrolled, and the details open
+            // as a panel above it that scrolls on its own, so the report is reachable from the top of a long
+            // page. Inline, so every design (admin and public, with or without debug.css) gets it.
+            echo "<style>
+#debug { margin-bottom: 0; }
+#debug > h2 { position: fixed; left: 0; right: 0; bottom: 0; z-index: 2147483000; margin: 0;
+  display: flex; align-items: center; background: #f2f2f2; border-top: 1px solid #999;
+  box-shadow: 0 -2px 6px rgba(0,0,0,.15); font-size: 14px; }
+#debug > h2 > a { flex: 1; padding: 8px 12px; color: #222; text-decoration: none; }
+#debug > h2 > label.debug-keep-open { margin-right: 12px; color: #222; }
+#debug-details.active { position: fixed; left: 0; right: 0; bottom: 38px; z-index: 2147482999;
+  max-height: 60vh; overflow: auto; background: #fff; border-top: 2px solid #999;
+  box-shadow: 0 -4px 12px rgba(0,0,0,.2); box-sizing: border-box; }
+body.exp-debug-bar { padding-bottom: 46px; }
+@media (prefers-color-scheme: dark) {
+  #debug > h2 { background: #2a2a2a; border-top-color: #555; }
+  #debug > h2 > a, #debug > h2 > label.debug-keep-open { color: #eee; }
+}
+</style>";
             echo "<script>
 (function () {
   const header = document.querySelector('#debug h2 a');
   const content = document.querySelector('#debug-details');
-  const anchor = document.querySelector('#debug-end');
+  const anchor = null;
   if (!header || !content) return;
+  document.body.classList.add('exp-debug-bar');
+  // The link's #debug-end jump would scroll the page away; the panel opens in place instead.
+  header.addEventListener('click', (e) => e.preventDefault());
   const read = (key) => { try { return window.localStorage.getItem(key); } catch (e) { return null; } };
   const write = (key, value) => { try { window.localStorage.setItem(key, value); } catch (e) {} };
   const setOpen = (open) => {
