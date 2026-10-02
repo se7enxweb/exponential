@@ -47795,4 +47795,735 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Eine Statusnummer unter 1000, die diese Version nicht kennt. Zählt als offen.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/debugbar</name>
+    <message>
+        <source>Messages</source>
+        <translation>Meldungen</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>Cache</source>
+        <translation>Cache</translation>
+    </message>
+    <message>
+        <source>Timing</source>
+        <translation>Zeiten</translation>
+    </message>
+    <message>
+        <source>SQL</source>
+        <translation>SQL</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>Included files</source>
+        <translation>Eingebundene Dateien</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>Speicher</translation>
+    </message>
+    <message>
+        <source>Velocity</source>
+        <translation>Velocity</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Weitere</translation>
+    </message>
+    <message>
+        <source>Debug report sections</source>
+        <translation>Bereiche des Debug-Berichts</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Filter settings and report rows</source>
+        <translation>Einstellungen und Berichtszeilen filtern</translation>
+    </message>
+    <message>
+        <source>No rows match the filter.</source>
+        <translation>Keine Zeile passt zum Filter.</translation>
+    </message>
+    <message>
+        <source>%count rows match</source>
+        <translation>%count Zeilen passen</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Filter leeren</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Errors</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>Warnings</source>
+        <translation>Warnungen</translation>
+    </message>
+    <message>
+        <source>Notices</source>
+        <translation>Hinweise</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>Debug</translation>
+    </message>
+    <message>
+        <source>Timing points</source>
+        <translation>Zeitpunkte</translation>
+    </message>
+    <message>
+        <source>Strict</source>
+        <translation>Strict</translation>
+    </message>
+    <message>
+        <source>Show messages</source>
+        <translation>Meldungen anzeigen</translation>
+    </message>
+    <message>
+        <source>Sort by time</source>
+        <translation>Nach Zeit sortieren</translation>
+    </message>
+    <message>
+        <source>Sort by order</source>
+        <translation>Nach Reihenfolge sortieren</translation>
+    </message>
+    <message>
+        <source>Slowest first</source>
+        <translation>Langsamste zuerst</translation>
+    </message>
+    <message>
+        <source>Loading...</source>
+        <translation>Wird geladen...</translation>
+    </message>
+    <message>
+        <source>Could not load: %error</source>
+        <translation>Konnte nicht geladen werden: %error</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation>Erneut versuchen</translation>
+    </message>
+    <message>
+        <source>Sign in with a user who may change settings (setup/setup) to change them here.</source>
+        <translation>Melden Sie sich mit einem Benutzer an, der Einstellungen ändern darf (setup/setup), um sie hier zu ändern.</translation>
+    </message>
+    <message>
+        <source>The settings service is not available yet. The classic controls below still work.</source>
+        <translation>Der Einstellungsdienst ist noch nicht verfügbar. Die klassischen Bedienelemente unten funktionieren weiterhin.</translation>
+    </message>
+    <message>
+        <source>Effective value</source>
+        <translation>Wirksamer Wert</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Stammt aus</translation>
+    </message>
+    <message>
+        <source>Write to</source>
+        <translation>Schreiben nach</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Anwenden</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Angewendet</translation>
+    </message>
+    <message>
+        <source>Not changed</source>
+        <translation>Nicht geändert</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Hilfe</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>global override</source>
+        <translation>globale Überschreibung</translation>
+    </message>
+    <message>
+        <source>siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>extension</source>
+        <translation>Erweiterung</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nicht gesetzt</translation>
+    </message>
+    <message>
+        <source>enabled</source>
+        <translation>aktiviert</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>deaktiviert</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>an</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>One entry per line</source>
+        <translation>Ein Eintrag pro Zeile</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Hinzufügen</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Bezeichnung</translation>
+    </message>
+    <message>
+        <source>Expires</source>
+        <translation>Läuft ab</translation>
+    </message>
+    <message>
+        <source>For 1 hour</source>
+        <translation>Für 1 Stunde</translation>
+    </message>
+    <message>
+        <source>Today</source>
+        <translation>Heute</translation>
+    </message>
+    <message>
+        <source>Until removed</source>
+        <translation>Bis zum Entfernen</translation>
+    </message>
+    <message>
+        <source>Add my IPv4 address</source>
+        <translation>Meine IPv4-Adresse hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add my IPv6 address</source>
+        <translation>Meine IPv6-Adresse hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add my /24</source>
+        <translation>Mein /24 hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add my /64</source>
+        <translation>Mein /64 hinzufügen</translation>
+    </message>
+    <message>
+        <source>Your address as the server sees it: %ip</source>
+        <translation>Ihre Adresse, wie der Server sie sieht: %ip</translation>
+    </message>
+    <message>
+        <source>This request matched: %entry</source>
+        <translation>Diese Anfrage passte zu: %entry</translation>
+    </message>
+    <message>
+        <source>This request matched no entry.</source>
+        <translation>Diese Anfrage passte zu keinem Eintrag.</translation>
+    </message>
+    <message>
+        <source>IPv4 or IPv6 address or CIDR range, for example 192.0.2.10, 192.0.2.0/24, 2001:db8::/64</source>
+        <translation>IPv4- oder IPv6-Adresse oder CIDR-Bereich, zum Beispiel 192.0.2.10, 192.0.2.0/24, 2001:db8::/64</translation>
+    </message>
+    <message>
+        <source>Not a valid IPv4 or IPv6 address or CIDR range.</source>
+        <translation>Keine gültige IPv4- oder IPv6-Adresse und kein gültiger CIDR-Bereich.</translation>
+    </message>
+    <message>
+        <source>A prefix length must be 0 to 32 for IPv4.</source>
+        <translation>Die Präfixlänge muss bei IPv4 zwischen 0 und 32 liegen.</translation>
+    </message>
+    <message>
+        <source>A prefix length must be 0 to 128 for IPv6.</source>
+        <translation>Die Präfixlänge muss bei IPv6 zwischen 0 und 128 liegen.</translation>
+    </message>
+    <message>
+        <source>Already in the list.</source>
+        <translation>Bereits in der Liste.</translation>
+    </message>
+    <message>
+        <source>Test an address</source>
+        <translation>Eine Adresse prüfen</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Prüfen</translation>
+    </message>
+    <message>
+        <source>matches %entry</source>
+        <translation>passt zu %entry</translation>
+    </message>
+    <message>
+        <source>matches no entry</source>
+        <translation>passt zu keinem Eintrag</translation>
+    </message>
+    <message>
+        <source>Warning: your own address is not in the list. Applying it locks you out of the debug output.</source>
+        <translation>Warnung: Ihre eigene Adresse steht nicht in der Liste. Wenn Sie sie anwenden, sehen Sie die Debug-Ausgabe nicht mehr.</translation>
+    </message>
+    <message>
+        <source>Warning: the list is empty. With &quot;Debug by IP&quot; on, nobody gets the debug output.</source>
+        <translation>Warnung: Die Liste ist leer. Mit eingeschaltetem &quot;Debug nach IP&quot; erhält niemand die Debug-Ausgabe.</translation>
+    </message>
+    <message>
+        <source>Warning: %entry opens the debug output to everyone.</source>
+        <translation>Warnung: %entry öffnet die Debug-Ausgabe für alle.</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>abgelaufen</translation>
+    </message>
+    <message>
+        <source>expires %time</source>
+        <translation>läuft ab %time</translation>
+    </message>
+    <message>
+        <source>Add me</source>
+        <translation>Mich hinzufügen</translation>
+    </message>
+    <message>
+        <source>Find a user</source>
+        <translation>Benutzer suchen</translation>
+    </message>
+    <message>
+        <source>User ID or name</source>
+        <translation>Benutzer-ID oder Name</translation>
+    </message>
+    <message>
+        <source>No user found.</source>
+        <translation>Kein Benutzer gefunden.</translation>
+    </message>
+    <message>
+        <source>Warning: you are not in the list. Applying it locks you out of the debug output.</source>
+        <translation>Warnung: Sie stehen nicht in der Liste. Wenn Sie sie anwenden, sehen Sie die Debug-Ausgabe nicht mehr.</translation>
+    </message>
+    <message>
+        <source>Presets</source>
+        <translation>Voreinstellungen</translation>
+    </message>
+    <message>
+        <source>Apply preset</source>
+        <translation>Voreinstellung anwenden</translation>
+    </message>
+    <message>
+        <source>Revert preset</source>
+        <translation>Voreinstellung zurücknehmen</translation>
+    </message>
+    <message>
+        <source>Save current as preset</source>
+        <translation>Aktuelle Werte als Voreinstellung speichern</translation>
+    </message>
+    <message>
+        <source>Preset name</source>
+        <translation>Name der Voreinstellung</translation>
+    </message>
+    <message>
+        <source>Preset &quot;%name&quot; applied.</source>
+        <translation>Voreinstellung &quot;%name&quot; angewendet.</translation>
+    </message>
+    <message>
+        <source>Preset reverted.</source>
+        <translation>Voreinstellung zurückgenommen.</translation>
+    </message>
+    <message>
+        <source>Change log</source>
+        <translation>Änderungsprotokoll</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Rückgängig</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Rückgängig gemacht</translation>
+    </message>
+    <message>
+        <source>No changes yet.</source>
+        <translation>Noch keine Änderungen.</translation>
+    </message>
+    <message>
+        <source>%user changed %setting from %old to %new in %scope</source>
+        <translation>%user hat %setting von %old auf %new geändert in %scope</translation>
+    </message>
+    <message>
+        <source>Extension switches</source>
+        <translation>Schalter der Erweiterungen</translation>
+    </message>
+    <message>
+        <source>Reload the page to see the effect.</source>
+        <translation>Laden Sie die Seite neu, um die Wirkung zu sehen.</translation>
+    </message>
+    <message>
+        <source>Reload now</source>
+        <translation>Jetzt neu laden</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Leeren</translation>
+    </message>
+    <message>
+        <source>Cleared</source>
+        <translation>Geleert</translation>
+    </message>
+    <message>
+        <source>Clearing...</source>
+        <translation>Wird geleert...</translation>
+    </message>
+    <message>
+        <source>Last cleared: %time</source>
+        <translation>Zuletzt geleert: %time</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>This page only</source>
+        <translation>Nur diese Seite</translation>
+    </message>
+    <message>
+        <source>Clears the view cache of the node this page shows.</source>
+        <translation>Leert den View-Cache des Knotens, den diese Seite zeigt.</translation>
+    </message>
+    <message>
+        <source>This page is not a content node.</source>
+        <translation>Diese Seite ist kein Inhaltsknoten.</translation>
+    </message>
+    <message>
+        <source>Velocity response cache</source>
+        <translation>Antwort-Cache von Velocity</translation>
+    </message>
+    <message>
+        <source>Clears the pages Velocity keeps in memory.</source>
+        <translation>Leert die Seiten, die Velocity im Speicher hält.</translation>
+    </message>
+    <message>
+        <source>OPcache</source>
+        <translation>OPcache</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Memory used</source>
+        <translation>Belegter Speicher</translation>
+    </message>
+    <message>
+        <source>Hit rate</source>
+        <translation>Trefferquote</translation>
+    </message>
+    <message>
+        <source>Cached scripts</source>
+        <translation>Zwischengespeicherte Skripte</translation>
+    </message>
+    <message>
+        <source>Not available</source>
+        <translation>Nicht verfügbar</translation>
+    </message>
+    <message>
+        <source>By tag</source>
+        <translation>Nach Tag</translation>
+    </message>
+    <message>
+        <source>By ID</source>
+        <translation>Nach ID</translation>
+    </message>
+    <message>
+        <source>All caches</source>
+        <translation>Alle Caches</translation>
+    </message>
+    <message>
+        <source>You may not clear caches (setup/managecache).</source>
+        <translation>Sie dürfen keine Caches leeren (setup/managecache).</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Antwort-Cache</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Engine</translation>
+    </message>
+    <message>
+        <source>Not running on Velocity.</source>
+        <translation>Läuft nicht auf Velocity.</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <source>Open the debug report</source>
+        <translation>Debug-Bericht öffnen</translation>
+    </message>
+    <message>
+        <source>(By User)</source>
+        <translation>(nach Benutzer)</translation>
+    </message>
+    <message>
+        <source>(By IP Address)</source>
+        <translation>(nach IP-Adresse)</translation>
+    </message>
+    <message>
+        <source>Debug report</source>
+        <translation>Debug-Bericht</translation>
+    </message>
+    <message>
+        <source>Classic controls</source>
+        <translation>Klassische Bedienelemente</translation>
+    </message>
+    <message>
+        <source>Template usage is not recorded. Turn on &quot;Show used templates&quot; (TemplateSettings ShowUsedTemplates) in the Settings tab.</source>
+        <translation>Die Template-Nutzung wird nicht aufgezeichnet. Schalten Sie &quot;Verwendete Templates anzeigen&quot; (TemplateSettings ShowUsedTemplates) im Reiter Einstellungen ein.</translation>
+    </message>
+    <message>
+        <source>Time used to render debug report: %time secs</source>
+        <translation>Zeit für die Ausgabe des Debug-Berichts: %time s</translation>
+    </message>
+    <message>
+        <source>Page time</source>
+        <translation>Seitenzeit</translation>
+    </message>
+    <message>
+        <source>%count SQL</source>
+        <translation>%count SQL</translation>
+    </message>
+    <message>
+        <source>SQL queries and their time</source>
+        <translation>SQL-Abfragen und ihre Zeit</translation>
+    </message>
+    <message>
+        <source>Peak memory</source>
+        <translation>Speicherspitze</translation>
+    </message>
+    <message>
+        <source>%count tpl</source>
+        <translation>%count tpl</translation>
+    </message>
+    <message>
+        <source>Templates used</source>
+        <translation>Verwendete Templates</translation>
+    </message>
+    <message>
+        <source>%count warn</source>
+        <translation>%count Warn.</translation>
+    </message>
+    <message>
+        <source>%count err</source>
+        <translation>%count Fehler</translation>
+    </message>
+    <message>
+        <source>Page summary</source>
+        <translation>Zusammenfassung der Seite</translation>
+    </message>
+    <message>
+        <source>high</source>
+        <translation>hoch</translation>
+    </message>
+    <message>
+        <source>raised</source>
+        <translation>erhöht</translation>
+    </message>
+    <message>
+        <source>normal</source>
+        <translation>normal</translation>
+    </message>
+    <message>
+        <source>Timing points:</source>
+        <translation>Zeitpunkte:</translation>
+    </message>
+    <message>
+        <source>Checkpoint</source>
+        <translation>Messpunkt</translation>
+    </message>
+    <message>
+        <source>Start (sec)</source>
+        <translation>Start (s)</translation>
+    </message>
+    <message>
+        <source>Duration (sec)</source>
+        <translation>Dauer (s)</translation>
+    </message>
+    <message>
+        <source>Memory at start (KB)</source>
+        <translation>Speicher zu Beginn (KB)</translation>
+    </message>
+    <message>
+        <source>Memory used (KB)</source>
+        <translation>Verbrauchter Speicher (KB)</translation>
+    </message>
+    <message>
+        <source>Accumulator</source>
+        <translation>Akkumulator</translation>
+    </message>
+    <message>
+        <source>Duration (%)</source>
+        <translation>Dauer (%)</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation>Anzahl</translation>
+    </message>
+    <message>
+        <source>Average (sec)</source>
+        <translation>Durchschnitt (s)</translation>
+    </message>
+    <message>
+        <source>Time accumulators:</source>
+        <translation>Zeit-Akkumulatoren:</translation>
+    </message>
+    <message>
+        <source>Note: percentages do not add up to 100% because some accumulators overlap</source>
+        <translation>Hinweis: Die Prozentwerte ergeben nicht 100 %, weil sich manche Akkumulatoren überschneiden</translation>
+    </message>
+    <message>
+        <source>Queries</source>
+        <translation>Abfragen</translation>
+    </message>
+    <message>
+        <source>Time in queries</source>
+        <translation>Zeit in Abfragen</translation>
+    </message>
+    <message>
+        <source>Average</source>
+        <translation>Durchschnitt</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Datenbank</translation>
+    </message>
+    <message>
+        <source>No statements were recorded for this page.</source>
+        <translation>Für diese Seite wurden keine Anweisungen aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>The statements are not recorded. Turn on &quot;SQL output&quot; (DatabaseSettings SQLOutput) in the Settings tab.</source>
+        <translation>Die Anweisungen werden nicht aufgezeichnet. Schalten Sie &quot;SQL-Ausgabe&quot; (DatabaseSettings SQLOutput) im Reiter Einstellungen ein.</translation>
+    </message>
+    <message>
+        <source>Slowest: %ms ms (statement %n)</source>
+        <translation>Langsamste: %ms ms (Anweisung %n)</translation>
+    </message>
+    <message>
+        <source>%count PHP files were included. Turn on &quot;Display included files&quot; (DebugSettings DisplayIncludedFiles) in the Settings tab to list them.</source>
+        <translation>%count PHP-Dateien wurden eingebunden. Schalten Sie &quot;Eingebundene Dateien anzeigen&quot; (DebugSettings DisplayIncludedFiles) im Reiter Einstellungen ein, um sie aufzulisten.</translation>
+    </message>
+    <message>
+        <source>Included files:</source>
+        <translation>Eingebundene Dateien:</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>Number of files included: %count</source>
+        <translation>Anzahl eingebundener Dateien: %count</translation>
+    </message>
+    <message>
+        <source>Main resources:</source>
+        <translation>Wichtigste Ressourcen:</translation>
+    </message>
+    <message>
+        <source>Total runtime</source>
+        <translation>Gesamtlaufzeit</translation>
+    </message>
+    <message>
+        <source>Peak memory usage</source>
+        <translation>Höchster Speicherverbrauch</translation>
+    </message>
+    <message>
+        <source>Database Queries</source>
+        <translation>Datenbankabfragen</translation>
+    </message>
+    <message>
+        <source>Memory now</source>
+        <translation>Speicher jetzt</translation>
+    </message>
+    <message>
+        <source>Memory limit</source>
+        <translation>Speichergrenze</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>keine</translation>
+    </message>
+    <message>
+        <source>Largest steps</source>
+        <translation>Größte Schritte</translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation>Prozess</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>Restarts</source>
+        <translation>Neustarts</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Inhalt</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Template</translation>
+    </message>
+    <message>
+        <source>Template &amp; content</source>
+        <translation>Template und Inhalt</translation>
+    </message>
+    <message>
+        <source>INI settings</source>
+        <translation>INI-Einstellungen</translation>
+    </message>
+    <message>
+        <source>This page and below</source>
+        <translation>Diese Seite und darunter</translation>
+    </message>
+    <message>
+        <source>Quick clear</source>
+        <translation>Schnell leeren</translation>
+    </message>
+    <message>
+        <source>Keep open on reload</source>
+        <translation>Beim Neuladen offen lassen</translation>
+    </message>
+</context>
 </TS>

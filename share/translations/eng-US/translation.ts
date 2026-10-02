@@ -40637,4 +40637,735 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>A status number below 1000 that this version does not know. Counts as open.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/debugbar</name>
+    <message>
+        <source>Messages</source>
+        <translation>Messages</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Settings</translation>
+    </message>
+    <message>
+        <source>Cache</source>
+        <translation>Cache</translation>
+    </message>
+    <message>
+        <source>Timing</source>
+        <translation>Timing</translation>
+    </message>
+    <message>
+        <source>SQL</source>
+        <translation>SQL</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>Included files</source>
+        <translation>Included files</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>Memory</translation>
+    </message>
+    <message>
+        <source>Velocity</source>
+        <translation>Velocity</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Other</translation>
+    </message>
+    <message>
+        <source>Debug report sections</source>
+        <translation>Debug report sections</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Filter settings and report rows</source>
+        <translation>Filter settings and report rows</translation>
+    </message>
+    <message>
+        <source>No rows match the filter.</source>
+        <translation>No rows match the filter.</translation>
+    </message>
+    <message>
+        <source>%count rows match</source>
+        <translation>%count rows match</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Clear filter</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Errors</source>
+        <translation>Errors</translation>
+    </message>
+    <message>
+        <source>Warnings</source>
+        <translation>Warnings</translation>
+    </message>
+    <message>
+        <source>Notices</source>
+        <translation>Notices</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>Debug</translation>
+    </message>
+    <message>
+        <source>Timing points</source>
+        <translation>Timing points</translation>
+    </message>
+    <message>
+        <source>Strict</source>
+        <translation>Strict</translation>
+    </message>
+    <message>
+        <source>Show messages</source>
+        <translation>Show messages</translation>
+    </message>
+    <message>
+        <source>Sort by time</source>
+        <translation>Sort by time</translation>
+    </message>
+    <message>
+        <source>Sort by order</source>
+        <translation>Sort by order</translation>
+    </message>
+    <message>
+        <source>Slowest first</source>
+        <translation>Slowest first</translation>
+    </message>
+    <message>
+        <source>Loading...</source>
+        <translation>Loading...</translation>
+    </message>
+    <message>
+        <source>Could not load: %error</source>
+        <translation>Could not load: %error</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation>Retry</translation>
+    </message>
+    <message>
+        <source>Sign in with a user who may change settings (setup/setup) to change them here.</source>
+        <translation>Sign in with a user who may change settings (setup/setup) to change them here.</translation>
+    </message>
+    <message>
+        <source>The settings service is not available yet. The classic controls below still work.</source>
+        <translation>The settings service is not available yet. The classic controls below still work.</translation>
+    </message>
+    <message>
+        <source>Effective value</source>
+        <translation>Effective value</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Comes from</translation>
+    </message>
+    <message>
+        <source>Write to</source>
+        <translation>Write to</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Apply</translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation>Applied</translation>
+    </message>
+    <message>
+        <source>Not changed</source>
+        <translation>Not changed</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Reset</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Help</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>default</translation>
+    </message>
+    <message>
+        <source>global override</source>
+        <translation>global override</translation>
+    </message>
+    <message>
+        <source>siteaccess</source>
+        <translation>siteaccess</translation>
+    </message>
+    <message>
+        <source>extension</source>
+        <translation>extension</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>not set</translation>
+    </message>
+    <message>
+        <source>enabled</source>
+        <translation>enabled</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>disabled</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>on</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>off</translation>
+    </message>
+    <message>
+        <source>One entry per line</source>
+        <translation>One entry per line</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Add</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Expires</source>
+        <translation>Expires</translation>
+    </message>
+    <message>
+        <source>For 1 hour</source>
+        <translation>For 1 hour</translation>
+    </message>
+    <message>
+        <source>Today</source>
+        <translation>Today</translation>
+    </message>
+    <message>
+        <source>Until removed</source>
+        <translation>Until removed</translation>
+    </message>
+    <message>
+        <source>Add my IPv4 address</source>
+        <translation>Add my IPv4 address</translation>
+    </message>
+    <message>
+        <source>Add my IPv6 address</source>
+        <translation>Add my IPv6 address</translation>
+    </message>
+    <message>
+        <source>Add my /24</source>
+        <translation>Add my /24</translation>
+    </message>
+    <message>
+        <source>Add my /64</source>
+        <translation>Add my /64</translation>
+    </message>
+    <message>
+        <source>Your address as the server sees it: %ip</source>
+        <translation>Your address as the server sees it: %ip</translation>
+    </message>
+    <message>
+        <source>This request matched: %entry</source>
+        <translation>This request matched: %entry</translation>
+    </message>
+    <message>
+        <source>This request matched no entry.</source>
+        <translation>This request matched no entry.</translation>
+    </message>
+    <message>
+        <source>IPv4 or IPv6 address or CIDR range, for example 192.0.2.10, 192.0.2.0/24, 2001:db8::/64</source>
+        <translation>IPv4 or IPv6 address or CIDR range, for example 192.0.2.10, 192.0.2.0/24, 2001:db8::/64</translation>
+    </message>
+    <message>
+        <source>Not a valid IPv4 or IPv6 address or CIDR range.</source>
+        <translation>Not a valid IPv4 or IPv6 address or CIDR range.</translation>
+    </message>
+    <message>
+        <source>A prefix length must be 0 to 32 for IPv4.</source>
+        <translation>A prefix length must be 0 to 32 for IPv4.</translation>
+    </message>
+    <message>
+        <source>A prefix length must be 0 to 128 for IPv6.</source>
+        <translation>A prefix length must be 0 to 128 for IPv6.</translation>
+    </message>
+    <message>
+        <source>Already in the list.</source>
+        <translation>Already in the list.</translation>
+    </message>
+    <message>
+        <source>Test an address</source>
+        <translation>Test an address</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test</translation>
+    </message>
+    <message>
+        <source>matches %entry</source>
+        <translation>matches %entry</translation>
+    </message>
+    <message>
+        <source>matches no entry</source>
+        <translation>matches no entry</translation>
+    </message>
+    <message>
+        <source>Warning: your own address is not in the list. Applying it locks you out of the debug output.</source>
+        <translation>Warning: your own address is not in the list. Applying it locks you out of the debug output.</translation>
+    </message>
+    <message>
+        <source>Warning: the list is empty. With &quot;Debug by IP&quot; on, nobody gets the debug output.</source>
+        <translation>Warning: the list is empty. With &quot;Debug by IP&quot; on, nobody gets the debug output.</translation>
+    </message>
+    <message>
+        <source>Warning: %entry opens the debug output to everyone.</source>
+        <translation>Warning: %entry opens the debug output to everyone.</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>expired</translation>
+    </message>
+    <message>
+        <source>expires %time</source>
+        <translation>expires %time</translation>
+    </message>
+    <message>
+        <source>Add me</source>
+        <translation>Add me</translation>
+    </message>
+    <message>
+        <source>Find a user</source>
+        <translation>Find a user</translation>
+    </message>
+    <message>
+        <source>User ID or name</source>
+        <translation>User ID or name</translation>
+    </message>
+    <message>
+        <source>No user found.</source>
+        <translation>No user found.</translation>
+    </message>
+    <message>
+        <source>Warning: you are not in the list. Applying it locks you out of the debug output.</source>
+        <translation>Warning: you are not in the list. Applying it locks you out of the debug output.</translation>
+    </message>
+    <message>
+        <source>Presets</source>
+        <translation>Presets</translation>
+    </message>
+    <message>
+        <source>Apply preset</source>
+        <translation>Apply preset</translation>
+    </message>
+    <message>
+        <source>Revert preset</source>
+        <translation>Revert preset</translation>
+    </message>
+    <message>
+        <source>Save current as preset</source>
+        <translation>Save current as preset</translation>
+    </message>
+    <message>
+        <source>Preset name</source>
+        <translation>Preset name</translation>
+    </message>
+    <message>
+        <source>Preset &quot;%name&quot; applied.</source>
+        <translation>Preset &quot;%name&quot; applied.</translation>
+    </message>
+    <message>
+        <source>Preset reverted.</source>
+        <translation>Preset reverted.</translation>
+    </message>
+    <message>
+        <source>Change log</source>
+        <translation>Change log</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Undo</translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation>Undone</translation>
+    </message>
+    <message>
+        <source>No changes yet.</source>
+        <translation>No changes yet.</translation>
+    </message>
+    <message>
+        <source>%user changed %setting from %old to %new in %scope</source>
+        <translation>%user changed %setting from %old to %new in %scope</translation>
+    </message>
+    <message>
+        <source>Extension switches</source>
+        <translation>Extension switches</translation>
+    </message>
+    <message>
+        <source>Reload the page to see the effect.</source>
+        <translation>Reload the page to see the effect.</translation>
+    </message>
+    <message>
+        <source>Reload now</source>
+        <translation>Reload now</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Clear</translation>
+    </message>
+    <message>
+        <source>Cleared</source>
+        <translation>Cleared</translation>
+    </message>
+    <message>
+        <source>Clearing...</source>
+        <translation>Clearing...</translation>
+    </message>
+    <message>
+        <source>Last cleared: %time</source>
+        <translation>Last cleared: %time</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>never</translation>
+    </message>
+    <message>
+        <source>This page only</source>
+        <translation>This page only</translation>
+    </message>
+    <message>
+        <source>Clears the view cache of the node this page shows.</source>
+        <translation>Clears the view cache of the node this page shows.</translation>
+    </message>
+    <message>
+        <source>This page is not a content node.</source>
+        <translation>This page is not a content node.</translation>
+    </message>
+    <message>
+        <source>Velocity response cache</source>
+        <translation>Velocity response cache</translation>
+    </message>
+    <message>
+        <source>Clears the pages Velocity keeps in memory.</source>
+        <translation>Clears the pages Velocity keeps in memory.</translation>
+    </message>
+    <message>
+        <source>OPcache</source>
+        <translation>OPcache</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Memory used</source>
+        <translation>Memory used</translation>
+    </message>
+    <message>
+        <source>Hit rate</source>
+        <translation>Hit rate</translation>
+    </message>
+    <message>
+        <source>Cached scripts</source>
+        <translation>Cached scripts</translation>
+    </message>
+    <message>
+        <source>Not available</source>
+        <translation>Not available</translation>
+    </message>
+    <message>
+        <source>By tag</source>
+        <translation>By tag</translation>
+    </message>
+    <message>
+        <source>By ID</source>
+        <translation>By ID</translation>
+    </message>
+    <message>
+        <source>All caches</source>
+        <translation>All caches</translation>
+    </message>
+    <message>
+        <source>You may not clear caches (setup/managecache).</source>
+        <translation>You may not clear caches (setup/managecache).</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Response cache</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Engine</translation>
+    </message>
+    <message>
+        <source>Not running on Velocity.</source>
+        <translation>Not running on Velocity.</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Close</translation>
+    </message>
+    <message>
+        <source>Open the debug report</source>
+        <translation>Open the debug report</translation>
+    </message>
+    <message>
+        <source>(By User)</source>
+        <translation>(By User)</translation>
+    </message>
+    <message>
+        <source>(By IP Address)</source>
+        <translation>(By IP Address)</translation>
+    </message>
+    <message>
+        <source>Debug report</source>
+        <translation>Debug report</translation>
+    </message>
+    <message>
+        <source>Classic controls</source>
+        <translation>Classic controls</translation>
+    </message>
+    <message>
+        <source>Template usage is not recorded. Turn on &quot;Show used templates&quot; (TemplateSettings ShowUsedTemplates) in the Settings tab.</source>
+        <translation>Template usage is not recorded. Turn on &quot;Show used templates&quot; (TemplateSettings ShowUsedTemplates) in the Settings tab.</translation>
+    </message>
+    <message>
+        <source>Time used to render debug report: %time secs</source>
+        <translation>Time used to render debug report: %time secs</translation>
+    </message>
+    <message>
+        <source>Page time</source>
+        <translation>Page time</translation>
+    </message>
+    <message>
+        <source>%count SQL</source>
+        <translation>%count SQL</translation>
+    </message>
+    <message>
+        <source>SQL queries and their time</source>
+        <translation>SQL queries and their time</translation>
+    </message>
+    <message>
+        <source>Peak memory</source>
+        <translation>Peak memory</translation>
+    </message>
+    <message>
+        <source>%count tpl</source>
+        <translation>%count tpl</translation>
+    </message>
+    <message>
+        <source>Templates used</source>
+        <translation>Templates used</translation>
+    </message>
+    <message>
+        <source>%count warn</source>
+        <translation>%count warn</translation>
+    </message>
+    <message>
+        <source>%count err</source>
+        <translation>%count err</translation>
+    </message>
+    <message>
+        <source>Page summary</source>
+        <translation>Page summary</translation>
+    </message>
+    <message>
+        <source>high</source>
+        <translation>high</translation>
+    </message>
+    <message>
+        <source>raised</source>
+        <translation>raised</translation>
+    </message>
+    <message>
+        <source>normal</source>
+        <translation>normal</translation>
+    </message>
+    <message>
+        <source>Timing points:</source>
+        <translation>Timing points:</translation>
+    </message>
+    <message>
+        <source>Checkpoint</source>
+        <translation>Checkpoint</translation>
+    </message>
+    <message>
+        <source>Start (sec)</source>
+        <translation>Start (sec)</translation>
+    </message>
+    <message>
+        <source>Duration (sec)</source>
+        <translation>Duration (sec)</translation>
+    </message>
+    <message>
+        <source>Memory at start (KB)</source>
+        <translation>Memory at start (KB)</translation>
+    </message>
+    <message>
+        <source>Memory used (KB)</source>
+        <translation>Memory used (KB)</translation>
+    </message>
+    <message>
+        <source>Accumulator</source>
+        <translation>Accumulator</translation>
+    </message>
+    <message>
+        <source>Duration (%)</source>
+        <translation>Duration (%)</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation>Count</translation>
+    </message>
+    <message>
+        <source>Average (sec)</source>
+        <translation>Average (sec)</translation>
+    </message>
+    <message>
+        <source>Time accumulators:</source>
+        <translation>Time accumulators:</translation>
+    </message>
+    <message>
+        <source>Note: percentages do not add up to 100% because some accumulators overlap</source>
+        <translation>Note: percentages do not add up to 100% because some accumulators overlap</translation>
+    </message>
+    <message>
+        <source>Queries</source>
+        <translation>Queries</translation>
+    </message>
+    <message>
+        <source>Time in queries</source>
+        <translation>Time in queries</translation>
+    </message>
+    <message>
+        <source>Average</source>
+        <translation>Average</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Database</translation>
+    </message>
+    <message>
+        <source>No statements were recorded for this page.</source>
+        <translation>No statements were recorded for this page.</translation>
+    </message>
+    <message>
+        <source>The statements are not recorded. Turn on &quot;SQL output&quot; (DatabaseSettings SQLOutput) in the Settings tab.</source>
+        <translation>The statements are not recorded. Turn on &quot;SQL output&quot; (DatabaseSettings SQLOutput) in the Settings tab.</translation>
+    </message>
+    <message>
+        <source>Slowest: %ms ms (statement %n)</source>
+        <translation>Slowest: %ms ms (statement %n)</translation>
+    </message>
+    <message>
+        <source>%count PHP files were included. Turn on &quot;Display included files&quot; (DebugSettings DisplayIncludedFiles) in the Settings tab to list them.</source>
+        <translation>%count PHP files were included. Turn on &quot;Display included files&quot; (DebugSettings DisplayIncludedFiles) in the Settings tab to list them.</translation>
+    </message>
+    <message>
+        <source>Included files:</source>
+        <translation>Included files:</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>Number of files included: %count</source>
+        <translation>Number of files included: %count</translation>
+    </message>
+    <message>
+        <source>Main resources:</source>
+        <translation>Main resources:</translation>
+    </message>
+    <message>
+        <source>Total runtime</source>
+        <translation>Total runtime</translation>
+    </message>
+    <message>
+        <source>Peak memory usage</source>
+        <translation>Peak memory usage</translation>
+    </message>
+    <message>
+        <source>Database Queries</source>
+        <translation>Database Queries</translation>
+    </message>
+    <message>
+        <source>Memory now</source>
+        <translation>Memory now</translation>
+    </message>
+    <message>
+        <source>Memory limit</source>
+        <translation>Memory limit</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>none</translation>
+    </message>
+    <message>
+        <source>Largest steps</source>
+        <translation>Largest steps</translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation>Process</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>Restarts</source>
+        <translation>Restarts</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Content</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Template</translation>
+    </message>
+    <message>
+        <source>Template &amp; content</source>
+        <translation>Template &amp; content</translation>
+    </message>
+    <message>
+        <source>INI settings</source>
+        <translation>INI settings</translation>
+    </message>
+    <message>
+        <source>This page and below</source>
+        <translation>This page and below</translation>
+    </message>
+    <message>
+        <source>Quick clear</source>
+        <translation>Quick clear</translation>
+    </message>
+    <message>
+        <source>Keep open on reload</source>
+        <translation>Keep open on reload</translation>
+    </message>
+</context>
 </TS>
