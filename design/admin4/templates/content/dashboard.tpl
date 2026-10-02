@@ -4,8 +4,8 @@
    extension's block included. Around them: a welcome with quick actions, key figures, the last 14 days of
    publishing and the system at a glance. Read-only fetches, cheap counts. *}
 {* set scope=global persistent_variable=hash('extra_menu', false()) *}
-{def $user        = fetch( 'user', 'current_user' )
-     $root_node   = ezini( 'NodeSettings', 'RootNode', 'content.ini' )
+{* $user (the current user) is set by the content/dashboard view *}
+{def $root_node   = ezini( 'NodeSettings', 'RootNode', 'content.ini' )
      $media_node  = ezini( 'NodeSettings', 'MediaRootNode', 'content.ini' )
      $users_node  = ezini( 'NodeSettings', 'UserRootNode', 'content.ini' )
      $extensions  = ezini( 'ExtensionSettings', 'ActiveExtensions' )

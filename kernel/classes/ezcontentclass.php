@@ -1459,6 +1459,8 @@ You will need to change the class of the node by using the swap functionality.' 
     {
         if ( !isset( $this->DataMap[$this->Version] ) )
         {
+            if ( !is_array( $this->DataMap ) )
+                $this->DataMap = array();
             $attributes = $this->fetchAttributes( false, true, $this->Version );
             foreach ( $attributes as $attribute )
             {

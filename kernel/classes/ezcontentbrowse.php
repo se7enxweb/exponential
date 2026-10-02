@@ -87,7 +87,7 @@ class eZContentBrowse
      Most data will be automatically derived from the \c action_name value taken from settings/browse.ini, other
      values will override default values.
     */
-    static function browse( $parameters = array(), &$module )
+    static function browse( $parameters, &$module ) // the default could never apply: $module after it is required
     {
         $ini = eZINI::instance( 'browse.ini' );
 

@@ -65,7 +65,7 @@ class ezpRequestRuleKernel
      * @param eZModule|null $module to name the view parameters; looked up when null
      * @return ezpRequestContext
      */
-    public static function context( $moduleName, $view, array $params, array $route, eZUser $user, eZModule $module = null )
+    public static function context( $moduleName, $view, array $params, array $route, eZUser $user, ?eZModule $module = null )
     {
         if ( $module === null )
             $module = eZModule::exists( $moduleName );

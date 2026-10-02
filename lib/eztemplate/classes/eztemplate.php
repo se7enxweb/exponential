@@ -500,6 +500,7 @@ class eZTemplate
         eZDebug::accumulatorStart( 'template_total' );
         eZDebug::accumulatorStart( 'template_load', 'template_total', 'Template load' );
         $root = null;
+        $resourceData = null;
         if ( is_string( $template ) )
         {
             $resourceData = $this->loadURIRoot( $template, true, $extraParameters );
@@ -508,7 +509,8 @@ class eZTemplate
                 $root =& $resourceData['root-node'];
         }
         eZDebug::accumulatorStop( 'template_load' );
-        if ( $resourceData['locales'] && !empty( $resourceData['locales'] ) )
+        // A template that is not found leaves $resourceData null or false.
+        if ( !empty( $resourceData['locales'] ) )
         {
             $savedLocale = setlocale( LC_CTYPE, null );
             setlocale( LC_CTYPE, $resourceData['locales'] );
@@ -517,7 +519,7 @@ class eZTemplate
         $text = "";
 
         if ( $root !== null or
-             $resourceData['compiled-template'] )
+             !empty( $resourceData['compiled-template'] ) )
         {
             if ( $this->ShowDetails )
                 eZDebug::addTimingPoint( "Process" );
@@ -552,7 +554,7 @@ class eZTemplate
 
         eZDebug::accumulatorStop( 'template_total' );
 
-        if ( $resourceData['locales'] && !empty( $resourceData['locales'] ) )
+        if ( !empty( $resourceData['locales'] ) )
         {
             setlocale( LC_CTYPE, $savedLocale );
         }
