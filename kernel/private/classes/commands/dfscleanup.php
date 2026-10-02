@@ -51,8 +51,7 @@ class Dfscleanup extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $script->startup();
-        $options = $this->options(
+        $options = $this->startup(
             "[S][B][D][path:][iteration-limit:]", "",
             array(
                 "D" => "Delete nonexistent files",
@@ -63,8 +62,6 @@ class Dfscleanup extends \Exponential\Runnable\Command
 
             )
         );
-
-        $script->initialize();
 
 
 

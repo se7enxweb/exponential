@@ -39,14 +39,11 @@ class Ezcsvexport extends \Exponential\Runnable\Command
                                              'use-extensions' => true,
                                              'user' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[storage-dir:]",
+        $options = $this->startup( "[storage-dir:]",
                                         "[node]",
                                         array( 'storage-dir' => 'directory to place exported files in' ),
                                         false,
                                         array( 'user' => true ) );
-        $script->initialize();
 
         if ( count( $options['arguments'] ) < 1 )
         {

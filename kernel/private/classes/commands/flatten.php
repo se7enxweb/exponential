@@ -60,9 +60,7 @@ class Flatten extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql]",
+        $options = $this->startup( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql]",
                                         "[name]",
                                         array( 'db-host' => "Database host",
                                                'db-user' => "Database user",
@@ -72,7 +70,6 @@ class Flatten extends \Exponential\Runnable\Command
                                                'db-type' => "Database driver, alias for --db-driver",
                                                'sql' => "Display sql queries"
                                                ) );
-        $script->initialize();
 
         if ( count( $options['arguments'] ) < 1 )
         {

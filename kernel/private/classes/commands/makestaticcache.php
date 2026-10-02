@@ -38,9 +38,7 @@ class Makestaticcache extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[f|force][site:][max-pages:][max-depth:][keep]",
+        $options = $this->startup( "[f|force][site:][max-pages:][max-depth:][keep]",
                                         "",
                                         array( 'force'     => "Accepted for compatibility; a run always replaces what it generates.",
                                                'site'      => "Generate only this siteaccess. Repeat for several; omit for every public one.",
@@ -49,8 +47,6 @@ class Makestaticcache extends \Exponential\Runnable\Command
                                                'keep'      => "Add to what is already stored instead of replacing it." ),
                                         false,
                                         array( 'site' => true ) );
-
-        $script->initialize();
 
         $ini = \eZINI::instance();
         if ( $ini->variable( 'ContentSettings', 'StaticCache' ) != 'enabled' )

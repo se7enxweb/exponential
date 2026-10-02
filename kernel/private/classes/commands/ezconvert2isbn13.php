@@ -37,16 +37,13 @@ class Ezconvert2isbn13 extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[class-id:][attribute-id:][all-classes][f|force]",
+        $options = $this->startup( "[class-id:][attribute-id:][all-classes][f|force]",
                                         "",
                                         array( 'class-id' => 'The class id for the ISBN attribute.',
                                                'attribute-id' => 'The attribute id for the ISBN attribute which should be converted.',
                                                'all-classes' => 'Will convert all ISBN attributes in all content classes.',
                                                'f' => 'Short alias for force.',
                                                'force' => 'Will convert all attributes even if the class is set to ISBN.' ) );
-        $script->initialize();
 
         $classID = $options['class-id'];
         $attributeID = $options['attribute-id'];

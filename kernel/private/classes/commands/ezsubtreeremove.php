@@ -37,15 +37,12 @@ class Ezsubtreeremove extends \Exponential\Runnable\Command
                                               'use-session' => false,
                                               'use-modules' => true,
                                               'use-extensions' => true ) );
-        $script->startup();
-
-        $scriptOptions = $this->options( "[nodes-id:][ignore-trash]",
+        $scriptOptions = $this->startup( "[nodes-id:][ignore-trash]",
                                               "",
                                               array( 'nodes-id' => "Subtree nodes ID (separated by comma ',').",
                                                      'ignore-trash' => "Ignore trash ('move to trash' by default)."
                                                      ),
                                               false );
-        $script->initialize();
         $srcNodesID  = $scriptOptions[ 'nodes-id' ] ? trim( $scriptOptions[ 'nodes-id' ] ) : false;
         $moveToTrash = $scriptOptions[ 'ignore-trash' ] ? false : true;
         $deleteIDArray = $srcNodesID ? explode( ',', $srcNodesID ) : false;

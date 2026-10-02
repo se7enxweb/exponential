@@ -43,9 +43,7 @@ class Cleanupversions extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $script->startup();
-        $options = $this->options( "[n]", "", array( "n" => "Do not wait" ) );
-        $script->initialize();
+        $options = $this->startup( "[n]", "", array( "n" => "Do not wait" ) );
 
         if ( !isset( $options['n'] ) )
         {

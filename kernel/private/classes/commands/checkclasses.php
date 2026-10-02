@@ -70,15 +70,11 @@ class Checkclasses extends \Exponential\Runnable\Command
             'use-modules'    => false,
             'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options(
+        $options = $this->startup(
             "[kernel][tests][quiet-ok]", "",
             array( 'kernel'   => 'Check the kernel classes as well as the extension ones. Slower, and they are the ones least likely to be wrong.',
                    'tests'    => 'Include classes that live under a tests directory. Left out by default: they are usually written against whichever version of phpunit was current, and a test class that will not load breaks nothing anybody is looking at.',
                    'quiet-ok' => 'Print nothing when everything loads.' ) );
-
-        $script->initialize();
 
         $classes = \eZCheckClasses::classNames( !empty( $options['kernel'] ), !empty( $options['tests'] ) );
 

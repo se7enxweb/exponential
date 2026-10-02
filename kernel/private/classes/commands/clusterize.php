@@ -130,9 +130,7 @@ class Clusterize extends \Exponential\Runnable\Command
                                              'use-modules'    => false,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[u][skip-binary-files][skip-media-files][skip-images][r][n]",
+        $options = $this->startup( "[u][skip-binary-files][skip-media-files][skip-images][r][n]",
                                         "",
                                         array( 'u'                 => 'Unclusterize',
                                                'skip-binary-files' => 'Skip copying binary files',
@@ -140,8 +138,6 @@ class Clusterize extends \Exponential\Runnable\Command
                                                'skip-images'       => 'Skip copying images',
                                                'r'                 => 'Remove files after copying',
                                                'n'                 => 'Do not wait' ) );
-
-        $script->initialize();
 
         $clusterize = !isset( $options['u'] );
         $remove     =  isset( $options['r'] );

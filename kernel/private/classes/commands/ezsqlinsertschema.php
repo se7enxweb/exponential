@@ -67,9 +67,7 @@ class Ezsqlinsertschema extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[type:][user:][host:][password;][port:][socket:]" .
+        $options = $this->startup( "[type:][user:][host:][password;][port:][socket:]" .
                                         "[table-type:][table-charset:]" .
                                         "[insert-types:][allow-multi-insert][schema-file:][clean-existing]",
                                         "[filename][database]",
@@ -95,7 +93,6 @@ class Ezsqlinsertschema extends \Exponential\Runnable\Command
                                                                    "all - Both table schema and data\n" .
                                                                    "none - Insert nothing (useful if you want to clean up schema only)" )
                                                ) );
-        $script->initialize();
 
         $type = $options['type'];
         $host = $options['host'];

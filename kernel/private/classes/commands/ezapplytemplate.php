@@ -41,13 +41,10 @@ class Ezapplytemplate extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[a|all][check-only]",
+        $options = $this->startup( "[a|all][check-only]",
                                         "[file]",
                                         array( 'all' => 'Go trough all files defined in codetemplate.ini',
                                                'check-only' => 'Will only check if the files will be changed or have errors' ) );
-        $script->initialize();
 
         if ( !$options['all'] and count( $options['arguments'] ) < 1 )
         {

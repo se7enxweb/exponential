@@ -51,9 +51,7 @@ class Ezrequestrules extends \Exponential\Runnable\Command
             )
         );
 
-        $script->startup();
-
-        $options = $this->options(
+        $options = $this->startup(
             "[list][check][uri:][user:][method:][host:][ip:][scheme:][header:*]",
             "",
             array( 'list'   => 'List the rules in the order they are asked',
@@ -65,8 +63,6 @@ class Ezrequestrules extends \Exponential\Runnable\Command
                    'ip'     => 'Client address',
                    'scheme' => 'http or https (default https)',
                    'header' => 'A request header, Name:Value; may be given more than once' ) );
-
-        $script->initialize();
 
         $engine = \ezpRequestRuleEngine::instance();
         $access = \eZSiteAccess::current();

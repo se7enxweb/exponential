@@ -46,14 +46,12 @@ class Preloadjob extends \Exponential\Runnable\Command
             'use-modules'    => true,
             'use-extensions' => true,
         ) );
-        $script->startup();
-        $options = $this->options( '[id:][target:][max-pages:][max-depth:]', '', array(
+        $options = $this->startup( '[id:][target:][max-pages:][max-depth:]', '', array(
             'id'        => 'the job id (hex), chosen by setup/preloadjob',
             'target'    => 'the siteaccess whose site is preloaded (default: DefaultAccess)',
             'max-pages' => 'most pages to fetch (default 250)',
             'max-depth' => 'most links to follow from a starting page (default 3)',
         ) );
-        $script->initialize();
 
         $id = (string)$options['id'];
         if ( !preg_match( '#^[a-f0-9]{16}$#', $id ) )

@@ -1525,9 +1525,7 @@ class Ezconvertdbcharset extends \Exponential\Runnable\Command
                                               'use-modules' => false,
                                               'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[extra-xml-attributes:][extra-xml-data:][extra-serialized-data:][collation:][skip-class-translations][iconv-character-set:][log-filename:]",
+        $options = $this->startup( "[extra-xml-attributes:][extra-xml-data:][extra-serialized-data:][collation:][skip-class-translations][iconv-character-set:][log-filename:]",
                                         "",
                                         array( 'extra-xml-attributes' => "specify custom attributes which store its data in xml.\n" .
                                                                          "usage: <datatype_string>[.<table>.<field>][,<datatype_string>.<table>.<field>...].\n" .
@@ -1546,9 +1544,6 @@ class Ezconvertdbcharset extends \Exponential\Runnable\Command
                                                'log-filename' => 'Specify a file where iconv conversions will be logged to' ),
                                         false,
                                         array( 'user' => true ) );
-
-
-        $script->initialize();
         // workaround for bug #013661
         $db->OutputTextCodec = null;
         $db->InputTextCodec = null;

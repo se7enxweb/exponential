@@ -43,8 +43,7 @@ class Cleanuppolicies extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $script->startup();
-        $options = $this->options(
+        $options = $this->startup(
             "[dry-run][n]",
             '',
             array(
@@ -52,7 +51,6 @@ class Cleanuppolicies extends \Exponential\Runnable\Command
                 'n' => "Do not wait"
             )
         );
-        $script->initialize();
 
         $optDryRun = (bool) $options['dry-run'];
 

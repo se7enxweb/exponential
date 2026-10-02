@@ -58,9 +58,7 @@ class Updatesearchindex extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql][clean]",
+        $options = $this->startup( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql][clean]",
                                         "",
                                         array( 'db-host' => "Database host",
                                                'db-user' => "Database user",
@@ -71,7 +69,6 @@ class Updatesearchindex extends \Exponential\Runnable\Command
                                                'sql' => "Display sql queries",
                                                'clean' =>  "Remove all search data before beginning indexing"
                                                ) );
-        $script->initialize();
 
         $script->setIterationData( '.', '~' );
 

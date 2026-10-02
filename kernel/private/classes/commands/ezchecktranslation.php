@@ -147,12 +147,9 @@ class Ezchecktranslation extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[ignore-tr-setup]",
+        $options = $this->startup( "[ignore-tr-setup]",
                                         "[translation]",
                                         array( 'ignore-tr-setup' => 'Tells the analyzer to skip all translations regarding the setup' ) );
-        $script->initialize();
 
         if ( count( $options['arguments'] ) < 1 )
             $script->shutdown( 1, "No translation specified" );

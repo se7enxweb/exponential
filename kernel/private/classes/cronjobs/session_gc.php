@@ -19,14 +19,6 @@
  *
  */
 
-namespace
-{
-function eZSessionBasketGarbageCollector( $db, $time )
-{
-    eZBasket::cleanupExpired( $time );
-}
-}
-
 namespace Exponential\Cronjob\Kernel
 {
 

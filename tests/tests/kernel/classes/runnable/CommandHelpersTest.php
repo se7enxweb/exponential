@@ -8,7 +8,9 @@
  *  CH-03 — output(), error() and warning() go to the terminal (eZCLI) unchanged
  *  CH-04 — isQuiet() and shutdown() go to the script
  *  CH-05 — log() writes to <script name>.log by default (the name is derived from the script file)
- *  CH-06 — The kernel commands use the helpers: no run() creates eZScript or eZCLI itself any more
+ *  CH-06 — The kernel commands use the helpers: no run() creates eZScript or eZCLI itself any more, and those that
+ *          start with startup() do not call the script's startup() or initialize() themselves
+ *  CH-07 — startup() runs the script's startup(), getOptions() and initialize() on the script of script()
  *
  * No database, no kernel: a recording script and terminal stand in for eZScript and eZCLI.
  *
@@ -89,6 +91,16 @@ class CommandHelpersTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '[a]', $r['parsed'][0] );
     }
 
+    /** CH-07 */
+    public function testStartupIsTheThreeStepsAfterScript()
+    {
+        $c = $this->command( $script, $cli );
+        $r = $c->startup( '[n]', '', array( 'n' => 'Do not wait' ) );
+        $this->assertSame( array( 'startup', 'getOptions', 'initialize' ), array_column( $script->calls, 0 ) );
+        $this->assertSame( array( '[n]', '', array( 'n' => 'Do not wait' ), false, true ), $script->calls[1][1] );
+        $this->assertSame( '[n]', $r['parsed'][0] );
+    }
+
     /** CH-03 */
     public function testOutputGoesToTheTerminal()
     {
@@ -131,6 +143,7 @@ class CommandHelpersTest extends PHPUnit\Framework\TestCase
     {
         $dir = dirname( __DIR__, 5 ) . '/kernel/private/classes/commands';
         $using = 0;
+        $starting = 0;
         foreach ( glob( "$dir/*.php" ) as $file )
         {
             $code = (string) file_get_contents( $file );
@@ -146,7 +159,15 @@ class CommandHelpersTest extends PHPUnit\Framework\TestCase
             $this->assertDoesNotMatchRegularExpression( '/\$cli\s*=\s*\\\\eZCLI::instance\(\s*\)/', $body, basename( $file ) . ' gets the terminal with $this->cli()' );
             if ( strpos( $body, '$this->script(' ) !== false )
                 $using++;
+            if ( strpos( $body, '$this->startup(' ) !== false )
+            {
+                $starting++;
+                // startup() does the script's startup() and initialize(): no command does them twice
+                $this->assertStringNotContainsString( '$script->startup();', $body, basename( $file ) );
+                $this->assertStringNotContainsString( '$script->initialize();', $body, basename( $file ) );
+            }
         }
         $this->assertGreaterThanOrEqual( 55, $using, 'the kernel commands create their script with $this->script()' );
+        $this->assertGreaterThanOrEqual( 40, $starting, 'the kernel commands start with $this->startup()' );
     }
 }

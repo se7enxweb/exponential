@@ -41,9 +41,7 @@ class Ezcsvimport extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[class:][creator:][storage-dir:]",
+        $options = $this->startup( "[class:][creator:][storage-dir:]",
                                         "[node][file]",
                                         array( 'node' => 'parent node_id to upload object under',
                                                'file' => 'file to read CSV data from',
@@ -52,7 +50,6 @@ class Ezcsvimport extends \Exponential\Runnable\Command
                                                'storage-dir' => 'path to directory which will be added to the path of CSV elements' ),
                                         false,
                                         array( 'user' => true ));
-        $script->initialize();
 
         if ( count( $options['arguments'] ) < 2 )
         {

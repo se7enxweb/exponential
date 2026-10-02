@@ -245,9 +245,7 @@ class Ezconvertmysqltabletype extends \Exponential\Runnable\Command
                                              'use-modules' => false,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[host:][user:][password:][database:][list][newtype:][usecopy]",
+        $options = $this->startup( "[host:][user:][password:][database:][list][newtype:][usecopy]",
                                         "",
                                         array(
                                                'list' => "List the table types",
@@ -260,7 +258,6 @@ class Ezconvertmysqltabletype extends \Exponential\Runnable\Command
                                                             "This conversion method is much slower and has a higher risk to corrupt the data in the database.\n".
                                                             "However this option may circumvent the MySQL crash on the ALTER query." )
                                       );
-        $script->initialize();
 
         $host = $options['host'];
         $user = $options['user'];

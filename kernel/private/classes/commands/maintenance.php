@@ -46,13 +46,11 @@ class Maintenance extends \Exponential\Runnable\Command
                                              'use-session' => false,
                                              'use-modules' => false,
                                              'use-extensions' => true ) );
-        $script->startup();
-        $options = $this->options( '[message:][until:][allow-ip:][allow-admin]', '[action]',
+        $options = $this->startup( '[message:][until:][allow-ip:][allow-admin]', '[action]',
                                         array( 'message' => 'What the page says, instead of the default text',
                                                'until' => 'When the site is expected back: 30m, 2h, or a date and time',
                                                'allow-ip' => 'Addresses that still see the site, comma separated',
                                                'allow-admin' => 'Keep the administration (/admin) reachable' ) );
-        $script->initialize();
 
         $root = getcwd();
         $action = isset( $options['arguments'][0] ) ? $options['arguments'][0] : 'status';

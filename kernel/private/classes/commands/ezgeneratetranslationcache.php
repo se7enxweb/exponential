@@ -39,16 +39,13 @@ class Ezgeneratetranslationcache extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true,
                                              'user' => true ) );
-        $script->startup();
-
-        $scriptOptions = $this->options( "[ts-list:]",
+        $scriptOptions = $this->startup( "[ts-list:]",
                                               "",
                                               array( 'ts-list' => "A list of translations to generate caches for, for example 'rus-RU nor-NO'\n".
                                                                   "By default caches for all translations will be generated" ),
                                               false,
                                               array( 'user' => true )
                                              );
-        $script->initialize();
 
         /**************************************************************
         * process options                                             *

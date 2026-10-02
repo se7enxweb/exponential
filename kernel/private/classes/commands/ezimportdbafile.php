@@ -39,11 +39,8 @@ class Ezimportdbafile extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[datatype:]", "",
+        $options = $this->startup( "[datatype:]", "",
                                         array( 'datatype' => "The name of the datatype where the database should be updated." ) );
-        $script->initialize();
         $dataTypeName = $options['datatype'];
 
         if ( $dataTypeName === null )

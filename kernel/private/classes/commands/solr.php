@@ -217,11 +217,8 @@ class Solr extends \Exponential\Runnable\Command
             'use-modules' => false,
             'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( '[json]', '[command]',
+        $options = $this->startup( '[json]', '[command]',
             array( 'json' => 'Report as JSON, for a caller that is not a person' ) );
-        $script->initialize();
 
         $asJson = !empty( $options['json'] );
 

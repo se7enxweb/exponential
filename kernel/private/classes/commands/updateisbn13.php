@@ -39,9 +39,7 @@ class Updateisbn13 extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[url:][db-host:][db-user:][db-password:][db-database:][db-driver:]",
+        $options = $this->startup( "[url:][db-host:][db-user:][db-password:][db-database:][db-driver:]",
                                         "",
                                         array( 'url' => "URL containing the xml file for the different ranges",
                                                'db-host' => "Database host.",
@@ -49,8 +47,6 @@ class Updateisbn13 extends \Exponential\Runnable\Command
                                                'db-password' => "Database password.",
                                                'db-database' => "Database name.",
                                                'db-driver' => "Database driver." ) );
-
-        $script->initialize();
 
         if ( isset( $options['url'] ) )
         {

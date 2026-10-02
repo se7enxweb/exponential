@@ -146,9 +146,7 @@ class Cache extends \Exponential\Runnable\Command
                                              'use-session' => false,
                                              'use-modules' => false,
                                              'use-extensions' => true ) );
-        $script->startup();
-
-        $options = $this->options(
+        $options = $this->startup(
             '[dry-run][json][all][tag:][id:][purge][expiry:][iteration-sleep:][iteration-max:][sizes]' .
             '[site:][path:][node:][url:][max-pages:][max-depth:][keep]',
             '[group][action]',
@@ -169,7 +167,6 @@ class Cache extends \Exponential\Runnable\Command
                    'max-pages' => 'static regenerate: stop after this many pages per site (default 2500)',
                    'max-depth' => 'static regenerate: follow links this many steps (default 12)',
                    'keep' => 'static regenerate: add to what is stored instead of replacing it' ) );
-        $script->initialize();
 
         $args = $options['arguments'];
         $group = isset( $args[0] ) ? strtolower( $args[0] ) : '';

@@ -355,9 +355,7 @@ class Updateniceurls extends \Exponential\Runnable\Command
                                               'use-modules' => true,
                                               'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql]" .
+        $options = $this->startup( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql]" .
                                         "[no-import]" .
                                         "[import][import-nodes][import-aliases][import-redirections][import-wildcards]" .
                                         "[no-update-nodes][update-nodes]" .
@@ -390,7 +388,6 @@ class Updateniceurls extends \Exponential\Runnable\Command
                                                'column-width' => "The approximate width of the output block, defaults to 72.",
                                                'fetch-limit' => "The number of items to fetch in one go, increasing it may reduce\ntotal time but will also increase memory usage, defaults to 200.",
                                                ) );
-        $script->initialize();
 
         $dbUser = $options['db-user'] ? $options['db-user'] : false;
         $dbPassword = $options['db-password'] ? $options['db-password'] : false;

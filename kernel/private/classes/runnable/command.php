@@ -22,13 +22,12 @@ namespace Exponential\Runnable;
  * Shared option parsing, help and output: one place for what every command does the same way.
  *
  *   $script = $this->script( array( 'description' => "Writes the report", 'use-session' => false ) );
- *   $script->startup();
- *   $options = $this->options( '[month:]', '', array( 'month' => 'The month, YYYY-MM' ) );
- *   $script->initialize();
+ *   $options = $this->startup( '[month:]', '', array( 'month' => 'The month, YYYY-MM' ) );
  *   $this->output( "Done" );           // nothing with -q / --quiet
  *   $this->shutdown( 0 );
  *
- * or the usual sequence in one call: $options = $this->start( $settings, '[month:]', '', $help );
+ * startup() is the script's startup(), options() and the script's initialize(); a command that needs to do
+ * something between them calls those three itself. Both steps in one call: $this->start( $settings, ... ).
  *
  * --help, -q/--quiet, -s/--siteaccess, -l/--login, -d/--debug, -v/--verbose and the other standard options
  * come from eZScript::getOptions(); these helpers hand them on unchanged, so a command's --help text and
@@ -110,17 +109,32 @@ abstract class Command extends Runnable
     }
 
     /**
-     * The usual start of a command in one call: script( $settings ), startup(), options(), initialize().
+     * The three steps after script(): the script's startup(), options() and the script's initialize(), which
+     * sets up the siteaccess, the extensions, the session and the database the command asked for.
+     *
+     *   $script = $this->script( array( 'description' => "...", 'use-session' => false ) );
+     *   $options = $this->startup( '[month:]', '', array( 'month' => 'The month, YYYY-MM' ) );
+     *
+     * @return array|null the options
+     */
+    public function startup( $config = '', $argumentConfig = '', $optionHelp = false, $arguments = false, $useStandardOptions = true )
+    {
+        $script = $this->script();
+        $script->startup();
+        $options = $this->options( $config, $argumentConfig, $optionHelp, $arguments, $useStandardOptions );
+        $script->initialize();
+        return $options;
+    }
+
+    /**
+     * The usual start of a command in one call: script( $settings ), then startup().
      *
      * @return array|null the options
      */
     public function start( array $settings, $config = '', $argumentConfig = '', $optionHelp = false, $arguments = false, $useStandardOptions = true )
     {
-        $script = $this->script( $settings );
-        $script->startup();
-        $options = $this->options( $config, $argumentConfig, $optionHelp, $arguments, $useStandardOptions );
-        $script->initialize();
-        return $options;
+        $this->script( $settings );
+        return $this->startup( $config, $argumentConfig, $optionHelp, $arguments, $useStandardOptions );
     }
 
     /** @return bool -q / --quiet was given */

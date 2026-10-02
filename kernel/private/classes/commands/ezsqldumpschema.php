@@ -67,9 +67,7 @@ class Ezsqldumpschema extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[type:][user:][host:][password;][port:][socket:][output-array][output-serialized][output-sql]" .
+        $options = $this->startup( "[type:][user:][host:][password;][port:][socket:][output-array][output-serialized][output-sql]" .
                                         "[diff-friendly][meta-data][table-type:][table-charset:][compatible-sql][no-sort]" .
                                         "[format:]" .
                                         "[output-types:][allow-multi-insert][schema-file:]",
@@ -104,7 +102,6 @@ class Ezsqldumpschema extends \Exponential\Runnable\Command
                                                                    "data - Table data\n" .
                                                                    "all - Both table schema and data" )
                                                ) );
-        $script->initialize();
 
         $type = $options['type'];
         $host = $options['host'];

@@ -188,14 +188,11 @@ class Changelog2xmltext extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "",
+        $options = $this->startup( "",
                                         "[changelog]",
                                         false, false,
                                         array( 'log' => false,
                                                'siteaccess' => false ) );
-        $script->initialize();
 
         if ( count( $options['arguments'] ) < 1 )
         {

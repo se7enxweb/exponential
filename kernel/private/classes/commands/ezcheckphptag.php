@@ -41,13 +41,10 @@ class Ezcheckphptag extends \Exponential\Runnable\Command
                                               'use-modules' => true,
                                               'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[no-print]",
+        $options = $this->startup( "[no-print]",
                                         "[path+]",
                                         array( 'no-print' => "Do not print path for bad files"
                                                ) );
-        $script->initialize();
 
         if ( count( $options['arguments'] ) < 1 )
         {

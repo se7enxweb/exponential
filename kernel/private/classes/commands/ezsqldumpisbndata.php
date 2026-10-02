@@ -53,9 +53,7 @@ class Ezsqldumpisbndata extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-         $options = $this->options( "[stdout-sql][stdout-dba][filename-sql:][filename-dba:][db-host:][db-user:][db-password:][db-database:][db-driver:]", "",
+        $options = $this->startup( "[stdout-sql][stdout-dba][filename-sql:][filename-dba:][db-host:][db-user:][db-password:][db-database:][db-driver:]", "",
 
                                         array( 'stdout-sql' => "Result of sql output will be printed to standard output instead of to file.",
                                                'stdout-dba' => "Result of dba output will be printed to standard output instead of to file.",
@@ -68,7 +66,6 @@ class Ezsqldumpisbndata extends \Exponential\Runnable\Command
                                                'db-password' => "Database password.",
                                                'db-database' => "Database name.",
                                                'db-driver' => "Database driver." ) );
-        $script->initialize();
         $db = \eZDB::instance();
 
         if( !$db->IsConnected )

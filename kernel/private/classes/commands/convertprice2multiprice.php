@@ -103,17 +103,12 @@ class Convertprice2multiprice extends \Exponential\Runnable\Command
                                               'use-modules' => true,
                                               'use-extensions' => true,
                                               'user' => true ) );
-        $script->startup();
-
-        $scriptOptions = $this->options( "",
+        $scriptOptions = $this->startup( "",
                                               "",
                                               array(),
                                               false,
                                               array( 'user' => true )
                                              );
-
-
-        $script->initialize();
 
 
         $convertedObjectsCount = 0;

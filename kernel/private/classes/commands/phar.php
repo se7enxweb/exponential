@@ -52,9 +52,7 @@ class Phar extends \Exponential\Runnable\Command
             'use-modules' => false,
             'use-extensions' => false,
         ) );
-        $script->startup();
-
-        $options = $this->options(
+        $options = $this->startup(
             '[json][output:][force]',
             '[verb]',
             array(
@@ -65,7 +63,6 @@ class Phar extends \Exponential\Runnable\Command
                           . "build  write the archive, unless it is current (--force: anyway)\n"
                           . "check  whether it is current, and if not which files differ; exit 1 when not",
             ) );
-        $script->initialize();
 
         require_once 'kernel/classes/expphar.php';
 

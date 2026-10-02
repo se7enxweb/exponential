@@ -285,9 +285,7 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
                                               'use-modules' => true,
                                               'use-extensions' => true,
                                               'user' => true ) );
-        $script->startup();
-
-        $scriptOptions = $this->options( "[src-node-id:][dst-node-id:][all-versions][keep-creator][keep-time]",
+        $scriptOptions = $this->startup( "[src-node-id:][dst-node-id:][all-versions][keep-creator][keep-time]",
                                               "",
                                               array( 'src-node-id' => "Source subtree parent node ID.",
                                                      'dst-node-id' => "Destination node ID.",
@@ -298,7 +296,6 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
                                               false,
                                               array( 'user' => true )
                                              );
-        $script->initialize();
 
         $srcNodeID   = $scriptOptions[ 'src-node-id' ] ? $scriptOptions[ 'src-node-id' ] : false;
         $dstNodeID   = $scriptOptions[ 'dst-node-id' ] ? $scriptOptions[ 'dst-node-id' ] : false;

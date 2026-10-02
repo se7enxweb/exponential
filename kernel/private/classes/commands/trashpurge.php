@@ -26,7 +26,7 @@ class Trashpurge extends \Exponential\Runnable\Command
     public function run()
     {
         // the script's variables were globals; functions of the script read them with "global"
-        foreach ( array( 'options', 'purgeHandler', 'script' ) as $__name )
+        foreach ( array( 'options', 'script' ) as $__name )
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
@@ -43,9 +43,7 @@ class Trashpurge extends \Exponential\Runnable\Command
             )
         );
 
-        $script->startup();
-
-        $options = $this->options(
+        $options = $this->startup(
             "[iteration-sleep:][iteration-limit:][memory-monitoring][trashed-days:]",
             "",
             array(
@@ -55,8 +53,6 @@ class Trashpurge extends \Exponential\Runnable\Command
                 'trashed-days'      => 'If set, only objects that has been trashed for at least the specified amount of days will be purged.'
             )
         );
-
-        $script->initialize();
 
         $script->setIterationData( '.', '~' );
 

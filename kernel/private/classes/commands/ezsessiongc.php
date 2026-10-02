@@ -18,17 +18,6 @@
  *
  */
 
-namespace
-{
-
-
-// Functions for session to make sure baskets are cleaned up
-function eZSessionBasketGarbageCollector( $db, $time )
-{
-    eZBasket::cleanupExpired( $time );
-}
-}
-
 namespace Exponential\Command\Kernel
 {
 
@@ -50,12 +39,9 @@ class Ezsessiongc extends \Exponential\Runnable\Command
                                              'use-modules' => false,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "",
+        $options = $this->startup( "",
                                         "[]",
                                         array() );
-        $script->initialize();
 
         $cli->output( "Cleaning up expired sessions." );
 

@@ -47,9 +47,7 @@ class Warm extends \Exponential\Runnable\Command
             'use-modules' => true,
             'use-extensions' => true,
         ) );
-        $script->startup();
-
-        $options = $this->options(
+        $options = $this->startup(
             '[json][verbose][limit:][host:][base:][concurrency:]',
             '',
             array(
@@ -60,7 +58,6 @@ class Warm extends \Exponential\Runnable\Command
                 'base'        => 'Where to send them (default: http://127.0.0.1:8088).',
                 'concurrency' => 'How many at once (default: 8).',
             ) );
-        $script->initialize();
 
         require_once 'kernel/classes/expcachewarm.php';
 

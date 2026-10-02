@@ -50,15 +50,11 @@ class Cleanuprss extends \Exponential\Runnable\Command
             )
         );
 
-        $script->startup();
-
-        $options = $this->options(
+        $options = $this->startup(
             "[dry-run][keep:]",
             "",
             array( 'dry-run' => 'List what would be removed, and remove nothing',
                    'keep'    => 'Keep this many items per feed instead of the configured number' ) );
-
-        $script->initialize();
 
         $cleanup = new \expCleanupRSS(
             array( 'dry-run' => (bool)$options['dry-run'],

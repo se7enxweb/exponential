@@ -171,14 +171,11 @@ class Checkdbfiles extends \Exponential\Runnable\Command
                                              'use-modules' => false,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[no-verify-branches][export-path:]",
+        $options = $this->startup( "[no-verify-branches][export-path:]",
                                         "",
                                         array( 'no-verify-branches' => "Do not verify the content of the files with previous branches (To avoid SVN usage)",
                                                'export-path' => "Directory to use for doing SVN exports."
                                                ) );
-        $script->initialize();
 
         $dbTypes = array();
         $dbTypes[] = 'mysql';

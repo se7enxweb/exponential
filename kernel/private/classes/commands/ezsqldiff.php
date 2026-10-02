@@ -115,9 +115,7 @@ class Ezsqldiff extends \Exponential\Runnable\Command
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
-        $script->startup();
-
-        $options = $this->options( "[source-type:][source-host:][source-user:][source-password;][source-socket:]" .
+        $options = $this->startup( "[source-type:][source-host:][source-user:][source-password;][source-socket:]" .
                                         "[match-type:][match-host:][match-user:][match-password;][match-socket:]" .
                                         "[t:|type:][host:][u:|user:][p:|password;][socket:]" .
                                         "[lint-check]" .
@@ -145,7 +143,6 @@ class Ezsqldiff extends \Exponential\Runnable\Command
                                                'reverse' => "Reverse the differences",
                                                'check-only' => "Don't show SQLs for the differences, just set exit code and return"
                                                ) );
-        $script->initialize();
 
         if ( count( $options['arguments'] ) < 1 )
         {
