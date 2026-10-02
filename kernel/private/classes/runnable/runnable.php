@@ -104,6 +104,10 @@ abstract class Runnable
             self::$attachedListeners["$event@$callback"] = true;
             $events->attach( $event, $callback );
         }
+        // The audit's ezpEvent bridge for commands and cronjob parts (a web request attaches it in
+        // ezpEvent::registerEventListeners()); once per ezpEvent instance
+        if ( class_exists( 'expAuditBridge' ) && ( PHP_SAPI === 'cli' && empty( $_SERVER['REQUEST_URI'] ) ) )
+            \expAuditBridge::attachOnce( $events );
         return $events;
     }
 

@@ -111,6 +111,11 @@ class ezpEvent
                 else if ( is_file( eZSys::cacheDirectory() . '/exphttpcache/contract.php' ) )
                     ezpHttpCacheListener::contract();
             }
+
+            // The audit's ezpEvent bridge ([AuditBridgeSettings] Bridge[] of audit.ini): replaced with the rest
+            // each request, so a persistent worker never records an event twice
+            if ( class_exists( 'expAuditBridge' ) )
+                expAuditBridge::attach( $this );
             $this->recordingGlobal = false;
         }
     }
