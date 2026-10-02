@@ -174,6 +174,15 @@ class expRADSurvey
         $callables = self::templateCallables();
         $overrides = self::overrides();
         $replaced  = self::kernelOverrides();
+        $runnables = self::runnables();
+
+        // The runnables' own events: their names are built at run time
+        // (Runnable::eventName()), so the source sweep cannot see them.
+        foreach ( self::runnableEvents() as $event => $entry )
+            if ( !isset( self::$Events[$event] ) )
+                self::$Events[$event] = $entry;
+        ksort( self::$Events );
+
         $events    = (array) self::$Events;
 
         $views    = 0;
@@ -193,6 +202,7 @@ class expRADSurvey
             'events'       => $events,
             'overrides'    => $overrides,
             'replaced'     => $replaced,
+            'runnables'    => $runnables,
             'files'        => $files,
             'counts'       => array(
                 'ini'          => count( $files ),
@@ -211,7 +221,15 @@ class expRADSurvey
                 'functions'    => count( array_filter( $callables, function ( $c ) { return $c['kind'] === 'function'; } ) ),
                 'events'       => count( $events ),
                 'overrides'    => count( $overrides ),
-                'replaced'     => count( $replaced ) ) );
+                'replaced'     => count( $replaced ),
+                'runnables'    => count( $runnables['list'] ),
+                'runnable_commands'  => count( self::runnablesOf( $runnables['list'], 'kind', 'command' ) ),
+                'runnable_cronjobs'  => count( self::runnablesOf( $runnables['list'], 'kind', 'cronjob' ) ),
+                'runnable_views'     => count( self::runnablesOf( $runnables['list'], 'kind', 'view' ) ),
+                'runnable_kernel'    => count( self::runnablesOf( $runnables['list'], 'owner', 'kernel' ) ),
+                'runnable_extension' => count( self::runnablesOf( $runnables['list'], 'owner', 'extension' ) ),
+                'reimplemented'      => count( array_filter( $runnables['list'], function ( $r ) { return $r['implementation'] !== ''; } ) ),
+                'runnable_broken'    => count( $runnables['broken'] ) ) );
 
         self::$Survey['counts']['total'] = self::$Survey['counts']['settings']
                                          + self::$Survey['counts']['repositories']
@@ -220,9 +238,121 @@ class expRADSurvey
                                          + self::$Survey['counts']['callables']
                                          + self::$Survey['counts']['events']
                                          + self::$Survey['counts']['overrides']
-                                         + self::$Survey['counts']['replaced'];
+                                         + self::$Survey['counts']['replaced']
+                                         + self::$Survey['counts']['runnables'];
 
         return self::$Survey;
+    }
+
+    // ── Commands, cronjob parts and views as classes ─────────────────────────
+
+    /**
+     * Every runnable class: each command (bin/), cronjob part (cronjobs/) and module view whose code is a class
+     * extending Exponential\Runnable\Command, CronjobPart or ModuleView, kernel and extensions alike, read out of
+     * the autoload arrays. Each is a re-implementation point: site.ini [RunnableSettings] Implementation[<class>]
+     * names a subclass that runs in its place. The entries of that setting are checked too: one naming a class
+     * that is no runnable, or a replacement that is not its subclass, is reported as broken (Runnable::create()
+     * ignores it).
+     *
+     * Only the replacements named in the setting are loaded, to tell whether they are subclasses; the runnables
+     * themselves are read, not loaded.
+     *
+     * @return array with keys list (class, kind, owner, path, implementation) and broken (class, implementation, why)
+     */
+    public static function runnables()
+    {
+        $list = array();
+        foreach ( array( 'autoload/ezp_kernel.php', 'var/autoload/ezp_extension.php' ) as $file )
+        {
+            $map = is_file( $file ) ? @include $file : false;
+            if ( !is_array( $map ) )
+                continue;
+
+            foreach ( $map as $class => $path )
+            {
+                if ( !preg_match( '/^Exponential\\\\(Command|Cronjob|View)\\\\(Kernel|Extension)\\\\/', (string) $class, $m ) )
+                    continue;
+                $code = is_file( $path ) ? @file_get_contents( $path ) : false;
+                // a class of one of these namespaces that is not a runnable (the built-in server's router) is no point
+                if ( $code === false || !preg_match( '/extends\s+\\\\?Exponential\\\\Runnable\\\\(Command|CronjobPart|ModuleView)\b/', $code ) )
+                    continue;
+                $list[$class] = array( 'class'          => (string) $class,
+                                       'kind'           => strtolower( $m[1] ),
+                                       'owner'          => strtolower( $m[2] ),
+                                       'path'           => (string) $path,
+                                       'implementation' => '' );
+            }
+        }
+
+        $broken = array();
+        foreach ( static::runnableImplementations() as $class => $implementation )
+        {
+            $class = ltrim( (string) $class, '\\' );
+            $implementation = is_string( $implementation ) ? ltrim( $implementation, '\\' ) : '';
+            if ( !isset( $list[$class] ) )
+                $broken[] = array( 'class' => $class, 'implementation' => $implementation, 'why' => 'names no command, cronjob part or view class' );
+            else if ( $implementation === '' || !class_exists( $implementation ) )
+                $broken[] = array( 'class' => $class, 'implementation' => $implementation, 'why' => 'the replacement class does not exist' );
+            else if ( !is_subclass_of( $implementation, $class ) )
+                $broken[] = array( 'class' => $class, 'implementation' => $implementation, 'why' => 'the replacement does not extend the class it replaces' );
+            else
+                $list[$class]['implementation'] = $implementation;
+        }
+
+        ksort( $list );
+
+        return array( 'list' => array_values( $list ), 'broken' => $broken );
+    }
+
+    /**
+     * site.ini [RunnableSettings] Implementation[], class => replacement, empty entries left out.
+     *
+     * @return array
+     */
+    public static function runnableImplementations()
+    {
+        if ( !class_exists( 'eZINI' ) )
+            return array();
+        $ini = eZINI::instance();
+        if ( !$ini->hasVariable( 'RunnableSettings', 'Implementation' ) )
+            return array();
+        $map = $ini->variable( 'RunnableSettings', 'Implementation' );
+        if ( !is_array( $map ) )
+            return array();
+        $out = array();
+        foreach ( $map as $class => $implementation )
+            if ( is_string( $class ) && $class !== '' )
+                $out[$class] = $implementation;
+        return $out;
+    }
+
+    /**
+     * The events every runnable announces around run() (see Exponential\Runnable\Runnable::runWithEvents()).
+     *
+     * @return array event => array( event, kind, where )
+     */
+    public static function runnableEvents()
+    {
+        $events = array();
+        foreach ( array( 'command', 'cronjob', 'view' ) as $kind )
+        {
+            $events["runnable/$kind/before"] = array( 'event' => "runnable/$kind/before", 'kind' => 'notify',
+                                                      'where' => array( 'kernel/private/classes/runnable/runnable.php' ) );
+            $events["runnable/$kind/after"]  = array( 'event' => "runnable/$kind/after", 'kind' => 'filter',
+                                                      'where' => array( 'kernel/private/classes/runnable/runnable.php' ) );
+        }
+        return $events;
+    }
+
+    /**
+     * @param array $list runnables()['list']
+     * @param string $key kind or owner
+     * @param string $value
+     * @return array the runnables with that value
+     */
+    public static function runnablesOf( array $list, $key, $value )
+    {
+        return array_values( array_filter( $list, function ( $r ) use ( $key, $value ) { return $r[$key] === $value; } ) );
     }
 
     /**

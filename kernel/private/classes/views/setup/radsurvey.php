@@ -34,6 +34,8 @@ class Radsurvey extends \Exponential\Runnable\ModuleView
                                      'what'  => 'What the kernel declares for somebody else to implement, with how many methods each asks for and what already implements it. The ones with many methods and one implementation are the deep water.' ),
             'modules'      => array( 'title' => 'Modules and their views',
                                      'what'  => 'Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.' ),
+            'runnables'    => array( 'title' => 'Commands, cronjob parts and views as classes',
+                                     'what'  => 'Every command, cronjob part and module view whose code is a class. Each can be re-implemented without copying a file: a subclass named in site.ini [RunnableSettings] Implementation[<class>] runs in its place, and listeners of runnable/<kind>/before and runnable/<kind>/after act around any of them. An entry that names no such class, or a replacement that does not extend it, is ignored and shown here as broken.' ),
             'callables'    => array( 'title' => 'What a template can call',
                                      'what'  => 'Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.' ),
             'events'       => array( 'title' => 'Events something can listen to',
@@ -170,6 +172,30 @@ class Radsurvey extends \Exponential\Runnable\ModuleView
                         'four'  => $entry['subdir'],
                         'note'  => $entry['from'],
                         'state' => $entry['source'] !== '' ? 'ok' : 'empty' );
+                break;
+
+            case 'runnables':
+                $kindLabels = array( 'command' => \ezpI18n::tr( 'kernel/setup/rad', 'command' ),
+                                     'cronjob' => \ezpI18n::tr( 'kernel/setup/rad', 'cronjob part' ),
+                                     'view'    => \ezpI18n::tr( 'kernel/setup/rad', 'module view' ) );
+                foreach ( $survey['runnables']['broken'] as $entry )
+                    $rows[] = array(
+                        'one'   => $entry['class'],
+                        'two'   => \ezpI18n::tr( 'kernel/setup/rad', 'broken entry' ),
+                        'three' => \ezpI18n::tr( 'kernel/setup/rad', $entry['why'] ),
+                        'four'  => 'Implementation[' . $entry['class'] . ']=' . $entry['implementation'],
+                        'note'  => 'site.ini [RunnableSettings]',
+                        'state' => 'bad' );
+                foreach ( $survey['runnables']['list'] as $entry )
+                    $rows[] = array(
+                        'one'   => $entry['class'],
+                        'two'   => $kindLabels[$entry['kind']],
+                        'three' => $entry['owner'] === 'kernel' ? \ezpI18n::tr( 'kernel/setup/rad', 'kernel' ) : \ezpI18n::tr( 'kernel/setup/rad', 'extension' ),
+                        'four'  => $entry['implementation'] !== ''
+                                   ? \ezpI18n::tr( 'kernel/setup/rad', 're-implemented by %class', null, array( '%class' => $entry['implementation'] ) )
+                                   : 'Implementation[' . $entry['class'] . ']=<subclass>',
+                        'note'  => $entry['path'],
+                        'state' => $entry['implementation'] !== '' ? 'ok' : 'empty' );
                 break;
 
             case 'replaced':

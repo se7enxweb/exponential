@@ -75,6 +75,7 @@ class expRADCatalogue
             'design'    => 'A template in a design, found through the design chain rather than by being named anywhere.',
             'ini'       => 'Settings only. Nothing is written but ini, and the behaviour changes.',
             'override'  => 'A kernel class replaced by one of your own through the override autoload path. The heaviest of these mechanisms and the last resort: nothing registers the replacement by name, so two extensions replacing the same class is a fight neither of them knows it is in.',
+            'runnable'  => 'A subclass of a command, cronjob part or view class, named in site.ini [RunnableSettings] Implementation[]. The file of the command, part or view stays as it is; Runnable::create() makes the subclass instead, and an entry that is not a subclass is ignored. A command reads it from settings/site.ini and settings/override only, because it starts before its siteaccess and extensions are loaded.',
         );
     }
 
@@ -412,6 +413,17 @@ class expRADCatalogue
             'mechanism' => 'handler',
             'source' => 'extension/ezjscore',
             'tool'  => 'setup/handlerextension/ajaxfunction' ),
+
+        'runnable' => array(
+            'group' => 'modules',
+            'title' => 'Command, cronjob part or view re-implemented',
+            'what'  => 'Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.',
+            'where' => 'extension/<name>/classes/<subclass>.php, e.g. class myHistoryView extends \Exponential\View\Kernel\Content\History',
+            'register' => ezpI18n::tr( 'design/admin/setup/rad', 'site.ini [RunnableSettings] Implementation[<class>]=<subclass>; listeners of runnable/<kind>/before and runnable/<kind>/after in [RunnableSettings] Listeners[]' ),
+            'contract' => ezpI18n::tr( 'design/admin/setup/rad', 'extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath' ),
+            'mechanism' => 'runnable',
+            'source' => 'kernel/private/classes/runnable/runnable.php',
+            'tool'  => false ),
 
         // ── Workflow, events and jobs ───────────────────────────────────────
 
