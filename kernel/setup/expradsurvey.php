@@ -175,6 +175,7 @@ class expRADSurvey
         $overrides = self::overrides();
         $replaced  = self::kernelOverrides();
         $runnables = self::runnables();
+        $iniCommand = self::iniCommand();
 
         // The runnables' own events: their names are built at run time
         // (Runnable::eventName()), so the source sweep cannot see them.
@@ -203,6 +204,7 @@ class expRADSurvey
             'overrides'    => $overrides,
             'replaced'     => $replaced,
             'runnables'    => $runnables,
+            'ini_command'  => $iniCommand,
             'files'        => $files,
             'counts'       => array(
                 'ini'          => count( $files ),
@@ -229,7 +231,14 @@ class expRADSurvey
                 'runnable_kernel'    => count( self::runnablesOf( $runnables['list'], 'owner', 'kernel' ) ),
                 'runnable_extension' => count( self::runnablesOf( $runnables['list'], 'owner', 'extension' ) ),
                 'reimplemented'      => count( array_filter( $runnables['list'], function ( $r ) { return $r['implementation'] !== ''; } ) ),
-                'runnable_broken'    => count( $runnables['broken'] ) ) );
+                'runnable_broken'    => count( $runnables['broken'] ),
+                // already points of 'settings' (ini.ini [IniCommandSettings] names a class each), so not added
+                // to the total again: counted here to say what they are
+                'ini_actions'            => count( $iniCommand['actions'] ),
+                'ini_actions_registered' => count( array_filter( $iniCommand['actions'], function ( $a ) { return !$a['builtin']; } ) ),
+                'ini_scope_providers'    => count( $iniCommand['providers'] ),
+                'ini_command_broken'     => count( $iniCommand['broken'] ),
+                'inicommand'             => count( $iniCommand['actions'] ) + count( $iniCommand['providers'] ) ) );
 
         self::$Survey['counts']['total'] = self::$Survey['counts']['settings']
                                          + self::$Survey['counts']['repositories']
@@ -242,6 +251,57 @@ class expRADSurvey
                                          + self::$Survey['counts']['runnables'];
 
         return self::$Survey;
+    }
+
+    // ── The exp:ini command: actions and scope providers ─────────────────────
+
+    /**
+     * The actions of the exp:ini command and the scope providers of its settings editor, as ini.ini
+     * [IniCommandSettings] registers them (Actions[<name>]=<class>, ScopeProviders[]=<class>): the kernel's
+     * built-ins and what extensions add by an ini.ini.append.php. A registration whose class is missing or does
+     * not implement expIniAction / expIniScopeProvider is reported as broken.
+     *
+     * @return array with keys actions (name, class, builtin, description, ok), providers (class, builtin, ok)
+     *               and broken (kind, name, class, why)
+     */
+    public static function iniCommand()
+    {
+        $result = array( 'actions' => array(), 'providers' => array(), 'broken' => array() );
+        if ( !class_exists( 'expIniActionRegistry' ) )
+            return $result;
+
+        try
+        {
+            $registry = expIniActionRegistry::fromSettings();
+        }
+        catch ( Exception $e )
+        {
+            return $result;
+        }
+
+        foreach ( $registry->actions() as $name => $class )
+        {
+            $row = array( 'name' => $name, 'class' => $class, 'builtin' => $registry->isBuiltIn( $name ),
+                          'description' => '', 'ok' => true );
+            try
+            {
+                $row['description'] = $registry->create( $name )->description();
+            }
+            catch ( Exception $e )
+            {
+                $row['ok'] = false;
+                $row['description'] = $e->getMessage();
+            }
+            $result['actions'][] = $row;
+        }
+
+        $builtIn = array( 'expIniCoreScopeProvider', 'expIniExtensionScopeProvider' );
+        foreach ( array_values( array_unique( array_merge( $builtIn, $registry->scopeProviders() ) ) ) as $class )
+            $result['providers'][] = array( 'class' => $class, 'builtin' => in_array( $class, $builtIn, true ),
+                                            'ok' => class_exists( $class ) && is_subclass_of( $class, 'expIniScopeProvider' ) );
+
+        $result['broken'] = $registry->problems();
+        return $result;
     }
 
     // ── Commands, cronjob parts and views as classes ─────────────────────────

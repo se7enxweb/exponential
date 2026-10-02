@@ -36,6 +36,8 @@ class Radsurvey extends \Exponential\Runnable\ModuleView
                                      'what'  => 'Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.' ),
             'runnables'    => array( 'title' => 'Commands, cronjob parts and views as classes',
                                      'what'  => 'Every command, cronjob part and module view whose code is a class. Each can be re-implemented without copying a file: a subclass named in site.ini [RunnableSettings] Implementation[<class>] runs in its place, and listeners of runnable/<kind>/before and runnable/<kind>/after act around any of them. An entry that names no such class, or a replacement that does not extend it, is ignored and shown here as broken.' ),
+            'inicommand'   => array( 'title' => 'Actions and scopes of exp:ini',
+                                     'what'  => 'Every action of the exp:ini command and every provider of the scopes it writes, as ini.ini [IniCommandSettings] registers them. An extension adds an action with Actions[<name>]=<class> (a class implementing expIniAction) and a scope provider with ScopeProviders[]=<class> (expIniScopeProvider) in its own ini.ini.append.php. Guide: doc/bc/6.0/console-exp-ini.md.' ),
             'callables'    => array( 'title' => 'What a template can call',
                                      'what'  => 'Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.' ),
             'events'       => array( 'title' => 'Events something can listen to',
@@ -196,6 +198,33 @@ class Radsurvey extends \Exponential\Runnable\ModuleView
                                    : 'Implementation[' . $entry['class'] . ']=<subclass>',
                         'note'  => $entry['path'],
                         'state' => $entry['implementation'] !== '' ? 'ok' : 'empty' );
+                break;
+
+            case 'inicommand':
+                foreach ( $survey['ini_command']['broken'] as $entry )
+                    $rows[] = array(
+                        'one'   => $entry['name'],
+                        'two'   => \ezpI18n::tr( 'kernel/setup/rad', 'broken entry' ),
+                        'three' => \ezpI18n::tr( 'kernel/setup/rad', $entry['why'] ),
+                        'four'  => $entry['class'],
+                        'note'  => 'ini.ini [IniCommandSettings]',
+                        'state' => 'bad' );
+                foreach ( $survey['ini_command']['actions'] as $entry )
+                    $rows[] = array(
+                        'one'   => 'exp:ini ' . $entry['name'],
+                        'two'   => \ezpI18n::tr( 'kernel/setup/rad', 'action' ),
+                        'three' => $entry['builtin'] ? \ezpI18n::tr( 'kernel/setup/rad', 'kernel' ) : \ezpI18n::tr( 'kernel/setup/rad', 'extension' ),
+                        'four'  => $entry['class'],
+                        'note'  => $entry['description'],
+                        'state' => $entry['ok'] ? 'ok' : 'bad' );
+                foreach ( $survey['ini_command']['providers'] as $entry )
+                    $rows[] = array(
+                        'one'   => $entry['class'],
+                        'two'   => \ezpI18n::tr( 'kernel/setup/rad', 'scope provider' ),
+                        'three' => $entry['builtin'] ? \ezpI18n::tr( 'kernel/setup/rad', 'kernel' ) : \ezpI18n::tr( 'kernel/setup/rad', 'extension' ),
+                        'four'  => 'ScopeProviders[]=' . $entry['class'],
+                        'note'  => 'ini.ini [IniCommandSettings]',
+                        'state' => $entry['ok'] ? 'ok' : 'bad' );
                 break;
 
             case 'replaced':

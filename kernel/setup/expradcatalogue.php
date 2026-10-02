@@ -425,6 +425,17 @@ class expRADCatalogue
             'source' => 'kernel/private/classes/runnable/runnable.php',
             'tool'  => false ),
 
+        'iniaction' => array(
+            'group' => 'modules',
+            'title' => 'exp:ini action or settings scope',
+            'what'  => 'A word of the exp:ini command (console exp:ini <action> ...) or a place it can write settings. The kernel ships get, set, add, rem, clear, toggle, copy, where, list, scopes and actions; an extension adds its own, for example Actions[dump]=myExtIniActionDump makes "exp:ini dump" run that class, and ScopeProviders[]=myExtIniScopeProvider adds scopes such as a directory every cluster node shares.',
+            'where' => 'extension/<name>/classes/<class>.php, e.g. class myExtIniActionDump extends expIniActionBase',
+            'register' => ezpI18n::tr( 'design/admin/setup/rad', 'ini.ini [IniCommandSettings] Actions[<name>]=<class>, ActionAliases[<alias>]=<name>, ScopeProviders[]=<class> in extension/<name>/settings/ini.ini.append.php' ),
+            'contract' => ezpI18n::tr( 'design/admin/setup/rad', 'implements expIniAction (name, description, usage, run( expIniCommandContext )) or expIniScopeProvider (scopes( $root ))' ),
+            'mechanism' => 'autoload',
+            'source' => 'kernel/classes/ini/actions/expiniaction.php',
+            'tool'  => false ),
+
         // ── Workflow, events and jobs ───────────────────────────────────────
 
         'workflowevent' => array(
