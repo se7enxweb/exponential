@@ -47,7 +47,7 @@ class Audit extends \Exponential\Runnable\Command
                                                 "  exp:audit key list|rotate|fingerprint [--pseudonym]\n" .
                                                 "  exp:audit checkpoint\n" .
                                                 "  exp:audit sinks list|test <name>|flush [<name>]\n" .
-                                                "  exp:audit alerts list|test <rule> [--replay=YYYY-MM-DD]\n" .
+                                                "  exp:audit alerts list|test <rule> [--replay=YYYY-MM-DD]|recipients [--rule=<rule>]\n" .
                                                 "  exp:audit cron [--daily]           one run of the cronjob part (--daily: the daily tasks now)\n\n" .
                                                 "Filters (search, export): --name=<pattern> --user=<id> --login= --object=<type:id> --target=<type:id>\n" .
                                                 "  --result=success|refused|failed --severity=<min> --request= --job= --run= --ip=<network>\n" .
@@ -57,7 +57,7 @@ class Audit extends \Exponential\Runnable\Command
                               'use-extensions' => true ) );
         $this->options = $this->startup( '[channel:][name:][lines:][follow][json][date:][archives][dry-run][before:][format:][to:][incremental]' .
                                          '[user:][login:][object:][target:][result:][severity:][request:][job:][run:][ip:][from:][q:]' .
-                                         '[legacy-file:][limit:][files][out:][subject-user:][dir:][file:][keep-originals][pseudonym][replay:][daily]',
+                                         '[legacy-file:][limit:][files][out:][subject-user:][dir:][file:][keep-originals][pseudonym][replay:][daily][rule:]',
                                          '[action][id][extra]',
                                          array( 'channel' => 'Only this channel (content, access, system, commerce, read)',
                                                 'name' => 'tail, search, export: only names matching this pattern (access.*, content.node.move)',
@@ -80,7 +80,8 @@ class Audit extends \Exponential\Runnable\Command
                                                 'keep-originals' => 'import: leave the 4.x files in place after archiving them',
                                                 'pseudonym' => 'key rotate: replace the pseudonym key instead of the signing key',
                                                 'replay' => 'alerts test: run the rule over the records since this date, without firing',
-                                                'daily' => 'cron: run the daily tasks now' ) );
+                                                'daily' => 'cron: run the daily tasks now',
+                                                'rule' => 'alerts recipients: only this rule' ) );
         $args = $this->options['arguments'];
         $action = isset( $args[0] ) ? $args[0] : 'status';
         if ( !class_exists( 'expAudit' ) || !class_exists( 'expAuditVerifier' ) )
@@ -894,7 +895,28 @@ class Audit extends \Exponential\Runnable\Command
                     $this->output( "  {$a['severity']}  group {$a['group']}  count {$a['count']}  {$a['message']}" );
                 return 0;
         }
-        $this->error( "Unknown alerts action '$sub': list, test <rule> [--replay=]" );
+        if ( $sub === 'recipients' )
+        {
+            $only = $this->options['rule'] ? (string)$this->options['rule'] : $rule;
+            $o = \expAuditMailRecipients::overview( $only );
+            if ( $this->json( $o ) )
+                return 0;
+            if ( !$o )
+                $this->output( $only !== null ? "No rule '$only' in [AuditAlertSettings] Rules[]" : 'No rules' );
+            foreach ( $o as $name => $r )
+            {
+                $this->output( $name . ( isset( $r['mailed'] ) && !$r['mailed'] ? '  (Sinks[] has no mail: nobody is mailed)' : '' ) );
+                $this->output( '  from:     ' . $r['from'] . ' -> ' . implode( ', ', $r['specs'] ) );
+                foreach ( $r['addresses'] as $a )
+                    $this->output( '  mail to:  ' . $a['address'] . '  (' . implode( ', ', $a['sources'] ) . ')' );
+                if ( !$r['addresses'] )
+                    $this->output( '  mail to:  nobody' );
+                foreach ( $r['problems'] as $spec => $why )
+                    $this->output( "  problem:  $spec: $why" );
+            }
+            return 0;
+        }
+        $this->error( "Unknown alerts action '$sub': list, test <rule> [--replay=], recipients [--rule=]" );
         return 2;
     }
 

@@ -1,10 +1,15 @@
 <?php
 /**
  * The e-mail sink (doc/bc/6.0/audit.md, "E-mail"): events at MinSeverity (critical) or matching Events[] are mailed
- * through eZMail to Receivers[] (empty: site.ini [MailSettings] AdminEmail), one mail per alert or event, with the
- * console link and nothing beyond what the record holds after the privacy rules; at most one mail per rule and
- * group (an alert) or per name (any other event) within Throttle seconds. Always spooled: mail is sent by the
- * audit cronjob part, so a request never waits on SMTP.
+ * through eZMail, one mail per alert or event and recipient, with the console link and nothing beyond what the
+ * record holds after the privacy rules. Always spooled: mail is sent by the audit cronjob part, so a request never
+ * waits on SMTP.
+ *
+ * Recipients (expAuditMailRecipients): an alert's rule's [AlertRule_<rule>] Recipients[], else [AuditAlertSettings]
+ * Recipients[], else [AuditSink_mail] Receivers[], else the site's AdminEmail; each list may name addresses, named
+ * groups ([AlertRecipients_<name>]), users, logins, user groups and roles, resolved at send time, deduplicated,
+ * disabled users left out. Nothing in the record ever becomes a recipient. At most one mail per rule (or, for
+ * another event, per name) and recipient within Throttle seconds.
  *
  * [AuditSink_mail] Transport names the transport: empty = the kernel's (site.ini [MailSettings] Transport through
  * eZMailTransport::send(), which honours DebugSending); a class extending eZMailTransport = that one (tests use a
@@ -43,27 +48,20 @@ class expAuditMailSink extends expAuditSinkBase
         if ( $t !== '' && ( !class_exists( $t ) || !is_subclass_of( $t, 'eZMailTransport' ) ) )
             return "Transport=$t is not a class extending eZMailTransport";
         if ( !$this->receivers() )
-            return 'no receiver: set [AuditSink_mail] Receivers[] or site.ini [MailSettings] AdminEmail';
+            return 'no recipient: set [AuditAlertSettings] Recipients[] or site.ini [MailSettings] AdminEmail';
         return '';
     }
 
-    /** @return string[] The receivers */
-    public function receivers()
+    /**
+     * The addresses a record is mailed to.
+     *
+     * @param array|null $record null: the default list
+     * @return string[]
+     */
+    public function receivers( ?array $record = null )
     {
-        $r = array_values( array_filter( array_map( 'trim', (array)$this->setting( 'Receivers' ) ), 'strlen' ) );
-        if ( !$r && class_exists( 'eZINI' ) && !expAuditConfig::isOverridden() )
-        {
-            try
-            {
-                $admin = trim( (string)eZINI::instance()->variable( 'MailSettings', 'AdminEmail' ) );
-                if ( $admin !== '' )
-                    $r[] = $admin;
-            }
-            catch ( Throwable $e )
-            {
-            }
-        }
-        return $r;
+        $s = expAuditMailRecipients::specsFor( $record );
+        return expAuditMailRecipients::addresses( $s['specs'] );
     }
 
     public function batchSize()
@@ -82,8 +80,7 @@ class expAuditMailSink extends expAuditSinkBase
         $this->sent = array();
         $this->throttled = 0;
         $this->lastError = null;
-        $receivers = $this->receivers();
-        if ( !$receivers || !class_exists( 'eZMail' ) )
+        if ( !class_exists( 'eZMail' ) )
         {
             $this->lastError = $this->problem();
             return 0;
@@ -94,18 +91,32 @@ class expAuditMailSink extends expAuditSinkBase
         $n = 0;
         foreach ( $records as $r )
         {
-            $key = self::throttleKey( $r );
-            if ( $throttle > 0 && isset( $state[$key] ) && $now - $state[$key] < $throttle )
+            $receivers = $this->receivers( $r );
+            if ( !$receivers )
             {
-                $this->throttled++;
-                $n++;
-                continue;
+                $this->lastError = 'no recipient resolved for ' . self::throttleKey( $r, '' );
+                break;
             }
             list( $subject, $body ) = $this->compose( $r );
-            if ( !$this->send( $receivers, $subject, $body ) )
-                break;
-            $state[$key] = $now;
-            $this->sent[] = array( 'to' => $receivers, 'subject' => $subject, 'body' => $body );
+            $failed = false;
+            foreach ( $receivers as $to )
+            {
+                $key = self::throttleKey( $r, $to );
+                if ( $throttle > 0 && isset( $state[$key] ) && $now - $state[$key] < $throttle )
+                {
+                    $this->throttled++;
+                    continue;
+                }
+                if ( !$this->send( array( $to ), $subject, $body ) )
+                {
+                    $failed = true;
+                    break;
+                }
+                $state[$key] = $now;
+                $this->sent[] = array( 'to' => array( $to ), 'subject' => $subject, 'body' => $body );
+            }
+            if ( $failed )
+                break; // retried later; the recipients mailed already are throttled
             $n++;
         }
         foreach ( $state as $k => $t )
@@ -115,12 +126,12 @@ class expAuditMailSink extends expAuditSinkBase
         return $n;
     }
 
-    /** @return string The throttle key: rule + group for an alert, else the name */
-    public static function throttleKey( array $r )
+    /** @return string The throttle key: rule (an alert) or name (any other event), and the recipient */
+    public static function throttleKey( array $r, $recipient )
     {
         if ( isset( $r['name'] ) && $r['name'] === 'system.audit.alert' && isset( $r['after']['rule'] ) )
-            return 'alert:' . $r['after']['rule'] . ':' . ( isset( $r['after']['group'] ) ? $r['after']['group'] : '' );
-        return 'event:' . ( isset( $r['name'] ) ? $r['name'] : '' );
+            return 'alert:' . $r['after']['rule'] . ':' . strtolower( $recipient );
+        return 'event:' . ( isset( $r['name'] ) ? $r['name'] : '' ) . ':' . strtolower( $recipient );
     }
 
     /**
