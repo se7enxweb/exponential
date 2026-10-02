@@ -127,7 +127,7 @@
 
                             {* DESIGN: Content END *}
                         </div>
-                        <div class="controlbar">
+                        <div class="controlbar a4-edit-bar-bottom">{* admin4: the same compact bar as #controlbar-top, see admin4.css *}
                             {* DESIGN: Control bar START *}
                             <div class="block">
                                 {if ezpreference( 'admin_edit_show_re_edit' )}

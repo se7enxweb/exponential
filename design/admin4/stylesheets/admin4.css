@@ -813,3 +813,122 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
   backdrop-filter: blur(8px);
   box-shadow: inset 0 0 0 1px var(--a4-line), 0 8px 20px rgba(16, 24, 40, 0.10);
 }
+
+/* The edit form's button bar: one slim line. It was a box in a box in a box (the generic control-bar panel,
+   the bar's own panel, the block inside), and its buttons wrapped onto two lines. Now one bar, 30px buttons,
+   one line; on narrow windows the line scrolls sideways instead of wrapping (no scrollbar shown). */
+#maincontent #controlbar-top.controlbar {
+  margin: 0 0 12px;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+#controlbar-top .box-bc {
+  padding: 6px 8px;
+  border-radius: 12px;
+}
+#controlbar-top .box-bc .box-ml {
+  margin: 0;
+  padding: 0;
+}
+#controlbar-top .button-left {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 6px;
+  float: none;
+  margin: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+#controlbar-top .button-left::-webkit-scrollbar { display: none; }
+#controlbar-top .button-right:empty,
+#controlbar-top .float-break { display: none; }
+#controlbar-top .button-left input.defaultbutton,
+#controlbar-top .button-left input.button,
+#controlbar-top .button-left input.button-disabled {
+  flex: 0 0 auto;
+  height: 30px;
+  margin: 0;
+  padding: 0 11px;
+  font-size: 13px;
+  line-height: 28px;
+  white-space: nowrap;
+}
+
+/* Phones and small tablets: the main body uses the width. The column (.content-wrapper, 1rem here), the card's
+   own padding and the edit pages' 32px margin took about 42-58px a side of a 390px screen. */
+@media (max-width: 767px) {
+  .content-wrapper {
+    padding: 8px 6px;
+  }
+  .dashboard-flex > #maincontent {
+    margin: 8px 6px;
+  }
+  #maincontent {
+    padding: 14px 12px 16px;
+    border-radius: 14px;
+  }
+  h1.context-title { font-size: 1.2em; }
+  #maincontent fieldset { padding: 8px 8px 10px; margin-left: 0; margin-right: 0; }
+  #controlbar-top .box-bc { padding: 5px 6px; }
+  #controlbar-top .button-left input.defaultbutton,
+  #controlbar-top .button-left input.button,
+  #controlbar-top .button-left input.button-disabled { padding: 0 9px; font-size: 12.5px; }
+}
+/* On phones every button of the edit bar shows without swiping: the buttons share the bar's width at 12px
+   (the three labels need about 330px, a 390px phone has about 366px inside the bar); a narrower phone wraps
+   the bar onto a second line rather than hiding a button. */
+@media (max-width: 767px) {
+  #controlbar-top .button-left {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    gap: 5px;
+  }
+  #controlbar-top .button-left input.defaultbutton,
+  #controlbar-top .button-left input.button,
+  #controlbar-top .button-left input.button-disabled {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0 7px;
+    font-size: 12px;
+  }
+}
+
+/* The edit form's second button bar, at the bottom of the form (content/edit.tpl .a4-edit-bar-bottom): the same
+   compact bar as the one at the top, in place (the top one is the sticky one). */
+#maincontent .controlbar.a4-edit-bar-bottom {
+  margin: 14px 0 0;
+  padding: 6px 8px;
+  border-radius: 12px;
+}
+.a4-edit-bar-bottom .block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+.a4-edit-bar-bottom .block input.defaultbutton,
+.a4-edit-bar-bottom .block input.button,
+.a4-edit-bar-bottom .block input.button-disabled {
+  flex: 0 0 auto;
+  height: 30px;
+  margin: 0;
+  padding: 0 11px;
+  font-size: 13px;
+  line-height: 28px;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  #maincontent .controlbar.a4-edit-bar-bottom { padding: 5px 6px; }
+  .a4-edit-bar-bottom .block { gap: 5px; }
+  .a4-edit-bar-bottom .block input.defaultbutton,
+  .a4-edit-bar-bottom .block input.button,
+  .a4-edit-bar-bottom .block input.button-disabled {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0 7px;
+    font-size: 12px;
+  }
+}
