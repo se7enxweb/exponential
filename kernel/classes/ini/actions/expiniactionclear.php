@@ -22,15 +22,15 @@ class expIniActionClear extends expIniActionBase
     public function run( expIniCommandContext $c )
     {
         $setting = $c->setting();
-        if ( $setting['kind'] === 'hash' )
-            throw expIniException::usage( 'clear writes Variable[]: give the variable without a key' );
+        self::refuseKind( $setting, 'hash', 'clear writes Variable[]: give the variable without a key' );
         $setting['kind'] = 'array';
+        $text = expIniCommandContext::settingText( $setting );
         $scope = $c->writeScope( $c->shift( 'scope' ) );
         $c->noMoreArguments();
 
         $editor = $c->editor( $scope, $setting['file'] );
         $editor->clearArray( $setting['block'], $setting['variable'] );
-        $c->data( 'setting', expIniCommandContext::settingText( $setting ) );
-        return $c->commit( $editor, $scope, $setting['file'], 'clear ' . expIniCommandContext::settingText( $setting ) );
+        $c->data( 'setting', $text );
+        return $c->commit( $editor, $scope, $setting['file'], "clear $text" );
     }
 }

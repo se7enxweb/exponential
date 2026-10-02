@@ -378,11 +378,15 @@ On this installation the same command with `--dry-run` printed the diffs of 10 f
 
 An action is a class implementing `expIniAction`: `name()`, `description()`, `usage()` and
 `run( expIniCommandContext $c )`, which returns the exit code. `expIniActionBase` takes the first three from
-class constants. The context gives the arguments (`setting()`, `fileAndBlock()`, `shift()`,
+class constants, and has the checks several actions make: `refuseKind()` (a setting of a kind the action does
+not take), `hasValue()` (a value an array already has), `isList()` and `valueLines()` (a value as INI lines).
+The context gives the arguments (`setting()`, `fileAndBlock()`, `shift()`,
 `noMoreArguments()`), the scopes (`scope()`, `writeScope()`), the editor (`editor( $scope, $file )`, which
-tests can replace with `setEditorFactory()`), the output (`line()`, `data()`, `warn()`, `finish()`, `--json`
-handled for you), the masking of secrets (`display()`, `maskText()`), and the write step every writing action
-shares: `commit()`, which covers nothing to change, the dry-run diff, backup, save, cache clear and hint.
+tests can replace with `setEditorFactory()`), the output (`line()`, `data()`, `warn()`, `finish()`,
+`printDiff()`, `counted()`, `--json` handled for you), the masking of secrets (`display()`, `maskText()`),
+and the write step every writing action shares: `commit()`, which covers nothing to change, the dry-run diff,
+backup, save, cache clear and hint. `expIniActionRegistry::describe()` and `classProblem()` say what an action
+is and whether a registered class can work; `exp:ini actions` and the RAD survey both use them.
 
 The kernel's `copy` action (`kernel/classes/ini/actions/expiniactioncopy.php`) is the worked example. It is
 registered as a built-in, so it is tested with the others:

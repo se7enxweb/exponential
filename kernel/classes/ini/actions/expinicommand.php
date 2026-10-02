@@ -184,27 +184,45 @@ class expIniCommand
         }
         catch ( expIniException $e )
         {
-            $code = in_array( $e->getCode(), array( 1, 2, 3, 4 ), true ) ? $e->getCode() : expIniCommandContext::EXIT_USAGE;
-            $context->finish( $code, '' );
-            $message = ( $code === expIniCommandContext::EXIT_USAGE ? 'Usage error: ' : ( $code === expIniCommandContext::EXIT_NOT_FOUND
-                       ? 'Not found: ' : ( $code === expIniCommandContext::EXIT_REFUSED ? 'Refused: ' : 'Write failed: ' ) ) ) . $e->getMessage();
-            if ( $json )
-            {
-                $result = $context->result( $code );
-                $result['message'] = $message;
-                call_user_func( $out, self::json( $result ) );
-            }
-            else
-            {
-                call_user_func( $err, $message );
-                if ( $code === expIniCommandContext::EXIT_USAGE )
-                    call_user_func( $err, 'Usage: exp:ini ' . $resolved . ' ' . strtok( (string)$action->usage(), "\n" ) );
-            }
-            return $code;
+            return self::reportException( $e, $context, $action, $json, $out, $err );
         }
 
         if ( $json )
             call_user_func( $out, self::json( $context->result( $code ) ) );
+        return $code;
+    }
+
+    /** What an exit code's message starts with when an action stopped with an expIniException. */
+    const MESSAGE_PREFIX = array(
+        expIniCommandContext::EXIT_USAGE => 'Usage error: ',
+        expIniCommandContext::EXIT_NOT_FOUND => 'Not found: ',
+        expIniCommandContext::EXIT_REFUSED => 'Refused: ',
+        expIniCommandContext::EXIT_WRITE_FAILED => 'Write failed: ',
+    );
+
+    /**
+     * Reports an expIniException an action stopped with: the message after the prefix of its exit code, as
+     * the JSON result or on the error output (a usage error with the action's usage line).
+     *
+     * @return int the exit code
+     */
+    private static function reportException( expIniException $e, expIniCommandContext $context, expIniAction $action, $json, $out, $err )
+    {
+        $code = expIniCommandContext::exitCodeOf( $e, expIniCommandContext::EXIT_USAGE );
+        $context->finish( $code, '' );
+        $message = self::MESSAGE_PREFIX[$code] . $e->getMessage();
+        if ( $json )
+        {
+            $result = $context->result( $code );
+            $result['message'] = $message;
+            call_user_func( $out, self::json( $result ) );
+        }
+        else
+        {
+            call_user_func( $err, $message );
+            if ( $code === expIniCommandContext::EXIT_USAGE )
+                call_user_func( $err, 'Usage: exp:ini ' . $context->action() . ' ' . strtok( (string)$action->usage(), "\n" ) );
+        }
         return $code;
     }
 

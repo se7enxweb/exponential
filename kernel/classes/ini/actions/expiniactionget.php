@@ -39,9 +39,7 @@ class expIniActionGet extends expIniActionBase
                 if ( $value === null )
                     return $c->finish( expIniCommandContext::EXIT_NOT_FOUND, "Not found: $text is not set in effect" );
                 $c->data( 'value', $c->display( $setting['variable'], $value ) );
-                foreach ( is_array( $value ) && $setting['kind'] !== 'hash' ? $this->valueLines( $c, $setting['variable'], $value )
-                                                                             : array( (string)$c->display( $setting['variable'], self::scalar( $value ) ) ) as $l )
-                    $c->line( $l );
+                $this->printValue( $c, $setting, $value );
                 return expIniCommandContext::EXIT_OK;
             }
             $where = expIniLocator::where( $setting['file'], $setting['block'], $setting['variable'] );
@@ -62,12 +60,25 @@ class expIniActionGet extends expIniActionBase
 
         $c->data( 'value', $c->display( $setting['variable'], $value ) );
         $c->data( 'secret', expIniCommandContext::isSecret( $setting['variable'] ) );
-        $name = $setting['kind'] === 'hash' ? $setting['variable'] . '[' . $setting['key'] . ']' : $setting['variable'];
-        if ( $setting['kind'] === 'hash' || !is_array( $value ) )
-            $c->line( (string)$c->display( $setting['variable'], self::scalar( $value ) ) );
-        else
-            foreach ( $this->valueLines( $c, $name, $value ) as $l )
-                $c->line( $l );
+        $this->printValue( $c, $setting, $value );
         return expIniCommandContext::EXIT_OK;
+    }
+
+    /**
+     * Prints a value: a plain value or a hash entry as it is, an array as its INI lines; secrets masked.
+     *
+     * @param expIniCommandContext $c
+     * @param array $setting parseSetting()
+     * @param mixed $value
+     */
+    private function printValue( expIniCommandContext $c, array $setting, $value )
+    {
+        if ( $setting['kind'] === 'hash' || !is_array( $value ) )
+        {
+            $c->line( (string)$c->display( $setting['variable'], self::scalar( $value ) ) );
+            return;
+        }
+        foreach ( $this->valueLines( $c, $setting['variable'], $value ) as $l )
+            $c->line( $l );
     }
 }

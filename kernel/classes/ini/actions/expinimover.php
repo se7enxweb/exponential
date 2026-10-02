@@ -80,7 +80,7 @@ class expIniMover
             throw expIniException::usage( 'move needs two different scopes' );
 
         $ext = $scope->extension();
-        if ( !in_array( $scope->kind(), array( expIniScope::KIND_EXTENSION, expIniScope::KIND_EXTENSION_SITEACCESS ), true ) || !$ext )
+        if ( !$scope->isExtension() || !$ext )
             return $scope;
 
         if ( !is_dir( expIniEditor::root() . 'extension/' . $ext ) )
@@ -121,7 +121,7 @@ class expIniMover
     {
         if ( in_array( $ext, expIniEditor::activeExtensions(), true ) )
             return true;
-        if ( $scope->kind() === expIniScope::KIND_EXTENSION_SITEACCESS && $scope->siteAccess() )
+        if ( self::isSiteAccessTarget( $scope ) )
         {
             $sa = expIniEditor::scope( 'siteaccess:' . $scope->siteAccess() );
             $value = ( new expIniEditor( $sa, 'site' ) )->get( 'ExtensionSettings', 'ActiveAccessExtensions' );
@@ -130,10 +130,22 @@ class expIniMover
         return false;
     }
 
+    /**
+     * Whether a target is an extension's directory for one siteaccess: activated there by the siteaccess's
+     * ActiveAccessExtensions[], not by ActiveExtensions[] in global.
+     *
+     * @param expIniScope $scope
+     * @return bool
+     */
+    private static function isSiteAccessTarget( expIniScope $scope )
+    {
+        return $scope->kind() === expIniScope::KIND_EXTENSION_SITEACCESS && $scope->siteAccess();
+    }
+
     /** @return string the exp:ini command that activates the extension for the target */
     public function activationCommand( $ext, expIniScope $scope )
     {
-        if ( $scope->kind() === expIniScope::KIND_EXTENSION_SITEACCESS && $scope->siteAccess() )
+        if ( self::isSiteAccessTarget( $scope ) )
             return "exp:ini add site.ini/ExtensionSettings/ActiveAccessExtensions[] $ext siteaccess:" . $scope->siteAccess();
         return "exp:ini add site.ini/ExtensionSettings/ActiveExtensions[] $ext global";
     }
@@ -144,7 +156,7 @@ class expIniMover
      */
     private function activate( $ext, expIniScope $scope )
     {
-        $siteAccessTarget = $scope->kind() === expIniScope::KIND_EXTENSION_SITEACCESS && $scope->siteAccess();
+        $siteAccessTarget = self::isSiteAccessTarget( $scope );
         $where = expIniEditor::scope( $siteAccessTarget ? 'siteaccess:' . $scope->siteAccess() : 'global' );
         $variable = $siteAccessTarget ? 'ActiveAccessExtensions' : 'ActiveExtensions';
         $editor = new expIniEditor( $where, 'site' );
@@ -290,103 +302,163 @@ class expIniMover
             return expIniCommandContext::EXIT_OK;
         }
 
-        $only = $c->option( 'only' ) !== null ? array_values( array_filter( array_map( 'trim', explode( ',', $c->option( 'only' ) ) ), 'strlen' ) ) : null;
-        $keepTarget = (bool)$c->option( 'keep-target' );
+        $only = $this->onlyOption();
         $moved = array();
         $conflicts = array();
-
         foreach ( $blocks as $b )
         {
-            $sourceVars = (array)$source->variables( $b );
-            $names = array_keys( $sourceVars );
-            if ( $only !== null )
-            {
-                $missing = array_diff( $only, $names );
-                if ( $missing )
-                    return $c->finish( expIniCommandContext::EXIT_NOT_FOUND, 'Not found: [' . $b . '] of ' . $source->relativePath()
-                                                                            . ' has no ' . implode( ', ', $missing ) );
-                $names = $only;
-            }
-            $blockOnly = $only;
-            // the lists that activate extensions are never read from inside an extension: they stay
-            if ( $file === 'site' && $b === 'ExtensionSettings'
-                 && in_array( $to->kind(), array( expIniScope::KIND_EXTENSION, expIniScope::KIND_EXTENSION_SITEACCESS ), true ) )
-            {
-                $stay = array_values( array_intersect( $names, array( 'ActiveExtensions', 'ActiveAccessExtensions' ) ) );
-                if ( $stay )
-                {
-                    $c->warn( implode( ', ', $stay ) . ' of [ExtensionSettings] stay in ' . $source->relativePath()
-                               . ': an extension cannot activate itself' );
-                    $names = array_values( array_diff( $names, $stay ) );
-                    if ( !$names )
-                        continue;
-                    $blockOnly = $names;
-                }
-            }
-            $targetVars = $target->blockLines( $b ) !== null ? (array)$target->variables( $b ) : array();
-
-            // variables both blocks have: equal ones need no line, different ones are a conflict
-            $drop = array();
-            foreach ( $names as $name )
-            {
-                if ( !array_key_exists( $name, $targetVars ) )
-                    continue;
-                if ( $targetVars[$name] === $sourceVars[$name] )
-                    $drop[] = $name;
-                else
-                {
-                    $conflicts[] = array( 'block' => $b, 'variable' => $name,
-                                          'source' => $c->display( $name, $sourceVars[$name] ),
-                                          'target' => $c->display( $name, $targetVars[$name] ),
-                                          'kept' => $keepTarget ? 'target' : 'source' );
-                    if ( $keepTarget )
-                        $drop[] = $name;
-                    else
-                        $target->remove( $b, $name );
-                }
-            }
-
-            $lines = self::selectLines( (array)$source->blockLines( $b ), $blockOnly === null ? null : array_diff( $names, $drop ), $drop );
-            if ( self::hasSetting( $lines ) || $target->blockLines( $b ) === null )
-                $target->insertBlockLines( $b, $lines );
-
-            if ( $blockOnly === null )
-                $source->removeBlock( $b );
-            else
-            {
-                foreach ( $names as $name )
-                    $source->remove( $b, $name );
-                if ( !$source->variables( $b ) )
-                    $source->removeBlock( $b, true );
-            }
-            $moved[$b] = $names;
+            $names = $this->moveBlock( $source, $target, $to, $file, $b, $only, $conflicts );
+            if ( is_int( $names ) )
+                return $names;
+            if ( $names !== null )
+                $moved[$b] = $names;
         }
 
-        $variables = 0;
-        foreach ( $moved as $names )
-            $variables += count( $names );
-        foreach ( $conflicts as $conflict )
-            $c->line( sprintf( 'Conflict: [%s] %s: source %s, target %s -> the %s\'s kept', $conflict['block'], $conflict['variable'],
-                               json_encode( $conflict['source'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ),
-                               json_encode( $conflict['target'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ), $conflict['kept'] ) );
-
+        $this->printConflicts( $conflicts );
         $entry = array( 'file' => $file, 'source' => $source->relativePath(), 'target' => $target->relativePath(),
-                        'blocks' => array_keys( $moved ), 'variables' => $variables, 'conflicts' => $conflicts,
+                        'blocks' => array_keys( $moved ), 'variables' => self::variableCount( $moved ), 'conflicts' => $conflicts,
                         'written' => false, 'source_empty' => $source->isEmpty() );
 
         if ( $c->isDryRun() )
         {
-            foreach ( array( $target, $source ) as $editor )
-                foreach ( explode( "\n", rtrim( $c->maskText( $editor->diff() ), "\n" ) ) as $l )
-                    if ( $l !== '' )
-                        $c->line( $l );
+            $c->printDiff( $target->diff(), true );
+            $c->printDiff( $source->diff(), true );
             $entry['diff'] = $c->maskText( $target->diff() . $source->diff() );
             $this->count( $entry );
             return expIniCommandContext::EXIT_OK;
         }
 
-        $code = $this->commitPair( $from, $to, $file, $source, $target, $moved, $entry );
-        return $code;
+        return $this->commitPair( $from, $to, $file, $source, $target, $moved, $entry );
+    }
+
+    /** @return string[]|null the variables of --only, null when it is not given */
+    private function onlyOption()
+    {
+        $only = $this->c->option( 'only' );
+        return $only !== null ? array_values( array_filter( array_map( 'trim', explode( ',', $only ) ), 'strlen' ) ) : null;
+    }
+
+    /**
+     * Moves one block (pending in both editors): merges what the target block already has, writes the source's
+     * lines to the target, and takes them out of the source.
+     *
+     * @param expIniEditor $source
+     * @param expIniEditor $target
+     * @param expIniScope $to
+     * @param string $file
+     * @param string $block
+     * @param string[]|null $only --only
+     * @param array $conflicts collects the merge conflicts
+     * @return string[]|int|null the moved variables; null when nothing of the block moves; an exit code when
+     *                           a variable of --only is not there
+     */
+    private function moveBlock( $source, $target, expIniScope $to, $file, $block, $only, array &$conflicts )
+    {
+        $sourceVars = (array)$source->variables( $block );
+        $names = array_keys( $sourceVars );
+        if ( $only !== null )
+        {
+            $missing = array_diff( $only, $names );
+            if ( $missing )
+                return $this->c->finish( expIniCommandContext::EXIT_NOT_FOUND, 'Not found: [' . $block . '] of ' . $source->relativePath()
+                                                                              . ' has no ' . implode( ', ', $missing ) );
+            $names = $only;
+        }
+        $blockOnly = $only;
+        $stay = self::activationLists( $file, $block, $to, $names );
+        if ( $stay )
+        {
+            $this->c->warn( implode( ', ', $stay ) . ' of [ExtensionSettings] stay in ' . $source->relativePath()
+                            . ': an extension cannot activate itself' );
+            $names = array_values( array_diff( $names, $stay ) );
+            if ( !$names )
+                return null;
+            $blockOnly = $names;
+        }
+
+        $drop = $this->merge( $target, $block, $names, $sourceVars, $conflicts );
+        $lines = self::selectLines( (array)$source->blockLines( $block ), $blockOnly === null ? null : array_diff( $names, $drop ), $drop );
+        if ( self::hasSetting( $lines ) || $target->blockLines( $block ) === null )
+            $target->insertBlockLines( $block, $lines );
+
+        if ( $blockOnly === null )
+            $source->removeBlock( $block );
+        else
+        {
+            foreach ( $names as $name )
+                $source->remove( $block, $name );
+            if ( !$source->variables( $block ) )
+                $source->removeBlock( $block, true );
+        }
+        return $names;
+    }
+
+    /**
+     * The lists that activate extensions among the variables of a block moving into an extension: they are
+     * never read from inside one, so they stay where they are.
+     *
+     * @return string[] ActiveExtensions and/or ActiveAccessExtensions, when they are among $names
+     */
+    private static function activationLists( $file, $block, expIniScope $to, array $names )
+    {
+        if ( $file !== 'site' || $block !== 'ExtensionSettings' || !$to->isExtension() )
+            return array();
+        return array_values( array_intersect( $names, array( 'ActiveExtensions', 'ActiveAccessExtensions' ) ) );
+    }
+
+    /**
+     * The variables both blocks have: an equal value needs no line, a different one is a conflict. The source
+     * wins (the target's line is removed), or the target with --keep-target.
+     *
+     * @return string[] the variables whose source lines are not written to the target
+     */
+    private function merge( $target, $block, array $names, array $sourceVars, array &$conflicts )
+    {
+        $keepTarget = (bool)$this->c->option( 'keep-target' );
+        $targetVars = $target->blockLines( $block ) !== null ? (array)$target->variables( $block ) : array();
+        $drop = array();
+        foreach ( $names as $name )
+        {
+            if ( !array_key_exists( $name, $targetVars ) )
+                continue;
+            if ( $targetVars[$name] === $sourceVars[$name] )
+            {
+                $drop[] = $name;
+                continue;
+            }
+            $conflicts[] = array( 'block' => $block, 'variable' => $name,
+                                  'source' => $this->c->display( $name, $sourceVars[$name] ),
+                                  'target' => $this->c->display( $name, $targetVars[$name] ),
+                                  'kept' => $keepTarget ? 'target' : 'source' );
+            if ( $keepTarget )
+                $drop[] = $name;
+            else
+                $target->remove( $block, $name );
+        }
+        return $drop;
+    }
+
+    /** One line per merge conflict: the two values and which one was kept. */
+    private function printConflicts( array $conflicts )
+    {
+        foreach ( $conflicts as $conflict )
+            $this->c->line( sprintf( 'Conflict: [%s] %s: source %s, target %s -> the %s\'s kept', $conflict['block'], $conflict['variable'],
+                                     self::shown( $conflict['source'] ), self::shown( $conflict['target'] ), $conflict['kept'] ) );
+    }
+
+    /** @return int the number of variables moved: block => names */
+    private static function variableCount( array $moved )
+    {
+        $variables = 0;
+        foreach ( $moved as $names )
+            $variables += count( $names );
+        return $variables;
+    }
+
+    /** @return string a value as the messages quote it (JSON, slashes and Unicode as they are) */
+    private static function shown( $value )
+    {
+        return json_encode( $value, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
     }
 
     /** Adds a file's numbers to the totals and its entry to the report. */
@@ -435,20 +507,13 @@ class expIniMover
         // a directory the write created (an extension siteaccess directory) is a scope now
         expIniEditor::resetScopes();
         $after = $this->effective( $file, $moved, $siteAccesses );
-        $changed = array();
-        foreach ( $before as $key => $value )
-            if ( $after[$key] !== $value )
-                $changed[] = $key;
+        $changed = array_keys( array_filter( $before, function ( $value, $key ) use ( $after ) {
+            return $after[$key] !== $value;
+        }, ARRAY_FILTER_USE_BOTH ) );
 
         if ( $changed )
         {
-            list( $b, $v, $sa ) = explode( "\x1f", $changed[0] );
-            $winner = self::winningFile( $file, $b, $v, $sa === '' ? null : $sa );
-            $why = sprintf( '%s.ini [%s] %s in effect%s would change from %s to %s%s', $file, $b, $v,
-                            $sa === '' ? '' : " for siteaccess $sa",
-                            json_encode( $c->display( $v, $before[$changed[0]] ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ),
-                            json_encode( $c->display( $v, $after[$changed[0]] ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ),
-                            $winner !== null ? " ($winner wins: it loads after " . $target->relativePath() . ')' : '' );
+            $why = $this->whyChanged( $file, $changed[0], $before, $after, $target );
             $more = count( $changed ) > 1 ? ' and ' . ( count( $changed ) - 1 ) . ' other value(s) in effect' : '';
             $c->data( 'changed_values', array_map( function ( $k ) { return str_replace( "\x1f", ' ', $k ); }, $changed ) );
             if ( !$c->option( 'force' ) )
@@ -465,11 +530,32 @@ class expIniMover
         $entry['backups'] = array_values( array_filter( array( $targetResult->backup(), $sourceResult->backup() ) ) );
         foreach ( array_merge( (array)$targetResult->warnings(), (array)$sourceResult->warnings() ) as $w )
             $c->warn( $w );
-        $c->line( sprintf( 'Moved %d block%s, %d variable%s: %s -> %s%s', count( $entry['blocks'] ), count( $entry['blocks'] ) === 1 ? '' : 's',
-                           $entry['variables'], $entry['variables'] === 1 ? '' : 's', $entry['source'], $entry['target'],
+        $c->line( sprintf( 'Moved %s, %s: %s -> %s%s', expIniCommandContext::counted( count( $entry['blocks'] ), 'block' ),
+                           expIniCommandContext::counted( $entry['variables'], 'variable' ), $entry['source'], $entry['target'],
                            $entry['source_empty'] ? ' (the source holds nothing more; its file stays)' : '' ) );
         $this->count( $entry );
         return expIniCommandContext::EXIT_OK;
+    }
+
+    /**
+     * Why a move is refused: which value in effect would change, from what to what, and the file that now wins.
+     *
+     * @param string $file
+     * @param string $key "block\x1fvariable\x1fsiteaccess", see effective()
+     * @param array $before effective() before the write
+     * @param array $after effective() after the write
+     * @param expIniEditor $target
+     * @return string
+     */
+    private function whyChanged( $file, $key, array $before, array $after, $target )
+    {
+        list( $b, $v, $sa ) = explode( "\x1f", $key );
+        $winner = self::winningFile( $file, $b, $v, $sa === '' ? null : $sa );
+        return sprintf( '%s.ini [%s] %s in effect%s would change from %s to %s%s', $file, $b, $v,
+                        $sa === '' ? '' : " for siteaccess $sa",
+                        self::shown( $this->c->display( $v, $before[$key] ) ),
+                        self::shown( $this->c->display( $v, $after[$key] ) ),
+                        $winner !== null ? " ($winner wins: it loads after " . $target->relativePath() . ')' : '' );
     }
 
     /**
@@ -644,10 +730,11 @@ class expIniMover
         $t = $this->totals;
         $this->c->data( 'totals', $t );
         $this->c->data( 'files', $this->report );
-        $summary = sprintf( '%s %d block%s, %d variable%s, %d file%s', $this->c->isDryRun() ? 'Dry run: would move' : 'Moved',
-                            $t['blocks'], $t['blocks'] === 1 ? '' : 's', $t['variables'], $t['variables'] === 1 ? '' : 's',
-                            $t['files'], $t['files'] === 1 ? '' : 's' )
-                 . ( $t['conflicts'] ? ', ' . $t['conflicts'] . ' conflict' . ( $t['conflicts'] === 1 ? '' : 's' ) . ' merged' : '' );
+        $summary = ( $this->c->isDryRun() ? 'Dry run: would move ' : 'Moved ' )
+                 . expIniCommandContext::counted( $t['blocks'], 'block' ) . ', '
+                 . expIniCommandContext::counted( $t['variables'], 'variable' ) . ', '
+                 . expIniCommandContext::counted( $t['files'], 'file' )
+                 . ( $t['conflicts'] ? ', ' . expIniCommandContext::counted( $t['conflicts'], 'conflict' ) . ' merged' : '' );
         if ( !$this->c->isDryRun() && $t['files'] > 0 )
             $this->c->afterWrite();
         return $this->c->finish( expIniCommandContext::EXIT_OK, $summary );

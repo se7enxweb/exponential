@@ -45,17 +45,10 @@ class expIniActionRem extends expIniActionBase
         $text = expIniCommandContext::settingText( $setting );
         $c->data( 'setting', $text );
         if ( !is_file( $scope->path( $setting['file'] ) ) )
-            return $c->finish( expIniCommandContext::EXIT_NOT_FOUND, "Not found: $text, " . $scope->name()
-                                                                    . ' has no ' . $setting['file'] . '.ini file' );
+            return $c->finish( expIniCommandContext::EXIT_NOT_FOUND, "Not found: $text, " . self::noFile( $scope, $setting['file'] ) );
 
         $editor = $c->editor( $scope, $setting['file'] );
-        $current = $editor->get( $setting['block'], $setting['variable'] );
-        $present = $current !== null;
-        if ( $present && $setting['kind'] === 'hash' )
-            $present = is_array( $current ) && array_key_exists( $setting['key'], $current );
-        if ( $present && $setting['kind'] === 'array' )
-            $present = is_array( $current ) && in_array( (string)$value, array_map( 'strval', $current ), true );
-        if ( !$present )
+        if ( !self::setsWhatIsRemoved( $editor->get( $setting['block'], $setting['variable'] ), $setting, $value ) )
             return $c->finish( expIniCommandContext::EXIT_NOT_FOUND, "Not found: $text"
                                                                     . ( $value !== null ? ' = ' . $c->display( $setting['variable'], $value ) : '' )
                                                                     . ' is not set in ' . $scope->name() );
@@ -63,6 +56,26 @@ class expIniActionRem extends expIniActionBase
         $editor->remove( $setting['block'], $setting['variable'], $value,
                          $setting['kind'] === 'hash' ? $setting['key'] : null );
         return $c->commit( $editor, $scope, $setting['file'], 'remove ' . $text, false );
+    }
+
+    /**
+     * Whether the scope's file sets what rem is asked to remove: the variable, its hash entry, or the value of
+     * its array.
+     *
+     * @param mixed $current the variable's value in the scope's file (null: not there)
+     * @param array $setting parseSetting(), kind as rem reads it
+     * @param string|null $value the array value to remove
+     * @return bool
+     */
+    private static function setsWhatIsRemoved( $current, array $setting, $value )
+    {
+        if ( $current === null )
+            return false;
+        if ( $setting['kind'] === 'hash' )
+            return is_array( $current ) && array_key_exists( $setting['key'], $current );
+        if ( $setting['kind'] === 'array' )
+            return self::hasValue( $current, $value );
+        return true;
     }
 
     /**
@@ -77,7 +90,7 @@ class expIniActionRem extends expIniActionBase
         $text = $target['file'] . '.ini/' . $target['block'];
         $c->data( 'block', $target['block'] );
         if ( !is_file( $scope->path( $target['file'] ) ) )
-            return $c->finish( expIniCommandContext::EXIT_NOT_FOUND, "Not found: " . $scope->name() . ' has no ' . $target['file'] . '.ini file' );
+            return $c->finish( expIniCommandContext::EXIT_NOT_FOUND, 'Not found: ' . self::noFile( $scope, $target['file'] ) );
         $editor = $c->editor( $scope, $target['file'] );
         if ( $editor->blockLines( $target['block'] ) === null )
             return $c->finish( expIniCommandContext::EXIT_NOT_FOUND, "Not found: no block [{$target['block']}] in " . $scope->name() );

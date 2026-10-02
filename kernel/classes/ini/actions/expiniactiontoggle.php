@@ -25,8 +25,8 @@ class expIniActionToggle extends expIniActionBase
     public function run( expIniCommandContext $c )
     {
         $setting = $c->setting();
-        if ( $setting['kind'] !== 'plain' )
-            throw expIniException::usage( 'toggle flips a plain variable (Variable=value)' );
+        foreach ( array( 'array', 'hash' ) as $kind )
+            self::refuseKind( $setting, $kind, 'toggle flips a plain variable (Variable=value)' );
         $scope = $c->writeScope( $c->shift( 'scope' ) );
         $c->noMoreArguments();
 

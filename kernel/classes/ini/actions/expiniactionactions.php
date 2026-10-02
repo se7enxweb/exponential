@@ -29,20 +29,10 @@ class expIniActionActions extends expIniActionBase
         $rows = array();
         foreach ( $registry->actions() as $name => $class )
         {
-            $row = array( 'name' => $name, 'class' => $class, 'builtin' => $registry->isBuiltIn( $name ),
+            $described = $registry->describe( $name );
+            $row = array( 'name' => $name, 'class' => $class, 'builtin' => $described['builtin'],
                           'aliases' => isset( $aliases[$name] ) ? $aliases[$name] : array(),
-                          'description' => '', 'usage' => '', 'ok' => true );
-            try
-            {
-                $action = $registry->create( $name );
-                $row['description'] = $action->description();
-                $row['usage'] = strtok( (string)$action->usage(), "\n" );
-            }
-            catch ( Exception $e )
-            {
-                $row['ok'] = false;
-                $row['description'] = $e->getMessage();
-            }
+                          'description' => $described['description'], 'usage' => $described['usage'], 'ok' => $described['ok'] );
             $rows[] = $row;
             $c->line( sprintf( '%-10s %s%s', $name, $row['ok'] ? '' : 'BROKEN: ', $row['description'] )
                       . ( $row['aliases'] ? ' (alias: ' . implode( ', ', $row['aliases'] ) . ')' : '' )

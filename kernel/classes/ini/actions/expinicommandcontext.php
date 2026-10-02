@@ -10,7 +10,7 @@
  *   $scope   = $c->writeScope( $c->shift( 'scope' ) );
  *   $editor  = $c->editor( $scope, $setting['file'] );
  *   $editor->set( $setting['block'], $setting['variable'], $value );
- *   return $c->commit( $editor, $scope, $setting['file'], 'set ' . $c->settingText( $setting ) );
+ *   return $c->commit( $editor, $scope, $setting['file'], 'set ' . expIniCommandContext::settingText( $setting ) );
  *
  * Guide: doc/bc/6.0/console-exp-ini.md.
  *
@@ -161,6 +161,12 @@ class expIniCommandContext
         return (string)$this->arguments[$this->cursor++];
     }
 
+    /** @return string the next argument without taking it, '' when there is none */
+    private function peek()
+    {
+        return $this->cursor < count( $this->arguments ) ? (string)$this->arguments[$this->cursor] : '';
+    }
+
     /**
      * Refuses arguments nobody asked for.
      *
@@ -184,7 +190,7 @@ class expIniCommandContext
     public function setting()
     {
         $text = $this->shift( 'file>/<Block>/<Variable' );
-        $next = $this->cursor < count( $this->arguments ) ? (string)$this->arguments[$this->cursor] : '';
+        $next = $this->peek();
         if ( strpos( $text, '/' ) === false && strpos( $text, ':' ) === false && strpos( $text, ' ' ) === false
              && preg_match( '/^\[[^\]]+\]$/', $next ) && $this->remaining() >= 2 )
             $text .= ' ' . $this->shift() . ' ' . $this->shift();
@@ -204,7 +210,7 @@ class expIniCommandContext
     public function fileAndBlock()
     {
         $text = $this->shift( 'file>[/<Block>]' );
-        $next = $this->cursor < count( $this->arguments ) ? (string)$this->arguments[$this->cursor] : '';
+        $next = $this->peek();
         if ( strpos( $text, '/' ) === false && strpos( $text, ':' ) === false && preg_match( '/^\[[^\]]+\]$/', $next ) )
             $text .= ' ' . $this->shift();
 
@@ -228,6 +234,18 @@ class expIniCommandContext
         else if ( $setting['kind'] === 'hash' )
             $text .= '[' . $setting['key'] . ']';
         return $text;
+    }
+
+    /**
+     * A number with its noun, singular for one: "1 block", "3 blocks".
+     *
+     * @param int $count
+     * @param string $noun the singular
+     * @return string
+     */
+    public static function counted( $count, $noun )
+    {
+        return $count . ' ' . $noun . ( $count === 1 ? '' : 's' );
     }
 
     /** @return mixed an option's value (see defaults()), null when unknown */
@@ -260,6 +278,12 @@ class expIniCommandContext
         return (bool)$this->options['show-secrets'];
     }
 
+    /** @return bool whether --root points the command at another installation's settings tree */
+    public function hasRoot()
+    {
+        return $this->options['root'] !== null && $this->options['root'] !== '';
+    }
+
     /**
      * Whether a missing file or block may be created: --create / --no-create, else the action's default.
      *
@@ -280,7 +304,7 @@ class expIniCommandContext
      */
     public function requireOwnInstallation( $what )
     {
-        if ( $this->options['root'] !== null && $this->options['root'] !== '' )
+        if ( $this->hasRoot() )
             throw expIniException::usage( "$what reads the settings in effect of this installation only: "
                                           . 'with --root give a scope' );
     }
@@ -479,41 +503,89 @@ class expIniCommandContext
         {
             $this->data( 'changed', false );
             $this->data( 'dry_run', true );
-            foreach ( explode( "\n", rtrim( $this->maskText( $diff ), "\n" ) ) as $l )
-                $this->line( $l );
+            $this->printDiff( $diff );
             return $this->finish( self::EXIT_OK, "Dry run: $what in " . $scope->name() . ', nothing written' );
         }
 
         try
         {
-            $result = $editor->save( array( 'backup' => (bool)$this->options['backup'],
-                                            'create' => $this->mayCreate( $createDefault ),
-                                            'allowDefault' => (bool)$this->options['allow-default'] ) );
-        }
-        catch ( expIniException $e )
-        {
-            $code = in_array( $e->getCode(), array( 1, 2, 3, 4 ), true ) ? $e->getCode() : self::EXIT_WRITE_FAILED;
-            return $this->finish( $code, 'Not written: ' . $e->getMessage() );
+            $result = $this->save( $editor, $createDefault );
         }
         catch ( Exception $e )
         {
-            return $this->finish( self::EXIT_WRITE_FAILED, 'Not written: ' . $e->getMessage() );
+            return $this->finish( self::exitCodeOf( $e, self::EXIT_WRITE_FAILED ), 'Not written: ' . $e->getMessage() );
         }
 
+        $this->reportWritten( $result, $scope, $what );
+        $this->afterWrite();
+        return $this->finish( self::EXIT_OK, 'Done' );
+    }
+
+    /**
+     * Prints a diff line by line, the values of secrets masked.
+     *
+     * @param string $diff
+     * @param bool $skipEmpty leave out empty lines (a move prints two diffs one after the other)
+     */
+    public function printDiff( $diff, $skipEmpty = false )
+    {
+        foreach ( explode( "\n", rtrim( $this->maskText( $diff ), "\n" ) ) as $l )
+        {
+            if ( !$skipEmpty || $l !== '' )
+                $this->line( $l );
+        }
+    }
+
+    /**
+     * The exit code an exception stands for: an expIniException's own code when it is one of the command's
+     * exit codes, otherwise the default.
+     *
+     * @param Exception $e
+     * @param int $default
+     * @return int
+     */
+    public static function exitCodeOf( Exception $e, $default )
+    {
+        $codes = array( self::EXIT_USAGE, self::EXIT_NOT_FOUND, self::EXIT_REFUSED, self::EXIT_WRITE_FAILED );
+        return $e instanceof expIniException && in_array( $e->getCode(), $codes, true ) ? $e->getCode() : $default;
+    }
+
+    /**
+     * Saves the editor's change with the options of the command line.
+     *
+     * @param expIniEditor $editor
+     * @param bool $createDefault see commit()
+     * @return expIniWriteResult
+     * @throws Exception what the editor throws
+     */
+    private function save( $editor, $createDefault )
+    {
+        return $editor->save( array( 'backup' => (bool)$this->options['backup'],
+                                     'create' => $this->mayCreate( $createDefault ),
+                                     'allowDefault' => (bool)$this->options['allow-default'] ) );
+    }
+
+    /**
+     * The data and the lines of a write that happened: the file, whether it was created, the backup, the
+     * warnings of the writer.
+     *
+     * @param expIniWriteResult $result
+     * @param expIniScope $scope
+     * @param string $what see commit()
+     */
+    private function reportWritten( $result, $scope, $what )
+    {
+        $path = $result->relativePath() ?: $result->path();
         $this->data( 'changed', (bool)$result->changed() );
-        $this->data( 'path', $result->relativePath() ?: $result->path() );
+        $this->data( 'path', $path );
         $this->data( 'created', (bool)$result->created() );
         $this->data( 'backup', $result->backup() );
         foreach ( (array)$result->warnings() as $warning )
             $this->warn( $warning );
 
-        $this->line( ucfirst( $what ) . ' in ' . $scope->name() . ': ' . ( $result->relativePath() ?: $result->path() )
-                     . ( $result->created() ? ' (created)' : '' ) );
+        $this->line( ucfirst( $what ) . ' in ' . $scope->name() . ': ' . $path . ( $result->created() ? ' (created)' : '' ) );
         if ( $result->backup() )
             $this->line( 'Backup: ' . $result->backup() );
-
-        $this->afterWrite();
-        return $this->finish( self::EXIT_OK, 'Done' );
     }
 
     /**
@@ -523,7 +595,7 @@ class expIniCommandContext
     public function afterWrite()
     {
         $cleared = false;
-        if ( $this->options['root'] !== null && $this->options['root'] !== '' )
+        if ( $this->hasRoot() )
         {
             // another installation's settings: this installation's ini cache has nothing of it
             $this->line( 'INI cache: not cleared (--root): clear the ini cache of that installation' );

@@ -23,9 +23,8 @@ class expIniActionSet extends expIniActionBase
     public function run( expIniCommandContext $c )
     {
         $setting = $c->setting();
-        if ( $setting['kind'] === 'array' )
-            throw expIniException::usage( 'set writes a plain variable or a hash entry; append to an array with: exp:ini add '
-                                          . expIniCommandContext::settingText( $setting ) . ' <value> <scope>' );
+        $text = expIniCommandContext::settingText( $setting );
+        self::refuseKind( $setting, 'array', "set writes a plain variable or a hash entry; append to an array with: exp:ini add $text <value> <scope>" );
         $value = $c->shift( 'value' );
         $scope = $c->writeScope( $c->shift( 'scope' ) );
         $c->noMoreArguments();
@@ -33,8 +32,8 @@ class expIniActionSet extends expIniActionBase
         $editor = $c->editor( $scope, $setting['file'] );
         $editor->set( $setting['block'], $setting['variable'], $value,
                       $setting['kind'] === 'hash' ? $setting['key'] : null );
-        $c->data( 'setting', expIniCommandContext::settingText( $setting ) );
+        $c->data( 'setting', $text );
         $c->data( 'value', $c->display( $setting['variable'], $value ) );
-        return $c->commit( $editor, $scope, $setting['file'], 'set ' . expIniCommandContext::settingText( $setting ) );
+        return $c->commit( $editor, $scope, $setting['file'], "set $text" );
     }
 }

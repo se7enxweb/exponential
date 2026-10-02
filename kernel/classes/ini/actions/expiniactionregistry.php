@@ -204,11 +204,58 @@ class expIniActionRegistry
         if ( $resolved === null )
             throw new RuntimeException( "no action \"$name\"" );
         $class = $this->actions[$resolved];
-        if ( !class_exists( $class ) )
+        $problem = self::classProblem( $class, 'expIniAction' );
+        if ( $problem === self::MISSING )
             throw new RuntimeException( "action \"$resolved\": class $class does not exist (regenerate the autoloads?)" );
-        if ( !is_subclass_of( $class, 'expIniAction' ) )
+        if ( $problem === self::WRONG_INTERFACE )
             throw new RuntimeException( "action \"$resolved\": class $class does not implement expIniAction" );
         return new $class();
+    }
+
+    /**
+     * An action as the lists show it: its description and first usage line, or why it cannot be made.
+     *
+     * @param string $name
+     * @return array name, class, builtin, description, usage, ok (description is the error when ok is false)
+     */
+    public function describe( $name )
+    {
+        $row = array( 'name' => $name, 'class' => isset( $this->actions[$name] ) ? $this->actions[$name] : null,
+                      'builtin' => $this->isBuiltIn( $name ), 'description' => '', 'usage' => '', 'ok' => true );
+        try
+        {
+            $action = $this->create( $name );
+            $row['description'] = $action->description();
+            $row['usage'] = strtok( (string)$action->usage(), "\n" );
+        }
+        catch ( Exception $e )
+        {
+            $row['ok'] = false;
+            $row['description'] = $e->getMessage();
+        }
+        return $row;
+    }
+
+    /** classProblem(): the class does not exist. */
+    const MISSING = 'missing';
+
+    /** classProblem(): the class does not implement the interface. */
+    const WRONG_INTERFACE = 'interface';
+
+    /**
+     * What keeps a registered class from working.
+     *
+     * @param string $class
+     * @param string $interface expIniAction or expIniScopeProvider
+     * @return string|null MISSING, WRONG_INTERFACE, or null when it can be used
+     */
+    public static function classProblem( $class, $interface )
+    {
+        if ( !class_exists( $class ) )
+            return self::MISSING;
+        if ( interface_exists( $interface ) && !is_subclass_of( $class, $interface ) )
+            return self::WRONG_INTERFACE;
+        return null;
     }
 
     /**
@@ -220,19 +267,19 @@ class expIniActionRegistry
     {
         $problems = array();
         foreach ( $this->actions as $name => $class )
-        {
-            if ( !class_exists( $class ) )
-                $problems[] = array( 'kind' => 'action', 'name' => $name, 'class' => $class, 'why' => 'the class does not exist' );
-            else if ( !is_subclass_of( $class, 'expIniAction' ) )
-                $problems[] = array( 'kind' => 'action', 'name' => $name, 'class' => $class, 'why' => 'the class does not implement expIniAction' );
-        }
+            self::addProblem( $problems, 'action', $name, $class, 'expIniAction' );
         foreach ( $this->scopeProviders as $class )
-        {
-            if ( !class_exists( $class ) )
-                $problems[] = array( 'kind' => 'provider', 'name' => $class, 'class' => $class, 'why' => 'the class does not exist' );
-            else if ( interface_exists( 'expIniScopeProvider' ) && !is_subclass_of( $class, 'expIniScopeProvider' ) )
-                $problems[] = array( 'kind' => 'provider', 'name' => $class, 'class' => $class, 'why' => 'the class does not implement expIniScopeProvider' );
-        }
+            self::addProblem( $problems, 'provider', $class, $class, 'expIniScopeProvider' );
         return $problems;
+    }
+
+    /** Adds a registration to problems() when its class cannot work. */
+    private static function addProblem( array &$problems, $kind, $name, $class, $interface )
+    {
+        $problem = self::classProblem( $class, $interface );
+        if ( $problem === null )
+            return;
+        $why = $problem === self::MISSING ? 'the class does not exist' : "the class does not implement $interface";
+        $problems[] = array( 'kind' => $kind, 'name' => $name, 'class' => $class, 'why' => $why );
     }
 }

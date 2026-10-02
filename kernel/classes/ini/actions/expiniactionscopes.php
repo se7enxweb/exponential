@@ -50,7 +50,7 @@ class expIniActionScopes extends expIniActionBase
             $c->line( sprintf( '%-44s %-20s %s%s', $r['name'], $r['kind'], $r['dir'],
                                $flags ? '  (' . implode( ', ', $flags ) . ')' : '' ) );
         }
-        return $c->finish( expIniCommandContext::EXIT_OK, count( $rows ) . ' scope' . ( count( $rows ) === 1 ? '' : 's' )
+        return $c->finish( expIniCommandContext::EXIT_OK, expIniCommandContext::counted( count( $rows ), 'scope' )
                                                           . '; providers: ' . implode( ', ', $c->registry()->scopeProviders() ) );
     }
 }

@@ -23,25 +23,23 @@ class expIniActionAdd extends expIniActionBase
     public function run( expIniCommandContext $c )
     {
         $setting = $c->setting();
-        if ( $setting['kind'] === 'hash' )
-            throw expIniException::usage( 'add appends to an array (Variable[]); set a hash entry with: exp:ini set '
-                                          . expIniCommandContext::settingText( $setting ) . ' <value> <scope>' );
+        self::refuseKind( $setting, 'hash', 'add appends to an array (Variable[]); set a hash entry with: exp:ini set '
+                                            . expIniCommandContext::settingText( $setting ) . ' <value> <scope>' );
         $setting['kind'] = 'array';
+        $text = expIniCommandContext::settingText( $setting );
         $value = $c->shift( 'value' );
         $scope = $c->writeScope( $c->shift( 'scope' ) );
         $c->noMoreArguments();
 
         $editor = $c->editor( $scope, $setting['file'] );
-        $current = $editor->get( $setting['block'], $setting['variable'] );
-        $c->data( 'setting', expIniCommandContext::settingText( $setting ) );
+        $c->data( 'setting', $text );
         $c->data( 'value', $c->display( $setting['variable'], $value ) );
-        if ( is_array( $current ) && in_array( (string)$value, array_map( 'strval', $current ), true ) )
+        if ( self::hasValue( $editor->get( $setting['block'], $setting['variable'] ), $value ) )
         {
             $c->data( 'changed', false );
-            return $c->finish( expIniCommandContext::EXIT_OK, 'Nothing to change: ' . expIniCommandContext::settingText( $setting )
-                                                              . ' in ' . $scope->name() . ' already has that value' );
+            return $c->finish( expIniCommandContext::EXIT_OK, "Nothing to change: $text in " . $scope->name() . ' already has that value' );
         }
         $editor->add( $setting['block'], $setting['variable'], $value );
-        return $c->commit( $editor, $scope, $setting['file'], 'add to ' . expIniCommandContext::settingText( $setting ) );
+        return $c->commit( $editor, $scope, $setting['file'], "add to $text" );
     }
 }

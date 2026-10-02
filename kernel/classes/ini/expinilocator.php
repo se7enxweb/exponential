@@ -113,10 +113,9 @@ class expIniLocator
      */
     protected static function canBeInactive( expIniScope $scope, $siteAccess )
     {
-        if ( $scope->kind() === expIniScope::KIND_EXTENSION )
-            return true;
-        return $scope->kind() === expIniScope::KIND_EXTENSION_SITEACCESS
-            && ( $siteAccess === null || $scope->siteAccess() === $siteAccess );
+        if ( !$scope->isExtension() )
+            return false;
+        return $scope->kind() === expIniScope::KIND_EXTENSION || $siteAccess === null || $scope->siteAccess() === $siteAccess;
     }
 
     /**

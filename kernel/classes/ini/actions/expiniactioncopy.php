@@ -45,18 +45,29 @@ class expIniActionCopy extends expIniActionBase
         else if ( !is_array( $value ) )
             $editor->set( $setting['block'], $setting['variable'], (string)$value );
         else
-        {
-            // the target ends with exactly the source's values: its reset line, then each value
-            $editor->clearArray( $setting['block'], $setting['variable'] );
-            $isList = array_keys( $value ) === range( 0, count( $value ) - 1 );
-            foreach ( $value as $key => $v )
-            {
-                if ( $isList || !$value )
-                    $editor->add( $setting['block'], $setting['variable'], (string)$v );
-                else
-                    $editor->set( $setting['block'], $setting['variable'], (string)$v, (string)$key );
-            }
-        }
+            self::writeArray( $editor, $setting['block'], $setting['variable'], $value );
         return $c->commit( $editor, $to, $setting['file'], "copy $text from " . $from->name() );
+    }
+
+    /**
+     * Writes a whole array so that the target ends with exactly these values: its reset line, then each value
+     * (Variable[]=value for a list, Variable[key]=value for a hash).
+     *
+     * @param expIniEditor $editor
+     * @param string $block
+     * @param string $variable
+     * @param array $value
+     */
+    private static function writeArray( $editor, $block, $variable, array $value )
+    {
+        $editor->clearArray( $block, $variable );
+        $isList = self::isList( $value );
+        foreach ( $value as $key => $v )
+        {
+            if ( $isList )
+                $editor->add( $block, $variable, (string)$v );
+            else
+                $editor->set( $block, $variable, (string)$v, (string)$key );
+        }
     }
 }

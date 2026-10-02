@@ -47,8 +47,8 @@ class expIniActionList extends expIniActionBase
             $from = 'in ' . $scope->name();
             $c->data( 'scope', $scope->name() );
             if ( !is_file( $scope->path( $file ) ) )
-                return $c->finish( expIniCommandContext::EXIT_NOT_FOUND, "Not found: " . $scope->name()
-                                                                        . " has no $file.ini file (" . $scope->relativePath( $file ) . ')' );
+                return $c->finish( expIniCommandContext::EXIT_NOT_FOUND, 'Not found: ' . self::noFile( $scope, $file )
+                                                                        . ' (' . $scope->relativePath( $file ) . ')' );
             $c->data( 'path', $scope->relativePath( $file ) );
             $blocks = $editor->blocks();
             $variables = function ( $b ) use ( $editor ) { return $editor->variables( $b ); };
@@ -60,8 +60,7 @@ class expIniActionList extends expIniActionBase
             $c->data( 'blocks', array_values( $blocks ) );
             foreach ( $blocks as $b )
                 $c->line( "[$b]" );
-            return $c->finish( expIniCommandContext::EXIT_OK, count( $blocks ) . ' block' . ( count( $blocks ) === 1 ? '' : 's' )
-                                                              . " in $file.ini $from" );
+            return $c->finish( expIniCommandContext::EXIT_OK, expIniCommandContext::counted( count( $blocks ), 'block' ) . " in $file.ini $from" );
         }
 
         if ( !in_array( $block, $blocks, true ) )
@@ -77,7 +76,6 @@ class expIniActionList extends expIniActionBase
         }
         $c->data( 'block', $block );
         $c->data( 'variables', $out );
-        return $c->finish( expIniCommandContext::EXIT_OK, count( $out ) . ' variable' . ( count( $out ) === 1 ? '' : 's' )
-                                                          . " in [$block] of $file.ini $from" );
+        return $c->finish( expIniCommandContext::EXIT_OK, expIniCommandContext::counted( count( $out ), 'variable' ) . " in [$block] of $file.ini $from" );
     }
 }

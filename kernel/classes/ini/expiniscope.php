@@ -129,6 +129,12 @@ class expIniScope
         return $this->dir . '/' . $this->fileName( $file );
     }
 
+    /** @return bool Whether this is an extension's settings directory, or an extension's directory for a siteaccess */
+    public function isExtension()
+    {
+        return $this->kind === self::KIND_EXTENSION || $this->kind === self::KIND_EXTENSION_SITEACCESS;
+    }
+
     /** @return bool The settings directory exists */
     public function exists()
     {

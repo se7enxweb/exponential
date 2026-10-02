@@ -281,24 +281,15 @@ class expRADSurvey
 
         foreach ( $registry->actions() as $name => $class )
         {
-            $row = array( 'name' => $name, 'class' => $class, 'builtin' => $registry->isBuiltIn( $name ),
-                          'description' => '', 'ok' => true );
-            try
-            {
-                $row['description'] = $registry->create( $name )->description();
-            }
-            catch ( Exception $e )
-            {
-                $row['ok'] = false;
-                $row['description'] = $e->getMessage();
-            }
-            $result['actions'][] = $row;
+            $described = $registry->describe( $name );
+            $result['actions'][] = array( 'name' => $name, 'class' => $class, 'builtin' => $described['builtin'],
+                                          'description' => $described['description'], 'ok' => $described['ok'] );
         }
 
         $builtIn = array( 'expIniCoreScopeProvider', 'expIniExtensionScopeProvider' );
         foreach ( array_values( array_unique( array_merge( $builtIn, $registry->scopeProviders() ) ) ) as $class )
             $result['providers'][] = array( 'class' => $class, 'builtin' => in_array( $class, $builtIn, true ),
-                                            'ok' => class_exists( $class ) && is_subclass_of( $class, 'expIniScopeProvider' ) );
+                                            'ok' => expIniActionRegistry::classProblem( $class, 'expIniScopeProvider' ) === null );
 
         $result['broken'] = $registry->problems();
         return $result;
