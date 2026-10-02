@@ -19,6 +19,10 @@
  * the columns from the eZSubitemColumns cookie are taken over. Table options then also has a column filter, the
  * columns by group, their order (drag, or the up and down buttons), presets and Export CSV (content/subitemsexport).
  * When expsubitems::columns cannot be called, the table is the classic one above.
+ *
+ * design/admin and design/admin4 each keep this file, byte for byte the same: admin4 is a complete design that
+ * must work with no other admin design present, so it cannot rely on design/admin's copy, and one copy in
+ * design/standard would be shadowed by any admin design that has its own. Change both together.
  */
 var eZAjaxSubitemsExpDataTable = (function () {
     'use strict';
@@ -81,6 +85,15 @@ var eZAjaxSubitemsExpDataTable = (function () {
     Object.keys(BUILTIN).forEach(function (k) { FIELD_TO_KEY[BUILTIN[k]] = k; });
 
     function sameList(a, b) { return a.length === b.length && a.every(function (k, i) { return k === b[i]; }); }
+
+    // A registry column's cell of a row from expsubitems::rows: { v: value, h: html }, or null.
+    function registryCell(row, key) { return (row.columns && row.columns[key]) || null; }
+
+    // The text a click on a cell copies: '' for nothing, a list joined with ', ', a map as JSON.
+    function copyText(v) {
+        if (v === undefined || v === null) { return ''; }
+        return typeof v === 'object' ? (Array.isArray(v) ? v.join(', ') : JSON.stringify(v)) : v;
+    }
 
     /**
      * Starts the table. With the subitems server functions (confObj.subitemsServer) it asks expsubitems::columns
@@ -213,15 +226,9 @@ var eZAjaxSubitemsExpDataTable = (function () {
                     // a registry column: the server's (escaped) HTML, the raw value for copying
                     c = { key: m.key, label: m.name || m.key, group: m.group || '', title: title, align: m.align, remote: true,
                           sortable: !!m.sortable, className: 'exp-subitems-col exp-subitems-type-' + String(m.type || 'text').replace(/[^a-z0-9_-]/gi, ''),
-                          render: (function (k) { return function (row) { var x = row.columns && row.columns[k]; return x && x.h !== undefined && x.h !== null ? String(x.h) : ''; }; }(m.key)) };
+                          render: (function (k) { return function (row) { var x = registryCell(row, k); return x && x.h !== undefined && x.h !== null ? String(x.h) : ''; }; }(m.key)) };
                     if (m.copy) {
-                        c.copy = (function (k) {
-                            return function (row) {
-                                var x = row.columns && row.columns[k];
-                                if (!x || x.v === undefined || x.v === null) { return ''; }
-                                return typeof x.v === 'object' ? (Array.isArray(x.v) ? x.v.join(', ') : JSON.stringify(x.v)) : x.v;
-                            };
-                        }(m.key));
+                        c.copy = (function (k) { return function (row) { var x = registryCell(row, k); return x ? copyText(x.v) : ''; }; }(m.key));
                     }
                 }
                 if (c) { list.push(c); }
