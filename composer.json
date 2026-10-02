@@ -41,7 +41,7 @@
         "ext-spl": "*",
         "ext-simplexml": "*",
         "se7enxweb/exponential-legacy-installer": "*",
-        "se7enxweb/ezautosave": "~6.0.4",
+        "se7enxweb/ezautosave": "~6.0.5",
         "se7enxweb/ezdemo": "~6.0.6",
         "se7enxweb/ezflow": "~6.1.3",
         "se7enxweb/ezoracle": "~2.3.2",
