@@ -3,7 +3,7 @@ eZ JSCore 1.2 extension installation documentation
 About eZ JSCore
 ===========
 
-An ajax extension for easier client / server integrations using yui 3.0 and/or jQuery.
+An ajax extension for easier client / server integrations using jQuery.
 It also includes tools for on demand script / css loading and json / xml encoding
 content.
 
@@ -49,7 +49,7 @@ Installation
 
  5. Rewrite rules for lib folder
 
-    eZ JSCore extension require correct re-write rules in order to load the necessary yui (yahoo user interface) files
+    eZ JSCore extension require correct re-write rules in order to load the necessary JavaScript library files
     from the file system. This is required only when INI setting ezjscore.ini[eZJSCore]LoadFromCDN is disabled.
 
     Add to your Virtual-Host setup the following line:
@@ -82,20 +82,6 @@ Using eZ JSCore Server functions from javascript
 ezjscore AJAX calls
 -------------------
 
-Yui 3.x (uses Y.io):
-````````````````````
-
-{ezscript_require(array( 'ezjsc::yui3', 'ezjsc::yui3io') )}
-<script type="text/javascript">
-{literal}
-YUI( YUI3_config ).use('io-ez', function( Y )
-{
-    Y.io.ez( 'ezjsc::time', {data: 'postData=hi!', on: {success: function(id,r){ alert(r.responseJSON.error_text || r.responseJSON.content) }}} );
-});
-{/literal}
-</script>
-
-
 jQuery (uses jQuery.post):
 ``````````````````````````
 
@@ -108,21 +94,6 @@ jQuery (uses jQuery.post):
 
 Set a preference
 ----------------
-
-YUI 3.x
-```````
-
-{ezscript_require(array( 'ezjsc::yui3', 'ezjsc::yui3io') )}
-<script type="text/javascript">
-{literal}
-YUI( YUI3_config ).use('io-ez', function( Y )
-{
-    Y.io.ez.setPreference( 'preference_name', 'preference value' );
-    // will post to http://siteURL/user/preferences to set the preference
-    // preference name and value are automatically encoded
-});
-{/literal}
-</script>
 
 jQuery
 ``````
