@@ -26,14 +26,6 @@
 
 
 // Functions for session to make sure baskets are cleaned up
-function eZSessionBasketGarbageCollector( $db, $time )
-{
-    eZBasket::cleanupExpired( $time );
-}
 
-// Fill in hooks
-eZSession::addCallback( 'gc_pre', 'eZSessionBasketGarbageCollector');
-
-eZSession::garbageCollector();
-
-?>
+// The code is in kernel/private/classes/cronjobs/session_gc.php (#207); this file is the entry point.
+return \Exponential\Cronjob\Kernel\SessionGc::main( __FILE__, get_defined_vars() );

@@ -10,6 +10,5 @@
  * @package kernel
  */
 
-eZSubtreeCache::removeAllExpiryCacheFromDisk();
-
-?>
+// The code is in kernel/private/classes/cronjobs/subtreeexpirycleanup.php (#207); this file is the entry point.
+return \Exponential\Cronjob\Kernel\Subtreeexpirycleanup::main( __FILE__, get_defined_vars() );

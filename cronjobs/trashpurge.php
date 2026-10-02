@@ -10,7 +10,5 @@
  * @package kernel
  */
 
-$purgeHandler = new eZScriptTrashPurge( eZCLI::instance() );
-$purgeHandler->run();
-
-?>
+// The code is in kernel/private/classes/cronjobs/trashpurge.php (#207); this file is the entry point.
+return \Exponential\Cronjob\Kernel\Trashpurge::main( __FILE__, get_defined_vars() );

@@ -10,26 +10,5 @@
  * @package kernel
  */
 
-if ( !eZScriptClusterPurge::isRequired() )
-{
-    $cli->error( "Your current cluster handler does not require file purge" );
-    $script->shutdown( 1 );
-}
-
-$purgeHandler = new eZScriptClusterPurge();
-$purgeHandler->optScopes = array( 'classattridentifiers',
-                                  'classidentifiers',
-                                  'content',
-                                  'expirycache',
-                                  'statelimitations',
-                                  'template-block',
-                                  'user-info-cache',
-                                  'viewcache',
-                                  'wildcard-cache-index',
-                                  'image',
-                                  'media',
-                                  'binaryfile' );
-$purgeHandler->optExpiry = 30;
-$purgeHandler->run();
-
-?>
+// The code is in kernel/private/classes/cronjobs/clusterpurge.php (#207); this file is the entry point.
+return \Exponential\Cronjob\Kernel\Clusterpurge::main( __FILE__, get_defined_vars() );

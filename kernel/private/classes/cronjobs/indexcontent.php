@@ -1,0 +1,172 @@
+<?php
+/**
+ * The code of cronjobs/indexcontent.php, moved into a class (#207 stage 1). The file cronjobs/indexcontent.php is one call to it.
+ * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ */
+
+namespace Exponential\Cronjob\Kernel
+{
+
+class Indexcontent extends \Exponential\Runnable\CronjobPart
+{
+    public function run( array $scope )
+    {
+        // the including function's variables ($Params, $Module, $cli, ...)
+        foreach ( array_keys( $scope ) as $__name )
+            if ( $__name !== 'this' && $__name !== 'scope' )
+                ${$__name} = &$scope[$__name];
+        unset( $__name );
+
+        $cli->output( "Starting processing pending search engine modifications" );
+
+        $contentObjects = array();
+        $db = \eZDB::instance();
+
+        $offset = 0;
+        $limit = 50;
+
+        $searchEngine = \eZSearch::getEngine();
+
+        if ( !$searchEngine instanceof \ezpSearchEngine )
+        {
+            $cli->error( "The configured search engine does not implement the ezpSearchEngine interface or can't be found." );
+            $script->shutdown( 1 );
+        }
+
+        $needRemoveWithUpdate = $searchEngine->needRemoveWithUpdate();
+
+        while( true )
+        {
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $entries = $db->aggregate( 'ezpending_actions', [
+                    [ '$match'   => [ 'action' => [ '$in' => [ 'index_object', 'index_moved_node' ] ] ] ],
+                    [ '$group'   => [ '_id' => [ 'param' => '$param', 'action' => '$action' ], 'min_created' => [ '$min' => '$created' ] ] ],
+                    [ '$sort'    => [ 'min_created' => 1 ] ],
+                    [ '$skip'    => $offset ],
+                    [ '$limit'   => $limit ],
+                    [ '$project' => [ '_id' => 0, 'param' => '$_id.param', 'action' => '$_id.action' ] ],
+                ] );
+            }
+            else
+            {
+                $entries = $db->arrayQuery(
+                    "SELECT param, action FROM ezpending_actions WHERE action = 'index_object' OR action = 'index_moved_node' GROUP BY param, action ORDER BY min(created)",
+                    array( 'limit' => $limit, 'offset' => $offset )
+                );
+            }
+
+            if ( is_array( $entries ) && count( $entries ) != 0 )
+            {
+                foreach ( $entries as $entry )
+                {
+                    $objectID = (int)$entry['param'];
+                    $action = $entry['action'];
+
+                    $cli->output( "\tIndexing object ID #$objectID" );
+                    $db->begin();
+                    $object = \eZContentObject::fetch( $objectID );
+                    $removeFromPendingActions = true;
+                    if ( $object )
+                    {
+                        if ( $needRemoveWithUpdate )
+                        {
+                            $searchEngine->removeObject( $object, false );
+                        }
+
+                        $removeFromPendingActions = $searchEngine->addObject( $object, false );
+
+                        // When moving content (and only, because of performances), reindex the subtree
+                        if ( $action == 'index_moved_node' )
+                        {
+                            $nodeId = $object->attribute( 'main_node_id' );
+                            $node = \eZContentObjectTreeNode::fetch( $nodeId );
+
+                            if ( !( $node instanceof \eZContentObjectTreeNode ) )
+                            {
+                                $cli->error( "An error occured while trying fetching node $nodeId" );
+                                if ( $db->databaseName() === 'mongo' )
+                                    $db->deleteWhere( 'ezpending_actions', [ 'action' => $action, 'param' => (string)$objectID ] );
+                                else
+                                    $db->query( "DELETE FROM ezpending_actions WHERE action = '$action' AND param = '$objectID'" );
+                                $db->commit();
+                                continue;
+                            }
+
+                            $subtreeOffset = 0;
+                            $subtreeLimit = 50;
+
+                            $params = array( 'Limitation' => array(), 'MainNodeOnly' => true );
+
+                            $subtreeCount = $node->subTreeCount( $params );
+
+                            while ( $subtreeOffset < $subtreeCount )
+                            {
+                                $subTree = $node->subTree(
+                                    array_merge(
+                                        $params,
+                                        array( 'Offset' => $subtreeOffset, 'Limit' => $subtreeLimit, 'SortBy' => array() )
+                                    )
+                                );
+
+                                if ( !empty( $subTree ) )
+                                {
+                                    foreach ( $subTree as $innerNode )
+                                    {
+                                        /** @var $innerNode eZContentObjectTreeNode */
+                                        $childObject = $innerNode->attribute( 'object' );
+                                        if ( !$childObject )
+                                        {
+                                            continue;
+                                        }
+
+                                        $searchEngine->addObject( $childObject, false );
+
+                                        // clear object cache to conserve memory
+                                        \eZContentObject::clearCache();
+                                    }
+                                }
+
+                                $subtreeOffset += $subtreeLimit;
+
+                                if ( $subtreeOffset >= $subtreeCount )
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if ( $removeFromPendingActions )
+                    {
+                        if ( $db->databaseName() === 'mongo' )
+                            $db->deleteWhere( 'ezpending_actions', [ 'action' => $action, 'param' => (string)$objectID ] );
+                        else
+                            $db->query( "DELETE FROM ezpending_actions WHERE action = '$action' AND param = '$objectID'" );
+                        \eZContentCacheManager::clearContentCacheIfNeeded( $objectID );
+                    }
+                    else
+                    {
+                        $cli->warning( "\tFailed indexing object ID #$objectID, keeping it in the queue." );
+                        // Increase the offset to skip failing objects
+                        ++$offset;
+                    }
+
+                    $db->commit();
+                }
+
+                $searchEngine->commit();
+                // clear object cache to conserve memory
+                \eZContentObject::clearCache();
+            }
+            else
+            {
+                break; // No valid result from ezpending_actions
+            }
+        }
+
+        $cli->output( "Done" );
+    }
+}
+
+}

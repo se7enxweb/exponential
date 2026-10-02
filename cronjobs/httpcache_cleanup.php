@@ -9,17 +9,5 @@
  * @package kernel
  */
 
-$contract = ezpHttpCacheListener::contract();
-if ( !$contract )
-{
-    $cli->output( "The HTTP cache is not enabled here, or has stored nothing yet (settings/httpcache.ini)" );
-    return;
-}
-
-$start = microtime( true );
-$counts = $contract->gc();
-$cli->output( sprintf(
-    "HTTP cache cleanup: removed %d entries, %d bodies, %d user records, %d temporary files; kept %d entries (%.2fs)",
-    $counts['entries'], $counts['bodies'], $counts['records'], $counts['tmp'], $counts['kept'],
-    microtime( true ) - $start
-) );
+// The code is in kernel/private/classes/cronjobs/httpcache_cleanup.php (#207); this file is the entry point.
+return \Exponential\Cronjob\Kernel\HttpcacheCleanup::main( __FILE__, get_defined_vars() );

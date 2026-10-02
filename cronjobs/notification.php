@@ -10,12 +10,5 @@
  * @package kernel
  */
 
-$event = eZNotificationEvent::create( 'ezcurrenttime', array() );
-
-$event->store();
-$cli->output( "Starting notification event processing" );
-eZNotificationEventFilter::process();
-
-$cli->output( "Done" );
-
-?>
+// The code is in kernel/private/classes/cronjobs/notification.php (#207); this file is the entry point.
+return \Exponential\Cronjob\Kernel\Notification::main( __FILE__, get_defined_vars() );

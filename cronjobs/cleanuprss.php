@@ -15,22 +15,5 @@
  * @package kernel
  */
 
-$cleanup = new expCleanupRSS();
-
-// Said once, rather than by every run of a cronjob that has nothing to do.
-if ( !$cleanup->isEnabled() )
-{
-    eZDebug::writeNotice( 'RSS import cleanup is not running: ' . $cleanup->reason(), __FILE__ );
-    return;
-}
-
-$cli->output( 'Cleaning up imported RSS content...' );
-
-$cleanup->cleanup();
-
-$counts = $cleanup->counts();
-
-$cli->output( sprintf( 'Done. %d item(s) removed across %d feed(s).',
-                       $counts['removed'], $counts['feeds'] ) );
-
-?>
+// The code is in kernel/private/classes/cronjobs/cleanuprss.php (#207); this file is the entry point.
+return \Exponential\Cronjob\Kernel\Cleanuprss::main( __FILE__, get_defined_vars() );
