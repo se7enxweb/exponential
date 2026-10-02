@@ -955,7 +955,7 @@ e6a3c2f8012b44d7d40ee02614debd4b  design/admin4/templates/navigator/alphabetical
 43081b08baebac3fc125b6b899ce31cd  design/admin4/templates/node/removenode.tpl
 759b0fcc80fad2ae2c1e6630c9ed3521  design/admin4/templates/node/removeobject.tpl
 05da260b91f2f49d37a5a39b3afd0e7b  design/admin4/templates/node/top_node_full.tpl
-15dd39ea4f5bb13433b75793ffe3f149  design/admin4/templates/node/view/a4_full_body.tpl
+9e4a0e94135732df9bedbfcd670170b9  design/admin4/templates/node/view/a4_full_body.tpl
 ea465bb76b53128ff5a195583ce942a2  design/admin4/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin4/templates/node/view/ajaxuploader_preview.tpl
 b9a3fa9fe69402b67871fc1aac68fcad  design/admin4/templates/node/view/browse_thumbnail.tpl
