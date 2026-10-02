@@ -938,10 +938,11 @@ class eZScript
                                                $useStandardOptions );
         }
 
+        // Also defined when the standard options are off: it is stored below either way.
+        $excludeOptions = array();
         if ( $useStandardOptions )
         {
             $optionConfig = $config;
-            $excludeOptions = array();
             $optionString = "[h|help][q|quiet]";
             $excludeOptions[] = 'h';
             $excludeOptions[] = 'help';
