@@ -103,6 +103,7 @@
     <span><b>{$survey_counts.views}</b><span class="sv-label">{'module views'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
     <a class="sv-figure" href={'/setup/radsurvey/(show)/runnables'|ezurl}><b>{$survey_counts.runnables}</b><span class="sv-label">{'commands, cronjob parts and views to re-implement'|i18n( 'design/admin/setup/rad/survey' )}</span></a>
     <a class="sv-figure" href={'/setup/radsurvey/(show)/inicommand'|ezurl}><b>{$survey_counts.ini_actions}</b><span class="sv-label">{'exp:ini actions, and %providers scope providers'|i18n( 'design/admin/setup/rad/survey',, hash( '%providers', $survey_counts.ini_scope_providers ) )}</span></a>
+    <a class="sv-figure" href={'/setup/radsurvey/(show)/registries'|ezurl}><b>{$survey_counts.registries}</b><span class="sv-label">{'registry entries: %columns subitems columns, %jobs content job types'|i18n( 'design/admin/setup/rad/survey',, hash( '%columns', $survey_counts.registry_subitemscolumns, '%jobs', $survey_counts.content_job_types ) )}</span></a>
     <span><b>{$survey_counts.contracts}</b><span class="sv-label">{'contracts to implement'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
     <span><b>{$survey_counts.aliases}</b><span class="sv-label">{'take an alias instead'|i18n( 'design/admin/setup/rad/survey' )}</span></span>
 {if $survey_health.broken|gt( 0 )}
@@ -113,6 +114,9 @@
 {/if}
 {if $survey_counts.ini_command_broken|gt( 0 )}
     <a class="sv-figure is-bad" href={'/setup/radsurvey/(show)/inicommand'|ezurl}><b>{$survey_counts.ini_command_broken}</b><span class="sv-label">{'exp:ini registrations that cannot work'|i18n( 'design/admin/setup/rad/survey' )}</span></a>
+{/if}
+{if $survey_counts.registries_broken|gt( 0 )}
+    <a class="sv-figure is-bad" href={'/setup/radsurvey/(show)/registries'|ezurl}><b>{$survey_counts.registries_broken}</b><span class="sv-label">{'registry entries that cannot work'|i18n( 'design/admin/setup/rad/survey' )}</span></a>
 {/if}
 {if $survey_counts.broken|gt( 0 )}
     <a class="sv-figure is-bad" href={$survey_unknown_url|ezurl}><b>{$survey_counts.broken}</b><span class="sv-label">{'look like a class and are not one'|i18n( 'design/admin/setup/rad/survey' )}</span></a>

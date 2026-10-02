@@ -113,6 +113,17 @@ class expRADCatalogue
             'source' => 'kernel/classes/ezcontentclass.php',
             'tool'  => 'setup/contentextension' ),
 
+        'subitemscolumn' => array(
+            'group' => 'content',
+            'title' => 'Subitems table column',
+            'what'  => 'A column the admin sub-items list offers under Table options, computed for the visible rows of the current page and exported with the CSV. One [Column_<key>] block per column, which names a class, a static method or a template; for example [Column_wordcount] with Handler=myExtColumns::wordCount adds a column whose value that method returns.',
+            'where' => 'extension/<name>/classes/<class>.php (a subclass of expSubitemsColumn or a static method), or design/<design>/templates/subitems/columns/<name>.tpl',
+            'register' => ezpI18n::tr( 'design/admin/setup/rad', 'subitemscolumns.ini [Column_<key>] Class=<class>, Handler=<class>::<method> or Template=design:subitems/columns/<name>.tpl in extension/<name>/settings/subitemscolumns.ini.append.php; defaults and presets in subitems.ini' ),
+            'contract' => ezpI18n::tr( 'design/admin/setup/rad', 'extends expSubitemsColumn (value; html and text to change how it is shown), or a static method ( node, settings, column ) returning the value, or a template getting $node, $column and $key' ),
+            'mechanism' => 'autoload',
+            'source' => 'kernel/classes/subitems/expsubitemscolumn.php',
+            'tool'  => false ),
+
         'customtag' => array(
             'group' => 'content',
             'title' => 'XML custom tag',
@@ -437,6 +448,17 @@ class expRADCatalogue
             'tool'  => false ),
 
         // ── Workflow, events and jobs ───────────────────────────────────────
+
+        'contentjobtype' => array(
+            'group' => 'workflow',
+            'title' => 'Content job type',
+            'what'  => 'A kind of large content operation that runs in the background in batches, with a progress page, cancel and resume (content/job/<id>, exp:expcontentjob). The kernel ships remove, copy, move, hide, reveal, section, state, addlocation and removelocation; an extension adds its own, for example JobTypes[republish]=myExtJobRepublish.',
+            'where' => 'extension/<name>/classes/<class>.php, e.g. class myExtJobRepublish implements expContentJobType',
+            'register' => ezpI18n::tr( 'design/admin/setup/rad', 'content.ini [ContentJobSettings] JobTypes[<name>]=<class> in extension/<name>/settings/content.ini.append.php' ),
+            'contract' => ezpI18n::tr( 'design/admin/setup/rad', 'implements expContentJobType (validate, countNodes, locks, describe, prepare, runBatch, afterBatch, finish)' ),
+            'mechanism' => 'autoload',
+            'source' => 'kernel/classes/contentjob/expcontentjobtype.php',
+            'tool'  => false ),
 
         'workflowevent' => array(
             'group' => 'workflow',

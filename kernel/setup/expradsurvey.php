@@ -68,12 +68,53 @@ class expRADSurvey
     protected static $Survey = null;
 
     /**
+     * The request the cached survey, autoload maps and events belong to (see forRequest()).
+     *
+     * @var string|null
+     */
+    protected static $Request = null;
+
+    /**
+     * Forgets what this class keeps when a new request has started.
+     *
+     * The survey, the autoload maps behind fileOf() and the events are kept for the rest of the request, because
+     * the page reads them several times. A long-running worker (Velocity, ForkPerRequest disabled) serves many
+     * requests with the same statics, and without this it showed the numbers of the first request it served
+     * until it was restarted, however many settings, classes or views were added in between. Keyed by the
+     * request's start time, as eZStaticCache and eZExtension key theirs: Apache and the command line start a
+     * process per request and never see a second key, so they pay nothing.
+     *
+     * @return void
+     */
+    public static function forRequest()
+    {
+        $request = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string) $_SERVER['REQUEST_TIME_FLOAT'] : '';
+        if ( self::$Request === $request )
+            return;
+        self::$Request = $request;
+        self::reset();
+    }
+
+    /**
+     * Forgets the survey, the autoload maps and the events, so the next call reads everything again.
+     *
+     * @return void
+     */
+    public static function reset()
+    {
+        self::$Survey  = null;
+        self::$Classes = null;
+        self::$Events  = null;
+    }
+
+    /**
      * The whole survey.
      *
      * @return array with keys settings, repositories, contracts, files, counts
      */
     public static function survey()
     {
+        self::forRequest();
         if ( self::$Survey !== null )
             return self::$Survey;
 
@@ -176,6 +217,8 @@ class expRADSurvey
         $replaced  = self::kernelOverrides();
         $runnables = self::runnables();
         $iniCommand = self::iniCommand();
+        $registries = self::registries( $files, $settings );
+        $contentJobs = self::contentJobTypes( $registries );
 
         // The runnables' own events: their names are built at run time
         // (Runnable::eventName()), so the source sweep cannot see them.
@@ -205,6 +248,8 @@ class expRADSurvey
             'replaced'     => $replaced,
             'runnables'    => $runnables,
             'ini_command'  => $iniCommand,
+            'registries'   => $registries,
+            'content_jobs' => $contentJobs,
             'files'        => $files,
             'counts'       => array(
                 'ini'          => count( $files ),
@@ -238,19 +283,80 @@ class expRADSurvey
                 'ini_actions_registered' => count( array_filter( $iniCommand['actions'], function ( $a ) { return !$a['builtin']; } ) ),
                 'ini_scope_providers'    => count( $iniCommand['providers'] ),
                 'ini_command_broken'     => count( $iniCommand['broken'] ),
-                'inicommand'             => count( $iniCommand['actions'] ) + count( $iniCommand['providers'] ) ) );
+                'inicommand'             => count( $iniCommand['actions'] ) + count( $iniCommand['providers'] ),
+                'content_job_types'            => count( $contentJobs['types'] ),
+                'content_job_types_registered' => count( array_filter( $contentJobs['types'], function ( $t ) { return !$t['builtin']; } ) ),
+                'content_job_types_broken'     => count( $contentJobs['broken'] ) ) );
 
-        self::$Survey['counts']['total'] = self::$Survey['counts']['settings']
-                                         + self::$Survey['counts']['repositories']
-                                         + self::$Survey['counts']['contracts']
-                                         + self::$Survey['counts']['views']
-                                         + self::$Survey['counts']['callables']
-                                         + self::$Survey['counts']['events']
-                                         + self::$Survey['counts']['overrides']
-                                         + self::$Survey['counts']['replaced']
-                                         + self::$Survey['counts']['runnables'];
+        // The registries, entry by entry. Most entries name a class and are points of 'settings' already; the
+        // others (a template column, a Handler=<class>::<method> column) are added to the total here, once.
+        $entries = 0;
+        $added   = 0;
+        $broken  = 0;
+        foreach ( $registries as $key => $registry )
+        {
+            $notCounted = count( array_filter( $registry['entries'], function ( $e ) { return !$e['counted']; } ) );
+            self::$Survey['counts']['registry_' . $key]            = count( $registry['entries'] );
+            self::$Survey['counts']['registry_' . $key . '_added'] = $notCounted;
+            self::$Survey['counts']['registry_' . $key . '_broken'] = count( $registry['broken'] );
+            $entries += count( $registry['entries'] );
+            $added   += $notCounted;
+            $broken  += count( $registry['broken'] );
+        }
+        self::$Survey['counts']['registries']        = $entries;
+        self::$Survey['counts']['registries_added']  = $added;
+        self::$Survey['counts']['registries_broken'] = $broken;
+
+        $total = 0;
+        foreach ( array_keys( self::totalGroups() ) as $group )
+            $total += self::$Survey['counts'][$group];
+        self::$Survey['counts']['total'] = $total;
 
         return self::$Survey;
+    }
+
+    /**
+     * The groups the total is the sum of, each counting a point once, with what the page calls them and the
+     * section of setup/radsurvey that lists them. The other counts (policies, modules, the exp:ini actions, the
+     * content job types, the registries as a whole) say what is inside one of these and are not added again.
+     *
+     * @return array count key => array( label, section )
+     */
+    public static function totalGroups()
+    {
+        return array(
+            'settings'         => array( 'label' => 'settings that name a class',                    'section' => 'settings' ),
+            'repositories'     => array( 'label' => 'places the kernel looks',                       'section' => 'repositories' ),
+            'contracts'        => array( 'label' => 'interfaces and abstract classes',               'section' => 'contracts' ),
+            'views'            => array( 'label' => 'module views',                                  'section' => 'modules' ),
+            'callables'        => array( 'label' => 'template operators and functions',              'section' => 'callables' ),
+            'events'           => array( 'label' => 'events',                                        'section' => 'events' ),
+            'overrides'        => array( 'label' => 'template overrides',                            'section' => 'overrides' ),
+            'replaced'         => array( 'label' => 'kernel classes replaced',                       'section' => 'replaced' ),
+            'runnables'        => array( 'label' => 'commands, cronjob parts and views as classes',  'section' => 'runnables' ),
+            'registries_added' => array( 'label' => 'registry entries that name no class',           'section' => 'registries' ) );
+    }
+
+    /**
+     * The groups of the total with their counts, for the page: the total's groups, then the registries, each
+     * saying how many of its entries are already counted as settings.
+     *
+     * @param array|null $survey survey(), when the caller has it
+     * @return array of array( key, label, count, section, in_total, counted )
+     */
+    public static function groupCounts( $survey = null )
+    {
+        $survey = $survey === null ? self::survey() : $survey;
+        $counts = $survey['counts'];
+        $groups = array();
+        foreach ( self::totalGroups() as $key => $group )
+            $groups[] = array( 'key' => $key, 'label' => $group['label'], 'count' => $counts[$key],
+                               'section' => $group['section'], 'in_total' => true, 'counted' => 0 );
+        foreach ( $survey['registries'] as $key => $registry )
+            $groups[] = array( 'key' => 'registry_' . $key, 'label' => $registry['title'], 'count' => $counts['registry_' . $key],
+                               'section' => 'registries', 'in_total' => false,
+                               'counted' => $counts['registry_' . $key] - $counts['registry_' . $key . '_added'] );
+        return $groups;
     }
 
     // ── The exp:ini command: actions and scope providers ─────────────────────
@@ -292,6 +398,199 @@ class expRADSurvey
                                             'ok' => expIniActionRegistry::classProblem( $class, 'expIniScopeProvider' ) === null );
 
         $result['broken'] = $registry->problems();
+        return $result;
+    }
+
+    // ── Registries: settings blocks that each register a class, a callable or a template ──
+
+    /**
+     * The registries the survey reads entry by entry: one INI section (or a family of sections) whose variables
+     * each register an implementation. A registry that lands later is added here with one entry; until then its
+     * settings that name a class are still counted, under "settings", because every ini file is walked.
+     *
+     * Keys of a descriptor:
+     *   title      what the entries are
+     *   ini        the ini file
+     *   section    a section name, or a pattern (/.../) for a family; its first group is the entry's name
+     *   variables  variable => what its value must be: a class or interface name the class must extend or
+     *              implement, 'callable' (<class>::<method>) or 'template' (design:<path>)
+     *   skip       a variable that, set to true, makes the section no point (a built-in subitems column, whose
+     *              cell the list renders itself)
+     *
+     * @return array key => descriptor
+     */
+    public static function registryDescriptors()
+    {
+        return array(
+            'subitemscolumns' => array(
+                'title'     => 'Subitems table columns',
+                'ini'       => 'subitemscolumns.ini',
+                'section'   => '/^Column_(.+)$/',
+                'variables' => array( 'Class' => 'expSubitemsColumn', 'Handler' => 'callable', 'Template' => 'template' ),
+                'skip'      => 'Builtin' ),
+            'contentjobtypes' => array(
+                'title'     => 'Content job types',
+                'ini'       => 'content.ini',
+                'section'   => 'ContentJobSettings',
+                'variables' => array( 'JobTypes' => 'expContentJobType' ) ),
+            'inicommand'      => array(
+                'title'     => 'exp:ini actions and scope providers',
+                'ini'       => 'ini.ini',
+                'section'   => 'IniCommandSettings',
+                'variables' => array( 'Actions' => 'expIniAction', 'ScopeProviders' => 'expIniScopeProvider' ) ),
+            'ezjscserver'     => array(
+                'title'     => 'Server functions of ezjscore',
+                'ini'       => 'ezjscore.ini',
+                'section'   => '/^ezjscServer_(.+)$/',
+                'variables' => array( 'Class' => '' ) ),
+            // The debug bar's panels, once settings/debugbar.ini is there, are one more entry here, e.g.
+            // 'debugbar' => array( 'title' => 'Debug bar panels', 'ini' => 'debugbar.ini',
+            //                      'section' => '<its section>', 'variables' => array( '<its variable>' => '<its interface>' ) ),
+        );
+    }
+
+    /**
+     * Every registry of registryDescriptors(), read out of the ini files this survey walks (kernel, override,
+     * extensions; a later file wins for a keyed entry, appended entries add up, as in the settings group).
+     *
+     * Each entry is a re-implementation point: a column, a job type, an action, a server function. Most of them
+     * name a class, so they are points of "settings" already; 'counted' says which, and only the others (a
+     * template column, a Handler=<class>::<method> column) are added to the total, so nothing is counted twice.
+     *
+     * @param array|null $files iniFiles(), when the caller has them
+     * @param array $settings the settings group, to tell which entries it already counts
+     * @return array key => array( key, title, entries (name, variable, value, what, origin, ok, why, counted), broken )
+     */
+    public static function registries( $files = null, array $settings = array() )
+    {
+        $files = $files === null ? self::iniFiles() : $files;
+
+        $inSettings = array();
+        foreach ( $settings as $setting )
+            $inSettings[$setting['ini'] . '|' . $setting['section'] . '|' . $setting['variable'] . '|' . $setting['value']] = true;
+
+        $registries = array();
+        foreach ( static::registryDescriptors() as $key => $descriptor )
+        {
+            $sections = array();
+            foreach ( $files as $file )
+            {
+                if ( $file['ini'] !== $descriptor['ini'] )
+                    continue;
+                foreach ( self::parseIni( $file['path'] ) as $section => $variables )
+                {
+                    $isPattern = $descriptor['section'][0] === '/';
+                    if ( $isPattern ? !preg_match( $descriptor['section'], $section, $m ) : $section !== $descriptor['section'] )
+                        continue;
+                    $name = $isPattern && isset( $m[1] ) ? $m[1] : $section;
+                    foreach ( $variables as $variable => $values )
+                    {
+                        $bare = preg_replace( '/\[.*$/', '', $variable );
+                        if ( isset( $descriptor['skip'] ) && $bare === $descriptor['skip'] )
+                        {
+                            $sections[$section]['skip'] = preg_match( '/^(true|enabled|1)$/i', (string) end( $values ) ) === 1;
+                            continue;
+                        }
+                        if ( !array_key_exists( $bare, $descriptor['variables'] ) )
+                            continue;
+                        foreach ( $values as $value )
+                        {
+                            if ( !is_string( $value ) || $value === '' )
+                                continue;
+                            $entryName = preg_match( '/\[([^\]]+)\]$/', $variable, $index ) ? $index[1] : $name;
+                            // a keyed entry ("Actions[get]", "Class") is replaced by a later file, an appended one ("[]") adds
+                            $at = substr( $variable, -2 ) === '[]' ? $variable . '|' . $value : $variable;
+                            $sections[$section]['entries'][$at] = array(
+                                'name'     => $entryName,
+                                'section'  => $section,
+                                'variable' => $variable,
+                                'value'    => $value,
+                                'what'     => $descriptor['variables'][$bare],
+                                'origin'   => $file['origin'] );
+                        }
+                    }
+                }
+            }
+
+            $entries = array();
+            $broken  = array();
+            foreach ( $sections as $section )
+            {
+                if ( !empty( $section['skip'] ) || empty( $section['entries'] ) )
+                    continue;
+                foreach ( $section['entries'] as $entry )
+                {
+                    $entry['why']     = self::registryProblem( $entry['value'], $entry['what'] );
+                    $entry['ok']      = $entry['why'] === '';
+                    $entry['counted'] = isset( $inSettings[$descriptor['ini'] . '|' . $entry['section'] . '|' . $entry['variable'] . '|' . $entry['value']] );
+                    $entries[] = $entry;
+                    if ( !$entry['ok'] )
+                        $broken[] = $entry;
+                }
+            }
+
+            $registries[$key] = array( 'key' => $key, 'title' => $descriptor['title'], 'ini' => $descriptor['ini'],
+                                       'entries' => $entries, 'broken' => $broken );
+        }
+
+        return $registries;
+    }
+
+    /**
+     * Why a registry entry cannot work, or '' when it can.
+     *
+     * Existence is read out of the autoload maps (fileOf()), as everywhere in this survey; only a class that
+     * exists is loaded, to tell whether it extends or implements what the registry asks for.
+     *
+     * @param string $value
+     * @param string $what a class or interface name, '' for any class, 'callable' or 'template'
+     * @return string
+     */
+    public static function registryProblem( $value, $what )
+    {
+        if ( $what === 'template' )
+        {
+            $path = preg_replace( '/^design:/', '', $value );
+            $found = array_merge( (array) glob( 'design/*/templates/' . $path ), (array) glob( 'extension/*/design/*/templates/' . $path ) );
+            return count( $found ) ? '' : 'no design has the template';
+        }
+
+        $class = $what === 'callable' ? (string) strtok( $value, ':' ) : $value;
+        if ( !preg_match( self::CLASS_PATTERN, ltrim( $class, '\\' ) ) && strpos( $class, '\\' ) === false )
+            return 'names no class';
+        if ( self::fileOf( ltrim( $class, '\\' ) ) === '' )
+            return 'the class does not exist';
+
+        if ( $what === 'callable' )
+        {
+            $method = substr( $value, strlen( $class ) + 2 );
+            return $method !== '' && class_exists( $class ) && method_exists( $class, $method ) ? '' : 'the class has no such method';
+        }
+
+        if ( $what !== '' && class_exists( $class ) && strcasecmp( ltrim( $class, '\\' ), $what ) !== 0 && !is_subclass_of( $class, $what ) )
+            return 'the class does not extend or implement ' . $what;
+
+        return '';
+    }
+
+    /**
+     * The content job types (content.ini [ContentJobSettings] JobTypes[<name>]=<class implementing
+     * expContentJobType>), as the content job pages and exp:expcontentjob register them.
+     *
+     * @param array|null $registries registries(), when the caller has them
+     * @return array with keys types (name, class, builtin, ok) and broken (name, class, why)
+     */
+    public static function contentJobTypes( $registries = null )
+    {
+        $registries = $registries === null ? self::registries() : $registries;
+        $result = array( 'types' => array(), 'broken' => array() );
+        foreach ( $registries['contentjobtypes']['entries'] as $entry )
+        {
+            $result['types'][] = array( 'name' => $entry['name'], 'class' => $entry['value'],
+                                        'builtin' => $entry['origin'] === 'kernel', 'ok' => $entry['ok'] );
+            if ( !$entry['ok'] )
+                $result['broken'][] = array( 'name' => $entry['name'], 'class' => $entry['value'], 'why' => $entry['why'] );
+        }
         return $result;
     }
 
@@ -614,6 +913,7 @@ class expRADSurvey
      */
     public static function fileOf( $class )
     {
+        self::forRequest();
         if ( self::$Classes === null )
         {
             self::$Classes = array();
@@ -904,6 +1204,7 @@ class expRADSurvey
      */
     public static function events()
     {
+        self::forRequest();
         if ( self::$Events === null )
             self::survey();
 

@@ -142,7 +142,7 @@ class RadSurveyRunnablesTest extends PHPUnit\Framework\TestCase
         foreach ( array_keys( expRADSurvey::runnableEvents() ) as $event )
             $this->assertArrayHasKey( $event, $survey['events'] );
         $this->assertSame( $c['settings'] + $c['repositories'] + $c['contracts'] + $c['views'] + $c['callables']
-                           + $c['events'] + $c['overrides'] + $c['replaced'] + $c['runnables'], $c['total'] );
+                           + $c['events'] + $c['overrides'] + $c['replaced'] + $c['runnables'] + $c['registries_added'], $c['total'] );
     }
 
     /** RS-06 */

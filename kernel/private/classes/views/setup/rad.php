@@ -76,6 +76,7 @@ class Rad extends \Exponential\Runnable\ModuleView
         // here. The page carries the survey's headline numbers so that nobody mistakes
         // forty eight written points for the size of this system.
         $tpl->setVariable( 'rad_survey', \expRADSurvey::survey() );
+        $tpl->setVariable( 'rad_survey_groups', \expRADSurvey::groupCounts() );
         $tpl->setVariable( 'rad_groups', $groups );
         $tpl->setVariable( 'rad_mechanisms', \expRADCatalogue::mechanisms() );
         $tpl->setVariable( 'rad_coverage', \expRADCatalogue::coverage() );

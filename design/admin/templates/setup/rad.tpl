@@ -73,6 +73,10 @@
 .rad-find-none { padding: .6rem 0 1.2rem 0; }
 .rad-hit { background: #fff3b0; border-radius: 2px; }
 
+.rad-survey-groups { list-style: none; margin: .6rem 0 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .3rem .5rem; }
+.rad-survey-groups li { margin: 0; padding: 0; }
+.rad-survey-groups a { display: inline-block; padding: .15rem .5rem; border: 1px solid #d0d0d4; border-radius: 3px; text-decoration: none; }
+.rad-survey-groups li.is-inside a { border-style: dashed; }
 .rad-survey-note { padding: 0 0 1.2rem 0; }
 .rad-survey-link {
     display: flex; gap: .9rem; align-items: center; text-decoration: none; color: inherit;
@@ -127,6 +131,11 @@
         <span class="rad-meta">{'exp:ini has %actions actions and %providers scope providers; an extension adds its own in ini.ini.'|i18n( 'design/admin/setup/rad',, hash( '%actions', $rad_survey.counts.ini_actions, '%providers', $rad_survey.counts.ini_scope_providers ) )}</span>
     </span>
 </a>
+<ul class="rad-survey-groups">
+{foreach $rad_survey_groups as $rad_count}
+    <li{if $rad_count.in_total|not} class="is-inside"{/if}><a href={concat( 'setup/radsurvey/(show)/', $rad_count.section )|ezurl}><b>{$rad_count.count}</b> {$rad_count.label|i18n( 'design/admin/setup/rad' )|wash}{if and( $rad_count.in_total|not, $rad_count.counted|gt( 0 ) )} <span class="rad-meta">({'%counted of them counted as settings'|i18n( 'design/admin/setup/rad',, hash( '%counted', $rad_count.counted ) )})</span>{/if}</a></li>
+{/foreach}
+</ul>
 </div>
 
 {* Narrowing as you type. Everything is already on the page, so this hides

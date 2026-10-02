@@ -38,6 +38,8 @@ class Radsurvey extends \Exponential\Runnable\ModuleView
                                      'what'  => 'Every command, cronjob part and module view whose code is a class. Each can be re-implemented without copying a file: a subclass named in site.ini [RunnableSettings] Implementation[<class>] runs in its place, and listeners of runnable/<kind>/before and runnable/<kind>/after act around any of them. An entry that names no such class, or a replacement that does not extend it, is ignored and shown here as broken.' ),
             'inicommand'   => array( 'title' => 'Actions and scopes of exp:ini',
                                      'what'  => 'Every action of the exp:ini command and every provider of the scopes it writes, as ini.ini [IniCommandSettings] registers them. An extension adds an action with Actions[<name>]=<class> (a class implementing expIniAction) and a scope provider with ScopeProviders[]=<class> (expIniScopeProvider) in its own ini.ini.append.php. Guide: doc/bc/6.0/console-exp-ini.md.' ),
+            'registries'   => array( 'title' => 'Registries',
+                                     'what'  => 'Settings blocks each entry of which registers an implementation: the columns of the subitems table (subitemscolumns.ini [Column_<key>] Class=, Handler=<class>::<method> or Template=), the content job types (content.ini [ContentJobSettings] JobTypes[]), the actions and scope providers of exp:ini (ini.ini [IniCommandSettings]) and the server functions of ezjscore (ezjscore.ini [ezjscServer_<name>] Class=). An entry that names a class is also one of the settings that name a class and is counted there; the others are added to the total here. An entry whose class, method or template is missing, or whose class does not extend what the registry asks for, is shown as broken. Built-in subitems columns, which the list renders itself, are no point and are not listed.' ),
             'callables'    => array( 'title' => 'What a template can call',
                                      'what'  => 'Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.' ),
             'events'       => array( 'title' => 'Events something can listen to',
@@ -225,6 +227,20 @@ class Radsurvey extends \Exponential\Runnable\ModuleView
                         'four'  => 'ScopeProviders[]=' . $entry['class'],
                         'note'  => 'ini.ini [IniCommandSettings]',
                         'state' => $entry['ok'] ? 'ok' : 'bad' );
+                break;
+
+            case 'registries':
+                foreach ( $survey['registries'] as $registry )
+                    foreach ( $registry['entries'] as $entry )
+                        $rows[] = array(
+                            'one'   => $entry['name'],
+                            'two'   => \ezpI18n::tr( 'kernel/setup/rad', $registry['title'] ),
+                            'three' => $entry['ok'] ? ( $entry['counted'] ? \ezpI18n::tr( 'kernel/setup/rad', 'also a setting that names a class' )
+                                                                         : \ezpI18n::tr( 'kernel/setup/rad', 'counted here' ) )
+                                                    : \ezpI18n::tr( 'kernel/setup/rad', $entry['why'] ),
+                            'four'  => $entry['variable'] . '=' . $entry['value'],
+                            'note'  => $registry['ini'] . ' [' . $entry['section'] . '] (' . $entry['origin'] . ')',
+                            'state' => $entry['ok'] ? 'ok' : 'bad' );
                 break;
 
             case 'replaced':

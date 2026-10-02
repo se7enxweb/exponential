@@ -56,7 +56,7 @@ class RadSurveyIniCommandTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 0, $c['ini_command_broken'] );
         $this->assertSame( $c['ini_actions'] + $c['ini_scope_providers'], $c['inicommand'] );
         $this->assertSame( $c['settings'] + $c['repositories'] + $c['contracts'] + $c['views'] + $c['callables']
-                           + $c['events'] + $c['overrides'] + $c['replaced'] + $c['runnables'], $c['total'] );
+                           + $c['events'] + $c['overrides'] + $c['replaced'] + $c['runnables'] + $c['registries_added'], $c['total'] );
 
         // each registration is a setting naming a class already
         $fromIni = array_filter( self::$survey['settings'], function ( $s ) { return $s['ini'] === 'ini.ini' && $s['section'] === 'IniCommandSettings'; } );
