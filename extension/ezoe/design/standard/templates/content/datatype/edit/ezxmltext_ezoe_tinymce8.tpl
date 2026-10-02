@@ -72,7 +72,8 @@ var eZOe8GlobalSettings = {ldelim}
     external_plugins: {ldelim}
         ezembed: {'javascript/tinymce8_ez/plugins/ezembed/plugin.js'|ezdesign},
         ezcustomtag: {'javascript/tinymce8_ez/plugins/ezcustomtag/plugin.js'|ezdesign},
-        ezlink: {'javascript/tinymce8_ez/plugins/ezlink/plugin.js'|ezdesign}
+        ezlink: {'javascript/tinymce8_ez/plugins/ezlink/plugin.js'|ezdesign},
+        ezpath: {'javascript/tinymce8_ez/plugins/ezpath/plugin.js'|ezdesign}
     {rdelim},
     // no advlist (split list buttons) and no pagebreak (ezoe pagebreak is a custom tag, not an html comment)
     plugins: 'lists autolink link anchor table charmap fullscreen code help',
@@ -105,6 +106,7 @@ var eZOe8GlobalSettings = {ldelim}
     contextmenu: 'ezlink ezembed ezcustomtag table',
     ez_skin_class: 'ezoe-skin-{$skin|wash}',
     ez_disable_editor_text: {json_encode( 'Disable editor'|i18n('design/standard/content/datatype') )},
+    ez_xml_tag_alias: {$input_handler.json_xml_tag_alias},
     ez_custom_tags: {json_encode( $input_handler.custom_tag_definitions )},
     ez_link_classes: {json_encode( $link_classes )},
     ez_link_view_modes: {json_encode( ezini( 'link', 'AvailableViewModes', 'content.ini' ) )},

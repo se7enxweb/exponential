@@ -80,3 +80,17 @@
     font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
     border: 1px solid #7F9DB9;
 }
+
+/* "Path:" in front of the element path, set by the ezpath plugin */
+.tox .tox-statusbar__path::before {
+    content: var(--ezoe-path-label, '');
+    white-space: pre;
+}
+/* » between the path items like the TinyMCE 3 status bar */
+.tox .tox-statusbar__path-divider {
+    font-size: 0;
+}
+.tox .tox-statusbar__path-divider::before {
+    content: '\00a0\00bb\00a0';
+    font-size: 9pt;
+}
