@@ -247,3 +247,11 @@ html[data-a4-theme="dark"] #debug {
 }
 #debug .exp-debug-restore-badge[data-level="warn"] { background: #ffc94d; color: #1d1f23; }
 #debug.exp-debug-min { border: 0; padding: 0; overflow: visible; }
+
+/* Bar layout: the page summary and "Keep open on reload" on the left, the "Exp Debug" title and the logo at the
+   right end of the bar (next to where the minimised tab sits). Order only; the reading and tab order of the markup
+   stays as it is for keyboard and screen reader users. */
+#debug[data-exp-debug-bar] > h2 > .exp-debug-summary { order: 1; flex: 1 1 auto; justify-content: flex-start; padding-left: 8px; }
+#debug[data-exp-debug-bar] > h2 > label.debug-keep-open { order: 2; margin-left: 12px; margin-right: 12px; }
+#debug[data-exp-debug-bar] > h2 > a { order: 3; flex: 0 0 auto; margin-left: auto; }
+#debug[data-exp-debug-bar] > h2 > button.exp-debug-logo { order: 4; margin-left: 6px; margin-right: 6px; }
