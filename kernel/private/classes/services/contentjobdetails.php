@@ -369,10 +369,11 @@ class ContentJobDetails
      * last modified each root and when, and the content jobs holding a lock on any of them.
      *
      * @param int[] $nodeIDs the roots
+     * @param bool $subtrees false: only these nodes, not what is below them (adding or removing locations)
      * @return array( 'locations', 'objects', 'outside', 'classes' => array( array( name, count ) ),
      *                'roots' => array( array( node_id, name, path, modified, modifier ) ), 'jobs' => array( Job::info() ) )
      */
-    public static function subtreeSummary( array $nodeIDs )
+    public static function subtreeSummary( array $nodeIDs, $subtrees = true )
     {
         $db = \eZDB::instance();
         $summary = array( 'locations' => 0, 'objects' => 0, 'outside' => 0, 'classes' => array(), 'roots' => array(), 'jobs' => array() );
@@ -393,14 +394,16 @@ class ContentJobDetails
             return $summary;
         $or = array();
         foreach ( $paths as $p )
-            $or[] = "t.path_string LIKE '" . $db->escapeString( $p ) . "%'";
+            $or[] = $subtrees ? "t.path_string LIKE '" . $db->escapeString( $p ) . "%'"
+                              : "t.path_string = '" . $db->escapeString( $p ) . "'";
         $in = '( ' . implode( ' OR ', $or ) . ' )';
         $r = $db->arrayQuery( "SELECT COUNT(*) AS l, COUNT(DISTINCT t.contentobject_id) AS o FROM ezcontentobject_tree t WHERE $in" );
         $summary['locations'] = (int) $r[0]['l'];
         $summary['objects'] = (int) $r[0]['o'];
         $notIn = array();
         foreach ( $paths as $p )
-            $notIn[] = "o2.path_string NOT LIKE '" . $db->escapeString( $p ) . "%'";
+            $notIn[] = $subtrees ? "o2.path_string NOT LIKE '" . $db->escapeString( $p ) . "%'"
+                                 : "o2.path_string <> '" . $db->escapeString( $p ) . "'";
         $r = $db->arrayQuery( "SELECT COUNT(DISTINCT t.contentobject_id) AS c FROM ezcontentobject_tree t, ezcontentobject_tree o2
                                WHERE $in AND o2.contentobject_id = t.contentobject_id AND " . implode( ' AND ', $notIn ) );
         $summary['outside'] = (int) $r[0]['c'];
