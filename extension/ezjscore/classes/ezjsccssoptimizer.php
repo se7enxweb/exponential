@@ -51,8 +51,16 @@ class ezjscCssOptimizer
 
         if ( $packLevel > 2 )
         {
-            // Remove space around ':' and ','
-            $css = preg_replace( array( '/:\s+/', '/\s+:/' ), ':', $css );
+            // Remove space around ':' -- after it anywhere, before it only inside declaration blocks.
+            // In a selector the space before ':' is the descendant combinator: removing it made
+            // "a :hover" into "a:hover" and ":where(#a) :where(.b)" into ":where(#a):where(.b)",
+            // each a different selector, so rules silently stopped matching.
+            $css = preg_replace( '/:\s+/', ':', $css );
+            $css = preg_replace_callback( '/\{[^{}]*\}/', function ( $m )
+            {
+                return preg_replace( '/\s+:/', ':', $m[0] );
+            }, $css );
+            // ... and around ','
             $css = preg_replace( array( '/,\s+/', '/\s+,/' ), ',', $css );
 
             // Remove unnecessary line breaks...
