@@ -11,5 +11,5 @@
 {else}
  {ezscript_load( array( 'ezjsc::jquery', 'ezjsc::jqueryio' ) )}
 {/if}
-{* admin4: the top menu as a sideways-scrolling row on narrow windows (see the file) *}
+{* admin4: keeps the page clear of the fixed header, whose menu wraps onto more lines on narrower windows *}
 <script src={'javascript/admin4.js'|ezdesign} defer="defer"></script>

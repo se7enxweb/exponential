@@ -161,12 +161,12 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   opacity: .45;
 }
 
-/* Narrow windows that are not phones (576-1023px, also a desktop at 200% zoom): admin3 switched to the phone
-   menu (a hamburger and a sliding column) there. admin4 keeps the menu in the header as one row that scrolls
-   sideways, without a scrollbar (touch, trackpad, mouse wheel -- admin4.js turns the wheel sideways); faded
-   edges say there is more, and the current item is scrolled into view. The header search stays in the header.
-   Phones (below 576px) keep the hamburger menu. */
-@media screen and (min-width: 576px) and (max-width: 1023px) {
+/* The top menu from 576px up: every item always visible, the row wrapping onto as many lines as it needs.
+   admin3 switched to the phone menu (a hamburger and a sliding column) below 1024px, and its desktop row hid
+   what did not fit (overflow: hidden). admin4: phones (below 576px) keep the hamburger menu; at every width
+   above it the menu stays in the header and wraps. The header search stays in the header too. The header grows
+   with the lines; admin4.js keeps --header-height (the space the page leaves for the fixed header) in step. */
+@media screen and (min-width: 576px) {
   .navbar-main {
     flex-wrap: wrap;
   }
@@ -189,24 +189,12 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   }
   .navbar-bar {
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.25rem 0.35rem;
     padding: 0.15rem 0 0.35rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-x: contain;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--a4-fade-start, 0px), #000 calc(100% - var(--a4-fade-end, 0px)), transparent 100%);
-    mask-image: linear-gradient(90deg, transparent 0, #000 var(--a4-fade-start, 0px), #000 calc(100% - var(--a4-fade-end, 0px)), transparent 100%);
+    overflow: visible;
   }
-  .navbar-bar::-webkit-scrollbar {
-    display: none;
-  }
-  .navbar-bar.a4-more-left { --a4-fade-start: 28px; }
-  .navbar-bar.a4-more-right { --a4-fade-end: 28px; }
   .navbar-bar > li {
     flex: 0 0 auto;
   }

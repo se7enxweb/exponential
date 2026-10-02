@@ -1,48 +1,37 @@
 /*
- * admin4: the top menu on narrow windows (576-1023px, see admin4.css), where it is one row that scrolls sideways
- * without a scrollbar:
- *  - a vertical mouse wheel scrolls it sideways (trackpads and touch already do);
- *  - .a4-more-left / .a4-more-right on the row while items are hidden on that side (admin4.css fades that edge);
- *  - the current item (a.selected) is scrolled into view.
- * Plain JavaScript, no library; it only acts while the row actually overflows.
+ * admin4: keeps the space the page leaves for the fixed header (--header-height on .dashboard-flex) equal to the
+ * header's real height, at all times.
+ *
+ * From 576px up the top menu wraps onto as many lines as it needs (admin4.css), so the header is as tall as its
+ * lines and changes height when the window is resized, when the fonts arrive, when the light/dark toggle changes
+ * its label. ezadmin_menubar.js measured the header once, at load: after a resize that added a line the header
+ * covered the top of the page. A ResizeObserver on the header follows every change; where there is none, resize
+ * and load events do. Plain JavaScript, no library.
  */
 (function () {
     'use strict';
-    var NARROW = window.matchMedia('(min-width: 576px) and (max-width: 1023px)');
 
-    function edges(bar) {
-        var max = bar.scrollWidth - bar.clientWidth;
-        bar.classList.toggle('a4-more-left', max > 1 && bar.scrollLeft > 1);
-        bar.classList.toggle('a4-more-right', max > 1 && bar.scrollLeft < max - 1);
-    }
-
-    function showCurrent(bar) {
-        var current = bar.querySelector('a.selected');
-        if (!current || bar.scrollWidth <= bar.clientWidth) return;
-        var li = current.parentNode, left = li.offsetLeft - bar.offsetLeft;
-        if (left < bar.scrollLeft || left + li.offsetWidth > bar.scrollLeft + bar.clientWidth) {
-            bar.scrollLeft = Math.max(0, left - (bar.clientWidth - li.offsetWidth) / 2);
+    function sync() {
+        var header = document.getElementById('header');
+        var flex = document.querySelector('.dashboard-flex');
+        if (!header || !flex) return;
+        var rem = header.offsetHeight / 16;
+        if (flex.style.getPropertyValue('--header-height') !== rem + 'rem') {
+            flex.style.setProperty('--header-height', rem + 'rem');
         }
     }
 
     function init() {
-        var bar = document.querySelector('.navbar-menu .navbar-bar');
-        if (!bar) return;
-        bar.addEventListener('wheel', function (e) {
-            if (!NARROW.matches || bar.scrollWidth <= bar.clientWidth) return;
-            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-                bar.scrollLeft += e.deltaY;
-                e.preventDefault();
-            }
-        }, { passive: false });
-        bar.addEventListener('scroll', function () { edges(bar); }, { passive: true });
-        var refresh = function () {
-            if (NARROW.matches) { showCurrent(bar); }
-            edges(bar);
-        };
-        window.addEventListener('resize', refresh);
-        if (NARROW.addEventListener) NARROW.addEventListener('change', refresh);
-        refresh();
+        var header = document.getElementById('header');
+        if (!header) return;
+        sync();
+        if (window.ResizeObserver) {
+            new ResizeObserver(sync).observe(header);
+        } else {
+            window.addEventListener('resize', sync);
+        }
+        window.addEventListener('load', sync);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(sync);
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
