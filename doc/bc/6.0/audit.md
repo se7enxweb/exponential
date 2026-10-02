@@ -2171,7 +2171,8 @@ events, Charts, Alerts, Export, Archives and Settings (the last two with audit/m
 | Unit tests `tests/tests/kernel/classes/audit/expAuditIndexTest.php` (live database, test channels t4*) | 10 tests, 170 assertions, OK |
 | Permission matrix A2/A3 (admin, Editor, Auditor, Shop auditor commerce-only, Audit manager, Administrator) on admin4 and admin | PASS 6 users: tab, sidebar link, block, job links, every view open or refused as specified; refusals recorded as `access.permission.refused` |
 | Playwright 960 px, scale 2, light and dark, admin4 and admin: every view with its left menu, filter form, search, paging, event detail (hash recomputed: matches), CSV export, dashboard block | PASS |
-| Dashboard build time | about 160 ms |
+| Dashboard build time | about 170 ms cold; 25 ms while the 7-day figures are cached (one minute, `var/<site>/cache/audit/`); on Velocity 180 ms before the cache |
+| Playwright and the permission matrix on Velocity (port 8080, after its redeploy) | PASS |
 
 ### Deviations from the text above
 

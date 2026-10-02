@@ -61,16 +61,54 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         if ( $usable )
         {
             $q = new \expAuditQuery();
-            $tpl->setVariable( 'volume', $this->volume( $q, $allowed ) );
+            // the 7-day groupings scan many rows: kept for a minute per Channel limitation
+            $tpl->setVariable( 'volume', $this->cached( 'volume', $allowed, function () use ( $q, $allowed ) { return $this->volume( $q, $allowed ); } ) );
             $tpl->setVariable( 'security', $this->security( $q, $allowed ) );
             $tpl->setVariable( 'alerts', $this->alerts( $q, $allowed ) );
-            $tpl->setVariable( 'activity', $this->activity( $q, $allowed ) );
+            $tpl->setVariable( 'activity', $this->cached( 'activity', $allowed, function () use ( $q, $allowed ) { return $this->activity( $q, $allowed ); } ) );
         }
         $tpl->setVariable( 'operations', $this->operations( $config, $manage, $usable, $indexRun ) );
         $tpl->setVariable( 'ms', (int)round( ( microtime( true ) - $start ) * 1000 ) );
 
         \expAuditConsole::recordRead( 'audit/dashboard', array(), null );
         return \expAuditConsole::result( $tpl->fetch( 'design:audit/dashboard.tpl' ), \ezpI18n::tr( 'design/admin/audit', 'Dashboard' ) );
+    }
+
+    /** Seconds the 7-day figures are kept */
+    const CACHE_SECONDS = 60;
+
+    /**
+     * A section's figures from a short-lived cache file (var/<site>/cache/audit/), computed when missing or older
+     * than CACHE_SECONDS; keyed by the section, the Channel limitation and the day.
+     *
+     * @param string $section
+     * @param string[]|null $allowed
+     * @param callable $compute
+     * @return array
+     */
+    protected function cached( $section, $allowed, $compute )
+    {
+        $dir = \eZSys::cacheDirectory() . '/audit';
+        $file = $dir . '/dashboard-' . $section . '-' . md5( json_encode( $allowed ) . date( 'Ymd' ) ) . '.php';
+        clearstatcache( true, $file );
+        if ( is_file( $file ) && filemtime( $file ) > time() - self::CACHE_SECONDS )
+        {
+            $data = @include $file;
+            if ( is_array( $data ) )
+                return $data;
+        }
+        $data = $compute();
+        // owned like the cache directory, also when written by a process running as root
+        if ( is_dir( $dir ) || ( @mkdir( $dir, 0770, true ) && ( \expAuditWriter::ownLikeParent( $dir, 0770 ) || true ) ) )
+        {
+            $tmp = $file . '.' . getmypid() . '.tmp';
+            if ( @file_put_contents( $tmp, '<?php return ' . var_export( $data, true ) . ';' ) !== false )
+            {
+                @rename( $tmp, $file );
+                \expAuditWriter::ownLikeParent( $file, 0660 );
+            }
+        }
+        return $data;
     }
 
     /** @return int epoch ms of the start of today, local time */
