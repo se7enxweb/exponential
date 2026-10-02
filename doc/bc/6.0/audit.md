@@ -1,6 +1,6 @@
 # Audit: tracking what happens in Exponential
 
-Status: **design, agreed with the owner on 2026-10-02 — not implemented yet.** This document is the specification the
+Status: **design, agreed with the owner on 2026-10-02; stages 1 and 2 built (see "Stage 1 results" and "Stage 2 — built" at the end).** This document is the specification the
 work is built against, stage by stage (see "Delivery"). It also records the dashboard permission defect found the same
 day, which is stage 1.
 
@@ -2013,3 +2013,101 @@ requested directly (must be refused). Both siteaccesses gave the same result:
 0 failures (336 checks per siteaccess); before the fix both editors were shown the links listed above. Unit
 tests: `tests/tests/kernel/classes/expViewAccessTest.php` (live database, 14 tests). The test users and their group
 were removed afterwards. Velocity (port 8080) is checked after its restart with the same matrix.
+
+## Stage 2 — built (2026-10-02)
+
+The event core is in place and **on** (`Audit=enabled` in the shipped `settings/audit.ini`). Every point marked
+"Proposed:" above was accepted by the owner and is built as written, with the deviations listed at the end.
+
+### Try it in two minutes
+
+```bash
+./console exp:audit status --allow-root-user              # on/off, key fingerprint, files and chain state per channel
+./console exp:audit tail --allow-root-user                # the newest 20 records, all channels
+./console exp:audit tail --channel=access --follow --allow-root-user    # now log in and out in the admin: the lines appear
+./console exp:audit show <event id from tail> --allow-root-user         # one record in full, its hash re-checked
+./console exp:audit verify --allow-root-user              # every chain: INTACT / REPAIRED / BROKEN with file and line
+```
+
+In the admin, as an administrator: **`/audit/recent`** (`https://edit.alpha.se7enx.com/audit/recent`, or
+`https://alpha.se7enx.com:8080/admin/audit/recent` on Velocity). It shows the latest 100 events and the state of each
+channel's chain; `/audit/recent/(channel)/access` shows one channel. Every response carries the header
+`X-Exp-Request-Id`; the same id is in the `request.id` of that request's records.
+
+To see a break: copy a day file somewhere under `var/tmp/`, change one character of a name in it, and verify the copy
+with `expAuditVerifier` (the tests do exactly this, `expAuditChainTest`); `exp:audit verify` on the live directory
+must always say INTACT.
+
+### What exists
+
+| Part | Where |
+|---|---|
+| `expAudit` (event, begin/end, withParent, setJob/setRun, isOn, isEnabled, legacy, settingWrite, flush, flushFinal, flushOnFatal, resetRequest, requestId, responseHeader, checkpoint) | kernel/classes/audit/expaudit.php |
+| Settings snapshot per request (test override) | expauditconfig.php |
+| Taxonomy registry: the 135 names of the catalogue, extension branches, patterns, routing, immediate events | expaudittaxonomy.php, expaudittaxonomybranch.php |
+| Buffer, writer (channel lock, chain head from the file, open/close records, size rotation, torn-line repair, ownership), verifier, reader | expauditbuffer.php, expauditwriter.php, expauditverifier.php, expauditreader.php |
+| Keys (installation id, signing key with key id, pseudonym key; generated on first use into `settings/override/audit.ini.append.php`, mode 0640) and the HMAC | expauditkeys.php |
+| Privacy (full/truncate/hash/off per field, never-recorded names, secret paths, user agent families) | expauditprivacy.php |
+| Canonical JSON | expauditjson.php |
+| Interfaces for stage 5 (no implementation yet; their INI entries are commented out so the RAD survey does not count them as broken) | expauditsink.php, expauditalertrule.php, expauditformathandler.php |
+| `eZAudit::writeAudit()` → `expAudit::legacy()`: the 15 old names mapped, the call site deciding content-delete, content-hide and order-delete; `$GLOBALS` caches removed | kernel/classes/ezaudit.php |
+| Per-request reset (Velocity) and the `X-Exp-Request-Id` header | kernel/private/classes/ezpkernelweb.php |
+| `access.session.logout` | kernel/classes/datatypes/ezuser/ezuser.php |
+| `system.setting.write` (exp:ini, the debug bar, every write through `expIniEditor`), `system.audit.setting.write`, `system.audit.disable`; `system.setting.undo` | kernel/classes/ini/expinieditor.php, kernel/classes/debugbar/expdebugbarsettings.php |
+| `exp:audit` status, channels, tail, show, verify, checkpoint | bin/php/audit.php, kernel/private/classes/commands/audit.php |
+| Module `audit`, view `recent`, policy `audit/read` | kernel/audit/, kernel/private/classes/views/audit/recent.php, design/admin4 and design/admin templates/audit/recent.tpl |
+| RAD survey registries auditbranches, auditsinks, auditalertrules, auditformats | kernel/setup/expradsurvey.php |
+
+Recorded today: the 36 `writeAudit()` call sites (logins, failed logins, deletes, moves, hide/reveal, roles, sections,
+states, orders, the ezmbpaex password events), logouts, settings writes and the audit's own events
+(`system.audit.read`, `.verify`, `.chain.broken`, `.key.create`, `.checkpoint`, `.file.open/close`, `.chain.repair`,
+`.overflow`) and `system.error.fatal`. Everything else in the catalogue is stage 3.
+
+### Files
+
+`var/site/log/audit/<channel>-<YYYY-MM-DD>[.<part>].jsonl` holds one canonical JSON line per record (keys sorted, null
+fields left out). A daily signed checkpoint is written by the first write of each UTC day (the cronjob part of stage 5
+will take this over). The directory also holds `.<channel>.lock`, `.keys.lock`, `.checkpoint` and `.checkpoint.lock`.
+Directories are 0770 and files 0640, with the owner and group of `var/site/log` even when written by root (Velocity,
+commands).
+
+### Tests
+
+`php vendor/bin/phpunit tests/tests/kernel/classes/audit/`: 42 tests, about 4 900 assertions. `expAuditRecordTest`
+covers B1, names, patterns, routing, branches and parents. `expAuditChainTest` covers B2 and tamper cases T0–T8.
+`expAuditPrivacyTest` covers B5, `expAuditBufferTest` covers B4 (1000 worker requests), and `expAuditCompatTest`
+covers B3, keys, ownership and settings writes. They write only into `var/tmp/audit-tests/` with test settings and
+keys. They use no database and never touch the live log. The write-failure test writes its unwritable records to
+error.log on purpose.
+
+### Measured on alpha
+
+The proof ran on both Apache and Velocity (:8080): a failed login, a login, `audit/recent`, a logout, and a debug
+bar setting toggled and undone. All were recorded with the right engine and request id, and `exp:audit verify`
+reports every channel INTACT.
+
+Overhead per request, measured in the kernel (a script run through bin/php/ezexec.php, 2 000 requests). A request that
+raises no event, which is what the admin pages of stage 2 are, cached or not, costs:
+
+| Case | p50 | p95 |
+|---|---|---|
+| Request reset, request id header and empty flush (audit on) | 0.090 ms | 0.136 ms |
+| The same with `Audit=disabled` | 0.029 ms | 0.051 ms |
+| `event()` for a name that is off | 0.001 ms | 0.001 ms |
+| One buffered event and its flush (one append) | 0.47 ms | 0.62 ms |
+| One immediate event (a login) | 0.43 ms | 0.56 ms |
+
+So audit on versus off adds about 0.06 ms to a page that records nothing (target: under 2 ms), and about 0.5 ms to a
+request that writes one channel.
+
+### Deviations from the text above
+
+- The response header is `X-Exp-Request-Id` (`RequestIdHeader=X-Exp-Request-Id`), named like the other `X-Exp-*`
+  headers, not `X-Request-Id`.
+- `SinkClasses[]`, `RuleClasses[]` and `FormatHandlers[]` of audit.ini are shipped commented out until stage 5
+  delivers the classes.
+- `TrustedRequestIdHeader` is only trusted from the loopback addresses.
+- A failed login with a known account has `reason: credentials`; with an unknown login `reason: not_found` and the
+  attempted login hashed.
+- The view `audit/recent` uses the `ezsetupnavigationpart`. It has no menu entry yet; the top tab and the
+  navigation part are stage 4.
