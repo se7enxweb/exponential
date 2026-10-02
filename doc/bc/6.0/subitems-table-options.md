@@ -350,9 +350,8 @@ class expSubitemsColumnHandlers
     public static function daysOnline( eZContentObjectTreeNode $node, array $settings, expSubitemsColumn $column )
     {
         $object = $node->attribute( 'object' );
-        if ( !$object instanceof eZContentObject || (int)$object->attribute( 'published' ) <= 0 )
-            return null;
-        return (int)floor( ( time() - (int)$object->attribute( 'published' ) ) / 86400 );
+        $published = $object instanceof eZContentObject ? (int)$object->attribute( 'published' ) : 0;
+        return $published > 0 ? expSubitemsColumn::days( $published ) : null;
     }
 }
 ```
@@ -381,8 +380,7 @@ class expSubitemsReadingTimeColumn extends expSubitemsColumn
 {
     public function value( eZContentObjectTreeNode $node )
     {
-        $words = new expSubitemsObjectColumn( $this->key, array( 'Field' => 'word_count' ) + $this->settings );
-        $count = $words->value( $node );
+        $count = $this->wordCount()->value( $node );
         if ( !$count )
             return null;
         $perMinute = max( 1, (int)$this->setting( 'WordsPerMinute', 200 ) );
@@ -393,12 +391,26 @@ class expSubitemsReadingTimeColumn extends expSubitemsColumn
     {
         return $value === null ? '' : self::escape( $value . ' ' . ezpI18n::tr( 'design/admin/node/view/full', 'min' ) );
     }
+
+    public function prefetch( array $nodes )
+    {
+        $this->wordCount()->prefetch( $nodes );
+    }
+
+    protected function wordCount()
+    {
+        return new expSubitemsObjectColumn( $this->key, array( 'Field' => 'word_count' ) + $this->settings );
+    }
 }
 ```
 
 A class extends `expSubitemsColumn` and implements `value()`; it may override `html()` (the cell; escape
-everything with `self::escape()`), `text()` (the CSV), `sortBy()` and `isAvailable()`. It reads its own
-settings with `$this->setting( 'Name', $default )`, so one class can serve several blocks. This is the
+everything with `self::escape()`), `text()` (the CSV), `sortBy()`, `isAvailable()` and `prefetch()` (see
+Performance). It reads its own settings with `$this->setting( 'Name', $default )`, so one class can serve
+several blocks. The base class has the formatting every column shares, for use in `value()` and `html()`:
+`escape()`, `oneLine()`, `markupToText()`, `linkHtml()`, `formatDate()`, `formatAge()` ("3 days ago"),
+`days()`, `formatBytes()` ("245 kB"), and `memo( $bucket, $key, $compute )` for a lookup done once per
+request. This is the
 shipped `readingtime` column (`kernel/classes/subitems/columns/expsubitemsreadingtimecolumn.php`).
 
 ### 3. A Template: markup without PHP
@@ -608,22 +620,53 @@ from the request is ever used as a class, function or template name. ezjscore wr
 
 PHP code can use the same pieces: `expSubitemsColumnRegistry::instance()` (`availableColumns( $parent )`,
 `column( $key, $parent )`, `resolveColumns( $keys, $parent )`, `defaults()`, `presets()`, `sortFor()`), and
-`expSubitemsServerFunctions::columnValues( $nodes, $columns )` for the cells.
+`expSubitemsServerFunctions::columnValues( $nodes, $columns )` for the cells (it prefetches; `prefetch()` and
+`cell( $column, $node )` are the two steps on their own).
 
 ## Performance
 
 Only the visible columns are computed, and only for the rows of the page (the page size), never for the
 whole subtree. The 15 built-ins cost nothing extra: they come with the node, as before. Most other
-columns read the loaded node or object and cost no query; the rest cost one or two small queries per row
-and say so in their description (counts, alias rows, version rows, the data map). Columns of one row that
-read the same data share it: all version columns use one version query per object, all alias columns
-one alias query per node, the text, image and file columns one data map. Lookups that are the same for
-every row (the parent's name, a class's groups, a section, the public siteaccess's settings, a user's
-name) are done once per request. The heaviest are **Subtree size** (a count over the whole subtree) and
-**Teaser** (it renders an XML text block); keep them for small pages.
+columns read the loaded node or object and cost no query.
 
-Measured on alpha (SQLite, as the admin): all 114 non-built-in columns at once for 10 children of the
-media root, 113 ms on the command line.
+The others load what they read **once for the page**, not once per row: before computing any cell, the
+rows function and the CSV export call `prefetch( $nodes )` on every requested column with the page's
+nodes, and the column loads its data for all of them in one query, into the same per-request memo its
+`value()` reads. A prefetch only changes the number of queries, never a value (the tests compute every
+column both ways and compare), and one that fails just leaves the column to load per row. Loaded once per
+page:
+
+| Data | Columns |
+|---|---|
+| The data map (attributes of the current version and language) | word count, text length, reading time, attribute count, every image and file column, page title and the meta columns, tags, the automatic attribute columns |
+| Version rows | version count, drafts, draft authors, latest draft, archived, pending, rejected, initial creator, contributors, version created |
+| Readable children, per parent (the user's content/read limitations applied, as `childrenCount()` does) | children count |
+| Children per class | child classes |
+| URL alias rows | alias count, all URL aliases, custom aliases, custom alias count, history count |
+| Locations of the object | location count, other locations |
+| Relation counts (all types, both ends published) | related count, reverse related count |
+| Counts | workflow processes, search index words, view count |
+
+Columns of one row that read the same data share it, and lookups that are the same for every row (the
+parent's name, a class's groups, a section, the public siteaccess's settings, a user's name) are done once
+per request. The rows function and the CSV export empty the memo first, so a persistent worker never
+answers from an earlier request. On MongoDB the grouped queries are skipped and the columns load per row.
+Still per row: **Subtree size** (a count over each whole subtree), **Newest child**, the URL alias based
+columns for the odd node whose alias the kernel leaves empty, the user columns, and **Teaser** (it renders
+an XML text block); keep the heavy ones for small pages.
+
+A family class (`expSubitemsFieldColumn`) lists in `prefetchSets()` which `Field=` values read which set,
+and has a `prefetch<Set>( $nodes )` for each; a column class of your own overrides `prefetch()`.
+
+Measured on alpha (SQLite, as the admin, on the command line; median of 5 runs, each in a fresh process):
+every one of the 114 non-built-in columns at once, for the first 10 children of the media root and for
+the first 50 and 100 nodes of the content tree.
+
+| Rows | Queries | Time | Time without Teaser and Subtree size |
+|---|---|---|---|
+| 10 | 130 (229 before page prefetch) | 186 ms (264 ms) | 107 ms (135 ms) |
+| 50 | 814 (1353) | 1.6 s (1.9 s) | 558 ms (714 ms) |
+| 100 | 1671 (2759) | 3.2 s (3.4 s) | 1.27 s (1.32 s) |
 
 ## CSV export
 
@@ -653,9 +696,9 @@ Oracle limit); a choice that does not fit is refused, not cut. The old rows-per-
 
 | What | Where |
 |---|---|
-| The column base class | `kernel/classes/subitems/expsubitemscolumn.php` (`expSubitemsColumn`) |
+| The column base class, the shared formatting, the memo and the data map prefetch | `kernel/classes/subitems/expsubitemscolumn.php` (`expSubitemsColumn`) |
 | Registry, built-ins, Handler/Template/attribute wrappers, preference, server functions, CSV | `kernel/classes/subitems/*.php` |
-| The shipped column classes | `kernel/classes/subitems/columns/*.php` (`expSubitemsFieldColumn` is the family base) |
+| The shipped column classes | `kernel/classes/subitems/columns/*.php` (`expSubitemsFieldColumn` is the family base: `Field=`, `prefetchSets()`, the grouped count helper) |
 | The column catalogue | `settings/subitemscolumns.ini` |
 | Defaults, presets, CSV, attribute columns | `settings/subitems.ini` |
 | The template columns | `design/standard/templates/subitems/columns/*.tpl` |
@@ -665,8 +708,8 @@ Oracle limit); a choice that does not fit is refused, not cut. The old rows-per-
 ## Tests
 
 ```bash
-php vendor/bin/phpunit tests/tests/kernel/classes/subitems/            # everything (96 tests)
-php vendor/bin/phpunit tests/tests/kernel/classes/subitems/columns/    # the catalogue (60 tests)
+php vendor/bin/phpunit tests/tests/kernel/classes/subitems/            # everything (100 tests)
+php vendor/bin/phpunit tests/tests/kernel/classes/subitems/columns/    # the catalogue and the prefetch (64 tests)
 ```
 
 The catalogue tests start the kernel on the admin siteaccess with the installation's own database and
@@ -675,4 +718,7 @@ and nodes found by what they hold (an image, a file, tags, an XML text, relation
 that every block builds, names a known group, type and field, that its sort field is accepted, that every
 column gives a JSON-safe value and one-line CSV text for four very different nodes, that columns that do
 not apply give null, that policies decide availability, that no node ever shows an empty URL alias, and
-the three worked examples above. A test that needs data the database does not have is skipped, not failed.
+the three worked examples above. `expSubitemsPrefetchTest` computes every column (and the attribute
+columns) for pages below the content, media and users roots once row by row and once with the page prefetch,
+as the admin and as anonymous, and requires the same cells; and that after the prefetch the rows of the
+prefetched columns need no query. A test that needs data the database does not have is skipped, not failed.
