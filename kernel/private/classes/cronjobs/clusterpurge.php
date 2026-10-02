@@ -51,8 +51,20 @@ class Clusterpurge extends \Exponential\Runnable\CronjobPart
                                           'image',
                                           'media',
                                           'binaryfile' );
-        $purgeHandler->optExpiry = 30;
+        $purgeHandler->optExpiry = self::expirySeconds();
         $purgeHandler->run();
+    }
+
+    /**
+     * How long a file must have been expired before it is purged, in seconds, as eZScriptClusterPurge expects:
+     * 30 days, the default the command documents and converts the same way (bin/php/clusterpurge.php
+     * --expiry=<days>). The part used to pass a bare 30, which meant 30 seconds.
+     *
+     * @return int
+     */
+    public static function expirySeconds()
+    {
+        return 30 * 86400;
     }
 }
 
