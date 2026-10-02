@@ -82,7 +82,8 @@ class expSubitemsCSVExport
     }
 
     /**
-     * Writes the rows of some nodes.
+     * Writes the rows of some nodes; the columns first load what they need for all of them
+     * (expSubitemsServerFunctions::prefetch()).
      *
      * @param resource $handle
      * @param eZContentObjectTreeNode[] $nodes
@@ -91,6 +92,7 @@ class expSubitemsCSVExport
      */
     public static function writeRows( $handle, array $nodes, array $columns )
     {
+        expSubitemsServerFunctions::prefetch( array_values( $nodes ), $columns );
         $n = 0;
         foreach ( $nodes as $node )
         {
@@ -128,6 +130,8 @@ class expSubitemsCSVExport
     public static function export( $handle, eZContentObjectTreeNode $parent, expSubitemsColumnRegistry $registry,
                                    array $columns, $sortKey, $ascending )
     {
+        // a persistent worker serves many requests: no value may come from an earlier one
+        expSubitemsColumn::resetMemo();
         self::writeHeader( $handle, $columns );
         $limit = $registry->csvLimit();
         $written = 0;

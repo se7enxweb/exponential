@@ -47,14 +47,12 @@ class expSubitemsSEOColumn extends expSubitemsFieldColumn
     /** The title set in the node's xrowmetadata attribute, null when none (or the extension is not there). */
     protected function fieldMetaTitle( eZContentObjectTreeNode $node )
     {
-        $meta = self::metaData( $node );
-        return $meta && isset( $meta->title ) && trim( (string)$meta->title ) !== '' ? (string)$meta->title : null;
+        return self::metaText( $node, 'title' );
     }
 
     protected function fieldMetaDescription( eZContentObjectTreeNode $node )
     {
-        $meta = self::metaData( $node );
-        return $meta && isset( $meta->description ) && trim( (string)$meta->description ) !== '' ? (string)$meta->description : null;
+        return self::metaText( $node, 'description' );
     }
 
     protected function fieldMetaKeywords( eZContentObjectTreeNode $node )
@@ -65,6 +63,12 @@ class expSubitemsSEOColumn extends expSubitemsFieldColumn
         $keywords = is_array( $meta->keywords ) ? $meta->keywords : explode( ',', (string)$meta->keywords );
         $keywords = array_values( array_filter( array_map( 'trim', $keywords ), 'strlen' ) );
         return $keywords ? $keywords : null;
+    }
+
+    /** Every field may read the data map (the xrowmetadata attribute): one query for the page. */
+    protected static function prefetchSets()
+    {
+        return array( 'DataMap' => array( 'page_title', 'title_length', 'meta_title', 'meta_description', 'meta_keywords' ) );
     }
 
     /**
@@ -148,14 +152,17 @@ class expSubitemsSEOColumn extends expSubitemsFieldColumn
     {
         if ( !class_exists( 'xrowMetaData' ) )
             return null;
-        foreach ( self::dataMap( $node ) as $attribute )
-        {
-            if ( $attribute->attribute( 'data_type_string' ) === 'xrowmetadata' && $attribute->hasContent() )
-            {
-                $content = $attribute->content();
-                return is_object( $content ) ? $content : null;
-            }
-        }
-        return null;
+        $attribute = self::firstAttribute( $node, array( 'xrowmetadata' ) );
+        if ( !$attribute )
+            return null;
+        $content = $attribute->content();
+        return is_object( $content ) ? $content : null;
+    }
+
+    /** A text property of the node's xrowmetadata (title, description), null when empty or missing. */
+    protected static function metaText( eZContentObjectTreeNode $node, $property )
+    {
+        $meta = self::metaData( $node );
+        return $meta && isset( $meta->$property ) && trim( (string)$meta->$property ) !== '' ? (string)$meta->$property : null;
     }
 }

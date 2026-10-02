@@ -110,57 +110,68 @@ class expSubitemsColumnRegistry
      */
     protected function load( array $subitemsGroups, array $columnGroups )
     {
-        $this->settings = isset( $subitemsGroups['SubitemsSettings'] ) ? $subitemsGroups['SubitemsSettings'] : array();
+        $this->settings = $subitemsGroups['SubitemsSettings'] ?? array();
 
         foreach ( expSubitemsBuiltinColumn::definitions() as $key => $defaults )
             $this->definitions[$key] = $defaults + array( 'Builtin' => 'true' );
 
         foreach ( $columnGroups as $group => $block )
         {
-            if ( strpos( $group, 'Column_' ) !== 0 )
-                continue;
-            $key = substr( $group, strlen( 'Column_' ) );
-            if ( !self::isValidDefinedKey( $key ) )
-            {
-                eZDebug::writeWarning( "subitemscolumns.ini: [$group] is not a valid column key (a-z, 0-9, _)", __METHOD__ );
-                continue;
-            }
-            $block = self::normaliseBlock( $block );
-            if ( isset( $this->definitions[$key] ) && self::isTrue( $this->definitions[$key]['Builtin'] ?? false ) )
-            {
-                // a built-in stays built in, the INI changes its name, group, order ...
-                $block['Builtin'] = 'true';
-                unset( $block['Class'], $block['Handler'], $block['Template'] );
-                $this->definitions[$key] = array_merge( $this->definitions[$key], $block );
-            }
-            else
-            {
-                $this->definitions[$key] = $block;
-            }
+            if ( strpos( $group, 'Column_' ) === 0 )
+                $this->loadColumnBlock( substr( $group, strlen( 'Column_' ) ), $block );
         }
 
         foreach ( $subitemsGroups as $group => $block )
         {
             if ( strpos( $group, 'Preset_' ) === 0 )
-            {
-                $id = substr( $group, strlen( 'Preset_' ) );
-                if ( !self::isValidPresetID( $id ) )
-                    continue;
-                $this->presets[$id] = array(
-                    'name' => isset( $block['Name'] ) && $block['Name'] !== '' ? (string)$block['Name'] : $id,
-                    'columns' => self::splitList( isset( $block['Columns'] ) ? $block['Columns'] : array() ),
-                );
-            }
+                $this->loadPresetBlock( substr( $group, strlen( 'Preset_' ) ), $block );
             else if ( strpos( $group, 'Defaults_' ) === 0 )
-            {
-                $this->defaultBlocks[] = array(
-                    'id' => substr( $group, strlen( 'Defaults_' ) ),
-                    'subtree' => array_map( 'intval', self::splitList( isset( $block['Subtree'] ) ? $block['Subtree'] : array() ) ),
-                    'classes' => self::splitList( isset( $block['ParentClassIdentifiers'] ) ? $block['ParentClassIdentifiers'] : array() ),
-                    'columns' => self::splitList( isset( $block['Columns'] ) ? $block['Columns'] : array() ),
-                );
-            }
+                $this->loadDefaultsBlock( substr( $group, strlen( 'Defaults_' ) ), $block );
         }
+    }
+
+    /** A [Column_<key>] block: a new column, or changes to a built-in one (which stays built in). */
+    protected function loadColumnBlock( $key, array $block )
+    {
+        if ( !self::isValidDefinedKey( $key ) )
+        {
+            eZDebug::writeWarning( "subitemscolumns.ini: [Column_$key] is not a valid column key (a-z, 0-9, _)", __METHOD__ );
+            return;
+        }
+        $block = self::normaliseBlock( $block );
+        if ( $this->isBuiltin( $key ) )
+        {
+            // a built-in stays built in, the INI changes its name, group, order ...
+            $block['Builtin'] = 'true';
+            unset( $block['Class'], $block['Handler'], $block['Template'] );
+            $this->definitions[$key] = array_merge( $this->definitions[$key], $block );
+        }
+        else
+        {
+            $this->definitions[$key] = $block;
+        }
+    }
+
+    /** A [Preset_<id>] block: Name=, Columns[]. */
+    protected function loadPresetBlock( $id, array $block )
+    {
+        if ( !self::isValidPresetID( $id ) )
+            return;
+        $this->presets[$id] = array(
+            'name' => isset( $block['Name'] ) && $block['Name'] !== '' ? (string)$block['Name'] : $id,
+            'columns' => self::splitList( $block['Columns'] ?? array() ),
+        );
+    }
+
+    /** A [Defaults_<id>] block: Subtree[], ParentClassIdentifiers[], Columns[]. */
+    protected function loadDefaultsBlock( $id, array $block )
+    {
+        $this->defaultBlocks[] = array(
+            'id' => $id,
+            'subtree' => array_map( 'intval', self::splitList( $block['Subtree'] ?? array() ) ),
+            'classes' => self::splitList( $block['ParentClassIdentifiers'] ?? array() ),
+            'columns' => self::splitList( $block['Columns'] ?? array() ),
+        );
     }
 
     /**
@@ -168,10 +179,7 @@ class expSubitemsColumnRegistry
      */
     protected static function normaliseBlock( array $block )
     {
-        if ( isset( $block['Policy'] ) )
-            $block['Policy'] = self::splitList( $block['Policy'] );
-        else
-            $block['Policy'] = array();
+        $block['Policy'] = self::splitList( $block['Policy'] ?? array() );
         return $block;
     }
 
@@ -394,7 +402,7 @@ class expSubitemsColumnRegistry
         $ids = array();
         foreach ( $rows as $row )
         {
-            $id = (int)( isset( $row['class_id'] ) ? $row['class_id'] : reset( $row ) );
+            $id = (int)( $row['class_id'] ?? reset( $row ) );
             if ( $id > 0 && !in_array( $id, $ids, true ) )
                 $ids[] = $id;
         }
@@ -466,9 +474,7 @@ class expSubitemsColumnRegistry
     public function dataTypePolicies( $dataType )
     {
         $map = $this->setting( 'AttributeColumnsDataTypePolicy', array() );
-        if ( !is_array( $map ) || !isset( $map[$dataType] ) )
-            return array();
-        return self::splitList( $map[$dataType] );
+        return is_array( $map ) && isset( $map[$dataType] ) ? self::splitList( $map[$dataType] ) : array();
     }
 
     /**
@@ -518,7 +524,7 @@ class expSubitemsColumnRegistry
         if ( $column === null && expSubitemsAttributeColumn::parseKey( $key ) !== null )
         {
             $attributeColumns = $this->attributeColumns( $parent );
-            $column = isset( $attributeColumns[$key] ) ? $attributeColumns[$key] : null;
+            $column = $attributeColumns[$key] ?? null;
         }
         if ( $column === null || !$column->isAvailable( $parent ) )
             return null;

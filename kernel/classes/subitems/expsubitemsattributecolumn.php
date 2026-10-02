@@ -107,6 +107,22 @@ class expSubitemsAttributeColumn extends expSubitemsColumn
         return self::attributeText( $attribute );
     }
 
+    /** Loads the data maps of the page's items of this column's class in one query. */
+    public function prefetch( array $nodes )
+    {
+        $parsed = self::parseKey( $this->key );
+        if ( $parsed === null )
+            return;
+        $ofClass = array();
+        foreach ( $nodes as $node )
+        {
+            $object = $node->attribute( 'object' );
+            if ( $object instanceof eZContentObject && $object->attribute( 'class_identifier' ) === $parsed[0] )
+                $ofClass[] = $node;
+        }
+        self::prefetchDataMaps( $ofClass );
+    }
+
     /**
      * An attribute as one line of plain text: title(), or else toString() without markup.
      *
@@ -123,14 +139,13 @@ class expSubitemsAttributeColumn extends expSubitemsColumn
                 return null;
             $text = (string)$text;
             if ( strpos( $text, '<' ) !== false )
-                $text = html_entity_decode( strip_tags( $text ), ENT_QUOTES | ENT_XML1, 'UTF-8' );
+                $text = self::markupToText( $text, false, ENT_XML1 );
         }
-        $text = trim( preg_replace( '/\s+/u', ' ', (string)$text ) );
+        $text = self::oneLine( $text );
         if ( $text === '' )
             return null;
         if ( function_exists( 'mb_strlen' ) && mb_strlen( $text, 'UTF-8' ) > self::MAX_LENGTH )
             $text = mb_substr( $text, 0, self::MAX_LENGTH, 'UTF-8' ) . '…';
         return $text;
     }
-
 }

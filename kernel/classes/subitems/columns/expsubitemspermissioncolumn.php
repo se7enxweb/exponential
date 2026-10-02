@@ -7,7 +7,7 @@
  * search_words. The can_* fields are the kernel's own checks (the same as the edit, remove,
  * move and hide buttons), answered from the user's cached policies, so they cost no query for
  * most limitations. search_words counts the rows the built-in search engine (eZSearchEngine)
- * indexed for the object, one count query; with another search engine it is null.
+ * indexed for the object, one grouped count query for the page; with another search engine it is null.
  * Guide: doc/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -54,13 +54,31 @@ class expSubitemsPermissionColumn extends expSubitemsFieldColumn
     /** Word positions the built-in search engine indexed for the object (ezsearch_object_word_link). */
     protected function fieldSearchWords( eZContentObjectTreeNode $node )
     {
+        $objectID = (int)$node->attribute( 'contentobject_id' );
+        if ( !self::usesBuiltinSearch() || !self::object( $node ) )
+            return null;
+        return self::memo( 'searchwords', $objectID, function () use ( $objectID )
+        {
+            return (int)eZPersistentObject::count( expSubitemsSearchWordLinkRow::definition(), array( 'contentobject_id' => $objectID ) );
+        } );
+    }
+
+    protected static function prefetchSets()
+    {
+        return array( 'SearchWords' => array( 'search_words' ) );
+    }
+
+    /** The indexed word counts of the page's objects, one grouped query. */
+    protected function prefetchSearchWords( array $nodes )
+    {
+        if ( self::usesBuiltinSearch() )
+            self::prefetchCounts( 'searchwords', expSubitemsSearchWordLinkRow::definition(), 'contentobject_id', self::objectIDs( $nodes ) );
+    }
+
+    /** Whether [SearchSettings] SearchEngine is the built-in eZSearchEngine. */
+    protected static function usesBuiltinSearch()
+    {
         $engine = (string)eZINI::instance()->variable( 'SearchSettings', 'SearchEngine' );
-        if ( strcasecmp( $engine, 'eZSearchEngine' ) !== 0 && strcasecmp( $engine, 'ezsearch' ) !== 0 )
-            return null;
-        $object = self::object( $node );
-        if ( !$object )
-            return null;
-        return (int)eZPersistentObject::count( expSubitemsSearchWordLinkRow::definition(),
-                                               array( 'contentobject_id' => (int)$object->attribute( 'id' ) ) );
+        return strcasecmp( $engine, 'eZSearchEngine' ) === 0 || strcasecmp( $engine, 'ezsearch' ) === 0;
     }
 }

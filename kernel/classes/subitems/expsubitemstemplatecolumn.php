@@ -65,8 +65,7 @@ class expSubitemsTemplateColumn extends expSubitemsColumn
     /** The tag-stripped text of the rendered template. */
     public function value( eZContentObjectTreeNode $node )
     {
-        $text = html_entity_decode( strip_tags( $this->render( $node ) ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
-        return trim( preg_replace( '/\s+/u', ' ', $text ) );
+        return self::oneLine( self::markupToText( $this->render( $node ) ) );
     }
 
     /** The rendered template itself. */

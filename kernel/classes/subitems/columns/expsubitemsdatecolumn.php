@@ -4,7 +4,8 @@
  * Modified columns do not show: relative ("3 days ago"), in days, and as ISO 8601 for copying.
  *
  * Field= picks the column: published_age, modified_age, days_since_published,
- * days_since_modified, published_iso, modified_iso. All read the loaded object; no query.
+ * days_since_modified, published_iso, modified_iso. All read the loaded object; no query. The
+ * formatting (formatAge(), days()) is the base class's, shared with every other column.
  * Guide: doc/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -36,30 +37,24 @@ class expSubitemsDateColumn extends expSubitemsFieldColumn
 
     protected function fieldPublishedIso( eZContentObjectTreeNode $node )
     {
-        $time = $this->time( $node, 'published' );
-        return $time ? date( 'c', $time ) : null;
+        return self::iso( $this->time( $node, 'published' ) );
     }
 
     protected function fieldModifiedIso( eZContentObjectTreeNode $node )
     {
-        $time = $this->time( $node, 'modified' );
-        return $time ? date( 'c', $time ) : null;
+        return self::iso( $this->time( $node, 'modified' ) );
     }
 
     /** The object's published or modified timestamp, null when unset. */
     protected function time( eZContentObjectTreeNode $node, $attribute )
     {
-        $object = self::object( $node );
-        $time = $object ? (int)$object->attribute( $attribute ) : 0;
+        $time = (int)self::objectInt( $node, $attribute );
         return $time > 0 ? $time : null;
     }
 
-    /** Whole days from $time until now, null for no time. */
-    public static function days( $time, $now = null )
+    /** A timestamp as ISO 8601 (2026-10-02T11:04:36-07:00), null for no time. */
+    protected static function iso( $time )
     {
-        if ( !$time )
-            return null;
-        $now = $now === null ? time() : (int)$now;
-        return (int)floor( ( $now - (int)$time ) / 86400 );
+        return $time ? date( 'c', $time ) : null;
     }
 }

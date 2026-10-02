@@ -28,8 +28,7 @@ class expSubitemsObjectColumn extends expSubitemsFieldColumn
 
     protected function fieldClassId( eZContentObjectTreeNode $node )
     {
-        $object = self::object( $node );
-        return $object ? (int)$object->attribute( 'contentclass_id' ) : null;
+        return self::objectInt( $node, 'contentclass_id' );
     }
 
     /** The names of the class groups the object's class is in ("Content", "Media" ...). */
@@ -66,23 +65,19 @@ class expSubitemsObjectColumn extends expSubitemsFieldColumn
 
     protected function fieldSectionId( eZContentObjectTreeNode $node )
     {
-        $object = self::object( $node );
-        return $object ? (int)$object->attribute( 'section_id' ) : null;
+        return self::objectInt( $node, 'section_id' );
     }
 
     /** The owner's name (the user who created the object), null when the owner is gone. */
     protected function fieldOwner( eZContentObjectTreeNode $node )
     {
-        $object = self::object( $node );
-        if ( !$object )
-            return null;
-        return self::objectName( (int)$object->attribute( 'owner_id' ) );
+        $ownerID = self::objectInt( $node, 'owner_id' );
+        return $ownerID === null ? null : self::objectName( $ownerID );
     }
 
     protected function fieldOwnerId( eZContentObjectTreeNode $node )
     {
-        $object = self::object( $node );
-        $id = $object ? (int)$object->attribute( 'owner_id' ) : 0;
+        $id = (int)self::objectInt( $node, 'owner_id' );
         return $id > 0 ? $id : null;
     }
 
@@ -130,8 +125,7 @@ class expSubitemsObjectColumn extends expSubitemsFieldColumn
 
     protected function fieldLanguageMask( eZContentObjectTreeNode $node )
     {
-        $object = self::object( $node );
-        return $object ? (int)$object->attribute( 'language_mask' ) : null;
+        return self::objectInt( $node, 'language_mask' );
     }
 
     /** Every object state as group/state identifiers: "ez_lock/not_locked". */
@@ -188,6 +182,11 @@ class expSubitemsObjectColumn extends expSubitemsFieldColumn
         return $map ? count( $map ) : null;
     }
 
+    protected static function prefetchSets()
+    {
+        return array( 'DataMap' => array( 'word_count', 'text_length', 'attribute_count' ) );
+    }
+
     /** The plain text of the main text attribute (tags stripped, entities decoded, spaces folded), or null. */
     protected function mainText( eZContentObjectTreeNode $node )
     {
@@ -199,13 +198,10 @@ class expSubitemsObjectColumn extends expSubitemsFieldColumn
         return self::plainText( (string)$attribute->attribute( 'data_text' ) );
     }
 
-    /** Markup (XML text, rich text, HTML) as one line of plain text. */
+    /** Markup (XML text, rich text, HTML) as one line of plain text, words kept apart where blocks end. */
     public static function plainText( $markup )
     {
-        // keep words apart where block elements end
-        $markup = preg_replace( '#<(/?(paragraph|para|p|li|header|section|title|td|th|br|line)\b[^>]*)>#i', ' <$1>', $markup );
-        $text = html_entity_decode( strip_tags( $markup ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
-        return trim( preg_replace( '/\s+/u', ' ', $text ) );
+        return self::oneLine( self::markupToText( $markup, true ) );
     }
 
     /** The name of the content object $id (users mostly), memoised; null when it does not exist. */

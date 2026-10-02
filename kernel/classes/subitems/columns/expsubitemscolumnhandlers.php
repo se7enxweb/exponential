@@ -36,8 +36,7 @@ class expSubitemsColumnHandlers
     public static function daysOnline( eZContentObjectTreeNode $node, array $settings, expSubitemsColumn $column )
     {
         $object = $node->attribute( 'object' );
-        if ( !$object instanceof eZContentObject || (int)$object->attribute( 'published' ) <= 0 )
-            return null;
-        return (int)floor( ( time() - (int)$object->attribute( 'published' ) ) / 86400 );
+        $published = $object instanceof eZContentObject ? (int)$object->attribute( 'published' ) : 0;
+        return $published > 0 ? expSubitemsColumn::days( $published ) : null;
     }
 }

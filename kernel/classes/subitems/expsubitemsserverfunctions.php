@@ -53,18 +53,26 @@ class expSubitemsServerFunctions extends ezjscServerFunctions
      */
     public static function parentNode( $parentNodeID )
     {
-        $user = eZUser::currentUser();
-        if ( !$user->isRegistered() )
-            throw new InvalidArgumentException( 'You need to log in' );
-        if ( !expSubitemsColumnRegistry::hasAccess( 'content', 'read' ) )
-            throw new InvalidArgumentException( 'No access to content/read' );
-
+        self::requireReader();
         if ( !is_numeric( $parentNodeID ) || (int)$parentNodeID < 1 )
             throw new InvalidArgumentException( 'Parent node id is not valid' );
         $parent = eZContentObjectTreeNode::fetch( (int)$parentNodeID );
         if ( !$parent instanceof eZContentObjectTreeNode || !$parent->canRead() )
             throw new InvalidArgumentException( "Parent node '" . (int)$parentNodeID . "' is not available" );
         return $parent;
+    }
+
+    /**
+     * The checks every function makes before anything else: a logged-in user with content/read.
+     *
+     * @throws InvalidArgumentException
+     */
+    public static function requireReader()
+    {
+        if ( !eZUser::currentUser()->isRegistered() )
+            throw new InvalidArgumentException( 'You need to log in' );
+        if ( !expSubitemsColumnRegistry::hasAccess( 'content', 'read' ) )
+            throw new InvalidArgumentException( 'No access to content/read' );
     }
 
     /**
@@ -103,7 +111,7 @@ class expSubitemsServerFunctions extends ezjscServerFunctions
 
         $presets = array();
         foreach ( $registry->presets() as $id => $preset )
-            $presets[] = array( 'id' => (string)$id, 'name' => \ezpI18n::tr( 'design/admin/node/view/full', $preset['name'] ),
+            $presets[] = array( 'id' => (string)$id, 'name' => expSubitemsColumn::tr( $preset['name'] ),
                                 'columns' => $onlyAvailable( $preset['columns'] ), 'source' => 'ini' );
         foreach ( expSubitemsPreference::userPresets( $pref ) as $preset )
         {
@@ -153,6 +161,8 @@ class expSubitemsServerFunctions extends ezjscServerFunctions
     public static function rows( $args )
     {
         $parent = self::parentNode( isset( $args[0] ) ? $args[0] : null );
+        // a persistent worker serves many requests: no value may come from an earlier one
+        expSubitemsColumn::resetMemo();
         $registry = self::registry();
 
         $limit = isset( $args[1] ) && is_numeric( $args[1] ) ? max( 1, (int)$args[1] ) : 25;
@@ -240,8 +250,57 @@ class expSubitemsServerFunctions extends ezjscServerFunctions
     }
 
     /**
-     * The values and HTML of the given columns for each node, nothing else computed. A column
-     * that throws gives null for that cell (and a debug warning), the others go on.
+     * Lets every column load what it reads for the whole page at once (expSubitemsColumn::prefetch()).
+     * A prefetch that fails only costs speed: the column then loads per row, as without it.
+     *
+     * @param eZContentObjectTreeNode[] $nodes
+     * @param expSubitemsColumn[] $columns key => column
+     */
+    public static function prefetch( array $nodes, array $columns )
+    {
+        if ( !$nodes )
+            return;
+        foreach ( $columns as $key => $column )
+        {
+            try
+            {
+                $column->prefetch( $nodes );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeWarning( "Column '$key': prefetch: " . $e->getMessage(), __METHOD__ );
+            }
+        }
+    }
+
+    /**
+     * The value and HTML of one cell; a column that throws gives null and '' (and a debug
+     * warning), so the other cells go on.
+     *
+     * @param expSubitemsColumn $column
+     * @param eZContentObjectTreeNode $node
+     * @return array array( 'v' => JSON-safe value, 'h' => html )
+     */
+    public static function cell( expSubitemsColumn $column, eZContentObjectTreeNode $node )
+    {
+        try
+        {
+            $value = $column->value( $node );
+            $html = $column->html( $node, $value );
+        }
+        catch ( Exception $e )
+        {
+            eZDebug::writeWarning( "Column '" . $column->key() . "': " . $e->getMessage(), __METHOD__ );
+            $value = null;
+            $html = '';
+        }
+        return array( 'v' => self::jsonSafe( $value ), 'h' => (string)$html );
+    }
+
+    /**
+     * The values and HTML of the given columns for each node, nothing else computed; the columns
+     * load what they need for all the nodes first (prefetch()). A column that throws gives null
+     * for that cell (and a debug warning), the others go on.
      *
      * @param eZContentObjectTreeNode[] $nodes
      * @param expSubitemsColumn[] $columns key => column
@@ -249,25 +308,14 @@ class expSubitemsServerFunctions extends ezjscServerFunctions
      */
     public static function columnValues( array $nodes, array $columns )
     {
+        $nodes = array_values( $nodes );
+        self::prefetch( $nodes, $columns );
         $result = array();
-        foreach ( array_values( $nodes ) as $i => $node )
+        foreach ( $nodes as $i => $node )
         {
             $cells = new stdClass();
             foreach ( $columns as $key => $column )
-            {
-                try
-                {
-                    $value = $column->value( $node );
-                    $html = $column->html( $node, $value );
-                }
-                catch ( Exception $e )
-                {
-                    eZDebug::writeWarning( "Column '$key': " . $e->getMessage(), __METHOD__ );
-                    $value = null;
-                    $html = '';
-                }
-                $cells->$key = array( 'v' => self::jsonSafe( $value ), 'h' => (string)$html );
-            }
+                $cells->$key = self::cell( $column, $node );
             $result[$i] = $cells;
         }
         return $result;
@@ -308,13 +356,7 @@ class expSubitemsServerFunctions extends ezjscServerFunctions
         if ( isset( $args[0] ) && $args[0] !== '' )
             $parent = self::parentNode( $args[0] );
         else
-        {
-            // the access checks without a parent
-            if ( !eZUser::currentUser()->isRegistered() )
-                throw new InvalidArgumentException( 'You need to log in' );
-            if ( !expSubitemsColumnRegistry::hasAccess( 'content', 'read' ) )
-                throw new InvalidArgumentException( 'No access to content/read' );
-        }
+            self::requireReader();
 
         $input = json_decode( (string)$http->postVariable( 'preference' ), true );
         if ( !is_array( $input ) )

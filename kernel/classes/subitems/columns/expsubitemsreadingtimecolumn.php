@@ -16,8 +16,7 @@ class expSubitemsReadingTimeColumn extends expSubitemsColumn
     /** Whole minutes, at least 1 for any text; null without a main text. */
     public function value( eZContentObjectTreeNode $node )
     {
-        $words = new expSubitemsObjectColumn( $this->key, array( 'Field' => 'word_count' ) + $this->settings );
-        $count = $words->value( $node );
+        $count = $this->wordCount()->value( $node );
         if ( !$count )
             return null;
         $perMinute = max( 1, (int)$this->setting( 'WordsPerMinute', 200 ) );
@@ -28,5 +27,17 @@ class expSubitemsReadingTimeColumn extends expSubitemsColumn
     public function html( eZContentObjectTreeNode $node, $value )
     {
         return $value === null ? '' : self::escape( $value . ' ' . ezpI18n::tr( 'design/admin/node/view/full', 'min' ) );
+    }
+
+    /** The word count reads the data map: loaded for the whole page at once. */
+    public function prefetch( array $nodes )
+    {
+        $this->wordCount()->prefetch( $nodes );
+    }
+
+    /** The shipped Word count column, with this block's settings (Attributes[] ...). */
+    protected function wordCount()
+    {
+        return new expSubitemsObjectColumn( $this->key, array( 'Field' => 'word_count' ) + $this->settings );
     }
 }

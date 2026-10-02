@@ -84,8 +84,12 @@ class expSubitemsURLColumnTest extends expSubitemsColumnsTestCase
             $this->markTestSkipped( 'not the alpha database' );
         $this->assertSame( '', (string)$node->attribute( 'url_alias' ), 'the kernel answers an empty alias' );
         $this->assertSame( '/', $this->value( 'urlalias', $node ) );
-        $this->assertSame( array( '/', 'fit-healthy' ), $this->value( 'allaliases', $node ) );
-        $this->assertSame( 2, $this->value( 'aliascount', $node ) );
+        // the root element and the named alias its children hang below (more appear when the node
+        // is translated or was moved, so the list is checked for these two, not for being only them)
+        $aliases = $this->value( 'allaliases', $node );
+        $this->assertContains( '/', $aliases );
+        $this->assertContains( 'fit-healthy', $aliases );
+        $this->assertSame( count( $aliases ), $this->value( 'aliascount', $node ) );
         // the public title: the page title equals SiteName ("Fit & Healthy"), so it stands alone
         $this->assertSame( 'Fit & Healthy', $this->value( 'pagetitle', $node ) );
     }

@@ -6,7 +6,8 @@
  * main_node_id, is_main, sort_field, sort_order, is_hidden, is_invisible, is_container,
  * children_count, subtree_count, child_classes, newest_child, newest_child_name, modified_subnode,
  * view_count. The plain fields cost nothing (the row is already loaded); the children fields cost
- * one count or one small query each.
+ * one count or one small query each, and children_count, child_classes and view_count one query
+ * for the whole page (prefetch()).
  * Guide: doc/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -91,10 +92,13 @@ class expSubitemsNodeColumn extends expSubitemsFieldColumn
         return (bool)$node->attribute( 'is_container' );
     }
 
-    /** Direct children the current user may read (one count query). */
+    /** Direct children the current user may read (one count query; one per page when prefetched). */
     protected function fieldChildrenCount( eZContentObjectTreeNode $node )
     {
-        return (int)$node->childrenCount( true );
+        return self::memo( 'childrencount', (int)$node->attribute( 'node_id' ), function () use ( $node )
+        {
+            return (int)$node->childrenCount( true );
+        } );
     }
 
     /** Every node below, all depths, that the current user may read (one count query). */
@@ -111,28 +115,11 @@ class expSubitemsNodeColumn extends expSubitemsFieldColumn
     protected function fieldChildClasses( eZContentObjectTreeNode $node )
     {
         $nodeID = (int)$node->attribute( 'node_id' );
-        $db = eZDB::instance();
-        if ( $db->databaseName() === 'mongo' )
-            return null;
-        $rows = $db->arrayQuery(
-            "SELECT ezcontentclass.identifier AS identifier, COUNT(*) AS cnt
-               FROM ezcontentobject_tree, ezcontentobject, ezcontentclass
-              WHERE ezcontentobject_tree.parent_node_id = $nodeID
-                AND ezcontentobject_tree.node_id <> ezcontentobject_tree.parent_node_id
-                AND ezcontentobject.id = ezcontentobject_tree.contentobject_id
-                AND ezcontentclass.id = ezcontentobject.contentclass_id
-                AND ezcontentclass.version = 0
-              GROUP BY ezcontentclass.identifier" );
-        if ( !is_array( $rows ) || !$rows )
-            return null;
-        $result = array();
-        foreach ( $rows as $row )
-            $result[(string)$row['identifier']] = (int)$row['cnt'];
-        arsort( $result );
-        $list = array();
-        foreach ( $result as $identifier => $count )
-            $list[] = $identifier . ' (' . $count . ')';
-        return $list;
+        return self::memo( 'childclasses', $nodeID, function () use ( $nodeID )
+        {
+            $lists = self::childClassLists( array( $nodeID ) );
+            return $lists === null ? null : $lists[$nodeID];
+        } );
     }
 
     /** The newest child the user may read, as its publishing time (one limited subtree query). */
@@ -159,8 +146,148 @@ class expSubitemsNodeColumn extends expSubitemsFieldColumn
     /** Views counted by the ezview_counter table (filled by the view counter cronjob), null if never counted. */
     protected function fieldViewCount( eZContentObjectTreeNode $node )
     {
-        $row = eZViewCounter::fetch( (int)$node->attribute( 'node_id' ), false );
-        return is_array( $row ) && isset( $row['count'] ) ? (int)$row['count'] : null;
+        $nodeID = (int)$node->attribute( 'node_id' );
+        return self::memo( 'viewcount', $nodeID, function () use ( $nodeID )
+        {
+            $row = eZViewCounter::fetch( $nodeID, false );
+            return is_array( $row ) && isset( $row['count'] ) ? (int)$row['count'] : null;
+        } );
+    }
+
+    protected static function prefetchSets()
+    {
+        return array( 'ChildrenCount' => array( 'children_count' ),
+                      'ChildClasses' => array( 'child_classes' ),
+                      'ViewCount' => array( 'view_count' ) );
+    }
+
+    /**
+     * The readable children of every node of the page in one grouped count: the query
+     * childrenCount() makes (eZContentObjectTreeNode::subTreeCountByNodeID(), depth 1, the user's
+     * content/read limitations, visibility and languages), grouped by parent.
+     */
+    protected function prefetchChildrenCount( array $nodes )
+    {
+        $ids = self::notMemoised( 'childrencount', self::nodeIDs( $nodes ) );
+        $db = self::sqlDatabase();
+        if ( !$ids || !$db )
+            return;
+
+        $limitation = false;
+        $limitationList = eZContentObjectTreeNode::getLimitationList( $limitation );
+        $permission = eZContentObjectTreeNode::createPermissionCheckingSQL( $limitationList );
+        $parentCondition = $db->generateSQLINStatement( $ids, 'ezcontentobject_tree.parent_node_id', false, true, 'int' );
+        $nameLanguageFilter = eZContentLanguage::sqlFilter( 'ezcontentobject_name', 'ezcontentobject' );
+        $showInvisible = eZContentObjectTreeNode::createShowInvisibleSQLString( true );
+        $languageFilter = eZContentLanguage::languagesSQLFilter( 'ezcontentobject' );
+
+        $rows = $db->arrayQuery(
+            "SELECT ezcontentobject_tree.parent_node_id AS parent_id,
+                    count( DISTINCT ezcontentobject_tree.node_id ) AS child_count
+               FROM ezcontentobject_tree
+                    INNER JOIN ezcontentobject ON (ezcontentobject.id = ezcontentobject_tree.contentobject_id)
+                    INNER JOIN ezcontentclass ON (ezcontentclass.id = ezcontentobject.contentclass_id)
+                    INNER JOIN ezcontentobject_name ON (
+                        ezcontentobject_name.contentobject_id = ezcontentobject_tree.contentobject_id AND
+                        ezcontentobject_name.content_version = ezcontentobject_tree.contentobject_version
+                    )
+                    $permission[from]
+              WHERE $parentCondition and
+                    ezcontentclass.version=0 AND
+                    $nameLanguageFilter
+                    $showInvisible
+                    $permission[where]
+                    AND $languageFilter
+              GROUP BY ezcontentobject_tree.parent_node_id",
+            array(), count( $permission['temp_tables'] ) > 0 ? eZDBInterface::SERVER_SLAVE : false );
+        $db->dropTempTableList( $permission['temp_tables'] );
+        if ( !is_array( $rows ) )
+            return;
+
+        $counts = array_fill_keys( $ids, 0 );
+        foreach ( $rows as $row )
+            $counts[(int)$row['parent_id']] = (int)$row['child_count'];
+        foreach ( $counts as $id => $count )
+            self::remember( 'childrencount', $id, $count );
+    }
+
+    /** The child classes of every node of the page, one grouped query. */
+    protected function prefetchChildClasses( array $nodes )
+    {
+        $ids = self::notMemoised( 'childclasses', self::nodeIDs( $nodes ) );
+        if ( !$ids )
+            return;
+        $lists = self::childClassLists( $ids );
+        if ( $lists === null )
+            return;
+        foreach ( $lists as $id => $list )
+            self::remember( 'childclasses', $id, $list );
+    }
+
+    /** The view counter rows of the page's nodes, one query. */
+    protected function prefetchViewCount( array $nodes )
+    {
+        $ids = self::notMemoised( 'viewcount', self::nodeIDs( $nodes ) );
+        if ( !$ids )
+            return;
+        $rows = eZPersistentObject::fetchObjectList( eZViewCounter::definition(), null, array( 'node_id' => array( $ids ) ),
+                                                     null, null, false );
+        if ( !is_array( $rows ) )
+            return;
+        $counts = array_fill_keys( $ids, null );
+        foreach ( $rows as $row )
+        {
+            if ( isset( $row['count'] ) )
+                $counts[(int)$row['node_id']] = (int)$row['count'];
+        }
+        foreach ( $counts as $id => $count )
+            self::remember( 'viewcount', $id, $count );
+    }
+
+    /**
+     * The child class lists of nodes: node id => array( '<class identifier> (<n>)', ... ) most
+     * frequent first, or null for a node without children; null for all on MongoDB or on error.
+     *
+     * @param int[] $nodeIDs
+     * @return array|null
+     */
+    protected static function childClassLists( array $nodeIDs )
+    {
+        $db = self::sqlDatabase();
+        if ( !$db )
+            return null;
+        $parentCondition = $db->generateSQLINStatement( $nodeIDs, 'ezcontentobject_tree.parent_node_id', false, true, 'int' );
+        $rows = $db->arrayQuery(
+            "SELECT ezcontentobject_tree.parent_node_id AS parent_id, ezcontentclass.identifier AS identifier, COUNT(*) AS cnt
+               FROM ezcontentobject_tree, ezcontentobject, ezcontentclass
+              WHERE $parentCondition
+                AND ezcontentobject_tree.node_id <> ezcontentobject_tree.parent_node_id
+                AND ezcontentobject.id = ezcontentobject_tree.contentobject_id
+                AND ezcontentclass.id = ezcontentobject.contentclass_id
+                AND ezcontentclass.version = 0
+              GROUP BY ezcontentobject_tree.parent_node_id, ezcontentclass.identifier
+              ORDER BY ezcontentobject_tree.parent_node_id, ezcontentclass.identifier" );
+        if ( !is_array( $rows ) )
+            return null;
+
+        $counts = array_fill_keys( $nodeIDs, array() );
+        foreach ( $rows as $row )
+            $counts[(int)$row['parent_id']][(string)$row['identifier']] = (int)$row['cnt'];
+        $lists = array();
+        foreach ( $counts as $id => $byClass )
+        {
+            if ( !$byClass )
+            {
+                $lists[$id] = null;
+                continue;
+            }
+            arsort( $byClass );
+            $list = array();
+            foreach ( $byClass as $identifier => $count )
+                $list[] = $identifier . ' (' . $count . ')';
+            $lists[$id] = $list;
+        }
+        return $lists;
     }
 
     protected function newestChild( eZContentObjectTreeNode $node )

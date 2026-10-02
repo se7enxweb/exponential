@@ -8,8 +8,8 @@
  * column block lists identifiers to try first --, its "original" alias, which is stored in the
  * attribute itself (no alias is generated). The file fields read the first binary file
  * (ezbinaryfile, enhancedezbinaryfile) or media (ezmedia) attribute. Every field reads the data
- * map, which the columns of one row share; image_size and file_size ask the file handler for
- * the stored file's size. Objects whose class has no such attribute give null.
+ * map, which the columns of one row share and which is loaded for the whole page in one query;
+ * image_size and file_size ask the file handler for the stored file's size. Objects whose class has no such attribute give null.
  * Guide: doc/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -36,9 +36,9 @@ class expSubitemsMediaColumn extends expSubitemsFieldColumn
         if ( !$this->hasType( $node, self::IMAGE_TYPES ) )
             return null;
         $n = 0;
-        foreach ( self::dataMap( $node ) as $attribute )
+        foreach ( self::attributesOfType( $node, self::IMAGE_TYPES ) as $attribute )
         {
-            if ( $attribute->attribute( 'data_type_string' ) === 'ezimage' && $attribute->hasContent() )
+            if ( $attribute->hasContent() )
                 $n++;
         }
         return $n;
@@ -131,7 +131,7 @@ class expSubitemsMediaColumn extends expSubitemsFieldColumn
     /** Sizes as "245 kB", the rest as the base class shows it. */
     public function html( eZContentObjectTreeNode $node, $value )
     {
-        if ( is_int( $value ) && in_array( $this->setting( 'Field' ), array( 'image_size', 'file_size' ), true ) )
+        if ( is_int( $value ) && in_array( $this->field(), array( 'image_size', 'file_size' ), true ) )
             return self::escape( self::formatBytes( $value ) );
         return parent::html( $node, $value );
     }
@@ -139,12 +139,14 @@ class expSubitemsMediaColumn extends expSubitemsFieldColumn
     /** Whether the object's class has an attribute of one of $types (filled or not). */
     protected function hasType( eZContentObjectTreeNode $node, array $types )
     {
-        foreach ( self::dataMap( $node ) as $attribute )
-        {
-            if ( in_array( $attribute->attribute( 'data_type_string' ), $types, true ) )
-                return true;
-        }
-        return false;
+        return (bool)self::attributesOfType( $node, $types );
+    }
+
+    /** Every field reads the data map: one query for the page. */
+    protected static function prefetchSets()
+    {
+        return array( 'DataMap' => array( 'has_image', 'image_count', 'image_dimensions', 'image_width', 'image_height', 'image_size',
+                                          'image_mime', 'image_alt', 'file_name', 'file_size', 'file_mime', 'file_downloads' ) );
     }
 
     /** The "original" alias array of the first image, or null. */
