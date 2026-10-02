@@ -787,7 +787,7 @@ a54e5021b1c597539a60da86ef766f0c  design/admin4/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin4/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
-ec3df63d8b4a72ec65b2b33aff5b4fe3  design/admin4/javascript/admin4.js
+b20bcccab39a81e10a51468d24138d66  design/admin4/javascript/admin4.js
 c026c4c30fa5e95415c1f6611bcce9ea  design/admin4/javascript/contentstructuremenu_dynamic.js
 3cb3cb0538b25da8b7c54c08c643c4c2  design/admin4/javascript/expajaxuploader.js
 e3bfb91bebf01770b13c4a9ffe2a8f95  design/admin4/javascript/ezadmin_menubar.js
@@ -832,7 +832,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-bf82c7e145b7e4436821988010bfb7fe  design/admin4/stylesheets/admin4.css
+13f61d647e5ecf4474c4e79c8adf4222  design/admin4/stylesheets/admin4.css
 3eb649ac99a5d1e9852d112ad9fcaf9a  design/admin4/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin4/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin4/stylesheets/ezinfo.css
@@ -964,7 +964,7 @@ f40a458ba972853fe21fbbda1945fcac  design/admin4/templates/error/shop/3.tpl
 91dc046ee37d161132a0893ecca92c6d  design/admin4/templates/infocollection_validation.tpl
 865e7562daf6f73fba5603805ad895ae  design/admin4/templates/infocollector/confirmremoval.tpl
 e5335c71cecd6cbf70cffcf38df8259a  design/admin4/templates/locations.tpl
-ce80eadd36457f38b7b0b36e1ee3e0f6  design/admin4/templates/loginpagelayout.tpl
+f395b7b7ae0ad14bb0767e20d42b7c9f  design/admin4/templates/loginpagelayout.tpl
 e6a3c2f8012b44d7d40ee02614debd4b  design/admin4/templates/navigator/alphabetical.tpl
 3fb8436c59191e84cb572d212aad2087  design/admin4/templates/navigator/google.tpl
 622ea78dea6f57e64f57fd40613e10e4  design/admin4/templates/no_children.tpl
@@ -1157,7 +1157,7 @@ d941c9c9f890a8617a6ddfc1dde32325  design/admin4/templates/url/edit.tpl
 f722a03163843d88528991fb5e68dcb3  design/admin4/templates/url/list.tpl
 5025af06eb7337f589fb38d661444f5d  design/admin4/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
-ec051aff9aef0a071fe85027dcc4ce88  design/admin4/templates/user/login.tpl
+87e284d8c1e6bec27dc79ce41343e800  design/admin4/templates/user/login.tpl
 f689abec7eaeaabefaff96b51350e39d  design/admin4/templates/user/password.tpl
 3c895835fb73402a4d5b8621b8e82076  design/admin4/templates/user/register.tpl
 1c59ee32aa9fdb5e965d7bd6d8a66329  design/admin4/templates/user/setting.tpl
