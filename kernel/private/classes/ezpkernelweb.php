@@ -669,6 +669,12 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         if ( $this->formTokenRefusal !== null )
             return $this->formTokenRefusalResult( $this->formTokenRefusal );
 
+        // Rewrites by request rules in this request (ezpRequestRuleKernel), against
+        // loops; and their per-request state, which a persistent worker keeps otherwise
+        $requestRuleRewrites = 0;
+        $GLOBALS['ezpRequestRuleNoStore'] = false;
+        $GLOBALS['ezpRequestRuleDecision'] = null;
+
         // Start the module loop
         while ( $this->siteBasics['module-run-required'] )
         {
@@ -682,14 +688,27 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             // Generate a URI which also includes the user parameters
             $this->completeRequestedURI = $this->uri->originalURIString();
 
+            // How the visitor reached the view, for the request rules: the
+            // address typed, and whether an alias or wildcard translated it
+            $requestRoute = array(
+                'typed_uri' => $this->actualRequestedURI,
+                'via' => $this->uri->isEmpty() ? 'index' : 'system',
+                'user_parameters' => $userParameters,
+                'rewrites' => $requestRuleRewrites,
+            );
+
             // Check for URL translation
             if ( $this->siteBasics['url-translator-allowed'] && eZURLAliasML::urlTranslationEnabledByUri( $this->uri ) )
             {
                 $translateResult = eZURLAliasML::translate( $this->uri );
+                if ( strcasecmp( trim( $this->uri->uriString(), '/' ), trim( $requestRoute['typed_uri'], '/' ) ) !== 0 )
+                    $requestRoute['via'] = 'alias';
 
                 if ( !is_string( $translateResult ) && $ini->variable( 'URLTranslator', 'WildcardTranslation' ) === 'enabled' )
                 {
                     $translateResult = eZURLWildcard::translate( $this->uri );
+                    if ( $requestRoute['via'] === 'system' && strcasecmp( trim( $this->uri->uriString(), '/' ), trim( $requestRoute['typed_uri'], '/' ) ) !== 0 )
+                        $requestRoute['via'] = 'wildcard';
                 }
 
                 // Check if the URL has moved
@@ -887,7 +906,17 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                         // Check if we should switch access mode (http/https) for this module view.
                         eZSSLZone::checkModuleView( $this->module->attribute( 'name' ), $functionName );
 
-                        $moduleResult = $this->module->run( $functionName, $params, false, $userParameters );
+                        // The request rules (requestrules.ini) decide after the
+                        // policies allowed the view and before it runs
+                        $moduleResult = null;
+                        if ( class_exists( 'ezpRequestRuleKernel' ) )
+                        {
+                            $moduleResult = ezpRequestRuleKernel::decide( $this->module, $functionName, $params, $requestRoute );
+                            if ( isset( $moduleResult['request_rule_rewrite'] ) )
+                                $requestRuleRewrites++;
+                        }
+                        if ( $moduleResult === null )
+                            $moduleResult = $this->module->run( $functionName, $params, false, $userParameters );
 
                         if ( $this->module->exitStatus() == eZModule::STATUS_FAILED && $moduleResult == null )
                             $moduleResult = $this->module->handleError(

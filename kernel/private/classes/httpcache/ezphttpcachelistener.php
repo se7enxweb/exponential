@@ -361,6 +361,10 @@ class ezpHttpCacheListener
             return 'status ' . $code;
         if ( !is_string( $html ) || $html === '' )
             return 'empty';
+        // A request rule decided, or could decide another request for this
+        // page otherwise (ezpRequestRuleKernel::keepOutOfSharedCaches())
+        if ( !empty( $GLOBALS['ezpRequestRuleNoStore'] ) )
+            return 'request rule';
         foreach ( headers_list() as $h )
         {
             // A cookie set for this response belongs to this visitor alone,

@@ -731,5 +731,9 @@ $FunctionList['restore'] = array();
 $FunctionList['cleantrash'] = array();
 $FunctionList['tipafriend'] = array();
 $FunctionList['dashboard'] = array();
+// Opening content by its system URL (content/view/full/<node>) where a request
+// rule asks for it (requestrules.ini, Conditions[policy]=!content/view_system_url).
+// The function is checked by no view; doc/bc/6.0/view_full_security.md
+$FunctionList['view_system_url'] = array();
 
 ?>
