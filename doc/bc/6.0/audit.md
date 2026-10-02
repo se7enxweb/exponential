@@ -10,8 +10,10 @@ them starts. Every file and function named as an existing hook point was read in
 does not exist yet is written "new hook point: <where>".
 
 Contents: what exists today · owner decisions · the event model · **the event catalogue** · **the record format**
-(fields, privacy, hash chain, archive manifest) · **the settings reference** (`settings/audit.ini`) · default
-installation · delivery · dashboard defect.
+(fields, privacy, hash chain, archive manifest) · **the settings reference** (`settings/audit.ini`) · **the developer
+API** · **the index** · **the console** · **sinks** · **alerts** · **rotation, archives and retention** · **the
+command `exp:audit`** · **security notes** · **performance** · default installation · delivery (with deliverables
+per stage) · **acceptance tests** · dashboard defect.
 
 ## What exists today
 
@@ -1140,6 +1142,660 @@ cronjob-side alert rules is added to `settings/cronjob.ini` (stage 5): `Scripts[
 installer sets up) gets rotation without an extra crontab line; each task inside it keeps its own schedule
 (index every run, rotation and checkpoint once a day after `RotateAfter=00:15`).
 
+## The developer API (Z3)
+
+The classes live in `kernel/classes/audit/` (`expAudit`, `expAuditBuffer`, `expAuditWriter`, `expAuditVerifier`,
+`expAuditKeys`, `expAuditPrivacy`, `expAuditTaxonomy`, the registries) and, for the module, command and cronjob part,
+in the runnable classes of doc/bc/6.0/cli_cronjob_view_abstractions.md. Every example below is a specification:
+each is marked with the stage whose tests prove it, and the developer guide (stage 6) only keeps examples that ran.
+
+### `expAudit::event()`
+
+```php
+/**
+ * Records one event. Returns its id, or null when the event is not recorded (audit off, the name switched
+ * off, below MinSeverity, not sampled). Never throws: a failure to record is reported to error.log and as
+ * system.audit.overflow / the dashboard warning, and the caller's work goes on (OnWriteFailure=continue).
+ *
+ * @param string $name  a taxonomy name, e.g. 'content.node.move'
+ * @param array  $data  object, target, before, after, result ('success'), reason, error, severity, parent,
+ *                      x (the extension's own fields), actor (only to name an actor other than the current
+ *                      user: a command acting for a user, a worker acting for a job's owner)
+ * @return string|null  the event id (a ULID)
+ */
+public static function event( $name, array $data = array() )
+```
+
+```php
+// kernel/classes/ezcontentobjecttreenode.php, eZContentObjectTreeNode::move() (stage 3)
+expAudit::event( 'content.node.move', array(
+    'object' => array( 'type' => 'node', 'id' => $nodeID, 'object_id' => $objectID, 'name' => $name ),
+    'target' => array( 'type' => 'node', 'id' => $newParentNodeID ),
+    'before' => array( 'parent' => $oldParentNodeID ),
+    'after'  => array( 'parent' => $newParentNodeID ),
+) );
+```
+
+A refusal is the same name with a result:
+
+```php
+expAudit::event( 'access.permission.refused', array(
+    'object' => array( 'type' => 'view', 'id' => 'setup/cache' ),
+    'result' => 'refused', 'reason' => 'policy',
+    'after'  => array( 'policy' => 'setup/managecache' ),
+) );
+```
+
+To be proven in stage 2 (core: the record, privacy, buffer, chain) and stage 3 (each kernel call site).
+
+**Cheap when off.** `event()` first looks the name up in the compiled routing table (one array lookup, built once
+per settings state, see Performance); a name that is off returns `null` before any record is built. Callers that need
+work to build `before`/`after` (a role's policy list) ask first: `if ( expAudit::isOn( 'access.role.change' ) ) …`.
+
+### Parent and child events (F2)
+
+```php
+$parent = expAudit::begin( 'content.node.remove', array(
+    'object' => array( 'type' => 'node', 'id' => 89, 'name' => 'Archive 2019' ) ) );
+foreach ( $subtree as $node )
+{
+    expAudit::event( 'content.node.remove', array( 'parent' => $parent,
+        'object' => array( 'type' => 'node', 'id' => $node->attribute( 'node_id' ) ) ) );
+}
+expAudit::end( $parent, array( 'after' => array( 'removed' => count( $subtree ) ) ) );
+```
+
+- `begin()` returns the id at once (children can name it) and keeps the parent open; `end()` completes it. The parent
+  record is written when it ends, after its children, so its `after` can hold totals and `children_omitted`.
+- A child's `depth` is its parent's + 1; past `ChildDepth` or `MaxChildren` `event()` returns `null` and counts the
+  child on the parent.
+- A parent still open when the request ends (an exception) is written by the flush with `result: failed`, `reason:
+  error`. A parent's children may be flushed before it (`FlushInterval` in a long command): readers join by `parent`,
+  not by order.
+- `expAudit::withParent( $id, function () { … } )` runs code with `$id` as the implicit parent of every event inside,
+  for code that does not pass ids (the content job batches: `expContentJobWorker::runLocked()` wraps each batch).
+- `expAudit::setJob( $jobID )` / `setRun( $runID )` set `job` and `run` on every following event of this process
+  until reset; the content job worker calls `setJob()` before its first batch.
+
+To be proven in stage 2 (unit) and stage 3 (a 400-node subtree remove through the content job, on Apache, Velocity
+and CLI).
+
+### Buffering and flushing (F3)
+
+- `expAuditBuffer` holds the records of this request per channel. `ImmediateEvents[]` (access.*, system.audit.*,
+  settings writes) skip it: they are appended at once, in their own `flock()`ed write.
+- **Normal end of a web request**: `expAudit::flush()` is registered with `eZExecution::addCleanupHandler()`
+  (lib/ezutils/classes/ezexecution.php), which `ezpKernelWeb::shutdown()` runs through `eZExecution::cleanup()`
+  (kernel/private/classes/ezpkernelweb.php). By then the status code and duration are known; the flush fills
+  `request.status` and `request.ms` into the request's records.
+- **Fatal errors**: `eZExecution::uncleanShutdownHandler()` runs on an unclean end; the audit registers
+  `expAudit::flushOnFatal()` with `eZExecution::addFatalErrorHandler()`, which records `system.error.fatal` and
+  flushes the buffer. As a last resort, `expAudit` registers one `register_shutdown_function()` per process, as
+  `eZDebug::setLogContext()` does for its repeat counts (lib/ezutils/classes/ezdebug.php) — under PHP-FPM and the CLI
+  that runs at the end of each request or command.
+- **Velocity's persistent workers**: shutdown functions only run when a worker exits, so the cleanup handler is what
+  flushes each request. Per-request state is reset at the start of the next request in `ezpKernelWeb::__construct()`,
+  next to `eZDBQueryCache::resetRequest()` (the pattern already there, kernel/private/classes/ezpkernelweb.php):
+  `expAudit::resetRequest()` first flushes anything left (a request that ended without cleanup), then clears the
+  buffer, open parents, request id, job and run, and the cached actor. The compiled routing table is kept across
+  requests and rebuilt when the INI cache changes. The `$GLOBALS['eZAuditEnabled']` and
+  `$GLOBALS['eZAuditNameSettings']` caches of `eZAudit` are removed in stage 2 (they are the Velocity defect noted in
+  "What exists today").
+- **Commands, cronjob parts, content job workers** flush on `MaxEvents`/`MaxBytes`, every `FlushInterval` seconds
+  (checked at each `event()`), at `eZScript::shutdown()` (kernel/classes/ezscript.php, which runs the cleanup
+  handlers) and by the shutdown function.
+- **Size limits**: past `MaxEvents` or `MaxBytes` the buffer flushes early; if the flush fails, the records are kept
+  for one more try at the end and then written to error.log as one line each (never lost silently), and
+  `system.audit.overflow` is recorded when writing works again.
+
+To be proven in stage 2: a request that throws, a request that calls `exit` in a view, `eZExecution::cleanExit()`, a
+fatal error (`E_ERROR` from a test view), 1000 Velocity requests in one worker with the buffer empty at each start.
+
+### The `eZAudit::writeAudit()` compatibility path
+
+`eZAudit::writeAudit( $name, $attributes )` keeps its signature and its `bool` return (true when recorded). It
+becomes:
+
+```php
+static function writeAudit( $auditName, $auditAttributes = array() )
+{
+    return expAudit::legacy( $auditName, $auditAttributes ) !== null;
+}
+```
+
+`expAudit::legacy()` maps the name through `[AuditCompatSettings] Map[]` (or `system.legacy.<name>`), drops the
+`NeverRecord[]` and secret keys, puts the rest in `after.legacy`, and calls `event()`. `eZAudit::isAuditEnabled()`
+returns `expAudit::isEnabled()`; `fetchAuditNameSettings()` and `auditNameSettings()` keep returning the
+`AuditFileNames[]` map for code that reads them. Stage 3 replaces the kernel's own `writeAudit()` calls by native
+`event()` calls with full fields; extensions (ezmbpaex, nxc_powercontent) keep working unchanged. To be proven in
+stage 2: each of the 15 old names of "Compatibility mapping" called through `writeAudit()` gives the mapped name, and
+`HashKey` never reaches a file.
+
+### The ezpEvent bridge
+
+```ini
+# extension/myext/settings/audit.ini.append.php
+[AuditBridgeSettings]
+Bridge[content/state/assign]=content.object.state
+Bridge[myext/vote]=content.myext_poll.vote
+```
+
+For each entry `expAudit` attaches a listener to `ezpEvent` when `ezpEvent::registerEventListeners()` runs (the
+listener is kept in `globalListenerIds`, so Velocity does not attach it twice — the fix already in
+kernel/private/classes/ezpevent.php). The listener records the audit name with `after.args` = the event's arguments
+made scalar (ids kept, objects as `class#id`), and for a filter event passes the value through unchanged. Mapping a
+`runnable/*/after` event records every command, cronjob or view run. To be proven in stage 3 with
+`content/state/assign` and a test extension's event.
+
+### Template operator and fetch
+
+```smarty
+{* the audit trail of a node, in the admin's node view (stage 4) *}
+{def $trail = fetch( 'audit', 'events', hash( 'object', hash( 'type', 'node', 'id', $node.node_id ),
+                                             'limit', 10 ) )}
+{foreach $trail as $e}
+    {$e.time|l10n( 'shortdatetime' )} {$e.actor.login|wash} {$e.name|audit_label|wash}
+{/foreach}
+```
+
+- Fetch functions of the `audit` module (kernel/audit/function_definition.php): `events` (filters as the console's
+  URL parameters, `limit`, `offset`), `event` (`id`), `count`, `chain_status` (`channel`). Each checks `audit/read`
+  with its Channel limitation for the current user and returns an empty list (not an error) when not allowed, so a
+  template cannot leak events to a user without the policy. A use is recorded as `system.audit.read` once per request
+  and fetch name (Proposed: not once per call, which would flood the system channel from a list template).
+- Operator `audit_label`: the human label of a name from the taxonomy registry (`content.node.move` → "Node moved"),
+  translated through `ezpI18n` context `kernel/audit`.
+
+To be proven in stage 4: the permission matrix runs the fetch as each role.
+
+### Extension interfaces and their registries
+
+Every registry is an INI variable that names classes, so the RAD survey counts it: four descriptors are added to
+`expRadSurvey::registryDescriptors()` (kernel/setup/expradsurvey.php), which then reports each entry, the ones a
+site or extension added, and the broken ones (a class that does not exist or does not implement the interface,
+`expRadSurvey::registryProblem()`):
+
+```php
+'auditbranches'   => array( 'title' => 'Audit taxonomy branches', 'ini' => 'audit.ini',
+                            'section' => 'AuditEventSettings', 'variables' => array( 'Branches' => 'expAuditTaxonomyBranch' ) ),
+'auditsinks'      => array( 'title' => 'Audit sinks', 'ini' => 'audit.ini',
+                            'section' => 'AuditSinkSettings', 'variables' => array( 'SinkClasses' => 'expAuditSink' ) ),
+'auditalertrules' => array( 'title' => 'Audit alert rule classes', 'ini' => 'audit.ini',
+                            'section' => 'AuditAlertSettings', 'variables' => array( 'RuleClasses' => 'expAuditAlertRule' ) ),
+'auditformats'    => array( 'title' => 'Audit archive formats', 'ini' => 'audit.ini',
+                            'section' => 'AuditArchiveSettings', 'variables' => array( 'FormatHandlers' => 'expAuditFormatHandler' ) ),
+```
+
+```php
+interface expAuditTaxonomyBranch
+{
+    /** @return array name => array( 'label' => …, 'severity' => 'info', 'channel' => null|'content',
+     *                                'default' => 'on'|'off', 'privacy' => array( field => default ) ) */
+    public function events();
+}
+
+interface expAuditSink
+{
+    public function name();
+    /** '' when it can work here, else why not (missing extension, no URL) — shown in the console */
+    public function problem();
+    /** @param array[] $records records already through the privacy rules; @return int delivered count */
+    public function deliver( array $records );
+}
+
+interface expAuditAlertRule
+{
+    /** @param array $config the [AlertRule_*] block; @param array[] $records new records to look at
+     *  @return array[] alerts: array( 'group' => …, 'count' => …, 'events' => ids, 'message' => … ) */
+    public function evaluate( array $config, array $records, expAuditAlertState $state );
+}
+
+interface expAuditFormatHandler
+{
+    public function name();
+    /** '' when available (PHP extension or binary present), else why not */
+    public function problem();
+    public function extension();                                  // '.gz'
+    public function compress( $source, $target, $level );          // false on failure
+    /** @return resource a stream reading the plain lines (for verify, reindex, restore) */
+    public function open( $archive );
+}
+```
+
+A worked example, to be proven in stage 2 (branch) and stage 5 (sink):
+
+```php
+// extension/myext/classes/myextauditbranch.php
+class myExtAuditBranch implements expAuditTaxonomyBranch
+{
+    public function events()
+    {
+        return array( 'content.myext_poll.vote'  => array( 'label' => 'Poll vote', 'severity' => 'info', 'default' => 'off' ),
+                      'content.myext_poll.close' => array( 'label' => 'Poll closed', 'severity' => 'notice', 'default' => 'on' ) );
+    }
+}
+// extension/myext/settings/audit.ini.append.php:  [AuditEventSettings]  Branches[myext]=myExtAuditBranch
+// extension/myext/modules/poll/close.php:        expAudit::event( 'content.myext_poll.close', array( 'object' => array( 'type' => 'poll', 'id' => $pollID ) ) );
+```
+
+## The index (F4, Z1)
+
+The files are the record; the index is a copy in the site's main database for the console, rebuilt from the files at
+any time. Nothing is written to the database at request time (Performance).
+
+### Tables
+
+`expaudit_event` (one row per record), `expaudit_cursor` (how far each live file has been indexed) and
+`expaudit_file` (each file's verification state). Names are at most 30 characters for Oracle.
+
+| Column | Meaning | MySQL/MariaDB | PostgreSQL | SQLite | Oracle | MongoDB (expMongoDB) |
+|---|---|---|---|---|---|---|
+| `id` | event id (ULID), primary key | `CHAR(26)` | `CHAR(26)` | `TEXT` | `CHAR(26)` | string |
+| `channel` | channel | `VARCHAR(32)` | `VARCHAR(32)` | `TEXT` | `VARCHAR2(32)` | string |
+| `seq` | position in the file | `INT` | `INTEGER` | `INTEGER` | `NUMBER(10)` | int |
+| `file_name` | channel file | `VARCHAR(64)` | `VARCHAR(64)` | `TEXT` | `VARCHAR2(64)` | string |
+| `name` | taxonomy name | `VARCHAR(128)` | `VARCHAR(128)` | `TEXT` | `VARCHAR2(128)` | string |
+| `domain_name` | first rank | `VARCHAR(16)` | same | `TEXT` | `VARCHAR2(16)` | string |
+| `severity` | 0 (emergency) … 7 (debug) | `TINYINT` | `SMALLINT` | `INTEGER` | `NUMBER(1)` | int |
+| `time_ms` | epoch milliseconds | `BIGINT` | `BIGINT` | `INTEGER` | `NUMBER(15)` | int |
+| `request_id` | | `VARCHAR(40)` | same | `TEXT` | `VARCHAR2(40)` | string |
+| `siteaccess`, `engine`, `module_view` | | `VARCHAR(64)`, `(16)`, `(128)` | same | `TEXT` | `VARCHAR2` | string |
+| `user_id` | | `INT NULL` | `INTEGER NULL` | `INTEGER` | `NUMBER(10)` | int |
+| `login`, `ip`, `session_h`, `ua` | after the privacy rules; hashed after 90 days | `VARCHAR(150)`, `(64)`, `(24)`, `(128)` | same | `TEXT` | `VARCHAR2` | string |
+| `verb`, `object_type`, `object_id`, `object_name` | | `VARCHAR(32)`, `(32)`, `(64)`, `(255)` | same | `TEXT` | `VARCHAR2` | string |
+| `target_type`, `target_id` | | `VARCHAR(32)`, `(64)` | same | `TEXT` | `VARCHAR2` | string |
+| `result`, `reason` | | `VARCHAR(8)`, `(32)` | same | `TEXT` | `VARCHAR2` | string |
+| `parent_id`, `depth`, `job_id`, `run_id` | | `CHAR(26)`, `TINYINT`, `VARCHAR(32)`, `(40)` | same | `TEXT`/`INTEGER` | `CHAR`/`NUMBER`/`VARCHAR2` | string/int |
+| `imported`, `pseudonymised` | 0/1 | `TINYINT` | `SMALLINT` | `INTEGER` | `NUMBER(1)` | int |
+| `record` | the record as indexed (privacy applied) | `MEDIUMTEXT` | `TEXT` | `TEXT` | `CLOB` | string |
+| `search_text` | name, object/target names, before/after values, lower-cased, for search | `TEXT` | `TEXT` + `tsvector` column | (FTS5 table) | `CLOB` | string |
+
+Indexes (the same on every engine; MongoDB gets them through `CREATE TABLE … INDEX`, which `expMongoDB` turns into
+`createIndex()` calls — lib/ezdb/classes/expmongodb.php, the `CREATE TABLE` branch of `query()`):
+primary key `id`; unique `(channel, file_name, seq)`; `(time_ms)`; `(name, time_ms)`; `(user_id, time_ms)`;
+`(object_type, object_id, time_ms)`; `(request_id)`; `(job_id)`; `(parent_id)`; `(ip, time_ms)`;
+`(result, time_ms)`; `(domain_name, severity, time_ms)`.
+
+`expaudit_cursor`: `channel`, `file_name` (primary key together), `byte_offset`, `last_seq`, `last_hash`,
+`updated_ms`. `expaudit_file`: `channel`, `file_name`, `state` (`live`, `archived`, `purged`), `records`,
+`verified` (`intact`, `repaired`, `broken`, `unchecked`), `verified_ms`, `break_line`, `archive_path`.
+
+The schema ships the way the kernel's tables do: `share/db_schema.dba` (from which the installer and `eZDbSchema`
+generate each engine's SQL) and `kernel/sql/{mysql,postgresql,sqlite}/` files; Oracle through
+`extension/ezoracle/ezdb/dbms-schema/ezoracleschema.php`; MongoDB through the `CREATE TABLE` emulation. An upgrade
+script creates the tables on existing installations (stage 4).
+
+### Full-text search per engine
+
+| Engine | Approach |
+|---|---|
+| MySQL / MariaDB | `FULLTEXT(search_text)` on InnoDB (MySQL 5.6+, MariaDB 10.0.5+), `MATCH … AGAINST` in boolean mode |
+| PostgreSQL | a generated `tsvector` column (`to_tsvector('simple', search_text)`, PostgreSQL 12+) with a GIN index; `plainto_tsquery('simple', …)`. `simple`, not a language: names and ids must not be stemmed |
+| SQLite | an FTS5 table `expaudit_event_fts(search_text)` with `content='expaudit_event'`, filled by the indexer; when the SQLite build lacks FTS5, `LIKE` on `search_text` |
+| Oracle | an Oracle Text `CONTEXT` index on `search_text` with `SYNC (ON COMMIT)` when the schema has the `CTXAPP` role; else `LIKE` on `search_text` (`DBMS_LOB.INSTR`) |
+| MongoDB | `expMongoDB` emulates `LIKE` as a regular expression (`expMongoDB` turns `LIKE '%…%'` into a regex); search uses that, always with a time range so it scans the `time_ms` index range, not the collection. **Proposed:** a native text index is out of scope while the driver is an SQL emulation |
+
+Without full text (`FullText=disabled`), search is `LIKE` on `search_text` within the time range of the filter.
+
+### Size
+
+A record is about 0.9 KiB on disk; an index row with its indexes about 1.2 KiB (measured figures replace these in
+stage 4). Retention keeps index rows for `KeepDays` (730).
+
+| Events per day | Rows after 2 years | Index size | Live files (90 days) | Archives (2 years, gzip about 1:8) |
+|---|---|---|---|---|
+| 1 000 (a small site, defaults) | 0.73 M | about 0.9 GiB | about 80 MiB | about 80 MiB |
+| 10 000 (an editorial site) | 7.3 M | about 9 GiB | about 0.8 GiB | about 0.8 GiB |
+| 100 000 (reads sampled on) | 73 M | about 90 GiB — **Proposed:** `IndexReads=disabled` by default, so reads stay in the files | 8 GiB | 8 GiB |
+
+### Incremental indexing
+
+The audit cronjob part (and `exp:audit reindex --incremental`, and the console when it opens) reads each live file
+from its cursor's `byte_offset`, parses whole lines only (a line without `\n` waits for the next run), checks each
+record's `prev` against the cursor's `last_hash` (a mismatch marks the file `broken` in `expaudit_file` and records
+`system.audit.chain.broken`), inserts the rows in batches of `BatchSize` and moves the cursor **in the same
+transaction**, so a crash never indexes a line twice or skips one. The console shows the newest events, which may
+not be indexed yet, by merging the tail of the live files after the cursor (a few KiB) into the first page.
+
+### Rebuild
+
+`exp:audit reindex` (audit/manage, also in the console's settings view) empties the three tables and indexes the live
+files, and with `--archives` the archives within `KeepDays`, through their format handlers. It runs as a background
+task with progress, like a content job. Rows of imported records come from the `imported/` files.
+
+### Pseudonymisation after 90 days
+
+Once a day the cronjob part updates, in batches, the rows with `time_ms` older than `PseudonymiseAfterDays` and
+`pseudonymised = 0`: `login`, `ip`, `ua`, `session_h` and the person fields inside `record` and `search_text` are
+replaced by their `hash` form (HMAC with the pseudonym key, the same function as the privacy option), and
+`pseudonymised = 1`. Grouping and counting still work (the same person gives the same pseudonym); the name is gone.
+The run is recorded as `system.audit.pseudonymise`. A reindex applies the same rule to old records as it reads them.
+
+## The console: module `audit` (Q10, Z2)
+
+A kernel module `kernel/audit/` (`module.php`, `function_definition.php`), its views as classes
+`Exponential\View\Kernel\Audit\<View>` in `kernel/private/classes/views/audit/` (doc/bc/6.0/cli_cronjob_view_abstractions.md),
+templates in `design/admin4/templates/audit/` (and the admin designs that are still shipped), navigation part
+`expauditnavigationpart`.
+
+### Policies (Q9)
+
+| Function | Grants | Limitation |
+|---|---|---|
+| `audit/read` | console, event, charts, alerts (view), export, the fetch functions, `exp:audit tail/search/show` as a user | **Proposed:** `Channel` (content, access, system, commerce, read), so a shop manager can be given commerce only |
+| `audit/manage` | archives (archive now, verify, restore), settings (write audit.ini, keys), alerts (acknowledge, rules), reindex, retention | none |
+
+Neither is in any role of a new installation except Administrator (which has `*/*`). Every view records
+`system.audit.read` (or the manage event it performs); with `ReauthForManage=enabled` every manage action first asks
+for the password (`access.session.reauth`).
+
+### Views
+
+| View | URL | Shows | Policy |
+|---|---|---|---|
+| console | `audit/console` | the timeline: newest first, filters, search, page by page; chain state per channel at the top | audit/read |
+| event | `audit/event/<id>` | one record in full: fields, before/after side by side, parent and children, the other events of the same request, job and run; links to the node, object, user, role, job; the chain position (prev, hash, intact or not) | audit/read |
+| charts | `audit/charts` | events per day per channel, refusals and failures per day, top actors, top names, logins vs failed logins; the filter of the console applies | audit/read |
+| alerts | `audit/alerts` | fired alerts (open, acknowledged), the rules and their state; acknowledge (manage) | audit/read, acknowledge: audit/manage |
+| export | `audit/export` | the current filter as JSON lines, CSV or a signed bundle (JSON lines + manifest + HMAC); large exports in the background | audit/read |
+| archives | `audit/archives` | per channel: live files, archives, manifests, verification state and date; verify now, archive now, restore for reading | audit/manage |
+| settings | `audit/settings` | the effective audit.ini with origin per value (as the debug bar shows settings), key fingerprints, sinks with their problem(), format handlers available, index state; writes through `expIniEditor` | audit/manage |
+| reauth | `audit/reauth` | password re-entry before a manage action | audit/read |
+
+URL parameters of console, charts and export (ordered parameters, the kernel's `(name)/value` form):
+`(channel)/<name>`, `(name)/<pattern>` (`access.session.*`), `(user)/<user id>`, `(login)/<login>`,
+`(object)/<type>:<id>` (`node:275`), `(target)/<type>:<id>`, `(result)/success|refused|failed`,
+`(severity)/<min>`, `(request)/<request id>`, `(job)/<job id>`, `(run)/<run id>`, `(ip)/<network>`,
+`(from)/<YYYY-MM-DD[THH:MM]>`, `(to)/…`, `(q)/<search text>`, `(legacy_file)/<old file name>`, `(offset)/<n>`,
+`(limit)/<n>` (at most 500).
+
+```
++--------------------------------------------------------------------------------------------------+
+| Dashboard  Content  Media  Users  Shop  Design  Setup  [Audit]                                   |
++---------------------+----------------------------------------------------------------------------+
+| Audit               |  Audit console                          content: intact  access: intact   |
+|  > Console          |                                         system: intact   commerce: intact |
+|    Charts           |  [Channel: all v] [Name: ________] [User: ______] [Result: all v]        |
+|    Alerts (2)       |  [From: 2026-10-01] [To: 2026-10-02] [Search: ______________] [Filter]   |
+|    Export           |  -----------------------------------------------------------------------  |
+|    Archives  (M)    |  Time      Name                      Actor     Object            Result   |
+|    Settings  (M)    |  13:30:01  content.node.remove.trash editor1   node 275 Workout  success  |
+|                     |  13:29:44  access.permission.refused editor2   setup/cache       refused  |
+|                     |   +- 13:12 content.job.finish        editor1   job 20261002-…    success  |
+|                     |  13:02:10  access.session.login      editor1   user 14           success  |
+|                     |  [< newer]                                   page 1 of 12  [older >]    |
++---------------------+----------------------------------------------------------------------------+
+  (M) = shown only with audit/manage
+```
+
+```
++--------------------------------------------------------------------------------------------------+
+| Event 01J9ZK3M7Q8R2T4V6X8Z0B2D4F                        content.node.remove.trash   success       |
+|  When     2026-10-02 15:30:01.123 (UTC 13:30:01)   Channel content, seq 1842   Chain: intact     |
+|  Who      editor1 (user 14), roles Editor; 203.0.113.0/24; Firefox 131 / Linux                   |
+|  Request  r-01J9ZK3M5A… POST /content/removeobject, admin, velocity, 184 ms, 302  [all events]   |
+|  Object   node 275 "Workout" (object 273, article)            [open node]                         |
+|  Target   trash                                                [open trash]                       |
+|  Before   parent 89, path /1/2/89/275/        After  –                                           |
+|  Parent   –    Children  –    Job  –                                                            |
+|  prev sha256:9b1c0f…  hash sha256:41aa7e…                      [raw JSON]  [export this event]   |
++--------------------------------------------------------------------------------------------------+
+```
+
+```
++--------------------------------------------------------------------------------------------------+
+| Archives (audit/manage)                                         [Verify all]  [Archive now]      |
+|  Channel   Live files        Oldest live   Archives   Oldest archive   Last verified   State     |
+|  content   90 (812 MiB)      2026-07-04    274        2024-10-03       02:15 today     intact    |
+|  access    90 (95 MiB)       2026-07-04    274        2024-10-03       02:15 today     intact    |
+|  system    90 (41 MiB)       2026-07-04    274        2024-10-03       02:15 today     BROKEN    |
+|             first break: system-2026-09-14.jsonl line 2211 (altered)  [show]                      |
+|  Signing key k2-20261002-3fa94c1b, fingerprint 3FA9 4C1B 77D0 E215     [Rotate key]              |
++--------------------------------------------------------------------------------------------------+
+```
+
+### Placement (Z2)
+
+- **Top tab**: `[TopAdminMenu] Tabs[]=audit` and `[Topmenu_audit]` in settings/menu.ini with
+  `URL[default]=audit/console` and `PolicyList[]=audit/read` — the same mechanism `[Topmenu_setup]` uses with
+  `PolicyList[]=setup/managecache`, so the tab is not shown without the policy.
+- **Dashboard sidebar link**: `[Leftmenu_my] Links[audit]=audit/console`, `PolicyList_audit[]=audit/read`, as the
+  existing `PolicyList_change_password[]` entries do.
+- **Dashboard block**: `[DashboardBlock_audit]` in settings/dashboard.ini (`Priority=20`, `NumberOfItems=10`,
+  `PolicyList[]=audit/read`): the latest `notice`-or-higher events of the access and system channels, open alerts,
+  and the "audit is off" or "chain broken" warning for users with audit/manage.
+- **content/job and content/jobs**: the job page shows "Audit trail" (`audit/console/(job)/<id>`) and the jobs list
+  a link per job, both only with audit/read.
+- **Setup menu**: `[Leftmenu_setup] Links[audit]=audit/settings`, `PolicyList_audit[]=audit/manage`.
+- **Node view** (Proposed): an "Audit" tab in the admin's node view with the fetch example above, audit/read only.
+
+**A user without the policy sees nothing** — no tab, no sidebar link, no block, no link on the job pages, an empty
+fetch, and `access.permission.refused` for a typed URL. This depends on the dashboard and menus checking policies
+the way the kernel does, which is the dashboard defect fixed in stage 1. Today the dashboard view
+(kernel/private/classes/views/content/dashboard.php) checks a block's `PolicyList` with
+`$currentUser->hasAccessTo( $module, $function )`, but setup features still reach users who may not use them (see
+"Dashboard defect"); stage 1 makes every block and link go through the kernel's check with limitations, and stage 4
+relies on it.
+
+## Sinks (Q7)
+
+The file is always written; sinks are copies, delivered after the record is in the file (so a sink failure never
+loses a record) and fed only records that passed the privacy rules.
+
+### syslog / journald (`expAuditSyslogSink`)
+
+RFC 5424, one message per record:
+
+```
+<PRI>1 2026-10-02T13:30:01.123Z web1 exponential 991876 access [exp@32473 id="01J9ZK…" name="access.session.login.failed" seq="211" channel="access" user="" ip="203.0.113.0/24" result="failed" request="r-01J9ZK…" hash="sha256:41aa…"] {"v":1,…}
+```
+
+- `PRI` = facility × 8 + severity (`authpriv` = 10, so a `notice` failed login is `<85>`).
+- `MSGID` is the **channel**, not the name: RFC 5424 limits MSGID to 32 characters and names can be longer.
+- The structured data element is `exp@32473`. **Proposed:** 32473 is the private enterprise number RFC 5612
+  reserves for documentation; it is replaced by Exponential's own number when one is registered. `"`, `\` and `]`
+  in values are escaped with `\` (RFC 5424 §6.3.3).
+- `Transport=local` writes to the system log socket (`/dev/log`), which journald and rsyslog both read;
+  `udp` sends the structured data only (RFC 5426: the JSON body would exceed a safe datagram); `tcp` and `tls`
+  (RFC 5425 octet counting) send the full record as MSG.
+- Delivery at flush time for `local` (a local socket write is cheap); network transports from the spool (below).
+
+### Webhook (`expAuditWebhookSink`)
+
+- `POST` to `URL` with `Content-Type: application/json`:
+  `{"v":1,"installation":"6f1c…","site":"example","batch":"b-01J9…","events":[<record>,…]}`.
+- Headers: `X-Exponential-Timestamp` (epoch seconds), `X-Exponential-Batch`,
+  `X-Exponential-Signature: sha256=<hex HMAC-SHA-256(SigningSecret, timestamp + "." + body)>`. A receiver checks the
+  signature and rejects timestamps more than 300 seconds away (replay).
+- Batching: up to `BatchSize` records or `BatchSeconds`, whichever comes first.
+- Web requests never wait for a webhook: records for network sinks are appended to the spool
+  (`SpoolDir/<sink>.jsonl`, `flock()`ed) at flush; the audit cronjob part (every run of `frequent`) delivers the spool.
+  `critical` and higher are also tried right after the response (`fastcgi_finish_request()` when available, a 2
+  second timeout) — **Proposed**.
+- Retry: `Retries` times with `RetryBackoff` doubled each time; a 2xx answer removes the batch from the spool; after
+  the last retry the batch stays spooled and `system.audit.sink.failed` is recorded (once per sink per hour).
+  Delivery is at least once: receivers de-duplicate by event `id`.
+
+### E-mail (`expAuditMailSink`)
+
+Events at `MinSeverity` (`critical`) or matching `Events[]` are mailed through `eZMail` to `Receivers[]` (default:
+the site's `AdminEmail`), one mail per alert or event with the console link, no personal data beyond what the
+record holds after privacy, at most one per rule and group per `Throttle` seconds; from the cronjob part, so a
+request never waits on SMTP.
+
+### The sink registry
+
+`[AuditSinkSettings] SinkClasses[<name>]=<class implementing expAuditSink>`, configured in `[AuditSink_<name>]`,
+attached per channel with `[AuditChannel_*] Sinks[]`. The console's settings view lists each sink with
+`problem()`, the spool size and the last delivery. `exp:audit sinks test <name>` sends a test record. Counted by the
+RAD survey (registry `auditsinks`).
+
+## Alerts (F5)
+
+- **Built-in rules** are `[AlertRule_*]` blocks shipped in audit.ini (brute force by address, brute force by account,
+  admin role granted, settings written out of hours, mass delete, audit disabled, chain broken); **INI rules** are
+  more blocks of the same form; **rule classes** implement `expAuditAlertRule` and are named by `Class=`
+  (`threshold`, `match`, `schedule` built in).
+- **Evaluation at flush**: after the buffer is written, each rule whose `Event` pattern matches one of the flushed
+  records is evaluated with those records. `match` and `schedule` rules decide at once. `threshold` rules keep their
+  window in a small state file per rule (`<LogDir>/alerts/<rule>.json`: per group the timestamps inside the window),
+  read and written under `flock()` — only when a matching event was flushed, so a request without failed logins or
+  role changes pays nothing.
+- **Evaluation in the cronjob part**: rules over many requests that need the index (Proposed: none of the built-in
+  ones), the "audit disabled" check (the state file says enabled but the settings say disabled — catches a change
+  made by editing a file by hand), the result of the daily verification (`chain_broken`), and expiry of windows.
+- **De-duplication**: an alert for (rule, group) fires once per window; while it is open, more matches update its
+  count and last event instead of firing again; it fires again when the count doubles, or in a new window after the
+  window closed. Each firing is `system.audit.alert` with the rule, group, count, window and the ids of the first and
+  last matching events, sent to the rule's `Sinks[]`.
+- **Acknowledging** in the console (audit/manage) closes the alert and is recorded.
+
+To be proven in stage 5: 20 failed logins from 203.0.113.0/24 within 300 s fire `brute_force` once; the 40th fires it
+again; 19 do not.
+
+## Rotation, archives and retention (Q8)
+
+- **Schedule**: the cronjob part `Exponential\Cronjob\Kernel\Audit` (`cronjobs/audit.php`, `[CronjobPart-audit]`
+  and, Proposed, in `[CronjobPart-frequent]`). Every run: incremental index, spool delivery, alert windows. Once a day
+  after `RotateAfter`: close yesterday's files (`system.audit.file.close`), verify, archive what is older than
+  `LiveDays`, purge archives older than `ArchiveDays`, pseudonymise index rows, write the checkpoint. A run takes a
+  lock (`<LogDir>/.cron.lock`) so two runs never overlap. The same tasks run from the console (archives view) and
+  from `exp:audit rotate|archive|purge`.
+- **Size rotation** happens in the writer: a file past `MaxFileSize` is closed and the next part opened in the same
+  append, under the same lock.
+- **Format handlers**: `gzip` (zlib, always available), `bzip2` (ext-bz2), `xz` (the `xz` binary; **Proposed:** no
+  PHP extension is commonly available), `zstd` (ext-zstd, else the `zstd` binary), `zip` (ext-zip; one archive per
+  file, so a single file can be restored). A handler that reports a `problem()` is skipped and gzip used, and the
+  manifest records the handler actually used.
+- **Archive path**: `ArchiveDir/<channel>/<YYYY>/<file>.jsonl.<ext>` with the manifest beside it, modes `FileMode`
+  and `DirMode`. **Proposed:** recommend (operator guide) a path on another file system, or one the web server user
+  can only add to, so a compromised web process cannot rewrite archives.
+- **Verification**: before archiving (`VerifyBeforeArchive`), after writing (`VerifyAfterArchive`: decompress,
+  compare sha256), and on demand (`exp:audit verify --archives`), which also checks each manifest's HMAC and the
+  `previous_manifest` chain.
+- **Retention** per channel (`LiveDays`, `ArchiveDays`): an archive is removed only when it is older than
+  `ArchiveDays` **and** its key is not needed by a newer manifest; each removal is recorded in `system.audit.purge`
+  with the file names and their sha256, so the record of what existed outlives the data.
+- **Restore**: `exp:audit restore --channel=content --date=2026-01-15` decompresses into `<LogDir>/restored/` for
+  reading, verifying and reindexing; restored files are never put back into the live chain.
+
+## The command: `exp:audit`
+
+`bin/php/audit.php` (so `./console exp:audit`), class `Exponential\Command\Kernel\Audit` in
+`kernel/private/classes/commands/audit.php`. Every subcommand that reads records is recorded as
+`system.audit.read`, every one that changes something as its manage event. Run as root, it writes files with the
+site user's owner and group (as `expContentJobStore::fixOwner()` and `expDebugBarLog::ownLikeParent()` do).
+
+| Subcommand | Does | Options |
+|---|---|---|
+| `status` | audit on/off, channels, today's counts, chain state, index lag, spool sizes, key fingerprints | `--json` |
+| `tail` | prints new records as they are written | `--channel=`, `--name=`, `--follow`, `--lines=20`, `--json` |
+| `search` | searches the index (or the files with `--files`) | the console's filters as options: `--name=`, `--user=`, `--login=`, `--object=node:275`, `--result=`, `--from=`, `--to=`, `--q=`, `--request=`, `--job=`, `--legacy-file=`, `--limit=`, `--json` |
+| `show <id>` | one record with parent, children and request siblings | `--json` |
+| `verify` | verifies chains (and archives) | `--channel=`, `--from=`, `--archives`, `--json`; exit 0 intact, 1 broken, 2 error |
+| `rotate` | closes files due for rotation, runs retention | `--channel=`, `--dry-run` |
+| `archive` | archives files older than LiveDays (or `--before=`) | `--channel=`, `--format=`, `--dry-run` |
+| `restore` | decompresses an archive for reading | `--channel=`, `--date=`, `--to=` |
+| `purge` | applies retention to archives and the index | `--channel=`, `--dry-run` |
+| `reindex` | rebuilds or catches up the index | `--incremental`, `--archives`, `--channel=` |
+| `pseudonymise` | runs the 90-day pseudonymisation now | `--dry-run` |
+| `export` | writes records to a file | filters as `search`, `--format=jsonl|csv|bundle`, `--subject-user=<id>` (an access request: every record about or by that user, with the pseudonymised ones matched by hashing the user's identifiers), `--out=` |
+| `import` | imports the 4.x text logs (Z4) | `--dir=` (default the old `LogDir`), `--file=`, `--dry-run`, `--keep-originals` |
+| `key` | `list`, `rotate`, `rotate --pseudonym`, `fingerprint` | |
+| `checkpoint` | writes a checkpoint now | |
+| `sinks` | `list`, `test <name>`, `flush` (deliver the spool now) | |
+| `alerts` | `list`, `test <rule> --replay=<from>` (runs a rule over past records without firing) | |
+
+```bash
+./console exp:audit tail --channel=access --follow
+./console exp:audit search --name='access.session.login.failed' --from=2026-10-01 --ip=203.0.113.0/24
+./console exp:audit verify --archives --json
+./console exp:audit export --job=20261002-133001-4f2a9c1e --format=csv --out=var/tmp/job-trail.csv
+./console exp:audit import --dry-run
+```
+
+**Import of the old logs (Z4).** `import` reads each file named in `AuditFileNames[]` and its rotated copies (`.1`,
+`.2`, `.3`, oldest first), splits entries at lines starting with `[ ` (both the current form
+`[ time ][ siteaccess ][ context ] [ip] [login:id]` and the older form without siteaccess and context), maps the file
+to its old name and the old name through `Map[]`, drops `NeverRecord[]` attributes, applies the privacy rules, and
+writes `<LogDir>/imported/<channel>-<YYYY-MM-DD>.jsonl` with `imported: true` and `source` (file, line, sha256 of the
+original file), outside the chain. The originals are then compressed into `ArchiveDir/legacy/` with a signed manifest
+listing each file's sha256, and the import is recorded as `system.audit.import`. Importing a file whose sha256 was
+imported before is skipped, so `import` can be run again safely.
+
+## Security notes
+
+### Threat model
+
+| Who | Can | The design's answer |
+|---|---|---|
+| An editor without audit policies | see nothing of the audit | policies on every view, link, block and fetch; refusals recorded |
+| A user with audit/read | read events (of the channels the limitation allows), export them | reads and exports are themselves recorded; personal fields truncated/hashed by default |
+| An administrator with audit/manage | change settings, switch audit off, rotate keys | each of those is recorded before it takes effect; `audit_disabled` alert to syslog and mail; optional password re-entry; the change and the alert leave the server through sinks |
+| An attacker running code as the web server user | stop recording; read the signing key in settings/override; rewrite live files and recompute the chain | cannot rewrite what has already left the server (syslog, webhook, mailed alerts, checkpoints); archives on a path the web user cannot rewrite; checkpoints signed before the compromise expose a rewritten chain (`rewritten`) |
+| root or the hosting provider | anything on the server | out of scope: only copies held elsewhere (sinks) can show what happened |
+| Someone reading the network | — | syslog over `tls`, webhook over HTTPS with signatures |
+
+### What the chain proves, and what it does not
+
+It proves that the records of a channel, from its genesis or the last verified checkpoint or manifest up to the
+point checked, are the records that were written, in that order, with none removed, inserted or changed — **unless**
+the chain was recomputed by someone who could write the files. It does not prove that every event was recorded (code
+that never calls the audit, or a recorder that was switched off, leaves no record and no break), that a record's
+content is true (a forged `actor` in code is recorded faithfully), or who changed a file. The HMAC of manifests and
+checkpoints adds that only a holder of the key could have signed them; a key read by an attacker weakens everything
+signed after that moment, not what was signed and sent elsewhere before.
+
+### Key handling
+
+Keys are generated on first use into `settings/override/audit.ini.append.php` (Z7), mode 0640, never committed (the
+project's rule for `settings/override`), masked by `expIniEditor::isSecret()` in exp:ini, the debug bar and the
+settings views, shown only as fingerprints. Backups of `settings/override` must be treated as secrets. **Proposed:**
+`[AuditKeySettings] KeyFile=` may name a file outside the web root and readable only by the user that runs the cronjob
+part, for sites that want archive signing out of the web process's reach; the writer then signs nothing (records are
+only hash-chained) and checkpoints and manifests are signed by the cronjob part alone.
+
+### GDPR
+
+(This is the design's position, not legal advice; each operator documents it in its own record of processing.)
+
+- **Lawful basis**: legitimate interest (Art. 6(1)(f)) in the security and accountability of the system, and legal
+  obligation (Art. 6(1)(c)) where a law requires access logging; Art. 32 (security of processing) names logging as a
+  measure.
+- **Minimisation by default**: addresses truncated, sessions hashed, user agents shortened, no content values, no
+  passwords, tokens or secrets ever; reads off.
+- **Retention**: 90 days live, 2 years archived (F6), per channel, removed automatically and recorded.
+- **Pseudonymisation** (Art. 4(5)) in the index after 90 days with a keyed hash.
+- **Access requests** (Art. 15): `exp:audit export --subject-user=<id>` and the console's export with the user filter
+  give every record by or about that user, including pseudonymised ones (matched by hashing the user's identifiers
+  with the pseudonym key).
+- **Erasure** (Art. 17): audit records are kept under Art. 17(3)(b) and (e) for their retention period; deleting one
+  would break the chain. A request is answered with the retention period and the pseudonymisation already applied.
+
+## Performance design and budget
+
+Targets (owner): **under 2 ms per request** with buffered writes and the default settings on; **content jobs within
++5 %** of their time with audit off.
+
+- No database access at request time: the index is filled by the cronjob part.
+- A request that raises no event costs a request id (16 random bytes), the `X-Request-Id` header and an empty flush:
+  measured target under 0.05 ms.
+- `event()` for a name that is off: one array lookup in the compiled routing table (patterns resolved once per
+  settings state and cached with the INI cache), target under 2 µs.
+- `event()` for a name that is on: build and privacy-filter the record, target under 30 µs; no I/O.
+- Flush: per channel that has records, one `fopen` (append), `flock`, one seek and read of the last line, the hashes,
+  one `fwrite`, `fflush`, unlock — target under 0.5 ms per channel on local disk. Most requests touch no channel; a
+  publish touches at most two.
+- Immediate events (logins, refusals) cost one such write each; they are rare per request.
+- Sinks at flush: only `syslog` with `Transport=local` (one socket write); everything else is spooled.
+- Content jobs: one parent per job, children per node, flushed every `FlushInterval` seconds or `MaxEvents`: for a
+  10 000-node remove, 10 000 children at about 30 µs plus 20 flushes — about 0.3 s against minutes of work.
+- `access.view.sensitive` on every admin view of setup/role/user/audit: one immediate write per such request.
+
+Measured in stage 6 (and checked at each stage): `Audit=disabled` against the defaults, Apache (PHP-FPM) and Velocity,
+1000 requests each of the front page, a node view in the admin, a publish, and a failed login; p50 and p95 of the
+difference; a 2 000-node subtree remove as a content job, three runs each way.
+
 ## Default installation
 
 Audit is a convention of the product, not an option one remembers to switch on. Unlike the 4.x releases, where
@@ -1159,6 +1815,18 @@ Audit is a convention of the product, not an option one remembers to switch on. 
   `system.audit.disable` before it takes effect, and the dashboard shows an "audit is off" warning to users with
   audit/manage.
 - The performance budget (stage 6) is measured with these defaults on, since that is what every site runs.
+- The `[CronjobPart-audit]` tasks run with the installation's existing cronjob line (Proposed: through
+  `[CronjobPart-frequent]`), so rotation, archiving and retention need no extra crontab entry; an installation whose
+  cronjobs never run gets a dashboard warning for audit/manage users when the newest checkpoint is older than two days.
+- The audit tables (`expaudit_event`, `expaudit_cursor`, `expaudit_file`) are part of the kernel schema of every
+  engine, so a new installation has them; an upgrade creates them (stage 4 upgrade script).
+- The policies `audit/read` and `audit/manage` exist in every installation; no shipped role other than Administrator
+  holds them, and the installer does not add them to Editor or Partner roles.
+- An installation made from a package that carries its own `audit.ini.append.php` keeps the shipped defaults for
+  everything that file does not set; a package cannot ship keys (a key in a package is refused and a new one
+  generated).
+- When the log directory cannot be written at install time (a read-only `var`), the installer stops with that
+  message instead of finishing an installation that cannot record.
 
 ## Delivery (Z8) — each stage committed and shown before the next
 
@@ -1178,6 +1846,106 @@ Audit is a convention of the product, not an option one remembers to switch on. 
 6. **Docs and proof**: this guide becomes the operator guide, developer guide (worked, tested examples), generated
    event reference and security notes; the tamper test, the performance measurement (target: under 2 ms per request
    with buffered writes, content jobs within +5% time) and the RAD survey counting the new registries.
+
+### Deliverables per stage
+
+| Stage | Code | Settings and schema | Tests (see "Acceptance tests") | Shown to the owner |
+|---|---|---|---|---|
+| 1 | dashboard view and templates, `[Leftmenu_*]`/`[Topmenu_*]` checks through `eZUser::hasAccessTo()` with limitations | – | permission matrix of the dashboard (A1) | the dashboard as Editor, Member, Partner, Administrator |
+| 2 | `kernel/classes/audit/`: `expAudit` (event, begin/end, withParent, setJob, legacy, isOn, flush, resetRequest), `expAuditBuffer`, `expAuditWriter` (lock, tail, chain, rotation by size, torn-line repair), `expAuditPrivacy`, `expAuditTaxonomy` (+ branch registry), `expAuditKeys`, `expAuditVerifier`; `eZAudit` rewritten as the compatibility path; `X-Request-Id`; the Velocity reset in `ezpKernelWeb::__construct()`; the cleanup, fatal and shutdown flushes | `settings/audit.ini` as in the settings reference, `Audit=enabled` | record format and canonical JSON (B1), chain and verifier unit tests (B2), the tamper test's file cases (T1–T8), compatibility (B3), buffering and Velocity (B4), privacy (B5) | a day of alpha's channels, `exp:audit verify` (the minimal command lands here), a tampered copy reported broken |
+| 3 | every catalogue event raised at its hook point (the `writeAudit()` calls replaced by native ones), the new hook points, the ezpEvent bridge, the runnable events for commands and cronjobs | `[AuditBridgeSettings]` | coverage matrix C1 on Apache, Velocity and CLI | the coverage report: 135 names, each raised, each where expected |
+| 4 | module `audit` (views, fetch, operator), `expaudit_*` tables and the incremental indexer, pseudonymisation, dashboard block, sidebar link, top tab, Setup menu entry, job links, node view tab (Proposed) | `share/db_schema.dba`, `kernel/sql/*`, the Oracle schema, an upgrade script; menu.ini, dashboard.ini entries; policies `audit/read` (Channel limitation), `audit/manage` | index on each engine (D1), console permission matrix (A2), fetch as each role (A3), search per engine (D2) | the console on alpha (MySQL) and on the SQLite, MongoDB and Oracle installations reachable here; PostgreSQL where reachable |
+| 5 | sinks (syslog, webhook, mail) and their registry and spool, alert rules and evaluator, format handlers, archive and manifest writer, retention, checkpoints, the cronjob part, `exp:audit` complete including `import` | `[CronjobPart-audit]` in cronjob.ini; the sink, alert, rotation and archive blocks | sinks (E1), alerts (E2), archives and retention (E3), tamper test's archive cases (T9–T12), import (E4) | a webhook received and verified, a brute-force alert mailed, a year of archives verified, the 4.x logs of alpha imported |
+| 6 | – (fixes only) | – | performance P1–P4, the full tamper test, the full permission matrix, the RAD survey count (F1) | operator guide, developer guide, generated event reference, security notes |
+
+## Acceptance tests (Z9)
+
+Each test is a script that prints PASS/FAIL per case and runs against the live installation (Apache and Velocity) and
+the CLI. Users are generic test accounts (`editor1`, `member1`, `partner1`, `auditor1`, `auditmanager1`); addresses
+from 203.0.113.0/24 and 2001:db8::/32; domains example.com.
+
+### Coverage matrix (C1, stage 3)
+
+For every name of the taxonomy registry (the catalogue's 135 and any branch an active extension registers): the test
+performs the action that raises it — through the web view on Apache, the same on Velocity (port 8080), and through the
+command or cronjob part where one exists — and checks that exactly the expected record appears in the expected
+channel, with `name`, `verb`, `object.type`, `object.id`, `result` and `request.engine` as expected, `before`/`after`
+holding the catalogue's fields and none of the "never" ones. The output is a matrix (name × Apache/Velocity/CLI:
+PASS, FAIL, n/a with the reason) and the test fails for a registry name no case raises. Events that are `off` by
+default are tested with them switched on in a test override, and once more switched off (no record).
+
+### Tamper test (T1–T12, stages 2, 5 and 6)
+
+On a copy of a channel with 1 000 records over three day files:
+
+| Case | Change | Expected verification result |
+|---|---|---|
+| T1 | one byte of one record's `object.name` changed | broken: `altered` at that line |
+| T2 | one line removed | broken: `link` and `gap` at the next line |
+| T3 | two adjacent lines swapped | broken: `reordered` |
+| T4 | a forged line inserted with a correctly computed `hash` | broken: `link` at the line after it |
+| T5 | the last 100 records changed and the chain recomputed (an attacker without the key) | broken: `rewritten` at the last checkpoint before them |
+| T6 | the middle day file removed | broken: `missing_file` |
+| T7 | the last 10 lines of a closed file cut off | broken: `truncated` |
+| T8 | a writer killed (`SIGKILL`) in the middle of a `fwrite()` | `repaired`: a `system.audit.chain.repair` record, chain intact around it |
+| T9 | one byte of an archive changed | broken: archive sha256 mismatch |
+| T10 | a manifest edited (its `records` count) | broken: manifest HMAC invalid |
+| T11 | a manifest signed with a key id that is not in the settings | broken: `unknown_key` |
+| T12 | one day's manifest and archive removed | broken: `previous_manifest` gap |
+| T0 | no change | intact, 1 000 records, the time span right |
+
+Every broken result also produces `system.audit.chain.broken` and the `chain_broken` alert (stage 5 on).
+
+### Performance (P1–P4, stage 6; checked at each stage)
+
+| Case | Measure | Pass |
+|---|---|---|
+| P1 | front page and an admin node view, 1 000 requests each, defaults vs `Audit=disabled`, Apache and Velocity | p50 difference < 2 ms, p95 difference < 3 ms (Proposed for p95) |
+| P2 | a publish and a failed login (immediate write), 200 each | difference < 2 ms per request |
+| P3 | a 2 000-node subtree remove as a content job, three runs each way | time with audit ≤ 1.05 × time without |
+| P4 | 10 concurrent writers × 10 000 events to one channel | chain intact, 100 000 records, no torn lines |
+
+### Permission matrix (A1–A3, stages 1 and 4)
+
+Roles: Anonymous, Member, Editor, Partner, Administrator, Auditor (a test role with `audit/read`), Audit manager
+(`audit/read` + `audit/manage`), and a Shop auditor (`audit/read` limited to Channel `commerce`).
+
+| Case | Anonymous | Member | Editor | Partner | Auditor | Shop auditor | Audit manager | Administrator |
+|---|---|---|---|---|---|---|---|---|
+| A1 dashboard: setup blocks and links | – | – | only those its policies allow | same | same | same | same | all |
+| A2 top tab Audit, sidebar link, dashboard block | no | no | no | no | yes | yes | yes | yes |
+| A2 `audit/console` | refused | refused | refused | refused | all channels | commerce only | all | all |
+| A2 `audit/event/<id of an access event>` | refused | refused | refused | refused | yes | refused | yes | yes |
+| A2 `audit/archives`, `audit/settings` | refused | refused | refused | refused | refused | refused | yes (reauth if on) | yes |
+| A2 links on content/job and content/jobs | – | – | no | no | yes | yes (commerce: none shown) | yes | yes |
+| A3 `fetch( 'audit', 'events' )` | empty | empty | empty | empty | events | commerce events | events | events |
+| A3 `exp:audit search` as that user (`--login`) | refused | refused | refused | refused | yes | commerce only | yes | yes |
+
+Each refusal must produce `access.permission.refused`; each allowed console use `system.audit.read`.
+
+### Other stage tests
+
+- **B1** record format: every field of the fields table present or absent as specified; canonical JSON of crafted
+  records (key order, unicode, `/`, control characters, `{}` vs `[]`) hashed to known values.
+- **B2** chain: genesis value, file open/close records, rotation by size within one request, two processes appending.
+- **B3** compatibility: the 15 old names through `eZAudit::writeAudit()`; `HashKey` and secrets never written; an
+  unmapped name becomes `system.legacy.<name>`.
+- **B4** buffering: exception, `exit`, `eZExecution::cleanExit()`, fatal error, 1 000 Velocity requests in one worker
+  (no record carries another request's id).
+- **B5** privacy: each field × full/truncate/hash/off; IPv4 /24 and IPv6 /48; `SecretPathViews[]` URLs; a failed login
+  for an unknown user writes the attempted login hashed.
+- **D1** index on SQLite, MySQL/MariaDB, PostgreSQL, Oracle and MongoDB (each reachable here): create, incremental
+  index of 10 000 records, a crash between batch and cursor (no duplicate, no gap), rebuild equals incremental,
+  pseudonymisation after a simulated 91 days.
+- **D2** search: the same ten queries give the same ids on every engine (full text where available, `LIKE` otherwise).
+- **E1** sinks: RFC 5424 messages parsed by a syslog parser; webhook signature verified by a test receiver; retries and
+  spool after a receiver outage of 10 minutes; mail throttled.
+- **E2** alerts: each built-in rule's threshold reached, not reached, and repeated (de-duplication).
+- **E3** archives: each format handler (or its fallback), restore, retention keeps keys still needed.
+- **E4** import: alpha's 4.x audit files imported, counts equal to their entries, re-import skipped, originals
+  archived with a valid manifest.
+- **F1** the RAD survey lists the four audit registries, counts an extension's branch as added and a missing class
+  as broken.
 
 ## Dashboard defect (recorded 2026-10-02)
 
