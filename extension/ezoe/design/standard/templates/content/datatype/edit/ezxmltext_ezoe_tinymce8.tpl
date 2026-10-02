@@ -34,6 +34,9 @@
 {/if}
 
 <script src={'javascript/tinymce8/tinymce.min.js'|ezdesign} charset="utf-8"></script>
+{if $skin|eq( 'o2k7' )}
+<link rel="stylesheet" type="text/css" href={'javascript/tinymce8_ez/skins/o2k7/skin.css'|ezdesign} />
+{/if}
 <script type="text/javascript">
 var eZOe8GlobalSettings = {ldelim}
     license_key: 'gpl',
@@ -46,7 +49,8 @@ var eZOe8GlobalSettings = {ldelim}
         ezembed: {'javascript/tinymce8_ez/plugins/ezembed/plugin.js'|ezdesign},
         ezcustomtag: {'javascript/tinymce8_ez/plugins/ezcustomtag/plugin.js'|ezdesign}
     {rdelim},
-    plugins: 'lists advlist autolink link anchor table charmap pagebreak fullscreen code help',
+    // no advlist (split list buttons) and no pagebreak (ezoe pagebreak is a custom tag, not an html comment)
+    plugins: 'lists autolink link anchor table charmap fullscreen code help',
     menubar: false,
     promotion: false,
     branding: false,
@@ -72,6 +76,8 @@ var eZOe8GlobalSettings = {ldelim}
     noneditable_class: 'ezoeItemNonEditable',
     browser_spellcheck: true,
     contextmenu: 'link ezembed ezcustomtag table',
+    ez_skin_class: 'ezoe-skin-{$skin|wash}',
+    ez_disable_editor_text: {json_encode( 'Disable editor'|i18n('design/standard/content/datatype') )},
     ez_custom_tags: {json_encode( $input_handler.custom_tag_definitions )},
     ez_custom_attribute_style_map: {json_encode( ezini( 'EditorSettings', 'CustomAttributeStyleMap', 'ezoe.ini',,true() ) )},
     ez_settings: {ldelim}
@@ -101,9 +107,11 @@ var eZOe8ButtonMap = {
     link: 'link', unlink: 'unlink', anchor: 'anchor',
     image: 'ezembed', object: 'ezembed', file: 'ezembed',
     custom: 'ezcustomtag',
-    charmap: 'charmap', pagebreak: 'pagebreak',
-    table: 'table',
+    charmap: 'charmap',
+    table: 'table', delete_table: 'tabledelete', delete_col: 'tabledeletecol', col_after: 'tableinsertcolafter',
+    delete_row: 'tabledeleterow', row_after: 'tableinsertrowafter', split_cells: 'tablesplitcells', merge_cells: 'tablemergecells',
     fullscreen: 'fullscreen', help: 'help',
+    disable: 'ezdisable',
     '|': '|'
 };
 
@@ -122,14 +130,41 @@ function eZOe8Toolbar( buttons )
     return items.join( ' ' ) + ' | code';
 }
 
-function eZOe8Init( id, buttons, pathLocation, rows )
+function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
 {
     var settings = Object.assign( {}, eZOe8GlobalSettings, {
         selector: '#' + id,
         toolbar: eZOe8Toolbar( buttons ),
         toolbar_mode: 'wrap',
         statusbar: pathLocation !== 'none',
-        height: Math.max( 300, rows * 24 )
+        height: Math.max( 300, rows * 24 ),
+        setup: function( editor ) {
+            editor.options.register( 'ez_skin_class', { processor: 'string', default: '' } );
+            editor.options.register( 'ez_disable_editor_text', { processor: 'string', default: 'Disable editor' } );
+
+            // skin class for skins/<skin>/skin.css on the editor container
+            editor.on( 'PostRender', function() {
+                if ( editor.options.get( 'ez_skin_class' ) )
+                    editor.getContainer().classList.add( editor.options.get( 'ez_skin_class' ) );
+            });
+
+            // toolbar counterpart of the "Disable editor" form button (ezoe.ini [EditorLayout] button "disable")
+            editor.ui.registry.addButton( 'ezdisable', {
+                icon: 'close',
+                tooltip: editor.options.get( 'ez_disable_editor_text' ),
+                onAction: function() {
+                    var button = document.querySelector( 'input[name="CustomActionButton[' + attributeId + '_disable_editor]"]' );
+                    if ( button )
+                    {
+                        editor.save();
+                        button.click();
+                    }
+                },
+                onSetup: function( api ) {
+                    api.setEnabled( !!document.querySelector( 'input[name="CustomActionButton[' + attributeId + '_disable_editor]"]' ) );
+                }
+            });
+        }
     });
     tinymce.init( settings );
 }
@@ -146,7 +181,7 @@ function eZOe8Init( id, buttons, pathLocation, rows )
         <input class="button{if $layout_settings['buttons']|contains('disable')} hide{/if}" type="submit" name="CustomActionButton[{$attribute.id}_disable_editor]" value="{'Disable editor'|i18n('design/standard/content/datatype')}" />
     {/if}
     <script type="text/javascript">
-    eZOe8Init( '{$attribute_base}_data_text_{$attribute.id}', {json_encode( $layout_settings['buttons'] )}, '{$layout_settings['path_location']}', {$editorRow} );
+    eZOe8Init( '{$attribute_base}_data_text_{$attribute.id}', {$attribute.id}, {json_encode( $layout_settings['buttons'] )}, '{$layout_settings['path_location']}', {$editorRow} );
     </script>
 </div>
 {/default}
