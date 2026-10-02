@@ -57,9 +57,54 @@ class eZRunCronjobs
             global $script;
             global $isQuiet;
             global $cronPart;
-            include( $scriptFile );
+            // Audit (doc/bc/6.0/audit.md, system.cronjob.run / system.cronjob.fail): every event of the part
+            // carries the run (this invocation's request id)
+            $auditStart = microtime( true );
+            if ( class_exists( 'expAudit' ) )
+                expAudit::setRun( expAudit::requestId() );
+            try
+            {
+                include( $scriptFile );
+            }
+            catch ( Throwable $e )
+            {
+                $scriptMutex->unlock();
+                self::auditPart( $scriptFile, $cronPart, $auditStart, $e );
+                throw $e;
+            }
             $scriptMutex->unlock();
+            self::auditPart( $scriptFile, $cronPart, $auditStart, null );
         }
+    }
+
+    /**
+     * Records a cronjob part that ran (system.cronjob.run) or threw (system.cronjob.fail). Never throws.
+     *
+     * @param string $scriptFile
+     * @param string|false $cronPart the [CronjobPart-*] group, false for the default
+     * @param float $start
+     * @param Throwable|null $error
+     */
+    protected static function auditPart( $scriptFile, $cronPart, $start, $error )
+    {
+        if ( !class_exists( 'expAuditHook' ) )
+            return;
+        $name = $error ? 'system.cronjob.fail' : 'system.cronjob.run';
+        expAuditHook::emit( $name, function () use ( $scriptFile, $cronPart, $start, $error ) {
+            $data = array( 'object' => array( 'type' => 'cronjob', 'id' => basename( (string)$scriptFile, '.php' ),
+                                              'file' => class_exists( 'expAudit' ) ? expAudit::relativePath( $scriptFile ) : basename( $scriptFile ) ),
+                           'target' => array( 'type' => 'cronjob_part', 'id' => $cronPart ? (string)$cronPart : 'default' ),
+                           'verb' => 'run',
+                           'after' => array( 'ms' => (int)round( ( microtime( true ) - $start ) * 1000 ), 'result' => $error ? 'failed' : 'success' ) );
+            if ( $error )
+            {
+                $data['result'] = 'failed';
+                $data['reason'] = 'error';
+                $data['error'] = array( 'message' => get_class( $error ),
+                                        'where' => ( class_exists( 'expAudit' ) ? expAudit::relativePath( $error->getFile() ) : basename( $error->getFile() ) ) . ':' . $error->getLine() );
+            }
+            return $data;
+        } );
     }
 
     /**

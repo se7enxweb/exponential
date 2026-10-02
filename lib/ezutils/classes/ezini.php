@@ -1105,6 +1105,8 @@ class eZINI
         $backupFilePath = eZDir::path( array_merge( $pathArray, array( $backupFileName ) ) );
 
         $roundTripContent = $this->buildRoundTripSaveContent( $originalFilePath, $onlyModified, $resetArrays );
+        // the file as it was, for the audit record of what this save changes (system.setting.write)
+        $auditOld = class_exists( 'expAudit' ) && file_exists( $originalFilePath ) ? @file_get_contents( $originalFilePath ) : '';
 
         if ( $roundTripContent !== false )
         {
@@ -1256,7 +1258,45 @@ class eZINI
             return false;
         }
 
+        // Audit (doc/bc/6.0/audit.md, system.setting.write): one record per changed variable, secrets as [secret]
+        if ( class_exists( 'expAudit' ) )
+            self::auditSave( $originalFilePath, $originalFileName, $auditOld );
+
         return true;
+    }
+
+    /**
+     * Records a file written by save() (system.setting.write through expAudit::settingWrite(), which compares
+     * the old and the new content variable by variable). Never throws.
+     *
+     * @param string $path
+     * @param string $fileName site.ini.append.php
+     * @param string|false $old
+     */
+    protected static function auditSave( $path, $fileName, $old )
+    {
+        try
+        {
+            $new = @file_get_contents( $path );
+            if ( $new === false || $new === $old )
+                return;
+            $relative = ltrim( str_replace( '\\', '/', $path ), '/' );
+            $root = rtrim( str_replace( '\\', '/', getcwd() ), '/' ) . '/';
+            if ( strpos( $relative, ltrim( $root, '/' ) ) === 0 )
+                $relative = substr( $relative, strlen( ltrim( $root, '/' ) ) );
+            $scope = 'global';
+            if ( preg_match( '#settings/siteaccess/([^/]+)/#', $relative, $m ) )
+                $scope = 'siteaccess:' . $m[1];
+            elseif ( strpos( $relative, 'settings/override/' ) !== false )
+                $scope = 'override';
+            elseif ( preg_match( '#extension/([^/]+)/settings/#', $relative, $m ) )
+                $scope = 'extension:' . $m[1];
+            $file = preg_replace( '/\.append(\.php)?$|\.php$/', '', (string)$fileName );
+            expAudit::settingWrite( $file, $scope, $relative, $old === false ? '' : (string)$old, (string)$new );
+        }
+        catch ( Throwable $e )
+        {
+        }
     }
 
     /**

@@ -433,6 +433,20 @@ class eZScript
                                                  $this->UseDebugTimingPoints, $this->UseIncludeFiles ) );
         }
 
+        // Audit (doc/bc/6.0/audit.md, system.command.run): before the cleanup handlers, which flush the audit
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $auditExit = $exitCode !== false ? (int)$exitCode : ( $this->ExitCode !== false ? (int)$this->ExitCode : 0 );
+            expAuditHook::emit( 'system.command.run', function () use ( $auditExit ) {
+                $argv = isset( $_SERVER['argv'] ) && is_array( $_SERVER['argv'] ) ? $_SERVER['argv'] : array();
+                $script = isset( $argv[0] ) ? (string)$argv[0] : '';
+                $start = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (float)$_SERVER['REQUEST_TIME_FLOAT'] : microtime( true );
+                return array( 'object' => array( 'type' => 'command', 'id' => $script !== '' ? ( class_exists( 'expAudit' ) ? expAudit::relativePath( $script ) : basename( $script ) ) : 'unknown' ),
+                              'verb' => 'run', 'result' => $auditExit === 0 ? 'success' : 'failed', 'reason' => $auditExit === 0 ? null : 'error',
+                              'after' => array( 'exit' => $auditExit, 'ms' => (int)round( ( microtime( true ) - $start ) * 1000 ) ) );
+            } );
+        }
+
         eZExecution::cleanup();
         eZExecution::setCleanExit();
         eZExpiryHandler::shutdown();

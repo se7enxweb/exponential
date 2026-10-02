@@ -98,8 +98,36 @@ class ListView extends \Exponential\Runnable\ModuleView
             }
         }
 
+        // Audit (doc/bc/6.0/audit.md, system.workflow.trigger.change): the triggers before a change
+        $auditTriggers = function () {
+            $map = array();
+            foreach ( (array)\eZTrigger::fetchList() as $t )
+                $map[$t->attribute( 'module_name' ) . '/' . $t->attribute( 'function_name' ) . '/' . $t->attribute( 'connect_type' )] = (int)$t->attribute( 'workflow_id' );
+            ksort( $map );
+            return $map;
+        };
+        $auditChanged = function ( array $before, array $after ) {
+            if ( $before === $after || !class_exists( 'expAuditHook' ) )
+                return;
+            $b = array();
+            $a = array();
+            foreach ( array_unique( array_merge( array_keys( $before ), array_keys( $after ) ) ) as $k )
+            {
+                $old = isset( $before[$k] ) ? $before[$k] : null;
+                $new = isset( $after[$k] ) ? $after[$k] : null;
+                if ( $old !== $new )
+                {
+                    $b[$k] = $old;
+                    $a[$k] = $new;
+                }
+            }
+            \expAuditHook::emit( 'system.workflow.trigger.change', array( 'object' => array( 'type' => 'trigger', 'id' => implode( ',', array_keys( $a ) ) ),
+                'verb' => 'change', 'before' => array( 'workflows' => $b ), 'after' => array( 'workflows' => $a ) ) );
+        };
+
         if ( $http->hasPostVariable( 'StoreButton' )  )
         {
+            $auditBefore = $auditTriggers();
             $db = \eZDB::instance();
             $db->begin();
             foreach ( $possibleTriggers as $trigger )
@@ -143,6 +171,7 @@ class ListView extends \Exponential\Runnable\ModuleView
                 }
             }
             $db->commit();
+            $auditChanged( $auditBefore, $auditTriggers() );
             $Module->redirectToView( 'list' );
 
         }
@@ -156,6 +185,7 @@ class ListView extends \Exponential\Runnable\ModuleView
             {
                 $deleteIDArray = $http->postVariable( 'DeleteIDArray' );
 
+                $auditBefore = $auditTriggers();
                 $db = \eZDB::instance();
                 $db->begin();
                 foreach ( $deleteIDArray as $deleteID )
@@ -163,6 +193,7 @@ class ListView extends \Exponential\Runnable\ModuleView
                     \eZTrigger::remove( $deleteID );
                 }
                 $db->commit();
+                $auditChanged( $auditBefore, $auditTriggers() );
             }
         }
 

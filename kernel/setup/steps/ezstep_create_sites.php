@@ -342,6 +342,27 @@ class eZStepCreateSites extends eZStepInstaller
             $saveResult = $ini->save( false, '.php', 'append', true, true, true );
         }
 
+        // Audit (doc/bc/6.0/audit.md, system.install.run): an installation made (the wizard, the kickstarter,
+        // exp:install); never the database or mail passwords
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $persistence = $this->PersistenceList;
+            expAuditHook::emit( 'system.install.run', function () use ( $accessMap, $persistence ) {
+                $packages = array();
+                foreach ( array( 'site_packages', 'chosen_package_list' ) as $key )
+                {
+                    if ( isset( $persistence[$key] ) && is_array( $persistence[$key] ) )
+                        foreach ( $persistence[$key] as $p )
+                            $packages[] = is_array( $p ) ? (string)( isset( $p['name'] ) ? $p['name'] : json_encode( $p ) ) : (string)$p;
+                }
+                return array( 'object' => array( 'type' => 'installation', 'id' => isset( $accessMap['sites'][0] ) ? (string)$accessMap['sites'][0] : 'site' ),
+                              'verb' => 'install',
+                              'after' => array( 'siteaccesses' => isset( $accessMap['accesses'] ) ? array_values( (array)$accessMap['accesses'] ) : array(),
+                                                'packages' => array_values( array_unique( $packages ) ),
+                                                'database_engine' => isset( $persistence['database_info']['type'] ) ? (string)$persistence['database_info']['type'] : null ) );
+            } );
+        }
+
         return true; // Never show, generate sites
     }
 

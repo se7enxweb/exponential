@@ -328,6 +328,7 @@ class expCacheManager
 
         if ( $purge !== null )
         {
+            $purgeStart = microtime( true );
             // Some purge functions call the reporter unconditionally
             // (purgeImageAlias()), so there always is one.
             $reporter = isset( $purge['reporter'] ) && is_callable( $purge['reporter'] )
@@ -343,6 +344,9 @@ class expCacheManager
             {
                 eZCacheTrash::end();
             }
+            // Audit (doc/bc/6.0/audit.md, system.cache.clear): a purge is a clear too
+            if ( method_exists( 'eZCache', 'auditCleared' ) )
+                eZCache::auditCleared( 'purge', $by === 'all' ? array() : $names, $items, $purgeStart );
         }
         else if ( $by === 'all' )
             eZCache::clearAll( $this->cacheList() );

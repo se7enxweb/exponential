@@ -2338,6 +2338,27 @@ class expVelocity
 
     public function restart()
     {
+        $start = microtime( true );
+        $result = $this->restartUnaudited();
+        // Audit (doc/bc/6.0/audit.md, system.velocity.deploy, verb restart)
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'system.velocity.deploy', function () use ( $result, $start ) {
+                $ok = is_array( $result ) && !empty( $result['ok'] );
+                return array( 'object' => array( 'type' => 'velocity', 'id' => 'restart' ), 'verb' => 'restart',
+                              'result' => $ok ? 'success' : 'failed', 'reason' => $ok ? null : 'error',
+                              'after' => array( 'message' => is_array( $result ) && isset( $result['message'] ) ? (string)$result['message'] : null,
+                                                'ms' => (int)round( ( microtime( true ) - $start ) * 1000 ) ) );
+            } );
+        return $result;
+    }
+
+    /**
+     * restart() without its audit record.
+     *
+     * @return array
+     */
+    protected function restartUnaudited()
+    {
         // Everything that can refuse a start is checked while the running
         // server is still up. This stopped first and rebuilt the engine
         // archive afterwards, so a rebuild that failed left no server at all

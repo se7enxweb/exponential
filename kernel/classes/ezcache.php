@@ -412,6 +412,7 @@ class eZCache
      */
     static function clearAll( $cacheList = false )
     {
+        $auditStart = microtime( true );
         if ( !$cacheList )
             $cacheList = eZCache::fetchList();
 
@@ -429,7 +430,33 @@ class eZCache
             // Always, or the deferred deletes of this process never happen.
             eZCacheTrash::end();
         }
+        self::auditCleared( 'all', array(), $cacheList, $auditStart );
         return true;
+    }
+
+    /**
+     * Records caches cleared on request (doc/bc/6.0/audit.md, system.cache.clear). Never throws.
+     *
+     * @param string $how all, tag, id or purge
+     * @param array $asked the tags or ids asked for
+     * @param array $items the cache items cleared
+     * @param float $start microtime of the start
+     */
+    static function auditCleared( $how, array $asked, array $items, $start )
+    {
+        if ( !class_exists( 'expAuditHook' ) )
+            return;
+        expAuditHook::emit( 'system.cache.clear', function () use ( $how, $asked, $items, $start ) {
+            $ids = array();
+            foreach ( $items as $item )
+            {
+                if ( isset( $item['id'] ) )
+                    $ids[] = (string)$item['id'];
+            }
+            return array( 'object' => array( 'type' => 'cache', 'id' => $how === 'all' ? 'all' : implode( ',', array_map( 'strval', $asked ) ),
+                                             'how' => $how ),
+                          'after' => array( 'ids' => $ids, 'ms' => (int)round( ( microtime( true ) - $start ) * 1000 ) ) );
+        } );
     }
 
     /**
@@ -440,6 +467,7 @@ class eZCache
      */
     static function clearByTag( $tagName, $cacheList = false )
     {
+        $auditStart = microtime( true );
         if ( !$cacheList )
             $cacheList = eZCache::fetchList();
 
@@ -462,6 +490,7 @@ class eZCache
             // Always, or the deferred deletes of this process never happen.
             eZCacheTrash::end();
         }
+        self::auditCleared( 'tag', array( $tagName ), $cacheItems, $auditStart );
         return true;
     }
 
@@ -474,6 +503,7 @@ class eZCache
      */
     static function clearByID( $idList, $cacheList = false )
     {
+        $auditStart = microtime( true );
         if ( !$cacheList )
             $cacheList = eZCache::fetchList();
 
@@ -498,6 +528,7 @@ class eZCache
             // Always, or the deferred deletes of this process never happen.
             eZCacheTrash::end();
         }
+        self::auditCleared( 'id', $idList, $cacheItems, $auditStart );
         return true;
     }
 

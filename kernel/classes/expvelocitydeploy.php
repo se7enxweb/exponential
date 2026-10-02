@@ -184,8 +184,20 @@ class expVelocityDeploy
                 call_user_func( $this->printer, $entry, $i + 1, $count );
         }
 
-        return array( 'ok' => !$failed, 'dry-run' => !empty( $this->options['dry-run'] ),
-                      'seconds' => round( microtime( true ) - $start, 1 ), 'steps' => $report );
+        $result = array( 'ok' => !$failed, 'dry-run' => !empty( $this->options['dry-run'] ),
+                         'seconds' => round( microtime( true ) - $start, 1 ), 'steps' => $report );
+
+        // Audit (doc/bc/6.0/audit.md, system.velocity.deploy): a deploy that ran (not a dry run)
+        if ( empty( $this->options['dry-run'] ) && class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'system.velocity.deploy', function () use ( $report, $failed, $start ) {
+                $steps = array();
+                foreach ( $report as $entry )
+                    $steps[(string)$entry['id']] = (string)$entry['status'];
+                return array( 'object' => array( 'type' => 'velocity', 'id' => 'deploy' ), 'verb' => 'deploy',
+                              'result' => $failed ? 'failed' : 'success', 'reason' => $failed ? 'error' : null,
+                              'after' => array( 'steps' => $steps, 'ms' => (int)round( ( microtime( true ) - $start ) * 1000 ) ) );
+            } );
+        return $result;
     }
 
     /**

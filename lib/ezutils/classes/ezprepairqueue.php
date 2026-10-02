@@ -77,8 +77,29 @@ class ezpRepairQueue
               . ( $s['Composer'] !== '' ? 'Composer=' . $s['Composer'] . "\n" : '' ) . "\n*/ ?>\n";
         if ( !is_dir( dirname( $file ) ) )
             mkdir( dirname( $file ), 0775, true );
+        $before = self::settings();
         file_put_contents( $file, $text, LOCK_EX );
         @chmod( $file, 0640 );
+
+        // Audit (doc/bc/6.0/audit.md, system.repair.queue): whether a key is set, never the key or its hash. The
+        // audit may be one of the things missing here, so it is only asked for when its class can be loaded.
+        try
+        {
+            if ( class_exists( 'expAuditHook' ) )
+            {
+                $describe = function ( array $x ) {
+                    return array( 'enabled' => (bool)$x['Enabled'], 'key_set' => $x['KeyHash'] !== '', 'composer' => (string)$x['Composer'] );
+                };
+                $after = $describe( $s + array( 'Enabled' => false, 'KeyHash' => '', 'Composer' => '' ) );
+                $was = $describe( $before );
+                $new = $before['KeyHash'] !== ( isset( $s['KeyHash'] ) ? $s['KeyHash'] : '' ) && $after['key_set'];
+                expAuditHook::emit( 'system.repair.queue', array( 'object' => array( 'type' => 'repair_queue', 'id' => 'settings' ),
+                    'verb' => 'change', 'before' => $was, 'after' => $after + array( 'new_key' => $new ) ) );
+            }
+        }
+        catch ( Throwable $e )
+        {
+        }
     }
 
     /** @return bool whether the page offers the repair */

@@ -148,6 +148,7 @@ class expMaintenance
         );
         $file = rtrim( $root, '/' ) . '/' . self::MARKER;
         $tmp = $file . '.tmp' . getmypid();
+        $auditBefore = self::state( $root );
         if ( @file_put_contents( $tmp, json_encode( $state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" ) === false )
             return false;
         @chmod( $tmp, 0666 );
@@ -155,7 +156,31 @@ class expMaintenance
         if ( !@rename( $tmp, $file ) )
             return false;
         self::clearResponseCaches( $root );
+        self::auditChange( $auditBefore, $state );
         return true;
+    }
+
+    /**
+     * Records maintenance switched on, changed or off (doc/bc/6.0/audit.md, system.maintenance.change): the mode
+     * and the reason, never the allowed addresses.
+     *
+     * @param array|false $before the state before, false when off
+     * @param array|false $after the state after, false when off
+     */
+    protected static function auditChange( $before, $after )
+    {
+        if ( !class_exists( 'expAuditHook' ) )
+            return;
+        $describe = function ( $state ) {
+            if ( !is_array( $state ) )
+                return array( 'mode' => 'off' );
+            return array( 'mode' => 'on', 'reason' => isset( $state['reason'] ) ? (string)$state['reason'] : null,
+                          'until' => isset( $state['until'] ) ? (int)$state['until'] : 0,
+                          'allowed_paths' => isset( $state['allow_paths'] ) ? count( (array)$state['allow_paths'] ) : 0,
+                          'allowed_addresses' => isset( $state['allow_ips'] ) ? count( (array)$state['allow_ips'] ) : 0 );
+        };
+        expAuditHook::emit( 'system.maintenance.change', array( 'object' => array( 'type' => 'maintenance', 'id' => 'site' ),
+            'verb' => 'change', 'before' => $describe( $before ), 'after' => $describe( $after ) ) );
     }
 
     /**
@@ -173,7 +198,10 @@ class expMaintenance
             return false;
         if ( $onlyRun !== null && ( !isset( $state['run'] ) || $state['run'] !== $onlyRun ) )
             return false;
-        return @unlink( rtrim( $root, '/' ) . '/' . self::MARKER );
+        $removed = @unlink( rtrim( $root, '/' ) . '/' . self::MARKER );
+        if ( $removed )
+            self::auditChange( $state, false );
+        return $removed;
     }
 
     /**

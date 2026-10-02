@@ -165,12 +165,18 @@ class Templateedit extends \Exponential\Runnable\ModuleView
                     }
                 }
 
+                $auditBefore = is_file( $template ) ? hash_file( 'sha256', $template ) : null;
                 $fp = fopen( $template, 'w' );
                 if ( $fp )
                 {
                     fwrite( $fp, $templateContent );
                 }
                 fclose( $fp );
+                // Audit (doc/bc/6.0/audit.md, system.template.change): never the template text
+                if ( class_exists( 'expAuditHook' ) )
+                    \expAuditHook::emit( 'system.template.change', array( 'object' => array( 'type' => 'template', 'id' => (string)$template ),
+                        'verb' => 'change', 'before' => array( 'sha256' => $auditBefore ),
+                        'after' => array( 'sha256' => is_file( $template ) ? hash_file( 'sha256', $template ) : null ) ) );
 
                 $siteConfig = \eZINI::instance( 'site.ini' );
                 $filePermissions = $siteConfig->variable( 'FileSettings', 'StorageFilePermissions');

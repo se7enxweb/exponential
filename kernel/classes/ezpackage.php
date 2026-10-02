@@ -1142,6 +1142,27 @@ class eZPackage
      */
     static function import( $archiveName, &$packageName, $dbAvailable = true, $repositoryID = false, $skipExisting = false )
     {
+        $result = eZPackage::importUnaudited( $archiveName, $packageName, $dbAvailable, $repositoryID, $skipExisting );
+        // Audit (doc/bc/6.0/audit.md, system.package.import): the archive's sha256, never its content
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'system.package.import', function () use ( $result, $archiveName, $packageName ) {
+                $ok = $result instanceof eZPackage;
+                $data = array( 'object' => $ok ? $result->auditObject() : array( 'type' => 'package', 'id' => (string)$packageName ),
+                               'result' => $ok ? 'success' : 'failed',
+                               'after' => array( 'name' => (string)$packageName, 'archive' => basename( (string)$archiveName ),
+                                                 'sha256' => is_file( $archiveName ) ? hash_file( 'sha256', $archiveName ) : null ) );
+                if ( !$ok )
+                    $data['reason'] = $result === eZPackage::STATUS_ALREADY_EXISTS ? 'exists' : ( $result === eZPackage::STATUS_INVALID_NAME ? 'validation' : 'error' );
+                return $data;
+            } );
+        return $result;
+    }
+
+    /**
+     * import() without its audit record.
+     */
+    static function importUnaudited( $archiveName, &$packageName, $dbAvailable = true, $repositoryID = false, $skipExisting = false )
+    {
         if ( is_dir( $archiveName ) )
         {
             eZDebug::writeError( "Importing from directory is not supported." );
@@ -1966,6 +1987,47 @@ class eZPackage
      */
     function install( &$installParameters )
     {
+        // Audit (doc/bc/6.0/audit.md, system.package.install): the parent of what the install records
+        if ( !class_exists( 'expAuditHook' ) || !expAuditHook::on( 'system.package.install' ) )
+            return $this->installUnaudited( $installParameters );
+        $parent = expAuditHook::begin( 'system.package.install', array( 'object' => $this->auditObject() ) );
+        try
+        {
+            $package = $this;
+            $result = expAuditHook::withParent( $parent, function () use ( $package, &$installParameters ) {
+                return $package->installUnaudited( $installParameters );
+            } );
+        }
+        catch ( Throwable $e )
+        {
+            expAuditHook::end( $parent, array( 'result' => 'failed', 'reason' => 'error', 'error' => array( 'message' => get_class( $e ) ) ) );
+            throw $e;
+        }
+        expAuditHook::end( $parent, array( 'result' => $result ? 'success' : 'failed', 'reason' => $result ? null : 'error',
+                                           'after' => array( 'name' => (string)$this->attribute( 'name' ),
+                                                             'version' => (string)$this->attribute( 'version-number' ) . '-' . (string)$this->attribute( 'release-number' ),
+                                                             'items' => is_array( $this->Parameters['install'] ) ? count( $this->Parameters['install'] ) : 0,
+                                                             'install_type' => (string)$this->Parameters['install_type'] ) ) );
+        return $result;
+    }
+
+    /**
+     * The package as an audit object: name, version, type.
+     *
+     * @return array
+     */
+    function auditObject()
+    {
+        return array( 'type' => 'package', 'id' => (string)$this->attribute( 'name' ),
+                      'version' => (string)$this->attribute( 'version-number' ) . '-' . (string)$this->attribute( 'release-number' ),
+                      'package_type' => (string)$this->attribute( 'type' ) );
+    }
+
+    /**
+     * install() without its audit record.
+     */
+    function installUnaudited( &$installParameters )
+    {
         $pkgName = $this->attribute( 'name' );
         static $installing = array();
         if ( isset( $installing[$pkgName] ) )
@@ -2103,6 +2165,22 @@ class eZPackage
      Install all install items in package
     */
     function uninstall( $uninstallParameters = array() )
+    {
+        $installed = $this->Parameters['install_type'] == 'install' && $this->isInstalled();
+        $result = $this->uninstallUnaudited( $uninstallParameters );
+        // Audit (doc/bc/6.0/audit.md, system.package.uninstall)
+        if ( $installed && class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'system.package.uninstall', array( 'object' => $this->auditObject(),
+                'result' => $result ? 'success' : 'failed', 'reason' => $result ? null : 'error',
+                'before' => array( 'name' => (string)$this->attribute( 'name' ),
+                                   'version' => (string)$this->attribute( 'version-number' ) . '-' . (string)$this->attribute( 'release-number' ) ) ) );
+        return $result;
+    }
+
+    /**
+     * uninstall() without its audit record.
+     */
+    function uninstallUnaudited( $uninstallParameters = array() )
     {
         if ( $this->Parameters['install_type'] != 'install' )
             return;

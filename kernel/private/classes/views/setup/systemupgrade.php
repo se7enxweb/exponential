@@ -190,6 +190,18 @@ class Systemupgrade extends \Exponential\Runnable\ModuleView
             }
         }
 
+        // Audit (doc/bc/6.0/audit.md, system.upgrade.run): an upgrade check that ran, with its outcome
+        if ( ( $Module->isCurrentAction( 'MD5Check' ) || $Module->isCurrentAction( 'DBCheck' ) ) && class_exists( 'expAuditHook' ) )
+        {
+            $check = $Module->isCurrentAction( 'MD5Check' ) ? 'md5' : 'database';
+            $value = $tpl->variable( $check === 'md5' ? 'md5_result' : 'upgrade_sql' );
+            $outcome = $value === 'ok' || $value === 'mongo' ? 'ok' : ( $value === 'failed' ? 'failed' : 'differences' );
+            \expAuditHook::emit( 'system.upgrade.run', array( 'object' => array( 'type' => 'upgrade', 'id' => $check . '_check' ), 'verb' => 'run',
+                'result' => $outcome === 'failed' ? 'failed' : 'success', 'reason' => $outcome === 'failed' ? 'error' : null,
+                'after' => array( 'check' => $check, 'outcome' => $outcome,
+                                  'differences' => is_array( $value ) ? count( $value ) : ( $outcome === 'differences' ? 1 : 0 ) ) ) );
+        }
+
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:setup/systemupgrade.tpl" );
         $Result['path'] = array( array( 'url' => false,

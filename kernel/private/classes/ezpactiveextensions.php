@@ -165,6 +165,19 @@ class ezpActiveExtensions
             return false;
         }
         eZINI::resetInstance( 'site.ini' );
+
+        // Audit (doc/bc/6.0/audit.md, system.extension.change): the list and its order, before and after
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $old = isset( $beforeGroups['ExtensionSettings']['ActiveExtensions'] ) ? array_values( array_filter( (array)$beforeGroups['ExtensionSettings']['ActiveExtensions'], 'strlen' ) ) : array();
+            $new = array_values( array_filter( $list, 'strlen' ) );
+            if ( $old !== $new )
+                expAuditHook::emit( 'system.extension.change', array(
+                    'object' => array( 'type' => 'setting', 'id' => 'site.ini/ExtensionSettings/ActiveExtensions', 'path' => $path ),
+                    'before' => array( 'list' => $old ), 'after' => array( 'list' => $new,
+                                                                            'added' => array_values( array_diff( $new, $old ) ),
+                                                                            'removed' => array_values( array_diff( $old, $new ) ) ) ) );
+        }
         return true;
     }
 

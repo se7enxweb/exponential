@@ -513,6 +513,11 @@ class Templatecreate extends \Exponential\Runnable\ModuleView
                     fclose( $fp );
                     chmod( $fileName, octdec( $filePermission ) );
                     umask( $oldumask );
+                    // Audit (doc/bc/6.0/audit.md, system.template.change): a new override template, never its text
+                    if ( class_exists( 'expAuditHook' ) )
+                        \expAuditHook::emit( 'system.template.change', array( 'object' => array( 'type' => 'template', 'id' => (string)$fileName ),
+                            'verb' => 'create', 'before' => array( 'sha256' => null ),
+                            'after' => array( 'sha256' => hash_file( 'sha256', $fileName ), 'siteaccess' => (string)$siteAccess ) ) );
 
                     // Store override.ini.append file
                     // Clear stale INI cache first so the newly created group is merged
