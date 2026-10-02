@@ -37,7 +37,49 @@ class eZImageType extends eZDataType
         {
             $dataText = $originalContentObjectAttribute->attribute( "data_text" );
             $contentObjectAttribute->setAttribute( "data_text", $dataText );
+
+            // A copy into another content object (eZContentObject::copy()) gets
+            // image files, XML and ezimagefile rows of its own, see
+            // eZImageAliasHandler::ownCopiedImage(). A new version or a
+            // translation of the same object keeps sharing the image.
+            if ( $contentObjectAttribute->attribute( 'id' ) &&
+                 $originalContentObjectAttribute->attribute( 'contentobject_id' ) != $contentObjectAttribute->attribute( 'contentobject_id' ) )
+            {
+                // The clone carries the source's handler and DOM: start from the copied XML alone
+                $contentObjectAttribute->DataTypeCustom = array();
+                $imageHandler = new eZImageAliasHandler( $contentObjectAttribute );
+                if ( $imageHandler->ownCopiedImage( self::filePathsInXML( $dataText ) ) )
+                {
+                    $imageHandler->store( $contentObjectAttribute );
+                }
+                $contentObjectAttribute->setContent( $imageHandler );
+            }
         }
+    }
+
+    /**
+     * Every url="" the image XML $dataText names (the original and its aliases).
+     *
+     * @param string $dataText
+     * @return string[]
+     */
+    static function filePathsInXML( $dataText )
+    {
+        if ( !is_string( $dataText ) || trim( $dataText ) === '' )
+            return array();
+        $useErrors = libxml_use_internal_errors( true );
+        $doc = simplexml_load_string( $dataText );
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useErrors );
+        if ( $doc === false )
+            return array();
+        $paths = array();
+        foreach ( $doc->xpath( "//*/@url" ) as $url )
+        {
+            if ( (string)$url !== '' )
+                $paths[] = (string)$url;
+        }
+        return array_values( array_unique( $paths ) );
     }
 
     /*!

@@ -932,9 +932,11 @@ class eZImageAliasHandler
                     $fileHandler->fileLinkCopy( $oldURL, $alias['url'], false );
 
                     // we still move the file if no other attribute from the current content uses it
+                    // The file was linked, not moved: the old one still exists for the
+                    // attribute that owns it, so only this attribute's row moves (false)
                     if ( count( eZImageFile::fetchImageAttributesByFilepath( $oldURL, $this->ContentObjectAttributeData['id'] ) ) == 1 )
                     {
-                        eZImageFile::moveFilepath( $this->ContentObjectAttributeData['id'], $oldURL, $alias['url'] );
+                        eZImageFile::moveFilepath( $this->ContentObjectAttributeData['id'], $oldURL, $alias['url'], false );
                     }
                     else
                     {
@@ -947,6 +949,94 @@ class eZImageAliasHandler
 
         $this->recreateDOMTree();
         $this->setStorageRequired();
+    }
+
+    /**
+     * Gives this attribute, just copied from an image attribute of another
+     * content object (eZContentObject::copy()), image files of its own.
+     *
+     * The copied XML still named the source attribute as the owner of the
+     * image (<original attribute_id=...>) and the source's file paths. The copy
+     * was then never the owner: publishing it linked the files under its node
+     * but kept the source's attribute id in the path and the XML, and moving
+     * the rows along took the source's ezimagefile rows with them. Removing
+     * the copy then left rows behind and could delete the source's files.
+     *
+     * Now each file of the copy (the original and every valid alias) is linked
+     * (hard link, or a copy where links are not possible) into the copy's own
+     * versioned directory, the XML names the copy itself as the owner, and the
+     * ezimagefile rows of the copy name only its own files. The source's files
+     * and rows are never touched. A missing alias file is dropped (it is made
+     * again when shown); a missing original keeps its name in the new place.
+     *
+     * Only for a copy into another content object: new versions and
+     * translations of one object keep sharing their files as before.
+     *
+     * @param array $copiedPaths every path the copied XML named, whose rows of
+     *              this attribute the store before this call registered
+     * @return bool true if the XML changed and has to be stored
+     */
+    function ownCopiedImage( array $copiedPaths = array() )
+    {
+        $attributeID = (int)$this->ContentObjectAttributeData['id'];
+        if ( $attributeID <= 0 )
+            return false;
+
+        // Rows the first store of the copy made for the source's paths, of
+        // this attribute only
+        foreach ( array_unique( $copiedPaths ) as $copiedPath )
+        {
+            eZImageFile::removeFilepath( $attributeID, $copiedPath );
+        }
+
+        $aliasList = $this->aliasList();
+        $this->setOriginalAttributeDataValues( $attributeID,
+                                               $this->ContentObjectAttributeData['version'],
+                                               $this->ContentObjectAttributeData['language_code'] );
+        if ( !isset( $aliasList['original'] ) || $aliasList['original']['url'] == '' )
+        {
+            // No image: only the owner in the XML changes
+            if ( isset( $aliasList['original'] ) )
+                $this->recreateDOMTree();
+            return isset( $aliasList['original'] );
+        }
+
+        $contentVersion = eZContentObjectVersion::fetchVersion( $this->ContentObjectAttributeData['version'],
+                                                                $this->ContentObjectAttributeData['contentobject_id'] );
+        $dirpath = $this->imagePath( $this->ContentObjectAttributeData, $contentVersion, true );
+        $name = $aliasList['original']['basename'];
+        $fileHandler = eZClusterFileHandler::instance();
+        $newPaths = array();
+        foreach ( $aliasList as $aliasName => $alias )
+        {
+            $oldURL = $alias['url'];
+            $basename = $aliasName == 'original' ? $name : $name . '_' . $aliasName;
+            eZMimeType::changeFileData( $alias, $dirpath, $basename );
+            $alias['full_path'] = $alias['url'];
+
+            $exists = $oldURL != '' && self::isStorageFilePath( $oldURL ) && eZClusterFileHandler::instance( $oldURL )->exists();
+            if ( !$exists && $aliasName != 'original' )
+            {
+                unset( $aliasList[$aliasName] );
+                continue;
+            }
+            if ( $exists )
+            {
+                if ( !file_exists( $dirpath ) )
+                    eZDir::mkdir( $dirpath, false, true );
+                $fileHandler->fileLinkCopy( $oldURL, $alias['url'], false );
+            }
+            $aliasList[$aliasName] = $alias;
+            $newPaths[] = $alias['url'];
+        }
+        $this->setAliasList( $aliasList );
+        $this->recreateDOMTree();
+
+        foreach ( $newPaths as $newPath )
+        {
+            eZImageFile::appendFilepath( $attributeID, $newPath, true );
+        }
+        return true;
     }
 
     /*!

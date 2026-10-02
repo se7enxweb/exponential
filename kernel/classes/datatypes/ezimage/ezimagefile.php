@@ -177,7 +177,15 @@ class eZImageFile extends eZPersistentObject
         );
     }
 
-    static function moveFilepath( $contentObjectAttributeID, $oldFilepath, $newFilepath )
+    /**
+     * Moves the ezimagefile row of $contentObjectAttributeID from $oldFilepath to $newFilepath.
+     *
+     * $followSharedRows: the file itself was moved (the caller owns it), so the rows of the
+     * translations of the same content object that share it move too. A caller that only
+     * linked or copied the file passes false: the old file still exists, and whoever names it
+     * keeps its row.
+     */
+    static function moveFilepath( $contentObjectAttributeID, $oldFilepath, $newFilepath, $followSharedRows = true )
     {
         $db = eZDB::instance();
         $db->begin();
@@ -190,10 +198,19 @@ class eZImageFile extends eZPersistentObject
         // followed when the file moved, so every sibling was left naming a
         // path that no longer exists - four dangling rows after an install.
         // The file really has moved, so the references have to move with it.
-        foreach ( eZImageFile::fetchListByFilePath( $oldFilepath ) as $sharedRow )
+        //
+        // Only rows of the same content object are siblings. A row of another
+        // object naming the path is that object's own (an object copied before
+        // copies owned their files): re-pointing it at this object's new path
+        // took the source's row away from the source's file, so removing the
+        // copy later left the row behind and could delete the source's file.
+        $objectID = $followSharedRows ? eZImageFile::contentObjectIDOfAttribute( $contentObjectAttributeID ) : false;
+        foreach ( $objectID ? eZImageFile::fetchListByFilePath( $oldFilepath ) : array() as $sharedRow )
         {
             $sharedAttributeID = (int) $sharedRow['contentobject_attribute_id'];
             if ( $sharedAttributeID === (int) $contentObjectAttributeID )
+                continue;
+            if ( eZImageFile::contentObjectIDOfAttribute( $sharedAttributeID ) !== $objectID )
                 continue;
 
             eZImageFile::removeFilepath( $sharedAttributeID, $oldFilepath );
@@ -202,6 +219,23 @@ class eZImageFile extends eZPersistentObject
 
         $db->commit();
         return $result;
+    }
+
+    /**
+     * The content object id of the attribute $contentObjectAttributeID (any version), or false.
+     *
+     * @param int $contentObjectAttributeID
+     * @return int|false
+     */
+    static function contentObjectIDOfAttribute( $contentObjectAttributeID )
+    {
+        $rows = eZPersistentObject::fetchObjectList( eZContentObjectAttribute::definition(),
+                                                     array( 'contentobject_id' ),
+                                                     array( 'id' => (int) $contentObjectAttributeID ),
+                                                     null,
+                                                     array( 'offset' => 0, 'length' => 1 ),
+                                                     false );
+        return $rows ? (int) $rows[0]['contentobject_id'] : false;
     }
 
     static function appendFilepath( $contentObjectAttributeID, $filepath, $ignoreUnique = false )
