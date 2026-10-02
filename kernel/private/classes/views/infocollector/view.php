@@ -55,6 +55,11 @@ class View extends \Exponential\Runnable\ModuleView
         $objectID   = $collection->attribute( 'contentobject_id' );
         $objectName = $object->attribute( 'name' );
 
+        // Audit (doc/bc/6.0/audit.md, data.infocollection.view): which collection was opened, never its values
+        if ( class_exists( 'expAuditHook' ) )
+            \expAuditHook::emit( 'data.infocollection.view', array( 'object' => array( 'type' => 'collection', 'id' => (int)$collection->attribute( 'id' ) ),
+                'target' => array( 'type' => 'object', 'id' => (int)$objectID, 'name' => (string)$objectName ), 'verb' => 'read' ) );
+
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'module', $Module );
         $tpl->setVariable( 'collection', $collection );

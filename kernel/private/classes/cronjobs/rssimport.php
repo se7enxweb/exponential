@@ -45,6 +45,19 @@ function rssImport1( $root, $rssImport, $cli )
     }
 
     $cli->output( 'RSSImport '.$rssImport->attribute( 'name' ).': End. '.$addCount.' objects added' );
+    rssImportAudit( $rssImport, $addCount );
+}
+
+/*!
+  Records an RSS import that ran (doc/bc/6.0/audit.md, data.import.rss)
+*/
+function rssImportAudit( $rssImport, $addCount )
+{
+    if ( class_exists( 'expAuditHook' ) )
+        expAuditHook::emit( 'data.import.rss', array( 'object' => array( 'type' => 'feed', 'id' => (int)$rssImport->attribute( 'id' ),
+                                                                         'name' => (string)$rssImport->attribute( 'name' ) ),
+            'target' => array( 'type' => 'node', 'id' => (int)$rssImport->attribute( 'destination_node_id' ) ), 'verb' => 'import',
+            'after' => array( 'created' => (int)$addCount ) ) );
 }
 
 /*!
@@ -68,6 +81,7 @@ function rssImport2( $root, $rssImport, $cli )
     }
 
     $cli->output( 'RSSImport '.$rssImport->attribute( 'name' ).': End. '.$addCount.' objects added' );
+    rssImportAudit( $rssImport, $addCount );
 }
 
 /*!

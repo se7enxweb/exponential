@@ -72,7 +72,12 @@ class Overview extends \Exponential\Runnable\ModuleView
             {
                 foreach( $objectIDArray as $objectID )
                 {
+                    $auditCount = class_exists( 'expAuditHook' ) ? (int)\eZInformationCollection::fetchCollectionsCount( $objectID ) : 0;
                     \eZInformationCollection::removeContentObject( $objectID );
+                    // Audit (doc/bc/6.0/audit.md, data.infocollection.remove): all of an object's collections
+                    if ( class_exists( 'expAuditHook' ) )
+                        \expAuditHook::emit( 'data.infocollection.remove', array( 'object' => array( 'type' => 'collection', 'id' => 'all' ),
+                            'target' => \expAuditHook::object( (int)$objectID ), 'verb' => 'remove', 'before' => array( 'count' => $auditCount ) ) );
                 }
             }
         }

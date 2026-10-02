@@ -70,8 +70,14 @@ class Subitemsexport extends \Exponential\Runnable\ModuleView
 
         // no catch( Exception ) around the download and cleanExit(): under Velocity cleanExit() throws
         $out = fopen( 'php://output', 'w' );
-        \expSubitemsCSVExport::export( $out, $parent, $registry, $columns, $sortKey, $ascending );
+        $rows = \expSubitemsCSVExport::export( $out, $parent, $registry, $columns, $sortKey, $ascending );
         fclose( $out );
+
+        // Audit (doc/bc/6.0/audit.md, data.export.csv): what left the system, never the values
+        if ( class_exists( 'expAuditHook' ) )
+            \expAuditHook::emit( 'data.export.csv', array( 'object' => \expAuditHook::node( $parent ), 'verb' => 'export',
+                'after' => array( 'node' => (int)$nodeID, 'rows' => (int)$rows, 'columns' => array_values( array_map( 'strval', array_keys( $columns ) ) ),
+                                  'file' => (string)$fileName ) ) );
 
         \eZExecution::cleanExit();
 

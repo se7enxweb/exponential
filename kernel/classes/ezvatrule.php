@@ -164,6 +164,14 @@ class eZVatRule extends eZPersistentObject
     static function removeVatRule( $id )
     {
         $db = eZDB::instance();
+        // Audit (doc/bc/6.0/audit.md, commerce.vat.change): the row removed
+        if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.vat.change' ) )
+        {
+            $auditRow = eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$id ), false );
+            if ( is_array( $auditRow ) )
+                expAuditHook::emit( 'commerce.vat.change', array( 'object' => array( 'type' => 'vat_rule', 'id' => (int)$id ), 'verb' => 'remove',
+                                                 'before' => array_intersect_key( $auditRow, array_flip( array( 'country_code', 'vat_type' ) ) ) ) );
+        }
 
         $db->begin();
 
@@ -181,8 +189,12 @@ class eZVatRule extends eZPersistentObject
         $db = eZDB::instance();
         $db->begin();
 
-        // Store the rule itself.
+        // Store the rule itself (and record what changed: doc/bc/6.0/audit.md, commerce.vat.change)
+        $auditBefore = class_exists( 'expAuditHook' ) ? expAuditHook::rowBefore( 'commerce.vat.change', $this ) : null;
         parent::store( $fieldFilters );
+        if ( $auditBefore !== null )
+            expAuditHook::rowChanged( 'commerce.vat.change', $this, $auditBefore, array( 'country_code', 'vat_type' ),
+                                      array( 'type' => 'vat_rule', 'id' => (int)$this->attribute( 'id' ) ) );
 
         // Store product categories associated with the rule,
         $this->removeProductCategories();

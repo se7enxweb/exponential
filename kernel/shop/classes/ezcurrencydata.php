@@ -254,6 +254,10 @@ class eZCurrencyData extends eZPersistentObject
                 eZPersistentObject::removeObject( eZCurrencyData::definition(),
                                                   array( 'code' => array( $currencyCodeList ) ) );
             $db->commit();
+            // Audit (doc/bc/6.0/audit.md, commerce.currency.change)
+            if ( class_exists( 'expAuditHook' ) )
+                expAuditHook::emit( 'commerce.currency.change', array( 'object' => array( 'type' => 'currency', 'id' => implode( ',', array_map( 'strval', $currencyCodeList ) ) ),
+                    'verb' => 'remove', 'before' => array( 'codes' => array_values( array_map( 'strval', $currencyCodeList ) ) ) ) );
         }
     }
 
@@ -308,9 +312,36 @@ class eZCurrencyData extends eZPersistentObject
 
     function store( $fieldFilters = null )
     {
+        // Audit (doc/bc/6.0/audit.md, commerce.currency.change): the stored row before
+        $auditBefore = null;
+        if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.currency.change' ) )
+        {
+            $row = eZPersistentObject::fetchObject( eZCurrencyData::definition(), null, array( 'code' => (string)$this->attribute( 'code' ) ), false );
+            $auditBefore = is_array( $row ) ? $row : false;
+        }
         // data changed => reset RateValue
         $this->invalidateRateValue();
         parent::store( $fieldFilters );
+        if ( $auditBefore !== null )
+        {
+            $fields = array( 'symbol', 'locale', 'status', 'auto_rate_value', 'custom_rate_value', 'rate_factor' );
+            $before = array();
+            $after = array();
+            foreach ( $fields as $field )
+            {
+                $new = (string)$this->attribute( $field );
+                $old = $auditBefore === false ? null : (string)$auditBefore[$field];
+                if ( $old !== $new && !( is_numeric( $old ) && is_numeric( $new ) && (float)$old == (float)$new ) )
+                {
+                    $before[$field] = $old;
+                    $after[$field] = $new;
+                }
+            }
+            if ( $after )
+                expAuditHook::emit( 'commerce.currency.change', array( 'object' => array( 'type' => 'currency', 'id' => (string)$this->attribute( 'code' ) ),
+                    'verb' => $auditBefore === false ? 'create' : 'change',
+                    'before' => $auditBefore === false ? null : $before, 'after' => $after ) );
+        }
     }
 
     function isActive()

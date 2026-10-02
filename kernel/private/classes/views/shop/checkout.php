@@ -65,6 +65,15 @@ class Checkout extends \Exponential\Runnable\ModuleView
 
                     $http->setSessionVariable( "UserOrderID", $order->attribute( 'id' ) );
 
+                    // Audit (doc/bc/6.0/audit.md, commerce.basket.checkout): items and total, never the address
+                    if ( class_exists( 'expAuditHook' ) )
+                        \expAuditHook::emit( 'commerce.basket.checkout', function () use ( $order ) {
+                            return array( 'object' => array( 'type' => 'basket', 'id' => (int)$order->attribute( 'productcollection_id' ) ),
+                                          'target' => array( 'type' => 'order', 'id' => (int)$order->attribute( 'id' ) ),
+                                          'after' => array( 'items' => count( (array)$order->attribute( 'product_items' ) ),
+                                                            'total' => (string)$order->attribute( 'total_inc_vat' ) ) );
+                        } );
+
                     $operationResult = \eZOperationHandler::execute( 'shop', 'checkout', array( 'order_id' => $order->attribute( 'id' ) ) );
                     switch( $operationResult['status'] )
                     {

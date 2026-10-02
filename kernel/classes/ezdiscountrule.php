@@ -56,12 +56,32 @@ class eZDiscountRule extends eZPersistentObject
         return new eZDiscountRule( $row );
     }
 
+    /**
+     * Stores the discount group and records what changed (doc/bc/6.0/audit.md, commerce.discount.change).
+     */
+    function store( $fieldFilters = null )
+    {
+        $auditBefore = class_exists( 'expAuditHook' ) ? expAuditHook::rowBefore( 'commerce.discount.change', $this ) : null;
+        parent::store( $fieldFilters );
+        if ( $auditBefore !== null )
+            expAuditHook::rowChanged( 'commerce.discount.change', $this, $auditBefore, array( 'name' ),
+                                      array( 'type' => 'discount_group', 'id' => (int)$this->attribute( 'id' ) ) );
+    }
+
     /*!
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
      */
     static function removeByID( $id )
     {
+        // Audit (doc/bc/6.0/audit.md, commerce.discount.change): the row removed
+        if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.discount.change' ) )
+        {
+            $auditRow = eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$id ), false );
+            if ( is_array( $auditRow ) )
+                expAuditHook::emit( 'commerce.discount.change', array( 'object' => array( 'type' => 'discount_group', 'id' => (int)$id ), 'verb' => 'remove',
+                                                 'before' => array_intersect_key( $auditRow, array_flip( array( 'name' ) ) ) ) );
+        }
         eZPersistentObject::removeObject( eZDiscountRule::definition(),
                                           array( "id" => $id ) );
     }

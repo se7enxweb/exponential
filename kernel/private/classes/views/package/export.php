@@ -50,6 +50,11 @@ class Export extends \Exponential\Runnable\ModuleView
         $fileName = $exportPath;
         if ( $fileName != "" and file_exists( $fileName ) )
         {
+            // Audit (doc/bc/6.0/audit.md, data.export.package)
+            if ( class_exists( 'expAuditHook' ) )
+                \expAuditHook::emit( 'data.export.package', array( 'object' => array( 'type' => 'package', 'id' => (string)$package->attribute( 'name' ) ),
+                    'verb' => 'export', 'after' => array( 'name' => (string)$package->attribute( 'name' ), 'file' => (string)$exportName,
+                                                          'sha256' => hash_file( 'sha256', $fileName ) ) ) );
             clearstatcache();
             $fileSize = filesize( $fileName );
             $mimeType =  'application/octet-stream';

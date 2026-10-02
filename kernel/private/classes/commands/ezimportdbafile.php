@@ -61,6 +61,10 @@ class Ezimportdbafile extends \Exponential\Runnable\Command
                 $dataType = $registeredDataTypes[$dataTypeName];
                 if ( $dataType->importDBDataFromDBAFile() )
                 {
+                    // Audit (doc/bc/6.0/audit.md, data.import.dba)
+                    if ( class_exists( 'expAuditHook' ) )
+                        \expAuditHook::emit( 'data.import.dba', array( 'object' => array( 'type' => 'file', 'id' => (string)$dataType->getDBAFilePath() ),
+                            'verb' => 'import', 'after' => array( 'datatype' => (string)$dataType->DataTypeString ) ) );
                     $cli->output( "The database is updated for the datatype: " .
                                   $cli->style( 'emphasize' ) . $dataType->DataTypeString . $cli->style( 'emphasize-end' ) . "\n" .
                                   'dba-data is imported from the file: ' .

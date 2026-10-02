@@ -174,6 +174,12 @@ class Updatesearchindex extends \Exponential\Runnable\Command
 
         } while ( count( $objects ) == $length );
 
+        // Audit (doc/bc/6.0/audit.md, data.index.rebuild)
+        if ( class_exists( 'expAuditHook' ) )
+            \expAuditHook::emit( 'data.index.rebuild', array( 'object' => array( 'type' => 'search_index', 'id' => get_class( $searchEngine ) ),
+                'verb' => 'rebuild', 'after' => array( 'objects' => (int)$count, 'clean' => (bool)$cleanupSearch,
+                                                       'ms' => (int)round( ( microtime( true ) - ( isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (float)$_SERVER['REQUEST_TIME_FLOAT'] : microtime( true ) ) ) * 1000 ) ) ) );
+
         $cli->output();
         $cli->output( "done" );
 

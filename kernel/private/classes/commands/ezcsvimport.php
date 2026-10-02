@@ -97,6 +97,7 @@ class Ezcsvimport extends \Exponential\Runnable\Command
             $script->shutdown( 1 );
         }
 
+        $auditCreated = 0;
         while ( $objectData = fgetcsv( $fp, $csvLineLength , ';', '"' ) )
         {
 
@@ -142,9 +143,17 @@ class Ezcsvimport extends \Exponential\Runnable\Command
 
             $operationResult = \eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $contentObjectID,
                                                                                          'version' => 1 ) );
+            $auditCreated++;
         }
 
         fclose( $fp );
+
+        // Audit (doc/bc/6.0/audit.md, data.import.csv)
+        if ( class_exists( 'expAuditHook' ) )
+            \expAuditHook::emit( 'data.import.csv', array( 'object' => array( 'type' => 'file', 'id' => basename( (string)$inputFileName ),
+                                                                              'sha256' => is_file( $inputFileName ) ? hash_file( 'sha256', $inputFileName ) : null ),
+                'target' => \expAuditHook::node( $node ), 'verb' => 'import',
+                'after' => array( 'class' => (string)$createClass, 'created' => $auditCreated ) ) );
 
         $script->shutdown();
     }

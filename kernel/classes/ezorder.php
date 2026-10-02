@@ -1073,7 +1073,20 @@ class eZOrder extends eZPersistentObject
     static function removeItem( $itemID )
     {
         $item = eZProductCollectionItem::fetch( $itemID );
+        $auditData = null;
+        if ( $item && class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.order.item.remove' ) )
+        {
+            $orders = eZPersistentObject::fetchObjectList( eZOrder::definition(), null,
+                                                           array( 'productcollection_id' => (int)$item->attribute( 'productcollection_id' ) ), null, 1, false );
+            $auditData = array( 'object' => array( 'type' => 'order_item', 'id' => (int)$itemID ),
+                                'target' => $orders ? array( 'type' => 'order', 'id' => (int)$orders[0]['id'], 'order_nr' => (int)$orders[0]['order_nr'] ) : null,
+                                'before' => array( 'product' => (int)$item->attribute( 'contentobject_id' ), 'name' => (string)$item->attribute( 'name' ),
+                                                   'count' => (int)$item->attribute( 'item_count' ) ) );
+        }
         $item->remove();
+        // Audit (doc/bc/6.0/audit.md, commerce.order.item.remove)
+        if ( $auditData !== null )
+            expAuditHook::emit( 'commerce.order.item.remove', $auditData );
     }
 
     /*!
@@ -1307,6 +1320,7 @@ class eZOrder extends eZPersistentObject
         $history = eZOrderStatusHistory::create( $this->OrderNr, $statusID, $userID, $time );
         $history->store();
 
+        $auditOld = $this->StatusID;
         $this->StatusID = $statusID;
         $this->StatusModified = $time;
         $this->StatusModifierID = $userID;
@@ -1314,6 +1328,11 @@ class eZOrder extends eZPersistentObject
         $this->store();
 
         $db->commit();
+
+        // Audit (doc/bc/6.0/audit.md, commerce.order.status)
+        if ( class_exists( 'expAuditHook' ) && $auditOld != $statusID )
+            expAuditHook::emit( 'commerce.order.status', array( 'object' => array( 'type' => 'order', 'id' => (int)$this->ID, 'order_nr' => (int)$this->OrderNr ),
+                'before' => array( 'status' => (int)$auditOld ), 'after' => array( 'status' => (int)$statusID ) ) );
     }
 
     /*!
@@ -1416,6 +1435,19 @@ class eZOrder extends eZPersistentObject
 
             // Create an order status history element that matches the current status
             $this->createStatusHistory();
+
+            // Audit (doc/bc/6.0/audit.md, commerce.order.create): never the customer's address
+            if ( class_exists( 'expAuditHook' ) )
+            {
+                $order = $this;
+                expAuditHook::emit( 'commerce.order.create', function () use ( $order ) {
+                    $currency = expAuditHook::safe( function () use ( $order ) { return $order->currencyCode(); } );
+                    return array( 'object' => array( 'type' => 'order', 'id' => (int)$order->attribute( 'id' ), 'order_nr' => (int)$order->attribute( 'order_nr' ) ),
+                                  'after' => array( 'order_nr' => (int)$order->attribute( 'order_nr' ),
+                                                    'total' => (string)expAuditHook::safe( function () use ( $order ) { return $order->attribute( 'total_inc_vat' ); } ),
+                                                    'currency' => $currency !== null ? (string)$currency : null ) );
+                } );
+            }
         }
     }
 
@@ -1460,9 +1492,16 @@ class eZOrder extends eZPersistentObject
         $rows = $db->arrayQuery( "SELECT productcollection_id, order_nr FROM ezorder WHERE id='$orderID'" );
         if ( count( $rows ) > 0 )
         {
-            // Who deletes which order in shop should be logged.
-            eZAudit::writeAudit( 'order-delete', array( 'Order ID' => $orderID,
-                                                        'Comment' => 'Removed the order and its related data from the database: eZOrder::cleanupOrder()' ) );
+            // Who deletes which order (doc/bc/6.0/audit.md, commerce.order.delete): never customer address fields
+            $auditData = null;
+            if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.order.delete' ) )
+            {
+                $order = eZOrder::fetch( $orderID );
+                $auditData = array( 'object' => array( 'type' => 'order', 'id' => $orderID, 'order_nr' => (int)$rows[0]['order_nr'] ),
+                                    'before' => array( 'order_nr' => (int)$rows[0]['order_nr'],
+                                                       'status' => $order ? (int)$order->attribute( 'status_id' ) : null,
+                                                       'total' => $order ? (string)expAuditHook::safe( function () use ( $order ) { return $order->attribute( 'total_inc_vat' ); } ) : null ) );
+            }
 
             $productCollectionID = $rows[0]['productcollection_id'];
             $orderNr = (int)$rows[0]['order_nr'];
@@ -1473,6 +1512,8 @@ class eZOrder extends eZPersistentObject
             $db->query( "DELETE FROM ezproductcollection_item where productcollection_id='$productCollectionID'" );
             $db->query( "DELETE FROM ezorder_status_history WHERE order_id=$orderNr" );
             $db->commit();
+            if ( $auditData !== null )
+                expAuditHook::emit( 'commerce.order.delete', $auditData );
         }
     }
 
@@ -1487,6 +1528,10 @@ class eZOrder extends eZPersistentObject
         $db = eZDB::instance();
         $orderID =(int) $orderID;
         $db->query( "UPDATE ezorder SET is_archived='1' WHERE id='$orderID' " );
+        // Audit (doc/bc/6.0/audit.md, commerce.order.archive)
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'commerce.order.archive', array( 'object' => array( 'type' => 'order', 'id' => $orderID ),
+                'before' => array( 'archived' => false ), 'after' => array( 'archived' => true ) ) );
     }
 
     /*!
@@ -1500,6 +1545,10 @@ class eZOrder extends eZPersistentObject
         $db = eZDB::instance();
         $orderID =(int) $orderID;
         $db->query( "UPDATE ezorder SET is_archived='0' WHERE id='$orderID' " );
+        // Audit (doc/bc/6.0/audit.md, commerce.order.unarchive)
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'commerce.order.unarchive', array( 'object' => array( 'type' => 'order', 'id' => $orderID ),
+                'before' => array( 'archived' => true ), 'after' => array( 'archived' => false ) ) );
     }
 
     /*!
@@ -1524,8 +1573,10 @@ class eZOrder extends eZPersistentObject
             }
             eZProductCollection::cleanupList( $productCollectionIDList );
         }
-        // Who deletes which order in shop should be logged.
-        eZAudit::writeAudit( 'order-delete', array( 'Comment' => 'Removed all orders from the database: eZOrder::cleanup()' ) );
+        // Who removes all orders (doc/bc/6.0/audit.md, commerce.order.purge)
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'commerce.order.purge', array( 'object' => array( 'type' => 'orders', 'id' => 'all' ),
+                'before' => array( 'count' => count( $rows ) ) ) );
 
         eZOrderItem::cleanup();
         $db->query( "DELETE FROM ezorder_status_history" );

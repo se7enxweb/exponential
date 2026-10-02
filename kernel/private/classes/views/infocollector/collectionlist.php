@@ -74,6 +74,12 @@ class Collectionlist extends \Exponential\Runnable\ModuleView
             }
 
             $objectID = $http->sessionVariable( 'ObjectID' );
+            // Audit (doc/bc/6.0/audit.md, data.infocollection.remove): never the collected values
+            if ( is_array( $collectionIDArray ) && $collectionIDArray && class_exists( 'expAuditHook' ) )
+                \expAuditHook::emit( 'data.infocollection.remove', array(
+                    'object' => array( 'type' => 'collection', 'id' => implode( ',', array_map( 'intval', $collectionIDArray ) ) ),
+                    'target' => \expAuditHook::object( (int)$objectID ), 'verb' => 'remove',
+                    'before' => array( 'count' => count( $collectionIDArray ) ) ) );
             $module->redirectTo( '/infocollector/collectionlist/' . $objectID );
         }
 

@@ -40,8 +40,15 @@ class eZPaymentObject extends eZPersistentObject
     */
     function approve()
     {
+        $auditOld = (int)$this->attribute( 'status' );
         $this->setAttribute( 'status', self::STATUS_APPROVED );
         $this->store();
+        // Audit (doc/bc/6.0/audit.md, commerce.payment.approve): never card or account data
+        if ( class_exists( 'expAuditHook' ) && $auditOld !== (int)self::STATUS_APPROVED )
+            expAuditHook::emit( 'commerce.payment.approve', array( 'object' => array( 'type' => 'payment', 'id' => (int)$this->attribute( 'id' ),
+                                                                                     'payment_type' => (string)$this->attribute( 'payment_string' ) ),
+                'target' => array( 'type' => 'order', 'id' => (int)$this->attribute( 'order_id' ) ),
+                'before' => array( 'status' => $auditOld ), 'after' => array( 'status' => (int)self::STATUS_APPROVED ) ) );
     }
 
     function approved()

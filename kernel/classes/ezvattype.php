@@ -228,6 +228,18 @@ class eZVatType extends eZPersistentObject
     }
 
     /**
+     * Stores the VAT type and records what changed (doc/bc/6.0/audit.md, commerce.vat.change).
+     */
+    function store( $fieldFilters = null )
+    {
+        $auditBefore = class_exists( 'expAuditHook' ) ? expAuditHook::rowBefore( 'commerce.vat.change', $this ) : null;
+        parent::store( $fieldFilters );
+        if ( $auditBefore !== null )
+            expAuditHook::rowChanged( 'commerce.vat.change', $this, $auditBefore, array( 'name', 'percentage' ),
+                                      array( 'type' => 'vat_type', 'id' => (int)$this->attribute( 'id' ) ) );
+    }
+
+    /**
      * Remove given VAT type and all references to it.
      *
      * Drops VAT charging rules referencing the VAT type.
@@ -242,6 +254,14 @@ class eZVatType extends eZPersistentObject
         $vatID = $this->ID;
         $db = eZDB::instance();
         $db->begin();
+        // Audit (doc/bc/6.0/audit.md, commerce.vat.change): the row removed
+        if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.vat.change' ) )
+        {
+            $auditRow = eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$vatID ), false );
+            if ( is_array( $auditRow ) )
+                expAuditHook::emit( 'commerce.vat.change', array( 'object' => array( 'type' => 'vat_type', 'id' => (int)$vatID ), 'verb' => 'remove',
+                                                 'before' => array_intersect_key( $auditRow, array_flip( array( 'name', 'percentage' ) ) ) ) );
+        }
 
         // remove dependent VAT rules
         $dependentRules = eZVatRule::fetchByVatType( $vatID );

@@ -179,6 +179,12 @@ class Ezcsvexport extends \Exponential\Runnable\Command
             fclose( $fp );
         }
 
+        // Audit (doc/bc/6.0/audit.md, data.export.csv): what left the system, never the values
+        if ( class_exists( 'expAuditHook' ) )
+            \expAuditHook::emit( 'data.export.csv', array( 'object' => \expAuditHook::node( $node ), 'verb' => 'export',
+                'after' => array( 'node' => (int)$nodeID, 'rows' => count( $subTree ), 'classes' => array_keys( $openedFPs ),
+                                  'directory' => (string)$storageDir ) ) );
+
         $script->shutdown();
     }
 }

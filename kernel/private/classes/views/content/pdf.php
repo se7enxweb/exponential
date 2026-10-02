@@ -33,6 +33,14 @@ function contentPDFPassthrough( $cacheFile )
 
     $file->fetch( true );
 
+    // Audit (doc/bc/6.0/audit.md, data.export.pdf): the node a PDF was sent for
+    if ( class_exists( 'expAuditHook' ) )
+        expAuditHook::emit( 'data.export.pdf', function () {
+            $p = isset( $GLOBALS['eZRequestedModuleParams']['parameters'] ) ? (array)$GLOBALS['eZRequestedModuleParams']['parameters'] : array();
+            $nodeID = isset( $p['NodeID'] ) ? (int)$p['NodeID'] : 0;
+            return array( 'object' => $nodeID ? expAuditHook::node( $nodeID ) : array( 'type' => 'node' ), 'verb' => 'export' );
+        } );
+
     ob_clean();
 
     header( 'Pragma: ' );
