@@ -121,6 +121,13 @@ class eZMediaType extends eZDataType
 
     /*!
      Delete stored attribute
+
+     The rows go first; a file is deleted only when no ezmedia row of any object
+     names it any more. A copy of an object shares the source's file (the copied
+     row keeps the file name), so purging the copy, or the source while a copy
+     exists, must leave the file to the other one. A purge used to delete every
+     row's file unchecked, and removing one version counted only the rows of the
+     same object.
     */
     function deleteStoredObjectAttribute( $contentObjectAttribute, $version = null )
     {
@@ -128,52 +135,39 @@ class eZMediaType extends eZDataType
         $sys = eZSys::instance();
         $storage_dir = $sys->storageDirectory();
         if ( $version == null )
-        {
-            $mediaFiles = eZMedia::fetch( $contentObjectAttributeID, null );
-            foreach ( (array)$mediaFiles as $mediaFile )
-            {
-                $mimeType =  $mediaFile->attribute( "mime_type" );
-                // An empty mime type (a media row without a file yet) used to raise
-                // an undefined offset warning here
-                $orig_dir = $storage_dir . '/original/' . eZMedia::mimeGroup( $mimeType );
-                $fileName = $mediaFile->attribute( "filename" );
-
-                // No file, or a stored name with a directory part ("../../x"): not
-                // a file this datatype stored, never deleted
-                if ( !eZMedia::isSafeFileName( $fileName ) )
-                    continue;
-
-                $file = eZClusterFileHandler::instance( $orig_dir . "/" . $fileName );
-                if ( $file->exists() )
-                    $file->delete();
-            }
-        }
+            $mediaFiles = (array)eZMedia::fetch( $contentObjectAttributeID, null );
         else
-        {
-            $mediaFiles = eZMedia::fetchByContentObjectID( $contentObjectAttribute->attribute( 'contentobject_id' ) );
-            $count = 0;
-            $currentBinaryFile = eZMedia::fetch( $contentObjectAttributeID, $version );
-            if ( $currentBinaryFile != null )
-            {
-                $mimeType =  $currentBinaryFile->attribute( "mime_type" );
-                $currentFileName = $currentBinaryFile->attribute( "filename" );
-                $orig_dir = $storage_dir . '/original/' . eZMedia::mimeGroup( $mimeType );
-                foreach ( $mediaFiles as $mediaFile )
-                {
-                    $fileName = $mediaFile->attribute( "filename" );
-                    if( $currentFileName == $fileName )
-                        $count += 1;
-                }
-                // A stored name with a directory part is never deleted
-                if ( $count == 1 && eZMedia::isSafeFileName( $currentFileName ) )
-                {
-                    $file = eZClusterFileHandler::instance( $orig_dir . "/" . $currentFileName );
-                    if ( $file->exists() )
-                        $file->delete();
-                }
-            }
-        }
+            $mediaFiles = array( eZMedia::fetch( $contentObjectAttributeID, $version ) );
+
         eZMedia::removeByID( $contentObjectAttributeID, $version );
+
+        $checked = array();
+        foreach ( $mediaFiles as $mediaFile )
+        {
+            if ( $mediaFile == null )
+                continue;
+            // An empty mime type (a media row without a file yet) used to raise
+            // an undefined offset warning here
+            $orig_dir = $storage_dir . '/original/' . eZMedia::mimeGroup( $mediaFile->attribute( "mime_type" ) );
+            $fileName = $mediaFile->attribute( "filename" );
+
+            // No file, or a stored name with a directory part ("../../x"): not
+            // a file this datatype stored, never deleted
+            if ( !eZMedia::isSafeFileName( $fileName ) )
+                continue;
+            $filePath = $orig_dir . "/" . $fileName;
+            if ( isset( $checked[$filePath] ) )
+                continue;
+            $checked[$filePath] = true;
+
+            // Another row (another version, a copy, any object) still names the file
+            if ( count( (array)eZMedia::fetchByFileName( $fileName ) ) > 0 )
+                continue;
+
+            $file = eZClusterFileHandler::instance( $filePath );
+            if ( $file->exists() )
+                $file->delete();
+        }
     }
 
     /*!
