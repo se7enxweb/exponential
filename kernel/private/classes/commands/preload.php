@@ -193,61 +193,7 @@ class Preload extends \Exponential\Runnable\Command
         $sectionTotal = count( $sections );
         $sectionIdx   = 0;
 
-        foreach ( $sections as $url )
-        {
-            $sectionIdx++;
-
-            echo '  ' . $dim( "[{$sectionIdx}/{$sectionTotal}]" )
-               . '  ' . $bold( $cyan( $url ) ) . "\n";
-            flush();
-
-            $r = $fetch( $url );
-
-            $badge = $statusBadge( $r['http'] );
-            $speed = $speedLabel( $r['wall_ms'] );
-            $size  = $humanBytes( $r['size_bytes'] );
-
-            echo '         ' . $badge
-               . '  wall: '  . $speed
-               . '  size: '  . $dim( $size ) . "\n";
-
-            $hasDb   = $r['db_queries'] !== null || $r['db_time']    !== null;
-            $hasKern = $r['kernel_init'] !== null || $r['kernel_run'] !== null
-                    || $r['get_content'] !== null || $r['total_ms']  !== null;
-            $hasMem  = $r['peak_memory'] !== null;
-
-            if ( $hasDb )
-                echo '         ' . $gray( 'db       ' )
-                   . '  queries: ' . $yellow( $r['db_queries'] ?? '–' )
-                   . '  time: '    . $yellow( ( $r['db_time'] ?? '–' ) . 'ms' ) . "\n";
-
-            if ( $hasKern )
-                echo '         ' . $gray( 'kernel   ' )
-                   . '  init: '        . $dim( ( $r['kernel_init'] ?? '–' ) . 'ms' )
-                   . '  run: '         . $dim( ( $r['kernel_run']  ?? '–' ) . 'ms' )
-                   . '  get-content: ' . $dim( ( $r['get_content'] ?? '–' ) . 'ms' )
-                   . '  total: '       . $dim( ( $r['total_ms']    ?? '–' ) . 'ms' ) . "\n";
-
-            if ( $hasMem )
-                echo '         ' . $gray( 'memory   ' )
-                   . '  peak: ' . $magenta( $r['peak_memory'] . ' MB' ) . "\n";
-
-            if ( $r['http'] === '500' )
-            {
-                echo '         ' . $red( '── SERVER ERROR (first 5 non-empty lines) ──' ) . "\n";
-                $errLines = array_slice( explode( "\n", strip_tags( $r['html'] ) ), 0, 20 );
-                $shown    = 0;
-                foreach ( $errLines as $errLine )
-                {
-                    if ( trim( $errLine ) === '' ) continue;
-                    echo '           ' . $red( trim( $errLine ) ) . "\n";
-                    if ( ++$shown >= 5 ) break;
-                }
-            }
-
-            echo "\n";
-            flush();
-        }
+        $this->warmSections();
 
         // ══════════════════════════════════════════════════════════════════════════════
         //  PHASE 2 — Spider the full site via wget, parsed line-by-line
@@ -370,6 +316,103 @@ class Preload extends \Exponential\Runnable\Command
 
         // ── main wget output loop ─────────────────────────────────────────────────────
 
+        $this->spiderSite();
+
+        $flushAuth();
+        pclose( $handle );
+
+        // ══════════════════════════════════════════════════════════════════════════════
+        //  Final summary
+        // ══════════════════════════════════════════════════════════════════════════════
+
+        $bar = str_repeat( '━', 66 );
+        echo "\n" . $cyan( $bar ) . "\n";
+        echo '  ' . $bold( $white( 'PRELOAD COMPLETE' ) ) . "\n";
+        echo '  ' . $dim( 'Pages cached   ' ) . '  ' . $green( $urlCount   ) . "\n";
+        echo '  ' . $dim( 'Auth skipped   ' ) . '  ' . $yellow( $authCount )
+           . '  ' . $dim( '(password-protected resources)' ) . "\n";
+        echo '  ' . $dim( 'Broken links   ' ) . '  '
+           . ( $brokenCount > 0 ? $red( $brokenCount ) : $green( $brokenCount ) ) . "\n";
+        echo $cyan( $bar ) . "\n\n";
+
+        $script->shutdown();
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); the script's global variables are bound as in run().
+     */
+    protected function warmSections()
+    {
+        foreach ( array( 'sections', 'url', 'sectionIdx', 'dim', 'sectionTotal', 'bold', 'cyan', 'r', 'fetch', 'badge', 'statusBadge', 'speed', 'speedLabel', 'size', 'humanBytes', 'hasDb', 'hasKern', 'hasMem', 'gray', 'yellow', 'magenta', 'red', 'errLines', 'shown', 'errLine' ) as $__name )
+            ${$__name} = &$GLOBALS[$__name];
+        unset( $__name );
+
+        foreach ( $sections as $url )
+        {
+            $sectionIdx++;
+
+            echo '  ' . $dim( "[{$sectionIdx}/{$sectionTotal}]" )
+               . '  ' . $bold( $cyan( $url ) ) . "\n";
+            flush();
+
+            $r = $fetch( $url );
+
+            $badge = $statusBadge( $r['http'] );
+            $speed = $speedLabel( $r['wall_ms'] );
+            $size  = $humanBytes( $r['size_bytes'] );
+
+            echo '         ' . $badge
+               . '  wall: '  . $speed
+               . '  size: '  . $dim( $size ) . "\n";
+
+            $hasDb   = $r['db_queries'] !== null || $r['db_time']    !== null;
+            $hasKern = $r['kernel_init'] !== null || $r['kernel_run'] !== null
+                    || $r['get_content'] !== null || $r['total_ms']  !== null;
+            $hasMem  = $r['peak_memory'] !== null;
+
+            if ( $hasDb )
+                echo '         ' . $gray( 'db       ' )
+                   . '  queries: ' . $yellow( $r['db_queries'] ?? '–' )
+                   . '  time: '    . $yellow( ( $r['db_time'] ?? '–' ) . 'ms' ) . "\n";
+
+            if ( $hasKern )
+                echo '         ' . $gray( 'kernel   ' )
+                   . '  init: '        . $dim( ( $r['kernel_init'] ?? '–' ) . 'ms' )
+                   . '  run: '         . $dim( ( $r['kernel_run']  ?? '–' ) . 'ms' )
+                   . '  get-content: ' . $dim( ( $r['get_content'] ?? '–' ) . 'ms' )
+                   . '  total: '       . $dim( ( $r['total_ms']    ?? '–' ) . 'ms' ) . "\n";
+
+            if ( $hasMem )
+                echo '         ' . $gray( 'memory   ' )
+                   . '  peak: ' . $magenta( $r['peak_memory'] . ' MB' ) . "\n";
+
+            if ( $r['http'] === '500' )
+            {
+                echo '         ' . $red( '── SERVER ERROR (first 5 non-empty lines) ──' ) . "\n";
+                $errLines = array_slice( explode( "\n", strip_tags( $r['html'] ) ), 0, 20 );
+                $shown    = 0;
+                foreach ( $errLines as $errLine )
+                {
+                    if ( trim( $errLine ) === '' ) continue;
+                    echo '           ' . $red( trim( $errLine ) ) . "\n";
+                    if ( ++$shown >= 5 ) break;
+                }
+            }
+
+            echo "\n";
+            flush();
+        }
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); the script's global variables are bound as in run().
+     */
+    protected function spiderSite()
+    {
+        foreach ( array( 'handle', 'rawLine', 'line', 'pendingUrl', 'flushAuth', 'brokenCount', 'red', 'bold', 'dim', 'm', 'printUrl', 'extra', 'yellow', 'authCount', 'authBuffer', 'gray', 'green', 'n' ) as $__name )
+            ${$__name} = &$GLOBALS[$__name];
+        unset( $__name );
+
         while ( !feof( $handle ) )
         {
             $rawLine = fgets( $handle );
@@ -481,25 +524,6 @@ class Preload extends \Exponential\Runnable\Command
             echo '  ' . $dim( $line ) . "\n";
             flush();
         }
-
-        $flushAuth();
-        pclose( $handle );
-
-        // ══════════════════════════════════════════════════════════════════════════════
-        //  Final summary
-        // ══════════════════════════════════════════════════════════════════════════════
-
-        $bar = str_repeat( '━', 66 );
-        echo "\n" . $cyan( $bar ) . "\n";
-        echo '  ' . $bold( $white( 'PRELOAD COMPLETE' ) ) . "\n";
-        echo '  ' . $dim( 'Pages cached   ' ) . '  ' . $green( $urlCount   ) . "\n";
-        echo '  ' . $dim( 'Auth skipped   ' ) . '  ' . $yellow( $authCount )
-           . '  ' . $dim( '(password-protected resources)' ) . "\n";
-        echo '  ' . $dim( 'Broken links   ' ) . '  '
-           . ( $brokenCount > 0 ? $red( $brokenCount ) : $green( $brokenCount ) ) . "\n";
-        echo $cyan( $bar ) . "\n\n";
-
-        $script->shutdown();
     }
 }
 

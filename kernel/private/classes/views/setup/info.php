@@ -48,6 +48,137 @@ class Info extends \Exponential\Runnable\ModuleView
         $cacheAccess = \eZUser::currentUser()->hasAccessTo( 'setup', 'managecache' );
         $canFlushCaches = $cacheAccess['accessWord'] !== 'no';
 
+        $this->systemInfo( $info, $e, $systemInfo, $phpAcceleratorInfo );
+
+        // The web server's name and version when this page is served by Exponential
+        // Velocity's own server. The engine inside it is Qbix, and the Qbix names it
+        // still reports (SERVER_SOFTWARE "QbixServer/1.5.0", the upstream base it is
+        // built on) say nothing about which release is running: that is the fork's
+        // release line, v0.0.4.x, plus the build. One place, used by every box below.
+        $this->webserverInfo( $velocityBrand, $velocityEngineNames, $webserverInfo, $engine, $m );
+
+        // The site. [SiteSettings] SiteURL is a setting, written once at installation:
+        // an installation made from the command line (the kickstarter) has no host to
+        // read, so it could be left at "localhost" for good. What the page shows first
+        // is where this siteaccess and the public site actually are, worked out for
+        // this request (scheme, host, port, siteaccess path); the setting follows,
+        // flagged when it is empty or a loopback name, as mails and feeds use it.
+        $this->siteInfo( $tpl );
+
+        $tpl->setVariable( 'ezpublish_version', \ExponentialSDK::version() . " (" . \ExponentialSDK::alias() . ")" );
+        $tpl->setVariable( 'ezpublish_extensions', \eZExtension::activeExtensions() );
+        $tpl->setVariable( 'php_version', phpversion() );
+        $tpl->setVariable( 'php_accelerator', $phpAcceleratorInfo );
+        // How this request is being executed, and out of what.
+        //
+        // The engine can be loaded from a thousand files on disk or from one archive,
+        // and which it is changes where a stack trace points, what a file listing
+        // means, and whether an edited kernel file has any effect at all. That is not
+        // something a person -- or an agent reading this page to find its bearings --
+        // should have to deduce from a path in an error message.
+        $this->engineSourceInfo( $engineInfo, $engineServer, $velocityBrand );
+
+        if ( defined( 'EXP_ENGINE_PHAR' ) )
+        {
+            $engineInfo['source'] = 'archive';
+            $engineInfo['archive'] = EXP_ENGINE_PHAR;
+
+            if ( file_exists( EXP_ENGINE_PHAR ) )
+            {
+                $engineInfo['archive_built'] = date( 'Y-m-d H:i:s', filemtime( EXP_ENGINE_PHAR ) );
+                $engineInfo['archive_bytes'] = filesize( EXP_ENGINE_PHAR );
+            }
+
+            // Read through the wrapper the bootstrap deliberately keeps registered in
+            // this mode; there is no other way to reach inside the archive.
+            $engineVersion = @file_get_contents( 'phar://' . EXP_ENGINE_PHAR . '/ENGINE_VERSION' );
+            if ( $engineVersion !== false )
+                $engineInfo['version'] = trim( $engineVersion );
+
+            $engineManifest = @include( 'phar://' . EXP_ENGINE_PHAR . '/MANIFEST.php' );
+            if ( is_array( $engineManifest ) )
+                $engineInfo['archive_files'] = count( $engineManifest );
+        }
+
+        // Whether the archive was built from what is on disk now. A mismatch is not an
+        // error -- the archive only has to carry the classes it carries -- but it is
+        // the first thing worth knowing when an edit to a kernel file appears to do
+        // nothing.
+        $this->engineArchiveCheck( $engineInfo, $engineServer );
+
+        // The two caches PHP keeps in shared memory, whatever serves the page: the
+        // opcode cache (compiled scripts) and APCu (data). Both belong to the process
+        // that answered this request -- a php-fpm pool, a Qbix server and its forked
+        // workers, a FrankenPHP process and its threads -- so a command-line script,
+        // another pool or another engine has its own, with other figures.
+        $this->phpCachesInfo( $stats, $tpl, $canFlushCaches );
+
+        // The Velocity engine this page is being served by, in detail: its role, its
+        // address, the views it answers itself and who may open them. A site runs one
+        // engine; the others of this installation that happen to be running as well
+        // -- a test setup -- are only named, in one line. Under Apache, php-fpm or a
+        // server exp:velocity does not know, there is no such box.
+        $this->velocityServerInfo( $velocityBrand, $view, $engine, $velocityEngineNames, $tpl );
+
+        // The response cache in front of this installation, when a Qbix server runs it.
+        //
+        // A hit never reaches PHP, so nothing else on this page can say whether the
+        // cache is on, what it keeps or how much of the traffic it answers. This
+        // request runs in a worker the server forked after reading its configuration
+        // and initialising the cache, so what the worker holds are the settings the
+        // running server actually uses -- including the defaults it filled in for
+        // anything the configuration left out, which the configuration file cannot
+        // show. Velocity, a hand-written server.json and a preset all end up here.
+        $this->responseCacheInfo( $info, $key, $file, $e, $stats, $tpl );
+
+        // The role-aware HTTP cache (settings/httpcache.ini). Its hits are answered
+        // before the kernel boots, so this is the one place that shows them.
+        $this->httpCacheInfo( $canFlushCaches, $http, $stats, $when, $n, $tpl );
+
+        // Database queries: the SQL query cache (eZDBQueryCache, settings/querycache.ini)
+        // and the SQL profile of recent requests (eZDBInterface::profileSQL(),
+        // var/tmp/sql_profile.on). See doc/bc/6.0/sql-query-cache.md.
+        // SQL engines only; the MongoDB driver keeps its own profile.
+        $this->sqlProfileInfo( $db, $canFlushCaches, $http, $when, $tpl, $m, $n );
+        $tpl->setVariable( 'engine_info', $engineInfo );
+        $tpl->setVariable( 'webserver_info', $webserverInfo );
+        $tpl->setVariable( 'database_info', $db->databaseName() );
+        $tpl->setVariable( 'database_charset', $db->charset() );
+        $tpl->setVariable( 'database_object', $db );
+        $tpl->setVariable( 'php_loaded_extensions', get_loaded_extensions() );
+        $tpl->setVariable( 'autoload_functions', spl_autoload_functions() );
+
+        // Workaround until ezcTemplate
+        // The new system info class uses properties instead of attributes, so the
+        // values are not immediately available in the old template engine.
+        $tpl->setVariable( 'system_info', $systemInfo );
+
+        $phpINI = array();
+        foreach ( array( 'safe_mode', 'register_globals', 'file_uploads' ) as $iniName )
+        {
+            $phpINI[ $iniName ] = ini_get( $iniName ) != 0;
+        }
+        foreach ( array( 'open_basedir', 'post_max_size', 'memory_limit', 'max_execution_time' ) as $iniName )
+        {
+            $value = ini_get( $iniName );
+            if ( $value !== '' )
+                $phpINI[$iniName] = $value;
+        }
+        $tpl->setVariable( 'php_ini', $phpINI );
+
+        $Result = array();
+        $Result['content'] = $tpl->fetch( "design:setup/info.tpl" );
+        $Result['path'] = array( array( 'url' => false,
+                                        'text' => \ezpI18n::tr( 'kernel/setup', 'System information' ) ) );
+
+        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function systemInfo( &$info, &$e, &$systemInfo, &$phpAcceleratorInfo )
+    {
         try
         {
             $info = \ezcSystemInfo::getInstance();
@@ -92,12 +223,13 @@ class Info extends \Exponential\Runnable\ModuleView
             );
             $phpAcceleratorInfo = array();
         }
+    }
 
-        // The web server's name and version when this page is served by Exponential
-        // Velocity's own server. The engine inside it is Qbix, and the Qbix names it
-        // still reports (SERVER_SOFTWARE "QbixServer/1.5.0", the upstream base it is
-        // built on) say nothing about which release is running: that is the fork's
-        // release line, v0.0.4.x, plus the build. One place, used by every box below.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function webserverInfo( &$velocityBrand, &$velocityEngineNames, &$webserverInfo, &$engine, &$m )
+    {
         $velocityBrand = false;
         if ( defined( 'QBIX_SERVER_VERSION' ) )
         {
@@ -228,13 +360,13 @@ class Info extends \Exponential\Runnable\ModuleView
             $webserverInfo['name'] = $velocityBrand['name'];
             $webserverInfo['version'] = $velocityBrand['version'];
         }
+    }
 
-        // The site. [SiteSettings] SiteURL is a setting, written once at installation:
-        // an installation made from the command line (the kickstarter) has no host to
-        // read, so it could be left at "localhost" for good. What the page shows first
-        // is where this siteaccess and the public site actually are, worked out for
-        // this request (scheme, host, port, siteaccess path); the setting follows,
-        // flagged when it is empty or a loopback name, as mails and feeds use it.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function siteInfo( &$tpl )
+    {
         $currentSiteAccess = \eZSiteAccess::current();
         $currentSiteAccessName = isset( $currentSiteAccess['name'] ) ? (string)$currentSiteAccess['name'] : '';
         $configuredSiteURL = trim( (string)\eZINI::instance()->variable( 'SiteSettings', 'SiteURL' ) );
@@ -261,18 +393,13 @@ class Info extends \Exponential\Runnable\ModuleView
             'configured_placeholder' => $configuredHost === '' || in_array( $configuredHost, array( 'localhost', '127.0.0.1', '[::1]', '::1' ), true ),
         );
         $tpl->setVariable( 'site_info', $siteInfo );
+    }
 
-        $tpl->setVariable( 'ezpublish_version', \ExponentialSDK::version() . " (" . \ExponentialSDK::alias() . ")" );
-        $tpl->setVariable( 'ezpublish_extensions', \eZExtension::activeExtensions() );
-        $tpl->setVariable( 'php_version', phpversion() );
-        $tpl->setVariable( 'php_accelerator', $phpAcceleratorInfo );
-        // How this request is being executed, and out of what.
-        //
-        // The engine can be loaded from a thousand files on disk or from one archive,
-        // and which it is changes where a stack trace points, what a file listing
-        // means, and whether an edited kernel file has any effect at all. That is not
-        // something a person -- or an agent reading this page to find its bearings --
-        // should have to deduce from a path in an error message.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function engineSourceInfo( &$engineInfo, &$engineServer, &$velocityBrand )
+    {
         $engineInfo = array(
             'source'        => 'disk',
             'root'          => defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : '(not published)',
@@ -385,33 +512,13 @@ class Info extends \Exponential\Runnable\ModuleView
         $engineInfo['server'] = $engineServer['server'];
         $engineInfo['switch_on'] = $engineServer['on'];
         $engineInfo['switch_off'] = $engineServer['off'];
+    }
 
-        if ( defined( 'EXP_ENGINE_PHAR' ) )
-        {
-            $engineInfo['source'] = 'archive';
-            $engineInfo['archive'] = EXP_ENGINE_PHAR;
-
-            if ( file_exists( EXP_ENGINE_PHAR ) )
-            {
-                $engineInfo['archive_built'] = date( 'Y-m-d H:i:s', filemtime( EXP_ENGINE_PHAR ) );
-                $engineInfo['archive_bytes'] = filesize( EXP_ENGINE_PHAR );
-            }
-
-            // Read through the wrapper the bootstrap deliberately keeps registered in
-            // this mode; there is no other way to reach inside the archive.
-            $engineVersion = @file_get_contents( 'phar://' . EXP_ENGINE_PHAR . '/ENGINE_VERSION' );
-            if ( $engineVersion !== false )
-                $engineInfo['version'] = trim( $engineVersion );
-
-            $engineManifest = @include( 'phar://' . EXP_ENGINE_PHAR . '/MANIFEST.php' );
-            if ( is_array( $engineManifest ) )
-                $engineInfo['archive_files'] = count( $engineManifest );
-        }
-
-        // Whether the archive was built from what is on disk now. A mismatch is not an
-        // error -- the archive only has to carry the classes it carries -- but it is
-        // the first thing worth knowing when an edit to a kernel file appears to do
-        // nothing.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function engineArchiveCheck( &$engineInfo, &$engineServer )
+    {
         if ( class_exists( 'expPhar' ) || file_exists( 'kernel/classes/expphar.php' ) )
         {
             if ( !class_exists( 'expPhar' ) )
@@ -514,12 +621,13 @@ class Info extends \Exponential\Runnable\ModuleView
                 }
             }
         }
+    }
 
-        // The two caches PHP keeps in shared memory, whatever serves the page: the
-        // opcode cache (compiled scripts) and APCu (data). Both belong to the process
-        // that answered this request -- a php-fpm pool, a Qbix server and its forked
-        // workers, a FrankenPHP process and its threads -- so a command-line script,
-        // another pool or another engine has its own, with other figures.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function phpCachesInfo( &$stats, &$tpl, &$canFlushCaches )
+    {
         $phpCaches = array( 'opcache' => false, 'apcu' => false );
         $megabytes = function ( $bytes ) { return number_format( $bytes / 1048576, 1 ) . ' MB'; };
         if ( function_exists( 'opcache_get_status' ) )
@@ -640,12 +748,13 @@ class Info extends \Exponential\Runnable\ModuleView
         }
         $tpl->setVariable( 'php_caches', $phpCaches );
         $tpl->setVariable( 'can_flush_caches', $canFlushCaches );
+    }
 
-        // The Velocity engine this page is being served by, in detail: its role, its
-        // address, the views it answers itself and who may open them. A site runs one
-        // engine; the others of this installation that happen to be running as well
-        // -- a test setup -- are only named, in one line. Under Apache, php-fpm or a
-        // server exp:velocity does not know, there is no such box.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function velocityServerInfo( &$velocityBrand, &$view, &$engine, &$velocityEngineNames, &$tpl )
+    {
         $velocityInfo = false;
         $servingEngine = PHP_SAPI === 'frankenphp' ? 'frankenphp'
                        : ( PHP_SAPI === 'cli-server' ? 'php'
@@ -767,16 +876,13 @@ class Info extends \Exponential\Runnable\ModuleView
             );
         }
         $tpl->setVariable( 'velocity_info', $velocityInfo );
+    }
 
-        // The response cache in front of this installation, when a Qbix server runs it.
-        //
-        // A hit never reaches PHP, so nothing else on this page can say whether the
-        // cache is on, what it keeps or how much of the traffic it answers. This
-        // request runs in a worker the server forked after reading its configuration
-        // and initialising the cache, so what the worker holds are the settings the
-        // running server actually uses -- including the defaults it filled in for
-        // anything the configuration left out, which the configuration file cannot
-        // show. Velocity, a hand-written server.json and a preset all end up here.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function responseCacheInfo( &$info, &$key, &$file, &$e, &$stats, &$tpl )
+    {
         $responseCache = false;
         if ( defined( 'QBIX_SERVER_VERSION' ) && class_exists( 'Q_WebServer_Cache', false ) )
         {
@@ -910,9 +1016,13 @@ class Info extends \Exponential\Runnable\ModuleView
         }
 
         $tpl->setVariable( 'response_cache', $responseCache );
+    }
 
-        // The role-aware HTTP cache (settings/httpcache.ini). Its hits are answered
-        // before the kernel boots, so this is the one place that shows them.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function httpCacheInfo( &$canFlushCaches, &$http, &$stats, &$when, &$n, &$tpl )
+    {
         $httpCache = false;
         if ( class_exists( 'ezpHttpCacheContract' ) )
         {
@@ -1006,11 +1116,13 @@ class Info extends \Exponential\Runnable\ModuleView
             }
         }
         $tpl->setVariable( 'http_cache', $httpCache );
+    }
 
-        // Database queries: the SQL query cache (eZDBQueryCache, settings/querycache.ini)
-        // and the SQL profile of recent requests (eZDBInterface::profileSQL(),
-        // var/tmp/sql_profile.on). See doc/bc/6.0/sql-query-cache.md.
-        // SQL engines only; the MongoDB driver keeps its own profile.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function sqlProfileInfo( &$db, &$canFlushCaches, &$http, &$when, &$tpl, &$m, &$n )
+    {
         $sqlProfile = false;
         $dbClass = get_class( $db );
         $isMongo = stripos( $dbClass, 'mongo' ) !== false;
@@ -1101,38 +1213,6 @@ class Info extends \Exponential\Runnable\ModuleView
             }
         }
         $tpl->setVariable( 'sql_profile', $sqlProfile );
-        $tpl->setVariable( 'engine_info', $engineInfo );
-        $tpl->setVariable( 'webserver_info', $webserverInfo );
-        $tpl->setVariable( 'database_info', $db->databaseName() );
-        $tpl->setVariable( 'database_charset', $db->charset() );
-        $tpl->setVariable( 'database_object', $db );
-        $tpl->setVariable( 'php_loaded_extensions', get_loaded_extensions() );
-        $tpl->setVariable( 'autoload_functions', spl_autoload_functions() );
-
-        // Workaround until ezcTemplate
-        // The new system info class uses properties instead of attributes, so the
-        // values are not immediately available in the old template engine.
-        $tpl->setVariable( 'system_info', $systemInfo );
-
-        $phpINI = array();
-        foreach ( array( 'safe_mode', 'register_globals', 'file_uploads' ) as $iniName )
-        {
-            $phpINI[ $iniName ] = ini_get( $iniName ) != 0;
-        }
-        foreach ( array( 'open_basedir', 'post_max_size', 'memory_limit', 'max_execution_time' ) as $iniName )
-        {
-            $value = ini_get( $iniName );
-            if ( $value !== '' )
-                $phpINI[$iniName] = $value;
-        }
-        $tpl->setVariable( 'php_ini', $phpINI );
-
-        $Result = array();
-        $Result['content'] = $tpl->fetch( "design:setup/info.tpl" );
-        $Result['path'] = array( array( 'url' => false,
-                                        'text' => \ezpI18n::tr( 'kernel/setup', 'System information' ) ) );
-
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
     }
 }
 

@@ -63,6 +63,249 @@ class Edit extends \Exponential\Runnable\ModuleView
             $EditLanguage = $http->postVariable( 'EditLanguage' );
         }
 
+        if ( ( $__return = $this->fetchClassVersion( $ClassID, $class, $tpl, $Result, $Module, $mainGroupID, $mainGroupName, $user, $res, $EditLanguage, $language, $GroupID, $GroupName, $user_id, $ClassVersion ) ) !== $this )
+            return $__return;
+
+
+        $contentClassHasInput = true;
+        if ( $http->hasPostVariable( 'ContentClassHasInput' ) )
+            $contentClassHasInput = $http->postVariable( 'ContentClassHasInput' );
+
+        // Find out the group where class is created or edited from.
+        if ( $http->hasSessionVariable( 'FromGroupID' ) )
+        {
+            $fromGroupID = $http->sessionVariable( 'FromGroupID' );
+        }
+        else
+        {
+            $fromGroupID = false;
+        }
+        $ClassID = $class->attribute( 'id' );
+        $ClassVersion = $class->attribute( 'version' );
+
+        $validation = array( 'processed' => false,
+                             'groups' => array(),
+                             'attributes' => array(),
+                             'class_errors' => array() );
+        $unvalidatedAttributes = array();
+
+        if ( $http->hasPostVariable( 'DiscardButton' ) )
+        {
+            $http->removeSessionVariable( 'ClassCanStoreTicket' );
+            $class->setVersion( \eZContentClass::VERSION_STATUS_TEMPORARY );
+            $class->remove( true, \eZContentClass::VERSION_STATUS_TEMPORARY );
+            \eZContentClassClassGroup::removeClassMembers( $ClassID, \eZContentClass::VERSION_STATUS_TEMPORARY );
+            if ( $fromGroupID === false )
+            {
+                $Module->redirectToView( 'grouplist' );
+            }
+            else
+            {
+                $Module->redirectTo( $Module->functionURI( 'classlist' ) . '/' . $fromGroupID . '/' );
+            }
+            return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        }
+        if ( $http->hasPostVariable( 'AddGroupButton' ) && $http->hasPostVariable( 'ContentClass_group' ) )
+        {
+            \eZClassFunctions::addGroup( $ClassID, $ClassVersion, $http->postVariable( 'ContentClass_group' ) );
+            $lastChangedID = 'group';
+        }
+        if ( $http->hasPostVariable( 'RemoveGroupButton' ) && $http->hasPostVariable( 'group_id_checked' ) )
+        {
+            if ( !\eZClassFunctions::removeGroup( $ClassID, $ClassVersion, $http->postVariable( 'group_id_checked' ) ) )
+            {
+                $validation['groups'][] = array( 'text' => \ezpI18n::tr( 'kernel/class', 'You have to have at least one group that the class belongs to!' ) );
+                $validation['processed'] = true;
+            }
+        }
+
+
+        // Ajax actions (normal ones have $contentClassHasInput == 1 and are fixed up
+        // later in $dataType->fixupClassAttributeHTTPInput)
+        $this->ajaxMoveAttribute( $contentClassHasInput, $http, $attribute, $top );
+
+        // Fetch attributes and definitions
+        $attributes = $class->fetchAttributes();
+
+        $this->selectLanguage( $http, $EditLanguage, $FromLanguage, $attributes, $key, $name, $class );
+
+        // No language was specified in the URL, we need to figure out
+        // the language to use.
+        if ( ( $__return = $this->chooseEditLanguage( $EditLanguage, $language, $class, $tpl, $res, $Module, $Result, $mainGroupID, $mainGroupName ) ) !== $this )
+            return $__return;
+
+        \eZDataType::loadAndRegisterAllTypes();
+        $datatypes = \eZDataType::registeredDataTypes();
+
+        $customAction = false;
+        $customActionAttributeID = null;
+        // Check for custom actions
+        if ( $http->hasPostVariable( 'CustomActionButton' ) )
+        {
+            $customActionArray = $http->postVariable( 'CustomActionButton' );
+            $customActionString = key( $customActionArray );
+
+            $customActionAttributeID = preg_match( "#^([0-9]+)_(.*)$#", $customActionString, $matchArray );
+
+            $customActionAttributeID = $matchArray[1];
+            $customAction = $matchArray[2];
+        }
+
+
+        // Validate input
+        $storeActions = array( 'MoveUp',
+                               'MoveDown',
+                               'MoveTop',
+                               'MoveBottom',
+                               'StoreButton',
+                               'ApplyButton',
+                               'NewButton',
+                               'CustomActionButton');
+        $validationRequired = false;
+        foreach( $storeActions as $storeAction )
+        {
+            if ( $http->hasPostVariable( $storeAction ) )
+            {
+                $validationRequired = true;
+                break;
+            }
+        }
+
+        $canStore = true;
+        $requireFixup = false;
+        $this->validateInput( $contentClassHasInput, $validationRequired, $attributes, $key, $attribute, $EditLanguage, $dataType, $status, $http, $requireFixup, $canStore, $unvalidatedAttributes, $validation, $placementArray );
+
+        // Fixup input
+        if ( $requireFixup )
+        {
+            foreach( $attributes as $attribute )
+            {
+                $dataType = $attribute->dataType();
+                $status = $dataType->fixupClassAttributeHTTPInput( $http, 'ContentClass', $attribute );
+            }
+        }
+
+        $cur_datatype = 'ezstring';
+        // Apply HTTP POST variables
+        $this->applyPostedInput( $contentClassHasInput, $attributes, $http, $attribute, $key, $EditLanguage, $class, $cur_datatype );
+
+        $class->setAttribute( 'version', \eZContentClass::VERSION_STATUS_TEMPORARY );
+        $class->NameList->setHasDirtyData();
+
+        $trans = \eZCharTransform::instance();
+
+        $this->checkIdentifiersAndPlacement( $contentClassHasInput, $validationRequired, $attributes, $attribute, $placementArray, $identifier, $validation, $canStore );
+
+        // Fixed identifiers to only contain a-z0-9_
+        foreach( $attributes as $attribute )
+        {
+            $attribute->setAttribute( 'version', \eZContentClass::VERSION_STATUS_TEMPORARY );
+            $identifier = $attribute->attribute( 'identifier' );
+            if ( $identifier == '' )
+                $identifier = $attribute->attribute( 'name' );
+
+            $identifier = $trans->transformByGroup( $identifier, 'identifier' );
+            $attribute->setAttribute( 'identifier', $identifier );
+            if ( $dataType = $attribute->dataType() )
+            {
+                $dataType->initializeClassAttribute( $attribute );
+            }
+        }
+
+        // Fixed class identifier to only contain a-z0-9_
+        $identifier = $class->attribute( 'identifier' );
+        if ( $identifier == '' )
+            $identifier = $class->attribute( 'name' );
+        $identifier = $trans->transformByGroup( $identifier, 'identifier' );
+        $class->setAttribute( 'identifier', $identifier );
+
+        // Run custom actions if any
+        if ( $customAction )
+        {
+            foreach( $attributes as $attribute )
+            {
+                if ( $customActionAttributeID == $attribute->attribute( 'id' ) )
+                {
+                    $attribute->customHTTPAction( $Module, $http, $customAction );
+                }
+            }
+        }
+        // Set new modification date
+        $date_time = time();
+        $class->setAttribute( 'modified', $date_time );
+        $user = \eZUser::currentUser();
+        $user_id = $user->attribute( 'contentobject_id' );
+        $class->setAttribute( 'modifier_id', $user_id );
+
+        // Remove attributes which are to be deleted
+        $this->removeSelectedAttributes( $http, $validation, $attributes, $dataType );
+
+        // Fetch HTTP input
+        $datatypeValidation = array();
+        $this->fetchAttributeInput( $contentClassHasInput, $attributes, $attribute, $dataType, $http, $datatypeValidation, $key );
+
+        // Store version 0 and discard version 1
+        if ( ( $__return = $this->storeClass( $http, $canStore, $class, $validation, $Result, $Module, $ClassID, $EditLanguage, $attributes ) ) !== $this )
+            return $__return;
+
+        // Store changes
+        if ( $canStore )
+            $class->store( $attributes );
+
+        if ( ( $__return = $this->newAttribute( $http, $ClassID, $cur_datatype, $EditLanguage, $attributes, $dataType, $lastChangedID, $attribute, $Module, $Result, $top ) ) !== $this )
+            return $__return;
+
+        $Module->setTitle( 'Edit class ' . $class->attribute( 'name' ) );
+
+        // set session to allow current user to store class (to avoid direct post edit actions to this view)
+        if ( !$http->hasSessionVariable( 'ClassCanStoreTicket' ) )
+        {
+            $http->setSessionVariable( 'ClassCanStoreTicket', 1 );
+        }
+
+        // Fetch updated attributes
+        $attributes = $class->fetchAttributes();
+        $validation = array_merge( $validation, $datatypeValidation );
+
+        // Template handling
+        $tpl = \eZTemplate::factory();
+        $res = \eZTemplateDesignResource::instance();
+        $res->setKeys( array( array( 'class', $class->attribute( 'id' ) ) ) ); // Class ID
+        $tpl->setVariable( 'http', $http );
+        $tpl->setVariable( 'validation', $validation );
+        $tpl->setVariable( 'can_store', $canStore );
+        $tpl->setVariable( 'require_fixup', $requireFixup );
+        $tpl->setVariable( 'module', $Module );
+        $tpl->setVariable( 'class', $class );
+        $tpl->setVariable( 'attributes', $attributes );
+        $tpl->setVariable( 'datatypes', $datatypes );
+        $tpl->setVariable( 'datatype', $cur_datatype );
+        $tpl->setVariable( 'language_code', $EditLanguage );
+        $tpl->setVariable( 'last_changed_id', $lastChangedID );
+
+
+        $Result = array();
+        $Result['content'] = $tpl->fetch( 'design:class/edit.tpl' );
+        $Result['path'] = array( array( 'url' => '/class/grouplist/',
+                                        'text' => \ezpI18n::tr( 'kernel/class', 'Class groups' ) ) );
+        if ( $mainGroupID !== false )
+        {
+            $Result['path'][] = array( 'url' => '/class/classlist/' . $mainGroupID,
+                                       'text' => $mainGroupName );
+        }
+        $Result['path'][] = array( 'url' => false,
+                                   'text' => $class->attribute( 'name' ) );
+
+        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function fetchClassVersion( &$ClassID, &$class, &$tpl, &$Result, &$Module, &$mainGroupID, &$mainGroupName, &$user, &$res, &$EditLanguage, &$language, &$GroupID, &$GroupName, &$user_id, &$ClassVersion )
+    {
         if ( is_numeric( $ClassID ) )
         {
             $class = \eZContentClass::fetch( $ClassID, true, \eZContentClass::VERSION_STATUS_MODIFIED );
@@ -182,62 +425,262 @@ class Edit extends \Exponential\Runnable\ModuleView
             }
         }
 
+        return $this;
+    }
 
-        $contentClassHasInput = true;
-        if ( $http->hasPostVariable( 'ContentClassHasInput' ) )
-            $contentClassHasInput = $http->postVariable( 'ContentClassHasInput' );
-
-        // Find out the group where class is created or edited from.
-        if ( $http->hasSessionVariable( 'FromGroupID' ) )
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function chooseEditLanguage( &$EditLanguage, &$language, &$class, &$tpl, &$res, &$Module, &$Result, &$mainGroupID, &$mainGroupName )
+    {
+        if ( !$EditLanguage )
         {
-            $fromGroupID = $http->sessionVariable( 'FromGroupID' );
-        }
-        else
-        {
-            $fromGroupID = false;
-        }
-        $ClassID = $class->attribute( 'id' );
-        $ClassVersion = $class->attribute( 'version' );
-
-        $validation = array( 'processed' => false,
-                             'groups' => array(),
-                             'attributes' => array(),
-                             'class_errors' => array() );
-        $unvalidatedAttributes = array();
-
-        if ( $http->hasPostVariable( 'DiscardButton' ) )
-        {
-            $http->removeSessionVariable( 'ClassCanStoreTicket' );
-            $class->setVersion( \eZContentClass::VERSION_STATUS_TEMPORARY );
-            $class->remove( true, \eZContentClass::VERSION_STATUS_TEMPORARY );
-            \eZContentClassClassGroup::removeClassMembers( $ClassID, \eZContentClass::VERSION_STATUS_TEMPORARY );
-            if ( $fromGroupID === false )
+            // Check number of languages
+            $languages = \eZContentLanguage::fetchList();
+            // If there is only one language we choose it for the user.
+            if ( count( $languages ) == 1 )
             {
-                $Module->redirectToView( 'grouplist' );
+                $language = array_shift( $languages );
+                $EditLanguage = $language->attribute( 'locale' );
             }
             else
             {
-                $Module->redirectTo( $Module->functionURI( 'classlist' ) . '/' . $fromGroupID . '/' );
+                $canCreateLanguages = $class->attribute( 'can_create_languages' );
+                if ( count( $canCreateLanguages ) == 0)
+                {
+                    $EditLanguage = $class->attribute( 'top_priority_language_locale' );
+                }
+                else
+                {
+                    $tpl = \eZTemplate::factory();
+
+                    $res = \eZTemplateDesignResource::instance();
+                    $res->setKeys( array( array( 'class', $class->attribute( 'id' ) ) ) ); // Class ID
+
+                    $tpl->setVariable( 'module', $Module );
+                    $tpl->setVariable( 'class', $class );
+
+                    $Result = array();
+                    $Result['content'] = $tpl->fetch( 'design:class/select_language.tpl' );
+                    $Result['path'] = array( array( 'url' => '/class/grouplist/',
+                                                    'text' => \ezpI18n::tr( 'kernel/class', 'Class groups' ) ) );
+                    if ( $mainGroupID !== false )
+                    {
+                        $Result['path'][] = array( 'url' => '/class/classlist/' . $mainGroupID,
+                                                   'text' => $mainGroupName );
+                    }
+                    $Result['path'][] = array( 'url' => false,
+                                               'text' => $class->attribute( 'name' ) );
+                    return $this->viewResult( isset( $Result ) ? $Result : null,  $Result );
+                }
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function checkIdentifiersAndPlacement( &$contentClassHasInput, &$validationRequired, &$attributes, &$attribute, &$placementArray, &$identifier, &$validation, &$canStore )
+    {
+        if ( $contentClassHasInput && $validationRequired )
+        {
+            // check for duplicate attribute identifiers and placements in the input
+            $placementMap = array();
+            $identifierMap = array();
+            foreach ( $attributes as $attribute )
+            {
+                $id = $attribute->attribute( "id" );
+                $placement = (int)$placementArray[$id];
+                $identifier = $attribute->attribute( "identifier" );
+
+                if ( isset( $placementMap[$placement] ) )
+                {
+                    $validation["attributes"][] = array(
+                        "identifier" => $identifier,
+                        "name" => $attribute->attribute( "name" ),
+                        "id" => $id,
+                        "reason" => array ( 'text' => \ezpI18n::tr( "kernel/class", "duplicate attribute placement" ) )
+                    );
+                    $canStore = false;
+                }
+                $placementMap[$placement] = $attribute;
+
+                if ( isset( $identifierMap[$identifier] ) )
+                {
+                    $validation["attributes"][] = array(
+                        "identifier" => $identifier,
+                        "name" => $attribute->attribute( "name" ),
+                        "id" => $id,
+                        "reason" => array ( 'text' => \ezpI18n::tr( "kernel/class", "duplicate attribute identifier" ) )
+                    );
+                    $canStore = false;
+                }
+                $identifierMap[$identifier] = true;
+            }
+
+            if ( $canStore )
+            {
+                // Reaffecting correct placement numbers here
+                // This is required to be done before the call to:
+                //     $dataType->initializeClassAttribute( $attribute );
+                // since some data types are calling $attribute->store();
+                // which will store the raw input position number before it has been
+                // modified by eZContentClass::adjustAttributePlacements()
+                // @see EZP-19876
+                ksort( $placementMap );
+                foreach ( array_values( $placementMap ) as $i => $attribute )
+                {
+                    $attribute->setAttribute( "placement", $i + 1 );
+                }
+            }
+
+            unset( $placementMap, $identifierMap, $id, $placement );
+        }
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function storeClass( &$http, &$canStore, &$class, &$validation, &$Result, &$Module, &$ClassID, &$EditLanguage, &$attributes )
+    {
+        if ( $http->hasPostVariable( 'StoreButton' ) && $canStore )
+        {
+
+            $newClassAttributes = $class->fetchAttributes( );
+
+            // validate class name and identifier; check presence of class attributes
+            // FIXME: object pattern name is never validated
+
+            $basicClassPropertiesValid = true;
+            $className       = $class->attribute( 'name' );
+            $classIdentifier = $class->attribute( 'identifier' );
+            $classID         = $class->attribute( 'id' );
+
+            // validate class name
+            if( trim( $className ) == '' )
+            {
+                $validation['class_errors'][] = array( 'text' => \ezpI18n::tr( 'kernel/class', 'The class should have nonempty \'Name\' attribute.' ) );
+                $basicClassPropertiesValid = false;
+            }
+
+            // check presence of attributes
+            if ( count( $newClassAttributes ) == 0 )
+            {
+                $validation['class_errors'][] = array( 'text' => \ezpI18n::tr( 'kernel/class', 'The class should have at least one attribute.' ) );
+                $basicClassPropertiesValid = false;
+            }
+
+            // validate class identifier
+
+            $db = \eZDB::instance();
+            $db->begin();
+            $classCount = $db->arrayQuery( "SELECT COUNT(*) AS count FROM ezcontentclass WHERE  identifier='$classIdentifier' AND version=" . \eZContentClass::VERSION_STATUS_DEFINED . " AND id <> $classID" );
+            if ( $classCount[0]['count'] > 0 )
+            {
+                $validation['class_errors'][] = array( 'text' => \ezpI18n::tr( 'kernel/class', 'There is a class already having the same identifier.' ) );
+                $basicClassPropertiesValid = false;
+            }
+            unset( $classList );
+
+            if ( !$basicClassPropertiesValid )
+            {
+                $db->commit();
+                $canStore = false;
+                $validation['processed'] = false;
+            }
+            else
+            {
+                if ( !$http->hasSessionVariable( 'ClassCanStoreTicket' ) )
+                {
+                    $db->commit();
+                    return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'view', array( $ClassID ), array( 'Language' => $EditLanguage ) ) );
+                }
+
+                $unorderedParameters = array( 'Language' => $EditLanguage );
+
+                // Is there existing objects of this content class?
+                if ( \eZContentObject::fetchSameClassListCount( $ClassID ) > 0 )
+                {
+                    \eZExtension::getHandlerClass( new \ezpExtensionOptions( array( 'iniFile' => 'site.ini',
+                                                                                  'iniSection'   => 'ContentSettings',
+                                                                                  'iniVariable'  => 'ContentClassEditHandler' ) ) )
+                            ->store( $class, $attributes, $unorderedParameters );
+                }
+                else
+                {
+                    $unorderedParameters['ScheduledScriptID'] = 0;
+                    $class->storeVersioned( $attributes, \eZContentClass::VERSION_STATUS_DEFINED );
+                }
+
+                $db->commit();
+                $http->removeSessionVariable( 'ClassCanStoreTicket' );
+                \ezpEvent::getInstance()->notify( 'content/class/cache', array( $ClassID ) );
+                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'view', array( $ClassID ), $unorderedParameters ) );
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function newAttribute( &$http, &$ClassID, &$cur_datatype, &$EditLanguage, &$attributes, &$dataType, &$lastChangedID, &$attribute, &$Module, &$Result, &$top )
+    {
+        if ( $http->hasPostVariable( 'NewButton' ) )
+        {
+            $newAttribute = \eZContentClassAttribute::create( $ClassID, $cur_datatype, array(), $EditLanguage );
+            $attrcnt = count( $attributes ) + 1;
+            $newAttribute->setName( \ezpI18n::tr( 'kernel/class/edit', 'new attribute' ) . $attrcnt, $EditLanguage );
+            $dataType = $newAttribute->dataType();
+            $dataType->initializeClassAttribute( $newAttribute );
+            $newAttribute->store();
+            $attributes[] = $newAttribute;
+            $lastChangedID = $newAttribute->attribute('id');
+        }
+        else if ( $http->hasPostVariable( 'MoveUp' ) )
+        {
+            $attribute = \eZContentClassAttribute::fetch( $http->postVariable( 'MoveUp' ), true, \eZContentClass::VERSION_STATUS_TEMPORARY,
+                                                          array( 'id', 'contentclass_id', 'version', 'placement' ) );
+            $attribute->move( false );
+            $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $ClassID . '/(language)/' . $EditLanguage );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
-        if ( $http->hasPostVariable( 'AddGroupButton' ) && $http->hasPostVariable( 'ContentClass_group' ) )
+        else if ( $http->hasPostVariable( 'MoveDown' ) )
         {
-            \eZClassFunctions::addGroup( $ClassID, $ClassVersion, $http->postVariable( 'ContentClass_group' ) );
-            $lastChangedID = 'group';
+            $attribute = \eZContentClassAttribute::fetch( $http->postVariable( 'MoveDown' ), true, \eZContentClass::VERSION_STATUS_TEMPORARY,
+                                                          array( 'id', 'contentclass_id', 'version', 'placement' ) );
+            $attribute->move( true );
+            $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $ClassID . '/(language)/' . $EditLanguage );
+            return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
-        if ( $http->hasPostVariable( 'RemoveGroupButton' ) && $http->hasPostVariable( 'group_id_checked' ) )
+        else if ( $http->hasPostVariable( 'MoveTop' ) || $http->hasPostVariable( 'MoveBottom' ) )
         {
-            if ( !\eZClassFunctions::removeGroup( $ClassID, $ClassVersion, $http->postVariable( 'group_id_checked' ) ) )
-            {
-                $validation['groups'][] = array( 'text' => \ezpI18n::tr( 'kernel/class', 'You have to have at least one group that the class belongs to!' ) );
-                $validation['processed'] = true;
-            }
+            $top = $http->hasPostVariable( 'MoveTop' );
+            $attribute = \eZContentClassAttribute::fetch( $http->postVariable( $top ? 'MoveTop' : 'MoveBottom' ), true, \eZContentClass::VERSION_STATUS_TEMPORARY,
+                                                          array( 'id', 'contentclass_id', 'version', 'placement' ) );
+            if ( $attribute instanceof \eZContentClassAttribute )
+                $attribute->moveToEdge( $top );
+            $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $ClassID . '/(language)/' . $EditLanguage );
+            return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
+        return $this;
+    }
 
-        // Ajax actions (normal ones have $contentClassHasInput == 1 and are fixed up
-        // later in $dataType->fixupClassAttributeHTTPInput)
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function ajaxMoveAttribute( &$contentClassHasInput, &$http, &$attribute, &$top )
+    {
         if ( $contentClassHasInput == 0 && $http->hasPostVariable( 'MoveUp' ) )
         {
             $attribute = \eZContentClassAttribute::fetch( $http->postVariable( 'MoveUp' ), true, \eZContentClass::VERSION_STATUS_TEMPORARY,
@@ -282,10 +725,13 @@ class Edit extends \Exponential\Runnable\ModuleView
             \eZDB::checkTransactionCounter();
             \eZExecution::cleanExit();
         }
+    }
 
-        // Fetch attributes and definitions
-        $attributes = $class->fetchAttributes();
-
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function selectLanguage( &$http, &$EditLanguage, &$FromLanguage, &$attributes, &$key, &$name, &$class )
+    {
         if ( $http->hasPostVariable( 'SelectLanguageButton' ) && $http->hasPostVariable( 'EditLanguage' ) )
         {
             $EditLanguage = $http->postVariable( 'EditLanguage' );
@@ -321,91 +767,13 @@ class Edit extends \Exponential\Runnable\ModuleView
             $class->setName( $name, $EditLanguage );
             $class->setDescription( $description, $EditLanguage );
         }
+    }
 
-        // No language was specified in the URL, we need to figure out
-        // the language to use.
-        if ( !$EditLanguage )
-        {
-            // Check number of languages
-            $languages = \eZContentLanguage::fetchList();
-            // If there is only one language we choose it for the user.
-            if ( count( $languages ) == 1 )
-            {
-                $language = array_shift( $languages );
-                $EditLanguage = $language->attribute( 'locale' );
-            }
-            else
-            {
-                $canCreateLanguages = $class->attribute( 'can_create_languages' );
-                if ( count( $canCreateLanguages ) == 0)
-                {
-                    $EditLanguage = $class->attribute( 'top_priority_language_locale' );
-                }
-                else
-                {
-                    $tpl = \eZTemplate::factory();
-
-                    $res = \eZTemplateDesignResource::instance();
-                    $res->setKeys( array( array( 'class', $class->attribute( 'id' ) ) ) ); // Class ID
-
-                    $tpl->setVariable( 'module', $Module );
-                    $tpl->setVariable( 'class', $class );
-
-                    $Result = array();
-                    $Result['content'] = $tpl->fetch( 'design:class/select_language.tpl' );
-                    $Result['path'] = array( array( 'url' => '/class/grouplist/',
-                                                    'text' => \ezpI18n::tr( 'kernel/class', 'Class groups' ) ) );
-                    if ( $mainGroupID !== false )
-                    {
-                        $Result['path'][] = array( 'url' => '/class/classlist/' . $mainGroupID,
-                                                   'text' => $mainGroupName );
-                    }
-                    $Result['path'][] = array( 'url' => false,
-                                               'text' => $class->attribute( 'name' ) );
-                    return $this->viewResult( isset( $Result ) ? $Result : null,  $Result );
-                }
-            }
-        }
-
-        \eZDataType::loadAndRegisterAllTypes();
-        $datatypes = \eZDataType::registeredDataTypes();
-
-        $customAction = false;
-        $customActionAttributeID = null;
-        // Check for custom actions
-        if ( $http->hasPostVariable( 'CustomActionButton' ) )
-        {
-            $customActionArray = $http->postVariable( 'CustomActionButton' );
-            $customActionString = key( $customActionArray );
-
-            $customActionAttributeID = preg_match( "#^([0-9]+)_(.*)$#", $customActionString, $matchArray );
-
-            $customActionAttributeID = $matchArray[1];
-            $customAction = $matchArray[2];
-        }
-
-
-        // Validate input
-        $storeActions = array( 'MoveUp',
-                               'MoveDown',
-                               'MoveTop',
-                               'MoveBottom',
-                               'StoreButton',
-                               'ApplyButton',
-                               'NewButton',
-                               'CustomActionButton');
-        $validationRequired = false;
-        foreach( $storeActions as $storeAction )
-        {
-            if ( $http->hasPostVariable( $storeAction ) )
-            {
-                $validationRequired = true;
-                break;
-            }
-        }
-
-        $canStore = true;
-        $requireFixup = false;
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function validateInput( &$contentClassHasInput, &$validationRequired, &$attributes, &$key, &$attribute, &$EditLanguage, &$dataType, &$status, &$http, &$requireFixup, &$canStore, &$unvalidatedAttributes, &$validation, &$placementArray )
+    {
         if ( $contentClassHasInput )
         {
             if ( $validationRequired )
@@ -473,19 +841,13 @@ class Edit extends \Exponential\Runnable\ModuleView
                 }
             }
         }
+    }
 
-        // Fixup input
-        if ( $requireFixup )
-        {
-            foreach( $attributes as $attribute )
-            {
-                $dataType = $attribute->dataType();
-                $status = $dataType->fixupClassAttributeHTTPInput( $http, 'ContentClass', $attribute );
-            }
-        }
-
-        $cur_datatype = 'ezstring';
-        // Apply HTTP POST variables
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function applyPostedInput( &$contentClassHasInput, &$attributes, &$http, &$attribute, &$key, &$EditLanguage, &$class, &$cur_datatype )
+    {
         if ( $contentClassHasInput )
         {
             \eZHTTPPersistence::fetch( 'ContentAttribute', \eZContentClassAttribute::definition(), $attributes, $http, true, 'id' );
@@ -567,109 +929,13 @@ class Edit extends \Exponential\Runnable\ModuleView
             if ( $http->hasPostVariable( 'DataTypeString' ) )
                 $cur_datatype = $http->postVariable( 'DataTypeString' );
         }
+    }
 
-        $class->setAttribute( 'version', \eZContentClass::VERSION_STATUS_TEMPORARY );
-        $class->NameList->setHasDirtyData();
-
-        $trans = \eZCharTransform::instance();
-
-        if ( $contentClassHasInput && $validationRequired )
-        {
-            // check for duplicate attribute identifiers and placements in the input
-            $placementMap = array();
-            $identifierMap = array();
-            foreach ( $attributes as $attribute )
-            {
-                $id = $attribute->attribute( "id" );
-                $placement = (int)$placementArray[$id];
-                $identifier = $attribute->attribute( "identifier" );
-
-                if ( isset( $placementMap[$placement] ) )
-                {
-                    $validation["attributes"][] = array(
-                        "identifier" => $identifier,
-                        "name" => $attribute->attribute( "name" ),
-                        "id" => $id,
-                        "reason" => array ( 'text' => \ezpI18n::tr( "kernel/class", "duplicate attribute placement" ) )
-                    );
-                    $canStore = false;
-                }
-                $placementMap[$placement] = $attribute;
-
-                if ( isset( $identifierMap[$identifier] ) )
-                {
-                    $validation["attributes"][] = array(
-                        "identifier" => $identifier,
-                        "name" => $attribute->attribute( "name" ),
-                        "id" => $id,
-                        "reason" => array ( 'text' => \ezpI18n::tr( "kernel/class", "duplicate attribute identifier" ) )
-                    );
-                    $canStore = false;
-                }
-                $identifierMap[$identifier] = true;
-            }
-
-            if ( $canStore )
-            {
-                // Reaffecting correct placement numbers here
-                // This is required to be done before the call to:
-                //     $dataType->initializeClassAttribute( $attribute );
-                // since some data types are calling $attribute->store();
-                // which will store the raw input position number before it has been
-                // modified by eZContentClass::adjustAttributePlacements()
-                // @see EZP-19876
-                ksort( $placementMap );
-                foreach ( array_values( $placementMap ) as $i => $attribute )
-                {
-                    $attribute->setAttribute( "placement", $i + 1 );
-                }
-            }
-
-            unset( $placementMap, $identifierMap, $id, $placement );
-        }
-
-        // Fixed identifiers to only contain a-z0-9_
-        foreach( $attributes as $attribute )
-        {
-            $attribute->setAttribute( 'version', \eZContentClass::VERSION_STATUS_TEMPORARY );
-            $identifier = $attribute->attribute( 'identifier' );
-            if ( $identifier == '' )
-                $identifier = $attribute->attribute( 'name' );
-
-            $identifier = $trans->transformByGroup( $identifier, 'identifier' );
-            $attribute->setAttribute( 'identifier', $identifier );
-            if ( $dataType = $attribute->dataType() )
-            {
-                $dataType->initializeClassAttribute( $attribute );
-            }
-        }
-
-        // Fixed class identifier to only contain a-z0-9_
-        $identifier = $class->attribute( 'identifier' );
-        if ( $identifier == '' )
-            $identifier = $class->attribute( 'name' );
-        $identifier = $trans->transformByGroup( $identifier, 'identifier' );
-        $class->setAttribute( 'identifier', $identifier );
-
-        // Run custom actions if any
-        if ( $customAction )
-        {
-            foreach( $attributes as $attribute )
-            {
-                if ( $customActionAttributeID == $attribute->attribute( 'id' ) )
-                {
-                    $attribute->customHTTPAction( $Module, $http, $customAction );
-                }
-            }
-        }
-        // Set new modification date
-        $date_time = time();
-        $class->setAttribute( 'modified', $date_time );
-        $user = \eZUser::currentUser();
-        $user_id = $user->attribute( 'contentobject_id' );
-        $class->setAttribute( 'modifier_id', $user_id );
-
-        // Remove attributes which are to be deleted
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function removeSelectedAttributes( &$http, &$validation, &$attributes, &$dataType )
+    {
         if ( $http->hasPostVariable( 'RemoveButton' ) )
         {
             $validation['processed'] = true;
@@ -694,9 +960,13 @@ class Edit extends \Exponential\Runnable\ModuleView
                 }
             }
         }
+    }
 
-        // Fetch HTTP input
-        $datatypeValidation = array();
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function fetchAttributeInput( &$contentClassHasInput, &$attributes, &$attribute, &$dataType, &$http, &$datatypeValidation, &$key )
+    {
         if ( $contentClassHasInput )
         {
             foreach( $attributes as $attribute )
@@ -720,168 +990,6 @@ class Edit extends \Exponential\Runnable\ModuleView
                 }
             }
         }
-
-        // Store version 0 and discard version 1
-        if ( $http->hasPostVariable( 'StoreButton' ) && $canStore )
-        {
-
-            $newClassAttributes = $class->fetchAttributes( );
-
-            // validate class name and identifier; check presence of class attributes
-            // FIXME: object pattern name is never validated
-
-            $basicClassPropertiesValid = true;
-            $className       = $class->attribute( 'name' );
-            $classIdentifier = $class->attribute( 'identifier' );
-            $classID         = $class->attribute( 'id' );
-
-            // validate class name
-            if( trim( $className ) == '' )
-            {
-                $validation['class_errors'][] = array( 'text' => \ezpI18n::tr( 'kernel/class', 'The class should have nonempty \'Name\' attribute.' ) );
-                $basicClassPropertiesValid = false;
-            }
-
-            // check presence of attributes
-            if ( count( $newClassAttributes ) == 0 )
-            {
-                $validation['class_errors'][] = array( 'text' => \ezpI18n::tr( 'kernel/class', 'The class should have at least one attribute.' ) );
-                $basicClassPropertiesValid = false;
-            }
-
-            // validate class identifier
-
-            $db = \eZDB::instance();
-            $db->begin();
-            $classCount = $db->arrayQuery( "SELECT COUNT(*) AS count FROM ezcontentclass WHERE  identifier='$classIdentifier' AND version=" . \eZContentClass::VERSION_STATUS_DEFINED . " AND id <> $classID" );
-            if ( $classCount[0]['count'] > 0 )
-            {
-                $validation['class_errors'][] = array( 'text' => \ezpI18n::tr( 'kernel/class', 'There is a class already having the same identifier.' ) );
-                $basicClassPropertiesValid = false;
-            }
-            unset( $classList );
-
-            if ( !$basicClassPropertiesValid )
-            {
-                $db->commit();
-                $canStore = false;
-                $validation['processed'] = false;
-            }
-            else
-            {
-                if ( !$http->hasSessionVariable( 'ClassCanStoreTicket' ) )
-                {
-                    $db->commit();
-                    return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'view', array( $ClassID ), array( 'Language' => $EditLanguage ) ) );
-                }
-
-                $unorderedParameters = array( 'Language' => $EditLanguage );
-
-                // Is there existing objects of this content class?
-                if ( \eZContentObject::fetchSameClassListCount( $ClassID ) > 0 )
-                {
-                    \eZExtension::getHandlerClass( new \ezpExtensionOptions( array( 'iniFile' => 'site.ini',
-                                                                                  'iniSection'   => 'ContentSettings',
-                                                                                  'iniVariable'  => 'ContentClassEditHandler' ) ) )
-                            ->store( $class, $attributes, $unorderedParameters );
-                }
-                else
-                {
-                    $unorderedParameters['ScheduledScriptID'] = 0;
-                    $class->storeVersioned( $attributes, \eZContentClass::VERSION_STATUS_DEFINED );
-                }
-
-                $db->commit();
-                $http->removeSessionVariable( 'ClassCanStoreTicket' );
-                \ezpEvent::getInstance()->notify( 'content/class/cache', array( $ClassID ) );
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'view', array( $ClassID ), $unorderedParameters ) );
-            }
-        }
-
-        // Store changes
-        if ( $canStore )
-            $class->store( $attributes );
-
-        if ( $http->hasPostVariable( 'NewButton' ) )
-        {
-            $newAttribute = \eZContentClassAttribute::create( $ClassID, $cur_datatype, array(), $EditLanguage );
-            $attrcnt = count( $attributes ) + 1;
-            $newAttribute->setName( \ezpI18n::tr( 'kernel/class/edit', 'new attribute' ) . $attrcnt, $EditLanguage );
-            $dataType = $newAttribute->dataType();
-            $dataType->initializeClassAttribute( $newAttribute );
-            $newAttribute->store();
-            $attributes[] = $newAttribute;
-            $lastChangedID = $newAttribute->attribute('id');
-        }
-        else if ( $http->hasPostVariable( 'MoveUp' ) )
-        {
-            $attribute = \eZContentClassAttribute::fetch( $http->postVariable( 'MoveUp' ), true, \eZContentClass::VERSION_STATUS_TEMPORARY,
-                                                          array( 'id', 'contentclass_id', 'version', 'placement' ) );
-            $attribute->move( false );
-            $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $ClassID . '/(language)/' . $EditLanguage );
-            return $this->viewResult( isset( $Result ) ? $Result : null, null );
-        }
-        else if ( $http->hasPostVariable( 'MoveDown' ) )
-        {
-            $attribute = \eZContentClassAttribute::fetch( $http->postVariable( 'MoveDown' ), true, \eZContentClass::VERSION_STATUS_TEMPORARY,
-                                                          array( 'id', 'contentclass_id', 'version', 'placement' ) );
-            $attribute->move( true );
-            $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $ClassID . '/(language)/' . $EditLanguage );
-            return $this->viewResult( isset( $Result ) ? $Result : null, null );
-        }
-        else if ( $http->hasPostVariable( 'MoveTop' ) || $http->hasPostVariable( 'MoveBottom' ) )
-        {
-            $top = $http->hasPostVariable( 'MoveTop' );
-            $attribute = \eZContentClassAttribute::fetch( $http->postVariable( $top ? 'MoveTop' : 'MoveBottom' ), true, \eZContentClass::VERSION_STATUS_TEMPORARY,
-                                                          array( 'id', 'contentclass_id', 'version', 'placement' ) );
-            if ( $attribute instanceof \eZContentClassAttribute )
-                $attribute->moveToEdge( $top );
-            $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $ClassID . '/(language)/' . $EditLanguage );
-            return $this->viewResult( isset( $Result ) ? $Result : null, null );
-        }
-
-        $Module->setTitle( 'Edit class ' . $class->attribute( 'name' ) );
-
-        // set session to allow current user to store class (to avoid direct post edit actions to this view)
-        if ( !$http->hasSessionVariable( 'ClassCanStoreTicket' ) )
-        {
-            $http->setSessionVariable( 'ClassCanStoreTicket', 1 );
-        }
-
-        // Fetch updated attributes
-        $attributes = $class->fetchAttributes();
-        $validation = array_merge( $validation, $datatypeValidation );
-
-        // Template handling
-        $tpl = \eZTemplate::factory();
-        $res = \eZTemplateDesignResource::instance();
-        $res->setKeys( array( array( 'class', $class->attribute( 'id' ) ) ) ); // Class ID
-        $tpl->setVariable( 'http', $http );
-        $tpl->setVariable( 'validation', $validation );
-        $tpl->setVariable( 'can_store', $canStore );
-        $tpl->setVariable( 'require_fixup', $requireFixup );
-        $tpl->setVariable( 'module', $Module );
-        $tpl->setVariable( 'class', $class );
-        $tpl->setVariable( 'attributes', $attributes );
-        $tpl->setVariable( 'datatypes', $datatypes );
-        $tpl->setVariable( 'datatype', $cur_datatype );
-        $tpl->setVariable( 'language_code', $EditLanguage );
-        $tpl->setVariable( 'last_changed_id', $lastChangedID );
-
-
-        $Result = array();
-        $Result['content'] = $tpl->fetch( 'design:class/edit.tpl' );
-        $Result['path'] = array( array( 'url' => '/class/grouplist/',
-                                        'text' => \ezpI18n::tr( 'kernel/class', 'Class groups' ) ) );
-        if ( $mainGroupID !== false )
-        {
-            $Result['path'][] = array( 'url' => '/class/classlist/' . $mainGroupID,
-                                       'text' => $mainGroupName );
-        }
-        $Result['path'][] = array( 'url' => false,
-                                   'text' => $class->attribute( 'name' ) );
-
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
     }
 }
 

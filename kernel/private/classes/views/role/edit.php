@@ -78,29 +78,7 @@ class Edit extends \Exponential\Runnable\ModuleView
         $noFunctions = false;
         $noLimitations = false;
 
-        if ( $http->hasPostVariable( 'Apply' ) )
-        {
-            $originalRole = \eZRole::fetch( $role->attribute( 'version' ) );
-            $originalRoleName = $originalRole->attribute( 'name' );
-            $originalRoleID = $originalRole->attribute( 'id' );
-
-            // Who changes which role(s) should be logged.
-            if ( $http->hasSessionVariable( 'RoleWasChanged' ) and
-                 $http->sessionVariable( 'RoleWasChanged' ) === true )
-            {
-                \eZAudit::writeAudit( 'role-change', array( 'Role ID' => $originalRoleID, 'Role name' => $originalRoleName,
-                                                           'Comment' => 'Changed the current role: kernel/role/edit.php' ) );
-                $http->removeSessionVariable( 'RoleWasChanged' );
-            }
-
-            $originalRole->revertFromTemporaryVersion();
-            \eZContentCacheManager::clearAllContentCache();
-
-            $Module->redirectTo( $Module->functionURI( 'view' ) . '/' . $originalRoleID . '/');
-
-            /* Clean up policy cache */
-            \eZUser::cleanupCache();
-        }
+        $this->applyRole( $http, $originalRole, $role, $Module );
 
         if ( $http->hasPostVariable( 'Discard' ) )
         {
@@ -140,6 +118,181 @@ class Edit extends \Exponential\Runnable\ModuleView
                                                            'FunctionName' => $currentFunction ) );
         }
 
+        $this->addLimitation( $http, $policy, $limitationList, $limitation, $limitationID, $limitationIdentifier, $nodeLimitationValues, $currentModule, $currentFunction, $mod, $functions, $currentFunctionLimitations, $functionLimitation, $limitationValues, $policyLimitation, $limitationValue, $roleID, $db );
+
+        if ( $http->hasPostVariable( 'RemovePolicy' ) )
+        {
+            $policyID = $http->postVariable( 'RolePolicy' ) ;
+            \eZDebugSetting::writeDebug( 'kernel-role-edit', $policyID, 'trying to remove policy' );
+            \eZPolicy::removeByID( $policyID );
+            // Set flag for audit. If true audit will be processed
+            $http->setSessionVariable( 'RoleWasChanged', true );
+        }
+        if ( $http->hasPostVariable( 'RemovePolicies' ) and
+             $http->hasPostVariable( 'DeleteIDArray' ) )
+        {
+            $db = \eZDB::instance();
+            $db->begin();
+            foreach( $http->postVariable( 'DeleteIDArray' ) as $deleteID)
+            {
+                \eZDebugSetting::writeDebug( 'kernel-role-edit', $deleteID, 'trying to remove policy' );
+                \eZPolicy::removeByID( $deleteID );
+            }
+            $db->commit();
+            // Set flag for audit. If true audit will be processed
+            $http->setSessionVariable( 'RoleWasChanged', true );
+        }
+
+        // The up and down buttons of the policy list. They are image buttons named
+        // MovePolicyUp_<id> and MovePolicyDown_<id>, which eZHTTPTool turns into
+        // MovePolicyUp=<id>. The move is made in the temporary version this page
+        // edits, so Save keeps it and Cancel drops it; movePolicy() refuses a policy
+        // that is not this role's.
+        foreach ( array( 'MovePolicyUp' => 'up', 'MovePolicyDown' => 'down' ) as $movePostName => $moveDirection )
+        {
+            if ( $http->hasPostVariable( $movePostName ) )
+            {
+                if ( $role->movePolicy( (int)$http->postVariable( $movePostName ), $moveDirection ) )
+                {
+                    // Set flag for audit. If true audit will be processed
+                    $http->setSessionVariable( 'RoleWasChanged', true );
+                }
+                break;
+            }
+        }
+
+
+        if ( ( $__return = $this->customFunction( $http, $currentModule, $mod, $functions, $functionNames, $showModules, $showFunctions, $showLimitations, $noFunctions, $tpl, $Module, $role, $Result ) ) !== $this )
+            return $__return;
+
+        if ( $http->hasPostVariable( 'DiscardFunction' ) )
+        {
+            $showModules = true;
+            $showFunctions = false;
+        }
+
+        if ( ( $__return = $this->selectLimitationValues( $http, $db, $currentModule, $mod, $functions, $functionNames, $showModules, $showFunctions, $showLimitations, $policyID, $nodeLimitationValues, $currentFunction, $currentFunctionLimitations, $key, $limitation, $limitationValue, $noLimitations, $policy, $limitationList, $limitationID, $limitationIdentifier, $functionLimitation, $limitationValues, $policyLimitation, $roleID, $Module, $Result, $tpl ) ) !== $this )
+            return $__return;
+
+        if ( ( $__return = $this->discardLimitation( $http, $currentModule, $mod, $functions, $functionNames, $showModules, $showFunctions, $tpl, $Result ) ) !== $this )
+            return $__return;
+
+        if ( ( $__return = $this->createPolicy( $http, $Module, $role, $tpl, $modules, $Result ) ) !== $this )
+            return $__return;
+
+        // Set flag for audit. If true audit will be processed
+        // Cancel button was pressed
+        if ( $http->hasPostVariable( 'CancelPolicyButton' ) )
+            $http->setSessionVariable( 'RoleWasChanged', false );
+
+        // The policy list is paged. $role.policies is every policy the role has, which
+        // is what the permission system needs and what a screen must not ask for: on an
+        // installation whose roles carry policies in the millions, loading them all to
+        // draw twenty five exhausts memory before the first row is written.
+        //
+        // The offset arrives as (policy_offset) rather than (offset), so a page that
+        // grows a second list later does not find the two moving together.
+        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
+
+        $policyLimit = (int)\eZINI::instance( 'site.ini' )->variable( 'RoleSettings', 'PoliciesPerPage' );
+        if ( $policyLimit < 1 )
+            $policyLimit = 25;
+
+        $policyOffset = isset( $userParameters['policy_offset'] ) ? (int)$userParameters['policy_offset'] : 0;
+        if ( $policyOffset < 0 )
+            $policyOffset = 0;
+
+        // Sorted by the database, not in the browser, for the reason role/list is: the
+        // list is shown a page at a time. (policy_sort)/(policy_dir), like the offset,
+        // carry the name of the list. The default, id ascending, is the role's own
+        // order, the one the up and down buttons change; they are offered only then.
+        $policySort = isset( $userParameters['policy_sort'] ) ? (string)$userParameters['policy_sort'] : 'id';
+        if ( !isset( \eZRole::sortColumnsForPolicyList()[$policySort] ) )
+            $policySort = 'id';
+        $policyDir = ( isset( $userParameters['policy_dir'] ) && strtolower( $userParameters['policy_dir'] ) === 'desc' ) ? 'desc' : 'asc';
+
+        $policyCount = $role->policyCount();
+        $policies    = $role->policyPage( $policyOffset, $policyLimit, $policySort, $policyDir );
+
+        $tpl->setVariable( 'policy_sort', array( 'field'     => $policySort,
+                                                 'direction' => $policyDir,
+                                                 'opposite'  => $policyDir === 'asc' ? 'desc' : 'asc' ) );
+        $tpl->setVariable( 'policy_order_editable', $policySort === 'id' && $policyDir === 'asc' );
+        $tpl->setVariable( 'policy_offset', $policyOffset );
+
+        $tpl->setVariable( 'policy_count', $policyCount );
+        // Editing a role works on a temporary version, which is a row of its own with
+        // an id of its own. Paging must not put that id in the address: the page is
+        // /role/edit/<the role>, and a link to /role/edit/<the draft> edits the draft
+        // directly, so Apply would then write back to the wrong row.
+        $tpl->setVariable( 'policy_page_uri', '/role/edit/' . (int)$roleID );
+        $tpl->setVariable( 'policy_limit', $policyLimit );
+        $tpl->setVariable( 'view_parameters', array_merge( $userParameters,
+                                                           array( 'policy_offset' => $policyOffset,
+                                                                  'policy_sort'   => $policySort,
+                                                                  'policy_dir'    => $policyDir ) ) );
+        $tpl->setVariable( 'no_functions', $noFunctions );
+        $tpl->setVariable( 'no_limitations', $noLimitations );
+
+        $tpl->setVariable( 'show_modules', $showModules );
+        $tpl->setVariable( 'show_limitations', $showLimitations );
+        $tpl->setVariable( 'show_functions', $showFunctions );
+
+        $tpl->setVariable( 'policies', $policies );
+        $tpl->setVariable( 'modules', $modules );
+        $tpl->setVariable( 'module', $Module );
+        $tpl->setVariable( 'role', $role );
+
+        $tpl->setVariable( 'step', 0 );
+
+        $Module->setTitle( 'Edit ' . $role->attribute( 'name' ) );
+
+        $Result = array();
+        $Result['path'] = array( array( 'text' => 'Role',
+                                        'url' => 'role/list' ),
+                                 array( 'text' => $role->attribute( 'name' ),
+                                        'url' => false ) );
+
+        $Result['content'] = $tpl->fetch( 'design:role/edit.tpl' );
+
+        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function applyRole( &$http, &$originalRole, &$role, &$Module )
+    {
+        if ( $http->hasPostVariable( 'Apply' ) )
+        {
+            $originalRole = \eZRole::fetch( $role->attribute( 'version' ) );
+            $originalRoleName = $originalRole->attribute( 'name' );
+            $originalRoleID = $originalRole->attribute( 'id' );
+
+            // Who changes which role(s) should be logged.
+            if ( $http->hasSessionVariable( 'RoleWasChanged' ) and
+                 $http->sessionVariable( 'RoleWasChanged' ) === true )
+            {
+                \eZAudit::writeAudit( 'role-change', array( 'Role ID' => $originalRoleID, 'Role name' => $originalRoleName,
+                                                           'Comment' => 'Changed the current role: kernel/role/edit.php' ) );
+                $http->removeSessionVariable( 'RoleWasChanged' );
+            }
+
+            $originalRole->revertFromTemporaryVersion();
+            \eZContentCacheManager::clearAllContentCache();
+
+            $Module->redirectTo( $Module->functionURI( 'view' ) . '/' . $originalRoleID . '/');
+
+            /* Clean up policy cache */
+            \eZUser::cleanupCache();
+        }
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function addLimitation( &$http, &$policy, &$limitationList, &$limitation, &$limitationID, &$limitationIdentifier, &$nodeLimitationValues, &$currentModule, &$currentFunction, &$mod, &$functions, &$currentFunctionLimitations, &$functionLimitation, &$limitationValues, &$policyLimitation, &$limitationValue, &$roleID, &$db )
+    {
         if ( $http->hasPostVariable( 'AddLimitation' ) )
         {
             $policy = false;
@@ -239,49 +392,15 @@ class Edit extends \Exponential\Runnable\ModuleView
                 $db->commit();
             }
         }
+    }
 
-        if ( $http->hasPostVariable( 'RemovePolicy' ) )
-        {
-            $policyID = $http->postVariable( 'RolePolicy' ) ;
-            \eZDebugSetting::writeDebug( 'kernel-role-edit', $policyID, 'trying to remove policy' );
-            \eZPolicy::removeByID( $policyID );
-            // Set flag for audit. If true audit will be processed
-            $http->setSessionVariable( 'RoleWasChanged', true );
-        }
-        if ( $http->hasPostVariable( 'RemovePolicies' ) and
-             $http->hasPostVariable( 'DeleteIDArray' ) )
-        {
-            $db = \eZDB::instance();
-            $db->begin();
-            foreach( $http->postVariable( 'DeleteIDArray' ) as $deleteID)
-            {
-                \eZDebugSetting::writeDebug( 'kernel-role-edit', $deleteID, 'trying to remove policy' );
-                \eZPolicy::removeByID( $deleteID );
-            }
-            $db->commit();
-            // Set flag for audit. If true audit will be processed
-            $http->setSessionVariable( 'RoleWasChanged', true );
-        }
-
-        // The up and down buttons of the policy list. They are image buttons named
-        // MovePolicyUp_<id> and MovePolicyDown_<id>, which eZHTTPTool turns into
-        // MovePolicyUp=<id>. The move is made in the temporary version this page
-        // edits, so Save keeps it and Cancel drops it; movePolicy() refuses a policy
-        // that is not this role's.
-        foreach ( array( 'MovePolicyUp' => 'up', 'MovePolicyDown' => 'down' ) as $movePostName => $moveDirection )
-        {
-            if ( $http->hasPostVariable( $movePostName ) )
-            {
-                if ( $role->movePolicy( (int)$http->postVariable( $movePostName ), $moveDirection ) )
-                {
-                    // Set flag for audit. If true audit will be processed
-                    $http->setSessionVariable( 'RoleWasChanged', true );
-                }
-                break;
-            }
-        }
-
-
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function customFunction( &$http, &$currentModule, &$mod, &$functions, &$functionNames, &$showModules, &$showFunctions, &$showLimitations, &$noFunctions, &$tpl, &$Module, &$role, &$Result )
+    {
         if ( $http->hasPostVariable( 'CustomFunction' ) )
         {
             if ( $http->hasPostVariable( 'Modules' ) )
@@ -325,12 +444,16 @@ class Edit extends \Exponential\Runnable\ModuleView
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
-        if ( $http->hasPostVariable( 'DiscardFunction' ) )
-        {
-            $showModules = true;
-            $showFunctions = false;
-        }
+        return $this;
+    }
 
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function selectLimitationValues( &$http, &$db, &$currentModule, &$mod, &$functions, &$functionNames, &$showModules, &$showFunctions, &$showLimitations, &$policyID, &$nodeLimitationValues, &$currentFunction, &$currentFunctionLimitations, &$key, &$limitation, &$limitationValue, &$noLimitations, &$policy, &$limitationList, &$limitationID, &$limitationIdentifier, &$functionLimitation, &$limitationValues, &$policyLimitation, &$roleID, &$Module, &$Result, &$tpl )
+    {
         if ( $http->hasPostVariable( 'SelectButton' ) or
              $http->hasPostVariable( 'BrowseCancelButton' ) or
              $http->hasPostVariable( 'Limitation' ) or
@@ -704,6 +827,16 @@ class Edit extends \Exponential\Runnable\ModuleView
             $db->commit();
         }
 
+        return $this;
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function discardLimitation( &$http, &$currentModule, &$mod, &$functions, &$functionNames, &$showModules, &$showFunctions, &$tpl, &$Result )
+    {
         if ( $http->hasPostVariable( 'DiscardLimitation' )  || $http->hasPostVariable( 'Step2')  )
         {
             $currentModule = $http->postVariable( 'CurrentModule' );
@@ -726,6 +859,16 @@ class Edit extends \Exponential\Runnable\ModuleView
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
+        return $this;
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function createPolicy( &$http, &$Module, &$role, &$tpl, &$modules, &$Result )
+    {
         if ( $http->hasPostVariable( 'CreatePolicy' ) || $http->hasPostVariable( 'Step1' ) )
         {
             // Set flag for audit. If true audit will be processed
@@ -751,82 +894,7 @@ class Edit extends \Exponential\Runnable\ModuleView
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
-        // Set flag for audit. If true audit will be processed
-        // Cancel button was pressed
-        if ( $http->hasPostVariable( 'CancelPolicyButton' ) )
-            $http->setSessionVariable( 'RoleWasChanged', false );
-
-        // The policy list is paged. $role.policies is every policy the role has, which
-        // is what the permission system needs and what a screen must not ask for: on an
-        // installation whose roles carry policies in the millions, loading them all to
-        // draw twenty five exhausts memory before the first row is written.
-        //
-        // The offset arrives as (policy_offset) rather than (offset), so a page that
-        // grows a second list later does not find the two moving together.
-        $userParameters = isset( $Params['UserParameters'] ) ? (array)$Params['UserParameters'] : array();
-
-        $policyLimit = (int)\eZINI::instance( 'site.ini' )->variable( 'RoleSettings', 'PoliciesPerPage' );
-        if ( $policyLimit < 1 )
-            $policyLimit = 25;
-
-        $policyOffset = isset( $userParameters['policy_offset'] ) ? (int)$userParameters['policy_offset'] : 0;
-        if ( $policyOffset < 0 )
-            $policyOffset = 0;
-
-        // Sorted by the database, not in the browser, for the reason role/list is: the
-        // list is shown a page at a time. (policy_sort)/(policy_dir), like the offset,
-        // carry the name of the list. The default, id ascending, is the role's own
-        // order, the one the up and down buttons change; they are offered only then.
-        $policySort = isset( $userParameters['policy_sort'] ) ? (string)$userParameters['policy_sort'] : 'id';
-        if ( !isset( \eZRole::sortColumnsForPolicyList()[$policySort] ) )
-            $policySort = 'id';
-        $policyDir = ( isset( $userParameters['policy_dir'] ) && strtolower( $userParameters['policy_dir'] ) === 'desc' ) ? 'desc' : 'asc';
-
-        $policyCount = $role->policyCount();
-        $policies    = $role->policyPage( $policyOffset, $policyLimit, $policySort, $policyDir );
-
-        $tpl->setVariable( 'policy_sort', array( 'field'     => $policySort,
-                                                 'direction' => $policyDir,
-                                                 'opposite'  => $policyDir === 'asc' ? 'desc' : 'asc' ) );
-        $tpl->setVariable( 'policy_order_editable', $policySort === 'id' && $policyDir === 'asc' );
-        $tpl->setVariable( 'policy_offset', $policyOffset );
-
-        $tpl->setVariable( 'policy_count', $policyCount );
-        // Editing a role works on a temporary version, which is a row of its own with
-        // an id of its own. Paging must not put that id in the address: the page is
-        // /role/edit/<the role>, and a link to /role/edit/<the draft> edits the draft
-        // directly, so Apply would then write back to the wrong row.
-        $tpl->setVariable( 'policy_page_uri', '/role/edit/' . (int)$roleID );
-        $tpl->setVariable( 'policy_limit', $policyLimit );
-        $tpl->setVariable( 'view_parameters', array_merge( $userParameters,
-                                                           array( 'policy_offset' => $policyOffset,
-                                                                  'policy_sort'   => $policySort,
-                                                                  'policy_dir'    => $policyDir ) ) );
-        $tpl->setVariable( 'no_functions', $noFunctions );
-        $tpl->setVariable( 'no_limitations', $noLimitations );
-
-        $tpl->setVariable( 'show_modules', $showModules );
-        $tpl->setVariable( 'show_limitations', $showLimitations );
-        $tpl->setVariable( 'show_functions', $showFunctions );
-
-        $tpl->setVariable( 'policies', $policies );
-        $tpl->setVariable( 'modules', $modules );
-        $tpl->setVariable( 'module', $Module );
-        $tpl->setVariable( 'role', $role );
-
-        $tpl->setVariable( 'step', 0 );
-
-        $Module->setTitle( 'Edit ' . $role->attribute( 'name' ) );
-
-        $Result = array();
-        $Result['path'] = array( array( 'text' => 'Role',
-                                        'url' => 'role/list' ),
-                                 array( 'text' => $role->attribute( 'name' ),
-                                        'url' => false ) );
-
-        $Result['content'] = $tpl->fetch( 'design:role/edit.tpl' );
-
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        return $this;
     }
 }
 

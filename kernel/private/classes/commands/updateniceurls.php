@@ -643,6 +643,86 @@ class Updateniceurls extends \Exponential\Runnable\Command
             $rows = $db->arrayQuery( 'SELECT count(*) AS count FROM ezurlalias' );
             $urlCount = $rows[0]['count'];
         }
+        $this->importOldUrls();
+
+        if ( $updateNodeAlias )
+        {
+            $nodeGlobalStartTime = microtime( true );
+            // Start updating nodes
+            $topLevelNodesArray = $db->arrayQuery( 'SELECT node_id FROM ezcontentobject_tree WHERE depth = 1 ORDER BY node_id' );
+
+            foreach ( array_keys( $topLevelNodesArray ) as $key )
+            {
+                $topLevelNodeID = $topLevelNodesArray[$key]['node_id'];
+                $rootNode = \eZContentObjectTreeNode::fetch( $topLevelNodeID );
+                if ( $rootNode->updateSubTreePath() )
+                    ++$totalChangedNodes;
+                $done = false;
+                $offset = 0;
+                $counter = 0;
+                $column = 0;
+                $changedNodes = 0;
+                $nodeCount = $rootNode->subTreeCount( array( 'Limitation' => array(),
+                                                             'IgnoreVisibility' => true ) );
+                $totalNodeCount += $nodeCount + 1;
+                $cli->output( "Starting updates for " . $cli->stylize( 'mark', $rootNode->attribute( 'name' ) ) . ", $nodeCount nodes" );
+                $nodeStartTime = microtime( true );
+                while ( !$done )
+                {
+                    $nodeList = $rootNode->subTree( array( 'Offset' => $offset,
+                                                            'Limit' => $fetchLimit,
+                                                            'IgnoreVisibility' => true,
+                                                            'Limitation' => array() ) );
+                    foreach ( array_keys( $nodeList ) as $key )
+                    {
+                        $node = $nodeList[ $key ];
+                        $hasChanged = $node->updateSubTreePath();
+                        if ( $hasChanged )
+                        {
+                            ++$changedNodes;
+                            ++$totalChangedNodes;
+                        }
+                        $changeCharacters = array( '.', '+', '*' );
+                        $changeCharacter = '.';
+                        if ( isset( $changeCharacters[$hasChanged] ) )
+                            $changeCharacter = $changeCharacters[$hasChanged];
+                        $verifyNodeDataClosure( $changeCharacter, $node );
+                        list( $column, $counter ) = $displayProgressClosure( $changeCharacter, $nodeStartTime, $counter, $nodeCount, $column );
+                    }
+                    if ( count( $nodeList ) == 0 )
+                        $done = true;
+                    unset( $nodeList );
+                    $offset += $fetchLimit;
+                    \eZContentObject::clearCache();
+                }
+                flush();
+                if ( $column > 0 )
+                    $cli->output();
+                $cli->output( "Updated " . $cli->stylize( 'emphasize', "$changedNodes/$nodeCount" ) . " for " . $cli->stylize( 'mark', $rootNode->attribute( 'name' ) ) );
+                $cli->output();
+                $backupTablesClosure( 'node_' . strtolower( $rootNode->attribute( 'name' ) ) );
+            }
+
+            $cli->output();
+            $cli->output( "Total update " . $cli->stylize( 'emphasize', "$totalChangedNodes/$totalNodeCount" ) );
+            $cli->output( "Node time taken: " . $cli->stylize( 'emphasize', formatTime( microtime( true ) - $nodeGlobalStartTime ) ) );
+        }
+
+
+        $cli->output( "Total time taken: " . $cli->stylize( 'emphasize', formatTime( microtime( true ) - $globalStartTime ) ) );
+
+        $script->shutdown();
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); the script's global variables are bound as in run().
+     */
+    protected function importOldUrls()
+    {
+        foreach ( array( 'urlCount', 'importNodes', 'cli', 'column', 'counter', 'offset', 'urlImportStartTime', 'rows', 'fetchLimit', 'count', 'row', 'nodeID', 'pathIdentificationString', 'languageMask', 'alwaysAvailable', 'action', 'aliases', 'displayProgressClosure', 'res', 'logStoreClosure', 'backupTablesClosure', 'importOldAlias', 'source', 'linkID', 'destination', 'aliasRedirects', 'actionType', 'actionValue', 'query', 'tmprows', 'db', 'result', 'verifyDataClosure', 'importOldAliasRedirections', 'key', 'forwardFromURL', 'forwardToID', 'redirectedSource', 'rows2', 'elements', 'importOldAliasWildcard', 'wildcardType', 'sourceWildcard', 'destinationWildcard', 'wildcard', 'matches', 'fromPath', 'toPath', 'newWildcard', 'newWildcardSQL', 'rowsw', 'newSourceWildcard', 'toPathSQL', 'remaining', 'globalStartTime' ) as $__name )
+            ${$__name} = &$GLOBALS[$__name];
+        unset( $__name );
+
         if ( $urlCount > 0 )
         {
             if ( $importNodes )
@@ -1055,74 +1135,6 @@ class Updateniceurls extends \Exponential\Runnable\Command
 
             $cli->output( "Import time taken: " . $cli->stylize( 'emphasize', formatTime( microtime( true ) - $globalStartTime ) ) );
         }
-
-        if ( $updateNodeAlias )
-        {
-            $nodeGlobalStartTime = microtime( true );
-            // Start updating nodes
-            $topLevelNodesArray = $db->arrayQuery( 'SELECT node_id FROM ezcontentobject_tree WHERE depth = 1 ORDER BY node_id' );
-
-            foreach ( array_keys( $topLevelNodesArray ) as $key )
-            {
-                $topLevelNodeID = $topLevelNodesArray[$key]['node_id'];
-                $rootNode = \eZContentObjectTreeNode::fetch( $topLevelNodeID );
-                if ( $rootNode->updateSubTreePath() )
-                    ++$totalChangedNodes;
-                $done = false;
-                $offset = 0;
-                $counter = 0;
-                $column = 0;
-                $changedNodes = 0;
-                $nodeCount = $rootNode->subTreeCount( array( 'Limitation' => array(),
-                                                             'IgnoreVisibility' => true ) );
-                $totalNodeCount += $nodeCount + 1;
-                $cli->output( "Starting updates for " . $cli->stylize( 'mark', $rootNode->attribute( 'name' ) ) . ", $nodeCount nodes" );
-                $nodeStartTime = microtime( true );
-                while ( !$done )
-                {
-                    $nodeList = $rootNode->subTree( array( 'Offset' => $offset,
-                                                            'Limit' => $fetchLimit,
-                                                            'IgnoreVisibility' => true,
-                                                            'Limitation' => array() ) );
-                    foreach ( array_keys( $nodeList ) as $key )
-                    {
-                        $node = $nodeList[ $key ];
-                        $hasChanged = $node->updateSubTreePath();
-                        if ( $hasChanged )
-                        {
-                            ++$changedNodes;
-                            ++$totalChangedNodes;
-                        }
-                        $changeCharacters = array( '.', '+', '*' );
-                        $changeCharacter = '.';
-                        if ( isset( $changeCharacters[$hasChanged] ) )
-                            $changeCharacter = $changeCharacters[$hasChanged];
-                        $verifyNodeDataClosure( $changeCharacter, $node );
-                        list( $column, $counter ) = $displayProgressClosure( $changeCharacter, $nodeStartTime, $counter, $nodeCount, $column );
-                    }
-                    if ( count( $nodeList ) == 0 )
-                        $done = true;
-                    unset( $nodeList );
-                    $offset += $fetchLimit;
-                    \eZContentObject::clearCache();
-                }
-                flush();
-                if ( $column > 0 )
-                    $cli->output();
-                $cli->output( "Updated " . $cli->stylize( 'emphasize', "$changedNodes/$nodeCount" ) . " for " . $cli->stylize( 'mark', $rootNode->attribute( 'name' ) ) );
-                $cli->output();
-                $backupTablesClosure( 'node_' . strtolower( $rootNode->attribute( 'name' ) ) );
-            }
-
-            $cli->output();
-            $cli->output( "Total update " . $cli->stylize( 'emphasize', "$totalChangedNodes/$totalNodeCount" ) );
-            $cli->output( "Node time taken: " . $cli->stylize( 'emphasize', formatTime( microtime( true ) - $nodeGlobalStartTime ) ) );
-        }
-
-
-        $cli->output( "Total time taken: " . $cli->stylize( 'emphasize', formatTime( microtime( true ) - $globalStartTime ) ) );
-
-        $script->shutdown();
     }
 }
 

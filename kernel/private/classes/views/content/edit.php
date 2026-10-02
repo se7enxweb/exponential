@@ -440,32 +440,8 @@ class Edit extends \Exponential\Runnable\ModuleView
         // Action for the edit_draft.tpl/edit_languages.tpl page.
         // CancelDraftButton is set for the Cancel button.
         // Note: This code is safe to place before permission checking.
-        if( $http->hasPostVariable( 'CancelDraftButton' ) )
-        {
-            $nodes = $obj->assignedNodes();
-            $chosenNode = null;
-            foreach ( $nodes as $node )
-            {
-                if ( $node->attribute( 'is_main' ) )
-                {
-                    $chosenNode = $node;
-                }
-                else if ( $chosenNode === null )
-                {
-                    $chosenNode = $node;
-                }
-            }
-            if ( $chosenNode )
-            {
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'view', array( 'full', $chosenNode->attribute( 'node_id' ) ) ) );
-            }
-            else
-            {
-                $contentINI = \eZINI::instance( 'content.ini' );
-                $rootNodeID = $contentINI->variable( 'NodeSettings', 'RootNode' );
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'view', array( 'full', $rootNodeID ) ) );
-            }
-        }
+        if ( ( $__return = $this->cancelDraft( $http, $obj, $Result, $Module ) ) !== $this )
+            return $__return;
 
         // Remember redirection URI in session for later use.
         // Note: This code is safe to place before permission checking.
@@ -510,6 +486,108 @@ class Edit extends \Exponential\Runnable\ModuleView
 
         // Action for edit_draft.tpl page,
         // This will create a new draft of the object which the user can edit.
+        if ( ( $__return = $this->newDraft( $http, $obj, $EditLanguage, $Result, $Module, $isAccessChecked, $classID, $version, $FromLanguage, $ObjectID, $params ) ) !== $this )
+            return $__return;
+
+        // Action to base current translation on a different language
+        if ( $Module->isCurrentAction( 'FromLanguage' ) && $http->hasPostVariable( 'FromLanguage' ) && is_numeric( $EditVersion ) )
+        {
+            $FromLanguage = $http->postVariable( 'FromLanguage' );
+            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'edit', array( $obj->attribute( 'id' ), $EditVersion, $EditLanguage, $FromLanguage ) ) );
+        }
+
+        // Action for the edit_language.tpl page.
+        // LanguageSelection is used to choose a language to edit the object in.
+        if ( ( $__return = $this->selectLanguage( $http, $obj, $user, $Result, $Module, $isAccessChecked, $ObjectID, $version ) ) !== $this )
+            return $__return;
+
+        // If we have a version number we check if it exists.
+        if ( is_numeric( $EditVersion ) )
+        {
+            $version = $obj->version( $EditVersion );
+            if ( !$version )
+            {
+                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            }
+        }
+
+        // No language was specified in the URL, we need to figure out
+        // the language to use.
+        if ( ( $__return = $this->chooseEditLanguage( $EditLanguage, $obj, $Result, $Module, $isAccessChecked, $version, $ObjectID, $tpl, $res, $EditVersion, $section ) ) !== $this )
+            return $__return;
+
+        $ini = \eZINI::instance();
+
+        // There version is not set but we do have a language.
+        // This means we need to create a new draft for the user, or reuse
+        // an existing one.
+        if ( ( $__return = $this->findEditVersion( $EditVersion, $ini, $obj, $EditLanguage, $Result, $Module, $isAccessChecked, $version, $ObjectID, $section, $tpl, $res, $class, $FromLanguage, $user ) ) !== $this )
+            return $__return;
+
+        // If $isAccessChecked is still false we need to check access ourselves.
+        if ( !$isAccessChecked )
+        {
+            // Check permission for object and version in specified language.
+            if ( !$obj->canEdit( false, false, false, $EditLanguage ) )
+            {
+                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel',
+                                             array( 'AccessList' => $obj->accessList( 'edit' ) ) ) );
+            }
+        }
+        $Module->addHook( 'action_check', 'checkContentActions' );
+
+        $includeResult = include( 'kernel/content/attribute_edit.php' );
+
+        if ( $includeResult != 1 )
+            return $this->viewResult( isset( $Result ) ? $Result : null,  $includeResult );
+
+        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function cancelDraft( &$http, &$obj, &$Result, &$Module )
+    {
+        if( $http->hasPostVariable( 'CancelDraftButton' ) )
+        {
+            $nodes = $obj->assignedNodes();
+            $chosenNode = null;
+            foreach ( $nodes as $node )
+            {
+                if ( $node->attribute( 'is_main' ) )
+                {
+                    $chosenNode = $node;
+                }
+                else if ( $chosenNode === null )
+                {
+                    $chosenNode = $node;
+                }
+            }
+            if ( $chosenNode )
+            {
+                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'view', array( 'full', $chosenNode->attribute( 'node_id' ) ) ) );
+            }
+            else
+            {
+                $contentINI = \eZINI::instance( 'content.ini' );
+                $rootNodeID = $contentINI->variable( 'NodeSettings', 'RootNode' );
+                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'view', array( 'full', $rootNodeID ) ) );
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function newDraft( &$http, &$obj, &$EditLanguage, &$Result, &$Module, &$isAccessChecked, &$classID, &$version, &$FromLanguage, &$ObjectID, &$params )
+    {
         if ( $http->hasPostVariable( 'NewDraftButton' ) )
         {
             // Check permission for object in specified language
@@ -586,15 +664,16 @@ class Edit extends \Exponential\Runnable\ModuleView
             }
         }
 
-        // Action to base current translation on a different language
-        if ( $Module->isCurrentAction( 'FromLanguage' ) && $http->hasPostVariable( 'FromLanguage' ) && is_numeric( $EditVersion ) )
-        {
-            $FromLanguage = $http->postVariable( 'FromLanguage' );
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'edit', array( $obj->attribute( 'id' ), $EditVersion, $EditLanguage, $FromLanguage ) ) );
-        }
+        return $this;
+    }
 
-        // Action for the edit_language.tpl page.
-        // LanguageSelection is used to choose a language to edit the object in.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function selectLanguage( &$http, &$obj, &$user, &$Result, &$Module, &$isAccessChecked, &$ObjectID, &$version )
+    {
         if ( $http->hasPostVariable( 'LanguageSelection' ) )
         {
             $selectedEditLanguage = $http->postVariable( 'EditLanguage' );
@@ -647,18 +726,16 @@ class Edit extends \Exponential\Runnable\ModuleView
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'edit', array( $ObjectID, $version->attribute( 'version' ), $selectedEditLanguage, $selectedFromLanguage ) ) );
         }
 
-        // If we have a version number we check if it exists.
-        if ( is_numeric( $EditVersion ) )
-        {
-            $version = $obj->version( $EditVersion );
-            if ( !$version )
-            {
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
-            }
-        }
+        return $this;
+    }
 
-        // No language was specified in the URL, we need to figure out
-        // the language to use.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function chooseEditLanguage( &$EditLanguage, &$obj, &$Result, &$Module, &$isAccessChecked, &$version, &$ObjectID, &$tpl, &$res, &$EditVersion, &$section )
+    {
         if ( $EditLanguage == false )
         {
             // Check permission for object
@@ -738,11 +815,16 @@ class Edit extends \Exponential\Runnable\ModuleView
             }
         }
 
-        $ini = \eZINI::instance();
+        return $this;
+    }
 
-        // There version is not set but we do have a language.
-        // This means we need to create a new draft for the user, or reuse
-        // an existing one.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function findEditVersion( &$EditVersion, &$ini, &$obj, &$EditLanguage, &$Result, &$Module, &$isAccessChecked, &$version, &$ObjectID, &$section, &$tpl, &$res, &$class, &$FromLanguage, &$user )
+    {
         if ( !is_numeric( $EditVersion ) )
         {
             if ( $ini->variable( 'ContentSettings', 'EditDirtyObjectAction' ) == 'usecurrent' )
@@ -885,24 +967,7 @@ class Edit extends \Exponential\Runnable\ModuleView
             }
         }
 
-        // If $isAccessChecked is still false we need to check access ourselves.
-        if ( !$isAccessChecked )
-        {
-            // Check permission for object and version in specified language.
-            if ( !$obj->canEdit( false, false, false, $EditLanguage ) )
-            {
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel',
-                                             array( 'AccessList' => $obj->accessList( 'edit' ) ) ) );
-            }
-        }
-        $Module->addHook( 'action_check', 'checkContentActions' );
-
-        $includeResult = include( 'kernel/content/attribute_edit.php' );
-
-        if ( $includeResult != 1 )
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $includeResult );
-
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        return $this;
     }
 }
 

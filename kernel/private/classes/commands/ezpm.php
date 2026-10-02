@@ -328,6 +328,64 @@ class Ezpm extends \Exponential\Runnable\Command
 
         $readOptions = true;
 
+        $this->parseArguments();
+        $script->setIsQuiet( $isQuiet );
+        $script->setUseDebugOutput( $debugOutput );
+        $script->setAllowedDebugLevels( $allowedDebugLevels );
+        $script->setUseDebugAccumulators( $useDebugAccumulators );
+        $script->setUseDebugTimingPoints( $useDebugTimingpoints );
+        $script->setUseIncludeFiles( $useIncludeFiles );
+
+
+        $commandList[] = $commandItem;
+
+        // Check all commands
+        $this->checkCommands();
+
+        if ( $webOutput )
+            $useColors = true;
+
+        $cli->setUseStyles( $useColors );
+        $script->setDebugMessage( "\n\n" . str_repeat( '#', 36 ) . $cli->style( 'emphasize' ) . " DEBUG " . $cli->style( 'emphasize-end' )  . str_repeat( '#', 36 ) . "\n" );
+
+        if ( !$siteaccess )
+        {
+            $siteaccess = \eZINI::instance()->variable( 'SiteSettings', 'DefaultAccess' );
+            if ( !$siteaccess )
+                $siteaccess = 'sevenx_site_user';
+        }
+
+        $script->setUseSiteAccess( $siteaccess );
+
+        // Check the database settings and initialize them as current settings
+        $this->connectDatabase();
+
+        $script->setUser( $userLogin, $userPassword );
+
+        $script->initialize();
+
+        $alreadyCreated = false;
+
+        $createdPackages = array();
+
+        $this->runCommands();
+
+        $cli->output();
+
+        \expScriptStatus::instance()->end();
+
+        $script->shutdown();
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); the script's global variables are bound as in run().
+     */
+    protected function parseArguments()
+    {
+        foreach ( array( 'i', 'argv', 'arg', 'commandList', 'commandItem', 'readOptions', 'flag', 'matches', 'optionData', 'longOptionsWithData', 'debugOutput', 'isQuiet', 'useColors', 'useLogFiles', 'userLogin', 'userPassword', 'repositoryID', 'dbUser', 'dbPassword', 'dbSocket', 'dbHost', 'dbType', 'dbName', 'optionsWithData', 'levels', 'allowedDebugLevels', 'level', 'useDebugAccumulators', 'useDebugTimingpoints', 'useIncludeFiles', 'realCommand', 'commandMap', 'realHelpTopic', 'helpTopic', 'infoOptions' ) as $__name )
+            ${$__name} = &$GLOBALS[$__name];
+        unset( $__name );
+
         for ( $i = 1; $i < count( $argv ); ++$i )
         {
             $arg = $argv[$i];
@@ -667,17 +725,17 @@ class Ezpm extends \Exponential\Runnable\Command
                 }
             }
         }
-        $script->setIsQuiet( $isQuiet );
-        $script->setUseDebugOutput( $debugOutput );
-        $script->setAllowedDebugLevels( $allowedDebugLevels );
-        $script->setUseDebugAccumulators( $useDebugAccumulators );
-        $script->setUseDebugTimingPoints( $useDebugTimingpoints );
-        $script->setUseIncludeFiles( $useIncludeFiles );
+    }
 
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); the script's global variables are bound as in run().
+     */
+    protected function checkCommands()
+    {
+        foreach ( array( 'commandList', 'commandItem' ) as $__name )
+            ${$__name} = &$GLOBALS[$__name];
+        unset( $__name );
 
-        $commandList[] = $commandItem;
-
-        // Check all commands
         foreach ( $commandList as $commandItem )
         {
             if ( $commandItem['command'] == 'add' )
@@ -762,23 +820,17 @@ class Ezpm extends \Exponential\Runnable\Command
                 exit( 1 );
             }
         }
+    }
 
-        if ( $webOutput )
-            $useColors = true;
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); the script's global variables are bound as in run().
+     */
+    protected function connectDatabase()
+    {
+        foreach ( array( 'dbUser', 'dbHost', 'dbSocket', 'dbType', 'dbName', 'cli', 'script', 'params', 'dbPassword', 'db', 'str', 'rows', 'version' ) as $__name )
+            ${$__name} = &$GLOBALS[$__name];
+        unset( $__name );
 
-        $cli->setUseStyles( $useColors );
-        $script->setDebugMessage( "\n\n" . str_repeat( '#', 36 ) . $cli->style( 'emphasize' ) . " DEBUG " . $cli->style( 'emphasize-end' )  . str_repeat( '#', 36 ) . "\n" );
-
-        if ( !$siteaccess )
-        {
-            $siteaccess = \eZINI::instance()->variable( 'SiteSettings', 'DefaultAccess' );
-            if ( !$siteaccess )
-                $siteaccess = 'sevenx_site_user';
-        }
-
-        $script->setUseSiteAccess( $siteaccess );
-
-        // Check the database settings and initialize them as current settings
         if ( $dbUser !== false or $dbHost !== false or $dbSocket !== false or
              $dbType !== false or $dbName !== false )
         {
@@ -824,14 +876,16 @@ class Ezpm extends \Exponential\Runnable\Command
                 }
             }
         }
+    }
 
-        $script->setUser( $userLogin, $userPassword );
-
-        $script->initialize();
-
-        $alreadyCreated = false;
-
-        $createdPackages = array();
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); the script's global variables are bound as in run().
+     */
+    protected function runCommands()
+    {
+        foreach ( array( 'commandList', 'commandItem', 'command', 'lockFile', 'lockHandle', 'cli', 'script', 'fetchParameters', 'repositoryID', 'packages', 'package', 'packageRepInfo', 'createdPackages', 'showInfo', 'showFiles', 'showDependencies', 'i', 'dependencySection', 'dependencyItems', 'dependencyTypes', 'dependencyTypeName', 'dependencyItem', 'dependencyText', 'itemType', 'groups', 'group', 'handler', 'realItemType', 'parameters', 'nodeItem', 'nodeIDItem', 'node', 'nodePath', 'packageAttributes', 'packageFile', 'packageName', 'user', 'userID', 'topNodeID', 'installParameters', 'siteaccess', 'result', 'exportDirectory', 'exportPath', 'alreadyCreated', 'userObject', 'text' ) as $__name )
+            ${$__name} = &$GLOBALS[$__name];
+        unset( $__name );
 
         foreach ( $commandList as $commandItem )
         {
@@ -1294,12 +1348,6 @@ class Ezpm extends \Exponential\Runnable\Command
                 \expScriptStatus::instance()->end();
             }
         }
-
-        $cli->output();
-
-        \expScriptStatus::instance()->end();
-
-        $script->shutdown();
     }
 }
 

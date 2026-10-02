@@ -44,6 +44,135 @@ class EditExport extends \Exponential\Runnable\ModuleView
         if ( $http->hasPostVariable( 'RSSExport_ID' ) )
             $RSSExportID = $http->postVariable( 'RSSExport_ID' );
 
+        if ( ( $__return = $this->storeExport( $Module, $http, $Result, $valid, $validationErrors, $rssExportItem, $RSSExportID, $rssExport ) ) !== $this )
+            return $__return;
+
+
+        $this->changeItemCount( $http, $db, $Module, $RSSExportID, $rssExportItem );
+
+        if ( ( $__return = $this->loadExport( $RSSExportID, $rssExportID, $rssExport, $tpl, $Result, $db, $Module, $Params, $http, $rssExportItem, $opmlItem ) ) !== $this )
+            return $__return;
+
+        // ------------------------------------------------------------------ OPML ---
+        //
+        // An OPML export lists feeds rather than articles, so its half of this page is
+        // a browser over the other exports. Its controls are submit buttons rather than
+        // links, because they live inside the edit form: a link would leave the page
+        // and take everything typed into it with it. Each one therefore writes the
+        // draft first and then acts.
+
+        require_once 'kernel/rss/ezrsslistpager.php';
+
+        $isOPML = $rssExport->attribute( 'rss_version' ) === 'OPML'
+                  || ( $http->hasPostVariable( 'RSSVersion' ) && $http->postVariable( 'RSSVersion' ) === 'OPML' );
+
+        $opmlBrowserSearch = '';
+        $opmlBrowserPager  = null;
+        $opmlBrowserList   = array();
+        $opmlSelected      = array();
+
+        // The draft can go between one request and the next: a timeout collects it, or
+        // somebody removes the export from another window. Nothing below is worth doing
+        // without it, and every line of it would be working on a null.
+        $this->opmlImport( $isOPML, $rssExportID, $rssExport, $http, $Module, $opmlItem, $opmlBrowserSearch, $opmlBrowserPager, $opmlSelected, $opmlBrowserList );
+
+        $tpl = \eZTemplate::factory();
+        $config = \eZINI::instance( 'site.ini' );
+
+        $rssVersionArray = $config->variable( 'RSSSettings', 'AvailableVersionList' );
+        $rssDefaultVersion = $config->variable( 'RSSSettings', 'DefaultVersion' );
+        $numberOfObjectsArray = $config->variable( 'RSSSettings', 'NumberOfObjectsList' );
+        $numberOfObjectsDefault = $config->variable( 'RSSSettings', 'NumberOfObjectsDefault' );
+
+        // Get Classes and class attributes
+        $classArray = \eZContentClass::fetchList();
+
+        // The drop-down shows what each format is called; the value behind each option
+        // stays the stored one, so nothing that reads or writes rss_version changes.
+        $rssVersionOptions = array();
+        foreach ( (array) $rssVersionArray as $rssVersionItem )
+            $rssVersionOptions[] = array( 'value' => $rssVersionItem,
+                                          'label' => \eZRSSExport::formatLabel( $rssVersionItem ) );
+
+        $tpl->setVariable( 'rss_version_array', $rssVersionArray );   // kept for older override templates
+        $tpl->setVariable( 'rss_version_options', $rssVersionOptions );
+        $tpl->setVariable( 'rss_version_default', $rssDefaultVersion );
+        $tpl->setVariable( 'number_of_objects_array', $numberOfObjectsArray );
+        $tpl->setVariable( 'number_of_objects_default', $numberOfObjectsDefault );
+
+        $tpl->setVariable( 'rss_class_array', $classArray );
+
+        // What the OPML half of the page draws itself from: see further down, after
+        // the podcast half.
+
+        // What the podcast half of the page draws itself from. The categories come
+        // from the class rather than the template so that Apple revising its list is
+        // one change in one place.
+        $isPodcast = $rssExport instanceof \eZRSSExport
+                     && ( $rssExport->attribute( 'rss_version' ) === 'ITUNES'
+                          || ( $http->hasPostVariable( 'RSSVersion' )
+                               && $http->postVariable( 'RSSVersion' ) === 'ITUNES' ) );
+
+        $podcastCategories = array();
+        foreach ( \eZRSSExport::podcastCategories() as $podcastCategory => $podcastSubs )
+            $podcastCategories[] = array( 'name' => $podcastCategory, 'subcategories' => $podcastSubs );
+
+        $tpl->setVariable( 'rss_is_podcast', $isPodcast );
+        $tpl->setVariable( 'podcast_head', $rssExport instanceof \eZRSSExport
+                                           ? $rssExport->podcastHead()
+                                           : \eZRSSExport::create( 0 )->podcastHead() );
+        $tpl->setVariable( 'podcast_categories', $podcastCategories );
+        $tpl->setVariable( 'rss_is_opml', $isOPML );
+        $tpl->setVariable( 'opml_head', $rssExport instanceof \eZRSSExport
+                                        ? $rssExport->opmlHead()
+                                        : \eZRSSExport::create( 0 )->opmlHead() );
+        $opmlItems = $isOPML && is_numeric( $rssExportID )
+                     ? \eZRSSExportOPMLItem::fetchList( $rssExportID, \eZRSSExport::STATUS_DRAFT )
+                     : array();
+
+        // The rows that can hold other rows, for the "inside" menu on each one.
+        $opmlGroups = array();
+        foreach ( $opmlItems as $opmlItem )
+        {
+            if ( $opmlItem->attribute( 'outline_type' ) !== 'group' )
+                continue;
+            $label = $opmlItem->attribute( 'outline_text' );
+            $opmlGroups[] = array( 'id'    => (int) $opmlItem->attribute( 'id' ),
+                                   'label' => $label !== '' ? $label : \ezpI18n::tr( 'kernel/rss/edit_export', 'Group' ) );
+        }
+
+        $tpl->setVariable( 'opml_items', $opmlItems );
+        $tpl->setVariable( 'opml_groups', $opmlGroups );
+        $tpl->setVariable( 'opml_outline_types', \eZRSSExportOPMLItem::outlineTypes() );
+        $tpl->setVariable( 'opml_browser_list', $opmlBrowserList );
+        $tpl->setVariable( 'opml_browser_pager', $opmlBrowserPager );
+        $tpl->setVariable( 'opml_browser_search', $opmlBrowserSearch );
+        $tpl->setVariable( 'opml_browser_limits', \eZRSSListPager::limits() );
+        $tpl->setVariable( 'opml_selected_ids', $opmlSelected );
+        $tpl->setVariable( 'rss_export', $rssExport );
+        $tpl->setVariable( 'rss_export_id', $rssExportID );
+
+        // BC for old templates
+        $tpl->setVariable( 'validaton', !$valid );
+        // New validation handling
+        $tpl->setVariable( 'valid', $valid );
+        $tpl->setVariable( 'validation_errors', $validationErrors );
+
+        $Result = array();
+        $Result['content'] = $tpl->fetch( "design:rss/edit_export.tpl" );
+        $Result['path'] = array( array( 'url' => false,
+                                        'text' => \ezpI18n::tr( 'kernel/rss', 'Really Simple Syndication' ) ) );
+
+        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function storeExport( &$Module, &$http, &$Result, &$valid, &$validationErrors, &$rssExportItem, &$RSSExportID, &$rssExport )
+    {
         if ( $Module->isCurrentAction( 'Store' ) )
         {
 
@@ -94,7 +223,14 @@ class EditExport extends \Exponential\Runnable\ModuleView
             }
         }
 
+        return $this;
+    }
 
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function changeItemCount( &$http, &$db, &$Module, &$RSSExportID, &$rssExportItem )
+    {
         if ( $http->hasPostVariable( 'Item_Count' ) )
         {
 
@@ -132,7 +268,15 @@ class EditExport extends \Exponential\Runnable\ModuleView
             }
             $db->commit();
         }
+    }
 
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     *
+     * @return mixed what run() returns, or $this when run() goes on
+     */
+    protected function loadExport( &$RSSExportID, &$rssExportID, &$rssExport, &$tpl, &$Result, &$db, &$Module, &$Params, &$http, &$rssExportItem, &$opmlItem )
+    {
         if ( is_numeric( $RSSExportID ) )
         {
             $rssExportID = $RSSExportID;
@@ -262,27 +406,14 @@ class EditExport extends \Exponential\Runnable\ModuleView
             $db->commit();
         }
 
-        // ------------------------------------------------------------------ OPML ---
-        //
-        // An OPML export lists feeds rather than articles, so its half of this page is
-        // a browser over the other exports. Its controls are submit buttons rather than
-        // links, because they live inside the edit form: a link would leave the page
-        // and take everything typed into it with it. Each one therefore writes the
-        // draft first and then acts.
+        return $this;
+    }
 
-        require_once 'kernel/rss/ezrsslistpager.php';
-
-        $isOPML = $rssExport->attribute( 'rss_version' ) === 'OPML'
-                  || ( $http->hasPostVariable( 'RSSVersion' ) && $http->postVariable( 'RSSVersion' ) === 'OPML' );
-
-        $opmlBrowserSearch = '';
-        $opmlBrowserPager  = null;
-        $opmlBrowserList   = array();
-        $opmlSelected      = array();
-
-        // The draft can go between one request and the next: a timeout collects it, or
-        // somebody removes the export from another window. Nothing below is worth doing
-        // without it, and every line of it would be working on a null.
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function opmlImport( &$isOPML, &$rssExportID, &$rssExport, &$http, &$Module, &$opmlItem, &$opmlBrowserSearch, &$opmlBrowserPager, &$opmlSelected, &$opmlBrowserList )
+    {
         if ( $isOPML && is_numeric( $rssExportID ) && $rssExport instanceof \eZRSSExport )
         {
             // Anything that moves the browser, or changes the outlines, saves what is
@@ -423,95 +554,6 @@ class EditExport extends \Exponential\Runnable\ModuleView
                     'selected'    => isset( $opmlSelected[$candidateID] ) );
             }
         }
-
-        $tpl = \eZTemplate::factory();
-        $config = \eZINI::instance( 'site.ini' );
-
-        $rssVersionArray = $config->variable( 'RSSSettings', 'AvailableVersionList' );
-        $rssDefaultVersion = $config->variable( 'RSSSettings', 'DefaultVersion' );
-        $numberOfObjectsArray = $config->variable( 'RSSSettings', 'NumberOfObjectsList' );
-        $numberOfObjectsDefault = $config->variable( 'RSSSettings', 'NumberOfObjectsDefault' );
-
-        // Get Classes and class attributes
-        $classArray = \eZContentClass::fetchList();
-
-        // The drop-down shows what each format is called; the value behind each option
-        // stays the stored one, so nothing that reads or writes rss_version changes.
-        $rssVersionOptions = array();
-        foreach ( (array) $rssVersionArray as $rssVersionItem )
-            $rssVersionOptions[] = array( 'value' => $rssVersionItem,
-                                          'label' => \eZRSSExport::formatLabel( $rssVersionItem ) );
-
-        $tpl->setVariable( 'rss_version_array', $rssVersionArray );   // kept for older override templates
-        $tpl->setVariable( 'rss_version_options', $rssVersionOptions );
-        $tpl->setVariable( 'rss_version_default', $rssDefaultVersion );
-        $tpl->setVariable( 'number_of_objects_array', $numberOfObjectsArray );
-        $tpl->setVariable( 'number_of_objects_default', $numberOfObjectsDefault );
-
-        $tpl->setVariable( 'rss_class_array', $classArray );
-
-        // What the OPML half of the page draws itself from: see further down, after
-        // the podcast half.
-
-        // What the podcast half of the page draws itself from. The categories come
-        // from the class rather than the template so that Apple revising its list is
-        // one change in one place.
-        $isPodcast = $rssExport instanceof \eZRSSExport
-                     && ( $rssExport->attribute( 'rss_version' ) === 'ITUNES'
-                          || ( $http->hasPostVariable( 'RSSVersion' )
-                               && $http->postVariable( 'RSSVersion' ) === 'ITUNES' ) );
-
-        $podcastCategories = array();
-        foreach ( \eZRSSExport::podcastCategories() as $podcastCategory => $podcastSubs )
-            $podcastCategories[] = array( 'name' => $podcastCategory, 'subcategories' => $podcastSubs );
-
-        $tpl->setVariable( 'rss_is_podcast', $isPodcast );
-        $tpl->setVariable( 'podcast_head', $rssExport instanceof \eZRSSExport
-                                           ? $rssExport->podcastHead()
-                                           : \eZRSSExport::create( 0 )->podcastHead() );
-        $tpl->setVariable( 'podcast_categories', $podcastCategories );
-        $tpl->setVariable( 'rss_is_opml', $isOPML );
-        $tpl->setVariable( 'opml_head', $rssExport instanceof \eZRSSExport
-                                        ? $rssExport->opmlHead()
-                                        : \eZRSSExport::create( 0 )->opmlHead() );
-        $opmlItems = $isOPML && is_numeric( $rssExportID )
-                     ? \eZRSSExportOPMLItem::fetchList( $rssExportID, \eZRSSExport::STATUS_DRAFT )
-                     : array();
-
-        // The rows that can hold other rows, for the "inside" menu on each one.
-        $opmlGroups = array();
-        foreach ( $opmlItems as $opmlItem )
-        {
-            if ( $opmlItem->attribute( 'outline_type' ) !== 'group' )
-                continue;
-            $label = $opmlItem->attribute( 'outline_text' );
-            $opmlGroups[] = array( 'id'    => (int) $opmlItem->attribute( 'id' ),
-                                   'label' => $label !== '' ? $label : \ezpI18n::tr( 'kernel/rss/edit_export', 'Group' ) );
-        }
-
-        $tpl->setVariable( 'opml_items', $opmlItems );
-        $tpl->setVariable( 'opml_groups', $opmlGroups );
-        $tpl->setVariable( 'opml_outline_types', \eZRSSExportOPMLItem::outlineTypes() );
-        $tpl->setVariable( 'opml_browser_list', $opmlBrowserList );
-        $tpl->setVariable( 'opml_browser_pager', $opmlBrowserPager );
-        $tpl->setVariable( 'opml_browser_search', $opmlBrowserSearch );
-        $tpl->setVariable( 'opml_browser_limits', \eZRSSListPager::limits() );
-        $tpl->setVariable( 'opml_selected_ids', $opmlSelected );
-        $tpl->setVariable( 'rss_export', $rssExport );
-        $tpl->setVariable( 'rss_export_id', $rssExportID );
-
-        // BC for old templates
-        $tpl->setVariable( 'validaton', !$valid );
-        // New validation handling
-        $tpl->setVariable( 'valid', $valid );
-        $tpl->setVariable( 'validation_errors', $validationErrors );
-
-        $Result = array();
-        $Result['content'] = $tpl->fetch( "design:rss/edit_export.tpl" );
-        $Result['path'] = array( array( 'url' => false,
-                                        'text' => \ezpI18n::tr( 'kernel/rss', 'Really Simple Syndication' ) ) );
-
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
     }
 }
 

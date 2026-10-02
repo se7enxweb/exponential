@@ -55,6 +55,103 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         /*
          * Currencies: formatting data for every currency an order or basket uses.
          */
+        $this->currencies( $localeCurrency, $currencyFormat, $currencyList, $code, $currency, $currencyCode );
+
+        /*
+         * 1. Orders of the last 60 days (30 shown, 30 before them for comparison), with their
+         *    product lines and extra order lines (shipping and the like).
+         */
+        $this->recentOrders( $db, $since60, $orders, $row, $currencyCode, $productSales, $since30, $noRevenueStatusIDs, $objectID, $cur, $midnight, $now, $since7, $periods, $usedCurrencies, $key, $order, $mainCurrency, $localeCurrency, $shopINI, $trends, $daily, $maxDailyRevenue, $maxDailyOrders );
+
+        /*
+         * 2. All-time figures: order totals per status, customers.
+         */
+        $this->allTimeFigures( $db, $allTime, $row, $since30, $statusMeanings, $context, $finishedStatusIDs, $noRevenueStatusIDs, $statusNames, $statuses, $status );
+
+        /*
+         * 3. Orders waiting for the shop: every order that is not finished and not archived,
+         *    longest waiting first, and the latest orders.
+         */
+        $this->waitingOrders( $finishedStatusIDs, $customerStatusIDs, $overdueCount, $db, $now, $pendingLimitDays, $processingLimitDays, $row, $orders, $statusNames, $currencyCode, $statusMeanings, $waiting, $order, $latest );
+
+        /*
+         * 4. Baskets and checkouts that were never finished.
+         */
+        $this->unfinishedBaskets( $now, $abandonedAfterHours, $db, $baskets, $row, $key, $cur, $currencyCode, $usedCurrencies, $since30, $unfinishedCheckouts );
+
+        /*
+         * 5. Products: classes with a price attribute, their objects, price and VAT type.
+         */
+        $this->products( $db, $row, $class, $products, $objectID, $categoryAttribute, $shopINI, $productSales, $topProducts );
+
+        /*
+         * 6. How the shop is configured.
+         */
+        $this->shopConfiguration( $dynamicVat, $vatTypes, $vatType, $products, $vatRules, $context, $productCategories, $discountRules, $ruleID, $db, $row, $country, $orderCountries, $orders, $gateways, $path, $triggers, $key, $config, $shopINI, $categoryAttribute, $localeCurrency, $siteINI, $sessionsInDatabase );
+
+        /*
+         * 7. Next steps, from all of the above.
+         */
+        $this->nextSteps( $checklist, $overdueCount, $context, $pendingLimitDays, $processingLimitDays, $config, $products, $vatTypes, $vatType, $dynamicVat, $orderCountries, $country, $vatRules, $currencyList, $currencyFormat, $baskets, $abandonedAfterHours, $unfinishedCheckouts, $sessionsInDatabase, $discountRules, $productCategories, $categoryAttribute, $allTime, $checklistCounts );
+
+        // Formatting for every currency on the page; one without a currency row falls back
+        // to the locale formatting, as the order list does.
+        $format = array();
+        foreach ( array_keys( $usedCurrencies ) as $code )
+            $format[$code] = isset( $currencyFormat[$code] ) ? $currencyFormat[$code] : array( 'locale' => false, 'symbol' => false );
+        foreach ( array( 'waiting', 'latest' ) as $listName )
+            foreach ( $$listName as $row )
+                if ( !isset( $format[$row['currency']] ) )
+                    $format[$row['currency']] = isset( $currencyFormat[$row['currency']] ) ? $currencyFormat[$row['currency']] : array( 'locale' => false, 'symbol' => false );
+
+        $tpl->setVariable( 'dashboard', array(
+            'now' => $now,
+            'since30' => $since30,
+            'main_currency' => $mainCurrency,
+            'format' => $format,
+            'periods' => $periods,
+            'trends' => $trends,
+            'daily' => $daily,
+            'max_daily_revenue' => $maxDailyRevenue,
+            'max_daily_orders' => $maxDailyOrders,
+            'all_time' => $allTime,
+            'statuses' => $statuses,
+            'waiting' => $waiting,
+            'overdue' => $overdueCount,
+            'latest' => $latest,
+            'top_products' => $topProducts,
+            'baskets' => $baskets,
+            'unfinished_checkouts' => $unfinishedCheckouts,
+            'products' => $products,
+            'vat_types' => $vatTypes,
+            'vat_rules' => $vatRules,
+            'product_categories' => $productCategories,
+            'currencies' => $currencyList,
+            'discount_rules' => $discountRules,
+            'order_countries' => $orderCountries,
+            'gateways' => $gateways,
+            'triggers' => $triggers,
+            'config' => $config,
+            'sessions_in_database' => $sessionsInDatabase,
+            'checklist' => $checklist,
+            'checklist_counts' => $checklistCounts,
+            'limits' => array( 'pending_days' => $pendingLimitDays, 'processing_days' => $processingLimitDays, 'abandoned_hours' => $abandonedAfterHours ),
+            'build_ms' => (int)round( ( microtime( true ) - $startTime ) * 1000 ),
+        ) );
+
+        $Result = array();
+        $Result['content'] = $tpl->fetch( 'design:shop/dashboard.tpl' );
+        $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/shop', 'Store dashboard' ),
+                                        'url' => false ) );
+
+        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function currencies( &$localeCurrency, &$currencyFormat, &$currencyList, &$code, &$currency, &$currencyCode )
+    {
         $localeCurrency = \eZOrder::fetchLocaleCurrencyCode();
         $currencyRows = \eZCurrencyData::fetchList();
         if ( !is_array( $currencyRows ) )
@@ -77,11 +174,13 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         {
             return ( $code === null || $code === '' ) ? $localeCurrency : $code;
         };
+    }
 
-        /*
-         * 1. Orders of the last 60 days (30 shown, 30 before them for comparison), with their
-         *    product lines and extra order lines (shipping and the like).
-         */
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function recentOrders( &$db, &$since60, &$orders, &$row, &$currencyCode, &$productSales, &$since30, &$noRevenueStatusIDs, &$objectID, &$cur, &$midnight, &$now, &$since7, &$periods, &$usedCurrencies, &$key, &$order, &$mainCurrency, &$localeCurrency, &$shopINI, &$trends, &$daily, &$maxDailyRevenue, &$maxDailyOrders )
+    {
         $orderRows = $db->arrayQuery( "SELECT o.id, o.order_nr, o.created, o.status_id, o.status_modified, o.is_archived,
                                               o.email, o.ignore_vat, pc.currency_code
                                        FROM ezorder o, ezproductcollection pc
@@ -264,10 +363,13 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         foreach ( $daily as $key => $day )
             $daily[$key]['height'] = $maxDailyRevenue > 0 ? max( $day['revenue'] > 0 ? 3 : 0, (int)round( $day['revenue'] / $maxDailyRevenue * 100 ) ) : 0;
         $daily = array_values( $daily );
+    }
 
-        /*
-         * 2. All-time figures: order totals per status, customers.
-         */
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function allTimeFigures( &$db, &$allTime, &$row, &$since30, &$statusMeanings, &$context, &$finishedStatusIDs, &$noRevenueStatusIDs, &$statusNames, &$statuses, &$status )
+    {
         $statusRows = $db->arrayQuery( "SELECT status_id, is_archived, COUNT(*) AS order_count, MIN(status_modified) AS oldest
                                         FROM ezorder
                                         WHERE is_temporary = 0
@@ -377,11 +479,13 @@ class Dashboard extends \Exponential\Runnable\ModuleView
             return $pa <=> $pb;
         } );
         $statuses = array_values( $statuses );
+    }
 
-        /*
-         * 3. Orders waiting for the shop: every order that is not finished and not archived,
-         *    longest waiting first, and the latest orders.
-         */
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function waitingOrders( &$finishedStatusIDs, &$customerStatusIDs, &$overdueCount, &$db, &$now, &$pendingLimitDays, &$processingLimitDays, &$row, &$orders, &$statusNames, &$currencyCode, &$statusMeanings, &$waiting, &$order, &$latest )
+    {
         $finishedList = implode( ', ', array_map( 'intval', $finishedStatusIDs ) );
         $customerList = implode( ', ', array_map( 'intval', $customerStatusIDs ) );
         $waitingOrders = \eZPersistentObject::fetchObjectList( \eZOrder::definition(), null,
@@ -452,10 +556,13 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $latest = array();
         foreach ( $latestOrders as $order )
             $latest[] = $orderSummary( $order );
+    }
 
-        /*
-         * 4. Baskets and checkouts that were never finished.
-         */
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function unfinishedBaskets( &$now, &$abandonedAfterHours, &$db, &$baskets, &$row, &$key, &$cur, &$currencyCode, &$usedCurrencies, &$since30, &$unfinishedCheckouts )
+    {
         $freshSince = $now - $abandonedAfterHours * 3600;
         $basketRows = $db->arrayQuery( "SELECT b.id, pc.created, pc.currency_code, SUM(i.item_count) AS item_count,
                                                SUM(i.item_count * i.price) AS basket_value
@@ -488,10 +595,13 @@ class Dashboard extends \Exponential\Runnable\ModuleView
                                            WHERE is_temporary = 1 AND created >= " . (int)$since30 );
         $unfinishedCheckouts = array( 'count' => $temporaryRows ? (int)$temporaryRows[0]['order_count'] : 0,
                                       'oldest' => $temporaryRows && $temporaryRows[0]['oldest'] ? (int)$temporaryRows[0]['oldest'] : false );
+    }
 
-        /*
-         * 5. Products: classes with a price attribute, their objects, price and VAT type.
-         */
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function products( &$db, &$row, &$class, &$products, &$objectID, &$categoryAttribute, &$shopINI, &$productSales, &$topProducts )
+    {
         $productDatatypes = \eZShopFunctions::productDatatypeStringList();
         $quotedTypes = array();
         foreach ( $productDatatypes as $type )
@@ -643,10 +753,13 @@ class Dashboard extends \Exponential\Runnable\ModuleView
                                         'node_id' => isset( $objectNodes[$objectID] ) ? $objectNodes[$objectID]['node_id'] : false );
         $products['no_price_list'] = $noPriceProducts;
         $products['classes'] = array_values( $productClasses );
+    }
 
-        /*
-         * 6. How the shop is configured.
-         */
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function shopConfiguration( &$dynamicVat, &$vatTypes, &$vatType, &$products, &$vatRules, &$context, &$productCategories, &$discountRules, &$ruleID, &$db, &$row, &$country, &$orderCountries, &$orders, &$gateways, &$path, &$triggers, &$key, &$config, &$shopINI, &$categoryAttribute, &$localeCurrency, &$siteINI, &$sessionsInDatabase )
+    {
         $dynamicVat = \eZVATManager::isDynamicVatChargingEnabled();
         $vatTypes = array();
         foreach ( \eZVatType::fetchList( true, true ) as $vatType )
@@ -798,10 +911,13 @@ class Dashboard extends \Exponential\Runnable\ModuleView
             'products_ceiling' => 5000,
         );
         $sessionsInDatabase = in_array( strtolower( $config['session_handler'] ), array( 'ezpsessionhandlerdb', 'db' ) );
+    }
 
-        /*
-         * 7. Next steps, from all of the above.
-         */
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); run()'s variables are passed by reference.
+     */
+    protected function nextSteps( &$checklist, &$overdueCount, &$context, &$pendingLimitDays, &$processingLimitDays, &$config, &$products, &$vatTypes, &$vatType, &$dynamicVat, &$orderCountries, &$country, &$vatRules, &$currencyList, &$currencyFormat, &$baskets, &$abandonedAfterHours, &$unfinishedCheckouts, &$sessionsInDatabase, &$discountRules, &$productCategories, &$categoryAttribute, &$allTime, &$checklistCounts )
+    {
         $checklist = array();
         $add = function( $level, $text, $url = false, $linkText = false ) use ( &$checklist )
         {
@@ -871,58 +987,6 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $checklistCounts = array( 'critical' => 0, 'warning' => 0, 'info' => 0 );
         foreach ( $checklist as $item )
             $checklistCounts[$item['level']]++;
-
-        // Formatting for every currency on the page; one without a currency row falls back
-        // to the locale formatting, as the order list does.
-        $format = array();
-        foreach ( array_keys( $usedCurrencies ) as $code )
-            $format[$code] = isset( $currencyFormat[$code] ) ? $currencyFormat[$code] : array( 'locale' => false, 'symbol' => false );
-        foreach ( array( 'waiting', 'latest' ) as $listName )
-            foreach ( $$listName as $row )
-                if ( !isset( $format[$row['currency']] ) )
-                    $format[$row['currency']] = isset( $currencyFormat[$row['currency']] ) ? $currencyFormat[$row['currency']] : array( 'locale' => false, 'symbol' => false );
-
-        $tpl->setVariable( 'dashboard', array(
-            'now' => $now,
-            'since30' => $since30,
-            'main_currency' => $mainCurrency,
-            'format' => $format,
-            'periods' => $periods,
-            'trends' => $trends,
-            'daily' => $daily,
-            'max_daily_revenue' => $maxDailyRevenue,
-            'max_daily_orders' => $maxDailyOrders,
-            'all_time' => $allTime,
-            'statuses' => $statuses,
-            'waiting' => $waiting,
-            'overdue' => $overdueCount,
-            'latest' => $latest,
-            'top_products' => $topProducts,
-            'baskets' => $baskets,
-            'unfinished_checkouts' => $unfinishedCheckouts,
-            'products' => $products,
-            'vat_types' => $vatTypes,
-            'vat_rules' => $vatRules,
-            'product_categories' => $productCategories,
-            'currencies' => $currencyList,
-            'discount_rules' => $discountRules,
-            'order_countries' => $orderCountries,
-            'gateways' => $gateways,
-            'triggers' => $triggers,
-            'config' => $config,
-            'sessions_in_database' => $sessionsInDatabase,
-            'checklist' => $checklist,
-            'checklist_counts' => $checklistCounts,
-            'limits' => array( 'pending_days' => $pendingLimitDays, 'processing_days' => $processingLimitDays, 'abandoned_hours' => $abandonedAfterHours ),
-            'build_ms' => (int)round( ( microtime( true ) - $startTime ) * 1000 ),
-        ) );
-
-        $Result = array();
-        $Result['content'] = $tpl->fetch( 'design:shop/dashboard.tpl' );
-        $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/shop', 'Store dashboard' ),
-                                        'url' => false ) );
-
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
     }
 }
 

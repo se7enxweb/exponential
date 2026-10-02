@@ -243,6 +243,20 @@ class Cache extends \Exponential\Runnable\Command
 
         // ── Groups ───────────────────────────────────────────────────────────────
 
+        $this->runGroup();
+
+        $script->shutdown( 0 );
+    }
+
+    /**
+     * Part of run(), moved here unchanged (#207 stage 6); the script's global variables are bound as in run().
+     */
+    protected function runGroup()
+    {
+        foreach ( array( 'group', 'cli', 'overview', 'script', 'items', 'manager', 'item', 'options', 'finish', 'asJson', 'tag', 'ids', 'data', 'lines', 'k', 'purge', 'expiry', 'usage', 'chosen', 'by', 'names', 'list', 'dryRun', 'needAction', 'action', 'select', 'r', 'site', 'd', 'colours', 'emit', 'inv', 's', 'groupHelp' ) as $__name )
+            ${$__name} = &$GLOBALS[$__name];
+        unset( $__name );
+
         switch ( $group )
         {
             case '':
@@ -458,8 +472,6 @@ class Cache extends \Exponential\Runnable\Command
             default:
                 $usage( 'unknown group "' . $group . '"; use one of ' . implode( ', ', array_keys( $groupHelp ) ) );
         }
-
-        $script->shutdown( 0 );
     }
 }
 

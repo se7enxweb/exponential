@@ -202,7 +202,8 @@ Where a view and a command or cronjob part do the same work, the work is in one 
 |---|---|---|
 | Emptying the trash | `Exponential\Service\Trash` (`kernel/private/classes/services/trash.php`) | `content/trash`, `bin/php/trashpurge.php`, `cronjobs/trashpurge.php` |
 | Removing expired sessions | `Exponential\Service\SessionGarbageCollector` (`kernel/private/classes/services/sessiongarbagecollector.php`) | `setup/session`, `bin/php/ezsessiongc.php`, `cronjobs/session_gc.php` |
-| Clearing caches | `expCacheManager` (`kernel/classes/expcachemanager.php`) | `setup/cache`, `bin/php/cache.php` (`exp:cache`) |
+| Clearing caches | `expCacheManager` (`kernel/classes/expcachemanager.php`) | `setup/cache`, `bin/php/cache.php` (`exp:cache`), `setup/cachetoolbar` (the clear-cache toolbar) |
+| Removing old drafts | `Exponential\Service\DraftsCleanup` (`kernel/private/classes/services/draftscleanup.php`) | `cronjobs/old_drafts_cleanup.php` (user drafts), `cronjobs/internal_drafts_cleanup.php` (internal drafts) |
 | The static cache | `expStaticCacheRunner`, `expCacheManager::regenerateStaticCache()` | `setup/cache`, `setup/staticcachestream`, `bin/php/makestaticcache.php` |
 | Preloading | `expPreloadRunner`, `expPreloadJob` | `setup/preload`, `setup/preloadjob`, `bin/php/preload.php`, `bin/php/preloadjob.php` |
 | Maintenance mode | `expMaintenance` | `setup/maintenance`, `bin/php/maintenance.php` |
@@ -336,9 +337,9 @@ $result = \Exponential\View\Kernel\Content\History::create( 'kernel/content/hist
 
 ## How the code was moved
 
-The code moved **unchanged** first (stage 1), so the behaviour is provably the same; four refinement stages
-followed: the shared option handling (stage 2), the services (stage 3), the extension points (stage 4) and the
-clean-up (stage 5).
+The code moved **unchanged** first (stage 1), so the behaviour is provably the same; five refinement stages
+followed: the shared option handling (stage 2), the services (stage 3), the extension points (stage 4), the
+clean-up (stage 5) and one more wave of services and shorter run() methods (stage 6, below).
 
 - A command's variables were globals, and functions of a script read them with `global $cli`; the moved code
   binds its variables to `$GLOBALS`, so those functions work unchanged. Functions and classes the script
@@ -361,6 +362,69 @@ clean-up (stage 5).
   (`eZSessionBasketGarbageCollector`, a redeclaration waiting to happen) is now
   `SessionGarbageCollector::cleanupBaskets()`, and variables no code used any more left the global bindings.
 
+### Stage 6: more shared code, shorter run() methods
+
+**Services.** Two more pairs did the same work twice:
+
+- `cronjobs/old_drafts_cleanup.php` and `cronjobs/internal_drafts_cleanup.php` were the same code with other
+  settings. Both now call `Exponential\Service\DraftsCleanup::cleanup( DraftsCleanup::USER_DRAFTS )` or
+  `( DraftsCleanup::INTERNAL_DRAFTS )`. The service reads content.ini `[VersionManagement]`
+  (`DraftsDuration`/`DraftsCleanUpLimit`, `InternalDraftsDuration`/`InternalDraftsCleanUpLimit`, with the same
+  defaults of 90 days and 24 hours) and returns null when no lifetime is set. The parts print what they printed
+  before.
+- The clear-cache toolbar (`setup/cachetoolbar`) clears All, Template, Content, Template and content, and INI
+  through `expCacheManager::clear()`, as `setup/cache` and `exp:cache` do. Its Static, ContentNode and
+  ContentSubtree choices are unchanged.
+
+Not shared, because the two sides do different work: the search index (`updatesearchindex.php` reindexes every
+object; the `indexcontent` part works through the queue of pending changes; no view does either) and the URL
+aliases (`updateniceurls.php` regenerates them all; `content/urlalias` edits single aliases). The static cache,
+cache clearing, cluster purge and RSS import cleanup already had one implementation each
+(`expStaticCacheRunner`, `expCacheManager`, `eZScriptClusterPurge`, `expCleanupRSS`).
+
+**Shorter run().** The longest run() methods were split into named protected methods, as a pure
+extract-method refactoring. Each method holds whole top-level statements of run(), moved unchanged:
+
+| Runnable | run() before | after | methods |
+|---|---|---|---|
+| `setup/info` | 1114 | 153 | `systemInfo()`, `webserverInfo()`, `siteInfo()`, `engineSourceInfo()`, `engineArchiveCheck()`, `phpCachesInfo()`, `velocityServerInfo()`, `responseCacheInfo()`, `httpCacheInfo()`, `sqlProfileInfo()` |
+| `ezpm.php` | 1049 | 124 | `parseArguments()`, `checkCommands()`, `connectDatabase()`, `runCommands()` |
+| `shop/dashboard` | 906 | 128 | `currencies()`, `recentOrders()`, `allTimeFigures()`, `waitingOrders()`, `unfinishedBaskets()`, `products()`, `shopConfiguration()`, `nextSteps()` |
+| `class/edit` | 863 | 278 | 11, from `fetchClassVersion()` to `newAttribute()` |
+| `role/edit` | 808 | 237 | `applyRole()`, `addLimitation()`, `customFunction()`, `selectLimitationValues()`, `discardLimitation()`, `createPolicy()` |
+| `updateniceurls.php` | 787 | 376 | `importOldUrls()` |
+| `content/edit` | 524 | 163 | `cancelDraft()`, `newDraft()`, `selectLanguage()`, `chooseEditLanguage()`, `findEditVersion()` |
+| `rss/edit_export` | 493 | 145 | `storeExport()`, `changeItemCount()`, `loadExport()`, `opmlImport()` |
+| `preload.php` | 473 | 309 | `warmSections()`, `spiderSite()` |
+| `cache.php` (`exp:cache`) | 439 | 225 | `runGroup()` |
+
+The rules that make it safe:
+
+- run()'s variables reach the method **by reference** (`protected function newDraft( &$http, &$obj, ... )`), so
+  the method reads and changes the same variables. A variable the method alone uses stays local to it only when
+  nothing else could have given it a value: for a view, no name of the view's parameters (module.php) or of the
+  variables `eZProcess::runFile()` hands over.
+- A command's variables are globals, which functions of the script read with `global`. The method binds those
+  the same way run() does (`${$__name} = &$GLOBALS[$__name]`) instead of taking them as parameters.
+- A block that returns from run() (a view's `return $Module->redirectToView( ... )`) returns the same value from
+  the method, and `$this` when it ends without returning. The call passes on anything else:
+  `if ( ( $__return = $this->newDraft( ... ) ) !== $this ) return $__return;`. `$this` is the one value
+  run() never returned before, because the object did not exist then.
+- Blocks with `global`, `static` variables, variable variables, `compact()`/`extract()`, `__LINE__`/`__METHOD__`,
+  `break`/`continue` that leave the block, or that rebind (`= &`, `unset()`) a variable run() also has, stay in
+  run(). That is why `velocity.php` (proved only by running it), `ezsubtreecopy.php` and `content/action` (both
+  reworked elsewhere) and `updateniceurls.php`'s node alias update (it unsets a global) are not split.
+
+Proved by putting every method's body back in place of its call, which gives the file run() had before, byte for
+byte, for all ten. The pages of every split view are the same before and after (main content text and form
+fields, numbers aside), as are the real runs of `ezpm.php list|help`, `exp:cache list|tags|status|clear
+--dry-run`, and the `--help` of every kernel command.
+
+**Extension commands** now start the same way as the kernel's: in cjw_newsletter, enhancedselection2, explayouts,
+ezprestapi, eztags, ezupdate, git_manager and xrowextract (25 commands), run() uses `$this->cli()`,
+`$this->script()`, `$this->options()` and, where the three steps follow each other, `$this->startup()`. Their
+`--help` output and exit codes are the same as before.
+
 Proof, per kind and after every stage:
 
 | Kind | Proved by |
@@ -380,6 +444,7 @@ php vendor/bin/phpunit tests/tests/kernel/classes/runnable/
 | `RunnableTest` | the base classes: `main()` of each kind, `create()`, the script file, the view result rule |
 | `MovedEntryPointsTest` | every moved entry point: the class it calls exists, is mapped by the autoload arrays, parses and extends the right base class; the router form |
 | `CommandHelpersTest` | the shared helpers, and that no kernel command creates `eZScript` or `eZCLI` itself |
-| `ServicesTest` | the trash and session services and that their callers use them |
+| `ServicesTest` | the trash and session services, the drafts cleanup service and that their callers (the cache toolbar too) use them |
+| `ExtractedRunMethodsTest` | the split run() methods: protected, by reference, called once, early returns passed on, the global bindings of a command, how long run() may be |
 | `RunnableExtensionPointsTest` | the events of each kind, re-implementation of each kind through the settings, the listeners of `[RunnableSettings]`, the private settings read of a command |
 | `RadSurveyRunnablesTest` | the runnables in the extension point survey and its counts |
