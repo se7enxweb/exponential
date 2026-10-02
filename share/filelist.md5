@@ -787,7 +787,7 @@ a54e5021b1c597539a60da86ef766f0c  design/admin4/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin4/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
-55becc1b32ecc3cc1ca7e82ea3394352  design/admin4/javascript/admin4.js
+f9b0e3d72a432957b57609e4595c74b0  design/admin4/javascript/admin4.js
 c026c4c30fa5e95415c1f6611bcce9ea  design/admin4/javascript/contentstructuremenu_dynamic.js
 3cb3cb0538b25da8b7c54c08c643c4c2  design/admin4/javascript/expajaxuploader.js
 e3bfb91bebf01770b13c4a9ffe2a8f95  design/admin4/javascript/ezadmin_menubar.js
@@ -831,7 +831,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-4a96ccac015e3dd82f0fe1cd8d9c07b7  design/admin4/stylesheets/admin4.css
+ca903cb659c33c86b67b6284f889badb  design/admin4/stylesheets/admin4.css
 3eb649ac99a5d1e9852d112ad9fcaf9a  design/admin4/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin4/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin4/stylesheets/ezinfo.css
@@ -1010,7 +1010,7 @@ a552e51ddb4d343aaa6ac37eba7a5c14  design/admin4/templates/package/uninstall_erro
 af46a950a91555aad32cb5f618995f19  design/admin4/templates/package/view/files.tpl
 37fd8c7b29da725e34aba827803056b6  design/admin4/templates/package/view/full.tpl
 13fb5dd9c5fb7cc9d11d9cd98968d23c  design/admin4/templates/page_copyright.tpl
-58803bfbb64e3b83285a2cff0b14ffed  design/admin4/templates/page_head_script.tpl
+dafcec368f76648a34cf09d241cb15b8  design/admin4/templates/page_head_script.tpl
 386009bc91faf8d1a0acfbf9a698c33f  design/admin4/templates/page_head_style.tpl
 37933ff0f7394086e6953a2830d19bd2  design/admin4/templates/page_head_style_inline.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
