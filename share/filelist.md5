@@ -831,7 +831,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-41d8833354e4d4205b6a5cb015bd414e  design/admin4/stylesheets/admin4.css
+4a96ccac015e3dd82f0fe1cd8d9c07b7  design/admin4/stylesheets/admin4.css
 3eb649ac99a5d1e9852d112ad9fcaf9a  design/admin4/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin4/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin4/stylesheets/ezinfo.css
@@ -898,7 +898,7 @@ db0a467b3a14be193f73dd75ae59cc51  design/admin4/templates/content/collectedinfo/
 517963f41482cb0a69c7e0b299d93130  design/admin4/templates/content/collectedinfo/poll.tpl
 4322d2f3acc8559393b5e8b3cb9c1486  design/admin4/templates/content/confirmtranslationremove.tpl
 e2e649ee6b2df9e8bc5c261cabee5b36  design/admin4/templates/content/create_languages.tpl
-53cd553fbd8064b70e55fdf92faaaa6f  design/admin4/templates/content/dashboard.tpl
+0c9c7914a250b0990761b0386359ea17  design/admin4/templates/content/dashboard.tpl
 a846924c09cd15a7243a2701e539c0cf  design/admin4/templates/content/datatype/edit/ezdate.tpl
 5677dd83ccb7c3dafeca7c1ca7e4d972  design/admin4/templates/content/datatype/edit/ezdatetime.tpl
 496306b3d94af123f35a29bd7992fe6c  design/admin4/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl
