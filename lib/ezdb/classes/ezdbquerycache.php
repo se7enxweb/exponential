@@ -420,8 +420,18 @@ class eZDBQueryCache
     protected static function updateState( $change )
     {
         $dir = self::stateDir();
+        $asRoot = function_exists( 'posix_geteuid' ) && posix_geteuid() === 0;
         if ( !is_dir( $dir ) )
+        {
             @mkdir( $dir, 0770, true );
+            // A root process (Velocity, a CLI script) must not leave a root-owned
+            // directory behind: the site user's cron and FPM could no longer write in it.
+            if ( $asRoot && ( $parent = @stat( dirname( $dir ) ) ) && $parent['uid'] !== 0 )
+            {
+                @chown( $dir, $parent['uid'] );
+                @chgrp( $dir, $parent['gid'] );
+            }
+        }
         $lock = @fopen( $dir . '/state.lock', 'c' );
         if ( $lock )
             flock( $lock, LOCK_EX );
@@ -432,7 +442,7 @@ class eZDBQueryCache
         if ( !$ok )
             error_log( 'eZDBQueryCache: could not write ' . $dir . '/state.ser; cached results may be stale until MaxAge' );
         // A root process (a script, a server) leaves the files to the directory's owner.
-        if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 && ( $owner = @stat( $dir ) ) && $owner['uid'] !== 0 )
+        if ( $asRoot && ( $owner = @stat( $dir ) ) && $owner['uid'] !== 0 )
         {
             @chown( $dir . '/state.ser', $owner['uid'] );
             @chgrp( $dir . '/state.ser', $owner['gid'] );
@@ -562,6 +572,8 @@ class eZDBQueryCache
         if ( preg_match( self::VOLATILE, $sql ) || preg_match( self::ORACLE_VOLATILE, $sql ) )
             return null;
         $text = self::withoutStrings( $sql );
+        if ( $text === null )
+            return null;
         $tables = array();
         // FROM a, b alias, c ... up to the next clause; subqueries have their own FROM.
         if ( preg_match_all( '/\bFROM\s+(.+?)(?=\bWHERE\b|\bGROUP\s+BY\b|\bORDER\s+BY\b|\bLIMIT\b|\bHAVING\b|\bUNION\b|\b(?:INNER|LEFT|RIGHT|CROSS|FULL|STRAIGHT_JOIN|NATURAL|OUTER)\b|\bJOIN\b|\bON\b|\)|$)/is', $text, $m ) )
@@ -592,6 +604,8 @@ class eZDBQueryCache
     public static function writtenTables( $sql )
     {
         $text = self::withoutStrings( (string)$sql );
+        if ( $text === null )
+            return null;
         $patterns = array(
             '/^\s*(?:INSERT|REPLACE)\s+(?:LOW_PRIORITY\s+|DELAYED\s+|HIGH_PRIORITY\s+|IGNORE\s+|OR\s+\w+\s+)*INTO\s+([`"\w.]+)/i',
             '/^\s*UPDATE\s+(?:LOW_PRIORITY\s+|IGNORE\s+|OR\s+\w+\s+)*(.+?)\s+SET\b/is',
@@ -645,6 +659,8 @@ class eZDBQueryCache
     /** The SQL with string literals blanked, so a word in a value is not read as SQL. */
     protected static function withoutStrings( $sql )
     {
-        return preg_replace( "/'(?:[^'\\\\]|\\\\.|'')*'/s", "''", $sql );
+        // Unrolled: one step per escape or doubled quote rather than one per character, so a
+        // long literal (an attribute's XML) stays within PCRE's limits. Null when it fails.
+        return preg_replace( "/'[^'\\\\]*+(?:(?:\\\\.|'')[^'\\\\]*+)*+'/s", "''", $sql );
     }
 }
