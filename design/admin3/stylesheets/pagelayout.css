@@ -1764,3 +1764,26 @@ div:has(.modal-window) {
     padding: 1rem;
     max-width: 100%;
 }
+
+/* Side columns: long names wrap instead of being cut off at the column's edge (the left column scrolls
+   sideways and hid the end of a long node name; Quick settings labels inherited core.css's nowrap). */
+div#contentstructure ul#content_tree_menu li {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+div#contentstructure ul#content_tree_menu li > a.image-text {
+    display: inline-block;
+    max-width: calc(100% - 2.25em);
+    vertical-align: top;
+}
+#leftmenu label,
+#rightmenu label {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+#leftmenu label:has(> input[type="checkbox"]),
+#rightmenu label:has(> input[type="checkbox"]) {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3em;
+}
