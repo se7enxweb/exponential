@@ -2111,3 +2111,88 @@ request that writes one channel.
   attempted login hashed.
 - The view `audit/recent` uses the `ezsetupnavigationpart`. It has no menu entry yet; the top tab and the
   navigation part are stage 4.
+
+## Stage 5 results (2026-10-02)
+
+Sinks, alerts, rotation, archives, retention, the import of the 4.x logs, the cronjob part and the full `exp:audit`
+are built and running on alpha. Every "Proposed:" point of the sections "Sinks", "Alerts" and "Rotation, archives
+and retention" is built as written, with the deviations listed at the end.
+
+### Try it
+
+```bash
+./console exp:audit sinks list --allow-root-user         # syslog ready (access, system), webhook needs a URL, mail
+./console exp:audit alerts list --allow-root-user        # the seven built-in rules, their class, threshold and sinks
+journalctl -t exponential -f                             # log in to the admin: the record appears (RFC 5424 line)
+./console exp:audit verify --archives --allow-root-user  # live chains linked to the archives, manifests, HMACs
+./console exp:audit archive --dry-run --allow-root-user  # what is older than LiveDays
+./console exp:audit purge --dry-run --allow-root-user    # what is older than ArchiveDays
+./console exp:audit search --files --name='access.session.*' --limit=10 --allow-root-user
+./console exp:audit export --name='access.*' --format=bundle --out=var/tmp/audit-export --allow-root-user
+./console exp:audit alerts test brute_force --replay=2026-10-01 --allow-root-user   # runs a rule, records nothing
+./console exp:audit cron --allow-root-user               # one run of the cronjob part (--daily: the daily tasks now)
+```
+
+### What exists
+
+| Part | Where |
+|---|---|
+| Sink registry, dispatch after the write (the record is in the file first), spools with `flock()`, retries with a doubling backoff, `system.audit.sink.failed` once per sink and hour, after-response delivery of critical records (PHP-FPM, commands) | kernel/classes/audit/sinks/expauditsinkregistry.php, expauditspool.php, expauditsinkbase.php |
+| syslog/journald: RFC 5424 (`exp@32473`, MSGID = channel, escaped values); `Transport=local` uses journald's native socket where journald runs (identifier = `AppName`, fields `EXP_AUDIT_ID/NAME/CHANNEL/SEQ/HASH/RESULT/SEVERITY/REQUEST`), else `/dev/log`; `devlog`, `udp` (no body), `tcp`/`tls` (octet counting) | expauditsyslogsink.php |
+| Webhook: batches of `BatchSize` or `BatchSeconds`, `X-Exponential-Timestamp`, `-Batch`, `-Signature: sha256=HMAC(secret, ts.body)`, the receiver's check `expAuditWebhookSink::verify()` (300 s) | expauditwebhooksink.php |
+| Mail: through `eZMailTransport::send()` (site.ini mail settings, DebugSending) or `[AuditSink_mail] Transport=<class>`; from the cronjob part only; one mail per rule and group (or name) per `Throttle` | expauditmailsink.php |
+| Alert evaluator: at flush (only rules whose `Event` matches a written record read their state) and in the cronjob part (records since a cursor, the `.state` check for Audit=disabled, closed windows); `system.audit.alert` with the rule's severity, sent to its `Sinks[]` | kernel/classes/audit/alerts/expauditalertevaluator.php |
+| Rule classes `threshold`, `match` (with `Policies[]`), `schedule` (`BusinessDays`, `BusinessHours`, the site's time zone); window state per rule `<LogDir>/alerts/<rule>.json` under `flock()`, keyed by event id | expauditthresholdrule.php, expauditmatchrule.php, expauditschedulerule.php, expauditalertrulebase.php, expauditalertstate.php |
+| Format handlers gzip (zlib), bzip2 (ext-bz2), xz (binary), zstd (ext-zstd, else binary), zip (ext-zip, one file per archive); fallback to gzip | kernel/classes/audit/format/ |
+| Archiver: due days, compress, read back and compare sha256, signed manifest per channel and day (`previous_manifest`, `key_id`, `hmac`), live file removed after; archive verification; restore; retention with a purge ledger | kernel/classes/audit/archive/expauditarchiver.php |
+| Rotation by day: the first write of a new UTC day closes the day before (`system.audit.file.close`); `expAuditWriter::rotate()` closes a channel nobody wrote to | kernel/classes/audit/expauditwriter.php |
+| Verifier: a first live file that starts from an archived file is checked against the manifest (no `no_origin`) | expauditverifier.php (`setOrigins()`) |
+| Keys: `rotate()`, `rotatePseudonym()`, `listKeys()`, `verify()` (an id unknown to this process is looked up in the key file) | expauditkeys.php |
+| Import of the 4.x logs (both header forms, rotated copies first, the `writeAudit()` mapping through `expAudit::legacyData()`, privacy applied, stable ids, re-import skipped, a grown file continued, originals into `ArchiveDir/legacy/` with a signed manifest) | kernel/classes/audit/archive/expauditimporter.php |
+| Search over the files (the console's filters, `--subject-user`) and export as jsonl, csv or a signed bundle | expauditexporter.php |
+| The scheduled work (every run: index, spools, alerts; daily after `RotateAfter`: rotate, verify, archive, purge, pseudonymise, checkpoint; `<LogDir>/.cron.lock`, `.cron-daily`) | expauditmaintenance.php |
+| Cronjob part `Exponential\Cronjob\Kernel\Audit` | cronjobs/audit.php, kernel/private/classes/cronjobs/audit.php; settings/cronjob.ini `[CronjobPart-audit]` and the frequent group |
+| `exp:audit` search, rotate, archive, restore, purge, reindex, pseudonymise, export, import, key, sinks, alerts, cron, verify `--archives` | kernel/private/classes/commands/audit.php |
+| Whole INI blocks for the stage 5 settings (`block()`, `value()`, `lists()`, `hash()`, `path()`); `sinksAllowed()` | expauditconfig.php |
+
+On alpha the cronjob part runs every minute in the `publishing` group (`settings/override/cronjob.ini.append.php`,
+written with exp:ini, not committed): the first run did the daily tasks (both channels verified INTACT, recorded as
+`system.audit.verify` with `via: cronjob`).
+
+### Tests and proof
+
+`php vendor/bin/phpunit tests/tests/kernel/classes/audit/`: 63 tests, about 5 350 assertions, no database, everything
+in `var/tmp/audit-tests/`.
+
+| Test | Proves |
+|---|---|
+| `expAuditSinksTest` (E1) | the RFC 5424 line and the journald datagram; two test records under a test identifier found by `journalctl -t`; a webhook receiver on 127.0.0.1 (`ai/bin/one/audit_stage5_webhook_test_receiver.php`, started and stopped by the test) verifying every signature, 7 records in batches of 3+3+1, every id once and in order; a forced outage: the batch stays spooled, backoff 30 s then 60 s, `system.audit.sink.failed` after `Retries`, everything delivered when the receiver is back; a wrong secret and an old timestamp refused; mail through a test transport writing into the test directory (no real mail), 5 alerts spooled, 2 mailed (one per rule and group within `Throttle`) |
+| `expAuditAlertsTest` (E2) | brute_force: 19 nothing, the 20th once, the 40th again, another network not counted, a new window again; brute_force_user 9/10; admin_role_granted for `*/*` and `setup/*`, not for content/read; settings_out_of_hours: 10:00 Friday nothing, ten writes at 23:00 one alert, Saturday another; mass_delete 499/500 with `children_omitted` counted; audit_disabled found by the cronjob pass and written although audit is off; chain_broken from a tampered file; an INI rule; a broken INI rule reported; the cronjob pass after a flush fires nothing more; replay records nothing |
+| `expAuditArchiveTest` (E3, T9–T12) | rotation by day; each of gzip, bzip2, xz, zstd, zip (all available on this server): 3 days archived, live files removed, archives intact, the live chain intact from the archived file, a restored day byte-identical; T0 intact, T9 `archive_sha256`, T10 `hmac_invalid`, T11 `unknown_key`, T12 `previous_manifest`; retention dry run and real run, ledger, still intact; key rotation (k2 active, old manifests verify); the daily run |
+| `expAuditImportTest` (E4) | both header forms, rotated copies first, imported/source/no chain, the address truncated, an unknown typed login hashed, HashKey never kept, a secret path cut; dry run; re-import skipped; a grown file continued; the legacy manifest's HMAC; originals kept or removed |
+
+On alpha: `var/site/log/audit/login.log` (written once by Velocity's old code) was imported first into a test
+directory (`ai/bin/one/audit_stage5_import_alpha_legacy_logs_into_test_dir.php`: 1 entry = 1 record, marked imported,
+no chain, re-import skipped) and then for real with `--keep-originals`: `var/site/log/audit/imported/` and
+`archive/legacy/`; a second run says "imported before". `rotate`, `archive` and `purge` with `--dry-run` report nothing
+due (the oldest file is today's). The front page answers 200 on Apache and Velocity.
+
+### Deviations from the text above
+
+- `Transport=local` writes journald's native protocol where journald runs: journald 252 does not parse an RFC 5424
+  header on `/dev/log` (the identifier is lost and `journalctl -t` finds nothing). The message is still the RFC 5424
+  line; `Transport=devlog` sends it to `/dev/log` as is.
+- `[AuditSink_mail] Transport=` (new): a mail transport class, empty for the kernel's.
+- Under test settings (`expAuditConfig::setOverride()`) no sink is used unless the override says `'sinks' => true`.
+  One run of the stage 2 tests before that guard existed put 1346 test records (documentation addresses
+  203.0.113.0/24, the test installation id, `_CMDLINE` phpunit) into the journal under `exponential`.
+- `match` rules fire once per record (`GroupBy=id`, `Window=0` by default); `schedule` rules once per group and window
+  (defaults `GroupBy=actor.user_id`, `Window=3600`) and do not fire again when the count doubles.
+- Retention never removes a key from the settings: it reports the keys retained archives still need
+  (`exp:audit purge`).
+- Restored files go to `<LogDir>/restored/`, imported ones to `<LogDir>/imported/`; neither is a live file.
+- `exp:audit rotate` also runs retention, as the table says; `purge` additionally prunes the index (stage 4's
+  `purgeOld()`) when the index exists.
+- The index work of the cronjob part (incremental run, pseudonymisation) calls stage 4's `expAuditIndexer`, which has
+  its own lock, so it does not matter whether stage 4's own part runs too.
+- Not measured yet: the cost of a syslog write at flush (stage 6, with P1–P4).
