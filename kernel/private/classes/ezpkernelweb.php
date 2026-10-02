@@ -1421,8 +1421,78 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         eZExecution::cleanup();
         eZExecution::setCleanExit();
         eZExpiryHandler::shutdown();
+        self::writeOPcacheProfile();
         if ( $reInitialize )
             $this->isInitialized = false;
+    }
+
+    /** @var array|null OPcache's per-script hits at the end of the previous request in this process */
+    private static $opcacheProfileLast = null;
+
+    /**
+     * Diagnostic, off unless var/tmp/opcache_profile.on exists (one file_exists() per request): one line per
+     * request in var/tmp/opcache_profile.log saying how this request used OPcache -- the change in its hits and
+     * misses, the scripts served from it most this request, and the files this process has included that OPcache
+     * does not hold (each of those is compiled again whenever it is included). For comparing engines (PHP-FPM,
+     * Velocity's persistent workers), whose OPcache figures belong to their own processes.
+     */
+    private static function writeOPcacheProfile()
+    {
+        $dir = dirname( __DIR__, 3 ) . '/var/tmp/';
+        if ( !file_exists( $dir . 'opcache_profile.on' ) || !function_exists( 'opcache_get_status' ) )
+            return;
+        $status = @opcache_get_status( true );
+        if ( !is_array( $status ) || empty( $status['opcache_enabled'] ) )
+            return;
+        $scripts = isset( $status['scripts'] ) ? $status['scripts'] : array();
+        $hits = array();
+        foreach ( $scripts as $path => $s )
+            $hits[$path] = (int)$s['hits'];
+        $rose = array();
+        if ( self::$opcacheProfileLast !== null )
+        {
+            foreach ( $hits as $path => $h )
+            {
+                $before = isset( self::$opcacheProfileLast['scripts'][$path] ) ? self::$opcacheProfileLast['scripts'][$path] : 0;
+                if ( $h > $before )
+                    $rose[$path] = $h - $before;
+            }
+            arsort( $rose );
+        }
+        $notCached = array();
+        foreach ( get_included_files() as $file )
+            if ( !isset( $scripts[$file] ) )
+                $notCached[] = $file;
+        $stats = $status['opcache_statistics'];
+        $line = array( 'time' => date( 'c' ), 'sapi' => PHP_SAPI, 'pid' => getmypid(),
+                       'uri' => isset( $_SERVER['REQUEST_URI'] ) ? substr( $_SERVER['REQUEST_URI'], 0, 120 ) : '',
+                       'hits' => (int)$stats['hits'], 'misses' => (int)$stats['misses'],
+                       'hits_this_request' => self::$opcacheProfileLast !== null ? (int)$stats['hits'] - self::$opcacheProfileLast['hits'] : null,
+                       'misses_this_request' => self::$opcacheProfileLast !== null ? (int)$stats['misses'] - self::$opcacheProfileLast['misses'] : null,
+                       'cached_scripts' => count( $scripts ), 'included_files' => count( get_included_files() ),
+                       'included_not_cached' => count( $notCached ), 'not_cached_sample' => array_slice( $notCached, 0, 40 ),
+                       'served_most_this_request' => array_slice( $rose, 0, 10, true ) );
+        // where the misses come from: the path forms OPcache holds for cache files, and for the first files it
+        // does not hold their real path, age and what OPcache says about them
+        $line['cwd'] = getcwd();
+        $cacheKeys = array();
+        foreach ( array_keys( $scripts ) as $k )
+            if ( strpos( $k, '/cache/' ) !== false && count( $cacheKeys ) < 6 )
+                $cacheKeys[] = $k;
+        $line['cached_cache_file_sample'] = $cacheKeys;
+        $line['cached_scripts_with_var_cache'] = count( array_filter( array_keys( $scripts ), function ( $k ) { return strpos( $k, '/var/cache/' ) !== false || strpos( $k, '/var/site/cache/' ) !== false; } ) );
+        $probe = array();
+        foreach ( array_slice( $notCached, 0, 5 ) as $f )
+            $probe[] = array( 'file' => $f, 'realpath' => realpath( $f ), 'age_s' => file_exists( $f ) ? time() - filemtime( $f ) : null,
+                              'is_cached' => function_exists( 'opcache_is_script_cached' ) ? opcache_is_script_cached( $f ) : null,
+                              'is_cached_realpath' => function_exists( 'opcache_is_script_cached' ) && realpath( $f ) ? opcache_is_script_cached( realpath( $f ) ) : null );
+        $line['not_cached_probe'] = $probe;
+        $line['file_wrapper'] = in_array( 'file', stream_get_wrappers(), true ) ? ( function_exists( 'stream_get_meta_data' ) ? 'registered' : '' ) : 'none';
+        $line['opcache_ini'] = array( 'enable' => ini_get( 'opcache.enable' ), 'enable_cli' => ini_get( 'opcache.enable_cli' ),
+                                      'file_update_protection' => ini_get( 'opcache.file_update_protection' ), 'validate_timestamps' => ini_get( 'opcache.validate_timestamps' ),
+                                      'revalidate_freq' => ini_get( 'opcache.revalidate_freq' ), 'use_cwd' => ini_get( 'opcache.use_cwd' ) );
+        self::$opcacheProfileLast = array( 'hits' => (int)$stats['hits'], 'misses' => (int)$stats['misses'], 'scripts' => $hits );
+        @file_put_contents( $dir . 'opcache_profile.log', json_encode( $line, JSON_UNESCAPED_SLASHES ) . "\n", FILE_APPEND );
     }
 
     /**
