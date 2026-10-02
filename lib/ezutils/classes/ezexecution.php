@@ -299,6 +299,10 @@ class eZExecution
      */
     static public function renderErrorPage( $status, $reference = '', $detail = '' )
     {
+        $case = self::errorCase();
+        if ( $case !== '' )
+            return self::renderErrorCasePage( $case, $reference, $detail );
+
         $status = (int) $status === 503 ? 503 : 500;
         $texts = array(
             500 => array( 'Internal Server Error', 'Something went wrong on our side',
@@ -355,6 +359,112 @@ class eZExecution
             '{reference}' => $reference !== '' ? $esc( 'Reference: ' . $reference ) : '',
             '{home}' => '/',
             '{detail}' => $detail !== '' ? '<pre style="text-align:left;white-space:pre-wrap">' . $esc( $detail ) . '</pre>' : '',
+        ) );
+    }
+
+    /**
+     * The known cause of a failure, when the installation itself is in a state
+     * that explains it, so the visitor and the administrator get a page that
+     * says what to do instead of the general error page:
+     *
+     *  'dependencies'  the Composer libraries are not loaded and vendor/autoload.php
+     *                  is not there (vendor/ missing, moved, or never installed):
+     *                  every class from a library (ezcBaseOptions, ...) is "not found".
+     *
+     * @return string the case, or '' for none
+     */
+    static public function errorCase()
+    {
+        if ( !class_exists( 'Composer\Autoload\ClassLoader', false ) )
+        {
+            $root = self::$eZDocumentRoot !== null ? self::$eZDocumentRoot : getcwd();
+            if ( !is_file( $root . '/vendor/autoload.php' ) && !is_file( dirname( $root ) . '/vendor/autoload.php' ) )
+                return 'dependencies';
+        }
+        return '';
+    }
+
+    /**
+     * The page for a known error case (errorCase()), a page of its own beside
+     * the general one: error.ini [ErrorSettings] StaticErrorPage[<case>] if set
+     * (placeholders {status}, {title}, {message}, {steps}, {reference}, {home},
+     * {detail}), else a built-in page. Sent with HTTP 503: the site is not broken,
+     * it is not installed completely, and it works again once that is done.
+     *
+     * @param string $case from errorCase()
+     * @param string $reference
+     * @param string $detail technical detail, only passed when debug output is on
+     * @return void
+     */
+    static public function renderErrorCasePage( $case, $reference = '', $detail = '' )
+    {
+        $cases = array(
+            'dependencies' => array(
+                'The site is missing the software libraries it needs',
+                'Exponential could not load the libraries it is installed with (the vendor directory of the installation is missing, was moved or renamed, or was never installed). Nothing is wrong with the content; the site works again as soon as the libraries are back.',
+                array(
+                    'If the vendor directory was moved or renamed, put it back in the installation directory.',
+                    'Otherwise install the libraries: in the installation directory on the server, run composer install (add --no-dev on a production server).',
+                    'Then clear the caches (php bin/php/ezcache.php --clear-all) and, under Exponential Velocity, restart it.',
+                ),
+            ),
+        );
+        if ( !isset( $cases[$case] ) )
+            return self::renderErrorPage( 500, $reference, $detail );
+        list( $title, $message, $steps ) = $cases[$case];
+
+        if ( !headers_sent() )
+        {
+            header( ( isset( $_SERVER['SERVER_PROTOCOL'] ) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.1' ) . ' 503 Service Unavailable' );
+            header( 'Status: 503 Service Unavailable' );
+            header( 'Content-Type: text/html; charset=utf-8' );
+            header( 'Cache-Control: no-store, max-age=0' );
+            header( 'Retry-After: 60' );
+        }
+
+        $template = '';
+        try
+        {
+            // no eZINI: without the libraries it may not load either; read the setting from the file
+            $root = self::$eZDocumentRoot !== null ? self::$eZDocumentRoot : getcwd();
+            foreach ( array( 'settings/override/error.ini.append.php', 'settings/error.ini' ) as $ini )
+            {
+                if ( is_file( "$root/$ini" ) && preg_match( '/^StaticErrorPage\[' . preg_quote( $case, '/' ) . '\]=(.+)$/m', (string) file_get_contents( "$root/$ini" ), $m ) )
+                {
+                    $file = trim( $m[1] );
+                    $path = $file[0] === '/' ? $file : "$root/$file";
+                    if ( is_file( $path ) && is_readable( $path ) )
+                        $template = (string) file_get_contents( $path );
+                    break;
+                }
+            }
+        }
+        catch ( Throwable $ignored )
+        {
+            $template = '';
+        }
+        if ( $template === '' )
+        {
+            $template = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+                . '<title>{title}</title><style>body{font-family:system-ui,sans-serif;max-width:44rem;margin:10vh auto;padding:0 1rem;color:#111}'
+                . 'h1{font-size:1.8rem}ol{text-align:left;line-height:1.5}code{background:#f2f2f2;padding:.1rem .3rem}'
+                . 'small{display:block;margin-top:2rem;color:#666}</style></head><body><p style="font-size:3rem;font-weight:700;margin:0">{status}</p>'
+                . '<h1>{title}</h1><p>{message}</p><p><strong>For the administrator:</strong></p>{steps}<small>{reference}</small>{detail}</body></html>';
+        }
+
+        $esc = function ( $v ) { return htmlspecialchars( (string) $v, ENT_QUOTES, 'UTF-8' ); };
+        $list = '<ol>';
+        foreach ( $steps as $step )
+            $list .= '<li>' . preg_replace( '/(composer install(?: \(add --no-dev[^)]*\))?|php bin\/php\/ezcache\.php --clear-all)/', '<code>$1</code>', $esc( $step ) ) . '</li>';
+        $list .= '</ol>';
+        echo strtr( $template, array(
+            '{status}' => 503,
+            '{title}' => $esc( $title ),
+            '{message}' => $esc( $message ),
+            '{steps}' => $list,
+            '{reference}' => $reference !== '' ? $esc( 'Reference: ' . $reference ) : '',
+            '{home}' => '/',
+            '{detail}' => $detail !== '' ? '<pre style="white-space:pre-wrap">' . $esc( $detail ) . '</pre>' : '',
         ) );
     }
 
