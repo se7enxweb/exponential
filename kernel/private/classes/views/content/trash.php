@@ -68,8 +68,8 @@ class Trash extends \Exponential\Runnable\ModuleView
         {
             if ( \Exponential\Service\Trash::canEmpty( $user ) )
             {
-                // 100 objects at a time, to limit transaction size
-                \Exponential\Service\Trash::emptyArchived( 100 );
+                // as the command does: 100 at a time, each batch in a transaction of its own, a pause between them
+                \Exponential\Service\Trash::emptyTrash( 100, 1 );
             }
             else
             {
