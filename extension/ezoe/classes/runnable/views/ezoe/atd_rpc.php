@@ -1,0 +1,112 @@
+<?php
+/**
+ * The code of extension/ezoe/modules/ezoe/atd_rpc.php, moved into a class (#207 stage 1). The file extension/ezoe/modules/ezoe/atd_rpc.php is one call to it.
+ * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ */
+
+namespace
+{
+if ( !function_exists( 'AtD_http_post' ) ) {
+/* this function directly from akismet.php by Matt Mullenweg.  *props* */
+function AtD_http_post($request, $host, $path, $port = 80) 
+{
+   $http_request  = "POST $path HTTP/1.0\r\n";
+   $http_request .= "Host: $host\r\n";
+   $http_request .= "Content-Type: application/x-www-form-urlencoded\r\n";
+   $http_request .= "Content-Length: " . strlen($request) . "\r\n";
+   $http_request .= "User-Agent: AtD/0.1\r\n";
+   $http_request .= "\r\n";
+   $http_request .= $request;            
+
+   $response = '';                 
+   if( false != ( $fs = @fsockopen($host, $port, $errno, $errstr, 10) ) ) 
+   {                 
+      fwrite($fs, $http_request);
+
+      while ( !feof($fs) )
+      {
+          $response .= fgets($fs);
+      }
+      fclose($fs);
+      $response = explode("\r\n\r\n", $response, 2);
+   }
+   return $response;
+}
+}
+}
+
+namespace Exponential\View\Extension\Ezoe\Ezoe
+{
+
+class AtdRpc extends \Exponential\Runnable\ModuleView
+{
+    public function run( array $scope )
+    {
+        // the including function's variables ($Params, $Module, $cli, ...)
+        foreach ( array_keys( $scope ) as $__name )
+            if ( $__name !== 'this' && $__name !== 'scope' )
+                ${$__name} = &$scope[$__name];
+        unset( $__name );
+
+        $API_KEY = "";
+
+        // But better to set it in ezoe.ini[AtD]api_key
+        $ezoeIni  = \eZINI::instance( 'ezoe.ini' );
+        if ( $ezoeIni->hasVariable( 'AtD', 'api_key' )
+          && $ezoeIni->variable( 'AtD', 'api_key' ) !== '' )
+        {
+            $API_KEY = $ezoeIni->variable( 'AtD', 'api_key' );
+        }
+
+        $postText = '';
+        if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
+        {
+           $postText = trim( file_get_contents('php://input') );
+        }
+
+        if ( $API_KEY !== '' )
+        {
+           $postText .= '&key=' . $API_KEY;
+        }
+
+        // I am a vampire
+        // I have lost my fangs
+
+        // Security fix (F-03, CWE-93): $_GET['url'] is used as the request path in a
+        // hand-built HTTP request; strip CR/LF so it cannot inject extra headers into
+        // the upstream request. $postText is also initialised above to avoid using an
+        // undefined variable on non-POST requests.
+        $url = isset( $_GET['url'] ) ? str_replace( array( "\r", "\n" ), '', $_GET['url'] ) : '';
+
+
+        // So I'm sad and I feel lonely
+        // So I cry and I'm very angry
+        // And I hate some garlic
+        // So I'm so no more sad and
+        // Ache yeah yeah
+
+        $data = AtD_http_post($postText, "service.afterthedeadline.com", $url);
+
+        // I am a vampire and I am looking in the city
+        // Pretty girls don't look at me
+        // Don't look at me
+        // Cause I don't have my fangs
+        // But I have lost my fangs
+
+        header("Content-Type: text/xml");
+        echo $data[1];
+
+        echo "<!--\r\n";
+        \eZDebug::printReport( false, false );
+        echo "\r\n-->\r\n";
+
+        \eZDB::checkTransactionCounter();
+        \eZExecution::cleanExit();
+
+        // -- Antsy Pants, Vampire
+
+        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+}
+
+}
