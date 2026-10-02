@@ -45,6 +45,11 @@ var confObj = {ldelim}
 {/switch}
 
     dataSourceURL: "{concat('ezjscore/call/ezjscnode::subtree::', $node.node_id)|ezurl('no')}",
+    nodeID: {$node.node_id|int()},
+    {* The subitems column registry: expsubitems::columns / ::rows / ::savepreference, and the CSV export.
+       Without the server functions the table stays the classic one. *}
+    subitemsServer: {if ezini_hasvariable( 'ezjscServer_expsubitems', 'Class', 'ezjscore.ini' )}true{else}false{/if},
+    exportURL: "{concat('content/subitemsexport/', $node.node_id)|ezurl('no')}",
     editPrefixURL: {'/content/edit/'|ezurl},
     rowsPrPage: {$number_of_items},
     sortOrder: {$node.sort_order},
@@ -103,7 +108,26 @@ var labelsObj = {ldelim}
                         button_close: "{'Close'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         custom_label: "{'Custom'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         custom_placeholder: "{'Enter number'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        custom_invalid: "{'Please enter a valid number between 1 and 10000'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
+                        custom_invalid: "{'Please enter a valid number between 1 and 10000'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        filter_label: "{'Find a column:'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        filter_placeholder: "{'Column name'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        filter_none: "{'No columns match.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        group_other: "{'Other'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        order_legend: "{'Order of the visible columns:'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        order_hint: "{'Drag a column to move it, or use its arrow buttons.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        order_up: "{'Move %name up'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        order_down: "{'Move %name down'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        presets_legend: "{'Column presets:'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        presets_choose: "{'Preset'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        presets_none: "{'None'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        presets_name: "{'Name of the new preset'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        presets_save_as: "{'Save current as...'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        presets_delete: "{'Delete preset'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        export_csv: "{'Export CSV'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        export_csv_title: "{'Download the items with the visible columns as a CSV file'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        copy_title: "{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        copied: "{'Copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        copy_failed: "{'Not copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
                    {rdelim},
 
     ACTION_BUTTONS: {ldelim}

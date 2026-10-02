@@ -11,6 +11,14 @@
  * number that is not saved), the shown columns in the eZSubitemColumns cookie (one sub-value per navigation part),
  * inline priority editing through ezjscnode::updatepriority, the Select, Create new, Create multiple new, More
  * actions and Table options controls (same ids, same form fields posted) and the context menu of each row.
+ *
+ * With the subitems column registry (confObj.subitemsServer, settings/subitemscolumns.ini) the columns come from
+ * expsubitems::columns (only the ones this user may see), the rows from expsubitems::rows with the shown registry
+ * columns (computed by the server for the rows of the page only), and the choice - shown columns in their order,
+ * rows per page, the preset and the user's own presets - is saved with expsubitems::savepreference. The first time,
+ * the columns from the eZSubitemColumns cookie are taken over. Table options then also has a column filter, the
+ * columns by group, their order (drag, or the up and down buttons), presets and Export CSV (content/subitemsexport).
+ * When expsubitems::columns cannot be called, the table is the classic one above.
  */
 var eZAjaxSubitemsExpDataTable = (function () {
     'use strict';
@@ -59,9 +67,41 @@ var eZAjaxSubitemsExpDataTable = (function () {
         return /content\/action(\?.*)?$/.test(action) ? action.replace(/content\/action(\?.*)?$/, 'content/multiedit') : '/content/multiedit';
     }
 
+    // ---- the subitems column registry (expsubitems::columns, ::rows, ::savepreference) ------------------------
+
+    // The 15 columns the table draws itself from the node JSON: the registry's key -> the row field (and the sort
+    // name ezjscnode::subtree knows, and the key the eZSubitemColumns cookie and admininterface.ini used).
+    var BUILTIN = {
+        thumbnail: 'thumbnail', name: 'name', visibility: 'hidden_status_string', type: 'class_name', modifier: 'creator',
+        modified: 'modified_date', published: 'published_date', translations: 'translations', section: 'section',
+        nodeid: 'node_id', noderemoteid: 'node_remote_id', objectid: 'contentobject_id', objectremoteid: 'contentobject_remote_id',
+        objectstate: 'contentobject_state', priority: 'priority'
+    };
+    var FIELD_TO_KEY = {};
+    Object.keys(BUILTIN).forEach(function (k) { FIELD_TO_KEY[BUILTIN[k]] = k; });
+
+    function sameList(a, b) { return a.length === b.length && a.every(function (k, i) { return k === b[i]; }); }
+
+    /**
+     * Starts the table. With the subitems server functions (confObj.subitemsServer) it asks expsubitems::columns
+     * for the columns this user may see, then loads rows with expsubitems::rows; when that call fails (an
+     * installation without them) the table is the classic one on ezjscnode::subtree.
+     */
     function init(confObj, labelsObj, createGroups, createOptions) {
+        if (!confObj.subitemsServer || !window.Exp.io) { return build(confObj, labelsObj, createGroups, createOptions, null); }
+        return window.Exp.io.call('expsubitems::columns', [confObj.nodeID]).then(function (meta) {
+            if (!meta || !Array.isArray(meta.columns) || !meta.columns.length) { throw new Error('no columns'); }
+            return build(confObj, labelsObj, createGroups, createOptions, meta);
+        }).catch(function (e) {
+            if (window.console) { window.console.warn('sub items: the column list was not loaded, the classic table is used', e && e.message); }
+            return build(confObj, labelsObj, createGroups, createOptions, null);
+        });
+    }
+
+    function build(confObj, labelsObj, createGroups, createOptions, meta) {
         var $ = window.Exp.$;
         var shownColumns = getCookieSubMultiValue(confObj.cookieName, confObj.navigationPart);
+        var cookieColumns = shownColumns;
         if (shownColumns === null) { shownColumns = confObj.defaultShownColumns[confObj.navigationPart]; }
         var L = labelsObj.DATA_TABLE_COLS, A = labelsObj.ACTION_BUTTONS, O = labelsObj.TABLE_OPTIONS;
         var form = function () { return $('form[name=children]').first(); };
@@ -149,10 +189,182 @@ var eZAjaxSubitemsExpDataTable = (function () {
         };
 
         var $list = $('#content-sub-items-list');
+        var sortOptions = { key: confObj.sortKey, dir: confObj.sortOrder === 1 ? 'asc' : 'desc' };
+        var rowsPerPage = confObj.rowsPrPage;
+        var server = meta ? serverMode(meta) : null;
+
+        /** The table on the column registry: its columns, rows source, saved choice, presets and CSV export. */
+        function serverMode(meta) {
+            var O2 = labelsObj.TABLE_OPTIONS || {}, byField = {};
+            columns.forEach(function (c) { byField[c.key] = c; });
+            var available = {}, list = [];
+            meta.columns.forEach(function (m) {
+                if (!m || !m.key || available[m.key]) { return; }
+                available[m.key] = m;
+                var field = BUILTIN[m.key], c;
+                var title = m.description || '';
+                if (field && byField[field]) {
+                    // a built-in: drawn as before from the node JSON, under the registry's key
+                    var old = byField[field];
+                    c = $.extend({}, old, { key: m.key, field: field, label: old.label || m.name, group: m.group || '', title: title,
+                                            align: m.align || old.align, hidden: false });
+                    if (m.copy) { c.copy = (function (f) { return function (row) { var v = row[f]; return v === null || v === undefined ? '' : v; }; }(field)); }
+                } else if (!field) {
+                    // a registry column: the server's (escaped) HTML, the raw value for copying
+                    c = { key: m.key, label: m.name || m.key, group: m.group || '', title: title, align: m.align, remote: true,
+                          sortable: !!m.sortable, className: 'exp-subitems-col exp-subitems-type-' + String(m.type || 'text').replace(/[^a-z0-9_-]/gi, ''),
+                          render: (function (k) { return function (row) { var x = row.columns && row.columns[k]; return x && x.h !== undefined && x.h !== null ? String(x.h) : ''; }; }(m.key)) };
+                    if (m.copy) {
+                        c.copy = (function (k) {
+                            return function (row) {
+                                var x = row.columns && row.columns[k];
+                                if (!x || x.v === undefined || x.v === null) { return ''; }
+                                return typeof x.v === 'object' ? (Array.isArray(x.v) ? x.v.join(', ') : JSON.stringify(x.v)) : x.v;
+                            };
+                        }(m.key));
+                    }
+                }
+                if (c) { list.push(c); }
+            });
+            // the inline priority editor writes row.priority; the editable column has the key 'priority' in both modes
+            var fixed = columns.filter(function (c) { return c.key === 'checkbox' || c.key === 'crank'; });
+            columns = fixed.concat(list);
+
+            // the visible columns: the saved choice, else the eZSubitemColumns cookie once (migrated), else the defaults
+            var known = function (keys) { return (keys || []).filter(function (k) { return available[k] && k !== 'checkbox' && k !== 'crank'; }); };
+            var pref = meta.preference || {};
+            var saved = pref.saved === true || (pref.saved === undefined && Array.isArray(pref.visible) && pref.visible.length > 0);
+            var state = { visible: [], preset: pref.preset || null, pageSize: Number(pref.page_size) || 0 };
+            var migrate = false;
+            if (saved && known(pref.visible).length) {
+                state.visible = known(pref.visible);
+            } else if (cookieColumns && cookieColumns.length) {
+                state.visible = known(cookieColumns.map(function (f) { return FIELD_TO_KEY[f] || f; }));
+                migrate = state.visible.length > 0;
+            }
+            if (!state.visible.length) { state.visible = known(meta.defaults); }
+            if (!state.visible.length) { state.visible = known(list.map(function (c) { return c.key; })); }
+            columns.forEach(function (c) { if (c.label && state.visible.indexOf(c.key) === -1) { c.hidden = true; } });
+
+            var presets = (meta.presets || []).filter(function (p) { return p && p.id && Array.isArray(p.columns); }).map(function (p) {
+                return { id: String(p.id), name: p.name || String(p.id), columns: p.columns, source: p.source === 'user' ? 'user' : 'ini' };
+            });
+            var userPresets = function () {
+                var out = {};
+                presets.forEach(function (p) { if (p.source === 'user') { out[p.id] = { name: p.name, columns: p.columns }; } });
+                return out;
+            };
+            var payload = function () {
+                return JSON.stringify({ visible: state.visible, preset: state.preset, page_size: state.pageSize || null, presets: userPresets() });
+            };
+            var timer = null;
+            var flush = function () {
+                if (timer) { window.clearTimeout(timer); timer = null; }
+                return window.Exp.io.call('expsubitems::savepreference', [confObj.nodeID], { data: { preference: payload() } }).catch(function (e) {
+                    if (window.console) { window.console.warn('sub items: the table options were not saved', e && e.message); }
+                });
+            };
+            var queueSave = function () {
+                if (timer) { window.clearTimeout(timer); }
+                timer = window.setTimeout(flush, 700);
+            };
+            // leaving the page within the delay: the last change still reaches the server
+            window.addEventListener('pagehide', function () {
+                if (!timer || !window.navigator.sendBeacon) { return; }
+                window.clearTimeout(timer); timer = null;
+                var body = new window.URLSearchParams();
+                body.append('ezjscServer_function_arguments', 'expsubitems::savepreference::' + confObj.nodeID);
+                body.append('ezxform_token', window.Exp.token ? window.Exp.token() : '');
+                body.append('preference', payload());
+                window.navigator.sendBeacon(window.Exp.config.call, body);
+            });
+            if (migrate) { flush(); }
+            if (state.pageSize > 0) { rowsPerPage = state.pageSize; }
+
+            // sorting: built-ins by the names ezjscnode::subtree knows, registry columns by their key
+            var sortName = function (key) { return BUILTIN[key] || key; };
+            var initial = FIELD_TO_KEY[confObj.sortKey] || confObj.sortKey;
+            sortOptions = { key: initial, dir: confObj.sortOrder === 1 ? 'asc' : 'desc' };
+            var remoteShown = function (table) {
+                return table.visibleColumns().filter(function (k) { return available[k] && !BUILTIN[k]; });
+            };
+            var presetOf = function (id) { for (var i = 0; i < presets.length; i++) { if (presets[i].id === id) { return presets[i]; } } return null; };
+            var exportURL = function (table) {
+                var s = table.state.sort || sortOptions;
+                return confObj.exportURL + '?columns=' + encodeURIComponent(table.shownColumns().join(',')) +
+                       '&sort=' + encodeURIComponent(sortName(s.key)) + '&order=' + (s.dir === 'asc' ? '1' : '0');
+            };
+
+            return {
+                source: {
+                    fn: 'expsubitems::rows',
+                    args: function (s) {
+                        var a = [confObj.nodeID, s.limit, s.offset, sortName(s.sort.key), s.sort.dir === 'asc' ? '1' : '0'];
+                        if (confObj.nameFilter) { a.push(confObj.nameFilter); }
+                        return a;
+                    },
+                    data: function () { return { columns: remoteShown(this).join(',') }; },
+                    parse: function (c) {
+                        c = c || {};
+                        return { rows: (c.list || []).map(parseRow), total: Number(c.total_count) || 0 };
+                    },
+                    cache: 20
+                },
+                columnToggle: {
+                    shown: state.visible,
+                    ordered: true,
+                    save: function (keys) {
+                        state.visible = keys.slice();
+                        var p = state.preset ? presetOf(state.preset) : null;
+                        if (p && !sameList(known(p.columns), keys)) { state.preset = null; if (this.$presets) { this.renderPresets(); } }
+                        queueSave();
+                    }
+                },
+                limitSaved: function (limit) { limit = Number(limit) || 0; state.pageSize = limit > 0 && limit <= 500 ? limit : 0; queueSave(); },
+                copy: { title: O2.copy_title, done: O2.copied, failed: O2.copy_failed },
+                tableOptions: {
+                    columns: {
+                        legend: O2.header_vtc,
+                        filter: { label: O2.filter_label, placeholder: O2.filter_placeholder, none: O2.filter_none },
+                        otherGroup: O2.group_other,
+                        order: { legend: O2.order_legend, hint: O2.order_hint, up: O2.order_up, down: O2.order_down }
+                    },
+                    presets: {
+                        legend: O2.presets_legend, none: O2.presets_none, choose: O2.presets_choose, name: O2.presets_name,
+                        saveAs: O2.presets_save_as, remove: O2.presets_delete,
+                        items: function () { return presets.map(function (p) { return { id: p.id, name: p.name, own: p.source === 'user', columns: p.columns }; }); },
+                        current: function () { return state.preset; },
+                        onApply: function (item) {
+                            var keys = known(item.columns);
+                            if (!keys.length) { return; }
+                            state.preset = item.id;
+                            this.setShown(keys);
+                        },
+                        onSave: function (name, keys) {
+                            var id = 'u' + Date.now().toString(36);
+                            presets.push({ id: id, name: name, columns: keys.slice(), source: 'user' });
+                            state.preset = id;
+                            return flush();
+                        },
+                        onDelete: function (item) {
+                            presets = presets.filter(function (p) { return !(p.id === item.id && p.source === 'user'); });
+                            if (state.preset === item.id) { state.preset = null; }
+                            return flush();
+                        }
+                    },
+                    buttons: confObj.exportURL && meta.csv_export !== false ? [{
+                        id: 'ezbtn-subitems-export', label: O2.export_csv, title: O2.export_csv_title,
+                        onClick: function (table) { window.location.assign(exportURL(table)); }
+                    }] : []
+                }
+            };
+        }
+
         $list.expDataTable({
             columns: columns,
             rowKey: 'node_id',
-            source: {
+            copy: server ? server.copy : null,
+            source: server ? server.source : {
                 // GET <ezjscore/call/ezjscnode::subtree::node>::limit::offset::sort::order::filter?ContentType=json
                 url: function (s) {
                     return confObj.dataSourceURL + '::' + s.limit + '::' + s.offset + '::' + s.sort.key + '::' +
@@ -164,9 +376,9 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 },
                 cache: 20
             },
-            sort: { key: confObj.sortKey, dir: confObj.sortOrder === 1 ? 'asc' : 'desc' },
+            sort: sortOptions,
             paging: {
-                limit: confObj.rowsPrPage,
+                limit: rowsPerPage,
                 containers: ['#bpg'],
                 compact: ['#tpg'],
                 labels: { first: "<span data-icon='&#xe065;'></span>", last: "<span data-icon='&#xe068;'></span>",
@@ -175,7 +387,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
             select: { key: 'checkbox', name: 'DeleteIDArray[]', className: 'ezsubitems_delete_checkbox',
                       value: function (row) { return row.node_id; }, label: function (row) { return row.name; },
                       header: false, ranges: false },
-            columnToggle: {
+            columnToggle: server ? server.columnToggle : {
                 shown: shownColumns,
                 save: function (keys) {
                     setCookieSubMultiValue(confObj.cookieName, confObj.navigationPart, keys, confObj.cookieSecure);
@@ -243,7 +455,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                       } else { f.append($('<input type="hidden" name="MoveButton" value="1" />')).trigger('submit'); }
                   } }
             ],
-            tableOptions: {
+            tableOptions: $.extend({
                 button: { id: 'ezbtn-options', label: A.table_options },
                 container: '#to-dialog-container',
                 title: O.header,
@@ -260,8 +472,14 @@ var eZAjaxSubitemsExpDataTable = (function () {
                               invalid: O.custom_invalid || 'Please enter a valid number between 1 and 10000' }
                 },
                 columns: { legend: O.header_vtc }
-            }
+            }, server ? server.tableOptions : {})
         });
+        if (server) {
+            // rows per page (a listed number or a custom one) is part of the saved choice
+            $list.on('exp:datatable:page', function (e, d) {
+                if (d && d.limit && Number(d.limit) !== rowsPerPage) { rowsPerPage = Number(d.limit); server.limitSaved(rowsPerPage); }
+            });
+        }
         return $list.data('expDataTable');
     }
 
