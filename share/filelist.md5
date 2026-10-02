@@ -50,6 +50,7 @@ a849a06864b1bc3b4dbac1021b207d74  bin/php/console
 fa772718e004aeaee707fe879c1f7e3d  bin/php/convertezenumtoezselection.php
 bc5d09b8d691c0a1f35efd6915a1ca9e  bin/php/convertprice2multiprice.php
 db1f5ba9aec27cda4ca736966409f534  bin/php/dfscleanup.php
+573d394c34950e2125baea715a8f87bc  bin/php/exprepair.php
 d8088b020350ff2e35be36a376b553b7  bin/php/ezapplytemplate.php
 fafa7931af29f8c66ef62fe00429d2aa  bin/php/ezasynchronouspublisher.php
 a48cd45ad68d095271fe9467060e53a5  bin/php/ezcache.php
@@ -4565,7 +4566,7 @@ fba3d491d837749791fb421dbe3675de  lib/eztemplate/classes/eztemplatewhilefunction
 c80badb0b87b5fb55555d244d6ef797e  lib/ezutils/classes/ezdatetimevalidator.php
 0c9c56d406fe9bfe668118ab11db0c11  lib/ezutils/classes/ezdebug.php
 3d9748ba413c5c152a3f73f7ee585e40  lib/ezutils/classes/ezdebugsetting.php
-f832b22c2b3e56f5e5a1a313e454f64e  lib/ezutils/classes/ezexecution.php
+baed9f413af6690b1abbfeb5f4cc857c  lib/ezutils/classes/ezexecution.php
 54c1a53c483696cc41a502986862d6eb  lib/ezutils/classes/ezexpiryhandler.php
 c1827d9526dc313b9d71e8bc57934076  lib/ezutils/classes/ezextension.php
 10c1762246e846ff94749cad57aa5235  lib/ezutils/classes/ezfileextensionblacklistvalidator.php
@@ -4589,6 +4590,7 @@ aca070ac255556d82f7de2291907e269  lib/ezutils/classes/ezmodulefunctioninfo.php
 33d440c7704babc977c6a13aa21d4ee4  lib/ezutils/classes/ezoperationhandler.php
 d0e1c69f736e79bcbacb7fc7f6378984  lib/ezutils/classes/ezoperationmemento.php
 ae68d3006d1d86b0f009d0a9a1bf7cc2  lib/ezutils/classes/ezphpcreator.php
+47fc522d1c382d61001dd709218b6ac8  lib/ezutils/classes/ezprepairqueue.php
 792837cf162891461c5f81cd7c49e507  lib/ezutils/classes/ezprocess.php
 610b39649cf5d37b1d8e2a791f7b9b7d  lib/ezutils/classes/ezregexpvalidator.php
 034334645e28957b59f305b8eb447449  lib/ezutils/classes/ezremoteidutility.php
@@ -4624,7 +4626,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
 6711e2b730a26275dd51452f0c6688dd  settings/design.ini
-78e7611bc1796754317cc51252b24db1  settings/error.ini
+508ed13ee170dbb990e10380d9022fa7  settings/error.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 179e641f13c2340ba00500111ea04bb2  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
