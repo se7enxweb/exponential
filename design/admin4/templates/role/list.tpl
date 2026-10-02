@@ -1,0 +1,84 @@
+<form name="roles" action={concat( $module.functions.list.uri, '/' )|ezurl} method="post" >
+
+
+<div class="context-block">
+{* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
+<h1 class="context-title">{'Roles (%role_count)'|i18n( 'design/admin/role/list',, hash( '%role_count', $role_count ) )}</h1>
+
+{* DESIGN: Mainline *}<div class="header-mainline"></div>
+
+{* DESIGN: Header END *}</div></div>
+
+{* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
+
+{* Items per page selector.
+
+   The sizes come from site.ini [RoleSettings] RolesPerPageList and the
+   preference stores the position in that list, so a site can offer the sizes
+   its own editors want without resetting anyone's choice. They used to be
+   written out here as well as in the module, which meant two lists that had to
+   agree and no way to change either. *}
+<div class="context-toolbar">
+<div class="button-left">
+<p class="table-preferences">
+{foreach $limit_choices as $limit_index => $limit_option}
+    {if eq( $limit_index|inc, $limit_choice )}
+        <span class="current">{$limit_option}</span>
+    {else}
+        <a href={concat( '/user/preferences/set/admin_role_list_limit/', $limit_index|inc )|ezurl}>{$limit_option}</a>
+    {/if}
+{/foreach}
+</p>
+</div>
+<div class="float-break"></div>
+</div>
+
+<table class="list" cellspacing="0">
+<tr>
+    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Toggle selection'|i18n( 'design/admin/role/list')}" onclick="ezjs_toggleCheckboxes( document.roles, 'DeleteIDArray[]' ); return false;"/></th>
+    {* Sorted by the database, because the list is shown a page at a time. The
+       heading is the one the rss list and the locations tab use. *}
+    {include uri='design:parts/sortheader.tpl' key='id'   label='ID'|i18n( 'design/admin/role/list' )   sort=$role_sort page_uri='/role/list' cell_class='tight'}
+    {include uri='design:parts/sortheader.tpl' key='name' label='Name'|i18n( 'design/admin/role/list' ) sort=$role_sort page_uri='/role/list'}
+    <th class="tight">&nbsp;</th>
+    <th class="tight">&nbsp;</th>
+    <th class="tight">&nbsp;</th>
+</tr>
+
+{section var=Roles loop=$roles sequence=array( bglight, bgdark )}
+    {let role_name=$Roles.item.name|wash}
+    <tr class="{$Roles.sequence}">
+    <td class="tight"><input type="checkbox" name="DeleteIDArray[]" value="{$Roles.item.id}" title="{'Select role for removal.'|i18n( 'design/admin/role/list' )}" /></td>
+    <td class="role-id">{$Roles.item.id}</td>
+    <td>{'role'|icon( 'small', 'Role'|i18n( 'design/admin/role/list' ) )}&nbsp;<a href={concat( '/role/view/', $Roles.item.id)|ezurl}>{$role_name|wash}</a></td>
+    <td><a href={concat( '/role/assign/', $Roles.item.id)|ezurl}><img src={'assign.gif'|ezimage} alt="{'Assign'|i18n( 'design/admin/role/list')}" title="{'Assign the <%role_name> role to a user or a user group.'|i18n( 'design/admin/role/list',, hash( '%role_name', $role_name ) )|wash}" /></a></td>
+    <td><a href={concat( '/role/copy/', $Roles.item.id)|ezurl}><img src={'copy.gif'|ezimage} alt="{'Copy'|i18n( 'design/admin/role/list' )}" title="{'Copy the <%role_name> role.'|i18n( 'design/admin/role/list',, hash( '%role_name', $role_name ) )|wash}" /></a></td>
+    <td><a href={concat( '/role/edit/', $Roles.item.id)|ezurl}><img src={'edit.gif'|ezimage} width="16" height="16" alt="{'Edit'|i18n( 'design/admin/role/list' )}" title="{'Edit the <%role_name> role.'|i18n( 'design/admin/role/list',, hash( '%role_name', $role_name ) )|wash}" /></a></td>
+    </tr>
+{/let}
+{/section}
+</table>
+
+<div class="context-toolbar">
+{include name=navigator
+         uri='design:navigator/google.tpl'
+         page_uri='/role/list'
+         item_count=$role_count
+         view_parameters=$view_parameters
+         item_limit=$limit}
+</div>
+
+{* DESIGN: Content END *}</div></div></div>
+
+<div class="controlbar">
+{* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
+<div class="block">
+    <input class="button" type="submit" name="RemoveButton" value="{'Remove selected'|i18n( 'design/admin/role/list' )}" title="{'Remove selected roles.'|i18n( 'design/admin/role/list' )}" />
+    <input class="button" type="submit" name="NewButton" value="{'New role'|i18n( 'design/admin/role/list' )}" title="{'Create a new role.'|i18n( 'design/admin/role/list' )}" />
+</div>
+{* DESIGN: Control bar END *}</div></div>
+</div>
+
+</div>
+
+</form>

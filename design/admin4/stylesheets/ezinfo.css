@@ -1,0 +1,187 @@
+/* Info > About and Info > Copyright (ezinfo/about, ezinfo/copyright): the summary, the
+   sections, the license text and the tables of extensions and third-party software.
+   Loaded by those two templates only (ezcss_require), and every rule is scoped to
+   .ezinfo-page. Made for the admin3 design and readable in the admin design.
+
+   The tables turn into cards when the content column, not the window, is narrow: the
+   column is narrow between the two menus on a wide screen too. */
+
+.ezinfo-page {
+    container-type: inline-size;
+    container-name: ezinfo;
+}
+.ezinfo-page .box-content { padding-bottom: 1em; }
+
+/* The summary under the heading and the links to the sections. */
+.ezinfo-page .ezinfo-intro { margin: 0.2em 0 1.4em 0; }
+.ezinfo-page .ezinfo-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 0 0 0.9em 0;
+    padding: 0;
+    list-style: none;
+}
+.ezinfo-page .ezinfo-summary li {
+    margin: 0;
+    padding: 0.35em 0.9em;
+    border-radius: 999px;
+    background: #eef2f6;
+    color: #3a4a5c;
+}
+.ezinfo-page .ezinfo-summary strong { font-size: 1.05em; }
+.ezinfo-page .ezinfo-summary .ezinfo-summary-version { background: #fff1de; color: #7a3d00; }
+.ezinfo-page .ezinfo-summary .ezinfo-summary-license { background: #e3f1e6; color: #1f5f2c; }
+
+.ezinfo-page .ezinfo-toc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3em 1em;
+    padding: 0.6em 0.9em;
+    border: 1px solid #d5dbe3;
+    border-radius: 6px;
+    background: #fbfcfd;
+}
+.ezinfo-page .ezinfo-toc-label { color: #6b7785; }
+.ezinfo-page .ezinfo-toc a { white-space: nowrap; }
+
+/* A section: a heading with the admin's orange rule under it. */
+.ezinfo-page .ezinfo-section { margin: 0 0 1.8em 0; scroll-margin-top: 1em; }
+.ezinfo-page .ezinfo-section h2 {
+    margin: 0 0 0.6em 0;
+    padding: 0 0 0.3em 0;
+    border-bottom: 2px solid #e8a15a;
+    font-size: 1.15em;
+    color: #1d2b3a;
+}
+.ezinfo-page .ezinfo-section h3 { margin: 1em 0 0.4em 0; font-size: 1em; }
+.ezinfo-page .ezinfo-count { color: #6b7785; font-weight: normal; }
+.ezinfo-page .ezinfo-prose p { max-width: 46em; margin: 0 0 0.7em 0; line-height: 1.5; }
+.ezinfo-page .ezinfo-links a { margin-right: 1em; }
+.ezinfo-page .ezinfo-none { color: #7b8591; font-style: italic; }
+
+/* The license: a readable, scrollable block rather than the whole text in the page. */
+.ezinfo-page .ezinfo-license {
+    max-height: 26em;
+    margin: 0;
+    padding: 1em 1.2em;
+    overflow: auto;
+    border: 1px solid #d5dbe3;
+    border-radius: 6px;
+    background: #fbfcfd;
+    color: #26313d;
+    font-size: 0.85em;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+.ezinfo-page .ezinfo-license:focus { outline: 2px solid #e8a15a; outline-offset: 2px; }
+
+.ezinfo-page .ezinfo-list { margin: 0.4em 0 0 0; padding-left: 1.3em; }
+.ezinfo-page .ezinfo-list li { margin-bottom: 0.3em; overflow-wrap: anywhere; }
+
+/* The tables. */
+.ezinfo-page .ezinfo-table-wrap { max-width: 100%; }
+.ezinfo-page table.list { width: 100%; table-layout: auto; }
+.ezinfo-page table.list th { white-space: nowrap; }
+.ezinfo-page table.list td { vertical-align: top; overflow-wrap: anywhere; line-height: 1.4; }
+.ezinfo-page table.list td.ezinfo-cell-name { min-width: 11em; }
+.ezinfo-page table.list td.ezinfo-cell-version { white-space: nowrap; overflow-wrap: normal; }
+.ezinfo-page table.list td.ezinfo-cell-identifier { font-family: Consolas, "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 1em; overflow-wrap: anywhere; }
+.ezinfo-page table.list td.ezinfo-cell-license { min-width: 6em; }
+.ezinfo-page table.list td.ezinfo-cell-website { overflow-wrap: normal; }
+.ezinfo-page tr:target td { background: #fff4e3; }
+
+/* The extension table has fixed column widths, so the name and its texts get the room
+   and a long address or license cannot push the table out of the column. */
+.ezinfo-page table.ezinfo-extensions { table-layout: fixed; }
+.ezinfo-page table.ezinfo-extensions th.ezinfo-col-order { width: 4.2em; }
+.ezinfo-page table.ezinfo-extensions th.ezinfo-col-identifier { width: 17%; }
+.ezinfo-page table.ezinfo-extensions th.ezinfo-col-version { width: 5.8em; }
+.ezinfo-page table.ezinfo-extensions th.ezinfo-col-license { width: 16%; }
+.ezinfo-page table.ezinfo-extensions th.ezinfo-col-website { width: 18%; }
+.ezinfo-page table.ezinfo-extensions th { overflow: hidden; text-overflow: ellipsis; }
+.ezinfo-page table.ezinfo-extensions td.ezinfo-cell-name { min-width: 0; }
+.ezinfo-page table.ezinfo-extensions td.ezinfo-cell-version { white-space: normal; overflow-wrap: anywhere; }
+.ezinfo-page table.ezinfo-extensions td.ezinfo-cell-website { overflow-wrap: anywhere; }
+
+.ezinfo-page .ezinfo-extension-name { display: block; font-weight: bold; color: #1d2b3a; }
+.ezinfo-page .ezinfo-meta { display: block; margin-top: 0.2em; color: #5d6875; font-size: 0.9em; }
+.ezinfo-page .ezinfo-position {
+    display: inline-block;
+    min-width: 1.9em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    background: #e3f1e6;
+    color: #1f5f2c;
+    font-weight: bold;
+    text-align: center;
+}
+.ezinfo-page .ezinfo-includes {
+    margin: 0.35em 0 0 0;
+    padding: 0.35em 0 0 0;
+    list-style: none;
+    border-top: 1px dashed #d5dbe3;
+    font-size: 0.9em;
+    color: #3a4a5c;
+}
+.ezinfo-page .ezinfo-includes li { margin: 0 0 0.15em 0; padding-left: 1.2em; text-indent: -1.2em; overflow-wrap: anywhere; }
+.ezinfo-page .ezinfo-includes-label { color: #6b7785; }
+
+/* The sort links stand in for the heading row when the table is shown as cards. */
+.ezinfo-page .ezinfo-sortbar { display: none; }
+
+/* The copyright page. */
+.ezinfo-page .ezinfo-notice-holder { font-size: 1.1em; font-weight: bold; color: #1d2b3a; }
+.ezinfo-page .ezinfo-warranty {
+    max-width: 46em;
+    padding: 0.7em 1em;
+    border-left: 4px solid #e8a15a;
+    background: #fff8ee;
+    line-height: 1.5;
+}
+.ezinfo-page .ezinfo-plain-notice summary { cursor: pointer; color: #005b7f; }
+.ezinfo-page .ezinfo-plain-notice[open] summary { margin-bottom: 0.6em; }
+.ezinfo-page .ezinfo-plain-notice .ezinfo-plain-notice-text {
+    padding: 0.8em 1em;
+    border: 1px solid #d5dbe3;
+    border-radius: 6px;
+    background: #fbfcfd;
+}
+.ezinfo-page .ezinfo-plain-notice .ezinfo-plain-notice-text p { max-width: 46em; line-height: 1.5; }
+
+@container ezinfo (max-width: 44em) {
+    .ezinfo-page .ezinfo-sortbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3em 0.9em;
+        margin: 0 0 0.6em 0;
+    }
+    .ezinfo-page .ezinfo-sortbar span { color: #6b7785; }
+    .ezinfo-page .ezinfo-sortbar-current { font-weight: bold; }
+
+    .ezinfo-page table.list,
+    .ezinfo-page table.list tbody,
+    .ezinfo-page table.list tr,
+    .ezinfo-page table.list td { display: block; width: auto; min-width: 0; }
+    .ezinfo-page table.list thead { display: none; }
+    .ezinfo-page table.list tr {
+        margin: 0 0 0.6em 0;
+        padding: 0.5em 0.7em;
+        border: 1px solid #d5dbe3;
+        border-radius: 6px;
+    }
+    .ezinfo-page table.list td { padding: 0.15em 0; border: 0; }
+    .ezinfo-page table.list td[data-label]::before {
+        content: attr(data-label) ":";
+        margin-right: 0.4em;
+        color: #6b7785;
+        font-family: sans-serif;
+        font-size: 0.9em;
+    }
+    .ezinfo-page table.list td.ezinfo-cell-order { float: right; padding: 0; }
+    .ezinfo-page table.list td.ezinfo-cell-order::before { content: none; }
+    .ezinfo-page table.list td.ezinfo-cell-name { padding-bottom: 0.35em; }
+    .ezinfo-page table.list td.ezinfo-cell-version { white-space: normal; }
+}

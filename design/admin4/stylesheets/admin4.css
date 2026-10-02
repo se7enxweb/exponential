@@ -1,0 +1,506 @@
+/*
+ * admin4: the admin3 frame in the look of the 2026 setup wizard, in a light mode (the default) and a dark mode.
+ *
+ * Loaded after admin4's base stylesheets (core, pagelayout, content, the theme, the YUI and modal window
+ * styles) and before the extensions' BackendCSSFileList, so an extension keeps the last word on its own markup.
+ * The mode is html[data-a4-theme="light"|"dark"], set before the page is drawn by the script at the top of
+ * page_head_style.tpl from this browser's choice (localStorage "exp-admin4-theme"); the header's toggle switches it.
+ *
+ * Rules for third-party and default extensions:
+ * - colours, type, radii, shadows and spacing of the frame and of the kernel's shared classes only; never an
+ *   element's display, position, float, width or height; nothing renamed or hidden;
+ * - never a background image an element relies on (icon buttons, sort arrows, tree lines): backgrounds are set
+ *   with background-color, not the background shorthand (only the frame's decorative textures are replaced);
+ * - a rule that restyles a base rule uses that rule's own selector (ul.tabs li a, table.list th, input.button,
+ *   .navbar-menu li a ...): it wins by loading later, with no extra weight, so whatever beat the base rule before
+ *   -- an extension's own rule -- still beats it;
+ * - shared defaults inside the columns (link and heading colours, fields) are scoped with :where(), which adds no
+ *   weight at all: an extension's rule with a class in it always wins (an id-scoped "#maincontent a" outranked
+ *   them all and turned the text of extensions' coloured buttons orange);
+ * - no cascade layers: putting the base in a layer made every extension rule beat every base rule, which the
+ *   extensions were not written for (explayouts' pages fell apart).
+ * - an extension that paints a column itself gets a compatibility rule at the end of this file.
+ */
+
+/* ---- Tokens: light (default) ------------------------------------------------------------------------------- */
+
+:root {
+  --a4-orange: #f26a21;
+  --a4-orange-dark: #d9561a;
+  --a4-orange-soft: rgba(242, 106, 33, 0.12);
+  --a4-ink: #1f2430;
+  --a4-muted: #5d6573;
+  --a4-line: #e3e6eb;
+  --a4-soft: #f6f7f9;
+  --a4-radius: 18px;
+  --a4-radius-s: 9px;
+  --a4-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --a4-page-color: #eef1f5;
+  --a4-page-image: radial-gradient(1100px 620px at 88% -14%, rgba(242, 106, 33, 0.10), transparent 62%),
+                   radial-gradient(900px 560px at -12% 108%, rgba(64, 120, 192, 0.09), transparent 60%),
+                   linear-gradient(165deg, #f6f8fb 0%, #edf0f4 100%);
+  --a4-header-bg: rgba(255, 255, 255, 0.82);
+  --a4-header-line: rgba(16, 24, 40, 0.07);
+  --a4-header-shadow: 0 1px 0 rgba(16, 24, 40, 0.03), 0 10px 28px rgba(16, 24, 40, 0.06);
+  --a4-header-ink: #3b4252;
+  --a4-header-hover: rgba(16, 24, 40, 0.05);
+  --a4-header-field: #fff;
+  --a4-header-field-line: rgba(16, 24, 40, 0.14);
+  --a4-card-bg: #fff;
+  --a4-card-edge: rgba(16, 24, 40, 0.06);
+  --a4-card-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 12px 32px -6px rgba(16, 24, 40, 0.09);
+  --a4-footer-ink: #6b7280;
+  --a4-footer-link: #4b5563;
+  --a4-footer-link-hover: #1f2430;
+  --a4-logo: url('../images/admin4/logo-light.png');
+}
+
+/* ---- Tokens: dark (the first admin4 look: slate page, white cards) ------------------------------------------ */
+
+html[data-a4-theme="dark"] {
+  --a4-page-color: #161b25;
+  --a4-page-image: radial-gradient(1100px 600px at 88% -12%, rgba(242, 106, 33, 0.26), transparent 60%),
+                   radial-gradient(900px 560px at -12% 108%, rgba(64, 120, 192, 0.20), transparent 60%),
+                   linear-gradient(160deg, #1d2431 0%, #141922 100%);
+  --a4-header-bg: rgba(20, 25, 34, 0.86);
+  --a4-header-line: rgba(255, 255, 255, 0.06);
+  --a4-header-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  --a4-header-ink: #d7dbe2;
+  --a4-header-hover: rgba(255, 255, 255, 0.08);
+  --a4-header-field: rgba(255, 255, 255, 0.92);
+  --a4-header-field-line: rgba(255, 255, 255, 0.18);
+  --a4-card-edge: rgba(255, 255, 255, 0.04);
+  --a4-card-shadow: 0 18px 44px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.18);
+  --a4-footer-ink: #8d95a3;
+  --a4-footer-link: #c8cdd6;
+  --a4-footer-link-hover: #fff;
+  --a4-logo: url('../images/3/logo_separator_sprite.png');
+}
+
+/* ---- The page -------------------------------------------------------------------------------------------- */
+
+/* On html: admin3 narrows body with margins to make room for the side menus, so a background on body or #page
+   covered only the middle of the window. */
+html {
+  min-height: 100%;
+  background-color: var(--a4-page-color);
+  background-image: var(--a4-page-image);
+  background-attachment: fixed;
+}
+body,
+#page {
+  background: transparent;
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+}
+/* The side menus' outer panels: the page shows through, their inner boxes are the cards */
+#leftmenu,
+#rightmenu {
+  background-color: transparent;
+  box-shadow: none;
+}
+/* admin3 framed the columns with a grey textile border-image (1.25rem); the cards' radius and shadow replace it.
+   Only the image goes: border-image-width stays, so nothing inside moves. */
+.sidebar,
+.content-wrapper {
+  border-image-source: none;
+}
+
+/* ---- Header ---------------------------------------------------------------------------------------------- */
+
+#header {
+  background: var(--a4-header-bg);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid var(--a4-header-line);
+  box-shadow: var(--a4-header-shadow);
+}
+/* On narrow windows (and at 200% zoom) admin3's menu panel lies inside the header and painted its old texture
+   over it; the texture is decoration, not an icon, so it gives way to the header's colour. */
+.navbar-menu {
+  background-color: var(--a4-header-bg);
+  background-image: none;
+}
+/* the logo: dark letters on the light header, admin3's white ones on the dark */
+#header-logo .brand {
+  background-image: var(--a4-logo);
+}
+html:not([data-a4-theme="dark"]) #header-logo .brand {
+  width: 128px;
+  background-position: 0 50%;
+  background-size: auto 30px;
+}
+#header .site-preview svg,
+#header .sidebar-control svg {
+  fill: var(--a4-header-ink);
+}
+#header .navbar-icon {
+  color: var(--a4-header-ink);
+}
+/* The top menu (admin3's .navbar-menu): its own selectors, so these win by loading later and no more */
+.navbar-menu li a {
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+  color: var(--a4-header-ink);
+  transition: background-color .15s ease, color .15s ease;
+}
+.navbar-menu li a:hover {
+  background-color: var(--a4-header-hover);
+  color: var(--a4-header-ink);
+}
+.navbar-menu li a.selected,
+.navbar-menu li a.selected:hover {
+  padding: 0.3rem 0.75rem;
+  background-color: var(--a4-orange);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(242, 106, 33, 0.32);
+}
+.navbar-menu li a.disabled {
+  color: var(--a4-header-ink);
+  opacity: .45;
+}
+
+/* Narrow windows that are not phones (576-1023px, also a desktop at 200% zoom): admin3 switched to the phone
+   menu (a hamburger and a sliding column) there. admin4 keeps the menu in the header as one row that scrolls
+   sideways, without a scrollbar (touch, trackpad, mouse wheel -- admin4.js turns the wheel sideways); faded
+   edges say there is more, and the current item is scrolled into view. The header search stays in the header.
+   Phones (below 576px) keep the hamburger menu. */
+@media screen and (min-width: 576px) and (max-width: 1023px) {
+  .navbar-main {
+    flex-wrap: wrap;
+  }
+  .navbar-icon,
+  .header-search-mobile {
+    display: none;
+  }
+  .header-search {
+    display: block;
+  }
+  .navbar-menu {
+    flex: 0 0 100%;
+    max-height: none;
+    position: static;
+    inset: auto;
+    z-index: auto;
+    padding: 0;
+    overflow: visible;
+    background-color: transparent;
+  }
+  .navbar-bar {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.15rem 0 0.35rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--a4-fade-start, 0px), #000 calc(100% - var(--a4-fade-end, 0px)), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 var(--a4-fade-start, 0px), #000 calc(100% - var(--a4-fade-end, 0px)), transparent 100%);
+  }
+  .navbar-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .navbar-bar.a4-more-left { --a4-fade-start: 28px; }
+  .navbar-bar.a4-more-right { --a4-fade-end: 28px; }
+  .navbar-bar > li {
+    flex: 0 0 auto;
+  }
+}
+#header .searchblock input.searchtext {
+  background-color: var(--a4-header-field);
+  border: 1px solid var(--a4-header-field-line);
+  border-radius: 99px;
+  color: var(--a4-ink);
+}
+#header .searchblock input.searchtext:focus {
+  border-color: var(--a4-orange);
+  box-shadow: 0 0 0 3px rgba(242, 106, 33, 0.22);
+  outline: none;
+}
+
+/* The light/dark toggle, after the search box */
+.header-theme {
+  display: flex;
+  align-items: center;
+  padding: 0 16px 0 18px;
+}
+.a4-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 7px 14px 7px 11px;
+  border: 1px solid var(--a4-header-field-line);
+  border-radius: 99px;
+  background-color: var(--a4-header-field);
+  color: var(--a4-ink);
+  font: 600 13px/1.2 var(--a4-font);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.a4-theme-toggle:hover {
+  border-color: var(--a4-orange);
+}
+.a4-theme-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(242, 106, 33, 0.3);
+}
+.a4-theme-toggle svg {
+  fill: var(--a4-orange);
+  stroke: var(--a4-orange);
+}
+.a4-theme-toggle .a4-icon-moon { display: none; }
+html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-sun { display: none; }
+html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline; }
+@media (max-width: 1023px) {
+  .a4-theme-toggle .a4-theme-label { display: none; }
+  .a4-theme-toggle { padding: 7px 9px; }
+  .header-theme { padding: 0 8px; }
+}
+
+/* ---- The three columns as cards: soft, edged by light and shadow rather than boxes -------------------------- */
+
+#leftmenu-design,
+#rightmenu-design,
+#maincontent {
+  background-color: var(--a4-card-bg);
+  border-radius: var(--a4-radius);
+  box-shadow: 0 0 0 1px var(--a4-card-edge), var(--a4-card-shadow);
+}
+#maincolumn {
+  background-color: transparent;
+}
+#maincontent {
+  padding: 22px 26px 26px;
+}
+#leftmenu-design,
+#rightmenu-design {
+  padding: 12px 10px 14px;   /* the right column is 240px wide: more would push its buttons past the card */
+}
+
+/* ---- Inside the columns: no added weight (:where), so extensions' own rules win ----------------------------- */
+
+:where(#maincontent, #leftmenu, #rightmenu) {
+  font-family: var(--a4-font);
+  color: var(--a4-ink);
+}
+:where(#maincontent, #leftmenu, #rightmenu) a {
+  color: var(--a4-orange-dark);
+}
+:where(#maincontent, #leftmenu, #rightmenu) a:hover {
+  color: var(--a4-orange);
+}
+:where(#maincontent) :where(h1, h2, h3),
+:where(#leftmenu, #rightmenu) h4 {
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-weight: 650;
+  letter-spacing: .005em;
+}
+:where(#path, #path-design) {
+  color: var(--a4-muted);
+}
+/* the dashed rules between blocks: one quiet hairline, less of a box */
+:where(#maincontent, #leftmenu, #rightmenu) :where(.box-header) {
+  border-top: 1px solid var(--a4-line);
+}
+:focus-visible {
+  outline: 3px solid rgba(242, 106, 33, 0.38);
+  outline-offset: 2px;
+}
+
+/* Tabs (the node view's View/Details/..., and every ul.tabs): a quiet row, the current one marked in orange */
+ul.tabs li a,
+ul.tabs li span.disabled {
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-muted);
+  text-decoration: none;
+  transition: background-color .15s ease, color .15s ease;
+}
+ul.tabs li a:hover {
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+}
+ul.tabs li.selected a,
+ul.tabs li.selected span.disabled {
+  background-color: var(--a4-orange-soft);
+  color: var(--a4-orange-dark);
+  box-shadow: inset 0 -2px 0 var(--a4-orange);
+}
+.tab-content {
+  border-color: var(--a4-line);
+  border-radius: 12px;
+  background-color: var(--a4-soft);
+}
+
+/* Buttons: outlined, the form's main action in orange (as in the wizard). Colours only: no background shorthand,
+   so a button's own icon (background-image) stays. */
+input.button, input.defaultbutton, input.button-disabled {
+  border-radius: var(--a4-radius-s);
+  font-family: var(--a4-font);
+  font-weight: 600;
+  text-shadow: none;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+input.button {
+  background-color: #fff;
+  border: 1px solid #c9ced6;
+  color: var(--a4-ink);
+}
+input.button:hover {
+  background-color: var(--a4-soft);
+  border-color: #9aa1ad;
+}
+input.defaultbutton {
+  background-color: var(--a4-orange);
+  border: 1px solid var(--a4-orange);
+  color: #fff;
+}
+input.defaultbutton:hover {
+  background-color: var(--a4-orange-dark);
+  border-color: var(--a4-orange-dark);
+}
+input.button-disabled, input.button[disabled] {
+  background-color: var(--a4-soft);
+  border: 1px solid var(--a4-line);
+  color: #9aa1ad;
+}
+
+/* Fields: rounded, the orange focus ring */
+:where(#maincontent, #leftmenu, #rightmenu) :where(input[type=text], input[type=password], input[type=email],
+                                                   input[type=number], input[type=search], select, textarea) {
+  border: 1px solid #c9ced6;
+  border-radius: var(--a4-radius-s);
+  font-family: var(--a4-font);
+}
+:where(#maincontent, #leftmenu, #rightmenu) :where(input[type=text], input[type=password], input[type=email],
+                                                   input[type=number], input[type=search], select, textarea):focus {
+  border-color: var(--a4-orange);
+  box-shadow: 0 0 0 3px rgba(242, 106, 33, 0.22);
+  outline: none;
+}
+:where(input[type=radio], input[type=checkbox]) {
+  accent-color: var(--a4-orange);
+}
+
+/* List tables (table.list, the kernel's and most extensions'): a light header in place of the black bar */
+table.list th, table.special th {
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  border-bottom: 1px solid var(--a4-line);
+  font-weight: 650;
+}
+table.list th a, table.special th a {
+  color: var(--a4-ink);
+}
+table.list tr.bglight, table.list tr.bglight td { background-color: #fff; }
+table.list tr.bgdark, table.list tr.bgdark td { background-color: #fafbfc; }
+table.list td { border-color: var(--a4-line); }
+
+/* Messages */
+div.message-warning, div.message-error, div.message-feedback, div.message-confirmation, div.message-information {
+  border-radius: 12px;
+}
+
+/* ---- Footer: quiet text on the page ------------------------------------------------------------------------- */
+
+#footer, #footer p {
+  color: var(--a4-footer-ink);
+}
+#footer a {
+  color: var(--a4-footer-link);
+}
+#footer a:hover {
+  color: var(--a4-footer-link-hover);
+}
+
+/* ---- Compatibility: extensions that paint a column themselves ----------------------------------------------- */
+
+/* explayouts_ui paints the left column navy on its own pages (#page.ezexplayoutsuinavigationpart #leftmenu) with
+   light menu text, and expects the box inside it to stay clear. admin4's card is that inner box, so on those
+   pages the card takes explayouts' navy and the column around it stays clear: the extension's dark menu, in
+   admin4's card. (Its rule has two ids and a class and loads after this file, hence the html and .sidebar.) */
+html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
+  background-color: transparent;
+}
+#page.ezexplayoutsuinavigationpart #leftmenu-design {
+  background-color: #1f2937;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), var(--a4-card-shadow);
+}
+
+/* ---- The dashboard (content/dashboard.tpl): welcome, figures, activity, system, the configured blocks -------- */
+
+.a4-dashboard { display: grid; gap: 22px; }
+.a4-dash-hero {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 18px;
+  padding: 22px 24px; border-radius: 16px;
+  background: linear-gradient(135deg, rgba(242, 106, 33, 0.10), rgba(64, 120, 192, 0.06) 70%), var(--a4-soft);
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+}
+.a4-dash-hero h1 { margin: 2px 0 4px; font-size: 26px; line-height: 1.2; }
+.a4-dash-date { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--a4-muted); }
+.a4-dash-sub { margin: 0; color: var(--a4-muted); }
+.a4-dash-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+:where(.a4-dash-actions) .a4-dash-action {
+  display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 99px;
+  background: #fff; color: var(--a4-ink); font-weight: 600; text-decoration: none;
+  box-shadow: 0 0 0 1px var(--a4-line), 0 1px 2px rgba(16, 24, 40, 0.05);
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+:where(.a4-dash-actions) .a4-dash-action:hover { color: var(--a4-ink); transform: translateY(-1px); box-shadow: 0 0 0 1px var(--a4-orange), 0 6px 16px rgba(242, 106, 33, 0.16); }
+:where(.a4-dash-actions) .a4-dash-action.a4-primary { background: var(--a4-orange); color: #fff; box-shadow: 0 6px 16px rgba(242, 106, 33, 0.28); }
+.a4-dash-ico { font-size: 15px; line-height: 1; opacity: .85; }
+
+.a4-dash-figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+:where(.a4-dash-figures) .a4-dash-figure {
+  display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 14px;
+  background: #fff; color: var(--a4-muted); text-decoration: none;
+  box-shadow: 0 0 0 1px var(--a4-line), 0 1px 2px rgba(16, 24, 40, 0.04);
+  transition: box-shadow .15s ease;
+}
+:where(.a4-dash-figures) a.a4-dash-figure:hover { color: var(--a4-muted); box-shadow: 0 0 0 1px var(--a4-orange), 0 8px 20px rgba(16, 24, 40, 0.08); }
+.a4-dash-figure strong { font-size: 26px; line-height: 1.1; font-weight: 700; color: var(--a4-ink); font-variant-numeric: tabular-nums; }
+.a4-dash-figure span { font-size: 12.5px; }
+.a4-dash-figure.a4-accent { background: linear-gradient(135deg, #fff, rgba(242, 106, 33, 0.08)); }
+.a4-dash-figure.a4-accent strong { color: var(--a4-orange-dark); }
+
+.a4-dash-row { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 22px; }
+@media (max-width: 1100px) { .a4-dash-row { grid-template-columns: minmax(0, 1fr); } }
+.a4-dash-card {
+  min-width: 0; padding: 18px 20px 20px; border-radius: 16px; background: #fff;
+  box-shadow: 0 0 0 1px var(--a4-line), 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+.a4-dash-card > header h2, .a4-dash-card h2 { margin: 0 0 12px; font-size: 16px; font-weight: 650; }
+.a4-dash-card table.list { width: 100%; }
+
+.a4-dash-bars { display: flex; align-items: flex-end; gap: 6px; height: 170px; padding-top: 18px; }
+.a4-dash-bar { position: relative; flex: 1 1 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; }
+.a4-dash-bar-fill { width: 100%; max-width: 26px; min-height: 0; border-radius: 6px 6px 3px 3px; background: linear-gradient(180deg, #ff9a4d, var(--a4-orange)); }
+.a4-dash-bar-value { font-size: 11px; font-weight: 700; color: var(--a4-muted); margin-bottom: 3px; }
+.a4-dash-bar-day { margin-top: 6px; font-size: 11px; color: var(--a4-muted); }
+.a4-dash-bar:last-child .a4-dash-bar-day { color: var(--a4-orange-dark); font-weight: 700; }
+
+.a4-dash-system #dashboard-logo { display: none; }
+.a4-dash-system #mainteinance-text h2 { display: none; }
+.a4-dash-system #mainteinance-text p { margin: 0 0 8px; color: var(--a4-muted); font-size: 13.5px; line-height: 1.5; }
+.a4-dash-facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin: 12px 0; }
+.a4-dash-facts dt { color: var(--a4-muted); }
+.a4-dash-facts dd { margin: 0; font-weight: 600; }
+.a4-dash-links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0; }
+
+.a4-dash-blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; align-items: start; }
+.a4-dash-blocks .a4-dash-card { overflow-x: auto; }
+/* admin3 drew a dashed rule above each block; the cards' edge replaces it (the base rule's own selector) */
+.dashboard-item {
+  border: 0;
+}
+.a4-dash-blocks .a4-dash-block-all_latest_content,
+.a4-dash-blocks .a4-dash-block-latest_content {
+  grid-column: 1 / -1;
+}

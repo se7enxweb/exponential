@@ -1,0 +1,460 @@
+/* ADMIN2 CONTENT CSS 20100107 */
+
+/* GENERIC */
+
+pre
+{
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+}
+
+
+/* CONTENT */
+
+div.mainobject-window iframe
+{
+    border: 1px solid #e0e0e0;
+}
+
+div#maincontent div.content-translation div.block div.original
+{
+    background-color: #f5f5f5;
+    margin: 0.5em 0 0.5em 0;
+    padding: 0.2em;
+    border: 1px dashed #ddd;
+}
+
+div.content-translation div.translation
+{
+    margin: 0.5em 0 0.5em 0;
+}
+
+div.notranslations li
+{
+    width: 20%;
+}
+
+table.list, table.special, table.list th, table.special th
+{
+    border-collapse: collapse;
+}
+
+table.list th, table.special th
+{
+    font-weight: bold;
+    height: 30px;
+    border-bottom: 1px solid #ccc;
+    vertical-align: middle;
+}
+
+table.list label
+{
+font-weight:normal;
+font-size:1em;
+}
+
+table.list th a
+{
+text-decoration:none;
+}
+
+table.list .sort-asc a
+{
+padding-right:1.5em;
+background:url(../images/icons-sprite.png) no-repeat right -270px;
+}
+
+table.list .sort-desc a
+{
+padding-right:1.5em;
+background:url(../images/icons-sprite.png) no-repeat right -250px;
+}
+
+table.special th
+{
+    border-top: 1px solid #ccc;
+}
+
+table.list tr.bgdark, table.list tr.bgdark th
+{
+    background-color: #f5f5f5;
+}
+
+div.content-navigation-childlist table.list th,
+table.list th.icon, table.list td.icon, table.list th.class, table.list td.class, table.list th.checkbox, table.list td.checkbox
+{
+    width:1%;
+}
+
+div.content-navigation-childlist table.list th.name, div.content-edit table.list th.name
+{
+    width: auto;
+}
+
+table.list img
+{
+    vertical-align: middle;
+}
+
+table.list tr.object-cannot-remove td
+{
+    color: red;
+}
+
+table.list td.modifier, table.list td.modified, table.list td.class, div.content-edit table.list td.filesize
+{
+    white-space: nowrap;
+}
+
+div.list-thumbnails div.list-thumbnails-item
+{
+    border: 4px solid #ffffff;
+    padding: 0.5em;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    width: 155px;
+    height: 155px;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+div.list-thumbnails div.list-thumbnails-item:hover
+{
+    background-color: #e8e8e8;
+}
+
+div.list-thumbnails-item div.controls
+{
+    position: absolute;
+    bottom: 0;
+    width: 155px;
+    overflow-x: hidden;
+}
+
+div.list-thumbnails-item div.controls input, div.list-thumbnails-item div.controls img
+{
+    vertical-align: middle;
+}
+
+table tbody tr.ezasi-sort-drag-handler
+{
+    cursor: move;
+}
+
+
+/* DASHBOARD */
+
+#ez-version
+{
+    font-weight: bold;
+}
+
+/* GENERIC DIFF STYLES */
+
+ins
+{
+    color: #008000;
+    text-decoration: none;
+    border-bottom: 1px solid #00b000;
+}
+
+del
+{
+    color: #d98078;
+    text-decoration: line-through;
+}
+
+ins:hover, del:hover
+{
+    background-color: #ffffff;
+}
+
+ins:hover
+{
+    color: #006000;
+    border-bottom-width: 0;
+}
+
+del:hover
+{
+    color: #852c25;
+    text-decoration: none;
+}
+
+div.blockchanges ins, div.blockchanges del
+{
+    color: #000000;
+    padding-left: 0.5em;
+    text-decoration: none;
+    border-bottom-width: 0;
+    display: block;
+}
+
+div.blockchanges ins
+{
+    border-left: 0.5em solid #008000;
+}
+
+div.blockchanges del
+{
+    border-left: 0.5em solid #d98078;
+}
+
+div.previous ins
+{
+    display: none;
+}
+
+div.previous del
+{
+    color: #000000;
+    background-color: #ffff00;
+    border-bottom-width: 0;
+    text-decoration: none
+}
+
+div.latest del
+{
+    display: none;
+}
+
+div.latest ins
+{
+    color: #000000;
+    background-color: #ffff00;
+    border-bottom-width: 0;
+    text-decoration: none;
+}
+
+/* CLASS ATTRIBUTE GROUPING */
+
+fieldset.ezcca-collapsible legend a
+{
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+fieldset.ezcca-collapsible.ezcca-collapsed
+{
+    border-width: 1px 0 0 0;
+    height: 1em;
+    background-color: #FFF;
+}
+
+fieldset.ezcca-collapsible.ezcca-collapsed legend
+{
+    margin-left: 1px;
+}
+
+fieldset.ezcca-collapsible legend a
+{
+    background: url("../images/2/yui_sprite.png") no-repeat 0 -400px;
+}
+
+fieldset.ezcca-collapsible.ezcca-collapsed legend a
+{
+    background: url("../images/2/yui_sprite.png") no-repeat 0 -350px;
+}
+
+/* OBJECTRELATIONLIST */
+
+.ezcca-edit-datatype-ezobjectrelationlist h4, .ezcca-edit-datatype-ezobjectrelation h4
+{
+    padding-bottom:2px;
+    border-bottom: 1px solid #cacaca;
+    margin-bottom:1em;
+    color:#333;
+    font-size:1.1em;
+}
+
+/* Sortable column headings.
+
+   Shared by the rss list and the locations tab of an item, both of which sort
+   in the database because they are shown a page at a time. The heading keeps
+   the ordinary heading colour - the column being sorted is marked by the bold
+   label and the arrow, not by repainting the cell. */
+table.list th.sortable { cursor: pointer; white-space: nowrap; }
+table.list th.sortable a.sort-link { display: block; text-decoration: none; color: inherit; }
+table.list th.sortable:hover a.sort-link { text-decoration: underline; }
+table.list th.sorted a.sort-link { font-weight: 700; }
+/* The arrow is the heading's own colour, a little dimmed: a fixed grey could not
+   be seen on the dark heading bar of the admin3 design. */
+.sort-arrow { display: inline-block; width: 1em; font-size: .8em; color: inherit; opacity: .85; }
+
+/* The role list's id column: a number, read against the name beside it. */
+table.list td.role-id { text-align: right; color: #666; white-space: nowrap; }
+
+/* PACKAGE VIEW (package/view/full)
+
+   Everything below is scoped to .package-view-full: the package's header badges, its metadata,
+   the install/export actions and the package contents browser (filter, file list, viewed file,
+   pager). Colours are the admin's own: the list heading grey, the default button's green, the
+   top menu's highlight for the file being viewed. */
+.package-view-full .pvf-badges { margin: 0.25em 0 0.5em; display: flex; flex-wrap: wrap; gap: 0.35em; align-items: center; }
+.package-view-full .pvf-badge { display: inline-block; padding: 0 0.5em; border: 1px solid #cfd1d3; border-radius: 3px; background: #f5f5f5; color: #44484d; font-size: 0.85em; line-height: 1.6; white-space: nowrap; }
+.package-view-full .pvf-badge-version { font-weight: bold; }
+.package-view-full .pvf-badge-ok { background: #567975; border-color: #567975; color: #f5f3dd; }
+.package-view-full .pvf-badge-muted { color: #6a6a72; }
+.package-view-full .pvf-badge-info { background: #e5eef4; border-color: #b9cfdd; color: #094564; }
+.package-view-full .pvf-date { color: #6a6a72; font-size: 0.9em; }
+
+.package-view-full .pvf-overview { display: flex; gap: 1.5em; align-items: flex-start; }
+.package-view-full dl.pvf-meta { flex: 1 1 auto; min-width: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.35em 1.25em; margin: 0.5em 0 1em; }
+.package-view-full dl.pvf-meta dt { margin: 0; font-weight: bold; color: #44484d; }
+.package-view-full dl.pvf-meta dd { margin: 0; overflow-wrap: anywhere; }
+.package-view-full .pvf-filelist-link { margin-left: 0.75em; }
+.package-view-full .pvf-licence-id { color: #6a6a72; white-space: nowrap; }
+.package-view-full .pvf-thumbnail { flex: 0 0 auto; max-width: 30%; }
+.package-view-full .pvf-thumbnail img { max-width: 100%; height: auto; border: 1px solid #ddd; }
+
+.package-view-full .pvf-changelog { border-top: 1px solid #e0e0e0; padding-top: 0.5em; }
+.package-view-full .pvf-changelog h2,
+.package-view-full .pvf-browser-head h2 { font-size: 1.15em; margin: 0.25em 0; }
+.package-view-full .pvf-changelog-byline { margin: 0.25em 0 0; color: #6a6a72; }
+.package-view-full .pvf-changelog ul { margin: 0.25em 0 0.75em 1.25em; }
+
+.package-view-full .pvf-actions { display: flex; flex-wrap: wrap; gap: 0.5em; padding: 0.5em 0; margin: 0.5em 0 1em; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
+.package-view-full .pvf-actions input { margin: 0; }
+.package-view-full .pvf-noinstall { margin: 0.5em 0 1em; padding: 0.5em 0.75em; border-left: 3px solid #9aa4ad; background: #f4f6f8; color: #333; overflow-wrap: anywhere; }
+/* Compare: a link (package/compare only reads), drawn like the admin's input.button beside it */
+.package-view-full a.pvf-button-link { display: inline-block; padding: 3px 6px; border: 1px solid #cfd1d3; border-radius: 3px; background: #fff; color: #44484d; font-size: 1em; line-height: normal; text-decoration: none; font-family: Verdana, Arial, Helvetica, sans-serif; vertical-align: middle; transition: all 300ms ease; }
+.package-view-full a.pvf-button-link:hover,
+.package-view-full a.pvf-button-link:focus { background-color: rgba(0, 0, 0, 0.1); color: black; }
+.package-view-full a.pvf-button-link:focus-visible { outline: 2px solid #e27f15; outline-offset: 1px; }
+.package-view-full input.pvf-button-danger { margin-left: auto; color: #a8321f; border-color: #e0b4ab; }
+.package-view-full input.pvf-button-danger:hover { background: #fbeae6; }
+
+.package-view-full .pvf-browser-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25em 1em; }
+.package-view-full .pvf-count { color: #6a6a72; }
+
+.package-view-full .pvf-filter { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.5em 1em; margin: 0.5em 0 1em; padding: 0.6em 0.75em; background: #f5f5f5; border: 1px solid #e0e0e0; border-radius: 3px; }
+.package-view-full .pvf-field { display: flex; flex-direction: column; gap: 0.2em; min-width: 0; }
+.package-view-full .pvf-field label { font-weight: bold; font-size: 0.9em; margin: 0; }
+.package-view-full .pvf-field-search { flex: 1 1 14em; }
+.package-view-full .pvf-field-search input { width: 100%; box-sizing: border-box; }
+.package-view-full .pvf-field-submit { flex-direction: row; align-items: center; gap: 0.75em; }
+.package-view-full .pvf-field-submit input { margin: 0; }
+
+.package-view-full .pvf-scroll { max-width: 100%; overflow-x: auto; }
+.package-view-full table.pvf-files { border-collapse: collapse; }
+.package-view-full table.pvf-files .pvf-name { overflow-wrap: anywhere; }
+.package-view-full .pvf-path { overflow-wrap: anywhere; }
+.package-view-full table.pvf-files .pvf-col-size { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.package-view-full table.pvf-files .pvf-col-type,
+.package-view-full table.pvf-files .pvf-col-actions { white-space: nowrap; }
+.package-view-full table.pvf-files .pvf-col-actions { text-align: right; }
+.package-view-full table.pvf-files .pvf-col-type,
+.package-view-full table.pvf-files .pvf-col-size,
+.package-view-full table.pvf-files .pvf-col-actions { width: 1%; }
+.package-view-full table.list tr.pvf-current,
+.package-view-full table.list tr.pvf-current:hover { background: #ffe9bd; box-shadow: inset 3px 0 0 #e27f15; }
+.package-view-full .pvf-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+.package-view-full .pvf-kind { display: inline-block; padding: 0 0.45em; border-radius: 3px; font-size: 0.85em; line-height: 1.6; background: #eee; color: #44484d; }
+.package-view-full .pvf-kind-object { background: #e3ecea; color: #3c5653; }
+.package-view-full .pvf-kind-class { background: #e5eef4; color: #094564; }
+.package-view-full .pvf-kind-image { background: #fbeedd; color: #8a4b0b; }
+.package-view-full .pvf-kind-package { background: #6f6e6b; color: #eee; }
+
+.package-view-full a.pvf-link-button,
+.package-view-full span.pvf-link-button { display: inline-block; padding: 0.1em 0.55em; border: 1px solid #cfd1d3; border-radius: 3px; background: #fff; color: #44484d; text-decoration: none; line-height: 1.5; white-space: nowrap; }
+.package-view-full a.pvf-link-button:hover,
+.package-view-full a.pvf-link-button:focus { background: rgba(0, 0, 0, 0.1); }
+.package-view-full span.pvf-disabled { color: #b7b7b7; background: #f5f5f5; }
+
+.package-view-full .pvf-viewer { margin: 0 0 1em; border: 1px solid #cfd1d3; border-radius: 3px; overflow: hidden; }
+.package-view-full .pvf-viewer-head { display: flex; flex-wrap: wrap; gap: 0.5em 1em; align-items: center; justify-content: space-between; padding: 0.5em 0.75em; background: #6f6e6b; color: #eee; }
+.package-view-full .pvf-viewer-title { min-width: 0; flex: 1 1 20em; }
+.package-view-full .pvf-viewer-head .pvf-path { display: block; font-weight: bold; color: #fff; }
+.package-view-full .pvf-viewer-meta { display: flex; gap: 0.75em; align-items: center; margin-top: 0.2em; }
+.package-view-full .pvf-viewer-actions { display: flex; gap: 0.4em; }
+.package-view-full .pvf-viewer-body { padding: 0.75em; }
+.package-view-full pre.pvf-code { margin: 0; padding: 0.75em; max-height: 32em; overflow: auto; white-space: pre; font-size: 0.9em; line-height: 1.45; background: #f8f8f8; }
+.package-view-full table.pvf-object { border-collapse: collapse; }
+.package-view-full table.pvf-object th { width: 9em; background: #f5f5f5; color: #44484d; border-left: 0; font-weight: bold; font-size: 1em; }
+.package-view-full table.pvf-object th,
+.package-view-full table.pvf-object td { padding: 0.4em 0.6em; line-height: 1.4; border-bottom: 1px solid #e0e0e0; }
+.package-view-full h3.pvf-language { font-size: 1em; margin: 1em 0 0.35em; }
+.package-view-full td.pvf-value { overflow-wrap: anywhere; min-width: 12em; }
+.package-view-full .pvf-image { text-align: center; background: #f5f5f5; padding: 0.75em; }
+.package-view-full .pvf-image img { max-width: 100%; max-height: 32em; height: auto; }
+.package-view-full .pvf-note { color: #6a6a72; margin: 0.5em 0 0; }
+
+.package-view-full table.pvf-attributes td,
+.package-view-full table.pvf-object td,
+.package-view-full table.pvf-object th { vertical-align: top; }
+
+/* The file list's path: the directory small and grey on a line of its own, above the file name,
+   which is only broken inside when it does not fit on one line. */
+.package-view-full table.pvf-files td { vertical-align: middle; }
+.package-view-full table.pvf-files code { font-size: 0.95em; }
+.package-view-full .pvf-dir { display: block; color: #6a6a72; font-size: 0.85em; line-height: 1.3; overflow-wrap: anywhere; }
+.package-view-full .pvf-name { color: #222; }
+.package-view-full a.pvf-link-button.pvf-active { background: #567975; border-color: #567975; color: #f5f3dd; }
+.package-view-full a.pvf-link-button.pvf-active:hover { background: #425c59; color: #ffe9bd; }
+
+/* The pager, above the list (compact) and below it. */
+.package-view-full .pvf-pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4em 1em; }
+.package-view-full .pvf-pager-top { margin: 0 0 0.4em; }
+.package-view-full .pvf-pager-bottom { margin: 0.6em 0 0.25em; padding-top: 0.6em; border-top: 1px solid #e0e0e0; }
+.package-view-full .pvf-pager-status { display: flex; flex-wrap: wrap; gap: 0.2em 0.75em; align-items: baseline; }
+.package-view-full .pvf-pager-range { color: #6a6a72; }
+.package-view-full .pvf-pager-links { display: flex; flex-wrap: wrap; gap: 0.35em; }
+
+/* A phone: the file list's rows become two lines, the path on its own full width and the type,
+   size and actions below it, so the path is never squeezed into a sliver. */
+@media (max-width: 640px) {
+    .package-view-full .pvf-overview { flex-direction: column; }
+    .package-view-full .pvf-thumbnail { max-width: 100%; }
+    .package-view-full dl.pvf-meta { grid-template-columns: 1fr; gap: 0 0; }
+    .package-view-full dl.pvf-meta dd { margin-bottom: 0.5em; }
+    .package-view-full input.pvf-button-danger { margin-left: 0; }
+    .package-view-full .pvf-field,
+    .package-view-full .pvf-field-search { flex: 1 1 100%; }
+    .package-view-full .pvf-field select { width: 100%; }
+    .package-view-full table.pvf-files thead { display: none; }
+    .package-view-full table.pvf-files,
+    .package-view-full table.pvf-files tbody { display: block; }
+    .package-view-full table.pvf-files tr { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35em 0.75em; padding: 0.5em 0.4em; border-bottom: 1px solid #e0e0e0; }
+    .package-view-full table.pvf-files td { display: block; padding: 0; width: auto; }
+    .package-view-full table.pvf-files td.pvf-col-path { flex: 1 1 100%; }
+    .package-view-full table.pvf-files td.pvf-col-actions { margin-left: auto; }
+    .package-view-full .pvf-pager-top .pvf-pager-label { display: none; }
+    .package-view-full .pvf-viewer-body { padding: 0.5em; }
+    .package-view-full table.pvf-files td.pvf-col-type,
+    .package-view-full table.pvf-files td.pvf-col-size,
+    .package-view-full table.pvf-files td.pvf-col-actions { width: auto; }
+    /* The object summary and its attributes: each row a label line over its value. */
+    .package-view-full table.pvf-object,
+    .package-view-full table.pvf-object tbody,
+    .package-view-full table.pvf-object tr,
+    .package-view-full table.pvf-object th,
+    .package-view-full table.pvf-object td,
+    .package-view-full table.pvf-attributes,
+    .package-view-full table.pvf-attributes tbody,
+    .package-view-full table.pvf-attributes tr { display: block; width: auto; }
+    .package-view-full table.pvf-object th { padding-bottom: 0.1em; }
+    .package-view-full table.pvf-object td { padding-top: 0; overflow-wrap: anywhere; }
+    .package-view-full table.pvf-attributes thead { display: none; }
+    .package-view-full table.pvf-attributes tr { display: flex; flex-wrap: wrap; gap: 0 0.75em; padding: 0.35em 0.4em; }
+    .package-view-full table.pvf-attributes td { display: block; padding: 0; }
+    .package-view-full table.pvf-attributes td:nth-child(2) { color: #6a6a72; }
+    .package-view-full table.pvf-attributes td.pvf-value { flex: 1 1 100%; min-width: 0; }
+}
+
+/* No file on this page: a plain message in place of an empty table. */
+.package-view-full .pvf-empty-state { margin: 0.25em 0 0.5em; padding: 1.5em 1em; text-align: center; color: #6a6a72; background: #f5f5f5; border: 1px dashed #cfd1d3; border-radius: 3px; }
+.package-view-full .pvf-empty-state p { margin: 0.25em 0; }
+
+/* Keyboard focus on the page's own link buttons and fields, in the admin's highlight colour. */
+.package-view-full a.pvf-link-button:focus-visible,
+.package-view-full .pvf-filter select:focus-visible,
+.package-view-full .pvf-filter input:focus-visible,
+.package-view-full .pvf-actions input:focus-visible { outline: 2px solid #e27f15; outline-offset: 1px; }
+
+@media (max-width: 640px) {
+    .package-view-full table.pvf-object th { background: none; color: #6a6a72; font-size: 0.9em; border: 0; }
+    .package-view-full pre.pvf-code { font-size: 0.8em; padding: 0.5em; }
+    .package-view-full table.pvf-object td { border-bottom: 1px solid #e0e0e0; }
+}
