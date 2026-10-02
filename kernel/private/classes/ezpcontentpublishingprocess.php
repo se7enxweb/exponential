@@ -163,13 +163,16 @@ class ezpContentPublishingProcess extends eZPersistentObject
         // prepare the cluster file handler for the fork
         eZClusterFileHandler::preFork();
 
-        $pid = pcntl_fork();
-
-        // force the DB connection closed
+        // Close the DB connection before the fork, so that neither process inherits it: each one opens its own on
+        // first use. A connection used or closed on both sides of a fork is shared state: closing an inherited
+        // MySQL socket in the child ends the parent's connection too, and an SQLite connection must never be
+        // carried across a fork at all (its locks and its WAL index belong to the process that opened it).
         $db = eZDB::instance();
         $db->close();
         $db = null;
         eZDB::setInstance( null );
+
+        $pid = pcntl_fork();
 
         // Force the new stack DB connection closed as well
         try
