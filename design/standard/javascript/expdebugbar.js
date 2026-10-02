@@ -701,7 +701,15 @@
       if (lc) lc.textContent = t('Last cleared: %time', { '%time': new Date().toLocaleString() });
     }).catch((err) => { b.disabled = false; status.textContent = t('Could not load: %error', { '%error': err.message }); });
   } }, extra || {}), label);
-  const lastText = (info) => t('Last cleared: %time', { '%time': info && info.time ? new Date(info.time * 1000).toLocaleString() : t('never') });
+  // The change log stores the time as ISO 8601 (date('c')); a number is Unix seconds (or milliseconds when
+  // it is that large). Anything absent or unreadable reads "never" rather than "Invalid Date".
+  const whenText = (time) => {
+    if (time === null || time === undefined || time === '') return null;
+    const n = typeof time === 'number' ? time : (/^\d+(\.\d+)?$/.test(String(time)) ? parseFloat(time) : NaN);
+    const d = !isNaN(n) ? new Date(n < 1e12 ? n * 1000 : n) : new Date(String(time));
+    return isNaN(d.getTime()) ? null : d.toLocaleString();
+  };
+  const lastText = (info) => t('Last cleared: %time', { '%time': (info && whenText(info.time)) || t('never') });
 
   const renderVelocityCache = (ans) => {
     if (!velocityBox) return;
