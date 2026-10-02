@@ -17,9 +17,10 @@ always got.
 
 ### Before: the confirmation, with what it touches and a choice
 
-The remove confirmation (`content/removeobject`), the browse page of a subtree copy (`content/copysubtree`) and of
-a move (`content/action`, Move), and, for large subtrees, a new confirmation for hide/reveal (`content/hide`) and
-for assigning a section (`section/assign`) show:
+The remove confirmation (`content/removeobject`), the browse page of a subtree copy (`content/copysubtree`), of
+a move (`content/action`, Move) and of "Add a location for selected" (below), and, for large operations, a new
+confirmation for hide/reveal (`content/hide`), for assigning a section (`section/assign`), for setting a state on
+a subtree (`state/assign`) and for removing many locations (`content/action`, RemoveAssignment) show:
 
 - **What this touches**: the number of locations and objects, how many objects also have locations outside
   (removing only these locations, they keep existing), the classes involved with their counts, and who last
@@ -40,6 +41,33 @@ for assigning a section (`section/assign`) show:
 
 Hide/reveal and section assignment had no confirmation page and still have none for small subtrees: the page
 appears only when the background is preselected (a large subtree, or the editor chose the background last time).
+The same holds for the three operations below.
+
+On a browse page the choice is shown above the browse form; it is sent with that form whichever comes first in
+the page. (Until 6.0.15 the choice of the move and copy browse pages was not sent, and the automatic decision by
+`SynchronousLimit` applied whatever the editor chose.)
+
+### States for a subtree, and adding or removing many locations
+
+- **States for a subtree** (job type `state`): the states form of the node's Details tab has **Also for everything
+  below this node** when the node has children and the editor may assign a state. "Now" sets the chosen states on
+  every object of the subtree in the request, through the kernel's `updateobjectstate` operation, which leaves out
+  states the editor may not assign to an object. "Background" starts a `state` job, which skips such objects with a
+  warning. A job sets one state, so the background needs one changed state group; changing two groups at once can
+  only run now, up to `NowLimit`. The editor must be allowed to assign the state to the node's own object,
+  otherwise the whole request is refused with the reason. Without the option the form sets the object's states
+  as before. An installation whose only state group is the internal `ez_lock` (alpha) shows no states form and so
+  no option.
+- **Removing many locations** (job type `removelocation`): the locations window's **Remove selected**. A location
+  with children still goes to the remove confirmation as before; otherwise many selected locations (or the
+  editor's last choice "background") get the confirmation ("Selected locations", the objects, which keep their
+  other locations) and a `removelocation` job; a few are removed at once as before.
+- **Adding a location for many items** (job type `addlocation`): **Add a location for selected** in the sub items
+  list's **More actions** opens a browse page for the new parent with what it touches and the choice. "Now" adds
+  the location per object through the kernel's `addlocation` operation, as the locations window does for one
+  object; "background" starts an `addlocation` job. Objects already placed under the chosen node, and items that
+  would be placed below themselves, are left out. The locations window's own **Add locations** (one object under
+  several new parents) is unchanged: no job type covers that shape, and it adds one node per chosen parent.
 
 ### During: the progress page `content/job/<id>`
 
@@ -99,9 +127,11 @@ before; only the new information block and the choice are added (proven, see Tes
 
 A job locks its subtrees from the moment it is created until it is done or cancelled (a failed job keeps its
 lock until it is resumed and done, or cancelled): a remove each removed subtree, a copy the source subtree, the
-target node and the new copy, a move the subtree in its old and new place. Any remove, copy, move, hide or
-section assignment that overlaps a locked subtree, synchronous or as a job, is refused with a page that says
-so and links to the job holding the lock. Nothing is queued silently.
+target node and the new copy, a move the subtree in its old and new place, a state job its subtree, a
+removelocation job each removed location, an addlocation job the target and each selected node. Any remove,
+copy, move, hide, section or subtree state assignment, removal of locations or adding of a location that
+overlaps a locked subtree, synchronous or as a job, is refused with a page that says so and links to the job
+holding the lock. Nothing is queued silently.
 
 ## Permissions
 
@@ -290,6 +320,15 @@ created under Exponential Velocity (root).
   - `ai/bin/one/playwright_content_jobs_b_other_ops.py`: hide and reveal (small: the old flow without a page;
     large: the confirmation, a job, and "now"), move small with "now" and large with "background" (old and new
     place shown), section assignment as a job and "now";
+  - `ai/bin/one/playwright_content_jobs_c_state_and_locations.py`: a subtree state post refused with the reason
+    (now and background) and the old path without the option; removing one location (the old path) and two with
+    "background" (confirmation, job, both gone); adding a location for one item "now" and for two "background"
+    (job, both placed); 19 checks each on admin and admin4, on Apache and on Velocity;
+  - `ai/bin/one/content_jobs_c_state_job_with_allowed_state_mock_test.php`: the `state` job with a state the user
+    may assign. alpha has none (`ez_lock` cannot be assigned), so this registers, in its own process only, a mock
+    of the type that allows the state and records the assignments instead of writing them. It checks the choice,
+    the lock while the job waits, the job done with every object handed over, the lock released and the state
+    links unchanged;
   - `ai/bin/one/content_jobs_b_example_hide_job_type_test.php`: the worked example of a job type above;
   - `ai/bin/one/check_content_jobs_b_views_status_both_servers.sh`: no view answers 5xx on either server.
 - `ai/bin/one/contentjobs_leftover_report.php` proves a removal left nothing behind;
