@@ -1140,11 +1140,16 @@ class expIniEditor
         if ( $existed && !self::isRoot() && $runner !== null && $uid !== $runner )
         {
             // renaming over it would hand the file to this user: write it in place instead, locked
-            if ( !is_writable( $path ) )
-                throw expIniException::writeFailed( "$path is not writable by this user" );
-            if ( @file_put_contents( $path, $content, LOCK_EX ) !== strlen( $content ) )
-                throw expIniException::writeFailed( "Cannot write $path" );
-            $warnings[] = "$path written in place (not atomically) to keep its owner: not running as root";
+            self::writeInPlace( $path, $content, $warnings, 'to keep its owner' );
+            return;
+        }
+
+        // Not root, owner is this user, but the file's group is not one this user belongs to: a chgrp of the
+        // temporary file would fail and the rename would hand the file to this user's primary group. Rewrite
+        // the original inode instead (not atomic, but owner, group and mode stay as they are).
+        if ( $existed && !self::isRoot() && !self::canUseGroup( $gid ) )
+        {
+            self::writeInPlace( $path, $content, $warnings, "its group $gid cannot be set by this user" );
             return;
         }
 
@@ -1164,12 +1169,47 @@ class expIniEditor
         }
         @chmod( $tmp, $mode );
         if ( !self::applyOwnership( $tmp, $uid, $gid ) )
+        {
+            if ( $existed && !self::isRoot() )
+            {
+                // chgrp was refused after all: keep the original inode, and with it the group
+                self::moveAside( $tmp );
+                self::writeInPlace( $path, $content, $warnings, "the group $gid could not be set on a new file" );
+                return;
+            }
             $warnings[] = "$path could not be given owner $uid / group $gid (not running as root)";
+        }
         if ( !@rename( $tmp, $path ) )
         {
             self::moveAside( $tmp );
             throw expIniException::writeFailed( "Cannot move the new $path into place" );
         }
+    }
+
+    /**
+     * @return bool This process may give a file the group (root, its primary group, or a supplementary one)
+     */
+    protected static function canUseGroup( $gid )
+    {
+        if ( !function_exists( 'posix_getegid' ) )
+            return true;
+        if ( $gid === posix_getegid() )
+            return true;
+        return function_exists( 'posix_getgroups' ) && in_array( $gid, posix_getgroups(), true );
+    }
+
+    /**
+     * Rewrites a file's own inode, locked: owner, group and mode cannot change. Not atomic.
+     *
+     * @throws expIniException WRITE_FAILED
+     */
+    protected static function writeInPlace( $path, $content, array &$warnings, $why )
+    {
+        if ( !is_writable( $path ) )
+            throw expIniException::writeFailed( "$path is not writable by this user" );
+        if ( @file_put_contents( $path, $content, LOCK_EX ) !== strlen( $content ) )
+            throw expIniException::writeFailed( "Cannot write $path" );
+        $warnings[] = "$path written in place (not atomically): $why (not running as root)";
     }
 
     /**

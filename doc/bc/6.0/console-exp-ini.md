@@ -252,7 +252,7 @@ always agree.
   block, and a new block goes at the end of the file. A new `.ini.append.php` file starts with
   `<?php /* #?ini charset="utf-8"?` and ends with `*/ ?>`, like the files in `settings/override`.
 - **Ownership.** The command usually runs as root, while PHP-FPM runs as the site user, and a root-owned
-  settings file breaks the site. A changed file keeps its owner, group and mode. A new file or directory
+  settings file breaks the site. A changed file keeps its owner, group and mode. Run as the site user (not root), the new file is given the old group when the user belongs to it; when it does not (or the chgrp is refused), the original file is rewritten in place under a lock, which keeps owner, group and mode but is not atomic, and a warning says so. A new file or directory
   gets the owner and group of its settings directory.
 - **Atomic.** The file is written to a temporary file in the same directory, then renamed. If the file
   changed on disk after the command read it, the write is refused with exit 4.

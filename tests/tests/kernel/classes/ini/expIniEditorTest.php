@@ -25,6 +25,8 @@
  *           changed on disk since read = WRITE_FAILED
  *  INI-17 — ownership (as root): a file owned by alpha stays alpha's; a new file and new directories get the
  *           owner and group of their parent directory
+ *  INI-18 — as the site user, a file's group is kept when the user is a member of it (atomic)
+ *  INI-19 — as the site user, a group that cannot be set: the original inode is rewritten, the group stays
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -644,6 +646,68 @@ class expIniEditorTest extends PHPUnit\Framework\TestCase
         clearstatcache();
         $this->assertSame( array( $uid, $gid ), array( fileowner( $dir ), filegroup( $dir ) ) );
         $this->assertSame( array( $uid, $gid ), array( fileowner( "$dir/site.ini.append.php" ), filegroup( "$dir/site.ini.append.php" ) ) );
+    }
+
+    /**
+     * Runs a save as alpha in a child process (started by root); returns array( output, exit code ).
+     */
+    private function saveAsAlpha( $extraGroup, $value )
+    {
+        $groups = posix_getgrnam( 'psacln' )['gid'] . ( $extraGroup === '-' ? '' : ',' . posix_getgrnam( $extraGroup )['gid'] );
+        $cmd = array( 'setpriv', '--reuid=' . posix_getpwnam( 'alpha' )['uid'], '--regid=' . posix_getgrnam( 'psacln' )['gid'], '--groups=' . $groups,
+                      PHP_BINARY, __DIR__ . '/fixtures/expinisaveasuser.php', rtrim( $this->root, '/' ) . '/', $value );
+        $p = proc_open( $cmd, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
+        $out = stream_get_contents( $pipes[1] ) . stream_get_contents( $pipes[2] );
+        return array( $out, proc_close( $p ) );
+    }
+
+    private function prepareAlphaFile( &$path )
+    {
+        if ( !expIniEditor::isRoot() )
+            $this->markTestSkipped( 'needs root to start a process as alpha' );
+        $alpha = function_exists( 'posix_getpwnam' ) ? posix_getpwnam( 'alpha' ) : false;
+        $psaserv = function_exists( 'posix_getgrnam' ) ? posix_getgrnam( 'psaserv' ) : false;
+        if ( !$alpha || !$psaserv || !posix_getgrnam( 'psacln' ) )
+            $this->markTestSkipped( 'no user alpha / groups psaserv, psacln here' );
+        $path = $this->root . 'settings/override/site.ini.append.php';
+        foreach ( array( 'settings/override', 'var' ) as $d )
+            chown( $this->root . $d, $alpha['uid'] );
+        chown( $path, $alpha['uid'] );
+        chgrp( $path, $psaserv['gid'] );
+        chmod( $path, 0664 );
+        return array( $alpha['uid'], $psaserv['gid'] );
+    }
+
+    /** INI-18: alpha belongs to the file's group: the temporary file gets the group, the rename keeps it */
+    public function testGroupKeptWhenWriterIsAMemberOfIt()
+    {
+        list( $uid, $gid ) = $this->prepareAlphaFile( $path );
+        clearstatcache();
+        $before = fileinode( $path );
+        list( $out, $code ) = $this->saveAsAlpha( 'psaserv', 'ByMember' );
+        $this->assertSame( 0, $code, $out );
+        $this->assertStringContainsString( 'OK', $out );
+        clearstatcache();
+        $this->assertSame( array( $uid, $gid, 0664 ), array( fileowner( $path ), filegroup( $path ), fileperms( $path ) & 07777 ), $out );
+        $this->assertNotSame( $before, fileinode( $path ), 'written atomically' );
+        $this->assertStringContainsString( 'ByMember', file_get_contents( $path ) );
+    }
+
+    /** INI-19: alpha cannot set the file's group: the original inode is rewritten, so group and mode stay */
+    public function testGroupKeptByInPlaceFallbackWhenItCannotBeSet()
+    {
+        list( $uid, $gid ) = $this->prepareAlphaFile( $path );
+        clearstatcache();
+        $before = fileinode( $path );
+        list( $out, $code ) = $this->saveAsAlpha( '-', 'InPlace' );
+        $this->assertSame( 0, $code, $out );
+        $this->assertStringContainsString( 'OK', $out );
+        $this->assertStringContainsString( 'in place', $out );
+        clearstatcache();
+        $this->assertSame( array( $uid, $gid, 0664 ), array( fileowner( $path ), filegroup( $path ), fileperms( $path ) & 07777 ), $out );
+        $this->assertSame( $before, fileinode( $path ), 'same inode' );
+        $this->assertStringContainsString( 'InPlace', file_get_contents( $path ) );
+        $this->assertSame( array(), glob( dirname( $path ) . '/.*.tmp' ) );
     }
 }
 
