@@ -406,6 +406,8 @@ class eZStepCreateSites extends eZStepInstaller
         $menu->setVariable( 'TopAdminMenu', 'Tabs', array( 'dashboard', 'content', 'media', 'users', 'shop', 'eztags', 'newsletter' ) );
         $menu->setVariable( 'TopAdminMenu', 'HiddenTabs', array( 'explayouts_ui_dashboard', 'setup', 'design', 'gitmanager', 'xrowextract', 'bccie_overview' ) );
         $toolbar = new eZINI( 'toolbar.ini.append.php', $editorDir, null, null, null, true, true );
+        // Bookmarks first; no Clear cache (the editor has no setup module)
+        $toolbar->setVariable( 'Toolbar_admin_right', 'Tool', array( 'admin_bookmarks', 'admin_current_user', 'admin_preferences' ) );
         $toolbar->setVariable( 'Toolbar_admin_developer', 'Tool', array() );
         $interface = new eZINI( 'admininterface.ini.append.php', $editorDir, null, null, null, true, true );
         $interface->setVariable( 'WindowControlsSettings', 'AdditionalTabs', array( 'roles', 'policies', 'eztags', 'authors' ) );
