@@ -8,8 +8,9 @@
  *   others:  <div|span id="eZObject_12" class="ezoeItemNonEditable ezoeItemContentTypeObjects"
  *                 alt="<size>" view="embed" inline="false">rendered embed template</div|span>
  *
- * The dialog works like the TinyMCE 3 ezoe object dialog: Search, Browse and Bookmarks tabs
- * list the content as table, choosing an entry continues on the Properties tab.
+ * The dialog works like the TinyMCE 3 ezoe object dialog: Upload creates a new object,
+ * Search, Browse and Bookmarks list the content as table, choosing or uploading continues on
+ * the Properties tab.
  * Server calls and the list come from ezoe_dialog.js (eZOe8Dialog).
  *
  * Licensed under the GNU General Public License v2.0, like the rest of ezoe.
@@ -27,6 +28,18 @@
         'Search': 'Suchen',
         'Browse': 'Durchsuchen',
         'Bookmarks': 'Lesezeichen',
+        'Upload': 'Hochladen',
+        'File': 'Datei',
+        'Location': 'Speicherort',
+        'Alternative text (images)': 'Alternativtext (Bilder)',
+        'Description': 'Beschreibung',
+        'Upload local file': 'Datei hochladen',
+        'Uploading…': 'Wird hochgeladen …',
+        'Please choose a file.': 'Bitte eine Datei auswählen.',
+        'Drop a file here': 'Datei hierher ziehen',
+        'Browse for a file': 'Datei auswählen',
+        'This file type can not be uploaded, allowed are:': 'Dieser Dateityp kann nicht hochgeladen werden, erlaubt sind:',
+        'The file name is used if no name is given.': 'Ohne Namen wird der Dateiname verwendet.',
         'Properties': 'Eigenschaften',
         'Name of the object': 'Name des Objekts',
         'Selected': 'Ausgewählt',
@@ -191,11 +204,11 @@
         };
 
         var openDialog = function ( target ) {
-            var data = target ? readEmbed( target ) : {
+            var data = Object.assign( target ? readEmbed( target ) : {
                     query: '', embedId: '', inline: false, size: settings().default_size || 'medium', align: '', view: '', cssClass: ''
-                },
+                }, { uploadName: '', uploadFile: [], uploadLocation: 'auto', uploadAlt: '', uploadDescription: '' } ),
                 state = {
-                    tab: target ? 'properties' : 'search',
+                    tab: target ? 'properties' : 'upload',
                     search: null, searchText: '',
                     browse: null,
                     bookmarks: null,
@@ -226,6 +239,31 @@
                     body: {
                         type: 'tabpanel',
                         tabs: [
+                            {
+                                name: 'upload',
+                                title: t( 'Upload' ),
+                                items: [
+                                    { type: 'input', name: 'uploadName', label: t( 'Name' ), placeholder: t( 'The file name is used if no name is given.' ) },
+                                    {
+                                        type: 'dropzone', name: 'uploadFile', label: t( 'File' ),
+                                        dropAreaLabel: t( 'Drop a file here' ), buttonLabel: t( 'Browse for a file' ),
+                                        // any file like the TinyMCE 3 upload dialog, the class is chosen by upload.ini
+                                        allowedFileTypes: '*/*',
+                                        allowedFileExtensions: settings().upload_file_extensions || [],
+                                        onInvalidFiles: function () {
+                                            editor.notificationManager.open( {
+                                                text: t( 'This file type can not be uploaded, allowed are:' ) + ' ' + ( settings().upload_file_extensions || [] ).join( ', ' ),
+                                                type: 'warning', timeout: 6000
+                                            } );
+                                            return Promise.resolve();
+                                        }
+                                    },
+                                    { type: 'listbox', name: 'uploadLocation', label: t( 'Location' ), items: locations || [ { text: t( 'Loading…' ), value: 'auto' } ] },
+                                    { type: 'input', name: 'uploadAlt', label: t( 'Alternative text (images)' ) },
+                                    { type: 'input', name: 'uploadDescription', label: t( 'Description' ) },
+                                    { type: 'bar', items: [ { type: 'button', name: 'uploadRun', text: t( 'Upload local file' ), buttonType: 'secondary' } ] }
+                                ]
+                            },
                             {
                                 name: 'search',
                                 title: t( 'Search' ),
@@ -286,6 +324,8 @@
                     onAction: function ( dialogApi, details ) {
                         if ( details.name === 'searchRun' )
                             runSearch( dialogApi, 0 );
+                        else if ( details.name === 'uploadRun' )
+                            runUpload( dialogApi );
                     },
                     onSubmit: function ( dialogApi ) {
                         var d = dialogApi.getData(), embedId = parseEmbedId( d.embedId );
@@ -293,6 +333,9 @@
                         // Enter in the search field submits the dialog, treat it as search
                         if ( state.tab === 'search' && String( d.query ).trim() )
                             return runSearch( dialogApi, 0 );
+                        // OK on the upload tab with a chosen file uploads it first
+                        if ( state.tab === 'upload' && d.uploadFile && d.uploadFile.length )
+                            return runUpload( dialogApi );
 
                         if ( !embedId )
                         {
@@ -359,6 +402,32 @@
                 } );
             };
 
+            var runUpload = function ( dialogApi ) {
+                var d = dialogApi.getData(), file = d.uploadFile && d.uploadFile[0];
+                if ( !file )
+                {
+                    editor.notificationManager.open( { text: t( 'Please choose a file.' ), type: 'warning', timeout: 4000 } );
+                    return;
+                }
+                dialogApi.block( t( 'Uploading…' ) );
+                D.upload( settings(), file, {
+                    name: d.uploadName,
+                    location: d.uploadLocation,
+                    alternativeText: d.uploadAlt,
+                    description: d.uploadDescription
+                } ).then( function ( result ) {
+                    // like eZOEPopupUtils.selectByEmbedId(): select the new object and continue on Properties
+                    state.selectedName = result.name;
+                    state.tab = 'properties';
+                    redial( dialogApi, {
+                        embedId: 'eZObject_' + result.objectId,
+                        uploadName: '', uploadFile: [], uploadAlt: '', uploadDescription: ''
+                    } );
+                } ).catch( function ( e ) {
+                    fail( dialogApi, e );
+                } );
+            };
+
             var findItem = function ( value ) {
                 return [ state.search, state.browse, state.bookmarks ].reduce( function ( found, list ) {
                     return found || ( list && list.items.filter( function ( i ) {
@@ -392,7 +461,24 @@
 
             api = editor.windowManager.open( spec() );
             api.showTab( state.tab );
+
+            if ( !locations )
+            {
+                locationsPromise = locationsPromise || D.uploadLocations( settings() );
+                locationsPromise.then( function ( list ) {
+                    locations = list;
+                    // only rebuild while nothing is chosen in the dropzone, files can not be put back into it
+                    var d = api.getData();
+                    if ( !d.uploadFile || !d.uploadFile.length )
+                        redial( api );
+                } ).catch( function () {
+                    locations = [ { text: 'auto', value: 'auto' } ];
+                } );
+            }
         };
+
+        // storage locations for uploads, loaded once per editor
+        var locations = null, locationsPromise = null;
 
         var openForSelection = function () {
             openDialog( getEmbed( editor.selection.getNode() ) );

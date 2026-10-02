@@ -85,6 +85,57 @@ window.eZOe8Dialog = (function () {
             .then( function ( r ) { return r.text(); } );
     };
 
+    /**
+     * Storage locations offered by the TinyMCE 3 upload dialog (upload.ini [LocationSettings] and
+     * can_create checks), read from the select of the existing ezoe/upload page.
+     * Resolves to [ { text, value } ], value 'auto' is the automatic location.
+     */
+    var uploadLocations = function ( settings ) {
+        return request( serverUrl( settings, 'extension_url' ) + 'upload/' + settings.contentobject_id + '/' + settings.contentobject_version + '/objects' )
+            .then( function ( r ) { return r.text(); } )
+            .then( function ( html ) {
+                var doc = new DOMParser().parseFromString( html, 'text/html' ), select = doc.querySelector( 'select[name="location"]' );
+                return select ? Array.prototype.map.call( select.options, function ( o ) {
+                    return { text: o.textContent.replace( /\u00a0/g, '  ' ), value: o.value };
+                } ) : [ { text: 'Automatic', value: 'auto' } ];
+            } );
+    };
+
+    /**
+     * Uploads a file like the TinyMCE 3 upload dialog: ezoe/upload creates and publishes the object
+     * and adds it as embed relation to the edited draft. The view answers with a small html page for a
+     * hidden iframe, it calls eZOEPopupUtils.selectByEmbedId( objectId, nodeId, name ) on success and
+     * shows the errors as red paragraphs otherwise.
+     *
+     * @param {Object} fields name, location, description, alternativeText
+     * @return Promise resolving to { objectId, nodeId, name }
+     */
+    var upload = function ( settings, file, fields ) {
+        var body = new FormData();
+        body.append( 'uploadButton', '1' );
+        body.append( 'ezxform_token', settings.form_token || '' );
+        body.append( 'fileName', file, file.name );
+        body.append( 'objectName', fields.name || '' );
+        body.append( 'ContentObjectAttribute_name', fields.name || '' );
+        body.append( 'location', fields.location || 'auto' );
+        // only attributes the class of the new object has are used by the upload view
+        body.append( 'ContentObjectAttribute_description', fields.description || '' );
+        body.append( 'ContentObjectAttribute_caption', fields.description || '' );
+        body.append( 'ContentObjectAttribute_image', fields.alternativeText || '' );
+
+        return request( serverUrl( settings, 'extension_url' ) + 'upload/' + settings.contentobject_id + '/' + settings.contentobject_version + '/auto/1',
+                        { method: 'POST', body: body, headers: { 'X-Requested-With': 'XMLHttpRequest' } } )
+            .then( function ( r ) { return r.text(); } )
+            .then( function ( html ) {
+                var m = html.match( /selectByEmbedId\(\s*(\d+)\s*,\s*(\d+)\s*,\s*("(?:[^"\\]|\\.)*")\s*\)/ );
+                if ( m )
+                    return { objectId: parseInt( m[1], 10 ), nodeId: parseInt( m[2], 10 ), name: JSON.parse( m[3] ) };
+                var doc = new DOMParser().parseFromString( html, 'text/html' ),
+                    errors = Array.prototype.map.call( doc.querySelectorAll( 'p' ), function ( p ) { return p.textContent.trim(); } ).filter( Boolean );
+                throw new Error( errors.join( ' ' ) || doc.body.textContent.trim().slice( 0, 300 ) || 'Upload failed' );
+            } );
+    };
+
     var escapeHtml = function ( value ) {
         return String( value === undefined || value === null ? '' : value )
             .replace( /&/g, '&amp;' ).replace( /"/g, '&quot;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
@@ -176,6 +227,8 @@ window.eZOe8Dialog = (function () {
         bookmarks: bookmarks,
         loadObject: loadObject,
         loadEmbedView: loadEmbedView,
+        uploadLocations: uploadLocations,
+        upload: upload,
         escapeHtml: escapeHtml,
         decodeHtml: decodeHtml,
         renderList: renderList,

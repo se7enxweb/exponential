@@ -107,6 +107,9 @@ var eZOe8GlobalSettings = {ldelim}
     ez_settings: {ldelim}
         root_url: {'/'|ezroot},
         root_node: {ezini( 'NodeSettings', 'RootNode', 'content.ini' )|int},
+        contentobject_id: {$attribute.contentobject_id},
+        contentobject_version: {$attribute.version},
+        upload_file_extensions: {json_encode( ezini( 'EditorSettings', 'UploadFileExtensions', 'ezoe.ini',,true() ) )},
         extension_url: {'/ezoe/'|ezurl},
         ezjscore_url: {'/ezjscore/'|ezurl},
         form_token: "@$ezxFormToken@",
