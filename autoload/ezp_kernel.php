@@ -715,6 +715,7 @@ return array(
       'ezpOauthTokenEndpointErrorType'                     => 'kernel/private/rest/classes/oauth_token_endpoint_error.php',
       'ezpOauthTokenNotFoundException'                     => 'kernel/private/rest/classes/exceptions/oauth_token_not_found.php',
       'ezpOauthUtility'                                    => 'kernel/private/rest/classes/oauth/utility.php',
+      'ezpRepairQueue'                                     => 'lib/ezutils/classes/ezprepairqueue.php',
       'ezpRequestActionAllow'                              => 'kernel/private/classes/requestrules/ezprequestruleactions.php',
       'ezpRequestActionForbidden'                          => 'kernel/private/classes/requestrules/ezprequestruleactions.php',
       'ezpRequestActionLog'                                => 'kernel/private/classes/requestrules/ezprequestruleactions.php',
