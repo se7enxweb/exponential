@@ -5741,7 +5741,7 @@ c2bea42147be0e5581793355cbf25d67  kernel/common/ezobjectforwarder.php
 5d87902cd7e04a68768a510883df4e47  kernel/common/ezpsiteaccessurloperator.php
 d63974139e74f22c1ac0897718fcb121  kernel/common/ezsimpletagsoperator.php
 933ccbdb94335240589010ae0a577da4  kernel/common/eztemplateautoload.php
-b06eed991494facaeeec0ef06d095838  kernel/common/eztemplatedesignresource.php
+c531d8b40f41fdf781179ddc0c6f9cde  kernel/common/eztemplatedesignresource.php
 81f66b6a462ac38b8651597c7f7f672d  kernel/common/eztemplatesstatisticsreporter.php
 054ec52a7b13a184ffff6a7f8f11cc31  kernel/common/eztocoperator.php
 ce2d634cd737154f7765bbf2ecd01905  kernel/common/eztopmenuoperator.php
@@ -5900,7 +5900,7 @@ c0dd2ab11fc1fdf552d243c915d5a4a1  kernel/private/classes/ezcontentobjectstategro
 fa688db0657a65850710dec915dd6df6  kernel/private/classes/ezpactiveextensions.php
 4c96a643fe5f93a0705452525362ad43  kernel/private/classes/ezpasynchronouspublishingfilter.php
 687f4cc1ec88af3032c334073d48700e  kernel/private/classes/ezpautoloadclioutput.php
-71a278a38173e19f9d0b703ea1273001  kernel/private/classes/ezpcontentpublishingprocess.php
+ff175cbbab6370fa7c7b5b64cb6f1bff  kernel/private/classes/ezpcontentpublishingprocess.php
 de0874d0feda5a3bbd9f00408fe0f975  kernel/private/classes/ezpcontentpublishingqueue.php
 0dffd5848920c4467ca19f952b831c3f  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
 4caf88b0759996112c9edc775b5fe589  kernel/private/classes/ezpevent.php
@@ -6295,7 +6295,7 @@ dc0978d9c142fb9bb684d5ed5549c8fd  lib/ezdb/classes/expmongodb.php
 6cbad87ccfb6d783e0c22d81ab8baac4  lib/ezdb/classes/ezmysqlidb.php
 c2f529de6d1fde400eb9c2dde01ebd1c  lib/ezdb/classes/eznulldb.php
 c99877c6346023f99483f3b734366e01  lib/ezdb/classes/ezpostgresqldb.php
-5cbdc7b0f12dc9aceffd9a8f225b34b8  lib/ezdb/classes/ezsqlite3db.php
+a8e2acedb9390518ed15aadb660161a2  lib/ezdb/classes/ezsqlite3db.php
 86b2f701aa81e8db34267630e6ce5acf  lib/ezdbschema/classes/expmongoschema.php
 99c29c20ae5ff98ed9d42613bf8ce4cd  lib/ezdbschema/classes/ezdbschema.php
 62508b784418dbab813a3f0f733c1cd8  lib/ezdbschema/classes/ezdbschemachecker.php
