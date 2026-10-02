@@ -108,6 +108,42 @@
         </section>
     </div>
 
+    {* ---- Stay secure: the two updates that keep an installation safe ---- *}
+    {def $can_git    = and( $extensions|contains( 'git_manager' ), fetch( 'user', 'has_access_to', hash( 'module', 'git_manager', 'function', 'git_manager' ) ) )
+         $can_update = and( $extensions|contains( 'ezupdate' ), fetch( 'user', 'has_access_to', hash( 'module', 'update', 'function', 'ezupdate' ) ) )}
+    <section class="a4-dash-card a4-dash-secure" aria-labelledby="a4-dash-secure-title">
+        <header>
+            <h2 id="a4-dash-secure-title"><svg class="a4-dash-secure-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" fill="#228b5e"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{'Stay secure: keep Exponential up to date'|i18n( 'design/admin/dashboard' )}</h2>
+            <p class="a4-dash-secure-intro">{'Most attacks use flaws that are already fixed in a newer version. Two updates keep this installation safe; check both regularly, and right away when a security release is announced.'|i18n( 'design/admin/dashboard' )}</p>
+        </header>
+        <ol class="a4-dash-steps">
+            <li>
+                <span class="a4-dash-step-no" aria-hidden="true">1</span>
+                <div>
+                    <h3>{'Update the CMS with the Git manager'|i18n( 'design/admin/dashboard' )}</h3>
+                    <p>{'Exponential itself -- the kernel, its designs and the extensions kept in git -- is updated by pulling the newest release into the installation: see which branch and version it runs, what has changed upstream, and update.'|i18n( 'design/admin/dashboard' )}</p>
+                    {if $can_git}
+                        <a class="a4-dash-step-link" href={'git_manager/dashboard'|ezurl}>{'Open the Git manager'|i18n( 'design/admin/dashboard' )} &rarr;</a>
+                    {else}
+                        <p class="a4-dash-step-note">{'The Git manager is not available to you here; ask an administrator to run this step.'|i18n( 'design/admin/dashboard' )}</p>
+                    {/if}
+                </div>
+            </li>
+            <li>
+                <span class="a4-dash-step-no" aria-hidden="true">2</span>
+                <div>
+                    <h3>{'Update the libraries with Composer'|i18n( 'design/admin/dashboard' )}</h3>
+                    <p>{'The libraries the CMS requires are Composer packages. The Updates dashboard lists the installed packages, checks Packagist for newer versions and security advisories, and updates them.'|i18n( 'design/admin/dashboard' )}</p>
+                    {if $can_update}
+                        <a class="a4-dash-step-link" href={'update/dashboard'|ezurl}>{'Open the Updates dashboard'|i18n( 'design/admin/dashboard' )} &rarr;</a>
+                    {else}
+                        <p class="a4-dash-step-note">{'The Updates dashboard is not available to you here; ask an administrator to run this step.'|i18n( 'design/admin/dashboard' )}</p>
+                    {/if}
+                </div>
+            </li>
+        </ol>
+    </section>
+
     {* ---- The configured blocks (dashboard.ini), each in a card ---- *}
     <div class="a4-dash-blocks">
     {foreach $blocks as $block}
