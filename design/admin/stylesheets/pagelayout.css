@@ -39,15 +39,15 @@ div.widthcontrol-grippy:active {
     background: url('../images/3/sprite.png') no-repeat -20px -505px;
 }
 
+/* The left menu's show/hide link, at its right edge: what stays when it is collapsed */
 #leftmenu a.show-hide-control
 {
-display:none;
+    display: block;
+    right: 3px;
 }
 
-.yui3-js-enabled #leftmenu a.show-hide-control
-{
-display:block;
-}
+#leftmenu.collapsed #leftmenu-design { visibility: hidden; }
+#columns.leftmenu-collapsed #widthcontrol-handler { display: none; }
 
 a.show-hide-control
 {
@@ -123,7 +123,8 @@ a.image-text:hover > span
 #header-logo a, #header-logo span
 {
     float: left;
-    width: 94px;
+    /* 100px: the whole Exponential wordmark of the sprite */
+    width: 100px;
     height: 65px;
     display: block;
     text-align: left;
@@ -146,7 +147,9 @@ a.image-text:hover > span
 .loginpage #header #header-design
 {
     height: 100%;
-    background: transparent url('../images/3/ez_logo_big_community.png') no-repeat center 80%;
+    /* The Exponential logo of the admin4 login page */
+    background: transparent url('../../admin4/images/admin4/logo-light.png') no-repeat center 80%;
+    background-size: auto 50px;
 }
 
 
@@ -308,6 +311,7 @@ div.tabs-content.disabled div.tab-content
 #leftmenu
 {
     float: left;
+    position: relative;   /* for its show/hide link */
     width: 15em;
     min-height:100%;
     padding-top:1px;
@@ -447,6 +451,8 @@ div#columns.hide-rightmenu div#maincolumn { margin-right: 0; }
     min-height: 100%;
     position: relative;
     min-height: 350px;
+    /* A deep content tree scrolls sideways inside the menu instead of running past it */
+    overflow-x: auto;
 }
 
 #leftmenu-design ul { margin-left: 1.5em; color: #aaa; }
@@ -1304,3 +1310,132 @@ color:#fff;
     color: #ff8300;
 }
 
+
+
+/* LAYOUTS PAGES (explayouts_ui) IN THE GREY DESIGN
+   The extension paints the left column navy with light links, for admin3 and admin4. Here its menu is a grey left
+   menu like every other: white box, dashed rule, a heading as "Setup" has, a bulleted list of links in the link
+   colour, the current page bold and orange (ul.leftmenu-items). Selectors one step heavier than the extension's. */
+html #page.ezexplayoutsuinavigationpart #leftmenu
+{
+    background: transparent !important;
+    overflow: visible !important;
+    min-height: 400px;
+}
+
+html #leftmenu .explayouts-sidebar
+{
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.05em;
+    padding: 0;
+    margin-top: 0.75em;
+    border-top: 1px dashed #ccc;
+    overflow: visible;
+}
+
+html #leftmenu .explayouts-sidebar::before
+{
+    content: "Layouts";
+    display: block;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.43em;
+    font-weight: bold;
+    color: #000;
+    margin: 0.5em 0 0.75em;
+}
+
+html #leftmenu .explayouts-sidebar a
+{
+    display: list-item;
+    list-style: disc outside;
+    margin: 0 0 0.4em 1.5em;
+    padding: 0;
+    gap: 0;
+    color: #0b4e7a;
+    background: none;
+    text-decoration: none;
+    white-space: normal;
+    line-height: 1.25;
+    transition: none;
+}
+
+html #leftmenu .explayouts-sidebar a:hover
+{
+    color: black;
+    background: none;
+    text-decoration: underline;
+}
+
+html #leftmenu .explayouts-sidebar a.active
+{
+    color: #E24602;
+    font-weight: bold;
+    background: none;
+}
+
+html #leftmenu .explayouts-sidebar a .material-icons { display: none; }
+html #leftmenu .explayouts-sidebar a span { flex: none; overflow: visible; }
+
+/* The links clip their bullets in the extension (overflow: hidden) */
+html #leftmenu .explayouts-sidebar a { overflow: visible; }
+
+/* The Layouts pages' own content: the grey title, buttons and tables (h1.context-title, input.button,
+   input.defaultbutton, table.list) */
+html #page.ezexplayoutsuinavigationpart .layouts-title
+{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin: 12px 0 4.8px;
+}
+
+html #page.ezexplayoutsuinavigationpart .nl-btn
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13.44px;
+    font-weight: normal;
+    color: #44484d;
+    background: #fff;
+    border: 1px solid #cfd1d3;
+    border-radius: 0;
+    padding: 3px 6px;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+html #page.ezexplayoutsuinavigationpart .nl-btn:hover { color: #000; border-color: #999; }
+
+html #page.ezexplayoutsuinavigationpart .nl-btn.nl-btn-primary
+{
+    color: #f5f3dd;
+    background: #567975;
+}
+
+html #page.ezexplayoutsuinavigationpart .nl-btn .material-icons { font-size: 1.1em; vertical-align: -2px; }
+
+html #page.ezexplayoutsuinavigationpart .ng-layouts-app table th
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14.08px;
+    font-weight: bold;
+    text-transform: none;
+    letter-spacing: normal;
+    color: #eee;
+    background: #6f6e6b;
+    border-bottom: 1px solid #ccc;
+    padding: 6px 5.6px;
+}
+
+html #page.ezexplayoutsuinavigationpart .ng-layouts-app table td
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13.44px;
+    color: #000;
+    border-bottom: 0;
+    padding: 5.4px;
+}
+
+html #page.ezexplayoutsuinavigationpart .ng-layouts-app table tbody tr:nth-child(even) { background: #f5f5f5; }
+html #page.ezexplayoutsuinavigationpart .ng-layouts-app table tbody tr:nth-child(odd) { background: #fff; }

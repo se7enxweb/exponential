@@ -8,6 +8,7 @@
      $hide_right_menu      = first_set( $module_result.content_info.persistent_variable.extra_menu, $ui_context_edit|not )|not
      $collapse_right_menu  = ezpreference( 'admin_right_menu_show' )|not
      $admin_left_size      = ezpreference( 'admin_left_menu_size' )
+     $collapse_left_menu   = eq( ezpreference( 'admin_left_menu_collapsed' ), '1' )
      $admin_theme          = ezpreference( 'admin_theme' )
      $left_size_hash       = 0
      $search_hash          = array( cond( ezhttp_hasvariable( 'SectionID', 'get' ), ezhttp( 'SectionID', 'get' ) ) )
@@ -23,7 +24,7 @@
 {set $collapse_right_menu = false()}
 {/if}
 
-{if and( $ui_context_edit|not, or( $collapse_right_menu, $admin_left_size, $hide_left_menu ))}
+{if and( $ui_context_edit|not, or( $collapse_right_menu, $admin_left_size, $collapse_left_menu, $hide_left_menu ))}
 <style type="text/css">
 {if $collapse_right_menu}
     div#page div#rightmenu  {ldelim} width: 18px; {rdelim}
@@ -43,6 +44,14 @@ div#maincolumn {ldelim} padding-right: 20px; padding-left: 50px; {rdelim}
             div#page div#maincontent {ldelim} margin-left: {$admin_left_size|wash}; {rdelim}
         {/if}
         {undef $left_menu_widths}
+    {/if}
+    {if $collapse_left_menu}
+        {* Collapsed: 22px of the menu stay, its show/hide link (page_leftmenu.tpl) *}
+        {def $left_width = cond( $left_size_hash, concat( $left_size_hash|int, 'em' ), $admin_left_size, $admin_left_size|wash, '15em' )}
+        div#page div#leftmenu.collapsed {ldelim} margin-left: calc(22px - {$left_width}); {rdelim}
+        div#page div#maincontent {ldelim} margin-left: 32px; {rdelim}
+        div#page div#left-panels-separator {ldelim} left: 0; {rdelim}
+        {undef $left_width}
     {/if}
 {/if}
 </style>
@@ -81,7 +90,7 @@ div#maincolumn {ldelim} padding-right: 20px; padding-left: 50px; {rdelim}
 <hr class="hide" />
 {/cache-block}{* /Pr uri cache *}
 
-<div id="columns"{if $hide_right_menu} class="hide-rightmenu"{/if}>
+<div id="columns" class="{if $hide_right_menu}hide-rightmenu{/if}{if and( $collapse_left_menu, $hide_left_menu|not )} leftmenu-collapsed{/if}">
 
 
 <div id="left-panels-separator">
@@ -151,14 +160,14 @@ div#maincolumn {ldelim} padding-right: 20px; padding-left: 50px; {rdelim}
 <div id="maincolumn">
 
 {* Pr uri Path/Left menu cache (dosn't use ignore_content_expiry because of content structure menu  ) *}
-{cache-block keys=array( $uri_cache_key, $user_hash, $left_size_hash, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ) )}
+{cache-block keys=array( $uri_cache_key, $user_hash, $left_size_hash, $collapse_left_menu, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ) )}
 
 <hr class="hide" />
 
 {* LEFT MENU / CONTENT STRUCTURE MENU *}
 {if $hide_left_menu}
 {else}
-    {include uri='design:page_leftmenu.tpl'}
+    {include uri='design:page_leftmenu.tpl' collapse_left_menu=$collapse_left_menu}
 {/if}
 
 {/cache-block}{* /Pr uri cache *}
