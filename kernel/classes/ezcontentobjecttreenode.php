@@ -4612,6 +4612,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
     function removeNodeFromTree( $moveToTrash = true )
     {
         $nodeID = $this->attribute( 'node_id' );
+        $this->refreshMainNodeID();
         $object = $this->object();
         $assignedNodes = $object->attribute( 'assigned_nodes' );
 
@@ -4622,7 +4623,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $auditData = null;
         if ( class_exists( 'expAuditHook' ) && !expAuditHook::isSubtreeRoot( $nodeID ) )
         {
-            $last = $nodeID == $this->attribute( 'main_node_id' ) && count( $assignedNodes ) <= 1;
+            $last = count( $assignedNodes ) <= 1;
             $auditName = !$last ? 'content.node.remove' : ( $moveToTrash ? 'content.node.remove.trash' : 'content.object.remove' );
             if ( expAuditHook::on( $auditName ) )
                 $auditData = self::auditRemovalData( $this, $object, $auditName, $assignedNodes );
@@ -4681,9 +4682,11 @@ class eZContentObjectTreeNode extends eZPersistentObject
     function removeNodeFromTreeUnaudited( $moveToTrash = true )
     {
         $nodeID = $this->attribute( 'node_id' );
+        $this->refreshMainNodeID();
         $object = $this->object();
         $assignedNodes = $object->attribute( 'assigned_nodes' );
-        if ( $nodeID == $this->attribute( 'main_node_id' ) )
+        // the last location takes the object with it, whatever its (possibly dangling) main-node flag says
+        if ( $nodeID == $this->attribute( 'main_node_id' ) || count( $assignedNodes ) <= 1 )
         {
             if ( count( $assignedNodes ) > 1 )
             {
@@ -4740,6 +4743,28 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 eZSearch::addObject( $object );
             }
         }
+    }
+
+    /**
+     * Reads the node's main_node_id again from the database.
+     *
+     * A node fetched in a batch (removeSubtrees() fetches a subtree's children 100 at a time) keeps the main-node
+     * flag it had then. Once another location of the same object was removed before it, and the main location
+     * moved to this one, the flag in the batch is stale: the node looks like a secondary location, and removing it
+     * as one left the object published with no location at all.
+     *
+     * @return int|null the current main_node_id, null when the node is gone
+     */
+    function refreshMainNodeID()
+    {
+        $nodeID = (int)$this->attribute( 'node_id' );
+        if ( !$nodeID )
+            return null;
+        $rows = eZDB::instance()->arrayQuery( "SELECT main_node_id FROM ezcontentobject_tree WHERE node_id=$nodeID" );
+        if ( !$rows )
+            return null;
+        $this->setAttribute( 'main_node_id', (int)$rows[0]['main_node_id'] );
+        return (int)$rows[0]['main_node_id'];
     }
 
     /**
