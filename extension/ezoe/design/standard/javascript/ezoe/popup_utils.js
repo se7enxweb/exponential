@@ -2,6 +2,7 @@
     eZ Online Editor MCE popup : common js code used in popups
     Created on: <06-Feb-2008 00:00:00 ar>
     
+    Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
     Copyright (c) 1999-2014 eZ Systems AS
     Licensed under the GPL 2.0 License:
     http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt 
