@@ -328,6 +328,9 @@ class expAudit
                 return 0;
             if ( !expAuditConfig::isOverridden() && class_exists( 'expIniEditor' ) && !expIniEditor::isRealRoot() )
                 return 0;
+            // only the installation's settings: a copy under var/ (the INI engine's round-trip tests) is not one
+            if ( !expAuditConfig::isOverridden() && !preg_match( '#^(settings/|extension/[^/]+/settings/)#', (string)$relativePath ) )
+                return 0;
             $isAuditIni = strtolower( $file ) === 'audit.ini';
             if ( !$isAuditIni && !self::isOn( 'system.setting.write' ) )
                 return 0;
