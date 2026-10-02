@@ -417,7 +417,32 @@ class expAudit
             $attributes = is_array( $attributes ) ? $attributes : array();
             if ( $config['legacyFiles'] && class_exists( 'eZAudit' ) )
                 eZAudit::writeLegacyFile( $oldName, $attributes );
+            $caller = $caller === null ? self::legacyCaller() : (string)$caller;
+            $mapped = self::legacyData( $oldName, $attributes, $caller, $config );
+            if ( $mapped === null )
+                return null;
+            return self::event( $mapped[0], $mapped[1] );
+        }
+        catch ( Throwable $e )
+        {
+            self::failure( $e, 'the 4.x audit name ' . (string)$oldName );
+            return null;
+        }
+    }
 
+    /**
+     * The mapping of legacy(): an old name and its attributes as the new name and the event's data, without
+     * recording anything (also used by the import of the 4.x text logs, expAuditImporter).
+     *
+     * @param string $oldName
+     * @param array $attributes
+     * @param string $caller Class::function of the old call site ('' when unknown)
+     * @param array $config
+     * @return array|null array( name, data ), null when the name is not recorded (unmapped, UnmappedAsLegacy off)
+     */
+    public static function legacyData( $oldName, array $attributes, $caller, array $config )
+    {
+        {
             $attrs = array();
             foreach ( $attributes as $k => $v )
                 $attrs[trim( (string)$k, " :\t" )] = is_scalar( $v ) || $v === null ? $v : ( is_array( $v ) ? $v : (string)json_encode( $v ) );
@@ -433,7 +458,7 @@ class expAudit
                 return null;
 
             // the code that called eZAudit::writeAudit() decides between names (content-delete); tests name it
-            $caller = $caller === null ? self::legacyCaller() : (string)$caller;
+            $caller = (string)$caller;
             $data = array( 'x' => array( 'legacy' => array( 'name' => $oldName ) ) );
             $get = function ( $key ) use ( &$attrs ) {
                 if ( !array_key_exists( $key, $attrs ) )
@@ -564,12 +589,7 @@ class expAudit
                 $data['after'] = ( isset( $data['after'] ) ? $data['after'] : array() ) + array( 'legacy' => $attrs );
             if ( $caller !== '' )
                 $data['x']['legacy']['caller'] = $caller;
-            return self::event( $name, $data );
-        }
-        catch ( Throwable $e )
-        {
-            self::failure( $e, 'the 4.x audit name ' . (string)$oldName );
-            return null;
+            return array( $name, $data );
         }
     }
 
@@ -809,7 +829,7 @@ class expAudit
             // the keys exist before any channel is locked (the genesis needs the installation id)
             $keys->keys();
             $writer = self::writerFor( $config, $keys );
-            $writer->append( $channel, $records );
+            $written = $writer->append( $channel, $records );
         }
         catch ( Throwable $e )
         {
@@ -820,6 +840,12 @@ class expAudit
                 self::$failed[$channel] = array_merge( isset( self::$failed[$channel] ) ? self::$failed[$channel] : array(), $records );
             return;
         }
+        // the copies outside the file (sinks) and the alert rules, once the records are in the file; a worker that
+        // has not loaded these classes yet (Velocity before its restart) skips them
+        if ( $written && class_exists( 'expAuditSinkRegistry' ) )
+            expAuditSinkRegistry::dispatch( $channel, $written );
+        if ( $written && class_exists( 'expAuditAlertEvaluator' ) )
+            expAuditAlertEvaluator::afterWrite( $channel, $written );
         foreach ( expAuditKeys::takeCreated() as $created )
             self::event( 'system.audit.key.create', array( 'object' => array( 'type' => 'key', 'id' => $created['key_id'] ),
                                                            'after' => $created ) );
