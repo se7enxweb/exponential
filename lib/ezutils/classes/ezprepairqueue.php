@@ -149,7 +149,7 @@ class ezpRepairQueue
     public static function handleWebRequest()
     {
         $action = isset( $_REQUEST['exp_repair'] ) ? (string) $_REQUEST['exp_repair'] : '';
-        if ( $action !== 'start' && $action !== 'status' )
+        if ( $action !== 'start' && $action !== 'status' && $action !== 'update' )
             return false;
         if ( !headers_sent() )
         {
@@ -158,6 +158,8 @@ class ezpRepairQueue
         }
         if ( $action === 'start' )
             echo json_encode( self::start( isset( $_POST['exp_repair_key'] ) ? (string) $_POST['exp_repair_key'] : '' ) );
+        else if ( $action === 'update' )
+            echo json_encode( self::startUpdate( isset( $_POST['token'] ) ? (string) $_POST['token'] : '' ) );
         else
         {
             $status = self::status();
@@ -214,6 +216,32 @@ class ezpRepairQueue
         return array( 'ok' => true, 'token' => $token );
     }
 
+    /**
+     * The second run after composer install refused a lock file that does not match composer.json:
+     * composer update instead. Allowed with the token of that failed run, within 15 minutes of it,
+     * so the administrator who entered the key confirms it without a new key.
+     */
+    protected static function startUpdate( $token )
+    {
+        if ( $_SERVER['REQUEST_METHOD'] !== 'POST' )
+            return array( 'ok' => false, 'error' => 'Send the request with POST.' );
+        $s = self::status();
+        if ( !isset( $s['token'] ) || !hash_equals( (string) $s['token'], $token ) )
+            return array( 'ok' => false, 'error' => 'unknown' );
+        if ( empty( $s['lock_stale'] ) || $s['state'] !== 'failed' || ( isset( $s['finished'] ) && $s['finished'] < time() - 900 ) )
+            return array( 'ok' => false, 'error' => 'Start the repair again with a new key.' );
+        foreach ( self::$steps as $id => $title )
+            $s['steps'][$id] = 'waiting';
+        $s['state'] = 'queued';
+        $s['mode'] = 'update';
+        $s['lock_stale'] = false;
+        $s['heartbeat'] = time();
+        self::writeStatus( $s );
+        self::log( 'the administrator confirmed: update the lock file and install' );
+        self::spawnWorker();
+        return array( 'ok' => true, 'token' => $token );
+    }
+
     /** Starts bin/php/exprepair.php --run in the background, detached from the web request. */
     protected static function spawnWorker()
     {
@@ -266,7 +294,8 @@ class ezpRepairQueue
         $composer = $s['Composer'] !== '' ? $s['Composer'] : 'composer';
         $php = is_file( PHP_BINDIR . '/php' ) ? PHP_BINDIR . '/php' : 'php';
         $commands = array(
-            'libraries' => array( array( $composer, 'install', '--no-dev', '--no-interaction', '--no-plugins', '--no-scripts', '--no-progress' ) ),
+            'libraries' => array( array( $composer, isset( $status['mode'] ) && $status['mode'] === 'update' ? 'update' : 'install',
+                                         '--no-dev', '--no-interaction', '--no-plugins', '--no-scripts', '--no-progress' ) ),
             'autoloads' => array( array( $php, 'bin/php/ezpgenerateautoloads.php', '-e' ),
                                   array( $php, 'bin/php/ezpgenerateautoloads.php', '-k', '--exclude=.claude' ) ),
             'caches'    => array( array( $php, 'bin/php/ezcache.php', '--clear-all', '--allow-root-user' ) ),
@@ -287,6 +316,10 @@ class ezpRepairQueue
                 }
             }
             $status['steps'][$id] = $ok ? 'done' : 'failed';
+            // composer install refuses a lock file that does not match composer.json (exit code 4):
+            // the page then offers to update the lock file and install
+            if ( !$ok && $id === 'libraries' && preg_match( '/in the lock file|lock file is not up to date|not present in the lock file/i', self::logTail( 200 ) ) )
+                $status['lock_stale'] = true;
             self::writeStatus( $status );
             if ( !$ok )
                 break;
@@ -352,6 +385,10 @@ class ezpRepairQueue
 <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
 <p class="elapsed"></p><ol class="steps">{$steps}</ol>
 <pre class="log" aria-live="polite"></pre>
+<div class="lockstale" hidden><p><strong>The lock file (composer.lock) does not match composer.json</strong>, so composer install cannot use it.
+Updating it resolves the versions composer.json asks for and writes a new composer.lock, then installs them
+(composer update --no-dev, without plugins: extension/ is not touched).</p>
+<button type="button" id="exp-repair-update">Update the lock file and install</button></div>
 <p class="finished" hidden><button type="button" id="exp-repair-reload">Open the page again</button> <span class="auto"></span></p>
 </div>
 </section>
@@ -383,6 +420,10 @@ class ezpRepairQueue
       box.querySelector('.elapsed').textContent = (s.state === 'queued' ? 'Waiting for the worker' : s.state === 'running' ? 'Working' : s.state === 'done' ? 'Done' : 'Failed')
         + ' - ' + Math.round((Date.now() - t0) / 1000) + ' s' + (s.user ? ' - as ' + s.user : '');
       var log = box.querySelector('.log'); log.textContent = s.log || ''; log.scrollTop = log.scrollHeight;
+      if (s.state === 'failed' && s.lock_stale) {
+        var up = box.querySelector('.lockstale'); up.hidden = false;
+        return;
+      }
       if (s.state === 'done' || s.state === 'failed') {
         var fin = box.querySelector('.finished'); fin.hidden = false;
         if (s.state === 'done') { var n = 5, a = fin.querySelector('.auto'); (function tick() { a.textContent = 'Opening again in ' + n + ' s'; if (n-- <= 0) location.reload(); else setTimeout(tick, 1000); })(); }
@@ -400,6 +441,14 @@ class ezpRepairQueue
     }).catch(function () { err.textContent = 'No answer from the server.'; });
   });
   document.getElementById('exp-repair-reload').addEventListener('click', function () { location.reload(); });
+  document.getElementById('exp-repair-update').addEventListener('click', function () {
+    if (!confirm('Update composer.lock to what composer.json asks for, and install those versions?')) return;
+    var body = new URLSearchParams(); body.set('exp_repair', 'update'); body.set('token', token);
+    fetch(url, {method: 'POST', body: body, cache: 'no-store'}).then(function (r) { return r.json(); }).then(function (s) {
+      if (!s.ok) { err.textContent = s.error || 'The update could not start.'; return; }
+      box.querySelector('.lockstale').hidden = true; box.querySelector('.finished').hidden = true; t0 = Date.now(); poll();
+    }).catch(function () { err.textContent = 'No answer from the server.'; });
+  });
 })();
 </script>
 HTML;
