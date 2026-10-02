@@ -17,7 +17,24 @@
      $relation_group_list = ezini( 'RelationGroupSettings', 'Groups', 'content.ini' )
      $image_sizes      = ezini( 'AliasSettings', 'AliasList', 'image.ini' )
      $view_modes       = ezini( 'embed', 'AvailableViewModes', 'content.ini' )|merge( ezini( 'embed-inline', 'AvailableViewModes', 'content.ini' ) )|unique
+     $table_defaults   = hash()
+     $link_classes     = hash()
+     $link_class_names = hash()
 }
+{if ezini_hasvariable( 'link', 'ClassDescription', 'content.ini' )}
+    {set $link_class_names = ezini( 'link', 'ClassDescription', 'content.ini' )}
+{/if}
+{foreach ezini( 'link', 'AvailableClasses', 'content.ini' ) as $link_class}
+    {set $link_classes = $link_classes|merge( hash( $link_class, first_set( $link_class_names[$link_class], $link_class ) ) )}
+{/foreach}
+{* content.ini [table] Defaults like the TinyMCE 3 table dialog, rows/cols are chosen in the table grid *}
+{if ezini_hasvariable( 'table', 'Defaults', 'content.ini' )}
+    {foreach ezini( 'table', 'Defaults', 'content.ini' ) as $table_default_name => $table_default_value}
+        {if array( 'width', 'border', 'class' )|contains( $table_default_name )}
+            {set $table_defaults = $table_defaults|merge( hash( $table_default_name, $table_default_value ) )}
+        {/if}
+    {/foreach}
+{/if}
 {foreach $content_css_list_temp as $css}
     {set $content_css_list = $content_css_list|append( $css|explode( '<skin>' )|implode( $skin ) )}
 {/foreach}
@@ -47,7 +64,8 @@ var eZOe8GlobalSettings = {ldelim}
     directionality: '{$directionality}',
     external_plugins: {ldelim}
         ezembed: {'javascript/tinymce8_ez/plugins/ezembed/plugin.js'|ezdesign},
-        ezcustomtag: {'javascript/tinymce8_ez/plugins/ezcustomtag/plugin.js'|ezdesign}
+        ezcustomtag: {'javascript/tinymce8_ez/plugins/ezcustomtag/plugin.js'|ezdesign},
+        ezlink: {'javascript/tinymce8_ez/plugins/ezlink/plugin.js'|ezdesign}
     {rdelim},
     // no advlist (split list buttons) and no pagebreak (ezoe pagebreak is a custom tag, not an html comment)
     plugins: 'lists autolink link anchor table charmap fullscreen code help',
@@ -59,7 +77,7 @@ var eZOe8GlobalSettings = {ldelim}
     resize: true,
     min_height: 300,
     content_css: {json_encode( ezcssfiles( $content_css_list, 3, true() ) )},
-    content_style: '.ezoeItemNonEditable {ldelim} outline: 1px dashed #8aa4c4; background: #f3f7fb; cursor: default; {rdelim} div.ezoeItemNonEditable {ldelim} margin: .5em 0; padding: .25em; {rdelim}',
+    content_style: '.ezoeItemNonEditable {ldelim} outline: 1px dashed #8aa4c4; background: #f3f7fb; cursor: default; {rdelim} div.ezoeItemNonEditable {ldelim} margin: .5em 0; padding: .25em; {rdelim} td, th {ldelim} min-width: 3em; padding: 2px 4px; {rdelim}',
     block_formats: 'Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3; Heading 4=h4; Heading 5=h5; Heading 6=h6; Preformatted=pre',
     // Same element list as the TinyMCE 3 editor, it reflects what the ezxml parser accepts
     valid_elements: "-strong/b[class|customattributes],-em/i[class|customattributes],span[id|type|class|title|customattributes|align|style|view|inline|alt],sub[class|type|customattributes|align],sup[class|type|customattributes|align],u[class|type|customattributes|align],pre[class|title|customattributes],ol[class|customattributes],ul[class|customattributes],li[class|customattributes],a[href|name|target|view|title|class|id|customattributes],p[class|customattributes|align|style],img[id|type|class|title|customattributes|align|style|view|inline|alt|src|width|height],table[class|border|width|id|title|customattributes|ezborder|bordercolor|align|style],tr[class|customattributes],th[class|width|rowspan|colspan|customattributes|align|style],td[class|width|rowspan|colspan|customattributes|align|style],div[id|type|class|title|customattributes|align|style|view|inline|alt],h1[class|customattributes|align|style],h2[class|customattributes|align|style],h3[class|customattributes|align|style],h4[class|customattributes|align|style],h5[class|customattributes|align|style],h6[class|customattributes|align|style],br",
@@ -72,13 +90,18 @@ var eZOe8GlobalSettings = {ldelim}
     object_resizing: false,
     table_use_colgroups: false,
     table_default_styles: {ldelim}{rdelim},
-    table_default_attributes: {ldelim} border: '0' {rdelim},
+    table_default_attributes: {json_encode( $table_defaults )},
+    table_resize_bars: false,
+    visual_table_class: 'mceItemTable',
     noneditable_class: 'ezoeItemNonEditable',
     browser_spellcheck: true,
-    contextmenu: 'link ezembed ezcustomtag table',
+    contextmenu: 'ezlink ezembed ezcustomtag table',
     ez_skin_class: 'ezoe-skin-{$skin|wash}',
     ez_disable_editor_text: {json_encode( 'Disable editor'|i18n('design/standard/content/datatype') )},
     ez_custom_tags: {json_encode( $input_handler.custom_tag_definitions )},
+    ez_link_classes: {json_encode( $link_classes )},
+    ez_link_view_modes: {json_encode( ezini( 'link', 'AvailableViewModes', 'content.ini' ) )},
+    ez_link_root_node: {ezini( 'NodeSettings', 'RootNode', 'content.ini' )|int},
     ez_custom_attribute_style_map: {json_encode( ezini( 'EditorSettings', 'CustomAttributeStyleMap', 'ezoe.ini',,true() ) )},
     ez_settings: {ldelim}
         root_url: {'/'|ezroot},
@@ -104,7 +127,7 @@ var eZOe8ButtonMap = {
     justifyleft: 'alignleft', justifycenter: 'aligncenter', justifyright: 'alignright', justifyfull: 'alignjustify',
     bullist: 'bullist', numlist: 'numlist', outdent: 'outdent', indent: 'indent',
     undo: 'undo', redo: 'redo',
-    link: 'link', unlink: 'unlink', anchor: 'anchor',
+    link: 'ezlink', unlink: 'unlink', anchor: 'anchor',
     image: 'ezembed', object: 'ezembed', file: 'ezembed',
     custom: 'ezcustomtag',
     charmap: 'charmap',
