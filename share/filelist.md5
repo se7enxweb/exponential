@@ -832,7 +832,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-13f61d647e5ecf4474c4e79c8adf4222  design/admin4/stylesheets/admin4.css
+ec531fb4bd693d83b16ec100d973d23b  design/admin4/stylesheets/admin4.css
 3eb649ac99a5d1e9852d112ad9fcaf9a  design/admin4/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin4/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin4/stylesheets/ezinfo.css
@@ -898,7 +898,7 @@ b991b00adac81aa93385259504a53c67  design/admin4/templates/content/collectedinfo/
 db0a467b3a14be193f73dd75ae59cc51  design/admin4/templates/content/collectedinfo/form.tpl
 517963f41482cb0a69c7e0b299d93130  design/admin4/templates/content/collectedinfo/poll.tpl
 4322d2f3acc8559393b5e8b3cb9c1486  design/admin4/templates/content/confirmtranslationremove.tpl
-e2e649ee6b2df9e8bc5c261cabee5b36  design/admin4/templates/content/create_languages.tpl
+32d88ab2a738e82b768e0a75436d653e  design/admin4/templates/content/create_languages.tpl
 0c9c7914a250b0990761b0386359ea17  design/admin4/templates/content/dashboard.tpl
 a846924c09cd15a7243a2701e539c0cf  design/admin4/templates/content/datatype/edit/ezdate.tpl
 5677dd83ccb7c3dafeca7c1ca7e4d972  design/admin4/templates/content/datatype/edit/ezdatetime.tpl
@@ -909,9 +909,9 @@ a846924c09cd15a7243a2701e539c0cf  design/admin4/templates/content/datatype/edit/
 73fe596ab92884b5d6d1709c00330922  design/admin4/templates/content/draft.tpl
 09e91769f2167df522bfb217fb8d0bc3  design/admin4/templates/content/edit.tpl
 be1c7acb3cd20918fd4308fdfd105403  design/admin4/templates/content/edit_attribute.tpl
-a35481074f9bd223054c6c13f783b5c7  design/admin4/templates/content/edit_conflict.tpl
+e5aed943bee460e14eb1b439b8bb6242  design/admin4/templates/content/edit_conflict.tpl
 35c95ad3e52bd6cf74d907b804ea2625  design/admin4/templates/content/edit_draft.tpl
-b296af3623023fd29dede1e7a28c87b5  design/admin4/templates/content/edit_languages.tpl
+9cee1ea5bcb4068740e7558557c9c518  design/admin4/templates/content/edit_languages.tpl
 143c6f02b16e30519fa4ba79242ef957  design/admin4/templates/content/edit_locations.tpl
 3e4218bef006d2475b552dca8bfdbe88  design/admin4/templates/content/edit_menu.tpl
 1f0c31bc65fc2ffc21fa856529fe4d96  design/admin4/templates/content/edit_relations.tpl
@@ -925,8 +925,8 @@ b296af3623023fd29dede1e7a28c87b5  design/admin4/templates/content/edit_languages
 deffb644bbfdf3644f9cf76d6a4901d8  design/admin4/templates/content/related/file.tpl
 078ee37c6358778222c562d68affd1f8  design/admin4/templates/content/related/object.tpl
 7a443fd4a061582973111c654ecbf5c2  design/admin4/templates/content/related/thumbnail.tpl
-3fb5e74aa548ef62c32fcf12b6d4fa18  design/admin4/templates/content/removeassignment.tpl
-7679816d1b94ab8179dfc5fb2f80dcf8  design/admin4/templates/content/removeeditversion.tpl
+772b8a41bd47c5cd69e0d92d35e64ddb  design/admin4/templates/content/removeassignment.tpl
+7f0f53cdd876cc26b572821781c35243  design/admin4/templates/content/removeeditversion.tpl
 78b07c4c10cd3ce8bb22693ce14dda7f  design/admin4/templates/content/removetranslation.tpl
 72a5f36046a954b1a36ae80cd8df26bb  design/admin4/templates/content/restore.tpl
 32579aafc19e699a1340fba20c4d339e  design/admin4/templates/content/reverserelatedlist.tpl
@@ -936,7 +936,7 @@ c58456f930801986a94ae1c6a68e4fdc  design/admin4/templates/content/searchresult.t
 83390b5b1d6133f4c55b3edc0422113e  design/admin4/templates/content/translations.tpl
 318cec52e564923aa0935f84e329a8b1  design/admin4/templates/content/translationview.tpl
 ebb156b74c412ebf9141219efe8fdec1  design/admin4/templates/content/trash.tpl
-a1f9f35ddf7628f6d51fb625e579dc78  design/admin4/templates/content/upload.tpl
+16caf69830584e4aa7df3a45c8af98c8  design/admin4/templates/content/upload.tpl
 38726927dee8a4db82d729a58882095d  design/admin4/templates/content/upload_related.tpl
 77c27453551792679be3d55c753ea011  design/admin4/templates/content/urlalias.tpl
 a1e3428fbe578d55c00fb4a1ecfc1c08  design/admin4/templates/content/urlalias_global.tpl
@@ -1026,7 +1026,7 @@ b15287b9c114776d7a7d0a3bf06bda3b  design/admin4/templates/page_leftmenu.tpl
 361b03920b070c91bf653793c6f6e368  design/admin4/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin4/templates/page_topmenuitem.tpl
 904563d0775993b51872b7af411dd5b3  design/admin4/templates/page_toppath.tpl
-632956aa364e0828acfda4c7352827b2  design/admin4/templates/pagelayout.tpl
+2709ec397e947d1356f72ee07d2df07d  design/admin4/templates/pagelayout.tpl
 f277c77968c48645a68dd60c7073b1f9  design/admin4/templates/parts/content/menu.tpl
 4991be3f4628cd305ab416618c614fcd  design/admin4/templates/parts/ini_menu.tpl
 29b9aac282e8e53f74896ae53ef83e66  design/admin4/templates/parts/media/menu.tpl
