@@ -9,6 +9,10 @@
  *  SV-04 — The callers use the services: content/trash, setup/session, bin/php/trashpurge.php,
  *          bin/php/ezsessiongc.php, cronjobs/trashpurge.php and cronjobs/session_gc.php
  *  SV-05 — The trash service hands the CLI's arguments to eZScriptTrashPurge in its constructor's order
+ *  SV-06 — The trash view's Empty button and eZScriptTrashPurge share purgeInBatches(): a transaction per batch, the cache
+ *          cleared and a pause between batches; emptyTrash() uses the command's 100 and 1 s and then sweeps what is left
+ *  SV-07 — collect() (the sessions view, the command, the cronjob part) removes the expired baskets too: one garbage
+ *          collection by the session handler, with the basket hook attached
  *
  * No database.
  *
@@ -81,10 +85,10 @@ class ServicesTest extends PHPUnit\Framework\TestCase
     {
         $base = self::root() . '/kernel/private/classes/';
         $expect = array(
-            'views/content/trash.php' => array( 'Trash::canEmpty', 'Trash::purgeObjects', 'Trash::emptyArchived' ),
+            'views/content/trash.php' => array( 'Trash::canEmpty', 'Trash::purgeObjects', 'Trash::emptyTrash( 100, 1 )' ),
             'commands/trashpurge.php' => array( 'Trash::purge(' ),
             'cronjobs/trashpurge.php' => array( 'Trash::purge(' ),
-            'views/setup/session.php' => array( 'SessionGarbageCollector::collect( false )' ),
+            'views/setup/session.php' => array( 'SessionGarbageCollector::collect()' ),
             'commands/ezsessiongc.php' => array( 'SessionGarbageCollector::collect()' ),
             'cronjobs/session_gc.php' => array( 'SessionGarbageCollector::collect()' ),
         );
@@ -96,6 +100,68 @@ class ServicesTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( 'new \\eZScriptTrashPurge', $code, "$file leaves eZScriptTrashPurge to the service" );
             $this->assertStringNotContainsString( '\\eZSession::garbageCollector()', $code, "$file leaves the garbage collector to the service" );
         }
+    }
+
+    /** SV-06 */
+    public function testTheViewAndTheCommandShareTheBatches()
+    {
+        $base = self::root() . '/kernel/private/classes/';
+        $handler = (string) file_get_contents( $base . 'ezscripttrashpurge.php' );
+        $this->assertStringContainsString( 'Trash::purgeInBatches(', $handler, 'eZScriptTrashPurge runs the service\'s batches' );
+        $this->assertStringNotContainsString( '$db->begin()', $handler, 'the transactions are the service\'s' );
+        $view = (string) file_get_contents( $base . 'views/content/trash.php' );
+        $this->assertStringNotContainsString( 'emptyArchived(', $view, 'the Empty button no longer purges without transactions' );
+
+        $service = (string) file_get_contents( $base . 'services/trash.php' );
+        $m = array();
+        preg_match( '/function purgeInBatches.*?\n    \}\n/s', $service, $m );
+        $this->assertNotEmpty( $m );
+        $body = $m[0];
+        // a transaction per batch, the cache cleared and the pause between batches, a stop on an empty batch
+        $this->assertLessThan( strpos( $body, '$db->commit()' ), strpos( $body, '$db->begin()' ) );
+        $this->assertStringContainsString( "'Limit' => \$iterationLimit", $body );
+        $this->assertStringContainsString( 'sleep( $sleep )', $body );
+        $this->assertStringContainsString( '\\eZContentObject::clearCache()', $body );
+        $this->assertStringContainsString( 'if ( !$trashList )', $body );
+
+        $p = ( new ReflectionMethod( 'Exponential\\Service\\Trash', 'emptyTrash' ) )->getParameters();
+        $this->assertSame( array( 100, 1 ), array( $p[0]->getDefaultValue(), $p[1]->getDefaultValue() ), 'the command\'s batch size and pause' );
+        // everything: what has no trash entry is swept by emptyArchived() after the batches
+        preg_match( '/function emptyTrash.*?\n    \}\n/s', $service, $m );
+        $this->assertLessThan( strpos( $m[0], 'emptyArchived(' ), strpos( $m[0], 'purgeInBatches(' ) );
+    }
+
+    /** SV-07 */
+    public function testCollectRemovesTheBasketsToo()
+    {
+        if ( !class_exists( 'eZSession' ) || !class_exists( 'ezpSessionHandler' ) )
+            $this->markTestSkipped( 'eZSession is not autoloadable here' );
+        $handler = new class extends ezpSessionHandler {
+            public $gc = array();
+            public function __construct() {}
+            public function gc( $maxLifeTime ) { $this->gc[] = $maxLifeTime; return true; }
+            public function read( $sessionId ) { return ''; }
+            public function write( $sessionId, $sessionData ) { return true; }
+            public function destroy( $sessionId ) { return true; }
+            public function regenerate( $updateBackendData = true ) { return true; }
+            public function cleanup() { return true; }
+            public function deleteByUserIDs( array $userIDArray ) {}
+        };
+        $prop = new ReflectionProperty( 'eZSession', 'handlerInstance' );
+        $old = $prop->getValue();
+        $prop->setValue( null, $handler );
+        try
+        {
+            $this->assertTrue( \Exponential\Service\SessionGarbageCollector::collect() );
+        }
+        finally
+        {
+            $prop->setValue( null, $old );
+        }
+        $this->assertCount( 1, $handler->gc, 'the handler collected once' );
+        $read = Closure::bind( function () { return isset( self::$callbackFunctions['gc_pre'] ) ? self::$callbackFunctions['gc_pre'] : array(); }, null, 'eZSession' );
+        $this->assertContains( array( 'Exponential\\Service\\SessionGarbageCollector', 'cleanupBaskets' ), $read(),
+                               'the baskets of the expired sessions are removed with them (gc_pre hook)' );
     }
 
     /** SV-05 */

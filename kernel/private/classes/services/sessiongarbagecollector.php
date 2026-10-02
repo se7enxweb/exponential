@@ -14,8 +14,8 @@ namespace Exponential\Service;
  * the command (bin/php/ezsessiongc.php) and the cronjob part (cronjobs/session_gc.php).
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
  *
- *   SessionGarbageCollector::collect()         expired sessions and the baskets they leave (command, cronjob part)
- *   SessionGarbageCollector::collect( false )  expired sessions only (the view, as it always did)
+ *   SessionGarbageCollector::collect()         expired sessions and the baskets they leave (view, command, cronjob part)
+ *   SessionGarbageCollector::collect( false )  expired sessions only
  */
 class SessionGarbageCollector
 {

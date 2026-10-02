@@ -310,10 +310,10 @@ class Session extends \Exponential\Runnable\ModuleView
         }
         else if ( $module->isCurrentAction( 'RemoveTimedOutSessions' ) )
         {
-            // the expired sessions; the command and the cronjob part also remove their baskets. Loaded by path:
+            // the expired sessions and the baskets they leave, as the command and the cronjob part do. Loaded by path:
             // a server whose workers kept an autoload array from before the class existed (Velocity) still works.
             require_once 'kernel/private/classes/services/sessiongarbagecollector.php';
-            $gcSessionsCompleted = \Exponential\Service\SessionGarbageCollector::collect( false );
+            $gcSessionsCompleted = \Exponential\Service\SessionGarbageCollector::collect();
             $sessionsRemoved = true;
         }
         else if ( $module->isCurrentAction( 'RemoveSelectedSessions' ) )

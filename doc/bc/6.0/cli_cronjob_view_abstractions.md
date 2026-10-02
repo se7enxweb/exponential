@@ -212,19 +212,23 @@ Where a view and a command or cronjob part do the same work, the work is in one 
 // the trash
 if ( \Exponential\Service\Trash::canEmpty( \eZUser::currentUser() ) )   // content/cleantrash
     \Exponential\Service\Trash::purgeObjects( $objectIDs );                // the selected objects
-\Exponential\Service\Trash::emptyArchived();                              // every archived object, 100 at a time
-\Exponential\Service\Trash::purge( $cli, false, false, $script, 100, 1, 30 );  // batched and transactional, with progress,
+\Exponential\Service\Trash::emptyTrash();                                 // the Empty button: all of it, in batches
+\Exponential\Service\Trash::purgeInBatches( 100, 1, $trashedBefore );     // 100 at a time, a transaction each, 1 s between
+\Exponential\Service\Trash::purge( $cli, false, false, $script, 100, 1, 30 );  // the command: the same batches with progress,
                                                                           // only what has been in the trash 30 days
 
 // expired sessions
-\Exponential\Service\SessionGarbageCollector::collect();          // and the baskets they leave (command, cronjob part)
-\Exponential\Service\SessionGarbageCollector::collect( false );   // the sessions only (setup/session, as it always did)
+\Exponential\Service\SessionGarbageCollector::collect();          // and the baskets they leave (view, command, cronjob part)
+\Exponential\Service\SessionGarbageCollector::collect( false );   // the sessions only
 ```
 
-The services keep what each caller did before: the trash view still empties the trash with its own loop
-(`emptyArchived()`) and the command and the cronjob part with `eZScriptTrashPurge` (`purge()`); `setup/session`
-still leaves the baskets alone. The `bin/php/ezcache.php` command keeps `eZCacheHelper`, which writes the
-progress output it has always written.
+The trash view's Empty button and the command purge the same way: `purgeInBatches()`, each batch of 100 in a
+transaction of its own, the content cache cleared and a one second pause between batches (`eZScriptTrashPurge`,
+behind the command and the cronjob part, runs its batches through the service too). After the batches the
+button also purges any archived object left without a trash entry, so the trash is empty afterwards. Removing
+timed out sessions on `setup/session` removes the baskets they leave, as the command and the cronjob part do.
+The `bin/php/ezcache.php` command keeps `eZCacheHelper`, which writes the progress output it has always
+written.
 
 ## Extension points: events, the registry in site.ini, re-implementation
 
