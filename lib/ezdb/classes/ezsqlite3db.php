@@ -78,7 +78,8 @@ class eZSQLite3DB extends eZDBInterface
             }
         }
         // The busy timeout before the rest, so they wait for a lock as well
-        $this->DBConnection->busyTimeout( (int)$pragmas['busy_timeout'] );
+        $this->StatementWaitMs = (int)$pragmas['busy_timeout'];
+        $this->DBConnection->busyTimeout( $this->StatementWaitMs );
         unset( $pragmas['busy_timeout'] );
         foreach ( $pragmas as $name => $value )
         {
@@ -575,10 +576,146 @@ class eZSQLite3DB extends eZDBInterface
      timeout applies, so a transaction waits for another writer and then sees
      its commit. SQLite allows one writer at a time anyway; readers outside a
      transaction are not affected (WAL).
+
+     Writers queue instead of failing. Once a transaction has the write lock
+     nothing inside it can lose a lock race, and WAL makes its commit all or
+     nothing, so the start is the only place a transaction can fail for a
+     lock, and the safe place to wait: nothing has been written yet. The start
+     therefore waits [DatabaseSettings] SQLiteTransactionWait seconds (default
+     60, within the web server's request timeout) instead of the statements'
+     busy_timeout; a publish behind others waits its turn and completes.
+
+     The queue is a lock file next to the database (<database>.writer-lock):
+     a transaction takes it before BEGIN IMMEDIATE and gives it back when it
+     ends. A try at it costs a quarter of a failed BEGIN IMMEDIATE (which
+     opens a read snapshot and reports an error through PHP); the tries come
+     every 1-15 ms, thinning out as the wait grows, so the next writer is in
+     within a few ms of a commit (SQLite's busy handler sleeps up to 100 ms
+     between tries, and a released lock stood idle that long); and a writer
+     waiting longer than a second tries more often than the ones after it,
+     which serves writers about in the order they came (with the busy handler
+     newcomers overtook the longest waiters). The operating system releases
+     the lock of a process that ends, so no crash can block the queue. Writers
+     that do not use it (single statements, other programs) are still waited
+     for by SQLite's busy handler, within what is left of the wait. Measured
+     (#199): 192 publishes from 64 processes at once all completed whole,
+     where the generic start lost 6; 48 transactions of 300 ms at once were
+     done in 14.7 s, the 14.4 s they take one after another.
     */
     function beginQuery()
     {
-        return $this->query( "BEGIN IMMEDIATE" );
+        $start = microtime( true );
+        $deadline = $start + $this->transactionWaitMs() / 1000;
+        $gate = $this->writerGate();
+        if ( $gate )
+        {
+            while ( !flock( $gate, LOCK_EX | LOCK_NB ) )
+            {
+                $waited = microtime( true ) - $start;
+                if ( microtime( true ) >= $deadline )
+                {
+                    $this->ErrorNumber = 5;
+                    $this->ErrorMessage = 'database is locked';
+                    $this->BeginFailed = true;
+                    return false;
+                }
+                // Every wake-up costs CPU (about 50 us here, whatever is done awake), so the tries thin out
+                // as the wait grows, and a writer waiting longer than a second tries more often again than
+                // those that came after it, which keeps the queue about in arrival order.
+                usleep( $waited < 0.02 ? mt_rand( 1000, 2000 ) : ( $waited < 0.2 ? mt_rand( 3000, 6000 )
+                        : ( $waited < 1 ? mt_rand( 8000, 15000 ) : mt_rand( 5000, 10000 ) ) ) );
+            }
+            $this->HoldsWriterGate = true;
+        }
+        $left = (int)max( 1, ( $deadline - microtime( true ) ) * 1000 );
+        $this->DBConnection->busyTimeout( $left );
+        $ok = @$this->DBConnection->exec( "BEGIN IMMEDIATE" );
+        $this->DBConnection->busyTimeout( $this->StatementWaitMs );
+        if ( $ok )
+        {
+            $this->InSQLTransaction = true;
+            return true;
+        }
+        $this->setError();
+        $this->releaseWriterGate();
+        $this->BeginFailed = true;
+        return false;
+    }
+
+    /**
+     * The open lock file that queues this database's transactions, or false
+     * (an in-memory database, or a file that cannot be opened: then SQLite's
+     * own wait does the queueing). Opened once per connection; read-only is
+     * enough for flock(), so a file another user created works as well.
+     */
+    protected function writerGate()
+    {
+        // A forked process (a Velocity worker) must not use its parent's handle: flock() belongs to the open
+        // file, so processes sharing one would all count as its holder and no longer exclude each other.
+        if ( $this->WriterGate !== null && $this->WriterGatePid === getmypid() )
+            return $this->WriterGate;
+        $this->WriterGate = false;
+        $this->HoldsWriterGate = false;
+        $this->WriterGatePid = getmypid();
+        $path = self::filePath( $this->DB );
+        if ( $path === ':memory:' || $path === '' )
+            return false;
+        $lock = $path . '.writer-lock';
+        $fh = @fopen( $lock, 'c' );
+        if ( !$fh )
+            $fh = @fopen( $lock, 'r' );
+        if ( $fh )
+            $this->WriterGate = $fh;
+        return $this->WriterGate;
+    }
+
+    /// Gives the queue's lock back (after COMMIT or ROLLBACK, or a failed start)
+    protected function releaseWriterGate()
+    {
+        if ( $this->HoldsWriterGate && $this->WriterGate )
+            flock( $this->WriterGate, LOCK_UN );
+        $this->HoldsWriterGate = false;
+    }
+
+    /**
+     * How long a transaction's start waits for the write lock, in ms:
+     * [DatabaseSettings] SQLiteTransactionWait, in seconds (default 60).
+     */
+    protected function transactionWaitMs()
+    {
+        $seconds = 60;
+        $ini = eZINI::instance();
+        if ( $ini->hasVariable( 'DatabaseSettings', 'SQLiteTransactionWait' ) && is_numeric( $ini->variable( 'DatabaseSettings', 'SQLiteTransactionWait' ) ) )
+            $seconds = max( 1, (int)$ini->variable( 'DatabaseSettings', 'SQLiteTransactionWait' ) );
+        return $seconds * 1000;
+    }
+
+    /*!
+     \reimp
+     A start that did not get the write lock in time must not count as a
+     transaction. The generic begin() counts it whatever the start answered,
+     so everything after it ran as single statements, each committed on its
+     own, and the failure surfaced only at the next write, as "cannot rollback
+     - no transaction is active". Here it is reported at once, as the failed
+     transaction it is (error page, or eZDBException when asked for), with
+     the reason, and nothing has been written.
+    */
+    function begin()
+    {
+        $this->BeginFailed = false;
+        $result = parent::begin();
+        if ( $this->BeginFailed )
+        {
+            $this->BeginFailed = false;
+            if ( $this->ErrorNumber == 5 || $this->ErrorNumber == 6 )   // SQLITE_BUSY, SQLITE_LOCKED: out of time, say so
+                $this->ErrorMessage = sprintf( 'database is busy: the transaction could not start within %d s, another write held the lock all that time; nothing was written',
+                                               $this->transactionWaitMs() / 1000 );
+            else
+                $this->ErrorMessage = 'the transaction could not start: ' . $this->ErrorMessage . '; nothing was written';
+            eZDebug::writeError( $this->ErrorMessage, 'eZSQLite3DB' );
+            $this->reportError();
+        }
+        return $result;
     }
 
     /*!
@@ -587,16 +724,35 @@ class eZSQLite3DB extends eZDBInterface
     */
     function commitQuery()
     {
-        return $this->query( "COMMIT" );
+        $ok = $this->query( "COMMIT" );
+        if ( $ok )
+        {
+            $this->InSQLTransaction = false;
+            $this->releaseWriterGate();
+        }
+        return $ok;
     }
 
     /*!
      \reimp
-     The query to cancel the transaction.
+     The query to cancel the transaction. Nothing to cancel when SQLite has no
+     transaction open (its start failed, or SQLite ended it itself after an
+     error): answering ROLLBACK there failed with "no transaction is active"
+     and hid the error that mattered.
     */
     function rollbackQuery()
     {
-        return $this->query( "ROLLBACK" );
+        if ( !$this->InSQLTransaction )
+        {
+            $this->releaseWriterGate();
+            return true;
+        }
+        $this->InSQLTransaction = false;
+        $ok = @$this->DBConnection->exec( "ROLLBACK" )
+              || stripos( (string)$this->DBConnection->lastErrorMsg(), 'no transaction is active' ) !== false
+              || $this->query( "ROLLBACK" );
+        $this->releaseWriterGate();
+        return $ok;
     }
 
     /*!
@@ -667,9 +823,14 @@ class eZSQLite3DB extends eZDBInterface
     {
         if ( $this->IsConnected )
         {
-            $this->DBConnection->close();
+            $this->DBConnection->close();   // SQLite rolls back a transaction left open
             $this->IsConnected = false;
+            $this->InSQLTransaction = false;
         }
+        $this->releaseWriterGate();
+        if ( $this->WriterGate )
+            fclose( $this->WriterGate );
+        $this->WriterGate = null;
     }
 
     function __destruct()
@@ -899,6 +1060,17 @@ class eZSQLite3DB extends eZDBInterface
     }
 
     public $TempTableList;
+
+    /// The statements' lock wait in ms (busy_timeout), restored after a transaction's longer one
+    protected $StatementWaitMs = 5000;
+    /// Whether SQLite has a transaction open on this connection (BEGIN IMMEDIATE succeeded, not ended yet)
+    protected $InSQLTransaction = false;
+    /// Set by beginQuery() when the start did not get the write lock in time
+    protected $BeginFailed = false;
+    /// The open <database>.writer-lock file (null: not opened yet, false: none), and whether this connection holds it
+    protected $WriterGate = null;
+    protected $HoldsWriterGate = false;
+    protected $WriterGatePid = 0;
 }
 
 ?>
