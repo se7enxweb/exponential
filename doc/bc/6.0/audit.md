@@ -2113,6 +2113,149 @@ request that writes one channel.
 - The view `audit/recent` uses the `ezsetupnavigationpart`. It has no menu entry yet; the top tab and the
   navigation part are stage 4.
 
+## Stage 3 results (2026-10-02)
+
+Instrumentation of the whole kernel. Every hook point goes through `expAuditHook` (kernel/classes/audit/hook/
+expaudithook.php): the data of an event is only built when its name is on, nothing a hook point does can throw into
+the request, and every call site first checks `class_exists( 'expAuditHook' )`, so a Velocity worker that predates
+the class records nothing until it is restarted. Records carry the catalogue's verb (`expAuditHook::$verbs`). Where a
+call site needs a finer verb (create, remove, restart and so on), that verb goes to `after.action`. The 4.x
+`eZAudit::writeAudit()` calls of the kernel are now native events with full fields. The extensions' calls still use
+the compatibility path.
+
+- **Parents and children (F2).** A subtree removal is one `content.node.remove*` / `content.object.remove` parent with
+  a child per node below it. A subtree copy works the same way. The trash's purges are children of
+  `content.trash.empty`, a package install is the parent of what it installs, and a role stored by role/edit is the
+  parent of one `access.policy.add` / `access.policy.remove` per policy that differs. A content job run is
+  `content.job.start`, the parent of everything its batches record. The job id is on every event of the run, the job's
+  user is the actor and the process's user is `actor.impersonator`. A cronjob part's events carry the run
+  (`system.cronjob.run`).
+- **Inner hook points stay quiet** while an outer one records the action as a whole (`expAuditHook::muted()`). Examples:
+  the purge inside a removal, the section that follows a swap or a main-location change, the publish inside a restore,
+  the password change inside a reset, the draft object of a discarded new object.
+- **Where the hook points are:**
+  - the content operations (kernel/content/ezcontentoperationcollection.php), eZContentObjectTreeNode,
+    eZContentObject, eZContentObjectTreeNodeOperations and the trash service;
+  - eZUser (login, failed login, lock and unlock, store: create, e-mail, login and password changes; remove);
+  - eZUserOperationCollection, eZRole, eZPolicy, eZOrder, eZPaymentObject, eZCurrencyData, eZVatType and eZVatRule,
+    eZDiscountRule and eZDiscountSubRule;
+  - eZCache and expCacheManager, eZRunCronjobs, eZScript::shutdown(), eZPackage, expMaintenance, expVelocity and
+    expVelocityDeploy, ezpActiveExtensions;
+  - eZINI::save() (lib/ezutils), ezpRepairQueue (lib/ezutils), eZModule::handleError() (`access.permission.refused`,
+    lib/ezutils), ezpKernelWeb (`access.token.refused`, `access.view.sensitive`), the setup wizard's CreateSites step;
+  - and the views that are the only path (class, section, state, URL alias, history, restore, user password and
+    forgot password, role edit, trigger, template, system upgrade, shop checkout, infocollector, subitems export,
+    package export, pdf), the reads (content/view, search, download) and the data commands.
+- **The ezpEvent bridge** (kernel/classes/audit/bridge/expauditbridge.php) attaches one listener per
+  `[AuditBridgeSettings] Bridge[]` entry. Web requests attach it in `ezpEvent::registerEventListeners()`, where it is
+  replaced each request. Commands and cronjob parts attach it once per ezpEvent instance. A second attach on one
+  instance first removes the first set, so a Velocity worker records each event once. Arguments are made scalar; those
+  of `session/*` events are session ids and are only ever recorded hashed. The shipped mapping is `session/regenerate`
+  → `access.session.regenerate` and `session/destroy`, `session/gc` → `access.session.expire`, both off by default.
+- **`access.view.sensitive`** is recorded for signed-in users only. The login, register and password pages that
+  anonymous visitors open have events of their own.
+
+### Coverage matrix (C1)
+
+The matrix ran on alpha (SQLite) through the real code paths, on test fixtures only:
+
+- **Apache and Velocity (:8080, after its redeploy at 16:47):** `ai/bin/one/audit_stage3_run_web_matrix.sh <server>`.
+  These are HTTP requests as the admin forms send them: the administrator signs in on `/admin`, the test users on the
+  public siteaccess, and the form token is taken from the page. The record is found by the response's `X-Exp-Request-Id`.
+- **CLI:** `ai/bin/one/audit_stage3_coverage_cli.php` through ezexec, as the site user.
+
+Each action is checked for exactly the expected record. The check covers the name, the catalogue verb, `object.type`
+and `object.id`, the result, `request.engine`, the before and after keys, and that nothing of the never-recorded
+values (the test passwords, the reset key, session ids, an unknown e-mail address or attempted login in clear) appears
+in any record of the request. Events that are off by default were switched on for the web runs by a marked block in
+settings/override/audit.ini.append.php, taken out again and compared byte for byte (`audit_stage3_test_override.py`).
+On the command line they were switched on in the process only. Three of them were checked switched off as well, with
+no record.
+
+| Server | PASS | FAIL | n/a |
+|---|---|---|---|
+| Apache (PHP-FPM) | 59 | 0 | 5 |
+| Velocity (:8080) | 59 | 0 | 5 |
+| CLI | 78 | 0 | 45 |
+
+Per family, the names a server raised (several cases per name count once):
+
+| Family | Names | Apache PASS | Velocity PASS | CLI PASS | Raised on no server here |
+|---|---|---|---|---|---|
+| content | 42 | 30 | 30 | 28 | 2 |
+| access | 32 | 21 | 21 | 19 | 3 |
+| system | 40 | 2 | 2 | 7 | 32 |
+| commerce | 12 | 1 | 1 | 10 | 2 |
+| data | 9 | 1 | 1 | 2 | 7 |
+| **all** | **135** | **55** | **55** | **66** | **46** |
+
+The 22 `system.audit.*` names belong to the audit itself (stages 2, 4 and 5), and `access.session.reauth*` belongs to
+the audit module (stage 4). The other names no server raised in the test, and why:
+
+| Name | Why |
+|---|---|
+| `content.class.create` | a new class needs its attributes posted through the class editor's whole form: proven by class.change on the stored copy |
+| `content.object.download` | the test content has no file attribute |
+| `access.session.expire` | session/destroy comes from the session garbage collector here: a cronjob (recorded with engine cli) |
+| `access.session.reauth` | the audit module's re-authentication view: stage 4 |
+| `access.session.reauth.failed` | the audit module's re-authentication view: stage 4 |
+| `system.setting.undo` | the audit itself (stages 2, 4, 5): not a kernel hook point of stage 3 |
+| `system.extension.change` | a live setting (ActiveExtensions): not changed by tests |
+| `system.package.install` | a package install writes content and files into the live site; not run by tests |
+| `system.package.uninstall` | a package install writes content and files into the live site; not run by tests |
+| `system.package.import` | a package install writes content and files into the live site; not run by tests |
+| `system.install.run` | an installation (the setup wizard / kickstarter): not run by tests |
+| `system.velocity.deploy` | exp:velocity deploy/restart: run by the lead only |
+| `system.template.change` | views (visual/templateedit, templatecreate): live templates are not changed by tests |
+| `system.workflow.trigger.change` | a view (trigger/list): live workflow triggers are not changed by tests |
+| `system.error.fatal` | the audit itself (stages 2, 4, 5): not a kernel hook point of stage 3 |
+| `commerce.order.purge` | removes every order of the installation: not run on live data |
+| `commerce.basket.checkout` | a view (shop/checkout) with a basket: web |
+| `data.export.package` | a view (package/export): web |
+| `data.export.pdf` | content/pdf fails before it sends a PDF (an error of its own: eZContentObject::cacheInfo() called statically) |
+| `data.import.dba` | writes a datatype's data into the live database: not run by tests |
+| `data.import.rss` | needs an RSS import definition and a feed: not run by tests |
+| `data.infocollection.remove` | views (infocollector/*): web |
+| `data.infocollection.view` | a view (infocollector/view): web |
+| `data.index.rebuild` | reindexes every object of the installation: not run by tests |
+
+The fixtures were one folder "Audit stage 3 test …" under Media (node 43), a test user group "Audit stage 3 test
+users …" with its test users, and a test role, section, state group, VAT type, currency, discount group and order.
+The tests created all of them and removed them again. The cleanup proof
+(`ai/bin/one/audit_stage3_cleanup_and_proof.php`) reports **PASS: no test content, users, groups, roles, sections or
+state groups left**. The audit records about the tests stay, as they should. A subtree removal that holds two
+locations of one object can leave that object published without a location. This is the kernel's own behaviour: the
+batch it fetched has a stale main-node flag. The cleanup purges such objects.
+
+Unit tests: `tests/tests/kernel/classes/audit/expAuditHookTest.php` (5 tests, 25 assertions, live database: the kernel
+is started on the admin siteaccess, and records go to var/tmp/audit-tests/):
+
+- every catalogue name has a hook point;
+- a name that is off builds no data, and a muted name records nothing;
+- the catalogue verbs and `after.action`;
+- the descriptions read from the live database;
+- the bridge records once after a double attach, hashes session ids and passes a filter's value through.
+
+### Overhead
+
+Measured in the kernel as in stage 2 (`ai/bin/one/audit_stage3_measure_hook_overhead.php`, live settings, 2 000
+requests):
+
+| Case | p50 | p95 |
+|---|---|---|
+| A hook point whose name is off (`emit()`, sampled `read()` with reads off) | 0.001 ms | 0.001 ms |
+| What every web request now does: the bridge attached and the sensitive-view check | 0.101 ms | 0.132 ms |
+| A request without events: stage 2's case A plus every stage 3 hook it passes | 0.127 ms | 0.157 ms |
+| A hook point that records (a node described from the database, one append) | 0.54 ms | 0.63 ms |
+
+Stage 2 measured 0.090 ms for a request without events. The stage 3 hooks add about 0.04 ms to it, against a target of
+2 ms.
+
+### Findings outside the audit
+
+- content/pdf answers 500 before it sends a PDF, so `data.export.pdf` could not be raised.
+  The error is ERR-B56352935A: `eZContentObject::cacheInfo()` is called statically.
+
 ## Stage 4 results (2026-10-02)
 
 The index and the console. Everything below was run on alpha (SQLite) on Apache (PHP-FPM, `/admin` = admin4 and
