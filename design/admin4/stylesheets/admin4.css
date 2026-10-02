@@ -932,3 +932,50 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
     font-size: 12px;
   }
 }
+
+/* The node view's actions on phones and small tablets: the group takes the card's width and wraps, instead of
+   one line sized to its content that ran past the card (Remove and the three icon buttons were cut off). The
+   language choice and the buttons share the lines; the icon buttons follow. */
+@media (max-width: 767px) {
+  .controlbar.a4-node-actions {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  .controlbar.a4-node-actions form,
+  .controlbar.a4-node-actions .button-left,
+  .controlbar.a4-node-actions .block {
+    width: 100%;
+    min-width: 0;
+  }
+  .controlbar.a4-node-actions .block { gap: 5px; }
+  .controlbar.a4-node-actions .block select {
+    flex: 1 1 150px;
+    min-width: 0;
+  }
+  .controlbar.a4-node-actions .block input.button,
+  .controlbar.a4-node-actions .block input.defaultbutton,
+  .controlbar.a4-node-actions .block input.button-disabled {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0 8px;
+    font-size: 12.5px;
+  }
+}
+/* ... and all the controls flow as one set: the groups around them (the node view's own markup) step aside, so
+   the language choice, Edit, Move, Remove and the icon buttons fill the lines together, the choice growing,
+   the buttons at their own width. */
+@media (max-width: 767px) {
+  .controlbar.a4-node-actions form { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; width: 100%; }
+  .controlbar.a4-node-actions .button-left,
+  .controlbar.a4-node-actions .block,
+  .controlbar.a4-node-actions .a4-node-links,
+  .controlbar.a4-node-actions .a4-node-links .versions { display: contents; }
+  .controlbar.a4-node-actions .block input.button,
+  .controlbar.a4-node-actions .block input.defaultbutton,
+  .controlbar.a4-node-actions .block input.button-disabled { flex: 0 0 auto; }
+  .controlbar.a4-node-actions .block select { flex: 1 1 120px; }
+}
+@media (max-width: 767px) {
+  /* the language choice keeps room for its longest usual label ("English (American)"); the buttons wrap first */
+  .controlbar.a4-node-actions .block select { flex: 1 1 10.5em; min-width: 10.5em; }
+}
