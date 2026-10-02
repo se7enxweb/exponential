@@ -5,8 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {* Do some uncacheable left + right menu stuff before cache-block's *}
+    {* $hide_left_menu and $hide_right_menu as the admin design defines them: on content edit pages (edit, history,
+       version view ...) the page's own template brings the left column (Object information) and the content tree
+       is not drawn; a template can ask for it with persistent_variable left_menu / extra_menu. admin3 had lost the
+       two definitions but kept their {if}s, so the tree and the template's column were both drawn, fixed at the
+       same place, one over the other. *}
     {def $ui_context_edit      = eq( $ui_context, 'edit' )
      $content_edit         = and( $ui_context_edit, eq( $ui_component, 'content' ) )
+     $hide_left_menu       = first_set( $module_result.content_info.persistent_variable.left_menu, $content_edit|not )|not
+     $hide_right_menu      = first_set( $module_result.content_info.persistent_variable.extra_menu, $ui_context_edit|not )|not
      $admin_left_size      = ezpreference( 'admin_left_menu_size' )
      $admin_theme          = ezpreference( 'admin_theme' )
      $left_size_hash       = 0

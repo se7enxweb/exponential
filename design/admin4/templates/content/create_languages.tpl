@@ -10,7 +10,7 @@
     {/if}
 {/foreach}
 
-<div id="leftmenu">
+<div id="leftmenu" class="sidebar left">
 <div id="leftmenu-design">
 
 <div class="objectinfo">

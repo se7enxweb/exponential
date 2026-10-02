@@ -1,6 +1,6 @@
 {let version=fetch( content, version, hash( object_id, $object_id, version_id, $object_version ) )}
 
-<div id="leftmenu">
+<div id="leftmenu" class="sidebar left">
 <div id="leftmenu-design">
 
 <div class="objectinfo">

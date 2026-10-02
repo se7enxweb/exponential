@@ -3,7 +3,7 @@
 {if $ui_context|eq('edit')}
 {let content_object=fetch( content, object, hash( object_id, $upload.content.object_id  ) )
      content_version=fetch( content, version, hash( object_id, $upload.content.object_id, version_id, $upload.content.object_version ) )}
-<div id="leftmenu">
+<div id="leftmenu" class="sidebar left">
 <div id="leftmenu-design">
 
 {include uri="design:content/parts/object_information.tpl" object=$content_object manage_version_button=false()}

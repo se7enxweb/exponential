@@ -1,4 +1,4 @@
-<div id="leftmenu">
+<div id="leftmenu" class="sidebar left">
 <div id="leftmenu-design">
 
 {include uri="design:content/parts/object_information.tpl" object=$object manage_version_button=false()}

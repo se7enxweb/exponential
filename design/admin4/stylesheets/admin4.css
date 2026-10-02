@@ -786,3 +786,30 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
   .a4-login-title { font-size: 24px; }
   .a4-login-form #logintext, .a4-login-form #passwordtext { height: 48px; }
 }
+
+/* ---- Edit-type pages (content/edit, history, version view ...) ------------------------------------------------
+   Their templates bring their own columns (#leftmenu with the object information, #maincontent, #rightmenu)
+   straight into .dashboard-flex, without the #maincolumn wrapper whose padding spaces the main card elsewhere. */
+.dashboard-flex > #maincontent {
+  margin: 32px;
+}
+
+/* The edit form's buttons (Send for publishing / Store draft / Store draft and exit / Discard draft) stay in view
+   under the header while the form scrolls. admin3 did this with fixed_toolbar.js, a YUI script that stopped
+   working when YUI went; this is CSS only: sticky, just under the header (--header-height, kept current by
+   admin4.js). #page clipped with overflow: hidden, which made it the scroll box sticky works against (one that
+   never scrolls); overflow: clip clips the same and is no scroll box. */
+#page {
+  overflow: clip;
+}
+#controlbar-top {
+  position: sticky;
+  top: calc(var(--header-height, 6.25rem) + 6px);
+  z-index: 60;
+}
+#controlbar-top .box-bc {
+  background-color: rgba(246, 247, 249, 0.94);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 0 1px var(--a4-line), 0 8px 20px rgba(16, 24, 40, 0.10);
+}
