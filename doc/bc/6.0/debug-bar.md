@@ -212,14 +212,14 @@ that matched, the engine (Velocity or the SAPI) and the siteaccess. Every figure
 
 | Function | Request | Needs |
 |---|---|---|
-| `settings[::<siteaccess>]` | GET | debug output for the request, or setup/setup or setup/managecache |
+| `settings[::<siteaccess>]` | GET | setup/setup (nothing about the configuration goes to anybody else) |
 | `set` | POST `setting`, `op`, `value`, `scope` [`siteaccess`, `confirm`, `dry_run`] | setup/setup |
 | `undo` | POST `entry` or `group` [`force`] | setup/setup |
 | `preset` | POST `preset` + `scope` (apply), `save` [+ `values` JSON or `snapshot=1`], or `delete` | setup/setup |
-| `cache` | GET `action=list`; POST `action=clear`, `by=all\|tag\|id\|node\|velocity\|opcache`, `names`, `node_id` | setup/setup or setup/managecache to list, setup/managecache to clear |
-| `iptest` | `address`, `list` (JSON array) | as `settings` |
-| `log[::<limit>]` | GET | setup/setup or setup/managecache |
-| `summary` | GET | as `settings` |
+| `cache` | GET `action=list`; POST `action=clear`, `by=all\|tag\|id\|node\|velocity\|opcache`, `names`, `node_id` | setup/managecache (list and clear) |
+| `iptest` | `address`, `list` (JSON array) | setup/setup |
+| `log[::<limit>]` | GET | setup/setup |
+| `summary` | GET | debug output for the request (the report itself; a visitor gets no IP list entry in it) |
 
 Every POST must carry the form token (`ezxform_token`, or the header `X-CSRF-Token`); the `settings` answer has
 it. Someone who only sees the debug report gets the settings without the IP and user lists, the log or the
@@ -339,7 +339,7 @@ Off, and the user's own) are applied to the scope picked next to them and can be
 as preset" stores the values in effect under a name.
 
 The change log lists the last writes (who, which setting, old and new value, scope) with Undo; an undo that finds
-the file changed since asks before forcing it. Without setup/setup the tab shows the values read-only.
+the file changed since asks before forcing it. Without setup/setup the Settings tab holds only the note "Sign in with setup access to change debug settings" (no values, no IP or user lists, no log, no file paths); without setup/managecache the Cache tab holds only the note "Sign in with cache access to manage caches".
 
 ### Who gets debug: the IP list and the user list
 

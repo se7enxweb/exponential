@@ -680,7 +680,12 @@
       const classic = root.querySelector('.exp-debug-classic'); if (classic) classic.open = true;
     });
   };
-  if (settingsBox) loaders.settings = () => loadSettings();
+  const userRights = data.user || {};
+  if (settingsBox && !userRights.can_setup) {
+    // no policy: no call, no values; the server refuses as well
+    settingsBox.replaceChildren(el('p', { class: 'exp-debug-hint exp-debug-warn' }, t('Sign in with setup access to change debug settings')));
+    settingsBox.setAttribute('data-state', 'restricted');
+  } else if (settingsBox) loaders.settings = () => loadSettings();
 
   /* ---------------------------------------------------------------- cache */
   const cacheBox = root.querySelector('.exp-debug-cache');
@@ -753,7 +758,10 @@
       failure(cacheBox, err, loadCache);
     });
   };
-  if (cacheBox) { loaders.cache = loadCache; loaders.velocity = () => { if (!loaded.cache) { loaded.cache = true; loadCache(); } }; }
+  if (cacheBox && !userRights.can_cache) {
+    cacheBox.replaceChildren(el('p', { class: 'exp-debug-hint exp-debug-warn' }, t('Sign in with cache access to manage caches')));
+    cacheBox.setAttribute('data-state', 'restricted');
+  } else if (cacheBox) { loaders.cache = loadCache; loaders.velocity = () => { if (!loaded.cache) { loaded.cache = true; loadCache(); } }; }
 
   /* ---------------------------------------------------------------- start */
   select(read('exp-debug-tab') || 'messages');

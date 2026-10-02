@@ -12,8 +12,9 @@
  *   expdebugbar::log[::<limit>]             the newest log entries
  *   expdebugbar::summary                    the summary of this request
  *
- * Reading needs setup/setup, setup/managecache or debug output for this request (the people who see the report);
- * writing settings needs setup/setup, clearing caches setup/managecache; every write is a POST with the form token.
+ * Only summary needs debug output for this request (the people who see the report). settings, log and iptest need
+ * setup/setup, the cache list and clearing caches need setup/managecache, and nothing about the configuration (values,
+ * file paths, IP and user lists, the change log) goes to anybody else. Every write is a POST with the form token.
  * Guide: doc/bc/6.0/debug-bar.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -65,26 +66,28 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
         throw new InvalidArgumentException( 'The debug bar needs debug output for this request, or the policy setup/setup or setup/managecache' );
     }
 
+    /** @throws InvalidArgumentException unless the user has setup/setup (settings, log, IP test) */
+    public static function requireSetup()
+    {
+        if ( self::canWrite() )
+            return;
+        throw new InvalidArgumentException( 'Sign in with setup access to change debug settings (policy setup/setup)' );
+    }
+
+    /** @throws InvalidArgumentException unless the user has setup/managecache (the cache list) */
+    public static function requireCache()
+    {
+        if ( self::canCache() )
+            return;
+        throw new InvalidArgumentException( 'Sign in with cache access to manage caches (policy setup/managecache)' );
+    }
+
     /** @throws InvalidArgumentException unless the user has setup/setup or setup/managecache */
     public static function requirePrivileged()
     {
         if ( self::canWrite() || self::canCache() )
             return;
         throw new InvalidArgumentException( 'This needs the policy setup/setup or setup/managecache' );
-    }
-
-    /**
-     * The iptest answer for a visitor without the policies: the own address and whether it is let in, not the
-     * list.
-     */
-    public static function publicIPAnswer( array $ip )
-    {
-        $ip['entries'] = array();
-        if ( $ip['matched'] !== null )
-            $ip['matched'] = array( 'index' => $ip['matched']['index'] );
-        $ip['request_match'] = $ip['request_match'] !== null ? array( 'index' => $ip['request_match']['index'] ) : null;
-        $ip['warnings'] = array();
-        return $ip;
     }
 
     /**
@@ -153,29 +156,12 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
      */
     public static function settings( $args )
     {
-        self::requireRead();
+        self::requireSetup();
         $service = self::service( self::siteAccessParam( $args ) );
         $user = eZUser::currentUser();
         $registry = $service->registry();
-        $privileged = self::canWrite() || self::canCache();
         $settings = $service->describeAll();
         $ip = self::ipAnswer( null, null, $service );
-        if ( !$privileged )
-        {
-            // who gets debug (addresses, user ids) and who changed what are for the people who may change them
-            foreach ( $settings as $i => $s )
-            {
-                if ( in_array( $s['type'], array( 'iplist', 'userlist' ), true ) )
-                {
-                    $settings[$i]['effective'] = null;
-                    $settings[$i]['files'] = array();
-                    $settings[$i]['scopes'] = array();
-                    $settings[$i]['entries'] = array();
-                    $settings[$i]['hidden'] = true;
-                }
-            }
-            $ip = self::publicIPAnswer( $ip );
-        }
         return array(
             'siteaccess' => $service->siteAccess(),
             'siteaccesses' => expIniEditor::knownSiteAccesses(),
@@ -190,7 +176,7 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
             'settings' => $settings,
             'presets' => $service->presets(),
             'ip' => $ip,
-            'log' => $privileged ? $service->log()->recent( (int)$registry->option( 'LogListLimit', 20 ) ) : array(),
+            'log' => $service->log()->recent( (int)$registry->option( 'LogListLimit', 20 ) ),
             'problems' => $registry->problems(),
         );
     }
@@ -259,7 +245,7 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
         $action = (string)self::param( 'action', isset( $args[0] ) ? $args[0] : 'list' );
         if ( $action !== 'clear' )
         {
-            self::requirePrivileged();
+            self::requireCache();
             return self::cacheList();
         }
         self::requireWrite( 'managecache' );
@@ -355,7 +341,7 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
      */
     public static function iptest( $args )
     {
-        self::requireRead();
+        self::requireSetup();
         $address = self::param( 'address', isset( $args[0] ) ? $args[0] : null );
         $list = self::param( 'list' );
         if ( is_string( $list ) && $list !== '' )
@@ -365,9 +351,6 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
                 throw new InvalidArgumentException( 'list must be a JSON array of lines' );
         }
         $answer = self::ipAnswer( $address !== null && $address !== '' ? (string)$address : null, is_array( $list ) ? $list : null, self::service( self::siteAccessParam() ) );
-        // the list in effect is for the people who may change it; a list the caller sent is theirs to see
-        if ( !is_array( $list ) && !self::canWrite() && !self::canCache() )
-            $answer = self::publicIPAnswer( $answer );
         return $answer;
     }
 
@@ -418,7 +401,7 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
      */
     public static function log( $args )
     {
-        self::requirePrivileged();
+        self::requireSetup();
         $limit = isset( $args[0] ) && ctype_digit( (string)$args[0] ) ? (int)$args[0] : 50;
         return array( 'entries' => self::service()->log()->recent( min( 500, max( 1, $limit ) ) ) );
     }

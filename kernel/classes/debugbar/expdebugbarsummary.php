@@ -133,12 +133,30 @@ class expDebugBarSummary
             'debug' => array( 'enabled' => class_exists( 'eZDebug', false ) ? eZDebug::isDebugEnabled() : false,
                               'by_ip' => $ini ? $ini->variable( 'DebugSettings', 'DebugByIP' ) === 'enabled' : false,
                               'by_user' => $ini ? $ini->variable( 'DebugSettings', 'DebugByUser' ) === 'enabled' : false,
-                              'ip_match' => isset( $GLOBALS['eZDebugIPMatch'] ) ? $GLOBALS['eZDebugIPMatch'] : null ),
+                              // the entry that matched is a line of the list: only for those who may see the list
+                              'ip_match' => isset( $GLOBALS['eZDebugIPMatch'] ) ? ( self::mayReadLists() ? $GLOBALS['eZDebugIPMatch'] : true ) : null ),
             'engine' => self::engine(),
             'siteaccess' => isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : null,
             'php' => PHP_VERSION,
             'thresholds' => $thresholds,
         );
+    }
+
+    /** Whether the current user has setup/setup (may see the IP and user lists). */
+    protected static function mayReadLists()
+    {
+        if ( !class_exists( 'eZUser', false ) )
+            return false;
+        try
+        {
+            $user = eZUser::currentUser();
+            $access = $user ? $user->hasAccessTo( 'setup', 'setup' ) : null;
+            return isset( $access['accessWord'] ) && $access['accessWord'] !== 'no';
+        }
+        catch ( Throwable $e )
+        {
+            return false;
+        }
     }
 
     /**

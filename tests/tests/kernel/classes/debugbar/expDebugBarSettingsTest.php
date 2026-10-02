@@ -595,50 +595,88 @@ class expDebugBarSettingsTest extends PHPUnit\Framework\TestCase
         $this->assertNotFalse( json_encode( $a ) );
     }
 
-    public function testVisitorWithoutPolicySeesNoListsAndNoLog()
+    public function testVisitorWithoutPolicyGetsNoConfigurationAtAll()
     {
         expDebugBarServerFunctions::$serviceFactory = function ( $sa ) { return $this->service( $sa ); };
         $anon = eZUser::fetch( eZINI::instance()->variable( 'UserSettings', 'AnonymousUserID' ) );
         eZUser::setCurrentlyLoggedInUser( $anon, $anon->attribute( 'contentobject_id' ) );
         $savedEnabled = isset( $GLOBALS['eZDebugEnabled'] ) ? $GLOBALS['eZDebugEnabled'] : null;
+        $savedMatch = isset( $GLOBALS['eZDebugIPMatch'] ) ? $GLOBALS['eZDebugIPMatch'] : null;
         try
         {
+            // with and without debug output for this request: settings, log, iptest and the cache list are refused
+            foreach ( array( false, true ) as $debugOutput )
+            {
+                $GLOBALS['eZDebugEnabled'] = $debugOutput;
+                foreach ( array( 'settings' => 'setup/setup', 'log' => 'setup/setup', 'iptest' => 'setup/setup', 'cache' => 'setup/managecache' ) as $fn => $policy )
+                {
+                    try
+                    {
+                        $r = expDebugBarServerFunctions::$fn( array() );
+                        $this->fail( "$fn must be refused without $policy (debug output " . var_export( $debugOutput, true ) . '): ' . substr( json_encode( $r ), 0, 120 ) );
+                    }
+                    catch ( InvalidArgumentException $e )
+                    {
+                        $this->assertStringContainsString( $policy, $e->getMessage(), $fn );
+                    }
+                }
+            }
+            $this->assertFalse( expDebugBarServerFunctions::canWrite() );
+            $this->assertFalse( expDebugBarServerFunctions::canCache() );
+
+            // the summary stays: the report itself, without the line of the list that matched
+            $GLOBALS['eZDebugEnabled'] = true;
+            $GLOBALS['eZDebugIPMatch'] = array( 'index' => 0, 'line' => '203.0.113.7/32 ; secret label', 'address' => '203.0.113.7/32', 'label' => 'secret label' );
+            $s = expDebugBarServerFunctions::summary( array() );
+            $this->assertTrue( $s['debug']['ip_match'] );
+            $this->assertStringNotContainsString( 'secret label', json_encode( $s ) );
+            $this->assertStringNotContainsString( '203.0.113.7', json_encode( $s ) );
             $GLOBALS['eZDebugEnabled'] = false;
             try
             {
-                expDebugBarServerFunctions::settings( array() );
+                expDebugBarServerFunctions::summary( array() );
                 $this->fail( 'no debug output and no policy: refused' );
             }
             catch ( InvalidArgumentException $e )
             {
                 $this->assertStringContainsString( 'setup/setup', $e->getMessage() );
             }
-            // a visitor who sees the debug report
-            $GLOBALS['eZDebugEnabled'] = true;
-            $a = expDebugBarServerFunctions::settings( array( 'admin' ) );
-            $this->assertFalse( $a['can_write'] );
-            $this->assertSame( array(), $a['log'] );
-            $this->assertSame( array(), $a['ip']['entries'] );
-            foreach ( $a['settings'] as $s )
-                if ( in_array( $s['type'], array( 'iplist', 'userlist' ), true ) )
-                    $this->assertTrue( $s['hidden'] && $s['effective'] === null && $s['files'] === array(), $s['id'] );
-            foreach ( array( 'log', 'cache' ) as $fn )
-            {
-                try
-                {
-                    expDebugBarServerFunctions::$fn( array() );
-                    $this->fail( "$fn needs a policy" );
-                }
-                catch ( InvalidArgumentException $e )
-                {
-                    $this->assertStringContainsString( 'setup/', $e->getMessage() );
-                }
-            }
         }
         finally
         {
             $GLOBALS['eZDebugEnabled'] = $savedEnabled;
+            if ( $savedMatch === null )
+                unset( $GLOBALS['eZDebugIPMatch'] );
+            else
+                $GLOBALS['eZDebugIPMatch'] = $savedMatch;
         }
+    }
+
+    public function testSetupPolicyAloneOpensSettingsLogAndIPTestButNotTheCacheList()
+    {
+        // admin has both policies; a fake user with managecache only is not available without creating one, so the
+        // rule is checked through the guards: setup/setup decides settings, log and iptest
+        expDebugBarServerFunctions::requireSetup();
+        expDebugBarServerFunctions::requireCache();
+        $this->assertTrue( expDebugBarServerFunctions::canWrite() );
+        $this->assertTrue( expDebugBarServerFunctions::canCache() );
+        $source = file_get_contents( __DIR__ . '/../../../../../kernel/classes/debugbar/expdebugbarserverfunctions.php' );
+        foreach ( array( 'settings', 'log', 'iptest' ) as $fn )
+            $this->assertMatchesRegularExpression( '/function ' . $fn . '\( \$args \)\s*\{\s*self::requireSetup\(\);/', $source, $fn );
+        $this->assertMatchesRegularExpression( '/self::requireCache\(\);\s*return self::cacheList\(\)/', $source );
+    }
+
+    public function testReportCarriesNoSettingsForAVisitor()
+    {
+        $report = file_get_contents( __DIR__ . '/../../../../../lib/ezutils/classes/expdebugbarreport.php' );
+        // the classic toolbar (values of the quick settings) and the cache tab's content only behind the rights
+        $this->assertMatchesRegularExpression( '/if \( !\$userInfo\[\'can_setup\'\] \)\s*\{[^}]*Sign in with setup access[^}]*\}\s*else if \( \$classicToolbar/s', $report );
+        $this->assertMatchesRegularExpression( '/if \( !\$user\[\'can_cache\'\] \)\s*return \'<p[^;]*Sign in with cache access/s', $report );
+        $js = file_get_contents( __DIR__ . '/../../../../../design/standard/javascript/expdebugbar.js' );
+        $this->assertStringContainsString( '!userRights.can_setup', $js );
+        $this->assertStringContainsString( '!userRights.can_cache', $js );
+        foreach ( array( 'Sign in with setup access to change debug settings', 'Sign in with cache access to manage caches' ) as $note )
+            $this->assertContains( $note, expDebugBarReport::scriptStrings() );
     }
 
     public function testWritesNeedPostTokenAndPolicy()

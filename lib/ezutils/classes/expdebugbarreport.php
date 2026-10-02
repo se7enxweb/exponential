@@ -83,7 +83,7 @@ class expDebugBarReport
             'All', 'Errors', 'Warnings', 'Notices', 'Debug', 'Timing points', 'Strict',
             'Show messages', 'Sort by time', 'Sort by order', 'Slowest first',
             'Loading...', 'Could not load: %error', 'Retry',
-            'Sign in with a user who may change settings (setup/setup) to change them here.',
+            'Sign in with a user who may change settings (setup/setup) to change them here.', 'Sign in with setup access to change debug settings', 'Sign in with cache access to manage caches',
             'The settings service is not available yet. The classic controls below still work.',
             'Effective value', 'Comes from', 'Write to', 'Apply', 'Applied', 'Not changed', 'Reset', 'Help',
             'default', 'global override', 'siteaccess', 'extension', 'not set',
@@ -271,9 +271,14 @@ class expDebugBarReport
         // --- Settings (drawn by the script; the classic toolbar below it)
         self::panelStart( 'settings', $tabs );
         echo '<div class="exp-debug-settings" data-state="pending"></div>';
-        if ( $classicToolbar !== '' )
+        if ( !$userInfo['can_setup'] )
         {
-            echo '<details class="exp-debug-classic"' . ( $userInfo['can_setup'] ? '' : ' open' ) . '><summary>' . self::h( 'Classic controls' ) . '</summary>';
+            // the classic toolbar shows the quick settings' values: for setup/setup only
+            echo '<p class="exp-debug-hint exp-debug-warn">' . self::h( 'Sign in with setup access to change debug settings' ) . '</p>';
+        }
+        else if ( $classicToolbar !== '' )
+        {
+            echo '<details class="exp-debug-classic"><summary>' . self::h( 'Classic controls' ) . '</summary>';
             echo '<table class="exp-debug-classic-table">' . $classicToolbar . '</table>';
             echo '</details>';
         }
@@ -316,7 +321,7 @@ class expDebugBarReport
 
         // --- Velocity
         self::panelStart( 'velocity', $tabs );
-        echo self::velocityHtml();
+        echo self::velocityHtml( $userInfo['can_setup'] || $userInfo['can_cache'] );
         self::panelEnd();
 
         if ( $otherReports !== '' )
@@ -679,7 +684,7 @@ class expDebugBarReport
         return $html;
     }
 
-    protected static function velocityHtml()
+    protected static function velocityHtml( $privileged = false )
     {
         $rows = array();
         if ( defined( 'QBIX_SERVER_VERSION' ) )
@@ -694,8 +699,11 @@ class expDebugBarReport
             $rows[self::t( 'Engine' )] = $engine ? $engine : trim( $software . ' (' . PHP_SAPI . ')' );
         }
         $rows['PHP'] = PHP_VERSION . ' (' . PHP_SAPI . ')';
-        $rows[self::t( 'Process' )] = (string)getmypid();
-        $rows[self::t( 'Host' )] = function_exists( 'gethostname' ) ? (string)gethostname() : '';
+        if ( $privileged )
+        {
+            $rows[self::t( 'Process' )] = (string)getmypid();
+            $rows[self::t( 'Host' )] = function_exists( 'gethostname' ) ? (string)gethostname() : '';
+        }
 
         $html = '';
         if ( !defined( 'QBIX_SERVER_VERSION' ) )
@@ -705,8 +713,11 @@ class expDebugBarReport
             $html .= '<tr><th>' . htmlspecialchars( $k ) . '</th><td>' . htmlspecialchars( $v ) . '</td></tr>';
         $html .= '</table>';
 
-        $html .= '<h3>' . self::h( 'OPcache' ) . '</h3>' . self::opcacheHtml();
-        $html .= '<div class="exp-debug-velocity-cache"></div>';
+        if ( $privileged )
+        {
+            $html .= '<h3>' . self::h( 'OPcache' ) . '</h3>' . self::opcacheHtml();
+            $html .= '<div class="exp-debug-velocity-cache"></div>';
+        }
         return $html;
     }
 
@@ -758,9 +769,9 @@ class expDebugBarReport
      */
     protected static function cacheHtml( array $page, array $user )
     {
-        $html = '<div class="exp-debug-cache" data-state="pending"></div>';
         if ( !$user['can_cache'] )
-            return $html . '<p class="exp-debug-hint">' . self::h( 'You may not clear caches (setup/managecache).' ) . '</p>';
+            return '<p class="exp-debug-hint exp-debug-warn">' . self::h( 'Sign in with cache access to manage caches' ) . '</p>';
+        $html = '<div class="exp-debug-cache" data-state="pending"></div>';
 
         $types = array();
         if ( $page['node_id'] )
