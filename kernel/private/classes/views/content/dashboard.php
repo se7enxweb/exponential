@@ -112,7 +112,7 @@ class Dashboard extends \Exponential\Runnable\ModuleView
             {
                 foreach( (array)$ini->variable( $blockGroupName, 'ViewList' ) as $viewURI )
                 {
-                    if ( $viewURI !== '' && !\expViewAccess::canOpen( $viewURI, $currentUser ) )
+                    if ( $viewURI !== '' && class_exists( 'expViewAccess' ) && !\expViewAccess::canOpen( $viewURI, $currentUser ) )
                     {
                         $hasAccess = false;
                         break;

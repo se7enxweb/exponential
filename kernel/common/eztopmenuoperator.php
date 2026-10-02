@@ -155,7 +155,7 @@ class eZTopMenuOperator
 
             // menu.ini [MenuAccessSettings] CheckViewAccess: the tab's address must open for the user,
             // checked as the kernel checks the request (the view's policies, siteaccess, node)
-            if ( $menuItem['access'] && $this->checkViewAccess( $ini ) && !expViewAccess::canOpen( $menuItem['url'] ) )
+            if ( $menuItem['access'] && $this->checkViewAccess( $ini ) && class_exists( 'expViewAccess' ) && !expViewAccess::canOpen( $menuItem['url'] ) )
             {
                 $menuItem['access'] = false;
             }

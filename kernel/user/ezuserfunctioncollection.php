@@ -197,7 +197,7 @@ class eZUserFunctionCollection
      */
     function canOpen( $uri )
     {
-        return array( 'result' => expViewAccess::canOpen( $uri ) );
+        return array( 'result' => class_exists( 'expViewAccess' ) ? expViewAccess::canOpen( $uri ) : true );
     }
 }
 }
