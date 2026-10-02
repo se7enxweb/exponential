@@ -725,7 +725,7 @@ if ( !function_exists( 'browse' ) ) {
 /*!
 Browse for node to place the object copy into
 */
-function browse( $Module, $srcNode )
+function browse( $Module, $srcNode, $contentJob = null )
 {
     if ( $Module->hasActionParameter( 'LanguageCode' ) )
         $languageCode = $Module->actionParameter( 'LanguageCode' );
@@ -771,7 +771,10 @@ function browse( $Module, $srcNode )
                 'start_node'           => $srcParentNodeID,
                 'cancel_page'          => $Module->redirectionURIForModule( $Module, 'view',
                                                          array( $viewMode, $srcParentNodeID, $languageCode ) ),
-                'from_page'            => "/content/copysubtree" ),
+                'from_page'            => "/content/copysubtree",
+                // content jobs: the now-or-background choice and what the copy touches, for browse_copy_subtree.tpl
+                'content_job_mode'     => is_array( $contentJob ) && isset( $contentJob['mode'] ) ? $contentJob['mode'] : null,
+                'content_job_summary'  => is_array( $contentJob ) && isset( $contentJob['summary'] ) ? $contentJob['summary'] : null ),
          $Module );
 }
 }
@@ -792,6 +795,9 @@ function chooseOptionsToCopy( $Module, &$Result, $srcNode, $chooseVersions, $cho
         $tpl->setVariable( 'choose_versions', $chooseVersions );
         $tpl->setVariable( 'choose_creator', $chooseCreator );
         $tpl->setVariable( 'choose_time', $chooseTime );
+        // content jobs: the choice made on the browse page, sent on with the options
+        $http = eZHTTPTool::instance();
+        $tpl->setVariable( 'content_job_mode', $http->hasPostVariable( 'ContentJobMode' ) ? (string) $http->postVariable( 'ContentJobMode' ) : '' );
 
         $Result['content'] = $tpl->fetch( 'design:content/copy_subtree.tpl' );
         $Result['path'] = array( array( 'url' => false,
@@ -847,6 +853,30 @@ namespace Exponential\View\Kernel\Content
 
 class Copysubtree extends \Exponential\Runnable\ModuleView
 {
+
+    /**
+     * Calls the content jobs GUI helper (Exponential\View\Kernel\Content\Job) when it can be used. Without it
+     * (a Velocity worker started before it existed, the engine not installed or failing) the view takes the
+     * old synchronous path: runAsJob gives false, everything else null. doc/bc/6.0/content-jobs.md
+     *
+     * @param string $method runAsJob, lockRefusal or startJob
+     * @return mixed
+     */
+    protected static function contentJob( $method, ...$args )
+    {
+        $default = $method === 'runAsJob' ? false : null;
+        if ( !class_exists( 'Exponential\\View\\Kernel\\Content\\Job' ) )
+            return $default;
+        try
+        {
+            return call_user_func_array( array( 'Exponential\\View\\Kernel\\Content\\Job', $method ), $args );
+        }
+        catch ( \Throwable $e )
+        {
+            \eZDebug::writeError( 'Content jobs: ' . $e->getMessage(), __METHOD__ );
+            return $default;
+        }
+    }
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -903,13 +933,21 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
         $maxNodesCopySubtree = $contentINI->variable( 'CopySettings', 'MaxNodesCopySubtree' );
         $srcSubtreeNodesCount = $srcNode->subTreeCount();
 
-        if ( $srcSubtreeNodesCount > $maxNodesCopySubtree )
+        // Content jobs (doc/bc/6.0/content-jobs.md): a large copy (content.ini [ContentJobSettings]
+        // SynchronousLimit, or more than MaxNodesCopySubtree) runs as a job in the background; a copy from or
+        // into a subtree a job is working on is refused. Small copies are done here as before.
+        $runAsJob = self::contentJob( 'runAsJob', 'copy', array( 'source_node_id' => (int) $NodeID ), $maxNodesCopySubtree );
+
+        if ( !$runAsJob && $srcSubtreeNodesCount > $maxNodesCopySubtree )
         {
             $notifications['Warnings'][] = \ezpI18n::tr( 'kernel/content/copysubtree',
                                                    "You are trying to copy a subtree that contains more than ".
                                                    "the maximum possible nodes for subtree copying. ".
                                                    "You can copy this subtree using Subtree Copy script.",
                                                    null, array( $maxNodesCopySubtree ) );
+            // only reached when background jobs cannot be used; say so (doc/bc/6.0/content-jobs.md)
+            $notifications['Warnings'][] = \ezpI18n::tr( 'design/admin/content/job',
+                                                   'Large copies normally run as a background job, but background jobs are not available on this server right now. Try again later, or use the command exp:expcontentjob copy.' );
             $notifications['Result'] = false;
             showNotificationAfterCopying( $http, $Module, $Result, $notifications, $srcNode );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
@@ -951,6 +989,8 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
         {
             // actually do copying after a user has selected object versions to copy
             $newParentNodeID = $http->postVariable( 'SelectedNodeID' );
+            if ( $jobResult = $this->jobOrRefusal( $Module, $runAsJob, $NodeID, $newParentNodeID, $srcNode, $allVersions, $keepCreator, $keepTime ) )
+                return $jobResult;
             copySubtree( $NodeID, $newParentNodeID, $notifications, $allVersions, $keepCreator, $keepTime );
 
             if ( $showNotification )
@@ -973,6 +1013,8 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
                 // actually do copying of the pre-configured object version(s)
                 $selectedNodeIDArray = \eZContentBrowse::result( $Module->currentAction() );
                 $newParentNodeID = $selectedNodeIDArray[0];
+                if ( $jobResult = $this->jobOrRefusal( $Module, $runAsJob, $NodeID, $newParentNodeID, $srcNode, $allVersions, $keepCreator, $keepTime ) )
+                    return $jobResult;
                 copySubtree( $NodeID, $newParentNodeID, $notifications, $allVersions, $keepCreator, $keepTime );
 
                 if ( $showNotification )
@@ -986,10 +1028,39 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
         else // default, initial action
         {   //Browse for target node.
             //We get here when a user clicks "copy" button when viewing some node.
-            browse( $Module, $srcNode );
+            $jobCopyParams = array( 'source_node_id' => (int) $NodeID );
+            browse( $Module, $srcNode, array(
+                'mode' => self::contentJob( 'modeChoice', 'copy', 'copy', $jobCopyParams, $maxNodesCopySubtree, '[CopySettings] MaxNodesCopySubtree' ),
+                'summary' => class_exists( 'Exponential\\Service\\ContentJobDetails' ) ? \Exponential\Service\ContentJobDetails::subtreeSummary( array( (int) $NodeID ) ) : null ) );
         }
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Content jobs: the refusal page when the source or the destination is in a subtree a job is working on;
+     * a redirect to the progress page of a new copy job when the copy is large; null to copy here as before.
+     *
+     * @return mixed|null the view's result, or null
+     */
+    protected function jobOrRefusal( $Module, $runAsJob, $nodeID, $newParentNodeID, $srcNode, $allVersions, $keepCreator, $keepTime )
+    {
+        $backURL = '/content/view/full/' . (int) $srcNode->attribute( 'parent_node_id' );
+        $refused = self::contentJob( 'lockRefusal', array( $nodeID, $newParentNodeID ), $backURL );
+        if ( $refused )
+            return $refused;
+        $params = array( 'source_node_id' => (int) $nodeID,
+                         'destination_node_id' => (int) $newParentNodeID,
+                         'all_versions' => (bool) $allVersions,
+                         'keep_creator' => (bool) $keepCreator,
+                         'keep_time' => (bool) $keepTime );
+        // the user's choice (now or background) when the form sent one, else the automatic decision
+        if ( \eZHTTPTool::instance()->hasPostVariable( 'ContentJobMode' ) )
+            $runAsJob = (bool) self::contentJob( 'chosenAsJob', 'copy', 'copy', $params,
+                                                 (int) \eZINI::instance( 'content.ini' )->variable( 'CopySettings', 'MaxNodesCopySubtree' ) );
+        if ( !$runAsJob )
+            return null;
+        return self::contentJob( 'startJob', $Module, 'copy', $params, $backURL );
     }
 }
 

@@ -80,6 +80,31 @@ class Assign extends \Exponential\Runnable\ModuleView
                                 }
                             }
 
+                            // Content jobs (doc/bc/6.0/content-jobs.md): one large subtree (or the user's last
+                            // choice) gets a confirmation with the now-or-background choice; small ones as before
+                            if ( count( $allowedNodeIDList ) === 1 && !$deniedNodeIDList
+                                 && class_exists( 'Exponential\\View\\Kernel\\Content\\Job' ) )
+                            {
+                                try
+                                {
+                                    $jobNodeID = (int) $allowedNodeIDList[0];
+                                    $jobNode = \eZContentObjectTreeNode::fetch( $jobNodeID );
+                                    $jobResult = \Exponential\View\Kernel\Content\Job::interstitial( $Module, 'section', 'section',
+                                        array( 'node_id' => $jobNodeID, 'section_id' => (int) $SectionID ),
+                                        '/section/assign/' . (int) $SectionID . '/', '/content/view/full/' . $jobNodeID,
+                                        \ezpI18n::tr( 'design/admin/content/job', 'Assign the section %section to %name', null,
+                                                      array( '%section' => $section->attribute( 'name' ), '%name' => $jobNode ? $jobNode->attribute( 'name' ) : $jobNodeID ) ),
+                                        \ezpI18n::tr( 'design/admin/content/job', 'Every object in the subtree gets the section; objects you may not assign it to are skipped.' ),
+                                        array( 'BrowseActionName' => 'AssignSection', 'SelectedNodeIDArray[]' => $jobNodeID ), $jobNodeID );
+                                    if ( $jobResult )
+                                        return $this->viewResult( null, $jobResult );
+                                }
+                                catch ( \Throwable $e )
+                                {
+                                    \eZDebug::writeError( 'Content jobs: ' . $e->getMessage(), __METHOD__ );
+                                }
+                            }
+
                             if ( count( $allowedNodeIDList ) > 0 )
                             {
                                 $db = \eZDB::instance();

@@ -20,6 +20,30 @@ namespace Exponential\View\Kernel\Content
 
 class Action extends \Exponential\Runnable\ModuleView
 {
+
+    /**
+     * Calls the content jobs GUI helper (Exponential\View\Kernel\Content\Job) when it can be used. Without it
+     * (a Velocity worker started before it existed, the engine not installed or failing) the view takes the
+     * old synchronous path: runAsJob gives false, everything else null. doc/bc/6.0/content-jobs.md
+     *
+     * @param string $method runAsJob, lockRefusal or startJob
+     * @return mixed
+     */
+    protected static function contentJob( $method, ...$args )
+    {
+        $default = $method === 'runAsJob' ? false : null;
+        if ( !class_exists( 'Exponential\\View\\Kernel\\Content\\Job' ) )
+            return $default;
+        try
+        {
+            return call_user_func_array( array( 'Exponential\\View\\Kernel\\Content\\Job', $method ), $args );
+        }
+        catch ( \Throwable $e )
+        {
+            \eZDebug::writeError( 'Content jobs: ' . $e->getMessage(), __METHOD__ );
+            return $default;
+        }
+    }
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -425,6 +449,26 @@ class Action extends \Exponential\Runnable\ModuleView
                 }
             }
 
+            // Content jobs (doc/bc/6.0/content-jobs.md): a move from or into a subtree a background job is working
+            // on is refused.
+            $jobRefused = self::contentJob( 'lockRefusal', array_merge( $nodeIDlist, array( $selectedNodeID ) ),
+                                            '/content/view/full/' . (int) $selectedNodeID );
+            if ( $jobRefused )
+                return $jobRefused;
+
+            // Content jobs: one node moved with the "background" choice (or large, without a choice) is a move job
+            if ( count( $nodeToMoveList ) === 1 )
+            {
+                $jobParams = array( 'node_id' => (int) $nodeToMoveList[0]['node_id'], 'new_parent_node_id' => (int) $selectedNodeID );
+                if ( self::contentJob( 'chosenAsJob', 'move', 'move', $jobParams ) )
+                {
+                    $jobResult = self::contentJob( 'startJob', $module, 'move', $jobParams,
+                                                   '/content/view/full/' . (int) $nodeToMoveList[0]['node_id'], (int) $selectedNodeID );
+                    if ( $jobResult )
+                        return $jobResult;
+                }
+            }
+
             // move selected nodes, this should probably be inside a transaction
             foreach( $nodeToMoveList as $nodeToMove )
             {
@@ -508,7 +552,11 @@ class Action extends \Exponential\Runnable\ModuleView
                                                                 'object_language' => $languageCode ),
                                             'start_node' => $node->attribute( 'parent_node_id' ),
                                             'cancel_page' => $module->redirectionURIForModule( $module, 'view', array( $viewMode, $nodeID, $languageCode ) ),
-                                            'from_page' => "/content/action" ),
+                                            'from_page' => "/content/action",
+                                            // content jobs: the now-or-background choice and what the move touches
+                                            'content_job_mode' => self::contentJob( 'modeChoice', 'move', 'move', array( 'node_id' => (int) $nodeID ) ),
+                                            'content_job_summary' => class_exists( 'Exponential\\Service\\ContentJobDetails' )
+                                                                     ? \Exponential\Service\ContentJobDetails::subtreeSummary( array( (int) $nodeID ) ) : null ),
                                      $module );
 
             return $this->viewResult( isset( $Result ) ? $Result : null, null );

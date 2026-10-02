@@ -20,6 +20,30 @@ namespace Exponential\View\Kernel\Content
 
 class Removeobject extends \Exponential\Runnable\ModuleView
 {
+
+    /**
+     * Calls the content jobs GUI helper (Exponential\View\Kernel\Content\Job) when it can be used. Without it
+     * (a Velocity worker started before it existed, the engine not installed or failing) the view takes the
+     * old synchronous path: runAsJob gives false, everything else null. doc/bc/6.0/content-jobs.md
+     *
+     * @param string $method runAsJob, lockRefusal or startJob
+     * @return mixed
+     */
+    protected static function contentJob( $method, ...$args )
+    {
+        $default = $method === 'runAsJob' ? false : null;
+        if ( !class_exists( 'Exponential\\View\\Kernel\\Content\\Job' ) )
+            return $default;
+        try
+        {
+            return call_user_func_array( array( 'Exponential\\View\\Kernel\\Content\\Job', $method ), $args );
+        }
+        catch ( \Throwable $e )
+        {
+            \eZDebug::writeError( 'Content jobs: ' . $e->getMessage(), __METHOD__ );
+            return $default;
+        }
+    }
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -99,6 +123,23 @@ class Removeobject extends \Exponential\Runnable\ModuleView
         if ( $http->hasSessionVariable( 'HideRemoveConfirmation' ) )
             $hideRemoveConfirm = $http->sessionVariable( 'HideRemoveConfirmation' );
 
+        // Content jobs (doc/bc/6.0/content-jobs.md): a removal inside a subtree a background job is working on
+        // is refused; a large removal (content.ini [ContentJobSettings] SynchronousLimit, or more than
+        // MaxNodesRemoveSubtree) runs as a job in the background. Small removals are done here as before.
+        $jobBackURL = '/content/view/full/' . (int) $contentNodeID;
+        $jobRefused = is_array( $deleteIDArray ) ? self::contentJob( 'lockRefusal', $deleteIDArray, $jobBackURL ) : null;
+        if ( $jobRefused )
+            return $jobRefused;
+        $jobParams = array( 'node_ids' => is_array( $deleteIDArray ) ? array_values( array_map( 'intval', $deleteIDArray ) ) : array(),
+                            'move_to_trash' => $moveToTrash );
+        $jobOldLimit = $contentINI->hasVariable( 'RemoveSettings', 'MaxNodesRemoveSubtree' ) ?
+                       $contentINI->variable( 'RemoveSettings', 'MaxNodesRemoveSubtree' ) : 100;
+        $runAsJob = $jobParams['node_ids'] && self::contentJob( 'chosenAsJob', 'remove', 'remove', $jobParams, $jobOldLimit );
+
+        if ( $runAsJob and ( $http->hasPostVariable( "ConfirmButton" ) or $hideRemoveConfirm ) )
+            return self::contentJob( 'startJob', $Module, 'remove', $jobParams, $jobBackURL,
+                                  in_array( (int) $contentNodeID, $jobParams['node_ids'] ) ? 0 : (int) $contentNodeID );
+
         if ( $http->hasPostVariable( "ConfirmButton" ) or
              $hideRemoveConfirm )
         {
@@ -149,7 +190,7 @@ class Removeobject extends \Exponential\Runnable\ModuleView
         {
             $removeItem =& $deleteResult[$removeItemKey];
             $deleteNodeIdArray[$removeItem['node']->attribute( 'node_id' )] = 1;
-            if ( $removeItem['child_count'] > $maxNodesRemoveSubtree )
+            if ( !$runAsJob && $removeItem['child_count'] > $maxNodesRemoveSubtree )
             {
                 $removeItem['exceeded_limit_of_subitems'] = true;
                 $exceededLimit = true;
@@ -173,7 +214,7 @@ class Removeobject extends \Exponential\Runnable\ModuleView
         // to do this the following must be true:
         // - The total child count must be zero
         // - There must be no object removal (i.e. it is the only node for the object)
-        if ( $totalChildCount == 0 )
+        if ( $totalChildCount == 0 && !$runAsJob )
         {
             $canRemove = true;
             foreach ( $deleteResult as $item )
@@ -228,6 +269,10 @@ class Removeobject extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'delete_items_exist'     , $deleteItemsExist );
         $tpl->setVariable( 'move_to_trash'          , $moveToTrash );
         $tpl->setVariable( 'has_pending_object'     , $hasPendingObject );
+        $tpl->setVariable( 'run_as_job'             , $runAsJob );
+        // content jobs: the now-or-background choice and what the removal touches (null without the engine)
+        $tpl->setVariable( 'job_mode'               , $jobParams['node_ids'] ? self::contentJob( 'modeChoice', 'remove', 'remove', $jobParams, $jobOldLimit, '[RemoveSettings] MaxNodesRemoveSubtree' ) : null );
+        $tpl->setVariable( 'job_summary'            , $jobParams['node_ids'] && class_exists( 'Exponential\\Service\\ContentJobDetails' ) ? \Exponential\Service\ContentJobDetails::subtreeSummary( $jobParams['node_ids'] ) : null );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:node/removeobject.tpl" );

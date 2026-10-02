@@ -38,6 +38,29 @@ class Hide extends \Exponential\Runnable\ModuleView
         if ( !$curNode->attribute( 'can_hide' ) )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
 
+        // Content jobs (doc/bc/6.0/content-jobs.md): a large subtree (or the user's last choice) gets a
+        // confirmation with the now-or-background choice; a small one is hidden or revealed at once, as before.
+        if ( class_exists( 'Exponential\\View\\Kernel\\Content\\Job' ) )
+        {
+            try
+            {
+                $reveal = (bool) $curNode->attribute( 'is_hidden' );
+                $jobResult = Job::interstitial( $Module, 'hide', $reveal ? 'reveal' : 'hide', array( 'node_id' => (int) $NodeID ),
+                                                '/content/hide/' . (int) $NodeID, '/content/view/full/' . (int) $NodeID,
+                                                \ezpI18n::tr( 'design/admin/content/job', $reveal ? 'Reveal %name' : 'Hide %name', null,
+                                                              array( '%name' => $curNode->attribute( 'name' ) ) ),
+                                                \ezpI18n::tr( 'design/admin/content/job', $reveal
+                                                              ? 'The node and everything below it become visible again, unless hidden on their own.'
+                                                              : 'The node and everything below it are hidden from the site.' ) );
+                if ( $jobResult )
+                    return $jobResult;
+            }
+            catch ( \Throwable $e )
+            {
+                \eZDebug::writeError( 'Content jobs: ' . $e->getMessage(), __METHOD__ );
+            }
+        }
+
         if ( \eZOperationHandler::operationIsAvailable( 'content_hide' ) )
         {
             $operationResult = \eZOperationHandler::execute( 'content',
