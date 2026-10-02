@@ -393,7 +393,7 @@ class ezpRepairQueue
         return <<<HTML
 <section id="exp-repair">
 <h2>Repair from here</h2>
-<form id="exp-repair-form"><label>Repair key <input type="text" name="exp_repair_key" autocomplete="off" autocapitalize="off" spellcheck="false" required></label>
+<form id="exp-repair-form"><label>Repair key <input type="text" name="exp_repair_key" autocomplete="off" autocapitalize="off" spellcheck="false" required autofocus></label>
 <button type="submit">Start the repair</button><span id="exp-repair-error" role="alert"></span></form>
 <div id="exp-repair-progress" hidden>
 <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
