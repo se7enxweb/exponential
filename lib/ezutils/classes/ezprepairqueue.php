@@ -157,7 +157,7 @@ class ezpRepairQueue
             header( 'Cache-Control: no-store' );
         }
         if ( $action === 'start' )
-            echo json_encode( self::start( isset( $_POST['exp_repair_key'] ) ? (string) $_POST['exp_repair_key'] : '' ) );
+            echo json_encode( self::start( isset( $_POST['exp_repair_key'] ) ? trim( (string) $_POST['exp_repair_key'] ) : '' ) );
         else if ( $action === 'update' )
             echo json_encode( self::startUpdate( isset( $_POST['token'] ) ? (string) $_POST['token'] : '' ) );
         else
@@ -195,7 +195,7 @@ class ezpRepairQueue
         {
             $fails[] = time();
             file_put_contents( $failFile, json_encode( $fails ) );
-            return array( 'ok' => false, 'error' => 'That is not the repair key.' );
+            return array( 'ok' => false, 'error' => 'That is not the repair key. A key works once: after a repair has started, create a new one (php bin/php/exprepair.php --create-key).' );
         }
         $current = self::status();
         if ( isset( $current['state'] ) && $current['state'] === 'running' && isset( $current['heartbeat'] ) && $current['heartbeat'] > time() - 120 )
@@ -379,7 +379,7 @@ class ezpRepairQueue
         return <<<HTML
 <section id="exp-repair">
 <h2>Repair from here</h2>
-<form id="exp-repair-form"><label>Repair key <input type="password" name="exp_repair_key" autocomplete="off" required></label>
+<form id="exp-repair-form"><label>Repair key <input type="text" name="exp_repair_key" autocomplete="off" autocapitalize="off" spellcheck="false" required></label>
 <button type="submit">Start the repair</button><span id="exp-repair-error" role="alert"></span></form>
 <div id="exp-repair-progress" hidden>
 <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
