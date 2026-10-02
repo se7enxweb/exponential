@@ -1,6 +1,463 @@
 <?php
 // This array contains the database schema
 $schema = array (
+  'expaudit_cursor' => 
+  array (
+    'name' => 'expaudit_cursor',
+    'fields' => 
+    array (
+      'byte_offset' => 
+      array (
+        'length' => 20,
+        'type' => 'bigint',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'channel' => 
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'file_name' => 
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'last_hash' => 
+      array (
+        'length' => 80,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'last_seq' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'updated_ms' => 
+      array (
+        'length' => 20,
+        'type' => 'bigint',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'channel',
+          1 => 'file_name',
+        ),
+      ),
+    ),
+  ),
+  'expaudit_event' => 
+  array (
+    'name' => 'expaudit_event',
+    'fields' => 
+    array (
+      'channel' => 
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'depth' => 
+      array (
+        'length' => 4,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'domain_name' => 
+      array (
+        'length' => 16,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'engine' => 
+      array (
+        'length' => 16,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'file_name' => 
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'id' => 
+      array (
+        'length' => 26,
+        'type' => 'char',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'imported' => 
+      array (
+        'length' => 4,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'ip' => 
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'job_id' => 
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'login' => 
+      array (
+        'length' => 150,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'module_view' => 
+      array (
+        'length' => 128,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'name' => 
+      array (
+        'length' => 128,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'object_id' => 
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'object_name' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'object_type' => 
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'parent_id' => 
+      array (
+        'length' => 26,
+        'type' => 'char',
+        'default' => NULL,
+      ),
+      'pseudonymised' => 
+      array (
+        'length' => 4,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'reason' => 
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'record' => 
+      array (
+        'type' => 'longtext',
+        'default' => NULL,
+      ),
+      'request_id' => 
+      array (
+        'length' => 40,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'result' => 
+      array (
+        'length' => 8,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'run_id' => 
+      array (
+        'length' => 40,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'search_text' => 
+      array (
+        'type' => 'longtext',
+        'default' => NULL,
+      ),
+      'seq' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'session_h' => 
+      array (
+        'length' => 24,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'severity' => 
+      array (
+        'length' => 4,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'siteaccess' => 
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'target_id' => 
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'target_type' => 
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'time_ms' => 
+      array (
+        'length' => 20,
+        'type' => 'bigint',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'ua' => 
+      array (
+        'length' => 128,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'user_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'default' => NULL,
+      ),
+      'verb' => 
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      'expaudit_event_domain' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'domain_name',
+          1 => 'severity',
+          2 => 'time_ms',
+        ),
+      ),
+      'expaudit_event_file_seq' => 
+      array (
+        'type' => 'unique',
+        'fields' => 
+        array (
+          0 => 'channel',
+          1 => 'file_name',
+          2 => 'seq',
+        ),
+      ),
+      'expaudit_event_ip' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'ip',
+          1 => 'time_ms',
+        ),
+      ),
+      'expaudit_event_job' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'job_id',
+        ),
+      ),
+      'expaudit_event_name' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'name',
+          1 => 'time_ms',
+        ),
+      ),
+      'expaudit_event_object' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'object_type',
+          1 => 'object_id',
+          2 => 'time_ms',
+        ),
+      ),
+      'expaudit_event_parent' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'parent_id',
+        ),
+      ),
+      'expaudit_event_request' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'request_id',
+        ),
+      ),
+      'expaudit_event_result' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'result',
+          1 => 'time_ms',
+        ),
+      ),
+      'expaudit_event_time' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'time_ms',
+        ),
+      ),
+      'expaudit_event_user' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'user_id',
+          1 => 'time_ms',
+        ),
+      ),
+    ),
+  ),
+  'expaudit_file' => 
+  array (
+    'name' => 'expaudit_file',
+    'fields' => 
+    array (
+      'archive_path' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'default' => NULL,
+      ),
+      'break_line' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'channel' => 
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'file_name' => 
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'records' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'state' => 
+      array (
+        'length' => 16,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => 'live',
+      ),
+      'verified' => 
+      array (
+        'length' => 16,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => 'unchecked',
+      ),
+      'verified_ms' => 
+      array (
+        'length' => 20,
+        'type' => 'bigint',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'channel',
+          1 => 'file_name',
+        ),
+      ),
+    ),
+  ),
   'ezapprove_items' => 
   array (
     'name' => 'ezapprove_items',

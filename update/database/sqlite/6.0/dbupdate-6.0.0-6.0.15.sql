@@ -122,3 +122,85 @@ INSERT INTO ezorder_status (is_active, name, status_id)
   SELECT 1, 'Partially refunded', 16 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 16);
 INSERT INTO ezorder_status (is_active, name, status_id)
   SELECT 1, 'Refunded', 17 WHERE NOT EXISTS (SELECT 1 FROM ezorder_status WHERE status_id = 17);
+
+
+--
+-- The audit index (doc/bc/6.0/audit.md, "The index"): one row per audit record (expaudit_event), how far
+-- each live channel file has been indexed (expaudit_cursor) and each file's verification state (expaudit_file).
+-- The JSON lines files under var/<site>/log/audit/ are the record; these tables are a copy for the console,
+-- filled by the auditindex cronjob part and rebuilt from the files at any time. New in 6.0.15.
+-- update/common/scripts/6.0/createaudittables.php does the same on any engine (Oracle and MongoDB too)
+-- and skips tables that exist.
+--
+CREATE TABLE expaudit_cursor (
+  byte_offset bigint(20) NOT NULL DEFAULT '0',
+  channel varchar(32) NOT NULL DEFAULT '',
+  file_name varchar(64) NOT NULL DEFAULT '',
+  last_hash varchar(80) DEFAULT NULL,
+  last_seq INTEGER(11) NOT NULL DEFAULT '0',
+  updated_ms bigint(20) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( channel, file_name )
+);
+CREATE TABLE expaudit_event (
+  channel varchar(32) NOT NULL DEFAULT '',
+  depth INTEGER(4) NOT NULL DEFAULT '0',
+  domain_name varchar(16) NOT NULL DEFAULT '',
+  engine varchar(16) DEFAULT NULL,
+  file_name varchar(64) NOT NULL DEFAULT '',
+  id char(26) NOT NULL DEFAULT '',
+  imported INTEGER(4) NOT NULL DEFAULT '0',
+  ip varchar(64) DEFAULT NULL,
+  job_id varchar(32) DEFAULT NULL,
+  login varchar(150) DEFAULT NULL,
+  module_view varchar(128) DEFAULT NULL,
+  name varchar(128) NOT NULL DEFAULT '',
+  object_id varchar(64) DEFAULT NULL,
+  object_name varchar(255) DEFAULT NULL,
+  object_type varchar(32) DEFAULT NULL,
+  parent_id char(26) DEFAULT NULL,
+  pseudonymised INTEGER(4) NOT NULL DEFAULT '0',
+  reason varchar(32) DEFAULT NULL,
+  record longtext DEFAULT NULL,
+  request_id varchar(40) DEFAULT NULL,
+  result varchar(8) DEFAULT NULL,
+  run_id varchar(40) DEFAULT NULL,
+  search_text longtext DEFAULT NULL,
+  seq INTEGER(11) NOT NULL DEFAULT '0',
+  session_h varchar(24) DEFAULT NULL,
+  severity INTEGER(4) NOT NULL DEFAULT '0',
+  siteaccess varchar(64) DEFAULT NULL,
+  target_id varchar(64) DEFAULT NULL,
+  target_type varchar(32) DEFAULT NULL,
+  time_ms bigint(20) NOT NULL DEFAULT '0',
+  ua varchar(128) DEFAULT NULL,
+  user_id INTEGER(11) DEFAULT NULL,
+  verb varchar(32) DEFAULT NULL,
+  PRIMARY KEY ( id )
+);
+CREATE  INDEX expaudit_event_domain ON expaudit_event  ( domain_name, severity, time_ms );
+CREATE  UNIQUE INDEX expaudit_event_file_seq ON expaudit_event  ( channel, file_name, seq );
+CREATE  INDEX expaudit_event_ip ON expaudit_event  ( ip, time_ms );
+CREATE  INDEX expaudit_event_job ON expaudit_event  ( job_id );
+CREATE  INDEX expaudit_event_name ON expaudit_event  ( name, time_ms );
+CREATE  INDEX expaudit_event_object ON expaudit_event  ( object_type, object_id, time_ms );
+CREATE  INDEX expaudit_event_parent ON expaudit_event  ( parent_id );
+CREATE  INDEX expaudit_event_request ON expaudit_event  ( request_id );
+CREATE  INDEX expaudit_event_result ON expaudit_event  ( result, time_ms );
+CREATE  INDEX expaudit_event_time ON expaudit_event  ( time_ms );
+CREATE  INDEX expaudit_event_user ON expaudit_event  ( user_id, time_ms );
+CREATE TABLE expaudit_file (
+  archive_path varchar(255) DEFAULT NULL,
+  break_line INTEGER(11) NOT NULL DEFAULT '0',
+  channel varchar(32) NOT NULL DEFAULT '',
+  file_name varchar(64) NOT NULL DEFAULT '',
+  records INTEGER(11) NOT NULL DEFAULT '0',
+  state varchar(16) NOT NULL DEFAULT 'live',
+  verified varchar(16) NOT NULL DEFAULT 'unchecked',
+  verified_ms bigint(20) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( channel, file_name )
+);
+
+-- Full-text search: an FTS5 table over search_text (external content; the trigram tokenizer of SQLite 3.34+,
+-- so a search finds a part of a word as LIKE does). Without FTS5 or trigram in the SQLite build,
+-- leave the statement out: search uses LIKE.
+CREATE VIRTUAL TABLE expaudit_event_fts USING fts5(search_text, content='expaudit_event', content_rowid='rowid', tokenize='trigram');

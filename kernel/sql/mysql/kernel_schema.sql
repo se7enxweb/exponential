@@ -1883,4 +1883,79 @@ CREATE TABLE ezworkflow_process (
 ) ENGINE=InnoDB;
 
 
+--
+-- The audit index (doc/bc/6.0/audit.md, "The index"): one row per audit record (expaudit_event), how far
+-- each live channel file has been indexed (expaudit_cursor) and each file's verification state (expaudit_file).
+-- The JSON lines files under var/<site>/log/audit/ are the record; these tables are a copy for the console,
+-- filled by the auditindex cronjob part and rebuilt from the files at any time.
+--
+CREATE TABLE expaudit_cursor (
+  byte_offset bigint(20) NOT NULL DEFAULT '0',
+  channel varchar(32) NOT NULL DEFAULT '',
+  file_name varchar(64) NOT NULL DEFAULT '',
+  last_hash varchar(80) DEFAULT NULL,
+  last_seq int(11) NOT NULL DEFAULT '0',
+  updated_ms bigint(20) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( channel, file_name )
+) ENGINE=InnoDB;
+CREATE TABLE expaudit_event (
+  channel varchar(32) NOT NULL DEFAULT '',
+  depth int(4) NOT NULL DEFAULT '0',
+  domain_name varchar(16) NOT NULL DEFAULT '',
+  engine varchar(16) DEFAULT NULL,
+  file_name varchar(64) NOT NULL DEFAULT '',
+  id char(26) NOT NULL DEFAULT '',
+  imported int(4) NOT NULL DEFAULT '0',
+  ip varchar(64) DEFAULT NULL,
+  job_id varchar(32) DEFAULT NULL,
+  login varchar(150) DEFAULT NULL,
+  module_view varchar(128) DEFAULT NULL,
+  name varchar(128) NOT NULL DEFAULT '',
+  object_id varchar(64) DEFAULT NULL,
+  object_name varchar(255) DEFAULT NULL,
+  object_type varchar(32) DEFAULT NULL,
+  parent_id char(26) DEFAULT NULL,
+  pseudonymised int(4) NOT NULL DEFAULT '0',
+  reason varchar(32) DEFAULT NULL,
+  record longtext DEFAULT NULL,
+  request_id varchar(40) DEFAULT NULL,
+  result varchar(8) DEFAULT NULL,
+  run_id varchar(40) DEFAULT NULL,
+  search_text longtext DEFAULT NULL,
+  seq int(11) NOT NULL DEFAULT '0',
+  session_h varchar(24) DEFAULT NULL,
+  severity int(4) NOT NULL DEFAULT '0',
+  siteaccess varchar(64) DEFAULT NULL,
+  target_id varchar(64) DEFAULT NULL,
+  target_type varchar(32) DEFAULT NULL,
+  time_ms bigint(20) NOT NULL DEFAULT '0',
+  ua varchar(128) DEFAULT NULL,
+  user_id int(11) DEFAULT NULL,
+  verb varchar(32) DEFAULT NULL,
+  PRIMARY KEY ( id ),
+  KEY expaudit_event_domain ( domain_name, severity, time_ms ),
+  UNIQUE KEY expaudit_event_file_seq ( channel, file_name, seq ),
+  KEY expaudit_event_ip ( ip, time_ms ),
+  KEY expaudit_event_job ( job_id ),
+  KEY expaudit_event_name ( name, time_ms ),
+  KEY expaudit_event_object ( object_type, object_id, time_ms ),
+  KEY expaudit_event_parent ( parent_id ),
+  KEY expaudit_event_request ( request_id ),
+  KEY expaudit_event_result ( result, time_ms ),
+  KEY expaudit_event_time ( time_ms ),
+  KEY expaudit_event_user ( user_id, time_ms )
+) ENGINE=InnoDB;
+CREATE TABLE expaudit_file (
+  archive_path varchar(255) DEFAULT NULL,
+  break_line int(11) NOT NULL DEFAULT '0',
+  channel varchar(32) NOT NULL DEFAULT '',
+  file_name varchar(64) NOT NULL DEFAULT '',
+  records int(11) NOT NULL DEFAULT '0',
+  state varchar(16) NOT NULL DEFAULT 'live',
+  verified varchar(16) NOT NULL DEFAULT 'unchecked',
+  verified_ms bigint(20) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( channel, file_name )
+) ENGINE=InnoDB;
 
+-- Full-text search: FULLTEXT on InnoDB (MySQL 5.6+, MariaDB 10.0.5+); without it the console searches with LIKE.
+ALTER TABLE expaudit_event ADD FULLTEXT INDEX expaudit_event_fts (search_text);

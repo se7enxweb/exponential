@@ -5159,9 +5159,81 @@ ALTER TABLE ONLY ezworkflow_process
     ADD CONSTRAINT ezworkflow_process_pkey PRIMARY KEY (id);
 
 
+--
+-- The audit index (doc/bc/6.0/audit.md, "The index"): one row per audit record (expaudit_event), how far
+-- each live channel file has been indexed (expaudit_cursor) and each file's verification state (expaudit_file).
+-- The JSON lines files under var/<site>/log/audit/ are the record; these tables are a copy for the console,
+-- filled by the auditindex cronjob part and rebuilt from the files at any time.
+--
+CREATE TABLE IF NOT EXISTS expaudit_cursor (
+  byte_offset bigint DEFAULT '0' NOT NULL,
+  channel character varying(32) DEFAULT ''::character varying NOT NULL,
+  file_name character varying(64) DEFAULT ''::character varying NOT NULL,
+  last_hash character varying(80) DEFAULT NULL,
+  last_seq integer DEFAULT 0 NOT NULL,
+  updated_ms bigint DEFAULT '0' NOT NULL
+);
+ALTER TABLE ONLY expaudit_cursor ADD CONSTRAINT expaudit_cursor_pkey PRIMARY KEY ( channel, file_name );
+CREATE TABLE IF NOT EXISTS expaudit_event (
+  channel character varying(32) DEFAULT ''::character varying NOT NULL,
+  depth integer DEFAULT 0 NOT NULL,
+  domain_name character varying(16) DEFAULT ''::character varying NOT NULL,
+  engine character varying(16) DEFAULT NULL,
+  file_name character varying(64) DEFAULT ''::character varying NOT NULL,
+  id character(26) DEFAULT ''::bpchar NOT NULL,
+  imported integer DEFAULT 0 NOT NULL,
+  ip character varying(64) DEFAULT NULL,
+  job_id character varying(32) DEFAULT NULL,
+  login character varying(150) DEFAULT NULL,
+  module_view character varying(128) DEFAULT NULL,
+  name character varying(128) DEFAULT ''::character varying NOT NULL,
+  object_id character varying(64) DEFAULT NULL,
+  object_name character varying(255) DEFAULT NULL,
+  object_type character varying(32) DEFAULT NULL,
+  parent_id character(26) DEFAULT NULL,
+  pseudonymised integer DEFAULT 0 NOT NULL,
+  reason character varying(32) DEFAULT NULL,
+  record text DEFAULT NULL,
+  request_id character varying(40) DEFAULT NULL,
+  result character varying(8) DEFAULT NULL,
+  run_id character varying(40) DEFAULT NULL,
+  search_text text DEFAULT NULL,
+  seq integer DEFAULT 0 NOT NULL,
+  session_h character varying(24) DEFAULT NULL,
+  severity integer DEFAULT 0 NOT NULL,
+  siteaccess character varying(64) DEFAULT NULL,
+  target_id character varying(64) DEFAULT NULL,
+  target_type character varying(32) DEFAULT NULL,
+  time_ms bigint DEFAULT '0' NOT NULL,
+  ua character varying(128) DEFAULT NULL,
+  user_id integer DEFAULT NULL,
+  verb character varying(32) DEFAULT NULL
+);
+CREATE INDEX expaudit_event_domain ON expaudit_event USING btree ( domain_name, severity, time_ms );
+CREATE UNIQUE INDEX expaudit_event_file_seq ON expaudit_event USING btree ( channel, file_name, seq );
+CREATE INDEX expaudit_event_ip ON expaudit_event USING btree ( ip, time_ms );
+CREATE INDEX expaudit_event_job ON expaudit_event USING btree ( job_id );
+CREATE INDEX expaudit_event_name ON expaudit_event USING btree ( name, time_ms );
+CREATE INDEX expaudit_event_object ON expaudit_event USING btree ( object_type, object_id, time_ms );
+CREATE INDEX expaudit_event_parent ON expaudit_event USING btree ( parent_id );
+CREATE INDEX expaudit_event_request ON expaudit_event USING btree ( request_id );
+CREATE INDEX expaudit_event_result ON expaudit_event USING btree ( result, time_ms );
+CREATE INDEX expaudit_event_time ON expaudit_event USING btree ( time_ms );
+CREATE INDEX expaudit_event_user ON expaudit_event USING btree ( user_id, time_ms );
+ALTER TABLE ONLY expaudit_event ADD CONSTRAINT expaudit_event_pkey PRIMARY KEY ( id );
+CREATE TABLE IF NOT EXISTS expaudit_file (
+  archive_path character varying(255) DEFAULT NULL,
+  break_line integer DEFAULT 0 NOT NULL,
+  channel character varying(32) DEFAULT ''::character varying NOT NULL,
+  file_name character varying(64) DEFAULT ''::character varying NOT NULL,
+  records integer DEFAULT 0 NOT NULL,
+  state character varying(16) DEFAULT 'live'::character varying NOT NULL,
+  verified character varying(16) DEFAULT 'unchecked'::character varying NOT NULL,
+  verified_ms bigint DEFAULT '0' NOT NULL
+);
+ALTER TABLE ONLY expaudit_file ADD CONSTRAINT expaudit_file_pkey PRIMARY KEY ( channel, file_name );
 
-
-
-
-
-
+-- Full-text search: a generated tsvector column with a GIN index (PostgreSQL 12+, the 'simple' configuration:
+-- names and ids are not stemmed). On an older server leave the two statements out: search uses LIKE.
+ALTER TABLE expaudit_event ADD COLUMN search_tsv tsvector GENERATED ALWAYS AS (to_tsvector('simple', coalesce(search_text, ''))) STORED;
+CREATE INDEX expaudit_event_tsv ON expaudit_event USING GIN (search_tsv);
