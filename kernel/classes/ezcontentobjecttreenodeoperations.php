@@ -198,6 +198,40 @@ class eZContentObjectTreeNodeOperations
         return $notifications;
     }
 
+    /**
+     * Records a subtree copy (doc/bc/6.0/audit.md, content.node.copy, F2): the subtree's root is the parent event,
+     * every other node copied a child. Used by copySubtree() and the content/copysubtree view.
+     *
+     * @param int $srcNodeID
+     * @param eZContentObjectTreeNode $sourceNode
+     * @param eZContentObjectTreeNode $destinationNode
+     * @param array $syncSrc source node ids
+     * @param array $syncNew the new node ids, in the same order
+     * @param int $countNodes
+     * @param int $countObjects
+     */
+    static public function auditSubtreeCopy( $srcNodeID, $sourceNode, $destinationNode, array $syncSrc, array $syncNew, $countNodes, $countObjects )
+    {
+        if ( !class_exists( 'expAuditHook' ) || !expAuditHook::on( 'content.node.copy' ) )
+            return;
+        $rootKey = array_search( $srcNodeID, $syncSrc );
+        $parent = expAuditHook::begin( 'content.node.copy', array(
+            'object' => expAuditHook::node( $sourceNode ), 'target' => expAuditHook::node( $destinationNode ),
+            'after' => array( 'node' => $rootKey !== false && isset( $syncNew[$rootKey] ) ? (int)$syncNew[$rootKey] : null,
+                              'nodes' => (int)$countNodes, 'objects' => (int)$countObjects ) ) );
+        if ( $parent === null )
+            return;
+        foreach ( $syncSrc as $i => $srcID )
+        {
+            if ( $srcID == $srcNodeID )
+                continue;
+            expAuditHook::emit( 'content.node.copy', array( 'parent' => $parent,
+                'object' => array( 'type' => 'node', 'id' => (int)$srcID ),
+                'after' => array( 'node' => isset( $syncNew[$i] ) ? (int)$syncNew[$i] : null ) ) );
+        }
+        expAuditHook::end( $parent );
+    }
+
     static public function copySubtree( $srcNodeID, $dstNodeID, &$notifications, $allVersions, $keepCreator, $keepTime )
     {
         // 1. Copy subtree and form the arrays of accordance of the old and new nodes and content objects.
@@ -326,6 +360,9 @@ class eZContentObjectTreeNodeOperations
 
         eZDebug::writeDebug( $objectIDBlackList, "Copy subtree: Not copied object IDs list:" );
         eZDebug::writeDebug( $nodeIDBlackList, "Copy subtree: Not copied node IDs list:" );
+
+        self::auditSubtreeCopy( $srcNodeID, $sourceSubTreeMainNode, $destinationNode, $syncNodeIDListSrc, $syncNodeIDListNew,
+                                $countNewNodes, $countNewObjects );
 
         $key = array_search( $sourceSubTreeMainNodeID, $syncNodeIDListSrc );
         if ( $key === false )

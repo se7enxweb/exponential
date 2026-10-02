@@ -186,6 +186,7 @@ class History extends \Exponential\Runnable\ModuleView
 
                 $deleteIDArray = $http->postVariable( 'DeleteIDArray' );
                 $versionArray = array();
+                $auditRemoved = array();
                 foreach ( $deleteIDArray as $deleteID )
                 {
                     $version = \eZContentObjectVersion::fetch( $deleteID );
@@ -194,11 +195,25 @@ class History extends \Exponential\Runnable\ModuleView
                     {
                         if ( $version->attribute( 'can_remove' ) )
                         {
+                            $auditRemoved[] = array( 'version' => (int)$version->attribute( 'version' ), 'status' => (int)$version->attribute( 'status' ),
+                                                     'language' => (string)$version->initialLanguageCode() );
                             $version->removeThis();
                         }
                     }
                 }
                 $db->commit();
+
+                // Audit (doc/bc/6.0/audit.md, content.version.remove)
+                if ( $auditRemoved && class_exists( 'expAuditHook' ) )
+                    \expAuditHook::emit( 'content.version.remove', function () use ( $ObjectID, $auditRemoved ) {
+                        $versions = array();
+                        foreach ( $auditRemoved as $v )
+                            $versions[] = $v['version'];
+                        $o = \expAuditHook::object( (int)$ObjectID );
+                        return array( 'object' => array( 'type' => 'version', 'id' => implode( ',', $versions ), 'object_id' => (int)$ObjectID,
+                                                         'name' => isset( $o['name'] ) ? $o['name'] : null ),
+                                      'before' => array( 'versions' => $auditRemoved ) );
+                    } );
             }
         }
 

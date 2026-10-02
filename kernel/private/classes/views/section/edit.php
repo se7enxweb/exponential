@@ -54,6 +54,10 @@ class Edit extends \Exponential\Runnable\ModuleView
             {
                 $section = new \eZSection( array() );
             }
+            // Audit (doc/bc/6.0/audit.md, content.section.change): the values before the edit
+            $auditBefore = $SectionID == 0 ? null : array( 'name' => (string)$section->attribute( 'name' ),
+                                                          'identifier' => (string)$section->attribute( 'identifier' ),
+                                                          'navigation_part' => (string)$section->attribute( 'navigation_part_identifier' ) );
             $section->setAttribute( 'name', $http->postVariable( 'Name' ) );
             $sectionIdentifier = trim( $http->postVariable( 'SectionIdentifier' ) );
             $errorMessage = '';
@@ -83,6 +87,14 @@ class Edit extends \Exponential\Runnable\ModuleView
             if( $errorMessage === '' )
             {
                 $section->store();
+                if ( class_exists( 'expAuditHook' ) )
+                    \expAuditHook::emit( 'content.section.change', function () use ( $section, $auditBefore ) {
+                        return array( 'object' => \expAuditHook::section( $section ), 'verb' => $auditBefore === null ? 'create' : 'change',
+                                      'before' => $auditBefore,
+                                      'after' => array( 'name' => (string)$section->attribute( 'name' ),
+                                                        'identifier' => (string)$section->attribute( 'identifier' ),
+                                                        'navigation_part' => (string)$section->attribute( 'navigation_part_identifier' ) ) );
+                    } );
                 \eZContentCacheManager::clearContentCacheIfNeededBySectionID( $section->attribute( 'id' ) );
                 \ezpEvent::getInstance()->notify( 'content/section/cache', array( $section->attribute( 'id' ) ) );
                 $Module->redirectTo( $Module->functionURI( 'list' ) );

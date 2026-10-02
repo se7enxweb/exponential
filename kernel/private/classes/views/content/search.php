@@ -185,6 +185,16 @@ class Search extends \Exponential\Runnable\ModuleView
                                                          "NodeID" => isset( $subTreeArray[0] ) && $subTreeArray[0] != 1 ? $subTreeArray[0] : null  ) ) );
         }
 
+        // Audit (doc/bc/6.0/audit.md, content.search.query): a sampled read
+        if ( isset( $searchResult ) && is_array( $searchResult ) && class_exists( 'expAuditHook' ) )
+            \expAuditHook::read( 'content.search.query', null, function () use ( $searchText, $searchResult ) {
+                $phrase = (string)$searchText;
+                if ( function_exists( 'mb_substr' ) && mb_strlen( $phrase ) > 64 )
+                    $phrase = mb_substr( $phrase, 0, 64 ) . '…';
+                return array( 'object' => array( 'type' => 'search', 'id' => 'content/search' ),
+                              'after' => array( 'phrase' => $phrase, 'hits' => isset( $searchResult['SearchCount'] ) ? (int)$searchResult['SearchCount'] : null ) );
+            } );
+
         // --- Compatibility code start ---
         if ( $useSearchCode )
         {

@@ -2217,9 +2217,17 @@ class eZContentObject extends eZPersistentObject
     function purge()
     {
         $delID = $this->ID;
-        // Who deletes which content should be logged.
-        eZAudit::writeAudit( 'content-delete', array( 'Object ID' => $delID, 'Content Name' => $this->attribute( 'name' ),
-                                                      'Comment' => 'Purged the current object: eZContentObject::purge()' ) );
+        // Who purges which object (doc/bc/6.0/audit.md, content.object.purge); a subtree removal or the trash
+        // records it as its child, eZContentObjectTreeNode::removeNodeFromTree() as content.object.remove
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $self = $this;
+            expAuditHook::emit( 'content.object.purge', function () use ( $self ) {
+                return array( 'object' => expAuditHook::object( $self ),
+                              'before' => array( 'name' => (string)$self->attribute( 'name' ), 'class' => (string)$self->attribute( 'class_identifier' ),
+                                                 'status' => (int)$self->attribute( 'status' ), 'owner' => (int)$self->attribute( 'owner_id' ) ) );
+            } );
+        }
 
         $db = eZDB::instance();
 
@@ -2356,9 +2364,21 @@ class eZContentObject extends eZPersistentObject
     {
         $delID = $this->ID;
 
-        // Who deletes which content should be logged.
-        eZAudit::writeAudit( 'content-delete', array( 'Object ID' => $delID, 'Content Name' => $this->attribute( 'name' ),
-                                                      'Comment' => 'Setted archived status for the current object: eZContentObject::remove()' ) );
+        // Who moves which object to the trash (doc/bc/6.0/audit.md, content.node.remove.trash); inside
+        // eZContentObjectTreeNode::removeNodeFromTree() the node removal is the record and this one is muted
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $self = $this;
+            expAuditHook::emit( 'content.node.remove.trash', function () use ( $self, $nodeID ) {
+                $node = $nodeID !== null ? eZContentObjectTreeNode::fetch( $nodeID ) : $self->attribute( 'main_node' );
+                $desc = $node ? expAuditHook::node( $node ) : expAuditHook::object( $self );
+                return array( 'object' => $desc, 'target' => array( 'type' => 'trash' ),
+                              'before' => array( 'parent' => $node ? (int)$node->attribute( 'parent_node_id' ) : null,
+                                                 'path' => $node ? (string)$node->attribute( 'path_string' ) : null,
+                                                 'object_id' => (int)$self->attribute( 'id' ), 'name' => (string)$self->attribute( 'name' ),
+                                                 'class' => (string)$self->attribute( 'class_identifier' ) ) );
+            } );
+        }
 
         $nodes = $this->attribute( 'assigned_nodes' );
 

@@ -41,6 +41,14 @@ class Copy extends \Exponential\Runnable\ModuleView
         $classCopy->setAttribute( 'version', \eZContentClass::VERSION_STATUS_MODIFIED );
         $classCopy->store();
 
+        // Audit (doc/bc/6.0/audit.md, content.class.copy)
+        if ( class_exists( 'expAuditHook' ) )
+            \expAuditHook::emit( 'content.class.copy', function () use ( $class, $classCopy ) {
+                return array( 'object' => \expAuditHook::contentClass( $class ),
+                              'target' => array( 'type' => 'class', 'id' => (int)$classCopy->attribute( 'id' ) ),
+                              'after' => array( 'identifier' => (string)$classCopy->attribute( 'identifier' ) ) );
+            } );
+
         $mainGroupID = false;
         $classGroups = \eZContentClassClassGroup::fetchGroupList( $class->attribute( 'id' ),
                                                                   $class->attribute( 'version' ) );

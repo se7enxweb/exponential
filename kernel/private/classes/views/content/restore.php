@@ -166,8 +166,14 @@ class Restore extends \Exponential\Runnable\ModuleView
             $object->restoreObjectAttributes();
 
             $user = \eZUser::currentUser();
-            $operationResult = \eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $objectID,
-                                                                                         'version' => $version->attribute( 'version' ) ) );
+            // the publish of a restore is the restore (audit: content.object.restore below), not a create or publish
+            $publish = function () use ( $objectID, $version ) {
+                return \eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $objectID,
+                                                                                  'version' => $version->attribute( 'version' ) ) );
+            };
+            $operationResult = class_exists( 'expAuditHook' )
+                ? \expAuditHook::muted( array( 'content.object.create', 'content.object.publish', 'content.object.translate' ), $publish )
+                : $publish();
             if ( ( array_key_exists( 'status', $operationResult ) && $operationResult['status'] != \eZModuleOperationInfo::STATUS_CONTINUE ) )
             {
                 switch( $operationResult['status'] )
@@ -196,6 +202,15 @@ class Restore extends \Exponential\Runnable\ModuleView
             \eZContentObject::fixReverseRelations( $objectID, 'restore', false );
 
             $db->commit();
+
+            // Audit (doc/bc/6.0/audit.md, content.object.restore)
+            if ( class_exists( 'expAuditHook' ) )
+                \expAuditHook::emit( 'content.object.restore', function () use ( $object, $mainNodeID ) {
+                    $main = \eZContentObjectTreeNode::fetch( $mainNodeID );
+                    return array( 'object' => \expAuditHook::object( $object ),
+                                  'target' => $main ? array( 'type' => 'node', 'id' => (int)$main->attribute( 'parent_node_id' ) ) : null,
+                                  'after' => array( 'node' => (int)$mainNodeID, 'parent' => $main ? (int)$main->attribute( 'parent_node_id' ) : null ) );
+                } );
 
             // we need to clear cache again after db transcation is commited
             \eZContentCacheManager::clearContentCacheIfNeeded( $objectID,  $version->attribute( 'version' ) );

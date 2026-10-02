@@ -422,6 +422,16 @@ class expContentJobCopySubtree implements expContentJobType
                 $newVersion->store();
             }
         }
+        // Audit (doc/bc/6.0/audit.md, content.node.copy): one record per copied node, a child of the job's run
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $nodeMap = $this->nodeMap;
+            expAuditHook::emit( 'content.node.copy', function () use ( $srcNode, $srcNodeID, $newObject, $nodeMap, $isRoot ) {
+                return array( 'object' => expAuditHook::node( $srcNode ),
+                              'after' => array( 'node' => isset( $nodeMap[$srcNodeID] ) ? (int)$nodeMap[$srcNodeID] : null,
+                                                'object_id' => (int)$newObject->attribute( 'id' ), 'root' => $isRoot ) );
+            } );
+        }
         return 'copied';
     }
 

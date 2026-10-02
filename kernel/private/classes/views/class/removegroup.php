@@ -74,6 +74,14 @@ class Removegroup extends \Exponential\Runnable\ModuleView
                 foreach ( $deleteClassIDList as $deleteClassID )
                 {
                     $deleteClass = \eZContentClass::fetch( $deleteClassID );
+                    // Audit (doc/bc/6.0/audit.md, content.class.remove): a class removed with its group
+                    if ( $deleteClass && class_exists( 'expAuditHook' ) && \expAuditHook::on( 'content.class.remove' ) )
+                    {
+                        $auditClass = \expAuditHook::contentClass( $deleteClass );
+                        \expAuditHook::emit( 'content.class.remove', array( 'object' => $auditClass, 'target' => array( 'type' => 'class_group', 'id' => (int)$deleteID ),
+                            'before' => array( 'identifier' => $auditClass['identifier'],
+                                               'objects' => (int)\eZContentObject::fetchSameClassListCount( (int)$deleteClassID ) ) ) );
+                    }
                     if ( $deleteClass )
                         $deleteClass->remove( true );
                     $deleteClass = \eZContentClass::fetch( $deleteClassID, true, \eZContentClass::VERSION_STATUS_TEMPORARY );

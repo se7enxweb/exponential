@@ -100,7 +100,20 @@ class Removeeditversion extends \Exponential\Runnable\ModuleView
 
                 $versionCount= $object->getVersionCount();
                 $nodeID = $versionCount == 1 ? $versionObject->attribute( 'main_parent_node_id' ) : $object->attribute( 'main_node_id' );
-                $versionObject->removeThis();
+                // Audit (doc/bc/6.0/audit.md, content.version.remove): a discarded draft
+                $auditVersion = array( 'version' => (int)$versionObject->attribute( 'version' ), 'status' => (int)$versionObject->attribute( 'status' ),
+                                       'language' => (string)$versionObject->initialLanguageCode() );
+                $auditName = (string)$object->attribute( 'name' );
+                if ( class_exists( 'expAuditHook' ) )
+                    // the draft of a new object takes the object with it: that is this discard, not a purge of its own
+                    \expAuditHook::muted( 'content.object.purge', function () use ( $versionObject ) { $versionObject->removeThis(); } );
+                else
+                    $versionObject->removeThis();
+                if ( class_exists( 'expAuditHook' ) )
+                    \expAuditHook::emit( 'content.version.remove', array(
+                        'object' => array( 'type' => 'version', 'id' => (string)$auditVersion['version'], 'object_id' => (int)$objectID,
+                                           'name' => $auditName !== '' ? $auditName : null ),
+                        'before' => array( 'versions' => array( $auditVersion ), 'discard' => true ) ) );
             }
 
             $db->commit();

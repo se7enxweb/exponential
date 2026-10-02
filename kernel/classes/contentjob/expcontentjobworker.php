@@ -33,6 +33,12 @@ class expContentJobWorker
     /** @var resource|null the run lock */
     protected $runLock = null;
 
+    /** @var string|null the audit event of this run (content.job.start), the parent of what its batches record */
+    protected $auditParent = null;
+
+    /** @var float when this run started (microtime) */
+    protected $auditStarted = 0.0;
+
     /**
      * As root, becomes the site user: the owner of the installation's var/ directory (index.php may belong to
      * root on a managed host). Call before the kernel reads a setting, writes a cache or opens the database.
@@ -149,8 +155,9 @@ class expContentJobWorker
         try
         {
             $this->switchUser( $job );
+            $this->auditStart( $job, $state, $batchAtStart );
             $handler = expContentJob::handler( $job->type() );
-            $handler->prepare( $job );
+            $this->audited( function () use ( $handler, $job ) { $handler->prepare( $job ); } );
             $job->save();
         }
         catch ( Throwable $e )
@@ -176,7 +183,7 @@ class expContentJobWorker
             $this->begin();
             try
             {
-                $r = $handler->runBatch( $job, $batchSize );
+                $r = $this->audited( function () use ( $handler, $job, $batchSize ) { return $handler->runBatch( $job, $batchSize ); } );
                 if ( !$this->commit() )
                     throw new expContentJobException( 'the batch could not be committed (database error)' );
             }
@@ -188,7 +195,7 @@ class expContentJobWorker
             }
             try
             {
-                $handler->afterBatch( $job );
+                $this->audited( function () use ( $handler, $job ) { $handler->afterBatch( $job ); } );
             }
             catch ( Throwable $e )
             {
@@ -226,7 +233,7 @@ class expContentJobWorker
 
         try
         {
-            $handler->finish( $job );
+            $this->audited( function () use ( $handler, $job ) { $handler->finish( $job ); } );
         }
         catch ( Throwable $e )
         {
@@ -237,6 +244,8 @@ class expContentJobWorker
         $job->set( 'heartbeat', time() );
         $job->save();
         expContentJobLock::release( $id );
+        $this->auditEnd( $job, 'content.job.finish', 'success', array( 'nodes_done' => (int) $job->progress()['done'],
+                                                                         'result' => $job->result() ) );
         $job->appendLog( 'done' . ( $job->progress()['message'] !== '' ? ': ' . $job->progress()['message'] : '' ) );
         $this->say( "job $id done" );
         return 0;
@@ -260,6 +269,7 @@ class expContentJobWorker
         $job->save();
         $job->appendLog( 'failed: ' . $error );
         $this->say( 'job ' . $job->id() . ' failed: ' . $error );
+        $this->auditEnd( $job, 'content.job.fail', 'failed', array( 'error' => (string) $error, 'node_id' => (int) $nodeID ) );
         return 1;
     }
 
@@ -280,7 +290,102 @@ class expContentJobWorker
               ? ' (the partial copy is left in place: node ' . $job->result()['new_root_node_id'] . ')' : '';
         $job->appendLog( 'cancelled after batch ' . $job->progress()['batch'] . $what );
         $this->say( 'job ' . $job->id() . ' cancelled' );
+        $this->auditEnd( $job, 'content.job.cancel', 'success', array( 'state' => expContentJob::STATE_CANCELLED,
+                                                                         'after_batch' => (int) $job->progress()['batch'] ) );
         return 0;
+    }
+
+    // ---- the audit (doc/bc/6.0/audit.md, content.job.*) ---------------------------------------
+
+    /**
+     * Starts the run's audit record: the job id on every event of the run, content.job.start as the parent of
+     * the events the batches raise. The actor is the job's user (switchUser() made it the current one), the
+     * process's own user is the impersonator.
+     */
+    protected function auditStart( expContentJob $job, $state, $batchAtStart )
+    {
+        if ( !class_exists( 'expAuditHook' ) || !class_exists( 'expAudit' ) )
+            return;
+        try
+        {
+            expAudit::setJob( $job->id() );
+            $this->auditStarted = microtime( true );
+            $this->auditParent = expAuditHook::begin( 'content.job.start', array(
+                'object' => self::auditJob( $job ),
+                'actor' => $this->auditActor( $job ),
+                'before' => array( 'state' => (string) $state ),
+                'after' => array( 'state' => expContentJob::STATE_RUNNING, 'attempts' => $job->attempts(),
+                                  'resumed_after_batch' => (int) $batchAtStart ) ) );
+        }
+        catch ( Throwable $e )
+        {
+            $this->auditParent = null;
+        }
+    }
+
+    /**
+     * Runs a step of the job type with the run's record as the parent of what it records.
+     *
+     * @param callable $code
+     * @return mixed
+     */
+    protected function audited( $code )
+    {
+        if ( $this->auditParent === null || !class_exists( 'expAuditHook' ) )
+            return call_user_func( $code );
+        return expAuditHook::withParent( $this->auditParent, $code );
+    }
+
+    /**
+     * Ends the run's record and records how the run ended (finish, fail or cancel), then flushes, so the trail
+     * of a job is on disk when its state is.
+     */
+    protected function auditEnd( expContentJob $job, $name, $result, array $after )
+    {
+        if ( !class_exists( 'expAuditHook' ) || !class_exists( 'expAudit' ) )
+            return;
+        try
+        {
+            $after['ms'] = $this->auditStarted ? (int) round( ( microtime( true ) - $this->auditStarted ) * 1000 ) : null;
+            if ( $this->auditParent !== null )
+                expAuditHook::end( $this->auditParent );
+            $this->auditParent = null;
+            expAuditHook::emit( $name, array( 'object' => self::auditJob( $job ), 'actor' => $this->auditActor( $job ),
+                                              'result' => $result, 'reason' => $result === 'failed' ? 'error' : ( $name === 'content.job.cancel' ? 'cancelled' : null ),
+                                              'before' => array( 'state' => expContentJob::STATE_RUNNING ),
+                                              'after' => $after ) );
+            expAudit::flush();
+            expAudit::setJob( null );
+        }
+        catch ( Throwable $e )
+        {
+        }
+    }
+
+    /** @return array the job as an audit object: id, type, root node */
+    public static function auditJob( expContentJob $job )
+    {
+        $p = $job->params();
+        $root = null;
+        foreach ( array( 'node_id', 'source_node_id', 'target_node_id' ) as $key )
+        {
+            if ( isset( $p[$key] ) && is_numeric( $p[$key] ) )
+            {
+                $root = (int) $p[$key];
+                break;
+            }
+        }
+        if ( $root === null && isset( $p['roots'][0]['node_id'] ) )
+            $root = (int) $p['roots'][0]['node_id'];
+        return array( 'type' => 'job', 'id' => $job->id(), 'job_type' => $job->type(), 'node' => $root );
+    }
+
+    /** @return array the job's user as the actor, the process's user as the impersonator */
+    protected function auditActor( expContentJob $job )
+    {
+        $user = eZUser::fetch( $job->userID() );
+        return array( 'user_id' => $job->userID(), 'login' => $user ? (string) $user->attribute( 'login' ) : null,
+                      'impersonator' => array( 'user_id' => null, 'login' => null, 'os_user' => self::processUser() ) );
     }
 
     // ---- what tests replace ------------------------------------------------------------------

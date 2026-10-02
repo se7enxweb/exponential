@@ -180,6 +180,21 @@ class Urlalias extends \Exponential\Runnable\ModuleView
             }
         }
 
+        // Audit (doc/bc/6.0/audit.md, content.urlalias.change): an alias or wildcard added or removed
+        if ( class_exists( 'expAuditHook' ) && in_array( $infoCode, array( 'feedback-removed-all', 'feedback-removed', 'feedback-alias-created',
+                                                                           'feedback-alias-cleanup', 'feedback-wildcard-removed-all',
+                                                                           'feedback-wildcard-removed', 'feedback-wildcard-created' ), true ) )
+            \expAuditHook::emit( 'content.urlalias.change', function () use ( $infoCode, $infoData, $node ) {
+                $removed = strpos( $infoCode, 'removed' ) !== false;
+                $alias = isset( $infoData['new_alias'] ) ? (string)$infoData['new_alias'] : null;
+                return array( 'object' => array( 'type' => 'alias', 'id' => $alias !== null ? $alias : $infoCode ),
+                              'target' => \expAuditHook::node( $node ),
+                              'verb' => $removed ? 'remove' : 'add',
+                              'before' => $removed ? array( 'removed' => $infoCode === 'feedback-removed-all' || $infoCode === 'feedback-wildcard-removed-all' ? 'all' : 'selected' ) : null,
+                              'after' => $removed ? null : array( 'alias' => $alias,
+                                                                  'cleaned_from' => isset( $infoData['orig_alias'] ) ? (string)$infoData['orig_alias'] : null ) );
+            } );
+
         // Fetch generated names of node
         $filter = new \eZURLAliasQuery();
         $filter->actions = array( 'eznode:' . $node->attribute( 'node_id' ) );

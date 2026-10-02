@@ -117,6 +117,10 @@ class ListView extends \Exponential\Runnable\ModuleView
                         {
                             // Clear content cache if needed
                             \eZContentCacheManager::clearContentCacheIfNeededBySectionID( $sectionID );
+                            // Audit (doc/bc/6.0/audit.md, content.section.remove)
+                            if ( class_exists( 'expAuditHook' ) )
+                                \expAuditHook::emit( 'content.section.remove', array( 'object' => \expAuditHook::section( $section ),
+                                    'before' => array( 'name' => (string)$section->attribute( 'name' ), 'identifier' => (string)$section->attribute( 'identifier' ) ) ) );
                             $section->remove();
                             \ezpEvent::getInstance()->notify( 'content/section/cache', array( $sectionID ) );
                         }

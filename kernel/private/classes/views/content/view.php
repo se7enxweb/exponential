@@ -77,6 +77,13 @@ class View extends \Exponential\Runnable\ModuleView
         if ( $testingHandler->isEnabled() )
             $NodeID = $testingHandler->execute( $NodeID );
 
+        // Audit (doc/bc/6.0/audit.md, content.node.view): a sampled read, never the rendered page
+        if ( class_exists( 'expAuditHook' ) )
+            \expAuditHook::read( 'content.node.view', $NodeID, function () use ( $NodeID, $Params ) {
+                return array( 'object' => array( 'type' => 'node', 'id' => (int)$NodeID ),
+                              'after' => array( 'view_mode' => isset( $Params['ViewMode'] ) ? (string)$Params['ViewMode'] : null ) );
+            } );
+
         $viewCacheEnabled = ( $ini->variable( 'ContentSettings', 'ViewCaching' ) == 'enabled' );
 
         if ( isset( $Params['ViewCache'] ) )

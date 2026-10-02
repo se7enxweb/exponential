@@ -192,6 +192,20 @@ class expContentJob
         } );
         $job = new self( $data );
         $job->appendLog( 'queued: ' . $data['description'] . ' (user ' . $data['user_id'] . ', ' . $total . ' nodes)' );
+        // Audit (doc/bc/6.0/audit.md, content.job.create): the parameters by node id only
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'content.job.create', function () use ( $job, $normalized, $mode, $total ) {
+                $params = array();
+                foreach ( $normalized as $k => $v )
+                {
+                    if ( is_int( $v ) || is_bool( $v ) || ( is_string( $v ) && is_numeric( $v ) ) )
+                        $params[$k] = is_bool( $v ) ? $v : (int)$v;
+                    elseif ( is_array( $v ) && $v === array_values( $v ) && count( array_filter( $v, 'is_numeric' ) ) === count( $v ) )
+                        $params[$k] = array_map( 'intval', array_slice( $v, 0, 100 ) );
+                }
+                return array( 'object' => expContentJobWorker::auditJob( $job ),
+                              'after' => array( 'type' => $job->type(), 'params' => $params, 'mode' => $mode, 'nodes' => $total ) );
+            } );
         return $job;
     }
 
@@ -521,6 +535,15 @@ class expContentJob
         if ( !$data || !$changed )
             return false;
         $this->data = $data + $this->data;
+        // Audit (doc/bc/6.0/audit.md, content.job.cancel): the request; a running worker records when it stops
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $job = $this;
+            expAuditHook::emit( 'content.job.cancel', function () use ( $job, $released ) {
+                return array( 'object' => expContentJobWorker::auditJob( $job ), 'reason' => 'cancelled',
+                              'after' => array( 'state' => $job->state(), 'requested' => !$released, 'now' => $released ) );
+            } );
+        }
         if ( $released )
         {
             expContentJobLock::release( $this->id() );
@@ -573,6 +596,17 @@ class expContentJob
             return false;
         $this->data = $data;
         $this->appendLog( 'resumed' );
+        // Audit (doc/bc/6.0/audit.md, content.job.resume)
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $job = $this;
+            expAuditHook::emit( 'content.job.resume', function () use ( $job, $data ) {
+                $last = end( $data['resumed'] );
+                return array( 'object' => expContentJobWorker::auditJob( $job ),
+                              'before' => array( 'state' => is_array( $last ) && isset( $last['was'] ) ? (string)$last['was'] : null ),
+                              'after' => array( 'state' => self::STATE_QUEUED ) );
+            } );
+        }
         if ( $spawn )
             $this->spawn();
         return true;

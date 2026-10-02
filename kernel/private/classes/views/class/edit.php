@@ -604,6 +604,14 @@ class Edit extends \Exponential\Runnable\ModuleView
 
                 $unorderedParameters = array( 'Language' => $EditLanguage );
 
+                // Audit (doc/bc/6.0/audit.md): the class as defined before this store; none = content.class.create
+                $auditDefined = null;
+                if ( class_exists( 'expAuditHook' ) && ( \expAuditHook::on( 'content.class.create' ) || \expAuditHook::on( 'content.class.change' ) ) )
+                {
+                    $definedClass = \eZContentClass::fetch( $ClassID, true, \eZContentClass::VERSION_STATUS_DEFINED );
+                    $auditDefined = $definedClass ? \expAuditHook::contentClass( $definedClass, true, \eZContentClass::VERSION_STATUS_DEFINED ) : false;
+                }
+
                 // Is there existing objects of this content class?
                 if ( \eZContentObject::fetchSameClassListCount( $ClassID ) > 0 )
                 {
@@ -621,6 +629,26 @@ class Edit extends \Exponential\Runnable\ModuleView
                 $db->commit();
                 $http->removeSessionVariable( 'ClassCanStoreTicket' );
                 \ezpEvent::getInstance()->notify( 'content/class/cache', array( $ClassID ) );
+
+                if ( $auditDefined !== null )
+                {
+                    $auditName = $auditDefined === false ? 'content.class.create' : 'content.class.change';
+                    \expAuditHook::emit( $auditName, function () use ( $ClassID, $auditDefined, $auditName ) {
+                        $after = \expAuditHook::contentClass( \eZContentClass::fetch( $ClassID, true, \eZContentClass::VERSION_STATUS_DEFINED ),
+                                                              true, \eZContentClass::VERSION_STATUS_DEFINED );
+                        if ( !$after )
+                            $after = \expAuditHook::contentClass( (int)$ClassID, true );
+                        $object = $after;
+                        unset( $object['attributes'] );
+                        $afterFields = array( 'identifier' => isset( $after['identifier'] ) ? $after['identifier'] : null,
+                                              'attributes' => isset( $after['attributes'] ) ? $after['attributes'] : array() );
+                        if ( $auditName === 'content.class.create' )
+                            return array( 'object' => $object, 'after' => $afterFields );
+                        return array( 'object' => $object,
+                                      'before' => array( 'identifier' => $auditDefined['identifier'], 'attributes' => $auditDefined['attributes'] ),
+                                      'after' => $afterFields );
+                    } );
+                }
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'view', array( $ClassID ), $unorderedParameters ) );
             }
         }

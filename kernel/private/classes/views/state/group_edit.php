@@ -62,8 +62,20 @@ class GroupEdit extends \Exponential\Runnable\ModuleView
 
             if ( $isValid )
             {
+                $auditNew = !$group->attribute( 'id' );
                 $group->store();
                 \ezpEvent::getInstance()->notify( 'content/state/group/cache', array( $group->attribute( 'id' ) ) );
+                // Audit (doc/bc/6.0/audit.md, content.state.change)
+                if ( class_exists( 'expAuditHook' ) )
+                    \expAuditHook::emit( 'content.state.change', function () use ( $group, $auditNew ) {
+                        $names = array();
+                        foreach ( (array)$group->allTranslations() as $t )
+                            { $l = \eZContentLanguage::fetch( (int)$t->attribute( 'language_id' ) & ~1 ); $names[$l ? (string)$l->attribute( 'locale' ) : (string)$t->attribute( 'language_id' )] = (string)$t->attribute( 'name' ); }
+                        return array( 'object' => array( 'type' => 'state_group', 'id' => (int)$group->attribute( 'id' ),
+                                                         'identifier' => (string)$group->attribute( 'identifier' ) ),
+                                      'verb' => $auditNew ? 'create' : 'change',
+                                      'after' => array( 'identifier' => (string)$group->attribute( 'identifier' ), 'translations' => $names ) );
+                    } );
                 if ( $GroupIdentifier === null )
                 {
                     return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( 'state/group/' . $group->attribute( 'identifier' ) ) );

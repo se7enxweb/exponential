@@ -65,11 +65,18 @@ class expContentJobHideSubtree extends expContentJobBatchType
         $db = eZDB::instance();
         $nodePath = $db->escapeString( $node->attribute( 'path_string' ) );
         $time = time();
-        if ( eZAudit::isAuditEnabled() )
+        // Who hides or reveals which subtree (doc/bc/6.0/audit.md, content.node.hide / content.node.reveal); the
+        // record is a child of the job's run (expContentJobWorker), with the job id
+        if ( class_exists( 'expAuditHook' ) )
         {
-            eZAudit::writeAudit( 'content-hide', array( 'Node ID' => $nodeID, 'Object ID' => $node->attribute( 'contentobject_id' ),
-                                                        'Content Name' => $node->attribute( 'name' ), 'Time' => $time,
-                                                        'Comment' => ( $this->hide ? 'Node has been hidden' : 'Node has been unhidden' ) . ': content job ' . $job->id() ) );
+            $hide = $this->hide;
+            expAuditHook::emit( $hide ? 'content.node.hide' : 'content.node.reveal', function () use ( $node, $hide ) {
+                $parent = $node->attribute( 'parent' );
+                return array( 'object' => expAuditHook::node( $node ),
+                              'before' => array( 'hidden' => (bool)$node->attribute( 'is_hidden' ), 'invisible' => (bool)$node->attribute( 'is_invisible' ) ),
+                              'after' => array( 'hidden' => $hide,
+                                                'invisible' => $hide ? true : ( $parent ? (bool)$parent->attribute( 'is_invisible' ) : false ) ) );
+            } );
         }
         if ( $this->hide )
         {

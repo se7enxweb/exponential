@@ -22,6 +22,55 @@ namespace Exponential\Service;
  */
 class Trash
 {
+    /** @var int depth of audited trash operations in progress: the outermost one is the parent event */
+    private static $auditDepth = 0;
+
+    /**
+     * Runs a trash operation as one content.trash.empty event (doc/bc/6.0/audit.md) whose children are the
+     * content.object.purge events of the objects; nested calls belong to the outermost one.
+     *
+     * @param string $how purge_objects, empty_archived, purge_in_batches, empty_trash
+     * @param callable $work returns an int count, or array( 'purged' => int, ... )
+     * @param array $data extra after fields
+     * @return mixed what $work returns
+     */
+    private static function audited( $how, $work, array $data = array() )
+    {
+        if ( self::$auditDepth > 0 || !class_exists( 'expAuditHook' ) || !\expAuditHook::on( 'content.trash.empty' ) )
+        {
+            self::$auditDepth++;
+            try
+            {
+                return call_user_func( $work );
+            }
+            finally
+            {
+                self::$auditDepth--;
+            }
+        }
+        $before = (int)\eZContentObjectTrashNode::trashListCount( array( 'Limitation' => array() ) );
+        $parent = \expAuditHook::begin( 'content.trash.empty', array( 'object' => array( 'type' => 'trash', 'id' => $how ),
+                                                                       'before' => array( 'count' => $before ) ) );
+        self::$auditDepth++;
+        try
+        {
+            $result = \expAuditHook::withParent( $parent, $work );
+        }
+        catch ( \Throwable $e )
+        {
+            self::$auditDepth--;
+            \expAuditHook::end( $parent, array( 'result' => 'failed', 'reason' => 'error' ) );
+            throw $e;
+        }
+        self::$auditDepth--;
+        $purged = is_array( $result ) ? ( isset( $result['purged'] ) ? (int)$result['purged'] : 0 ) : (int)$result;
+        $ok = !is_array( $result ) || !isset( $result['ok'] ) || $result['ok'];
+        \expAuditHook::end( $parent, array( 'result' => $ok ? 'success' : 'failed', 'reason' => $ok ? null : 'error',
+                                             'after' => $data + array( 'purged' => $purged,
+                                                                       'count' => (int)\eZContentObjectTrashNode::trashListCount( array( 'Limitation' => array() ) ) ) ) );
+        return $result;
+    }
+
     /**
      * The user may empty the trash: content/cleantrash, granted fully or with limitations.
      *
@@ -42,22 +91,25 @@ class Trash
      */
     public static function purgeObjects( $objectIDs )
     {
-        $purged = 0;
-        foreach ( $objectIDs as $deleteID )
+        return self::audited( 'purge_objects', function () use ( $objectIDs )
         {
-            $objectList = \eZPersistentObject::fetchObjectList( \eZContentObject::definition(),
-                                                               null,
-                                                               array( 'id' => $deleteID ),
-                                                               null,
-                                                               null,
-                                                               true );
-            foreach ( $objectList as $object )
+            $purged = 0;
+            foreach ( $objectIDs as $deleteID )
             {
-                $object->purge();
-                $purged++;
+                $objectList = \eZPersistentObject::fetchObjectList( \eZContentObject::definition(),
+                                                                   null,
+                                                                   array( 'id' => $deleteID ),
+                                                                   null,
+                                                                   null,
+                                                                   true );
+                foreach ( $objectList as $object )
+                {
+                    $object->purge();
+                    $purged++;
+                }
             }
-        }
-        return $purged;
+            return $purged;
+        } );
     }
 
     /**
@@ -68,25 +120,28 @@ class Trash
      */
     public static function emptyArchived( $batchSize = 100 )
     {
-        $purged = 0;
-        while ( true )
+        return self::audited( 'empty_archived', function () use ( $batchSize )
         {
-            $objectList = \eZPersistentObject::fetchObjectList( \eZContentObject::definition(),
-                                                               null,
-                                                               array( 'status' => \eZContentObject::STATUS_ARCHIVED ),
-                                                               null,
-                                                               $batchSize,
-                                                               true );
-            if ( count( $objectList ) < 1 )
-                break;
-
-            foreach ( $objectList as $object )
+            $purged = 0;
+            while ( true )
             {
-                $object->purge();
-                $purged++;
+                $objectList = \eZPersistentObject::fetchObjectList( \eZContentObject::definition(),
+                                                                   null,
+                                                                   array( 'status' => \eZContentObject::STATUS_ARCHIVED ),
+                                                                   null,
+                                                                   $batchSize,
+                                                                   true );
+                if ( count( $objectList ) < 1 )
+                    break;
+
+                foreach ( $objectList as $object )
+                {
+                    $object->purge();
+                    $purged++;
+                }
             }
-        }
-        return $purged;
+            return $purged;
+        } );
     }
 
     /**
@@ -105,44 +160,47 @@ class Trash
      */
     public static function purgeInBatches( $iterationLimit = 100, $sleep = 1, $trashed = null, $onPurged = null, $onBatch = null )
     {
-        $db = \eZDB::instance();
-        $purged = 0;
-        $trashCount = \eZContentObjectTrashNode::trashListCount( array( 'Trashed' => $trashed ) );
-        while ( $trashCount > 0 )
+        return self::audited( 'purge_in_batches', function () use ( $iterationLimit, $sleep, $trashed, $onPurged, $onBatch )
         {
-            if ( $onBatch )
-                call_user_func( $onBatch, 'start' );
-            $trashList = \eZContentObjectTrashNode::trashList( array( 'Limit' => $iterationLimit, 'Trashed' => $trashed ), false );
-
-            $db->begin();
-            foreach ( $trashList as $trashNode )
-            {
-                $object = $trashNode->attribute( 'object' );
-                $object->purge();
-                $purged++;
-                if ( $onPurged )
-                    call_user_func( $onPurged, $object );
-            }
-            if ( !$db->commit() )
-                return array( 'ok' => false, 'purged' => $purged );
-
+            $db = \eZDB::instance();
+            $purged = 0;
             $trashCount = \eZContentObjectTrashNode::trashListCount( array( 'Trashed' => $trashed ) );
-            if ( $trashCount > 0 )
+            while ( $trashCount > 0 )
             {
-                // an empty batch while the count says more: stop rather than loop for ever
-                if ( !$trashList )
-                    $trashCount = 0;
-                else
+                if ( $onBatch )
+                    call_user_func( $onBatch, 'start' );
+                $trashList = \eZContentObjectTrashNode::trashList( array( 'Limit' => $iterationLimit, 'Trashed' => $trashed ), false );
+
+                $db->begin();
+                foreach ( $trashList as $trashNode )
                 {
-                    \eZContentObject::clearCache();
-                    if ( $sleep > 0 )
-                        sleep( $sleep );
+                    $object = $trashNode->attribute( 'object' );
+                    $object->purge();
+                    $purged++;
+                    if ( $onPurged )
+                        call_user_func( $onPurged, $object );
                 }
+                if ( !$db->commit() )
+                    return array( 'ok' => false, 'purged' => $purged );
+
+                $trashCount = \eZContentObjectTrashNode::trashListCount( array( 'Trashed' => $trashed ) );
+                if ( $trashCount > 0 )
+                {
+                    // an empty batch while the count says more: stop rather than loop for ever
+                    if ( !$trashList )
+                        $trashCount = 0;
+                    else
+                    {
+                        \eZContentObject::clearCache();
+                        if ( $sleep > 0 )
+                            sleep( $sleep );
+                    }
+                }
+                if ( $onBatch )
+                    call_user_func( $onBatch, 'end' );
             }
-            if ( $onBatch )
-                call_user_func( $onBatch, 'end' );
-        }
-        return array( 'ok' => true, 'purged' => $purged );
+            return array( 'ok' => true, 'purged' => $purged );
+        } );
     }
 
     /**
@@ -155,10 +213,13 @@ class Trash
      */
     public static function emptyTrash( $iterationLimit = 100, $sleep = 1 )
     {
-        $result = self::purgeInBatches( $iterationLimit, $sleep );
-        if ( $result['ok'] )
-            $result['purged'] += self::emptyArchived( $iterationLimit );
-        return $result;
+        return self::audited( 'empty_trash', function () use ( $iterationLimit, $sleep )
+        {
+            $result = self::purgeInBatches( $iterationLimit, $sleep );
+            if ( $result['ok'] )
+                $result['purged'] += self::emptyArchived( $iterationLimit );
+            return $result;
+        } );
     }
 
     /**

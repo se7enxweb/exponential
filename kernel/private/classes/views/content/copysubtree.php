@@ -490,6 +490,11 @@ function copySubtree( $srcNodeID, $dstNodeID, &$notifications, $allVersions, $ke
     eZDebug::writeDebug( $objectIDBlackList, "Copy subtree: Not copied object IDs list:" );
     eZDebug::writeDebug( $nodeIDBlackList, "Copy subtree: Not copied node IDs list:" );
 
+    // Audit (doc/bc/6.0/audit.md, content.node.copy)
+    if ( method_exists( 'eZContentObjectTreeNodeOperations', 'auditSubtreeCopy' ) )
+        eZContentObjectTreeNodeOperations::auditSubtreeCopy( $srcNodeID, $sourceSubTreeMainNode, $destinationNode, $syncNodeIDListSrc,
+                                                            $syncNodeIDListNew, $countNewNodes, $countNewObjects );
+
     $key = array_search( $sourceSubTreeMainNodeID, $syncNodeIDListSrc );
     if ( $key === false )
     {

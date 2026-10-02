@@ -191,6 +191,16 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
                                                                   'SearchLimit' => $pageLimit,
                                                                   'SearchOffset' => $Offset ),
                                                $searchArray );
+            // Audit (doc/bc/6.0/audit.md, content.search.query): a sampled read
+            if ( isset( $searchResult ) && is_array( $searchResult ) && class_exists( 'expAuditHook' ) )
+                \expAuditHook::read( 'content.search.query', null, function () use ( $searchText, $searchResult ) {
+                    $phrase = (string)$searchText;
+                    if ( function_exists( 'mb_substr' ) && mb_strlen( $phrase ) > 64 )
+                        $phrase = mb_substr( $phrase, 0, 64 ) . '…';
+                    return array( 'object' => array( 'type' => 'search', 'id' => 'content/advancedsearch' ),
+                                  'after' => array( 'phrase' => $phrase, 'hits' => isset( $searchResult['SearchCount'] ) ? (int)$searchResult['SearchCount'] : null ) );
+                } );
+
             if ( strlen(trim($searchText)) == 0 && count( $searchArray ) > 0  )
             {
                 $searchText = 'search by additional parameter';

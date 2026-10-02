@@ -77,6 +77,15 @@ function copyObject( $Module, $object, $allVersions, $newParentNodeID )
     eZContentObjectTreeNode::updateNodeVisibility( $newNode, $newParentNode );
 
     $db->commit();
+
+    // Audit (doc/bc/6.0/audit.md, content.node.copy)
+    if ( class_exists( 'expAuditHook' ) )
+        expAuditHook::emit( 'content.node.copy', function () use ( $object, $newObject, $newNode, $newParentNode ) {
+            return array( 'object' => expAuditHook::node( $object->attribute( 'main_node' ) ) ?: expAuditHook::object( $object ),
+                          'target' => expAuditHook::node( $newParentNode ),
+                          'after' => array( 'node' => $newNode ? (int)$newNode->attribute( 'node_id' ) : null,
+                                            'object_id' => (int)$newObject->attribute( 'id' ) ) );
+        } );
     return $Module->redirectToView( 'view', array( 'full', $newParentNodeID ) );
 }
 }

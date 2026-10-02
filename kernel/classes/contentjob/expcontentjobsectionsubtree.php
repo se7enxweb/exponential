@@ -54,10 +54,18 @@ class expContentJobSectionSubtree extends expContentJobBatchType
         parent::prepare( $job );
         if ( $first )
         {
+            // Who assigns which section at which node (doc/bc/6.0/audit.md, content.node.section), a child of the
+            // job's run
             $p = $job->params();
-            eZAudit::writeAudit( 'section-assign', array( 'Section ID' => $p['section_id'], 'Section name' => $p['section_name'],
-                                                          'Node ID' => $p['node_id'],
-                                                          'Comment' => 'Assigned a section to the node and its subtree: content job ' . $job->id() ) );
+            if ( class_exists( 'expAuditHook' ) )
+                expAuditHook::emit( 'content.node.section', function () use ( $p, $job ) {
+                    $node = eZContentObjectTreeNode::fetch( $p['node_id'] );
+                    $object = $node ? $node->object() : null;
+                    return array( 'object' => expAuditHook::node( $node ) ?: array( 'type' => 'node', 'id' => (int)$p['node_id'] ),
+                                  'target' => expAuditHook::section( (int)$p['section_id'] ),
+                                  'before' => array( 'section' => $object ? (int)$object->attribute( 'section_id' ) : null ),
+                                  'after' => array( 'section' => (int)$p['section_id'], 'objects' => (int)$job->progress()['total'] ) );
+                } );
         }
     }
 

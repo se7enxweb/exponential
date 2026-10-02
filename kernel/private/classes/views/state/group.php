@@ -50,6 +50,19 @@ class Group extends \Exponential\Runnable\ModuleView
             if ( $currentAction == 'Remove' && $Module->hasActionParameter( 'RemoveIDList' ) )
             {
                 $removeIDList = $Module->actionParameter( 'RemoveIDList' );
+                // Audit (doc/bc/6.0/audit.md, content.state.remove)
+                if ( class_exists( 'expAuditHook' ) && \expAuditHook::on( 'content.state.remove' ) )
+                {
+                    foreach ( (array)$removeIDList as $removeID )
+                    {
+                        $removeState = \eZContentObjectState::fetchById( $removeID );
+                        if ( $removeState )
+                            \expAuditHook::emit( 'content.state.remove', array(
+                                'object' => array( 'type' => 'state', 'id' => (int)$removeID, 'identifier' => (string)$removeState->attribute( 'identifier' ) ),
+                                'target' => array( 'type' => 'state_group', 'id' => (int)$group->attribute( 'id' ), 'identifier' => (string)$group->attribute( 'identifier' ) ),
+                                'before' => array( 'identifier' => (string)$removeState->attribute( 'identifier' ) ) ) );
+                    }
+                }
                 $group->removeStatesByID( $removeIDList );
             }
             else if ( $currentAction == 'Edit' )

@@ -97,6 +97,14 @@ class Download extends \Exponential\Runnable\ModuleView
             array( 'contentObjectID' => $contentObjectID,
                    'contentObjectAttributeID' => $contentObjectAttributeID ) );
 
+        // Audit (doc/bc/6.0/audit.md, content.object.download): a sampled read
+        if ( class_exists( 'expAuditHook' ) )
+            \expAuditHook::read( 'content.object.download', $contentObject->attribute( 'main_node_id' ), function () use ( $contentObject, $contentObjectAttribute ) {
+                return array( 'object' => \expAuditHook::object( $contentObject ),
+                              'target' => array( 'type' => 'attribute', 'id' => (int)$contentObjectAttribute->attribute( 'id' ),
+                                                 'identifier' => (string)$contentObjectAttribute->attribute( 'contentclass_attribute_identifier' ) ) );
+            } );
+
         $fileHandler = \eZBinaryFileHandler::instance();
         $result = $fileHandler->handleDownload( $contentObject, $contentObjectAttribute, \eZBinaryFileHandler::TYPE_FILE );
 

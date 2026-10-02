@@ -116,6 +116,21 @@ class UrlaliasWildcard extends \Exponential\Runnable\ModuleView
             }
         }
 
+        // Audit (doc/bc/6.0/audit.md, content.urlalias.change): an alias or wildcard added or removed
+        if ( class_exists( 'expAuditHook' ) && in_array( $infoCode, array( 'feedback-removed-all', 'feedback-removed', 'feedback-alias-created',
+                                                                           'feedback-alias-cleanup', 'feedback-wildcard-removed-all',
+                                                                           'feedback-wildcard-removed', 'feedback-wildcard-created' ), true ) )
+            \expAuditHook::emit( 'content.urlalias.change', function () use ( $infoCode, $infoData, $Module ) {
+                $removed = strpos( $infoCode, 'removed' ) !== false;
+                $alias = isset( $infoData['wildcard_src_url'] ) ? (string)$infoData['wildcard_src_url'] : null;
+                return array( 'object' => array( 'type' => 'wildcard', 'id' => $alias !== null ? $alias : $infoCode ),
+                              'target' => null,
+                              'verb' => $removed ? 'remove' : 'add',
+                              'before' => $removed ? array( 'removed' => $infoCode === 'feedback-removed-all' || $infoCode === 'feedback-wildcard-removed-all' ? 'all' : 'selected' ) : null,
+                              'after' => $removed ? null : array( 'alias' => $alias,
+                                                                  'cleaned_from' => isset( $infoData['orig_alias'] ) ? (string)$infoData['orig_alias'] : null ) );
+            } );
+
         // User preferences
         $limitList = array( array( 'id'    => 1,
                                    'value' => 10 ),

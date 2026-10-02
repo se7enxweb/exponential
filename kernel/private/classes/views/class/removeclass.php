@@ -76,8 +76,17 @@ class Removeclass extends \Exponential\Runnable\ModuleView
         {
             foreach ( $deleteIDArray as $deleteID )
             {
+                // Audit (doc/bc/6.0/audit.md, content.class.remove): described before it goes
+                $auditClass = class_exists( 'expAuditHook' ) && \expAuditHook::on( 'content.class.remove' )
+                              ? \expAuditHook::contentClass( (int)$deleteID ) : null;
+                $auditObjects = $auditClass ? (int)\eZContentObject::fetchSameClassListCount( (int)$deleteID ) : 0;
                 \eZContentClassOperations::remove( $deleteID );
                 \ezpEvent::getInstance()->notify( 'content/class/cache', array( $deleteID ) );
+                if ( $auditClass )
+                    \expAuditHook::emit( 'content.class.remove', array( 'object' => $auditClass,
+                        'before' => array( 'identifier' => isset( $auditClass['identifier'] ) ? $auditClass['identifier'] : null, 'objects' => $auditObjects ),
+                        'result' => \eZPersistentObject::count( \eZContentClass::definition(), array( 'id' => (int)$deleteID,
+                                                                  'version' => \eZContentClass::VERSION_STATUS_DEFINED ) ) ? 'failed' : 'success' ) );
             }
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( '/class/classlist/' . $GroupID ) );
         }

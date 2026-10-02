@@ -188,6 +188,20 @@ class eZContentOperationCollection
         $object = eZContentObject::fetch( $objectID );
         $version = $object->version( $versionNum );
 
+        // Audit (doc/bc/6.0/audit.md): the state before this version is published, for content.object.create,
+        // content.object.publish and content.object.translate
+        $auditBefore = null;
+        if ( class_exists( 'expAuditHook' )
+             && ( expAuditHook::on( 'content.object.create' ) || expAuditHook::on( 'content.object.publish' ) || expAuditHook::on( 'content.object.translate' ) ) )
+        {
+            $auditBefore = expAuditHook::safe( function () use ( $object ) {
+                return array( 'published' => (int)$object->attribute( 'published' ) > 0 && (int)$object->attribute( 'status' ) == eZContentObject::STATUS_PUBLISHED,
+                              'version' => (int)$object->attribute( 'current_version' ),
+                              'language_mask' => (int)$object->attribute( 'language_mask' ),
+                              'modified' => (int)$object->attribute( 'modified' ) );
+            } );
+        }
+
         $db = eZDB::instance();
         $db->begin();
 
@@ -239,6 +253,67 @@ class eZContentOperationCollection
         if ( in_array( $classID, eZUser::contentClassIDs() ) )
         {
             eZUser::purgeUserCacheByUserId( $object->attribute( 'id' ) );
+        }
+
+        if ( $auditBefore !== null )
+            self::auditPublished( $object, $version, $auditBefore );
+    }
+
+    /**
+     * Records the publication of a version (doc/bc/6.0/audit.md): content.object.create for the first published
+     * version, content.object.publish for a later one (with the identifiers of the attributes that changed, never
+     * their values), and content.object.translate when it adds languages.
+     *
+     * @param eZContentObject $object
+     * @param eZContentObjectVersion $version
+     * @param array $before published, version, language_mask, modified
+     */
+    static protected function auditPublished( $object, $version, array $before )
+    {
+        $languagesBefore = $before['published'] ? expAuditHook::languages( $before['language_mask'] ) : array();
+        $languagesAfter = expAuditHook::languages( $object->attribute( 'language_mask' ) );
+        $mainNodeID = (int)$object->attribute( 'main_node_id' );
+        $target = $mainNodeID ? array( 'type' => 'node', 'id' => $mainNodeID ) : null;
+        $objectDesc = expAuditHook::object( $object ) + array( 'version' => (int)$version->attribute( 'version' ) );
+        if ( !$before['published'] )
+        {
+            expAuditHook::emit( 'content.object.create', function () use ( $object, $objectDesc, $target, $languagesAfter ) {
+                return array( 'object' => $objectDesc, 'target' => $target,
+                              'after' => array( 'class' => (string)$object->attribute( 'class_identifier' ), 'languages' => $languagesAfter,
+                                                'section' => (int)$object->attribute( 'section_id' ), 'owner' => (int)$object->attribute( 'owner_id' ) ) );
+            } );
+            return;
+        }
+        expAuditHook::emit( 'content.object.publish', function () use ( $object, $version, $objectDesc, $target, $before, $languagesBefore, $languagesAfter ) {
+            $changed = array();
+            $previous = eZContentObjectVersion::fetchVersion( $before['version'], $object->attribute( 'id' ) );
+            if ( $previous )
+            {
+                $old = array();
+                foreach ( (array)$previous->contentObjectAttributes() as $a )
+                    $old[$a->attribute( 'contentclass_attribute_identifier' )] = array( $a->attribute( 'data_text' ), $a->attribute( 'data_int' ),
+                                                                                    $a->attribute( 'data_float' ), $a->attribute( 'sort_key_string' ) );
+                foreach ( (array)$version->contentObjectAttributes() as $a )
+                {
+                    $id = $a->attribute( 'contentclass_attribute_identifier' );
+                    $now = array( $a->attribute( 'data_text' ), $a->attribute( 'data_int' ), $a->attribute( 'data_float' ), $a->attribute( 'sort_key_string' ) );
+                    if ( !isset( $old[$id] ) || $old[$id] != $now )
+                        $changed[] = (string)$id;
+                }
+                sort( $changed );
+            }
+            return array( 'object' => $objectDesc, 'target' => $target,
+                          'before' => array( 'version' => $before['version'], 'languages' => $languagesBefore, 'modified' => $before['modified'] ),
+                          'after' => array( 'version' => (int)$version->attribute( 'version' ), 'languages' => $languagesAfter,
+                                            'modified' => (int)$object->attribute( 'modified' ), 'changed_attributes' => array_values( array_unique( $changed ) ) ) );
+        } );
+        $added = array_values( array_diff( $languagesAfter, $languagesBefore ) );
+        if ( $added )
+        {
+            expAuditHook::emit( 'content.object.translate', function () use ( $objectDesc, $added, $languagesBefore, $languagesAfter ) {
+                return array( 'object' => $objectDesc, 'target' => array( 'type' => 'language', 'id' => implode( ',', $added ) ),
+                              'before' => array( 'languages' => $languagesBefore ), 'after' => array( 'languages' => $languagesAfter ) );
+            } );
         }
     }
 
@@ -831,6 +906,8 @@ class eZContentOperationCollection
             eZContentOperationCollection::registerSearchObject( $objectID );
         }
 
+        // Audit: eZContentObjectTreeNodeOperations::copySubtree() records content.node.copy
+
        return $result;
     }
 
@@ -925,6 +1002,21 @@ class eZContentOperationCollection
             eZContentOperationCollection::registerSearchObject( $objectID );
         }
 
+        // Audit (doc/bc/6.0/audit.md, content.node.add)
+        if ( $locationAdded && class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'content.node.add', function () use ( $object, $assignedNodes, $selectedNodeIDArray, $parentNodeIDArray ) {
+                $before = array();
+                foreach ( $assignedNodes as $n )
+                    $before[] = (int)$n->attribute( 'node_id' );
+                $after = array();
+                foreach ( (array)$object->assignedNodes() as $n )
+                    $after[] = (int)$n->attribute( 'node_id' );
+                $added = array_values( array_diff( expAuditHook::ids( $selectedNodeIDArray ), expAuditHook::ids( $parentNodeIDArray ) ) );
+                return array( 'object' => expAuditHook::object( $object ),
+                              'target' => array( 'type' => 'node', 'id' => implode( ',', $added ) ),
+                              'before' => array( 'locations' => $before ), 'after' => array( 'locations' => $after, 'parents' => $added ) );
+            } );
+
         return array( 'status' => true );
     }
 
@@ -942,6 +1034,7 @@ class eZContentOperationCollection
         $mainNodeChanged      = array();
         $nodeAssignmentIdList = array();
         $objectIdList         = array();
+        $auditRemoved         = array();
 
         $db = eZDB::instance();
         $db->begin();
@@ -962,6 +1055,9 @@ class eZContentOperationCollection
 
             if ( $nodeId == $node->attribute( 'main_node_id' ) )
                 $mainNodeChanged[$objectId] = 1;
+            // Audit (doc/bc/6.0/audit.md, content.node.remove): described before it goes, recorded after the commit
+            if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.remove' ) )
+                $auditRemoved[] = eZContentObjectTreeNode::auditRemovalData( $node, eZContentObject::fetch( $objectId ), 'content.node.remove', array() );
             $node->removeThis();
 
             if ( !isset( $objectIdList[$objectId] ) )
@@ -1016,6 +1112,9 @@ class eZContentOperationCollection
         // Triggering content/cache filter for Http cache purge
         ezpEvent::getInstance()->filter( 'content/cache', $removeNodeIdList, array_keys( $objectIdList ) );
         // we don't clear template block cache here since it's cleared in eZContentObjectTreeNode::removeNode()
+
+        foreach ( $auditRemoved as $auditData )
+            expAuditHook::emit( 'content.node.remove', $auditData );
 
         return array( 'status' => true );
     }
@@ -1218,7 +1317,7 @@ class eZContentOperationCollection
             if ( $changedOriginalObject->attribute( 'section_id' ) != $parentObject->attribute( 'section_id' ) )
             {
 
-                eZContentObjectTreeNode::assignSectionToSubTree( $changedOriginalNode->attribute( 'main_node_id' ),
+                self::assignSectionUnaudited( $changedOriginalNode->attribute( 'main_node_id' ),
                                                                 $parentObject->attribute( 'section_id' ),
                                                                 $changedOriginalObject->attribute( 'section_id' ) );
             }
@@ -1230,7 +1329,7 @@ class eZContentOperationCollection
             if ( $changedTargetObject->attribute( 'section_id' ) != $selectedParentObject->attribute( 'section_id' ) )
             {
 
-                eZContentObjectTreeNode::assignSectionToSubTree( $changedTargetNode->attribute( 'main_node_id' ),
+                self::assignSectionUnaudited( $changedTargetNode->attribute( 'main_node_id' ),
                                                                 $selectedParentObject->attribute( 'section_id' ),
                                                                 $changedTargetObject->attribute( 'section_id' ) );
             }
@@ -1250,7 +1349,28 @@ class eZContentOperationCollection
 
         eZSearch::swapNode( $nodeID, $selectedNodeID, $nodeIdList = array() );
 
+        // Audit (doc/bc/6.0/audit.md, content.node.swap)
+        if ( class_exists( 'expAuditHook' ) )
+            expAuditHook::emit( 'content.node.swap', function () use ( $nodeID, $selectedNodeID, $objectID, $selectedObjectID ) {
+                return array( 'object' => expAuditHook::node( $nodeID ), 'target' => expAuditHook::node( $selectedNodeID ),
+                              'before' => array( 'object_ids' => array( (int)$objectID, (int)$selectedObjectID ) ),
+                              'after' => array( 'object_ids' => array( (int)$selectedObjectID, (int)$objectID ) ) );
+            } );
+
         return array( 'status' => true );
+    }
+
+    /**
+     * eZContentObjectTreeNode::assignSectionToSubTree() as part of another operation (a swap): the section follows
+     * the objects and is not recorded as an assignment of its own.
+     */
+    static protected function assignSectionUnaudited( $nodeID, $sectionID, $oldSectionID = false )
+    {
+        if ( !class_exists( 'expAuditHook' ) )
+            return eZContentObjectTreeNode::assignSectionToSubTree( $nodeID, $sectionID, $oldSectionID );
+        return expAuditHook::muted( 'content.node.section', function () use ( $nodeID, $sectionID, $oldSectionID ) {
+            return eZContentObjectTreeNode::assignSectionToSubTree( $nodeID, $sectionID, $oldSectionID );
+        } );
     }
 
     /**
@@ -1309,6 +1429,15 @@ class eZContentOperationCollection
         $curNode = eZContentObjectTreeNode::fetch( $nodeID );
         if ( is_object( $curNode ) )
         {
+             // Audit (doc/bc/6.0/audit.md, content.node.sort)
+             if ( class_exists( 'expAuditHook' ) )
+                 expAuditHook::emit( 'content.node.sort', function () use ( $curNode, $sortingField, $sortingOrder ) {
+                     if ( $curNode->attribute( 'sort_field' ) == $sortingField && $curNode->attribute( 'sort_order' ) == $sortingOrder )
+                         return false;
+                     return array( 'object' => expAuditHook::node( $curNode ),
+                                   'before' => array( 'field' => (int)$curNode->attribute( 'sort_field' ), 'order' => (int)$curNode->attribute( 'sort_order' ) ),
+                                   'after' => array( 'field' => (int)$sortingField, 'order' => (int)$sortingOrder ) );
+                 } );
              $db = eZDB::instance();
              $db->begin();
              $curNode->setAttribute( 'sort_field', $sortingField );
@@ -1335,6 +1464,18 @@ class eZContentOperationCollection
         $curNode = eZContentObjectTreeNode::fetch( $parentNodeID );
         if ( $curNode instanceof eZContentObjectTreeNode )
         {
+             // Audit (doc/bc/6.0/audit.md, content.node.priority): the priorities that change
+             $auditBefore = null;
+             if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.priority' ) )
+             {
+                 $auditBefore = array();
+                 for ( $i = 0, $l = count( $priorityArray ); $i < $l; $i++ )
+                 {
+                     $n = isset( $priorityIDArray[$i] ) ? eZContentObjectTreeNode::fetch( (int)$priorityIDArray[$i] ) : null;
+                     if ( $n instanceof eZContentObjectTreeNode && (int)$n->attribute( 'priority' ) !== (int)$priorityArray[$i] )
+                         $auditBefore[(int)$priorityIDArray[$i]] = array( (int)$n->attribute( 'priority' ), (int)$priorityArray[$i] );
+                 }
+             }
              $objectIDs = array();
              $db = eZDB::instance();
              $db->begin();
@@ -1366,6 +1507,20 @@ class eZContentOperationCollection
                      eZContentOperationCollection::registerSearchObject( $objectID );
                  }
              }
+             if ( $auditBefore )
+             {
+                 expAuditHook::emit( 'content.node.priority', function () use ( $curNode, $auditBefore ) {
+                     $before = array();
+                     $after = array();
+                     foreach ( $auditBefore as $id => $p )
+                     {
+                         $before[(string)$id] = $p[0];
+                         $after[(string)$id] = $p[1];
+                     }
+                     return array( 'object' => expAuditHook::node( $curNode ),
+                                   'before' => array( 'priorities' => $before ), 'after' => array( 'priorities' => $after ) );
+                 } );
+             }
         }
         return array( 'status' => true );
     }
@@ -1381,7 +1536,19 @@ class eZContentOperationCollection
      */
     static public function updateMainAssignment( $mainAssignmentID, $objectID, $mainAssignmentParentID )
     {
+        // Audit (doc/bc/6.0/audit.md, content.node.main)
+        $auditOldMain = null;
+        if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.main' ) )
+        {
+            $o = eZContentObject::fetch( $objectID );
+            $auditOldMain = $o ? (int)$o->attribute( 'main_node_id' ) : 0;
+        }
         eZContentObjectTreeNode::updateMainNodeID( $mainAssignmentID, $objectID, false, $mainAssignmentParentID );
+        if ( $auditOldMain !== null && $auditOldMain != $mainAssignmentID )
+            expAuditHook::emit( 'content.node.main', function () use ( $objectID, $mainAssignmentID, $auditOldMain ) {
+                return array( 'object' => expAuditHook::object( $objectID ), 'target' => expAuditHook::node( $mainAssignmentID ),
+                              'before' => array( 'main_node' => $auditOldMain ), 'after' => array( 'main_node' => (int)$mainAssignmentID ) );
+            } );
         eZContentCacheManager::clearContentCacheIfNeeded( $objectID );
         if ( !eZSearch::getEngine() instanceof eZSearchEngine )
         {
@@ -1405,6 +1572,15 @@ class eZContentOperationCollection
         $language = eZContentLanguage::fetch( $newInitialLanguageID );
         if ( $language and !$language->attribute( 'disabled' ) )
         {
+            // Audit (doc/bc/6.0/audit.md, content.object.initial_language)
+            if ( class_exists( 'expAuditHook' ) && $object->attribute( 'initial_language_id' ) != $newInitialLanguageID )
+                expAuditHook::emit( 'content.object.initial_language', function () use ( $object, $language ) {
+                    $old = eZContentLanguage::fetch( $object->attribute( 'initial_language_id' ) );
+                    return array( 'object' => expAuditHook::object( $object ),
+                                  'target' => array( 'type' => 'language', 'id' => (string)$language->attribute( 'locale' ) ),
+                                  'before' => array( 'language' => $old ? (string)$old->attribute( 'locale' ) : null ),
+                                  'after' => array( 'language' => (string)$language->attribute( 'locale' ) ) );
+                } );
             $object->setAttribute( 'initial_language_id', $newInitialLanguageID );
             $objectName = $object->name( false, $language->attribute( 'locale' ) );
             $object->setAttribute( 'name', $objectName );
@@ -1451,6 +1627,13 @@ class eZContentOperationCollection
         }
         if ( $change )
         {
+            // Audit (doc/bc/6.0/audit.md, content.object.always_available)
+            if ( class_exists( 'expAuditHook' ) )
+                expAuditHook::emit( 'content.object.always_available', function () use ( $object, $newAlwaysAvailable ) {
+                    return array( 'object' => expAuditHook::object( $object ),
+                                  'before' => array( 'always_available' => !$newAlwaysAvailable ),
+                                  'after' => array( 'always_available' => (bool)$newAlwaysAvailable ) );
+                } );
             eZContentCacheManager::clearContentCacheIfNeeded( $objectID );
             if ( !eZSearch::getEngine() instanceof eZSearchEngine )
             {
@@ -1471,7 +1654,10 @@ class eZContentOperationCollection
     static public function removeTranslation( $objectID, $languageIDArray )
     {
         $object = eZContentObject::fetch( $objectID );
+        $auditLanguagesBefore = class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.object.translation.remove' )
+                                ? expAuditHook::languages( $object->attribute( 'language_mask' ) ) : null;
 
+        $auditRemoved = array();
         foreach( $languageIDArray as $languageID )
         {
             if ( !$object->removeTranslation( $languageID ) )
@@ -1479,7 +1665,25 @@ class eZContentOperationCollection
                 eZDebug::writeError( "Object with id $objectID: cannot remove the translation with language id $languageID!",
                                      __METHOD__ );
             }
+            else
+                $auditRemoved[] = $languageID;
         }
+
+        // Audit (doc/bc/6.0/audit.md, content.object.translation.remove)
+        if ( $auditLanguagesBefore !== null && $auditRemoved )
+            expAuditHook::emit( 'content.object.translation.remove', function () use ( $objectID, $auditRemoved, $auditLanguagesBefore ) {
+                $object = eZContentObject::fetch( $objectID );
+                $locales = array();
+                foreach ( $auditRemoved as $id )
+                {
+                    $l = eZContentLanguage::fetch( $id );
+                    $locales[] = $l ? (string)$l->attribute( 'locale' ) : (string)$id;
+                }
+                return array( 'object' => expAuditHook::object( $object ),
+                              'target' => array( 'type' => 'language', 'id' => implode( ',', $locales ) ),
+                              'before' => array( 'languages' => $auditLanguagesBefore ),
+                              'after' => array( 'languages' => $object ? expAuditHook::languages( $object->attribute( 'language_mask' ) ) : array() ) );
+            } );
 
         eZContentOperationCollection::registerSearchObject( $objectID );
 
@@ -1499,6 +1703,8 @@ class eZContentOperationCollection
     static public function updateObjectState( $objectID, $selectedStateIDList )
     {
         $object = eZContentObject::fetch( $objectID );
+        $auditStatesBefore = class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.object.state' )
+                             ? expAuditHook::states( $object ) : null;
 
         // we don't need to re-assign states the object currently already has assigned
         $currentStateIDArray = $object->attribute( 'state_id_array' );
@@ -1513,10 +1719,16 @@ class eZContentOperationCollection
             $state = eZContentObjectState::fetchById( $selectedStateID );
             $object->assignState( $state );
         }
-        eZAudit::writeAudit( 'state-assign', array( 'Content object ID' => $object->attribute( 'id' ),
-                                                    'Content object name' => $object->attribute( 'name' ),
-                                                    'Selected State ID Array' => implode( ', ' , $selectedStateIDList ),
-                                                    'Comment' => 'Updated states of the current object: eZContentOperationCollection::updateObjectState()' ) );
+        // Who assigns which states (doc/bc/6.0/audit.md, content.object.state)
+        if ( $auditStatesBefore !== null && $selectedStateIDList )
+            expAuditHook::emit( 'content.object.state', function () use ( $objectID, $selectedStateIDList, $auditStatesBefore ) {
+                $object = eZContentObject::fetch( $objectID );
+                eZContentObject::clearCache( array( $objectID ) );
+                $object = eZContentObject::fetch( $objectID );
+                return array( 'object' => expAuditHook::object( $object ),
+                              'target' => array( 'type' => 'state', 'id' => implode( ',', expAuditHook::ids( array_values( $selectedStateIDList ) ) ) ),
+                              'before' => array( 'states' => $auditStatesBefore ), 'after' => array( 'states' => expAuditHook::states( $object ) ) );
+            } );
         //call appropriate method from search engine
         eZSearch::updateObjectState($objectID, $selectedStateIDList);
 

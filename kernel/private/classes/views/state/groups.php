@@ -55,6 +55,11 @@ class Groups extends \Exponential\Runnable\ModuleView
                 $group = \eZContentObjectStateGroup::fetchById( $removeID );
                 if ( $group && !$group->isInternal() )
                 {
+                    // Audit (doc/bc/6.0/audit.md, content.state.remove)
+                    if ( class_exists( 'expAuditHook' ) )
+                        \expAuditHook::emit( 'content.state.remove', array(
+                            'object' => array( 'type' => 'state_group', 'id' => (int)$removeID, 'identifier' => (string)$group->attribute( 'identifier' ) ),
+                            'before' => array( 'identifier' => (string)$group->attribute( 'identifier' ) ) ) );
                     \eZContentObjectStateGroup::removeByID( $removeID );
                     \ezpEvent::getInstance()->notify( 'content/state/group/cache', array( $removeID ) );
                 }
