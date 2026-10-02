@@ -48,9 +48,9 @@ class Flatten extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
 
-        $script = \eZScript::instance( array( 'description' => ( "Exponential database flattening.\n\n" .
+        $script = $this->script( array( 'description' => ( "Exponential database flattening.\n\n" .
                                                                 "Will remove data that is not considered currently in use to minimize the amount of database data it consumes\n" .
                                                                 "\n" .
                                                                 "Possible values for NAME is:\n" .
@@ -62,7 +62,7 @@ class Flatten extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql]",
+        $options = $this->options( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql]",
                                         "[name]",
                                         array( 'db-host' => "Database host",
                                                'db-user' => "Database user",

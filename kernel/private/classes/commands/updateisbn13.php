@@ -32,8 +32,8 @@ class Updateisbn13 extends \Exponential\Runnable\Command
 
         $url = ''; // http://www.isbn-international.org/agency?rmxml=1 url with the xml.
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => "Exponential ISBN-13 update\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => "Exponential ISBN-13 update\n\n" .
                                                               "Update the database with new updated ISBN data to the database.\n\nExample: ./bin/php/updateisbn13.php --url=<url of the xml file with the ranges>",
                                              'use-session' => false,
                                              'use-modules' => true,
@@ -41,7 +41,7 @@ class Updateisbn13 extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[url:][db-host:][db-user:][db-password:][db-database:][db-driver:]",
+        $options = $this->options( "[url:][db-host:][db-user:][db-password:][db-database:][db-driver:]",
                                         "",
                                         array( 'url' => "URL containing the xml file for the different ranges",
                                                'db-host' => "Database host.",

@@ -32,9 +32,9 @@ class Cleanuppolicies extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
 
-        $script = \eZScript::instance(
+        $script = $this->script(
             array(
                 'description' => "Remove from database policies defined on module which do not exist in a modules folder\n"
                     . "according to settings from module.ini/[ModuleSettings]/ExtensionRepositories\n\nExample: ./bin/php/cleanuppolicies.php --dry-run",
@@ -44,7 +44,7 @@ class Cleanuppolicies extends \Exponential\Runnable\Command
             )
         );
         $script->startup();
-        $options = $script->getOptions(
+        $options = $this->options(
             "[dry-run][n]",
             '',
             array(

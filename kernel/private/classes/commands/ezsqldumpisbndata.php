@@ -35,8 +35,8 @@ class Ezsqldumpisbndata extends \Exponential\Runnable\Command
         $stdOutSQL = null;
         $stdOutDBA = null;
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential SQL Isbn data dump\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential SQL Isbn data dump\n\n" .
                                                                 "Dump sql data to file or standard output from the tables:\n" .
                                                                 "  ezisbn_group\n" .
                                                                 "  ezisbn_group_range\n" .
@@ -55,7 +55,7 @@ class Ezsqldumpisbndata extends \Exponential\Runnable\Command
 
         $script->startup();
 
-         $options = $script->getOptions( "[stdout-sql][stdout-dba][filename-sql:][filename-dba:][db-host:][db-user:][db-password:][db-database:][db-driver:]", "",
+         $options = $this->options( "[stdout-sql][stdout-dba][filename-sql:][filename-dba:][db-host:][db-user:][db-password:][db-database:][db-driver:]", "",
 
                                         array( 'stdout-sql' => "Result of sql output will be printed to standard output instead of to file.",
                                                'stdout-dba' => "Result of dba output will be printed to standard output instead of to file.",

@@ -31,15 +31,15 @@ class Ezsubtreeremove extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "\n" .
                                                                  "This script will make a remove of a content object subtrees.\n\nExample: ./bin/php/ezsubtreeremove.php --nodes-id=70,71 --ignore-trash\n" ),
                                               'use-session' => false,
                                               'use-modules' => true,
                                               'use-extensions' => true ) );
         $script->startup();
 
-        $scriptOptions = $script->getOptions( "[nodes-id:][ignore-trash]",
+        $scriptOptions = $this->options( "[nodes-id:][ignore-trash]",
                                               "",
                                               array( 'nodes-id' => "Subtree nodes ID (separated by comma ',').",
                                                      'ignore-trash' => "Ignore trash ('move to trash' by default)."

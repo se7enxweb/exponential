@@ -30,8 +30,8 @@ class Ezcheckphptag extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential PHP tag checker\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential PHP tag checker\n\n" .
                                                                  "Checks for characters before the PHP start tag and after the PHP end tag\n" .
                                                                  "and sets exit code based on the result\n" .
                                                                  "PATH can either be a file or a directory\n" .
@@ -43,7 +43,7 @@ class Ezcheckphptag extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[no-print]",
+        $options = $this->options( "[no-print]",
                                         "[path+]",
                                         array( 'no-print' => "Do not print path for bad files"
                                                ) );

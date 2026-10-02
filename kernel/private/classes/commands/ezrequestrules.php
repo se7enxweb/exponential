@@ -34,8 +34,8 @@ class Ezrequestrules extends \Exponential\Runnable\Command
 
         require_once 'kernel/private/classes/global_functions.php';
 
-        $cli    = \eZCLI::instance();
-        $script = \eZScript::instance(
+        $cli = $this->cli();
+        $script = $this->script(
             array(
                 'description' => "Exponential request rules\n" .
                                  "Lists and checks the rules of a siteaccess and explains their decision for an address.\n" .
@@ -53,7 +53,7 @@ class Ezrequestrules extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions(
+        $options = $this->options(
             "[list][check][uri:][user:][method:][host:][ip:][scheme:][header:*]",
             "",
             array( 'list'   => 'List the rules in the order they are asked',

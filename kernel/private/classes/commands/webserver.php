@@ -176,8 +176,8 @@ class Webserver extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => (
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => (
             "Exponential web server - the engine-agnostic control command\n\n" .
             "One command for whichever engine this installation runs. It reuses the\n" .
             "same controller as exp:velocity, so every verb behaves identically; the\n" .
@@ -238,7 +238,7 @@ class Webserver extends \Exponential\Runnable\Command
             array( 'json', 'help', 'quiet', 'verbose', 'colors', 'no-colors', 'allow-root-user', 'debug',
                    'all', 'reconfigure', 'dry-run', 'force', 'check', 'trust-github-digest', 'https', 'no-https' ) );
 
-        $options = $script->getOptions(
+        $options = $this->options(
             '[json][engine:][port:][docroot:][https-port:][reconfigure][dry-run][all][force][check][trust-github-digest][from:][keep-global:][https][no-https]',
             '[command]',
             array( 'json' => 'Report as JSON, for a caller that is not a person',

@@ -1518,16 +1518,16 @@ class Ezconvertdbcharset extends \Exponential\Runnable\Command
         // work around a bug in eZSys that prevents it from telling us Exponential base dir
         $eZDir = getcwd();
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
 
-        $script = \eZScript::instance( array( 'description' => ( "Changes your Exponential database tables to use UTF8" ),
+        $script = $this->script( array( 'description' => ( "Changes your Exponential database tables to use UTF8" ),
                                               'use-session' => false,
                                               'use-modules' => false,
                                               'use-extensions' => true ) );
 
         $script->startup();
 
-        $options = $script->getOptions( "[extra-xml-attributes:][extra-xml-data:][extra-serialized-data:][collation:][skip-class-translations][iconv-character-set:][log-filename:]",
+        $options = $this->options( "[extra-xml-attributes:][extra-xml-data:][extra-serialized-data:][collation:][skip-class-translations][iconv-character-set:][log-filename:]",
                                         "",
                                         array( 'extra-xml-attributes' => "specify custom attributes which store its data in xml.\n" .
                                                                          "usage: <datatype_string>[.<table>.<field>][,<datatype_string>.<table>.<field>...].\n" .

@@ -59,8 +59,8 @@ class Ezsqlinsertschema extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential SQL Schema insert\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential SQL Schema insert\n\n" .
                                                                 "Insert database schema and data to specified database\n".
                                                                 "ezsqlinsertschema.php --type=mysql --user=root share/db_schema.dba ezp35stable" ),
                                              'use-session' => false,
@@ -69,7 +69,7 @@ class Ezsqlinsertschema extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[type:][user:][host:][password;][port:][socket:]" .
+        $options = $this->options( "[type:][user:][host:][password;][port:][socket:]" .
                                         "[table-type:][table-charset:]" .
                                         "[insert-types:][allow-multi-insert][schema-file:][clean-existing]",
                                         "[filename][database]",

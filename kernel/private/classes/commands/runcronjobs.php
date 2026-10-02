@@ -101,8 +101,8 @@ class Runcronjobs extends \Exponential\Runnable\Command
 
         \eZContentLanguage::setCronjobMode();
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'debug-message' => '',
+        $cli = $this->cli();
+        $script = $this->script( array( 'debug-message' => '',
                                               'use-session' => true,
                                               'use-modules' => true,
                                               'use-extensions' => true ) );

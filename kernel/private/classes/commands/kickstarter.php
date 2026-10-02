@@ -155,7 +155,7 @@ class Kickstarter extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
         $argv = $GLOBALS['argv'];
         $subcommand = isset( $argv[1] ) ? $argv[1] : null;
         $forwardArgs = array_slice( $argv, 2 );

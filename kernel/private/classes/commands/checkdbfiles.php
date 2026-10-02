@@ -152,8 +152,8 @@ class Checkdbfiles extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential DB file verifier\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential DB file verifier\n\n" .
                                                                 "Checks the database update files and gives a report on them.\n" .
                                                                 "It will show which files are missing and which should not be present.\n" .
                                                                 "\n" .
@@ -173,7 +173,7 @@ class Checkdbfiles extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[no-verify-branches][export-path:]",
+        $options = $this->options( "[no-verify-branches][export-path:]",
                                         "",
                                         array( 'no-verify-branches' => "Do not verify the content of the files with previous branches (To avoid SVN usage)",
                                                'export-path' => "Directory to use for doing SVN exports."

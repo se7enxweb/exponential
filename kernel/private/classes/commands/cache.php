@@ -141,14 +141,14 @@ class Cache extends \Exponential\Runnable\Command
             exit( 0 );
         }
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => $overview,
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => $overview,
                                              'use-session' => false,
                                              'use-modules' => false,
                                              'use-extensions' => true ) );
         $script->startup();
 
-        $options = $script->getOptions(
+        $options = $this->options(
             '[dry-run][json][all][tag:][id:][purge][expiry:][iteration-sleep:][iteration-max:][sizes]' .
             '[site:][path:][node:][url:][max-pages:][max-depth:][keep]',
             '[group][action]',

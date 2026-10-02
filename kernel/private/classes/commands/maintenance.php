@@ -40,14 +40,14 @@ class Maintenance extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => "Maintenance mode: take the site offline and back\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => "Maintenance mode: take the site offline and back\n\n" .
                                                                "  maintenance.php on|off|status [options]",
                                              'use-session' => false,
                                              'use-modules' => false,
                                              'use-extensions' => true ) );
         $script->startup();
-        $options = $script->getOptions( '[message:][until:][allow-ip:][allow-admin]', '[action]',
+        $options = $this->options( '[message:][until:][allow-ip:][allow-admin]', '[action]',
                                         array( 'message' => 'What the page says, instead of the default text',
                                                'until' => 'When the site is expected back: 30m, 2h, or a date and time',
                                                'allow-ip' => 'Addresses that still see the site, comma separated',

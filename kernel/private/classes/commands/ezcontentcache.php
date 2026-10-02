@@ -30,8 +30,8 @@ class Ezcontentcache extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential Content Cache Handler\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential Content Cache Handler\n" .
                                                                 "Allows for easy clearing of Content Caches\n" .
                                                                 "\n" .
                                                                 "Clearing node for content and users tree\n" .
@@ -44,7 +44,7 @@ class Ezcontentcache extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[clear-node:][clear-subtree:]",
+        $options = $this->options( "[clear-node:][clear-subtree:]",
                                         "",
                                         array( 'clear-node' => ( "Clears all content caches related to a given node,\n" .
                                                                  "pass either node ID or nice url of node.\n" .

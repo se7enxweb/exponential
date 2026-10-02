@@ -33,8 +33,8 @@ class Resetuserpassword extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance(
+        $cli = $this->cli();
+        $script = $this->script(
             array(
                 'description' => "Reset a user password with admin authentication or root bypass.\n" .
                                  "\n" .

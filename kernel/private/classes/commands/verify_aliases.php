@@ -49,8 +49,8 @@ class VerifyAliases extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance(
+        $cli = $this->cli();
+        $script = $this->script(
             array(
                 'description' => "Exponential URL Alias Integrity Checker\n\n" .
                                  "Checks ezurlalias_ml consistency and optional safe auto-fixes.\n" .
@@ -66,7 +66,7 @@ class VerifyAliases extends \Exponential\Runnable\Command
 
         $helpRequested = in_array( '-h', $_SERVER['argv'] ) || in_array( '--help', $_SERVER['argv'] );
 
-        $options = $script->getOptions(
+        $options = $this->options(
             "[fix][verbose][sql]",
             "",
             array(

@@ -31,8 +31,8 @@ class Ezcache extends \Exponential\Runnable\Command
         unset( $__name );
 
         $helper = new \eZCacheHelper(
-            $cli = \eZCLI::instance(),
-            $script = \eZScript::instance(
+            $cli = $this->cli(),
+            $script = $this->script(
                 array(
                     'description' => "Exponential Cache Handler\n" .
                                      "Allows for easy clearing of Cache files\n" .
@@ -47,7 +47,7 @@ class Ezcache extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[clear-tag:][clear-id:][clear-all]" . /*[purge-tag:][purge-id:][purge-all]*/ "[iteration-sleep:][iteration-max:][expiry:][list-tags][list-ids][purge]",
+        $options = $this->options( "[clear-tag:][clear-id:][clear-all]" . /*[purge-tag:][purge-id:][purge-all]*/ "[iteration-sleep:][iteration-max:][expiry:][list-tags][list-ids][purge]",
                                         "",
                                         array( 'clear-tag' => 'Clears all caches related to a given tag, separate multiple tags with a comma',
                                                'clear-id' => 'Clears all caches related to a given id, separate multiple ids with a comma',

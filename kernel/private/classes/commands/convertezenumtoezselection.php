@@ -29,7 +29,7 @@ class Convertezenumtoezselection extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
 
         $scriptSettings = array();
         $scriptSettings['description'] = 'Convert attributes of the type ezenum to ezselection';
@@ -37,7 +37,7 @@ class Convertezenumtoezselection extends \Exponential\Runnable\Command
         $scriptSettings['use-modules'] = true;
         $scriptSettings['use-extensions'] = true;
 
-        $script = \eZScript::instance( $scriptSettings );
+        $script = $this->script( $scriptSettings );
         $script->startup();
 
         $config = '[preview]';
@@ -46,7 +46,7 @@ class Convertezenumtoezselection extends \Exponential\Runnable\Command
         $arguments = false;
         $useStandardOptions = true;
 
-        $options = $script->getOptions( $config, $argumentConfig, $optionHelp, $arguments, $useStandardOptions );
+        $options = $this->options( $config, $argumentConfig, $optionHelp, $arguments, $useStandardOptions );
         $script->initialize();
 
         if ( count( $options['arguments'] ) != 1 )

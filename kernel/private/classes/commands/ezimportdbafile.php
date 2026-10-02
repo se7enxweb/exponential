@@ -30,8 +30,8 @@ class Ezimportdbafile extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential datatype sql update\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential datatype sql update\n\n" .
                                                                 "Script can be run as:\n" .
                                                                 "bin/php/ezimportdbafile.php --datatype=\n\n" .
                                                                 "Example: bin/php/ezimportdbafile.php --datatype=ezisbn" ),
@@ -41,7 +41,7 @@ class Ezimportdbafile extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[datatype:]", "",
+        $options = $this->options( "[datatype:]", "",
                                         array( 'datatype' => "The name of the datatype where the database should be updated." ) );
         $script->initialize();
         $dataTypeName = $options['datatype'];

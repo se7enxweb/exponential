@@ -49,9 +49,9 @@ class Ezasynchronouspublisher extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
 
-        $script = \eZScript::instance( array( 'description' => "Processes the Exponential publishing queue",
+        $script = $this->script( array( 'description' => "Processes the Exponential publishing queue",
                                              'use-session' => false,
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
@@ -69,7 +69,7 @@ class Ezasynchronouspublisher extends \Exponential\Runnable\Command
             }
         }
 
-        $options = $script->getOptions(
+        $options = $this->options(
             // options definition
             "[n|daemon][p:|pid-file:]",
             // arguments definition

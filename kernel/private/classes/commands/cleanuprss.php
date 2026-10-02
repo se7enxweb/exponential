@@ -34,8 +34,8 @@ class Cleanuprss extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli    = \eZCLI::instance();
-        $script = \eZScript::instance(
+        $cli = $this->cli();
+        $script = $this->script(
             array(
                 'description' => "Exponential RSS Import Cleanup\n" .
                                  "Keeps the newest items of each active RSS import and removes the rest.\n" .
@@ -52,7 +52,7 @@ class Cleanuprss extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions(
+        $options = $this->options(
             "[dry-run][keep:]",
             "",
             array( 'dry-run' => 'List what would be removed, and remove nothing',

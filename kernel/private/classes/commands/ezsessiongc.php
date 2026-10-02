@@ -41,8 +41,8 @@ class Ezsessiongc extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential Session Garbage Collector\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential Session Garbage Collector\n\n" .
                                                                 "Allows manual cleaning up expired sessions as defined by site.ini[Session]SessionTimeout\n" .
                                                                 "\n" .
                                                                 "./bin/php/ezsessiongc.php" ),
@@ -52,7 +52,7 @@ class Ezsessiongc extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "",
+        $options = $this->options( "",
                                         "[]",
                                         array() );
         $script->initialize();

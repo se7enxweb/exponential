@@ -60,8 +60,8 @@ class Checkclasses extends \Exponential\Runnable\Command
             exit( 0 );
         }
 
-        $cli    = \eZCLI::instance();
-        $script = \eZScript::instance( array(
+        $cli = $this->cli();
+        $script = $this->script( array(
             'description' => "Exponential class loader check\n" .
                              "Loads every class this installation declares and reports the ones php refuses.\n" .
                              "\n" .
@@ -72,7 +72,7 @@ class Checkclasses extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions(
+        $options = $this->options(
             "[kernel][tests][quiet-ok]", "",
             array( 'kernel'   => 'Check the kernel classes as well as the extension ones. Slower, and they are the ones least likely to be wrong.',
                    'tests'    => 'Include classes that live under a tests directory. Left out by default: they are usually written against whichever version of phpunit was current, and a test class that will not load breaks nothing anybody is looking at.',

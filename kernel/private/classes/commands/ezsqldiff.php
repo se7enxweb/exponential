@@ -105,8 +105,8 @@ class Ezsqldiff extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential SQL diff\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential SQL diff\n\n" .
                                                                 "Displays differences between two database schemas,\n" .
                                                                 "and sets exit code based whether there is a difference or not\n" .
                                                                 "\n" .
@@ -117,7 +117,7 @@ class Ezsqldiff extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[source-type:][source-host:][source-user:][source-password;][source-socket:]" .
+        $options = $this->options( "[source-type:][source-host:][source-user:][source-password;][source-socket:]" .
                                         "[match-type:][match-host:][match-user:][match-password;][match-socket:]" .
                                         "[t:|type:][host:][u:|user:][p:|password;][socket:]" .
                                         "[lint-check]" .

@@ -59,8 +59,8 @@ class Ezsqldumpschema extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential SQL Schema dump\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential SQL Schema dump\n\n" .
                                                                 "Dump sql schema to specified file or standard output\n".
                                                                 "ezsqldumpschema.php --type=mysql --user=root stable33 schema.sql" ),
                                              'use-session' => false,
@@ -69,7 +69,7 @@ class Ezsqldumpschema extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[type:][user:][host:][password;][port:][socket:][output-array][output-serialized][output-sql]" .
+        $options = $this->options( "[type:][user:][host:][password;][port:][socket:][output-array][output-serialized][output-sql]" .
                                         "[diff-friendly][meta-data][table-type:][table-charset:][compatible-sql][no-sort]" .
                                         "[format:]" .
                                         "[output-types:][allow-multi-insert][schema-file:]",

@@ -66,8 +66,8 @@ class Eztemplatecheck extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential Template Syntax Checker\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential Template Syntax Checker\n" .
                                                                 "\n" .
                                                                 "./bin/php/eztemplatecheck.php -sadmin\n" .
                                                                 "or\n" .
@@ -78,7 +78,7 @@ class Eztemplatecheck extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "", "[FILE*]", array() );
+        $options = $this->options( "", "[FILE*]", array() );
         $sys = \eZSys::instance();
 
         $script->initialize();

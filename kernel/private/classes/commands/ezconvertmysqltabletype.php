@@ -237,8 +237,8 @@ class Ezconvertmysqltabletype extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential Database Converter\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential Database Converter\n\n" .
                                                                 "Convert the database to the given type\n".
                                                                 "ezconvertmysqltabletype.php [--host=VALUE --user=VALUE --database=VALUE [--password=VALUE]] [--list] [--newtype=TYPE] [--usecopy]" ),
                                              'use-session' => false,
@@ -247,7 +247,7 @@ class Ezconvertmysqltabletype extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[host:][user:][password:][database:][list][newtype:][usecopy]",
+        $options = $this->options( "[host:][user:][password:][database:][list][newtype:][usecopy]",
                                         "",
                                         array(
                                                'list' => "List the table types",

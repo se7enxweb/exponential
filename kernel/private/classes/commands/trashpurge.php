@@ -30,7 +30,7 @@ class Trashpurge extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $script = \eZScript::instance(
+        $script = $this->script(
             array(
                 'description' =>
                     "Empty Exponential trash.\n" .
@@ -45,7 +45,7 @@ class Trashpurge extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions(
+        $options = $this->options(
             "[iteration-sleep:][iteration-limit:][memory-monitoring][trashed-days:]",
             "",
             array(

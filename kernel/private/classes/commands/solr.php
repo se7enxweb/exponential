@@ -184,8 +184,8 @@ class Solr extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => (
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => (
             "Exponential Solr - control the Solr search server\n\n" .
             "Solr is optional. This installation uses the built-in eZ search index by\n" .
             "default (bin/php/updatesearchindex.php); Solr takes over only once it is\n" .
@@ -219,7 +219,7 @@ class Solr extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( '[json]', '[command]',
+        $options = $this->options( '[json]', '[command]',
             array( 'json' => 'Report as JSON, for a caller that is not a person' ) );
         $script->initialize();
 

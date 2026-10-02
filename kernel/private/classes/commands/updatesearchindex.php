@@ -48,9 +48,9 @@ class Updatesearchindex extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
 
-        $script = \eZScript::instance( array( 'description' => ( "Exponential search index updater.\n\n" .
+        $script = $this->script( array( 'description' => ( "Exponential search index updater.\n\n" .
                                                                 "Goes trough all objects and reindexes the meta data to the search engine" .
                                                                 "\n" .
                                                                 "updatesearchindex.php"),
@@ -60,7 +60,7 @@ class Updatesearchindex extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql][clean]",
+        $options = $this->options( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql][clean]",
                                         "",
                                         array( 'db-host' => "Database host",
                                                'db-user' => "Database user",

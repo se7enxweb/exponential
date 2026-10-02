@@ -13,6 +13,8 @@
  *          (Command for bin/, CronjobPart for cronjobs/, ModuleView for module views)
  *  MV-06 — The stub itself parses, calls main( __FILE__ ... ) and passes get_defined_vars() for parts and views
  *  MV-07 — The walk finds stubs at all (the marker is not lost)
+ *  MV-08 — The built-in server's router (bin/php/velocity-router.php) is the one stub that calls a static route()
+ *          of a class file it requires itself (it runs before any autoloader); that file parses and declares route()
  *
  * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file.
@@ -86,6 +88,12 @@ class MovedEntryPointsTest extends PHPUnit\Framework\TestCase
                     $class = $m[1];
                     $kind = $m[2];
                 }
+                elseif ( preg_match( '/\\\\(Exponential\\\\Command\\\\[A-Za-z0-9_\\\\]+)::route\s*\(/', $text, $m ) )
+                {
+                    // the built-in server's router: runs before any autoloader, loads its class file itself
+                    $class = $m[1];
+                    $kind = 'Router';
+                }
                 $found[$rel] = array( $kind, $class );
             }
         }
@@ -150,6 +158,20 @@ class MovedEntryPointsTest extends PHPUnit\Framework\TestCase
 
         // MV-06 the stub
         $stub = (string) file_get_contents( "$root/$rel" );
+        if ( $kind === 'Router' )
+        {
+            // MV-08 the router form: the stub requires the class file and calls the static route()
+            $this->assertMatchesRegularExpression( "/require_once __DIR__ \\. '([^']+)'/", $stub, "$rel requires its class file" );
+            preg_match( "/require_once __DIR__ \\. '([^']+)'/", $stub, $m );
+            $file = dirname( "$root/$rel" ) . $m[1];
+            $this->assertFileExists( $file );
+            $this->assertSame( 0, self::lint( "$root/$rel" ), "$rel parses" );
+            $this->assertSame( 0, self::lint( $file ), "$file parses" );
+            $short = substr( strrchr( $class, '\\' ), 1 );
+            $this->assertMatchesRegularExpression( '/class\s+' . preg_quote( $short, '/' ) . '\b/', (string) file_get_contents( $file ) );
+            $this->assertMatchesRegularExpression( '/static\s+function\s+route\s*\(/', (string) file_get_contents( $file ) );
+            return;
+        }
         $this->assertStringContainsString( '::main( __FILE__', $stub, "$rel passes __FILE__" );
         if ( $kind !== 'Command' )
             $this->assertStringContainsString( 'get_defined_vars()', $stub, "$rel hands over its variables" );

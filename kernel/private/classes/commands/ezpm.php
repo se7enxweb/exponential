@@ -259,8 +259,8 @@ class Ezpm extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 
+        $cli = $this->cli();
+        $script = $this->script( array( 
                                               'description' => 'Exponential Package Manager CLI - Create, Import, Delete, Install, List Exp/eZp Packages',
                                               'debug-message' => '',
                                               'use-session' => true,

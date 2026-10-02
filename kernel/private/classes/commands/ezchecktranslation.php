@@ -138,8 +138,8 @@ class Ezchecktranslation extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential Translation Checker\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential Translation Checker\n\n" .
                                                                 "Will display some statistics on a given translation" .
                                                                 "\n" .
                                                                 "ezchecktranslation.php ita-IT" ),
@@ -149,7 +149,7 @@ class Ezchecktranslation extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[ignore-tr-setup]",
+        $options = $this->options( "[ignore-tr-setup]",
                                         "[translation]",
                                         array( 'ignore-tr-setup' => 'Tells the analyzer to skip all translations regarding the setup' ) );
         $script->initialize();

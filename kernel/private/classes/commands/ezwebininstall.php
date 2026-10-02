@@ -32,8 +32,8 @@ class Ezwebininstall extends \Exponential\Runnable\Command
         unset( $__name );
 
         // script initializing
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "\n" .
                                                                 "Install eZWebin package\n" ),
                                              'use-session' => false,
                                              'use-modules' => true,
@@ -41,7 +41,7 @@ class Ezwebininstall extends \Exponential\Runnable\Command
                                              'user' => true ) );
         $script->startup();
 
-        $scriptOptions = $script->getOptions( "[repository:][package:][package-dir:][url:][admin-siteaccess:][user-siteaccess:][auto-mode:]",
+        $scriptOptions = $this->options( "[repository:][package:][package-dir:][url:][admin-siteaccess:][user-siteaccess:][auto-mode:]",
                                               "",
                                               array( 'repository' => "Path to repository where unpacked(unarchived) packages are \n" .
                                                                  "placed. it's relative to 'var/[site.ini].[FileSettings].[StorageDir]/[package.ini].[RepositorySettings].[RepositoryDirectory]' \n".

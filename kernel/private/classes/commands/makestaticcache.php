@@ -30,8 +30,8 @@ class Makestaticcache extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential static cache generator\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential static cache generator\n" .
                                                                 "\n" .
                                                                 "./bin/makestaticcache.php --siteaccess user" ),
                                              'use-session' => false,
@@ -40,7 +40,7 @@ class Makestaticcache extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[f|force][site:][max-pages:][max-depth:][keep]",
+        $options = $this->options( "[f|force][site:][max-pages:][max-depth:][keep]",
                                         "",
                                         array( 'force'     => "Accepted for compatibility; a run always replaces what it generates.",
                                                'site'      => "Generate only this siteaccess. Repeat for several; omit for every public one.",

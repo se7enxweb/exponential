@@ -30,8 +30,8 @@ class Ezconvert2isbn13 extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential ISBN-10 to ISBN-13 converter\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential ISBN-10 to ISBN-13 converter\n\n" .
                                                                 "Converts an ISBN-10 number to ISBN-13\n" ),
                                              'use-session' => false,
                                              'use-modules' => true,
@@ -39,7 +39,7 @@ class Ezconvert2isbn13 extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[class-id:][attribute-id:][all-classes][f|force]",
+        $options = $this->options( "[class-id:][attribute-id:][all-classes][f|force]",
                                         "",
                                         array( 'class-id' => 'The class id for the ISBN attribute.',
                                                'attribute-id' => 'The attribute id for the ISBN attribute which should be converted.',

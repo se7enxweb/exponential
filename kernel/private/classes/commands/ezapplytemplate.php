@@ -30,8 +30,8 @@ class Ezapplytemplate extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential Code Template Generator\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential Code Template Generator\n\n" .
                                                                 "This will apply any template blocks it finds in files\n" .
                                                                 "and writes back the new file\n" .
                                                                 "\n" .
@@ -43,7 +43,7 @@ class Ezapplytemplate extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[a|all][check-only]",
+        $options = $this->options( "[a|all][check-only]",
                                         "[file]",
                                         array( 'all' => 'Go trough all files defined in codetemplate.ini',
                                                'check-only' => 'Will only check if the files will be changed or have errors' ) );

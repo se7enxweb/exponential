@@ -29,7 +29,7 @@ class Adddefaultstates extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
 
         $scriptSettings = array();
         $scriptSettings['description'] = 'Adds default states to content objects';
@@ -37,7 +37,7 @@ class Adddefaultstates extends \Exponential\Runnable\Command
         $scriptSettings['use-modules'] = false;
         $scriptSettings['use-extensions'] = true;
 
-        $script = \eZScript::instance( $scriptSettings );
+        $script = $this->script( $scriptSettings );
         $script->startup();
 
         $config = '';
@@ -46,7 +46,7 @@ class Adddefaultstates extends \Exponential\Runnable\Command
         $arguments = false;
         $useStandardOptions = true;
 
-        $options = $script->getOptions( $config, $argumentConfig, $optionHelp, $arguments, $useStandardOptions );
+        $options = $this->options( $config, $argumentConfig, $optionHelp, $arguments, $useStandardOptions );
         $script->initialize();
 
         $cli->output( 'Adding default states to content objects...' );

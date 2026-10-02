@@ -35,8 +35,8 @@ class Preload extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli    = \eZCLI::instance();
-        $script = \eZScript::instance(
+        $cli = $this->cli();
+        $script = $this->script(
             array(
                 'description'    => "Exponential CMS — site preloader & cache warmer\n\n" .
                                     "Warms section pages then spiders the entire site via wget.\n\n" .
@@ -48,7 +48,7 @@ class Preload extends \Exponential\Runnable\Command
         );
 
         $script->startup();
-        $script->getOptions( "", "", array() );
+        $this->options( "", "", array() );
         $script->initialize();
 
         // ══════════════════════════════════════════════════════════════════════════════

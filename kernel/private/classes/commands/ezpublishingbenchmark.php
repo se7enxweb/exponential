@@ -30,15 +30,15 @@ class Ezpublishingbenchmark extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => "Parallel publishing benchmark\n\nRuns concurrent batches of content publishing to measure how the installation copes with it.\n\nExample: ./bin/php/ezpublishingbenchmark.php --concurrency-level=20 --batches-count=1",
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => "Parallel publishing benchmark\n\nRuns concurrent batches of content publishing to measure how the installation copes with it.\n\nExample: ./bin/php/ezpublishingbenchmark.php --concurrency-level=20 --batches-count=1",
                                              'use-session' => false,
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
 
         $script->startup();
 
-        $options = $script->getOptions( "[b:|batches-count:][c:|content-class:][l:|concurrency-level:][p:|parent-node:][g|generate-content]",
+        $options = $this->options( "[b:|batches-count:][c:|content-class:][l:|concurrency-level:][p:|parent-node:][g|generate-content]",
         "",
         array( 'content-class'     => "Identifier of the content class used for testing [default: article]",
                'concurrency-level' => "Parallel processes to use [default: 20]",

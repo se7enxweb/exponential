@@ -180,8 +180,8 @@ class Changelog2xmltext extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential Changelog converter\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential Changelog converter\n\n" .
                                                                 "Converts a Changelog into XML text format usable in Exponential\n" .
                                                                 "The result is printed to the standard output\n\nExample: ./bin/php/changelog2xmltext.php Changelog" ),
                                              'use-session' => false,
@@ -190,7 +190,7 @@ class Changelog2xmltext extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "",
+        $options = $this->options( "",
                                         "[changelog]",
                                         false, false,
                                         array( 'log' => false,

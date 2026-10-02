@@ -30,8 +30,8 @@ class Frankenphp extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => (
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => (
             "Exponential web server, FrankenPHP engine - production\n\n" .
             "The same controller as exp:velocity and exp:webserver, pinned to the\n" .
             "frankenphp engine (Caddy with PHP built in). Every verb behaves exactly\n" .
@@ -78,7 +78,7 @@ class Frankenphp extends \Exponential\Runnable\Command
             array( 'json', 'help', 'quiet', 'verbose', 'colors', 'no-colors', 'allow-root-user', 'debug',
                    'all', 'force', 'check', 'trust-github-digest', 'https', 'no-https' ) );
 
-        $options = $script->getOptions(
+        $options = $this->options(
             '[json][engine:][all][force][check][trust-github-digest][from:][keep-global:][https][no-https]',
             '[command]',
             array( 'json' => 'Report as JSON, for a caller that is not a person',

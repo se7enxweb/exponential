@@ -31,9 +31,9 @@ class Cleanupversions extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
 
-        $script = \eZScript::instance(
+        $script = $this->script(
             array(
                 'description' => "Remove archived content object versions according to "
                     . "[VersionManagement]/DefaultVersionHistoryLimit and "
@@ -44,7 +44,7 @@ class Cleanupversions extends \Exponential\Runnable\Command
             )
         );
         $script->startup();
-        $options = $script->getOptions( "[n]", "", array( "n" => "Do not wait" ) );
+        $options = $this->options( "[n]", "", array( "n" => "Do not wait" ) );
         $script->initialize();
 
         if ( !isset( $options['n'] ) )

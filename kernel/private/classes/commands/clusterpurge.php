@@ -30,8 +30,8 @@ class Clusterpurge extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential cluster files purge\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential cluster files purge\n" .
                                                                 "Physically purges files\n" .
                                                                 "\n" .
                                                                 "./bin/php/clusterpurge.php --scopes=scope1,scope2" ),
@@ -41,7 +41,7 @@ class Clusterpurge extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[dry-run][iteration-sleep:][iteration-limit:][memory-monitoring][scopes:][expiry:]",
+        $options = $this->options( "[dry-run][iteration-sleep:][iteration-limit:][memory-monitoring][scopes:][expiry:]",
         "",
         array( 'dry-run' => 'Test mode, output the list of affected files without removing them',
                'iteration-sleep' => 'Amount of seconds to sleep between each iteration when performing a purge operation, can be a float. Default is one second.',

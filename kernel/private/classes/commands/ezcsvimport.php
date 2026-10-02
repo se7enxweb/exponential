@@ -30,8 +30,8 @@ class Ezcsvimport extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Import content objects of a class below a node from a CSV file\n\nExample: ezcsvimport.php --class=article 2 articles.csv\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Import content objects of a class below a node from a CSV file\n\nExample: ezcsvimport.php --class=article 2 articles.csv\n" .
                                                                 "\n" .
                                                                 "\n" .
                                                                 "\n" .
@@ -43,7 +43,7 @@ class Ezcsvimport extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[class:][creator:][storage-dir:]",
+        $options = $this->options( "[class:][creator:][storage-dir:]",
                                         "[node][file]",
                                         array( 'node' => 'parent node_id to upload object under',
                                                'file' => 'file to read CSV data from',

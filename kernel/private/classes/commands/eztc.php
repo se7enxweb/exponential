@@ -30,8 +30,8 @@ class Eztc extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential Template Compiler\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential Template Compiler\n" .
                                                                  "\n" .
                                                                  "./bin/php/eztc.php -snews --www-dir='/mypath' --index-file='/index.php' --access-path='news'" ),
                                               'use-session' => false,
@@ -40,7 +40,7 @@ class Eztc extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[compile-directory:][www-dir:][index-file:][access-path:][force][full-url][no-full-url]",
+        $options = $this->options( "[compile-directory:][www-dir:][index-file:][access-path:][force][full-url][no-full-url]",
                                         "",
                                         array( 'force' => "Force compilation of template whether it has changed or not",
                                                'compile-directory' => "Where to place compiled files,\ndefault is template/compiled in current cache directory",

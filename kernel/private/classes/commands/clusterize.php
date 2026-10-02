@@ -120,8 +120,8 @@ class Clusterize extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential (un)clusterize\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential (un)clusterize\n" .
                                                                 "Script for moving var_dir files from " .
                                                                 "filesystem to database and vice versa\n" .
                                                                 "\n" .
@@ -132,7 +132,7 @@ class Clusterize extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[u][skip-binary-files][skip-media-files][skip-images][r][n]",
+        $options = $this->options( "[u][skip-binary-files][skip-media-files][skip-images][r][n]",
                                         "",
                                         array( 'u'                 => 'Unclusterize',
                                                'skip-binary-files' => 'Skip copying binary files',

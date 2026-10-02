@@ -277,8 +277,8 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "\n" .
                                                                  "This script will make a copy of a content object subtree and place it in a specified\n" .
                                                                  "location.\n\nExample: ./bin/php/ezsubtreecopy.php --src-node-id=2 --dst-node-id=5\n" ),
                                               'use-session' => false,
@@ -287,7 +287,7 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
                                               'user' => true ) );
         $script->startup();
 
-        $scriptOptions = $script->getOptions( "[src-node-id:][dst-node-id:][all-versions][keep-creator][keep-time]",
+        $scriptOptions = $this->options( "[src-node-id:][dst-node-id:][all-versions][keep-creator][keep-time]",
                                               "",
                                               array( 'src-node-id' => "Source subtree parent node ID.",
                                                      'dst-node-id' => "Destination node ID.",

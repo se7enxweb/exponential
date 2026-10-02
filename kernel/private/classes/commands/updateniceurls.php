@@ -344,8 +344,8 @@ class Updateniceurls extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential url-alias importer and updater.\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential url-alias importer and updater.\n\n" .
                                                                  "Will import urls from the older (3.9) system into the new, controlled by the --import* options.\n" .
                                                                  "Will also update the url-alias entries from the content object nodes in the system, controlled by the --update-nodes option.\n" .
                                                                  "The default behaviour is to update urls for content object nodes only\n" .
@@ -357,7 +357,7 @@ class Updateniceurls extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql]" .
+        $options = $this->options( "[db-host:][db-user:][db-password:][db-database:][db-type:|db-driver:][sql]" .
                                         "[no-import]" .
                                         "[import][import-nodes][import-aliases][import-redirections][import-wildcards]" .
                                         "[no-update-nodes][update-nodes]" .

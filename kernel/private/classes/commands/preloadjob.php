@@ -39,15 +39,15 @@ class Preloadjob extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array(
+        $cli = $this->cli();
+        $script = $this->script( array(
             'description'    => 'Runs one preload for Setup > Preload and writes its events.',
             'use-session'    => false,
             'use-modules'    => true,
             'use-extensions' => true,
         ) );
         $script->startup();
-        $options = $script->getOptions( '[id:][target:][max-pages:][max-depth:]', '', array(
+        $options = $this->options( '[id:][target:][max-pages:][max-depth:]', '', array(
             'id'        => 'the job id (hex), chosen by setup/preloadjob',
             'target'    => 'the siteaccess whose site is preloaded (default: DefaultAccess)',
             'max-pages' => 'most pages to fetch (default 250)',

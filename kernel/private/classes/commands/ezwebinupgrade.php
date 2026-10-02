@@ -366,8 +366,8 @@ class Ezwebinupgrade extends \Exponential\Runnable\Command
         include_once( 'bin/php/ezwebincommon.php' );
 
         // script initializing
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "\n" .
                                                                 "This script will upgrade ezwebin." ),
                                              'use-session' => false,
                                              'use-modules' => true,
@@ -375,7 +375,7 @@ class Ezwebinupgrade extends \Exponential\Runnable\Command
                                              'user' => true ) );
         $script->startup();
 
-        $scriptOptions = $script->getOptions( "[to-version:][repository:][package:][package-dir:][url:][auto-mode:]",
+        $scriptOptions = $this->options( "[to-version:][repository:][package:][package-dir:][url:][auto-mode:]",
                                               "",
                                               array( 'to-version' => "Specify what upgrade path to use. \n" .
                                                                      " available options: '1.2-0' - upgrade 1.1-1 to 1.2-0\n" .

@@ -30,8 +30,8 @@ class Ezcsvexport extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Export the subtree below a node to one CSV file per content class\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Export the subtree below a node to one CSV file per content class\n" .
                                                                 "\n" .
                                                                 "ezcsvexport.php --storage-dir=export 2" ),
                                              'use-session' => false,
@@ -41,7 +41,7 @@ class Ezcsvexport extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "[storage-dir:]",
+        $options = $this->options( "[storage-dir:]",
                                         "[node]",
                                         array( 'storage-dir' => 'directory to place exported files in' ),
                                         false,

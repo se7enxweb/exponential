@@ -246,8 +246,8 @@ class Velocity extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => (
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => (
             "Exponential Velocity - control the bundled application server\n\n" .
             "Commands:\n" .
             "  status     what it is doing (the default)\n" .
@@ -353,7 +353,7 @@ class Velocity extends \Exponential\Runnable\Command
                    'allow-root-user', 'debug', 'force', 'check', 'trust-github-digest', 'all',
                    'rebuild-phar', 'kernel', 'dry-run', 'no-fpm', 'no-velocity', 'no-autoload', 'packer' ) );
 
-        $options = $script->getOptions( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https][rebuild-phar][kernel][dry-run][no-fpm][no-velocity][no-autoload][packer]', '[command]',
+        $options = $this->options( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https][rebuild-phar][kernel][dry-run][no-fpm][no-velocity][no-autoload][packer]', '[command]',
             array( 'json' => 'Report as JSON, for a caller that is not a person',
                    'keep-global' => 'More globals to keep between requests (comma-separated), appended to the '
                                   . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command',

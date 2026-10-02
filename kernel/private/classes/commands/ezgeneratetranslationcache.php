@@ -31,8 +31,8 @@ class Ezgeneratetranslationcache extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "\n" .
                                                                 "This script will generate caches for translations.\n" .
                                                                 "Default usage: ./bin/php/ezgeneratetranslationcache -s setup\n" ),
                                              'use-session' => false,
@@ -41,7 +41,7 @@ class Ezgeneratetranslationcache extends \Exponential\Runnable\Command
                                              'user' => true ) );
         $script->startup();
 
-        $scriptOptions = $script->getOptions( "[ts-list:]",
+        $scriptOptions = $this->options( "[ts-list:]",
                                               "",
                                               array( 'ts-list' => "A list of translations to generate caches for, for example 'rus-RU nor-NO'\n".
                                                                   "By default caches for all translations will be generated" ),

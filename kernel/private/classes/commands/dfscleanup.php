@@ -41,9 +41,9 @@ class Dfscleanup extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
 
-        $script = \eZScript::instance(
+        $script = $this->script(
             array(
                 'description' => "Script for checking database and DFS file consistency",
                 'use-session' => false,
@@ -52,7 +52,7 @@ class Dfscleanup extends \Exponential\Runnable\Command
             )
         );
         $script->startup();
-        $options = $script->getOptions(
+        $options = $this->options(
             "[S][B][D][path:][iteration-limit:]", "",
             array(
                 "D" => "Delete nonexistent files",

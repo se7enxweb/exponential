@@ -40,8 +40,8 @@ class Warm extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array(
+        $cli = $this->cli();
+        $script = $this->script( array(
             'description' => "Exponential cache warmer\n\nRequest every published page so no visitor pays for a render.",
             'use-session' => false,
             'use-modules' => true,
@@ -49,7 +49,7 @@ class Warm extends \Exponential\Runnable\Command
         ) );
         $script->startup();
 
-        $options = $script->getOptions(
+        $options = $this->options(
             '[json][verbose][limit:][host:][base:][concurrency:]',
             '',
             array(

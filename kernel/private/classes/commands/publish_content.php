@@ -33,8 +33,8 @@ class PublishContent extends \Exponential\Runnable\Command
 
         $pid = getmypid();
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => 'Asynchronous publishing handler, not meant to be used directly',
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => 'Asynchronous publishing handler, not meant to be used directly',
                                              'use-session' => false,
                                              'use-modules' => true,
                                              'use-extensions' => true ) );
@@ -42,7 +42,7 @@ class PublishContent extends \Exponential\Runnable\Command
 
         $argumentConfig = '[OBJECT_ID] [VERSION_ID]';
         $optionsConfig = '';
-        $options = $script->getOptions( $optionsConfig, $argumentConfig );
+        $options = $this->options( $optionsConfig, $argumentConfig );
 
         $script->initialize();
         if ( count( $options['arguments'] ) != 2 )

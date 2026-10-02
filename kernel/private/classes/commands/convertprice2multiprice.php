@@ -95,8 +95,8 @@ class Convertprice2multiprice extends \Exponential\Runnable\Command
 
         $currencyList = false;
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "\n" .
                                                                  "This script will convert objects with 'price' datatype to\n" .
                                                                  "the objects with 'multiprice' datatype.\n" ),
                                               'use-session' => false,
@@ -105,7 +105,7 @@ class Convertprice2multiprice extends \Exponential\Runnable\Command
                                               'user' => true ) );
         $script->startup();
 
-        $scriptOptions = $script->getOptions( "",
+        $scriptOptions = $this->options( "",
                                               "",
                                               array(),
                                               false,

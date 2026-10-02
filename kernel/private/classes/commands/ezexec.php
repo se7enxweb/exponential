@@ -30,8 +30,8 @@ class Ezexec extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array( 'description' => ( "Exponential Script Executor\n\n" .
+        $cli = $this->cli();
+        $script = $this->script( array( 'description' => ( "Exponential Script Executor\n\n" .
                                                                 "Allows execution of simple PHP scripts which use Exponential functionality,\n" .
                                                                 "when the script is called all necessary initialization is done\n" .
                                                                 "\n" .
@@ -42,7 +42,7 @@ class Ezexec extends \Exponential\Runnable\Command
 
         $script->startup();
 
-        $options = $script->getOptions( "",
+        $options = $this->options( "",
                                         "[scriptfile]",
                                         array() );
         $script->initialize();
