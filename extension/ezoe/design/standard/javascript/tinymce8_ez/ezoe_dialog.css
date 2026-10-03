@@ -122,3 +122,15 @@
     margin: 0 0 4px;
     font-weight: bold;
 }
+
+/* browse tabs: top level roots (content, media, users) and the up link above the path */
+.tox .ezoe-list-roots {
+    margin-bottom: .4em;
+    padding-bottom: .4em;
+    border-bottom: 1px solid #ddd;
+}
+.tox .ezoe-list-roots a {
+    color: #0645AD;
+    font-weight: bold;
+    margin-right: .8em;
+}

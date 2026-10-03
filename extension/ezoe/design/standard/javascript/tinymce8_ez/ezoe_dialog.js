@@ -16,6 +16,8 @@ window.eZOe8Dialog = (function () {
 
     tinymce.addI18n( 'de', {
         'Previous': 'Zurück',
+        'Up': 'Nach oben',
+        'Top level nodes': 'Oberste Ebene',
         'Next': 'Weiter',
         'No results': 'Keine Treffer',
         'Name': 'Name',
@@ -344,8 +346,26 @@ window.eZOe8Dialog = (function () {
 
         if ( list.node )
         {
+            // like the TinyMCE 3 browse: the top level roots the user may read (content, media, users, this object),
+            // then the path from the top of the installation (node 1) with a link for every level, and an up link
+            var path = ( list.node.path || [] ).slice(), nodeId = parseInt( list.node.node_id, 10 ), parentId = null;
+            if ( options.browse && Array.isArray( options.roots ) && options.roots.length )
+            {
+                html += '<div class="ezoe-list-roots">';
+                options.roots.forEach( function ( root ) {
+                    html += '<a href="#" data-ezoe-action="open" data-ezoe-value="' + escapeHtml( root.node_id ) + '">' + escapeHtml( decodeHtml( root.name ) ) + '</a> ';
+                } );
+                html += '</div>';
+            }
+            if ( options.browse && nodeId !== 1 && list.node.path !== false )
+            {
+                path.unshift( { node_id: 1, name: t( 'Top level nodes' ) } );
+                parentId = path[ path.length - 1 ].node_id;
+            }
             html += '<div class="ezoe-list-path">';
-            ( list.node.path || [] ).concat( [ list.node ] ).forEach( function ( n, i, all ) {
+            if ( parentId !== null )
+                html += '<a href="#" class="ezoe-list-up" data-ezoe-action="open" data-ezoe-value="' + parentId + '" title="' + escapeHtml( t( 'Up' ) ) + '">&uarr; ' + escapeHtml( t( 'Up' ) ) + '</a> | ';
+            path.concat( [ list.node ] ).forEach( function ( n, i, all ) {
                 html += i === all.length - 1
                     ? '<strong>' + escapeHtml( decodeHtml( n.name ) ) + '</strong>'
                     : '<a href="#" data-ezoe-action="open" data-ezoe-value="' + n.node_id + '">' + escapeHtml( decodeHtml( n.name ) ) + '</a> / ';

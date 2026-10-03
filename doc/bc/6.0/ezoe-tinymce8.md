@@ -122,6 +122,14 @@ its identifier, label, toolbar map, plugins and config. The engine now appears o
 buttons, in `expeditor::engines` and in `setup/rad`. An engine that returns `''` from `template()` is rendered by the
 built-in TinyMCE 3 markup of `ezxmltext_ezoe.tpl`.
 
+## Browse tabs (embed and link dialogs)
+
+The Browse tabs navigate the whole content tree like the TinyMCE 3 dialogs: a row of the top level roots the user may
+read (content, media and users root, and the object being edited once it is published), a path that starts at "Top level
+nodes" (node 1) with a link for every level, an "Up" link to the parent, paging inside large folders and selecting an
+object from any level. The roots come from `ez_settings.browse_roots`, built in the template from content.ini
+`[NodeSettings]` and the `ezoe/browse` policy.
+
 ## Upstream code
 
 The TinyMCE 8 distribution is vendored unmodified in `extension/ezoe/design/standard/javascript/tinymce8/` (README,

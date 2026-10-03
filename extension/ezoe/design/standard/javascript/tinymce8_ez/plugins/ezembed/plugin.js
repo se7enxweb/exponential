@@ -260,7 +260,7 @@
             var listHtml = function ( list, browse ) {
                 if ( !list )
                     return '<p class="ezoe-list-empty">' + D.escapeHtml( t( 'Loading…' ) ) + '</p>';
-                return D.renderList( list, { t: t, value: rowValue, previewAlias: settings().browse_image_alias, rootUrl: settings().root_url, selected: data.embedId, browse: browse } );
+                return D.renderList( list, { t: t, value: rowValue, previewAlias: settings().browse_image_alias, rootUrl: settings().root_url, roots: settings().browse_roots, selected: data.embedId, browse: browse } );
             };
 
             var objectId = function () {

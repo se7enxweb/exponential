@@ -21,7 +21,23 @@
      $link_classes     = hash()
      $link_class_names = hash()
      $search_classes   = array()
+     $browse_roots     = array()
 }
+{* top level roots of the browse tabs like design:ezoe/box_browse.tpl: content, media and users root, and this object *}
+{if fetch( 'user', 'has_access_to', hash( 'module', 'ezoe', 'function', 'browse' ) )}
+    {foreach array( 'RootNode', 'MediaRootNode', 'UserRootNode' ) as $root_setting}
+        {def $root_node = fetch( 'content', 'node', hash( 'node_id', ezini( 'NodeSettings', $root_setting, 'content.ini' ) ) )}
+        {if $root_node}
+            {set $browse_roots = $browse_roots|append( hash( 'node_id', $root_node.node_id, 'name', $root_node.name|shorten( 35 ) ) )}
+        {/if}
+        {undef $root_node}
+    {/foreach}
+    {def $this_object = fetch( 'content', 'object', hash( 'object_id', $attribute.contentobject_id ) )}
+    {if and( $this_object, $this_object.published, $this_object.main_node_id )}
+        {set $browse_roots = $browse_roots|append( hash( 'node_id', $this_object.main_node_id, 'name', concat( $this_object.name|shorten( 35 ), ' (', 'this'|i18n( 'design/standard/ezoe' ), ')' ) ) )}
+    {/if}
+    {undef $this_object}
+{/if}
 {* content classes for the class filter of the dialog search, like design:ezoe/box_search.tpl *}
 {foreach fetch( 'class', 'list', hash( 'sort_by', array( 'name', true() ) ) ) as $search_class}
     {set $search_classes = $search_classes|append( hash( 'id', $search_class.id, 'name', $search_class.name ) )}
@@ -128,6 +144,7 @@ var eZOe8GlobalSettings = {ldelim}
         content_edit_url: {'/content/edit'|ezurl},
         browse_image_alias: {json_encode( ezini( 'EditorSettings', 'BrowseImageAlias', 'ezoe.ini',,true() ) )},
         search_classes: {json_encode( $search_classes )},
+        browse_roots: {json_encode( $browse_roots )},
         upload_file_extensions: {json_encode( $input_handler.engine.config.upload_extensions )},
         extension_url: {'/ezoe/'|ezurl},
         ezjscore_url: {'/ezjscore/'|ezurl},
