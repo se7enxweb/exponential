@@ -1,10 +1,18 @@
 # The role-aware HTTP cache
 
-Whole rendered pages, kept per permission context and served before the
-kernel starts — for signed-in visitors as well as anonymous ones. Off by
-default: `settings/httpcache.ini`, `Enabled=disabled`.
+Read this page if you want to serve whole pages from a cache to signed-in visitors as well as anonymous ones, or if
+you see an `X-Exp-Cache` header and want to know what it means. The role-aware HTTP cache keeps whole rendered pages
+per permission context and serves them before the kernel starts. It is off by default (`settings/httpcache.ini`,
+`Enabled=disabled`); nothing changes until you switch it on.
 
----
+## In short
+
+| | |
+|---|---|
+| What changed | New cache `httpcache.ini`; early exit `kernel/private/classes/httpcache/ezphttpcacheearlyexit.php`; Velocity serves the same entries from its server process. |
+| Who is affected | Nobody until `Enabled=enabled`. Then: sites with session storage other than files, and templates that print personal data. |
+| How to check | `curl -sI https://your-host/ \| grep -i x-exp-cache` shows `HIT`, `STALE`, `MISS (reason)` or `BYPASS (reason)` once it is on. |
+| How to switch on | Follow the three steps of "Switching it on". |
 
 ## What it does
 
@@ -31,7 +39,7 @@ Both use the same class, `ezpHttpCacheContract`, so they compute the same keys
 and serve the same bytes. The visitor's form token is taken out of the stored
 page and the visitor's own put back in on every hit.
 
-## Measured on alpha (2026-09-26, /fitness, 8 concurrent)
+## Measured on a reference installation (2026-09-26, one content page, 8 concurrent)
 
 | | Hit | Full render |
 |---|---|---|
@@ -71,7 +79,10 @@ Then:
 The first request on a cached siteaccess writes the configuration the early
 exit reads (`var/<site>/cache/exphttpcache/contract.php`, with a generated key).
 
-## Settings (`httpcache.ini [HttpCacheSettings]`)
+## Settings
+
+File `settings/httpcache.ini`, block `[HttpCacheSettings]`, scope: installation. Override in
+`settings/override/httpcache.ini.append.php`.
 
 | Setting | Default | |
 |---|---|---|
@@ -190,12 +201,14 @@ that cannot be known before the kernel; anything not a content view.
 | `cronjobs/httpcache_cleanup.php` | Removes dead entries |
 | `tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php` | Unit tests (HC-01 … HC-16) |
 
-See also (September 2026): [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md#http-cache-httpcacheini) (compression once, headers on cached pages, siteaccess matching), [Security defaults](../../specifications/6.0/security-defaults-2026-09.md), [Velocity](../../features/6.0/velocity-persistent-worker-server.md).
+## Related pages
 
-## See also (16 to 30 September 2026)
-
+- [Behaviour changes, 16 to 30 September 2026: HTTP cache](behaviour-changes-2026-09b.md#http-cache-httpcacheini)
+  (compression once, headers on cached pages, siteaccess matching)
+- [Security defaults](../../specifications/6.0/security-defaults-2026-09.md)
+- [Velocity](../../features/6.0/velocity-persistent-worker-server.md)
+- [HTTP caching for anonymous visitors](http-caching.md) and [Cache control from the console](cache-console.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
-- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 - [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md)
 - [Velocity response cache](../../features/6.0/velocity-response-cache.md)

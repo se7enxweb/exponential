@@ -1,25 +1,41 @@
 # RSS import cleanup
 
-An RSS import adds an object for every item in the feed and never takes one
-away. A site importing a busy feed therefore grows without limit: the
-destination folder reaches tens of thousands of children, the administration
-interface slows to a crawl on it, the search index fills with items nobody will
-read again, and the nightly backup carries all of it.
+Read this page if your site imports RSS feeds, or if you used the **bccleanuprss** extension. An RSS import adds an
+object for every item in the feed and never takes one away. A site importing a busy feed therefore grows without
+limit: the destination folder reaches tens of thousands of children, the administration interface slows down on it,
+the search index fills with items nobody will read again, and the nightly backup carries all of it. Since 6.0.15 the
+kernel can trim that for you: **keep the newest *N* items of each active RSS import; remove the rest.**
 
-Trimming that is a job every site importing a feed eventually has to do, which
-is why this is in the kernel rather than left to each site to arrange.
+The code is ported from the **bccleanuprss** extension by Brookins Consulting
+(<https://github.com/se7enxweb/bccleanuprss>), GPL v2 or later. The original's selection method is kept; see
+[What was kept, and what changed](#what-was-kept-and-what-changed).
 
-Ported from the **bccleanuprss** extension by Brookins Consulting
-(<https://github.com/se7enxweb/bccleanuprss>), GPL v2 or later. The original's
-method is kept — see [What was kept, and what changed](#what-was-kept-and-what-changed).
+## In short
 
----
+| | |
+|---|---|
+| What changed | New command `bin/php/cleanuprss.php` (`./console exp:cleanuprss`), cronjob part `cleanuprss`, class `expCleanupRSS`, settings `content.ini [RSSImportCleanupSettings]`. |
+| Who is affected | Nobody until you enable it. Users of the bccleanuprss extension: its settings file `bccleanuprss.ini` is not read. |
+| How to check | `php bin/php/cleanuprss.php --dry-run --allow-root-user` prints what it would remove, or why it removes nothing. |
+| How to switch on | Set `Enabled`, `ClassIdentifiers[]` and `KeepPerFeed`, dry-run, then schedule the cronjob part. |
 
-## In one line
+## Set it up in five minutes
 
-Keep the newest *N* items of each active RSS import; remove the rest.
+1. Add to `settings/override/content.ini.append.php`:
 
----
+   ```ini
+   [RSSImportCleanupSettings]
+   Enabled=true
+   KeepPerFeed=200
+   ClassIdentifiers[]
+   ClassIdentifiers[]=article
+   MoveToTrash=true
+   ```
+
+2. Clear the INI cache: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`
+3. Dry-run and read the list: `php bin/php/cleanuprss.php --dry-run --allow-root-user`
+4. Run it: `php bin/php/cleanuprss.php --allow-root-user`
+5. Schedule it nightly: `php runcronjobs.php cleanuprss` in your crontab.
 
 ## It does nothing until you tell it what to remove
 
@@ -42,7 +58,6 @@ That is not an error — an installation that has not asked for this is the
 normal case. Both the script and the cronjob exit cleanly, so the part can be
 scheduled before it is configured.
 
----
 
 ## Settings
 
@@ -86,7 +101,6 @@ content with no way back is not a reasonable default. Note that the trash then
 grows instead — pair it with the `trashpurge.php` cronjob, or set it to `false`
 once you trust the class list.
 
----
 
 ## Running it
 
@@ -130,7 +144,6 @@ It is a named part rather than one of the default `Scripts[]`, so it runs only
 when asked for. Nightly is usually right — it is the import that needs
 throttling, not the clock.
 
----
 
 ## What it actually does
 
@@ -150,7 +163,6 @@ the database.
 `Depth => 1` means only direct children. An item's own children go with it when
 it is removed, but a sub-folder of the destination is not searched.
 
----
 
 ## From a template or PHP
 
@@ -171,7 +183,6 @@ else
 
 Constructor options: `dry-run`, `keep`, `quiet`.
 
----
 
 ## What was kept, and what changed
 
@@ -208,7 +219,6 @@ folders, that removes folders.
 Brookins Consulting's copyright lines are kept in every ported file — the
 branding goes, the attribution does not.
 
----
 
 ## Files
 
@@ -221,19 +231,15 @@ branding goes, the attribution does not.
 | `settings/cronjob.ini` | `[CronjobPart-cleanuprss]` |
 | `autoload/ezp_kernel.php` | the class map entry |
 
----
 
 ## Tests
 
 A private functional script builds its own fixture (a folder, an active `eZRSSImport` pointing at it, twelve articles published an hour apart and one folder that must survive because its class is not on the list) and checks that each of the three conditions refuses on its own, that a dry run finds the surplus and removes nothing, that a real run leaves exactly the newest five, that the unlisted class is untouched, that a second run finds nothing, and that what was removed is recoverable from the trash. It is not shipped. To check the behaviour yourself, follow "Running it" with `--dry-run` first on a copy of the installation.
 
-## See also
+## Related pages
 
 - [RSS: feed list, podcasts and safer exports](../../features/6.0/rss-podcast-and-feed-list.md) and [OPML exports](opml.md)
 - [September 2026, first half: 15 September](../../history/2026/2026-09a.md#15-september-paging-everywhere)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
-
-## Related pages
-
 - [Cronjobs console](../../features/6.0/cronjobs-console.md)
 - [Syndication specification](../../specifications/6.0/syndication.md)

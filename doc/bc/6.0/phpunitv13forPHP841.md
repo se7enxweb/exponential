@@ -1,29 +1,31 @@
 # PHPUnit 13 / PHP 8.4.23 test suite cleanup
 
-**Affected release:** Exponential 6.0.x  
-**PHPUnit version:** `phpunit/phpunit 13.0.0`  
-**PHP version:** 8.4.23 + 8.5.8  
-**Date documented:** 2026-07-11  
-**Document type:** Documentation / Historical change record
+Read this page if you run or extend the Exponential 6.0 test suite, or if you maintain code that the tests flagged
+(GD image handling, `eZMail`, `eZCharsetInfo`, the MongoDB adapter, `eZSiteAccess::load()`, ISBN13, WebDAV). The
+suite now runs cleanly with PHPUnit 13 (`phpunit/phpunit 13.0.0`) on PHP 8.4.23 and 8.5.8. This is a record of the
+change of 2026-07-11: what was wrong, which files changed, and how to run the suite yourself.
 
----
+## In short
 
-## The short answer
+| | |
+|---|---|
+| What changed | Coverage works in isolated child processes; test hygiene fixes; seven kernel and library fixes the tests surfaced. |
+| Who is affected | People who run or extend the test suite; code that relied on the fixed kernel and library behaviour (all fixes remove warnings or errors). |
+| How to check | `php ./vendor/bin/phpunit --no-coverage --display-deprecations --display-warnings` |
+| Expected result | `OK, but some tests were skipped!` with `Tests: 715, Assertions: 1117, Skipped: 30` at the time of the change. |
 
-The Exponential 6.0 test suite now runs cleanly with PHPUnit 13 and PHP 8.4.23:
+Result of the cleanup:
 
 ```
 715 tests, 1117 assertions, 0 errors, 0 warnings, 0 deprecations, 0 risky
 OK, but some tests were skipped!
 ```
 
-Before this cleanup, the PHPUnit progress bar was a noisy alphabet soup of `D` (deprecations), `W` (warnings), `R` (risky tests), and `E` (errors). Coverage runs also failed inside `EzpSessionHandlerDBPhp8BugfixesTest` because Xdebug was not loaded in PHPUnit's isolated child processes. This work brought the suite back to a clean, trustworthy state.
-
----
+Before the cleanup, the PHPUnit progress bar was full of `D` (deprecations), `W` (warnings), `R` (risky tests) and `E`
+(errors). Coverage runs also failed inside `EzpSessionHandlerDBPhp8BugfixesTest`, because Xdebug was not loaded in
+PHPUnit's isolated child processes.
 
 ## What the progress characters mean
-
-If you are reading a PHPUnit output bar and wondering what the letters mean, here is the decoder ring:
 
 | Char | Meaning |
 |------|---------|
@@ -37,7 +39,6 @@ If you are reading a PHPUnit output bar and wondering what the letters mean, her
 
 A clean run is mostly dots and a few `S` characters for tests that require an optional extension or external service. This cleanup made that the normal state of the 6.0 branch.
 
----
 
 ## Background: why this was needed
 
@@ -45,11 +46,10 @@ PHP 8.4 tightened several behaviors that PHP 8.0 and 8.1 had only warned about, 
 
 The work split into three broad areas:
 
-1. **Coverage and process isolation** — making `Xdebug` available in child processes.
-2. **Test hygiene** — fixing dynamic properties, risky tests, and class-name mismatches.
-3. **Production fixes surfaced by the tests** — small kernel and library fixes that the tests were correctly flagging.
+1. **Coverage and process isolation:** making `Xdebug` available in child processes.
+2. **Test hygiene:** fixing dynamic properties, risky tests, and class-name mismatches.
+3. **Production fixes surfaced by the tests:** small kernel and library fixes that the tests were correctly flagging.
 
----
 
 ## 1. Coverage / isolated-process fixes
 
@@ -67,10 +67,9 @@ The fix was to give the children their own `xdebug.ini` and discover it at runti
 Run with coverage:
 
 ```bash
-XDEBUG_MODE=coverage /opt/plesk/php/8.4/bin/php -d memory_limit=-1 -d zend_extension=xdebug.so ./vendor/bin/phpunit --coverage-html coverage
+XDEBUG_MODE=coverage php -d memory_limit=-1 -d zend_extension=xdebug.so ./vendor/bin/phpunit --coverage-html coverage
 ```
 
----
 
 ## 2. Test code fixes
 
@@ -117,7 +116,6 @@ PHPUnit 13's loader warns when a class name does not match the file name. Two `e
 | `tests/tests/kernel/datatypes/ezstring/eZStringTypeTest.php` | `require_once __DIR__ . '/../eZDatatypeAbstractTest.php';` |
 | `tests/tests/kernel/datatypes/ezemail/eZEmailTypeTest.php` | `require_once __DIR__ . '/../eZDatatypeAbstractTest.php';` |
 
----
 
 ## 3. Kernel / library production fixes surfaced by the tests
 
@@ -133,7 +131,6 @@ The warnings and errors were not all cosmetic. Several tests correctly pointed a
 | `kernel/classes/datatypes/ezisbn/ezisbn13.php` | Replaces deprecated curly-brace string offsets `{$i}` with `[$i]`. | PHP 7.4/8.4 removed curly-brace string indexing. |
 | `kernel/private/classes/webdav/ezwebdavcontentbackend.php` | Replaces deprecated curly-brace string offsets `{$i}` with `[$i]`. | Same. |
 
----
 
 ## 4. Session handler stubs
 
@@ -144,7 +141,6 @@ The session handler tests needed their own stub classes so they would not confli
 | `tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php` | New file. `StubEZDB` renamed `StubSessionEZDB` to avoid redeclaring the `StubEZDB` class in `tests/tests/kernel/classes/security/stubs.php`. Also declares typed properties and fixes `eZDBInterface` defaults. |
 | `tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php` | Updated to use `StubSessionEZDB`; declares typed `private ezpSessionHandlerDB $handler;` and `private StubSessionEZDB $db;`. |
 
----
 
 ## 5. MongoDB adapter tests
 
@@ -155,7 +151,6 @@ The MongoDB adapter tests had drifted out of sync with the production implementa
 | `tests/tests/lib/ezdb/mongodb/stubs.php` | `expMongoDBTestable` constructor now initializes `$this->DB = 'mongo';` so `selectCollection()` receives a non-null database name. |
 | `tests/tests/lib/ezdb/mongodb/expMongoDBAdapterTest.php` | `testQueryReturnsFalse` adjusted to match `INSERT` returning `true`; `testArrayQueryReturnsEmptyArray` now queries a non-existent group to trigger the expected warning. |
 
----
 
 ## 6. PHPUnit configuration and suite changes
 
@@ -166,16 +161,16 @@ The MongoDB adapter tests had drifted out of sync with the production implementa
 | `phpunit.xml` | Updated to PHPUnit 13 schema: `testsuites`, `source/include` for coverage, `PHP_INI_SCAN_DIR`, `exclude` for abstract classes and the `security`/`mongodb` directories, `executionOrder="depends,defects"`, `failOnRisky`, `failOnWarning`, `failOnPhpunitWarning`, `displayDetails...` etc. |
 | `tests/bootstrap.php` | Expanded shim layer for `PHPUnit_Framework_*` classes, `ezpDatabaseHelper`, `ezpObject`, `ezpClass`, and `ezpDatatypeTestDataSet` helpers (when needed). |
 
----
 
 ## 7. Verification
 
-The same clean result is achieved with or without coverage.
+The result is the same with or without coverage. Use the `php` binary of the PHP version you test (8.4 or 8.5), from
+the installation root. Run the suite on a development copy: some tests write to the database.
 
 No coverage:
 
 ```bash
-/opt/plesk/php/8.4/bin/php ./vendor/bin/phpunit --no-coverage --display-deprecations --display-warnings
+php ./vendor/bin/phpunit --no-coverage --display-deprecations --display-warnings
 ```
 
 Result:
@@ -188,7 +183,7 @@ Tests: 715, Assertions: 1117, Skipped: 30
 With coverage:
 
 ```bash
-XDEBUG_MODE=coverage /opt/plesk/php/8.4/bin/php -d memory_limit=-1 -d zend_extension=xdebug.so ./vendor/bin/phpunit --coverage-html coverage
+XDEBUG_MODE=coverage php -d memory_limit=-1 -d zend_extension=xdebug.so ./vendor/bin/phpunit --coverage-html coverage
 ```
 
 Result:
@@ -200,7 +195,6 @@ Tests: 715, Assertions: 1117, Skipped: 30
 
 The skipped tests are expected: they require optional extensions or external services that are not present in the test environment. The important part is the absence of errors, warnings, deprecations, and risky tests.
 
----
 
 ## What this means for the 6.0 branch
 
@@ -217,15 +211,9 @@ If you extend the 6.0 test suite, keep these patterns in mind:
 ## Related pages
 
 - [PHP 8 support](php8.md)
-- [Steps to upgrade your Exponential 6.0.13 site to use PHPUnit 10 — what broke, how we fixed it, and how you run tests now](phpunitv10.md)
-- [PHPUnit 13 support for Exponential 6.0.x — what broke in the jump from 10 → 13, how we fixed it, and the new eZTemplateStringOperator test suite](phpunitv13.md)
+- [PHPUnit 10 upgrade](phpunitv10.md) and [PHPUnit 13 upgrade](phpunitv13.md)
 - [`ezpSessionHandlerDB` PHP 8 compatibility bugfixes and PHPUnit 13 test suite](ezpsessionhandlerdb-php8-bugfix-and-tests.md)
 - [PHP 8.4 and 8.5 for the older Symfony stack: the framework forks](../../features/6.0/platform-php85-framework-forks.md)
-- [April 2025](../../history/2025/2025-04.md)
-- [September 2025](../../history/2025/2025-09.md)
-- [December 2025](../../history/2025/2025-12.md)
-
-## Related pages
-
-- [February 2026](../../history/2026/2026-02.md)
-- [March 2026](../../history/2026/2026-03.md)
+- History: [April 2025](../../history/2025/2025-04.md), [September 2025](../../history/2025/2025-09.md),
+  [December 2025](../../history/2025/2025-12.md), [February 2026](../../history/2026/2026-02.md),
+  [March 2026](../../history/2026/2026-03.md)
