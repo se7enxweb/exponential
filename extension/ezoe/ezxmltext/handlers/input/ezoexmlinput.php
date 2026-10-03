@@ -97,6 +97,8 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'json_xml_tag_alias',
                       'custom_tag_definitions',
                       'engine_switch_enabled',
+                      'engine',
+                      'engine_switch_choices',
                       'tinymce8_cache_key',
                       'literal_definition',
                       'embed_definitions',
@@ -135,6 +137,10 @@ class eZOEXMLInput extends eZXMLInputHandler
             $attr = self::getCustomTagDefinitions();
         else if ( $name === 'engine_switch_enabled' )
             $attr = self::engineSwitchEnabled();
+        else if ( $name === 'engine' )
+            $attr = expOEEditor::info( expOEEditor::resolve() );
+        else if ( $name === 'engine_switch_choices' )
+            $attr = expOEEditor::switchChoices( expOEEditor::resolve() );
         else if ( $name === 'tinymce8_cache_key' )
             $attr = self::getTinyMCE8CacheKey();
         else if ( $name === 'literal_definition' )
@@ -361,18 +367,19 @@ class eZOEXMLInput extends eZXMLInputHandler
                 else
                     eZDebug::writeError( 'Current user does not have access to disable editor, but trying anyway!', __METHOD__ );
             } break;
-            case 'switch_engine_tinymce3':
-            case 'switch_engine_tinymce8':
-            {
-                // ezoe.ini [EditorSettings] EngineSwitch lets editors choose the editor engine themselves
-                if ( self::engineSwitchEnabled() )
-                    eZPreferences::setValue( 'ezoe_engine', substr( $action, strlen( 'switch_engine_' ) ) );
-                else
-                    eZDebug::writeError( 'Switching the editor engine is disabled in ezoe.ini [EditorSettings] EngineSwitch', __METHOD__ );
-            } break;
             default :
             {
-                eZDebug::writeError( 'Unknown custom HTTP action: ' . $action, __METHOD__ );
+                if ( strpos( $action, 'switch_engine_' ) === 0 )
+                {
+                    // ezoe.ini [EditorSettings] EngineSwitch lets editors choose the editor engine themselves,
+                    // any engine registered in [EditorSettings] Engines[] can be chosen
+                    if ( !expOEEditor::switchEnabled() )
+                        eZDebug::writeError( 'Switching the editor engine is disabled in ezoe.ini [EditorSettings] EngineSwitch', __METHOD__ );
+                    else if ( !expOEEditor::setUserEngine( substr( $action, strlen( 'switch_engine_' ) ) ) )
+                        eZDebug::writeError( 'Unknown editor engine in custom HTTP action: ' . $action, __METHOD__ );
+                }
+                else
+                    eZDebug::writeError( 'Unknown custom HTTP action: ' . $action, __METHOD__ );
             } break;
         }
     }
@@ -508,9 +515,7 @@ class eZOEXMLInput extends eZXMLInputHandler
      */
     public static function engineSwitchEnabled()
     {
-        $ezoeIni = eZINI::instance( 'ezoe.ini' );
-        return $ezoeIni->hasVariable( 'EditorSettings', 'EngineSwitch' )
-            && $ezoeIni->variable( 'EditorSettings', 'EngineSwitch' ) === 'enabled';
+        return expOEEditor::switchEnabled();
     }
 
      /**

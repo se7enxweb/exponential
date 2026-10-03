@@ -7,17 +7,12 @@
 {/if}
 
 {if $input_handler.is_editor_enabled}
-{* Editor engine: tinymce3 (default) or tinymce8 (prototype), can be overridden per user with
-   the preference ezoe_engine, e.g. /user/preferences/set/ezoe_engine/tinymce8 *}
-{def $ezoe_engine = 'tinymce3'}
-{if ezini_hasvariable( 'EditorSettings', 'EditorEngine', 'ezoe.ini',,true() )}
-    {set $ezoe_engine = ezini( 'EditorSettings', 'EditorEngine', 'ezoe.ini',,true() )}
-{/if}
-{if array( 'tinymce3', 'tinymce8' )|contains( ezpreference( 'ezoe_engine' ) )}
-    {set $ezoe_engine = ezpreference( 'ezoe_engine' )}
-{/if}
-{if $ezoe_engine|eq( 'tinymce8' )}
-    {include uri='design:content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl'
+{* Editor engine, from the registry (ezoe.ini [EditorSettings] Engines[]): user preference ezoe_engine, then the
+   siteaccess / global EditorEngine, tinymce3 when the choice is unknown. An engine with a template renders itself;
+   the built-in TinyMCE 3 editor follows below. *}
+{def $ezoe_engine = $input_handler.engine}
+{if $ezoe_engine.template}
+    {include uri=$ezoe_engine.template
              attribute=$attribute
              input_handler=$input_handler
              attribute_base=$attribute_base
@@ -240,9 +235,7 @@
         {if $input_handler.can_disable}
             <input class="button{if $layout_settings['buttons']|contains('disable')} hide{/if}" type="submit" name="CustomActionButton[{$attribute.id}_disable_editor]" value="{'Disable editor'|i18n('design/standard/content/datatype')}" />
         {/if}
-        {if $input_handler.engine_switch_enabled}
-            <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_switch_engine_tinymce8]" value="{'Switch to the new editor (TinyMCE 8)'|i18n('design/standard/ezoe')}" title="{'The text is kept, the choice is saved for your user.'|i18n('design/standard/ezoe')}" />
-        {/if}
+        {include uri='design:content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl' attribute=$attribute input_handler=$input_handler}
         <script type="text/javascript">
         eZOeAttributeSettings = eZOeGlobalSettings;
         eZOeAttributeSettings['ez_attribute_id'] = {$attribute.id};

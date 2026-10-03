@@ -55,7 +55,11 @@
     {set $tiny_language = ''}
 {/if}
 
-{def $cache_query = concat( '?v=', $input_handler.tinymce8_cache_key )}
+{def $cache_query = concat( '?v=', $input_handler.tinymce8_cache_key )
+     $plugin_urls = hash()}
+{foreach $input_handler.engine.plugins as $plugin_name => $plugin_path}
+    {set $plugin_urls = $plugin_urls|merge( hash( $plugin_name, $plugin_path|ezdesign( 'no' ) ) )}
+{/foreach}
 <script src="{'javascript/tinymce8/tinymce.min.js'|ezdesign( 'no' )}{$cache_query}" charset="utf-8"></script>
 <script src="{'javascript/tinymce8_ez/ezoe_dialog.js'|ezdesign( 'no' )}{$cache_query}" charset="utf-8"></script>
 <link rel="stylesheet" type="text/css" href="{'javascript/tinymce8_ez/ezoe_dialog.css'|ezdesign( 'no' )}{$cache_query}" />
@@ -72,15 +76,7 @@ var eZOe8GlobalSettings = {ldelim}
     language_url: {concat( 'javascript/tinymce8/langs/', $tiny_language, '.js' )|ezdesign},
     {/if}
     directionality: '{$directionality}',
-    external_plugins: {ldelim}
-        ezembed: {'javascript/tinymce8_ez/plugins/ezembed/plugin.js'|ezdesign},
-        ezcustomtag: {'javascript/tinymce8_ez/plugins/ezcustomtag/plugin.js'|ezdesign},
-        ezlink: {'javascript/tinymce8_ez/plugins/ezlink/plugin.js'|ezdesign},
-        ezpath: {'javascript/tinymce8_ez/plugins/ezpath/plugin.js'|ezdesign},
-        ezliteral: {'javascript/tinymce8_ez/plugins/ezliteral/plugin.js'|ezdesign},
-        eztable: {'javascript/tinymce8_ez/plugins/eztable/plugin.js'|ezdesign},
-        ezgeneral: {'javascript/tinymce8_ez/plugins/ezgeneral/plugin.js'|ezdesign}
-    {rdelim},
+    external_plugins: {json_encode( $plugin_urls )},
     // no advlist (split list buttons) and no pagebreak (ezoe pagebreak is a custom tag, not an html comment)
     plugins: 'lists autolink link anchor table charmap fullscreen code help',
     menubar: false,
@@ -132,7 +128,7 @@ var eZOe8GlobalSettings = {ldelim}
         content_edit_url: {'/content/edit'|ezurl},
         browse_image_alias: {json_encode( ezini( 'EditorSettings', 'BrowseImageAlias', 'ezoe.ini',,true() ) )},
         search_classes: {json_encode( $search_classes )},
-        upload_file_extensions: {json_encode( ezini( 'EditorSettings', 'UploadFileExtensions', 'ezoe.ini',,true() ) )},
+        upload_file_extensions: {json_encode( $input_handler.engine.config.upload_extensions )},
         extension_url: {'/ezoe/'|ezurl},
         ezjscore_url: {'/ezjscore/'|ezurl},
         form_token: "@$ezxFormToken@",
@@ -149,23 +145,9 @@ var eZOe8GlobalSettings = {ldelim}
 {literal}
 // Maps the button names of ezoe.ini [EditorLayout] Buttons[] (TinyMCE 3 ez theme) to TinyMCE 8 toolbar items.
 // Buttons without a counterpart in the prototype are dropped.
-var eZOe8ButtonMap = {
-    formatselect: 'blocks', bold: 'bold', italic: 'italic', underline: 'underline',
-    sub: 'subscript', sup: 'superscript',
-    justifyleft: 'alignleft', justifycenter: 'aligncenter', justifyright: 'alignright', justifyfull: 'alignjustify',
-    bullist: 'bullist', numlist: 'numlist', outdent: 'outdent', indent: 'indent',
-    undo: 'undo', redo: 'redo',
-    link: 'ezlink', unlink: 'unlink', anchor: 'anchor',
-    image: 'ezembed', object: 'ezembed', file: 'ezembed',
-    custom: 'ezcustomtag', literal: 'ezliteral',
-    charmap: 'charmap',
-    table: 'eztable', delete_table: 'tabledelete', delete_col: 'tabledeletecol', col_after: 'tableinsertcolafter',
-    delete_row: 'tabledeleterow', row_after: 'tableinsertrowafter', split_cells: 'tablesplitcells', merge_cells: 'tablemergecells',
-    fullscreen: 'fullscreen', help: 'help',
-    disable: 'ezdisable',
-    '|': '|'
-};
-
+{/literal}
+var eZOe8ButtonMap = {json_encode( $input_handler.engine.toolbar_map|merge( hash( '|', '|' ) ) )};
+{literal}
 function eZOe8Toolbar( buttons )
 {
     var items = [];
@@ -235,9 +217,7 @@ function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
     {if $input_handler.can_disable}
         <input class="button{if $layout_settings['buttons']|contains('disable')} hide{/if}" type="submit" name="CustomActionButton[{$attribute.id}_disable_editor]" value="{'Disable editor'|i18n('design/standard/content/datatype')}" />
     {/if}
-    {if $input_handler.engine_switch_enabled}
-        <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_switch_engine_tinymce3]" value="{'Switch to the previous editor (TinyMCE 3)'|i18n('design/standard/ezoe')}" title="{'The text is kept, the choice is saved for your user.'|i18n('design/standard/ezoe')}" />
-    {/if}
+    {include uri='design:content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl' attribute=$attribute input_handler=$input_handler}
     <script type="text/javascript">
     eZOe8Init( '{$attribute_base}_data_text_{$attribute.id}', {$attribute.id}, {json_encode( $layout_settings['buttons'] )}, '{$layout_settings['path_location']}', {$editorRow} );
     </script>
