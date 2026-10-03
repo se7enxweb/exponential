@@ -1,85 +1,35 @@
-# Exponential Console — `bin/php/console`
+# Exponential Console: `bin/php/console`
 
-**Introduced:** Exponential CMS 6.0.15  
-**Location:** `bin/php/console`  
-**Type:** PHP CLI script — command dispatcher
+`bin/php/console` is one entry point for every command line script of Exponential 6.0.15, modelled on Symfony's
+`bin/console`. Read this page if you run scripts by hand or from deploy and cron jobs: you no longer need to remember
+paths under `bin/php/`, `bin/shell/` or inside extensions.
 
----
+## In short
 
-## What is it?
+| | |
+|---|---|
+| What changed | New dispatcher `bin/php/console`. It finds every script at run time (no configuration) and runs it as `<namespace>:<name>`. Since June 2026 it also runs cronjob parts (`cron:<part>`) and shows the crontab (`crontab:list`, `crontab:edit`). |
+| Who is affected | Nobody is forced to change. Every script keeps its path; `php bin/php/ezcache.php ...` works as before. |
+| How to check | `php bin/php/console --version` |
+| How to fix | Nothing to fix. Use `php bin/php/console list` to find a command. |
 
-`console` is a single entry-point for every command-line script that ships with
-Exponential CMS, modeled on Symfony's `bin/console`.
+## Start in one minute
 
-Instead of memorizing dozens of paths under `bin/php/`, `bin/shell/`, or deep
-inside extensions, you type one thing:
-
-```
-php bin/php/console <command> [options...]
-```
-
-`console` auto-discovers every script on the system at runtime — **no
-configuration required**. When a new script appears in a supported location it
-shows up in the listing automatically.
-
----
-
-## Prerequisites
-
-You must run all commands from the **Exponential CMS root directory** (the
-folder that contains `index.php`, `autoload.php`, `bin/`, etc.).
+Run every command from the Exponential root directory, the one that holds `index.php`, `autoload.php` and `bin/`.
+You need PHP 8.1 or later on your `$PATH` (`php -v`). Some sub-scripts also need `curl` and `wget`; the console itself
+does not.
 
 ```bash
-# Confirm you are in the right place — you should see index.php
-ls index.php
+ls index.php                      # confirms you are in the right directory
+php bin/php/console               # list every command (same as "list")
+php bin/php/console --version     # print the console version
 ```
 
-You need:
-- **PHP 7.4 or 8.x** on your `$PATH` (type `php -v` to check)
-- **curl** and **wget** on your `$PATH` (needed by specific sub-scripts, not by
-  `console` itself)
-
----
-
-## Quick-start
-
-```bash
-# Show all available commands
-php bin/php/console
-
-# Same — list is the default view
-php bin/php/console list
-
-# Check the console version
-php bin/php/console --version
-```
-
----
-
-## Listing commands
-
-```bash
-# List every command on the system
-php bin/php/console list
-
-# List only Exponential PHP scripts  (bin/php/*.php)
-php bin/php/console list exp
-
-# List only shell scripts  (bin/shell/*.sh)
-php bin/php/console list shell
-
-# List only root bin executables  (bin/*.sh, bin/*.php)
-php bin/php/console list bin
-
-# List commands provided by a specific extension
-php bin/php/console list ext:hcaptcha
-```
-
-Sample output:
+Expected start of the listing:
 
 ```
 ════════════════════════════════════════════════════════════════════
-  Exponential Console  1.0.0  (eZ Publish 4 / Exponential CMS 6.x)
+  Exponential Console  1.0.0  (Exponential CMS 6.x)
   With great power comes great responsibility.
 ════════════════════════════════════════════════════════════════════
 
@@ -91,61 +41,24 @@ exp   — bin/php/*.php  (Exponential PHP scripts)
   ...
 ```
 
----
-
-## Getting help for a command
-
-Every sub-script that supports `--help` can be reached through the console:
+## Common commands
 
 ```bash
-# Option A — the "help" sub-command
-php bin/php/console help exp:preload
-
-# Option B — --help before the command name
-php bin/php/console --help exp:preload
-
-# Option C — --help after the command name (passed through directly)
-php bin/php/console exp:preload --help
-```
-
-All three produce the same output: the full usage block printed by the script
-itself.
-
----
-
-## Running a command
-
-```bash
-php bin/php/console <namespace>:<name> [options...]
-```
-
-Before the script runs, the console prints a brief dispatch notice to
-**stderr** so it never corrupts piped output:
-
-```
-  ▶  running exp:ezcache  →  bin/php/ezcache.php
-```
-
-### Common commands — copy and run
-
-```bash
-# Clear all caches (safe, very common operation)
+# Clear all caches
 php bin/php/console exp:ezcache --clear-all
 
 # Everything Setup > Cache does, with --dry-run and PASS/FAIL (see cache-console.md)
 php bin/php/console exp:cache --help
 php bin/php/console exp:cache clear --tag=ini --dry-run
 
-# Regenerate PHP autoload arrays after adding a new extension or class
+# Regenerate the autoload arrays after adding an extension or a class
 php bin/php/console exp:ezpgenerateautoloads
 
-# Rebuild the full-text search index
+# Rebuild the search index
 php bin/php/console exp:updatesearchindex
 
-# Warm site caches for the default siteaccess
+# Warm the caches of the default siteaccess, or of one siteaccess
 php bin/php/console exp:preload
-
-# Warm site caches for a specific siteaccess
 php bin/php/console exp:preload --siteaccess=sevenx_site_user
 
 # Fix directory and file permissions after a deployment
@@ -155,64 +68,24 @@ php bin/php/console bin:modfix
 php bin/php/console exp:ezsessiongc
 ```
 
----
+Before a script runs, the console prints a short notice to **stderr**, so piped output stays clean:
 
-## Command namespaces
-
-| Namespace | What it maps to | Example |
-|---|---|---|
-| `exp:<name>` | `bin/php/<name>.php` | `exp:ezcache` |
-| `shell:<name>` | `bin/shell/<name>.sh` | `shell:phpcheck` |
-| `bin:<name>` | `bin/<name>.sh` or `bin/<name>.php` | `bin:modfix` |
-| `ext:<ext>:<name>` | `extension/<ext>/bin/php/<name>.php` | `ext:hcaptcha:install` |
-| `ext:<ext>:sh:<name>` | `extension/<ext>/bin/shell/<name>.sh` | `ext:myext:sh:setup` |
-
-### Bare-name shortcut
-
-If you leave out the namespace, the console will try `exp:`, then `shell:`,
-then `bin:` automatically:
-
-```bash
-# These two are identical
-php bin/php/console ezcache --clear-all
-php bin/php/console exp:ezcache --clear-all
+```
+  ▶  running exp:ezcache  →  bin/php/ezcache.php
 ```
 
----
-
-## Passing arguments and options to sub-scripts
-
-Everything after the command name is passed verbatim to the sub-script:
+## Find a command
 
 ```bash
-# Pass --siteaccess to preload
-php bin/php/console exp:preload --siteaccess=sevenx_site_user
-
-# Dry-run a cleanup to see what would be deleted (no actual changes)
-php bin/php/console exp:cleanupversions --dry-run
-
-# Pass multiple flags
-php bin/php/console exp:updatesearchindex --siteaccess=sevenx_site_user --verbose
+php bin/php/console list              # every command
+php bin/php/console list exp          # bin/php/*.php
+php bin/php/console list shell        # bin/shell/*.sh
+php bin/php/console list bin          # bin/*.sh and bin/*.php
+php bin/php/console list cron         # cronjob parts
+php bin/php/console list ext:hcaptcha # the commands of one extension
 ```
 
----
-
-## Console-level flags
-
-These flags are consumed by `console` itself and are **not** forwarded to
-sub-scripts:
-
-| Flag | Effect |
-|---|---|
-| `--version` or `-V` | Print the console version and exit |
-| `--help` or `-h` (bare) | Show the command listing |
-| `--quiet` or `-q` | Suppress the dispatch notice on stderr |
-
----
-
-## "Did you mean?" suggestions
-
-If you mistype a command name the console will suggest the closest match:
+If you mistype a name, the console suggests the closest match:
 
 ```
 $ php bin/php/console exp:ezcach
@@ -221,12 +94,83 @@ $ php bin/php/console exp:ezcach
   Did you mean:    exp:ezcache?
 ```
 
----
+## Help for a command
+
+All three forms print the usage block of the script itself:
+
+```bash
+php bin/php/console help exp:preload
+php bin/php/console --help exp:preload
+php bin/php/console exp:preload --help
+```
+
+## Command names
+
+| Namespace | Runs | Example |
+|---|---|---|
+| `exp:<name>` | `bin/php/<name>.php` | `exp:ezcache` |
+| `shell:<name>` | `bin/shell/<name>.sh` | `shell:phpcheck` |
+| `bin:<name>` | `bin/<name>.sh` or `bin/<name>.php` | `bin:modfix` |
+| `ext:<ext>:<name>` | `extension/<ext>/bin/php/<name>.php` or `extension/<ext>/bin/<name>.sh` | `ext:hcaptcha:install` |
+| `ext:<ext>:sh:<name>` | `extension/<ext>/bin/shell/<name>.sh` | `ext:myext:sh:setup` |
+| `cron:<part>` | the cronjob part `<part>` through `runcronjobs.php` | `cron:frequent` |
+| `crontab:list`, `crontab:edit` | the system crontab of the current user | |
+
+Without a namespace, the console tries `exp:`, then `shell:`, then `bin:`. These two are the same:
+
+```bash
+php bin/php/console ezcache --clear-all
+php bin/php/console exp:ezcache --clear-all
+```
+
+## Options
+
+Everything after the command name goes to the script unchanged:
+
+```bash
+php bin/php/console exp:preload --siteaccess=sevenx_site_user
+php bin/php/console exp:cleanupversions --dry-run
+php bin/php/console exp:updatesearchindex --siteaccess=sevenx_site_user --verbose
+```
+
+These flags belong to the console and are not passed on:
+
+| Flag | Effect |
+|---|---|
+| `--version`, `-V` | print the console version and exit |
+| `--help`, `-h` (on its own) | show the command listing |
+| `--quiet`, `-q` | no dispatch notice on stderr |
+
+## Cronjob parts and the crontab
+
+Added in June 2026 (`a2ef4efa50`).
+
+A cronjob part is a `[CronjobPart-<name>]` block with one or more `Scripts[]=` entries, in `settings/cronjob.ini` or
+in an extension's `settings/cronjob.ini.append.php`. The console reads the parts from those INI files, not from file
+names, and runs them through `runcronjobs.php`:
+
+```bash
+php bin/php/console list cron
+php bin/php/console cron:frequent --allow-root-user
+php bin/php/console cron:infrequent -s site_admin    # siteaccess flags are passed on
+```
+
+The parts of a stock installation are `infrequent`, `frequent`, `contentjobs`, `audit`, `unlock`,
+`cluster_maintenance`, `cleanuprss` and `cache_cleanup`. `list cron` describes each part with the `@description` tags
+of the scripts it runs; every core script under `cronjobs/` has one.
+
+To see that the parts are scheduled:
+
+```bash
+php bin/php/console crontab:list      # print the system crontab of the current user
+php bin/php/console crontab:edit      # open it in $EDITOR
+```
+
+The browser view of the same information is the [cronjobs console](../../features/6.0/cronjobs-console.md).
 
 ## Extension commands
 
-Any extension that ships scripts in one of the following locations is
-discovered automatically:
+Scripts in these places are found automatically:
 
 ```
 extension/<extname>/bin/php/<name>.php      → ext:<extname>:<name>
@@ -235,21 +179,16 @@ extension/<extname>/bin/<name>.sh           → ext:<extname>:<name>
 ```
 
 ```bash
-# List all commands from the hcaptcha extension
 php bin/php/console list ext:hcaptcha
-
-# Run an extension install script
 php bin/php/console ext:hcaptcha:install --siteaccess=sevenx_site_user
 ```
 
----
+## Describe your own script
 
-## Adding a description to your own script
+When `list` shows `(no description)`, add a `@description` tag near the top of the file. Both tags are read
+automatically; there is no registration step.
 
-When `console list` shows `(no description)` next to a script, add a
-`@description` comment near the top of the file.
-
-**PHP script** — inside the opening docblock:
+PHP script, in the opening docblock:
 
 ```php
 <?php
@@ -261,7 +200,7 @@ When `console list` shows `(no description)` next to a script, add a
  */
 ```
 
-**Shell script** — on the second line (after the shebang):
+Shell script, on the line after the shebang:
 
 ```bash
 #!/bin/bash
@@ -269,101 +208,28 @@ When `console list` shows `(no description)` next to a script, add a
 # @long-description Longer explanation for console help output.
 ```
 
-Both tags are picked up automatically — no registration step needed.
-
----
+A cronjob script uses the same tag, for example `@description Remove expired baskets of anonymous visitors`.
 
 ## Troubleshooting
 
-**`PHP Fatal error: ... autoload.php` — cannot find bootstrap**  
-You are not running the command from the Exponential root directory. `cd` there
-first:
+| Message | Cause and fix |
+|---|---|
+| `PHP Fatal error: ... autoload.php` | You are not in the Exponential root directory. `cd /path/to/your/exponential-root` and run the command again. |
+| `Running scripts as root may be dangerous` | The script runs as `root`. Add `--allow-root-user` to confirm, for example `php bin/php/console exp:ezcache --clear-all --allow-root-user`. |
+| `Unknown command: exp:myscript` | The file is not where the namespace expects it. Check that `bin/php/myscript.php` exists and is readable, then run `php bin/php/console list`. |
+| No colours | The terminal does not support ANSI codes, or output is redirected; colours are switched off automatically. |
 
-```bash
-cd /path/to/your/exponential-root
-php bin/php/console list
-```
+## How it works
 
-**`Running scripts as root may be dangerous`**  
-Exponential's eZScript component warns when a script is run as `root`. To
-acknowledge and continue:
-
-```bash
-php bin/php/console exp:ezcache --clear-all --allow-root-user
-```
-
-**`Unknown command: exp:myscript`**  
-The script was not found in the expected location. Check that the file exists at
-`bin/php/myscript.php` and is readable. Run `php bin/php/console list` to see
-what was discovered.
-
-**Colors not showing**  
-Colors require a terminal that supports ANSI escape codes. If running inside a
-script or redirecting output, colors are suppressed automatically.
-
----
-
-## Technical notes
-
-- The console **does not** call `eZScript::startup()` or `eZScript::initialize()`
-  for itself. Each sub-script owns its own lifecycle, including the optional
-  database connection.
-- All sub-scripts are executed by the same PHP binary that runs the console
-  (`which php`).
-- Exit codes from sub-scripts are propagated to the caller unchanged, making the
-  console safe to use in shell pipelines and CI/CD scripts.
-
-## Cronjob parts and the crontab (added June 2026)
-
-Two more command families were added to the console in 6.0.15 development
-(`a2ef4efa50`).
-
-### `cron:<part>` runs a cronjob part by its name
-
-A cronjob part is a `[CronjobPart-<name>]` block in `settings/cronjob.ini` or in
-an extension's `settings/cronjob.ini.append.php`, with one or more `Scripts[]=`
-entries. The console discovers the parts from those INI files, not from the
-script file names, and runs them through `runcronjobs.php`:
-
-```bash
-php bin/php/console cron:frequent --allow-root-user
-php bin/php/console list cron
-```
-
-The list shows each part with a description built from the `@description` tag at
-the top of each script it runs (all core scripts under `cronjobs/` carry one).
-Siteaccess flags before the part name are passed on:
-
-```bash
-php bin/php/console cron:infrequent -s site_admin
-```
-
-The parts of a stock installation are `infrequent`, `frequent`, `contentjobs`,
-`audit`, `unlock`, `cluster_maintenance`, `cleanuprss` and `cache_cleanup`.
-
-### Describe your own cronjob script
-
-Put a docblock line in the script so `list cron` can show it:
-
-```php
-<?php
-/**
- * @description Remove expired baskets of anonymous visitors
- */
-```
-
-### `crontab:list` and `crontab:edit`
-
-```bash
-php bin/php/console crontab:list      # print the system crontab of the current user
-php bin/php/console crontab:edit      # open it in $EDITOR
-```
-
-Use these to see that the parts you run through `cron:<part>` are scheduled. The
-browser view of the same information is the
-[cronjobs console](../../features/6.0/cronjobs-console.md).
+- The console does not call `eZScript::startup()` or `eZScript::initialize()` for itself. Each script owns its own
+  life cycle, including the database connection.
+- Scripts run with the same PHP binary as the console.
+- The exit code of the script is returned unchanged, so the console is safe in shell pipelines and CI jobs.
 
 ## Related pages
 
+- [Cache console (`exp:cache`)](cache-console.md)
 - [Commands, cronjob parts and module views as classes](cli_cronjob_view_abstractions.md)
+- [Cronjobs console](../../features/6.0/cronjobs-console.md)
 - [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)
+- [Operating a site](../../guides/operating-a-site.md)

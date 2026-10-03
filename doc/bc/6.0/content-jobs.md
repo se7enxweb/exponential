@@ -1,17 +1,40 @@
 # Content jobs: large removes, copies and moves in the background
 
-Removing a subtree, copying one or moving one used to happen inside the web request that confirmed it. That is
-fine for ten nodes. For a few hundred it runs into the request time limit, the memory limit or one huge database
-transaction, and the request fails half-way: some of the subtree is gone, or copied, and some is not. The admin
-also refused such operations outright above `MaxNodesRemoveSubtree` / `MaxNodesCopySubtree` and sent the editor
-to a command line script.
+Read this page if your editors remove, copy or move large subtrees, if you run a cluster, or if you override the
+admin confirmation pages. From Exponential 6.0.15 a large operation runs as a **content job** in the background
+instead of inside the web request.
 
-From Exponential 6.0.15 a large operation runs as a **content job**: in a background worker, in batches of 50
-nodes, each batch in its own database transaction, with a checkpoint after every batch. The editor sees a progress
-page, can leave it, cancel the job or resume it, and a job finishes even when its worker is killed.
+Before, removing, copying or moving a subtree happened in the request that confirmed it. That is fine for ten nodes.
+For a few hundred it hits the request time limit, the memory limit or one huge database transaction, and the request
+fails half-way: part of the subtree is gone, or copied, and part is not. The admin also refused such operations above
+`MaxNodesRemoveSubtree` / `MaxNodesCopySubtree` and sent the editor to a command line script.
 
-Small operations are unchanged: below `SynchronousLimit` (50 nodes) the editor gets the page and the result they
-always got.
+A content job runs in a background worker, in batches of 50 nodes, each batch in its own database transaction, with a
+checkpoint after every batch. The editor sees a progress page, can leave it, cancel the job or resume it, and a job
+finishes even when its worker is killed. Small operations are unchanged: below `SynchronousLimit` (50 nodes) the
+editor gets the page and the result they always got.
+
+## In short
+
+| | |
+|---|---|
+| What changed | Large remove, copy, move, hide/reveal, section, subtree state and location operations become jobs (`content/job/<id>`, `content/jobs`). New settings block `content.ini [ContentJobSettings]`, new policy `content/jobs`, new cronjob part `contentjobs`, new CLI `bin/php/expcontentjob.php`. `MaxNodesRemoveSubtree` and `MaxNodesCopySubtree` now only limit "now". |
+| Who is affected | Editors of large subtrees (they get a choice and a progress page). Clusters: the job directory must be shared. Overrides of the confirmation and browse pages (new blocks). Roles that should see every user's jobs. |
+| How to check | `grep -n -A12 "\[ContentJobSettings\]" settings/content.ini` and `grep -n -A3 "CronjobPart-contentjobs" settings/cronjob.ini` |
+| How to fix | Run the `frequent` cronjob group; share `var/<site var dir>/jobs/content/` across cluster nodes; give `content/jobs` to roles that supervise; compare template overrides with the shipped ones. |
+
+## Upgrade checklist
+
+1. Make sure the cronjob part `contentjobs` runs (it is in the frequent group). It starts jobs whose worker never
+   started and resumes jobs whose worker died: `php bin/php/console cron:frequent --allow-root-user`.
+2. On a cluster, give every node that serves the admin or runs the cronjob the same `var/` (see
+   [Cluster note](#cluster-note)).
+3. Give the `content/jobs` policy to roles that must see every user's jobs. It is part of `content/*`.
+4. If PHP's `exec` is disabled, or the process limit is low, workers start from the cronjob part within a minute.
+   Set `PhpBinary` if the command line PHP is not found.
+5. On SQLite, consider `BatchPause` of 100 to 200 milliseconds.
+6. If you override the confirmation or browse pages listed under [What the editor sees](#what-the-editor-sees), compare
+   them with the shipped templates: the new blocks and the choice are added there.
 
 ## What the editor sees
 
@@ -56,7 +79,7 @@ the page. (Until 6.0.15 the choice of the move and copy browse pages was not sen
   warning. A job sets one state, so the background needs one changed state group; changing two groups at once can
   only run now, up to `NowLimit`. The editor must be allowed to assign the state to the node's own object,
   otherwise the whole request is refused with the reason. Without the option the form sets the object's states
-  as before. An installation whose only state group is the internal `ez_lock` (alpha) shows no states form and so
+  as before. An installation whose only state group is the internal `ez_lock` shows no states form and so
   no option.
 - **Removing many locations** (job type `removelocation`): the locations window's **Remove selected**. A location
   with children still goes to the remove confirmation as before; otherwise many selected locations (or the
@@ -147,7 +170,7 @@ permissions for the whole set when the job is created, and per node as the reque
 ## The command and the cronjob part
 
 ```bash
-php bin/php/expcontentjob.php list [--all]                 # or: ./console exp:expcontentjob list
+php bin/php/expcontentjob.php list [--all]                 # or: php bin/php/console exp:expcontentjob list
 php bin/php/expcontentjob.php show <id>
 php bin/php/expcontentjob.php remove <node>[,<node>...] [--trash|--delete] [--background]
 php bin/php/expcontentjob.php copy <source> <new parent> [--all-versions] [--keep-creator] [--keep-time] [--background]
@@ -179,7 +202,7 @@ refuse as before only when the job layer cannot be used, and then say so.
 
 ## How it scales
 
-Measured on alpha (SQLite, PHP 8.5, 2026-10-02), batches of 50:
+Measured on a test installation (SQLite, PHP 8.5, 2026-10-02), batches of 50:
 
 | Operation | Items | Time | Per batch | Peak memory |
 |---|---|---|---|---|
@@ -211,7 +234,7 @@ The contract that makes a job survive a kill at any point: `runBatch()` writes o
 wraps it in a transaction), and it is idempotent: run again after a crash it finds its work already done.
 
 This example hides every node of a subtree, deepest first, in batches. It is tested as it stands
-(`ai/bin/one/content_jobs_b_example_hide_job_type_test.php`: 61 nodes, BatchSize 20, done after 4 batches,
+(61 nodes, BatchSize 20, done after 4 batches,
 every node hidden, a second run does nothing, the lock released). The kernel ships a real `hide` type; this one
 is for learning the contract, registered under another name.
 
@@ -309,29 +332,30 @@ created under Exponential Velocity (root).
 
 ## Tests
 
-- `tests/tests/kernel/classes/contentjob/`: the engine (store, locks, spawn, worker, types).
-- Through the admin, at 960 pixels with device scale 2 (200% zoom), on Apache and on Velocity:
-  - `ai/bin/one/playwright_content_jobs_b_small_flow_record.py` and `compare_content_jobs_b_small_flows.py`: a
-    small remove and copy have the same pages, fields and results as before (with the new blocks set aside);
-  - `ai/bin/one/playwright_content_jobs_b_large_flow.py`: remove and copy of 201 nodes through the progress page
-    to the redirect, cancel and "Remove the partial copy", kill -9 of a worker and Resume, the refusal of an
-    overlapping operation, the jobs list;
-  - `ai/bin/one/playwright_content_jobs_b_gui_copy_or_remove.py`: one copy or remove (the "Fit & Healthy" case);
-  - `ai/bin/one/playwright_content_jobs_b_other_ops.py`: hide and reveal (small: the old flow without a page;
-    large: the confirmation, a job, and "now"), move small with "now" and large with "background" (old and new
-    place shown), section assignment as a job and "now";
-  - `ai/bin/one/playwright_content_jobs_c_state_and_locations.py`: a subtree state post refused with the reason
-    (now and background) and the old path without the option; removing one location (the old path) and two with
-    "background" (confirmation, job, both gone); adding a location for one item "now" and for two "background"
-    (job, both placed); 19 checks each on admin and admin4, on Apache and on Velocity;
-  - `ai/bin/one/content_jobs_c_state_job_with_allowed_state_mock_test.php`: the `state` job with a state the user
-    may assign. alpha has none (`ez_lock` cannot be assigned), so this registers, in its own process only, a mock
-    of the type that allows the state and records the assignments instead of writing them. It checks the choice,
-    the lock while the job waits, the job done with every object handed over, the lock released and the state
-    links unchanged;
-  - `ai/bin/one/content_jobs_b_example_hide_job_type_test.php`: the worked example of a job type above;
-  - `ai/bin/one/check_content_jobs_b_views_status_both_servers.sh`: no view answers 5xx on either server.
-- `ai/bin/one/contentjobs_leftover_report.php` proves a removal left nothing behind;
-  `contentjobs_subtree_fingerprint.php` that a copied source is unchanged.
+- `tests/tests/kernel/classes/contentjob/`: the engine (store, locks, spawn, worker, types), including its scale,
+  kill -9 and concurrency tests.
+- The admin flows were checked by browser at 960 pixels with device scale 2 (200% zoom), on Apache and on Velocity,
+  in the admin and admin4 designs:
+  - a small remove and copy have the same pages, fields and results as before (with the new blocks set aside);
+  - remove and copy of 201 nodes through the progress page to the redirect, cancel and "Remove the partial copy",
+    kill -9 of a worker and Resume, the refusal of an overlapping operation, the jobs list;
+  - one copy or remove of a real section ("Fit & Healthy");
+  - hide and reveal (small: the old flow without a page; large: the confirmation, a job, and "now"), move small with
+    "now" and large with "background" (old and new place shown), section assignment as a job and "now";
+  - a subtree state post refused with the reason (now and background) and the old path without the option;
+    removing one location (the old path) and two with "background" (confirmation, job, both gone); adding a
+    location for one item "now" and for two "background" (job, both placed);
+  - the `state` job with a state the user may assign, through a mock type registered in its own process only
+    (the test installation has no assignable state; `ez_lock` cannot be assigned): the choice, the lock while the
+    job waits, the job done with every object handed over, the lock released and the state links unchanged;
+  - the worked example of a job type above;
+  - no view answers 5xx on either server.
+- After each removal a report confirmed that nothing was left behind, and after each copy a fingerprint confirmed
+  that the source subtree was unchanged.
 
-See also: [Content jobs](../../features/6.0/content-jobs.md).
+## Related pages
+
+- [Content jobs (feature)](../../features/6.0/content-jobs.md)
+- [Behaviour changes of 1 and 2 October 2026](behaviour-changes-2026-10.md)
+- [Exponential Console](console.md)
+- [Content model and editing guide](../../guides/content-model-and-editing.md)
