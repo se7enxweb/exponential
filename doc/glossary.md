@@ -39,6 +39,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **cache block**: a template tag that caches the markup inside it; the Valkey variant is `{valkey-block}`. [Redis and Valkey caches](features/6.0/extensions/sevenx_valkey_cache.md).
 - **changelog**: the release notes of a version, in Added, Updated, Removed and Renamed lines. [6.0.15](changelogs/6.0/6.0.15.md), [extensions](changelogs/extensions/README.md).
 - **chronicle**: the month by month story of the history. [History](history/README.md).
+- **CI (continuous integration)**: the GitHub Actions workflow `.github/workflows/phpunit.yml` that runs the PHPUnit suites on PHP 8.1 to 8.5 for every change. [Continuous integration](specifications/6.0/continuous-integration.md).
 - **cjw_newsletter**: a complete newsletter system. [cjw_newsletter](features/6.0/extensions/cjw_newsletter.md).
 - **class**: see **content class**.
 - **classic**: see **admin**.
@@ -68,14 +69,14 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 - **engine (web server engine)**: the program that serves the site: `php` (built-in server), `qbix` (**Velocity**) or `frankenphp`. [Velocity engines](bc/6.0/velocity-engines.md).
 - **engine.phar**: the archive of `kernel/`, `lib/` and `autoload/` that Velocity can load. [Engine archive](bc/6.0/phar.md).
+- **Exp Debug bar**: a bar on pages that shows queries, time and template information to administrators. [Exp Debug bar](features/6.0/exp-debug-bar.md).
 - **exp:** the prefix of the console commands that run `bin/php/*.php` scripts. [Console](bc/6.0/console.md).
 - **exp:ini**: the command that reads and writes **INI** settings in every scope. [exp:ini](features/6.0/exp-ini-command.md).
 - **exp_enhanced_link**: the extension that provides the enhanced link field type. [exp_enhanced_link](features/6.0/extensions/exp_enhanced_link.md).
-- **Exp Debug bar**: a bar on pages that shows queries, time and template information to administrators. [Exp Debug bar](features/6.0/exp-debug-bar.md).
-- **expservices**: the library of remote services built from **ezjscore** server functions. [Remote services](features/6.0/remote-services-expservices.md), [specification](specifications/6.0/expservices.md).
-- **expui** (Exponential UI): the JavaScript component layer (`exp::*`) that replaced YUI in the admin. [jQuery 4 and YUI removal](features/6.0/jquery4-and-yui-removal.md).
 - **explayouts**: the extensions that bring layouts, blocks, zones and rules to the admin. [Exponential Layouts](bc/6.0/LAYOUTS.md), [explayouts_ui](features/6.0/extensions/explayouts_ui.md), [API specification](specifications/6.0/explayouts-ui-api.md).
 - **Exponential Platform**: the Symfony based product line (`bin/console`, `exponential:*` commands) that can run Exponential 6 through the **legacy bridge**. [Platform package map](specifications/6.0/platform-package-map.md), [command names](specifications/6.0/platform-console-commands.md).
+- **expservices**: the library of remote services built from **ezjscore** server functions. [Remote services](features/6.0/remote-services-expservices.md), [specification](specifications/6.0/expservices.md).
+- **expui** (Exponential UI): the JavaScript component layer (`exp::*`) that replaced YUI in the admin. [jQuery 4 and YUI removal](features/6.0/jquery4-and-yui-removal.md).
 - **extension**: a folder under `extension/` that adds settings, classes, modules, templates or designs; activated in `ActiveExtensions`. [Extension list](features/6.0/extension-list-and-downloads.md), [loading order](features/6.0/extension-loading-order.md).
 - **extension metadata**: version, license and website of an extension, read by the about page. [Extension metadata](specifications/6.0/extension-metadata.md).
 - **ezautosave**: automatic saving of the draft in the edit form. [ezautosave](features/6.0/extensions/ezautosave.md).
@@ -123,9 +124,9 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 ## I
 
 - **INI file**: a settings file (`site.ini`, `content.ini`, ...) in blocks of `Key=Value`; read in order: defaults, extensions, siteaccess, override. [INI override placements](specifications/6.0/ini-override-placements.md), [exp:ini](features/6.0/exp-ini-command.md).
-- **installer / install**: `./console exp:install` installs a whole site in one command. [Install in one command](features/6.0/install-in-one-command.md).
 - **install type**: a named installer of **Exponential Platform** (`exponential-oss`, `ibexa-oss`, `exponential-media`, `exponential-cjw`) run by `exponential:install <type>`. [Platform SQLite installer](specifications/6.0/platform-sqlite-installer.md).
 - **installation name**: the name shown on non-production pages so staging is never taken for production. [Installation name](features/6.0/installation-name-in-pages.md).
+- **installer / install**: `./console exp:install` installs a whole site in one command. [Install in one command](features/6.0/install-in-one-command.md).
 
 ## J
 
@@ -141,38 +142,39 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **layout (Exponential Layouts)**: a page structure made of **zones** that hold **blocks**, chosen by **rules**. [Exponential Layouts](bc/6.0/LAYOUTS.md).
 - **ledger**: the complete record of every commit of every repository. [Ledger](history/ledger/README.md).
 - **legacy bridge**: the package that runs Exponential 6 inside the Symfony platform. [Legacy bridge](features/6.0/legacy-bridge.md), [specification](specifications/6.0/legacy-bridge-bundle.md).
-- **location**: another word for a **node**. [Content model](guides/content-model-and-editing.md).
 - **loading order**: the order in which active **extensions** are read; later wins. [Extension loading order](features/6.0/extension-loading-order.md).
+- **location**: another word for a **node**. [Content model](guides/content-model-and-editing.md).
 
 ## M
 
 - **maintenance mode**: takes the site offline with a notice (`exp:maintenance on|off|status`). [Maintenance mode](features/6.0/maintenance-mode.md).
-- **MongoDB**: a supported database. [MongoDB](features/6.0/mongodb-database-support.md).
 - **module**: a set of **views** behind a URL such as `content/view`; extensions can add or override modules. [Extension module override](features/6.0/extension-module-override.md).
+- **MongoDB**: a supported database. [MongoDB](features/6.0/mongodb-database-support.md).
 - **multi-node edit**: editing several items in one form. [Editing several items at once](bc/6.0/multi-node-edit.md).
 - **multisite package**: the site package that `exp:install` installs by default (`sevenx_multisite`). [Install in one command](features/6.0/install-in-one-command.md).
 
 ## N
 
+- **Nexus**: the starter projects of the Symfony based platform. [Platform Nexus starter](features/6.0/platform-nexus-starter.md).
 - **ngclasslist**: a datatype that stores a list of content classes. [ngclasslist](features/6.0/extensions/ngclasslist.md).
 - **ngsymfonytools**: lets legacy templates include Twig templates and run Symfony code. [ngsymfonytools](features/6.0/extensions/ngsymfonytools.md).
 - **node**: one place of a **content object** in the **content tree**; has an id, a parent, a sort order and a visibility. [Content model](guides/content-model-and-editing.md).
-- **Nexus**: the starter projects of the Symfony based platform. [Platform Nexus starter](features/6.0/platform-nexus-starter.md).
 - **nxc_powercontent**: an extension that extends how code creates, updates and removes content. [nxc_powercontent](features/6.0/extensions/nxc_powercontent.md).
 
 ## O
 
 - **OPcache**: PHP's compiled code cache; Velocity keeps rewritten cache files in it. [Opcode cache and profile](features/6.0/velocity-opcode-cache-and-profile.md).
-- **OPML**: a list of feeds, exportable from the RSS module. [OPML exports](bc/6.0/opml.md).
 - **operator (template)**: a function applied with a pipe (`$text|wash`). [String template operators](features/6.0/string-template-operators.md), [role and policy operators](features/6.0/role-and-policy-template-operators.md), [owsimpleoperator](features/6.0/extensions/owsimpleoperator.md), [swark](features/6.0/extensions/swark.md).
+- **OPML**: a list of feeds, exportable from the RSS module. [OPML exports](bc/6.0/opml.md).
+- **Oracle**: a supported database, through the `ezoracle` extension; install with `./console exp:install --db=oracle`. [Database drivers and installers](specifications/6.0/database-drivers-2026-09.md#oracle).
 - **override**: a rule that says "for this class, node or section use this template instead of the default", kept in `override.ini`. [Template editor](features/6.0/template-editor-overrides.md), [override order](features/6.0/template-override-ordering.md).
 
 ## P
 
 - **package**: a set of content, classes and design that can be exported and installed; also a Composer package. [ezpm](features/6.0/ezpm-package-manager-cli.md), [Platform package map](specifications/6.0/platform-package-map.md).
 - **page layout** (`pagelayout.tpl`): the outer template that wraps every page. [Templates and design](guides/templates-and-design.md).
-- **PHP-FPM**: the PHP process manager that serves the site behind **Apache**. Reload the one that serves your site after a PHP change. [Deploying](guides/deploying.md).
 - **phar**: see **engine.phar**.
+- **PHP-FPM**: the PHP process manager that serves the site behind **Apache**. Reload the one that serves your site after a PHP change. [Deploying](guides/deploying.md).
 - **placement (INI)**: the name of the place a setting's value came from (`default`, `override`, `extension:<ext>`, `siteaccess`, ...). [INI override placements](specifications/6.0/ini-override-placements.md).
 - **policy**: one permission (module, function, limitation) inside a **role**. [Roles and policies in order](features/6.0/role-policy-order.md).
 - **PostgreSQL**: a supported database. [Install in one command](features/6.0/install-in-one-command.md).
@@ -180,8 +182,9 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 ## Q
 
-- **qbix**: the engine name of **Velocity** inside Exponential's settings and the upstream project it is based on. [Velocity engines](bc/6.0/velocity-engines.md).
+- **Q settings**: the Velocity engine's own settings, JSON under the `Q` key; from Exponential they are normally set through `settings/velocity.ini`. [Velocity engine settings](specifications/6.0/velocity-engine-settings.md).
 - **Q shell**: the drop-down console in the Velocity control panel. [Q shell](features/6.0/velocity-q-shell.md).
+- **qbix**: the engine name of **Velocity** inside Exponential's settings and the upstream project it is based on. [Velocity engines](bc/6.0/velocity-engines.md).
 - **query cache (SQL)**: answers repeated `SELECT` queries without asking the database until a write makes them stale. [SQL query cache](bc/6.0/sql-query-cache.md).
 
 ## R
@@ -200,13 +203,15 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 ## S
 
 - **section**: a label on content that selects a design and permissions. [Content model](guides/content-model-and-editing.md).
+- **security defaults**: the settings that make a default installation safe without extra work (security headers, session cookie, login, served files, caching). [Security defaults](specifications/6.0/security-defaults-2026-09.md), [datatype and input hardening](specifications/6.0/datatype-input-hardening.md).
+- **seed data**: the tables and content a new installation starts with. [Installer logs and seed data](specifications/6.0/installer-logs-and-seed-data.md).
 - **setup wizard**: the browser installer. [Setup wizard](features/6.0/setup-wizard-and-editor-siteaccess.md).
-- **siteaccess**: one way of reaching the site (by URL, host or port) with its own settings and design, such as `site` and `admin`. [Getting started](guides/getting-started.md), [Multi-site INI overrides](features/6.0/multi-site-ini-overrides.md).
 - **site package**: the content and design set installed at setup. [Clean install defaults](features/6.0/clean-install-defaults.md).
+- **siteaccess**: one way of reaching the site (by URL, host or port) with its own settings and design, such as `site` and `admin`. [Getting started](guides/getting-started.md), [Multi-site INI overrides](features/6.0/multi-site-ini-overrides.md).
 - **Smaller changes**: the section of a chronicle page that lists changes without a story of their own. [History](history/README.md).
 - **Solr**: the search server controlled by `exp:solr`. [Web server and Solr commands](features/6.0/web-server-and-solr-commands.md).
 - **specification**: a reference page for a subsystem: data model, classes, settings, APIs. [Specifications](specifications/6.0/README.md).
-- **SQLite**: the database in one file; the default of `exp:install`. [SQLite](features/6.0/sqlite-database.md).
+- **SQLite**: the database in one file; the default of `exp:install`. [SQLite](features/6.0/sqlite-database.md), [driver specification](specifications/6.0/sqlite3-database-driver.md).
 - **state (object state)**: a label from an object state group, for example the lock state "Not locked", that policies can test; not the same as the status of a **version** (draft, published). [Installer seed data](specifications/6.0/installer-logs-and-seed-data.md).
 - **static cache**: pages written to files and served without PHP. [Static cache generator](features/6.0/static-cache-generator.md), [defaults](bc/6.0/static-cache-defaults.md).
 - **swark**: an extension with many template operators and workflow events. [swark](features/6.0/extensions/swark.md).
@@ -216,20 +221,21 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 - **template**: a `.tpl` file in Exponential's template language; resolved by design and **overrides**. [Template path comments](features/6.0/template-path-comments.md).
 - **template path comments**: `START` and `STOP` comments naming each template in the page source. [Template path comments](features/6.0/template-path-comments.md).
+- **test suite**: the PHPUnit suites of `phpunit.xml`, run with `php vendor/bin/phpunit`. [Continuous integration and the test suite](specifications/6.0/continuous-integration.md).
 - **TinyMCE**: the editor engine behind **ezoe**, in versions 3 and 8. [TinyMCE 8](features/6.0/online-editor-tinymce8.md).
-- **trash**: where removed objects wait to be restored or purged. [Trash](features/6.0/trash-who-and-where.md).
 - **translation**: a language version of a content object, or a language file of the interface. [Translations and languages](features/6.0/translations-and-languages.md).
+- **trash**: where removed objects wait to be restored or purged. [Trash](features/6.0/trash-who-and-where.md).
 - **two-factor authentication**: a second proof at sign-in, with OAuth social login. [sevenx_authentication_2fa](features/6.0/extensions/sevenx_authentication_2fa.md).
 
 ## U
 
-- **uwebserver**: a small C web server shipped with Velocity, used for static files and benchmarks. [uwebserver](features/6.0/velocity-uwebserver.md).
 - **URL alias**: a readable address mapped to a node; `exp:updateniceurls` rebuilds them. [Content model](guides/content-model-and-editing.md).
+- **uwebserver**: a small C web server shipped with Velocity, used for static files and benchmarks. [uwebserver](features/6.0/velocity-uwebserver.md).
 
 ## V
 
 - **Valkey**: see **Redis / Valkey**.
-- **Velocity**: the PHP application server bundled with Exponential, run with `exp:velocity`, recommended for every stage. [Velocity web server](features/6.0/velocity-web-server.md), [persistent workers](features/6.0/velocity-persistent-worker-server.md), [control panel](features/6.0/velocity-control-panel.md), [chronicle](history/velocity/README.md).
+- **Velocity**: the PHP application server bundled with Exponential, run with `exp:velocity`, recommended for every stage. [Velocity web server](features/6.0/velocity-web-server.md), [persistent workers](features/6.0/velocity-persistent-worker-server.md), [control panel](features/6.0/velocity-control-panel.md), [engine settings](specifications/6.0/velocity-engine-settings.md), [chronicle](history/velocity/README.md).
 - **version (content)**: one saved state of a content object (draft, published, archived). [Content model](guides/content-model-and-editing.md).
 - **view**: a function of a **module** reached by a URL; also the way a node is rendered (full, line, embed). [Module views as classes](specifications/6.0/runnable-commands-cronjobs-views.md), [Templates and design](guides/templates-and-design.md).
 
