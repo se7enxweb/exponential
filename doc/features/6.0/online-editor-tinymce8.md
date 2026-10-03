@@ -1,17 +1,22 @@
 # The online editor on TinyMCE 8 (opt-in, next to TinyMCE 3)
 
-Exponential 6.0.15 ships TinyMCE 8.9.2 as a second engine of the eZ Online Editor. TinyMCE 3.5.12 stays the
-default and nothing changes for existing installations. The new engine writes the same XHTML that the ezoe input
-handler reads, so stored XML is identical with both engines and editors can switch back and forth.
-
-Added 2026-10-02. Reference: [doc/bc/6.0/ezoe-tinymce8.md](../../bc/6.0/ezoe-tinymce8.md).
+This page is for editors who want a modern rich text editor, and for administrators who decide which editor a site
+uses. Exponential 6.0.15 ships TinyMCE 8.9.2 as a second engine of the eZ Online Editor. TinyMCE 3.5.12 stays the
+default, and nothing changes for existing installations. The new engine writes the same XHTML that the ezoe input
+handler reads, so stored XML is identical with both engines and editors can switch back and forth. Added 2026-10-02.
+Reference: [ezoe and TinyMCE 8](../../bc/6.0/ezoe-tinymce8.md).
 
 ## Try it in one minute
 
-Per user, without touching settings: open `/user/preferences/set/ezoe_engine/tinymce8`, then edit any article.
-Back: `/user/preferences/set/ezoe_engine/tinymce3`. Or let editors choose on the page `/ezoe/engine`.
+For yourself, without touching settings:
 
-For a siteaccess, in `settings/siteaccess/<name>/ezoe.ini.append.php`:
+1. Open `/user/preferences/set/ezoe_engine/tinymce8`.
+2. Edit any article. The editor is TinyMCE 8.
+3. To go back, open `/user/preferences/set/ezoe_engine/tinymce3`.
+
+Editors can also choose on the page `/ezoe/engine`.
+
+For a whole siteaccess, in `settings/siteaccess/<name>/ezoe.ini.append.php`:
 
 ```ini
 [EditorSettings]
@@ -19,52 +24,66 @@ EditorEngine=tinymce8
 EngineSwitch=enabled
 ```
 
-`EngineSwitch=enabled` shows a button below the editor to switch engines (stored as the user preference
-`ezoe_engine`).
+`EngineSwitch=enabled` shows a button below the editor to switch engines; the choice is stored as the user preference
+`ezoe_engine`.
 
 ## What the TinyMCE 8 engine does
 
 | Content | Dialogs and behaviour (like TinyMCE 3) |
 |---|---|
-| Embed and embed-inline | search via `ezjsc::search` with the class filter and a preview column, Upload tab to upload and embed a new object, edit an existing embed (view, class, size for images, align, inline, custom attributes), double click and context toolbar |
+| Embed and embed-inline | Search via `ezjsc::search` with the class filter and a preview column; Upload tab to upload and embed a new object; edit an existing embed (view, class, size for images, align, inline, custom attributes); double click and context toolbar |
 | Links | ezoe dialog to browse the content tree or search for a node or object; anchors saved as `<a name>` like TinyMCE 3 |
-| Custom tags | insert, edit, remove with the tag's custom attributes (text, textarea, int, number, email, select, checkbox, color, hidden), validation of required and numeric values |
-| Literal tags | dialog like the TinyMCE 3 general tag dialog |
-| Tables, rows, cells | classes and custom attributes (`content.ini [table] Defaults` for the size of new tables) |
-| Paragraphs, headings, lists, strong, emphasize | the general tag dialog for class and custom attributes |
-| Status bar | the ezxml tag path, for example "Path: paragraph » embed"; clicking an element opens its dialog |
-| Look | with `Skin=o2k7` the editor and its dialogs look like the TinyMCE 3 o2k7 skin |
+| Custom tags | Insert, edit, remove with the tag's custom attributes (text, textarea, int, number, email, select, checkbox, color, hidden); validation of required and numeric values |
+| Literal tags | Dialog like the TinyMCE 3 general tag dialog |
+| Tables, rows, cells | Classes and custom attributes (`content.ini [table] Defaults` for the size of new tables) |
+| Paragraphs, headings, lists, strong, emphasize | The general tag dialog for class and custom attributes |
+| Status bar | The ezxml tag path, for example "Path: paragraph » embed"; clicking an element opens its dialog |
+| Look | With `Skin=o2k7` the editor and its dialogs look like the TinyMCE 3 o2k7 skin |
 
-## Settings (extension/ezoe/settings/ezoe.ini, [EditorSettings])
+## Settings
+
+All keys are in `extension/ezoe/settings/ezoe.ini`, block `EditorSettings`. Scope: user preference, siteaccess or
+global. Resolution order: user preference `ezoe_engine`, siteaccess, global, then `tinymce3`.
 
 | Key | Default | Meaning |
 |---|---|---|
-| `EditorEngine` | `tinymce3` | engine for users without a preference |
-| `EngineSwitch` | `disabled` | show the switch button |
-| `Engines[<id>]` | `tinymce3=expOETinyMCE3Engine`, `tinymce8=expOETinyMCE8Engine` | registry of classes implementing `expOEEditorEngine`; an extension adds a third engine with one class and one line |
-| `UploadExtensionCheck` | `engine` | server-side file type check: `engine` (non-TinyMCE-3), `always`, `disabled` |
-| `UploadFileExtensions[]` | images, documents, media | file types of the Upload tab |
+| `EditorEngine` | `tinymce3` | Engine for users without a preference |
+| `EngineSwitch` | `disabled` | Show the switch button |
+| `Engines[<id>]` | `tinymce3=expOETinyMCE3Engine`, `tinymce8=expOETinyMCE8Engine` | Registry of classes implementing `expOEEditorEngine`; an extension adds a third engine with one class and one line |
+| `UploadExtensionCheck` | `engine` | Server-side file type check: `engine` (non-TinyMCE-3), `always`, `disabled` |
+| `UploadFileExtensions[]` | images, documents, media | File types of the Upload tab |
 
-Resolution order: user preference `ezoe_engine`, siteaccess, global, then `tinymce3`.
+Check the shipped values:
+
+```bash
+grep -n 'EditorEngine\|EngineSwitch\|Engines\[' extension/ezoe/settings/ezoe.ini
+```
+
+The registry classes are `extension/ezoe/classes/expoeeditorengine.php`, `expoetinymce3engine.php` and
+`expoetinymce8engine.php`; the engine page is the view `engine` of the `ezoe` module.
 
 ## Security
 
-`ezoe/upload` refuses a file whose last extension is not in `UploadFileExtensions[]` and any name with an
-executable extension anywhere in it (`shell.php.jpg`), because a request can skip the dialog.
+`ezoe/upload` refuses a file whose last extension is not in `UploadFileExtensions[]`, and any name with an executable
+extension anywhere in it (`shell.php.jpg`), because a request can skip the dialog. An engine change is recorded in the
+[audit trail](audit-trail.md) as `content.ezoe.engine.change`.
 
 ## Tests
 
-`extension/ezoe/tests/tinymce8` holds browser tests (puppeteer-core with Firefox or Chrome, real mouse clicks)
-that can be run against an installation at any time, plus PHPUnit tests (`tests/tests/extension/ezoe/`: registry, engine configuration, upload rules, JSON
-answers, views and the XHTML round trip; the count was 267 when written, and the run is
-`php vendor/bin/phpunit tests/tests/extension/ezoe/`; not re-counted for this page). The bundled TinyMCE 8.9.2 is used under the GPL (version 2 or later); its
-README states the licences and where the corresponding source is.
+- `extension/ezoe/tests/tinymce8` holds browser tests (puppeteer-core with Firefox or Chrome, real mouse clicks) that
+  can be run against an installation at any time.
+- PHPUnit tests in `tests/tests/extension/ezoe/` cover the registry, engine configuration, upload rules, JSON answers,
+  views and the XHTML round trip. The count was 267 when written (not re-counted for this page). Run them with
+  `php vendor/bin/phpunit tests/tests/extension/ezoe/`.
 
-Check the engine without a browser: `grep -n 'EditorEngine\|EngineSwitch\|Engines\[' extension/ezoe/settings/ezoe.ini`; the
-registry classes are `extension/ezoe/classes/expoeeditorengine.php`, `expoetinymce3engine.php` and `expoetinymce8engine.php`;
-the engine page is the view `engine` of the `ezoe` module.
+The bundled TinyMCE 8.9.2 is used under the GPL (version 2 or later); its README states the licences and where the
+corresponding source is.
 
-Related: [specification of the services the editor engine answers through](../../specifications/6.0/expservices.md), [the ezoe bc guide](../../bc/6.0/ezoe-tinymce8.md), [remote services `expeditor`](remote-services-expservices.md), [the audit trail](audit-trail.md)
-(`content.ezoe.engine.change`), [October 2026 chronicle](../../history/2026/2026-10.md).
+## Related pages
 
-See also (October 2026): [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), [upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md), [October 2026 chronicle](../../history/2026/2026-10.md), [expservices specification](../../specifications/6.0/expservices.md).
+- [ezoe and TinyMCE 8 (bc guide)](../../bc/6.0/ezoe-tinymce8.md)
+- [Remote services `expeditor`](remote-services-expservices.md) and the [expservices specification](../../specifications/6.0/expservices.md)
+- [ezoe](extensions/ezoe.md), [ezautosave](extensions/ezautosave.md)
+- [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
+- [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)
+- [October 2026 chronicle](../../history/2026/2026-10.md)
