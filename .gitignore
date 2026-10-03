@@ -29,3 +29,4 @@ dist/
 /qbix.md
 /qbix-settings.md
 /var/*/secrets/
+__pycache__/
