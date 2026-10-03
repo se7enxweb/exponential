@@ -175,8 +175,9 @@ class eZVatRule extends eZPersistentObject
 
         $db->begin();
 
-        // Remove product categories associated with the rule.
-        eZVatRule::removeProductCategories( $id );
+        // Remove product categories associated with the rule (removeProductCategories() is an instance method;
+        // calling it statically is a fatal error since PHP 8).
+        $db->query( "DELETE FROM ezvatrule_product_category WHERE vatrule_id = " . (int)$id );
 
         // Remove the rule itself.
         eZPersistentObject::removeObject( eZVatRule::definition(), array( "id" => $id ) );
