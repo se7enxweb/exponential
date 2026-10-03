@@ -36,6 +36,25 @@ Invalid values (a non-numeric user, an impossible date) are dropped. **Show all*
 array matches nothing) and `ExcludeContentObjectIDList`. The IN lists go through
 `eZDBInterface::generateSQLINStatement()`, so engines with a limit on IN lists handle them.
 
+## Sorting (since January 2024)
+
+The trash list has been sortable since January 2024 (upstream pull request #31, merged as
+`fa42a6e960` and `75361f4bea`). Click a column heading to sort by it; a second click reverses the
+order. Before that change the list was ordered by name, ascending. Now the default is **date
+trashed, newest first**, so the item you removed a moment ago is at the top.
+
+| View parameter | Values | Default |
+|---|---|---|
+| `(sort_field)` | `name`, `class_name`, `section`, `trashed` | `trashed` |
+| `(sort_order)` | `0` descending, `1` ascending | `0` |
+
+Example, the oldest trashed items first:
+
+    content/trash/(sort_field)/trashed/(sort_order)/1
+
+The accepted values are those the view script checks
+(`kernel/private/classes/views/content/trash.php`); anything else falls back to the defaults.
+
 ## Who trashed it: `Exponential\Service\TrashRecord`
 
 The kernel has no column for it, and a schema change would have to reach all six database engines,

@@ -96,3 +96,7 @@ the same statements run on both engines; the test runs also found missing
 [MongoDB kernel support](../../bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md) for
 the other non-MySQL engine, and [SQL query cache](../../bc/6.0/sql-query-cache.md)
 for how query results are cached on every engine.
+
+## See also
+
+Changelogs: [6.0.1](../../changelogs/6.0/6.0.1.md), [6.0.13](../../changelogs/6.0/6.0.13.md), [6.0.14](../../changelogs/6.0/6.0.14.md); chronicles: [January 2024, first half](../../history/2024/2024-01a.md), [April 2026](../../history/2026/2026-04.md), [June 2026, second half](../../history/2026/2026-06b.md).

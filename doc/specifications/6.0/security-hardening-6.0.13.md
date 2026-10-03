@@ -27,7 +27,7 @@ and the test tool-chain is explained in [PHPUnit 10](../../bc/6.0/phpunitv10.md)
 | SEC-04 | SQL injection | 89 | 6.5 | same (`hideSubTree`, `unhideSubTree`) | node ids cast, paths escaped |
 | SEC-05 | OS command injection | 78 | 9.8 | `lib/ezutils/classes/ezsendmailtransport.php` | the sender address passed to `sendmail -f` goes through `escapeshellarg()` |
 | SEC-06 | OS command injection | 78 | 8.1 | `lib/ezfile/classes/ezgzipshellcompressionhandler.php` | gzip file names go through `escapeshellarg()` |
-| SEC-07 | reflected XSS | 79 | 6.1 | `kernel/content/search.php` | the search text in the page title is HTML-encoded |
+| SEC-07 | reflected XSS | 79 | 6.1 | `kernel/content/search.php` (at HEAD this file is a one-call entry point and the code lives in `kernel/private/classes/views/content/search.php`, which now holds the `htmlspecialchars( $searchText ... )` title) | the search text in the page title is HTML-encoded |
 
 Commits: SEC-01 to SEC-06 `221caccf31`; SEC-07 is part of `5a4c83fb30`.
 
@@ -42,7 +42,7 @@ Commits: SEC-01 to SEC-06 `221caccf31`; SEC-07 is part of `5a4c83fb30`.
 | PHP | PHP 8.4 deprecations | `eztimetype.php` (short time strings such as `10:30`), `ezorder.php` (`fetchList()` required parameter after optional ones, nullable type) | `2b98050cc4` |
 | IMP | stub classes that silently dropped data | `ezsoapparameter.php` (`setValue()` stored nothing), `ezsoapheader.php` (`addHeader()` stored nothing): SOAP calls sent empty parameters and no headers | `5a4c83fb30` |
 | SET | setup scripts with uninitialised variables | `kernel/setup/cachetoolbar.php`, `datatype.php`, `extensions.php`, `session.php` and two wizard steps | `5a4c83fb30` |
-| KNT | content module views without null or input checks | `kernel/content/node_edit.php`, `removenode.php`, `restore.php`, `upload.php`, `view.php` and others (12 files) | `5a4c83fb30` |
+| KNT | content module views without null or input checks | `kernel/content/node_edit.php`, `removenode.php`, `restore.php`, `upload.php`, `view.php` and others (12 files; at HEAD these views are entry points that call classes under `kernel/private/classes/views/content/`) | `5a4c83fb30` |
 
 The SOAP fix matters for you if an extension talks to a payment gateway, a
 remote feed or an authentication provider through `lib/ezsoap`: calls that
@@ -69,7 +69,7 @@ per patched file is in the hardening notes ("PHP Version Compatibility").
 ## Verify
 
 The tests are PHPUnit 10 tests in `tests/tests/kernel/classes/security/`
-(`eZSecurityHardeningTest.php`), registered as the `security` suite in
+(`eZSecurityHardeningTest.php`, 14 test methods at HEAD; the folder also holds `eZRSSSecurityTest.php`), registered as the `security` suite in
 `phpunit.xml`:
 
 ```bash

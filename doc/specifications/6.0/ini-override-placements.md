@@ -59,3 +59,7 @@ position relative to the other scopes.
 
 [Console: exp:ini](../../features/6.0/exp-ini-command.md) reads and writes settings
 with the same files; [INI preserves comments](../../bc/6.0/eZINI_PRESERVES_COMMENTS.md).
+
+## See also
+
+[Changelog 6.0.12](../../changelogs/6.0/6.0.12.md); [Chronicle: January 2026](../../history/2026/2026-01.md); feature page [Per-site settings inside extensions](../../features/6.0/multi-site-ini-overrides.md).
