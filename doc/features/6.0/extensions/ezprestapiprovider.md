@@ -14,3 +14,5 @@ provider on these classes without the example client of ezprestapi.
 
 * [ezprestapi](ezprestapi.md)
 * [Chronicle](../../../history/extensions/ezprestapiprovider.md) and [release notes](../../../changelogs/extensions/ezprestapiprovider.md)
+* [Change ledger](../../../history/ledger/ezprestapiprovider.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)

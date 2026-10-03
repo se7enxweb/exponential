@@ -82,3 +82,4 @@ What each release of `bccie` contains, assembled from its commits. Each line lin
 * [Feature page](../../features/6.0/extensions/bccie.md)
 * [Chronicle](../../history/extensions/bccie.md)
 * [Change ledger](../../history/ledger/bccie.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -137,3 +137,4 @@ What each release of `ezupdate` contains, assembled from its commits. Each line 
 * [Feature page](../../features/6.0/extensions/ezupdate.md)
 * [Chronicle](../../history/extensions/ezupdate.md)
 * [Change ledger](../../history/ledger/ezupdate.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -90,3 +90,10 @@ scripts, cronjob parts and module views are classes the files call (2.4.10, 2.4.
 
 * [xrowextract](xrowextract.md): exports tags through its keyword and tags handlers and an eztags extended filter
 * [Chronicle](../../../history/extensions/eztags.md) and [release notes](../../../changelogs/extensions/eztags.md)
+* [Change ledger](../../../history/ledger/eztags.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-04 (all extensions)](../../../history/extensions/months/2026-04.md)
+* [Month: 2026-08 (all extensions)](../../../history/extensions/months/2026-08.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

@@ -19,3 +19,7 @@ Updated: class_alias shim for eZ→Ibexa Repository interface (Ibexa DXP 5.0) (`
 Updated: use Twig\Environment::class instead of 'twig' service ID (`8a0c480`)
 
 Updated: Revert: restore 'twig' string ID in include operator (`07b2d1c`)
+
+## See also
+
+* [Feature page](../../features/6.0/extensions/ngsymfonytools.md)

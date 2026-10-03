@@ -84,3 +84,4 @@ What each release of `xrowmetadata` contains, assembled from its commits. Each l
 * [Feature page](../../features/6.0/extensions/xrowmetadata.md)
 * [Chronicle](../../history/extensions/xrowmetadata.md)
 * [Change ledger](../../history/ledger/xrowmetadata.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

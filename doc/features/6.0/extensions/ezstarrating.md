@@ -32,3 +32,8 @@ objects of that class from 1 to 5 stars. Each user may vote once per session. Ra
 * [sevenx_themes_simple](sevenx_themes_simple.md): the simple theme's rating view loads the jQuery script
 * [Backend ezjscore services](../../../bc/6.0/backend_ezjscore_services.md)
 * [Chronicle](../../../history/extensions/ezstarrating.md) and [release notes](../../../changelogs/extensions/ezstarrating.md)
+* [Change ledger](../../../history/ledger/ezstarrating.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Velocity engines](../../../bc/6.0/velocity-engines.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

@@ -64,3 +64,4 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 * [Feature page](../../features/6.0/extensions/ezjscore.md)
 * [Release notes](../../changelogs/extensions/ezjscore.md)
 * [Change ledger](../ledger/ezjscore.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -176,3 +176,5 @@ What each release of `explayouts_ui_api` contains, assembled from its commits. E
 * [Feature page](../../features/6.0/extensions/explayouts_ui_api.md)
 * [Chronicle](../../history/extensions/explayouts_ui_api.md)
 * [Change ledger](../../history/ledger/explayouts_ui_api.md)
+* [Specification](../../specifications/6.0/explayouts-ui-api.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -41,3 +41,8 @@ true "arccosine" or closer-to-true "pythagorean" circular accuracy); the sort is
 ## Related
 
 * [Chronicle](../../../history/extensions/ezgmaplocation.md) and [release notes](../../../changelogs/extensions/ezgmaplocation.md)
+* [Change ledger](../../../history/ledger/ezgmaplocation.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-04 (all extensions)](../../../history/extensions/months/2026-04.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)

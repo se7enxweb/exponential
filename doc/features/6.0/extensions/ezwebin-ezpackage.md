@@ -44,3 +44,8 @@ siteaccesses to create and which roles and policies to add. To see the installed
 
 * [ezwebin](ezwebin.md), [ezdemo](ezdemo.md)
 * [Chronicle](../../../history/extensions/ezwebin-ezpackage.md) and [release notes](../../../changelogs/extensions/ezwebin-ezpackage.md)
+* [Change ledger](../../../history/ledger/ezwebin-ezpackage.md)
+* [Month: 2023-12 (all extensions)](../../../history/extensions/months/2023-12.md)
+* [Month: 2024-01 (all extensions)](../../../history/extensions/months/2024-01.md)
+* [Month: 2024-03 (all extensions)](../../../history/extensions/months/2024-03.md)
+* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)

@@ -28,3 +28,7 @@ php bin/php/ezcache.php --clear-all --allow-root-user
 ## Related
 
 * [Chronicle](../../../history/extensions/exp_enhanced_link.md) and [release notes](../../../changelogs/extensions/exp_enhanced_link.md)
+* [Change ledger](../../../history/ledger/exp_enhanced_link.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Month: 2026-08 (all extensions)](../../../history/extensions/months/2026-08.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)

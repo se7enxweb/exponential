@@ -37,3 +37,8 @@ based on work by an earlier contributor).
 
 * [xrowextract](xrowextract.md): the newer export tool with its own handlers; [birthday](birthday.md) ships a handler for it
 * [Chronicle](../../../history/extensions/bccie.md) and [release notes](../../../changelogs/extensions/bccie.md)
+* [Change ledger](../../../history/ledger/bccie.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

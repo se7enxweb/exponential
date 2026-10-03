@@ -62,3 +62,4 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 * [Feature page](../../features/6.0/extensions/owsimpleoperator.md)
 * [Release notes](../../changelogs/extensions/owsimpleoperator.md)
 * [Change ledger](../ledger/owsimpleoperator.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

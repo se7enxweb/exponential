@@ -47,3 +47,8 @@ README has the full text.
 
 * [ezwebin](ezwebin.md), [ezflow](ezflow.md)
 * [Chronicle](../../../history/extensions/ezwt.md) and [release notes](../../../changelogs/extensions/ezwt.md)
+* [Change ledger](../../../history/ledger/ezwt.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

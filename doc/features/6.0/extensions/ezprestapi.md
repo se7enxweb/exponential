@@ -58,3 +58,8 @@ and replace them before use. Do not keep real credentials or tokens in a script 
 
 * [nxc_powercontent](nxc_powercontent.md)
 * [Chronicle](../../../history/extensions/ezprestapi.md) and [release notes](../../../changelogs/extensions/ezprestapi.md)
+* [Change ledger](../../../history/ledger/ezprestapi.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
+* [Month: 2024-10 (all extensions)](../../../history/extensions/months/2024-10.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

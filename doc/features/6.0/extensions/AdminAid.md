@@ -27,3 +27,4 @@ This repository received only funding metadata in the Exponential 6 period.
 ## Related
 
 * [Chronicle](../../../history/extensions/AdminAid.md) and [release notes](../../../changelogs/extensions/AdminAid.md)
+* [Change ledger](../../../history/ledger/AdminAid.md)

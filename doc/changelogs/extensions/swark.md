@@ -35,3 +35,4 @@ What each release of `swark` contains, assembled from its commits. Each line lin
 * [Feature page](../../features/6.0/extensions/swark.md)
 * [Chronicle](../../history/extensions/swark.md)
 * [Change ledger](../../history/ledger/swark.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

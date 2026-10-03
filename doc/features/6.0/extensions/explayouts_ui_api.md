@@ -149,3 +149,9 @@ The full endpoint list, request and response shapes and error contract are in th
 * [explayouts_ui](explayouts_ui.md): the Layouts admin screens that link into the editor
 * [Specification](../../../specifications/6.0/explayouts-ui-api.md)
 * [Chronicle](../../../history/extensions/explayouts_ui_api.md) and [release notes](../../../changelogs/extensions/explayouts_ui_api.md)
+* [Change ledger](../../../history/ledger/explayouts_ui_api.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
+* [Month: 2026-08 (all extensions)](../../../history/extensions/months/2026-08.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)

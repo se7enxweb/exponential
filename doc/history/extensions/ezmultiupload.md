@@ -80,3 +80,4 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 * [Feature page](../../features/6.0/extensions/ezmultiupload.md)
 * [Release notes](../../changelogs/extensions/ezmultiupload.md)
 * [Change ledger](../ledger/ezmultiupload.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

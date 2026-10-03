@@ -61,3 +61,4 @@ What each release of `bcgooglesitemaps` contains, assembled from its commits. Ea
 * [Feature page](../../features/6.0/extensions/bcgooglesitemaps.md)
 * [Chronicle](../../history/extensions/bcgooglesitemaps.md)
 * [Change ledger](../../history/ledger/bcgooglesitemaps.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

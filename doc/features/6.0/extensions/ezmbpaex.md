@@ -43,3 +43,7 @@ Links issued before the update keep working until they expire.
 * [ezwebin and ezdemo](ezwebin.md): the designs received the same forgot-password fix
 * [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md#2-forgot-password-pages-no-longer-tell-whether-an-address-has-an-account)
 * [Chronicle](../../../history/extensions/ezmbpaex.md) and [release notes](../../../changelogs/extensions/ezmbpaex.md)
+* [Change ledger](../../../history/ledger/ezmbpaex.md)
+* [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

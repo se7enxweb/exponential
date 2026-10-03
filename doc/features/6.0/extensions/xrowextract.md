@@ -373,3 +373,11 @@ the PHP configuration.
 * [Command line and cronjob abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
 * [xrowmetadata](xrowmetadata.md): the datatype the export has a column for
 * [eztags](eztags.md): tags export through the keyword and tags handlers
+* [Change ledger](../../../history/ledger/xrowextract.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Velocity engines](../../../bc/6.0/velocity-engines.md)
+* [Month: 2024-04 (all extensions)](../../../history/extensions/months/2024-04.md)
+* [Month: 2024-07 (all extensions)](../../../history/extensions/months/2024-07.md)
+* [Month: 2024-08 (all extensions)](../../../history/extensions/months/2024-08.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

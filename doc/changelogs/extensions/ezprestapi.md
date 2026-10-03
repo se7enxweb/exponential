@@ -65,3 +65,4 @@ What each release of `ezprestapi` contains, assembled from its commits. Each lin
 * [Feature page](../../features/6.0/extensions/ezprestapi.md)
 * [Chronicle](../../history/extensions/ezprestapi.md)
 * [Change ledger](../../history/ledger/ezprestapi.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

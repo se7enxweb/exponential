@@ -50,3 +50,8 @@ The comments of the shipped ini file still speak of Google's service (it was cop
 ## Related
 
 * [Chronicle](../../../history/extensions/hcaptcha.md) and [release notes](../../../changelogs/extensions/hcaptcha.md)
+* [Change ledger](../../../history/ledger/hcaptcha.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2024-08 (all extensions)](../../../history/extensions/months/2024-08.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

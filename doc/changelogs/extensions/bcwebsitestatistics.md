@@ -53,3 +53,4 @@ What each release of `bcwebsitestatistics` contains, assembled from its commits.
 * [Feature page](../../features/6.0/extensions/bcwebsitestatistics.md)
 * [Chronicle](../../history/extensions/bcwebsitestatistics.md)
 * [Change ledger](../../history/ledger/bcwebsitestatistics.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -195,3 +195,4 @@ What each release of `sevenx_themes_simple` contains, assembled from its commits
 * [Feature page](../../features/6.0/extensions/sevenx_themes_simple.md)
 * [Chronicle](../../history/extensions/sevenx_themes_simple.md)
 * [Change ledger](../../history/ledger/sevenx_themes_simple.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

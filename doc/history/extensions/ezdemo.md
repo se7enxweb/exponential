@@ -85,3 +85,4 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 * [Feature page](../../features/6.0/extensions/ezdemo.md)
 * [Release notes](../../changelogs/extensions/ezdemo.md)
 * [Change ledger](../ledger/ezdemo.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -44,3 +44,8 @@ production lists you do not need it on (the other entries are harmless). A funct
 
 * [Swark](swark.md): ready-made operators in the same spirit
 * [Chronicle](../../../history/extensions/owsimpleoperator.md) and [release notes](../../../changelogs/extensions/owsimpleoperator.md)
+* [Change ledger](../../../history/ledger/owsimpleoperator.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2024-01 (all extensions)](../../../history/extensions/months/2024-01.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)

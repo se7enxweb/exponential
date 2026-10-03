@@ -28,3 +28,7 @@ The extension's README still describes its original dual licensing; the Exponent
 ## Related
 
 * [Chronicle](../../../history/extensions/ezpaypal.md) and [release notes](../../../changelogs/extensions/ezpaypal.md)
+* [Change ledger](../../../history/ledger/ezpaypal.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)

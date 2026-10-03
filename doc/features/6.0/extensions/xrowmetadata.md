@@ -65,3 +65,8 @@ when none is selected. `xrowMetaDataFunctions` falls back to the class-level def
 
 * [xrowextract](xrowextract.md): the export has a column handler for this datatype
 * [Chronicle](../../../history/extensions/xrowmetadata.md) and [release notes](../../../changelogs/extensions/xrowmetadata.md)
+* [Change ledger](../../../history/ledger/xrowmetadata.md)
+* [Velocity engines](../../../bc/6.0/velocity-engines.md)
+* [Month: 2026-08 (all extensions)](../../../history/extensions/months/2026-08.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

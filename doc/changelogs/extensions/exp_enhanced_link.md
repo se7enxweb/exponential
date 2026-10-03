@@ -41,3 +41,4 @@ What each release of `exp_enhanced_link` contains, assembled from its commits. E
 * [Feature page](../../features/6.0/extensions/exp_enhanced_link.md)
 * [Chronicle](../../history/extensions/exp_enhanced_link.md)
 * [Change ledger](../../history/ledger/exp_enhanced_link.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

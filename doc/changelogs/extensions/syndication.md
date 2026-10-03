@@ -66,3 +66,5 @@ What each release of `syndication` contains, assembled from its commits. Each li
 * [Feature page](../../features/6.0/extensions/syndication.md)
 * [Chronicle](../../history/extensions/syndication.md)
 * [Change ledger](../../history/ledger/syndication.md)
+* [Specification](../../specifications/6.0/syndication.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

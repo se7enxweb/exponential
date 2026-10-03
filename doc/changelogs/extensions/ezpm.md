@@ -23,3 +23,4 @@ What each release of `ezpm` contains, assembled from its commits. Each line link
 * [Feature page](../../features/6.0/extensions/ezpm.md)
 * [Chronicle](../../history/extensions/ezpm.md)
 * [Change ledger](../../history/ledger/ezpm.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

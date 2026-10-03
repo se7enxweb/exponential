@@ -89,3 +89,4 @@ No commit of this repository is tagged only with this release in the ledger wind
 * [Feature page](../../features/6.0/extensions/enhancedselection2.md)
 * [Chronicle](../../history/extensions/enhancedselection2.md)
 * [Change ledger](../../history/ledger/enhancedselection2.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

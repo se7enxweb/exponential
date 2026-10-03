@@ -52,3 +52,4 @@ What each release of `sevenx_dse` contains, assembled from its commits. Each lin
 * [Feature page](../../features/6.0/extensions/sevenx_dse.md)
 * [Chronicle](../../history/extensions/sevenx_dse.md)
 * [Change ledger](../../history/ledger/sevenx_dse.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

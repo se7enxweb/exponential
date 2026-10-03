@@ -27,3 +27,8 @@ configured Google Analytics website profile.
 ## Related
 
 * [Chronicle](../../../history/extensions/bcwebsitestatistics.md) and [release notes](../../../changelogs/extensions/bcwebsitestatistics.md)
+* [Change ledger](../../../history/ledger/bcwebsitestatistics.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)

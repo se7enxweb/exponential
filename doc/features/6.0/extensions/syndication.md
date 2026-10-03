@@ -60,3 +60,13 @@ A kernel patch (`kernel_patch/addrelated.diff`) is optional but recommended; ins
 ## Related
 
 * [Chronicle](../../../history/extensions/syndication.md) and [release notes](../../../changelogs/extensions/syndication.md)
+* [Change ledger](../../../history/ledger/syndication.md)
+* [Specification](../../../specifications/6.0/syndication.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Velocity engines](../../../bc/6.0/velocity-engines.md)
+* [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2025-09 (all extensions)](../../../history/extensions/months/2025-09.md)
+* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

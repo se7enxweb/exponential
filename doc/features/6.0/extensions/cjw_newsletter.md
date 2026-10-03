@@ -173,3 +173,7 @@ codes are unchanged. See
 
 * [Chronicle](../../../history/extensions/cjw_newsletter.md) and [release notes](../../../changelogs/extensions/cjw_newsletter.md)
 * [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Change ledger](../../../history/ledger/cjw_newsletter.md)
+* [Month: 2026-08 (all extensions)](../../../history/extensions/months/2026-08.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

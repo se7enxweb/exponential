@@ -27,3 +27,9 @@ If a class that uses a multiple selection showed an empty edit form before 2.1.6
 
 * [Chronicle](../../../history/extensions/enhancedselection2.md) and [release notes](../../../changelogs/extensions/enhancedselection2.md)
 * [xrowextract](xrowextract.md) exports and imports this datatype (`ezenhancedselection`)
+* [Change ledger](../../../history/ledger/enhancedselection2.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

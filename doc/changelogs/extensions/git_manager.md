@@ -144,3 +144,4 @@ What each release of `git_manager` contains, assembled from its commits. Each li
 * [Feature page](../../features/6.0/extensions/git_manager.md)
 * [Chronicle](../../history/extensions/git_manager.md)
 * [Change ledger](../../history/ledger/git_manager.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -53,3 +53,9 @@ Assign `dse/dashboard` to the roles that may use it, and take a backup first (fo
 
 * [AdminNeo](../../../history/ecosystem.md): the upstream tool
 * [Chronicle](../../../history/extensions/sevenx_dse.md) and [release notes](../../../changelogs/extensions/sevenx_dse.md)
+* [Change ledger](../../../history/ledger/sevenx_dse.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Velocity engines](../../../bc/6.0/velocity-engines.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-04 (all extensions)](../../../history/extensions/months/2026-04.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)

@@ -48,3 +48,4 @@ What each release of `enhancedezbinaryfile` contains, assembled from its commits
 * [Feature page](../../features/6.0/extensions/enhancedezbinaryfile.md)
 * [Chronicle](../../history/extensions/enhancedezbinaryfile.md)
 * [Change ledger](../../history/ledger/enhancedezbinaryfile.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

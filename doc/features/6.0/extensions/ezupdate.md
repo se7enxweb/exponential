@@ -126,3 +126,10 @@ does not know them yet.
 * [git_manager](git_manager.md): backups before updating
 * [Chronicle](../../../history/extensions/ezupdate.md) and [release notes](../../../changelogs/extensions/ezupdate.md)
 * [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Change ledger](../../../history/ledger/ezupdate.md)
+* [Velocity engines](../../../bc/6.0/velocity-engines.md)
+* [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
+* [Month: 2024-11 (all extensions)](../../../history/extensions/months/2024-11.md)
+* [Month: 2026-06 (all extensions)](../../../history/extensions/months/2026-06.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

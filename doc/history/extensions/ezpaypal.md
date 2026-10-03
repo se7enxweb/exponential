@@ -58,3 +58,4 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 * [Feature page](../../features/6.0/extensions/ezpaypal.md)
 * [Release notes](../../changelogs/extensions/ezpaypal.md)
 * [Change ledger](../ledger/ezpaypal.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

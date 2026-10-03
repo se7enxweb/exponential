@@ -18,3 +18,8 @@ usual class and object edit and view templates. It also registers an export hand
 
 * [xrowextract](xrowextract.md), [bccie](bccie.md)
 * [Chronicle](../../../history/extensions/birthday.md) and [release notes](../../../changelogs/extensions/birthday.md)
+* [Change ledger](../../../history/ledger/birthday.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

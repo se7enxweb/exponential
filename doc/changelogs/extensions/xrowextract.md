@@ -317,3 +317,5 @@ What each release of `xrowextract` contains, assembled from its commits. Each li
 * [Feature page](../../features/6.0/extensions/xrowextract.md)
 * [Chronicle](../../history/extensions/xrowextract.md)
 * [Change ledger](../../history/ledger/xrowextract.md)
+* [Specification](../../specifications/6.0/xrowextract.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -25,3 +25,6 @@ From the extension's own documentation:
 ## Related
 
 * [Chronicle](../../../history/extensions/enhancedezbinaryfile.md) and [release notes](../../../changelogs/extensions/enhancedezbinaryfile.md)
+* [Change ledger](../../../history/ledger/enhancedezbinaryfile.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)

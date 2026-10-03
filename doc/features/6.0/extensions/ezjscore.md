@@ -33,3 +33,7 @@ described in [YUI removal](../../../bc/6.0/yui-removal.md).
 
 * [Backend ezjscore services](../../../bc/6.0/backend_ezjscore_services.md)
 * [Chronicle](../../../history/extensions/ezjscore.md) and [release notes](../../../changelogs/extensions/ezjscore.md)
+* [Change ledger](../../../history/ledger/ezjscore.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

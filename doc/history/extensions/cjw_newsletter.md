@@ -135,3 +135,4 @@ The 4.1.15 commits above also exist in the clone under other hashes (a second co
 * [Feature page](../../features/6.0/extensions/cjw_newsletter.md)
 * [Release notes](../../changelogs/extensions/cjw_newsletter.md)
 * [Change ledger](../ledger/cjw_newsletter.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -10,3 +10,4 @@ How the editor is built, upgraded to TinyMCE 8 and configured in Exponential 6 i
 ## Related
 
 * [Chronicle](../../../history/extensions/ezoe.md) and [release notes](../../../changelogs/extensions/ezoe.md)
+* [Change ledger](../../../history/ledger/ezoe.md)

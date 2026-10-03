@@ -67,3 +67,4 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 * [Feature page](../../features/6.0/extensions/enhancedselection2.md)
 * [Release notes](../../changelogs/extensions/enhancedselection2.md)
 * [Change ledger](../ledger/enhancedselection2.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

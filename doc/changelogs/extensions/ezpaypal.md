@@ -41,3 +41,4 @@ What each release of `ezpaypal` contains, assembled from its commits. Each line 
 * [Feature page](../../features/6.0/extensions/ezpaypal.md)
 * [Chronicle](../../history/extensions/ezpaypal.md)
 * [Change ledger](../../history/ledger/ezpaypal.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -126,3 +126,4 @@ No commit of this repository is tagged only with this release in the ledger wind
 * [Feature page](../../features/6.0/extensions/ezmultiupload.md)
 * [Chronicle](../../history/extensions/ezmultiupload.md)
 * [Change ledger](../../history/ledger/ezmultiupload.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -332,3 +332,4 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 * [Release notes](../../changelogs/extensions/xrowextract.md)
 * [Change ledger](../ledger/xrowextract.md)
 * [Specification](../../specifications/6.0/xrowextract.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -55,3 +55,4 @@ No commit of this repository is tagged only with this release in the ledger wind
 * [Feature page](../../features/6.0/extensions/birthday.md)
 * [Chronicle](../../history/extensions/birthday.md)
 * [Change ledger](../../history/ledger/birthday.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

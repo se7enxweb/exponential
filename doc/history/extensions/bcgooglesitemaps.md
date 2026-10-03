@@ -67,3 +67,4 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 * [Feature page](../../features/6.0/extensions/bcgooglesitemaps.md)
 * [Release notes](../../changelogs/extensions/bcgooglesitemaps.md)
 * [Change ledger](../ledger/bcgooglesitemaps.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

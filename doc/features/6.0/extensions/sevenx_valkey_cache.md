@@ -85,3 +85,5 @@ keyspace (`SCAN` and `MGET`) on every request, which is expensive on a busy serv
 
 * [Chronicle](../../../history/extensions/sevenx_valkey_cache.md) and [release notes](../../../changelogs/extensions/sevenx_valkey_cache.md)
 * [HTTP caching](../../../bc/6.0/http-caching.md), [SQL query cache](../../../bc/6.0/sql-query-cache.md)
+* [Change ledger](../../../history/ledger/sevenx_valkey_cache.md)
+* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)

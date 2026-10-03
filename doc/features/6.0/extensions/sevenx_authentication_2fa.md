@@ -78,3 +78,5 @@ to brand it. Keep client secrets in `settings/override/`, never in the extension
 ## Related
 
 * [Chronicle](../../../history/extensions/sevenx_authentication_2fa.md) and [release notes](../../../changelogs/extensions/sevenx_authentication_2fa.md)
+* [Change ledger](../../../history/ledger/sevenx_authentication_2fa.md)
+* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)

@@ -41,3 +41,8 @@ the media folder does not work properly.
 
 * [ezwt](ezwt.md), [ezdemo](ezdemo.md)
 * [Chronicle](../../../history/extensions/ezodf.md) and [release notes](../../../changelogs/extensions/ezodf.md)
+* [Change ledger](../../../history/ledger/ezodf.md)
+* [Velocity engines](../../../bc/6.0/velocity-engines.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

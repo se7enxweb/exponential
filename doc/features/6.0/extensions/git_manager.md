@@ -201,3 +201,8 @@ Exponential 6, PHP 8.1 or later, a git binary the web server's user can run, Gnu
 * [Chronicle](../../../history/extensions/git_manager.md) and [release notes](../../../changelogs/extensions/git_manager.md)
 * [Audit trail](../../../bc/6.0/audit.md): the `system.git_manager.fetch` event
 * [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Change ledger](../../../history/ledger/git_manager.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-06 (all extensions)](../../../history/extensions/months/2026-06.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

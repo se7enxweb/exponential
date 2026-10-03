@@ -34,3 +34,8 @@ For richer SEO (titles, descriptions, Open Graph images, news and mobile sitemap
 ## Related
 
 * [Chronicle](../../../history/extensions/bcgooglesitemaps.md) and [release notes](../../../changelogs/extensions/bcgooglesitemaps.md)
+* [Change ledger](../../../history/ledger/bcgooglesitemaps.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
+* [Month: 2024-01 (all extensions)](../../../history/extensions/months/2024-01.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

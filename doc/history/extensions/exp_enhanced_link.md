@@ -46,3 +46,4 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 * [Feature page](../../features/6.0/extensions/exp_enhanced_link.md)
 * [Release notes](../../changelogs/extensions/exp_enhanced_link.md)
 * [Change ledger](../ledger/exp_enhanced_link.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

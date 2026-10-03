@@ -46,3 +46,12 @@ selector; Hide/Unhide checks `can_hide`, skips nodes already in the target state
 
 * [ezprestapi](ezprestapi.md)
 * [Chronicle](../../../history/extensions/nxc_powercontent.md) and [release notes](../../../changelogs/extensions/nxc_powercontent.md)
+* [Change ledger](../../../history/ledger/nxc_powercontent.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Velocity engines](../../../bc/6.0/velocity-engines.md)
+* [Month: 2024-10 (all extensions)](../../../history/extensions/months/2024-10.md)
+* [Month: 2025-12 (all extensions)](../../../history/extensions/months/2025-12.md)
+* [Month: 2026-06 (all extensions)](../../../history/extensions/months/2026-06.md)
+* [Month: 2026-07 (all extensions)](../../../history/extensions/months/2026-07.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

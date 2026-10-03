@@ -39,3 +39,5 @@ for larger lists) instead of a hardcoded low limit.
 
 * [Sub items table options](../../../bc/6.0/subitems-table-options.md)
 * [Chronicle](../../../history/extensions/sevenx_themes_admin_classic.md) and [release notes](../../../changelogs/extensions/sevenx_themes_admin_classic.md)
+* [Change ledger](../../../history/ledger/sevenx_themes_admin_classic.md)
+* [Month: 2026-06 (all extensions)](../../../history/extensions/months/2026-06.md)

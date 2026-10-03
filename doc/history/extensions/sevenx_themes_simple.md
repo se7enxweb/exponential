@@ -176,3 +176,4 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 * [Feature page](../../features/6.0/extensions/sevenx_themes_simple.md)
 * [Release notes](../../changelogs/extensions/sevenx_themes_simple.md)
 * [Change ledger](../ledger/sevenx_themes_simple.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

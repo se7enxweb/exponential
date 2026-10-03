@@ -68,3 +68,4 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 * [Feature page](../../features/6.0/extensions/recaptcha.md)
 * [Release notes](../../changelogs/extensions/recaptcha.md)
 * [Change ledger](../ledger/recaptcha.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

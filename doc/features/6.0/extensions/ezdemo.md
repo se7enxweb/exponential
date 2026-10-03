@@ -37,3 +37,8 @@ options and markup are the same, only the script behind them is jQuery. See
 
 * [ezwebin](ezwebin.md), [ezflow](ezflow.md)
 * [Chronicle](../../../history/extensions/ezdemo.md) and [release notes](../../../changelogs/extensions/ezdemo.md)
+* [Change ledger](../../../history/ledger/ezdemo.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2024-01 (all extensions)](../../../history/extensions/months/2024-01.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

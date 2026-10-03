@@ -49,3 +49,7 @@ use. See [YUI removal](../../../bc/6.0/yui-removal.md).
 ## Related
 
 * [Chronicle](../../../history/extensions/ezautosave.md) and [release notes](../../../changelogs/extensions/ezautosave.md)
+* [Change ledger](../../../history/ledger/ezautosave.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

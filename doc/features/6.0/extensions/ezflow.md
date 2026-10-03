@@ -39,3 +39,11 @@ did not change. See [YUI removal](../../../bc/6.0/yui-removal.md).
 
 * [ezwebin](ezwebin.md), [ezdemo](ezdemo.md), [ezwt](ezwt.md)
 * [Chronicle](../../../history/extensions/ezflow.md) and [release notes](../../../changelogs/extensions/ezflow.md)
+* [Change ledger](../../../history/ledger/ezflow.md)
+* [Velocity engines](../../../bc/6.0/velocity-engines.md)
+* [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2023-12 (all extensions)](../../../history/extensions/months/2023-12.md)
+* [Month: 2024-01 (all extensions)](../../../history/extensions/months/2024-01.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

@@ -61,3 +61,4 @@ What each release of `nxc_powercontent` contains, assembled from its commits. Ea
 * [Feature page](../../features/6.0/extensions/nxc_powercontent.md)
 * [Chronicle](../../history/extensions/nxc_powercontent.md)
 * [Change ledger](../../history/ledger/nxc_powercontent.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

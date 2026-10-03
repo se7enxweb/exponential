@@ -125,3 +125,4 @@ These commits were pushed after the machine-made ledger of this repository was e
 * [Release notes](../../changelogs/extensions/explayouts_ui_api.md)
 * [Change ledger](../ledger/explayouts_ui_api.md)
 * [Specification](../../specifications/6.0/explayouts-ui-api.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

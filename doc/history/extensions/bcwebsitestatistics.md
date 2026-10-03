@@ -67,3 +67,4 @@ The month across all extensions: [September 2026](months/2026-09.md). [Ledger of
 * [Feature page](../../features/6.0/extensions/bcwebsitestatistics.md)
 * [Release notes](../../changelogs/extensions/bcwebsitestatistics.md)
 * [Change ledger](../ledger/bcwebsitestatistics.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

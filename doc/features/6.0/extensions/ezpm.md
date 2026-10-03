@@ -21,3 +21,6 @@ the template `design/standard/templates/pm/notification_email.tpl`, switched on 
 ## Related
 
 * [Chronicle](../../../history/extensions/ezpm.md) and [release notes](../../../changelogs/extensions/ezpm.md)
+* [Change ledger](../../../history/ledger/ezpm.md)
+* [Velocity engines](../../../bc/6.0/velocity-engines.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)

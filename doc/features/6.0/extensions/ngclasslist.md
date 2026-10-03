@@ -26,3 +26,9 @@ Add an attribute of type `ngclasslist` (here `class_filter_array`) to the class 
 ## Related
 
 * [Chronicle](../../../history/extensions/ngclasslist.md) and [release notes](../../../changelogs/extensions/ngclasslist.md)
+* [Change ledger](../../../history/ledger/ngclasslist.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Extension metadata specification](../../../specifications/6.0/extension-metadata.md)
+* [Month: 2026-08 (all extensions)](../../../history/extensions/months/2026-08.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
+* [Month: 2026-10 (all extensions)](../../../history/extensions/months/2026-10.md)

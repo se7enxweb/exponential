@@ -159,3 +159,4 @@ No commit of this repository is tagged only with this release in the ledger wind
 * [Feature page](../../features/6.0/extensions/ezdemo.md)
 * [Chronicle](../../history/extensions/ezdemo.md)
 * [Change ledger](../../history/ledger/ezdemo.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

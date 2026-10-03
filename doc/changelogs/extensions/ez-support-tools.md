@@ -19,3 +19,7 @@ Updated: Update composer.json replaced require section package vendor name (`3d4
 Updated: Version bump for php requirements to allow php 8.5.x. Bugfix. (`71c5603`)
 
 Updated: guard against null version from InstalledVersions::getVersion() (`ea79490`)
+
+## See also
+
+* [Feature page](../../features/6.0/extensions/ez-support-tools.md)

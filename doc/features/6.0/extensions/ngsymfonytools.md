@@ -30,3 +30,4 @@ and `url`) and `symfony_render` (render a route as a sub-request). `doc/USAGE.md
 ## Related
 
 * [Chronicle of the repository](../../../history/ecosystem/ngsymfonytools.md) and [release notes](../../../changelogs/extensions/ngsymfonytools.md) (covered with the platform repositories)
+* [Change ledger](../../../history/ledger/ngsymfonytools.md)

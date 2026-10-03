@@ -76,3 +76,4 @@ The month across all extensions: [October 2026](months/2026-10.md). [Ledger of t
 * [Feature page](../../features/6.0/extensions/ezgmaplocation.md)
 * [Release notes](../../changelogs/extensions/ezgmaplocation.md)
 * [Change ledger](../ledger/ezgmaplocation.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

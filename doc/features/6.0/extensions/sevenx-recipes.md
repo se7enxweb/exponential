@@ -68,3 +68,6 @@ done by hand (or with the tool you keep next to the clone). Treat the step as st
 ## Related
 
 * [Chronicle](../../../history/extensions/sevenx-recipes.md) and [release notes](../../../changelogs/extensions/sevenx-recipes.md)
+* [Change ledger](../../../history/ledger/sevenx-recipes.md)
+* [Month: 2026-03 (all extensions)](../../../history/extensions/months/2026-03.md)
+* [Month: 2026-04 (all extensions)](../../../history/extensions/months/2026-04.md)

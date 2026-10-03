@@ -46,3 +46,4 @@ What each release of `hcaptcha` contains, assembled from its commits. Each line 
 * [Feature page](../../features/6.0/extensions/hcaptcha.md)
 * [Chronicle](../../history/extensions/hcaptcha.md)
 * [Change ledger](../../history/ledger/hcaptcha.md)
+* [Behaviour changes of the extensions](../../bc/6.0/extensions-behaviour-changes.md)

@@ -47,3 +47,8 @@ Keep the secret key out of version control.
 ## Related
 
 * [Chronicle](../../../history/extensions/recaptcha.md) and [release notes](../../../changelogs/extensions/recaptcha.md)
+* [Change ledger](../../../history/ledger/recaptcha.md)
+* [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
+* [Month: 2024-08 (all extensions)](../../../history/extensions/months/2024-08.md)
+* [Month: 2024-09 (all extensions)](../../../history/extensions/months/2024-09.md)
+* [Month: 2026-09 (all extensions)](../../../history/extensions/months/2026-09.md)
