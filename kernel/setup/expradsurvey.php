@@ -105,6 +105,150 @@ class expRADSurvey
         self::$Survey  = null;
         self::$Classes = null;
         self::$Events  = null;
+        self::$Memo    = null;
+        self::$MemoUsed = array();
+        self::$MemoDirty = false;
+    }
+
+    /**
+     * What was learned from single files, as kept on disk: kind => path => array( mtime, size, value ).
+     *
+     * @var array|null
+     */
+    protected static $Memo = null;
+
+    /**
+     * The entries used during this request, which are the ones written back.
+     *
+     * @var array
+     */
+    protected static $MemoUsed = array();
+
+    /**
+     * Whether an entry was computed during this request.
+     *
+     * @var bool
+     */
+    protected static $MemoDirty = false;
+
+    /**
+     * Where the per-file results are kept.
+     *
+     * @return string
+     */
+    protected static function memoFile()
+    {
+        $dir = class_exists( 'eZSys', false ) ? eZSys::cacheDirectory() : 'var/cache';
+
+        return $dir . '/rad_survey_files.cache';
+    }
+
+    /**
+     * What $compute makes of one file, kept on disk for as long as the file has the modification time and size
+     * it had. It is for functions of one file's contents and nothing else: parsing an ini file, reading the
+     * declaration a class file starts with. Every use checks the file with stat(), so a file edited since is
+     * computed again at once; nothing is trusted across requests without that check, and a result for a file
+     * changed in the last two seconds is not kept (a second edit in the same second would carry the same time).
+     *
+     * @param string $kind what is being asked of the file (one per function)
+     * @param string $path
+     * @param callable $compute called with the path
+     * @return mixed
+     */
+    protected static function fileMemo( $kind, $path, $compute )
+    {
+        if ( self::$Memo === null )
+        {
+            $raw  = @file_get_contents( self::memoFile() );
+            $data = $raw === false ? false : @unserialize( $raw, array( 'allowed_classes' => false ) );
+            self::$Memo = is_array( $data ) ? $data : array();
+        }
+
+        $stat = @stat( $path );
+        if ( $stat === false )
+            return call_user_func( $compute, $path );
+
+        if ( isset( self::$Memo[$kind][$path] ) && self::$Memo[$kind][$path][0] === $stat['mtime'] && self::$Memo[$kind][$path][1] === $stat['size'] )
+            $entry = self::$Memo[$kind][$path];
+        else
+        {
+            $entry = array( $stat['mtime'], $stat['size'], call_user_func( $compute, $path ) );
+            if ( $stat['mtime'] < time() - 2 )
+            {
+                self::$Memo[$kind][$path] = $entry;
+                self::$MemoDirty = true;
+            }
+            else
+                unset( self::$Memo[$kind][$path] );
+        }
+
+        self::$MemoUsed[$kind][$path] = true;
+
+        return $entry[2];
+    }
+
+    /**
+     * Writes the per-file results back when this request computed any (or no longer uses some): only the entries
+     * used this request are kept, so the file does not grow with files that are gone. Written to a temporary
+     * file and renamed, owned like its directory (see storeSourceSweep()).
+     *
+     * @return void
+     */
+    protected static function flushMemo()
+    {
+        if ( self::$Memo === null )
+            return;
+
+        $keep  = array();
+        $count = 0;
+        foreach ( self::$MemoUsed as $kind => $paths )
+            foreach ( $paths as $path => $true )
+                if ( isset( self::$Memo[$kind][$path] ) )
+                {
+                    $keep[$kind][$path] = self::$Memo[$kind][$path];
+                    $count++;
+                }
+
+        $before = 0;
+        foreach ( self::$Memo as $paths )
+            $before += count( $paths );
+
+        if ( !self::$MemoDirty && $before === $count )
+            return;
+
+        self::$MemoDirty = false;
+        self::writeCacheFile( self::memoFile(), serialize( $keep ) );
+    }
+
+    /**
+     * Writes a cache file the way caches are written: a temporary file beside it, renamed into place, given the
+     * owner and group of its directory (Velocity runs as root and the web server as its own user, and each
+     * replaces what the other wrote) and writable by both.
+     *
+     * @param string $target
+     * @param string $data
+     * @return void
+     */
+    protected static function writeCacheFile( $target, $data )
+    {
+        $dir = dirname( $target );
+        if ( !is_dir( $dir ) || !is_writable( $dir ) )
+            return;
+
+        $temp = $target . '.' . getmypid() . '.tmp';
+        if ( @file_put_contents( $temp, $data ) === false )
+            return;
+
+        @chmod( $temp, 0664 );
+        if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 && ( $uid = @fileowner( $dir ) ) !== false )
+        {
+            @chown( $temp, $uid );
+            if ( ( $gid = @filegroup( $dir ) ) !== false )
+                @chgrp( $temp, $gid );
+        }
+
+        if ( !@rename( $temp, $target ) )
+            @unlink( $temp );
     }
 
     /**
@@ -125,7 +269,7 @@ class expRADSurvey
 
         foreach ( $files as $file )
         {
-            $parsed = self::parseIni( $file['path'] );
+            $parsed = self::fileMemo( 'ini', $file['path'], array( __CLASS__, 'parseIni' ) );
 
             foreach ( $parsed as $section => $variables )
                 foreach ( $variables as $variable => $values )
@@ -322,6 +466,8 @@ class expRADSurvey
         foreach ( array_keys( self::totalGroups() ) as $group )
             $total += self::$Survey['counts'][$group];
         self::$Survey['counts']['total'] = $total;
+
+        self::flushMemo();
 
         return self::$Survey;
     }
@@ -694,9 +840,8 @@ class expRADSurvey
             {
                 if ( !preg_match( '/^Exponential\\\\(Command|Cronjob|View)\\\\(Kernel|Extension)\\\\/', (string) $class, $m ) )
                     continue;
-                $code = is_file( $path ) ? @file_get_contents( $path ) : false;
                 // a class of one of these namespaces that is not a runnable (the built-in server's router) is no point
-                if ( $code === false || !preg_match( '/extends\s+\\\\?Exponential\\\\Runnable\\\\(Command|CronjobPart|ModuleView)\b/', $code ) )
+                if ( !is_file( $path ) || !self::fileMemo( 'runnable', $path, array( __CLASS__, 'isRunnableSource' ) ) )
                     continue;
                 $list[$class] = array( 'class'          => (string) $class,
                                        'kind'           => strtolower( $m[1] ),
@@ -724,6 +869,19 @@ class expRADSurvey
         ksort( $list );
 
         return array( 'list' => array_values( $list ), 'broken' => $broken );
+    }
+
+    /**
+     * Whether a class file declares something extending a runnable base class.
+     *
+     * @param string $path
+     * @return bool
+     */
+    public static function isRunnableSource( $path )
+    {
+        $code = @file_get_contents( $path );
+
+        return $code !== false && preg_match( '/extends\s+\\\\?Exponential\\\\Runnable\\\\(Command|CronjobPart|ModuleView)\b/', $code ) === 1;
     }
 
     /**
@@ -1083,6 +1241,37 @@ class expRADSurvey
      */
     public static function contracts()
     {
+        // The two sweeps below read every php file of kernel/, lib/ and extension/ (about 27 MB) and are most of
+        // what the survey costs. What they find is a function of those files alone, so it is kept in a file
+        // that is trusted only while every directory and every file it was built from still has the modification
+        // time (and size) it had then: nothing is parsed to check that, and an edit, an addition, a removal or
+        // an extension installed since is seen on the very next request. Nothing is kept in memory across
+        // requests, so a persistent worker cannot go stale.
+        $cached = self::sourceSweepCache();
+        if ( $cached !== null )
+        {
+            self::$Events = $cached['events'];
+            return $cached['contracts'];
+        }
+
+        // The times are taken before the files are read: a file changed while it is being read is then recorded
+        // with the older time, and the next request sees the difference and sweeps again.
+        $stamps    = self::sourceStamps( self::sourceTree( true ) );
+        $contracts = self::sweepContracts();
+
+        if ( $stamps !== null )
+            self::storeSourceSweep( $stamps, $contracts, self::$Events );
+
+        return $contracts;
+    }
+
+    /**
+     * The sweeps themselves: the contracts, their implementations, and (into self::$Events) the events.
+     *
+     * @return array of contract
+     */
+    protected static function sweepContracts()
+    {
         $contracts = array();
 
         foreach ( self::sourceFiles() as $path )
@@ -1225,37 +1414,163 @@ class expRADSurvey
      */
     public static function sourceFiles( $withExtensions = false )
     {
+        $tree = self::sourceTree( $withExtensions );
+
+        return $tree['files'];
+    }
+
+    /**
+     * The php files worth reading and the directories that were walked to find them.
+     *
+     * @param bool $withExtensions also the extensions'
+     * @return array with keys files (in walk order), dirs (the directories walked, roots included), roots (the
+     *         roots that exist)
+     */
+    protected static function sourceTree( $withExtensions = false )
+    {
         $roots = array( 'kernel', 'lib' );
 
         if ( $withExtensions )
             $roots[] = 'extension';
 
         $files = array();
+        $dirs  = array();
+        $found = array();
 
         foreach ( $roots as $root )
         {
             if ( !is_dir( $root ) )
                 continue;
 
+            $found[] = $root;
+            $dirs[]  = $root;
+
             $directory = new RecursiveDirectoryIterator( $root, FilesystemIterator::SKIP_DOTS );
-            $iterator  = new RecursiveIteratorIterator( $directory );
+            $iterator  = new RecursiveIteratorIterator( $directory, RecursiveIteratorIterator::SELF_FIRST );
 
             foreach ( $iterator as $file )
             {
-                if ( substr( $file->getFilename(), -4 ) !== '.php' )
-                    continue;
+                $path = $file->getPathname();
 
                 // Neither of these is anybody's extension point, and between
                 // them they are a large part of the tree.
-                $path = $file->getPathname();
                 if ( strpos( $path, '/tests/' ) !== false || strpos( $path, '/vendor/' ) !== false )
+                    continue;
+
+                if ( $iterator->callHasChildren() )
+                {
+                    $dirs[] = $path;
+                    continue;
+                }
+
+                if ( substr( $file->getFilename(), -4 ) !== '.php' )
                     continue;
 
                 $files[] = $path;
             }
         }
 
-        return $files;
+        return array( 'files' => $files, 'dirs' => $dirs, 'roots' => $found );
+    }
+
+    /**
+     * Where the source sweep is kept.
+     *
+     * @return string
+     */
+    protected static function sourceSweepCacheFile()
+    {
+        $dir = class_exists( 'eZSys', false ) ? eZSys::cacheDirectory() : 'var/cache';
+
+        return $dir . '/rad_survey_sources.cache';
+    }
+
+    /**
+     * The kept source sweep, if it is still true.
+     *
+     * Checked by stat() alone: the roots still exist, every directory walked has the modification time it had (a
+     * file added, removed or renamed moves its directory's), every file read has its modification time and size.
+     *
+     * @return array|null with keys contracts, events, or null when it is missing, unreadable or out of date
+     */
+    protected static function sourceSweepCache()
+    {
+        $raw = @file_get_contents( self::sourceSweepCacheFile() );
+        if ( $raw === false )
+            return null;
+
+        $data = @unserialize( $raw, array( 'allowed_classes' => false ) );
+        if ( !is_array( $data ) || !isset( $data['dirs'], $data['files'], $data['roots'], $data['contracts'], $data['events'] ) )
+            return null;
+
+        foreach ( array( 'kernel', 'lib', 'extension' ) as $root )
+            if ( is_dir( $root ) !== in_array( $root, $data['roots'], true ) )
+                return null;
+
+        clearstatcache();
+
+        foreach ( $data['dirs'] as $path => $mtime )
+            if ( @filemtime( $path ) !== $mtime )
+                return null;
+
+        foreach ( $data['files'] as $path => $stamp )
+        {
+            $stat = @stat( $path );
+            if ( $stat === false || $stat['mtime'] !== $stamp[0] || $stat['size'] !== $stamp[1] )
+                return null;
+        }
+
+        return $data;
+    }
+
+    /**
+     * The modification times a sweep is to be trusted against.
+     *
+     * Nothing is returned (and so nothing is kept) when any of them is from the last two seconds: a second change
+     * inside the same second would carry the same time and go unseen.
+     *
+     * @param array $tree from sourceTree()
+     * @return array|null with keys roots, dirs, files, or null when the tree is still being changed
+     */
+    protected static function sourceStamps( array $tree )
+    {
+        $recent = time() - 2;
+        $dirs   = array();
+        $files  = array();
+
+        clearstatcache();
+
+        foreach ( $tree['dirs'] as $path )
+        {
+            $mtime = @filemtime( $path );
+            if ( $mtime === false || $mtime >= $recent )
+                return null;
+            $dirs[$path] = $mtime;
+        }
+
+        foreach ( $tree['files'] as $path )
+        {
+            $stat = @stat( $path );
+            if ( $stat === false || $stat['mtime'] >= $recent )
+                return null;
+            $files[$path] = array( $stat['mtime'], $stat['size'] );
+        }
+
+        return array( 'roots' => $tree['roots'], 'dirs' => $dirs, 'files' => $files );
+    }
+
+    /**
+     * Keeps a source sweep (see writeCacheFile()).
+     *
+     * @param array $stamps from sourceStamps()
+     * @param array $contracts
+     * @param array $events
+     * @return void
+     */
+    protected static function storeSourceSweep( array $stamps, array $contracts, $events )
+    {
+        self::writeCacheFile( self::sourceSweepCacheFile(),
+                              serialize( $stamps + array( 'contracts' => $contracts, 'events' => (array) $events ) ) );
     }
 
     /**
