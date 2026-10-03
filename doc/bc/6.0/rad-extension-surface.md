@@ -6,7 +6,8 @@ template operators, events, overridden templates and replaced kernel classes. [E
 is the curated list, each point explained and paired with a tool; this page is the complete inventory.
 
 The inventory below was read off a reference installation with its own set of active extensions, not written by hand.
-Your installation has its own: read it live in the admin at **Setup → RAD tools → Extension point survey**
+Two extensions of the reference installation that are not part of the product are left out of the lists below; the
+counts include them. Your installation has its own inventory: read it live in the admin at **Setup → RAD tools → Extension point survey**
 (`/setup/radsurvey`), where it can be searched.
 
 ## In short
@@ -380,12 +381,6 @@ so a lower case value that names no class is an *alias* doing its job. A row mar
 | `ezjscServer_ezstarrating` | `Class` | `ezsrServerFunctions` | `extension/ezstarrating/classes/ezsrserverfunctions.php` |
 | `ezjscServer_ezwt` | `Class` | `ezwtServerCallFunctions` | `extension/ezwt/classes/ezwtservercallfunctions.php` |
 
-### ezmcp.ini (1)
-
-| Section | Setting | Value | Declared in |
-| --- | --- | --- | --- |
-| `TransportSettings` | `DefaultTransport` | `stdio` | *alias* |
-
 ### ezoe.ini (1)
 
 | Section | Setting | Value | Declared in |
@@ -623,7 +618,6 @@ and should not, or does not work and should, the answer is one of these lines.
 | `design.ini` | `ExtensionSettings` | `DesignExtensions` | `enhancedezbinaryfile` |
 | `design.ini` | `ExtensionSettings` | `DesignExtensions` | `enhancedselection2` |
 | `design.ini` | `ExtensionSettings` | `DesignExtensions` | `expchangeclass` |
-| `design.ini` | `ExtensionSettings` | `DesignExtensions` | `expdse` |
 | `design.ini` | `ExtensionSettings` | `DesignExtensions` | `explayouts` |
 | `design.ini` | `ExtensionSettings` | `DesignExtensions` | `explayouts_content_browser_ui` |
 | `design.ini` | `ExtensionSettings` | `DesignExtensions` | `explayouts_relation_list_query` |
@@ -675,8 +669,6 @@ and should not, or does not work and should, the answer is one of these lines.
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `cjw_newsletter` |
 | `module.ini` | `ModuleSettings` | `ModuleList` | `newsletter` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `expchangeclass` |
-| `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `expdse` |
-| `module.ini` | `ModuleSettings` | `ModuleList` | `dse` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `explayouts` |
 | `module.ini` | `ModuleSettings` | `ModuleList` | `explayouts` |
 | `module.ini` | `ModuleSettings` | `ExtensionRepositories` | `explayouts_content_browser_ui` |
@@ -1027,15 +1019,6 @@ Fetch functions: `object`, `version`, `node`, `locale_list`, `locale`, `prioriti
 | `content/queued` | `edit` | 2 |
 
 Fetch functions: `object`, `version`, `node`, `locale_list`, `locale`, `prioritized_languages`, `prioritized_language_codes`, `translation_list`, `non_translation_list`, `class`, `class_attribute_list`, `class_attribute`, `calendar`, `list`, `list_count`, `tree`, `tree_count`, `search`, `trash_count`, `trash_object_list`, `draft_count`, `draft_version_list`, `pending_count`, `pending_list`, `version_count`, `version_list`, `can_instantiate_class_list`, `class_list`, `can_instantiate_classes`, `contentobject_attributes`, `bookmarks`, `recent`, `section_list`, `tipafriend_top_list`, `view_top_list`, `collected_info_count`, `collected_info_count_list`, `collected_info_collection`, `collected_info_list`, `object_by_attribute`, `object_count_by_user_id`, `same_classattribute_node`, `keyword`, `keyword_count`, `access`, `navigation_parts`, `navigation_part`, `related_objects`, `related_objects_count`, `reverse_related_objects`, `reverse_related_objects_count`, `available_sort_fields`, `country_list`, `related_objects_ids`, `reverse_related_objects_ids`, `content_tree_menu_expiry`
-
-### dse
-
-`extension/expdse/modules/dse` — policies: `dse`, `dump`
-
-| View | Needs | Parameters |
-| --- | --- | --- |
-| `dse/dashboard` | `dse` | 0 |
-| `dse/adminneo` | `dse` | 0 |
 
 ### dse
 
