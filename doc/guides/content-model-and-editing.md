@@ -1,10 +1,14 @@
-# Guide: the content model and editing content
+# The content model and editing content
 
-You will define a content class, create content from it, edit it with the online editor (including the new TinyMCE 8
-engine), work on many items at once, use the sub-items table, recover from the trash and run a large operation as a
-background job. About 30 minutes, in a browser and one terminal. You need a running Exponential 6 installation and an
-administrator login (the administration interface is on your edit siteaccess, for example `https://edit.example.com/`).
-Commands run from the installation root.
+This guide is for editors and site builders. It shows how content is shaped in Exponential and how to work with it
+every day. You define a content class, create content from it, and edit it with the online editor (including the
+TinyMCE 8 engine). Then you work on many items at once, use the sub-items table, recover an item from the trash and
+run a large operation as a background job.
+
+Allow about 30 minutes, with a browser and one terminal. You need a running Exponential 6 installation
+([Getting started](getting-started.md)) and an administrator login. The administration interface is on your admin
+siteaccess, for example `https://edit.example.com/` or `http://localhost:8087/admin/`. Commands run from the
+installation root.
 
 ## 1. How the content model fits together
 
@@ -138,8 +142,23 @@ On an installation without jobs `list` prints `No active or failed content jobs 
 `contentjobs` cronjob part restarts a worker whose process died. Depth: [content jobs](../features/6.0/content-jobs.md),
 [content jobs guide](../bc/6.0/content-jobs.md), [audit trail](../features/6.0/audit-trail.md) (every job is recorded).
 
-## Where to go next
+## Settings used in this guide
 
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `settings/content.ini` | `[DataTypeSettings]` | `AvailableDataTypes[]` | 35 datatypes | installation, siteaccess |
+| `settings/content.ini` | `[VersionManagement]` | `DefaultVersionHistoryLimit` | `10` | installation, siteaccess |
+| `settings/content.ini` | `[ContentJobSettings]` | `SynchronousLimit` | `50` nodes | installation, siteaccess |
+| `extension/ezautosave/settings/autosave.ini.append.php` | `[AutosaveSettings]` | `Interval` | `180` seconds | installation, siteaccess |
+| `extension/ezoe/settings/ezoe.ini` | `[EditorSettings]` | `EditorEngine` | `tinymce3` | installation, siteaccess, user preference `ezoe_engine` |
+| `extension/ezoe/settings/ezoe.ini` | `[EditorSettings]` | `EngineSwitch` | `disabled` | installation, siteaccess |
+
+Change a value in `settings/override/` or `settings/siteaccess/<name>/`, never in the shipped file, then clear the
+INI cache: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`.
+
+## Related pages
+
+- Change how content is shown: [Templates and design](templates-and-design.md).
 - What happened when: [October 2026 chronicle](../history/2026/2026-10.md), [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
 - Hardening of what editors can type: [datatype input hardening](../specifications/6.0/datatype-input-hardening.md).
 - Running background and scheduled work: [cronjobs console](../features/6.0/cronjobs-console.md).

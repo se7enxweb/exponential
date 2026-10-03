@@ -1,6 +1,6 @@
 # Remote services and apps: drive the admin from scripts, apps and portals
 
-Goal: in about 20 minutes you call Exponential as an HTTP API from the shell and from Python, create a personal API token for a script, browse the service catalogue, and open a ready-made portal front end that runs on the same services. No build step, no extra server.
+This guide is for developers who want to drive Exponential from scripts, apps or another front end. In about 20 minutes you call Exponential as an HTTP API from the shell and from Python, create a personal API token for a script, browse the service catalogue, and open a ready-made portal front end that runs on the same services. No build step, no extra server.
 
 `expservices` turns the admin's functions into over a thousand named services (content, users, roles, caches, cronjobs, shop, feeds, media, tags, layouts, the audit and more), served by the `ezjscore` call interface under `/ezjscore/call/`. A service is called by name, `exp<domain>::<method>`, and answers JSON.
 
@@ -177,9 +177,10 @@ Point the portals at your content roots in `extension/expservices/settings/exppo
 
 Change one with `./console exp:ini set expservices.ini/Paging/DefaultLimit 50 override --allow-root-user` and clear the INI cache.
 
-## Where next
+## Related pages
 
-* Write a service of your own: one class extending `expServiceBase`, one `[ezjscServer_exp<domain>]` block, and it appears in the catalogue and in Setup > RAD. See [remote services (feature)](../features/6.0/remote-services-expservices.md) and [the services specification](../specifications/6.0/expservices.md).
-* Secure what you expose: roles, policies, audit and debug: [security and audit](security-and-audit.md).
-* Everything about the call interface, domain by domain: [doc/bc/6.0/backend_ezjscore_services.md](../bc/6.0/backend_ezjscore_services.md); the extension that carries it: [ezjscore](../features/6.0/extensions/ezjscore.md).
-* How it came about: [October 2026 chronicle](../history/2026/2026-10.md), [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
+- Write a service of your own: one class extending `expServiceBase`, one `[ezjscServer_exp<domain>]` block, and it appears in the catalogue and in Setup > RAD. See [remote services (feature)](../features/6.0/remote-services-expservices.md) and [the services specification](../specifications/6.0/expservices.md).
+- Secure what you expose: roles, policies, audit and debug: [security and audit](security-and-audit.md).
+- Everything about the call interface, domain by domain: [doc/bc/6.0/backend_ezjscore_services.md](../bc/6.0/backend_ezjscore_services.md); the extension that carries it: [ezjscore](../features/6.0/extensions/ezjscore.md).
+- How it came about: [October 2026 chronicle](../history/2026/2026-10.md), [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
+- Other guides: [Extensions](extensions.md) (build the extension that carries your service), [Glossary](../glossary.md).

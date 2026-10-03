@@ -1,8 +1,9 @@
 # Getting started: install Exponential and have a working site in minutes
 
-By the end of this page you have an installed Exponential site, you are logged in to the administration
-interface, you have published a first piece of content and you have changed a template and seen the change on the
-site. Allow ten to fifteen minutes; the install itself takes about a minute on SQLite.
+This guide is for anyone who starts with Exponential: an editor who wants a site to try, a developer, an operator.
+You need no prior knowledge. At the end you have an installed site, you are logged in to the administration
+interface, you have published a first piece of content, and you have changed a template and seen the change on the
+site. Allow ten to fifteen minutes. The install itself takes about a minute on SQLite.
 
 Every command is run from the root of the installation (the directory that holds `console`, `index.php` and
 `settings/`). Commands that start with `./console` are the same programs as `php bin/php/<name>.php`.
@@ -56,8 +57,9 @@ Check that the console runs:
 ./console --version
 ```
 
-Expected: the line `Written by 7x (se7enx.com) and the Exponential contributors.` after the version text.
-If you run as `root`, add `--allow-root-user` to the scripts that ask for it (the message says so).
+Expected: the first line reads `console (Exponential) 6.0.15stable` (or the version you installed), and the text ends
+with `Written by 7x (se7enx.com) and the Exponential contributors.`
+If you run as `root`, add `--allow-root-user` to the scripts that ask for it. The script's message says so.
 
 ## 3. Install
 
@@ -129,7 +131,7 @@ You need a web server that answers on the address you gave. For a first look use
 ./console exp:velocity status --engine=php
 ```
 
-The `php` engine is PHP's own server and listens on port 8087 by default (`velocity.ini [ServerSettings]`), which is why
+The `php` engine is PHP's own server and listens on port 8087 by default (`velocity.ini [PHPServerSettings] Port`), which is why
 step 3 used `--url=http://localhost:8087`. Open `http://localhost:8087/site/` in a browser: you see the front page of
 the installed site. Stop it again with `./console exp:velocity stop --engine=php`.
 
@@ -202,25 +204,29 @@ How the editor creates, orders and edits overrides: [Template editor](../feature
 The order in which designs and overrides are tried is in [Template override ordering](../features/6.0/template-override-ordering.md)
 and [Extension loading order](../features/6.0/extension-loading-order.md).
 
-## 8. Where to go next
+## 8. When something goes wrong
+
+| Symptom | Check |
+|---|---|
+| `exp:install` says an installation exists | Add `--force` only if you mean to replace it. |
+| A white page or a 500 error | Read `var/log/error.log`. Check that `php -v` shows 8.1 or newer and that `vendor/` exists (run `composer install`). |
+| The site address does not answer | Is the server running (`./console exp:velocity status --engine=php`)? Does the port match `--url`? |
+| You forgot the password | `exp:install` showed it once and kept no copy. The setup wizard and the kickstarter write theirs once to `var/log/initial-admin-password`. Set a new one with `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`, see [Reset a user password](../features/6.0/reset-user-password.md). |
+| A change does not show | Clear the content cache (step 6) and reload the page. |
+
+## Related pages
 
 | You want to | Read |
 |---|---|
-| Understand classes, objects and nodes | [Content model and editing](content-model-and-editing.md) |
+| Understand classes, objects and nodes | [The content model and editing content](content-model-and-editing.md) |
+| Change how pages look | [Templates and design](templates-and-design.md) |
+| Add or write an extension | [Extensions](extensions.md), [RAD tools](../features/6.0/rad-tools.md) |
+| Put the site on a real server | [Deploying](deploying.md) |
+| Keep the site healthy | [Operating a site](operating-a-site.md), [Security and audit](security-and-audit.md) |
 | Move to a newer release | [Upgrading](upgrading.md) |
 | Change settings from the command line | [exp:ini](../features/6.0/exp-ini-command.md) |
 | Keep an eye on changes made in the admin | [Audit trail](../features/6.0/audit-trail.md) |
 | Run recurring jobs | [Cronjobs console](../features/6.0/cronjobs-console.md) |
-| Write an extension | [RAD tools](../features/6.0/rad-tools.md) |
-| See what changed and when | [Chronicle by month](../history/2026/), [Changelog 6.0.15](../changelogs/6.0/6.0.15.md) |
-| What an install does by default | [Clean install defaults](../features/6.0/clean-install-defaults.md), [Installer logs and seed data](../specifications/6.0/installer-logs-and-seed-data.md) |
-
-## Troubleshooting
-
-| Symptom | Check |
-|---|---|
-| `exp:install` says an installation exists | add `--force` only if you mean to replace it |
-| A white page or a 500 error | `var/log/error.log`; `php -v` is 8.1 or newer; `vendor/` exists (run `composer install`) |
-| The site address does not answer | is the server running (`./console exp:velocity status --engine=php`); does the port match `--url`? |
-| You forgot the password | the installer stored it nowhere in clear text; see [reset user password](../features/6.0/reset-user-password.md) |
-| A change does not show | clear the caches (step 6) and reload the page |
+| See what changed and when | [Chronicle by month](../history/README.md), [Changelog 6.0.15](../changelogs/6.0/6.0.15.md) |
+| Know what an install does by default | [Clean install defaults](../features/6.0/clean-install-defaults.md), [Installer logs and seed data](../specifications/6.0/installer-logs-and-seed-data.md) |
+| Look up a word | [Glossary](../glossary.md) |

@@ -1,10 +1,11 @@
 # Upgrading: from 4.x, 5.x or an earlier 6.0.x to today
 
-This guide takes an existing installation to the current Exponential 6.0 line (6.0.15 development; the newest
-tag at the time of writing is `v6.0.14`, see [Changelog 6.0.15](../changelogs/6.0/6.0.15.md)). Follow the part for
-the release you run now. Every part ends with the same checks, so you know the result is good.
+This guide is for whoever runs an existing installation and wants to bring it to the current Exponential 6.0 line.
+That line is 6.0.15, still in development; the newest release tag at the time of writing is `v6.0.14` (see
+[Changelog 6.0.15](../changelogs/6.0/6.0.15.md)). Find your version, follow the part for it, and finish with the
+checks at the end. They tell you that the result is good.
 
-Plan for twenty minutes for a small site. The risky step is the database; that is why step 1 is a backup.
+Plan for twenty minutes for a small site. The risky step is the database. That is why step 1 is a backup.
 
 ## Which part do I read?
 
@@ -208,8 +209,10 @@ rendered by old code is not served again.
 A published release can not be changed; the way to get a fix is the next version. To see what a version holds, open
 its changelog: [6.0.0 to 6.0.15](../changelogs/6.0/6.0.15.md).
 
-## Where to go next
+## Related pages
 
-[Getting started](getting-started.md) for a clean install of the same version,
-[Content model and editing](content-model-and-editing.md), and the [Velocity engines](../bc/6.0/velocity-engines.md)
-for a faster server.
+- [Getting started](getting-started.md): a clean install of the same version, for a test copy.
+- [Operating a site](operating-a-site.md): backups, caches and repairs after the upgrade.
+- [Deploying](deploying.md) and [Velocity engines](../bc/6.0/velocity-engines.md): reload the right PHP-FPM, or move to a faster server.
+- [Extensions](extensions.md): versions, loading order and releases of your own extensions.
+- Release notes: [Exponential 6.0 changelogs](../changelogs/6.0/6.0.15.md) and [the extensions' release notes](../changelogs/extensions/README.md).

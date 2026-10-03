@@ -1,6 +1,6 @@
 # Templates and design: change what a page looks like
 
-In this guide you will find out which design your site uses, see which template file produced a piece of a page, change it with an override that you can undo, check the syntax, and switch the administration interface to the `admin4` design. Follow it top to bottom; each part ends in something you can check. It takes about fifteen minutes.
+This guide is for site builders who want to change how pages look. You will find out which design your site uses, see which template file produced a piece of a page, change it with an override that you can undo, check the syntax, and switch the administration interface to the `admin4` design. Follow it top to bottom; each part ends in something you can check. It takes about fifteen minutes.
 
 Every command is run from the installation root, the directory that contains `index.php`. When you are logged in as `root`, add `--allow-root-user` (the examples write it out). You need a running site: [Getting started](getting-started.md) gets you there in minutes.
 
@@ -180,10 +180,11 @@ php bin/php/cache.php clear --all --allow-root-user
 
 Expected: both end with `PASS`; reload the administration interface and the header carries a light/dark toggle after the search box. To go back, set `SiteDesign` to `admin3` and clear again. To try it first without changing anything, open the siteaccess `admintest_admin4`. Everything about it, including how to write your own styles on top (`design/admin4/stylesheets/admin4.css`, no cascade layers): [The admin4 design](../features/6.0/admin4-design.md); the earlier responsive design: [admin3](../features/6.0/admin3-responsive-admin.md).
 
-## Where to go next
+## Related pages
 
-- [Content model and editing](content-model-and-editing.md): the classes and attributes your templates show.
+- [The content model and editing content](content-model-and-editing.md): the classes and attributes your templates show.
 - [Operating a site](operating-a-site.md): caches, cronjobs and repairs.
 - [Deploying](deploying.md): move your design to a server.
 - Feature pages: [Template editor](../features/6.0/template-editor-overrides.md), [Template path comments](../features/6.0/template-path-comments.md), [Icon themes in extensions](../features/6.0/icon-themes-in-extensions.md), [Hidden admin tabs](../features/6.0/hidden-admin-tabs.md).
 - Upgrade notes: [Debug bar](../bc/6.0/debug-bar.md), [Pagination settings](../bc/6.0/pagination-settings.md).
+- [Extensions](extensions.md): carry your design in an extension of its own.

@@ -1,6 +1,6 @@
 # Security and audit: lock it down, see who did what
 
-Goal: in about 30 minutes you check that a fresh Exponential installation is hardened, hand out access with roles and policies, read the audit trail, switch debug output on for your own address only, and (optionally) add two-factor sign-in. Every step is a command or a click path that exists in 6.0.15. Commands run from the project root; the examples use `https://example.com` for your site.
+This guide is for administrators and operators who answer for the safety of a site. In about 30 minutes you check that a fresh Exponential installation is hardened, hand out access with roles and policies, read the audit trail, switch debug output on for your own address only, and (optionally) add two-factor sign-in. Every step is a command or a click path that exists in 6.0.15. Commands run from the project root; the examples use `https://example.com` for your site.
 
 You need: shell access to the installation, an administrator login, and `curl`.
 
@@ -182,8 +182,9 @@ Depth: [two-factor and social login](../features/6.0/extensions/sevenx_authentic
 - [ ] Debug output only for your own address, with an expiry
 - [ ] Two-factor on for administrators
 
-## Where next
+## Related pages
 
-* Control a site from scripts and apps with tokens: [remote services and apps](remote-services-and-apps.md).
-* Upgrade impact of the security changes: [behaviour changes of 1-2 October 2026](../bc/6.0/behaviour-changes-2026-10.md), [security hardening of August 2026](../specifications/6.0/security-hardening-2026-08.md), [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
-* How it came about: [October 2026 chronicle](../history/2026/2026-10.md), [September 2026, second half](../history/2026/2026-09b.md).
+- Control a site from scripts and apps with tokens: [remote services and apps](remote-services-and-apps.md).
+- Upgrade impact of the security changes: [behaviour changes of 1-2 October 2026](../bc/6.0/behaviour-changes-2026-10.md), [security hardening of August 2026](../specifications/6.0/security-hardening-2026-08.md), [6.0.15 changelog](../changelogs/6.0/6.0.15.md).
+- How it came about: [October 2026 chronicle](../history/2026/2026-10.md), [September 2026, second half](../history/2026/2026-09b.md).
+- Other guides: [Operating a site](operating-a-site.md) (logs, backups, repairs), [Extensions](extensions.md) (two-factor and other extensions), [Glossary](../glossary.md).

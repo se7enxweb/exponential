@@ -1,6 +1,6 @@
-# Operating a site
+# Operating a site: caches, cronjobs, backups and repairs
 
-You have an Exponential site running. This guide takes you through the routine work of keeping it healthy: looking at the caches and clearing the right one, running cronjobs, switching on the static cache, warming the site, taking a backup, knowing which database you run on, reading the logs, and repairing a site that will not start. Follow it top to bottom. Each part takes a few minutes and ends in something you can check.
+This guide is for the person who keeps an Exponential site running, day to day. It takes you through the routine work of keeping it healthy: looking at the caches and clearing the right one, running cronjobs, switching on the static cache, warming the site, taking a backup, knowing which database you run on, reading the logs, and repairing a site that will not start. Follow it top to bottom. Each part takes a few minutes and ends in something you can check.
 
 Every command is run from the installation root, the directory that contains `index.php`. When you are logged in as `root`, add `--allow-root-user` to the PHP scripts; the scripts refuse to run as root otherwise. In the examples the flag is written out so you can copy them as they are.
 
@@ -183,8 +183,9 @@ Take the database with the tool of your database system. Replace the placeholder
 |---|---|---|
 | MySQL or MariaDB | `mysqldump --single-transaction -u USER -p DATABASE > backup.sql` | `mysql -u USER -p DATABASE < backup.sql` |
 | PostgreSQL | `pg_dump -U USER DATABASE > backup.sql` | `psql -U USER DATABASE < backup.sql` |
-| SQLite | `sqlite3 var/storage/sqlite3/sqlite.db ".backup backup.db"` | copy `backup.db` back with the site in maintenance mode |
+| SQLite | `sqlite3 var/storage/sqlite3/exponential.db ".backup backup.db"` | copy `backup.db` back with the site in maintenance mode |
 
+`exponential.db` is the file name `exp:install` uses by default; use the name of your own database file (`ls var/storage/sqlite3/`).
 For SQLite never copy the file while the site is busy; `.backup` is safe. The schema alone, as a portable file, is also available through `php bin/php/ezsqldumpschema.php --type=mysql --user=USER DATABASE schema.sql --allow-root-user`.
 
 Then switch the site back on and clear the caches:
@@ -274,8 +275,10 @@ Depth: [Repair from the browser](../features/6.0/repair-from-the-browser.md), [r
 4. `./console crontab:list` still shows your cron entries.
 5. A backup from the last seven days exists and has been restored at least once on another machine.
 
-## Where to go next
+## Related pages
 
 - Running on the Velocity server: [Velocity persistent-worker server](../features/6.0/velocity-persistent-worker-server.md) and [Velocity engines](../bc/6.0/velocity-engines.md).
 - Installing a new site: [Installing in one command](../features/6.0/install-in-one-command.md) and [Kickstarter](../features/6.0/kickstarter-cli.md).
 - What changed, month by month: the [Velocity chronicle](../history/velocity/README.md).
+- Other guides: [Deploying](deploying.md) (servers, HTTPS, shipping a change), [Security and audit](security-and-audit.md) (hardening, roles, the audit trail), [Upgrading](upgrading.md).
+- Words used here: [Glossary](../glossary.md).

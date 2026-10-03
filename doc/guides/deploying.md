@@ -1,8 +1,8 @@
 # Deploying Exponential: Apache with PHP-FPM, Velocity or FrankenPHP
 
-This guide takes a freshly installed Exponential site to a server visitors can reach, over HTTPS, and shows how to ship a code change safely and keep the site fast. Read it top to bottom. Every command exists in the installation; where a result is shown, it is what the command prints.
+This guide is for the person who puts a site on a server: an operator, or a developer who runs their own. It takes a freshly installed Exponential site to a server that visitors reach over HTTPS. Then it shows how to ship a code change safely and how to keep the site fast. Read it top to bottom. Every command exists in the installation; where a result is shown, it is what the command prints.
 
-You need: a Linux server, shell access in the installation directory (the folder that holds `index.php` and `console`), and a site that already runs. If you have no site yet, run `./console exp:install` first ([Installing in one command](../features/6.0/install-in-one-command.md)).
+You need a Linux server, shell access in the installation directory (the folder that holds `index.php` and `console`), and a site that already runs. If you have no site yet, run `./console exp:install` first ([Getting started](getting-started.md), [Installing in one command](../features/6.0/install-in-one-command.md)).
 
 Commands use `./console`, the shortcut for `bin/php/console`. The examples add `--allow-root-user` because they are run as root; leave it off when you run as the site user.
 
@@ -246,7 +246,30 @@ Run it three times: the first request fills the caches, the others show the cach
 - `./console exp:velocity deploy --dry-run --allow-root-user` lists a `reload PHP-FPM` step with the right service.
 - `./console exp:cache status --allow-root-user` shows the layers you expect.
 
-## Where to go next
+## Settings used in this guide
+
+All are in `settings/velocity.ini` (shipped defaults). `exp:velocity config set` writes your values to
+`settings/override/velocity.ini.append.php`; the scope is the installation.
+
+| Block | Key | Default | What it does |
+|---|---|---|---|
+| `[ServerSettings]` | `Engine` | `php` | The engine `exp:velocity` starts when no `--engine` is given: `php`, `qbix` or `frankenphp` |
+| `[ServerSettings]` | `Host` | `127.0.0.1` | Address Velocity (`qbix`) listens on; `0.0.0.0` for the network |
+| `[ServerSettings]` | `Port` | `8088` | Plain HTTP port of Velocity |
+| `[ServerSettings]` | `HTTPSPort` | `8080` | HTTPS port of Velocity |
+| `[ServerSettings]` | `Workers` | `4` | Number of Velocity worker processes |
+| `[ServerSettings]` | `StaticMaxAge` | `31536000` | Cache lifetime in seconds sent with static files |
+| `[ServerSettings]` | `PrecompressStatic` | `enabled` (code default, not listed in the file) | Keep compressed copies of static files |
+| `[CacheSettings]` | `Enabled` | `enabled` | Velocity's response cache |
+| `[CacheSettings]` | `DefaultTtl` | `30` | Seconds a response stays in that cache |
+| `[HTTPSSettings]` | `Enabled` | `false` | HTTPS on Velocity's `HTTPSPort` |
+| `[HTTPSSettings]` | `Certificate`, `Key` | empty | PEM files of your certificate and key |
+| `[HTTPSSettings]` | `HSTSMaxAge` | `300` | Strict-Transport-Security lifetime in seconds |
+| `[DeploySettings]` | `PhpFpmService` | `auto` | The PHP-FPM service `exp:velocity deploy` reloads |
+| `[FrankenPHPSettings]` | `Port`, `HTTPSPort` | `8089`, `8444` | Ports of the FrankenPHP engine |
+| `[PHPServerSettings]` | `Port` | `8087` | Port of the `php` engine (PHP's own server) |
+
+## Related pages
 
 - Features: [Velocity web server](../features/6.0/velocity-web-server.md), [Velocity HTTPS and certificates](../features/6.0/velocity-https-certificates.md), [Installing in one command](../features/6.0/install-in-one-command.md).
 - Specifications: [Velocity engine settings](../specifications/6.0/velocity-engine-settings.md), [worker pool](../specifications/6.0/velocity-worker-pool.md), [HTTP/2 and security](../specifications/6.0/velocity-http2-and-security.md).
