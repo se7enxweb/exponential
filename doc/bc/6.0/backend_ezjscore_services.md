@@ -703,3 +703,272 @@ no `$.isArray`, `$.trim` and the like). In-page unit tests cover the core (node 
 unavailable handling, text safety) and, for the reactive design, keyed reordering with node identity kept, handler
 replacement, text safety, the store (reducer, subscribe on change only, effects) and the route table. expui's browser
 harness (`/expui/test`) is an admin page tied to admin sessions, so the portal tests run in the Playwright page instead.
+
+## Users and access (nine domains, 195 services)
+
+Classes in `extension/expservices/classes/users/`, tests in `tests/tests/extension/expservices/users/` (113 tests, run
+against the live database; they create a test group, test users, a test role, test sessions and collaboration items and
+remove them again). Users are addressed by content object id, user groups by node id, roles and policies by id.
+
+Rules that hold for every service of these domains:
+
+- Nothing returns a password hash, activation or reset key, session key or session data. Login, e-mail and account state
+  of a user are only returned for oneself or for a user the caller may edit (`content/edit` on the user object); other
+  callers get the public part (id, name, node, class).
+- Writes are POST with the form token (`expsession::token`), checked against the policy shown in the table, and recorded
+  as `service.<domain>.<method>` plus, where the kernel records one, its own `access.*` event (role, policy, user,
+  password and reset events are written by the kernel code the services call).
+- Roles are edited like the role editor does: `exprole::draftCreate`, `draftAddPolicy`, `draftRemovePolicy`, `publish`
+  (or `draftDiscard`); `exppolicy` changes the published role directly and validates module, function and limitation
+  names against the module definition.
+- `expaccount` carries the public flows. The reset and activation keys travel by e-mail only and expire after 24 hours
+  through the services; `forgotRequest` answers the same for known and unknown addresses. Where a write is open to
+  visitors its access is the login or registration policy of the user module (the catalogue allows no public write).
+- A collaboration item is visible to its participants only (everybody else gets 404); approve and deny need the approver role
+  and a waiting approval, and leave the workflow to resume exactly as the kernel's own view does.
+- `expsessionadmin` names a session by a short derived identifier; listing and ending other sessions needs
+  `setup/administrate`. Session counts read the `ezsession` table, which is empty when the PHP file session handler is used
+  (`expsessionadmin::settings` says which handler is active).
+With great power comes great responsibility.
+
+#### `expuser` (42 services)
+
+| Service | Access | Write | Arguments | Summary |
+|---|---|---|---|---|
+| `expuser::current` | public |  |  | The current user: id, name, groups, and the private data of oneself |
+| `expuser::fetch` | user |  | id:int | A user by content object id; login, e-mail and state only for oneself or users the caller may edit |
+| `expuser::byLogin` | user |  | login:string | A user by login name |
+| `expuser::byEmail` | user |  | email:string | A user by e-mail address, only when the caller may see that user's private data |
+| `expuser::exists` | public |  | login:string | Whether a login name is taken |
+| `expuser::search` | user |  | query:string, limit:int, offset:int | Search users by login or name (2 characters or more) |
+| `expuser::listAll` | user |  | limit:int, offset:int | All users, paged |
+| `expuser::count` | user |  |  | The number of users |
+| `expuser::listByGroup` | user |  | group:int, limit:int, offset:int | The users directly in a user group (group node id), paged |
+| `expuser::loggedIn` | setup/administrate |  | limit:int, offset:int | The users with an active session |
+| `expuser::loggedInCount` | setup/administrate |  |  | Logged in registered and anonymous sessions |
+| `expuser::isOnline` | user |  | id:int | Whether a user has an active session |
+| `expuser::profile` | user |  | id:int | The content attributes of a user (not the account), oneself when no id |
+| `expuser::updateProfile` | user | POST | id:int, fields:json | Update profile attributes of a user the caller may edit (POST id, fields JSON) |
+| `expuser::create` | user | POST | group:int, login:string, email:string, password:string, fields:json, enabled:bool, class:string | Create a user in a group (POST group, login, email, password, fields, enabled, class) |
+| `expuser::remove` | user | POST | id:int | Move a user to the trash (POST id) |
+| `expuser::enable` | user | POST | id:int | Enable an account (POST id) |
+| `expuser::disable` | user | POST | id:int | Disable an account and end its sessions (POST id) |
+| `expuser::unlock` | user | POST | id:int | Reset the failed login counter (POST id) |
+| `expuser::setPassword` | user | POST | id:int, password:string | Set another user's password, ends their sessions (POST id, password) |
+| `expuser::changeEmail` | user | POST | id:int, email:string | Change the e-mail address of a user the caller may edit (POST id, email) |
+| `expuser::changeLogin` | user | POST | id:int, login:string | Change the login name of a user the caller may edit (POST id, login) |
+| `expuser::loginInfo` | user |  | id:int | Login count, last visit, failed attempts, lock and online state |
+| `expuser::lastVisit` | user |  | id:int | The last visit of a user |
+| `expuser::settings` | user |  | id:int | Account settings: enabled and the maximum number of logins |
+| `expuser::setMaxLogin` | user | POST | id:int, max_login:int | Change the maximum number of simultaneous logins (POST id, max_login) |
+| `expuser::validateLogin` | public |  | login:string | Check a login name against the validation rules and whether it is taken |
+| `expuser::validatePassword` | public |  | password:string | Check a password against the length rule |
+| `expuser::passwordPolicy` | public |  |  | The password and e-mail rules of the site |
+| `expuser::generatePassword` | user |  | length:int | A generated password |
+| `expuser::rolesOf` | role/list |  | id:int | The roles a user has, directly and through groups |
+| `expuser::groupsOf` | user |  | id:int | The groups a user is a member of |
+| `expuser::effectivePolicies` | role/list |  | id:int, limit:int, offset:int | The effective module/function access of a user, paged |
+| `expuser::limitations` | role/list |  | id:int | The limited role assignments of a user |
+| `expuser::hasAccess` | public |  | module:string, function:string | Whether the current user has access to a module and function |
+| `expuser::hasAccessOf` | role/list |  | id:int, module:string, function:string | Whether a given user has access to a module and function |
+| `expuser::canNode` | public |  | node:int | The current user's rights on a node: read, edit, remove, create, move, hide, translate |
+| `expuser::accessSummary` | user |  |  | The modules and functions the current user has any access to |
+| `expuser::canLoginTo` | role/list |  | id:int, siteaccess:string | Whether a user may log in to a siteaccess |
+| `expuser::hashTypes` | user |  |  | The password hash types and the default |
+| `expuser::userClasses` | user |  |  | The content class identifiers of users and of user groups |
+| `expuser::anonymous` | public |  |  | The id of the anonymous user |
+
+#### `expusergroup` (20 services)
+
+| Service | Access | Write | Arguments | Summary |
+|---|---|---|---|---|
+| `expusergroup::root` | user |  |  | The users root node, the default placement and the group classes |
+| `expusergroup::tree` | user |  | group:int, depth:int | The group tree below a node, to a depth (default the users root, depth 3) |
+| `expusergroup::fetch` | user |  | group:int | A user group by node id |
+| `expusergroup::children` | user |  | group:int, limit:int, offset:int | The subgroups of a group, paged |
+| `expusergroup::subgroupCount` | user |  | group:int | The number of subgroups |
+| `expusergroup::path` | user |  | group:int | The path from the root to a group |
+| `expusergroup::parent` | user |  | group:int | The parent group |
+| `expusergroup::search` | user |  | query:string, limit:int, offset:int | Search groups by name |
+| `expusergroup::members` | user |  | group:int, limit:int, offset:int | The users directly in a group, paged |
+| `expusergroup::memberCount` | user |  | group:int | The number of users directly in a group |
+| `expusergroup::isMember` | user |  | user:int, group:int | Whether a user is directly in a group |
+| `expusergroup::ofUser` | user |  | id:int | The groups of a user |
+| `expusergroup::rolesOf` | role/list |  | group:int | The roles assigned to a group |
+| `expusergroup::create` | user | POST | parent:int, name:string, class:string, fields:json | Create a group (POST parent, name, class, fields) |
+| `expusergroup::rename` | user | POST | group:int, name:string | Rename a group (POST group, name) |
+| `expusergroup::remove` | user | POST | group:int, force:bool | Move a group to the trash (POST group, force for a group with children) |
+| `expusergroup::addMember` | user | POST | group:int, user:int | Add a user to a group, a new location (POST group, user) |
+| `expusergroup::removeMember` | user | POST | group:int, user:int | Remove a user from a group, never the last one (POST group, user) |
+| `expusergroup::moveMember` | user | POST | user:int, from:int, to:int | Move a user from one group to another (POST user, from, to) |
+| `expusergroup::addMembers` | user | POST | group:int, users:list | Add up to 100 users to a group (POST group, users) |
+
+#### `exprole` (26 services)
+
+| Service | Access | Write | Arguments | Summary |
+|---|---|---|---|---|
+| `exprole::listAll` | role/list |  | limit:int, offset:int | All roles, paged |
+| `exprole::count` | role/list |  |  | The number of roles |
+| `exprole::fetch` | role/list |  | id:int | A role by id |
+| `exprole::view` | role/view |  | id:int | A role with its policies and assignments |
+| `exprole::byName` | role/list |  | name:string | A role by name |
+| `exprole::exists` | role/list |  | name:string | Whether a role name exists |
+| `exprole::policies` | role/view |  | id:int, limit:int, offset:int | The policies of a role, paged |
+| `exprole::policyCount` | role/view |  | id:int | The number of policies of a role |
+| `exprole::assignments` | role/view |  | id:int, limit:int, offset:int | Who a role is assigned to, with limitations |
+| `exprole::assignmentsOf` | role/view |  | object:int | The roles assigned to a user or group object |
+| `exprole::byLimitation` | role/view |  | identifier:string, value:string | Roles assigned with a limitation (Subtree/Section, value) |
+| `exprole::create` | role/edit | POST | name:string | Create an empty role (POST name) |
+| `exprole::rename` | role/edit | POST | id:int, name:string | Rename a role (POST id, name) |
+| `exprole::copy` | role/edit | POST | id:int, name:string | Copy a role with its policies (POST id, optional name) |
+| `exprole::remove` | role/edit | POST | id:int, force:bool | Remove a role (POST id, force when it is assigned) |
+| `exprole::draftCreate` | role/edit | POST | id:int | Start editing: create (or return) the draft of a role (POST id) |
+| `exprole::draft` | role/edit |  | id:int | The draft of a role |
+| `exprole::draftRename` | role/edit | POST | id:int, name:string | Rename the draft (POST id, name) |
+| `exprole::draftAddPolicy` | role/edit | POST | id:int, module:string, function:string, limitations:json | Add a policy to the draft (POST id, module, function, limitations JSON) |
+| `exprole::draftRemovePolicy` | role/edit | POST | id:int, policy:int | Remove a policy from the draft (POST id, policy) |
+| `exprole::draftDiscard` | role/edit | POST | id:int | Throw the draft away (POST id) |
+| `exprole::publish` | role/edit | POST | id:int | Publish the draft: it replaces the policies of the role (POST id) |
+| `exprole::assign` | role/assign | POST | id:int, object:int, limit:string, limit_value:string | Assign a role to a user or group (POST id, object, limit subtree/section, limit_value) |
+| `exprole::unassign` | role/assign | POST | id:int, object:int, assignment:int | Remove an assignment (POST id, object, optional assignment id) |
+| `exprole::assigned` | role/view |  | id:int | The objects (users, groups) a role is assigned to |
+| `exprole::usersWith` | role/view |  | id:int, limit:int, offset:int | The users and groups holding a role |
+
+#### `exppolicy` (16 services)
+
+| Service | Access | Write | Arguments | Summary |
+|---|---|---|---|---|
+| `exppolicy::fetch` | role/view |  | id:int | A policy with its limitations |
+| `exppolicy::listOfRole` | role/view |  | id:int, limit:int, offset:int | The policies of a role, paged |
+| `exppolicy::limitations` | role/view |  | id:int | The limitations of a policy, identifier => values |
+| `exppolicy::summary` | role/view |  | id:int | A policy as one line of text |
+| `exppolicy::add` | role/edit | POST | role:int, module:string, function:string, limitations:json | Add a policy to a role, validated against the module (POST role, module, function, limitations) |
+| `exppolicy::remove` | role/edit | POST | id:int | Remove a policy (POST id) |
+| `exppolicy::setLimitations` | role/edit | POST | id:int, limitations:json | Replace all limitations of a policy (POST id, limitations) |
+| `exppolicy::addLimitation` | role/edit | POST | id:int, identifier:string, values:list | Add one limitation (POST id, identifier, values) |
+| `exppolicy::removeLimitation` | role/edit | POST | id:int, identifier:string | Remove one limitation (POST id, identifier) |
+| `exppolicy::copy` | role/edit | POST | id:int, role:int | Copy a policy into another role (POST id, role) |
+| `exppolicy::modules` | role/view |  |  | The modules a policy can name |
+| `exppolicy::functions` | role/view |  | module:string | The functions of a module |
+| `exppolicy::availableLimitations` | role/view |  | module:string, function:string | The limitation identifiers of a module function |
+| `exppolicy::limitationValues` | role/view |  | module:string, function:string, identifier:string, limit:int, offset:int | The values a limitation can take, paged |
+| `exppolicy::ofModule` | role/view |  | module:string, limit:int, offset:int | The policies naming a module, over all roles |
+| `exppolicy::findByLimitation` | role/view |  | identifier:string, value:string, limit:int, offset:int | The policies with a limitation identifier and value |
+
+#### `expsessionadmin` (16 services)
+
+| Service | Access | Write | Arguments | Summary |
+|---|---|---|---|---|
+| `expsessionadmin::own` | public |  |  | The current session: user, started, cookie, short identifier |
+| `expsessionadmin::ownList` | user |  | limit:int, offset:int | The active sessions of the current user (other devices) |
+| `expsessionadmin::ownCount` | user |  |  | The number of active sessions of the current user |
+| `expsessionadmin::ownRemove` | user | POST | id:string | End one of your own sessions (POST id) |
+| `expsessionadmin::ownRemoveOthers` | user | POST |  | End all your sessions except this one (POST) |
+| `expsessionadmin::regenerate` | user | POST |  | Issue a new session key for this session (POST) |
+| `expsessionadmin::listAll` | setup/administrate |  | limit:int, offset:int, registered:bool | The active sessions of the installation, paged |
+| `expsessionadmin::byUser` | setup/administrate |  | id:int, limit:int, offset:int | The sessions of a user |
+| `expsessionadmin::count` | setup/administrate |  |  | Active, expired and total sessions |
+| `expsessionadmin::stats` | setup/administrate |  |  | Registered and anonymous sessions and expired ones |
+| `expsessionadmin::expiredCount` | setup/administrate |  |  | The number of expired sessions |
+| `expsessionadmin::removeExpired` | setup/administrate | POST |  | Delete expired sessions (POST) |
+| `expsessionadmin::remove` | setup/administrate | POST | id:string | End a session by its identifier (POST id) |
+| `expsessionadmin::removeByUser` | setup/administrate | POST | id:int | End all sessions of a user but your own (POST id) |
+| `expsessionadmin::settings` | setup/administrate |  |  | Session handler and timeouts |
+| `expsessionadmin::handler` | setup/administrate |  |  | The session handler class and PHP save handler |
+
+#### `exppreferences` (13 services)
+
+| Service | Access | Write | Arguments | Summary |
+|---|---|---|---|---|
+| `exppreferences::get` | user |  | name:string | One preference of the current user |
+| `exppreferences::getMany` | user |  | names:list | Several preferences of the current user (comma separated names) |
+| `exppreferences::listAll` | user |  | limit:int, offset:int | All preferences of the current user, paged |
+| `exppreferences::byPrefix` | user |  | prefix:string, limit:int, offset:int | The preferences whose name starts with a prefix |
+| `exppreferences::exists` | user |  | name:string | Whether a preference is set |
+| `exppreferences::count` | user |  |  | The number of preferences of the current user |
+| `exppreferences::set` | user | POST | name:string, value:string | Set a preference (POST name, value) |
+| `exppreferences::setMany` | user | POST | values:json | Set up to 100 preferences (POST values JSON) |
+| `exppreferences::remove` | user | POST | name:string | Remove a preference (POST name) |
+| `exppreferences::increment` | user | POST | name:string, by:int | Add to a numeric preference (POST name, by) |
+| `exppreferences::listOf` | setup/administrate |  | id:int, limit:int, offset:int | The preferences of another user |
+| `exppreferences::getOf` | setup/administrate |  | id:int, name:string | One preference of another user |
+| `exppreferences::setOf` | setup/administrate | POST | user:int, name:string, value:string | Set a preference of another user (POST user, name, value) |
+
+#### `expnotification` (21 services)
+
+| Service | Access | Write | Arguments | Summary |
+|---|---|---|---|---|
+| `expnotification::settings` | notification/use |  |  | Digest settings, subscription count and collaboration types of the current user |
+| `expnotification::digestTypes` | notification/use |  |  | The digest types |
+| `expnotification::setDigest` | notification/use | POST | receive_digest:bool, digest_type:int, day:string, time:string | Set the digest settings (POST receive_digest, digest_type, day, time) |
+| `expnotification::subscriptions` | notification/use |  | limit:int, offset:int | The nodes the current user is subscribed to, paged |
+| `expnotification::subscriptionCount` | notification/use |  |  | The number of subscriptions |
+| `expnotification::isSubscribed` | notification/use |  | node:int | Whether the current user is subscribed to a node |
+| `expnotification::subscribe` | notification/use | POST | node:int, use_digest:bool | Subscribe to a node and its subtree (POST node, use_digest) |
+| `expnotification::unsubscribe` | notification/use | POST | node:int | Unsubscribe from a node (POST node) |
+| `expnotification::unsubscribeAll` | notification/use | POST |  | Remove all subscriptions of the current user (POST) |
+| `expnotification::setDigestForSubscription` | notification/use | POST | node:int, use_digest:bool | Turn the digest on or off for one subscription (POST node, use_digest) |
+| `expnotification::collaborationTypes` | notification/use |  |  | The collaboration notification types the current user receives |
+| `expnotification::subscribeCollaboration` | notification/use | POST | type:string | Receive notifications of a collaboration type (POST type) |
+| `expnotification::unsubscribeCollaboration` | notification/use | POST | type:string | Stop receiving a collaboration type (POST type) |
+| `expnotification::handlers` | notification/administrate |  |  | The notification handlers |
+| `expnotification::eventTypes` | notification/administrate |  |  | The available notification event types |
+| `expnotification::subscriptionsOf` | notification/administrate |  | id:int, limit:int, offset:int | The subscriptions of a user |
+| `expnotification::subscribeUser` | notification/administrate | POST | user:int, node:int, use_digest:bool | Subscribe a user to a node (POST user, node, use_digest) |
+| `expnotification::unsubscribeUser` | notification/administrate | POST | user:int, node:int | Unsubscribe a user from a node (POST user, node) |
+| `expnotification::subscribers` | notification/administrate |  | node:int, limit:int, offset:int | The users subscribed to a node |
+| `expnotification::events` | notification/administrate |  | limit:int, offset:int | The notification events, newest first, paged |
+| `expnotification::queue` | notification/administrate |  |  | The size of the notification queue |
+
+#### `expcollaboration` (22 services)
+
+| Service | Access | Write | Arguments | Summary |
+|---|---|---|---|---|
+| `expcollaboration::items` | user |  | limit:int, offset:int, status:string, is_read:bool, group:int | The collaboration items of the current user, paged (status active/inactive/archive, is_read, group) |
+| `expcollaboration::itemCount` | user |  | status:string, is_read:bool, group:int | The number of items, same filters |
+| `expcollaboration::summary` | user |  |  | Active, unread, archived and pending approval counts |
+| `expcollaboration::fetch` | user |  | id:int | One item, for participants |
+| `expcollaboration::messages` | user |  | id:int, limit:int, offset:int | The messages of an item, paged |
+| `expcollaboration::messageCount` | user |  | id:int | The message and unread message count of an item |
+| `expcollaboration::addMessage` | user | POST | item:int, text:string | Add a message to an item (POST item, text) |
+| `expcollaboration::participants` | user |  | id:int | The participants of an item with type and role |
+| `expcollaboration::markRead` | user | POST | item:int | Mark an item read (POST item) |
+| `expcollaboration::setActive` | user | POST | item:int, active:bool | Show or hide an item in the current user's list (POST item, active) |
+| `expcollaboration::handlers` | user |  |  | The active collaboration handlers |
+| `expcollaboration::groups` | user |  | limit:int, offset:int | The collaboration groups of the current user |
+| `expcollaboration::groupInfo` | user |  | id:int | One collaboration group |
+| `expcollaboration::groupItems` | user |  | id:int, limit:int, offset:int | The items of a group, paged |
+| `expcollaboration::groupCreate` | user | POST | title:string, parent:int | Create a group (POST title, parent) |
+| `expcollaboration::groupRename` | user | POST | group:int, title:string | Rename a group (POST group, title) |
+| `expcollaboration::groupRemove` | user | POST | group:int | Remove an empty group (POST group) |
+| `expcollaboration::moveToGroup` | user | POST | item:int, group:int | Put an item in a group (POST item, group) |
+| `expcollaboration::pendingApprovals` | user |  | limit:int, offset:int | The approvals waiting for the current user |
+| `expcollaboration::approvalStatus` | user |  | id:int | The state of an approval item and whether the current user may decide |
+| `expcollaboration::approve` | user | POST | item:int, comment:string | Approve a waiting item as an approver (POST item, comment) |
+| `expcollaboration::deny` | user | POST | item:int, comment:string | Deny a waiting item as an approver (POST item, comment) |
+
+#### `expaccount` (19 services)
+
+| Service | Access | Write | Arguments | Summary |
+|---|---|---|---|---|
+| `expaccount::registrationOptions` | public |  |  | Whether registration is open and how it is verified |
+| `expaccount::register` | user/register | POST | login:string, email:string, password:string, fields:json | Register a new account (POST login, email, password, fields) |
+| `expaccount::activationKeyValid` | public |  | key:string | Whether an activation key is valid |
+| `expaccount::activate` | user/login | POST | key:string | Activate an account with the key from the activation mail (POST key) |
+| `expaccount::forgotRequest` | user/login | POST | email:string | Mail a password reset link, the same answer for known and unknown addresses (POST email) |
+| `expaccount::forgotKeyValid` | public |  | key:string | Whether a reset key is valid |
+| `expaccount::reset` | user/login | POST | key:string, password:string | Set a new password with a reset key (POST key, password) |
+| `expaccount::changePassword` | user | POST | old_password:string, new_password:string, confirm_password:string | Change your password with the old one (POST old_password, new_password, confirm_password) |
+| `expaccount::changeEmail` | user | POST | password:string, email:string | Change your e-mail address, confirmed with the password (POST password, email) |
+| `expaccount::me` | user |  |  | Your account: profile data, groups, role count |
+| `expaccount::myRoles` | user |  |  | Your roles |
+| `expaccount::myGroups` | user |  |  | Your groups |
+| `expaccount::myLoginInfo` | user |  |  | Your login count, last visit and failed attempts |
+| `expaccount::updateMyProfile` | user | POST | fields:json | Update your own profile attributes (POST fields) |
+| `expaccount::unactivated` | role/list |  | limit:int, offset:int | The accounts waiting for activation, paged |
+| `expaccount::unactivatedCount` | role/list |  |  | The number of accounts waiting for activation |
+| `expaccount::activateUser` | user | POST | id:int | Activate an account by hand (POST id) |
+| `expaccount::pendingResets` | role/list |  |  | The number of open password reset requests |
+| `expaccount::cancelReset` | user | POST | id:int | Cancel the open reset requests of a user (POST id) |
+
+Total: 195 services.
