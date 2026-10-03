@@ -4700,6 +4700,110 @@
         <source>Date trashed</source>
         <translation>Gelöscht am</translation>
     </message>
+    <message>
+        <source>Any</source>
+        <translation>Beliebig</translation>
+    </message>
+    <message>
+        <source>Anyone</source>
+        <translation>Beliebiger Benutzer</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Details</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Sprachen</translation>
+    </message>
+    <message>
+        <source>Last modified by</source>
+        <translation>Zuletzt geändert von</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>No item in the trash matches the filter.</source>
+        <translation>Kein Element im Papierkorb entspricht dem Filter.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>Other locations</source>
+        <translation>Weitere Positionen</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Besitzer</translation>
+    </message>
+    <message>
+        <source>Parent exists: restores to its original place.</source>
+        <translation>Das übergeordnete Element existiert: Wiederherstellung an der ursprünglichen Position.</translation>
+    </message>
+    <message>
+        <source>Parent has moved: choose a place when restoring.</source>
+        <translation>Das übergeordnete Element wurde verschoben: Wählen Sie beim Wiederherstellen eine Position.</translation>
+    </message>
+    <message>
+        <source>Parent is in the trash too: restore it first.</source>
+        <translation>Das übergeordnete Element liegt ebenfalls im Papierkorb: Stellen Sie es zuerst wieder her.</translation>
+    </message>
+    <message>
+        <source>Parent no longer exists: choose a place when restoring.</source>
+        <translation>Das übergeordnete Element existiert nicht mehr: Wählen Sie beim Wiederherstellen eine Position.</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Restore this item: to its original place, or choose another one.</source>
+        <translation>Dieses Element wiederherstellen: an der ursprünglichen Position oder an einer anderen.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alle anzeigen</translation>
+    </message>
+    <message>
+        <source>Show only the items that match.</source>
+        <translation>Nur passende Elemente anzeigen.</translation>
+    </message>
+    <message>
+        <source>Still in the tree at</source>
+        <translation>Noch im Baum unter</translation>
+    </message>
+    <message>
+        <source>Trashed by</source>
+        <translation>In den Papierkorb verschoben von</translation>
+    </message>
+    <message>
+        <source>Trashed from</source>
+        <translation>In den Papierkorb verschoben aus</translation>
+    </message>
+    <message>
+        <source>Where the removal came from</source>
+        <translation>Woher das Entfernen kam</translation>
+    </message>
+    <message>
+        <source>by unknown</source>
+        <translation>von unbekannt</translation>
+    </message>
+    <message>
+        <source>to</source>
+        <translation>bis</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/upload</name>
@@ -5414,6 +5518,10 @@
     <message>
         <source>Defined URL aliases with wildcard(%wildcard_count)</source>
         <translation>URL Aliase mit Platzhaltern (%wildcard_count)</translation>
+    </message>
+    <message>
+        <source>Enter the destination URL for the new wildcard. Example: dev/{1}</source>
+        <translation>Geben Sie die Ziel-URL für den neuen Platzhalter ein. Beispiel: dev/{1}</translation>
     </message>
 </context>
 <context>
@@ -6517,6 +6625,38 @@
     <message>
         <source>If redirection fails, click on the following address: %url.</source>
         <translation>Falls die Weiterleitung fehlschlägt, klicken Sie bitte auf die folgende Adresse: %url.</translation>
+    </message>
+    <message>
+        <source>Check the address for a typing mistake.</source>
+        <translation>Prüfen Sie die Adresse auf Tippfehler.</translation>
+    </message>
+    <message>
+        <source>Error code: kernel 21 (page not found)</source>
+        <translation>Fehlercode: kernel 21 (Seite nicht gefunden)</translation>
+    </message>
+    <message>
+        <source>If the page belongs to an extension, the extension may not be active on this site.</source>
+        <translation>Gehört die Seite zu einer Erweiterung, ist die Erweiterung auf dieser Website möglicherweise nicht aktiv.</translation>
+    </message>
+    <message>
+        <source>If the site uses the address to choose a siteaccess (for example /admin/...), make sure the siteaccess name is at the start of the address.</source>
+        <translation>Wählt die Website anhand der Adresse einen Siteaccess aus (zum Beispiel /admin/...), stellen Sie sicher, dass der Siteaccess-Name am Anfang der Adresse steht.</translation>
+    </message>
+    <message>
+        <source>The address does not lead to a page of the system.</source>
+        <translation>Die Adresse führt zu keiner Seite des Systems.</translation>
+    </message>
+    <message>
+        <source>This page does not exist</source>
+        <translation>Diese Seite existiert nicht</translation>
+    </message>
+    <message>
+        <source>Use the menu or the tabs to get to the page instead of a saved link; the page may have moved or been renamed.</source>
+        <translation>Nutzen Sie das Menü oder die Reiter, um zur Seite zu gelangen, statt eines gespeicherten Links; die Seite wurde möglicherweise verschoben oder umbenannt.</translation>
+    </message>
+    <message>
+        <source>What you can do</source>
+        <translation>Was Sie tun können</translation>
     </message>
 </context>
 <context>
@@ -8438,6 +8578,150 @@
     <message>
         <source>Details of the top node: its node ID, depth and path, the number of sub items and the time of the latest change below it.</source>
         <translation>Details des Hauptknotens: Knoten-ID, Tiefe und Pfad, Anzahl der Unterelemente und Zeitpunkt der letzten Änderung darunter.</translation>
+    </message>
+    <message>
+        <source>Add a location for selected</source>
+        <translation>Position für die Auswahl hinzufügen</translation>
+    </message>
+    <message>
+        <source>Class menu</source>
+        <translation>Klassenmenü</translation>
+    </message>
+    <message>
+        <source>Click to copy</source>
+        <translation>Zum Kopieren klicken</translation>
+    </message>
+    <message>
+        <source>Click to copy the remote ID</source>
+        <translation>Zum Kopieren der Remote-ID klicken</translation>
+    </message>
+    <message>
+        <source>Column name</source>
+        <translation>Spaltenname</translation>
+    </message>
+    <message>
+        <source>Column presets:</source>
+        <translation>Spaltenvorgaben:</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopiert</translation>
+    </message>
+    <message>
+        <source>Delete preset</source>
+        <translation>Vorgabe löschen</translation>
+    </message>
+    <message>
+        <source>Download the items with the visible columns as a CSV file</source>
+        <translation>Die Elemente mit den sichtbaren Spalten als CSV-Datei herunterladen</translation>
+    </message>
+    <message>
+        <source>Drag a column to move it, or use its arrow buttons.</source>
+        <translation>Ziehen Sie eine Spalte, um sie zu verschieben, oder nutzen Sie ihre Pfeiltasten.</translation>
+    </message>
+    <message>
+        <source>Enter number</source>
+        <translation>Zahl eingeben</translation>
+    </message>
+    <message>
+        <source>Export CSV</source>
+        <translation>CSV exportieren</translation>
+    </message>
+    <message>
+        <source>Find a column:</source>
+        <translation>Spalte suchen:</translation>
+    </message>
+    <message>
+        <source>Hidden by a parent</source>
+        <translation>Durch übergeordneten Knoten verborgen</translation>
+    </message>
+    <message>
+        <source>Language to edit</source>
+        <translation>Zu bearbeitende Sprache</translation>
+    </message>
+    <message>
+        <source>Move %name down</source>
+        <translation>%name nach unten verschieben</translation>
+    </message>
+    <message>
+        <source>Move %name up</source>
+        <translation>%name nach oben verschieben</translation>
+    </message>
+    <message>
+        <source>Name of the new preset</source>
+        <translation>Name der neuen Vorgabe</translation>
+    </message>
+    <message>
+        <source>No columns match.</source>
+        <translation>Keine Spalte passt.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Knoten</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>Not copied</source>
+        <translation>Nicht kopiert</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Objekt</translation>
+    </message>
+    <message>
+        <source>Order of the visible columns:</source>
+        <translation>Reihenfolge der sichtbaren Spalten:</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Andere</translation>
+    </message>
+    <message>
+        <source>Please enter a valid number between 1 and 10000</source>
+        <translation>Bitte geben Sie eine gültige Zahl zwischen 1 und 10000 ein</translation>
+    </message>
+    <message>
+        <source>Preset</source>
+        <translation>Vorgabe</translation>
+    </message>
+    <message>
+        <source>Preview the current version</source>
+        <translation>Vorschau der aktuellen Version</translation>
+    </message>
+    <message>
+        <source>Remote ID</source>
+        <translation>Remote-ID</translation>
+    </message>
+    <message>
+        <source>Save current as...</source>
+        <translation>Aktuelle speichern als...</translation>
+    </message>
+    <message>
+        <source>Secondary location</source>
+        <translation>Zusätzliche Position</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>View on site</source>
+        <translation>Auf der Website ansehen</translation>
+    </message>
+    <message>
+        <source>View on site (new window)</source>
+        <translation>Auf der Website ansehen (neues Fenster)</translation>
+    </message>
+    <message>
+        <source>by</source>
+        <translation>von</translation>
+    </message>
+    <message>
+        <source>locations</source>
+        <translation>Positionen</translation>
     </message>
 </context>
 <context>
@@ -10400,11 +10684,39 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Store</source>
         <translation>Shop</translation>
     </message>
+    <message>
+        <source>Advanced search</source>
+        <translation>Erweiterte Suche</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Dunkler Modus</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Heller Modus</translation>
+    </message>
+    <message>
+        <source>Open the site</source>
+        <translation>Website öffnen</translation>
+    </message>
+    <message>
+        <source>Switch between light and dark mode</source>
+        <translation>Zwischen hellem und dunklem Modus wechseln</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
     <message>
         <source>Show / Hide leftmenu</source>
+        <translation>Linkes Menü ein-/ausblenden</translation>
+    </message>
+    <message>
+        <source>Hide / Show leftmenu</source>
         <translation>Linkes Menü ein-/ausblenden</translation>
     </message>
 </context>
@@ -11286,6 +11598,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Preview</source>
         <translation>Vorschau</translation>
+    </message>
+    <message>
+        <source>Upload multiple files</source>
+        <translation>Mehrere Dateien hochladen</translation>
     </message>
 </context>
 <context>
@@ -17212,6 +17528,154 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Implements the RSS import handler interface</source>
         <translation>Implementiert die Schnittstelle für RSS-Import-Handler</translation>
     </message>
+    <message>
+        <source>A column the admin sub-items list offers under Table options, computed for the visible rows of the current page and exported with the CSV. One [Column_&lt;key&gt;] block per column, which names a class, a static method or a template; for example [Column_wordcount] with Handler=myExtColumns::wordCount adds a column whose value that method returns.</source>
+        <translation>Eine Spalte, die die Unterelementliste der Administration unter den Tabellenoptionen anbietet. Sie wird für die sichtbaren Zeilen der aktuellen Seite berechnet und mit dem CSV-Export ausgegeben. Pro Spalte gibt es einen Block [Column_&lt;key&gt;], der eine Klasse, eine statische Methode oder ein Template benennt; zum Beispiel fügt [Column_wordcount] mit Handler=myExtColumns::wordCount eine Spalte hinzu, deren Wert diese Methode liefert.</translation>
+    </message>
+    <message>
+        <source>A kind of large content operation that runs in the background in batches, with a progress page, cancel and resume (content/job/&lt;id&gt;, exp:expcontentjob). The kernel ships remove, copy, move, hide, reveal, section, state, addlocation and removelocation; an extension adds its own, for example JobTypes[republish]=myExtJobRepublish.</source>
+        <translation>Eine Art umfangreicher Inhaltsoperation, die im Hintergrund in Stapeln läuft, mit Fortschrittsseite sowie Abbrechen und Fortsetzen (content/job/&lt;id&gt;, exp:expcontentjob). Der Kernel liefert remove, copy, move, hide, reveal, section, state, addlocation und removelocation; eine Erweiterung fügt eigene hinzu, zum Beispiel JobTypes[republish]=myExtJobRepublish.</translation>
+    </message>
+    <message>
+        <source>A subclass of a command, cronjob part or view class, named in site.ini [RunnableSettings] Implementation[]. The file of the command, part or view stays as it is; Runnable::create() makes the subclass instead, and an entry that is not a subclass is ignored. A command reads it from settings/site.ini and settings/override only, because it starts before its siteaccess and extensions are loaded.</source>
+        <translation>Eine Unterklasse einer Kommando-, Cronjob-Teil- oder View-Klasse, die in site.ini [RunnableSettings] Implementation[] genannt wird. Die Datei des Kommandos, Teils oder Views bleibt unverändert; Runnable::create() erzeugt stattdessen die Unterklasse, und ein Eintrag, der keine Unterklasse ist, wird ignoriert. Ein Kommando liest den Eintrag nur aus settings/site.ini und settings/override, da es startet, bevor sein Siteaccess und die Erweiterungen geladen sind.</translation>
+    </message>
+    <message>
+        <source>A word of the exp:ini command (console exp:ini &lt;action&gt; ...) or a place it can write settings. The kernel ships get, set, add, rem, clear, toggle, copy, where, list, scopes and actions; an extension adds its own, for example Actions[dump]=myExtIniActionDump makes "exp:ini dump" run that class, and ScopeProviders[]=myExtIniScopeProvider adds scopes such as a directory every cluster node shares.</source>
+        <translation>Ein Wort des Kommandos exp:ini (console exp:ini &lt;action&gt; ...) oder ein Ort, an den es Einstellungen schreiben kann. Der Kernel liefert get, set, add, rem, clear, toggle, copy, where, list, scopes und actions; eine Erweiterung fügt eigene hinzu, zum Beispiel lässt Actions[dump]=myExtIniActionDump "exp:ini dump" diese Klasse ausführen, und ScopeProviders[]=myExtIniScopeProvider ergänzt Geltungsbereiche wie ein Verzeichnis, das alle Cluster-Knoten gemeinsam nutzen.</translation>
+    </message>
+    <message>
+        <source>Audit alert rule classes</source>
+        <translation>Klassen für Audit-Alarmregeln</translation>
+    </message>
+    <message>
+        <source>Audit archive formats</source>
+        <translation>Audit-Archivformate</translation>
+    </message>
+    <message>
+        <source>Audit sinks</source>
+        <translation>Audit-Ziele</translation>
+    </message>
+    <message>
+        <source>Audit taxonomy branches</source>
+        <translation>Zweige der Audit-Taxonomie</translation>
+    </message>
+    <message>
+        <source>Command, cronjob part or view re-implemented</source>
+        <translation>Neu implementiertes Kommando, Cronjob-Teil oder View</translation>
+    </message>
+    <message>
+        <source>Content job type</source>
+        <translation>Inhaltsjob-Typ</translation>
+    </message>
+    <message>
+        <source>Content job types</source>
+        <translation>Inhaltsjob-Typen</translation>
+    </message>
+    <message>
+        <source>Debug bar presets</source>
+        <translation>Voreinstellungen der Debug-Leiste</translation>
+    </message>
+    <message>
+        <source>Debug bar settings</source>
+        <translation>Einstellungen der Debug-Leiste</translation>
+    </message>
+    <message>
+        <source>Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.</source>
+        <translation>Jedes Kommando in bin/, jeder Cronjob-Teil in cronjobs/ und jeder Modul-View ist eine Klasse; eine in site.ini genannte Unterklasse läuft an ihrer Stelle, und Listener können vor und nach jedem davon eingreifen. Beispiel: Ein Site-Override mit Implementation[Exponential\View\Kernel\Content\History]=myHistoryView lässt content/history die Klasse myHistoryView ausführen, die die Kernel-Klasse erweitert und nur ändert, was sie überschreibt.</translation>
+    </message>
+    <message>
+        <source>Server functions of ezjscore</source>
+        <translation>Serverfunktionen von ezjscore</translation>
+    </message>
+    <message>
+        <source>Subitems table column</source>
+        <translation>Spalte der Unterelementtabelle</translation>
+    </message>
+    <message>
+        <source>Subitems table columns</source>
+        <translation>Spalten der Unterelementtabelle</translation>
+    </message>
+    <message>
+        <source>commands, cronjob parts and views as classes</source>
+        <translation>Kommandos, Cronjob-Teile und Views als Klassen</translation>
+    </message>
+    <message>
+        <source>content.ini [ContentJobSettings] JobTypes[&lt;name&gt;]=&lt;class&gt; in extension/&lt;name&gt;/settings/content.ini.append.php</source>
+        <translation>content.ini [ContentJobSettings] JobTypes[&lt;name&gt;]=&lt;class&gt; in extension/&lt;name&gt;/settings/content.ini.append.php</translation>
+    </message>
+    <message>
+        <source>events</source>
+        <translation>Ereignisse</translation>
+    </message>
+    <message>
+        <source>exp:ini action or settings scope</source>
+        <translation>exp:ini-Aktion oder Einstellungs-Geltungsbereich</translation>
+    </message>
+    <message>
+        <source>exp:ini actions and scope providers</source>
+        <translation>exp:ini-Aktionen und Geltungsbereich-Anbieter</translation>
+    </message>
+    <message>
+        <source>extends expSubitemsColumn (value; html and text to change how it is shown), or a static method ( node, settings, column ) returning the value, or a template getting $node, $column and $key</source>
+        <translation>erweitert expSubitemsColumn (value; html und text, um die Darstellung zu ändern), oder eine statische Methode ( node, settings, column ), die den Wert liefert, oder ein Template, das $node, $column und $key erhält</translation>
+    </message>
+    <message>
+        <source>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</source>
+        <translation>erweitert die Klasse, die sie ersetzt: darunter Exponential\Runnable\Command, CronjobPart oder ModuleView</translation>
+    </message>
+    <message>
+        <source>implements expContentJobType (validate, countNodes, locks, describe, prepare, runBatch, afterBatch, finish)</source>
+        <translation>implementiert expContentJobType (validate, countNodes, locks, describe, prepare, runBatch, afterBatch, finish)</translation>
+    </message>
+    <message>
+        <source>implements expIniAction (name, description, usage, run( expIniCommandContext )) or expIniScopeProvider (scopes( $root ))</source>
+        <translation>implementiert expIniAction (name, description, usage, run( expIniCommandContext )) oder expIniScopeProvider (scopes( $root ))</translation>
+    </message>
+    <message>
+        <source>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</source>
+        <translation>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</translation>
+    </message>
+    <message>
+        <source>interfaces and abstract classes</source>
+        <translation>Schnittstellen und abstrakte Klassen</translation>
+    </message>
+    <message>
+        <source>kernel classes replaced</source>
+        <translation>ersetzte Kernel-Klassen</translation>
+    </message>
+    <message>
+        <source>module views</source>
+        <translation>Modul-Views</translation>
+    </message>
+    <message>
+        <source>places the kernel looks</source>
+        <translation>Orte, an denen der Kernel sucht</translation>
+    </message>
+    <message>
+        <source>registry entries that name no class</source>
+        <translation>Registry-Einträge, die keine Klasse benennen</translation>
+    </message>
+    <message>
+        <source>settings that name a class</source>
+        <translation>Einstellungen, die eine Klasse benennen</translation>
+    </message>
+    <message>
+        <source>site.ini [RunnableSettings] Implementation[&lt;class&gt;]=&lt;subclass&gt;; listeners of runnable/&lt;kind&gt;/before and runnable/&lt;kind&gt;/after in [RunnableSettings] Listeners[]</source>
+        <translation>site.ini [RunnableSettings] Implementation[&lt;class&gt;]=&lt;subclass&gt;; Listener von runnable/&lt;kind&gt;/before und runnable/&lt;kind&gt;/after in [RunnableSettings] Listeners[]</translation>
+    </message>
+    <message>
+        <source>subitemscolumns.ini [Column_&lt;key&gt;] Class=&lt;class&gt;, Handler=&lt;class&gt;::&lt;method&gt; or Template=design:subitems/columns/&lt;name&gt;.tpl in extension/&lt;name&gt;/settings/subitemscolumns.ini.append.php; defaults and presets in subitems.ini</source>
+        <translation>subitemscolumns.ini [Column_&lt;key&gt;] Class=&lt;class&gt;, Handler=&lt;class&gt;::&lt;method&gt; oder Template=design:subitems/columns/&lt;name&gt;.tpl in extension/&lt;name&gt;/settings/subitemscolumns.ini.append.php; Voreinstellungen und Presets in subitems.ini</translation>
+    </message>
+    <message>
+        <source>template operators and functions</source>
+        <translation>Template-Operatoren und -Funktionen</translation>
+    </message>
+    <message>
+        <source>template overrides</source>
+        <translation>Template-Overrides</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -17478,6 +17942,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
     </message>
 </context>
 <context>
@@ -18090,6 +18578,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Whether each language keeps its own value. Turning this off after content exists leaves the translations behind, unreachable.</source>
         <translation>Ob jede Sprache ihren eigenen Wert behält. Dies auszuschalten, nachdem Inhalte existieren, lässt die Übersetzungen unerreichbar zurück.</translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/designextension</name>
@@ -18352,6 +18864,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
     </message>
 </context>
 <context>
@@ -19696,6 +20232,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Which template draws the attribute as a whole.</source>
         <translation>Welches Template das Attribut als Ganzes zeichnet.</translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/override</name>
@@ -19902,6 +20462,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Overrides are switched on and the map has been generated, so one written here will be loaded.</source>
         <translation>Overrides sind eingeschaltet und die Map ist erzeugt; ein hier geschriebener Override wird also geladen.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
     </message>
 </context>
 <context>
@@ -20246,6 +20830,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/module</name>
@@ -20480,6 +21088,34 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
+    </message>
+    <message>
+        <source>module.php</source>
+        <translation>module.php</translation>
     </message>
 </context>
 <context>
@@ -20755,6 +21391,34 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
         <translation>Wenn Sie eine Stelle suchen, um Verhalten zu ändern: dies sind die Stellen, die noch niemand beansprucht hat.</translation>
+    </message>
+    <message>
+        <source>Actions and scopes of exp:ini</source>
+        <translation>Aktionen und Geltungsbereiche von exp:ini</translation>
+    </message>
+    <message>
+        <source>Commands, cronjob parts and views as classes</source>
+        <translation>Kommandos, Cronjob-Teile und Views als Klassen</translation>
+    </message>
+    <message>
+        <source>Registries</source>
+        <translation>Registries</translation>
+    </message>
+    <message>
+        <source>commands, cronjob parts and views to re-implement</source>
+        <translation>Neu zu implementierende Kommandos, Cronjob-Teile und Views</translation>
+    </message>
+    <message>
+        <source>exp:ini registrations that cannot work</source>
+        <translation>exp:ini-Registrierungen, die nicht funktionieren können</translation>
+    </message>
+    <message>
+        <source>re-implementations that cannot work</source>
+        <translation>Neuimplementierungen, die nicht funktionieren können</translation>
+    </message>
+    <message>
+        <source>registry entries that cannot work</source>
+        <translation>Registry-Einträge, die nicht funktionieren können</translation>
     </message>
 </context>
 <context>
@@ -21255,6 +21919,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Nothing at all. For content that is never shown anywhere but on its own page.</source>
         <translation>Gar nichts. Für Inhalte, die nirgends außer auf ihrer eigenen Seite angezeigt werden.</translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/template</name>
@@ -21573,6 +22261,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>A fetch with its arguments already decided, called by one short name.</source>
         <translation>Ein Fetch mit bereits festgelegten Argumenten, aufgerufen über einen kurzen Namen.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
     </message>
 </context>
 <context>
@@ -22035,6 +22747,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation>Der unten genannte Lizenztext. Standardmäßig eingeschaltet: eine Extension ohne Lizenzdatei sagt nichts darüber, wie sie verwendet werden darf.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
     </message>
 </context>
 <context>
@@ -24913,6 +25649,38 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>Register new account</source>
         <translation>Neues Konto registrieren</translation>
     </message>
+    <message>
+        <source>Administration of %site</source>
+        <translation>Administration von %site</translation>
+    </message>
+    <message>
+        <source>Forgot your password?</source>
+        <translation>Passwort vergessen?</translation>
+    </message>
+    <message>
+        <source>Hide password</source>
+        <translation>Passwort verbergen</translation>
+    </message>
+    <message>
+        <source>No account yet?</source>
+        <translation>Noch kein Konto?</translation>
+    </message>
+    <message>
+        <source>Show password</source>
+        <translation>Passwort anzeigen</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Anmelden</translation>
+    </message>
+    <message>
+        <source>Sign in to Exponential</source>
+        <translation>Bei Exponential anmelden</translation>
+    </message>
+    <message>
+        <source>Signing in…</source>
+        <translation>Anmeldung läuft…</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/password</name>
@@ -25467,6 +26235,82 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>Update overrides</source>
         <translation>Overrides aktualisieren</translation>
+    </message>
+    <message>
+        <source>Clear the filter to move overrides.</source>
+        <translation>Löschen Sie den Filter, um Overrides zu verschieben.</translation>
+    </message>
+    <message>
+        <source>Defined by an extension; its order and conditions can be changed here, removing it is done in the extension</source>
+        <translation>Von einer Erweiterung definiert; Reihenfolge und Bedingungen können hier geändert werden, das Entfernen erfolgt in der Erweiterung</translation>
+    </message>
+    <message>
+        <source>Drag to move</source>
+        <translation>Zum Verschieben ziehen</translation>
+    </message>
+    <message>
+        <source>Filter this page</source>
+        <translation>Diese Seite filtern</translation>
+    </message>
+    <message>
+        <source>Name, file or condition</source>
+        <translation>Name, Datei oder Bedingung</translation>
+    </message>
+    <message>
+        <source>No conditions: used for every request of this template.</source>
+        <translation>Keine Bedingungen: wird für jede Anfrage dieses Templates verwendet.</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>Save conditions</source>
+        <translation>Bedingungen speichern</translation>
+    </message>
+    <message>
+        <source>Save the conditions edited above. The order is saved on its own, as you move the overrides.</source>
+        <translation>Speichert die oben bearbeiteten Bedingungen. Die Reihenfolge wird beim Verschieben der Overrides eigenständig gespeichert.</translation>
+    </message>
+    <message>
+        <source>Saving...</source>
+        <translation>Speichern...</translation>
+    </message>
+    <message>
+        <source>Some overrides were not removed</source>
+        <translation>Einige Overrides wurden nicht entfernt</translation>
+    </message>
+    <message>
+        <source>The order could not be saved.</source>
+        <translation>Die Reihenfolge konnte nicht gespeichert werden.</translation>
+    </message>
+    <message>
+        <source>The overrides were not changed</source>
+        <translation>Die Overrides wurden nicht geändert</translation>
+    </message>
+    <message>
+        <source>These are defined by an extension, not in the siteaccess settings, and have to be removed there:</source>
+        <translation>Diese sind von einer Erweiterung definiert, nicht in den Siteaccess-Einstellungen, und müssen dort entfernt werden:</translation>
+    </message>
+    <message>
+        <source>Try earlier</source>
+        <translation>Früher versuchen</translation>
+    </message>
+    <message>
+        <source>Try later</source>
+        <translation>Später versuchen</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>extension</source>
+        <translation>Erweiterung</translation>
+    </message>
+    <message>
+        <source>siteaccess</source>
+        <translation>Siteaccess</translation>
     </message>
 </context>
 <context>
@@ -27861,6 +28705,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>(See &apos;%location&apos;)</source>
         <translation>(Siehe „%location“)</translation>
     </message>
+    <message>
+        <source>Default Open Graph image</source>
+        <translation>Standard-Open-Graph-Bild</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/class/datatype </name>
@@ -29929,6 +30777,22 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     <message>
         <source>ISBN %data_text</source>
         <translation>ISBN %data_text</translation>
+    </message>
+    <message>
+        <source>Canonical Link</source>
+        <translation>Kanonischer Link</translation>
+    </message>
+    <message>
+        <source>Open Graph image</source>
+        <translation>Open-Graph-Bild</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aktion</translation>
+    </message>
+    <message>
+        <source>Browse to add an existing object</source>
+        <translation>Durchsuchen, um ein vorhandenes Objekt hinzuzufügen</translation>
     </message>
 </context>
 <context>
@@ -43870,6 +44734,48 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <source>Invalid input.</source>
         <translation>Ungültige Eingabe.</translation>
     </message>
+    <message>
+        <source>Creditcard number is not a number</source>
+        <translation>Die Kreditkartennummer ist keine Zahl.</translation>
+    </message>
+    <message>
+        <source>Description should be shorter as 155 characters.</source>
+        <translation>Die Beschreibung sollte kürzer als 155 Zeichen sein.</translation>
+    </message>
+    <message>
+        <source>Name on creditcard not given</source>
+        <translation>Der Name auf der Kreditkarte fehlt.</translation>
+    </message>
+    <message>
+        <source>Please enter the correct CVV2 code.</source>
+        <translation>Bitte geben Sie den richtigen CVV2-Code ein.</translation>
+    </message>
+    <message>
+        <source>Syndicate</source>
+        <comment>Datatype name</comment>
+        <translation>Syndizierung</translation>
+    </message>
+    <message>
+        <source>The creditcard was not accepted.
+                                                                  Please check the creditcard data.</source>
+        <translation>Die Kreditkarte wurde nicht akzeptiert. Bitte prüfen Sie die Kreditkartendaten.</translation>
+    </message>
+    <message>
+        <source>This transaction has failed to
+                verify that the use of a secure transaction (MD5 Hash Failed).
+                Please contact the site administrator and inform them of
+                this error. Please do not try to resubmit payment.</source>
+        <translation>Bei dieser Transaktion konnte die Verwendung einer sicheren Transaktion nicht überprüft werden (MD5-Hash fehlgeschlagen). Bitte wenden Sie sich an den Administrator der Website und informieren Sie ihn über diesen Fehler. Bitte versuchen Sie nicht, die Zahlung erneut zu senden.</translation>
+    </message>
+    <message>
+        <source>Your creditcard is expired.</source>
+        <translation>Ihre Kreditkarte ist abgelaufen.</translation>
+    </message>
+    <message>
+        <source>hCaptcha</source>
+        <comment>Datatype name</comment>
+        <translation>hCaptcha</translation>
+    </message>
 </context>
 <context>
     <name>kernel/classes/datatypes/ezbinaryfile</name>
@@ -44606,6 +45512,11 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Update</source>
         <comment>Navigation part</comment>
         <translation>Aktualisierung</translation>
+    </message>
+    <message>
+        <source>Audit</source>
+        <comment>Navigation part</comment>
+        <translation>Audit</translation>
     </message>
 </context>
 <context>
@@ -46000,6 +46911,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Finish User Registration</source>
         <translation>Benutzerregistrierung abschließen</translation>
     </message>
+    <message>
+        <source>eZ Page swap workflow event</source>
+        <translation>eZ-Seitentausch-Workflow-Ereignis</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -46954,6 +47869,90 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>Die Lizenz „%licence“ ist keine der in package.ini [LicenseSettings] konfigurierten Lizenzen. Wählen Sie eine aus der Liste.</translation>
+    </message>
+    <message>
+        <source>action</source>
+        <translation>Aktion</translation>
+    </message>
+    <message>
+        <source>also a setting that names a class</source>
+        <translation>zugleich eine Einstellung, die eine Klasse nennt</translation>
+    </message>
+    <message>
+        <source>broken entry</source>
+        <translation>fehlerhafter Eintrag</translation>
+    </message>
+    <message>
+        <source>command</source>
+        <translation>Befehl</translation>
+    </message>
+    <message>
+        <source>counted here</source>
+        <translation>hier mitgezählt</translation>
+    </message>
+    <message>
+        <source>cronjob part</source>
+        <translation>Cronjob-Teil</translation>
+    </message>
+    <message>
+        <source>extension</source>
+        <translation>Erweiterung</translation>
+    </message>
+    <message>
+        <source>kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>module view</source>
+        <translation>Modul-View</translation>
+    </message>
+    <message>
+        <source>re-implemented by %class</source>
+        <translation>ersetzt durch %class</translation>
+    </message>
+    <message>
+        <source>scope provider</source>
+        <translation>Geltungsbereich-Anbieter</translation>
+    </message>
+    <message>
+        <source>Audit alert rule classes</source>
+        <translation>Klassen der Audit-Alarmregeln</translation>
+    </message>
+    <message>
+        <source>Audit archive formats</source>
+        <translation>Audit-Archivformate</translation>
+    </message>
+    <message>
+        <source>Audit sinks</source>
+        <translation>Audit-Ziele</translation>
+    </message>
+    <message>
+        <source>Audit taxonomy branches</source>
+        <translation>Zweige der Audit-Taxonomie</translation>
+    </message>
+    <message>
+        <source>Content job types</source>
+        <translation>Inhaltsjob-Typen</translation>
+    </message>
+    <message>
+        <source>Debug bar presets</source>
+        <translation>Voreinstellungen der Debug-Leiste</translation>
+    </message>
+    <message>
+        <source>Debug bar settings</source>
+        <translation>Einstellungen der Debug-Leiste</translation>
+    </message>
+    <message>
+        <source>Server functions of ezjscore</source>
+        <translation>Server-Funktionen von ezjscore</translation>
+    </message>
+    <message>
+        <source>Subitems table columns</source>
+        <translation>Spalten der Unterelementtabelle</translation>
+    </message>
+    <message>
+        <source>exp:ini actions and scope providers</source>
+        <translation>Aktionen und Geltungsbereich-Anbieter von exp:ini</translation>
     </message>
 </context>
 <context>
@@ -49543,6 +50542,350 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Audit trail of this job</source>
         <translation>Audit-Protokoll dieses Auftrags</translation>
     </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done von %total erledigt</translation>
+    </message>
+    <message>
+        <source>%done of %total nodes</source>
+        <translation>%done von %total Knoten</translation>
+    </message>
+    <message>
+        <source>%s s</source>
+        <translation>%s s</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>All jobs</source>
+        <translation>Alle Jobs</translation>
+    </message>
+    <message>
+        <source>Average batch</source>
+        <translation>Durchschnittlicher Stapel</translation>
+    </message>
+    <message>
+        <source>Batch</source>
+        <translation>Stapel</translation>
+    </message>
+    <message>
+        <source>Batch size</source>
+        <translation>Stapelgröße</translation>
+    </message>
+    <message>
+        <source>Batches</source>
+        <translation>Stapel</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Cancelled</source>
+        <translation>Abgebrochen</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Chosen mode</source>
+        <translation>Gewählter Modus</translation>
+    </message>
+    <message>
+        <source>Content jobs</source>
+        <translation>Inhaltsjobs</translation>
+    </message>
+    <message>
+        <source>Continue from the last finished batch.</source>
+        <translation>Ab dem zuletzt abgeschlossenen Stapel fortsetzen.</translation>
+    </message>
+    <message>
+        <source>Counts</source>
+        <translation>Anzahlen</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Erstellt</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Erledigt</translation>
+    </message>
+    <message>
+        <source>Download the whole log</source>
+        <translation>Gesamtes Protokoll herunterladen</translation>
+    </message>
+    <message>
+        <source>Duration</source>
+        <translation>Dauer</translation>
+    </message>
+    <message>
+        <source>Everything up to the last finished batch is kept. Resume continues from there; nothing is done twice.</source>
+        <translation>Alles bis zum zuletzt abgeschlossenen Stapel bleibt erhalten. Beim Fortsetzen geht es von dort weiter; nichts wird doppelt ausgeführt.</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>Abgeschlossen</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Verborgen</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elemente</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Job</translation>
+    </message>
+    <message>
+        <source>Locations copied</source>
+        <translation>Kopierte Positionen</translation>
+    </message>
+    <message>
+        <source>Locations removed</source>
+        <translation>Entfernte Positionen</translation>
+    </message>
+    <message>
+        <source>Locations removed, object kept (it has other locations)</source>
+        <translation>Positionen entfernt, Objekt behalten (es hat weitere Positionen)</translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation>Protokoll</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Anmeldung</translation>
+    </message>
+    <message>
+        <source>Moved to the trash</source>
+        <translation>In den Papierkorb verschoben</translation>
+    </message>
+    <message>
+        <source>Nothing had been copied yet.</source>
+        <translation>Es war noch nichts kopiert worden.</translation>
+    </message>
+    <message>
+        <source>Objects copied</source>
+        <translation>Kopierte Objekte</translation>
+    </message>
+    <message>
+        <source>Objects moved to the trash</source>
+        <translation>In den Papierkorb verschobene Objekte</translation>
+    </message>
+    <message>
+        <source>Objects removed</source>
+        <translation>Entfernte Objekte</translation>
+    </message>
+    <message>
+        <source>Open the node that failed</source>
+        <translation>Den fehlgeschlagenen Knoten öffnen</translation>
+    </message>
+    <message>
+        <source>Open the parent</source>
+        <translation>Den übergeordneten Knoten öffnen</translation>
+    </message>
+    <message>
+        <source>Open the partial copy</source>
+        <translation>Die Teilkopie öffnen</translation>
+    </message>
+    <message>
+        <source>Opening the result in %seconds s</source>
+        <translation>Das Ergebnis wird in %seconds s geöffnet</translation>
+    </message>
+    <message>
+        <source>Operation</source>
+        <translation>Vorgang</translation>
+    </message>
+    <message>
+        <source>Peak memory</source>
+        <translation>Spitzenspeicher</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fortschritt</translation>
+    </message>
+    <message>
+        <source>Remove subtree, delete</source>
+        <translation>Teilbaum entfernen, löschen</translation>
+    </message>
+    <message>
+        <source>Remove the partial copy</source>
+        <translation>Die Teilkopie entfernen</translation>
+    </message>
+    <message>
+        <source>Remove the partial copy starts a job that deletes it. To copy the subtree, start the copy again.</source>
+        <translation>Das Entfernen der Teilkopie startet einen Job, der sie löscht. Um den Teilbaum zu kopieren, starten Sie das Kopieren erneut.</translation>
+    </message>
+    <message>
+        <source>Remove, delete</source>
+        <translation>Entfernen, löschen</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Entfernt</translation>
+    </message>
+    <message>
+        <source>Removed items</source>
+        <translation>Entfernte Elemente</translation>
+    </message>
+    <message>
+        <source>Removing %name</source>
+        <translation>%name wird entfernt</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Fortsetzen</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Läuft</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Übersprungen</translation>
+    </message>
+    <message>
+        <source>Slowest batch</source>
+        <translation>Langsamster Stapel</translation>
+    </message>
+    <message>
+        <source>Start a job that removes what the cancelled copy created.</source>
+        <translation>Einen Job starten, der entfernt, was die abgebrochene Kopie erzeugt hat.</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gestartet</translation>
+    </message>
+    <message>
+        <source>Started by</source>
+        <translation>Gestartet von</translation>
+    </message>
+    <message>
+        <source>Started from</source>
+        <translation>Gestartet aus</translation>
+    </message>
+    <message>
+        <source>Stop after the current batch. What is done so far is kept.</source>
+        <translation>Nach dem aktuellen Stapel anhalten. Was bisher erledigt ist, bleibt erhalten.</translation>
+    </message>
+    <message>
+        <source>Stopping after the current batch</source>
+        <translation>Anhalten nach dem aktuellen Stapel</translation>
+    </message>
+    <message>
+        <source>Subtree</source>
+        <translation>Teilbaum</translation>
+    </message>
+    <message>
+        <source>The copy was cancelled.</source>
+        <translation>Das Kopieren wurde abgebrochen.</translation>
+    </message>
+    <message>
+        <source>The job stopped with an error.</source>
+        <translation>Der Job wurde mit einem Fehler beendet.</translation>
+    </message>
+    <message>
+        <source>The partial copy is no longer there (it has been removed).</source>
+        <translation>Die Teilkopie ist nicht mehr vorhanden (sie wurde entfernt).</translation>
+    </message>
+    <message>
+        <source>The removal was cancelled.</source>
+        <translation>Das Entfernen wurde abgebrochen.</translation>
+    </message>
+    <message>
+        <source>The subtree has been removed.</source>
+        <translation>Der Teilbaum wurde entfernt.</translation>
+    </message>
+    <message>
+        <source>Versions copied</source>
+        <translation>Kopierte Versionen</translation>
+    </message>
+    <message>
+        <source>Waited for a worker</source>
+        <translation>Auf einen Worker gewartet</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Wartet</translation>
+    </message>
+    <message>
+        <source>Waiting for the status...</source>
+        <translation>Warte auf den Status...</translation>
+    </message>
+    <message>
+        <source>Warnings</source>
+        <translation>Warnungen</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Was</translation>
+    </message>
+    <message>
+        <source>What was not removed yet is still in place. Remove it again to remove the rest.</source>
+        <translation>Was noch nicht entfernt wurde, ist weiterhin vorhanden. Entfernen Sie es erneut, um den Rest zu entfernen.</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wann</translation>
+    </message>
+    <message>
+        <source>Where it runs</source>
+        <translation>Wo es läuft</translation>
+    </message>
+    <message>
+        <source>Who</source>
+        <translation>Wer</translation>
+    </message>
+    <message>
+        <source>Worker process</source>
+        <translation>Worker-Prozess</translation>
+    </message>
+    <message>
+        <source>Worker runs on</source>
+        <translation>Worker läuft auf</translation>
+    </message>
+    <message>
+        <source>Worker starts</source>
+        <translation>Worker-Starts</translation>
+    </message>
+    <message>
+        <source>as %user</source>
+        <translation>als %user</translation>
+    </message>
+    <message>
+        <source>batch</source>
+        <translation>Stapel</translation>
+    </message>
+    <message>
+        <source>command line</source>
+        <translation>Kommandozeile</translation>
+    </message>
+    <message>
+        <source>deleted permanently</source>
+        <translation>endgültig gelöscht</translation>
+    </message>
+    <message>
+        <source>on %host</source>
+        <translation>auf %host</translation>
+    </message>
+    <message>
+        <source>Also for everything below this node</source>
+        <translation>Auch für alles unterhalb dieses Knotens</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/audit</name>
@@ -49561,6 +50904,848 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Please try again later, or tell the administrator: the details are in the error log under AUDIT-REFUSED.</source>
         <translation>Bitte versuchen Sie es später erneut oder informieren Sie den Administrator: Die Einzelheiten stehen im Fehlerprotokoll unter AUDIT-REFUSED.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/audit</name>
+    <message>
+        <source>Audit alert</source>
+        <translation>Audit-Alarm</translation>
+    </message>
+    <message>
+        <source>Audit archive</source>
+        <translation>Audit-Archivierung</translation>
+    </message>
+    <message>
+        <source>Audit chain broken</source>
+        <translation>Audit-Kette unterbrochen</translation>
+    </message>
+    <message>
+        <source>Audit chain repair</source>
+        <translation>Audit-Kette repariert</translation>
+    </message>
+    <message>
+        <source>Audit checkpoint</source>
+        <translation>Audit-Prüfpunkt</translation>
+    </message>
+    <message>
+        <source>Audit disable</source>
+        <translation>Audit ausgeschaltet</translation>
+    </message>
+    <message>
+        <source>Audit enable</source>
+        <translation>Audit eingeschaltet</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Audit-Export</translation>
+    </message>
+    <message>
+        <source>Audit file close</source>
+        <translation>Audit-Datei geschlossen</translation>
+    </message>
+    <message>
+        <source>Audit file open</source>
+        <translation>Audit-Datei geöffnet</translation>
+    </message>
+    <message>
+        <source>Audit import</source>
+        <translation>Audit-Import</translation>
+    </message>
+    <message>
+        <source>Audit key create</source>
+        <translation>Audit-Schlüssel erstellt</translation>
+    </message>
+    <message>
+        <source>Audit key rotate</source>
+        <translation>Audit-Schlüssel gewechselt</translation>
+    </message>
+    <message>
+        <source>Audit overflow</source>
+        <translation>Audit-Überlauf</translation>
+    </message>
+    <message>
+        <source>Audit pseudonymise</source>
+        <translation>Audit-Pseudonymisierung</translation>
+    </message>
+    <message>
+        <source>Audit purge</source>
+        <translation>Audit-Bereinigung</translation>
+    </message>
+    <message>
+        <source>Audit read</source>
+        <translation>Audit gelesen</translation>
+    </message>
+    <message>
+        <source>Audit reindex</source>
+        <translation>Audit-Neuindizierung</translation>
+    </message>
+    <message>
+        <source>Audit rotate</source>
+        <translation>Audit-Rotation</translation>
+    </message>
+    <message>
+        <source>Audit setting write</source>
+        <translation>Audit-Einstellung geschrieben</translation>
+    </message>
+    <message>
+        <source>Audit sink failed</source>
+        <translation>Audit-Ziel fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Audit verify</source>
+        <translation>Audit-Prüfung</translation>
+    </message>
+    <message>
+        <source>Basket checkout</source>
+        <translation>Warenkorb-Kasse</translation>
+    </message>
+    <message>
+        <source>Cache clear</source>
+        <translation>Cache geleert</translation>
+    </message>
+    <message>
+        <source>Class change</source>
+        <translation>Klasse geändert</translation>
+    </message>
+    <message>
+        <source>Class copy</source>
+        <translation>Klasse kopiert</translation>
+    </message>
+    <message>
+        <source>Class create</source>
+        <translation>Klasse erstellt</translation>
+    </message>
+    <message>
+        <source>Class remove</source>
+        <translation>Klasse entfernt</translation>
+    </message>
+    <message>
+        <source>Command run</source>
+        <translation>Befehl ausgeführt</translation>
+    </message>
+    <message>
+        <source>Cronjob fail</source>
+        <translation>Cronjob fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Cronjob run</source>
+        <translation>Cronjob ausgeführt</translation>
+    </message>
+    <message>
+        <source>Currency change</source>
+        <translation>Währung geändert</translation>
+    </message>
+    <message>
+        <source>Discount change</source>
+        <translation>Rabatt geändert</translation>
+    </message>
+    <message>
+        <source>Error fatal</source>
+        <translation>Schwerer Fehler</translation>
+    </message>
+    <message>
+        <source>Export csv</source>
+        <translation>CSV-Export</translation>
+    </message>
+    <message>
+        <source>Export package</source>
+        <translation>Paket-Export</translation>
+    </message>
+    <message>
+        <source>Export pdf</source>
+        <translation>PDF-Export</translation>
+    </message>
+    <message>
+        <source>Extension change</source>
+        <translation>Erweiterung geändert</translation>
+    </message>
+    <message>
+        <source>Import csv</source>
+        <translation>CSV-Import</translation>
+    </message>
+    <message>
+        <source>Import dba</source>
+        <translation>DBA-Import</translation>
+    </message>
+    <message>
+        <source>Import rss</source>
+        <translation>RSS-Import</translation>
+    </message>
+    <message>
+        <source>Index rebuild</source>
+        <translation>Index neu aufgebaut</translation>
+    </message>
+    <message>
+        <source>Infocollection remove</source>
+        <translation>Informationssammlung entfernt</translation>
+    </message>
+    <message>
+        <source>Infocollection view</source>
+        <translation>Informationssammlung angezeigt</translation>
+    </message>
+    <message>
+        <source>Install run</source>
+        <translation>Installation ausgeführt</translation>
+    </message>
+    <message>
+        <source>Job cancel</source>
+        <translation>Job abgebrochen</translation>
+    </message>
+    <message>
+        <source>Job create</source>
+        <translation>Job erstellt</translation>
+    </message>
+    <message>
+        <source>Job fail</source>
+        <translation>Job fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Job finish</source>
+        <translation>Job beendet</translation>
+    </message>
+    <message>
+        <source>Job resume</source>
+        <translation>Job fortgesetzt</translation>
+    </message>
+    <message>
+        <source>Job start</source>
+        <translation>Job gestartet</translation>
+    </message>
+    <message>
+        <source>Maintenance change</source>
+        <translation>Wartungsmodus geändert</translation>
+    </message>
+    <message>
+        <source>Node add</source>
+        <translation>Knoten hinzugefügt</translation>
+    </message>
+    <message>
+        <source>Node copy</source>
+        <translation>Knoten kopiert</translation>
+    </message>
+    <message>
+        <source>Node hide</source>
+        <translation>Knoten ausgeblendet</translation>
+    </message>
+    <message>
+        <source>Node main</source>
+        <translation>Hauptknoten geändert</translation>
+    </message>
+    <message>
+        <source>Node move</source>
+        <translation>Knoten verschoben</translation>
+    </message>
+    <message>
+        <source>Node priority</source>
+        <translation>Knotenpriorität geändert</translation>
+    </message>
+    <message>
+        <source>Node remove</source>
+        <translation>Knoten entfernt</translation>
+    </message>
+    <message>
+        <source>Node remove trash</source>
+        <translation>Knoten in den Papierkorb verschoben</translation>
+    </message>
+    <message>
+        <source>Node reveal</source>
+        <translation>Knoten eingeblendet</translation>
+    </message>
+    <message>
+        <source>Node section</source>
+        <translation>Knoten-Bereich geändert</translation>
+    </message>
+    <message>
+        <source>Node sort</source>
+        <translation>Knotensortierung geändert</translation>
+    </message>
+    <message>
+        <source>Node swap</source>
+        <translation>Knoten getauscht</translation>
+    </message>
+    <message>
+        <source>Node view</source>
+        <translation>Knoten angezeigt</translation>
+    </message>
+    <message>
+        <source>Object always available</source>
+        <translation>Objekt immer verfügbar geändert</translation>
+    </message>
+    <message>
+        <source>Object create</source>
+        <translation>Objekt erstellt</translation>
+    </message>
+    <message>
+        <source>Object download</source>
+        <translation>Objekt heruntergeladen</translation>
+    </message>
+    <message>
+        <source>Object initial language</source>
+        <translation>Objekt-Ausgangssprache geändert</translation>
+    </message>
+    <message>
+        <source>Object publish</source>
+        <translation>Objekt veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Object purge</source>
+        <translation>Objekt endgültig gelöscht</translation>
+    </message>
+    <message>
+        <source>Object remove</source>
+        <translation>Objekt entfernt</translation>
+    </message>
+    <message>
+        <source>Object restore</source>
+        <translation>Objekt wiederhergestellt</translation>
+    </message>
+    <message>
+        <source>Object state</source>
+        <translation>Objekt-Status geändert</translation>
+    </message>
+    <message>
+        <source>Object translate</source>
+        <translation>Objekt übersetzt</translation>
+    </message>
+    <message>
+        <source>Object translation remove</source>
+        <translation>Objekt-Übersetzung entfernt</translation>
+    </message>
+    <message>
+        <source>Order archive</source>
+        <translation>Bestellung archiviert</translation>
+    </message>
+    <message>
+        <source>Order create</source>
+        <translation>Bestellung erstellt</translation>
+    </message>
+    <message>
+        <source>Order delete</source>
+        <translation>Bestellung gelöscht</translation>
+    </message>
+    <message>
+        <source>Order item remove</source>
+        <translation>Bestellposition entfernt</translation>
+    </message>
+    <message>
+        <source>Order purge</source>
+        <translation>Bestellung endgültig gelöscht</translation>
+    </message>
+    <message>
+        <source>Order status</source>
+        <translation>Bestellstatus geändert</translation>
+    </message>
+    <message>
+        <source>Order unarchive</source>
+        <translation>Bestellung aus dem Archiv geholt</translation>
+    </message>
+    <message>
+        <source>Package import</source>
+        <translation>Paket importiert</translation>
+    </message>
+    <message>
+        <source>Package install</source>
+        <translation>Paket installiert</translation>
+    </message>
+    <message>
+        <source>Package uninstall</source>
+        <translation>Paket deinstalliert</translation>
+    </message>
+    <message>
+        <source>Payment approve</source>
+        <translation>Zahlung genehmigt</translation>
+    </message>
+    <message>
+        <source>Permission refused</source>
+        <translation>Berechtigung verweigert</translation>
+    </message>
+    <message>
+        <source>Policy add</source>
+        <translation>Richtlinie hinzugefügt</translation>
+    </message>
+    <message>
+        <source>Policy remove</source>
+        <translation>Richtlinie entfernt</translation>
+    </message>
+    <message>
+        <source>Repair queue</source>
+        <translation>Reparatur-Warteschlange</translation>
+    </message>
+    <message>
+        <source>Role assign</source>
+        <translation>Rolle zugewiesen</translation>
+    </message>
+    <message>
+        <source>Role change</source>
+        <translation>Rolle geändert</translation>
+    </message>
+    <message>
+        <source>Role copy</source>
+        <translation>Rolle kopiert</translation>
+    </message>
+    <message>
+        <source>Role create</source>
+        <translation>Rolle erstellt</translation>
+    </message>
+    <message>
+        <source>Role remove</source>
+        <translation>Rolle entfernt</translation>
+    </message>
+    <message>
+        <source>Role unassign</source>
+        <translation>Rollenzuweisung aufgehoben</translation>
+    </message>
+    <message>
+        <source>Search query</source>
+        <translation>Suchanfrage</translation>
+    </message>
+    <message>
+        <source>Section change</source>
+        <translation>Bereich geändert</translation>
+    </message>
+    <message>
+        <source>Section remove</source>
+        <translation>Bereich entfernt</translation>
+    </message>
+    <message>
+        <source>Session expire</source>
+        <translation>Sitzung abgelaufen</translation>
+    </message>
+    <message>
+        <source>Session login</source>
+        <translation>Sitzung angemeldet</translation>
+    </message>
+    <message>
+        <source>Session login failed</source>
+        <translation>Anmeldung fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Session logout</source>
+        <translation>Sitzung abgemeldet</translation>
+    </message>
+    <message>
+        <source>Session reauth</source>
+        <translation>Passwort erneut bestätigt</translation>
+    </message>
+    <message>
+        <source>Session reauth failed</source>
+        <translation>Erneute Passwortbestätigung fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Session regenerate</source>
+        <translation>Sitzung erneuert</translation>
+    </message>
+    <message>
+        <source>Setting undo</source>
+        <translation>Einstellung zurückgesetzt</translation>
+    </message>
+    <message>
+        <source>Setting write</source>
+        <translation>Einstellung geschrieben</translation>
+    </message>
+    <message>
+        <source>State change</source>
+        <translation>Status geändert</translation>
+    </message>
+    <message>
+        <source>State remove</source>
+        <translation>Status entfernt</translation>
+    </message>
+    <message>
+        <source>Template change</source>
+        <translation>Template geändert</translation>
+    </message>
+    <message>
+        <source>Token refused</source>
+        <translation>Token abgelehnt</translation>
+    </message>
+    <message>
+        <source>Trash empty</source>
+        <translation>Papierkorb geleert</translation>
+    </message>
+    <message>
+        <source>Upgrade run</source>
+        <translation>Upgrade ausgeführt</translation>
+    </message>
+    <message>
+        <source>Urlalias change</source>
+        <translation>URL-Alias geändert</translation>
+    </message>
+    <message>
+        <source>User activate</source>
+        <translation>Benutzer aktiviert</translation>
+    </message>
+    <message>
+        <source>User create</source>
+        <translation>Benutzer erstellt</translation>
+    </message>
+    <message>
+        <source>User disable</source>
+        <translation>Benutzer deaktiviert</translation>
+    </message>
+    <message>
+        <source>User email change</source>
+        <translation>Benutzer-E-Mail geändert</translation>
+    </message>
+    <message>
+        <source>User enable</source>
+        <translation>Benutzer aktiviert</translation>
+    </message>
+    <message>
+        <source>User lock</source>
+        <translation>Benutzer gesperrt</translation>
+    </message>
+    <message>
+        <source>User login change</source>
+        <translation>Benutzer-Login geändert</translation>
+    </message>
+    <message>
+        <source>User password change</source>
+        <translation>Benutzer-Passwort geändert</translation>
+    </message>
+    <message>
+        <source>User password change failed</source>
+        <translation>Passwortänderung fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>User password reset</source>
+        <translation>Benutzer-Passwort zurückgesetzt</translation>
+    </message>
+    <message>
+        <source>User password reset failed</source>
+        <translation>Passwort-Zurücksetzung fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>User password reset request</source>
+        <translation>Passwort-Zurücksetzung angefordert</translation>
+    </message>
+    <message>
+        <source>User remove</source>
+        <translation>Benutzer entfernt</translation>
+    </message>
+    <message>
+        <source>User unlock</source>
+        <translation>Benutzer entsperrt</translation>
+    </message>
+    <message>
+        <source>Vat change</source>
+        <translation>Mehrwertsteuer geändert</translation>
+    </message>
+    <message>
+        <source>Velocity deploy</source>
+        <translation>Velocity-Deployment</translation>
+    </message>
+    <message>
+        <source>Version remove</source>
+        <translation>Version entfernt</translation>
+    </message>
+    <message>
+        <source>View sensitive</source>
+        <translation>Sensible Daten angezeigt</translation>
+    </message>
+    <message>
+        <source>Workflow trigger change</source>
+        <translation>Workflow-Trigger geändert</translation>
+    </message>
+    <message>
+        <source>Legacy bridge test</source>
+        <translation>Legacy-Brücken-Test</translation>
+    </message>
+    <message>
+        <source>Legacy hook test</source>
+        <translation>Legacy-Hook-Test</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard</name>
+    <message>
+        <source>Here is what is happening on %site.</source>
+        <translation>Das passiert gerade auf %site.</translation>
+    </message>
+    <message>
+        <source>Caches</source>
+        <translation>Caches</translation>
+    </message>
+    <message>
+        <source>Content items</source>
+        <translation>Inhaltselemente</translation>
+    </message>
+    <message>
+        <source>Content published per day over the last 14 days</source>
+        <translation>Pro Tag veröffentlichte Inhalte der letzten 14 Tage</translation>
+    </message>
+    <message>
+        <source>Content structure</source>
+        <translation>Inhaltsstruktur</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Datenbank</translation>
+    </message>
+    <message>
+        <source>Exponential itself -- the kernel, its designs and the extensions kept in git -- is updated by pulling the newest release into the installation: see which branch and version it runs, what has changed upstream, and update.</source>
+        <translation>Exponential selbst -- der Kernel, seine Designs und die in Git geführten Erweiterungen -- wird aktualisiert, indem die neueste Version in die Installation übernommen wird: Sehen Sie, welchen Branch und welche Version sie nutzt, was sich upstream geändert hat, und aktualisieren Sie.</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Erweiterungen</translation>
+    </message>
+    <message>
+        <source>Good afternoon</source>
+        <translation>Guten Tag</translation>
+    </message>
+    <message>
+        <source>Good evening</source>
+        <translation>Guten Abend</translation>
+    </message>
+    <message>
+        <source>Good morning</source>
+        <translation>Guten Morgen</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Im Papierkorb</translation>
+    </message>
+    <message>
+        <source>Key figures</source>
+        <translation>Kennzahlen</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Layouts</translation>
+    </message>
+    <message>
+        <source>Media items</source>
+        <translation>Medienelemente</translation>
+    </message>
+    <message>
+        <source>Media library</source>
+        <translation>Medienbibliothek</translation>
+    </message>
+    <message>
+        <source>Most attacks use flaws that are already fixed in a newer version. Two updates keep this installation safe; check both regularly, and right away when a security release is announced.</source>
+        <translation>Die meisten Angriffe nutzen Schwachstellen, die in einer neueren Version bereits behoben sind. Zwei Aktualisierungen halten diese Installation sicher; prüfen Sie beide regelmäßig und sofort, wenn eine Sicherheitsversion angekündigt wird.</translation>
+    </message>
+    <message>
+        <source>My drafts</source>
+        <translation>Meine Entwürfe</translation>
+    </message>
+    <message>
+        <source>My pending items</source>
+        <translation>Meine ausstehenden Elemente</translation>
+    </message>
+    <message>
+        <source>Open the Git manager</source>
+        <translation>Git-Manager öffnen</translation>
+    </message>
+    <message>
+        <source>Open the Updates dashboard</source>
+        <translation>Update-Dashboard öffnen</translation>
+    </message>
+    <message>
+        <source>Published in the last 7 days</source>
+        <translation>In den letzten 7 Tagen veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Publishing, last 14 days</source>
+        <translation>Veröffentlichungen, letzte 14 Tage</translation>
+    </message>
+    <message>
+        <source>Quick actions</source>
+        <translation>Schnellaktionen</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Jetzt angemeldet</translation>
+    </message>
+    <message>
+        <source>Stay secure: keep Exponential up to date</source>
+        <translation>Sicher bleiben: Exponential aktuell halten</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>System information</source>
+        <translation>Systeminformationen</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Tags</translation>
+    </message>
+    <message>
+        <source>The Git manager is not available to you here; ask an administrator to run this step.</source>
+        <translation>Der Git-Manager steht Ihnen hier nicht zur Verfügung; bitten Sie einen Administrator, diesen Schritt auszuführen.</translation>
+    </message>
+    <message>
+        <source>The Updates dashboard is not available to you here; ask an administrator to run this step.</source>
+        <translation>Das Update-Dashboard steht Ihnen hier nicht zur Verfügung; bitten Sie einen Administrator, diesen Schritt auszuführen.</translation>
+    </message>
+    <message>
+        <source>The libraries the CMS requires are Composer packages. The Updates dashboard lists the installed packages, checks Packagist for newer versions and security advisories, and updates them.</source>
+        <translation>Die vom CMS benötigten Bibliotheken sind Composer-Pakete. Das Update-Dashboard listet die installierten Pakete auf, prüft Packagist auf neuere Versionen und Sicherheitshinweise und aktualisiert sie.</translation>
+    </message>
+    <message>
+        <source>Update the CMS with the Git manager</source>
+        <translation>CMS mit dem Git-Manager aktualisieren</translation>
+    </message>
+    <message>
+        <source>Update the libraries with Composer</source>
+        <translation>Bibliotheken mit Composer aktualisieren</translation>
+    </message>
+    <message>
+        <source>Upgrade check</source>
+        <translation>Upgrade-Prüfung</translation>
+    </message>
+    <message>
+        <source>Upload files</source>
+        <translation>Dateien hochladen</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Auto-RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Datenbank-Editor</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Datenbank-Quelltext-Editor</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Teilbaum-Skelett-Publisher</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>In Block übertragen</translation>
+    </message>
+</context>
+<context>
+    <name>syndication</name>
+    <message>
+        <source>Deleted</source>
+        <translation>Gelöscht</translation>
+    </message>
+    <message>
+        <source>Denied</source>
+        <translation>Abgelehnt</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Ignoring</source>
+        <translation>Wird ignoriert</translation>
+    </message>
+    <message>
+        <source>Installed</source>
+        <translation>Installiert</translation>
+    </message>
+    <message>
+        <source>Installing</source>
+        <translation>Wird installiert</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ausstehend</translation>
+    </message>
+</context>
+<context>
+    <name>syndication/edit</name>
+    <message>
+        <source>Node</source>
+        <comment>Source type</comment>
+        <translation>Knoten</translation>
+    </message>
+    <message>
+        <source>Subtree</source>
+        <comment>Source type</comment>
+        <translation>Teilbaum</translation>
+    </message>
+</context>
+<context>
+    <name>syndication/import</name>
+    <message>
+        <source>Syndication</source>
+        <translation>Syndizierung</translation>
+    </message>
+</context>
+<context>
+    <name>syndication/list</name>
+    <message>
+        <source>Add Filter</source>
+        <translation>Filter hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add Source</source>
+        <translation>Quelle hinzufügen</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Edit Filter</source>
+        <translation>Filter bearbeiten</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Liste</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menü</translation>
+    </message>
+    <message>
+        <source>Syndication</source>
+        <translation>Syndizierung</translation>
+    </message>
+    <message>
+        <source>Syndication Import</source>
+        <translation>Syndizierungs-Import</translation>
+    </message>
+</context>
+<context>
+    <name>syndication/menu</name>
+    <message>
+        <source>Syndication</source>
+        <translation>Syndizierung</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/extract</name>
+    <message>
+        <source>Location in the tree (path)</source>
+        <translation>Position im Baum (Pfad)</translation>
     </message>
 </context>
 </TS>

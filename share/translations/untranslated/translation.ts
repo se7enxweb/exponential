@@ -37452,6 +37452,11 @@ You will need to change the class of the node by using the swap functionality.</
         <comment>Navigation part</comment>
         <translation type="unfinished">Update</translation>
     </message>
+    <message>
+        <source>Audit</source>
+        <comment>Navigation part</comment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/notification</name>
@@ -40490,6 +40495,549 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A status number below 1000 that this version does not know. Counts as open.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/audit</name>
+    <message>
+        <source>Audit alert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit chain broken</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit chain repair</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit checkpoint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit disable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit enable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit file close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit file open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit key create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit key rotate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit overflow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit pseudonymise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit purge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit reindex</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit rotate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit setting write</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit sink failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit verify</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Basket checkout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cache clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Command run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob fail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Currency change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discount change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error fatal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export csv</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export pdf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import csv</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import dba</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import rss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Index rebuild</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Infocollection remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Infocollection view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Job cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Job create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Job fail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Job finish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Job resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Job start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintenance change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node hide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node priority</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node remove trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node reveal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node swap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object always available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object initial language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object publish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object purge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object restore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object translate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object translation remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order item remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order purge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order unarchive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Package import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Package install</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Package uninstall</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Payment approve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Permission refused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Policy add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Policy remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Repair queue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role assign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role unassign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search query</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session expire</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session login failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session logout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session reauth</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session reauth failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session regenerate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting undo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting write</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Token refused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Trash empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upgrade run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Urlalias change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User activate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User disable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User email change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User enable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User lock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User login change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User password change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User password change failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User password reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User password reset failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User password reset request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User unlock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vat change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity deploy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View sensitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflow trigger change</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

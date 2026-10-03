@@ -487,6 +487,26 @@
         <source>attribute &apos;%identifier&apos;: %name (%id)</source>
         <translation>attribute &apos;%identifier&apos;: %name (%id)</translation>
     </message>
+    <message>
+        <source>Bottom</source>
+        <translation>Bottom</translation>
+    </message>
+    <message>
+        <source>Move this attribute to the bottom.</source>
+        <translation>Move this attribute to the bottom.</translation>
+    </message>
+    <message>
+        <source>Move this attribute to the top.</source>
+        <translation>Move this attribute to the top.</translation>
+    </message>
+    <message>
+        <source>The attribute could not be moved; the order is as it was.</source>
+        <translation>The attribute could not be moved; the order is as it was.</translation>
+    </message>
+    <message>
+        <source>Top</source>
+        <translation>Top</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/edit_denied</name>
@@ -3632,6 +3652,110 @@
         <source>Click to sort %sort_order</source>
         <translation>Click to sort %sort_order</translation>
     </message>
+    <message>
+        <source>Any</source>
+        <translation>Any</translation>
+    </message>
+    <message>
+        <source>Anyone</source>
+        <translation>Anyone</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Details</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Languages</translation>
+    </message>
+    <message>
+        <source>Last modified by</source>
+        <translation>Last modified by</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modified</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Never</translation>
+    </message>
+    <message>
+        <source>No item in the trash matches the filter.</source>
+        <translation>No item in the trash matches the filter.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>None</translation>
+    </message>
+    <message>
+        <source>Other locations</source>
+        <translation>Other locations</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Owner</translation>
+    </message>
+    <message>
+        <source>Parent exists: restores to its original place.</source>
+        <translation>Parent exists: restores to its original place.</translation>
+    </message>
+    <message>
+        <source>Parent has moved: choose a place when restoring.</source>
+        <translation>Parent has moved: choose a place when restoring.</translation>
+    </message>
+    <message>
+        <source>Parent is in the trash too: restore it first.</source>
+        <translation>Parent is in the trash too: restore it first.</translation>
+    </message>
+    <message>
+        <source>Parent no longer exists: choose a place when restoring.</source>
+        <translation>Parent no longer exists: choose a place when restoring.</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Published</translation>
+    </message>
+    <message>
+        <source>Restore this item: to its original place, or choose another one.</source>
+        <translation>Restore this item: to its original place, or choose another one.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Show all</translation>
+    </message>
+    <message>
+        <source>Show only the items that match.</source>
+        <translation>Show only the items that match.</translation>
+    </message>
+    <message>
+        <source>Still in the tree at</source>
+        <translation>Still in the tree at</translation>
+    </message>
+    <message>
+        <source>Trashed by</source>
+        <translation>Trashed by</translation>
+    </message>
+    <message>
+        <source>Trashed from</source>
+        <translation>Trashed from</translation>
+    </message>
+    <message>
+        <source>Where the removal came from</source>
+        <translation>Where the removal came from</translation>
+    </message>
+    <message>
+        <source>by unknown</source>
+        <translation>by unknown</translation>
+    </message>
+    <message>
+        <source>to</source>
+        <translation>to</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/upload</name>
@@ -4247,6 +4371,10 @@
         <source>Defined URL aliases with wildcard(%wildcard_count)</source>
         <translation>Defined URL aliases with wildcard(%wildcard_count)</translation>
     </message>
+    <message>
+        <source>Enter the destination URL for the new wildcard. Example: dev/{1}</source>
+        <translation>Enter the destination URL for the new wildcard. Example: dev/{1}</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -4818,6 +4946,38 @@
     <message>
         <source>If redirection fails, click on the following address: %url.</source>
         <translation>If redirection fails, click on the following address: %url.</translation>
+    </message>
+    <message>
+        <source>Check the address for a typing mistake.</source>
+        <translation>Check the address for a typing mistake.</translation>
+    </message>
+    <message>
+        <source>Error code: kernel 21 (page not found)</source>
+        <translation>Error code: kernel 21 (page not found)</translation>
+    </message>
+    <message>
+        <source>If the page belongs to an extension, the extension may not be active on this site.</source>
+        <translation>If the page belongs to an extension, the extension may not be active on this site.</translation>
+    </message>
+    <message>
+        <source>If the site uses the address to choose a siteaccess (for example /admin/...), make sure the siteaccess name is at the start of the address.</source>
+        <translation>If the site uses the address to choose a siteaccess (for example /admin/...), make sure the siteaccess name is at the start of the address.</translation>
+    </message>
+    <message>
+        <source>The address does not lead to a page of the system.</source>
+        <translation>The address does not lead to a page of the system.</translation>
+    </message>
+    <message>
+        <source>This page does not exist</source>
+        <translation>This page does not exist</translation>
+    </message>
+    <message>
+        <source>Use the menu or the tabs to get to the page instead of a saved link; the page may have moved or been renamed.</source>
+        <translation>Use the menu or the tabs to get to the page instead of a saved link; the page may have moved or been renamed.</translation>
+    </message>
+    <message>
+        <source>What you can do</source>
+        <translation>What you can do</translation>
     </message>
 </context>
 <context>
@@ -6204,6 +6364,150 @@
     <message>
         <source>Yes</source>
         <translation>Yes</translation>
+    </message>
+    <message>
+        <source>Add a location for selected</source>
+        <translation>Add a location for selected</translation>
+    </message>
+    <message>
+        <source>Class menu</source>
+        <translation>Class menu</translation>
+    </message>
+    <message>
+        <source>Click to copy</source>
+        <translation>Click to copy</translation>
+    </message>
+    <message>
+        <source>Click to copy the remote ID</source>
+        <translation>Click to copy the remote ID</translation>
+    </message>
+    <message>
+        <source>Column name</source>
+        <translation>Column name</translation>
+    </message>
+    <message>
+        <source>Column presets:</source>
+        <translation>Column presets:</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copied</translation>
+    </message>
+    <message>
+        <source>Delete preset</source>
+        <translation>Delete preset</translation>
+    </message>
+    <message>
+        <source>Download the items with the visible columns as a CSV file</source>
+        <translation>Download the items with the visible columns as a CSV file</translation>
+    </message>
+    <message>
+        <source>Drag a column to move it, or use its arrow buttons.</source>
+        <translation>Drag a column to move it, or use its arrow buttons.</translation>
+    </message>
+    <message>
+        <source>Enter number</source>
+        <translation>Enter number</translation>
+    </message>
+    <message>
+        <source>Export CSV</source>
+        <translation>Export CSV</translation>
+    </message>
+    <message>
+        <source>Find a column:</source>
+        <translation>Find a column:</translation>
+    </message>
+    <message>
+        <source>Hidden by a parent</source>
+        <translation>Hidden by a parent</translation>
+    </message>
+    <message>
+        <source>Language to edit</source>
+        <translation>Language to edit</translation>
+    </message>
+    <message>
+        <source>Move %name down</source>
+        <translation>Move %name down</translation>
+    </message>
+    <message>
+        <source>Move %name up</source>
+        <translation>Move %name up</translation>
+    </message>
+    <message>
+        <source>Name of the new preset</source>
+        <translation>Name of the new preset</translation>
+    </message>
+    <message>
+        <source>No columns match.</source>
+        <translation>No columns match.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Node</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>None</translation>
+    </message>
+    <message>
+        <source>Not copied</source>
+        <translation>Not copied</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Object</translation>
+    </message>
+    <message>
+        <source>Order of the visible columns:</source>
+        <translation>Order of the visible columns:</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Other</translation>
+    </message>
+    <message>
+        <source>Please enter a valid number between 1 and 10000</source>
+        <translation>Please enter a valid number between 1 and 10000</translation>
+    </message>
+    <message>
+        <source>Preset</source>
+        <translation>Preset</translation>
+    </message>
+    <message>
+        <source>Preview the current version</source>
+        <translation>Preview the current version</translation>
+    </message>
+    <message>
+        <source>Remote ID</source>
+        <translation>Remote ID</translation>
+    </message>
+    <message>
+        <source>Save current as...</source>
+        <translation>Save current as...</translation>
+    </message>
+    <message>
+        <source>Secondary location</source>
+        <translation>Secondary location</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>View on site</source>
+        <translation>View on site</translation>
+    </message>
+    <message>
+        <source>View on site (new window)</source>
+        <translation>View on site (new window)</translation>
+    </message>
+    <message>
+        <source>by</source>
+        <translation>by</translation>
+    </message>
+    <message>
+        <source>locations</source>
+        <translation>locations</translation>
     </message>
 </context>
 <context>
@@ -7983,12 +8287,40 @@ Note: The packages will not be uninstalled.</translation>
         <source>Store</source>
         <translation>Store</translation>
     </message>
+    <message>
+        <source>Advanced search</source>
+        <translation>Advanced search</translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation>Dark mode</translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation>Light mode</translation>
+    </message>
+    <message>
+        <source>Open the site</source>
+        <translation>Open the site</translation>
+    </message>
+    <message>
+        <source>Switch between light and dark mode</source>
+        <translation>Switch between light and dark mode</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Where</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
     <message>
         <source>Show / Hide leftmenu</source>
         <translation>Show / Hide leftmenu</translation>
+    </message>
+    <message>
+        <source>Hide / Show leftmenu</source>
+        <translation>Hide / Show leftmenu</translation>
     </message>
 </context>
 <context>
@@ -8779,6 +9111,10 @@ Note: The packages will not be uninstalled.</translation>
         <source>Preview</source>
         <translation>Preview</translation>
     </message>
+    <message>
+        <source>Upload multiple files</source>
+        <translation>Upload multiple files</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -9272,6 +9608,30 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Policies (%policy_count)</source>
         <translation>Policies (%policy_count)</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Move down</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Move up</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Order</translation>
+    </message>
+    <message>
+        <source>Sort the list by ID, ascending, to change the order of the policies.</source>
+        <translation>Sort the list by ID, ascending, to change the order of the policies.</translation>
+    </message>
+    <message>
+        <source>Use the order buttons to set the order of the policies. The up arrow moves the policy one place up. The down arrow moves the policy one place down.</source>
+        <translation>Use the order buttons to set the order of the policies. The up arrow moves the policy one place up. The down arrow moves the policy one place down.</translation>
     </message>
 </context>
 <context>
@@ -14335,6 +14695,154 @@ Note: The packages will not be uninstalled.</translation>
         <source>Implements the RSS import handler interface</source>
         <translation>Implements the RSS import handler interface</translation>
     </message>
+    <message>
+        <source>A column the admin sub-items list offers under Table options, computed for the visible rows of the current page and exported with the CSV. One [Column_&lt;key&gt;] block per column, which names a class, a static method or a template; for example [Column_wordcount] with Handler=myExtColumns::wordCount adds a column whose value that method returns.</source>
+        <translation>A column the admin sub-items list offers under Table options, computed for the visible rows of the current page and exported with the CSV. One [Column_&lt;key&gt;] block per column, which names a class, a static method or a template; for example [Column_wordcount] with Handler=myExtColumns::wordCount adds a column whose value that method returns.</translation>
+    </message>
+    <message>
+        <source>A kind of large content operation that runs in the background in batches, with a progress page, cancel and resume (content/job/&lt;id&gt;, exp:expcontentjob). The kernel ships remove, copy, move, hide, reveal, section, state, addlocation and removelocation; an extension adds its own, for example JobTypes[republish]=myExtJobRepublish.</source>
+        <translation>A kind of large content operation that runs in the background in batches, with a progress page, cancel and resume (content/job/&lt;id&gt;, exp:expcontentjob). The kernel ships remove, copy, move, hide, reveal, section, state, addlocation and removelocation; an extension adds its own, for example JobTypes[republish]=myExtJobRepublish.</translation>
+    </message>
+    <message>
+        <source>A subclass of a command, cronjob part or view class, named in site.ini [RunnableSettings] Implementation[]. The file of the command, part or view stays as it is; Runnable::create() makes the subclass instead, and an entry that is not a subclass is ignored. A command reads it from settings/site.ini and settings/override only, because it starts before its siteaccess and extensions are loaded.</source>
+        <translation>A subclass of a command, cronjob part or view class, named in site.ini [RunnableSettings] Implementation[]. The file of the command, part or view stays as it is; Runnable::create() makes the subclass instead, and an entry that is not a subclass is ignored. A command reads it from settings/site.ini and settings/override only, because it starts before its siteaccess and extensions are loaded.</translation>
+    </message>
+    <message>
+        <source>A word of the exp:ini command (console exp:ini &lt;action&gt; ...) or a place it can write settings. The kernel ships get, set, add, rem, clear, toggle, copy, where, list, scopes and actions; an extension adds its own, for example Actions[dump]=myExtIniActionDump makes "exp:ini dump" run that class, and ScopeProviders[]=myExtIniScopeProvider adds scopes such as a directory every cluster node shares.</source>
+        <translation>A word of the exp:ini command (console exp:ini &lt;action&gt; ...) or a place it can write settings. The kernel ships get, set, add, rem, clear, toggle, copy, where, list, scopes and actions; an extension adds its own, for example Actions[dump]=myExtIniActionDump makes "exp:ini dump" run that class, and ScopeProviders[]=myExtIniScopeProvider adds scopes such as a directory every cluster node shares.</translation>
+    </message>
+    <message>
+        <source>Audit alert rule classes</source>
+        <translation>Audit alert rule classes</translation>
+    </message>
+    <message>
+        <source>Audit archive formats</source>
+        <translation>Audit archive formats</translation>
+    </message>
+    <message>
+        <source>Audit sinks</source>
+        <translation>Audit sinks</translation>
+    </message>
+    <message>
+        <source>Audit taxonomy branches</source>
+        <translation>Audit taxonomy branches</translation>
+    </message>
+    <message>
+        <source>Command, cronjob part or view re-implemented</source>
+        <translation>Command, cronjob part or view re-implemented</translation>
+    </message>
+    <message>
+        <source>Content job type</source>
+        <translation>Content job type</translation>
+    </message>
+    <message>
+        <source>Content job types</source>
+        <translation>Content job types</translation>
+    </message>
+    <message>
+        <source>Debug bar presets</source>
+        <translation>Debug bar presets</translation>
+    </message>
+    <message>
+        <source>Debug bar settings</source>
+        <translation>Debug bar settings</translation>
+    </message>
+    <message>
+        <source>Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.</source>
+        <translation>Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.</translation>
+    </message>
+    <message>
+        <source>Server functions of ezjscore</source>
+        <translation>Server functions of ezjscore</translation>
+    </message>
+    <message>
+        <source>Subitems table column</source>
+        <translation>Subitems table column</translation>
+    </message>
+    <message>
+        <source>Subitems table columns</source>
+        <translation>Subitems table columns</translation>
+    </message>
+    <message>
+        <source>commands, cronjob parts and views as classes</source>
+        <translation>commands, cronjob parts and views as classes</translation>
+    </message>
+    <message>
+        <source>content.ini [ContentJobSettings] JobTypes[&lt;name&gt;]=&lt;class&gt; in extension/&lt;name&gt;/settings/content.ini.append.php</source>
+        <translation>content.ini [ContentJobSettings] JobTypes[&lt;name&gt;]=&lt;class&gt; in extension/&lt;name&gt;/settings/content.ini.append.php</translation>
+    </message>
+    <message>
+        <source>events</source>
+        <translation>events</translation>
+    </message>
+    <message>
+        <source>exp:ini action or settings scope</source>
+        <translation>exp:ini action or settings scope</translation>
+    </message>
+    <message>
+        <source>exp:ini actions and scope providers</source>
+        <translation>exp:ini actions and scope providers</translation>
+    </message>
+    <message>
+        <source>extends expSubitemsColumn (value; html and text to change how it is shown), or a static method ( node, settings, column ) returning the value, or a template getting $node, $column and $key</source>
+        <translation>extends expSubitemsColumn (value; html and text to change how it is shown), or a static method ( node, settings, column ) returning the value, or a template getting $node, $column and $key</translation>
+    </message>
+    <message>
+        <source>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</source>
+        <translation>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</translation>
+    </message>
+    <message>
+        <source>implements expContentJobType (validate, countNodes, locks, describe, prepare, runBatch, afterBatch, finish)</source>
+        <translation>implements expContentJobType (validate, countNodes, locks, describe, prepare, runBatch, afterBatch, finish)</translation>
+    </message>
+    <message>
+        <source>implements expIniAction (name, description, usage, run( expIniCommandContext )) or expIniScopeProvider (scopes( $root ))</source>
+        <translation>implements expIniAction (name, description, usage, run( expIniCommandContext )) or expIniScopeProvider (scopes( $root ))</translation>
+    </message>
+    <message>
+        <source>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</source>
+        <translation>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</translation>
+    </message>
+    <message>
+        <source>interfaces and abstract classes</source>
+        <translation>interfaces and abstract classes</translation>
+    </message>
+    <message>
+        <source>kernel classes replaced</source>
+        <translation>kernel classes replaced</translation>
+    </message>
+    <message>
+        <source>module views</source>
+        <translation>module views</translation>
+    </message>
+    <message>
+        <source>places the kernel looks</source>
+        <translation>places the kernel looks</translation>
+    </message>
+    <message>
+        <source>registry entries that name no class</source>
+        <translation>registry entries that name no class</translation>
+    </message>
+    <message>
+        <source>settings that name a class</source>
+        <translation>settings that name a class</translation>
+    </message>
+    <message>
+        <source>site.ini [RunnableSettings] Implementation[&lt;class&gt;]=&lt;subclass&gt;; listeners of runnable/&lt;kind&gt;/before and runnable/&lt;kind&gt;/after in [RunnableSettings] Listeners[]</source>
+        <translation>site.ini [RunnableSettings] Implementation[&lt;class&gt;]=&lt;subclass&gt;; listeners of runnable/&lt;kind&gt;/before and runnable/&lt;kind&gt;/after in [RunnableSettings] Listeners[]</translation>
+    </message>
+    <message>
+        <source>subitemscolumns.ini [Column_&lt;key&gt;] Class=&lt;class&gt;, Handler=&lt;class&gt;::&lt;method&gt; or Template=design:subitems/columns/&lt;name&gt;.tpl in extension/&lt;name&gt;/settings/subitemscolumns.ini.append.php; defaults and presets in subitems.ini</source>
+        <translation>subitemscolumns.ini [Column_&lt;key&gt;] Class=&lt;class&gt;, Handler=&lt;class&gt;::&lt;method&gt; or Template=design:subitems/columns/&lt;name&gt;.tpl in extension/&lt;name&gt;/settings/subitemscolumns.ini.append.php; defaults and presets in subitems.ini</translation>
+    </message>
+    <message>
+        <source>template operators and functions</source>
+        <translation>template operators and functions</translation>
+    </message>
+    <message>
+        <source>template overrides</source>
+        <translation>template overrides</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -14609,6 +15117,30 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
     </message>
 </context>
 <context>
@@ -15221,6 +15753,30 @@ Note: The packages will not be uninstalled.</translation>
         <source>Whether each language keeps its own value. Turning this off after content exists leaves the translations behind, unreachable.</source>
         <translation>Whether each language keeps its own value. Turning this off after content exists leaves the translations behind, unreachable.</translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/designextension</name>
@@ -15491,6 +16047,30 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
     </message>
 </context>
 <context>
@@ -16843,6 +17423,30 @@ Note: The packages will not be uninstalled.</translation>
         <source>Which template draws the attribute as a whole.</source>
         <translation>Which template draws the attribute as a whole.</translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/module</name>
@@ -17085,6 +17689,34 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
+    </message>
+    <message>
+        <source>module.php</source>
+        <translation>module.php</translation>
     </message>
 </context>
 <context>
@@ -17437,6 +18069,30 @@ Note: The packages will not be uninstalled.</translation>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/override</name>
@@ -17651,6 +18307,30 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Overrides are switched on and the map has been generated, so one written here will be loaded.</source>
         <translation>Overrides are switched on and the map has been generated, so one written here will be loaded.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
     </message>
 </context>
 <context>
@@ -18159,6 +18839,30 @@ Note: The packages will not be uninstalled.</translation>
         <source>Nothing at all. For content that is never shown anywhere but on its own page.</source>
         <translation>Nothing at all. For content that is never shown anywhere but on its own page.</translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/survey</name>
@@ -18433,6 +19137,34 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
         <translation>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</translation>
+    </message>
+    <message>
+        <source>Actions and scopes of exp:ini</source>
+        <translation>Actions and scopes of exp:ini</translation>
+    </message>
+    <message>
+        <source>Commands, cronjob parts and views as classes</source>
+        <translation>Commands, cronjob parts and views as classes</translation>
+    </message>
+    <message>
+        <source>Registries</source>
+        <translation>Registries</translation>
+    </message>
+    <message>
+        <source>commands, cronjob parts and views to re-implement</source>
+        <translation>commands, cronjob parts and views to re-implement</translation>
+    </message>
+    <message>
+        <source>exp:ini registrations that cannot work</source>
+        <translation>exp:ini registrations that cannot work</translation>
+    </message>
+    <message>
+        <source>re-implementations that cannot work</source>
+        <translation>re-implementations that cannot work</translation>
+    </message>
+    <message>
+        <source>registry entries that cannot work</source>
+        <translation>registry entries that cannot work</translation>
     </message>
 </context>
 <context>
@@ -18764,6 +19496,30 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>A fetch with its arguments already decided, called by one short name.</source>
         <translation>A fetch with its arguments already decided, called by one short name.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
     </message>
 </context>
 <context>
@@ -19234,6 +19990,30 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation>.gitignore</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation>extension.xml</translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation>ezinfo.php</translation>
     </message>
 </context>
 <context>
@@ -21785,6 +22565,38 @@ your account.</translation>
         <source>Register new account</source>
         <translation>Register new account</translation>
     </message>
+    <message>
+        <source>Administration of %site</source>
+        <translation>Administration of %site</translation>
+    </message>
+    <message>
+        <source>Forgot your password?</source>
+        <translation>Forgot your password?</translation>
+    </message>
+    <message>
+        <source>Hide password</source>
+        <translation>Hide password</translation>
+    </message>
+    <message>
+        <source>No account yet?</source>
+        <translation>No account yet?</translation>
+    </message>
+    <message>
+        <source>Show password</source>
+        <translation>Show password</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Sign in</translation>
+    </message>
+    <message>
+        <source>Sign in to Exponential</source>
+        <translation>Sign in to Exponential</translation>
+    </message>
+    <message>
+        <source>Signing in…</source>
+        <translation>Signing in…</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/password</name>
@@ -22284,6 +23096,82 @@ your account.</translation>
     <message>
         <source>Edit</source>
         <translation>Edit</translation>
+    </message>
+    <message>
+        <source>Clear the filter to move overrides.</source>
+        <translation>Clear the filter to move overrides.</translation>
+    </message>
+    <message>
+        <source>Defined by an extension; its order and conditions can be changed here, removing it is done in the extension</source>
+        <translation>Defined by an extension; its order and conditions can be changed here, removing it is done in the extension</translation>
+    </message>
+    <message>
+        <source>Drag to move</source>
+        <translation>Drag to move</translation>
+    </message>
+    <message>
+        <source>Filter this page</source>
+        <translation>Filter this page</translation>
+    </message>
+    <message>
+        <source>Name, file or condition</source>
+        <translation>Name, file or condition</translation>
+    </message>
+    <message>
+        <source>No conditions: used for every request of this template.</source>
+        <translation>No conditions: used for every request of this template.</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
+    <message>
+        <source>Save conditions</source>
+        <translation>Save conditions</translation>
+    </message>
+    <message>
+        <source>Save the conditions edited above. The order is saved on its own, as you move the overrides.</source>
+        <translation>Save the conditions edited above. The order is saved on its own, as you move the overrides.</translation>
+    </message>
+    <message>
+        <source>Saving...</source>
+        <translation>Saving...</translation>
+    </message>
+    <message>
+        <source>Some overrides were not removed</source>
+        <translation>Some overrides were not removed</translation>
+    </message>
+    <message>
+        <source>The order could not be saved.</source>
+        <translation>The order could not be saved.</translation>
+    </message>
+    <message>
+        <source>The overrides were not changed</source>
+        <translation>The overrides were not changed</translation>
+    </message>
+    <message>
+        <source>These are defined by an extension, not in the siteaccess settings, and have to be removed there:</source>
+        <translation>These are defined by an extension, not in the siteaccess settings, and have to be removed there:</translation>
+    </message>
+    <message>
+        <source>Try earlier</source>
+        <translation>Try earlier</translation>
+    </message>
+    <message>
+        <source>Try later</source>
+        <translation>Try later</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Value</translation>
+    </message>
+    <message>
+        <source>extension</source>
+        <translation>extension</translation>
+    </message>
+    <message>
+        <source>siteaccess</source>
+        <translation>siteaccess</translation>
     </message>
 </context>
 <context>
@@ -24206,6 +25094,10 @@ your account.</translation>
         <source>(See &apos;%location&apos;)</source>
         <translation>(See &apos;%location&apos;)</translation>
     </message>
+    <message>
+        <source>Default Open Graph image</source>
+        <translation>Default Open Graph image</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/class/datatype </name>
@@ -25803,6 +26695,22 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>ISBN %data_text</source>
         <translation>ISBN %data_text</translation>
+    </message>
+    <message>
+        <source>Canonical Link</source>
+        <translation>Canonical Link</translation>
+    </message>
+    <message>
+        <source>Open Graph image</source>
+        <translation>Open Graph image</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Action</translation>
+    </message>
+    <message>
+        <source>Browse to add an existing object</source>
+        <translation>Browse to add an existing object</translation>
     </message>
 </context>
 <context>
@@ -36167,6 +37075,10 @@ your account.</translation>
         <source>Query cache (SQL results)</source>
         <translation>Query cache (SQL results)</translation>
     </message>
+    <message>
+        <source>Expiry cache</source>
+        <translation>Expiry cache</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -36944,6 +37856,113 @@ your account.</translation>
         <source>Invalid input.</source>
         <translation>Invalid input.</translation>
     </message>
+    <message>
+        <source>Aquarius</source>
+        <translation>Aquarius</translation>
+    </message>
+    <message>
+        <source>Aries</source>
+        <translation>Aries</translation>
+    </message>
+    <message>
+        <source>Birthday</source>
+        <comment>Datatype name</comment>
+        <translation>Birthday</translation>
+    </message>
+    <message>
+        <source>Cancer</source>
+        <translation>Cancer</translation>
+    </message>
+    <message>
+        <source>Canonical url must use https protocol.</source>
+        <translation>Canonical url must use https protocol.</translation>
+    </message>
+    <message>
+        <source>Capricorn</source>
+        <translation>Capricorn</translation>
+    </message>
+    <message>
+        <source>Creditcard number is not a number</source>
+        <translation>Creditcard number is not a number</translation>
+    </message>
+    <message>
+        <source>Description should be shorter as 155 characters.</source>
+        <translation>Description should be shorter as 155 characters.</translation>
+    </message>
+    <message>
+        <source>Gemini</source>
+        <translation>Gemini</translation>
+    </message>
+    <message>
+        <source>Leo</source>
+        <translation>Leo</translation>
+    </message>
+    <message>
+        <source>Libra</source>
+        <translation>Libra</translation>
+    </message>
+    <message>
+        <source>Name on creditcard not given</source>
+        <translation>Name on creditcard not given</translation>
+    </message>
+    <message>
+        <source>Pisces</source>
+        <translation>Pisces</translation>
+    </message>
+    <message>
+        <source>Please enter a correct date.</source>
+        <translation>Please enter a correct date.</translation>
+    </message>
+    <message>
+        <source>Please enter the correct CVV2 code.</source>
+        <translation>Please enter the correct CVV2 code.</translation>
+    </message>
+    <message>
+        <source>Sagittarius</source>
+        <translation>Sagittarius</translation>
+    </message>
+    <message>
+        <source>Scorpio</source>
+        <translation>Scorpio</translation>
+    </message>
+    <message>
+        <source>Syndicate</source>
+        <comment>Datatype name</comment>
+        <translation>Syndicate</translation>
+    </message>
+    <message>
+        <source>Taurus</source>
+        <translation>Taurus</translation>
+    </message>
+    <message>
+        <source>The creditcard was not accepted.
+                                                                  Please check the creditcard data.</source>
+        <translation>The creditcard was not accepted.
+                                                                  Please check the creditcard data.</translation>
+    </message>
+    <message>
+        <source>This transaction has failed to
+                verify that the use of a secure transaction (MD5 Hash Failed).
+                Please contact the site administrator and inform them of
+                this error. Please do not try to resubmit payment.</source>
+        <translation>This transaction has failed to
+                verify that the use of a secure transaction (MD5 Hash Failed).
+                Please contact the site administrator and inform them of
+                this error. Please do not try to resubmit payment.</translation>
+    </message>
+    <message>
+        <source>Virgio</source>
+        <translation>Virgio</translation>
+    </message>
+    <message>
+        <source>Your creditcard is expired.</source>
+        <translation>Your creditcard is expired.</translation>
+    </message>
+    <message>
+        <source>hCaptcha</source>
+        <comment>Datatype name</comment>
+        <translation>hCaptcha</translation>
+    </message>
 </context>
 <context>
     <name>kernel/classes/datatypes/ezbinaryfile</name>
@@ -37603,6 +38622,21 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Update</source>
         <comment>Navigation part</comment>
         <translation>Update</translation>
+    </message>
+    <message>
+        <source>Audit</source>
+        <comment>Navigation part</comment>
+        <translation>Audit</translation>
+    </message>
+    <message>
+        <source>BC CIE Export</source>
+        <comment>Navigation part</comment>
+        <translation>BC CIE Export</translation>
+    </message>
+    <message>
+        <source>CJW Newsletter</source>
+        <comment>Navigation part</comment>
+        <translation>CJW Newsletter</translation>
     </message>
 </context>
 <context>
@@ -38862,6 +39896,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Finish User Registration</source>
         <translation>Finish User Registration</translation>
     </message>
+    <message>
+        <source>eZ Page swap workflow event</source>
+        <translation>eZ Page swap workflow event</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -39796,6 +40834,90 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</translation>
+    </message>
+    <message>
+        <source>action</source>
+        <translation>action</translation>
+    </message>
+    <message>
+        <source>also a setting that names a class</source>
+        <translation>also a setting that names a class</translation>
+    </message>
+    <message>
+        <source>broken entry</source>
+        <translation>broken entry</translation>
+    </message>
+    <message>
+        <source>command</source>
+        <translation>command</translation>
+    </message>
+    <message>
+        <source>counted here</source>
+        <translation>counted here</translation>
+    </message>
+    <message>
+        <source>cronjob part</source>
+        <translation>cronjob part</translation>
+    </message>
+    <message>
+        <source>extension</source>
+        <translation>extension</translation>
+    </message>
+    <message>
+        <source>kernel</source>
+        <translation>kernel</translation>
+    </message>
+    <message>
+        <source>module view</source>
+        <translation>module view</translation>
+    </message>
+    <message>
+        <source>re-implemented by %class</source>
+        <translation>re-implemented by %class</translation>
+    </message>
+    <message>
+        <source>scope provider</source>
+        <translation>scope provider</translation>
+    </message>
+    <message>
+        <source>Audit alert rule classes</source>
+        <translation>Audit alert rule classes</translation>
+    </message>
+    <message>
+        <source>Audit archive formats</source>
+        <translation>Audit archive formats</translation>
+    </message>
+    <message>
+        <source>Audit sinks</source>
+        <translation>Audit sinks</translation>
+    </message>
+    <message>
+        <source>Audit taxonomy branches</source>
+        <translation>Audit taxonomy branches</translation>
+    </message>
+    <message>
+        <source>Content job types</source>
+        <translation>Content job types</translation>
+    </message>
+    <message>
+        <source>Debug bar presets</source>
+        <translation>Debug bar presets</translation>
+    </message>
+    <message>
+        <source>Debug bar settings</source>
+        <translation>Debug bar settings</translation>
+    </message>
+    <message>
+        <source>Server functions of ezjscore</source>
+        <translation>Server functions of ezjscore</translation>
+    </message>
+    <message>
+        <source>Subitems table columns</source>
+        <translation>Subitems table columns</translation>
+    </message>
+    <message>
+        <source>exp:ini actions and scope providers</source>
+        <translation>exp:ini actions and scope providers</translation>
     </message>
 </context>
 <context>
@@ -42385,6 +43507,350 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Audit trail of this job</source>
         <translation>Audit trail of this job</translation>
     </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done of %total done</translation>
+    </message>
+    <message>
+        <source>%done of %total nodes</source>
+        <translation>%done of %total nodes</translation>
+    </message>
+    <message>
+        <source>%s s</source>
+        <translation>%s s</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>All jobs</source>
+        <translation>All jobs</translation>
+    </message>
+    <message>
+        <source>Average batch</source>
+        <translation>Average batch</translation>
+    </message>
+    <message>
+        <source>Batch</source>
+        <translation>Batch</translation>
+    </message>
+    <message>
+        <source>Batch size</source>
+        <translation>Batch size</translation>
+    </message>
+    <message>
+        <source>Batches</source>
+        <translation>Batches</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Cancelled</source>
+        <translation>Cancelled</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Changed</translation>
+    </message>
+    <message>
+        <source>Chosen mode</source>
+        <translation>Chosen mode</translation>
+    </message>
+    <message>
+        <source>Content jobs</source>
+        <translation>Content jobs</translation>
+    </message>
+    <message>
+        <source>Continue from the last finished batch.</source>
+        <translation>Continue from the last finished batch.</translation>
+    </message>
+    <message>
+        <source>Counts</source>
+        <translation>Counts</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Created</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Done</translation>
+    </message>
+    <message>
+        <source>Download the whole log</source>
+        <translation>Download the whole log</translation>
+    </message>
+    <message>
+        <source>Duration</source>
+        <translation>Duration</translation>
+    </message>
+    <message>
+        <source>Everything up to the last finished batch is kept. Resume continues from there; nothing is done twice.</source>
+        <translation>Everything up to the last finished batch is kept. Resume continues from there; nothing is done twice.</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Failed</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>Finished</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Hidden</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Items</translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation>Job</translation>
+    </message>
+    <message>
+        <source>Locations copied</source>
+        <translation>Locations copied</translation>
+    </message>
+    <message>
+        <source>Locations removed</source>
+        <translation>Locations removed</translation>
+    </message>
+    <message>
+        <source>Locations removed, object kept (it has other locations)</source>
+        <translation>Locations removed, object kept (it has other locations)</translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation>Log</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>Moved to the trash</source>
+        <translation>Moved to the trash</translation>
+    </message>
+    <message>
+        <source>Nothing had been copied yet.</source>
+        <translation>Nothing had been copied yet.</translation>
+    </message>
+    <message>
+        <source>Objects copied</source>
+        <translation>Objects copied</translation>
+    </message>
+    <message>
+        <source>Objects moved to the trash</source>
+        <translation>Objects moved to the trash</translation>
+    </message>
+    <message>
+        <source>Objects removed</source>
+        <translation>Objects removed</translation>
+    </message>
+    <message>
+        <source>Open the node that failed</source>
+        <translation>Open the node that failed</translation>
+    </message>
+    <message>
+        <source>Open the parent</source>
+        <translation>Open the parent</translation>
+    </message>
+    <message>
+        <source>Open the partial copy</source>
+        <translation>Open the partial copy</translation>
+    </message>
+    <message>
+        <source>Opening the result in %seconds s</source>
+        <translation>Opening the result in %seconds s</translation>
+    </message>
+    <message>
+        <source>Operation</source>
+        <translation>Operation</translation>
+    </message>
+    <message>
+        <source>Peak memory</source>
+        <translation>Peak memory</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progress</translation>
+    </message>
+    <message>
+        <source>Remove subtree, delete</source>
+        <translation>Remove subtree, delete</translation>
+    </message>
+    <message>
+        <source>Remove the partial copy</source>
+        <translation>Remove the partial copy</translation>
+    </message>
+    <message>
+        <source>Remove the partial copy starts a job that deletes it. To copy the subtree, start the copy again.</source>
+        <translation>Remove the partial copy starts a job that deletes it. To copy the subtree, start the copy again.</translation>
+    </message>
+    <message>
+        <source>Remove, delete</source>
+        <translation>Remove, delete</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Removed</translation>
+    </message>
+    <message>
+        <source>Removed items</source>
+        <translation>Removed items</translation>
+    </message>
+    <message>
+        <source>Removing %name</source>
+        <translation>Removing %name</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Resume</translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation>Running</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation>Skipped</translation>
+    </message>
+    <message>
+        <source>Slowest batch</source>
+        <translation>Slowest batch</translation>
+    </message>
+    <message>
+        <source>Start a job that removes what the cancelled copy created.</source>
+        <translation>Start a job that removes what the cancelled copy created.</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Started</translation>
+    </message>
+    <message>
+        <source>Started by</source>
+        <translation>Started by</translation>
+    </message>
+    <message>
+        <source>Started from</source>
+        <translation>Started from</translation>
+    </message>
+    <message>
+        <source>Stop after the current batch. What is done so far is kept.</source>
+        <translation>Stop after the current batch. What is done so far is kept.</translation>
+    </message>
+    <message>
+        <source>Stopping after the current batch</source>
+        <translation>Stopping after the current batch</translation>
+    </message>
+    <message>
+        <source>Subtree</source>
+        <translation>Subtree</translation>
+    </message>
+    <message>
+        <source>The copy was cancelled.</source>
+        <translation>The copy was cancelled.</translation>
+    </message>
+    <message>
+        <source>The job stopped with an error.</source>
+        <translation>The job stopped with an error.</translation>
+    </message>
+    <message>
+        <source>The partial copy is no longer there (it has been removed).</source>
+        <translation>The partial copy is no longer there (it has been removed).</translation>
+    </message>
+    <message>
+        <source>The removal was cancelled.</source>
+        <translation>The removal was cancelled.</translation>
+    </message>
+    <message>
+        <source>The subtree has been removed.</source>
+        <translation>The subtree has been removed.</translation>
+    </message>
+    <message>
+        <source>Versions copied</source>
+        <translation>Versions copied</translation>
+    </message>
+    <message>
+        <source>Waited for a worker</source>
+        <translation>Waited for a worker</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Waiting</translation>
+    </message>
+    <message>
+        <source>Waiting for the status...</source>
+        <translation>Waiting for the status...</translation>
+    </message>
+    <message>
+        <source>Warnings</source>
+        <translation>Warnings</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>What</translation>
+    </message>
+    <message>
+        <source>What was not removed yet is still in place. Remove it again to remove the rest.</source>
+        <translation>What was not removed yet is still in place. Remove it again to remove the rest.</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>When</translation>
+    </message>
+    <message>
+        <source>Where it runs</source>
+        <translation>Where it runs</translation>
+    </message>
+    <message>
+        <source>Who</source>
+        <translation>Who</translation>
+    </message>
+    <message>
+        <source>Worker process</source>
+        <translation>Worker process</translation>
+    </message>
+    <message>
+        <source>Worker runs on</source>
+        <translation>Worker runs on</translation>
+    </message>
+    <message>
+        <source>Worker starts</source>
+        <translation>Worker starts</translation>
+    </message>
+    <message>
+        <source>as %user</source>
+        <translation>as %user</translation>
+    </message>
+    <message>
+        <source>batch</source>
+        <translation>batch</translation>
+    </message>
+    <message>
+        <source>command line</source>
+        <translation>command line</translation>
+    </message>
+    <message>
+        <source>deleted permanently</source>
+        <translation>deleted permanently</translation>
+    </message>
+    <message>
+        <source>on %host</source>
+        <translation>on %host</translation>
+    </message>
+    <message>
+        <source>Also for everything below this node</source>
+        <translation>Also for everything below this node</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/audit</name>
@@ -42403,6 +43869,848 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Please try again later, or tell the administrator: the details are in the error log under AUDIT-REFUSED.</source>
         <translation>Please try again later, or tell the administrator: the details are in the error log under AUDIT-REFUSED.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/audit</name>
+    <message>
+        <source>Audit alert</source>
+        <translation>Audit alert</translation>
+    </message>
+    <message>
+        <source>Audit archive</source>
+        <translation>Audit archive</translation>
+    </message>
+    <message>
+        <source>Audit chain broken</source>
+        <translation>Audit chain broken</translation>
+    </message>
+    <message>
+        <source>Audit chain repair</source>
+        <translation>Audit chain repair</translation>
+    </message>
+    <message>
+        <source>Audit checkpoint</source>
+        <translation>Audit checkpoint</translation>
+    </message>
+    <message>
+        <source>Audit disable</source>
+        <translation>Audit disable</translation>
+    </message>
+    <message>
+        <source>Audit enable</source>
+        <translation>Audit enable</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Audit export</translation>
+    </message>
+    <message>
+        <source>Audit file close</source>
+        <translation>Audit file close</translation>
+    </message>
+    <message>
+        <source>Audit file open</source>
+        <translation>Audit file open</translation>
+    </message>
+    <message>
+        <source>Audit import</source>
+        <translation>Audit import</translation>
+    </message>
+    <message>
+        <source>Audit key create</source>
+        <translation>Audit key create</translation>
+    </message>
+    <message>
+        <source>Audit key rotate</source>
+        <translation>Audit key rotate</translation>
+    </message>
+    <message>
+        <source>Audit overflow</source>
+        <translation>Audit overflow</translation>
+    </message>
+    <message>
+        <source>Audit pseudonymise</source>
+        <translation>Audit pseudonymise</translation>
+    </message>
+    <message>
+        <source>Audit purge</source>
+        <translation>Audit purge</translation>
+    </message>
+    <message>
+        <source>Audit read</source>
+        <translation>Audit read</translation>
+    </message>
+    <message>
+        <source>Audit reindex</source>
+        <translation>Audit reindex</translation>
+    </message>
+    <message>
+        <source>Audit rotate</source>
+        <translation>Audit rotate</translation>
+    </message>
+    <message>
+        <source>Audit setting write</source>
+        <translation>Audit setting write</translation>
+    </message>
+    <message>
+        <source>Audit sink failed</source>
+        <translation>Audit sink failed</translation>
+    </message>
+    <message>
+        <source>Audit verify</source>
+        <translation>Audit verify</translation>
+    </message>
+    <message>
+        <source>Basket checkout</source>
+        <translation>Basket checkout</translation>
+    </message>
+    <message>
+        <source>Cache clear</source>
+        <translation>Cache clear</translation>
+    </message>
+    <message>
+        <source>Class change</source>
+        <translation>Class change</translation>
+    </message>
+    <message>
+        <source>Class copy</source>
+        <translation>Class copy</translation>
+    </message>
+    <message>
+        <source>Class create</source>
+        <translation>Class create</translation>
+    </message>
+    <message>
+        <source>Class remove</source>
+        <translation>Class remove</translation>
+    </message>
+    <message>
+        <source>Command run</source>
+        <translation>Command run</translation>
+    </message>
+    <message>
+        <source>Cronjob fail</source>
+        <translation>Cronjob fail</translation>
+    </message>
+    <message>
+        <source>Cronjob run</source>
+        <translation>Cronjob run</translation>
+    </message>
+    <message>
+        <source>Currency change</source>
+        <translation>Currency change</translation>
+    </message>
+    <message>
+        <source>Discount change</source>
+        <translation>Discount change</translation>
+    </message>
+    <message>
+        <source>Error fatal</source>
+        <translation>Error fatal</translation>
+    </message>
+    <message>
+        <source>Export csv</source>
+        <translation>Export csv</translation>
+    </message>
+    <message>
+        <source>Export package</source>
+        <translation>Export package</translation>
+    </message>
+    <message>
+        <source>Export pdf</source>
+        <translation>Export pdf</translation>
+    </message>
+    <message>
+        <source>Extension change</source>
+        <translation>Extension change</translation>
+    </message>
+    <message>
+        <source>Import csv</source>
+        <translation>Import csv</translation>
+    </message>
+    <message>
+        <source>Import dba</source>
+        <translation>Import dba</translation>
+    </message>
+    <message>
+        <source>Import rss</source>
+        <translation>Import rss</translation>
+    </message>
+    <message>
+        <source>Index rebuild</source>
+        <translation>Index rebuild</translation>
+    </message>
+    <message>
+        <source>Infocollection remove</source>
+        <translation>Infocollection remove</translation>
+    </message>
+    <message>
+        <source>Infocollection view</source>
+        <translation>Infocollection view</translation>
+    </message>
+    <message>
+        <source>Install run</source>
+        <translation>Install run</translation>
+    </message>
+    <message>
+        <source>Job cancel</source>
+        <translation>Job cancel</translation>
+    </message>
+    <message>
+        <source>Job create</source>
+        <translation>Job create</translation>
+    </message>
+    <message>
+        <source>Job fail</source>
+        <translation>Job fail</translation>
+    </message>
+    <message>
+        <source>Job finish</source>
+        <translation>Job finish</translation>
+    </message>
+    <message>
+        <source>Job resume</source>
+        <translation>Job resume</translation>
+    </message>
+    <message>
+        <source>Job start</source>
+        <translation>Job start</translation>
+    </message>
+    <message>
+        <source>Maintenance change</source>
+        <translation>Maintenance change</translation>
+    </message>
+    <message>
+        <source>Node add</source>
+        <translation>Node add</translation>
+    </message>
+    <message>
+        <source>Node copy</source>
+        <translation>Node copy</translation>
+    </message>
+    <message>
+        <source>Node hide</source>
+        <translation>Node hide</translation>
+    </message>
+    <message>
+        <source>Node main</source>
+        <translation>Node main</translation>
+    </message>
+    <message>
+        <source>Node move</source>
+        <translation>Node move</translation>
+    </message>
+    <message>
+        <source>Node priority</source>
+        <translation>Node priority</translation>
+    </message>
+    <message>
+        <source>Node remove</source>
+        <translation>Node remove</translation>
+    </message>
+    <message>
+        <source>Node remove trash</source>
+        <translation>Node remove trash</translation>
+    </message>
+    <message>
+        <source>Node reveal</source>
+        <translation>Node reveal</translation>
+    </message>
+    <message>
+        <source>Node section</source>
+        <translation>Node section</translation>
+    </message>
+    <message>
+        <source>Node sort</source>
+        <translation>Node sort</translation>
+    </message>
+    <message>
+        <source>Node swap</source>
+        <translation>Node swap</translation>
+    </message>
+    <message>
+        <source>Node view</source>
+        <translation>Node view</translation>
+    </message>
+    <message>
+        <source>Object always available</source>
+        <translation>Object always available</translation>
+    </message>
+    <message>
+        <source>Object create</source>
+        <translation>Object create</translation>
+    </message>
+    <message>
+        <source>Object download</source>
+        <translation>Object download</translation>
+    </message>
+    <message>
+        <source>Object initial language</source>
+        <translation>Object initial language</translation>
+    </message>
+    <message>
+        <source>Object publish</source>
+        <translation>Object publish</translation>
+    </message>
+    <message>
+        <source>Object purge</source>
+        <translation>Object purge</translation>
+    </message>
+    <message>
+        <source>Object remove</source>
+        <translation>Object remove</translation>
+    </message>
+    <message>
+        <source>Object restore</source>
+        <translation>Object restore</translation>
+    </message>
+    <message>
+        <source>Object state</source>
+        <translation>Object state</translation>
+    </message>
+    <message>
+        <source>Object translate</source>
+        <translation>Object translate</translation>
+    </message>
+    <message>
+        <source>Object translation remove</source>
+        <translation>Object translation remove</translation>
+    </message>
+    <message>
+        <source>Order archive</source>
+        <translation>Order archive</translation>
+    </message>
+    <message>
+        <source>Order create</source>
+        <translation>Order create</translation>
+    </message>
+    <message>
+        <source>Order delete</source>
+        <translation>Order delete</translation>
+    </message>
+    <message>
+        <source>Order item remove</source>
+        <translation>Order item remove</translation>
+    </message>
+    <message>
+        <source>Order purge</source>
+        <translation>Order purge</translation>
+    </message>
+    <message>
+        <source>Order status</source>
+        <translation>Order status</translation>
+    </message>
+    <message>
+        <source>Order unarchive</source>
+        <translation>Order unarchive</translation>
+    </message>
+    <message>
+        <source>Package import</source>
+        <translation>Package import</translation>
+    </message>
+    <message>
+        <source>Package install</source>
+        <translation>Package install</translation>
+    </message>
+    <message>
+        <source>Package uninstall</source>
+        <translation>Package uninstall</translation>
+    </message>
+    <message>
+        <source>Payment approve</source>
+        <translation>Payment approve</translation>
+    </message>
+    <message>
+        <source>Permission refused</source>
+        <translation>Permission refused</translation>
+    </message>
+    <message>
+        <source>Policy add</source>
+        <translation>Policy add</translation>
+    </message>
+    <message>
+        <source>Policy remove</source>
+        <translation>Policy remove</translation>
+    </message>
+    <message>
+        <source>Repair queue</source>
+        <translation>Repair queue</translation>
+    </message>
+    <message>
+        <source>Role assign</source>
+        <translation>Role assign</translation>
+    </message>
+    <message>
+        <source>Role change</source>
+        <translation>Role change</translation>
+    </message>
+    <message>
+        <source>Role copy</source>
+        <translation>Role copy</translation>
+    </message>
+    <message>
+        <source>Role create</source>
+        <translation>Role create</translation>
+    </message>
+    <message>
+        <source>Role remove</source>
+        <translation>Role remove</translation>
+    </message>
+    <message>
+        <source>Role unassign</source>
+        <translation>Role unassign</translation>
+    </message>
+    <message>
+        <source>Search query</source>
+        <translation>Search query</translation>
+    </message>
+    <message>
+        <source>Section change</source>
+        <translation>Section change</translation>
+    </message>
+    <message>
+        <source>Section remove</source>
+        <translation>Section remove</translation>
+    </message>
+    <message>
+        <source>Session expire</source>
+        <translation>Session expire</translation>
+    </message>
+    <message>
+        <source>Session login</source>
+        <translation>Session login</translation>
+    </message>
+    <message>
+        <source>Session login failed</source>
+        <translation>Session login failed</translation>
+    </message>
+    <message>
+        <source>Session logout</source>
+        <translation>Session logout</translation>
+    </message>
+    <message>
+        <source>Session reauth</source>
+        <translation>Session reauth</translation>
+    </message>
+    <message>
+        <source>Session reauth failed</source>
+        <translation>Session reauth failed</translation>
+    </message>
+    <message>
+        <source>Session regenerate</source>
+        <translation>Session regenerate</translation>
+    </message>
+    <message>
+        <source>Setting undo</source>
+        <translation>Setting undo</translation>
+    </message>
+    <message>
+        <source>Setting write</source>
+        <translation>Setting write</translation>
+    </message>
+    <message>
+        <source>State change</source>
+        <translation>State change</translation>
+    </message>
+    <message>
+        <source>State remove</source>
+        <translation>State remove</translation>
+    </message>
+    <message>
+        <source>Template change</source>
+        <translation>Template change</translation>
+    </message>
+    <message>
+        <source>Token refused</source>
+        <translation>Token refused</translation>
+    </message>
+    <message>
+        <source>Trash empty</source>
+        <translation>Trash empty</translation>
+    </message>
+    <message>
+        <source>Upgrade run</source>
+        <translation>Upgrade run</translation>
+    </message>
+    <message>
+        <source>Urlalias change</source>
+        <translation>Urlalias change</translation>
+    </message>
+    <message>
+        <source>User activate</source>
+        <translation>User activate</translation>
+    </message>
+    <message>
+        <source>User create</source>
+        <translation>User create</translation>
+    </message>
+    <message>
+        <source>User disable</source>
+        <translation>User disable</translation>
+    </message>
+    <message>
+        <source>User email change</source>
+        <translation>User email change</translation>
+    </message>
+    <message>
+        <source>User enable</source>
+        <translation>User enable</translation>
+    </message>
+    <message>
+        <source>User lock</source>
+        <translation>User lock</translation>
+    </message>
+    <message>
+        <source>User login change</source>
+        <translation>User login change</translation>
+    </message>
+    <message>
+        <source>User password change</source>
+        <translation>User password change</translation>
+    </message>
+    <message>
+        <source>User password change failed</source>
+        <translation>User password change failed</translation>
+    </message>
+    <message>
+        <source>User password reset</source>
+        <translation>User password reset</translation>
+    </message>
+    <message>
+        <source>User password reset failed</source>
+        <translation>User password reset failed</translation>
+    </message>
+    <message>
+        <source>User password reset request</source>
+        <translation>User password reset request</translation>
+    </message>
+    <message>
+        <source>User remove</source>
+        <translation>User remove</translation>
+    </message>
+    <message>
+        <source>User unlock</source>
+        <translation>User unlock</translation>
+    </message>
+    <message>
+        <source>Vat change</source>
+        <translation>Vat change</translation>
+    </message>
+    <message>
+        <source>Velocity deploy</source>
+        <translation>Velocity deploy</translation>
+    </message>
+    <message>
+        <source>Version remove</source>
+        <translation>Version remove</translation>
+    </message>
+    <message>
+        <source>View sensitive</source>
+        <translation>View sensitive</translation>
+    </message>
+    <message>
+        <source>Workflow trigger change</source>
+        <translation>Workflow trigger change</translation>
+    </message>
+    <message>
+        <source>Legacy bridge test</source>
+        <translation>Legacy bridge test</translation>
+    </message>
+    <message>
+        <source>Legacy hook test</source>
+        <translation>Legacy hook test</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard</name>
+    <message>
+        <source>Here is what is happening on %site.</source>
+        <translation>Here is what is happening on %site.</translation>
+    </message>
+    <message>
+        <source>Caches</source>
+        <translation>Caches</translation>
+    </message>
+    <message>
+        <source>Content items</source>
+        <translation>Content items</translation>
+    </message>
+    <message>
+        <source>Content published per day over the last 14 days</source>
+        <translation>Content published per day over the last 14 days</translation>
+    </message>
+    <message>
+        <source>Content structure</source>
+        <translation>Content structure</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Database</translation>
+    </message>
+    <message>
+        <source>Exponential itself -- the kernel, its designs and the extensions kept in git -- is updated by pulling the newest release into the installation: see which branch and version it runs, what has changed upstream, and update.</source>
+        <translation>Exponential itself -- the kernel, its designs and the extensions kept in git -- is updated by pulling the newest release into the installation: see which branch and version it runs, what has changed upstream, and update.</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensions</translation>
+    </message>
+    <message>
+        <source>Good afternoon</source>
+        <translation>Good afternoon</translation>
+    </message>
+    <message>
+        <source>Good evening</source>
+        <translation>Good evening</translation>
+    </message>
+    <message>
+        <source>Good morning</source>
+        <translation>Good morning</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>In the trash</translation>
+    </message>
+    <message>
+        <source>Key figures</source>
+        <translation>Key figures</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Layouts</translation>
+    </message>
+    <message>
+        <source>Media items</source>
+        <translation>Media items</translation>
+    </message>
+    <message>
+        <source>Media library</source>
+        <translation>Media library</translation>
+    </message>
+    <message>
+        <source>Most attacks use flaws that are already fixed in a newer version. Two updates keep this installation safe; check both regularly, and right away when a security release is announced.</source>
+        <translation>Most attacks use flaws that are already fixed in a newer version. Two updates keep this installation safe; check both regularly, and right away when a security release is announced.</translation>
+    </message>
+    <message>
+        <source>My drafts</source>
+        <translation>My drafts</translation>
+    </message>
+    <message>
+        <source>My pending items</source>
+        <translation>My pending items</translation>
+    </message>
+    <message>
+        <source>Open the Git manager</source>
+        <translation>Open the Git manager</translation>
+    </message>
+    <message>
+        <source>Open the Updates dashboard</source>
+        <translation>Open the Updates dashboard</translation>
+    </message>
+    <message>
+        <source>Published in the last 7 days</source>
+        <translation>Published in the last 7 days</translation>
+    </message>
+    <message>
+        <source>Publishing, last 14 days</source>
+        <translation>Publishing, last 14 days</translation>
+    </message>
+    <message>
+        <source>Quick actions</source>
+        <translation>Quick actions</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Signed in now</translation>
+    </message>
+    <message>
+        <source>Stay secure: keep Exponential up to date</source>
+        <translation>Stay secure: keep Exponential up to date</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>System information</source>
+        <translation>System information</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Tags</translation>
+    </message>
+    <message>
+        <source>The Git manager is not available to you here; ask an administrator to run this step.</source>
+        <translation>The Git manager is not available to you here; ask an administrator to run this step.</translation>
+    </message>
+    <message>
+        <source>The Updates dashboard is not available to you here; ask an administrator to run this step.</source>
+        <translation>The Updates dashboard is not available to you here; ask an administrator to run this step.</translation>
+    </message>
+    <message>
+        <source>The libraries the CMS requires are Composer packages. The Updates dashboard lists the installed packages, checks Packagist for newer versions and security advisories, and updates them.</source>
+        <translation>The libraries the CMS requires are Composer packages. The Updates dashboard lists the installed packages, checks Packagist for newer versions and security advisories, and updates them.</translation>
+    </message>
+    <message>
+        <source>Update the CMS with the Git manager</source>
+        <translation>Update the CMS with the Git manager</translation>
+    </message>
+    <message>
+        <source>Update the libraries with Composer</source>
+        <translation>Update the libraries with Composer</translation>
+    </message>
+    <message>
+        <source>Upgrade check</source>
+        <translation>Upgrade check</translation>
+    </message>
+    <message>
+        <source>Upload files</source>
+        <translation>Upload files</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Users</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Auto RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Database Editor</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Database Source Editor</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Subtree Skeleton Publisher</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Push to block</translation>
+    </message>
+</context>
+<context>
+    <name>syndication</name>
+    <message>
+        <source>Deleted</source>
+        <translation>Deleted</translation>
+    </message>
+    <message>
+        <source>Denied</source>
+        <translation>Denied</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Failed</translation>
+    </message>
+    <message>
+        <source>Ignoring</source>
+        <translation>Ignoring</translation>
+    </message>
+    <message>
+        <source>Installed</source>
+        <translation>Installed</translation>
+    </message>
+    <message>
+        <source>Installing</source>
+        <translation>Installing</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>None</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pending</translation>
+    </message>
+</context>
+<context>
+    <name>syndication/edit</name>
+    <message>
+        <source>Node</source>
+        <comment>Source type</comment>
+        <translation>Node</translation>
+    </message>
+    <message>
+        <source>Subtree</source>
+        <comment>Source type</comment>
+        <translation>Subtree</translation>
+    </message>
+</context>
+<context>
+    <name>syndication/import</name>
+    <message>
+        <source>Syndication</source>
+        <translation>Syndication</translation>
+    </message>
+</context>
+<context>
+    <name>syndication/list</name>
+    <message>
+        <source>Add Filter</source>
+        <translation>Add Filter</translation>
+    </message>
+    <message>
+        <source>Add Source</source>
+        <translation>Add Source</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <source>Edit Filter</source>
+        <translation>Edit Filter</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>List</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Syndication</source>
+        <translation>Syndication</translation>
+    </message>
+    <message>
+        <source>Syndication Import</source>
+        <translation>Syndication Import</translation>
+    </message>
+</context>
+<context>
+    <name>syndication/menu</name>
+    <message>
+        <source>Syndication</source>
+        <translation>Syndication</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/extract</name>
+    <message>
+        <source>Location in the tree (path)</source>
+        <translation>Location in the tree (path)</translation>
     </message>
 </context>
 </TS>
