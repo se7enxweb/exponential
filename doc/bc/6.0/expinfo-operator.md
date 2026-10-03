@@ -1,31 +1,39 @@
-# expInfo / expinfo operator
+# expInfo class and expinfo operator
 
-## Added: expInfo PHP API and expinfo template operator
+Read this page if you want to read installation or extension metadata from PHP or from a template, or if you
+maintain an override of the Setup > Extensions view. 6.0.15 adds `expInfo`, a read-only PHP class, and the
+matching `expinfo` template operator. Nothing existing changes behaviour; the Setup > Extensions view now uses the
+new class internally.
 
-This release adds a new read-only utility class and matching template operator for querying Exponential installation and extension metadata.
+## In short
 
-### PHP API
+| | |
+|---|---|
+| What changed | New class `expInfo` (`lib/ezutils/classes/expinfo.php`) and template operator `expinfo`. |
+| Who is affected | Template and extension authors who want the data; overrides of Setup > Extensions. |
+| How to check | Put `{expinfo( 'no_such_ext' )\|attribute( show )}` in a scratch template; it shows `false`. |
+| How to fix | Nothing to fix. Regenerate autoloads, clear caches and reload PHP-FPM after deploying (see "Deploy"). |
 
-`lib/ezutils/classes/expinfo.php` now contains `expInfo` with the following static methods:
+## PHP API
 
-- `expInfo::activeExtensions()`  
-  Returns metadata for all active extensions, keyed by extension directory name.
+`lib/ezutils/classes/expinfo.php` declares `expInfo` with these static methods:
 
-- `expInfo::availableExtensions()`  
-  Returns metadata for every extension found on disk, with an `active` boolean.
+| Method | Returns |
+|---|---|
+| `expInfo::activeExtensions()` | Metadata of all active extensions, keyed by extension directory name. |
+| `expInfo::availableExtensions()` | Metadata of every extension found on disk, each with an `active` boolean. |
+| `expInfo::extensionInfo( $name, $activeOnly = false )` | Metadata of one extension, or `false` when it is not found (or, with `$activeOnly`, not active). |
+| `expInfo::hasActiveExtension( $name )` | `true` or `false`. |
+| `expInfo::activeNames()` | The list of active extension names. |
+| `expInfo::kernelInfo( $section = false )` | A large read-only array describing the installation. With a section name (see the table below) only that section. Built once per request and kept in memory. |
 
-- `expInfo::extensionInfo( $name, $activeOnly = false )`  
-  Returns metadata for a single extension, or `false` if not found (or, with `$activeOnly`, not active).
+An extension's metadata array holds the keys `Name`, `Version`, `Copyright`, `License`, `info_url`, `description`,
+`author`, `summary`, `meta`, `mtime` and `active`, and more: the exact list is whatever the extension's `ezinfo.php`
+or `extension.xml` provides, normalised.
 
-- `expInfo::hasActiveExtension( $name )` and `expInfo::activeNames()`  
-  A boolean test and the list of active extension names.
+## Template operator
 
-- `expInfo::kernelInfo( $section = false )`  
-  Returns a large, read-only array describing the installation kernel. With a section name (a key of the table below) only that section is returned. The result is built once per request and cached in memory.
-
-### Template operator
-
-`lib/eztemplate/classes/eztemplateexpinfooperator.php` registers the new `expinfo` operator:
+`lib/eztemplate/classes/eztemplateexpinfooperator.php` registers `expinfo`:
 
 ```tpl
 {expinfo()}                     {* active extensions array *}
@@ -34,54 +42,59 @@ This release adds a new read-only utility class and matching template operator f
 {expinfo('kernel')}             {* the whole kernel info array; a single section is a PHP call, see above *}
 ```
 
-An extension's metadata array holds the keys `Name`, `Version`, `Copyright`, `License`, `info_url`, `description`, `author`, `summary`, `meta`, `mtime` and `active` (and more; the exact list is whatever the extension's `ezinfo.php` or `extension.xml` provides, normalised).
+## Kernel info sections
 
-### Check it yourself
+`expinfo('kernel')` and `expInfo::kernelInfo()` return these thirteen top-level sections:
 
-Put `{expinfo( 'no_such_ext' )|attribute( show )}` in a scratch template, or call the class from a script run with `php bin/php/ezexec.php <script> --allow-root-user`. On this installation `expInfo::kernelInfo()` returns exactly the thirteen sections listed below, and `expInfo::extensionInfo( 'no_such_ext' )` returns `false`.
+| Section | Contents |
+|---|---|
+| `version` | `ExponentialSDK` version, state, alias, edition (`lib/version.php`) |
+| `php` | PHP version, SAPI, loaded extensions, INI limits |
+| `memory` | Current and peak memory usage |
+| `server` | Host name, kernel/var/cache/www paths, server software |
+| `database` | Database type, version, name, server, user (password redacted) |
+| `ini` | Site name, siteaccess, designs, languages, database settings |
+| `user` | Current user id and login, if available |
+| `extensions` | Active and available extension counts and name lists |
+| `cache` | Cache directory size and compiled template count |
+| `filesystem` | Root, var and extension directory sizes; disk free and total |
+| `timestamps` | mtime of `lib/version.php`, `index.php`, `composer.lock` and others |
+| `git` | Branch, last commit hash and date, dirty file count |
+| `composer` | Installed Composer package count and versions |
 
-### Kernel info sections
-
-`expinfo('kernel')` returns the following top-level sections:
-
-| Section      | Contents                                                       |
-|--------------|----------------------------------------------------------------|
-| `version`    | `ExponentialSDK` version, state, alias, edition (`lib/version.php`) |
-| `php`        | PHP version, SAPI, loaded extensions, INI limits               |
-| `memory`     | Current and peak memory usage                                  |
-| `server`     | Hostname, kernel/var/cache/www paths, server software          |
-| `database`   | DB type/version/name/server/user (password redacted)          |
-| `ini`        | Site name, siteaccess, designs, languages, DB settings         |
-| `user`       | Current user id/login if available                             |
-| `extensions` | Active and available extension counts and name lists           |
-| `cache`      | Cache directory size and compiled template count               |
-| `filesystem` | Root/var/extension directory sizes and disk free/total         |
-| `timestamps` | mtime of `lib/version.php`, `index.php`, `composer.lock`, etc. |
-| `git`        | Branch, last commit hash/date, dirty file count                |
-| `composer`   | Installed composer package count and versions                  |
-
-### Security
+## Security
 
 - Database and INI passwords are always returned as `***`.
-- No secrets, private keys, or credentials are exposed.
+- No secrets, private keys or credentials are exposed.
 
-### Additional changes
+## Check it yourself
 
-- The Setup > Extensions view (entry point `kernel/setup/extensions.php`, code in `kernel/private/classes/views/setup/extensions.php`) collects extension metadata with `expInfo::availableExtensions()` instead of an inline helper.
+- In a template: put `{expinfo( 'no_such_ext' )|attribute( show )}` in a scratch template and view it. The result is
+  `false`.
+- From PHP: call the class from a script run with `php bin/php/ezexec.php <script> --allow-root-user`.
+  `expInfo::kernelInfo()` returns exactly the thirteen sections above, and `expInfo::extensionInfo( 'no_such_ext' )`
+  returns `false`.
 
-## Build notes
+## Setup > Extensions
 
-- Regenerate autoloads after deployment: `php bin/php/ezpgenerateautoloads.php -e`
-- Clear caches after class/INI changes: `php bin/php/ezcache.php --clear-all --allow-root-user`
-- Reload the PHP-FPM that serves the site so the web runtime picks up the new class.
+The Setup > Extensions view (entry point `kernel/setup/extensions.php`, code in
+`kernel/private/classes/views/setup/extensions.php`) now collects extension metadata with
+`expInfo::availableExtensions()` instead of an inline helper. An override of that view can call the same method.
 
-## See also
+## Deploy
 
-- [Extension metadata specification](../../specifications/6.0/extension-metadata.md)
-- [Extension list and downloads](../../features/6.0/extension-list-and-downloads.md)
-- [September 2026, first half](../../history/2026/2026-09a.md#1-to-2-september-knowing-what-is-installed)
-- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+```bash
+php bin/php/ezpgenerateautoloads.php -e
+php bin/php/ezcache.php --clear-all --allow-root-user
+```
+
+Then reload the PHP-FPM that serves the site, so the web runtime picks up the new class.
 
 ## Related pages
 
+- [Extension metadata specification](../../specifications/6.0/extension-metadata.md)
+- [Extension list and downloads](../../features/6.0/extension-list-and-downloads.md)
 - [RAD tools](../../features/6.0/rad-tools.md)
+- [ExponentialSDK and exponential.cron](exponentialsdk-and-exponential-cron.md)
+- [September 2026, first half](../../history/2026/2026-09a.md#1-to-2-september-knowing-what-is-installed)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)

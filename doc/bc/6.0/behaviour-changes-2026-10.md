@@ -1,69 +1,93 @@
-# Behaviour changes of 1-2 October 2026 (the 6.0.15 line): what to check when you upgrade
+# Behaviour changes of 1 and 2 October 2026 (6.0.15 line): what to check when you upgrade
 
-A checklist of the changes of these two days that an operator or an extension author can notice. Each item says
-what changed, how to check it and what to do. Features are described in the linked pages;
-the month's story is in the [October 2026 chronicle](../../history/2026/2026-10.md).
+Read this page before you update an installation to the changes of 1 and 2 October 2026. It is a checklist for
+operators and extension authors: each item says what changed, how to check it and what to do. The features are
+described on the linked pages; the story of the month is in the [October 2026 chronicle](../../history/2026/2026-10.md).
 
-After pulling these changes run, in this order (a PHP class, INI and template-path change all happened):
+## Deploy order
+
+PHP classes, INI files and template paths all changed. After pulling the changes, run these in order:
 
 ```bash
 php bin/php/ezpgenerateautoloads.php -e
-php bin/php/ezpgenerateautoloads.php -k --exclude='\.claude'
+php bin/php/ezpgenerateautoloads.php -k
 php bin/php/ezcache.php --clear-all --allow-root-user
 ```
 
-then reload the PHP-FPM that serves the site, and restart Exponential Velocity if you use it (its workers keep
-the classes they loaded at warm-up); clear the content view cache and Velocity's response cache last.
+`-k` walks the whole installation. If you keep working copies of the installation inside it, list them in
+`.autoloadignore` or pass `--exclude=<dir>`, or every kernel class is mapped into the copy.
+
+Then:
+
+1. Reload the PHP-FPM that serves the site.
+2. Restart Exponential Velocity if you use it. Its workers keep the classes they loaded at warm-up.
+3. Clear the content view cache and Velocity's response cache last.
 
 ## Access and security
 
-| Change | Check | Action |
+| Change | How to check | What to do |
 |---|---|---|
-| Poll votes (`expPoll::vote`), form submissions (`expInfoCollection::submit`) and the VAT country choice (`expVat::setUserCountry`) of the remote services need `content/read`, not "open to everyone" | an anonymous visitor who has no `content/read` can no longer vote or submit through the services | give the Anonymous role `content/read` (it has it on a public site) |
-| The debug bar's settings, change log, IP test and cache list need `setup/setup` or `setup/managecache` | a visitor who sees the debug report could read every debug setting before | give the policy to the roles that debug |
-| The admin dashboard, menus and top tabs show a link only to a user who can open it | editors no longer see Design, Newsletter, Export tabs, Users, Upload files, Tags, Layouts, Trash entries, "Change password" without the policy | none; check a custom role |
-| `ezoe/upload` refuses a file whose type is not in `UploadFileExtensions[]` and any name with an executable extension anywhere (`shell.php.jpg`) when the user's engine is not TinyMCE 3 (`UploadExtensionCheck=engine`) | upload a `.zip` or `.pdf` with the TinyMCE 8 engine | add the type to `ezoe.ini [EditorSettings] UploadFileExtensions[]` |
-| Request rules exist and `Enabled=true`, but `RuleList[]` is empty | nothing changes until you list a rule | see [request rules](../../features/6.0/request-rules.md); `php bin/php/ezrequestrules.php -s <siteaccess> --check` |
+| Poll votes (`expPoll::vote`), form submissions (`expInfoCollection::submit`) and the VAT country choice (`expVat::setUserCountry`) of the remote services need `content/read`; they were open to everyone. | An anonymous visitor without `content/read` can no longer vote or submit through the services. | Give the Anonymous role `content/read` (a public site already has it). |
+| The debug bar's settings, change log, IP test and cache list need `setup/setup` or `setup/managecache`. | Before, a visitor who saw the debug report could read every debug setting. | Give the policy to the roles that debug. |
+| The admin dashboard, menus and top tabs show a link only to a user who can open it. | Editors no longer see Design, Newsletter, Export tabs, Users, Upload files, Tags, Layouts, Trash entries or "Change password" without the policy. | Nothing; check your custom roles. |
+| `ezoe/upload` refuses a file whose type is not in `UploadFileExtensions[]`, and any name with an executable extension anywhere (`shell.php.jpg`), when the user's editor engine is not TinyMCE 3 (`UploadExtensionCheck=engine`). | Upload a `.zip` or `.pdf` with the TinyMCE 8 engine. | Add the type to `ezoe.ini [EditorSettings] UploadFileExtensions[]`. |
+| Request rules exist and `Enabled=true`, but `RuleList[]` is empty. | Nothing changes until you list a rule. | See [request rules](../../features/6.0/request-rules.md); check with `php bin/php/ezrequestrules.php -s <siteaccess> --check`. |
 
-## Audit
+## Audit trail
 
-The [audit trail](../../features/6.0/audit-trail.md) is **on by default** in every installation (the 4.x releases had
-it off). Records go to `var/<site>/log/audit/`. On an existing installation create the index tables once:
-`php update/common/scripts/6.0/createaudittables.php`. Run the `frequent` cronjob group.
-The 4.x `eZAudit::writeAudit()` calls keep working. Only Administrator holds `audit/read` and `audit/manage`.
+The [audit trail](../../features/6.0/audit-trail.md) is **on by default** in every installation (4.x had it off).
+
+- Records go to `var/<site>/log/audit/`.
+- On an existing installation, create the index tables once:
+  `php update/common/scripts/6.0/createaudittables.php`
+- Run the `frequent` cronjob group.
+- Old `eZAudit::writeAudit()` calls keep working.
+- Only the Administrator role holds `audit/read` and `audit/manage`.
+
+Details: [Audit trail upgrade](audit.md).
 
 ## Front end and designs
 
-| Change | Action |
+| Change | What to do |
 |---|---|
-| YUI removed from the admin designs and ezjscore 1.5.0 (`ezjsc::yui2`, `ezjsc::yui3`, `ezjsc::yui3io` load nothing) | [yui-removal.md](yui-removal.md); move code to jQuery 4 / Exponential UI |
-| `ezjsc::jquery` is jQuery 4.0.0 with Migrate 4.0.2, `ezjsc::jqueryUI` jQuery UI 1.14.2 | old templates that named jQuery 1.x features work through Migrate; to see what they use set `LocalScripts[jqueryMigrate]=jquery-migrate-4.0.2.js` (the reporting build) in `ezjscore.ini` |
-| New admin design `admin4`, new `editor` design and siteaccess for new installations | opt in with `SiteDesign=admin4` ([admin4](../../features/6.0/admin4-design.md)); an old installation gets no editor siteaccess |
-| Logos of the kernel designs show the Exponential logo; the debug output is headed "Exp Debug" | custom CSS or tests that match the old heading text must change |
-| A change to a `.css` of the admin needs the template-block cache cleared (the packed `_<mtime>_all.css` link is cached in the page head); the `exp:velocity deploy --packer` option does it | `php bin/php/ezcache.php --clear-tag=template --allow-root-user` plus the content and template-block caches |
+| YUI is removed from the admin designs and from ezjscore 1.5.0 (`ezjsc::yui2`, `ezjsc::yui3` and `ezjsc::yui3io` load nothing). | Read [YUI removal](yui-removal.md); move the code to jQuery 4 or Exponential UI. |
+| `ezjsc::jquery` is jQuery 4.0.0 with Migrate 4.0.2; `ezjsc::jqueryUI` is jQuery UI 1.14.2. | Old templates that use jQuery 1.x features work through Migrate. To see what they use, set `LocalScripts[jqueryMigrate]=jquery-migrate-4.0.2.js` (the reporting build) in `ezjscore.ini`. |
+| New admin design `admin4`; new `editor` design and siteaccess for new installations. | Opt in with `SiteDesign=admin4` ([admin4](../../features/6.0/admin4-design.md)). An existing installation gets no editor siteaccess. |
+| The kernel designs show the Exponential logo; the debug output is headed "Exp Debug". | Change custom CSS or tests that match the old heading text. |
+| A change to an admin `.css` file needs the template-block cache cleared: the packed `_<mtime>_all.css` link is cached in the page head. `exp:velocity deploy --packer` does it. | `php bin/php/ezcache.php --clear-tag=template --allow-root-user`, plus the content and template-block caches. |
 
 ## Code structure
 
 Every kernel command, cronjob part and module view is now a class
-([specification](../../specifications/6.0/runnable-commands-cronjobs-views.md)); entry points keep their paths.
-Code that read the old files for logic must look in `kernel/private/classes/`. Extensions can re-implement a
-class by `site.ini [RunnableSettings] Implementation[<class>]=<subclass>`.
+([specification](../../specifications/6.0/runnable-commands-cronjobs-views.md)). Entry points keep their paths.
+
+- Code that read the old files for their logic must look in `kernel/private/classes/`.
+- An extension can replace a class with its own subclass:
+  `site.ini [RunnableSettings] Implementation[<class>]=<subclass>`.
 
 ## Data and jobs
 
-| Change | Check |
+| Change | What to check or do |
 |---|---|
-| "Empty trash" purges in batches of 100, each in its own transaction, with a one second pause | large trashes take longer in the browser but no longer time out; use `bin/php/trashpurge.php` for the largest |
-| "Remove timed out sessions" also removes the shop baskets of those sessions | none |
-| The `clusterpurge` cronjob part purges files expired for 30 days (it used 30 seconds) | on a clustered installation expired cache files now live their grace period |
-| A copied object with an image owns its own image files; removing a draft removes all of its image files | none |
-| Removing a media attribute deletes the file only when no other media row names it | none |
-| Removing a subtree that holds every location of an object removes the object | none |
-| Removing, copying or moving above 50 nodes offers a [content job](../../features/6.0/content-jobs.md) first | set `content.ini [ContentJobSettings] SynchronousLimit` |
-| Static cache refresh on publish fetches each page once, in parallel | [static cache generator](../../features/6.0/static-cache-generator.md); `staticcache.ini [CacheSettings] FetchConcurrency` |
-| SQLite transactions queue for the write lock | [sqlite-transactions.md](sqlite-transactions.md) |
+| "Empty trash" purges in batches of 100, each in its own transaction, with a one second pause. | Large trashes take longer in the browser but no longer time out. Use `bin/php/trashpurge.php` for the largest. |
+| "Remove timed out sessions" also removes the shop baskets of those sessions. | Nothing. |
+| The `clusterpurge` cronjob part purges files that expired 30 days ago (it used 30 seconds). | On a clustered installation, expired cache files now live their grace period. |
+| A copied object with an image owns its own image files; removing a draft removes all of its image files. | Nothing. |
+| Removing a media attribute deletes the file only when no other media row names it. | Nothing. |
+| Removing a subtree that holds every location of an object removes the object. | Nothing. |
+| Removing, copying or moving more than 50 nodes offers a [content job](../../features/6.0/content-jobs.md) first. | Tune `content.ini [ContentJobSettings] SynchronousLimit` (default `50`). |
+| The static cache refresh on publish fetches each page once, in parallel. | See the [static cache generator](../../features/6.0/static-cache-generator.md); tune `staticcache.ini [CacheSettings] FetchConcurrency` (default `8`, not listed in the shipped file). |
+| SQLite transactions queue for the write lock. | See [SQLite transactions](sqlite-transactions.md). |
 
 ## Missing libraries
 
-A missing `vendor/` now shows a page with a repair procedure instead of PHP's raw output:
-[repair from the browser](../../features/6.0/repair-from-the-browser.md), [repair.md](repair.md).
+A missing `vendor/` directory now shows a page with a repair procedure instead of PHP's raw error output. See
+[repair from the browser](../../features/6.0/repair-from-the-browser.md) and [the repair page upgrade](repair.md).
+
+## Related pages
+
+- [October 2026 chronicle](../../history/2026/2026-10.md)
+- [Behaviour changes of 16 to 30 September 2026](behaviour-changes-2026-09b.md)
+- [Behaviour changes of July and August 2026](behaviour-changes-2026-07-08.md)
+- [Extensions: behaviour changes](extensions-behaviour-changes.md)
+- [Upgrading guide](../../guides/upgrading.md)

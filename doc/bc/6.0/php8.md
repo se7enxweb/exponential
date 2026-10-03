@@ -1,42 +1,24 @@
 # PHP 8 support
 
-## PHP 8.0 support
+Read this page if you upgrade from a release before 6.0.0, or if you maintain your own extensions. The kernel and
+libraries were changed step by step for PHP 8.0 up to 8.5 between December 2023 and April 2026. Compatibility
+functions were kept wherever they were known to be needed, so custom extensions do not end in fatal errors. To get
+rid of deprecation warnings, you may still have to adapt your own code, most often classes that extend
+`eZPersistentObject` or `eZDataType`.
 
-For the first 7x release line (December 2023, tag `v6.0.0` and later),
-Exponential received changes all over the code base, switching variable syntax to PHP 8 style, variable return type comparison checking before use errors under PHP 8.2, and more. 
+## In short
 
-The reason is to achieve full PHP 8.0 support by avoiding the deprecation warnings when using PHP 8 syntax.
+| | |
+|---|---|
+| What changed | PHP 8 syntax and checks throughout the kernel; since 6.0.8, Composer requires PHP 8.1 or newer. |
+| Who is affected | Sites still on PHP 7.4 (must stay on 6.0.7); authors of extensions with dynamic properties, unchecked `count()` or `null` passed to string functions. |
+| How to check | Enable the debug output on a development copy and look for "Deprecated" notices from your extension files. |
+| How to fix | Follow "What this means for your own code" below. |
 
-Care has been taken to keep around compatibility functions in all known cases to avoid fatal errors
-for custom extensions, however to avoid warnings you might need to adapt your code as well.
+## The sequence of changes (December 2023 to April 2026)
 
-Common cases are classes extending `eZPersistentObject` or `eZDataType`.
-
-Further reading:
-- [www.php.net/manual/en/migration80.incompatible.php](https://www.php.net/manual/en/migration80.incompatible.php)
-- [www.php.net/manual/en/migration81.incompatible.php](https://www.php.net/manual/en/migration81.incompatible.php)
-
-## PHP 8.2 support
-
-Starting with the 2023.12 release, issues happening on PHP 8.1 and PHP 8.2 have been fixed, but in your own code (extensions) you'll
-also need to handle some of those.
-
-Further reading:
-- [www.php.net/manual/en/migration82.incompatible.php](https://www.php.net/manual/en/migration82.incompatible.php)
-
-## PHP 8.3 support
-
-Starting with the 2023.12 release, most issues happening on PHP 8.2 and PHP 8.3 have been fixed, but in your own code (extensions) you'll
-also need to handle some of those.
-
-Further reading:
-- [www.php.net/manual/en/migration83.incompatible.php](https://www.php.net/manual/en/migration83.incompatible.php)
-
-## PHP 8.1 to 8.5: the sequence of changes (December 2023 to April 2026)
-
-This section lists what each release did, so you can see which of your own
-extensions might need the same treatment. Every item is a change in the kernel
-or library; the first column is the first release that carries it.
+The first column is the first release that carries the change. Use it to see which of your extensions may need the
+same treatment.
 
 | Release | PHP topic | What changed |
 |---|---|---|
@@ -51,28 +33,39 @@ or library; the first column is the first release that carries it.
 | 6.0.13 (Feb 2026) | 8.4 | Time datatype and `eZOrder::fetchList()` deprecations fixed, see [the hardening specification](../../specifications/6.0/security-hardening-6.0.13.md). |
 | 6.0.13 (Apr 2026) | 8.x | The session handler: `read()` returns an empty string for an unknown session, `gc()` uses `time()` and a start time, and the current siteaccess global is checked before use. |
 
-### What this means for your own code
+## How to check your installation
 
-- Declare the properties your classes use. PHP 8.2 deprecates creating them on
-  the fly.
-- Test a value with `is_countable()` or `is_array()` before `count()` or
-  `foreach`.
-- Do not pass `null` to string functions; use `$value ?? ''`.
-- Give methods that implement `Iterator`, `ArrayAccess` or `Countable` the
+```bash
+php -v
+grep -n '"php"' composer.json
+```
+
+The first line of `php -v` must show 8.1 or newer. The `composer.json` line shows the PHP versions the current
+release accepts.
+
+## What this means for your own code
+
+- **Declare the properties your classes use.** PHP 8.2 deprecates creating them on the fly.
+- **Test before you count.** Use `is_countable()` or `is_array()` before `count()` or `foreach`.
+- **Do not pass `null` to string functions.** Use `$value ?? ''`.
+- **Mark SPL methods.** Give methods that implement `Iterator`, `ArrayAccess` or `Countable` the
   `#[ReturnTypeWillChange]` attribute, or real return types.
-- Raise your own `composer.json` PHP constraint to `^8.1` or newer, as the
-  product did in 6.0.8; sites still on PHP 7.4 must stay on 6.0.7.
+- **Raise your PHP constraint.** Set your own `composer.json` PHP constraint to `^8.1` or newer, as the product did in
+  6.0.8. Sites still on PHP 7.4 must stay on 6.0.7.
 
-See also [Security hardening](hardening.md), [PHPUnit 10](phpunitv10.md),
-[PHPUnit 13](phpunitv13.md).
+The PHP manual lists every incompatible change per version:
+
+- [PHP 8.0 incompatible changes](https://www.php.net/manual/en/migration80.incompatible.php)
+- [PHP 8.1 incompatible changes](https://www.php.net/manual/en/migration81.incompatible.php)
+- [PHP 8.2 incompatible changes](https://www.php.net/manual/en/migration82.incompatible.php)
+- [PHP 8.3 incompatible changes](https://www.php.net/manual/en/migration83.incompatible.php)
 
 ## Related pages
 
-- [PHPUnit 13 / PHP 8.4.23 test suite cleanup](phpunitv13forPHP841.md)
-- [`ezpSessionHandlerDB` PHP 8 compatibility bugfixes and PHPUnit 13 test suite](ezpsessionhandlerdb-php8-bugfix-and-tests.md)
+- [Security hardening](hardening.md)
+- [PHPUnit 10](phpunitv10.md), [PHPUnit 13](phpunitv13.md) and [PHPUnit 13 on PHP 8.4](phpunitv13forPHP841.md)
+- [`ezpSessionHandlerDB` PHP 8 compatibility bugfixes and tests](ezpsessionhandlerdb-php8-bugfix-and-tests.md)
 - [PHP 8.4 and 8.5 for the older Symfony stack: the framework forks](../../features/6.0/platform-php85-framework-forks.md)
-- [April 2025](../../history/2025/2025-04.md)
-- [September 2025](../../history/2025/2025-09.md)
-- [December 2025](../../history/2025/2025-12.md)
-- [February 2026](../../history/2026/2026-02.md)
-- [March 2026](../../history/2026/2026-03.md)
+- History: [April 2025](../../history/2025/2025-04.md), [September 2025](../../history/2025/2025-09.md),
+  [December 2025](../../history/2025/2025-12.md), [February 2026](../../history/2026/2026-02.md),
+  [March 2026](../../history/2026/2026-03.md)
