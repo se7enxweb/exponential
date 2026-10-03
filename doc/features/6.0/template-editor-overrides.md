@@ -32,6 +32,58 @@ On the override list, change the numbers and press **Update overrides**. The
 numbers are saved as `Priority` in `override.ini`, and the stale override and
 INI caches are cleared before and after, so the new order applies at once.
 
+### Reorder by drag and drop (September 2026)
+
+**Design > Templates** (`/visual/templateview/...`) lists a template's overrides as
+cards in exactly the order they are tried and lets you reorder them by drag and
+drop. Every move is saved at once.
+
+1. Open **Design > Templates**, choose a template such as `node/view/full.tpl`.
+2. The overrides appear as cards in the order they are tried. Each card shows its
+   position, whether the siteaccess settings or an extension define it, its file
+   and its conditions.
+3. Drag a card by its handle to a new place, or move it with its arrows
+   (keyboard and touch work). The new order is saved immediately as the
+   `Priority` (10, 20, 30 ...) of this template's overrides.
+4. Use the filter box to narrow the cards on the page ("filters this page").
+5. **Remove selected**, **New override** and **Save conditions** are drawn above
+   the list as well as below it, so a long list needs no scrolling.
+
+Paging: the overrides are shown 20 per page with the pager above and below, and
+positions counted over the whole list. A drag or an arrow within a page sends that
+page's new order and the server puts it in the page's place in the full order. The
+up arrow of a page's first override and the down arrow of its last move it across
+to the page before or after, swapping it with the override there, and the page is
+loaded again.
+
+| File | Block | Key | Default |
+|---|---|---|---|
+| `settings/admininterface.ini` (set it in `settings/override/admininterface.ini.append.php`) | `[PaginationSettings]` | `ItemsPerPage[visual/templateview]` | 20 (built in; the key is not in the shipped file) |
+
+See [Where the page sizes live](../../bc/6.0/pagination-settings.md).
+
+Saving is done by `ezpTemplateOverrides`, which changes only
+`settings/siteaccess/<siteaccess>/override.ini.append.php`. It is read from disk,
+a copy is kept first and the file is checked afterwards. The old page was
+dangerous:
+
+| Before | Now |
+|---|---|
+| Update wrote a `Priority` into every override of the file, `0` for all those the page did not show. | Writes only the conditions that changed, of the overrides the page showed. |
+| Update saved `override.ini` merged from every source into the siteaccess file, copying extensions' overrides into it. | The file only gains `Priority` lines (and the one condition you edited). |
+| Remove took any override and deleted its file wherever it was. | Removes only overrides the siteaccess file defines, and their files only inside `design/`. An extension's override is left to the extension, with a notice. |
+| Reset markers were written in front of the conditions, discarding conditions an extension gives the same override. | The file is written without reset markers. |
+| A reorder of any content was accepted. | A reorder holding anything but exactly the overrides shown is refused, and after a save the order in effect is read back and compared. |
+| Any siteaccess could be named. | The siteaccess to change must be one of `RelatedSiteAccessList`. |
+
+Verified against a fresh installation with 56 overrides of `node/view/full.tpl`:
+moves within page 1, a move from page 2 to page 1 and back, and saving a condition
+on a later page each left the settings file with only `Priority` lines or the one
+changed condition; changing a condition and changing it back restored the file byte
+for byte. See also [Extension loading order](extension-loading-order.md), which
+decides which extension's overrides are found first, and
+[Admin list paging](admin-list-paging.md).
+
 ### Choose where the copy starts
 
 When you create an override with *Default copy*, the editor needs a template to

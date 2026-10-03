@@ -4888,3 +4888,16 @@ MySQL. See also [the chronicle for 16 to 30 September 2026](../../history/2026/2
 The installer now also accepts `mongodb` as `--db` for `./console exp:install`.
 
 See also: [Database drivers and installers, September 2026](../../specifications/6.0/database-drivers-2026-09.md) (SQLite, PostgreSQL, MySQL and Oracle), [Installing in one command](../../features/6.0/install-in-one-command.md) and [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md).
+
+## See also (16 to 30 September 2026)
+
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Database drivers and installers, 16 to 30 September 2026](../../specifications/6.0/database-drivers-2026-09.md)
+- [Installing Exponential in one command](../../features/6.0/install-in-one-command.md)
+
+## Related pages
+
+- [MongoDB as the database](../../features/6.0/mongodb-database-support.md)
+- [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)

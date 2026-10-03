@@ -1007,3 +1007,10 @@ tail -n 50 var/vc/frankenphp/log/error.log | jq .
 - Cross-engine reference: [`doc/bc/6.0/velocity-engines.md`](velocity-engines.md)
 
 See also (September 2026): [Server control commands](../../features/6.0/web-server-and-solr-commands.md) (`exp:webserver`, `exp:frankenphp`, `exp:solr`), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md#engines-and-the-server-commands).
+
+## See also (16 to 30 September 2026)
+
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Velocity persistent worker server](../../features/6.0/velocity-persistent-worker-server.md)

@@ -173,3 +173,13 @@ The shipped example is `doc/examples/` and the root files `.htaccess_root` and
 - [HTTP cache](../../bc/6.0/httpcache.md)
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## See also
+
+- [Security hardening of August 2026](security-hardening-2026-08.md) (the earlier patch set)
+- [Datatype input hardening](datatype-input-hardening.md)
+
+## Related pages
+
+- [RAD tools — security](../../bc/6.0/rad-security.md)
+- [February 2026](../../history/2026/2026-02.md)

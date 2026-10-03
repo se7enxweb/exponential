@@ -188,3 +188,11 @@ and on the page); a new kind of action belongs in `expCacheManager`, called from
 both. Tests: `tests/tests/kernel/classes/expCacheManagerTest.php`.
 
 See also (September 2026): [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md).
+
+## See also (16 to 30 September 2026)
+
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md)
+- [Velocity response cache](../../features/6.0/velocity-response-cache.md)

@@ -357,3 +357,11 @@ line means none reached the database.
 | `var/<site>/cache/querycache/state.ser` | the shared state |
 
 See also (September 2026): [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md#sql-query-cache-querycacheini) (lookup before parsing, `xxh128` keys, catalogue never cached), [Velocity](../../features/6.0/velocity-persistent-worker-server.md).
+
+## See also (16 to 30 September 2026)
+
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md)
+- [Velocity response cache](../../features/6.0/velocity-response-cache.md)

@@ -134,3 +134,11 @@ It does not reduce the work of rendering a page. The front page costs about
 misses the cache.
 
 See also (September 2026): [HTTP cache](httpcache.md), [Velocity](../../features/6.0/velocity-persistent-worker-server.md), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md).
+
+## See also (16 to 30 September 2026)
+
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md)
+- [Velocity response cache](../../features/6.0/velocity-response-cache.md)

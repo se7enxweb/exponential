@@ -227,3 +227,11 @@ document, decompressed       94,128 B      69,101 B
 The settings that reproduce this configuration are in `settings/velocity.ini` (read them with `./console exp:velocity config list`).
 
 See also (September 2026): [Velocity](../../features/6.0/velocity-persistent-worker-server.md), [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md) (service worker `/index.js`, cache version `exp-nav-v4`).
+
+## See also (16 to 30 September 2026)
+
+- [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
+- [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)
+- [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+- [Cache clears that move directories aside](../../features/6.0/cache-clear-rename-aside.md)
+- [Velocity response cache](../../features/6.0/velocity-response-cache.md)

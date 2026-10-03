@@ -152,3 +152,13 @@ extensions, site styles).
 - [Chronicle, 16 to 30 September 2026](../../history/2026/2026-09b.md)
 - [Behaviour changes, 16 to 30 September 2026](../../bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+
+## See also
+
+- [ezpm: the package manager on the command line](ezpm-package-manager-cli.md)
+
+## Related pages
+
+- [Installer logs and seed data](../../specifications/6.0/installer-logs-and-seed-data.md)
+- [Kickstarter: install a whole site from one file](kickstarter-cli.md)
+- [June 2026, second half (16 to 30 June)](../../history/2026/2026-06b.md)
